@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "total_count": 19,
+  "skills": [
+    {
+      "name": "superpowers",
+      "description": "20+ battle-tested skills for Claude Code including TDD, debugging, and collaboration patterns",
+      "install": "obra/superpowers",
+      "repo": "obra/superpowers",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "tdd",
+        "debugging",
+        "collaboration",
+        "productivity"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "algorithmic-art",
+      "description": "Generate algorithmic and generative art",
+      "install": "anthropics/skills/algorithmic-art",
+      "repo": "anthropics/skills",
+      "path": "skills/algorithmic-art",
+      "category": "design",
+      "tags": [
+        "art",
+        "generative",
+        "algorithmic",
+        "creative"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "brand-guidelines",
+      "description": "Create and maintain brand guidelines documentation",
+      "install": "anthropics/skills/brand-guidelines",
+      "repo": "anthropics/skills",
+      "path": "skills/brand-guidelines",
+      "category": "design",
+      "tags": [
+        "brand",
+        "guidelines",
+        "design",
+        "documentation"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "canvas-design",
+      "description": "HTML5 Canvas design and visualization",
+      "install": "anthropics/skills/canvas-design",
+      "repo": "anthropics/skills",
+      "path": "skills/canvas-design",
+      "category": "design",
+      "tags": [
+        "canvas",
+        "design",
+        "visualization",
+        "graphics"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-skills",
+      "description": "A curated list of awesome Claude Skills, resources, and tools",
+      "install": "travisvn/awesome-claude-skills",
+      "repo": "travisvn/awesome-claude-skills",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "awesome",
+        "list",
+        "curated",
+        "resources"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "doc-coauthoring",
+      "description": "Collaborative document co-authoring",
+      "install": "anthropics/skills/doc-coauthoring",
+      "repo": "anthropics/skills",
+      "path": "skills/doc-coauthoring",
+      "category": "documents",
+      "tags": [
+        "document",
+        "collaboration",
+        "coauthoring"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction",
+      "install": "anthropics/skills/docx",
+      "repo": "anthropics/skills",
+      "path": "skills/docx",
+      "category": "documents",
+      "tags": [
+        "document",
+        "word",
+        "docx",
+        "office"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality",
+      "install": "anthropics/skills/frontend-design",
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "category": "design",
+      "tags": [
+        "frontend",
+        "design",
+        "ui",
+        "web"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "internal-comms",
+      "description": "Internal communications and documentation",
+      "install": "anthropics/skills/internal-comms",
+      "repo": "anthropics/skills",
+      "path": "skills/internal-comms",
+      "category": "productivity",
+      "tags": [
+        "communication",
+        "internal",
+        "documentation"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "mcp-builder",
+      "description": "Build MCP (Model Context Protocol) servers",
+      "install": "anthropics/skills/mcp-builder",
+      "repo": "anthropics/skills",
+      "path": "skills/mcp-builder",
+      "category": "development",
+      "tags": [
+        "mcp",
+        "server",
+        "protocol",
+        "integration"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "pdf",
+      "description": "PDF document creation, reading, and manipulation",
+      "install": "anthropics/skills/pdf",
+      "repo": "anthropics/skills",
+      "path": "skills/pdf",
+      "category": "documents",
+      "tags": [
+        "document",
+        "pdf",
+        "reading"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "pptx",
+      "description": "PowerPoint presentation creation and editing",
+      "install": "anthropics/skills/pptx",
+      "repo": "anthropics/skills",
+      "path": "skills/pptx",
+      "category": "documents",
+      "tags": [
+        "document",
+        "powerpoint",
+        "presentation",
+        "slides"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "scientific-skills",
+      "description": "Scientific computing and research skills for Claude",
+      "install": "K-Dense-AI/claude-scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "",
+      "category": "data",
+      "tags": [
+        "science",
+        "research",
+        "computing",
+        "analysis"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create new Claude Code skills",
+      "install": "anthropics/skills/skill-creator",
+      "repo": "anthropics/skills",
+      "path": "skills/skill-creator",
+      "category": "development",
+      "tags": [
+        "skill",
+        "creator",
+        "meta",
+        "development"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "slack-gif-creator",
+      "description": "Create animated GIFs for Slack",
+      "install": "anthropics/skills/slack-gif-creator",
+      "repo": "anthropics/skills",
+      "path": "skills/slack-gif-creator",
+      "category": "productivity",
+      "tags": [
+        "slack",
+        "gif",
+        "animation",
+        "communication"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "theme-factory",
+      "description": "Create and customize UI themes",
+      "install": "anthropics/skills/theme-factory",
+      "repo": "anthropics/skills",
+      "path": "skills/theme-factory",
+      "category": "design",
+      "tags": [
+        "theme",
+        "ui",
+        "customization",
+        "design"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "web-artifacts-builder",
+      "description": "Build interactive web artifacts and components",
+      "install": "anthropics/skills/web-artifacts-builder",
+      "repo": "anthropics/skills",
+      "path": "skills/web-artifacts-builder",
+      "category": "development",
+      "tags": [
+        "web",
+        "artifacts",
+        "components",
+        "interactive"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "webapp-testing",
+      "description": "Web application testing with Playwright",
+      "install": "anthropics/skills/webapp-testing",
+      "repo": "anthropics/skills",
+      "path": "skills/webapp-testing",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "playwright",
+        "web",
+        "automation"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "xlsx",
+      "description": "Excel spreadsheet creation and manipulation",
+      "install": "anthropics/skills/xlsx",
+      "repo": "anthropics/skills",
+      "path": "skills/xlsx",
+      "category": "documents",
+      "tags": [
+        "document",
+        "excel",
+        "spreadsheet",
+        "data"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    }
+  ]
+}

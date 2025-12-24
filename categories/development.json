@@ -1,0 +1,75 @@
+{
+  "category": "development",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "skills": [
+    {
+      "name": "superpowers",
+      "description": "20+ battle-tested skills for Claude Code including TDD, debugging, and collaboration patterns",
+      "install": "obra/superpowers",
+      "repo": "obra/superpowers",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "tdd",
+        "debugging",
+        "collaboration",
+        "productivity"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "mcp-builder",
+      "description": "Build MCP (Model Context Protocol) servers",
+      "install": "anthropics/skills/mcp-builder",
+      "repo": "anthropics/skills",
+      "path": "skills/mcp-builder",
+      "category": "development",
+      "tags": [
+        "mcp",
+        "server",
+        "protocol",
+        "integration"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create new Claude Code skills",
+      "install": "anthropics/skills/skill-creator",
+      "repo": "anthropics/skills",
+      "path": "skills/skill-creator",
+      "category": "development",
+      "tags": [
+        "skill",
+        "creator",
+        "meta",
+        "development"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "web-artifacts-builder",
+      "description": "Build interactive web artifacts and components",
+      "install": "anthropics/skills/web-artifacts-builder",
+      "repo": "anthropics/skills",
+      "path": "skills/web-artifacts-builder",
+      "category": "development",
+      "tags": [
+        "web",
+        "artifacts",
+        "components",
+        "interactive"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 4
+}

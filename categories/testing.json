@@ -1,0 +1,24 @@
+{
+  "category": "testing",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "skills": [
+    {
+      "name": "webapp-testing",
+      "description": "Web application testing with Playwright",
+      "install": "anthropics/skills/webapp-testing",
+      "repo": "anthropics/skills",
+      "path": "skills/webapp-testing",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "playwright",
+        "web",
+        "automation"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 1
+}

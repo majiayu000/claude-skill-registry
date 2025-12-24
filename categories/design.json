@@ -1,0 +1,92 @@
+{
+  "category": "design",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "skills": [
+    {
+      "name": "algorithmic-art",
+      "description": "Generate algorithmic and generative art",
+      "install": "anthropics/skills/algorithmic-art",
+      "repo": "anthropics/skills",
+      "path": "skills/algorithmic-art",
+      "category": "design",
+      "tags": [
+        "art",
+        "generative",
+        "algorithmic",
+        "creative"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "brand-guidelines",
+      "description": "Create and maintain brand guidelines documentation",
+      "install": "anthropics/skills/brand-guidelines",
+      "repo": "anthropics/skills",
+      "path": "skills/brand-guidelines",
+      "category": "design",
+      "tags": [
+        "brand",
+        "guidelines",
+        "design",
+        "documentation"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "canvas-design",
+      "description": "HTML5 Canvas design and visualization",
+      "install": "anthropics/skills/canvas-design",
+      "repo": "anthropics/skills",
+      "path": "skills/canvas-design",
+      "category": "design",
+      "tags": [
+        "canvas",
+        "design",
+        "visualization",
+        "graphics"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality",
+      "install": "anthropics/skills/frontend-design",
+      "repo": "anthropics/skills",
+      "path": "skills/frontend-design",
+      "category": "design",
+      "tags": [
+        "frontend",
+        "design",
+        "ui",
+        "web"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "theme-factory",
+      "description": "Create and customize UI themes",
+      "install": "anthropics/skills/theme-factory",
+      "repo": "anthropics/skills",
+      "path": "skills/theme-factory",
+      "category": "design",
+      "tags": [
+        "theme",
+        "ui",
+        "customization",
+        "design"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 5
+}

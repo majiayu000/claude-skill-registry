@@ -1,0 +1,90 @@
+{
+  "category": "documents",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "skills": [
+    {
+      "name": "doc-coauthoring",
+      "description": "Collaborative document co-authoring",
+      "install": "anthropics/skills/doc-coauthoring",
+      "repo": "anthropics/skills",
+      "path": "skills/doc-coauthoring",
+      "category": "documents",
+      "tags": [
+        "document",
+        "collaboration",
+        "coauthoring"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction",
+      "install": "anthropics/skills/docx",
+      "repo": "anthropics/skills",
+      "path": "skills/docx",
+      "category": "documents",
+      "tags": [
+        "document",
+        "word",
+        "docx",
+        "office"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "pdf",
+      "description": "PDF document creation, reading, and manipulation",
+      "install": "anthropics/skills/pdf",
+      "repo": "anthropics/skills",
+      "path": "skills/pdf",
+      "category": "documents",
+      "tags": [
+        "document",
+        "pdf",
+        "reading"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "pptx",
+      "description": "PowerPoint presentation creation and editing",
+      "install": "anthropics/skills/pptx",
+      "repo": "anthropics/skills",
+      "path": "skills/pptx",
+      "category": "documents",
+      "tags": [
+        "document",
+        "powerpoint",
+        "presentation",
+        "slides"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "xlsx",
+      "description": "Excel spreadsheet creation and manipulation",
+      "install": "anthropics/skills/xlsx",
+      "repo": "anthropics/skills",
+      "path": "skills/xlsx",
+      "category": "documents",
+      "tags": [
+        "document",
+        "excel",
+        "spreadsheet",
+        "data"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 5
+}

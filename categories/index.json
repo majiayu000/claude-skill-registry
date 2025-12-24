@@ -1,0 +1,29 @@
+{
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "categories": [
+    {
+      "name": "data",
+      "count": 1
+    },
+    {
+      "name": "design",
+      "count": 5
+    },
+    {
+      "name": "development",
+      "count": 4
+    },
+    {
+      "name": "documents",
+      "count": 5
+    },
+    {
+      "name": "productivity",
+      "count": 3
+    },
+    {
+      "name": "testing",
+      "count": 1
+    }
+  ]
+}

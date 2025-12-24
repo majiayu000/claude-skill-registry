@@ -1,0 +1,57 @@
+{
+  "category": "productivity",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "skills": [
+    {
+      "name": "claude-skills",
+      "description": "A curated list of awesome Claude Skills, resources, and tools",
+      "install": "travisvn/awesome-claude-skills",
+      "repo": "travisvn/awesome-claude-skills",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "awesome",
+        "list",
+        "curated",
+        "resources"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "internal-comms",
+      "description": "Internal communications and documentation",
+      "install": "anthropics/skills/internal-comms",
+      "repo": "anthropics/skills",
+      "path": "skills/internal-comms",
+      "category": "productivity",
+      "tags": [
+        "communication",
+        "internal",
+        "documentation"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "slack-gif-creator",
+      "description": "Create animated GIFs for Slack",
+      "install": "anthropics/skills/slack-gif-creator",
+      "repo": "anthropics/skills",
+      "path": "skills/slack-gif-creator",
+      "category": "productivity",
+      "tags": [
+        "slack",
+        "gif",
+        "animation",
+        "communication"
+      ],
+      "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 3
+}

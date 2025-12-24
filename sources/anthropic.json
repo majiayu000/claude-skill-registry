@@ -1,0 +1,120 @@
+{
+  "name": "Anthropic Official",
+  "repo": "anthropics/skills",
+  "description": "Official Claude Code skills from Anthropic",
+  "url": "https://github.com/anthropics/skills",
+  "skills": [
+    {
+      "name": "docx",
+      "path": "skills/docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction",
+      "category": "documents",
+      "tags": ["document", "word", "docx", "office"]
+    },
+    {
+      "name": "pdf",
+      "path": "skills/pdf",
+      "description": "PDF document creation, reading, and manipulation",
+      "category": "documents",
+      "tags": ["document", "pdf", "reading"]
+    },
+    {
+      "name": "pptx",
+      "path": "skills/pptx",
+      "description": "PowerPoint presentation creation and editing",
+      "category": "documents",
+      "tags": ["document", "powerpoint", "presentation", "slides"]
+    },
+    {
+      "name": "xlsx",
+      "path": "skills/xlsx",
+      "description": "Excel spreadsheet creation and manipulation",
+      "category": "documents",
+      "tags": ["document", "excel", "spreadsheet", "data"]
+    },
+    {
+      "name": "frontend-design",
+      "path": "skills/frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality",
+      "category": "design",
+      "tags": ["frontend", "design", "ui", "web"]
+    },
+    {
+      "name": "canvas-design",
+      "path": "skills/canvas-design",
+      "description": "HTML5 Canvas design and visualization",
+      "category": "design",
+      "tags": ["canvas", "design", "visualization", "graphics"]
+    },
+    {
+      "name": "mcp-builder",
+      "path": "skills/mcp-builder",
+      "description": "Build MCP (Model Context Protocol) servers",
+      "category": "development",
+      "tags": ["mcp", "server", "protocol", "integration"]
+    },
+    {
+      "name": "webapp-testing",
+      "path": "skills/webapp-testing",
+      "description": "Web application testing with Playwright",
+      "category": "testing",
+      "tags": ["testing", "playwright", "web", "automation"]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "path": "skills/web-artifacts-builder",
+      "description": "Build interactive web artifacts and components",
+      "category": "development",
+      "tags": ["web", "artifacts", "components", "interactive"]
+    },
+    {
+      "name": "brand-guidelines",
+      "path": "skills/brand-guidelines",
+      "description": "Create and maintain brand guidelines documentation",
+      "category": "design",
+      "tags": ["brand", "guidelines", "design", "documentation"]
+    },
+    {
+      "name": "internal-comms",
+      "path": "skills/internal-comms",
+      "description": "Internal communications and documentation",
+      "category": "productivity",
+      "tags": ["communication", "internal", "documentation"]
+    },
+    {
+      "name": "algorithmic-art",
+      "path": "skills/algorithmic-art",
+      "description": "Generate algorithmic and generative art",
+      "category": "design",
+      "tags": ["art", "generative", "algorithmic", "creative"]
+    },
+    {
+      "name": "slack-gif-creator",
+      "path": "skills/slack-gif-creator",
+      "description": "Create animated GIFs for Slack",
+      "category": "productivity",
+      "tags": ["slack", "gif", "animation", "communication"]
+    },
+    {
+      "name": "theme-factory",
+      "path": "skills/theme-factory",
+      "description": "Create and customize UI themes",
+      "category": "design",
+      "tags": ["theme", "ui", "customization", "design"]
+    },
+    {
+      "name": "skill-creator",
+      "path": "skills/skill-creator",
+      "description": "Create new Claude Code skills",
+      "category": "development",
+      "tags": ["skill", "creator", "meta", "development"]
+    },
+    {
+      "name": "doc-coauthoring",
+      "path": "skills/doc-coauthoring",
+      "description": "Collaborative document co-authoring",
+      "category": "documents",
+      "tags": ["document", "collaboration", "coauthoring"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "category": "data",
+  "updated_at": "2025-12-24T08:45:15.517298Z",
+  "skills": [
+    {
+      "name": "scientific-skills",
+      "description": "Scientific computing and research skills for Claude",
+      "install": "K-Dense-AI/claude-scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "",
+      "category": "data",
+      "tags": [
+        "science",
+        "research",
+        "computing",
+        "analysis"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 1
+}

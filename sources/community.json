@@ -1,0 +1,34 @@
+{
+  "name": "Community Skills",
+  "description": "Community-contributed Claude Code skills",
+  "skills": [
+    {
+      "name": "superpowers",
+      "repo": "obra/superpowers",
+      "path": "",
+      "description": "20+ battle-tested skills for Claude Code including TDD, debugging, and collaboration patterns",
+      "category": "development",
+      "tags": ["tdd", "debugging", "collaboration", "productivity"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "claude-skills",
+      "repo": "travisvn/awesome-claude-skills",
+      "path": "",
+      "description": "A curated list of awesome Claude Skills, resources, and tools",
+      "category": "productivity",
+      "tags": ["awesome", "list", "curated", "resources"],
+      "stars": 0
+    },
+    {
+      "name": "scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "",
+      "description": "Scientific computing and research skills for Claude",
+      "category": "data",
+      "tags": ["science", "research", "computing", "analysis"],
+      "stars": 0
+    }
+  ]
+}

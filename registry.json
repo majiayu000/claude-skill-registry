@@ -1,105 +1,106 @@
 {
   "version": "1.0.0",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
-  "total_count": 107,
+  "updated_at": "2025-12-24T10:42:00.503069Z",
+  "total_count": 165,
   "skills": [
     {
-      "name": "clone-website",
-      "description": "Clone and recreate website designs with modern frameworks",
-      "install": "julianromli/ai-skills/clone-website",
-      "repo": "julianromli/ai-skills",
-      "path": "clone-website",
-      "category": "development",
-      "tags": [
-        "web",
-        "clone",
-        "frontend",
-        "design"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": true
-    },
-    {
-      "name": "data-ml-engineer",
-      "description": "Machine learning model development and deployment",
-      "install": "alirezarezvani/claude-skills/data/ml-engineer",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "data/ml-engineer",
+      "name": "claude-scientific-skills",
+      "description": "125+ scientific skills for bioinformatics, cheminformatics, clinical research, ML",
+      "install": "K-Dense-AI/claude-scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "",
       "category": "data",
       "tags": [
-        "ml",
-        "machine-learning",
-        "models",
-        "training"
+        "science",
+        "research",
+        "bioinformatics",
+        "ml"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": true
     },
     {
-      "name": "design-system-creator",
-      "description": "Build comprehensive design systems",
-      "install": "alirezarezvani/claude-skills/design/system-creator",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "design/system-creator",
-      "category": "design",
-      "tags": [
-        "design-system",
-        "components",
-        "tokens",
-        "guidelines"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": true
-    },
-    {
-      "name": "engineering-api-designer",
-      "description": "Design RESTful and GraphQL APIs with best practices",
-      "install": "alirezarezvani/claude-skills/engineering/api-designer",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "engineering/api-designer",
+      "name": "claudekit-backend-development",
+      "description": "Build robust backend systems with Node.js, Python, Go, Rust",
+      "install": "mrgoonie/claudekit-skills/skills/backend-development",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/backend-development",
       "category": "development",
       "tags": [
-        "api",
-        "rest",
-        "graphql",
-        "design"
+        "backend",
+        "nodejs",
+        "python",
+        "go",
+        "rust"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": true
     },
     {
-      "name": "product-prd-writer",
-      "description": "Write comprehensive product requirement documents",
-      "install": "alirezarezvani/claude-skills/product/prd-writer",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "product/prd-writer",
-      "category": "product",
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "install": "conorluddy/ios-simulator-skill",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "",
+      "category": "testing",
       "tags": [
-        "prd",
-        "requirements",
-        "product",
-        "documentation"
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": true
     },
     {
-      "name": "security-auditor",
-      "description": "Security vulnerability scanning and remediation",
-      "install": "julianromli/ai-skills/security-auditor",
-      "repo": "julianromli/ai-skills",
-      "path": "security-auditor",
+      "name": "n8n-mcp-tools-expert",
+      "description": "n8n-mcp MCP tools, validation profiles, nodeType formats",
+      "install": "czlonkowski/n8n-skills/skills/n8n-mcp-tools-expert",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-mcp-tools-expert",
       "category": "development",
       "tags": [
-        "security",
-        "audit",
-        "vulnerabilities",
-        "owasp"
+        "n8n",
+        "mcp",
+        "automation",
+        "tools"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "install": "lackeyjb/playwright-skill",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "subagent-driven-development",
+      "description": "Two-stage review process - spec compliance then code quality",
+      "install": "obra/superpowers/subagent-driven-development",
+      "repo": "obra/superpowers",
+      "path": "subagent-driven-development",
+      "category": "development",
+      "tags": [
+        "subagents",
+        "review",
+        "quality"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -123,6 +124,103 @@
       "featured": true
     },
     {
+      "name": "systematic-debugging",
+      "description": "Four-phase debugging framework for any technical issue. Prevents random fix attempts",
+      "install": "obra/superpowers/systematic-debugging",
+      "repo": "obra/superpowers",
+      "path": "systematic-debugging",
+      "category": "development",
+      "tags": [
+        "debugging",
+        "troubleshooting",
+        "methodology"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "test-driven-development",
+      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
+      "install": "obra/superpowers/test-driven-development",
+      "repo": "obra/superpowers",
+      "path": "test-driven-development",
+      "category": "testing",
+      "tags": [
+        "tdd",
+        "testing",
+        "red-green-refactor"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "using-git-worktrees",
+      "description": "Manages parallel development branches with git worktrees",
+      "install": "obra/superpowers/using-git-worktrees",
+      "repo": "obra/superpowers",
+      "path": "using-git-worktrees",
+      "category": "development",
+      "tags": [
+        "git",
+        "worktrees",
+        "branching",
+        "parallel"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "agents-md-generator",
+      "description": "Generate AGENTS.md documentation for repositories",
+      "install": "netresearch/claude-code-marketplace/skills/agents-md-generator",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/agents-md-generator",
+      "category": "documents",
+      "tags": [
+        "agents",
+        "documentation",
+        "generator"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "agents-orchestration",
+      "description": "Intelligent automation and multi-agent orchestration for Claude Code",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "agents",
+        "orchestration",
+        "automation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ai-research-skills",
+      "description": "Library of AI research and engineering skills for multiple AI models",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "data",
+      "tags": [
+        "ai",
+        "research",
+        "engineering"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "algorithmic-art",
       "description": "Generate algorithmic and generative art",
       "install": "anthropics/skills/algorithmic-art",
@@ -140,17 +238,16 @@
       "featured": false
     },
     {
-      "name": "auth0-identity",
-      "description": "Auth0 authentication and identity",
-      "install": "auth0/claude-skills/auth0-identity",
-      "repo": "auth0/claude-skills",
-      "path": "auth0-identity",
+      "name": "autonomous-skill",
+      "description": "Execute complex long-running tasks across multiple sessions",
+      "install": "feiskyer/claude-code-settings/plugins/autonomous-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "plugins/autonomous-skill",
       "category": "development",
       "tags": [
-        "auth0",
-        "authentication",
-        "identity",
-        "oauth"
+        "autonomous",
+        "sessions",
+        "long-running"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -168,23 +265,6 @@
         "list",
         "curated",
         "resources"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "aws-architect",
-      "description": "AWS cloud architecture and services",
-      "install": "aws-samples/claude-skills/aws-architect",
-      "repo": "aws-samples/claude-skills",
-      "path": "aws-architect",
-      "category": "development",
-      "tags": [
-        "aws",
-        "cloud",
-        "architecture",
-        "serverless"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -275,6 +355,648 @@
       "featured": false
     },
     {
+      "name": "claude-code-artifacts",
+      "description": "Pre-built library with subagents, hooks, commands, system prompts",
+      "install": "alex-feel/claude-code-artifacts-public",
+      "repo": "alex-feel/claude-code-artifacts-public",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "artifacts",
+        "subagents",
+        "hooks"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-code-toolbox",
+      "description": "Automated environment configuration with cross-platform setup",
+      "install": "alex-feel/claude-code-toolbox",
+      "repo": "alex-feel/claude-code-toolbox",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "toolbox",
+        "environment",
+        "configuration"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-codepro",
+      "description": "Professional dev environment with spec-driven workflow and cross-session memory",
+      "install": "maxritter/claude-codepro",
+      "repo": "maxritter/claude-codepro",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "professional",
+        "workflow",
+        "memory"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-d3js-skill",
+      "description": "D3.js visualization skill for creating interactive data visualizations",
+      "install": "chrisvoncsefalvay/claude-d3js-skill",
+      "repo": "chrisvoncsefalvay/claude-d3js-skill",
+      "path": "",
+      "category": "data",
+      "tags": [
+        "d3",
+        "visualization",
+        "charts",
+        "javascript"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-insane-guide",
+      "description": "Comprehensive French-language guide covering Memory, Commands, MCP",
+      "install": "ThibautMelen/claude-insane-guide",
+      "repo": "ThibautMelen/claude-insane-guide",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "guide",
+        "french",
+        "tutorial"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-mem",
+      "description": "Session activity capture with AI compression for context injection",
+      "install": "thedotmack/claude-mem",
+      "repo": "thedotmack/claude-mem",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "memory",
+        "context",
+        "sessions"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-aesthetic",
+      "description": "Create aesthetically beautiful interfaces with visual hierarchy",
+      "install": "mrgoonie/claudekit-skills/skills/aesthetic",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/aesthetic",
+      "category": "design",
+      "tags": [
+        "design",
+        "ui",
+        "aesthetics",
+        "visual"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-ai-multimodal",
+      "description": "Process multimedia using Google Gemini API - audio, image, video",
+      "install": "mrgoonie/claudekit-skills/skills/ai-multimodal",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/ai-multimodal",
+      "category": "data",
+      "tags": [
+        "gemini",
+        "multimodal",
+        "audio",
+        "video"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-better-auth",
+      "description": "TypeScript auth framework with OAuth, 2FA, passkeys, multi-tenancy",
+      "install": "mrgoonie/claudekit-skills/skills/better-auth",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/better-auth",
+      "category": "development",
+      "tags": [
+        "auth",
+        "oauth",
+        "2fa",
+        "passkeys"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-chrome-devtools",
+      "description": "Browser automation with Puppeteer for screenshots, network monitoring",
+      "install": "mrgoonie/claudekit-skills/skills/chrome-devtools",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/chrome-devtools",
+      "category": "testing",
+      "tags": [
+        "puppeteer",
+        "automation",
+        "browser",
+        "devtools"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-code-review",
+      "description": "Review code feedback with verification before claims",
+      "install": "mrgoonie/claudekit-skills/skills/code-review",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/code-review",
+      "category": "development",
+      "tags": [
+        "code-review",
+        "verification",
+        "quality"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-collision-zone-thinking",
+      "description": "Force unrelated concepts together to discover emergent properties",
+      "install": "mrgoonie/claudekit-skills/skills/problem-solving/collision-zone-thinking",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/problem-solving/collision-zone-thinking",
+      "category": "productivity",
+      "tags": [
+        "problem-solving",
+        "creativity",
+        "thinking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-databases",
+      "description": "MongoDB and PostgreSQL - schema design, queries, migrations",
+      "install": "mrgoonie/claudekit-skills/skills/databases",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/databases",
+      "category": "data",
+      "tags": [
+        "mongodb",
+        "postgresql",
+        "database",
+        "schema"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-defense-in-depth",
+      "description": "Validate at every data layer with entry validation",
+      "install": "mrgoonie/claudekit-skills/skills/debugging/defense-in-depth",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/debugging/defense-in-depth",
+      "category": "development",
+      "tags": [
+        "debugging",
+        "validation",
+        "security"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-devops",
+      "description": "Deploy on Cloudflare, Docker, GCP with serverless and CI/CD",
+      "install": "mrgoonie/claudekit-skills/skills/devops",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/devops",
+      "category": "development",
+      "tags": [
+        "devops",
+        "cloudflare",
+        "docker",
+        "gcp",
+        "ci-cd"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-docs-seeker",
+      "description": "Intelligent documentation discovery using llms.txt standard",
+      "install": "mrgoonie/claudekit-skills/skills/docs-seeker",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/docs-seeker",
+      "category": "productivity",
+      "tags": [
+        "documentation",
+        "discovery",
+        "llms-txt"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-docx",
+      "description": "Create and edit Word documents with tracked changes",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/docx",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/docx",
+      "category": "documents",
+      "tags": [
+        "docx",
+        "word",
+        "documents"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-frontend-development",
+      "description": "React/TypeScript patterns with Suspense, lazy loading, TanStack Router",
+      "install": "mrgoonie/claudekit-skills/skills/frontend-development",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/frontend-development",
+      "category": "development",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript",
+        "tanstack"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-google-adk-python",
+      "description": "Google Agent Development Kit for AI agents with multi-agent orchestration",
+      "install": "mrgoonie/claudekit-skills/skills/google-adk-python",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/google-adk-python",
+      "category": "data",
+      "tags": [
+        "google",
+        "adk",
+        "agents",
+        "ai"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-inversion-exercise",
+      "description": "Flip core assumptions to reveal hidden constraints",
+      "install": "mrgoonie/claudekit-skills/skills/problem-solving/inversion-exercise",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/problem-solving/inversion-exercise",
+      "category": "productivity",
+      "tags": [
+        "problem-solving",
+        "inversion",
+        "thinking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-mcp-builder",
+      "description": "Build MCP servers in Python (FastMCP) or TypeScript",
+      "install": "mrgoonie/claudekit-skills/skills/mcp-builder",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/mcp-builder",
+      "category": "development",
+      "tags": [
+        "mcp",
+        "fastmcp",
+        "typescript",
+        "python"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-mcp-management",
+      "description": "Manage MCP servers - discover, analyze, execute tools",
+      "install": "mrgoonie/claudekit-skills/skills/mcp-management",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/mcp-management",
+      "category": "development",
+      "tags": [
+        "mcp",
+        "management",
+        "tools",
+        "servers"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-media-processing",
+      "description": "Process multimedia with FFmpeg and ImageMagick",
+      "install": "mrgoonie/claudekit-skills/skills/media-processing",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/media-processing",
+      "category": "productivity",
+      "tags": [
+        "ffmpeg",
+        "imagemagick",
+        "media",
+        "processing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-meta-pattern-recognition",
+      "description": "Spot patterns across 3+ domains to extract universal principles",
+      "install": "mrgoonie/claudekit-skills/skills/problem-solving/meta-pattern-recognition",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/problem-solving/meta-pattern-recognition",
+      "category": "productivity",
+      "tags": [
+        "problem-solving",
+        "patterns",
+        "thinking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-pdf",
+      "description": "Extract text/tables, create PDFs, merge/split documents",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/pdf",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/pdf",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "documents",
+        "extraction"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-pptx",
+      "description": "Create PowerPoint presentations with layouts and animations",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/pptx",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/pptx",
+      "category": "documents",
+      "tags": [
+        "pptx",
+        "powerpoint",
+        "presentations"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-repomix",
+      "description": "Package repositories into single AI-friendly files",
+      "install": "mrgoonie/claudekit-skills/skills/repomix",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/repomix",
+      "category": "productivity",
+      "tags": [
+        "repomix",
+        "packaging",
+        "ai",
+        "analysis"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-root-cause-tracing",
+      "description": "Trace bugs backward through call stacks to find triggers",
+      "install": "mrgoonie/claudekit-skills/skills/debugging/root-cause-tracing",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/debugging/root-cause-tracing",
+      "category": "development",
+      "tags": [
+        "debugging",
+        "root-cause",
+        "tracing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-sequential-thinking",
+      "description": "Systematic step-by-step reasoning for complex problems",
+      "install": "mrgoonie/claudekit-skills/skills/sequential-thinking",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/sequential-thinking",
+      "category": "productivity",
+      "tags": [
+        "reasoning",
+        "thinking",
+        "systematic"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-shopify",
+      "description": "Build Shopify apps and themes with GraphQL/REST APIs",
+      "install": "mrgoonie/claudekit-skills/skills/shopify",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/shopify",
+      "category": "development",
+      "tags": [
+        "shopify",
+        "ecommerce",
+        "graphql",
+        "liquid"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-skill-creator",
+      "description": "Guide for creating effective Claude Code skills",
+      "install": "mrgoonie/claudekit-skills/skills/skill-creator",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/skill-creator",
+      "category": "development",
+      "tags": [
+        "skills",
+        "creation",
+        "meta"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-systematic-debugging",
+      "description": "Four-phase framework for root cause investigation",
+      "install": "mrgoonie/claudekit-skills/skills/debugging/systematic-debugging",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/debugging/systematic-debugging",
+      "category": "development",
+      "tags": [
+        "debugging",
+        "systematic",
+        "methodology"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-ui-styling",
+      "description": "Create accessible UIs with shadcn/ui, Tailwind CSS",
+      "install": "mrgoonie/claudekit-skills/skills/ui-styling",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/ui-styling",
+      "category": "design",
+      "tags": [
+        "shadcn",
+        "tailwind",
+        "ui",
+        "accessibility"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-web-frameworks",
+      "description": "Build full-stack apps with Next.js, Turborepo, RemixIcon",
+      "install": "mrgoonie/claudekit-skills/skills/web-frameworks",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/web-frameworks",
+      "category": "development",
+      "tags": [
+        "nextjs",
+        "turborepo",
+        "monorepo",
+        "fullstack"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-xlsx",
+      "description": "Build spreadsheets with formulas and financial modeling",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/xlsx",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/xlsx",
+      "category": "documents",
+      "tags": [
+        "xlsx",
+        "excel",
+        "spreadsheets"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudepro-directory",
+      "description": "Searchable collection of pre-built configurations and MCP servers",
+      "install": "JSONbored/claudepro-directory",
+      "repo": "JSONbored/claudepro-directory",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "directory",
+        "configurations",
+        "mcp"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "cli-tools-installer",
+      "description": "Auto-install missing CLI tools as needed",
+      "install": "netresearch/claude-code-marketplace/skills/cli-tools",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/cli-tools",
+      "category": "development",
+      "tags": [
+        "cli",
+        "tools",
+        "installer"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "clone-website",
+      "description": "Clone and recreate website designs with modern frameworks",
+      "install": "julianromli/ai-skills/clone-website",
+      "repo": "julianromli/ai-skills",
+      "path": "clone-website",
+      "category": "development",
+      "tags": [
+        "web",
+        "clone",
+        "frontend",
+        "design"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "coach-skill",
+      "description": "Self-improving learning system with friction detection",
+      "install": "netresearch/claude-code-marketplace/skills/coach",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/coach",
+      "category": "productivity",
+      "tags": [
+        "learning",
+        "coaching",
+        "improvement"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "code-reviewer",
       "description": "Comprehensive code review with security and performance analysis",
       "install": "julianromli/ai-skills/code-reviewer",
@@ -286,6 +1008,39 @@
         "quality",
         "security",
         "best-practices"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "coderunner-sandbox",
+      "description": "Secure local sandbox to run LLM-generated code using Apple containers",
+      "install": "instavm/coderunner",
+      "repo": "instavm/coderunner",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "sandbox",
+        "security",
+        "apple",
+        "containers"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "codex-skill",
+      "description": "Non-interactive automation mode using OpenAI Codex",
+      "install": "feiskyer/claude-code-settings/plugins/codex-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "plugins/codex-skill",
+      "category": "development",
+      "tags": [
+        "codex",
+        "automation",
+        "openai"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -309,7 +1064,7 @@
     },
     {
       "name": "comprehensive-testing",
-      "description": "Complete testing strategy covering unit, integration, E2E, and property testing",
+      "description": "Complete testing strategy covering unit, integration, E2E",
       "install": "obra/superpowers/comprehensive-testing",
       "repo": "obra/superpowers",
       "path": "comprehensive-testing",
@@ -325,34 +1080,16 @@
       "featured": false
     },
     {
-      "name": "cypress-testing",
-      "description": "Cypress E2E testing patterns",
-      "install": "cypress-io/claude-skills/cypress-testing",
-      "repo": "cypress-io/claude-skills",
-      "path": "cypress-testing",
-      "category": "testing",
+      "name": "continuous-claude",
+      "description": "Toolkit preserving session state using hooks and file-based handoffs",
+      "install": "parcadei/Continuous-Claude",
+      "repo": "parcadei/Continuous-Claude",
+      "path": "",
+      "category": "development",
       "tags": [
-        "cypress",
-        "e2e",
-        "testing",
-        "automation"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "d3-visualization",
-      "description": "D3.js data visualization",
-      "install": "d3/claude-skills/d3-visualization",
-      "repo": "d3/claude-skills",
-      "path": "d3-visualization",
-      "category": "data",
-      "tags": [
-        "d3",
-        "visualization",
-        "charts",
-        "svg"
+        "sessions",
+        "state",
+        "handoffs"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -370,6 +1107,23 @@
         "analysis",
         "insights",
         "visualization"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "data-ml-engineer",
+      "description": "Machine learning model development and deployment",
+      "install": "alirezarezvani/claude-skills/data/ml-engineer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/ml-engineer",
+      "category": "data",
+      "tags": [
+        "ml",
+        "machine-learning",
+        "models",
+        "training"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -461,6 +1215,23 @@
       "featured": false
     },
     {
+      "name": "design-system-creator",
+      "description": "Build comprehensive design systems",
+      "install": "alirezarezvani/claude-skills/design/system-creator",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/system-creator",
+      "category": "design",
+      "tags": [
+        "design-system",
+        "components",
+        "tokens",
+        "guidelines"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "design-ui-designer",
       "description": "Create intuitive user interface designs",
       "install": "alirezarezvani/claude-skills/design/ui-designer",
@@ -495,17 +1266,32 @@
       "featured": false
     },
     {
-      "name": "django-web",
-      "description": "Django web application development",
-      "install": "django/claude-skills/django-web",
-      "repo": "django/claude-skills",
-      "path": "django-web",
+      "name": "developer-kit-java",
+      "description": "Java/Spring Boot patterns starter toolkit for skills and agents",
+      "install": "giuseppe-trisciuoglio/developer-kit",
+      "repo": "giuseppe-trisciuoglio/developer-kit",
+      "path": "",
       "category": "development",
       "tags": [
-        "django",
-        "python",
-        "web",
-        "orm"
+        "java",
+        "spring-boot",
+        "patterns"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "description": "Enables concurrent subagent workflows for parallel processing",
+      "install": "obra/superpowers/dispatching-parallel-agents",
+      "repo": "obra/superpowers",
+      "path": "dispatching-parallel-agents",
+      "category": "development",
+      "tags": [
+        "subagents",
+        "parallel",
+        "orchestration"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -524,23 +1310,6 @@
         "coauthoring"
       ],
       "source": "Anthropic Official",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "docker-expert",
-      "description": "Docker containerization and orchestration",
-      "install": "docker/claude-skills/docker-expert",
-      "repo": "docker/claude-skills",
-      "path": "docker-expert",
-      "category": "development",
-      "tags": [
-        "docker",
-        "containers",
-        "kubernetes",
-        "devops"
-      ],
-      "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
@@ -579,25 +1348,8 @@
       "featured": false
     },
     {
-      "name": "elasticsearch-search",
-      "description": "Elasticsearch indexing and search",
-      "install": "elastic/claude-skills/elasticsearch-search",
-      "repo": "elastic/claude-skills",
-      "path": "elasticsearch-search",
-      "category": "data",
-      "tags": [
-        "elasticsearch",
-        "search",
-        "indexing",
-        "analytics"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
       "name": "elegant-architecture",
-      "description": "Clean architecture design with strict 200-line file limits. Enforces modular design",
+      "description": "Clean architecture design with strict 200-line file limits",
       "install": "obra/superpowers/elegant-architecture",
       "repo": "obra/superpowers",
       "path": "elegant-architecture",
@@ -605,8 +1357,24 @@
       "tags": [
         "architecture",
         "clean-code",
-        "modular",
-        "design-patterns"
+        "modular"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "engineering-api-designer",
+      "description": "Design RESTful and GraphQL APIs with best practices",
+      "install": "alirezarezvani/claude-skills/engineering/api-designer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/api-designer",
+      "category": "development",
+      "tags": [
+        "api",
+        "rest",
+        "graphql",
+        "design"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -681,51 +1449,50 @@
       "featured": false
     },
     {
-      "name": "express-api",
-      "description": "Express.js REST API development",
-      "install": "expressjs/claude-skills/express-api",
-      "repo": "expressjs/claude-skills",
-      "path": "express-api",
+      "name": "enterprise-readiness",
+      "description": "OpenSSF security assessment and compliance",
+      "install": "netresearch/claude-code-marketplace/skills/enterprise-readiness",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/enterprise-readiness",
       "category": "development",
       "tags": [
-        "express",
-        "nodejs",
-        "api",
-        "rest"
+        "openssf",
+        "security",
+        "compliance",
+        "enterprise"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "fastapi-backend",
-      "description": "FastAPI backend development patterns",
-      "install": "tiangolo/claude-skills/fastapi-backend",
-      "repo": "tiangolo/claude-skills",
-      "path": "fastapi-backend",
-      "category": "development",
+      "name": "executing-plans",
+      "description": "Batch execution with human checkpoints for implementation",
+      "install": "obra/superpowers/executing-plans",
+      "repo": "obra/superpowers",
+      "path": "executing-plans",
+      "category": "productivity",
       "tags": [
-        "fastapi",
-        "python",
-        "api",
-        "async"
+        "execution",
+        "workflow",
+        "automation"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "figma-to-code",
-      "description": "Convert Figma designs to code",
-      "install": "figma/claude-skills/figma-to-code",
-      "repo": "figma/claude-skills",
-      "path": "figma-to-code",
-      "category": "design",
+      "name": "ffuf-web-fuzzing",
+      "description": "Web fuzzing with ffuf for security testing - directories, files, subdomains",
+      "install": "jthack/ffuf_claude_skill",
+      "repo": "jthack/ffuf_claude_skill",
+      "path": "",
+      "category": "development",
       "tags": [
-        "figma",
-        "design-to-code",
-        "ui",
-        "conversion"
+        "security",
+        "fuzzing",
+        "ffuf",
+        "pentesting"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -749,34 +1516,17 @@
       "featured": false
     },
     {
-      "name": "flutter-app",
-      "description": "Flutter cross-platform app development",
-      "install": "flutter/claude-skills/flutter-app",
-      "repo": "flutter/claude-skills",
-      "path": "flutter-app",
+      "name": "finishing-a-development-branch",
+      "description": "Merge/PR decision workflow for completing branches",
+      "install": "obra/superpowers/finishing-a-development-branch",
+      "repo": "obra/superpowers",
+      "path": "finishing-a-development-branch",
       "category": "development",
       "tags": [
-        "flutter",
-        "dart",
-        "mobile",
-        "cross-platform"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "framer-motion",
-      "description": "Framer Motion animation patterns",
-      "install": "framer/claude-skills/framer-motion",
-      "repo": "framer/claude-skills",
-      "path": "framer-motion",
-      "category": "design",
-      "tags": [
-        "framer",
-        "motion",
-        "animation",
-        "react"
+        "git",
+        "merge",
+        "pr",
+        "workflow"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -834,68 +1584,64 @@
       "featured": false
     },
     {
-      "name": "git-commit-smart",
-      "description": "Generate meaningful conventional commit messages",
-      "install": "anthropics/prompt-eng-interactive-tutorial/skills/git-commit-smart",
-      "repo": "anthropics/prompt-eng-interactive-tutorial",
-      "path": "skills/git-commit-smart",
+      "name": "git-workflow",
+      "description": "Git branching strategies and Conventional Commits",
+      "install": "netresearch/claude-code-marketplace/skills/git-workflow",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/git-workflow",
       "category": "development",
       "tags": [
         "git",
-        "commits",
-        "conventional",
-        "automation"
+        "branching",
+        "conventional-commits"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "github-actions",
-      "description": "GitHub Actions CI/CD workflows",
-      "install": "github/claude-skills/github-actions",
-      "repo": "github/claude-skills",
-      "path": "github-actions",
+      "name": "github-project",
+      "description": "GitHub repository setup and platform features",
+      "install": "netresearch/claude-code-marketplace/skills/github-project",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/github-project",
       "category": "development",
       "tags": [
-        "github-actions",
-        "ci-cd",
-        "automation",
-        "workflows"
+        "github",
+        "repository",
+        "setup"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "golang-expert",
-      "description": "Go programming best practices and patterns",
-      "install": "golang/claude-skills/golang-expert",
-      "repo": "golang/claude-skills",
-      "path": "golang-expert",
+      "name": "go-development",
+      "description": "Production-grade Go development patterns",
+      "install": "netresearch/claude-code-marketplace/skills/go-development",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/go-development",
       "category": "development",
       "tags": [
         "go",
         "golang",
-        "backend",
-        "concurrency"
+        "patterns"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "graphql-designer",
-      "description": "GraphQL schema design and resolver patterns",
-      "install": "graphql/claude-skills/graphql-designer",
-      "repo": "graphql/claude-skills",
-      "path": "graphql-designer",
-      "category": "development",
+      "name": "grok-skill",
+      "description": "Route Twitter/X prompts to Grok-4 Live Search",
+      "install": "mikedemarais/grok-skill",
+      "repo": "mikedemarais/grok-skill",
+      "path": "",
+      "category": "productivity",
       "tags": [
-        "graphql",
-        "api",
-        "schema",
-        "resolvers"
+        "grok",
+        "twitter",
+        "search"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -918,51 +1664,220 @@
       "featured": false
     },
     {
-      "name": "jest-unit-tests",
-      "description": "Jest unit testing best practices",
-      "install": "jestjs/claude-skills/jest-unit-tests",
-      "repo": "jestjs/claude-skills",
-      "path": "jest-unit-tests",
-      "category": "testing",
+      "name": "jira-integration",
+      "description": "Jira API operations, wiki markup, and workflow automation",
+      "install": "netresearch/claude-code-marketplace/skills/jira-integration",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/jira-integration",
+      "category": "productivity",
       "tags": [
-        "jest",
-        "unit-tests",
-        "testing",
-        "mocking"
+        "jira",
+        "api",
+        "workflow",
+        "automation"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "kubernetes-ops",
-      "description": "Kubernetes deployment and operations",
-      "install": "kubernetes/claude-skills/kubernetes-ops",
-      "repo": "kubernetes/claude-skills",
-      "path": "kubernetes-ops",
+      "name": "kiro-skill",
+      "description": "Interactive feature development: Requirements -> Design -> Tasks -> Execute",
+      "install": "feiskyer/claude-code-settings/skills/kiro-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "skills/kiro-skill",
       "category": "development",
       "tags": [
-        "kubernetes",
-        "k8s",
-        "devops",
-        "orchestration"
+        "workflow",
+        "feature",
+        "development"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "langchain-agent",
-      "description": "LangChain agent and chain development",
-      "install": "langchain-ai/claude-skills/langchain-agent",
-      "repo": "langchain-ai/claude-skills",
-      "path": "langchain-agent",
-      "category": "data",
+      "name": "ln-100-documents-pipeline",
+      "description": "Top orchestrator for complete documentation with Linear MCP",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-100-documents-pipeline",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-100-documents-pipeline",
+      "category": "documents",
       "tags": [
-        "langchain",
-        "agents",
-        "llm",
-        "ai"
+        "documentation",
+        "orchestrator",
+        "linear",
+        "agile"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-200-scope-decomposer",
+      "description": "Full decomposition orchestrator for Agile planning",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-200-scope-decomposer",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-200-scope-decomposer",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "planning",
+        "decomposition",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-210-epic-coordinator",
+      "description": "Epic creation and management for Agile workflows",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-210-epic-coordinator",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-210-epic-coordinator",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "epic",
+        "planning",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-220-story-coordinator",
+      "description": "Story operations coordinator for Agile teams",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-220-story-coordinator",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-220-story-coordinator",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "stories",
+        "planning",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-300-task-coordinator",
+      "description": "Task decomposition coordinator for development",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-300-task-coordinator",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-300-task-coordinator",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "tasks",
+        "decomposition",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-400-story-pipeline",
+      "description": "Complete story workflow orchestrator for Agile",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-400-story-pipeline",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-400-story-pipeline",
+      "category": "development",
+      "tags": [
+        "agile",
+        "workflow",
+        "pipeline",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-500-story-quality-gate",
+      "description": "Story quality validation coordinator with gates",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-500-story-quality-gate",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-500-story-quality-gate",
+      "category": "testing",
+      "tags": [
+        "quality",
+        "validation",
+        "gates",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-501-code-quality-checker",
+      "description": "Code quality analysis and linting",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-501-code-quality-checker",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-501-code-quality-checker",
+      "category": "development",
+      "tags": [
+        "quality",
+        "linting",
+        "analysis",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-620-codebase-auditor",
+      "description": "Comprehensive codebase audit coordinator",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-620-codebase-auditor",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-620-codebase-auditor",
+      "category": "development",
+      "tags": [
+        "audit",
+        "codebase",
+        "analysis",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-621-security-auditor",
+      "description": "Security vulnerability scanning for codebases",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-621-security-auditor",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-621-security-auditor",
+      "category": "development",
+      "tags": [
+        "security",
+        "audit",
+        "vulnerabilities",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-630-test-auditor",
+      "description": "Test suite quality coordinator and analysis",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-630-test-auditor",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-630-test-auditor",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "audit",
+        "quality",
+        "linear"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1071,68 +1986,146 @@
       "featured": false
     },
     {
-      "name": "mongodb-expert",
-      "description": "MongoDB schema design and queries",
-      "install": "mongodb/claude-skills/mongodb-expert",
-      "repo": "mongodb/claude-skills",
-      "path": "mongodb-expert",
-      "category": "data",
-      "tags": [
-        "mongodb",
-        "nosql",
-        "database",
-        "aggregation"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "nestjs-backend",
-      "description": "NestJS enterprise backend patterns",
-      "install": "nestjs/claude-skills/nestjs-backend",
-      "repo": "nestjs/claude-skills",
-      "path": "nestjs-backend",
+      "name": "n8n-code-javascript",
+      "description": "JavaScript coding in n8n Code nodes with data access patterns",
+      "install": "czlonkowski/n8n-skills/skills/n8n-code-javascript",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-code-javascript",
       "category": "development",
       "tags": [
-        "nestjs",
-        "typescript",
-        "backend",
-        "enterprise"
+        "n8n",
+        "javascript",
+        "code"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "nextjs-app",
-      "description": "Next.js application development patterns",
-      "install": "vercel/ai-skills/nextjs-app",
-      "repo": "vercel/ai-skills",
-      "path": "nextjs-app",
+      "name": "n8n-code-python",
+      "description": "Python coding in n8n Code nodes with standard library usage",
+      "install": "czlonkowski/n8n-skills/skills/n8n-code-python",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-code-python",
       "category": "development",
       "tags": [
-        "nextjs",
-        "react",
-        "fullstack",
-        "vercel"
+        "n8n",
+        "python",
+        "code"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "openai-integration",
-      "description": "OpenAI API integration patterns",
-      "install": "openai/claude-skills/openai-integration",
-      "repo": "openai/claude-skills",
-      "path": "openai-integration",
-      "category": "data",
+      "name": "n8n-expression-syntax",
+      "description": "n8n expression syntax with $json, $node, $now, $env variables",
+      "install": "czlonkowski/n8n-skills/skills/n8n-expression-syntax",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-expression-syntax",
+      "category": "development",
       "tags": [
-        "openai",
-        "gpt",
-        "embeddings",
-        "ai"
+        "n8n",
+        "automation",
+        "expressions",
+        "workflow"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "n8n-node-configuration",
+      "description": "Operation-aware n8n node configuration guidance",
+      "install": "czlonkowski/n8n-skills/skills/n8n-node-configuration",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-node-configuration",
+      "category": "development",
+      "tags": [
+        "n8n",
+        "configuration",
+        "nodes"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "n8n-validation-expert",
+      "description": "Interpret validation errors and troubleshoot n8n workflows",
+      "install": "czlonkowski/n8n-skills/skills/n8n-validation-expert",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-validation-expert",
+      "category": "development",
+      "tags": [
+        "n8n",
+        "validation",
+        "troubleshooting"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "n8n-workflow-patterns",
+      "description": "5 proven architectural patterns for n8n workflows",
+      "install": "czlonkowski/n8n-skills/skills/n8n-workflow-patterns",
+      "repo": "czlonkowski/n8n-skills",
+      "path": "skills/n8n-workflow-patterns",
+      "category": "development",
+      "tags": [
+        "n8n",
+        "patterns",
+        "architecture",
+        "workflow"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "nanobanana-skill",
+      "description": "Generate or edit images using Google Gemini API",
+      "install": "feiskyer/claude-code-settings/plugins/nanobanana-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "plugins/nanobanana-skill",
+      "category": "design",
+      "tags": [
+        "gemini",
+        "images",
+        "generation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "odin-claude-plugin",
+      "description": "Outline-driven development as a Claude Code plugin",
+      "install": "OutlineDriven/odin-claude-plugin",
+      "repo": "OutlineDriven/odin-claude-plugin",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "outline",
+        "plugin",
+        "development"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "outline-driven-development",
+      "description": "Beyond specs or vibes - AST analysis and Modern CLI Tools",
+      "install": "OutlineDriven/outline-driven-development",
+      "repo": "OutlineDriven/outline-driven-development",
+      "path": "",
+      "category": "development",
+      "tags": [
+        "outline",
+        "ast",
+        "cli"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1172,34 +2165,33 @@
       "featured": false
     },
     {
-      "name": "pinecone-vectors",
-      "description": "Pinecone vector database operations",
-      "install": "pinecone-io/claude-skills/pinecone-vectors",
-      "repo": "pinecone-io/claude-skills",
-      "path": "pinecone-vectors",
+      "name": "pg-aiguide",
+      "description": "MCP server providing PostgreSQL skills and documentation",
+      "install": "timescale/pg-aiguide",
+      "repo": "timescale/pg-aiguide",
+      "path": "",
       "category": "data",
       "tags": [
-        "pinecone",
-        "vectors",
-        "embeddings",
-        "search"
+        "postgresql",
+        "mcp",
+        "database"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "playwright-automation",
-      "description": "Browser automation and testing with Playwright",
-      "install": "anthropics/prompt-eng-interactive-tutorial/skills/playwright-automation",
-      "repo": "anthropics/prompt-eng-interactive-tutorial",
-      "path": "skills/playwright-automation",
-      "category": "testing",
+      "name": "php-modernization",
+      "description": "PHP 8.x modernization and type safety",
+      "install": "netresearch/claude-code-marketplace/skills/php-modernization",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/php-modernization",
+      "category": "development",
       "tags": [
-        "playwright",
-        "automation",
-        "browser",
-        "e2e"
+        "php",
+        "modernization",
+        "php8",
+        "types"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1219,23 +2211,6 @@
         "slides"
       ],
       "source": "Anthropic Official",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "prisma-orm",
-      "description": "Prisma ORM schema design and queries",
-      "install": "prisma/claude-skills/prisma-orm",
-      "repo": "prisma/claude-skills",
-      "path": "prisma-orm",
-      "category": "data",
-      "tags": [
-        "prisma",
-        "orm",
-        "database",
-        "typescript"
-      ],
-      "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
@@ -1268,6 +2243,23 @@
         "analytics",
         "kpis",
         "data"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "product-prd-writer",
+      "description": "Write comprehensive product requirement documents",
+      "install": "alirezarezvani/claude-skills/product/prd-writer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/prd-writer",
+      "category": "product",
+      "tags": [
+        "prd",
+        "requirements",
+        "product",
+        "documentation"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1308,23 +2300,6 @@
       "featured": false
     },
     {
-      "name": "project-health-auditor",
-      "description": "Comprehensive codebase health analysis",
-      "install": "anthropics/prompt-eng-interactive-tutorial/skills/project-health-auditor",
-      "repo": "anthropics/prompt-eng-interactive-tutorial",
-      "path": "skills/project-health-auditor",
-      "category": "development",
-      "tags": [
-        "audit",
-        "health",
-        "quality",
-        "analysis"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
       "name": "prompter",
       "description": "Craft effective prompts for AI interactions",
       "install": "julianromli/ai-skills/prompter",
@@ -1341,51 +2316,32 @@
       "featured": false
     },
     {
-      "name": "python-best-practices",
-      "description": "Python coding standards and best practices",
-      "install": "python-engineer/claude-skills/python-best-practices",
-      "repo": "python-engineer/claude-skills",
-      "path": "python-best-practices",
+      "name": "rails-dev-skills",
+      "description": "Ruby on Rails development skills with RSpec testing",
+      "install": "alec-c4/claude-skills-rails-dev",
+      "repo": "alec-c4/claude-skills-rails-dev",
+      "path": "",
       "category": "development",
       "tags": [
-        "python",
-        "best-practices",
-        "pep8",
-        "typing"
+        "rails",
+        "ruby",
+        "rspec"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "react-component",
-      "description": "Generate React components with best practices",
-      "install": "steipete/claude-code-skills/react-component",
-      "repo": "steipete/claude-code-skills",
-      "path": "react-component",
+      "name": "receiving-code-review",
+      "description": "Handles feedback incorporation from code reviews",
+      "install": "obra/superpowers/receiving-code-review",
+      "repo": "obra/superpowers",
+      "path": "receiving-code-review",
       "category": "development",
       "tags": [
-        "react",
-        "component",
-        "frontend",
-        "typescript"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "redis-caching",
-      "description": "Redis caching and data structure patterns",
-      "install": "redis/claude-skills/redis-caching",
-      "repo": "redis/claude-skills",
-      "path": "redis-caching",
-      "category": "data",
-      "tags": [
-        "redis",
-        "caching",
-        "pub-sub",
-        "data-structures"
+        "code-review",
+        "feedback",
+        "improvement"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1408,51 +2364,50 @@
       "featured": false
     },
     {
-      "name": "rust-project",
-      "description": "Modern Rust project architecture with workspace patterns",
-      "install": "anthropics/prompt-eng-interactive-tutorial/skills/rust-project",
-      "repo": "anthropics/prompt-eng-interactive-tutorial",
-      "path": "skills/rust-project",
+      "name": "requesting-code-review",
+      "description": "Pre-review checklist and validation before code review",
+      "install": "obra/superpowers/requesting-code-review",
+      "repo": "obra/superpowers",
+      "path": "requesting-code-review",
       "category": "development",
       "tags": [
-        "rust",
-        "project",
-        "cargo",
-        "workspace"
+        "code-review",
+        "checklist",
+        "validation"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "scientific-skills",
-      "description": "Scientific computing and research skills for Claude",
-      "install": "K-Dense-AI/claude-scientific-skills",
-      "repo": "K-Dense-AI/claude-scientific-skills",
-      "path": "",
-      "category": "data",
+      "name": "security-audit-php",
+      "description": "OWASP security audit patterns for PHP applications",
+      "install": "netresearch/claude-code-marketplace/skills/security-audit",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/security-audit",
+      "category": "development",
       "tags": [
-        "science",
-        "research",
-        "computing",
-        "analysis"
+        "security",
+        "owasp",
+        "php",
+        "audit"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "sentry-monitoring",
-      "description": "Sentry error tracking and monitoring",
-      "install": "getsentry/claude-skills/sentry-monitoring",
-      "repo": "getsentry/claude-skills",
-      "path": "sentry-monitoring",
+      "name": "security-auditor",
+      "description": "Security vulnerability scanning and remediation",
+      "install": "julianromli/ai-skills/security-auditor",
+      "repo": "julianromli/ai-skills",
+      "path": "security-auditor",
       "category": "development",
       "tags": [
-        "sentry",
-        "monitoring",
-        "errors",
-        "observability"
+        "security",
+        "audit",
+        "vulnerabilities",
+        "owasp"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1476,6 +2431,22 @@
       "featured": false
     },
     {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "install": "yusufkaraaslan/Skill_Seekers",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "slack-gif-creator",
       "description": "Create animated GIFs for Slack",
       "install": "anthropics/skills/slack-gif-creator",
@@ -1493,151 +2464,16 @@
       "featured": false
     },
     {
-      "name": "storybook-docs",
-      "description": "Storybook component documentation",
-      "install": "storybookjs/claude-skills/storybook-docs",
-      "repo": "storybookjs/claude-skills",
-      "path": "storybook-docs",
-      "category": "documents",
-      "tags": [
-        "storybook",
-        "documentation",
-        "components",
-        "design-system"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "stripe-payments",
-      "description": "Stripe payment integration patterns",
-      "install": "stripe/claude-skills/stripe-payments",
-      "repo": "stripe/claude-skills",
-      "path": "stripe-payments",
+      "name": "spec-kit-skill",
+      "description": "GitHub Spec-Kit integration for spec-driven development",
+      "install": "feiskyer/claude-code-settings/skills/spec-kit-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "skills/spec-kit-skill",
       "category": "development",
       "tags": [
-        "stripe",
-        "payments",
-        "subscriptions",
-        "checkout"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "supabase-fullstack",
-      "description": "Supabase backend and auth integration",
-      "install": "supabase/claude-skills/supabase-fullstack",
-      "repo": "supabase/claude-skills",
-      "path": "supabase-fullstack",
-      "category": "development",
-      "tags": [
-        "supabase",
-        "postgres",
-        "auth",
-        "realtime"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "svelte-kit",
-      "description": "SvelteKit application development",
-      "install": "sveltejs/claude-skills/svelte-kit",
-      "repo": "sveltejs/claude-skills",
-      "path": "svelte-kit",
-      "category": "development",
-      "tags": [
-        "svelte",
-        "sveltekit",
-        "frontend",
-        "ssr"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "swift-ios",
-      "description": "iOS development with Swift and SwiftUI",
-      "install": "steipete/claude-code-skills/swift-ios",
-      "repo": "steipete/claude-code-skills",
-      "path": "swift-ios",
-      "category": "development",
-      "tags": [
-        "ios",
-        "swift",
-        "swiftui",
-        "mobile"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "systematic-debugging",
-      "description": "Four-phase debugging framework for any technical issue. Prevents random fix attempts",
-      "install": "obra/superpowers/systematic-debugging",
-      "repo": "obra/superpowers",
-      "path": "systematic-debugging",
-      "category": "development",
-      "tags": [
-        "debugging",
-        "troubleshooting",
-        "methodology"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "tailwind-designer",
-      "description": "Tailwind CSS design and styling patterns",
-      "install": "tailwindlabs/claude-skills/tailwind-designer",
-      "repo": "tailwindlabs/claude-skills",
-      "path": "tailwind-designer",
-      "category": "design",
-      "tags": [
-        "tailwind",
-        "css",
-        "styling",
-        "design"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "terraform-infra",
-      "description": "Terraform infrastructure as code",
-      "install": "hashicorp/claude-skills/terraform-infra",
-      "repo": "hashicorp/claude-skills",
-      "path": "terraform-infra",
-      "category": "development",
-      "tags": [
-        "terraform",
-        "iac",
-        "infrastructure",
-        "cloud"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "test-driven-development",
-      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
-      "install": "obra/superpowers/test-driven-development",
-      "repo": "obra/superpowers",
-      "path": "test-driven-development",
-      "category": "testing",
-      "tags": [
-        "tdd",
-        "testing",
-        "red-green-refactor"
+        "spec",
+        "driven",
+        "github"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1661,34 +2497,80 @@
       "featured": false
     },
     {
-      "name": "three-js-3d",
-      "description": "Three.js 3D graphics development",
-      "install": "mrdoob/claude-skills/three-js-3d",
-      "repo": "mrdoob/claude-skills",
-      "path": "three-js-3d",
-      "category": "design",
+      "name": "typo3-ddev-setup",
+      "description": "Automate DDEV environment setup for TYPO3",
+      "install": "netresearch/claude-code-marketplace/skills/typo3-ddev-setup",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/typo3-ddev-setup",
+      "category": "development",
       "tags": [
-        "threejs",
-        "3d",
-        "webgl",
-        "graphics"
+        "typo3",
+        "ddev",
+        "environment"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "typescript-project",
-      "description": "Modern TypeScript project architecture guide for 2025",
-      "install": "anthropics/prompt-eng-interactive-tutorial/skills/typescript-project",
-      "repo": "anthropics/prompt-eng-interactive-tutorial",
-      "path": "skills/typescript-project",
+      "name": "typo3-documentation",
+      "description": "Create TYPO3 extension documentation",
+      "install": "netresearch/claude-code-marketplace/skills/typo3-documentation",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/typo3-documentation",
+      "category": "documents",
+      "tags": [
+        "typo3",
+        "documentation",
+        "cms"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "typo3-extension-upgrade",
+      "description": "Systematic extension upgrades to newer TYPO3 LTS versions",
+      "install": "netresearch/claude-code-marketplace/skills/typo3-extension-upgrade",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/typo3-extension-upgrade",
       "category": "development",
       "tags": [
-        "typescript",
-        "project",
-        "architecture",
-        "setup"
+        "typo3",
+        "upgrade",
+        "lts"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "typo3-testing",
+      "description": "Manage TYPO3 extension tests",
+      "install": "netresearch/claude-code-marketplace/skills/typo3-testing",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/typo3-testing",
+      "category": "testing",
+      "tags": [
+        "typo3",
+        "testing",
+        "cms"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ubrowser",
+      "description": "Browser automation optimized for speed and cost efficiency",
+      "install": "Lulzx/ubrowser",
+      "repo": "Lulzx/ubrowser",
+      "path": "",
+      "category": "testing",
+      "tags": [
+        "browser",
+        "automation",
+        "speed"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1711,34 +2593,32 @@
       "featured": false
     },
     {
-      "name": "vitest-modern",
-      "description": "Vitest modern testing framework",
-      "install": "vitest-dev/claude-skills/vitest-modern",
-      "repo": "vitest-dev/claude-skills",
-      "path": "vitest-modern",
-      "category": "testing",
+      "name": "universal-dev-skills",
+      "description": "Skills from universal documentation standards for dev best practices",
+      "install": "AsiaOstrich/universal-dev-skills",
+      "repo": "AsiaOstrich/universal-dev-skills",
+      "path": "",
+      "category": "development",
       "tags": [
-        "vitest",
-        "testing",
-        "vite",
-        "typescript"
+        "standards",
+        "best-practices",
+        "universal"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "vue-component",
-      "description": "Vue.js component development patterns",
-      "install": "vuejs/claude-skills/vue-component",
-      "repo": "vuejs/claude-skills",
-      "path": "vue-component",
+      "name": "verification-before-completion",
+      "description": "Confirms fixes are effective before marking complete",
+      "install": "obra/superpowers/verification-before-completion",
+      "repo": "obra/superpowers",
+      "path": "verification-before-completion",
       "category": "development",
       "tags": [
-        "vue",
-        "component",
-        "frontend",
-        "composition-api"
+        "verification",
+        "quality",
+        "testing"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1762,6 +2642,23 @@
       "featured": false
     },
     {
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "install": "alonw0/web-asset-generator",
+      "repo": "alonw0/web-asset-generator",
+      "path": "",
+      "category": "design",
+      "tags": [
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "webapp-testing",
       "description": "Web application testing with Playwright",
       "install": "anthropics/skills/webapp-testing",
@@ -1780,7 +2677,7 @@
     },
     {
       "name": "writing-plans",
-      "description": "Structured approach to writing implementation plans and technical documents",
+      "description": "Creates detailed implementation plans with bite-sized tasks",
       "install": "obra/superpowers/writing-plans",
       "repo": "obra/superpowers",
       "path": "writing-plans",
@@ -1789,6 +2686,22 @@
         "planning",
         "documentation",
         "writing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "writing-skills",
+      "description": "Guidance for creating new Claude Code skills following best practices",
+      "install": "obra/superpowers/writing-skills",
+      "repo": "obra/superpowers",
+      "path": "writing-skills",
+      "category": "development",
+      "tags": [
+        "skills",
+        "creation",
+        "meta"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -1808,6 +2721,22 @@
         "data"
       ],
       "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "youtube-transcribe-skill",
+      "description": "Extract subtitles and transcripts from YouTube videos",
+      "install": "feiskyer/claude-code-settings/plugins/youtube-transcribe-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "plugins/youtube-transcribe-skill",
+      "category": "productivity",
+      "tags": [
+        "youtube",
+        "transcription",
+        "subtitles"
+      ],
+      "source": "Community Skills",
       "stars": 0,
       "featured": false
     }

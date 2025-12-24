@@ -1,6 +1,6 @@
 {
   "category": "productivity",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "skills": [
     {
       "name": "awesome-claude-skills",
@@ -37,6 +37,200 @@
       "featured": false
     },
     {
+      "name": "claude-insane-guide",
+      "description": "Comprehensive French-language guide covering Memory, Commands, MCP",
+      "install": "ThibautMelen/claude-insane-guide",
+      "repo": "ThibautMelen/claude-insane-guide",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "guide",
+        "french",
+        "tutorial"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-mem",
+      "description": "Session activity capture with AI compression for context injection",
+      "install": "thedotmack/claude-mem",
+      "repo": "thedotmack/claude-mem",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "memory",
+        "context",
+        "sessions"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-collision-zone-thinking",
+      "description": "Force unrelated concepts together to discover emergent properties",
+      "install": "mrgoonie/claudekit-skills/skills/problem-solving/collision-zone-thinking",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/problem-solving/collision-zone-thinking",
+      "category": "productivity",
+      "tags": [
+        "problem-solving",
+        "creativity",
+        "thinking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-docs-seeker",
+      "description": "Intelligent documentation discovery using llms.txt standard",
+      "install": "mrgoonie/claudekit-skills/skills/docs-seeker",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/docs-seeker",
+      "category": "productivity",
+      "tags": [
+        "documentation",
+        "discovery",
+        "llms-txt"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-inversion-exercise",
+      "description": "Flip core assumptions to reveal hidden constraints",
+      "install": "mrgoonie/claudekit-skills/skills/problem-solving/inversion-exercise",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/problem-solving/inversion-exercise",
+      "category": "productivity",
+      "tags": [
+        "problem-solving",
+        "inversion",
+        "thinking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-media-processing",
+      "description": "Process multimedia with FFmpeg and ImageMagick",
+      "install": "mrgoonie/claudekit-skills/skills/media-processing",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/media-processing",
+      "category": "productivity",
+      "tags": [
+        "ffmpeg",
+        "imagemagick",
+        "media",
+        "processing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-meta-pattern-recognition",
+      "description": "Spot patterns across 3+ domains to extract universal principles",
+      "install": "mrgoonie/claudekit-skills/skills/problem-solving/meta-pattern-recognition",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/problem-solving/meta-pattern-recognition",
+      "category": "productivity",
+      "tags": [
+        "problem-solving",
+        "patterns",
+        "thinking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-repomix",
+      "description": "Package repositories into single AI-friendly files",
+      "install": "mrgoonie/claudekit-skills/skills/repomix",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/repomix",
+      "category": "productivity",
+      "tags": [
+        "repomix",
+        "packaging",
+        "ai",
+        "analysis"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-sequential-thinking",
+      "description": "Systematic step-by-step reasoning for complex problems",
+      "install": "mrgoonie/claudekit-skills/skills/sequential-thinking",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/sequential-thinking",
+      "category": "productivity",
+      "tags": [
+        "reasoning",
+        "thinking",
+        "systematic"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudepro-directory",
+      "description": "Searchable collection of pre-built configurations and MCP servers",
+      "install": "JSONbored/claudepro-directory",
+      "repo": "JSONbored/claudepro-directory",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "directory",
+        "configurations",
+        "mcp"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "coach-skill",
+      "description": "Self-improving learning system with friction detection",
+      "install": "netresearch/claude-code-marketplace/skills/coach",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/coach",
+      "category": "productivity",
+      "tags": [
+        "learning",
+        "coaching",
+        "improvement"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "executing-plans",
+      "description": "Batch execution with human checkpoints for implementation",
+      "install": "obra/superpowers/executing-plans",
+      "repo": "obra/superpowers",
+      "path": "executing-plans",
+      "category": "productivity",
+      "tags": [
+        "execution",
+        "workflow",
+        "automation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "file-organizer",
       "description": "Organize and structure project files intelligently",
       "install": "julianromli/ai-skills/file-organizer",
@@ -48,6 +242,22 @@
         "files",
         "structure",
         "cleanup"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "grok-skill",
+      "description": "Route Twitter/X prompts to Grok-4 Live Search",
+      "install": "mikedemarais/grok-skill",
+      "repo": "mikedemarais/grok-skill",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "grok",
+        "twitter",
+        "search"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -70,6 +280,91 @@
       "featured": false
     },
     {
+      "name": "jira-integration",
+      "description": "Jira API operations, wiki markup, and workflow automation",
+      "install": "netresearch/claude-code-marketplace/skills/jira-integration",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/jira-integration",
+      "category": "productivity",
+      "tags": [
+        "jira",
+        "api",
+        "workflow",
+        "automation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-200-scope-decomposer",
+      "description": "Full decomposition orchestrator for Agile planning",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-200-scope-decomposer",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-200-scope-decomposer",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "planning",
+        "decomposition",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-210-epic-coordinator",
+      "description": "Epic creation and management for Agile workflows",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-210-epic-coordinator",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-210-epic-coordinator",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "epic",
+        "planning",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-220-story-coordinator",
+      "description": "Story operations coordinator for Agile teams",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-220-story-coordinator",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-220-story-coordinator",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "stories",
+        "planning",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ln-300-task-coordinator",
+      "description": "Task decomposition coordinator for development",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-300-task-coordinator",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-300-task-coordinator",
+      "category": "productivity",
+      "tags": [
+        "agile",
+        "tasks",
+        "decomposition",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "prompter",
       "description": "Craft effective prompts for AI interactions",
       "install": "julianromli/ai-skills/prompter",
@@ -80,6 +375,22 @@
         "prompts",
         "ai",
         "prompt-engineering"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "skill-seekers",
+      "description": "Convert docs, repos, PDFs into Claude Skills with conflict detection",
+      "install": "yusufkaraaslan/Skill_Seekers",
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "path": "",
+      "category": "productivity",
+      "tags": [
+        "converter",
+        "skills",
+        "documentation"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -104,7 +415,7 @@
     },
     {
       "name": "writing-plans",
-      "description": "Structured approach to writing implementation plans and technical documents",
+      "description": "Creates detailed implementation plans with bite-sized tasks",
       "install": "obra/superpowers/writing-plans",
       "repo": "obra/superpowers",
       "path": "writing-plans",
@@ -117,7 +428,23 @@
       "source": "Community Skills",
       "stars": 0,
       "featured": false
+    },
+    {
+      "name": "youtube-transcribe-skill",
+      "description": "Extract subtitles and transcripts from YouTube videos",
+      "install": "feiskyer/claude-code-settings/plugins/youtube-transcribe-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "plugins/youtube-transcribe-skill",
+      "category": "productivity",
+      "tags": [
+        "youtube",
+        "transcription",
+        "subtitles"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
     }
   ],
-  "count": 7
+  "count": 27
 }

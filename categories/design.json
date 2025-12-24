@@ -1,24 +1,7 @@
 {
   "category": "design",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "skills": [
-    {
-      "name": "design-system-creator",
-      "description": "Build comprehensive design systems",
-      "install": "alirezarezvani/claude-skills/design/system-creator",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "design/system-creator",
-      "category": "design",
-      "tags": [
-        "design-system",
-        "components",
-        "tokens",
-        "guidelines"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": true
-    },
     {
       "name": "algorithmic-art",
       "description": "Generate algorithmic and generative art",
@@ -71,6 +54,40 @@
       "featured": false
     },
     {
+      "name": "claudekit-aesthetic",
+      "description": "Create aesthetically beautiful interfaces with visual hierarchy",
+      "install": "mrgoonie/claudekit-skills/skills/aesthetic",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/aesthetic",
+      "category": "design",
+      "tags": [
+        "design",
+        "ui",
+        "aesthetics",
+        "visual"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-ui-styling",
+      "description": "Create accessible UIs with shadcn/ui, Tailwind CSS",
+      "install": "mrgoonie/claudekit-skills/skills/ui-styling",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/ui-styling",
+      "category": "design",
+      "tags": [
+        "shadcn",
+        "tailwind",
+        "ui",
+        "accessibility"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "design-accessibility-expert",
       "description": "Ensure designs meet accessibility standards (WCAG)",
       "install": "alirezarezvani/claude-skills/design/accessibility-expert",
@@ -105,6 +122,23 @@
       "featured": false
     },
     {
+      "name": "design-system-creator",
+      "description": "Build comprehensive design systems",
+      "install": "alirezarezvani/claude-skills/design/system-creator",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/system-creator",
+      "category": "design",
+      "tags": [
+        "design-system",
+        "components",
+        "tokens",
+        "guidelines"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "design-ui-designer",
       "description": "Create intuitive user interface designs",
       "install": "alirezarezvani/claude-skills/design/ui-designer",
@@ -133,40 +167,6 @@
         "research",
         "usability",
         "testing"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "figma-to-code",
-      "description": "Convert Figma designs to code",
-      "install": "figma/claude-skills/figma-to-code",
-      "repo": "figma/claude-skills",
-      "path": "figma-to-code",
-      "category": "design",
-      "tags": [
-        "figma",
-        "design-to-code",
-        "ui",
-        "conversion"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "framer-motion",
-      "description": "Framer Motion animation patterns",
-      "install": "framer/claude-skills/framer-motion",
-      "repo": "framer/claude-skills",
-      "path": "framer-motion",
-      "category": "design",
-      "tags": [
-        "framer",
-        "motion",
-        "animation",
-        "react"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -224,17 +224,16 @@
       "featured": false
     },
     {
-      "name": "tailwind-designer",
-      "description": "Tailwind CSS design and styling patterns",
-      "install": "tailwindlabs/claude-skills/tailwind-designer",
-      "repo": "tailwindlabs/claude-skills",
-      "path": "tailwind-designer",
+      "name": "nanobanana-skill",
+      "description": "Generate or edit images using Google Gemini API",
+      "install": "feiskyer/claude-code-settings/plugins/nanobanana-skill",
+      "repo": "feiskyer/claude-code-settings",
+      "path": "plugins/nanobanana-skill",
       "category": "design",
       "tags": [
-        "tailwind",
-        "css",
-        "styling",
-        "design"
+        "gemini",
+        "images",
+        "generation"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -258,17 +257,17 @@
       "featured": false
     },
     {
-      "name": "three-js-3d",
-      "description": "Three.js 3D graphics development",
-      "install": "mrdoob/claude-skills/three-js-3d",
-      "repo": "mrdoob/claude-skills",
-      "path": "three-js-3d",
+      "name": "web-asset-generator",
+      "description": "Generate favicons, app icons, social media images with WCAG compliance",
+      "install": "alonw0/web-asset-generator",
+      "repo": "alonw0/web-asset-generator",
+      "path": "",
       "category": "design",
       "tags": [
-        "threejs",
-        "3d",
-        "webgl",
-        "graphics"
+        "favicon",
+        "icons",
+        "pwa",
+        "assets"
       ],
       "source": "Community Skills",
       "stars": 0,

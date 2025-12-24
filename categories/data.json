@@ -1,36 +1,103 @@
 {
   "category": "data",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "skills": [
     {
-      "name": "data-ml-engineer",
-      "description": "Machine learning model development and deployment",
-      "install": "alirezarezvani/claude-skills/data/ml-engineer",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "data/ml-engineer",
+      "name": "claude-scientific-skills",
+      "description": "125+ scientific skills for bioinformatics, cheminformatics, clinical research, ML",
+      "install": "K-Dense-AI/claude-scientific-skills",
+      "repo": "K-Dense-AI/claude-scientific-skills",
+      "path": "",
       "category": "data",
       "tags": [
-        "ml",
-        "machine-learning",
-        "models",
-        "training"
+        "science",
+        "research",
+        "bioinformatics",
+        "ml"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": true
     },
     {
-      "name": "d3-visualization",
-      "description": "D3.js data visualization",
-      "install": "d3/claude-skills/d3-visualization",
-      "repo": "d3/claude-skills",
-      "path": "d3-visualization",
+      "name": "ai-research-skills",
+      "description": "Library of AI research and engineering skills for multiple AI models",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "data",
+      "tags": [
+        "ai",
+        "research",
+        "engineering"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claude-d3js-skill",
+      "description": "D3.js visualization skill for creating interactive data visualizations",
+      "install": "chrisvoncsefalvay/claude-d3js-skill",
+      "repo": "chrisvoncsefalvay/claude-d3js-skill",
+      "path": "",
       "category": "data",
       "tags": [
         "d3",
         "visualization",
         "charts",
-        "svg"
+        "javascript"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-ai-multimodal",
+      "description": "Process multimedia using Google Gemini API - audio, image, video",
+      "install": "mrgoonie/claudekit-skills/skills/ai-multimodal",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/ai-multimodal",
+      "category": "data",
+      "tags": [
+        "gemini",
+        "multimodal",
+        "audio",
+        "video"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-databases",
+      "description": "MongoDB and PostgreSQL - schema design, queries, migrations",
+      "install": "mrgoonie/claudekit-skills/skills/databases",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/databases",
+      "category": "data",
+      "tags": [
+        "mongodb",
+        "postgresql",
+        "database",
+        "schema"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-google-adk-python",
+      "description": "Google Agent Development Kit for AI agents with multi-agent orchestration",
+      "install": "mrgoonie/claudekit-skills/skills/google-adk-python",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/google-adk-python",
+      "category": "data",
+      "tags": [
+        "google",
+        "adk",
+        "agents",
+        "ai"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -48,6 +115,23 @@
         "analysis",
         "insights",
         "visualization"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "data-ml-engineer",
+      "description": "Machine learning model development and deployment",
+      "install": "alirezarezvani/claude-skills/data/ml-engineer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/ml-engineer",
+      "category": "data",
+      "tags": [
+        "ml",
+        "machine-learning",
+        "models",
+        "training"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -105,23 +189,6 @@
       "featured": false
     },
     {
-      "name": "elasticsearch-search",
-      "description": "Elasticsearch indexing and search",
-      "install": "elastic/claude-skills/elasticsearch-search",
-      "repo": "elastic/claude-skills",
-      "path": "elasticsearch-search",
-      "category": "data",
-      "tags": [
-        "elasticsearch",
-        "search",
-        "indexing",
-        "analytics"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
       "name": "engineering-database-modeler",
       "description": "Design efficient database schemas and models",
       "install": "alirezarezvani/claude-skills/engineering/database-modeler",
@@ -139,124 +206,21 @@
       "featured": false
     },
     {
-      "name": "langchain-agent",
-      "description": "LangChain agent and chain development",
-      "install": "langchain-ai/claude-skills/langchain-agent",
-      "repo": "langchain-ai/claude-skills",
-      "path": "langchain-agent",
-      "category": "data",
-      "tags": [
-        "langchain",
-        "agents",
-        "llm",
-        "ai"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "mongodb-expert",
-      "description": "MongoDB schema design and queries",
-      "install": "mongodb/claude-skills/mongodb-expert",
-      "repo": "mongodb/claude-skills",
-      "path": "mongodb-expert",
-      "category": "data",
-      "tags": [
-        "mongodb",
-        "nosql",
-        "database",
-        "aggregation"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "openai-integration",
-      "description": "OpenAI API integration patterns",
-      "install": "openai/claude-skills/openai-integration",
-      "repo": "openai/claude-skills",
-      "path": "openai-integration",
-      "category": "data",
-      "tags": [
-        "openai",
-        "gpt",
-        "embeddings",
-        "ai"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "pinecone-vectors",
-      "description": "Pinecone vector database operations",
-      "install": "pinecone-io/claude-skills/pinecone-vectors",
-      "repo": "pinecone-io/claude-skills",
-      "path": "pinecone-vectors",
-      "category": "data",
-      "tags": [
-        "pinecone",
-        "vectors",
-        "embeddings",
-        "search"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "prisma-orm",
-      "description": "Prisma ORM schema design and queries",
-      "install": "prisma/claude-skills/prisma-orm",
-      "repo": "prisma/claude-skills",
-      "path": "prisma-orm",
-      "category": "data",
-      "tags": [
-        "prisma",
-        "orm",
-        "database",
-        "typescript"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "redis-caching",
-      "description": "Redis caching and data structure patterns",
-      "install": "redis/claude-skills/redis-caching",
-      "repo": "redis/claude-skills",
-      "path": "redis-caching",
-      "category": "data",
-      "tags": [
-        "redis",
-        "caching",
-        "pub-sub",
-        "data-structures"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "scientific-skills",
-      "description": "Scientific computing and research skills for Claude",
-      "install": "K-Dense-AI/claude-scientific-skills",
-      "repo": "K-Dense-AI/claude-scientific-skills",
+      "name": "pg-aiguide",
+      "description": "MCP server providing PostgreSQL skills and documentation",
+      "install": "timescale/pg-aiguide",
+      "repo": "timescale/pg-aiguide",
       "path": "",
       "category": "data",
       "tags": [
-        "science",
-        "research",
-        "computing",
-        "analysis"
+        "postgresql",
+        "mcp",
+        "database"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     }
   ],
-  "count": 15
+  "count": 13
 }

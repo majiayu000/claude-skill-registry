@@ -1,9 +1,9 @@
 {
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "categories": [
     {
       "name": "data",
-      "count": 15
+      "count": 13
     },
     {
       "name": "design",
@@ -11,11 +11,11 @@
     },
     {
       "name": "development",
-      "count": 43
+      "count": 74
     },
     {
       "name": "documents",
-      "count": 7
+      "count": 13
     },
     {
       "name": "marketing",
@@ -27,11 +27,11 @@
     },
     {
       "name": "productivity",
-      "count": 7
+      "count": 27
     },
     {
       "name": "testing",
-      "count": 9
+      "count": 12
     }
   ]
 }

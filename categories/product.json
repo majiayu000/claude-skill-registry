@@ -1,24 +1,7 @@
 {
   "category": "product",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "skills": [
-    {
-      "name": "product-prd-writer",
-      "description": "Write comprehensive product requirement documents",
-      "install": "alirezarezvani/claude-skills/product/prd-writer",
-      "repo": "alirezarezvani/claude-skills",
-      "path": "product/prd-writer",
-      "category": "product",
-      "tags": [
-        "prd",
-        "requirements",
-        "product",
-        "documentation"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": true
-    },
     {
       "name": "product-feature-specifier",
       "description": "Write detailed feature specifications",
@@ -48,6 +31,23 @@
         "analytics",
         "kpis",
         "data"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "product-prd-writer",
+      "description": "Write comprehensive product requirement documents",
+      "install": "alirezarezvani/claude-skills/product/prd-writer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/prd-writer",
+      "category": "product",
+      "tags": [
+        "prd",
+        "requirements",
+        "product",
+        "documentation"
       ],
       "source": "Community Skills",
       "stars": 0,

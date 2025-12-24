@@ -1,10 +1,78 @@
 {
   "category": "testing",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "skills": [
     {
+      "name": "ios-simulator-skill",
+      "description": "iOS Simulator automation for testing with semantic navigation and Xcode integration",
+      "install": "conorluddy/ios-simulator-skill",
+      "repo": "conorluddy/ios-simulator-skill",
+      "path": "",
+      "category": "testing",
+      "tags": [
+        "ios",
+        "simulator",
+        "xcode",
+        "testing",
+        "mobile"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Browser automation with Playwright - Claude writes and executes custom scripts",
+      "install": "lackeyjb/playwright-skill",
+      "repo": "lackeyjb/playwright-skill",
+      "path": "",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "test-driven-development",
+      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
+      "install": "obra/superpowers/test-driven-development",
+      "repo": "obra/superpowers",
+      "path": "test-driven-development",
+      "category": "testing",
+      "tags": [
+        "tdd",
+        "testing",
+        "red-green-refactor"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "claudekit-chrome-devtools",
+      "description": "Browser automation with Puppeteer for screenshots, network monitoring",
+      "install": "mrgoonie/claudekit-skills/skills/chrome-devtools",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/chrome-devtools",
+      "category": "testing",
+      "tags": [
+        "puppeteer",
+        "automation",
+        "browser",
+        "devtools"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "comprehensive-testing",
-      "description": "Complete testing strategy covering unit, integration, E2E, and property testing",
+      "description": "Complete testing strategy covering unit, integration, E2E",
       "install": "obra/superpowers/comprehensive-testing",
       "repo": "obra/superpowers",
       "path": "comprehensive-testing",
@@ -14,23 +82,6 @@
         "unit-tests",
         "integration",
         "e2e"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "cypress-testing",
-      "description": "Cypress E2E testing patterns",
-      "install": "cypress-io/claude-skills/cypress-testing",
-      "repo": "cypress-io/claude-skills",
-      "path": "cypress-testing",
-      "category": "testing",
-      "tags": [
-        "cypress",
-        "e2e",
-        "testing",
-        "automation"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -54,50 +105,66 @@
       "featured": false
     },
     {
-      "name": "jest-unit-tests",
-      "description": "Jest unit testing best practices",
-      "install": "jestjs/claude-skills/jest-unit-tests",
-      "repo": "jestjs/claude-skills",
-      "path": "jest-unit-tests",
+      "name": "ln-500-story-quality-gate",
+      "description": "Story quality validation coordinator with gates",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-500-story-quality-gate",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-500-story-quality-gate",
       "category": "testing",
       "tags": [
-        "jest",
-        "unit-tests",
-        "testing",
-        "mocking"
+        "quality",
+        "validation",
+        "gates",
+        "linear"
       ],
       "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
     {
-      "name": "playwright-automation",
-      "description": "Browser automation and testing with Playwright",
-      "install": "anthropics/prompt-eng-interactive-tutorial/skills/playwright-automation",
-      "repo": "anthropics/prompt-eng-interactive-tutorial",
-      "path": "skills/playwright-automation",
+      "name": "ln-630-test-auditor",
+      "description": "Test suite quality coordinator and analysis",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-630-test-auditor",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-630-test-auditor",
       "category": "testing",
       "tags": [
-        "playwright",
-        "automation",
+        "testing",
+        "audit",
+        "quality",
+        "linear"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "typo3-testing",
+      "description": "Manage TYPO3 extension tests",
+      "install": "netresearch/claude-code-marketplace/skills/typo3-testing",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/typo3-testing",
+      "category": "testing",
+      "tags": [
+        "typo3",
+        "testing",
+        "cms"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ubrowser",
+      "description": "Browser automation optimized for speed and cost efficiency",
+      "install": "Lulzx/ubrowser",
+      "repo": "Lulzx/ubrowser",
+      "path": "",
+      "category": "testing",
+      "tags": [
         "browser",
-        "e2e"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "test-driven-development",
-      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
-      "install": "obra/superpowers/test-driven-development",
-      "repo": "obra/superpowers",
-      "path": "test-driven-development",
-      "category": "testing",
-      "tags": [
-        "tdd",
-        "testing",
-        "red-green-refactor"
+        "automation",
+        "speed"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -114,23 +181,6 @@
         "unit-tests",
         "testing",
         "coverage"
-      ],
-      "source": "Community Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "vitest-modern",
-      "description": "Vitest modern testing framework",
-      "install": "vitest-dev/claude-skills/vitest-modern",
-      "repo": "vitest-dev/claude-skills",
-      "path": "vitest-modern",
-      "category": "testing",
-      "tags": [
-        "vitest",
-        "testing",
-        "vite",
-        "typescript"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -154,5 +204,5 @@
       "featured": false
     }
   ],
-  "count": 9
+  "count": 12
 }

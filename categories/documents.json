@@ -1,7 +1,87 @@
 {
   "category": "documents",
-  "updated_at": "2025-12-24T09:26:52.029342Z",
+  "updated_at": "2025-12-24T10:42:00.503069Z",
   "skills": [
+    {
+      "name": "agents-md-generator",
+      "description": "Generate AGENTS.md documentation for repositories",
+      "install": "netresearch/claude-code-marketplace/skills/agents-md-generator",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/agents-md-generator",
+      "category": "documents",
+      "tags": [
+        "agents",
+        "documentation",
+        "generator"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-docx",
+      "description": "Create and edit Word documents with tracked changes",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/docx",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/docx",
+      "category": "documents",
+      "tags": [
+        "docx",
+        "word",
+        "documents"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-pdf",
+      "description": "Extract text/tables, create PDFs, merge/split documents",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/pdf",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/pdf",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "documents",
+        "extraction"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-pptx",
+      "description": "Create PowerPoint presentations with layouts and animations",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/pptx",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/pptx",
+      "category": "documents",
+      "tags": [
+        "pptx",
+        "powerpoint",
+        "presentations"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "claudekit-xlsx",
+      "description": "Build spreadsheets with formulas and financial modeling",
+      "install": "mrgoonie/claudekit-skills/skills/document-skills/xlsx",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "skills/document-skills/xlsx",
+      "category": "documents",
+      "tags": [
+        "xlsx",
+        "excel",
+        "spreadsheets"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
     {
       "name": "doc-coauthoring",
       "description": "Collaborative document co-authoring",
@@ -53,6 +133,23 @@
       "featured": false
     },
     {
+      "name": "ln-100-documents-pipeline",
+      "description": "Top orchestrator for complete documentation with Linear MCP",
+      "install": "levnikolaevich/claude-code-skills/skills/ln-100-documents-pipeline",
+      "repo": "levnikolaevich/claude-code-skills",
+      "path": "skills/ln-100-documents-pipeline",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "orchestrator",
+        "linear",
+        "agile"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "pdf",
       "description": "PDF document creation, reading, and manipulation",
       "install": "anthropics/skills/pdf",
@@ -86,17 +183,16 @@
       "featured": false
     },
     {
-      "name": "storybook-docs",
-      "description": "Storybook component documentation",
-      "install": "storybookjs/claude-skills/storybook-docs",
-      "repo": "storybookjs/claude-skills",
-      "path": "storybook-docs",
+      "name": "typo3-documentation",
+      "description": "Create TYPO3 extension documentation",
+      "install": "netresearch/claude-code-marketplace/skills/typo3-documentation",
+      "repo": "netresearch/claude-code-marketplace",
+      "path": "skills/typo3-documentation",
       "category": "documents",
       "tags": [
-        "storybook",
+        "typo3",
         "documentation",
-        "components",
-        "design-system"
+        "cms"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -120,5 +216,5 @@
       "featured": false
     }
   ],
-  "count": 7
+  "count": 13
 }

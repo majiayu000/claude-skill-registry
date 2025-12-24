@@ -1,9 +1,9 @@
 {
   "category": "productivity",
-  "updated_at": "2025-12-24T09:00:39.945615Z",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
   "skills": [
     {
-      "name": "claude-skills",
+      "name": "awesome-claude-skills",
       "description": "A curated list of awesome Claude Skills, resources, and tools",
       "install": "travisvn/awesome-claude-skills",
       "repo": "travisvn/awesome-claude-skills",
@@ -14,6 +14,40 @@
         "list",
         "curated",
         "resources"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "brainstorming",
+      "description": "Collaborative design refinement through Socratic dialogue for exploring ideas",
+      "install": "obra/superpowers/brainstorming",
+      "repo": "obra/superpowers",
+      "path": "brainstorming",
+      "category": "productivity",
+      "tags": [
+        "brainstorming",
+        "design",
+        "collaboration",
+        "ideation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "file-organizer",
+      "description": "Organize and structure project files intelligently",
+      "install": "julianromli/ai-skills/file-organizer",
+      "repo": "julianromli/ai-skills",
+      "path": "file-organizer",
+      "category": "productivity",
+      "tags": [
+        "organization",
+        "files",
+        "structure",
+        "cleanup"
       ],
       "source": "Community Skills",
       "stars": 0,
@@ -36,6 +70,22 @@
       "featured": false
     },
     {
+      "name": "prompter",
+      "description": "Craft effective prompts for AI interactions",
+      "install": "julianromli/ai-skills/prompter",
+      "repo": "julianromli/ai-skills",
+      "path": "prompter",
+      "category": "productivity",
+      "tags": [
+        "prompts",
+        "ai",
+        "prompt-engineering"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "slack-gif-creator",
       "description": "Create animated GIFs for Slack",
       "install": "anthropics/skills/slack-gif-creator",
@@ -51,7 +101,23 @@
       "source": "Anthropic Official",
       "stars": 0,
       "featured": false
+    },
+    {
+      "name": "writing-plans",
+      "description": "Structured approach to writing implementation plans and technical documents",
+      "install": "obra/superpowers/writing-plans",
+      "repo": "obra/superpowers",
+      "path": "writing-plans",
+      "category": "productivity",
+      "tags": [
+        "planning",
+        "documentation",
+        "writing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
     }
   ],
-  "count": 3
+  "count": 7
 }

@@ -1,0 +1,92 @@
+{
+  "category": "product",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
+  "skills": [
+    {
+      "name": "product-prd-writer",
+      "description": "Write comprehensive product requirement documents",
+      "install": "alirezarezvani/claude-skills/product/prd-writer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/prd-writer",
+      "category": "product",
+      "tags": [
+        "prd",
+        "requirements",
+        "product",
+        "documentation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "product-feature-specifier",
+      "description": "Write detailed feature specifications",
+      "install": "alirezarezvani/claude-skills/product/feature-specifier",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/feature-specifier",
+      "category": "product",
+      "tags": [
+        "features",
+        "specs",
+        "requirements",
+        "user-stories"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "product-metrics-analyst",
+      "description": "Define and analyze product metrics and KPIs",
+      "install": "alirezarezvani/claude-skills/product/metrics-analyst",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/metrics-analyst",
+      "category": "product",
+      "tags": [
+        "metrics",
+        "analytics",
+        "kpis",
+        "data"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "product-roadmap-planner",
+      "description": "Plan and prioritize product roadmaps",
+      "install": "alirezarezvani/claude-skills/product/roadmap-planner",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/roadmap-planner",
+      "category": "product",
+      "tags": [
+        "roadmap",
+        "planning",
+        "prioritization",
+        "strategy"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "product-user-researcher",
+      "description": "Conduct user research and synthesize insights",
+      "install": "alirezarezvani/claude-skills/product/user-researcher",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/user-researcher",
+      "category": "product",
+      "tags": [
+        "user-research",
+        "interviews",
+        "insights",
+        "personas"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 5
+}

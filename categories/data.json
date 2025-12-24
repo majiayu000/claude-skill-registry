@@ -1,7 +1,245 @@
 {
   "category": "data",
-  "updated_at": "2025-12-24T09:00:39.945615Z",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
   "skills": [
+    {
+      "name": "data-ml-engineer",
+      "description": "Machine learning model development and deployment",
+      "install": "alirezarezvani/claude-skills/data/ml-engineer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/ml-engineer",
+      "category": "data",
+      "tags": [
+        "ml",
+        "machine-learning",
+        "models",
+        "training"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "d3-visualization",
+      "description": "D3.js data visualization",
+      "install": "d3/claude-skills/d3-visualization",
+      "repo": "d3/claude-skills",
+      "path": "d3-visualization",
+      "category": "data",
+      "tags": [
+        "d3",
+        "visualization",
+        "charts",
+        "svg"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "data-analyst",
+      "description": "Analyze data and generate insights",
+      "install": "alirezarezvani/claude-skills/data/analyst",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/analyst",
+      "category": "data",
+      "tags": [
+        "data",
+        "analysis",
+        "insights",
+        "visualization"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "data-pipeline-builder",
+      "description": "Build ETL pipelines and data workflows",
+      "install": "alirezarezvani/claude-skills/data/pipeline-builder",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/pipeline-builder",
+      "category": "data",
+      "tags": [
+        "etl",
+        "pipeline",
+        "data-engineering",
+        "workflow"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "data-sql-expert",
+      "description": "Write optimized SQL queries and database operations",
+      "install": "alirezarezvani/claude-skills/data/sql-expert",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/sql-expert",
+      "category": "data",
+      "tags": [
+        "sql",
+        "database",
+        "queries",
+        "optimization"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "data-visualization-expert",
+      "description": "Create compelling data visualizations",
+      "install": "alirezarezvani/claude-skills/data/visualization-expert",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/visualization-expert",
+      "category": "data",
+      "tags": [
+        "visualization",
+        "charts",
+        "dashboards",
+        "d3"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "elasticsearch-search",
+      "description": "Elasticsearch indexing and search",
+      "install": "elastic/claude-skills/elasticsearch-search",
+      "repo": "elastic/claude-skills",
+      "path": "elasticsearch-search",
+      "category": "data",
+      "tags": [
+        "elasticsearch",
+        "search",
+        "indexing",
+        "analytics"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "engineering-database-modeler",
+      "description": "Design efficient database schemas and models",
+      "install": "alirezarezvani/claude-skills/engineering/database-modeler",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/database-modeler",
+      "category": "data",
+      "tags": [
+        "database",
+        "schema",
+        "modeling",
+        "sql"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "langchain-agent",
+      "description": "LangChain agent and chain development",
+      "install": "langchain-ai/claude-skills/langchain-agent",
+      "repo": "langchain-ai/claude-skills",
+      "path": "langchain-agent",
+      "category": "data",
+      "tags": [
+        "langchain",
+        "agents",
+        "llm",
+        "ai"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "mongodb-expert",
+      "description": "MongoDB schema design and queries",
+      "install": "mongodb/claude-skills/mongodb-expert",
+      "repo": "mongodb/claude-skills",
+      "path": "mongodb-expert",
+      "category": "data",
+      "tags": [
+        "mongodb",
+        "nosql",
+        "database",
+        "aggregation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "openai-integration",
+      "description": "OpenAI API integration patterns",
+      "install": "openai/claude-skills/openai-integration",
+      "repo": "openai/claude-skills",
+      "path": "openai-integration",
+      "category": "data",
+      "tags": [
+        "openai",
+        "gpt",
+        "embeddings",
+        "ai"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "pinecone-vectors",
+      "description": "Pinecone vector database operations",
+      "install": "pinecone-io/claude-skills/pinecone-vectors",
+      "repo": "pinecone-io/claude-skills",
+      "path": "pinecone-vectors",
+      "category": "data",
+      "tags": [
+        "pinecone",
+        "vectors",
+        "embeddings",
+        "search"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "prisma-orm",
+      "description": "Prisma ORM schema design and queries",
+      "install": "prisma/claude-skills/prisma-orm",
+      "repo": "prisma/claude-skills",
+      "path": "prisma-orm",
+      "category": "data",
+      "tags": [
+        "prisma",
+        "orm",
+        "database",
+        "typescript"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "redis-caching",
+      "description": "Redis caching and data structure patterns",
+      "install": "redis/claude-skills/redis-caching",
+      "repo": "redis/claude-skills",
+      "path": "redis-caching",
+      "category": "data",
+      "tags": [
+        "redis",
+        "caching",
+        "pub-sub",
+        "data-structures"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
     {
       "name": "scientific-skills",
       "description": "Scientific computing and research skills for Claude",
@@ -20,5 +258,5 @@
       "featured": false
     }
   ],
-  "count": 1
+  "count": 15
 }

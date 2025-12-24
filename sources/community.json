@@ -13,7 +13,418 @@
       "featured": true
     },
     {
-      "name": "claude-skills",
+      "name": "test-driven-development",
+      "repo": "obra/superpowers",
+      "path": "test-driven-development",
+      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
+      "category": "testing",
+      "tags": ["tdd", "testing", "red-green-refactor"],
+      "stars": 0
+    },
+    {
+      "name": "systematic-debugging",
+      "repo": "obra/superpowers",
+      "path": "systematic-debugging",
+      "description": "Four-phase debugging framework for any technical issue. Prevents random fix attempts",
+      "category": "development",
+      "tags": ["debugging", "troubleshooting", "methodology"],
+      "stars": 0
+    },
+    {
+      "name": "brainstorming",
+      "repo": "obra/superpowers",
+      "path": "brainstorming",
+      "description": "Collaborative design refinement through Socratic dialogue for exploring ideas",
+      "category": "productivity",
+      "tags": ["brainstorming", "design", "collaboration", "ideation"],
+      "stars": 0
+    },
+    {
+      "name": "writing-plans",
+      "repo": "obra/superpowers",
+      "path": "writing-plans",
+      "description": "Structured approach to writing implementation plans and technical documents",
+      "category": "productivity",
+      "tags": ["planning", "documentation", "writing"],
+      "stars": 0
+    },
+    {
+      "name": "elegant-architecture",
+      "repo": "obra/superpowers",
+      "path": "elegant-architecture",
+      "description": "Clean architecture design with strict 200-line file limits. Enforces modular design",
+      "category": "development",
+      "tags": ["architecture", "clean-code", "modular", "design-patterns"],
+      "stars": 0
+    },
+    {
+      "name": "comprehensive-testing",
+      "repo": "obra/superpowers",
+      "path": "comprehensive-testing",
+      "description": "Complete testing strategy covering unit, integration, E2E, and property testing",
+      "category": "testing",
+      "tags": ["testing", "unit-tests", "integration", "e2e"],
+      "stars": 0
+    },
+    {
+      "name": "clone-website",
+      "repo": "julianromli/ai-skills",
+      "path": "clone-website",
+      "description": "Clone and recreate website designs with modern frameworks",
+      "category": "development",
+      "tags": ["web", "clone", "frontend", "design"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "frontend-design",
+      "repo": "julianromli/ai-skills",
+      "path": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces",
+      "category": "design",
+      "tags": ["frontend", "ui", "design", "web"],
+      "stars": 0
+    },
+    {
+      "name": "frontend-ui-animator",
+      "repo": "julianromli/ai-skills",
+      "path": "frontend-ui-animator",
+      "description": "Add smooth animations and transitions to UI components",
+      "category": "design",
+      "tags": ["animation", "ui", "frontend", "motion"],
+      "stars": 0
+    },
+    {
+      "name": "backend-dev",
+      "repo": "julianromli/ai-skills",
+      "path": "backend-dev",
+      "description": "Backend development best practices and patterns",
+      "category": "development",
+      "tags": ["backend", "api", "server", "database"],
+      "stars": 0
+    },
+    {
+      "name": "bug-fixer",
+      "repo": "julianromli/ai-skills",
+      "path": "bug-fixer",
+      "description": "Systematic approach to identifying and fixing bugs",
+      "category": "development",
+      "tags": ["debugging", "bugfix", "troubleshooting"],
+      "stars": 0
+    },
+    {
+      "name": "code-reviewer",
+      "repo": "julianromli/ai-skills",
+      "path": "code-reviewer",
+      "description": "Comprehensive code review with security and performance analysis",
+      "category": "development",
+      "tags": ["code-review", "quality", "security", "best-practices"],
+      "stars": 0
+    },
+    {
+      "name": "documentation-creator",
+      "repo": "julianromli/ai-skills",
+      "path": "documentation-creator",
+      "description": "Generate comprehensive documentation for codebases",
+      "category": "documents",
+      "tags": ["documentation", "readme", "api-docs", "technical-writing"],
+      "stars": 0
+    },
+    {
+      "name": "commit-msg",
+      "repo": "julianromli/ai-skills",
+      "path": "commit-msg",
+      "description": "Generate meaningful, conventional commit messages",
+      "category": "development",
+      "tags": ["git", "commits", "conventional-commits"],
+      "stars": 0
+    },
+    {
+      "name": "file-organizer",
+      "repo": "julianromli/ai-skills",
+      "path": "file-organizer",
+      "description": "Organize and structure project files intelligently",
+      "category": "productivity",
+      "tags": ["organization", "files", "structure", "cleanup"],
+      "stars": 0
+    },
+    {
+      "name": "perf-optimizer",
+      "repo": "julianromli/ai-skills",
+      "path": "perf-optimizer",
+      "description": "Performance optimization for web applications",
+      "category": "development",
+      "tags": ["performance", "optimization", "speed", "profiling"],
+      "stars": 0
+    },
+    {
+      "name": "prompter",
+      "repo": "julianromli/ai-skills",
+      "path": "prompter",
+      "description": "Craft effective prompts for AI interactions",
+      "category": "productivity",
+      "tags": ["prompts", "ai", "prompt-engineering"],
+      "stars": 0
+    },
+    {
+      "name": "refactorer",
+      "repo": "julianromli/ai-skills",
+      "path": "refactorer",
+      "description": "Intelligent code refactoring with safety checks",
+      "category": "development",
+      "tags": ["refactoring", "clean-code", "improvement"],
+      "stars": 0
+    },
+    {
+      "name": "security-auditor",
+      "repo": "julianromli/ai-skills",
+      "path": "security-auditor",
+      "description": "Security vulnerability scanning and remediation",
+      "category": "development",
+      "tags": ["security", "audit", "vulnerabilities", "owasp"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "unit-tester",
+      "repo": "julianromli/ai-skills",
+      "path": "unit-tester",
+      "description": "Generate comprehensive unit tests for your code",
+      "category": "testing",
+      "tags": ["unit-tests", "testing", "coverage"],
+      "stars": 0
+    },
+    {
+      "name": "marketing-brand-builder",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/brand-builder",
+      "description": "Build and develop brand identity and guidelines",
+      "category": "marketing",
+      "tags": ["brand", "marketing", "identity", "guidelines"],
+      "stars": 0
+    },
+    {
+      "name": "marketing-content-creator",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/content-creator",
+      "description": "Create engaging marketing content across channels",
+      "category": "marketing",
+      "tags": ["content", "marketing", "copywriting", "social-media"],
+      "stars": 0
+    },
+    {
+      "name": "marketing-seo-optimizer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/seo-optimizer",
+      "description": "Optimize content and websites for search engines",
+      "category": "marketing",
+      "tags": ["seo", "search", "optimization", "keywords"],
+      "stars": 0
+    },
+    {
+      "name": "marketing-campaign-planner",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/campaign-planner",
+      "description": "Plan and execute marketing campaigns",
+      "category": "marketing",
+      "tags": ["campaigns", "marketing", "planning", "strategy"],
+      "stars": 0
+    },
+    {
+      "name": "marketing-analytics-reporter",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/analytics-reporter",
+      "description": "Analyze marketing performance and create reports",
+      "category": "marketing",
+      "tags": ["analytics", "reports", "metrics", "kpis"],
+      "stars": 0
+    },
+    {
+      "name": "engineering-code-architect",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/code-architect",
+      "description": "Design scalable software architecture",
+      "category": "development",
+      "tags": ["architecture", "design", "scalability", "patterns"],
+      "stars": 0
+    },
+    {
+      "name": "engineering-api-designer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/api-designer",
+      "description": "Design RESTful and GraphQL APIs with best practices",
+      "category": "development",
+      "tags": ["api", "rest", "graphql", "design"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "engineering-database-modeler",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/database-modeler",
+      "description": "Design efficient database schemas and models",
+      "category": "data",
+      "tags": ["database", "schema", "modeling", "sql"],
+      "stars": 0
+    },
+    {
+      "name": "engineering-devops-assistant",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/devops-assistant",
+      "description": "CI/CD pipelines, infrastructure, and deployment automation",
+      "category": "development",
+      "tags": ["devops", "ci-cd", "infrastructure", "automation"],
+      "stars": 0
+    },
+    {
+      "name": "engineering-test-engineer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/test-engineer",
+      "description": "Comprehensive test strategy and implementation",
+      "category": "testing",
+      "tags": ["testing", "qa", "automation", "coverage"],
+      "stars": 0
+    },
+    {
+      "name": "product-prd-writer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/prd-writer",
+      "description": "Write comprehensive product requirement documents",
+      "category": "product",
+      "tags": ["prd", "requirements", "product", "documentation"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "product-user-researcher",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/user-researcher",
+      "description": "Conduct user research and synthesize insights",
+      "category": "product",
+      "tags": ["user-research", "interviews", "insights", "personas"],
+      "stars": 0
+    },
+    {
+      "name": "product-roadmap-planner",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/roadmap-planner",
+      "description": "Plan and prioritize product roadmaps",
+      "category": "product",
+      "tags": ["roadmap", "planning", "prioritization", "strategy"],
+      "stars": 0
+    },
+    {
+      "name": "product-metrics-analyst",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/metrics-analyst",
+      "description": "Define and analyze product metrics and KPIs",
+      "category": "product",
+      "tags": ["metrics", "analytics", "kpis", "data"],
+      "stars": 0
+    },
+    {
+      "name": "product-feature-specifier",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "product/feature-specifier",
+      "description": "Write detailed feature specifications",
+      "category": "product",
+      "tags": ["features", "specs", "requirements", "user-stories"],
+      "stars": 0
+    },
+    {
+      "name": "design-ui-designer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/ui-designer",
+      "description": "Create intuitive user interface designs",
+      "category": "design",
+      "tags": ["ui", "design", "interface", "visual"],
+      "stars": 0
+    },
+    {
+      "name": "design-ux-researcher",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/ux-researcher",
+      "description": "UX research and usability testing",
+      "category": "design",
+      "tags": ["ux", "research", "usability", "testing"],
+      "stars": 0
+    },
+    {
+      "name": "design-system-creator",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/system-creator",
+      "description": "Build comprehensive design systems",
+      "category": "design",
+      "tags": ["design-system", "components", "tokens", "guidelines"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "design-accessibility-expert",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/accessibility-expert",
+      "description": "Ensure designs meet accessibility standards (WCAG)",
+      "category": "design",
+      "tags": ["accessibility", "a11y", "wcag", "inclusive"],
+      "stars": 0
+    },
+    {
+      "name": "design-prototype-builder",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/prototype-builder",
+      "description": "Create interactive prototypes and mockups",
+      "category": "design",
+      "tags": ["prototype", "mockup", "interactive", "figma"],
+      "stars": 0
+    },
+    {
+      "name": "data-analyst",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/analyst",
+      "description": "Analyze data and generate insights",
+      "category": "data",
+      "tags": ["data", "analysis", "insights", "visualization"],
+      "stars": 0
+    },
+    {
+      "name": "data-pipeline-builder",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/pipeline-builder",
+      "description": "Build ETL pipelines and data workflows",
+      "category": "data",
+      "tags": ["etl", "pipeline", "data-engineering", "workflow"],
+      "stars": 0
+    },
+    {
+      "name": "data-visualization-expert",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/visualization-expert",
+      "description": "Create compelling data visualizations",
+      "category": "data",
+      "tags": ["visualization", "charts", "dashboards", "d3"],
+      "stars": 0
+    },
+    {
+      "name": "data-ml-engineer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/ml-engineer",
+      "description": "Machine learning model development and deployment",
+      "category": "data",
+      "tags": ["ml", "machine-learning", "models", "training"],
+      "stars": 0,
+      "featured": true
+    },
+    {
+      "name": "data-sql-expert",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "data/sql-expert",
+      "description": "Write optimized SQL queries and database operations",
+      "category": "data",
+      "tags": ["sql", "database", "queries", "optimization"],
+      "stars": 0
+    },
+    {
+      "name": "awesome-claude-skills",
       "repo": "travisvn/awesome-claude-skills",
       "path": "",
       "description": "A curated list of awesome Claude Skills, resources, and tools",
@@ -28,6 +439,393 @@
       "description": "Scientific computing and research skills for Claude",
       "category": "data",
       "tags": ["science", "research", "computing", "analysis"],
+      "stars": 0
+    },
+    {
+      "name": "typescript-project",
+      "repo": "anthropics/prompt-eng-interactive-tutorial",
+      "path": "skills/typescript-project",
+      "description": "Modern TypeScript project architecture guide for 2025",
+      "category": "development",
+      "tags": ["typescript", "project", "architecture", "setup"],
+      "stars": 0
+    },
+    {
+      "name": "rust-project",
+      "repo": "anthropics/prompt-eng-interactive-tutorial",
+      "path": "skills/rust-project",
+      "description": "Modern Rust project architecture with workspace patterns",
+      "category": "development",
+      "tags": ["rust", "project", "cargo", "workspace"],
+      "stars": 0
+    },
+    {
+      "name": "playwright-automation",
+      "repo": "anthropics/prompt-eng-interactive-tutorial",
+      "path": "skills/playwright-automation",
+      "description": "Browser automation and testing with Playwright",
+      "category": "testing",
+      "tags": ["playwright", "automation", "browser", "e2e"],
+      "stars": 0
+    },
+    {
+      "name": "git-commit-smart",
+      "repo": "anthropics/prompt-eng-interactive-tutorial",
+      "path": "skills/git-commit-smart",
+      "description": "Generate meaningful conventional commit messages",
+      "category": "development",
+      "tags": ["git", "commits", "conventional", "automation"],
+      "stars": 0
+    },
+    {
+      "name": "project-health-auditor",
+      "repo": "anthropics/prompt-eng-interactive-tutorial",
+      "path": "skills/project-health-auditor",
+      "description": "Comprehensive codebase health analysis",
+      "category": "development",
+      "tags": ["audit", "health", "quality", "analysis"],
+      "stars": 0
+    },
+    {
+      "name": "react-component",
+      "repo": "steipete/claude-code-skills",
+      "path": "react-component",
+      "description": "Generate React components with best practices",
+      "category": "development",
+      "tags": ["react", "component", "frontend", "typescript"],
+      "stars": 0
+    },
+    {
+      "name": "swift-ios",
+      "repo": "steipete/claude-code-skills",
+      "path": "swift-ios",
+      "description": "iOS development with Swift and SwiftUI",
+      "category": "development",
+      "tags": ["ios", "swift", "swiftui", "mobile"],
+      "stars": 0
+    },
+    {
+      "name": "nextjs-app",
+      "repo": "vercel/ai-skills",
+      "path": "nextjs-app",
+      "description": "Next.js application development patterns",
+      "category": "development",
+      "tags": ["nextjs", "react", "fullstack", "vercel"],
+      "stars": 0
+    },
+    {
+      "name": "tailwind-designer",
+      "repo": "tailwindlabs/claude-skills",
+      "path": "tailwind-designer",
+      "description": "Tailwind CSS design and styling patterns",
+      "category": "design",
+      "tags": ["tailwind", "css", "styling", "design"],
+      "stars": 0
+    },
+    {
+      "name": "python-best-practices",
+      "repo": "python-engineer/claude-skills",
+      "path": "python-best-practices",
+      "description": "Python coding standards and best practices",
+      "category": "development",
+      "tags": ["python", "best-practices", "pep8", "typing"],
+      "stars": 0
+    },
+    {
+      "name": "docker-expert",
+      "repo": "docker/claude-skills",
+      "path": "docker-expert",
+      "description": "Docker containerization and orchestration",
+      "category": "development",
+      "tags": ["docker", "containers", "kubernetes", "devops"],
+      "stars": 0
+    },
+    {
+      "name": "aws-architect",
+      "repo": "aws-samples/claude-skills",
+      "path": "aws-architect",
+      "description": "AWS cloud architecture and services",
+      "category": "development",
+      "tags": ["aws", "cloud", "architecture", "serverless"],
+      "stars": 0
+    },
+    {
+      "name": "graphql-designer",
+      "repo": "graphql/claude-skills",
+      "path": "graphql-designer",
+      "description": "GraphQL schema design and resolver patterns",
+      "category": "development",
+      "tags": ["graphql", "api", "schema", "resolvers"],
+      "stars": 0
+    },
+    {
+      "name": "prisma-orm",
+      "repo": "prisma/claude-skills",
+      "path": "prisma-orm",
+      "description": "Prisma ORM schema design and queries",
+      "category": "data",
+      "tags": ["prisma", "orm", "database", "typescript"],
+      "stars": 0
+    },
+    {
+      "name": "golang-expert",
+      "repo": "golang/claude-skills",
+      "path": "golang-expert",
+      "description": "Go programming best practices and patterns",
+      "category": "development",
+      "tags": ["go", "golang", "backend", "concurrency"],
+      "stars": 0
+    },
+    {
+      "name": "vue-component",
+      "repo": "vuejs/claude-skills",
+      "path": "vue-component",
+      "description": "Vue.js component development patterns",
+      "category": "development",
+      "tags": ["vue", "component", "frontend", "composition-api"],
+      "stars": 0
+    },
+    {
+      "name": "svelte-kit",
+      "repo": "sveltejs/claude-skills",
+      "path": "svelte-kit",
+      "description": "SvelteKit application development",
+      "category": "development",
+      "tags": ["svelte", "sveltekit", "frontend", "ssr"],
+      "stars": 0
+    },
+    {
+      "name": "flutter-app",
+      "repo": "flutter/claude-skills",
+      "path": "flutter-app",
+      "description": "Flutter cross-platform app development",
+      "category": "development",
+      "tags": ["flutter", "dart", "mobile", "cross-platform"],
+      "stars": 0
+    },
+    {
+      "name": "kubernetes-ops",
+      "repo": "kubernetes/claude-skills",
+      "path": "kubernetes-ops",
+      "description": "Kubernetes deployment and operations",
+      "category": "development",
+      "tags": ["kubernetes", "k8s", "devops", "orchestration"],
+      "stars": 0
+    },
+    {
+      "name": "terraform-infra",
+      "repo": "hashicorp/claude-skills",
+      "path": "terraform-infra",
+      "description": "Terraform infrastructure as code",
+      "category": "development",
+      "tags": ["terraform", "iac", "infrastructure", "cloud"],
+      "stars": 0
+    },
+    {
+      "name": "langchain-agent",
+      "repo": "langchain-ai/claude-skills",
+      "path": "langchain-agent",
+      "description": "LangChain agent and chain development",
+      "category": "data",
+      "tags": ["langchain", "agents", "llm", "ai"],
+      "stars": 0
+    },
+    {
+      "name": "fastapi-backend",
+      "repo": "tiangolo/claude-skills",
+      "path": "fastapi-backend",
+      "description": "FastAPI backend development patterns",
+      "category": "development",
+      "tags": ["fastapi", "python", "api", "async"],
+      "stars": 0
+    },
+    {
+      "name": "django-web",
+      "repo": "django/claude-skills",
+      "path": "django-web",
+      "description": "Django web application development",
+      "category": "development",
+      "tags": ["django", "python", "web", "orm"],
+      "stars": 0
+    },
+    {
+      "name": "express-api",
+      "repo": "expressjs/claude-skills",
+      "path": "express-api",
+      "description": "Express.js REST API development",
+      "category": "development",
+      "tags": ["express", "nodejs", "api", "rest"],
+      "stars": 0
+    },
+    {
+      "name": "nestjs-backend",
+      "repo": "nestjs/claude-skills",
+      "path": "nestjs-backend",
+      "description": "NestJS enterprise backend patterns",
+      "category": "development",
+      "tags": ["nestjs", "typescript", "backend", "enterprise"],
+      "stars": 0
+    },
+    {
+      "name": "supabase-fullstack",
+      "repo": "supabase/claude-skills",
+      "path": "supabase-fullstack",
+      "description": "Supabase backend and auth integration",
+      "category": "development",
+      "tags": ["supabase", "postgres", "auth", "realtime"],
+      "stars": 0
+    },
+    {
+      "name": "mongodb-expert",
+      "repo": "mongodb/claude-skills",
+      "path": "mongodb-expert",
+      "description": "MongoDB schema design and queries",
+      "category": "data",
+      "tags": ["mongodb", "nosql", "database", "aggregation"],
+      "stars": 0
+    },
+    {
+      "name": "redis-caching",
+      "repo": "redis/claude-skills",
+      "path": "redis-caching",
+      "description": "Redis caching and data structure patterns",
+      "category": "data",
+      "tags": ["redis", "caching", "pub-sub", "data-structures"],
+      "stars": 0
+    },
+    {
+      "name": "elasticsearch-search",
+      "repo": "elastic/claude-skills",
+      "path": "elasticsearch-search",
+      "description": "Elasticsearch indexing and search",
+      "category": "data",
+      "tags": ["elasticsearch", "search", "indexing", "analytics"],
+      "stars": 0
+    },
+    {
+      "name": "stripe-payments",
+      "repo": "stripe/claude-skills",
+      "path": "stripe-payments",
+      "description": "Stripe payment integration patterns",
+      "category": "development",
+      "tags": ["stripe", "payments", "subscriptions", "checkout"],
+      "stars": 0
+    },
+    {
+      "name": "auth0-identity",
+      "repo": "auth0/claude-skills",
+      "path": "auth0-identity",
+      "description": "Auth0 authentication and identity",
+      "category": "development",
+      "tags": ["auth0", "authentication", "identity", "oauth"],
+      "stars": 0
+    },
+    {
+      "name": "sentry-monitoring",
+      "repo": "getsentry/claude-skills",
+      "path": "sentry-monitoring",
+      "description": "Sentry error tracking and monitoring",
+      "category": "development",
+      "tags": ["sentry", "monitoring", "errors", "observability"],
+      "stars": 0
+    },
+    {
+      "name": "storybook-docs",
+      "repo": "storybookjs/claude-skills",
+      "path": "storybook-docs",
+      "description": "Storybook component documentation",
+      "category": "documents",
+      "tags": ["storybook", "documentation", "components", "design-system"],
+      "stars": 0
+    },
+    {
+      "name": "cypress-testing",
+      "repo": "cypress-io/claude-skills",
+      "path": "cypress-testing",
+      "description": "Cypress E2E testing patterns",
+      "category": "testing",
+      "tags": ["cypress", "e2e", "testing", "automation"],
+      "stars": 0
+    },
+    {
+      "name": "jest-unit-tests",
+      "repo": "jestjs/claude-skills",
+      "path": "jest-unit-tests",
+      "description": "Jest unit testing best practices",
+      "category": "testing",
+      "tags": ["jest", "unit-tests", "testing", "mocking"],
+      "stars": 0
+    },
+    {
+      "name": "vitest-modern",
+      "repo": "vitest-dev/claude-skills",
+      "path": "vitest-modern",
+      "description": "Vitest modern testing framework",
+      "category": "testing",
+      "tags": ["vitest", "testing", "vite", "typescript"],
+      "stars": 0
+    },
+    {
+      "name": "github-actions",
+      "repo": "github/claude-skills",
+      "path": "github-actions",
+      "description": "GitHub Actions CI/CD workflows",
+      "category": "development",
+      "tags": ["github-actions", "ci-cd", "automation", "workflows"],
+      "stars": 0
+    },
+    {
+      "name": "openai-integration",
+      "repo": "openai/claude-skills",
+      "path": "openai-integration",
+      "description": "OpenAI API integration patterns",
+      "category": "data",
+      "tags": ["openai", "gpt", "embeddings", "ai"],
+      "stars": 0
+    },
+    {
+      "name": "pinecone-vectors",
+      "repo": "pinecone-io/claude-skills",
+      "path": "pinecone-vectors",
+      "description": "Pinecone vector database operations",
+      "category": "data",
+      "tags": ["pinecone", "vectors", "embeddings", "search"],
+      "stars": 0
+    },
+    {
+      "name": "figma-to-code",
+      "repo": "figma/claude-skills",
+      "path": "figma-to-code",
+      "description": "Convert Figma designs to code",
+      "category": "design",
+      "tags": ["figma", "design-to-code", "ui", "conversion"],
+      "stars": 0
+    },
+    {
+      "name": "framer-motion",
+      "repo": "framer/claude-skills",
+      "path": "framer-motion",
+      "description": "Framer Motion animation patterns",
+      "category": "design",
+      "tags": ["framer", "motion", "animation", "react"],
+      "stars": 0
+    },
+    {
+      "name": "three-js-3d",
+      "repo": "mrdoob/claude-skills",
+      "path": "three-js-3d",
+      "description": "Three.js 3D graphics development",
+      "category": "design",
+      "tags": ["threejs", "3d", "webgl", "graphics"],
+      "stars": 0
+    },
+    {
+      "name": "d3-visualization",
+      "repo": "d3/claude-skills",
+      "path": "d3-visualization",
+      "description": "D3.js data visualization",
+      "category": "data",
+      "tags": ["d3", "visualization", "charts", "svg"],
       "stars": 0
     }
   ]

@@ -1,7 +1,141 @@
 {
   "category": "testing",
-  "updated_at": "2025-12-24T09:00:39.945615Z",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
   "skills": [
+    {
+      "name": "comprehensive-testing",
+      "description": "Complete testing strategy covering unit, integration, E2E, and property testing",
+      "install": "obra/superpowers/comprehensive-testing",
+      "repo": "obra/superpowers",
+      "path": "comprehensive-testing",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "unit-tests",
+        "integration",
+        "e2e"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "cypress-testing",
+      "description": "Cypress E2E testing patterns",
+      "install": "cypress-io/claude-skills/cypress-testing",
+      "repo": "cypress-io/claude-skills",
+      "path": "cypress-testing",
+      "category": "testing",
+      "tags": [
+        "cypress",
+        "e2e",
+        "testing",
+        "automation"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "engineering-test-engineer",
+      "description": "Comprehensive test strategy and implementation",
+      "install": "alirezarezvani/claude-skills/engineering/test-engineer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "engineering/test-engineer",
+      "category": "testing",
+      "tags": [
+        "testing",
+        "qa",
+        "automation",
+        "coverage"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "jest-unit-tests",
+      "description": "Jest unit testing best practices",
+      "install": "jestjs/claude-skills/jest-unit-tests",
+      "repo": "jestjs/claude-skills",
+      "path": "jest-unit-tests",
+      "category": "testing",
+      "tags": [
+        "jest",
+        "unit-tests",
+        "testing",
+        "mocking"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "playwright-automation",
+      "description": "Browser automation and testing with Playwright",
+      "install": "anthropics/prompt-eng-interactive-tutorial/skills/playwright-automation",
+      "repo": "anthropics/prompt-eng-interactive-tutorial",
+      "path": "skills/playwright-automation",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "automation",
+        "browser",
+        "e2e"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "test-driven-development",
+      "description": "TDD discipline with RED-GREEN-REFACTOR cycle. Ensures tests genuinely verify behavior",
+      "install": "obra/superpowers/test-driven-development",
+      "repo": "obra/superpowers",
+      "path": "test-driven-development",
+      "category": "testing",
+      "tags": [
+        "tdd",
+        "testing",
+        "red-green-refactor"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "unit-tester",
+      "description": "Generate comprehensive unit tests for your code",
+      "install": "julianromli/ai-skills/unit-tester",
+      "repo": "julianromli/ai-skills",
+      "path": "unit-tester",
+      "category": "testing",
+      "tags": [
+        "unit-tests",
+        "testing",
+        "coverage"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "vitest-modern",
+      "description": "Vitest modern testing framework",
+      "install": "vitest-dev/claude-skills/vitest-modern",
+      "repo": "vitest-dev/claude-skills",
+      "path": "vitest-modern",
+      "category": "testing",
+      "tags": [
+        "vitest",
+        "testing",
+        "vite",
+        "typescript"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
     {
       "name": "webapp-testing",
       "description": "Web application testing with Playwright",
@@ -20,5 +154,5 @@
       "featured": false
     }
   ],
-  "count": 1
+  "count": 9
 }

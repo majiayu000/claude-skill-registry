@@ -1,29 +1,37 @@
 {
-  "updated_at": "2025-12-24T09:00:39.945615Z",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
   "categories": [
     {
       "name": "data",
-      "count": 1
+      "count": 15
     },
     {
       "name": "design",
-      "count": 5
+      "count": 16
     },
     {
       "name": "development",
-      "count": 4
+      "count": 43
     },
     {
       "name": "documents",
+      "count": 7
+    },
+    {
+      "name": "marketing",
+      "count": 5
+    },
+    {
+      "name": "product",
       "count": 5
     },
     {
       "name": "productivity",
-      "count": 3
+      "count": 7
     },
     {
       "name": "testing",
-      "count": 1
+      "count": 9
     }
   ]
 }

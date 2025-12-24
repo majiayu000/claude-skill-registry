@@ -1,0 +1,92 @@
+{
+  "category": "marketing",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
+  "skills": [
+    {
+      "name": "marketing-analytics-reporter",
+      "description": "Analyze marketing performance and create reports",
+      "install": "alirezarezvani/claude-skills/marketing/analytics-reporter",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/analytics-reporter",
+      "category": "marketing",
+      "tags": [
+        "analytics",
+        "reports",
+        "metrics",
+        "kpis"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "marketing-brand-builder",
+      "description": "Build and develop brand identity and guidelines",
+      "install": "alirezarezvani/claude-skills/marketing/brand-builder",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/brand-builder",
+      "category": "marketing",
+      "tags": [
+        "brand",
+        "marketing",
+        "identity",
+        "guidelines"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "marketing-campaign-planner",
+      "description": "Plan and execute marketing campaigns",
+      "install": "alirezarezvani/claude-skills/marketing/campaign-planner",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/campaign-planner",
+      "category": "marketing",
+      "tags": [
+        "campaigns",
+        "marketing",
+        "planning",
+        "strategy"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "marketing-content-creator",
+      "description": "Create engaging marketing content across channels",
+      "install": "alirezarezvani/claude-skills/marketing/content-creator",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/content-creator",
+      "category": "marketing",
+      "tags": [
+        "content",
+        "marketing",
+        "copywriting",
+        "social-media"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "marketing-seo-optimizer",
+      "description": "Optimize content and websites for search engines",
+      "install": "alirezarezvani/claude-skills/marketing/seo-optimizer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "marketing/seo-optimizer",
+      "category": "marketing",
+      "tags": [
+        "seo",
+        "search",
+        "optimization",
+        "keywords"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    }
+  ],
+  "count": 5
+}

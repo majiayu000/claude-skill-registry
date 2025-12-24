@@ -1,7 +1,24 @@
 {
   "category": "design",
-  "updated_at": "2025-12-24T09:00:39.945615Z",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
   "skills": [
+    {
+      "name": "design-system-creator",
+      "description": "Build comprehensive design systems",
+      "install": "alirezarezvani/claude-skills/design/system-creator",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/system-creator",
+      "category": "design",
+      "tags": [
+        "design-system",
+        "components",
+        "tokens",
+        "guidelines"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": true
+    },
     {
       "name": "algorithmic-art",
       "description": "Generate algorithmic and generative art",
@@ -54,6 +71,108 @@
       "featured": false
     },
     {
+      "name": "design-accessibility-expert",
+      "description": "Ensure designs meet accessibility standards (WCAG)",
+      "install": "alirezarezvani/claude-skills/design/accessibility-expert",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/accessibility-expert",
+      "category": "design",
+      "tags": [
+        "accessibility",
+        "a11y",
+        "wcag",
+        "inclusive"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "design-prototype-builder",
+      "description": "Create interactive prototypes and mockups",
+      "install": "alirezarezvani/claude-skills/design/prototype-builder",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/prototype-builder",
+      "category": "design",
+      "tags": [
+        "prototype",
+        "mockup",
+        "interactive",
+        "figma"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "design-ui-designer",
+      "description": "Create intuitive user interface designs",
+      "install": "alirezarezvani/claude-skills/design/ui-designer",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/ui-designer",
+      "category": "design",
+      "tags": [
+        "ui",
+        "design",
+        "interface",
+        "visual"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "design-ux-researcher",
+      "description": "UX research and usability testing",
+      "install": "alirezarezvani/claude-skills/design/ux-researcher",
+      "repo": "alirezarezvani/claude-skills",
+      "path": "design/ux-researcher",
+      "category": "design",
+      "tags": [
+        "ux",
+        "research",
+        "usability",
+        "testing"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "figma-to-code",
+      "description": "Convert Figma designs to code",
+      "install": "figma/claude-skills/figma-to-code",
+      "repo": "figma/claude-skills",
+      "path": "figma-to-code",
+      "category": "design",
+      "tags": [
+        "figma",
+        "design-to-code",
+        "ui",
+        "conversion"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "framer-motion",
+      "description": "Framer Motion animation patterns",
+      "install": "framer/claude-skills/framer-motion",
+      "repo": "framer/claude-skills",
+      "path": "framer-motion",
+      "category": "design",
+      "tags": [
+        "framer",
+        "motion",
+        "animation",
+        "react"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "frontend-design",
       "description": "Create distinctive, production-grade frontend interfaces with high design quality",
       "install": "anthropics/skills/frontend-design",
@@ -67,6 +186,57 @@
         "web"
       ],
       "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces",
+      "install": "julianromli/ai-skills/frontend-design",
+      "repo": "julianromli/ai-skills",
+      "path": "frontend-design",
+      "category": "design",
+      "tags": [
+        "frontend",
+        "ui",
+        "design",
+        "web"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "frontend-ui-animator",
+      "description": "Add smooth animations and transitions to UI components",
+      "install": "julianromli/ai-skills/frontend-ui-animator",
+      "repo": "julianromli/ai-skills",
+      "path": "frontend-ui-animator",
+      "category": "design",
+      "tags": [
+        "animation",
+        "ui",
+        "frontend",
+        "motion"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "tailwind-designer",
+      "description": "Tailwind CSS design and styling patterns",
+      "install": "tailwindlabs/claude-skills/tailwind-designer",
+      "repo": "tailwindlabs/claude-skills",
+      "path": "tailwind-designer",
+      "category": "design",
+      "tags": [
+        "tailwind",
+        "css",
+        "styling",
+        "design"
+      ],
+      "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
@@ -86,7 +256,24 @@
       "source": "Anthropic Official",
       "stars": 0,
       "featured": false
+    },
+    {
+      "name": "three-js-3d",
+      "description": "Three.js 3D graphics development",
+      "install": "mrdoob/claude-skills/three-js-3d",
+      "repo": "mrdoob/claude-skills",
+      "path": "three-js-3d",
+      "category": "design",
+      "tags": [
+        "threejs",
+        "3d",
+        "webgl",
+        "graphics"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
     }
   ],
-  "count": 5
+  "count": 16
 }

@@ -1,6 +1,6 @@
 {
   "category": "documents",
-  "updated_at": "2025-12-24T09:00:39.945615Z",
+  "updated_at": "2025-12-24T09:26:09.699437Z",
   "skills": [
     {
       "name": "doc-coauthoring",
@@ -15,6 +15,23 @@
         "coauthoring"
       ],
       "source": "Anthropic Official",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "documentation-creator",
+      "description": "Generate comprehensive documentation for codebases",
+      "install": "julianromli/ai-skills/documentation-creator",
+      "repo": "julianromli/ai-skills",
+      "path": "documentation-creator",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "readme",
+        "api-docs",
+        "technical-writing"
+      ],
+      "source": "Community Skills",
       "stars": 0,
       "featured": false
     },
@@ -69,6 +86,23 @@
       "featured": false
     },
     {
+      "name": "storybook-docs",
+      "description": "Storybook component documentation",
+      "install": "storybookjs/claude-skills/storybook-docs",
+      "repo": "storybookjs/claude-skills",
+      "path": "storybook-docs",
+      "category": "documents",
+      "tags": [
+        "storybook",
+        "documentation",
+        "components",
+        "design-system"
+      ],
+      "source": "Community Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "xlsx",
       "description": "Excel spreadsheet creation and manipulation",
       "install": "anthropics/skills/xlsx",
@@ -86,5 +120,5 @@
       "featured": false
     }
   ],
-  "count": 5
+  "count": 7
 }

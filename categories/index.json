@@ -1,37 +1,45 @@
 {
-  "updated_at": "2025-12-24T10:43:09.644535Z",
+  "updated_at": "2025-12-24T13:32:26.186259Z",
   "categories": [
     {
       "name": "data",
-      "count": 13
+      "count": 670
     },
     {
       "name": "design",
-      "count": 16
+      "count": 275
     },
     {
       "name": "development",
-      "count": 74
+      "count": 974
+    },
+    {
+      "name": "devops",
+      "count": 150
     },
     {
       "name": "documents",
-      "count": 13
+      "count": 233
     },
     {
       "name": "marketing",
-      "count": 5
+      "count": 21
     },
     {
       "name": "product",
-      "count": 5
+      "count": 20
     },
     {
       "name": "productivity",
-      "count": 27
+      "count": 168
+    },
+    {
+      "name": "security",
+      "count": 55
     },
     {
       "name": "testing",
-      "count": 12
+      "count": 362
     }
   ]
 }

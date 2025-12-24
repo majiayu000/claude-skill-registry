@@ -1,7 +1,235 @@
 {
   "category": "product",
-  "updated_at": "2025-12-24T10:43:09.644535Z",
+  "updated_at": "2025-12-24T13:32:26.186259Z",
   "skills": [
+    {
+      "name": "create-tasks",
+      "description": "Creates well-formed tasks following a template that engineers can implement. Use when creating tasks, defining work items, creating tasks from PRD, breaking down features, or converting requirements i",
+      "install": "NTCoding/claude-skillz",
+      "repo": "NTCoding/claude-skillz",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "create",
+        "tasks"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 79,
+      "featured": true
+    },
+    {
+      "name": "creating-kiro-packages",
+      "description": "Use when creating Kiro steering files or hooks - provides inclusion modes (always/fileMatch/manual), foundational files (product.md/tech.md/structure.md), and JSON hook configuration with event trigge",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "creating",
+        "kiro",
+        "packages"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "gcloud-usage",
+      "description": "This skill should be used when user asks about \"GCloud logs\", \"Cloud Logging queries\", \"Google Cloud metrics\", \"GCP observability\", \"trace analysis\", or \"debugging production issues on GCP\".",
+      "install": "fcakyon/claude-codex-settings",
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "gcloud",
+        "usage"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 247,
+      "featured": true
+    },
+    {
+      "name": "grafana-dashboards",
+      "description": "Create and manage production Grafana dashboards for real-time visualization of system and application metrics. Use when building monitoring dashboards, visualizing metrics, or creating operational obs",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "grafana",
+        "dashboards"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "ios-vision",
+      "description": "Use when implementing ANY computer vision feature - image analysis, object detection, pose detection, person segmentation, subject lifting, hand/body pose tracking.",
+      "install": "CharlesWiltgen/Axiom",
+      "repo": "CharlesWiltgen/Axiom",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "ios",
+        "vision"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 68,
+      "featured": true
+    },
+    {
+      "name": "nemo-guardrails",
+      "description": "NVIDIA's runtime safety framework for LLM applications. Features jailbreak detection, input/output validation, fact-checking, hallucination detection, PII filtering, toxicity detection. Uses Colang 2.",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "nemo",
+        "guardrails"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "nextjs",
+      "description": "Guide for implementing Next.js - a React framework for production with server-side rendering, static generation, and modern web features. Use when building Next.js applications, implementing App Route",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "nextjs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "notion-spec-to-implementation",
+      "description": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.",
+      "install": "openai/skills",
+      "repo": "openai/skills",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "notion",
+        "spec",
+        "implementation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 558,
+      "featured": true
+    },
+    {
+      "name": "product-management",
+      "description": "Assist with core product management activities including writing PRDs, analyzing features, synthesizing user research, planning roadmaps, and communicating product decisions. Use when you need help wi",
+      "install": "julianromli/ai-skills",
+      "repo": "julianromli/ai-skills",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "product",
+        "management"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 120,
+      "featured": true
+    },
+    {
+      "name": "product-manager-toolkit",
+      "description": "Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritization,",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "product",
+        "manager",
+        "toolkit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "product-requirements",
+      "description": "Interactive Product Owner skill for requirements gathering, analysis, and PRD generation. Triggers when users request product requirements, feature specification, PRD creation, or need help understand",
+      "install": "cexll/myclaude",
+      "repo": "cexll/myclaude",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "product",
+        "requirements"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1366,
+      "featured": true
+    },
+    {
+      "name": "product-requirements",
+      "description": "Create and validate product requirements documents (PRD). Use when writing requirements, defining user stories, specifying acceptance criteria, analyzing user needs, or working on product-requirements",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "product",
+        "requirements"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "prompt-optimizer",
+      "description": "Transform vague prompts into precise, well-structured specifications using EARS (Easy Approach to Requirements Syntax) methodology. This skill should be used when users provide loose requirements, amb",
+      "install": "daymade/claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "prompt",
+        "optimizer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "task-breakdown",
+      "description": "Convert technical designs into actionable, sequenced implementation tasks. Create clear coding tasks that enable incremental progress, respect dependencies, and provide a roadmap for systematic featur",
+      "install": "jasonkneen/kiro",
+      "repo": "jasonkneen/kiro",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "task",
+        "breakdown"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 417,
+      "featured": true
+    },
+    {
+      "name": "using-git-worktrees",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verificat",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "product",
+      "tags": [
+        "using",
+        "git",
+        "worktrees"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
     {
       "name": "product-feature-specifier",
       "description": "Write detailed feature specifications",
@@ -88,5 +316,5 @@
       "featured": false
     }
   ],
-  "count": 5
+  "count": 20
 }

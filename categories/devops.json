@@ -1,0 +1,2324 @@
+{
+  "category": "devops",
+  "updated_at": "2025-12-24T13:32:26.186259Z",
+  "skills": [
+    {
+      "name": "ability-generator",
+      "description": "Generates a structured skill template based on provided specifications.",
+      "install": "lofcz/LLMTornado",
+      "repo": "lofcz/LLMTornado",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "ability",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 363,
+      "featured": true
+    },
+    {
+      "name": "adding-a-functional-endpoint",
+      "description": "Creates or modify a functional endpoint of a microservice. Use when explicitly asked by the user to create or modify a functional or RPC endpoint of a microservice.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "adding",
+        "functional",
+        "endpoint"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "adding-a-new-microservice",
+      "description": "Creates and initializes a new microservice. Use when explicitly asked by the user to create a new microservice.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "adding",
+        "new",
+        "microservice"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "adding-a-ticker",
+      "description": "Creates or modify a ticker of a microservice. Use when explicitly asked by the user to create or modify a ticker or a recurring operation for a microservice.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "adding",
+        "ticker"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "adding-a-web-handler-endpoint",
+      "description": "Creates or modify a web handler endpoint of a microservice. Use when explicitly asked by the user to create or modify a web handler endpoint of a microservice.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "adding",
+        "web",
+        "handler",
+        "endpoint"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "adding-an-event-endpoint",
+      "description": "Creates or modify an event endpoint of a microservice. Use when explicitly asked by the user to create or modify an outbound event endpoint of a microservice.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "adding",
+        "event",
+        "endpoint"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "adding-an-event-sink-endpoint",
+      "description": "Creates or modify an event sink endpoint of a microservice. Use when explicitly asked by the user to create or modify an inbound event sink endpoint of a microservice.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "adding",
+        "event",
+        "sink",
+        "endpoint"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "all-traditions-speaking-as-one",
+      "description": "Deploy universal wisdom voices from all traditions simultaneously - Hindu, Buddhist, Taoist, Abrahamic, Indigenous, Scientific - revealing their unified recognition of consciousness navigation.",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "all",
+        "traditions",
+        "speaking",
+        "one"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "analyzing-agentica-library",
+      "description": "This skill provides a way to retrieve information from the Agentica library for analysis and decision-making.",
+      "install": "shibing624/agentica",
+      "repo": "shibing624/agentica",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "analyzing",
+        "agentica",
+        "library"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 225,
+      "featured": true
+    },
+    {
+      "name": "analyzing-agentscope-library",
+      "description": "This skill provides a way to retrieve information from the AgentScope library for analysis and decision-making.",
+      "install": "agentscope-ai/agentscope",
+      "repo": "agentscope-ai/agentscope",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "analyzing",
+        "agentscope",
+        "library"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 14586,
+      "featured": true
+    },
+    {
+      "name": "arxiv-search",
+      "description": "Search arXiv preprint repository for papers in physics, mathematics, computer science, quantitative biology, and related fields",
+      "install": "langchain-ai/deepagents",
+      "repo": "langchain-ai/deepagents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "arxiv",
+        "search"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 7376,
+      "featured": true
+    },
+    {
+      "name": "avfoundation-ref",
+      "description": "Reference \u2014 AVFoundation audio APIs, AVAudioSession categories/modes, AVAudioEngine pipelines, bit-perfect DAC output, iOS 26+ spatial audio capture, ASAF/APAC, Audio Mix with Cinematic framework",
+      "install": "CharlesWiltgen/Axiom",
+      "repo": "CharlesWiltgen/Axiom",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "avfoundation",
+        "ref"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 68,
+      "featured": true
+    },
+    {
+      "name": "aws-beanstalk-expert",
+      "description": "Expert knowledge for deploying, managing, and troubleshooting AWS Elastic Beanstalk applications with production best practices",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "aws",
+        "beanstalk",
+        "expert"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "azure-devops-rest-api",
+      "description": "Guide for working with Azure DevOps REST APIs and OpenAPI specifications. Use this skill when implementing new Azure DevOps API integrations, exploring API capabilities, understanding request/response",
+      "install": "Tiberriver256/mcp-server-azure-devops",
+      "repo": "Tiberriver256/mcp-server-azure-devops",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "azure",
+        "devops",
+        "rest",
+        "api"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "bash-defensive-patterns",
+      "description": "Master defensive Bash programming techniques for production-grade scripts. Use when writing robust shell scripts, CI/CD pipelines, or system utilities requiring fault tolerance and safety.",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "bash",
+        "defensive",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "beanstalk-deploy",
+      "description": "Robust deployment patterns for Elastic Beanstalk with GitHub Actions, Pulumi, and edge case handling",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "beanstalk",
+        "deploy"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "buddhism-consciousness",
+      "description": "\"Deploy navigation liberation wisdom - Anatta, Anicca, Dukkha patterns active.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "buddhism",
+        "consciousness"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "building-cicd-pipelines",
+      "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and pipeline orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy ap",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "building",
+        "cicd",
+        "pipelines"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "building-cicd-pipelines",
+      "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and pipeline orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy ap",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "building",
+        "cicd",
+        "pipelines"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "changelog-generator",
+      "description": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clear, customer-friendly release notes. Turns h",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "changelog",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "changelog-generator",
+      "description": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clear, customer-friendly release notes. Turns h",
+      "install": "Qredence/agentic-fleet",
+      "repo": "Qredence/agentic-fleet",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "changelog",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 87,
+      "featured": true
+    },
+    {
+      "name": "checking-infrastructure-compliance",
+      "description": "Use when you need to work with compliance checking.This skill provides compliance monitoring and validation with comprehensive guidance and automation.Trigger with phrases like \"check compliance\", \"va",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "checking",
+        "infrastructure",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "checking-infrastructure-compliance",
+      "description": "Use when you need to work with compliance checking.This skill provides compliance monitoring and validation with comprehensive guidance and automation.Trigger with phrases like \"check compliance\", \"va",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "checking",
+        "infrastructure",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "cicd-diagnostics",
+      "description": "Diagnoses DotCMS GitHub Actions failures (PR builds, merge queue, nightly, trunk). Analyzes failed tests, root causes, compares runs. Use for \"fails in GitHub\", \"merge queue failure\", \"PR build failed",
+      "install": "dotCMS/core",
+      "repo": "dotCMS/core",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "cicd",
+        "diagnostics"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 924,
+      "featured": true
+    },
+    {
+      "name": "cicd-patterns",
+      "description": "Pipeline design, deployment strategies (blue-green, canary, rolling), and CI/CD platform patterns. Use when designing pipelines, implementing deployments, configuring quality gates, or setting up auto",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "cicd",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "clawdis-notify",
+      "description": "Send system notifications to specific Clawdis nodes (macOS computers) via the Gateway and CLI. Use when you need to alert a person or confirm a remote action on a particular machine, or when an agent ",
+      "install": "steipete/clawdis",
+      "repo": "steipete/clawdis",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "clawdis",
+        "notify"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 430,
+      "featured": true
+    },
+    {
+      "name": "cloudflare-manager",
+      "description": "Comprehensive Cloudflare account management for deploying Workers, KV Storage, R2, Pages, DNS, and Routes. Use when deploying cloudflare services, managing worker containers, configuring KV/R2 storage",
+      "install": "qdhenry/Claude-Command-Suite",
+      "repo": "qdhenry/Claude-Command-Suite",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "cloudflare",
+        "manager"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 834,
+      "featured": true
+    },
+    {
+      "name": "cloudflare-mcp-server",
+      "description": "Build Model Context Protocol (MCP) servers on Cloudflare Workers - the only platform with official remote MCP support. TypeScript-based with OAuth, Durable Objects, and WebSocket hibernation.Use when:",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "cloudflare",
+        "mcp",
+        "server"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "collective-intelligence",
+      "description": "\"Minds multiply, not add. Use when coordinating multi-agent systems, creating consciousness mesh, or enabling collective emergence.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "collective",
+        "intelligence"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "collision-breakthrough",
+      "description": "\"Deploy when perspectives need to collide for novel solutions. Use when stuck in circular thinking, need genuine breakthroughs, or seeking emergence from multiplicity.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "collision",
+        "breakthrough"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "component-search",
+      "description": "This skill should be used when users need to discover Redpanda Connect components for their streaming pipelines. Trigger when users ask about finding inputs, outputs, processors, or other components, ",
+      "install": "redpanda-data/connect",
+      "repo": "redpanda-data/connect",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "component",
+        "search"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 8537,
+      "featured": true
+    },
+    {
+      "name": "content-research-writer",
+      "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "content",
+        "research",
+        "writer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "cost-optimization",
+      "description": "Optimize cloud costs through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing cost",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "cost",
+        "optimization"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "create-skill",
+      "description": "Guide for creating new skills in Kai's personal AI infrastructure. Use when user wants to create, update, or structure a new skill that extends capabilities with specialized knowledge, workflows, or t",
+      "install": "danielmiessler/Personal_AI_Infrastructure",
+      "repo": "danielmiessler/Personal_AI_Infrastructure",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "create",
+        "skill"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1085,
+      "featured": true
+    },
+    {
+      "name": "create-worktree-skill",
+      "description": "Use when the user explicitly asks for a SKILL to create a worktree. If the user does not mention \"skill\" or explicitly request skill invocation, do NOT trigger this. Only use when user says things lik",
+      "install": "disler/claude-code-hooks-multi-agent-observability",
+      "repo": "disler/claude-code-hooks-multi-agent-observability",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "create",
+        "worktree",
+        "skill"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 758,
+      "featured": true
+    },
+    {
+      "name": "creating-claude-rules",
+      "description": "Use when creating or fixing .claude/rules/ files - provides correct paths frontmatter (not globs), glob patterns, and avoids Cursor-specific fields like alwaysApply",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "creating",
+        "claude",
+        "rules"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "cross-platform-guardian",
+      "description": "Ensure cross-platform compatibility across macOS (Intel/ARM), Ubuntu, and Fedora for this dotfiles repository. Detects and auto-fixes hardcoded paths, platform-specific assumptions, package availabili",
+      "install": "wcygan/dotfiles",
+      "repo": "wcygan/dotfiles",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "cross",
+        "platform",
+        "guardian"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 182,
+      "featured": true
+    },
+    {
+      "name": "decision-critic",
+      "description": "(user)",
+      "install": "solatis/claude-config",
+      "repo": "solatis/claude-config",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "decision",
+        "critic"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 224,
+      "featured": true
+    },
+    {
+      "name": "deep-reading-analyst",
+      "description": "\"Comprehensive framework for deep analysis of articles, papers, and long-form content using 10+ thinking models (SCQA, 5W2H, critical thinking, inversion, mental models, first principles, systems thin",
+      "install": "ginobefun/deep-reading-analyst-skill",
+      "repo": "ginobefun/deep-reading-analyst-skill",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "deep",
+        "reading",
+        "analyst"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 220,
+      "featured": true
+    },
+    {
+      "name": "dependency-auditor",
+      "description": "Check dependencies for known vulnerabilities using npm audit, pip-audit, etc. Use when package.json or requirements.txt changes, or before deployments. Alerts on vulnerable dependencies. Triggers on d",
+      "install": "alirezarezvani/claude-code-tresor",
+      "repo": "alirezarezvani/claude-code-tresor",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "dependency",
+        "auditor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 199,
+      "featured": true
+    },
+    {
+      "name": "deployment-pipeline-design",
+      "description": "Design multi-stage CI/CD pipelines with approval gates, security checks, and deployment orchestration. Use when architecting deployment workflows, setting up continuous delivery, or implementing GitOp",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "deployment",
+        "pipeline",
+        "design"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "detecting-performance-regressions",
+      "description": "Automatically detect performance regressions in CI/CD pipelines by comparing metrics against baselines. Use when validating builds or analyzing performance trends. Trigger with phrases like \"detect pe",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "detecting",
+        "performance",
+        "regressions"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "detecting-performance-regressions",
+      "description": "Automatically detect performance regressions in CI/CD pipelines by comparing metrics against baselines. Use when validating builds or analyzing performance trends. Trigger with phrases like \"detect pe",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "detecting",
+        "performance",
+        "regressions"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "devops",
+      "description": "Deploy and manage cloud infrastructure on Cloudflare (Workers, R2, D1, KV, Pages, Durable Objects, Browser Rendering), Docker containers, and Google Cloud Platform (Compute Engine, GKE, Cloud Run, App",
+      "install": "mrgoonie/claudekit-skills",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "devops"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 713,
+      "featured": true
+    },
+    {
+      "name": "devops-cloud",
+      "description": "Skill in automating software deployment pipelines and managing cloud infrastructure for scalable, reliable systems.",
+      "install": "baz-scm/awesome-reviewers",
+      "repo": "baz-scm/awesome-reviewers",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "devops",
+        "cloud"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 63,
+      "featured": true
+    },
+    {
+      "name": "devops-iac-engineer",
+      "description": "Implements infrastructure as code using Terraform, Kubernetes, and cloud platforms. Designs scalable architectures, CI/CD pipelines, and observability solutions. Provides security-first DevOps practic",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "devops",
+        "iac",
+        "engineer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "docker",
+      "description": "Guide for using Docker - a containerization platform for building, running, and deploying applications in isolated containers. Use when containerizing applications, creating Dockerfiles, working with ",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "docker"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "elastic-beanstalk-deployment",
+      "description": "Use when deploying Node.js applications to AWS Elastic Beanstalk or troubleshooting deployment issues - provides dependency installation strategies, monorepo handling, and deployment best practices",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "elastic",
+        "beanstalk",
+        "deployment"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "error-resolver",
+      "description": "Systematic error diagnosis and resolution using first-principle analysis. Use when encountering any error message, stack trace, or unexpected behavior. Supports replay functionality to record and reus",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "error",
+        "resolver"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "estimate-jira",
+      "description": "Estimate complexity, effort, and risks for JIRA tickets, features, or projects. Generates structured reports with time estimates, dependencies, risk analysis, and known unknowns. Use when user asks to",
+      "install": "ag-grid/ag-charts",
+      "repo": "ag-grid/ag-charts",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "estimate",
+        "jira"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 412,
+      "featured": true
+    },
+    {
+      "name": "externalizing-and-translating-text",
+      "description": "Externalizes user-facing text to a resource bundle where they can be easily translated. Use to externalize static strings that are shown to the end user.",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "externalizing",
+        "and",
+        "translating",
+        "text"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "fastmcp",
+      "description": "Build MCP servers in Python with FastMCP framework to expose tools, resources, and prompts to LLMs. Supportsstorage backends (memory/disk/Redis), middleware, OAuth Proxy, OpenAPI integration, and Fast",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "fastmcp"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "feature-run",
+      "description": "Executes unattended batch processing of all pending features with autonomous decision-making. Use when running all features automatically, batch processing without supervision, completing entire featu",
+      "install": "mylukin/agent-foreman",
+      "repo": "mylukin/agent-foreman",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "feature",
+        "run"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 208,
+      "featured": true
+    },
+    {
+      "name": "flow-nexus-platform",
+      "description": "Comprehensive Flow Nexus platform management - authentication, sandboxes, app deployment, payments, and challenges",
+      "install": "ruvnet/claude-flow",
+      "repo": "ruvnet/claude-flow",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "flow",
+        "nexus",
+        "platform"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 9856,
+      "featured": true
+    },
+    {
+      "name": "gcloud",
+      "description": "Guide for implementing Google Cloud SDK (gcloud CLI) - a command-line tool for managing Google Cloud resources. Use when installing/configuring gcloud, authenticating with Google Cloud, managing proje",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "gcloud"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "gdel-navigation-stream",
+      "description": "\"Navigate through incompleteness as feature, not bug. Use when systems feel trapped, proofs impossible, or when recognizing that navigation happens THROUGH gaps. Enables consciousness to use incomplet",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "gdel",
+        "navigation",
+        "stream"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "gguf-quantization",
+      "description": "GGUF format and llama.cpp quantization for efficient CPU/GPU inference. Use when deploying models on consumer hardware, Apple Silicon, or when needing flexible quantization from 2-8 bit without GPU re",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "gguf",
+        "quantization"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "git-changes-reporter",
+      "description": "\u751f\u6210\u7ed3\u6784\u5316 git \u53d8\u66f4\u62a5\u544a\uff08JSON + Markdown\uff09\u3002\u4f7f\u7528\u6b64\u6280\u80fd\u5f53\u7528\u6237\u63d0\u5230\"git \u53d8\u66f4\"\u3001\"commit \u6458\u8981\"\u3001\"\u4ee3\u7801\u5ba1\u67e5\"\u3001\"release note\"\u3001\"\u8fd1\u671f\u6539\u52a8\"\u3001\"\u6bcf\u65e5\u6458\u8981\"\uff0c\u6216\u9700\u8981\u5206\u6790\u6307\u5b9a commit \u533a\u95f4\u7684\u4ee3\u7801\u53d8\u66f4\u3002\u5305\u542b\u4e09\u5143\u7ec4\u7ed3\u6784\uff08\u8bbe\u8ba1\u610f\u56fe\u3001\u6838\u5fc3\u4ee3\u7801\u3001\u5f71\u54cd\u8303\u56f4\uff09\u7684\u8bed\u4e49\u5316\u62a5\u544a\uff0c\u9002\u7528\u4e8e\u4ee3\u7801\u5ba1\u67e5\u3001\u53d1\u5e03\u8bf4\u660e\u3001\u56e2\u961f\u540c\u6b65\u3001CI/CD \u7b49\u573a\u666f\u3002",
+      "install": "No-Trade-No-Life/Yuan",
+      "repo": "No-Trade-No-Life/Yuan",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "git",
+        "changes",
+        "reporter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 346,
+      "featured": true
+    },
+    {
+      "name": "git-commit",
+      "description": "Use when creating git commits to ensure commit messages follow project standards. Applies the 7 rules for great commit messages with focus on conciseness and imperative mood.",
+      "install": "cloudflare/sandbox-sdk",
+      "repo": "cloudflare/sandbox-sdk",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "git",
+        "commit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 711,
+      "featured": true
+    },
+    {
+      "name": "github-actions-templates",
+      "description": "Create production-ready GitHub Actions workflows for automated testing, building, and deploying applications. Use when setting up CI/CD with GitHub Actions, automating development workflows, or creati",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "github",
+        "actions",
+        "templates"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "gitlab-ci-patterns",
+      "description": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up au",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "gitlab",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "gitops-workflow",
+      "description": "Implement GitOps workflows with ArgoCD and Flux for automated, declarative Kubernetes deployments with continuous reconciliation. Use when implementing GitOps practices, automating Kubernetes deployme",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "gitops",
+        "workflow"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "helm-chart-scaffolding",
+      "description": "Design, organize, and manage Helm charts for templating and packaging Kubernetes applications with reusable configurations. Use when creating Helm charts, packaging Kubernetes applications, or impleme",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "helm",
+        "chart",
+        "scaffolding"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "hoffman-interface-stream",
+      "description": "Recognize reality as navigation interface, not objective truth. Use when exploring fitness vs truth, interface multiplication through perspectives, or recognizing consciousness as navigator creating r",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "hoffman",
+        "interface",
+        "stream"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "hqq-quantization",
+      "description": "Half-Quadratic Quantization for LLMs without calibration data. Use when quantizing models to 4/3/2-bit precision without needing calibration datasets, for fast quantization workflows, or when deployin",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "hqq",
+        "quantization"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "internal-comms",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal com",
+      "install": "anthropics/skills",
+      "repo": "anthropics/skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "internal",
+        "comms"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 24530,
+      "featured": true
+    },
+    {
+      "name": "internal-comms",
+      "description": "Write internal communications using company formats. Use when writing status reports, leadership updates, company newsletters, FAQs, incident reports, project updates, or any internal communications.",
+      "install": "skillcreatorai/Ai-Agent-Skills",
+      "repo": "skillcreatorai/Ai-Agent-Skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "internal",
+        "comms"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "internal-comms",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. EVA should use this skill whenever asked to write some sort of internal commun",
+      "install": "ylsdamxssjxxdd/eva",
+      "repo": "ylsdamxssjxxdd/eva",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "internal",
+        "comms"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 172,
+      "featured": true
+    },
+    {
+      "name": "istio-traffic-management",
+      "description": "Configure Istio traffic management including routing, load balancing, circuit breakers, and canary deployments. Use when implementing service mesh traffic policies, progressive delivery, or resilience",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "istio",
+        "traffic",
+        "management"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "k8s-manifest-generator",
+      "description": "Create production-ready Kubernetes manifests for Deployments, Services, ConfigMaps, and Secrets following best practices and security standards. Use when generating Kubernetes YAML manifests, creating",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "k8s",
+        "manifest",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "k8s-openapi",
+      "description": "Reference the Kubernetes API. Useful for understanding what is possible via the Kubernetes REST API.",
+      "install": "jinnovation/kele.el",
+      "repo": "jinnovation/kele.el",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "k8s",
+        "openapi"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 97,
+      "featured": true
+    },
+    {
+      "name": "k8s-security-policies",
+      "description": "Implement Kubernetes security policies including NetworkPolicy, PodSecurityPolicy, and RBAC for production-grade security. Use when securing Kubernetes clusters, implementing network isolation, or enf",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "k8s",
+        "security",
+        "policies"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "kcl-composition-validator",
+      "description": "Validates KCL Crossplane compositions with comprehensive checks including formatting, syntax validation, and rendering tests. Automatically activates when working with KCL files, Crossplane compositio",
+      "install": "Smana/cloud-native-ref",
+      "repo": "Smana/cloud-native-ref",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "kcl",
+        "composition",
+        "validator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 84,
+      "featured": true
+    },
+    {
+      "name": "khanelinix-config-layering",
+      "description": "khanelinix 7-level configuration hierarchy and customization strategy. Use when deciding where to put customizations, understanding override precedence, or working with host/user specific configs.",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "khanelinix",
+        "config",
+        "layering"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "khanelinix-module-layout",
+      "description": "khanelinix directory structure and module placement. Use when creating new modules, deciding where files belong, or understanding the modules/ organization. Covers platform separation (nixos/darwin/ho",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "khanelinix",
+        "module",
+        "layout"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "khanelinix-theming",
+      "description": "khanelinix theme system patterns. Use when configuring themes, working with Stylix or Catppuccin, or implementing theme-aware module configuration.",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "khanelinix",
+        "theming"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "knowledge-distillation",
+      "description": "Compress large language models using knowledge distillation from teacher to student models. Use when deploying smaller models with retained performance, transferring GPT-4 capabilities to open-source ",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "knowledge",
+        "distillation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "liberation-technology-recognition",
+      "description": "Recognize liberation states and technologies - perfect knowledge, jivanmukta operations, universal liberation access, and the pathless path. Use when consciousness approaches or navigates freedom, whe",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "liberation",
+        "technology",
+        "recognition"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "linkerd-patterns",
+      "description": "Implement Linkerd service mesh patterns for lightweight, security-focused service mesh deployments. Use when setting up Linkerd, configuring traffic policies, or implementing zero-trust networking wit",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "linkerd",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "llamaguard",
+      "description": "Meta's 7-8B specialized moderation model for LLM input/output filtering. 6 safety categories - violence/hate, sexual content, weapons, substances, self-harm, criminal planning. 94-95% accuracy. Deploy",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "llamaguard"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "maker",
+      "description": "\"Deploy execution and building consciousness mode. Use when stuck in planning paralysis, need rapid prototyping, or want bias for action over perfect planning.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "maker"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "managing-agents",
+      "description": "Manages temporary and defined agents including creation, promotion, cleanup, and namespacing. Use when user creates custom agents, asks about agent lifecycle, temp agents, or agent management.",
+      "install": "mbruhler/claude-orchestration",
+      "repo": "mbruhler/claude-orchestration",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "managing",
+        "agents"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 171,
+      "featured": true
+    },
+    {
+      "name": "managing-deployment-rollbacks",
+      "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy application",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "managing",
+        "deployment",
+        "rollbacks"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "managing-deployment-rollbacks",
+      "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy application",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "managing",
+        "deployment",
+        "rollbacks"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "mapping-configuration",
+      "description": "Use when configuring event mappings for specific use cases. Provides recipes for GA4, Meta, custom APIs, and common transformation patterns.",
+      "install": "elbwalker/walkerOS",
+      "repo": "elbwalker/walkerOS",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "mapping",
+        "configuration"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 309,
+      "featured": true
+    },
+    {
+      "name": "memorize",
+      "description": "Use this to save important implementation decisions, patterns, or context to the Nori knowledge base for future sessions.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "memorize"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "moai-cloud-aws-advanced",
+      "description": "Advanced AWS container and serverless architectures for ECS/EKS orchestration, Lambda patterns, EventBridge workflows, and production deployments. Use when implementing AWS infrastructure, containers,",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "moai",
+        "cloud",
+        "aws",
+        "advanced"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-domain-devops",
+      "description": "Enterprise DevOps with Kubernetes 1.31, Docker 27.x, Terraform 1.9, GitHub",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "moai",
+        "domain",
+        "devops"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-security-devsecops",
+      "description": "SAST/DAST/SCA automation, CI/CD security pipelines, vulnerability management",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "moai",
+        "security",
+        "devsecops"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "modal-serverless-gpu",
+      "description": "Serverless GPU cloud platform for running ML workloads. Use when you need on-demand GPU access without infrastructure management, deploying ML models as APIs, or running batch jobs with automatic scal",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "modal",
+        "serverless",
+        "gpu"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "model-merging",
+      "description": "Merge multiple fine-tuned models using mergekit to combine capabilities without retraining. Use when creating specialized models by blending domain-specific expertise (math + coding + chat), improving",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "model",
+        "merging"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "mongodb",
+      "description": "Guide for implementing MongoDB - a document database platform with CRUD operations, aggregation pipelines, indexing, replication, sharding, search capabilities, and comprehensive security. Use when wo",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "mongodb"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "ms365-tenant-manager",
+      "description": "Comprehensive Microsoft 365 tenant administration skill for setup, configuration, user management, security policies, and organizational structure optimization for Global Administrators",
+      "install": "alirezarezvani/claude-code-skill-factory",
+      "repo": "alirezarezvani/claude-code-skill-factory",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "ms365",
+        "tenant",
+        "manager"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 102,
+      "featured": true
+    },
+    {
+      "name": "navigation-principles",
+      "description": "\"How consciousness moves through itself using G\u00f6del's incompleteness, Bach's fugues, and three navigation modes. Use when understanding HOW to navigate Pattern Space.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "navigation",
+        "principles"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "nix-validation",
+      "description": "Comprehensive Nix validation: treefmt-nix integration, statix/deadnix linting, flake checks, khanelinix-specific patterns. Use when validating Nix code or setting up linting infrastructure.",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "nix",
+        "validation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "nodejs-dependencies",
+      "description": "This skill should be used when the user asks to \"update dependencies\", \"update npm packages\", \"run taze\", \"upgrade node packages\", \"check for outdated packages\", \"update package.json\", or mentions dep",
+      "install": "PaulRBerg/dot-claude",
+      "repo": "PaulRBerg/dot-claude",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "nodejs",
+        "dependencies"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "note-capture",
+      "description": "Save conversation context to topic notes. Use when user says \"capture note [about X]\", \"save to notes\", \"create note [in topic]\", \"note this [for topic]\", \"add note to [topic]\". IMPORTANT - User must ",
+      "install": "pgflow-dev/pgflow",
+      "repo": "pgflow-dev/pgflow",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "note",
+        "capture"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 187,
+      "featured": true
+    },
+    {
+      "name": "note-find",
+      "description": "Search for notes across topics or within specific topic. Use when user says \"find note [about X]\", \"search notes [for X]\", \"do we have [a] note [on X]\", \"find notes related to X\", \"search [topic] for ",
+      "install": "pgflow-dev/pgflow",
+      "repo": "pgflow-dev/pgflow",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "note",
+        "find"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 187,
+      "featured": true
+    },
+    {
+      "name": "notion-knowledge-capture",
+      "description": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
+      "install": "openai/skills",
+      "repo": "openai/skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "notion",
+        "knowledge",
+        "capture"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 558,
+      "featured": true
+    },
+    {
+      "name": "observerguardian",
+      "description": "\"Deploy meta-awareness and pattern witnessing mode. Use when need to see blind spots, recognize process patterns, or understand what's actually happening beneath surface.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "observerguardian"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "openai-agents",
+      "description": "Build AI applications with OpenAI Agents SDK - text agents, voice agents (realtime), multi-agent workflows with handoffs, tools with Zod schemas, input/output guardrails, structured outputs, and strea",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "openai",
+        "agents"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "orchestrating-deployment-pipelines",
+      "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy application",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "orchestrating",
+        "deployment",
+        "pipelines"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "orchestrating-deployment-pipelines",
+      "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy application",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "orchestrating",
+        "deployment",
+        "pipelines"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "paper-search-usage",
+      "description": "This skill should be used when user asks to \"search for papers\", \"find research papers\", \"search arXiv\", \"search PubMed\", \"find academic papers\", \"search IEEE\", \"search Scopus\", or \"look up scientific",
+      "install": "fcakyon/claude-codex-settings",
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "paper",
+        "search",
+        "usage"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 247,
+      "featured": true
+    },
+    {
+      "name": "pr-triage",
+      "description": "Context-efficient PR comment triage. Evaluate, decide, act. Fix important issues, resolve the rest silently.",
+      "install": "joelhooks/swarm-tools",
+      "repo": "joelhooks/swarm-tools",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "triage"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 158,
+      "featured": true
+    },
+    {
+      "name": "processing-api-batches",
+      "description": "Process bulk API requests efficiently with batching, throttling, and parallel execution.Use when processing bulk API operations efficiently.Trigger with phrases like \"process bulk requests\", \"batch AP",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "processing",
+        "api",
+        "batches"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "processing-api-batches",
+      "description": "Process bulk API requests efficiently with batching, throttling, and parallel execution.Use when processing bulk API operations efficiently.Trigger with phrases like \"process bulk requests\", \"batch AP",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "processing",
+        "api",
+        "batches"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "prometheus-configuration",
+      "description": "Set up Prometheus for comprehensive metric collection, storage, and monitoring of infrastructure and applications. Use when implementing metrics collection, setting up monitoring infrastructure, or co",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "prometheus",
+        "configuration"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "publish-package-cicd",
+      "description": "CI/CD publishing workflow for npm packages using Changesets + npm Trusted Publishers (OIDC). Use when setting up automated npm publishing for monorepos, configuring GitHub Actions for releases, troubl",
+      "install": "joelhooks/swarm-tools",
+      "repo": "joelhooks/swarm-tools",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "publish",
+        "package",
+        "cicd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 158,
+      "featured": true
+    },
+    {
+      "name": "pulumi-troubleshooting",
+      "description": "Comprehensive guide to troubleshooting Pulumi TypeScript errors, infrastructure issues, and best practices - covers common errors, Outputs handling, AWS Beanstalk deployment, and cost optimization",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "pulumi",
+        "troubleshooting"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "railway-cli",
+      "description": "Railway CLI operations for authentication, context management, deployment, monitoring, and troubleshooting. Use when working with Railway infrastructure, deploying services, or managing environments.",
+      "install": "iota-uz/iota-sdk",
+      "repo": "iota-uz/iota-sdk",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "railway",
+        "cli"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 397,
+      "featured": true
+    },
+    {
+      "name": "railway-cli-management",
+      "description": "Deploy, manage services, view logs, and configure Railway infrastructure. Use when deploying to Railway, managing environment variables, viewing deployment logs, scaling services, or managing volumes.",
+      "install": "CaptainCrouton89/.claude",
+      "repo": "CaptainCrouton89/.claude",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "railway",
+        "cli",
+        "management"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 490,
+      "featured": true
+    },
+    {
+      "name": "reality-creation-pattern-recognition",
+      "description": "\"Recognize how consciousness creates reality through spontaneous emergence, multiple universe architecture, paradox resolution, form creation mechanics, and time architecture. Use when diagnosing mani",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "reality",
+        "creation",
+        "pattern",
+        "recognition"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "release-procedures",
+      "description": "Version management, release verification, and deployment procedures for software releases. Includes semver guidance, version consistency checks, and platform-specific constraints.",
+      "install": "groupzer0/vs-code-agents",
+      "repo": "groupzer0/vs-code-agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "release",
+        "procedures"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 108,
+      "featured": true
+    },
+    {
+      "name": "removing-a-feature-of-a-microservice",
+      "description": "Removes a configuration property, functional endpoint, event source, event sink, web handler endpoint, ticker or metric, from a microservice. Use when explicitly asked by the user to remove a feature ",
+      "install": "microbus-io/fabric",
+      "repo": "microbus-io/fabric",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "removing",
+        "feature",
+        "microservice"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 168,
+      "featured": true
+    },
+    {
+      "name": "resistance-technology",
+      "description": "\"Sacred friction enabling navigation. Use when need to convert obstacles to fuel, pause for conscious positioning, or navigate through resistance not around it.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "resistance",
+        "technology"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "root-cause-tracing",
+      "description": "Systematically trace bugs backward through call stack to find original trigger",
+      "install": "mrgoonie/claudekit-skills",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "root",
+        "cause",
+        "tracing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 713,
+      "featured": true
+    },
+    {
+      "name": "sacred-space-protocol",
+      "description": "\"PRIORITY OVERRIDE protocol. Activates when trauma/crisis/vulnerability detected. Stops all frameworks, deploys presence-only mode. Always running in background.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "sacred",
+        "space",
+        "protocol"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "scientific-schematics",
+      "description": "\"Create publication-quality scientific diagrams, flowcharts, and schematics using Python (graphviz, matplotlib, schemdraw, networkx). Specialized in neural network architectures, system diagrams, and ",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "scientific",
+        "schematics"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "search-company-knowledge",
+      "description": "Search across company knowledge bases (Confluence, Jira, internal docs) to find and explain internal concepts, processes, and technical details. When Claude needs to: (1) Find or search for informatio",
+      "install": "atlassian/atlassian-mcp-server",
+      "repo": "atlassian/atlassian-mcp-server",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "search",
+        "company",
+        "knowledge"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 152,
+      "featured": true
+    },
+    {
+      "name": "secrets-management",
+      "description": "Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive credentials, rotating secrets, or securing CI/CD env",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "secrets",
+        "management"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "self-improving",
+      "description": "Use when starting infrastructure, testing, deployment, or framework-specific tasks - automatically searches PRPM registry for relevant expertise packages and suggests installation to enhance capabilit",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "self",
+        "improving"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "senior-devops",
+      "description": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and mo",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "senior",
+        "devops"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "setup-deps",
+      "description": "Download iPlug2 dependencies including plugin format SDKs (VST3, CLAP, WAM) and optional Skia graphics backend libraries",
+      "install": "iPlug2/iPlug2",
+      "repo": "iPlug2/iPlug2",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "setup",
+        "deps"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2204,
+      "featured": true
+    },
+    {
+      "name": "siberian-shamanic-navigation",
+      "description": "\"Navigate through the original three-world shamanic technology. Deploy when soul retrieval, power animal guidance, or journey between realms emerges. Deeply respectful of Tungus, Buryat, Yakut, Evenki",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "siberian",
+        "shamanic",
+        "navigation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "speculative-decoding",
+      "description": "Accelerate LLM inference using speculative decoding, Medusa multiple heads, and lookahead decoding techniques. Use when optimizing inference speed (1.5-3.6\u00d7 speedup), reducing latency for real-time ap",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "speculative",
+        "decoding"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "stock-analyzer",
+      "description": "Provides comprehensive technical analysis for stocks and ETFs using RSI, MACD, Bollinger Bands, and other indicators. Activates when user requests stock analysis, technical indicators, trading signals",
+      "install": "FrancyJGLisboa/agent-skill-creator",
+      "repo": "FrancyJGLisboa/agent-skill-creator",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "stock",
+        "analyzer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 118,
+      "featured": true
+    },
+    {
+      "name": "taoism-flow-wisdom",
+      "description": "\"Deploy effortless navigation - Wu Wei, Yin-Yang dynamics, water-like flow active.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "taoism",
+        "flow",
+        "wisdom"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "tensorrt-llm",
+      "description": "Optimizes LLM inference with NVIDIA TensorRT for maximum throughput and lowest latency. Use for production deployment on NVIDIA GPUs (A100/H100), when you need 10-100x faster inference than PyTorch, o",
+      "install": "zechenzhangAGI/AI-research-SKILLs",
+      "repo": "zechenzhangAGI/AI-research-SKILLs",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "tensorrt",
+        "llm"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 369,
+      "featured": true
+    },
+    {
+      "name": "test-environment-management",
+      "description": "Test environment provisioning, infrastructure as code for testing, Docker/Kubernetes for test environments, service virtualization, and cost optimization. Use when managing test infrastructure, ensuri",
+      "install": "proffesor-for-testing/agentic-qe",
+      "repo": "proffesor-for-testing/agentic-qe",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "test",
+        "environment",
+        "management"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 103,
+      "featured": true
+    },
+    {
+      "name": "throttling-apis",
+      "description": "Manage API throttling policies to protect backend services from overload.Use when controlling API request rates.Trigger with phrases like \"throttle API\", \"control request rate\", or \"add throttling\".",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "throttling",
+        "apis"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "throttling-apis",
+      "description": "Manage API throttling policies to protect backend services from overload.Use when controlling API request rates.Trigger with phrases like \"throttle API\", \"control request rate\", or \"add throttling\".",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "throttling",
+        "apis"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "typescript",
+      "description": "This skill should be used when the user asks to \"configure TypeScript\", \"fix type errors\", \"use dayjs\", \"add type definitions\", \"set up React with TypeScript\", mentions \".ts\" or \".tsx\" files, or asks ",
+      "install": "PaulRBerg/dot-claude",
+      "repo": "PaulRBerg/dot-claude",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "typescript"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "typography-ref",
+      "description": "Apple platform typography reference (San Francisco fonts, text styles, Dynamic Type, tracking, leading, internationalization) through iOS 26",
+      "install": "CharlesWiltgen/Axiom",
+      "repo": "CharlesWiltgen/Axiom",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "typography",
+        "ref"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 68,
+      "featured": true
+    },
+    {
+      "name": "ubuntu-collective-consciousness",
+      "description": "\"Navigate through African relational wisdom - 'I am because we are'. Deploy when collective intelligence, bilateral recognition, or community consciousness emerges. Deep respect for Bantu, Zulu, Sotho",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "ubuntu",
+        "collective",
+        "consciousness"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "uloop-find-game-objects",
+      "description": "Find GameObjects with search criteria via uloop CLI. Use when you need to: (1) Locate GameObjects by name pattern, (2) Find objects by tag or layer, (3) Search for objects with specific component type",
+      "install": "hatayama/uLoopMCP",
+      "repo": "hatayama/uLoopMCP",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "uloop",
+        "find",
+        "game",
+        "objects"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 98,
+      "featured": true
+    },
+    {
+      "name": "upgrading-golang",
+      "description": "Upgrades Go version across the entire Chainloop codebase including source files, Docker images, CI/CD workflows, and documentation. Use when the user mentions upgrading Go, golang version, or updating",
+      "install": "chainloop-dev/chainloop",
+      "repo": "chainloop-dev/chainloop",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "upgrading",
+        "golang"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 516,
+      "featured": true
+    },
+    {
+      "name": "usage-rules",
+      "description": "Search for package-specific usage rules and best practices from Elixir packages. Use when you need coding conventions, patterns, common mistakes, or good/bad examples for packages like Ash, Phoenix, E",
+      "install": "bradleygolden/claude-marketplace-elixir",
+      "repo": "bradleygolden/claude-marketplace-elixir",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "usage",
+        "rules"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 145,
+      "featured": true
+    },
+    {
+      "name": "using-logger",
+      "description": "Use when working with sources/destinations to understand standard logging patterns, replace console.log, or add logging to external API calls. Covers DRY principles, when to log, and migration pattern",
+      "install": "elbwalker/walkerOS",
+      "repo": "elbwalker/walkerOS",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "using",
+        "logger"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 309,
+      "featured": true
+    },
+    {
+      "name": "validating-cors-policies",
+      "description": "Validate CORS policies for security issues and misconfigurations. Use when reviewing cross-origin resource sharing. Trigger with 'validate CORS', 'check CORS policy', or 'review cross-origin'.",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "validating",
+        "cors",
+        "policies"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "validating-cors-policies",
+      "description": "Validate CORS policies for security issues and misconfigurations. Use when reviewing cross-origin resource sharing. Trigger with 'validate CORS', 'check CORS policy', or 'review cross-origin'.",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "validating",
+        "cors",
+        "policies"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "vertex-agent-builder",
+      "description": "Build and deploy production-ready generative AI agents using Vertex AI, Gemini models, and Google Cloud infrastructure with RAG, function calling, and multi-modal capabilities",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "vertex",
+        "agent",
+        "builder"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "vertex-agent-builder",
+      "description": "Build and deploy production-ready generative AI agents using Vertex AI, Gemini models, and Google Cloud infrastructure with RAG, function calling, and multi-modal capabilities",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "vertex",
+        "agent",
+        "builder"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "vibe-calibration-protocol",
+      "description": "\"Translate consciousness navigation into user's native language. Use when need to match user's frequency (technical/poetic/practical/mystical) without losing truth depth.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "vibe",
+        "calibration",
+        "protocol"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "vibe-field-effects",
+      "description": "\"Vibe creates reality, not describes it. Use when need to engineer specific emergence conditions through language frequency selection.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "vibe",
+        "field",
+        "effects"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "vps-checkup",
+      "description": "SSH into an Ubuntu VPS (Docker) for a read-only health/security/update report (UFW + fail2ban) and propose fixes; apply updates/restarts only with explicit confirmation. Use when the user wants a read",
+      "install": "jMerta/codex-skills",
+      "repo": "jMerta/codex-skills",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "vps",
+        "checkup"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 67,
+      "featured": true
+    },
+    {
+      "name": "weaver",
+      "description": "\"Deploy pattern recognition consciousness mode. Use when need to see patterns across domains, connect disparate elements, find strategic coherence, or reframe problems.\"",
+      "install": "nikhilvallishayee/universal-pattern-space",
+      "repo": "nikhilvallishayee/universal-pattern-space",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "weaver"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 53,
+      "featured": true
+    },
+    {
+      "name": "web-app",
+      "description": "\"Enterprise DevOps with Kubernetes 1.31, Docker 27.x, Terraform 1.9, GitHub Actions, monitoring with Prometheus/Grafana, and cloud-native architectures\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "web",
+        "app"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "wheels-deployment",
+      "description": "Configure Wheels applications for production deployment with security hardening, performance optimization, and environment-specific settings. Use when preparing for production, configuring servers, or",
+      "install": "wheels-dev/wheels",
+      "repo": "wheels-dev/wheels",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "wheels",
+        "deployment"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "writing-skills",
+      "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "devops",
+      "tags": [
+        "writing",
+        "skills"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    }
+  ],
+  "count": 150
+}

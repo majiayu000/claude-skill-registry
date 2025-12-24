@@ -1,7 +1,255 @@
 {
   "category": "marketing",
-  "updated_at": "2025-12-24T10:43:09.644535Z",
+  "updated_at": "2025-12-24T13:32:26.186259Z",
   "skills": [
+    {
+      "name": "article-extractor",
+      "description": "Extract clean article content from URLs (blog posts, articles, tutorials) and save as readable text. Use when user wants to download, extract, or save an article/blog post from a URL without ads, navi",
+      "install": "michalparkola/tapestry-skills-for-claude-code",
+      "repo": "michalparkola/tapestry-skills-for-claude-code",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "article",
+        "extractor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 91,
+      "featured": true
+    },
+    {
+      "name": "brand-voice-consistency",
+      "description": "Ensure all communication matches brand voice and tone guidelines. Use when creating marketing copy, customer communications, public-facing content, or when users mention brand voice, tone, or writing ",
+      "install": "luongnv89/claude-howto",
+      "repo": "luongnv89/claude-howto",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "brand",
+        "voice",
+        "consistency"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 226,
+      "featured": true
+    },
+    {
+      "name": "brave-search",
+      "description": "Web search and content extraction via Brave Search API.",
+      "install": "steipete/clawdis",
+      "repo": "steipete/clawdis",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "brave",
+        "search"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 430,
+      "featured": true
+    },
+    {
+      "name": "card-news-generator",
+      "description": "Create 600x600 Instagram-style card news series automatically with optional background images. User provides topic, colors, and optional images - Claude generates content and creates multiple cards wi",
+      "install": "bear2u/my-skills",
+      "repo": "bear2u/my-skills",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "card",
+        "news",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 575,
+      "featured": true
+    },
+    {
+      "name": "card-news-generator-v2",
+      "description": "Create 600x600 Instagram-style card news series automatically with optional background images. User provides topic, colors, and optional images - Claude generates content and creates multiple cards wi",
+      "install": "bear2u/my-skills",
+      "repo": "bear2u/my-skills",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "card",
+        "news",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 575,
+      "featured": true
+    },
+    {
+      "name": "content-creator",
+      "description": "Create SEO-optimized marketing content with consistent brand voice. Includes brand voice analyzer, SEO optimizer, content frameworks, and social media templates. Use when writing blog posts, creating ",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "content",
+        "creator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "executing-marketing-campaigns",
+      "description": "Plans, creates, and optimizes marketing campaigns including content strategy, social media, email, and analytics. Helps develop go-to-market strategies, campaign messaging, and performance measurement",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "executing",
+        "marketing",
+        "campaigns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "gemini-video-understanding",
+      "description": "Analyze videos using Google's Gemini API - describe content, answer questions, transcribe audio with visual descriptions, reference timestamps, clip videos, and process YouTube URLs. Supports 9 video ",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "gemini",
+        "video",
+        "understanding"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "marketing-demand-acquisition",
+      "description": "Multi-channel demand generation, paid media optimization, SEO strategy, and partnership programs for Series A+ startups. Includes CAC calculator, channel playbooks, HubSpot integration, and internatio",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "marketing",
+        "demand",
+        "acquisition"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "newsletter-publisher",
+      "description": "Prepare newsletters for publication by validating format, structure, frontmatter, and content. Use when reviewing drafts before sending.",
+      "install": "spences10/scottspence.com",
+      "repo": "spences10/scottspence.com",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "newsletter",
+        "publisher"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 55,
+      "featured": true
+    },
+    {
+      "name": "reddit-fetch",
+      "description": "Fetch content from Reddit using Gemini CLI when WebFetch is blocked. Use when accessing Reddit URLs, researching topics on Reddit, or when Reddit returns 403/blocked errors. (user)",
+      "install": "ykdojo/claude-code-tips",
+      "repo": "ykdojo/claude-code-tips",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "reddit",
+        "fetch"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 219,
+      "featured": true
+    },
+    {
+      "name": "seo-optimizer",
+      "description": "Search Engine Optimization specialist for content strategy, technical SEO, keyword research, and ranking improvements. Use when optimizing website content, improving search rankings, conducting keywor",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "seo",
+        "optimizer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "ship-learn-next",
+      "description": "Transform learning content (like YouTube transcripts, articles, tutorials) into actionable implementation plans using the Ship-Learn-Next framework. Use when user wants to turn advice, lessons, or edu",
+      "install": "michalparkola/tapestry-skills-for-claude-code",
+      "repo": "michalparkola/tapestry-skills-for-claude-code",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "ship",
+        "learn",
+        "next"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 91,
+      "featured": true
+    },
+    {
+      "name": "social-media-analyzer",
+      "description": "Analyzes social media campaign performance across platforms with engagement metrics, ROI calculations, and audience insights for data-driven marketing decisions",
+      "install": "alirezarezvani/claude-code-skill-factory",
+      "repo": "alirezarezvani/claude-code-skill-factory",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "social",
+        "media",
+        "analyzer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 102,
+      "featured": true
+    },
+    {
+      "name": "tavily-usage",
+      "description": "This skill should be used when user asks to \"search the web\", \"fetch content from URL\", \"extract page content\", \"use Tavily search\", \"scrape this website\", \"get information from this link\", or \"web se",
+      "install": "fcakyon/claude-codex-settings",
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "tavily",
+        "usage"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 247,
+      "featured": true
+    },
+    {
+      "name": "youtube-wisdom",
+      "description": "Extract wisdom, insights, and actionable takeaways from YouTube videos. Use when asked to analyse, summarise, or extract key learnings from YouTube content. Downloads video transcripts, performs analy",
+      "install": "sammcj/agentic-coding",
+      "repo": "sammcj/agentic-coding",
+      "path": "",
+      "category": "marketing",
+      "tags": [
+        "youtube",
+        "wisdom"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 65,
+      "featured": true
+    },
     {
       "name": "marketing-analytics-reporter",
       "description": "Analyze marketing performance and create reports",
@@ -88,5 +336,5 @@
       "featured": false
     }
   ],
-  "count": 5
+  "count": 21
 }

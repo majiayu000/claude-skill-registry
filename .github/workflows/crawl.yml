@@ -1,0 +1,52 @@
+name: Sync Skills from SkillsMP
+
+on:
+  schedule:
+    # Run weekly on Sunday at 02:00 UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      max_skills:
+        description: 'Maximum skills to sync'
+        required: false
+        default: '50000'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests pyyaml
+
+      - name: Sync from SkillsMP.com
+        run: |
+          python scripts/sync_skillsmp.py \
+            --output sources/skillsmp.json \
+            --max ${{ github.event.inputs.max_skills || '50000' }}
+
+      - name: Build Registry
+        run: python scripts/build_registry.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "feat: Sync skills from SkillsMP $(date -u +%Y-%m-%d)"
+            git push
+          fi

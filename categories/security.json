@@ -1,0 +1,874 @@
+{
+  "category": "security",
+  "updated_at": "2025-12-24T13:32:26.186259Z",
+  "skills": [
+    {
+      "name": "analyzing-dependencies",
+      "description": "Check dependencies for known security vulnerabilities and outdated versions. Use when auditing third-party libraries. Trigger with 'check dependencies', 'scan for vulnerabilities', or 'audit packages'",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "analyzing",
+        "dependencies"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "analyzing-dependencies",
+      "description": "Check dependencies for known security vulnerabilities and outdated versions. Use when auditing third-party libraries. Trigger with 'check dependencies', 'scan for vulnerabilities', or 'audit packages'",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "analyzing",
+        "dependencies"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "analyzing-security-headers",
+      "description": "Analyze HTTP security headers of web domains to identify vulnerabilities and misconfigurations.Use when you need to audit website security headers, assess header compliance, or get security recommenda",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "analyzing",
+        "security",
+        "headers"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "analyzing-security-headers",
+      "description": "Analyze HTTP security headers of web domains to identify vulnerabilities and misconfigurations.Use when you need to audit website security headers, assess header compliance, or get security recommenda",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "analyzing",
+        "security",
+        "headers"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "assisting-with-soc2-audit-preparation",
+      "description": "Automate SOC 2 audit preparation including evidence gathering, control assessment, and compliance gap identification.Use when you need to prepare for SOC 2 audits, assess Trust Service Criteria compli",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "assisting",
+        "with",
+        "soc2",
+        "audit",
+        "preparation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "assisting-with-soc2-audit-preparation",
+      "description": "Automate SOC 2 audit preparation including evidence gathering, control assessment, and compliance gap identification.Use when you need to prepare for SOC 2 audits, assess Trust Service Criteria compli",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "assisting",
+        "with",
+        "soc2",
+        "audit",
+        "preparation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "auditing-access-control",
+      "description": "Audit access control implementations for security vulnerabilities and misconfigurations. Use when reviewing authentication and authorization. Trigger with 'audit access control', 'check permissions', ",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "auditing",
+        "access",
+        "control"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "auditing-access-control",
+      "description": "Audit access control implementations for security vulnerabilities and misconfigurations. Use when reviewing authentication and authorization. Trigger with 'audit access control', 'check permissions', ",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "auditing",
+        "access",
+        "control"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "auditing-security",
+      "description": "Identify and remediate vulnerabilities through systematic code analysis. Use when performing security assessments, pre-deployment reviews, compliance validation (OWASP, PCI-DSS, GDPR), investigating k",
+      "install": "CaptainCrouton89/.claude",
+      "repo": "CaptainCrouton89/.claude",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "auditing",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 490,
+      "featured": true
+    },
+    {
+      "name": "auditing-wallet-security",
+      "description": "Audit crypto wallet security including private key management and transaction signing.Use when auditing wallet security practices.Trigger with phrases like \"audit wallet\", \"check security\", or \"verify",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "auditing",
+        "wallet",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "auditing-wallet-security",
+      "description": "Audit crypto wallet security including private key management and transaction signing.Use when auditing wallet security practices.Trigger with phrases like \"audit wallet\", \"check security\", or \"verify",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "auditing",
+        "wallet",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "checking-hipaa-compliance",
+      "description": "Check HIPAA compliance for healthcare data security requirements. Use when auditing healthcare applications. Trigger with 'check HIPAA compliance', 'validate health data security', or 'audit PHI prote",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "checking",
+        "hipaa",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "checking-hipaa-compliance",
+      "description": "Check HIPAA compliance for healthcare data security requirements. Use when auditing healthcare applications. Trigger with 'check HIPAA compliance', 'validate health data security', or 'audit PHI prote",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "checking",
+        "hipaa",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "checking-owasp-compliance",
+      "description": "Check compliance with OWASP Top 10 security risks and best practices. Use when performing comprehensive security audits. Trigger with 'check OWASP compliance', 'audit web security', or 'validate OWASP",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "checking",
+        "owasp",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "checking-owasp-compliance",
+      "description": "Check compliance with OWASP Top 10 security risks and best practices. Use when performing comprehensive security audits. Trigger with 'check OWASP compliance', 'audit web security', or 'validate OWASP",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "checking",
+        "owasp",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "checking-session-security",
+      "description": "Analyze session management implementations to identify security vulnerabilities in web applications.Use when you need to audit session handling, check for session fixation risks, review session timeou",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "checking",
+        "session",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "checking-session-security",
+      "description": "Analyze session management implementations to identify security vulnerabilities in web applications.Use when you need to audit session handling, check for session fixation risks, review session timeou",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "checking",
+        "session",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "claude-agent-sdk",
+      "description": "Build autonomous AI agents with Claude Agent SDK. Structured outputs (v0.1.45, Nov 2025) guarantee JSON schema validation, plugins system, hooks for event-driven workflows. Use when: building coding a",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claude",
+        "agent",
+        "sdk"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "code-review",
+      "description": "Automated code review for pull requests using specialized review patterns. Analyzes code for quality, security, performance, and best practices. Use when reviewing code changes, PRs, or doing code aud",
+      "install": "skillcreatorai/Ai-Agent-Skills",
+      "repo": "skillcreatorai/Ai-Agent-Skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "code",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "code-review",
+      "description": "This skill should be used when the user asks to \"review code\", \"review PR\", \"code review\", \"audit code\", \"check for bugs\", \"security review\", \"review my changes\", \"find issues in this code\", \"review t",
+      "install": "PaulRBerg/dot-claude",
+      "repo": "PaulRBerg/dot-claude",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "code",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "cookbook-audit",
+      "description": "Audit an Anthropic Cookbook notebook based on a rubric. Use whenever a notebook review or audit is requested.",
+      "install": "anthropics/claude-cookbooks",
+      "repo": "anthropics/claude-cookbooks",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "cookbook",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 28337,
+      "featured": true
+    },
+    {
+      "name": "finding-security-misconfigurations",
+      "description": "Identify security misconfigurations in infrastructure-as-code, application settings, and system configurations.Use when you need to audit Terraform/CloudFormation templates, check application config f",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "finding",
+        "security",
+        "misconfigurations"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "finding-security-misconfigurations",
+      "description": "Identify security misconfigurations in infrastructure-as-code, application settings, and system configurations.Use when you need to audit Terraform/CloudFormation templates, check application config f",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "finding",
+        "security",
+        "misconfigurations"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "ios-accessibility",
+      "description": "Use when fixing or auditing ANY accessibility issue - VoiceOver, Dynamic Type, color contrast, touch targets, WCAG compliance, App Store accessibility review.",
+      "install": "CharlesWiltgen/Axiom",
+      "repo": "CharlesWiltgen/Axiom",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "ios",
+        "accessibility"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 68,
+      "featured": true
+    },
+    {
+      "name": "logging-api-requests",
+      "description": "Log API requests with correlation IDs, performance metrics, and security audit trails.Use when auditing API requests and responses.Trigger with phrases like \"log API requests\", \"add API logging\", or \"",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "logging",
+        "api",
+        "requests"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "logging-api-requests",
+      "description": "Log API requests with correlation IDs, performance metrics, and security audit trails.Use when auditing API requests and responses.Trigger with phrases like \"log API requests\", \"add API logging\", or \"",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "logging",
+        "api",
+        "requests"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "moai-domain-security",
+      "description": "\"Enterprise-grade security expertise with production-ready patterns for OWASP Top 10 2021, zero-trust architecture, threat modeling (STRIDE, PASTA), secure SDLC, DevSecOps automation, cloud security, ",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "moai",
+        "domain",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-security-owasp",
+      "description": "\"Enterprise Skill for advanced development\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "moai",
+        "security",
+        "owasp"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "performing-security-testing",
+      "description": "Automate security vulnerability testing covering OWASP Top 10, SQL injection, XSS, CSRF, and authentication issues.Use when performing security assessments, penetration tests, or vulnerability scans.T",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "performing",
+        "security",
+        "testing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "performing-security-testing",
+      "description": "Automate security vulnerability testing covering OWASP Top 10, SQL injection, XSS, CSRF, and authentication issues.Use when performing security assessments, penetration tests, or vulnerability scans.T",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "performing",
+        "security",
+        "testing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "repomix",
+      "description": "Guide for using Repomix - a powerful tool that packs entire repositories into single, AI-friendly files. Use when packaging codebases for AI analysis, generating context for LLMs, creating codebase sn",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "repomix"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "scanning-accessibility",
+      "description": "Validate WCAG compliance and accessibility standards (ARIA, keyboard navigation).Use when auditing WCAG compliance or screen reader compatibility.Trigger with phrases like \"scan accessibility\", \"check",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "accessibility"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "scanning-accessibility",
+      "description": "Validate WCAG compliance and accessibility standards (ARIA, keyboard navigation).Use when auditing WCAG compliance or screen reader compatibility.Trigger with phrases like \"scan accessibility\", \"check",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "accessibility"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "scanning-api-security",
+      "description": "Scan APIs for security vulnerabilities including injection, broken auth, and data exposure.Use when scanning APIs for security vulnerabilities.Trigger with phrases like \"scan API security\", \"check for",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "api",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "scanning-api-security",
+      "description": "Scan APIs for security vulnerabilities including injection, broken auth, and data exposure.Use when scanning APIs for security vulnerabilities.Trigger with phrases like \"scan API security\", \"check for",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "api",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "scanning-container-security",
+      "description": "Use when you need to work with security and compliance.This skill provides security scanning and vulnerability detection with comprehensive guidance and automation.Trigger with phrases like \"scan for ",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "container",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "scanning-container-security",
+      "description": "Use when you need to work with security and compliance.This skill provides security scanning and vulnerability detection with comprehensive guidance and automation.Trigger with phrases like \"scan for ",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "container",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "scanning-database-security",
+      "description": "Use when you need to work with security and compliance.This skill provides security scanning and vulnerability detection with comprehensive guidance and automation.Trigger with phrases like \"scan for ",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "database",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "scanning-database-security",
+      "description": "Use when you need to work with security and compliance.This skill provides security scanning and vulnerability detection with comprehensive guidance and automation.Trigger with phrases like \"scan for ",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "scanning",
+        "database",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "security-assessment",
+      "description": "Vulnerability review, OWASP patterns, secure coding practices, and threat modeling approaches. Use when reviewing code security, designing secure systems, performing threat analysis, or validating sec",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "assessment"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "security-audit",
+      "description": "Comprehensive security code audit using multi-phase analysis (Assessment \u2192 STRIDE Threat Modeling \u2192 Code Review \u2192 Report). Use when asked to perform security review, vulnerability assessment, code aud",
+      "install": "mswell/dotfiles",
+      "repo": "mswell/dotfiles",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 66,
+      "featured": true
+    },
+    {
+      "name": "security-auditor",
+      "description": "Continuous security vulnerability scanning for OWASP Top 10, common vulnerabilities, and insecure patterns. Use when reviewing code, before deployments, or on file changes. Scans for SQL injection, XS",
+      "install": "alirezarezvani/claude-code-tresor",
+      "repo": "alirezarezvani/claude-code-tresor",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "auditor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 199,
+      "featured": true
+    },
+    {
+      "name": "security-checklist",
+      "description": "OWASP \u5b89\u5168\u68c0\u67e5\u6e05\u5355",
+      "install": "Leavesfly/Jimi",
+      "repo": "Leavesfly/Jimi",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "checklist"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 143,
+      "featured": true
+    },
+    {
+      "name": "security-patterns",
+      "description": "Security vulnerability detection patterns including OWASP Top 10, language-specific vulnerabilities, and remediation guidance. Load when reviewing code for security issues, conducting audits, or imple",
+      "install": "groupzer0/vs-code-agents",
+      "repo": "groupzer0/vs-code-agents",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 108,
+      "featured": true
+    },
+    {
+      "name": "security-testing",
+      "description": "Test for security vulnerabilities using OWASP principles. Use when conducting security audits, testing auth, or implementing security practices.",
+      "install": "proffesor-for-testing/agentic-qe",
+      "repo": "proffesor-for-testing/agentic-qe",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "testing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 103,
+      "featured": true
+    },
+    {
+      "name": "senior-secops",
+      "description": "Comprehensive SecOps skill for application security, vulnerability management, compliance, and secure development practices. Includes security scanning, vulnerability assessment, compliance checking, ",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "senior",
+        "secops"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "solidity-security",
+      "description": "Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contracts, auditing existing contracts, or implementing s",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "solidity",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "tech-stack-evaluator",
+      "description": "Comprehensive technology stack evaluation and comparison tool with TCO analysis, security assessment, and intelligent recommendations for engineering teams",
+      "install": "alirezarezvani/claude-code-skill-factory",
+      "repo": "alirezarezvani/claude-code-skill-factory",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "tech",
+        "stack",
+        "evaluator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 102,
+      "featured": true
+    },
+    {
+      "name": "threat-mitigation-mapping",
+      "description": "Map identified threats to appropriate security controls and mitigations. Use when prioritizing security investments, creating remediation plans, or validating control effectiveness.",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "threat",
+        "mitigation",
+        "mapping"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "validating-authentication-implementations",
+      "description": "Validate authentication mechanisms for security weaknesses and compliance. Use when reviewing login systems or auth flows. Trigger with 'validate authentication', 'check auth security', or 'review log",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "validating",
+        "authentication",
+        "implementations"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "validating-authentication-implementations",
+      "description": "Validate authentication mechanisms for security weaknesses and compliance. Use when reviewing login systems or auth flows. Trigger with 'validate authentication', 'check auth security', or 'review log",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "validating",
+        "authentication",
+        "implementations"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "validating-csrf-protection",
+      "description": "Validate CSRF protection implementations for security gaps. Use when reviewing form security or state-changing operations. Trigger with 'validate CSRF', 'check CSRF protection', or 'review token secur",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "validating",
+        "csrf",
+        "protection"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "validating-csrf-protection",
+      "description": "Validate CSRF protection implementations for security gaps. Use when reviewing form security or state-changing operations. Trigger with 'validate CSRF', 'check CSRF protection', or 'review token secur",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "validating",
+        "csrf",
+        "protection"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "validating-pci-dss-compliance",
+      "description": "Validate PCI-DSS compliance for payment card data security. Use when auditing payment systems. Trigger with 'validate PCI-DSS', 'check payment security', or 'audit card data'.",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "validating",
+        "pci",
+        "dss",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "validating-pci-dss-compliance",
+      "description": "Validate PCI-DSS compliance for payment card data security. Use when auditing payment systems. Trigger with 'validate PCI-DSS', 'check payment security', or 'audit card data'.",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "validating",
+        "pci",
+        "dss",
+        "compliance"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    }
+  ],
+  "count": 55
+}

@@ -1,7 +1,3350 @@
 {
   "category": "documents",
-  "updated_at": "2025-12-24T10:43:09.644535Z",
+  "updated_at": "2025-12-24T13:32:26.186259Z",
   "skills": [
+    {
+      "name": "000-jeremy-content-consistency-validator",
+      "description": "Validate messaging consistency across website, GitHub repos, and local documentation generating read-only discrepancy reports. Use when checking content alignment or finding mixed messaging. Trigger w",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "000",
+        "jeremy",
+        "content",
+        "consistency",
+        "validator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "000-jeremy-content-consistency-validator",
+      "description": "Validate messaging consistency across website, GitHub repos, and local documentation generating read-only discrepancy reports. Use when checking content alignment or finding mixed messaging. Trigger w",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "000",
+        "jeremy",
+        "content",
+        "consistency",
+        "validator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "add-neon-docs",
+      "description": "Use this skill when the user asks to add documentation, add docs, add references, or install documentation about Neon. Adds Neon best practices reference links to project AI documentation (CLAUDE.md, ",
+      "install": "neondatabase/ai-rules",
+      "repo": "neondatabase/ai-rules",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "add",
+        "neon",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "agents-md-generator",
+      "description": "Generate hierarchical AGENTS.md structures for codebases. Use when user asks to create AGENTS.md files, analyze codebase for AI agent documentation, set up AI-friendly project documentation, or genera",
+      "install": "julianromli/ai-skills",
+      "repo": "julianromli/ai-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "agents",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 120,
+      "featured": true
+    },
+    {
+      "name": "ai-maestro-documentation-search",
+      "description": "PROACTIVELY search auto-generated documentation when receiving ANY user instruction. Search for function signatures, API documentation, class definitions, and code comments BEFORE implementing anythin",
+      "install": "23blocks-OS/ai-maestro",
+      "repo": "23blocks-OS/ai-maestro",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "maestro",
+        "documentation",
+        "search"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 71,
+      "featured": true
+    },
+    {
+      "name": "ai-sdk-model-manager",
+      "description": "Manages AI SDK model configurations - updates packages, identifies missing models, adds new models with research, and updates documentation",
+      "install": "tambo-ai/tambo",
+      "repo": "tambo-ai/tambo",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "sdk",
+        "model",
+        "manager"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 817,
+      "featured": true
+    },
+    {
+      "name": "analysis-discovery",
+      "description": "Discover patterns, rules, and interfaces through iterative analysis cycles.Use when analyzing business rules, technical patterns, security, performance,integration points, or domain-specific areas. In",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "analysis",
+        "discovery"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "api-client",
+      "description": "\u0423\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0439 REST API \u043a\u043b\u0438\u0435\u043d\u0442 \u0434\u043b\u044f MikoPBX \u0441 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0435\u0439 \u0438 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435\u043c \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432\u043d\u0443\u0442\u0440\u0438 Docker \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432. \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u0433\u0434\u0430 \u043d\u0443\u0436\u043d\u043e \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c API \u044d\u043d\u0434\u043f\u043e\u0438\u043d\u0442\u044b, \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c CRUD \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438",
+      "install": "mikopbx/Core",
+      "repo": "mikopbx/Core",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "api",
+        "client"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 489,
+      "featured": true
+    },
+    {
+      "name": "api-contract-sync-manager",
+      "description": "Validate OpenAPI, Swagger, and GraphQL schemas match backend implementation. Detect breaking changes, generate TypeScript clients, and ensure API documentation stays synchronized. Use when working wit",
+      "install": "ananddtyagi/cc-marketplace",
+      "repo": "ananddtyagi/cc-marketplace",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "api",
+        "contract",
+        "sync",
+        "manager"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 557,
+      "featured": true
+    },
+    {
+      "name": "api-documentation-generator",
+      "description": "Generate comprehensive, accurate API documentation from source code. Use when creating or updating API documentation, generating OpenAPI specs, or when users mention API docs, endpoints, or documentat",
+      "install": "luongnv89/claude-howto",
+      "repo": "luongnv89/claude-howto",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "api",
+        "documentation",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 226,
+      "featured": true
+    },
+    {
+      "name": "api-documenter",
+      "description": "Auto-generate API documentation from code and comments. Use when API endpoints change, or user mentions API docs. Creates OpenAPI/Swagger specs from code. Triggers on API file changes, documentation r",
+      "install": "alirezarezvani/claude-code-tresor",
+      "repo": "alirezarezvani/claude-code-tresor",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "api",
+        "documenter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 199,
+      "featured": true
+    },
+    {
+      "name": "api-spec-analyzer",
+      "description": "Analyzes API documentation from OpenAPI specs to provide TypeScript interfaces, request/response formats, and implementation guidance. Use when implementing API integrations, debugging API errors (400",
+      "install": "MadAppGang/claude-code",
+      "repo": "MadAppGang/claude-code",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "api",
+        "spec",
+        "analyzer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 171,
+      "featured": true
+    },
+    {
+      "name": "apple-docs-research",
+      "description": "Use when researching Apple frameworks, APIs, or WWDC sessions - provides techniques for retrieving full transcripts, code samples, and documentation using Chrome browser and sosumi.ai",
+      "install": "CharlesWiltgen/Axiom",
+      "repo": "CharlesWiltgen/Axiom",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "apple",
+        "docs",
+        "research"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 68,
+      "featured": true
+    },
+    {
+      "name": "architecture-decision-records",
+      "description": "Write and maintain Architecture Decision Records (ADRs) following best practices for technical decision documentation. Use when documenting significant technical decisions, reviewing past architectura",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "architecture",
+        "decision",
+        "records"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "architecture-patterns",
+      "description": "Common software architecture patterns, ADR templates, and anti-pattern detection. Supports architectural review, design decisions, and system documentation.",
+      "install": "groupzer0/vs-code-agents",
+      "repo": "groupzer0/vs-code-agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "architecture",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 108,
+      "featured": true
+    },
+    {
+      "name": "archon",
+      "description": "Interactive Archon integration for knowledge base and project management via REST API. On first use, asks for Archon host URL. Use when searching documentation, managing projects/tasks, or querying in",
+      "install": "coleam00/ottomator-agents",
+      "repo": "coleam00/ottomator-agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "archon"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 4885,
+      "featured": true
+    },
+    {
+      "name": "ark-documentation",
+      "description": "Guidance for structuring Ark documentation using the Diataxis framework. Use this skill when creating new docs, deciding where content belongs, reviewing documentation PRs, or restructuring existing d",
+      "install": "mckinsey/agents-at-scale-ark",
+      "repo": "mckinsey/agents-at-scale-ark",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "ark",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 268,
+      "featured": true
+    },
+    {
+      "name": "backend-api",
+      "description": "Design and implement RESTful API endpoints following REST principles with proper HTTP methods, status codes, and resource-based URLs. Use this skill when creating or modifying API endpoints, route han",
+      "install": "maxritter/claude-codepro",
+      "repo": "maxritter/claude-codepro",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "backend",
+        "api"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 72,
+      "featured": true
+    },
+    {
+      "name": "backend-api-standards",
+      "description": "Design and implement RESTful API endpoints following REST principles with proper HTTP methods, status codes, and resource-based URLs. Use this skill when creating or modifying API endpoints, route han",
+      "install": "maxritter/claude-codepro",
+      "repo": "maxritter/claude-codepro",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "backend",
+        "api",
+        "standards"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 251,
+      "featured": true
+    },
+    {
+      "name": "brave-search",
+      "description": "Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required.",
+      "install": "steipete/agent-scripts",
+      "repo": "steipete/agent-scripts",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "brave",
+        "search"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 326,
+      "featured": true
+    },
+    {
+      "name": "bubbletea",
+      "description": "Browse Bubbletea TUI framework documentation and examples. Use when working with Bubbletea components, models, commands, or building terminal user interfaces in Go.",
+      "install": "hmans/beans",
+      "repo": "hmans/beans",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "bubbletea"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 94,
+      "featured": true
+    },
+    {
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ori",
+      "install": "anthropics/skills",
+      "repo": "anthropics/skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "canvas",
+        "design"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 24530,
+      "featured": true
+    },
+    {
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. Use when the user asks to create a poster, piece of art, design, or other static visual piece. Creates original visual d",
+      "install": "skillcreatorai/Ai-Agent-Skills",
+      "repo": "skillcreatorai/Ai-Agent-Skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "canvas",
+        "design"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ori",
+      "install": "ylsdamxssjxxdd/eva",
+      "repo": "ylsdamxssjxxdd/eva",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "canvas",
+        "design"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 172,
+      "featured": true
+    },
+    {
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ori",
+      "install": "AgiFlow/aicode-toolkit",
+      "repo": "AgiFlow/aicode-toolkit",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "canvas",
+        "design"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 114,
+      "featured": true
+    },
+    {
+      "name": "changelog",
+      "description": "Add an entry to the changelog in readme.txt following the project's changelog format. Use when updating readme.txt, adding to Unreleased section, documenting changes for a release, or when the user sa",
+      "install": "bonny/WordPress-Simple-History",
+      "repo": "bonny/WordPress-Simple-History",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "changelog"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 313,
+      "featured": true
+    },
+    {
+      "name": "check-code-quality",
+      "description": "Run comprehensive Rust code quality checks including compilation, linting, documentation, and tests. Use after completing code changes and before creating commits.",
+      "install": "r3bl-org/r3bl-open-core",
+      "repo": "r3bl-org/r3bl-open-core",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "check",
+        "code",
+        "quality"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 432,
+      "featured": true
+    },
+    {
+      "name": "claude-docs-consultant",
+      "description": "Consult official Claude Code documentation from docs.claude.com using selective fetching. Use this skill when working on Claude Code hooks, skills, subagents, MCP servers, or any Claude Code feature t",
+      "install": "centminmod/my-claude-code-setup",
+      "repo": "centminmod/my-claude-code-setup",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "claude",
+        "docs",
+        "consultant"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1443,
+      "featured": true
+    },
+    {
+      "name": "clinical-decision-support",
+      "description": "Generate professional clinical decision support (CDS) documents for pharmaceutical and clinical research settings, including patient cohort analyses (biomarker-stratified with outcomes) and treatment ",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "clinical",
+        "decision",
+        "support"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "clinical-decision-support",
+      "description": "\"Generate professional clinical decision support (CDS) documents for pharmaceutical and clinical research settings, including patient cohort analyses (biomarker-stratified with outcomes) and treatment",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "clinical",
+        "decision",
+        "support"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "clinical-decision-support",
+      "description": "Generate professional clinical decision support (CDS) documents for pharmaceutical and clinical research settings, including patient cohort analyses (biomarker-stratified with outcomes) and treatment ",
+      "install": "K-Dense-AI/claude-scientific-writer",
+      "repo": "K-Dense-AI/claude-scientific-writer",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "clinical",
+        "decision",
+        "support"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 201,
+      "featured": true
+    },
+    {
+      "name": "clinical-reports",
+      "description": "Write comprehensive clinical reports including case reports (CARE guidelines), diagnostic reports (radiology/pathology/lab), clinical trial reports (ICH-E3, SAE, CSR), and patient documentation (SOAP,",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "clinical",
+        "reports"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "clinical-reports",
+      "description": "\"Write comprehensive clinical reports including case reports (CARE guidelines), diagnostic reports (radiology/pathology/lab), clinical trial reports (ICH-E3, SAE, CSR), and patient documentation (SOAP",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "clinical",
+        "reports"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "codify-docs",
+      "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
+      "install": "EveryInc/every-marketplace",
+      "repo": "EveryInc/every-marketplace",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "codify",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1041,
+      "featured": true
+    },
+    {
+      "name": "coingecko",
+      "description": "CoinGecko API documentation - cryptocurrency market data API, price feeds, market cap, volume, historical data. Use when integrating CoinGecko API, building crypto price trackers, or accessing cryptoc",
+      "install": "2025Emma/vibe-coding-cn",
+      "repo": "2025Emma/vibe-coding-cn",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "coingecko"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 177,
+      "featured": true
+    },
+    {
+      "name": "command-guide",
+      "description": "Workflow command guide for Claude Code Workflow (78 commands). Search/browse commands, get next-step recommendations, view documentation, report issues. Triggers \"CCW-help\", \"CCW-issue\", \"ccw-help\", \"",
+      "install": "catlog22/Claude-Code-Workflow",
+      "repo": "catlog22/Claude-Code-Workflow",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "command",
+        "guide"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 569,
+      "featured": true
+    },
+    {
+      "name": "company-product-context",
+      "description": "Compiles comprehensive company product context from PDF documents, web research, and industry knowledge",
+      "install": "lofcz/LLMTornado",
+      "repo": "lofcz/LLMTornado",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "company",
+        "product",
+        "context"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 363,
+      "featured": true
+    },
+    {
+      "name": "compound-docs",
+      "description": "Capture solved problems as categorized documentation with YAML frontmatter for fast lookup",
+      "install": "EveryInc/compound-engineering-plugin",
+      "repo": "EveryInc/compound-engineering-plugin",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "compound",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2908,
+      "featured": true
+    },
+    {
+      "name": "concise-output",
+      "description": "Enforces brevity and signal-over-noise in all outputs. Eliminates verbose explanations, filler phrases, and unnecessary elaboration. Use when documentation, artifacts, or responses need to be maximall",
+      "install": "NTCoding/claude-skillz",
+      "repo": "NTCoding/claude-skillz",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "concise",
+        "output"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 79,
+      "featured": true
+    },
+    {
+      "name": "configured-agent",
+      "description": "This skill should be used when the user asks about \"plugin settings\", \"store plugin configuration\", \"user-configurable plugin\", \".local.md files\", \"plugin state files\", \"read YAML frontmatter\", \"per-p",
+      "install": "anthropics/claude-code",
+      "repo": "anthropics/claude-code",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "configured",
+        "agent"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 47860,
+      "featured": true
+    },
+    {
+      "name": "confluence-deep-reader",
+      "description": "Read a Confluence page and recursively explore its child pages up to 3 levels deep. Use when users want to comprehensively read a Confluence page tree, understand hierarchical documentation, or analyz",
+      "install": "krafton-ai/KIRA",
+      "repo": "krafton-ai/KIRA",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "confluence",
+        "deep",
+        "reader"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 180,
+      "featured": true
+    },
+    {
+      "name": "content-linter",
+      "description": "Lint content for spelling errors, en-GB compliance, and writing quality. Use when checking markdown files before publication.",
+      "install": "spences10/scottspence.com",
+      "repo": "spences10/scottspence.com",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "content",
+        "linter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 55,
+      "featured": true
+    },
+    {
+      "name": "create-destination",
+      "description": "Use when creating a new walkerOS destination (web or server). Step-by-step workflow from research to documentation. (project)",
+      "install": "elbwalker/walkerOS",
+      "repo": "elbwalker/walkerOS",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "create",
+        "destination"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 309,
+      "featured": true
+    },
+    {
+      "name": "create-new-skills",
+      "description": "Creates new Agent Skills for Claude Code following best practices and documentation. Use when the user wants to create a new skill, extend Claude's capabilities, or package domain expertise into a reu",
+      "install": "disler/claude-code-hooks-multi-agent-observability",
+      "repo": "disler/claude-code-hooks-multi-agent-observability",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "create",
+        "new",
+        "skills"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 758,
+      "featured": true
+    },
+    {
+      "name": "create-plans",
+      "description": "Create hierarchical project plans optimized for solo agentic development. Use when planning projects, phases, or tasks that Claude will execute. Produces Claude-executable plans with verification crit",
+      "install": "glittercowboy/taches-cc-resources",
+      "repo": "glittercowboy/taches-cc-resources",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "create",
+        "plans"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 401,
+      "featured": true
+    },
+    {
+      "name": "creating-copilot-packages",
+      "description": "Use when creating GitHub Copilot instructions - provides repository-wide and path-specific formats, applyTo patterns, excludeAgent options, and natural language markdown style",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "creating",
+        "copilot",
+        "packages"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "deep-context-generation-with-pmat",
+      "description": "Generates comprehensive, LLM-optimized codebase context using PMAT(Pragmatic AI Labs MCP Agent Toolkit). Use this skill when:- Starting work on unfamiliar codebases- Onboarding to new projects or repo",
+      "install": "paiml/paiml-mcp-agent-toolkit",
+      "repo": "paiml/paiml-mcp-agent-toolkit",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "deep",
+        "context",
+        "generation",
+        "with",
+        "pmat"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 103,
+      "featured": true
+    },
+    {
+      "name": "deep-gemini",
+      "description": "Deep technical documentation generation workflow using zen mcp's clink and docgen tools. First uses clink to launch gemini CLI in WSL for code analysis, then uses docgen for structured document genera",
+      "install": "VCnoC/Claude-Code-Zen-mcp-Skill-Work",
+      "repo": "VCnoC/Claude-Code-Zen-mcp-Skill-Work",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "deep",
+        "gemini"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 105,
+      "featured": true
+    },
+    {
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This wor",
+      "install": "anthropics/skills",
+      "repo": "anthropics/skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "doc",
+        "coauthoring"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 24530,
+      "featured": true
+    },
+    {
+      "name": "doc-generator",
+      "description": "Generate professional Word documents with formatted text, tables, and layouts using Claude and Anthropic's docx skill",
+      "install": "vinhnx/vtcode",
+      "repo": "vinhnx/vtcode",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "doc",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 305,
+      "featured": true
+    },
+    {
+      "name": "doc-sync",
+      "description": "Keeps IdeaVim documentation in sync with code changes. Use this skill when you need to verify documentation accuracy after code changes, or when checking if documentation (in doc/, README.md, CONTRIBU",
+      "install": "JetBrains/ideavim",
+      "repo": "JetBrains/ideavim",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "doc",
+        "sync"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 10026,
+      "featured": true
+    },
+    {
+      "name": "doc-sync",
+      "description": "Synchronizes CLAUDE.md navigation indexes and README.md architecture docs across a repository. Use when asked to \"sync docs\", \"update CLAUDE.md files\", \"ensure documentation is in sync\", \"audit docume",
+      "install": "solatis/claude-config",
+      "repo": "solatis/claude-config",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "doc",
+        "sync"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 224,
+      "featured": true
+    },
+    {
+      "name": "docker-setup",
+      "description": "Docker \u5bb9\u5668\u5316\u914d\u7f6e\u6307\u5357",
+      "install": "Leavesfly/Jimi",
+      "repo": "Leavesfly/Jimi",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docker",
+        "setup"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 143,
+      "featured": true
+    },
+    {
+      "name": "docs-cleaner",
+      "description": "Consolidates redundant documentation while preserving all valuable content. This skill should be used when users want to clean up documentation bloat, merge redundant docs, reduce documentation sprawl",
+      "install": "daymade/claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "cleaner"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "docs-conventions",
+      "description": "Writing standards, React components, and MDX patterns for docs.cloudposse.com. Use when creating or editing documentation content.",
+      "install": "cloudposse/docs",
+      "repo": "cloudposse/docs",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "conventions"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 87,
+      "featured": true
+    },
+    {
+      "name": "docs-review",
+      "description": "Review documentation changes for compliance with the Metabase writing style guide. Use when reviewing pull requests, files, or diffs containing documentation markdown files.",
+      "install": "metabase/metabase",
+      "repo": "metabase/metabase",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 44733,
+      "featured": true
+    },
+    {
+      "name": "docs-seeker",
+      "description": "\"Searching internet for technical documentation using llms.txt standard, GitHub repositories via Repomix, and parallel exploration. Use when user needs: (1) Latest documentation for libraries/framewor",
+      "install": "mrgoonie/claudekit-skills",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "seeker"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 713,
+      "featured": true
+    },
+    {
+      "name": "docs-seeker",
+      "description": "\"Searching internet for technical documentation using llms.txt standard, GitHub repositories via Repomix, and parallel exploration. Use when user needs: (1) Latest documentation for libraries/framewor",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "seeker"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "docs-sync",
+      "description": "Keep documentation in sync with code changes across README, docs sites, API docs, runbooks, and configuration. Use when the user asks to update docs, ensure docs match behavior, or prepare docs for a ",
+      "install": "jMerta/codex-skills",
+      "repo": "jMerta/codex-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "sync"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 67,
+      "featured": true
+    },
+    {
+      "name": "docs-write",
+      "description": "Write documentation following Metabase's conversational, clear, and user-focused style. Use when creating or editing documentation files (markdown, MDX, etc.).",
+      "install": "metabase/metabase",
+      "repo": "metabase/metabase",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docs",
+        "write"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 44733,
+      "featured": true
+    },
+    {
+      "name": "document-converter",
+      "description": "Convert between Markdown, DOCX, and PDF formats bidirectionally. Handles text extraction from PDF/DOCX, markdown to document conversion. Use when converting document formats or extracting structured c",
+      "install": "benbrastmckie/.config",
+      "repo": "benbrastmckie/.config",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "document",
+        "converter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 426,
+      "featured": true
+    },
+    {
+      "name": "documentation",
+      "description": "Document business rules, technical patterns, and service interfaces discovered during analysis or implementation. Use when you find reusable patterns, external integrations, domain-specific rules, or ",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "documentation",
+      "description": "Communicating the intended behavior and context of code through clear documentation and comments, and sharing knowledge with the team.",
+      "install": "baz-scm/awesome-reviewers",
+      "repo": "baz-scm/awesome-reviewers",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 63,
+      "featured": true
+    },
+    {
+      "name": "documentation-architect",
+      "description": "Create, review, and refactor project documentation (README, AGENTS.md, architecture docs, runbooks, API docs) with deep codebase analysis, clear markdown structure, and diagrams/user flows. Use when a",
+      "install": "Qredence/agentic-fleet",
+      "repo": "Qredence/agentic-fleet",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "architect"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 87,
+      "featured": true
+    },
+    {
+      "name": "documentation-creation",
+      "description": "Create architectural decision records (ADRs), system documentation, API documentation, and operational runbooks. Use when capturing design decisions, documenting system architecture, creating API refe",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "creation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "documentation-implementation",
+      "description": "Technical documentation, API references, user guides, maintaining documentation quality. Use for documentation, docs, user-docs, api-docs, guide, readme tags. Provides documentation patterns, validati",
+      "install": "jpicklyk/task-orchestrator",
+      "repo": "jpicklyk/task-orchestrator",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "implementation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 111,
+      "featured": true
+    },
+    {
+      "name": "documentation-reading",
+      "description": "Interpret existing docs, READMEs, specs, and configuration files efficiently. Use when onboarding to a codebase, verifying implementation against specs, understanding API contracts, or parsing configu",
+      "install": "rsmdt/the-startup",
+      "repo": "rsmdt/the-startup",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "reading"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 127,
+      "featured": true
+    },
+    {
+      "name": "documentation-review",
+      "description": "Reviews documentation for factual accuracy",
+      "install": "stacklok/toolhive",
+      "repo": "stacklok/toolhive",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1440,
+      "featured": true
+    },
+    {
+      "name": "documentation-standards",
+      "description": "Standards and guidelines for organizing, structuring, and maintaining documentation in the PRPM repository - ensures consistency across user docs, development docs, and internal references",
+      "install": "pr-pm/prpm",
+      "repo": "pr-pm/prpm",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documentation",
+        "standards"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "documenting-code",
+      "description": "Maintain project documentation synchronized with code. Keep feature specs, API contracts, and README current with init-project standards. Use when updating docs after code changes, adding new features",
+      "install": "CaptainCrouton89/.claude",
+      "repo": "CaptainCrouton89/.claude",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documenting",
+        "code"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 490,
+      "featured": true
+    },
+    {
+      "name": "documenting-rust-code",
+      "description": "Rust documentation practices for HASH codebase. Use when writing doc comments, documenting functions and types, creating error documentation sections, using intra-doc links, documenting traits and mod",
+      "install": "hashintel/hash",
+      "repo": "hashintel/hash",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "documenting",
+        "rust",
+        "code"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1378,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (",
+      "install": "anthropics/skills",
+      "repo": "anthropics/skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 24530,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "Document toolkit (.docx). Create/edit documents, tracked changes, comments, formatting preservation, text extraction, for professional document processing.",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "\"Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents ",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "\"Document toolkit (.docx). Create/edit documents, tracked changes, comments, formatting preservation, text extraction, for professional document processing.\"",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (",
+      "install": "skillcreatorai/Ai-Agent-Skills",
+      "repo": "skillcreatorai/Ai-Agent-Skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "\"Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When EVA needs to work with professional documents (.d",
+      "install": "ylsdamxssjxxdd/eva",
+      "repo": "ylsdamxssjxxdd/eva",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 172,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "'Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents ",
+      "install": "pheuter/claude-agent-desktop",
+      "repo": "pheuter/claude-agent-desktop",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 102,
+      "featured": true
+    },
+    {
+      "name": "docx",
+      "description": "\u300c\u9762\u5411 .docx \u6587\u4ef6\u7684\u6587\u6863\u521b\u5efa\u3001\u7f16\u8f91\u4e0e\u5206\u6790\u300d\u2014\u2014\u652f\u6301\u4fee\u8ba2\u8bb0\u5f55\u3001\u6279\u6ce8\u3001\u683c\u5f0f\u4fdd\u6301\u4e0e\u6587\u672c\u62bd\u53d6\u3002\u5f53 Claude \u9700\u8981\u5904\u7406\u4e13\u4e1a Word \u6587\u6863\uff08.docx\uff09\u4ee5\u6267\u884c\u4ee5\u4e0b\u4efb\u4e00\u4efb\u52a1\u65f6\u8bf7\u4f7f\u7528\u672c\u6280\u80fd\uff1a(1) \u521b\u5efa\u65b0\u6587\u6863\uff1b(2) \u4fee\u6539\u6216\u7f16\u8f91\u5185\u5bb9\uff1b(3) \u5904\u7406\u4fee\u8ba2\u8bb0\u5f55\uff1b(4) \u6dfb\u52a0\u6279\u6ce8\uff1b\u6216\u5176\u4ed6\u6587\u6863\u76f8\u5173\u5de5\u4f5c\u3002",
+      "install": "LeastBit/Claude_skills_zh-CN",
+      "repo": "LeastBit/Claude_skills_zh-CN",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "docx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 54,
+      "featured": true
+    },
+    {
+      "name": "drafting-pr",
+      "description": "Use when creating or updating draft pull requests without code review - streamlines draft PR workflow with meaningful descriptions and commit messages, focusing on work-in-progress documentation",
+      "install": "udecode/dotai",
+      "repo": "udecode/dotai",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "drafting"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1107,
+      "featured": true
+    },
+    {
+      "name": "elixir-architect",
+      "description": "Use when designing or architecting Elixir/Phoenix applications, creating comprehensive project documentation, planning OTP supervision trees, defining domain models with Ash Framework, structuring mul",
+      "install": "maxim-ist/elixir-architect",
+      "repo": "maxim-ist/elixir-architect",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "elixir",
+        "architect"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 64,
+      "featured": true
+    },
+    {
+      "name": "employment-contract-templates",
+      "description": "Create employment contracts, offer letters, and HR policy documents following legal best practices. Use when drafting employment agreements, creating HR policies, or standardizing employment documenta",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "employment",
+        "contract",
+        "templates"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "expectations",
+      "description": "Working expectations and documentation practices. Use when capturing learnings or understanding how to work with this codebase.",
+      "install": "citypaul/.dotfiles",
+      "repo": "citypaul/.dotfiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "expectations"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 418,
+      "featured": true
+    },
+    {
+      "name": "extract-structured-data-from-unstructured-files-pdf-pptx-docx",
+      "description": "Invoke this skill BEFORE implementing any structured data extraction from documents to learn the correct llama_cloud_services API usage. Required reading before writing extraction code. Requires llama",
+      "install": "run-llama/vibe-llama",
+      "repo": "run-llama/vibe-llama",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "extract",
+        "structured",
+        "data",
+        "from",
+        "unstructured"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 173,
+      "featured": true
+    },
+    {
+      "name": "extract-wisdom",
+      "description": "Extract wisdom, insights, and actionable takeaways from text sources. Use when asked to analyse, summarise, or extract key learnings from blog posts, articles, markdown files, or other text content.",
+      "install": "sammcj/agentic-coding",
+      "repo": "sammcj/agentic-coding",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "extract",
+        "wisdom"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 65,
+      "featured": true
+    },
+    {
+      "name": "find-todo-and-fixme-comments",
+      "description": "Search markdown files, Nextflow scripts, and config files for TODO/FIXME comments, categorize by priority, and provide actionable recommendations. Use when you need to identify pending work or track t",
+      "install": "nextflow-io/training",
+      "repo": "nextflow-io/training",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "find",
+        "todo",
+        "and",
+        "fixme",
+        "comments"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 202,
+      "featured": true
+    },
+    {
+      "name": "gemini-document-processing",
+      "description": "Guide for implementing Google Gemini API document processing - analyze PDFs with native vision to extract text, images, diagrams, charts, and tables. Use when processing documents, extracting structur",
+      "install": "einverne/dotfiles",
+      "repo": "einverne/dotfiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "gemini",
+        "document",
+        "processing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 109,
+      "featured": true
+    },
+    {
+      "name": "generating-api-docs",
+      "description": "Create comprehensive API documentation with examples, authentication guides, and SDKs.Use when creating comprehensive API documentation.Trigger with phrases like \"generate API docs\", \"create API docum",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "generating",
+        "api",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "generating-api-docs",
+      "description": "Create comprehensive API documentation with examples, authentication guides, and SDKs.Use when creating comprehensive API documentation.Trigger with phrases like \"generate API docs\", \"create API docum",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "generating",
+        "api",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "generating-compliance-reports",
+      "description": "Generate comprehensive compliance reports for security standards. Use when creating compliance documentation. Trigger with 'generate compliance report', 'compliance status', or 'audit compliance'.",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "generating",
+        "compliance",
+        "reports"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "generating-compliance-reports",
+      "description": "Generate comprehensive compliance reports for security standards. Use when creating compliance documentation. Trigger with 'generate compliance report', 'compliance status', or 'audit compliance'.",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "generating",
+        "compliance",
+        "reports"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "generating-security-audit-reports",
+      "description": "Generate comprehensive security audit reports for applications and systems.Use when you need to assess security posture, identify vulnerabilities, evaluate compliance status, or create formal security",
+      "install": "jeremylongshore/claude-code-plugins-plus-skills",
+      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "generating",
+        "security",
+        "audit",
+        "reports"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 748,
+      "featured": true
+    },
+    {
+      "name": "generating-security-audit-reports",
+      "description": "Generate comprehensive security audit reports for applications and systems.Use when you need to assess security posture, identify vulnerabilities, evaluate compliance status, or create formal security",
+      "install": "jeremylongshore/claude-code-plugins-plus",
+      "repo": "jeremylongshore/claude-code-plugins-plus",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "generating",
+        "security",
+        "audit",
+        "reports"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 692,
+      "featured": true
+    },
+    {
+      "name": "git-commit-crafter",
+      "description": "Creates atomic git commits following Conventional Commits specification with detailed, well-structured messages. Analyzes changes and splits them into logical units. Use when committing code changes t",
+      "install": "ryoppippi/dotfiles",
+      "repo": "ryoppippi/dotfiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "git",
+        "commit",
+        "crafter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 126,
+      "featured": true
+    },
+    {
+      "name": "hex-docs-search",
+      "description": "Research Hex packages (Sobelow, Phoenix, Ecto, Credo, Ash, etc). Use when investigating packages, understanding integration patterns, or finding module/function docs and usage examples. Automatically ",
+      "install": "bradleygolden/claude-marketplace-elixir",
+      "repo": "bradleygolden/claude-marketplace-elixir",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "hex",
+        "docs",
+        "search"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 145,
+      "featured": true
+    },
+    {
+      "name": "image-enhancer",
+      "description": "Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts.",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "image",
+        "enhancer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "infographic-generator",
+      "description": "Generate retro arcade style infographic prompts for documentation pages",
+      "install": "vfarcic/dot-ai",
+      "repo": "vfarcic/dot-ai",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "infographic",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 249,
+      "featured": true
+    },
+    {
+      "name": "kosmos-xray",
+      "description": "Context-efficient codebase exploration using AST analysis. Use when exploring Kosmos architecture, understanding code structure, or preparing documentation for AI programmers. Triggers: xray, map stru",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "kosmos",
+        "xray"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "langgraph-docs",
+      "description": "Use this skill for requests related to LangGraph in order to fetch relevant documentation to provide accurate, up-to-date guidance.",
+      "install": "langchain-ai/deepagents",
+      "repo": "langchain-ai/deepagents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "langgraph",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 7376,
+      "featured": true
+    },
+    {
+      "name": "list-noridocs",
+      "description": "List all server-side noridocs, optionally filtered by repository and/or path prefix.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "list",
+        "noridocs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "log-analyzer",
+      "description": "\u0410\u043d\u0430\u043b\u0438\u0437 \u043b\u043e\u0433\u043e\u0432 Docker \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430 \u0434\u043b\u044f \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0438 \u043f\u0440\u043e\u0431\u043b\u0435\u043c \u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u0430 \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u044b. \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043f\u0440\u0438 \u043e\u0442\u043b\u0430\u0434\u043a\u0435 \u043e\u0448\u0438\u0431\u043e\u043a, \u043e\u0442\u0441\u043b\u0435\u0436\u0438\u0432\u0430\u043d\u0438\u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432 \u0432\u043e\u0440\u043a\u0435\u0440\u043e\u0432, \u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0438 \u043f\u0440\u043e\u0431\u043b\u0435\u043c API \u0438\u043b\u0438 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u0435 \u043f\u043e\u0432\u0435\u0434\u0435",
+      "install": "mikopbx/Core",
+      "repo": "mikopbx/Core",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "log",
+        "analyzer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 489,
+      "featured": true
+    },
+    {
+      "name": "make-issue-spec",
+      "description": "Create a markdown document that describes a specific task along with",
+      "install": "pchalasani/claude-code-tools",
+      "repo": "pchalasani/claude-code-tools",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "make",
+        "issue",
+        "spec"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 567,
+      "featured": true
+    },
+    {
+      "name": "markdown-converter",
+      "description": "Convert documents and files to Markdown using markitdown. Use when converting PDF, Word (.docx), PowerPoint (.pptx), Excel (.xlsx, .xls), HTML, CSV, JSON, XML, images (with EXIF/OCR), audio (with tran",
+      "install": "steipete/agent-scripts",
+      "repo": "steipete/agent-scripts",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markdown",
+        "converter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 326,
+      "featured": true
+    },
+    {
+      "name": "markdown-docs",
+      "description": "This skill should be used when the user asks to \"update README\", \"update context files\", \"init context\", \"create CLAUDE.md\", \"update CLAUDE.md\", \"update AGENTS.md\", \"update DOCS.md\", \"generate documen",
+      "install": "PaulRBerg/dot-claude",
+      "repo": "PaulRBerg/dot-claude",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markdown",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "markdown-formatter",
+      "description": "Format and clean up markdown documents following best practices",
+      "install": "maxvaega/skillkit",
+      "repo": "maxvaega/skillkit",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markdown",
+        "formatter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 56,
+      "featured": true
+    },
+    {
+      "name": "markdown-formatting",
+      "description": "Format and lint markdown and MDX files using markdownlint with comprehensive rule knowledge for automated and manual fixes. Use when working with .md or .mdx files, formatting documentation, linting m",
+      "install": "denolfe/dotfiles",
+      "repo": "denolfe/dotfiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markdown",
+        "formatting"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 78,
+      "featured": true
+    },
+    {
+      "name": "markdown-tools",
+      "description": "Converts documents to markdown (PDFs, Word docs, PowerPoint, Confluence exports) with Windows/WSL path handling. Activates when converting .doc/.docx/PDF/PPTX files to markdown, processing Confluence ",
+      "install": "daymade/claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markdown",
+        "tools"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "markitdown",
+      "description": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markitdown"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "markitdown",
+      "description": "\"Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.\"",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markitdown"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "markitdown",
+      "description": "Convert various file formats (PDF, Office documents, images, audio, web content, structured data) to Markdown optimized for LLM processing. Use when converting documents to markdown, extracting text f",
+      "install": "smallnest/goskills",
+      "repo": "smallnest/goskills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "markitdown"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 111,
+      "featured": true
+    },
+    {
+      "name": "massgen-release-documenter",
+      "description": "Guide for following MassGen's release documentation workflow. This skill should be used when preparing release documentation, updating changelogs, writing case studies, or maintaining project document",
+      "install": "massgen/MassGen",
+      "repo": "massgen/MassGen",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "massgen",
+        "release",
+        "documenter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 615,
+      "featured": true
+    },
+    {
+      "name": "material-component-doc",
+      "description": "\u7528\u4e8e FlowGram \u7269\u6599\u5e93\u7ec4\u4ef6\u6587\u6863\u64b0\u5199\u7684\u4e13\u7528\u6280\u80fd\uff0c\u63d0\u4f9b\u7ec4\u4ef6\u6587\u6863\u751f\u6210\u3001Story \u521b\u5efa\u3001\u7ffb\u8bd1\u7b49\u529f\u80fd\u7684\u6307\u5bfc\u548c\u81ea\u52a8\u5316\u652f\u6301",
+      "install": "bytedance/flowgram.ai",
+      "repo": "bytedance/flowgram.ai",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "material",
+        "component",
+        "doc"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 7456,
+      "featured": true
+    },
+    {
+      "name": "mdr-745-specialist",
+      "description": "EU MDR 2017/745 regulation specialist and consultant for medical device requirement management. Provides comprehensive MDR compliance expertise, gap analysis, technical documentation guidance, clinica",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "mdr",
+        "745",
+        "specialist"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "microsoft-docs",
+      "description": "Query official Microsoft documentation to understand concepts, find tutorials, and learn how services work. Use for Azure, .NET, Microsoft 365, Windows, Power Platform, and all Microsoft technologies.",
+      "install": "MicrosoftDocs/mcp",
+      "repo": "MicrosoftDocs/mcp",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "microsoft",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1191,
+      "featured": true
+    },
+    {
+      "name": "moai-cc-claude-md",
+      "description": "Claude Code Markdown integration, documentation generation, and structured content patterns. Use when generating documentation, managing markdown content, or creating structured reports.",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "claude"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-context7-lang-integration",
+      "description": "\"Enterprise-grade Context7 MCP integration patterns for language-specific documentation access with real-time library resolution and intelligent caching\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "context7",
+        "lang",
+        "integration"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-docs-generation",
+      "description": "\"Enhanced docs generation with AI-powered features. Enhanced with Context7 MCP for up-to-date documentation.\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "docs",
+        "generation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-docs-linting",
+      "description": "\"Enhanced docs linting with AI-powered features. Enhanced with Context7 MCP for up-to-date documentation.\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "docs",
+        "linting"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-docs-unified",
+      "description": "\"Enhanced docs unified with AI-powered features. Enhanced with Context7 MCP for up-to-date documentation.\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "docs",
+        "unified"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-docs-validation",
+      "description": "\"Enhanced docs validation with AI-powered features. Enhanced with Context7 MCP for up-to-date documentation.\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "docs",
+        "validation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-document-processing",
+      "description": "AI-powered enterprise document processing orchestrator with Context7 integration, intelligent document analysis, automated content extraction, multi-format support (docx, pdf, pptx, xlsx), and enterpr",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "document",
+        "processing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-jit-docs-enhanced",
+      "description": "Enhanced Just-In-Time document loading system that intelligently discovers, loads, and caches relevant documentation based on user intent and project context. Use when users need specific documentatio",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "jit",
+        "docs",
+        "enhanced"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-project-documentation",
+      "description": "\"Enhanced project documentation with AI-powered features. Enhanced with Context7 MCP for up-to-date documentation.\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "project",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-project-template-optimizer",
+      "description": "\"Handle template comparison and optimization workflows including backup detection, smart merging, and update completion reporting. Enhanced with Context7 MCP for up-to-date documentation.\"",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "project",
+        "template",
+        "optimizer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "moai-readme-expert",
+      "description": "README.md generation specialist with dynamic project analysis capabilities. Master professional README creation, specialized templates, and automated documentation generation. Create comprehensive, en",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "moai",
+        "readme",
+        "expert"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "nano-pdf",
+      "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+      "install": "steipete/clawdis",
+      "repo": "steipete/clawdis",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "nano",
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 430,
+      "featured": true
+    },
+    {
+      "name": "notion-meeting-intelligence",
+      "description": "Prepares meeting materials by gathering context from Notion, enriching with Claude research, and creating both an internal pre-read and external agenda saved to Notion. Helps you arrive prepared with ",
+      "install": "gotalab/skillport",
+      "repo": "gotalab/skillport",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "notion",
+        "meeting",
+        "intelligence"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 126,
+      "featured": true
+    },
+    {
+      "name": "notion-meeting-intelligence",
+      "description": "Prepares meeting materials by gathering context from Notion, enriching with Claude research, and creating both an internal pre-read and external agenda saved to Notion. Helps you arrive prepared with ",
+      "install": "Prat011/awesome-llm-skills",
+      "repo": "Prat011/awesome-llm-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "notion",
+        "meeting",
+        "intelligence"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 104,
+      "featured": true
+    },
+    {
+      "name": "notion-research-documentation",
+      "description": "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.",
+      "install": "openai/skills",
+      "repo": "openai/skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "notion",
+        "research",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 558,
+      "featured": true
+    },
+    {
+      "name": "notion-research-documentation",
+      "description": "Searches across your Notion workspace, synthesizes findings from multiple pages, and creates comprehensive research documentation saved as new Notion pages. Turns scattered information into structured",
+      "install": "gotalab/skillport",
+      "repo": "gotalab/skillport",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "notion",
+        "research",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 126,
+      "featured": true
+    },
+    {
+      "name": "notion-research-documentation",
+      "description": "Searches across your Notion workspace, synthesizes findings from multiple pages, and creates comprehensive research documentation saved as new Notion pages. Turns scattered information into structured",
+      "install": "Prat011/awesome-llm-skills",
+      "repo": "Prat011/awesome-llm-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "notion",
+        "research",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 104,
+      "featured": true
+    },
+    {
+      "name": "on-call-handoff-patterns",
+      "description": "Master on-call shift handoffs with context transfer, escalation procedures, and documentation. Use when transitioning on-call responsibilities, documenting shift summaries, or improving on-call proces",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "call",
+        "handoff",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "openapi-spec-generation",
+      "description": "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generating SDKs, or ensuring API contract compliance.",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "openapi",
+        "spec",
+        "generation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "paper-2-web",
+      "description": "This skill should be used when converting academic papers into promotional and presentation formats including interactive websites (Paper2Web), presentation videos (Paper2Video), and conference poster",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "paper",
+        "web"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "paper-2-web",
+      "description": "This skill should be used when converting academic papers into promotional and presentation formats including interactive websites (Paper2Web), presentation videos (Paper2Video), and conference poster",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "paper",
+        "web"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "pattern-recognition",
+      "description": "Systematic methodology for identifying, capturing, and documenting reusable patterns from implementations. Enables automatic learning and knowledge-core.md updates. Claude invokes this after successfu",
+      "install": "VAMFI/claude-user-memory",
+      "repo": "VAMFI/claude-user-memory",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pattern",
+        "recognition"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 85,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "anthropics/skills",
+      "repo": "anthropics/skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 24530,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "PDF manipulation toolkit. Extract text/tables, create PDFs, merge/split, fill forms, for programmatic document processing and analysis.",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "\"PDF manipulation toolkit. Extract text/tables, create PDFs, merge/split, fill forms, for programmatic document processing and analysis.\"",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "skillcreatorai/Ai-Agent-Skills",
+      "repo": "skillcreatorai/Ai-Agent-Skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "krafton-ai/KIRA",
+      "repo": "krafton-ai/KIRA",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 180,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When EVA needs to fill in a PDF form or programmatically proc",
+      "install": "ylsdamxssjxxdd/eva",
+      "repo": "ylsdamxssjxxdd/eva",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 172,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "smallnest/goskills",
+      "repo": "smallnest/goskills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 111,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
+      "install": "pheuter/claude-agent-desktop",
+      "repo": "pheuter/claude-agent-desktop",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 102,
+      "featured": true
+    },
+    {
+      "name": "pdf",
+      "description": "\u9762\u5411 PDF \u7684\u5168\u80fd\u5de5\u5177\u5305\uff0c\u53ef\u7528\u4e8e\u62bd\u53d6\u6587\u672c\u4e0e\u8868\u683c\u3001\u521b\u5efa\u65b0 PDF\u3001\u5408\u5e76/\u62c6\u5206\u6587\u6863\u4ee5\u53ca\u5904\u7406\u8868\u5355\u3002\u5f53 Claude \u9700\u8981\u586b\u5199 PDF \u8868\u5355\uff0c\u6216\u8981\u6279\u91cf\u5904\u7406\u3001\u751f\u6210\u3001\u5206\u6790 PDF \u6587\u4ef6\u65f6\u8bf7\u4f7f\u7528\u672c\u6280\u80fd\u3002",
+      "install": "LeastBit/Claude_skills_zh-CN",
+      "repo": "LeastBit/Claude_skills_zh-CN",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 54,
+      "featured": true
+    },
+    {
+      "name": "pdf-creator",
+      "description": "Create PDF documents from markdown with proper Chinese font support using weasyprint. This skill should be used when converting markdown to PDF, generating formal documents (legal, trademark filings, ",
+      "install": "daymade/claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "creator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "pdf-extractor",
+      "description": "Extract and convert PDF documents using Python scripts",
+      "install": "maxvaega/skillkit",
+      "repo": "maxvaega/skillkit",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "extractor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 56,
+      "featured": true
+    },
+    {
+      "name": "pdf-processing",
+      "description": "Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "processing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "pdf-processing",
+      "description": "Process and extract information from PDF documents. Use this skill when the user asks to read, analyze, or extract data from PDF files.",
+      "install": "MervinPraison/PraisonAI",
+      "repo": "MervinPraison/PraisonAI",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "processing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 5526,
+      "featured": true
+    },
+    {
+      "name": "pdf-processing",
+      "description": "Invoke this skill BEFORE implementing any text extraction/parsing logic to learn how to use LlamaParse to process any document accurately. Requires llama_cloud_services package and LLAMA_CLOUD_API_KEY",
+      "install": "run-llama/vibe-llama",
+      "repo": "run-llama/vibe-llama",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "processing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 173,
+      "featured": true
+    },
+    {
+      "name": "pdf-processor",
+      "description": "Extracts text and tables from PDF files, fills forms, and merges documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.",
+      "install": "lofcz/LLMTornado",
+      "repo": "lofcz/LLMTornado",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "processor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 363,
+      "featured": true
+    },
+    {
+      "name": "pdf-report-generator",
+      "description": "Generate professional PDF documents with charts, styling, and complex layouts using Claude and Anthropic's pdf skill",
+      "install": "vinhnx/vtcode",
+      "repo": "vinhnx/vtcode",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "report",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 305,
+      "featured": true
+    },
+    {
+      "name": "pdf-text-replace",
+      "description": "Replace text in fillable PDF forms by updating form field values. This skill should be used when users need to update names, addresses, dates, or other text in PDF form fields.",
+      "install": "instavm/coderunner",
+      "repo": "instavm/coderunner",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pdf",
+        "text",
+        "replace"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 648,
+      "featured": true
+    },
+    {
+      "name": "plugin-settings",
+      "description": "This skill should be used when the user asks about \"plugin settings\", \"store plugin configuration\", \"user-configurable plugin\", \".local.md files\", \"plugin state files\", \"read YAML frontmatter\", \"per-p",
+      "install": "fcakyon/claude-codex-settings",
+      "repo": "fcakyon/claude-codex-settings",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "plugin",
+        "settings"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 247,
+      "featured": true
+    },
+    {
+      "name": "postmortem-writing",
+      "description": "Write effective blameless postmortems with root cause analysis, timelines, and action items. Use when conducting incident reviews, writing postmortem documents, or improving incident response processe",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "postmortem",
+        "writing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "ppt-creator",
+      "description": "Create professional slide decks from topics or documents. Generates structured content with data-driven charts, speaker notes, and complete PPTX files. Applies persuasive storytelling principles (Pyra",
+      "install": "daymade/claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "ppt",
+        "creator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts",
+      "install": "anthropics/skills",
+      "repo": "anthropics/skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 24530,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "Presentation toolkit (.pptx). Create/edit slides, layouts, content, speaker notes, comments, for programmatic presentation creation and modification.",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "\"Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layout",
+      "install": "modu-ai/moai-adk",
+      "repo": "modu-ai/moai-adk",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 310,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "\"Presentation toolkit (.pptx). Create/edit slides, layouts, content, speaker notes, comments, for programmatic presentation creation and modification.\"",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts",
+      "install": "khaneliman/khanelinix",
+      "repo": "khaneliman/khanelinix",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 298,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for creating new presentations, modifying content, working with layouts, adding speaker notes, ",
+      "install": "skillcreatorai/Ai-Agent-Skills",
+      "repo": "skillcreatorai/Ai-Agent-Skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "\"Presentation creation, editing, and analysis. When EVA needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, ",
+      "install": "ylsdamxssjxxdd/eva",
+      "repo": "ylsdamxssjxxdd/eva",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 172,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "Create PowerPoint presentations from markdown documents. Use this skill when users need to transform strategy documents, PRDs, or analysis into professional slide decks for stakeholder presentations.",
+      "install": "carlvellotti/claude-code-pm-course",
+      "repo": "carlvellotti/claude-code-pm-course",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 166,
+      "featured": true
+    },
+    {
+      "name": "pptx",
+      "description": "\u201c\u9762\u5411 PowerPoint \u6f14\u793a\u6587\u7a3f\uff08.pptx\uff09\u7684\u521b\u5efa\u3001\u7f16\u8f91\u4e0e\u5206\u6790\u201d\u3002\u5f53 Claude \u9700\u8981\u521b\u5efa\u65b0\u6f14\u793a\u6587\u7a3f\u3001\u4fee\u6539\u73b0\u6709\u5185\u5bb9\u3001\u5904\u7406\u7248\u5f0f\u3001\u6dfb\u52a0\u6279\u6ce8\u6216\u6f14\u8bb2\u8005\u5907\u6ce8\u7b49\u4e0e\u5e7b\u706f\u76f8\u5173\u7684\u4efb\u52a1\u65f6\uff0c\u8bf7\u4f7f\u7528\u672c\u6280\u80fd\u3002",
+      "install": "LeastBit/Claude_skills_zh-CN",
+      "repo": "LeastBit/Claude_skills_zh-CN",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "pptx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 54,
+      "featured": true
+    },
+    {
+      "name": "project-analyze",
+      "description": "Scans codebases to generate architecture documentation (ARCHITECTURE.md). Use when joining an existing project, understanding codebase structure, exploring project architecture, or preparing for agent",
+      "install": "mylukin/agent-foreman",
+      "repo": "mylukin/agent-foreman",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "project",
+        "analyze"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 208,
+      "featured": true
+    },
+    {
+      "name": "project-bootstrapper",
+      "description": "Sets up new projects or improves existing projects with development best practices, tooling, documentation, and workflow automation. Use when user wants to start a new project, improve project structu",
+      "install": "mhattingpete/claude-skills-marketplace",
+      "repo": "mhattingpete/claude-skills-marketplace",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "project",
+        "bootstrapper"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 126,
+      "featured": true
+    },
+    {
+      "name": "protocolsio-integration",
+      "description": "Integration with protocols.io API for managing scientific protocols. This skill should be used when working with protocols.io to search, create, update, or publish protocols; manage protocol steps and",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "protocolsio",
+        "integration"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "quality-documentation-manager",
+      "description": "Senior Quality Documentation Manager for comprehensive documentation control and regulatory document review. Provides document management system design, change control, configuration management, and r",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "quality",
+        "documentation",
+        "manager"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "quality-manager-qms-iso13485",
+      "description": "ISO 13485 Quality Management System specialist for medical device companies. Provides QMS implementation, maintenance, process optimization, and compliance expertise. Use for QMS design, documentation",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "quality",
+        "manager",
+        "qms",
+        "iso13485"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "react-docs-generator",
+      "description": "Generate React component documentation for SEED Design System. Use when creating new React component docs in ./docs/content/react/components or updating existing implementation documentation. Helps do",
+      "install": "daangn/seed-design",
+      "repo": "daangn/seed-design",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "react",
+        "docs",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 789,
+      "featured": true
+    },
+    {
+      "name": "read-noridoc",
+      "description": "Read documentation from the server-side noridocs system by file path.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "read",
+        "noridoc"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "readme-generator",
+      "description": "This skill should be used when users want to create or improve README.md files for their projects. It generates professional documentation following the Deep Insight/Strands SDK style - comprehensive ",
+      "install": "aws-samples/aws-ai-ml-workshop-kr",
+      "repo": "aws-samples/aws-ai-ml-workshop-kr",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "readme",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 303,
+      "featured": true
+    },
+    {
+      "name": "recall",
+      "description": "Search the Nori knowledge base for relevant context, solutions, and documentation.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "recall"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "remember-this",
+      "description": "Capture conversation context, insights, or discoveries and save them as markdown documents to Claude OS knowledge bases. Use when you want to save important information like 'remember this:', design d",
+      "install": "brobertsaz/claude-os",
+      "repo": "brobertsaz/claude-os",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "remember",
+        "this"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 124,
+      "featured": true
+    },
+    {
+      "name": "repomix",
+      "description": "Package entire code repositories into single AI-friendly files using Repomix. Capabilities include pack codebases with customizable include/exclude patterns, generate multiple output formats (XML, Mar",
+      "install": "mrgoonie/claudekit-skills",
+      "repo": "mrgoonie/claudekit-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "repomix"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 713,
+      "featured": true
+    },
+    {
+      "name": "reportlab",
+      "description": "\"PDF generation toolkit. Create invoices, reports, certificates, forms, charts, tables, barcodes, QR codes, Canvas/Platypus APIs, for professional document automation.\"",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "reportlab"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "research",
+      "description": "Research topics by verifying actual source content. Use when asked to research or study links and documentation.",
+      "install": "spences10/svelte-claude-skills",
+      "repo": "spences10/svelte-claude-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "research"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 99,
+      "featured": true
+    },
+    {
+      "name": "research-lookup",
+      "description": "Look up current research information using Perplexity's Sonar Pro Search or Sonar Reasoning Pro models through OpenRouter. Automatically selects the best model based on query complexity. Search academ",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "research",
+        "lookup"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "research-lookup",
+      "description": "\"Look up current research information using Perplexity's Sonar Pro or Sonar Reasoning Pro models through OpenRouter. Automatically selects the best model based on query complexity. Search academic pap",
+      "install": "jimmc414/Kosmos",
+      "repo": "jimmc414/Kosmos",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "research",
+        "lookup"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 304,
+      "featured": true
+    },
+    {
+      "name": "research-lookup",
+      "description": "Look up current research information using Perplexity's Sonar Pro Search or Sonar Reasoning Pro models through OpenRouter. Automatically selects the best model based on query complexity. Search academ",
+      "install": "K-Dense-AI/claude-scientific-writer",
+      "repo": "K-Dense-AI/claude-scientific-writer",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "research",
+        "lookup"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 201,
+      "featured": true
+    },
+    {
+      "name": "research-methodology",
+      "description": "Systematic approach for gathering authoritative, version-accurate documentation. Claude invokes this skill when research is needed before implementation. Ensures truth over speed while achieving both.",
+      "install": "VAMFI/claude-user-memory",
+      "repo": "VAMFI/claude-user-memory",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "research",
+        "methodology"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 85,
+      "featured": true
+    },
+    {
+      "name": "scikit-learn",
+      "description": "Machine learning in Python with scikit-learn. Use when working with supervised learning (classification, regression), unsupervised learning (clustering, dimensionality reduction), model evaluation, hy",
+      "install": "davila7/claude-code-templates",
+      "repo": "davila7/claude-code-templates",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "scikit",
+        "learn"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13157,
+      "featured": true
+    },
+    {
+      "name": "scottink-writer",
+      "description": "Write in Scott's authentic voice - British, conversational, self-deprecating, code-first. Use when writing blog posts, technical content, or documentation.",
+      "install": "spences10/scottspence.com",
+      "repo": "spences10/scottspence.com",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "scottink",
+        "writer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 55,
+      "featured": true
+    },
+    {
+      "name": "semtools",
+      "description": "This skill provides semantic search capabilities using embedding-based similarity matching for code and text. Enables meaning-based search beyond keyword matching, with optional document parsing (PDF,",
+      "install": "massgen/MassGen",
+      "repo": "massgen/MassGen",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "semtools"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 615,
+      "featured": true
+    },
+    {
+      "name": "simple-gemini",
+      "description": "Collaborative documentation and test code writing workflow using zen mcp's clink to launch gemini CLI session in WSL (via 'gemini' command) where all writing operations are executed. Use this skill wh",
+      "install": "VCnoC/Claude-Code-Zen-mcp-Skill-Work",
+      "repo": "VCnoC/Claude-Code-Zen-mcp-Skill-Work",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "simple",
+        "gemini"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 105,
+      "featured": true
+    },
+    {
+      "name": "skill-generator",
+      "description": "Generates complete Anthropic SKILL packages with proper structure, documentation, and automated download verification.",
+      "install": "lofcz/LLMTornado",
+      "repo": "lofcz/LLMTornado",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "skill",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 363,
+      "featured": true
+    },
+    {
+      "name": "skill-review",
+      "description": "Audit claude-skills repository documentation with systematic 9-phase review: standards compliance, official docs verification via Context7/WebFetch, code examples accuracy, cross-file consistency, and",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "skill",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "slash-command-factory",
+      "description": "Generate custom Claude Code slash commands through intelligent 5-7 question flow. Creates powerful commands for business research, content analysis, healthcare compliance, API integration, documentati",
+      "install": "alirezarezvani/claude-code-skill-factory",
+      "repo": "alirezarezvani/claude-code-skill-factory",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "slash",
+        "command",
+        "factory"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 102,
+      "featured": true
+    },
+    {
+      "name": "spring-boot-3x-api-documenter",
+      "description": "Auto-generate OpenAPI 3 documentation for Spring Boot REST APIs using springdoc-openapi. Use when API endpoints change, controllers are modified, or user mentions API docs, Swagger, or OpenAPI. Trigge",
+      "install": "andrlange/spring-documentation-mcp-server",
+      "repo": "andrlange/spring-documentation-mcp-server",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "spring",
+        "boot",
+        "api",
+        "documenter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "spring-boot-4x-api-documenter",
+      "description": "Auto-generate OpenAPI 3 documentation for Spring Boot 4.x REST APIs using springdoc-openapi v3.0. Use when API endpoints change, controllers are modified, or user mentions API docs, Swagger, or OpenAP",
+      "install": "andrlange/spring-documentation-mcp-server",
+      "repo": "andrlange/spring-documentation-mcp-server",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "spring",
+        "boot",
+        "api",
+        "documenter"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 58,
+      "featured": true
+    },
+    {
+      "name": "spruce-docs",
+      "description": "Create or improve AG Charts documentation pages following established patterns, templates, and quality standards. Use when creating new documentation, revising existing pages, or ensuring documentatio",
+      "install": "ag-grid/ag-charts",
+      "repo": "ag-grid/ag-charts",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "spruce",
+        "docs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 412,
+      "featured": true
+    },
+    {
+      "name": "ssrf",
+      "description": "\u670d\u52a1\u7aef\u8bf7\u6c42\u4f2a\u9020\u6f0f\u6d1e\u68c0\u6d4b\u4e0e\u5229\u7528\u3002\u5f53\u76ee\u6807\u5b58\u5728 URL \u53c2\u6570\u3001\u8fdc\u7a0b\u6587\u4ef6\u52a0\u8f7d\u3001Webhook\u3001PDF \u751f\u6210\u3001URL \u9884\u89c8\u529f\u80fd\u65f6\u4f7f\u7528\u3002",
+      "install": "yhy0/CHYing-agent",
+      "repo": "yhy0/CHYing-agent",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "ssrf"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 234,
+      "featured": true
+    },
+    {
+      "name": "stride-analysis-patterns",
+      "description": "Apply STRIDE methodology to systematically identify threats. Use when analyzing system security, conducting threat modeling sessions, or creating security documentation.",
+      "install": "wshobson/agents",
+      "repo": "wshobson/agents",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "stride",
+        "analysis",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 23211,
+      "featured": true
+    },
+    {
+      "name": "summarize",
+      "description": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+      "install": "steipete/clawdis",
+      "repo": "steipete/clawdis",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "summarize"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 430,
+      "featured": true
+    },
+    {
+      "name": "sync-noridocs",
+      "description": "Sync all local docs.md files to server-side noridocs system.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "sync",
+        "noridocs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "system-createcli",
+      "description": "Generate production-quality TypeScript CLIs with full documentation, error handling, and best practices. Creates deterministic, type-safe command-line tools following PAI's CLI-First Architecture. USE",
+      "install": "danielmiessler/Personal_AI_Infrastructure",
+      "repo": "danielmiessler/Personal_AI_Infrastructure",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "system",
+        "createcli"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1085,
+      "featured": true
+    },
+    {
+      "name": "tabz-guide",
+      "description": "Progressive disclosure guide to TabzChrome capabilities. This skill should be used when users ask about profiles, terminal management, browser automation, MCP tools, audio/TTS notifications, integrati",
+      "install": "GGPrompts/TabzChrome",
+      "repo": "GGPrompts/TabzChrome",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "tabz",
+        "guide"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "tapestry",
+      "description": "Unified content extraction and action planning. Use when user says \"tapestry <URL>\", \"weave <URL>\", \"help me plan <URL>\", \"extract and plan <URL>\", \"make this actionable <URL>\", or similar phrases ind",
+      "install": "michalparkola/tapestry-skills-for-claude-code",
+      "repo": "michalparkola/tapestry-skills-for-claude-code",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "tapestry"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 91,
+      "featured": true
+    },
+    {
+      "name": "teams-channel-post-writer",
+      "description": "Creates educational Teams channel posts for internal knowledge sharing about Claude Code features, tools, and best practices. Applies when writing posts, announcements, or documentation to teach colle",
+      "install": "daymade/claude-code-skills",
+      "repo": "daymade/claude-code-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "teams",
+        "channel",
+        "post",
+        "writer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 110,
+      "featured": true
+    },
+    {
+      "name": "technical-writing",
+      "description": "Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles.",
+      "install": "proffesor-for-testing/agentic-qe",
+      "repo": "proffesor-for-testing/agentic-qe",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "technical",
+        "writing"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 103,
+      "featured": true
+    },
+    {
+      "name": "tidy-deprecate-function",
+      "description": "Guide for deprecating R functions/arguments. Use when a user asks to deprecate a function or parameter, including adding lifecycle warnings, updating documentation, adding NEWS entries, and updating t",
+      "install": "tidyverse/dbplyr",
+      "repo": "tidyverse/dbplyr",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "tidy",
+        "deprecate",
+        "function"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 493,
+      "featured": true
+    },
+    {
+      "name": "tinacms",
+      "description": "Build content-heavy sites with Git-backed TinaCMS. Provides visual editing and content management for blogs, documentation, and marketing sites with non-technical editors.Use when implementing Next.js",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "tinacms"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "tiptap",
+      "description": "Build rich text editors with Tiptap - headless editor framework with React, shadcn/ui, and Tailwind v4 integration. Includes SSR-safe setup, image uploads to R2, prose styling, collaborative editing, ",
+      "install": "jezweb/claude-skills",
+      "repo": "jezweb/claude-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "tiptap"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 90,
+      "featured": true
+    },
+    {
+      "name": "updating-noridocs",
+      "description": "Use this when you have finished making code changes and you are ready to update the documentation based on those changes.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "updating",
+        "noridocs"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "web-to-markdown",
+      "description": "\uc6f9\ud398\uc774\uc9c0 URL\uc744 \uc785\ub825\ubc1b\uc544 \ub9c8\ud06c\ub2e4\uc6b4 \ud615\ud0dc\ub85c \ubcc0\ud658\ud558\uc5ec \uc800\uc7a5\ud569\ub2c8\ub2e4. \uc6f9 \ubb38\uc11c\ub97c \ub85c\uceec \ub9c8\ud06c\ub2e4\uc6b4 \ud30c\uc77c\ub85c \uc544\uce74\uc774\ube59\ud558\uac70\ub098 \uc815\ub9ac\ud560 \ub54c \uc720\uc6a9\ud569\ub2c8\ub2e4.",
+      "install": "bear2u/my-skills",
+      "repo": "bear2u/my-skills",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "web",
+        "markdown"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 575,
+      "featured": true
+    },
+    {
+      "name": "website-maintainer",
+      "description": "Use this skill when working on the Repomix documentation website in `website/` directory, including VitePress configuration, multi-language content, or translation workflows.",
+      "install": "yamadashy/repomix",
+      "repo": "yamadashy/repomix",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "website",
+        "maintainer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 20741,
+      "featured": true
+    },
+    {
+      "name": "wheels-documentation-generator",
+      "description": "Generate documentation comments, README files, and API documentation for Wheels applications. Use when documenting code, creating project READMEs, or generating API docs.",
+      "install": "wheels-dev/wheels",
+      "repo": "wheels-dev/wheels",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "wheels",
+        "documentation",
+        "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 200,
+      "featured": true
+    },
+    {
+      "name": "woocommerce-markdown",
+      "description": "Guidelines for creating and modifying markdown files in WooCommerce. Use when writing documentation, README files, or any markdown content.",
+      "install": "woocommerce/woocommerce",
+      "repo": "woocommerce/woocommerce",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "woocommerce",
+        "markdown"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 10071,
+      "featured": true
+    },
+    {
+      "name": "write-documentation",
+      "description": "Write and format Rust documentation correctly. Apply proactively when writing code with rustdoc comments (//! or ///). Covers structure (inverted pyramid), intra-doc links (crate:: paths, reference-st",
+      "install": "r3bl-org/r3bl-open-core",
+      "repo": "r3bl-org/r3bl-open-core",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "write",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 432,
+      "featured": true
+    },
+    {
+      "name": "write-noridoc",
+      "description": "Write or update documentation in the server-side noridocs system.",
+      "install": "tilework-tech/nori-profiles",
+      "repo": "tilework-tech/nori-profiles",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "write",
+        "noridoc"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 70,
+      "featured": true
+    },
+    {
+      "name": "writing-clearly-and-concisely",
+      "description": "Apply Strunk's timeless writing rules to ANY prose humans will read\u2014documentation, commit messages, error messages, explanations, reports, or UI text. Makes your writing clearer, stronger, and more pr",
+      "install": "obra/the-elements-of-style",
+      "repo": "obra/the-elements-of-style",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "writing",
+        "clearly",
+        "and",
+        "concisely"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 126,
+      "featured": true
+    },
+    {
+      "name": "writing-documentation",
+      "description": "Use when writing or updating any documentation - README, website docs, or skills. Covers quality standards, example validation, and DRY patterns. (project)",
+      "install": "elbwalker/walkerOS",
+      "repo": "elbwalker/walkerOS",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "writing",
+        "documentation"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 309,
+      "featured": true
+    },
+    {
+      "name": "writing-documentation-for-llms",
+      "description": "Create effective documentation that LLMs can discover and use. Use when documenting code, APIs, features, or creating reference materials. Covers structure, conciseness, examples, and anti-patterns fo",
+      "install": "CaptainCrouton89/.claude",
+      "repo": "CaptainCrouton89/.claude",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "writing",
+        "documentation",
+        "for",
+        "llms"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 490,
+      "featured": true
+    },
+    {
+      "name": "writing-documentation-with-diataxis",
+      "description": "Applies the Diataxis framework to create or improve technical documentation. Use when being asked to write high quality tutorials, how-to guides, reference docs, or explanations, when reviewing docume",
+      "install": "sammcj/agentic-coding",
+      "repo": "sammcj/agentic-coding",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "writing",
+        "documentation",
+        "with",
+        "diataxis"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 65,
+      "featured": true
+    },
+    {
+      "name": "writing-like-user",
+      "description": "Emulate the user's personal writing voice and style patterns. Use when the user asks to write content in their voice, draft documents, compose messages, or requests \"write this like me\" or \"in my styl",
+      "install": "CaptainCrouton89/.claude",
+      "repo": "CaptainCrouton89/.claude",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "writing",
+        "like",
+        "user"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 490,
+      "featured": true
+    },
+    {
+      "name": "xlsx",
+      "description": "\u201c\u9762\u5411\u7535\u5b50\u8868\u683c\uff08.xlsx\u3001.xlsm\u3001.csv\u3001.tsv \u7b49\uff09\u7684\u521b\u5efa\u3001\u7f16\u8f91\u4e0e\u5206\u6790\u201d\uff0c\u652f\u6301\u516c\u5f0f\u3001\u683c\u5f0f\u3001\u6570\u636e\u5206\u6790\u4e0e\u53ef\u89c6\u5316\u3002\u5f53 Claude \u9700\u8981\uff081\uff09\u521b\u5efa\u5e26\u516c\u5f0f\u4e0e\u683c\u5f0f\u7684\u65b0\u8868\u683c\uff0c\uff082\uff09\u8bfb\u53d6\u6216\u5206\u6790\u6570\u636e\uff0c\uff083\uff09\u5728\u4fdd\u7559\u516c\u5f0f\u7684\u524d\u63d0\u4e0b\u4fee\u6539\u5df2\u6709\u8868\u683c\uff0c\uff084\uff09\u5728\u8868\u683c\u5185\u505a\u6570\u636e\u5206\u6790\u4e0e\u53ef\u89c6\u5316\uff0c\u4ee5\u53ca\uff085\uff09\u91cd\u65b0\u8ba1\u7b97\u516c\u5f0f\u65f6\uff0c\u8bf7\u4f7f\u7528\u672c\u6280\u80fd\u3002",
+      "install": "LeastBit/Claude_skills_zh-CN",
+      "repo": "LeastBit/Claude_skills_zh-CN",
+      "path": "",
+      "category": "documents",
+      "tags": [
+        "xlsx"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 54,
+      "featured": true
+    },
     {
       "name": "agents-md-generator",
       "description": "Generate AGENTS.md documentation for repositories",
@@ -216,5 +3559,5 @@
       "featured": false
     }
   ],
-  "count": 13
+  "count": 233
 }

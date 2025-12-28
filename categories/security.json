@@ -1,6 +1,6 @@
 {
   "category": "security",
-  "updated_at": "2025-12-24T13:50:56.579923Z",
+  "updated_at": "2025-12-28T04:04:37.636876Z",
   "skills": [
     {
       "name": "analyzing-dependencies",
@@ -14,7 +14,7 @@
         "dependencies"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -45,7 +45,7 @@
         "headers"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -79,7 +79,7 @@
         "preparation"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -113,7 +113,7 @@
         "control"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -160,7 +160,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -180,6 +180,21 @@
       "featured": true
     },
     {
+      "name": "branch-cleaner",
+      "description": "Identify and clean up stale git branches locally and on remotes with safe, reversible steps. Use when asked to prune, list, or delete merged/old branches or audit branch hygiene.",
+      "install": "jMerta/codex-skills",
+      "repo": "jMerta/codex-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "branch",
+        "cleaner"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 85,
+      "featured": true
+    },
+    {
       "name": "checking-hipaa-compliance",
       "description": "Check HIPAA compliance for healthcare data security requirements. Use when auditing healthcare applications. Trigger with 'check HIPAA compliance', 'validate health data security', or 'audit PHI prote",
       "install": "jeremylongshore/claude-code-plugins-plus-skills",
@@ -192,7 +207,7 @@
         "compliance"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -224,7 +239,7 @@
         "compliance"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -256,7 +271,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -288,7 +303,7 @@
         "sdk"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 90,
+      "stars": 99,
       "featured": true
     },
     {
@@ -349,7 +364,7 @@
         "misconfigurations"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -380,7 +395,7 @@
         "accessibility"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 68,
+      "stars": 77,
       "featured": true
     },
     {
@@ -396,7 +411,7 @@
         "requests"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -460,7 +475,7 @@
         "testing"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -505,7 +520,7 @@
         "accessibility"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -536,7 +551,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -568,7 +583,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -600,7 +615,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -661,7 +676,7 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 199,
+      "stars": 329,
       "featured": true
     },
     {
@@ -706,7 +721,7 @@
         "testing"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 103,
+      "stars": 104,
       "featured": true
     },
     {
@@ -721,7 +736,7 @@
         "secops"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 13157,
+      "stars": 13808,
       "featured": true
     },
     {
@@ -736,7 +751,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 23211,
+      "stars": 23399,
       "featured": true
     },
     {
@@ -768,7 +783,7 @@
         "mapping"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 23211,
+      "stars": 23399,
       "featured": true
     },
     {
@@ -784,7 +799,7 @@
         "implementations"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -816,7 +831,7 @@
         "protection"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -849,7 +864,7 @@
         "compliance"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 748,
+      "stars": 767,
       "featured": true
     },
     {
@@ -929,7 +944,7 @@
         "governance"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 1,
+      "stars": 2,
       "featured": false
     },
     {
@@ -963,6 +978,21 @@
       "featured": false
     },
     {
+      "name": "analyzing-protocols",
+      "description": "Analyzes network protocol implementations to identify parsing vulnerabilities, state machine issues, and protocol-level security problems. Use when analyzing network servers, protocol handlers, or inv",
+      "install": "waiwai24/BinaryX-Agent",
+      "repo": "waiwai24/BinaryX-Agent",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "analyzing",
+        "protocols"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "analyzing-security-headers",
       "description": "This skill analyzes HTTP security headers of a given domain to identify potential vulnerabilities and misconfigurations. It provides a detailed report with a grade, score, and recommendations for impr",
       "install": "jeremylongshore/claude-code-plugins-nixtla",
@@ -976,6 +1006,22 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "analyzing-session-management",
+      "description": "Detects session management vulnerabilities including session fixation, session hijacking, and insecure cookie handling. Use when analyzing authentication sessions, cookie security, or investigating se",
+      "install": "waiwai24/BinaryX-Agent",
+      "repo": "waiwai24/BinaryX-Agent",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "analyzing",
+        "session",
+        "management"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -1005,7 +1051,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 28,
+      "stars": 30,
       "featured": false
     },
     {
@@ -1036,6 +1082,22 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "api-security-hardening",
+      "description": "REST API security hardening with authentication, rate limiting, input validation, security headers. Use for production APIs, security audits, defense-in-depth, or encountering vulnerabilities, injecti",
+      "install": "secondsky/claude-skills",
+      "repo": "secondsky/claude-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "api",
+        "security",
+        "hardening"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 3,
       "featured": false
     },
     {
@@ -1132,6 +1194,20 @@
       "featured": false
     },
     {
+      "name": "audit",
+      "description": "Claude 4.5 Opus \uae30\ubc18 \ud504\ub85c\uc81d\ud2b8 \uc804\uccb4 \uac80\uc218 \uc2a4\ud0ac",
+      "install": "sihu-dev/forge-labs",
+      "repo": "sihu-dev/forge-labs",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "audit-agent",
       "description": "\"Performs comprehensive security and code quality audits. Use when asked to 'audit the codebase', 'check for vulnerabilities', or 'run security scan'.\"",
       "install": "okgoogle13/careercopilot",
@@ -1172,6 +1248,22 @@
         "audit",
         "log",
         "generator"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "audit-ready-pr-reviewer",
+      "description": "Reviews pull requests for compliance regressions. Scans code diffs for security and compliance violations, flags issues, and suggests fixes aligned with frameworks like SOC 2, ISO 27001, NIST 800-53.",
+      "install": "ethanolivertroy/claude-grc-engineering",
+      "repo": "ethanolivertroy/claude-grc-engineering",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "audit",
+        "ready",
+        "reviewer"
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
@@ -1294,7 +1386,7 @@
         "project"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 4,
+      "stars": 5,
       "featured": false
     },
     {
@@ -1329,23 +1421,23 @@
     },
     {
       "name": "auth",
-      "description": "Modern authentication and security patterns for web applications. Expert in JWT tokens, OAuth2 flows, session management, RBAC, MFA, API security, and zero-trust architectures. Framework-agnostic patt",
-      "install": "Azeem-2/HackthonII",
-      "repo": "Azeem-2/HackthonII",
+      "description": "Authentication and authorization patterns including OAuth2, JWT, RBAC/ABAC, session management, API keys, password hashing, and MFA. Use when implementing login, access control, identity management, t",
+      "install": "cosmix/claude-code-setup",
+      "repo": "cosmix/claude-code-setup",
       "path": "",
       "category": "security",
       "tags": [
         "auth"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 0,
+      "stars": 1,
       "featured": false
     },
     {
       "name": "auth",
-      "description": "Authentication and authorization patterns including OAuth2, JWT, RBAC/ABAC, session management, API keys, password hashing, and MFA. Use when implementing login, access control, identity management, t",
-      "install": "cosmix/claude-code-setup",
-      "repo": "cosmix/claude-code-setup",
+      "description": "Modern authentication and security patterns for web applications. Expert in JWT tokens, OAuth2 flows, session management, RBAC, MFA, API security, and zero-trust architectures. Framework-agnostic patt",
+      "install": "Azeem-2/HackthonII",
+      "repo": "Azeem-2/HackthonII",
       "path": "",
       "category": "security",
       "tags": [
@@ -1503,6 +1595,22 @@
       "tags": [
         "axiom",
         "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "bandit-security-scan",
+      "description": "Run Bandit security analysis to find common security issues and vulnerabilities in Python code. Use when the user mentions Bandit, security analysis, vulnerability scanning, security audit, software c",
+      "install": "visgwu/python_web_app",
+      "repo": "visgwu/python_web_app",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "bandit",
+        "security",
+        "scan"
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
@@ -1677,6 +1785,115 @@
       "featured": false
     },
     {
+      "name": "claudeskillscryptographic-practicesskillmd",
+      "description": "\u6697\u53f7\u5316\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3001\u30bb\u30ad\u30e5\u30a2\u30e9\u30f3\u30c0\u30e0\u5024\u751f\u6210\u3001\u9375\u7ba1\u7406\u306e\u30d9\u30b9\u30c8\u30d7\u30e9\u30af\u30c6\u30a3\u30b9\u3092\u63d0\u4f9b\u3057\u307e\u3059\u3002\u30d6\u30eb\u30fc\u30b9\u30fb\u30b7\u30e5\u30ca\u30a4\u30a2\u30fc\u306e\u300eApplied Cryptography\u300f\u3068\u73fe\u4ee3\u306e\u6697\u53f7\u5b66\u6a19\u6e96\u306b\u57fa\u3065\u304d\u3001\u5b89\u5168\u306a\u6697\u53f7\u5316\u5b9f\u88c5\u3001\u5f31\u3044\u6697\u53f7\u5316\u306e\u691c\u51fa\u3001\u4e88\u6e2c\u53ef\u80fd\u306a\u4e71\u6570\u751f\u6210\u306e\u6392\u9664\u3001\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eWeb Application Security\u300f\uff08Andrew Hoffman\uff09: \u8105\u5a01\u30e2\u30c7\u30ea\u30f3\u30b0\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:- `resourc",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillscryptographic",
+        "practicesskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "claudeskillsdependency-auditingskillmd",
+      "description": "\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u8106\u5f31\u6027\u306e\u691c\u51fa\u3001\u8a55\u4fa1\u3001\u5bfe\u5fdc\u6226\u7565\u3092\u5c02\u9580\u3068\u3059\u308b\u30b9\u30ad\u30eb\u3002CVE/GHSA\u8b58\u5225\u5b50\u306e\u7406\u89e3\u3001\u91cd\u5927\u5ea6\u8a55\u4fa1\uff08CVSS\uff09\u3001\u4fee\u6b63\u512a\u5148\u5ea6\u306e\u6c7a\u5b9a\u65b9\u6cd5\u8ad6\u3092\u63d0\u4f9b\u3057\u307e\u3059\u3002\u5c02\u9580\u5206\u91ce:\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eThe Pragmatic Programmer\u300f\uff08Andrew Hunt, David Thomas\uff09: \u5b9f\u8df5\u7684\u6539\u5584\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:- `resources/Level1_basics.md`: \u30ec\u30d9\u30eb1\u306e\u57fa\u790e\u30ac\u30a4\u30c9",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillsdependency",
+        "auditingskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "claudeskillsdependency-security-scanningskillmd",
+      "description": "\u4f9d\u5b58\u95a2\u4fc2\u306e\u8106\u5f31\u6027\u30b9\u30ad\u30e3\u30f3\u3068SCA\uff08Software Composition Analysis\uff09\u306e\u30d9\u30b9\u30c8\u30d7\u30e9\u30af\u30c6\u30a3\u30b9\u3092\u63d0\u4f9b\u3057\u307e\u3059\u3002pnpm audit\u3001Snyk\u3001OSS\u30b9\u30ad\u30e3\u30f3\u30c4\u30fc\u30eb\u3092\u4f7f\u7528\u3057\u305f\u65e2\u77e5\u8106\u5f31\u6027\u306e\u691c\u51fa\u3001CVE\u8a55\u4fa1\u3001CVSS \u30b9\u30b3\u30a2\u30ea\u30f3\u30b0\u3001\u4fee\u6b63\u53ef\u80fd\u6027\u306e\u8a55\u4fa1\u3001\u63a8\u79fb\u7684\u4f9d\u5b58\u95a2\u4fc2\u306e\u5206\u6790\u3092\u884c\u3044\u307e\u3059\u3002\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eWeb Application Security\u300f\uff08Andrew Hoffman\uff09: ",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillsdependency",
+        "security",
+        "scanningskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "claudeskillselectron-security-hardeningskillmd",
+      "description": "Electron\u30c7\u30b9\u30af\u30c8\u30c3\u30d7\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u306e\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u5f37\u5316\u5c02\u9580\u77e5\u8b58\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eWeb Application Security\u300f\uff08Andrew Hoffman\uff09: \u8105\u5a01\u30e2\u30c7\u30ea\u30f3\u30b0\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:- `resources/Level1_basics.md`: \u30ec\u30d9\u30eb1\u306e\u57fa\u790e\u30ac\u30a4\u30c9- `resources/Level2_intermediate.md`: \u30ec\u30d9\u30eb2\u306e\u5b9f\u52d9\u30ac\u30a4\u30c9- `res",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillselectron",
+        "security",
+        "hardeningskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "claudeskillsfile-watcher-securityskillmd",
+      "description": "\u30d5\u30a1\u30a4\u30eb\u76e3\u8996\u30b7\u30b9\u30c6\u30e0\u306e\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u5bfe\u7b56\u3068\u30d7\u30ed\u30c0\u30af\u30b7\u30e7\u30f3\u74b0\u5883\u3067\u306e\u5b89\u5168\u306a\u904b\u7528\u30d1\u30bf\u30fc\u30f3\u3002\u6700\u5c0f\u6a29\u9650\u306e\u539f\u5247\u3001Defense in Depth\u3001Fail-Safe Defaults\u306b\u57fa\u3065\u304f\u591a\u5c64\u9632\u5fa1\u8a2d\u8a08\u3092\u63d0\u4f9b\u3002\u5c02\u9580\u5206\u91ce:\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eWeb Application Security\u300f\uff08Andrew Hoffman\uff09: \u8105\u5a01\u30e2\u30c7\u30ea\u30f3\u30b0\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:- `resources/Level1_basics.m",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillsfile",
+        "watcher",
+        "securityskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "claudeskillsprompt-injection-defenseskillmd",
+      "description": "\u30d7\u30ed\u30f3\u30d7\u30c8\u30a4\u30f3\u30b8\u30a7\u30af\u30b7\u30e7\u30f3\u5bfe\u7b56\u306e\u8a2d\u8a08\u6307\u91dd\u3092\u63d0\u4f9b\u3059\u308b\u30b9\u30ad\u30eb\u3002\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eWeb Application Security\u300f\uff08Andrew Hoffman\uff09: \u8105\u5a01\u30e2\u30c7\u30ea\u30f3\u30b0\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:- `resources/Level1_basics.md`: \u30ec\u30d9\u30eb1\u306e\u57fa\u790e\u30ac\u30a4\u30c9- `resources/Level2_intermediate.md`: \u30ec\u30d9\u30eb2\u306e\u5b9f\u52d9\u30ac\u30a4\u30c9- `resources",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillsprompt",
+        "injection",
+        "defenseskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "claudeskillstool-securityskillmd",
+      "description": "MCP\u30c4\u30fc\u30eb\u3068API\u7d71\u5408\u306b\u304a\u3051\u308b\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u8a2d\u8a08\u306e\u5c02\u9580\u77e5\u8b58\u3002\ud83d\udcd6 \u53c2\u7167\u66f8\u7c4d:- \u300eWeb Application Security\u300f\uff08Andrew Hoffman\uff09: \u8105\u5a01\u30e2\u30c7\u30ea\u30f3\u30b0\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:- `resources/Level1_basics.md`: \u30ec\u30d9\u30eb1\u306e\u57fa\u790e\u30ac\u30a4\u30c9- `resources/Level2_intermediate.md`: \u30ec\u30d9\u30eb2\u306e\u5b9f\u52d9\u30ac\u30a4\u30c9- `resource",
+      "install": "daishiman/AIWorkflowOrchestrator",
+      "repo": "daishiman/AIWorkflowOrchestrator",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "claudeskillstool",
+        "securityskillmd"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
       "name": "cloud-security-configuration",
       "description": "Implement comprehensive cloud security across AWS, Azure, and GCP with IAM, encryption, network security, compliance, and threat detection.",
       "install": "aj-geddes/useful-ai-prompts",
@@ -1817,6 +2034,21 @@
     },
     {
       "name": "code-review",
+      "description": "Perform thorough code reviews focusing on security, performance, best practices, and maintainability. Use when reviewing PRs, checking code quality, or auditing existing code.",
+      "install": "vapvarun/claude-backup",
+      "repo": "vapvarun/claude-backup",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "code",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 3,
+      "featured": false
+    },
+    {
+      "name": "code-review",
       "description": "This skill should be used when the user requests a code review of changed files. Use this to review git-diffed files for security vulnerabilities (OWASP Top 10), performance issues (O(N) complexity, O",
       "install": "DavidDworetzky/Geist",
       "repo": "DavidDworetzky/Geist",
@@ -1847,9 +2079,9 @@
     },
     {
       "name": "code-review",
-      "description": "Perform thorough code reviews focusing on security, performance, best practices, and maintainability. Use when reviewing PRs, checking code quality, or auditing existing code.",
-      "install": "vapvarun/claude-backup",
-      "repo": "vapvarun/claude-backup",
+      "description": "Systematic code review methodology. Use this skill when reviewing code changes, PRs, or doing code audits for quality, security, and best practices.",
+      "install": "obinopaul/agents-backend",
+      "repo": "obinopaul/agents-backend",
       "path": "",
       "category": "security",
       "tags": [
@@ -1862,9 +2094,9 @@
     },
     {
       "name": "code-review",
-      "description": "Systematic code review methodology. Use this skill when reviewing code changes, PRs, or doing code audits for quality, security, and best practices.",
-      "install": "obinopaul/agents-backend",
-      "repo": "obinopaul/agents-backend",
+      "description": "Review generated code for bugs, security issues, performance, and best practices. Use when reviewing Claude-generated code, checking for vulnerabilities, auditing implementation quality, or validating",
+      "install": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
+      "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
       "path": "",
       "category": "security",
       "tags": [
@@ -1906,21 +2138,6 @@
       "featured": false
     },
     {
-      "name": "code-review",
-      "description": "Comprehensive code review for security, performance, and maintainability. Activates when asked to \"review code\", \"check this code\", \"audit\", \"find bugs\", \"security review\", or when reviewing PRs or di",
-      "install": "abdullah1854/ClaudeSuperSkills",
-      "repo": "abdullah1854/ClaudeSuperSkills",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "code",
-        "review"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
       "name": "code-review-checklist",
       "description": "Review code changes for correctness, security, performance, and maintainability. Use for PR reviews,code audits, pre-merge checks, or quality validation of Laravel + React code. EXCLUSIVE to reviewer ",
       "install": "htooayelwinict/claude-config",
@@ -1948,7 +2165,7 @@
         "reviewer"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 13,
+      "stars": 14,
       "featured": false
     },
     {
@@ -2069,7 +2286,7 @@
         "reviewing"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 1,
+      "stars": 2,
       "featured": false
     },
     {
@@ -2131,7 +2348,7 @@
         "architecture"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 13,
+      "stars": 14,
       "featured": false
     },
     {
@@ -2161,7 +2378,7 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 18,
+      "stars": 20,
       "featured": false
     },
     {
@@ -2190,7 +2407,23 @@
         "consultant"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 4,
+      "stars": 7,
+      "featured": false
+    },
+    {
+      "name": "content-audit-rules",
+      "description": "\ucf58\ud150\uce20 \ud488\uc9c8 \uc810\uac80 \uaddc\uce59. \uc5f0\ub839 \ub4f1\uae09, \ud0dc\uadf8, \ud615\uc2dd \uac80\uc0ac \uae30\uc900 \uc815\uc758. content-quality-checker Agent\uac00 \ucc38\uc870.",
+      "install": "dayoumin/mbti",
+      "repo": "dayoumin/mbti",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "content",
+        "audit",
+        "rules"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -2377,6 +2610,21 @@
       "featured": false
     },
     {
+      "name": "dependency-audit",
+      "description": "Dependency audit and cleanup workflow for maintaining healthy project dependencies. Use for regular maintenance, security updates, and removing unused packages.",
+      "install": "danielseltzer/code-analysis-tools",
+      "repo": "danielseltzer/code-analysis-tools",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "dependency",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "dependency-audit-assistant",
       "description": "Reviews package dependencies for security vulnerabilities, outdated versions, and license compliance. Use when user asks about dependencies, security audits, or before releases.",
       "install": "CrazyDubya/claude-skills",
@@ -2479,7 +2727,7 @@
         "manager"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 18,
+      "stars": 20,
       "featured": false
     },
     {
@@ -2492,6 +2740,21 @@
       "tags": [
         "dependency",
         "scan"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1,
+      "featured": false
+    },
+    {
+      "name": "dependency-security",
+      "description": "Dependency security scanning. Use when auditing npm packages for vulnerabilities.",
+      "install": "IvanTorresEdge/molcajete.ai",
+      "repo": "IvanTorresEdge/molcajete.ai",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "dependency",
+        "security"
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
@@ -2547,6 +2810,39 @@
       "featured": false
     },
     {
+      "name": "detecting-logic-bypass",
+      "description": "Detects logic bypass vulnerabilities including authentication bypass, authorization bypass, and business logic flaws. Use when analyzing authentication mechanisms, access controls, or investigating se",
+      "install": "waiwai24/BinaryX-Agent",
+      "repo": "waiwai24/BinaryX-Agent",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "detecting",
+        "logic",
+        "bypass"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "detecting-signed-unsigned-conversion",
+      "description": "Detects unsafe signed/unsigned integer conversions that can lead to integer overflow and security check bypasses. Use when analyzing integer operations, comparisons, or investigating conversion-relate",
+      "install": "waiwai24/BinaryX-Agent",
+      "repo": "waiwai24/BinaryX-Agent",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "detecting",
+        "signed",
+        "unsigned",
+        "conversion"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "discover-cryptography",
       "description": "Automatically discover cryptography skills when working with encryption, TLS, certificates, PKI, and security",
       "install": "rand/cc-polymath",
@@ -2574,6 +2870,20 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 33,
+      "featured": false
+    },
+    {
+      "name": "django",
+      "description": "Django framework best practices including project structure, ORM, and security.",
+      "install": "kprsnt2/MyLocalCLI",
+      "repo": "kprsnt2/MyLocalCLI",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "django"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -2608,6 +2918,22 @@
       "featured": false
     },
     {
+      "name": "dokploy-security-hardening",
+      "description": "Security best practices for Dokploy templates: secrets management, network isolation, least privilege, image security, and hardening recommendations.",
+      "install": "enuno/dokploy",
+      "repo": "enuno/dokploy",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "dokploy",
+        "security",
+        "hardening"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "drizzle-schema-generation",
       "description": "Generates Drizzle ORM schema files for users, sessions, tokens, OAuth accounts, and audit logs. Syncs schema to Neon Postgres.",
       "install": "nadeemsangrasi/humanoid-and-robotic-book",
@@ -2621,22 +2947,6 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "electron-security-hardening",
-      "description": "Electron\u30c7\u30b9\u30af\u30c8\u30c3\u30d7\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u306e\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u5f37\u5316\u5c02\u9580\u77e5\u8b58\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:\u3053\u306e\u30b9\u30ad\u30eb\u306b\u306f\u4ee5\u4e0b\u306e\u30ea\u30bd\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002\u5fc5\u8981\u306b\u5fdc\u3058\u3066\u8a72\u5f53\u3059\u308b\u30ea\u30bd\u30fc\u30b9\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044:- `.claude/skills/electron-security-hardening/resources/csp-configuration.md`: Content Security Policy\u8a73\u7d30\u8a2d\u5b9a- `",
-      "install": "daishiman/AIWorkflowOrchestrator",
-      "repo": "daishiman/AIWorkflowOrchestrator",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "electron",
-        "security",
-        "hardening"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 2,
       "featured": false
     },
     {
@@ -2660,6 +2970,21 @@
       "description": "Environment variable validation, security scanning, and management for Next.js, Vite, React, and Node.js applications. Use when validating environment configurations, preventing exposed secrets, or im",
       "install": "bobmatnyc/termpilot",
       "repo": "bobmatnyc/termpilot",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "env",
+        "manager"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "env-manager",
+      "description": "Environment variable validation, security scanning, and management for Next.js, Vite, React, and Node.js applications",
+      "install": "danielseltzer/code-analysis-tools",
+      "repo": "danielseltzer/code-analysis-tools",
       "path": "",
       "category": "security",
       "tags": [
@@ -2702,6 +3027,22 @@
       "featured": false
     },
     {
+      "name": "evidence-artifact-collector",
+      "description": "Generates CLI commands and API scripts to collect point-in-time evidence for audit controls. Automates evidence gathering from cloud providers (AWS, Azure, GCP) and outputs formatted reports.",
+      "install": "ethanolivertroy/claude-grc-engineering",
+      "repo": "ethanolivertroy/claude-grc-engineering",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "evidence",
+        "artifact",
+        "collector"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "expo-api-audit",
       "description": "Comprehensive audit of Expo/React Native app API integration layer. Use when asked to: (1) Review API interactions, auth handling, or token management, (2) Find hardcoded data or screens bypassing API",
       "install": "CJHarmath/claude-agents-skills",
@@ -2712,6 +3053,36 @@
         "expo",
         "api",
         "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "express",
+      "description": "Express.js server best practices including middleware, error handling, and security.",
+      "install": "kprsnt2/MyLocalCLI",
+      "repo": "kprsnt2/MyLocalCLI",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "express"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "fastapi-security-expert",
+      "description": "Expert in securing FastAPI applications with JWT tokens and Better Auth. Use this when implementing authentication middleware, route protection, and user isolation.",
+      "install": "hammadurrehman2006/the_evolution_of_todo",
+      "repo": "hammadurrehman2006/the_evolution_of_todo",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "fastapi",
+        "security",
+        "expert"
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
@@ -2743,6 +3114,21 @@
         "ffp",
         "code",
         "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "finding-generator",
+      "description": "Generates professional audit findings using the Condition-Criteria-Cause-Effect format. Creates management letter comments and remediation recommendations.",
+      "install": "ethanolivertroy/claude-grc-engineering",
+      "repo": "ethanolivertroy/claude-grc-engineering",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "finding",
+        "generator"
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
@@ -2794,7 +3180,7 @@
         "practices"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 38,
+      "stars": 42,
       "featured": false
     },
     {
@@ -2844,6 +3230,21 @@
       "featured": false
     },
     {
+      "name": "gemini-cli",
+      "description": "Google Gemini CLI for second opinions, architectural advice, code reviews, security audits. Leverage 1M+ context for comprehensive codebase analysis via command-line tool.",
+      "install": "secondsky/claude-skills",
+      "repo": "secondsky/claude-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "gemini",
+        "cli"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 3,
+      "featured": false
+    },
+    {
       "name": "generate-report-header",
       "description": "Create standardized report headers with metadata for all agent-generated reports. Use when generating bug reports, security audits, dependency reports, or any worker output requiring consistent format",
       "install": "maslennikov-ig/claude-code-orchestrator-kit",
@@ -2856,7 +3257,7 @@
         "header"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 13,
+      "stars": 24,
       "featured": false
     },
     {
@@ -3093,7 +3494,7 @@
         "eval"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 11,
+      "stars": 14,
       "featured": false
     },
     {
@@ -3175,6 +3576,21 @@
       "featured": false
     },
     {
+      "name": "ios-security",
+      "description": "iOS\u30a2\u30d7\u30ea\u306e\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30ec\u30d3\u30e5\u30fc\u3002OWASP Mobile Top 10\u3001App Transport Security\u3001Keychain\u4f7f\u7528\u3092\u30c1\u30a7\u30c3\u30af\u3002Use when: \u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u3001\u8106\u5f31\u6027\u3001\u8a8d\u8a3c\u3001Keychain\u3001ATS \u3092\u4f9d\u983c\u3055\u308c\u305f\u6642\u3002",
+      "install": "miyakawa2449/KiroBookmark",
+      "repo": "miyakawa2449/KiroBookmark",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "ios",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
       "name": "iot-security-reviewer",
       "description": "Expert IoT security review covering network security, authentication, encryption, secure boot, and attack surface analysis. Use when reviewing device security, implementing authentication, hardening f",
       "install": "rghamilton3/dotfiles",
@@ -3188,6 +3604,20 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "ipsw",
+      "description": "Apple firmware and binary reverse engineering with the ipsw CLI tool. Use when analyzing iOS/macOS binaries, disassembling functions in dyld_shared_cache, dumping Objective-C headers from private fram",
+      "install": "blacktop/ipsw-skill",
+      "repo": "blacktop/ipsw-skill",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "ipsw"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 13,
       "featured": false
     },
     {
@@ -3298,7 +3728,7 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 12,
+      "stars": 13,
       "featured": false
     },
     {
@@ -3314,7 +3744,7 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 12,
+      "stars": 13,
       "featured": false
     },
     {
@@ -3330,7 +3760,7 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 12,
+      "stars": 13,
       "featured": false
     },
     {
@@ -3347,7 +3777,38 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 12,
+      "stars": 13,
+      "featured": false
+    },
+    {
+      "name": "log-analysis-skill",
+      "description": "Helps an agent analyze application logs and identify security issues.",
+      "install": "hpppm/lab-agent-skills-design",
+      "repo": "hpppm/lab-agent-skills-design",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "log",
+        "analysis",
+        "skill"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "macos-security",
+      "description": "macOS\u30a2\u30d7\u30ea\u306e\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30ec\u30d3\u30e5\u30fc\u3002Notarization\u3001Hardened Runtime\u3001Sandbox\u3001\u30b3\u30fc\u30c9\u7f72\u540d\u3092\u30c1\u30a7\u30c3\u30af\u3002Use when: macOS\u3001\u516c\u8a3c\u3001Notarization\u3001Sandbox\u3001\u7f72\u540d \u3092\u4f9d\u983c\u3055\u308c\u305f\u6642\u3002",
+      "install": "miyakawa2449/KiroBookmark",
+      "repo": "miyakawa2449/KiroBookmark",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "macos",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -3409,6 +3870,21 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "mcp-narsil",
+      "description": "Deep code intelligence via Narsil MCP providing 76 tools for security scanning (OWASP, CWE, taint analysis), call graph analysis (CFG, DFG, callers/callees), structural queries (symbols, definitions, ",
+      "install": "MichelKerkmeester/Opencode_Dev_Environment",
+      "repo": "MichelKerkmeester/Opencode_Dev_Environment",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "mcp",
+        "narsil"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
       "featured": false
     },
     {
@@ -3484,6 +3960,22 @@
       "category": "security",
       "tags": [
         "mobile",
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "neo-llm-security",
+      "description": "AI security co-pilot for identifying, testing, and fixing vulnerabilities in LLM-powered applications.Use when: (1) Securing LLM applications or agents, (2) Generating security test suites with prompt",
+      "install": "Cornjebus/neo-llm-security",
+      "repo": "Cornjebus/neo-llm-security",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "neo",
+        "llm",
         "security"
       ],
       "source": "SkillsMP Synced Skills",
@@ -3644,7 +4136,7 @@
         "audit"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 17,
+      "stars": 18,
       "featured": false
     },
     {
@@ -3722,6 +4214,22 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 3,
+      "featured": false
+    },
+    {
+      "name": "owasp-security-review",
+      "description": "OWASP Cheat Sheet Series \u306b\u57fa\u3065\u304f\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30ec\u30d3\u30e5\u30fc\u3068\u5b9f\u88c5\u652f\u63f4\u3002\u30b3\u30fc\u30c9\u30ec\u30d3\u30e5\u30fc\u4f9d\u983c\u3001\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u95a2\u9023\u306e\u5b9f\u88c5\u30fb\u8abf\u67fb\u3001\u8106\u5f31\u6027\u30c1\u30a7\u30c3\u30af\u6642\u306b\u4f7f\u7528\u3059\u308b\u3002XSS, SQL Injection, CSRF, \u8a8d\u8a3c\u8a8d\u53ef\u306a\u3069\u306e\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30c8\u30d4\u30c3\u30af\u3092\u6271\u3046\u3002",
+      "install": "ayuzaka/dotfiles",
+      "repo": "ayuzaka/dotfiles",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "owasp",
+        "security",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -3913,22 +4421,6 @@
       "featured": false
     },
     {
-      "name": "pre-commit-security",
-      "description": "pre-commit hook\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30b9\u30ad\u30eb\u3002\u6a5f\u5bc6\u60c5\u5831\u691c\u51fa\u30d1\u30bf\u30fc\u30f3\u3001git-secrets/gitleaks\u7d71\u5408\u3001\u30c1\u30fc\u30e0\u5c55\u958b\u6226\u7565\u3001Git\u5c65\u6b74\u30b9\u30ad\u30e3\u30f3\u3092\u63d0\u4f9b\u3057\u307e\u3059\u3002\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:\u3053\u306e\u30b9\u30ad\u30eb\u306b\u306f\u4ee5\u4e0b\u306e\u30ea\u30bd\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002\u5fc5\u8981\u306b\u5fdc\u3058\u3066\u8a72\u5f53\u3059\u308b\u30ea\u30bd\u30fc\u30b9\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044:- `.claude/skills/pre-commit-security/resources/detection-pat",
-      "install": "daishiman/AIWorkflowOrchestrator",
-      "repo": "daishiman/AIWorkflowOrchestrator",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "pre",
-        "commit",
-        "security"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 2,
-      "featured": false
-    },
-    {
       "name": "prioritizing-improvements",
       "description": "Use when stakeholders pressure you to change technical priorities and you're tempted to compromise on security-first or call it synthesis - enforces risk-based prioritization over stakeholder preferen",
       "install": "tachyon-beep/hamlet",
@@ -4112,6 +4604,22 @@
         "redteam"
       ],
       "source": "SkillsMP Synced Skills",
+      "stars": 15,
+      "featured": false
+    },
+    {
+      "name": "repo-structure-reviewer",
+      "description": "Audit a repository's structure and propose a safe, approval-gated reorganization plan. Use when asked to review repo anatomy, propose folder changes, or apply an approved reorg with rollback.",
+      "install": "therealityreport/THB-BBL",
+      "repo": "therealityreport/THB-BBL",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "repo",
+        "structure",
+        "reviewer"
+      ],
+      "source": "SkillsMP Synced Skills",
       "stars": 0,
       "featured": false
     },
@@ -4127,6 +4635,35 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 5,
+      "featured": false
+    },
+    {
+      "name": "repomix",
+      "description": "Guide for using Repomix - a powerful tool that packs entire repositories into single, AI-friendly files. Use when packaging codebases for AI analysis, generating context for LLMs, creating codebase sn",
+      "install": "levanminhduc/LuongHoaThoNew",
+      "repo": "levanminhduc/LuongHoaThoNew",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "repomix"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "research-finding",
+      "description": "Expert Security Analyst for deep research and exploitability analysis of security findings. Use when you have a specific finding from semgrep, trufflehog, or manual code review that needs thorough inv",
+      "install": "chrismcmacken/bounty-hunter",
+      "repo": "chrismcmacken/bounty-hunter",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "research",
+        "finding"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -4294,7 +4831,7 @@
         "review"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 11,
+      "stars": 14,
       "featured": false
     },
     {
@@ -4375,6 +4912,21 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "secops-engineer",
+      "description": "Senior Security Engineer with 12+ years application security experience. Use when implementing authentication/authorization, configuring JWT/OAuth2, conducting security reviews, implementing rate limi",
+      "install": "olehsvyrydov/AI-development-team",
+      "repo": "olehsvyrydov/AI-development-team",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "secops",
+        "engineer"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -4465,7 +5017,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 1,
+      "stars": 3,
       "featured": false
     },
     {
@@ -4501,6 +5053,34 @@
       "description": "Implements security features following OWASP guidelines. Use when validating input, preventing XSS, adding rate limiting, verifying auth, or handling file uploads. Includes security-utils, sanitize-ut",
       "install": "jhlee0409/sidedish",
       "repo": "jhlee0409/sidedish",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security",
+      "description": "Application security best practices including OWASP Top 10, authentication, and data protection.",
+      "install": "kprsnt2/MyLocalCLI",
+      "repo": "kprsnt2/MyLocalCLI",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security",
+      "description": "Write secure web pages and applications. Use when handling user input, forms, external resources, authentication, or implementing security headers and CSP.",
+      "install": "ProfPowell/project-template",
+      "repo": "ProfPowell/project-template",
       "path": "",
       "category": "security",
       "tags": [
@@ -4557,6 +5137,21 @@
       "featured": false
     },
     {
+      "name": "security-assessment",
+      "description": "Execute threat modeling, vulnerability scanning, and security control validation. Use when relevant to the task.",
+      "install": "jmagly/ai-writing-guide",
+      "repo": "jmagly/ai-writing-guide",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "assessment"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 47,
+      "featured": false
+    },
+    {
       "name": "security-audit",
       "description": "Security vulnerability analysis to detect hardcoded secrets, dangerous patterns, and unsafe code practices.",
       "install": "huseyindeniz/vite-react-dapp-template",
@@ -4598,12 +5193,12 @@
         "audit"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 8,
+      "stars": 11,
       "featured": false
     },
     {
       "name": "security-audit",
-      "description": "Security audit patterns for PHP applications following OWASP guidelines. This skill should be used when conducting security assessments, identifying vulnerabilities (XXE, SQL injection, XSS, CSRF), sc",
+      "description": "Agent Skill: Security audit patterns for PHP applications following OWASP guidelines. This skill should be used when conducting security assessments, identifying vulnerabilities (XXE, SQL injection, X",
       "install": "netresearch/claude-code-marketplace",
       "repo": "netresearch/claude-code-marketplace",
       "path": "",
@@ -4613,7 +5208,7 @@
         "audit"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 7,
+      "stars": 8,
       "featured": false
     },
     {
@@ -4663,6 +5258,21 @@
     },
     {
       "name": "security-audit",
+      "description": "Performs comprehensive security audits identifying vulnerabilities, misconfigurations, and security best practice violations. Trigger keywords: security, audit, vulnerability, CVE, OWASP, penetration,",
+      "install": "cosmix/claude-code-setup",
+      "repo": "cosmix/claude-code-setup",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1,
+      "featured": false
+    },
+    {
+      "name": "security-audit",
       "description": "Provides security guidelines for input validation, authentication, authorization, and secure coding practices. Use when implementing auth, handling user input, working with credentials, or conducting ",
       "install": "kcenon/claude-config",
       "repo": "kcenon/claude-config",
@@ -4678,9 +5288,24 @@
     },
     {
       "name": "security-audit",
-      "description": "Use when reviewing code for security vulnerabilities, before releases, or when handling sensitive data. Covers vulnerability auditing (OWASP Top 10, STRIDE) and defensive implementation (multi-layer v",
-      "install": "HTRamsey/claude-config",
-      "repo": "HTRamsey/claude-config",
+      "description": "Security auditing and vulnerability assessment specialist. Use when conducting security reviews, analyzing code for vulnerabilities, performing OWASP assessments, or creating security audit reports.",
+      "install": "89jobrien/steve",
+      "repo": "89jobrien/steve",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1,
+      "featured": false
+    },
+    {
+      "name": "security-audit",
+      "description": "Security-focused code audit for healthcare and military contexts. Use when reviewing authentication, authorization, data handling, HIPAA compliance, or OPSEC/PERSEC requirements. Essential for PHI han",
+      "install": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
+      "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
       "path": "",
       "category": "security",
       "tags": [
@@ -4723,21 +5348,6 @@
     },
     {
       "name": "security-audit",
-      "description": "Performs comprehensive security audits identifying vulnerabilities, misconfigurations, and security best practice violations. Trigger keywords: security, audit, vulnerability, CVE, OWASP, penetration,",
-      "install": "cosmix/claude-code-setup",
-      "repo": "cosmix/claude-code-setup",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "security",
-        "audit"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "security-audit",
       "description": "Audit code for security vulnerabilities using OWASP Top 10, STRIDE threat modeling, and secure coding practices. Identifies SQL injection, XSS, CSRF, auth issues, and secrets exposure. Returns priorit",
       "install": "ils15/copilot-global-config",
       "repo": "ils15/copilot-global-config",
@@ -4768,9 +5378,39 @@
     },
     {
       "name": "security-audit",
-      "description": "Security auditing and vulnerability assessment specialist. Use when conducting security reviews, analyzing code for vulnerabilities, performing OWASP assessments, or creating security audit reports.",
-      "install": "89jobrien/steve",
-      "repo": "89jobrien/steve",
+      "description": "Security audit methodology, checklists, and tools for identifying vulnerabilities in Solidity smart contracts. Use when reviewing contracts for security issues or performing comprehensive audits.",
+      "install": "IvanTorresEdge/molcajete.ai",
+      "repo": "IvanTorresEdge/molcajete.ai",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security-audit",
+      "description": "Security audit patterns for PHP applications following OWASP guidelines. This skill should be used when conducting security assessments, identifying vulnerabilities (XXE, SQL injection, XSS, CSRF), sc",
+      "install": "netresearch/security-audit-skill",
+      "repo": "netresearch/security-audit-skill",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "audit"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security-audit",
+      "description": "Scans code for security vulnerabilities, hardcoded secrets, and unsafe patterns in React Native and Expo applications. Use before merging sensitive changes or as part of a regular audit.",
+      "install": "dtsvetkov1/agent-rules",
+      "repo": "dtsvetkov1/agent-rules",
       "path": "",
       "category": "security",
       "tags": [
@@ -4796,7 +5436,7 @@
         "scanning"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 7,
+      "stars": 8,
       "featured": false
     },
     {
@@ -4955,7 +5595,7 @@
         "auditor"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 18,
+      "stars": 20,
       "featured": false
     },
     {
@@ -5096,6 +5736,22 @@
       "featured": false
     },
     {
+      "name": "security-bluebook-builder",
+      "description": "Create or refine a concise, normative security policy (\"Blue Book\") for sensitive applications. Use when users need a threat model, data classification rules, auth/session policy, logging and audit re",
+      "install": "SHADOWPR0/security-bluebook-builder",
+      "repo": "SHADOWPR0/security-bluebook-builder",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "bluebook",
+        "builder"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 1,
+      "featured": false
+    },
+    {
       "name": "security-check",
       "description": "Automatic OWASP security checks on generated code.Use when: any code is generated in the pipeline.Triggers: internal use only.",
       "install": "timequity/vibe-coder",
@@ -5142,7 +5798,7 @@
     },
     {
       "name": "security-checklist",
-      "description": "Security checklist covering OWASP Top 10, authentication, authorization, data protection, and secure coding practices. Use during code review or security assessment.",
+      "description": "This skill should be used when the user asks about \"OWASP\", \"security review\", \"authentication security\", \"authorization\", \"XSS prevention\", \"SQL injection\", or needs a security checklist for code rev",
       "install": "Zate/cc-plugins",
       "repo": "Zate/cc-plugins",
       "path": "",
@@ -5259,7 +5915,7 @@
         "engineer"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 1,
+      "stars": 2,
       "featured": false
     },
     {
@@ -5324,7 +5980,7 @@
     },
     {
       "name": "security-first",
-      "description": "Universal security checklist and fixes for ANY project type or language",
+      "description": "Universal security checklist based on OWASP Top 10 for ANY project type or language. Use before deploying to production, handling sensitive data, or processing user input.",
       "install": "j0KZ/mcp-agents",
       "repo": "j0KZ/mcp-agents",
       "path": "",
@@ -5475,18 +6131,19 @@
       "featured": false
     },
     {
-      "name": "security-headers",
-      "description": "Web\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30d8\u30c3\u30c0\u30fc\u306e\u8a2d\u5b9a\u30d1\u30bf\u30fc\u30f3\u3002\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:\u3053\u306e\u30b9\u30ad\u30eb\u306b\u306f\u4ee5\u4e0b\u306e\u30ea\u30bd\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002\u5fc5\u8981\u306b\u5fdc\u3058\u3066\u8a72\u5f53\u3059\u308b\u30ea\u30bd\u30fc\u30b9\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044:- `.claude/skills/security-headers/resources/csp-configuration.md`: Csp Configuration\u30ea\u30bd\u30fc\u30b9- `.claude/skills/security",
-      "install": "daishiman/AIWorkflowOrchestrator",
-      "repo": "daishiman/AIWorkflowOrchestrator",
+      "name": "security-headers-configuration",
+      "description": "Configures HTTP security headers to protect against XSS, clickjacking, and MIME sniffing attacks. Use when hardening web applications, passing security audits, or implementing Content Security Policy.",
+      "install": "secondsky/claude-skills",
+      "repo": "secondsky/claude-skills",
       "path": "",
       "category": "security",
       "tags": [
         "security",
-        "headers"
+        "headers",
+        "configuration"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 2,
+      "stars": 3,
       "featured": false
     },
     {
@@ -5522,8 +6179,8 @@
     {
       "name": "security-orchestrator",
       "description": "Use this skill when you need to perform comprehensive security vulnerability assessments on a codebase. This skill launches the security-orchestrator agent to conduct systematic security reviews by br",
-      "install": "fujiokayu/aidocs",
-      "repo": "fujiokayu/aidocs",
+      "install": "fujiokayu/dotfiles",
+      "repo": "fujiokayu/dotfiles",
       "path": "",
       "category": "security",
       "tags": [
@@ -5607,7 +6264,7 @@
         "patterns"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 1,
+      "stars": 2,
       "featured": false
     },
     {
@@ -5763,21 +6420,6 @@
       "featured": false
     },
     {
-      "name": "security-reporting",
-      "description": "\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u8a3a\u65ad\u30ec\u30dd\u30fc\u30c8\u751f\u6210\u306e\u30d9\u30b9\u30c8\u30d7\u30e9\u30af\u30c6\u30a3\u30b9\u3092\u63d0\u4f9b\u3057\u307e\u3059\u3002\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:\u3053\u306e\u30b9\u30ad\u30eb\u306b\u306f\u4ee5\u4e0b\u306e\u30ea\u30bd\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002\u5fc5\u8981\u306b\u5fdc\u3058\u3066\u8a72\u5f53\u3059\u308b\u30ea\u30bd\u30fc\u30b9\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044:- `.claude/skills/security-reporting/resources/risk-scoring-methodology.md`: Risk Scoring Methodology\u30ea\u30bd\u30fc\u30b9- `.clau",
-      "install": "daishiman/AIWorkflowOrchestrator",
-      "repo": "daishiman/AIWorkflowOrchestrator",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "security",
-        "reporting"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 2,
-      "featured": false
-    },
-    {
       "name": "security-review",
       "description": "Comprehensive security code review covering OWASP Top 10, authentication, authorization, and secure coding practices. Use when reviewing code for vulnerabilities or implementing security features.",
       "install": "LangConfig/langconfig",
@@ -5790,6 +6432,21 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 9,
+      "featured": false
+    },
+    {
+      "name": "security-review",
+      "description": "\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u8106\u5f31\u6027\u3092\u81ea\u52d5\u691c\u51fa\u3059\u308b\u3002\u8a8d\u8a3c\u60c5\u5831\u306e\u30cf\u30fc\u30c9\u30b3\u30fc\u30c9\u3001\u30b3\u30de\u30f3\u30c9\u30a4\u30f3\u30b8\u30a7\u30af\u30b7\u30e7\u30f3\u3001\u5371\u967a\u306a\u30b7\u30a7\u30eb\u69cb\u6587\u306a\u3069\u3092\u30c1\u30a7\u30c3\u30af\u3002",
+      "install": "shiiman/dotfiles",
+      "repo": "shiiman/dotfiles",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
       "featured": false
     },
     {
@@ -5854,21 +6511,6 @@
     },
     {
       "name": "security-review",
-      "description": "API \ubcf4\uc548 \ubc0f \uc785\ucc30 \ub370\uc774\ud130 \ubcf4\ud638 \uac80\ud1a0 - Rate Limiting, CSRF, RLS, OWASP Top 10",
-      "install": "sihu-dev/bidflow",
-      "repo": "sihu-dev/bidflow",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "security",
-        "review"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 0,
-      "featured": false
-    },
-    {
-      "name": "security-review",
       "description": "Audit code for security vulnerabilities using OWASP Top 10 guidelines. Use for security audits, pre-deploymentchecks, authentication reviews, or when checking for XSS, SQL injection, CSRF, or authoriz",
       "install": "htooayelwinict/claude-config",
       "repo": "htooayelwinict/claude-config",
@@ -5902,6 +6544,36 @@
       "description": "\u8a8d\u8a3c\u3001\u30e6\u30fc\u30b6\u30fc\u5165\u529b\u3001\u6a5f\u5bc6\u30c7\u30fc\u30bf\u3092\u6271\u3046\u969b\u306b\u4f7f\u7528\u3002OWASP Top 10\u3092\u30ab\u30d0\u30fc\u3002",
       "install": "TakumiOkayasu/dotfile-work",
       "repo": "TakumiOkayasu/dotfile-work",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security-review",
+      "description": "\ubcf4\uc548 \ub9ac\ubdf0 \uc218\ud589. \ucde8\uc57d\uc810 \uc810\uac80, OWASP Top 10, \uc2dc\ud06c\ub9bf \ub178\ucd9c, \uc758\uc874\uc131 \ubcf4\uc548 \uac80\ud1a0",
+      "install": "rayvoidx/social-trend-agent",
+      "repo": "rayvoidx/social-trend-agent",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security-review",
+      "description": "API \ubcf4\uc548 \ubc0f \uc785\ucc30 \ub370\uc774\ud130 \ubcf4\ud638 \uac80\ud1a0 - Rate Limiting, CSRF, RLS, OWASP Top 10",
+      "install": "sihu-dev/forge-labs",
+      "repo": "sihu-dev/forge-labs",
       "path": "",
       "category": "security",
       "tags": [
@@ -5962,6 +6634,21 @@
       "description": "Run comprehensive security vulnerability scans when reviewing code. Automatically uses basic mode (fast, high/medium severity only) for first reviews, advanced mode (comprehensive, all severities) for",
       "install": "mehdic/bazinga",
       "repo": "mehdic/bazinga",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "scan"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 2,
+      "featured": false
+    },
+    {
+      "name": "security-scan",
+      "description": "Quick routine security checks for secrets, dependencies, and common vulnerabilities. Run frequently during development. Triggers: security scan, quick scan, secrets check, vulnerability check, securit",
+      "install": "cosmix/claude-code-setup",
+      "repo": "cosmix/claude-code-setup",
       "path": "",
       "category": "security",
       "tags": [
@@ -6073,6 +6760,36 @@
       "tags": [
         "security",
         "scanner"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security-scanner",
+      "description": "Comprehensive security vulnerability scanning. Use when checking for OWASP vulnerabilities, scanning for secrets/API keys, auditing dependencies for CVEs, or running pre-commit security checks.",
+      "install": "j0KZ/mcp-agents",
+      "repo": "j0KZ/mcp-agents",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "scanner"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "security-scanning",
+      "description": "Security scanning tools (gosec, govulncheck). Use when running security analysis.",
+      "install": "IvanTorresEdge/molcajete.ai",
+      "repo": "IvanTorresEdge/molcajete.ai",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "security",
+        "scanning"
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 0,
@@ -6291,7 +7008,7 @@
         "recorder"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 0,
+      "stars": 1,
       "featured": false
     },
     {
@@ -6353,7 +7070,22 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 38,
+      "stars": 42,
+      "featured": false
+    },
+    {
+      "name": "skill-review",
+      "description": "Comprehensive 15-phase skill audit for claude-skills repository. Use for skill updates, marketplace verification, package currency checks, or encountering standards compliance, dependency, API validat",
+      "install": "secondsky/claude-skills",
+      "repo": "secondsky/claude-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "skill",
+        "review"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 3,
       "featured": false
     },
     {
@@ -6370,6 +7102,21 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 5,
+      "featured": false
+    },
+    {
+      "name": "skills-auditor",
+      "description": "Detect incorrectly installed skills and report issues.",
+      "install": "CheekyCodexConjurer/quant-lab",
+      "repo": "CheekyCodexConjurer/quant-lab",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "skills",
+        "auditor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -6605,21 +7352,6 @@
       "featured": false
     },
     {
-      "name": "tool-security",
-      "description": "MCP\u30c4\u30fc\u30eb\u3068API\u7d71\u5408\u306b\u304a\u3051\u308b\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u8a2d\u8a08\u306e\u5c02\u9580\u77e5\u8b58\u3002\ud83d\udcda \u30ea\u30bd\u30fc\u30b9\u53c2\u7167:\u3053\u306e\u30b9\u30ad\u30eb\u306b\u306f\u4ee5\u4e0b\u306e\u30ea\u30bd\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002\u5fc5\u8981\u306b\u5fdc\u3058\u3066\u8a72\u5f53\u3059\u308b\u30ea\u30bd\u30fc\u30b9\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044:- `.claude/skills/tool-security/resources/api-key-management.md`: Api Key Management\u30ea\u30bd\u30fc\u30b9- `.claude/skills/tool-sec",
-      "install": "daishiman/AIWorkflowOrchestrator",
-      "repo": "daishiman/AIWorkflowOrchestrator",
-      "path": "",
-      "category": "security",
-      "tags": [
-        "tool",
-        "security"
-      ],
-      "source": "SkillsMP Synced Skills",
-      "stars": 2,
-      "featured": false
-    },
-    {
       "name": "tool-usage",
       "description": "Security tool command reference",
       "install": "amattas/agentic-coding",
@@ -6692,6 +7424,21 @@
       ],
       "source": "SkillsMP Synced Skills",
       "stars": 4,
+      "featured": false
+    },
+    {
+      "name": "vendor-assessor",
+      "description": "Conducts comprehensive vendor security assessments. Evaluates vendor security posture, identifies risks, and generates assessment reports with recommendations.",
+      "install": "ethanolivertroy/claude-grc-engineering",
+      "repo": "ethanolivertroy/claude-grc-engineering",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "vendor",
+        "assessor"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
       "featured": false
     },
     {
@@ -6776,6 +7523,21 @@
       "description": "Index of vulnerability detection pattern skills. Routes to core patterns (universal) and language-specific patterns for security scanning.",
       "install": "Zate/cc-plugins",
       "repo": "Zate/cc-plugins",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "vulnerability",
+        "patterns"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 0,
+      "featured": false
+    },
+    {
+      "name": "vulnerability-patterns",
+      "description": "Common vulnerability patterns in Solidity and how to prevent them. Use when reviewing contracts for security issues or learning about common exploits.",
+      "install": "IvanTorresEdge/molcajete.ai",
+      "repo": "IvanTorresEdge/molcajete.ai",
       "path": "",
       "category": "security",
       "tags": [
@@ -6937,7 +7699,7 @@
         "webhooks"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 0,
+      "stars": 1,
       "featured": false
     },
     {
@@ -7048,7 +7810,7 @@
         "review"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 1,
+      "stars": 3,
       "featured": false
     },
     {
@@ -7079,7 +7841,7 @@
         "security"
       ],
       "source": "SkillsMP Synced Skills",
-      "stars": 5,
+      "stars": 6,
       "featured": false
     },
     {
@@ -7096,7 +7858,22 @@
       "source": "SkillsMP Synced Skills",
       "stars": 12,
       "featured": false
+    },
+    {
+      "name": "xss-prevention",
+      "description": "XSS attack prevention with input sanitization, output encoding, Content Security Policy. Use for user-generated content, rich text editors, web application security, or encountering stored XSS, reflec",
+      "install": "secondsky/claude-skills",
+      "repo": "secondsky/claude-skills",
+      "path": "",
+      "category": "security",
+      "tags": [
+        "xss",
+        "prevention"
+      ],
+      "source": "SkillsMP Synced Skills",
+      "stars": 3,
+      "featured": false
     }
   ],
-  "count": 460
+  "count": 511
 }

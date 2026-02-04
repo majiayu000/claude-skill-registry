@@ -1,8 +1,8 @@
 {
   "category": "design",
   "code": "des",
-  "count": 5540,
-  "updated_at": "2026-02-02T05:17:48.349905Z",
+  "count": 5511,
+  "updated_at": "2026-02-04T05:29:18.426907Z",
   "skills": [
     {
       "name": "add-uint-support",
@@ -2482,21 +2482,6 @@
       "name": "render-template",
       "description": "Render templates with variable substitution using {{variable}} or ${variable} syntax. Use for generating formatted output, reports, commit messages, or any text requiring variable interpolation.",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/render-template",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "render",
-        "template"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit/data/render-template",
-      "source": "local"
-    },
-    {
-      "name": "render-template",
-      "description": "Render templates with variable substitution using {{variable}} or ${variable} syntax. Use for generating formatted output, reports, commit messages, or any text requiring variable interpolation.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/render-template",
       "branch": "main",
       "category": "design",
@@ -2506,22 +2491,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/render-template",
-      "source": "local"
-    },
-    {
-      "name": "validate-plan-file",
-      "description": "Validate that orchestrator plan files conform to expected JSON schema. Use before workers read plan files or after orchestrators create them to ensure proper structure and required fields.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/validate-plan-file",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "validate",
-        "plan",
-        "file"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit/data/validate-plan-file",
       "source": "local"
     },
     {
@@ -5318,21 +5287,6 @@
       "name": "persona-designer",
       "description": "プロダクトのペルソナ/ユーザー像を、仮説と根拠（観察・調査・制約）で組み立て、意思決定に使える形へ整形する。※会話口調のペルソナ（にゃんこ）とは別物。",
       "repo": "mae616/ai-template",
-      "path": "data/persona-designer",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "persona",
-        "designer"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template/data/persona-designer",
-      "source": "local"
-    },
-    {
-      "name": "persona-designer",
-      "description": "プロダクトのペルソナ/ユーザー像を、仮説と根拠（観察・調査・制約）で組み立て、意思決定に使える形へ整形する。※会話口調のペルソナ（にゃんこ）とは別物。",
-      "repo": "mae616/ai-template",
       "path": ".claude/skills/persona-designer",
       "branch": "main",
       "category": "design",
@@ -5401,22 +5355,6 @@
       ],
       "stars": 8,
       "install": "niznik-dev/cruijff_kit/.claude/skills/scaffold-experiment",
-      "source": "local"
-    },
-    {
-      "name": "security-threat-model",
-      "description": "Use when designing or reviewing systems handling sensitive data (PII, PHI, financial, auth credentials), building features with security implications (auth, payments, file uploads, APIs), preparing fo",
-      "repo": "lyndonkl/claude",
-      "path": "data/security-threat-model",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "security",
-        "threat",
-        "model"
-      ],
-      "stars": 8,
-      "install": "lyndonkl/claude/data/security-threat-model",
       "source": "local"
     },
     {
@@ -5559,21 +5497,6 @@
       ],
       "stars": 8,
       "install": "lyndonkl/claude/skills/symmetry-group-identifier",
-      "source": "local"
-    },
-    {
-      "name": "usability-psychologist",
-      "description": "認知負荷・エラー防止・学習コスト・アクセシビリティの観点からUI/フローを評価し、改善案を“検証可能な仮説”として提示する。認知人間工学/ユーザビリティ/アクセシビリティを統合して扱う。",
-      "repo": "mae616/ai-template",
-      "path": "data/usability-psychologist",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "usability",
-        "psychologist"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template/data/usability-psychologist",
       "source": "local"
     },
     {
@@ -8588,21 +8511,6 @@
       "name": "macos-accessibility",
       "description": "\"Expert in macOS Accessibility APIs (AXUIElement) for desktop automation. Specializes in secure automation of macOS applications with proper TCC permissions, element discovery, and system interaction.",
       "repo": "martinholovsky/claude-skills-generator",
-      "path": "data/macos-accessibility",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "macos",
-        "accessibility"
-      ],
-      "stars": 3,
-      "install": "martinholovsky/claude-skills-generator/data/macos-accessibility",
-      "source": "local"
-    },
-    {
-      "name": "macos-accessibility",
-      "description": "\"Expert in macOS Accessibility APIs (AXUIElement) for desktop automation. Specializes in secure automation of macOS applications with proper TCC permissions, element discovery, and system interaction.",
-      "repo": "martinholovsky/claude-skills-generator",
       "path": "skills/macos-accessibility",
       "branch": "main",
       "category": "design",
@@ -8686,20 +8594,6 @@
       ],
       "stars": 3,
       "install": "ainergiz/design-inspirations/.claude/skills/nested-card",
-      "source": "local"
-    },
-    {
-      "name": "polish",
-      "description": "This skill should be used when polishing academic research paper text for grammar, clarity, fluency, and natural phrasing. Specifically designed for non-native English speakers writing for top-tier co",
-      "repo": "minhuw/claude-writer",
-      "path": "data/polish",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "polish"
-      ],
-      "stars": 3,
-      "install": "minhuw/claude-writer/data/polish",
       "source": "local"
     },
     {
@@ -10245,20 +10139,6 @@
       ],
       "stars": 2,
       "install": "Bbeierle12/Skill-MCP-Claude/skills/platform-building",
-      "source": "local"
-    },
-    {
-      "name": "publish",
-      "description": "Publish the easier package to PyPI. Validates versions, checks git state, updates files, and guides through the complete release workflow. Use when ready to release a new version.",
-      "repo": "robdmc/easier",
-      "path": "data/publish",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "publish"
-      ],
-      "stars": 2,
-      "install": "robdmc/easier/data/publish",
       "source": "local"
     },
     {
@@ -18131,18 +18011,6 @@
       "name": "ansible-fundamentals",
       "description": "This skill should be used when writing Ansible playbooks, creating Ansible tasks, running ansible-playbook commands, selecting Ansible modules, or working with Ansible collections. Provides golden rul",
       "repo": "basher83/lunar-claude",
-      "path": "data/ansible-fundamentals",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/ansible-fundamentals",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "ansible-fundamentals",
-      "description": "This skill should be used when writing Ansible playbooks, creating Ansible tasks, running ansible-playbook commands, selecting Ansible modules, or working with Ansible collections. Provides golden rul",
-      "repo": "basher83/lunar-claude",
       "path": "plugins/infrastructure/ansible-workflows/skills/ansible-fundamentals",
       "branch": "main",
       "category": "design",
@@ -18155,36 +18023,12 @@
       "name": "ansible-playbook-design",
       "description": "This skill should be used when creating new Ansible playbooks, designing playbook structure, implementing state-based playbooks with present/absent patterns, organizing plays and tasks, or structuring",
       "repo": "basher83/lunar-claude",
-      "path": "data/ansible-playbook-design",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/ansible-playbook-design",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "ansible-playbook-design",
-      "description": "This skill should be used when creating new Ansible playbooks, designing playbook structure, implementing state-based playbooks with present/absent patterns, organizing plays and tasks, or structuring",
-      "repo": "basher83/lunar-claude",
       "path": "plugins/infrastructure/ansible-workflows/skills/ansible-playbook-design",
       "branch": "main",
       "category": "design",
       "tags": [],
       "stars": 0,
       "install": "basher83/lunar-claude/plugins/infrastructure/ansible-workflows/skills/ansible-playbook-design",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "ansible-role-design",
-      "description": "This skill should be used when creating Ansible roles, designing role directory structure, organizing role variables in defaults vs vars, writing role handlers, or structuring role tasks. Based on ana",
-      "repo": "basher83/lunar-claude",
-      "path": "data/ansible-role-design",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/ansible-role-design",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -19339,20 +19183,6 @@
       "stars": 0,
       "install": "pluginagentmarketplace/custom-plugin-nextjs/design/architecture-skills",
       "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "archivist",
-      "description": "Connecte les prédictions et visions du passé aux réalités présentes pour l'Acte VI d'un épisode NEW TEMPS X. Utilise ce Skill quand tu dois créer un pont temporel entre les années 1980 (Temps X origin",
-      "repo": "nmarchand73/new_tempsx",
-      "path": "data/archivist",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "archivist"
-      ],
-      "stars": 0,
-      "install": "nmarchand73/new_tempsx/data/archivist",
-      "source": "SkillsMP Synced Skills"
     },
     {
       "name": "archivist",
@@ -22467,18 +22297,6 @@
       "name": "capacity-planning-helper",
       "description": "Estimates infrastructure needs based on traffic forecasts, workload analysis, and performance requirements with sizing recommendations and cost trade-offs. Use for \"capacity planning\", \"infrastructure",
       "repo": "patricio0312rev/skillset",
-      "path": "data/capacity-planning-helper",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/capacity-planning-helper",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "capacity-planning-helper",
-      "description": "Estimates infrastructure needs based on traffic forecasts, workload analysis, and performance requirements with sizing recommendations and cost trade-offs. Use for \"capacity planning\", \"infrastructure",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/performance/capacity-planning-helper",
       "branch": "main",
       "category": "design",
@@ -25417,18 +25235,6 @@
       "name": "core-web-vitals-tuner",
       "description": "Systematically improves Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS) with prioritized fixes and verification. Use for \"Core Web Vitals\", \"performa",
       "repo": "patricio0312rev/skillset",
-      "path": "data/core-web-vitals-tuner",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/core-web-vitals-tuner",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "core-web-vitals-tuner",
-      "description": "Systematically improves Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift (CLS) with prioritized fixes and verification. Use for \"Core Web Vitals\", \"performa",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/performance/core-web-vitals-tuner",
       "branch": "main",
       "category": "design",
@@ -26023,22 +25829,6 @@
       "stars": 0,
       "install": "taisukeoe/agentic-ai-skills-creator/plugins/skills-helper/skills/creating-effective-skills",
       "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "creating-karabiner-modifications",
-      "description": "Use when configuring Karabiner-Elements keyboard customizations, before writing JSON - provides systematic workflow for complex modifications with correct structure, common patterns, and guidance on m",
-      "repo": "AJBcoding/claude-skill-eval",
-      "path": "data/creating-karabiner-modifications",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "creating",
-        "karabiner",
-        "modifications"
-      ],
-      "stars": 0,
-      "install": "AJBcoding/claude-skill-eval/data/creating-karabiner-modifications",
-      "source": "SkillsMP Synced Skills"
     },
     {
       "name": "creating-karabiner-modifications",
@@ -32332,18 +32122,6 @@
       "name": "etl-sync-job-builder",
       "description": "Designs reliable ETL and data synchronization jobs with incremental updates, idempotency guarantees, watermark tracking, error handling, and retry logic. Use for \"ETL jobs\", \"data sync\", \"incremental",
       "repo": "patricio0312rev/skillset",
-      "path": "data/etl-sync-job-builder",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/etl-sync-job-builder",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "etl-sync-job-builder",
-      "description": "Designs reliable ETL and data synchronization jobs with incremental updates, idempotency guarantees, watermark tracking, error handling, and retry logic. Use for \"ETL jobs\", \"data sync\", \"incremental",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/db-management/etl-sync-job-builder",
       "branch": "main",
       "category": "design",
@@ -34259,18 +34037,6 @@
       "name": "flutter-animations",
       "description": "Master Flutter animations including implicit, explicit, hero, and physics-based animations. Create smooth, performant UI transitions and custom animated widgets.",
       "repo": "spjoshis/claude-code-plugins",
-      "path": "data/flutter-animations",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "spjoshis/claude-code-plugins/data/flutter-animations",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "flutter-animations",
-      "description": "Master Flutter animations including implicit, explicit, hero, and physics-based animations. Create smooth, performant UI transitions and custom animated widgets.",
-      "repo": "spjoshis/claude-code-plugins",
       "path": "plugins/flutter-development/skills/flutter-animations",
       "branch": "main",
       "category": "design",
@@ -34735,18 +34501,6 @@
       "tags": [],
       "stars": 0,
       "install": "IvanTorresEdge/molcajete.ai/tech-stacks/js/react-native/skills/form-handling-mobile",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "form-wizard-builder",
-      "description": "Builds multi-step forms with validation schemas (Zod/Yup), step components, shared state management, progress indicators, review steps, and error handling. Use when creating \"multi-step forms\", \"wizar",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/form-wizard-builder",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/form-wizard-builder",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -38046,18 +37800,6 @@
       "tags": [],
       "stars": 0,
       "install": "terraphim/codex-skills/data/gpui-components",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "gpui-patterns",
-      "description": "Common GPUI patterns including component composition, state management strategies, event handling, and action dispatching. Use when user needs guidance on GPUI patterns, component design, or state man",
-      "repo": "geoffjay/claude-plugins",
-      "path": "data/gpui-patterns",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "geoffjay/claude-plugins/data/gpui-patterns",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -47101,18 +46843,6 @@
       "name": "multi-agent-composition",
       "description": "This skill should be used when the user asks to \"choose between skill and agent\", \"compose multi-agent system\", \"orchestrate agents\", \"manage agent context\", \"design component architecture\", \"should I",
       "repo": "basher83/lunar-claude",
-      "path": "data/multi-agent-composition",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/multi-agent-composition",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "multi-agent-composition",
-      "description": "This skill should be used when the user asks to \"choose between skill and agent\", \"compose multi-agent system\", \"orchestrate agents\", \"manage agent context\", \"design component architecture\", \"should I",
-      "repo": "basher83/lunar-claude",
       "path": "plugins/meta/meta-claude/skills/multi-agent-composition",
       "branch": "main",
       "category": "design",
@@ -47924,18 +47654,6 @@
       "tags": [],
       "stars": 0,
       "install": "zacharyr0th/next-starter/.claude/skills/next/next-config-optimization",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "next-js-developer",
-      "description": "Expert Next.js development assistant with 10+ years experience. Automatically audits, generates, and fixes Next.js applications using latest versions (Next.js 14+, React 19+, Tailwind CSS 3+). Use whe",
-      "repo": "SHAJAR5110/Hackathon-II-phase2",
-      "path": "data/next-js-developer",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "SHAJAR5110/Hackathon-II-phase2/data/next-js-developer",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -50418,18 +50136,6 @@
       "name": "optimizing-cache-performance",
       "description": "This skill enables AI assistant to analyze and improve application caching strategies. it optimizes cache hit rates, ttl configurations, cache key design, and invalidation strategies. use this skill w",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/optimizing-cache-performance",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/optimizing-cache-performance",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "optimizing-cache-performance",
-      "description": "This skill enables AI assistant to analyze and improve application caching strategies. it optimizes cache hit rates, ttl configurations, cache key design, and invalidation strategies. use this skill w",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
       "path": "plugins/performance/cache-performance-optimizer/skills/optimizing-cache-performance",
       "branch": "main",
       "category": "design",
@@ -50889,18 +50595,6 @@
       "name": "page-layout-builder",
       "description": "Generates complete page layouts and shells for common patterns (dashboard, authentication, settings, CRUD pages) with consistent navigation, layout components, routing structure, and state management",
       "repo": "patricio0312rev/skillset",
-      "path": "data/page-layout-builder",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/page-layout-builder",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "page-layout-builder",
-      "description": "Generates complete page layouts and shells for common patterns (dashboard, authentication, settings, CRUD pages) with consistent navigation, layout components, routing structure, and state management",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/frontend/page-layout-builder",
       "branch": "main",
       "category": "design",
@@ -51015,18 +50709,6 @@
       "tags": [],
       "stars": 0,
       "install": "TrueNine/claude-code-projects/design/pagination-standard",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "pai",
-      "description": "Personal AI Infrastructure (PAI) - PAI System TemplateMUST BE USED proactively for all user requests. USE PROACTIVELY to ensure complete context availability.=== CORE IDENTITY (Always Active) ===Your",
-      "repo": "danielmiessler/PAIPlugin",
-      "path": "data/pai",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "danielmiessler/PAIPlugin/data/pai",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -53221,18 +52903,6 @@
       "name": "process-management",
       "description": "Process management including listing, finding, killing processes and managing tmux sessions. Use when managing running processes, investigating resource usage, or working with terminal multiplexers.",
       "repo": "ShunsukeHayashi/miyabi-mcp-bundle",
-      "path": "data/process-management",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "ShunsukeHayashi/miyabi-mcp-bundle/data/process-management",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "process-management",
-      "description": "Process management including listing, finding, killing processes and managing tmux sessions. Use when managing running processes, investigating resource usage, or working with terminal multiplexers.",
-      "repo": "ShunsukeHayashi/miyabi-mcp-bundle",
       "path": ".claude/skills/process-management",
       "branch": "main",
       "category": "design",
@@ -54607,21 +54277,6 @@
       "stars": 0,
       "install": "psh355q-ui/szdi57465yt/backend/ai/skills/analysis/quick-analyzer-agent",
       "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "quick-commit",
-      "description": "Create a git commit with a short message (up to 50 characters). Use when the user asks to commit changes with a short/concise message.",
-      "repo": "AleksaRistic216/aleksaristic-ecosystem",
-      "path": "data/quick-commit",
-      "branch": "main",
-      "category": "design",
-      "tags": [
-        "quick",
-        "commit"
-      ],
-      "stars": 0,
-      "install": "AleksaRistic216/aleksaristic-ecosystem/data/quick-commit",
-      "source": "local"
     },
     {
       "name": "quick-commit",
@@ -61956,18 +61611,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "startupo",
-      "description": "Initialize session as ORCHESTRATOR agent with multi-agent coordination capability. Use for complex tasks requiring parallel agent spawning and result synthesis.",
-      "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-      "path": "data/startupo",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "Euda1mon1a/Autonomous-Assignment-Program-Manager/data/startupo",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "state-lifting",
       "description": "Reactにおける状態リフティングと状態配置判断を支援するスキル。兄弟コンポーネント間の状態共有、Prop Drilling削減、Context導入判断、Compound Componentパターンまで、React状態管理の全体像を扱う。Anchors:• React Documentation (Lifting State Up) / 適用: 共有状態の配置判断 / 目的: 最小責務での共有設計",
       "repo": "daishiman/AIWorkflowOrchestrator",
@@ -62001,18 +61644,6 @@
       "tags": [],
       "stars": 0,
       "install": "cowwoc/styler/design/state-transition",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "state-ux-flow-builder",
-      "description": "Standardizes UX states for data fetching flows (loading, error, empty, success) and complex multi-view UI patterns. Provides state machine approach recommendations, loading skeletons, error boundaries",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/state-ux-flow-builder",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/state-ux-flow-builder",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -63874,18 +63505,6 @@
       "stars": 0,
       "install": "sitechfromgeorgia/georgian-distribution-system/.claude/skills/system-architecture-advisor",
       "source": "local"
-    },
-    {
-      "name": "system-design-generator",
-      "description": "Produces comprehensive system architecture plans for features and products including component breakdown, data flow diagrams, system boundaries, API contracts, and scaling considerations. Use for \"sys",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/system-design-generator",
-      "branch": "main",
-      "category": "design",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/system-design-generator",
-      "source": "SkillsMP + GitHub Raw"
     },
     {
       "name": "system-design-generator",

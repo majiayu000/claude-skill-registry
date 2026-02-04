@@ -1,8 +1,8 @@
 {
   "category": "security",
   "code": "sec",
-  "count": 756,
-  "updated_at": "2026-02-02T05:17:50.488889Z",
+  "count": 747,
+  "updated_at": "2026-02-04T05:29:20.413140Z",
   "skills": [
     {
       "name": "git-workflow",
@@ -565,22 +565,6 @@
       "source": "local"
     },
     {
-      "name": "generate-report-header",
-      "description": "Create standardized report headers with metadata for all agent-generated reports. Use when generating bug reports, security audits, dependency reports, or any worker output requiring consistent format",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/generate-report-header",
-      "branch": "main",
-      "category": "security",
-      "tags": [
-        "generate",
-        "report",
-        "header"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit/data/generate-report-header",
-      "source": "local"
-    },
-    {
       "name": "security-health-inline",
       "description": "Inline orchestration workflow for security vulnerability detection and remediation. Provides step-by-step phases for security-scanner detection, priority-based fixing with vulnerability-fixer, and ver",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
@@ -594,22 +578,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/security-health-inline",
-      "source": "local"
-    },
-    {
-      "name": "security-health-inline",
-      "description": "Inline orchestration workflow for security vulnerability detection and remediation. Provides step-by-step phases for security-scanner detection, priority-based fixing with vulnerability-fixer, and ver",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/security-health-inline",
-      "branch": "main",
-      "category": "security",
-      "tags": [
-        "security",
-        "health",
-        "inline"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit/data/security-health-inline",
       "source": "local"
     },
     {
@@ -1494,21 +1462,6 @@
       ],
       "stars": 4,
       "install": "jamesjlundin/full-stack-web-and-mobile-template/.claude/skills/secrets-scanner",
-      "source": "local"
-    },
-    {
-      "name": "secrets-scanner",
-      "description": "Scan codebase for secrets, API keys, credentials, and PII. Detect hardcoded sensitive data. Use when auditing for secrets, checking for exposed keys, reviewing security, or scanning for PII.",
-      "repo": "jamesjlundin/full-stack-web-and-mobile-template",
-      "path": "data/secrets-scanner",
-      "branch": "main",
-      "category": "security",
-      "tags": [
-        "secrets",
-        "scanner"
-      ],
-      "stars": 4,
-      "install": "jamesjlundin/full-stack-web-and-mobile-template/data/secrets-scanner",
       "source": "local"
     },
     {
@@ -3010,18 +2963,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "auth-module-builder",
-      "description": "Implements secure authentication patterns including login/registration, session management, JWT tokens, password hashing, cookie settings, and CSRF protection. Provides auth routes, middleware, securi",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/auth-module-builder",
-      "branch": "main",
-      "category": "security",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/auth-module-builder",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "auth-provider",
       "description": "认证提供商统一接口，支持 Supabase Auth、Clerk、Firebase Auth 等主流认证服务。提供用户注册、登录、OAuth、会话管理、权限验证等功能。",
       "repo": "liushuang393/serverlessAIAgents",
@@ -3079,18 +3020,6 @@
       "tags": [],
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/security/auth-security-reviewer",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "auth-security-reviewer",
-      "description": "Reviews authentication and authorization implementation for session management, CSRF, cookie security, and auth flow vulnerabilities with findings, severity assessment, and fix recommendations. Use fo",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/auth-security-reviewer",
-      "branch": "main",
-      "category": "security",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/auth-security-reviewer",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -4556,18 +4485,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "encryption-at-rest-checker",
-      "description": "Encryption At Rest Checker - Auto-activating skill for Security Advanced.Triggers on: encryption at rest checker, encryption at rest checkerPart of the Security Advanced skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/encryption-at-rest-checker",
-      "branch": "main",
-      "category": "security",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/encryption-at-rest-checker",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "env-secret-detector",
       "description": "Env Secret Detector - Auto-activating skill for Security Fundamentals.Triggers on: env secret detector, env secret detectorPart of the Security Fundamentals skill category.",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
@@ -5193,18 +5110,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/03-security-fundamentals/http-header-security-audit",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "http-header-security-audit",
-      "description": "Http Header Security Audit - Auto-activating skill for Security Fundamentals.Triggers on: http header security audit, http header security auditPart of the Security Fundamentals skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/http-header-security-audit",
-      "branch": "main",
-      "category": "security",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/http-header-security-audit",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -9045,18 +8950,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "threat-model-generator",
-      "description": "Creates comprehensive threat models using STRIDE methodology with asset identification, threat enumeration, mitigation strategies, and residual risk assessment. Use for \"threat modeling\", \"security an",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/threat-model-generator",
-      "branch": "main",
-      "category": "security",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/threat-model-generator",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "threat-modeling",
       "description": "Use when implementing auth, file uploads, payments, or external APIs. Applies STRIDE framework systematically. Triggers: \"authentication\", \"file upload\", \"payment\", \"multi-tenant\", \"external API\". If",
       "repo": "pvillega/claude-templates",
@@ -9480,18 +9373,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/04-security-advanced/waf-rule-creator",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "waf-rule-creator",
-      "description": "Waf Rule Creator - Auto-activating skill for Security Advanced.Triggers on: waf rule creator, waf rule creatorPart of the Security Advanced skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/waf-rule-creator",
-      "branch": "main",
-      "category": "security",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/waf-rule-creator",
       "source": "SkillsMP + GitHub Raw"
     },
     {

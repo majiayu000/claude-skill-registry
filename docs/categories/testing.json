@@ -1,8 +1,8 @@
 {
   "category": "testing",
   "code": "tst",
-  "count": 4016,
-  "updated_at": "2026-02-02T05:17:50.822483Z",
+  "count": 3994,
+  "updated_at": "2026-02-04T05:29:20.717279Z",
   "skills": [
     {
       "name": "frontend-testing-langgenius-dify",
@@ -1322,21 +1322,6 @@
       ],
       "stars": 110,
       "install": "daymade/claude-code-skills/promptfoo-evaluation",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "promptfoo-evaluation",
-      "description": "Configures and runs LLM evaluation using Promptfoo framework. Use when setting up prompt testing, creating evaluation configs (promptfooconfig.yaml), writing Python custom assertions, implementing llm",
-      "repo": "daymade/claude-code-skills",
-      "path": "data/promptfoo-evaluation",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "promptfoo",
-        "evaluation"
-      ],
-      "stars": 110,
-      "install": "daymade/claude-code-skills/data/promptfoo-evaluation",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -3885,22 +3870,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/parse-error-logs",
-      "source": "local"
-    },
-    {
-      "name": "parse-error-logs",
-      "description": "Parse build errors, test failures, type-check output, and validation logs into structured data. Use when processing npm/pnpm output, TypeScript errors, Jest failures, or any validation command results",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/parse-error-logs",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "parse",
-        "error",
-        "logs"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit/data/parse-error-logs",
       "source": "local"
     },
     {
@@ -11030,21 +10999,6 @@
       "source": "local"
     },
     {
-      "name": "implementation-planner",
-      "description": "Create structured implementation plans from validated requirements. Use when requirements are clear and you need to break down implementation into actionable steps with testing approach.",
-      "repo": "EdanStarfire/claudecode_webui",
-      "path": "data/implementation-planner",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "implementation",
-        "planner"
-      ],
-      "stars": 2,
-      "install": "EdanStarfire/claudecode_webui/data/implementation-planner",
-      "source": "local"
-    },
-    {
       "name": "ios-game-testing",
       "description": "Test the Nathaniel iOS game in simulator. Use when asked to test the game, verify changes work, run sanity tests, check if a feature works, or when the user says \"test this\", \"run the game\", \"verify i",
       "repo": "ruarfff/Nathaniel",
@@ -16544,18 +16498,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "add-unit-tests",
-      "description": "Write failing unit tests for feature requirements (TDD style)",
-      "repo": "thoreinstein/opencode-config",
-      "path": "data/add-unit-tests",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "thoreinstein/opencode-config/data/add-unit-tests",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "adding-new-metric",
       "description": "Guides systematic implementation of new sustainability metrics in OSS Sustain Guard using the plugin-based metric system. Use when adding metric functions to evaluate project health aspects like issue",
       "repo": "onukura/oss-sustain-guard",
@@ -17442,18 +17384,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "ansible-testing",
-      "description": "This skill should be used when running ansible-lint, configuring linting rules, testing Ansible playbooks, validating playbook syntax, or setting up integration tests. Covers ansible-lint configuratio",
-      "repo": "basher83/lunar-claude",
-      "path": "data/ansible-testing",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/ansible-testing",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "anthropic-web-testing",
       "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser l",
       "repo": "theflysurfer/claude-skills-marketplace",
@@ -17605,18 +17535,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/16-api-integration/api-health-checker",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "api-health-checker",
-      "description": "Api Health Checker - Auto-activating skill for API Integration.Triggers on: api health checker, api health checkerPart of the API Integration skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/api-health-checker",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/api-health-checker",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -18562,18 +18480,6 @@
       "tags": [],
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/backend/background-jobs-designer",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "background-jobs-designer",
-      "description": "Designs background job processing systems with queue integration (BullMQ/Celery), job definitions, retry policies, exponential backoff, idempotent execution, and monitoring hooks. Use when implementin",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/background-jobs-designer",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/background-jobs-designer",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -20100,21 +20006,6 @@
       ],
       "stars": 0,
       "install": "kltng/humanities-skills/chgis-tgaz",
-      "source": "local"
-    },
-    {
-      "name": "chgis-tgaz",
-      "description": "Query the China Historical GIS (CHGIS) Temporal Gazetteer (TGAZ) API to search for historical Chinese placenames from 222 BCE to 1911 CE. Use this skill when searching for information about historical",
-      "repo": "kltng/humanities-skills",
-      "path": "data/chgis-tgaz",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "chgis",
-        "tgaz"
-      ],
-      "stars": 0,
-      "install": "kltng/humanities-skills/data/chgis-tgaz",
       "source": "local"
     },
     {
@@ -21906,18 +21797,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "contract-testing-builder",
-      "description": "Implements API contract testing to ensure provider-consumer compatibility using Pact or similar tools. Prevents breaking changes with contract specifications and bi-directional verification. Use for \"",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/contract-testing-builder",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/contract-testing-builder",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "conversion-optimizer",
       "description": "Optimize CTA copy, hero sections, and button text for higher conversions using therapy-appropriate frameworks (PAS, AIDA, BAB). Maintains empathetic, non-salesy tone while driving action. Creates A/B",
       "repo": "jhcynamon1/NextStepTherapySite-v2",
@@ -22188,18 +22067,6 @@
       "tags": [],
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/testing/coverage-strategist",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "coverage-strategist",
-      "description": "Defines ROI-based coverage targets with critical path identification, layer-specific targets, and explicit \"don't test this\" guidelines. Use for \"test coverage\", \"coverage strategy\", \"test priorities\"",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/coverage-strategist",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/coverage-strategist",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -26388,21 +26255,6 @@
       "source": "local"
     },
     {
-      "name": "feature-workflow",
-      "description": "Orchestrate complete or partial feature implementation workflow with configurable phases. This skill should be used to run the full workflow (specification → research → plan → implement → test → fix)",
-      "repo": "LaizyIO/WorkflowSkills",
-      "path": "data/feature-workflow",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "feature",
-        "workflow"
-      ],
-      "stars": 0,
-      "install": "LaizyIO/WorkflowSkills/data/feature-workflow",
-      "source": "local"
-    },
-    {
       "name": "fetch-pr-comments",
       "description": "Fetch unresolved PR review comments and feedback on the current branch. Use when you need to address outstanding PR review items or see what feedback needs to be resolved. Optionally filter by a speci",
       "repo": "hvent90/hv-skills",
@@ -27796,18 +27648,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/10-performance-testing/gatling-scenario-creator",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "gatling-scenario-creator",
-      "description": "Gatling Scenario Creator - Auto-activating skill for Performance Testing.Triggers on: gatling scenario creator, gatling scenario creatorPart of the Performance Testing skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/gatling-scenario-creator",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/gatling-scenario-creator",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -34316,18 +34156,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "multi-mind",
-      "description": "Multi-specialist collaborative analysis for complex decisions. Spawns parallel subagents with diverse domain expertise to analyze a topic from multiple angles. Use when user says \"multi-mind\", or for",
-      "repo": "kaushikgopal/dotfiles",
-      "path": "data/multi-mind",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "kaushikgopal/dotfiles/data/multi-mind",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "multi-site-theming",
       "description": "Use when implementing per-site themes, white-labeling, or brand override systems. Covers tenant-specific branding, theme inheritance, CSS variable hierarchies, and dynamic theme switching for multi-si",
       "repo": "melodic-software/claude-code-plugins",
@@ -34662,18 +34490,6 @@
       "tags": [],
       "stars": 0,
       "install": "basher83/lunar-claude/plugins/homelab/netbox-powerdns-integration/skills/netbox-powerdns-integration",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "netbox-powerdns-integration",
-      "description": "NetBox IPAM and PowerDNS integration for automated DNS record management.",
-      "repo": "basher83/lunar-claude",
-      "path": "data/netbox-powerdns-integration",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/netbox-powerdns-integration",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -38828,18 +38644,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "prompt-regression-tester",
-      "description": "Compares old vs new prompts across test cases with diff summaries, stability metrics, breakage analysis, and fix suggestions. Use for \"prompt testing\", \"A/B testing prompts\", \"prompt versioning\", or \"",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/prompt-regression-tester",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/prompt-regression-tester",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "prompt-versioning",
       "description": "Track prompt versions, A/B test variants, and measure prompt performance",
       "repo": "nexus-labs-automation/agent-observability",
@@ -39087,18 +38891,6 @@
       "tags": [],
       "stars": 0,
       "install": "basher83/lunar-claude/plugins/infrastructure/proxmox-infrastructure/skills/proxmox-infrastructure",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "proxmox-infrastructure",
-      "description": "Proxmox VE cluster management including VM provisioning, template creation with cloud-init, QEMU guest agent integration, storage pool management, VLAN-aware bridge configuration, and Proxmox API inte",
-      "repo": "basher83/lunar-claude",
-      "path": "data/proxmox-infrastructure",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/proxmox-infrastructure",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -39570,18 +39362,6 @@
       "tags": [],
       "stars": 0,
       "install": "basher83/lunar-claude/plugins/devops/python-tools/skills/python-json-parsing",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "python-json-parsing",
-      "description": "Python JSON parsing best practices covering performance optimization (orjson/msgspec), handling large files (streaming/JSONL), security (injection prevention), and advanced querying (JSONPath/JMESPath",
-      "repo": "basher83/lunar-claude",
-      "path": "data/python-json-parsing",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude/data/python-json-parsing",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -40151,18 +39931,6 @@
       "tags": [],
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/security/rbac-policy-tester",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "rbac-policy-tester",
-      "description": "Creates comprehensive permission tests ensuring RBAC doesn't regress with test matrices, CI gating, and authorization coverage. Use for \"RBAC testing\", \"permission tests\", \"authorization testing\", or",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/rbac-policy-tester",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset/data/rbac-policy-tester",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -46408,21 +46176,6 @@
       "source": "local"
     },
     {
-      "name": "tdd-green",
-      "description": "Execute the GREEN phase of TDD by implementing the minimum code needed to make the failing test pass. Follows the principle of simplest solution that could possibly work.",
-      "repo": "SwiftyJunnos/Claude-Code-with-TDD",
-      "path": "data/tdd-green",
-      "branch": "main",
-      "category": "testing",
-      "tags": [
-        "tdd",
-        "green"
-      ],
-      "stars": 0,
-      "install": "SwiftyJunnos/Claude-Code-with-TDD/data/tdd-green",
-      "source": "local"
-    },
-    {
       "name": "tdd-playbook",
       "description": "Guides strict TDD (red/green/refactor), prioritizing domain unit tests and small steps.",
       "repo": "mikivujkovic/claude-code-ddd-tdd-bdd",
@@ -50433,18 +50186,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "unity-development",
-      "description": "Comprehensive guide for Unity development. Provides architecture patterns, MCP tool selection, and composite task workflows. Parent skill always referenced for Unity-related tasks. See child skills fo",
-      "repo": "akiojin/unity-mcp-server",
-      "path": "data/unity-development",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "akiojin/unity-mcp-server/data/unity-development",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "unity-editor-imgui-design",
       "description": "Unity IMGUI (Immediate Mode GUI) for editor tools and custom inspectors. Use for EditorWindow, Custom Inspector, Property Drawer development. NOT for game UI - use unity-game-ugui-design or unity-game",
       "repo": "akiojin/unity-mcp-server",
@@ -51594,18 +51335,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/plugins/saas-packs/vercel-pack/skills/vercel-observability",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "vercel-observability",
-      "description": "Set up comprehensive observability for Vercel integrations with metrics, traces, and alerts.Use when implementing monitoring for Vercel operations, setting up dashboards,or configuring alerting for Ve",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/vercel-observability",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/vercel-observability",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -53589,18 +53318,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/19-business-automation/zapier-integration-helper",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "zapier-integration-helper",
-      "description": "Zapier Integration Helper - Auto-activating skill for Business Automation.Triggers on: zapier integration helper, zapier integration helperPart of the Business Automation skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/zapier-integration-helper",
-      "branch": "main",
-      "category": "testing",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills/data/zapier-integration-helper",
       "source": "SkillsMP + GitHub Raw"
     },
     {

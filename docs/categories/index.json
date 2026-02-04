@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-02T05:17:47.208733Z",
+  "updated_at": "2026-02-04T05:29:17.357180Z",
   "categories": [
     {
       "name": ".github-skills",
@@ -667,16 +667,6 @@
       "count": 1
     },
     {
-      "name": "Architect",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Art",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "Authentication",
       "code": "oth",
       "count": 1
@@ -693,26 +683,6 @@
     },
     {
       "name": "Boofuzz-Fuzzer",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Brainstorming",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "BrightData",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Browse",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Browser",
       "code": "oth",
       "count": 1
     },
@@ -737,22 +707,12 @@
       "count": 1
     },
     {
-      "name": "CORE",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "CSharpener",
       "code": "oth",
       "count": 1
     },
     {
       "name": "Code_Feeder_Skill",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Content",
       "code": "oth",
       "count": 1
     },
@@ -777,16 +737,6 @@
       "count": 1
     },
     {
-      "name": "CreateSkill",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Createskill",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "CuttingParams",
       "code": "oth",
       "count": 1
@@ -798,11 +748,6 @@
     },
     {
       "name": "Dashbaord-skill",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Databases",
       "code": "oth",
       "count": 1
     },
@@ -822,22 +767,12 @@
       "count": 1
     },
     {
-      "name": "Elasticsearch",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "Epic",
       "code": "oth",
       "count": 1
     },
     {
       "name": "FS-155",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Fabric",
       "code": "oth",
       "count": 1
     },
@@ -853,11 +788,6 @@
     },
     {
       "name": "GTD",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Go-to-Market-Planner",
       "code": "oth",
       "count": 1
     },
@@ -903,21 +833,6 @@
     },
     {
       "name": "KaiTodo",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "LangChain",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "LangGraph",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Logging",
       "code": "oth",
       "count": 1
     },
@@ -972,11 +887,6 @@
       "count": 1
     },
     {
-      "name": "Observability",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "PRD-to-Tasks",
       "code": "oth",
       "count": 1
@@ -1017,18 +927,8 @@
       "count": 1
     },
     {
-      "name": "PostgreSQL",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "PowerPlatform",
       "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Productivity",
-      "code": "pro",
       "count": 1
     },
     {
@@ -1057,27 +957,12 @@
       "count": 1
     },
     {
-      "name": "Research",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "Reverse Proxy Deployment",
       "code": "oth",
       "count": 1
     },
     {
       "name": "Roo-VMS",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Rust",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "SCHEDULING",
       "code": "oth",
       "count": 1
     },
@@ -1117,11 +1002,6 @@
       "count": 1
     },
     {
-      "name": "SkillForge",
-      "code": "oth",
-      "count": 1
-    },
-    {
       "name": "SkillsMatrix",
       "code": "oth",
       "count": 1
@@ -1133,11 +1013,6 @@
     },
     {
       "name": "StoryExplanation",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Summarize",
       "code": "oth",
       "count": 1
     },
@@ -1168,11 +1043,6 @@
     },
     {
       "name": "TribalKnowledge",
-      "code": "oth",
-      "count": 1
-    },
-    {
-      "name": "Unifi",
       "code": "oth",
       "count": 1
     },
@@ -17424,7 +17294,7 @@
     {
       "name": "data",
       "code": "dat",
-      "count": 26637
+      "count": 28376
     },
     {
       "name": "data-access",
@@ -19014,7 +18884,7 @@
     {
       "name": "design",
       "code": "des",
-      "count": 5540
+      "count": 5511
     },
     {
       "name": "design-and-build",
@@ -19819,7 +19689,7 @@
     {
       "name": "development",
       "code": "dev",
-      "count": 18239
+      "count": 18174
     },
     {
       "name": "development-code",
@@ -19884,7 +19754,7 @@
     {
       "name": "devops",
       "code": "ops",
-      "count": 3161
+      "count": 3145
     },
     {
       "name": "devops-agent",
@@ -21034,7 +20904,7 @@
     {
       "name": "documents",
       "code": "doc",
-      "count": 2729
+      "count": 2721
     },
     {
       "name": "docusaurus",
@@ -43179,7 +43049,7 @@
     {
       "name": "other",
       "code": "oth",
-      "count": 18486
+      "count": 18325
     },
     {
       "name": "other-entries",
@@ -46564,7 +46434,7 @@
     {
       "name": "productivity",
       "code": "pro",
-      "count": 1532
+      "count": 1524
     },
     {
       "name": "professeur_lycee",
@@ -54299,7 +54169,7 @@
     {
       "name": "security",
       "code": "sec",
-      "count": 756
+      "count": 747
     },
     {
       "name": "security-agent",
@@ -61844,7 +61714,7 @@
     {
       "name": "testing",
       "code": "tst",
-      "count": 4016
+      "count": 3994
     },
     {
       "name": "testing-agent",

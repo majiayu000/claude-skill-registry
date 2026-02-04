@@ -1,6 +1,8 @@
 ---
 name: math-help
 description: Guide to the math cognitive stack - what tools exist and when to use each
+triggers: ["help", "guide", "how do I", "what math", "math help", "math tools", "which tool", "math tutorial"]
+user-invocable: false
 ---
 
 # Math Cognitive Stack Guide
@@ -25,7 +27,7 @@ Cognitive prosthetics for exact mathematical computation. This guide helps you c
 | Plot 2D/3D functions | math_plot.py | `plot2d "sin(x)" --range -10 10` |
 | Arbitrary precision | mpmath_compute.py | `pi --dps 100` |
 | Numerical optimization | scipy_compute.py | `minimize "x**2 + 2*x" "5"` |
-| Formal machine proof | Lean 4 (lean4 skill) | `/lean4` |
+| Formal machine proof | Lean 4 (lean4 skill) | `/maestro:lean4` |
 
 ## The Five Layers
 
@@ -135,7 +137,7 @@ uv run python scripts/math_tutor.py generate --topic algebra --difficulty 2
 
 **When:** Rigorous machine-verified mathematical proofs, category theory, type theory.
 
-**Access:** Use `/lean4` skill for full documentation.
+**Access:** Use `/maestro:lean4` skill for full documentation.
 
 **Best For:** Publication-grade proofs, dependent types, category theory.
 
@@ -312,11 +314,11 @@ Need MACHINE-VERIFIED formal proof?
 
 ## Related Skills
 
-- `/math` or `/math-mode` - Quick access to the orchestration skill
-- `/lean4` - Formal theorem proving with Lean 4
-- `/lean4-functors` - Category theory functors
-- `/lean4-nat-trans` - Natural transformations
-- `/lean4-limits` - Limits and colimits
+- `/maestro:math` or `/maestro:math-mode` - Quick access to the orchestration skill
+- `/maestro:lean4` - Formal theorem proving with Lean 4
+- `/maestro:lean4-functors` - Category theory functors
+- `/maestro:lean4-nat-trans` - Natural transformations
+- `/maestro:lean4-limits` - Limits and colimits
 
 ## Requirements
 

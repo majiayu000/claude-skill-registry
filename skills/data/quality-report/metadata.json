@@ -1,12 +1,7 @@
 {
   "name": "quality-report",
-  "description": "\"Génère un rapport complet de qualité du code incluant les vérifications TypeScript, Biome (lint/format), les tests et la couverture de code. Utilise ce skill quand l'utilisateur demande un rapport de",
-  "repo": "sebc-dev/website",
-  "category": "development",
-  "tags": [
-    "quality",
-    "report"
-  ],
-  "stars": 1,
-  "source": "local"
+  "repo": "edwardmonteiro/Aiskillinpractice",
+  "path": "skills/optimization/quality_report/SKILL.md",
+  "source": "github.com/edwardmonteiro/Aiskillinpractice",
+  "downloaded_at": "2026-02-04T05:15:55.710245Z"
 }

@@ -112,6 +112,19 @@ Coordinates comprehensive test suite audit across 6 quality categories using 5 s
 
 ### Phase 4: Delegate to Workers
 
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
+**Prompt template:**
+```
+Task(description: "Test audit via ln-63X",
+     prompt: "Execute ln-63X-{worker}. Read skill from ln-63X-{worker}/SKILL.md. Context: {contextStore}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
+
 #### Phase 4a: Global Workers (PARALLEL)
 
 **Global workers** scan entire test suite (not domain-aware):
@@ -126,7 +139,9 @@ Coordinates comprehensive test suite audit across 6 quality categories using 5 s
 **Invocation (4 workers in PARALLEL):**
 ```javascript
 FOR EACH worker IN [ln-631, ln-632, ln-633, ln-635]:
-  Skill(skill=worker, args=JSON.stringify(contextStore))
+  Task(description: "Test audit via " + worker,
+       prompt: "Execute " + worker + ". Read skill. Context: " + JSON.stringify(contextStore),
+       subagent_type: "general-purpose")
 ```
 
 #### Phase 4b: Domain-Aware Worker (PARALLEL per domain)

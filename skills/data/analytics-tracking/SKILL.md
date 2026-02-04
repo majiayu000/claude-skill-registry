@@ -536,4 +536,4 @@ If you need more context:
 
 - **ab-test-setup**: For experiment tracking
 - **seo-audit**: For organic traffic analysis
-- **page-cro**: For conversion optimization (uses this data)
+- **lp-optimizer**: For conversion optimization (uses this data)

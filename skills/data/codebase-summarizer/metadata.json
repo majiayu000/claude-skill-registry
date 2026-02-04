@@ -1,11 +1,7 @@
 {
   "name": "codebase-summarizer",
-  "repo": "patricio0312rev/skillset",
-  "category": "data",
-  "description": "Scans repository structure and generates comprehensive architecture documentation including system overview, entry points, module relationships, data flow diagrams, and \"edit here for X\" guides. Creat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:07.595280Z",
-  "dir_name": "codebase-summarizer",
-  "github_path": "templates/foundation/codebase-summarizer",
-  "github_branch": "main"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/codebase-summarizer/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:23.011574Z"
 }

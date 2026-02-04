@@ -85,7 +85,7 @@ def handle_ticket_command(ack, body, client):
                     "element": {
                         "type": "static_select",
                         "action_id": "priority_select",
-
+   
 ```
 
 ### Block Kit UI Pattern

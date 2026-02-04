@@ -1,126 +1,420 @@
 ---
 name: planning
-description: Use when you need to plan technical solutions that are scalable, secure, and maintainable.
-license: MIT
+description: Generate comprehensive plans for new features by exploring the codebase, synthesizing approaches, validating with spikes, and decomposing into beads. Use when asked to plan a feature, create a roadmap, or design an implementation approach.
 ---
 
-# Planning
+# Feature Planning Pipeline
 
-Create detailed technical implementation plans through research, codebase analysis, solution design, and comprehensive documentation.
+Generate quality plans through systematic discovery, synthesis, verification, and decomposition.
 
-## When to Use
+## Pipeline Overview
 
-Use this skill when:
-- Planning new feature implementations
-- Architecting system designs
-- Evaluating technical approaches
-- Creating implementation roadmaps
-- Breaking down complex requirements
-- Assessing technical trade-offs
-
-## Core Responsibilities & Rules
-
-Always honoring **YAGNI**, **KISS**, and **DRY** principles.
-**Be honest, be brutal, straight to the point, and be concise.**
-
-### 1. Research & Analysis
-Load: `references/research-phase.md`
-**Skip if:** Provided with researcher reports
-
-### 2. Codebase Understanding
-Load: `references/codebase-understanding.md`
-**Skip if:** Provided with scout reports
-
-### 3. Solution Design
-Load: `references/solution-design.md`
-
-### 4. Plan Creation & Organization
-Load: `references/plan-organization.md`
-
-### 5. Task Breakdown & Output Standards
-Load: `references/output-standards.md`
-
-## Workflow Process
-
-1. **Initial Analysis** → Read codebase docs, understand context
-2. **Research Phase** → Spawn researchers, investigate approaches
-3. **Synthesis** → Analyze reports, identify optimal solution
-4. **Design Phase** → Create architecture, implementation design
-5. **Plan Documentation** → Write comprehensive plan
-6. **Review & Refine** → Ensure completeness, clarity, actionability
-
-## Output Requirements
-
-- DO NOT implement code - only create plans
-- Respond with plan file path and summary
-- Ensure self-contained plans with necessary context
-- Include code snippets/pseudocode when clarifying
-- Provide multiple options with trade-offs when appropriate
-- Fully respect the `./docs/development-rules.md` file.
-
-**Plan Directory Structure**
 ```
-plans/
-└── {date}-plan-name/
-    ├── research/
-    │   ├── researcher-XX-report.md
-    │   └── ...
-    ├── reports/
-    │   ├── XX-report.md
-    │   └── ...
-    ├── scout/
-    │   ├── scout-XX-report.md
-    │   └── ...
-    ├── plan.md
-    ├── phase-XX-phase-name-here.md
-    └── ...
+USER REQUEST → Worktree Setup → Discovery → Synthesis → Verification → Decomposition → Validation → Track Planning → Ready Plan
 ```
 
-## Active Plan State
+| Phase             | Tool                                     | Output                              |
+| ----------------- | ---------------------------------------- | ----------------------------------- |
+| 0. Worktree Setup | bd worktree                              | Isolated feature branch             |
+| 1. Discovery      | Parallel sub-agents, gkg, Librarian, exa | Discovery Report                    |
+| 2. Synthesis      | Oracle                                   | Approach + Risk Map                 |
+| 3. Verification   | Spikes via MULTI_AGENT_WORKFLOW          | Validated Approach + Learnings      |
+| 4. Decomposition  | file-beads skill                         | .beads/\*.md files                  |
+| 5. Validation     | bv + Oracle                              | Validated dependency graph          |
+| 6. Track Planning | bv --robot-plan                          | Execution plan with parallel tracks |
 
-Prevents version proliferation by tracking current working plan via session state.
+## Phase 0: Worktree Setup (Mandatory)
 
-### Active vs Suggested Plans
+**Why**: Beads are tracked in git. Without worktrees, branch switching causes conflicts when PRs merge.
 
-| Type | Env Var | Meaning |
-|------|---------|---------|
-| **Active** | `$CK_ACTIVE_PLAN` | Explicitly set via `set-active-plan.cjs` - use for reports |
-| **Suggested** | `$CK_SUGGESTED_PLAN` | Branch-matched, hint only - do NOT auto-use |
+**Always create a worktree before creating beads for a feature:**
 
-### How It Works
+```bash
+# From main repo root
+bd worktree create .worktrees/<feature-name> --branch feature/<feature-name>
+cd .worktrees/<feature-name>
+```
 
-Plan context is managed through:
-1. **`$CK_ACTIVE_PLAN` env var**: Only set for explicitly activated plans (via session state)
-2. **`$CK_SUGGESTED_PLAN` env var**: Branch-matched plans shown as hints, not directives
-3. **Session temp file**: `/tmp/ck-session-{id}.json` stores explicit activations only
-4. **SubagentStart hook**: Injects differentiated context (Active vs Suggested)
+This creates a redirect file so all beads operations share the main repo's `.beads/` database. No merge conflicts when PR lands.
 
-### Rules
+**After PR merges:**
 
-1. **Check `$CK_ACTIVE_PLAN` first**: If set and valid directory, ask "Continue with existing plan? [Y/n]"
-2. **Check `$CK_SUGGESTED_PLAN` second**: If set, inform user "Found suggested plan from branch: {path}"
-   - This is a hint only - do NOT auto-use it
-   - Ask user if they want to activate it or create new
-3. **If neither set**: Proceed to create new plan
-4. **Update on create**: Run `node .claude/scripts/set-active-plan.cjs plans/...`
+```bash
+cd <main-repo>
+git pull
+bd worktree remove .worktrees/<feature-name>
+```
 
-### Report Output Location
+**Skip worktree only if**: Quick fix on main that won't create new beads.
 
-All agents writing reports MUST:
-1. Check `Plan Context` section injected by hooks for `Reports Path`
-2. Only `$CK_ACTIVE_PLAN` plans use plan-specific reports path
-3. `$CK_SUGGESTED_PLAN` plans use default `plans/reports/` (not plan folder)
-4. Use naming: `{agent}-{date}-{slug}.md`
+## Phase 1: Discovery (Parallel Exploration)
 
-**Important:** Suggested plans do NOT get plan-specific reports - this prevents pollution of old plan folders.
+Launch parallel sub-agents to gather codebase intelligence:
 
-## Quality Standards
+```
+Task() → Agent A: Architecture snapshot (gkg repo_map)
+Task() → Agent B: Pattern search (find similar existing code)
+Task() → Agent C: Constraints (package.json, tsconfig, deps)
+Librarian → External patterns ("how do similar projects do this?")
+exa → Library docs (if external integration needed)
+```
 
-- Be thorough and specific
-- Consider long-term maintainability
-- Research thoroughly when uncertain
-- Address security and performance concerns
-- Make plans detailed enough for junior developers
-- Validate against existing codebase patterns
+### Discovery Report Template
 
-**Remember:** Plan quality determines implementation success. Be comprehensive and consider all solution aspects.
+Save to `history/<feature>/discovery.md`:
+
+```markdown
+# Discovery Report: <Feature Name>
+
+## Architecture Snapshot
+
+- Relevant packages: ...
+- Key modules: ...
+- Entry points: ...
+
+## Existing Patterns
+
+- Similar implementation: <file> does X using Y pattern
+- Reusable utilities: ...
+- Naming conventions: ...
+
+## Technical Constraints
+
+- Node version: ...
+- Key dependencies: ...
+- Build requirements: ...
+
+## External References
+
+- Library docs: ...
+- Similar projects: ...
+```
+
+## Phase 2: Synthesis (Oracle)
+
+Feed Discovery Report to Oracle for gap analysis:
+
+```
+oracle(
+  task: "Analyze gap between current codebase and feature requirements",
+  context: "Discovery report attached. User wants: <feature>",
+  files: ["history/<feature>/discovery.md"]
+)
+```
+
+Oracle produces:
+
+1. **Gap Analysis** - What exists vs what's needed
+2. **Approach Options** - 1-3 strategies with tradeoffs
+3. **Risk Assessment** - LOW / MEDIUM / HIGH per component
+
+### Risk Classification
+
+| Level  | Criteria                      | Verification                 |
+| ------ | ----------------------------- | ---------------------------- |
+| LOW    | Pattern exists in codebase    | Proceed                      |
+| MEDIUM | Variation of existing pattern | Interface sketch, type-check |
+| HIGH   | Novel or external integration | Spike required               |
+
+### Risk Indicators
+
+```
+Pattern exists in codebase? ─── YES → LOW base
+                            └── NO  → MEDIUM+ base
+
+External dependency? ─── YES → HIGH
+                     └── NO  → Check blast radius
+
+Blast radius >5 files? ─── YES → HIGH
+                       └── NO  → MEDIUM
+```
+
+Save to `history/<feature>/approach.md`:
+
+```markdown
+# Approach: <Feature Name>
+
+## Gap Analysis
+
+| Component | Have | Need | Gap |
+| --------- | ---- | ---- | --- |
+| ...       | ...  | ...  | ... |
+
+## Recommended Approach
+
+<Description>
+
+### Alternative Approaches
+
+1. <Option A> - Tradeoff: ...
+2. <Option B> - Tradeoff: ...
+
+## Risk Map
+
+| Component   | Risk | Reason           | Verification |
+| ----------- | ---- | ---------------- | ------------ |
+| Stripe SDK  | HIGH | New external dep | Spike        |
+| User entity | LOW  | Follows existing | Proceed      |
+```
+
+## Phase 3: Verification (Risk-Based)
+
+### For HIGH Risk Items → Create Spike Beads
+
+Spikes are mini-plans executed via MULTI_AGENT_WORKFLOW:
+
+```bash
+bd create "Spike: <question to answer>" -t epic -p 0
+bd create "Spike: Test X" -t task --blocks <spike-epic>
+bd create "Spike: Verify Y" -t task --blocks <spike-epic>
+```
+
+### Spike Bead Template
+
+```markdown
+# Spike: <specific question>
+
+**Time-box**: 30 minutes
+**Output location**: .spikes/<spike-id>/
+
+## Question
+
+Can we <specific technical question>?
+
+## Success Criteria
+
+- [ ] Working throwaway code exists
+- [ ] Answer documented (yes/no + details)
+- [ ] Learnings captured for main plan
+
+## On Completion
+
+Close with: `bd close <id> --reason "YES: <approach>" or "NO: <blocker>"`
+```
+
+### Execute Spikes
+
+Use the MULTI_AGENT_WORKFLOW:
+
+1. `bv --robot-plan` to parallelize spikes
+2. `Task()` per spike with time-box
+3. Workers write to `.spikes/<feature>/<spike-id>/`
+4. Close with learnings: `bd close <id> --reason "<result>"`
+
+### Aggregate Spike Results
+
+```
+oracle(
+  task: "Synthesize spike results and update approach",
+  context: "Spikes completed. Results: ...",
+  files: ["history/<feature>/approach.md"]
+)
+```
+
+Update approach.md with validated learnings.
+
+## Phase 4: Decomposition (file-beads skill)
+
+Load the file-beads skill and create beads with embedded learnings:
+
+```bash
+skill("file-beads")
+```
+
+### Bead Requirements
+
+Each bead MUST include:
+
+- **Spike learnings** embedded in description (if applicable)
+- **Reference to .spikes/ code** for HIGH risk items
+- **Clear acceptance criteria**
+- **File scope** for track assignment
+
+### Example Bead with Learnings
+
+```markdown
+# Implement Stripe webhook handler
+
+## Context
+
+Spike bd-12 validated: Stripe SDK works with our Node version.
+See `.spikes/billing-spike/webhook-test/` for working example.
+
+## Learnings from Spike
+
+- Must use `stripe.webhooks.constructEvent()` for signature verification
+- Webhook secret stored in `STRIPE_WEBHOOK_SECRET` env var
+- Raw body required (not parsed JSON)
+
+## Acceptance Criteria
+
+- [ ] Webhook endpoint at `/api/webhooks/stripe`
+- [ ] Signature verification implemented
+- [ ] Events: `checkout.session.completed`, `invoice.paid`
+```
+
+## Phase 5: Validation
+
+### Run bv Analysis
+
+```bash
+bv --robot-suggest   # Find missing dependencies
+bv --robot-insights  # Detect cycles, bottlenecks
+bv --robot-priority  # Validate priorities
+```
+
+### Fix Issues
+
+```bash
+bd dep add <from> <to>      # Add missing deps
+bd dep remove <from> <to>   # Break cycles
+bd update <id> --priority X # Adjust priorities
+```
+
+### Oracle Final Review
+
+```
+oracle(
+  task: "Review plan completeness and clarity",
+  context: "Plan ready. Check for gaps, unclear beads, missing deps.",
+  files: [".beads/"]
+)
+```
+
+## Phase 6: Track Planning
+
+This phase creates an **execution-ready plan** so the orchestrator can spawn workers immediately without re-analyzing beads.
+
+### Step 1: Get Parallel Tracks
+
+```bash
+bv --robot-plan 2>/dev/null | jq '.plan.tracks'
+```
+
+### Step 2: Assign File Scopes
+
+For each track, determine the file scope based on beads in that track:
+
+```bash
+# For each bead, check which files it touches
+bd show <bead-id>  # Look at description for file hints
+```
+
+**Rules:**
+
+- File scopes must NOT overlap between tracks
+- Use glob patterns: `packages/sdk/**`, `apps/server/**`
+- If overlap unavoidable, merge into single track
+
+### Step 3: Generate Agent Names
+
+Assign unique adjective+noun names to each track:
+
+- BlueLake, GreenCastle, RedStone, PurpleBear, etc.
+- Names are memorable identifiers, NOT role descriptions
+
+### Step 4: Create Execution Plan
+
+Save to `history/<feature>/execution-plan.md`:
+
+```markdown
+# Execution Plan: <Feature Name>
+
+Epic: <epic-id>
+Generated: <date>
+
+## Tracks
+
+| Track | Agent       | Beads (in order)      | File Scope        |
+| ----- | ----------- | --------------------- | ----------------- |
+| 1     | BlueLake    | bd-10 → bd-11 → bd-12 | `packages/sdk/**` |
+| 2     | GreenCastle | bd-20 → bd-21         | `packages/cli/**` |
+| 3     | RedStone    | bd-30 → bd-31 → bd-32 | `apps/server/**`  |
+
+## Track Details
+
+### Track 1: BlueLake - <track-description>
+
+**File scope**: `packages/sdk/**`
+**Beads**:
+
+1. `bd-10`: <title> - <brief description>
+2. `bd-11`: <title> - <brief description>
+3. `bd-12`: <title> - <brief description>
+
+### Track 2: GreenCastle - <track-description>
+
+**File scope**: `packages/cli/**`
+**Beads**:
+
+1. `bd-20`: <title> - <brief description>
+2. `bd-21`: <title> - <brief description>
+
+### Track 3: RedStone - <track-description>
+
+**File scope**: `apps/server/**`
+**Beads**:
+
+1. `bd-30`: <title> - <brief description>
+2. `bd-31`: <title> - <brief description>
+3. `bd-32`: <title> - <brief description>
+
+## Cross-Track Dependencies
+
+- Track 2 can start after bd-11 (Track 1) completes
+- Track 3 has no cross-track dependencies
+
+## Key Learnings (from Spikes)
+
+Embedded in beads, but summarized here for orchestrator reference:
+
+- <learning 1>
+- <learning 2>
+```
+
+### Validation
+
+Before finalizing, verify:
+
+```bash
+# No cycles in the graph
+bv --robot-insights 2>/dev/null | jq '.Cycles'
+
+# All beads assigned to tracks
+bv --robot-plan 2>/dev/null | jq '.plan.unassigned'
+```
+
+## Output Artifacts
+
+| Artifact          | Location                              | Purpose                            |
+| ----------------- | ------------------------------------- | ---------------------------------- |
+| Discovery Report  | `history/<feature>/discovery.md`      | Codebase snapshot                  |
+| Approach Document | `history/<feature>/approach.md`       | Strategy + risks                   |
+| Spike Code        | `.spikes/<feature>/`                  | Reference implementations          |
+| Spike Learnings   | Embedded in beads                     | Context for workers                |
+| Beads             | `.beads/*.md`                         | Executable work items              |
+| Execution Plan    | `history/<feature>/execution-plan.md` | Track assignments for orchestrator |
+
+## Quick Reference
+
+### Tool Selection
+
+| Need               | Tool                                                                        |
+| ------------------ | --------------------------------------------------------------------------- |
+| Codebase structure | `mcp__gkg__repo_map`                                                        |
+| Find definitions   | `mcp__gkg__search_codebase_definitions`                                     |
+| Find usages        | `mcp__gkg__get_references`                                                  |
+| External patterns  | `librarian`                                                                 |
+| Library docs       | `mcp__MCP_DOCKER__resolve-library-id` → `mcp__MCP_DOCKER__get-library-docs` |
+| Web research       | `mcp__MCP_DOCKER__web_search_exa`                                           |
+| Gap analysis       | `oracle`                                                                    |
+| Create beads       | `skill("file-beads")` + `bd create`                                         |
+| Validate graph     | `bv --robot-*`                                                              |
+
+### Common Mistakes
+
+- **Skipping discovery** → Plan misses existing patterns
+- **No risk assessment** → Surprises during execution
+- **No spikes for HIGH risk** → Blocked workers
+- **Missing learnings in beads** → Workers re-discover same issues
+- **No bv validation** → Broken dependency graph

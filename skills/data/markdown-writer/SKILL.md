@@ -1,69 +1,60 @@
 ---
 name: markdown-writer
-description: Write markdown content to file paths using the MCP markdown-writer server. Use when you need to save generated markdown content to a file, especially in contexts where (1) The Write tool is unavailable or restricted, (2) You need guaranteed atomic writes with verification, (3) Writing markdown files for documentation, reports, or research outputs, (4) An agent needs to persist markdown without user permission prompts.
-allowed-tools: mcp__markdown-writer__write, mcp__markdown-writer__verify
+description: |
+  Edit and create markdown files with consistent style. Use when:
+  (1) Creating or updating README files, (2) Editing documentation,
+  (3) Writing DONE.md, PLAN.md, RESEARCH.md, (4) Any .md file edits.
+  Follows Paul Graham writing style: short sentences, direct claims, no hedging.
+category: documentation
+user-invocable: true
+allowed-tools: Read,Write,Glob,Grep
 ---
 
 # Markdown Writer
 
-Write markdown content to disk reliably using the MCP markdown-writer server with atomic writes and verification.
+Edit markdown files with consistent tone and style.
 
-## Usage
+## When to Use
 
-### Write a file
+- README.md updates
+- Documentation in /docs folders
+- Project status files (DONE.md, PLAN.md, RESEARCH.md)
+- Any .md file that needs clear, direct writing
 
-Use the `mcp__markdown-writer__write` tool directly:
+## Writing Style
 
-**Example:**
-```
-Use mcp__markdown-writer__write to write the following content to /path/to/file.md:
+**Voice**
+- Write like speaking to an intelligent friend
+- Short sentences. Direct claims. No hedging.
+- First person for opinions and experience
+- Active voice, not passive
+- State claims confidently. No waffling.
 
-# Your Markdown Content
+**Punctuation Rules**
+- **Never use em dashes (—)**
+- Use periods and new sentences for separate thoughts
+- Use commas for simple asides
+- Use parentheses for clarifying information
+- Use colons for lists or elaboration
 
-Multi-line content works fine.
+**Structure**
+- Start with the point, not background
+- One idea per paragraph
+- Headers should be claims, not topics
+- End sections when the point is made
 
-## Sections supported
-- Lists
-- Code blocks
-- All markdown features
-```
+**Technical Writing**
+- Code examples should be minimal and functional
+- Explain the why, not just the what
+- Link to deeper resources rather than over-explaining
 
-**Parameters:**
-- `path`: Absolute path (e.g., `/tmp/test.md`) or relative path from repository root (e.g., `docs/test.md`)
-- `content`: Markdown content to write
+## Quality Checklist
 
-### Verify a file (optional)
+Before finalizing:
 
-Use the `mcp__markdown-writer__verify` tool:
-
-**Example:**
-```
-Use mcp__markdown-writer__verify to check /path/to/file.md
-```
-
-**Parameters:**
-- `path`: Absolute path (e.g., `/tmp/test.md`) or relative path from repository root (e.g., `docs/test.md`)
-
-## Key Behaviors
-
-- **Creates parent directories** automatically
-- **Overwrites existing files** without prompting
-- **Atomic writes** via temporary files and rename
-- **Supports** absolute paths (e.g., `/tmp/file.md`) and relative paths from repository root (e.g., `docs/file.md`)
-- **Path validation** prevents traversal attacks (../)
-- **Returns** file size and statistics
-
-## When to Use This Skill
-
-Use this skill when:
-- You need to write markdown files from within an agent/subagent
-- The Write tool is restricted or unavailable
-- You need guaranteed atomic writes
-- You're generating documentation, reports, or research outputs
-- You want to avoid user permission prompts for file writes
-
-## Notes
-
-- The MCP server handles all file operations
-- No external Python dependencies required
-- All operations are logged for debugging
+- [ ] No em dashes in content
+- [ ] Sentences are short and direct
+- [ ] Opens with the main point
+- [ ] Code examples are minimal
+- [ ] Tables used for structured data
+- [ ] Lists used for sequences or options

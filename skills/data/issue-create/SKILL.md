@@ -1,320 +1,162 @@
 ---
 name: issue-create
-description: Create GitHub issues from conversation context (general, bug reports, or feature requests)
+description: Create GitHub issue with template
+argument-hint: "[title]"
+allowed-tools:
+  - Bash
+  - AskUserQuestion
+model: sonnet
 ---
 
-# Issue Creation Skill
+# Create GitHub Issue
 
-You are a GitHub issue creation specialist. Your role is to create well-structured GitHub issues from conversation context.
+Create new issue with appropriate template and labels.
 
-## Operations
+## Usage
 
-Parse the `args` parameter to determine which operation to perform:
-
-- **create** - Create issue from conversation (flexible, adapts to content)
-- **bug** - Create bug report with reproduction steps
-- **feature** - Create feature request with acceptance criteria
-
-When invoked, check the args to determine the operation and execute accordingly.
-
----
-
-# Operation: create
-
-Create a GitHub issue from the current conversation by intelligently summarizing the context.
-
-## Purpose
-
-This operation transforms organic development discussions into trackable issues without forcing users to explicitly categorize or structure their thoughts upfront.
-
-## Core Principles
-
-**Intelligent context extraction:**
-- Understand what the user wants from conversation flow
-- Identify the type of issue organically (feature, bug, task, question, etc.)
-- Capture relevant context and decisions
-- Preserve important details from the discussion
-
-**Flexible and adaptive:**
-- No rigid templates or categories
-- Adapt to the conversation's natural structure
-- Let content determine organization
-- Focus on clarity and usefulness
-
-## Workflow
-
-### Step 1: Analyze Conversation Context
-
-Review the current conversation to identify:
-- What is the user trying to accomplish or solve?
-- What problem or need has been discussed?
-- What decisions or insights have emerged?
-- What relevant code, files, or technical context exists?
-- What questions or uncertainties remain?
-
-**Scope of analysis:**
-Use your judgment to determine relevant context:
-- For focused discussions: recent messages that directly relate to the topic
-- For exploratory conversations: broader context that provides background
-- Prioritize actionable information over general discussion
-
-### Step 2: Determine Issue Nature
-
-Based on conversation, identify what type of issue this is:
-- Feature request or enhancement
-- Bug report or defect
-- Technical task or chore
-- Investigation or spike
-- Documentation need
-- Question or discussion
-- Or any other category that fits
-
-**Don't force categories** - let the conversation content guide you.
-
-### Step 3: Clarify with User (Required)
-
-**This step is mandatory.** Use AskUserQuestion to:
-- Confirm your understanding of what should be captured
-- Resolve any ambiguities or unclear points
-- Verify scope and priority
-- Fill gaps in information
-- Ensure nothing important is missed
-
-Ask 2-4 focused questions that help create a complete, accurate issue.
-
-### Step 4: Create Issue
-
-Synthesize the conversation into a clear issue:
-
-**Structure naturally based on content:**
-- Start with clear context and background
-- Explain what needs to happen or what's wrong
-- Include relevant details from the conversation
-- Reference code, files, or technical specifics when relevant
-- Note decisions, constraints, or requirements
-- Capture any open questions or next steps
-
-**Guidelines:**
-- Write clearly and concisely
-- Include enough context for someone new to understand
-- Link to relevant conversations, PRs, or issues
-- Use appropriate formatting (code blocks, lists, etc.)
-- Add a footer noting it was created from conversation
-
-**Title format:**
-Use Conventional Commit style prefix based on issue type:
-- `feat:` for new features or enhancements
-- `bug:` for defects or broken functionality
-- `docs:` for documentation work
-- `refactor:` for code improvements or tech debt
-- `test:` for testing-related tasks
-- `chore:` for maintenance or build tasks
-- `perf:` for performance improvements
-- Or other appropriate prefixes
-
-Always use lowercase after the prefix, no period at end.
-
-**Labeling:**
-Choose labels based on issue nature:
-- `enhancement` for new features
-- `bug` for defects
-- `documentation` for docs work
-- `question` for discussions
-- `tech-debt` for refactoring/improvements
-- Or any combination that fits
-
-Create the issue:
-```bash
-gh issue create \
-  --title "[type]: [clear, descriptive description]" \
-  --body "[Synthesized content]" \
-  --label "[appropriate-labels]"
+```
+/issue-create "Racer moves through walls"
+/issue-create "Add AI opponent difficulty levels"
+/issue-create "Refactor collision detection"
 ```
 
-### Step 5: Return Result
+## Steps
 
-Show issue URL and ID. Keep response simple.
+### 1. Determine Issue Type
 
-## Flexibility
+Analyze title for keywords:
+- Contains "bug", "crash", "broken", "fix", "error" → **bug** template
+- Contains "feature", "add", "implement", "new" → **feature** template
+- Contains "refactor", "improve", "update", "optimize" → **task** template
+- Default if unclear → Ask user
 
-**Embrace conversation diversity:**
-- Technical deep-dives → capture technical context
-- User problem discussions → focus on requirements
-- Bug investigations → include reproduction details
-- Design explorations → preserve options and trade-offs
-- Mixed conversations → organize logically
+### 2. Auto-Detect Component Labels
 
-**Adapt to conversation style:**
-- Structured discussions may yield structured issues
-- Exploratory chats may need more synthesis
-- Quick exchanges may produce concise issues
-- Complex threads may need thorough documentation
+Scan title for component keywords:
+- "collision", "bresenham", "path" → add `collision-detection`
+- "scenekit", "render", "node", "material" → add `scenekit`
+- "game", "state", "player", "move" → add `game-logic`
+- "ui", "interface", "button", "display" → add `ui`
+- "ai", "opponent", "bot" → add `ai`
+- "test", "testing" → add `testing`
 
----
+### 3. Determine Priority (Optional)
 
-# Operation: bug
+Ask user if priority should be set:
+- Critical: Game-breaking, unplayable
+- High: Major feature broken
+- None: Standard priority
 
-Create a comprehensive bug report that enables quick understanding and reproduction of the issue.
+### 4. Create Issue
 
-## Core Principles
-
-**Provide concrete, reproducible information:**
-- How to reproduce the bug (specific steps)
-- What's broken vs what's expected
-- Environment details (browser, OS, version)
-- Error messages and logs when available
-- Impact on users
-
-## Workflow
-
-### Step 1: Gather Bug Information
-
-If user provides initial description, extract:
-- What went wrong (observed behavior)
-- What should happen (expected behavior)
-- How to reproduce it
-- When/where it occurs
-- Who is affected
-
-### Step 2: Clarify Missing Details
-
-Use AskUserQuestion to gather critical information:
-- Unclear reproduction steps
-- Missing environment details
-- No error messages or logs
-- Vague symptoms or impact
-- Unknown frequency or conditions
-
-Keep questions focused (3-5 max per round) and specific.
-
-### Step 3: Create Issue
-
-Organize information to enable quick reproduction and diagnosis:
-
-**Essential elements:**
-- Clear description of the problem
-- Step-by-step reproduction
-- Expected vs actual behavior
-- Environment information
-- Error messages/logs (when available)
-- Impact assessment
-
-**Principles for content:**
-- Be specific and concrete
-- Use exact error messages (not paraphrased)
-- Provide complete reproduction steps
-- Include relevant context
-- Note frequency and conditions
-- Assess severity honestly
-
-**Helpful additions when available:**
-- Screenshots or videos
-- Console logs or stack traces
-- Network request details
-- Workarounds discovered
-
-Create the issue directly with:
 ```bash
+# Bug example
 gh issue create \
-  --title "bug: [concise description]" \
-  --body "[Organized content]" \
-  --label "bug"
+  --title "BUG: Racer moves through walls" \
+  --template bug_report.md \
+  --label "bug,collision-detection"
+
+# Feature example
+gh issue create \
+  --title "FEATURE: Add AI opponent" \
+  --template feature_request.md \
+  --label "feature,ai,game-logic"
+
+# Task example
+gh issue create \
+  --title "TASK: Refactor collision detection" \
+  --template task.md \
+  --label "task,collision-detection"
 ```
 
-**Title format:** Use Conventional Commit style with `bug:` prefix followed by lowercase description (no period at end).
+### 5. Return Issue Number
 
-### Step 4: Return Result
+Parse output to extract issue number and display:
 
-Show issue URL and ID. Keep response simple.
-
-## Flexibility
-
-Adapt content based on the bug:
-- Some bugs need detailed environment info, others don't
-- Some have clear errors, others have subtle symptoms
-- Some are always reproducible, others are intermittent
-- Focus on providing what's needed to fix this specific bug
-
-The goal is an actionable bug report that helps developers reproduce and fix the issue quickly.
-
----
-
-# Operation: feature
-
-Create a well-structured feature request based on user's requirement description.
-
-## Core Principles
-
-**Focus on requirements, not implementation:**
-- Describe WHAT users need, not HOW to build it
-- Capture user value and business goals
-- Define clear, testable acceptance criteria
-- Avoid technical details, frameworks, or implementation approaches
-
-## Workflow
-
-### Step 1: Gather Information
-
-If user provides initial description, extract:
-- Core functionality needed
-- Target users and use cases
-- Expected outcomes
-- Why this feature is needed
-
-### Step 2: Clarify Ambiguities
-
-Use AskUserQuestion to resolve unclear aspects:
-- Missing context or motivation
-- Vague scope or boundaries
-- Unclear success criteria
-- Ambiguous user scenarios
-- Edge cases or special conditions
-
-Keep questions focused (2-4 per round) and specific.
-
-### Step 3: Create Issue
-
-Organize information in a clear, logical way that includes:
-
-**Essential elements:**
-- Background/context (why this is needed)
-- Core requirements (what should be built)
-- Acceptance criteria (how to verify it's done)
-- User scenarios (concrete examples of usage)
-
-**Principles for content:**
-- Use clear, unambiguous language
-- Make criteria testable (yes/no answers)
-- Include relevant user context
-- Define scope boundaries when helpful
-- Stay focused on user outcomes
-
-**What to avoid:**
-- Technical implementation details
-- Specific technologies or frameworks
-- Architecture or design decisions
-- Code-level specifications
-
-Create the issue directly with:
-```bash
-gh issue create \
-  --title "feat: [clear, concise description]" \
-  --body "[Organized content]" \
-  --label "enhancement"
+```
+✓ Issue #47 created: "BUG: Racer moves through walls"
+Labels: bug, collision-detection
+View: gh issue view 47
 ```
 
-**Title format:** Use Conventional Commit style with `feat:` prefix followed by lowercase description (no period at end).
+## Type Detection Logic
 
-### Step 4: Return Result
+```
+Keywords for BUG:
+  - bug, crash, broken, error, fail, fix
+  - incorrect, wrong, issue, problem
+  - teleport, glitch
 
-Show issue URL and ID. Keep response simple.
+Keywords for FEATURE:
+  - feature, add, implement, new, create
+  - support, enable, allow
 
-## Flexibility
+Keywords for TASK:
+  - refactor, improve, update, optimize
+  - clean, reorganize, restructure
+  - performance, maintainability
+```
 
-Let the content flow naturally based on the specific feature:
-- Some features need detailed scenarios, others don't
-- Some need scope definition, others are self-contained
-- Adapt structure to what makes the feature clear
-- Focus on communicating effectively, not following templates
+## Component Detection Logic
 
-The goal is a clear issue that helps implementers understand what users need.
+```
+collision-detection:
+  - collision, bresenham, path, wall, crash
+
+scenekit:
+  - scenekit, render, node, material, camera
+  - scene, geometry, visual, display
+
+game-logic:
+  - game, state, player, move, turn
+  - velocity, position, lap, finish
+
+ui:
+  - ui, interface, button, menu, hud
+  - control, input, display, screen
+
+ai:
+  - ai, opponent, bot, computer, difficulty
+
+testing:
+  - test, testing, unit, integration, spec
+```
+
+## Example Workflows
+
+**Bug Report**:
+```
+User: /issue-create "Racer teleports through walls at high velocity"
+
+Claude:
+- Detected: BUG (keywords: teleport, walls)
+- Component: collision-detection (keywords: walls, velocity)
+- Template: bug_report.md
+
+Creates issue #47 with:
+- Title: "BUG: Racer teleports through walls at high velocity"
+- Labels: bug, collision-detection
+- Template: bug_report.md
+```
+
+**Feature Request**:
+```
+User: /issue-create "Add AI opponent with multiple difficulty levels"
+
+Claude:
+- Detected: FEATURE (keywords: add)
+- Components: ai (keywords: AI, opponent, difficulty)
+- Template: feature_request.md
+
+Creates issue #48 with:
+- Title: "FEATURE: Add AI opponent with multiple difficulty levels"
+- Labels: feature, ai
+- Template: feature_request.md
+```
+
+## Notes
+
+- Issue is created but template sections need manual filling
+- User can edit issue on GitHub after creation
+- Skills like `/play-test` and `/debug` create fully-filled issues
+- For manual creation, this skill just sets up the structure

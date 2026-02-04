@@ -112,7 +112,7 @@ export interface ActionResult {
 Requests from the support platform include an `x-signature` header:
 
 ```
-x-signature: timestamp=1737163200,v1=<hex_signature>
+x-signature: timestamp=[PHONE],v1=<hex_signature>
 ```
 
 **Payload to sign:** `${timestamp}.${JSON.stringify(body)}`

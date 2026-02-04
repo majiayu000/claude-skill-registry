@@ -1,6 +1,25 @@
 ---
 name: code-refactor
-description: Proactively detect and execute code refactoring to maintain DDD architecture and code quality. Triggers: RF, refactor, 重構, 拆分, split, 模組化, modularize, 太長, cleanup, 整理, 優化, optimize, 抽出, extract, 簡化, simplify, 太亂, 難讀.
+description: Proactively detect and execute code refactoring to maintain DDD architecture and code quality. Triggers: RF, refactor, 重構, 拆分, split, 模組化, modularize, 太長, cleanup, 整理, clean, 優化, optimize, extract, 提取, simplify, 簡化, 複雜度, complexity, 重組, reorganize, 改善, improve.
+version: 2.1.0
+category: quality
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
+  - codex-cli
+dependencies:
+  - ddd-architect
+  - test-generator
+  - memory-updater
+allowed-tools:
+  - read_file
+  - write_file
+  - replace_string_in_file
+  - list_dir
+  - grep_search
+  - semantic_search
+  - get_errors
 ---
 
 # 程式碼重構技能

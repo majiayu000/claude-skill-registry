@@ -1,7 +1,7 @@
 {
   "name": "hooks",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/hooks/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:31.638085Z"
+  "repo": "kimny1143/claude-code-template",
+  "path": ".claude/skills/hooks/SKILL.md",
+  "source": "github.com/kimny1143/claude-code-template",
+  "downloaded_at": "2026-02-04T05:19:03.285042Z"
 }

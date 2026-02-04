@@ -1,7 +1,7 @@
 {
   "name": "performance-optimizer",
-  "repo": "nahisaho/CodeGraphMCPServer",
-  "path": ".claude/skills/performance-optimizer/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:08.460218Z"
+  "repo": "nahisaho/MUSUBI",
+  "path": "src/templates/agents/claude-code/skills/performance-optimizer/SKILL.md",
+  "source": "github.com/nahisaho/MUSUBI",
+  "downloaded_at": "2026-02-04T04:06:13.485795Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "instantly-ci-integration",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/saas-packs/instantly-pack/skills/instantly-ci-integration/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:27:10.006754Z"
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "plugins/saas-packs/instantly-pack/skills/instantly-ci-integration/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-04T02:19:16.389308Z"
 }

@@ -5,15 +5,15 @@
 - activation_code: MOCK_DETECTOR_V1
 - version: 1.0.0
 - category: validation
-- phase: 7, 9, 10
+- phase: 3, 4, 5
 
 ## Description
 Detects and prevents mock/simulated implementations in operational code. Ensures all code is real, functional implementation or explicit failure.
 
 ## Activation Criteria
-- After code generation in Phase 7
-- Before integration testing in Phase 9
-- During deployment validation in Phase 10
+- After code generation in Phase 3
+- Before integration testing in Phase 4
+- During deployment validation in Phase 5
 - When mock patterns detected in code
 
 ## Core Principle

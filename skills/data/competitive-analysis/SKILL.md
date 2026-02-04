@@ -1,156 +1,71 @@
 ---
 name: competitive-analysis
-version: "2.0.0"
-description: Competitive intelligence, market analysis, and strategic positioning for product differentiation.
-sasmp_version: "1.3.0"
-bonded_agent: 01-strategy-vision
-bond_type: PRIMARY_BOND
-parameters:
-  - name: analysis_type
-    type: string
-    enum: [market_sizing, competitor_research, positioning, battlecard]
-    required: true
-  - name: competitor_count
-    type: number
-    default: 5
-retry_logic:
-  max_attempts: 3
-  backoff: exponential
-logging:
-  level: info
-  hooks: [start, complete, error]
+description: Help users understand and respond to competition. Use when someone is positioning against competitors, evaluating market threats, running competitive war games, or deciding how much to focus on competitors versus customers.
 ---
 
-# Competitive Analysis Skill
+# Competitive Analysis
 
-Analyze competitors and market dynamics to inform product strategy. Master competitive intelligence and strategic positioning.
+Help the user understand competitive dynamics using frameworks from 49 product leaders who have navigated competition at companies from startups to Netflix and Google.
 
-## Market Analysis
+## How to Help
 
-### TAM/SAM/SOM Calculation
+When the user asks for help with competitive analysis:
 
-```
-TAM (Total Addressable Market):
-= Total customers × Average deal size
-= 10M companies × $10K = $100B
+1. **Expand the competitive set** - Identify not just direct competitors but the status quo and workarounds
+2. **Understand the true threat** - Determine if the competition is features, distribution, or fundamental business model
+3. **Find asymmetries** - Help them identify unique advantages competitors cannot easily copy
+4. **Design the right response** - Balance competitive awareness with customer obsession
 
-SAM (Serviceable Addressable Market):
-= TAM × Segment % you can reach
-= $100B × 10% = $10B
+## Core Principles
 
-SOM (Serviceable Obtainable Market):
-= SAM × Realistic market share (3-5 years)
-= $10B × 5% = $500M
-```
+### Compete against the status quo
+April Dunford: "Most folks will discount the status quo, but they shouldn't because in B2B we lose about 40% of our deals to 'no decision,' which actually means we lost to the spreadsheet, we lost to pen and paper." Position specifically against current workarounds, not just competitors.
 
-### Market Dynamics
+### Define competitive alternatives first
+April Dunford: "The first step in a good positioning exercise is to really understand, what do we have to position against? What do I have to beat in order to win a deal?" Look beyond direct competitors to anything customers would do if your product didn't exist.
 
-| Factor | Analysis | Impact |
-|--------|----------|--------|
-| Growth | CAGR % | High/Med/Low |
-| Competition | # players | Fragmented/Consolidated |
-| Barriers | Entry difficulty | High/Med/Low |
-| Regulation | Compliance needs | Increasing/Stable |
+### Understand industry economics deeply
+Hamilton Helmer: "Understanding whether or not there is a type of power in place is hard... the hard part is industry economics, what really are the economic relationships." Surface-level competitive analysis misses the structural forces that determine winners.
 
-## Competitor Research
+### Ground everything in external reality
+Shaun Clowes: "In everything always talk from the customer's perspective, from the market's perspective, from the competitor's perspective. The very small number of PMs do that." Great PMs differentiate by grounding work in market realities, not internal politics.
 
-### Competitor Matrix
+### Include the analog alternative
+Bret Taylor: "Why use this instead of Yahoo Yellow Pages? But more than anything else, why use this instead of the Yellow Pages?" Compete against the traditional, non-digital way users solve the problem.
 
-| Feature | You | Comp A | Comp B | Comp C |
-|---------|-----|--------|--------|--------|
-| Feature 1 | ✓ | ✓ | ✗ | ✓ |
-| Feature 2 | ✓ | ✗ | ✓ | ✗ |
-| Pricing | $99 | $149 | $79 | $199 |
-| Target | SMB | Enterprise | Startup | Mid |
+### Competition includes workarounds
+Jake Knapp: "What's the competition for solving that problem? How do they solve it today? And what are the alternatives? What are the workarounds?" Look beyond direct startup competitors to manual processes and existing habits.
 
-### Competitive Intelligence Sources
+### Don't blindly copy competitors
+Elena Verna: "Knowing what your competition is doing is extremely important... But blatantly copying all of these best tactics or flows because they're doing better than us - that's where things really go wrong." Use competitors for inspiration, not replication.
 
-- **Public**: Website, pricing, blog, press
-- **Product**: Free trial, demo, screenshots
-- **Customers**: Win/loss interviews
-- **Community**: G2, Capterra, Reddit
-- **Industry**: Analyst reports, conferences
+### Beware competitive myopia
+Tanguy Crusson: "Your competitor, if you think of what they do as an iceberg, the top side is what they've shipped in terms of features, but it's based on all this stuff they've built in terms of research." You only see their past output, not their underlying strategy.
 
-## Strategic Frameworks
+## Questions to Help Users
 
-### Porter's Five Forces
+- "What would your customer do if your product didn't exist?"
+- "What percentage of deals do you lose to 'no decision'?"
+- "What's the weakness in your competitor's greatest strength?"
+- "Is your advantage in features, distribution, or business model?"
+- "How would a competitor describe your positioning?"
+- "What market 'current' are you riding or fighting against?"
 
-```
-Supplier Power: [Low/Med/High]
-Buyer Power: [Low/Med/High]
-Competitive Rivalry: [Low/Med/High]
-Threat of Substitutes: [Low/Med/High]
-Threat of New Entrants: [Low/Med/High]
-```
+## Common Mistakes to Flag
 
-### SWOT Analysis
+- **Ignoring the status quo** - 40% of B2B deals are lost to doing nothing, not to competitors
+- **Feature-by-feature comparison** - Distribution moats often matter more than feature sets
+- **Fast-following without context** - Competitor features reflect year-old thinking, not current strategy
+- **Assuming data creates moats** - Data advantages often diminish once competitors reach scale
+- **Over-indexing on competitors** - Great for market awareness, dangerous for product roadmap
 
-```
-STRENGTHS          | WEAKNESSES
-- [Internal +]     | - [Internal -]
-- [Internal +]     | - [Internal -]
--------------------+-------------------
-OPPORTUNITIES      | THREATS
-- [External +]     | - [External -]
-- [External +]     | - [External -]
-```
+## Deep Dive
 
-## Battlecards
+For all 63 insights from 49 guests, see `references/guest-insights.md`
 
-### Sales Battlecard Template
+## Related Skills
 
-```
-COMPETITOR: [Name]
-
-POSITIONING:
-"[Competitor] is [category] focused on [segment].
-We are [differentiator]."
-
-WIN THEMES:
-1. [Your advantage 1]
-2. [Your advantage 2]
-3. [Your advantage 3]
-
-OBJECTION HANDLING:
-Q: "Why not [Competitor]?"
-A: "[Competitor] is great for [X], but [your advantage]"
-
-GOTCHAS (Their weaknesses):
-- [Weakness 1]
-- [Weakness 2]
-```
-
-## Troubleshooting
-
-### Yaygın Hatalar & Çözümler
-
-| Hata | Olası Sebep | Çözüm |
-|------|-------------|-------|
-| Outdated intel | No refresh cycle | Quarterly updates |
-| Missing competitors | Narrow view | Expand search |
-| Feature parity | No differentiation | Find unique angle |
-| Lost deals | Weak positioning | Win/loss analysis |
-
-### Debug Checklist
-
-```
-[ ] TAM/SAM/SOM assumptions documented mi?
-[ ] Competitor list complete mi?
-[ ] Feature matrix current mi?
-[ ] Battlecards distributed mi?
-[ ] Win/loss tracked mi?
-```
-
-### Recovery Procedures
-
-1. **Lost Deal** → Win/loss interview, update battlecard
-2. **New Competitor** → Rapid assessment, positioning review
-3. **Feature Gap** → Prioritize, or reposition
-
-## Learning Outcomes
-
-- Conduct competitive research
-- Build competitive matrices
-- Create effective battlecards
-- Identify market opportunities
-- Position against competitors
+- Writing North Star Metrics
+- Defining Product Vision
+- Prioritizing Roadmap
+- Setting OKRs & Goals

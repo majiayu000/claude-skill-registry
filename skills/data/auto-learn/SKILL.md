@@ -49,7 +49,7 @@ Enable and configure via `/bluera-base:config`:
 
 | Mode | Behavior |
 |------|----------|
-| `suggest` | Shows learnings as systemMessage at session end. User runs `/bluera-base:claude-md learn` to apply. |
+| `suggest` | Shows learnings as systemMessage at session end. User runs `/bluera-base:claude-code-md learn` to apply. |
 | `auto` | Writes learnings directly to target file. Shows confirmation message. |
 
 ### Targets
@@ -135,8 +135,39 @@ The signals file is cleared after synthesis (at session end).
 | `hooks/lib/signals.sh` | Library - session signals state management |
 | `hooks/lib/config.sh` | Library - configuration loading |
 
+## Deep Learning (Semantic Analysis)
+
+For more intelligent learning, see the **deep-learn** feature which uses Claude CLI to semantically analyze session transcripts:
+
+```bash
+# Enable deep learning (more powerful, uses Claude Haiku)
+/bluera-base:config enable deep-learn
+```
+
+**Differences:**
+
+| Feature | auto-learn | deep-learn |
+|---------|------------|------------|
+| Method | Pattern matching | Semantic analysis |
+| Patterns | 4 hardcoded | Unlimited |
+| Cost | Free | ~$0.001/session |
+| Quality | Generic | Project-specific |
+| Learnings | Auto-applied | Human-reviewed |
+
+Deep learning extracts:
+
+- User corrections ("No, use X instead of Y")
+- Error resolutions discovered during work
+- Project-specific facts and workflows
+
+**Manage deep learnings:** `/bluera-base:learn show|apply|dismiss`
+
+See `skills/learn/SKILL.md` for full deep learning documentation.
+
 ## Related
 
 - `/bluera-base:config` - Enable and configure auto-learn
-- `/bluera-base:claude-md learn` - Manually add a learning
-- `skills/claude-md-maintainer` - Full CLAUDE.md management skill
+- `/bluera-base:claude-code-md learn` - Manually add a learning
+- `/bluera-base:learn` - Manage deep learnings
+- `skills/learn` - Deep learning skill
+- `skills/claude-code-md-maintainer` - Full CLAUDE.md management skill

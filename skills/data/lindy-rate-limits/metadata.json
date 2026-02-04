@@ -1,7 +1,7 @@
 {
   "name": "lindy-rate-limits",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/saas-packs/lindy-pack/skills/lindy-rate-limits/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:26:58.623443Z"
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/lindy-pack/lindy-rate-limits/SKILL.md",
+  "source": "github.com/vasic-digital/SuperAgent",
+  "downloaded_at": "2026-02-04T03:29:34.065915Z"
 }

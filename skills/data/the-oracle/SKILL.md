@@ -51,10 +51,17 @@ Look for evidence that contradicts obvious explanations."
 
 Point the oracle to ALL of these:
 
-1. **`.oracle/`** - ALL prior research, not just recent
+1. **`.oracle/`** - ALL prior research, not just recent (always at repo root)
 2. **Full git history** - Err toward too much history
 3. **`.plans/`** - Related implementation plans
 4. **Raw symptoms** - Logs, errors, stack traces (not your interpretation)
+
+### Output File Naming
+
+**CRITICAL:** When saving oracle research to `.oracle/`:
+- **`.oracle/` is ALWAYS at repository root** - never nested in subdirectories
+- **ALL files MUST be prefixed with `[DATE]_[TIME]-`** using format `YYYY-MM-DD_HH-MM-`
+- Example: `.oracle/2026-02-02_14-30-supervisor-errors.md`
 
 ### Anti-Patterns
 

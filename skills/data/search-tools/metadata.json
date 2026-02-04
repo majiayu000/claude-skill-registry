@@ -1,7 +1,7 @@
 {
   "name": "search-tools",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/search-tools/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:40.704631Z"
+  "repo": "scooter-lacroix/Maestro",
+  "path": "maestro/skills/research/search-tools/SKILL.md",
+  "source": "github.com/scooter-lacroix/Maestro",
+  "downloaded_at": "2026-02-04T03:20:57.966369Z"
 }

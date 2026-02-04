@@ -1,9 +1,7 @@
 {
   "name": "llm-debugger",
-  "description": "Diagnoses LLM output failures including hallucinations, constraint violations, format errors, and reasoning issues. Provides root cause classification, prompt fixes, tool improvements, and new test ca",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/llm-debugger/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:19.519204Z"
 }

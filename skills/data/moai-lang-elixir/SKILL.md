@@ -1,531 +1,135 @@
 ---
-name: moai-lang-elixir
-version: 3.0.0
-updated: "2025-11-19"
-status: stable
-description: Elixir and Phoenix framework best practices for concurrent systems, OTP patterns, LiveView applications, and production deployment. Use when building Elixir/Phoenix applications or concurrent systems.
+name: "moai-lang-elixir"
+description: "Elixir 1.17+ development specialist covering Phoenix 1.7, LiveView, Ecto, and OTP patterns. Use when developing real-time applications, distributed systems, or Phoenix projects."
+version: 1.1.0
+category: "language"
+modularized: true
+user-invocable: false
+tags: ["language", "elixir", "phoenix", "liveview", "ecto", "otp", "genserver"]
+updated: 2026-01-11
+status: "active"
 allowed-tools:
   - Read
+  - Grep
+  - Glob
   - Bash
-  - WebSearch
-  - WebFetch
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
-# Elixir & Phoenix Framework
+## Quick Reference (30 seconds)
 
-Production-grade Elixir/Phoenix development with OTP, LiveView, and concurrent patterns.
+Elixir 1.17+ Development Specialist - Phoenix 1.7, LiveView, Ecto, OTP patterns, and functional programming.
 
-## Quick Start
+Auto-Triggers: `.ex`, `.exs` files, `mix.exs`, `config/`, Phoenix/LiveView discussions
 
-**Create Phoenix App**:
+Core Capabilities:
 
-```bash
-# Install Phoenix
-mix archive.install hex phx_new
+- Elixir 1.17: Pattern matching, pipes, protocols, behaviours, macros
+- Phoenix 1.7: Controllers, LiveView, Channels, PubSub, Verified Routes
+- Ecto: Schemas, Changesets, Queries, Migrations, Multi
+- OTP: GenServer, Supervisor, Agent, Task, Registry
+- ExUnit: Testing with setup, describe, async
+- Mix: Build tool, tasks, releases
+- Oban: Background job processing
 
-# Create new app
-mix phx.new my_app --database postgres
+### Quick Patterns
 
-# Setup database
-cd my_app
-mix ecto.create
+Phoenix Controller: Define a module using MyAppWeb with :controller. Create alias for the context module like MyApp.Accounts. Define action functions like show taking conn and params map with destructured id. Fetch data using the context function with bang like get_user! and render the template passing the data as assigns.
 
-# Start server
-mix phx.server
-# Visit: http://localhost:4000
-```
+For create actions, pattern match on the context result tuple. On ok tuple, use pipe operator to put_flash with success message and redirect using ~p sigil for verified routes. On error tuple with Ecto.Changeset, render the form template passing the changeset.
 
-**Simple LiveView**:
+Ecto Schema with Changeset: Define a module using Ecto.Schema and importing Ecto.Changeset. Define the schema block with field declarations including types like :string and virtual fields. Create a changeset function taking the struct and attrs, using pipe operator to chain cast with the list of fields to cast, validate_required, validate_format with regex, validate_length with min option, and unique_constraint.
 
-```elixir
-defmodule MyAppWeb.CounterLive do
-  use Phoenix.LiveView
-
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, count: 0)}
-  end
-
-  def render(assigns) do
-    ~H"""
-    <div>
-      <h1>Count: <%= @count %></h1>
-      <button phx-click="increment">+</button>
-      <button phx-click="decrement">-</button>
-    </div>
-    """
-  end
-
-  def handle_event("increment", _,  socket) do
-    {:noreply, update(socket, :count, &(&1 + 1))}
-  end
-
-  def handle_event("decrement", _, socket) do
-    {:noreply, update(socket, :count, &(&1 - 1))}
-  end
-end
-```
+GenServer Pattern: Define a module using GenServer. Create start_link taking initial_value and calling GenServer.start_link with __MODULE__, initial_value, and name option. Define client API functions that call GenServer.call with __MODULE__ and the message atom. Implement init callback returning ok tuple with state. Implement handle_call callbacks for each message, returning reply tuple with response and new state.
 
 ---
 
-## Core Concepts
+## Implementation Guide (5 minutes)
 
-### Why Elixir?
+### Elixir 1.17 Features
 
-| Feature             | Benefit                            | Use Case                           |
-| ------------------- | ---------------------------------- | ---------------------------------- |
-| **Concurrency**     | Millions of processes              | Real-time systems, chat, gaming    |
-| **Fault Tolerance** | Supervision trees, self-healing    | High uptime requirements           |
-| **Scalability**     | Distributed, horizontal scaling    | Microservices, distributed systems |
-| **Productivity**    | Pattern matching, pipe operator    | Rapid development                  |
-| **OTP**             | Battle-tested concurrent framework | Production systems                 |
+Pattern Matching Advanced: Define function heads with pattern matching on map keys and types. Use guard clauses with when to add constraints like is_binary or byte_size checks. Add a catch-all clause returning error tuple for invalid inputs.
 
----
+Pipe Operator with Error Handling: Use the with special form for chaining operations that may fail. Pattern match each step with left arrow, and on successful completion of all steps, return the final ok tuple. In the else block, handle error tuples by returning them unchanged.
 
-## Pattern Matching
+Protocols for Polymorphism: Define a protocol with @doc and function specification using defprotocol. Implement the protocol for specific types using defimpl with for: option. Each implementation provides the specific behavior for that type.
 
-```elixir
-# Basic patterns
-{:ok, result} = {:ok, 42}  # result = 42
-{:error, _} = {:error, "failed"}
+### Phoenix 1.7 Patterns
 
-# Function clauses
-defmodule Math do
-  def divide(_n, 0), do: {:error, "division by zero"}
-  def divide(n, m), do: {:ok, n / m}
-end
+LiveView Component: Define a module using MyAppWeb with :live_view. Implement mount callback taking params, session, and socket, returning ok tuple with assigned state. Implement handle_event callback for user interactions, returning noreply tuple with updated socket using update helper. Implement render callback with assigns, using ~H sigil for HEEx templates with assigns accessed via @ prefix.
 
-# With guards
-def categorize(age) when age < 18, do: "minor"
-def categorize(age) when age >= 18 and age < 65, do: "adult"
-def categorize(_age), do: "senior"
+LiveView Form with Changesets: In mount, create initial changeset and assign using to_form helper. Implement validate event handler that creates changeset with :validate action and reassigns the form. Implement save event handler that calls context create function, on success using put_flash and push_navigate, on error reassigning the form with error changeset.
 
-# Case expressions
-case HTTP.get(url) do
-  {:ok, %{status: 200, body: body}} -> process(body)
-  {:ok, %{status: 404}} -> {:error, :not_found}
-  {:error, reason} -> {:error, reason}
-end
-```
+Phoenix Channels: Define a module using MyAppWeb with :channel. Implement join callback matching on topic pattern with angle brackets for dynamic segments. Use send with self() for after_join messages. Implement handle_info for server-side messages using push. Implement handle_in for client messages using broadcast! to send to all subscribers.
+
+Verified Routes: Define routes in router.ex within scope blocks using live macro for LiveView routes. Use ~p sigil for verified routes in templates and controllers, with interpolation syntax for dynamic segments.
+
+### Ecto Patterns
+
+Multi for Transactions: Use Ecto.Multi.new() and pipe through operations using Ecto.Multi.update with name atoms and changeset functions. Use Ecto.Multi.insert with function callback when needing results from previous steps. Pipe final Multi to Repo.transaction() which returns ok or error tuple with named results.
+
+Query Composition: Create a query module with composable query functions. Define a base function returning from expression. Create filter functions with default parameter for query, returning modified from expression with where clause. Chain functions with pipe operator before passing to Repo.all.
 
 ---
 
-## OTP Patterns
+## Advanced Implementation (10+ minutes)
 
-### GenServer (State Management)
+For comprehensive coverage including:
 
-```elixir
-defmodule Counter do
-  use GenServer
+- Production deployment with releases
+- Distributed systems with libcluster
+- Advanced LiveView patterns (streams, components)
+- OTP supervision trees and dynamic supervisors
+- Telemetry and observability
+- Security best practices
+- CI/CD integration patterns
 
-  # Client API
-  def start_link(initial_value) do
-    GenServer.start_link(__MODULE__, initial_value, name: __MODULE__)
-  end
+See:
 
-  def increment do
-    GenServer.call(__MODULE__, :increment)
-  end
-
-  def get_value do
-    GenServer.call(__MODULE__, :get)
-  end
-
-  # Server Callbacks
-  @impl true
-  def init(initial_value) do
-    {:ok, initial_value}
-  end
-
-  @impl true
-  def handle_call(:increment, _from, state) do
-    {:reply, state + 1, state + 1}
-  end
-
-  @impl true
-  def handle_call(:get, _from, state) do
-    {:reply, state, state}
-  end
-end
-
-# Usage
-{:ok, _pid} = Counter.start_link(0)
-Counter.increment()  # 1
-Counter.get_value()  # 1
-```
-
-### Supervisor (Fault Tolerance)
-
-```elixir
-defmodule MyApp.Application do
-  use Application
-
-  def start(_type, _args) do
-    children = [
-      # Database connection pool
-      {Ecto.Repo, repo: MyApp.Repo},
-
-      # PubSub
-      {Phoenix.PubSub, name: MyApp.PubSub},
-
-      # Endpoint (HTTP server)
-      MyAppWeb.Endpoint,
-
-      # Custom workers
-      {MyApp.Worker, name: MyApp.Worker},
-    ]
-
-    opts = [strategy: :one_for_one, name: MyApp.Supervisor]
-    Supervisor.start_link(children, opts)
-  end
-end
-```
+- [Advanced Patterns](modules/advanced-patterns.md) - Complete advanced patterns guide
 
 ---
 
-## Phoenix Framework
+## Context7 Library Mappings
 
-### Router
-
-```elixir
-defmodule MyAppWeb.Router do
-  use MyAppWeb, :router
-
-  pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_live_flash
-    plug :put_root_layout, {MyAppWeb.LayoutView, :root}
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
-  end
-
-  pipeline :api do
-    plug :accepts, ["json"]
-    plug MyAppWeb.Auth.Pipeline
-  end
-
-  scope "/", MyAppWeb do
-    pipe_through :browser
-
-    live "/", PageLive, :index
-    live "/users", UserLive.Index, :index
-    live "/users/:id", UserLive.Show, :show
-  end
-
-  scope "/api", MyAppWeb do
-    pipe_through :api
-
-    resources "/users", UserController, except: [:new, :edit]
-    post "/auth/login", AuthController, :login
-  end
-end
-```
-
-### Context (Business Logic)
-
-```elixir
-defmodule MyApp.Accounts do
-  @moduledoc """
-  The Accounts context - handles user management
- """
-
-  alias MyApp.Repo
-  alias MyApp.Accounts.User
-
-  def list_users do
-    Repo.all(User)
-  end
-
-  def get_user!(id), do: Repo.get!(User, id)
-
-  def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  def update_user(%User{} = user, attrs) do
-    user
-    |> User.changeset(attrs)
-    |> Repo.update()
-  end
-
-  def delete_user(%User{} = user) do
-    Repo.delete(user)
-  end
-end
-```
+- /elixir-lang/elixir - Elixir language documentation
+- /phoenixframework/phoenix - Phoenix web framework
+- /phoenixframework/phoenix_live_view - LiveView real-time UI
+- /elixir-ecto/ecto - Database wrapper and query language
+- /sorentwo/oban - Background job processing
 
 ---
 
-## LiveView Real-Time
+## Works Well With
 
-### Full LiveView Example
-
-```elixir
-defmodule MyAppWeb.DashboardLive do
-  use MyAppWeb, :live_view
-
-  alias MyApp.Metrics
-
-  @impl true
-  def mount(_params, _session, socket) do
-    if connected?(socket) do
-      # Subscribe to updates
-      Phoenix.PubSub.subscribe(MyApp.PubSub, "metrics:updates")
-
-      # Schedule periodic updates
-      :timer.send_interval(5000, self(), :tick)
-    end
-
-    {:ok, assign(socket, metrics: load_metrics())}
-  end
-
-  @impl true
-  def handle_info(:tick, socket) do
-    {:noreply, assign(socket, metrics: load_metrics())}
-  end
-
-  @impl true
-  def handle_info({:metric_updated, metric}, socket) do
-    metrics = update_metric(socket.assigns.metrics, metric)
-    {:noreply, assign(socket, metrics: metrics)}
-  end
-
-  @impl true
-  def render(assigns) do
-    ~H"""
-    <div class="grid grid-cols-3 gap-4">
-      <%= for metric <- @metrics do %>
-        <div class="metric-card">
-          <h3><%= metric.name %></h3>
-          <p class="text-2xl"><%= metric.value %></p>
-          <span class={"text-sm #{trend_color(metric.trend)}"}>
-            <%= format_trend(metric.trend) %>
-          </span>
-        </div>
-      <% end %>
-    </div>
-    """
-  end
-
-  defp load_metrics, do: Metrics.list_metrics()
-  defp trend_color(:up), do: "text-green-500"
-  defp trend_color(:down), do: "text-red-500"
-  defp format_trend(:up), do: "↑"
-  defp format_trend(:down), do: "↓"
-end
-```
+- `moai-domain-backend` - REST API and microservices architecture
+- `moai-domain-database` - SQL patterns and query optimization
+- `moai-workflow-testing` - TDD and testing strategies
+- `moai-essentials-debug` - AI-powered debugging
+- `moai-platform-deploy` - Deployment and infrastructure
 
 ---
 
-## Ecto (Database)
+## Troubleshooting
 
-### Schema & Changeset
+Common Issues:
 
-```elixir
-defmodule MyApp.Accounts.User do
-  use Ecto.Schema
-  import Ecto.Changeset
+Elixir Version Check: Run elixir --version to verify 1.17+ and mix --version for Mix build tool version.
 
-  schema "users" do
-    field :email, :string
-    field :name, :string
-    field :age, :integer
-    field :password, :string, virtual: true
-    field :hashed_password, :string
+Dependency Issues: Run mix deps.get to fetch dependencies, mix deps.compile to compile them, and mix clean to remove build artifacts.
 
-    has_many :posts, MyApp.Content.Post
+Database Migrations: Run mix ecto.create to create database, mix ecto.migrate to run migrations, and mix ecto.rollback to rollback last migration.
 
-    timestamps()
-  end
+Phoenix Server: Run mix phx.server to start the server, iex -S mix phx.server to start with IEx shell, and MIX_ENV=prod mix release to build production release.
 
-  def changeset(user, attrs) do
-    user
-    |> cast(attrs, [:email, :name, :age, :password])
-    |> validate_required([:email, :name])
-    |> validate_format(:email, ~r/@/)
-    |> validate_number(:age, greater_than: 0)
-    |> validate_length(:password, min: 8)
-    |> unique_constraint(:email)
-    |> hash_password()
-  end
+LiveView Not Loading:
 
-  defp hash_password(changeset) do
-    case changeset do
-      %Ecto.Changeset{valid?: true, changes: %{password: password}} ->
-        put_change(changeset, :hashed_password, Bcrypt.hash_pwd_salt(password))
-      _ ->
-        changeset
-    end
-  end
-end
-```
-
-### Queries
-
-```elixir
-import Ecto.Query
-
-# Basic queries
-Repo.all(User)
-Repo.get(User, 1)
-Repo.get_by(User, email: "user@example.com")
-
-# Complex query
-from(u in User,
-  where: u.age > 18,
-  join: p in assoc(u, :posts),
-  where: p.published == true,
-  preload: [posts: p],
-  select: {u.name, count(p.id)},
-  group_by: u.id,
-  order_by: [desc: count(p.id)],
-  limit: 10
-)
-|> Repo.all()
-
-# Composition
-query = from(u in User)
-query = where(query, [u], u.age > 18)
-query = order_by(query, [u], desc: u.inserted_at)
-Repo.all(query)
-```
+- Check websocket connection in browser developer console
+- Verify endpoint configuration includes websocket transport
+- Ensure Phoenix.LiveView is listed in mix.exs dependencies
 
 ---
 
-## Testing
-
-```elixir
-defmodule MyApp.AccountsTest do
-  use MyApp.DataCase, async: true
-
-  alias MyApp.Accounts
-
-  describe "users" do
-    test "create_user/1 with valid data creates user" do
-      attrs = %{email: "test@example.com", name: "Test User"}
-
-      assert {:ok, user} = Accounts.create_user(attrs)
-      assert user.email == "test@example.com"
-      assert user.name == "Test User"
-    end
-
-    test "create_user/1 with invalid email returns error" do
-      attrs = %{email: "invalid", name: "Test"}
-
-      assert {:error, changeset} = Accounts.create_user(attrs)
-      assert "has invalid format" in errors_on(changeset).email
-    end
-  end
-end
-
-# LiveView testing
-defmodule MyAppWeb.CounterLiveTest do
-  use MyAppWeb.ConnCase
-
-  import Phoenix.LiveViewTest
-
-  test "increments counter", %{conn: conn} do
-    {:ok, view, _html} = live(conn, "/counter")
-
-    assert view |> element("button", "+") |> render_click()
-    assert render(view) =~ "Count: 1"
-  end
-end
-```
-
----
-
-## Production Deployment
-
-### Release with Mix
-
-```bash
-# Build release
-MIX_ENV=prod mix release
-
-# Run release
-_build/prod/rel/my_app/bin/my_app start
-
-# Or as daemon
-_build/prod/rel/my_app/bin/my_app daemon
-```
-
-### Docker
-
-```dockerfile
-FROM elixir:1.15-alpine AS builder
-
-WORKDIR /app
-
-# Install dependencies
-RUN mix local.hex --force && \
-    mix local.rebar --force
-
-# Copy mix files
-COPY mix.exs mix.lock ./
-RUN mix deps.get --only prod
-
-# Copy app
-COPY . .
-
-# Compile and build release
-RUN MIX_ENV=prod mix compile
-RUN MIX_ENV=prod mix release
-
-# Runtime image
-FROM alpine:3.18
-
-RUN apk add --no-cache openssl ncurses-libs
-
-WORKDIR /app
-
-COPY --from=builder /app/_build/prod/rel/my_app ./
-
-CMD ["./bin/my_app", "start"]
-```
-
----
-
-## Best Practices
-
-✅ **DO**:
-
-- Use pattern matching extensively
-- Leverage OTP for concurrency
-- Write tests (ExUnit is excellent)
-- Use contexts for business logic
-- Handle errors explicitly (`{:ok, val}` / `{:error, reason}`)
-- Use LiveView for real-time UIs
-
-❌ **DON'T**:
-
-- Mutate state (use immutable data)
-- Use global state (use GenServer/Agent)
-- Skip supervision trees
-- Ignore errors (always handle)
-- Over-use macros
-
----
-
-## Advanced Topics
-
-For detailed patterns:
-
-- **[examples.md](examples.md)**: Complete apps, real-time systems, distributed setups
-- **[reference.md](reference.md)**: OTP behaviors, macros, metaprogramming
-
-**Related Skills**:
-
-- `moai-domain-backend`: Backend patterns
-- `moai-essentials-perf`: Performance optimization
-- `moai-testing-integration`: Testing strategies
-
----
-
-**Ecosystem**: Elixir 1.15+, Phoenix 1.7+, LiveView 0.20+, Ecto 3.10+
-
-**Version**: 3.0.0  
-**Last Updated**: 2025-11-19  
-**Status**: Production Ready
+Last Updated: 2026-01-11
+Status: Active (v1.1.0)

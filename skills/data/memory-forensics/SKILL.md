@@ -12,7 +12,6 @@ Comprehensive techniques for acquiring, analyzing, and extracting artifacts from
 ### Live Acquisition Tools
 
 #### Windows
-
 ```powershell
 # WinPmem (Recommended)
 winpmem_mini_x64.exe memory.raw
@@ -28,7 +27,6 @@ DumpIt.exe
 ```
 
 #### Linux
-
 ```bash
 # LiME (Linux Memory Extractor)
 sudo insmod lime.ko "path=/tmp/memory.lime format=lime"
@@ -41,7 +39,6 @@ sudo cp /proc/kcore memory.elf
 ```
 
 #### macOS
-
 ```bash
 # osxpmem
 sudo ./osxpmem -o memory.raw
@@ -86,7 +83,6 @@ vol -f memory.raw -s /path/to/symbols windows.pslist
 ### Essential Plugins
 
 #### Process Analysis
-
 ```bash
 # List processes
 vol -f memory.raw windows.pslist
@@ -108,7 +104,6 @@ vol -f memory.raw windows.cmdline
 ```
 
 #### Network Analysis
-
 ```bash
 # Network connections
 vol -f memory.raw windows.netscan
@@ -118,7 +113,6 @@ vol -f memory.raw windows.netstat
 ```
 
 #### DLL and Module Analysis
-
 ```bash
 # Loaded DLLs per process
 vol -f memory.raw windows.dlllist --pid <PID>
@@ -134,7 +128,6 @@ vol -f memory.raw windows.moddump --pid <PID>
 ```
 
 #### Memory Injection Detection
-
 ```bash
 # Detect code injection
 vol -f memory.raw windows.malfind
@@ -147,7 +140,6 @@ vol -f memory.raw windows.vadyarascan --yara-rules rules.yar
 ```
 
 #### Registry Analysis
-
 ```bash
 # List registry hives
 vol -f memory.raw windows.registry.hivelist
@@ -160,7 +152,6 @@ vol -f memory.raw windows.registry.hivescan --dump
 ```
 
 #### File System Artifacts
-
 ```bash
 # Scan for file objects
 vol -f memory.raw windows.filescan

@@ -1,142 +1,77 @@
 ---
-name: "measuring-product-market-fit"
-description: "Measure product-market fit (PMF) and produce a PMF Measurement Pack (Sean Ellis “very disappointed” survey, retention/usage evidence, reference-customer signals, and an action plan). Use for growth teams assessing PMF, PMF drift, and launch readiness."
+name: measuring-product-market-fit
+description: Help users assess and achieve product-market fit. Use when someone is trying to determine if they have PMF, measuring user engagement and retention, running the Sean Ellis survey, or figuring out if they should scale or keep iterating.
 ---
 
 # Measuring Product-Market Fit
 
-## Scope
+Help the user assess and achieve product-market fit using frameworks from 46 product leaders.
 
-**Covers**
-- Measuring PMF using a **triangulated signal set** (survey + behavior + customer evidence)
-- Running and interpreting the **Sean Ellis “Very Disappointed”** survey (overall + by segment)
-- Reading **retention curves / cohort retention** as PMF evidence (and knowing when they mislead)
-- Using **reference-customer / advocacy** signals as an additional PMF proxy
-- Detecting **PMF drift** (market shifts, rising expectations, competitive resets) and setting a re-measurement cadence
-- Special handling for **marketplaces** (measure PMF per side; focus on the “hard side” first)
+## How to Help
 
-**When to use**
-- “Do we have PMF? For which segment?”
-- “Run a Sean Ellis PMF survey and tell me what it means.”
-- “Build a PMF scorecard with retention + survey + references.”
-- “Our market shifted—did we lose PMF?”
-- “We want a go/no-go signal for scaling growth spend or launching publicly.”
+When the user asks about product-market fit:
 
-**When NOT to use**
-- You haven’t defined the problem/ICP yet (use `problem-definition`).
-- You only need a survey instrument, not a full PMF measurement system (use `designing-surveys`).
-- You’re deciding whether/how to pivot (use `startup-pivoting`) rather than measuring PMF signals.
-- You need a product vision/strategy doc as the primary output (use `defining-product-vision` / `ai-product-strategy`).
+1. **Understand their stage** - Ask how many customers they have, what their retention looks like, and what signals they're seeing (or not seeing)
+2. **Diagnose the situation** - Determine if they're confusing vanity metrics with PMF, if they have PMF in a specific segment, or if they're clearly pre-PMF
+3. **Apply the right framework** - Help them use the Sean Ellis survey, retention curves, or reference customer counts depending on their situation
+4. **Guide next steps** - Help them decide whether to scale or continue iterating based on the evidence
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product + category + current stage (pre-PMF / early PMF / growth / mature)
-- Business model: B2B / B2C / marketplace (and, for marketplaces, which side you’re focusing on)
-- Your current best guess at the target segment/ICP (and any meaningful segments)
-- Definition of **active user** and the **core value moment** (the action that indicates value received)
-- What data you can access: survey channels, product analytics, retention cohorts, revenue, qualitative feedback, reference customers/testimonials
-- Time horizon and constraints (deadline, privacy/PII constraints, internal-only vs shareable)
+### Use the Sean Ellis "disappointment" survey
+Sean Ellis: "How would you feel if you could no longer use this product? Very disappointed, somewhat disappointed, or not disappointed. If 40% say 'very disappointed,' you're on the right track." This is a leading indicator of PMF before long-term retention data is available. Focus on the "very disappointed" segment as your core value indicator.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md), then proceed.
-- If key inputs are missing, proceed with explicit assumptions and label confidence.
-- Do not request secrets. If data includes PII, ask for **redacted excerpts** or **aggregated fields**.
+### Retention is the ultimate metric
+Uri Levine: "Product market fit has one metric. Retention. If you create value, they will come back. If they're not coming back, you're not creating value." Look for retention curves that flatten over time rather than decaying to zero. The "smile curve" - where engagement increases over time - is the strongest signal.
 
-## Outputs (deliverables)
+### PMF is obvious when you have it
+Matt MacInnis: "Product market fit is something where you absolutely know it when you see it. Therefore if you don't absolutely know it, you don't have it." If there's doubt, you likely don't have it. Look for the market pulling the product out of your hands.
 
-Produce a **PMF Measurement Pack** (Markdown in-chat; or as files if requested) containing:
+### PMF is not static - it can be lost
+Casey Winters: "Protecting what you've built is increasingly important once you build scale. You might fall out of product market fit in a year or five years if you're not continually making your product better." Markets shift, competitors improve, and user expectations rise.
 
-1) **Context snapshot** (product, stage, decision, timebox, segments, constraints)
-2) **PMF measurement model** (core value moment, active user definition, signal set, thresholds as heuristics)
-3) **Sean Ellis survey plan + results** (sample definition, questions, response counts, “very disappointed” % overall + by segment, top benefits)
-4) **Behavioral evidence** (retention/cohort summary + engagement frequency; instrumentation gaps + how they affect confidence)
-5) **Reference-customer / advocacy evidence** (who is willing to vouch; quotes; counts vs heuristic targets)
-6) **PMF Scorecard** (signals, targets, current state, confidence, evidence links/notes)
-7) **Diagnosis + action plan** (PMF status by segment; top drivers; prioritized next actions/experiments)
-8) **Risks / Open questions / Next steps** (always included)
+### Reference customers validate PMF
+Christian Idiodi: "The holy grail is really a reference customer - somebody who loves it enough to tell people about it. I want 6-8 references for B2B, 15-25 for B2C as an indication of PMF." Don't launch publicly until you have secured the target number of references from early users.
 
-Templates and checklists:
-- [references/TEMPLATES.md](references/TEMPLATES.md)
-- [references/CHECKLISTS.md](references/CHECKLISTS.md)
-- [references/RUBRIC.md](references/RUBRIC.md)
+### PMF exists in segments, not universally
+Karri Saarinen: "The way we think about it is, 'Do we have the fit in specific segments?' and how strong that fit is." Find PMF in one segment first (e.g., early-stage startups) before expanding. Double down where you see natural pull.
 
-## Workflow (7 steps)
+### PMF requires distribution, not just retention
+Casey Winters: "If you have a product that retains well and you can't find more users for it, I don't think that's product market fit." True PMF requires both a retaining product AND a scalable, built-in distribution mechanism.
 
-### 1) Intake + decision framing
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm the decision (scale spend, launch, refocus ICP, pricing), the timebox, and the audience. Define “what will we do differently based on this?”
-- **Outputs:** Context snapshot + measurement constraints.
-- **Checks:** A stakeholder can answer: “What decision will this change by <date>?”
+### PMF is multi-stage, not binary
+Todd Jackson: "There's essentially four levels: nascent, developing, strong, extreme." Level 1 (3-5 customers), Level 2 (5-25 customers), Level 3 (25-100 customers), Level 4 (100+ customers). Sequence focus: satisfaction at Level 1, demand at Level 2, efficiency at Level 3.
 
-### 2) Define the PMF measurement model (and segments)
-- **Inputs:** Product + segment hypotheses; data availability.
-- **Actions:** Define:
-  - The **core value moment** and **active user** definition
-  - The segment(s) to evaluate (ICP + meaningful slices)
-  - The signal set (survey + behavior + customer evidence) and what “good” looks like (as heuristics)
-- **Outputs:** PMF measurement model + segment plan.
-- **Checks:** Each signal has (a) a metric definition, (b) a data source, and (c) a limitation note.
+### Look for customer "pull"
+Raaz Herzberg: "We felt the questions change - 'How are you pricing this? When can we start a POV?' That's real intent." True pull is characterized by customers driving next steps, not just saying "this is interesting."
 
-### 3) Run the Sean Ellis PMF survey (must-have test)
-- **Inputs:** Target population list (active users); distribution channel; [references/TEMPLATES.md](references/TEMPLATES.md) (PMF block).
-- **Actions:** Draft and run:
-  - “How would you feel if you could no longer use <product>?” (Very / Somewhat / Not disappointed)
-  - Follow-up: “What is the primary benefit you receive?” (text)
-  - Segment respondents (persona/ICP, use case, tenure) to find the “must-have” cohort
-- **Outputs:** Survey plan + results table (overall + by segment) + top benefit themes.
-- **Checks:** Sample definition is explicit; results include counts (n), not only percentages; major bias risks are listed.
+### A lack of outrage during outages = no PMF
+Jeff Weinstein: "During those 20 minutes our customers weren't furious. That was the signal we did not have product market fit." If your product goes down and nobody notices or complains, you haven't solved a mission-critical problem.
 
-### 4) Analyze behavioral evidence (retention + engagement)
-- **Inputs:** Product usage data or best-available proxy; activation definition.
-- **Actions:** Build a minimal behavioral picture:
-  - Cohort retention (or repeat usage/purchase) by segment and tenure
-  - Retention curve shape (improving/flat/decaying) and interpretation
-  - Engagement frequency vs the product’s natural cadence (daily/weekly/monthly)
-- **Outputs:** Retention/engagement summary + confidence notes + instrumentation gaps.
-- **Checks:** Retention is measured from a clear cohort start; analysis separates **activation** from **retention**.
+## Questions to Help Users
 
-### 5) Collect reference-customer / advocacy evidence
-- **Inputs:** Customer list; CS/sales notes; reviews; testimonials.
-- **Actions:** Identify users willing to vouch publicly/privately:
-  - B2B heuristic target: **6–8** reference customers
-  - B2C heuristic target: **15–25** strong references/advocates
-  - Capture the “why” (benefit) and the segment they represent
-- **Outputs:** Reference evidence log + gaps by segment.
-- **Checks:** References map to the intended ICP/segment; evidence is current (not from a different market era).
+- "If users couldn't use your product anymore, what percentage would be 'very disappointed'?"
+- "What does your retention curve look like at day 7, 30, and 90?"
+- "Do you have customers willing to be references and tell others about you?"
+- "Is the market pulling the product from you, or are you pushing it on them?"
+- "Are customers driving next steps (asking about pricing, timelines) or just being politely interested?"
+- "What specific segment do you have the strongest fit in?"
 
-### 6) Synthesize into a PMF scorecard + diagnosis (by segment)
-- **Inputs:** Survey + behavior + reference evidence.
-- **Actions:** Triangulate signals to answer:
-  - Do we have PMF for any segment? Which one is strongest?
-  - What are the top drivers of “must-have” value?
-  - What’s blocking PMF for adjacent segments?
-  - Are we at risk of PMF drift (market shift, expectations rising)?
-- **Outputs:** PMF Scorecard + diagnosis narrative + confidence rating.
-- **Checks:** Diagnosis is segment-specific and evidence-backed; “unknowns” are explicit.
+## Common Mistakes to Flag
 
-### 7) Quality gate + action plan + cadence
-- **Inputs:** Draft pack; [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- **Actions:** Run the checklist + score with rubric. Produce:
-  - Prioritized next actions/experiments (what to change, how to measure impact)
-  - A PMF re-measurement cadence + drift triggers
-  - **Risks / Open questions / Next steps**
-- **Outputs:** Final PMF Measurement Pack.
-- **Checks:** Actions are concrete enough to execute next sprint/quarter; measurement plan includes owners and dates (if known).
+- **Confusing launch spikes with PMF** - Product Hunt success or press coverage doesn't mean you have PMF. Look for sustained organic growth
+- **Ignoring retention data** - If users aren't coming back, you don't have PMF regardless of how many you acquire
+- **Scaling too early** - Paid growth before PMF just burns cash and can damage your brand
+- **Conflating TAM with PMF** - A large market opportunity doesn't mean you've achieved fit within it
+- **Listening to "somewhat disappointed" users** - Focus on what makes "very disappointed" users love you, not what would make lukewarm users slightly happier
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Deep Dive
 
-## Examples
+For all 64 insights from 46 guests, see `references/guest-insights.md`
 
-**Example 1 (B2B SaaS, early growth):**  
-“Use `measuring-product-market-fit`. Product: AI meeting notes for account executives. Segments: mid-market sales teams vs SMB founders. Data: 90-day cohorts + in-app survey. Decision: whether to scale paid acquisition next quarter. Output: a PMF Measurement Pack.”
+## Related Skills
 
-**Example 2 (Marketplace, supply-first):**  
-“We’re building a caregiver marketplace. We have early demand, but supply is thin. Measure PMF for the supply side first using a PMF survey + retention proxies. Output a scorecard and a plan to strengthen the core value exchange.”
-
-**Boundary example (insufficient inputs):**  
-“Do we have PMF?”  
-Response: ask up to 5 intake questions (segment, active user definition, data sources, survey channel, decision), then produce a minimal PMF Measurement Pack with explicit assumptions and confidence limits.
-
+- Designing Growth Loops
+- Retention & Engagement
+- Conducting User Interviews
+- Startup Pivoting

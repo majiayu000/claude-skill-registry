@@ -1,11 +1,7 @@
 {
   "name": "news",
-  "description": "Reports on the newest news on a specific topic. Use when the user is asking about news, recent events or advancements",
-  "repo": "MykalMachon/llm-config",
-  "category": "devops",
-  "tags": [
-    "news"
-  ],
-  "stars": 3,
-  "source": "local"
+  "repo": "ecto/dotfiles",
+  "path": ".claude/skills/news/SKILL.md",
+  "source": "github.com/ecto/dotfiles",
+  "downloaded_at": "2026-02-04T02:23:27.217448Z"
 }

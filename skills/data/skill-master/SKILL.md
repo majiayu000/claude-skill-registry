@@ -1,452 +1,395 @@
 ---
 name: skill-master
-description: "Agent Skills authoring. Covers SKILL.md format, frontmatter, folders, docs ingestion. Keywords: agentskills.io, SKILL.md."
-version: "1.2.4"
-release_date: "2026-01-27"
-metadata:
-  author: itechmeat
+description: "Intelligent skill orchestrator that automatically finds, creates, executes, and improves skills. When you need to accomplish a task, this skill searches for existing skills (internal, GitHub via MCP, web), creates new skills if none found, executes them, and reviews execution to improve skills based on actual usage. Also handles feedback about skill-generated outputs - if you want to fix/adjust an output AND improve the skill that created it, invoke this with your feedback. Use when you want automated skill discovery, continuous improvement, or to provide feedback on previous skill outputs."
+allowed-tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch, Task, Skill, AskUserQuestion, TodoWrite, Bash
 ---
 
 # Skill Master
 
-This skill is the entry point for creating and maintaining Agent Skills.
+An intelligent orchestrator that automates the entire skill lifecycle: discovery, creation, execution, and improvement.
 
-**Language requirement:** all skills MUST be authored in English.
+## Overview
 
-## Quick Navigation
+When invoked with a task, this skill:
+1. **Searches** for existing skills that can handle the task
+2. **Creates** a new skill if none found (after deep research)
+3. **Invokes** the skill (using Skill tool) to complete the user's task
+4. **Reviews** the execution and improves the skill if needed
 
-- New to skills? Read: `references/specification.md`
-- SKILL.md templates? See: `assets/skill-templates.md`
-- Advanced features (context, agents, hooks)? Read: `references/advanced-features.md`
-- Creating from docs? Read: `references/docs-ingestion.md`
-- Validation & packaging? See `scripts/`
+When invoked with feedback about a previous output:
+5. **Fixes** the output according to user's request
+6. **Links** feedback to the skill via state tracking
+7. **Improves** the skill based on the feedback
 
-## When to Use
+## Workflow
 
-- Creating a new skill from scratch
-- Updating an existing skill
-- Creating a skill by ingesting external documentation
-- Validating or packaging a skill for distribution
-
-## Skill Structure (Required)
-
-```
-my-skill/
-├── SKILL.md          # Required: instructions + metadata
-├── README.md         # Optional: human-readable description
-├── metadata.json     # Optional: extended metadata for publishing
-├── references/       # Optional: documentation, guides, API references
-├── examples/         # Optional: sample outputs, usage examples
-├── scripts/          # Optional: executable code
-└── assets/           # Optional: templates, images, data files
-```
-
-### Folder Purposes (CRITICAL)
-
-| Folder        | Purpose                                    | Examples                                                |
-| ------------- | ------------------------------------------ | ------------------------------------------------------- |
-| `references/` | **Documentation** for agents to read       | Guides, API docs, concept explanations, troubleshooting |
-| `examples/`   | **Sample outputs** showing expected format | Output examples, usage demonstrations                   |
-| `assets/`     | **Static resources** to copy/use           | Document templates, config templates, images, schemas   |
-| `scripts/`    | **Executable code** to run                 | Python scripts, shell scripts, validators               |
-
-### When to Use Each
-
-**Use `references/` for:**
-
-- Detailed documentation about concepts
-- API references and usage guides
-- Troubleshooting and FAQ
-- Anything the agent needs to **read and understand**
-
-**Use `examples/` for:**
-
-- Sample outputs showing expected format
-- Usage demonstrations
-- Before/after comparisons
-- Anything showing **what the result should look like**
-
-**Use `assets/` for:**
-
-- Document templates (markdown files to copy as starting point)
-- Configuration file templates
-- Schema files, lookup tables
-- Images and diagrams
-- Anything the agent needs to **copy or reference verbatim**
-
-**IMPORTANT**: Templates belong in `assets/`, examples in `examples/`, documentation in `references/`.
-
-## Frontmatter Schema
-
-Every `SKILL.md` MUST start with YAML frontmatter:
-
-```yaml
 ---
-name: skill-name
-description: "What it does. Keywords: term1, term2."
-metadata:
-  author: your-name
-  version: "1.0.0"
----
+
+### Phase 1: Skill Discovery
+
+**Goal**: Find an existing skill that can handle the user's task.
+
+#### Step 1.1: Parse the Request
+
+Identify from the user's request:
+- **Core task**: What needs to be accomplished?
+- **Domain**: What area/field does this belong to?
+- **Keywords**: Key terms for searching
+
+#### Step 1.2: Search for Skills
+
+**MUST follow the complete search workflow in [references/skill-search.md](references/skill-search.md).**
+
+Copy and track overall search progress:
+```
+Search Phase Progress:
+- [ ] Step 1: Internal skills searched
+- [ ] Step 2.1: ALL known GitHub repos searched (anthropics, K-Dense-AI, ComposioHQ)
+- [ ] Step 2.2: Known repos enumerated (if 2.1 had no matches)
+- [ ] Step 2.3: Broader GitHub search (only after 2.1+2.2 exhausted)
+- [ ] Step 3: Web search (only after GitHub exhausted)
 ```
 
-**Field order:** `name` → `description` → `license` → `compatibility` → `metadata` → other fields
+**CRITICAL**: MUST complete ALL searches in each step before proceeding to next step.
 
-### Required Fields
+Search order - execute in sequence:
+1. **Internal skills**: MUST check both `~/.claude/skills/` and `.claude/skills/`
+2. **GitHub known repos**: MUST search ALL three repos before broader search:
+   - `site:github.com/anthropics/skills SKILL.md <keywords>`
+   - `site:github.com/K-Dense-AI/claude-scientific-skills SKILL.md <keywords>`
+   - `site:github.com/ComposioHQ/awesome-claude-skills SKILL.md <keywords>`
+3. **GitHub enumeration**: MUST enumerate repo contents if searches return no match
+4. **GitHub broader**: Only after known repos exhausted
+5. **Web**: Only after GitHub exhausted
 
-| Field       | Constraints                                                                                 |
-| ----------- | ------------------------------------------------------------------------------------------- |
-| name        | 1-64 chars, lowercase `a-z0-9-`, no `--`, no leading/trailing `-`, must match folder name   |
-| description | 1-1024 chars (target: 80-150), describes what skill does + when to use it, include keywords |
+See [references/known-skill-repos.md](references/known-skill-repos.md) for curated skill sources.
 
-### Optional Fields (Top Level)
+#### Step 1.3: Evaluate Results
 
-| Field         | Purpose                                           |
-| ------------- | ------------------------------------------------- |
-| license       | License name or reference to bundled LICENSE file |
-| compatibility | Environment requirements (max 500 chars)          |
-| metadata      | Object for arbitrary key-value pairs (see below)  |
+**Validation gate before concluding search:**
+- [ ] All internal locations checked
+- [ ] All known GitHub repos searched
+- [ ] All known repos enumerated (if no WebSearch matches)
+- [ ] Results documented for each source
 
-### metadata Object (Common Fields)
+**If skill found:**
+- Present the skill to user with description
+- Proceed to Phase 2 (Storage Confirmation)
 
-| Field         | Purpose                                          |
-| ------------- | ------------------------------------------------ |
-| author        | Author name or organization                      |
-| version       | **Skill version** (semver format, e.g., "1.0.0") |
-| argument-hint | Hint for autocomplete, e.g., `[issue-number]`    |
+**If NO skill found (only after ALL searches complete):**
+- Inform user: "No existing skill found. I'll research and create one."
+- Proceed to Phase 3 (Skill Creation)
 
-**IMPORTANT**: `version` in `metadata` is the **skill version**. If you reference external product docs, track that version separately (e.g., in README.md or metadata.json).
-
-### Optional Fields (Claude Code / Advanced)
-
-| Field                    | Purpose                                                                    |
-| ------------------------ | -------------------------------------------------------------------------- |
-| disable-model-invocation | `true` = only user can invoke (via `/name`). Default: `false`              |
-| user-invocable           | `false` = hidden from `/` menu, only agent can load. Default: `true`       |
-| allowed-tools            | Space-delimited tools agent can use without asking, e.g., `Read Grep Glob` |
-| model                    | Specific model to use when skill is active                                 |
-| context                  | Set to `fork` to run in a forked subagent context                          |
-| agent                    | Subagent type when `context: fork`, e.g., `Explore`, `Plan`                |
-| hooks                    | Hooks scoped to skill's lifecycle (see agent documentation)                |
-
-### Invocation Control Matrix
-
-| Frontmatter                      | User can invoke | Agent can invoke | Notes                                   |
-| -------------------------------- | --------------- | ---------------- | --------------------------------------- |
-| (default)                        | ✅ Yes          | ✅ Yes           | Description in context, loads when used |
-| `disable-model-invocation: true` | ✅ Yes          | ❌ No            | For manual workflows with side effects  |
-| `user-invocable: false`          | ❌ No           | ✅ Yes           | Background knowledge, not a command     |
-
-### Variable Substitutions
-
-Available placeholders in skill content:
-
-| Variable               | Description                                              |
-| ---------------------- | -------------------------------------------------------- |
-| `$ARGUMENTS`           | All arguments passed when invoking the skill             |
-| `${CLAUDE_SESSION_ID}` | Current session ID for logging or session-specific files |
-
-If `$ARGUMENTS` is not in content, arguments are appended as `ARGUMENTS: <value>`.
-
-Example:
-
-```yaml
 ---
-name: fix-issue
-description: Fix a GitHub issue
-disable-model-invocation: true
----
-Fix GitHub issue $ARGUMENTS following our coding standards.
+
+### Phase 2: Storage Confirmation
+
+**Goal**: Determine where to store the skill.
+
+Ask user using AskUserQuestion:
+```
+Where should this skill be stored?
+
+1. LOCAL (.claude/skills/)
+   - Project-specific
+   - Shared with team via git
+
+2. GLOBAL (~/.claude/skills/)
+   - Personal
+   - Available across all projects
 ```
 
-### Dynamic Context Injection
+Remember the choice for later use.
 
-Use `!`command`` syntax to run shell commands before skill content is sent to the agent:
+#### Step 2.1: Source Tracking (External Skills Only)
+
+**CRITICAL**: When storing a skill found from an external source (GitHub, web), you MUST create a `source.md` file alongside the SKILL.md to track provenance.
+
+Create `source.md` in the skill directory with:
 
 ```markdown
-## Pull request context
+# Source
 
-- PR diff: !`gh pr diff`
-- Changed files: !`gh pr diff --name-only`
+- **Origin**: <GitHub | Web | MCP Marketplace>
+- **URL**: <original URL where skill was found>
+- **Repository**: <owner/repo if GitHub>
+- **Author**: <original author if known>
+- **Retrieved**: <date skill was fetched>
+- **License**: <license if specified>
 
-## Your task
+## Notes
 
-Review this pull request...
+<Any relevant notes about the source, modifications made, etc.>
 ```
 
-The command output replaces the placeholder, so the agent receives actual data.
+**Do NOT create source.md for:**
+- Skills created from scratch (Phase 3)
+- Skills already present locally
 
-## metadata.json (Optional)
+---
 
-For publishing or extended metadata, create `metadata.json`:
+### Phase 3: Skill Creation (if not found)
+
+**Goal**: Create a new skill through deep research.
+
+Follow the creation workflow in [references/skill-create.md](references/skill-create.md).
+
+Steps:
+1. Research the domain thoroughly using WebSearch
+2. Identify best practices and common patterns
+3. Design the skill structure
+4. Generate SKILL.md following official format
+5. Save to the location user chose in Phase 2
+
+---
+
+### Phase 4: Skill Execution
+
+**Goal**: Invoke the skill to complete the user's original task.
+
+**CRITICAL**: You MUST invoke the found/created skill using the Skill tool. Do NOT manually follow the instructions - the skill must be triggered as an independent execution.
+
+#### Step 4.1: Invoke the Skill
+
+Use the Skill tool to trigger the skill:
+```
+Skill: <skill-name>
+args: <user's original request>
+```
+
+Example:
+```
+Skill: market-research-reports
+args: "Create a market analysis for electric vehicles in Europe"
+```
+
+The Skill tool will:
+1. Load the skill's SKILL.md
+2. Execute the skill's workflow
+3. Complete the user's task
+4. Return control when finished
+
+#### Step 4.2: Capture Execution Memory
+
+After the skill completes, the conversation now contains "execution memory" - the full record of what happened during skill execution. This memory is used in Phase 5 for review.
+
+#### Step 4.3: Verify Completion
+
+Confirm the skill delivered the expected output to the user.
+
+---
+
+### Phase 5: Skill Review
+
+**Goal**: Determine if the skill needs improvement based on actual execution.
+
+**CRITICAL**: This must happen in a fresh agent context using Task tool.
+
+#### Step 5.1: Spawn Fresh Agent
+
+Use Task tool to create a fresh agent for review:
+
+```
+Task: "Review skill execution for improvements"
+
+You are reviewing a skill execution. You have:
+1. The SKILL.md content (provided below)
+2. The conversation memory of what actually happened (this conversation)
+
+Your job: Compare what the skill SAYS vs what ACTUALLY HAPPENED.
+
+## The Skill
+<paste SKILL.md content here>
+
+## Review Questions
+1. Did I have to deviate from the skill's instructions? Where?
+2. Did I have to improvise something not in the skill? What?
+3. Did the user have to clarify something the skill should have covered?
+4. Were there errors/retries that better instructions could prevent?
+
+## Output
+If NO divergence: "Skill executed perfectly. No improvements needed."
+If divergence found: List specific improvements with format:
+- Location: <which part of skill>
+- Issue: <what happened during execution>
+- Suggestion: <concrete change to make>
+```
+
+#### Step 5.2: Handle Review Results
+
+**If no improvements needed:**
+- Report to user: "Skill worked well, no updates needed."
+- Proceed to Phase 6 (Complete)
+
+**If improvements suggested:**
+- Present improvements to user
+- Ask: "Would you like me to apply these improvements to the skill?"
+- If yes: Proceed to Phase 5.3
+- If no: Proceed to Phase 6 (Complete)
+
+#### Step 5.3: Apply Improvements
+
+Follow the improvement workflow in [references/skill-improve.md](references/skill-improve.md).
+
+**For local/personal skills**: Apply changes directly using Edit tool.
+
+**For official/external skills**:
+- Cannot modify directly
+- Generate improvement suggestions as a document
+- Offer to create a PR description if it's on GitHub
+
+---
+
+### Phase 6: Complete
+
+Report final status:
+```
+## Task Complete
+
+- **Task**: <original request>
+- **Skill Used**: <skill name>
+- **Skill Location**: <path>
+- **Improvements Applied**: Yes / No / N/A
+
+<Any relevant notes>
+```
+
+---
+
+### Phase 7: Feedback Handling (User-Triggered)
+
+**Trigger**: User explicitly invokes skill-master with feedback about a previous output.
+
+Examples:
+- `/skill-master please fix the report, the analysis is too shallow`
+- `Invoke skill-master to adjust the documentation and add more examples`
+
+#### Step 7.1: Fix the Output First
+
+Address the user's immediate request:
+1. Identify the output file(s) mentioned
+2. Make the requested changes/improvements
+3. Confirm changes with user
+
+#### Step 7.2: Check for State Tracking
+
+Look for `.skill-master-state.json` in the working directory:
+
+```
+Read: .skill-master-state.json
+```
+
+**If state file exists and matches the output:**
+- Proceed to Step 7.3
+
+**If no state file or no match:**
+- Report: "Output fixed. No linked skill found for improvement."
+- Done.
+
+#### Step 7.3: Link Feedback to Skill
+
+From state file, identify:
+- `skill_name`: Which skill produced this output
+- `skill_path`: Where the skill is stored
+- `outputs`: Verify the file user mentioned is in the outputs list
+
+#### Step 7.4: Trigger Review with Feedback Context
+
+Use Task tool to spawn fresh agent for review:
+
+```
+Task: "Review skill based on user feedback"
+
+The user requested changes to output produced by this skill.
+This feedback indicates the skill needs improvement.
+
+## The Skill
+<paste SKILL.md content>
+
+## User Feedback
+<user's feedback request>
+
+## Changes Made
+<what was changed to fix the output>
+
+## Your Task
+Determine how to improve the skill so future executions
+produce better output without needing these adjustments.
+
+## Output
+List specific improvements:
+- WHERE: <which part of skill>
+- ISSUE: <what was missing/wrong>
+- SUGGESTION: <concrete change>
+```
+
+#### Step 7.5: Apply Improvements
+
+Follow [references/skill-improve.md](references/skill-improve.md) to apply the suggested improvements.
+
+Report:
+```
+## Feedback Processed
+
+- **Output Fixed**: Yes
+- **Linked Skill**: <skill name>
+- **Skill Improved**: Yes / No (if external)
+- **Changes**: <summary of skill improvements>
+```
+
+---
+
+## State Management
+
+Track workflow state by writing to `.skill-master-state.json`:
 
 ```json
 {
-  "version": "1.0.0",
-  "organization": "Your Org",
-  "date": "January 2026",
-  "abstract": "Brief description of what this skill provides...",
-  "references": ["https://docs.example.com", "https://github.com/org/repo"]
+  "request": "original user request",
+  "state": "SEARCH | CREATE | EXECUTE | REVIEW | COMPLETE | FEEDBACK",
+  "skill_found": true/false,
+  "skill_name": "name",
+  "skill_path": "path",
+  "skill_source": {
+    "origin": "internal | github | web | created",
+    "url": "original URL if external",
+    "retrieved": "date"
+  },
+  "storage_location": "local | global",
+  "outputs": ["path/to/output1.md", "path/to/output2.pdf"],
+  "improvements_needed": true/false,
+  "improvements_applied": true/false
 }
 ```
 
-**Fields:**
+Update this file as you progress through phases.
 
-- `version` — Skill version (semver)
-- `organization` — Author or organization
-- `date` — Publication date
-- `abstract` — Extended description (can be longer than frontmatter)
-- `references` — List of source documentation URLs
+### Output Tracking
 
-### Name Validation Examples
+During Phase 4 (Execution), track all files created by the skill:
 
-```yaml
-# Valid
-name: pdf-processing
-name: data-analysis
-name: code-review
+1. **Before execution**: Note existing files in output directories
+2. **After execution**: Identify new/modified files
+3. **Update state**: Add file paths to `outputs` array
 
-# Invalid
-name: PDF-Processing  # uppercase not allowed
-name: -pdf            # cannot start with hyphen
-name: pdf--processing # consecutive hyphens not allowed
-```
+This enables Phase 7 (Feedback Handling) to link user feedback to the skill that produced the output.
 
-### Description Rules
-
-**Purpose:** Tell the LLM what the skill does and when to activate it. Minimize tokens — just enough for activation decision.
-
-**Formula:**
-
-```
-[Product] [core function]. Covers [2-3 key topics]. Keywords: [terms].
-```
-
-**Constraints:**
-
-- Target: 80-150 chars
-- Max: 300 chars
-- No marketing ("powerful", "comprehensive", "modern")
-- No filler ("this skill", "use this for", "helps with")
-- No redundant context (skip "for apps", "for developers")
-
-**Good examples:**
-
-```yaml
-description: "Turso SQLite database. Covers encryption, sync, agent patterns. Keywords: Turso, libSQL, SQLite."
-
-description: "Base UI unstyled React components. Covers forms, menus, overlays. Keywords: @base-ui/react, render props."
-
-description: "Inworld TTS API. Covers voice cloning, audio markups, timestamps. Keywords: Inworld, TTS, visemes."
-```
-
-**Poor examples:**
-
-```yaml
-# Too vague
-description: "Helps with PDFs."
-
-# Too verbose
-description: "Turso embedded SQLite database for modern apps and AI agents. Covers encryption, authorization, sync, partial sync, and agent database patterns."
-
-# Marketing
-description: "A powerful solution for all your database needs."
-```
-
-**Keywords:** product name, package name, 3-5 terms max.
-
-## How Skills Work (Progressive Disclosure)
-
-1. **Discovery**: Agent loads only `name` + `description` of each skill (~50-100 tokens)
-2. **Activation**: When task matches, agent reads full `SKILL.md` into context
-3. **Execution**: Agent follows instructions, loads referenced files as needed
-
-**Key rule:** Keep `SKILL.md` under 500 lines. Move details to `references/`.
-
-## Creating a New Skill
-
-### Step 1: Scaffold
-
-```bash
-python scripts/init_skill.py <skill-name>
-# Or specify custom directory:
-python scripts/init_skill.py <skill-name> --skills-dir skills
-```
-
-Or manually create:
-
-```
-<skills-folder>/<skill-name>/
-├── SKILL.md
-├── references/   # For documentation, guides
-└── assets/       # For templates, static files
-```
-
-### Step 2: Write Frontmatter
-
-```yaml
 ---
-name: <skill-name>
-description: "[Purpose] + [Triggers/Keywords]"
+
+## Error Handling
+
+| Error | Recovery |
+|-------|----------|
+| Search fails (network) | Retry once, then proceed to creation |
+| Skill creation fails | Report to user, ask for guidance |
+| Execution fails | Capture in memory, still do review |
+| Review times out | Skip review, complete workflow |
+
 ---
-```
 
-### Step 3: Write Body
+## References
 
-Recommended sections:
-
-- When to use (triggers, situations)
-- Quick navigation (router to references and assets)
-- Steps / Recipes / Checklists
-- Critical prohibitions
-- Links
-
-### Step 4: Add References (documentation)
-
-For each major topic, create `references/<topic>.md` with:
-
-- Actionable takeaways (5-15 bullets)
-- Gotchas / prohibitions
-- Practical examples
-
-### Step 5: Add Assets (if needed)
-
-For templates or static resources, create `assets/<resource>`:
-
-- Document templates
-- Configuration templates
-- Schema files
-
-### Step 6: Validate
-
-```bash
-python scripts/quick_validate_skill.py <skill-path>
-```
-
-## Creating a Skill from Documentation
-
-When building a skill from external docs, use the autonomous ingestion workflow:
-
-### Phase 1: Scaffold
-
-1. Create skill folder with `SKILL.md` skeleton
-2. Create `plan.md` for progress tracking
-3. Create `references/` directory
-
-### Phase 2: Build Queue
-
-For each doc link:
-
-- Fetch the page
-- Extract internal doc links (avoid nav duplicates)
-- Prioritize: concepts → API → operations → troubleshooting
-
-### Phase 3: Ingest Loop
-
-For each page:
-
-1. Fetch **one** page
-2. Create `references/<topic>.md` with actionable summary
-3. Update `plan.md` checkbox
-4. Update `SKILL.md` if it adds a useful recipe/rule
-
-**Do not ask user after each page** — continue autonomously.
-
-### Phase 4: Finalize
-
-- Review `SKILL.md` for completeness
-- Ensure practical recipes, not docs mirror
-- `plan.md` may be deleted manually after ingestion
-
-## Critical Prohibitions
-
-- Do NOT copy large verbatim chunks from vendor docs (summarize in own words)
-- Do NOT write skills in languages other than English
-- Do NOT include project-specific secrets, paths, or assumptions
-- Do NOT keep `SKILL.md` over 500 lines
-- Do NOT skip `name` validation (must match folder name)
-- Do NOT use poor descriptions that lack trigger keywords
-- Do NOT omit product version when creating skills from documentation
-
-## Version Tracking
-
-When creating or updating a skill from external documentation:
-
-1. Add `version` field in frontmatter for product version:
-
-   ```yaml
-   ---
-   name: my-skill
-   description: "..."
-   version: "1.2.3"
-   ---
-   ```
-
-2. Optionally add `release_date` if known:
-
-   ```yaml
-   ---
-   name: my-skill
-   description: "..."
-   version: "1.2.3"
-   release_date: "2025-01-21"
-   ---
-   ```
-
-3. Create `README.md` with:
-   - Skill overview (1-2 sentences)
-   - Usage section (when to use)
-   - Links section (standardized format)
-
-**README.md Links section format:**
-
-```markdown
-## Links
-
-- [Documentation](https://example.com/docs)
-- [Changelog](https://example.com/changelog)
-- [GitHub](https://github.com/org/repo)
-- [npm](https://www.npmjs.com/package/name)
-```
-
-Include only applicable links. Order: Documentation → Changelog/Releases → GitHub → Package registry.
-
-Example frontmatter:
-
-```yaml
----
-name: turso
-description: "Turso embedded SQLite database..."
-version: "0.4.0"
-release_date: "2025-01-05"
----
-```
-
-This helps track when the skill was last updated and against which product version.
-
-## Validation Checklist
-
-- [ ] `name` matches folder name
-- [ ] `name` is 1-64 chars, lowercase, no `--`
-- [ ] `description` is 1-1024 chars, includes keywords
-- [ ] `SKILL.md` under 500 lines
-- [ ] Documentation in `references/`, templates in `assets/`
-- [ ] All text in English
-
-## Scripts
-
-| Script                    | Purpose                                                 |
-| ------------------------- | ------------------------------------------------------- |
-| `init_skill.py`           | Scaffold new Agent Skill (agentskills.io)               |
-| `init_copilot_asset.py`   | Scaffold Copilot-specific assets (instructions, agents) |
-| `quick_validate_skill.py` | Validate skill structure                                |
-| `package_skill.py`        | Package skill into distributable zip                    |
-
-## Links
-
-- Specification: `references/specification.md`
-- Advanced Features: `references/advanced-features.md`
-- SKILL.md Templates: `assets/skill-templates.md`
-- Docs Ingestion: `references/docs-ingestion.md`
-- Official spec: https://agentskills.io/specification
-- Claude Code skills: https://code.claude.com/docs/en/skills
+- [skill-search.md](references/skill-search.md) - Skill discovery workflow
+- [skill-create.md](references/skill-create.md) - Skill creation workflow
+- [skill-review.md](references/skill-review.md) - Execution review workflow
+- [skill-improve.md](references/skill-improve.md) - Improvement application workflow

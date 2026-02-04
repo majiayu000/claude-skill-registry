@@ -1,117 +1,70 @@
 ---
-name: "building-team-culture"
-description: "Build or refresh a team culture and produce a Team Culture Operating System Pack (culture snapshot, culture code, norms, rituals, rollout + measurement plan). Use for team culture, culture code, team values, team norms, psychological safety, and coaching culture. Category: Hiring & Teams."
+name: building-team-culture
+description: Help users build and maintain strong team culture. Use when someone is defining team values, creating psychological safety, onboarding to a new team, navigating cultural change, or building distributed team norms.
 ---
 
 # Building Team Culture
 
-## Scope
+Help the user build and sustain high-performing team culture using frameworks from 138 product leaders who have shaped cultures at companies from startups to Google and Airbnb.
 
-**Covers**
-- Diagnosing the *current* culture (strengths, gaps, “sacred cows”, and where psychological safety breaks)
-- Articulating culture as an **operating system** (principles → behaviors → decision rules)
-- Defining **team norms** (communication, meetings, decisions, feedback, conflict)
-- Designing a lightweight **rituals/cadence** map that reinforces the culture
-- Planning rollout + reinforcement (coaching model, hiring/onboarding hooks, measurement)
+## How to Help
 
-**When to use**
-- “Create a culture code / values and behaviors for my team.”
-- “Our team norms are unclear—write decision-making + communication norms.”
-- “Psychological safety is low—propose concrete practices and rituals to fix it.”
-- “We’re scaling fast—help us preserve what works and change what doesn’t.”
-- “I’m a new leader—help me listen first and then evolve the culture.”
+When the user asks for help with team culture:
 
-**When NOT to use**
-- You need an HR/legal investigation, harassment response, or policy/compliance guidance (involve HR/legal)
-- You need to design a full org restructure, comp bands, or performance management system
-- You need to run user/customer research (use `conducting-user-interviews`) or design a full survey instrument (use `designing-surveys`)
+1. **Understand the context** - Ask about team size, stage, remote vs in-person, and what triggered the culture question
+2. **Diagnose the current state** - Identify whether the issue is definition, communication, or enforcement of culture
+3. **Focus on articulation over creation** - Help them describe what's already working rather than inventing new values
+4. **Design for decentralized decisions** - Ensure culture can guide behavior when leadership isn't present
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Team context: function, size, seniority mix, reporting line, stage (startup/scale/enterprise)
-- Working model: remote/hybrid/in-office; time zones; any planned org changes
-- Current symptoms with 2–5 examples (e.g., slow decisions, blame, low ownership, stagnation)
-- Desired outcomes: what should be *more true* in 4–12 weeks?
-- Constraints: timeline, leadership support, meeting/time budget, “non-negotiables”
-- Existing artifacts (if any): values, handbook, onboarding, meeting cadences, principles
-- Confidentiality constraints (avoid names/PII; use anonymized examples)
+### Articulate, don't create
+Dharmesh Shah: "Culture actually already exists... what I'm really trying to do is kind of describe the culture that's there. It's not creating culture, it's articulating the culture." Document the attributes of people who make others happy and successful.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If specifics are missing, proceed with a **default** culture OS and clearly label assumptions.
-- Do not request secrets or personally identifying details; ask for redacted summaries instead.
+### Culture is for when the boss isn't around
+Chip Conley: "Culture is what happens around here when the boss is not around. The more distributed a company, the more culture is important." Use culture as a decentralized decision-making guide, especially for remote teams.
 
-## Outputs (deliverables)
+### Replace management with coaching
+Cam Adams: "We don't really have managers, but everyone at Canva has a coach. They're constantly working with you to look at your skills, but also when it might be time to move on to the next level." Coaches focus on skill development and career trajectory, not task oversight.
 
-Produce a **Team Culture Operating System Pack** in Markdown (in-chat; or as files if requested):
+### Earn trust before inflicting change
+Katie Dill: "It can be hard to bring feedback forward like that. So it was an extremely valuable learning experience. I took from that to then immediately shift how I was operating." Prioritize listening over "coming in swinging" when joining a new team.
 
-1) **Culture snapshot** (what’s true today; strengths/gaps; root causes; “sacred cows”)
-2) **Culture code (v1)** (3–7 principles, each with behaviors, “do/don’t”, decision rules, anti-patterns)
-3) **Team norms** (communication, meetings, decisions, feedback, conflict)
-4) **Rituals & cadence map** (weekly/monthly/quarterly rituals with purpose + owner)
-5) **Rollout + reinforcement plan** (socialization, coaching model, hiring/onboarding hooks)
-6) **Measurement plan** (leading indicators + pulse questions)
-7) **Risks / Open questions / Next steps** (always)
+### Challenge sacred cows to cure stagnation
+Kayvon Beykpour: "We wanted to change the lack of ambition, the lack of creativity, the lack of customers feeling that the product had changed at all." Identify and challenge cultural artifacts that prevent product evolution.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Use culture as a talent magnet
+Chip Conley: Culture attracts the right people and repels the wrong ones. Prioritize in-person gatherings for remote teams to reinforce cultural cues that can't be transmitted digitally.
 
-## Workflow (7 steps)
+### Make culture a living document
+Dharmesh Shah: Create a "Culture Code" that acts as an operating system for the company. Update it as you learn what actually works versus what sounds good.
 
-### 1) Intake + constraints + safety
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm goals, constraints, and what *must not* change. Identify whether the request includes HR/legal risk; if yes, pause and recommend HR/legal involvement. Clarify what artifacts the user wants (culture code only vs full pack).
-- **Outputs:** Context snapshot + assumptions/unknowns list.
-- **Checks:** Decision owner and timeline are explicit; sensitive topics are routed appropriately.
+### Psychological safety enables feedback
+Katie Dill: Building trust through active listening and empathy is the foundation for organizational change. Teams won't give honest feedback if they don't feel safe.
 
-### 2) “Listen first”: build a culture snapshot (don’t invent culture yet)
-- **Inputs:** current symptoms; existing artifacts; any examples the user can share.
-- **Actions:** Summarize what the culture rewards/punishes today. Propose a lightweight “listening tour” plan (questions + who to talk to) if the user hasn’t collected input yet.
-- **Outputs:** Draft culture snapshot (strengths, gaps, root causes, tensions, sacred cows).
-- **Checks:** Snapshot is evidence-based (examples), not generic; it distinguishes *stated* vs *lived* culture.
+## Questions to Help Users
 
-### 3) Diagnose the few moves that matter
-- **Inputs:** culture snapshot.
-- **Actions:** Pick 2–4 priority culture shifts. Identify where “stagnation” exists (lack of visible progress/ambition) and what to change to increase creativity and customer impact. List sacred cows to challenge (and why).
-- **Outputs:** Prioritized culture focus areas + success signals.
-- **Checks:** Each focus area has a leading indicator (observable behaviors within weeks).
+- "What behaviors do you see in your highest performers that you wish everyone exhibited?"
+- "When has someone made a decision you disagreed with but couldn't fault their reasoning?"
+- "What happens when someone fails publicly on your team?"
+- "How do new hires learn 'how things work around here'?"
+- "What decision would be made differently if you weren't in the room?"
 
-### 4) Articulate culture as an operating system (culture code v1)
-- **Inputs:** focus areas; existing values; constraints.
-- **Actions:** Write 3–7 principles. For each: definition, behaviors, do/don’t, decision rules, and anti-patterns. Prefer **articulating what already works** and making gaps explicit.
-- **Outputs:** Culture code (v1) using [references/TEMPLATES.md](references/TEMPLATES.md).
-- **Checks:** Every principle has behavior-level examples; “culture fit” language is replaced with observable standards.
+## Common Mistakes to Flag
 
-### 5) Turn principles into norms + rituals (make it real)
-- **Inputs:** culture code (v1); team operating reality.
-- **Actions:** Define explicit norms (communication, meetings, decisions, feedback, conflict). Design rituals that reinforce principles (e.g., weekly customer-impact demo, blameless retro, coaching 1:1s). Assign owners and cadences.
-- **Outputs:** Team norms + rituals/cadence map.
-- **Checks:** Rituals have a purpose and an owner; norms reduce ambiguity in common failure modes.
+- **Inventing aspirational values** - Culture documents should describe what already works, not what you wish were true
+- **Values without behaviors** - "We value innovation" is meaningless without specific examples of what that looks like in practice
+- **Over-engineering for small teams** - Startups need shared understanding, not formal culture playbooks
+- **Ignoring the distributed challenge** - Remote teams need explicit cultural transmission that co-located teams get implicitly
+- **Leadership-culture mismatch** - Functional orgs require active leadership tiebreaking; if the CEO is hands-off, culture can't fill the gap
 
-### 6) Reinforcement plan (coaching > policing)
-- **Inputs:** culture code + norms + rituals.
-- **Actions:** Design how the culture will be taught and reinforced: onboarding, hiring signals, promotion expectations, and a lightweight coaching model (peer or craft coaches, not just managers).
-- **Outputs:** Rollout + reinforcement plan (with a 30/60/90-day view).
-- **Checks:** Reinforcement mechanisms exist beyond “announce the doc”; responsibilities are assigned.
+## Deep Dive
 
-### 7) Quality gate + finalize
-- **Inputs:** full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**. Recommend the smallest next experiment (1–2 rituals or norms) to validate impact.
-- **Outputs:** Final Team Culture Operating System Pack.
-- **Checks:** Pack is actionable and internally consistent; tradeoffs and risks are explicit.
+For all 212 insights from 138 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (new leader, listen-first):** “I’m a new Head of Product joining a remote team of 14. Culture feels low-trust and decisions are slow. Create a culture snapshot, a culture code, and explicit decision-making + meeting norms. Include a 30/60/90 rollout and measurement plan.”  
-Expected: full pack with clear norms and rituals; no generic values.
-
-**Example 2 (scaling + coaching culture):** “We’re growing from 8 → 25. I want to preserve high ownership while adding more coordination. Draft a culture code and a coaching model, plus rituals that keep ambition and creativity high.”  
-Expected: principles + behaviors, coaching model, rituals/cadence map.
-
-**Boundary example:** “We have a harassment complaint and need to ‘fix our culture’ immediately.”  
-Response: direct to HR/legal for investigation and safety; offer to help later with culture articulation, norms, and reinforcement once appropriate.
+- Writing Job Descriptions
+- Conducting Interviews
+- Evaluating Candidates
+- Onboarding New Hires

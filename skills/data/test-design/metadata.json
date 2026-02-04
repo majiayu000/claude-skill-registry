@@ -1,7 +1,7 @@
 {
   "name": "test-design",
-  "repo": "adolfoaranaes12/BMAD-ENHANCED",
-  "path": ".claude/skills/test-design/SKILL.md",
-  "source": "github.com/adolfoaranaes12/BMAD-ENHANCED",
-  "downloaded_at": "2026-02-01T03:53:17.799469Z"
+  "repo": "PabloLION/bmad-plugin",
+  "path": "plugins/bmad/skills/test-design/SKILL.md",
+  "source": "github.com/PabloLION/bmad-plugin",
+  "downloaded_at": "2026-02-04T03:30:58.056519Z"
 }

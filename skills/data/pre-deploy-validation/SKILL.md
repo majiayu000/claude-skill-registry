@@ -65,38 +65,38 @@ Build base image first, then module images:
 ```bash
 # From repository root
 
-# Build py312 base image
-docker build -f apps/docker_base_image/Dockerfile.py312 \
-  -t mabesa/sapphire-pythonbaseimage:py312 .
+# Build base image
+docker build -f apps/docker_base_image/Dockerfile \
+  -t mabesa/sapphire-pythonbaseimage:latest .
 
 # Build specific module (replace <module>)
-docker build -f apps/<module>/Dockerfile.py312 \
-  -t mabesa/sapphire-<shortname>:py312-test .
+docker build -f apps/<module>/Dockerfile \
+  -t mabesa/sapphire-<shortname>:test .
 ```
 
 **Common module builds**:
 ```bash
 # Preprocessing runoff
-docker build -f apps/preprocessing_runoff/Dockerfile.py312 \
-  -t mabesa/sapphire-preprunoff:py312-test .
+docker build -f apps/preprocessing_runoff/Dockerfile \
+  -t mabesa/sapphire-preprunoff:test .
 
 # Linear regression
-docker build -f apps/linear_regression/Dockerfile.py312 \
-  -t mabesa/sapphire-linreg:py312-test .
+docker build -f apps/linear_regression/Dockerfile \
+  -t mabesa/sapphire-linreg:test .
 
 # Pipeline
-docker build -f apps/pipeline/Dockerfile.py312 \
-  -t mabesa/sapphire-pipeline:py312-test .
+docker build -f apps/pipeline/Dockerfile \
+  -t mabesa/sapphire-pipeline:test .
 ```
 
 ### 1.3 Verify Docker Images Work
 
 ```bash
 # Check Python version
-docker run --rm mabesa/sapphire-<shortname>:py312-test python --version
+docker run --rm mabesa/sapphire-<shortname>:test python --version
 
 # Verify imports
-docker run --rm mabesa/sapphire-<shortname>:py312-test \
+docker run --rm mabesa/sapphire-<shortname>:test \
   python -c "import pandas; import numpy; print('OK')"
 ```
 
@@ -154,7 +154,7 @@ git push origin <branch-name>
 
 ### 3.2 Documentation
 
-- [ ] `doc/plans/uv_migration_plan.md` updated if migration-related
+- [ ] `doc/plans/phase7_package_upgrades.md` updated if package-upgrade-related
 - [ ] `doc/plans/module_issues.md` updated if fixing known issues
 - [ ] README updated if user-facing changes
 

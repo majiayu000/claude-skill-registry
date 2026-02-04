@@ -1,48 +1,20 @@
 ---
 name: media-press-outreach
-description: |
-  Podcast producers, journalists, or media outlets reach out for interviews or features.
-sample_size: 39
-validation:
-  required_phrases:
-    - "you ll have to"
-  forbidden_patterns: []
-metrics:
-  sample_size: 39
-  avg_thread_length: 2.97
-  top_phrases:
-    - phrase: "you ll have to"
-      count: 18
-      percent: 46.2
-    - phrase: "we support any questions"
-      count: 15
-      percent: 38.5
-    - phrase: "support any questions related"
-      count: 15
-      percent: 38.5
-    - phrase: "any questions related to"
-      count: 15
-      percent: 38.5
-    - phrase: "for this kind of"
-      count: 12
-      percent: 30.8
-    - phrase: "this kind of collaboration"
-      count: 12
-      percent: 30.8
-    - phrase: "ll have to reach"
-      count: 11
-      percent: 28.2
-    - phrase: "have to reach out"
-      count: 11
-      percent: 28.2
-    - phrase: "questions related to the"
-      count: 8
-      percent: 20.5
-    - phrase: "related to the course"
-      count: 8
-      percent: 20.5
+description: Handle media and press outreach. Use when journalists or podcast producers request interviews, features, or press information.
+metadata:
+  trigger_phrases:
+      - "handle media"
+      - "media press"
+      - "press outreach"
+  related_skills: ["partnership-collaboration-inquiry", "event-sponsorship-request", "api-documentation-question"]
+  sample_size: "39"
+  validation: |
+    required_phrases:
+      - "you ll have to"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 39\navg_thread_length: 2.97\ntop_phrases:\n  - phrase: \"you ll have to\"\n    count: 18\n    percent: 46.2\n  - phrase: \"we support any questions\"\n    count: 15\n    percent: 38.5\n  - phrase: \"support any questions related\"\n    count: 15\n    percent: 38.5\n  - phrase: \"any questions related to\"\n    count: 15\n    percent: 38.5\n  - phrase: \"for this kind of\"\n    count: 12\n    percent: 30.8\n  - phrase: \"this kind of collaboration\"\n    count: 12\n    percent: 30.8\n  - phrase: \"ll have to reach\"\n    count: 11\n    percent: 28.2\n  - phrase: \"have to reach out\"\n    count: 11\n    percent: 28.2\n  - phrase: \"questions related to the\"\n    count: 8\n    percent: 20.5\n  - phrase: \"related to the course\"\n    count: 8\n    percent: 20.5"
 ---
-
 # Media and Press Outreach
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

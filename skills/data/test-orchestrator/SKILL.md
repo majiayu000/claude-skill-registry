@@ -1,226 +1,149 @@
 ---
 name: test-orchestrator
-description: |
-  Unified orchestration layer that coordinates all test skills into cohesive validation pipelines.
-  Provides a single entry point for comprehensive project validation with intelligent skill selection,
-  quality gates, and consolidated reporting. Supports quick PR checks through full release validation.
-license: MIT
-allowed-tools:
-  - Bash
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - WebFetch
-  - Task
-compatibility:
-  claude-code: ">=1.0.0"
-metadata:
-  version: "1.0.0"
-  author: "QuantQuiver AI R&D"
-  category: "testing"
-  tags:
-    - orchestration
-    - validation-pipeline
-    - ci-cd
-    - quality-gates
+description: Test ClaudeKit workflows by scanning commands/agents/skills, generating test scenarios, and executing step-by-step with manual verification.
 ---
 
 # Test Orchestrator
 
-## Purpose
-
-Unified orchestration layer that coordinates all test skills into cohesive validation pipelines. Provides a single entry point for comprehensive project validation with intelligent skill selection, quality gates, and consolidated reporting.
-
-## Triggers
-
-Use this skill when:
-- "run full test suite"
-- "validate this project"
-- "comprehensive testing"
-- "pre-deployment validation"
-- "test everything"
-- "quality gate check"
-- "CI/CD validation pipeline"
+Automated testing framework for ClaudeKit Marketing workflows.
 
 ## When to Use
 
-- New project setup requiring test infrastructure
-- Pre-release validation checkpoints
-- Continuous integration pipeline design
-- Quality assurance automation
-- Multi-dimensional validation needs
+- Testing new commands after implementation
+- Validating agent orchestration flows
+- Verifying skill integrations work correctly
+- Regression testing after changes
+- End-to-end workflow validation
 
-## When NOT to Use
+## Workflow
 
-- Running individual test types (use specific skill)
-- Simple single-skill validation
-- Quick exploratory testing
+### 1. Scan Components
 
----
+```bash
+# Generate fresh catalogs
+python .claude/scripts/generate_catalogs.py --all
 
-## Core Instructions
+# Or scan specific type
+python .claude/skills/test-orchestrator/scripts/scan-components.py
+```
 
-### Skill Coordination Matrix
+### 2. Select Test Scope
 
-| Skill | When Triggered | Output |
-|-------|---------------|--------|
-| `unit-test-generator` | Code files present | Generated tests, coverage |
-| `api-contract-validator` | OpenAPI spec found | Contract report |
-| `security-test-suite` | Always (security critical) | Security report |
-| `performance-benchmark` | Endpoints defined | Performance report |
-| `data-validation` | Data files/schemas present | Quality report |
-| `test-health-monitor` | Existing tests found | Health report |
+| Scope | Description |
+|-------|-------------|
+| `command` | Test single command with happy case |
+| `workflow` | Test multi-step workflow |
+| `integration` | Test skill + agent + command together |
+| `full` | Complete end-to-end test suite |
 
-### Predefined Pipelines
+### 3. Execute Tests
 
-| Pipeline | Duration | Use Case |
-|----------|----------|----------|
-| `quick_validation` | < 5 min | PR checks |
-| `standard_validation` | < 15 min | CI/CD |
-| `comprehensive_validation` | < 60 min | Releases |
-| `pre_production` | < 120 min | Production readiness |
+Each test step pauses for manual verification:
 
-### Pipeline Configurations
+```
+[STEP 1/5] Executing: /youtube:social "https://youtube.com/..."
+─────────────────────────────────────────────────
+[OUTPUT]
+...generated content...
+─────────────────────────────────────────────────
+[VERIFY] Check output matches expected format
+[PASS/FAIL?] > _
+```
+
+## Test Case Format
 
 ```yaml
-quick_validation:
-  skills:
-    - unit-test-generator: { mode: "check-existing" }
-    - security-test-suite: { scan_types: ["sast", "secrets"] }
-  parallel: true
+name: youtube-to-social-flow
+description: Convert YouTube video to multi-platform social posts
+type: integration
 
-comprehensive_validation:
-  skills:
-    - unit-test-generator: { coverage_target: 85 }
-    - api-contract-validator: { breaking_changes: true }
-    - security-test-suite: { scan_types: "all" }
-    - performance-benchmark: { scenarios: ["baseline", "load", "stress"] }
-    - data-validation: { all_dimensions: true }
-    - test-health-monitor: { flaky_detection: true }
-  gates:
-    - security_critical: 0
-    - coverage: ">= 80"
-    - performance_p99: "< 500ms"
+steps:
+  - name: Extract video data
+    action: vidcap summary
+    input: "https://youtube.com/watch?v=dQw4w9WgXcQ"
+    verify:
+      - Response contains video title
+      - Response contains summary content
+
+  - name: Generate social posts
+    action: /youtube:social
+    input: "{video_url}"
+    verify:
+      - Twitter post under 280 chars
+      - LinkedIn post has professional tone
+      - No anti-pattern hooks used
+
+  - name: Apply writing style
+    action: copywriting skill
+    input: Apply casual style to Twitter post
+    verify:
+      - Contains contractions
+      - Uses first-person
 ```
 
-### Quality Gates
+## Pre-Built Test Scenarios
 
-| Gate | Target | Blocking |
-|------|--------|----------|
-| Security Critical | 0 | Yes |
-| Security High | 0 | Yes |
-| Coverage | >= 80% | No |
-| p99 Latency | < 500ms | Yes |
-| Error Rate | < 0.1% | Yes |
-| Data Quality | >= 80 | No |
+### 1. YouTube Pipeline
 
----
+| Step | Command/Skill | Input | Verify |
+|------|---------------|-------|--------|
+| 1 | `vidcap.py info` | YouTube URL | Returns title, views, duration |
+| 2 | `vidcap.py summary` | YouTube URL | Returns structured summary |
+| 3 | `/youtube:social` | YouTube URL | Multi-platform posts generated |
+| 4 | `/youtube:blog` | YouTube URL | SEO article generated |
+| 5 | `/youtube:infographic` | YouTube URL | Visual layout generated |
 
-## Templates
+### 2. Content Creation
 
-### Unified Validation Report
+| Step | Command/Skill | Input | Verify |
+|------|---------------|-------|--------|
+| 1 | `/content:blog` | Topic | Article with frontmatter |
+| 2 | `/content:cro` | Article | CRO-optimized version |
+| 3 | `/social` | Article summary | Platform posts |
 
-```markdown
-# Project Validation Report
+### 3. Email Automation
 
-**Project:** {project_name}
-**Pipeline:** {pipeline_name}
-**Generated:** {timestamp}
-**Duration:** {duration} seconds
+| Step | Command/Skill | Input | Verify |
+|------|---------------|-------|--------|
+| 1 | `/email:flow` | welcome | 5-email sequence |
+| 2 | email-marketing skill | Sequence | Timing + decision branches |
+| 3 | copywriting skill | Email body | PAS/AIDA formula applied |
 
-## Executive Summary
+### 4. Brand Consistency
 
-### Overall Status: {status}
+| Step | Command/Skill | Input | Verify |
+|------|---------------|-------|--------|
+| 1 | `inject-brand-context.cjs` | - | Returns brand JSON |
+| 2 | `/brand:update` | preset | Tokens synced |
+| 3 | Content generation | Any | Brand voice applied |
 
-| Gate | Target | Actual | Status |
-|------|--------|--------|--------|
-| Security Critical | 0 | {actual} | {status_icon} |
-| Security High | 0 | {actual} | {status_icon} |
-| Coverage | >= 80% | {actual}% | {status_icon} |
-| p99 Latency | < 500ms | {actual}ms | {status_icon} |
+## Happy Case Prompts
 
-### Risk Assessment
+Pre-validated inputs that should always succeed:
 
-**Deployment Risk:** {risk_level}
-
-**Blocking Issues:**
-- {blocking_issue}
-
-## Skill Results Summary
-
-| Skill | Status | Score | Issues | Duration |
-|-------|--------|-------|--------|----------|
-| Unit Tests | {status} | {score} | {issues} | {duration} |
-| Security | {status} | {score} | {issues} | {duration} |
-| Performance | {status} | {score} | {issues} | {duration} |
-
-## Recommended Actions
-
-### Immediate (Block Deployment)
-1. {action}
-
-### Before Next Release
-2. {action}
+```yaml
+youtube_url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+blog_topic: "10 productivity tips for remote workers"
+email_flow: "welcome"
+brand_preset: "ocean-professional"
+social_platform: "twitter"
+writing_style: "casual"
 ```
 
----
+## Manual Verification Checklist
 
-## Example
+At each step, verify:
 
-**Input**: Pre-release validation
+- [ ] Output format matches expected structure
+- [ ] No error messages in response
+- [ ] Content quality acceptable
+- [ ] Anti-patterns avoided (for hooks)
+- [ ] Brand voice consistent (if applicable)
+- [ ] File saved to correct path (if applicable)
 
-**Output**:
-```markdown
-## Executive Summary
+## Integration
 
-### Overall Status: CONDITIONAL PASS
-
-| Gate | Target | Actual | Status |
-|------|--------|--------|--------|
-| Security Critical | 0 | 0 | Pass |
-| Security High | 0 | 2 | Fail |
-| Coverage | >= 80% | 82.3% | Pass |
-| p99 Latency | < 500ms | 234ms | Pass |
-
-### Risk Assessment
-
-**Deployment Risk:** MEDIUM
-
-**Blocking Issues:**
-- 2 HIGH severity security vulnerabilities require remediation
-- Estimated fix time: 4-8 hours
-
-## Skill Results Summary
-
-| Skill | Status | Score | Issues |
-|-------|--------|-------|--------|
-| Unit Tests | Pass | 82.3% | 3 flaky |
-| API Contract | Pass | 100% | 0 |
-| Security | Fail | 2 HIGH | 8 total |
-| Performance | Pass | 234ms p99 | 0 |
-```
-
----
-
-## Validation Checklist
-
-- [ ] All enabled skills executed successfully
-- [ ] Quality gates evaluated against targets
-- [ ] Blocking issues clearly identified
-- [ ] Risk assessment reflects findings
-- [ ] Recommendations are prioritized
-- [ ] Individual skill reports generated
-- [ ] Unified report is comprehensive
-
----
-
-## Related Skills
-
-- `unit-test-generator` - Generate unit tests
-- `api-contract-validator` - Validate API contracts
-- `security-test-suite` - Security scanning
-- `performance-benchmark` - Performance testing
-- `data-validation` - Data quality validation
-- `test-health-monitor` - Test suite health
+Use with:
+- `/test` command to launch test runner
+- `debugging` skill for failure analysis
+- `code-review` skill for output validation

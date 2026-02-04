@@ -19,7 +19,7 @@ Strategic toolkit for Head of Product to drive vision, alignment, and organizati
 ### okr_cascade_generator.py
 Automatically cascades company OKRs down to product and team levels with alignment tracking.
 
-**Usage**: `python3 ~/.{TOOL}/skills/product-strategist/scripts/okr_cascade_generator.py [strategy]`
+**Usage**: `python scripts/okr_cascade_generator.py [strategy]`
 - Strategies: growth, retention, revenue, innovation, operational
 - Generates company → product → team OKR cascade
 - Calculates alignment scores

@@ -1,199 +1,343 @@
 ---
 name: api-authentication
-description: Apply when implementing API authentication: JWT tokens, session management, API keys, and auth middleware. Follows JWT Best Current Practices (RFC 8725).
-version: 1.1.0
-tokens: ~750
-confidence: high
-sources:
-  - https://datatracker.ietf.org/doc/html/rfc7519
-  - https://datatracker.ietf.org/doc/html/rfc8725
-  - https://oauth.net/2/
-last_validated: 2025-12-10
-next_review: 2025-12-24
-tags: [api, authentication, jwt, security]
+description: Implement secure API authentication with JWT, OAuth 2.0, API keys, and session management. Use when securing APIs, managing tokens, or implementing user authentication flows.
 ---
+
+# API Authentication
+
+## Overview
+
+Implement comprehensive authentication strategies for APIs including JWT tokens, OAuth 2.0, API keys, and session management with proper security practices.
 
 ## When to Use
 
-Apply when implementing API authentication: JWT tokens, session management, API keys, and auth middleware. Follows JWT Best Current Practices (RFC 8725).
+- Securing API endpoints
+- Implementing user login/logout flows
+- Managing access tokens and refresh tokens
+- Integrating OAuth 2.0 providers
+- Protecting sensitive data
+- Implementing API key authentication
 
-## Patterns
+## Instructions
 
-### Pattern 1: JWT Authentication
-```typescript
-// Source: RFC 7519, RFC 8725 (JWT Best Practices)
-import jwt from 'jsonwebtoken';
+### 1. **JWT Authentication**
 
-interface TokenPayload {
-  userId: string;
-  email: string;
-  role: string;
-}
+```javascript
+// Node.js JWT Implementation
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
-function generateToken(payload: TokenPayload): string {
-  return jwt.sign(payload, process.env.JWT_SECRET!, {
-    expiresIn: '1h',      // RFC 8725: Always set expiration
-    issuer: 'myapp',
-    algorithm: 'HS256',   // RFC 8725: Explicitly specify algorithm
-  });
-}
+const app = express();
+const SECRET_KEY = process.env.JWT_SECRET || 'your-secret-key';
+const REFRESH_SECRET = process.env.REFRESH_SECRET || 'your-refresh-secret';
 
-function verifyToken(token: string): TokenPayload {
-  return jwt.verify(token, process.env.JWT_SECRET!, {
-    algorithms: ['HS256'], // RFC 8725: Prevent algorithm confusion
-  }) as TokenPayload;
-}
-```
+// User login endpoint
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-### Pattern 2: Auth Middleware
-```typescript
-// Source: Best practice pattern
-async function authMiddleware(
-  req: NextRequest
-): Promise<TokenPayload | null> {
-  const authHeader = req.headers.get('authorization');
+    // Find user in database
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
 
-  if (!authHeader?.startsWith('Bearer ')) {
-    return null;
+    // Verify password
+    const isValid = await bcrypt.compare(password, user.password);
+    if (!isValid) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // Generate tokens
+    const accessToken = jwt.sign(
+      { userId: user.id, email: user.email, role: user.role },
+      SECRET_KEY,
+      { expiresIn: '15m' }
+    );
+
+    const refreshToken = jwt.sign(
+      { userId: user.id },
+      REFRESH_SECRET,
+      { expiresIn: '7d' }
+    );
+
+    // Store refresh token in database
+    await RefreshToken.create({ token: refreshToken, userId: user.id });
+
+    res.json({
+      accessToken,
+      refreshToken,
+      expiresIn: 900,
+      user: { id: user.id, email: user.email, role: user.role }
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Authentication failed' });
   }
+});
 
-  const token = authHeader.slice(7);
+// Refresh token endpoint
+app.post('/api/auth/refresh', (req, res) => {
+  const { refreshToken } = req.body;
+
+  if (!refreshToken) {
+    return res.status(401).json({ error: 'Refresh token required' });
+  }
 
   try {
-    return verifyToken(token);
-  } catch {
-    return null;
-  }
-}
+    const decoded = jwt.verify(refreshToken, REFRESH_SECRET);
 
-// In route handler
-export async function GET(req: NextRequest) {
-  const user = await authMiddleware(req);
+    // Verify token exists in database
+    const storedToken = await RefreshToken.findOne({
+      token: refreshToken,
+      userId: decoded.userId
+    });
 
-  if (!user) {
-    return NextResponse.json(
-      { error: { code: 'UNAUTHORIZED', message: 'Invalid token' } },
-      { status: 401 }
+    if (!storedToken) {
+      return res.status(401).json({ error: 'Invalid refresh token' });
+    }
+
+    // Generate new access token
+    const newAccessToken = jwt.sign(
+      { userId: decoded.userId },
+      SECRET_KEY,
+      { expiresIn: '15m' }
     );
+
+    res.json({ accessToken: newAccessToken, expiresIn: 900 });
+  } catch (error) {
+    res.status(401).json({ error: 'Invalid refresh token' });
+  }
+});
+
+// Middleware to verify JWT
+const verifyToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1]; // Bearer token
+
+  if (!token) {
+    return res.status(401).json({ error: 'Access token required' });
   }
 
-  // user.userId, user.role available
-}
+  try {
+    const decoded = jwt.verify(token, SECRET_KEY);
+    req.user = decoded;
+    next();
+  } catch (error) {
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({ error: 'Token expired', code: 'TOKEN_EXPIRED' });
+    }
+    res.status(403).json({ error: 'Invalid token' });
+  }
+};
+
+// Protected endpoint
+app.get('/api/profile', verifyToken, (req, res) => {
+  res.json({ user: req.user });
+});
+
+// Logout endpoint
+app.post('/api/auth/logout', verifyToken, async (req, res) => {
+  try {
+    await RefreshToken.deleteOne({ userId: req.user.userId });
+    res.json({ message: 'Logged out successfully' });
+  } catch (error) {
+    res.status(500).json({ error: 'Logout failed' });
+  }
+});
 ```
 
-### Pattern 3: API Key Authentication
-```typescript
-// Source: Best practice pattern
-async function apiKeyMiddleware(req: NextRequest): Promise<ApiClient | null> {
-  const apiKey = req.headers.get('x-api-key');
+### 2. **OAuth 2.0 Implementation**
+
+```javascript
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(new GoogleStrategy(
+  {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: '/api/auth/google/callback'
+  },
+  async (accessToken, refreshToken, profile, done) => {
+    try {
+      let user = await User.findOne({ googleId: profile.id });
+
+      if (!user) {
+        user = await User.create({
+          googleId: profile.id,
+          email: profile.emails[0].value,
+          firstName: profile.name.givenName,
+          lastName: profile.name.familyName
+        });
+      }
+
+      return done(null, user);
+    } catch (error) {
+      return done(error);
+    }
+  }
+));
+
+// OAuth routes
+app.get('/api/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+app.get('/api/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  (req, res) => {
+    const token = jwt.sign(
+      { userId: req.user.id, email: req.user.email },
+      SECRET_KEY,
+      { expiresIn: '7d' }
+    );
+    res.redirect(`/dashboard?token=${token}`);
+  }
+);
+```
+
+### 3. **API Key Authentication**
+
+```javascript
+// API Key middleware
+const verifyApiKey = (req, res, next) => {
+  const apiKey = req.headers['x-api-key'];
 
   if (!apiKey) {
-    return null;
+    return res.status(401).json({ error: 'API key required' });
   }
 
-  // Hash the key before lookup (keys stored hashed)
-  const hashedKey = await hashApiKey(apiKey);
-  const client = await db.apiClients.findUnique({
-    where: { keyHash: hashedKey },
-  });
+  try {
+    // Verify API key format and existence
+    const keyHash = crypto.createHash('sha256').update(apiKey).digest('hex');
+    const apiKeyRecord = await ApiKey.findOne({ key_hash: keyHash, active: true });
 
-  if (!client || client.revokedAt) {
-    return null;
-  }
-
-  // Update last used
-  await db.apiClients.update({
-    where: { id: client.id },
-    data: { lastUsedAt: new Date() },
-  });
-
-  return client;
-}
-```
-
-### Pattern 4: Refresh Token Flow
-```typescript
-// Source: https://oauth.net/2/refresh-tokens/
-async function refreshTokens(refreshToken: string) {
-  // Verify refresh token
-  const payload = verifyRefreshToken(refreshToken);
-
-  // Check if token is revoked
-  const stored = await db.refreshTokens.findUnique({
-    where: { token: refreshToken },
-  });
-
-  if (!stored || stored.revokedAt) {
-    throw new UnauthorizedError('Token revoked');
-  }
-
-  // Rotate refresh token (invalidate old)
-  await db.refreshTokens.update({
-    where: { token: refreshToken },
-    data: { revokedAt: new Date() },
-  });
-
-  // Generate new tokens
-  const newAccessToken = generateToken({ userId: payload.userId });
-  const newRefreshToken = generateRefreshToken({ userId: payload.userId });
-
-  await db.refreshTokens.create({
-    data: { token: newRefreshToken, userId: payload.userId },
-  });
-
-  return { accessToken: newAccessToken, refreshToken: newRefreshToken };
-}
-```
-
-### Pattern 5: Role-Based Access Control
-```typescript
-// Source: Best practice pattern
-function requireRole(...roles: string[]) {
-  return async (req: NextRequest) => {
-    const user = await authMiddleware(req);
-
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    if (!apiKeyRecord) {
+      return res.status(401).json({ error: 'Invalid API key' });
     }
 
-    if (!roles.includes(user.role)) {
-      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
-    }
+    req.apiKey = apiKeyRecord;
+    next();
+  } catch (error) {
+    res.status(500).json({ error: 'Authentication failed' });
+  }
+};
 
-    return null; // Authorized
-  };
-}
+// Generate API key endpoint
+app.post('/api/apikeys/generate', verifyToken, async (req, res) => {
+  try {
+    const apiKey = crypto.randomBytes(32).toString('hex');
+    const keyHash = crypto.createHash('sha256').update(apiKey).digest('hex');
 
-// Usage
-export async function DELETE(req: NextRequest) {
-  const error = await requireRole('admin')(req);
-  if (error) return error;
+    const record = await ApiKey.create({
+      userId: req.user.userId,
+      key_hash: keyHash,
+      name: req.body.name,
+      active: true
+    });
 
-  // Admin-only logic
-}
+    res.json({ apiKey, message: 'Save this key securely' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to generate API key' });
+  }
+});
+
+// Protected endpoint with API key
+app.get('/api/data', verifyApiKey, (req, res) => {
+  res.json({ data: 'sensitive data for API key holder' });
+});
 ```
 
-## Security Best Practices (RFC 8725)
+### 4. **Python Authentication Implementation**
 
-- **Always set token expiration** - Short-lived access tokens (15m-1h)
-- **Explicitly specify algorithm** - Prevent algorithm confusion attacks
-- **Validate algorithm on verify** - Pass `algorithms` array to `jwt.verify()`
-- **Use strong secrets** - Minimum 256 bits for HS256
-- **Rotate refresh tokens** - Invalidate old token when issuing new one
+```python
+from flask import Flask, request, jsonify
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
+from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
 
-## Anti-Patterns
+app = Flask(__name__)
+app.config['JWT_SECRET_KEY'] = 'secret-key'
+jwt = JWTManager(app)
 
-- **JWT in localStorage** - Use httpOnly cookies for web
-- **No token expiration** - Always set expiry
-- **Storing plain API keys** - Hash before storing
-- **No refresh token rotation** - Rotate on use
-- **Missing algorithm validation** - Specify allowed algorithms
+@app.route('/api/auth/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    user = User.query.filter_by(email=data['email']).first()
 
-## Verification Checklist
+    if not user or not check_password_hash(user.password, data['password']):
+        return jsonify({'error': 'Invalid credentials'}), 401
 
-- [ ] Tokens have expiration
-- [ ] Algorithm explicitly specified
-- [ ] Refresh tokens are rotated
-- [ ] API keys stored hashed
-- [ ] Auth errors don't leak info
-- [ ] RBAC for sensitive endpoints
+    access_token = create_access_token(
+        identity=user.id,
+        additional_claims={'email': user.email, 'role': user.role}
+    )
+
+    return jsonify({
+        'accessToken': access_token,
+        'user': {'id': user.id, 'email': user.email}
+    }), 200
+
+@app.route('/api/protected', methods=['GET'])
+@jwt_required()
+def protected():
+    from flask_jwt_extended import get_jwt_identity
+    user_id = get_jwt_identity()
+    return jsonify({'userId': user_id}), 200
+
+def require_role(role):
+    def decorator(fn):
+        @wraps(fn)
+        @jwt_required()
+        def wrapper(*args, **kwargs):
+            from flask_jwt_extended import get_jwt
+            claims = get_jwt()
+            if claims.get('role') != role:
+                return jsonify({'error': 'Forbidden'}), 403
+            return fn(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@app.route('/api/admin', methods=['GET'])
+@require_role('admin')
+def admin_endpoint():
+    return jsonify({'message': 'Admin data'}), 200
+```
+
+## Best Practices
+
+### ✅ DO
+- Use HTTPS for all authentication
+- Store tokens securely (HttpOnly cookies)
+- Implement token refresh mechanism
+- Set appropriate token expiration times
+- Hash and salt passwords
+- Use strong secret keys
+- Validate tokens on every request
+- Implement rate limiting on auth endpoints
+- Log authentication attempts
+- Rotate secrets regularly
+
+### ❌ DON'T
+- Store passwords in plain text
+- Send tokens in URL parameters
+- Use weak secret keys
+- Store sensitive data in JWT payload
+- Ignore token expiration
+- Disable HTTPS in production
+- Log sensitive tokens
+- Reuse API keys across services
+- Store credentials in code
+
+## Security Headers
+
+```javascript
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  next();
+});
+```

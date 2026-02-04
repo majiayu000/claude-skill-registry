@@ -1,13 +1,11 @@
 ---
 name: codespaces
-description: Create, manage, and optimize GitHub Codespaces cloud development environments. Configure devcontainers, manage resources, and streamline cloud-based development. Triggers on codespace, devcontainer, cloud IDE, remote development, development environment, container development.
+description: Create, manage, and optimize GitHub Codespaces cloud development environments. Configure devcontainers, manage resources, and streamline cloud-based development. Use when setting up cloud development environments, configuring devcontainers, or managing Codespaces. Triggers on codespace, devcontainer, cloud IDE, remote development, development environment, container development.
 ---
 
-# GitHub Codespaces Skill
+# GitHub Codespaces
 
-> **Cloud development environments that work anywhere**
-
-GitHub Codespaces provides instant, configurable development environments in the cloud. This skill covers creating, managing, and optimizing Codespaces for any project type.
+Cloud development environments that work anywhere.
 
 ## Prerequisites
 
@@ -41,17 +39,17 @@ GitHub Codespaces provides instant, configurable development environments in the
 
 ## DevContainer Configuration
 
-### Location Options
+### Directory Structure
 
 ```
 .devcontainer/
-├── devcontainer.json           # Default configuration
-├── web-frontend/
-│   └── devcontainer.json       # Frontend-specific
-├── backend-api/
-│   └── devcontainer.json       # Backend-specific
-└── data-science/
-    └── devcontainer.json       # Data science config
++-- devcontainer.json           # Default configuration
++-- web-frontend/
+|   +-- devcontainer.json       # Frontend-specific
++-- backend-api/
+|   +-- devcontainer.json       # Backend-specific
++-- data-science/
+    +-- devcontainer.json       # Data science config
 ```
 
 ### Basic devcontainer.json
@@ -76,34 +74,6 @@ GitHub Codespaces provides instant, configurable development environments in the
   "forwardPorts": [3000, 5000]
 }
 ```
-
-## Environment Profiles
-
-This repository includes pre-configured profiles:
-
-### 1. Standard (Default)
-- Node.js + Python
-- Common development tools
-- GitHub CLI pre-configured
-- Good for most projects
-
-### 2. Web Frontend
-- Node.js 20 LTS
-- npm/yarn/pnpm
-- Browser preview
-- React/Vue/Angular extensions
-
-### 3. Backend API
-- Node.js + Python + Go
-- PostgreSQL + Redis
-- API testing tools
-- Docker-in-Docker
-
-### 4. Data Science
-- Python 3.11+
-- Jupyter notebooks
-- pandas, numpy, scikit-learn
-- Optional GPU support
 
 ## Lifecycle Scripts
 
@@ -178,42 +148,7 @@ gh secret set NPM_TOKEN --user
 ### Manual Forwarding
 
 ```bash
-# In codespace terminal
 gh codespace ports forward 3000:3000 -c <codespace-name>
-```
-
-## Performance Optimization
-
-### Prebuilds
-
-Enable prebuilds for faster startup:
-
-```json
-// .github/codespaces/prebuild.json
-{
-  "triggers": {
-    "branches": ["main", "develop"],
-    "paths": ["package.json", ".devcontainer/**"]
-  }
-}
-```
-
-### Dotfiles Repository
-
-Configure personal dotfiles:
-```bash
-# In GitHub Settings > Codespaces
-# Set dotfiles repository to your-username/dotfiles
-```
-
-### Resource Management
-
-```bash
-# Check machine type
-gh codespace list --json name,machinetype
-
-# Resize codespace
-gh codespace edit -c <name> -m largePremiumLinux
 ```
 
 ## Common Workflows
@@ -249,15 +184,25 @@ gh codespace ports visibility 3000:public -c <name>
 gh codespace ports -c <name>
 ```
 
-## Troubleshooting
+## Performance Optimization
 
-| Issue | Solution |
-|-------|----------|
-| Slow startup | Enable prebuilds |
-| Out of storage | Delete unused files, increase disk |
-| Extension not working | Check devcontainer extensions config |
-| Port not accessible | Check forwardPorts configuration |
-| Environment variables missing | Verify secrets are set |
+### Prebuilds
+
+Enable prebuilds for faster startup:
+
+```json
+// .github/codespaces/prebuild.json
+{
+  "triggers": {
+    "branches": ["main", "develop"],
+    "paths": ["package.json", ".devcontainer/**"]
+  }
+}
+```
+
+### Dotfiles Repository
+
+Configure personal dotfiles in GitHub Settings > Codespaces.
 
 ## Cost Management
 
@@ -274,11 +219,21 @@ Configure in GitHub Settings > Codespaces:
 3. **Use appropriate machine size**: Don't over-provision
 4. **Enable prebuilds**: Faster startup, less billing
 
----
+## Troubleshooting
 
-## Related Documentation
+| Issue | Solution |
+|-------|----------|
+| Slow startup | Enable prebuilds |
+| Out of storage | Delete unused files, increase disk |
+| Extension not working | Check devcontainer extensions config |
+| Port not accessible | Check forwardPorts configuration |
+| Environment variables missing | Verify secrets are set |
 
-- [Codespaces Workflow Guide](../../../docs/guides/codespaces-workflow.md)
-- [Reference Documentation](./reference.md)
-- [Codespaces Manager Agent](../../agents/codespaces-manager.md)
-- [DevContainer Configurations](../../../.devcontainer/)
+## When to Use This Skill
+
+- Setting up cloud development environments
+- Configuring devcontainers for team consistency
+- Managing Codespaces via CLI
+- Optimizing development environment performance
+- Sharing development environments
+- PR reviews in isolated environments

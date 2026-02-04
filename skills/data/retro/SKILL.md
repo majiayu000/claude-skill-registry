@@ -1,177 +1,134 @@
 ---
 name: retro
-description: 'Extract learnings from completed work. Trigger phrases: "run a retrospective", "extract learnings", "what did we learn", "capture lessons", "create a retro".'
+description: Analyze completed Linear cycles for retrospectives. Identifies velocity trends, scope creep, and patterns to improve future planning.
 ---
 
-# Retro Skill
+# Retro Skill - Sprint Retrospective
 
-**YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
+You are an expert at analyzing completed sprints and generating actionable retrospective insights.
 
-Extract learnings from completed work and feed the knowledge flywheel.
+## When to Use
 
-## Execution Steps
+Use this skill when:
+- A sprint/cycle has ended
+- Preparing for a retrospective meeting
+- Analyzing team performance trends
 
-Given `/retro [topic] [--vibe-results <path>]`:
+## Process
 
-### Step 1: Identify What to Retrospect
+1. **Gather Cycle Data**
+   ```bash
+   linear cycles analyze --team ENG --count 3
+   linear cycles get CYCLE-ID
+   ```
 
-**If vibe results path provided:** Read and incorporate validation findings:
+2. **Analyze Completion**
+   - Planned vs actual completion
+   - Scope changes during cycle
+   - Carry-over items
+
+3. **Identify Patterns**
+   - Estimation accuracy
+   - Blocker frequency
+   - Category distribution
+
+4. **Generate Insights**
+
+## Analysis Areas
+
+### Velocity & Completion
+- Points planned vs completed
+- Issue count planned vs completed
+- Completion rate trend
+
+### Scope Management
+- Issues added mid-cycle
+- Issues removed/deferred
+- Scope creep percentage
+
+### Blockers & Dependencies
+- Issues that were blocked
+- Average time blocked
+- Dependency-related delays
+
+### Workload Distribution
+- Points per team member
+- Completion rate by assignee
+- Bottleneck identification
+
+## Output Format
+
 ```
-Tool: Read
-Parameters:
-  file_path: <vibe-results-path>
-```
+RETROSPECTIVE: Cycle 23
+════════════════════════════════════════
 
-This allows post-mortem to pass validation context without re-running vibe.
+SUMMARY
+────────────────────────────────────────
+Planned: 40 points (12 issues)
+Completed: 34 points (10 issues)
+Completion Rate: 85%
 
-**If topic provided:** Focus on that specific work.
+SCOPE CHANGES
+────────────────────────────────────────
+Added mid-cycle: 3 issues (8 pts)
+Removed: 1 issue (2 pts)
+Carried over: 2 issues (6 pts)
+Scope creep: 15%
 
-**If no topic:** Look at recent activity:
-```bash
-# Recent commits
-git log --oneline -10 --since="7 days ago"
+WHAT WENT WELL
+────────────────────────────────────────
++ Auth refactor completed ahead of schedule
++ Zero critical bugs in production
++ Good collaboration on API work
 
-# Recent issues closed
-bd list --status closed --since "7 days ago" 2>/dev/null | head -5
+WHAT COULD IMPROVE
+────────────────────────────────────────
+- 2 issues blocked for 3+ days (ENG-201, ENG-203)
+- Underestimated ENG-205 (3pts planned, 8pts actual)
+- Late scope additions disrupted focus
 
-# Recent research/plans
-ls -lt .agents/research/ .agents/plans/ 2>/dev/null | head -5
-```
+TRENDS (3 cycles)
+────────────────────────────────────────
+Velocity: 34 → 32 → 34 (stable)
+Completion: 85% → 88% → 85% (stable)
+Scope creep: 12% → 8% → 15% (increasing)
 
-### Step 2: Gather Context
-
-Read relevant artifacts:
-- Research documents
-- Plan documents
-- Commit messages
-- Code changes
-
-Use the Read tool and git commands to understand what was done.
-
-### Step 3: Identify Learnings
-
-**If vibe results were provided, incorporate them:**
-- Extract learnings from CRITICAL and HIGH findings
-- Note patterns that led to issues
-- Identify anti-patterns to avoid
-
-Ask these questions:
-
-**What went well?**
-- What approaches worked?
-- What was faster than expected?
-- What should we do again?
-
-**What went wrong?**
-- What failed?
-- What took longer than expected?
-- What would we do differently?
-- (Include vibe findings if provided)
-
-**What did we discover?**
-- New patterns found
-- Codebase quirks learned
-- Tool tips discovered
-- Debugging insights
-
-### Step 4: Extract Actionable Learnings
-
-For each learning, capture:
-- **ID**: L1, L2, L3...
-- **Category**: debugging, architecture, process, testing, security
-- **What**: The specific insight
-- **Why it matters**: Impact on future work
-- **Confidence**: high, medium, low
-
-### Step 5: Write Learnings
-
-**Write to:** `.agents/learnings/YYYY-MM-DD-<topic>.md`
-
-```markdown
-# Learning: <Short Title>
-
-**ID**: L1
-**Category**: <category>
-**Confidence**: <high|medium|low>
-
-## What We Learned
-
-<1-2 sentences describing the insight>
-
-## Why It Matters
-
-<1 sentence on impact/value>
-
-## Source
-
-<What work this came from>
-
----
-
-# Learning: <Next Title>
-
-**ID**: L2
-...
+ACTION ITEMS
+────────────────────────────────────────
+1. Add buffer for complex API work
+2. Daily standup check on blockers
+3. Scope freeze after day 2
 ```
 
-### Step 6: Write Retro Summary
-
-**Write to:** `.agents/retros/YYYY-MM-DD-<topic>.md`
-
-```markdown
-# Retrospective: <Topic>
-
-**Date:** YYYY-MM-DD
-**Scope:** <what work was reviewed>
-
-## Summary
-<1-2 sentence overview>
-
-## What Went Well
-- <thing 1>
-- <thing 2>
-
-## What Could Be Improved
-- <improvement 1>
-- <improvement 2>
-
-## Learnings Extracted
-- L1: <brief>
-- L2: <brief>
-
-See: `.agents/learnings/YYYY-MM-DD-<topic>.md`
-
-## Action Items
-- [ ] <any follow-up needed>
-```
-
-### Step 7: Index for Future Discovery (if ao available)
+## Commands Used
 
 ```bash
-ao forge index .agents/learnings/YYYY-MM-DD-*.md 2>/dev/null
+# Analyze recent cycles
+linear cycles analyze --team ENG --count 3
+
+# Get specific cycle details
+linear cycles get CYCLE-23
+
+# List cycle issues
+linear issues list --team ENG --cycle CYCLE-23
+
+# Check what was blocked
+linear deps --team ENG
 ```
 
-### Step 8: Report to User
+## Discussion Questions
 
-Tell the user:
-1. Number of learnings extracted
-2. Key insights (top 2-3)
-3. Location of retro and learnings files
-4. Knowledge has been indexed for future sessions
+Generate discussion prompts for the team:
 
-## Key Rules
+1. **Wins**: What should we celebrate?
+2. **Blockers**: What slowed us down?
+3. **Process**: What would we do differently?
+4. **Tools**: Are there tools/automation to add?
+5. **Communication**: Where did we lose sync?
 
-- **Be specific** - "auth tokens expire" not "learned about auth"
-- **Be actionable** - learnings should inform future decisions
-- **Cite sources** - reference what work the learning came from
-- **Write both files** - retro summary AND detailed learnings
-- **Index knowledge** - make it discoverable
+## Best Practices
 
-## The Flywheel
-
-Learnings feed future research:
-```
-Work → /retro → .agents/learnings/ → ao forge index → /research finds it
-```
-
-Future sessions start smarter because of your retrospective.
+1. **Be data-driven** - Base insights on actual metrics
+2. **Focus on process** - Not individual performance
+3. **Actionable items** - Every insight should have a follow-up
+4. **Track over time** - Compare to previous retros

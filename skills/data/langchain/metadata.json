@@ -1,7 +1,9 @@
 {
   "name": "langchain",
-  "repo": "vamseeachanta/digitalmodel",
-  "path": ".claude/skills/ai-prompting/langchain/SKILL.md",
-  "source": "github.com/vamseeachanta/digitalmodel",
-  "downloaded_at": "2026-02-02T04:04:45.304400Z"
+  "description": "LangChain skill for building LLM orchestration, agents, RAG pipelines, tools, memory, callbacks, and deployment.",
+  "repo": "Sameeh07/AGENT-SKILLS",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sameeh07/AGENT-SKILLS"
 }

@@ -29,6 +29,7 @@ Check package.json for knip in devDependencies.
 ```
 
 **Check Logic**:
+
 - If `devDependencies.knip` exists → Knip is installed
 - If not found → Need to install
 
@@ -52,6 +53,7 @@ fi
 ```
 
 **Expected Output**:
+
 ```
 + knip@5.x.x
 ```
@@ -63,6 +65,7 @@ Look for existing Knip configuration files.
 **Tools Used**: Glob
 
 **Configuration Files** (in priority order):
+
 1. `knip.json`
 2. `knip.jsonc`
 3. `knip.ts`
@@ -77,6 +80,7 @@ If no configuration found, create `knip.json` with sensible defaults.
 **Tools Used**: Write
 
 **Default Configuration for Standard Project**:
+
 ```json
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
@@ -91,13 +95,12 @@ If no configuration found, create `knip.json` with sensible defaults.
     "**/__tests__/**",
     "**/node_modules/**"
   ],
-  "ignoreDependencies": [
-    "@types/*"
-  ]
+  "ignoreDependencies": ["@types/*"]
 }
 ```
 
 **Default Configuration for Next.js Project** (detected by next in dependencies):
+
 ```json
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
@@ -108,22 +111,15 @@ If no configuration found, create `knip.json` with sensible defaults.
     "pages/**/*.{ts,tsx}"
   ],
   "project": ["src/**/*.{ts,tsx}", "app/**/*.{ts,tsx}", "pages/**/*.{ts,tsx}"],
-  "ignore": [
-    "**/*.d.ts",
-    "**/*.test.{ts,tsx}",
-    "**/*.spec.{ts,tsx}",
-    "**/node_modules/**"
-  ],
+  "ignore": ["**/*.d.ts", "**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/node_modules/**"],
   "next": {
-    "entry": [
-      "next.config.{js,ts,mjs}",
-      "middleware.{js,ts}"
-    ]
+    "entry": ["next.config.{js,ts,mjs}", "middleware.{js,ts}"]
   }
 }
 ```
 
 **Default Configuration for Monorepo** (detected by workspaces in package.json):
+
 ```json
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
@@ -137,12 +133,7 @@ If no configuration found, create `knip.json` with sensible defaults.
       "project": ["src/**/*.{ts,tsx,js,jsx}"]
     }
   },
-  "ignore": [
-    "**/*.d.ts",
-    "**/*.test.{ts,tsx}",
-    "**/*.spec.{ts,tsx}",
-    "**/node_modules/**"
-  ]
+  "ignore": ["**/*.d.ts", "**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/node_modules/**"]
 }
 ```
 
@@ -153,6 +144,7 @@ Check if package.json has knip scripts, add if missing.
 **Tools Used**: Read, Bash
 
 **Scripts to Add**:
+
 ```json
 {
   "scripts": {
@@ -166,6 +158,7 @@ Check if package.json has knip scripts, add if missing.
 ```
 
 **Add via npm pkg**:
+
 ```bash
 npm pkg set scripts.knip="knip"
 npm pkg set scripts.knip:fix="knip --fix"
@@ -191,6 +184,7 @@ npx knip --help
 Return structured result indicating setup status.
 
 **Expected Output**:
+
 ```json
 {
   "installed": true,
@@ -215,11 +209,13 @@ Return structured result indicating setup status.
 ### Example 1: Fresh Project (No Knip)
 
 **Initial State**:
+
 - package.json exists
 - No knip in devDependencies
 - No knip.json
 
 **Actions**:
+
 1. Install knip via detected package manager
 2. Detect project type (standard)
 3. Create knip.json with defaults
@@ -227,6 +223,7 @@ Return structured result indicating setup status.
 5. Validate installation
 
 **Output**:
+
 ```json
 {
   "installed": true,
@@ -242,17 +239,20 @@ Return structured result indicating setup status.
 ### Example 2: Next.js Project with Existing Knip
 
 **Initial State**:
+
 - package.json with next dependency
 - knip already in devDependencies
 - knip.json exists
 
 **Actions**:
+
 1. Detect knip installed (skip installation)
 2. Detect existing config (skip creation)
 3. Check scripts (add missing)
 4. Validate installation
 
 **Output**:
+
 ```json
 {
   "installed": true,
@@ -268,10 +268,12 @@ Return structured result indicating setup status.
 ### Example 3: Monorepo Project
 
 **Initial State**:
+
 - package.json with workspaces field
 - No knip
 
 **Actions**:
+
 1. Detect monorepo (workspaces in package.json)
 2. Install knip
 3. Create monorepo-specific knip.json
@@ -279,6 +281,7 @@ Return structured result indicating setup status.
 5. Validate installation
 
 **Output**:
+
 ```json
 {
   "installed": true,
@@ -295,16 +298,16 @@ Return structured result indicating setup status.
 
 For agents using Knip after setup:
 
-| Command | Purpose | Use Case |
-|---------|---------|----------|
-| `npx knip` | Full analysis | Complete dead code scan |
-| `npx knip --dependencies` | Dependencies only | dependency-auditor |
-| `npx knip --exports` | Exports only | Unused export detection |
-| `npx knip --files` | Files only | Unused file detection |
-| `npx knip --fix --fix-type exports,types` | Auto-fix exports/types | Safe automated cleanup |
-| `npx knip --fix --fix-type dependencies` | Auto-fix deps | Remove from package.json |
-| `npx knip --reporter json` | JSON output | Machine parsing |
-| `npx knip --reporter compact` | Compact output | Quick review |
+| Command                                   | Purpose                | Use Case                 |
+| ----------------------------------------- | ---------------------- | ------------------------ |
+| `npx knip`                                | Full analysis          | Complete dead code scan  |
+| `npx knip --dependencies`                 | Dependencies only      | dependency-auditor       |
+| `npx knip --exports`                      | Exports only           | Unused export detection  |
+| `npx knip --files`                        | Files only             | Unused file detection    |
+| `npx knip --fix --fix-type exports,types` | Auto-fix exports/types | Safe automated cleanup   |
+| `npx knip --fix --fix-type dependencies`  | Auto-fix deps          | Remove from package.json |
+| `npx knip --reporter json`                | JSON output            | Machine parsing          |
+| `npx knip --reporter compact`             | Compact output         | Quick review             |
 
 ## CRITICAL SAFETY WARNING
 
@@ -326,17 +329,20 @@ Files loaded via dynamic imports will appear "unused" to Knip but are actually c
 ### Safe Knip Usage
 
 **ALLOWED**:
+
 - `npx knip --fix --fix-type exports` - Safe: removes unused exports from files
 - `npx knip --fix --fix-type types` - Safe: removes unused type exports
 - `npx knip --fix --fix-type dependencies` - Safe: removes from package.json only
 
 **FORBIDDEN**:
+
 - `npx knip --fix --allow-remove-files` - DANGEROUS: may delete files with dynamic imports
 - `npx knip --fix` (without --fix-type) - May include file removal
 
 ### Manual Verification Required
 
 Before removing ANY file flagged by Knip:
+
 1. Search for dynamic imports: `import(`, `require(`, `lazy(`, `loadable(`
 2. Check for string interpolation in imports
 3. Verify no config files reference the file

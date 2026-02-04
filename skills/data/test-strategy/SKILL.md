@@ -26,7 +26,7 @@ This skill activates when the hook system injects the codeword:
 This occurs when:
 - OpenSpec proposals are created
 - User requests test strategy
-- Preparing for Phase 7 implementation
+- Preparing for Phase 3 implementation
 
 ## Worktree Isolation Requirements
 
@@ -64,7 +64,7 @@ Automatically generates comprehensive test strategies from OpenSpec scenarios in
 
 ## When This Skill Activates
 
-**Phase 6 & 7:** Creating OpenSpec proposals or starting implementation
+**Phase 6 Phase 2 & 3 7:** Creating OpenSpec proposals or starting implementation
 
 **Trigger Patterns:**
 - Creating OpenSpec proposal (`/openspec:proposal <n>`)
@@ -679,14 +679,14 @@ READY FOR TDD IMPLEMENTATION ✅
 
 ## CRITICAL: Automatic Phase Transition
 
-**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 7.**
+**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 3.**
 
 When test strategy generation is complete, you MUST:
 
 1. Output the completion signal:
    ```
    ✅ TEST STRATEGY COMPLETE
-   [SIGNAL:TEST_STRATEGY_COMPLETE]
+   [SIGNAL:PHASE6_1_COMPLETE]
    ```
 
 2. **IMMEDIATELY** proceed to Phase 7 by outputting:

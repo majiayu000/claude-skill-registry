@@ -1,13 +1,7 @@
 {
   "name": "cleanup-health-inline",
-  "description": "Inline orchestration workflow for dead code detection and removal. Provides step-by-step phases for dead-code-hunter detection, priority-based cleanup with dead-code-remover, and verification cycles.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "development",
-  "tags": [
-    "cleanup",
-    "health",
-    "inline"
-  ],
-  "stars": 27,
-  "source": "SkillsMP Synced Skills"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/cleanup-health-inline/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:14.799123Z"
 }

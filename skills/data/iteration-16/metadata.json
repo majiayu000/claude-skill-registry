@@ -1,9 +1,7 @@
 {
   "name": "iteration-16",
-  "description": "Iteration 16 of Multiplicity Cascade - Hides truth in indistinguishable noise",
   "repo": "agentgptsmith/MonadFramework",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/agentgptsmith/MonadFramework"
+  "path": ".claude/skills/multiplicity/iteration_16/SKILL.md",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "downloaded_at": "2026-02-04T01:47:25.739954Z"
 }

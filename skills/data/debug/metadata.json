@@ -1,7 +1,7 @@
 {
   "name": "debug",
-  "repo": "paxtone-io/openkodo",
-  "path": "plugins/kodo/skills/debug/SKILL.md",
-  "source": "github.com/paxtone-io/openkodo",
-  "downloaded_at": "2026-02-02T05:08:46.417693Z"
+  "repo": "emirrtopaloglu/claude-code-virtuoso",
+  "path": ".claude/skills/debug/SKILL.md",
+  "source": "github.com/emirrtopaloglu/claude-code-virtuoso",
+  "downloaded_at": "2026-02-04T04:39:40.201367Z"
 }

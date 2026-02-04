@@ -126,7 +126,7 @@ PENDING (3)
 
 IN PROGRESS (1)
 ───────────────────────────────────────────
-• Shell No (electronic, thematic)
+• Sample Album (electronic, thematic)
   Added: 2025-11-20
   Concept: ShellShock vulnerability and bash exploit...
 

@@ -1,242 +1,218 @@
 ---
 name: release
-description: Release preparation workflow - security audit → E2E tests → review → changelog → docs
+description: Version release preparation workflow including changelog, version bump, and deployment checks. Triggers: REL, release, 發布, 版本發布, deploy, 部署, publish, 上線, ship, tag, 打標籤, 版本, version bump, 升版.
+version: 1.0.0
+category: workflow
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
+  - codex-cli
+orchestrates:
+  - changelog-updater
+  - readme-updater
+  - roadmap-updater
+  - test-generator
+  - security-reviewer
+  - memory-updater
+allowed-tools:
+  - read_file
+  - write_file
+  - replace_string_in_file
+  - grep_search
+  - run_in_terminal
+  - get_changed_files
 ---
 
-# /release - Release Workflow
+# 版本發布工作流
 
-Structured release preparation to ship with confidence.
+## 描述
 
-## When to Use
+完整的版本發布準備流程，包含版本號更新、CHANGELOG 生成、文檔同步和部署檢查。
 
-- "Prepare a release"
-- "Ship version X"
-- "Release to production"
-- "Cut a release"
-- "Ready to deploy"
-- Before any production deployment
+## 觸發條件
 
-## Workflow Overview
+- 「準備發布」「release」「發布版本」
+- 「REL: v1.2.0」
 
-```
-┌─────────┐    ┌─────────┐    ┌──────────────┐    ┌──────────┐    ┌─────────┐
-│  aegis  │───▶│  atlas  │───▶│ review-agent │───▶│  herald  │───▶│  scribe │
-│         │    │         │    │              │    │          │    │         │
-└─────────┘    └─────────┘    └──────────────┘    └──────────┘    └─────────┘
-  Security       E2E            Final              Version         Release
-  audit          tests          review             bump            notes
-```
+---
 
-## Agent Sequence
-
-| # | Agent | Role | Output |
-|---|-------|------|--------|
-| 1 | **aegis** | Security vulnerability scan | Security report |
-| 2 | **atlas** | Run full E2E test suite | Test report |
-| 3 | **review-agent** | Final release review | Release approval |
-| 4 | **herald** | Version bump, changelog generation | Updated version files |
-| 5 | **scribe** | Release notes, documentation | RELEASE.md, docs |
-
-## Why This Order?
-
-1. **Security first**: Catch vulnerabilities before they ship
-2. **E2E tests**: Verify full system works end-to-end
-3. **Final review**: Human-in-the-loop approval
-4. **Version bump**: Only after approval
-5. **Documentation**: Ship with proper release notes
-
-## Execution
-
-### Phase 1: Security Audit
+## 📦 發布流程
 
 ```
-Task(
-  subagent_type="aegis",
-  prompt="""
-  Security audit for release: [VERSION]
-
-  Scan for:
-  - Dependency vulnerabilities (npm audit, pip audit)
-  - Hardcoded secrets/credentials
-  - SQL injection, XSS, CSRF risks
-  - Authentication/authorization issues
-  - Insecure configurations
-
-  Output: Security report with severity levels
-  """
-)
+┌─────────────────────────────────────────────────────────────┐
+│                   Release Workflow                           │
+├─────────────────────────────────────────────────────────────┤
+│  Phase 1: 🔍 發布檢查 (Pre-release Check)                    │
+│  ├─ 確認所有測試通過                                         │
+│  ├─ 執行安全掃描                                             │
+│  ├─ 檢查待處理問題                                           │
+│  └─ 確認 main/master 分支狀態                               │
+├─────────────────────────────────────────────────────────────┤
+│  Phase 2: 🔢 版本決定 (Version Decision)                     │
+│  ├─ 分析變更類型 (MAJOR/MINOR/PATCH)                        │
+│  ├─ 確認版本號                                               │
+│  └─ 更新版本檔案                                             │
+├─────────────────────────────────────────────────────────────┤
+│  Phase 3: 📝 文檔更新 (Documentation)                        │
+│  ├─ [changelog-updater] 更新 CHANGELOG                      │
+│  ├─ [readme-updater] 更新 README                            │
+│  ├─ [roadmap-updater] 標記完成項目                          │
+│  └─ 更新 API 文檔（如有）                                    │
+├─────────────────────────────────────────────────────────────┤
+│  Phase 4: 🏷️ 標籤準備 (Tagging)                             │
+│  ├─ 建立 Git tag                                            │
+│  ├─ 準備 release notes                                      │
+│  └─ 確認變更摘要                                             │
+├─────────────────────────────────────────────────────────────┤
+│  Phase 5: 🚀 發布 (Publish)                                  │
+│  ├─ 推送 tag                                                │
+│  ├─ 建立 GitHub Release                                     │
+│  └─ 觸發 CI/CD pipeline                                     │
+├─────────────────────────────────────────────────────────────┤
+│  Phase 6: 📢 發布後 (Post-release)                           │
+│  ├─ 更新 Memory Bank                                        │
+│  ├─ 通知相關人員                                             │
+│  └─ 準備下一版本                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Phase 2: E2E Tests
+---
+
+## 🔢 版本號規則 (SemVer)
 
 ```
-Task(
-  subagent_type="atlas",
-  prompt="""
-  Run E2E tests for release: [VERSION]
+MAJOR.MINOR.PATCH
 
-  Execute:
-  - Full E2E test suite
-  - Critical path tests
-  - Integration tests
-  - Performance benchmarks (if applicable)
-
-  Output: Test report with pass/fail counts
-  """
-)
+MAJOR: 不相容的 API 變更 (Breaking Changes)
+MINOR: 向下相容的新功能 (New Features)
+PATCH: 向下相容的 Bug 修復 (Bug Fixes)
 ```
 
-### Phase 3: Final Review
+### 版本號決定指南
+
+| 變更類型 | 版本 | 範例 |
+|----------|------|------|
+| Breaking API 變更 | MAJOR | 1.0.0 → 2.0.0 |
+| 新功能（不破壞現有） | MINOR | 1.0.0 → 1.1.0 |
+| Bug 修復 | PATCH | 1.0.0 → 1.0.1 |
+| 安全修復 | PATCH | 1.0.0 → 1.0.1 |
+| 文檔更新 | PATCH | 1.0.0 → 1.0.1 |
+| 效能改善 | MINOR/PATCH | 視影響範圍 |
+
+---
+
+## 🚀 使用範例
+
+### 基本用法
 
 ```
-Task(
-  subagent_type="review-agent",
-  prompt="""
-  Final release review: [VERSION]
+「準備發布」
 
-  Review:
-  - Security audit results
-  - E2E test results
-  - Changes since last release (git log)
-  - Breaking changes
-  - Migration requirements
-
-  Output: RELEASE_APPROVED or RELEASE_BLOCKED with reasons
-  """
-)
+AI 執行：
+1. 🔍 執行發布前檢查
+2. 🔢 分析變更，建議版本號
+3. 📝 更新 CHANGELOG、README、ROADMAP
+4. 🏷️ 準備 Git tag
+5. 📊 生成發布清單
 ```
 
-### Phase 4: Version Bump & Changelog
+### 指定版本
 
 ```
-Task(
-  subagent_type="herald",
-  prompt="""
-  Prepare release: [VERSION]
+「REL: v2.0.0」
 
-  Tasks:
-  - Bump version in package.json/pyproject.toml
-  - Generate CHANGELOG.md entry
-  - Update version constants in code
-  - Tag commit (don't push yet)
-
-  Follow semantic versioning.
-  """
-)
+AI 執行：
+1. 確認這是 MAJOR 版本（Breaking Changes）
+2. 要求確認 breaking changes 清單
+3. 執行完整發布流程
 ```
 
-### Phase 5: Release Notes
+---
 
-```
-Task(
-  subagent_type="scribe",
-  prompt="""
-  Write release notes: [VERSION]
+## 📊 輸出格式
 
-  Include:
-  - Summary of changes
-  - New features
-  - Bug fixes
-  - Breaking changes
-  - Migration guide (if needed)
-  - Contributors
+```markdown
+## 📦 發布準備報告
 
-  Output: RELEASE.md or update docs
-  """
-)
-```
+### 版本資訊
 
-## Release Types
+- **當前版本**: 1.1.0
+- **建議版本**: 1.2.0 (MINOR)
+- **原因**: 新增 3 個功能，無 breaking changes
 
-### Major Release (Breaking Changes)
-```
-/release --major
-→ Full workflow with migration guide
-```
+### 🔍 發布檢查
 
-### Minor Release (New Features)
-```
-/release --minor
-→ Full workflow, lighter security review
-```
+| 檢查項目 | 狀態 |
+|----------|------|
+| 測試通過 | ✅ 42/42 |
+| 安全掃描 | ✅ 無風險 |
+| Lint | ✅ 0 errors |
+| 文檔同步 | ✅ 已更新 |
 
-### Patch Release (Bug Fixes)
-```
-/release --patch
-→ Security + tests + quick review
-```
+### 📝 變更摘要
 
-### Hotfix
-```
-/release --hotfix
-→ Expedited: aegis → atlas → herald
-```
+#### Added
+- 用戶認證模組
+- API 限流功能
+- 匯出功能
 
-## Example
+#### Fixed
+- 登入超時問題
+- 資料同步錯誤
 
-```
-User: /release v2.0.0
+#### Changed
+- 改進錯誤訊息
 
-Claude: Starting /release workflow for v2.0.0...
+### 📁 更新的文件
 
-Phase 1: Security audit...
-[Spawns aegis]
-✅ No critical vulnerabilities
-⚠️ 2 low-severity issues (documented)
+- ✅ CHANGELOG.md - 新增 v1.2.0 區塊
+- ✅ README.md - 更新功能列表
+- ✅ ROADMAP.md - 標記 3 個完成項目
+- ✅ pyproject.toml - 版本號更新
 
-Phase 2: E2E tests...
-[Spawns atlas]
-✅ 156/156 E2E tests passing
+### 🏷️ Git 指令
 
-Phase 3: Final review...
-[Spawns review-agent]
-✅ RELEASE_APPROVED
-- 47 commits since v1.9.0
-- 3 new features
-- 12 bug fixes
-- No breaking changes
-
-Phase 4: Version bump...
-[Spawns herald]
-✅ Version bumped to 2.0.0
-✅ CHANGELOG.md updated
-✅ Git tag created
-
-Phase 5: Release notes...
-[Spawns scribe]
-✅ RELEASE-v2.0.0.md created
-
-┌─────────────────────────────────────────┐
-│ Release v2.0.0 Ready                    │
-├─────────────────────────────────────────┤
-│ Security: ✅ Passed                     │
-│ Tests: ✅ 156/156                       │
-│ Review: ✅ Approved                     │
-│                                         │
-│ Next steps:                             │
-│ 1. git push origin v2.0.0              │
-│ 2. Create GitHub release               │
-│ 3. Deploy to production                │
-└─────────────────────────────────────────┘
+```bash
+git add -A
+git commit -m "chore: release v1.2.0"
+git tag -a v1.2.0 -m "Release v1.2.0"
+git push origin main --tags
 ```
 
-## Blockers
+### 📋 Release Notes
 
-The workflow stops if:
-- Critical security vulnerability found
-- E2E tests failing
-- Review verdict is RELEASE_BLOCKED
+```markdown
+## v1.2.0 (2026-01-15)
 
+### ✨ New Features
+- 用戶認證模組
+- API 限流功能
+- 匯出功能
+
+### 🐛 Bug Fixes
+- 修復登入超時問題
+- 修復資料同步錯誤
+
+### 📖 Documentation
+- 更新 API 文檔
+- 新增使用範例
 ```
-Phase 1: Security audit...
-❌ CRITICAL: SQL injection in user.py:45
 
-Release blocked. Fix critical issues before proceeding.
+### 下一步
+
+1. 確認變更摘要無誤
+2. 執行上述 Git 指令
+3. 在 GitHub 建立 Release
 ```
 
-## Flags
+---
 
-- `--major/--minor/--patch`: Semantic version type
-- `--hotfix`: Expedited release path
-- `--skip-security`: Skip security audit (not recommended)
-- `--dry-run`: Run checks without bumping version
+## ⚙️ 配置選項
+
+| 參數 | 說明 | 預設值 |
+|------|------|--------|
+| `--dry-run` | 只預覽不執行 | false |
+| `--skip-tests` | 跳過測試 | false |
+| `--prerelease` | 預發布 (alpha/beta/rc) | false |
+| `--force` | 強制指定版本 | false |

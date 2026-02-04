@@ -1,134 +1,172 @@
 ---
 name: tdd-refactor
-description: Execute the REFACTOR phase of TDD by improving code structure while keeping all tests green. Removes duplication, improves naming, and enhances code quality without changing behavior.
+description: Refactor code with confidence using comprehensive test safety net. Applies design patterns, improves code quality, and optimizes performance while keeping all tests green.
 ---
 
-# TDD REFACTOR Phase
+# TDD Refactor Phase - Improve Code Quality
 
-## Overview
+Refactor code with confidence using comprehensive test safety net:
 
-This skill executes the REFACTOR phase of Test-Driven Development. It improves code quality, removes duplication, and enhances structure while ensuring all tests remain green. Changes are purely structural with no behavioral modifications.
+[Extended thinking: This tool uses the tdd-orchestrator agent (opus model) for sophisticated refactoring while maintaining all tests green. It applies design patterns, improves code quality, and optimizes performance with the safety of comprehensive test coverage.]
 
-## When to Use
+## Usage
 
-Use this skill when:
-- All tests are passing (GREEN phase completed)
-- Code has duplication or code smells
-- Naming could be clearer
-- Structure could be improved
-- Following the TDD RED → GREEN → REFACTOR cycle
+Use Task tool with subagent_type="general-purpose" to perform safe refactoring.
 
-## Workflow
+Prompt: "Refactor this code while keeping all tests green: $ARGUMENTS. Apply TDD refactor phase:
 
-### Step 1: Verify GREEN State
+## Core Process
 
-**Confirm Prerequisites:**
-1. ALL tests must be passing
-2. No compiler warnings or errors
-3. Code is in a working state
+**1. Pre-Assessment**
+- Run tests to establish green baseline
+- Analyze code smells and test coverage
+- Document current performance metrics
+- Create incremental refactoring plan
 
-**If Tests Fail:**
-- Do NOT refactor
-- Fix failing tests first
-- Return to GREEN phase
+**2. Code Smell Detection**
+- Duplicated code → Extract methods/classes
+- Long methods → Decompose into focused functions
+- Large classes → Split responsibilities
+- Long parameter lists → Parameter objects
+- Feature Envy → Move methods to appropriate classes
+- Primitive Obsession → Value objects
+- Switch statements → Polymorphism
+- Dead code → Remove
 
-### Step 2: Identify Refactoring Opportunities
+**3. Design Patterns**
+- Apply Creational (Factory, Builder, Singleton)
+- Apply Structural (Adapter, Facade, Decorator)
+- Apply Behavioral (Strategy, Observer, Command)
+- Apply Domain (Repository, Service, Value Objects)
+- Use patterns only where they add clear value
 
-**Look for Code Smells:**
-- Duplication (same code in multiple places)
-- Long methods that do too much
-- Unclear variable or method names
-- Complex conditional logic
-- Hidden dependencies
-- Poor separation of concerns
+**4. SOLID Principles**
+- Single Responsibility: One reason to change
+- Open/Closed: Open for extension, closed for modification
+- Liskov Substitution: Subtypes substitutable
+- Interface Segregation: Small, focused interfaces
+- Dependency Inversion: Depend on abstractions
 
-**Common Refactorings:**
-- Extract Method
-- Rename Variable/Method/Class
-- Inline Method
-- Move Method
-- Replace Magic Number with Constant
-- Simplify Conditional Expression
-- Remove Dead Code
+**5. Refactoring Techniques**
+- Extract Method/Variable/Interface
+- Inline unnecessary indirection
+- Rename for clarity
+- Move Method/Field to appropriate classes
+- Replace Magic Numbers with constants
+- Encapsulate fields
+- Replace Conditional with Polymorphism
+- Introduce Null Object
 
-### Step 3: Refactor Incrementally
+**6. Performance Optimization**
+- Profile to identify bottlenecks
+- Optimize algorithms and data structures
+- Implement caching where beneficial
+- Reduce database queries (N+1 elimination)
+- Lazy loading and pagination
+- Always measure before and after
 
-**One Change at a Time:**
-1. Make ONE structural change
-2. Run ALL tests immediately
-3. Confirm tests still pass (behavior unchanged)
-4. If tests fail, revert and try differently
-5. Repeat for next refactoring
+**7. Incremental Steps**
+- Make small, atomic changes
+- Run tests after each modification
+- Commit after each successful refactoring
+- Keep refactoring separate from behavior changes
+- Use scaffolding when needed
 
-**Keep Tests Green:**
-- Never let tests go red during refactoring
-- If a test fails, you changed behavior - revert immediately
-- Run tests after EVERY change, not just at the end
+**8. Architecture Evolution**
+- Layer separation and dependency management
+- Module boundaries and interface definition
+- Event-driven patterns for decoupling
+- Database access pattern optimization
 
-### Step 4: Distinguish Change Types
+**9. Safety Verification**
+- Run full test suite after each change
+- Performance regression testing
+- Mutation testing for test effectiveness
+- Rollback plan for major changes
 
-**Structural Changes (Safe to commit together):**
-- Renaming for clarity
-- Extracting methods
-- Moving code to better locations
-- Reorganizing imports
-- Formatting improvements
-- Comment additions/improvements
+**10. Advanced Patterns**
+- Strangler Fig: Gradual legacy replacement
+- Branch by Abstraction: Large-scale changes
+- Parallel Change: Expand-contract pattern
+- Mikado Method: Dependency graph navigation
 
-**Behavioral Changes (Commit separately):**
-- Adding new features
-- Changing how code works
-- Modifying functionality
-- Fixing bugs
+## Output Requirements
 
-**Keep Them Separate:**
-- Never mix structural and behavioral changes in same commit
-- Follow Tidy First principle
-- Structural changes should not alter any test results
+- Refactored code with improvements applied
+- Test results (all green)
+- Before/after metrics comparison
+- Applied refactoring techniques list
+- Performance improvement measurements
+- Remaining technical debt assessment
 
-### Step 5: Report Results
+## Safety Checklist
 
-**Document Changes:**
-- List what was refactored
-- Explain why the refactoring improves code
-- Confirm all tests still pass
-- Note any remaining code smells for future cycles
+Before committing:
+- ✓ All tests pass (100% green)
+- ✓ No functionality regression
+- ✓ Performance metrics acceptable
+- ✓ Code coverage maintained/improved
+- ✓ Documentation updated
 
-## Refactoring Principles
+## Recovery Protocol
 
-**Safety First:**
-- Always have green tests before refactoring
-- Make small, incremental changes
-- Run tests constantly
-- Revert if anything breaks
+If tests fail:
+- Immediately revert last change
+- Identify breaking refactoring
+- Apply smaller incremental changes
+- Use version control for safe experimentation
 
-**Quality Goals:**
-- Remove duplication ruthlessly
-- Express intent clearly through naming
-- Make dependencies explicit
-- Keep methods small and focused
-- Minimize state and side effects
+## Example: Extract Method Pattern
 
-**When to Stop:**
-- Code is clear and expressive
-- Duplication is removed
-- Structure is sound
-- Further changes would be premature
-- Time to move to next test
+**Before:**
+```typescript
+class OrderProcessor {
+  processOrder(order: Order): ProcessResult {
+    // Validation
+    if (!order.customerId || order.items.length === 0) {
+      return { success: false, error: "Invalid order" };
+    }
 
-## Important Reminders
+    // Calculate totals
+    let subtotal = 0;
+    for (const item of order.items) {
+      subtotal += item.price * item.quantity;
+    }
+    let total = subtotal + (subtotal * 0.08) + (subtotal > 100 ? 0 : 15);
 
-- **ONLY** refactor when tests are green
-- **NEVER** change behavior during refactoring
-- Make **ONE** change at a time
-- Run tests after **EACH** change
-- Revert if tests fail
-- Keep structural changes separate from behavioral changes
+    // Process payment...
+    // Update inventory...
+    // Send confirmation...
+  }
+}
+```
 
-## Next Steps
+**After:**
+```typescript
+class OrderProcessor {
+  async processOrder(order: Order): Promise<ProcessResult> {
+    const validation = this.validateOrder(order);
+    if (!validation.isValid) return ProcessResult.failure(validation.error);
 
-After completing REFACTOR phase:
-1. All tests must still be passing
-2. Consider committing structural changes (Tidy First)
-3. Move to next RED phase for next test
-4. Or complete the current TDD cycle with commits
+    const orderTotal = OrderTotal.calculate(order);
+    const inventoryCheck = await this.inventoryService.checkAvailability(order.items);
+    if (!inventoryCheck.available) return ProcessResult.failure(inventoryCheck.reason);
+
+    await this.paymentService.processPayment(order.paymentMethod, orderTotal.total);
+    await this.inventoryService.reserveItems(order.items);
+    await this.notificationService.sendOrderConfirmation(order, orderTotal);
+
+    return ProcessResult.success(order.id, orderTotal.total);
+  }
+
+  private validateOrder(order: Order): ValidationResult {
+    if (!order.customerId) return ValidationResult.invalid("Customer ID required");
+    if (order.items.length === 0) return ValidationResult.invalid("Order must contain items");
+    return ValidationResult.valid();
+  }
+}
+```
+
+**Applied:** Extract Method, Value Objects, Dependency Injection, Async patterns
+
+Code to refactor: $ARGUMENTS"

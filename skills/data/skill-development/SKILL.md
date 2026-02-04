@@ -4,11 +4,6 @@ description: This skill should be used when the user wants to "create a skill", 
 version: 0.1.0
 ---
 
-# SOURCE: anthropics/claude-plugins-official
-# PATH: plugins/plugin-dev/skills/skill-development/SKILL.md
-# DO NOT EDIT: This file is synced from external source
-
-
 # Skill Development for Claude Code Plugins
 
 This skill provides guidance for creating effective skills for Claude Code plugins.
@@ -315,7 +310,7 @@ Study the skills in this plugin as examples of best practices:
 
 **plugin-settings skill:**
 - Specific triggers: "plugin settings", ".local.md files", "YAML frontmatter"
-- References show real implementations (multi-agent-swarm, ralph-loop)
+- References show real implementations (multi-agent-swarm, ralph-wiggum)
 - Working parsing scripts
 
 Each demonstrates progressive disclosure and strong triggering.

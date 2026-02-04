@@ -1,381 +1,293 @@
 ---
 name: unity-development
-description: Comprehensive guide for Unity development. Provides architecture patterns, MCP tool selection, and composite task workflows. Parent skill always referenced for Unity-related tasks. See child skills for detailed implementation. Use when: Unity development in general, C# editing, scene operations, UI implementation, asset management, PlayMode testing
-allowed-tools: Read, Grep, Glob
+description: Unity Engine integration skill for project setup, C# scripting, scene management, prefab creation, and editor automation. Enables LLMs to interact with Unity Editor through MCP servers for asset manipulation, script generation, and automated workflows.
+allowed-tools: Read, Grep, Write, Bash, Edit, Glob, WebFetch
 ---
 
-# Unity Development Guide
+# Unity Development Skill
 
-A comprehensive guide for Unity development. This skill serves as **always-referenced parent skill**, providing common patterns and tool selection guidance.
+Comprehensive Unity Engine development integration for AI-assisted game creation, editor automation, and project management.
 
-## Architecture Patterns
+## Overview
 
-### Fail-Fast Principle
+This skill provides capabilities for interacting with Unity projects, including C# scripting, scene manipulation, prefab management, and build automation. It leverages the Unity MCP ecosystem for direct editor integration when available.
 
-**Do not write null checks. Use objects directly when their existence is assumed.**
+## Capabilities
 
-```csharp
-// NG: Forbidden pattern
-if (component != null) { component.DoSomething(); }
-if (gameObject != null) { gameObject.SetActive(false); }
-if (service != null) { service.Execute(); }
+### Project Management
+- Create and configure Unity projects
+- Manage project settings (Player Settings, Quality Settings, etc.)
+- Configure package dependencies via Package Manager
+- Set up Assembly Definitions for code organization
 
-// OK: Correct pattern - direct usage
-GetComponent<Rigidbody>().velocity = Vector3.zero;
-GameService.Initialize();
-target.position = Vector3.zero;
-```
+### C# Scripting
+- Generate MonoBehaviour scripts with proper lifecycle methods
+- Create ScriptableObjects for data-driven design
+- Implement interfaces (ISerializationCallbackReceiver, etc.)
+- Write custom Editor scripts and PropertyDrawers
+- Generate unit tests using Unity Test Framework
 
-**Applies to**:
-- Null check after `GetComponent<T>()`
-- Null check after `Find*()`
-- Null check after `[Inject]`
+### Scene Management
+- Create and modify scenes programmatically
+- Instantiate and configure GameObjects
+- Set up scene hierarchies and parent/child relationships
+- Configure lighting, cameras, and post-processing
 
-### No GetComponent in Update
+### Prefab System
+- Create and modify prefab assets
+- Handle prefab variants and overrides
+- Generate prefab instances with modifications
+- Manage nested prefabs
 
-**GetComponent every frame causes GC allocation and performance degradation. Cache in Awake.**
+### Asset Pipeline
+- Import and configure assets (textures, models, audio)
+- Set up asset bundles and addressables
+- Configure import settings for optimization
+- Generate placeholder assets
 
-```csharp
-// NG: GC allocation every frame
-void Update()
+### Build System
+- Configure build settings for multiple platforms
+- Create build scripts for automation
+- Set up CI/CD build pipelines
+- Manage platform-specific configurations
+
+## Prerequisites
+
+### Unity Installation
+- Unity 2021.3 LTS or higher recommended
+- Unity Editor installed with required modules
+
+### MCP Server (Recommended)
+For direct Unity Editor integration:
+
+```json
 {
-    GetComponent<Rigidbody>().velocity = input;
-}
-
-// OK: Cache in Awake
-private Rigidbody _rb;
-
-void Awake()
-{
-    _rb = GetComponent<Rigidbody>();
-}
-
-void Update()
-{
-    _rb.velocity = input;
-}
-```
-
-### UniTask Patterns
-
-**Use UniTask instead of coroutines. async void is forbidden.**
-
-```csharp
-using Cysharp.Threading.Tasks;
-
-// NG: async void
-async void Start()
-{
-    await DoWorkAsync();
-}
-
-// OK: UniTaskVoid + destroyCancellationToken
-async UniTaskVoid Start()
-{
-    await DoWorkAsync(destroyCancellationToken);
-}
-
-// OK: When return value is needed
-async UniTask<int> CalculateAsync(CancellationToken ct)
-{
-    await UniTask.Delay(1000, cancellationToken: ct);
-    return 42;
+  "mcpServers": {
+    "unity": {
+      "command": "npx",
+      "args": ["-y", "unity-mcp"],
+      "env": {
+        "UNITY_PROJECT_PATH": "/path/to/unity/project"
+      }
+    }
+  }
 }
 ```
 
-**Best Practices**:
-- Use `destroyCancellationToken` for auto-cancel on GameObject destruction
-- `UniTask.Delay` > `Task.Delay` (zero allocation)
-- `UniTask.WhenAll` for parallel execution
+Alternative MCP servers:
+- `unity-mcp` (CoplayDev) - Official Unity MCP bridge
+- `Unity-MCP` (IvanMurzak) - Editor & Runtime support
+- `mcp-unity` (CoderGamester) - Cursor/Claude Code integration
 
-### VContainer DI
+## Usage Patterns
 
-**Use VContainer for dependency injection. Constructor injection recommended.**
+### Creating a MonoBehaviour Script
 
 ```csharp
-// Interface definition
-public interface IPlayerService
-{
-    void Initialize();
-}
+using UnityEngine;
 
-// Implementation class
-public class PlayerService : IPlayerService
+public class PlayerController : MonoBehaviour
 {
-    public void Initialize() { /* ... */ }
-}
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 10f;
 
-// Consumer (MonoBehaviour)
-public class GameManager : MonoBehaviour
-{
-    [Inject] private readonly IPlayerService _playerService;
+    [Header("Ground Check")]
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundRadius = 0.2f;
+    [SerializeField] private LayerMask groundLayer;
 
-    void Start()
+    private Rigidbody2D rb;
+    private bool isGrounded;
+
+    private void Awake()
     {
-        _playerService.Initialize();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        HandleInput();
+    }
+
+    private void FixedUpdate()
+    {
+        HandleMovement();
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    private void HandleMovement()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
     }
 }
+```
 
-// LifetimeScope configuration
-public class GameLifetimeScope : LifetimeScope
+### Creating a ScriptableObject
+
+```csharp
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "NewEnemyData", menuName = "Game/Enemy Data")]
+public class EnemyData : ScriptableObject
 {
-    protected override void Configure(IContainerBuilder builder)
+    [Header("Basic Info")]
+    public string enemyName;
+    public Sprite icon;
+
+    [Header("Stats")]
+    public int maxHealth = 100;
+    public float moveSpeed = 3f;
+    public int damage = 10;
+
+    [Header("Combat")]
+    public float attackRange = 2f;
+    public float attackCooldown = 1.5f;
+
+    [Header("Rewards")]
+    public int experienceReward = 50;
+    public GameObject[] lootDrops;
+}
+```
+
+### Editor Script Example
+
+```csharp
+using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(EnemyData))]
+public class EnemyDataEditor : Editor
+{
+    public override void OnInspectorGUI()
     {
-        builder.Register<IPlayerService, PlayerService>(Lifetime.Singleton);
-        builder.RegisterComponentInHierarchy<GameManager>();
+        EnemyData enemyData = (EnemyData)target;
+
+        EditorGUILayout.BeginHorizontal();
+        if (enemyData.icon != null)
+        {
+            GUILayout.Box(enemyData.icon.texture, GUILayout.Width(64), GUILayout.Height(64));
+        }
+        EditorGUILayout.BeginVertical();
+        EditorGUILayout.LabelField(enemyData.enemyName, EditorStyles.boldLabel);
+        EditorGUILayout.LabelField($"HP: {enemyData.maxHealth} | DMG: {enemyData.damage}");
+        EditorGUILayout.EndVertical();
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        DrawDefaultInspector();
     }
 }
 ```
 
-**Lifetime Selection**:
-- `Lifetime.Singleton` - One instance for entire app
-- `Lifetime.Scoped` - One instance per scene
-- `Lifetime.Transient` - New instance each time
+## Integration with Babysitter SDK
 
----
-
-## MCP Tool Categories
-
-### C# Code Editing
-
-| Tool | Purpose | Usage Condition |
-|------|---------|-----------------|
-| `edit_snippet` | Lightweight edit | Diff within 80 characters |
-| `edit_structured` | Structured edit | Method body replacement, member addition |
-| `get_symbols` | Symbol list | Required before editing |
-| `find_symbol` | Symbol search | Find symbol by name |
-| `find_refs` | Reference search | Before refactoring |
-| `read` | Read code | Check file contents |
-| `search` | Pattern search | Regex search |
-| `create_class` | Create class | New file |
-| `rename_symbol` | Rename | Project-wide |
-| `remove_symbol` | Remove symbol | Delete unused code |
-
-### Scene & GameObject
-
-| Tool | Purpose |
-|------|---------|
-| `get_hierarchy` | Get hierarchy |
-| `create_gameobject` | Create GameObject |
-| `modify_gameobject` | Modify GameObject |
-| `delete_gameobject` | Delete GameObject |
-| `find_gameobject` | Find GameObject |
-| `add_component` | Add component |
-| `modify_component` | Modify component |
-| `remove_component` | Remove component |
-| `list_components` | List components |
-
-### Asset Management
-
-| Tool | Purpose |
-|------|---------|
-| `create_prefab` | Create prefab |
-| `modify_prefab` | Modify prefab |
-| `instantiate_prefab` | Instantiate prefab |
-| `create_material` | Create material |
-| `modify_material` | Modify material |
-| `manage_asset_database` | Asset operations |
-| `addressables_manage` | Addressables management |
-
-### PlayMode & Testing
-
-| Tool | Purpose |
-|------|---------|
-| `play_game` | Start PlayMode |
-| `stop_game` | Stop PlayMode |
-| `pause_game` | Pause |
-| `input_keyboard` | Keyboard input |
-| `input_mouse` | Mouse input |
-| `input_gamepad` | Gamepad input |
-| `capture_screenshot` | Screenshot |
-| `run_tests` | Run tests |
-
-### UI Systems
-
-| System | Purpose | Detail Skill |
-|--------|---------|--------------|
-| uGUI | Game UI (Canvas/EventSystem) | `unity-game-ugui-design` |
-| UI Toolkit | Modern UI (Runtime/Editor) | `unity-game-ui-toolkit-design` |
-| IMGUI | Editor extensions only | `unity-editor-imgui-design` |
-
----
-
-## Composite Workflow Examples
-
-### Example 1: Scene Transition with UI Button
-
-**Required operations**: UI creation + Scene management + C# script
+### Task Definition Example
 
 ```javascript
-// 1. Create button GameObject
-mcp__unity-mcp-server__create_gameobject({
-  name: "StartButton",
-  parentPath: "/Canvas"
-})
+const unityScriptTask = defineTask({
+  name: 'unity-script-generation',
+  description: 'Generate Unity C# script',
 
-// 2. Add Button component
-mcp__unity-mcp-server__add_component({
-  gameObjectPath: "/Canvas/StartButton",
-  componentType: "Button"
-})
+  inputs: {
+    scriptType: { type: 'string', required: true }, // MonoBehaviour, ScriptableObject, Editor
+    className: { type: 'string', required: true },
+    features: { type: 'array', required: true },
+    outputPath: { type: 'string', required: true }
+  },
 
-// 3. Create click handler script
-mcp__unity-mcp-server__create_class({
-  path: "Assets/Scripts/UI/StartButtonHandler.cs",
-  className: "StartButtonHandler",
-  baseType: "MonoBehaviour",
-  namespace: "Game.UI"
-})
+  outputs: {
+    scriptPath: { type: 'string' },
+    success: { type: 'boolean' }
+  },
 
-// 4. Add OnClick implementation
-mcp__unity-mcp-server__edit_structured({
-  path: "Assets/Scripts/UI/StartButtonHandler.cs",
-  symbolName: "StartButtonHandler",
-  operation: "insert_after",
-  newText: `
-    public void OnStartClicked()
-    {
-        SceneManager.LoadScene("GameScene");
+  async run(inputs, taskCtx) {
+    return {
+      kind: 'skill',
+      title: `Generate Unity script: ${inputs.className}`,
+      skill: {
+        name: 'unity-development',
+        context: {
+          operation: 'generate_script',
+          scriptType: inputs.scriptType,
+          className: inputs.className,
+          features: inputs.features,
+          outputPath: inputs.outputPath
+        }
+      },
+      io: {
+        inputJsonPath: `tasks/${taskCtx.effectId}/input.json`,
+        outputJsonPath: `tasks/${taskCtx.effectId}/result.json`
+      }
+    };
+  }
+});
+```
+
+## MCP Server Integration
+
+### Available MCP Tools (via unity-mcp)
+
+| Tool | Description |
+|------|-------------|
+| `unity_create_gameobject` | Create new GameObject in scene |
+| `unity_modify_component` | Add/modify component on GameObject |
+| `unity_create_script` | Generate and attach C# script |
+| `unity_build` | Trigger Unity build |
+| `unity_run_tests` | Execute Unity Test Framework tests |
+| `unity_import_asset` | Import and configure assets |
+| `unity_scene_hierarchy` | Query scene structure |
+| `unity_project_settings` | Read/modify project settings |
+
+### Configuration
+
+```json
+{
+  "mcpServers": {
+    "unity": {
+      "command": "uvx",
+      "args": ["unity-mcp"],
+      "env": {
+        "UNITY_PROJECT_PATH": "C:/Projects/MyGame",
+        "UNITY_VERSION": "2022.3.20f1"
+      }
     }
-`
-})
+  }
+}
 ```
 
-### Example 2: Create Enemy Character
+## Best Practices
 
-**Required operations**: GameObject + Components + C# script + Prefab
+1. **Assembly Definitions**: Organize code with .asmdef files for faster compilation
+2. **Serialization**: Use [SerializeField] for inspector exposure while keeping fields private
+3. **Null Checks**: Always validate component references in Awake/Start
+4. **Object Pooling**: Avoid runtime instantiation for frequently spawned objects
+5. **Coroutines**: Use for time-based operations, avoid heavy logic
+6. **Events**: Use UnityEvent or C# events for decoupled communication
 
-```javascript
-// 1. Create enemy GameObject
-mcp__unity-mcp-server__create_gameobject({
-  name: "Enemy",
-  primitiveType: "capsule",
-  position: { x: 0, y: 1, z: 0 }
-})
+## Platform Considerations
 
-// 2. Add components
-mcp__unity-mcp-server__add_component({
-  gameObjectPath: "/Enemy",
-  componentType: "Rigidbody"
-})
+| Platform | Key Considerations |
+|----------|-------------------|
+| PC/Mac | Memory less constrained, full shader support |
+| Mobile | Texture compression, draw call batching, thermal limits |
+| Console | Certification requirements, memory budgets, TCR compliance |
+| WebGL | No threading, limited memory, shader restrictions |
 
-// 3. Create enemy script
-mcp__unity-mcp-server__create_class({
-  path: "Assets/Scripts/Enemies/EnemyController.cs",
-  className: "EnemyController",
-  baseType: "MonoBehaviour"
-})
+## References
 
-// 4. Add AI implementation
-mcp__unity-mcp-server__edit_structured({
-  path: "Assets/Scripts/Enemies/EnemyController.cs",
-  symbolName: "EnemyController",
-  operation: "insert_after",
-  newText: `
-    [SerializeField] private float _speed = 3f;
-    private Transform _target;
-
-    void Update()
-    {
-        if (_target != null)
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                _target.position,
-                _speed * Time.deltaTime
-            );
-    }
-`
-})
-
-// 5. Convert to prefab
-mcp__unity-mcp-server__create_prefab({
-  gameObjectPath: "/Enemy",
-  prefabPath: "Assets/Prefabs/Enemies/Enemy.prefab"
-})
-```
-
-### Example 3: PlayMode Testing
-
-**Required operations**: Test creation + PlayMode control + Input simulation
-
-```javascript
-// 1. Create test class
-mcp__unity-mcp-server__create_class({
-  path: "Assets/Tests/PlayMode/PlayerMovementTests.cs",
-  className: "PlayerMovementTests",
-  namespace: "Tests.PlayMode",
-  usings: "NUnit.Framework,UnityEngine.TestTools,System.Collections"
-})
-
-// 2. Add PlayMode test implementation
-mcp__unity-mcp-server__edit_structured({
-  path: "Assets/Tests/PlayMode/PlayerMovementTests.cs",
-  symbolName: "PlayerMovementTests",
-  operation: "insert_after",
-  newText: `
-    [UnityTest]
-    public IEnumerator Player_MovesForward_WhenWPressed()
-    {
-        var player = Object.FindObjectOfType<PlayerController>();
-        var startPos = player.transform.position;
-
-        yield return null;
-
-        // Simulate W key input
-        // Use input_keyboard tool during test execution
-
-        yield return new WaitForSeconds(0.5f);
-
-        Assert.Greater(player.transform.position.z, startPos.z);
-    }
-`
-})
-
-// 3. Run tests
-mcp__unity-mcp-server__run_tests({
-  testMode: "PlayMode",
-  filter: "PlayerMovementTests"
-})
-```
-
----
-
-## Child Skill Reference
-
-Refer to the following child skills when detailed implementation patterns are needed:
-
-| Skill | Purpose | When to Reference |
-|-------|---------|-------------------|
-| `unity-csharp-editing` | C# editing, TDD, refactoring | During code editing |
-| `unity-scene-management` | Scene & GameObject operations | During scene construction |
-| `unity-asset-management` | Prefabs, materials, Addressables | During asset management |
-| `unity-playmode-testing` | PlayMode, input simulation | During test execution |
-| `unity-game-ugui-design` | uGUI (Canvas/EventSystem) | During game UI implementation |
-| `unity-game-ui-toolkit-design` | UI Toolkit (Runtime) | During modern UI implementation |
-| `unity-editor-imgui-design` | IMGUI (EditorWindow/Inspector) | During editor extension |
-
----
-
-## Quick Decision Tree
-
-```
-Unity Development Task
-├─ Need code editing?
-│   ├─ YES → edit_snippet / edit_structured
-│   │         Details: unity-csharp-editing
-│   └─ NO → Next
-├─ Need scene/GameObject operations?
-│   ├─ YES → create_gameobject / add_component
-│   │         Details: unity-scene-management
-│   └─ NO → Next
-├─ Need asset operations?
-│   ├─ YES → create_prefab / addressables_manage
-│   │         Details: unity-asset-management
-│   └─ NO → Next
-├─ Need UI implementation?
-│   ├─ Game UI → unity-game-ugui-design or unity-game-ui-toolkit-design
-│   └─ Editor UI → unity-editor-imgui-design
-└─ Need testing/verification?
-    └─ YES → play_game / run_tests
-              Details: unity-playmode-testing
-```
+- [Unity Documentation](https://docs.unity3d.com/)
+- [Unity MCP (CoplayDev)](https://github.com/CoplayDev/unity-mcp)
+- [Unity-MCP (IvanMurzak)](https://github.com/IvanMurzak/Unity-MCP)
+- [mcp-unity (CoderGamester)](https://github.com/CoderGamester/mcp-unity)
+- [Unity Learn](https://learn.unity.com/)
+- [Unity Best Practices](https://unity.com/how-to)

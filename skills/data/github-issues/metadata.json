@@ -1,7 +1,7 @@
 {
   "name": "github-issues",
-  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
-  "path": ".claude/skills/github-specialist/github-issues/SKILL.md",
-  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
-  "downloaded_at": "2026-02-02T05:03:39.097023Z"
+  "repo": "beel-collab/presets.dev",
+  "path": "skills/github-issues/SKILL.md",
+  "source": "github.com/beel-collab/presets.dev",
+  "downloaded_at": "2026-02-04T05:14:55.515530Z"
 }

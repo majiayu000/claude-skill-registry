@@ -1,8 +1,7 @@
 ---
 name: loogle-search
-description: Search Lean 4 mathlib using Loogle API
+description: Search Mathlib for lemmas by type signature pattern
 ---
-
 # Loogle Search - Mathlib Type Signature Search
 
 Search Mathlib for lemmas by type signature pattern.

@@ -6,11 +6,11 @@ prerequisites:
   - architecture.md
 outputs:
   - Integration test results
-  - .signals/phase4-complete.json
+  - .signals/phase9-complete.json
 description: |
   Validates integration points and ensures components work together correctly.
   Activates via codeword [ACTIVATE:INTEGRATION_VALIDATOR_V1] injected by hooks
-  when entering Phase 4 integration testing.
+  when entering Phase 9 integration testing.
   
   Activation trigger: [ACTIVATE:INTEGRATION_VALIDATOR_V1]
 ---
@@ -31,12 +31,12 @@ This occurs when:
 
 ## Worktree Isolation Requirements
 
-**CRITICAL**: This skill MUST operate in a dedicated worktree `phase-4-task-1`:
+**CRITICAL**: This skill MUST operate in a dedicated worktree `phase-9-task-1`:
 
 ```bash
 # Before skill activation:
 ./lib/worktree-manager.sh create 4 1
-cd ./worktrees/phase-4-task-1
+cd ./worktrees/phase-9-task-1
 
 # Validate isolation:
 ./hooks/worktree-enforcer.sh enforce
@@ -64,7 +64,6 @@ Systematically validates production readiness through worktree-isolated testing:
 - **Remediation Plans:** Detailed action items to address gaps
 - **NEW**: Isolated integration testing prevents test contamination
 - **NEW**: Clean test environment ensures accurate validation results
-- **Completion signal** → triggers Phase 10
 
 ## What This Skill Does
 
@@ -987,13 +986,13 @@ NEXT STEPS:
 
 ## CRITICAL: Automatic Phase Transition
 
-**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 10.**
+**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 5.**
 
 When Phase 9 is complete (integration tests passing), you MUST:
 
 1. Output the completion signal:
    ```
-   ✅ PHASE 9 COMPLETE
+   ✅ PHASE 4 COMPLETE
    [SIGNAL:PHASE9_COMPLETE]
    ```
 
@@ -1008,9 +1007,6 @@ When Phase 9 is complete (integration tests passing), you MUST:
 
 ## See Also
 
-- Pipeline Orchestrator (triggers this)
-- TDD Implementer (Phase 7, provides input)
-- E2E Validator (Phase 10, triggered by signal)
 - `/checklists/production-readiness-comprehensive.md`
 - `/templates/integration-test-suite.md`
 - `/examples/gap-analysis-report.md`

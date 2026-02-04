@@ -1,438 +1,766 @@
 ---
-name: git-commit-push
-description: This skill should be used when the user wants to commit their work to git and push to GitHub. It guides through reviewing changes, crafting meaningful commit messages following project conventions (including Conventional Commits when detected), creating commits with security checks, and pushing to remote repositories.
+name: Git-Commit-Push
+description: Skill para commits e pushes automatizados no GitHub. Analisa mudanças, gera mensagens descritivas seguindo convenções, valida código e executa git push com segurança. Acionado por "faça um git push" ou "commite tudo". Visão full-stack senior dev.
 ---
 
-# Git Commit and Push
+# 🚀 GIT COMMIT & PUSH PROTOCOL
 
-## Overview
+## 🎯 Objetivo
+Automatizar commits e pushes com mensagens descritivas, validações de código e boas práticas de versionamento.
 
-This skill provides a structured workflow for committing changes to git and pushing to GitHub. It ensures changes are reviewed, commit messages are meaningful and follow conventions, secrets are not committed, and commits are properly pushed to remote repositories. The skill adapts to project conventions, supporting both Conventional Commits and custom formats.
+---
 
-**Execution Philosophy**: This skill uses **contextual autonomy** - it executes immediately for safe, straightforward commits, but asks for confirmation when changes are large, complex, or potentially risky. This balances speed with safety.
+## ⚡ ATIVAÇÃO AUTOMÁTICA
 
-## When to Use This Skill
+### Comandos que Acionam a Skill
 
-Use this skill when the user:
-- Explicitly requests to "commit my work" or "push to GitHub"
-- Says they want to save/commit/push their changes
-- Asks to create a commit or push code
-- Wants to share their work on GitHub
+**Termos Diretos (SEMPRE usar skill):**
+- `git push`
+- `git commit`
+- `push`
+- `commit`
+- `git e push` ← **IMPORTANTE: variação comum**
 
-## Workflow
+**Frases em Português:**
+- "faça um git push"
+- "faça o push"
+- "faz um push"
+- "faça git e push"
+- "git e push"
+- "commite tudo"
+- "commit e push"
+- "suba as mudanças"
+- "subir mudanças"
+- "envie para o github"
+- "envia pro github"
+- "git push das alterações"
+- "commit das mudanças"
+- "salva no git"
+- "salvar no git"
+- "versiona isso"
+- "versionar"
+- "commitar"
+- "pushar"
 
-### Step 1: Review Changes
+**Variações Curtas:**
+- "push isso"
+- "commita"
+- "manda pro git"
+- "atualiza o repo"
+- "atualizar repositório"
+- "sobe isso"
+- "sobe pro git"
+- "joga no git"
+- "puxa e empurra" (pull + push)
 
-Before committing, review what has changed:
+**Após Implementações:**
+- "pronto, push"
+- "feito, commit"
+- "terminei, sobe"
+- "ok, git push"
+- "antes... git e push"
+- "antes, push"
+- "só falta o push"
 
-1. **Check git status** to see modified, new, and deleted files:
-   ```bash
-   git status
-   ```
+**Variações Implícitas (contexto de finalização):**
+- "agora commita"
+- "pode commitar"
+- "manda ver no git"
+- "finaliza no github"
+- "fecha com push"
 
-2. **Analyze diff systematically**:
-   ```bash
-   git diff --stat  # Overview of changes
-   git diff         # Detailed line-by-line changes
-   ```
-
-3. **Categorize changes** to inform commit message:
-   - **New features**: New files, new functions, new capabilities
-   - **Bug fixes**: Modified logic, error handling improvements
-   - **Refactoring**: Structure changes with no behavior change
-   - **Documentation**: *.md files, code comments, docstrings
-   - **Tests**: Test files, test additions/modifications
-   - **Configuration**: Build files, dependencies, settings
-   - **Styling**: Formatting, whitespace, code style only
-
-4. **Check recent commits** to understand commit message style:
-   ```bash
-   git log --oneline -20
-   ```
-
-5. **Present summary** to the user:
-   - List all modified, new, and deleted files
-   - Highlight key changes by category
-   - Note total lines added/removed
-   - Flag any unusual patterns (large files, many deletions, etc.)
-
-### Step 2: Detect Project Convention
-
-Determine if project uses Conventional Commits or custom format:
-
-1. **Check for Conventional Commits pattern**:
-   ```bash
-   # Look for type(scope): format in recent commits
-   git log --oneline -20 | grep -E "^[a-f0-9]+ (feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)(\(.+\))?:"
-   ```
-
-2. **Analyze result**:
-   - If ≥50% of commits match pattern → Project uses Conventional Commits
-   - Otherwise → Project uses custom format
-
-3. **Note the convention** for commit message crafting
-
-### Step 3: Craft Commit Message
-
-Create a meaningful commit message following detected convention:
-
-#### If Conventional Commits Detected
-
-Use format: `type(scope): description`
-
-**Common types**:
-- `feat`: New feature or capability
-- `fix`: Bug fix
-- `docs`: Documentation changes only
-- `style`: Code style/formatting (no logic change)
-- `refactor`: Code restructuring (no behavior change)
-- `test`: Adding or modifying tests
-- `chore`: Maintenance, dependencies, build
-- `perf`: Performance improvements
-- `ci`: CI/CD pipeline changes
-- `build`: Build system or external dependencies
-
-**Optional scope**: Component or module affected (e.g., `auth`, `api`, `ui`)
-
-**Format**:
-```
-type(scope): imperative summary (max 50 chars)
-
-Optional body explaining the change in detail.
-Explain WHY, not WHAT (the diff shows what).
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
+**Regex de Detecção:**
+```regex
+/^(antes\s*[\.,]?\s*)?(git\s*(e\s*)?)?((push|commit|commita|commitar|pushar|suba|subir|envie?|manda|versiona|sobe))/i
+/(push|commit|github|repo|git)\s*(isso|tudo|mudanças|alterações)?$/i
+/(só\s*falta|pode|agora|fecha\s*com)\s*(o\s*)?(push|commit)/i
 ```
 
-**Example**:
-```
-feat(evaluation): add Inspect AI integration to experiment framework
+### Quando Usar
+- Após implementar funcionalidade completa
+- Após correções de bugs
+- Após refatorações
+- Quando solicitado explicitamente
 
-Implements Phase 4 evaluation support with:
-- User-written evaluation tasks workflow
-- Adapter-only checkpointing (200x storage reduction)
-- Complete working examples and documentation
+---
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+## 📋 PROTOCOLO DE EXECUÇÃO
 
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
+### FASE 1: ANÁLISE DE MUDANÇAS
 
-#### If Custom Format Detected
-
-Match the project's existing style:
-
-1. **Summarize changes** in 1-2 sentences (imperative, present tense)
-2. **Focus on "why"** rather than "what" (diff shows what changed)
-3. **Follow observed conventions** (capitalization, punctuation, length)
-4. **Keep concise** but informative
-
-**Format**:
-```
-Summary line (imperative mood, present tense)
-
-Optional detailed explanation of the changes.
-Focus on motivation and context.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
-
-**Example**:
-```
-Add evaluation configuration to experiment definition framework
-
-Implements Inspect AI integration, adapter-only checkpointing support,
-and complete working examples for Phase 4 implementation.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
-
-### Step 4: Assess Commit Risk
-
-Determine whether this commit is "safe" (autonomous) or "risky" (requires confirmation):
-
-**Safe commits** (execute autonomously):
-- ≤ 5 files changed
-- ≤ 500 total lines changed
-- Not committing to main/master branch
-- All changes are related (same category from Step 1)
-- No unusual patterns (massive deletions, binary files, etc.)
-- User specified which files to commit
-
-**Risky commits** (require confirmation):
-- > 5 files changed
-- > 500 total lines changed
-- Committing to main/master branch
-- Mixed change types (features + fixes + refactoring)
-- Many untracked files (unclear what to commit)
-- Large files (> 100KB)
-- Unusual patterns detected
-
-**If risky**, show summary and ask user:
-```
-⚠️ Large/complex commit detected
-
-Files: 15 files changed (+2,500 lines, -300 lines)
-Types: Features (8 files), Documentation (5 files), Tests (2 files)
-Branch: main
-Message: "Add evaluation configuration and examples"
-
-This appears to contain multiple logical changes.
-Options:
-  [Y] Proceed with single commit
-  [n] Cancel (I'll help you split it)
-  [s] Show detailed file list
-```
-
-**If safe**, proceed autonomously to Step 5.
-
-### Step 5: Check for Secrets
-
-Before staging, scan for sensitive information:
-
-1. **Check unstaged changes for secret patterns**:
-   ```bash
-   git diff | grep -E "(api[_-]?key|api[_-]?secret|password|token|secret[_-]?key|private[_-]?key|aws[_-]?access)" -i
-   ```
-
-2. **Check for specific patterns**:
-   - AWS Access Keys: `AKIA[0-9A-Z]{16}`
-   - Generic API keys: `[a-zA-Z0-9_-]{32,}`
-   - Private keys: `-----BEGIN.*PRIVATE KEY-----`
-   - GitHub tokens: `ghp_`, `gho_`, `ghs_`, `ghr_`
-   - Bearer tokens: `Bearer [a-zA-Z0-9._-]+`
-   - Passwords in configs: `password\s*[:=]\s*["']?[^"'\s]+`
-
-3. **Check for sensitive files**:
-   ```bash
-   git status --short | grep -E "\.env|credentials|secrets|\.pem|\.key|\.p12"
-   ```
-
-4. **If secrets detected**:
-   - ❌ **STOP immediately**
-   - Show user the matched patterns (without revealing full values)
-   - Explain the risk
-   - Ask user to:
-     - Remove secrets from code
-     - Use environment variables or secret management
-     - Add file to `.gitignore` if appropriate
-   - **Do not proceed** until secrets are removed
-
-5. **If no secrets detected**:
-   - ✅ Proceed to staging
-
-### Step 6: Stage and Commit Changes
-
-1. **Stage relevant files**:
-   ```bash
-   git add <file1> <file2> ...
-   ```
-
-   **Staging guidelines**:
-   - Stage files related to this logical change
-   - Do NOT stage unrelated changes (save for separate commit)
-   - Determine files to stage based on change analysis from Step 1
-   - **If autonomous**: Announce which files are being staged
-   - **If confirmed**: User already saw file list in confirmation
-
-2. **Verify staged changes**:
-   ```bash
-   git diff --staged --stat
-   ```
-
-3. **Announce or show commit message**:
-   - **If autonomous**: Announce message briefly ("Committing: 'Add feature X'")
-   - **If confirmed**: User already saw message in confirmation
-
-4. **Create commit** with formatted message:
-   ```bash
-   git commit -m "$(cat <<'EOF'
-   <commit message here>
-
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-   Co-Authored-By: Claude <noreply@anthropic.com>
-   EOF
-   )"
-   ```
-
-5. **Verify commit** was created:
-   ```bash
-   git log -1 --stat
-   ```
-
-### Step 7: Push to Remote
-
-1. **Check remote status**:
-   ```bash
-   git status  # Check if branch tracks remote
-   ```
-
-2. **Push to GitHub**:
-   ```bash
-   # If branch already tracks remote
-   git push
-
-   # If new branch (first push)
-   git push -u origin <branch-name>
-   ```
-
-3. **Confirm success**:
-   - Report push result to user
-   - Show number of commits pushed
-   - Provide remote URL if available
-   - Note any warnings or issues
-
-## Important Guidelines
-
-### Safety Rules
-
-- **Never push force** to main/master without explicit user confirmation
-- **Never skip hooks** (--no-verify) unless explicitly requested by user
-- **Never commit secrets** - stop and warn user if detected
-- **Check authorship** before amending commits (don't amend others' work)
-- **Check for large files** - warn if files > 100KB (may need Git LFS)
-- **Always verify** what's being committed before executing
-
-### Best Practices
-
-1. **Review before committing** - show user what will be committed
-2. **Meaningful messages** - explain why changes were made, not just what
-3. **Atomic commits** - each commit should be a single logical change
-4. **Follow conventions** - detect and match project's commit style
-5. **Add co-author attribution** - include Claude Code footer
-6. **Keep commits focused** - don't mix refactoring with features
-
-### Commit Scope Guidelines
-
-**Good commit scope**:
-- ✅ One logical change per commit
-- ✅ Related files together (e.g., code + corresponding test)
-- ✅ Can be described in one sentence
-- ✅ Typically < 500 lines (unless it's a rename/refactor)
-- ✅ All changes serve the same purpose
-
-**Signs to split commits**:
-- ❌ Using "and" more than once in commit message
-- ❌ Changes span multiple unrelated features
-- ❌ Mix of bug fixes and new features
-- ❌ Experimental changes alongside production code
-- ❌ "WIP", "misc fixes", or "various updates" messages
-
-**When to split**:
+#### 1.1 Verificar Status do Git
 ```bash
-# If you have unrelated changes, stage selectively:
-git add -p  # Interactively choose hunks to stage
+# Ver branch atual
+bash git branch --show-current
 
-# Or stage specific files:
-git add file1.py file1_test.py  # First commit: feature A
-git commit -m "feat: add feature A"
+# Ver mudanças
+bash git status --short
 
-git add file2.py file2_test.py  # Second commit: feature B
-git commit -m "feat: add feature B"
+# Ver diff detalhado
+bash git diff --stat
+
+# Ver arquivos staged (se houver)
+bash git diff --cached --stat
 ```
 
-### Error Handling
+#### 1.2 Identificar Tipo de Mudança
+```bash
+# Analisar arquivos modificados
+bash git diff --name-only
 
-**If commit fails**:
-- Check for pre-commit hooks modifying files
-- Review error message carefully
-- May need to stage hook-modified files and amend
-- Only amend if: (1) user requested it OR (2) fixing pre-commit hook changes AND it's safe (check authorship, not pushed)
+# Categorizar mudanças:
+# - controllers/ → feat/fix backend
+# - models/ → feat/fix database
+# - routes/ → feat/fix routing
+# - public/js/ → feat/fix frontend
+# - public/css/ → style
+# - *.md → docs
+# - package.json → deps
+```
 
-**If secrets detected**:
-- Stop immediately, do not commit
-- Explain which patterns matched
-- Guide user to remove secrets
-- Suggest using environment variables or secret management
-- Consider adding `.gitignore` entries
+#### 1.3 Mapear Escopo da Mudança
+- **Backend:** Controllers, Models, Routes, Services
+- **Frontend:** JS modules, HTML, CSS
+- **Config:** package.json, .env.example, constants
+- **Docs:** README, CHANGELOG, markdown files
+- **Infra:** Deployment configs, Docker, scripts
 
-**If push fails**:
-- Check remote branch status (might need pull first)
-- Check for merge conflicts
-- Verify remote URL is correct
-- Check authentication/permissions
-- Report error to user with suggested fixes
+---
 
-**If large files detected**:
-- Warn user about file sizes
-- Suggest Git LFS for files > 100KB
-- Ask if files should be committed or added to `.gitignore`
+### FASE 2: VALIDAÇÕES PRÉ-COMMIT
 
-## Example Interaction
+#### 2.1 Validação de Código
 
-### Example 1: Conventional Commits Project
+**JavaScript/Node.js:**
+```bash
+# Syntax check em arquivos modificados
+bash for file in $(git diff --name-only --diff-filter=AM | grep "\.js$"); do node --check "$file" 2>&1 || echo "❌ Erro em $file"; done
 
-**User**: "I'd like to commit my work and push to GitHub"
+# Verificar console.log esquecidos
+bash git diff | grep -n "console\.log\|debugger" && echo "⚠️ Debug code detectado"
 
-**Assistant**:
-1. Runs `git status` and `git diff --stat`
-2. Analyzes: "2 files changed (+1,269 lines)"
-3. Categorizes: "New feature (eval config), documentation"
-4. Risk assessment: ✅ Safe (2 files, 1,269 lines, feature branch)
-5. Checks convention: Detects Conventional Commits (15/20 matches)
-6. Scans for secrets: ✅ None detected
-7. Announces: "Committing: `feat(evaluation): add Inspect AI integration`"
-8. Executes: `git add`, `git commit`, `git push`
-9. Reports: "✓ Committed 795efaf and pushed to GitHub"
+# Verificar TODO/FIXME
+bash git diff | grep -n "TODO\|FIXME\|XXX" && echo "📝 Marcadores pendentes"
+```
 
-### Example 2: Large Commit Requiring Confirmation
+**Multi-Tenant Validation:**
+```bash
+# Verificar queries sem liga_id
+bash git diff | grep -A 5 "\.find\|\.findOne\|\.updateMany" | grep -v "liga_id" && echo "⚠️ Query sem liga_id detectada"
+```
 
-**User**: "commit my changes"
+**Security Checks:**
+```bash
+# Verificar rotas desprotegidas
+bash git diff routes/ | grep "router\.\(post\|put\|delete\)" | grep -v "verificar" && echo "⚠️ Rota sem middleware"
 
-**Assistant**:
-1. Analyzes: "15 files changed (+2,847 lines, -156 lines)"
-2. Categorizes: "Features (8 files), docs (5 files), tests (2 files)"
-3. Risk assessment: ⚠️ **Risky** (>5 files, >500 lines, mixed types)
-4. Scans for secrets: ✅ None detected
-5. Shows confirmation:
-   ```
-   ⚠️ Large commit with mixed changes detected
+# Verificar secrets expostos
+bash git diff | grep -iE "password|secret|key|token" | grep -v "\.env" && echo "🔒 Possível secret exposto"
+```
 
-   Files: 15 (+2,847 lines, -156 lines)
-   Categories: Features (8), Documentation (5), Tests (2)
-   Message: "Add evaluation framework with examples and tests"
+#### 2.2 Validação de Qualidade
 
-   Consider splitting into:
-   - Commit 1: Core evaluation framework (8 files)
-   - Commit 2: Documentation (5 files)
-   - Commit 3: Tests (2 files)
+**Code Quality:**
+```bash
+# Verificar arquivos > 500 linhas
+bash for file in $(git diff --name-only --diff-filter=AM | grep "\.js$"); do lines=$(wc -l < "$file" 2>/dev/null); [ "$lines" -gt 500 ] && echo "📏 $file muito grande ($lines linhas)"; done
 
-   Proceed with single commit? [Y/n/split]
-   ```
-6. **Waits** for user response
+# Verificar funções muito complexas
+bash git diff | grep -c "function\|=>" | awk '{if($1 > 20) print "⚠️ Muitas funções em um diff"}'
+```
 
-### Example 3: Secrets Detected (Always Blocks)
+#### 2.3 Decisão: Continuar ou Abortar
+- ❌ **Syntax errors** → ABORTAR, corrigir primeiro
+- ⚠️ **Debug code** → AVISAR usuário, continuar se confirmado
+- ⚠️ **Security issues** → AVISAR, aguardar confirmação
+- ✅ **Tudo OK** → Continuar
 
-**User**: "commit my changes"
+---
 
-**Assistant**:
-1. Reviews changes: Modified config.py (+10 lines)
-2. Scans for secrets: ❌ **FOUND** pattern matching API key
-3. **STOPS**: "⚠️ Security Warning: Detected potential API key in config.py"
-4. Shows matched line: `api_key = "sk_live_..."`
-5. Advises: "Please use environment variables instead: `api_key = os.getenv('API_KEY')`"
-6. **Does not proceed** until user confirms secrets are removed
+### FASE 3: GERAÇÃO DE MENSAGEM DE COMMIT
 
-## Notes
+#### 3.1 Formato Conventional Commits
+```
+<tipo>(<escopo>): <descrição curta>
 
-- This skill follows the git safety protocol from the Bash tool documentation
-- Commit message format includes Claude Code attribution as per project conventions
-- Always run commands sequentially (staging, committing, pushing) not in parallel
-- Adapts to project conventions rather than enforcing a single standard
-- Uses **contextual autonomy**: executes immediately for safe commits, confirms for risky ones
-- Security checks are non-negotiable - always blocks on secrets
-- Thresholds: Safe ≤ 5 files, ≤ 500 lines, not main/master, single change type
+<corpo detalhado (opcional)>
 
-## References
+<footer (opcional)>
+```
 
-- [Conventional Commits Specification](https://www.conventionalcommits.org/)
-- [Git Commit Best Practices](https://cbea.ms/git-commit/)
-- [Pre-commit Framework](https://pre-commit.com/)
-- [Git Hooks Documentation](https://git-scm.com/docs/githooks)
+#### 3.2 Tipos Padronizados
+- `feat`: Nova funcionalidade
+- `fix`: Correção de bug
+- `refactor`: Refatoração sem mudança de comportamento
+- `perf`: Melhoria de performance
+- `style`: Formatação, espaçamento (não CSS)
+- `docs`: Apenas documentação
+- `test`: Adicionar/corrigir testes
+- `build`: Mudanças no build/deploy
+- `ci`: Mudanças em CI/CD
+- `chore`: Manutenção geral
+
+#### 3.3 Escopos do Projeto
+- `extrato`: Módulo de extratos financeiros
+- `acertos`: Sistema de acertos financeiros
+- `rodadas`: Gerenciamento de rodadas
+- `mata-mata`: Torneio mata-mata
+- `pontos-corridos`: Campeonato por pontos
+- `artilheiro`: Sistema de artilheiros/campeões
+- `fluxo`: Fluxo financeiro
+- `melhor-mes`: Melhor jogador do mês
+- `export`: Funcionalidades de exportação
+- `pwa`: Progressive Web App
+- `auth`: Autenticação
+- `api`: Integrações API
+- `db`: Database/models
+- `ui`: Interface geral
+
+#### 3.4 Algoritmo de Geração de Mensagem
+
+**Analisar arquivos modificados:**
+```javascript
+const mudancas = {
+  controllers: arquivos.filter(f => f.includes('controllers/')),
+  models: arquivos.filter(f => f.includes('models/')),
+  frontend: arquivos.filter(f => f.includes('public/js/')),
+  styles: arquivos.filter(f => f.includes('public/css/')),
+  routes: arquivos.filter(f => f.includes('routes/')),
+  docs: arquivos.filter(f => f.endsWith('.md'))
+};
+
+// Determinar tipo principal
+let tipo = 'chore';
+if (mudancas.controllers.length > 0 || mudancas.models.length > 0) {
+  tipo = 'feat'; // ou 'fix' se contiver "fix", "bug", "erro"
+}
+if (mudancas.styles.length > 0 && mudancas.frontend.length === 0) {
+  tipo = 'style';
+}
+if (mudancas.docs.length > 0 && Object.values(mudancas).flat().length === mudancas.docs.length) {
+  tipo = 'docs';
+}
+
+// Determinar escopo (pasta principal modificada)
+const escopo = identificarEscopoPrincipal(arquivos);
+
+// Gerar descrição baseada em diffs
+const descricao = gerarDescricaoInteligente(git.diff);
+```
+
+#### 3.5 Exemplos de Mensagens Geradas
+
+**Exemplo 1: Nova feature**
+```bash
+# Arquivos: controllers/extratoController.js, public/js/extrato/core.js
+# Diff: +calcularSaldoAcertos(), +saldoAcertos
+
+Mensagem gerada:
+feat(extrato): adiciona cálculo de saldo de acertos
+
+- Implementa função calcularSaldoAcertos() no controller
+- Integra saldo de acertos no extrato do participante
+- Atualiza frontend para exibir breakdown de saldos
+```
+
+**Exemplo 2: Bug fix**
+```bash
+# Arquivos: controllers/acertosController.js
+# Diff: -bug no cálculo, +correção
+
+Mensagem gerada:
+fix(acertos): corrige cálculo de acertos com múltiplas parcelas
+
+- Resolve erro ao calcular acertos com mais de 3 parcelas
+- Adiciona validação para valores negativos
+```
+
+**Exemplo 3: Refatoração**
+```bash
+# Arquivos: public/js/extrato/core.js, public/js/extrato/ui.js
+# Diff: reorganização de funções
+
+Mensagem gerada:
+refactor(extrato): separa lógica de apresentação da UI
+
+- Move funções de cálculo para core.js
+- Mantém apenas renderização em ui.js
+- Melhora manutenibilidade do código
+```
+
+**Exemplo 4: Múltiplos módulos**
+```bash
+# Arquivos: controllers/mataMataController.js, controllers/acertosController.js
+# Diff: mudanças em 2 módulos
+
+Mensagem gerada:
+feat(torneio): integra acertos financeiros no mata-mata
+
+- Adiciona cálculo de acertos no ranking do mata-mata
+- Sincroniza saldos entre módulos
+- Atualiza UI para exibir pendências financeiras
+```
+
+---
+
+### FASE 4: EXECUÇÃO DE COMANDOS GIT
+
+#### 4.1 Staging Inteligente
+
+**Estratégia 1: Stage por categoria**
+```bash
+# Backend primeiro
+bash git add controllers/ models/ routes/ services/ 2>/dev/null
+
+# Frontend depois
+bash git add public/js/ public/css/ public/participante/ 2>/dev/null
+
+# Config e docs
+bash git add package.json *.md config/ 2>/dev/null
+
+# Outros arquivos
+bash git add . 2>/dev/null
+```
+
+**Estratégia 2: Stage tudo de uma vez (padrão)**
+```bash
+bash git add .
+```
+
+#### 4.2 Commit com Mensagem Gerada
+```bash
+# Executar commit
+bash git commit -m "[mensagem gerada]"
+
+# Verificar se commit foi bem-sucedido
+bash git log -1 --oneline
+```
+
+#### 4.3 Verificações Pré-Push
+```bash
+# Ver branch atual
+bash git branch --show-current
+
+# Ver remote configurado
+bash git remote -v
+
+# Ver commits a serem enviados
+bash git log origin/$(git branch --show-current)..HEAD --oneline
+
+# Verificar se há divergências
+bash git fetch origin
+bash git status | grep "behind\|diverged"
+```
+
+#### 4.4 Tratamento de Divergências
+
+**Cenário 1: Local ahead, remote não alterado**
+```bash
+# Push direto
+bash git push origin $(git branch --show-current)
+```
+
+**Cenário 2: Remote alterado (behind)**
+```bash
+# Pull com rebase
+bash git pull --rebase origin $(git branch --show-current)
+
+# Resolver conflitos se houver
+bash git status | grep "both modified" && echo "⚠️ Conflitos detectados"
+
+# Push após resolver
+bash git push origin $(git branch --show-current)
+```
+
+**Cenário 3: Divergência crítica**
+```bash
+# Abortar e avisar usuário
+bash git merge --abort 2>/dev/null
+bash git rebase --abort 2>/dev/null
+
+echo "🚫 PUSH ABORTADO: Divergência detectada"
+echo "Ações necessárias:"
+echo "1. git fetch origin"
+echo "2. git rebase origin/main (ou merge)"
+echo "3. Resolver conflitos"
+echo "4. Tentar push novamente"
+```
+
+---
+
+### FASE 5: EXECUÇÃO DO PUSH
+
+#### 5.1 Push Padrão
+```bash
+# Push para branch atual
+bash git push origin $(git branch --show-current)
+
+# Verificar sucesso
+bash echo $? | grep "0" && echo "✅ Push realizado com sucesso" || echo "❌ Push falhou"
+```
+
+#### 5.2 Push com Tags (se aplicável)
+```bash
+# Se houver tags locais não enviadas
+bash git push origin --tags
+```
+
+#### 5.3 Confirmação Final
+```bash
+# Ver último commit no remote
+bash git log origin/$(git branch --show-current) -1 --oneline
+
+# Ver status limpo
+bash git status
+```
+
+---
+
+## 📊 OUTPUT FINAL
+
+### Template de Resposta
+```markdown
+🚀 **GIT PUSH EXECUTADO**
+
+✅ **Commit:** [hash] - [mensagem]
+📂 **Arquivos:** [quantidade] modificados
+🌿 **Branch:** [nome da branch]
+📡 **Remote:** origin/[branch]
+
+📋 **Resumo das Mudanças:**
+- [módulo 1]: [descrição]
+- [módulo 2]: [descrição]
+
+🔍 **Validações:**
+✅ Syntax check passou
+✅ Multi-tenant validado
+✅ Security checks OK
+
+🔗 **GitHub:** https://github.com/[repo]/commit/[hash]
+```
+
+### Exemplo Real
+```markdown
+🚀 **GIT PUSH EXECUTADO**
+
+✅ **Commit:** a3f2b91 - feat(extrato): adiciona cálculo de saldo de acertos
+📂 **Arquivos:** 3 modificados
+🌿 **Branch:** main
+📡 **Remote:** origin/main
+
+📋 **Resumo das Mudanças:**
+- controllers/extratoController.js: nova função calcularSaldoAcertos()
+- public/js/extrato/core.js: integração frontend
+- routes/extrato-routes.js: endpoint para buscar acertos
+
+🔍 **Validações:**
+✅ Syntax check passou
+✅ Multi-tenant validado
+✅ Security checks OK
+
+🔗 **GitHub:** https://github.com/paulinett1508-dev/SuperCartolaManagerv5/commit/a3f2b91
+```
+
+---
+
+## 🔧 CONFIGURAÇÕES AVANÇADAS
+
+### Commit Hooks (Automatizado)
+```bash
+# Criar pre-commit hook (opcional)
+bash cat > .git/hooks/pre-commit << 'EOF'
+#!/bin/bash
+# Syntax check antes de commitar
+for file in $(git diff --cached --name-only --diff-filter=AM | grep "\.js$"); do
+  node --check "$file" || exit 1
+done
+EOF
+
+bash chmod +x .git/hooks/pre-commit
+```
+
+### Aliases Úteis
+```bash
+# Criar aliases git úteis
+bash git config alias.last 'log -1 HEAD'
+bash git config alias.unstage 'reset HEAD --'
+bash git config alias.visual 'log --oneline --graph --decorate'
+```
+
+---
+
+## ⚙️ ESTRATÉGIAS POR CONTEXTO
+
+### Contexto 1: Desenvolvimento Solo (padrão)
+```bash
+# Push direto para main
+bash git add .
+bash git commit -m "[mensagem]"
+bash git push origin main
+```
+
+### Contexto 2: Feature Branches
+```bash
+# Verificar se está em feature branch
+branch=$(git branch --show-current)
+if [[ $branch != "main" && $branch != "master" ]]; then
+  # Push para feature branch
+  bash git push origin $branch
+  echo "💡 Branch de feature: $branch"
+  echo "Para merge: git checkout main && git merge $branch"
+fi
+```
+
+### Contexto 3: Hotfix Crítico
+```bash
+# Se mensagem contém "hotfix" ou "urgent"
+echo "🚨 HOTFIX DETECTADO"
+bash git add .
+bash git commit -m "hotfix: [descrição]"
+bash git push origin main
+bash git tag -a "hotfix-$(date +%Y%m%d-%H%M)" -m "Hotfix crítico"
+bash git push origin --tags
+```
+
+---
+
+## 🚫 ANTI-PATTERNS (NUNCA FAZER)
+
+### ❌ Commit sem Análise
+```bash
+# ERRADO:
+bash git add . && git commit -m "updates" && git push
+
+# CERTO:
+# 1. Analisar mudanças
+# 2. Validar código
+# 3. Gerar mensagem descritiva
+# 4. Executar push
+```
+
+### ❌ Mensagens Genéricas
+```bash
+# ERRADO:
+git commit -m "fix"
+git commit -m "updates"
+git commit -m "changes"
+
+# CERTO:
+git commit -m "fix(extrato): corrige cálculo de saldo negativo"
+git commit -m "feat(pwa): adiciona botão de instalação"
+```
+
+### ❌ Push sem Validação
+```bash
+# ERRADO:
+git push (sem verificar syntax, conflitos, etc)
+
+# CERTO:
+# 1. Syntax check
+# 2. Verificar divergências
+# 3. Pull se necessário
+# 4. Push
+```
+
+### ❌ Commit de Debug Code
+```bash
+# ERRADO: Commitar com console.log
+console.log("DEBUG: saldo =", saldo);
+
+# CERTO: Remover debug antes de commitar
+bash git diff | grep "console\.log" && echo "⚠️ Remova debug code"
+```
+
+---
+
+## ✅ CHECKLIST COMPLETO
+
+### Pré-Commit
+- [ ] Syntax check em todos arquivos .js
+- [ ] Sem console.log ou debugger
+- [ ] Queries com liga_id validadas
+- [ ] Rotas protegidas com middleware
+- [ ] Sem secrets expostos
+- [ ] Arquivos > 500 linhas revisados
+
+### Commit
+- [ ] Mensagem segue Conventional Commits
+- [ ] Tipo correto (feat/fix/refactor/etc)
+- [ ] Escopo identificado
+- [ ] Descrição clara e concisa
+- [ ] Corpo detalhado (se necessário)
+
+### Push
+- [ ] Branch verificado
+- [ ] Remote correto
+- [ ] Sem divergências ou conflitos
+- [ ] Push bem-sucedido
+- [ ] Status limpo (working tree clean)
+
+---
+
+## 🎯 FLUXO VISUAL
+
+```
+📝 SOLICITAÇÃO
+   "faça um git push"
+          ↓
+🔍 FASE 1: ANÁLISE
+   git status, git diff
+          ↓
+✅ FASE 2: VALIDAÇÕES
+   syntax, multi-tenant, security
+          ↓
+   ❌ Falhou? → ABORTAR + avisar usuário
+   ✅ Passou? → Continuar
+          ↓
+💬 FASE 3: MENSAGEM
+   Gerar commit message descritiva
+          ↓
+📦 FASE 4: STAGING
+   git add (inteligente ou completo)
+          ↓
+💾 FASE 5: COMMIT
+   git commit -m "[mensagem]"
+          ↓
+🔄 FASE 6: PRÉ-PUSH
+   Verificar divergências
+          ↓
+   🔀 Divergência? → Pull/Rebase → Resolver
+   ✅ Limpo? → Continuar
+          ↓
+🚀 FASE 7: PUSH
+   git push origin [branch]
+          ↓
+✅ CONCLUSÃO
+   Confirmar sucesso + resumo
+```
+
+---
+
+## 🎓 CASOS DE USO
+
+### Caso 1: Push Simples
+```
+USUÁRIO: "faça um git push"
+
+SKILL EXECUTA:
+1. git status → 3 arquivos modificados
+2. Validações → ✅ Tudo OK
+3. Mensagem → "feat(extrato): adiciona exportação PDF"
+4. git add .
+5. git commit -m "[mensagem]"
+6. git push origin main
+7. Responde: ✅ Push realizado (commit a3f2b91)
+```
+
+### Caso 2: Múltiplas Mudanças
+```
+USUÁRIO: "commite tudo"
+
+SKILL EXECUTA:
+1. git status → 12 arquivos em 3 módulos
+2. Identifica: backend (extrato) + frontend (mata-mata)
+3. Mensagem → "feat: integra acertos em extrato e mata-mata"
+4. Adiciona bullets detalhando cada módulo
+5. Executa commit + push
+6. Responde: ✅ Push com 12 arquivos
+```
+
+### Caso 3: Hotfix Urgente
+```
+USUÁRIO: "git push urgente do fix"
+
+SKILL EXECUTA:
+1. Detecta palavra "urgente"
+2. Prioriza validação de security
+3. Mensagem → "hotfix: corrige vazamento de dados multi-tenant"
+4. Commit + push
+5. Cria tag hotfix-YYYYMMDD-HHMM
+6. Responde: 🚨 Hotfix enviado + tag criada
+```
+
+### Caso 4: Conflitos Detectados
+```
+USUÁRIO: "faça um push"
+
+SKILL EXECUTA:
+1. git fetch → detecta divergência
+2. git pull --rebase → conflitos em extrato.js
+3. PARA e responde:
+   "🚫 Push abortado: conflitos detectados em extrato.js
+   
+   Resolva manualmente:
+   1. Abra extrato.js
+   2. Resolva marcações <<< === >>>
+   3. Execute: git add extrato.js && git rebase --continue
+   4. Solicite novo push"
+```
+
+---
+
+## 💡 DECISÕES INTELIGENTES
+
+### Escolher Tipo de Commit Automaticamente
+```javascript
+const palavrasChave = {
+  feat: ['adiciona', 'implementa', 'cria', 'novo', 'nova'],
+  fix: ['corrige', 'resolve', 'fix', 'bug', 'erro'],
+  refactor: ['refatora', 'reorganiza', 'melhora estrutura'],
+  perf: ['otimiza', 'performance', 'melhora velocidade'],
+  style: ['formata', 'ajusta estilo', 'spacing'],
+  docs: ['documenta', 'atualiza README', 'adiciona comentários']
+};
+
+// Analisar commit message e diff para determinar tipo
+const tipo = identificarTipoInteligente(diff, palavrasChave);
+```
+
+### Detectar Escopo Automaticamente
+```javascript
+// Arquivos modificados
+const arquivos = getArquivosModificados();
+
+// Mapear para escopos do projeto
+const mapeamento = {
+  'controllers/extratoController.js': 'extrato',
+  'controllers/mataMataController.js': 'mata-mata',
+  'public/js/fluxo-financeiro/': 'fluxo',
+  'models/Rodada.js': 'rodadas'
+};
+
+const escopo = determinarEscopoPrincipal(arquivos, mapeamento);
+```
+
+---
+
+**STATUS:** 🚀 GIT COMMIT & PUSH PROTOCOL - AUTOMATED & SMART
+
+**Versão:** 1.0 (Senior Full-Stack Edition)
+
+**Última atualização:** 2026-01-23
+
+---
+
+## 🔐 SEGURANÇA E COMPLIANCE
+
+### Regras de Proteção
+- ❌ Nunca commitar .env
+- ❌ Nunca commitar node_modules/
+- ❌ Nunca commitar arquivos > 100MB
+- ❌ Nunca commitar secrets/tokens
+- ✅ Sempre validar multi-tenant
+- ✅ Sempre validar security middleware
+
+### Validação de .gitignore
+```bash
+# Verificar se .gitignore está configurado
+bash test -f .gitignore || echo "⚠️ .gitignore não encontrado"
+
+# Verificar se node_modules está ignorado
+bash grep -q "node_modules" .gitignore || echo "⚠️ Adicione node_modules ao .gitignore"
+```
+
+---
+
+**ATIVADO E PRONTO PARA USO!** 🎯

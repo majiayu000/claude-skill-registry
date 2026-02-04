@@ -1,12 +1,6 @@
 ---
 name: work-intake
 description: Entry point for ALL work requests - triages scope from trivial to massive, asks clarifying questions, and routes to appropriate planning skills. Use this when receiving any new work request.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - mcp__github__*
-model: opus
 ---
 
 # Work Intake
@@ -73,6 +67,37 @@ Every work request flows through intake. This skill determines scope, gathers re
 This is a gate. Do not proceed to clarifying questions until this passes.
 
 ```bash
+# Derive defaults from GITHUB_PROJECT if provided
+if [ -z "$GITHUB_PROJECT_NUM" ] && [ -n "$GITHUB_PROJECT" ]; then
+  NUM_CANDIDATE=$(echo "$GITHUB_PROJECT" | sed -E 's#.*/projects/([0-9]+).*#\1#')
+  if [ -n "$NUM_CANDIDATE" ] && [ "$NUM_CANDIDATE" != "$GITHUB_PROJECT" ]; then
+    export GITHUB_PROJECT_NUM="$NUM_CANDIDATE"
+    echo "Derived GITHUB_PROJECT_NUM=$GITHUB_PROJECT_NUM from GITHUB_PROJECT"
+  fi
+fi
+
+if [ -z "$GH_PROJECT_OWNER" ] && [ -n "$GITHUB_OWNER" ]; then
+  export GH_PROJECT_OWNER="$GITHUB_OWNER"
+  echo "Derived GH_PROJECT_OWNER=$GH_PROJECT_OWNER from GITHUB_OWNER"
+fi
+
+if [ -z "$GH_PROJECT_OWNER" ] && [ -n "$GITHUB_PROJECT" ]; then
+  OWNER_CANDIDATE=$(echo "$GITHUB_PROJECT" | sed -E 's#https://github.com/(orgs|users)/([^/]+)/projects/[0-9]+#\2#')
+  if [ -n "$OWNER_CANDIDATE" ] && [ "$OWNER_CANDIDATE" != "$GITHUB_PROJECT" ]; then
+    export GH_PROJECT_OWNER="$OWNER_CANDIDATE"
+    echo "Derived GH_PROJECT_OWNER=$GH_PROJECT_OWNER from GITHUB_PROJECT"
+  fi
+fi
+
+if [ -z "$GH_PROJECT_OWNER" ]; then
+  REMOTE_URL=$(git remote get-url origin 2>/dev/null || true)
+  OWNER_CANDIDATE=$(echo "$REMOTE_URL" | sed -E 's#(git@|https://)github.com[:/]+([^/]+)/[^/]+(\.git)?#\2#')
+  if [ -n "$OWNER_CANDIDATE" ] && [ "$OWNER_CANDIDATE" != "$REMOTE_URL" ]; then
+    export GH_PROJECT_OWNER="$OWNER_CANDIDATE"
+    echo "Derived GH_PROJECT_OWNER=$GH_PROJECT_OWNER from git remote"
+  fi
+fi
+
 # Verify environment variables are set
 if [ -z "$GITHUB_PROJECT_NUM" ]; then
   echo "BLOCKED: GITHUB_PROJECT_NUM not set"
@@ -96,12 +121,16 @@ fi
 # Verify required fields exist
 FIELDS=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | jq -r '.fields[].name')
 
-for required in "Status" "Type" "Priority"; do
+for required in "Status" "Priority"; do
   if ! echo "$FIELDS" | grep -q "^$required$"; then
     echo "WARNING: Required field '$required' not found in project"
     echo "Consider adding this field for full tracking support"
   fi
 done
+if ! echo "$FIELDS" | grep -q "^Type$" && ! echo "$FIELDS" | grep -q "^Issue Type$"; then
+  echo "WARNING: Required field 'Type' (or 'Issue Type') not found in project"
+  echo "Consider adding this field for full tracking support"
+fi
 
 echo "Project board ready: $GITHUB_PROJECT_NUM"
 ```
@@ -118,7 +147,13 @@ echo "Project board ready: $GITHUB_PROJECT_NUM"
 
 ## Step 1: Clarifying Questions
 
-Before scoping, understand the request:
+Before scoping, understand the request.
+
+**Do not ask questions that can be answered from the repo.** First inspect:
+- `README.md`, `FEATURES.md`, `BRANDING.md`, `docs/`, Storybook, and existing routes/pages
+- Existing GitHub issues and project board items
+
+Only ask the user for information that is still missing after reviewing the repo.
 
 ### Essential Questions
 

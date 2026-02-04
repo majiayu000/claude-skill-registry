@@ -1,9 +1,7 @@
 {
   "name": "python-uv-scripts",
-  "description": "Python single-file script development using uv and PEP 723 inline metadata. Prevents invalid patterns like [tool.uv.metadata]. Use when creating standalone Python utilities, converting scripts to uv f",
   "repo": "basher83/lunar-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/devops/python-tools/skills/python-uv-scripts/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:27.428851Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "nano-banana",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/content-creator-workflow/.claude/skills/nano-banana/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:23.365644Z"
+  "repo": "horuz-ai/claude-plugins",
+  "path": "plugins/google/skills/nano-banana/SKILL.md",
+  "source": "github.com/horuz-ai/claude-plugins",
+  "downloaded_at": "2026-02-04T04:53:43.472383Z"
 }

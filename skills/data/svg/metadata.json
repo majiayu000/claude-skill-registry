@@ -1,9 +1,7 @@
 {
   "name": "svg",
-  "description": "Create precise, production-ready SVG graphics for technical and business contexts (diagrams, P&IDs, HMI/SCADA widgets, process flow visuals, PowerPoint/Office illustrations, UI icons, annotations). Us",
-  "repo": "tazomatalax/context-engineering",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Ven0m0/claude-config",
+  "path": "claude/skills/svg/SKILL.md",
+  "source": "github.com/Ven0m0/claude-config",
+  "downloaded_at": "2026-02-04T04:37:50.289162Z"
 }

@@ -1,88 +1,111 @@
 ---
-name: commit-msg
-description: Commit the staged changes to git with meaningful messages.
+user-invocable: true
+description: "[コミット] 日本語コミットメッセージを生成（ステージ差分）"
 ---
 
-# Commit Message
+# [コミット] 日本語コミットメッセージを生成
 
-This skill instructs AI agent on how to commit staged changes to a git repository with
-meaningful commit messages.
+## 入力: $ARGUMENTS
+- なし（ステージング済みの差分から自動生成）
 
-## Inputs
+---
 
-The commit skill takes the following inputs:
-- The purpose of the commit, either a delivery or a milestone
-  - Milestone is the only commit that can bypass pre-commit hooks
-  - Milestone can only happen on a development branch
-- The staged files to be committed
-  - The commit message should clearly describe the changes made.
-    If the changes are less than 20 lines, a short commit message is sufficient.
-    Otherwise, a full commit message is required.
-- If available, the related milestone or issue number
-  - As per our naming convention, the development branch should be named
-    `issue-<number>-<brief-title>`, so you can find the issue number from the branch name.
+## 目的
+- `git diff --staged` からコミットメッセージを日本語で生成する
+- Conventional Commits 形式に準拠
+- Co-Authored-By を自動付与
 
-## Full Commit Message
+---
 
-The commit message should follow the structure below:
+## 共通前提（参照）
+- 口調・出力規約は `CLAUDE.md` に従う
+- コミットは **ユーザーの明示的な指示があった場合のみ** 実行する
 
-```plaintext
-[tag]: A brief summary of the changes of this commit.
+---
 
-path/to/file/affected1: A brief description of changes made to this file.
-path/to/file/affected2: A brief description of changes made to this file.
-...
+## 実行手順
 
-If needed, provide addtional context and explanations about the changes made in this commit.
-It is preferred to mention the related Github issue if applicable.
+### 1. ステージング状態の確認
+```bash
+git status
+git diff --staged
 ```
 
-A milestone commit is always on a development branch associated with a issue.
-If it is a milestone, additionally add the following information:
-1. Add `[milestone]` before the tag.
-2. Mention the issue number after the brief summary, e.g., `A milestone to issue #42`.
-3. Briefly summarize the test case status, e.g. `35/42 test cases passed`.
-   - Milestone is to react to a big issue breaking down to smaller steps.
-   - Thus, it is important to tract the progress, and is the only case allowing bypassing pre-commit hooks.
+### 2. 差分がない場合
+```
+⚠️ ステージングされた変更がないにゃ。
 
-## Short Commit Message
-
-The commit message should follow the structure below:
-
-```plaintext
-[tag]: A brief summary of the changes of this commit.
+先に `git add` で変更をステージングしてにゃ。
 ```
 
-A short message is always for a delivery commit.
+### 3. コミットメッセージ生成
 
-## Tags
+差分を分析して以下の形式で提案:
 
-A `git-msg-tags.md` file should appear in `{ROOT_PROJ}/docs/git-msg-tag.md` which
-defines the tags related to the corresponding modules or modifications. The AI agent
-**MUST** refer to this file to select the appropriate tag for the commit message.
-If not, reject the commit, and ask user to provide a list of tags in `docs/git-msg-tag.md`,
-by showing the example format below:
+```
+<type>: <概要（日本語、50文字以内）>
 
-Please provide a `docs/git-msg-tags.md`, which can be as simple as the following example: 
+<本文（日本語、変更内容を箇条書き）>
 
-```markdown
-# Git Commit Message Tags
-- `[core]`: Changeing the core functionality of the project.
-- `[docs]`: Changing the documentation.
-- `[tests]`: Changes test cases.
-  - Use it only when solely changing the test cases! Do not mix with other changes with tests!
-- `[build]`: Changes related to build scripts or configurations.
+Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
-## Ownership
+#### type の選択基準
+| type | 用途 |
+|------|------|
+| `feat` | 新機能追加 |
+| `fix` | バグ修正 |
+| `docs` | ドキュメントのみの変更 |
+| `style` | コードの意味に影響しない変更（空白、フォーマット等） |
+| `refactor` | バグ修正や機能追加を伴わないコード変更 |
+| `perf` | パフォーマンス改善 |
+| `test` | テストの追加・修正 |
+| `chore` | ビルドプロセスやツールの変更 |
 
-**DO NOT** claim the co-authorship of the commit with the user
-in the message. It is the user who is **FULLY** responsible for the commit.
+### 4. 提案と確認
 
-## Pre-commit Check
+```
+📝 コミットメッセージ案
 
-When **committing** the changes, this skill should faithfully follow
-the input on if it is a milestone to use `--no-verify` or not.
-If it is a milestone, the commit **MAY** bypass pre-commit hooks.
-If it is a delivery commit, the commit **MUST NOT** bypass pre-commit hooks!
-**DO NOT** use pre-existing issue as an excuse to bypass pre-commit in any case!
+feat: ユーザー認証機能を追加
+
+- ログイン/ログアウト処理を実装
+- JWTトークンによるセッション管理
+- パスワードハッシュ化（bcrypt）
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+
+---
+このメッセージでコミットする？ [y/n]
+```
+
+### 5. コミット実行（⚠️ 確認あり）
+
+ユーザーが承認した場合のみ:
+```bash
+git commit -m "$(cat <<'EOF'
+feat: ユーザー認証機能を追加
+
+- ログイン/ログアウト処理を実装
+- JWTトークンによるセッション管理
+- パスワードハッシュ化（bcrypt）
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+EOF
+)"
+```
+
+---
+
+## 品質チェックリスト
+- [ ] 概要が50文字以内
+- [ ] type が変更内容に適切
+- [ ] 本文が変更の「何を」「なぜ」を説明している
+- [ ] Co-Authored-By が付与されている
+
+---
+
+## 注意事項
+- **コミットはユーザーの明示的な承認後にのみ実行**
+- 機密情報（.env、credentials等）がステージングされている場合は警告
+- 大量の変更がある場合は分割を提案

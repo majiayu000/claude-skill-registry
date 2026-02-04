@@ -1,7 +1,7 @@
 {
   "name": "progress",
-  "repo": "Meme-Lords/granhackaria-run1",
-  "path": ".claude/skills/gsd/commands/progress/SKILL.md",
-  "source": "github.com/Meme-Lords/granhackaria-run1",
-  "downloaded_at": "2026-02-02T04:52:01.240339Z"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/progress/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:40:57.718621Z"
 }

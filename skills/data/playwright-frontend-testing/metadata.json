@@ -1,7 +1,7 @@
 {
   "name": "playwright-frontend-testing",
-  "repo": "Smooth-Operation/household-expense-tracker",
-  "path": ".claude/skills/testing/playwright-frontend-testing/SKILL.md",
-  "source": "github.com/Smooth-Operation/household-expense-tracker",
-  "downloaded_at": "2026-02-02T03:56:28.733225Z"
+  "repo": "liauw-media/CodeAssist",
+  "path": "skills/testing/playwright-frontend-testing/SKILL.md",
+  "source": "github.com/liauw-media/CodeAssist",
+  "downloaded_at": "2026-02-04T04:39:06.495221Z"
 }

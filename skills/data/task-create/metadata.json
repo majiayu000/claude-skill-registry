@@ -1,7 +1,7 @@
 {
   "name": "task-create",
-  "repo": "JordanGunn/nunchuck",
-  "path": "skills/task/task-create/SKILL.md",
-  "source": "github.com/JordanGunn/nunchuck",
-  "downloaded_at": "2026-02-02T03:13:32.821071Z"
+  "repo": "otrebu/all-agents",
+  "path": ".claude/skills/task-create/SKILL.md",
+  "source": "github.com/otrebu/all-agents",
+  "downloaded_at": "2026-02-04T05:11:59.206224Z"
 }

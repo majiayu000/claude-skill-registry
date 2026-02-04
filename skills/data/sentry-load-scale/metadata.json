@@ -1,7 +1,7 @@
 {
   "name": "sentry-load-scale",
-  "repo": "HelixDevelopment/HelixAgent",
+  "repo": "vasic-digital/SuperAgent",
   "path": "skills/plugins/saas-packs/sentry-pack/sentry-load-scale/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:53.038820Z"
+  "source": "github.com/vasic-digital/SuperAgent",
+  "downloaded_at": "2026-02-04T03:29:37.152568Z"
 }

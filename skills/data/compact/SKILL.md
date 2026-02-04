@@ -1,97 +1,126 @@
 ---
 name: compact
-description: Compresses context for long sessions by writing state to disk and clearing working memory. Use when context is high/critical or before complex multi-step work.
-allowed-tools: Read, Write
+description: Manually trigger context save when auto-compact fails in VSCode/Cursor extensions. Use when context is high and you need to preserve state before starting fresh.
+triggers:
+  - /compact
+  - context full
+  - save context
+  - preserve state
+allowed-tools: Bash,Read
 ---
 
-# Compact
+# Manual Context Save (Compact Workaround)
 
-Preserve critical state while freeing context capacity. Writes to disk, clears context, continues with renewed capacity.
+## Why This Exists
+
+VSCode and Cursor extensions have limited hook support (GitHub issue #15021).
+The `PreCompact` hook may not trigger automatically, leading to lost context.
+This skill provides manual control to save state before context overflow.
 
 ## When to Use
 
-- Context status shows High or Critical
-- Session running > 60 minutes
-- About to start complex multi-step work
-- Noticing degraded responses or forgotten instructions
+- Context warning shows 80%+ usage
+- Working in VSCode or Cursor extension
+- Before starting a new conversation
+- When auto-compact doesn't seem to work
 
-## What Compaction Does
+## Execution Steps
 
-**Before**: Context ~100% saturated
-**After**: Context ~50% healthy (state saved to disk)
+### Step 1: Detect Environment
 
-## Process
-
-1. **Capture State** → Write to `.context/compact-state.md`
-2. **Refresh Instructions** → Re-read safety rules, orchestration mode, tools
-3. **Acknowledge** → Report compaction complete, ready to continue
-
-## State File Template
-
-```markdown
-# Compact State — [timestamp]
-
-## Session Objective
-[overall goal]
-
-## Current Task
-[what we're working on]
-
-## Completed Work
-- [task]: [outcome]
-
-## Key Decisions
-- [decision]: [rationale]
-
-## Critical Context
-[must-preserve information]
-
-## Next Steps
-1. [immediate]
-2. [following]
+```bash
+# Check current environment
+source ~/.claude/hooks/detect-environment.sh 2>/dev/null && print_env_info || echo "Environment detection unavailable"
 ```
 
-## What to Preserve
+### Step 2: Get Current Session ID
 
-- Session objective and current task
-- Completed work (avoid redoing)
-- Key decisions (maintain consistency)
-- Blockers and issues
-- User preferences expressed
+The session ID is needed to save context properly:
 
-## What to Clear (Safe)
-
-- Exploration that didn't pan out
-- Verbose explanations
-- Raw file contents (re-read from disk)
-- Detailed agent outputs (summary sufficient)
-
-## Output
-
-```markdown
-## Context Compacted
-
-**State saved**: `.context/compact-state.md`
-
-### Preserved
-- Session objective
-- Current task
-- Key decisions
-
-### Restored
-- Safety rules
-- Orchestration mode
-- Tool awareness
-
-### Status
-**Before**: Critical (~90%)
-**After**: Low (~40%)
-
-Ready to continue: [task]
+```bash
+# Try to get session ID from state
+SESSION_ID=$(cat ~/.ralph/state/current-session 2>/dev/null || echo "manual-$(date +%Y%m%d-%H%M%S)")
+echo "Session: $SESSION_ID"
 ```
 
-## Related
+### Step 3: Extract and Save Context
 
-- Emergency compact: See [reference/emergency-compact.md](reference/emergency-compact.md)
-- Run first: `/context-status` to determine if needed
-- Resume from: `/session-start`
+```bash
+# Run the pre-compact hook manually
+export SESSION_ID="${SESSION_ID:-manual-$(date +%Y%m%d-%H%M%S)}"
+
+# Create input JSON for the hook
+echo "{\"hook_event_name\":\"PreCompact\",\"session_id\":\"$SESSION_ID\",\"transcript_path\":\"\"}" | \
+    ~/.claude/hooks/pre-compact-handoff.sh
+
+echo ""
+echo "✅ Context saved to:"
+echo "   Ledger: ~/.ralph/ledgers/CONTINUITY_RALPH-$SESSION_ID.md"
+echo "   Handoff: ~/.ralph/handoffs/$SESSION_ID/"
+```
+
+### Step 4: Verify Save
+
+```bash
+# Show the saved ledger
+echo "=== SAVED LEDGER ==="
+head -30 ~/.ralph/ledgers/CONTINUITY_RALPH-$SESSION_ID.md 2>/dev/null || echo "Ledger not found"
+```
+
+## Alternative: Use Ralph CLI
+
+If the above doesn't work, use the Ralph CLI directly:
+
+```bash
+ralph compact
+```
+
+This wrapper command handles all the complexity automatically.
+
+## Post-Compact Actions
+
+After saving context:
+
+1. **Start fresh**: Use `/clear` or start a new conversation
+2. **Restore context**: The `SessionStart` hook will auto-load the saved ledger
+3. **Verify restoration**: Check that your objective is loaded
+
+## Recovery
+
+If context was lost without saving:
+
+```bash
+# List recent ledgers
+ralph ledger list
+
+# Load a specific ledger
+ralph ledger load <session-id>
+
+# Search handoffs
+ralph handoff search "keyword"
+```
+
+## Troubleshooting
+
+### Hook not found
+```bash
+# Verify hooks exist
+ls -la ~/.claude/hooks/pre-compact-handoff.sh
+ls -la ~/.claude/hooks/detect-environment.sh
+
+# If missing, sync from repo
+ralph sync-global
+```
+
+### Permission denied
+```bash
+# Make hooks executable
+chmod +x ~/.claude/hooks/*.sh
+chmod +x ~/.claude/scripts/*.py
+```
+
+### Context extractor fails
+```bash
+# Test context extractor directly
+python3 ~/.claude/scripts/context-extractor.py --project . --pretty
+```

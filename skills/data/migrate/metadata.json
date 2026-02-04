@@ -1,7 +1,7 @@
 {
   "name": "migrate",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/migrate/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:34.287146Z"
+  "repo": "kmylpenter/KFG-CCv2-Installer-Stable",
+  "path": ".claude/skills/migrate/SKILL.md",
+  "source": "github.com/kmylpenter/KFG-CCv2-Installer-Stable",
+  "downloaded_at": "2026-02-04T05:04:17.752933Z"
 }

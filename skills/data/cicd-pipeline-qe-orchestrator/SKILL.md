@@ -11,6 +11,12 @@ last_optimized: 2025-12-02
 dependencies: [agentic-quality-engineering, shift-left-testing]
 quick_reference_card: true
 tags: [cicd, pipeline, orchestration, quality-gates, shift-left, shift-right, fleet]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/cicd-pipeline-qe-orchestrator.yaml
+
 ---
 
 # CI/CD Pipeline QE Orchestrator

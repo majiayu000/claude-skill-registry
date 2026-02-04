@@ -1,6 +1,12 @@
 ---
 name: "QE Contract Testing"
 description: "Consumer-driven contract testing for APIs including REST, GraphQL, and event-driven systems with schema validation."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-contract-testing.yaml
+
 ---
 
 # QE Contract Testing

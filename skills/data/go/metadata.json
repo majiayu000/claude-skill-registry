@@ -1,7 +1,7 @@
 {
   "name": "go",
-  "repo": "lanej/dotfiles",
-  "path": "claude/skills/go/SKILL.md",
-  "source": "github.com/lanej/dotfiles",
-  "downloaded_at": "2026-02-02T02:25:45.067275Z"
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/languages/go/SKILL.md",
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "downloaded_at": "2026-02-04T03:32:56.515081Z"
 }

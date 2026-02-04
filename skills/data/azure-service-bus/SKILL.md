@@ -3,278 +3,330 @@ name: azure-service-bus
 description: Enterprise messaging with Azure Service Bus. Configure queues, topics, subscriptions, and message processing. Use for async communication, event-driven architectures, and reliable message delivery on Azure.
 ---
 
-# Azure Service Bus
+# Azure Service Bus Skill
 
-Expert guidance for enterprise messaging on Azure.
+Build reliable messaging solutions with Azure Service Bus for enterprise integration.
 
-## Create Resources
+## Triggers
+
+Use this skill when you see:
+- azure service bus, service bus, message queue
+- service bus queue, service bus topic
+- message subscription, dead letter queue
+- message session, message broker
+
+## Instructions
+
+### Create Service Bus Resources
 
 ```bash
 # Create namespace
 az servicebus namespace create \
-  --name myservicebus \
-  --resource-group myResourceGroup \
-  --location eastus \
-  --sku Standard
+    --name myservicebus \
+    --resource-group mygroup \
+    --location eastus \
+    --sku Premium
 
 # Create queue
 az servicebus queue create \
-  --name orders \
-  --namespace-name myservicebus \
-  --resource-group myResourceGroup \
-  --max-size 5120 \
-  --default-message-time-to-live P14D
+    --name myqueue \
+    --namespace-name myservicebus \
+    --resource-group mygroup \
+    --max-size 5120 \
+    --default-message-time-to-live P14D \
+    --lock-duration PT1M \
+    --enable-dead-lettering-on-message-expiration true
 
 # Create topic
 az servicebus topic create \
-  --name events \
-  --namespace-name myservicebus \
-  --resource-group myResourceGroup
+    --name mytopic \
+    --namespace-name myservicebus \
+    --resource-group mygroup \
+    --max-size 5120 \
+    --default-message-time-to-live P14D
 
 # Create subscription
 az servicebus topic subscription create \
-  --name processor \
-  --topic-name events \
-  --namespace-name myservicebus \
-  --resource-group myResourceGroup
+    --name mysubscription \
+    --topic-name mytopic \
+    --namespace-name myservicebus \
+    --resource-group mygroup \
+    --max-delivery-count 10 \
+    --default-message-time-to-live P7D
+
+# Get connection string
+az servicebus namespace authorization-rule keys list \
+    --namespace-name myservicebus \
+    --resource-group mygroup \
+    --name RootManageSharedAccessKey
 ```
 
-## Python SDK
-
-### Connection
+### Python SDK - Queue Operations
 
 ```python
 from azure.servicebus import ServiceBusClient, ServiceBusMessage
 from azure.identity import DefaultAzureCredential
+import json
 
-# Connection string
-client = ServiceBusClient.from_connection_string(conn_str)
+# Using connection string
+connection_string = "Endpoint=sb://..."
+client = ServiceBusClient.from_connection_string(connection_string)
 
-# Managed Identity
+# Using managed identity
 credential = DefaultAzureCredential()
 client = ServiceBusClient(
     fully_qualified_namespace="myservicebus.servicebus.windows.net",
     credential=credential
 )
-```
 
-### Send Messages
-
-```python
-from azure.servicebus import ServiceBusClient, ServiceBusMessage
-
-with ServiceBusClient.from_connection_string(conn_str) as client:
-    sender = client.get_queue_sender(queue_name="orders")
-
-    with sender:
-        # Single message
-        message = ServiceBusMessage(
-            body="Order data",
-            application_properties={"order_id": "123"},
-            subject="new-order"
-        )
-        sender.send_messages(message)
-
-        # Batch messages
-        batch = sender.create_message_batch()
-        for i in range(10):
-            batch.add_message(ServiceBusMessage(f"Message {i}"))
-        sender.send_messages(batch)
-```
-
-### Receive Messages
-
-```python
-from azure.servicebus import ServiceBusClient, ServiceBusReceiveMode
-
-with ServiceBusClient.from_connection_string(conn_str) as client:
-    receiver = client.get_queue_receiver(
-        queue_name="orders",
-        receive_mode=ServiceBusReceiveMode.PEEK_LOCK
+# Send message
+with client.get_queue_sender("myqueue") as sender:
+    message = ServiceBusMessage(
+        body=json.dumps({"orderId": "12345", "amount": 99.99}),
+        content_type="application/json",
+        subject="order-created",
+        application_properties={"priority": "high"}
     )
+    sender.send_messages(message)
 
-    with receiver:
-        # Receive batch
-        messages = receiver.receive_messages(max_message_count=10, max_wait_time=5)
+# Send batch
+with client.get_queue_sender("myqueue") as sender:
+    batch = sender.create_message_batch()
+    for i in range(10):
+        try:
+            batch.add_message(ServiceBusMessage(f"Message {i}"))
+        except ValueError:
+            # Batch is full
+            sender.send_messages(batch)
+            batch = sender.create_message_batch()
+            batch.add_message(ServiceBusMessage(f"Message {i}"))
+    sender.send_messages(batch)
 
-        for msg in messages:
-            print(f"Received: {str(msg)}")
-            print(f"Properties: {msg.application_properties}")
+# Receive messages
+with client.get_queue_receiver("myqueue") as receiver:
+    messages = receiver.receive_messages(max_message_count=10, max_wait_time=5)
+    for message in messages:
+        print(f"Received: {str(message)}")
+        # Process message
+        receiver.complete_message(message)
 
-            # Complete message
-            receiver.complete_message(msg)
-
-            # Or dead-letter
-            # receiver.dead_letter_message(msg, reason="Processing failed")
+# Receive with peek lock (manual completion)
+with client.get_queue_receiver("myqueue", receive_mode="peek_lock") as receiver:
+    messages = receiver.receive_messages()
+    for message in messages:
+        try:
+            process_message(message)
+            receiver.complete_message(message)
+        except Exception:
+            receiver.abandon_message(message)  # Return to queue
+            # or receiver.dead_letter_message(message)  # Move to DLQ
 ```
 
-### Async Processing
+### TypeScript SDK - Queue Operations
 
-```python
-import asyncio
-from azure.servicebus.aio import ServiceBusClient
+```typescript
+import { ServiceBusClient, ServiceBusMessage } from "@azure/service-bus";
 
-async def process_messages():
-    async with ServiceBusClient.from_connection_string(conn_str) as client:
-        receiver = client.get_queue_receiver(queue_name="orders")
+const connectionString = "Endpoint=sb://...";
+const client = new ServiceBusClient(connectionString);
 
-        async with receiver:
-            async for msg in receiver:
-                print(f"Received: {str(msg)}")
-                await receiver.complete_message(msg)
+// Send message
+const sender = client.createSender("myqueue");
+await sender.sendMessages({
+  body: { orderId: "12345", amount: 99.99 },
+  contentType: "application/json",
+  subject: "order-created",
+  applicationProperties: { priority: "high" }
+});
 
-asyncio.run(process_messages())
+// Send batch
+const batch = await sender.createMessageBatch();
+for (let i = 0; i < 100; i++) {
+  if (!batch.tryAddMessage({ body: `Message ${i}` })) {
+    await sender.sendMessages(batch);
+    batch = await sender.createMessageBatch();
+    batch.tryAddMessage({ body: `Message ${i}` });
+  }
+}
+await sender.sendMessages(batch);
+await sender.close();
+
+// Receive messages
+const receiver = client.createReceiver("myqueue");
+const messages = await receiver.receiveMessages(10, { maxWaitTimeInMs: 5000 });
+for (const message of messages) {
+  console.log(`Received: ${message.body}`);
+  await receiver.completeMessage(message);
+}
+await receiver.close();
+
+// Subscribe to messages (continuous processing)
+receiver.subscribe({
+  processMessage: async (message) => {
+    console.log(`Received: ${message.body}`);
+    // No need to complete - done automatically
+  },
+  processError: async (err) => {
+    console.error(`Error: ${err}`);
+  }
+});
 ```
 
-### Topics and Subscriptions
+### Topic/Subscription Operations
 
 ```python
 # Send to topic
-with ServiceBusClient.from_connection_string(conn_str) as client:
-    sender = client.get_topic_sender(topic_name="events")
-
-    with sender:
-        message = ServiceBusMessage(
-            body="Event data",
-            subject="order.created"
-        )
-        sender.send_messages(message)
+with client.get_topic_sender("mytopic") as sender:
+    message = ServiceBusMessage(
+        body=json.dumps({"event": "order.created"}),
+        subject="orders",
+        application_properties={"region": "us-east"}
+    )
+    sender.send_messages(message)
 
 # Receive from subscription
-with ServiceBusClient.from_connection_string(conn_str) as client:
-    receiver = client.get_subscription_receiver(
-        topic_name="events",
-        subscription_name="processor"
-    )
-
-    with receiver:
-        messages = receiver.receive_messages(max_message_count=10)
-        for msg in messages:
-            receiver.complete_message(msg)
+with client.get_subscription_receiver(
+    topic_name="mytopic",
+    subscription_name="mysubscription"
+) as receiver:
+    messages = receiver.receive_messages(max_message_count=10)
+    for message in messages:
+        print(f"Received: {str(message)}")
+        receiver.complete_message(message)
 ```
 
-## .NET SDK
-
-```csharp
-using Azure.Messaging.ServiceBus;
-
-// Send
-await using var client = new ServiceBusClient(connectionString);
-ServiceBusSender sender = client.CreateSender("orders");
-
-await sender.SendMessageAsync(new ServiceBusMessage("Order data"));
-
-// Receive
-ServiceBusReceiver receiver = client.CreateReceiver("orders");
-ServiceBusReceivedMessage message = await receiver.ReceiveMessageAsync();
-await receiver.CompleteMessageAsync(message);
-
-// Processor
-ServiceBusProcessor processor = client.CreateProcessor("orders");
-processor.ProcessMessageAsync += async args =>
-{
-    Console.WriteLine($"Received: {args.Message.Body}");
-    await args.CompleteMessageAsync(args.Message);
-};
-processor.ProcessErrorAsync += args =>
-{
-    Console.WriteLine($"Error: {args.Exception}");
-    return Task.CompletedTask;
-};
-
-await processor.StartProcessingAsync();
-```
-
-## Subscription Filters
+### Subscription Filters
 
 ```bash
-# SQL filter
+# Create subscription with SQL filter
+az servicebus topic subscription create \
+    --name orders-us \
+    --topic-name mytopic \
+    --namespace-name myservicebus \
+    --resource-group mygroup
+
 az servicebus topic subscription rule create \
-  --name high-priority \
-  --subscription-name processor \
-  --topic-name events \
-  --namespace-name myservicebus \
-  --resource-group myResourceGroup \
-  --filter-sql-expression "priority = 'high'"
+    --name us-filter \
+    --subscription-name orders-us \
+    --topic-name mytopic \
+    --namespace-name myservicebus \
+    --resource-group mygroup \
+    --filter-sql-expression "region = 'us'"
 
 # Correlation filter
 az servicebus topic subscription rule create \
-  --name order-events \
-  --subscription-name orders \
-  --topic-name events \
-  --namespace-name myservicebus \
-  --resource-group myResourceGroup \
-  --correlation-filter subject=order.created
+    --name priority-filter \
+    --subscription-name priority-orders \
+    --topic-name mytopic \
+    --namespace-name myservicebus \
+    --resource-group mygroup \
+    --correlation-filter correlation-id=high-priority
 ```
 
-## Sessions
+### Sessions (Ordered Processing)
 
 ```python
-# Send session messages
-message = ServiceBusMessage(
-    body="Session message",
-    session_id="session-123"
-)
-sender.send_messages(message)
+# Send messages with session
+with client.get_queue_sender("session-queue") as sender:
+    for i in range(10):
+        message = ServiceBusMessage(
+            body=f"Message {i}",
+            session_id="order-12345"  # Group messages by session
+        )
+        sender.send_messages(message)
 
-# Receive session messages
-session_receiver = client.get_queue_receiver(
-    queue_name="session-queue",
-    session_id="session-123"
-)
+# Receive from session
+with client.get_queue_receiver(
+    "session-queue",
+    session_id="order-12345"
+) as receiver:
+    messages = receiver.receive_messages()
+    for message in messages:
+        # Messages arrive in order within session
+        receiver.complete_message(message)
+
+# Accept next available session
+with client.get_queue_receiver(
+    "session-queue",
+    session_id=None  # Accept any session
+) as receiver:
+    # Process messages from the accepted session
+    pass
 ```
 
-## Dead Letter Queue
+### Dead Letter Queue
 
 ```python
-# Receive from DLQ
+# Receive from dead letter queue
 dlq_receiver = client.get_queue_receiver(
-    queue_name="orders",
-    sub_queue=ServiceBusSubQueue.DEAD_LETTER
+    "myqueue",
+    sub_queue="deadletter"
 )
 
 with dlq_receiver:
     messages = dlq_receiver.receive_messages(max_message_count=10)
-    for msg in messages:
-        print(f"Dead letter reason: {msg.dead_letter_reason}")
-        print(f"Body: {str(msg)}")
+    for message in messages:
+        print(f"DLQ Message: {str(message)}")
+        print(f"Dead letter reason: {message.dead_letter_reason}")
+        print(f"Dead letter description: {message.dead_letter_error_description}")
+        # Reprocess or log
+        dlq_receiver.complete_message(message)
 ```
 
-## Bicep Deployment
+### Scheduled Messages
 
-```bicep
-resource serviceBusNamespace 'Microsoft.ServiceBus/namespaces@2022-10-01-preview' = {
-  name: namespaceName
-  location: location
-  sku: {
-    name: 'Standard'
-    tier: 'Standard'
-  }
-}
+```python
+from datetime import datetime, timedelta
 
-resource queue 'Microsoft.ServiceBus/namespaces/queues@2022-10-01-preview' = {
-  parent: serviceBusNamespace
-  name: 'orders'
-  properties: {
-    maxSizeInMegabytes: 5120
-    defaultMessageTimeToLive: 'P14D'
-    deadLetteringOnMessageExpiration: true
-    duplicateDetectionHistoryTimeWindow: 'PT10M'
-    requiresSession: false
-  }
-}
+# Schedule message for future delivery
+with client.get_queue_sender("myqueue") as sender:
+    scheduled_time = datetime.utcnow() + timedelta(hours=1)
+    message = ServiceBusMessage("Scheduled message")
+    sequence_number = sender.schedule_messages(message, scheduled_time)
 
-resource topic 'Microsoft.ServiceBus/namespaces/topics@2022-10-01-preview' = {
-  parent: serviceBusNamespace
-  name: 'events'
-  properties: {
-    maxSizeInMegabytes: 5120
-  }
-}
+    # Cancel scheduled message
+    sender.cancel_scheduled_messages(sequence_number)
 ```
 
-## Resources
+### Message Deferral
 
-- [Azure Service Bus Documentation](https://learn.microsoft.com/azure/service-bus-messaging/)
-- [Service Bus Python SDK](https://learn.microsoft.com/azure/service-bus-messaging/service-bus-python-how-to-use-queues)
-- [Best Practices](https://learn.microsoft.com/azure/service-bus-messaging/service-bus-performance-improvements)
+```python
+# Defer message for later processing
+with client.get_queue_receiver("myqueue") as receiver:
+    messages = receiver.receive_messages()
+    for message in messages:
+        if not ready_to_process(message):
+            # Defer the message
+            sequence_number = message.sequence_number
+            receiver.defer_message(message)
+            # Store sequence_number for later retrieval
+
+# Receive deferred message
+with client.get_queue_receiver("myqueue") as receiver:
+    deferred_message = receiver.receive_deferred_messages([sequence_number])
+    receiver.complete_message(deferred_message[0])
+```
+
+## Best Practices
+
+1. **Message Size**: Keep messages small; use claim-check pattern for large payloads
+2. **Sessions**: Use sessions for ordered processing within groups
+3. **Dead Letter**: Always monitor and handle dead letter messages
+4. **Batching**: Use batch operations for throughput
+5. **Retry**: Implement exponential backoff for transient failures
+
+## Common Workflows
+
+### Message Processing Pipeline
+1. Create queue with dead-letter enabled
+2. Send messages with correlation IDs
+3. Process with peek-lock mode
+4. Complete or abandon based on success
+5. Monitor DLQ for failures
+
+### Pub/Sub Pattern
+1. Create topic for events
+2. Create subscriptions with filters
+3. Publishers send to topic
+4. Subscribers receive from filtered subscriptions
+5. Scale independently

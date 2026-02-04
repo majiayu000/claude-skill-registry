@@ -34,7 +34,7 @@ Confirm the model switch in plain language.
 | --- | --- |
 | opus | anthropic/claude-opus-4-5 |
 | sonnet | anthropic/claude-sonnet-4-5 |
-| kimi | nvidia-build/moonshotai/kimi-k2.5 |
+| kimi | nvidia/moonshotai/kimi-k2.5 |
 | codex | github-copilot/gpt-5.2-codex |
 
 ## Notes

@@ -1,7 +1,7 @@
 {
   "name": "postgresql-psql",
-  "repo": "miethe/skillmeat",
-  "path": ".claude/skills/postgresql-psql/SKILL.md",
-  "source": "github.com/miethe/skillmeat",
-  "downloaded_at": "2026-02-02T04:59:19.765765Z"
+  "repo": "brixtonpham/claude-config",
+  "path": "skills/postgresql-psql/SKILL.md",
+  "source": "github.com/brixtonpham/claude-config",
+  "downloaded_at": "2026-02-04T04:44:20.597504Z"
 }

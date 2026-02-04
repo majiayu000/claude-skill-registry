@@ -1,13 +1,6 @@
 ---
 name: claude-reflect
-description: |
-  Execute self-learning system that captures corrections during sessions and syncs them to CLAUDE.md.
-  Use when discussing learnings, corrections, or when the user mentions remembering something.
-  Trigger with phrases like "remember this", "don't forget", "use X not Y", or "actually...".
-allowed-tools: Read, Write, Edit, Bash(jq:*), Bash(cat:*)
-version: 1.4.1
-license: MIT
-author: Bayram Annakov <bayram.annakov@gmail.com>
+description: Self-learning system that captures corrections during sessions and reminds users to run /reflect to update CLAUDE.md. Use when discussing learnings, corrections, or when the user mentions remembering something for future sessions.
 ---
 
 # Claude Reflect - Self-Learning System
@@ -29,6 +22,7 @@ User runs `/reflect` to review and apply queued learnings to CLAUDE.md files.
 | `/reflect` | Process queued learnings with human review |
 | `/reflect --scan-history` | Scan past sessions for missed learnings |
 | `/reflect --dry-run` | Preview changes without applying |
+| `/reflect-skills` | Discover skill candidates from repeating patterns |
 | `/skip-reflect` | Discard all queued learnings |
 | `/view-queue` | View pending learnings without processing |
 
@@ -49,10 +43,11 @@ High-confidence corrections:
 - "use X not Y" / "X instead of Y"
 - "remember:" (explicit marker)
 
-## CLAUDE.md Destinations
+## Learning Destinations
 
 - `~/.claude/CLAUDE.md` - Global learnings (model names, general patterns)
 - `./CLAUDE.md` - Project-specific learnings (conventions, tools, structure)
+- `commands/*.md` - Skill improvements (corrections during skill execution)
 
 ## Example Interaction
 

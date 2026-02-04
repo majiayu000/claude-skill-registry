@@ -1,9 +1,7 @@
 {
   "name": "run-simulation",
-  "description": "Run and analyze one or multiple PDE simulations.",
-  "repo": "FloWsnr/PLM-data",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "bdfinst/vsm-workshop",
+  "path": ".claude/skills/run-simulation/SKILL.md",
+  "source": "github.com/bdfinst/vsm-workshop",
+  "downloaded_at": "2026-02-04T02:42:19.188949Z"
 }

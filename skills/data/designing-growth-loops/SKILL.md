@@ -1,125 +1,71 @@
 ---
-name: "designing-growth-loops"
-description: "Design growth loops (viral/referral/acquisition loops, flywheels) and produce a Growth Loop Design Pack (loop map, loop scorecard, channel fit + paid-loop feasibility, experiment backlog, measurement plan). Use for growth teams creating new growth loops or innovating beyond incremental optimization."
+name: designing-growth-loops
+description: Help users design and optimize growth loops. Use when someone is building viral mechanics, designing referral programs, creating product-led acquisition, or figuring out how to make their product grow itself.
 ---
 
 # Designing Growth Loops
 
-## Scope
+Help the user design effective growth loops using frameworks from 54 product leaders who have built viral and product-led growth engines at companies from Dropbox to LinkedIn to Calendly.
 
-**Covers**
-- Turning a growth goal into a **loop-based growth model** (micro loops + macro loops)
-- Designing and documenting loops: **viral/referral**, **content/UGC**, **SEO**, **partner/integration**, **sales-assisted**, and **paid acquisition loops**
-- Choosing channels using a **Customer × Business × Medium** fit check
-- Validating paid loops with **unit economics (LTV, CAC, payback)** gating
-- Producing an actionable loop plan: loop map → scorecard → experiments → measurement
+## How to Help
 
-**When to use**
-- “Design a growth loop / viral loop / referral loop”
-- “Create a growth flywheel for <product>”
-- “Map our micro + macro growth loops and prioritize which to build”
-- “We need new growth loops (not just optimize ads/onboarding)”
-- “Decide whether a paid acquisition loop is viable”
+When the user asks for help with growth loops:
 
-**When NOT to use**
-- You haven’t clarified the ICP/problem or value proposition (use `problem-definition`).
-- You’re still establishing PMF and need a PMF signal set (use `measuring-product-market-fit`).
-- You only need an experiment list/prioritization, not loop design (use `prioritizing-roadmap`).
-- You’re making a one-way-door launch decision (use `shipping-products` / `running-decision-processes`).
+1. **Identify the loop type** - Determine if they need viral, paid, content, or product-led acquisition loops
+2. **Assess prerequisites** - Check if they have the LTV, network effects, or product stickiness to support the loop
+3. **Find the natural sharing moment** - Help them identify where users would naturally want to bring others in
+4. **Design for compounding** - Ensure the loop feeds back into itself for sustainable growth
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product + target user/ICP (and 1–2 key segments)
-- Current stage (pre-PMF / early PMF / growth / mature) and current primary growth channel(s)
-- The core value moment (what users do when they “get value”)
-- A baseline snapshot of the growth system (best available): acquisition sources, conversion funnel, retention/engagement, referrals/sharing
-- Constraints: budget, timebox, brand/safety, platform policy, legal/privacy, engineering capacity
-- For paid loops: rough unit economics (LTV, gross margin, CAC/payback targets) or a proxy
+### One dominant loop matters most
+Luc Levesque: "It's usually just one loop that you need to get right. Most successful companies scale primarily through one dominant, well-executed growth loop." Focus on identifying and dominating one primary channel before diversifying.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md), then proceed.
-- If data is missing, proceed with explicit assumptions and label confidence.
-- Do not request secrets or PII; prefer aggregated metrics or redacted excerpts.
+### Viral growth is a learnable science
+Nikita Bier: "With certainty, if you're good at your job, you can make an app grow and go viral. Over the years of building all these apps, I've accrued all these growth hacks that still nobody knows about." Develop a library of growth tactics based on platform-specific mechanisms.
 
-## Outputs (deliverables)
+### LTV unlocks paid loops
+Yuriy Timen: "If you have really healthy LTVs, then there is a big opportunity to play paid and lean into paid growth loops." Calculate if single-player LTVs are high enough to support sustainable paid acquisition.
 
-Produce a **Growth Loop Design Pack** (Markdown in-chat; or as files if requested) containing:
+### Product-led acquisition has zero marginal cost
+Julian Shapiro: "By me trying to use PayPal in its everyday intention, I'm automatically enticing someone else to become a PayPal customer." PLA is the most scalable channel because it's entirely within the company's control.
 
-1) **Context snapshot** (goal, ICP/segments, constraints, timebox)
-2) **Loop inventory + baseline** (current loops and where the system currently gets growth)
-3) **Loop map (qualitative model)** (micro loops + macro loop; how loops connect)
-4) **Loop candidates + mechanism library** (platform/channel mechanisms; ethical/policy-compliant)
-5) **Loop scorecard + selection** (top 1–2 loops to build/scale; optimize vs innovate recommendation)
-6) **Measurement plan** (loop KPIs, leading indicators, required instrumentation)
-7) **Experiment backlog + 30/60/90 plan** (tests, sequencing, dependencies, owners if known)
-8) **Risks / Open questions / Next steps** (always included)
+### Innovation over optimization in fast markets
+Elena Verna: "I feel like only 30 to 40% of what I've learned transfers here because we need to invest in such bigger bets and innovate and create new growth loops." In fast-moving AI categories, shift from 95% optimization to 95% innovation.
 
-Templates and checklists:
-- [references/TEMPLATES.md](references/TEMPLATES.md)
-- [references/CHECKLISTS.md](references/CHECKLISTS.md)
-- [references/RUBRIC.md](references/RUBRIC.md)
-- Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Word-of-mouth requires frequency
+Uri Levine: "Word-of-mouth you can only have if you have high frequency of use. If you're using Waze every day, then every day you have an opportunity to tell someone else." Sustainable word-of-mouth is tied to how often users engage with the product.
 
-## Workflow (7 steps)
+### Map the loops qualitatively and quantitatively
+Ben Williams: "Being able to identify the various micro and macro loops, how they're all connected, being able to document them in a qualitative model provides a shared understanding and guides intentional investment."
 
-### 1) Intake + growth goal framing
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify the growth goal (what metric, by when), the target segment(s), and constraints (budget, brand, platform rules, capacity). Decide whether the priority is **innovation** (new loop) vs **optimization** (existing loop).
-- **Outputs:** Context snapshot + “decision this work informs.”
-- **Checks:** A stakeholder can answer: “Which metric changes by when, and what will we do differently if it doesn’t?”
+### 40-50% organic is the healthy ratio
+Gokul Rajaram: "A good metric is that 40 to 50% of your new customers should ideally come from organic channels. If 90% come from paid, at some point the music is going to stop."
 
-### 2) Baseline the current growth system (loops + funnel)
-- **Inputs:** Current acquisition sources, funnel, retention, referral/share, unit economics (if any).
-- **Actions:** Inventory existing loops (even if weak). Identify the **core value moment** and the “loop output” that could feed back (invites, content, word-of-mouth, spend, integrations).
-- **Outputs:** Loop inventory + baseline table.
-- **Checks:** Baseline includes at least one number for each: acquisition volume, activation rate, retention/engagement proxy.
+## Questions to Help Users
 
-### 3) Generate loop candidates (micro + macro)
-- **Inputs:** Baseline + constraints.
-- **Actions:** Create 6–10 loop hypotheses across categories (viral/referral, content/UGC, SEO, partner/integration, sales, paid). For each, specify: input → action → output → feedback. Include at least one “bigger bet” loop if in a fast-moving category.
-- **Outputs:** Loop candidates list + draft mechanism library.
-- **Checks:** Each candidate has a plausible “self-reinforcing” feedback path and a likely cycle time.
+- "What's the natural moment when users would want to bring others in?"
+- "Does your product become more valuable when more people use it?"
+- "What percentage of your growth is organic vs paid?"
+- "What's your customer LTV and payback period?"
+- "Is there an action users take that automatically exposes your product to others?"
+- "Can you identify where users already share your product organically?"
 
-### 4) Model loops qualitatively (shared understanding)
-- **Inputs:** Loop candidates; stakeholder context.
-- **Actions:** Produce a qualitative **loop map**: micro loops connected into a macro loop. Document assumptions, bottlenecks, and where you expect compounding.
-- **Outputs:** Loop map (diagram or table) + bottleneck hypotheses.
-- **Checks:** Someone unfamiliar with the product can explain “how we grow” in 60 seconds using the map.
+## Common Mistakes to Flag
 
-### 5) Quantify + prioritize (scorecard + gates)
-- **Inputs:** Qual loop map; best-available metrics.
-- **Actions:** Estimate loop throughput with simple math (conversion × frequency × invites/content × acceptance). Score loops using a scorecard (impact, confidence, effort, cycle time). Apply gates:
-  - **Paid loops:** only proceed if LTV/margin supports CAC/payback targets.
-  - **Channel fit:** ensure Customer × Business × Medium alignment.
-- **Outputs:** Loop scorecard + top 1–2 loop picks + innovate/optimize split recommendation.
-- **Checks:** Each chosen loop has (a) a measurable KPI, (b) a first experiment, and (c) a reason it wins vs alternatives.
+- **Paid acquisition on freemium** - Consumer subscriptions relying on paid acquisition will predictably fail
+- **Manufacturing network effects** - Network effects are usually inherent; hard to add as an afterthought
+- **Diversifying too early** - Early-stage companies should focus on one working engine
+- **Single-channel dependency** - Late-stage companies with 90%+ reliance on one channel are at extreme risk
+- **Referral programs without organic WOM** - Referrals amplify existing word-of-mouth; they can't create it
 
-### 6) Design the measurement plan (metrics + instrumentation)
-- **Inputs:** Selected loop(s).
-- **Actions:** Define loop KPIs and leading indicators; specify required events/properties and dashboards. Identify instrumentation gaps and the minimum tracking needed to learn.
-- **Outputs:** Measurement + instrumentation plan.
-- **Checks:** Every experiment metric is traceable to an event definition and a data source.
+## Deep Dive
 
-### 7) Build the experiment plan + quality gate
-- **Inputs:** Draft pack; [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- **Actions:** Create an experiment backlog and 30/60/90 plan (sequencing, dependencies, owners if known). Run the checklist and score with the rubric. Always include **Risks / Open questions / Next steps**.
-- **Outputs:** Final Growth Loop Design Pack.
-- **Checks:** Next 2 weeks of work are unblocked and measurable; risks include policy/ethics considerations.
+For all 84 insights from 54 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (B2B SaaS, partner/integration loop):**  
-“Use `designing-growth-loops`. Product: AI onboarding assistant for mid-market HR teams. Goal: +30% WAU in 90 days. Channels today: outbound + partnerships. Output: a Growth Loop Design Pack with an integration/partner loop and a referral loop, including metrics and a 30/60/90 experiment plan.”
-
-**Example 2 (B2C, viral/content loop):**  
-“We’re building a mobile photo editor for creators. Goal: grow from 20k to 60k MAU in 8 weeks. Output a loop map, a mechanism library for Instagram/TikTok sharing, and a prioritized experiment backlog.”
-
-**Boundary example (not a loop problem):**  
-“Write copy for our landing page headline.”  
-Response: this is primarily copywriting/positioning, not loop design; clarify the goal and use `copywriting` or a messaging skill instead.
-
+- Measuring Product-Market Fit
+- Pricing Strategy
+- Retention & Engagement
+- Marketplace Liquidity Management

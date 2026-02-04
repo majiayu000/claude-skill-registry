@@ -1,59 +1,503 @@
 ---
 name: pinia
-description: Pinia official Vue state management library, type-safe and extensible. Use when defining stores, working with state/getters/actions, or implementing store patterns in Vue apps.
-metadata:
-  author: Anthony Fu
-  version: "2026.1.28"
-  source: Generated from https://github.com/vuejs/pinia, scripts located at https://github.com/antfu/skills
+description: Manages Vue state with Pinia including stores, getters, actions, and plugins. Use when building Vue applications needing centralized state, sharing state between components, or replacing Vuex.
 ---
 
 # Pinia
 
-Pinia is the official state management library for Vue, designed to be intuitive and type-safe. It supports both Options API and Composition API styles, with first-class TypeScript support and devtools integration.
+The intuitive, type safe, and flexible store for Vue.
 
-> The skill is based on Pinia v3.0.4, generated at 2026-01-28.
+## Quick Start
 
-## Core References
+**Install:**
+```bash
+npm install pinia
+```
 
-| Topic | Description | Reference |
-|-------|-------------|-----------|
-| Stores | Defining stores, state, getters, actions, storeToRefs, subscriptions | [core-stores](references/core-stores.md) |
+**Setup (main.ts):**
+```typescript
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
 
-## Features
+const app = createApp(App);
+app.use(createPinia());
+app.mount('#app');
+```
 
-### Extensibility
+## Defining Stores
 
-| Topic | Description | Reference |
-|-------|-------------|-----------|
-| Plugins | Extend stores with custom properties, state, and behavior | [features-plugins](references/features-plugins.md) |
+### Option Store (Vue Options API style)
 
-### Composability
+```typescript
+// stores/counter.ts
+import { defineStore } from 'pinia';
 
-| Topic | Description | Reference |
-|-------|-------------|-----------|
-| Composables | Using Vue composables within stores (VueUse, etc.) | [features-composables](references/features-composables.md) |
-| Composing Stores | Store-to-store communication, avoiding circular dependencies | [features-composing-stores](references/features-composing-stores.md) |
+export const useCounterStore = defineStore('counter', {
+  state: () => ({
+    count: 0,
+    name: 'Counter',
+  }),
+
+  getters: {
+    doubleCount: (state) => state.count * 2,
+
+    // Getter using other getters
+    doubleCountPlusOne(): number {
+      return this.doubleCount + 1;
+    },
+  },
+
+  actions: {
+    increment() {
+      this.count++;
+    },
+
+    async fetchAndSet() {
+      const response = await fetch('/api/count');
+      const data = await response.json();
+      this.count = data.count;
+    },
+  },
+});
+```
+
+### Setup Store (Composition API style)
+
+```typescript
+// stores/counter.ts
+import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
+
+export const useCounterStore = defineStore('counter', () => {
+  // State
+  const count = ref(0);
+  const name = ref('Counter');
+
+  // Getters
+  const doubleCount = computed(() => count.value * 2);
+
+  // Actions
+  function increment() {
+    count.value++;
+  }
+
+  async function fetchAndSet() {
+    const response = await fetch('/api/count');
+    const data = await response.json();
+    count.value = data.count;
+  }
+
+  return { count, name, doubleCount, increment, fetchAndSet };
+});
+```
+
+## Using Stores
+
+### Basic Usage
+
+```vue
+<script setup lang="ts">
+import { useCounterStore } from '@/stores/counter';
+
+const counter = useCounterStore();
+
+// Access state
+console.log(counter.count);
+
+// Access getters
+console.log(counter.doubleCount);
+
+// Call actions
+counter.increment();
+</script>
+
+<template>
+  <div>
+    <p>Count: {{ counter.count }}</p>
+    <p>Double: {{ counter.doubleCount }}</p>
+    <button @click="counter.increment">Increment</button>
+  </div>
+</template>
+```
+
+### Destructuring with storeToRefs
+
+```vue
+<script setup lang="ts">
+import { storeToRefs } from 'pinia';
+import { useCounterStore } from '@/stores/counter';
+
+const counter = useCounterStore();
+
+// Destructure with reactivity preserved
+const { count, doubleCount } = storeToRefs(counter);
+
+// Actions can be destructured directly
+const { increment } = counter;
+</script>
+
+<template>
+  <div>
+    <p>{{ count }}</p>
+    <button @click="increment">+1</button>
+  </div>
+</template>
+```
+
+## State
+
+### Accessing State
+
+```typescript
+const store = useCounterStore();
+
+// Direct access
+store.count;
+
+// Via $state
+store.$state.count;
+```
+
+### Modifying State
+
+```typescript
+const store = useCounterStore();
+
+// Direct mutation
+store.count++;
+
+// Patch single property
+store.$patch({ count: 10 });
+
+// Patch multiple properties
+store.$patch({
+  count: 10,
+  name: 'New Counter',
+});
+
+// Patch with function
+store.$patch((state) => {
+  state.count++;
+  state.items.push({ id: 1 });
+});
+
+// Replace entire state
+store.$state = { count: 0, name: 'Reset' };
+
+// Reset to initial state
+store.$reset();
+```
+
+## Getters
+
+### Basic Getters
+
+```typescript
+export const useProductStore = defineStore('products', {
+  state: () => ({
+    items: [] as Product[],
+  }),
+
+  getters: {
+    // Arrow function
+    itemCount: (state) => state.items.length,
+
+    // Using this for other getters
+    hasItems(): boolean {
+      return this.itemCount > 0;
+    },
+
+    // Getter with parameter (returns function)
+    getById: (state) => {
+      return (id: string) => state.items.find(item => item.id === id);
+    },
+  },
+});
+```
+
+### Using Other Store Getters
+
+```typescript
+import { useUserStore } from './user';
+
+export const useCartStore = defineStore('cart', {
+  getters: {
+    userCart(): CartItem[] {
+      const userStore = useUserStore();
+      return this.items.filter(item => item.userId === userStore.currentUserId);
+    },
+  },
+});
+```
+
+## Actions
+
+### Basic Actions
+
+```typescript
+export const useAuthStore = defineStore('auth', {
+  state: () => ({
+    user: null as User | null,
+    token: null as string | null,
+  }),
+
+  actions: {
+    async login(email: string, password: string) {
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+        this.user = data.user;
+        this.token = data.token;
+
+        return data;
+      } catch (error) {
+        this.user = null;
+        this.token = null;
+        throw error;
+      }
+    },
+
+    logout() {
+      this.user = null;
+      this.token = null;
+      this.$reset();
+    },
+  },
+});
+```
+
+### Using Other Stores in Actions
+
+```typescript
+import { useNotificationStore } from './notification';
+
+export const useCartStore = defineStore('cart', {
+  actions: {
+    async checkout() {
+      const notificationStore = useNotificationStore();
+
+      try {
+        await this.submitOrder();
+        notificationStore.show('Order placed!');
+      } catch (error) {
+        notificationStore.show('Order failed', 'error');
+      }
+    },
+  },
+});
+```
+
+## Subscribing to Changes
+
+### State Subscription
+
+```typescript
+const store = useCounterStore();
+
+// Subscribe to state changes
+store.$subscribe((mutation, state) => {
+  console.log('State changed:', mutation.type);
+  console.log('New state:', state);
+
+  // Persist to localStorage
+  localStorage.setItem('counter', JSON.stringify(state));
+});
+
+// With options
+store.$subscribe(
+  (mutation, state) => {
+    // ...
+  },
+  { detached: true } // Survives component unmount
+);
+```
+
+### Action Subscription
+
+```typescript
+const store = useAuthStore();
+
+// Subscribe to actions
+store.$onAction(({ name, args, after, onError }) => {
+  console.log(`Action ${name} called with:`, args);
+
+  after((result) => {
+    console.log(`Action ${name} finished with:`, result);
+  });
+
+  onError((error) => {
+    console.error(`Action ${name} failed:`, error);
+  });
+});
+```
+
+## Plugins
+
+### Creating a Plugin
+
+```typescript
+// plugins/persistedState.ts
+import { PiniaPluginContext } from 'pinia';
+
+export function piniaPersistedState({ store }: PiniaPluginContext) {
+  // Restore state from localStorage
+  const savedState = localStorage.getItem(store.$id);
+  if (savedState) {
+    store.$patch(JSON.parse(savedState));
+  }
+
+  // Subscribe to changes
+  store.$subscribe((mutation, state) => {
+    localStorage.setItem(store.$id, JSON.stringify(state));
+  });
+}
+
+// main.ts
+const pinia = createPinia();
+pinia.use(piniaPersistedState);
+```
+
+### Adding Properties to Stores
+
+```typescript
+import { markRaw } from 'vue';
+import { Router } from 'vue-router';
+
+declare module 'pinia' {
+  export interface PiniaCustomProperties {
+    router: Router;
+  }
+}
+
+const pinia = createPinia();
+pinia.use(({ store }) => {
+  store.router = markRaw(router);
+});
+```
+
+## TypeScript
+
+### Typed Store
+
+```typescript
+interface UserState {
+  user: User | null;
+  isLoading: boolean;
+  error: string | null;
+}
+
+export const useUserStore = defineStore('user', {
+  state: (): UserState => ({
+    user: null,
+    isLoading: false,
+    error: null,
+  }),
+
+  getters: {
+    isLoggedIn: (state): boolean => !!state.user,
+    fullName(): string {
+      return this.user ? `${this.user.firstName} ${this.user.lastName}` : '';
+    },
+  },
+
+  actions: {
+    async fetchUser(id: string): Promise<void> {
+      this.isLoading = true;
+      try {
+        const response = await fetch(`/api/users/${id}`);
+        this.user = await response.json();
+      } catch (e) {
+        this.error = (e as Error).message;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+  },
+});
+```
+
+## Testing
+
+```typescript
+import { setActivePinia, createPinia } from 'pinia';
+import { useCounterStore } from '@/stores/counter';
+import { describe, it, expect, beforeEach } from 'vitest';
+
+describe('Counter Store', () => {
+  beforeEach(() => {
+    setActivePinia(createPinia());
+  });
+
+  it('increments count', () => {
+    const counter = useCounterStore();
+    expect(counter.count).toBe(0);
+
+    counter.increment();
+    expect(counter.count).toBe(1);
+  });
+
+  it('computes double count', () => {
+    const counter = useCounterStore();
+    counter.count = 5;
+    expect(counter.doubleCount).toBe(10);
+  });
+});
+```
+
+## Composing Stores
+
+```typescript
+// stores/cart.ts
+import { useProductStore } from './products';
+import { useUserStore } from './user';
+
+export const useCartStore = defineStore('cart', () => {
+  const productStore = useProductStore();
+  const userStore = useUserStore();
+
+  const items = ref<CartItem[]>([]);
+
+  const total = computed(() => {
+    return items.value.reduce((sum, item) => {
+      const product = productStore.getById(item.productId);
+      return sum + (product?.price ?? 0) * item.quantity;
+    }, 0);
+  });
+
+  const discountedTotal = computed(() => {
+    const discount = userStore.user?.discount ?? 0;
+    return total.value * (1 - discount);
+  });
+
+  return { items, total, discountedTotal };
+});
+```
 
 ## Best Practices
 
-| Topic | Description | Reference |
-|-------|-------------|-----------|
-| Testing | Unit testing with @pinia/testing, mocking, stubbing | [best-practices-testing](references/best-practices-testing.md) |
-| Outside Components | Using stores in navigation guards, plugins, middlewares | [best-practices-outside-component](references/best-practices-outside-component.md) |
+1. **One store per domain** - User store, cart store, etc.
+2. **Use Setup Stores for complex logic** - Better composition
+3. **Use storeToRefs for destructuring** - Maintains reactivity
+4. **Keep actions async-aware** - Return promises
+5. **Use plugins for cross-cutting concerns** - Persistence, logging
 
-## Advanced
+## Common Mistakes
 
-| Topic | Description | Reference |
-|-------|-------------|-----------|
-| SSR | Server-side rendering, state hydration | [advanced-ssr](references/advanced-ssr.md) |
-| Nuxt | Nuxt integration, auto-imports, SSR best practices | [advanced-nuxt](references/advanced-nuxt.md) |
-| HMR | Hot module replacement for development | [advanced-hmr](references/advanced-hmr.md) |
+| Mistake | Fix |
+|---------|-----|
+| Destructuring state directly | Use storeToRefs() |
+| Calling useStore outside setup | Call inside setup or actions |
+| Mutating state in getters | Keep getters pure |
+| Circular store dependencies | Refactor to avoid cycles |
+| Not using $reset | Use it to reset to initial |
 
-## Key Recommendations
+## Reference Files
 
-- **Prefer Setup Stores** for complex logic, composables, and watchers
-- **Use `storeToRefs()`** when destructuring state/getters to preserve reactivity
-- **Actions can be destructured directly** - they're bound to the store
-- **Call stores inside functions** not at module scope, especially for SSR
-- **Add HMR support** to each store for better development experience
-- **Use `@pinia/testing`** for component tests with mocked stores
+- [references/plugins.md](references/plugins.md) - Plugin patterns
+- [references/testing.md](references/testing.md) - Testing stores
+- [references/composition.md](references/composition.md) - Store composition

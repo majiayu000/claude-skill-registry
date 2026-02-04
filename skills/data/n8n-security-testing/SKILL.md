@@ -11,6 +11,12 @@ last_optimized: 2025-12-15
 dependencies: []
 quick_reference_card: true
 tags: [n8n, security, credentials, oauth, api-keys, encryption, testing]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/n8n-security-testing.yaml
+
 ---
 
 # n8n Security Testing

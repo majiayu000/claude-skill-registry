@@ -1,137 +1,154 @@
 ---
-name: github-issue-creator
-description: Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info, error messages, or informal descriptions and wants a structured GitHub issue. Supports images/GIFs for visual evidence.
+name: issue-creator
+description: >
+  Generate GitHub issues from an approved engineering specification.
+  Use to break down a spec into implementable, atomic tasks with
+  dependencies, sizing, and labels.
+allowed-tools: Read,Glob
 ---
 
-# GitHub Issue Creator
+# Issue Creator
 
-Transform messy input (error logs, voice notes, screenshots) into clean, actionable GitHub issues.
+You are an expert at breaking down engineering specifications into well-structured GitHub issues for implementation.
 
-## Output Template
+## Instructions
 
-```markdown
-## Summary
-[One-line description of the issue]
+1. **Read the spec** at the path provided in the context
+2. **Analyze** the implementation plan, architecture, and requirements
+3. **Generate** atomic GitHub issues that can be implemented independently (given dependencies)
+4. **Return** structured JSON with all issues
 
-## Environment
-- **Product/Service**: 
-- **Region/Version**: 
-- **Browser/OS**: (if relevant)
+## Analysis Process
 
-## Reproduction Steps
-1. [Step]
-2. [Step]
-3. [Step]
+Before creating issues, identify:
 
-## Expected Behavior
-[What should happen]
+1. **Implementation Order** - What must be built first?
+2. **Dependencies** - Which tasks depend on others?
+3. **Natural Boundaries** - Where can work be parallelized?
+4. **Size Estimates** - How long will each task take?
+5. **Labels** - What categories apply to each issue?
 
-## Actual Behavior
-[What actually happens]
+## Output Format
 
-## Error Details
-```
-[Error message/code if applicable]
-```
+Return ONLY valid JSON (no markdown code fence) with this structure:
 
-## Visual Evidence
-[Reference to attached screenshots/GIFs]
-
-## Impact
-[Severity: Critical/High/Medium/Low + brief explanation]
-
-## Additional Context
-[Any other relevant details]
-```
-
-## Output Location
-
-**Create issues as markdown files** in `/issues/` directory at the repo root. Use naming convention: `YYYY-MM-DD-short-description.md`
-
-## Guidelines
-
-**Be crisp**: No fluff. Every word should add value.
-
-**Extract structure from chaos**: Voice dictation and raw notes often contain the facts buried in casual language. Pull them out.
-
-**Infer missing context**: If user mentions "same project" or "the dashboard", use context from conversation or memory to fill in specifics.
-
-**Placeholder sensitive data**: Use `[PROJECT_NAME]`, `[USER_ID]`, etc. for anything that might be sensitive.
-
-**Match severity to impact**:
-- Critical: Service down, data loss, security issue
-- High: Major feature broken, no workaround
-- Medium: Feature impaired, workaround exists
-- Low: Minor inconvenience, cosmetic
-
-**Image/GIF handling**: Reference attachments inline. Format: `![Description](attachment-name.png)`
-
-## Examples
-
-**Input (voice dictation)**:
-> so I was trying to deploy the agent and it just failed silently no error nothing the workflow ran but then poof gone from the list had to refresh and try again three times
-
-**Output**:
-```markdown
-## Summary
-Agent deployment fails silently - no error displayed, agent disappears from list
-
-## Environment
-- **Product/Service**: Azure AI Foundry
-- **Region/Version**: westus2
-
-## Reproduction Steps
-1. Navigate to agent deployment
-2. Configure and deploy agent
-3. Observe workflow completes
-4. Check agent list
-
-## Expected Behavior
-Agent appears in list with deployment status, errors shown if deployment fails
-
-## Actual Behavior
-Agent disappears from list. No error message. Requires page refresh and retry.
-
-## Impact
-**High** - Blocks agent deployment workflow, no feedback on failure cause
-
-## Additional Context
-Required 3 retry attempts before successful deployment
+```json
+{
+  "feature_id": "feature-slug",
+  "generated_at": "2024-01-15T10:30:00Z",
+  "issues": [
+    {
+      "title": "Short, descriptive title",
+      "body": "## Description\n\nDetailed description...\n\n## Acceptance Criteria\n\n- [ ] Criterion 1\n- [ ] Criterion 2\n\n## Technical Notes\n\nAny relevant technical details...",
+      "labels": ["enhancement", "backend"],
+      "estimated_size": "medium",
+      "dependencies": [],
+      "order": 1
+    }
+  ]
+}
 ```
 
----
+## Issue Fields
 
-**Input (error paste)**:
-> Error: PERMISSION_DENIED when publishing to Teams channel. Code: 403. Was working yesterday.
+### title
+- Short, action-oriented (e.g., "Implement user registration endpoint")
+- Should be unique and descriptive
+- Max ~60 characters
 
-**Output**:
-```markdown
-## Summary
-403 PERMISSION_DENIED error when publishing to Teams channel
+### body
+Should include:
+- **Description**: What needs to be done and why
+- **Acceptance Criteria**: Checkboxes for completion criteria
+- **Technical Notes**: Implementation hints, file paths, patterns to follow
+- **References**: Links to relevant spec sections if helpful
 
-## Environment
-- **Product/Service**: Copilot Studio → Teams integration
-- **Region/Version**: [REGION]
+### labels
+Common labels:
+- `enhancement` - New features
+- `bug` - Bug fixes
+- `backend` - Backend/server work
+- `frontend` - Frontend/client work
+- `api` - API endpoints
+- `database` - Database/schema changes
+- `security` - Security-related
+- `tests` - Test additions
+- `documentation` - Doc updates
 
-## Reproduction Steps
-1. Configure agent for Teams channel
-2. Attempt to publish
+### estimated_size
+- `small` - 1-2 hours of work
+- `medium` - 2-4 hours (half day)
+- `large` - 4+ hours (full day or more)
 
-## Expected Behavior
-Agent publishes successfully to Teams channel
+### dependencies
+- Array of `order` numbers this issue depends on
+- Empty array if no dependencies
+- Example: `[1, 2]` means this depends on issues 1 and 2
 
-## Actual Behavior
-Returns `PERMISSION_DENIED` with code 403
+### order
+- Integer starting at 1
+- Represents implementation order
+- Issues with no dependencies should come first
 
-## Error Details
+## Best Practices
+
+### Issue Decomposition
+- Each issue should be **atomic** - one clear deliverable
+- Prefer smaller issues over larger ones
+- A developer should be able to complete an issue in one session
+- Dependencies should form a **DAG** (no cycles)
+
+### Acceptance Criteria
+- Be specific and testable
+- Include both functional and non-functional criteria
+- Consider edge cases
+
+### Technical Context
+- Reference existing code patterns when relevant
+- Mention files to create or modify
+- Include error handling expectations
+
+## Example
+
+Given a spec for "User Authentication", issues might be:
+
+```json
+{
+  "feature_id": "user-auth",
+  "generated_at": "2024-01-15T10:30:00Z",
+  "issues": [
+    {
+      "title": "Create User model and database schema",
+      "body": "## Description\n\nCreate the core User model for authentication.\n\n## Acceptance Criteria\n\n- [ ] User model with id, email, password_hash, created_at\n- [ ] Database migration created\n- [ ] Model validates email format\n- [ ] Unit tests for model\n\n## Technical Notes\n\n- Use SQLAlchemy declarative base\n- Email should be unique and indexed\n- Password hash uses bcrypt",
+      "labels": ["enhancement", "backend", "database"],
+      "estimated_size": "medium",
+      "dependencies": [],
+      "order": 1
+    },
+    {
+      "title": "Implement password hashing utilities",
+      "body": "## Description\n\nCreate utility functions for secure password hashing.\n\n## Acceptance Criteria\n\n- [ ] hash_password(plain) function\n- [ ] verify_password(plain, hash) function\n- [ ] Uses bcrypt with appropriate work factor\n- [ ] Unit tests covering happy path and errors",
+      "labels": ["enhancement", "backend", "security"],
+      "estimated_size": "small",
+      "dependencies": [],
+      "order": 2
+    },
+    {
+      "title": "Create registration endpoint",
+      "body": "## Description\n\nImplement POST /api/auth/register endpoint.\n\n## Acceptance Criteria\n\n- [ ] Accepts email and password\n- [ ] Validates input (email format, password strength)\n- [ ] Creates user with hashed password\n- [ ] Returns user ID on success\n- [ ] Returns 400 for invalid input\n- [ ] Returns 409 for duplicate email\n- [ ] Integration tests",
+      "labels": ["enhancement", "api", "backend"],
+      "estimated_size": "medium",
+      "dependencies": [1, 2],
+      "order": 3
+    }
+  ]
+}
 ```
-Error: PERMISSION_DENIED
-Code: 403
-```
 
-## Impact
-**High** - Blocks Teams integration, regression from previous working state
+## Important Notes
 
-## Additional Context
-Was working yesterday - possible permission/config change or service regression
-```
+- **Return ONLY JSON** - No markdown formatting, no explanatory text
+- **Validate dependencies** - Ensure they reference valid order numbers
+- **Order matters** - Lower order numbers should be implementable first
+- **Be thorough** - Don't skip edge cases or error handling tasks
+- **Consider testing** - Include test-related issues or acceptance criteria

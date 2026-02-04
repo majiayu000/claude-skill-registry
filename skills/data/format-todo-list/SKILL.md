@@ -21,6 +21,7 @@ Create properly structured todo lists for TodoWrite tool with correct status and
 Accept array of todo items with status.
 
 **Expected Input**:
+
 ```json
 {
   "todos": [
@@ -45,6 +46,7 @@ Accept array of todo items with status.
 Create activeForm for each todo based on content.
 
 **Rules**:
+
 - Convert imperative to present continuous
 - "Run X" → "Running X"
 - "Create X" → "Creating X"
@@ -56,6 +58,7 @@ Create activeForm for each todo based on content.
 Ensure status is valid TodoWrite value.
 
 **Valid Statuses**:
+
 - `pending`: Not started
 - `in_progress`: Currently active
 - `completed`: Finished
@@ -65,6 +68,7 @@ Ensure status is valid TodoWrite value.
 Structure data for TodoWrite tool.
 
 **Expected Output**:
+
 ```json
 {
   "todos": [
@@ -98,18 +102,20 @@ Structure data for TodoWrite tool.
 ### Example 1: Phase Checklist
 
 **Input**:
+
 ```json
 {
   "todos": [
-    {"content": "Phase 0: Pre-flight validation", "status": "completed"},
-    {"content": "Phase 1: Bug detection", "status": "in_progress"},
-    {"content": "Phase 2: Bug fixes", "status": "pending"},
-    {"content": "Phase 3: Verification", "status": "pending"}
+    { "content": "Phase 0: Pre-flight validation", "status": "completed" },
+    { "content": "Phase 1: Bug detection", "status": "in_progress" },
+    { "content": "Phase 2: Bug fixes", "status": "pending" },
+    { "content": "Phase 3: Verification", "status": "pending" }
   ]
 }
 ```
 
 **Output**:
+
 ```json
 {
   "todos": [
@@ -140,17 +146,19 @@ Structure data for TodoWrite tool.
 ### Example 2: Simple Task List
 
 **Input**:
+
 ```json
 {
   "todos": [
-    {"content": "Run type check", "status": "completed"},
-    {"content": "Run build", "status": "completed"},
-    {"content": "Run tests", "status": "in_progress"}
+    { "content": "Run type check", "status": "completed" },
+    { "content": "Run build", "status": "completed" },
+    { "content": "Run tests", "status": "in_progress" }
   ]
 }
 ```
 
 **Output**:
+
 ```json
 {
   "todos": [
@@ -176,17 +184,19 @@ Structure data for TodoWrite tool.
 ### Example 3: Priority-Based List
 
 **Input**:
+
 ```json
 {
   "todos": [
-    {"content": "Fix critical bugs", "status": "completed"},
-    {"content": "Fix high-priority bugs", "status": "in_progress"},
-    {"content": "Fix medium-priority bugs", "status": "pending"}
+    { "content": "Fix critical bugs", "status": "completed" },
+    { "content": "Fix high-priority bugs", "status": "in_progress" },
+    { "content": "Fix medium-priority bugs", "status": "pending" }
   ]
 }
 ```
 
 **Output**:
+
 ```json
 {
   "todos": [

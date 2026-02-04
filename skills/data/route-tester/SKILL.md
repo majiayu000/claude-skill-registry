@@ -1,388 +1,433 @@
 ---
 name: route-tester
-description: Test authenticated routes in the your project using cookie-based authentication. Use this skill when testing API endpoints, validating route functionality, or debugging authentication issues. Includes patterns for using test-auth-route.js and mock authentication.
+displayName: API Route Testing
+description: Framework-agnostic HTTP API route testing patterns, authentication strategies, and integration testing best practices. Supports REST APIs with JWT cookie authentication and other common auth patterns.
 ---
 
-# your project Route Tester Skill
+# API Route Testing Skill
 
-## Purpose
-This skill provides patterns for testing authenticated routes in the your project using cookie-based JWT authentication.
+This skill provides framework-agnostic guidance for testing HTTP API routes and endpoints across any backend framework (Express, Next.js API Routes, FastAPI, Django REST, Flask, etc.).
 
-## When to Use This Skill
-- Testing new API endpoints
-- Validating route functionality after changes
-- Debugging authentication issues
-- Testing POST/PUT/DELETE operations
-- Verifying request/response data
+## Core Testing Principles
 
-## your project Authentication Overview
+### 1. Test Types for API Routes
 
-The your project uses:
-- **Keycloak** for SSO (realm: yourRealm)
-- **Cookie-based JWT** tokens (not Bearer headers)
-- **Cookie name**: `refresh_token`
-- **JWT signing**: Using secret from `config.ini`
+**Unit Tests**
+- Test individual route handlers in isolation
+- Mock dependencies (database, external APIs)
+- Fast execution (< 50ms per test)
+- Focus on business logic
 
-## Testing Methods
+**Integration Tests**
+- Test full request/response cycle
+- Real database (test instance)
+- Authentication flow included
+- Slower but more comprehensive
 
-### Method 1: test-auth-route.js (RECOMMENDED)
+**End-to-End Tests**
+- Test from client perspective
+- Full authentication flow
+- Real services (or close replicas)
+- Most realistic, slowest execution
 
-The `test-auth-route.js` script handles all authentication complexity automatically.
+### 2. Authentication Testing Patterns
 
-**Location**: `/root/git/your project_pre/scripts/test-auth-route.js`
+#### JWT Cookie Authentication
+```typescript
+// Common pattern across frameworks
+describe('Protected Route Tests', () => {
+  let authCookie: string;
 
-#### Basic GET Request
+  beforeEach(async () => {
+    // Login and get JWT cookie
+    const loginResponse = await request(app)
+      .post('/api/auth/login')
+      .send({ email: 'test@example.com', password: 'password123' });
 
-```bash
-node scripts/test-auth-route.js http://localhost:3000/blog-api/api/endpoint
+    authCookie = loginResponse.headers['set-cookie'][0];
+  });
+
+  it('should access protected route with valid cookie', async () => {
+    const response = await request(app)
+      .get('/api/protected/resource')
+      .set('Cookie', authCookie);
+
+    expect(response.status).toBe(200);
+  });
+
+  it('should reject access without cookie', async () => {
+    const response = await request(app)
+      .get('/api/protected/resource');
+
+    expect(response.status).toBe(401);
+  });
+});
 ```
 
-#### POST Request with JSON Data
+#### JWT Bearer Token Authentication
+```typescript
+describe('Bearer Token Auth', () => {
+  let token: string;
 
-```bash
-node scripts/test-auth-route.js \
-    http://localhost:3000/blog-api/777/submit \
-    POST \
-    '{"responses":{"4577":"13295"},"submissionID":5,"stepInstanceId":"11"}'
+  beforeEach(async () => {
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({ email: 'test@example.com', password: 'password123' });
+
+    token = response.body.token;
+  });
+
+  it('should authenticate with bearer token', async () => {
+    const response = await request(app)
+      .get('/api/protected/resource')
+      .set('Authorization', `Bearer ${token}`);
+
+    expect(response.status).toBe(200);
+  });
+});
 ```
 
-#### What the Script Does
+### 3. HTTP Method Testing
 
-1. Gets a refresh token from Keycloak
-   - Username: `testuser`
-   - Password: `testpassword`
-2. Signs the token with JWT secret from `config.ini`
-3. Creates cookie header: `refresh_token=<signed-token>`
-4. Makes the authenticated request
-5. Shows the exact curl command to reproduce manually
+**GET Requests**
+```typescript
+describe('GET /api/users', () => {
+  it('should return paginated users', async () => {
+    const response = await request(app)
+      .get('/api/users?page=1&limit=10');
 
-#### Script Output
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('data');
+    expect(response.body).toHaveProperty('pagination');
+    expect(Array.isArray(response.body.data)).toBe(true);
+  });
 
-The script outputs:
-- The request details
-- The response status and body
-- A curl command for manual reproduction
+  it('should filter users by query params', async () => {
+    const response = await request(app)
+      .get('/api/users?role=admin');
 
-**Note**: The script is verbose - look for the actual response in the output.
-
-### Method 2: Manual curl with Token
-
-Use the curl command from the test-auth-route.js output:
-
-```bash
-# The script outputs something like:
-# 💡 To test manually with curl:
-# curl -b "refresh_token=eyJhbGci..." http://localhost:3000/blog-api/api/endpoint
-
-# Copy and modify that curl command:
-curl -X POST http://localhost:3000/blog-api/777/submit \
-  -H "Content-Type: application/json" \
-  -b "refresh_token=<COPY_TOKEN_FROM_SCRIPT_OUTPUT>" \
-  -d '{"your": "data"}'
+    expect(response.status).toBe(200);
+    expect(response.body.data.every(u => u.role === 'admin')).toBe(true);
+  });
+});
 ```
 
-### Method 3: Mock Authentication (Development Only - EASIEST)
+**POST Requests**
+```typescript
+describe('POST /api/users', () => {
+  it('should create new user with valid data', async () => {
+    const newUser = {
+      name: 'John Doe',
+      email: 'john@example.com',
+      role: 'user'
+    };
 
-For development, bypass Keycloak entirely using mock auth.
+    const response = await request(app)
+      .post('/api/users')
+      .set('Cookie', authCookie)
+      .send(newUser);
 
-#### Setup
+    expect(response.status).toBe(201);
+    expect(response.body).toMatchObject(newUser);
+    expect(response.body).toHaveProperty('id');
+  });
 
-```bash
-# Add to service .env file (e.g., blog-api/.env)
-MOCK_AUTH=true
-MOCK_USER_ID=test-user
-MOCK_USER_ROLES=admin,operations
+  it('should reject invalid data', async () => {
+    const invalidUser = {
+      name: 'John Doe'
+      // Missing required email field
+    };
+
+    const response = await request(app)
+      .post('/api/users')
+      .set('Cookie', authCookie)
+      .send(invalidUser);
+
+    expect(response.status).toBe(400);
+    expect(response.body).toHaveProperty('errors');
+  });
+});
 ```
 
-#### Usage
+**PUT/PATCH Requests**
+```typescript
+describe('PATCH /api/users/:id', () => {
+  it('should update user fields', async () => {
+    const updates = { name: 'Jane Doe' };
 
-```bash
-curl -H "X-Mock-Auth: true" \
-     -H "X-Mock-User: test-user" \
-     -H "X-Mock-Roles: admin,operations" \
-     http://localhost:3002/api/protected
+    const response = await request(app)
+      .patch('/api/users/123')
+      .set('Cookie', authCookie)
+      .send(updates);
+
+    expect(response.status).toBe(200);
+    expect(response.body.name).toBe('Jane Doe');
+  });
+
+  it('should return 404 for non-existent user', async () => {
+    const response = await request(app)
+      .patch('/api/users/999999')
+      .set('Cookie', authCookie)
+      .send({ name: 'Test' });
+
+    expect(response.status).toBe(404);
+  });
+});
 ```
 
-#### Mock Auth Requirements
+**DELETE Requests**
+```typescript
+describe('DELETE /api/users/:id', () => {
+  it('should delete user and return success', async () => {
+    const response = await request(app)
+      .delete('/api/users/123')
+      .set('Cookie', authCookie);
 
-Mock auth ONLY works when:
-- `NODE_ENV` is `development` or `test`
-- The `mockAuth` middleware is added to the route
-- Will NEVER work in production (security feature)
+    expect(response.status).toBe(204);
+  });
 
-## Common Testing Patterns
+  it('should prevent unauthorized deletion', async () => {
+    const response = await request(app)
+      .delete('/api/users/123');
+      // No auth cookie
 
-### Test Form Submission
-
-```bash
-node scripts/test-auth-route.js \
-    http://localhost:3000/blog-api/777/submit \
-    POST \
-    '{"responses":{"4577":"13295"},"submissionID":5,"stepInstanceId":"11"}'
+    expect(response.status).toBe(401);
+  });
+});
 ```
 
-### Test Workflow Start
+### 4. Response Validation
 
-```bash
-node scripts/test-auth-route.js \
-    http://localhost:3002/api/workflow/start \
-    POST \
-    '{"workflowCode":"DHS_CLOSEOUT","entityType":"Submission","entityID":123}'
+**Status Codes**
+```typescript
+describe('HTTP Status Codes', () => {
+  it('200 OK - Successful GET', async () => {
+    const response = await request(app).get('/api/users');
+    expect(response.status).toBe(200);
+  });
+
+  it('201 Created - Successful POST', async () => {
+    const response = await request(app).post('/api/users').send(validData);
+    expect(response.status).toBe(201);
+  });
+
+  it('204 No Content - Successful DELETE', async () => {
+    const response = await request(app).delete('/api/users/123');
+    expect(response.status).toBe(204);
+  });
+
+  it('400 Bad Request - Invalid input', async () => {
+    const response = await request(app).post('/api/users').send({});
+    expect(response.status).toBe(400);
+  });
+
+  it('401 Unauthorized - Missing auth', async () => {
+    const response = await request(app).get('/api/protected');
+    expect(response.status).toBe(401);
+  });
+
+  it('403 Forbidden - Insufficient permissions', async () => {
+    const response = await request(app).delete('/api/admin/users/123').set('Cookie', userCookie);
+    expect(response.status).toBe(403);
+  });
+
+  it('404 Not Found - Non-existent resource', async () => {
+    const response = await request(app).get('/api/users/999999');
+    expect(response.status).toBe(404);
+  });
+
+  it('500 Internal Server Error - Server failure', async () => {
+    // Test error handling
+    mockDatabase.findOne.mockRejectedValue(new Error('DB Error'));
+    const response = await request(app).get('/api/users/123');
+    expect(response.status).toBe(500);
+  });
+});
 ```
 
-### Test Workflow Step Completion
+**Response Schema Validation**
+```typescript
+describe('Response Schema', () => {
+  it('should match expected schema', async () => {
+    const response = await request(app).get('/api/users/123');
 
-```bash
-node scripts/test-auth-route.js \
-    http://localhost:3002/api/workflow/step/complete \
-    POST \
-    '{"stepInstanceID":789,"answers":{"decision":"approved","comments":"Looks good"}}'
+    expect(response.body).toEqual({
+      id: expect.any(String),
+      name: expect.any(String),
+      email: expect.any(String),
+      role: expect.stringMatching(/^(user|admin)$/),
+      createdAt: expect.any(String),
+      updatedAt: expect.any(String)
+    });
+  });
+});
 ```
 
-### Test GET with Query Parameters
-
-```bash
-node scripts/test-auth-route.js \
-    "http://localhost:3002/api/workflows?status=active&limit=10"
-```
-
-### Test File Upload
-
-```bash
-# Get token from test-auth-route.js first, then:
-curl -X POST http://localhost:5000/upload \
-  -H "Content-Type: multipart/form-data" \
-  -b "refresh_token=<TOKEN>" \
-  -F "file=@/path/to/file.pdf" \
-  -F "metadata={\"description\":\"Test file\"}"
-```
-
-## Hardcoded Test Credentials
-
-The `test-auth-route.js` script uses these credentials:
-
-- **Username**: `testuser`
-- **Password**: `testpassword`
-- **Keycloak URL**: From `config.ini` (usually `http://localhost:8081`)
-- **Realm**: `yourRealm`
-- **Client ID**: From `config.ini`
-
-## Service Ports
-
-| Service | Port | Base URL |
-|---------|------|----------|
-| Users   | 3000 | http://localhost:3000 |
-| Projects| 3001 | http://localhost:3001 |
-| Form    | 3002 | http://localhost:3002 |
-| Email   | 3003 | http://localhost:3003 |
-| Uploads | 5000 | http://localhost:5000 |
-
-## Route Prefixes
-
-Check `/src/app.ts` in each service for route prefixes:
+### 5. Error Handling Tests
 
 ```typescript
-// Example from blog-api/src/app.ts
-app.use('/blog-api/api', formRoutes);          // Prefix: /blog-api/api
-app.use('/api/workflow', workflowRoutes);  // Prefix: /api/workflow
+describe('Error Handling', () => {
+  it('should return structured error response', async () => {
+    const response = await request(app)
+      .post('/api/users')
+      .send({ invalid: 'data' });
+
+    expect(response.status).toBe(400);
+    expect(response.body).toEqual({
+      error: expect.any(String),
+      message: expect.any(String),
+      errors: expect.any(Array)
+    });
+  });
+
+  it('should handle database errors gracefully', async () => {
+    mockDatabase.findOne.mockRejectedValue(new Error('Connection lost'));
+
+    const response = await request(app).get('/api/users/123');
+
+    expect(response.status).toBe(500);
+    expect(response.body.error).toBe('Internal Server Error');
+  });
+
+  it('should sanitize error messages in production', async () => {
+    process.env.NODE_ENV = 'production';
+
+    const response = await request(app).get('/api/error-prone-route');
+
+    expect(response.status).toBe(500);
+    expect(response.body.message).not.toContain('stack trace');
+    expect(response.body.message).not.toContain('SQL');
+  });
+});
 ```
 
-**Full Route** = Base URL + Prefix + Route Path
+### 6. Test Setup and Teardown
 
-Example:
-- Base: `http://localhost:3002`
-- Prefix: `/form`
-- Route: `/777/submit`
-- **Full URL**: `http://localhost:3000/blog-api/777/submit`
+```typescript
+describe('API Tests', () => {
+  let testDatabase;
 
-## Testing Checklist
+  beforeAll(async () => {
+    // Initialize test database
+    testDatabase = await initTestDatabase();
+  });
 
-Before testing a route:
+  afterAll(async () => {
+    // Clean up test database
+    await testDatabase.close();
+  });
 
-- [ ] Identify the service (form, email, users, etc.)
-- [ ] Find the correct port
-- [ ] Check route prefixes in `app.ts`
-- [ ] Construct the full URL
-- [ ] Prepare request body (if POST/PUT)
-- [ ] Determine authentication method
-- [ ] Run the test
-- [ ] Verify response status and data
-- [ ] Check database changes if applicable
+  beforeEach(async () => {
+    // Seed test data
+    await testDatabase.seed();
+  });
 
-## Verifying Database Changes
+  afterEach(async () => {
+    // Clear test data
+    await testDatabase.clear();
+  });
 
-After testing routes that modify data:
-
-```bash
-# Connect to MySQL
-docker exec -i local-mysql mysql -u root -ppassword1 blog_dev
-
-# Check specific table
-mysql> SELECT * FROM WorkflowInstance WHERE id = 123;
-mysql> SELECT * FROM WorkflowStepInstance WHERE instanceId = 123;
-mysql> SELECT * FROM WorkflowNotification WHERE recipientUserId = 'user-123';
+  // Tests...
+});
 ```
 
-## Debugging Failed Tests
+## Framework-Specific Testing Libraries
 
-### 401 Unauthorized
+While this skill provides framework-agnostic patterns, here are common testing libraries per framework:
 
-**Possible causes**:
-1. Token expired (regenerate with test-auth-route.js)
-2. Incorrect cookie format
-3. JWT secret mismatch
-4. Keycloak not running
+- **Express**: supertest, jest, vitest
+- **Next.js API Routes**: @testing-library/react, next-test-api-route-handler
+- **FastAPI**: pytest, httpx
+- **Django REST**: django.test.TestCase, rest_framework.test
+- **Flask**: pytest, flask.testing
 
-**Solutions**:
-```bash
-# Check Keycloak is running
-docker ps | grep keycloak
+## Best Practices
 
-# Regenerate token
-node scripts/test-auth-route.js http://localhost:3002/api/health
+1. **Use descriptive test names** - Test names should describe the scenario and expected outcome
+2. **Test happy path and edge cases** - Cover both success and failure scenarios
+3. **Isolate tests** - Each test should be independent and not rely on other tests
+4. **Use realistic test data** - Test data should mimic production data
+5. **Clean up after tests** - Always reset state between tests
+6. **Mock external dependencies** - Don't call real external APIs in tests
+7. **Test authentication edge cases** - Expired tokens, invalid tokens, missing tokens
+8. **Validate response schemas** - Ensure APIs return expected structure
+9. **Test rate limiting** - Verify rate limits work correctly
+10. **Test CORS headers** - Ensure CORS is configured correctly
 
-# Verify config.ini has correct jwtSecret
+## Common Pitfalls
+
+❌ **Don't share state between tests**
+```typescript
+// Bad
+let userId;
+it('creates user', async () => {
+  const response = await request(app).post('/api/users').send(userData);
+  userId = response.body.id; // Shared state!
+});
+
+it('deletes user', async () => {
+  await request(app).delete(`/api/users/${userId}`); // Depends on previous test
+});
 ```
 
-### 403 Forbidden
+✅ **Do create fresh state for each test**
+```typescript
+// Good
+it('creates user', async () => {
+  const response = await request(app).post('/api/users').send(userData);
+  expect(response.status).toBe(201);
+});
 
-**Possible causes**:
-1. User lacks required role
-2. Resource permissions incorrect
-3. Route requires specific permissions
-
-**Solutions**:
-```bash
-# Use mock auth with admin role
-curl -H "X-Mock-Auth: true" \
-     -H "X-Mock-User: test-admin" \
-     -H "X-Mock-Roles: admin" \
-     http://localhost:3002/api/protected
+it('deletes user', async () => {
+  const user = await createTestUser();
+  const response = await request(app).delete(`/api/users/${user.id}`);
+  expect(response.status).toBe(204);
+});
 ```
 
-### 404 Not Found
+## Additional Resources
 
-**Possible causes**:
-1. Incorrect URL
-2. Missing route prefix
-3. Route not registered
+See the `resources/` directory for more detailed guides:
+- `http-testing-fundamentals.md` - Deep dive into HTTP testing concepts
+- `authentication-testing.md` - Authentication strategies and edge cases
+- `api-integration-testing.md` - Integration testing patterns and tools
 
-**Solutions**:
-1. Check `app.ts` for route prefixes
-2. Verify route registration
-3. Check service is running (`pm2 list`)
+## Quick Reference
 
-### 500 Internal Server Error
+**Test Structure**
+```typescript
+describe('Resource Name', () => {
+  describe('HTTP Method /path', () => {
+    it('should describe expected behavior', async () => {
+      // Arrange
+      const testData = {...};
 
-**Possible causes**:
-1. Database connection issue
-2. Missing required fields
-3. Validation error
-4. Application error
+      // Act
+      const response = await request(app)
+        .method('/path')
+        .set('Cookie', authCookie)
+        .send(testData);
 
-**Solutions**:
-1. Check service logs (`pm2 logs <service>`)
-2. Check Sentry for error details
-3. Verify request body matches expected schema
-4. Check database connectivity
-
-## Using auth-route-tester Agent
-
-For comprehensive route testing after making changes:
-
-1. **Identify affected routes**
-2. **Gather route information**:
-   - Full route path (with prefix)
-   - Expected POST data
-   - Tables to verify
-3. **Invoke auth-route-tester agent**
-
-The agent will:
-- Test the route with proper authentication
-- Verify database changes
-- Check response format
-- Report any issues
-
-## Example Test Scenarios
-
-### After Creating a New Route
-
-```bash
-# 1. Test with valid data
-node scripts/test-auth-route.js \
-    http://localhost:3002/api/my-new-route \
-    POST \
-    '{"field1":"value1","field2":"value2"}'
-
-# 2. Verify database
-docker exec -i local-mysql mysql -u root -ppassword1 blog_dev \
-    -e "SELECT * FROM MyTable ORDER BY createdAt DESC LIMIT 1;"
-
-# 3. Test with invalid data
-node scripts/test-auth-route.js \
-    http://localhost:3002/api/my-new-route \
-    POST \
-    '{"field1":"invalid"}'
-
-# 4. Test without authentication
-curl http://localhost:3002/api/my-new-route
-# Should return 401
+      // Assert
+      expect(response.status).toBe(expectedStatus);
+      expect(response.body).toMatchObject(expectedData);
+    });
+  });
+});
 ```
 
-### After Modifying a Route
+**Authentication Pattern**
+```typescript
+let authCookie: string;
 
-```bash
-# 1. Test existing functionality still works
-node scripts/test-auth-route.js \
-    http://localhost:3002/api/existing-route \
-    POST \
-    '{"existing":"data"}'
+beforeEach(async () => {
+  const response = await request(app)
+    .post('/api/auth/login')
+    .send({ email: 'test@example.com', password: 'password123' });
 
-# 2. Test new functionality
-node scripts/test-auth-route.js \
-    http://localhost:3002/api/existing-route \
-    POST \
-    '{"new":"field","existing":"data"}'
+  authCookie = response.headers['set-cookie'][0];
+});
 
-# 3. Verify backward compatibility
-# Test with old request format (if applicable)
+// Use authCookie in protected route tests
+.set('Cookie', authCookie)
 ```
-
-## Configuration Files
-
-### config.ini (each service)
-
-```ini
-[keycloak]
-url = http://localhost:8081
-realm = yourRealm
-clientId = app-client
-
-[jwt]
-jwtSecret = your-jwt-secret-here
-```
-
-### .env (each service)
-
-```bash
-NODE_ENV=development
-MOCK_AUTH=true           # Optional: Enable mock auth
-MOCK_USER_ID=test-user   # Optional: Default mock user
-MOCK_USER_ROLES=admin    # Optional: Default mock roles
-```
-
-## Key Files
-
-- `/root/git/your project_pre/scripts/test-auth-route.js` - Main testing script
-- `/blog-api/src/app.ts` - Form service routes
-- `/notifications/src/app.ts` - Email service routes
-- `/auth/src/app.ts` - Users service routes
-- `/config.ini` - Service configuration
-- `/.env` - Environment variables
-
-## Related Skills
-
-- Use **database-verification** to verify database changes
-- Use **error-tracking** to check for captured errors
-- Use **workflow-builder** for workflow route testing
-- Use **notification-sender** to verify notifications sent

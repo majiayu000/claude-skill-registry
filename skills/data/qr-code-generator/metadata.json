@@ -1,7 +1,7 @@
 {
   "name": "qr-code-generator",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/marketing-pro-workflow/.claude/skills/qr-code-generator/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:26.508936Z"
+  "repo": "dkyazzentwatwa/chatgpt-skills",
+  "path": "qr-code-generator/SKILL.md",
+  "source": "github.com/dkyazzentwatwa/chatgpt-skills",
+  "downloaded_at": "2026-02-04T03:50:57.903501Z"
 }

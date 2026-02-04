@@ -1,26 +1,23 @@
 ---
-name: moai-tool-ast-grep
-description: >
-  AST-based structural code search, security scanning, and refactoring using ast-grep
-  (sg CLI). Supports 40+ languages with pattern matching and code transformation.
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Grep Glob Bash mcp__context7__resolve-library-id mcp__context7__get-library-docs
+name: "moai-tool-ast-grep"
+description: "AST-based structural code search, security scanning, and refactoring using ast-grep (sg CLI). Supports 40+ languages with pattern matching and code transformation."
+version: 1.2.0
+category: "tool"
+modularized: true
 user-invocable: false
-metadata:
-  version: "1.2.0"
-  category: "tool"
-  modularized: "true"
-  status: "active"
-  updated: "2026-01-11"
-  tags: "ast, refactoring, code-search, lint, structural-search, security, codemod"
-  related-skills: "moai-workflow-testing, moai-foundation-quality, moai-domain-backend, moai-domain-frontend"
-  context: "fork"
-  agent: "Explore"
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["ast", "refactoring", "code search", "lint", "structural search", "security", "codemod", "ast-grep"]
+context: fork
+agent: Explore
+tags: ['ast', 'refactoring', 'code-search', 'lint', 'structural-search', 'security', 'codemod']
+related-skills: ['moai-workflow-testing', 'moai-foundation-quality', 'moai-domain-backend', 'moai-domain-frontend']
+updated: 2026-01-11
+status: "active"
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 # AST-Grep Integration
@@ -83,54 +80,7 @@ To find all console.log calls, run sg with pattern console.log($MSG) and lang ja
 
 To find all Python function definitions, run sg with pattern def $FUNC($$$ARGS): $$$BODY and lang python.
 
-To find React useState hooks, run sg with pattern useState($INIT) and lang tsx.
-
-#### Explore/Search Performance Optimization
-
-AST-Grep provides significant performance benefits for codebase exploration compared to text-based search:
-
-**Why AST-Grep is Faster for Exploration**
-- Structural understanding eliminates false positives (50-80% reduction in irrelevant results)
-- Syntax-aware matching reduces full file scans
-- Single pass through AST vs multiple regex passes
-
-**Common Exploration Patterns**
-
-Find all function calls matching a pattern:
-```bash
-sg -p 'authenticate($$$)' --lang python -r src/
-```
-
-Find all classes inheriting from a base class:
-```bash
-sg -p 'class $A extends BaseService' --lang python -r src/
-```
-
-Find specific import patterns:
-```bash
-sg -p 'import fastapi' --lang python -r src/
-```
-
-Find React hooks usage:
-```bash
-sg -p 'useState($$)' --lang tsx -r src/
-```
-
-Find async function declarations:
-```bash
-sg -p 'async def $NAME($$$ARGS):' --lang python -r src/
-```
-
-**Performance Comparison**
-- `grep -r "class.*Service" src/` - scans all files textually (~10s for large codebase)
-- `sg -p 'class $X extends Service' --lang python -r src/` - structural match (~2s)
-
-**Integration with Explore Agent**
-When using the Explore agent, AST-Grep is automatically prioritized for:
-- Class hierarchy analysis
-- Function signature matching
-- Import dependency mapping
-- API usage pattern detection
+To find React useState hooks, run sg with pattern useState($INIT) and lang typescriptreact.
 
 #### Meta-variables
 
@@ -222,7 +172,7 @@ For JSON output suitable for CI/CD, execute sg scan with config and json flag, r
 
 ## Works Well With
 
-- moai-workflow-testing: DDD integration and test pattern detection
+- moai-workflow-testing: TDD integration and test pattern detection
 - moai-foundation-quality: TRUST 5 compliance and code quality gates
 - moai-domain-backend: API pattern detection and security scanning
 - moai-domain-frontend: React/Vue pattern optimization

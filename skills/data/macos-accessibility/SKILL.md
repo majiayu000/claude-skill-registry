@@ -1,496 +1,540 @@
 ---
 name: macos-accessibility
-risk_level: MEDIUM
-description: "Expert in macOS Accessibility APIs (AXUIElement) for desktop automation. Specializes in secure automation of macOS applications with proper TCC permissions, element discovery, and system interaction. HIGH-RISK skill requiring strict security controls."
-model: sonnet
+description: macOS Accessibility APIs for automation and text selection
+tags: [macos, accessibility, ax, automation, window-control, selected-text]
 ---
 
-## 1. Overview
+# macos-accessibility
 
-**Risk Level**: HIGH - System-level access, TCC permission requirements, process interaction
+macOS Accessibility APIs enable cross-application automation including window control, text selection reading, keyboard monitoring, and UI element inspection. Script-kit-gpui uses these APIs extensively for text expansion, window tiling, and getting selected text from other applications.
 
-You are an expert in macOS Accessibility automation with deep expertise in:
+## Crate Dependencies
 
-- **AXUIElement API**: Accessibility element hierarchy, attributes, actions
-- **TCC (Transparency, Consent, Control)**: Permission management
-- **ApplicationServices Framework**: System-level automation integration
-- **Security Boundaries**: Sandbox restrictions, hardened runtime
-
-### Core Expertise Areas
-
-1. **Accessibility APIs**: AXUIElementRef, AXObserver, attribute queries
-2. **TCC Permissions**: Accessibility permission requests, validation
-3. **Process Management**: NSRunningApplication, process validation
-4. **Security Controls**: Sandbox awareness, permission tiers
-
----
-
-## 2. Core Responsibilities
-
-### 2.1 Core Principles
-
-- **TDD First**: Write tests before implementation - verify permission checks, element queries, and actions work correctly
-- **Performance Aware**: Cache elements, limit search scope, batch attribute queries for optimal responsiveness
-- **Security First**: Validate TCC permissions, verify code signatures, block sensitive applications
-- **Audit Everything**: Log all operations with correlation IDs for security audit trails
-
-### 2.2 Safe Automation Principles
-
-When performing accessibility automation:
-- **Validate TCC permissions** before any operation
-- **Respect sandbox boundaries** of target applications
-- **Block sensitive applications** (Keychain, Security preferences)
-- **Log all operations** for audit trails
-- **Implement timeouts** to prevent hangs
-
-### 2.3 Permission Management
-
-All automation must:
-1. Check for Accessibility permission in TCC database
-2. Validate process has required entitlements
-3. Request minimal necessary permissions
-4. Handle permission denial gracefully
-
-### 2.4 Security-First Approach
-
-Every automation operation MUST:
-1. Verify target application identity
-2. Check against blocked application list
-3. Validate TCC permissions
-4. Log operation with correlation ID
-5. Enforce timeout limits
-
----
-
-## 3. Technical Foundation
-
-### 3.1 Core Frameworks
-
-**Primary Framework**: ApplicationServices / HIServices
-- **Key API**: AXUIElementRef (CFType-based accessibility element)
-- **Observer API**: AXObserver for event monitoring
-- **Attribute API**: AXUIElementCopyAttributeValue
-
-**Key Dependencies**:
-```
-ApplicationServices.framework  # Core accessibility APIs
-CoreFoundation.framework       # CFType support
-AppKit.framework              # NSRunningApplication
-Security.framework            # TCC queries
+```toml
+# Cargo.toml
+get-selected-text = "0.1"      # Hybrid AX + clipboard fallback for reading selected text
+macos-accessibility-client = "0.0.1"  # Permission checking for accessibility APIs
 ```
 
-### 3.2 Essential Libraries
+## Permission Requirements
 
-| Library | Purpose | Security Notes |
-|---------|---------|----------------|
-| `pyobjc-framework-ApplicationServices` | Python bindings | Validate element access |
-| `atomac` | Higher-level wrapper | Check TCC before use |
-| `pyautogui` | Input simulation | Requires Accessibility permission |
+### Why Accessibility Permission Is Required
 
----
+Accessibility permission enables:
+- **Text expansion / snippets** - Global keyboard monitoring
+- **Window control** (move, resize, tile) - Cross-process window manipulation
+- **Get selected text from other apps** - AXSelectedText attribute access
+- **Global keyboard shortcuts** - System-wide hotkey capture
 
-## 4. Implementation Patterns
+### Checking Permission
 
-### Pattern 1: TCC Permission Validation
+```rust
+use macos_accessibility_client::accessibility;
 
-```python
-import subprocess
-from ApplicationServices import (
-    AXIsProcessTrustedWithOptions,
-    kAXTrustedCheckOptionPrompt
-)
-
-class TCCValidator:
-    """Validate TCC permissions before automation."""
-
-    @staticmethod
-    def check_accessibility_permission(prompt: bool = False) -> bool:
-        """Check if process has accessibility permission."""
-        options = {kAXTrustedCheckOptionPrompt: prompt}
-        return AXIsProcessTrustedWithOptions(options)
-
-    @staticmethod
-    def get_tcc_status(bundle_id: str) -> str:
-        """Query TCC database for permission status."""
-        query = f"""
-        SELECT client, auth_value FROM access
-        WHERE service = 'kTCCServiceAccessibility'
-        AND client = '{bundle_id}'
-        """
-        # Note: Direct TCC database access requires SIP disabled
-        # Use AXIsProcessTrusted for normal operation
-        pass
-
-    def ensure_permission(self):
-        """Ensure accessibility permission is granted."""
-        if not self.check_accessibility_permission():
-            raise PermissionError(
-                "Accessibility permission required. "
-                "Enable in System Preferences > Security & Privacy > Accessibility"
-            )
+/// Check if accessibility permissions are granted
+pub fn has_accessibility_permission() -> bool {
+    accessibility::application_is_trusted()
+}
 ```
 
-### Pattern 2: Secure Element Discovery
+### Requesting Permission (Shows System Dialog)
 
-```python
-from ApplicationServices import (
-    AXUIElementCreateSystemWide,
-    AXUIElementCreateApplication,
-    AXUIElementCopyAttributeValue,
-    AXUIElementCopyAttributeNames,
-)
-from Quartz import kAXErrorSuccess
-import logging
+```rust
+use macos_accessibility_client::accessibility;
 
-class SecureAXAutomation:
-    """Secure wrapper for AXUIElement automation."""
+/// Request accessibility permission - opens System Preferences with prompt
+pub fn request_accessibility_permission() -> bool {
+    accessibility::application_is_trusted_with_prompt()
+}
+```
 
-    BLOCKED_APPS = {
-        'com.apple.keychainaccess',           # Keychain Access
-        'com.apple.systempreferences',         # System Preferences
-        'com.apple.SecurityAgent',             # Security dialogs
-        'com.apple.Terminal',                  # Terminal
-        'com.1password.1password',             # 1Password
+### Opening Settings Directly
+
+```rust
+use std::process::Command;
+
+/// Open System Preferences to Accessibility pane (no prompt)
+pub fn open_accessibility_settings() -> std::io::Result<()> {
+    Command::new("open")
+        .arg("x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")
+        .spawn()?;
+    Ok(())
+}
+```
+
+### Permission Flow in script-kit-gpui
+
+See `src/permissions_wizard.rs` for the complete permission management system:
+- `PermissionStatus` - Overall permission state
+- `PermissionInfo` - Per-permission details with UI-ready descriptions
+- `check_all_permissions()` - Main entry point
+
+## Reading Selected Text
+
+The `get-selected-text` crate provides a hybrid approach with automatic fallbacks:
+
+```rust
+use get_selected_text::get_selected_text as get_selected_text_impl;
+
+pub fn get_selected_text() -> Result<String> {
+    // Check permissions first
+    if !has_accessibility_permission() {
+        bail!("Accessibility permission required");
     }
-
-    def __init__(self, permission_tier: str = 'read-only'):
-        self.permission_tier = permission_tier
-        self.logger = logging.getLogger('ax.security')
-        self.operation_timeout = 30
-
-        # Validate TCC permission on init
-        if not TCCValidator.check_accessibility_permission():
-            raise PermissionError("Accessibility permission required")
-
-    def get_application_element(self, pid: int) -> 'AXUIElementRef':
-        """Get application element with validation."""
-        # Get bundle ID
-        bundle_id = self._get_bundle_id(pid)
-
-        # Security check
-        if bundle_id in self.BLOCKED_APPS:
-            self.logger.warning(
-                'blocked_app_access',
-                bundle_id=bundle_id,
-                reason='security_policy'
-            )
-            raise SecurityError(f"Access to {bundle_id} is blocked")
-
-        # Create element
-        app_element = AXUIElementCreateApplication(pid)
-
-        self._audit_log('app_element_created', bundle_id, pid)
-        return app_element
-
-    def get_attribute(self, element, attribute: str):
-        """Get element attribute with security filtering."""
-        sensitive = ['AXValue', 'AXSelectedText', 'AXDocument']
-        if attribute in sensitive and self.permission_tier == 'read-only':
-            raise SecurityError(f"Access to {attribute} requires elevated permissions")
-
-        error, value = AXUIElementCopyAttributeValue(element, attribute, None)
-        if error != kAXErrorSuccess:
-            return None
-
-        # Redact password values
-        return '[REDACTED]' if 'password' in str(attribute).lower() else value
-
-    def _audit_log(self, action: str, bundle_id: str, pid: int):
-        self.logger.info(f'ax.{action}', extra={
-            'bundle_id': bundle_id, 'pid': pid, 'permission_tier': self.permission_tier
-        })
-```
-
-### Pattern 3: Safe Action Execution
-
-```python
-from ApplicationServices import AXUIElementPerformAction
-
-class SafeActionExecutor:
-    """Execute AX actions with security controls."""
-    BLOCKED_ACTIONS = {
-        'read-only': ['AXPress', 'AXIncrement', 'AXDecrement', 'AXConfirm'],
-        'standard': ['AXDelete', 'AXCancel'],
+    
+    // The crate handles:
+    // 1. AXSelectedText attribute (fastest, most reliable)
+    // 2. AXSelectedTextRange + AXStringForRange (fallback)
+    // 3. Clipboard simulation with Cmd+C (last resort)
+    match get_selected_text_impl() {
+        Ok(text) => Ok(text),
+        Err(e) => bail!("Failed to get selected text: {}", e),
     }
-
-    def __init__(self, permission_tier: str):
-        self.permission_tier = permission_tier
-
-    def perform_action(self, element, action: str):
-        blocked = self.BLOCKED_ACTIONS.get(self.permission_tier, [])
-        if action in blocked:
-            raise PermissionError(f"Action {action} not allowed in {self.permission_tier} tier")
-        error = AXUIElementPerformAction(element, action)
-        return error == kAXErrorSuccess
+}
 ```
 
-### Pattern 4: Application Monitoring
+### Selection Reading Strategies (in order)
 
-```python
-from AppKit import NSWorkspace, NSRunningApplication
+1. **AXSelectedText** - Direct attribute read, fastest
+2. **AXSelectedTextRange + AXStringForRange** - Range-based fallback
+3. **Clipboard simulation** - Saves clipboard, sends Cmd+C, restores
 
-class ApplicationMonitor:
-    """Monitor and validate running applications."""
+The crate caches per-app behavior with an LRU cache for efficiency.
 
-    def get_frontmost_app(self) -> dict:
-        app = NSWorkspace.sharedWorkspace().frontmostApplication()
-        return {
-            'pid': app.processIdentifier(),
-            'bundle_id': app.bundleIdentifier(),
-            'name': app.localizedName(),
+## Setting Selected Text (Replace Selection)
+
+```rust
+use arboard::Clipboard;
+
+pub fn set_selected_text(text: &str) -> Result<()> {
+    if !has_accessibility_permission() {
+        bail!("Accessibility permission required");
+    }
+    
+    let mut clipboard = Clipboard::new()?;
+    
+    // Save original clipboard
+    let original = clipboard.get_text().ok();
+    
+    // Set new text
+    clipboard.set_text(text)?;
+    thread::sleep(Duration::from_millis(10));
+    
+    // Simulate Cmd+V
+    simulate_paste_with_cg()?;
+    thread::sleep(Duration::from_millis(50));
+    
+    // Restore original clipboard
+    if let Some(original_text) = original {
+        thread::sleep(Duration::from_millis(100));
+        clipboard.set_text(&original_text)?;
+    }
+    
+    Ok(())
+}
+```
+
+### Simulating Paste with Core Graphics
+
+```rust
+use core_graphics::event::{CGEvent, CGEventFlags, CGEventTapLocation, CGKeyCode};
+use core_graphics::event_source::{CGEventSource, CGEventSourceStateID};
+
+pub fn simulate_paste_with_cg() -> Result<()> {
+    const KEY_V: CGKeyCode = 9;  // 'v' keycode on macOS
+    
+    let source = CGEventSource::new(CGEventSourceStateID::HIDSystemState)
+        .ok().context("Failed to create CGEventSource")?;
+    
+    // Key down with Cmd
+    let key_down = CGEvent::new_keyboard_event(source.clone(), KEY_V, true)
+        .ok().context("Failed to create key down event")?;
+    key_down.set_flags(CGEventFlags::CGEventFlagCommand);
+    
+    // Key up with Cmd
+    let key_up = CGEvent::new_keyboard_event(source, KEY_V, false)
+        .ok().context("Failed to create key up event")?;
+    key_up.set_flags(CGEventFlags::CGEventFlagCommand);
+    
+    // Post events
+    key_down.post(CGEventTapLocation::HID);
+    thread::sleep(Duration::from_millis(5));
+    key_up.post(CGEventTapLocation::HID);
+    
+    Ok(())
+}
+```
+
+## AXUIElement API
+
+### FFI Declarations
+
+```rust
+#![allow(non_upper_case_globals)]
+
+use std::ffi::c_void;
+
+type AXUIElementRef = *const c_void;
+type CFTypeRef = *const c_void;
+type CFStringRef = *const c_void;
+type CFArrayRef = *const c_void;
+
+#[link(name = "ApplicationServices", kind = "framework")]
+extern "C" {
+    fn AXUIElementCreateSystemWide() -> AXUIElementRef;
+    fn AXUIElementCreateApplication(pid: i32) -> AXUIElementRef;
+    fn AXUIElementCopyAttributeValue(
+        element: AXUIElementRef,
+        attribute: CFStringRef,
+        value: *mut CFTypeRef,
+    ) -> i32;
+    fn AXUIElementSetAttributeValue(
+        element: AXUIElementRef,
+        attribute: CFStringRef,
+        value: CFTypeRef,
+    ) -> i32;
+    fn AXUIElementPerformAction(element: AXUIElementRef, action: CFStringRef) -> i32;
+    fn AXUIElementIsAttributeSettable(
+        element: AXUIElementRef,
+        attribute: CFStringRef,
+        settable: *mut bool,
+    ) -> i32;
+}
+
+// AXError codes
+const kAXErrorSuccess: i32 = 0;
+const kAXErrorAPIDisabled: i32 = -25211;
+const kAXErrorNoValue: i32 = -25212;
+```
+
+### Getting Attribute Values
+
+```rust
+fn get_ax_attribute(element: AXUIElementRef, attribute: &str) -> Result<CFTypeRef> {
+    let attr_str = create_cf_string(attribute);
+    let mut value: CFTypeRef = std::ptr::null();
+    
+    let result = unsafe {
+        AXUIElementCopyAttributeValue(element, attr_str, &mut value as *mut CFTypeRef)
+    };
+    
+    cf_release(attr_str);
+    
+    match result {
+        kAXErrorSuccess => Ok(value),
+        kAXErrorAPIDisabled => bail!("Accessibility API is disabled"),
+        kAXErrorNoValue => bail!("No value for attribute: {}", attribute),
+        _ => bail!("Failed to get attribute {}: error {}", attribute, result),
+    }
+}
+```
+
+### Setting Attribute Values
+
+```rust
+fn set_ax_attribute(element: AXUIElementRef, attribute: &str, value: CFTypeRef) -> Result<()> {
+    let attr_str = create_cf_string(attribute);
+    let result = unsafe { AXUIElementSetAttributeValue(element, attr_str, value) };
+    cf_release(attr_str);
+    
+    match result {
+        kAXErrorSuccess => Ok(()),
+        kAXErrorAPIDisabled => bail!("Accessibility API is disabled"),
+        _ => bail!("Failed to set attribute {}: error {}", attribute, result),
+    }
+}
+```
+
+### Checking Attribute Settability
+
+```rust
+pub fn is_attribute_settable(element: AXUIElementRef, attribute: &str) -> bool {
+    if element.is_null() {
+        return false;
+    }
+    
+    let attr_str = create_cf_string(attribute);
+    let mut settable = false;
+    
+    let result = unsafe {
+        AXUIElementIsAttributeSettable(element, attr_str, &mut settable as *mut bool)
+    };
+    
+    cf_release(attr_str);
+    result == kAXErrorSuccess && settable
+}
+```
+
+### Common AX Attributes
+
+| Attribute | Type | Description |
+|-----------|------|-------------|
+| `AXPosition` | AXValue (CGPoint) | Window position |
+| `AXSize` | AXValue (CGSize) | Window dimensions |
+| `AXTitle` | CFString | Window title |
+| `AXWindows` | CFArray | Application's windows |
+| `AXFocusedWindow` | AXUIElement | Currently focused window |
+| `AXMainWindow` | AXUIElement | Application's main window |
+| `AXMinimized` | CFBoolean | Minimization state |
+| `AXSelectedText` | CFString | Currently selected text |
+| `AXSelectedTextRange` | AXValue | Selection range |
+| `AXCloseButton` | AXUIElement | Close button element |
+| `AXMinimizeButton` | AXUIElement | Minimize button element |
+| `AXFullScreenButton` | AXUIElement | Fullscreen button element |
+
+### Common AX Actions
+
+| Action | Description |
+|--------|-------------|
+| `AXRaise` | Bring window to front |
+| `AXPress` | Press a button element |
+
+## Window Control Pattern
+
+See `src/window_control.rs` for complete implementation.
+
+### Listing Windows
+
+```rust
+pub fn list_windows() -> Result<Vec<WindowInfo>> {
+    if !has_accessibility_permission() {
+        bail!("Accessibility permission required");
+    }
+    
+    let mut windows = Vec::new();
+    
+    // Iterate running applications via NSWorkspace
+    unsafe {
+        use objc::{msg_send, sel, sel_impl};
+        use objc::runtime::{Class, Object};
+        
+        let workspace_class = Class::get("NSWorkspace")?;
+        let workspace: *mut Object = msg_send![workspace_class, sharedWorkspace];
+        let running_apps: *mut Object = msg_send![workspace, runningApplications];
+        
+        // For each app...
+        let ax_app = AXUIElementCreateApplication(pid);
+        if let Ok(windows_value) = get_ax_attribute(ax_app, "AXWindows") {
+            // Iterate windows...
         }
-
-    def validate_application(self, pid: int) -> bool:
-        app = NSRunningApplication.runningApplicationWithProcessIdentifier_(pid)
-        if not app or app.bundleIdentifier() in SecureAXAutomation.BLOCKED_APPS:
-            return False
-        # Verify code signature
-        result = subprocess.run(['codesign', '-v', app.bundleURL().path()], capture_output=True)
-        return result.returncode == 0
+        cf_release(ax_app);
+    }
+    
+    Ok(windows)
+}
 ```
 
----
+### Getting Focused Window of Previous App
 
-## 5. Implementation Workflow (TDD)
+For LSUIElement (accessory) apps like Script Kit that don't take menu bar ownership:
 
-### Step 1: Write Failing Test First
+```rust
+pub fn get_frontmost_window_of_previous_app() -> Result<Option<WindowInfo>> {
+    // Menu bar owner is the previously active app
+    let target_pid = get_menu_bar_owner_pid()?;
+    
+    let ax_app = unsafe { AXUIElementCreateApplication(target_pid) };
+    
+    // Strategy 1: AXFocusedWindow (most accurate)
+    // Strategy 2: AXMainWindow (fallback)
+    // Strategy 3: First window in AXWindows array
+    
+    // ...
+}
 
-```python
-# tests/test_ax_automation.py
-import pytest
-from unittest.mock import patch, MagicMock
-
-class TestTCCValidation:
-    def test_raises_error_when_permission_missing(self):
-        with patch('ApplicationServices.AXIsProcessTrustedWithOptions', return_value=False):
-            with pytest.raises(PermissionError) as exc:
-                SecureAXAutomation()
-            assert "Accessibility permission required" in str(exc.value)
-
-class TestSecureElementDiscovery:
-    def test_blocks_keychain_access(self):
-        with patch('ApplicationServices.AXIsProcessTrustedWithOptions', return_value=True):
-            automation = SecureAXAutomation()
-            with pytest.raises(SecurityError):
-                automation.get_application_element(pid=1234)  # Keychain PID
-
-    def test_filters_sensitive_attributes(self):
-        automation = SecureAXAutomation(permission_tier='read-only')
-        result = automation.get_attribute(MagicMock(), 'AXPasswordField')
-        assert result == '[REDACTED]'
-
-class TestActionExecution:
-    def test_blocks_actions_in_readonly_tier(self):
-        executor = SafeActionExecutor(permission_tier='read-only')
-        with pytest.raises(PermissionError):
-            executor.perform_action(MagicMock(), 'AXPress')
+pub fn get_menu_bar_owner_pid() -> Result<i32> {
+    unsafe {
+        let workspace: *mut Object = msg_send![workspace_class, sharedWorkspace];
+        let menu_owner: *mut Object = msg_send![workspace, menuBarOwningApplication];
+        let pid: i32 = msg_send![menu_owner, processIdentifier];
+        Ok(pid)
+    }
+}
 ```
 
-### Step 2: Implement Minimum to Pass
+### Window Capability Detection
 
-Implement the classes and methods that make tests pass.
+See `src/window_control_enhanced/capabilities.rs`:
 
-### Step 3: Refactor Following Patterns
-
-Apply security patterns, caching, and error handling.
-
-### Step 4: Run Full Verification
-
-```bash
-# Run all tests with coverage
-pytest tests/ -v --cov=ax_automation --cov-report=term-missing
-
-# Run security-specific tests
-pytest tests/test_ax_automation.py -k "security or permission" -v
-
-# Run with timeout to catch hangs
-pytest tests/ --timeout=30
+```rust
+pub fn detect_window_capabilities(ax_element: *const c_void) -> WindowCapabilities {
+    WindowCapabilities {
+        can_move: is_attribute_settable(ax_element, "AXPosition"),
+        can_resize: is_attribute_settable(ax_element, "AXSize"),
+        can_minimize: has_attribute(ax_element, "AXMinimizeButton"),
+        can_close: has_attribute(ax_element, "AXCloseButton"),
+        can_fullscreen: has_attribute(ax_element, "AXFullScreenButton"),
+        supports_space_move: false,
+    }
+}
 ```
 
----
+## CoreFoundation Memory Management
 
-## 6. Performance Patterns
+**Critical**: AX functions follow CoreFoundation naming conventions:
+- `AXUIElementCreate*` - Returns owned object, caller must release
+- `AXUIElementCopy*` - Returns owned copy, caller must release
+- `CFArrayGetValueAtIndex` - Returns borrowed reference, retain if keeping
 
-### Pattern 1: Element Caching
+```rust
+fn cf_release(cf: CFTypeRef) {
+    if !cf.is_null() {
+        unsafe { CFRelease(cf); }
+    }
+}
 
-```python
-# BAD: Query repeatedly
-element = AXUIElementCreateApplication(pid)  # Each call
-
-# GOOD: Cache with TTL
-class ElementCache:
-    def __init__(self, ttl=5.0):
-        self.cache, self.ttl = {}, ttl
-
-    def get_or_create(self, pid, role):
-        key = (pid, role)
-        if key in self.cache and time() - self.cache[key][1] < self.ttl:
-            return self.cache[key][0]
-        element = self._create_element(pid, role)
-        self.cache[key] = (element, time())
-        return element
+fn cf_retain(cf: CFTypeRef) -> CFTypeRef {
+    if !cf.is_null() {
+        unsafe { CFRetain(cf) }
+    } else {
+        cf
+    }
+}
 ```
 
-### Pattern 2: Scope Limiting
+### Retain Pattern for Array Elements
 
-```python
-# BAD: Search entire hierarchy
-find_all_children(app_element, role='AXButton')  # Deep search
+```rust
+// CFArrayGetValueAtIndex returns borrowed - must retain for storage
+let ax_window = CFArrayGetValueAtIndex(windows_value as CFArrayRef, j);
+let retained_window = cf_retain(ax_window);  // Now we own it
+cache_window(window_id, retained_window as AXUIElementRef);
 
-# GOOD: Limit depth
-def find_button(element, max_depth=3, depth=0, results=None):
-    if results is None: results = []
-    if depth > max_depth: return results
-    if get_attribute(element, 'AXRole') == 'AXButton':
-        results.append(element)
-    else:
-        for child in get_attribute(element, 'AXChildren') or []:
-            find_button(child, max_depth, depth+1, results)
-    return results
+// Release the array when done
+cf_release(windows_value);
 ```
 
-### Pattern 3: Async Queries
+## Privacy Considerations
 
-```python
-# BAD: Sequential blocking
-for app in apps: windows.extend(get_windows(app))
+### What Triggers Permission Dialogs
 
-# GOOD: Concurrent with ThreadPoolExecutor
-async def get_all_windows_async():
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        tasks = [loop.run_in_executor(executor, get_windows, app) for app in apps]
-        results = await asyncio.gather(*tasks)
-    return [w for wins in results for w in wins]
+- `accessibility::application_is_trusted_with_prompt()` - Shows system dialog
+- First AX API call without permission - May show dialog
+
+### What Does NOT Trigger Dialogs
+
+- `accessibility::application_is_trusted()` - Silent check
+- Opening settings URL directly
+
+### User Flow
+
+1. Check permission silently at startup
+2. If missing, show custom UI explaining why it's needed
+3. Provide button that calls `request_accessibility_permission()`
+4. Optionally show "Open Settings" button for manual enablement
+
+## Fallback Strategies
+
+### When AX API Fails
+
+1. **No permission** - Guide user through permission flow
+2. **App doesn't support AX** - Fall back to clipboard simulation
+3. **Element not accessible** - Try parent element or alternate attribute
+4. **Operation fails** - Check `AXUIElementIsAttributeSettable` first
+
+### Clipboard Fallback for Text Operations
+
+```rust
+// Always save/restore clipboard
+let original = clipboard.get_text().ok();
+// ... do operation ...
+if let Some(orig) = original {
+    clipboard.set_text(&orig)?;
+}
 ```
 
-### Pattern 4: Attribute Batching
+## Anti-Patterns
 
-```python
-# BAD: Multiple calls
-title = AXUIElementCopyAttributeValue(element, 'AXTitle', None)
-role = AXUIElementCopyAttributeValue(element, 'AXRole', None)
+### Memory Leaks
 
-# GOOD: Batch query
-error, values = AXUIElementCopyMultipleAttributeValues(
-    element, ['AXTitle', 'AXRole', 'AXPosition', 'AXSize'], None
-)
-info = dict(zip(attributes, values)) if error == kAXErrorSuccess else {}
+```rust
+// BAD: Leaks CFString
+let attr = create_cf_string("AXPosition");
+// ... use attr but never release ...
+
+// GOOD: Always release
+let attr = create_cf_string("AXPosition");
+// ... use attr ...
+cf_release(attr);
 ```
 
-### Pattern 5: Observer Optimization
+### Dangling References
 
-```python
-# BAD: Observer for every notification without debounce
+```rust
+// BAD: Using borrowed reference after array released
+let window = CFArrayGetValueAtIndex(array, 0);
+cf_release(array);  // window is now invalid!
+do_something(window);  // CRASH
 
-# GOOD: Selective observers with debouncing
-class OptimizedObserver:
-    def __init__(self, app_element, notifications):
-        self.last_callback, self.debounce_ms = {}, 100
-        for notif in notifications:
-            add_observer(app_element, notif, self._debounced_callback)
-
-    def _debounced_callback(self, notification, element):
-        now = time() * 1000
-        if now - self.last_callback.get(notification, 0) < self.debounce_ms:
-            return
-        self.last_callback[notification] = now
-        self._handle_notification(notification, element)
+// GOOD: Retain before releasing array
+let window = cf_retain(CFArrayGetValueAtIndex(array, 0));
+cf_release(array);
+do_something(window);  // Safe
+cf_release(window);  // Clean up our retained copy
 ```
 
----
+### Missing Permission Checks
 
-## 7. Security Standards
+```rust
+// BAD: Will fail cryptically
+pub fn get_windows() -> Vec<Window> {
+    let ax_app = AXUIElementCreateApplication(pid);
+    // ...
+}
 
-### 7.1 Critical Vulnerabilities
+// GOOD: Fail fast with clear error
+pub fn get_windows() -> Result<Vec<Window>> {
+    if !has_accessibility_permission() {
+        bail!("Accessibility permission required");
+    }
+    // ...
+}
+```
 
-| CVE/CWE | Severity | Description | Mitigation |
-|---------|----------|-------------|------------|
-| CVE-2023-32364 | CRITICAL | TCC bypass via symlinks | Update macOS, validate paths |
-| CVE-2023-28206 | HIGH | AX privilege escalation | Process validation, code signing |
-| CWE-290 | HIGH | Bundle ID spoofing | Verify code signature |
-| CWE-74 | HIGH | Input injection via AX | Block SecurityAgent |
-| CVE-2022-42796 | MEDIUM | Hardened runtime bypass | Verify target app runtime |
+### Blocking on Permission Request
 
-### 7.2 OWASP Mapping
+```rust
+// BAD: Blocks UI thread waiting for user
+let granted = request_accessibility_permission();
+if !granted {
+    panic!("Need permission!");
+}
 
-| OWASP | Risk | Mitigation |
-|-------|------|------------|
-| A01 Broken Access | CRITICAL | TCC validation, blocklists |
-| A02 Misconfiguration | HIGH | Minimal permissions |
-| A05 Injection | HIGH | Input validation |
-| A07 Auth Failures | HIGH | Code signature verification |
+// GOOD: Non-blocking flow
+if !has_accessibility_permission() {
+    show_permission_ui();
+    return; // Let user grant permission in their own time
+}
+```
 
-### 7.3 Permission Tier Model
+## Key Files in script-kit-gpui
 
-| Tier | Attributes | Actions | Timeout |
-|------|------------|---------|---------|
-| read-only | AXTitle, AXRole, AXChildren | None | 30s |
-| standard | All | AXPress, AXIncrement | 60s |
-| elevated | All | All (except SecurityAgent) | 120s |
+| File | Purpose |
+|------|---------|
+| `src/selected_text.rs` | Get/set selected text operations |
+| `src/window_control.rs` | Window listing, moving, resizing, tiling |
+| `src/window_control_enhanced/` | Enhanced window ops with capability detection |
+| `src/permissions_wizard.rs` | Permission checking and UI data |
+| `src/expand_manager.rs` | Text expansion using keyboard monitoring |
+| `src/executor/selected_text.rs` | Message handlers for selected text |
 
----
+## Testing Accessibility Code
 
-## 8. Common Mistakes
-
-**Critical Anti-Patterns** - Always avoid:
-- Automating without TCC permission check
-- Trusting bundle ID alone (verify code signature)
-- Accessing security dialogs (SecurityAgent, Keychain)
-- No timeout on AX operations (can hang indefinitely)
-- Caching elements without TTL (elements become stale)
-
----
-
-## 9. Pre-Implementation Checklist
-
-### Phase 1: Before Writing Code
-- [ ] TCC permission requirements documented
-- [ ] Target applications identified and validated against blocklist
-- [ ] Permission tier determined (read-only/standard/elevated)
-- [ ] Test cases written for permission validation
-- [ ] Test cases written for element discovery
-- [ ] Test cases written for action execution
-
-### Phase 2: During Implementation
-- [ ] TCC permission validation implemented
-- [ ] Application blocklist configured
-- [ ] Code signature verification enabled
-- [ ] Permission tier system enforced
-- [ ] Audit logging enabled
-- [ ] Timeout enforcement on all operations
-- [ ] Element caching implemented for performance
-- [ ] Attribute batching used where applicable
-
-### Phase 3: Before Committing
-- [ ] All TDD tests pass: `pytest tests/ -v`
-- [ ] Security tests pass: `pytest -k "security or permission"`
-- [ ] No blocked application access possible
-- [ ] Timeout handling verified
-- [ ] Tested on target macOS versions
-- [ ] Sandbox compatibility verified
-- [ ] Hardened runtime compatibility checked
-- [ ] Code coverage meets threshold: `pytest --cov --cov-fail-under=80`
-
----
-
-## 10. Summary
-
-Your goal is to create macOS accessibility automation that is:
-- **Secure**: TCC validation, code signature verification, application blocklists
-- **Reliable**: Proper error handling, timeout enforcement
-- **Compliant**: Respects macOS security model and sandbox boundaries
-
-**Security Reminders**:
-1. Always validate TCC permissions before automation
-2. Verify code signatures, not just bundle IDs
-3. Never automate security dialogs or Keychain
-4. Log all operations with correlation IDs
-5. Respect macOS security boundaries
-
----
-
-## References
-
-- **Advanced Patterns**: See `references/advanced-patterns.md`
-- **Security Examples**: See `references/security-examples.md`
-- **Threat Model**: See `references/threat-model.md`
+```rust
+#[cfg(all(test, feature = "system-tests"))]
+mod system_tests {
+    #[test]
+    fn test_permission_check_does_not_panic() {
+        let _ = has_accessibility_permission();
+    }
+    
+    #[test]
+    #[ignore] // Requires manual setup
+    fn test_get_selected_text() {
+        // 1. Open TextEdit, type and select text
+        // 2. Run: cargo test --features system-tests test_get_selected_text -- --ignored
+        let text = get_selected_text().expect("Should get selected text");
+        assert!(!text.is_empty());
+    }
+}
+```

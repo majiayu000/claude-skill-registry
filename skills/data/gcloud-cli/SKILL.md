@@ -16,6 +16,33 @@ streaming: supported
 
 # Google Cloud CLI Skill
 
+## Installation
+
+The skill invokes the `gcloud` CLI. Install and initialize:
+
+- **Linux/macOS**: `curl https://sdk.cloud.google.com | bash` then restart shell and run `gcloud init`
+- **Windows**: Download [Google Cloud SDK installer](https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe) or use PowerShell to download and run
+
+Verify: `gcloud --version`. Configure: `gcloud init`
+
+## Cheat Sheet & Best Practices
+
+**Config:** `gcloud config set project <id>`; `gcloud config list`; `gcloud config configurations create/activate <name>` — switch projects.
+
+**Auth:** `gcloud auth login`; use `--impersonate-service-account` for SA; `--access-token-file` for CI.
+
+**Hacks:** Use `--format="table(name,zone,status)"` or `--format=json` + jq to cut output. Use `--flags-file=file.yaml` for long or repeated flags. Use named configurations for dev/staging/prod. Run `gcloud components update` periodically.
+
+## Certifications & Training
+
+**Free:** [Google Cloud Learn](https://cloud.google.com/learn) and [Google Skills](https://www.cloudskillsboost.google/) — Innovators Program (35 credits/month). **Certs:** Cloud Digital Leader, Cloud Engineer (associate), Cloud Architect/DevOps (professional). **Skill data:** Config, auth, compute/storage/IAM; no exposed service-account keys.
+
+## Hooks & Workflows
+
+**Suggested hooks:** Pre-deploy: `gcloud config get-value project`. Use when **devops** is routed for GCP tasks (contextual: `gcp_project`).
+
+**Workflows:** Use with **devops** (contextual: `gcp_project`). Flow: detect GCP → load gcloud-cli → run CLI via skill script.
+
 ## Overview
 
 Google Cloud Platform CLI operations. 90%+ context savings.

@@ -1,173 +1,81 @@
 ---
-name: transcribe
-description: Transcribe specific video URL(s). Use when you have one or more TikTok video URLs to process.
-user_invocable: true
+name: "transcribe"
+description: "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings."
 ---
 
-# Transcribe Specific Videos
 
-This command processes specific TikTok videos by URL - no need to scrape an entire profile.
+# Audio Transcribe
+
+Transcribe audio using OpenAI, with optional speaker diarization when requested. Prefer the bundled CLI for deterministic, repeatable runs.
 
 ## Workflow
+1. Collect inputs: audio file path(s), desired response format (text/json/diarized_json), optional language hint, and any known speaker references.
+2. Verify `OPENAI_API_KEY` is set. If missing, ask the user to set it locally (do not ask them to paste the key).
+3. Run the bundled `transcribe_diarize.py` CLI with sensible defaults (fast text transcription).
+4. Validate the output: transcription quality, speaker labels, and segment boundaries; iterate with a single targeted change if needed.
+5. Save outputs under `output/transcribe/` when working in this repo.
 
-### Step 1: Get Video URLs
+## Decision rules
+- Default to `gpt-4o-mini-transcribe` with `--response-format text` for fast transcription.
+- If the user wants speaker labels or diarization, use `--model gpt-4o-transcribe-diarize --response-format diarized_json`.
+- If audio is longer than ~30 seconds, keep `--chunking-strategy auto`.
+- Prompting is not supported for `gpt-4o-transcribe-diarize`.
 
-Ask the user:
-> Paste the TikTok video URL(s) you want to transcribe.
->
-> You can paste one URL or multiple URLs (one per line):
-> ```
-> https://www.tiktok.com/@username/video/123456789
-> https://www.tiktok.com/@username/video/987654321
-> ```
+## Output conventions
+- Use `output/transcribe/<job-id>/` for evaluation runs.
+- Use `--out-dir` for multiple files to avoid overwriting.
 
-Parse the URLs from the user's message. Extract any URLs that match TikTok video patterns:
-- `https://www.tiktok.com/@username/video/ID`
-- `https://tiktok.com/@username/video/ID`
-- `https://vm.tiktok.com/SHORTCODE`
+## Dependencies (install if missing)
+Prefer `uv` for dependency management.
 
-### Step 2: Verify Environment
+```
+uv pip install openai
+```
+If `uv` is unavailable:
+```
+python3 -m pip install openai
+```
 
-Check that the project is set up:
+## Environment
+- `OPENAI_API_KEY` must be set for live API calls.
+- If the key is missing, instruct the user to create one in the OpenAI platform UI and export it in their shell.
+- Never ask the user to paste the full key in chat.
+
+## Skill path (set once)
 
 ```bash
-cd /path/to/project
-source .venv/bin/activate 2>/dev/null || echo "venv not found"
+export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+export TRANSCRIBE_CLI="$CODEX_HOME/skills/transcribe/scripts/transcribe_diarize.py"
 ```
 
-If venv doesn't exist, tell user to run `/start` first.
+User-scoped skills install under `$CODEX_HOME/skills` (default: `~/.codex/skills`).
 
-### Step 3: Process Each Video
-
-For each URL provided, run:
-
-```bash
-source .venv/bin/activate && python -c "
-from short_form_scraper.scraper.tiktok import TikTokScraper
-from short_form_scraper.downloader.video import VideoDownloader
-from short_form_scraper.transcriber.whisper import WhisperTranscriber
-from pathlib import Path
-
-# Initialize
-scraper = TikTokScraper('https://www.tiktok.com/@placeholder')  # Just for metadata fetching
-downloader = VideoDownloader()
-transcriber = WhisperTranscriber()
-
-# Create directories
-Path('transcripts').mkdir(exist_ok=True)
-Path('state').mkdir(exist_ok=True)
-
-# Video URL
-video_url = 'VIDEO_URL_HERE'
-
-print(f'Processing: {video_url}')
-
-# Get metadata
-metadata = scraper.get_single_video_metadata(video_url)
-print(f'Title: {metadata.title}')
-print(f'Duration: {metadata.duration}s')
-
-# Download
-audio_path = downloader.download(metadata.url, Path(f'state/audio_{metadata.id}'))
-print(f'Downloaded audio: {audio_path}')
-
-# Transcribe
-transcript = transcriber.transcribe(audio_path)
-print(f'Transcribed: {len(transcript)} characters')
-
-# Save
-transcript_file = Path('transcripts') / f'{metadata.id}.txt'
-content = f'''Video ID: {metadata.id}
-Title: {metadata.title}
-URL: {metadata.url}
-Duration: {metadata.duration}s
-
---- TRANSCRIPT ---
-
-{transcript}
-'''
-transcript_file.write_text(content)
-print(f'Saved: {transcript_file}')
-
-# Cleanup audio
-audio_path.unlink()
-print('Done!')
-"
+## CLI quick start
+Single file (fast text default):
+```
+python3 "$TRANSCRIBE_CLI" \
+  path/to/audio.wav \
+  --out transcript.txt
 ```
 
-Run this for each URL the user provided.
-
-### Step 4: Summarize Transcripts (Claude Code)
-
-After transcripts are generated, YOU (Claude Code) will:
-
-1. Read each new transcript file from `transcripts/`
-2. Analyze and extract:
-   - **Topic**: 2-4 word kebab-case topic name
-   - **Summary**: One-sentence summary
-   - **Key Tips**: 3-5 actionable bullet points
-   - **Details**: Additional context
-
-3. Create summary files in `summaries/{topic}/{slugified-title}.md`:
-
-   **IMPORTANT: Filename from Video Title**
-   - Extract the video title from the yt-dlp metadata (stored in transcript header as "Title: ...")
-   - Convert to kebab-case slug: lowercase, spaces to dashes, remove special chars
-   - Example: "How to Use Context Windows" → `how-to-use-context-windows.md`
-   - Example: "Claude Code Tips & Tricks!" → `claude-code-tips-tricks.md`
-   ```markdown
-   ---
-   video_id: {id}
-   title: {title}
-   url: {url}
-   topic: {topic}
-   ---
-
-   # {Title}
-
-   ## Summary
-   {one-sentence summary}
-
-   ## Key Tips
-   - {tip 1}
-   - {tip 2}
-   - {tip 3}
-
-   ## Details
-   {additional context}
-
-   ## Full Transcript
-   {original transcript}
-   ```
-
-4. Update INDEX.md with the new summaries
-
-### Step 5: Show Results
-
-Display:
-- Video title and URL
-- Transcript location
-- Summary location
-- Key tips extracted
-
-## Example
-
-User: `/transcribe`
-
-Claude: What TikTok video URLs would you like to transcribe?
-
-User:
+Diarization with known speakers (up to 4):
 ```
-https://www.tiktok.com/@agentic.james/video/7597629199486029070
-https://www.tiktok.com/@agentic.james/video/7597614123362323767
+python3 "$TRANSCRIBE_CLI" \
+  meeting.m4a \
+  --model gpt-4o-transcribe-diarize \
+  --known-speaker "Alice=refs/alice.wav" \
+  --known-speaker "Bob=refs/bob.wav" \
+  --response-format diarized_json \
+  --out-dir output/transcribe/meeting
 ```
 
-Claude: [Processes each video, creates transcripts and summaries]
+Plain text output (explicit):
+```
+python3 "$TRANSCRIBE_CLI" \
+  interview.mp3 \
+  --response-format text \
+  --out interview.txt
+```
 
-## Handling Multiple URLs
-
-When multiple URLs are provided:
-1. Process them sequentially
-2. Report progress: "[1/3] Processing..."
-3. Continue even if one fails
-4. At the end, report success/failure for each
+## Reference map
+- `references/api.md`: supported formats, limits, response formats, and known-speaker notes.

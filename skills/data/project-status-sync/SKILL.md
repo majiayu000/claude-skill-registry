@@ -1,10 +1,6 @@
 ---
 name: project-status-sync
 description: Use to keep GitHub Project fields synchronized with actual work state - updates status, verification, criteria counts, and other project-specific fields
-allowed-tools:
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Project Status Sync

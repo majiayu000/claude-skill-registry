@@ -1,7 +1,7 @@
 {
   "name": "adr-generator",
-  "repo": "byteworthy/Upstream",
-  "path": ".agents/skills/adr-generator/SKILL.md",
-  "source": "github.com/byteworthy/Upstream",
-  "downloaded_at": "2026-01-31T03:32:41.445825Z"
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/software-architecture/skills/adr-generator/SKILL.md",
+  "source": "github.com/a5c-ai/babysitter",
+  "downloaded_at": "2026-02-04T02:37:08.374223Z"
 }

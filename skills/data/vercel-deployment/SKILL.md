@@ -1,235 +1,452 @@
 ---
 name: vercel-deployment
-description: "Comprehensive skill for deploying applications to Vercel. Covers all deployment types: single projects, monorepos, static sites, Next.js, React, Python/FastAPI backends, serverless functions, and edge functions. Use when deploying to Vercel, configuring vercel.json, setting up environment variables, troubleshooting deployments, or understanding Vercel's architecture."
+description: Deploy Next.js applications to Vercel with proper configuration. Use when setting up deployment, configuring environment variables, edge functions, or troubleshooting builds. Activates for deployment issues, environment setup, and Vercel configuration.
+allowed-tools: Read,Write,Edit,Bash(npm:*,npx:*,vercel:*)
+category: DevOps & Site Reliability
+tags:
+  - devops
+  - automation
+  - web
+  - react
 ---
 
-# Vercel Deployment Skill
+# Vercel Deployment
 
-## Overview
+This skill helps you deploy and configure Next.js applications on Vercel following best practices.
 
-This skill provides complete guidance for deploying any type of application to Vercel. It covers single-project deployments, monorepo configurations, serverless functions, edge functions, and all supported frameworks.
+## Quick Deploy Checklist
 
-## Quick Reference
+- [ ] Environment variables set in Vercel dashboard
+- [ ] Build command configured (default: `next build`)
+- [ ] Output directory correct (default: `.next`)
+- [ ] Node.js version specified (20.x recommended)
+- [ ] Database accessible from Vercel's network
+- [ ] Secrets not committed to git
 
-| Deployment Type | Reference File |
-|-----------------|----------------|
-| Deployment strategies | `references/deployment-strategies.md` |
-| Framework-specific guides | `references/framework-guides.md` |
-| Python/FastAPI backends | `references/python-serverless.md` |
-| Monorepo setup | `references/monorepo-configuration.md` |
-| Environment variables | `references/environment-variables.md` |
-| Edge cases & troubleshooting | `references/edge-cases-troubleshooting.md` |
-| CLI commands | `references/cli-reference.md` |
+## Environment Variables
 
-## Workflow
+### Setting Variables
 
-### Step 1: Determine Deployment Strategy
+**Vercel Dashboard** (Recommended for secrets):
+1. Project Settings → Environment Variables
+2. Add variable with appropriate scope:
+   - **Production**: Only production deployments
+   - **Preview**: PR and branch previews
+   - **Development**: Local `vercel dev`
 
-First, identify the project structure:
-
-```
-Single Project?          → Standard deployment (auto-detected)
-Monorepo?               → Multi-project or Turborepo setup
-Static Site?            → Static hosting (no functions)
-API Backend?            → Serverless functions
-Full-Stack?             → Framework-specific (Next.js, Nuxt, etc.)
+**Via CLI**:
+```bash
+vercel env add VARIABLE_NAME production
+vercel env pull .env.local  # Pull to local
 ```
 
-**Action**: Read `references/deployment-strategies.md` for detailed guidance.
-
-### Step 2: Choose Framework Configuration
-
-Vercel auto-detects most frameworks. For custom configurations:
-
-| Framework | Auto-Detected | Custom Config Needed |
-|-----------|---------------|---------------------|
-| Next.js | Yes | Rarely |
-| React (Vite/CRA) | Yes | Sometimes |
-| Vue/Nuxt | Yes | Rarely |
-| Python/FastAPI | Partial | Yes |
-| Static HTML | Yes | No |
-
-**Action**: Read `references/framework-guides.md` for framework-specific instructions.
-
-### Step 3: Configure vercel.json (If Needed)
-
-Use templates from `assets/templates/` based on your needs:
-
-- `vercel.nextjs.json` — Next.js projects
-- `vercel.static.json` — Static sites
-- `vercel.python-api.json` — Python/FastAPI backends
-- `vercel.monorepo-frontend.json` — Monorepo frontend
-- `vercel.monorepo-backend.json` — Monorepo backend
-
-### Step 4: Set Up Environment Variables
-
-**Action**: Read `references/environment-variables.md` for:
-- Production vs Preview vs Development environments
-- Sensitive vs Public variables
-- Shared variables across projects
-
-### Step 5: Deploy
+### Variable Naming
 
 ```bash
-# Via CLI
-vercel              # Preview deployment
-vercel --prod       # Production deployment
+# Server-only (never exposed to browser)
+DATABASE_URL=
+SESSION_SECRET=
+ANTHROPIC_API_KEY=
 
-# Via Git (automatic)
-git push origin main  # Triggers production deploy
+# Client-exposed (prefixed with NEXT_PUBLIC_)
+NEXT_PUBLIC_APP_URL=
+NEXT_PUBLIC_ANALYTICS_ID=
 ```
 
-### Step 6: Verify & Troubleshoot
+### Size Limits
 
-**Action**: If issues occur, read `references/edge-cases-troubleshooting.md`.
+| Context | Limit |
+|---------|-------|
+| Total per deployment | 64 KB |
+| Edge Functions | 5 KB per variable |
+| Single variable | 64 KB max |
 
-## Decision Tree
-
-```
-START
-  │
-  ├─► Is it a monorepo?
-  │     ├─► YES → Read references/monorepo-configuration.md
-  │     │         └─► Create separate Vercel projects per app
-  │     │
-  │     └─► NO → Continue
-  │
-  ├─► What's the backend?
-  │     ├─► Node.js → Auto-detected, use API routes
-  │     ├─► Python → Read references/python-serverless.md
-  │     ├─► Go/Rust → Use serverless functions
-  │     └─► None → Static deployment
-  │
-  ├─► What's the frontend?
-  │     ├─► Next.js → Zero-config, auto-detected
-  │     ├─► React (Vite) → Set outputDirectory
-  │     ├─► Vue/Nuxt → Zero-config
-  │     └─► Static HTML → Zero-config
-  │
-  └─► Deploy!
-```
-
-## Common Patterns
-
-### Pattern 1: Next.js Full-Stack (Most Common)
-
-```
-project/
-├── app/              # App Router
-├── pages/api/        # API Routes (serverless)
-├── public/
-├── package.json
-└── next.config.js
-```
-
-No `vercel.json` needed. Just push to Git.
-
-### Pattern 2: React + Separate Backend
-
-```
-Frontend Project (Vercel Project #1):
-└── frontend/
-    ├── src/
-    ├── package.json
-    └── vercel.json (optional)
-
-Backend Project (Vercel Project #2):
-└── backend/
-    ├── api/index.py
-    ├── requirements.txt
-    └── vercel.json
-```
-
-### Pattern 3: Static Site
-
-```
-project/
-├── index.html
-├── styles.css
-└── script.js
-```
-
-Zero-config. Vercel serves static files automatically.
-
-### Pattern 4: Python API Only
-
-```
-backend/
-├── api/
-│   └── index.py      # FastAPI app
-├── requirements.txt
-└── vercel.json
-```
-
-## Assets
-
-### Templates (assets/templates/)
-
-| Template | Use Case |
-|----------|----------|
-| `vercel.nextjs.json` | Next.js with custom config |
-| `vercel.static.json` | Static sites |
-| `vercel.python-api.json` | Python/FastAPI backend |
-| `vercel.react-vite.json` | React with Vite |
-| `vercel.monorepo-frontend.json` | Monorepo frontend project |
-| `vercel.monorepo-backend.json` | Monorepo backend project |
-| `vercel.edge-functions.json` | Edge function configuration |
-
-### Examples (examples/)
-
-| Example | Description |
-|---------|-------------|
-| `nextjs-fullstack/` | Complete Next.js deployment |
-| `react-python-monorepo/` | Monorepo with React + FastAPI |
-| `static-site/` | Simple static deployment |
-| `python-api/` | Standalone Python API |
-
-## Quick Commands
+### Required Variables for This Project
 
 ```bash
-# Install Vercel CLI
-npm i -g vercel
+# Authentication (required)
+SESSION_SECRET=your-32-char-minimum-secret-here
 
-# Login
-vercel login
+# AI Integration (required for chat)
+ANTHROPIC_API_KEY=sk-ant-api...
 
-# Deploy (preview)
-vercel
+# Database (if using external)
+DATABASE_URL=file:./data/app.db
 
-# Deploy (production)
-vercel --prod
+# Push Notifications (optional)
+VAPID_PUBLIC_KEY=
+VAPID_PRIVATE_KEY=
+VAPID_SUBJECT=mailto:admin@example.com
 
-# Link to existing project
-vercel link
-
-# Link all projects in monorepo
-vercel link --repo
-
-# Pull environment variables
-vercel env pull
-
-# Add environment variable
-vercel env add SECRET_KEY production
-
-# View logs
-vercel logs https://your-project.vercel.app
-
-# List deployments
-vercel ls
-
-# Rollback (promote old deployment)
-vercel promote <deployment-url>
+# OAuth (optional)
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+APPLE_CLIENT_ID=
+APPLE_CLIENT_SECRET=
 ```
 
-## When to Use This Skill
+## vercel.json Configuration
 
-Use this skill when the user wants to:
-- Deploy any application to Vercel
-- Configure `vercel.json`
-- Set up a monorepo on Vercel
-- Deploy Python/FastAPI backends
-- Troubleshoot Vercel deployment issues
-- Understand Vercel's serverless architecture
-- Configure environment variables
-- Set up custom domains
-- Implement CI/CD with Vercel
+```json
+{
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old-path",
+      "destination": "/new-path",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "/api/:path*"
+    }
+  ]
+}
+```
+
+## TypeScript Configuration (New in 2025)
+
+```typescript
+// vercel.ts - Type-safe configuration
+import { defineConfig } from '@vercel/config';
+
+export default defineConfig({
+  regions: ['iad1'],
+
+  headers: async () => [
+    {
+      source: '/api/:path*',
+      headers: [
+        { key: 'Cache-Control', value: 'no-store' },
+      ],
+    },
+  ],
+
+  redirects: async () => [
+    {
+      source: '/old',
+      destination: '/new',
+      permanent: true,
+    },
+  ],
+});
+```
+
+## Edge Functions
+
+### When to Use Edge
+
+Good for:
+- Authentication/authorization
+- A/B testing
+- Geolocation-based content
+- Request/response transforms
+- Simple, fast operations
+
+Not suitable for:
+- Database connections (use serverless instead)
+- Long-running operations
+- Large dependencies
+
+### Edge Function Example
+
+```typescript
+// src/middleware.ts
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: ['/api/:path*', '/protected/:path*'],
+};
+
+export function middleware(request: NextRequest) {
+  // Check auth token
+  const token = request.cookies.get('session')?.value;
+
+  if (!token && request.nextUrl.pathname.startsWith('/protected')) {
+    return NextResponse.redirect(new URL('/login', request.url));
+  }
+
+  // Add headers
+  const response = NextResponse.next();
+  response.headers.set('X-Request-Id', crypto.randomUUID());
+
+  return response;
+}
+```
+
+### Edge Runtime in API Routes
+
+```typescript
+// src/app/api/edge-example/route.ts
+export const runtime = 'edge';
+
+export async function GET(request: Request) {
+  // Limited to edge-compatible APIs
+  return Response.json({ timestamp: Date.now() });
+}
+```
+
+## Build Configuration
+
+### package.json Scripts
+
+```json
+{
+  "scripts": {
+    "build": "next build",
+    "postbuild": "npm run db:generate"
+  }
+}
+```
+
+### Build Environment
+
+```bash
+# Set Node.js version
+# In Vercel Dashboard → Settings → General → Node.js Version
+# Or in package.json:
+{
+  "engines": {
+    "node": "20.x"
+  }
+}
+```
+
+### Build Output
+
+```bash
+# Check build locally
+npm run build
+
+# Analyze bundle
+ANALYZE=true npm run build
+```
+
+## Database Considerations
+
+### SQLite on Vercel
+
+SQLite with better-sqlite3 works in Vercel's serverless functions, but:
+- Filesystem is **read-only** except `/tmp`
+- Data doesn't persist between invocations
+- Not suitable for production data storage
+
+### Production Database Options
+
+1. **Turso** (SQLite edge database)
+   ```typescript
+   import { createClient } from '@libsql/client';
+
+   const db = createClient({
+     url: process.env.TURSO_DATABASE_URL!,
+     authToken: process.env.TURSO_AUTH_TOKEN,
+   });
+   ```
+
+2. **Vercel Postgres**
+   ```typescript
+   import { sql } from '@vercel/postgres';
+
+   const result = await sql`SELECT * FROM users`;
+   ```
+
+3. **PlanetScale** (MySQL)
+4. **Neon** (Postgres)
+
+## Preview Deployments
+
+### Branch Previews
+
+Every git push creates a preview deployment:
+- `https://<project>-<branch>-<team>.vercel.app`
+- Separate environment variables for preview
+
+### Preview Environment Variables
+
+```bash
+# Different values for preview vs production
+# In Vercel Dashboard, set both:
+
+DATABASE_URL (Production): postgres://prod-db...
+DATABASE_URL (Preview): postgres://staging-db...
+```
+
+### Commenting on PRs
+
+Vercel automatically comments on PRs with:
+- Preview URL
+- Build status
+- Performance metrics
+
+## Troubleshooting
+
+### Build Failures
+
+```bash
+# Check build locally first
+npm run build
+
+# Common issues:
+# - Missing environment variables
+# - TypeScript errors
+# - ESLint errors (strict mode)
+# - Missing dependencies
+```
+
+### Environment Variable Issues
+
+```bash
+# Verify variables are set
+vercel env ls
+
+# Pull to local for debugging
+vercel env pull .env.local
+```
+
+### Function Timeout
+
+```typescript
+// Increase timeout (max 60s on Pro, 10s on Hobby)
+// In vercel.json:
+{
+  "functions": {
+    "api/long-running.ts": {
+      "maxDuration": 60
+    }
+  }
+}
+```
+
+### Memory Issues
+
+```typescript
+// Increase memory (affects cost)
+{
+  "functions": {
+    "api/heavy-processing.ts": {
+      "memory": 1024
+    }
+  }
+}
+```
+
+## Monitoring
+
+### Vercel Analytics
+
+```typescript
+// src/app/layout.tsx
+import { Analytics } from '@vercel/analytics/react';
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
+}
+```
+
+### Speed Insights
+
+```typescript
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <SpeedInsights />
+      </body>
+    </html>
+  );
+}
+```
+
+### Function Logs
+
+```bash
+# View logs via CLI
+vercel logs <deployment-url>
+
+# Real-time logs
+vercel logs <deployment-url> --follow
+```
+
+## Domains
+
+### Custom Domain Setup
+
+1. Vercel Dashboard → Domains
+2. Add domain
+3. Configure DNS:
+   - A record: `76.76.21.21`
+   - Or CNAME: `cname.vercel-dns.com`
+4. SSL automatically provisioned
+
+### Redirects
+
+```json
+// vercel.json
+{
+  "redirects": [
+    {
+      "source": "/:path((?!api/).*)",
+      "has": [{ "type": "host", "value": "old-domain.com" }],
+      "destination": "https://new-domain.com/:path",
+      "permanent": true
+    }
+  ]
+}
+```
+
+## Security
+
+### Protected Routes
+
+Use middleware for authentication checks (see Edge Functions above).
+
+### Rate Limiting
+
+Implement application-level rate limiting since Vercel doesn't provide built-in rate limiting for serverless functions.
+
+### Secrets Management
+
+- Never commit `.env` files
+- Use Vercel's encrypted environment variables
+- Rotate secrets regularly
+- Different secrets for preview vs production
+
+## References
+
+- [Vercel Documentation](https://vercel.com/docs)
+- [Environment Variables](https://vercel.com/docs/environment-variables)
+- [Edge Functions](https://vercel.com/docs/functions/edge-functions)
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/nextjs)

@@ -1,241 +1,459 @@
 ---
 name: bun
-description: "Bun JavaScript/TypeScript runtime and all-in-one toolkit. Covers runtime, package manager, bundler, test runner, HTTP server, WebSockets, SQLite, S3, Redis, file I/O, shell scripting, FFI, Markdown parser. Keywords: bun, bunx, bun install, bun run, bun test, bun build, Bun.serve, Bun.file, bun:sqlite, Bun.markdown."
-version: "1.3.8"
-release_date: "2026-01-29"
+description: Configures Bun as an all-in-one JavaScript runtime, bundler, package manager, and test runner with native TypeScript support. Use when building fast applications, bundling for production, or replacing Node.js tooling.
 ---
 
 # Bun
 
-All-in-one JavaScript/TypeScript toolkit: runtime, package manager, test runner, bundler.
-
-## Quick Navigation
-
-| Topic             | Reference                            |
-| ----------------- | ------------------------------------ |
-| Package Manager   | `references/package-manager.md`      |
-| Project Setup     | `references/project-scaffolding.md`  |
-| Development       | `references/development.md`          |
-| Module System     | `references/module-system.md`        |
-| TypeScript & JSX  | `references/typescript-jsx.md`       |
-| Configuration     | `references/bunfig.md`               |
-| HTTP Server       | `references/http-server.md`          |
-| WebSockets        | `references/websockets.md`           |
-| File I/O          | `references/file-io.md`              |
-| SQLite            | `references/sqlite.md`               |
-| S3 Storage        | `references/s3.md`                   |
-| Redis             | `references/redis.md`                |
-| Low-Level Network | `references/networking-low-level.md` |
-| Fetch API         | `references/fetch.md`                |
-| Shell Scripts     | `references/shell.md`                |
-| Spawn Process     | `references/spawn.md`                |
-| Workers           | `references/workers.md`              |
-| Native FFI        | `references/native-interop.md`       |
-| C/C++ Compile     | `references/cc.md`                   |
-| Transpiler        | `references/transpiler.md`           |
-| Plugins           | `references/plugins.md`              |
-| FS Router         | `references/file-system-router.md`   |
-| Environment Vars  | `references/env.md`                  |
-| Utilities         | `references/utilities.md`            |
-| Node.js Compat    | `references/nodejs-compat.md`        |
-
-## When to Use Bun
-
-- Running TypeScript/JSX without build step
-- Fast HTTP server with native routing
-- SQLite database (embedded, no deps)
-- WebSocket server/client
-- S3-compatible storage (AWS, R2, MinIO)
-- Redis caching/pub-sub
-- Cross-platform shell scripts
-- **Markdown parsing** (v1.3.8+)
-- Native library calls via FFI
-
-## Core Advantages
-
-- **4x faster startup** than Node.js
-- **Native TypeScript/JSX** — no tsconfig needed
-- **ESM + CommonJS** — both work seamlessly
-- **Web APIs built-in** — fetch, WebSocket, etc.
-- **30x faster installs** than npm
+All-in-one JavaScript runtime, bundler, package manager, and test runner written in Zig.
 
 ## Quick Start
 
 ```bash
+# Install Bun
+curl -fsSL https://bun.sh/install | bash
+
+# Or with npm
+npm install -g bun
+
 # Run TypeScript directly
-bun run index.ts
+bun run src/index.ts
 
 # Install packages
 bun install
 
-# Run package.json script
-bun run dev
-
-# Execute package binary
-bunx cowsay "Hello"
-
-# Run tests
-bun test
-
-# Build for production
-bun build ./index.ts --outdir ./dist
-
-# Bundle analysis for LLMs (v1.3.8+)
-bun build ./index.ts --metafile-md --outdir ./dist
+# Bundle for production
+bun build src/index.ts --outdir=dist
 ```
 
-## Critical Rules
+## Runtime
 
-| Don't                  | Do                       |
-| ---------------------- | ------------------------ |
-| `http.createServer()`  | `Bun.serve()`            |
-| `fs.readFileSync()`    | `Bun.file().text()`      |
-| `better-sqlite3`       | `bun:sqlite`             |
-| `child_process.exec()` | `Bun.$` or `Bun.spawn()` |
-| `dotenv`               | Built-in `.env` support  |
+### Running Files
 
-## Essential Recipes
+```bash
+# Run TypeScript/JavaScript
+bun run index.ts
+bun run index.js
+bun run index.jsx
+bun run index.tsx
 
-### HTTP Server
+# Run package.json scripts
+bun run dev
+bun run build
 
-```ts
-Bun.serve({
-  port: 3000,
-  fetch(req) {
-    const url = new URL(req.url);
-    if (url.pathname === "/api/data") {
-      return Response.json({ ok: true });
-    }
-    return new Response("Not Found", { status: 404 });
+# Shorthand for run
+bun dev
+bun build
+```
+
+### Watch Mode
+
+```bash
+# Auto-restart on changes
+bun --watch run index.ts
+
+# Hot reload (preserves state)
+bun --hot run index.ts
+```
+
+### Environment Variables
+
+```bash
+# Load .env automatically
+bun run index.ts
+
+# Specify env file
+bun --env-file=.env.local run index.ts
+
+# No env file
+bun --no-env-file run index.ts
+```
+
+## Package Manager
+
+### Install Packages
+
+```bash
+# Install all dependencies
+bun install
+
+# Add package
+bun add express
+bun add -D typescript
+
+# Add exact version
+bun add react@18.2.0
+
+# Global install
+bun add -g typescript
+```
+
+### Remove/Update
+
+```bash
+# Remove package
+bun remove lodash
+
+# Update packages
+bun update
+bun update react
+```
+
+### Lock File
+
+```bash
+# Generate/update bun.lockb
+bun install
+
+# Frozen install (CI)
+bun install --frozen-lockfile
+
+# Convert to yarn.lock
+bun pm pack
+```
+
+## Bundler
+
+### Basic Bundling
+
+```bash
+# Bundle for browser
+bun build src/index.ts --outdir=dist
+
+# Single file output
+bun build src/index.ts --outfile=dist/bundle.js
+
+# Minify
+bun build src/index.ts --outdir=dist --minify
+
+# Source maps
+bun build src/index.ts --outdir=dist --sourcemap=external
+```
+
+### Build API
+
+```typescript
+// build.ts
+const result = await Bun.build({
+  entrypoints: ['./src/index.tsx'],
+  outdir: './dist',
+  minify: true,
+  sourcemap: 'external',
+  target: 'browser',
+  splitting: true,
+  format: 'esm',
+});
+
+if (!result.success) {
+  console.error('Build failed:', result.logs);
+  process.exit(1);
+}
+
+console.log('Build complete!', result.outputs);
+```
+
+### Bundle Options
+
+```typescript
+await Bun.build({
+  entrypoints: ['./src/index.ts', './src/worker.ts'],
+  outdir: './dist',
+
+  // Target
+  target: 'browser', // 'browser' | 'bun' | 'node'
+
+  // Format
+  format: 'esm', // 'esm' | 'cjs' | 'iife'
+
+  // Optimization
+  minify: {
+    whitespace: true,
+    identifiers: true,
+    syntax: true,
   },
+  sourcemap: 'external', // 'none' | 'inline' | 'external' | 'linked'
+
+  // Code splitting
+  splitting: true,
+
+  // Naming
+  naming: {
+    entry: '[dir]/[name].[ext]',
+    chunk: 'chunks/[name]-[hash].[ext]',
+    asset: 'assets/[name]-[hash].[ext]',
+  },
+
+  // Externals
+  external: ['react', 'react-dom'],
+
+  // Define
+  define: {
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  },
+
+  // Loaders
+  loader: {
+    '.png': 'file',
+    '.svg': 'dataurl',
+  },
+
+  // Public path
+  publicPath: '/assets/',
+
+  // Plugins
+  plugins: [],
 });
 ```
 
-### File Operations
+### Plugins
 
-```ts
-// Read
-const content = await Bun.file("data.txt").text();
+```typescript
+const myPlugin = {
+  name: 'my-plugin',
+  setup(build) {
+    // Resolve hook
+    build.onResolve({ filter: /^env$/ }, (args) => {
+      return { path: args.path, namespace: 'env-ns' };
+    });
 
-// Write
-await Bun.write("output.txt", "Hello World");
-
-// JSON
-const config = await Bun.file("config.json").json();
-```
-
-### SQLite
-
-```ts
-import { Database } from "bun:sqlite";
-
-const db = new Database("app.db");
-db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)");
-
-const insert = db.prepare("INSERT INTO users (name) VALUES (?)");
-insert.run("Alice");
-
-const users = db.query("SELECT * FROM users").all();
-```
-
-### WebSocket Server
-
-```ts
-Bun.serve({
-  fetch(req, server) {
-    if (server.upgrade(req)) return;
-    return new Response("Upgrade failed", { status: 400 });
+    // Load hook
+    build.onLoad({ filter: /.*/, namespace: 'env-ns' }, () => {
+      return {
+        contents: `export const API = "${process.env.API_URL}"`,
+        loader: 'js',
+      };
+    });
   },
+};
+
+await Bun.build({
+  entrypoints: ['./src/index.ts'],
+  plugins: [myPlugin],
+});
+```
+
+## Test Runner
+
+### Running Tests
+
+```bash
+# Run all tests
+bun test
+
+# Specific file
+bun test src/utils.test.ts
+
+# Pattern matching
+bun test --test-name-pattern "should handle"
+
+# Watch mode
+bun test --watch
+
+# Coverage
+bun test --coverage
+```
+
+### Writing Tests
+
+```typescript
+// math.test.ts
+import { describe, test, expect, beforeEach, mock } from 'bun:test';
+
+describe('math', () => {
+  test('adds numbers', () => {
+    expect(1 + 2).toBe(3);
+  });
+
+  test('async operations', async () => {
+    const result = await fetchData();
+    expect(result).toBeDefined();
+  });
+});
+
+// Mocking
+const mockFn = mock(() => 42);
+mockFn();
+expect(mockFn).toHaveBeenCalled();
+
+// Spying
+import * as module from './module';
+const spy = spyOn(module, 'someFunction');
+```
+
+### Test Configuration
+
+```typescript
+// bunfig.toml
+[test]
+root = "./tests"
+timeout = 5000
+preload = ["./setup.ts"]
+coverage = true
+coverageReporter = ["text", "lcov"]
+```
+
+## HTTP Server
+
+### Bun.serve
+
+```typescript
+const server = Bun.serve({
+  port: 3000,
+  hostname: '0.0.0.0',
+
+  fetch(req) {
+    const url = new URL(req.url);
+
+    if (url.pathname === '/') {
+      return new Response('Hello World!');
+    }
+
+    if (url.pathname === '/api/data') {
+      return Response.json({ message: 'Hello' });
+    }
+
+    return new Response('Not Found', { status: 404 });
+  },
+
+  // WebSocket support
   websocket: {
     message(ws, message) {
       ws.send(`Echo: ${message}`);
     },
+    open(ws) {
+      console.log('Client connected');
+    },
+    close(ws) {
+      console.log('Client disconnected');
+    },
+  },
+});
+
+console.log(`Server running at http://localhost:${server.port}`);
+```
+
+### Static Files
+
+```typescript
+Bun.serve({
+  port: 3000,
+
+  async fetch(req) {
+    const url = new URL(req.url);
+    const filePath = `./public${url.pathname}`;
+
+    const file = Bun.file(filePath);
+    if (await file.exists()) {
+      return new Response(file);
+    }
+
+    return new Response('Not Found', { status: 404 });
   },
 });
 ```
 
-### Shell Commands
+## File System
 
-```ts
-import { $ } from "bun";
+### Reading Files
+
+```typescript
+// Read text
+const text = await Bun.file('file.txt').text();
+
+// Read JSON
+const json = await Bun.file('data.json').json();
+
+// Read ArrayBuffer
+const buffer = await Bun.file('image.png').arrayBuffer();
+
+// Check existence
+const exists = await Bun.file('file.txt').exists();
+
+// Get file info
+const file = Bun.file('file.txt');
+console.log(file.size, file.type);
+```
+
+### Writing Files
+
+```typescript
+// Write text
+await Bun.write('output.txt', 'Hello World');
+
+// Write JSON
+await Bun.write('data.json', JSON.stringify(data, null, 2));
+
+// Write Buffer
+await Bun.write('output.bin', buffer);
+
+// Append
+const file = Bun.file('log.txt');
+await Bun.write(file, await file.text() + '\nNew line');
+```
+
+## Shell Commands
+
+```typescript
+import { $ } from 'bun';
 
 // Simple command
-const files = await $`ls -la`.text();
+await $`echo "Hello World"`;
 
-// With variables (auto-escaped)
-const name = "my file.txt";
-await $`cat ${name}`;
+// With variables
+const name = 'World';
+await $`echo "Hello ${name}"`;
 
-// Piping
-await $`cat data.csv | grep "pattern" | wc -l`;
+// Capture output
+const result = await $`ls -la`.text();
+
+// Check exit code
+const { exitCode } = await $`npm test`.nothrow();
+
+// Pipe commands
+await $`cat file.txt | grep "pattern"`;
+
+// Environment variables
+await $`API_KEY=${key} node script.js`;
 ```
 
-### S3 Storage
-
-```ts
-import { s3 } from "bun";
-
-// Upload
-await s3.file("uploads/doc.pdf").write(data);
-
-// Download
-const content = await s3.file("uploads/doc.pdf").text();
-
-// Presigned URL
-const url = s3.presign("uploads/doc.pdf", { expiresIn: 3600 });
-```
-
-### Redis
-
-```ts
-import { redis } from "bun";
-
-await redis.set("key", "value");
-const value = await redis.get("key");
-await redis.expire("key", 3600);
-```
-
-### Testing
-
-```ts
-import { expect, test, describe } from "bun:test";
-
-describe("math", () => {
-  test("2 + 2 = 4", () => {
-    expect(2 + 2).toBe(4);
-  });
-});
-```
-
-## Configuration (bunfig.toml)
-
-```toml
-[run]
-watch = true
-
-[install]
-registry = "https://registry.npmjs.org"
-
-[test]
-coverage = true
-```
-
-## Environment Variables
+## Standalone Executables
 
 ```bash
-# .env files loaded automatically
-DATABASE_URL=postgres://localhost/mydb
+# Compile to single executable
+bun build --compile src/cli.ts --outfile my-cli
+
+# Cross-compile
+bun build --compile --target=bun-linux-x64 src/cli.ts
+bun build --compile --target=bun-darwin-arm64 src/cli.ts
+bun build --compile --target=bun-windows-x64 src/cli.ts
 ```
 
-```ts
-// Access
-Bun.env.DATABASE_URL
-process.env.DATABASE_URL
-import.meta.env.DATABASE_URL
+## Configuration
+
+### bunfig.toml
+
+```toml
+# Package manager
+[install]
+registry = "https://registry.npmjs.org"
+scope = { "@company" = "https://private.registry.com" }
+
+# Bundler
+[bundle]
+entrypoints = ["./src/index.ts"]
+outdir = "./dist"
+minify = true
+sourcemap = "external"
+
+# Test runner
+[test]
+root = "./tests"
+preload = ["./setup.ts"]
+timeout = 5000
+
+# Development server
+[serve]
+port = 3000
 ```
 
-## Links
-
-- [Documentation](https://bun.sh/docs)
-- [GitHub](https://github.com/oven-sh/bun)
-- [Discord](https://bun.sh/discord)
+See [references/api.md](references/api.md) for complete API reference and [references/migration.md](references/migration.md) for Node.js migration guide.

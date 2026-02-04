@@ -1,241 +1,321 @@
 ---
-name: Project Overview
-description: Get overview of the Babylon.js first-person game project structure, statistics, and health metrics. Use when the user asks about project structure, codebase stats, file counts, or wants a project summary.
+name: project-overview
+description: |
+  프로젝트 구조와 목적을 체계적으로 분석하여 온보딩 정보 제공.
+  새 프로젝트 파악, 코드베이스 이해, 팀원 온보딩 문서 생성에 활용.
+  "프로젝트 분석", "온보딩", "코드베이스 파악", "project overview" 등의 요청 시 자동 적용.
 ---
 
-# Project Overview
+# Project Overview Skill
 
-Quick overview and statistics for the babylon_fp project.
+프로젝트의 구조, 기술 스택, 아키텍처를 체계적으로 분석하여 온보딩 정보를 제공합니다.
 
-## Quick Stats
+## 사용법
 
-### Line count by file type
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "TypeScript files:"
-find src -name "*.ts" -exec wc -l {} + | tail -1
-echo -e "\nHTML files:"
-find tools -name "*.html" -exec wc -l {} + | tail -1
-echo -e "\nJSON data files:"
-find public/data -name "*.json" -exec wc -l {} + | tail -1
-echo -e "\nTest files:"
-find tests -name "*.test.ts" -exec wc -l {} + | tail -1
+/project-overview                    # 기본 분석
+/project-overview --depth deep       # 상세 분석
+/project-overview --focus backend    # 백엔드 집중 분석
+/project-overview --format summary   # 간략 요약
 ```
 
-### File counts
+## Instructions
+
+### Step 1: 옵션 파싱
+
+| 옵션 | 값 | 설명 |
+|------|-----|------|
+| `--depth` | `shallow` (기본), `deep` | 분석 깊이 |
+| `--focus` | `backend`, `frontend`, `api`, `database`, `testing`, `devops` | 집중 영역 |
+| `--format` | `detailed` (기본), `summary` | 출력 형식 |
+
+### Step 2: 프로젝트 메타데이터 수집
+
+**필수 파일 확인:**
+
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "Source files: $(find src -name '*.ts' | wc -l)"
-echo "Test files: $(find tests -name '*.test.ts' | wc -l)"
-echo "Config files: $(find . -maxdepth 1 -name '*.json' -o -name '*.config.*' | wc -l)"
-echo "Tools: $(find tools -name '*.html' | wc -l)"
-echo "Data files: $(find public/data -name '*.json' | wc -l)"
+# 프로젝트 루트에서 확인할 파일들
+ls -la README.md CLAUDE.md package.json pom.xml build.gradle \
+       pyproject.toml requirements.txt go.mod Cargo.toml \
+       .gitignore docker-compose.yml Dockerfile 2>/dev/null
 ```
 
-## Project Structure
+**분석 대상:**
 
-### Main directories
+| 파일 | 추출 정보 |
+|------|----------|
+| `README.md` | 프로젝트 목적, 설치 방법 |
+| `package.json` | Node.js 의존성, 스크립트 |
+| `pom.xml` / `build.gradle` | Java 의존성, 빌드 설정 |
+| `pyproject.toml` / `requirements.txt` | Python 의존성 |
+| `docker-compose.yml` | 서비스 구성 |
+| `.env.example` | 환경 변수 구조 |
+
+### Step 3: 디렉토리 구조 분석
+
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-tree -L 2 -d src/
+# 주요 디렉토리 구조 파악 (depth 2)
+find . -type d -maxdepth 2 \
+  ! -path "*/node_modules/*" \
+  ! -path "*/.git/*" \
+  ! -path "*/dist/*" \
+  ! -path "*/build/*" \
+  ! -path "*/__pycache__/*" \
+  ! -path "*/.venv/*" \
+  | head -50
 ```
 
-### List key systems
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Core Systems ==="
-ls -1 src/systems/*.ts | sed 's/.*\///' | sed 's/.ts$//'
-echo -e "\n=== Controllers ==="
-ls -1 src/controllers/*.ts 2>/dev/null | sed 's/.*\///' | sed 's/.ts$//' || echo "None"
-echo -e "\n=== UI Components ==="
-ls -1 src/ui/*.ts 2>/dev/null | sed 's/.*\///' | sed 's/.ts$//' || echo "None"
+### Step 4: 기술 스택 식별
+
+**언어/프레임워크 감지:**
+
+| 지표 | 기술 |
+|------|------|
+| `package.json` + `next.config.js` | Next.js |
+| `package.json` + `angular.json` | Angular |
+| `pom.xml` + `spring-boot` | Spring Boot |
+| `build.gradle` + `org.springframework.boot` | Spring Boot |
+| `pyproject.toml` + `fastapi` | FastAPI |
+| `pyproject.toml` + `django` | Django |
+| `go.mod` | Go |
+| `Cargo.toml` | Rust |
+
+### Step 5: 아키텍처 패턴 식별 (--depth deep)
+
+**디렉토리 구조로 패턴 추론:**
+
+| 구조 | 패턴 |
+|------|------|
+| `src/main/java/.../controller`, `service`, `repository` | Layered Architecture |
+| `src/domain`, `src/application`, `src/infrastructure` | Clean/Hexagonal Architecture |
+| `services/`, 각 서비스별 독립 폴더 | Microservices |
+| `modules/` 또는 `packages/` | Modular Monolith |
+
+### Step 6: 출력 문서 생성
+
+---
+
+## 출력 형식
+
+### Summary 형식 (--format summary)
+
+```markdown
+# [프로젝트명] 개요
+
+**목적**: [한 줄 설명]
+**기술 스택**: [언어] + [프레임워크] + [DB]
+**아키텍처**: [패턴]
+
+## 빠른 시작
+1. `[설치 명령어]`
+2. `[실행 명령어]`
+
+## 주요 디렉토리
+- `src/` - 메인 소스 코드
+- `tests/` - 테스트
 ```
 
-## Code Health
+### Detailed 형식 (기본)
 
-### TypeScript compilation check
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-npx tsc --noEmit 2>&1 | head -20
+```markdown
+# [프로젝트명] 온보딩 가이드
+
+## 📋 프로젝트 개요
+
+| 항목 | 내용 |
+|------|------|
+| **목적** | [프로젝트 목적] |
+| **타입** | [웹 앱 / API 서버 / 라이브러리 / CLI] |
+| **상태** | [Active / Production / Maintenance] |
+
+## 🛠 기술 스택
+
+### 핵심 기술
+| 구분 | 기술 | 버전 |
+|------|------|------|
+| 언어 | [언어] | [버전] |
+| 프레임워크 | [프레임워크] | [버전] |
+| 데이터베이스 | [DB] | [버전] |
+
+### 개발 도구
+- **빌드**: [빌드 도구]
+- **패키지 관리**: [패키지 매니저]
+- **테스트**: [테스트 프레임워크]
+- **린터**: [린터/포매터]
+
+## 📁 프로젝트 구조
+
+```
+프로젝트/
+├── src/                 # 메인 소스 코드
+│   ├── main/           # 프로덕션 코드
+│   └── test/           # 테스트 코드
+├── docs/               # 문서
+├── scripts/            # 스크립트
+└── config/             # 설정 파일
 ```
 
-### Find TODO/FIXME comments
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== TODOs ==="
-grep -r "TODO" src/ --include="*.ts" | wc -l
-echo "=== FIXMEs ==="
-grep -r "FIXME" src/ --include="*.ts" | wc -l
+## 🏗 아키텍처
+
+### 패턴
+- **아키텍처 스타일**: [Layered / Hexagonal / Microservices]
+- **설계 패턴**: [주요 패턴들]
+
+### 모듈 구성
+```mermaid
+graph TB
+    subgraph Presentation
+        A[Controller]
+    end
+    subgraph Business
+        B[Service]
+    end
+    subgraph Data
+        C[Repository]
+    end
+    A --> B --> C
 ```
 
-### List TODO items
+## 🚀 빠른 시작
+
+### 사전 요구사항
+- [필수 도구 및 버전]
+
+### 설치 및 실행
+
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== TODO List ==="
-grep -rn "TODO" src/ --include="*.ts" | head -10
+# 1. 저장소 클론
+git clone [repository-url]
+cd [project-name]
+
+# 2. 의존성 설치
+[패키지 설치 명령어]
+
+# 3. 환경 설정
+cp .env.example .env
+# .env 파일 수정
+
+# 4. 실행
+[실행 명령어]
 ```
 
-## Dependencies
+## 🔧 주요 명령어
 
-### Show installed packages
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Main Dependencies ==="
-node -e "console.log(Object.keys(require('./package.json').dependencies || {}).join('\n'))"
-echo -e "\n=== Dev Dependencies ==="
-node -e "console.log(Object.keys(require('./package.json').devDependencies || {}).join('\n'))"
+| 명령어 | 설명 |
+|--------|------|
+| `[명령어]` | [설명] |
+| `[명령어]` | [설명] |
+
+## 📚 핵심 모듈
+
+### [모듈명 1]
+- **위치**: `src/[경로]`
+- **역할**: [설명]
+- **주요 파일**: [파일 목록]
+
+### [모듈명 2]
+- **위치**: `src/[경로]`
+- **역할**: [설명]
+
+## 🔗 참고 자료
+
+- [API 문서](링크)
+- [위키](링크)
+- [이슈 트래커](링크)
 ```
 
-### Check for outdated packages
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-npm outdated
+---
+
+## Focus 옵션별 추가 분석
+
+### --focus backend
+
+- API 엔드포인트 목록
+- 데이터베이스 스키마/엔티티
+- 인증/인가 체계
+- 외부 서비스 연동
+
+### --focus frontend
+
+- 컴포넌트 구조
+- 상태 관리 방식
+- 라우팅 구조
+- 스타일링 방식
+
+### --focus api
+
+- 엔드포인트 목록 (REST/GraphQL)
+- 요청/응답 형식
+- 인증 방식
+- API 버전 관리
+
+### --focus database
+
+- 엔티티/테이블 구조
+- 관계 다이어그램
+- 마이그레이션 방식
+- 인덱스 전략
+
+### --focus testing
+
+- 테스트 구조
+- 테스트 명령어
+- 커버리지 현황
+- 테스트 전략 (Unit/Integration/E2E)
+
+### --focus devops
+
+- CI/CD 파이프라인
+- Docker 구성
+- 환경별 설정
+- 배포 전략
+
+---
+
+## 분석 제외 항목
+
+다음 디렉토리는 자동으로 제외:
+
+```
+node_modules/
+.git/
+dist/
+build/
+target/
+__pycache__/
+.venv/
+venv/
+.idea/
+.vscode/
+*.log
 ```
 
-### Check Babylon.js version
+---
+
+## 사용 예시
+
+### 새 프로젝트 파악
+
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-npm list @babylonjs/core
+# 프로젝트 루트에서
+/project-overview --depth deep
 ```
 
-## Data Overview
+### 백엔드만 집중 분석
 
-### Map data summary
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Map Data ==="
-for map in public/data/maps/*.json; do
-  echo "$(basename $map): $(wc -l < $map) lines"
-done
+/project-overview --focus backend --depth deep
 ```
 
-### NPC data summary
+### 간단한 요약만
+
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== NPC Data ==="
-echo "NPCs: $(ls -1 public/data/npcs/*.json 2>/dev/null | wc -l)"
-for npc in public/data/npcs/*.json; do
-  echo "  - $(basename $npc .json)"
-done
+/project-overview --format summary
 ```
 
-### Event & Investigation data
+### 팀원 온보딩 문서 생성
+
 ```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "Events: $(ls -1 public/data/events/*.json 2>/dev/null | wc -l)"
-echo "Investigations: $(ls -1 public/data/investigations/*.json 2>/dev/null | wc -l)"
-```
-
-## Tools Overview
-
-### List available tools
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Editor Tools ==="
-for tool in tools/*.html; do
-  NAME=$(grep -o '<title>.*</title>' "$tool" | sed 's/<title>\(.*\)<\/title>/\1/' | head -1)
-  echo "  - $(basename $tool): $NAME"
-done
-```
-
-## Recent Activity
-
-### Recent file changes (git)
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Recent Commits ==="
-git log --oneline -10 2>/dev/null || echo "Not a git repository or no commits"
-```
-
-### Recently modified files
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Recently Modified (last 7 days) ==="
-find src tests -name "*.ts" -mtime -7 -exec ls -lh {} \; | awk '{print $6, $7, $8, $9}'
-```
-
-## Build Info
-
-### Check build configuration
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Vite Config ==="
-ls -lh vite.config.ts
-echo -e "\n=== TypeScript Config ==="
-ls -lh tsconfig.json
-```
-
-### Check dist folder
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-if [ -d "dist" ]; then
-  echo "Build output size: $(du -sh dist | cut -f1)"
-  echo "Files in dist: $(find dist -type f | wc -l)"
-else
-  echo "No dist folder (run 'npm run build')"
-fi
-```
-
-## Quick Health Check
-
-Run a comprehensive health check:
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Babylon FP Project Health Check ==="
-echo -e "\n1. TypeScript Compilation:"
-npx tsc --noEmit && echo "✓ No errors" || echo "✗ Has errors"
-echo -e "\n2. Dependencies:"
-npm list --depth=0 > /dev/null 2>&1 && echo "✓ All installed" || echo "✗ Missing dependencies"
-echo -e "\n3. Tests:"
-npm test > /dev/null 2>&1 && echo "✓ All passing" || echo "✗ Some failing"
-echo -e "\n4. Data Files:"
-for f in public/data/**/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f'))" 2>/dev/null || echo "✗ Invalid: $f"; done | grep -q "Invalid" && echo "✗ Invalid JSON found" || echo "✓ All valid"
-```
-
-## Recent Features & Enhancements
-
-### Game Systems
-- **Pause System**: Press 'P' to pause/resume game
-  - Freezes all movement, camera control, and time progression
-  - Exits pointer lock to show cursor
-  - Visual pause indicator in HUD
-  - Implemented in: `src/Game.ts`, `src/controllers/firstPersonController.ts`, `src/systems/dayNightCycle.ts`
-
-- **Enhanced Map Editor** (`tools/map-editor.html`):
-  - **NPC Type Modal**: On-demand dropdown for selecting NPC types (no always-visible UI clutter)
-  - **Auto Schedule Editor**: Opens automatically when NPC selected/placed, closes when done
-  - **Editable Waypoint Times**: Click time fields in schedule list to edit directly
-  - **Import/Export**: Full map JSON import functionality with schedule preservation
-  - **Click-and-Drag Painting**: Paint multiple wall/floor/window tiles by dragging
-  - **Select Tool**: Click NPCs to edit schedules, default tool on load
-  - **Default Player Spawn**: Auto-creates center spawn on new maps
-  - **Schedule Validation**: Ensures waypoint times are sequential
-
-### Editor Workflow Improvements
-- NPC type selector only appears when placing NPCs (cleaner UI)
-- Schedule editor context-aware (shows NPC name, emoji, position)
-- Save & Close button for schedule editor (returns to select tool)
-- JSON import reconstructs grid positions, rotations, and full NPC schedules
-- Drag painting works with zoom and pan, detects grid changes smartly
-
-### Code Organization
-- Modular functions: `openScheduleEditor()`, `closeScheduleEditor()`, `placeTile()`
-- Separated paintable tools (wall/floor/window) from special tools (door/spawn)
-- Helper functions for time conversion: `timeStringToMinutes()`, `minutesToTimeString()`
-
-## Project Summary
-
-Generate a complete summary:
-```bash
-cd /home/gianfiorenzo/Documents/Vs\ Code/babylon_fp
-echo "=== Babylon FP - First Person Game ==="
-echo "Babylon.js Version: $(npm list @babylonjs/core | grep @babylonjs/core | awk '{print $2}')"
-echo "Source Files: $(find src -name '*.ts' | wc -l) TypeScript files"
-echo "Test Files: $(find tests -name '*.test.ts' | wc -l) test files"
-echo "Total Lines: $(find src -name '*.ts' -exec cat {} + | wc -l) lines of code"
-echo "Tools: Map Editor (2000+ lines), NPC Editor"
-echo "Core Systems: Day/Night Cycle, NPC Scheduling, Photo System, Door System, Pause System"
-echo "Controllers: First-Person Camera with enable/disable support"
-echo "Data: $(find public/data -name '*.json' | wc -l) data files (NPCs, Maps, Events, Investigations)"
-echo "Features: Pausable gameplay, schedule editor, map import/export, drag painting"
+/project-overview --depth deep
+# 결과를 ONBOARDING.md로 저장
 ```

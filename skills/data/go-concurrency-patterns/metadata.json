@@ -1,7 +1,7 @@
 {
   "name": "go-concurrency-patterns",
-  "repo": "GaitanS/AI-Mancare",
-  "path": ".claude/skills/plugins/systems-programming/skills/go-concurrency-patterns/SKILL.md",
-  "source": "github.com/GaitanS/AI-Mancare",
-  "downloaded_at": "2026-02-02T04:39:45.736305Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/go-concurrency-patterns/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:31.964014Z"
 }

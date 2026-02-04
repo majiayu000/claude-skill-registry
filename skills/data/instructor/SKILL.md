@@ -1,740 +1,334 @@
 ---
 name: instructor
-description: Extract structured data from LLM responses with Pydantic validation, retry failed extractions automatically, parse complex JSON with type safety, and stream partial results with Instructor - battle-tested structured output library
-version: 1.0.0
-author: Orchestra Research
-license: MIT
-tags: [Prompt Engineering, Instructor, Structured Output, Pydantic, Data Extraction, JSON Parsing, Type Safety, Validation, Streaming, OpenAI, Anthropic]
-dependencies: [instructor, pydantic, openai, anthropic]
+description: Structured outputs with Instructor. Extract typed data from LLMs using Pydantic models and validation. Use for data extraction, structured generation, and type-safe LLM responses.
 ---
 
-# Instructor: Structured LLM Outputs
+# Instructor
 
-## When to Use This Skill
+Expert guidance for structured LLM outputs with Pydantic validation.
 
-Use Instructor when you need to:
-- **Extract structured data** from LLM responses reliably
-- **Validate outputs** against Pydantic schemas automatically
-- **Retry failed extractions** with automatic error handling
-- **Parse complex JSON** with type safety and validation
-- **Stream partial results** for real-time processing
-- **Support multiple LLM providers** with consistent API
+## Triggers
 
-**GitHub Stars**: 15,000+ | **Battle-tested**: 100,000+ developers
+Use this skill when:
+- Extracting structured data from LLM responses
+- Building type-safe LLM applications
+- Validating LLM outputs with Pydantic
+- Implementing data extraction pipelines
+- Working with structured generation
+- Keywords: instructor, structured output, pydantic, data extraction, validation, typed responses
 
 ## Installation
 
 ```bash
-# Base installation
 pip install instructor
-
-# With specific providers
-pip install "instructor[anthropic]"  # Anthropic Claude
-pip install "instructor[openai]"     # OpenAI
-pip install "instructor[all]"        # All providers
 ```
 
 ## Quick Start
 
-### Basic Example: Extract User Data
-
 ```python
 import instructor
 from pydantic import BaseModel
-from anthropic import Anthropic
+from openai import OpenAI
 
-# Define output structure
+# Patch OpenAI client
+client = instructor.from_openai(OpenAI())
+
 class User(BaseModel):
     name: str
     age: int
-    email: str
-
-# Create instructor client
-client = instructor.from_anthropic(Anthropic())
 
 # Extract structured data
-user = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "John Doe is 30 years old. His email is john@example.com"
-    }],
-    response_model=User
-)
-
-print(user.name)   # "John Doe"
-print(user.age)    # 30
-print(user.email)  # "john@example.com"
-```
-
-### With OpenAI
-
-```python
-from openai import OpenAI
-
-client = instructor.from_openai(OpenAI())
-
 user = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-4o",
     response_model=User,
-    messages=[{"role": "user", "content": "Extract: Alice, 25, alice@email.com"}]
+    messages=[
+        {"role": "user", "content": "John is 25 years old"}
+    ]
 )
+
+print(user)  # User(name='John', age=25)
 ```
 
-## Core Concepts
+## Pydantic Models
 
-### 1. Response Models (Pydantic)
-
-Response models define the structure and validation rules for LLM outputs.
-
-#### Basic Model
+### Basic Models
 
 ```python
 from pydantic import BaseModel, Field
+from typing import Optional, List
+from enum import Enum
 
-class Article(BaseModel):
-    title: str = Field(description="Article title")
-    author: str = Field(description="Author name")
-    word_count: int = Field(description="Number of words", gt=0)
-    tags: list[str] = Field(description="List of relevant tags")
+class Priority(str, Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
 
-article = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "Analyze this article: [article text]"
-    }],
-    response_model=Article
+class Task(BaseModel):
+    title: str = Field(description="Task title")
+    description: str = Field(description="Detailed description")
+    priority: Priority = Field(description="Task priority level")
+    due_date: Optional[str] = Field(None, description="Due date in YYYY-MM-DD format")
+    tags: List[str] = Field(default_factory=list, description="Related tags")
+
+task = client.chat.completions.create(
+    model="gpt-4o",
+    response_model=Task,
+    messages=[
+        {"role": "user", "content": "Create a task for reviewing the Q4 report, high priority, due next Friday"}
+    ]
 )
 ```
 
-**Benefits:**
-- Type safety with Python type hints
-- Automatic validation (word_count > 0)
-- Self-documenting with Field descriptions
-- IDE autocomplete support
-
-#### Nested Models
+### Nested Models
 
 ```python
+from pydantic import BaseModel
+from typing import List
+
 class Address(BaseModel):
     street: str
     city: str
     country: str
+    postal_code: str
 
 class Person(BaseModel):
     name: str
-    age: int
-    address: Address  # Nested model
+    email: str
+    address: Address
+    phone_numbers: List[str]
 
-person = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "John lives at 123 Main St, Boston, USA"
-    }],
-    response_model=Person
+person = client.chat.completions.create(
+    model="gpt-4o",
+    response_model=Person,
+    messages=[
+        {"role": "user", "content": """
+        Extract: John Smith, john@email.com, lives at 123 Main St,
+        New York, USA 10001. Phone: 555-1234, 555-5678
+        """}
+    ]
 )
-
-print(person.address.city)  # "Boston"
 ```
 
-#### Optional Fields
+## Validation
+
+### Field Validators
 
 ```python
-from typing import Optional
+from pydantic import BaseModel, field_validator
+from typing import List
 
-class Product(BaseModel):
-    name: str
-    price: float
-    discount: Optional[float] = None  # Optional
-    description: str = Field(default="No description")  # Default value
+class SearchQuery(BaseModel):
+    query: str
+    filters: List[str]
 
-# LLM doesn't need to provide discount or description
-```
+    @field_validator('query')
+    @classmethod
+    def query_not_empty(cls, v):
+        if not v.strip():
+            raise ValueError("Query cannot be empty")
+        return v.strip()
 
-#### Enums for Constraints
-
-```python
-from enum import Enum
-
-class Sentiment(str, Enum):
-    POSITIVE = "positive"
-    NEGATIVE = "negative"
-    NEUTRAL = "neutral"
-
-class Review(BaseModel):
-    text: str
-    sentiment: Sentiment  # Only these 3 values allowed
-
-review = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "This product is amazing!"
-    }],
-    response_model=Review
-)
-
-print(review.sentiment)  # Sentiment.POSITIVE
-```
-
-### 2. Validation
-
-Pydantic validates LLM outputs automatically. If validation fails, Instructor retries.
-
-#### Built-in Validators
-
-```python
-from pydantic import Field, EmailStr, HttpUrl
-
-class Contact(BaseModel):
-    name: str = Field(min_length=2, max_length=100)
-    age: int = Field(ge=0, le=120)  # 0 <= age <= 120
-    email: EmailStr  # Validates email format
-    website: HttpUrl  # Validates URL format
-
-# If LLM provides invalid data, Instructor retries automatically
-```
-
-#### Custom Validators
-
-```python
-from pydantic import field_validator
-
-class Event(BaseModel):
-    name: str
-    date: str
-    attendees: int
-
-    @field_validator('date')
-    def validate_date(cls, v):
-        """Ensure date is in YYYY-MM-DD format."""
-        import re
-        if not re.match(r'\d{4}-\d{2}-\d{2}', v):
-            raise ValueError('Date must be YYYY-MM-DD format')
-        return v
-
-    @field_validator('attendees')
-    def validate_attendees(cls, v):
-        """Ensure positive attendees."""
-        if v < 1:
-            raise ValueError('Must have at least 1 attendee')
+    @field_validator('filters')
+    @classmethod
+    def validate_filters(cls, v):
+        valid = ["date", "author", "category"]
+        for f in v:
+            if f not in valid:
+                raise ValueError(f"Invalid filter: {f}")
         return v
 ```
 
-#### Model-Level Validation
+### Model Validators
 
 ```python
-from pydantic import model_validator
+from pydantic import BaseModel, model_validator
 
 class DateRange(BaseModel):
     start_date: str
     end_date: str
 
     @model_validator(mode='after')
-    def check_dates(self):
-        """Ensure end_date is after start_date."""
-        from datetime import datetime
-        start = datetime.strptime(self.start_date, '%Y-%m-%d')
-        end = datetime.strptime(self.end_date, '%Y-%m-%d')
-
-        if end < start:
-            raise ValueError('end_date must be after start_date')
+    def validate_dates(self):
+        if self.start_date > self.end_date:
+            raise ValueError("Start date must be before end date")
         return self
 ```
 
-### 3. Automatic Retrying
-
-Instructor retries automatically when validation fails, providing error feedback to the LLM.
+## Retries
 
 ```python
-# Retries up to 3 times if validation fails
-user = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "Extract user from: John, age unknown"
-    }],
+from instructor import from_openai
+from tenacity import retry, stop_after_attempt
+
+client = from_openai(
+    OpenAI(),
+    mode=instructor.Mode.TOOLS
+)
+
+# Automatic retries on validation failure
+user = client.chat.completions.create(
+    model="gpt-4o",
     response_model=User,
-    max_retries=3  # Default is 3
+    max_retries=3,
+    messages=[{"role": "user", "content": "Extract user info"}]
 )
-
-# If age can't be extracted, Instructor tells the LLM:
-# "Validation error: age - field required"
-# LLM tries again with better extraction
 ```
 
-**How it works:**
-1. LLM generates output
-2. Pydantic validates
-3. If invalid: Error message sent back to LLM
-4. LLM tries again with error feedback
-5. Repeats up to max_retries
-
-### 4. Streaming
-
-Stream partial results for real-time processing.
-
-#### Streaming Partial Objects
+## Streaming
 
 ```python
-from instructor import Partial
+from instructor import from_openai, Partial
+from pydantic import BaseModel
+from typing import List
 
-class Story(BaseModel):
+class Report(BaseModel):
     title: str
-    content: str
-    tags: list[str]
+    sections: List[str]
+    summary: str
 
-# Stream partial updates as LLM generates
-for partial_story in client.messages.create_partial(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "Write a short sci-fi story"
-    }],
-    response_model=Story
+client = from_openai(OpenAI())
+
+# Stream partial results
+for partial in client.chat.completions.create_partial(
+    model="gpt-4o",
+    response_model=Report,
+    messages=[{"role": "user", "content": "Write a report on AI trends"}],
 ):
-    print(f"Title: {partial_story.title}")
-    print(f"Content so far: {partial_story.content[:100]}...")
-    # Update UI in real-time
+    print(partial)  # Partial[Report] with available fields
 ```
 
-#### Streaming Iterables
+## Iterable Extraction
 
 ```python
-class Task(BaseModel):
-    title: str
-    priority: str
+from instructor import from_openai
+from pydantic import BaseModel
+from typing import Iterable
 
-# Stream list items as they're generated
-tasks = client.messages.create_iterable(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "Generate 10 project tasks"
-    }],
-    response_model=Task
+class Product(BaseModel):
+    name: str
+    price: float
+    category: str
+
+client = from_openai(OpenAI())
+
+products: Iterable[Product] = client.chat.completions.create_iterable(
+    model="gpt-4o",
+    response_model=Product,
+    messages=[
+        {"role": "user", "content": """
+        Extract products:
+        - iPhone 15 Pro: $999, Electronics
+        - Nike Air Max: $150, Footwear
+        - MacBook Pro: $2499, Electronics
+        """}
+    ]
 )
 
-for task in tasks:
-    print(f"- {task.title} ({task.priority})")
-    # Process each task as it arrives
+for product in products:
+    print(product)
 ```
 
-## Provider Configuration
+## Multiple Providers
 
-### Anthropic Claude
+### Anthropic
 
 ```python
 import instructor
 from anthropic import Anthropic
 
-client = instructor.from_anthropic(
-    Anthropic(api_key="your-api-key")
-)
+client = instructor.from_anthropic(Anthropic())
 
-# Use with Claude models
-response = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
+user = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
     max_tokens=1024,
-    messages=[...],
-    response_model=YourModel
+    response_model=User,
+    messages=[{"role": "user", "content": "John is 25"}]
 )
 ```
 
-### OpenAI
+### Ollama
 
 ```python
+import instructor
 from openai import OpenAI
 
 client = instructor.from_openai(
-    OpenAI(api_key="your-api-key")
-)
-
-response = client.chat.completions.create(
-    model="gpt-4o-mini",
-    response_model=YourModel,
-    messages=[...]
-)
-```
-
-### Local Models (Ollama)
-
-```python
-from openai import OpenAI
-
-# Point to local Ollama server
-client = instructor.from_openai(
-    OpenAI(
-        base_url="http://localhost:11434/v1",
-        api_key="ollama"  # Required but ignored
-    ),
+    OpenAI(base_url="http://localhost:11434/v1", api_key="ollama"),
     mode=instructor.Mode.JSON
 )
 
-response = client.chat.completions.create(
+user = client.chat.completions.create(
     model="llama3.1",
-    response_model=YourModel,
-    messages=[...]
+    response_model=User,
+    messages=[{"role": "user", "content": "John is 25"}]
 )
 ```
 
-## Common Patterns
-
-### Pattern 1: Data Extraction from Text
+### LiteLLM
 
 ```python
-class CompanyInfo(BaseModel):
-    name: str
-    founded_year: int
-    industry: str
-    employees: int
-    headquarters: str
+import instructor
+import litellm
 
-text = """
-Tesla, Inc. was founded in 2003. It operates in the automotive and energy
-industry with approximately 140,000 employees. The company is headquartered
-in Austin, Texas.
-"""
+client = instructor.from_litellm(litellm.completion)
 
-company = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": f"Extract company information from: {text}"
-    }],
-    response_model=CompanyInfo
+user = client(
+    model="gpt-4o",
+    response_model=User,
+    messages=[{"role": "user", "content": "John is 25"}]
 )
 ```
 
-### Pattern 2: Classification
+## Advanced Patterns
+
+### Chain of Thought
 
 ```python
-class Category(str, Enum):
-    TECHNOLOGY = "technology"
-    FINANCE = "finance"
-    HEALTHCARE = "healthcare"
-    EDUCATION = "education"
-    OTHER = "other"
+from pydantic import BaseModel, Field
 
-class ArticleClassification(BaseModel):
-    category: Category
-    confidence: float = Field(ge=0.0, le=1.0)
-    keywords: list[str]
+class Reasoning(BaseModel):
+    chain_of_thought: str = Field(
+        description="Step by step reasoning before the answer"
+    )
+    answer: str = Field(description="Final answer")
 
-classification = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": "Classify this article: [article text]"
-    }],
-    response_model=ArticleClassification
+result = client.chat.completions.create(
+    model="gpt-4o",
+    response_model=Reasoning,
+    messages=[
+        {"role": "user", "content": "What is 25 * 47?"}
+    ]
 )
+print(result.chain_of_thought)
+print(result.answer)
 ```
 
-### Pattern 3: Multi-Entity Extraction
+### Classification
 
 ```python
-class Person(BaseModel):
-    name: str
-    role: str
+from enum import Enum, auto
 
-class Organization(BaseModel):
-    name: str
-    industry: str
+class Sentiment(str, Enum):
+    POSITIVE = "positive"
+    NEGATIVE = "negative"
+    NEUTRAL = "neutral"
 
-class Entities(BaseModel):
-    people: list[Person]
-    organizations: list[Organization]
-    locations: list[str]
-
-text = "Tim Cook, CEO of Apple, announced at the event in Cupertino..."
-
-entities = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": f"Extract all entities from: {text}"
-    }],
-    response_model=Entities
-)
-
-for person in entities.people:
-    print(f"{person.name} - {person.role}")
-```
-
-### Pattern 4: Structured Analysis
-
-```python
 class SentimentAnalysis(BaseModel):
-    overall_sentiment: Sentiment
-    positive_aspects: list[str]
-    negative_aspects: list[str]
-    suggestions: list[str]
-    score: float = Field(ge=-1.0, le=1.0)
+    text: str
+    sentiment: Sentiment
+    confidence: float = Field(ge=0, le=1)
 
-review = "The product works well but setup was confusing..."
-
-analysis = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[{
-        "role": "user",
-        "content": f"Analyze this review: {review}"
-    }],
-    response_model=SentimentAnalysis
+analysis = client.chat.completions.create(
+    model="gpt-4o",
+    response_model=SentimentAnalysis,
+    messages=[
+        {"role": "user", "content": "Analyze: 'I love this product!'"}
+    ]
 )
 ```
-
-### Pattern 5: Batch Processing
-
-```python
-def extract_person(text: str) -> Person:
-    return client.messages.create(
-        model="claude-sonnet-4-5-20250929",
-        max_tokens=1024,
-        messages=[{
-            "role": "user",
-            "content": f"Extract person from: {text}"
-        }],
-        response_model=Person
-    )
-
-texts = [
-    "John Doe is a 30-year-old engineer",
-    "Jane Smith, 25, works in marketing",
-    "Bob Johnson, age 40, software developer"
-]
-
-people = [extract_person(text) for text in texts]
-```
-
-## Advanced Features
-
-### Union Types
-
-```python
-from typing import Union
-
-class TextContent(BaseModel):
-    type: str = "text"
-    content: str
-
-class ImageContent(BaseModel):
-    type: str = "image"
-    url: HttpUrl
-    caption: str
-
-class Post(BaseModel):
-    title: str
-    content: Union[TextContent, ImageContent]  # Either type
-
-# LLM chooses appropriate type based on content
-```
-
-### Dynamic Models
-
-```python
-from pydantic import create_model
-
-# Create model at runtime
-DynamicUser = create_model(
-    'User',
-    name=(str, ...),
-    age=(int, Field(ge=0)),
-    email=(EmailStr, ...)
-)
-
-user = client.messages.create(
-    model="claude-sonnet-4-5-20250929",
-    max_tokens=1024,
-    messages=[...],
-    response_model=DynamicUser
-)
-```
-
-### Custom Modes
-
-```python
-# For providers without native structured outputs
-client = instructor.from_anthropic(
-    Anthropic(),
-    mode=instructor.Mode.JSON  # JSON mode
-)
-
-# Available modes:
-# - Mode.ANTHROPIC_TOOLS (recommended for Claude)
-# - Mode.JSON (fallback)
-# - Mode.TOOLS (OpenAI tools)
-```
-
-### Context Management
-
-```python
-# Single-use client
-with instructor.from_anthropic(Anthropic()) as client:
-    result = client.messages.create(
-        model="claude-sonnet-4-5-20250929",
-        max_tokens=1024,
-        messages=[...],
-        response_model=YourModel
-    )
-    # Client closed automatically
-```
-
-## Error Handling
-
-### Handling Validation Errors
-
-```python
-from pydantic import ValidationError
-
-try:
-    user = client.messages.create(
-        model="claude-sonnet-4-5-20250929",
-        max_tokens=1024,
-        messages=[...],
-        response_model=User,
-        max_retries=3
-    )
-except ValidationError as e:
-    print(f"Failed after retries: {e}")
-    # Handle gracefully
-
-except Exception as e:
-    print(f"API error: {e}")
-```
-
-### Custom Error Messages
-
-```python
-class ValidatedUser(BaseModel):
-    name: str = Field(description="Full name, 2-100 characters")
-    age: int = Field(description="Age between 0 and 120", ge=0, le=120)
-    email: EmailStr = Field(description="Valid email address")
-
-    class Config:
-        # Custom error messages
-        json_schema_extra = {
-            "examples": [
-                {
-                    "name": "John Doe",
-                    "age": 30,
-                    "email": "john@example.com"
-                }
-            ]
-        }
-```
-
-## Best Practices
-
-### 1. Clear Field Descriptions
-
-```python
-# ❌ Bad: Vague
-class Product(BaseModel):
-    name: str
-    price: float
-
-# ✅ Good: Descriptive
-class Product(BaseModel):
-    name: str = Field(description="Product name from the text")
-    price: float = Field(description="Price in USD, without currency symbol")
-```
-
-### 2. Use Appropriate Validation
-
-```python
-# ✅ Good: Constrain values
-class Rating(BaseModel):
-    score: int = Field(ge=1, le=5, description="Rating from 1 to 5 stars")
-    review: str = Field(min_length=10, description="Review text, at least 10 chars")
-```
-
-### 3. Provide Examples in Prompts
-
-```python
-messages = [{
-    "role": "user",
-    "content": """Extract person info from: "John, 30, engineer"
-
-Example format:
-{
-  "name": "John Doe",
-  "age": 30,
-  "occupation": "engineer"
-}"""
-}]
-```
-
-### 4. Use Enums for Fixed Categories
-
-```python
-# ✅ Good: Enum ensures valid values
-class Status(str, Enum):
-    PENDING = "pending"
-    APPROVED = "approved"
-    REJECTED = "rejected"
-
-class Application(BaseModel):
-    status: Status  # LLM must choose from enum
-```
-
-### 5. Handle Missing Data Gracefully
-
-```python
-class PartialData(BaseModel):
-    required_field: str
-    optional_field: Optional[str] = None
-    default_field: str = "default_value"
-
-# LLM only needs to provide required_field
-```
-
-## Comparison to Alternatives
-
-| Feature | Instructor | Manual JSON | LangChain | DSPy |
-|---------|------------|-------------|-----------|------|
-| Type Safety | ✅ Yes | ❌ No | ⚠️ Partial | ✅ Yes |
-| Auto Validation | ✅ Yes | ❌ No | ❌ No | ⚠️ Limited |
-| Auto Retry | ✅ Yes | ❌ No | ❌ No | ✅ Yes |
-| Streaming | ✅ Yes | ❌ No | ✅ Yes | ❌ No |
-| Multi-Provider | ✅ Yes | ⚠️ Manual | ✅ Yes | ✅ Yes |
-| Learning Curve | Low | Low | Medium | High |
-
-**When to choose Instructor:**
-- Need structured, validated outputs
-- Want type safety and IDE support
-- Require automatic retries
-- Building data extraction systems
-
-**When to choose alternatives:**
-- DSPy: Need prompt optimization
-- LangChain: Building complex chains
-- Manual: Simple, one-off extractions
 
 ## Resources
 
-- **Documentation**: https://python.useinstructor.com
-- **GitHub**: https://github.com/jxnl/instructor (15k+ stars)
-- **Cookbook**: https://python.useinstructor.com/examples
-- **Discord**: Community support available
-
-## See Also
-
-- `references/validation.md` - Advanced validation patterns
-- `references/providers.md` - Provider-specific configuration
-- `references/examples.md` - Real-world use cases
-
-
+- [Instructor Documentation](https://python.useinstructor.com/)
+- [Instructor GitHub](https://github.com/jxnl/instructor)
+- [Examples](https://python.useinstructor.com/examples/)

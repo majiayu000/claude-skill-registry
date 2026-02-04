@@ -1,11 +1,7 @@
 {
   "name": "foundry",
-  "description": "Ethereum development with foundry (forge, cast, anvil)",
-  "repo": "jacobhjkim/gachi-amm",
-  "category": "development",
-  "tags": [
-    "foundry"
-  ],
-  "stars": 0,
-  "source": "SkillsMP Synced Skills"
+  "repo": "openclaw/skills",
+  "path": "skills/lekt9/foundry/SKILL.md",
+  "source": "github.com/openclaw/skills",
+  "downloaded_at": "2026-02-04T01:58:08.401524Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "monorepo-management",
-  "repo": "ccf/claude-code-ccf-marketplace",
-  "path": "plugins/developer-essentials/skills/monorepo-management/SKILL.md",
-  "source": "github.com/ccf/claude-code-ccf-marketplace",
-  "downloaded_at": "2026-02-02T05:11:54.332485Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/monorepo-management/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:26.735181Z"
 }

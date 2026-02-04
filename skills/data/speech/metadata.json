@@ -1,7 +1,7 @@
 {
   "name": "speech",
-  "repo": "SimHacker/moollm",
-  "path": "skills/speech/SKILL.md",
-  "source": "github.com/SimHacker/moollm",
-  "downloaded_at": "2026-02-02T04:06:42.363616Z"
+  "repo": "openai/skills",
+  "path": "skills/.curated/speech/SKILL.md",
+  "source": "github.com/openai/skills",
+  "downloaded_at": "2026-02-04T03:04:45.652828Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "loki-mode",
-  "repo": "claudiodearaujo/Sistema-de-narra-o-de-livro",
-  "path": ".agent/skills/loki-mode/SKILL.md",
-  "source": "github.com/claudiodearaujo/Sistema-de-narra-o-de-livro",
-  "downloaded_at": "2026-02-02T04:45:35.458932Z"
+  "repo": "vjrivmon/Setup-Software-IA",
+  "path": ".agents/skills/loki-mode/SKILL.md",
+  "source": "github.com/vjrivmon/Setup-Software-IA",
+  "downloaded_at": "2026-02-04T04:20:32.880519Z"
 }

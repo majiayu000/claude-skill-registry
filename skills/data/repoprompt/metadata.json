@@ -1,7 +1,7 @@
 {
   "name": "repoprompt",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/repoprompt/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:38.437091Z"
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/repoprompt/SKILL.md",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "downloaded_at": "2026-02-04T04:19:54.651865Z"
 }

@@ -1,9 +1,7 @@
 {
   "name": "open-graph-creator",
-  "description": "Open Graph Creator - Auto-activating skill for Frontend Development.Triggers on: open graph creator, open graph creatorPart of the Frontend Development skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/05-frontend-dev/open-graph-creator/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:23.989835Z"
 }

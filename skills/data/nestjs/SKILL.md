@@ -1,116 +1,541 @@
 ---
 name: nestjs
-description: NestJS - A progressive Node.js framework for building efficient, scalable server-side applications with TypeScript.
+description: Comprehensive NestJS framework guide with Drizzle ORM integration. Use when building NestJS applications, setting up APIs, implementing authentication, working with databases, or integrating Drizzle ORM. Covers controllers, providers, modules, middleware, guards, interceptors, testing, microservices, GraphQL, and database patterns.
+license: Complete terms in LICENSE.txt
 ---
 
-# NestJS Framework
+# NestJS Framework with Drizzle ORM
 
-NestJS is a progressive Node.js framework for building efficient, scalable server-side applications. It uses TypeScript and combines elements of OOP, FP, and FRP.
-
-## When to Use This Skill
-
-Use this skill when:
-- Building Node.js backend applications with TypeScript
-- Working with NestJS controllers, providers, and modules
-- Implementing guards, pipes, interceptors, and middleware
+## When to Use
+- Building REST APIs or GraphQL servers with NestJS
 - Setting up authentication and authorization
-- Building microservices or GraphQL APIs
-- Working with WebSockets
-- Configuring the NestJS CLI
+- Implementing middleware, guards, or interceptors
+- Working with databases (TypeORM, Drizzle ORM)
+- Creating microservices architecture
+- Writing unit and integration tests
+- Setting up OpenAPI/Swagger documentation
 
-## Quick Reference
+## Core Architecture
 
-### Basic Controller
-
+### Module Structure
 ```typescript
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+
+@Module({
+  imports: [/* other modules */],
+  controllers: [/* controllers */],
+  providers: [/* providers */],
+  exports: [/* exported providers */],
+})
+export class FeatureModule {}
+```
+
+### Controller Pattern
+```typescript
+import { Controller, Get, Post, Body, Param, Query } from '@nestjs/common';
 
 @Controller('users')
 export class UsersController {
   @Get()
-  findAll() {
-    return [];
+  findAll(@Query() query: any) {
+    return 'This returns all users';
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return { id };
+    return `This returns user #${id}`;
   }
 
   @Post()
-  create(@Body() createDto: CreateUserDto) {
-    return createDto;
+  create(@Body() createUserDto: any) {
+    return 'This creates a user';
   }
 }
 ```
 
-### Basic Provider/Service
-
+### Service with Dependency Injection
 ```typescript
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {
-  private users = [];
+  constructor(/* inject dependencies */) {}
 
   findAll() {
-    return this.users;
-  }
-
-  findOne(id: string) {
-    return this.users.find(u => u.id === id);
+    return 'Users service logic';
   }
 }
 ```
 
-### Basic Module
+## Database Integration with Drizzle
 
+### Setup with Drizzle ORM
+
+#### Installation
+```bash
+# Using npm
+npm install drizzle-orm pg
+npm install -D drizzle-kit tsx @types/pg
+
+# Using yarn
+yarn add drizzle-orm pg
+yarn add -D drizzle-kit tsx @types/pg
+```
+
+#### Configuration
 ```typescript
+// drizzle.config.ts
+import 'dotenv/config';
+import { defineConfig } from 'drizzle-kit';
+
+export default defineConfig({
+  out: './drizzle',
+  schema: './src/db/schema.ts',
+  dialect: 'postgresql',
+  dbCredentials: {
+    url: process.env.DATABASE_URL!,
+  },
+});
+```
+
+#### Database Schema
+```typescript
+// src/db/schema.ts
+import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+
+export const users = pgTable('users', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+```
+
+#### Database Service
+```typescript
+// src/db/database.service.ts
+import { Injectable } from '@nestjs/common';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { Pool } from 'pg';
+import * as schema from './schema';
+
+@Injectable()
+export class DatabaseService {
+  private db: ReturnType<typeof drizzle>;
+
+  constructor() {
+    const pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+    });
+    this.db = drizzle(pool, { schema });
+  }
+
+  get database() {
+    return this.db;
+  }
+}
+```
+
+#### User Repository with Drizzle
+```typescript
+// src/users/user.repository.ts
+import { Injectable } from '@nestjs/common';
+import { DatabaseService } from '../db/database.service';
+import { users } from '../db/schema';
+import { eq } from 'drizzle-orm';
+
+@Injectable()
+export class UserRepository {
+  constructor(private db: DatabaseService) {}
+
+  async findAll() {
+    return this.db.database.select().from(users);
+  }
+
+  async findOne(id: number) {
+    const result = await this.db.database
+      .select()
+      .from(users)
+      .where(eq(users.id, id))
+      .limit(1);
+    return result[0];
+  }
+
+  async create(data: typeof users.$inferInsert) {
+    const result = await this.db.database
+      .insert(users)
+      .values(data)
+      .returning();
+    return result[0];
+  }
+
+  async update(id: number, data: Partial<typeof users.$inferInsert>) {
+    const result = await this.db.database
+      .update(users)
+      .set(data)
+      .where(eq(users.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async remove(id: number) {
+    const result = await this.db.database
+      .delete(users)
+      .where(eq(users.id, id))
+      .returning();
+    return result[0];
+  }
+}
+```
+
+#### Complete User Module
+```typescript
+// src/users/users.module.ts
 import { Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
+import { UserRepository } from './user.repository';
+import { DatabaseService } from '../db/database.service';
 
 @Module({
   controllers: [UsersController],
-  providers: [UsersService],
-  exports: [UsersService]
+  providers: [UsersService, UserRepository, DatabaseService],
+  exports: [UsersService],
 })
 export class UsersModule {}
 ```
 
-### Guard Example
+#### User Service Implementation
+```typescript
+// src/users/users.service.ts
+import { Injectable } from '@nestjs/common';
+import { UserRepository } from './user.repository';
+import { User } from './interfaces/user.interface';
 
+@Injectable()
+export class UsersService {
+  constructor(private userRepository: UserRepository) {}
+
+  async findAll(): Promise<User[]> {
+    return this.userRepository.findAll();
+  }
+
+  async findOne(id: number): Promise<User> {
+    const user = await this.userRepository.findOne(id);
+    if (!user) {
+      throw new Error('User not found');
+    }
+    return user;
+  }
+
+  async create(userData: Partial<User>): Promise<User> {
+    return this.userRepository.create(userData);
+  }
+
+  async update(id: number, userData: Partial<User>): Promise<User> {
+    await this.findOne(id); // Verify user exists
+    return this.userRepository.update(id, userData);
+  }
+
+  async remove(id: number): Promise<User> {
+    await this.findOne(id); // Verify user exists
+    return this.userRepository.remove(id);
+  }
+}
+```
+
+## Authentication & Authorization
+
+### JWT Authentication Guard
 ```typescript
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
-export class AuthGuard implements CanActivate {
-  canActivate(context: ExecutionContext): boolean {
+export class JwtAuthGuard implements CanActivate {
+  constructor(private jwtService: JwtService) {}
+
+  canActivate(context: ExecutionContext) {
     const request = context.switchToHttp().getRequest();
-    return !!request.headers.authorization;
+    const token = request.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const decoded = this.jwtService.verify(token);
+      request.user = decoded;
+      return true;
+    } catch {
+      return false;
+    }
   }
 }
 ```
 
-### Pipe Example
-
+### Roles-Based Guard
 ```typescript
-import { PipeTransform, Injectable, BadRequestException } from '@nestjs/common';
+import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { Reflector } from '@nestjs/core';
 
 @Injectable()
-export class ParseIntPipe implements PipeTransform<string, number> {
-  transform(value: string): number {
-    const val = parseInt(value, 10);
-    if (isNaN(val)) {
-      throw new BadRequestException('Validation failed');
+export class RolesGuard implements CanActivate {
+  constructor(private reflector: Reflector) {}
+
+  canActivate(context: ExecutionContext): boolean {
+    const requiredRoles = this.reflector.get<string[]>('roles', context.getHandler());
+    if (!requiredRoles) {
+      return true;
     }
-    return val;
+
+    const { user } = context.switchToHttp().getRequest();
+    return requiredRoles.some((role) => user.roles?.includes(role));
   }
 }
 ```
 
-### Interceptor Example
+## Validation with Pipes
 
+### Validation Pipe
+```typescript
+import { PipeTransform, Injectable, ArgumentMetadata, BadRequestException } from '@nestjs/common';
+import { validate } from 'class-validator';
+import { plainToClass } from 'class-transformer';
+
+@Injectable()
+export class ValidationPipe implements PipeTransform {
+  async transform(value: any, { metatype }: ArgumentMetadata) {
+    if (!metatype || !this.toValidate(metatype)) {
+      return value;
+    }
+
+    const object = plainToClass(metatype, value);
+    const errors = await validate(object);
+
+    if (errors.length > 0) {
+      throw new BadRequestException(errors);
+    }
+
+    return value;
+  }
+
+  private toValidate(metatype: Function): boolean {
+    const types: Function[] = [String, Boolean, Number, Array, Object];
+    return !types.includes(metatype);
+  }
+}
+```
+
+## Exception Handling
+
+### Global Exception Filter
+```typescript
+import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
+import { Request, Response } from 'express';
+
+@Catch(HttpException)
+export class HttpExceptionFilter implements ExceptionFilter {
+  catch(exception: HttpException, host: ArgumentsHost) {
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse<Response>();
+    const request = ctx.getRequest<Request>();
+    const status = exception.getStatus();
+
+    response.status(status).json({
+      statusCode: status,
+      timestamp: new Date().toISOString(),
+      path: request.url,
+      message: exception.message,
+    });
+  }
+}
+```
+
+## Testing Patterns
+
+### Unit Testing Services
+```typescript
+import { Test, TestingModule } from '@nestjs/testing';
+import { UsersService } from './users.service';
+import { UserRepository } from './user.repository';
+
+describe('UsersService', () => {
+  let service: UsersService;
+  let repository: jest.Mocked<UserRepository>;
+
+  beforeEach(async () => {
+    const mockRepository = {
+      findAll: jest.fn(),
+      findOne: jest.fn(),
+      create: jest.fn(),
+      update: jest.fn(),
+      remove: jest.fn(),
+    } as any;
+
+    const module: TestingModule = await Test.createTestingModule({
+      providers: [
+        UsersService,
+        {
+          provide: UserRepository,
+          useValue: mockRepository,
+        },
+      ],
+    }).compile();
+
+    service = module.get<UsersService>(UsersService);
+    repository = module.get(UserRepository);
+  });
+
+  it('should return all users', async () => {
+    const expectedUsers = [{ id: 1, name: 'John', email: 'john@example.com' }];
+    repository.findAll.mockResolvedValue(expectedUsers);
+
+    const result = await service.findAll();
+    expect(result).toEqual(expectedUsers);
+    expect(repository.findAll).toHaveBeenCalled();
+  });
+});
+```
+
+### E2E Testing with Drizzle
+```typescript
+import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
+import * as request from 'supertest';
+import { AppModule } from './../src/app.module';
+import { DatabaseService } from '../src/db/database.service';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { migrate } from 'drizzle-node-postgres/migrator';
+import { migrate as drizzleMigrate } from 'drizzle-orm/node-postgres/migrator';
+
+describe('UsersController (e2e)', () => {
+  let app: INestApplication;
+  let db: DatabaseService;
+
+  beforeAll(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
+
+    app = moduleFixture.createNestApplication();
+    db = moduleFixture.get<DatabaseService>(DatabaseService);
+
+    // Run migrations
+    await drizzleMigrate(db.database, { migrationsFolder: './drizzle' });
+
+    await app.init();
+  });
+
+  afterAll(async () => {
+    await app.close();
+  });
+
+  beforeEach(async () => {
+    // Clean database
+    await db.database.delete(users).execute();
+  });
+
+  it('/users (POST)', () => {
+    const createUserDto = {
+      name: 'Test User',
+      email: 'test@example.com',
+    };
+
+    return request(app.getHttpServer())
+      .post('/users')
+      .send(createUserDto)
+      .expect(201)
+      .expect((res) => {
+        expect(res.body).toMatchObject(createUserDto);
+        expect(res.body).toHaveProperty('id');
+      });
+  });
+
+  it('/users (GET)', async () => {
+    // First create a user
+    await db.database.insert(users).values({
+      name: 'Test User',
+      email: 'test@example.com',
+    });
+
+    return request(app.getHttpServer())
+      .get('/users')
+      .expect(200)
+      .expect((res) => {
+        expect(Array.isArray(res.body)).toBe(true);
+        expect(res.body).toHaveLength(1);
+      });
+  });
+});
+```
+
+## Migrations with Drizzle
+
+### Generating Migrations
+```bash
+npx drizzle-kit generate
+```
+
+### Running Migrations
+```typescript
+// src/migrations/migration.service.ts
+import { Injectable } from '@nestjs/common';
+import { migrate } from 'drizzle-orm/node-postgres/migrator';
+import { DatabaseService } from '../db/database.service';
+
+@Injectable()
+export class MigrationService {
+  constructor(private db: DatabaseService) {}
+
+  async runMigrations() {
+    try {
+      await migrate(this.db.database, { migrationsFolder: './drizzle' });
+      console.log('Migrations completed successfully');
+    } catch (error) {
+      console.error('Migration failed:', error);
+      throw error;
+    }
+  }
+}
+```
+
+## Configuration Management
+
+### Environment Configuration
+```typescript
+// src/config/configuration.ts
+export default () => ({
+  database: {
+    url: process.env.DATABASE_URL,
+  },
+  jwt: {
+    secret: process.env.JWT_SECRET || 'default-secret',
+    expiresIn: process.env.JWT_EXPIRES_IN || '24h',
+  },
+  app: {
+    port: parseInt(process.env.PORT, 10) || 3000,
+  },
+});
+```
+
+## Advanced Patterns
+
+### Custom Decorators
+```typescript
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+
+export const User = createParamDecorator(
+  (data: string, ctx: ExecutionContext) => {
+    const request = ctx.switchToHttp().getRequest();
+    const user = request.user;
+
+    return data ? user?.[data] : user;
+  },
+);
+```
+
+### Interceptors for Logging
 ```typescript
 import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
 import { Observable } from 'rxjs';
@@ -119,84 +544,126 @@ import { tap } from 'rxjs/operators';
 @Injectable()
 export class LoggingInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    console.log('Before...');
+    const request = context.switchToHttp().getRequest();
+    const { method, url } = request;
     const now = Date.now();
-    return next.handle().pipe(
-      tap(() => console.log(`After... ${Date.now() - now}ms`)),
-    );
+
+    console.log(`[${method}] ${url} - Start`);
+
+    return next
+      .handle()
+      .pipe(
+        tap(() => console.log(`[${method}] ${url} - End ${Date.now() - now}ms`)),
+      );
   }
 }
 ```
 
-### Exception Filter Example
+## Microservices
 
+### TCP Microservice
 ```typescript
-import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from '@nestjs/common';
-import { Response } from 'express';
+// main.ts
+import { NestFactory } from '@nestjs/core';
+import { Transport, MicroserviceOptions } from '@nestjs/microservices';
+import { AppModule } from './app.module';
 
-@Catch(HttpException)
-export class HttpExceptionFilter implements ExceptionFilter {
-  catch(exception: HttpException, host: ArgumentsHost) {
-    const ctx = host.switchToHttp();
-    const response = ctx.getResponse<Response>();
-    const status = exception.getStatus();
-
-    response.status(status).json({
-      statusCode: status,
-      message: exception.message,
-    });
-  }
+async function bootstrap() {
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
+    AppModule,
+    {
+      transport: Transport.TCP,
+      options: {
+        host: 'localhost',
+        port: 8877,
+      },
+    },
+  );
+  await app.listen();
 }
+bootstrap();
 ```
 
-### Middleware Example
+## GraphQL Integration
 
+### GraphQL Resolver with Drizzle
 ```typescript
-import { Injectable, NestMiddleware } from '@nestjs/common';
-import { Request, Response, NextFunction } from 'express';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { UserRepository } from './user.repository';
 
-@Injectable()
-export class LoggerMiddleware implements NestMiddleware {
-  use(req: Request, res: Response, next: NextFunction) {
-    console.log(`${req.method} ${req.url}`);
-    next();
+@Resolver(() => User)
+export class UsersResolver {
+  constructor(private userRepository: UserRepository) {}
+
+  @Query(() => [User])
+  async users() {
+    return this.userRepository.findAll();
+  }
+
+  @Mutation(() => User)
+  async createUser(@Args('input') input: CreateUserInput) {
+    return this.userRepository.create(input);
   }
 }
 ```
 
-## Key Concepts
+## Best Practices
 
-### Dependency Injection
-NestJS uses a powerful dependency injection system. Mark classes with `@Injectable()` and inject them via constructor parameters.
+1. **Always use constructor injection** - Never use property injection
+2. **Use DTOs for data transfer** - Define interfaces for request/response
+3. **Implement proper error handling** - Use exception filters
+4. **Validate all inputs** - Use validation pipes
+5. **Keep modules focused** - Single responsibility principle
+6. **Use environment variables** - Never hardcode credentials
+7. **Write comprehensive tests** - Unit and integration tests
+8. **Use transactions for complex operations** - Maintain data consistency
+9. **Implement proper logging** - Use interceptors for cross-cutting concerns
+10. **Use type safety** - Leverage TypeScript features
 
-### Decorators
-NestJS makes heavy use of decorators:
-- `@Controller()` - Define a controller
-- `@Get()`, `@Post()`, `@Put()`, `@Delete()` - HTTP methods
-- `@Injectable()` - Mark a class as a provider
-- `@Module()` - Define a module
-- `@UseGuards()`, `@UsePipes()`, `@UseInterceptors()` - Apply cross-cutting concerns
+## Common Patterns with Drizzle
 
-### Request Lifecycle
-1. Middleware
-2. Guards
-3. Interceptors (pre)
-4. Pipes
-5. Route Handler
-6. Interceptors (post)
-7. Exception Filters
+### Transactions
+```typescript
+async transferFunds(fromId: number, toId: number, amount: number) {
+  return this.db.database.transaction(async (tx) => {
+    // Debit from account
+    await tx
+      .update(accounts)
+      .set({ balance: sql`${accounts.balance} - ${amount}` })
+      .where(eq(accounts.id, fromId));
 
-## Documentation Reference
+    // Credit to account
+    await tx
+      .update(accounts)
+      .set({ balance: sql`${accounts.balance} + ${amount}` })
+      .where(eq(accounts.id, toId));
+  });
+}
+```
 
-See the `references/` folder for detailed documentation on:
+### Soft Deletes
+```typescript
+export const users = pgTable('users', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
+  deletedAt: timestamp('deleted_at'),
+});
 
-- [Getting Started](references/getting_started.md) - First steps, introduction (7 pages)
-- [Fundamentals](references/fundamentals.md) - Controllers, providers, modules, DI (30 pages)
-- [Techniques](references/techniques.md) - Database, validation, caching, etc. (27 pages)
-- [Security](references/security.md) - Authentication, authorization (6 pages)
-- [GraphQL](references/graphql.md) - Apollo, resolvers, mutations (17 pages)
-- [Microservices](references/microservices.md) - Redis, Kafka, gRPC, NATS (10 pages)
-- [WebSockets](references/websockets.md) - Gateways, adapters (5 pages)
-- [OpenAPI](references/openapi.md) - Swagger documentation (5 pages)
-- [CLI](references/cli.md) - Workspaces, libraries (5 pages)
-- [Recipes](references/recipes.md) - CQRS, Prisma, health checks (12 pages)
+async softDelete(id: number) {
+  return this.db.database
+    .update(users)
+    .set({ deletedAt: new Date() })
+    .where(eq(users.id, id));
+}
+```
+
+### Complex Queries with Relations
+```typescript
+async getUsersWithPosts() {
+  return this.db.database
+    .select()
+    .from(users)
+    .leftJoin(posts, eq(posts.userId, users.id));
+}
+```

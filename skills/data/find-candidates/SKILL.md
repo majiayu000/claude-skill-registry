@@ -21,16 +21,29 @@ Use this skill when asked to find new words to add to `candidate_words.json` for
 
 **The `manage_candidates.py add` command now AUTOMATICALLY checks for duplicates.**
 
+### Duplicate Definition
+
+**A word is a duplicate ONLY if BOTH the headword AND reading match exactly.**
+
+- **Homophones** (same reading, different headword) are **NOT duplicates**
+  - Example: 線香 (せんこう) and 先行 (せんこう) are different words
+  - Example: 橋/箸/端 (all はし) are different words
+- **Homographs** (same headword, different reading) are **NOT duplicates**
+  - Example: 行く (いく) and 行く (ゆく) are different readings
+  - Example: 明日 (あした) and 明日 (あす) are different readings
+
+The script will show informational notes about homophones and homographs, but these do not block addition.
+
 When you run:
 ```bash
 python3 build/manage_candidates.py add "食べる" "たべる" "to eat"
 ```
 
 The script will:
-1. Check `entries_index.json` for matching reading or headword
-2. Check `candidate_words.json` for matching reading or word
-3. **REFUSE to add the word if any match is found**
-4. Display the existing match so you know why it was rejected
+1. Check `entries_index.json` for exact match (both headword AND reading)
+2. Check `candidate_words.json` for exact match (both word AND reading)
+3. **REFUSE to add ONLY if an exact match is found**
+4. Display informational notes about homophones/homographs (not blocks)
 
 ### Example of Automatic Rejection
 ```
@@ -39,6 +52,13 @@ ERROR: Duplicate detected!
   Exact match in dictionary: 00396_taberu (食べる / たべる)
 
 This word already exists. NOT adding to candidates.
+```
+
+### Example of Informational Note (NOT a rejection)
+```
+$ python3 build/manage_candidates.py add "線香" "せんこう" "incense stick"
+OK: Added 線香 (せんこう) to candidates.
+Note: Homophones exist: 先行 (03773_senkou), 専攻 (01587_senkou)
 ```
 
 ### Pre-Check Command (Optional)
@@ -53,14 +73,17 @@ To check multiple words at once before adding:
 python3 build/check_duplicate.py --batch "食べる:たべる" "飲む:のむ" "書く:かく"
 ```
 
-### Near-Duplicate Patterns to Watch
+### Near-Duplicate Patterns (Editorial Consideration)
 
-The automatic check catches exact matches. You should still watch for:
-- **Verb forms**: する verbs may exist as standalone nouns (勉強 vs 勉強する)
-- **Kanji variants**: 見る/観る, 聞く/聴く - check if one already covers the meaning
-- **Okurigana variations**: 行なう/行う, 現われる/現れる
-- **Prefix/suffix forms**: Check if 大～ or ～的 forms exist as part of other entries
-- **Reading variations**: Long vowels (おう vs おお), particles in readings
+The automatic check catches exact matches (same headword AND reading). These patterns require editorial judgment to decide if they should be separate entries or considered the same word:
+
+- **Verb forms**: する verbs may exist as standalone nouns (勉強 vs 勉強する) - often separate entries
+- **Kanji variants**: 見る/観る, 聞く/聴く - may share an entry if meanings overlap significantly
+- **Okurigana variations**: 行なう/行う, 現われる/現れる - usually the same word, different spellings
+- **Prefix/suffix forms**: Check if 大～ or ～的 forms warrant separate entries
+- **Reading variations**: Long vowels (おう vs おお), particles in readings - may need separate entries
+
+**Note:** Homophones (same reading, different kanji like 線香/先行) are always separate words and should each have their own entry.
 
 ## Eligibility Criteria (ALL must be met)
 

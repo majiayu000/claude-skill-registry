@@ -1,104 +1,92 @@
 ---
 name: gog
-description: Manage GOG.com library of DRM-free games, wishlist, and store deals
-category: gaming
+description: Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
+homepage: https://gogcli.sh
+metadata: {"espada":{"emoji":"🎮","requires":{"bins":["gog"]},"install":[{"id":"brew","kind":"brew","formula":"steipete/tap/gogcli","bins":["gog"],"label":"Install gog (brew)"}]}}
 ---
 
-# GOG Skill
+# gog
 
-## Overview
-Enables Claude to interact with GOG.com for managing DRM-free game library, tracking wishlist sales, claiming free games, and discovering classic and indie titles.
+Use `gog` for Gmail/Calendar/Drive/Contacts/Sheets/Docs. Requires OAuth setup.
 
-## Quick Install
+Setup (once)
+- `gog auth credentials /path/to/client_secret.json`
+- `gog auth add you@gmail.com --services gmail,calendar,drive,contacts,docs,sheets`
+- `gog auth list`
 
-```bash
-curl -sSL https://canifi.com/skills/gog/install.sh | bash
-```
+Common commands
+- Gmail search: `gog gmail search 'newer_than:7d' --max 10`
+- Gmail messages search (per email, ignores threading): `gog gmail messages search "in:inbox from:ryanair.com" --max 20 --account you@example.com`
+- Gmail send (plain): `gog gmail send --to a@b.com --subject "Hi" --body "Hello"`
+- Gmail send (multi-line): `gog gmail send --to a@b.com --subject "Hi" --body-file ./message.txt`
+- Gmail send (stdin): `gog gmail send --to a@b.com --subject "Hi" --body-file -`
+- Gmail send (HTML): `gog gmail send --to a@b.com --subject "Hi" --body-html "<p>Hello</p>"`
+- Gmail draft: `gog gmail drafts create --to a@b.com --subject "Hi" --body-file ./message.txt`
+- Gmail send draft: `gog gmail drafts send <draftId>`
+- Gmail reply: `gog gmail send --to a@b.com --subject "Re: Hi" --body "Reply" --reply-to-message-id <msgId>`
+- Calendar list events: `gog calendar events <calendarId> --from <iso> --to <iso>`
+- Calendar create event: `gog calendar create <calendarId> --summary "Title" --from <iso> --to <iso>`
+- Calendar create with color: `gog calendar create <calendarId> --summary "Title" --from <iso> --to <iso> --event-color 7`
+- Calendar update event: `gog calendar update <calendarId> <eventId> --summary "New Title" --event-color 4`
+- Calendar show colors: `gog calendar colors`
+- Drive search: `gog drive search "query" --max 10`
+- Contacts: `gog contacts list --max 20`
+- Sheets get: `gog sheets get <sheetId> "Tab!A1:D10" --json`
+- Sheets update: `gog sheets update <sheetId> "Tab!A1:B2" --values-json '[["A","B"],["1","2"]]' --input USER_ENTERED`
+- Sheets append: `gog sheets append <sheetId> "Tab!A:C" --values-json '[["x","y","z"]]' --insert INSERT_ROWS`
+- Sheets clear: `gog sheets clear <sheetId> "Tab!A2:Z"`
+- Sheets metadata: `gog sheets metadata <sheetId> --json`
+- Docs export: `gog docs export <docId> --format txt --out /tmp/doc.txt`
+- Docs cat: `gog docs cat <docId>`
 
-Or manually:
-```bash
-cp -r skills/gog ~/.canifi/skills/
-```
+Calendar Colors
+- Use `gog calendar colors` to see all available event colors (IDs 1-11)
+- Add colors to events with `--event-color <id>` flag
+- Event color IDs (from `gog calendar colors` output):
+  - 1: #a4bdfc
+  - 2: #7ae7bf
+  - 3: #dbadff
+  - 4: #ff887c
+  - 5: #fbd75b
+  - 6: #ffb878
+  - 7: #46d6db
+  - 8: #e1e1e1
+  - 9: #5484ed
+  - 10: #51b749
+  - 11: #dc2127
 
-## Setup
+Email Formatting
+- Prefer plain text. Use `--body-file` for multi-paragraph messages (or `--body-file -` for stdin).
+- Same `--body-file` pattern works for drafts and replies.
+- `--body` does not unescape `\n`. If you need inline newlines, use a heredoc or `$'Line 1\n\nLine 2'`.
+- Use `--body-html` only when you need rich formatting.
+- HTML tags: `<p>` for paragraphs, `<br>` for line breaks, `<strong>` for bold, `<em>` for italic, `<a href="url">` for links, `<ul>`/`<li>` for lists.
+- Example (plain text via stdin):
+  ```bash
+  gog gmail send --to recipient@example.com \
+    --subject "Meeting Follow-up" \
+    --body-file - <<'EOF'
+  Hi Name,
 
-Configure via [canifi-env](https://canifi.com/setup/scripts):
+  Thanks for meeting today. Next steps:
+  - Item one
+  - Item two
 
-```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
+  Best regards,
+  Your Name
+  EOF
+  ```
+- Example (HTML list):
+  ```bash
+  gog gmail send --to recipient@example.com \
+    --subject "Meeting Follow-up" \
+    --body-html "<p>Hi Name,</p><p>Thanks for meeting today. Here are the next steps:</p><ul><li>Item one</li><li>Item two</li></ul><p>Best regards,<br>Your Name</p>"
+  ```
 
-canifi-env set GOG_EMAIL "your-email@example.com"
-```
-
-## Privacy & Authentication
-
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
-
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
-
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
-```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
-```
-
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
-
-## Capabilities
-- Browse and manage DRM-free game library
-- Track wishlist and sale notifications
-- Claim giveaway games
-- View purchase history
-- Access GOG Galaxy features
-
-## Usage Examples
-### Example 1: Wishlist Sales
-```
-User: "Are any of my GOG wishlist games on sale?"
-Claude: I'll check your GOG wishlist for current discounts.
-```
-
-### Example 2: Library Check
-```
-User: "What games do I own on GOG?"
-Claude: I'll browse your GOG library and list your DRM-free collection.
-```
-
-### Example 3: Free Games
-```
-User: "Any free games on GOG right now?"
-Claude: I'll check for current GOG giveaways and claim any available.
-```
-
-## Authentication Flow
-1. Navigate to gog.com via Playwright MCP
-2. Click "Sign In" button
-3. Enter email and password
-4. Handle 2FA if enabled
-5. Maintain session for subsequent requests
-
-## Error Handling
-- Login Failed: Retry authentication up to 3 times, then notify via iMessage
-- Session Expired: Re-authenticate automatically
-- 2FA Required: Wait for code via email
-- Rate Limited: Implement exponential backoff
-- Download Issues: Check offline installers availability
-
-## Self-Improvement Instructions
-When encountering new UI patterns:
-1. Document GOG interface changes
-2. Update selectors for new layouts
-3. Track giveaway schedules
-4. Monitor Galaxy integration
-
-## Notes
-- All games are DRM-free
-- Offline installers available
-- GOG Galaxy optional but recommended
-- GOG Connect for Steam library additions
+Notes
+- Set `GOG_ACCOUNT=you@gmail.com` to avoid repeating `--account`.
+- For scripting, prefer `--json` plus `--no-input`.
+- Sheets values can be passed via `--values-json` (recommended) or as inline rows.
+- Docs supports export/cat/copy. In-place edits require a Docs API client (not in gog).
+- Confirm before sending mail or creating events.
+- `gog gmail search` returns one row per thread; use `gog gmail messages search` when you need every individual email returned separately.

@@ -1,182 +1,289 @@
 ---
 name: ui-testing
-description: Visual testing - catch invisible buttons, broken layouts, contrast
+description: |
+  Browser automation skill for UI testing via Chrome MCP tools. Use when:
+  (1) QA Agent needs to verify UI visually or test interactions,
+  (2) UI/UX Designer needs to check responsive design or component states,
+  (3) Frontend Dev needs quick visual verification during development,
+  (4) Test Writer needs to document user flows with screenshots/GIFs,
+  (5) Any agent needs to test web interfaces, record demos, or debug UI issues.
+  Capabilities: screenshots, interaction testing, accessibility checks, GIF recording,
+  responsive testing, console/network debugging.
 ---
 
-# UI Verification Skill
+# UI Testing Skill
 
-*Load with: ui-web.md or ui-mobile.md*
+Browser automation for UI verification using Chrome MCP tools.
 
-## Purpose
+## Quick Reference
 
-Quick verification that generated UI meets accessibility standards. Run these checks after creating any new UI components.
+| Task | Tool | Key Parameters |
+|------|------|----------------|
+| Screenshot | `computer` | `action: "screenshot"` |
+| Click | `computer` | `action: "left_click", coordinate: [x,y]` or `ref: "ref_1"` |
+| Type | `computer` | `action: "type", text: "..."` |
+| Find element | `find` | `query: "search button"` |
+| Read page | `read_page` | `filter: "interactive"` or `"all"` |
+| Navigate | `navigate` | `url: "https://..."` |
+| Resize | `resize_window` | `width: 1920, height: 1080` |
+| Record GIF | `gif_creator` | `action: "start_recording"` |
+| Console | `read_console_messages` | `pattern: "error"` |
+| Network | `read_network_requests` | `urlPattern: "/api/"` |
 
----
+All tools prefixed with `mcp__claude-in-chrome__`.
 
-## Pre-Flight Checklist
+## Workflow: Visual Testing
 
-### Before Shipping ANY UI:
+### 1. Setup Test Session
+
+```
+1. tabs_context_mcp (createIfEmpty: true)
+2. tabs_create_mcp  → get new tabId
+3. navigate (url: target_url, tabId: {tab})
+4. computer (action: "wait", duration: 2, tabId: {tab})
+5. computer (action: "screenshot", tabId: {tab})
+```
+
+### 2. Responsive Testing
+
+Test at standard breakpoints:
+
+| Device | Width | Height |
+|--------|-------|--------|
+| Mobile | 375 | 667 |
+| Tablet | 768 | 1024 |
+| Desktop | 1440 | 900 |
+| Wide | 1920 | 1080 |
+
+```
+1. resize_window (width: 375, height: 667, tabId: {tab})
+2. computer (action: "wait", duration: 1, tabId: {tab})
+3. computer (action: "screenshot", tabId: {tab})
+4. Repeat for other breakpoints
+```
+
+### 3. Component State Testing
+
+Test hover, active, focus states:
+
+```
+# Hover state
+1. find (query: "submit button", tabId: {tab})
+2. computer (action: "hover", ref: "ref_X", tabId: {tab})
+3. computer (action: "screenshot", tabId: {tab})
+
+# Focus state (tab to element)
+4. computer (action: "key", text: "Tab", tabId: {tab})
+5. computer (action: "screenshot", tabId: {tab})
+
+# Click state
+6. computer (action: "left_click", ref: "ref_X", tabId: {tab})
+7. computer (action: "screenshot", tabId: {tab})
+```
+
+## Workflow: Interaction Testing
+
+### Form Testing
+
+```
+1. find (query: "email input", tabId: {tab})
+2. computer (action: "left_click", ref: "ref_X", tabId: {tab})
+3. computer (action: "type", text: "test@example.com", tabId: {tab})
+4. computer (action: "key", text: "Tab", tabId: {tab})  # Move to next field
+5. computer (action: "type", text: "password123", tabId: {tab})
+6. computer (action: "screenshot", tabId: {tab})  # Capture filled form
+7. find (query: "submit button", tabId: {tab})
+8. computer (action: "left_click", ref: "ref_Y", tabId: {tab})
+9. computer (action: "wait", duration: 2, tabId: {tab})
+10. computer (action: "screenshot", tabId: {tab})  # Capture result
+```
+
+### Navigation Testing
+
+```
+1. find (query: "navigation menu", tabId: {tab})
+2. computer (action: "left_click", ref: "ref_X", tabId: {tab})
+3. computer (action: "wait", duration: 1, tabId: {tab})
+4. computer (action: "screenshot", tabId: {tab})
+5. Check URL changed: read_page to verify content
+```
+
+### Error State Testing
+
+```
+# Test validation errors
+1. find (query: "email input", tabId: {tab})
+2. computer (action: "left_click", ref: "ref_X", tabId: {tab})
+3. computer (action: "type", text: "invalid-email", tabId: {tab})
+4. computer (action: "key", text: "Tab", tabId: {tab})
+5. computer (action: "screenshot", tabId: {tab})  # Capture error state
+6. read_page (tabId: {tab})  # Verify error message in DOM
+```
+
+## Workflow: Accessibility Testing
+
+### Read Accessibility Tree
+
+```
+1. read_page (tabId: {tab}, filter: "all")
+   → Returns full a11y tree with roles, names, states
+
+2. read_page (tabId: {tab}, filter: "interactive")
+   → Returns only interactive elements (buttons, links, inputs)
+```
+
+### Accessibility Checklist
+
+| Check | How to Verify |
+|-------|---------------|
+| All buttons have labels | `read_page` → check button names not empty |
+| Images have alt text | `read_page` → check img elements have names |
+| Form inputs have labels | `read_page` → verify input descriptions |
+| Focus visible | Tab through elements, screenshot each |
+| Color contrast | Visual inspection of screenshots |
+| Keyboard navigable | Use `key: "Tab"` to traverse |
+
+### Keyboard Navigation Test
+
+```
+1. computer (action: "key", text: "Tab", tabId: {tab})
+2. computer (action: "screenshot", tabId: {tab})  # Focus indicator visible?
+3. Repeat Tab, screenshot each focused element
+4. computer (action: "key", text: "Return", tabId: {tab})  # Activate element
+5. computer (action: "screenshot", tabId: {tab})
+```
+
+## Workflow: GIF Recording
+
+### Record User Flow
+
+```
+# Start recording
+1. gif_creator (action: "start_recording", tabId: {tab})
+2. computer (action: "screenshot", tabId: {tab})  # First frame
+
+# Perform actions (each screenshot captures a frame)
+3. computer (action: "left_click", coordinate: [x,y], tabId: {tab})
+4. computer (action: "screenshot", tabId: {tab})
+5. computer (action: "type", text: "...", tabId: {tab})
+6. computer (action: "screenshot", tabId: {tab})
+... continue flow ...
+
+# Stop and export
+7. computer (action: "screenshot", tabId: {tab})  # Last frame
+8. gif_creator (action: "stop_recording", tabId: {tab})
+9. gif_creator (action: "export", download: true, filename: "user-flow.gif", tabId: {tab})
+```
+
+### GIF Options
+
+```
+gif_creator (
+  action: "export",
+  download: true,
+  filename: "demo.gif",
+  options: {
+    showClickIndicators: true,   # Orange circles at clicks
+    showActionLabels: true,      # Labels for actions
+    showProgressBar: true,       # Progress bar at bottom
+    quality: 10                  # 1-30, lower = better quality
+  },
+  tabId: {tab}
+)
+```
+
+## Workflow: Debugging
+
+### Console Errors
+
+```
+1. read_console_messages (tabId: {tab}, onlyErrors: true)
+   → Shows only errors and exceptions
+
+2. read_console_messages (tabId: {tab}, pattern: "TypeError|ReferenceError")
+   → Filter specific error types
+
+3. read_console_messages (tabId: {tab}, pattern: "MyApp", clear: true)
+   → App-specific logs, clear after reading
+```
+
+### Network Requests
+
+```
+1. read_network_requests (tabId: {tab}, urlPattern: "/api/")
+   → Filter API calls only
+
+2. read_network_requests (tabId: {tab}, limit: 50)
+   → Last 50 requests
+
+3. read_network_requests (tabId: {tab}, clear: true)
+   → Clear after reading to track new requests
+```
+
+### JavaScript Execution
+
+```
+javascript_tool (
+  action: "javascript_exec",
+  text: "document.querySelector('.error-message')?.textContent",
+  tabId: {tab}
+)
+```
+
+## Test Report Format
+
+After testing, report findings:
 
 ```markdown
-## Visibility Check
-- [ ] All buttons have visible background OR border
-- [ ] No text is same color as its background
-- [ ] All text meets 4.5:1 contrast ratio
-- [ ] Ghost/text buttons have visible borders
+## UI Test Report
 
-## Touch/Click Targets
-- [ ] All buttons are minimum 44px height
-- [ ] Icon buttons are minimum 44x44px
-- [ ] Adequate spacing between clickable elements
+**Page:** {url}
+**Date:** {date}
+**Tester:** {agent}
 
-## States
-- [ ] Hover states visible (web)
-- [ ] Pressed states visible (mobile)
-- [ ] Focus rings on keyboard navigation
-- [ ] Disabled states visually distinct (opacity 0.5)
-- [ ] Loading states show indicators
+### Visual Verification
+- [ ] Layout matches design spec
+- [ ] Responsive at mobile (375px)
+- [ ] Responsive at tablet (768px)
+- [ ] Responsive at desktop (1440px)
 
-## Dark Mode (if applicable)
-- [ ] Text readable on dark backgrounds
-- [ ] Borders visible in dark mode
-- [ ] No gray-400 text on dark backgrounds
+### Interaction Testing
+- [ ] Forms submit correctly
+- [ ] Navigation works
+- [ ] Error states display properly
+- [ ] Loading states visible
 
-## Responsive (web)
-- [ ] No horizontal scroll on mobile (320px)
-- [ ] Content readable at all breakpoints
-- [ ] Touch targets adequate on mobile
+### Accessibility
+- [ ] All interactive elements keyboard accessible
+- [ ] Focus indicators visible
+- [ ] Labels on all inputs
+- [ ] Alt text on images
+
+### Issues Found
+| Severity | Issue | Screenshot |
+|----------|-------|------------|
+| High | {issue} | {screenshot_id} |
+
+### Recommendations
+- {recommendation 1}
+- {recommendation 2}
 ```
 
----
+## Tips
 
-## Quick Contrast Check
+1. **Always get tab context first** - `tabs_context_mcp` before any operation
+2. **Wait after navigation** - Pages need time to load
+3. **Use `find` for elements** - More reliable than coordinates
+4. **Screenshot after each action** - Captures state for verification
+5. **Clear console/network** - Before testing to isolate new issues
+6. **Name GIFs descriptively** - `login-flow.gif` not `recording.gif`
 
-### Use Browser DevTools
-```
-1. Right-click element → Inspect
-2. In Styles panel, click on color value
-3. Look for contrast ratio display
-4. Must show ✓ for AA compliance (4.5:1 for text)
-```
+## Common Issues
 
-### Online Tools
-- https://webaim.org/resources/contrastchecker/
-- https://coolors.co/contrast-checker
-
-### Tailwind Safe Combinations
-
-```
-LIGHT MODE (on white bg):
-✓ text-gray-900  (#111827) = 16:1
-✓ text-gray-800  (#1F2937) = 12:1
-✓ text-gray-700  (#374151) = 9:1
-✓ text-gray-600  (#4B5563) = 6:1
-✗ text-gray-500  (#6B7280) = 4.6:1 (barely)
-✗ text-gray-400  (#9CA3AF) = 2.6:1 (FAILS)
-
-DARK MODE (on gray-900 bg):
-✓ text-white     (#FFFFFF) = 16:1
-✓ text-gray-100  (#F3F4F6) = 13:1
-✓ text-gray-200  (#E5E7EB) = 11:1
-✓ text-gray-300  (#D1D5DB) = 8:1
-✗ text-gray-400  (#9CA3AF) = 5:1 (barely)
-✗ text-gray-500  (#6B7280) = 3:1 (FAILS)
-```
-
----
-
-## Common Fixes
-
-### Invisible Button
-```tsx
-// PROBLEM: No visible boundary
-<button className="text-gray-500">Click</button>
-
-// FIX: Add background OR border
-<button className="bg-gray-100 text-gray-900 px-4 py-3 rounded-lg">
-  Click
-</button>
-// OR
-<button className="border border-gray-300 text-gray-700 px-4 py-3 rounded-lg">
-  Click
-</button>
-```
-
-### Low Contrast Text
-```tsx
-// PROBLEM: Light gray on white
-<p className="text-gray-400">Secondary text</p>
-
-// FIX: Use darker gray
-<p className="text-gray-600">Secondary text</p>
-```
-
-### Missing Focus State
-```tsx
-// PROBLEM: Focus removed without replacement
-<button className="outline-none">Submit</button>
-
-// FIX: Add visible focus ring
-<button className="outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
-  Submit
-</button>
-```
-
-### Small Touch Target
-```tsx
-// PROBLEM: Too small for fingers
-<button className="p-1 text-sm">×</button>
-
-// FIX: Minimum 44px
-<button className="w-11 h-11 flex items-center justify-center">×</button>
-```
-
-### Dark Mode Broken
-```tsx
-// PROBLEM: Same colors in both modes
-<p className="text-gray-400">Text</p>
-
-// FIX: Adjust for dark mode
-<p className="text-gray-600 dark:text-gray-300">Text</p>
-```
-
----
-
-## Automated Checks (Optional)
-
-### ESLint Plugin
-```bash
-npm install -D eslint-plugin-jsx-a11y
-```
-
-```json
-// .eslintrc
-{
-  "extends": ["plugin:jsx-a11y/recommended"]
-}
-```
-
-### Playwright Quick Test
-```typescript
-// e2e/accessibility.spec.ts
-import { test, expect } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
-
-test('no accessibility violations', async ({ page }) => {
-  await page.goto('/');
-  const results = await new AxeBuilder({ page }).analyze();
-  expect(results.violations).toEqual([]);
-});
-```
-
----
-
-## When to Use Full Testing
-
-Add comprehensive visual testing (Playwright screenshots, Storybook) when:
-- Building a component library
-- Multiple developers on UI
-- Frequent UI changes
-- Design system enforcement needed
-
-For solo projects or MVPs, the checklist above is sufficient.
+| Problem | Solution |
+|---------|----------|
+| Element not found | Wait longer, check selector |
+| Click missed | Use `ref` from `find` instead of coordinates |
+| Page not loaded | Increase wait duration |
+| GIF too large | Use fewer frames, lower quality |
+| Tab invalid | Call `tabs_context_mcp` for fresh IDs |

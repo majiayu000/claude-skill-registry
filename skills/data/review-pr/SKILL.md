@@ -1,244 +1,236 @@
 ---
 name: review-pr
-description: Reviews PR comments from GitHub (Copilot, reviewers), evaluates against actual code, replies with reasoning, and resolves threads. Triggers on "review pr comments", "address pr feedback", "fix pr comments", or "review copilot suggestions".
+description: Review GitHub pull requests with structured feedback and actionable comments
+version: 1.1.0
+tags: [git, github, pr, code-review, collaboration]
+owner: engineering
+status: active
 ---
 
-# Review PR Comments
+# Review PR Skill
 
-Fetch, evaluate, and address PR review comments from GitHub. Many reviewer comments reference outdated code or misunderstand the logic — always verify against the actual codebase before acting.
+## Overview
 
-## Process
+Provide structured and actionable PR reviews with clear priorities.
 
-**This is a single-pass flow.** Fetch comments, read files, evaluate, present assessment, reply to all comments, resolve all threads, and show the final summary — all without pausing for user confirmation.
+## Usage
 
-### 1. Find the PR
+```
+/review-pr
+```
 
-If no PR number is provided, find the PR for the current branch:
+## Identity
+**Role**: Code Reviewer
+**Objective**: Provide thorough, constructive, and actionable feedback on pull requests to improve code quality and share knowledge.
+
+## Review Philosophy
+
+### Core Principles
+1. **Be constructive**: Suggest improvements, don't just criticize
+2. **Be specific**: Point to exact lines, provide examples
+3. **Be timely**: First review within 4 hours (working hours)
+4. **Be educational**: Explain the "why" behind suggestions
+5. **Be respectful**: Assume good intent, praise good work
+
+### Feedback Hierarchy
+Prioritize feedback by impact:
+1. **Blockers** (must fix): Security issues, bugs, breaking changes
+2. **Should fix**: Performance issues, missing tests, unclear code
+3. **Suggestions**: Style improvements, alternative approaches
+4. **Nitpicks**: Minor preferences (prefix with "nit:")
+
+## Review Checklist
+
+### Functionality
+- [ ] Code does what the PR description claims
+- [ ] Edge cases are handled
+- [ ] Error handling is appropriate
+- [ ] No obvious bugs or logic errors
+
+### Security
+- [ ] No hardcoded secrets or credentials
+- [ ] Input validation present
+- [ ] No SQL injection, XSS, or CSRF vulnerabilities
+- [ ] Authentication/authorization properly implemented
+- [ ] Sensitive data properly handled
+
+### Testing
+- [ ] Tests cover new functionality
+- [ ] Tests cover edge cases
+- [ ] Tests are readable and maintainable
+- [ ] No flaky tests introduced
+
+### Code Quality
+- [ ] Code is readable and self-documenting
+- [ ] Functions/methods have single responsibility
+- [ ] No unnecessary complexity
+- [ ] Follows project conventions
+
+### Performance
+- [ ] No N+1 queries
+- [ ] Appropriate caching where needed
+- [ ] No blocking operations in hot paths
+- [ ] Resource cleanup (connections, files, etc.)
+
+### Documentation
+- [ ] Public APIs documented
+- [ ] Complex logic has comments
+- [ ] README updated if needed
+- [ ] Breaking changes documented
+
+## Workflow
+
+### Step 1: Understand Context
+```bash
+# Get PR details
+gh pr view <number> --json title,body,files,commits
+
+# See what changed
+gh pr diff <number>
+```
+
+Read:
+1. PR description (what and why)
+2. Related issues (context)
+3. Commit messages (how it evolved)
+
+### Step 2: High-Level Review
+1. Does the approach make sense?
+2. Is the scope appropriate?
+3. Are there architectural concerns?
+
+### Step 3: Detailed Review
+For each changed file:
+1. Read the full file context (not just diff)
+2. Check for issues from checklist
+3. Note positive patterns to praise
+
+### Step 4: Write Feedback
+
+#### Comment Types
+
+**Blocking (Request Changes)**:
+```
+🚫 **Blocking**: SQL injection vulnerability
+
+This query uses string interpolation which allows injection:
+`db.query(f"SELECT * FROM users WHERE id = {user_id}")`
+
+**Fix**: Use parameterized queries:
+`db.query("SELECT * FROM users WHERE id = ?", [user_id])`
+```
+
+**Should Fix (Request Changes)**:
+```
+⚠️ **Should fix**: Missing error handling
+
+If `fetchUser()` throws, the error bubbles up unhandled.
+
+**Suggestion**: Wrap in try-catch and return appropriate error response.
+```
+
+**Suggestion (Comment)**:
+```
+💡 **Suggestion**: Consider using `Map` instead of object
+
+For frequent lookups, `Map` has better performance:
+```js
+const cache = new Map();
+cache.get(key);
+```
+
+**Nitpick (Comment)**:
+```
+nit: Variable name `d` is unclear. Consider `data` or `userData`.
+```
+
+**Praise (Comment)**:
+```
+✨ Great use of the builder pattern here! This makes the API much more intuitive.
+```
+
+### Step 5: Submit Review
+
+Choose status based on findings:
+- **Approve**: No blockers, good to merge
+- **Request Changes**: Has blockers that must be addressed
+- **Comment**: Feedback without blocking
 
 ```bash
-gh pr list --head $(git branch --show-current) --json number,title --jq '.[0]'
+gh pr review <number> --approve --body "LGTM! Nice refactoring."
+gh pr review <number> --request-changes --body "See comments for required fixes."
+gh pr review <number> --comment --body "Some suggestions, but looks good overall."
 ```
 
-### 2. Fetch Review Comments
+## AI-Assisted Review
 
-Fetch comments with their IDs:
+When using AI for review assistance:
+1. **Verify findings**: AI can hallucinate - check each suggestion
+2. **Add context**: AI may miss project-specific patterns
+3. **Human judgment**: Security and architecture need human review
+4. **Acknowledge**: Don't claim AI suggestions as your own insights
 
-```bash
-gh api repos/{owner}/{repo}/pulls/{number}/comments --jq '.[] | {id: .id, path: .path, line: (.line // .original_line), body: .body, in_reply_to_id: .in_reply_to_id}'
-```
+## Response to Feedback
 
-Filter to only top-level comments (where `in_reply_to_id` is null).
+When author responds to your review:
+1. Re-review addressed comments promptly
+2. Acknowledge good changes
+3. Resolve comment threads when satisfied
+4. Update review status if blockers are fixed
 
-### 3. Read Referenced Files (Critical Step)
+## Review Metrics
 
-**Before evaluating any comment, read the actual current code.** Reviewers often:
-- Reference line numbers from an older commit
-- Misread the logic
-- Comment on code that's already been fixed
+Track for continuous improvement:
+- **Review time**: First review within 4 hours
+- **Review cycles**: Aim for < 3 cycles to merge
+- **Comment quality**: Actionable vs nitpicky ratio
+- **Author satisfaction**: Are reviews helpful?
 
-For each unique file path, read the file and verify:
-- Does the line number match what the reviewer is describing?
-- Has the issue already been addressed?
-- Is the reviewer's understanding of the code correct?
+## Anti-Patterns
 
-### 4. Evaluate All Comments
+**DO NOT**:
+- Block on style preferences covered by linters
+- Leave vague comments ("this is wrong")
+- Request changes then go offline
+- Approve without actually reviewing
+- Be condescending or dismissive
+- Bikeshed on trivial matters
+- Review your own PRs for merge
 
-Categorize each comment:
+## Output Format
 
-| Category | Criteria | Response |
-|----------|----------|----------|
-| **Already addressed** | Issue was fixed in a subsequent commit, or reviewer misread the code | Explain what the code actually does |
-| **Fix** | Valid bug, security issue, or typo that exists in current code | Implement the fix |
-| **Won't fix** | Over-engineering, style preference, feature request, or would break consistency | Explain reasoning |
+After reviewing, provide summary:
 
-### 5. Present Assessment, Reply, and Resolve
-
-**Do all of this in one pass — no pausing for user confirmation.** Present your assessment, reply to each comment, and resolve all threads immediately.
-
-Present ALL comments with your assessment:
-
-```
-## PR #[number]: [title]
-
-Found [X] review comments. Here's my assessment:
-
----
-
-### 1. `path/file.ts:42` — **Already addressed**
-> [comment body]
-
-**Issue**: Reviewer concerned about X
-**Actual code**: Lines 26-34 already handle this — [brief explanation]
-
----
-
-### 2. `path/other.ts:15` — **Won't fix**
-> [comment body]
-
-**Issue**: Reviewer wants X
-**Why skip**: [Over-engineering / Matches existing pattern / Feature request / etc]
-
----
-
-### 3. `path/file.ts:88` — **Fix**
-> [comment body]
-
-**Issue**: Typo in user-facing string
-**Proposed change**: Change "Jumpope" to "Jump Rope"
-
----
-
-## Summary
-- **Already addressed**: 6 comments
-- **Won't fix**: 8 comments
-- **Fix**: 2 comments
-```
-
-Then **immediately** reply to all comments and resolve all threads (steps 6-7 below). Don't wait for user input.
-
-### 6. Reply to Comments
-
-For **Already addressed** comments, reply explaining the current state:
-
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr_number}/comments/{comment_id}/replies \
-  -X POST \
-  -f body="This is already handled — lines 26-34 fetch the authenticated user and verify user.id === state before proceeding. If they don't match, it rejects with a CSRF error."
-```
-
-For **Won't fix** comments, reply with concise reasoning:
-
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr_number}/comments/{comment_id}/replies \
-  -X POST \
-  -f body="Won't fix — this matches the exact pattern used for the other integrations in the same file. Changing just this one would be inconsistent."
-```
-
-For **Fix** comments, implement the fix first, then reply:
-
-```bash
-gh api repos/{owner}/{repo}/pulls/{pr_number}/comments/{comment_id}/replies \
-  -X POST \
-  -f body="Fixed in abc1234"
-```
-
-### 7. Resolve All Threads
-
-First, get all unresolved thread IDs:
-
-```bash
-cat << 'QUERY' | gh api graphql --input - --jq '.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false) | {threadId: .id, commentId: .comments.nodes[0].databaseId}'
-{"query": "query($owner: String!, $repo: String!, $pr: Int!) { repository(owner: $owner, name: $repo) { pullRequest(number: $pr) { reviewThreads(first: 100) { nodes { id isResolved comments(first: 1) { nodes { databaseId } } } } } } }", "variables": {"owner": "OWNER", "repo": "REPO", "pr": 123}}
-QUERY
-```
-
-Then resolve each thread by ID:
-
-```bash
-cat << 'QUERY' | gh api graphql --input -
-{"query": "mutation { resolveReviewThread(input: {threadId: \"THREAD_ID_HERE\"}) { thread { isResolved } } }"}
-QUERY
-```
-
-### 8. Final Summary
-
-After replying and resolving, show the final summary:
-
-```
-## Review Complete
-
-All 16 conversations resolved.
-
-### Already addressed (6)
-| Comment | Explanation |
-|---------|-------------|
-| State validation | Already validates user.id === state at lines 26-34 |
-| HR zones docs | Comments already say "milliseconds", not "percentage" |
-
-### Won't fix (8)
-| Comment | Reason |
-|---------|--------|
-| Form semantics | Matches existing pattern for other integrations |
-| Rate limiting | Self-heals on next cron run, over-engineering |
-
-### Fixed (2)
-| Commit | Fix |
-|--------|-----|
-| `abc123` | Fixed typo "Jumpope" → "Jump Rope" |
-```
-
-**Important**: The entire flow (assess → reply → resolve → summarize) happens in one pass. Don't pause to ask "should I proceed?" — just do it.
-
----
-
-## Evaluation Guidelines
-
-### Already Addressed — Explain, don't fix
-
-Common patterns where the reviewer is wrong:
-
-- **Reviewer references wrong line numbers**: Code has changed since they reviewed
-- **Reviewer misread the logic**: e.g., thinks condition is inverted when it's correct
-- **Issue was already fixed**: Subsequent commits addressed it
-- **Code exists elsewhere**: The check/validation happens in a different function
-
-Response template:
-> "This is already handled — [specific location] does [what it does]. [Brief explanation of why it's correct]."
-
-### Fix — Implement and commit
-
-Only fix issues that:
-- Actually exist in the current code
-- Are bugs, security issues, or typos
-- Can be verified by reading the file
-
-### Won't Fix — Explain reasoning
-
-| Reason | Response template |
-|--------|-------------------|
-| **Matches existing pattern** | "Won't fix — this matches the exact pattern of X, Y, and Z in the same file. Changing just this would be inconsistent." |
-| **Over-engineering** | "Won't fix — [the failure mode] will fail obviously / self-heal on retry / is handled by [existing mechanism]." |
-| **Feature request** | "Won't fix — this is a feature request rather than a bug. The current flow works: [what it does]. Out of scope for this PR." |
-| **Product decision** | "Won't fix — this is a product decision, not a bug. [Current behavior] is intentional because [reason]." |
-| **Would break things** | "Won't fix — this would break [existing behavior / consistency with X]." |
-
----
-
-## Common Reviewer Misunderstandings
-
-### Inverted conditions
-Reviewers often misread boolean logic. Example:
-```typescript
-// "Refresh if expires in less than 5 minutes"
-if (expiry.getTime() - Date.now() > 5 * 60 * 1000) {
-  return integration.access_token!; // Token is fresh, return early
+```json
+{
+  "pr_number": 123,
+  "status": "request_changes",
+  "summary": "Good implementation but has a security issue in auth middleware",
+  "blockers": [
+    {
+      "file": "src/middleware/auth.ts",
+      "line": 45,
+      "issue": "JWT not verified before trusting claims"
+    }
+  ],
+  "suggestions": [
+    {
+      "file": "src/services/user.ts",
+      "line": 78,
+      "issue": "Consider caching user lookup"
+    }
+  ],
+  "praise": [
+    "Excellent test coverage",
+    "Clear separation of concerns"
+  ]
 }
-// Proceed to refresh...
 ```
-Reviewer says: "Condition is inverted, tokens never refresh"
-Reality: Condition is correct — returns early when fresh, refreshes when stale.
 
-### Missing validation that exists
-Reviewer says: "State parameter not validated"
-Reality: Lines 26-34 already validate it.
-**Always check if the validation exists before agreeing.**
+## Outputs
 
-### Tokens in error messages
-Reviewer says: "Sensitive tokens logged in error messages"
-Reality: The error logs the API's error response, not our tokens.
-**Read what's actually in the error string.**
+- PR review summary with blockers and suggestions.
 
-### Code that doesn't exist at that line
-Reviewer references line 174, but file only has 161 lines.
-**The file has changed since the review.**
+## Related Skills
 
----
-
-## Key Principles
-
-1. **Single-pass execution**: Don't pause to ask "should I proceed?" — assess, reply, resolve, and summarize in one flow
-2. **Verify before acting**: Always read the actual file before evaluating a comment
-3. **Trust the codebase**: If existing patterns work, new code should match them
-4. **Explain, don't just dismiss**: Skipped comments deserve clear explanations
-5. **Resolve everything**: All threads should be resolved, whether fixed or explained
-6. **Be concise**: Responses should be 1-2 sentences, not paragraphs
+- `/pr-create` - Create PRs with required structure

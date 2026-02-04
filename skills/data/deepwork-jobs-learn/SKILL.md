@@ -1,6 +1,70 @@
 ---
 name: deepwork_jobs.learn
-description: "Analyzes conversation history to improve job instructions and capture learnings. Use after running a job to refine it."---
+description: "Analyzes conversation history to improve job instructions and capture learnings. Use after running a job to refine it."
+hooks:
+  Stop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **Conversation Analyzed**: Did the agent review the conversation for DeepWork job executions?
+            2. **Confusion Identified**: Did the agent identify points of confusion, errors, or inefficiencies?
+            3. **Instructions Improved**: Were job instructions updated to address identified issues?
+            4. **Instructions Concise**: Are instructions free of redundancy and unnecessary verbosity?
+            5. **Shared Content Extracted**: Is lengthy/duplicated content extracted into referenced files?
+            6. **doc spec Reviewed (if applicable)**: For jobs with doc spec outputs, were doc spec-related learnings identified?
+            7. **doc spec Updated (if applicable)**: Were doc spec files updated with improved quality criteria or structure?
+            8. **Bespoke Learnings Captured**: Were run-specific learnings added to AGENTS.md?
+            9. **File References Used**: Do AGENTS.md entries reference other files where appropriate?
+            10. **Working Folder Correct**: Is AGENTS.md in the correct working folder for the job?
+            11. **Generalizable Separated**: Are generalizable improvements in instructions, not AGENTS.md?
+            12. **Sync Complete**: Has `deepwork sync` been run if instructions were modified?
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+  SubagentStop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **Conversation Analyzed**: Did the agent review the conversation for DeepWork job executions?
+            2. **Confusion Identified**: Did the agent identify points of confusion, errors, or inefficiencies?
+            3. **Instructions Improved**: Were job instructions updated to address identified issues?
+            4. **Instructions Concise**: Are instructions free of redundancy and unnecessary verbosity?
+            5. **Shared Content Extracted**: Is lengthy/duplicated content extracted into referenced files?
+            6. **doc spec Reviewed (if applicable)**: For jobs with doc spec outputs, were doc spec-related learnings identified?
+            7. **doc spec Updated (if applicable)**: Were doc spec files updated with improved quality criteria or structure?
+            8. **Bespoke Learnings Captured**: Were run-specific learnings added to AGENTS.md?
+            9. **File References Used**: Do AGENTS.md entries reference other files where appropriate?
+            10. **Working Folder Correct**: Is AGENTS.md in the correct working folder for the job?
+            11. **Generalizable Separated**: Are generalizable improvements in instructions, not AGENTS.md?
+            12. **Sync Complete**: Has `deepwork sync` been run if instructions were modified?
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+---
 
 # deepwork_jobs.learn
 
@@ -377,11 +441,11 @@ Updated job instructions and created AGENTS.md with bespoke learnings. To get th
 Core commands for managing DeepWork jobs. These commands help you define new multi-step
 workflows and learn from running them.
 
-The `new_job` workflow guides you through defining and implementing a new job by
+The `define` command guides you through an interactive process to create a new job by
 asking structured questions about your workflow, understanding each step's inputs and outputs,
-reviewing the specification, and generating all necessary files.
+and generating all necessary files.
 
-The `learn` skill reflects on conversations where DeepWork jobs were run, identifies
+The `learn` command reflects on conversations where DeepWork jobs were run, identifies
 confusion or inefficiencies, and improves job instructions. It also captures bespoke
 learnings specific to the current run into AGENTS.md files in the working folder.
 
@@ -413,9 +477,7 @@ Use branch format: `deepwork/deepwork_jobs-[instance]-YYYYMMDD`
 
 ## Quality Validation
 
-**Before completing this step, you MUST have your work reviewed against the quality criteria below.**
-
-Use a sub-agent (Haiku model) to review your work against these criteria:
+Stop hooks will automatically validate your work. The loop continues until all criteria pass.
 
 **Criteria (all must be satisfied)**:
 1. **Conversation Analyzed**: Did the agent review the conversation for DeepWork job executions?
@@ -430,12 +492,9 @@ Use a sub-agent (Haiku model) to review your work against these criteria:
 10. **Working Folder Correct**: Is AGENTS.md in the correct working folder for the job?
 11. **Generalizable Separated**: Are generalizable improvements in instructions, not AGENTS.md?
 12. **Sync Complete**: Has `deepwork sync` been run if instructions were modified?
-**Review Process**:
-1. Once you believe your work is complete, spawn a sub-agent using Haiku to review your work against the quality criteria above
-2. The sub-agent should examine your outputs and verify each criterion is met
-3. If the sub-agent identifies valid issues, fix them
-4. Have the sub-agent review again until all valid feedback has been addressed
-5. Only mark the step complete when the sub-agent confirms all criteria are satisfied
+
+
+**To complete**: Include `<promise>✓ Quality Criteria Met</promise>` in your final response only after verifying ALL criteria are satisfied.
 
 ## On Completion
 

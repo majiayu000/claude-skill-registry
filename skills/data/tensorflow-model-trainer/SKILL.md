@@ -1,18 +1,18 @@
 ---
-name: "tensorflow-model-trainer"
+name: tensorflow-model-trainer
 description: |
-  Build tensorflow model trainer operations. Auto-activating skill for ML Training.
+  Tensorflow Model Trainer - Auto-activating skill for ML Training.
   Triggers on: tensorflow model trainer, tensorflow model trainer
-  Part of the ML Training skill category. Use when working with tensorflow model trainer functionality. Trigger with phrases like "tensorflow model trainer", "tensorflow trainer", "tensorflow".
-allowed-tools: "Read, Write, Edit, Bash(python:*), Bash(pip:*)"
+  Part of the ML Training skill category.
+allowed-tools: Read, Write, Edit, Bash(python:*), Bash(pip:*)
 version: 1.0.0
 license: MIT
-author: "Jeremy Longshore <jeremy@intentsolutions.io>"
+author: Jeremy Longshore <jeremy@intentsolutions.io>
 ---
 
 # Tensorflow Model Trainer
 
-## Overview
+## Purpose
 
 This skill provides automated assistance for tensorflow model trainer tasks within the ML Training domain.
 
@@ -23,48 +23,18 @@ This skill activates automatically when you:
 - Ask about tensorflow model trainer patterns or best practices
 - Need help with machine learning training skills covering data preparation, model training, hyperparameter tuning, and experiment tracking.
 
-## Instructions
+## Capabilities
 
-1. Provides step-by-step guidance for tensorflow model trainer
-2. Follows industry best practices and patterns
-3. Generates production-ready code and configurations
-4. Validates outputs against common standards
+- Provides step-by-step guidance for tensorflow model trainer
+- Follows industry best practices and patterns
+- Generates production-ready code and configurations
+- Validates outputs against common standards
 
-## Examples
+## Example Triggers
 
-**Example: Basic Usage**
-Request: "Help me with tensorflow model trainer"
-Result: Provides step-by-step guidance and generates appropriate configurations
-
-
-## Prerequisites
-
-- Relevant development environment configured
-- Access to necessary tools and services
-- Basic understanding of ml training concepts
-
-
-## Output
-
-- Generated configurations and code
-- Best practice recommendations
-- Validation results
-
-
-## Error Handling
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Configuration invalid | Missing required fields | Check documentation for required parameters |
-| Tool not found | Dependency not installed | Install required tools per prerequisites |
-| Permission denied | Insufficient access | Verify credentials and permissions |
-
-
-## Resources
-
-- Official documentation for related tools
-- Best practices guides
-- Community examples and tutorials
+- "Help me with tensorflow model trainer"
+- "Set up tensorflow model trainer"
+- "How do I implement tensorflow model trainer?"
 
 ## Related Skills
 

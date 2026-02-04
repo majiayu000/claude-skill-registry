@@ -1,7 +1,7 @@
 {
   "name": "security-requirement-extraction",
-  "repo": "Takeaki0817/hibioru",
-  "path": ".claude/skills/security-requirement-extraction/SKILL.md",
-  "source": "github.com/Takeaki0817/hibioru",
-  "downloaded_at": "2026-02-02T04:50:12.017426Z"
+  "repo": "haxllo/repolens",
+  "path": ".gemini/skills/security-requirement-extraction/SKILL.md",
+  "source": "github.com/haxllo/repolens",
+  "downloaded_at": "2026-02-04T04:50:33.335948Z"
 }

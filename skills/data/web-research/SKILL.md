@@ -1,69 +1,64 @@
 ---
 name: web-research
-description: Use this skill for requests related to web research; it provides a structured approach to conducting comprehensive web research.
+description: Query Pollinations text API with web-search models (gemini-search, perplexity-fast, nomnom, etc.). Use when you need web search grounded answers via Pollinations.
 ---
 
-# Web Research Skill
+# Web Research
 
-This skill provides guidance on conducting comprehensive web research. It emphasizes planning, efficient information gathering, and systematic synthesis of findings.
+## Available Models
 
-**Note:** This skill provides a methodology and best practices for web research. It does not include executable scripts or tools beyond what's available in your agent's toolset.
+- **gemini-search** — Google Gemini with web search grounding (default)
+- **perplexity-fast** — Perplexity AI, faster (default)
+- **perplexity** — Perplexity AI
+- **nomnom** — NomNom search model
 
-## When to Use This Skill
+By default, queries both **gemini-search** and **perplexity-fast** in parallel.
 
-Use this skill when you need to:
+## Requirements
 
-- Research complex topics requiring multiple information sources
-- Gather and synthesize current information from the web
-- Conduct comparative analysis across multiple subjects
-- Produce well-sourced research reports with clear citations
+- `curl`
 
-## Research Process
+## Authentication
 
-### Step 1: Create and Save Research Plan
+Set an API key in an environment variable (preferred):
 
-Before conducting research:
+```bash
+export POLLINATIONS_API_KEY="YOUR_KEY"
+```
 
-1. **Analyze the research question** - Break it down into distinct, non-overlapping subtopics
+Or create a local `.env` file at `.claude/skills/web-research/.env`:
 
-2. **Create a research plan** - Determine:
-   - The main research question
-   - 2-5 specific subtopics to investigate
-   - Expected information from each subtopic
-   - How results will be synthesized
+```bash
+POLLINATIONS_API_KEY="YOUR_KEY"
+```
 
-**Planning Guidelines:**
+If `POLLINATIONS_API_KEY` is not set, the script will prompt for a key (input hidden).
 
-- **Simple fact-finding**: 1-2 subtopics
-- **Comparative analysis**: 1 subtopic per comparison element (max 3)
-- **Complex investigations**: 3-5 subtopics
+## Quick usage
 
-### Step 2: Gather Information
+```bash
+.claude/skills/web-research/scripts/web-research.sh "What is pollinations.ai?" 
+```
 
-For each subtopic in your plan:
+Choose a model:
 
-1. **Use available web search tools** to gather information with:
-   - Clear, specific search queries
-   - Target: 3-5 searches per subtopic maximum
+```bash
+.claude/skills/web-research/scripts/web-research.sh --model perplexity-fast "Fact-check this claim with sources"
+```
 
-2. **Organize findings** as you gather them
+Compare multiple models:
 
-### Step 3: Synthesize Findings
+```bash
+.claude/skills/web-research/scripts/web-research.sh --models gemini-search,perplexity-fast,nomnom "Compare answers"
+```
 
-After gathering information:
+Run multi-model in parallel:
 
-1. **Review all collected information** from your searches
+```bash
+.claude/skills/web-research/scripts/web-research.sh --models gemini-search,perplexity-fast --parallel "Compare answers"
+```
 
-2. **Synthesize the information** - Create a comprehensive response that:
-   - Directly answers the original question
-   - Integrates insights from all subtopics
-   - Cites specific sources with URLs
-   - Identifies any gaps or limitations
+## Notes
 
-## Best Practices
-
-- **Plan before searching** - Understand what you need to find and organize your approach
-- **Clear subtopics** - Ensure each search has a distinct, non-overlapping scope
-- **Systematic synthesis** - Review all findings before creating final response
-- **Stop appropriately** - Don't over-research; 3-5 searches per subtopic is usually sufficient
-- **Cite sources** - Always include URLs to sources in your final response
+- Uses `https://gen.pollinations.ai/v1/chat/completions`
+- Sends `Authorization: Bearer <key>`

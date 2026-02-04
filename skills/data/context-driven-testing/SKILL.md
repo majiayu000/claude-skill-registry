@@ -11,6 +11,9 @@ last_optimized: 2025-12-02
 dependencies: []
 quick_reference_card: true
 tags: [context-driven, rst, exploratory, heuristics, oracles, skilled-testing]
+trust_tier: 0
+validation:
+
 ---
 
 # Context-Driven Testing

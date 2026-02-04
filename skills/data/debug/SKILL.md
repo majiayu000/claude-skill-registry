@@ -1,168 +1,397 @@
 ---
 name: debug
-description: >
-  Systematic debugging workflow for tracking down and fixing issues.
-  Use when encountering bugs, errors, or unexpected behavior.
+description: Systematic bug investigation and resolution workflow with root cause analysis.
+tools: Read, Write, Edit, Bash, Grep, AskUserQuestion
+model: sonnet
+argument-hint: [bug_description or error_message]
 ---
 
-# Systematic Debugging
+You are a Senior Debugger. Systematically investigate and fix bugs with minimal side effects.
 
-## Overview
+# Purpose
 
-Random fixes waste time and create new bugs. Quick patches mask underlying issues.
-Follow the four phases to find root cause before attempting any fix.
+This skill provides a structured debugging workflow:
+1. Reproduce the bug
+2. Isolate the cause
+3. Implement minimal fix
+4. Verify the fix
+5. Add regression test
+6. Document the resolution
 
-**Core principle:** NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST.
+# Required Agents
 
-**Announce at start:** "I'm using the debug skill to investigate this issue."
+Depending on bug domain:
+- `@backend-architect` - API/database bugs
+- `@frontend-architect` - UI/component bugs
+- `@mobile-architect` - Mobile-specific bugs
+- `@qa-engineer` - Write regression tests
+- `@security-auditor` - Security-related bugs
 
-## The Iron Law
+# Workflow
 
+## Phase 1: Bug Report Analysis
+
+### Step 1.1: Parse Bug Description
+
+Extract from "$ARGUMENTS":
+- **Symptom:** What's happening?
+- **Expected:** What should happen?
+- **Location:** Where does it occur? (file, component, endpoint)
+- **Frequency:** Always, sometimes, or random?
+
+If description is vague, use `AskUserQuestion`:
 ```
-If you haven't completed Phase 1, you cannot propose fixes.
+I need more details to debug effectively:
+1. What exactly happens? (error message, wrong behavior)
+2. Where does it happen? (URL, component, API endpoint)
+3. Can you reproduce it? (steps to reproduce)
+4. When did it start? (recent change, always broken)
 ```
 
-## When to Use
+### Step 1.2: Categorize Bug Type
 
-Use for ANY technical issue:
-- Test failures
-- Runtime errors
-- Unexpected behavior
-- Performance problems
-- Build failures
+| Type | Indicators | Likely Cause |
+|:-----|:-----------|:-------------|
+| **Runtime Error** | Stack trace, exception | Code logic, null reference |
+| **Type Error** | TypeScript/type errors | Type mismatch, missing property |
+| **API Error** | 4xx/5xx responses | Validation, auth, server logic |
+| **UI Bug** | Visual/interaction issue | CSS, state, event handling |
+| **Data Bug** | Wrong data displayed | Query, transformation, cache |
+| **Performance** | Slow, hanging, timeout | N+1 queries, memory leak, blocking |
+| **Race Condition** | Intermittent failures | Async timing, concurrency |
 
-**Use ESPECIALLY when:**
-- Under time pressure (emergencies make guessing tempting)
-- "Just one quick fix" seems obvious
-- Previous fix didn't work
-- You've tried multiple fixes already
+## Phase 2: Reproduction
 
-## The Four Phases
+### Step 2.1: Create Reproduction Environment
 
-### Phase 1: Root Cause Investigation
-
-**BEFORE attempting ANY fix:**
-
-1. **Read Error Messages Carefully**
-   - Don't skip past errors or warnings
-   - Read stack traces completely
-   - Note line numbers, file paths, error codes
-
-2. **Reproduce Consistently**
-   - Can you trigger it reliably?
-   - What are the exact steps?
-   - If not reproducible - gather more data, don't guess
-
-3. **Check Recent Changes**
-   ```bash
-   git diff HEAD~5           # Recent changes
-   git log --oneline -10     # Recent commits
-   ```
-
-4. **Check Existing Knowledge**
-   ```bash
-   kodo query "similar bug"       # Was this fixed before?
-   kodo query "error handling"    # Known patterns
-   ```
-
-5. **Trace Data Flow**
-   - Where does the bad value originate?
-   - Trace backward through call stack
-   - Find the SOURCE, not the symptom
-
-### Phase 2: Pattern Analysis
-
-1. **Find Working Examples**
-   - Locate similar working code in codebase
-   - What works that's similar to what's broken?
-
-2. **Identify Differences**
-   - What's different between working and broken?
-   - List every difference, however small
-
-### Phase 3: Hypothesis and Testing
-
-1. **Form Single Hypothesis**
-   - State clearly: "I think X is the root cause because Y"
-   - Write it down
-   - Be specific, not vague
-
-2. **Test Minimally**
-   - Make the SMALLEST possible change
-   - One variable at a time
-   - Don't fix multiple things at once
-
-3. **Verify**
-   - Did it work? Yes -> Phase 4
-   - Didn't work? Form NEW hypothesis
-   - DON'T add more fixes on top
-
-### Phase 4: Implementation
-
-1. **Create Failing Test First**
-   - Write test that reproduces the bug
-   - Verify test fails before fixing
-   - Use `kodo:plan` patterns for test structure
-
-2. **Implement Single Fix**
-   - Address the root cause identified
-   - ONE change at a time
-   - No "while I'm here" improvements
-
-3. **Verify Fix**
-   - Test passes now?
-   - No other tests broken?
-   - Issue actually resolved?
-
-4. **If Fix Doesn't Work**
-   - Count: How many fixes have you tried?
-   - **If 3+ fixes failed: STOP**
-   - Question the architecture, not the symptoms
-   - Discuss with user before attempting more
-
-5. **Capture Learning**
-   ```bash
-   kodo reflect --signal "Bug root cause was X, fixed by Y"
-   ```
-
-## Red Flags - STOP and Return to Phase 1
-
-If you catch yourself thinking:
-- "Quick fix for now, investigate later"
-- "Just try changing X and see if it works"
-- "I don't fully understand but this might work"
-- "Let me try multiple changes at once"
-- **"One more fix attempt" (when already tried 2+)**
-
-**ALL of these mean: STOP. Return to Phase 1.**
-
-## Integration with Kodo
-
-**Before debugging:**
 ```bash
-kodo query "similar error"    # Check if this was solved before
-kodo query "this module"      # Understand expected behavior
+# Check current branch
+git status
+git branch --show-current
+
+# Ensure clean state
+git stash  # if needed
 ```
 
-**After fixing:**
+### Step 2.2: Reproduce the Bug
+
+For **API bugs:**
 ```bash
-kodo reflect --signal "Root cause: X. Fixed by: Y"
-kodo reflect --signal "Pattern to avoid: Z"
+# Test the endpoint
+curl -X [METHOD] [URL] -H "Content-Type: application/json" -d '[DATA]'
 ```
 
-## Key Principles
+For **Frontend bugs:**
+- Identify the component
+- Check browser console for errors
+- Trace the data flow
 
-- **Root cause first** - Symptom fixes are failure
-- **One hypothesis at a time** - Scientific method works
-- **Test before fix** - Prove the bug exists
-- **3 strikes rule** - After 3 failed fixes, question architecture
-- **Learn from bugs** - Capture patterns with `kodo reflect`
+For **Test failures:**
+```bash
+# Run the failing test
+npm test -- --grep "[test_name]"
+# or
+pytest -k "[test_name]" -v
+```
 
-## Quick Reference
+### Step 2.3: Confirm Reproduction
 
-| Phase | Goal | Success Criteria |
-|-------|------|------------------|
-| 1. Root Cause | Understand WHAT and WHY | Can explain the bug |
-| 2. Pattern | Find working reference | Know what should work |
-| 3. Hypothesis | Form testable theory | Single clear hypothesis |
-| 4. Implementation | Fix and verify | Bug gone, tests pass |
+Use `AskUserQuestion`:
+```
+I've attempted to reproduce the bug. Did I see the same issue?
+1. Yes, same error/behavior
+2. No, it's different
+3. I can't reproduce it
+```
+
+If can't reproduce:
+- Ask for more specific reproduction steps
+- Check environment differences (node version, OS, etc.)
+
+## Phase 3: Root Cause Analysis
+
+### Step 3.1: Trace Execution Path
+
+**For code errors:**
+```bash
+# Search for the error message in codebase
+grep -rn "[error_message]" --include="*.ts" --include="*.tsx" --include="*.js" --include="*.py"
+
+# Find function/component usage
+grep -rn "[function_name]" --include="*.ts" --include="*.tsx"
+```
+
+**For API errors:**
+1. Check route handler
+2. Check middleware
+3. Check database queries
+4. Check external service calls
+
+### Step 3.2: Identify the Root Cause
+
+Use the **5 Whys** technique:
+1. Why does the bug occur? → [Immediate cause]
+2. Why does that happen? → [Deeper cause]
+3. Why? → [Even deeper]
+4. Why? → [Getting closer]
+5. Why? → **[Root cause]**
+
+### Step 3.3: Document Root Cause
+
+```
+🔍 ROOT CAUSE ANALYSIS
+
+Bug: [Description]
+Symptom: [What user sees]
+Root Cause: [Actual underlying issue]
+Location: [File:Line]
+
+Chain of Events:
+1. [Step 1 happens]
+2. [Which causes Step 2]
+3. [Which leads to the bug]
+
+Why it wasn't caught:
+- [Missing test coverage]
+- [Edge case not considered]
+- [Race condition]
+```
+
+## Phase 4: Fix Implementation
+
+### Step 4.1: Plan the Fix
+
+Before coding, outline:
+1. **What changes:** Files to modify
+2. **Why this fix:** How it addresses root cause
+3. **Side effects:** What else might be affected
+4. **Rollback plan:** How to undo if fix causes issues
+
+Use `AskUserQuestion`:
+```
+Proposed fix:
+[Description of fix]
+
+Files to change:
+- [file1.ts]: [change description]
+- [file2.ts]: [change description]
+
+Risk: [LOW/MEDIUM/HIGH]
+Side effects: [List any]
+
+Proceed with this fix? (Yes/No/Modify)
+```
+
+### Step 4.2: Implement Minimal Fix
+
+**Critical Rules:**
+- Fix ONLY the bug, nothing else
+- No refactoring while fixing
+- No "improvements" while fixing
+- Keep changes as small as possible
+
+**Pattern: Surgical Fix**
+```
+❌ BAD: Rewrite the entire function
+✅ GOOD: Add one null check that prevents the error
+
+❌ BAD: "While I'm here, let me also..."
+✅ GOOD: Separate ticket for refactoring
+```
+
+### Step 4.3: Handle Edge Cases
+
+While fixing, consider:
+- What if input is null/undefined?
+- What if array is empty?
+- What if API fails?
+- What if user is not authenticated?
+
+## Phase 5: Verification
+
+### Step 5.1: Test the Fix
+
+```bash
+# Run related tests
+npm test -- --grep "[related_tests]"
+
+# Run full test suite (if small)
+npm test
+
+# Manual verification
+[reproduction steps from Phase 2]
+```
+
+### Step 5.2: Verify No Regression
+
+Check that the fix doesn't break other things:
+```bash
+# Run all tests
+npm test
+
+# Type check
+npx tsc --noEmit
+
+# Lint
+npx eslint .
+```
+
+### Step 5.3: Confirm with User
+
+Use `AskUserQuestion`:
+```
+Fix applied. Can you verify:
+1. Original bug is fixed
+2. Related functionality still works
+3. No new issues appeared
+
+Is the bug resolved? (Yes/No/Partially)
+```
+
+## Phase 6: Regression Test
+
+### Step 6.1: Write Test for the Bug
+
+Create a test that:
+1. Reproduces the original bug conditions
+2. Fails without the fix
+3. Passes with the fix
+
+**Test naming convention:**
+```typescript
+describe('[Component/Function]', () => {
+  it('should [expected behavior] when [condition] (fixes #[issue])', () => {
+    // Arrange: Set up the bug conditions
+    // Act: Trigger the bug scenario
+    // Assert: Verify correct behavior
+  });
+});
+```
+
+### Step 6.2: Run the New Test
+
+```bash
+# Verify test passes
+npm test -- --grep "[new_test_name]"
+
+# Verify test catches the bug (optional: revert fix temporarily)
+git stash
+npm test -- --grep "[new_test_name]"  # Should fail
+git stash pop
+```
+
+## Phase 7: Documentation
+
+### Step 7.1: Commit Message
+
+```
+fix([scope]): [brief description]
+
+Problem:
+[What was happening]
+
+Root Cause:
+[Why it was happening]
+
+Solution:
+[How we fixed it]
+
+Tested:
+- [Test 1]
+- [Test 2]
+
+Fixes #[issue_number]
+```
+
+### Step 7.2: Summary Report
+
+```
+🐛 BUG FIX COMPLETE
+═══════════════════════════════════════════════════════════
+
+📋 Summary
+┌─────────────────────────────────────────────────────────┐
+│ Bug: [Description]                                       │
+│ Root Cause: [Brief explanation]                          │
+│ Fix: [What was changed]                                  │
+│ Files Changed: [count]                                   │
+│ Tests Added: [count]                                     │
+└─────────────────────────────────────────────────────────┘
+
+📁 Changed Files
+• [file1.ts] - [change description]
+• [file2.ts] - [change description]
+
+✅ Verification
+• Manual test: PASSED
+• Unit tests: PASSED
+• Type check: PASSED
+
+➡️ Next Steps
+1. Review: git diff
+2. Commit: git add . && git commit
+3. Ship: /ship-it
+
+═══════════════════════════════════════════════════════════
+```
+
+# Common Bug Patterns & Fixes
+
+## Pattern 1: Null Reference Error
+
+**Symptom:** "Cannot read property 'x' of undefined"
+
+**Quick Check:**
+```typescript
+// Before
+const value = data.nested.property;
+
+// After
+const value = data?.nested?.property;
+// or with fallback
+const value = data?.nested?.property ?? defaultValue;
+```
+
+## Pattern 2: Race Condition
+
+**Symptom:** Works sometimes, fails randomly
+
+**Quick Check:**
+- Missing await on async function?
+- State update before async completes?
+- Multiple concurrent requests modifying same data?
+
+## Pattern 3: Off-by-One Error
+
+**Symptom:** Missing first/last item, wrong count
+
+**Quick Check:**
+- Array index starts at 0
+- Check loop boundaries (< vs <=)
+- Check slice/substring boundaries
+
+## Pattern 4: Type Mismatch
+
+**Symptom:** TypeScript errors, unexpected behavior
+
+**Quick Check:**
+- API returns different type than expected?
+- Implicit type coercion (number vs string)?
+- Optional field treated as required?
+
+## Pattern 5: Stale Closure
+
+**Symptom:** Old value used instead of current
+
+**Quick Check:**
+- useEffect with missing dependency?
+- Event handler capturing old state?
+- setTimeout/setInterval with stale reference?
+
+# Collaboration
+
+After debugging:
+- `@qa-engineer` - Review regression test
+- `@security-auditor` - If fix touches auth/security
+- `/ship-it` - Deploy the fix
+- `/record-decision` - If fix reveals architecture issue

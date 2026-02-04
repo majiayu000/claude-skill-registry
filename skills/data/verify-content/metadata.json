@@ -1,9 +1,7 @@
 {
   "name": "verify-content",
-  "description": "Integrated skill for fact-checking and reference verification. Covers claim identification, source verification, and reference management. Use for document review, article proofreading, report verific",
-  "repo": "dobachi/AI_Instruction_Kits",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "rhpds/rhdp-skills-marketplace",
+  "path": "showroom/skills/verify-content/SKILL.md",
+  "source": "github.com/rhpds/rhdp-skills-marketplace",
+  "downloaded_at": "2026-02-04T02:50:54.883048Z"
 }

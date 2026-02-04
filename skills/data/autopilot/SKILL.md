@@ -1,183 +1,219 @@
 ---
 name: autopilot
-description: Full autonomous execution from idea to working code
+description: This skill should be used when the user asks to "run autopilot", "autopilot feature N", "implement all phases", "run all phases sequentially", "autopilot 003", or wants to automatically implement all phases of a feature in sequence without manual intervention.
 ---
 
-# Autopilot Skill
+# Autopilot: Sequential Phase Implementation
 
-Full autonomous execution from idea to working code.
+Run all phases of a feature sequentially via subagents, respecting dependencies.
 
-## Overview
+## User Input
 
-Autopilot is the ultimate hands-off mode. Give it a brief product idea (2-3 lines) and it handles everything:
+ARGUMENTS = $ARGUMENTS
 
-1. **Understands** your requirements (Analyst)
-2. **Designs** the technical approach (Architect)
-3. **Plans** the implementation (Critic-validated)
-4. **Builds** with parallel agents (Ralph + Ultrawork)
-5. **Tests** until everything passes (UltraQA)
-6. **Validates** quality and security (Multi-architect review)
-
-## Usage
-
-```
-/oh-my-claudecode:autopilot <your idea>
-/oh-my-claudecode:ap "A CLI tool that tracks daily habits"
-/oh-my-claudecode:autopilot Add dark mode to the app
-```
-
-## Magic Keywords
-
-These phrases auto-activate autopilot:
-- "autopilot", "auto pilot", "autonomous"
-- "build me", "create me", "make me"
-- "full auto", "handle it all"
-- "I want a/an..."
-
-## Phases
-
-### Phase 0: Expansion
-
-**Goal:** Turn vague idea into detailed spec
-
-**Agents:**
-- Analyst (Opus) - Extract requirements
-- Architect (Opus) - Technical specification
-
-**Output:** `.omc/autopilot/spec.md`
-
-### Phase 1: Planning
-
-**Goal:** Create implementation plan from spec
-
-**Agents:**
-- Architect (Opus) - Create plan (direct mode, no interview)
-- Critic (Opus) - Validate plan
-
-**Output:** `.omc/plans/autopilot-impl.md`
-
-### Phase 2: Execution
-
-**Goal:** Implement the plan
-
-**Mode:** Ralph + Ultrawork (persistence + parallelism)
-
-**Agents:**
-- Executor-low (Haiku) - Simple tasks
-- Executor (Sonnet) - Standard tasks
-- Executor-high (Opus) - Complex tasks
-
-### Phase 3: QA
-
-**Goal:** All tests pass
-
-**Mode:** UltraQA
-
-**Cycle:**
-1. Build
-2. Lint
-3. Test
-4. Fix failures
-5. Repeat (max 5 cycles)
-
-### Phase 4: Validation
-
-**Goal:** Multi-perspective approval
-
-**Agents (parallel):**
-- Architect - Functional completeness
-- Security-reviewer - Vulnerability check
-- Code-reviewer - Quality review
-
-**Rule:** All must APPROVE or issues get fixed and re-validated.
-
-## Configuration
-
-Optional settings in `.claude/settings.json`:
-
-```json
-{
-  "omc": {
-    "autopilot": {
-      "maxIterations": 10,
-      "maxQaCycles": 5,
-      "maxValidationRounds": 3,
-      "pauseAfterExpansion": false,
-      "pauseAfterPlanning": false,
-      "skipQa": false,
-      "skipValidation": false
-    }
-  }
-}
-```
-
-## Cancellation
-
-```
-/oh-my-claudecode:cancel
-```
-
-Or say: "stop", "cancel", "abort"
-
-Progress is preserved for resume.
-
-## Resume
-
-If autopilot was cancelled or failed, just run `/oh-my-claudecode:autopilot` again to resume from where it stopped.
-
-## Examples
-
-**New Project:**
-```
-/oh-my-claudecode:autopilot A REST API for a bookstore inventory with CRUD operations
-```
-
-**Feature Addition:**
-```
-/oh-my-claudecode:autopilot Add user authentication with JWT tokens
-```
-
-**Enhancement:**
-```
-/oh-my-claudecode:ap Add dark mode support with system preference detection
-```
-
-## Best Practices
-
-1. **Be specific about the domain** - "bookstore" not "store"
-2. **Mention key features** - "with CRUD", "with authentication"
-3. **Specify constraints** - "using TypeScript", "with PostgreSQL"
-4. **Let it run** - Don't interrupt unless truly needed
-
-## STATE CLEANUP ON COMPLETION
-
-**IMPORTANT: Delete ALL state files on successful completion**
-
-When autopilot reaches the `complete` phase (all validation passed):
+Accept a feature number (e.g., "003") or use current branch if not provided.
 
 ```bash
-# Delete autopilot and all sub-mode state files
-rm -f .omc/state/autopilot-state.json
-rm -f .omc/state/ralph-state.json
-rm -f .omc/state/ultrawork-state.json
-rm -f .omc/state/ultraqa-state.json
+/autopilot 003        # Run all phases for feature 003
+/autopilot            # Run all phases for current branch's feature
 ```
 
-This ensures clean state for future sessions.
+## Execution Flow
 
-## Troubleshooting
+```
+/autopilot 003
+       │
+       ▼
+┌─────────────────────┐
+│  Load Feature       │
+│  • Find tasks.md    │
+│  • Parse phases     │
+│  • Build order      │
+└─────────┬───────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  For Each Phase:    │
+│                     │
+│  ┌───────────────┐  │
+│  │ Spawn Agent   │  │
+│  │ /implement    │  │
+│  │ "Phase N"     │  │
+│  └───────┬───────┘  │
+│          │          │
+│          ▼          │
+│  ┌───────────────┐  │
+│  │ Wait for      │  │
+│  │ Completion    │  │
+│  └───────┬───────┘  │
+│          │          │
+│          ▼          │
+│  ┌───────────────┐  │
+│  │ Report Status │  │
+│  │ → Next Phase  │  │
+│  └───────────────┘  │
+└─────────────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│  Final Summary      │
+└─────────────────────┘
+```
 
-**Stuck in a phase?**
-- Check TODO list for blocked tasks
-- Review `.omc/autopilot-state.json` for state
-- Cancel and resume if needed
+## Workflow
 
-**Validation keeps failing?**
-- Review the specific issues
-- Consider if requirements were too vague
-- Cancel and provide more detail
+### Step 1: Resolve Feature
 
-**QA cycles exhausted?**
-- Same error 3 times = fundamental issue
-- Review the error pattern
-- May need manual intervention
+1. If ARGUMENTS provided, use as feature number (e.g., "003")
+2. If no ARGUMENTS, extract from current git branch:
+   ```bash
+   git branch --show-current
+   # feature/003-agent-behavior-statecharts → 003
+   ```
+3. Find feature folder in `backlog/plans/{NNN}-*/`
+
+### Step 2: Parse Phases from tasks.md
+
+Read `{feature-path}/tasks.md` and extract phases:
+
+```
+## Phase 1: Core Types
+## Phase 2: Statechart Engine
+## Phase 3: LLM Reasoner
+...
+```
+
+Build ordered list: `["Phase 1", "Phase 2", "Phase 3", ...]`
+
+### Step 3: Sequential Execution
+
+For each phase in order:
+
+1. **Spawn subagent** using Task tool:
+   ```
+   Task(
+     subagent_type: "general-purpose",
+     description: "Implement Phase N",
+     prompt: """
+   Implement Phase N for feature {feature-id}.
+
+   CRITICAL: Your first action must be to invoke the implement skill:
+
+   Skill(skill: "implement", args: "Phase N")
+
+   The implement skill will guide you through TDD workflow for all tasks in this phase.
+   Do NOT try to implement tasks manually - invoke the Skill tool first.
+
+   Report success or failure when the phase is complete.
+   """,
+     run_in_background: false  # Wait for completion
+   )
+   ```
+
+2. **Wait for completion** before starting next phase
+
+3. **Check result** - if phase fails, stop and report
+
+### Step 4: Progress Reporting
+
+After each phase completes, report:
+
+```
+✅ Phase 1: Complete (T001-T006)
+🔄 Phase 2: In Progress...
+```
+
+### Step 5: Final Summary
+
+After all phases complete:
+
+```
+🎉 Autopilot Complete: Feature 003
+
+✅ Phase 1: Core Types (T001-T006)
+✅ Phase 2: Statechart Engine (T007-T015)
+✅ Phase 3: LLM Reasoner (T016-T023)
+✅ Phase 4: Timeout Transitions (T024-T029)
+✅ Phase 5: Agent Integration (T030-T039)
+✅ Phase 6: Queries + Validation (T040-T047)
+
+All 47 tasks completed.
+
+Next steps:
+1. Run linting: uv run ruff check . && uv run flake8 .
+2. Run tests: uv run pytest
+3. Run spec tests: /spec-tests specs/tests/003-*.md
+4. Create PR when ready
+```
+
+## Error Handling
+
+If a phase fails:
+
+1. **Stop execution** - don't proceed to dependent phases
+2. **Report failure** with context:
+   ```
+   ❌ Phase 3 failed
+
+   Completed: Phase 1, Phase 2
+   Failed: Phase 3 (LLM Reasoner)
+   Skipped: Phase 4, Phase 5, Phase 6
+
+   Error: [error details from agent]
+
+   To resume: /implement "Phase 3"
+   ```
+3. **Preserve progress** - completed phases remain done
+
+## Running in Background
+
+For long-running features, run autopilot in background:
+
+```
+# In the skill execution, use:
+Task(
+  ...
+  run_in_background: true
+)
+```
+
+Then check progress with:
+```bash
+tail -100 {output_file}
+```
+
+## Example Session
+
+```
+User: /autopilot 003
+
+Claude: Starting autopilot for feature 003-agent-behavior-statecharts
+
+Found 6 phases to implement:
+1. Phase 1: Core Types (T001-T006)
+2. Phase 2: Statechart Engine (T007-T015)
+3. Phase 3: LLM Reasoner (T016-T023)
+4. Phase 4: Timeout Transitions (T024-T029)
+5. Phase 5: Agent Integration (T030-T039)
+6. Phase 6: Queries + Validation (T040-T047)
+
+🔄 Phase 1: Starting...
+[Agent implements Phase 1]
+✅ Phase 1: Complete
+
+🔄 Phase 2: Starting...
+[Agent implements Phase 2]
+✅ Phase 2: Complete
+
+...continues through all phases...
+
+🎉 Autopilot Complete!
+```
+
+## Notes
+
+- Each phase runs as a separate subagent for isolation
+- Phases execute sequentially to respect dependencies
+- Progress is reported after each phase
+- On failure, stops immediately to prevent cascading issues
+- User can resume from failed phase with `/implement "Phase N"`

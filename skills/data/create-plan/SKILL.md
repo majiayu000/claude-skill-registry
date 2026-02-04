@@ -1,72 +1,113 @@
 ---
 name: create-plan
-description: Create a concise plan. Use when a user explicitly asks for a plan related to a coding task.
+description: Generate detailed implementation plans for complex tasks. Creates comprehensive strategic plans in Markdown format with objectives, step-by-step implementation tasks using checkbox format, verification criteria, risk assessments, and alternative approaches. All plans MUST be validated using the included validation script. Use when users need thorough analysis and structured planning before implementation, when breaking down complex features into actionable steps, or when they explicitly ask for a plan, roadmap, or strategy. Strictly planning-focused with no code modifications.
 ---
 
-# Create Plan
+# Create Implementation Plan
 
-## Goal
+Generate comprehensive implementation plans that provide strategic guidance without making actual code changes.
 
-Turn a user prompt into a **single, actionable plan** delivered in the final assistant message.
+## When to Use
 
-## Minimal workflow
+- User explicitly requests a plan, roadmap, or implementation strategy
+- Complex tasks requiring structured breakdown before implementation
+- Need for risk assessment and alternative approach analysis
+- Pre-implementation analysis of architectural decisions
 
-Throughout the entire workflow, operate in read-only mode. Do not write or update files.
+## Planning Process
 
-1. **Scan context quickly**
-   - Read `README.md` and any obvious docs (`docs/`, `CONTRIBUTING.md`, `ARCHITECTURE.md`).
-   - Skim relevant files (the ones most likely touched).
-   - Identify constraints (language, frameworks, CI/test commands, deployment shape).
+### 1. Initial Assessment
 
-2. **Ask follow-ups only if blocking**
-   - Ask **at most 1-2 questions**.
-   - Only ask if you cannot responsibly plan without the answer; prefer multiple-choice.
-   - If unsure but not blocked, make a reasonable assumption and proceed.
+Research the codebase to understand:
 
-3. **Create a plan using the template below**
-   - Start with **1 short paragraph** describing the intent and approach.
-   - Clearly call out what is **in scope** and what is **not in scope** in short.
-   - Then provide a **small checklist** of action items (default 6-10 items).
-      - Each checklist item should be a concrete action and, when helpful, mention files/commands.
-      - **Make items atomic and ordered**: discovery -> changes -> tests -> rollout.
-      - **Verb-first**: "Add...", "Refactor...", "Verify...", "Ship...".
-   - Include at least one item for **tests/validation** and one for **edge cases/risk** when applicable.
-   - If there are unknowns, include a tiny **Open questions** section (max 3).
+- Project structure and organization
+- Relevant files and components
+- Existing patterns and conventions
+- Potential challenges and risks
 
-4. **Do not preface the plan with meta explanations; output only the plan as per template**
+Use `search` and `read` tools to examine the codebase. Use `sage` if deeper research is required for the use-case. Explicitly cite sources using `filepath:line` format.
 
-## Plan template (follow exactly)
+### 2. Create Strategic Plan
 
-```markdown
-# Plan
+Generate a Markdown plan file in `plans/` directory with naming: `plans/{YYYY-MM-DD}-{task-name}-v{N}.md`
 
-<1-3 sentences: what we're doing, why, and the high-level approach.>
+Example: `plans/2025-11-24-add-auth-v1.md`
 
-## Scope
-- In:
-- Out:
+### 3. Validate Plan
 
-## Action items
-[ ] <Step 1>
-[ ] <Step 2>
-[ ] <Step 3>
-[ ] <Step 4>
-[ ] <Step 5>
-[ ] <Step 6>
+**MANDATORY:** Run the validation script to ensure the plan meets all requirements:
 
-## Open questions
-- <Question 1>
-- <Question 2>
-- <Question 3>
+```bash
+./.forge/skills/create-plan/validate-plan.sh plans/{YYYY-MM-DD}-{task-name}-v{N}.md
 ```
 
-## Checklist item guidance
-Good checklist items:
-- Point to likely files/modules: src/..., app/..., services/...
-- Name concrete validation: "Run npm test", "Add unit tests for X"
-- Include safe rollout when relevant: feature flag, migration plan, rollback note
+Fix any errors or warnings and re-validate until the plan passes all checks.
 
-Avoid:
-- Vague steps ("handle backend", "do auth")
-- Too many micro-steps
-- Writing code snippets (keep the plan implementation-agnostic)
+### 4. Plan Structure
+
+```markdown
+# [Task Name]
+
+## Objective
+
+[Clear statement of goal and expected outcomes]
+
+## Implementation Plan
+
+- [ ] 1. [First task with detailed description and rationale]
+- [ ] 2. [Second task with detailed description and rationale]
+- [ ] 3. [Third task with detailed description and rationale]
+
+## Verification Criteria
+
+- [Criterion 1: Specific, measurable outcome]
+- [Criterion 2: Specific, measurable outcome]
+
+## Potential Risks and Mitigations
+
+1. **[Risk Description]**
+   Mitigation: [Specific mitigation strategy]
+
+2. **[Risk Description]**
+   Mitigation: [Specific mitigation strategy]
+
+## Alternative Approaches
+
+1. [Alternative 1]: [Brief description and trade-offs]
+2. [Alternative 2]: [Brief description and trade-offs]
+```
+
+## Critical Requirements
+
+- **ALWAYS validate the plan** using `./.forge/skills/create-plan/validate-plan.sh` after creation
+- **ALWAYS use checkbox format** (`- [ ]`) for ALL implementation tasks
+- **NEVER use numbered lists** or plain bullet points in Implementation Plan section
+- **NEVER write code, code snippets, or code examples** in the plan
+- Include clear rationale for each task
+- Provide specific, measurable verification criteria
+- Document assumptions made for ambiguous requirements
+- Focus on strategic "what" and "why", not tactical "how"
+- Describe what needs to be done using natural language, not code
+
+## Best Practices
+
+- Make reasonable assumptions when requirements are ambiguous
+- Use codebase patterns to infer best practices
+- Provide multiple solution paths for complex challenges
+- Balance thoroughness with actionability
+- Create plans that can be executed step-by-step by implementation agents
+
+## Boundaries
+
+This is a **planning-only** skill:
+
+- ✅ Research codebase and analyze structure
+- ✅ Create strategic plans and documentation
+- ✅ Assess risks and propose alternatives
+- ✅ Describe implementations using natural language
+- ❌ Make actual code changes
+- ❌ Modify files or create implementations
+- ❌ Run tests or build commands
+- ❌ Write code, code snippets, or code examples in plans
+
+If user requests implementation work, suggest switching to an implementation agent.

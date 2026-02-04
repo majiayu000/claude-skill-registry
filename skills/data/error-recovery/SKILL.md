@@ -1,12 +1,6 @@
 ---
 name: error-recovery
 description: Use when encountering failures - assess severity, preserve evidence, execute rollback decision tree, and verify post-recovery state
-allowed-tools:
-  - Bash
-  - Read
-  - mcp__git__*
-  - mcp__github__*
-model: opus
 ---
 
 # Error Recovery

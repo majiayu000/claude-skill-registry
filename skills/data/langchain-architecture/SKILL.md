@@ -20,11 +20,9 @@ Master the LangChain framework for building sophisticated LLM applications with 
 ## Core Concepts
 
 ### 1. Agents
-
 Autonomous systems that use LLMs to decide which actions to take.
 
 **Agent Types:**
-
 - **ReAct**: Reasoning + Acting in interleaved manner
 - **OpenAI Functions**: Leverages function calling API
 - **Structured Chat**: Handles multi-input tools
@@ -32,11 +30,9 @@ Autonomous systems that use LLMs to decide which actions to take.
 - **Self-Ask with Search**: Decomposes complex queries
 
 ### 2. Chains
-
 Sequences of calls to LLMs or other utilities.
 
 **Chain Types:**
-
 - **LLMChain**: Basic prompt + LLM combination
 - **SequentialChain**: Multiple chains in sequence
 - **RouterChain**: Routes inputs to specialized chains
@@ -44,11 +40,9 @@ Sequences of calls to LLMs or other utilities.
 - **MapReduceChain**: Parallel processing with aggregation
 
 ### 3. Memory
-
 Systems for maintaining context across interactions.
 
 **Memory Types:**
-
 - **ConversationBufferMemory**: Stores all messages
 - **ConversationSummaryMemory**: Summarizes older messages
 - **ConversationBufferWindowMemory**: Keeps last N messages
@@ -56,11 +50,9 @@ Systems for maintaining context across interactions.
 - **VectorStoreMemory**: Semantic similarity retrieval
 
 ### 4. Document Processing
-
 Loading, transforming, and storing documents for retrieval.
 
 **Components:**
-
 - **Document Loaders**: Load from various sources
 - **Text Splitters**: Chunk documents intelligently
 - **Vector Stores**: Store and retrieve embeddings
@@ -68,11 +60,9 @@ Loading, transforming, and storing documents for retrieval.
 - **Indexes**: Organize documents for efficient access
 
 ### 5. Callbacks
-
 Hooks for logging, monitoring, and debugging.
 
 **Use Cases:**
-
 - Request/response logging
 - Token usage tracking
 - Latency monitoring
@@ -111,7 +101,6 @@ result = agent.run("What's the weather in SF? Then calculate 25 * 4")
 ## Architecture Patterns
 
 ### Pattern 1: RAG with LangChain
-
 ```python
 from langchain.chains import RetrievalQA
 from langchain.document_loaders import TextLoader
@@ -143,7 +132,6 @@ result = qa_chain({"query": "What is the main topic?"})
 ```
 
 ### Pattern 2: Custom Agent with Tools
-
 ```python
 from langchain.agents import Tool, AgentExecutor
 from langchain.agents.react.base import ReActDocstoreAgent
@@ -172,7 +160,6 @@ agent = initialize_agent(
 ```
 
 ### Pattern 3: Multi-Step Chain
-
 ```python
 from langchain.chains import LLMChain, SequentialChain
 from langchain.prompts import PromptTemplate
@@ -210,7 +197,6 @@ overall_chain = SequentialChain(
 ## Memory Management Best Practices
 
 ### Choosing the Right Memory Type
-
 ```python
 # For short conversations (< 10 messages)
 from langchain.memory import ConversationBufferMemory
@@ -236,7 +222,6 @@ memory = VectorStoreRetrieverMemory(retriever=retriever)
 ## Callback System
 
 ### Custom Callback Handler
-
 ```python
 from langchain.callbacks.base import BaseCallbackHandler
 
@@ -290,7 +275,6 @@ def test_memory_persistence():
 ## Performance Optimization
 
 ### 1. Caching
-
 ```python
 from langchain.cache import InMemoryCache
 import langchain
@@ -299,7 +283,6 @@ langchain.llm_cache = InMemoryCache()
 ```
 
 ### 2. Batch Processing
-
 ```python
 # Process multiple documents in parallel
 from langchain.document_loaders import DirectoryLoader
@@ -316,7 +299,6 @@ with ThreadPoolExecutor(max_workers=4) as executor:
 ```
 
 ### 3. Streaming Responses
-
 ```python
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 

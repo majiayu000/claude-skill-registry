@@ -1,7 +1,7 @@
 {
   "name": "vision",
-  "repo": "YougLin-dev/Aha-Loop",
-  "path": ".agents/skills/vision/SKILL.md",
-  "source": "github.com/YougLin-dev/Aha-Loop",
-  "downloaded_at": "2026-02-02T04:01:03.528078Z"
+  "repo": "emirrtopaloglu/claude-code-virtuoso",
+  "path": ".claude/skills/vision/SKILL.md",
+  "source": "github.com/emirrtopaloglu/claude-code-virtuoso",
+  "downloaded_at": "2026-02-04T04:39:40.342941Z"
 }

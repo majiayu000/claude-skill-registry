@@ -12,13 +12,27 @@ license: MIT
 compatibility: Rust 1.70+, Cargo
 metadata:
   author: apollographql
-  version: "1.0"
+  version: "1.1"
 allowed-tools: Bash(cargo:*) Bash(rustc:*) Bash(rustfmt:*) Bash(clippy:*) Read Write Edit Glob Grep
 ---
 
 # Rust Best Practices
 
-Apply these guidelines when writing or reviewing Rust code. Based on Apollo GraphQL's Rust Best Practices Handbook.
+Apply these guidelines when writing or reviewing Rust code. Based on Apollo GraphQL's [Rust Best Practices Handbook](https://github.com/apollographql/rust-best-practices).
+
+## Best Practices Reference
+
+Before reviewing, familiarize yourself with Apollo's Rust best practices. Read ALL relevant chapters in the same turn in parallel. Reference these files when providing feedback:
+
+- [Chapter 1 - Coding Styles and Idioms](references/chapter_01.md): Borrowing vs cloning, Copy trait, Option/Result handling, iterators, comments
+- [Chapter 2 - Clippy and Linting](references/chapter_02.md): Clippy configuration, important lints, workspace lint setup
+- [Chapter 3 - Performance Mindset](references/chapter_03.md): Profiling, avoiding redundant clones, stack vs heap, zero-cost abstractions
+- [Chapter 4 - Error Handling](references/chapter_04.md): Result vs panic, thiserror vs anyhow, error hierarchies
+- [Chapter 5 - Automated Testing](references/chapter_05.md): Test naming, one assertion per test, snapshot testing
+- [Chapter 6 - Generics and Dispatch](references/chapter_06.md): Static vs dynamic dispatch, trait objects
+- [Chapter 7 - Type State Pattern](references/chapter_07.md): Compile-time state safety, when to use it
+- [Chapter 8 - Comments vs Documentation](references/chapter_08.md): When to comment, doc comments, rustdoc
+- [Chapter 9 - Understanding Pointers](references/chapter_09.md): Thread safety, Send/Sync, pointer types
 
 ## Quick Reference
 
@@ -78,13 +92,3 @@ impl Connection<Connected> {
 - `///` doc comments explain *what* and *how* for public APIs
 - Every `TODO` needs a linked issue: `// TODO(#42): ...`
 - Enable `#![deny(missing_docs)]` for libraries
-
-## Detailed References
-
-For in-depth guidance on specific topics:
-
-- **Coding style & idioms**: See [references/style.md](references/style.md) for borrowing patterns, Option/Result handling, iterator usage, and import organization
-- **Error handling**: See [references/errors.md](references/errors.md) for thiserror patterns, error hierarchies, and testing errors
-- **Performance**: See [references/performance.md](references/performance.md) for profiling, memory layout, and iterator optimization
-- **Testing**: See [references/testing.md](references/testing.md) for test organization, snapshot testing, and assertion strategies
-- **Advanced patterns**: See [references/advanced.md](references/advanced.md) for generics, dispatch, type state, and pointer types

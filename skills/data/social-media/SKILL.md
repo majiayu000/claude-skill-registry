@@ -1,228 +1,302 @@
 ---
-name: social-media
-description: Create social media content for Twitter/X, LinkedIn, Facebook, Instagram including posts, threads, carousels, and engagement strategies. Use when writing social posts, planning content calendars, or creating viral content.
+name: Social Media Management
+description: Create engaging social media content for Twitter/X, LinkedIn, Instagram, and FarCaster
+version: 1.0.0
+triggers:
+  - "social media"
+  - "twitter thread"
+  - "linkedin post"
+  - "instagram post"
+  - "farcaster cast"
+  - "x content"
+  - "create thread"
+  - "skill:social-media"
 ---
 
-# Social Media Marketing Skill
+# Social Media Management
 
-## Writing Style Guidelines
+## Purpose
 
-**Be Human, Not AI:**
-- Write like a real person, not a marketing bot
-- Use natural language and conversational tone
-- Avoid buzzwords: "revolutionary", "game-changing", "seamless", "leverage"
-- Skip filler words: "basically", "essentially", "simply", "just"
+Create platform-optimized social media content that:
+- Engages your target audience
+- Builds thought leadership
+- Drives traffic to owned channels
+- Grows following organically
 
-**Emoji Policy:**
-- Maximum ONE emoji per post (or none)
-- Use only when it genuinely adds clarity or warmth
-- Never pile up emojis (no "Check this out! 🚀🔥💥🎉")
-- Professional platforms (LinkedIn): prefer no emoji
+## When to Use This Skill
 
-**What to Avoid:**
-```
-❌ "🚀🔥 This GAME-CHANGING plugin will REVOLUTIONIZE your workflow!! 💥✨🎉"
-✅ "Tired of manually syncing your forms? This plugin does it automatically."
-```
+- Creating Twitter threads for thought leadership
+- Writing LinkedIn posts for professional audience
+- Crafting Instagram carousels for education
+- Posting FarCaster casts for Web3 community
+- Repurposing long-form content for social
+- Planning social media calendars
 
-## Instructions
+## Core Concepts
 
-When creating social media content:
+### Platform-Specific Optimization
 
-### 1. Twitter/X Posts
-
-**Single Tweet (280 chars):**
-```
-Hook line that grabs attention
-
-Key point or benefit
-
-Call-to-action or question
-
-#relevanthashtag
-```
-
-**Thread Format:**
-```
-Thread: [Topic] - Everything you need to know
-
-1/ Hook that promises value
-
-2/ First key point with example
-
-3/ Second key point with data
-
-4/ Third key point with tip
-
-5/ Summary + CTA
-
-Like & RT if helpful! Follow for more.
+```typescript
+interface PlatformConfig {
+  twitter: {
+    maxLength: number;      // 280 characters
+    threadLength: number;   // 5-15 tweets
+    hashtagLimit: number;   // 1-2 hashtags
+    bestTimes: string[];    // [9am, 12pm, 6pm]
+  };
+  linkedin: {
+    maxLength: number;      // 3,000 characters
+    optimalLength: string;  // 1,500-2,000 chars
+    hashtagLimit: number;   // 3-5 hashtags
+    bestTimes: string[];    // [8am, 10am, 12pm];
+  };
+  instagram: {
+    maxLength: number;      // 2,200 characters
+    carouselSlides: number; // 5-10 slides
+    hashtagLimit: number;   // 5-30 hashtags;
+  };
+}
 ```
 
-**Engagement Tweets:**
-- Ask genuine questions
-- Share honest takes (not hot takes for engagement)
-- Create polls
-- Reply to trends (only if relevant)
+### The Hook Framework
 
-### 2. LinkedIn Posts
-
-**Structure:**
 ```
-Hook line (stops the scroll)
-
-Problem or pain point
-
-Story or insight (2-3 short paragraphs)
-
-Key takeaway or lesson
-
-Call-to-action + question for engagement
-
----
-#hashtag1 #hashtag2 #hashtag3
+┌─────────────────────────────────────────────┐
+│ HOOK TYPES                                  │
+├─────────────────────────────────────────────┤
+│ Question Hook    → "What if everything..."  │
+│ Stat Hook        → "93% of marketers..."    │
+│ Story Hook       → "I almost made a..."     │
+│ Controversy Hook → "The opposite of..."     │
+│ Future Hook      → "In 5 years, we'll..."   │
+└─────────────────────────────────────────────┘
 ```
 
-**Content Types:**
-- Personal stories with lessons
-- Industry insights and trends
-- How-to and practical tips
-- Behind-the-scenes
-- Achievements (genuine, not humble-brag)
-- Thoughtful opinions (not controversial for engagement)
+### Thread Architecture
 
-### 3. Instagram
-
-**Caption Structure:**
-```
-Hook (first line visible)
-.
-.
-.
-Value content or story (after "more")
-
-Call-to-action
-
-.
-.
-.
-#hashtag1 #hashtag2 ... (up to 30)
+```markdown
+TWEET 1 (Hook): Attention grabber + promise
+TWEET 2 (Context): Brief setup + why it matters
+TWEET 3-7 (Body): Main points, one per tweet
+TWEET 8 (Example): Concrete illustration
+TWEET 9 (CTA): Ask for engagement + follow
+TWEET 10 (Close): Memorable finish + #content
 ```
 
-**Carousel Ideas:**
-1. Step-by-step tutorials
-2. Before/after transformations
-3. Tips and tricks lists
-4. Product features
-5. Customer testimonials
+## Patterns
 
-**Reels/Stories:**
-- Hook in first 3 seconds
-- Quick value delivery
-- Trending audio (if appropriate)
-- Text overlays for accessibility
-- Clear CTA at end
+### Pattern 1: Twitter Thread Structure
 
-### 4. Facebook
+```markdown
+1/ [NUMBER] [TRANSFORMATIVE STATEMENT] about [TOPIC]
 
-**Post Types:**
-- Long-form stories
-- Questions for engagement
-- Live videos
-- Group discussions
-- Event promotions
+A [SHORT] breakdown 🧵👇
 
-**Best Practices:**
-- Native video over YouTube links
-- Engage in comments quickly
-- Use Facebook-specific features
-- Post when audience is active
+2/ [Context or background - 2 sentences]
 
-### 5. Content Calendar Template
+3/ [First key insight]
+[Supporting detail or example]
 
-| Day | Platform | Content Type | Topic | CTA |
-|-----|----------|--------------|-------|-----|
-| Mon | Twitter | Thread | How-to | Follow |
-| Tue | LinkedIn | Story | Lesson | Comment |
-| Wed | Instagram | Carousel | Tips | Save |
-| Thu | Twitter | Poll | Opinion | Vote |
-| Fri | All | Promo | Product | Link |
+4/ [Second key insight]
+[Supporting detail or example]
 
-### 6. Hashtag Strategy
+5/ [Third key insight]
+[Supporting detail or example]
 
-**Twitter:** 1-2 relevant hashtags (less is more)
-**LinkedIn:** 3-5 industry hashtags
-**Instagram:** 20-30 mixed hashtags
-  - 10 broad (1M+ posts)
-  - 10 medium (100K-1M)
-  - 10 niche (<100K)
+6/ [Practical application]
+Here's how to apply this:
 
-### 7. Engagement Tactics
+7/ [The framework or synthesis]
 
-**Boost Reach:**
-- Post consistently
-- Engage with others first (genuinely, not for algorithm)
-- Reply to every comment
-- Use platform features (polls, lives)
-- Collaborate with others
+8/ [Your experience or case study]
 
-**Build Community:**
-- Ask genuine questions
-- Share user content (with credit)
-- Be authentic and consistent
-- Celebrate followers
-- Respond like a human, not a brand
+9/ [Challenge or question to audience]
 
-### 8. Analytics Focus
+10/ If you enjoyed this:
+• Follow for more [TOPIC] insights
+• RT the first tweet to share
+• [Related content link]
 
-Track:
-- Impressions/reach
-- Engagement rate
-- Click-through rate
-- Follower growth
-- Best posting times
-- Top performing content types
+[#industry #topic #advice]
+```
 
-### 9. Platform-Specific Tips
+### Pattern 2: LinkedIn Thought Leadership Post
 
-**Twitter/X:**
-- Tweet 3-5x daily
-- Best times: 8-10am, 12-1pm
-- Use threads for long content
-- Quote tweet for commentary
+```markdown
+[PROVOCATIVE OPENING - 1-2 sentences]
 
-**LinkedIn:**
-- Post 1x daily max
-- Best times: Tue-Thu, 7-8am
-- Comment on others' posts
-- Use document posts for carousels
+[PROBLEM STATEMENT - Why this matters]
 
-**Instagram:**
-- Post 1-2x daily
-- Best times: 11am-1pm, 7-9pm
-- Stories multiple times daily
-- Reels for growth
+Here's what's happening:
 
-## Quality Checklist
+[KEY INSIGHT 1]
+→ [Explanation and why it matters]
 
-Before posting, verify:
+[KEY INSIGHT 2]  
+→ [Explanation and why it matters]
 
-### Content
-- [ ] Clear hook in first line
-- [ ] Value provided (not just promotion)
-- [ ] One clear CTA
-- [ ] Appropriate hashtags
-- [ ] Links work (if any)
+[KEY INSIGHT 3]
+→ [Explanation and why it matters]
 
-### Tone
-- [ ] Human, conversational tone
-- [ ] Maximum one emoji (if any)
-- [ ] No buzzwords or filler words
-- [ ] Not salesy or pushy
-- [ ] Authentic to brand voice
+The opportunity for those who act:
 
-### Visual (if applicable)
-- [ ] Real screenshots (not mockups)
-- [ ] Alt text for accessibility
-- [ ] No sensitive data visible
-- [ ] Properly sized for platform
+[FORWARD-LOOKING STATEMENT]
+
+What I'm doing about this:
+
+[YOUR ACTION OR PROJECT]
+
+Questions for you:
+
+[Q1 - Engaging question]
+[Q2 - Engaging question]
+
+[CTA - What should they do next?]
+
+#[hashtag1] #[hashtag2] #[hashtag3] #[hashtag4] #[hashtag5]
+```
+
+### Pattern 3: Instagram Educational Carousel
+
+```SLIDE 1: Title Slide (Hook)》
+"5 [TRANSFORMATIVE] Ways to [DESIRED OUTCOME]"
+"Save this for later"
+
+《SLIDE 2: Problem Statement》
+"The biggest mistake most people make..."
+
+《SLIDE 3: Solution Overview》
+"Here's what actually works:"
+
+《SLIDE 4-8: Each Method》
+"[NUMBER]. [METHOD NAME]"
+- [Key benefit]
+- [How to implement]
+- [Example]
+
+《SLIDE 9: Quick Wins》
+"Start with #1 for immediate results"
+
+《SLIDE 10: CTA》
+"Follow for more [TOPIC] tips"
+"Save this post"
+```
+
+## Step-by-Step Process
+
+1. **Platform Selection**
+   - Match content type to platform strength
+   - Twitter: Hot takes, threads, quick tips
+   - LinkedIn: Thought leadership, B2B
+   - Instagram: Visual learning, behind-the-scenes
+   - FarCaster: Web3 community, real-time
+
+2. **Content Adaptation**
+   - Adapt main message to platform voice
+   - Adjust length for platform limits
+   - Add platform-specific formatting
+   - Include appropriate hashtags
+
+3. **Engagement Optimization**
+   - Write scroll-stopping hooks
+   - Include questions or polls
+   - End with clear CTA
+   - Add tweet/link to other platforms
+
+4. **Scheduling**
+   - Post at platform-specific best times
+   - Maintain consistent posting schedule
+   - Use scheduling tools (Buffer, Hootsuite)
+   - Track and iterate on performance
+
+5. **Community Engagement**
+   - Respond to comments within 1 hour
+   - Engage with similar content
+   - Build relationships with influencers
+   - Cross-promote across platforms
+
+## FrankX Application
+
+```markdown
+**[FrankX Provocative Voice]**
+
+The future belongs to those who create it.
+
+Not consume.
+Not critique.
+CREATE.
+
+3 principles for becoming a creator:
+
+1/ Ship weekly
+
+The magic is in the practice.
+Your first 100 posts will be terrible.
+Your second 100 will be mediocre.
+Your third 100? Game-changing.
+
+2/ Think in public
+
+Share your process.
+Your half-baked ideas.
+Your experiments.
+Your failures.
+
+This builds trust faster than perfection.
+
+3/ Build in public
+
+Show the behind-the-scenes.
+Your tools. Your stack. Your wins.
+
+The audience wants to see the journey.
+
+This is how we build the golden age.
+
+[FrankX Brand CTA]
+
+#[consciousness] #[transformation] #[creator economy]
+```
+
+## Anti-Patterns
+
+| Bad Practice | Why It's Bad | Better Approach |
+|--------------|--------------|-----------------|
+| Same post everywhere | Ignores platform norms | Adapt for each platform |
+| No hook in first line | People scroll past | Start with attention-grabber |
+| Too many hashtags | Looks spammy, hurts reach | Platform-appropriate amount |
+| Only self-promotion | Provides no value | 80% value, 20% promotion |
+| Inconsistent posting | Algorithm punishment | Regular posting schedule |
+| Ignoring engagement | Misses relationship building | Respond to all comments |
+
+## Quick Commands
+
+```bash
+# Create Twitter thread
+skill:social-media, create a twitter thread about [TOPIC]
+
+# Write LinkedIn post
+skill:social-media, write a linkedin post about [TREND]
+
+# Generate Instagram carousel
+skill:social-media, create an instagram carousel on [SUBJECT]
+
+# Post to FarCaster
+skill:social-media, create a farcaster cast about [TOPIC]
+
+# Repurpose blog to social
+skill:social-media, turn my blog post [URL] into a thread
+```
+
+## Related Skills
+
+- `blog-writing` - Create long-form content to repurpose
+- `newsletter` - Email distribution of social content
+- `content-strategy` - Plan social media calendar
+- `seo-optimization` - Optimize for social search
+
+## Resources
+
+- `resources/platform-templates.md` - Platform-specific templates
+- `resources/hook-library.md` - Proven hook formulas
+- `resources/hashtag-strategy.md` - Hashtag research by platform

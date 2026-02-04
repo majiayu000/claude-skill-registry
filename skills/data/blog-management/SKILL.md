@@ -197,18 +197,39 @@ curl -X PATCH "https://steponnopets.net/devblog/api/post?slug=my-post" \
 
 **Purpose**: Create a new blog post (usually done via `/blog` command)
 
-**Format:**
+**IMPORTANT**: Always use the file-based approach to avoid JSON escaping issues, especially on Windows.
+
+**Format (recommended - works on all platforms):**
 ```bash
+# 1. Write post data to temporary file
+cat > /tmp/post.json << 'EOF'
+{
+  "title": "Post Title",
+  "content": "# Markdown content here...",
+  "repo": "https://github.com/user/repo",
+  "tags": ["® RepoName", "rust", "web"],
+  "publish": true
+}
+EOF
+
+# 2. POST the file
 curl -X POST https://steponnopets.net/cyril/api/posts \
   -H "Content-Type: application/json" \
   -H "X-Cyril-Key: $(cat ~/.claude/cyril-api-key)" \
-  -d '{
-    "title": "Post Title",
-    "content": "# Markdown content here...",
-    "repo": "https://github.com/user/repo",
-    "tags": ["® RepoName", "rust", "web"],
-    "publish": true
-  }'
+  --data-binary @/tmp/post.json
+
+# 3. Clean up
+rm /tmp/post.json
+```
+
+**Windows alternative:**
+```powershell
+# Use Write tool to create post.json in current directory
+# Then:
+curl -X POST https://steponnopets.net/cyril/api/posts `
+  -H "Content-Type: application/json" `
+  -H "X-Cyril-Key: <api-key>" `
+  --data-binary @post.json
 ```
 
 **Response:**
@@ -224,6 +245,7 @@ curl -X POST https://steponnopets.net/cyril/api/posts \
 - Project tag auto-creates/updates project on Projects page
 - Set `"publish": false` to save as draft
 - Slug is auto-generated from title
+- ALWAYS use `--data-binary @file.json` to avoid shell escaping issues
 
 ## DELETE Pattern
 

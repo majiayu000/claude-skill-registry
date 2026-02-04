@@ -1,7 +1,7 @@
 {
   "name": "pytorch-lightning",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/pytorch-lightning/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:11.818233Z"
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/pytorch-lightning/SKILL.md",
+  "source": "github.com/cuba6112/skillfactory",
+  "downloaded_at": "2026-02-04T05:05:08.683305Z"
 }

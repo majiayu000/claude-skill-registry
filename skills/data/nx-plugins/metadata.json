@@ -1,7 +1,7 @@
 {
   "name": "nx-plugins",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/nx-plugins/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:19.229488Z"
+  "repo": "NeverSight/skills_feed",
+  "path": "data/skills-md/nrwl/nx/nx-plugins/SKILL.md",
+  "source": "github.com/NeverSight/skills_feed",
+  "downloaded_at": "2026-02-04T02:32:55.066350Z"
 }

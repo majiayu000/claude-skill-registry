@@ -1,15 +1,6 @@
 ---
 name: apply-all-findings
 description: Use after code review - implement ALL findings; any finding not fixed MUST have tracking issue created; no finding disappears without trace
-allowed-tools:
-  - Read
-  - Edit
-  - Write
-  - Grep
-  - Glob
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Apply All Findings

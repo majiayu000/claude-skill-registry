@@ -1,18 +1,18 @@
 ---
-name: "flask-blueprint-creator"
+name: flask-blueprint-creator
 description: |
-  Create flask blueprint creator operations. Auto-activating skill for Backend Development.
+  Flask Blueprint Creator - Auto-activating skill for Backend Development.
   Triggers on: flask blueprint creator, flask blueprint creator
-  Part of the Backend Development skill category. Use when working with flask blueprint creator functionality. Trigger with phrases like "flask blueprint creator", "flask creator", "flask".
-allowed-tools: "Read, Write, Edit, Bash(cmd:*), Grep"
+  Part of the Backend Development skill category.
+allowed-tools: Read, Write, Edit, Bash, Grep
 version: 1.0.0
 license: MIT
-author: "Jeremy Longshore <jeremy@intentsolutions.io>"
+author: Jeremy Longshore <jeremy@intentsolutions.io>
 ---
 
 # Flask Blueprint Creator
 
-## Overview
+## Purpose
 
 This skill provides automated assistance for flask blueprint creator tasks within the Backend Development domain.
 
@@ -23,48 +23,18 @@ This skill activates automatically when you:
 - Ask about flask blueprint creator patterns or best practices
 - Need help with backend skills covering node.js, python, go, database design, caching, messaging, and microservices architecture.
 
-## Instructions
+## Capabilities
 
-1. Provides step-by-step guidance for flask blueprint creator
-2. Follows industry best practices and patterns
-3. Generates production-ready code and configurations
-4. Validates outputs against common standards
+- Provides step-by-step guidance for flask blueprint creator
+- Follows industry best practices and patterns
+- Generates production-ready code and configurations
+- Validates outputs against common standards
 
-## Examples
+## Example Triggers
 
-**Example: Basic Usage**
-Request: "Help me with flask blueprint creator"
-Result: Provides step-by-step guidance and generates appropriate configurations
-
-
-## Prerequisites
-
-- Relevant development environment configured
-- Access to necessary tools and services
-- Basic understanding of backend development concepts
-
-
-## Output
-
-- Generated configurations and code
-- Best practice recommendations
-- Validation results
-
-
-## Error Handling
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Configuration invalid | Missing required fields | Check documentation for required parameters |
-| Tool not found | Dependency not installed | Install required tools per prerequisites |
-| Permission denied | Insufficient access | Verify credentials and permissions |
-
-
-## Resources
-
-- Official documentation for related tools
-- Best practices guides
-- Community examples and tutorials
+- "Help me with flask blueprint creator"
+- "Set up flask blueprint creator"
+- "How do I implement flask blueprint creator?"
 
 ## Related Skills
 

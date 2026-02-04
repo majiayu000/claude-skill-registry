@@ -26,14 +26,14 @@ You copy album art to both required locations based on config.
 Expected format: `<file-path> <album-name>`
 
 Examples:
-- `~/Downloads/album-art.jpg shell-no`
-- `~/Downloads/cover.png shell-no`
+- `~/Downloads/album-art.jpg sample-album`
+- `~/Downloads/cover.png sample-album`
 
 If arguments are missing, ask:
 ```
 Usage: /import-art <file-path> <album-name>
 
-Example: /import-art ~/Downloads/album-art.jpg shell-no
+Example: /import-art ~/Downloads/album-art.jpg sample-album
 ```
 
 ## Step 2: Read Config (REQUIRED)
@@ -84,12 +84,12 @@ Example with:
 - `audio_root: ~/bitwize-music/audio`
 - `artist: bitwize`
 - `genre: electronic`
-- `album: shell-no`
+- `album: sample-album`
 
 Results:
 ```
-Audio:   ~/bitwize-music/audio/bitwize/shell-no/album.png
-Content: ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/album-art.jpg
+Audio:   ~/bitwize-music/audio/bitwize/sample-album/album.png
+Content: ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/album-art.jpg
 ```
 
 **CRITICAL**: Audio path includes artist folder: `{audio_root}/{artist}/{album}/`
@@ -150,7 +150,7 @@ Continue anyway? (y/n)
 ## Examples
 
 ```
-/import-art ~/Downloads/shell-no-cover.jpg shell-no
+/import-art ~/Downloads/sample-album-cover.jpg sample-album
 ```
 
 Config has:
@@ -162,15 +162,15 @@ artist:
   name: bitwize
 ```
 
-Album found at: `~/bitwize-music/artists/bitwize/albums/electronic/shell-no/`
+Album found at: `~/bitwize-music/artists/bitwize/albums/electronic/sample-album/`
 
 Result:
 ```
-Album art imported for: shell-no
+Album art imported for: sample-album
 
 Copied to:
-1. ~/bitwize-music/audio/bitwize/shell-no/album.png (for platforms)
-2. ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/album-art.jpg (for docs)
+1. ~/bitwize-music/audio/bitwize/sample-album/album.png (for platforms)
+2. ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/album-art.jpg (for docs)
 ```
 
 ---
@@ -182,7 +182,7 @@ Copied to:
 **Wrong:**
 ```bash
 # Assuming paths
-cp art.png ~/music-projects/audio/shell-no/
+cp art.png ~/music-projects/audio/sample-album/
 ```
 
 **Right:**
@@ -197,13 +197,13 @@ cat ~/.bitwize-music/config.yaml
 **Wrong audio destination:**
 ```
 {audio_root}/{album}/album.png
-# Example: ~/music-projects/audio/shell-no/album.png
+# Example: ~/music-projects/audio/sample-album/album.png
 ```
 
 **Correct audio destination:**
 ```
 {audio_root}/{artist}/{album}/album.png
-# Example: ~/music-projects/audio/bitwize/shell-no/album.png
+# Example: ~/music-projects/audio/bitwize/sample-album/album.png
 ```
 
 **Why it matters:** This is the most common mistake - audio_root includes artist folder.

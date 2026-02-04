@@ -1,308 +1,357 @@
 ---
 name: frontend-testing
-description: |
-  Testa aplicacoes web usando Playwright. Captura screenshots, executa E2E tests,
-  analisa logs do browser. Integrado com qa-analyst para Phase 6.
-  Use quando: testar frontend, capturar screenshots, validar UI, executar E2E.
-allowed-tools:
-  - Read
-  - Write
-  - Bash
-  - Glob
-user-invocable: true
+description: Generate Vitest + React Testing Library tests for Desktop Ethereal frontend components, hooks, and utilities. Triggers on testing, spec files, coverage, Vitest, RTL, unit tests, integration tests, or write/review test requests.
 ---
 
-# Frontend Testing Skill
+# Desktop Ethereal Frontend Testing Skill
 
-## Proposito
+This skill enables Claude to generate high-quality, comprehensive frontend tests for the Desktop Ethereal project following established conventions and best practices.
 
-Testa aplicacoes web locais e remotas usando Playwright:
-- **Screenshots**: Captura visual para validacao
-- **E2E Tests**: Testes end-to-end automatizados
-- **Browser Logs**: Analise de erros e warnings
-- **Accessibility**: Validacao basica de a11y
+> **⚠️ Authoritative Source**: This skill is derived from general testing best practices with adaptations for Tauri/React desktop applications. Use Vitest mock/timer APIs (`vi.*`).
 
-## Principios de Design
+## When to Apply This Skill
 
-### 1. Reconnaissance-Then-Action
+Apply this skill when the user:
 
-Baseado no padrao do webapp-testing da Anthropic:
+- Asks to **write tests** for a component, hook, or utility
+- Asks to **review existing tests** for completeness
+- Mentions **Vitest**, **React Testing Library**, **RTL**, or **spec files**
+- Requests **test coverage** improvement
+- Mentions **testing**, **unit tests**, or **integration tests** for frontend code
 
-```
-1. Navigate  → Ir para a pagina
-2. Wait      → Aguardar network idle
-3. Capture   → Screenshot ou DOM
-4. Discover  → Identificar seletores do DOM renderizado
-5. Interact  → Executar acoes com seletores descobertos
-```
+**Do NOT apply** when:
 
-### 2. Server Lifecycle Management
+- User is asking about backend/Rust tests
+- User is asking about E2E tests (Playwright/Cypress)
+- User is only asking conceptual questions without code context
 
-Gerenciar servidor local automaticamente:
+## Quick Reference
 
-```bash
-# Inicia servidor, executa teste, encerra servidor
-python scripts/with_server.py --server "npm run dev" --port 3000 -- pytest tests/
-```
+### Tech Stack
 
-### 3. Never Hardcode Selectors
+| Tool | Version | Purpose |
+| ------ | --------- | --------- |
+| Vitest | ^3.0.4 | Test runner |
+| React Testing Library | ^16.2.0 | Component testing |
+| jsdom | ^26.0.0 | Test environment |
+| TypeScript | ^5.9.3 | Type safety |
 
-Sempre descobrir seletores do DOM real, nunca assumir.
-
-## Comandos
-
-### /frontend-test {url}
-
-Executa suite de testes E2E.
+### Key Commands
 
 ```bash
-/frontend-test http://localhost:3000
-/frontend-test https://staging.example.com
+# Run all tests
+pnpm test
+
+# Watch mode
+pnpm test:watch
+
+# Run specific file
+pnpm test path/to/file.spec.tsx
+
+# Generate coverage report
+pnpm test:coverage
 ```
 
-### /frontend-screenshot {url} {nome}
+### File Naming
 
-Captura screenshot de uma pagina.
+- Test files: `ComponentName.test.tsx` (same directory as component)
+- Integration tests: `src/test/integration/` directory
 
-```bash
-/frontend-screenshot http://localhost:3000 homepage
-/frontend-screenshot http://localhost:3000/login login-page
+## Test Structure Template
+
+```typescript
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import Component from './index'
+
+// ✅ Import real project components (DO NOT mock these)
+// import Sprite from '@/components/Sprite'
+// import { useEtherealState } from '@/hooks/useEtherealState'
+
+// ✅ Mock external dependencies and Tauri APIs only
+vi.mock('@tauri-apps/api/event', () => ({
+  listen: vi.fn().mockResolvedValue({ unlisten: vi.fn() }),
+}))
+
+vi.mock('@tauri-apps/api/core', () => ({
+  invoke: vi.fn(),
+}))
+
+// Shared state for mocks (if needed)
+let mockSharedState = false
+
+describe('ComponentName', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()  // ✅ Reset mocks BEFORE each test
+    mockSharedState = false  // ✅ Reset shared state
+  })
+
+  // Rendering tests (REQUIRED)
+  describe('Rendering', () => {
+    it('should render without crashing', () => {
+      // Arrange
+      const props = { title: 'Test' }
+
+      // Act
+      render(<Component {...props} />)
+
+      // Assert
+      expect(screen.getByText('Test')).toBeInTheDocument()
+    })
+  })
+
+  // Props tests (REQUIRED)
+  describe('Props', () => {
+    it('should apply custom className', () => {
+      render(<Component className="custom" />)
+      expect(screen.getByRole('button')).toHaveClass('custom')
+    })
+  })
+
+  // User Interactions
+  describe('User Interactions', () => {
+    it('should handle click events', () => {
+      const handleClick = vi.fn()
+      render(<Component onClick={handleClick} />)
+
+      fireEvent.click(screen.getByRole('button'))
+
+      expect(handleClick).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  // Edge Cases (REQUIRED)
+  describe('Edge Cases', () => {
+    it('should handle null data', () => {
+      render(<Component data={null} />)
+      expect(screen.getByText(/no data/i)).toBeInTheDocument()
+    })
+
+    it('should handle empty array', () => {
+      render(<Component items={[]} />)
+      expect(screen.getByText(/empty/i)).toBeInTheDocument()
+    })
+  })
+})
 ```
 
-**Output**: `.agentic_sdlc/projects/{id}/screenshots/{nome}.png`
+## Testing Workflow (CRITICAL)
 
-### /frontend-check {url}
+### ⚠️ Incremental Approach Required
 
-Verifica saude basica da aplicacao.
+**NEVER generate all test files at once.** For complex components or multi-file directories:
 
-```bash
-/frontend-check http://localhost:3000
-```
-
-**Verifica**:
-- Pagina carrega sem erros
-- Console sem erros criticos
-- Links nao quebrados
-- Performance basica
-
-## Workflow de Testes
-
-### Setup com Servidor Local
-
-```bash
-# Single server
-python scripts/with_server.py \
-  --server "npm run dev" \
-  --port 5173 \
-  -- python scripts/run_tests.py
-
-# Multiple servers (frontend + backend)
-python scripts/with_server.py \
-  --server "cd backend && python server.py" --port 3000 \
-  --server "cd frontend && npm run dev" --port 5173 \
-  -- python scripts/run_tests.py
-```
-
-### Captura de Screenshot
-
-```python
-from playwright.sync_api import sync_playwright
-
-with sync_playwright() as p:
-    browser = p.chromium.launch()
-    page = browser.new_page()
-
-    page.goto("http://localhost:3000")
-    page.wait_for_load_state("networkidle")
-
-    page.screenshot(path="screenshot.png", full_page=True)
-    browser.close()
-```
-
-### Teste E2E Basico
-
-```python
-def test_login_flow(page):
-    page.goto("http://localhost:3000/login")
-    page.wait_for_load_state("networkidle")
-
-    # Descobrir seletores do DOM real
-    page.fill('[data-testid="email"]', 'test@example.com')
-    page.fill('[data-testid="password"]', 'password123')
-    page.click('[data-testid="submit"]')
-
-    # Verificar redirecionamento
-    page.wait_for_url("**/dashboard")
-    assert "dashboard" in page.url
-```
-
-## Integracao com SDLC
-
-### Phase 6 (Quality) - qa-analyst
-
-```yaml
-quality_gate:
-  frontend_tests:
-    required: true
-    criteria:
-      - "E2E tests passing"
-      - "No console errors"
-      - "Screenshots captured for review"
-
-  commands:
-    - "/frontend-test http://localhost:3000"
-    - "/frontend-screenshot http://localhost:3000 homepage"
-```
-
-### Phase 7 (Release) - Evidencias
-
-```yaml
-release_artifacts:
-  screenshots:
-    - homepage.png
-    - login-page.png
-    - dashboard.png
-  test_reports:
-    - e2e-results.json
-```
-
-## Dependencias
-
-### Obrigatorias
-
-```bash
-# Python
-pip install playwright pytest-playwright
-
-# Browser
-playwright install chromium
-```
-
-### Opcionais
-
-```bash
-# Para testes visuais
-pip install pixelmatch pillow
-
-# Para acessibilidade
-pip install axe-playwright-python
-```
-
-### Verificar Instalacao
-
-```bash
-python scripts/check_deps.py
-```
-
-## Boas Praticas
-
-### 1. Sempre Aguardar Network Idle
-
-```python
-page.goto(url)
-page.wait_for_load_state("networkidle")  # OBRIGATORIO
-```
-
-### 2. Usar data-testid
-
-Preferir seletores `data-testid` sobre classes CSS:
-
-```html
-<!-- BOM -->
-<button data-testid="submit-btn">Submit</button>
-
-<!-- EVITAR -->
-<button class="btn btn-primary submit">Submit</button>
-```
-
-### 3. Capturar Logs do Browser
-
-```python
-page.on("console", lambda msg: print(f"[{msg.type}] {msg.text}"))
-page.on("pageerror", lambda err: print(f"[ERROR] {err}"))
-```
-
-### 4. Organizar Screenshots
+1. **Analyze & Plan**: List all files, order by complexity (simple → complex)
+1. **Process ONE at a time**: Write test → Run test → Fix if needed → Next
+1. **Verify before proceeding**: Do NOT continue to next file until current passes
 
 ```
-.agentic_sdlc/projects/{id}/
-└── screenshots/
-    ├── before/           # Estado inicial
-    ├── after/            # Apos mudancas
-    └── regression/       # Comparacao visual
+For each file:
+  ┌────────────────────────────────────────┐
+  │ 1. Write test                          │
+  │ 2. Run: pnpm test <file>.test.tsx      │
+  │ 3. PASS? → Mark complete, next file    │
+  │    FAIL? → Fix first, then continue    │
+  │ 4. Check coverage                      │
+  └────────────────────────────────────────┘
 ```
 
-## Anti-Patterns
+### Complexity-Based Order
 
-### NAO Fazer
+Process in this order for multi-file testing:
 
-```python
-# ❌ Hardcoded selectors sem verificar DOM
-page.click("#submit-btn")
+1. 🟢 Utility functions (simplest)
+1. 🟢 Custom hooks
+1. 🟡 Simple components (presentational)
+1. 🟡 Medium components (state, effects)
+1. 🔴 Complex components (API, routing)
+1. 🔴 Integration tests (App component - last)
 
-# ❌ Sleep ao inves de wait
-import time
-time.sleep(5)
+### When to Refactor First
 
-# ❌ Ignorar erros de console
-# (nao configurar handler)
+- **Complexity > 50**: Break into smaller pieces before testing
+- **500+ lines**: Consider splitting before testing
+- **Many dependencies**: Extract logic into hooks first
+
+> 📖 See references/workflow.md for complete workflow details and todo list format.
+
+## Testing Strategy
+
+### Path-Level Testing (Directory Testing)
+
+When assigned to test a directory/path, test **ALL content** within that path:
+
+- Test all components, hooks, utilities in the directory (not just `index` file)
+- Use incremental approach: one file at a time, verify each before proceeding
+- Goal: 100% coverage of ALL files in the directory
+
+### Integration Testing First
+
+**Prefer integration testing** when writing tests for a directory:
+
+- ✅ **Import real project components** directly (including base components and siblings)
+- ✅ **Only mock**: Tauri APIs (`@/tauri-apps/api/*`), external services
+- ❌ **DO NOT mock** project components unless absolutely necessary
+- ❌ **DO NOT mock** sibling/child components in the same directory
+
+> See [Test Structure Template](#test-structure-template) for correct import/mock patterns.
+
+## Core Principles
+
+### 1. AAA Pattern (Arrange-Act-Assert)
+
+Every test should clearly separate:
+
+- **Arrange**: Setup test data and render component
+- **Act**: Perform user actions
+- **Assert**: Verify expected outcomes
+
+### 2. Black-Box Testing
+
+- Test observable behavior, not implementation details
+- Use semantic queries (getByRole, getByLabelText)
+- Avoid testing internal state directly
+- **Prefer pattern matching over hardcoded strings** in assertions:
+
+```typescript
+// ❌ Avoid: hardcoded text assertions
+expect(screen.getByText('Loading...')).toBeInTheDocument()
+
+// ✅ Better: role-based queries
+expect(screen.getByRole('status')).toBeInTheDocument()
+
+// ✅ Better: pattern matching
+expect(screen.getByText(/loading/i)).toBeInTheDocument()
 ```
 
-### Fazer
+### 3. Single Behavior Per Test
 
-```python
-# ✅ Descobrir seletor do DOM
-submit = page.locator('[data-testid="submit"]')
-if submit.count() > 0:
-    submit.click()
+Each test verifies ONE user-observable behavior:
 
-# ✅ Wait explicito
-page.wait_for_selector('[data-testid="result"]')
+```typescript
+// ✅ Good: One behavior
+it('should disable button when loading', () => {
+  render(<Button loading />)
+  expect(screen.getByRole('button')).toBeDisabled()
+})
 
-# ✅ Capturar todos os logs
-errors = []
-page.on("pageerror", lambda e: errors.append(e))
+// ❌ Bad: Multiple behaviors
+it('should handle loading state', () => {
+  render(<Button loading />)
+  expect(screen.getByRole('button')).toBeDisabled()
+  expect(screen.getByText('Loading...')).toBeInTheDocument()
+  expect(screen.getByRole('button')).toHaveClass('loading')
+})
 ```
 
-## Troubleshooting
+### 4. Semantic Naming
 
-### "Browser nao instalado"
+Use `should <behavior> when <condition>`:
 
-```bash
-playwright install chromium
-# Ou todos os browsers
-playwright install
+```typescript
+it('should show error message when validation fails')
+it('should call onSubmit when form is valid')
+it('should disable input when isReadOnly is true')
 ```
 
-### "Timeout ao carregar pagina"
+## Required Test Scenarios
 
-Aumentar timeout:
+### Always Required (All Components)
 
-```python
-page.goto(url, timeout=60000)  # 60 segundos
+1. **Rendering**: Component renders without crashing
+1. **Props**: Required props, optional props, default values
+1. **Edge Cases**: null, undefined, empty values, boundary conditions
+
+### Conditional (When Present)
+
+| Feature | Test Focus |
+| --------- | ----------- |
+| `useState` | Initial state, transitions, cleanup |
+| `useEffect` | Execution, dependencies, cleanup |
+| Event handlers | All onClick, onChange, onSubmit, keyboard |
+| Tauri IPC calls | Loading, success, error states |
+| `useCallback`/`useMemo` | Referential equality |
+| Context | Provider values, consumer behavior |
+| Forms | Validation, submission, error display |
+
+## Coverage Goals (Per File)
+
+For each test file generated, aim for:
+
+- ✅ **100%** function coverage
+- ✅ **100%** statement coverage
+- ✅ **>95%** branch coverage
+- ✅ **>95%** line coverage
+
+> **Note**: For multi-file directories, process one file at a time with full coverage each. See `references/workflow.md`.
+
+## Tauri-Specific Considerations
+
+### Mocking Tauri APIs
+
+Always mock Tauri APIs in tests:
+
+```typescript
+// Mock Tauri event system
+vi.mock('@tauri-apps/api/event', () => ({
+  listen: vi.fn().mockImplementation((event, callback) => {
+    // Simulate event emission for testing
+    return Promise.resolve({ unlisten: vi.fn() })
+  }),
+}))
+
+// Mock Tauri command invocations
+vi.mock('@tauri-apps/api/core', () => ({
+  invoke: vi.fn().mockResolvedValue('mock result'),
+}))
 ```
 
-### "Servidor nao iniciou"
+### Testing Event-Driven Components
 
-Verificar porta:
+For components that respond to Tauri events:
 
-```bash
-lsof -i :3000
-# Se ocupada, usar outra porta
-python scripts/with_server.py --server "npm run dev" --port 3001 ...
+```typescript
+it('should update state when gpu-update event is received', async () => {
+  // Mock the listen function to immediately call the callback
+  const mockListen = vi.mocked(listen)
+  mockListen.mockImplementation((event, callback) => {
+    if (event === 'gpu-update') {
+      callback({ payload: { temperature: 85 } })
+    }
+    return Promise.resolve({ unlisten: vi.fn() })
+  })
+
+  render(<EtherealStatusBar />)
+
+  // Wait for state update
+  await waitFor(() => {
+    expect(screen.getByText('OVERHEATING')).toBeInTheDocument()
+  })
+})
 ```
 
-### "Screenshot em branco"
+## Detailed Guides
 
-Aguardar conteudo:
+For more detailed information, refer to:
 
-```python
-page.wait_for_selector("main", state="visible")
-page.screenshot(path="screenshot.png")
-```
+- `references/workflow.md` - **Incremental testing workflow** (MUST READ for multi-file testing)
+- `references/mocking.md` - Mock patterns and best practices
+- `references/async-testing.md` - Async operations and API calls
+- `references/common-patterns.md` - Frequently used testing patterns
+- `references/checklist.md` - Test generation checklist and validation steps
 
-## Referencias
+## Authoritative References
 
-- [Playwright Python docs](https://playwright.dev/python/)
-- [pytest-playwright](https://playwright.dev/python/docs/test-runners)
-- [Anthropic webapp-testing](https://github.com/anthropics/skills/tree/main/skills/webapp-testing)
+### Primary Specification (MUST follow)
+
+- **`docs/testing.md`** - The canonical testing specification for Desktop Ethereal.
+
+### Reference Examples in Codebase
+
+- `src/hooks/useEtherealState.test.ts` - Custom hook tests
+- `src/components/Sprite.test.tsx` - Component tests (to be created)
+- `src/test/setup.ts` - Global test setup
+
+### Project Configuration
+
+- `vitest.config.ts` - Vitest configuration
+- `src/test/setup.ts` - Test environment setup

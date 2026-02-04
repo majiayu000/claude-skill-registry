@@ -22,6 +22,7 @@ Create consistent, well-formatted headers for all agent-generated reports with p
 Gather required information for header.
 
 **Expected Input**:
+
 - `reportType`: String (e.g., "Bug Hunting", "Security Audit", "Version Update")
 - `version`: String (e.g., "0.8.0", "2025-10-17", "final")
 - `status`: String (success|partial|failed|in_progress)
@@ -44,6 +45,7 @@ Convert timestamp to readable format if needed.
 Map status to appropriate emoji.
 
 **Status Mapping**:
+
 - `success`: ✅
 - `partial`: ⚠️
 - `failed`: ❌
@@ -54,6 +56,7 @@ Map status to appropriate emoji.
 Create formatted markdown header.
 
 **Expected Output**:
+
 ```markdown
 # {ReportType} Report: {Version}
 
@@ -70,6 +73,7 @@ Create formatted markdown header.
 ```
 
 **Standard Metrics** (include when available):
+
 - Timestamp (ISO-8601)
 - Duration (human-readable)
 - Workflow (domain: bugs, security, dead-code, dependencies)
@@ -81,6 +85,7 @@ Create formatted markdown header.
 Include additional metadata fields if provided.
 
 **Optional Fields**:
+
 - Agent name
 - Duration
 - File count
@@ -98,6 +103,7 @@ Include additional metadata fields if provided.
 ### Example 1: Bug Hunting Report
 
 **Input**:
+
 ```json
 {
   "reportType": "Bug Hunting",
@@ -112,6 +118,7 @@ Include additional metadata fields if provided.
 ```
 
 **Output**:
+
 ```markdown
 # Bug Hunting Report: 2025-10-17
 
@@ -130,6 +137,7 @@ Include additional metadata fields if provided.
 ### Example 2: Version Update Report
 
 **Input**:
+
 ```json
 {
   "reportType": "Version Update",
@@ -139,6 +147,7 @@ Include additional metadata fields if provided.
 ```
 
 **Output**:
+
 ```markdown
 # Version Update Report: 0.7.0 → 0.8.0
 
@@ -154,6 +163,7 @@ Include additional metadata fields if provided.
 ### Example 3: Security Audit (Partial)
 
 **Input**:
+
 ```json
 {
   "reportType": "Security Audit",
@@ -169,6 +179,7 @@ Include additional metadata fields if provided.
 ```
 
 **Output**:
+
 ```markdown
 # Security Audit Report: final
 
@@ -187,6 +198,7 @@ Include additional metadata fields if provided.
 ### Example 4: Failed Dependency Update
 
 **Input**:
+
 ```json
 {
   "reportType": "Dependency Update",
@@ -200,6 +212,7 @@ Include additional metadata fields if provided.
 ```
 
 **Output**:
+
 ```markdown
 # Dependency Update Report: 2025-10-17
 

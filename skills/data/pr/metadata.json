@@ -1,7 +1,7 @@
 {
   "name": "pr",
-  "repo": "kasperjunge/agent-resources-legacy",
+  "repo": "remotion-dev/remotion",
   "path": ".claude/skills/pr/SKILL.md",
-  "source": "github.com/kasperjunge/agent-resources-legacy",
-  "downloaded_at": "2026-02-02T04:19:36.982125Z"
+  "source": "github.com/remotion-dev/remotion",
+  "downloaded_at": "2026-02-04T05:13:23.548662Z"
 }

@@ -1,7 +1,7 @@
 ---
 name: api-gateway
 description: |
-  API gateway for calling third-party APIs with managed auth. Use this skill when users want to interact with external services like Slack, HubSpot, Salesforce, Google Workspace, Stripe, Shopify, and more.
+  API gateway for calling third-party APIs with managed auth. Use this skill when users want to interact with external services like Slack, HubSpot, Salesforce, Google Workspace, Stripe, and more.
 compatibility: Requires network access and valid Maton API key
 metadata:
   author: maton
@@ -21,6 +21,8 @@ curl -s -X POST 'https://gateway.maton.ai/slack/api/chat.postMessage' \
   -H 'Authorization: Bearer YOUR_API_KEY' \
   -d '{"channel": "C0123456", "text": "Hello from gateway!"}'
 ```
+
+> **IMPORTANT: If you receive a 500 Internal Server Error**, this does NOT mean the service is unsupported. The most common cause is an expired OAuth refresh token (connections older than 1 month). See the "Troubleshooting 500 Internal Server Error" section below to create a new connection and retry with the new connection ID.
 
 ## Base URL
 
@@ -144,7 +146,11 @@ If omitted, the gateway uses the default (oldest) active connection for that app
 |---------|----------|------------------|
 | Airtable | `airtable` | `api.airtable.com` |
 | Apollo | `apollo` | `api.apollo.io` |
+| Asana | `asana` | `app.asana.com` |
+| Calendly | `calendly` | `api.calendly.com` |
 | Chargebee | `chargebee` | `{subdomain}.chargebee.com` |
+| ClickUp | `clickup` | `api.clickup.com` |
+| Fathom | `fathom` | `api.fathom.ai` |
 | Google Ads | `google-ads` | `googleads.googleapis.com` |
 | Google Analytics Admin | `google-analytics-admin` | `analyticsadmin.googleapis.com` |
 | Google Analytics Data | `google-analytics-data` | `analyticsdata.googleapis.com` |
@@ -153,15 +159,18 @@ If omitted, the gateway uses the default (oldest) active connection for that app
 | Google Drive | `google-drive` | `www.googleapis.com` |
 | Google Forms | `google-forms` | `forms.googleapis.com` |
 | Gmail | `google-mail` | `gmail.googleapis.com` |
+| Google Meet | `google-meet` | `meet.googleapis.com` |
+| Google Play | `google-play` | `androidpublisher.googleapis.com` |
 | Google Search Console | `google-search-console` | `www.googleapis.com` |
 | Google Sheets | `google-sheets` | `sheets.googleapis.com` |
+| Google Slides | `google-slides` | `slides.googleapis.com` |
 | HubSpot | `hubspot` | `api.hubapi.com` |
 | Jira | `jira` | `api.atlassian.com` |
 | JotForm | `jotform` | `api.jotform.com` |
 | Notion | `notion` | `api.notion.com` |
+| Outlook | `outlook` | `graph.microsoft.com` |
 | QuickBooks | `quickbooks` | `quickbooks.api.intuit.com` |
 | Salesforce | `salesforce` | `{instance}.salesforce.com` |
-| Shopify | `shopify` | `{subdomain}.myshopify.com` (GraphQL API) |
 | Slack | `slack` | `slack.com` |
 | Stripe | `stripe` | `api.stripe.com` |
 | Typeform | `typeform` | `api.typeform.com` |
@@ -170,7 +179,11 @@ If omitted, the gateway uses the default (oldest) active connection for that app
 See [references/](references/) for detailed routing guides per provider:
 - [Airtable](references/airtable.md) - Records, bases, tables
 - [Apollo](references/apollo.md) - People search, enrichment, contacts
+- [Asana](references/asana.md) - Tasks, projects, workspaces, webhooks
+- [Calendly](references/calendly.md) - Event types, scheduled events, availability, webhooks
 - [Chargebee](references/chargebee.md) - Subscriptions, customers, invoices
+- [ClickUp](references/clickup.md) - Tasks, lists, folders, spaces, webhooks
+- [Fathom](references/fathom.md) - Meeting recordings, transcripts, summaries, webhooks
 - [Google Ads](references/google-ads.md) - Campaigns, ad groups, GAQL queries
 - [Google Analytics Admin](references/google-analytics-admin.md) - Reports, dimensions, metrics
 - [Google Analytics Data](references/google-analytics-data.md) - Reports, dimensions, metrics
@@ -179,15 +192,18 @@ See [references/](references/) for detailed routing guides per provider:
 - [Google Drive](references/google-drive.md) - Files, folders, permissions
 - [Google Forms](references/google-forms.md) - Forms, questions, responses
 - [Gmail](references/google-mail.md) - Messages, threads, labels
+- [Google Meet](references/google-meet.md) - Spaces, conference records, participants
+- [Google Play](references/google-play.md) - In-app products, subscriptions, reviews
 - [Google Search Console](references/google-search-console.md) - Search analytics, sitemaps
 - [Google Sheets](references/google-sheets.md) - Values, ranges, formatting
+- [Google Slides](references/google-slides.md) - Presentations, slides, formatting
 - [HubSpot](references/hubspot.md) - Contacts, companies, deals
 - [Jira](references/jira.md) - Issues, projects, JQL queries
 - [JotForm](references/jotform.md) - Forms, submissions, webhooks
 - [Notion](references/notion.md) - Pages, databases, blocks
+- [Outlook](references/outlook.md) - Mail, calendar, contacts
 - [QuickBooks](references/quickbooks.md) - Customers, invoices, reports
 - [Salesforce](references/salesforce.md) - SOQL, sObjects, CRUD
-- [Shopify](references/shopify.md) - **Uses GraphQL API (read this first)**, products, orders, customers
 - [Slack](references/slack.md) - Messages, channels, users
 - [Stripe](references/stripe.md) - Customers, subscriptions, payments
 - [Typeform](references/typeform.md) - Forms, responses, insights
@@ -299,9 +315,47 @@ response = requests.post(
 | 400 | Missing connection for the requested app |
 | 401 | Invalid or missing Maton API key |
 | 429 | Rate limited (10 requests/second per account) |
+| 500 | Internal Server Error (see troubleshooting below) |
 | 4xx/5xx | Passthrough error from the target API |
 
 Errors from the target API are passed through with their original status codes and response bodies.
+
+### Troubleshooting 500 Internal Server Error
+
+**IMPORTANT:** A 500 Internal Server Error does NOT mean the service is unsupported. If the app is listed in the Supported Services table above, the error is likely due to an expired OAuth refresh token.
+
+**When you receive a 500 Internal Server Error, ALWAYS follow these steps before concluding there is an issue:**
+
+Connections that have been active for more than 1 month may have expired OAuth refresh tokens. To resolve:
+
+1. Create a new connection for the app:
+   ```bash
+   curl -s -X POST 'https://ctrl.maton.ai/connections' \
+     -H 'Content-Type: application/json' \
+     -H 'Authorization: Bearer YOUR_API_KEY' \
+     -d '{"app": "APP_NAME"}'
+   ```
+
+2. Get the OAuth URL by calling the GET connection endpoint with the new connection ID from step 1:
+   ```bash
+   curl -s -X GET 'https://ctrl.maton.ai/connections/NEW_CONNECTION_ID' \
+     -H 'Authorization: Bearer YOUR_API_KEY'
+   ```
+
+3. Share the returned `url` with the user and ask them to complete the OAuth flow in their browser.
+
+4. After the user completes OAuth, retry the original request using the new connection ID via the `Maton-Connection` header:
+   ```bash
+   curl -s -X GET 'https://gateway.maton.ai/APP_NAME/...' \
+     -H 'Authorization: Bearer YOUR_API_KEY' \
+     -H 'Maton-Connection: NEW_CONNECTION_ID'
+   ```
+
+5. Once the new connection status is `ACTIVE` and working, ask the user if they want to delete the old connection:
+   ```bash
+   curl -s -X DELETE 'https://ctrl.maton.ai/connections/OLD_CONNECTION_ID' \
+     -H 'Authorization: Bearer YOUR_API_KEY'
+   ```
 
 ## Rate Limits
 

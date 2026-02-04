@@ -1,8 +1,8 @@
 {
   "name": "cncsetup",
-  "description": "Generate standardized CNC setup sheets for MNMUK machine shop.\nCovers DMG MORI mills/lathes, CITIZEN Swiss, MITSUBISHI EDM, and Haas machines.\nUSE WHEN user says 'setup sheet', 'create setup', 'job se",
+  "description": "Generate standardized CNC setup sheets for MNMUK machine shop. Covers DMG MORI mills/lathes, CITIZEN Swiss, MITSUBISHI EDM, and Haas machines. USE WHEN user says 'setup sheet', 'create setup', 'job se",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

@@ -1,7 +1,7 @@
 {
   "name": "electron-chromium-upgrade",
-  "repo": "PlonGuo/Travel-Agent-Booking-System",
+  "repo": "electron/electron",
   "path": ".claude/skills/electron-chromium-upgrade/SKILL.md",
-  "source": "github.com/PlonGuo/Travel-Agent-Booking-System",
-  "downloaded_at": "2026-02-02T04:46:54.727154Z"
+  "source": "github.com/electron/electron",
+  "downloaded_at": "2026-02-04T03:49:04.763288Z"
 }

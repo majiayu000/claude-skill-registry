@@ -1,23 +1,23 @@
 ---
 name: apollo-server
 description: >
-  Guide for building GraphQL servers with Apollo Server 4.x. Use this skill when:
+  Guide for building GraphQL servers with Apollo Server 5.x. Use this skill when:
   (1) setting up a new Apollo Server project,
   (2) writing resolvers or defining GraphQL schemas,
   (3) implementing authentication or authorization,
   (4) creating plugins or custom data sources,
   (5) troubleshooting Apollo Server errors or performance issues.
 license: MIT
-compatibility: Node.js v18+, TypeScript 4.7+. Works with Express v4/v5, standalone, Fastify, and serverless.
+compatibility: Node.js v20+, TypeScript 4.7+. Works with Express v4/v5, standalone, Fastify, and serverless.
 metadata:
   author: apollographql
   version: "1.0"
 allowed-tools: Bash(npm:*) Bash(npx:*) Bash(node:*) Read Write Edit Glob Grep
 ---
 
-# Apollo Server 4.x Guide
+# Apollo Server 5.x Guide
 
-Apollo Server is an open-source GraphQL server that works with any GraphQL schema. Version 4.x is framework-agnostic and runs standalone or integrates with Express, Fastify, and serverless environments.
+Apollo Server is an open-source GraphQL server that works with any GraphQL schema. Apollo Server 5 is framework-agnostic and runs standalone or integrates with Express, Fastify, and serverless environments.
 
 ## Quick Start
 
@@ -28,8 +28,9 @@ npm install @apollo/server graphql
 ```
 
 For Express integration:
+
 ```bash
-npm install @apollo/server express graphql cors
+npm install @apollo/server @as-integrations/express5 express graphql cors
 ```
 
 ### Step 2: Define Schema
@@ -53,8 +54,8 @@ const typeDefs = `#graphql
 const resolvers = {
   Query: {
     books: () => [
-      { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
-      { title: '1984', author: 'George Orwell' },
+      { title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
+      { title: "1984", author: "George Orwell" },
     ],
   },
 };
@@ -62,10 +63,13 @@ const resolvers = {
 
 ### Step 4: Start Server
 
-**Standalone (Recommended for getting started):**
+**Standalone (Recommended for prototyping):**
+
+The standalone server is great for prototyping, but for production services, we recommend integrating Apollo Server with a more fully-featured web framework such as Express, Koa, or Fastify. Swapping from the standalone server to a web framework later is straightforward.
+
 ```typescript
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
@@ -76,14 +80,15 @@ const { url } = await startStandaloneServer(server, {
 console.log(`Server ready at ${url}`);
 ```
 
-**Express v4:**
+**Express:**
+
 ```typescript
-import { ApolloServer } from '@apollo/server';
-import { expressMiddleware } from '@apollo/server/express4';
-import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
-import express from 'express';
-import http from 'http';
-import cors from 'cors';
+import { ApolloServer } from "@apollo/server";
+import { expressMiddleware } from "@as-integrations/express5";
+import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
+import express from "express";
+import http from "http";
+import cors from "cors";
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -97,7 +102,7 @@ const server = new ApolloServer({
 await server.start();
 
 app.use(
-  '/graphql',
+  "/graphql",
   cors(),
   express.json(),
   expressMiddleware(server, {
@@ -106,7 +111,7 @@ app.use(
 );
 
 await new Promise<void>((resolve) => httpServer.listen({ port: 4000 }, resolve));
-console.log('Server ready at http://localhost:4000/graphql');
+console.log("Server ready at http://localhost:4000/graphql");
 ```
 
 ## Schema Definition
@@ -193,7 +198,7 @@ const resolvers = {
   },
   Mutation: {
     createPost: async (_, { input }, { dataSources, user }) => {
-      if (!user) throw new GraphQLError('Not authenticated');
+      if (!user) throw new GraphQLError("Not authenticated");
       return dataSources.postsAPI.create({ ...input, authorId: user.id });
     },
   },
@@ -221,18 +226,14 @@ const server = new ApolloServer<MyContext>({
 
 // Standalone
 const { url } = await startStandaloneServer(server, {
-  context: async ({ req }) => {
-    const token = req.headers.authorization || '';
-    const user = await getUser(token);
-    return {
-      token,
-      user,
-      dataSources: {
-        usersAPI: new UsersDataSource(),
-        postsAPI: new PostsDataSource(),
-      },
-    };
-  },
+  context: async ({ req }) => ({
+    token: req.headers.authorization || "",
+    user: await getUser(req.headers.authorization || ""),
+    dataSources: {
+      usersAPI: new UsersDataSource(),
+      postsAPI: new PostsDataSource(),
+    },
+  }),
 });
 
 // Express middleware
@@ -284,10 +285,10 @@ Detailed documentation for specific topics:
 
 ## Ground Rules
 
-- ALWAYS use Apollo Server 4.x patterns (not v3 or earlier)
+- ALWAYS use Apollo Server 5.x patterns (not v4 or earlier)
 - ALWAYS type your context with TypeScript generics
 - ALWAYS use `GraphQLError` from `graphql` package for errors
 - NEVER expose stack traces in production errors
-- PREFER `startStandaloneServer` for simple setups
-- USE `expressMiddleware` with drain plugin for Express apps
+- PREFER `startStandaloneServer` for prototyping only
+- USE an integration with a server framework like Express, Koa, Fastify, Next, etc. for production apps
 - IMPLEMENT authentication in context, authorization in resolvers

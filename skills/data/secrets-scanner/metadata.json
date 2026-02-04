@@ -1,12 +1,7 @@
 {
   "name": "secrets-scanner",
-  "description": "Scan codebase for secrets, API keys, credentials, and PII. Detect hardcoded sensitive data. Use when auditing for secrets, checking for exposed keys, reviewing security, or scanning for PII.",
-  "repo": "jamesjlundin/full-stack-web-and-mobile-template",
-  "category": "security",
-  "tags": [
-    "secrets",
-    "scanner"
-  ],
-  "stars": 4,
-  "source": "local"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/secrets-scanner/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:20.348224Z"
 }

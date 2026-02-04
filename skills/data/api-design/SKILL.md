@@ -1,367 +1,329 @@
 ---
 name: api-design
-description: Design stable, compatible public APIs using extend-only design principles. Manage API compatibility, wire compatibility, and versioning for NuGet packages and distributed systems.
-invocable: false
+description: "REST and GraphQL API design patterns. Covers endpoint structure, versioning, authentication, error handling, rate limiting, and OpenAPI documentation."
+version: 1.0.0
+triggers:
+  - api design
+  - rest api
+  - graphql
+  - endpoint
+  - api routes
+  - openapi
 ---
 
-# Public API Design and Compatibility
+# API Design Skill
 
-## When to Use This Skill
+Design robust, scalable APIs following industry best practices for REST and GraphQL.
 
-Use this skill when:
-- Designing public APIs for NuGet packages or libraries
-- Making changes to existing public APIs
-- Planning wire format changes for distributed systems
-- Implementing versioning strategies
-- Reviewing pull requests for breaking changes
+## REST API Patterns
 
----
+### Resource Naming
 
-## The Three Types of Compatibility
+```
+# Good - Nouns, plural, hierarchical
+GET    /api/v1/users
+GET    /api/v1/users/{id}
+GET    /api/v1/users/{id}/posts
+POST   /api/v1/users
+PUT    /api/v1/users/{id}
+PATCH  /api/v1/users/{id}
+DELETE /api/v1/users/{id}
 
-| Type | Definition | Scope |
-|------|------------|-------|
-| **API/Source** | Code compiles against newer version | Public method signatures, types |
-| **Binary** | Compiled code runs against newer version | Assembly layout, method tokens |
-| **Wire** | Serialized data readable by other versions | Network protocols, persistence formats |
+# Bad
+GET /api/getUsers          # Verb in URL
+GET /api/user              # Singular
+POST /api/createUser       # Action in URL
+```
 
-Breaking any of these creates upgrade friction for users.
+### HTTP Methods
 
----
+| Method | Purpose | Idempotent | Safe |
+|--------|---------|------------|------|
+| GET | Read | Yes | Yes |
+| POST | Create | No | No |
+| PUT | Replace | Yes | No |
+| PATCH | Update | Yes | No |
+| DELETE | Remove | Yes | No |
 
-## Extend-Only Design
+### Response Codes
 
-The foundation of stable APIs: **never remove or modify, only extend**.
+```typescript
+// Success
+200 OK              // GET, PUT, PATCH success
+201 Created         // POST success (include Location header)
+204 No Content      // DELETE success
 
-### Three Pillars
+// Client Errors
+400 Bad Request     // Invalid input
+401 Unauthorized    // No/invalid auth
+403 Forbidden       // Valid auth, no permission
+404 Not Found       // Resource doesn't exist
+409 Conflict        // State conflict (duplicate)
+422 Unprocessable   // Validation error
+429 Too Many Reqs   // Rate limited
 
-1. **Previous functionality is immutable** - Once released, behavior and signatures are locked
-2. **New functionality through new constructs** - Add overloads, new types, opt-in features
-3. **Removal only after deprecation period** - Years, not releases
+// Server Errors
+500 Internal Error  // Unexpected error
+503 Unavailable     // Maintenance/overload
+```
 
-### Benefits
+### Standard Response Format
 
-- Old code continues working in new versions
-- New and old pathways coexist
-- Upgrades are non-breaking by default
-- Users upgrade on their schedule
-
-**Resources:**
-- [Extend-Only Design](https://aaronstannard.com/extend-only-design/)
-- [OSS Compatibility Standards](https://aaronstannard.com/oss-compatibility-standards/)
-
----
-
-## API Change Guidelines
-
-### Safe Changes (Any Release)
-
-```csharp
-// ADD new overloads with default parameters
-public void Process(Order order, CancellationToken ct = default);
-
-// ADD new optional parameters to existing methods
-public void Send(Message msg, Priority priority = Priority.Normal);
-
-// ADD new types, interfaces, enums
-public interface IOrderValidator { }
-public enum OrderStatus { Pending, Complete, Cancelled }
-
-// ADD new members to existing types
-public class Order
+```typescript
+// Success response
 {
-    public DateTimeOffset? ShippedAt { get; init; }  // NEW
-}
-```
-
-### Unsafe Changes (Never or Major Version Only)
-
-```csharp
-// REMOVE or RENAME public members
-public void ProcessOrder(Order order);  // Was: Process()
-
-// CHANGE parameter types or order
-public void Process(int orderId);  // Was: Process(Order order)
-
-// CHANGE return types
-public Order? GetOrder(string id);  // Was: public Order GetOrder()
-
-// CHANGE access modifiers
-internal class OrderProcessor { }  // Was: public
-
-// ADD required parameters without defaults
-public void Process(Order order, ILogger logger);  // Breaks callers!
-```
-
-### Deprecation Pattern
-
-```csharp
-// Step 1: Mark as obsolete with version (any release)
-[Obsolete("Obsolete since v1.5.0. Use ProcessAsync instead.")]
-public void Process(Order order) { }
-
-// Step 2: Add new recommended API (same release)
-public Task ProcessAsync(Order order, CancellationToken ct = default);
-
-// Step 3: Remove in next major version (v2.0+)
-// Only after users have had time to migrate
-```
-
----
-
-## API Approval Testing
-
-Prevent accidental breaking changes with automated API surface testing.
-
-### Using ApiApprover + Verify
-
-```bash
-dotnet add package PublicApiGenerator
-dotnet add package Verify.Xunit
-```
-
-```csharp
-[Fact]
-public Task ApprovePublicApi()
-{
-    var api = typeof(MyLibrary.PublicClass).Assembly.GeneratePublicApi();
-    return Verify(api);
-}
-```
-
-Creates `ApprovePublicApi.verified.txt`:
-
-```csharp
-namespace MyLibrary
-{
-    public class OrderProcessor
-    {
-        public OrderProcessor() { }
-        public void Process(Order order) { }
-        public Task ProcessAsync(Order order, CancellationToken ct = default) { }
+  "data": {
+    "id": "123",
+    "type": "user",
+    "attributes": {
+      "name": "Frank",
+      "email": "frank@frankx.ai"
     }
+  },
+  "meta": {
+    "timestamp": "2026-01-23T12:00:00Z"
+  }
+}
+
+// Error response
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Email is required",
+    "details": [
+      { "field": "email", "message": "Required field" }
+    ]
+  }
+}
+
+// Paginated response
+{
+  "data": [...],
+  "meta": {
+    "total": 100,
+    "page": 1,
+    "perPage": 20,
+    "totalPages": 5
+  },
+  "links": {
+    "self": "/api/v1/users?page=1",
+    "next": "/api/v1/users?page=2",
+    "last": "/api/v1/users?page=5"
+  }
 }
 ```
 
-**Any API change fails the test** - reviewer must explicitly approve changes.
+## Next.js API Routes
 
-### PR Review Process
+### Route Handler Pattern
 
-1. PR includes changes to `*.verified.txt` files
-2. Reviewers see exact API surface changes in diff
-3. Breaking changes are immediately visible
-4. Conscious decision required to approve
+```typescript
+// app/api/users/route.ts
+import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 
----
+const CreateUserSchema = z.object({
+  name: z.string().min(1),
+  email: z.string().email(),
+});
 
-## Wire Compatibility
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const page = parseInt(searchParams.get('page') ?? '1');
+  const limit = parseInt(searchParams.get('limit') ?? '20');
 
-For distributed systems, serialized data must be readable across versions.
+  const users = await db.user.findMany({
+    skip: (page - 1) * limit,
+    take: limit,
+  });
 
-### Requirements
+  return NextResponse.json({
+    data: users,
+    meta: { page, limit },
+  });
+}
 
-| Direction | Requirement |
-|-----------|-------------|
-| **Backward** | Old writers → New readers (current version reads old data) |
-| **Forward** | New writers → Old readers (old version reads new data) |
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const validated = CreateUserSchema.parse(body);
 
-Both are required for zero-downtime rolling upgrades.
+    const user = await db.user.create({ data: validated });
 
-### Safely Evolving Wire Formats
-
-**Phase 1: Add read-side support (opt-in)**
-
-```csharp
-// New message type - readers deployed first
-public sealed record HeartbeatV2(
-    Address From,
-    long SequenceNr,
-    long CreationTimeMs);  // NEW field
-
-// Deserializer handles both old and new
-public object Deserialize(byte[] data, string manifest) => manifest switch
-{
-    "Heartbeat" => DeserializeHeartbeatV1(data),   // Old format
-    "HeartbeatV2" => DeserializeHeartbeatV2(data), // New format
-    _ => throw new NotSupportedException()
-};
-```
-
-**Phase 2: Enable write-side (opt-out, next minor version)**
-
-```csharp
-// Config to enable new format (off by default initially)
-akka.cluster.use-heartbeat-v2 = on
-```
-
-**Phase 3: Make default (future version)**
-
-After install base has absorbed read-side code.
-
-### Schema-Based Serialization
-
-Prefer schema-based formats over reflection-based:
-
-| Format | Type | Wire Compatibility |
-|--------|------|-------------------|
-| **Protocol Buffers** | Schema-based | Excellent - explicit field numbers |
-| **MessagePack** | Schema-based | Good - with contracts |
-| **System.Text.Json** | Schema-based (with source gen) | Good - explicit properties |
-| Newtonsoft.Json | Reflection-based | Poor - type names in payload |
-| BinaryFormatter | Reflection-based | Terrible - never use |
-
-See `dotnet/serialization` skill for details.
-
----
-
-## Encapsulation Patterns
-
-### Internal APIs
-
-Mark non-public APIs explicitly:
-
-```csharp
-// Attribute for documentation
-[InternalApi]
-public class ActorSystemImpl { }
-
-// Namespace convention
-namespace MyLibrary.Internal
-{
-    public class InternalHelper { }  // Public for extensibility, not for users
+    return NextResponse.json(
+      { data: user },
+      { status: 201 }
+    );
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        { error: { code: 'VALIDATION_ERROR', details: error.errors } },
+        { status: 422 }
+      );
+    }
+    throw error;
+  }
 }
 ```
 
-Document clearly:
+### Dynamic Route
 
-> Types in `.Internal` namespaces or marked with `[InternalApi]` may change between any releases without notice.
+```typescript
+// app/api/users/[id]/route.ts
+import { NextRequest, NextResponse } from 'next/server';
 
-### Sealing Classes
+type Params = { params: Promise<{ id: string }> };
 
-```csharp
-// DO: Seal classes not designed for inheritance
-public sealed class OrderProcessor { }
+export async function GET(request: NextRequest, { params }: Params) {
+  const { id } = await params;
 
-// DON'T: Leave unsealed by accident
-public class OrderProcessor { }  // Users might inherit, blocking changes
-```
+  const user = await db.user.findUnique({ where: { id } });
 
-### Interface Segregation
+  if (!user) {
+    return NextResponse.json(
+      { error: { code: 'NOT_FOUND', message: 'User not found' } },
+      { status: 404 }
+    );
+  }
 
-```csharp
-// DO: Small, focused interfaces
-public interface IOrderReader
-{
-    Order? GetById(OrderId id);
-}
-
-public interface IOrderWriter
-{
-    Task SaveAsync(Order order);
-}
-
-// DON'T: Monolithic interfaces (can't add methods without breaking)
-public interface IOrderRepository
-{
-    Order? GetById(OrderId id);
-    Task SaveAsync(Order order);
-    // Adding new methods breaks all implementations!
+  return NextResponse.json({ data: user });
 }
 ```
 
----
+## Authentication Patterns
 
-## Versioning Strategy
+### JWT Middleware
 
-### Semantic Versioning (Practical)
+```typescript
+// lib/auth.ts
+import { NextRequest, NextResponse } from 'next/server';
+import { jwtVerify } from 'jose';
 
-| Version | Changes Allowed |
-|---------|----------------|
-| **Patch** (1.0.x) | Bug fixes, security patches |
-| **Minor** (1.x.0) | New features, deprecations, obsolete removal |
-| **Major** (x.0.0) | Breaking changes, old API removal |
+export async function authMiddleware(request: NextRequest) {
+  const token = request.headers.get('Authorization')?.replace('Bearer ', '');
 
-### Key Principles
+  if (!token) {
+    return NextResponse.json(
+      { error: { code: 'UNAUTHORIZED', message: 'No token provided' } },
+      { status: 401 }
+    );
+  }
 
-1. **No surprise breaks** - Even major versions should be announced and planned
-2. **Extensions anytime** - New APIs can ship in any release
-3. **Deprecate before remove** - `[Obsolete]` for at least one minor version
-4. **Communicate timelines** - Users need to plan upgrades
+  try {
+    const { payload } = await jwtVerify(
+      token,
+      new TextEncoder().encode(process.env.JWT_SECRET)
+    );
+    return payload;
+  } catch {
+    return NextResponse.json(
+      { error: { code: 'UNAUTHORIZED', message: 'Invalid token' } },
+      { status: 401 }
+    );
+  }
+}
+```
 
-### Chesterton's Fence
+## Rate Limiting
 
-> Before removing or changing something, understand why it exists.
+```typescript
+// lib/rate-limit.ts
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 
-Assume every public API is used by someone. If you want to change it:
-1. Socialize the proposal on GitHub
-2. Document migration path
-3. Provide deprecation period
-4. Ship in planned release
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(10, '10 s'), // 10 requests per 10 seconds
+});
 
----
+export async function rateLimitMiddleware(request: NextRequest) {
+  const ip = request.ip ?? '127.0.0.1';
+  const { success, limit, remaining, reset } = await ratelimit.limit(ip);
 
-## Pull Request Checklist
+  if (!success) {
+    return NextResponse.json(
+      { error: { code: 'RATE_LIMITED', message: 'Too many requests' } },
+      {
+        status: 429,
+        headers: {
+          'X-RateLimit-Limit': limit.toString(),
+          'X-RateLimit-Remaining': remaining.toString(),
+          'X-RateLimit-Reset': reset.toString(),
+        },
+      }
+    );
+  }
+}
+```
 
-When reviewing PRs that touch public APIs:
+## API Versioning
 
-- [ ] **No removed public members** (use `[Obsolete]` instead)
-- [ ] **No changed signatures** (add overloads instead)
-- [ ] **No new required parameters** (use defaults)
-- [ ] **API approval test updated** (`.verified.txt` changes reviewed)
-- [ ] **Wire format changes are opt-in** (read-side first)
-- [ ] **Breaking changes documented** (release notes, migration guide)
+```
+# URL versioning (recommended)
+/api/v1/users
+/api/v2/users
 
----
+# Header versioning
+Accept: application/vnd.frankx.v1+json
+
+# Query parameter (avoid)
+/api/users?version=1
+```
+
+## OpenAPI Documentation
+
+```yaml
+# openapi.yaml
+openapi: 3.0.0
+info:
+  title: FrankX API
+  version: 1.0.0
+  description: API for FrankX creator platform
+
+paths:
+  /api/v1/users:
+    get:
+      summary: List users
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 1
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserList'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+```
 
 ## Anti-Patterns
 
-### Breaking Changes Disguised as Fixes
+❌ Verbs in URLs (`/getUser`, `/createPost`)
+❌ Inconsistent naming (mix of snake_case and camelCase)
+❌ Returning 200 for errors with error in body
+❌ No pagination for list endpoints
+❌ Exposing internal IDs/structure
+❌ No rate limiting
 
-```csharp
-// "Bug fix" that breaks users
-public async Task<Order> GetOrderAsync(OrderId id)  // Was sync!
-{
-    // "Fixed" to be async - but breaks all callers
-}
-
-// Correct: Add new method, deprecate old
-[Obsolete("Use GetOrderAsync instead")]
-public Order GetOrder(OrderId id) => GetOrderAsync(id).Result;
-
-public async Task<Order> GetOrderAsync(OrderId id) { }
-```
-
-### Silent Behavior Changes
-
-```csharp
-// Changing defaults breaks users who relied on old behavior
-public void Configure(bool enableCaching = true)  // Was: false!
-
-// Correct: New parameter with new name
-public void Configure(
-    bool enableCaching = false,  // Original default preserved
-    bool enableNewCaching = true)  // New behavior opt-in
-```
-
-### Polymorphic Serialization
-
-```csharp
-// AVOID: Type names in wire format
-{ "$type": "MyApp.Order, MyApp", "Id": 123 }
-
-// Renaming Order class = wire break!
-
-// PREFER: Explicit discriminators
-{ "type": "order", "id": 123 }
-```
-
----
-
-## Resources
-
-- [Making Public API Changes](https://getakka.net/community/contributing/api-changes-compatibility.html)
-- [Wire Format Changes](https://getakka.net/community/contributing/wire-compatibility.html)
-- [Extend-Only Design](https://aaronstannard.com/extend-only-design/)
-- [OSS Compatibility Standards](https://aaronstannard.com/oss-compatibility-standards/)
-- [Semantic Versioning](https://semver.org/)
-- [PublicApiGenerator](https://github.com/PublicApiGenerator/PublicApiGenerator)
+✅ Noun-based resource URLs
+✅ Consistent response format
+✅ Proper HTTP status codes
+✅ Pagination with cursors or pages
+✅ UUIDs for public IDs
+✅ Rate limiting on all endpoints

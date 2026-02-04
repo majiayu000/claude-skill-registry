@@ -2,7 +2,7 @@
   "name": "qwen-ollama",
   "description": "Using Qwen 2.5 models via Ollama for local LLM inference, text analysis, and AI-powered automation",
   "repo": "lawless-m/Earwig",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/lawless-m/Earwig"

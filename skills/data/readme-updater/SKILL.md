@@ -1,89 +1,203 @@
 ---
 name: readme-updater
-description: 更新 README.md。觸發：readme、說明、文檔、怎麼用、安裝說明。
+description: Intelligently update README.md to sync with code changes. Triggers: readme, 說明, 更新說明, update readme, 文檔同步, documentation, doc, 文件, 說明文件, 更新文檔, sync readme, 同步說明, 專案說明.
+version: 2.2.0
+category: documentation
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
+  - codex-cli
+dependencies:
+  - readme-i18n
+allowed-tools:
+  - read_file
+  - write_file
+  - replace_string_in_file
+  - list_dir
+  - get_changed_files
+  - run_in_terminal
 ---
 
 # README 更新技能
 
+## 描述
+
+智能更新 README.md，保持與程式碼變更同步。
+
 ## 觸發條件
 
-| 用戶說法 | 觸發 |
-|----------|------|
-| 更新 README、文檔 | ✅ |
-| 怎麼用、安裝說明 | ✅ |
-| 被 git-precommit 調用 | ✅ 自動觸發 |
+- 「更新 README」「readme」「文檔同步」
+- 被 `git-precommit` 編排器調用
+- 新增重要功能後
+
+## 法規依據
+
+- 憲法：CONSTITUTION.md 第 6 條
 
 ---
 
-## 可用工具
+## 📁 README.md 建議結構
 
-此技能使用標準檔案操作：
+```markdown
+# 專案名稱
 
-| 操作 | 工具 |
-|------|------|
-| 讀取 | `read_file("README.md")` |
-| 更新 | `replace_string_in_file()` |
-| 目錄列表 | `list_dir()` |
-| Git diff | `get_changed_files()` |
+> 一句話描述
+
+## ✨ 功能特色
+
+- 🔥 功能 1
+- 🚀 功能 2
+
+## 📦 安裝
+
+### 前置需求
+- Node.js >= 18
+- Python >= 3.11
+
+### 安裝步驟
+\`\`\`bash
+npm install
+\`\`\`
+
+## 🚀 快速開始
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+## 📖 使用說明
+
+### 基本用法
+...
+
+### 進階用法
+...
+
+## 📁 專案結構
+
+\`\`\`
+src/
+├── domain/
+├── application/
+├── infrastructure/
+└── presentation/
+\`\`\`
+
+## ⚙️ 設定
+
+| 變數 | 說明 | 預設值 |
+| ---- | ---- | ------ |
+| PORT | 服務埠號 | 3000 |
+
+## 🤝 貢獻
+
+請參閱 CONTRIBUTING.md
+
+## 📄 授權
+
+MIT License
+```
 
 ---
 
-## 更新區塊對應
+## 🔧 操作步驟
 
-| 變更類型 | 更新區塊 |
-|----------|----------|
-| 新功能 | 功能列表 |
-| 新依賴 | 安裝說明 |
-| API 變更 | 使用範例 |
-| 目錄變更 | 專案結構 |
-| 新設定 | 配置說明 |
+### Step 1: 讀取現有 README
 
----
-
-## 保護區塊（不自動修改）
-
-- 授權資訊
-- 貢獻指南
-- 致謝
-
----
-
-## 標準工作流程
-
-```python
-# 1. 讀取 README
+```
 read_file("README.md")
+```
 
-# 2. 分析變更
+### Step 2: 分析變更內容
+
+從 `git-precommit` 調用時：
+
+```
 get_changed_files()
+```
 
-# 3. 更新對應區塊
-replace_string_in_file(
-    filePath="README.md",
-    oldString="## Features\n\n- Feature A",
-    newString="## Features\n\n- Feature A\n- Feature B (新增)"
-)
+或分析專案結構：
+
+```
+list_dir("src/")
+```
+
+### Step 3: 判斷需要更新的區塊
+
+| 變更類型 | 更新區塊 | 偵測方式 |
+| -------- | -------- | -------- |
+| 新功能 | ✨ 功能特色 | 新增 feature 資料夾 |
+| 新依賴 | 📦 安裝 | pyproject.toml/package.json 變更 |
+| API 變更 | 📖 使用說明 | 公開 API 檔案變更 |
+| 目錄變更 | 📁 專案結構 | 新增/移除主要資料夾 |
+| 新設定 | ⚙️ 設定 | config 檔案變更 |
+
+### Step 4: 執行更新
+
+使用 `replace_string_in_file` 精確更新：
+
+**新增功能到功能列表**：
+
+```
+oldString: "## ✨ 功能特色\n\n- 🔥 功能 1\n- 🚀 功能 2"
+newString: "## ✨ 功能特色\n\n- 🔥 功能 1\n- 🚀 功能 2\n- 🔐 用戶認證（新）"
+```
+
+**更新專案結構**：
+
+```
+oldString: "## 📁 專案結構\n\n```\nsrc/\n├── domain/"
+newString: "## 📁 專案結構\n\n```\nsrc/\n├── domain/\n│   └── entities/"
 ```
 
 ---
 
-## 輸出範例
+## 🛡️ 保護區塊
+
+以下區塊**不應自動修改**（需人工確認）：
+
+- 📄 授權資訊（License）
+- 🤝 貢獻指南（Contributing）
+- 🙏 致謝（Acknowledgments）
+- 📜 免責聲明（Disclaimer）
+
+---
+
+## 🔄 與其他 Skills 整合
+
+| Skill | 整合方式 |
+| ----- | -------- |
+| `git-precommit` | 自動調用，傳入變更資訊 |
+| `readme-i18n` | 更新後同步多語言版本 |
+| `changelog-updater` | 參考 CHANGELOG 新功能 |
+
+---
+
+## 📊 輸出格式
 
 ```
-📝 README 更新分析
+📝 README 更新報告
 
 變更偵測：
-  ✅ 新增功能：用戶認證模組
-  ✅ 新增依賴：bcrypt
+- ✅ 新增功能：用戶認證模組
+- ✅ 新增依賴：bcrypt
 
 建議更新：
-  [功能列表] 新增「🔐 用戶認證」
-  [安裝說明] 新增 bcrypt 安裝指令
+- [功能列表] 新增「🔐 用戶認證」
+- [安裝說明] 新增 bcrypt 安裝指令
+
+執行結果：
+- ✅ README.md 已更新 (2 處變更)
+
+📌 提醒：請檢查 readme-i18n 是否需要同步
 ```
 
 ---
 
-## 相關技能
+## ⚠️ 注意事項
 
-- `readme-i18n` - 多語言 README 同步
-- `git-precommit` - 提交前自動調用
+1. **保持格式一致**：使用 emoji 時要與現有風格一致
+2. **不要移除內容**：只新增或更新，不主動刪除區塊
+3. **程式碼範例驗證**：更新範例時確保語法正確
+4. **多語言同步**：有 README.zh-TW.md 時需通知 readme-i18n

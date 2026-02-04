@@ -1,7 +1,7 @@
 {
   "name": "approval-workflow-generator",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/skills/19-business-automation/approval-workflow-generator/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:27:08.087443Z"
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "skills/19-business-automation/approval-workflow-generator/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-04T02:19:06.869428Z"
 }

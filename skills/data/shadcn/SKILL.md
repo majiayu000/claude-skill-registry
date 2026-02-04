@@ -1,143 +1,518 @@
 ---
 name: shadcn
-description: shadcn/ui component library best practices and patterns (formerly shadcn-ui). This skill should be used when writing, reviewing, or refactoring shadcn/ui components to ensure proper architecture, accessibility, and performance. Triggers on tasks involving Radix primitives, Tailwind styling, form validation with React Hook Form, data tables, theming, or component composition patterns.
+displayName: shadcn/ui
+description: shadcn/ui component library patterns
+version: 1.0.0
 ---
 
-# shadcn/ui Community Best Practices
+# shadcn/ui Development Guidelines
 
-Comprehensive best practices guide for shadcn/ui applications, maintained by the shadcn/ui community. Contains 58 rules across 10 categories, prioritized by impact to guide automated refactoring and code generation.
+Best practices for using shadcn/ui components with Tailwind CSS and Radix UI primitives.
 
-## When to Apply
+## Core Principles
 
-Reference these guidelines when:
-- Installing and configuring shadcn/ui in a project
-- Writing new shadcn/ui components or composing primitives
-- Implementing forms with React Hook Form and Zod validation
-- Building data tables or handling large dataset displays
-- Customizing themes or adding dark mode support
-- Reviewing code for accessibility compliance
+1. **Copy, Don't Install**: Components are copied to your project, not installed as dependencies
+2. **Customizable**: Modify components directly in your codebase
+3. **Accessible**: Built on Radix UI primitives with ARIA support
+4. **Type-Safe**: Full TypeScript support
+5. **Composable**: Build complex UIs from simple primitives
 
-## Rule Categories by Priority
+## Installation
 
-| Priority | Category | Impact | Prefix |
-|----------|----------|--------|--------|
-| 1 | CLI & Project Setup | CRITICAL | `setup-` |
-| 2 | Component Architecture | CRITICAL | `arch-` |
-| 3 | Accessibility Preservation | CRITICAL | `ally-` |
-| 4 | Styling & Theming | HIGH | `style-` |
-| 5 | Form Patterns | HIGH | `form-` |
-| 6 | Data Display | MEDIUM-HIGH | `data-` |
-| 7 | Layout & Navigation | MEDIUM | `layout-` |
-| 8 | Component Composition | MEDIUM | `comp-` |
-| 9 | Performance Optimization | MEDIUM | `perf-` |
-| 10 | State Management | LOW-MEDIUM | `state-` |
+### Initial Setup
 
-## Quick Reference
+```bash
+npx shadcn@latest init
+```
 
-### 1. CLI & Project Setup (CRITICAL)
+### Add Components
 
-- [`setup-components-json`](references/setup-components-json.md) - Configure components.json before adding components
-- [`setup-path-aliases`](references/setup-path-aliases.md) - Configure TypeScript path aliases to match components.json
-- [`setup-cn-utility`](references/setup-cn-utility.md) - Create the cn utility before using components
-- [`setup-use-cli-not-copy`](references/setup-use-cli-not-copy.md) - Use CLI to add components instead of copy-paste
-- [`setup-css-variables-theme`](references/setup-css-variables-theme.md) - Enable CSS variables for consistent theming
-- [`setup-rsc-configuration`](references/setup-rsc-configuration.md) - Set RSC flag based on framework support
+```bash
+# Add individual components
+npx shadcn@latest add button
+npx shadcn@latest add form
+npx shadcn@latest add dialog
 
-### 2. Component Architecture (CRITICAL)
+# Add multiple
+npx shadcn@latest add button card dialog
+```
 
-- [`arch-use-asChild-for-custom-triggers`](references/arch-use-asChild-for-custom-triggers.md) - Use asChild prop for custom trigger elements
-- [`arch-preserve-radix-primitive-structure`](references/arch-preserve-radix-primitive-structure.md) - Maintain Radix compound component hierarchy
-- [`arch-extend-variants-with-cva`](references/arch-extend-variants-with-cva.md) - Use Class Variance Authority for type-safe variants
-- [`arch-use-cn-for-class-merging`](references/arch-use-cn-for-class-merging.md) - Use cn() utility for safe Tailwind class merging
-- [`arch-forward-refs-for-composable-components`](references/arch-forward-refs-for-composable-components.md) - Forward refs for form and focus integration
-- [`arch-isolate-component-variants`](references/arch-isolate-component-variants.md) - Separate base styles from variant-specific styles
+### Troubleshooting
 
-### 3. Accessibility Preservation (CRITICAL)
+#### npm Cache Errors (ENOTEMPTY)
 
-- [`ally-preserve-aria-attributes`](references/ally-preserve-aria-attributes.md) - Keep Radix ARIA attributes intact
-- [`ally-provide-sr-only-labels`](references/ally-provide-sr-only-labels.md) - Add screen reader labels for icon buttons
-- [`ally-maintain-focus-management`](references/ally-maintain-focus-management.md) - Preserve focus trapping in modals
-- [`ally-preserve-keyboard-navigation`](references/ally-preserve-keyboard-navigation.md) - Keep WAI-ARIA keyboard patterns
-- [`ally-ensure-color-contrast`](references/ally-ensure-color-contrast.md) - Maintain WCAG color contrast ratios
-- [`ally-dialog-title-required`](references/ally-dialog-title-required.md) - Always include DialogTitle for screen readers
-- [`ally-form-field-labels`](references/ally-form-field-labels.md) - Associate labels with form controls
-- [`ally-aria-invalid-errors`](references/ally-aria-invalid-errors.md) - Use aria-invalid for form error states
-- [`ally-checkbox-label-association`](references/ally-checkbox-label-association.md) - Wrap Checkbox with Label for click target
-- [`ally-focus-visible-styles`](references/ally-focus-visible-styles.md) - Preserve focus visible styles for keyboard navigation
+If `npx shadcn@latest add` fails with npm cache errors like `ENOTEMPTY` or `syscall rename`:
 
-### 4. Styling & Theming (HIGH)
+**Solution 1: Clear npm cache**
+```bash
+npm cache clean --force
+npx shadcn@latest add table
+```
 
-- [`style-use-css-variables-for-theming`](references/style-use-css-variables-for-theming.md) - Use CSS variables for theme colors
-- [`style-avoid-important-overrides`](references/style-avoid-important-overrides.md) - Never use !important for style overrides
-- [`style-use-tailwind-theme-extend`](references/style-use-tailwind-theme-extend.md) - Extend Tailwind theme for design tokens
-- [`style-consistent-spacing-scale`](references/style-consistent-spacing-scale.md) - Use consistent Tailwind spacing scale
-- [`style-responsive-design-patterns`](references/style-responsive-design-patterns.md) - Apply mobile-first responsive design
-- [`style-dark-mode-support`](references/style-dark-mode-support.md) - Support dark mode with CSS variables
+**Solution 2: Use pnpm (recommended)**
+```bash
+pnpm dlx shadcn@latest add table
+```
 
-### 5. Form Patterns (HIGH)
+**Solution 3: Use yarn**
+```bash
+yarn dlx shadcn@latest add table
+```
 
-- [`form-use-react-hook-form-integration`](references/form-use-react-hook-form-integration.md) - Integrate with React Hook Form
-- [`form-use-zod-for-schema-validation`](references/form-use-zod-for-schema-validation.md) - Use Zod for type-safe validation
-- [`form-show-validation-errors-correctly`](references/form-show-validation-errors-correctly.md) - Show errors at appropriate times
-- [`form-handle-async-validation`](references/form-handle-async-validation.md) - Debounce async validation calls
-- [`form-reset-form-state-correctly`](references/form-reset-form-state-correctly.md) - Reset form state after submission
+**Solution 4: Manual component installation**
 
-### 6. Data Display (MEDIUM-HIGH)
+Visit the [shadcn/ui documentation](https://ui.shadcn.com/docs/components) for the specific component and copy the code directly into your project.
 
-- [`data-use-tanstack-table-for-complex-tables`](references/data-use-tanstack-table-for-complex-tables.md) - Use TanStack Table for sorting/filtering
-- [`data-virtualize-large-lists`](references/data-virtualize-large-lists.md) - Virtualize lists with 100+ items
-- [`data-use-skeleton-loading-states`](references/data-use-skeleton-loading-states.md) - Use Skeleton for loading states
-- [`data-paginate-server-side`](references/data-paginate-server-side.md) - Paginate large datasets server-side
-- [`data-empty-states-with-guidance`](references/data-empty-states-with-guidance.md) - Provide actionable empty states
+## Component Usage
 
-### 7. Layout & Navigation (MEDIUM)
+### Button & Card
 
-- [`layout-sidebar-provider`](references/layout-sidebar-provider.md) - Wrap layout with SidebarProvider
-- [`layout-sidebar-collapsible`](references/layout-sidebar-collapsible.md) - Configure sidebar collapsible behavior
-- [`layout-sidebar-groups`](references/layout-sidebar-groups.md) - Organize sidebar navigation with groups
-- [`layout-sheet-mobile-nav`](references/layout-sheet-mobile-nav.md) - Use Sheet for mobile navigation overlay
-- [`layout-breadcrumb-navigation`](references/layout-breadcrumb-navigation.md) - Implement breadcrumbs for deep navigation
+```typescript
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 
-### 8. Component Composition (MEDIUM)
+// Variants
+<Button>Default</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
 
-- [`comp-compose-with-compound-components`](references/comp-compose-with-compound-components.md) - Use compound component patterns
-- [`comp-use-drawer-for-mobile-modals`](references/comp-use-drawer-for-mobile-modals.md) - Use Drawer on mobile devices
-- [`comp-combine-command-with-popover`](references/comp-combine-command-with-popover.md) - Create searchable selects with Command
-- [`comp-nest-dialogs-correctly`](references/comp-nest-dialogs-correctly.md) - Manage nested dialog focus correctly
-- [`comp-create-reusable-form-fields`](references/comp-create-reusable-form-fields.md) - Extract reusable form field components
-- [`comp-use-slot-pattern-for-flexibility`](references/comp-use-slot-pattern-for-flexibility.md) - Use slot pattern for flexible content
+// Card
+<Card>
+  <CardHeader>
+    <CardTitle>{post.title}</CardTitle>
+    <CardDescription>{post.author}</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>{post.excerpt}</p>
+  </CardContent>
+</Card>
+```
 
-### 9. Performance Optimization (MEDIUM)
+### Dialog
 
-- [`perf-lazy-load-heavy-components`](references/perf-lazy-load-heavy-components.md) - Lazy load components over 50KB
-- [`perf-memoize-expensive-renders`](references/perf-memoize-expensive-renders.md) - Memoize list items and expensive components
-- [`perf-optimize-icon-imports`](references/perf-optimize-icon-imports.md) - Use direct imports for Lucide icons
-- [`perf-avoid-unnecessary-rerenders-in-forms`](references/perf-avoid-unnecessary-rerenders-in-forms.md) - Isolate form field watching
-- [`perf-debounce-search-inputs`](references/perf-debounce-search-inputs.md) - Debounce search and filter inputs
+```typescript
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
-### 10. State Management (LOW-MEDIUM)
+export function CreatePostDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button>Create Post</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Create New Post</DialogTitle>
+          <DialogDescription>
+            Fill in the details below to create a new post.
+          </DialogDescription>
+        </DialogHeader>
+        <PostForm />
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
 
-- [`state-prefer-uncontrolled-for-simple-inputs`](references/state-prefer-uncontrolled-for-simple-inputs.md) - Use uncontrolled for simple forms
-- [`state-lift-state-to-appropriate-level`](references/state-lift-state-to-appropriate-level.md) - Lift state to lowest common ancestor
-- [`state-use-controlled-dialog-state`](references/state-use-controlled-dialog-state.md) - Control dialogs for programmatic access
-- [`state-colocate-state-with-components`](references/state-colocate-state-with-components.md) - Keep state close to where it's used
+## Forms
 
-## How to Use
+### Basic Form with react-hook-form
 
-Read individual reference files for detailed explanations and code examples:
+```typescript
+'use client';
 
-- [Section definitions](references/_sections.md) - Category structure and impact levels
-- [Rule template](assets/templates/_template.md) - Template for adding new rules
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
-## Full Compiled Document
+const formSchema = z.object({
+  title: z.string().min(1, 'Title is required'),
+  content: z.string().min(10, 'Content must be at least 10 characters')
+});
 
-For a single-file reference containing all rules, see [AGENTS.md](AGENTS.md).
+export function PostForm() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      title: '',
+      content: ''
+    }
+  });
 
-## Reference Files
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    console.log(values);
+  };
 
-| File | Description |
-|------|-------------|
-| [AGENTS.md](AGENTS.md) | Complete compiled guide with all rules |
-| [references/_sections.md](references/_sections.md) | Category definitions and ordering |
-| [assets/templates/_template.md](assets/templates/_template.md) | Template for new rules |
-| [metadata.json](metadata.json) | Version and reference information |
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="title"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Title</FormLabel>
+              <FormControl>
+                <Input placeholder="Post title" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="content"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Content</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Write your post..." {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button type="submit">Create Post</Button>
+      </form>
+    </Form>
+  );
+}
+```
+
+### Select Field
+
+```typescript
+<FormField
+  control={form.control}
+  name="category"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Category</FormLabel>
+      <Select onValueChange={field.onChange} defaultValue={field.value}>
+        <FormControl>
+          <SelectTrigger>
+            <SelectValue placeholder="Select a category" />
+          </SelectTrigger>
+        </FormControl>
+        <SelectContent>
+          <SelectItem value="tech">Technology</SelectItem>
+          <SelectItem value="design">Design</SelectItem>
+          <SelectItem value="business">Business</SelectItem>
+        </SelectContent>
+      </Select>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+```
+
+## Data Display
+
+### Table
+
+```typescript
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+
+export function PostsTable({ posts }: { posts: Post[] }) {
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Title</TableHead>
+          <TableHead>Author</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead className="text-right">Actions</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {posts.map((post) => (
+          <TableRow key={post.id}>
+            <TableCell className="font-medium">{post.title}</TableCell>
+            <TableCell>{post.author.name}</TableCell>
+            <TableCell>
+              <Badge variant={post.published ? 'default' : 'secondary'}>
+                {post.published ? 'Published' : 'Draft'}
+              </Badge>
+            </TableCell>
+            <TableCell className="text-right">
+              <Button variant="ghost" size="sm">Edit</Button>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  );
+}
+```
+
+## Navigation
+
+### Badge & Dropdown Menu
+
+```typescript
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+
+export function UserMenu() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost">
+          <User className="h-4 w-4" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Log out</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```
+
+### Tabs
+
+```typescript
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
+export function PostTabs() {
+  return (
+    <Tabs defaultValue="published">
+      <TabsList>
+        <TabsTrigger value="published">Published</TabsTrigger>
+        <TabsTrigger value="drafts">Drafts</TabsTrigger>
+        <TabsTrigger value="archived">Archived</TabsTrigger>
+      </TabsList>
+      <TabsContent value="published">
+        <PublishedPosts />
+      </TabsContent>
+      <TabsContent value="drafts">
+        <DraftPosts />
+      </TabsContent>
+      <TabsContent value="archived">
+        <ArchivedPosts />
+      </TabsContent>
+    </Tabs>
+  );
+}
+```
+
+## Feedback
+
+### Toast
+
+```typescript
+'use client';
+
+import { useToast } from '@/components/ui/use-toast';
+import { Button } from '@/components/ui/button';
+
+export function ToastExample() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      onClick={() => {
+        toast({
+          title: 'Post created',
+          description: 'Your post has been published successfully.'
+        });
+      }}
+    >
+      Create Post
+    </Button>
+  );
+}
+
+// With variant
+toast({
+  variant: 'destructive',
+  title: 'Error',
+  description: 'Failed to create post. Please try again.'
+});
+```
+
+### Alert
+
+```typescript
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { AlertCircle } from 'lucide-react';
+
+export function AlertExample() {
+  return (
+    <Alert variant="destructive">
+      <AlertCircle className="h-4 w-4" />
+      <AlertTitle>Error</AlertTitle>
+      <AlertDescription>
+        Your session has expired. Please log in again.
+      </AlertDescription>
+    </Alert>
+  );
+}
+```
+
+## Loading States
+
+### Skeleton
+
+```typescript
+import { Skeleton } from '@/components/ui/skeleton';
+
+export function PostCardSkeleton() {
+  return (
+    <div className="flex flex-col space-y-3">
+      <Skeleton className="h-[125px] w-full rounded-xl" />
+      <div className="space-y-2">
+        <Skeleton className="h-4 w-[250px]" />
+        <Skeleton className="h-4 w-[200px]" />
+      </div>
+    </div>
+  );
+}
+```
+
+## Customization
+
+### Modifying Components
+
+Components are in your codebase - edit them directly:
+
+```typescript
+// components/ui/button.tsx
+export const buttonVariants = cva(
+  "inline-flex items-center justify-center...",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        // Add custom variant
+        brand: "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+      }
+    }
+  }
+);
+```
+
+### Using Custom Variant
+
+```typescript
+<Button variant="brand">Custom Brand Button</Button>
+```
+
+## Theming
+
+### CSS Variables (OKLCH Format)
+
+shadcn/ui now uses OKLCH color format for better color accuracy and perceptual uniformity:
+
+```css
+/* app/globals.css */
+@layer base {
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    /* ... */
+  }
+
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --primary: oklch(0.598 0.15 264);
+    --primary-foreground: oklch(0.205 0 0);
+    /* ... */
+  }
+}
+```
+
+### Dark Mode
+
+```typescript
+// components/theme-toggle.tsx
+'use client';
+
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { Button } from '@/components/ui/button';
+
+export function ThemeToggle() {
+  const { setTheme, theme } = useTheme();
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  );
+}
+```
+
+## Composition Patterns
+
+### Combining Components
+
+```typescript
+export function CreatePostCard() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Create Post</CardTitle>
+        <CardDescription>Share your thoughts with the world</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <PostForm />
+      </CardContent>
+      <CardFooter className="flex justify-between">
+        <Button variant="outline">Save Draft</Button>
+        <Button>Publish</Button>
+      </CardFooter>
+    </Card>
+  );
+}
+```
+
+### Modal with Form
+
+```typescript
+export function CreatePostModal() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button>New Post</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[600px]">
+        <DialogHeader>
+          <DialogTitle>Create Post</DialogTitle>
+        </DialogHeader>
+        <PostForm onSuccess={() => setOpen(false)} />
+      </DialogContent>
+    </Dialog>
+  );
+}
+```
+
+## Additional Resources
+
+For detailed information, see:
+- [Component Catalog](resources/component-catalog.md)
+- [Form Patterns](resources/form-patterns.md)
+- [Theming Guide](resources/theming.md)

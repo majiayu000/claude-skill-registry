@@ -1,9 +1,7 @@
 {
   "name": "pai",
-  "description": "Personal AI Infrastructure (PAI) - PAI System TemplateMUST BE USED proactively for all user requests. USE PROACTIVELY to ensure complete context availability.=== CORE IDENTITY (Always Active) ===Your ",
-  "repo": "danielmiessler/PAIPlugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.5/.claude/skills/PAI/SKILL.md",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "downloaded_at": "2026-02-04T05:12:50.412679Z"
 }

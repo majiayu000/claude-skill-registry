@@ -1,7 +1,7 @@
 {
   "name": "eventbridge",
-  "repo": "itsmostafa/aws-agent-skills",
-  "path": "skills/eventbridge/SKILL.md",
-  "source": "github.com/itsmostafa/aws-agent-skills",
-  "downloaded_at": "2026-02-02T01:34:18.779563Z"
+  "repo": "northseadl/skillwisp",
+  "path": "skills/@itsmostafa/eventbridge/SKILL.md",
+  "source": "github.com/northseadl/skillwisp",
+  "downloaded_at": "2026-02-04T02:56:16.853262Z"
 }

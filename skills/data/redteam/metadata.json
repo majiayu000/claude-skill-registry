@@ -1,7 +1,7 @@
 {
   "name": "redteam",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/data/redteam/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-01-29T04:03:52.192223Z"
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.5/.claude/skills/RedTeam/SKILL.md",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "downloaded_at": "2026-02-04T05:12:52.562308Z"
 }

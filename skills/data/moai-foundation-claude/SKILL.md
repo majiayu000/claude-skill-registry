@@ -1,197 +1,225 @@
 ---
 name: moai-foundation-claude
-description: Canonical Claude Code skill authoring kit covering agent Skills, sub-agent templates, custom slash commands, orchestration patterns, hooks, memory, settings, and IAM permission rules aligned with official documentation.
-version: 2.0.0
+aliases: [moai-foundation-claude]
+category: foundation
+description: Canonical Claude Code authoring kit covering Skills, sub-agents, plugins, slash commands, hooks, memory, settings, sandboxing, headless mode, and advanced agent patterns. Use when creating Claude Code extensions or configuring Claude Code features.
+version: 5.0.0
 modularized: false
-last_updated: 2025-11-30
-compliance_score: 61
-auto_trigger_keywords:
-  - authentication
-  - claude
-  - foundation
-color: red
+user-invocable: false
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
+tags:
+  [
+    "foundation",
+    "claude-code",
+    "skills",
+    "sub-agents",
+    "plugins",
+    "slash-commands",
+    "hooks",
+    "memory",
+    "settings",
+    "sandboxing",
+    "headless",
+    "agent-patterns",
+  ]
+updated: 2026-01-11
+status: "active"
 ---
 
 # Claude Code Authoring Kit
 
-Comprehensive reference for Claude Code Skills, sub-agents, custom slash commands, hooks, memory, settings, and IAM permissions with official standards compliance.
+Comprehensive reference for Claude Code Skills, sub-agents, plugins, slash commands, hooks, memory, settings, sandboxing, headless mode, and advanced agent patterns.
 
-**Official Documentation References**:
+## Documentation Index
 
-- [Skills Guide](reference/claude-code-skills-official.md) - Agent Skills creation and management
-- [Sub-agents Guide](reference/claude-code-sub-agents-official.md) - Sub-agent development and delegation
-- [Custom Slash Commands](reference/claude-code-custom-slash-commands-official.md) - Command creation and orchestration
-- [Hooks System](reference/claude-code-hooks-official.md) - Event-driven automation
-- [Memory Management](reference/claude-code-memory-official.md) - Context and knowledge persistence
-- [Settings Configuration](reference/claude-code-settings-official.md) - Configuration hierarchy and management
-- [IAM & Permissions](reference/claude-code-iam-official.md) - Access control and security
-- [Complete Configuration](reference/complete-configuration-guide.md) - Comprehensive setup guide
+Core Features:
 
-## Quick Reference (30 seconds)
+- reference/claude-code-skills-official.md - Agent Skills creation and management
+- reference/claude-code-sub-agents-official.md - Sub-agent development and delegation
+- reference/claude-code-plugins-official.md - Plugin architecture and distribution
+- reference/claude-code-custom-slash-commands-official.md - Command creation and orchestration
 
-**Skills**: `~/.claude/skills/` (personal) or `.claude/skills/` (project), ≤500 lines, progressive disclosure
-**Sub-agents**: `Task(subagent_type="...")` delegation only, no nested spawning
-**Commands**: `$ARGUMENTS`/`$1`/`$2` parameters, `@file` references, stored in `.claude/commands/`
-**Hooks**: Event-driven automation in `settings.json`, PreToolUse/PostToolUse events
-**Memory**: Enterprise → Project → User hierarchy, `@import.md` syntax
-**Settings**: 4-tier hierarchy (Enterprise → User → Project → Local)
-**IAM**: Tiered permissions (Read→Bash→Write→Admin), tool-specific rules
+Configuration:
 
+- reference/claude-code-settings-official.md - Configuration hierarchy and management
+- reference/claude-code-memory-official.md - Context and knowledge persistence
+- reference/claude-code-hooks-official.md - Event-driven automation
+- reference/claude-code-iam-official.md - Access control and security
 
-## Implementation Guide (5 minutes)
+Advanced Features:
 
-### Features
+- reference/claude-code-sandboxing-official.md - Security isolation
+- reference/claude-code-headless-official.md - Programmatic and CI/CD usage
+- reference/claude-code-devcontainers-official.md - Containerized environments
+- reference/claude-code-cli-reference-official.md - Command-line interface
+- reference/claude-code-statusline-official.md - Custom status display
+- reference/advanced-agent-patterns.md - Engineering best practices
 
-- Comprehensive Claude Code authoring reference
-- Skills, sub-agents, commands, hooks, and settings
-- IAM permissions and security best practices
-- Progressive disclosure documentation architecture
-- MCP integration patterns and examples
+## Quick Reference
 
-### When to Use
+Skills: Model-invoked extensions in ~/.claude/skills/ (personal) or .claude/skills/ (project). Three-level progressive disclosure. Max 500 lines.
 
-- Creating new Claude Code skills following official standards
-- Developing custom sub-agents with proper delegation patterns
-- Implementing custom slash commands with parameter handling
-- Setting up hooks for event-driven automation
-- Configuring IAM permissions and access control
+Sub-agents: Specialized assistants via Task(subagent_type="..."). Own 200K context. Cannot spawn sub-agents. Use /agents command.
 
-### Core Patterns
+Plugins: Reusable bundles in .claude-plugin/plugin.json. Include commands, agents, skills, hooks, MCP servers.
 
-**Pattern 1: Skill Creation (≤500 lines)**
-```yaml
----
-name: skill-name
-description: One-line description (max 200 chars)
-version: 1.0.0
-updated: 2025-11-26
-status: active
----
+Commands: User-invoked via /command. Parameters: $ARGUMENTS, $1, $2. File refs: @file.
 
-## Quick Reference (30 seconds)
-## Implementation Guide (5 minutes)
-## Advanced Implementation (10+ minutes)
-```
+Hooks: Events in settings.json. PreToolUse, PostToolUse, SessionStart, SessionEnd, PreCompact, Notification.
 
-**Pattern 2: Sub-agent Delegation**
-```python
-# Sequential delegation
-result1 = Task(subagent_type="workflow-spec", prompt="Analyze")
-result2 = Task(subagent_type="code-backend", prompt="Implement", context=result1)
+Memory: CLAUDE.md files + .claude/rules/*.md. Enterprise to Project to User hierarchy. @import syntax.
 
-# Parallel delegation
-results = await Promise.all([
-    Task(subagent_type="code-backend", prompt="Backend"),
-    Task(subagent_type="code-frontend", prompt="Frontend")
-])
-```
+Settings: 6-level hierarchy. Managed to file-managed to CLI to local to shared to user.
 
-**Pattern 3: Custom Command with Hooks**
-```json
-{
-  "hooks": {
-    "PreToolUse": [{
-      "matcher": "Write",
-      "hooks": [{"type": "command", "command": "validate-write"}]
-    }]
-  }
-}
-```
+Sandboxing: OS-level isolation. Filesystem and network restrictions. Auto-allow safe operations.
 
-## MoAI-ADK Skills & Sub-agents Directory
+Headless: -p flag for non-interactive. --allowedTools, --json-schema, --agents for automation.
 
-### Quick Access Patterns
+## Skill Creation
 
-**Core Skills**: `Skill("moai-foundation-claude")` - This comprehensive authoring kit
-**Agent Creation**: `Task(subagent_type="agent-factory")` - Create standardized sub-agents
-**Skill Creation**: `Task(subagent_type="skill-factory")` - Create compliant skills
-**Quality Gates**: `Task(subagent_type="quality-gate")` - TRUST 5 validation
-**Documentation**: `Task(subagent_type="docs-manager")` - Generate technical docs
+### Progressive Disclosure Architecture
 
-**Key Specialized Skills**:
-- `moai-lang-python` - Python 3.13+ with FastAPI, async patterns
-- `moai-lang-typescript` - TypeScript 5.9+ with React 19, Next.js 16
-- `moai-domain-backend` - Modern backend architecture patterns
-- `moai-domain-frontend` - React 19, Next.js 15, Vue 3.5 frameworks
-- `moai-quality-security` - OWASP Top 10, threat modeling
-- `moai-essentials-debug` - AI-powered debugging with Context7
+Level 1 (Metadata): Name and description loaded at startup, approximately 100 tokens per Skill
 
-**Essential Sub-agents**:
-- `spec-builder` - EARS format specification generation
-- `tdd-implementer` - RED-GREEN-REFACTOR TDD execution
-- `security-expert` - Security analysis and validation
-- `backend-expert` - Backend architecture and API development
-- `frontend-expert` - Frontend UI implementation
-- `performance-engineer` - Performance optimization and analysis
+Level 2 (Instructions): SKILL.md body loaded when triggered, under 5K tokens recommended
 
-## Essential Implementation Patterns
+Level 3 (Resources): Additional files loaded on demand, effectively unlimited
 
-### Command→Agent→Skill Orchestration
+### Required Format
 
-**Sequential Workflow**:
-```python
-# Phase 1: Analysis → spec-builder → analysis
-analysis = Task(subagent_type="spec-builder", prompt="Analyze: $ARGUMENTS")
-# Phase 2: Implementation → tdd-implementer → code + tests
-implementation = Task(subagent_type="tdd-implementer", prompt="Implement: $analysis.spec_id")
-# Phase 3: Validation → quality-gate → approval
-validation = Task(subagent_type="quality-gate", prompt="Validate: $implementation")
-```
+Create a SKILL.md file with YAML frontmatter containing name in kebab-case and description explaining what it does and when to use it in third person. Maximum 1024 characters for description. After the frontmatter, include a heading with the skill name, a Quick Start section with brief instructions, and a Details section referencing REFERENCE.md for more information.
 
-**Parallel Development**:
-```python
-# Execute independent tasks simultaneously
-results = await Promise.all([
-    Task(subagent_type="backend-expert", prompt="Backend: $1"),
-    Task(subagent_type="frontend-expert", prompt="Frontend: $1"),
-    Task(subagent_type="docs-manager", prompt="Docs: $1")
-])
-# Integrate all results
-Task(subagent_type="quality-gate", prompt="Integrate", context={"results": results})
-```
+### Best Practices
 
-### Token Session Management
+- Third person descriptions (does not I do)
+- Include trigger terms users mention
+- Keep under 500 lines
+- One level deep references
+- Test with Haiku, Sonnet, Opus
 
-**Independent 200K Sessions**: Each `Task()` creates a new 200K token context
-```python
-Task(subagent_type="backend-expert", prompt="Complex task")  # 200K session
-Task(subagent_type="frontend-expert", prompt="UI task")     # New 200K session
-```
+## Sub-agent Creation
 
-### File Reference Patterns
+### Using /agents Command
 
-**Parameter Handling**:
-- Positional: `$1`, `$2`, `$3`
-- All arguments: `$ARGUMENTS`
-- File references: `@config.yaml`, `@path/to/file.md`
+Type /agents, select Create New Agent, define purpose and tools, press e to edit prompt.
 
-### Hook Integration
+### File Format
 
-**Pre/Post Tool Execution** (see [Hooks Guide](reference/claude-code-hooks-official.md)):
-```json
-{
-  "hooks": {
-    "PreToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": "validate-command"}]}],
-    "PostToolUse": [{"matcher": "Write", "hooks": [{"type": "command", "command": "backup-file"}]}]
-  }
-}
-```
+Create a markdown file with YAML frontmatter containing name, description explaining when to invoke (use PROACTIVELY for auto-delegation), tools as comma-separated list (Read, Write, Bash), and model specification (sonnet). After frontmatter, include the system prompt.
 
-## Key Reference Guides
+### Critical Rules
 
-**Comprehensive Documentation**:
-- [Commands Guide](reference/claude-code-custom-slash-commands-official.md) - Complete command creation
-- [Hooks System](reference/claude-code-hooks-official.md) - Event-driven automation
-- [Memory Management](reference/claude-code-memory-official.md) - Context persistence
-- [Settings Config](reference/claude-code-settings-official.md) - Configuration hierarchy
-- [IAM Permissions](reference/claude-code-iam-official.md) - Access control
-- [Complete Setup](reference/complete-configuration-guide.md) - Full configuration
+- Cannot spawn other sub-agents
+- Cannot use AskUserQuestion effectively
+- All user interaction before delegation
+- Each gets own 200K context
 
-## Works Well With
+## Plugin Creation
 
-- **moai-core-agent-factory** - For creating new sub-agents with proper standards
-- **moai-cc-commands** - For creating custom slash commands
-- **moai-cc-hooks** - For implementing Claude Code hooks
-- **moai-cc-configuration** - For managing Claude Code settings
-- **moai-quality-gate** - For validating code quality standards
-- **moai-essentials-debug** - For debugging skill loading issues
+### Directory Structure
+
+Create my-plugin directory with .claude-plugin/plugin.json, commands directory, agents directory, skills directory, hooks/hooks.json, and .mcp.json file.
+
+### Manifest (plugin.json)
+
+Create a JSON object with name, description explaining plugin purpose, version as 1.0.0, and author object containing name field.
+
+### Commands
+
+Use /plugin install owner/repo to install from GitHub.
+Use /plugin validate . to validate current directory.
+Use /plugin enable plugin-name to enable a plugin.
+
+## Advanced Agent Patterns
+
+### Two-Agent Pattern for Long Tasks
+
+Initializer agent: Sets up environment, feature registry, progress docs
+
+Executor agent: Works single features, updates registry, maintains progress
+
+See reference/advanced-agent-patterns.md for details.
+
+### Orchestrator-Worker Architecture
+
+Lead agent: Decomposes tasks, spawns workers, synthesizes results
+
+Worker agents: Execute focused tasks, return condensed summaries
+
+### Context Engineering Principles
+
+- Smallest set of high-signal tokens
+- Just-in-time retrieval over upfront loading
+- Context compaction for long sessions
+- External memory files persist outside window
+
+### Tool Design Best Practices
+
+- Consolidate related functions into single tools
+- Return high-signal context-aware responses
+- Clear parameter names (user_id not user)
+- Instructive error messages with examples
+
+## Workflow: Explore-Plan-Code-Commit
+
+Phase 1 Explore: Read files, understand structure, map dependencies
+
+Phase 2 Plan: Use think prompts, outline approach, define criteria
+
+Phase 3 Code: Implement iteratively, verify each step, handle edges
+
+Phase 4 Commit: Descriptive messages, logical groupings, clean history
+
+## MoAI-ADK Integration
+
+### Core Skills
+
+- moai-foundation-claude: This authoring kit
+- moai-foundation-core: SPEC system and workflows
+- moai-foundation-philosopher: Strategic thinking
+
+### Essential Sub-agents
+
+- spec-builder: EARS specifications
+- manager-tdd: TDD execution
+- expert-security: Security analysis
+- expert-backend: API development
+- expert-frontend: UI implementation
+
+## Security Features
+
+### Sandboxing
+
+- Filesystem: Write restricted to cwd
+- Network: Domain allowlists via proxy
+- OS-level: bubblewrap (Linux), Seatbelt (macOS)
+
+### Dev Containers
+
+- Security-hardened with firewall
+- Whitelisted outbound only
+- --dangerously-skip-permissions for trusted only
+
+### Headless Safety
+
+- Always use --allowedTools in CI/CD
+- Validate inputs before passing to Claude
+- Handle errors with exit codes
+
+## Resources
+
+For detailed patterns and working examples, see the reference directory.
+
+Version History:
+
+- v5.0.0 (2026-01-11): Converted to narrative format per CLAUDE.md Documentation Standards
+- v4.0.0 (2026-01-06): Added plugins, sandboxing, headless, statusline, dev containers, CLI reference, advanced patterns
+- v3.0.0 (2025-12-06): Added progressive disclosure, sub-agent details, integration patterns
+- v2.0.0 (2025-11-26): Initial comprehensive release

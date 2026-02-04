@@ -1,53 +1,53 @@
 ---
 name: openspec-ff-change
-description: 快速创建实现所需的所有产出物。当用户想要快速创建实现所需的所有产出物，而不是逐个创建时使用。
+description: Fast-forward through OpenSpec artifact creation. Use when the user wants to quickly create all artifacts needed for implementation without stepping through each one individually.
 license: MIT
 compatibility: Requires openspec CLI.
 metadata:
   author: openspec
   version: "1.0"
-  generatedBy: "1.0.2"
+  generatedBy: "1.0.0"
 ---
 
-快速完成产出物创建 - 一次性生成开始实现所需的一切。
+Fast-forward through artifact creation - generate everything needed to start implementation in one go.
 
-**输入**：用户的请求应包含变更名称（kebab-case）或对他们想要构建内容的描述。
+**Input**: The user's request should include a change name (kebab-case) OR a description of what they want to build.
 
-**步骤**
+**Steps**
 
-1. **如果没有提供明确的输入，询问他们想要构建什么**
+1. **If no clear input provided, ask what they want to build**
 
-   使用 **AskUserQuestion tool**（开放式，无预设选项）询问：
-   > "您想要处理什么变更？请描述您想要构建或修复的内容。"
+   Use the **AskUserQuestion tool** (open-ended, no preset options) to ask:
+   > "What change do you want to work on? Describe what you want to build or fix."
 
-   根据他们的描述，推导出一个 kebab-case 名称（例如："add user authentication" → `add-user-auth`）。
+   From their description, derive a kebab-case name (e.g., "add user authentication" → `add-user-auth`).
 
-   **重要提示**：在不了解用户想要构建什么的情况下，请勿继续。
+   **IMPORTANT**: Do NOT proceed without understanding what the user wants to build.
 
-2. **创建变更目录**
+2. **Create the change directory**
    ```bash
-   openspec-cn new change "<name>"
+   openspec new change "<name>"
    ```
-   这将在 `openspec/changes/<name>/` 创建一个脚手架变更。
+   This creates a scaffolded change at `openspec/changes/<name>/`.
 
-3. **获取产出物构建顺序**
+3. **Get the artifact build order**
    ```bash
-   openspec-cn status --change "<name>" --json
+   openspec status --change "<name>" --json
    ```
-   解析 JSON 以获取：
-   - `applyRequires`: 实现前所需的产出物 ID 数组（例如：`["tasks"]`）
-   - `artifacts`: 所有产出物及其状态和依赖项的列表
+   Parse the JSON to get:
+   - `applyRequires`: array of artifact IDs needed before implementation (e.g., `["tasks"]`)
+   - `artifacts`: list of all artifacts with their status and dependencies
 
-4. **按顺序创建产出物直到准备好应用**
+4. **Create artifacts in sequence until apply-ready**
 
-   使用 **TodoWrite tool** 跟踪产出物的进度。
+   Use the **TodoWrite tool** to track progress through the artifacts.
 
-   按依赖顺序循环遍历产出物（没有待处理依赖项的产出物优先）：
+   Loop through artifacts in dependency order (artifacts with no pending dependencies first):
 
-   a. **对于每个 `ready`（依赖项已满足）的产出物**：
-      - 获取指令：
+   a. **For each artifact that is `ready` (dependencies satisfied)**:
+      - Get instructions:
         ```bash
-        openspec-cn instructions <artifact-id> --change "<name>" --json
+        openspec instructions <artifact-id> --change "<name>" --json
         ```
       - The instructions JSON includes:
         - `context`: Project background (constraints for you - do NOT include in output)
@@ -61,29 +61,29 @@ metadata:
       - Apply `context` and `rules` as constraints - but do NOT copy them into the file
       - Show brief progress: "✓ Created <artifact-id>"
 
-   b. **继续直到所有 `applyRequires` 产出物完成**
-      - 创建每个产出物后，重新运行 `openspec-cn status --change "<name>" --json`
-      - 检查 `applyRequires` 中的每个产出物 ID 在 artifacts 数组中是否具有 `status: "done"`
-      - 当所有 `applyRequires` 产出物完成时停止
+   b. **Continue until all `applyRequires` artifacts are complete**
+      - After creating each artifact, re-run `openspec status --change "<name>" --json`
+      - Check if every artifact ID in `applyRequires` has `status: "done"` in the artifacts array
+      - Stop when all `applyRequires` artifacts are done
 
-   c. **如果产出物需要用户输入**（上下文不清楚）：
-      - 使用 **AskUserQuestion tool** 进行澄清
-      - 然后继续创建
+   c. **If an artifact requires user input** (unclear context):
+      - Use **AskUserQuestion tool** to clarify
+      - Then continue with creation
 
-5. **显示最终状态**
+5. **Show final status**
    ```bash
-   openspec-cn status --change "<name>"
+   openspec status --change "<name>"
    ```
 
-**输出**
+**Output**
 
-完成所有产出物后，总结：
-- 变更名称和位置
-- 已创建产出物的列表及简要描述
-- 准备就绪："所有产出物已创建！准备好实现。"
-- 提示："运行 `/opsx:apply` 或要求我实现以开始处理任务。"
+After completing all artifacts, summarize:
+- Change name and location
+- List of artifacts created with brief descriptions
+- What's ready: "All artifacts created! Ready for implementation."
+- Prompt: "Run `/opsx:apply` or ask me to implement to start working on the tasks."
 
-**产出物创建指南**
+**Artifact Creation Guidelines**
 
 - Follow the `instruction` field from `openspec instructions` for each artifact type
 - The schema defines what each artifact should contain - follow it
@@ -93,9 +93,9 @@ metadata:
   - Do NOT copy `<context>`, `<rules>`, `<project_context>` blocks into the artifact
   - These guide what you write, but should never appear in the output
 
-**护栏**
-- 创建实现所需的所有产出物（由 Schema 的 `apply.requires` 定义）
-- 在创建新产出物之前始终阅读依赖产出物
-- 如果上下文极其不清楚，询问用户 - 但倾向于做出合理的决定以保持势头
-- 如果同名变更已存在，建议继续处理该变更
-- 在继续下一个之前，验证写入后每个产出物文件是否存在
+**Guardrails**
+- Create ALL artifacts needed for implementation (as defined by schema's `apply.requires`)
+- Always read dependency artifacts before creating a new one
+- If context is critically unclear, ask the user - but prefer making reasonable decisions to keep momentum
+- If a change with that name already exists, suggest continuing that change instead
+- Verify each artifact file exists after writing before proceeding to next

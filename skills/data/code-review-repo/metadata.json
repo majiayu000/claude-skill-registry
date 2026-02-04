@@ -1,9 +1,7 @@
 {
   "name": "code-review-repo",
-  "description": "Review local codebase for bugs and CLAUDE.md compliance using multi-agent analysis",
   "repo": "blueraai/bluera-base",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/blueraai/bluera-base"
+  "path": "skills/code-review-repo/SKILL.md",
+  "source": "github.com/blueraai/bluera-base",
+  "downloaded_at": "2026-02-04T04:17:40.233966Z"
 }

@@ -283,9 +283,7 @@ Last Sync: 2025-10-26T14:00:00Z
    - [ ] {Task 2 title} (ADO: 12351)
    ```
 
-7. **Generate context-manifest.yaml** (default)
-
-8. **Update ADO Epic** (add custom field):
+7. **Update ADO Epic** (add custom field):
    ```
    Custom Field: SpecWeave.IncrementID = 0003-imported-feature
    ```

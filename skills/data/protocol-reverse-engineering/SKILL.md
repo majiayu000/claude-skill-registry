@@ -1,27 +1,11 @@
 ---
-name: reverse-engineering-protocols
-description: Reverse engineers network protocols through packet analysis, dissection, and documentation. Use when analyzing network traffic, understanding proprietary protocols, or debugging communication. Triggers include "pcap", "packet capture", "protocol analysis", "Wireshark", or "tcpdump".
+name: protocol-reverse-engineering
+description: Master network protocol reverse engineering including packet analysis, protocol dissection, and custom protocol documentation. Use when analyzing network traffic, understanding proprietary protocols, or debugging network communication.
 ---
 
 # Protocol Reverse Engineering
 
 Comprehensive techniques for capturing, analyzing, and documenting network protocols for security research, interoperability, and debugging.
-
-## Overview
-
-Focus on repeatable capture, structured analysis, and clear documentation so findings are usable by others.
-
-## Quick Start
-
-1. Capture traffic with tcpdump or Wireshark and export a clean pcap.
-1. Identify protocol boundaries, message types, and state transitions.
-1. Document message formats, fields, and validation rules.
-
-## Progressive Details
-
-Use the detailed sections below for full workflows, templates, and advanced techniques.
-
-<!-- progressive: protocol-playbook -->
 
 ## Traffic Capture
 
@@ -346,11 +330,9 @@ export SSLKEYLOGFILE=/tmp/keys.log
 # Protocol Name Specification
 
 ## Overview
-
 Brief description of protocol purpose and design.
 
 ## Transport
-
 - Layer: TCP/UDP
 - Port: XXXX
 - Encryption: TLS 1.2+
@@ -358,52 +340,44 @@ Brief description of protocol purpose and design.
 ## Message Format
 
 ### Header (12 bytes)
-
-| Offset | Size | Field   | Description             |
-| ------ | ---- | ------- | ----------------------- |
-| 0      | 4    | Magic   | 0x50524F54 ("PROT")     |
-| 4      | 2    | Version | Protocol version (1)    |
-| 6      | 2    | Type    | Message type identifier |
-| 8      | 4    | Length  | Payload length in bytes |
+| Offset | Size | Field       | Description              |
+|--------|------|-------------|--------------------------|
+| 0      | 4    | Magic       | 0x50524F54 ("PROT")     |
+| 4      | 2    | Version     | Protocol version (1)     |
+| 6      | 2    | Type        | Message type identifier  |
+| 8      | 4    | Length      | Payload length in bytes  |
 
 ### Message Types
-
-| Type | Name      | Description            |
-| ---- | --------- | ---------------------- |
-| 0x01 | HELLO     | Connection initiation  |
-| 0x02 | HELLO_ACK | Connection accepted    |
-| 0x03 | DATA      | Application data       |
-| 0x04 | CLOSE     | Connection termination |
+| Type | Name          | Description              |
+|------|---------------|--------------------------|
+| 0x01 | HELLO         | Connection initiation    |
+| 0x02 | HELLO_ACK     | Connection accepted      |
+| 0x03 | DATA          | Application data         |
+| 0x04 | CLOSE         | Connection termination   |
 
 ### Type 0x01: HELLO
-
-| Offset | Size | Field      | Description              |
-| ------ | ---- | ---------- | ------------------------ |
-| 0      | 4    | ClientID   | Unique client identifier |
-| 4      | 2    | Flags      | Connection flags         |
-| 6      | var  | Extensions | TLV-encoded extensions   |
+| Offset | Size | Field       | Description              |
+|--------|------|-------------|--------------------------|
+| 0      | 4    | ClientID    | Unique client identifier |
+| 4      | 2    | Flags       | Connection flags         |
+| 6      | var  | Extensions  | TLV-encoded extensions   |
 
 ## State Machine
 ```
-
 [INIT] --HELLO--> [WAIT_ACK] --HELLO_ACK--> [CONNECTED]
-|
-DATA/DATA
-|
-[CLOSED] \<--CLOSE--+
-
+                                                  |
+                                             DATA/DATA
+                                                  |
+                              [CLOSED] <--CLOSE--+
 ```
 
 ## Examples
 ### Connection Establishment
 ```
-
 Client -> Server: HELLO (ClientID=0x12345678)
 Server -> Client: HELLO_ACK (Status=OK)
 Client -> Server: DATA (payload)
-
 ```
-
 ```
 
 ### Wireshark Dissector (Lua)
@@ -517,12 +491,12 @@ for pkt in packets:
 ### Analysis Workflow
 
 1. **Capture traffic**: Multiple sessions, different scenarios
-1. **Identify boundaries**: Message start/end markers
-1. **Map structure**: Fixed header, variable payload
-1. **Identify fields**: Compare multiple samples
-1. **Document format**: Create specification
-1. **Validate understanding**: Implement parser/generator
-1. **Test edge cases**: Fuzzing, boundary conditions
+2. **Identify boundaries**: Message start/end markers
+3. **Map structure**: Fixed header, variable payload
+4. **Identify fields**: Compare multiple samples
+5. **Document format**: Create specification
+6. **Validate understanding**: Implement parser/generator
+7. **Test edge cases**: Fuzzing, boundary conditions
 
 ### Common Patterns to Look For
 
@@ -534,5 +508,3 @@ for pkt in packets:
 - Checksums/CRCs for integrity
 - Timestamps for timing
 - Session/connection identifiers
-
-<!-- /progressive -->

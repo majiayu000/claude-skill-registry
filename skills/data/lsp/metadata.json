@@ -1,7 +1,7 @@
 {
   "name": "lsp",
-  "repo": "mcclowes/omg",
-  "path": ".claude/skills/lsp/SKILL.md",
-  "source": "github.com/mcclowes/omg",
-  "downloaded_at": "2026-02-02T01:43:15.665358Z"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/lsp/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:40:53.498365Z"
 }

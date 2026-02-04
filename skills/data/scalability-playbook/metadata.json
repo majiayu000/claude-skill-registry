@@ -1,9 +1,7 @@
 {
   "name": "scalability-playbook",
-  "description": "Identifies performance bottlenecks and provides ordered scaling strategies with triggers, phased plans, and cost implications. Use for \"scalability planning\", \"performance bottlenecks\", \"capacity plan",
-  "repo": "patricio0312rev/skillset",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/scalability-playbook/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:25.076293Z"
 }

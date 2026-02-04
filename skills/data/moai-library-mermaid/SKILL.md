@@ -1,319 +1,145 @@
 ---
-name: moai-library-mermaid
-description: Enterprise Mermaid diagramming skill for Claude Code using MCP Playwright
-version: 7.0.0
+name: "moai-library-mermaid"
+description: "Enterprise Mermaid diagramming skill for Claude Code using MCP Playwright. Use when creating architecture diagrams, flowcharts, sequence diagrams, or visual documentation."
+version: 7.1.0
+category: "library"
 modularized: true
-last_updated: 2025-11-30
-compliance_score: 70
-auto_trigger_keywords:
-  - library
-  - mermaid
-color: red
+user-invocable: false
+updated: 2026-01-11
+tags:
+  [
+    "library",
+    "mermaid",
+    "diagrams",
+    "flowchart",
+    "sequence",
+    "visualization",
+    "documentation",
+  ]
+status: "active"
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
-## Quick Reference (30 seconds)
+## Quick Reference
 
-# Skill: Mermaid Diagram Expert v6.0.0-skill-edition
+Mermaid Diagram Expert v7.1.0 - Pure skill-based Mermaid rendering for Claude Code with MCP Playwright integration.
 
-**Pure skill-based Mermaid rendering for Claude Code with MCP Playwright integration.**
+This skill provides complete Mermaid 11.12.2 syntax for all 21 diagram types, MCP Playwright integration for rendering SVG and PNG outputs, ready-to-use examples and reference documentation, and enterprise diagram patterns with best practices.
 
+To invoke this skill, use the standard skill invocation pattern with the skill name moai-library-mermaid.
 
+### Supported Diagram Types
 
-# Quick Start (2 minutes)
+The skill supports 21 diagram types organized into five categories:
 
-## How to Use This Skill in Claude Code
+Structural Diagrams include Flowchart for process flows and decision trees, Sequence for interaction sequences and message flows, Class for object-oriented class relationships, ER for entity-relationship databases, Block for block diagram structures, and State for state machines and stateful flows.
 
-### Basic Usage
+Timeline and Tracking diagrams include Timeline for chronological events and milestones, Gantt for project scheduling and timelines, and Gitgraph for Git workflow and branching visualization.
 
-```
-Skill("moai-library-mermaid")
-```
+Architecture and Design diagrams include C4 for Context, Container, Component, and Code architecture diagrams, Architecture for system architecture diagrams, and Requirement for requirements and traceability documentation.
 
-This skill provides:
-1. Complete Mermaid syntax for all 21 diagram types
-2. MCP Playwright integration for rendering SVG/PNG
-3. Ready-to-use examples and reference documentation
-4. Enterprise diagram patterns and best practices
+Data Visualization diagrams include Pie Chart for pie and donut charts, XY Chart for scatter and line charts, Sankey for flow diagrams with proportional width, and Radar for multi-variable comparison charts.
 
-### Supported Diagram Types (21)
+User and Process diagrams include Mindmap for hierarchical mind mapping, User Journey for user experience flows, Kanban for board state visualization, and Packet for network packet structures.
 
-#### Structural Diagrams
-- **Flowchart** - Process flows and decision trees
-- **Sequence** - Interaction sequences and message flows
-- **Class** - Object-oriented class relationships
-- **ER** - Entity-relationship databases
-- **Block** - Block diagram structures
-- **State** - State machines and stateful flows
+### MCP Playwright Integration
 
-#### Timeline & Tracking
-- **Timeline** - Chronological events and milestones
-- **Gantt** - Project scheduling and timelines
-- **Gitgraph** - Git workflow and branching
+This skill integrates with MCP Playwright for diagram rendering. The MCP configuration in the project mcp.json file enables the Playwright server, which can be configured to use npx with the anthropic-ai playwright-mcp package.
 
-#### Architecture & Design
-- **C4** - Context, Container, Component, Code architecture
-- **Architecture** - System architecture diagrams
-- **Requirement** - Requirements and traceability
+To render diagrams, the MCP Playwright server must be configured in the project MCP settings, Node.js must be installed on the system, and Playwright must be available through npx.
 
-#### Data Visualization
-- **Pie Chart** - Pie and donut charts
-- **XY Chart** - Scatter and line charts
-- **Sankey** - Flow diagrams with proportional width
-- **Radar** - Multi-variable comparison charts
-
-#### User & Process
-- **Mindmap** - Hierarchical mind mapping
-- **User Journey** - User experience flows
-- **Kanban** - Kanban board states
-- **Packet** - Network packet structures
-
-
-# Usage in Claude Code
-
-## Step 3: Render with MCP Playwright
-
-Once you have your Mermaid code:
-
-```python
-# This skill integrates with MCP Playwright
-# You can use the playwright MCP server to render the diagram
-# The MCP server is configured in .claude/mcp.json
-```
-
-The MCP configuration in `.claude/mcp.json` enables:
-```json
-{
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-ai/playwright-mcp"]
-    }
-  }
-}
-```
-
-
-# All 21 Diagram Types Reference
-
-See `examples.md` for complete working examples of all 21 diagram types.
-
-## State Management (State Diagram Example)
-
-```
-Idle → Processing → Complete
-  ↓        ↓           ↑
-Error ────────────────┘
-```
-
-
-# Learning Resources
-
-- **Official Site**: https://mermaid.js.org
-- **Live Editor**: https://mermaid.live
-- **Syntax Guide**: https://mermaid.js.org/syntax/
-- **Examples**: See `examples.md` and `reference.md` in this skill
-
-
-# Support
-
-For Mermaid syntax questions:
-- Check `examples.md` for working examples
-- Review `reference.md` for official documentation links
-- Use https://mermaid.live for interactive testing
-
-For Claude Code integration:
-- Ensure `.claude/mcp.json` has Playwright configured
-- Verify Node.js is installed (`node --version`)
-- Check Playwright is available (`npx @anthropic-ai/playwright-mcp --version`)
-
-
-**Version**: 6.0.0-skill-edition
-**Last Updated**: 2025-11-20
-**Focus**: Pure skill-based Mermaid rendering with MCP Playwright
-
+---
 
 ## Implementation Guide
 
-## Step 2: Get Mermaid Syntax
+### Diagram Syntax Patterns
 
-The skill provides complete syntax for your diagram type:
+Flowchart diagrams use the flowchart keyword followed by direction indicators such as TD for top-down or LR for left-right. Nodes are defined with brackets for shapes where round brackets create rounded rectangles, square brackets create standard rectangles, curly braces create rhombus decision nodes, and double brackets create stadium-shaped nodes. Connections use arrow syntax with double dashes and angle brackets for arrows, with optional pipe-delimited labels for edge descriptions. Subgraphs group related nodes using the subgraph keyword with a title and end delimiter.
 
-### Example: Flowchart
+Sequence diagrams define participants first using the participant keyword, then show interactions using arrow notation. Solid arrows with double angle brackets represent synchronous calls, while dashed arrows represent responses or asynchronous messages. Activation rectangles show participant activity duration using activate and deactivate keywords or the plus and minus shorthand on arrows. Notes can be added to the right, left, or over participants.
 
-```mermaid
-flowchart TD
-    Start([Start]) --> Input[Input Data]
-    Input --> Process{Validation}
-    Process -->|Valid| Calculate[Calculate Result]
-    Process -->|Invalid| Error[Error Handler]
-    Calculate --> Output[Output]
-    Error --> Output
-    Output --> End([End])
-```
+C4 Context diagrams use the C4Context keyword and define system boundaries using Enterprise_Boundary or System_Boundary functions. Persons are defined with the Person function taking an ID, name, and optional description. Systems are defined with System for internal systems and System_Ext for external systems. Relationships use the Rel function specifying source, target, description, and optional technology.
 
-### Example: Sequence Diagram
+Class diagrams use the classDiagram keyword and define classes with their attributes and methods. Relationships include inheritance using the angle bracket and pipe symbols, composition using asterisk, aggregation using circle, and association using dashes. Visibility modifiers use plus for public, minus for private, and hash for protected.
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant API
-    participant Database
+State diagrams use the stateDiagram-v2 keyword for the newer syntax. States are defined with the state keyword and brackets. Transitions use arrow notation with optional labels. Composite states contain nested states within the state block.
 
-    User->>API: GET /users
-    API->>Database: SELECT * FROM users
-    Database-->>API: User records
-    API-->>User: JSON response
-```
+### Diagram Categories
 
-### Example: C4 Architecture
+Process and Flow diagrams encompass Flowchart, Sequence, State, Timeline, Gitgraph, and User Journey diagram types. These diagrams represent dynamic processes and temporal sequences.
 
-```mermaid
-C4Context
-    title System Context diagram for Internet Banking System
-    Enterprise_Boundary(b0, "Banking System") {
-        Person(customer, "Banking Customer", "A customer is a human using the banking system")
-        System(banking_system, "Internet Banking System", "Allows customers to check accounts and make payments")
-    }
-    System_Ext(mail_system, "E-mail System", "The internal Microsoft Exchange e-mail system")
-    Rel(customer, banking_system, "Uses", "HTTP/HTTPS")
-    Rel(banking_system, mail_system, "Sends e-mail using", "SMTP")
-    UpdateElementStyle(customer, $fontColor="white", $bgColor="lightblue", $borderColor="darkblue")
-    UpdateElementStyle(banking_system, $fontColor="white", $bgColor="blue", $borderColor="darkblue")
-    UpdateElementStyle(mail_system, $fontColor="white", $bgColor="orange", $borderColor="darkorange")
-```
+Structure and Design diagrams include Class, ER, Block, Architecture, and C4 types. These diagrams represent static structures and system compositions.
 
-## Categories
+Data and Analytics diagrams cover Pie Chart, XY Chart, Sankey, and Radar types. These diagrams visualize quantitative data and comparative metrics.
 
-### 1. Process & Flow Diagrams (6 types)
-- Flowchart
-- Sequence
-- State
-- Timeline
-- Gitgraph
-- User Journey
+Planning and Organization diagrams include Gantt, Mindmap, Kanban, and Requirement types. These diagrams support project management and requirements tracking.
 
-### 2. Structure & Design (5 types)
-- Class
-- ER
-- Block
-- Architecture
-- C4
+Network and Technical diagrams currently include the Packet type with additional types reserved for future extensions.
 
-### 3. Data & Analytics (4 types)
-- Pie Chart
-- XY Chart
-- Sankey
-- Radar
+### Best Practices
 
-### 4. Planning & Organization (4 types)
-- Gantt
-- Mindmap
-- Kanban
-- Requirement
+Clarity and Readability guidelines recommend using descriptive labels for all nodes, keeping diagram complexity moderate with a maximum of 20 to 30 nodes, and using consistent styling and color schemes throughout the diagram.
 
-### 5. Network & Technical (2 types)
-- Packet
-- (Reserved for extensions)
+Performance considerations include breaking complex diagrams into multiple smaller diagrams, using subgraphs to organize large flowcharts, and limiting text length within nodes to maintain rendering performance.
 
+Accessibility requirements include providing text alternatives for all diagrams, using both color and shape differentiation rather than color alone, and including descriptive titles and legends for context.
 
-# Best Practices
+Organization practices recommend grouping related diagrams in directories, using consistent naming conventions for diagram files, and documenting diagram purposes in comments within the source files.
 
-## 1. Clarity and Readability
-- Use descriptive labels for all nodes
-- Keep diagram complexity moderate (20-30 nodes max)
-- Use consistent styling and color schemes
-
-## 2. Performance
-- For complex diagrams, consider breaking into multiple diagrams
-- Use subgraphs to organize large flowcharts
-- Limit text length in nodes
-
-## 3. Accessibility
-- Provide text alternatives for diagrams
-- Use color + shape differentiation (not color alone)
-- Include descriptive titles and legends
-
-## 4. Organization
-- Group related diagrams in directories
-- Use consistent naming conventions
-- Document diagram purposes in comments
-
-
-# Integration with MoAI-ADK
-
-This skill is designed for use within Claude Code during:
-
-- **Architecture phase** (`/moai:1-plan`) - Design system diagrams
-- **Documentation phase** (`/moai:3-sync`) - Create visual documentation
-- **Review phase** - Communicate system design visually
-- **Onboarding** - Help new team members understand architecture
-
-
-# Common Patterns
-
-## API Architecture (C4 Example)
-
-```
-System Context
-  └─ API Gateway
-  └─ Backend Services
-  └─ Database
-  └─ Cache Layer
-```
-
-## Microservices Flow (Sequence Example)
-
-```
-Client → API Gateway → Service A → Database
-            → Service B → Cache
-```
-
-## Data Pipeline (Flowchart Example)
-
-```
-Extract → Transform → Load → Validate → Report
-```
-
+---
 
 ## Advanced Patterns
 
-## Step 1: Invoke the Skill
+### Integration with MoAI-ADK
 
-```python
-Skill("moai-library-mermaid")
-```
+This skill is designed for use within Claude Code during various development phases:
 
+During the architecture phase with the moai:1-plan command, create system design diagrams to visualize proposed solutions and component relationships.
 
+During the documentation phase with the moai:3-sync command, generate visual documentation including flowcharts, sequence diagrams, and architecture overviews.
 
+During code review phases, use diagrams to communicate system design visually and highlight areas of concern or proposed changes.
 
-## Context7 Integration
+During onboarding processes, create diagrams that help new team members understand architecture, data flows, and system boundaries.
 
-### Related Libraries & Tools
-- [Mermaid](/mermaid-js/mermaid): Diagram and flowchart tool
+### Common Architecture Patterns
 
-### Official Documentation
-- [Documentation](https://mermaid.js.org/intro/)
-- [API Reference](https://mermaid.js.org/config/setup/modules/mermaidAPI.html)
+API Architecture patterns typically use C4 diagrams to show system context with API gateway, backend services, database layer, and cache layer relationships.
 
-### Version-Specific Guides
-Latest stable version: 10.x
-- [Release Notes](https://github.com/mermaid-js/mermaid/releases)
-- [Migration Guide](https://mermaid.js.org/config/setup/modules/mermaidAPI.html)
+Microservices Flow patterns use sequence diagrams to illustrate client requests flowing through API gateway to individual services and their data stores.
+
+Data Pipeline patterns use flowchart diagrams to show data movement through extract, transform, load, validate, and report stages.
+
+### Context7 Integration
+
+For the latest Mermaid documentation, use Context7 library resolution and documentation tools. The current stable version is Mermaid 11.12.2 as of December 2025.
+
+Official documentation is available at mermaid.js.org/intro for general documentation and mermaid.js.org/config/setup/modules/mermaidAPI.html for API reference.
+
+Release notes and migration guides are available in the Mermaid GitHub repository releases section.
+
+### Learning Resources
+
+The official Mermaid site is located at mermaid.js.org. An interactive live editor for testing diagrams is available at mermaid.live. The complete syntax guide is at mermaid.js.org/syntax/.
+
+For working examples of all 21 diagram types, see the examples.md file in this skill directory. For extended reference documentation, see reference.md. For optimization techniques, see optimization.md. For complex diagram patterns, see advanced-patterns.md.
 
 ---
 
 ## Works Well With
 
-**Agents**:
-- **workflow-docs** - Documentation with diagrams
-- **workflow-spec** - SPEC diagrams
-- **design-uiux** - Architecture visualization
+This skill integrates with several agents and other skills:
 
-**Skills**:
-- **moai-docs-generation** - Documentation generation
-- **moai-workflow-docs** - Diagram validation
-- **moai-library-nextra** - Architecture docs
+Agents that work well with this skill include workflow-docs for documentation with diagrams, workflow-spec for SPEC diagrams and requirements visualization, and design-uiux for architecture visualization and interface documentation.
 
-**Commands**:
-- `/moai:3-sync` - Documentation with diagrams
-- `/moai:1-plan` - SPEC with diagrams
+Skills that complement this skill include moai-docs-generation for comprehensive documentation generation, moai-workflow-docs for diagram validation and documentation workflows, and moai-library-nextra for architecture documentation sites.
+
+Commands that utilize this skill include moai:3-sync for documentation with embedded diagrams and moai:1-plan for SPEC creation with visual architecture diagrams.
+
+Focus: Pure skill-based Mermaid rendering with MCP Playwright integration

@@ -1,6 +1,7 @@
 ---
 name: developer-specialist
 category: role
+user-invocable: false
 description: 設計と実装を「最小で正確」に進め、TDD（RED→GREEN→REFACTOR）と差分思考で品質と速度を両立する。設計の溶け込み（責務不明/重複/暫定対応）を防ぎ、レビュー可能な変更へ落とし込むときに使う。
 ---
 
@@ -8,7 +9,7 @@ description: 設計と実装を「最小で正確」に進め、TDD（RED→GREE
 
 ## 発火条件（リポジトリ判定）
 - 依頼が「実装」「設計・実装の落とし込み」「リファクタ」「テスト追加」「バグ修正」「品質改善」なら適用する。
-- `doc/rdd.md` が存在する場合は必ず参照し、逸脱が必要なら変更要求（ADR-lite）を先に出す。
+- `doc/input/rdd.md` が存在する場合は必ず参照し、逸脱が必要なら変更要求（ADR-lite）を先に出す。
 
 ## このSkillの基本方針（整理軸）
 - 基本方針: 小さく作って学ぶ。最小の失敗（RED）→最小の成功（GREEN）→読みやすくする（REFACTOR）。

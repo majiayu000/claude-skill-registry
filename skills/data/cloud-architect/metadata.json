@@ -1,7 +1,7 @@
 {
   "name": "cloud-architect",
-  "repo": "nahisaho/CodeGraphMCPServer",
-  "path": ".claude/skills/cloud-architect/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:06.503479Z"
+  "repo": "nahisaho/MUSUBI",
+  "path": "src/templates/agents/claude-code/skills/cloud-architect/SKILL.md",
+  "source": "github.com/nahisaho/MUSUBI",
+  "downloaded_at": "2026-02-04T04:06:15.208392Z"
 }

@@ -1,9 +1,7 @@
 {
   "name": "unknown",
-  "description": "环境准备。安装依赖、下载模型、验证环境。触发词：安装、环境准备、初始化",
-  "repo": "Ceeon/videocut-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Ceeon/videocut-skills"
+  "repo": "nicepkg/ai-workflow",
+  "path": "workflows/stock-trader-workflow/.claude/skills/\u80a1\u7968\u5206\u6790/SKILL.md",
+  "source": "github.com/nicepkg/ai-workflow",
+  "downloaded_at": "2026-02-04T02:43:29.872438Z"
 }

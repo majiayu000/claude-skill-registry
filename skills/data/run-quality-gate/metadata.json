@@ -1,13 +1,7 @@
 {
   "name": "run-quality-gate",
-  "description": "Execute quality gate validation with configurable blocking behavior. Use when running type-check, build, tests, lint, or custom validation commands in orchestrators or workers to enforce quality stand",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "development",
-  "tags": [
-    "run",
-    "quality",
-    "gate"
-  ],
-  "stars": 27,
-  "source": "local"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/run-quality-gate/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:10.419046Z"
 }

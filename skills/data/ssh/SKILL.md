@@ -1,246 +1,269 @@
 ---
 name: ssh
-description: "SSH remote access patterns and utilities. Connect to servers, manage keys, tunnels, and transfers."
+description: SSH 管理与安全
+version: 1.0.0
+author: terminal-skills
+tags: [server, ssh, security, key, tunnel]
 ---
 
-# SSH Skill
+# SSH 管理与安全
 
-Use SSH for secure remote access, file transfers, and tunneling.
+## 概述
+SSH 密钥管理、跳板机配置、端口转发、安全加固等技能。
 
-## Basic Connection
+## 基础连接
 
-Connect to server:
+### 连接命令
 ```bash
+# 基础连接
 ssh user@hostname
+ssh -p 2222 user@hostname           # 指定端口
+
+# 执行远程命令
+ssh user@hostname "command"
+ssh user@hostname 'ls -la && df -h'
+
+# 详细输出（调试）
+ssh -v user@hostname
+ssh -vvv user@hostname              # 更详细
 ```
 
-Connect on specific port:
+### 配置文件
 ```bash
-ssh -p 2222 user@hostname
-```
-
-Connect with specific identity:
-```bash
-ssh -i ~/.ssh/my_key user@hostname
-```
-
-## SSH Config
-
-Config file location:
-```
-~/.ssh/config
-```
-
-Example config entry:
-```
+# ~/.ssh/config
 Host myserver
     HostName 192.168.1.100
-    User deploy
+    User admin
     Port 22
-    IdentityFile ~/.ssh/myserver_key
-    ForwardAgent yes
-```
+    IdentityFile ~/.ssh/id_rsa_myserver
 
-Then connect with just:
-```bash
+Host dev-*
+    User developer
+    IdentityFile ~/.ssh/id_rsa_dev
+
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    AddKeysToAgent yes
+
+# 使用配置
 ssh myserver
 ```
 
-## Running Remote Commands
+## 密钥管理
 
-Execute single command:
+### 生成密钥
 ```bash
-ssh user@host "ls -la /var/log"
-```
-
-Execute multiple commands:
-```bash
-ssh user@host "cd /app && git pull && pm2 restart all"
-```
-
-Run with pseudo-terminal (for interactive):
-```bash
-ssh -t user@host "htop"
-```
-
-## File Transfer with SCP
-
-Copy file to remote:
-```bash
-scp local.txt user@host:/remote/path/
-```
-
-Copy file from remote:
-```bash
-scp user@host:/remote/file.txt ./local/
-```
-
-Copy directory recursively:
-```bash
-scp -r ./local_dir user@host:/remote/path/
-```
-
-## File Transfer with rsync (preferred)
-
-Sync directory to remote:
-```bash
-rsync -avz ./local/ user@host:/remote/path/
-```
-
-Sync from remote:
-```bash
-rsync -avz user@host:/remote/path/ ./local/
-```
-
-With progress and compression:
-```bash
-rsync -avzP ./local/ user@host:/remote/path/
-```
-
-Dry run first:
-```bash
-rsync -avzn ./local/ user@host:/remote/path/
-```
-
-## Port Forwarding (Tunnels)
-
-Local forward (access remote service locally):
-```bash
-ssh -L 8080:localhost:80 user@host
-# Now localhost:8080 connects to host's port 80
-```
-
-Local forward to another host:
-```bash
-ssh -L 5432:db-server:5432 user@jumphost
-# Access db-server:5432 via localhost:5432
-```
-
-Remote forward (expose local service to remote):
-```bash
-ssh -R 9000:localhost:3000 user@host
-# Remote's port 9000 connects to your local 3000
-```
-
-Dynamic SOCKS proxy:
-```bash
-ssh -D 1080 user@host
-# Use localhost:1080 as SOCKS5 proxy
-```
-
-## Jump Hosts / Bastion
-
-Connect through jump host:
-```bash
-ssh -J jumphost user@internal-server
-```
-
-Multiple jumps:
-```bash
-ssh -J jump1,jump2 user@internal-server
-```
-
-In config file:
-```
-Host internal
-    HostName 10.0.0.50
-    User deploy
-    ProxyJump bastion
-```
-
-## Key Management
-
-Generate new key (Ed25519, recommended):
-```bash
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-Generate RSA key (legacy compatibility):
-```bash
+# 生成 RSA 密钥（推荐 4096 位）
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+# 生成 Ed25519 密钥（推荐）
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# 指定文件名
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_work
+
+# 修改密码
+ssh-keygen -p -f ~/.ssh/id_rsa
 ```
 
-Copy public key to server:
+### 部署公钥
 ```bash
-ssh-copy-id user@host
+# 方式1：ssh-copy-id
+ssh-copy-id user@hostname
+ssh-copy-id -i ~/.ssh/id_ed25519.pub user@hostname
+
+# 方式2：手动复制
+cat ~/.ssh/id_ed25519.pub | ssh user@hostname "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+# 方式3：直接编辑
+ssh user@hostname
+echo "public_key_content" >> ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
 ```
 
-Copy specific key:
+### SSH Agent
 ```bash
-ssh-copy-id -i ~/.ssh/mykey.pub user@host
-```
-
-## SSH Agent
-
-Start agent:
-```bash
+# 启动 agent
 eval "$(ssh-agent -s)"
+
+# 添加密钥
+ssh-add ~/.ssh/id_rsa
+ssh-add -l                          # 列出已添加的密钥
+
+# 转发 agent（跳板机场景）
+ssh -A user@jumphost
 ```
 
-Add key to agent:
+## 端口转发
+
+### 本地转发
 ```bash
-ssh-add ~/.ssh/id_ed25519
+# 将本地端口转发到远程
+ssh -L local_port:target_host:target_port user@ssh_server
+
+# 示例：访问远程 MySQL
+ssh -L 3306:localhost:3306 user@dbserver
+mysql -h 127.0.0.1 -P 3306
+
+# 示例：访问内网服务
+ssh -L 8080:internal.server:80 user@jumphost
+curl http://localhost:8080
 ```
 
-Add with macOS keychain:
+### 远程转发
 ```bash
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+# 将远程端口转发到本地
+ssh -R remote_port:local_host:local_port user@ssh_server
+
+# 示例：暴露本地服务
+ssh -R 8080:localhost:3000 user@public_server
+# 现在可以通过 public_server:8080 访问本地 3000 端口
 ```
 
-List loaded keys:
+### 动态转发（SOCKS 代理）
 ```bash
-ssh-add -l
+# 创建 SOCKS5 代理
+ssh -D 1080 user@ssh_server
+
+# 使用代理
+curl --socks5 localhost:1080 http://example.com
 ```
 
-## Multiplexing (Connection Sharing)
+### 后台运行
+```bash
+# 后台运行隧道
+ssh -fNL 3306:localhost:3306 user@server
 
-In ~/.ssh/config:
+# -f 后台运行
+# -N 不执行远程命令
+# -L 本地转发
 ```
+
+## 跳板机配置
+
+### ProxyJump（推荐）
+```bash
+# 命令行
+ssh -J jumphost user@target
+
+# 配置文件
+Host target
+    HostName 192.168.1.100
+    User admin
+    ProxyJump jumphost
+
+Host jumphost
+    HostName jump.example.com
+    User jumper
+```
+
+### ProxyCommand
+```bash
+# 配置文件
+Host target
+    HostName 192.168.1.100
+    User admin
+    ProxyCommand ssh -W %h:%p jumphost
+```
+
+## 安全加固
+
+### sshd_config 配置
+```bash
+# /etc/ssh/sshd_config
+
+# 禁用密码登录
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+
+# 禁用 root 登录
+PermitRootLogin no
+
+# 限制用户
+AllowUsers admin developer
+AllowGroups sshusers
+
+# 修改端口
+Port 2222
+
+# 限制登录尝试
+MaxAuthTries 3
+MaxSessions 5
+
+# 空闲超时
+ClientAliveInterval 300
+ClientAliveCountMax 2
+
+# 禁用不安全选项
+X11Forwarding no
+PermitEmptyPasswords no
+```
+
+### 应用配置
+```bash
+# 测试配置
+sshd -t
+
+# 重载配置
+systemctl reload sshd
+```
+
+## 常见场景
+
+### 场景 1：批量执行命令
+```bash
+# 使用 for 循环
+for host in server1 server2 server3; do
+    ssh $host "uptime"
+done
+
+# 使用 parallel-ssh
+pssh -h hosts.txt -i "uptime"
+```
+
+### 场景 2：文件传输
+```bash
+# scp
+scp file.txt user@host:/path/
+scp -r dir/ user@host:/path/
+scp user@host:/path/file.txt ./
+
+# rsync over SSH
+rsync -avz -e ssh source/ user@host:/dest/
+```
+
+### 场景 3：保持连接
+```bash
+# ~/.ssh/config
 Host *
-    ControlMaster auto
-    ControlPath ~/.ssh/sockets/%r@%h-%p
-    ControlPersist 600
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    TCPKeepAlive yes
+
+# 使用 autossh
+autossh -M 0 -fN -L 3306:localhost:3306 user@server
 ```
 
-Create socket directory:
+## 故障排查
+
+| 问题 | 排查方法 |
+|------|----------|
+| 连接超时 | 检查网络、防火墙、端口 |
+| 权限被拒绝 | 检查密钥权限 (600)、authorized_keys |
+| Host key 变更 | `ssh-keygen -R hostname` |
+| Agent 转发失败 | 检查 `AllowAgentForwarding` |
+| 连接断开 | 配置 `ServerAliveInterval` |
+
 ```bash
-mkdir -p ~/.ssh/sockets
+# 调试连接
+ssh -vvv user@hostname
+
+# 检查密钥权限
+ls -la ~/.ssh/
+# id_rsa: 600
+# id_rsa.pub: 644
+# authorized_keys: 600
+# ~/.ssh: 700
 ```
-
-## Known Hosts
-
-Remove old host key:
-```bash
-ssh-keygen -R hostname
-```
-
-Scan and add host key:
-```bash
-ssh-keyscan hostname >> ~/.ssh/known_hosts
-```
-
-## Debugging
-
-Verbose output:
-```bash
-ssh -v user@host
-```
-
-Very verbose:
-```bash
-ssh -vv user@host
-```
-
-Maximum verbosity:
-```bash
-ssh -vvv user@host
-```
-
-## Security Tips
-
-- Use Ed25519 keys (faster, more secure than RSA)
-- Set `PasswordAuthentication no` on servers
-- Use `fail2ban` on servers to block brute force
-- Keep keys encrypted with passphrases
-- Use `ssh-agent` to avoid typing passphrase repeatedly
-- Restrict key usage with `command=` in authorized_keys

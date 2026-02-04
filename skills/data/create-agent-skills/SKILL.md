@@ -1,192 +1,299 @@
 ---
-name: create-agent-skills
-description: Expert guidance for creating, writing, building, and refining Claude Code Skills. Use when working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices.
+name: creating-agent-skills
+description: Expert guidance for creating, writing, and refining Claude Code Skills. Use when working with SKILL.md files, authoring new skills, improving existing skills, or understanding skill structure and best practices.
 ---
 
-<essential_principles>
-## How Skills Work
+# Creating Agent Skills
 
-Skills are modular, filesystem-based capabilities that provide domain expertise on demand. This skill teaches how to create effective skills.
+This skill teaches how to create effective Claude Code Skills following Anthropic's official specification.
+
+## Core Principles
 
 ### 1. Skills Are Prompts
 
-All prompting best practices apply. Be clear, be direct, use XML structure. Assume Claude is smart - only add context Claude doesn't have.
+All prompting best practices apply. Be clear, be direct. Assume Claude is smart - only add context Claude doesn't have.
 
-### 2. SKILL.md Is Always Loaded
+### 2. Standard Markdown Format
 
-When a skill is invoked, Claude reads SKILL.md. Use this guarantee:
-- Essential principles go in SKILL.md (can't be skipped)
-- Workflow-specific content goes in workflows/
-- Reusable knowledge goes in references/
+Use YAML frontmatter + markdown body. **No XML tags** - use standard markdown headings.
 
-### 3. Router Pattern for Complex Skills
+```markdown
+---
+name: my-skill-name
+description: What it does and when to use it
+---
 
-```
-skill-name/
-├── SKILL.md              # Router + principles
-├── workflows/            # Step-by-step procedures (FOLLOW)
-├── references/           # Domain knowledge (READ)
-├── templates/            # Output structures (COPY + FILL)
-└── scripts/              # Reusable code (EXECUTE)
-```
+# My Skill Name
 
-SKILL.md asks "what do you want to do?" → routes to workflow → workflow specifies which references to read.
+## Quick Start
+Immediate actionable guidance...
 
-**When to use each folder:**
-- **workflows/** - Multi-step procedures Claude follows
-- **references/** - Domain knowledge Claude reads for context
-- **templates/** - Consistent output structures Claude copies and fills (plans, specs, configs)
-- **scripts/** - Executable code Claude runs as-is (deploy, setup, API calls)
+## Instructions
+Step-by-step procedures...
 
-### 4. Pure XML Structure
-
-No markdown headings (#, ##, ###) in skill body. Use semantic XML tags:
-```xml
-<objective>...</objective>
-<process>...</process>
-<success_criteria>...</success_criteria>
+## Examples
+Concrete usage examples...
 ```
 
-Keep markdown formatting within content (bold, lists, code blocks).
+### 3. Progressive Disclosure
 
-### 5. Progressive Disclosure
+Keep SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed.
 
-SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed for the current workflow.
-</essential_principles>
+```
+my-skill/
+├── SKILL.md              # Entry point (required)
+├── reference.md          # Detailed docs (loaded when needed)
+├── examples.md           # Usage examples
+└── scripts/              # Utility scripts (executed, not loaded)
+```
 
-<intake>
-What would you like to do?
+### 4. Effective Descriptions
 
-1. Create new skill
-2. Audit/modify existing skill
-3. Add component (workflow/reference/template/script)
-4. Get guidance
+The description field enables skill discovery. Include both what the skill does AND when to use it. Write in third person.
 
-**Wait for response before proceeding.**
-</intake>
+**Good:**
+```yaml
+description: Extracts text and tables from PDF files, fills forms, merges documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
+```
 
-<routing>
-| Response | Next Action | Workflow |
-|----------|-------------|----------|
-| 1, "create", "new", "build" | Ask: "Task-execution skill or domain expertise skill?" | Route to appropriate create workflow |
-| 2, "audit", "modify", "existing" | Ask: "Path to skill?" | Route to appropriate workflow |
-| 3, "add", "component" | Ask: "Add what? (workflow/reference/template/script)" | workflows/add-{type}.md |
-| 4, "guidance", "help" | General guidance | workflows/get-guidance.md |
+**Bad:**
+```yaml
+description: Helps with documents
+```
 
-**Progressive disclosure for option 1 (create):**
-- If user selects "Task-execution skill" → workflows/create-new-skill.md
-- If user selects "Domain expertise skill" → workflows/create-domain-expertise-skill.md
+## Skill Structure
 
-**Progressive disclosure for option 3 (add component):**
-- If user specifies workflow → workflows/add-workflow.md
-- If user specifies reference → workflows/add-reference.md
-- If user specifies template → workflows/add-template.md
-- If user specifies script → workflows/add-script.md
+### Required Frontmatter
 
-**Intent-based routing (if user provides clear intent without selecting menu):**
-- "audit this skill", "check skill", "review" → workflows/audit-skill.md
-- "verify content", "check if current" → workflows/verify-skill.md
-- "create domain expertise", "exhaustive knowledge base" → workflows/create-domain-expertise-skill.md
-- "create skill for X", "build new skill" → workflows/create-new-skill.md
-- "add workflow", "add reference", etc. → workflows/add-{type}.md
-- "upgrade to router" → workflows/upgrade-to-router.md
+| Field | Required | Max Length | Description |
+|-------|----------|------------|-------------|
+| `name` | Yes | 64 chars | Lowercase letters, numbers, hyphens only |
+| `description` | Yes | 1024 chars | What it does AND when to use it |
+| `allowed-tools` | No | - | Tools Claude can use without asking |
+| `model` | No | - | Specific model to use |
 
-**After reading the workflow, follow it exactly.**
-</routing>
+### Naming Conventions
 
-<quick_reference>
-## Skill Structure Quick Reference
+Use **gerund form** (verb + -ing) for skill names:
+
+- `processing-pdfs`
+- `analyzing-spreadsheets`
+- `generating-commit-messages`
+- `reviewing-code`
+
+Avoid: `helper`, `utils`, `tools`, `anthropic-*`, `claude-*`
+
+### Body Structure
+
+Use standard markdown headings:
+
+```markdown
+# Skill Name
+
+## Quick Start
+Fastest path to value...
+
+## Instructions
+Core guidance Claude follows...
+
+## Examples
+Input/output pairs showing expected behavior...
+
+## Advanced Features
+Additional capabilities (link to reference files)...
+
+## Guidelines
+Rules and constraints...
+```
+
+## What Would You Like To Do?
+
+1. **Create new skill** - Build from scratch
+2. **Audit existing skill** - Check against best practices
+3. **Add component** - Add workflow/reference/example
+4. **Get guidance** - Understand skill design
+
+## Creating a New Skill
+
+### Step 1: Choose Type
 
 **Simple skill (single file):**
-```yaml
+- Under 500 lines
+- Self-contained guidance
+- No complex workflows
+
+**Progressive disclosure skill (multiple files):**
+- SKILL.md as overview
+- Reference files for detailed docs
+- Scripts for utilities
+
+### Step 2: Create SKILL.md
+
+```markdown
 ---
-name: skill-name
-description: What it does and when to use it.
+name: your-skill-name
+description: [What it does]. Use when [trigger conditions].
 ---
 
-<objective>What this skill does</objective>
-<quick_start>Immediate actionable guidance</quick_start>
-<process>Step-by-step procedure</process>
-<success_criteria>How to know it worked</success_criteria>
+# Your Skill Name
+
+## Quick Start
+
+[Immediate actionable example]
+
+```[language]
+[Code example]
 ```
 
-**Complex skill (router pattern):**
+## Instructions
+
+[Core guidance]
+
+## Examples
+
+**Example 1:**
+Input: [description]
+Output:
 ```
-SKILL.md:
-  <essential_principles> - Always applies
-  <intake> - Question to ask
-  <routing> - Maps answers to workflows
-
-workflows/:
-  <required_reading> - Which refs to load
-  <process> - Steps
-  <success_criteria> - Done when...
-
-references/:
-  Domain knowledge, patterns, examples
-
-templates/:
-  Output structures Claude copies and fills
-  (plans, specs, configs, documents)
-
-scripts/:
-  Executable code Claude runs as-is
-  (deploy, setup, API calls, data processing)
-```
-</quick_reference>
-
-<reference_index>
-## Domain Knowledge
-
-All in `references/`:
-
-**Structure:** recommended-structure.md, skill-structure.md
-**Principles:** core-principles.md, be-clear-and-direct.md, use-xml-tags.md
-**Patterns:** common-patterns.md, workflows-and-validation.md
-**Assets:** using-templates.md, using-scripts.md
-**Advanced:** executable-code.md, api-security.md, iteration-and-testing.md
-</reference_index>
-
-<workflows_index>
-## Workflows
-
-All in `workflows/`:
-
-| Workflow | Purpose |
-|----------|---------|
-| create-new-skill.md | Build a skill from scratch |
-| create-domain-expertise-skill.md | Build exhaustive domain knowledge base for build/ |
-| audit-skill.md | Analyze skill against best practices |
-| verify-skill.md | Check if content is still accurate |
-| add-workflow.md | Add a workflow to existing skill |
-| add-reference.md | Add a reference to existing skill |
-| add-template.md | Add a template to existing skill |
-| add-script.md | Add a script to existing skill |
-| upgrade-to-router.md | Convert simple skill to router pattern |
-| get-guidance.md | Help decide what kind of skill to build |
-</workflows_index>
-
-<yaml_requirements>
-## YAML Frontmatter
-
-Required fields:
-```yaml
----
-name: skill-name          # lowercase-with-hyphens, matches directory
-description: ...          # What it does AND when to use it (third person)
----
+[result]
 ```
 
-Name conventions: `create-*`, `manage-*`, `setup-*`, `generate-*`, `build-*`
-</yaml_requirements>
+## Guidelines
 
-<success_criteria>
+- [Constraint 1]
+- [Constraint 2]
+```
+
+### Step 3: Add Reference Files (If Needed)
+
+Link from SKILL.md to detailed content:
+
+```markdown
+For API reference, see [REFERENCE.md](REFERENCE.md).
+For form filling guide, see [FORMS.md](FORMS.md).
+```
+
+Keep references **one level deep** from SKILL.md.
+
+### Step 4: Add Scripts (If Needed)
+
+Scripts execute without loading into context:
+
+```markdown
+## Utility Scripts
+
+Extract fields:
+```bash
+python scripts/analyze.py input.pdf > fields.json
+```
+```
+
+### Step 5: Test With Real Usage
+
+1. Test with actual tasks, not test scenarios
+2. Observe where Claude struggles
+3. Refine based on real behavior
+4. Test with Haiku, Sonnet, and Opus
+
+## Auditing Existing Skills
+
+Check against this rubric:
+
+- [ ] Valid YAML frontmatter (name + description)
+- [ ] Description includes trigger keywords
+- [ ] Uses standard markdown headings (not XML tags)
+- [ ] SKILL.md under 500 lines
+- [ ] References one level deep
+- [ ] Examples are concrete, not abstract
+- [ ] Consistent terminology
+- [ ] No time-sensitive information
+- [ ] Scripts handle errors explicitly
+
+## Common Patterns
+
+### Template Pattern
+
+Provide output templates for consistent results:
+
+```markdown
+## Report Template
+
+```markdown
+# [Analysis Title]
+
+## Executive Summary
+[One paragraph overview]
+
+## Key Findings
+- Finding 1
+- Finding 2
+
+## Recommendations
+1. [Action item]
+2. [Action item]
+```
+```
+
+### Workflow Pattern
+
+For complex multi-step tasks:
+
+```markdown
+## Migration Workflow
+
+Copy this checklist:
+
+```
+- [ ] Step 1: Backup database
+- [ ] Step 2: Run migration script
+- [ ] Step 3: Validate output
+- [ ] Step 4: Update configuration
+```
+
+**Step 1: Backup database**
+Run: `./scripts/backup.sh`
+...
+```
+
+### Conditional Pattern
+
+Guide through decision points:
+
+```markdown
+## Choose Your Approach
+
+**Creating new content?** Follow "Creation workflow" below.
+**Editing existing?** Follow "Editing workflow" below.
+```
+
+## Anti-Patterns to Avoid
+
+- **XML tags in body** - Use markdown headings instead
+- **Vague descriptions** - Be specific with trigger keywords
+- **Deep nesting** - Keep references one level from SKILL.md
+- **Too many options** - Provide a default with escape hatch
+- **Windows paths** - Always use forward slashes
+- **Punting to Claude** - Scripts should handle errors
+- **Time-sensitive info** - Use "old patterns" section instead
+
+## Reference Files
+
+For detailed guidance, see:
+
+- [official-spec.md](references/official-spec.md) - Anthropic's official skill specification
+- [best-practices.md](references/best-practices.md) - Skill authoring best practices
+
+## Success Criteria
+
 A well-structured skill:
-- Has valid YAML frontmatter
-- Uses pure XML structure (no markdown headings in body)
-- Has essential principles inline in SKILL.md
-- Routes directly to appropriate workflows based on user intent
+- Has valid YAML frontmatter with descriptive name and description
+- Uses standard markdown headings (not XML tags)
 - Keeps SKILL.md under 500 lines
-- Asks minimal clarifying questions only when truly needed
+- Links to reference files for detailed content
+- Includes concrete examples with input/output pairs
 - Has been tested with real usage
-</success_criteria>
+
+Sources:
+- [Agent Skills - Claude Code Docs](https://code.claude.com/docs/en/skills)
+- [Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+- [GitHub - anthropics/skills](https://github.com/anthropics/skills)

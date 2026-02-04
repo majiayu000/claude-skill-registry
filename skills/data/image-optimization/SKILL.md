@@ -1,7 +1,6 @@
 ---
-name: optimizing-images
-description: Optimizes images for web using compression, modern formats (WebP, AVIF), and responsive techniques. Use when reducing page weight, improving load times, or implementing responsive images. Triggers include "image optimization", "compress images", "WebP", or "srcset".
-allowed-tools: Bash, Read, Glob
+name: image-optimization
+description: Optimize images for web to reduce file size without sacrificing quality. Use compression, modern formats, and responsive techniques for faster loading.
 ---
 
 # Image Optimization
@@ -147,7 +146,7 @@ Workflow:
 Quick Wins:
 
 Remove EXIF data (saves 20-50KB):
-  identify -verbose image.jpg | rg -i exif
+  identify -verbose image.jpg | grep -i exif
   convert image.jpg -strip image-clean.jpg
 
 Convert to WebP (25-35% smaller):

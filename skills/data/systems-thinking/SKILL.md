@@ -1,120 +1,65 @@
 ---
-name: "systems-thinking"
-description: "Apply systems thinking to leadership decisions and produce a Systems Thinking Pack (system boundary, actors & incentives map, feedback loops, second-order effects ledger, leverage points, intervention plan). Use for complex ecosystems, trade-offs, org/process redesign, and preventing unintended consequences."
+name: systems-thinking
+description: Help users think in systems and understand complex dynamics. Use when someone is dealing with multi-stakeholder problems, trying to understand second-order effects, managing platform ecosystems, or analyzing complex organizational dynamics.
 ---
 
 # Systems Thinking
 
-## Scope
+Help the user apply systems thinking to complex problems using frameworks and insights from 6 product leaders.
 
-**Covers**
-- Seeing the “whole system” behind a problem (actors, incentives, feedback loops, culture/rules)
-- Anticipating second- and third-order effects (including time delays)
-- Finding leverage points (small changes with outsized impact)
-- Converting recurring pain into a reusable system (process, automation, or operating mechanism)
+## How to Help
 
-**When to use**
-- “This is a complex ecosystem; we’re missing the bigger picture.”
-- “What are the second-order effects if we do X?”
-- “We keep solving symptoms—what’s the system causing this?”
-- “Map the players + incentives and how they interact.”
-- “We need to redesign a process/org without unintended consequences.”
+When the user asks for help with systems thinking:
 
-**When NOT to use**
-- The problem is simple/linear and mostly execution (use a project plan/timeline).
-- You need primary user research or data you don’t have (do discovery first).
-- You need deep quantitative forecasting/simulation (this skill produces a qualitative map + risks, not a full model).
-- The decision is low-impact and fully reversible (don’t over-invest).
+1. **Map the system** - Help them identify all players, their incentives, and how they interact with each other
+2. **Identify stocks and flows** - Understand what accumulates (stocks) and what moves between states (flows)
+3. **Trace second-order effects** - Work through what happens after the first-order impact of any change
+4. **Find leverage points** - Identify where small interventions can create large systemic changes
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- The focal decision or problem statement (1–2 sentences)
-- Desired outcome + time horizon (default: 6–12 months)
-- Known constraints/guardrails (trust, safety, compliance, budget, headcount)
-- Known actors/stakeholders (teams, users, partners, regulators, vendors)
-- What has been tried already (and what happened)
+### See the system
+Seth Godin: "What does it mean to be a strategic thinker? It means to see the system." Understanding the invisible rules, culture, and interoperability that govern how products and organizations succeed or fail is the foundation of strategic thinking.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with clearly labeled assumptions and provide 2–3 alternative system framings/boundaries.
+### Think about all players and incentives
+Sriram: "Systems thinking. Think of all the players in the system, think of all of their incentives and how they interact with each other." This approach is superior to Jobs-to-be-Done for handling complex product trade-offs and multi-agent incentives.
 
-## Outputs (deliverables)
+### Use stocks and flows
+Will Larson: "Systems thinking is basically you try to think about stocks and flows. Stocks are things that accumulate and flows are the movement from a stock to another thing." Model business processes like hiring pipelines or user funnels using this framework.
 
-Produce a **Systems Thinking Pack** in Markdown (in-chat; or as files if requested) in this order:
+### Consider second, third, and fourth-order effects
+Hari Srinivasan: "The skillsets that you think through and manage in a complicated ecosystem are quite different." Managing complex ecosystems requires understanding effects that cascade beyond the immediate impact.
 
-1) **Context + System boundary** (goal, scope, non-scope, time horizon)
-2) **Actors & incentives map** (players, goals, constraints, power, conflicts)
-3) **System map** (key variables + causal links) + **feedback loops** (reinforcing/balancing) + **time delays**
-4) **Second-/third-order effects ledger** for the top 1–3 decisions
-5) **Leverage points** + **intervention plan** (actions, owners, sequencing, guardrails)
-6) **System-build opportunities** (what to automate/standardize to reduce recurring pain)
-7) **Risks / Open questions / Next steps** (required)
+### Think beyond today's decisions
+Nickey Skarstad: "Second order thinking is you being able to think beyond the decisions that you're making today." Consider how current decisions impact future constraints and ecosystem dynamics.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Automate recurring pains
+Melissa Perri + Denise Tilles: "Tell me about some process you really hated and ended up trying to automate or build a system around to make it better." Identify recurring manual pains and build automated systems or frameworks to solve them.
 
-## Workflow (8 steps)
+## Questions to Help Users
 
-### 1) Intake + pick the focal decision/problem
-- **Inputs:** User context; use [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Restate the focal decision/problem, desired outcome, and time horizon; list constraints/guardrails.
-- **Outputs:** Draft **Context + System boundary**.
-- **Checks:** The problem is not a solution in disguise; scope and non-scope are explicit.
+- "Who are all the players in this system, and what does each one want?"
+- "If you make this change, what happens next? And then what happens after that?"
+- "What accumulates over time in this system (the stocks), and what flows between states?"
+- "Where are the feedback loops - both reinforcing and balancing?"
+- "What constraint, if removed, would unlock the most value in this system?"
+- "What recurring manual pain could be systematized?"
 
-### 2) Define the system boundary (what’s “in” vs “out”)
-- **Inputs:** Problem statement + constraints.
-- **Actions:** Choose a boundary that is useful (not everything). Name the primary outcome metric(s) and a few leading indicators.
-- **Outputs:** Boundary statement + success measures.
-- **Checks:** Boundary is tight enough to act on, but wide enough to include key externalities.
+## Common Mistakes to Flag
 
-### 3) Map actors + incentives (multi-agent reality)
-- **Inputs:** Boundary + stakeholder list.
-- **Actions:** Enumerate actors/players; capture incentives, constraints, power, and likely behaviors.
-- **Outputs:** **Actors & incentives map** (table).
-- **Checks:** Includes at least 1–2 “invisible” actors (e.g., policies, culture norms, platform constraints) if relevant.
+- **Only seeing first-order effects** - Changes ripple through systems in ways that aren't immediately obvious
+- **Ignoring incentives** - Every player in a system responds to their own incentives, not yours
+- **Optimizing locally** - Improving one part of a system can make the whole system worse
+- **Missing feedback loops** - Many systems have self-reinforcing or self-balancing dynamics that amplify or dampen changes
+- **Treating symptoms instead of causes** - Systems problems often require addressing root causes, not visible symptoms
 
-### 4) Build a simple system map (variables + causal links)
-- **Inputs:** Actors map + known dynamics.
-- **Actions:** List key variables; map causal links (“A increases B”, “C decreases D”); mark time delays.
-- **Outputs:** **System map** (text/table) with 10–20 high-signal links.
-- **Checks:** Links are directional and testable; avoids buzzwords (“alignment”, “quality”) without definition.
+## Deep Dive
 
-### 5) Identify feedback loops + time delays
-- **Inputs:** System map.
-- **Actions:** Extract reinforcing and balancing loops; note where delays create overshoot/oscillation; flag common traps.
-- **Outputs:** **Feedback loops** section (2–6 loops) + delays list.
-- **Checks:** Each loop has a short “so what” describing the pattern it creates.
+For all 6 insights from 6 guests, see `references/guest-insights.md`
 
-### 6) Run second-/third-order effects on 1–3 candidate moves
-- **Inputs:** Candidate decisions/actions.
-- **Actions:** For each move, enumerate first-, second-, and third-order effects; include who wins/loses and what constraints tighten over time.
-- **Outputs:** **Second-/third-order effects ledger**.
-- **Checks:** Includes at least one unintended consequence + one mitigating action per move.
+## Related Skills
 
-### 7) Choose leverage points + design interventions (including “build a system”)
-- **Inputs:** Loops + effects ledger.
-- **Actions:** Identify leverage points (policy, incentives, information flows, tooling, process); propose interventions; include at least one system-build/automation opportunity for recurring pain.
-- **Outputs:** **Leverage points + intervention plan** + **System-build opportunities**.
-- **Checks:** Each intervention has an owner, a measurable leading indicator, and a guardrail.
-
-### 8) Quality gate + finalize pack
-- **Inputs:** All draft sections.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**.
-- **Outputs:** Final **Systems Thinking Pack**.
-- **Checks:** A reader can act without a live meeting; trade-offs and uncertainties are explicit.
-
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (Org/process):** “Our on-call load keeps rising and teams are burned out. Map the system and propose leverage points.”  
-Expected: an actors/incentives map (teams, incidents, incentives), feedback loops (firefighting loop), effects ledger for candidate changes, and an intervention plan with guardrails.
-
-**Example 2 (Product ecosystem):** “We’re changing API pricing; what are the second-order effects across partners and customer segments?”  
-Expected: system boundary + actors map (customers/partners/internal), loops and delays, effects ledger, and a sequencing/mitigation plan.
-
-**Boundary example:** “Write a status update about this week’s tasks.”  
-Response: this skill is for complex systems/decisions. Suggest a project update format instead; only use this skill if there’s a systemic pattern to diagnose.
-
+- Setting OKRs & Goals
+- Defining Product Vision
+- Platform Strategy
+- Organizational Design

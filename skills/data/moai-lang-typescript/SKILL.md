@@ -1,309 +1,160 @@
 ---
-name: moai-lang-typescript
-version: 4.0.0
-updated: '2025-11-19'
-status: stable
-stability: stable
-description: Enterprise TypeScript with strict typing and modern ecosystem TypeScript
+name: "moai-lang-typescript"
+description: "TypeScript 5.9+ development specialist covering React 19, Next.js 16 App Router, type-safe APIs with tRPC, Zod validation, and modern TypeScript patterns. Use when developing TypeScript applications, React components, Next.js pages, or type-safe APIs."
+version: 1.1.0
+category: "language"
+modularized: false
+user-invocable: false
+tags: ['typescript', 'react', 'nextjs', 'frontend', 'fullstack']
+updated: 2026-01-11
+status: "active"
 allowed-tools:
-- Read
-- Bash
-- WebSearch
-- WebFetch
+  - Read
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
+## Quick Reference (30 seconds)
 
+TypeScript 5.9+ Development Specialist - Modern TypeScript with React 19, Next.js 16, and type-safe API patterns.
 
-# Modern TypeScript Development — Enterprise  
+Auto-Triggers: Files with .ts, .tsx, .mts, or .cts extensions, TypeScript configurations, React or Next.js projects
 
-## Quick Summary
+Core Stack:
 
-**Primary Focus**: TypeScript 5.9 with strict typing, Next.js 16, React 19, and type-safe APIs
-**Best For**: Full-stack development, API contracts, type safety, component libraries
-**Key Libraries**: React 19, Next.js 16, tRPC 11, Zod 3.23, Vitest 2.x
-**Auto-triggers**: TypeScript, Next.js, React, tRPC, strict types, type safety, API routes
+- TypeScript 5.9: Deferred module evaluation, decorators, satisfies operator
+- React 19: Server Components, use hook, Actions, concurrent features
+- Next.js 16: App Router, Server Actions, middleware, ISR/SSG/SSR
+- Type-Safe APIs: tRPC 11, Zod 3.23, tanstack-query
+- Testing: Vitest, React Testing Library, Playwright
 
-| Version | Release | Support |
-|---------|---------|---------|
-| TypeScript 5.9.3 | Aug 2025 | Active |
-| React 19.x | Dec 2024 | Active |
-| Next.js 16.x | 2025 | Active |
-| Node.js 22 LTS | Oct 2024 | Apr 2027 |
+Quick Commands:
 
----
-
-## Three-Level Learning Path
-
-### Level 1: Fundamentals (Read examples.md)
-
-Core TypeScript concepts and patterns:
-- **Type System**: Primitives, unions, intersections, generics, utility types
-- **React 19**: Server components, transitions, ref as prop, new hooks
-- **Next.js 16**: File-based routing, API routes, server actions, Turbopack
-- **tRPC Basics**: Type-safe API definition and client usage
-- **Examples**: See `examples.md` for full code samples
-
-### Level 2: Advanced Patterns (See reference.md)
-
-Production-ready enterprise patterns:
-- **Advanced Types**: Conditional types, mapped types, generic constraints
-- **Zod Validation**: Runtime schema validation with type inference
-- **Component Testing**: Vitest with React Testing Library
-- **API Design**: tRPC routers, middleware, context
-- **Pattern Reference**: See `reference.md` for API details and best practices
-
-### Level 3: Production Deployment (Consult security/performance skills)
-
-Enterprise deployment and optimization:
-- **Build Optimization**: Turbopack configuration, code splitting
-- **Docker Deployment**: Multi-stage builds, environment setup
-- **Performance**: Web Vitals, caching strategies, bundle analysis
-- **Monitoring**: Error tracking, metrics, observability
-- **Details**: Skill("moai-essentials-perf"), Skill("moai-security-backend")
+Create Next.js 16 project using npx create-next-app with latest, typescript, tailwind, and app flags. Install type-safe API stack with npm install for trpc server, client, react-query, zod, and tanstack react-query. Install testing stack with npm install D flag for vitest, testing-library react, and playwright test.
 
 ---
 
-## Technology Stack (November 2025 Stable)
+## Implementation Guide (5 minutes)
 
-### Language & Runtime
-- **TypeScript 5.9.3** (August 2025, deferred module evaluation)
-- **Node.js 22.11.0 LTS** (April 2027 support)
-- **JavaScript ES2020** target for compatibility
+### TypeScript 5.9 Key Features
 
-### Frontend Framework
-- **React 19.x** (Server Components, Actions, new Hooks API)
-- **Next.js 16.x** (Turbopack, App Router, Server Components)
-- **Turbopack** (Rust-based bundler, 2x faster builds)
+Satisfies Operator for Type Checking Without Widening:
 
-### Type-Safe Ecosystem
-- **tRPC 11.x** (End-to-end type safety without code generation)
-- **Zod 3.23.x** (Runtime validation with TypeScript inference)
-- **Vitest 2.x** (Unit testing with Jest compatibility)
+Define Colors type as union of red, green, and blue string literals. Create palette object with red as number array, green as hex string, and blue as number array. Apply satisfies operator with Record of Colors to string or number array. Now palette.red can use map method because it is inferred as number array, and palette.green can use toUpperCase because it is inferred as string.
 
-### Package Management
-- **npm 11.x**, **pnpm 9.x**, **yarn 4.x** (all supported)
-- **Node Modules**: ESM modules with bundler resolution
+Deferred Module Evaluation:
 
----
+Use import defer with asterisk as namespace from heavy module path. In function that needs the module, access namespace property which loads module on first use.
 
-## TypeScript Type System
+Modern Decorators Stage 3:
 
-### Basic Types
-```typescript
-// Primitives
-const name: string = "John";
-const age: number = 30;
-const active: boolean = true;
+Create logged function decorator that takes target function and ClassMethodDecoratorContext. Return function that logs method name then calls target with apply. Apply logged decorator to class method that fetches data.
 
-// Union types for flexible APIs
-type Status = "pending" | "approved" | "rejected";
-type Result = string | number;
+### React 19 Patterns
 
-// Intersection types for combining
-type Admin = User & { role: "admin"; permissions: string[] };
-```
+Server Components Default in App Router:
 
-### Generics & Constraints
-```typescript
-// Generic function
-function getFirstElement<T>(arr: T[]): T {
-  return arr[0];
-}
+For page component in app/users/[id]/page.tsx, define PageProps interface with params as Promise of object containing id string. Create async default function that awaits params, queries database for user, calls notFound if not found, and returns main element with user name.
 
-// Generic with constraints
-function merge<T extends object, U extends object>(obj1: T, obj2: U): T & U {
-  return { ...obj1, ...obj2 };
-}
-```
+use Hook for Unwrapping Promises and Context:
 
-### Utility Types
-```typescript
-// Common patterns
-type Readonly<T> = { readonly [K in keyof T]: T[K] };
-type Partial<T> = { [K in keyof T]?: T[K] };
-type Pick<T, K> = { [P in K]: T[P] };
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
-type Record<K, T> = { [P in K]: T };
-```
+In client component marked with use client directive, import use from react. Create UserProfile component that takes userPromise prop as Promise of User type. Call use hook with the promise to suspend until resolved. Return div with user name.
 
----
+Actions for Form Handling with Server Functions:
 
-## React 19 Components
+In server actions file marked with use server directive, import revalidatePath. Define CreateUserSchema with zod for name and email validation. Create async createUser function that takes FormData, parses with schema, creates user in database, and revalidates path.
 
-### Server & Client Components
-```typescript
-// Server Component
-'use server'
-export async function UserProfile({ userId }: { userId: string }) {
-  const userData = await fetchUser(userId);
-  return <div>{userData.name}</div>;
-}
+useActionState for Form Status:
 
-// Client Component with State
-'use client'
-export function Counter() {
-  const [count, setCount] = useState(0);
-  return <button onClick={() => setCount(count + 1)}>{count}</button>;
-}
-```
+In client component, import useActionState. Create form component that destructures state, action, and isPending from useActionState called with createUser action. Return form with action prop, input disabled when pending, button with dynamic text, and error message from state.
 
-### React Hooks
-```typescript
-// useState, useEffect, useContext
-const [state, setState] = useState<number>(0);
-useEffect(() => { /* ... */ }, []);
+### Next.js 16 App Router
 
-// useTransition for non-blocking updates
-const [isPending, startTransition] = useTransition();
+Route Structure:
 
-// useRef for DOM access
-const inputRef = useRef<HTMLInputElement>(null);
-```
+The app directory contains layout.tsx for root layout, page.tsx for home route, loading.tsx for loading UI, error.tsx for error boundary, and api/route.ts for API routes. Subdirectories like users contain page.tsx for list and [id]/page.tsx for dynamic routes. Route groups use parentheses like (marketing)/about/page.tsx.
+
+Metadata API:
+
+Import Metadata type. Export metadata object with title as object containing default and template, and description string. Export async generateMetadata function that takes params, awaits params, fetches user, and returns object with title set to user name.
+
+Server Actions with Validation:
+
+In server file, import zod, revalidatePath, and redirect. Define UpdateUserSchema with id, name, and email validation. Create async updateUser function taking prevState and formData. Parse with safeParse, return errors if failed, update database, revalidate path, and redirect.
+
+### Type-Safe APIs with tRPC
+
+Server Setup:
+
+Import initTRPC and TRPCError from trpc server. Create t by calling initTRPC.context with Context type then create. Export router, publicProcedure, and protectedProcedure from t. The protectedProcedure uses middleware that checks session user and throws UNAUTHORIZED error if missing.
+
+Router Definition:
+
+Import zod. Create userRouter with router function. Define getById procedure using publicProcedure with input schema for id as uuid string, and query that finds user by id. Define create procedure using protectedProcedure with input schema for name and email, and mutation that creates user.
+
+Client Usage:
+
+In client component, create UserList function that calls trpc.user.list.useQuery with page parameter. Destructure data and isLoading. Create mutation with trpc.user.create.useMutation. Return loading state or list of users.
+
+### Zod Schema Patterns
+
+Complex Validation:
+
+Create UserSchema with z.object containing id as uuid string, name with min and max length, email as email format, role as enum of admin, user, and guest, and createdAt with coerce.date. Apply strict method. Infer User type from schema. Create CreateUserSchema by omitting id and createdAt, extending with password and confirmPassword, and adding refine for password match validation with custom message and path.
+
+### State Management
+
+Zustand for Client State:
+
+Import create from zustand and middleware. Define AuthState interface with user as User or null, login method, and logout method. Create useAuthStore with create function wrapped in devtools and persist middleware. Set initial user to null, login sets user, logout sets user to null. Persist uses auth-storage name.
+
+Jotai for Atomic State:
+
+Import atom from jotai and atomWithStorage from jotai/utils. Create countAtom with initial value 0. Create doubleCountAtom as derived atom that gets countAtom and multiplies by 2. Create themeAtom with atomWithStorage for light or dark theme persisted to storage.
 
 ---
 
-## Next.js 16 Full-Stack Development
+## Advanced Patterns
 
-### File-Based Routing & Layouts
-```
-app/
-├── page.tsx                  # Root page
-├── layout.tsx                # Root layout
-├── api/users/route.ts        # API route: /api/users
-└── dashboard/
-    ├── page.tsx              # /dashboard
-    └── [id]/page.tsx         # /dashboard/[id]
-```
+For comprehensive documentation including advanced TypeScript patterns, performance optimization, testing strategies, and deployment configurations, see:
 
-### API Routes
-```typescript
-export async function GET(request: NextRequest) {
-  return NextResponse.json({ users: [] });
-}
+- reference.md for complete API reference, Context7 library mappings, and advanced type patterns
+- examples.md for production-ready code examples, full-stack patterns, and testing templates
 
-export async function POST(request: NextRequest) {
-  const data = await request.json();
-  return NextResponse.json(data, { status: 201 });
-}
-```
+### Context7 Integration
 
-### Server Actions
-```typescript
-'use server'
-
-export async function createUser(formData: FormData) {
-  const name = formData.get('name');
-  await db.users.create({ data: { name } });
-  revalidatePath('/users');
-}
-```
+For TypeScript documentation, use microsoft/TypeScript with decorators satisfies topics. For React 19, use facebook/react with server-components use-hook. For Next.js 16, use vercel/next.js with app-router server-actions. For tRPC, use trpc/trpc with procedures middleware. For Zod, use colinhacks/zod with schema validation.
 
 ---
 
-## Type-Safe APIs with tRPC
+## Works Well With
 
-### Router Definition
-```typescript
-export const router = t.router({
-  user: t.router({
-    list: t.procedure.query(() => db.user.findMany()),
-
-    getById: t.procedure
-      .input(z.object({ id: z.string() }))
-      .query(async ({ input }) =>
-        db.user.findUnique({ where: { id: input.id } })
-      )
-  })
-});
-
-export type AppRouter = typeof router;
-```
-
-### Client Usage (Fully Typed)
-```typescript
-const { data: users } = trpc.user.list.useQuery();
-// All types inferred from server router!
-```
+- moai-domain-frontend for UI components and styling patterns
+- moai-domain-backend for API design and database integration
+- moai-library-shadcn for component library integration
+- moai-workflow-testing for testing strategies and patterns
+- moai-foundation-quality for code quality standards
+- moai-essentials-debug for debugging TypeScript applications
 
 ---
 
-## Runtime Validation with Zod
+## Quick Troubleshooting
 
-### Schema Definition
-```typescript
-const UserSchema = z.object({
-  id: z.string().uuid(),
-  name: z.string().min(1).max(100),
-  email: z.string().email()
-});
+TypeScript Errors:
 
-type User = z.infer<typeof UserSchema>;
+Run npx tsc with noEmit flag for type check only. Run npx tsc with generateTrace flag and output directory for performance trace.
 
-// Validation
-const user = UserSchema.parse(data);  // Throws on error
-const result = UserSchema.safeParse(data);  // Returns { success, data, error }
-```
+React and Next.js Issues:
+
+Run npm run build to check for build errors. Run npx next lint for ESLint check. Delete .next directory and run npm run dev to clear cache.
+
+Type Safety Patterns:
+
+Create assertNever function taking never type parameter that throws error for unexpected values, used in exhaustive switch statements. Create type guard function isUser that checks if value is object with id property and returns type predicate.
 
 ---
 
-## Testing
-
-### Unit Tests with Vitest
-```typescript
-import { describe, it, expect, vi } from 'vitest';
-
-describe('Math', () => {
-  it('adds numbers', () => {
-    expect(add(2, 3)).toBe(5);
-  });
-
-  it('calls callback', () => {
-    const fn = vi.fn();
-    execute(fn);
-    expect(fn).toHaveBeenCalled();
-  });
-});
-```
-
-### Component Tests
-```typescript
-import { render, screen } from '@testing-library/react';
-
-it('renders button', () => {
-  render(<Button>Click me</Button>);
-  expect(screen.getByRole('button')).toBeInTheDocument();
-});
-```
-
----
-
-## Production Best Practices
-
-1. **Enable strict mode** in tsconfig.json for maximum type safety
-2. **Use Zod** for runtime validation combined with TypeScript types
-3. **Prefer tRPC** over REST for end-to-end type safety
-4. **Use Server Components** by default in Next.js 16
-5. **Implement proper error handling** with discriminated unions
-6. **Test with Vitest** for fast, type-safe unit tests
-7. **Leverage TypeScript utility types** for DRY code
-8. **Use conditional types** for advanced type manipulations
-9. **Monitor Web Vitals** in production environments
-10. **Build with Turbopack** for faster development cycles
-
----
-
-## Learn More
-
-- **Examples**: See `examples.md` for React, Next.js, tRPC, Zod, and Vitest patterns
-- **Reference**: See `reference.md` for API details, tool versions, and troubleshooting
-- **TypeScript 5.9**: https://devblogs.microsoft.com/typescript/announcing-typescript-5-9/
-- **React 19**: https://react.dev/
-- **Next.js 16**: https://nextjs.org/docs
-- **tRPC**: https://trpc.io/docs
-- **Zod**: https://zod.dev/
-
----
-
-**Skills**: Skill("moai-essentials-debug"), Skill("moai-essentials-perf"), Skill("moai-security-backend")
-**Auto-loads**: TypeScript projects mentioning Next.js, React, tRPC, strict types, type safety
-
+Last Updated: 2026-01-11
+Status: Active (v1.1.0)

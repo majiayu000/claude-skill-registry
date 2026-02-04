@@ -4,7 +4,7 @@ phase: 5
 prerequisites:
   - tasks.json
 outputs:
-  - .signals/phase1-complete.json
+  - .signals/phase5-complete.json
   - expanded tasks in tasks.json
 description: |
   Analyzes task complexity and generates subtasks for high-complexity items.
@@ -34,7 +34,7 @@ This occurs when:
 
 ```bash
 # Before skill activation:
-./lib/worktree-manager.sh create 5 3
+./lib/worktree-manager.sh create 1 3
 cd ./worktrees/phase-5-task-3
 
 # Validate isolation:
@@ -59,23 +59,23 @@ The **Task Decomposer** automates Phase 5 of the development pipeline in isolate
 - **Research-backed expansion** for high-complexity tasks (≥7)
 - **Generates subtasks** with complete acceptance criteria and test strategies
 - **Preserves checkpoints** at key milestones within worktree
-- **Creates completion signal** to trigger Phase 6
+- **Creates completion signal** to trigger Phase 2
 - **NEW**: Worktree isolation prevents decomposition conflicts
 - **NEW**: Each task expansion gets dedicated workspace
 
 ## When This Skill Activates
 
-**Primary Trigger:** Pipeline Orchestrator completes Phase 2 and initiates Phase 5
+**Primary Trigger:** Pipeline Orchestrator completes Phase 0 and initiates Phase 1
 
 **Manual Activation:**
-- "Begin Phase 5"
+- "Begin Phase 1"
 - "Start task decomposition"
 - "Analyze task complexity"
 - "Decompose tasks with TaskMaster"
 
 **Prerequisites:**
 - ✅ `.taskmaster/tasks.json` exists (15-25 top-level tasks)
-- ✅ Phase 2 checkpoint passed
+- ✅ Phase 0 checkpoint passed
 - ✅ No subtasks present yet (subtasks: [] for all tasks)
 - ✅ TaskMaster initialized and responding
 
@@ -98,7 +98,7 @@ Stage 6: Create Completion Signal (.signals/phase5-complete.json)
          ↓
 Stage 7: Final Verification
          ↓
-✅ PHASE 5 COMPLETE → Trigger Phase 6
+✅ PHASE 1 COMPLETE → Trigger Phase 2
 ```
 
 ## Execution Commands
@@ -131,7 +131,7 @@ echo "🔍 Validating expansion quality..."
 
 # Stage 5: Summary
 echo "📊 Generating phase summary..."
-[create .taskmaster/phase1-summary.md]
+[create .taskmaster/phase5-summary.md]
 
 # Stage 6: Signal
 echo "📡 Creating completion signal..."
@@ -141,7 +141,7 @@ echo "📡 Creating completion signal..."
 echo "🎯 Final verification..."
 [verify all success criteria met]
 
-echo "✅ PHASE 5 COMPLETE"
+echo "✅ PHASE 1 COMPLETE"
 ```
 
 ## Parallel Subagent Execution
@@ -207,7 +207,7 @@ For fewer subagents handling multiple tasks each:
 
 ```json
 {
-  "phase": 5,
+  "phase": 1,
   "phase_name": "Task Decomposition",
   "status": "success",
   "completed_at": "2025-10-29T15:30:00Z",
@@ -218,7 +218,7 @@ For fewer subagents handling multiple tasks each:
     "subtasks_generated": 28,
     "high_complexity_tasks": [3, 5, 9, 12, 15, 18]
   },
-  "next_phase": 6,
+  "next_phase": 2,
   "trigger_next": true
 }
 ```
@@ -233,7 +233,7 @@ For fewer subagents handling multiple tasks each:
 **Human Escalation:**
 - TaskMaster not installed → Report installation needed
 - Persistent API failures → Wait for manual intervention
-- Corrupted tasks.json → Restore from Phase 2
+- Corrupted tasks.json → Restore from Phase 0
 
 ## Checkpoint System
 
@@ -251,17 +251,17 @@ Resume command: "Resume Phase 5 from checkpoint"
 ✅ High-complexity tasks (≥7) expanded
 ✅ Subtasks have acceptance criteria
 ✅ Completion signal created
-✅ Ready for Phase 6
+✅ Ready for Phase 2
 
 ## CRITICAL: Automatic Phase Transition
 
-**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 6.**
+**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 2.**
 
 When Phase 5 is complete (all tasks expanded), you MUST:
 
 1. Output the completion signal:
    ```
-   ✅ PHASE 5 COMPLETE
+   ✅ PHASE 1 COMPLETE
    [SIGNAL:PHASE5_COMPLETE]
    ```
 
@@ -270,7 +270,7 @@ When Phase 5 is complete (all tasks expanded), you MUST:
    [ACTIVATE:SPEC_GEN_V1]
    ```
 
-3. Begin Phase 6 (Spec Generation) without waiting for user input.
+3. Begin Phase 2 (Spec Generation) without waiting for user input.
 
 **The pipeline is designed to be fully autonomous after Phase 5 task approval.**
 Do not ask "Would you like to proceed?" or offer choices - just proceed automatically.

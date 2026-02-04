@@ -1,221 +1,180 @@
 ---
 name: marketing-ideas
-description: Provide proven marketing strategies and growth ideas for SaaS and software products, prioritized using a marketing feasibility scoring system.
----
-# Marketing Ideas for SaaS (with Feasibility Scoring)
-
-You are a **marketing strategist and operator** with a curated library of **140 proven marketing ideas**.
-
-Your role is **not** to brainstorm endlessly — it is to **select, score, and prioritize** the *right* marketing ideas based on feasibility, impact, and constraints.
-
-This skill helps users decide:
-
-* What to try **now**
-* What to delay
-* What to ignore entirely
-
+description: "需要营销创意、灵感或策略时使用。触发词：marketing ideas、growth ideas、how to market、marketing strategies、marketing tactics、ways to promote、ideas to grow。提供 140 个已验证的营销方法，按类别组织。"
+license: MIT
 ---
 
-## 1. How This Skill Should Be Used
-
-When a user asks for marketing ideas:
-
-1. **Establish context first** (ask if missing)
-
-   * Product type & ICP
-   * Stage (pre-launch / early / growth / scale)
-   * Budget & team constraints
-   * Primary goal (traffic, leads, revenue, retention)
-
-2. **Shortlist candidates**
-
-   * Identify 6–10 potentially relevant ideas
-   * Eliminate ideas that clearly mismatch constraints
-
-3. **Score feasibility**
-
-   * Apply the **Marketing Feasibility Score (MFS)** to each candidate
-   * Recommend only the **top 3–5 ideas**
-
-4. **Operationalize**
-
-   * Provide first steps
-   * Define success metrics
-   * Call out execution risk
-
-> ❌ Do not dump long lists
-> ✅ Act as a decision filter
-
----
-
-## 2. Marketing Feasibility Score (MFS)
-
-Every recommended idea **must** be scored.
-
-### MFS Overview
-
-Each idea is scored across **five dimensions**, each from **1–5**.
-
-| Dimension           | Question                                          |
-| ------------------- | ------------------------------------------------- |
-| **Impact**          | If this works, how meaningful is the upside?      |
-| **Effort**          | How much execution time/complexity is required?   |
-| **Cost**            | How much cash is required to test meaningfully?   |
-| **Speed to Signal** | How quickly will we know if it’s working?         |
-| **Fit**             | How well does this match product, ICP, and stage? |
-
----
-
-### Scoring Rules
-
-* **Impact** → Higher is better
-* **Fit** → Higher is better
-* **Effort / Cost** → Lower is better (inverted)
-* **Speed** → Faster feedback scores higher
-
----
-
-### Scoring Formula
-
-```
-Marketing Feasibility Score (MFS)
-= (Impact + Fit + Speed) − (Effort + Cost)
-```
-
-**Score Range:** `-7 → +13`
-
----
-
-### Interpretation
-
-| MFS Score | Meaning                 | Action           |
-| --------- | ----------------------- | ---------------- |
-| **10–13** | Extremely high leverage | Do now           |
-| **7–9**   | Strong opportunity      | Prioritize       |
-| **4–6**   | Viable but situational  | Test selectively |
-| **1–3**   | Marginal                | Defer            |
-| **≤ 0**   | Poor fit                | Do not recommend |
-
----
-
-### Example Scoring
-
-**Idea:** Programmatic SEO (Early-stage SaaS)
-
-| Factor | Score |
-| ------ | ----- |
-| Impact | 5     |
-| Fit    | 4     |
-| Speed  | 2     |
-| Effort | 4     |
-| Cost   | 3     |
-
-```
-MFS = (5 + 4 + 2) − (4 + 3) = 4
-```
-
-➡️ *Viable, but not a short-term win*
-
----
-
-## 3. Idea Selection Rules (Mandatory)
-
-When recommending ideas:
-
-* Always present **MFS score**
-* Never recommend ideas with **MFS ≤ 0**
-* Never recommend more than **5 ideas**
-* Prefer **high-signal, low-effort tests first**
-
----
-
-## 4. The Marketing Idea Library (140)
-
-> Each idea is a **pattern**, not a tactic.
-> Feasibility depends on context — that’s why scoring exists.
-
-*(Library unchanged; same ideas as previous revision, omitted here for brevity but assumed intact in file.)*
-
----
-
-## 5. Required Output Format (Updated)
-
-When recommending ideas, **always use this format**:
-
----
-
-### Idea: Programmatic SEO
-
-**MFS:** `+6` (Viable – prioritize after quick wins)
-
-* **Why it fits**
-  Large keyword surface, repeatable structure, long-term traffic compounding
-
-* **How to start**
-
-  1. Identify one scalable keyword pattern
-  2. Build 5–10 template pages manually
-  3. Validate impressions before scaling
-
-* **Expected outcome**
-  Consistent non-brand traffic within 3–6 months
-
-* **Resources required**
-  SEO expertise, content templates, engineering support
-
-* **Primary risk**
-  Slow feedback loop and upfront content investment
-
----
-
-## 6. Stage-Based Scoring Bias (Guidance)
-
-Use these biases when scoring:
-
-### Pre-Launch
-
-* Speed > Impact
-* Fit > Scale
-* Favor: waitlists, early access, content, communities
-
-### Early Stage
-
-* Speed + Cost sensitivity
-* Favor: SEO, founder-led distribution, comparisons
-
-### Growth
-
-* Impact > Speed
-* Favor: paid acquisition, partnerships, PLG loops
-
-### Scale
-
-* Impact + Defensibility
-* Favor: brand, international, acquisitions
-
----
-
-## 7. Guardrails
-
-* ❌ No idea dumping
-
-* ❌ No unscored recommendations
-
-* ❌ No novelty for novelty’s sake
-
-* ✅ Bias toward learning velocity
-
-* ✅ Prefer compounding channels
-
-* ✅ Optimize for *decision clarity*, not creativity
-
----
-
-## 8. Related Skills
-
-* **analytics-tracking** – Validate ideas with real data
-* **page-cro** – Convert acquired traffic
-* **pricing-strategy** – Monetize demand
-* **programmatic-seo** – Scale SEO ideas
-* **ab-test-setup** – Test ideas rigorously
-
+# SaaS 营销创意库
+
+提供 140 个已验证的营销方法，按类别组织，帮助找到适合特定情境、阶段与资源的策略。
+
+## 使用方式
+
+询问产品、受众、当前阶段；基于情境推荐 3～5 个最相关创意；提供实施细节；考虑资源（时间、预算、团队规模）。
+
+## 140 个营销创意（按类别）
+
+### 内容与 SEO
+- **3. 易排关键词**：瞄准低竞争词，快速排名。  
+- **7. SEO 审计**：公开审计自己的站点，建立权威。  
+- **39. 术语营销**：行业术语词汇表，每词一页，捕获「what is X」搜索。  
+- **40. 程序化 SEO**：模板驱动规模化页面（地理位置、对比、集成页等）。  
+- **41. 内容复用**：一篇变多格式（博客→推文、视频、播客、信息图）。  
+- **56. 自有数据内容**：用产品数据做原创研究与报告。  
+- **67. 内链策略**：主题集群，提升整体 SEO。  
+- **73. 内容刷新**：定期更新旧内容，常优于新内容。  
+- **74. 知识库 SEO**：优化帮助文档，捕获问题-解决方案查询。  
+- **137. 寄生 SEO**：在 Medium、LinkedIn 等高权威平台发布，导流回产品。
+
+### 竞品与对比
+- **2. 竞品对比页**：「[你] vs [竞品]」「[竞品] alternatives」捕获高意图搜索。  
+- **4. 营销柔术**：将竞品弱点转为己方优势。  
+- **38. 竞品广告研究**：用 SpyFu、Facebook Ad Library 研究竞品广告。
+
+### 免费工具与工程
+- **5. 副项目营销**：建小工具吸引用户，可能后续转化。  
+- **30. 工程即营销**：建免费工具（计算器、分析器、生成器）。  
+- **31. 导入工具**：「从 [竞品] 导入」降低切换摩擦。  
+- **92. 测验营销**：互动测验，参与+筛选线索。  
+- **93. 计算器营销**：ROI、定价估算、节省工具。  
+- **94. Chrome 扩展**：浏览器扩展，独立价值+分发渠道。  
+- **110. 微站**：为特定活动/产品/受众建聚焦站点。  
+- **117. 扫描器**：免费扫描工具（网站、安全、性能分析器）。  
+- **122. 公开 API**：开放 API 吸引开发者生态。
+
+### 付费广告
+- **18. 播客广告**：赞助相关播客，主播口播效果更好。  
+- **48. 预定向广告**：先做认知广告，再推直接响应。  
+- **55/57/60/62/64/66/68/70. 平台广告**：Facebook、Instagram、Twitter、LinkedIn、Reddit、Quora、Google、YouTube。  
+- **72. 跨平台再营销**：跨平台一致信息再触达。  
+- **129. 点击即消息广告**：直接开启对话而非落地页。
+
+### 社媒与社区
+- **42. 社区营销**：围绕产品或行业建社区（Slack、Discord、Facebook 群）。  
+- **43/76/82. Quora/Reddit**：回答问题、挖掘真实语言、真实参与。  
+- **105/106/107. LinkedIn/Instagram/X**：个人品牌、视觉故事、价值输出。  
+- **130. 短视频**：TikTok、Reels、Shorts。  
+- **138. 互动小组**：与同行协调提升内容互动。  
+- **139. 评论营销**：在相关内容下提供价值评论。
+
+### 邮件营销
+- **17. 错误邮件**：真实出错时发「oops」邮件，真实度提升参与。  
+- **25. 再激活邮件**：赢回流失/不活跃用户。  
+- **28. 创始人欢迎邮件**：个人化欢迎，建立连接。  
+- **36. 动态邮件捕获**：基于行为触发（退出意图、滚动深度、停留时间）。  
+- **79. 月度简报**：保持品牌存在感。  
+- **80. 收件箱送达**：技术优化（认证、列表清洁、参与信号）。  
+- **113/115/116. Onboarding/Win-back/试用再激活**：行为触发邮件序列。
+
+### 合作与项目
+- **9. 通过反向链接找联盟**：分析谁链向竞品，可能成为联盟。  
+- **27. 影响者白名单**：通过影响者账号投放广告。  
+- **33. 转售项目**：让代理商/服务商转售，白标选项。  
+- **37. 专家网络**：认证专家网络，扩展覆盖。  
+- **50. 简报互换**：与互补简报交换推广。  
+- **51. 文章引用**：通过 HARO 等为记者提供专家引用。  
+- **77. 像素共享**：与互补公司共享再营销受众。  
+- **78. 共享 Slack 频道**：与合作伙伴/客户建共享频道。  
+- **97. 联盟项目**：结构化佣金项目。  
+- **98. 集成营销**：与集成伙伴联合营销。  
+- **99. 社区赞助**：赞助相关社区、简报、出版物。
+
+### 活动与演讲
+- **15. 直播网络研讨会**：教育性演示专业度+生成线索。  
+- **53. 虚拟峰会**：多讲者在线活动，讲者向各自受众推广。  
+- **87. 路演**：带产品上路，直接见客户。  
+- **90/91. 本地聚会**：主办或赞助本地聚会。  
+- **103. 会议演讲**：在行业会议演讲，展示专业度+生成线索。  
+- **126. 自办会议**：成为行业中心。  
+- **132. 会议赞助**：展位、演讲位、参会名单。
+
+### PR 与媒体
+- **8. 媒体收购**：收购简报、播客、出版物。  
+- **52. 媒体报道**：向相关媒体投递新闻（发布、融资、数据、趋势）。  
+- **84. 融资 PR**：利用融资公告获得报道。  
+- **118. 纪录片**：探索行业或客户的纪录片内容。
+
+### 发布与促销
+- **21. 黑五促销**：年度促销创造紧迫感与获客高峰。  
+- **22. Product Hunt 发布**：结构化 PH 发布，触达早期采用者。  
+- **23. 早期访问推荐**：推荐奖励早期访问，等待名单推荐创造病毒式期待。  
+- **44. 新年促销**：新年带来新预算与目标设定能量。  
+- **54. 早期访问定价**：发布时折扣早期访问层级。  
+- **58. Product Hunt 替代**：BetaList、Launching Next、AlternativeTo。  
+- **59/109/119. 赠品**：Twitter 赠品、策略赠品、度假赠品。  
+- **140. 终身交易**：一次性付费交易，在终身交易平台触达交易寻找者。
+
+### 产品驱动增长
+- **16. Powered By 营销**：客户输出上的「Powered by [你]」徽章。  
+- **19. 免费迁移**：从竞品免费迁移服务。  
+- **20. 合同买断**：支付退出竞品合同。  
+- **32. 一键注册**：OAuth 选项最小化注册摩擦。  
+- **69. 应用内升级**：在体验中的策略升级提示。  
+- **71. 简报推荐**：简报与内容的内置推荐项目。  
+- **75. 病毒循环**：自然鼓励分享的产品机制。  
+- **114. 流失流程优化**：优化取消流程以保留或学习。  
+- **124. 礼宾设置**：高价值账户白手套 onboarding。  
+- **127. Onboarding 优化**：持续改进新用户体验。
+
+### 内容格式
+- **1. 播放列表营销**：为受众创建 Spotify 播放列表。  
+- **46. 模板营销**：提供可立即使用的免费模板。  
+- **49. 图像小说营销**：将复杂故事转为视觉叙事。  
+- **65. 宣传视频**：高质量产品宣传视频。  
+- **81. 行业访谈**：访谈客户、专家、思想领袖。  
+- **89. 社交截图**：设计可分享的截图模板。  
+- **101. 在线课程**：教育课程建立权威+生成线索。  
+- **102. 书籍营销**：著书建立领域专业度。  
+- **111. 年度报告**：发布行业数据与趋势的年度报告。  
+- **120. 年终总结**：个性化年终总结（Spotify Wrapped 风格）。  
+- **121. 播客**：启动播客，触达通勤与锻炼中的受众。  
+- **63. 更新日志**：公开更新日志展示产品势头。  
+- **112. 公开演示**：实时产品演示。
+
+### 非常规与创意
+- **6. 奖项营销**：创建行业奖项，定位品牌为品味制定者。  
+- **10. 挑战营销**：启动病毒式挑战。  
+- **11. 真人秀营销**：真人秀风格内容，跟随真实客户。  
+- **12. 争议营销**：策略性定位反对行业规范。  
+- **13. 点球成金营销**：数据驱动，找到被低估的渠道与策略。  
+- **14. 策展营销**：为受众策展有价值资源。  
+- **29. 资助营销**：向客户或社区成员提供资助。  
+- **34. 产品竞赛**：赞助使用你产品的竞赛。  
+- **35. Cameo 营销**：使用 Cameo 名人做个性化营销信息。  
+- **83. 户外广告**：广告牌、交通广告、关键位置投放。  
+- **125. 营销噱头**：大胆、抓眼球的营销时刻。  
+- **128. 游击营销**：非常规、低成本、意外地点。  
+- **136. 幽默营销**：用幽默脱颖而出，创造记忆点。
+
+### 平台与市场
+- **24. 开源营销**：开源组件或工具建立开发者好感。  
+- **61. 应用商店优化**：优化应用商店列表。  
+- **86. 应用市场**：在 Salesforce AppExchange、Shopify App Store 等列出。  
+- **95. YouTube 评测**：让 YouTuber 评测产品。  
+- **96. YouTube 频道**：教程、更新、思想领导力。  
+- **108. 来源平台**：提交到 G2、Capterra、GetApp 等聚合平台。  
+- **88. 评测站点**：积极管理评测平台存在。  
+- **100. 实时音频**：Twitter Spaces、Clubhouse、LinkedIn Audio。
+
+### 国际化与本地化
+- **133. 国际扩张**：扩展到新地理市场。  
+- **134. 价格本地化**：按本地购买力调整定价。
+
+### 开发者与技术
+- **104. 投资者营销**：向投资者营销，获得投资组合公司推荐。  
+- **123. 认证**：创建认证项目验证专业度。  
+- **131. 支持即营销**：将支持互动转为营销机会。  
+- **135. 开发者关系**：与开发者社区建立关系。
+
+### 受众特定
+- **26. 双向推荐**：推荐项目中奖励推荐者与被推荐者。
+
+## 实施建议
+
+**按阶段**：发布前（等待名单、早期访问、PH 准备）→ 早期（内容、SEO、社区、创始人销售）→ 增长（付费获客、合作、活动）→ 规模（品牌、国际、收购）。  
+**按预算**：免费（内容、SEO、社区、社媒）→ 低（定向广告、赞助、工具）→ 中（活动、合作、PR）→ 高（收购、会议、品牌活动）。  
+**按时间线**：快速（广告、邮件、社媒）→ 中期（内容、SEO、社区建设）→ 长期（品牌、思想领导力、平台效应）。
+
+## 相关技能
+
+programmatic-seo、competitor-alternatives、email-sequence、free-tool-strategy、page-cro、ab-test-setup。

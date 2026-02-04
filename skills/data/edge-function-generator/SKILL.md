@@ -1,490 +1,153 @@
 ---
 name: edge-function-generator
-description: Expert assistant for creating and maintaining Supabase Edge Functions for the KR92 Bible Voice project. Use when creating Edge Functions, setting up CORS, integrating shared modules, adding JWT validation, or configuring environment variables.
+description: Expert assistant for creating and maintaining Supabase Edge Functions for the KR92 Bible Voice project. Use when (1) creating new Edge Functions, (2) setting up CORS and error handling, (3) integrating shared modules from _shared/, (4) adding JWT validation, (5) configuring environment variables, (6) auditing or updating dependency versions across functions. Triggers include "edge function", "create function", "serverless", "deno function", "update edge imports", "version drift".
 ---
 
 # Edge Function Generator
 
-## Capabilities
-- Scaffold new Edge Functions with proper structure
-- Set up CORS headers and error handling
-- Integrate shared modules (_shared/)
-- Add JWT validation and logging
-- Configure environment variables
+## Context Files
+
+Read from `Docs/context/` for project-specific patterns:
+- `supabase-map.md` - Edge Functions list and structure
+- `db-schema-short.md` - Database tables for queries
+
+## Centralized Dependencies
+
+**All Edge Functions import from `_shared/deps.ts`** - never use direct URLs:
+
+```typescript
+import { serve, createClient, corsHeaders, crypto } from "../_shared/deps.ts";
+```
+
+The deps.ts module centralizes all versions (deno std@0.190.0, supabase-js@2.49.1) and includes the XHR polyfill as a side-effect import. See [references/versions.md](references/versions.md) for rationale and `Docs/ops/edge-deps-standardization.md` for upgrade instructions.
 
 ## Edge Function Structure
 
-### Location
 ```
 supabase/functions/
-├── _shared/              # Shared modules
-│   ├── ai-prompt.ts
+├── _shared/              # Shared modules (import with ../_shared/)
+│   ├── deps.ts           # Centralized dependencies - import from here!
 │   ├── ai-config.ts
-│   └── ai-providers.ts
+│   ├── ai-prompt.ts
+│   ├── ai-providers.ts
+│   └── ai-quota.ts
 ├── function-name/
 │   └── index.ts
 ```
 
-### Deployment
-- Lovable Cloud: Auto-deploy on save
-- Manual: `supabase functions deploy function-name`
+## Minimal Template
 
-## Usage Examples
-
-### Example 1: Create Basic Edge Function
-**User:** "Create a new edge function to get verse of the day"
-
-**Assistant:**
 ```typescript
-// supabase/functions/verse-of-the-day/index.ts
-
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+import { corsHeaders, createClient, serve } from "../_shared/deps.ts";
 
 serve(async (req) => {
-  // Handle CORS preflight
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // Initialize Supabase client
-    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Get today's day of year
-    const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now.getTime() - start.getTime();
-    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    // Get verse (use modulo to cycle through verses)
-    const { data: verses, error } = await supabase
-      .from('verses')
-      .select('id, text, osis, books(name_fi)')
-      .eq('version_id', 'finstlk201-uuid')
-      .limit(1)
-      .range(dayOfYear % 31102, dayOfYear % 31102); // Total verses in Bible
-
-    if (error) throw error;
-
-    const verse = verses?.[0];
-    if (!verse) throw new Error('No verse found');
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        verse: {
-          text: verse.text,
-          reference: verse.osis,
-          book: verse.books?.name_fi
-        }
-      }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 200,
-      }
-    );
-  } catch (error) {
-    console.error('Error:', error);
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: error.message
-      }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 500,
-      }
-    );
-  }
-});
-```
-
-### Example 2: Edge Function with JWT Authentication
-**User:** "Create edge function for user to save custom bookmark with note"
-
-**Assistant:**
-```typescript
-// supabase/functions/save-bookmark-with-note/index.ts
-
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-
-interface RequestBody {
-  verse_id: string;
-  osis: string;
-  note?: string;
-}
-
-serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
-  }
-
-  try {
-    // Get JWT token from header
-    const authHeader = req.headers.get('Authorization');
-    if (!authHeader) {
-      throw new Error('Missing authorization header');
-    }
-
-    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const supabase = createClient(supabaseUrl, supabaseKey, {
-      global: {
-        headers: { Authorization: authHeader },
-      },
-    });
-
-    // Get authenticated user
-    const { data: { user }, error: userError } = await supabase.auth.getUser();
-    if (userError || !user) {
-      throw new Error('Unauthorized');
-    }
-
-    // Parse request body
-    const body: RequestBody = await req.json();
-    const { verse_id, osis, note } = body;
-
-    if (!verse_id || !osis) {
-      throw new Error('Missing required fields: verse_id, osis');
-    }
-
-    // Save bookmark
-    const { data: bookmark, error: bookmarkError } = await supabase
-      .from('bookmarks')
-      .insert({
-        user_id: user.id,
-        verse_id,
-        osis,
-      })
-      .select()
-      .single();
-
-    if (bookmarkError) throw bookmarkError;
-
-    // Save note if provided
-    let noteData = null;
-    if (note) {
-      const { data, error: noteError } = await supabase
-        .from('user_notes')
-        .insert({
-          user_id: user.id,
-          verse_id,
-          osis,
-          note_text: note,
-        })
-        .select()
-        .single();
-
-      if (noteError) throw noteError;
-      noteData = data;
-    }
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        bookmark,
-        note: noteData,
-      }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 200,
-      }
-    );
-  } catch (error) {
-    console.error('Error:', error);
-
-    const status = error.message === 'Unauthorized' ? 401 : 500;
-
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: error.message,
-      }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status,
-      }
-    );
-  }
-});
-```
-
-### Example 3: Edge Function with AI Integration
-**User:** "Create edge function for AI-powered verse explanation"
-
-**Assistant:**
-```typescript
-// supabase/functions/explain-verse/index.ts
-
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { getPrompt } from '../_shared/ai-prompt.ts';
-import { getFeatureConfig } from '../_shared/ai-config.ts';
-import { callAIProvider } from '../_shared/ai-providers.ts';
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-
-interface RequestBody {
-  verse_id: string;
-  osis: string;
-  context?: string;
-}
-
-serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
-  }
-
-  const startTime = Date.now();
-
-  try {
-    const authHeader = req.headers.get('Authorization');
-    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const supabase = createClient(supabaseUrl, supabaseKey, {
-      global: { headers: authHeader ? { Authorization: authHeader } : {} },
-    });
-
-    // Get user (optional for this feature)
-    const { data: { user } } = await supabase.auth.getUser();
-
-    // Parse request
-    const body: RequestBody = await req.json();
-    const { verse_id, osis, context } = body;
-
-    // Get verse text
-    const { data: verse, error: verseError } = await supabase
-      .from('verses')
-      .select('text, books(name_fi), chapter_number, verse_number')
-      .eq('id', verse_id)
-      .single();
-
-    if (verseError) throw verseError;
-
-    // Get AI configuration
-    const featureConfig = await getFeatureConfig(supabase, 'explain_verse', 'prod');
-    if (!featureConfig) {
-      throw new Error('AI feature not configured');
-    }
-
-    // Get prompt template
-    const prompt = await getPrompt(supabase, 'explain_verse', {
-      verse_text: verse.text,
-      reference: osis,
-      context: context || 'general Bible study',
-    }, 'prod');
-
-    // Call AI provider
-    const aiResponse = await callAIProvider(
-      featureConfig.ai_vendor,
-      featureConfig.ai_model,
-      prompt.systemPrompt,
-      prompt.userPrompt,
-      {
-        temperature: featureConfig.param_overrides?.temperature || 0.7,
-        max_tokens: featureConfig.param_overrides?.max_tokens || 500,
-      }
-    );
-
-    const latencyMs = Date.now() - startTime;
-
-    // Log usage
-    await supabase.from('ai_usage_logs').insert({
-      user_id: user?.id || null,
-      actor_type: user ? 'user' : 'system',
-      feature: 'explain_verse',
-      context_id: verse_id,
-      context_ref: osis,
-      ai_vendor: featureConfig.ai_vendor,
-      ai_model: featureConfig.ai_model,
-      prompt_tokens: aiResponse.usage.promptTokens,
-      completion_tokens: aiResponse.usage.completionTokens,
-      total_tokens: aiResponse.usage.totalTokens,
-      cost_usd: aiResponse.cost,
-      latency_ms: latencyMs,
-      status: 'success',
-      prompt_version_id: prompt.versionId,
-    });
-
-    return new Response(
-      JSON.stringify({
-        success: true,
-        explanation: aiResponse.content,
-        verse: {
-          text: verse.text,
-          reference: osis,
-          book: verse.books?.name_fi,
-        },
-        metadata: {
-          model: featureConfig.ai_model,
-          latencyMs,
-          tokens: aiResponse.usage.totalTokens,
-        },
-      }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 200,
-      }
-    );
-  } catch (error) {
-    console.error('Error:', error);
-
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: error.message,
-      }),
-      {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 500,
-      }
-    );
-  }
-});
-```
-
-## Edge Function Templates
-
-### Minimal Template
-```typescript
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-
-serve(async (req) => {
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
-  }
-
-  try {
     // Your logic here
 
     return new Response(
       JSON.stringify({ success: true }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
     return new Response(
-      JSON.stringify({ success: false, error: error.message }),
-      { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
+      JSON.stringify({ error: error.message }),
+      { headers: { ...corsHeaders, "Content-Type": "application/json" }, status: 500 }
     );
   }
 });
 ```
 
-### With Authentication
+## With JWT Authentication
+
 ```typescript
-const { data: { user }, error: userError } = await supabase.auth.getUser();
-if (userError || !user) {
-  throw new Error('Unauthorized');
+// Get user from JWT
+const authHeader = req.headers.get("Authorization");
+if (!authHeader) {
+  return new Response(JSON.stringify({ error: "Unauthorized" }), {
+    status: 401,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  global: { headers: { Authorization: authHeader } },
+});
+
+const { data: { user }, error: authError } = await supabase.auth.getUser();
+if (authError || !user) {
+  return new Response(JSON.stringify({ error: "Invalid token" }), {
+    status: 401,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
 }
 ```
 
-### With Request Validation
+## With AI Integration
+
 ```typescript
-const body = await req.json();
+// deps.ts already imports XHR polyfill as side-effect
+import { corsHeaders, createClient, serve } from "../_shared/deps.ts";
+import { getFeatureConfig } from "../_shared/ai-config.ts";
+import { getPrompt } from "../_shared/ai-prompt.ts";
+import { callProvider } from "../_shared/ai-providers.ts";
+import { enforceQuotaOrThrow } from "../_shared/ai-quota.ts";
 
-// Validate required fields
-const required = ['field1', 'field2'];
-for (const field of required) {
-  if (!body[field]) {
-    throw new Error(`Missing required field: ${field}`);
-  }
-}
-```
+// Check quota before AI call
+await enforceQuotaOrThrow(featureKey, estimatedTokens, userId);
 
-## Common Patterns
+// Get config and prompt from DB
+const config = await getFeatureConfig(featureKey, "prod");
+const prompt = await getPrompt(featureKey, variables, "prod");
 
-### 1. CORS Headers
-Always include for client access:
-```typescript
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
-```
-
-### 2. Error Handling
-```typescript
-try {
-  // Logic
-} catch (error) {
-  console.error('Error:', error);
-  return new Response(
-    JSON.stringify({ success: false, error: error.message }),
-    { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
-  );
-}
-```
-
-### 3. Supabase Client
-```typescript
-const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-const supabase = createClient(supabaseUrl, supabaseKey);
-```
-
-### 4. Environment Variables
-```typescript
-const apiKey = Deno.env.get('EXTERNAL_API_KEY');
-if (!apiKey) {
-  throw new Error('Missing API key configuration');
-}
-```
-
-## Deployment
-
-### Via Lovable Cloud
-- Save file → auto-deploys
-- View logs in Supabase Dashboard
-
-### Via CLI
-```bash
-supabase functions deploy function-name
-```
-
-### Test Locally
-```bash
-supabase functions serve function-name
-```
-
-## Testing Edge Functions
-
-### cURL Test
-```bash
-curl -X POST https://project.supabase.co/functions/v1/function-name \
-  -H "Authorization: Bearer YOUR_ANON_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"key": "value"}'
-```
-
-### TypeScript Test
-```typescript
-const { data, error } = await supabase.functions.invoke('function-name', {
-  body: { key: 'value' }
+// Call AI provider
+const response = await callProvider({
+  vendor: config.vendor,
+  model: config.model,
+  systemPrompt: prompt.systemPrompt,
+  userPrompt: prompt.userPrompt,
+  params: config.params,
 });
 ```
 
-## Related Documentation
-- See `Docs/02-DESIGN.md` for Edge Functions overview
-- See `Docs/06-AI-ARCHITECTURE.md` for AI integration patterns
+## Version Audit Workflow
+
+When auditing for stray direct imports:
+
+```bash
+# Should return ONLY deps.ts - no other files should have direct URLs
+grep -r "deno.land/std@" supabase/functions/ | grep -v deps.ts
+grep -r "esm.sh/@supabase" supabase/functions/ | grep -v deps.ts
+```
+
+If any function has direct imports, update it to use `../\_shared/deps.ts` instead. See [references/versions.md](references/versions.md) for version rationale.
+
+## Deployment
+
+```bash
+# Deploy single function
+supabase functions deploy function-name
+
+# Deploy via MCP
+mcp__supabase__deploy_edge_function
+```
+
+## Testing
+
+```bash
+# Local testing
+supabase functions serve function-name
+
+# cURL test
+curl -X POST https://PROJECT.supabase.co/functions/v1/function-name \
+  -H "Authorization: Bearer ANON_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"key": "value"}'
+```

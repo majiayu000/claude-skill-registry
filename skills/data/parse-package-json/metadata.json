@@ -1,15 +1,7 @@
 {
   "name": "parse-package-json",
-  "description": "Extract version, dependencies, and metadata from package.json files. Use when needing project version, dependency list, or package metadata for releases, audits, or reports.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "data",
-  "tags": [
-    "parse",
-    "package",
-    "json"
-  ],
-  "stars": 27,
-  "dir_name": "parse-package-json",
-  "github_path": ".claude/skills/parse-package-json",
-  "github_branch": "main"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/parse-package-json/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:11.288747Z"
 }

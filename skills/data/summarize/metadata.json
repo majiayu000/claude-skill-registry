@@ -1,7 +1,9 @@
 {
   "name": "summarize",
-  "repo": "yoyo99/openclaw",
-  "path": "skills/summarize/SKILL.md",
-  "source": "github.com/yoyo99/openclaw",
-  "downloaded_at": "2026-02-02T05:00:31.168316Z"
+  "description": "Summarize various content types (therapy sessions, meetings, documents) into structured notes. Use when processing transcripts or long-form content.",
+  "repo": "Gerstep/cybos",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gerstep/cybos"
 }

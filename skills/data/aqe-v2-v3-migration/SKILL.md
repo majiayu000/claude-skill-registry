@@ -13,6 +13,10 @@ trigger:
   - upgrade agentic-qe
   - aqe migration
   - v2 to v3 migration
+trust_tier: 1
+validation:
+  schema_path: schemas/output.json
+
 ---
 
 # AQE v2 to v3 Migration Skill
@@ -32,11 +36,11 @@ When migrating from v2 to v3:
 
 ### Migration Command
 ```bash
-# Install v3 alongside v2
-npm install @agentic-qe/v3
+# When v3 becomes main release, just update the package
+npm install agentic-qe@latest
 
 # Run migration
-npx aqe migrate
+aqe migrate
 
 # Or use this skill
 /aqe-v2-v3-migration
@@ -64,15 +68,15 @@ npx aqe migrate
 - [ ] Document current test counts and coverage
 
 ### During Migration
-- [ ] Install v3: `npm install @agentic-qe/v3`
-- [ ] Run migration: `npx aqe migrate`
+- [ ] Update to v3: `npm install agentic-qe@latest`
+- [ ] Run migration: `aqe migrate`
 - [ ] Review migration report
 - [ ] Verify data transferred correctly
 
 ### Post-Migration
-- [ ] Run v3 tests: `npx aqe test`
-- [ ] Check coverage: `npx aqe coverage`
-- [ ] Verify patterns loaded: `npx aqe patterns list`
+- [ ] Run v3 tests: `aqe test`
+- [ ] Check coverage: `aqe coverage`
+- [ ] Verify patterns loaded: `aqe patterns list`
 - [ ] Test MCP integration with Claude Code
 
 ---
@@ -176,7 +180,7 @@ const db = new Database('.agentic-qe/memory.db');
 const patterns = db.prepare('SELECT * FROM patterns').all();
 
 // v3: AgentDB with HNSW
-import { AgentDB } from '@agentic-qe/v3';
+import { AgentDB } from 'agentic-qe';
 const db = new AgentDB('.aqe/agentdb/');
 await db.initialize({ dimensions: 128, M: 16 });
 
@@ -202,8 +206,8 @@ for (const pattern of v2Patterns) {
    // v2
    import { AgenticQE } from 'agentic-qe';
 
-   // v3
-   import { TestGenerationDomain } from '@agentic-qe/v3/domains';
+   // v3 (when v3 becomes main release, package name is still 'agentic-qe')
+   import { TestGenerationDomain } from 'agentic-qe/domains';
    ```
 
 2. **CLI Commands**
@@ -220,8 +224,8 @@ for (const pattern of v2Patterns) {
    # v2
    claude mcp add aqe -- npx aqe-mcp
 
-   # v3
-   claude mcp add aqe -- npx @agentic-qe/v3 mcp
+   # v3 (same CLI name, enhanced capabilities)
+   claude mcp add aqe -- npx aqe mcp
    ```
 
 ### Deprecated (Will Warn)
@@ -240,8 +244,8 @@ If migration fails or you need to revert:
 # 1. v3 does NOT modify v2 data
 # Your .agentic-qe/ folder is untouched
 
-# 2. Remove v3 installation
-npm uninstall @agentic-qe/v3
+# 2. Downgrade to v2
+npm install agentic-qe@2.x
 rm -rf .aqe/
 
 # 3. Continue using v2
@@ -292,7 +296,7 @@ Task({
 
 ```bash
 # Run migration with debug output
-DEBUG=aqe:migrate npx aqe migrate
+DEBUG=aqe:migrate aqe migrate
 
 # Check migration logs
 cat .aqe/logs/migration.log

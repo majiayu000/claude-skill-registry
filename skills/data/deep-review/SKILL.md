@@ -1,348 +1,214 @@
 ---
-name: deep-review
-description: Comprehensive single-document review combining pessimistic and optimistic analysis with improvements. Modifies content.
+user-invocable: true
+description: "[レビュー] Deep Review - 設計/セキュリティ/RDD整合の深掘りチェック"
 ---
 
-# Deep Review
+# [レビュー] Deep Review
 
-Comprehensive review that runs both pessimistic and optimistic analysis on a single document, then applies targeted improvements based on findings.
+## 入力: $ARGUMENTS
+- PR番号（例: `#123` または `123`）
+- 省略時: 現在のブランチの差分をmainと比較
 
-## When to Use
-
-- When `/deep-review` is invoked
-- Optionally with a specific file: `/deep-review obsidian/topics/meaning-of-life.md`
-- As a regular maintenance task in the evolution loop cycle
-
-## Instructions
-
-### 1. Select Document
-
-If a specific file is provided as an argument, use it.
-
-Otherwise, use the candidate selection tool to find the highest priority document:
-
-```bash
-uv run python scripts/deep_review.py next --obsidian obsidian
-```
-
-The tool ranks candidates by:
-- Never reviewed (highest priority): base score 100 + days since modification
-- Modified since last review: days unreviewed * 2
-- Reviewed and unchanged: excluded (no review needed)
-
-If no candidates are found, log to changelog and exit successfully.
-
-### 1.5. Check Previous Reviews
-
-Before reviewing, check if this document has been reviewed before:
-
-```bash
-ls -t obsidian/reviews/deep-review-*-[slug].md 2>/dev/null | head -1
-```
-
-**If a previous review exists, READ IT.** This is critical for convergence:
-- Note what issues were previously identified and marked as resolved
-- Note what counterarguments were already addressed
-- Note what strengths were identified (preserve these)
-
-**Issue tracking rule**: If a previous review marked an issue as "resolved," do NOT re-flag it as critical unless:
-1. The resolution was actually incorrect or incomplete
-2. New content has been added that reintroduces the problem
-3. The article has been substantively modified since the last review
-
-Philosophical disagreements that were acknowledged as "bedrock disagreements" in a previous review should NOT be re-flagged. The goal is convergence, not endless oscillation.
-
-### 2. Run Pessimistic Review (Deep Mode)
-
-Read the selected document thoroughly, then apply adversarial analysis using the six philosopher personas from `/pessimistic-review`:
-
-1. **Eliminative Materialist** (Patricia Churchland perspective)
-2. **Hard-Nosed Physicalist** (Daniel Dennett perspective)
-3. **Quantum Skeptic** (Max Tegmark perspective)
-4. **Many-Worlds Defender** (David Deutsch perspective)
-5. **Empiricist** (Karl Popper's Ghost perspective)
-6. **Buddhist Philosopher** (Nagarjuna perspective)
-
-In deep single-file mode, apply extra scrutiny:
-- All six personas must engage specifically with this content
-- Look for subtle logical gaps, not just obvious flaws
-- Evaluate style guide compliance in detail (see `obsidian/project/writing-style.md`)
-- Check every factual claim for support
-- Identify internal contradictions
-
-Capture findings using these severity definitions:
-
-**Critical issues** (must fix) — ONLY flag as critical if:
-- Factual error (wrong date, misattributed quote, incorrect scientific claim)
-- Internal contradiction (article contradicts itself)
-- Missing required section (e.g., no "Relation to Site Perspective")
-- Broken links or references
-- Severe style guide violation (e.g., missing front-loaded summary)
-
-**NOT critical** — These are medium or low, not critical:
-- "Persona X disagrees with the position" (philosophical disagreement is expected)
-- "Response to objection Y could be stronger" (unless it's a strawman)
-- "Section Z is thin" (expansion opportunity, not critical flaw)
-- Issues that were addressed in a previous review
-
-**Medium issues** (should fix):
-- Weak engagement with major counterarguments
-- Missing cross-links to related content
-- Prose that could be tightened
-
-**Low issues** (nice to fix):
-- Minor style improvements
-- Additional examples that could help
-
-**Counterarguments needing response** — Note these separately
-
-**Unsupported claims** — Flag factual claims without support
-
-### 3. Run Optimistic Review (Deep Mode)
-
-Apply supportive analysis using the six sympathetic philosopher personas from `/optimistic-review`:
-
-1. **Property Dualist** (David Chalmers perspective)
-2. **Quantum Mind Theorist** (Henry Stapp perspective)
-3. **Phenomenologist** (Thomas Nagel perspective)
-4. **Process Philosopher** (Alfred North Whitehead perspective)
-5. **Libertarian Free Will Defender** (Robert Kane perspective)
-6. **Mysterian** (Colin McGinn perspective)
-
-In deep single-file mode:
-- All six personas must engage specifically with this content
-- Identify concrete expansion opportunities within this document
-- Note cross-linking potential with existing content
-- Find unique phrasings and arguments worth preserving
-- Identify strengths in argumentation and communication
-
-Capture findings:
-- **Strengths to preserve** (do not change these)
-- **Expansion opportunities** (thin sections to develop)
-- **Cross-links to add** (connections to other site content)
-- **Effective patterns** (communication techniques that work)
-
-### 4. Synthesize and Plan Improvements
-
-Based on both reviews, create an improvement plan:
-
-**Must Address** (from pessimistic):
-- All critical issues
-- Unsupported claims flagged as high priority
-- Internal contradictions
-
-**Should Address** (balanced):
-- Medium-priority issues from pessimistic review
-- Natural expansion points from optimistic review
-- Missing connections identified by both
-
-**Preserve** (from optimistic):
-- Strong arguments and unique insights
-- Effective communication patterns
-- Author's voice and style that works
-
-### 4.5 Length Check (Length-Neutral Mode)
-
-Before applying improvements, check article length against section thresholds:
-
-```bash
-uv run python -c "
-from pathlib import Path
-from tools.curate.length import analyze_length
-a = analyze_length(Path('[filepath]'))
-print(f'{a.word_count} words ({a.excess_percent:.0f}% of {a.soft_threshold} target) - {a.status}')
-"
-```
-
-**Thresholds by section (soft/hard/critical):**
-| Section | Soft | Hard | Critical |
-|---------|------|------|----------|
-| concepts/ | 2500 | 3500 | 5000 |
-| topics/ | 3000 | 4000 | 6000 |
-| apex/ | 4000 | 5000 | 6500 |
-| voids/ | 2000 | 3000 | 4000 |
-
-**If article is at or above soft threshold:**
-- Operate in **length-neutral mode**
-- For each addition, identify an equivalent passage to trim or remove
-- Combine sections where possible instead of adding new ones
-- Prefer tightening prose over adding new content
-- Replace verbose explanations with links to existing concept pages
-
-**If article exceeds hard threshold:**
-- Apply condensation as part of this review
-- Follow `/condense` principles: cut redundancy, extract tangents, tighten prose
-- Document word count before/after in the review archive
-
-**If article is below soft threshold:**
-- Normal improvements allowed
-- Expansion opportunities from optimistic review can be addressed
-
-### 5. Apply Improvements
-
-Make targeted edits to the document:
-
-1. Address critical and high-priority issues first
-2. Add brief responses to the strongest counterarguments
-3. Expand thin sections where optimistic review identified opportunities
-4. Add cross-links suggested by optimistic review (using `[[wikilink]]` syntax)
-5. Preserve original voice and strong passages
-6. **Add `description` if missing** — 150-160 chars emphasizing human+AI collaboration, iterative refinement, pursuit of truth (not generic)
-
-Follow `obsidian/project/writing-style.md` guidelines:
-- Front-load important information (LLM truncation resilience)
-- Use named-anchor pattern for forward references
-- Ensure "Relation to Site Perspective" section is substantive
-
-### 6. Update Frontmatter
-
-After improvements, update the file's frontmatter:
-
-```yaml
-ai_modified: 2026-01-07T15:30:00+00:00  # Current ISO timestamp
-last_deep_review: 2026-01-07T15:30:00+00:00  # Current ISO timestamp
-```
-
-If original was human-authored (`ai_contribution: 0`), update to reflect collaboration:
-```yaml
-ai_contribution: 30  # Or appropriate percentage based on extent of changes
-```
-
-### 7. Create Review Archive
-
-Save a combined review report to `obsidian/reviews/deep-review-YYYY-MM-DD-[slug].md`:
-
-```markdown
----
-title: "Deep Review - [Document Title]"
-created: YYYY-MM-DD
-modified: YYYY-MM-DD
-human_modified: null
-ai_modified: YYYY-MM-DDTHH:MM:SS+00:00
-draft: false
-topics: []
-concepts: []
-related_articles: []
-ai_contribution: 100
-author: null
-ai_system: [current model]
-ai_generated_date: YYYY-MM-DD
-last_curated: null
 ---
 
-# Deep Review: [Document Title]
+## 🎯 目的
+- **設計品質・セキュリティ・RDD整合**を深くレビューする
+- 既存スキルの観点を活用した多角的チェック
+- mainマージ前の最終品質ゲート
 
-**Date**: YYYY-MM-DD
-**File**: [filepath]
-**Previous review**: [Never / YYYY-MM-DD]
+---
 
-## Pessimistic Analysis Summary
+## 対象範囲
 
-### Critical Issues Found
-- [Issue]: [Resolution applied]
+| 観点 | 参照スキル | チェック内容 |
+|------|-----------|-------------|
+| **セキュリティ** | `/security-expert` | OWASP基本、入力検証、認可、秘密情報 |
+| **アーキテクチャ** | `/architecture-expert` | 境界、依存方向、責務分離 |
+| **設計品質** | `/developer-specialist` | SOLID原則、重複回避、適切な抽象度 |
+| **RDD整合** | - | doc/input/rdd.md との整合性 |
+| **複雑さ** | - | 認知負荷、循環複雑度、ネスト深度 |
+| **アクセシビリティ** | `/accessibility-engineer` | UI変更時のみ |
+| **フロントエンド** | `/react`, `/svelte` 等 | 該当技術スタック時のみ |
 
-### Medium Issues Found
-- [Issue]: [Resolution applied or deferred]
+---
 
-### Counterarguments Considered
-- [Argument]: [How addressed]
+## 実行手順
 
-## Optimistic Analysis Summary
+### 1. コンテキスト収集
 
-### Strengths Preserved
-- [Strength]
-
-### Enhancements Made
-- [Enhancement]
-
-### Cross-links Added
-- [[linked-article]]
-
-## Remaining Items
-
-[Any issues deferred for future work, or "None"]
-
-## Stability Notes
-
-[Note any issues that represent fundamental philosophical disagreements rather than fixable problems. Future reviews should NOT re-flag these as critical. Example: "MWI proponents will always find the indexical argument unsatisfying—this is a bedrock disagreement, not a flaw to fix."]
+**RDD読み込み:**
+```bash
+# プロジェクトの制約・技術スタックを確認
+cat doc/input/rdd.md
 ```
 
-### 8. Update Todo (if needed)
+**差分取得:**
+```bash
+# PR番号指定時
+gh pr diff {PR_NUMBER}
 
-If significant issues remain that couldn't be addressed in this session:
+# 省略時
+git diff main...HEAD
+```
+
+**変更ファイル一覧:**
+```bash
+git diff --name-only main...HEAD
+```
+
+### 2. 関連スキル特定
+
+変更内容に応じて適用するスキル観点を決定：
+
+| 変更種別 | 適用スキル |
+|----------|-----------|
+| API/認証 | security-expert |
+| DB/データ層 | architecture-expert |
+| ビジネスロジック | developer-specialist |
+| UIコンポーネント | react/svelte + accessibility-engineer |
+| 設定/インフラ | security-expert |
+
+### 3. 多観点レビュー
+
+#### 3.1 セキュリティ観点
+```
+- [ ] 入力検証は適切か（サニタイズ、型チェック）
+- [ ] 認可チェックは漏れていないか
+- [ ] 秘密情報がハードコードされていないか
+- [ ] SQLインジェクション/XSS/CSRFの脆弱性はないか
+- [ ] エラーメッセージで内部情報を漏らしていないか
+```
+
+#### 3.2 アーキテクチャ観点
+```
+- [ ] 依存の方向は正しいか（内→外への依存のみ）
+- [ ] 責務が適切に分離されているか
+- [ ] 既存の境界を壊していないか
+- [ ] 新しい概念の導入は妥当か
+```
+
+#### 3.3 設計品質観点
+```
+- [ ] 重複コードを作っていないか（既存の再利用）
+- [ ] 単一責任原則を守っているか
+- [ ] テスト可能な設計か
+- [ ] 過剰な抽象化をしていないか
+```
+
+#### 3.4 RDD整合観点
+```
+- [ ] 技術スタックの指定に従っているか
+- [ ] 非機能要件を満たしているか
+- [ ] 目標/非目標の範囲内か
+- [ ] 制約事項を守っているか
+```
+
+#### 3.5 複雑さ観点
+```
+- [ ] 関数/メソッドが長すぎないか（目安: 50行以下）
+- [ ] ネストが深すぎないか（目安: 3段以下）
+- [ ] 条件分岐が複雑すぎないか
+- [ ] 認知負荷が高くないか（一度に理解すべき概念数）
+```
+
+### 4. 結果出力
 
 ```markdown
-### P2: Follow-up items from deep review of [filename]
-- **Type**: refine-draft
-- **Status**: pending
-- **Notes**: Deep review deferred: [list specific items]
+## 🔍 Deep Review 結果
+
+### 対象
+- PR: #{PR_NUMBER} または ブランチ: {branch_name}
+- 適用観点: セキュリティ, アーキテクチャ, 設計品質
+
+### 🔴 Critical（マージ前に必須修正）
+| 観点 | ファイル | 内容 | 推奨対応 |
+|------|----------|------|----------|
+| セキュリティ | src/api.ts:45 | SQLインジェクション脆弱性 | プレースホルダを使用 |
+
+### 🟠 Warning（強く推奨）
+| 観点 | ファイル | 内容 | 推奨対応 |
+|------|----------|------|----------|
+| 設計 | src/service.ts | 200行超の巨大関数 | 責務分割を検討 |
+| RDD | src/auth.ts | JWT使用（RDDはSession指定） | 要確認/ADR |
+
+### 🟡 Suggestion（検討推奨）
+| 観点 | ファイル | 内容 | 推奨対応 |
+|------|----------|------|----------|
+| 複雑さ | src/calc.ts:30 | ネスト4段 | 早期リターンで簡素化 |
+
+### 🟢 Good Practice（良い点）
+- src/user.ts: 適切な入力検証
+- src/repo.ts: 依存方向が正しい
+
+### RDD整合チェック
+- **技術スタック**: ✅ 準拠
+- **非機能要件**: ✅ 準拠
+- **制約事項**: ⚠️ 要確認（JWT vs Session）
+
+### サマリ
+| レベル | 件数 |
+|--------|------|
+| Critical | 1 |
+| Warning | 2 |
+| Suggestion | 1 |
+| Good | 2 |
+
+### 推奨アクション
+1. Critical を修正してから再レビュー依頼
+2. Warning は修正を強く推奨
+3. RDD違反がある場合はADR-liteで変更要求
+
+---
+
+### 💬 所感
+
+**設計の印象:**
+{全体的な設計アプローチへの所感}
+
+**特に良かった点:**
+- {具体的に優れていた設計判断}
+- {例: 責務分離が明確で拡張しやすい構造}
+- {例: エッジケースの考慮が丁寧}
+
+**成長ポイント:**
+{今後さらに良くなるためのヒント（批判ではなく提案として）}
+
+**総評:**
+{前向きなまとめ。例: 「セキュリティ意識が高く、RDDに沿った堅実な実装です。Warningの点を改善すれば、長期運用でも安心できるコードになりますね！」}
 ```
 
-### 9. Log to Changelog
+---
 
-Append to `obsidian/workflow/changelog.md`:
+## 出力先
 
-```markdown
-### HH:MM - deep-review
-- **Status**: Success
-- **File**: [filepath]
-- **Word count**: [before] → [after] ([+/-change])
-- **Critical issues addressed**: [count]
-- **Medium issues addressed**: [count]
-- **Enhancements made**: [count]
-- **Output**: `reviews/deep-review-YYYY-MM-DD-[slug].md`
+**PR番号指定時（⚠️ 確認あり）:**
+```bash
+gh pr comment {PR_NUMBER} --body "{レビュー結果}"
 ```
 
-### 10. Commit Changes
+**省略時:**
+- 標準出力にレビュー結果を表示
 
-Create a git commit:
+---
 
-```
-review(deep): Comprehensive review of [filename]
+## 判断基準
 
-Addressed:
-- [Key issue 1]
-- [Key issue 2]
+### Critical（マージブロック）
+- セキュリティ脆弱性
+- データ損失の可能性
+- RDDの明確な違反（承認なし）
 
-Enhanced:
-- [Key enhancement]
-```
+### Warning（強く推奨）
+- 設計原則の違反
+- 保守性の大幅な低下
+- パフォーマンス問題
 
-## What NOT to Do
+### Suggestion（任意）
+- より良い書き方の提案
+- 軽微な改善点
 
-- Don't rewrite content that's working well (preserve strengths)
-- Don't add filler content to address "thin" sections
-- Don't remove the author's voice or distinctive style
-- Don't ignore strong counterarguments from pessimistic review
-- Don't skip updating `last_deep_review` timestamp
-- Don't review the same document twice in quick succession
-- Don't expand articles already at or above soft threshold without equivalent cuts
-- Don't ignore length warnings - if the article is too long, address it
-- **Don't re-flag issues that previous reviews marked as resolved** — If a prior review said "addressed Dennett's heterophenomenology," don't flag "functionalist response too weak" again unless there's a specific new problem
-- **Don't treat philosophical disagreement as "critical"** — The adversarial personas are *designed* to disagree with dualist content. "MWI defender finds this unsatisfying" is not a critical issue; it's an expected philosophical standoff
-- **Don't oscillate** — If you find yourself wanting to expand something a previous review trimmed (or vice versa), that's a signal the article has reached stability, not that it needs more changes
+---
 
-## Scoring and Selection
-
-The candidate selection algorithm prioritizes:
-
-1. **Never reviewed** (score = 100 + days_since_modified)
-   - A document modified 10 days ago that's never been reviewed scores 110
-
-2. **Modified since review** (score = days_unreviewed * 2)
-   - A document reviewed 5 days ago but modified since scores 10
-
-3. **Reviewed, unchanged** (excluded)
-   - Documents where content hasn't changed since last review are skipped
-
-This ensures new content gets reviewed first, then modified content, while avoiding redundant reviews.
-
-## Important
-
-- This skill MODIFIES content (unlike standalone pessimistic/optimistic reviews)
-- Always update both `ai_modified` and `last_deep_review` timestamps
-- Document all changes in the review archive
-- The goal is improvement, not perfection
-- Preserve what works while fixing what doesn't
-- Runs regularly as part of the evolution loop cycle
-- **Convergence matters**: Articles should stabilize after 2-3 reviews. If you're making similar changes to what previous reviews made, the article is likely already at a good state. A review that finds "no critical issues" is a SUCCESS, not a failure to find problems.
+## 自己評価
+- **成功自信度**: (1-10)
+- **一言理由**: {短く理由を記載}

@@ -1,984 +1,725 @@
 ---
 name: security-compliance
-description: Guides security professionals in implementing defense-in-depth security architectures, achieving compliance with industry frameworks (SOC2, ISO27001, GDPR, HIPAA), conducting threat modeling and risk assessments, managing security operations and incident response, and embedding security throughout the SDLC.
+description: Skill for ensuring security best practices and regulatory compliance. Use when implementing authentication, handling sensitive data, securing APIs, or meeting compliance requirements (PCI-DSS, GDPR). Provides OWASP Top 10 prevention patterns, security headers, encryption strategies, and data protection guidelines.
 ---
 
-# Security & Compliance Expert
+# Security Compliance
 
-## Core Principles
+Skill for implementing security best practices and meeting compliance requirements.
 
-### 1. Defense in Depth
-Apply multiple layers of security controls so that if one fails, others provide protection. Never rely on a single security mechanism.
+## Overview
 
-### 2. Zero Trust Architecture
-Never trust, always verify. Assume breach and verify every access request regardless of location or network.
+This skill provides guidance for:
+1. **OWASP Top 10** - Prevention of common vulnerabilities
+2. **Authentication** - Secure auth implementation patterns
+3. **Data Protection** - Encryption and handling of sensitive data
+4. **Compliance** - PCI-DSS, GDPR requirements
+5. **Security Headers** - CSP, HSTS, and other protective headers
 
-### 3. Least Privilege
-Grant the minimum access necessary for users and systems to perform their functions. Regularly review and revoke unused permissions.
+## OWASP Top 10 Prevention
 
-### 4. Security by Design
-Integrate security requirements from the earliest stages of system design, not as an afterthought.
+### A01: Broken Access Control
 
-### 5. Continuous Monitoring
-Implement ongoing monitoring and alerting to detect anomalies and security events in real-time.
+**Vulnerability:** Users can act outside intended permissions.
 
-### 6. Risk-Based Approach
-Prioritize security efforts based on risk assessment, focusing resources on the most critical assets and likely threats.
+**Prevention:**
 
-### 7. Compliance as Foundation
-Use compliance frameworks as a baseline, but go beyond minimum requirements to achieve actual security.
+```python
+# FastAPI dependency for authorization
+from fastapi import Depends, HTTPException, status
 
-### 8. Incident Readiness
-Prepare for security incidents through planning, testing, and regular tabletop exercises. Assume compromise will occur.
+async def require_permission(permission: str):
+    async def checker(user: User = Depends(get_current_user)):
+        if not user.has_permission(permission):
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Insufficient permissions"
+            )
+        return user
+    return checker
 
----
-
-## Security & Compliance Lifecycle
-
-### Phase 1: Assess & Plan
-**Objective**: Understand current security posture and compliance requirements
-
-**Activities**:
-- Conduct security assessments and gap analysis
-- Identify compliance requirements (SOC2, ISO27001, GDPR, HIPAA, PCI-DSS)
-- Perform risk assessments and threat modeling
-- Define security policies and standards
-- Establish security governance structure
-- Create security roadmap with prioritized initiatives
-
-**Deliverables**:
-- Risk register with prioritized risks
-- Compliance gap analysis report
-- Security architecture documentation
-- Security policies and procedures
-- Security roadmap and budget
-
-### Phase 2: Design & Architect
-**Objective**: Design secure systems and architectures
-
-**Activities**:
-- Design defense-in-depth architectures
-- Implement Zero Trust network architecture
-- Design identity and access management (IAM) systems
-- Architect data protection and encryption solutions
-- Design secure CI/CD pipelines
-- Create threat models for applications and systems
-- Define security controls and compensating controls
-
-**Deliverables**:
-- Security architecture diagrams
-- Threat models (STRIDE, PASTA, or attack trees)
-- Data flow diagrams with security boundaries
-- Encryption and key management design
-- IAM design with RBAC/ABAC models
-- Security control matrix
-
-### Phase 3: Implement & Harden
-**Objective**: Deploy security controls and harden systems
-
-**Activities**:
-- Implement security controls (preventive, detective, corrective)
-- Configure security tools (SIEM, EDR, CASB, WAF, IDS/IPS)
-- Harden operating systems and applications
-- Implement encryption at rest and in transit
-- Deploy multi-factor authentication (MFA)
-- Configure logging and monitoring
-- Implement data loss prevention (DLP)
-- Set up vulnerability management program
-
-**Deliverables**:
-- Hardening baselines and configuration standards
-- Deployed security tools and controls
-- Encryption implementation
-- MFA deployment
-- Security monitoring dashboards
-- Vulnerability management procedures
-
-### Phase 4: Monitor & Detect
-**Objective**: Continuously monitor for threats and anomalies
-
-**Activities**:
-- Monitor security logs and events (SIEM)
-- Analyze security alerts and anomalies
-- Conduct threat hunting
-- Perform vulnerability scanning and penetration testing
-- Monitor compliance controls
-- Track security metrics and KPIs
-- Review access logs and privileged account activity
-- Analyze threat intelligence feeds
-
-**Deliverables**:
-- Security operations center (SOC) runbooks
-- Alert triage and escalation procedures
-- Threat hunting playbooks
-- Vulnerability scan reports
-- Penetration test reports
-- Security metrics dashboard
-- Compliance monitoring reports
-
-### Phase 5: Respond & Recover
-**Objective**: Respond to security incidents and recover operations
-
-**Activities**:
-- Execute incident response plan
-- Contain and eradicate threats
-- Perform forensic analysis
-- Recover affected systems
-- Conduct post-incident reviews
-- Update security controls based on lessons learned
-- Report incidents to stakeholders and regulators
-- Improve detection rules and response procedures
-
-**Deliverables**:
-- Incident response reports
-- Forensic analysis findings
-- Root cause analysis
-- Remediation plans
-- Updated incident response playbooks
-- Regulatory breach notifications (if required)
-- Post-incident review and recommendations
-
-### Phase 6: Audit & Improve
-**Objective**: Validate compliance and continuously improve security
-
-**Activities**:
-- Conduct internal audits
-- Prepare for external audits (SOC2, ISO27001)
-- Perform compliance assessments
-- Review and update security policies
-- Conduct security training and awareness programs
-- Perform tabletop exercises and disaster recovery drills
-- Update risk assessments
-- Implement security improvements
-
-**Deliverables**:
-- Audit reports (internal and external)
-- SOC2 Type II report
-- ISO27001 certification
-- Compliance attestations
-- Updated policies and procedures
-- Training completion metrics
-- Tabletop exercise results
-- Continuous improvement plan
-
----
-
-## Decision Frameworks
-
-### 1. Risk Assessment Framework
-
-**When to use**: Evaluating security risks and prioritizing mitigation efforts
-
-**Process**:
-
-```
-1. Identify Assets
-   - What systems, data, and services need protection?
-   - What is the business value of each asset?
-   - Who are the asset owners?
-
-2. Identify Threats
-   - What threat actors might target these assets? (nation-state, cybercriminals, insiders)
-   - What are their motivations? (financial gain, espionage, disruption)
-   - What are current threat trends?
-
-3. Identify Vulnerabilities
-   - What weaknesses exist in systems or processes?
-   - What security controls are missing or ineffective?
-   - What are known CVEs affecting your systems?
-
-4. Calculate Risk
-   Risk = Likelihood × Impact
-
-   Likelihood scale (1-5):
-   1 = Rare (< 5% chance in 1 year)
-   2 = Unlikely (5-25%)
-   3 = Possible (25-50%)
-   4 = Likely (50-75%)
-   5 = Almost Certain (> 75%)
-
-   Impact scale (1-5):
-   1 = Minimal (< $10K loss, no data breach)
-   2 = Minor ($10K-$100K, limited data exposure)
-   3 = Moderate ($100K-$1M, significant data breach)
-   4 = Major ($1M-$10M, extensive data breach, regulatory fines)
-   5 = Catastrophic (> $10M, business-threatening)
-
-   Risk Score = Likelihood × Impact (max 25)
-
-5. Prioritize Risks
-   - Critical: Risk score 15-25 (immediate action)
-   - High: Risk score 10-14 (action within 30 days)
-   - Medium: Risk score 5-9 (action within 90 days)
-   - Low: Risk score 1-4 (monitor and accept)
-
-6. Determine Risk Response
-   - Mitigate: Implement controls to reduce risk
-   - Accept: Document acceptance if risk is within tolerance
-   - Transfer: Use insurance or third-party services
-   - Avoid: Eliminate the activity that creates risk
+@router.delete("/users/{user_id}")
+async def delete_user(
+    user_id: int,
+    current_user: User = Depends(require_permission("admin:delete_users"))
+):
+    # Only executes if user has permission
+    await user_service.delete(user_id)
 ```
 
-**Output**: Risk register with prioritized risks and mitigation plans
+```typescript
+// Next.js middleware for route protection
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-### 2. Security Control Selection
+export function middleware(request: NextRequest) {
+  const token = request.cookies.get('session')?.value;
 
-**When to use**: Choosing appropriate security controls for identified risks
+  // Protect admin routes
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    if (!token) {
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
 
-**Framework**: Use NIST CSF categories or CIS Controls
+    // Verify admin role in token
+    const payload = verifyToken(token);
+    if (payload.role !== 'admin') {
+      return NextResponse.redirect(new URL('/unauthorized', request.url));
+    }
+  }
 
-```
-NIST CSF Functions:
-1. Identify (ID)
-   - Asset Management
-   - Risk Assessment
-   - Governance
-
-2. Protect (PR)
-   - Access Control
-   - Data Security
-   - Protective Technology
-
-3. Detect (DE)
-   - Anomalies and Events
-   - Security Monitoring
-   - Detection Processes
-
-4. Respond (RS)
-   - Response Planning
-   - Communications
-   - Analysis and Mitigation
-
-5. Recover (RC)
-   - Recovery Planning
-   - Improvements
-   - Communications
-
-Control Types:
-- Preventive: Stop incidents before they occur (MFA, firewalls, encryption)
-- Detective: Identify incidents when they occur (SIEM, IDS, log monitoring)
-- Corrective: Fix issues after detection (patching, incident response)
-- Deterrent: Discourage attackers (security policies, warnings)
-- Compensating: Alternative controls when primary controls aren't feasible
-
-Selection Criteria:
-1. Does it address the identified risk?
-2. Is it cost-effective? (Control cost < Risk value)
-3. Is it technically feasible?
-4. Does it meet compliance requirements?
-5. Can we maintain and monitor it?
+  return NextResponse.next();
+}
 ```
 
-### 3. Compliance Framework Selection
+### A02: Cryptographic Failures
 
-**When to use**: Determining which compliance frameworks to implement
+**Vulnerability:** Sensitive data exposed due to weak/missing encryption.
 
-**Decision Tree**:
+**Prevention:**
 
-```
-What type of organization are you?
+```python
+# Password hashing with bcrypt
+from passlib.context import CryptContext
 
-├─ SaaS/Cloud Service Provider
-│  ├─ Selling to enterprises? → SOC2 Type II (required)
-│  ├─ International customers? → ISO27001 (strongly recommended)
-│  ├─ Handling health data? → HIPAA + HITRUST
-│  └─ Handling payment cards? → PCI-DSS
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-├─ Healthcare Provider/Payer
-│  ├─ U.S.-based → HIPAA (required)
-│  ├─ International → HIPAA + GDPR
-│  └─ Plus: HITRUST for comprehensive framework
+class AuthService:
+    def hash_password(self, password: str) -> str:
+        return pwd_context.hash(password)
 
-├─ Financial Services
-│  ├─ U.S. banks → GLBA, SOX (if public)
-│  ├─ Payment processing → PCI-DSS (required)
-│  ├─ International → ISO27001, local regulations
-│  └─ Plus: NIST CSF for framework
-
-├─ E-commerce/Retail
-│  ├─ Accept credit cards → PCI-DSS (required)
-│  ├─ EU customers → GDPR (required)
-│  ├─ California customers → CCPA
-│  └─ B2B sales → SOC2 Type II
-
-└─ General Enterprise
-   ├─ Selling to enterprises → SOC2 Type II
-   ├─ Want broad recognition → ISO27001
-   ├─ Government contracts → FedRAMP, NIST 800-53
-   └─ Industry-specific → Check sector regulations
-
-Multi-Framework Strategy:
-- Start with: SOC2 or ISO27001 (choose one as foundation)
-- Add: Data privacy regulations (GDPR, CCPA) as needed
-- Layer on: Industry-specific requirements
+    def verify_password(self, plain: str, hashed: str) -> bool:
+        return pwd_context.verify(plain, hashed)
 ```
 
-### 4. Incident Severity Classification
+```python
+# Field-level encryption for sensitive data
+from cryptography.fernet import Fernet
+import base64
+import os
 
-**When to use**: Triaging and responding to security incidents
+class FieldEncryption:
+    def __init__(self):
+        key = os.environ.get("ENCRYPTION_KEY")
+        self.cipher = Fernet(key.encode())
 
-**Severity Levels**:
+    def encrypt(self, value: str) -> str:
+        return self.cipher.encrypt(value.encode()).decode()
 
-```
-P0 - Critical (Immediate Response)
-- Active breach with data exfiltration occurring
-- Ransomware encryption in progress
-- Complete system outage of critical services
-- Unauthorized access to production databases
-- Response: Engage CIRT immediately, executive notification, 24/7 effort
+    def decrypt(self, encrypted: str) -> str:
+        return self.cipher.decrypt(encrypted.encode()).decode()
 
-P1 - High (Response within 1 hour)
-- Confirmed malware on critical systems
-- Attempted unauthorized access to sensitive data
-- DDoS attack affecting availability
-- Significant vulnerability with active exploits
-- Response: Engage CIRT, manager notification, work until contained
+# Usage in model
+class User(Base):
+    __tablename__ = "users"
 
-P2 - Medium (Response within 4 hours)
-- Malware on non-critical systems
-- Suspicious account activity
-- Policy violations with security impact
-- Vulnerability requiring patching
-- Response: Security team investigation, business hours
+    id = Column(Integer, primary_key=True)
+    email = Column(String, nullable=False)
+    _ssn_encrypted = Column("ssn", String)  # Stored encrypted
 
-P3 - Low (Response within 24 hours)
-- Failed login attempts (below threshold)
-- Minor policy violations
-- Informational security events
-- Response: Standard queue, document findings
+    @property
+    def ssn(self):
+        if self._ssn_encrypted:
+            return encryption.decrypt(self._ssn_encrypted)
+        return None
 
-Classification Factors:
-1. Data confidentiality impact (PHI, PII, financial, IP)
-2. System availability impact (revenue, operations)
-3. Data integrity impact (corruption, unauthorized changes)
-4. Number of affected systems/users
-5. Regulatory reporting requirements
+    @ssn.setter
+    def ssn(self, value: str):
+        self._ssn_encrypted = encryption.encrypt(value)
 ```
 
-### 5. Vulnerability Prioritization
+### A03: Injection
 
-**When to use**: Prioritizing vulnerability remediation
+**Vulnerability:** SQL, NoSQL, OS command injection.
 
-**Framework**: Enhanced CVSS with business context
+**Prevention:**
 
-```
-Base CVSS Score × Business Context Multiplier = Priority Score
+```python
+# ALWAYS use parameterized queries
+from sqlalchemy import text
 
-CVSS Severity Ranges:
-- Critical: 9.0-10.0
-- High: 7.0-8.9
-- Medium: 4.0-6.9
-- Low: 0.1-3.9
+# BAD - SQL injection vulnerable
+query = f"SELECT * FROM users WHERE email = '{email}'"
 
-Business Context Multipliers:
-- Internet-facing production system: 2.0×
-- Internal production system: 1.5×
-- Systems with sensitive data: 1.5×
-- Development/test environment: 0.5×
-- Active exploit in the wild: 2.0×
-- Compensating controls in place: 0.7×
+# GOOD - Parameterized query
+result = session.execute(
+    text("SELECT * FROM users WHERE email = :email"),
+    {"email": email}
+)
 
-Priority Levels:
-- P0 (Critical): Score ≥ 14 → Patch within 24-48 hours
-- P1 (High): Score 10-13.9 → Patch within 7 days
-- P2 (Medium): Score 6-9.9 → Patch within 30 days
-- P3 (Low): Score < 6 → Patch within 90 days or accept risk
-
-Additional Considerations:
-- Can the system be isolated/segmented?
-- Are there effective detective controls?
-- What is the patching complexity/risk?
-- Is there a vendor patch available?
+# GOOD - ORM queries (automatically parameterized)
+user = session.query(User).filter(User.email == email).first()
 ```
 
-### 6. Third-Party Risk Assessment
+```python
+# Input validation with Pydantic
+from pydantic import BaseModel, EmailStr, constr, validator
+import re
 
-**When to use**: Evaluating security risks of vendors and partners
+class UserCreate(BaseModel):
+    email: EmailStr
+    username: constr(min_length=3, max_length=50, pattern=r'^[a-zA-Z0-9_]+$')
+    bio: str
 
-**Assessment Framework**:
-
-```
-1. Categorize Vendor Risk Level
-
-Low Risk (Minimal assessment):
-- No access to systems or data
-- Limited integration
-- Non-critical service
-→ Simple questionnaire
-
-Medium Risk (Standard assessment):
-- Limited system access
-- Non-sensitive data access
-- Important but not critical service
-→ Security questionnaire + evidence review
-
-High Risk (Comprehensive assessment):
-- Production system access
-- Sensitive data processing
-- Critical service dependency
-→ Full assessment + audit reports + pen test
-
-Critical Risk (Extensive assessment):
-- Full production access
-- PHI/PII processing
-- Business-critical dependency
-→ On-site audit + continuous monitoring + SLA
-
-2. Assessment Components
-
-For Medium/High/Critical vendors:
-□ Security questionnaire (SIG, CAIQ, or custom)
-□ Compliance certifications (SOC2, ISO27001)
-□ Insurance certificates (cyber liability)
-□ Security policies and procedures
-□ Incident response plan
-□ Disaster recovery/business continuity plan
-□ Data processing agreement (DPA)
-□ Penetration test results (for high/critical)
-□ Right to audit clause in contract
-
-3. Ongoing Monitoring
-
-- Annual reassessment
-- Monitor for breaches/incidents
-- Review security updates and patches
-- Track compliance certification renewals
-- Conduct periodic audits (for critical vendors)
-
-4. Vendor Risk Score
-
-Calculate score (0-100):
-- Security maturity: 40 points
-- Compliance certifications: 20 points
-- Incident history: 15 points
-- Financial stability: 15 points
-- References and reputation: 10 points
-
-Action based on score:
-- 80-100: Approved
-- 60-79: Approved with conditions
-- 40-59: Requires remediation plan
-- < 40: Do not engage
+    @validator('bio')
+    def sanitize_bio(cls, v):
+        # Remove potential script tags
+        return re.sub(r'<script[^>]*>.*?</script>', '', v, flags=re.IGNORECASE)
 ```
 
----
+### A04: Insecure Design
 
-## Key Security Frameworks & Standards
+**Vulnerability:** Missing security controls in design phase.
 
-### NIST Cybersecurity Framework (CSF)
-- **Purpose**: Risk-based framework for improving cybersecurity
-- **Structure**: 5 Functions, 23 Categories, 108 Subcategories
-- **Best for**: General organizations, government contractors
-- **Maturity model**: Tier 1 (Partial) to Tier 4 (Adaptive)
+**Prevention Checklist:**
 
-### CIS Critical Security Controls
-- **Purpose**: Prioritized set of actions for cyber defense
-- **Structure**: 18 Controls with Implementation Groups (IG1, IG2, IG3)
-- **Best for**: Practical implementation guidance
-- **Focus**: Defense against common attack patterns
+- [ ] Threat modeling completed
+- [ ] Security requirements documented
+- [ ] Rate limiting designed
+- [ ] Input validation at all boundaries
+- [ ] Audit logging planned
+- [ ] Failure modes considered
 
-### ISO/IEC 27001
-- **Purpose**: International standard for information security management
-- **Structure**: 14 domains, 114 controls (Annex A)
-- **Best for**: International recognition, formal certification
-- **Requirements**: ISMS (Information Security Management System)
+### A05: Security Misconfiguration
 
-### SOC 2 Type II
-- **Purpose**: Service organization controls for security and availability
-- **Structure**: Trust Service Criteria (Security, Availability, Confidentiality, Processing Integrity, Privacy)
-- **Best for**: SaaS companies, cloud service providers
-- **Audit**: 3-12 month observation period
+**Vulnerability:** Default configs, unnecessary features, missing patches.
 
-### NIST 800-53
-- **Purpose**: Security controls for federal systems
-- **Structure**: 20 families, 1000+ controls
-- **Best for**: Government contractors, FedRAMP
-- **Baselines**: Low, Moderate, High impact systems
+**Prevention:**
 
-### GDPR (General Data Protection Regulation)
-- **Purpose**: EU data privacy regulation
-- **Scope**: Any organization processing EU residents' data
-- **Requirements**: Lawful basis, consent, data subject rights, breach notification
-- **Penalties**: Up to 4% of global revenue or €20M
+```python
+# Production configuration checklist
+# config/production.py
 
-### HIPAA (Health Insurance Portability and Accountability Act)
-- **Purpose**: Protect health information (PHI)
-- **Scope**: Healthcare providers, payers, business associates
-- **Requirements**: Administrative, Physical, Technical safeguards
-- **Penalties**: $100-$50,000 per violation, criminal charges possible
+# Disable debug mode
+DEBUG = False
 
-### PCI-DSS (Payment Card Industry Data Security Standard)
-- **Purpose**: Protect cardholder data
-- **Structure**: 12 requirements, 6 control objectives
-- **Scope**: Any organization storing, processing, or transmitting card data
-- **Levels**: Based on transaction volume (Level 1-4)
+# Restrict CORS
+CORS_ORIGINS = ["https://yourdomain.com"]
 
----
+# Secure cookies
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Strict"
 
-## Core Security Domains
-
-### 1. Identity & Access Management (IAM)
-- Authentication mechanisms (MFA, SSO, passwordless)
-- Authorization models (RBAC, ABAC, ReBAC)
-- Privileged access management (PAM)
-- Identity governance and administration (IGA)
-- Directory services (Active Directory, LDAP, Okta, Auth0)
-
-### 2. Network Security
-- Network segmentation and micro-segmentation
-- Firewalls (next-gen, WAF, application-layer)
-- Intrusion detection/prevention (IDS/IPS)
-- VPN and secure remote access
-- Zero Trust network architecture (ZTNA)
-- DDoS protection
-
-### 3. Data Security
-- Encryption at rest and in transit (AES-256, TLS 1.3)
-- Key management (KMS, HSM)
-- Data classification and labeling
-- Data loss prevention (DLP)
-- Database security (encryption, masking, tokenization)
-- Secrets management (Vault, AWS Secrets Manager)
-
-### 4. Application Security
-- Secure SDLC and DevSecOps
-- SAST (Static Application Security Testing)
-- DAST (Dynamic Application Security Testing)
-- SCA (Software Composition Analysis)
-- Secure code review
-- OWASP Top 10 mitigation
-
-### 5. Cloud Security
-- Cloud security posture management (CSPM)
-- Cloud access security broker (CASB)
-- Container security (image scanning, runtime protection)
-- Serverless security
-- Infrastructure as Code (IaC) security scanning
-- Multi-cloud security architecture
-
-### 6. Endpoint Security
-- Endpoint detection and response (EDR)
-- Antivirus and anti-malware
-- Host-based firewalls
-- Device encryption (BitLocker, FileVault)
-- Mobile device management (MDM)
-- Patch management
-
-### 7. Security Operations
-- Security Information and Event Management (SIEM)
-- Security Orchestration, Automation, and Response (SOAR)
-- Threat intelligence platforms (TIP)
-- Threat hunting
-- Vulnerability management
-- Penetration testing and red teaming
-
-### 8. Incident Response
-- Incident response plan and playbooks
-- Computer forensics and investigation
-- Malware analysis
-- Threat containment and eradication
-- Post-incident review and lessons learned
-- Regulatory breach notification
-
-### 9. Governance, Risk & Compliance (GRC)
-- Security policies and procedures
-- Risk assessment and management
-- Compliance management and auditing
-- Security awareness training
-- Vendor risk management
-- Business continuity and disaster recovery
-
----
-
-## Security Metrics & KPIs
-
-### Risk & Compliance Metrics
-- Number of critical/high risks open
-- Risk remediation time (mean time to remediate)
-- Compliance audit findings (open/closed)
-- Compliance control effectiveness rate
-- Policy acknowledgment completion rate
-- Training completion rate
-
-### Vulnerability Management Metrics
-- Mean time to detect (MTTD) vulnerabilities
-- Mean time to patch (MTTP)
-- Vulnerability backlog (total open, by severity)
-- Patch compliance rate (% systems patched within SLA)
-- Vulnerability recurrence rate
-
-### Incident Response Metrics
-- Mean time to detect (MTTD) incidents
-- Mean time to respond (MTTR)
-- Mean time to contain (MTTC)
-- Mean time to recover (MTTR)
-- Number of incidents by severity
-- Incident recurrence rate
-- False positive rate
-
-### Security Operations Metrics
-- SIEM alert volume (total, by severity)
-- Alert triage time
-- Alert false positive rate
-- Security tool coverage (% assets monitored)
-- Threat hunting coverage (% environment reviewed)
-- Penetration test findings
-
-### Access Management Metrics
-- MFA adoption rate
-- Privileged account review completion rate
-- Access certification completion rate
-- Orphaned account count
-- Password policy compliance rate
-- Failed login attempt rate
-
-### Awareness & Culture Metrics
-- Phishing simulation click rate
-- Security training completion rate
-- Security awareness quiz scores
-- Security policy violations
-- Security-related helpdesk tickets
-
----
-
-## Security Tools Ecosystem
-
-### SIEM (Security Information & Event Management)
-- Splunk Enterprise Security
-- IBM QRadar
-- Microsoft Sentinel
-- Elastic Security
-- Sumo Logic
-
-### EDR/XDR (Endpoint/Extended Detection & Response)
-- CrowdStrike Falcon
-- SentinelOne
-- Microsoft Defender for Endpoint
-- Palo Alto Cortex XDR
-- Carbon Black
-
-### Vulnerability Management
-- Tenable Nessus/Tenable.io
-- Qualys VMDR
-- Rapid7 InsightVM
-- Greenbone OpenVAS (open source)
-
-### Cloud Security
-- Wiz
-- Prisma Cloud (Palo Alto)
-- Lacework
-- Orca Security
-- AWS Security Hub / Azure Security Center / GCP Security Command Center
-
-### SAST/DAST
-- Snyk
-- Veracode
-- Checkmarx
-- SonarQube
-- OWASP ZAP (open source)
-
-### Container Security
-- Aqua Security
-- Sysdig Secure
-- Prisma Cloud Compute
-- Trivy (open source)
-
-### Secrets Management
-- HashiCorp Vault
-- AWS Secrets Manager
-- Azure Key Vault
-- CyberArk
-
-### Identity & Access
-- Okta
-- Auth0
-- Azure AD / Entra ID
-- Ping Identity
-- CyberArk (PAM)
-
----
-
-## Common Security Workflows
-
-### 1. Security Incident Response Workflow
-
-```
-1. Detection & Alert
-   ↓
-2. Triage & Classification
-   - Determine severity (P0-P3)
-   - Assign to responder
-   ↓
-3. Investigation
-   - Gather evidence
-   - Analyze logs (SIEM)
-   - Determine scope
-   ↓
-4. Containment
-   - Isolate affected systems
-   - Block malicious IPs/domains
-   - Disable compromised accounts
-   ↓
-5. Eradication
-   - Remove malware
-   - Close vulnerabilities
-   - Patch systems
-   ↓
-6. Recovery
-   - Restore from backups
-   - Verify system integrity
-   - Return to production
-   ↓
-7. Post-Incident Review
-   - Document timeline
-   - Root cause analysis
-   - Update playbooks
-   - Implement improvements
-   ↓
-8. Reporting
-   - Executive summary
-   - Regulatory notification (if required)
-   - Stakeholder communication
+# Disable unnecessary endpoints
+DOCS_URL = None  # Disable /docs in production
+REDOC_URL = None  # Disable /redoc in production
 ```
 
-### 2. Vulnerability Management Workflow
+```typescript
+// next.config.js security settings
+module.exports = {
+  poweredBy: false,  // Remove X-Powered-By header
+  reactStrictMode: true,
 
-```
-1. Asset Discovery
-   - Scan network for assets
-   - Maintain asset inventory
-   ↓
-2. Vulnerability Scanning
-   - Authenticated scans
-   - Unauthenticated scans
-   - Agent-based monitoring
-   ↓
-3. Assessment & Validation
-   - Validate findings
-   - Remove false positives
-   - Add business context
-   ↓
-4. Prioritization
-   - Apply CVSS + context
-   - Assign severity (P0-P3)
-   - Create remediation tickets
-   ↓
-5. Remediation
-   - Patch systems
-   - Apply compensating controls
-   - Update configurations
-   ↓
-6. Verification
-   - Rescan to confirm fix
-   - Update vulnerability status
-   ↓
-7. Reporting
-   - Metrics dashboard
-   - Executive reports
-   - Trend analysis
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: securityHeaders,
+      },
+    ];
+  },
+};
 ```
 
-### 3. Access Review Workflow
+### A06: Vulnerable and Outdated Components
 
-```
-1. Schedule Review (Quarterly)
-   ↓
-2. Generate Access Reports
-   - User access by role
-   - Privileged accounts
-   - Service accounts
-   - Orphaned accounts
-   ↓
-3. Distribute to Managers
-   - Each manager reviews their team
-   - Certify appropriate access
-   ↓
-4. Review & Certify
-   - Approve legitimate access
-   - Flag inappropriate access
-   - Identify orphaned accounts
-   ↓
-5. Remediation
-   - Revoke unapproved access
-   - Disable orphaned accounts
-   - Update RBAC assignments
-   ↓
-6. Document & Report
-   - Certification completion rate
-   - Access changes made
-   - Compliance evidence
+**Prevention:**
+
+```bash
+# Regular dependency audits
+npm audit
+pip-audit
+
+# Automated updates
+npm outdated
+pip list --outdated
+
+# Lock file for reproducible builds
+npm ci  # Instead of npm install
+pip install -r requirements.txt --require-hashes
 ```
 
-### 4. SOC2 Audit Preparation Workflow
+### A07: Identification and Authentication Failures
 
+**Prevention:**
+
+```python
+# Secure session management
+from fastapi import FastAPI, Response
+from datetime import timedelta
+
+SESSION_SETTINGS = {
+    "secret_key": os.environ["SESSION_SECRET"],
+    "expire_after": timedelta(hours=8),
+    "secure": True,  # HTTPS only
+    "httponly": True,  # No JavaScript access
+    "samesite": "strict",  # CSRF protection
+}
+
+# Account lockout after failed attempts
+class LoginService:
+    MAX_ATTEMPTS = 5
+    LOCKOUT_DURATION = timedelta(minutes=15)
+
+    async def login(self, email: str, password: str) -> User:
+        attempts = await self.get_failed_attempts(email)
+
+        if attempts >= self.MAX_ATTEMPTS:
+            lockout_expires = await self.get_lockout_expiry(email)
+            if datetime.utcnow() < lockout_expires:
+                raise HTTPException(
+                    status_code=429,
+                    detail=f"Account locked. Try again in {lockout_expires - datetime.utcnow()}"
+                )
+
+        user = await self.verify_credentials(email, password)
+        if not user:
+            await self.record_failed_attempt(email)
+            raise HTTPException(status_code=401, detail="Invalid credentials")
+
+        await self.clear_failed_attempts(email)
+        return user
 ```
-1. Scoping (3-4 months before)
-   - Define in-scope systems
-   - Select Trust Service Criteria
-   - Engage auditor
-   ↓
-2. Gap Assessment (2-3 months before)
-   - Map controls to requirements
-   - Identify control gaps
-   - Create remediation plan
-   ↓
-3. Readiness (1-2 months before)
-   - Implement missing controls
-   - Document policies/procedures
-   - Conduct mock audit
-   ↓
-4. Evidence Collection (Ongoing)
-   - Automate evidence gathering
-   - Organize evidence repository
-   - Prepare control narratives
-   ↓
-5. Audit Kickoff
-   - Provide evidence to auditor
-   - Respond to requests
-   - Schedule interviews
-   ↓
-6. Fieldwork (4-6 weeks)
-   - Auditor tests controls
-   - Provide additional evidence
-   - Address findings
-   ↓
-7. Report Issuance
-   - Review draft report
-   - Address any exceptions
-   - Receive final SOC2 report
-   ↓
-8. Continuous Monitoring
-   - Monitor control effectiveness
-   - Prepare for next audit cycle
+
+### A08: Software and Data Integrity Failures
+
+**Prevention:**
+
+```python
+# Verify webhook signatures
+import hmac
+import hashlib
+
+def verify_webhook_signature(payload: bytes, signature: str, secret: str) -> bool:
+    expected = hmac.new(
+        secret.encode(),
+        payload,
+        hashlib.sha256
+    ).hexdigest()
+
+    return hmac.compare_digest(f"sha256={expected}", signature)
+
+@router.post("/webhooks/payment")
+async def handle_payment_webhook(request: Request):
+    payload = await request.body()
+    signature = request.headers.get("X-Signature")
+
+    if not verify_webhook_signature(payload, signature, WEBHOOK_SECRET):
+        raise HTTPException(status_code=401, detail="Invalid signature")
+
+    # Process webhook...
 ```
 
----
+### A09: Security Logging and Monitoring Failures
 
-## Best Practices
+**Prevention:**
 
-### Security Architecture
-- Design with security in mind from the start (shift-left)
-- Apply defense in depth with multiple security layers
-- Implement Zero Trust: verify explicitly, use least privilege, assume breach
-- Segment networks and limit lateral movement
-- Encrypt data at rest and in transit
-- Use secure defaults and fail securely
+```python
+# Structured security logging
+import structlog
+from datetime import datetime
 
-### Access Control
-- Enforce multi-factor authentication (MFA) everywhere
-- Implement least privilege access
-- Use just-in-time (JIT) privileged access
-- Regularly review and certify access
-- Disable accounts promptly on termination
-- Avoid shared accounts and service account abuse
+logger = structlog.get_logger()
 
-### Security Operations
-- Centralize logging with SIEM
-- Automate detection and response where possible
-- Maintain an incident response plan and test it
-- Conduct regular threat hunting exercises
-- Keep vulnerability remediation SLAs aggressive
-- Practice incident response through tabletop exercises
+class SecurityAuditLogger:
+    async def log_auth_event(
+        self,
+        event_type: str,
+        user_id: str | None,
+        ip_address: str,
+        success: bool,
+        details: dict = None
+    ):
+        await logger.ainfo(
+            "security_event",
+            event_type=event_type,
+            user_id=user_id,
+            ip_address=ip_address,
+            success=success,
+            timestamp=datetime.utcnow().isoformat(),
+            details=details or {}
+        )
 
-### Application Security
-- Integrate security into CI/CD (DevSecOps)
-- Scan code for vulnerabilities (SAST, DAST, SCA)
-- Follow OWASP Top 10 guidelines
-- Conduct security code reviews for critical changes
-- Implement secure API design (authentication, rate limiting, input validation)
-- Use security headers (CSP, HSTS, X-Frame-Options)
+# Usage
+audit = SecurityAuditLogger()
 
-### Cloud Security
-- Use infrastructure as code (IaC) with security scanning
-- Enable cloud-native security services (GuardDuty, Security Hub)
-- Implement CSPM to monitor misconfigurations
-- Use cloud-native encryption and key management
-- Apply least privilege IAM policies
-- Monitor for shadow IT and unauthorized resources
+@router.post("/login")
+async def login(request: Request, credentials: LoginRequest):
+    ip = request.client.host
+
+    try:
+        user = await auth_service.login(credentials)
+        await audit.log_auth_event("login", user.id, ip, success=True)
+        return {"token": create_token(user)}
+    except AuthenticationError:
+        await audit.log_auth_event(
+            "login",
+            None,
+            ip,
+            success=False,
+            details={"email": credentials.email}
+        )
+        raise
+```
+
+### A10: Server-Side Request Forgery (SSRF)
+
+**Prevention:**
+
+```python
+# Validate and sanitize URLs
+from urllib.parse import urlparse
+import ipaddress
+
+ALLOWED_HOSTS = ["api.example.com", "cdn.example.com"]
+
+def validate_url(url: str) -> bool:
+    parsed = urlparse(url)
+
+    # Only allow HTTPS
+    if parsed.scheme != "https":
+        return False
+
+    # Check against allowlist
+    if parsed.hostname not in ALLOWED_HOSTS:
+        return False
+
+    # Block internal IPs
+    try:
+        ip = ipaddress.ip_address(parsed.hostname)
+        if ip.is_private or ip.is_loopback:
+            return False
+    except ValueError:
+        pass  # Not an IP, hostname already checked
+
+    return True
+
+@router.post("/fetch-preview")
+async def fetch_url_preview(url: str):
+    if not validate_url(url):
+        raise HTTPException(status_code=400, detail="Invalid URL")
+
+    # Safe to fetch
+    response = await httpx.get(url, timeout=5.0)
+    return parse_preview(response)
+```
+
+## Security Headers
+
+### Implementation
+
+```typescript
+// next.config.js
+const securityHeaders = [
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN'
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'strict-origin-when-cross-origin'
+  },
+  {
+    key: 'Permissions-Policy',
+    value: 'camera=(), microphone=(), geolocation=()'
+  },
+  {
+    key: 'Content-Security-Policy',
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
+  }
+];
+
+const ContentSecurityPolicy = `
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' blob: data: https:;
+  font-src 'self';
+  connect-src 'self' https://api.yourdomain.com;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self';
+`;
+```
+
+### Header Reference
+
+| Header | Purpose | Value |
+|--------|---------|-------|
+| Strict-Transport-Security | Force HTTPS | max-age=31536000; includeSubDomains |
+| X-Frame-Options | Prevent clickjacking | DENY or SAMEORIGIN |
+| X-Content-Type-Options | Prevent MIME sniffing | nosniff |
+| Content-Security-Policy | Control resource loading | See CSP guide |
+| X-XSS-Protection | Legacy XSS filter | 1; mode=block |
+| Referrer-Policy | Control referrer info | strict-origin-when-cross-origin |
+| Permissions-Policy | Disable browser features | camera=(), microphone=() |
+
+## PCI-DSS Compliance
+
+### Requirements Overview
+
+| Requirement | Implementation |
+|-------------|----------------|
+| Protect cardholder data | Encryption at rest and in transit |
+| Maintain vulnerability management | Regular patching, security scanning |
+| Implement strong access control | RBAC, MFA, audit logging |
+| Monitor and test networks | IDS/IPS, penetration testing |
+| Maintain security policy | Documented procedures |
+
+### Payment Data Handling
+
+```python
+# NEVER store full card numbers - use tokenization
+class PaymentService:
+    def __init__(self, payment_provider):
+        self.provider = payment_provider  # Stripe, etc.
+
+    async def process_payment(
+        self,
+        amount: int,
+        card_token: str,  # Token from client-side SDK
+        user_id: str
+    ) -> PaymentResult:
+        # Card data never touches our server
+        result = await self.provider.charge(
+            amount=amount,
+            source=card_token,
+            metadata={"user_id": user_id}
+        )
+
+        # Store only safe references
+        await self.store_transaction(
+            user_id=user_id,
+            provider_id=result.id,
+            last_four=result.card.last4,  # Safe to store
+            amount=amount,
+            status=result.status
+        )
+
+        return result
+```
+
+```typescript
+// Client-side card collection with Stripe Elements
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements, CardElement, useStripe } from '@stripe/react-stripe-js';
+
+function PaymentForm() {
+  const stripe = useStripe();
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    // Card data goes directly to Stripe, not our server
+    const { token, error } = await stripe.createToken(cardElement);
+
+    if (token) {
+      // Send only the token to our backend
+      await api.processPayment({ token: token.id, amount });
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <CardElement />
+      <button type="submit">Pay</button>
+    </form>
+  );
+}
+```
+
+## GDPR Compliance
+
+### Data Subject Rights
+
+| Right | Implementation |
+|-------|----------------|
+| Access | Export user data endpoint |
+| Rectification | Update profile endpoint |
+| Erasure | Delete account endpoint |
+| Portability | JSON/CSV export |
+| Object | Opt-out mechanisms |
+
+### Implementation
+
+```python
+# GDPR data export
+class GDPRService:
+    async def export_user_data(self, user_id: str) -> dict:
+        """Export all user data for GDPR access request."""
+        user = await user_repo.get(user_id)
+
+        return {
+            "profile": {
+                "email": user.email,
+                "name": user.name,
+                "created_at": user.created_at.isoformat(),
+            },
+            "orders": await order_repo.get_by_user(user_id),
+            "activity_log": await activity_repo.get_by_user(user_id),
+            "preferences": await preference_repo.get_by_user(user_id),
+        }
+
+    async def delete_user_data(self, user_id: str) -> None:
+        """Delete all user data for GDPR erasure request."""
+        # Anonymize rather than delete for audit trail
+        await user_repo.anonymize(user_id)
+        await order_repo.anonymize_user(user_id)
+        await activity_repo.delete_by_user(user_id)
+
+        # Log the deletion request
+        await audit_log.record(
+            event="gdpr_erasure",
+            user_id=user_id,
+            timestamp=datetime.utcnow()
+        )
+```
+
+### Consent Management
+
+```typescript
+// Cookie consent banner
+interface ConsentState {
+  necessary: true;  // Always required
+  analytics: boolean;
+  marketing: boolean;
+}
+
+function CookieConsent() {
+  const [consent, setConsent] = useState<ConsentState | null>(null);
+
+  const handleAccept = (options: Partial<ConsentState>) => {
+    const newConsent = { necessary: true, ...options };
+    setConsent(newConsent);
+    setCookie('consent', JSON.stringify(newConsent), { maxAge: 365 * 24 * 60 * 60 });
+
+    // Initialize only consented trackers
+    if (newConsent.analytics) {
+      initAnalytics();
+    }
+  };
+
+  return (
+    <div className="cookie-banner">
+      <p>We use cookies to improve your experience.</p>
+      <button onClick={() => handleAccept({ analytics: true, marketing: true })}>
+        Accept All
+      </button>
+      <button onClick={() => handleAccept({ analytics: false, marketing: false })}>
+        Essential Only
+      </button>
+    </div>
+  );
+}
+```
+
+## Encryption Best Practices
+
+### At Rest
+
+```python
+# Database column encryption
+from sqlalchemy_utils import EncryptedType
+from sqlalchemy_utils.types.encrypted.encrypted_type import AesEngine
+
+class SensitiveData(Base):
+    __tablename__ = "sensitive_data"
+
+    id = Column(Integer, primary_key=True)
+    # Encrypted at database level
+    ssn = Column(EncryptedType(
+        String,
+        os.environ["DB_ENCRYPTION_KEY"],
+        AesEngine,
+        "pkcs5"
+    ))
+```
+
+### In Transit
+
+```python
+# Force HTTPS in FastAPI
+from fastapi import FastAPI
+from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
+
+app = FastAPI()
+app.add_middleware(HTTPSRedirectMiddleware)
+
+# TLS configuration for database
+DATABASE_URL = (
+    "postgresql://user:pass@host/db"
+    "?sslmode=require"
+    "&sslrootcert=/path/to/ca.pem"
+)
+```
+
+## Security Checklist
+
+### Authentication
+
+- [ ] Passwords hashed with bcrypt/argon2
+- [ ] MFA available for sensitive accounts
+- [ ] Account lockout after failed attempts
+- [ ] Secure session management
+- [ ] Password complexity requirements
+- [ ] Secure password reset flow
+
+### Data Protection
+
+- [ ] Sensitive data encrypted at rest
+- [ ] TLS/HTTPS enforced
+- [ ] No sensitive data in logs
+- [ ] No sensitive data in URLs
+- [ ] Proper data retention policies
+- [ ] Data anonymization for analytics
+
+### API Security
+
+- [ ] Authentication required for all endpoints
+- [ ] Authorization checks on resources
+- [ ] Rate limiting implemented
+- [ ] Input validation on all inputs
+- [ ] Output encoding for responses
+- [ ] CORS properly configured
+
+### Infrastructure
+
+- [ ] Security headers configured
+- [ ] Dependencies regularly audited
+- [ ] Secrets in environment variables
+- [ ] Debug mode disabled in production
+- [ ] Error messages don't leak info
+- [ ] Audit logging enabled
 
 ### Compliance
-- Treat compliance as a continuous process, not one-time
-- Map controls to multiple frameworks for efficiency
-- Automate evidence collection where possible
-- Maintain a compliance calendar for deadlines
-- Document everything (if it's not documented, it doesn't exist)
-- Conduct internal audits before external audits
 
-### Security Culture
-- Make security everyone's responsibility
-- Conduct regular security awareness training
-- Run phishing simulations to test awareness
-- Reward security-conscious behavior
-- Create clear, accessible security policies
-- Foster a culture where reporting security concerns is encouraged
+- [ ] GDPR consent mechanisms
+- [ ] Data export capability
+- [ ] Data deletion capability
+- [ ] Privacy policy updated
+- [ ] PCI tokenization (if payments)
+- [ ] Audit trail maintained
 
----
+## References
 
-## Integration with Other Disciplines
-
-### With DevOps/Platform Engineering
-- Integrate security scanning into CI/CD pipelines
-- Automate security testing and compliance checks
-- Implement Infrastructure as Code (IaC) security
-- Use container scanning and runtime protection
-- Coordinate on incident response for production issues
-
-### With Enterprise Architecture
-- Align security architecture with enterprise architecture
-- Participate in architecture review boards
-- Ensure security requirements in architecture standards
-- Design secure integration patterns
-- Define security reference architectures
-
-### With IT Operations
-- Coordinate on patch management and change control
-- Collaborate on monitoring and alerting
-- Joint incident response for security and operational incidents
-- Align on backup and disaster recovery procedures
-- Coordinate access management and privileged access
-
-### With Product Management
-- Provide security requirements for new features
-- Participate in threat modeling for new products
-- Balance security with user experience
-- Advise on privacy and compliance implications
-- Support security as a product differentiator
-
-### With Legal/Privacy
-- Coordinate on data privacy regulations (GDPR, CCPA)
-- Collaborate on breach notification requirements
-- Review vendor contracts for security terms
-- Support privacy impact assessments
-- Align on data retention and deletion policies
-
----
-
-## When to Engage Security & Compliance
-
-### Required Engagement
-- New system or application design
-- Architecture changes affecting security boundaries
-- Regulatory compliance initiatives
-- Security incidents
-- Vendor risk assessments
-- Pre-production security reviews
-- Audit preparation
-- Data breach or suspected breach
-
-### Recommended Engagement
-- Major feature releases
-- Cloud migrations
-- M&A due diligence
-- Infrastructure changes
-- New third-party integrations
-- Significant process changes
-- Security tool selection
-- Policy updates
-
-### Continuous Collaboration
-- Security review of pull requests (for critical systems)
-- Vulnerability remediation prioritization
-- Security awareness and training
-- Threat intelligence sharing
-- Risk assessment updates
-- Compliance monitoring
+For detailed guidance, see:
+- `references/owasp-prevention.md` - Detailed OWASP prevention strategies
+- `references/compliance-checklist.md` - Comprehensive compliance requirements

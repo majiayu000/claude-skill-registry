@@ -1,81 +1,45 @@
 ---
 name: deploy
-description: Safe deployment workflow for Fly.io and infrastructure changes. Use before ANY deployment, config modification, or infrastructure change. Prevents panic-driven debugging and production incidents.
+description: Deploy workflow for Vercel and Supabase Edge Functions
+allowed-tools: Bash
+model: sonnet
+user-invocable: false
 ---
 
-# Deployment Discipline
+# Deploy Workflow
 
-## The Golden Rules
+## Pre-deploy Checklist
+1. `npm run typecheck` - passes
+2. `npm run build` - passes
+3. `npm run test` - passes (if available)
+4. No `console.log` in production code
+5. Environment variables set in hosting platform
 
-1. **LOCAL FIRST, ALWAYS** - Never deploy until local tests pass
-2. **ONE CHANGE AT A TIME** - Make one fix, test it, verify it works, then proceed
-3. **UNDERSTAND BEFORE FIXING** - Don't conflate unrelated errors
-4. **NOTIFICATIONS ARE PRODUCTION** - Failed deployments spam Slack
+## Vercel
 
-## Pre-Deployment Checklist
-
-Before ANY deployment:
-
+**Preview:**
 ```bash
-# 1. Test locally first
-source .venv/bin/activate
-python scripts/run_pipeline.py everflow
-
-# 2. Check what changed
-git diff
-
-# 3. Verify no broken imports
-python -c "from signalroom.workers.main import main; print('OK')"
+npx vercel --yes
 ```
 
-## Fly.io Deployment
-
+**Production:**
 ```bash
-# Deploy (builds and pushes)
-fly deploy
-
-# Check status
-fly status
-
-# View logs
-fly logs
-
-# Check secrets are set
-fly secrets list
+npx vercel --prod --yes
 ```
 
-## Known Working Configuration
+## Supabase Edge Functions
 
-**Supabase Pooler (REQUIRED for Fly.io):**
-- Host: `aws-0-us-east-1.pooler.supabase.com`
-- Port: `6543`
-- User: `postgres.{project_ref}` (NOT just `postgres`)
-
-**Temporal Cloud:**
-- Address: `ap-northeast-1.aws.api.temporal.io:7233`
-- Namespace: `signalroom-713.nzg5u`
-
-## If Something Breaks
-
-**STOP. Do not deploy again.**
-
-1. Check what you changed: `git diff`
-2. Revert if needed: `git checkout -- <file>`
-3. Test locally before any retry
-4. Ask: "What was working before, and what did I change?"
-
-## Secrets with Special Characters
-
-Passwords with backticks, quotes, or special chars:
-- **Do NOT use CLI** - shell escaping will break them
-- **Use Fly.io dashboard** - Settings > Secrets > Set manually
-
-## Rollback
-
+**Single function:**
 ```bash
-# List recent deployments
-fly releases
-
-# Rollback to previous
-fly deploy --image <previous-image>
+supabase functions deploy [name] --project-ref [ref]
 ```
+
+**All functions:**
+```bash
+supabase functions deploy --project-ref [ref]
+```
+
+## Post-deploy
+1. Verify production URL loads
+2. Test critical user flows
+3. Monitor error logs for 5 minutes

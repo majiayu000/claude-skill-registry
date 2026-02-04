@@ -1,15 +1,6 @@
 ---
 name: api-documentation
 description: Use when API code changes (routes, endpoints, schemas). Enforces Swagger/OpenAPI sync. Pauses work if documentation has drifted, triggering documentation-audit skill.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
-  - mcp__github__*
-model: opus
 ---
 
 # API Documentation Enforcement

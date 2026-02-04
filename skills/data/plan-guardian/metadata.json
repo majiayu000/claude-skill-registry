@@ -1,7 +1,7 @@
 {
   "name": "plan-guardian",
-  "repo": "turbobeest/squawk",
-  "path": ".claude/skills/plan-guardian/SKILL.md",
-  "source": "github.com/turbobeest/squawk",
-  "downloaded_at": "2026-02-02T04:02:35.144110Z"
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/plan-guardian/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-02-04T05:18:53.213683Z"
 }

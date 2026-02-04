@@ -1,452 +1,183 @@
 ---
 name: obsidian-markdown
-category: document-processing
-description: Create and edit Obsidian Flavored Markdown with wikilinks, embeds, callouts, properties, and other Obsidian-specific syntax. Use when working with .md files in Obsidian, or when the user mentions wikilinks, callouts, frontmatter, tags, embeds, or Obsidian notes.
+description: Obsidian vault의 마크다운 문서 작업을 위한 Skill. markdown-oxide LSP를 활용하여 백링크 검색, 태그 탐색, 링크 관계 분석, Daily notes 관리를 수행. Obsidian vault, PKM, 마크다운 노트, 위키링크([[link]]), 태그(#tag), 백링크, 노트 검색, 문서 구조 분석 작업 시 사용.
+allowed-tools: Read, Grep, Glob, LS, mcp__markdown-oxide
 ---
 
-# Obsidian Flavored Markdown
+# Obsidian Markdown Skill
 
-This skill enables Claude Code to create and edit valid Obsidian Flavored Markdown including wikilinks, embeds, callouts, properties, and all related syntax.
+Obsidian vault에서 마크다운 문서 작업을 효율적으로 수행하기 위한 Skill.
 
-## When to Use This Skill
+## 핵심 기능
 
-- Working with .md files in an Obsidian vault
-- Creating notes with wikilinks or internal links
-- Adding embeds for notes, images, audio, or PDFs
-- Using callouts (info boxes, warnings, tips, etc.)
-- Managing frontmatter/properties in YAML format
-- Working with tags and nested tags
-- Creating block references and block IDs
+### 1. LSP 기반 검색 (markdown-oxide)
 
-## Basic Formatting
+markdown-oxide MCP 서버가 연결되어 있으면 다음 기능 활용:
 
-### Paragraphs and Line Breaks
+- **Find References**: 특정 노트를 참조하는 모든 백링크 찾기
+- **Go to Definition**: `[[링크]]`에서 실제 파일로 이동
+- **Tag Search**: `#tag` 사용 위치 모두 검색
+- **Completion**: 링크, 태그, 헤딩 자동완성 정보 활용
 
-Paragraphs are separated by blank lines. Single line breaks within a paragraph are ignored unless you use:
-- Two spaces at the end of a line
-- Or use `<br>` for explicit breaks
+### 2. Vault 구조 파악
 
-### Headings
+작업 전 항상 vault 구조를 먼저 파악:
 
-```markdown
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+```bash
+# 디렉토리 구조 확인
+ls -la
+
+# MOC(Map of Content) 노트 찾기
+find . -name "*MOC*" -o -name "*Index*" -o -name "*목차*"
+
+# 최근 수정된 노트 확인
+find . -name "*.md" -mtime -7
 ```
 
-### Text Styling
+### 3. 토큰 효율적 접근
 
-```markdown
-**Bold text**
-*Italic text*
-***Bold and italic***
-~~Strikethrough~~
-==Highlighted text==
+대량 문서 작업 시 계층적 접근:
+
+1. MOC/Index 노트 먼저 읽기
+2. LSP로 관련 노트 식별
+3. 필요한 노트만 선택적 로드
+4. 작업 완료 후 `/compact` 권장
+
+## 작업 지침
+
+### 노트 검색 시
+
+```
+1. LSP find_references 우선 사용 (가능한 경우)
+2. LSP 불가 시 Grep으로 [[노트명]] 패턴 검색
+3. 태그 검색: grep -r "#태그명" --include="*.md"
 ```
 
-## Internal Links (Wikilinks)
+### 링크 관계 분석 시
 
-### Basic Wikilinks
-
-```markdown
-[[Note Name]]
-[[Note Name|Display Text]]
-[[Folder/Note Name]]
+```
+1. 대상 노트의 outgoing links 파악 (노트 내 [[링크]] 추출)
+2. incoming links(백링크) 파악 (LSP 또는 grep)
+3. 관계도 시각화 필요 시 Mermaid 다이어그램 생성
 ```
 
-### Heading Links
+### 문서 수정 시
 
-```markdown
-[[Note Name#Heading]]
-[[Note Name#Heading|Display Text]]
-[[#Heading in Current Note]]
+```
+1. 수정 전 백링크 확인 (영향 범위 파악)
+2. 파일명 변경 시 모든 참조 함께 업데이트
+3. 헤딩 변경 시 앵커 링크([[노트#헤딩]]) 확인
 ```
 
-### Block References
+### Daily Notes 작업 시
 
-```markdown
-[[Note Name#^block-id]]
-[[Note Name#^block-id|Display Text]]
-[[#^block-id]]
+```
+1. Daily note 형식 확인 (YYYY-MM-DD.md 등)
+2. 날짜 기반 검색: find . -name "2025-01-*.md"
+3. 특정 기간 노트 일괄 처리 가능
 ```
 
-### Creating Block IDs
+## Obsidian 특화 문법
 
-Add a block ID at the end of any paragraph or list item:
+### 지원하는 문법
 
-```markdown
-This is a paragraph you can reference. ^my-block-id
+| 문법             | 설명        | 예시                   |
+| ---------------- | ----------- | ---------------------- |
+| `[[링크]]`       | 내부 링크   | `[[노트 제목]]`        |
+| `[[링크\|별칭]]` | 별칭 링크   | `[[긴제목\|짧은이름]]` |
+| `[[링크#헤딩]]`  | 헤딩 링크   | `[[노트#섹션]]`        |
+| `![[임베드]]`    | 노트 임베드 | `![[포함할노트]]`      |
+| `#태그`          | 태그        | `#project/active`      |
+| `#태그/하위`     | 중첩 태그   | `#status/in-progress`  |
 
-- List item with ID ^list-block
-```
-
-## Embeds
-
-### Embedding Notes
-
-```markdown
-![[Note Name]]
-![[Note Name#Heading]]
-![[Note Name#^block-id]]
-```
-
-### Embedding Images
-
-```markdown
-![[image.png]]
-![[image.png|400]]
-![[image.png|400x300]]
-```
-
-### Embedding Audio
-
-```markdown
-![[audio.mp3]]
-```
-
-### Embedding PDFs
-
-```markdown
-![[document.pdf]]
-![[document.pdf#page=5]]
-![[document.pdf#height=400]]
-```
-
-### Embedding Videos
-
-```markdown
-![[video.mp4]]
-```
-
-## Callouts
-
-### Basic Callout Syntax
-
-```markdown
-> [!note]
-> This is a note callout.
-
-> [!warning]
-> This is a warning callout.
-
-> [!tip] Custom Title
-> This callout has a custom title.
-```
-
-### Callout Types
-
-| Type | Aliases | Description |
-|------|---------|-------------|
-| `note` | | Default blue info box |
-| `abstract` | `summary`, `tldr` | Abstract/summary |
-| `info` | | Information |
-| `todo` | | Task/todo item |
-| `tip` | `hint`, `important` | Helpful tip |
-| `success` | `check`, `done` | Success message |
-| `question` | `help`, `faq` | Question/FAQ |
-| `warning` | `caution`, `attention` | Warning message |
-| `failure` | `fail`, `missing` | Failure message |
-| `danger` | `error` | Error/danger |
-| `bug` | | Bug report |
-| `example` | | Example content |
-| `quote` | `cite` | Quotation |
-
-### Foldable Callouts
-
-```markdown
-> [!note]+ Expanded by default
-> Content visible initially.
-
-> [!note]- Collapsed by default
-> Content hidden initially.
-```
-
-### Nested Callouts
-
-```markdown
-> [!question] Can callouts be nested?
-> > [!answer] Yes!
-> > Callouts can be nested inside each other.
-```
-
-## Lists
-
-### Unordered Lists
-
-```markdown
-- Item 1
-- Item 2
-  - Nested item
-  - Another nested item
-- Item 3
-```
-
-### Ordered Lists
-
-```markdown
-1. First item
-2. Second item
-   1. Nested numbered item
-3. Third item
-```
-
-### Task Lists
-
-```markdown
-- [ ] Uncompleted task
-- [x] Completed task
-- [ ] Another task
-```
-
-## Code Blocks
-
-### Inline Code
-
-```markdown
-Use `inline code` for short snippets.
-```
-
-### Fenced Code Blocks
-
-````markdown
-```javascript
-function hello() {
-  console.log("Hello, world!");
-}
-```
-````
-
-### Supported Languages
-
-Obsidian supports syntax highlighting for many languages including:
-`javascript`, `typescript`, `python`, `rust`, `go`, `java`, `c`, `cpp`, `csharp`, `ruby`, `php`, `html`, `css`, `json`, `yaml`, `markdown`, `bash`, `sql`, and many more.
-
-## Tables
-
-```markdown
-| Header 1 | Header 2 | Header 3 |
-|----------|:--------:|---------:|
-| Left     | Center   | Right    |
-| aligned  | aligned  | aligned  |
-```
-
-## Math (LaTeX)
-
-### Inline Math
-
-```markdown
-The equation $E = mc^2$ is famous.
-```
-
-### Block Math
-
-```markdown
-$$
-\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
-```
-
-## Diagrams (Mermaid)
-
-````markdown
-```mermaid
-graph TD
-    A[Start] --> B{Decision}
-    B -->|Yes| C[Do Something]
-    B -->|No| D[Do Something Else]
-    C --> E[End]
-    D --> E
-```
-````
-
-## Footnotes
-
-```markdown
-This is a sentence with a footnote.[^1]
-
-[^1]: This is the footnote content.
-```
-
-## Comments
-
-```markdown
-%%
-This is a comment that won't be rendered.
-%%
-
-Inline %%comment%% within text.
-```
-
-## Properties (Frontmatter)
-
-### Basic Properties
+### Frontmatter 처리
 
 ```yaml
 ---
-title: My Note Title
-date: 2024-01-15
+title: 노트 제목
+created: 2025-01-13
 tags:
   - tag1
   - tag2
-author: John Doe
----
-```
-
-### Property Types
-
-| Type | Example |
-|------|---------|
-| Text | `title: My Title` |
-| Number | `rating: 5` |
-| Checkbox | `completed: true` |
-| Date | `date: 2024-01-15` |
-| Date & time | `created: 2024-01-15T10:30:00` |
-| List | `tags: [a, b, c]` or multiline |
-| Link | `related: "[[Other Note]]"` |
-
-### Multi-value Properties
-
-```yaml
----
-tags:
-  - project
-  - work
-  - important
 aliases:
-  - My Alias
-  - Another Name
-cssclasses:
-  - wide-page
-  - cards
+  - 별칭1
+  - 별칭2
 ---
 ```
 
-## Tags
+- `aliases`: 다른 이름으로도 링크 가능
+- `tags`: frontmatter 태그와 인라인 태그 모두 인식
 
-### Inline Tags
+## MCP 서버 설정
 
-```markdown
-This note is about #productivity and #tools.
+markdown-oxide MCP 서버 연결이 필요합니다.
+
+### 설정 방법
+
+```bash
+# markdown-oxide 설치
+brew install markdown-oxide
+# 또는
+cargo install --locked markdown-oxide
+
+# MCP 서버 추가
+claude mcp add-json "markdown-oxide" '{
+  "type": "stdio",
+  "command": "npx",
+  "args": ["tritlo/lsp-mcp", "markdown", "markdown-oxide"]
+}'
 ```
 
-### Nested Tags
+### 환경 변수
 
-```markdown
-#project/work
-#status/in-progress
-#priority/high
+```bash
+export ENABLE_LSP_TOOL=1
 ```
 
-### Tags in Frontmatter
+자세한 설정은 [REFERENCE.md](REFERENCE.md) 참조.
 
-```yaml
----
-tags:
-  - project
-  - project/work
-  - status/active
----
+## 예시
+
+### 백링크 검색
+
+```
+> "TDD" 노트를 참조하는 모든 노트를 찾아줘
+
+1. LSP find_references로 [[TDD]] 검색
+2. 결과: 15개 노트에서 참조
+   - docs/development/테스트.md:23
+   - daily/2025-01-10.md:45
+   ...
 ```
 
-## HTML Support
+### 태그 기반 분석
 
-Obsidian supports a subset of HTML:
+```
+> #project/active 태그가 있는 노트들의 상태를 정리해줘
 
-```markdown
-<div class="my-class">
-  Custom HTML content
-</div>
-
-<details>
-<summary>Click to expand</summary>
-Hidden content here
-</details>
-
-<kbd>Ctrl</kbd> + <kbd>C</kbd>
+1. grep -r "#project/active" --include="*.md"
+2. 각 노트의 frontmatter 확인
+3. 상태 테이블 생성
 ```
 
-## Complete Example
+### 링크 구조 분석
 
-```markdown
----
-title: Project Alpha Overview
-date: 2024-01-15
-tags:
-  - project
-  - documentation
-status: active
----
+```
+> "아키텍처" 노트의 링크 관계를 분석해줘
 
-# Project Alpha Overview
-
-## Summary
-
-This document outlines the key aspects of **Project Alpha**. For related materials, see [[Project Alpha/Resources]] and [[Team Members]].
-
-> [!info] Quick Facts
-> - Start Date: January 2024
-> - Team Size: 5 members
-> - Status: Active
-
-## Key Features
-
-1. [[Feature A]] - Core functionality
-2. [[Feature B]] - User interface
-3. [[Feature C]] - API integration
-
-### Feature A Details
-
-The main equation governing our approach is $f(x) = ax^2 + bx + c$.
-
-![[feature-a-diagram.png|500]]
-
-> [!tip] Implementation Note
-> See [[Technical Specs#^impl-note]] for implementation details.
-
-## Tasks
-
-- [x] Initial planning ^planning-task
-- [ ] Development phase
-- [ ] Testing phase
-- [ ] Deployment
-
-## Code Example
-
-```python
-def process_data(input):
-    return transform(input)
+1. 아키텍처.md 읽기 (outgoing links 파악)
+2. 백링크 검색 (incoming links)
+3. Mermaid 다이어그램으로 시각화
 ```
 
-## Architecture
+## 주의사항
 
-```mermaid
-graph LR
-    A[Input] --> B[Process]
-    B --> C[Output]
-```
+1. **대량 파일 로드 금지**: 한 번에 10개 이하 파일만 처리
+2. **archive 폴더 주의**: 아카이브된 노트는 필요시에만 접근
+3. **토큰 관리**: 작업 완료 후 `/compact` 실행 권장
+4. **LSP 우선**: 텍스트 검색보다 LSP 기능 우선 사용
 
-## Notes
+## 관련 파일
 
-This approach was inspired by ==recent research==[^1].
-
-[^1]: Smith, J. (2024). Modern Approaches to Data Processing.
-
-%%
-TODO: Add more examples
-Review with team next week
-%%
-
-#project/alpha #documentation
-```
-
-## References
-
-- [Obsidian Formatting Syntax](https://help.obsidian.md/Editing+and+formatting/Basic+formatting+syntax)
-- [Advanced Formatting](https://help.obsidian.md/Editing+and+formatting/Advanced+formatting+syntax)
-- [Internal Links](https://help.obsidian.md/Linking+notes+and+files/Internal+links)
-- [Embedding Files](https://help.obsidian.md/Linking+notes+and+files/Embed+files)
-- [Callouts](https://help.obsidian.md/Editing+and+formatting/Callouts)
-- [Properties](https://help.obsidian.md/Editing+and+formatting/Properties)
+- [REFERENCE.md](REFERENCE.md): 상세 설정 및 고급 기능
+- [TROUBLESHOOTING.md](TROUBLESHOOTING.md): 문제 해결 가이드

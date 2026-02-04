@@ -1,7 +1,7 @@
 {
   "name": "puppeteer",
-  "repo": "AIDotNet/MoYuCode",
-  "path": "skills/tools/puppeteer/SKILL.md",
-  "source": "github.com/AIDotNet/MoYuCode",
-  "downloaded_at": "2026-02-02T03:22:19.429792Z"
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/puppeteer/SKILL.md",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "downloaded_at": "2026-02-04T02:55:00.159172Z"
 }

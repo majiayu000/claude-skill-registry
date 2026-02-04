@@ -1,7 +1,7 @@
 {
   "name": "git-worktrees",
-  "repo": "mattg101/SolidLink",
-  "path": "docs/dev/.agent/skills/git-worktrees/SKILL.md",
-  "source": "github.com/mattg101/SolidLink",
-  "downloaded_at": "2026-02-02T04:55:25.700434Z"
+  "repo": "liauw-media/CodeAssist",
+  "path": "skills/workflow/git-worktrees/SKILL.md",
+  "source": "github.com/liauw-media/CodeAssist",
+  "downloaded_at": "2026-02-04T04:39:02.083006Z"
 }

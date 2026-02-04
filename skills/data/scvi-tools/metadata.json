@@ -1,7 +1,7 @@
 {
   "name": "scvi-tools",
-  "repo": "oimiragieo/agent-studio",
-  "path": ".claude/skills/scientific-skills/skills/scvi-tools/SKILL.md",
-  "source": "github.com/oimiragieo/agent-studio",
-  "downloaded_at": "2026-02-02T04:36:34.326067Z"
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/scvi-tools/SKILL.md",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "downloaded_at": "2026-02-04T04:51:26.219192Z"
 }

@@ -1,279 +1,188 @@
 ---
-description: Close task or complete task/project with commit, PR, and completion report
-triggers:
-  - finish task
-  - close task
-  - complete task
-  - close project
-  - complete project
-  - task done
+name: finish-task
+description: Finish current task. Use when user says "dokonči task", "task hotový", "mergni do main", or runs /finish-task.
+allowed-tools: Bash, Read, AskUserQuestion
 ---
 
-# Finish Task Skill
+# Finish Task
 
-Use this skill when completing a task that involved code modifications.
+Complete the current task. Behavior depends on detected mode (MAIN, FEATURE_BRANCH, WORKTREE).
 
-## Completion Checklist
+## Usage
 
-Complete ALL steps in order:
+```
+/finish-task              # Complete current task (auto-detects mode)
+/finish-task --no-test    # Complete without running tests
+```
 
-### 1. Verify All Changes Are Ready
+## Current State
+
+Current branch:
+!git branch --show-current
+
+Uncommitted changes:
+!git status --porcelain
+
+Is worktree:
+!test -f "$(git rev-parse --show-toplevel)/.git" && echo "YES - WORKTREE" || echo "NO - main repo"
+
+## Process
+
+### Step 1: Detect Mode
 
 ```bash
-# Check what's changed
-git status
-git diff --stat
+BRANCH=$(git branch --show-current)
+IS_WORKTREE=false
+if [[ -f "$(git rev-parse --show-toplevel)/.git" ]]; then
+  IS_WORKTREE=true
+fi
+
+if [[ "$IS_WORKTREE" == "true" ]]; then
+  MODE="WORKTREE"
+elif [[ "$BRANCH" != "main" && "$BRANCH" != "master" ]]; then
+  MODE="FEATURE_BRANCH"
+else
+  MODE="MAIN"
+fi
 ```
 
-Review that all intended changes are present and no unintended files are modified.
+### Step 2: Detect Current Task
 
-### 2. Run Tests (if applicable)
+**MAIN mode:** Find task from in_progress status in task files
+**FEATURE_BRANCH/WORKTREE:** Extract from branch name `phase-XX/task-YY-description`
+
+### Step 3: Check Prerequisites
+
+Before finishing:
+1. No uncommitted changes (or use `--force` to override)
+2. Task file exists and is readable
+
+### Step 4: Run Tests (optional)
+
+Unless `--no-test` is specified:
 
 ```bash
-# For configurator
-cd inav-configurator
-npm test
-
-# For firmware - build check
-cd inav
-make SITL
+dotnet test EShopDemo.sln --filter "Category!=Integration"
 ```
 
-### 3. Stage Changes
+If tests fail, the script stops and reports the error.
 
-Stage files selectively:
-```bash
-git add <specific-files>
-```
-
-Review what's staged:
-```bash
-git diff --cached --stat
-```
-
-### 4. Create Commit Message
-
-Write a clear commit message. **Do NOT mention Claude, AI, or automation.**
-
-**Format:**
-```
-<short summary - what changed>
-
-<detailed explanation if needed>
-- bullet points for multiple changes
-- explain the "why" not just the "what"
-
-Fixes #<issue-number>  (if applicable)
-```
-
-**Open in gedit for review:**
-```bash
-# Write message to temp file and open in gedit
-cat > /tmp/commit_msg.txt << 'EOF'
-<your commit message here>
-EOF
-
-gedit /tmp/commit_msg.txt
-```
-
-After reviewing/editing in gedit, commit:
-```bash
-git commit -F /tmp/commit_msg.txt
-```
-
-### 5. Push to Remote
+### Step 5: Check Code Formatting
 
 ```bash
-git push origin <branch-name>
-
-# If new branch, set upstream:
-git push -u origin <branch-name>
+dotnet csharpier check .
 ```
 
-### 6. Create PR (if appropriate)
+If formatting check fails, suggest running `dotnet csharpier format .` to fix.
 
-**When to create a PR:**
-- Task is complete and ready for upstream review
-- Branch contains a coherent, reviewable set of changes
+### Step 6: Mode-Specific Actions
 
-**When NOT to create a PR:**
-- Work is still in progress
-- Changes are local-only or experimental
-
-**Check if PR already exists:**
+#### MAIN Mode
+Just update task status - no merge needed:
 ```bash
-gh pr list --head <branch-name>
+# Update task file: 🔵 in_progress → ✅ completed
+# Commit the status change
+git add <task-file>
+git commit -m "[XX-YY] docs: mark task as completed"
 ```
 
-**Create PR using gh CLI:**
+#### FEATURE_BRANCH Mode
+Squash merge all commits to main:
 ```bash
-# For configurator
-cd inav-configurator
-gh pr create --title "<descriptive title>" --body "$(cat << 'EOF'
-## Summary
+# Switch to main
+git checkout main
 
-<Brief description of changes>
+# Squash merge (combines all branch commits into one)
+git merge --squash <feature-branch>
 
-## Changes
+# Commit with task prefix
+git commit -m "[XX-YY] feat: <summary of all changes>"
 
-- Change 1
-- Change 2
-
-## Testing
-
-<How this was tested>
-
-## Related Issues
-
-Fixes #<issue-number> (if applicable)
-EOF
-)"
-
-# For firmware
-cd inav
-gh pr create --title "<descriptive title>" --body "$(cat << 'EOF'
-## Summary
-
-<Brief description of changes>
-
-## Changes
-
-- Change 1
-- Change 2
-
-## Testing
-
-<How this was tested>
-
-## Related Issues
-
-Fixes #<issue-number> (if applicable)
-EOF
-)"
+# Delete feature branch
+git branch -d <feature-branch>
 ```
 
-### 7. Release the Lock
-
+#### WORKTREE Mode
+Squash merge to main in the main repository:
 ```bash
-# For firmware
-rm claude/locks/inav.lock
+# Get main repo path
+MAIN_REPO=$(cat "$(git rev-parse --show-toplevel)/.git" | sed 's/gitdir: //' | xargs dirname | xargs dirname)
 
-# For configurator
-rm claude/locks/inav-configurator.lock
+# In main repo: squash merge
+cd "$MAIN_REPO"
+git merge --squash <worktree-branch>
+git commit -m "[XX-YY] feat: <summary of all changes>"
+
+# Offer to remove worktree
+# Ask user: "Remove worktree directory?"
 ```
 
-### 8. Send Completion Report
+## Arguments
 
-Create a comprehensive completion report in `claude/developer/email/sent/`. The manager will use this to update `claude/projects/<project-name>/`.
+- `--no-test` - Skip running tests
+- `--force` - Continue even with uncommitted changes
 
-**Filename:** `YYYY-MM-DD-HHMM-completed-<task-name>.md`
+## Output
 
-```markdown
-# Task Completion: <Task Name>
+On success (MAIN mode):
+```
+Finishing task: task-02 - Shared Kernel
+Mode: MAIN
 
-**Date:** <date>
-**From:** Developer
-**Task:** <task-name>
-**Project:** <project-name in claude/projects/>
+Running unit tests... ✓
+Checking code formatting... ✓
+Task status updated to ✅ completed
 
-## Status: COMPLETE
-
-## Summary
-
-<Brief summary of what was accomplished>
-
-## Implementation Approach
-
-<How you implemented it and key technical decisions>
-
-## Changes Made
-
-- <change 1>
-- <change 2>
-
-## Test Results
-
-<What testing was done, results>
-
-## Known Limitations / Follow-up
-
-<Any limitations or future work needed>
-
-## Commit
-
-- **Branch:** <branch-name>
-- **Commit:** <commit-hash>
-
-## PR (if created)
-
-- **PR:** #<number>
-- **URL:** <url>
-
-## Lock Released
-
-Released <repo>.lock
-
----
-**Developer**
+Task task-02 completed successfully!
 ```
 
-Copy to manager inbox:
-```bash
-cp claude/developer/email/sent/<report>.md claude/manager/email/inbox/
+On success (FEATURE_BRANCH mode):
+```
+Finishing task: task-02 - Shared Kernel
+Mode: FEATURE_BRANCH
+Branch: phase-01/task-02-shared-kernel
+
+Running unit tests... ✓
+Checking code formatting... ✓
+Squash merging to main...
+Committed: [01-02] feat: implement shared kernel with Entity and ValueObject base classes
+Deleted branch: phase-01/task-02-shared-kernel
+
+Task task-02 completed successfully!
 ```
 
-### Role Separation
-
-**Developer responsibilities:**
-- Complete the code work
-- Add reports, analysis, or notes to the project directory (`active/<project>/`)
-- Create commit and PR
-- Release the lock
-- Send completion report to manager inbox
-
-**Manager responsibilities (after receiving report):**
-- Verify work is complete
-- Move project directory from `active/` to `completed/`
-- Update `INDEX.md` (remove entry)
-- Update `completed/INDEX.md` (add entry)
-- Archive the completion report
-
-The developer updates project content. The manager handles project lifecycle (moving directories, updating indexes).
-
-## Commit Message Guidelines
-
-**Good:**
+On success (WORKTREE mode):
 ```
-Fix GPS recovery after signal loss
+Finishing task: task-02 - Shared Kernel
+Mode: WORKTREE
+Branch: phase-01/task-02-shared-kernel
 
-Move lastUpdateTime update outside isFirstGPSUpdate block so timestamp
-is recorded on first reading after recovery, preventing position
-estimate timeout.
+Running unit tests... ✓
+Checking code formatting... ✓
+Squash merging to main (in main repo)...
+Committed: [01-02] feat: implement shared kernel with Entity and ValueObject base classes
 
-Fixes #11049
+Remove worktree directory? [y/N]
 ```
 
-**Bad:**
+On failure:
 ```
-🤖 Generated with Claude Code
-
-Co-Authored-By: Claude <noreply@anthropic.com>
+Error: Unit tests failed
+Fix the failing tests before completing the task.
 ```
 
-**Never include:**
-- References to Claude, AI, LLM, or automation
-- Emojis (unless project convention)
-- Co-authored-by AI lines
-- "Generated by" attributions
+## Safety Rules
 
----
+1. NEVER merge with uncommitted changes (unless --force)
+2. ALWAYS run tests before marking complete (unless --no-test)
+3. ALWAYS check formatting before merge
+4. For squash merge, generate meaningful commit message summarizing all changes
+5. ALWAYS ask before removing worktree directory
 
-Be sure any files you created are organized properly according to claude/developer/INDEX.md
+## Integration
 
-
-## Related Skills
-
-- **start-task** - Begin tasks with proper setup
-- **create-pr** - Create pull request after task completion
-- **check-builds** - Verify builds pass before finishing
-- **git-workflow** - Commit changes and manage branches
+This skill is part of the task lifecycle:
+1. `/task-status` - see what's available
+2. `/start-task XX` - begin working
+3. `/commit` - commit changes
+4. `/finish-task` - complete (behavior depends on mode)

@@ -1,9 +1,7 @@
 {
   "name": "cnv-pipeline",
-  "description": "End-to-end copy number variant detection workflow from BAM files. Covers CNVkit analysis for exome/targeted sequencing with visualization and annotation.",
   "repo": "GPTomics/bioSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GPTomics/bioSkills"
+  "path": "workflows/cnv-pipeline/SKILL.md",
+  "source": "github.com/GPTomics/bioSkills",
+  "downloaded_at": "2026-02-04T02:48:51.529759Z"
 }

@@ -1,376 +1,176 @@
 ---
 name: database-schema
-description: Schema awareness - read before coding, type generation, prevent column errors
+description: Enforces project database schema conventions when creating or modifying Drizzle ORM table definitions, including constraints, indexes, relations, and column patterns. This skill should be used proactively whenever working with schema files to ensure consistent schema design for PostgreSQL with Neon serverless.
 ---
 
-# Database Schema Awareness Skill
+# Database Schema Conventions Enforcer
 
-*Load with: base.md + [your database skill]*
+## Purpose
 
-**Problem:** Claude forgets schema details mid-session - wrong column names, missing fields, incorrect types. TDD catches this at runtime, but we can prevent it earlier.
+This skill enforces the project database schema conventions automatically during schema development. It ensures consistent patterns for table definitions, constraints, indexes, foreign keys, and column naming in Drizzle ORM with PostgreSQL (Neon serverless).
 
----
+## When to Use This Skill
 
-## Core Rule: Read Schema Before Writing Database Code
+Use this skill proactively in the following scenarios:
 
-**MANDATORY: Before writing ANY code that touches the database:**
+- Creating new schema files in `src/lib/db/schema/`
+- Modifying existing table definitions
+- Adding indexes or constraints
+- Defining foreign key relationships
+- Working with Drizzle ORM schema syntax (`drizzle-orm/pg-core`)
+- Reviewing or fixing schema issues
+- Any task involving database structure changes
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  1. READ the schema file (see locations below)              │
-│  2. VERIFY columns/types you're about to use exist          │
-│  3. REFERENCE schema in your response when writing queries  │
-│  4. TYPE-CHECK using generated types (Drizzle/Prisma/etc)   │
-└─────────────────────────────────────────────────────────────┘
-```
+**Important**: This skill should activate automatically without explicit user request whenever schema work is detected.
 
-**If schema file doesn't exist → CREATE IT before proceeding.**
+## How to Use This Skill
 
----
+### 1. Load Conventions Reference
 
-## Schema File Locations (By Stack)
-
-| Stack | Schema Location | Type Generation |
-|-------|-----------------|-----------------|
-| **Drizzle** | `src/db/schema.ts` or `drizzle/schema.ts` | Built-in TypeScript |
-| **Prisma** | `prisma/schema.prisma` | `npx prisma generate` |
-| **Supabase** | `supabase/migrations/*.sql` + types | `supabase gen types typescript` |
-| **SQLAlchemy** | `app/models/*.py` or `src/models.py` | Pydantic models |
-| **TypeORM** | `src/entities/*.ts` | Decorators = types |
-| **Raw SQL** | `schema.sql` or `migrations/` | Manual types required |
-
-### Schema Reference File (Recommended)
-
-Create `_project_specs/schema-reference.md` for quick lookup:
-
-```markdown
-# Database Schema Reference
-
-*Auto-generated or manually maintained. Claude: READ THIS before database work.*
-
-## Tables
-
-### users
-| Column | Type | Nullable | Default | Notes |
-|--------|------|----------|---------|-------|
-| id | uuid | NO | gen_random_uuid() | PK |
-| email | text | NO | - | Unique |
-| name | text | YES | - | Display name |
-| created_at | timestamptz | NO | now() | - |
-| updated_at | timestamptz | NO | now() | - |
-
-### orders
-| Column | Type | Nullable | Default | Notes |
-|--------|------|----------|---------|-------|
-| id | uuid | NO | gen_random_uuid() | PK |
-| user_id | uuid | NO | - | FK → users.id |
-| status | text | NO | 'pending' | enum: pending/paid/shipped/delivered |
-| total_cents | integer | NO | - | Amount in cents |
-| created_at | timestamptz | NO | now() | - |
-
-## Relationships
-- users 1:N orders (user_id)
-
-## Enums
-- order_status: pending, paid, shipped, delivered
-```
-
----
-
-## Pre-Code Checklist (Database Work)
-
-Before writing any database code, Claude MUST:
-
-```markdown
-### Schema Verification Checklist
-- [ ] Read schema file: `[path to schema]`
-- [ ] Columns I'm using exist: [list columns]
-- [ ] Types match my code: [list type mappings]
-- [ ] Relationships are correct: [list FKs]
-- [ ] Nullable fields handled: [list nullable columns]
-```
-
-**Example in practice:**
-
-```markdown
-### Schema Verification for TODO-042 (Add order history endpoint)
-
-- [x] Read schema: `src/db/schema.ts`
-- [x] Columns exist: orders.id, orders.user_id, orders.status, orders.total_cents, orders.created_at
-- [x] Types: id=uuid→string, total_cents=integer→number, status=text→OrderStatus enum
-- [x] Relationships: orders.user_id → users.id (many-to-one)
-- [x] Nullable: none of these columns are nullable
-```
-
----
-
-## Type Generation Commands
-
-### Drizzle (TypeScript)
-
-```typescript
-// Schema defines types automatically
-// src/db/schema.ts
-import { pgTable, uuid, text, integer, timestamp } from 'drizzle-orm/pg-core';
-
-export const users = pgTable('users', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  email: text('email').notNull().unique(),
-  name: text('name'),
-  createdAt: timestamp('created_at').notNull().defaultNow(),
-});
-
-export const orders = pgTable('orders', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  userId: uuid('user_id').notNull().references(() => users.id),
-  status: text('status').notNull().default('pending'),
-  totalCents: integer('total_cents').notNull(),
-  createdAt: timestamp('created_at').notNull().defaultNow(),
-});
-
-// Inferred types - USE THESE
-export type User = typeof users.$inferSelect;
-export type NewUser = typeof users.$inferInsert;
-export type Order = typeof orders.$inferSelect;
-export type NewOrder = typeof orders.$inferInsert;
-```
-
-### Prisma
-
-```prisma
-// prisma/schema.prisma
-model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  name      String?
-  orders    Order[]
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@map("users")
-}
-
-model Order {
-  id         String   @id @default(uuid())
-  userId     String   @map("user_id")
-  user       User     @relation(fields: [userId], references: [id])
-  status     String   @default("pending")
-  totalCents Int      @map("total_cents")
-  createdAt  DateTime @default(now()) @map("created_at")
-
-  @@map("orders")
-}
-```
-
-```bash
-# Generate types after schema changes
-npx prisma generate
-```
-
-### Supabase
-
-```bash
-# Generate TypeScript types from live database
-supabase gen types typescript --local > src/types/database.ts
-
-# Or from remote
-supabase gen types typescript --project-id your-project-id > src/types/database.ts
-```
-
-```typescript
-// Use generated types
-import { Database } from '@/types/database';
-
-type User = Database['public']['Tables']['users']['Row'];
-type NewUser = Database['public']['Tables']['users']['Insert'];
-type Order = Database['public']['Tables']['orders']['Row'];
-```
-
-### SQLAlchemy (Python)
-
-```python
-# app/models/user.py
-from sqlalchemy import Column, String, DateTime
-from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.sql import func
-from app.db import Base
-import uuid
-
-class User(Base):
-    __tablename__ = "users"
-
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    email = Column(String, nullable=False, unique=True)
-    name = Column(String, nullable=True)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-
-    # Relationships
-    orders = relationship("Order", back_populates="user")
-```
-
-```python
-# app/schemas/user.py - Pydantic for API validation
-from pydantic import BaseModel, EmailStr
-from uuid import UUID
-from datetime import datetime
-
-class UserBase(BaseModel):
-    email: EmailStr
-    name: str | None = None
-
-class UserCreate(UserBase):
-    pass
-
-class User(UserBase):
-    id: UUID
-    created_at: datetime
-
-    class Config:
-        from_attributes = True
-```
-
----
-
-## Schema-Aware TDD Workflow
-
-Extend the standard TDD workflow for database work:
+Before creating or modifying any schema, load the complete conventions document:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  0. SCHEMA: Read and verify schema before anything else     │
-│     └─ Read schema file                                     │
-│     └─ Complete Schema Verification Checklist               │
-│     └─ Note any missing columns/tables needed               │
-├─────────────────────────────────────────────────────────────┤
-│  1. RED: Write tests that use correct column names          │
-│     └─ Import generated types                               │
-│     └─ Use type-safe queries in tests                       │
-│     └─ Tests should fail on logic, NOT schema errors        │
-├─────────────────────────────────────────────────────────────┤
-│  2. GREEN: Implement with type-safe queries                 │
-│     └─ Use ORM types, not raw strings                       │
-│     └─ TypeScript/mypy catches column mismatches            │
-├─────────────────────────────────────────────────────────────┤
-│  3. VALIDATE: Type check catches schema drift               │
-│     └─ tsc --noEmit / mypy catches wrong columns            │
-│     └─ Tests validate runtime behavior                      │
-└─────────────────────────────────────────────────────────────┘
+Read references/Database-Schema-Conventions.md
 ```
 
----
+This reference contains the authoritative schema standards including:
 
-## Common Schema Mistakes (And How to Prevent)
+- Table definition templates
+- Column conventions and patterns
+- Foreign key relationship rules
+- Check constraint patterns
+- Index strategy (single, composite, covering, GIN)
+- Junction table patterns
+- Column naming conventions
+- Constants usage
 
-| Mistake | Example | Prevention |
-|---------|---------|------------|
-| Wrong column name | `user.userName` vs `user.name` | Read schema, use generated types |
-| Wrong type | `totalCents` as string | Type generation catches this |
-| Missing nullable check | `user.name!` when nullable | Schema shows nullable fields |
-| Wrong FK relationship | `order.userId` vs `order.user_id` | Check schema column names |
-| Missing column | Using `user.avatar` that doesn't exist | Read schema before coding |
-| Wrong enum value | `status: 'complete'` vs `'completed'` | Document enums in schema reference |
+### 2. Apply Conventions During Development
 
-### Type-Safe Query Examples
+When writing schema code, ensure strict adherence to all conventions:
 
-**Drizzle (catches errors at compile time):**
-```typescript
-// ✅ Correct - uses schema-defined columns
-const user = await db.select().from(users).where(eq(users.email, email));
+**Table Structure**:
 
-// ❌ Wrong - TypeScript error: 'userName' doesn't exist
-const user = await db.select().from(users).where(eq(users.userName, email));
+- Use `pgTable` with constraints/indexes in the callback function
+- Order columns alphabetically within the column definition object
+- Always include standard columns: `id`, `createdAt`, `updatedAt`
+- Include soft delete column when applicable: `deletedAt` (timestamp, null = not deleted)
+
+**Column Patterns**:
+
+- UUID primary keys with `defaultRandom()` (never auto-increment)
+- Use `SCHEMA_LIMITS` constants for all varchar lengths
+- Use `DEFAULTS` constants for default values
+- Use `varchar` with explicit length (never `text`)
+- Timestamps with `defaultNow().notNull()`
+
+**Foreign Key Rules**:
+
+- `cascade` - when parent owns child (delete children with parent)
+- `set null` - for optional relationships
+- `restrict` - to prevent orphans
+
+**Index Strategy**:
+
+- Single column indexes for frequently filtered columns
+- Composite indexes for multi-column WHERE conditions
+- Covering indexes for common queries (avoid table lookups)
+- Descending indexes for ORDER BY ... DESC queries
+- GIN indexes for text search and JSONB columns
+- Always index foreign key columns
+
+**Check Constraints**:
+
+- Validate numeric ranges (year, positive values)
+- Validate non-empty required strings
+- Validate date logic (created <= updated)
+- Validate non-negative counters
+
+### 3. Automatic Convention Enforcement
+
+After generating or modifying schema code, immediately perform automatic validation and correction:
+
+1. **Scan for violations**: Review the generated code against all conventions from the reference document
+2. **Identify issues**: Create a mental checklist of any violations found:
+   - Missing standard columns (id, createdAt, updatedAt)
+   - Hardcoded lengths instead of `SCHEMA_LIMITS`
+   - Hardcoded defaults instead of `DEFAULTS`
+   - Missing foreign key indexes
+   - Incorrect cascade rules
+   - Missing check constraints
+   - Using `text` instead of `varchar`
+   - Using auto-increment instead of UUID
+   - Missing soft delete column (`deletedAt`) when needed
+   - Incorrect column naming (snake_case in DB, camelCase in code)
+
+3. **Fix automatically**: Apply corrections immediately without asking for permission:
+   - Add missing standard columns
+   - Replace hardcoded values with constants
+   - Add missing indexes for foreign keys
+   - Add appropriate check constraints
+   - Fix column type issues
+   - Reorder columns alphabetically
+   - Add missing soft delete column (`deletedAt`)
+
+4. **Verify completeness**: Ensure all conventions are satisfied before presenting code to user
+
+### 4. Reporting
+
+After automatically fixing violations, provide a brief summary:
+
+```
+✓ Database schema conventions enforced:
+  - Added missing timestamp columns (createdAt, updatedAt)
+  - Replaced hardcoded length with SCHEMA_LIMITS.ENTITY.NAME.MAX
+  - Added soft delete column (deletedAt)
+  - Added foreign key index: collection_user_id_idx
+  - Added check constraint: collection_name_not_empty
 ```
 
-**Prisma (catches errors at compile time):**
-```typescript
-// ✅ Correct
-const user = await prisma.user.findUnique({ where: { email } });
+**Do not ask for permission to apply fixes** - the skill's purpose is automatic enforcement.
 
-// ❌ Wrong - TypeScript error
-const user = await prisma.user.findUnique({ where: { userName: email } });
+## Convention Categories
+
+The complete conventions are detailed in `references/Database-Schema-Conventions.md`. Key categories include:
+
+1. **File Structure** - Schema file organization patterns
+2. **Table Definition Template** - Standard pgTable structure
+3. **Column Conventions** - Standard, soft delete, counter, visibility columns
+4. **String Columns** - varchar with SCHEMA_LIMITS
+5. **Numeric Columns** - Decimal precision, integer patterns
+6. **Foreign Key Patterns** - Cascade, set null, restrict rules
+7. **Check Constraints** - Numeric, string, date validation
+8. **Index Strategy** - Single, composite, covering, descending, GIN
+9. **Junction Tables** - Many-to-many relationship patterns
+10. **Column Naming** - snake_case DB, camelCase code conventions
+
+## Anti-Patterns to Avoid
+
+1. **Never hardcode lengths** - Use `SCHEMA_LIMITS` constants
+2. **Never hardcode defaults** - Use `DEFAULTS` constants
+3. **Never skip timestamps** - Always include `createdAt`, `updatedAt`
+4. **Never use auto-increment** - Use UUID primary keys
+5. **Never skip indexes** - Index all foreign keys and filter columns
+6. **Never cascade delete without consideration** - Choose appropriate delete behavior
+7. **Never skip check constraints** - Validate data at database level
+8. **Never use `text` type** - Use `varchar` with explicit length
+
+## Important Notes
+
+- **Automatic enforcement**: Apply fixes immediately without requesting permission
+- **No compromises**: All conventions must be followed strictly
+- **Reference first**: Always load the conventions reference before working with schema code
+- **Complete validation**: Check all aspects of the conventions, not just obvious violations
+- **Proactive application**: Use this skill automatically when schema work is detected, even if user doesn't mention conventions
+
+## Workflow Summary
+
+```
+1. Detect schema work (create/modify files in db/schema/)
+2. Load references/Database-Schema-Conventions.md
+3. Generate or modify schema code following all conventions
+4. Scan generated code for any violations
+5. Automatically fix all violations found
+6. Present corrected code to user with brief summary of fixes applied
 ```
 
-**Raw SQL (NO protection - avoid):**
-```typescript
-// ❌ Dangerous - no type checking, easy to get wrong
-const result = await db.query('SELECT * FROM users WHERE user_name = $1', [email]);
-// Should be 'email' not 'user_name' - won't catch until runtime
-```
-
----
-
-## Migration Workflow
-
-When schema changes are needed:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  1. Update schema file (Drizzle/Prisma/SQLAlchemy)          │
-├─────────────────────────────────────────────────────────────┤
-│  2. Generate migration                                       │
-│     └─ Drizzle: npx drizzle-kit generate                    │
-│     └─ Prisma: npx prisma migrate dev --name add_column     │
-│     └─ Supabase: supabase migration new add_column          │
-├─────────────────────────────────────────────────────────────┤
-│  3. Regenerate types                                         │
-│     └─ Prisma: npx prisma generate                          │
-│     └─ Supabase: supabase gen types typescript              │
-├─────────────────────────────────────────────────────────────┤
-│  4. Update schema-reference.md                               │
-├─────────────────────────────────────────────────────────────┤
-│  5. Run type check - find all broken code                    │
-│     └─ npm run typecheck                                    │
-├─────────────────────────────────────────────────────────────┤
-│  6. Fix type errors, update tests, run full validation       │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Session Start Protocol
-
-**When starting a session that involves database work:**
-
-1. Read schema file immediately
-2. Read `_project_specs/schema-reference.md` if exists
-3. Note in session state what tables/columns are relevant
-4. Reference schema explicitly when writing code
-
-**Session state example:**
-```markdown
-## Current Session - Database Context
-
-**Schema read:** ✓ src/db/schema.ts
-**Tables in scope:** users, orders, order_items
-**Key columns:**
-- users: id, email, name, created_at
-- orders: id, user_id, status, total_cents
-- order_items: id, order_id, product_id, quantity, price_cents
-```
-
----
-
-## Anti-Patterns
-
-- ❌ **Guessing column names** - Always read schema first
-- ❌ **Using raw SQL strings** - Use ORM with type generation
-- ❌ **Hardcoding without verification** - Check schema before using any column
-- ❌ **Ignoring type errors** - Schema drift shows up as type errors
-- ❌ **Not regenerating types** - After migration, always regenerate
-- ❌ **Assuming nullable** - Check schema for nullable columns
-
----
-
-## Checklist
-
-### Setup
-- [ ] Schema file exists in standard location
-- [ ] Type generation configured
-- [ ] `_project_specs/schema-reference.md` created
-- [ ] Types regenerate on schema change
-
-### Per-Task
-- [ ] Schema read before writing database code
-- [ ] Schema Verification Checklist completed
-- [ ] Using generated types (not raw strings)
-- [ ] Type check passes (catches column errors)
-- [ ] Tests use correct schema
+This workflow ensures every database schema in the project project maintains consistent, high-quality definitions that follow all established conventions.

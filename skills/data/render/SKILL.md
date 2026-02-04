@@ -1,140 +1,440 @@
 ---
 name: render
-description: Check deployments, manage services, monitor databases, and view logs on Render
-category: devops
+description: Deploys web applications on Render with automatic builds, managed databases, and zero-config SSL. Use when deploying web services, static sites, or setting up managed infrastructure.
 ---
 
-# Render Skill
+# Render
 
-## Overview
-Enables Claude to access Render to check deployment status, manage web services and databases, monitor resource usage, and view logs for cloud deployments.
+Cloud platform for deploying web services, static sites, and databases with automatic builds from Git.
 
-## Quick Install
+## Quick Start
+
+1. Connect GitHub/GitLab at render.com
+2. Create new Web Service
+3. Select repository
+4. Render auto-detects framework
+5. Deploy
+
+## Service Types
+
+### Web Service
+
+Long-running HTTP servers:
+
+```yaml
+# render.yaml
+services:
+  - type: web
+    name: api
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+```
+
+### Static Site
+
+Frontend applications:
+
+```yaml
+services:
+  - type: web
+    name: frontend
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+```
+
+### Background Worker
+
+Non-HTTP processes:
+
+```yaml
+services:
+  - type: worker
+    name: worker
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run worker
+```
+
+### Cron Job
+
+Scheduled tasks:
+
+```yaml
+services:
+  - type: cron
+    name: daily-cleanup
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm run cleanup
+    schedule: "0 0 * * *"
+```
+
+## Configuration
+
+### render.yaml (Blueprint)
+
+```yaml
+# render.yaml
+services:
+  - type: web
+    name: my-app
+    runtime: node
+    region: oregon
+
+    # Build
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+
+    # Environment
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mydb
+          property: connectionString
+
+    # Health check
+    healthCheckPath: /health
+
+    # Scaling
+    plan: starter
+    numInstances: 1
+
+    # Auto-deploy
+    autoDeploy: true
+
+    # Branch
+    branch: main
+
+databases:
+  - name: mydb
+    plan: starter
+    databaseName: myapp
+    user: myuser
+
+envVarGroups:
+  - name: shared-settings
+    envVars:
+      - key: LOG_LEVEL
+        value: info
+```
+
+### Environment Variables
+
+```yaml
+envVars:
+  # Static value
+  - key: API_KEY
+    value: my-secret-key
+
+  # Sync from group
+  - key: LOG_LEVEL
+    fromGroup: shared-settings
+
+  # From database
+  - key: DATABASE_URL
+    fromDatabase:
+      name: mydb
+      property: connectionString
+
+  # From service
+  - key: API_URL
+    fromService:
+      name: api
+      type: web
+      property: host
+```
+
+## Node.js Deployment
+
+### package.json
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
+```
+
+### Express/Fastify
+
+```typescript
+const port = process.env.PORT || 10000;
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
+});
+```
+
+## Next.js Deployment
+
+### Configuration
+
+```yaml
+services:
+  - type: web
+    name: nextjs-app
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+```
+
+Render auto-detects Next.js and configures appropriately.
+
+## Static Site Deployment
+
+### React/Vite
+
+```yaml
+services:
+  - type: web
+    name: react-app
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+```
+
+### Headers & Redirects
+
+```yaml
+services:
+  - type: web
+    name: static-site
+    runtime: static
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+    routes:
+      - type: redirect
+        source: /old-path
+        destination: /new-path
+        status: 301
+```
+
+## Databases
+
+### PostgreSQL
+
+```yaml
+databases:
+  - name: mydb
+    plan: starter  # starter, standard, pro
+    databaseName: myapp
+    user: myuser
+    region: oregon
+```
+
+### Redis
+
+```yaml
+services:
+  - type: redis
+    name: cache
+    plan: starter
+    maxmemoryPolicy: allkeys-lru
+```
+
+### Connection
+
+```yaml
+envVars:
+  - key: DATABASE_URL
+    fromDatabase:
+      name: mydb
+      property: connectionString
+
+  - key: REDIS_URL
+    fromService:
+      name: cache
+      type: redis
+      property: connectionString
+```
+
+## Scaling
+
+### Instance Types
+
+| Plan | RAM | CPU |
+|------|-----|-----|
+| Free | 512 MB | Shared |
+| Starter | 512 MB | 0.5 |
+| Standard | 2 GB | 1 |
+| Pro | 4 GB | 2 |
+| Pro Plus | 8 GB | 4 |
+
+### Horizontal Scaling
+
+```yaml
+services:
+  - type: web
+    name: api
+    plan: standard
+    numInstances: 3
+```
+
+### Auto-Scaling (Team plans)
+
+Configure in dashboard:
+- Min/max instances
+- CPU/memory thresholds
+
+## Custom Domains
+
+1. Add domain in service settings
+2. Configure DNS:
+
+```
+# A record
+@ -> render IP
+
+# CNAME for subdomain
+www -> your-app.onrender.com
+```
+
+3. SSL certificate auto-provisioned
+
+## Health Checks
+
+```yaml
+services:
+  - type: web
+    healthCheckPath: /health
+```
+
+```typescript
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+```
+
+## Dockerfile Deployment
+
+```yaml
+services:
+  - type: web
+    name: docker-app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+```
+
+```dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+RUN npm run build
+
+EXPOSE 10000
+
+CMD ["node", "dist/index.js"]
+```
+
+## Preview Environments
+
+Enable in service settings:
+1. Pull Request Previews: On
+2. Each PR gets unique URL
+3. Auto-deleted on merge
+
+## Monorepo Support
+
+### Root Directory
+
+```yaml
+services:
+  - type: web
+    name: api
+    rootDir: apps/api
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+```
+
+### Multiple Services
+
+```yaml
+services:
+  - type: web
+    name: web
+    rootDir: apps/web
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+
+  - type: web
+    name: api
+    rootDir: apps/api
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+```
+
+## Persistent Disk
+
+```yaml
+services:
+  - type: web
+    name: app
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 10
+```
+
+## Private Services
+
+Internal services not exposed to internet:
+
+```yaml
+services:
+  - type: pserv  # Private service
+    name: internal-api
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+```
+
+Access via internal DNS: `internal-api:10000`
+
+## CLI (Render CLI)
 
 ```bash
-curl -sSL https://canifi.com/skills/render/install.sh | bash
+# Install
+npm install -g @render/cli
+
+# Login
+render login
+
+# Deploy
+render deploy
+
+# Logs
+render logs --service my-app
+
+# SSH
+render ssh my-app
 ```
 
-Or manually:
-```bash
-cp -r skills/render ~/.canifi/skills/
-```
-
-## Setup
-
-Configure via [canifi-env](https://canifi.com/setup/scripts):
-
-```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
-
-canifi-env set RENDER_EMAIL "your-email@example.com"
-```
-
-## Privacy & Authentication
-
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
-
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
-
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
-```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
-```
-
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
-
-## Capabilities
-- View deployment status and history
-- Check service health and metrics
-- Monitor database connections
-- View service logs
-- Check scheduled jobs (cron)
-- Manage environment groups
-
-## Usage Examples
-
-### Example 1: Check Services
-```
-User: "What's the status of my Render services?"
-Claude: I'll check your Render dashboard.
-- Opens dashboard.render.com via Playwright MCP
-- Logs into account
-- Services:
-  - Web Service (api): Running
-  - Web Service (frontend): Running
-  - PostgreSQL: Available
-  - Redis: Available
-- All services healthy
-- Last deploy: 4 hours ago
-```
-
-### Example 2: View Logs
-```
-User: "Show logs for my API"
-Claude: I'll check the service logs.
-- Views API service logs
-- Recent activity:
-  - Server listening on port 10000
-  - Connected to database
-  - Healthy endpoint responding
-  - 234 requests/minute
-- Errors: 0 in last hour
-- Memory: 256MB used
-```
-
-### Example 3: Check Database
-```
-User: "How's my Render database?"
-Claude: I'll check database status.
-- Views PostgreSQL instance
-- Status: Available
-- Connections: 5/100
-- Storage: 1.2GB / 5GB
-- Backups: Daily, 7 retained
-- Last backup: 6 hours ago
-- Region: Oregon
-```
-
-## Authentication Flow
-1. Navigate to dashboard.render.com via Playwright MCP
-2. Sign in with email or GitHub
-3. Enter password or OAuth
-4. Handle 2FA if enabled
-5. Maintain session for dashboard access
-
-## Error Handling
-- Login Failed: Try GitHub OAuth
-- Service Down: Check crash logs
-- Database Full: Alert user
-- Session Expired: Re-authenticate
-- Deploy Failed: View build logs
-- Rate Limited: Wait and retry
-
-## Self-Improvement Instructions
-After each interaction:
-- Track deployment patterns
-- Note resource usage
-- Log common errors
-- Document UI changes
-
-Suggest updates when:
-- Render updates dashboard
-- New regions added
-- Features expand
-- Pricing changes
-
-## Notes
-- Simple cloud platform
-- Free tier for static sites
-- Managed databases included
-- Auto-scaling available
-- Preview environments
-- Blueprint for IaC
-- Good Heroku alternative
+See [references/configuration.md](references/configuration.md) for complete render.yaml options.

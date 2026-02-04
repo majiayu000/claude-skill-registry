@@ -1,175 +1,75 @@
 ---
-name: problem-framing
-description: Мета-фреймворк структурированного решения любых задач. Определяет область знаний, находит существующие фреймворки через web research, валидирует подходы, выявляет типичные ошибки и constraints. ОБЯЗАТЕЛЬНО использует sequential thinking и web research на каждом запуске. Активировать только при явном запросе пользователя на "problem-framing", "фрейминг задачи" или "структурированный анализ задачи".
+name: discovery.problem_framing
+phase: discovery
+roles:
+  - Product Manager
+description: Frame the core customer problem, evidence, and success hypothesis before solutioning.
+variables:
+  required:
+    - name: product
+      description: Product, program, or initiative under assessment.
+    - name: segment
+      description: Target customer segment or persona focus.
+    - name: evidence_sources
+      description: Primary sources backing the problem statement (e.g., interviews, surveys).
+  optional:
+    - name: timeframe
+      description: Planning horizon for the problem framing, such as Q3 or "next release".
+outputs:
+  - Problem statement and context bullet list.
+  - Evidence summary table tying sources to insights.
+  - Success hypothesis, leading indicators, and guardrails.
 ---
 
-# Problem Framing
+# Purpose
+Equip product managers with a repeatable prompt that validates the customer problem, supporting evidence, and desired outcomes before discovery work begins.
 
-Мета-фреймворк для структурированного подхода к решению задач. Основан на принципе Эйнштейна: понимание проблемы — это 50% её решения.
+# Pre-run Checklist
+- ✅ Confirm discovery inputs are synthesized from recent research.
+- ✅ Align with design and analytics on the persona focus.
+- ✅ Clarify any known constraints that must be honored.
 
-## Обязательные инструменты
-
-При каждом запуске скилла ОБЯЗАТЕЛЬНО использовать:
-- **Sequential thinking** — для глубокого анализа на каждом шаге
-- **Web research** (perplexity + web_search) — для поиска существующих решений и типичных ошибок
-
-## Процесс (7 шагов)
-
-1. Problem Definition — переформулировать задачу, определить критерии успеха
-2. Domain Mapping — определить primary и supporting области знаний
-3. Existing Solutions Research — найти фреймворки через web research
-4. Framework Validation — проверить найденные подходы по 4 критериям
-5. Failure Mode Analysis — инверсия, типичные ошибки, constraints
-6. Solution Synthesis — объединить подход с защитой от ошибок
-7. Automation Decision — решить об автоматизации
-
----
-
-## Шаг 1: Problem Definition
-
-**1.1. Извлечь из input всё ценное:**
-- Основная задача (явная или между строк)
-- Контекст и предыстория
-- Уже рассмотренные варианты решений
-- Сомнения и страхи
-- Известные ограничения
-- Неявные критерии успеха
-
-**1.2. Если несколько задач** — выделить и сформулировать главную, остальные отложить.
-
-**1.3. Задать clarifying questions (обязательно):**
-- Что осталось неясным после извлечения?
-- Какие предположения нужно проверить?
-- Какой контекст не хватает?
-
-**1.4. Сформулировать финальную задачу:**
-- Что именно нужно решить? (конкретно)
-- Какой результат = успех? (измеримые критерии)
-
-Использовать sequential thinking для глубокого понимания.
-
-## Шаг 2: Domain Mapping
-
-Определить области знаний:
-
-**Primary domain** — основная область, к которой относится задача (разработка, наука, маркетинг, творчество, образование, инженерия, личное развитие, и т.д.)
-
-**Supporting domains** — смежные области, БЕЗ которых решение будет неполным. Для каждой указать конкретный аспект:
-- Пример бизнес: для задачи "определить ЦА" primary = маркетинг, supporting = психология (только модели мотивации)
-- Пример технический: для задачи "спроектировать API" primary = software architecture, supporting = security (только аутентификация)
-- Пример творческий: для задачи "написать роман" primary = литературное мастерство, supporting = психология (только мотивация персонажей)
-
-Не добавлять supporting domains "на всякий случай" — только если без них решение ошибочно.
-
-## Шаг 3: Existing Solutions Research
-
-ОБЯЗАТЕЛЬНО провести глубокий web research. Принцип: большинство задач уже решены тысячу раз, об этом написаны книги и статьи — нужно это найти.
-
-**Что искать:**
-- Фреймворки и методологии
-- Best practices и стандарты
-- Академические исследования (если применимо)
-- Case studies и примеры применения
-- Критика и ограничения подходов
-
-**Глубина исследования:**
-- Не останавливаться на первых результатах
-- Искать разные точки зрения и подходы
-- Понять историю и контекст возникновения фреймворков
-- Найти минимум 3-5 разных подходов для сравнения
-
-**Запросы:** "[domain] frameworks", "[task type] best practices", "[task type] methodology", "[domain] common approaches", "[framework name] criticism"
-
-## Шаг 4: Framework Validation
-
-Проверить каждый найденный фреймворк по 4 критериям:
-
-| Критерий | Вопрос |
-|----------|--------|
-| Source credibility | Откуда фреймворк? Академия, проверенная практика, авторитетные эксперты — или гуру-булшит? |
-| Context match | Для какого контекста создан? Совпадает ли с контекстом задачи по масштабу, ресурсам, уровню неопределённости? |
-| Complexity fit | Соответствует ли сложность фреймворка сложности задачи? Не избыточен ли? Не слишком ли примитивен? |
-| Track record | Есть ли документированные примеры успешного применения в похожем контексте? |
-
-**Фреймворк проходит валидацию если соответствует 3+ критериям из 4.**
-
-При равенстве кандидатов — выбирать по context match как tiebreaker.
-
-## Шаг 5: Failure Mode Analysis
-
-Применить инверсию — спросить: "Что нужно сделать, чтобы ТОЧНО провалиться?"
-
-Через web research найти:
-- Типичные ошибки при решении задач этого типа
-- Constraints и ограничения домена
-- Антипаттерны
-
-Запросы: "[task type] common mistakes", "[domain] pitfalls", "[framework name] criticism"
-
-## Шаг 6: Solution Synthesis
-
-Объединить результаты:
-- Выбранный фреймворк (прошедший валидацию)
-- Адаптация под конкретный контекст задачи
-- Встроенная защита от типичных ошибок из шага 5
-- Конкретные следующие шаги (actionable)
-
-## Шаг 7: Automation Decision
-
-Оценить повторяемость задачи по формуле:
-
-```
-автоматизировать если: время_на_автоматизацию < (время_ручного × количество_повторений × коэффициент_вариативности)
+# Invocation Guidance
+```bash
+codex skills run discovery.problem_framing \
+  --vars "product={{product}}" \
+         "segment={{segment}}" \
+         "evidence_sources={{evidence_sources}}" \
+         "timeframe={{timeframe}}"
 ```
 
-Где коэффициент_вариативности:
-- 1.0 — задача идентична каждый раз
-- 0.7 — небольшие вариации
-- 0.5 — существенные вариации
-- 0.3 — каждый раз сильно разная
+# Recommended Input Attachments
+- Recent interview transcripts (`research/interviews/*.md`).
+- Market or usage dashboards highlighting severity of the problem.
 
-**Если задача повторяемая** → добавить документ 06-automation.md с draft skill structure
+# Claude Workflow Outline
+1. Restate the core product charter for the provided segment and timeframe.
+2. Build a concise problem statement that references the evidence sources explicitly.
+3. Map supporting insights into a table with columns for Source, Key Quote/Signal, Confidence, and Relevance.
+4. Draft a success hypothesis including leading metrics, anti-goals, and scope boundaries.
+5. Provide alignment questions to take to partner roles (design, engineering, analytics).
 
-**Если задача уникальная** → это БОЛЕЕ важная задача:
-- Определяет долгосрочную перспективу
-- Требует максимального когнитивного ресурса
-- Все документы output должны быть максимально глубокими и развёрнутыми
-- Не экономить на анализе — это фундаментальное решение
+# Output Template
+```
+## Problem Statement
+<2-3 sentence articulation>
 
----
+## Evidence Summary
+| Source | Insight | Confidence | Relevance |
+| --- | --- | --- | --- |
+| {{source}} | {{insight}} | {{confidence}} | {{relevance}} |
 
-## Output
+## Success Hypothesis
+- Leading metric:
+- Guardrails:
+- Key assumptions to validate:
 
-После завершения всех шагов создать набор документов. Каждый документ — полноценный аналитический материал, НЕ checklist.
+## Next Alignment Questions
+1. ...
+2. ...
+```
 
-**Обязательные документы (5 штук):**
-1. `01-problem-definition.md` — Формулировка задачи
-2. `02-domain-analysis.md` — Анализ области знаний
-3. `03-solutions-research.md` — Исследование решений
-4. `04-failure-analysis.md` — Анализ рисков
-5. `05-action-plan.md` — План действий
-
-**Опциональный документ (для повторяемых задач):**
-6. `06-automation.md` — Draft skill structure
-
-Структура и содержание каждого документа описаны в [references/output-template.md](references/output-template.md).
-
----
-
-## Примеры использования
-
-### Пример 1: Бизнес-задача
-**Запрос:** "problem-framing: как определить ценообразование для SaaS"
-**Процесс:** Domain = pricing strategy → Research: Value-based, Van Westendorp, Conjoint → Validation: Value-based проходит → Failure: cost-plus ошибка для SaaS → Output: 5 документов
-
-### Пример 2: Техническая задача
-**Запрос:** "problem-framing: как спроектировать архитектуру для высоконагруженного API"
-**Процесс:** Domain = distributed systems → Research: microservices, event-driven, CQRS → Validation: event-driven подходит по контексту → Failure: premature optimization, single point of failure → Output: 5 документов
-
-### Пример 3: Творческая задача
-**Запрос:** "problem-framing: как написать первый роман"
-**Процесс:** Domain = литературное мастерство → Research: Snowflake method, Save the Cat, три акта → Validation: Snowflake для новичков → Failure: начать без плана, редактировать во время письма → Output: 5 документов
-
-### Пример 4: Научная задача
-**Запрос:** "problem-framing: как провести исследование пользовательского поведения"
-**Процесс:** Domain = UX research → Research: ethnography, surveys, A/B testing, interviews → Validation: mixed methods → Failure: leading questions, confirmation bias → Output: 5 документов
+# Follow-up Actions
+- Capture open questions in your product backlog with owners and due dates.
+- Schedule a triad review with design and engineering to refine the hypothesis.
+- Update the discovery tracker once alignment is achieved.

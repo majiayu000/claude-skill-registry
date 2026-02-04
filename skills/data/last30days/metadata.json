@@ -1,7 +1,7 @@
 {
   "name": "last30days",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/last30days/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:18.131034Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/last30days/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:37.818923Z"
 }

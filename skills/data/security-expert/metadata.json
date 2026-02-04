@@ -1,7 +1,7 @@
 {
   "name": "security-expert",
-  "repo": "traylinx/switchAILocal",
-  "path": "plugins/cortex-router/skills/security-expert/SKILL.md",
-  "source": "github.com/traylinx/switchAILocal",
-  "downloaded_at": "2026-02-02T03:16:48.579041Z"
+  "repo": "peterstorm/.dotfiles",
+  "path": ".claude/skills/security-expert/SKILL.md",
+  "source": "github.com/peterstorm/.dotfiles",
+  "downloaded_at": "2026-02-04T03:10:09.848889Z"
 }

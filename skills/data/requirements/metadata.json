@@ -1,7 +1,7 @@
 {
   "name": "requirements",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/product-manager-workflow/.claude/skills/requirements/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:24.278372Z"
+  "repo": "infinith4/dev-ai-driven-development",
+  "path": ".claude/skills/requirements/SKILL.md",
+  "source": "github.com/infinith4/dev-ai-driven-development",
+  "downloaded_at": "2026-02-04T03:48:48.555237Z"
 }

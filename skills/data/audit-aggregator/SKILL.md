@@ -46,7 +46,7 @@ Each individual audit report should contain findings in this structure:
 
 ### Step 1: Parse All Reports
 
-Read all 6 audit reports and extract findings into structured format:
+Read all 7 audit reports and extract findings into structured format:
 
 ```javascript
 {
@@ -233,7 +233,7 @@ Finding D: S1 High, 1 domain, Medium confidence, E2 day
 
 ### Audit Overview
 
-- **Raw Findings:** 142 (across 6 audits)
+- **Raw Findings:** 142 (across 7 audits)
 - **Unique Findings:** 97 (after deduplication)
 - **Merged Findings:** 45 (appeared in 2+ audits)
 - **Cross-Domain Findings:** 18 (3+ audits)
@@ -435,7 +435,7 @@ Documentation, Refactoring, Process **Total Findings:** 97 unique (142 raw)
 4. **Verify completeness:**
    - All raw findings accounted for (unique + duplicates = raw total)
    - All severity levels represented
-   - All 6 audit reports linked in appendix
+   - All 7 audit reports linked in appendix
 
 ---
 
@@ -484,6 +484,74 @@ Automatically invoked after all 6 parallel audits complete.
 
 ---
 
+## Triage & Roadmap Integration
+
+After aggregation and TDMS intake, triage new items into the roadmap:
+
+### 1. Review Aggregated Findings
+
+The aggregated output shows cross-domain patterns. Prioritize items that:
+
+- Appear in 3+ domain audits (hotspots)
+- Have S0/S1 severity
+- Block other work (dependencies)
+
+### 2. Priority Scoring
+
+Beyond S0-S3 severity, use this scoring:
+
+| Factor         | Weight | Calculation                  |
+| -------------- | ------ | ---------------------------- |
+| Severity       | 40%    | S0=100, S1=50, S2=20, S3=5   |
+| Cross-domain   | 20%    | +50% per additional domain   |
+| Effort inverse | 20%    | E0=4x, E1=2x, E2=1x, E3=0.5x |
+| Dependency     | 10%    | +25% if blocks other items   |
+| File hotspot   | 10%    | +25% if file has 3+ findings |
+
+### 3. Track Assignment Rules
+
+Items auto-assign based on category + file patterns:
+
+| Category      | File Pattern            | Track    |
+| ------------- | ----------------------- | -------- |
+| security      | \*                      | Track-S  |
+| performance   | \*                      | Track-P  |
+| process       | \*                      | Track-D  |
+| refactoring   | \*                      | M2.3-REF |
+| documentation | \*                      | M1.5     |
+| code-quality  | scripts/, .claude/      | Track-E  |
+| code-quality  | .github/                | Track-D  |
+| code-quality  | tests/                  | Track-T  |
+| code-quality  | functions/              | M2.2     |
+| code-quality  | components/, lib/, app/ | M2.1     |
+
+See `docs/technical-debt/views/unplaced-items.md` for full mapping.
+
+### 4. Update ROADMAP.md
+
+Add DEBT-XXXX references to appropriate tracks:
+
+```markdown
+## Track-S: Security Technical Debt
+
+- [ ] DEBT-0875: Firebase credentials written to disk (S1)
+```
+
+### 5. Validate References
+
+```bash
+node scripts/debt/sync-roadmap-refs.js --check-only
+```
+
+### 6. Review Cadence
+
+- **After comprehensive audit:** Full triage
+- **After single audit:** Triage that category
+- **Weekly:** Check unplaced-items.md
+- **Before sprint:** Review S0/S1 for inclusion
+
+---
+
 ## Future Enhancements
 
 - [ ] **Trend Analysis:** Compare against previous comprehensive audits
@@ -499,3 +567,33 @@ Automatically invoked after all 6 parallel audits complete.
 
 - `/audit-comprehensive` - Orchestrator that calls this aggregator
 - Individual audit skills - Generate the input reports this aggregator processes
+
+---
+
+## Documentation References
+
+Before running this aggregator, review:
+
+### TDMS Integration (Required)
+
+- [PROCEDURE.md](docs/technical-debt/PROCEDURE.md) - Full TDMS workflow
+- [MASTER_DEBT.jsonl](docs/technical-debt/MASTER_DEBT.jsonl) - Canonical debt
+  store
+- The aggregated findings should be ingested via:
+  `node scripts/debt/intake-audit.js <output.jsonl> --source "audit-comprehensive-<date>"`
+
+### Documentation Standards (Required)
+
+- [JSONL_SCHEMA_STANDARD.md](docs/templates/JSONL_SCHEMA_STANDARD.md) - Output
+  format requirements, field mapping, and deduplication logic
+- [DOCUMENTATION_STANDARDS.md](docs/DOCUMENTATION_STANDARDS.md) - 5-tier doc
+  hierarchy
+
+---
+
+## Version History
+
+| Version | Date       | Description                                                              |
+| ------- | ---------- | ------------------------------------------------------------------------ |
+| 1.1     | 2026-02-03 | Added Triage & Roadmap Integration section with priority scoring formula |
+| 1.0     | 2026-01-28 | Initial skill creation                                                   |

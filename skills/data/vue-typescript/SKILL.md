@@ -1,311 +1,362 @@
 ---
 name: vue-typescript
-description: Master Vue TypeScript - Type-safe Components, Generics, Type Inference, Advanced Patterns
-sasmp_version: "1.3.0"
-bonded_agent: 07-vue-typescript
-bond_type: PRIMARY_BOND
-version: "2.0.0"
-last_updated: "2025-01"
+description: Expert guidance for Vue 3 with TypeScript, Composition API, Pinia state management, and VueUse utilities. Covers typed props, emits, composables, and Vue Router. Use for Vue 3 development, TypeScript integration, and Pinia state management.
 ---
 
-# Vue TypeScript Skill
+# Vue + TypeScript Development
 
-Production-grade skill for mastering TypeScript integration with Vue 3 applications.
+Expert guidance for Vue 3 with TypeScript, Composition API, Pinia state management, and VueUse utilities.
 
-## Purpose
+## Core Patterns
 
-**Single Responsibility:** Teach TypeScript integration with Vue including typed components, generics, type inference, and advanced type patterns.
+### Component with TypeScript
 
-## Parameter Schema
-
-```typescript
-interface VueTypeScriptParams {
-  topic: 'config' | 'components' | 'generics' | 'stores' | 'inference' | 'all';
-  level: 'beginner' | 'intermediate' | 'advanced';
-  context?: {
-    strict_mode?: boolean;
-    existing_js?: boolean;
-  };
-}
-```
-
-## Learning Modules
-
-### Module 1: TypeScript Setup
-```
-Prerequisites: vue-fundamentals, TypeScript basics
-Duration: 1-2 hours
-Outcome: Configure TypeScript for Vue
-```
-
-| Topic | File | Content |
-|-------|------|---------|
-| tsconfig | tsconfig.json | Vue-specific config |
-| Volar | Extension | IDE support |
-| env.d.ts | Type declarations | Vite/Vue types |
-| vue-tsc | Build check | Type validation |
-
-**tsconfig.json:**
-```json
-{
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "jsx": "preserve",
-    "jsxImportSource": "vue"
-  },
-  "include": ["src/**/*.ts", "src/**/*.vue"]
-}
-```
-
-### Module 2: Typed Components
-```
-Prerequisites: Module 1
-Duration: 3-4 hours
-Outcome: Write type-safe components
-```
-
-| Feature | Syntax | Exercise |
-|---------|--------|----------|
-| Props | `defineProps<Props>()` | Typed props |
-| Emits | `defineEmits<Emits>()` | Typed events |
-| Defaults | `withDefaults()` | Default values |
-| Expose | `defineExpose()` | Public API |
-| Slots | `defineSlots()` | Typed slots |
-
-**Typed Component:**
 ```vue
 <script setup lang="ts">
-interface Props {
-  title: string
-  count?: number
-  items: Item[]
-}
+import { ref, computed, onMounted } from 'vue';
+import type { User } from '@/types';
 
-interface Emits {
-  (e: 'update', value: string): void
-  (e: 'select', item: Item): void
+// Props with TypeScript
+interface Props {
+  userId: string;
+  initialData?: User;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  count: 0
-})
+  initialData: undefined,
+});
 
-const emit = defineEmits<Emits>()
-</script>
-```
-
-### Module 3: Generic Components
-```
-Prerequisites: Module 2
-Duration: 3 hours
-Outcome: Build reusable generic components
-```
-
-**Generic Component:**
-```vue
-<script setup lang="ts" generic="T extends { id: string | number }">
-interface Props {
-  items: T[]
-  selected?: T
-}
-
+// Emits with TypeScript
 interface Emits {
-  (e: 'select', item: T): void
+  (e: 'update', user: User): void;
+  (e: 'delete', id: string): void;
 }
 
-const props = defineProps<Props>()
-const emit = defineEmits<Emits>()
+const emit = defineEmits<Emits>();
+
+// Reactive state
+const user = ref<User | null>(props.initialData ?? null);
+const isLoading = ref(false);
+const error = ref<string | null>(null);
+
+// Computed
+const displayName = computed(() =>
+  user.value ? `${user.value.firstName} ${user.value.lastName}` : 'Unknown'
+);
+
+// Methods
+async function fetchUser() {
+  isLoading.value = true;
+  error.value = null;
+
+  try {
+    const response = await fetch(`/api/users/${props.userId}`);
+    user.value = await response.json();
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : 'Failed to fetch user';
+  } finally {
+    isLoading.value = false;
+  }
+}
+
+function handleUpdate() {
+  if (user.value) {
+    emit('update', user.value);
+  }
+}
+
+// Lifecycle
+onMounted(() => {
+  if (!props.initialData) {
+    fetchUser();
+  }
+});
+
+// Expose for template refs
+defineExpose({ fetchUser });
 </script>
 
 <template>
-  <ul>
-    <li v-for="item in items" :key="item.id" @click="emit('select', item)">
-      <slot :item="item" />
-    </li>
-  </ul>
+  <div class="user-card">
+    <div v-if="isLoading" class="loading">Loading...</div>
+    <div v-else-if="error" class="error">{{ error }}</div>
+    <div v-else-if="user" class="content">
+      <h2>{{ displayName }}</h2>
+      <p>{{ user.email }}</p>
+      <button @click="handleUpdate">Update</button>
+      <button @click="emit('delete', user.id)">Delete</button>
+    </div>
+  </div>
 </template>
 ```
 
-### Module 4: Typed Composables & Stores
-```
-Prerequisites: Module 3
-Duration: 3-4 hours
-Outcome: Type-safe reusable logic
-```
-
-| Pattern | Typing Technique | Exercise |
-|---------|------------------|----------|
-| Composable return | Interface | useFetch<T> |
-| Store state | Typed refs | User store |
-| Getters | Computed types | Derived state |
-| Actions | Async types | API actions |
-
-**Typed Composable:**
-```typescript
-interface UseFetchReturn<T> {
-  data: Ref<T | null>
-  error: Ref<Error | null>
-  loading: Ref<boolean>
-  execute: () => Promise<void>
-}
-
-export function useFetch<T>(url: MaybeRefOrGetter<string>): UseFetchReturn<T> {
-  const data = ref<T | null>(null) as Ref<T | null>
-  // ...
-  return { data, error, loading, execute }
-}
-```
-
-### Module 5: Advanced Type Patterns
-```
-Prerequisites: Modules 1-4
-Duration: 3-4 hours
-Outcome: Expert-level Vue typing
-```
-
-| Pattern | Use Case | Example |
-|---------|----------|---------|
-| Utility types | Props extraction | ExtractProps<T> |
-| Module augmentation | Route meta | RouteMeta interface |
-| Conditional types | API responses | ResponseType<T> |
-| Template refs | Component refs | ComponentRef<T> |
-
-**Utility Types:**
-```typescript
-// Extract props from component
-type ExtractProps<T> = T extends new () => { $props: infer P } ? P : never
-
-// Deep partial
-type DeepPartial<T> = {
-  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]
-}
-
-// Component ref type
-type ComponentRef<T> = T extends new () => infer R ? R : never
-const buttonRef = ref<ComponentRef<typeof Button> | null>(null)
-```
-
-## Validation Checkpoints
-
-### Beginner Checkpoint
-- [ ] Configure tsconfig for Vue
-- [ ] Use defineProps with types
-- [ ] Use defineEmits with types
-- [ ] Fix basic type errors
-
-### Intermediate Checkpoint
-- [ ] Create generic component
-- [ ] Type composable return values
-- [ ] Type Pinia store
-- [ ] Use withDefaults correctly
-
-### Advanced Checkpoint
-- [ ] Implement utility types
-- [ ] Augment route meta types
-- [ ] Type complex generics
-- [ ] Achieve zero any types
-
-## Retry Logic
+### Pinia Store with TypeScript
 
 ```typescript
-const skillConfig = {
-  maxAttempts: 3,
-  backoffMs: [1000, 2000, 4000],
-  onFailure: 'simplify_type_definition'
-}
-```
+// stores/user.ts
+import { defineStore } from 'pinia';
+import type { User } from '@/types';
 
-## Observability
-
-```yaml
-tracking:
-  - event: type_error_fixed
-    data: [error_code, file]
-  - event: pattern_learned
-    data: [pattern_name, complexity]
-  - event: skill_completed
-    data: [strict_mode, any_count]
-```
-
-## Troubleshooting
-
-### Common Issues
-
-| Issue | Cause | Solution |
-|-------|-------|----------|
-| defineProps not typed | Missing generic | Add `<Props>` |
-| Cannot find module | Missing declaration | Add env.d.ts |
-| Generic not working | Vue < 3.3 | Upgrade Vue |
-| Type not inferred | Complex type | Explicit annotation |
-
-### Debug Steps
-
-1. Check Volar is enabled
-2. Run vue-tsc for errors
-3. Verify tsconfig paths
-4. Check type imports
-
-## Unit Test Template
-
-```typescript
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import GenericList from './GenericList.vue'
-
-interface User {
-  id: number
-  name: string
+interface UserState {
+  currentUser: User | null;
+  users: User[];
+  isLoading: boolean;
+  error: string | null;
 }
 
-describe('GenericList', () => {
-  it('renders items with correct types', () => {
-    const users: User[] = [
-      { id: 1, name: 'Alice' },
-      { id: 2, name: 'Bob' }
-    ]
+export const useUserStore = defineStore('user', {
+  state: (): UserState => ({
+    currentUser: null,
+    users: [],
+    isLoading: false,
+    error: null,
+  }),
 
-    const wrapper = mount(GenericList<User>, {
-      props: { items: users },
-      slots: {
-        default: ({ item }: { item: User }) => item.name
+  getters: {
+    isAuthenticated: (state) => state.currentUser !== null,
+    getUserById: (state) => {
+      return (id: string) => state.users.find(u => u.id === id);
+    },
+    activeUsers: (state) => state.users.filter(u => u.isActive),
+  },
+
+  actions: {
+    async fetchUsers() {
+      this.isLoading = true;
+      this.error = null;
+
+      try {
+        const response = await fetch('/api/users');
+        this.users = await response.json();
+      } catch (e) {
+        this.error = e instanceof Error ? e.message : 'Failed to fetch';
+      } finally {
+        this.isLoading = false;
       }
-    })
+    },
 
-    expect(wrapper.text()).toContain('Alice')
-    expect(wrapper.text()).toContain('Bob')
-  })
+    async login(email: string, password: string) {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+      });
 
-  it('emits typed select event', async () => {
-    const users: User[] = [{ id: 1, name: 'Alice' }]
-    const wrapper = mount(GenericList<User>, {
-      props: { items: users }
-    })
+      if (!response.ok) throw new Error('Login failed');
 
-    await wrapper.find('li').trigger('click')
-    const emitted = wrapper.emitted('select')
-    expect(emitted?.[0][0]).toEqual({ id: 1, name: 'Alice' })
-  })
-})
+      this.currentUser = await response.json();
+    },
+
+    logout() {
+      this.currentUser = null;
+    },
+  },
+});
+
+// Setup store syntax (alternative)
+export const useUserStoreSetup = defineStore('user-setup', () => {
+  const currentUser = ref<User | null>(null);
+  const isAuthenticated = computed(() => currentUser.value !== null);
+
+  async function login(email: string, password: string) {
+    // ... implementation
+  }
+
+  return { currentUser, isAuthenticated, login };
+});
 ```
 
-## Usage
+### Composables with TypeScript
 
+```typescript
+// composables/useFetch.ts
+import { ref, unref, watchEffect } from 'vue';
+import type { Ref, MaybeRef } from 'vue';
+
+interface UseFetchOptions<T> {
+  immediate?: boolean;
+  initialData?: T;
+  onError?: (error: Error) => void;
+}
+
+interface UseFetchReturn<T> {
+  data: Ref<T | null>;
+  error: Ref<Error | null>;
+  isLoading: Ref<boolean>;
+  execute: () => Promise<void>;
+}
+
+export function useFetch<T>(
+  url: MaybeRef<string>,
+  options: UseFetchOptions<T> = {}
+): UseFetchReturn<T> {
+  const { immediate = true, initialData = null, onError } = options;
+
+  const data = ref<T | null>(initialData) as Ref<T | null>;
+  const error = ref<Error | null>(null);
+  const isLoading = ref(false);
+
+  async function execute() {
+    isLoading.value = true;
+    error.value = null;
+
+    try {
+      const response = await fetch(unref(url));
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      data.value = await response.json();
+    } catch (e) {
+      error.value = e instanceof Error ? e : new Error(String(e));
+      onError?.(error.value);
+    } finally {
+      isLoading.value = false;
+    }
+  }
+
+  if (immediate) {
+    watchEffect(() => {
+      execute();
+    });
+  }
+
+  return { data, error, isLoading, execute };
+}
+
+// Usage in component
+const { data: users, isLoading, error, execute: refetch } = useFetch<User[]>('/api/users');
 ```
-Skill("vue-typescript")
+
+### VueUse Integration
+
+```typescript
+import {
+  useLocalStorage,
+  useDark,
+  useToggle,
+  useDebounce,
+  onClickOutside,
+  useIntersectionObserver,
+} from '@vueuse/core';
+
+// Persistent state
+const preferences = useLocalStorage('user-prefs', {
+  theme: 'light',
+  language: 'en',
+});
+
+// Dark mode
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
+
+// Debounced search
+const searchQuery = ref('');
+const debouncedQuery = useDebounce(searchQuery, 300);
+
+// Click outside
+const dropdownRef = ref<HTMLElement | null>(null);
+onClickOutside(dropdownRef, () => {
+  isOpen.value = false;
+});
+
+// Infinite scroll
+const loadMoreRef = ref<HTMLElement | null>(null);
+useIntersectionObserver(loadMoreRef, ([{ isIntersecting }]) => {
+  if (isIntersecting) {
+    loadMoreItems();
+  }
+});
 ```
 
-## Related Skills
+## Vue Router with TypeScript
 
-- `vue-fundamentals` - Prerequisite
-- `vue-composition-api` - For typed composables
-- `vue-testing` - Type-safe testing
+```typescript
+// router/index.ts
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
-## Resources
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('@/views/Home.vue'),
+  },
+  {
+    path: '/users/:id',
+    name: 'user',
+    component: () => import('@/views/UserDetail.vue'),
+    props: true,
+    meta: { requiresAuth: true },
+  },
+];
 
-- [Vue TypeScript Guide](https://vuejs.org/guide/typescript/overview.html)
-- [Volar](https://github.com/vuejs/language-tools)
-- [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/vue-tsc)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+// Navigation guard
+router.beforeEach((to, from, next) => {
+  const userStore = useUserStore();
+
+  if (to.meta.requiresAuth && !userStore.isAuthenticated) {
+    next({ name: 'login', query: { redirect: to.fullPath } });
+  } else {
+    next();
+  }
+});
+```
+
+## Type Definitions
+
+```typescript
+// types/index.ts
+export interface User {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  isActive: boolean;
+  createdAt: string;
+}
+
+export interface ApiResponse<T> {
+  data: T;
+  meta: {
+    page: number;
+    total: number;
+  };
+}
+
+// Typed provide/inject
+import type { InjectionKey } from 'vue';
+
+export const UserServiceKey: InjectionKey<UserService> = Symbol('UserService');
+
+// In parent
+provide(UserServiceKey, userService);
+
+// In child
+const userService = inject(UserServiceKey)!;
+```
+
+## Best Practices
+
+| Practice | Implementation |
+|----------|----------------|
+| **Props typing** | Use `defineProps<Props>()` with interface |
+| **Emits typing** | Use `defineEmits<Emits>()` with interface |
+| **Ref typing** | `ref<Type>(initialValue)` |
+| **Composables** | Return typed objects, use `MaybeRef` for flexibility |
+| **Store typing** | Define state interface, use typed getters |
+
+## When to Use
+
+- Building Vue 3 applications with TypeScript
+- Creating composable libraries
+- Implementing complex state management with Pinia
+- Projects requiring type safety
+- Teams familiar with Vue ecosystem
+
+## Notes
+
+- Vue 3 Composition API is recommended
+- Pinia is the official state management solution
+- VueUse provides 200+ composables
+- Script setup syntax reduces boilerplate

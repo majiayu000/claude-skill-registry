@@ -1,348 +1,180 @@
 ---
 name: spec-writing
-description: 'Specification document creation from gathered requirements and context. Use when requirements are gathered and you need to create a comprehensive spec.'
-version: 1.0.0
-model: sonnet
-invoked_by: both
-user_invocable: true
-tools: [Read, Write, Edit, Bash, Glob, Grep]
-best_practices:
-  - Synthesize context into actionable specification
-  - Be specific about files and patterns
-  - Include QA criteria for validation
-error_handling: graceful
-streaming: supported
-source: auto-claude
+description: Skill for the Spec Writer agent to create and refine feature specifications. Provides templates for specs, clarification workflows, and quality checklists. Supports the SDD methodology by ensuring specs are complete, testable, and implementation-agnostic.
 ---
 
-# Specification Writing Skill
+# Spec Writing Skill
+
+> Equips the Spec Writer agent with templates, references, and workflows for creating high-quality feature specifications.
 
 ## Overview
 
-Transform gathered requirements and codebase context into a comprehensive, actionable specification document. The spec is the contract between planning and implementation.
+This skill provides everything needed to:
+- Create specifications from vague feature briefs
+- Write clear, testable user stories
+- Generate acceptance criteria
+- Run clarification sessions
+- Validate spec completeness
 
-**Core principle:** Synthesize context into actionable spec. No user interaction needed during writing.
+## Contents
 
-## When to Use
+### References
 
-**Always:**
+| File | Purpose |
+|------|---------|
+| `spec-taxonomy.md` | Categories for ambiguity scanning |
+| `requirement-patterns.md` | Common requirement patterns and anti-patterns |
+| `clarification-guide.md` | How to generate and prioritize questions |
+| `quality-criteria.md` | Checklist criteria for spec validation |
 
-- After requirements gathering is complete
-- When you have codebase context available
-- Before implementation planning begins
+### Assets (Templates)
 
-**Exceptions:**
+| File | Purpose |
+|------|---------|
+| `.specify/templates/spec-template.md` | **CANONICAL** Main feature specification template |
+| `user-story-template.md` | User story format with acceptance criteria |
+| `clarification-question-template.md` | Question format for clarification sessions |
+| `quality-checklist-template.md` | Spec quality validation checklist |
 
-- Simple changes that don't need formal specs
-- Exploratory work without clear requirements
+**NOTE:** The main spec template lives at `.specify/templates/spec-template.md` (project-wide canonical template). Always use this instead of creating duplicates.
 
-## The Iron Law
+## Usage
 
+### Creating a New Specification
+
+1. Parse the feature description for key concepts
+2. **Load canonical template:** `.specify/templates/spec-template.md`
+3. Fill in all mandatory sections
+4. Reference `references/requirement-patterns.md` for good requirement examples
+5. Validate against `references/quality-criteria.md`
+
+### Writing User Stories
+
+1. Load `assets/user-story-template.md`
+2. Identify actors, goals, and benefits
+3. Write acceptance criteria (Given/When/Then)
+4. Assign priority (P1, P2, P3)
+5. Ensure story is independently testable
+
+### Running Clarification
+
+1. Load current spec
+2. Scan using `references/spec-taxonomy.md` categories
+3. Generate questions using `references/clarification-guide.md`
+4. Use `assets/clarification-question-template.md` for formatting
+5. Update spec after each answer
+
+### Validating Specification
+
+1. Load `assets/quality-checklist-template.md`
+2. Check each criterion against the spec
+3. Document pass/fail for each item
+4. Iterate until all critical items pass
+
+## Spec Taxonomy Categories
+
+Use these categories to scan for ambiguity:
+
+### Functional Scope & Behavior
+- Core user goals & success criteria
+- Explicit out-of-scope declarations
+- User roles / personas differentiation
+
+### Domain & Data Model
+- Entities, attributes, relationships
+- Identity & uniqueness rules
+- Lifecycle/state transitions
+- Data volume / scale assumptions
+
+### Interaction & UX Flow
+- Critical user journeys / sequences
+- Error/empty/loading states
+- Accessibility or localization notes
+
+### Non-Functional Quality Attributes
+- Performance (latency, throughput targets)
+- Scalability (horizontal/vertical, limits)
+- Reliability & availability (uptime, recovery)
+- Observability (logging, metrics, tracing)
+- Security & privacy (authN/Z, data protection)
+- Compliance / regulatory constraints
+
+### Integration & External Dependencies
+- External services/APIs and failure modes
+- Data import/export formats
+- Protocol/versioning assumptions
+
+### Edge Cases & Failure Handling
+- Negative scenarios
+- Rate limiting / throttling
+- Conflict resolution (e.g., concurrent edits)
+
+### Constraints & Tradeoffs
+- Technical constraints (language, storage, hosting)
+- Explicit tradeoffs or rejected alternatives
+
+### Terminology & Consistency
+- Canonical glossary terms
+- Avoided synonyms / deprecated terms
+
+### Completion Signals
+- Acceptance criteria testability
+- Measurable Definition of Done indicators
+
+## Key Rules
+
+### Maximum Clarifications
+- Max 3 [NEEDS CLARIFICATION] markers per spec
+- Max 5 questions per clarification session
+- Max 10 questions total across all sessions
+
+### Prioritization Order
+1. Scope (what's in/out)
+2. Security/Privacy (compliance, data protection)
+3. User Experience (flows, edge cases)
+4. Technical Details (only if blocking functional clarity)
+
+### Reasonable Defaults (Don't Ask)
+- Data retention: Industry-standard for domain
+- Performance: Standard web/mobile expectations
+- Error handling: User-friendly messages with fallbacks
+- Authentication: Session-based or OAuth2
+- Integration: RESTful APIs
+
+### Success Criteria Rules
+- Must be measurable (include metrics)
+- Must be technology-agnostic (no frameworks)
+- Must be user-focused (outcomes, not internals)
+- Must be verifiable (testable without implementation)
+
+## Integration
+
+This skill is automatically available to the Spec Writer agent via the `skills: spec-writing` frontmatter.
+
+To use templates:
 ```
-NO IMPLEMENTATION WITHOUT A COMPLETE SPEC FIRST
-```
-
-A spec must have ALL required sections before implementation can begin.
-
-## Inputs Required
-
-Before writing a spec, ensure you have:
-
-1. **Requirements document** - What needs to be built
-2. **Project context** - Tech stack, structure, patterns
-3. **Files to modify** - Identified from codebase analysis
-4. **Files to reference** - Patterns to follow
-
-## Workflow
-
-### Phase 1: Load All Context
-
-Read all input files to understand the full picture:
-
-```bash
-# Read requirements
-cat .claude/context/requirements/[task-name].md
-
-# Read project context
-cat .claude/context/product.md
-cat .claude/context/tech-stack.md
-
-# Read any analysis results
-cat .claude/context/analysis/[task-name].json 2>/dev/null
-```
-
-Extract from these files:
-
-- **From requirements**: Task description, workflow type, acceptance criteria
-- **From project context**: Services, tech stacks, patterns
-- **From analysis**: Files to modify, files to reference, patterns
-
-### Phase 2: Analyze Context
-
-Before writing, think about:
-
-**Implementation Strategy:**
-
-- What's the optimal order of implementation?
-- Which area should be built first?
-- What are the dependencies between components?
-
-**Risk Assessment:**
-
-- What could go wrong?
-- What edge cases exist?
-- Any security considerations?
-
-**Pattern Synthesis:**
-
-- What patterns from reference files apply?
-- What utilities can be reused?
-- What's the code style?
-
-### Phase 3: Write Specification Document
-
-Create the spec with ALL required sections:
-
-````markdown
-# Specification: [Task Name]
-
-## Overview
-
-[One paragraph: What is being built and why]
-
-## Workflow Type
-
-**Type**: [feature|refactor|investigation|migration|simple]
-
-**Rationale**: [Why this workflow type fits the task]
-
-## Task Scope
-
-### Areas Involved
-
-- **[area-name]** (primary) - [role from context analysis]
-- **[area-name]** (integration) - [role from context analysis]
-
-### This Task Will:
-
-- [ ] [Specific change 1]
-- [ ] [Specific change 2]
-- [ ] [Specific change 3]
-
-### Out of Scope:
-
-- [What this task does NOT include]
-
-## Technical Context
-
-### Tech Stack
-
-- Language: [from project context]
-- Framework: [from project context]
-- Key directories: [from project context]
-
-### How to Run
-
-```bash
-[commands from project context]
-```
-````
-
-## Files to Modify
-
-| File     | Purpose   | What to Change           |
-| -------- | --------- | ------------------------ |
-| `[path]` | [purpose] | [specific change needed] |
-
-## Files to Reference
-
-These files show patterns to follow:
-
-| File     | Pattern to Copy                  |
-| -------- | -------------------------------- |
-| `[path]` | [what pattern this demonstrates] |
-
-## Patterns to Follow
-
-### [Pattern Name]
-
-From `[reference file path]`:
-
-```[language]
-[code snippet or description]
+Read: .claude/skills/spec-writing/assets/[template]
 ```
 
-**Key Points:**
-
-- [What to notice about this pattern]
-- [What to replicate]
-
-## Requirements
-
-### Functional Requirements
-
-1. **[Requirement Name]**
-   - Description: [What it does]
-   - Acceptance: [How to verify]
-
-2. **[Requirement Name]**
-   - Description: [What it does]
-   - Acceptance: [How to verify]
-
-### Edge Cases
-
-1. **[Edge Case]** - [How to handle it]
-2. **[Edge Case]** - [How to handle it]
-
-## Implementation Notes
-
-### DO
-
-- Follow the pattern in `[file]` for [thing]
-- Reuse `[utility/component]` for [purpose]
-- [Specific guidance based on context]
-
-### DON'T
-
-- Create new [thing] when [existing thing] works
-- [Anti-pattern to avoid based on context]
-
-## Development Environment
-
-### Start Services
-
-```bash
-[commands from project context]
+To check references:
+```
+Read: .claude/skills/spec-writing/references/[reference]
 ```
 
-### Required Environment Variables
+## Related Commands
 
-- `VAR_NAME`: [description]
+| Command | Description |
+|---------|-------------|
+| `/sp.specify` | Create specification from feature brief |
+| `/sp.clarify` | Run clarification Q&A session |
 
-## Success Criteria
+## Quality Gate
 
-The task is complete when:
-
-1. [ ] [From requirements acceptance_criteria]
-2. [ ] [From requirements acceptance_criteria]
-3. [ ] No console errors
-4. [ ] Existing tests still pass
-5. [ ] New functionality verified
-
-## QA Acceptance Criteria
-
-**CRITICAL**: These criteria must be verified by QA before sign-off.
-
-### Unit Tests
-
-| Test        | File             | What to Verify                 |
-| ----------- | ---------------- | ------------------------------ |
-| [Test Name] | `[path/to/test]` | [What this test should verify] |
-
-### Integration Tests
-
-| Test        | Areas             | What to Verify            |
-| ----------- | ----------------- | ------------------------- |
-| [Test Name] | [area-a + area-b] | [API contract, data flow] |
-
-### End-to-End Tests
-
-| Flow        | Steps               | Expected Outcome  |
-| ----------- | ------------------- | ----------------- |
-| [User Flow] | 1. [Step] 2. [Step] | [Expected result] |
-
-### QA Sign-off Requirements
-
-- [ ] All unit tests pass
-- [ ] All integration tests pass
-- [ ] All E2E tests pass
-- [ ] No regressions in existing functionality
-- [ ] Code follows established patterns
-- [ ] No security vulnerabilities introduced
-
-````
-
-### Phase 4: Verify Spec
-
-After creating, verify the spec has all required sections:
-
-```bash
-# Check required sections exist
-grep -E "^##? Overview" spec.md && echo "Overview present"
-grep -E "^##? Workflow Type" spec.md && echo "Workflow Type present"
-grep -E "^##? Task Scope" spec.md && echo "Task Scope present"
-grep -E "^##? Success Criteria" spec.md && echo "Success Criteria present"
-grep -E "^##? QA Acceptance" spec.md && echo "QA Criteria present"
-
-# Check file length (should be substantial)
-wc -l spec.md
-````
-
-If any section is missing, add it immediately.
-
-### Phase 5: Save and Signal Completion
-
-Save the spec to the appropriate location:
-
-```bash
-# Save to context directory
-cat > .claude/context/specs/[task-name]-spec.md << 'EOF'
-[Spec content]
-EOF
-```
-
-## Verification Checklist
-
-Before completing spec writing:
-
-- [ ] Overview section present and clear
-- [ ] Workflow type determined with rationale
-- [ ] Task scope defined with in/out of scope
-- [ ] Files to modify listed with specific changes
-- [ ] Files to reference listed with patterns
-- [ ] Functional requirements documented
-- [ ] Edge cases identified
-- [ ] Implementation notes included
-- [ ] Success criteria defined
-- [ ] QA acceptance criteria complete
-
-## Common Mistakes
-
-### Generic Content
-
-**Why it's wrong:** "Implement the feature" is not actionable.
-
-**Do this instead:** Be specific to this project and task. Use exact file paths.
-
-### Missing Tables
-
-**Why it's wrong:** Empty tables provide no guidance.
-
-**Do this instead:** Fill in tables with data from context analysis.
-
-### No QA Criteria
-
-**Why it's wrong:** QA agent needs clear criteria to validate.
-
-**Do this instead:** Include unit, integration, and E2E test expectations.
-
-## Integration with Other Skills
-
-This skill works well with:
-
-- **spec-gathering**: Provides the requirements input
-- **spec-critique**: Reviews the spec for issues
-- **complexity-assessment**: Determines spec complexity for planning
-
-## Memory Protocol
-
-**Before starting:**
-Read `.claude/context/memory/learnings.md`
-
-**After completing:**
-
-- New pattern -> `.claude/context/memory/learnings.md`
-- Issue found -> `.claude/context/memory/issues.md`
-- Decision made -> `.claude/context/memory/decisions.md`
-
-> ASSUME INTERRUPTION: If it's not in memory, it didn't happen.
+A specification is ready for `/sp.plan` when:
+- [ ] All mandatory sections completed
+- [ ] No [NEEDS CLARIFICATION] markers remain
+- [ ] All requirements are testable
+- [ ] Success criteria are measurable and technology-agnostic
+- [ ] User stories have acceptance scenarios
+- [ ] Edge cases are identified
+- [ ] Assumptions are documented

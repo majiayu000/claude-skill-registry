@@ -1,112 +1,68 @@
 ---
-name: "writing-job-descriptions"
-description: "Write outcome-based, high-signal job descriptions and role scorecards that attract the right candidates and filter the wrong ones. Use for job description, job posting, job ad, role scorecard, hiring brief. Category: Hiring & Teams."
+name: writing-job-descriptions
+description: Help users write effective job descriptions. Use when someone is creating a job posting, defining a new role, preparing to hire, or trying to attract the right candidates for an open position.
 ---
 
-# Writing Job Descriptions (Outcome-Based)
+# Writing Job Descriptions
 
-## Scope
+Help the user write effective job descriptions using frameworks and insights from 6 product leaders.
 
-**Covers**
-- Turning a vague “we should hire X” into a clear **role outcome + success scorecard**
-- Defining **competency spikes** (major/minor) instead of a generic laundry list
-- Writing a **high-signal job description** that is honest about context (pace, constraints, trade-offs)
-- Building a lightweight **iteration loop** to improve the JD after real candidate conversations
+## How to Help
 
-**When to use**
-- “Write a job description / job posting for …”
-- “Create a role scorecard / success profile for a new hire.”
-- “Make this JD more high-signal (it’s generic and attracting everyone).”
-- “Rewrite our JD around outcomes instead of responsibilities.”
+When the user asks for help with job descriptions:
 
-**When NOT to use**
-- You haven’t decided whether to hire vs restructure/contract/automation (do org planning first)
-- You need a full interview loop / evaluation rubric / hiring process design (separate workstream)
-- You need legal/HR review for compliance wording (this skill is not legal advice)
+1. **Define success first** - Ask what success looks like 12 months after the hire, not what tasks they'll do
+2. **Identify the spike** - Determine the one or two areas where this person needs to excel (not everything)
+3. **Write for progress** - Frame the role around the progress to be made, not a list of arbitrary tasks
+4. **Consider the signal** - Discuss whether the language attracts or repels the right candidates
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Role title + level + function (e.g., “Senior Product Designer”, “Staff Backend Engineer”)
-- Team/context (what you build; who the role reports to; key partners)
-- Why hire now + the “progress” this role must create
-- Success definition: 3–6 outcomes for **12 months after start**
-- Working model + constraints (remote/hybrid, time zones, travel, on-call, pace)
+### Start with 12-month success
+Jonathan Lowenhar: "Start with, it's 12 months later, you hired the person, 12 months have gone by, you're clinking champagne because of how great it's been. What's changed about the business?" Define success by business impact after one year, not a list of responsibilities.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with explicit assumptions and offer 2 versions: **conservative/inclusive** and **high-intensity/polarizing** (if appropriate).
+### Job descriptions are made up
+Bob Moesta: "Job descriptions are made up. They're literally just made up - a list of stuff the manager wants plus stuff they don't want to do." Focus on the 'progress' the role enables rather than arbitrary feature requirements.
 
-## Outputs (deliverables)
+### Identify where they should spike
+Lauren Ipsen: "Trying to determine where this person should major and minor, where they should spike. Is this someone that's going to lean into design efforts or operate like a very senior PM?" Define specific competencies required rather than seeking a generalist who does everything.
 
-Produce a **Job Description Pack** in Markdown (in-chat; or as files if requested):
+### Frame requirements as outcomes
+Bob Moesta: "Don't tell me I need Excel, PowerPoint, and Word skills. Tell me what I'm going to do with those. Tell me you're going to need to build PowerPoints for executive alignment." Replace 'X years of experience' with specific capabilities that time is supposed to represent.
 
-1) **Context snapshot**
-2) **Role scorecard:** success at 12 months (+ optional 30/60/90)
-3) **Competency spike map:** majors/minors + “evidence of strength”
-4) **Job description draft (public):** outcome-based, high-signal
-5) **Filters:** who will thrive / who should not apply (honest, non-discriminatory)
-6) **Iteration plan + version log:** what to test and how to update after candidate conversations
-7) **Risks / Open questions / Next steps** (always included)
+### Iterate based on candidates
+Jason Shah: "Taking a product mindset where I meet people and don't know exactly what role they're going to fill. A product mindset on hiring and iterating on it based on the candidates you're meeting." Treat job descriptions as iterative documents that evolve with market reality.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Use polarizing language intentionally
+Anton Osika: "Long hours, high pace, candidates must thrive under high urgency. Those seeking comfortable work need not apply." High-signal, polarizing language filters for candidates who thrive in specific environments.
 
-## Workflow (7 steps)
+### Codify emerging roles
+Peter Deng: "I asked her to write up a job description of what this thing is. There's something magical here. The role was model designer." Ask high-performing individuals to write their own ideal job description to identify new functional needs.
 
-### 1) Intake + constraints (don’t start writing yet)
-- **Inputs:** user request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify role, level, “why now”, constraints (location, pace, comp bands if available), and what “good” looks like. Identify what you can/can’t say publicly.
-- **Outputs:** Context snapshot + assumptions/unknowns list.
-- **Checks:** You can state in one sentence: “We are hiring X to achieve Y by Z.”
+## Questions to Help Users
 
-### 2) Define “success 12 months later” (scorecard)
-- **Inputs:** business goals, current pains, manager expectations.
-- **Actions:** Write 3–6 outcomes that would make you “clink champagne” in 12 months. Add measurable indicators where possible.
-- **Outputs:** Role scorecard (12-month success).
-- **Checks:** Outcomes describe business impact and shipped/owned artifacts, not just activities.
+- "If this hire is wildly successful, what will be different about the business in 12 months?"
+- "What is the one thing this person absolutely must be great at?"
+- "What are you describing as requirements that are actually just proxies for something else?"
+- "Who do you want to attract with this language, and who do you want to filter out?"
+- "Is this role solving a specific problem, or is it a collection of tasks no one wants?"
+- "What would 'making progress' look like for this person in their first 6 months?"
 
-### 3) Decide the competency spikes (major/minor)
-- **Inputs:** role scorecard.
-- **Actions:** Choose 1 **major** spike and 1–2 **minor** spikes. Define what “strong” looks like and how to recognize it (work samples, narratives, portfolio, shipped systems).
-- **Outputs:** Competency spike map.
-- **Checks:** Spikes explain why a generalist won’t work; each spike ties to at least one 12-month outcome.
+## Common Mistakes to Flag
 
-### 4) Translate outcomes into responsibilities (progress over laundry lists)
-- **Inputs:** scorecard + spikes.
-- **Actions:** Convert outcomes into 6–10 responsibilities phrased as progress (“Own X end-to-end”, “Reduce Y from A→B”) rather than “attend meetings”. Remove arbitrary requirements.
-- **Outputs:** Responsibilities section draft.
-- **Checks:** Every responsibility maps to at least one outcome; anything that doesn’t map is cut or re-justified.
+- **Lists of tasks instead of outcomes** - Focus on what will be different because of this hire, not what they'll do daily
+- **Requiring generalists** - Identify specific spikes; trying to find someone good at everything finds no one
+- **'Years of experience' as a proxy** - This tells candidates nothing about what they'll actually need to do
+- **Static descriptions** - Iterate on the role definition after meeting candidates and understanding the market
+- **Bland language** - Generic job postings attract generic candidates; be specific and even polarizing
 
-### 5) Add the “truth” section (high-signal + filtering)
-- **Inputs:** team reality: pace, constraints, trade-offs.
-- **Actions:** Write a candid “How we work / What’s hard here” section and a “Who will thrive / Who won’t” filter. Use polarizing clarity without illegal/discriminatory language.
-- **Outputs:** Context truth + filters.
-- **Checks:** A candidate can self-select in/out; claims are honest and specific (not hype).
+## Deep Dive
 
-### 6) Draft the public job description (clean, inclusive, skimmable)
-- **Inputs:** templates; company/role basics.
-- **Actions:** Assemble a complete JD using [references/TEMPLATES.md](references/TEMPLATES.md). Keep requirements minimal; separate must-haves vs nice-to-haves; avoid jargon and bias.
-- **Outputs:** JD draft (public).
-- **Checks:** In 90 seconds, a qualified candidate can answer: “What will I accomplish? Why here? What do I need to be great at?”
+For all 9 insights from 6 guests, see `references/guest-insights.md`
 
-### 7) Iterate + quality gate + finalize pack
-- **Inputs:** JD draft; any candidate feedback; hiring manager review.
-- **Actions:** Propose what to test (which section is failing: attract vs filter). Create an iteration log. Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add Risks/Open questions/Next steps.
-- **Outputs:** Final Job Description Pack.
-- **Checks:** The pack is internally aligned and externally high-signal; unknowns are explicit; iteration triggers are defined.
+## Related Skills
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (Startup, high-pace):** “Write a job description for a founding Product Designer for a seed-stage B2B AI tool. We need someone who can ship end-to-end in ambiguity. Include success at 12 months and a candid ‘what’s hard here’ section.”  
-Expected: clear 12-month outcomes, a design-major spike, honest pace/constraints, and filters that self-select the wrong candidates out.
-
-**Example 2 (Scale-up, specialized spike):** “Create a role scorecard + job posting for a Staff Backend Engineer owning reliability for a high-traffic API. Emphasize systems thinking and incident ownership.”  
-Expected: outcome-based responsibilities tied to reliability outcomes, plus a clear major spike (operational excellence) and measurable success criteria.
-
-**Boundary example:** “Write a JD for a ‘rockstar generalist’ to ‘do whatever is needed’ (no outcomes).”  
-Response: refuse to invent a laundry list; run intake, define 12-month outcomes and spikes first, then draft.
+- Conducting Interviews
+- Evaluating Candidates
+- Onboarding New Hires
+- Building Team Culture

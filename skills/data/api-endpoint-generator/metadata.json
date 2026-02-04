@@ -1,9 +1,7 @@
 {
   "name": "api-endpoint-generator",
-  "description": "Generates CRUD REST API endpoints with request validation, TypeScript types, consistent response formats, error handling, and documentation. Includes route handlers, validation schemas (Zod/Joi), type",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/api-endpoint-generator/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:29.933750Z"
 }

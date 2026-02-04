@@ -1,7 +1,7 @@
 {
   "name": "scala-pro",
-  "repo": "vjrivmon/Setup-Software-IA",
-  "path": ".agents/skills/scala-pro/SKILL.md",
-  "source": "github.com/vjrivmon/Setup-Software-IA",
-  "downloaded_at": "2026-02-02T02:41:38.698175Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/scala-pro/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:37.427346Z"
 }

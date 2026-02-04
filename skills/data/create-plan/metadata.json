@@ -1,7 +1,7 @@
 {
   "name": "create-plan",
-  "repo": "fyuuki0jp/SourceDoc",
-  "path": ".claude/skills/create-plan/SKILL.md",
-  "source": "github.com/fyuuki0jp/SourceDoc",
-  "downloaded_at": "2026-02-02T05:11:41.980654Z"
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/create-plan/SKILL.md",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "downloaded_at": "2026-02-04T04:51:27.840490Z"
 }

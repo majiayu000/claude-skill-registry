@@ -1,122 +1,107 @@
 ---
-name: design-ui
-description: This skill should be used when the user asks to "design a UI", "create a landing page", "build a dashboard", "generate a website design", "make a product page", or needs guidance on UI design patterns, accessibility standards, design tokens, or eliminating generic AI-generated design patterns (vibe-code).
+user-invocable: true
+description: "[デザイン] 2. SSOT → 静的UI骨格（見た目のみ）を生成"
 ---
 
-# Design UI Skill
+# [デザイン] 2. SSOT → 静的UI骨格（見た目のみ）を生成
 
-You are an expert UI designer with deep knowledge of design systems, accessibility, and creating distinctive, non-generic interfaces. Use this knowledge to guide the design process.
+## コマンド: /design-ui [$TARGET] [$PAGE_KEY]
+設計JSON（tokens/components/design_context）を参照し、**静的UI骨格**のみ生成。
+ロジック/状態/データ取得は入れない。ターゲットは **doc/input/rdd.md** の技術スタックを既定とし、引数で上書きする場合は **ADR-lite承認必須**。
 
-## Core Design Principles
+## いつ使う？（位置づけ）
+- `/design-ssot` または `/design-mock` で **SSOT（tokens/components/context）** が揃ったあと
+- 「実装スタック準拠のファイル配置」で **見た目だけの骨格**を先に作りたいとき（後で分割・結合する前提）
 
-### Accessibility-First Design
-- Generate WCAG AAA compliant color combinations by default
-- Plan keyboard navigation for all interactive elements
-- Optimize for screen readers with proper ARIA labels and semantic HTML
-- Use an 8pt grid system for consistent spacing
-- Design responsive breakpoints: 320px, 768px, 1024px, 1440px
+## 次に何をする？
+- 重複UIを減らして保守しやすくする → `/design-components`
+- variantsを型付きprops/属性に落として再利用UIにする → `/design-assemble`
 
-### Anti-Vibe-Code Patterns
-Avoid these generic AI design tells:
-- Overly rounded corners on everything
-- Generic gradient backgrounds (especially purple-to-blue)
-- Stock photo placeholder aesthetics
-- Excessive drop shadows
-- Generic "Lorem ipsum" placeholder text
-- Cookie-cutter card layouts
-- Overuse of icons without purpose
+## 共通前提（参照）
+- 口調・出力規約・差分出力の方針は `CLAUDE.md` に従う。
+- `doc/input/rdd.md` を読み、該当する `.claude/skills/*` を適用して判断軸を揃える。
+  - 例（ロール）: `frontend-implementation` / `accessibility-engineer`
+  - 例（tech）: `react` / `astro` / `svelte` / `tailwind`（※テンプレートでは固定せず、RDDのスタックに合わせて選ぶ）
+- 詳細運用（サンプル運用/依存評価補助/ADR-lite）は `doc/guide/ai_guidelines.md` を参照。
 
-### Sector-Specific Considerations
-Different sectors have distinct design conventions:
-- **Fintech**: Trust signals, security indicators, clean data visualization
-- **Healthcare**: Calming colors, clear hierarchy, accessibility paramount
-- **E-commerce**: Product focus, clear CTAs, trust badges
-- **SaaS**: Feature highlighting, pricing tables, onboarding flows
-- **Creative**: Bold typography, unique layouts, personality
+## 見た目の基準（ビューポート）について
+- まず `doc/input/rdd.md` の「ターゲット表示環境（事実）」を参照し、プレビュー/Story等の確認は **そのビューポートを基準**に行う
+- 未記入の場合は、以下を **推奨デフォルト**として仮置きする：
+  - desktop: 1440x900
+  - mobile: 390x844
+  - tablet: 834x1194
 
-## Quality Gates
+### 入力
+- $TARGET（任意）: react | vue | svelte | swiftui | flutter | web-components | plain-html など
+- $PAGE_KEY（任意）: 画面キー（`doc/input/design/design_context.json` の `pages[].key`）
+  - 省略時: **全ページ**を対象に生成する（複数ページ対応の既定）
 
-All designs must meet these criteria before completion:
+### 出力（差分のみ）
+- スタック別の標準配置へ静的UIファイル一式
+  - 例: React → `src/components/*`, `src/stories/*`, `tailwind.config.js`(tokens反映)
+  - 例: Vue → `src/components/*.vue`, `src/stories/*`
+  - 例: SwiftUI → `Sources/UI/*`
+- Storybook/プレビュー（対応スタックのみ）
 
-| Metric | Threshold | Description |
-|--------|-----------|-------------|
-| Overall Score | ≥ 8.5/10 | Weighted average of all dimensions |
-| WCAG Compliance | AA minimum | Color contrast and accessibility |
-| Vibe-Code Probability | < 10% | Uniqueness and authenticity |
-| Sector Alignment | ≥ 90% | Matches industry conventions |
-| Critical Issues | 0 | No blocking problems |
+### 前提（入力ファイル）
+- `doc/input/design/design-tokens.json`
+- `doc/input/design/components.json`
+- `doc/input/design/design_context.json`
+- `doc/input/design/copy.json`（文言のSSOT。一字一句固定）
+ - `doc/input/design/assets/assets.json`（任意。存在する場合は必ず参照して画像を配置する）
+（通常は `/design-ssot` の成果物）
 
-## Design Token Structure
+### 参照（スキーマ）
+- constraints/resizing/autoLayout の解釈とレスポンシブ対応表は `doc/input/design/ssot_schema.md` を参照する
 
-Generate tokens in Style Dictionary JSON format:
+### レスポンシブ適用規則（Figma→CSS/スタイル）
+- Auto Layout → `flex` 等 + tokens の `gap/padding`
+- constraints/resizing マッピング
+  - horizontal: SCALE → `w-full` / `flex-grow` 等
+  - vertical: TOP_BOTTOM → `h-full`（文脈でcol）
+  - resizing: FILL → `flex-1` / `w-full`
+  - resizing: HUG → `inline-size: max-content` / `inline-block`
+- breakpoints → `doc/input/design/design-tokens.json` の `primitives.breakpoints` 準拠
+- **tokens外の値禁止 / magic number禁止**
 
-```json
-{
-  "color": {
-    "primary": { "value": "#1a73e8" },
-    "secondary": { "value": "#34a853" },
-    "background": { "value": "#ffffff" },
-    "surface": { "value": "#f8f9fa" },
-    "text": {
-      "primary": { "value": "#202124" },
-      "secondary": { "value": "#5f6368" }
-    }
-  },
-  "spacing": {
-    "xs": { "value": "4px" },
-    "sm": { "value": "8px" },
-    "md": { "value": "16px" },
-    "lg": { "value": "24px" },
-    "xl": { "value": "32px" }
-  },
-  "typography": {
-    "fontFamily": {
-      "heading": { "value": "Inter, sans-serif" },
-      "body": { "value": "Inter, sans-serif" }
-    },
-    "fontSize": {
-      "xs": { "value": "12px" },
-      "sm": { "value": "14px" },
-      "base": { "value": "16px" },
-      "lg": { "value": "18px" },
-      "xl": { "value": "24px" },
-      "2xl": { "value": "32px" },
-      "3xl": { "value": "48px" }
-    }
-  },
-  "borderRadius": {
-    "sm": { "value": "4px" },
-    "md": { "value": "8px" },
-    "lg": { "value": "12px" },
-    "full": { "value": "9999px" }
-  }
-}
+### 禁止
+- 状態/ロジック/フェッチの追加
+- RDD逸脱スタックの導入（$TARGET指定時はADR-lite要）
+- `copy.json` の文言を推測/言い換えして埋めること（不足は不足として止める）
+ - `div` クリック等でボタン/リンク相当を作ること（セマンティック要素を優先し、必要最小限のWAI-ARIAに限定する）
+
+### 文言（copy）の適用ルール
+- `design_context.json` の text ノードは `copyKey` を持つ前提で、対応する文言を `doc/input/design/copy.json` から参照して埋め込む
+- `copyKey` が未定義/不足している場合は、**推測で生成しない**。ユーザーに以下を依頼して停止する：
+  - `FIGMA_REF` を再提示して `/design-ssot` をやり直す
+  - または `copy.json` の差分（追加すべきキーと文言）を提供してもらう
+
+### 画像アセット（assets.json）の適用ルール
+- `doc/input/design/assets/assets.json` が存在する場合は、`baseDir` 配下にある画像を参照してUI骨格に反映する
+  - 例: Next/Astro/React → `public/design-assets/*`
+  - 例: SvelteKit → `static/design-assets/*`
+- `components.json` の `slots` や `usedBy` 情報と照合し、画像が必要な箇所（ロゴ/アイコン/イラスト/写真）の取りこぼしを防ぐ
+- 画像の最適化（次世代フォーマット変換/圧縮/レスポンシブ画像生成等）は、この工程では必須にしない（まず再現性を優先）
+- `assets.json` に `status: "failed"` がある場合は、**必ずユーザーに不足（動画/画像等）を報告**し、手元提供またはFigma Export設定の依頼をして停止する（推測で代替しない）
+
+### ゲート
+- 見た目一致（主要variantsのプレビュー/Story）
+- tokens外の値0件 / Lint/Type green
+
+**Agent Browser利用可能時（自律確認）:**
+```bash
+# Storybook または開発サーバーを起動後
+agent-browser open http://localhost:6006  # Storybook
+# または
+agent-browser open http://localhost:3000/{対象パス}
+
+# スナップショットで要素構造を確認
+agent-browser snapshot -i
+
+# 主要breakpointsでの表示確認（viewport変更）
+# 問題発見時は修正後に再スナップショット
 ```
+- デザインとの差異（余白/色/タイポ）を目視確認
+- レスポンシブ崩れがないか確認
 
-## Iteration Strategy
-
-### Phase 1: Explore (Iterations 1-5)
-- High creativity, try different approaches
-- Generate multiple layout concepts
-- Experiment with color palettes
-- Test different typography combinations
-
-### Phase 2: Exploit (Iterations 6-10)
-- Refine the best approach from exploration
-- Focus on specific issues identified
-- Polish spacing and alignment
-- Fine-tune color relationships
-
-### Phase 3: Pivot (Iterations 11-15)
-- If stuck, try radically different strategies
-- Consider alternative layout paradigms
-- Explore unexpected color combinations
-- Break conventional patterns thoughtfully
-
-## Reference Files
-
-For detailed guidance, see:
-- `references/quality-gates.md` - Detailed scoring criteria
-- `references/sector-patterns.md` - Industry-specific patterns
-- `references/vibe-code-patterns.md` - Anti-patterns to avoid
-- `references/design-tokens-spec.md` - Token specification details
+- ここで停止

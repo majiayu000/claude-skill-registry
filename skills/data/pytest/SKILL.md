@@ -1,194 +1,162 @@
 ---
 name: pytest
-description: >
-  Pytest testing patterns for Python.
-  Trigger: When writing or refactoring pytest tests (fixtures, mocking, parametrize, markers). For Prowler-specific API/SDK testing conventions, also use prowler-test-api or prowler-test-sdk.
-license: Apache-2.0
-metadata:
-  author: prowler-cloud
-  version: "1.0"
-  scope: [root, sdk, api]
-  auto_invoke: "Writing Python tests with pytest"
-allowed-tools: Read, Edit, Write, Glob, Grep, Bash, WebFetch, WebSearch, Task
+description: Expert guidance for Python testing with pytest framework. Use when (1) writing unit tests or integration tests, (2) setting up test fixtures for setup/teardown, (3) parametrizing tests with multiple inputs, (4) using markers (skip, xfail, custom), (5) mocking/patching with monkeypatch or pytest-mock, (6) configuring pytest (pytest.ini, pyproject.toml, conftest.py), (7) running tests with coverage, (8) debugging test failures, or (9) testing async code, FastAPI, Django, or Flask apps.
 ---
 
-## Basic Test Structure
+# Pytest Testing Guide
 
-```python
-import pytest
+Write Python tests efficiently with pytest.
 
-class TestUserService:
-    def test_create_user_success(self):
-        user = create_user(name="John", email="john@test.com")
-        assert user.name == "John"
-        assert user.email == "john@test.com"
-
-    def test_create_user_invalid_email_fails(self):
-        with pytest.raises(ValueError, match="Invalid email"):
-            create_user(name="John", email="invalid")
-```
-
-## Fixtures
-
-```python
-import pytest
-
-@pytest.fixture
-def user():
-    """Create a test user."""
-    return User(name="Test User", email="test@example.com")
-
-@pytest.fixture
-def authenticated_client(client, user):
-    """Client with authenticated user."""
-    client.force_login(user)
-    return client
-
-# Fixture with teardown
-@pytest.fixture
-def temp_file():
-    path = Path("/tmp/test_file.txt")
-    path.write_text("test content")
-    yield path  # Test runs here
-    path.unlink()  # Cleanup after test
-
-# Fixture scopes
-@pytest.fixture(scope="module")  # Once per module
-@pytest.fixture(scope="class")   # Once per class
-@pytest.fixture(scope="session") # Once per test session
-```
-
-## conftest.py
-
-```python
-# tests/conftest.py - Shared fixtures
-import pytest
-
-@pytest.fixture
-def db_session():
-    session = create_session()
-    yield session
-    session.rollback()
-
-@pytest.fixture
-def api_client():
-    return TestClient(app)
-```
-
-## Mocking
-
-```python
-from unittest.mock import patch, MagicMock
-
-class TestPaymentService:
-    def test_process_payment_success(self):
-        with patch("services.payment.stripe_client") as mock_stripe:
-            mock_stripe.charge.return_value = {"id": "ch_123", "status": "succeeded"}
-
-            result = process_payment(amount=100)
-
-            assert result["status"] == "succeeded"
-            mock_stripe.charge.assert_called_once_with(amount=100)
-
-    def test_process_payment_failure(self):
-        with patch("services.payment.stripe_client") as mock_stripe:
-            mock_stripe.charge.side_effect = PaymentError("Card declined")
-
-            with pytest.raises(PaymentError):
-                process_payment(amount=100)
-
-# MagicMock for complex objects
-def test_with_mock_object():
-    mock_user = MagicMock()
-    mock_user.id = "user-123"
-    mock_user.name = "Test User"
-    mock_user.is_active = True
-
-    result = get_user_info(mock_user)
-    assert result["name"] == "Test User"
-```
-
-## Parametrize
-
-```python
-@pytest.mark.parametrize("input,expected", [
-    ("hello", "HELLO"),
-    ("world", "WORLD"),
-    ("pytest", "PYTEST"),
-])
-def test_uppercase(input, expected):
-    assert input.upper() == expected
-
-@pytest.mark.parametrize("email,is_valid", [
-    ("user@example.com", True),
-    ("invalid-email", False),
-    ("", False),
-    ("user@.com", False),
-])
-def test_email_validation(email, is_valid):
-    assert validate_email(email) == is_valid
-```
-
-## Markers
-
-```python
-# pytest.ini or pyproject.toml
-[tool.pytest.ini_options]
-markers = [
-    "slow: marks tests as slow",
-    "integration: marks integration tests",
-]
-
-# Usage
-@pytest.mark.slow
-def test_large_data_processing():
-    ...
-
-@pytest.mark.integration
-def test_database_connection():
-    ...
-
-@pytest.mark.skip(reason="Not implemented yet")
-def test_future_feature():
-    ...
-
-@pytest.mark.skipif(sys.platform == "win32", reason="Unix only")
-def test_unix_specific():
-    ...
-
-# Run specific markers
-# pytest -m "not slow"
-# pytest -m "integration"
-```
-
-## Async Tests
-
-```python
-import pytest
-
-@pytest.mark.asyncio
-async def test_async_function():
-    result = await async_fetch_data()
-    assert result is not None
-```
-
-## Commands
+## Quick Start
 
 ```bash
-pytest                          # Run all tests
-pytest -v                       # Verbose output
-pytest -x                       # Stop on first failure
-pytest -k "test_user"           # Filter by name
-pytest -m "not slow"            # Filter by marker
-pytest --cov=src                # With coverage
-pytest -n auto                  # Parallel (pytest-xdist)
-pytest --tb=short               # Short traceback
+pip install pytest
 ```
 
-## References
+```python
+# test_example.py
+def test_addition():
+    assert 1 + 1 == 2
+```
 
-For general pytest documentation, see:
-- **Official Docs**: https://docs.pytest.org/en/stable/
+Run: `pytest` or `pytest -v`
 
-For Prowler SDK testing with provider-specific patterns (moto, MagicMock), see:
-- **Documentation**: [references/prowler-testing.md](references/prowler-testing.md)
+## Core Concepts
+
+| Concept | Example |
+|---------|---------|
+| Test function | `def test_something():` |
+| Assertion | `assert result == expected` |
+| Fixture | `@pytest.fixture` - dependency injection |
+| Marker | `@pytest.mark.skip` - test metadata |
+| Parametrize | `@pytest.mark.parametrize` - multiple inputs |
+
+## Essential Patterns
+
+### Basic Test
+```python
+def test_function():
+    result = my_function(1, 2)
+    assert result == 3
+```
+
+### Exception Testing
+```python
+import pytest
+
+def test_raises():
+    with pytest.raises(ValueError, match="invalid"):
+        raise ValueError("invalid input")
+```
+
+### Fixture (Setup/Teardown)
+```python
+@pytest.fixture
+def database():
+    db = create_db()
+    yield db          # provide to test
+    db.cleanup()      # teardown
+
+def test_query(database):
+    assert database.query("SELECT 1")
+```
+
+### Parametrize
+```python
+@pytest.mark.parametrize("input,expected", [
+    (1, 2),
+    (2, 4),
+    (3, 6),
+])
+def test_double(input, expected):
+    assert input * 2 == expected
+```
+
+### Mocking
+```python
+def test_mock(monkeypatch):
+    monkeypatch.setattr("module.func", lambda: "mocked")
+    monkeypatch.setenv("API_KEY", "test-key")
+```
+
+## Reference Files
+
+| Topic | File | When to Use |
+|-------|------|-------------|
+| **Basics** | [basics.md](references/basics.md) | Test discovery, assertions, running tests, config |
+| **Fixtures** | [fixtures.md](references/fixtures.md) | Setup/teardown, scopes, factories, conftest.py |
+| **Markers** | [markers.md](references/markers.md) | skip, xfail, parametrize, custom markers |
+| **Mocking** | [mocking.md](references/mocking.md) | monkeypatch, pytest-mock, spies, async mocks |
+| **Plugins** | [plugins.md](references/plugins.md) | Coverage, parallel, async, Django, Flask, FastAPI |
+
+## Common Commands
+
+```bash
+pytest                    # Run all tests
+pytest -v                 # Verbose
+pytest -s                 # Show prints
+pytest -x                 # Stop on first failure
+pytest -k "pattern"       # Run matching tests
+pytest -m slow            # Run by marker
+pytest --cov=mypackage    # With coverage
+pytest -n auto            # Parallel (xdist)
+pytest --lf               # Run last failed
+pytest --pdb              # Debug on failure
+```
+
+## Project Structure
+
+```
+project/
+├── src/
+│   └── mypackage/
+│       └── module.py
+├── tests/
+│   ├── conftest.py      # Shared fixtures
+│   ├── test_unit.py
+│   └── test_integration.py
+├── pytest.ini           # Or pyproject.toml
+└── requirements-test.txt
+```
+
+## Configuration (pyproject.toml)
+
+```toml
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: slow tests",
+    "integration: integration tests",
+]
+```
+
+## Built-in Fixtures
+
+| Fixture | Purpose |
+|---------|---------|
+| `tmp_path` | Temp directory (pathlib.Path) |
+| `tmpdir` | Temp directory (legacy) |
+| `capsys` | Capture stdout/stderr |
+| `caplog` | Capture logging |
+| `monkeypatch` | Patch attributes/env vars |
+| `request` | Test/fixture metadata |
+
+## Fixture Scopes
+
+```python
+@pytest.fixture(scope="function")  # Default - per test
+@pytest.fixture(scope="class")     # Per test class
+@pytest.fixture(scope="module")    # Per file
+@pytest.fixture(scope="session")   # Per test run
+```
+
+## Best Practices
+
+- Name tests descriptively: `test_user_login_with_invalid_password_fails`
+- One assertion concept per test
+- Use fixtures for reusable setup
+- Use `conftest.py` for shared fixtures
+- Use markers to categorize tests (unit, integration, slow)
+- Run with coverage: `pytest --cov --cov-report=html`
+- Use parametrize to reduce duplicate tests

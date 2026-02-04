@@ -37,7 +37,18 @@ pip install google-genai python-dotenv pillow
 - **Video generation**: `veo-3.1-generate-preview` (8s clips with audio)
 - **Analysis**: `gemini-2.5-flash` (recommended), `gemini-2.5-pro` (advanced)
 
-## Scripts
+## Available Scripts
+
+> **IMPORTANT**: Only these 4 scripts exist. Do NOT invent or guess script names!
+
+| Script | Purpose | Example |
+|--------|---------|---------|
+| `gemini_batch_process.py` | Main CLI for all tasks | `--files <file> --task analyze` |
+| `media_optimizer.py` | Compress/resize media | `--input <file> --max-size 10M` |
+| `document_converter.py` | Convert docs to markdown | `--files <pdf>` |
+| `check_setup.py` | Verify setup | (no args needed) |
+
+### Script Details
 
 - **`gemini_batch_process.py`**: CLI orchestrator for `transcribe|analyze|extract|generate|generate-video` that auto-resolves API keys, picks sensible default models per task, streams files inline vs File API, and saves structured outputs (text/JSON/CSV/markdown plus generated assets) for Imagen 4 + Veo workflows.
 - **`media_optimizer.py`**: ffmpeg/Pillow-based preflight tool that compresses/resizes/converts audio, image, and video inputs, enforces target sizes/bitrates, splits long clips into hour chunks, and batch-processes directories so media stays within Gemini limits.
@@ -62,6 +73,19 @@ Load for detailed guidance:
 
 **Formats**: Audio (WAV/MP3/AAC, 9.5h), Images (PNG/JPEG/WEBP, 3.6k), Video (MP4/MOV, 6h), PDF (1k pages)
 **Size**: 20MB inline, 2GB File API
+**Important:** 
+- If you are going to generate a transcript of the audio, and the audio length is longer than 15 minutes, the transcript often gets truncated due to output token limits in the Gemini API response. To get the full transcript, you need to split the audio into smaller chunks (max 15 minutes per chunk) and transcribe each segment for a complete transcript.
+- If you are going to generate a transcript of the video and the video length is longer than 15 minutes, use ffmpeg to extract the audio from the video, truncate the audio to 15 minutes, transcribe all audio segments, and then combine the transcripts into a single transcript.
+**Transcription Output Requirements:**
+- Format: Markdown
+- Metadata: Duration, file size, generated date, description, file name, topics covered, etc.
+- Parts: from-to (e.g., 00:00-00:15), audio chunk name, transcript, status, etc.
+- Transcript format: 
+  ```
+  [HH:MM:SS -> HH:MM:SS] transcript content
+  [HH:MM:SS -> HH:MM:SS] transcript content
+  ...
+  ```
 
 ## Resources
 

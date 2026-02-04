@@ -1,7 +1,7 @@
 {
   "name": "ssh",
-  "repo": "carmandale/agent-config",
-  "path": "skills/tools/ssh/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:32.136594Z"
+  "repo": "chaterm/terminal-skills",
+  "path": "server/ssh/SKILL.md",
+  "source": "github.com/chaterm/terminal-skills",
+  "downloaded_at": "2026-02-04T02:24:41.238384Z"
 }

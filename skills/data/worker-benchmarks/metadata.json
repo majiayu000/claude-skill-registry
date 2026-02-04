@@ -1,7 +1,7 @@
 {
   "name": "worker-benchmarks",
-  "repo": "ruvnet/claude-flow",
-  "path": "v3/@claude-flow/cli/.claude/skills/worker-benchmarks/skill.md",
-  "source": "github.com/ruvnet/claude-flow",
-  "downloaded_at": "2026-02-02T04:56:22.979132Z"
+  "repo": "frankxai/agentic-creator-os",
+  "path": ".claude/skills/worker-benchmarks/skill.md",
+  "source": "github.com/frankxai/agentic-creator-os",
+  "downloaded_at": "2026-02-04T05:07:41.468673Z"
 }

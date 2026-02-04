@@ -1,116 +1,405 @@
 ---
-name: react-hook-form
-description: React Hook Form performance optimization for client-side form validation using useForm, useWatch, useController, and useFieldArray. This skill should be used when building client-side controlled forms with React Hook Form library. This skill does NOT cover React 19 Server Actions, useActionState, or server-side form handling (use react-19 skill for those).
+name: "react-hook-form"
+description: "Performant React forms with minimal re-renders and built-in validation"
+when_to_use: "Building forms in React with validation, dynamic fields, or complex form state"
 ---
 
-# React Hook Form Best Practices
+# React Hook Form
 
-Comprehensive performance optimization guide for React Hook Form applications. Contains 41 rules across 8 categories, prioritized by impact to guide form development, automated refactoring, and code generation.
+## Quick Start
 
-## When to Apply
+### Basic Form
 
-Reference these guidelines when:
-- Writing new forms with React Hook Form
-- Configuring useForm options (mode, defaultValues, validation)
-- Subscribing to form values with watch/useWatch
-- Integrating controlled UI components (MUI, shadcn, Ant Design)
-- Managing dynamic field arrays with useFieldArray
-- Reviewing forms for performance issues
+```jsx
+import { useForm } from "react-hook-form";
 
-## Rule Categories by Priority
+function BasicForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-| Priority | Category | Impact | Prefix |
-|----------|----------|--------|--------|
-| 1 | Form Configuration | CRITICAL | `formcfg-` |
-| 2 | Field Subscription | CRITICAL | `sub-` |
-| 3 | Controlled Components | HIGH | `ctrl-` |
-| 4 | Validation Patterns | HIGH | `valid-` |
-| 5 | Field Arrays | MEDIUM-HIGH | `array-` |
-| 6 | State Management | MEDIUM | `formstate-` |
-| 7 | Integration Patterns | MEDIUM | `integ-` |
-| 8 | Advanced Patterns | LOW | `adv-` |
+  const onSubmit = (data) => console.log(data);
 
-## Quick Reference
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("firstName")} />
+      <input {...register("lastName", { required: "Last name is required" })} />
+      {errors.lastName && <p>{errors.lastName.message}</p>}
+      <input {...register("age", { pattern: /\d+/ })} />
+      {errors.age && <p>Please enter number for age.</p>}
+      <input type="submit" />
+    </form>
+  );
+}
+```
 
-### 1. Form Configuration (CRITICAL)
+### Form with Default Values
 
-- `formcfg-validation-mode` - Use onSubmit mode for optimal performance
-- `formcfg-revalidate-mode` - Set reValidateMode to onBlur for post-submit performance
-- `formcfg-default-values` - Always provide defaultValues for form initialization
-- `formcfg-async-default-values` - Use async defaultValues for server data
-- `formcfg-should-unregister` - Enable shouldUnregister for dynamic form memory efficiency
-- `formcfg-useeffect-dependency` - Avoid useForm return object in useEffect dependencies
+```jsx
+import { useForm } from "react-hook-form";
 
-### 2. Field Subscription (CRITICAL)
+function FormWithDefaults() {
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      firstName: "John",
+      lastName: "Doe",
+      email: "john@example.com",
+    },
+  });
 
-- `sub-usewatch-over-watch` - Use useWatch instead of watch for isolated re-renders
-- `sub-watch-specific-fields` - Watch specific fields instead of entire form
-- `sub-usewatch-with-getvalues` - Combine useWatch with getValues for timing safety
-- `sub-deep-subscription` - Subscribe deep in component tree where data is needed
-- `sub-avoid-watch-in-render` - Avoid calling watch() in render for one-time reads
-- `sub-usewatch-default-value` - Provide defaultValue to useWatch for initial render
-- `sub-useformcontext-sparingly` - Use useFormContext sparingly for deep nesting
+  const onSubmit = (data) => console.log(data);
 
-### 3. Controlled Components (HIGH)
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("firstName")} />
+      <input {...register("lastName")} />
+      <input {...register("email")} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
 
-- `ctrl-usecontroller-isolation` - Use useController for re-render isolation
-- `ctrl-avoid-double-registration` - Avoid double registration with useController
-- `ctrl-controller-field-props` - Wire Controller field props correctly for UI libraries
-- `ctrl-single-usecontroller-per-component` - Use single useController per component
-- `ctrl-local-state-combination` - Combine local state with useController for UI-only state
+## Common Patterns
 
-### 4. Validation Patterns (HIGH)
+### Form Validation
 
-- `valid-resolver-caching` - Define schema outside component for resolver caching
-- `valid-dynamic-schema-factory` - Use schema factory for dynamic validation
-- `valid-error-message-strategy` - Access errors via optional chaining or lodash get
-- `valid-inline-vs-resolver` - Prefer resolver over inline validation for complex rules
-- `valid-delay-error` - Use delayError to debounce rapid error display
-- `valid-native-validation` - Consider native validation for simple forms
+```jsx
+import { useForm } from "react-hook-form";
 
-### 5. Field Arrays (MEDIUM-HIGH)
+function ValidationExample() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-- `array-use-field-id-as-key` - Use field.id as key in useFieldArray maps
-- `array-complete-default-objects` - Provide complete default objects for field array operations
-- `array-separate-crud-operations` - Separate sequential field array operations
-- `array-unique-fieldarray-per-name` - Use single useFieldArray instance per field name
-- `array-virtualization-formprovider` - Use FormProvider for virtualized field arrays
+  const onSubmit = (data) => console.log(data);
 
-### 6. State Management (MEDIUM)
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        {...register("username", {
+          required: "Username is required",
+          minLength: {
+            value: 3,
+            message: "Username must be at least 3 characters",
+          },
+          maxLength: {
+            value: 20,
+            message: "Username must be less than 20 characters",
+          },
+        })}
+      />
+      {errors.username && <span>{errors.username.message}</span>}
 
-- `formstate-destructure-formstate` - Destructure formState properties before render
-- `formstate-useformstate-isolation` - Use useFormState for isolated state subscriptions
-- `formstate-getfieldstate-for-single-field` - Use getFieldState for single field state access
-- `formstate-subscribe-to-specific-fields` - Subscribe to specific field names in useFormState
-- `formstate-avoid-isvalid-with-onsubmit` - Avoid isValid with onSubmit mode for button state
+      <input
+        {...register("email", {
+          required: "Email is required",
+          pattern: {
+            value: /^\S+@\S+$/i,
+            message: "Invalid email format",
+          },
+        })}
+      />
+      {errors.email && <span>{errors.email.message}</span>}
 
-### 7. Integration Patterns (MEDIUM)
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
 
-- `integ-shadcn-form-import` - Verify shadcn Form component import source
-- `integ-shadcn-select-wiring` - Wire shadcn Select with onValueChange instead of spread
-- `integ-mui-controller-pattern` - Use Controller for Material-UI components
-- `integ-value-transform` - Transform values at Controller level for type coercion
+### Password Confirmation
 
-### 8. Advanced Patterns (LOW)
+```jsx
+import { useForm } from "react-hook-form";
 
-- `adv-formprovider-memo` - Wrap FormProvider children with React.memo
-- `adv-devtools-performance` - Disable DevTools in production and during performance testing
-- `adv-testing-wrapper` - Create test wrapper with QueryClient and AuthProvider
+function PasswordForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-## How to Use
+  const onSubmit = (data) => console.log(data);
 
-Read individual reference files for detailed explanations and code examples:
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="password"
+        {...register("password", {
+          required: "Password is required",
+          minLength: {
+            value: 8,
+            message: "Password must be at least 8 characters",
+          },
+        })}
+      />
+      {errors.password && <span>{errors.password.message}</span>}
 
-- [Section definitions](references/_sections.md) - Category structure and impact levels
-- [Rule template](assets/templates/_template.md) - Template for adding new rules
-- Reference files: `references/{prefix}-{slug}.md`
+      <input
+        type="password"
+        {...register("confirmPassword", {
+          required: "Please confirm your password",
+          validate: (value, formValues) =>
+            value === formValues.password || "Passwords do not match",
+        })}
+      />
+      {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
 
-## Related Skills
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
 
-- For schema validation with Zod resolver, see `zod` skill
-- For React 19 server actions, see `react-19` skill
-- For UI/UX form design, see `frontend-design` skill
+### Using Controller for Custom Components
 
-## Full Compiled Document
+```jsx
+import { useForm, Controller } from "react-hook-form";
+import Select from "react-select";
 
-For the complete guide with all rules expanded: `AGENTS.md`
+function CustomInputForm() {
+  const { handleSubmit, control } = useForm();
+
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
+
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        name="flavor"
+        control={control}
+        rules={{ required: "Please select a flavor" }}
+        render={({ field, fieldState: { error } }) => (
+          <div>
+            <Select {...field} options={options} />
+            {error && <span>{error.message}</span>}
+          </div>
+        )}
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+### Dynamic Fields with useFieldArray
+
+```jsx
+import { useForm, useFieldArray } from "react-hook-form";
+
+function DynamicFieldsForm() {
+  const { register, handleSubmit, control } = useForm({
+    defaultValues: {
+      users: [{ name: "", email: "" }],
+    },
+  });
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "users",
+  });
+
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {fields.map((field, index) => (
+        <div key={field.id}>
+          <input
+            {...register(`users.${index}.name`, {
+              required: "Name is required",
+            })}
+            placeholder="Name"
+          />
+          <input
+            {...register(`users.${index}.email`, {
+              required: "Email is required",
+            })}
+            placeholder="Email"
+          />
+          <button type="button" onClick={() => remove(index)}>
+            Remove
+          </button>
+        </div>
+      ))}
+
+      <button type="button" onClick={() => append({ name: "", email: "" })}>
+        Add User
+      </button>
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+### Async Form Submission
+
+```jsx
+import { useForm } from "react-hook-form";
+
+function AsyncSubmitForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      console.log("Form submitted:", data);
+    } catch (error) {
+      console.error("Submission failed:", error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("name", { required: true })} />
+      <button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "Submitting..." : "Submit"}
+      </button>
+    </form>
+  );
+}
+```
+
+### Form with Context (FormProvider)
+
+```jsx
+import { useForm, FormProvider, useFormContext } from "react-hook-form";
+
+function NestedInput({ name, label }) {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  return (
+    <div>
+      <label>{label}</label>
+      <input {...register(name)} />
+      {errors[name] && <span>{errors[name].message}</span>}
+    </div>
+  );
+}
+
+function ContextForm() {
+  const methods = useForm();
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <NestedInput name="firstName" label="First Name" />
+        <NestedInput name="lastName" label="Last Name" />
+        <button type="submit">Submit</button>
+      </form>
+    </FormProvider>
+  );
+}
+```
+
+### Async Field Validation
+
+```jsx
+import { useForm } from "react-hook-form";
+
+function AsyncValidationForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const checkUsernameAvailability = async (username) => {
+    // Simulate API call to check username
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    const takenUsernames = ["admin", "user", "test"];
+    if (takenUsernames.includes(username.toLowerCase())) {
+      return "Username is already taken";
+    }
+    return true;
+  };
+
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        {...register("username", {
+          required: "Username is required",
+          validate: checkUsernameAvailability,
+        })}
+      />
+      {errors.username && <span>{errors.username.message}</span>}
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+## Key Methods
+
+### useForm() Hook
+
+```jsx
+const {
+  register, // Register input fields
+  handleSubmit, // Form submission handler
+  formState, // Form state (errors, dirty, isValid, etc.)
+  setValue, // Set field value programmatically
+  getValues, // Get form values
+  reset, // Reset form to default values
+  trigger, // Trigger validation
+  clearErrors, // Clear specific or all errors
+  setError, // Set custom errors
+  control, // Control object for Controller
+} = useForm();
+```
+
+### Form State
+
+```jsx
+const {
+  errors, // Validation errors
+  dirty, // Form is dirty (has unsaved changes)
+  dirtyFields, // Array of dirty field names
+  isDirty, // Boolean indicating if form is dirty
+  touched, // Array of touched field names
+  touchedFields, // Object of touched field states
+  isSubmitted, // Form has been submitted
+  isSubmitting, // Form is currently submitting
+  isValid, // Form passes all validations
+  isValidating, // Form is currently validating
+} = formState;
+```
+
+### Common Validation Rules
+
+```jsx
+register("fieldName", {
+  required: "Field is required",
+  minLength: { value: 3, message: "Minimum 3 characters" },
+  maxLength: { value: 50, message: "Maximum 50 characters" },
+  min: { value: 18, message: "Must be at least 18" },
+  max: { value: 100, message: "Must be less than 100" },
+  pattern: { value: /^\d+$/, message: "Numbers only" },
+  validate: (value) => value === "expected" || "Custom validation failed",
+});
+```

@@ -1,7 +1,7 @@
 {
   "name": "shap",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/shap/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:01.877489Z"
+  "repo": "overtimepog/AgentTheo",
+  "path": ".claude/skills/scientific-skills/shap/SKILL.md",
+  "source": "github.com/overtimepog/AgentTheo",
+  "downloaded_at": "2026-02-04T04:05:47.761137Z"
 }

@@ -1,6 +1,6 @@
 ---
 name: bags
-version: 1.0.0
+version: 2.0.1
 description: Bags - The Solana launchpad for humans and AI agents. Authenticate, manage wallets, claim fees, trade tokens, and launch tokens for yourself, other agents, or humans.
 homepage: https://bags.fm
 metadata: {"emoji":"💰","category":"defi","api_base":"https://public-api-v2.bags.fm/api/v1","agent_api_base":"https://public-api-v2.bags.fm/api/v1/agent"}
@@ -137,7 +137,7 @@ Get your API key via `/agent/dev/keys/create` or from [dev.bags.fm](https://dev.
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/token-launch/claimable-positions` | GET | Check your earnings |
-| `/token-launch/claim-txs/v2` | POST | Generate claim transactions |
+| `/token-launch/claim-txs/v3` | POST | Generate claim transactions |
 | `/token-launch/lifetime-fees` | GET | Total fees for a token |
 
 **Trading:**
@@ -145,6 +145,11 @@ Get your API key via `/agent/dev/keys/create` or from [dev.bags.fm](https://dev.
 |----------|--------|-------------|
 | `/trade/quote` | GET | Get swap quotes |
 | `/trade/swap` | POST | Execute token swaps |
+
+**Solana:**
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/solana/send-transaction` | POST | Submit signed transactions |
 
 **Token Launch:**
 | Endpoint | Method | Description |

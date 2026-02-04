@@ -1,9 +1,7 @@
 {
   "name": "summarize-session",
-  "description": "Use at the end of a Claude Code session to create a comprehensive summary note in Obsidian and add a brief reference to the daily note",
-  "repo": "ebinnion/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ebinnion/dotfiles"
+  "repo": "lbb00/ai-rules-sync",
+  "path": ".claude/skills/summarize-session/SKILL.md",
+  "source": "github.com/lbb00/ai-rules-sync",
+  "downloaded_at": "2026-02-04T01:40:26.906376Z"
 }

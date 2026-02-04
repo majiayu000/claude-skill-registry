@@ -1,7 +1,7 @@
 {
   "name": "git-commit",
-  "repo": "motoki317/dotfiles",
-  "path": ".claude/skills/git-commit/SKILL.md",
-  "source": "github.com/motoki317/dotfiles",
-  "downloaded_at": "2026-02-02T04:59:44.062432Z"
+  "repo": "beel-collab/presets.dev",
+  "path": "skills/git-commit/SKILL.md",
+  "source": "github.com/beel-collab/presets.dev",
+  "downloaded_at": "2026-02-04T05:14:58.575563Z"
 }

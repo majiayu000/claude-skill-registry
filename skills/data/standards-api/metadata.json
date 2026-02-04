@@ -1,7 +1,7 @@
 {
   "name": "standards-api",
-  "repo": "maxritter/claude-codepro",
-  "path": ".claude/ccp/skills/standards-api/SKILL.md",
-  "source": "github.com/maxritter/claude-codepro",
-  "downloaded_at": "2026-02-02T01:43:49.681910Z"
+  "repo": "maxritter/claude-pilot",
+  "path": "pilot/skills/standards-api/SKILL.md",
+  "source": "github.com/maxritter/claude-pilot",
+  "downloaded_at": "2026-02-04T04:57:39.612584Z"
 }

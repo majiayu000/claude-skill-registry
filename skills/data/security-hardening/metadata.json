@@ -1,7 +1,7 @@
 {
   "name": "security-hardening",
-  "repo": "toilahuongg/Shopify-Agents-Kit",
-  "path": ".claude/skills/security-hardening/SKILL.md",
-  "source": "github.com/toilahuongg/Shopify-Agents-Kit",
-  "downloaded_at": "2026-02-02T04:24:57.596108Z"
+  "repo": "frankxai/agentic-creator-os",
+  "path": "skills/technical/security-hardening/SKILL.md",
+  "source": "github.com/frankxai/agentic-creator-os",
+  "downloaded_at": "2026-02-04T05:07:54.151699Z"
 }

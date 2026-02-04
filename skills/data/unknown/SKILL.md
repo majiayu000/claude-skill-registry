@@ -1,158 +1,44 @@
 ---
-name: videocut:安装
-description: 环境准备。安装依赖、下载模型、验证环境。触发词：安装、环境准备、初始化
+name: 股票分析
+description: 提供获取用户自选分组(LongPort)、股票市场数据(LongPort + AkShare)、技术指标计算（ta-lib）的技能。分析数并与用户研究交易策略，形成买卖点建议，并可做回测、寻优与报告输出。
 ---
 
-<!--
-input: 无
-output: 环境就绪
-pos: 前置 skill，首次使用前运行
+# 简介
 
-架构守护者：一旦我被修改，请同步更新：
-1. ../README.md 的 Skill 清单
-2. /CLAUDE.md 路由表
--->
+## 何时触发
 
-# 安装
+当用户提出下列任意请求时，加载本 Skill：
 
-> 首次使用前的环境准备
+- “调用 LongPort 分组接口拿到一批股票，补齐市场数据并做分析”
+- "对分组内所有标的计算技术指标，生成买卖点建议"
 
-## 快速使用
+## 能力概览
 
-```
-用户: 安装环境
-用户: 初始化
-用户: 下载模型
-```
+- 数据采集与分组：
+  - LongPort 分组接口获取标的列表
+  - 行情数据：优先 LongPort，缺失时回退 AkShare；支持前复权与时间对齐
+- 指标计算：
+  - 使用 TA-Lib，完整指标套件（EMA/MACD/RSI/ATR/OBV/BBANDS）
+- 信号生成：
+  - 规则/阈值/指标组合生成买卖点建议（含打分）
 
-## 依赖清单
+## 资源导航（何时加载）
 
-| 依赖 | 用途 | 安装命令 |
-|------|------|----------|
-| funasr | 口误识别 | `pip install funasr` |
-| modelscope | 模型下载 | `pip install modelscope` |
-| openai-whisper | 字幕生成 | `pip install openai-whisper` |
-| ffmpeg | 视频剪辑 | `brew install ffmpeg` |
+- references/data_sources.md — LongPort + AkShare
+- references/indicators.md — 指标使用技介绍
+- scripts/
+  - longport_groups.py — 自选分组管理（CLI：list/create/update/get-symbols/delete）
+  - longport_candlesticks.py — K 线数据获取（CLI：按周期/数量/输出路径查询）
+  - talib_calculator.py — 技术指标计算（支持单指标或 compute_full_suite）
+- assets/（可选）— 报告模板或 Notebook，如需生成报告/演示可补充
 
-## 模型清单
+## 工作流示例（触发句）
 
-### FunASR 模型（口误识别用）
+- “用 LongPort 拿到分组成份，缺失的用 AkShare 补齐，合并到统一行情表。”
+- "对分组内所有标的计算技术指标，生成买卖点建议列表。"
 
-首次运行自动下载到 `~/.cache/modelscope/`：
+## 注意事项与最佳实践
 
-| 模型 | 大小 | 用途 |
-|------|------|------|
-| paraformer-zh | 953MB | 语音识别（带时间戳） |
-| punc_ct | 1.1GB | 标点预测 |
-| fsmn-vad | 4MB | 语音活动检测 |
-| **小计** | **~2GB** | |
-
-### Whisper 模型（字幕生成用）
-
-首次运行自动下载到 `~/.cache/whisper/`：
-
-| 模型 | 大小 | 用途 |
-|------|------|------|
-| large-v3 | 2.9GB | 字幕转录（质量最好） |
-
-### 总计
-
-约 **5GB** 模型文件
-
-## 安装流程
-
-```
-1. 安装 Python 依赖
-       ↓
-2. 安装 FFmpeg
-       ↓
-3. 下载 FunASR 模型（口误识别）
-       ↓
-4. 下载 Whisper 模型（字幕生成）
-       ↓
-5. 验证环境
-```
-
-## 执行步骤
-
-### 1. 安装 Python 依赖
-
-```bash
-pip install funasr modelscope openai-whisper
-```
-
-### 2. 安装 FFmpeg
-
-```bash
-# macOS
-brew install ffmpeg
-
-# Ubuntu
-sudo apt install ffmpeg
-
-# 验证
-ffmpeg -version
-```
-
-### 3. 下载 FunASR 模型（约2GB）
-
-```python
-from funasr import AutoModel
-
-model = AutoModel(
-    model="paraformer-zh",
-    vad_model="fsmn-vad",
-    punc_model="ct-punc",
-)
-print("FunASR 模型下载完成")
-```
-
-### 4. 下载 Whisper 模型（约3GB）
-
-```python
-import whisper
-
-model = whisper.load_model("large-v3")
-print("Whisper 模型下载完成")
-```
-
-### 5. 验证环境
-
-```python
-from funasr import AutoModel
-
-model = AutoModel(
-    model="paraformer-zh",
-    vad_model="fsmn-vad",
-    punc_model="ct-punc",
-    disable_update=True
-)
-
-# 测试转录（用任意音频/视频）
-result = model.generate(input="test.mp4")
-print("文本:", result[0]['text'][:50])
-print("时间戳数量:", len(result[0]['timestamp']))
-print("✅ 环境就绪")
-```
-
-## 常见问题
-
-### Q1: 模型下载慢
-
-**解决**：使用国内镜像或手动下载
-
-### Q2: ffmpeg 命令找不到
-
-**解决**：确认已安装并添加到 PATH
-
-```bash
-which ffmpeg  # 应该输出路径
-```
-
-### Q3: funasr 导入报错
-
-**解决**：检查 Python 版本（需要 3.8+）
-
-```bash
-python3 --version
-```
+- 数据一致性：LongPort/AkShare需统一时区、使用前复权；缺失值要先补齐再算指标
+- 指标健壮性：TA-Lib 初期会产生 NaN，计算信号前先截取有效区间或前向填充
+- 凭证安全：LongPort/AkShare 请使用本地 .env 或加密文件，避免提交到仓库

@@ -1,20 +1,21 @@
 ---
 name: moai-workflow-loop
-description: >
-  Ralph Engine - Automated feedback loop with LSP diagnostics and AST-grep
-  integration for continuous code quality improvement. Use when implementing
-  error-driven development, automated fixing, or continuous quality validation
-  workflows.
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Write Edit Bash Grep Glob mcp__context7__resolve-library-id mcp__context7__get-library-docs
+description: Ralph Engine - Automated feedback loop with LSP diagnostics and AST-grep integration for continuous code quality improvement. Use when implementing error-driven development, automated fixing, or continuous quality validation workflows.
+version: 1.2.0
+category: workflow
+tags: ['lsp', 'ast-grep', 'feedback-loop', 'code-quality', 'automation', 'diagnostics', 'ralph']
 user-invocable: false
-metadata:
-  version: "1.2.0"
-  category: "workflow"
-  status: "active"
-  updated: "2026-01-11"
-  tags: "lsp, ast-grep, feedback-loop, code-quality, automation, diagnostics, ralph"
+updated: 2026-01-11
+status: active
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 # Ralph Engine
@@ -38,9 +39,10 @@ Key Components:
 
 Commands:
 
-- /moai: One-click Plan-Run-Sync automation (default)
-- /moai loop: Start feedback loop
-- /moai fix: One-time auto-fix
+- /moai:alfred: One-click Plan-Run-Sync automation
+- /moai:loop: Start feedback loop
+- /moai:fix: One-time auto-fix
+- /moai:cancel-loop: Stop active loop
 
 When to Use:
 
@@ -135,7 +137,7 @@ Check LSP server configuration in .lsp.json file. Verify the language server is 
 
 ### Loop Stuck
 
-Review the max_iterations setting to ensure it allows sufficient iterations. Review completion conditions to verify they are achievable. Send any message to interrupt the loop, or delete the state file (.moai/cache/.moai_loop_state.json) to reset.
+Review the max_iterations setting to ensure it allows sufficient iterations. Review completion conditions to verify they are achievable. Use /moai:cancel-loop command to reset the loop state.
 
 ## Works Well With
 
@@ -143,19 +145,19 @@ Skills:
 
 - moai-foundation-quality: TRUST 5 validation
 - moai-tool-ast-grep: Security scanning patterns
-- moai-workflow-testing: DDD integration
+- moai-workflow-testing: TDD integration
 - moai-lang-python: Python-specific patterns
 - moai-lang-typescript: TypeScript patterns
 
 Agents:
 
-- manager-ddd: DDD implementation
+- manager-tdd: TDD implementation
 - manager-quality: Quality validation
 - expert-debug: Complex debugging
 
 Commands:
 
-- /moai:2-run: DDD implementation
+- /moai:2-run: TDD implementation
 - /moai:3-sync: Documentation sync
 
 ## Reference

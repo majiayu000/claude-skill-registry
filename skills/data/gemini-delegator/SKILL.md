@@ -8,6 +8,7 @@ description: >-
 targets:
   - '*'
 ---
+
 # Gemini Delegator
 
 ## Overview
@@ -26,6 +27,7 @@ When Claude Code determines a task is suitable for delegation:
    - Need for different problem-solving approach
 
 3. **Delegation**: Automatically invokes Gemini:
+
    ```bash
    gemini --model gemini-2.5-pro --yolo "detailed task context with:
    - Problem description
@@ -81,12 +83,14 @@ Activate this skill specifically for:
 ## Quick Decision Framework
 
 **Use Gemini when:**
+
 - ✅ Problem has been attempted 2+ times without resolution
 - ✅ Logic complexity score is high (multiple nested conditions, complex state)
 - ✅ Backend/algorithm heavy task
 - ✅ Need different problem-solving approach
 
 **Don't use Gemini when:**
+
 - ❌ Problem is straightforward
 - ❌ First attempt at the problem
 - ❌ Simple frontend/styling work
@@ -116,6 +120,7 @@ gemini --model gemini-2.5-pro
 ```
 
 Then provide detailed context:
+
 ```
 I need help with [problem description].
 
@@ -132,6 +137,7 @@ Goal: [clear success criteria]
 ```
 
 **Advantages:**
+
 - Can iterate on the solution
 - Review changes
 - Switch models with `--model`
@@ -145,6 +151,7 @@ gemini --model gemini-2.5-pro "detailed task description with full context"
 ```
 
 Add flags as needed:
+
 - `-y` or `--yolo` - For trusted, well-scoped tasks (auto-accept)
 
 #### Strategy C: Resume Mode (For Persistent Problems)
@@ -156,16 +163,19 @@ gemini --model gemini-2.5-pro --resume latest
 ```
 
 **Advantages:**
+
 - Continues previous context
 - Good for iterative scenarios
 
 ### Step 4: Monitor and Validate
 
 **In interactive mode:**
+
 - Review changes before accepting
 - Use `--resume` if approach is wrong to continue context
 
 **After execution:**
+
 - Run tests to verify solution
 - Check edge cases
 - Validate performance improvements
@@ -317,6 +327,7 @@ After Gemini provides solution:
    Review the code changes provided by Gemini.
 
 2. **Run Tests**
+
    ```bash
    npm test
    # or appropriate test command
@@ -353,11 +364,13 @@ Users can also manually invoke Gemini following the guidance in this skill for m
 ## Cost and Performance Considerations
 
 **Gemini is cost-effective for:**
+
 - Complex problems requiring deep analysis
 - Tasks needing context retention (sessions)
 - Problems that would take many iterations
 
 **Use Claude Code instead for:**
+
 - First attempts at problems
 - Straightforward implementations
 - Simple bug fixes
@@ -367,6 +380,7 @@ Users can also manually invoke Gemini following the guidance in this skill for m
 ### Reference Documentation
 
 See `references/gemini_strategies.md` for:
+
 - Detailed command syntax
 - Complex task template examples
 - Troubleshooting patterns
@@ -403,12 +417,14 @@ gemini --model gemini-2.5-pro --resume latest
 Track when delegation is effective:
 
 ✅ **Success indicators:**
+
 - Problem solved after delegation
 - Solution more elegant than previous attempts
 - Performance improvements achieved
 - Bug fixed permanently
 
 ❌ **Failure indicators:**
+
 - Problem still unsolved
 - Solution too complex
 - Introduced new bugs

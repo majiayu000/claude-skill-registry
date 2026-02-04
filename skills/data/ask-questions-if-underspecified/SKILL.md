@@ -1,17 +1,9 @@
 ---
 name: ask-questions-if-underspecified
-description: Clarify requirements before implementing. Use when serious doubts araise.
+description: Clarify requirements before implementing. Do not use automatically, only when invoked explicitly.
 ---
 
 # Ask Questions If Underspecified
-
-## When to Use
-
-Use this skill when a request has multiple plausible interpretations or key details (objective, scope, constraints, environment, or safety) are unclear.
-
-## When NOT to Use
-
-Do not use this skill when the request is already clear, or when a quick, low-risk discovery read can answer the missing details.
 
 ## Goal
 
@@ -22,7 +14,6 @@ Ask the minimum set of clarifying questions needed to avoid wrong work; do not s
 ### 1) Decide whether the request is underspecified
 
 Treat a request as underspecified if after exploring how to perform the work, some or all of the following are not clear:
-
 - Define the objective (what should change vs stay the same)
 - Define "done" (acceptance criteria, examples, edge cases)
 - Define scope (which files/components/users are in/out)
@@ -37,7 +28,6 @@ If multiple plausible interpretations exist, assume it is underspecified.
 Ask 1-5 questions in the first pass. Prefer questions that eliminate whole branches of work.
 
 Make questions easy to answer:
-
 - Optimize for scannability (short, numbered questions; avoid paragraphs)
 - Offer multiple-choice options when possible
 - Suggest reasonable defaults when appropriate (mark them clearly as the default/recommended choice; bold the recommended choice in the list, or if you present options in a code block, put a bold "Recommended" line immediately above the block and also tag defaults inside the block)
@@ -49,12 +39,10 @@ Make questions easy to answer:
 ### 3) Pause before acting
 
 Until must-have answers arrive:
-
 - Do not run commands, edit files, or produce a detailed plan that depends on unknowns
 - Do perform a clearly labeled, low-risk discovery step only if it does not commit you to a direction (e.g., inspect repo structure, read relevant config files)
 
 If the user explicitly asks you to proceed without answers:
-
 - State your assumptions as a short numbered list
 - Ask for confirmation; proceed only after they confirm or correct them
 
@@ -62,7 +50,7 @@ If the user explicitly asks you to proceed without answers:
 
 Once you have answers, restate the requirements in 1-3 sentences (including key constraints and what success looks like), then start work.
 
-## Question templates
+## Question Templates
 
 - "Before I start, I need: (1) ..., (2) ..., (3) .... If you don't care about (2), I will assume ...."
 - "Which of these should it be? A) ... B) ... C) ... (pick one)"
@@ -83,7 +71,7 @@ c) Not sure - use default
 Reply with: defaults (or 1a 2a)
 ```
 
-## Anti-patterns
+## Anti-Patterns
 
 - Don't ask questions you can answer with a quick, low-risk discovery read (e.g., configs, existing patterns, docs).
 - Don't ask open-ended questions if a tight multiple-choice or yes/no would eliminate ambiguity faster.

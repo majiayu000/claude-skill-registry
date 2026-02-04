@@ -1,7 +1,7 @@
 {
   "name": "code-simplification",
-  "repo": "lgbarn/shipyard",
-  "path": "skills/code-simplification/SKILL.md",
-  "source": "github.com/lgbarn/shipyard",
-  "downloaded_at": "2026-02-02T02:11:55.651356Z"
+  "repo": "sammcj/agentic-coding",
+  "path": "Claude/skills/code-simplification/SKILL.md",
+  "source": "github.com/sammcj/agentic-coding",
+  "downloaded_at": "2026-02-04T02:02:15.265045Z"
 }

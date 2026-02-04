@@ -68,6 +68,47 @@ These files contain the project's "memory" - shared context that ensures consist
 - You can proceed with the task without them
 - Consider suggesting the user run `@steering` to bootstrap project memory
 
+---
+
+## Workflow Engine Integration (v2.1.0)
+
+**Requirements Analyst** は **Stage 1: Requirements** を担当します。
+
+### ワークフロー連携
+
+```bash
+# 要件定義開始時（Stage 1へ遷移）
+musubi-workflow next requirements
+
+# 要件定義完了時（Stage 2へ遷移）
+musubi-workflow next design
+```
+
+### ステージ完了チェックリスト
+
+要件定義ステージを完了する前に確認：
+
+- [ ] SRS（Software Requirements Specification）が作成済み
+- [ ] 機能要件がEARS形式で定義済み
+- [ ] 非機能要件が定義済み
+- [ ] ユーザーストーリーが作成済み
+- [ ] 要件のトレーサビリティIDが付与済み
+- [ ] ステークホルダーの承認を取得
+
+### フィードバックループ
+
+後続ステージで要件の問題が発見された場合：
+
+```bash
+# 設計で問題発見 → 要件に戻る
+musubi-workflow feedback design requirements -r "要件の曖昧さを解消"
+
+# テストで問題発見 → 要件に戻る
+musubi-workflow feedback testing requirements -r "受入基準の修正が必要"
+```
+
+---
+
 ## 3. Documentation Language Policy
 
 **CRITICAL: 英語版と日本語版の両方を必ず作成**

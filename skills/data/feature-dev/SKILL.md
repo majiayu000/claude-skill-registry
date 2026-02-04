@@ -1,317 +1,205 @@
 ---
 name: feature-dev
-description: Feature development workflow with exploration, architecture, implementation, and review phases. Use for implementing new features or significant changes.
-argument-hint: <feature-description>
-model: inherit
-user-invocable: true
-disable-model-invocation: false
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash, Task, AskUserQuestion
+description: Feature Development Workflow - 7-phase structured approach for building features. Based on Anthropic's official feature-dev plugin. Activates for build feature, implement feature, feature development, feature workflow, structured development.
+argument-hint: "[FEATURE_DESCRIPTION]"
 ---
 
-# Feature Development Workflow
+# Feature Development Command
 
-Execute a structured 7-phase feature development workflow. This workflow guides you through understanding, exploring, designing, implementing, and reviewing a feature.
+**7-phase structured workflow for building features systematically, rather than jumping directly into coding.**
 
-**CRITICAL: Complete ALL 7 phases.** The workflow is not complete until Phase 7: Summary is finished. After completing each phase, immediately proceed to the next phase without waiting for user prompts.
+Based on Anthropic's official feature-dev plugin: "Building features requires more than just writing code."
 
-## Phase Overview
+## Philosophy
 
-Execute these phases in order, completing ALL of them:
+This workflow prioritizes:
+1. **Understanding** your codebase first
+2. **Asking** clarifying questions before design
+3. **Designing** thoughtfully before implementation
+4. **Reviewing** quality before declaring complete
 
-1. **Discovery** - Understand the feature requirements
-2. **Codebase Exploration** - Map relevant code areas
-3. **Clarifying Questions** - Resolve ambiguities
-4. **Architecture Design** - Design the implementation approach
-5. **Implementation** - Build the feature
-6. **Quality Review** - Review for issues
-7. **Summary** - Document accomplishments
+## The 7 Phases
 
----
+### Phase 1: Discovery
+**Goal**: Clarify requirements and constraints
+
+Questions to answer:
+- What problem does this feature solve?
+- Who are the users?
+- What are the success criteria?
+- What are the constraints (time, tech, resources)?
+- What's out of scope?
+
+**Output**: Clear feature definition with acceptance criteria
+
+### Phase 2: Codebase Exploration
+**Goal**: Understand existing patterns and architecture
+
+Actions:
+1. Identify similar features in the codebase
+2. Understand the tech stack and conventions
+3. Map relevant files and modules
+4. Note architectural patterns in use
+
+**Tools**: Use code-explorer agent for deep analysis
+
+**Output**: Understanding of how to integrate with existing code
+
+### Phase 3: Clarifying Questions
+**Goal**: Resolve ambiguities before design
+
+Ask about:
+- Edge cases not covered in requirements
+- Integration points with other systems
+- Performance expectations
+- Security considerations
+- Migration/rollout strategy
+
+**Output**: Clear answers to all open questions
+
+### Phase 4: Architecture Design
+**Goal**: Compare 2-3 implementation approaches
+
+For each approach, document:
+- High-level design
+- Trade-offs (pros/cons)
+- Estimated complexity
+- Risk factors
+- Integration impact
+
+**Tools**: Use code-architect agent for detailed blueprints
+
+**Output**: Chosen approach with rationale
+
+### Phase 5: Implementation
+**Goal**: Build following chosen architecture
+
+Best practices:
+- Follow TDD where appropriate
+- Implement in small, testable increments
+- Keep commits focused and atomic
+- Update tests as you go
+
+**Output**: Working feature code with tests
+
+### Phase 6: Quality Review
+**Goal**: Check for bugs, quality issues, and conventions
+
+Review checklist:
+- [ ] All tests pass
+- [ ] Code coverage meets threshold
+- [ ] No security vulnerabilities
+- [ ] Error handling complete
+- [ ] Logging appropriate
+- [ ] Documentation updated
+- [ ] Performance acceptable
+
+**Tools**: Use pr-test-analyzer, silent-failure-hunter, code-reviewer agents
+
+**Output**: Polished, production-ready code
+
+### Phase 7: Summary
+**Goal**: Document accomplishments and next steps
+
+Create:
+- Summary of what was built
+- Key decisions made
+- Known limitations
+- Future improvements
+- Handoff notes
+
+**Output**: Complete feature documentation
+
+## Usage
+
+```bash
+/sw:feature-dev "Add user authentication with JWT"
+```
+
+This will guide you through all 7 phases, asking questions at each stage.
+
+## Integration with SpecWeave
+
+This command integrates with SpecWeave workflow:
+
+1. **Phase 1-3** → Creates/updates spec.md with requirements
+2. **Phase 4** → Generates plan.md with architecture
+3. **Phase 5** → Creates tasks.md and executes via /sw:do
+4. **Phase 6** → Validates via /sw:validate
+5. **Phase 7** → Closes via /sw:done
+
+## When to Use Feature-Dev
+
+**Good fit**:
+- Complex features touching multiple files
+- Features requiring architectural decisions
+- New functionality in unfamiliar codebases
+- Team features needing documentation
+
+**Skip for**:
+- Single-line fixes
+- Trivial changes
+- Urgent hotfixes
+- Well-defined bug fixes
+
+## Specialized Agents Used
+
+| Phase | Agent | Purpose |
+|-------|-------|---------|
+| 2 | code-explorer | Deep codebase analysis |
+| 4 | code-architect | Architecture blueprints |
+| 6 | pr-test-analyzer | Test coverage analysis |
+| 6 | silent-failure-hunter | Error handling audit |
+| 6 | code-reviewer | Quality checks |
+
+## Example Interaction
+
+```
+User: /sw:feature-dev "Add password reset flow"
+
+Claude: Starting Feature Development Workflow
 
 ## Phase 1: Discovery
 
-**Goal:** Understand what the user wants to build.
+I need to understand the requirements for the password reset flow.
 
-1. Analyze the feature description from `$ARGUMENTS`:
-   - What is the core functionality?
-   - What are the expected inputs and outputs?
-   - Are there any constraints mentioned?
-   - What success criteria can you infer?
+Questions:
+1. How should users initiate password reset? (Email link, security questions, SMS?)
+2. What's the token expiration time?
+3. Should we notify users of password changes?
+4. Are there any compliance requirements (GDPR, etc.)?
 
-2. Summarize your understanding to the user. Use AskUserQuestion to confirm if your understanding is correct before proceeding.
-
----
-
-## Phase 2: Codebase Exploration
-
-**Goal:** Understand the relevant parts of the codebase.
-
-1. **Load skills for this phase:**
-   - Read `${CLAUDE_PLUGIN_ROOT}/skills/project-conventions/SKILL.md` and apply its guidance
-   - Read `${CLAUDE_PLUGIN_ROOT}/skills/language-patterns/SKILL.md` and apply its guidance
-
-2. **Launch code-explorer agents:**
-
-   Launch 2-3 code-explorer agents in parallel with different focus areas:
-   ```
-   Agent 1: Explore entry points and user-facing code related to the feature
-   Agent 2: Explore data models, schemas, and storage related to the feature
-   Agent 3: Explore utilities, helpers, and shared infrastructure (if applicable)
-   ```
-
-   Use the Task tool with `subagent_type: "dev-tools:code-explorer"`:
-   ```
-   Feature: [feature description]
-   Focus area: [specific focus for this agent]
-
-   Find and analyze:
-   - Relevant files and their purposes
-   - Key functions/classes that would be modified or extended
-   - Existing patterns to follow
-   - Potential integration points
-
-   Return a structured report of your findings.
-   ```
-
-3. **Synthesize findings:**
-
-   Launch a codebase-synthesizer agent to merge and analyze the exploration results.
-
-   Use the Task tool with `subagent_type: "dev-tools:codebase-synthesizer"` and `model: "opus"`:
-   ```
-   Analysis context: [feature description]
-   Codebase path: [current working directory]
-
-   Exploration findings from [N] agents:
-
-   --- Agent 1: [Focus Area] ---
-   [Full report from agent 1]
-
-   --- Agent 2: [Focus Area] ---
-   [Full report from agent 2]
-
-   --- Agent 3: [Focus Area] (if applicable) ---
-   [Full report from agent 3]
-
-   Synthesize these findings into a unified analysis. Merge duplicates,
-   read critical files in depth, map relationships between components,
-   identify patterns, and assess challenges.
-   ```
-
-4. Present the synthesized analysis to the user.
+Please answer these questions to proceed to Phase 2.
 
 ---
 
-## Phase 3: Clarifying Questions
+User: Email link, 1 hour expiration, yes notify, GDPR compliant
 
-**Goal:** Resolve any ambiguities before designing.
+Claude: ## Phase 2: Codebase Exploration
 
-1. Review the feature requirements and exploration findings.
+Let me analyze your existing auth system...
 
-2. Identify underspecified aspects:
-   - Edge cases not covered
-   - Technical decisions that could go multiple ways
-   - Integration points that need clarification
-   - Performance or scale requirements
+[Spawns code-explorer agent]
 
-3. **Ask clarifying questions:**
-   Use AskUserQuestion to get answers for critical unknowns. Only ask questions that would significantly impact the implementation.
+Found:
+- Auth service at src/services/auth.ts
+- User model at src/models/user.ts
+- Email service at src/services/email.ts
+- Existing token utilities at src/utils/tokens.ts
 
-   If no clarifying questions are needed, inform the user and proceed.
+Your codebase uses:
+- JWT for authentication
+- Prisma for database
+- Nodemailer for emails
+- Express for API routes
 
----
+Ready for Phase 3: Clarifying Questions?
+```
 
-## Phase 4: Architecture Design
+## Best Practices
 
-**Goal:** Design the implementation approach.
-
-1. **Load skills for this phase:**
-   - Read `${CLAUDE_PLUGIN_ROOT}/skills/architecture-patterns/SKILL.md` and apply its guidance
-   - Read `${CLAUDE_PLUGIN_ROOT}/skills/language-patterns/SKILL.md` and apply its guidance
-
-2. **Launch code-architect agents:**
-
-   Launch 2-3 code-architect agents (Opus) with different approaches:
-   ```
-   Agent 1: Design a minimal, focused approach prioritizing simplicity
-   Agent 2: Design a flexible, extensible approach prioritizing future changes
-   Agent 3: Design an approach optimized for the project's existing patterns (if applicable)
-   ```
-
-   Use the Task tool with `subagent_type: "dev-tools:code-architect"`:
-   ```
-   Feature: [feature description]
-   Design approach: [specific approach for this agent]
-
-   Based on the codebase exploration:
-   [Summary of relevant files and patterns]
-
-   Design an implementation that:
-   - Lists files to create/modify
-   - Describes the changes needed in each file
-   - Explains the data flow
-   - Identifies risks and mitigations
-
-   Return a detailed implementation blueprint.
-   ```
-
-3. **Present approaches:**
-   - Summarize each approach
-   - Compare trade-offs (simplicity, flexibility, performance, maintainability)
-   - Make a recommendation with justification
-
-4. **User chooses approach:**
-   Use AskUserQuestion to let the user select an approach or request modifications.
-
-5. **Generate ADR artifact:**
-   - Read the ADR template from `${CLAUDE_PLUGIN_ROOT}/skills/feature-dev/references/adr-template.md`
-   - Create an ADR documenting:
-     - Context: Why this feature is needed
-     - Decision: The chosen approach
-     - Consequences: Trade-offs and implications
-     - Alternatives: Other approaches considered
-   - Determine the next ADR number by checking existing files in `internal/docs/adr/`
-   - Save to `internal/docs/adr/NNNN-[feature-slug].md` (create `internal/docs/adr/` if needed)
-   - Inform the user of the saved ADR location
-
----
-
-## Phase 5: Implementation
-
-**Goal:** Build the feature.
-
-1. **Require explicit approval:**
-   Ask the user: "Ready to begin implementation of [feature] using [chosen approach]?"
-   Wait for confirmation before proceeding.
-
-2. **Read all relevant files:**
-   Before making any changes, read the complete content of every file you'll modify.
-
-3. **Implement the feature:**
-   - Follow the chosen architecture design
-   - Match existing code patterns and conventions
-   - Create new files as needed
-   - Update existing files using Edit tool
-   - Add appropriate error handling
-   - Include inline comments only where logic isn't obvious
-
-4. **Test if applicable:**
-   - If the project has tests, add tests for the new functionality
-   - Run existing tests to ensure nothing broke
-
-5. **IMPORTANT: Proceed immediately to Phase 6.**
-   Do NOT stop here. Do NOT wait for user input. Implementation is complete, but the workflow requires Quality Review and Summary phases. Continue directly to Phase 6 now.
-
----
-
-## Phase 6: Quality Review
-
-**Goal:** Review the implementation for issues.
-
-1. **Load skills for this phase:**
-   - Read `${CLAUDE_PLUGIN_ROOT}/skills/code-quality/SKILL.md` and apply its guidance
-
-2. **Launch code-reviewer agents:**
-
-   Launch 3 code-reviewer agents (Opus) with different focuses:
-   ```
-   Agent 1: Review for correctness and edge cases
-   Agent 2: Review for security and error handling
-   Agent 3: Review for maintainability and code quality
-   ```
-
-   Use the Task tool with `subagent_type: "dev-tools:code-reviewer"`:
-   ```
-   Review focus: [specific focus for this agent]
-
-   Files to review:
-   [List of files modified/created]
-
-   Review the implementation and report:
-   - Issues found with confidence scores (0-100)
-   - Suggestions for improvement
-   - Positive observations
-
-   Only report issues with confidence >= 80.
-   ```
-
-3. **Aggregate findings:**
-   - Collect results from all reviewers
-   - Deduplicate similar issues
-   - Prioritize by severity and confidence
-
-4. **Present findings:**
-   Show the user:
-   - Critical issues (must fix)
-   - Moderate issues (should fix)
-   - Minor suggestions (nice to have)
-
-5. **User decides:**
-   Use AskUserQuestion:
-   - "Fix all issues now"
-   - "Fix critical issues only"
-   - "Proceed without fixes"
-   - "I'll fix manually later"
-
-6. If fixing: make the changes and re-review if needed.
-
-7. **IMPORTANT: Proceed immediately to Phase 7.**
-   Do NOT stop here. The workflow requires a Summary phase to document accomplishments and update the CHANGELOG. Continue directly to Phase 7 now.
-
----
-
-## Phase 7: Summary
-
-**Goal:** Document and celebrate accomplishments.
-
-1. **Summarize accomplishments:**
-   Present to the user:
-   - What was built
-   - Key files created/modified
-   - Architecture decisions made
-   - Any known limitations or future work
-
-2. **Update CHANGELOG.md:**
-   - Read the entry template from `${CLAUDE_PLUGIN_ROOT}/skills/feature-dev/references/changelog-entry-template.md`
-   - Load the `changelog-format` skill for Keep a Changelog guidelines
-   - Create an entry under the `[Unreleased]` section with:
-     - Appropriate category (Added, Changed, Fixed, etc.)
-     - Concise description of the feature
-   - If `CHANGELOG.md` doesn't exist, create it with proper header
-   - Add the entry to the appropriate section under `[Unreleased]`
-   - Inform the user of the update
-
-3. **Final message:**
-   Congratulate the user and offer next steps:
-   - Commit the changes
-   - Create a PR
-   - Additional testing suggestions
-
----
-
-## Error Handling
-
-If any phase fails:
-1. Explain what went wrong
-2. Ask the user how to proceed:
-   - Retry the phase
-   - Skip to next phase
-   - Abort the workflow
-
----
-
-## Agent Coordination
-
-When launching parallel agents:
-- Give each agent a distinct focus area
-- Wait for all agents to complete before synthesizing
-- Handle agent failures gracefully (continue with partial results)
-
-When calling Task tool for agents:
-- Use `model: "opus"` for codebase-synthesizer, code-architect, and code-reviewer agents
-- Use default model (sonnet) for code-explorer agents
-
-## Additional Resources
-
-- For ADR template, see [references/adr-template.md](references/adr-template.md)
-- For changelog entry format, see [references/changelog-entry-template.md](references/changelog-entry-template.md)
+1. **Don't skip phases** - Each phase prevents future problems
+2. **Document decisions** - Future you will thank present you
+3. **Get stakeholder input** - Phase 3 questions often need product input
+4. **Keep phases focused** - Don't bleed implementation into design
+5. **Review before merging** - Phase 6 catches issues before production

@@ -1,15 +1,7 @@
 {
   "name": "analytics-design",
-  "description": "Design Looker Studio reports and dashboards. Use when creating Looker Studio reports, designing data sources, or writing visualization specifications. Trigger on \"Looker Studio\", \"レポート設計\", \"ダッシュボード\".",
   "repo": "yusuke-suzuki/dotfiles",
-  "category": "data",
-  "tags": [
-    "analytics",
-    "design"
-  ],
-  "stars": 1,
-  "source": "SkillsMP Synced Skills",
-  "dir_name": "analytics-design",
-  "github_path": ".claude/skills/analytics-design",
-  "github_branch": "main"
+  "path": ".claude/skills/analytics-design/SKILL.md",
+  "source": "github.com/yusuke-suzuki/dotfiles",
+  "downloaded_at": "2026-02-04T01:32:40.573584Z"
 }

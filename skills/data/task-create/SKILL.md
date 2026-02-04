@@ -1,29 +1,19 @@
 ---
 name: task-create
-license: MIT
-description: >
-  Create a new task file in `.tasks/<id>.md` from template. Sets timestamps,
-  computes initial intent hash, and optionally auto-selects the task.
-metadata:
-  author: Jordan Godau
-  references:
-    - 00_ROUTER.md
-    - 01_SUMMARY.md
-    - 02_TRIGGERS.md
-    - 03_ALWAYS.md
-    - 04_NEVER.md
-    - 05_PROCEDURE.md
-    - 06_FAILURES.md
-    - 07_INSTRUCTIONS.md
-    - 08_PROCEDURE.md
-  keywords:
-    - task
-    - create
-    - new
-    - init
-    - start
+description: Create structured task files for planning dev work. Use when user asks to "create a task", "add a task", "plan a task", or needs to document work items. Creates numbered markdown files in docs/planning/tasks/.
 ---
 
-# INSTRUCTIONS
+# Task Create
 
-1. Refer to `metadata.references`.
+Create task files using the `aaa` CLI.
+
+## Workflow
+
+1. Run: `aaa task create <name>` (optionally with `--story NNN`)
+2. Write content using template
+3. If linked to story, update story's Tasks section
+
+## References
+
+- **CLI & workflow:** @context/blocks/docs/task-management.md
+- **Template:** @context/blocks/docs/task-template.md

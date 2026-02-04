@@ -1,47 +1,118 @@
 ---
 name: quick-commit
-description: Create a git commit with a short message (up to 50 characters). Use when the user asks to commit changes with a short/concise message.
-allowed-tools: Bash
+description: "簡易コミット。変更をステージング、コミットメッセージ生成、コミット実行を一括で行う。PRは作成しない。トリガー: /quick-commit, クイックコミット, 簡易コミット"
+user-invocable: true
+allowed-tools: Bash, Read, Grep
+model: haiku
 ---
 
-# Quick Commit Skill
+# クイックコミット
 
-This skill helps create git commits with short, concise messages (up to 50 characters).
+変更をサッと一括コミットするためのスキル。PRは作成せず、ローカルコミットのみ。
 
-## Instructions
+## ユースケース
 
-When the user asks to commit changes with a short message:
+- 作業途中の保存ポイント
+- 小さな修正の即コミット
+- WIP (Work In Progress) コミット
 
-1. **Review Changes**: Run `git status` and `git diff` in parallel to see what changes exist
-2. **Review Commit History**: Run `git log -5 --oneline` to see recent commit message style
-3. **Draft Message**: Create a concise commit message that:
-    - Is 50 characters or less
-    - Uses present tense ("Add" not "Added")
-    - Describes what the change does
-    - Follows the project's commit message patterns
-4. **Commit**: Add files and commit using the heredoc format:
-   ```bash
-   git add <files> && git commit -m "$(cat <<'EOF'
-   Your commit message here.
+## 実行フロー
 
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
+```bash
+# 1. 変更確認
+git status
+git diff --stat
 
-   Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
-   EOF
-   )"
-   ```
-5. **Verify**: Run `git status` to confirm the commit succeeded
+# 2. 全変更をステージング
+git add -A
 
-## Examples
+# 3. コミットメッセージ生成
+# 変更内容から自動生成
 
-Common patterns for this codebase:
-- "Nalog za prevoz - [feature]"
-- "Add [feature] to [component]"
-- "Fix [issue] in [module]"
-- "Update [entity] with [property]"
+# 4. コミット実行
+git commit -m "<message>"
+```
 
-## Important Notes
+## コミットメッセージ規則
 
-- Always include the Claude Code footer in commits
-- Keep the main message under 50 characters
-- Follow existing commit message patterns in the project
+### 自動判定
+
+| 変更パターン | Prefix |
+|-------------|--------|
+| 新規ファイル追加 | `feat:` |
+| バグ修正、エラー対応 | `fix:` |
+| テストファイル | `test:` |
+| ドキュメント (.md) | `docs:` |
+| 設定ファイル | `chore:` |
+| リファクタリング | `refactor:` |
+
+### メッセージ生成例
+
+```
+feat: add user authentication module
+
+- Add login endpoint
+- Add JWT token generation
+- Add password hashing
+```
+
+## 出力形式
+
+```markdown
+## クイックコミット完了
+
+### 変更サマリー
+- **追加**: 3 files
+- **変更**: 2 files
+- **削除**: 1 file
+
+### コミット情報
+- **ハッシュ**: abc1234
+- **メッセージ**: feat: add user authentication module
+- **ブランチ**: feature/auth
+
+### 変更ファイル
+```
+A  src/auth/login.ts
+A  src/auth/token.ts
+A  src/auth/hash.ts
+M  src/api/routes.ts
+M  src/types/index.ts
+D  src/deprecated/old-auth.ts
+```
+
+### 次のアクション
+- `git push` でリモートにプッシュ
+- `/commit-commands:commit-push-pr` でPR作成
+```
+
+## オプション
+
+```bash
+# メッセージ指定
+/quick-commit fix: resolve null pointer exception
+
+# WIPコミット
+/quick-commit --wip
+# → "WIP: work in progress" でコミット
+
+# 特定ファイルのみ
+/quick-commit src/api/
+```
+
+## 注意事項
+
+- **機密ファイル除外**: .env, credentials等は自動除外
+- **大量変更時は確認**: 50ファイル以上の変更は確認を求める
+- **PRは作成しない**: PRが必要な場合は `/commit-commands:commit-push-pr` を使用
+- **amend非対応**: 常に新規コミット（amend は明示的に実行）
+
+## commit-push-pr との違い
+
+| 機能 | quick-commit | commit-push-pr |
+|------|--------------|----------------|
+| ステージング | ✅ | ✅ |
+| コミット | ✅ | ✅ |
+| プッシュ | ❌ | ✅ |
+| PR作成 | ❌ | ✅ |
+| 用途 | 作業途中の保存 | 完成した変更の公開 |

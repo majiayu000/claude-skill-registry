@@ -26,7 +26,7 @@ You create the complete album directory structure based on config.
 Expected format: `<album-name> <genre>`
 
 Examples:
-- `shell-no electronic`
+- `sample-album electronic`
 - `my-new-album hip-hop`
 - `protest-songs folk`
 
@@ -41,7 +41,7 @@ If arguments are missing, ask:
 ```
 Usage: /new-album <album-name> <genre>
 
-Example: /new-album shell-no electronic
+Example: /new-album sample-album electronic
 
 Valid genres: hip-hop, electronic, country, folk, rock
 ```
@@ -81,11 +81,11 @@ Example with:
 - `content_root: ~/bitwize-music`
 - `artist: bitwize`
 - `genre: electronic`
-- `album-name: shell-no`
+- `album-name: sample-album`
 
 Result:
 ```
-~/bitwize-music/artists/bitwize/albums/electronic/shell-no/
+~/bitwize-music/artists/bitwize/albums/electronic/sample-album/
 ```
 
 ## Step 5: Check Album Doesn't Already Exist
@@ -181,7 +181,7 @@ Expected at: {plugin_root}/templates/
 ## Examples
 
 ```
-/new-album shell-no electronic
+/new-album sample-album electronic
 ```
 
 Config has:
@@ -194,8 +194,8 @@ artist:
 
 Result:
 ```
-Created album: shell-no
-Location: ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/
+Created album: sample-album
+Location: ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/
 
 Files created:
 - README.md (album template)

@@ -217,7 +217,7 @@ lib.optionalAttrs (!pkgs.stdenv.isDarwin) {
 | Bash | Workstation | Dotfiles | Need full migration |
 | SSH | Workstation | Dotfiles | Need full migration |
 | GPG | Workstation | Workstation (pinentry-op) | 1Password Touch ID integration |
-| Tmux | Workstation (enhanced) | Dotfiles (TPM) | Part 2 pending (see tmux enhancement plan) |
+| Tmux | Workstation | Workstation | Fully migrated |
 | Claude | Workstation | Workstation | Fully migrated |
 
 ## Detecting Drift

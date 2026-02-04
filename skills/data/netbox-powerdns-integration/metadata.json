@@ -1,9 +1,7 @@
 {
   "name": "netbox-powerdns-integration",
-  "description": "NetBox IPAM and PowerDNS integration for automated DNS record management.",
   "repo": "basher83/lunar-claude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/homelab/netbox-powerdns-integration/skills/netbox-powerdns-integration/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:28.921809Z"
 }

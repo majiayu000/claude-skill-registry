@@ -1,9 +1,7 @@
 {
   "name": "postmortem-writer",
-  "description": "Creates comprehensive post-incident documents with timeline, root cause analysis, contributing factors, action items, and ownership. Follows SRE best practices for blameless postmortems. Use for \"post",
-  "repo": "patricio0312rev/skillset",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/postmortem-writer/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:20.755523Z"
 }

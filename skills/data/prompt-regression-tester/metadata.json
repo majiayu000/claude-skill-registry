@@ -1,9 +1,7 @@
 {
   "name": "prompt-regression-tester",
-  "description": "Compares old vs new prompts across test cases with diff summaries, stability metrics, breakage analysis, and fix suggestions. Use for \"prompt testing\", \"A/B testing prompts\", \"prompt versioning\", or \"",
-  "repo": "patricio0312rev/skillset",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/prompt-regression-tester/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:33.609998Z"
 }

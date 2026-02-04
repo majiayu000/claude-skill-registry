@@ -1,7 +1,7 @@
 {
   "name": "implement-plan",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/implement-plan/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:42.765600Z"
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/implement_plan/SKILL.md",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "downloaded_at": "2026-02-04T04:19:55.804395Z"
 }

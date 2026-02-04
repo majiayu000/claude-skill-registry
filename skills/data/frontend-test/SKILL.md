@@ -1,37 +1,23 @@
 ---
 name: frontend-test
-description: Generate frontend component tests (unit, snapshot, e2e). Auto-invoke when user says "test this component", "write component test", or "add component test".
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash
-version: 1.0.0
+description: 테스트 작성 에이전트. 단위/통합/E2E 테스트를 작성합니다.
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Frontend Test Generator
+# Frontend Test Agent
 
-Generate React/Vue component tests with React Testing Library including user interactions.
+## 역할
+단위, 통합, E2E 테스트를 작성합니다.
 
-## When to Invoke
+## 담당 업무
+- 단위 테스트 작성
+- 통합 테스트 작성
+- E2E 테스트 작성
+- 테스트 커버리지 관리
 
-Auto-invoke when user mentions:
-- "Test this component"
-- "Write component test"
-- "Test component"
-- "Add component test"
-- "Component tests for [name]"
+## 트리거 키워드
+테스트, test, 단위테스트, E2E, 검증
 
-## What This Does
-
-1. Generates test file with RTL utilities
-2. Tests component rendering
-3. Tests user interactions (click, type, etc.)
-4. Tests accessibility
-5. Generates snapshot tests
-
-## Success Criteria
-
-- [ ] Test file generated with RTL imports
-- [ ] Tests render component correctly
-- [ ] User interactions are tested
-- [ ] Accessibility attributes validated
-- [ ] Tests follow React Testing Library best practices
-
-**Auto-invoke when writing frontend component tests** ⚛️
+## 산출물 위치
+- 테스트: `__tests__/`
+- E2E: `e2e/`

@@ -1,301 +1,443 @@
 ---
-name: ci-cd-setup
-description: Set up CI/CD pipelines - connect Gitea repos to Coolify using deploy keys and webhooks (official Coolify approach).
-metadata: {"moltbot":{"emoji":"🔄","requires":{"env":["GITEA_TOKEN","COOLIFY_TOKEN"]}}}
+name: ci-cd
+description: CI/CD 流水线配置
+version: 1.0.0
+author: terminal-skills
+tags: [devops, ci-cd, jenkins, gitlab, github-actions]
 ---
 
-# CI/CD Pipeline Setup Skill
+# CI/CD 流水线配置
 
-This skill automates connecting Gitea repositories to Coolify for continuous deployment using the **official Coolify integration method**.
+## 概述
+Jenkins、GitLab CI、GitHub Actions 等 CI/CD 工具配置技能。
 
-## Quick Reference
+## GitHub Actions
 
-```bash
-# Connect a repo to Coolify (one command - handles everything)
-bash /srv/paas/scripts/setup-ci-cd.sh <repo-name> <subdomain> [port]
+### 基础工作流
+```yaml
+# .github/workflows/ci.yml
+name: CI
 
-# Example: Deploy "my-api" at https://api.digpulsepi.com
-bash /srv/paas/scripts/setup-ci-cd.sh my-api api 8080
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run tests
+        run: npm test
+      
+      - name: Build
+        run: npm run build
 ```
 
-**Required env vars**: `GITEA_TOKEN`, `COOLIFY_TOKEN`
-
-## How CI/CD Works (Official Coolify Method)
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CI/CD FLOW                                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  1. git push to Gitea                                           │
-│           ↓                                                     │
-│  2. Gitea sends webhook to Coolify                              │
-│     URL: https://coolify.{domain}/webhooks/source/gitea/        │
-│          events/manual?app={APP_UUID}                           │
-│           ↓                                                     │
-│  3. Coolify verifies webhook secret (manual_webhook_secret_gitea)│
-│           ↓                                                     │
-│  4. Coolify helper container clones via SSH                     │
-│     git@gitea:user/repo.git (uses deploy key)                   │
-│           ↓                                                     │
-│  5. Build & Deploy container                                    │
-│           ↓                                                     │
-│  6. Traefik routes traffic to container                         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+### 矩阵构建
+```yaml
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [16, 18, 20]
+    
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test
 ```
 
-## Prerequisites
-
-### Verify Network Connectivity
-
-The stack uses two bridged networks. All core services must be on BOTH for full functionality:
-
-```bash
-# Check service networks
-for svc in gitea n8n openclaw-cli lobe-chat; do
-    echo "$svc: $(docker inspect $svc --format '{{range $k, $v := .NetworkSettings.Networks}}{{$k}} {{end}}')"
-done
-
-# Required: Gitea on coolify network (for Coolify helper to clone repos via SSH)
-docker inspect gitea --format '{{range $k, $v := .NetworkSettings.Networks}}{{$k}} {{end}}' | grep coolify
-
-# If missing, connect all services:
-docker network connect coolify gitea
-docker network connect coolify n8n
-docker network connect coolify openclaw-cli
-docker network connect coolify lobe-chat
-docker network connect paas-network coolify-proxy
+### Docker 构建与推送
+```yaml
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: user/app:${{ github.sha }}
 ```
 
-### Verify API Tokens
-
-```bash
-# Test Gitea token
-curl -sf "http://127.0.0.1:3000/api/v1/user" \
-  -H "Authorization: token $GITEA_TOKEN" | jq '{login, email}'
-
-# Test Coolify token  
-curl -sf "http://127.0.0.1:8080/api/v1/servers" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq '.[0].name'
+### 部署到 Kubernetes
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure kubectl
+        uses: azure/k8s-set-context@v3
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+      
+      - name: Deploy
+        run: |
+          kubectl set image deployment/app app=user/app:${{ github.sha }}
+          kubectl rollout status deployment/app
 ```
 
-## Automated Setup (Recommended)
+## GitLab CI
 
-```bash
-# Export tokens (if not already in environment)
-export GITEA_TOKEN="your-gitea-token"
-export COOLIFY_TOKEN="your-coolify-token"
+### 基础配置
+```yaml
+# .gitlab-ci.yml
+stages:
+  - build
+  - test
+  - deploy
 
-# Run setup script
-bash /srv/paas/scripts/setup-ci-cd.sh REPO_NAME SUBDOMAIN PORT
+variables:
+  DOCKER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+
+build:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $DOCKER_IMAGE .
+    - docker push $DOCKER_IMAGE
+
+test:
+  stage: test
+  image: node:18
+  script:
+    - npm ci
+    - npm test
+  coverage: '/Coverage: \d+\.\d+%/'
+
+deploy:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl set image deployment/app app=$DOCKER_IMAGE
+  only:
+    - main
+  environment:
+    name: production
+    url: https://app.example.com
 ```
 
-The script handles:
-1. ✅ Creates repository in Gitea (if needed)
-2. ✅ Generates SSH deploy key pair
-3. ✅ Adds private key to Coolify via API
-4. ✅ Adds public key to Gitea repo as deploy key
-5. ✅ Creates application in Coolify with `private-deploy-key` endpoint
-6. ✅ Creates webhook in Gitea with matching secret
-7. ✅ Sets `is_force_https_enabled: false` (Cloudflare handles HTTPS)
+### 多环境部署
+```yaml
+.deploy_template: &deploy_template
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl config use-context $KUBE_CONTEXT
+    - kubectl set image deployment/app app=$DOCKER_IMAGE
 
-## Manual Setup (Step by Step)
+deploy_staging:
+  <<: *deploy_template
+  variables:
+    KUBE_CONTEXT: staging
+  environment:
+    name: staging
+  only:
+    - develop
 
-### Step 1: Generate SSH Deploy Key
-
-```bash
-KEY_NAME="my-app-deploy-key"
-ssh-keygen -t ed25519 -f "$KEY_NAME" -N "" -C "$KEY_NAME"
+deploy_production:
+  <<: *deploy_template
+  variables:
+    KUBE_CONTEXT: production
+  environment:
+    name: production
+  only:
+    - main
+  when: manual
 ```
 
-### Step 2: Add Private Key to Coolify
+## Jenkins
 
-```bash
-PRIVATE_KEY=$(cat "$KEY_NAME" | jq -Rs .)
-
-curl -sf -X POST "http://127.0.0.1:8080/api/v1/security/keys" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"name\": \"$KEY_NAME\",
-    \"description\": \"Deploy key for my-app\",
-    \"private_key\": $PRIVATE_KEY
-  }"
-# Returns: {"uuid": "KEY_UUID"}
+### Jenkinsfile（声明式）
+```groovy
+// Jenkinsfile
+pipeline {
+    agent any
+    
+    environment {
+        DOCKER_IMAGE = "user/app:${BUILD_NUMBER}"
+        DOCKER_CREDENTIALS = credentials('docker-hub')
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'npm ci'
+                sh 'npm run build'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+            post {
+                always {
+                    junit 'test-results/*.xml'
+                }
+            }
+        }
+        
+        stage('Docker Build') {
+            steps {
+                sh "docker build -t ${DOCKER_IMAGE} ."
+            }
+        }
+        
+        stage('Docker Push') {
+            steps {
+                sh "echo ${DOCKER_CREDENTIALS_PSW} | docker login -u ${DOCKER_CREDENTIALS_USR} --password-stdin"
+                sh "docker push ${DOCKER_IMAGE}"
+            }
+        }
+        
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh "kubectl set image deployment/app app=${DOCKER_IMAGE}"
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+        success {
+            slackSend channel: '#deployments', message: "Build ${BUILD_NUMBER} succeeded"
+        }
+        failure {
+            slackSend channel: '#deployments', message: "Build ${BUILD_NUMBER} failed"
+        }
+    }
+}
 ```
 
-### Step 3: Add Public Key to Gitea Repository
-
-```bash
-PUBLIC_KEY=$(cat "${KEY_NAME}.pub")
-
-curl -sf -X POST "http://127.0.0.1:3000/api/v1/repos/OWNER/REPO/keys" \
-  -H "Authorization: token $GITEA_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"title\": \"$KEY_NAME\",
-    \"key\": \"$PUBLIC_KEY\",
-    \"read_only\": true
-  }"
+### Jenkinsfile（脚本式）
+```groovy
+node {
+    stage('Checkout') {
+        checkout scm
+    }
+    
+    stage('Build') {
+        sh 'npm ci'
+        sh 'npm run build'
+    }
+    
+    stage('Test') {
+        try {
+            sh 'npm test'
+        } finally {
+            junit 'test-results/*.xml'
+        }
+    }
+    
+    if (env.BRANCH_NAME == 'main') {
+        stage('Deploy') {
+            sh 'kubectl apply -f k8s/'
+        }
+    }
+}
 ```
 
-### Step 4: Get Coolify UUIDs
+## 通用模式
 
-```bash
-# Server UUID
-SERVER_UUID=$(curl -sf "http://127.0.0.1:8080/api/v1/servers" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq -r '.[0].uuid')
+### 语义化版本发布
+```yaml
+# GitHub Actions
+name: Release
 
-# Project UUID
-PROJECT_UUID=$(curl -sf "http://127.0.0.1:8080/api/v1/projects" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq -r '.[0].uuid')
+on:
+  push:
+    tags:
+      - 'v*'
 
-echo "Server: $SERVER_UUID"
-echo "Project: $PROJECT_UUID"
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Get version
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*
+          generate_release_notes: true
 ```
 
-### Step 5: Create Application with Deploy Key
+### 缓存依赖
+```yaml
+# GitHub Actions
+- name: Cache node modules
+  uses: actions/cache@v3
+  with:
+    path: ~/.npm
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-
 
-```bash
-# Generate webhook secret
-WEBHOOK_SECRET=$(openssl rand -hex 16)
-
-curl -sf -X POST "http://127.0.0.1:8080/api/v1/applications/private-deploy-key" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"project_uuid\": \"$PROJECT_UUID\",
-    \"server_uuid\": \"$SERVER_UUID\",
-    \"environment_name\": \"production\",
-    \"private_key_uuid\": \"$KEY_UUID\",
-    \"git_repository\": \"git@gitea:OWNER/REPO.git\",
-    \"git_branch\": \"main\",
-    \"name\": \"my-app\",
-    \"description\": \"Deployed from Gitea\",
-    \"domains\": \"http://myapp.digpulsepi.com\",
-    \"ports_exposes\": \"80\",
-    \"build_pack\": \"dockerfile\",
-    \"is_auto_deploy_enabled\": true,
-    \"is_force_https_enabled\": false,
-    \"manual_webhook_secret_gitea\": \"$WEBHOOK_SECRET\",
-    \"instant_deploy\": false
-  }"
-# Returns: {"uuid": "APP_UUID"}
+# GitLab CI
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
 ```
 
-**Important Notes:**
-- Use `http://` for domains (Cloudflare handles HTTPS)
-- `is_force_https_enabled: false` prevents redirect loops
-- `manual_webhook_secret_gitea` must match webhook secret in Gitea
-- Git URL uses internal hostname: `git@gitea:user/repo.git`
-
-### Step 6: Create Webhook in Gitea
-
-```bash
-# Webhook URL format (official Coolify format)
-WEBHOOK_URL="https://coolify.digpulsepi.com/webhooks/source/gitea/events/manual?app=$APP_UUID"
-
-curl -sf -X POST "http://127.0.0.1:3000/api/v1/repos/OWNER/REPO/hooks" \
-  -H "Authorization: token $GITEA_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"active\": true,
-    \"type\": \"gitea\",
-    \"config\": {
-      \"url\": \"$WEBHOOK_URL\",
-      \"content_type\": \"json\",
-      \"secret\": \"$WEBHOOK_SECRET\"
-    },
-    \"events\": [\"push\", \"pull_request\"],
-    \"branch_filter\": \"*\"
-  }"
+### 并行测试
+```yaml
+# GitHub Actions
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm test -- --shard=${{ matrix.shard }}/4
 ```
 
-### Step 7: Trigger First Deployment
+### 条件执行
+```yaml
+# GitHub Actions
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying..."
 
-```bash
-# Trigger deployment via API
-curl -sf -X POST "http://127.0.0.1:8080/api/v1/applications/$APP_UUID/restart" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN"
-
-# Check deployment status
-curl -sf "http://127.0.0.1:8080/api/v1/deployments" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq '.[0] | {uuid, status}'
+# GitLab CI
+deploy:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: manual
+    - if: $CI_COMMIT_TAG
+      when: always
 ```
 
-## Troubleshooting
+## 常见场景
 
-### Deployment fails: "Could not resolve hostname gitea"
+### 场景 1：PR 检查
+```yaml
+name: PR Check
 
-```bash
-# Connect all core services to coolify network
-docker network connect coolify gitea
-docker network connect coolify n8n
-docker network connect coolify openclaw-cli
-docker network connect coolify lobe-chat
-docker network connect paas-network coolify-proxy
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run lint
+      
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm test
 ```
 
-### Webhook not triggering deployment
+### 场景 2：定时任务
+```yaml
+name: Scheduled Job
 
-```bash
-# Check webhook exists in Gitea
-curl -sf "http://127.0.0.1:3000/api/v1/repos/OWNER/REPO/hooks" \
-  -H "Authorization: token $GITEA_TOKEN" | jq '.[] | {id, active, config}'
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天凌晨2点
 
-# Verify webhook secret matches in Coolify app
-curl -sf "http://127.0.0.1:8080/api/v1/applications/$APP_UUID" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq '.manual_webhook_secret_gitea'
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running cleanup..."
 ```
 
-### Test webhook manually
+### 场景 3：手动触发
+```yaml
+name: Manual Deploy
 
-```bash
-# Simulate a push event
-curl -X POST "$WEBHOOK_URL" \
-  -H "Content-Type: application/json" \
-  -H "X-Gitea-Event: push" \
-  -H "X-Gitea-Signature: $(echo -n '{}' | openssl dgst -sha256 -hmac '$WEBHOOK_SECRET' | cut -d' ' -f2)" \
-  -d '{}'
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to ${{ inputs.environment }}"
 ```
 
-### Check deployment logs
+## 故障排查
 
-```bash
-# Get latest deployment
-DEPLOY_UUID=$(curl -sf "http://127.0.0.1:8080/api/v1/deployments" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq -r '.[0].uuid')
-
-# Check status
-curl -sf "http://127.0.0.1:8080/api/v1/deployments/$DEPLOY_UUID" \
-  -H "Authorization: Bearer $COOLIFY_TOKEN" | jq '{status, created_at, finished_at}'
-```
-
-## API Reference
-
-### Coolify Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/v1/applications/private-deploy-key` | POST | Create app with deploy key |
-| `/api/v1/applications/{uuid}/restart` | POST | Trigger deployment |
-| `/api/v1/security/keys` | POST | Add SSH private key |
-| `/api/v1/deployments/{uuid}` | GET | Check deployment status |
-| `/webhooks/source/gitea/events/manual?app={uuid}` | POST | Webhook endpoint |
-
-### Gitea Endpoints
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/v1/repos/{owner}/{repo}/keys` | POST | Add deploy key |
-| `/api/v1/repos/{owner}/{repo}/hooks` | POST | Create webhook |
-
-### Build Packs
-
-| Build Pack | Use Case |
-|------------|----------|
-| `dockerfile` | Has Dockerfile (recommended) |
-| `nixpacks` | Auto-detect language |
-| `dockercompose` | Multi-container apps |
-| `static` | HTML/CSS/JS only |
+| 问题 | 排查方法 |
+|------|----------|
+| 构建失败 | 查看日志、本地复现 |
+| 权限问题 | 检查 secrets、token |
+| 缓存失效 | 检查 cache key |
+| 超时 | 增加 timeout、优化步骤 |

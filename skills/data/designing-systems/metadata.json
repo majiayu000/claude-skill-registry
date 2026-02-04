@@ -1,7 +1,7 @@
 {
   "name": "designing-systems",
-  "repo": "fusengine/agents",
-  "path": "plugins/design-expert/skills/designing-systems/SKILL.md",
-  "source": "github.com/fusengine/agents",
-  "downloaded_at": "2026-02-02T01:10:32.445968Z"
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/architecture/designing-systems/SKILL.md",
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "downloaded_at": "2026-02-04T03:33:02.447462Z"
 }

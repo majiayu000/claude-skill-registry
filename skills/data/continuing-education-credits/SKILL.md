@@ -1,48 +1,20 @@
 ---
 name: continuing-education-credits
-description: |
-  Professional student asks about CEU or professional credit availability.
-sample_size: 7
-validation:
-  required_phrases:
-    - "the certification team at"
-  forbidden_patterns: []
-metrics:
-  sample_size: 7
-  avg_thread_length: 2.71
-  top_phrases:
-    - phrase: "the certification team at"
-      count: 2
-      percent: 28.6
-    - phrase: "certification team at iaap"
-      count: 2
-      percent: 28.6
-    - phrase: "let me know if"
-      count: 2
-      percent: 28.6
-    - phrase: "me know if you"
-      count: 2
-      percent: 28.6
-    - phrase: "hey grace sorry i"
-      count: 1
-      percent: 14.3
-    - phrase: "grace sorry i was"
-      count: 1
-      percent: 14.3
-    - phrase: "sorry i was splitting"
-      count: 1
-      percent: 14.3
-    - phrase: "i was splitting the"
-      count: 1
-      percent: 14.3
-    - phrase: "was splitting the total"
-      count: 1
-      percent: 14.3
-    - phrase: "splitting the total average"
-      count: 1
-      percent: 14.3
+description: Respond to CEU or professional credit inquiries. Use when a learner asks whether a course qualifies for continuing education credits.
+metadata:
+  trigger_phrases:
+      - "respond ceu"
+      - "ceu professional"
+      - "professional credit"
+  related_skills: ["student-discount-request", "certificate-request", "lesson-content-question", "course-difficulty-concern", "pricing-inquiry"]
+  sample_size: "7"
+  validation: |
+    required_phrases:
+      - "the certification team at"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 7\navg_thread_length: 2.71\ntop_phrases:\n  - phrase: \"the certification team at\"\n    count: 2\n    percent: 28.6\n  - phrase: \"certification team at iaap\"\n    count: 2\n    percent: 28.6\n  - phrase: \"let me know if\"\n    count: 2\n    percent: 28.6\n  - phrase: \"me know if you\"\n    count: 2\n    percent: 28.6\n  - phrase: \"hey grace sorry i\"\n    count: 1\n    percent: 14.3\n  - phrase: \"grace sorry i was\"\n    count: 1\n    percent: 14.3\n  - phrase: \"sorry i was splitting\"\n    count: 1\n    percent: 14.3\n  - phrase: \"i was splitting the\"\n    count: 1\n    percent: 14.3\n  - phrase: \"was splitting the total\"\n    count: 1\n    percent: 14.3\n  - phrase: \"splitting the total average\"\n    count: 1\n    percent: 14.3"
 ---
-
 # Continuing Education Credits
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

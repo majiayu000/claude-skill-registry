@@ -1,9 +1,7 @@
 {
   "name": "deepwork-rules",
-  "description": "Creates file-change rules that enforce guidelines during AI sessions. Use when automating documentation sync or code review triggers.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
+  "repo": "ncrmro/deepwork-permanent-portfolio",
+  "path": ".claude/skills/deepwork_rules/SKILL.md",
+  "source": "github.com/ncrmro/deepwork-permanent-portfolio",
+  "downloaded_at": "2026-02-04T04:19:29.247803Z"
 }

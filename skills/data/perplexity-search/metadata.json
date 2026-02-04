@@ -1,7 +1,7 @@
 {
   "name": "perplexity-search",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/perplexity-search/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:11.422763Z"
+  "repo": "danieldekay/copilot-config-promptops",
+  "path": "skills/perplexity-search/SKILL.md",
+  "source": "github.com/danieldekay/copilot-config-promptops",
+  "downloaded_at": "2026-02-04T04:39:56.364806Z"
 }

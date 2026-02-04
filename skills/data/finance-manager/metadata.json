@@ -1,7 +1,7 @@
 {
   "name": "finance-manager",
-  "repo": "mamba-mental/agent-skill-manager",
-  "path": ".claude/skills/finance-manager/SKILL.md",
-  "source": "github.com/mamba-mental/agent-skill-manager",
-  "downloaded_at": "2026-02-02T02:19:17.764280Z"
+  "repo": "nguyendinhquocx/code-ai",
+  "path": "skills/finance-manager/SKILL.md",
+  "source": "github.com/nguyendinhquocx/code-ai",
+  "downloaded_at": "2026-02-04T04:00:39.213965Z"
 }

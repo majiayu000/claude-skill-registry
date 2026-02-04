@@ -1,418 +1,392 @@
 ---
-name: anti-slop
-description: Comprehensive toolkit for detecting and eliminating "AI slop" - generic, low-quality AI-generated patterns in natural language, code, and design. Use when reviewing or improving content quality, preventing generic AI patterns, cleaning up existing content, or enforcing quality standards in writing, code, or design work.
+name: r-anti-slop
+description: >
+  Enforce production-quality R code standards. Prevents generic AI patterns
+  through namespace qualification, explicit returns, and tidyverse conventions.
+  Use when writing or reviewing R code for data analysis or packages.
+applies_to:
+  - "**/*.R"
+  - "**/*.Rmd"
+  - "**/*.qmd"
+tags: [r, tidyverse, code-quality, data-science]
+related_skills:
+  - quarto/anti-slop
+  - text/anti-slop
+version: 2.0.0
 ---
 
-# Anti-Slop Skill
+# R Anti-Slop: Stop Writing `df <- data`
 
-Detect and eliminate generic AI-generated patterns ("slop") across natural language, code, and design.
+## When to Use This
 
-## What is AI Slop?
+Use this for:
+- ✓ Any R code leaving your machine (analysis, packages, scripts)
+- ✓ AI-generated code review (catches `df`, `result`, missing `::`)
+- ✓ CRAN submissions (they'll reject generic code anyway)
+- ✓ Team code standards
 
-AI slop refers to telltale patterns that signal low-quality, generic AI-generated content:
-- **Text**: Overused phrases like "delve into," excessive buzzwords, meta-commentary
-- **Code**: Generic variable names, obvious comments, unnecessary abstraction
-- **Design**: Cookie-cutter layouts, generic gradients, overused visual patterns
+Skip for:
+- Quick console experiments (though habits form fast)
+- Legacy code you can't touch
+- Bioconductor or other style guides that override this
 
-This skill helps identify and remove these patterns to create authentic, high-quality content.
+## Quick Example
 
-## When to Use This Skill
+**Before (AI Slop)**:
+```r
+# Load the library
+library(dplyr)
 
-Apply anti-slop techniques when:
-- Reviewing AI-generated content before delivery
-- Creating original content and want to avoid generic patterns
-- Cleaning up existing content that feels generic
-- Establishing quality standards for a project
-- User explicitly requests slop detection or cleanup
-- Content has telltale signs of generic AI generation
+# Read the data
+df <- read.csv("data.csv")
+
+# Filter the data
+result <- df %>% filter(x > 0)
+```
+
+**After (Anti-Slop)**:
+```r
+customer_data <- readr::read_csv("data/customers.csv")
+
+active_customers <- customer_data |>
+  dplyr::filter(status == "active", revenue > 0)
+
+return(active_customers)
+```
+
+**What changed**:
+- ✓ Descriptive names (`customer_data` not `df`)
+- ✓ Namespace qualification (`dplyr::`, `readr::`)
+- ✓ Native pipe (`|>` not `%>%`)
+- ✓ No obvious comments
+- ✓ Explicit return
+
+## When to Use What
+
+| If you need to... | Do this | Details |
+|-------------------|---------|---------|
+| Name variables | Use `snake_case`, no `df`/`data`/`result` | reference/naming.md |
+| Call tidyverse functions | Always use `::` (e.g., `dplyr::filter()`) | reference/tidyverse.md |
+| Return from function | Always explicit `return()` statement | reference/naming.md |
+| Write pipe chains | Use `\|>`, break at 8+ operations | reference/tidyverse.md |
+| Document functions | Specific `@param`, `@return`, no circular text | reference/documentation.md |
+| Handle missing data | Explicit strategy + report data loss | reference/statistical-rigor.md |
+| Validate data | Check assumptions with `stopifnot()` | reference/statistical-rigor.md |
+| Format code | Use `styler::style_file()` | reference/tidyverse.md |
+| Check code quality | Use `lintr::lint()` | reference/tidyverse.md |
 
 ## Core Workflow
 
-### 1. Detect Slop
-
-**For text files:**
-```bash
-python scripts/detect_slop.py <file> [--verbose]
-```
-
-This analyzes text and provides:
-- Slop score (0-100, higher is worse)
-- Specific pattern findings
-- Actionable recommendations
-
-**Manual detection:**
-Read the appropriate reference file for detailed patterns:
-- `references/text-patterns.md` - Natural language slop patterns
-- `references/code-patterns.md` - Programming slop patterns  
-- `references/design-patterns.md` - Visual/UX design slop patterns
-
-### 2. Clean Slop
-
-**Automated cleanup (text only):**
-```bash
-# Preview changes
-python scripts/clean_slop.py <file>
-
-# Apply changes (creates backup)
-python scripts/clean_slop.py <file> --save
-
-# Aggressive mode (may slightly change meaning)
-python scripts/clean_slop.py <file> --save --aggressive
-```
-
-**Manual cleanup:**
-Apply strategies from the reference files based on detected patterns.
-
-## Text Slop Detection & Cleanup
-
-### High-Priority Targets
-
-**Remove immediately:**
-- "delve into" → delete or replace with "examine"
-- "navigate the complexities" → "handle" or delete
-- "in today's fast-paced world" → delete
-- "it's important to note that" → delete
-- Meta-commentary about the document itself
-
-**Simplify wordy phrases:**
-- "in order to" → "to"
-- "due to the fact that" → "because"
-- "has the ability to" → "can"
-
-**Replace buzzwords:**
-- "leverage" → "use"
-- "synergistic" → "cooperative"
-- "paradigm shift" → "major change"
-
-### Quality Principles
-
-**Be direct:**
-- Skip preambles and meta-commentary
-- Lead with the actual point
-- Cut transition words that don't add meaning
-
-**Be specific:**
-- Replace generic terms with concrete examples
-- Name specific things instead of "items," "things," "data"
-- Use precise verbs instead of vague action words
-
-**Be authentic:**
-- Vary sentence structure and length
-- Use active voice predominantly
-- Write in a voice appropriate to context, not corporate-generic
-
-## Code Slop Detection & Cleanup
-
-### High-Priority Targets
-
-**Rename generic variables:**
-- `data` → name what data it represents
-- `result` → name what the result contains
-- `temp` → name what you're temporarily storing
-- `item` → name what kind of item
-
-**Remove obvious comments:**
-```python
-# Bad
-# Create a user
-user = User()
-
-# Better - let code speak
-user = User()
-```
-
-**Simplify over-engineered code:**
-- Remove unnecessary abstraction layers
-- Replace design patterns used without purpose
-- Simplify complex implementations of simple tasks
-
-**Improve function names:**
-- `handleData()` → what are you doing with data?
-- `processItems()` → what processing specifically?
-- `manageUsers()` → what management action?
-
-### Quality Principles
-
-**Clarity over cleverness:**
-- Write code that's easy to understand
-- Optimize only when profiling shows need
-- Prefer simple solutions to complex ones
-
-**Meaningful names:**
-- Variable names should describe content
-- Function names should describe action + object
-- Class names should describe responsibility
-
-**Appropriate documentation:**
-- Document why, not what
-- Skip documentation for self-evident code
-- Focus documentation on public APIs and complex logic
-
-## Design Slop Detection & Cleanup
-
-### High-Priority Targets
-
-**Visual slop:**
-- Generic gradient backgrounds (purple/pink/cyan)
-- Overuse of glassmorphism or neumorphism
-- Floating 3D shapes without purpose
-- Every element using same design treatment
-
-**Layout slop:**
-- Template-driven layouts ignoring content needs
-- Everything in cards regardless of content type
-- Excessive whitespace without hierarchy
-- Center-alignment of all elements
-
-**Copy slop:**
-- "Empower your business" type headlines
-- Generic CTAs like "Get Started" without context
-- Buzzword-heavy descriptions
-- Stock photo aesthetics
-
-### Quality Principles
-
-**Content-first design:**
-- Design around actual content needs
-- Create hierarchy based on importance
-- Let content determine layout, not templates
-
-**Intentional choices:**
-- Every design decision should be justifiable
-- Use patterns because they serve users, not because they're trendy
-- Vary visual treatment based on element importance
-
-**Authentic voice:**
-- Copy should reflect brand personality
-- Avoid generic marketing speak
-- Be specific about value proposition
-
-## Reference Files
-
-Consult these comprehensive guides when working on specific domains:
-
-- **[text-patterns.md](references/text-patterns.md)** - Complete catalog of natural language slop patterns with detection rules and cleanup strategies
-
-- **[code-patterns.md](references/code-patterns.md)** - Programming antipatterns across languages with refactoring guidance
-
-- **[design-patterns.md](references/design-patterns.md)** - Visual and UX design slop patterns with improvement strategies
-
-Each reference includes:
-- Pattern definitions and examples
-- Detection signals (high/medium confidence)
-- Context where patterns are acceptable
-- Specific cleanup strategies
-
-## Scripts
-
-### detect_slop.py
-
-Analyzes text files for AI slop patterns.
-
-**Usage:**
-```bash
-python scripts/detect_slop.py <file> [--verbose]
-```
-
-**Output:**
-- Overall slop score (0-100)
-- Category-specific findings
-- Line numbers and examples
-- Actionable recommendations
-
-**Scoring:**
-- 0-20: Low slop (authentic writing)
-- 20-40: Moderate slop (some patterns)
-- 40-60: High slop (many patterns)
-- 60+: Severe slop (heavily generic)
-
-### clean_slop.py
-
-Automatically removes common slop patterns from text files.
-
-**Usage:**
-```bash
-# Preview changes
-python scripts/clean_slop.py <file>
-
-# Save changes (creates backup)
-python scripts/clean_slop.py <file> --save
-
-# Save to different file
-python scripts/clean_slop.py <file> --output clean_file.txt
-
-# Aggressive mode
-python scripts/clean_slop.py <file> --save --aggressive
-```
-
-**What it cleans:**
-- High-risk phrases
-- Wordy constructions
-- Meta-commentary
-- Excessive hedging
-- Buzzwords
-- Redundant qualifiers
-- Empty intensifiers
-
-**Safety:**
-- Always creates `.backup` file when overwriting
-- Preview mode shows changes before applying
-- Preserves content meaning (non-aggressive mode)
-
-## Best Practices
-
-### Prevention Over Cure
-
-**When creating content:**
-1. Write with specific audience in mind
-2. Use concrete examples over abstractions
-3. Lead with the point, skip preambles
-4. Choose words for precision, not impression
-5. Review before considering it complete
-
-### Context-Aware Cleanup
-
-Not all patterns are always slop:
-
-**Acceptable contexts:**
-- Academic writing may need more hedging
-- Legal documents require specific phrasing
-- Internal documentation can use shortcuts
-- Technical docs have domain-specific conventions
-
-**Always consider:**
-- Who is the audience?
-- What is the purpose?
-- Does this pattern serve a function?
-- Is there a better alternative?
-
-### Iterative Improvement
-
-1. **Detect** - Run detection scripts or manual review
-2. **Analyze** - Understand which patterns are truly problems
-3. **Clean** - Apply automated cleanup where safe
-4. **Review** - Manually verify changes maintain meaning
-5. **Refine** - Fix remaining issues by hand
-
-### Quality Over Automation
-
-The scripts are tools, not replacements for judgment:
-- Use automated detection to find candidates
-- Apply automated cleanup to obvious patterns
-- Manually review anything that changes meaning
-- Exercise discretion based on context
-
-## Integration Patterns
-
-### Code Review
-
-```bash
-# Check files before committing
-python scripts/detect_slop.py src/documentation.md --verbose
-
-# Clean up automatically
-python scripts/clean_slop.py src/documentation.md --save
-```
-
-### Content Pipeline
-
-1. Create initial content
-2. Run slop detection
-3. Apply automated cleanup
-4. Manual review and refinement
-5. Final quality check
-
-### Standards Enforcement
-
-Create project-specific thresholds:
-- Max acceptable slop score: 30
-- Required manual review for scores > 20
-- Auto-reject submissions with scores > 50
-
-## Limitations
-
-**Scripts only handle text:**
-- Code slop detection is manual (use code-patterns.md)
-- Design slop detection is manual (use design-patterns.md)
-
-**Context sensitivity:**
-- Scripts can't understand all contexts
-- Some "slop" may be appropriate in certain domains
-- Always review automated changes
-
-**Language coverage:**
-- Detection patterns optimized for English
-- Code patterns focus on common languages (Python, JS, Java)
-- Design patterns are platform-agnostic
-
-## Common Scenarios
-
-### Scenario 1: Review AI-Generated Content
-
-```bash
-# User asks: "Can you review this article for AI slop?"
-1. Read references/text-patterns.md for patterns to watch
-2. Run: python scripts/detect_slop.py article.txt --verbose
-3. Review findings and apply manual cleanup
-4. Optionally run: python scripts/clean_slop.py article.txt --save
-5. Do final manual review of cleaned content
-```
-
-### Scenario 2: Clean Up Codebase
-
-```bash
-# User asks: "Help me clean up generic AI patterns in my code"
-1. Read references/code-patterns.md
-2. Review code files manually for patterns
-3. Create list of generic names to rename
-4. Refactor following principles in code-patterns.md
-5. Remove obvious comments and over-abstractions
-```
-
-### Scenario 3: Design Review
-
-```bash
-# User asks: "Does this design look too generic?"
-1. Read references/design-patterns.md
-2. Check against high-confidence slop indicators
-3. Identify specific issues (gradients, layouts, copy)
-4. Provide specific recommendations from design-patterns.md
-5. Suggest concrete alternatives
-```
-
-### Scenario 4: Establish Quality Standards
-
-```bash
-# User asks: "Help me create quality standards for our team"
-1. Review all three reference files
-2. Identify patterns most relevant to user's domain
-3. Create project-specific guidelines
-4. Set up detection scripts in development pipeline
-5. Document acceptable exceptions
-```
-
-## Tips for Success
-
-**For text cleanup:**
-- Run detection first to understand scope
-- Use non-aggressive mode for important content
-- Always review automated changes
-- Focus on high-risk patterns first
-
-**For code cleanup:**
-- Start with renaming generic variables
-- Remove obvious comments next
-- Refactor over-engineered code last
-- Test after each significant change
-
-**For design cleanup:**
-- Audit visual elements against patterns
-- Prioritize structural issues over aesthetic ones
-- Ensure changes serve user needs
-- Maintain brand consistency
-
-**General principles:**
-- Quality > uniformity
-- Context > rules
-- Clarity > cleverness
-- Specificity > generality
+### 5-Step Quality Check
+
+1. **Namespace qualification** - All external functions use `::`
+   ```r
+   # Good
+   dplyr::filter(data, x > 0)
+   # Bad
+   filter(data, x > 0)
+   ```
+
+2. **Explicit returns** - Every function has `return()`
+   ```r
+   # Good
+   my_function <- function(x) {
+     result <- x + 1
+     return(result)
+   }
+   # Bad
+   my_function <- function(x) {
+     x + 1
+   }
+   ```
+
+3. **Naming conventions** - All objects use `snake_case`
+   ```r
+   # Good
+   customer_lifetime_value <- calculate_clv(data)
+   # Bad
+   df <- calculate_clv(data)
+   customerLifetimeValue <- calculate_clv(data)
+   ```
+
+4. **Documentation quality** - No generic descriptions
+   ```r
+   # Good
+   #' @param deaths Data frame with `age_group` and `count` columns
+   # Bad
+   #' @param data The data
+   ```
+
+5. **Code formatting** - Run styler and lintr
+   ```r
+   styler::style_file("script.R")
+   lintr::lint("script.R")
+   ```
+
+## Quick Reference Checklist
+
+Before committing R code, verify:
+
+- [ ] All external functions qualified with `::`
+- [ ] All functions have explicit `return()`
+- [ ] All objects use `snake_case`
+- [ ] No generic names (`df`, `data`, `result`, `temp`)
+- [ ] Pipes (`|>`) have space before, end lines
+- [ ] Long pipelines (>8 ops) broken into named steps
+- [ ] Complex operations have WHY comments
+- [ ] Data validated after transformations
+- [ ] Seeds set before random operations
+- [ ] Uncertainty reported (SE, CI) for statistical models
+- [ ] No `attach()` calls
+- [ ] No right-hand assignment (`->`)
+- [ ] Roxygen documentation is specific
+- [ ] Examples are realistic and run
+
+## Common Workflows
+
+### Workflow 1: Clean Up AI-Generated R Script
+
+**Context**: AI generated an analysis script with generic patterns.
+
+**Steps**:
+
+1. **Run detection script**
+   ```bash
+   Rscript toolkit/scripts/detect_slop.R analysis.R --verbose
+   ```
+
+2. **Fix high-priority issues first**
+   ```r
+   # Replace df, data, result with descriptive names
+   # Before
+   df <- readr::read_csv("data.csv")
+   result <- df %>% filter(x > 0)
+
+   # After
+   customer_data <- readr::read_csv("data/customers.csv")
+   active_customers <- customer_data |> dplyr::filter(status == "active")
+   ```
+
+3. **Add namespace qualification**
+   ```r
+   # Before
+   data %>% filter(x > 0) %>% summarize(mean(y))
+
+   # After
+   data |>
+     dplyr::filter(x > 0) |>
+     dplyr::summarize(mean_y = mean(y))
+   ```
+
+4. **Add explicit returns**
+   ```r
+   # Before
+   calculate_rate <- function(numerator, denominator) {
+     numerator / denominator
+   }
+
+   # After
+   calculate_rate <- function(numerator, denominator) {
+     rate <- numerator / denominator
+     return(rate)
+   }
+   ```
+
+5. **Break long pipes**
+   ```r
+   # Before (12 operations in one chain)
+   result <- data |>
+     filter(...) |> mutate(...) |> group_by(...) |>
+     summarize(...) |> arrange(...) |> [7 more ops]
+
+   # After
+   clean_data <- data |>
+     dplyr::filter(!is.na(value)) |>
+     dplyr::mutate(category = categorize(value))
+
+   summary_stats <- clean_data |>
+     dplyr::group_by(category) |>
+     dplyr::summarize(mean_val = mean(value))
+   ```
+
+6. **Format and validate**
+   ```r
+   styler::style_file("analysis.R")
+   lintr::lint("analysis.R")
+   ```
+
+**Expected outcome**: Score drops from 60+ to <20
+
+---
+
+### Workflow 2: Fix Generic Package Documentation
+
+**Context**: R package has generic roxygen documentation.
+
+**Steps**:
+
+1. **Identify generic patterns**
+   ```r
+   # Bad
+   #' Process Data
+   #'
+   #' @description This function processes the data.
+   #' @param data The data.
+   #' @return The result.
+   ```
+
+2. **Make description specific**
+   ```r
+   # Good
+   #' Calculate age-adjusted mortality rates
+   #'
+   #' Computes mortality rates per 100,000 population, standardized to the
+   #' 2000 US Census age distribution using direct standardization.
+   ```
+
+3. **Describe parameter structure**
+   ```r
+   # Good
+   #' @param deaths Data frame with columns `age_group` and `count`.
+   #' @param population Data frame with columns `age_group` and `pop_size`.
+   ```
+
+4. **Specify return value**
+   ```r
+   # Good
+   #' @return A tibble with columns:
+   #'   \describe{
+   #'     \item{county}{County FIPS code}
+   #'     \item{rate}{Age-adjusted rate per 100,000}
+   #'     \item{se}{Standard error of the rate}
+   #'   }
+   ```
+
+5. **Add realistic examples**
+   ```r
+   # Good
+   #' @examples
+   #' counties <- data.frame(
+   #'   county = c("A", "B"),
+   #'   deaths = c(150, 200),
+   #'   population = c(50000, 80000)
+   #' )
+   #'
+   #' adjust_rates(counties, rate_per = 100000)
+   #' #> # A tibble: 2 x 3
+   #' #>   county  rate    se
+   #' #> 1 A       312.  25.4
+   #' #> 2 B       258.  18.2
+   ```
+
+**Expected outcome**: Documentation that teaches, not restates
+
+---
+
+### Workflow 3: Prepare Package for CRAN
+
+**Context**: Final checks before CRAN submission.
+
+**Steps**:
+
+1. **Run all quality checks**
+   ```r
+   # Standard checks
+   devtools::check()
+
+   # Anti-slop checks
+   lapply(list.files("R", full.names = TRUE), function(f) {
+     system(paste("Rscript toolkit/scripts/detect_slop.R", f))
+   })
+   ```
+
+2. **Fix documentation**
+   - Check all `@param` descriptions are specific
+   - Verify `@examples` run and are realistic
+   - Ensure `@return` describes structure
+
+3. **Validate code quality**
+   ```r
+   # Format all files
+   styler::style_dir("R/")
+
+   # Check lints
+   lintr::lint_package()
+   ```
+
+4. **Check CRAN-specific requirements**
+   - Validate URLs in DESCRIPTION and documentation
+   - Check examples run in < 5 seconds
+   - Verify package structure meets CRAN standards
+
+**Expected outcome**: Clean `R CMD check` with no slop patterns
+
+## Mandatory Rules Summary
+
+### 1. Namespace Qualification
+**ALWAYS use `::` for external packages**
+
+Exceptions (don't need `::`):
+- Base R: `mean()`, `sum()`, `log()`, etc.
+- stats: `lm()`, `glm()`, `t.test()`, etc.
+- utils: `head()`, `tail()`, `str()`, etc.
+
+### 2. Explicit Returns
+**ALWAYS use `return()` - never implicit**
+
+### 3. Naming: snake_case
+**All objects use `snake_case`**
+- Variables: `customer_data` not `customerData` or `df`
+- Functions: `calculate_rate` not `calculateRate`
+- Arguments: `input_data` not `inputData`
+
+### 4. Native Pipe
+**Prefer `|>` over `%>%`** (unless R < 4.1)
+
+### 5. No Generic Names
+**Never use**: `df`, `data`, `result`, `temp`, `x`, `n` (except standard math notation)
+
+## Tidyverse Philosophy
+
+Follow [Tidyverse Style Guide](https://style.tidyverse.org/) as primary reference:
+
+1. **Design for humans** - Code should be readable and intuitive
+2. **Reuse existing data structures** - Work with tibbles and data frames
+3. **Compose simple functions with pipes** - Build complexity through composition
+4. **Embrace functional programming** - Functions are first-class objects
+
+See **reference/tidyverse.md** for complete tidyverse conventions.
+
+## Resources & Advanced Topics
+
+### Reference Files
+
+- **[reference/naming.md](reference/naming.md)** - Complete naming conventions and forbidden patterns
+- **[reference/tidyverse.md](reference/tidyverse.md)** - Pipe conventions, formatting, ggplot2 standards
+- **[reference/documentation.md](reference/documentation.md)** - Roxygen2, vignettes, README quality
+- **[reference/statistical-rigor.md](reference/statistical-rigor.md)** - Validation, uncertainty, reproducibility
+- **[reference/forbidden-patterns.md](reference/forbidden-patterns.md)** - Complete antipattern catalog
+
+### Related Skills
+
+- **text/anti-slop** - For cleaning prose in documentation
+- **quarto/anti-slop** - For cleaning vignettes and documentation
+
+### Tools
+
+- `styler::style_file()` - Auto-format code
+- `lintr::lint()` - Check code quality
+- `Rscript toolkit/scripts/detect_slop.R` - Detect AI patterns
+
+## Integration with Posit Skills
+
+This skill focuses on **code quality and avoiding generic patterns**.
+
+Use together with Posit skills for complete coverage:
+
+| Task | Use This Skill | + Posit Skill |
+|------|----------------|---------------|
+| Write error messages | r/anti-slop (quality) | + r-lib/cli (structure) |
+| Write tests | r/anti-slop (code quality) | + r-lib/testing (test patterns) |
+| Prepare for CRAN | r/anti-slop (no slop) | + r-lib/cran-extrachecks (requirements) |
+| Document lifecycle | r/anti-slop (doc quality) | + r-lib/lifecycle (deprecation) |

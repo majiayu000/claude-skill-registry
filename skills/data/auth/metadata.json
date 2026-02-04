@@ -1,7 +1,7 @@
 {
   "name": "auth",
-  "repo": "AbdulSamad94/Hackhaton-SpecsKitPlus",
-  "path": ".claude/skills/auth/SKILL.md",
-  "source": "github.com/AbdulSamad94/Hackhaton-SpecsKitPlus",
-  "downloaded_at": "2026-02-02T02:46:48.247547Z"
+  "repo": "raintree-technology/claude-starter",
+  "path": "templates/.claude/skills/plaid/auth/skill.md",
+  "source": "github.com/raintree-technology/claude-starter",
+  "downloaded_at": "2026-02-04T04:08:10.235168Z"
 }

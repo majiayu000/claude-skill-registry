@@ -1,7 +1,7 @@
 {
   "name": "payload",
-  "repo": "payloadcms/payload",
-  "path": "tools/claude-plugin/skills/payload/SKILL.md",
-  "source": "github.com/payloadcms/payload",
-  "downloaded_at": "2026-02-02T04:43:19.616997Z"
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/payload/SKILL.md",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "downloaded_at": "2026-02-04T04:51:20.627002Z"
 }

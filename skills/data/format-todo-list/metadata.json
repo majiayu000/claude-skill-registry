@@ -1,13 +1,7 @@
 {
   "name": "format-todo-list",
-  "description": "Generate properly formatted TodoWrite lists for orchestrator progress tracking. Use when creating phase checklists, updating task status, or ensuring consistent todo formatting.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "productivity",
-  "tags": [
-    "format",
-    "todo",
-    "list"
-  ],
-  "stars": 27,
-  "source": "SkillsMP Synced Skills"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/format-todo-list/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:12.983411Z"
 }

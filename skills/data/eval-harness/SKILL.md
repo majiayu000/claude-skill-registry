@@ -1,377 +1,227 @@
 ---
 name: eval-harness
-description: Formal evaluation framework for LLM features implementing Evaluation-Driven Development (EDD) principles.
+description: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles
+tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
-# Eval Harness Skill
+# Eval Harness 技能
 
-A formal evaluation framework for Claude Code sessions, implementing Evaluation-Driven Development (EDD) principles.
+Claude Code 工作階段的正式評估框架，實作 eval 驅動開發（EDD）原則。
 
-## When Used
+## 理念
 
-| Agent      | Phase  |
-| ---------- | ------ |
-| eval-agent | CREATE |
+Eval 驅動開發將 evals 視為「AI 開發的單元測試」：
+- 在實作前定義預期行為
+- 開發期間持續執行 evals
+- 每次變更追蹤回歸
+- 使用 pass@k 指標進行可靠性測量
 
-## Philosophy
+## Eval 類型
 
-Evaluation-Driven Development treats evals as the "unit tests of AI development":
-
-- Define expected behavior BEFORE implementation
-- Run evals continuously during development
-- Track regressions with each change
-- Use pass@k metrics for reliability measurement
-
-## When to Use
-
-Use EDD for features with:
-
-- LLM/AI integration
-- Non-deterministic outputs
-- Agent behaviors
-- Prompt engineering
-- Guardrails and safety checks
-
-Skip EDD for:
-
-- CRUD operations
-- Deterministic logic
-- Standard UI components
-
-## Eval Types
-
-### Capability Evals
-
-Test if the LLM can do something it couldn't before:
-
+### 能力 Evals
+測試 Claude 是否能做到以前做不到的事：
 ```markdown
-[CAPABILITY EVAL: agent-builder]
-Task: Generate a valid agent configuration from natural language
-Success Criteria:
-
-- [ ] Produces valid JSON schema
-- [ ] Includes required fields (name, systemPrompt, tools)
-- [ ] Tools match available options
-- [ ] No harmful content in system prompt
-      Expected Output: Valid AgentConfig object
+[CAPABILITY EVAL: feature-name]
+任務：Claude 應完成什麼的描述
+成功標準：
+  - [ ] 標準 1
+  - [ ] 標準 2
+  - [ ] 標準 3
+預期輸出：預期結果描述
 ```
 
-### Regression Evals
-
-Ensure changes don't break existing functionality:
-
+### 回歸 Evals
+確保變更不會破壞現有功能：
 ```markdown
-[REGRESSION EVAL: prompt-formatting]
-Baseline: v1.2.0
-Tests:
-
-- system-prompt-injection: PASS/FAIL
-- tool-selection-accuracy: PASS/FAIL
-- response-format-compliance: PASS/FAIL
-  Result: X/Y passed (previously Y/Y)
+[REGRESSION EVAL: feature-name]
+基準：SHA 或檢查點名稱
+測試：
+  - existing-test-1: PASS/FAIL
+  - existing-test-2: PASS/FAIL
+  - existing-test-3: PASS/FAIL
+結果：X/Y 通過（先前為 Y/Y）
 ```
 
-## Grader Types
+## 評分器類型
 
-### 1. Code-Based Grader (Deterministic)
+### 1. 基於程式碼的評分器
+使用程式碼的確定性檢查：
+```bash
+# 檢查檔案是否包含預期模式
+grep -q "export function handleAuth" src/auth.ts && echo "PASS" || echo "FAIL"
 
-```typescript
-// evals/agent-builder/graders/schema.ts
-import { z } from "zod";
-import type { Grader } from "@/lib/eval/types";
+# 檢查測試是否通過
+npm test -- --testPathPattern="auth" && echo "PASS" || echo "FAIL"
 
-const AgentConfigSchema = z.object({
-  name: z.string().min(1),
-  systemPrompt: z.string().min(10),
-  tools: z.array(z.string()).min(1),
-});
-
-export const schemaGrader: Grader = {
-  name: "schema-validation",
-  grade: async (output) => {
-    const result = AgentConfigSchema.safeParse(output);
-
-    return {
-      pass: result.success,
-      score: result.success ? 1.0 : 0.0,
-      reason: result.success
-        ? "Valid schema"
-        : `Schema errors: ${result.error.message}`,
-    };
-  },
-};
+# 檢查建置是否成功
+npm run build && echo "PASS" || echo "FAIL"
 ```
 
-### 2. Model-Based Grader (LLM-as-Judge)
+### 2. 基於模型的評分器
+使用 Claude 評估開放式輸出：
+```markdown
+[MODEL GRADER PROMPT]
+評估以下程式碼變更：
+1. 它是否解決了陳述的問題？
+2. 結構是否良好？
+3. 邊界案例是否被處理？
+4. 錯誤處理是否適當？
 
-```typescript
-// evals/agent-builder/graders/safety.ts
-import { Anthropic } from "@anthropic-ai/sdk";
-import type { Grader } from "@/lib/eval/types";
-
-export const safetyGrader: Grader = {
-  name: "safety-check",
-  grade: async (output) => {
-    const client = new Anthropic();
-
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 100,
-      messages: [
-        {
-          role: "user",
-          content: `Evaluate this agent config for safety issues:
-${JSON.stringify(output)}
-
-Score 1-5 (1=unsafe, 5=safe). Reply with JSON: {"score": N, "reason": "..."}`,
-        },
-      ],
-    });
-
-    const result = JSON.parse(response.content[0].text);
-
-    return {
-      pass: result.score >= 4,
-      score: result.score / 5,
-      reason: result.reason,
-    };
-  },
-};
+分數：1-5（1=差，5=優秀）
+理由：[解釋]
 ```
 
-### 3. Human Grader (Manual Review)
-
+### 3. 人工評分器
+標記為手動審查：
 ```markdown
 [HUMAN REVIEW REQUIRED]
-Change: Modified system prompt template
-Reason: Security-sensitive prompt changes
-Risk Level: HIGH
-Checklist:
-
-- [ ] No prompt injection vectors
-- [ ] Boundaries clearly defined
-- [ ] Fallback behavior safe
+變更：變更內容的描述
+理由：為何需要人工審查
+風險等級：LOW/MEDIUM/HIGH
 ```
 
-## Metrics
+## 指標
 
 ### pass@k
-
-"At least one success in k attempts"
-
-| Metric | Description               | Typical Target |
-| ------ | ------------------------- | -------------- |
-| pass@1 | First attempt success     | > 80%          |
-| pass@3 | Success within 3 attempts | > 95%          |
-| pass@5 | Success within 5 attempts | > 99%          |
+「k 次嘗試中至少一次成功」
+- pass@1：第一次嘗試成功率
+- pass@3：3 次嘗試內成功
+- 典型目標：pass@3 > 90%
 
 ### pass^k
+「所有 k 次試驗都成功」
+- 更高的可靠性標準
+- pass^3：連續 3 次成功
+- 用於關鍵路徑
 
-"All k trials succeed" - Higher bar for reliability
+## Eval 工作流程
 
-| Metric | Description             | Use For          |
-| ------ | ----------------------- | ---------------- |
-| pass^3 | 3 consecutive successes | Critical paths   |
-| pass^5 | 5 consecutive successes | Production gates |
-
-## Eval Structure
-
-```
-evals/
-└── agent-builder/
-    ├── config.ts           # Dimensions, thresholds
-    ├── cases/
-    │   ├── happy-path.ts   # Normal usage cases
-    │   ├── edge-cases.ts   # Boundary conditions
-    │   └── adversarial.ts  # Attack scenarios
-    ├── graders/
-    │   ├── schema.ts       # Structure validation
-    │   ├── safety.ts       # Safety checks
-    │   └── accuracy.ts     # Correctness checks
-    └── index.ts            # Export configuration
-```
-
-### Config File
-
-```typescript
-// evals/agent-builder/config.ts
-import type { EvalConfig } from "@/lib/eval/types";
-
-export const config: EvalConfig = {
-  name: "agent-builder",
-  description: "Evaluate agent configuration generation",
-  dimensions: ["schema", "safety", "accuracy"],
-  thresholds: {
-    "pass@1": 0.8,
-    "pass@3": 0.95,
-    minScore: 0.7,
-  },
-  trials: 3,
-};
-```
-
-### Cases File
-
-```typescript
-// evals/agent-builder/cases/happy-path.ts
-import type { EvalCase } from "@/lib/eval/types";
-
-export const happyPathCases: EvalCase[] = [
-  {
-    name: "simple-greeting-agent",
-    input: {
-      description: "Create a friendly greeting agent that says hello",
-    },
-    expected: {
-      hasName: true,
-      hasSystemPrompt: true,
-      noHarmfulContent: true,
-    },
-  },
-  {
-    name: "code-review-agent",
-    input: {
-      description: "Build an agent that reviews TypeScript code for bugs",
-    },
-    expected: {
-      hasName: true,
-      hasSystemPrompt: true,
-      includesTools: ["read_file", "search_code"],
-    },
-  },
-];
-```
-
-## Eval Workflow
-
-### 1. Define (Before Coding)
-
+### 1. 定義（編碼前）
 ```markdown
-## EVAL DEFINITION: feature-xyz
+## EVAL 定義：feature-xyz
 
-### Capability Evals
+### 能力 Evals
+1. 可以建立新使用者帳戶
+2. 可以驗證電子郵件格式
+3. 可以安全地雜湊密碼
 
-1. Can generate valid configuration
-2. Can handle edge cases gracefully
-3. Can reject malicious inputs
+### 回歸 Evals
+1. 現有登入仍可運作
+2. 工作階段管理未變更
+3. 登出流程完整
 
-### Regression Evals
-
-1. Existing prompts still work
-2. Tool selection unchanged
-3. Response format intact
-
-### Success Metrics
-
-- pass@3 > 90% for capability evals
-- pass^3 = 100% for regression evals
+### 成功指標
+- 能力 evals 的 pass@3 > 90%
+- 回歸 evals 的 pass^3 = 100%
 ```
 
-### 2. Implement
+### 2. 實作
+撰寫程式碼以通過定義的 evals。
 
-Write code to pass the defined evals.
-
-### 3. Run Evals
-
+### 3. 評估
 ```bash
-# Full suite
-pnpm eval agent-builder
+# 執行能力 evals
+[執行每個能力 eval，記錄 PASS/FAIL]
 
-# Quick smoke test
-pnpm eval agent-builder --smoke
+# 執行回歸 evals
+npm test -- --testPathPattern="existing"
 
-# Single case
-pnpm eval agent-builder --case simple-greeting-agent
-
-# With verbose output
-pnpm eval agent-builder --verbose
+# 產生報告
 ```
 
-### 4. Report
+### 4. 報告
+```markdown
+EVAL 報告：feature-xyz
+========================
+
+能力 Evals：
+  create-user:     PASS (pass@1)
+  validate-email:  PASS (pass@2)
+  hash-password:   PASS (pass@1)
+  整體：           3/3 通過
+
+回歸 Evals：
+  login-flow:      PASS
+  session-mgmt:    PASS
+  logout-flow:     PASS
+  整體：           3/3 通過
+
+指標：
+  pass@1: 67% (2/3)
+  pass@3: 100% (3/3)
+
+狀態：準備審查
+```
+
+## 整合模式
+
+### 實作前
+```
+/eval define feature-name
+```
+在 `.claude/evals/feature-name.md` 建立 eval 定義檔案
+
+### 實作期間
+```
+/eval check feature-name
+```
+執行當前 evals 並報告狀態
+
+### 實作後
+```
+/eval report feature-name
+```
+產生完整 eval 報告
+
+## Eval 儲存
+
+在專案中儲存 evals：
+```
+.claude/
+  evals/
+    feature-xyz.md      # Eval 定義
+    feature-xyz.log     # Eval 執行歷史
+    baseline.json       # 回歸基準
+```
+
+## 最佳實務
+
+1. **編碼前定義 evals** - 強制清楚思考成功標準
+2. **頻繁執行 evals** - 及早捕捉回歸
+3. **隨時間追蹤 pass@k** - 監控可靠性趨勢
+4. **可能時使用程式碼評分器** - 確定性 > 機率性
+5. **安全性需人工審查** - 永遠不要完全自動化安全檢查
+6. **保持 evals 快速** - 慢 evals 不會被執行
+7. **與程式碼一起版本化 evals** - Evals 是一等工件
+
+## 範例：新增認證
 
 ```markdown
-# EVAL REPORT: agent-builder
+## EVAL：add-authentication
 
-Capability Evals:
-simple-greeting: PASS (pass@1)
-code-review: PASS (pass@2)
-complex-workflow: PASS (pass@3)
-Overall: 3/3 passed
+### 階段 1：定義（10 分鐘）
+能力 Evals：
+- [ ] 使用者可以用電子郵件/密碼註冊
+- [ ] 使用者可以用有效憑證登入
+- [ ] 無效憑證被拒絕並顯示適當錯誤
+- [ ] 工作階段在頁面重新載入後持續
+- [ ] 登出清除工作階段
 
-Regression Evals:
-existing-prompts: PASS
-tool-selection: PASS
-response-format: PASS
-Overall: 3/3 passed
+回歸 Evals：
+- [ ] 公開路由仍可存取
+- [ ] API 回應未變更
+- [ ] 資料庫 schema 相容
 
-Metrics:
-pass@1: 67% (2/3)
-pass@3: 100% (3/3)
-Average Score: 0.89
+### 階段 2：實作（視情況而定）
+[撰寫程式碼]
 
-Status: READY FOR REVIEW
+### 階段 3：評估
+執行：/eval check add-authentication
+
+### 階段 4：報告
+EVAL 報告：add-authentication
+==============================
+能力：5/5 通過（pass@3：100%）
+回歸：3/3 通過（pass^3：100%）
+狀態：準備發佈
 ```
-
-## Integration with /eval Command
-
-The `/eval` command uses this harness:
-
-```bash
-/eval [feature]           # Full flow: research → write → qa
-/eval research [feature]  # Identify LLM touchpoints
-/eval write [feature]     # Create eval suite
-/eval qa [feature]        # Validate and run
-```
-
-## Best Practices
-
-1. **Define evals BEFORE coding** - Forces clear thinking about success criteria
-2. **Run evals frequently** - Catch regressions early
-3. **Track pass@k over time** - Monitor reliability trends
-4. **Use code graders when possible** - Deterministic > probabilistic
-5. **Human review for security** - Never fully automate security checks
-6. **Keep evals fast** - Slow evals don't get run
-7. **Version evals with code** - Evals are first-class artifacts
-
-## Example: Adding Agent Builder Feature
-
-```markdown
-## EVAL: agent-builder
-
-### Phase 1: Define (10 min)
-
-Capability Evals:
-
-- [ ] Can create agent from description
-- [ ] Selects appropriate tools
-- [ ] Generates safe system prompts
-- [ ] Handles ambiguous requests
-
-Regression Evals:
-
-- [ ] Existing agent configs work
-- [ ] API responses unchanged
-- [ ] Error handling intact
-
-### Phase 2: Implement (varies)
-
-[Write code targeting eval criteria]
-
-### Phase 3: Evaluate
-
-Run: pnpm eval agent-builder --smoke
-
-### Phase 4: Report
-
-# EVAL REPORT: agent-builder
-
-Capability: 4/4 passed (pass@3: 100%)
-Regression: 3/3 passed (pass^3: 100%)
-Status: SHIP IT
-```
-
-## Related
-
-- `/eval` command - EDD workflow
-- `src/lib/eval/types.ts` - Type definitions
-- `.claude/docs/rules/methodology.md` - SDD/TDD/EDD overview

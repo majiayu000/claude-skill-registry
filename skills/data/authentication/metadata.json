@@ -1,7 +1,9 @@
 {
   "name": "authentication",
-  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
-  "path": ".claude/skills/authentication/skill.md",
-  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
-  "downloaded_at": "2026-02-02T03:59:52.421924Z"
+  "description": "Production-grade authentication & authorization covering JWT, cookies, sessions, hashing, MFA, OAuth2, RBAC, and permissions across all frameworks (Next.js, Express.js, FastAPI, Django, Spring, etc.).",
+  "repo": "SHAJAR5110/Hackathon-II-phase2",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/SHAJAR5110/Hackathon-II-phase2"
 }

@@ -1,381 +1,97 @@
 ---
 name: new-feature
-description: Plan new features/integrations following SOLID principles. Analyzes codebase architecture, researches official documentation and best practices, designs extensible solution, and creates comprehensive GitHub issue with implementation blueprint.
-context: fork
-agent: Explore
-allowed-tools: Read, Grep, Glob, Bash(git *), Bash(gh *), WebSearch, WebFetch
-disable-model-invocation: true
+description: Create a new feature file for ATDD workflow - must be done BEFORE any implementation
+user-invocable: true
+allowed-tools: Read, Write, Edit, Grep, Glob
 ---
 
-# Plan New Feature: $ARGUMENTS
+# Skill: Create New Feature
 
-You are a Senior Software Architect planning a new feature or integration for CodeGeass.
+Create a new feature file for ATDD workflow. This must be done BEFORE any implementation.
 
-**Target**: $ARGUMENTS
-
-Your deliverable is a **comprehensive GitHub issue** with the complete implementation blueprint. You do NOT write code - you create the plan.
-
----
-
-## Phase 1: Deep Codebase Analysis
-
-### 1.1 Identify Related Subsystems
-
-Understand where this feature fits in the architecture:
-
-```bash
-# Repository structure
-ls -la src/codegeass/
-```
-
-**Subsystem mapping:**
-- Notification provider (WhatsApp, Slack) → `src/codegeass/notifications/`
-- Storage backend (PostgreSQL, Redis) → `src/codegeass/storage/`
-- Execution strategy → `src/codegeass/execution/`
-- CLI command → `src/codegeass/cli/commands/`
-
-### 1.2 Find Gold Standard Patterns
-
-CodeGeass uses these architectural patterns:
-
-| Pattern | Location | Example |
-|---------|----------|---------|
-| Strategy + ABC | `notifications/providers/base.py` | `NotificationProvider` |
-| Registry + Lazy Loading | `notifications/registry.py` | `ProviderRegistry` |
-| Protocol Interfaces | `storage/protocols.py` | `TaskRepositoryProtocol` |
-| Factory | `factory/` | `TaskFactory`, `SkillRegistry` |
-
-Read the relevant pattern files based on feature type.
-
-### 1.3 Reference Implementation
-
-Find a similar existing implementation:
-- For notification → study `TelegramProvider` (~430 lines)
-- For storage → study `yaml_backend.py`
-- For execution → study `strategies.py`
-
-Read thoroughly - this is your template.
-
-### 1.4 Dependency Graph
-
-```bash
-# What depends on modules you'll modify
-grep -r "from codegeass.<module>" src/ --include="*.py"
-```
-
----
-
-## Phase 2: Research Best Practices
-
-### 2.1 Official Documentation
-
-**REQUIRED**: Fetch official documentation for the integration.
-
-Example searches for notification providers:
-```
-WebSearch: "<service> API documentation 2026"
-WebSearch: "<service> Python SDK official"
-WebSearch: "<service> authentication best practices"
-```
-
-Then fetch the official docs:
-```
-WebFetch: <official-api-docs-url>
-```
-
-### 2.2 Community Patterns
+## Usage
 
 ```
-WebSearch: "<feature> Python implementation patterns"
-WebSearch: "<library> production best practices"
+/new-feature <FeatureName>
 ```
 
-### 2.3 Security Research
+## Process
 
-```
-WebSearch: "<service> API security best practices"
-WebSearch: "<credential-type> secure storage Python"
-```
+1. Create the feature file at `features/{category}/{feature-name}.feature`
+2. Write Gherkin scenarios describing the expected behavior
+3. **STOP and present the feature file for review**
+4. Only proceed to implementation after user approval
 
-### 2.4 Create Research Summary
+## Feature File Template
 
-| Topic | Source | Key Findings |
-|-------|--------|--------------|
-| Official API | [URL] | Auth, rate limits, endpoints |
-| Python SDK | [Package] | Version, patterns |
-| Security | [Source] | Credential handling |
+```gherkin
+Feature: {Feature Name}
+  As a {role}
+  I want {capability}
+  So that {benefit}
 
----
+  Background:
+    Given {common preconditions}
 
-## Phase 3: Architecture Design
+  Scenario: {Primary happy path}
+    Given {initial context}
+    When {action taken}
+    Then {expected outcome}
 
-### 3.1 SOLID Compliance Check
+  Scenario: {Alternative path or edge case}
+    Given {initial context}
+    When {different action}
+    Then {different outcome}
 
-For each new component:
+  Scenario Outline: {Parameterized scenario}
+    Given {context with <parameter>}
+    When {action with <input>}
+    Then {outcome with <expected>}
 
-| Principle | Question | Your Answer |
-|-----------|----------|-------------|
-| **S**ingle Responsibility | What's the ONE reason this would change? | |
-| **O**pen/Closed | Can I extend without modifying existing code? | |
-| **L**iskov Substitution | Can new class replace any sibling implementation? | |
-| **I**nterface Segregation | Are all interface methods needed by clients? | |
-| **D**ependency Inversion | Am I depending on abstractions (ABC/Protocol)? | |
-
-### 3.2 Design Pattern Selection
-
-Based on CodeGeass patterns:
-
-- **Strategy Pattern** → Multiple interchangeable implementations
-- **Factory Pattern** → Complex object creation
-- **Registry Pattern** → Discovery and lazy loading
-- **Repository Pattern** → Data access abstraction
-
-### 3.3 Interface Design
-
-Define the contract:
-
-```python
-# Example for new notification provider
-class NewProvider(NotificationProvider):
-    @property
-    def name(self) -> str: ...
-
-    async def send(self, channel, credentials, message, **kwargs) -> dict: ...
-
-    def validate_config(self, config) -> tuple[bool, str | None]: ...
-
-    def validate_credentials(self, credentials) -> tuple[bool, str | None]: ...
-
-    async def test_connection(self, channel, credentials) -> tuple[bool, str]: ...
-
-    def get_config_schema(self) -> ProviderConfig: ...
+    Examples:
+      | parameter | input | expected |
+      | value1    | in1   | out1     |
+      | value2    | in2   | out2     |
 ```
 
----
+## VSM-Specific Scenarios
 
-## Phase 4: Implementation Plan
+When writing features for VSM Workshop, consider these common patterns:
 
-### 4.1 Files to Create
-
-| File Path | Purpose | Est. Lines |
-|-----------|---------|------------|
-| `src/codegeass/<path>/<new>.py` | Main implementation | 50-150 |
-
-### 4.2 Files to Modify
-
-| File Path | Change |
-|-----------|--------|
-| `<registry>.py` | Register new component |
-| `pyproject.toml` | Add optional dependency |
-| `cli/commands/<cmd>.py` | CLI support (if needed) |
-
-### 4.3 Implementation Order
-
-1. Create interface/ABC extensions (if any)
-2. Create models/value objects
-3. Create exceptions
-4. Implement core logic
-5. Register with factory/registry
-6. Add CLI support
-7. Add Dashboard support (if needed)
-8. Add tests
-
-### 4.4 Breaking Changes
-
-| Change | Breaking? | Migration |
-|--------|-----------|-----------|
-| New optional param | No | Default maintains compat |
-| New required param | Yes | Version bump needed |
-
-### 4.5 Dependencies
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `<pkg>` | `^x.y.z` | Why needed |
-
----
-
-## Phase 5: Testing Strategy
-
-### 5.1 Unit Tests
-
-| Test File | Coverage |
-|-----------|----------|
-| `tests/test_<component>.py` | Core logic |
-
-### 5.2 Integration Tests
-
-| Scenario | Description |
-|----------|-------------|
-| Happy path | Full feature workflow |
-| Error handling | Exception paths |
-| Edge cases | Boundaries |
-
-### 5.3 Manual Verification
-
-```bash
-# After implementation
-codegeass <command>
-python -c "from codegeass.<module> import <Class>"
-mypy src/codegeass/<path>
-ruff check src/codegeass/<path>
+### Builder Features
+```gherkin
+Scenario: Add a process step to the value stream
+  Given I have an empty value stream map
+  When I add a step named "Development" with process time 60 minutes
+  Then the map should contain 1 step
+  And the step should display "Development"
 ```
 
----
-
-## Phase 6: Create GitHub Issue
-
-**FINAL DELIVERABLE**: Create comprehensive issue.
-
-```bash
-gh issue create --title "feat(<scope>): $ARGUMENTS" --label "enhancement,planning" --body "$(cat <<'EOF'
-## Summary
-
-<1-2 sentence summary>
-
-## Motivation
-
-<Why is this needed? What problem does it solve?>
-
----
-
-## Research Summary
-
-### Official Documentation
-- [API Docs](<url>): <key findings>
-- [SDK](<url>): <package and version>
-
-### Security Considerations
-- <credential handling>
-- <validation requirements>
-
----
-
-## Architecture Analysis
-
-### Existing Patterns to Follow
-
-| Pattern | Location | Application |
-|---------|----------|-------------|
-| <Pattern> | `<path>` | <how we'll use it> |
-
-### SOLID Compliance
-
-- [x] Single Responsibility: <explanation>
-- [x] Open/Closed: <explanation>
-- [x] Liskov Substitution: <explanation>
-- [x] Interface Segregation: <explanation>
-- [x] Dependency Inversion: <explanation>
-
-### Reference Implementation
-Using `<file>` as template because: <reason>
-
----
-
-## Technical Approach
-
-### New Files
-
-| File | Purpose |
-|------|---------|
-| `src/codegeass/<path>/<file>.py` | <description> |
-
-### Modified Files
-
-| File | Change |
-|------|--------|
-| `src/codegeass/<path>/<file>.py` | <modification> |
-
-### Interface Design
-
-```python
-class NewComponent(BaseClass):
-    """Brief description."""
-
-    def method(self, param: Type) -> ReturnType:
-        ...
+### Metrics Features
+```gherkin
+Scenario: Calculate flow efficiency
+  Given a value stream with total process time of 120 minutes
+  And total lead time of 480 minutes
+  When I view the metrics dashboard
+  Then the flow efficiency should show "25%"
 ```
 
-### Dependencies
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `<pkg>` | `^x.y.z` | <why> |
-
----
-
-## Implementation Checklist
-
-### Core
-- [ ] Create `<file>.py` with <Component>
-- [ ] Implement abstract methods
-- [ ] Add validation logic
-- [ ] Handle errors with custom exceptions
-
-### Integration
-- [ ] Register in `<registry>.py`
-- [ ] Add to `__init__.py` exports
-- [ ] Add optional dependency to `pyproject.toml`
-
-### CLI (if applicable)
-- [ ] Add command in `cli/commands/`
-- [ ] Update help text
-
-### Dashboard (if applicable)
-- [ ] Add API endpoint in `dashboard/backend/routers/`
-- [ ] Add frontend in `dashboard/frontend/src/`
-
-### Testing
-- [ ] Unit tests in `tests/`
-- [ ] Integration tests
-- [ ] Manual verification
-
-### Documentation
-- [ ] Update CLAUDE.md if patterns change
-- [ ] Add usage examples
-
----
-
-## Testing Strategy
-
-### Unit Tests
-```python
-def test_<component>_<scenario>():
-    # Arrange / Act / Assert
+### Simulation Features
+```gherkin
+Scenario: Simulate work flowing through the stream
+  Given a value stream with 3 steps
+  And 10 work items in the queue
+  When I run the simulation for 100 ticks
+  Then I should see work items moving through each step
 ```
 
-### Manual Verification
-```bash
-codegeass <command>
-```
+## Review Checklist
 
----
-
-## Alternatives Considered
-
-| Alternative | Pros | Cons | Decision |
-|-------------|------|------|----------|
-| <option> | <pros> | <cons> | <why> |
-
----
-
-## References
-
-- [Official Docs](<url>)
-- [Related Code](<path>)
-EOF
-)"
-```
-
----
-
-## Output Checklist
-
-Before creating the issue:
-
-- [ ] Codebase analysis complete
-- [ ] Official documentation fetched and summarized
-- [ ] Architecture designed with SOLID compliance
-- [ ] Implementation plan detailed
-- [ ] Testing strategy defined
-- [ ] GitHub issue created
+Before presenting for review, verify:
+- [ ] Feature title is clear and descriptive
+- [ ] User story (As a/I want/So that) captures the value
+- [ ] Scenarios cover happy path
+- [ ] Scenarios cover key edge cases
+- [ ] Given/When/Then steps are atomic and clear
+- [ ] No implementation details in scenarios
+- [ ] Language is from user's perspective

@@ -1,11 +1,7 @@
 {
   "name": "self-improve",
-  "repo": "petbrains/mvp-builder",
-  "category": "data",
-  "description": "Transforms simple user requests into enriched descriptions with traceable findings. Use when interpreting vague user intent, preparing context for agent generation, or synthesizing actionable insights",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:38.504592Z",
-  "dir_name": "self-improve",
-  "github_path": ".claude/skills/self-improve",
-  "github_branch": "main"
+  "repo": "chanhee-kang/oh-my-gemini",
+  "path": "skills/self-improve/SKILL.md",
+  "source": "github.com/chanhee-kang/oh-my-gemini",
+  "downloaded_at": "2026-02-04T01:17:55.528243Z"
 }

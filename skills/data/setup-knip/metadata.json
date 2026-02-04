@@ -1,12 +1,7 @@
 {
   "name": "setup-knip",
-  "description": "Install and configure Knip for dead code detection. Use before running dead-code-hunter or dependency-auditor to ensure Knip is available. Handles installation, configuration creation, and validation.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "development",
-  "tags": [
-    "setup",
-    "knip"
-  ],
-  "stars": 27,
-  "source": "local"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/setup-knip/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:09.310121Z"
 }

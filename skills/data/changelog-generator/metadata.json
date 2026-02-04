@@ -1,7 +1,7 @@
 {
   "name": "changelog-generator",
-  "repo": "ccf/claude-code-ccf-marketplace",
-  "path": "plugins/documentation/skills/changelog-generator/SKILL.md",
-  "source": "github.com/ccf/claude-code-ccf-marketplace",
-  "downloaded_at": "2026-02-02T05:11:52.259842Z"
+  "repo": "laurenj3250-debug/vethub2.0",
+  "path": ".claude/skills/changelog-generator/SKILL.md",
+  "source": "github.com/laurenj3250-debug/vethub2.0",
+  "downloaded_at": "2026-02-04T05:19:57.274301Z"
 }

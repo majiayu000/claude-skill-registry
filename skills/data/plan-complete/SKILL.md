@@ -1,99 +1,226 @@
 ---
 name: plan-complete
-description: Use when a plan's implementation is finished and all work has been merged or shipped
+description: Complete a plan by updating design docs and removing the transitory plan file. Use when implementation is finished and knowledge should be persisted to design documentation.
+allowed-tools: Read, Edit, Write, Bash
+context: fork
+agent: design-doc-agent
 ---
 
-# Plan Complete
+# Plan Completion
+
+Completes implementation plans by updating linked design documentation,
+recording completion metadata, and removing the transitory plan file.
 
 ## Overview
 
-Move a completed plan from `active/` to `complete/` and capture completion context.
+Plans are ephemeral work tracking (like GitHub issues). When work is done,
+this skill:
 
-**Core principle:** Plans that are done should be marked done, with context on what was accomplished.
+1. Validates completion requirements
+2. Updates linked design docs with implementation status
+3. Records completion metadata
+4. Deletes the plan file (knowledge now lives in design docs)
 
-**Announce at start:** "I'm using the plan-complete skill to mark this plan as complete."
+**Philosophy:** Plans are temporary. Design docs are permanent.
 
-## The Process
+## Quick Start
 
-### Step 1: Verify Completion
-
-Before marking complete, verify:
-
-```bash
-# Check plan exists in active
-ls plans/active/{plan-name}/
-
-# Verify no outstanding work
-git status
-```
-
-**Ask:** "Is all work from this plan merged/shipped? Any outstanding items?"
-
-If work remains, don't proceed. Help finish the work first.
-
-### Step 2: Add Completion Notes (Optional)
-
-If the user wants to capture completion context:
-
-Create `plans/active/{plan-name}/completion.md`:
-
-```markdown
-# Completion Notes
-
-**Completed:** YYYY-MM-DD
-
-**Summary:** [1-2 sentences on what was accomplished]
-
-**Key commits/PRs:**
-- [commit/PR references]
-
-**Deviations from plan:**
-- [Any significant changes from original design]
-
-**Lessons learned:**
-- [Optional: anything worth remembering]
-```
-
-### Step 3: Move to Complete
+**Complete a plan:**
 
 ```bash
-# Move the entire plan directory
-mv plans/active/{plan-name} plans/complete/{plan-name}
-
-# Commit the move
-git add -A
-git commit -m "docs: mark {plan-name} plan as complete"
+/plan-complete plan-design-linking-phase-1
 ```
 
-### Step 4: Report
+**With custom outcome:**
 
-```
-Plan '{plan-name}' marked complete.
-
-Location: plans/complete/{plan-name}/
+```bash
+/plan-complete cache-optimization --outcome=partial
 ```
 
-## Quick Reference
+**Dry run (preview changes):**
 
-| Step | Action |
-|------|--------|
-| 1 | Verify all work is done |
-| 2 | Add completion notes (optional) |
-| 3 | Move to `plans/complete/` |
-| 4 | Commit and report |
+```bash
+/plan-complete subagent-integration --dry-run
+```
 
-## When NOT to Use
+## Parameters
 
-- Work is still in progress
-- Plan was abandoned (use `gremlins:plan-archive` instead)
-- Plan is obsolete or superseded (use `gremlins:plan-archive` instead)
+### Required
 
-## Common Mistakes
+- `plan-name`: Plan identifier (without .md extension)
 
-**Moving incomplete plans**
-- **Problem:** Plan marked complete but work isn't done
-- **Fix:** Always verify with user before moving
+### Optional
 
-**Skipping completion notes**
-- **Problem:** Context lost about what was accomplished
-- **Fix:** At minimum capture completion date and summary
+- `--outcome`: Completion outcome (success, partial, failed) [default: success]
+- `--dry-run`: Preview changes without executing
+- `--keep`: Keep plan file after completion (for reference)
+
+## Workflow
+
+High-level completion process:
+
+1. **Load plan** from `.claude/plans/{plan-name}.md`
+2. **Validate completion requirements** (status, progress, linked docs exist)
+3. **Update design docs** (status, last-synced, completion metadata)
+4. **Record completion** in design doc frontmatter
+5. **Delete plan file** (unless --keep specified)
+6. **Generate report** of all actions taken
+
+For detailed implementation steps, see supporting documentation below.
+
+## Supporting Documentation
+
+When you need detailed information, load the appropriate supporting file:
+
+### For Completion Workflow
+
+See [instructions.md](instructions.md) for:
+
+- Step-by-step completion process
+- Design doc update procedures
+- Completion metadata format
+- Validation requirements
+- Error handling and rollback
+
+**Load when:** Performing completion or need implementation details
+
+### For Design Doc Updates
+
+See [design-doc-updates.md](design-doc-updates.md) for:
+
+- Updating status (draft → current, stub → current)
+- Recording completion metadata format
+- Handling multiple linked design docs
+- Last-synced timestamp updates
+- Bidirectional link cleanup
+
+**Load when:** Working with design doc updates or metadata
+
+### For Usage Examples
+
+See [examples.md](examples.md) for:
+
+- Complete successful implementation
+- Partial completion with notes
+- Failed implementation (knowledge still valuable)
+- Multiple design docs linked
+- Dry run preview
+- Keep plan file for reference
+
+**Load when:** User needs examples or clarification
+
+## Validation Requirements
+
+Before completion, the skill verifies:
+
+### Plan Requirements
+
+- ✅ Plan file exists
+- ✅ Status is "completed" or can be set to completed
+- ✅ Progress is 100%
+- ✅ All required frontmatter fields present
+- ✅ Has `implements` field with design docs
+
+### Design Doc Requirements
+
+- ✅ All linked design docs exist
+- ✅ Design docs are in appropriate state (draft/stub)
+- ✅ Bidirectional links are correct
+
+### Implementation Evidence
+
+- ✅ Design docs have been updated with implementation details
+- ✅ Last-synced is reasonably recent (< 30 days)
+- ✅ Completeness score increased during implementation
+
+## What Gets Updated
+
+### Design Doc Frontmatter
+
+```yaml
+status: current  # Was: draft or stub
+last-synced: 2026-01-18  # Today's date
+completeness: 95  # Should be high after implementation
+
+# New completion metadata
+completed-plans:
+  - name: "plan-design-linking-phase-1"
+    completed: "2026-01-18"
+    outcome: "success"
+```
+
+### Plan File
+
+**Deleted** (unless `--keep` specified) because:
+
+- Knowledge now lives in design docs
+- Plan was temporary work tracking
+- Reduces clutter in `.claude/plans/`
+
+## Error Handling
+
+### Plan Not Completed
+
+```text
+ERROR: Cannot complete plan with status 'in-progress'
+
+Current state:
+  Status: in-progress
+  Progress: 75%
+
+Required state:
+  Status: completed
+  Progress: 100%
+
+Fix: Update plan frontmatter first, then complete
+```
+
+### Linked Design Docs Missing
+
+```text
+ERROR: Linked design doc not found
+Plan implements: design-doc-system/missing-doc.md
+Path checked: .claude/design/design-doc-system/missing-doc.md
+
+Fix: Create design doc or fix path in plan frontmatter
+```
+
+### Design Doc Already Current
+
+```text
+WARNING: Design doc already marked as current
+Doc: effect-type-registry/observability.md
+Status: current
+Last-synced: 2026-01-15
+
+This may indicate the plan was already completed.
+Continue anyway? (y/n)
+```
+
+## Integration
+
+Works well with:
+
+- `/plan-validate` - Validate before completing
+- `/design-sync` - Sync design docs before completion
+- `/design-review` - Review updated docs
+- `/plan-list` - Find completed plans
+
+## Success Criteria
+
+A successful completion:
+
+- ✅ All linked design docs updated to current status
+- ✅ Completion metadata recorded
+- ✅ Last-synced timestamps updated
+- ✅ Plan file deleted (or kept if requested)
+- ✅ Clear completion report generated
+- ✅ No broken links remain
+
+## Rollback
+
+If something goes wrong during completion:
+
+1. Design doc changes are in git (can revert)
+2. Plan file deletion is final (but can recreate if needed)
+3. Recommendation: Use `--dry-run` first for preview

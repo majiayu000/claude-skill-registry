@@ -1,7 +1,7 @@
 {
   "name": "validate-build",
-  "repo": "BerryKuipers/claude-code-toolkit",
-  "path": ".claude/api-skills-source/validate-build/SKILL.md",
-  "source": "github.com/BerryKuipers/claude-code-toolkit",
-  "downloaded_at": "2026-02-02T03:48:10.954200Z"
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/validate-build/SKILL.md",
+  "source": "github.com/kzahedi/YARS",
+  "downloaded_at": "2026-02-04T04:12:37.235934Z"
 }

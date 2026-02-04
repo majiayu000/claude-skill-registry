@@ -1,7 +1,7 @@
 ---
 name: earnings-orchestrator
 description: Master orchestrator for batch earnings analysis
-# No context: fork - orchestrator is always entry point, enables Task tool for parallel execution
+# No context: fork - orchestrator is always entry point, enables Task tool for orchestration
 allowed-tools:
   - Task
   - TaskCreate
@@ -17,6 +17,23 @@ allowed-tools:
   - ExitPlanMode
 permissionMode: dontAsk
 hooks:
+  PreToolUse:
+    - matcher: "Edit|Write"
+      hooks:
+        - type: command
+          command: "/home/faisal/EventMarketDB/.claude/hooks/validate_processed_guard.sh"
+        - type: command
+          command: "/home/faisal/EventMarketDB/.claude/hooks/validate_guidance_header.sh"
+        - type: command
+          command: "/home/faisal/EventMarketDB/.claude/hooks/validate_ok_marker.sh"
+    - matcher: "TaskUpdate"
+      hooks:
+        - type: command
+          command: "/home/faisal/EventMarketDB/.claude/hooks/guard_task_delete.sh"
+    - matcher: Bash
+      hooks:
+        - type: command
+          command: "/home/faisal/EventMarketDB/.claude/hooks/block_bash_guard.sh"
   PostToolUse:
     - matcher: Bash
       hooks:
@@ -48,7 +65,7 @@ source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/Event
 
 **Output columns:** accession|date|fiscal_year|fiscal_quarter|market_session|daily_stock|daily_adj|sector_adj|industry_adj|trailing_vol|vol_days|vol_status|fye_month
 
-**Parse:** Extract E1 (first data row after header), E2 (second data row after header). The script returns data sorted oldest-to-newest, so E1 is the OLDEST quarter, E2 is the second oldest. Only process these two quarters. Note `trailing_vol` and `fye_month` for each. The `fye_month` (1-12) indicates the company's fiscal year end month (e.g., 9=September for Apple, 12=December for most companies).
+**Parse:** Extract E1 (first data row after header), E2 (second data row after header). The script returns data sorted oldest-to-newest, so E1 is the OLDEST quarter, E2 is the second oldest. **Single-quarter mode:** only process one quarter per run (E1 unless fully cached). Note `trailing_vol` and `fye_month` for each. The `fye_month` (1-12) indicates the company's fiscal year end month (e.g., 9=September for Apple, 12=December for most companies).
 
 **If ERROR returned:** Stop and report error to user.
 
@@ -76,19 +93,34 @@ Check both `earnings-analysis/news_processed.csv` and `earnings-analysis/guidanc
 
 Same logic applies to Q2 with Steps 4, 4b.
 
-### Step 2: Discovery for Q1 (News + Guidance in parallel)
+### Step 1c: Select Target Quarter (Single-Quarter Mode)
+
+**Goal:** Process only one quarter per run.
+
+Rules:
+- If **Q1 is NOT fully cached** (Q1_NEWS_CACHED=false OR Q1_GUIDANCE_CACHED=false) → set `TARGET=Q1` and **process ONLY Q1**.
+- Else if **Q2 is NOT fully cached** → set `TARGET=Q2` and **process ONLY Q2**.
+- Else → **STOP** (nothing to do).
+
+This ensures the run advances to the next quarter only after the previous quarter is fully processed.
+
+**If TARGET=Q1, do NOT proceed past Step 3b. Stop the run after Q1 save.**
+
+### Step 2: Discovery for Q1 (News + Guidance)
+
+**Only run Step 2–3b if TARGET=Q1.** If TARGET=Q2, skip directly to Step 4.
 
 Calculate:
-- `START` = E1 date minus 3 months (or earliest available data)
+- `START` = E1 date minus 3 months (no further adjustment; scripts handle empty ranges)
 - `END` = E1 date (just the date part, e.g., 2024-02-01)
 
-**Run discovery scripts in parallel (only for non-cached tracks):**
+**Run discovery scripts (only for non-cached tracks; sequential OK):**
 
 ```bash
 # News discovery (SKIP if Q1 news cached)
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_significant_moves.py {TICKER} {START} {END} {E1.trailing_vol}
 
-# Guidance discovery - all 5 in parallel (SKIP ALL if Q1 guidance cached)
+# Guidance discovery - all 5 (SKIP ALL if Q1 guidance cached)
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_8k_filings_range.py {TICKER} {START} {END}
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_10k_filings_range.py {TICKER} {START} {END}
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_10q_filings_range.py {TICKER} {START} {END}
@@ -106,7 +138,7 @@ source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/Event
 - Parse: List of dates with significant moves
 
 **Parse guidance results (content-level sources):**
-All 7 scripts return the SAME format: `report_id|date|source_type|source_key`
+All 5 discovery scripts return the SAME format: `report_id|date|source_type|source_key`
 
 - `get_8k_filings_range.py` → 8-K content (source_type: exhibit, section, filing_text)
 - `get_10k_filings_range.py` → 10-K content (source_type: exhibit, section, filing_text, financial_stmt, xbrl)
@@ -118,7 +150,7 @@ All 7 scripts return the SAME format: `report_id|date|source_type|source_key`
 
 **If OK|NO_MOVES returned:** No significant moves for Q1 news, skip news tasks but still process guidance if sources found.
 
-### Step 3: Concurrent Analysis for Q1 (News + Guidance)
+### Step 3: Foreground Analysis for Q1 (News + Guidance)
 
 **Phase 1: Create tasks upfront (only for non-cached tracks)**
 
@@ -152,7 +184,7 @@ For EACH significant date from Step 2, create all 4 tasks with dependency chain:
    - Then call TaskUpdate with `addBlockedBy: ["{PPX_ID}"]`
    - Note the task ID as `JUDGE_ID`
 
-**GUIDANCE TASKS (NO dependencies - all run in parallel) - SKIP if `Q1_GUIDANCE_CACHED=true`:**
+**GUIDANCE TASKS (NO dependencies; sequential OK) - SKIP if `Q1_GUIDANCE_CACHED=true`:**
 
 For EACH content source line from guidance discovery (format: `report_id|date|source_type|source_key`), create a task:
 
@@ -163,16 +195,63 @@ For EACH content source line from guidance discovery (format: `report_id|date|so
 
 **All 7 source types use the same format** - no special handling needed for transcripts or news.
 
-**Phase 2: Spawn agents (only for non-cached tracks, all in parallel)**
+**Phase 1.5: Write manifest (Q1)**
+Create directory (if needed):
+`earnings-analysis/Companies/{TICKER}/manifests/`
+Also create output directories:
+- Guidance: `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/gx/`
+- News judge: `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/judge/`
+
+Write manifest file:
+`earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}.json`
+
+Format:
+```
+{
+  "ticker": "{TICKER}",
+  "quarter": "{E1.fiscal_quarter}_FY{E1.fiscal_year}",
+  "generated_at": "{ISO timestamp}",
+  "news": {
+    "expected_judge": {N},
+    "judge_tasks": [
+      {"id": "{JUDGE_ID}", "date": "{DATE}"},
+      ...
+    ]
+  },
+  "guidance": {
+    "expected": {M},
+    "tasks": [
+      {"id": "{GX_ID}", "report_id": "{REPORT_ID}", "source_type": "{SOURCE_TYPE}", "source_key": "{SOURCE_KEY}"},
+      ...
+    ]
+  }
+}
+```
+
+If a track is cached, set its expected count to 0 and tasks to [].
+This manifest is the **source of truth** for validation and aggregation.
+
+**Phase 2: Spawn agents (only for non-cached tracks, foreground parallel batches)**
+
+⚠️ **CRITICAL: ALL AGENTS MUST RUN IN FOREGROUND** ⚠️
+- Do NOT use `run_in_background: true` on ANY Task tool call
+- Foreground Task calls can run in parallel **within the same response**. Spawn in batches of **up to 50** Task calls per response, then proceed to the next batch.
+- Background mode breaks result collection
+
+⚠️ **CRITICAL: DO NOT SPAWN GUIDANCE-EXTRACT WITHOUT A TASK_ID** ⚠️
+- Every guidance source MUST be TaskCreate'd first
+- TASK_ID must be the TaskCreate ID for that source (never invent or omit)
+- If a TASK_ID is missing, STOP and report the error before spawning
 
 **NEWS: Spawn BZ agents for each significant date - SKIP if `Q1_NEWS_CACHED=true`:**
 ```
 subagent_type: "news-driver-bz"
 description: "BZ news {TICKER} {DATE}"
 prompt: "{TICKER} {DATE} {DAILY_STOCK} {DAILY_ADJ} TASK_ID={BZ_ID} WEB_TASK_ID={WEB_ID} PPX_TASK_ID={PPX_ID} JUDGE_TASK_ID={JUDGE_ID} QUARTER={E1.fiscal_quarter}_FY{E1.fiscal_year}"
+run_in_background: false  # ALWAYS foreground
 ```
 
-**GUIDANCE: Spawn guidance-extract agents - SKIP if `Q1_GUIDANCE_CACHED=true`** (one per content source, all in parallel):
+**GUIDANCE: Spawn guidance-extract agents - SKIP if `Q1_GUIDANCE_CACHED=true`** (one per content source, foreground parallel batches of up to 50):
 
 For EACH guidance task, read the description to get `{REPORT_ID}|{SOURCE_TYPE}|{SOURCE_KEY}`, then spawn:
 
@@ -180,6 +259,7 @@ For EACH guidance task, read the description to get `{REPORT_ID}|{SOURCE_TYPE}|{
 subagent_type: "guidance-extract"
 description: "Guidance {TICKER} {SOURCE_TYPE}"
 prompt: "{TICKER} {REPORT_ID} {SOURCE_TYPE} {SOURCE_KEY} {QUARTER} FYE={fye_month} TASK_ID={TASK_ID}"
+run_in_background: false  # ALWAYS foreground
 ```
 
 **Key variations in prompt format:**
@@ -190,16 +270,19 @@ prompt: "{TICKER} {REPORT_ID} {SOURCE_TYPE} {SOURCE_KEY} {QUARTER} FYE={fye_mont
 The `fye_month` comes from E1/E2 data (get_earnings.py output). Pass the same value for all guidance tasks of that company.
 
 **IMPORTANT:**
-- Create tasks only for non-cached tracks, THEN spawn agents for those tracks in parallel
+- Create tasks only for non-cached tracks, THEN spawn agents for those tracks in foreground-parallel batches (≤50)
 - If only news cached → create + spawn guidance agents only
 - If only guidance cached → create + spawn news agents only
 - BZ agents mark WEB+PPX as SKIPPED if they find answer (external_research=false)
 - Guidance agents have NO dependencies - they complete independently
-- DO NOT WAIT for any agents - proceed immediately to Phase 3
+- After spawning all agents, immediately enter Phase 3 polling loop
+- Do NOT proceed to Phase 4 until all relevant tasks are completed
 
-**Phase 3: Concurrent escalation loop - SKIP if `Q1_NEWS_CACHED=true`**
+**Phase 3: Escalation loop (foreground) - SKIP if `Q1_NEWS_CACHED=true`**
 
 If `Q1_NEWS_CACHED=false`, immediately after spawning BZ agents, enter this loop:
+
+⚠️ **REMINDER: ALL Task tool calls MUST have `run_in_background: false`** ⚠️
 
 ```
 WHILE any Q1 tasks (BZ-*, WEB-*, PPX-*, JUDGE-*) are pending or in_progress:
@@ -210,9 +293,10 @@ WHILE any Q1 tasks (BZ-*, WEB-*, PPX-*, JUDGE-*) are pending or in_progress:
        - Get task via TaskGet to read description: "{TICKER} {DATE} {DAILY_STOCK} {DAILY_ADJ}"
        - Extract QUARTER from task subject
        - Find corresponding PPX and JUDGE task IDs from TaskList
-       - Spawn:
+       - Spawn (FOREGROUND ONLY):
          subagent_type: "news-driver-web"
          prompt: "{TICKER} {DATE} {DAILY_STOCK} {DAILY_ADJ} TASK_ID={WEB_ID} PPX_TASK_ID={PPX_ID} JUDGE_TASK_ID={JUDGE_ID} QUARTER={QUARTER}"
+         run_in_background: false
      → WEB agents mark PPX as SKIPPED if confidence >= 50
 
   2. Check TaskList for PPX-{QUARTER} {TICKER} tasks that are:
@@ -222,9 +306,10 @@ WHILE any Q1 tasks (BZ-*, WEB-*, PPX-*, JUDGE-*) are pending or in_progress:
        - Get task via TaskGet to read description
        - Extract QUARTER from task subject
        - Find corresponding JUDGE task ID from TaskList
-       - Spawn:
+       - Spawn (FOREGROUND ONLY):
          subagent_type: "news-driver-ppx"
          prompt: "{TICKER} {DATE} {DAILY_STOCK} {DAILY_ADJ} TASK_ID={PPX_ID} JUDGE_TASK_ID={JUDGE_ID} QUARTER={QUARTER}"
+         run_in_background: false
      → PPX agents always update JUDGE with result (final tier)
 
   3. Check TaskList for JUDGE-{QUARTER} {TICKER} tasks that are:
@@ -232,9 +317,10 @@ WHILE any Q1 tasks (BZ-*, WEB-*, PPX-*, JUDGE-*) are pending or in_progress:
      - NOT already spawned
      - description starts with "READY:" (has result to validate)
      → For each such JUDGE task:
-       - Spawn:
+       - Spawn (FOREGROUND ONLY):
          subagent_type: "news-driver-judge"
          prompt: "TASK_ID={JUDGE_ID}"
+         run_in_background: false
      → JUDGE agents validate and update task with final confidence
 
   4. Brief pause (2-3 seconds), then repeat
@@ -248,12 +334,18 @@ Track which task IDs you've already spawned agents for to avoid duplicates.
 **Phase 4: Collect all results**
 
 **NEWS RESULTS:**
-When all Q1 news tasks (BZ-*, WEB-*, PPX-*, JUDGE-*) are completed, collect results from JUDGE-* tasks via TaskGet. Read the `description` field — it contains the validated 12-field pipe-delimited result line (with attr_confidence, pred_confidence, and judge_notes).
+When all Q1 news tasks (BZ-*, WEB-*, PPX-*, JUDGE-*) are completed, collect results from per-task files written by the judge subagents:
+`earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/judge/{TASK_ID}.tsv`
+
+Each file contains a single 12-field line (no header). Do **not** use TaskGet for news results.
 
 **Note:** Each date has exactly one JUDGE task with the final validated result. BZ/WEB/PPX tasks contain intermediate results.
 
 **GUIDANCE RESULTS:**
-When all Q1 guidance tasks (GX-*) are completed, collect results via TaskGet. Read the `description` field — it contains pipe-delimited guidance entries (18 fields per line):
+When all Q1 guidance tasks (GX-*) are completed, collect results from per-task files written by the guidance subagents:
+`earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/gx/{TASK_ID}.tsv`
+
+Each file contains newline-delimited guidance entries in the 18-field format below, or `NO_GUIDANCE|{source_type}|{source_key}`, or `ERROR|...`. **Do not use TaskGet for guidance.**
 
 ```
 period_type|fiscal_year|fiscal_quarter|segment|metric|low|mid|high|unit|basis|derivation|qualitative|source_type|source_id|source_key|given_date|section|quote
@@ -279,9 +371,57 @@ Or `NO_GUIDANCE|{source_type}|{source_key}` if no guidance found in that source.
 
 **Note:** Guidance tasks have no dependencies and complete independently of news tasks.
 
+**Phase 4.5: Validation gate (MANDATORY, before Step 3b)**
+
+**Fresh session rule (context saver):** Run Phase 4.5 + saving results in a **new session** using the same `CLAUDE_CODE_TASK_LIST_ID`. This avoids carrying the full spawn-phase context into validation.
+
+Load the Q1 manifest from:
+`earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}.json`
+
+Validation rules:
+- For each `news.judge_tasks` ID:
+  - Read file: `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/judge/{TASK_ID}.tsv`
+  - If file missing: mark missing
+  - Must be a single 12-field pipe-delimited line
+- For each `guidance.tasks` ID:
+  - Read file: `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/gx/{TASK_ID}.tsv`
+  - If file missing: mark missing
+  - For each non-empty line:
+    - If line starts with `NO_GUIDANCE|` → skip
+    - If line starts with `ERROR|` → invalid (retry)
+    - Else must have **18 fields**
+  - If file is empty/invalid: log it, add to retry file, and **do NOT** mark processed.
+
+**Counting rule (no headers):**
+- Per-task files (`gx/*.tsv` and `judge/*.tsv`) never include headers.
+- If you sanity-check counts, count only `*.tsv` files and compare to manifest IDs.
+- Do **not** add +1 for headers or count directories.
+
+**Hard stop rule (fail-closed):**
+- If any expected guidance file is missing, or any required judge file is missing, **STOP immediately**.
+- Write a retry file (if needed) and **do NOT** write `guidance.csv`, `.ok`, or processed caches.
+- Do **NOT** attempt to reconstruct results from memory/Neo4j.
+
+**Best-effort mode (deterministic):**
+- If any task is missing or invalid, **do NOT** stop the run (unless the hard stop rule above applies).
+- Write a retry file listing only the failed task IDs:
+  `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}.retry.json`
+  Format: `{"failed":[{"id":"123","reason":"invalid_format"}, ...]}`
+- Proceed to Step 3b and write **all valid rows**.
+- **Do NOT** update processed caches unless there are **zero** failed tasks.
+
+Only create the `.ok` marker when there are **zero** failed tasks. Processed CSV updates require the `.ok` marker; the retry file never unlocks processing.
+**Use the Write tool (not Bash redirection) for `.ok` and processed CSVs** so hooks can enforce guards.
+If **no** tasks are missing/invalid:
+- Create marker file: `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}.ok`
+  (This marker is required to unlock processed CSV updates.)
+
 ### Step 3b: Save Q1 Results
 
 **NEWS RESULTS:**
+Write all valid rows. If retry file exists, do NOT update processed cache.
+Source of truth: per-task files in `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/judge/`.
+For each judge task ID in the manifest, read `{TASK_ID}.tsv` and append the 12-field line.
 1. Create directory if needed: `earnings-analysis/Companies/{TICKER}/`
 2. Append Q1 results to `earnings-analysis/Companies/{TICKER}/news.csv`:
    - Add `quarter` column with value `{E1.fiscal_quarter}_FY{E1.fiscal_year}` (e.g., `Q1_FY2024`)
@@ -293,9 +433,13 @@ Or `NO_GUIDANCE|{source_type}|{source_key}` if no guidance found in that source.
    - Create file with header if it doesn't exist
 
 **GUIDANCE RESULTS:**
+Write all valid rows. If retry file exists, do NOT update processed cache.
+Source of truth: per-task files in `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/gx/`.
+For each guidance task ID in the manifest, read `{TASK_ID}.tsv` and append any valid lines (skip `NO_GUIDANCE|...`).
 4. Append Q1 guidance to `earnings-analysis/Companies/{TICKER}/guidance.csv`:
    - Add `quarter` column with value `{E1.fiscal_quarter}_FY{E1.fiscal_year}`
    - Format (19 fields): `quarter|period_type|fiscal_year|fiscal_quarter|segment|metric|low|mid|high|unit|basis|derivation|qualitative|source_type|source_id|source_key|given_date|section|quote`
+   - `fiscal_quarter` here is numeric (`1-4`) from guidance-extract; do not convert to `Q1` format
    - Skip lines that start with `NO_GUIDANCE`
    - Create file with header if it doesn't exist
 5. Update `earnings-analysis/guidance_processed.csv`:
@@ -303,19 +447,21 @@ Or `NO_GUIDANCE|{source_type}|{source_key}` if no guidance found in that source.
    - Append row: `{TICKER}|{E1.fiscal_quarter}|FY{E1.fiscal_year}|{today YYYY-MM-DD}`
    - Create file with header if it doesn't exist
 
-### Step 4: Concurrent Analysis for Q2 (News + Guidance)
+### Step 4: Foreground Analysis for Q2 (News + Guidance) — ONLY IF TARGET=Q2
+
+**Only run Step 4–4b if TARGET=Q2.**
 
 Calculate:
 - `START` = E1 date + 1 day (exclude E1 earnings reaction)
-- `END` = E2 date (exclusive, excludes E2 earnings reaction)
+- `END` = E2 date (exclusive, excludes E2 earnings reaction). Scripts already use [start,end), so pass E2 as-is (do not subtract a day).
 
-**Run discovery scripts in parallel (only for non-cached tracks):**
+**Run discovery scripts (only for non-cached tracks; sequential OK):**
 
 ```bash
 # News discovery (SKIP if Q2 news cached)
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_significant_moves.py {TICKER} {START} {END} {E2.trailing_vol}
 
-# Guidance discovery - all 5 in parallel (SKIP ALL if Q2 guidance cached)
+# Guidance discovery - all 5 (SKIP ALL if Q2 guidance cached)
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_8k_filings_range.py {TICKER} {START} {END}
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_10k_filings_range.py {TICKER} {START} {END}
 source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/EventMarketDB/scripts/earnings/get_10q_filings_range.py {TICKER} {START} {END}
@@ -328,11 +474,13 @@ source /home/faisal/EventMarketDB/venv/bin/activate && python /home/faisal/Event
 - If `Q2_GUIDANCE_CACHED=true` → skip all 5 guidance discovery scripts
 - If both cached → skip Steps 4, 4b entirely for Q2
 
-Then follow the same concurrent pattern as Step 3:
+Then follow the same foreground batch pattern as Step 3:
 - Phase 1: Create ALL tasks (news with blockedBy + guidance without dependencies)
-- Phase 2: Spawn BZ agents AND guidance agents in parallel
-- Phase 3: Concurrent escalation loop - spawn WEB/PPX/JUDGE as they auto-unblock
+- Phase 1.5: Write manifest for Q2 (create gx/judge output dirs)
+- Phase 2: Spawn BZ agents AND guidance agents in foreground-parallel batches (≤50)
+- Phase 3: Escalation loop (foreground) - spawn WEB/PPX/JUDGE as they auto-unblock
 - Phase 4: Collect all Q2 results (news from JUDGE-*, guidance from GX-*)
+- Phase 4.5: Validation gate before saving results
 
 Use `QUARTER={E2.fiscal_quarter}_FY{E2.fiscal_year}` for all Q2 tasks.
 
@@ -346,6 +494,7 @@ Same as Step 3b but for Q2:
 
 **GUIDANCE RESULTS:**
 3. Append to `earnings-analysis/Companies/{TICKER}/guidance.csv` with `quarter={E2.fiscal_quarter}_FY{E2.fiscal_year}`
+   - Source of truth: `earnings-analysis/Companies/{TICKER}/manifests/{QUARTER}/gx/{TASK_ID}.tsv`
 4. Append to `guidance_processed.csv`: `{TICKER}|{E2.fiscal_quarter}|FY{E2.fiscal_year}|{today YYYY-MM-DD}`
 
 ### Step 5: Return Combined Results
@@ -433,15 +582,19 @@ Thinking files appear in Obsidian at `Companies/{TICKER}/thinking/{QUARTER}/` wi
 
 ## Rules
 
+- **NEVER use run_in_background** - ALL Task tool calls MUST run in foreground. Do NOT set `run_in_background: true`. Wait for each batch to complete before proceeding. This is critical for proper result collection.
+- **Create tasks first; spawn in foreground-parallel batches (≤50)** - Issue up to 50 Task calls per response; then proceed to the next batch.
 - **Full row replacement** - When a later tier returns a result, use its COMPLETE output. PPX replaces WEB, WEB replaces BZ. Never mix fields across tiers. Judge outputs 12-field line.
 - **Always run get_earnings.py first** - provides trailing_vol for each quarter
 - **Skip if done** - check news_processed.csv, skip quarters already processed
-- **All sub-agents in parallel** - spawn one per date, no cap
+- **No background mode** - use foreground-parallel batches (≤50); do NOT set `run_in_background: true`.
 - **Q1 complete before Q2** - finish all 4 tiers (BZ → WEB → PPX → JUDGE) + save for Q1, then Q2
+- **Processed cache format** - always write `fiscal_year` as `FY{YYYY}` (e.g., FY2023), never plain year
 - **Extract date only** - E1 date "2024-02-01T16:30:33-05:00" → use "2024-02-01"
 - **Preserve news_id EXACTLY** - Copy URLs verbatim. NEVER shorten, summarize, or create short IDs. If sub-agent returns a URL, save the full URL exactly as returned.
 - **Pass through raw output** - don't summarize or lose data
-- **Always save results** - append to news.csv and mark done in news_processed.csv
+- **Always save results** - append to news.csv/guidance.csv; update processed CSVs only when `.ok` exists (no retry file)
+- **Verify before marking processed** - Confirm data rows were appended to CSV before updating processed.csv. If no results to save, do not mark as processed.
 
 ## Error Handling
 

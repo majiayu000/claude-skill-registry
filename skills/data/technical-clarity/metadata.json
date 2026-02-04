@@ -1,7 +1,7 @@
 {
   "name": "technical-clarity",
   "repo": "panaversity/agentfactory",
-  "path": ".gemini/skills/technical-clarity/SKILL.md",
+  "path": ".claude/skills/technical-clarity/SKILL.md",
   "source": "github.com/panaversity/agentfactory",
-  "downloaded_at": "2026-02-02T04:49:43.640190Z"
+  "downloaded_at": "2026-02-04T02:28:36.413291Z"
 }

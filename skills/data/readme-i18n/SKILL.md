@@ -1,122 +1,117 @@
 ---
 name: readme-i18n
-description: README 多語言同步。觸發：i18n、翻譯、多語言、sync readme。
+description: Maintain multilingual README versions (English primary, Chinese translation). Triggers: i18n, 翻譯, translate, 多語言, sync readme, 中英文, bilingual, localization, l10n, 國際化, 本地化, multilingual, 雙語, 語言, language, 英文版, 中文版, translation.
+version: 2.1.0
+category: documentation
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
+  - codex-cli
+dependencies: []
+allowed-tools:
+  - read_file
+  - write_file
+  - replace_string_in_file
 ---
 
-# README 國際化 (i18n) 技能
+# Skill: README 國際化 (i18n)
+
+## 描述
+維護 README 的多語言版本，確保中文與英文內容對照同步。
 
 ## 觸發條件
-
-| 用戶說法 | 觸發 |
-|----------|------|
-| 翻譯 README、sync readme | ✅ |
-| 多語言、i18n | ✅ |
-| README 有變更時 | ✅ 自動觸發 |
-
----
-
-## 可用工具
-
-| 操作 | 工具 |
-|------|------|
-| 讀取 README | `read_file()` |
-| 更新 README | `replace_string_in_file()` |
-| 比對差異 | `get_changed_files()` |
-
----
+- 使用者說「更新 README」「sync readme」「翻譯 README」
+- README.md 有變更時
+- 新增功能需要更新文檔時
 
 ## 檔案結構
-
 ```
 README.md          # 主 README（英文，Primary）
-README.zh-TW.md    # 繁體中文版本
+README.zh-TW.md    # 繁體中文版本（對照翻譯）
 ```
 
----
+## 執行流程
 
-## 同步方向
-
-| 情況 | 動作 |
-|------|------|
-| 用戶提供中文 | 同步到英文版 |
-| 用戶提供英文 | 同步到中文版 |
-| README.md 變更 | 同步到 README.zh-TW.md |
-
----
-
-## 標準工作流程
-
-```python
-# 1. 讀取兩個版本
-en_content = read_file("README.md")
-zh_content = read_file("README.zh-TW.md")
-
-# 2. 比對章節差異
-# - 檢查 ## 標題數量是否一致
-# - 檢查程式碼區塊數量是否一致
-
-# 3. 翻譯新增/變更的段落
-# - 技術術語保持一致（見術語表）
-# - 程式碼只翻譯註解
-
-# 4. 更新對應版本
-replace_string_in_file("README.zh-TW.md", old, new)
+### 1. 確認變更來源
+```
+如果使用者提供中文內容 → 同步到英文版
+如果使用者提供英文內容 → 同步到中文版
+如果主 README 變更 → 同步兩個版本
 ```
 
----
+### 2. 主 README 格式
+主 README.md 採用雙語並列格式：
+- 使用語言切換連結在頂部
+- 每個章節先中文後英文
+- 或使用摺疊區塊分隔
 
-## 術語對照表
+### 3. 翻譯原則
+- 技術術語保持一致（建立術語表）
+- 程式碼範例不翻譯，只翻譯註解
+- 保持 Markdown 結構完全對應
+- 連結指向對應語言版本
 
-| English | 中文 |
-|---------|------|
-| Constitution | 憲法 |
-| Bylaws | 子法 |
-| Skills | 技能 |
-| Memory Bank | 記憶庫 |
-| Domain-Driven Design | 領域驅動設計 |
-| Data Access Layer | 資料存取層 |
-| Workflow | 工作流 |
-| Architecture | 架構 |
-
----
-
-## 翻譯原則
-
-1. **技術術語一致** - 使用術語對照表
-2. **程式碼不翻譯** - 只翻譯註解
-3. **結構對應** - Markdown 結構完全對應
-4. **Emoji 一致** - 兩個版本保持相同
-
----
-
-## 同步檢查清單
-
+### 4. 同步檢查
 ```markdown
+## 同步檢查清單
 - [ ] 章節數量一致
 - [ ] 程式碼區塊一致
 - [ ] 連結有效性
 - [ ] 術語一致性
 ```
 
+## 術語對照表
+
+| 中文 | English |
+|------|---------|
+| 憲法 | Constitution |
+| 子法 | Bylaws |
+| 技能 | Skills |
+| 記憶庫 | Memory Bank |
+| 領域驅動設計 | Domain-Driven Design (DDD) |
+| 資料存取層 | Data Access Layer (DAL) |
+| 提交 | Commit |
+| 工作流 | Workflow |
+| 架構 | Architecture |
+| 模組化 | Modular |
+| 跨對話 | Cross-conversation |
+
+## 輸出範本
+
+### 主 README.md 頂部
+```markdown
+# Project Name / 專案名稱
+
+[English](#english) | [繁體中文](#繁體中文)
+
 ---
 
-## 輸出範例
+## English
 
-```
-🌐 README 國際化同步
-
-變更來源: README.md
-同步目標: README.zh-TW.md
-
-變更內容:
-  + ## New Feature → ## 新功能
-  + Installation → 安裝
-
-✅ 同步完成
-```
+(English content here)
 
 ---
 
-## 相關技能
+## 繁體中文
 
-- `readme-updater` - 基礎 README 更新
+(中文內容在此)
+```
+
+### 或使用獨立檔案連結
+```markdown
+# Project Name
+
+🌐 [English](README.en.md) | [繁體中文](README.zh-TW.md)
+
+(預設語言內容)
+```
+
+## 相依 Skills
+- `readme-updater` - 基礎 README 更新邏輯
+
+## 注意事項
+- 翻譯時保持語氣一致（專業但親切）
+- 不要過度意譯，保持技術準確性
+- Emoji 兩個版本保持一致
+- 更新日期同步標記

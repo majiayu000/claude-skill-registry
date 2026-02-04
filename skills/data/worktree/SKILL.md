@@ -1,61 +1,118 @@
 ---
 name: worktree
-description: Use when managing git worktrees (list, create/switch, delete, configure) in this repo; prefer the git-wt subcommand for worktree operations and its configuration options.
+description: Manage git worktrees for parallel feature development. Use when user mentions worktree, wants to work on multiple branches simultaneously, or runs /worktree. Supports task-aware naming (phase-XX/task-YY-description).
+allowed-tools: Bash, AskUserQuestion
 ---
-# Worktree
 
-## Overview
+# Git Worktree Manager
 
-Use `git wt` as the default interface for git worktree tasks. It wraps `git worktree` to list, create, switch, and delete worktrees with safer defaults.
+Manage git worktrees for parallel feature development.
 
-## Quick Start
+## Current Worktrees
 
-```console
-git wt                       # list worktrees
-git wt <branch|worktree>     # switch/create (creates branch and worktree if needed)
-git wt -d <branch|worktree>  # delete worktree and branch (safe)
-git wt -D <branch|worktree>  # force delete worktree and branch
+!git worktree list
+
+## Usage
+
+```
+/worktree                     # List worktrees (default)
+/worktree add <name> [base]   # Create new worktree
+/worktree remove <name>       # Remove worktree
+/worktree status              # Detailed status of all worktrees
 ```
 
-## Task Playbook
+## Arguments
 
-### List worktrees
+- `$1` - Subcommand: `add`, `list`, `remove`, `status` (default: `list`)
+- `$2` - For `add`: feature/branch name; For `remove`: worktree name/path
+- `$3` - For `add`: base branch (default: main/master)
 
-Run `git wt` and parse the output. Use this to confirm names and paths before switching or deleting.
+---
 
-### Create or switch worktree
+## Command: `add`
 
-Prefer `git wt <branch|worktree>` for both actions. It will create the branch/worktree if missing, otherwise switch to it.
+Create a new worktree in a sibling directory.
 
-If staying in the current directory matters, use `--nocd`:
+**Task-Aware Naming**: When name matches `task-XX`:
+1. Detect current phase from `specification/`
+2. Generate branch: `phase-XX/task-YY-description`
+3. Ask for description if not provided
 
-```console
-git wt --nocd feature-branch
+**Examples**:
+- `/worktree add task-02` → `phase-01/task-02-shared-kernel`
+- `/worktree add feature-auth` → `feature-auth` (non-task)
+
+**Process**:
+```bash
+REPO_ROOT=$(git rev-parse --show-toplevel)
+REPO_NAME=$(basename "$REPO_ROOT")
+WORKTREE_PATH="${REPO_ROOT}/../${REPO_NAME}-<branch-name>"
+git worktree add -b <branch-name> "$WORKTREE_PATH" <base-branch>
 ```
 
-### Delete worktree
+---
 
-Use `git wt -d <branch|worktree>` for a safe delete. Only use `-D` if explicitly requested or when cleanup must be forced.
+## Command: `list`
 
-## Configuration Guidance
+List all worktrees with their details.
 
-Use `git config` for defaults; override with flags when needed.
-
-- `wt.basedir` / `--basedir`: set the worktree base directory (default is `../{gitroot}-wt`).
-- `wt.copyignored` / `--copyignored`: copy gitignored files (for example, `.env`) when creating.
-- `wt.copyuntracked` / `--copyuntracked`: copy untracked files on create.
-- `wt.copymodified` / `--copymodified`: copy modified tracked files on create.
-- `wt.nocopy` / `--nocopy`: exclude files from copying (gitignore syntax).
-- `wt.copy` / `--copy`: always copy specific patterns even if ignored.
-- `wt.hook` / `--hook`: run commands after creating a new worktree.
-- `wt.nocd` / `--nocd`: prevent automatic directory switching.
-
-## Shell Integration
-
-When asked to enable shell integration, use the appropriate init command:
-
-```powershell
-Invoke-Expression (git wt --init powershell | Out-String)
+```bash
+git worktree list
 ```
 
-Use `--nocd` with `--init` to enable completion without wrapping `git` when required.
+---
+
+## Command: `remove`
+
+Remove a worktree safely.
+
+**Process**:
+1. If no argument, list worktrees and ask which to remove
+2. Check for uncommitted changes
+3. If changes exist, WARN and ask for confirmation
+4. Remove worktree and prune
+
+```bash
+git -C "<worktree-path>" status --porcelain
+git worktree remove "<worktree-path>"
+git worktree prune
+```
+
+---
+
+## Command: `status`
+
+Show detailed status of all worktrees.
+
+For each worktree, show:
+- Path and branch name
+- Uncommitted changes (if any)
+- Last commit info
+
+```bash
+git -C "<path>" status --short
+git -C "<path>" log --oneline -1
+```
+
+---
+
+## Interactive Mode
+
+When `/worktree` is called without arguments or unclear input:
+1. Show current worktrees
+2. Ask what user wants to do (create, remove, view status)
+
+## Safety Rules
+
+1. NEVER remove the main worktree
+2. ALWAYS check for uncommitted changes before removal
+3. ALWAYS confirm destructive operations with user
+4. Use `git worktree prune` after removals
+
+## Finishing Work in Worktree
+
+When done working in a worktree, use `/finish-task` to:
+1. Squash merge all commits to main (in main repo)
+2. Optionally remove the worktree directory
+
+The `/finish-task` skill auto-detects WORKTREE mode and handles the merge correctly.

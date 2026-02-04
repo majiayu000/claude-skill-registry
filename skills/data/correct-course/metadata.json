@@ -1,9 +1,7 @@
 {
   "name": "correct-course",
-  "description": "﻿---",
-  "repo": "resolve-io/.prism",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/resolve-io/.prism"
+  "repo": "PabloLION/bmad-plugin",
+  "path": "plugins/bmad/skills/correct-course/SKILL.md",
+  "source": "github.com/PabloLION/bmad-plugin",
+  "downloaded_at": "2026-02-04T03:30:55.221614Z"
 }

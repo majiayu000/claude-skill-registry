@@ -1,93 +1,59 @@
 ---
 name: notion-research-documentation
-description: Searches across your Notion workspace, synthesizes findings from multiple pages, and creates comprehensive research documentation saved as new Notion pages. Turns scattered information into structured reports with proper citations and actionable insights.
+description: Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.
+metadata:
+  short-description: Research Notion content and produce briefs/reports
 ---
 
 # Research & Documentation
 
-Enables comprehensive research workflows: search for information across your Notion workspace, fetch and analyze relevant pages, synthesize findings, and create well-structured documentation.
+Pull relevant Notion pages, synthesize findings, and publish clear briefs or reports (with citations and links to sources).
 
-## Quick Start
+## Quick start
+1) Find sources with `Notion:notion-search` using targeted queries; confirm scope with the user.
+2) Fetch pages via `Notion:notion-fetch`; note key sections and capture citations (`reference/citations.md`).
+3) Choose output format (brief, summary, comparison, comprehensive report) using `reference/format-selection-guide.md`.
+4) Draft in Notion with `Notion:notion-create-pages` using the matching template (quick, summary, comparison, comprehensive).
+5) Link sources and add a references/citations section; update as new info arrives with `Notion:notion-update-page`.
 
-When asked to research and document a topic:
+## Workflow
+### 0) If any MCP call fails because Notion MCP is not connected, pause and set it up:
+1. Add the Notion MCP:
+   - `codex mcp add notion --url https://mcp.notion.com/mcp`
+2. Enable remote MCP client:
+   - Set `[features].rmcp_client = true` in `config.toml` **or** run `codex --enable rmcp_client`
+3. Log in with OAuth:
+   - `codex mcp login notion`
 
-1. **Search for relevant content**: Use `Notion:notion-search` to find pages
-2. **Fetch detailed information**: Use `Notion:notion-fetch` to read full page content
-3. **Synthesize findings**: Analyze and combine information from multiple sources
-4. **Create structured output**: Use `Notion:notion-create-pages` to write documentation
+After successful login, the user will have to restart codex. You should finish your answer and tell them so when they try again they can continue with Step 1.
 
-## Research Workflow
+### 1) Gather sources
+- Search first (`Notion:notion-search`); refine queries, and ask the user to confirm if multiple results appear.
+- Fetch relevant pages (`Notion:notion-fetch`), skim for facts, metrics, claims, constraints, and dates.
+- Track each source URL/ID for later citation; prefer direct quotes for critical facts.
 
-### Step 1: Search for relevant information
+### 2) Select the format
+- Quick readout → quick brief.
+- Single-topic dive → research summary.
+- Option tradeoffs → comparison.
+- Deep dive / exec-ready → comprehensive report.
+- See `reference/format-selection-guide.md` for when to pick each.
 
-```
-Use Notion:notion-search with the research topic
-Filter by teamspace if scope is known
-Review search results to identify most relevant pages
-```
+### 3) Synthesize
+- Outline before writing; group findings by themes/questions.
+- Note evidence with source IDs; flag gaps or contradictions.
+- Keep user goal in view (decision, summary, plan, recommendation).
 
-### Step 2: Fetch page content
+### 4) Create the doc
+- Pick the matching template in `reference/` (brief, summary, comparison, comprehensive) and adapt it.
+- Create the page with `Notion:notion-create-pages`; include title, summary, key findings, supporting evidence, and recommendations/next steps when relevant.
+- Add citations inline and a references section; link back to source pages.
 
-```
-Use Notion:notion-fetch for each relevant page URL
-Collect content from all relevant sources
-Note key findings, quotes, and data points
-```
+### 5) Finalize & handoff
+- Add highlights, risks, and open questions.
+- If the user needs follow-ups, create tasks or a checklist in the page; link any task database entries if applicable.
+- Share a short changelog or status using `Notion:notion-update-page` when updating.
 
-### Step 3: Synthesize findings
-
-Analyze the collected information:
-- Identify key themes and patterns
-- Connect related concepts across sources
-- Note gaps or conflicting information
-- Organize findings logically
-
-### Step 4: Create structured documentation
-
-Use the appropriate documentation template (see [reference/format-selection-guide.md](reference/format-selection-guide.md)) to structure output:
-- Clear title and executive summary
-- Well-organized sections with headings
-- Citations linking back to source pages
-- Actionable conclusions or next steps
-
-## Output Formats
-
-Choose the appropriate format based on request:
-
-**Research Summary**: See [reference/research-summary-format.md](reference/research-summary-format.md)
-**Comprehensive Report**: See [reference/comprehensive-report-format.md](reference/comprehensive-report-format.md)
-**Quick Brief**: See [reference/quick-brief-format.md](reference/quick-brief-format.md)
-
-## Best Practices
-
-1. **Cast a wide net first**: Start with broad searches, then narrow down
-2. **Cite sources**: Always link back to source pages using mentions
-3. **Verify recency**: Check page last-edited dates for current information
-4. **Cross-reference**: Validate findings across multiple sources
-5. **Structure clearly**: Use headings, bullets, and formatting for readability
-
-## Page Placement
-
-By default, create research documents as standalone pages. If the user specifies:
-- A parent page → use `page_id` parent
-- A database → fetch the database first, then use appropriate `data_source_id`
-- A teamspace → create in that context
-
-## Advanced Features
-
-**Search filtering**: See [reference/advanced-search.md](reference/advanced-search.md)
-**Citation styles**: See [reference/citations.md](reference/citations.md)
-
-## Common Issues
-
-**"No results found"**: Try broader search terms or different teamspaces
-**"Too many results"**: Add filters or search within specific pages
-**"Can't access page"**: User may lack permissions, ask them to verify access
-
-## Examples
-
-See [examples/](examples/) for complete workflow demonstrations:
-- [examples/market-research.md](examples/market-research.md) - Researching market trends
-- [examples/technical-investigation.md](examples/technical-investigation.md) - Technical deep-dive
-- [examples/competitor-analysis.md](examples/competitor-analysis.md) - Multi-source synthesis
-
+## References and examples
+- `reference/` — search tactics, format selection, templates, and citation rules (e.g., `advanced-search.md`, `format-selection-guide.md`, `research-summary-template.md`, `comparison-template.md`, `citations.md`).
+- `examples/` — end-to-end walkthroughs (e.g., `competitor-analysis.md`, `technical-investigation.md`, `market-research.md`, `trip-planning.md`).

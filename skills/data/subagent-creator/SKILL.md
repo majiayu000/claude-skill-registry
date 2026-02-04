@@ -1,127 +1,129 @@
 ---
 name: subagent-creator
-description: Create specialized Claude Code sub-agents with custom system prompts and tool configurations. Use when users ask to create a new sub-agent, custom agent, specialized assistant, or want to configure task-specific AI workflows for Claude Code.
+description: 创建具有自定义系统提示和工具配置的专业化 Claude Code 子代理。当用户要求创建新的子代理、自定义代理、专业助手，或为 Claude Code 配置特定任务的 AI 工作流时使用。
 ---
 
-# Sub-agent Creator
+# 子代理创建器
 
-Create specialized AI sub-agents for Claude Code that handle specific tasks with customized prompts and tool access.
+为 Claude Code 创建专业化的 AI 子代理，以处理特定任务和自定义的提示访问权限。
 
-## Sub-agent File Format
+## 子代理文件格式
 
-Sub-agents are Markdown files with YAML frontmatter stored in:
-- **Project**: `.claude/agents/` (higher priority)
-- **User**: `~/.claude/agents/` (lower priority)
+子代理是存储在以下位置的带 YAML 前置内容的 Markdown 文件：
 
-### Structure
+- **项目**: `.claude/agents/` (较高优先级)
+- **用户**: `~/.claude/agents/` (较低优先级)
+
+### 结构
 
 ```markdown
 ---
-name: subagent-name
-description: When to use this subagent (include "use proactively" for auto-delegation)
-tools: Tool1, Tool2, Tool3  # Optional - inherits all if omitted
-model: sonnet               # Optional - sonnet/opus/haiku/inherit
-permissionMode: default     # Optional - default/acceptEdits/bypassPermissions/plan
-skills: skill1, skill2      # Optional - auto-load skills
+name: 子代理名称
+description: 使用此子代理的时机 (包含"use proactively"以实现自动委派)
+tools: 工具1, 工具2, 工具3  # 可选 - 如果省略则继承所有工具
+model: sonnet               # 可选 - sonnet/opus/haiku/inherit
+permissionMode: default     # 可选 - default/acceptEdits/bypassPermissions/plan
+skills: 技能1, 技能2        # 可选 - 自动加载技能
 ---
 
-System prompt goes here. Define role, responsibilities, and behavior.
+系统提示放在这里。定义角色、职责和行为。
 ```
 
-### Configuration Fields
+### 配置字段
 
-| Field | Required | Description |
+| 字段 | 必需 | 描述 |
 |-------|----------|-------------|
-| `name` | Yes | Lowercase with hyphens |
-| `description` | Yes | Purpose and when to use (key for auto-delegation) |
-| `tools` | No | Comma-separated tool list (omit to inherit all) |
-| `model` | No | `sonnet`, `opus`, `haiku`, or `inherit` |
-| `permissionMode` | No | `default`, `acceptEdits`, `bypassPermissions`, `plan` |
-| `skills` | No | Skills to auto-load |
+| `name` | 是 | 小写字母加连字符 |
+| `description` | 是 | 用途和使用时机（自动委派的关键） |
+| `tools` | 否 | 逗号分隔的工具列表（省略以继承所有） |
+| `model` | 否 | `sonnet`、`opus`、`haiku` 或 `inherit` |
+| `permissionMode` | 否 | `default`、`acceptEdits`、`bypassPermissions`、`plan` |
+| `skills` | 否 | 要自动加载的技能 |
 
-## Creation Workflow
+## 创建工作流程
 
-1. **Gather requirements**: Ask about the sub-agent's purpose, when to use it, and required capabilities
-2. **Choose scope**: Project (`.claude/agents/`) or user (`~/.claude/agents/`)
-3. **Define configuration**: Name, description, tools, model
-4. **Write system prompt**: Clear role, responsibilities, and output format
-5. **Create file**: Write the `.md` file to the appropriate location
+1. **收集需求**：询问子代理的用途、使用时机和所需能力
+2. **选择范围**：项目 (`.claude/agents/`) 或用户 (`~/.claude/agents/`)
+3. **定义配置**：名称、描述、工具、模型
+4. **编写系统提示**：明确的角色、职责和输出格式
+5. **创建文件**：将 `.md` 文件写入适当位置
 
-## Writing Effective Sub-agents
+## 编写有效的子代理
 
-### Description Best Practices
+### 描述最佳实践
 
-The `description` field is critical for automatic delegation:
+`description` 字段对于自动委派至关重要：
 
 ```yaml
-# Good - specific triggers
-description: Expert code reviewer. Use PROACTIVELY after writing or modifying code.
+# 良好 - 具体的触发条件
+description: 代码审查专家。在编写或修改代码后主动使用。
 
-# Good - clear use cases
-description: Debugging specialist for errors, test failures, and unexpected behavior.
+# 良好 - 清晰的用例
+description: 专门处理错误、测试失败和异常行为的调试专家。
 
-# Bad - too vague
-description: Helps with code
+# 不佳 - 过于模糊
+description: 帮助处理代码
 ```
 
-### System Prompt Guidelines
+### 系统提示指南
 
-1. **Define role clearly**: "You are a [specific expert role]"
-2. **List actions on invocation**: What to do first
-3. **Specify responsibilities**: What the sub-agent handles
-4. **Include guidelines**: Constraints and best practices
-5. **Define output format**: How to structure responses
+1. **明确定义角色**："你是[特定专家角色]"
+2. **列出调用时的操作**：首先做什么
+3. **指定职责**：子代理处理什么
+4. **包含指导原则**：约束和最佳实践
+5. **定义输出格式**：如何组织响应
 
-### Tool Selection
+### 工具选择
 
-- **Read-only tasks**: `Read, Grep, Glob, Bash`
-- **Code modification**: `Read, Write, Edit, Grep, Glob, Bash`
-- **Full access**: Omit `tools` field
+- **只读任务**：`Read、Grep、Glob、Bash`
+- **代码修改**：`Read、Write、Edit、Grep、Glob、Bash`
+- **完全访问**：省略 `tools` 字段
 
-See [references/available-tools.md](references/available-tools.md) for complete tool list.
+完整工具列表请参见 [references/available-tools.md](references/available-tools.md)。
 
-## Example Sub-agents
+## 子代理示例
 
-See [references/examples.md](references/examples.md) for complete examples:
-- Code Reviewer
-- Debugger
-- Data Scientist
-- Test Runner
-- Documentation Writer
-- Security Auditor
+完整示例请参见 [references/examples.md](references/examples.md)：
 
-## Template
+- 代码审查员
+- 调试专家
+- 数据科学家
+- 测试运行器
+- 文档编写者
+- 安全审计员
 
-Copy from [assets/subagent-template.md](assets/subagent-template.md) to start a new sub-agent.
+## 模板
 
-## Quick Start Example
+从 [assets/subagent-template.md](assets/subagent-template.md) 复制以开始新的子代理。
 
-Create a code reviewer sub-agent:
+## 快速开始示例
+
+创建一个代码审查子代理：
 
 ```bash
 mkdir -p .claude/agents
 ```
 
-Write to `.claude/agents/code-reviewer.md`:
+写入 `.claude/agents/code-reviewer.md`：
 
 ```markdown
 ---
 name: code-reviewer
-description: Reviews code for quality and security. Use proactively after code changes.
+description: 审查代码质量和安全性。在代码更改后主动使用。
 tools: Read, Grep, Glob, Bash
 model: inherit
 ---
 
-You are a senior code reviewer.
+你是一位资深代码审查员。
 
-When invoked:
-1. Run git diff to see changes
-2. Review modified files
-3. Report issues by priority
+被调用时：
+1. 运行 git diff 查看更改
+2. 审查修改的文件
+3. 按优先级报告问题
 
-Focus on:
-- Code readability
-- Security vulnerabilities
-- Error handling
-- Best practices
+重点关注：
+- 代码可读性
+- 安全漏洞
+- 错误处理
+- 最佳实践
 ```

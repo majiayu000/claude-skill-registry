@@ -1,7 +1,7 @@
 {
   "name": "doc",
-  "repo": "boshu2/agentops",
-  "path": "skills/doc/SKILL.md",
-  "source": "github.com/boshu2/agentops",
-  "downloaded_at": "2026-02-02T03:07:42.368666Z"
+  "repo": "openai/skills",
+  "path": "skills/.curated/doc/SKILL.md",
+  "source": "github.com/openai/skills",
+  "downloaded_at": "2026-02-04T03:04:44.794704Z"
 }

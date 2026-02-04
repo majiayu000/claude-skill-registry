@@ -1,11 +1,7 @@
 {
   "name": "evaluation-harness",
-  "repo": "patricio0312rev/skillset",
-  "category": "data",
-  "description": "Builds repeatable evaluation systems with golden datasets, scoring rubrics, pass/fail thresholds, and regression reports. Use for \"LLM evaluation\", \"testing AI systems\", \"quality assurance\", or \"model",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:05.116324Z",
-  "dir_name": "evaluation-harness",
-  "github_path": "templates/ai-engineering/evaluation-harness",
-  "github_branch": "main"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/evaluation-harness/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:21.461872Z"
 }

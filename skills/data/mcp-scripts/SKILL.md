@@ -1,6 +1,7 @@
 ---
 name: mcp-scripts
 description: MCP Script Rules
+user-invocable: false
 ---
 
 # MCP Script Rules

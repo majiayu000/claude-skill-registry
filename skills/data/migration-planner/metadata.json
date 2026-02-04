@@ -1,11 +1,7 @@
 {
   "name": "migration-planner",
-  "repo": "patricio0312rev/skillset",
-  "category": "data",
-  "description": "Builds phased data and system migrations using feature flags, dual writes, backfills, and validation. Includes rollback plans and risk mitigation. Use for \"data migration\", \"system migration\", \"databa",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:05.342340Z",
-  "dir_name": "migration-planner",
-  "github_path": "templates/architecture/migration-planner",
-  "github_branch": "main"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/migration-planner/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:20.890663Z"
 }

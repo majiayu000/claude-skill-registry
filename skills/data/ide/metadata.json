@@ -1,7 +1,7 @@
 {
   "name": "ide",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/ide/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:10.071122Z"
+  "repo": "bonisoft3/iris",
+  "path": "plugins/sayt/skills/ide/SKILL.md",
+  "source": "github.com/bonisoft3/iris",
+  "downloaded_at": "2026-02-04T04:05:12.590869Z"
 }

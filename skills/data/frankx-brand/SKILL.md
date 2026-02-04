@@ -206,7 +206,7 @@ box-shadow:
 ✅ Flow, rhythm, resonance, frequency, vibe
 ✅ Transform, empower, amplify, elevate
 ✅ Session, ritual, practice, journey
-✅ Authentic, soul-aligned, conscious
+✅ Authentic, purpose-driven, intentional
 
 ### Words We Avoid
 ❌ Disrupt, revolutionary, game-changing (overused startup speak)
@@ -305,12 +305,12 @@ What to do next + link
 
 ## Domain-Specific Guidelines
 
-### Conscious Content (Spirituality & Awareness)
+### Mindful Content (Spirituality & Awareness)
 **Color:** Purple palette (#8B5CF6)
 **Visual Style:** Sacred geometry, flow fields, aurora effects
 **Tone:** Reflective, poetic, grounded in practice
-**Metaphors:** Light, frequency, resonance, awakening, emergence
-**Example:** "Consciousness isn't abstract - it's the aware space between thoughts, like silence between notes in a melody."
+**Metaphors:** Light, frequency, resonance, presence, emergence
+**Example:** "Awareness isn't abstract - it's the space between thoughts, like silence between notes in a melody."
 
 ### AI-Tech Content (Enterprise & Technical)
 **Color:** Cyan palette (#06B6D4)

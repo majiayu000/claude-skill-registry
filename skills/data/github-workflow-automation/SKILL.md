@@ -1,1065 +1,846 @@
 ---
 name: github-workflow-automation
-version: 1.0.0
-category: github
-description: Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management
-tags:
-  - github
-  - github-actions
-  - ci-cd
-  - workflow-automation
-  - swarm-coordination
-  - deployment
-  - security
-authors:
-  - claude-flow
-requires:
-  - gh (GitHub CLI)
-  - git
-  - claude-flow@alpha
-  - node (v16+)
-priority: high
-progressive_disclosure: true
+description: "Automate GitHub workflows with AI assistance. Includes PR reviews, issue triage, CI/CD integration, and Git operations. Use when automating GitHub workflows, setting up PR review automation, creating GitHub Actions, or triaging issues."
 ---
 
-# GitHub Workflow Automation Skill
+# 🔧 GitHub Workflow Automation
 
-## Overview
+> Patterns for automating GitHub workflows with AI assistance, inspired by [Gemini CLI](https://github.com/google-gemini/gemini-cli) and modern DevOps practices.
 
-This skill provides comprehensive GitHub Actions automation with AI swarm coordination. It integrates intelligent CI/CD pipelines, workflow orchestration, and repository management to create self-organizing, adaptive GitHub workflows.
+## When to Use This Skill
 
-## Quick Start
+Use this skill when:
 
-<details>
-<summary>💡 Basic Usage - Click to expand</summary>
+- Automating PR reviews with AI
+- Setting up issue triage automation
+- Creating GitHub Actions workflows
+- Integrating AI into CI/CD pipelines
+- Automating Git operations (rebases, cherry-picks)
 
-### Initialize GitHub Workflow Automation
-```bash
-# Start with a simple workflow
-npx ruv-swarm actions generate-workflow \
-  --analyze-codebase \
-  --detect-languages \
-  --create-optimal-pipeline
-```
+---
 
-### Common Commands
-```bash
-# Optimize existing workflow
-npx ruv-swarm actions optimize \
-  --workflow ".github/workflows/ci.yml" \
-  --suggest-parallelization
+## 1. Automated PR Review
 
-# Analyze failed runs
-gh run view <run-id> --json jobs,conclusion | \
-  npx ruv-swarm actions analyze-failure \
-    --suggest-fixes
-```
+### 1.1 PR Review Action
 
-</details>
-
-## Core Capabilities
-
-### 🤖 Swarm-Powered GitHub Modes
-
-<details>
-<summary>Available GitHub Integration Modes</summary>
-
-#### 1. gh-coordinator
-**GitHub workflow orchestration and coordination**
-- **Coordination Mode**: Hierarchical
-- **Max Parallel Operations**: 10
-- **Batch Optimized**: Yes
-- **Best For**: Complex GitHub workflows, multi-repo coordination
-
-```bash
-# Usage example
-npx claude-flow@alpha github gh-coordinator \
-  "Coordinate multi-repo release across 5 repositories"
-```
-
-#### 2. pr-manager
-**Pull request management and review coordination**
-- **Review Mode**: Automated
-- **Multi-reviewer**: Yes
-- **Conflict Resolution**: Intelligent
-
-```bash
-# Create PR with automated review
-gh pr create --title "Feature: New capability" \
-  --body "Automated PR with swarm review" | \
-  npx ruv-swarm actions pr-validate \
-    --spawn-agents "linter,tester,security,docs"
-```
-
-#### 3. issue-tracker
-**Issue management and project coordination**
-- **Issue Workflow**: Automated
-- **Label Management**: Smart
-- **Progress Tracking**: Real-time
-
-```bash
-# Create coordinated issue workflow
-npx claude-flow@alpha github issue-tracker \
-  "Manage sprint issues with automated tracking"
-```
-
-#### 4. release-manager
-**Release coordination and deployment**
-- **Release Pipeline**: Automated
-- **Versioning**: Semantic
-- **Deployment**: Multi-stage
-
-```bash
-# Automated release management
-npx claude-flow@alpha github release-manager \
-  "Create v2.0.0 release with changelog and deployment"
-```
-
-#### 5. repo-architect
-**Repository structure and organization**
-- **Structure Optimization**: Yes
-- **Multi-repo Support**: Yes
-- **Template Management**: Advanced
-
-```bash
-# Optimize repository structure
-npx claude-flow@alpha github repo-architect \
-  "Restructure monorepo with optimal organization"
-```
-
-#### 6. code-reviewer
-**Automated code review and quality assurance**
-- **Review Quality**: Deep
-- **Security Analysis**: Yes
-- **Performance Check**: Automated
-
-```bash
-# Automated code review
-gh pr view 123 --json files | \
-  npx ruv-swarm actions pr-validate \
-    --deep-review \
-    --security-scan
-```
-
-#### 7. ci-orchestrator
-**CI/CD pipeline coordination**
-- **Pipeline Management**: Advanced
-- **Test Coordination**: Parallel
-- **Deployment**: Automated
-
-```bash
-# Orchestrate CI/CD pipeline
-npx claude-flow@alpha github ci-orchestrator \
-  "Setup parallel test execution with smart caching"
-```
-
-#### 8. security-guardian
-**Security and compliance management**
-- **Security Scan**: Automated
-- **Compliance Check**: Continuous
-- **Vulnerability Management**: Proactive
-
-```bash
-# Security audit
-npx ruv-swarm actions security \
-  --deep-scan \
-  --compliance-check \
-  --create-issues
-```
-
-</details>
-
-### 🔧 Workflow Templates
-
-<details>
-<summary>Production-Ready GitHub Actions Templates</summary>
-
-#### 1. Intelligent CI with Swarms
 ```yaml
-# .github/workflows/swarm-ci.yml
-name: Intelligent CI with Swarms
-on: [push, pull_request]
+# .github/workflows/ai-review.yml
+name: AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
-  swarm-analysis:
+  review:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    permissions:
+      contents: read
+      pull-requests: write
 
-      - name: Initialize Swarm
-        uses: ruvnet/swarm-action@v1
+    steps:
+      - uses: actions/checkout@v4
         with:
-          topology: mesh
-          max-agents: 6
+          fetch-depth: 0
 
-      - name: Analyze Changes
+      - name: Get changed files
+        id: changed
         run: |
-          npx ruv-swarm actions analyze \
-            --commit ${{ github.sha }} \
-            --suggest-tests \
-            --optimize-pipeline
+          files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$files" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Get diff
+        id: diff
+        run: |
+          diff=$(git diff origin/${{ github.base_ref }}...HEAD)
+          echo "diff<<EOF" >> $GITHUB_OUTPUT
+          echo "$diff" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: AI Review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { Anthropic } = require('@anthropic-ai/sdk');
+            const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+            const response = await client.messages.create({
+              model: "claude-3-sonnet-20240229",
+              max_tokens: 4096,
+              messages: [{
+                role: "user",
+                content: `Review this PR diff and provide feedback:
+                
+                Changed files: ${{ steps.changed.outputs.files }}
+                
+                Diff:
+                ${{ steps.diff.outputs.diff }}
+                
+                Provide:
+                1. Summary of changes
+                2. Potential issues or bugs
+                3. Suggestions for improvement
+                4. Security concerns if any
+                
+                Format as GitHub markdown.`
+              }]
+            });
+
+            await github.rest.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              body: response.content[0].text,
+              event: 'COMMENT'
+            });
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
 
-#### 2. Multi-Language Detection
+### 1.2 Review Comment Patterns
+
+````markdown
+# AI Review Structure
+
+## 📋 Summary
+
+Brief description of what this PR does.
+
+## ✅ What looks good
+
+- Well-structured code
+- Good test coverage
+- Clear naming conventions
+
+## ⚠️ Potential Issues
+
+1. **Line 42**: Possible null pointer exception
+   ```javascript
+   // Current
+   user.profile.name;
+   // Suggested
+   user?.profile?.name ?? "Unknown";
+   ```
+````
+
+2. **Line 78**: Consider error handling
+   ```javascript
+   // Add try-catch or .catch()
+   ```
+
+## 💡 Suggestions
+
+- Consider extracting the validation logic into a separate function
+- Add JSDoc comments for public methods
+
+## 🔒 Security Notes
+
+- No sensitive data exposure detected
+- API key handling looks correct
+
+````
+
+### 1.3 Focused Reviews
+
 ```yaml
-# .github/workflows/polyglot-swarm.yml
-name: Polyglot Project Handler
-on: push
+# Review only specific file types
+- name: Filter code files
+  run: |
+    files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD | \
+            grep -E '\.(ts|tsx|js|jsx|py|go)$' || true)
+    echo "code_files=$files" >> $GITHUB_OUTPUT
+
+# Review with context
+- name: AI Review with context
+  run: |
+    # Include relevant context files
+    context=""
+    for file in ${{ steps.changed.outputs.files }}; do
+      if [[ -f "$file" ]]; then
+        context+="=== $file ===\n$(cat $file)\n\n"
+      fi
+    done
+
+    # Send to AI with full file context
+````
+
+---
+
+## 2. Issue Triage Automation
+
+### 2.1 Auto-label Issues
+
+```yaml
+# .github/workflows/issue-triage.yml
+name: Issue Triage
+
+on:
+  issues:
+    types: [opened]
 
 jobs:
-  detect-and-build:
+  triage:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Analyze issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
 
-      - name: Detect Languages
-        id: detect
-        run: |
-          npx ruv-swarm actions detect-stack \
-            --output json > stack.json
+            // Call AI to analyze
+            const analysis = await analyzeIssue(issue.title, issue.body);
 
-      - name: Dynamic Build Matrix
-        run: |
-          npx ruv-swarm actions create-matrix \
-            --from stack.json \
-            --parallel-builds
+            // Apply labels
+            const labels = [];
+
+            if (analysis.type === 'bug') {
+              labels.push('bug');
+              if (analysis.severity === 'high') labels.push('priority: high');
+            } else if (analysis.type === 'feature') {
+              labels.push('enhancement');
+            } else if (analysis.type === 'question') {
+              labels.push('question');
+            }
+
+            if (analysis.area) {
+              labels.push(`area: ${analysis.area}`);
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              labels: labels
+            });
+
+            // Add initial response
+            if (analysis.type === 'bug' && !analysis.hasReproSteps) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `Thanks for reporting this issue!
+
+To help us investigate, could you please provide:
+- Steps to reproduce the issue
+- Expected behavior
+- Actual behavior
+- Environment (OS, version, etc.)
+
+This will help us resolve your issue faster. 🙏`
+              });
+            }
 ```
 
-#### 3. Adaptive Security Scanning
+### 2.2 Issue Analysis Prompt
+
+```typescript
+const TRIAGE_PROMPT = `
+Analyze this GitHub issue and classify it:
+
+Title: {title}
+Body: {body}
+
+Return JSON with:
+{
+  "type": "bug" | "feature" | "question" | "docs" | "other",
+  "severity": "low" | "medium" | "high" | "critical",
+  "area": "frontend" | "backend" | "api" | "docs" | "ci" | "other",
+  "summary": "one-line summary",
+  "hasReproSteps": boolean,
+  "isFirstContribution": boolean,
+  "suggestedLabels": ["label1", "label2"],
+  "suggestedAssignees": ["username"] // based on area expertise
+}
+`;
+```
+
+### 2.3 Stale Issue Management
+
 ```yaml
-# .github/workflows/security-swarm.yml
-name: Intelligent Security Scan
+# .github/workflows/stale.yml
+name: Manage Stale Issues
+
 on:
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: "0 0 * * *" # Daily
 
 jobs:
-  security-swarm:
+  stale:
     runs-on: ubuntu-latest
     steps:
-      - name: Security Analysis Swarm
-        run: |
-          SECURITY_ISSUES=$(npx ruv-swarm actions security \
-            --deep-scan \
-            --format json)
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: |
+            This issue has been automatically marked as stale because it has not had 
+            recent activity. It will be closed in 14 days if no further activity occurs.
 
-          echo "$SECURITY_ISSUES" | jq -r '.issues[]? | @base64' | while read -r issue; do
-            _jq() {
-              echo ${issue} | base64 --decode | jq -r ${1}
-            }
-            gh issue create \
-              --title "$(_jq '.title')" \
-              --body "$(_jq '.body')" \
-              --label "security,critical"
-          done
+            If this issue is still relevant:
+            - Add a comment with an update
+            - Remove the `stale` label
+
+            Thank you for your contributions! 🙏
+
+          stale-pr-message: |
+            This PR has been automatically marked as stale. Please update it or it 
+            will be closed in 14 days.
+
+          days-before-stale: 60
+          days-before-close: 14
+          stale-issue-label: "stale"
+          stale-pr-label: "stale"
+          exempt-issue-labels: "pinned,security,in-progress"
+          exempt-pr-labels: "pinned,security"
 ```
 
-#### 4. Self-Healing Pipeline
+---
+
+## 3. CI/CD Integration
+
+### 3.1 Smart Test Selection
+
 ```yaml
-# .github/workflows/self-healing.yml
-name: Self-Healing Pipeline
-on: workflow_run
+# .github/workflows/smart-tests.yml
+name: Smart Test Selection
+
+on:
+  pull_request:
 
 jobs:
-  heal-pipeline:
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+  analyze:
     runs-on: ubuntu-latest
+    outputs:
+      test_suites: ${{ steps.analyze.outputs.suites }}
+
     steps:
-      - name: Diagnose and Fix
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Analyze changes
+        id: analyze
         run: |
-          npx ruv-swarm actions self-heal \
-            --run-id ${{ github.event.workflow_run.id }} \
-            --auto-fix-common \
-            --create-pr-complex
+          # Get changed files
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+
+          # Determine which test suites to run
+          suites="[]"
+
+          if echo "$changed" | grep -q "^src/api/"; then
+            suites=$(echo $suites | jq '. + ["api"]')
+          fi
+
+          if echo "$changed" | grep -q "^src/frontend/"; then
+            suites=$(echo $suites | jq '. + ["frontend"]')
+          fi
+
+          if echo "$changed" | grep -q "^src/database/"; then
+            suites=$(echo $suites | jq '. + ["database", "api"]')
+          fi
+
+          # If nothing specific, run all
+          if [ "$suites" = "[]" ]; then
+            suites='["all"]'
+          fi
+
+          echo "suites=$suites" >> $GITHUB_OUTPUT
+
+  test:
+    needs: analyze
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        suite: ${{ fromJson(needs.analyze.outputs.test_suites) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          if [ "${{ matrix.suite }}" = "all" ]; then
+            npm test
+          else
+            npm test -- --suite ${{ matrix.suite }}
+          fi
 ```
 
-#### 5. Progressive Deployment
+### 3.2 Deployment with AI Validation
+
 ```yaml
-# .github/workflows/smart-deployment.yml
-name: Smart Deployment
+# .github/workflows/deploy.yml
+name: Deploy with AI Validation
+
 on:
   push:
     branches: [main]
 
 jobs:
-  progressive-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Analyze Risk
-        id: risk
-        run: |
-          npx ruv-swarm actions deploy-risk \
-            --changes ${{ github.sha }} \
-            --history 30d
-
-      - name: Choose Strategy
-        run: |
-          npx ruv-swarm actions deploy-strategy \
-            --risk ${{ steps.risk.outputs.level }} \
-            --auto-execute
-```
-
-#### 6. Performance Regression Detection
-```yaml
-# .github/workflows/performance-guard.yml
-name: Performance Guard
-on: pull_request
-
-jobs:
-  perf-swarm:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Performance Analysis
-        run: |
-          npx ruv-swarm actions perf-test \
-            --baseline main \
-            --threshold 10% \
-            --auto-profile-regression
-```
-
-#### 7. PR Validation Swarm
-```yaml
-# .github/workflows/pr-validation.yml
-name: PR Validation Swarm
-on: pull_request
-
-jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Multi-Agent Validation
+      - uses: actions/checkout@v4
+
+      - name: Get deployment changes
+        id: changes
         run: |
-          PR_DATA=$(gh pr view ${{ github.event.pull_request.number }} --json files,labels)
+          # Get commits since last deployment
+          last_deploy=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -n "$last_deploy" ]; then
+            changes=$(git log --oneline $last_deploy..HEAD)
+          else
+            changes=$(git log --oneline -10)
+          fi
+          echo "changes<<EOF" >> $GITHUB_OUTPUT
+          echo "$changes" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
-          RESULTS=$(npx ruv-swarm actions pr-validate \
-            --spawn-agents "linter,tester,security,docs" \
-            --parallel \
-            --pr-data "$PR_DATA")
+      - name: AI Risk Assessment
+        id: assess
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Analyze changes for deployment risk
+            const prompt = `
+            Analyze these changes for deployment risk:
 
-          gh pr comment ${{ github.event.pull_request.number }} \
-            --body "$RESULTS"
-```
+            ${process.env.CHANGES}
 
-#### 8. Intelligent Release
-```yaml
-# .github/workflows/intelligent-release.yml
-name: Intelligent Release
-on:
-  push:
-    tags: ['v*']
+            Return JSON:
+            {
+              "riskLevel": "low" | "medium" | "high",
+              "concerns": ["concern1", "concern2"],
+              "recommendations": ["rec1", "rec2"],
+              "requiresManualApproval": boolean
+            }
+            `;
 
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Release Swarm
-        run: |
-          npx ruv-swarm actions release \
-            --analyze-changes \
-            --generate-notes \
-            --create-artifacts \
-            --publish-smart
-```
+            // Call AI and parse response
+            const analysis = await callAI(prompt);
 
-</details>
+            if (analysis.riskLevel === 'high') {
+              core.setFailed('High-risk deployment detected. Manual review required.');
+            }
 
-### 📊 Monitoring & Analytics
-
-<details>
-<summary>Workflow Analysis & Optimization</summary>
-
-#### Workflow Analytics
-```bash
-# Analyze workflow performance
-npx ruv-swarm actions analytics \
-  --workflow "ci.yml" \
-  --period 30d \
-  --identify-bottlenecks \
-  --suggest-improvements
-```
-
-#### Cost Optimization
-```bash
-# Optimize GitHub Actions costs
-npx ruv-swarm actions cost-optimize \
-  --analyze-usage \
-  --suggest-caching \
-  --recommend-self-hosted
-```
-
-#### Failure Pattern Analysis
-```bash
-# Identify failure patterns
-npx ruv-swarm actions failure-patterns \
-  --period 90d \
-  --classify-failures \
-  --suggest-preventions
-```
-
-#### Resource Management
-```bash
-# Optimize resource usage
-npx ruv-swarm actions resources \
-  --analyze-usage \
-  --suggest-runners \
-  --cost-optimize
-```
-
-</details>
-
-## Advanced Features
-
-### 🧪 Dynamic Test Strategies
-
-<details>
-<summary>Intelligent Test Selection & Execution</summary>
-
-#### Smart Test Selection
-```yaml
-# Automatically select relevant tests
-- name: Swarm Test Selection
-  run: |
-    npx ruv-swarm actions smart-test \
-      --changed-files ${{ steps.files.outputs.all }} \
-      --impact-analysis \
-      --parallel-safe
-```
-
-#### Dynamic Test Matrix
-```yaml
-# Generate test matrix from code analysis
-jobs:
-  generate-matrix:
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - id: set-matrix
-        run: |
-          MATRIX=$(npx ruv-swarm actions test-matrix \
-            --detect-frameworks \
-            --optimize-coverage)
-          echo "matrix=${MATRIX}" >> $GITHUB_OUTPUT
-
-  test:
-    needs: generate-matrix
-    strategy:
-      matrix: ${{fromJson(needs.generate-matrix.outputs.matrix)}}
-```
-
-#### Intelligent Parallelization
-```bash
-# Determine optimal parallelization
-npx ruv-swarm actions parallel-strategy \
-  --analyze-dependencies \
-  --time-estimates \
-  --cost-aware
-```
-
-</details>
-
-### 🔮 Predictive Analysis
-
-<details>
-<summary>AI-Powered Workflow Predictions</summary>
-
-#### Predictive Failures
-```bash
-# Predict potential failures
-npx ruv-swarm actions predict \
-  --analyze-history \
-  --identify-risks \
-  --suggest-preventive
-```
-
-#### Workflow Recommendations
-```bash
-# Get workflow recommendations
-npx ruv-swarm actions recommend \
-  --analyze-repo \
-  --suggest-workflows \
-  --industry-best-practices
-```
-
-#### Automated Optimization
-```bash
-# Continuously optimize workflows
-npx ruv-swarm actions auto-optimize \
-  --monitor-performance \
-  --apply-improvements \
-  --track-savings
-```
-
-</details>
-
-### 🎯 Custom Actions Development
-
-<details>
-<summary>Build Your Own Swarm Actions</summary>
-
-#### Custom Swarm Action Template
-```javascript
-// action.yml
-name: 'Swarm Custom Action'
-description: 'Custom swarm-powered action'
-inputs:
-  task:
-    description: 'Task for swarm'
-    required: true
-runs:
-  using: 'node16'
-  main: 'dist/index.js'
-
-// index.js
-const { SwarmAction } = require('ruv-swarm');
-
-async function run() {
-  const swarm = new SwarmAction({
-    topology: 'mesh',
-    agents: ['analyzer', 'optimizer']
-  });
-
-  await swarm.execute(core.getInput('task'));
-}
-
-run().catch(error => core.setFailed(error.message));
-```
-
-</details>
-
-## Integration with Claude-Flow
-
-### 🔄 Swarm Coordination Patterns
-
-<details>
-<summary>MCP-Based GitHub Workflow Coordination</summary>
-
-#### Initialize GitHub Swarm
-```javascript
-// Step 1: Initialize swarm coordination
-mcp__claude-flow__swarm_init {
-  topology: "hierarchical",
-  maxAgents: 8
-}
-
-// Step 2: Spawn specialized agents
-mcp__claude-flow__agent_spawn { type: "coordinator", name: "GitHub Coordinator" }
-mcp__claude-flow__agent_spawn { type: "reviewer", name: "Code Reviewer" }
-mcp__claude-flow__agent_spawn { type: "tester", name: "QA Agent" }
-mcp__claude-flow__agent_spawn { type: "analyst", name: "Security Analyst" }
-
-// Step 3: Orchestrate GitHub workflow
-mcp__claude-flow__task_orchestrate {
-  task: "Complete PR review and merge workflow",
-  strategy: "parallel",
-  priority: "high"
-}
-```
-
-#### GitHub Hooks Integration
-```bash
-# Pre-task: Setup GitHub context
-npx claude-flow@alpha hooks pre-task \
-  --description "PR review workflow" \
-  --context "pr-123"
-
-# During task: Track progress
-npx claude-flow@alpha hooks notify \
-  --message "Completed security scan" \
-  --type "github-action"
-
-# Post-task: Export results
-npx claude-flow@alpha hooks post-task \
-  --task-id "pr-review-123" \
-  --export-github-summary
-```
-
-</details>
-
-### 📦 Batch Operations
-
-<details>
-<summary>Concurrent GitHub Operations</summary>
-
-#### Parallel GitHub CLI Commands
-```javascript
-// Single message with all GitHub operations
-[Concurrent Execution]:
-  Bash("gh issue create --title 'Feature A' --body 'Description A' --label 'enhancement'")
-  Bash("gh issue create --title 'Feature B' --body 'Description B' --label 'enhancement'")
-  Bash("gh pr create --title 'PR 1' --head 'feature-a' --base 'main'")
-  Bash("gh pr create --title 'PR 2' --head 'feature-b' --base 'main'")
-  Bash("gh pr checks 123 --watch")
-  TodoWrite { todos: [
-    {content: "Review security scan results", status: "pending"},
-    {content: "Merge approved PRs", status: "pending"},
-    {content: "Update changelog", status: "pending"}
-  ]}
-```
-
-</details>
-
-## Best Practices
-
-### 🏗️ Workflow Organization
-
-<details>
-<summary>Structure Your GitHub Workflows</summary>
-
-#### 1. Use Reusable Workflows
-```yaml
-# .github/workflows/reusable-swarm.yml
-name: Reusable Swarm Workflow
-on:
-  workflow_call:
-    inputs:
-      topology:
-        required: true
-        type: string
-
-jobs:
-  swarm-task:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Initialize Swarm
-        run: |
-          npx ruv-swarm init --topology ${{ inputs.topology }}
-```
-
-#### 2. Implement Proper Caching
-```yaml
-- name: Cache Swarm Dependencies
-  uses: actions/cache@v3
-  with:
-    path: ~/.npm
-    key: ${{ runner.os }}-swarm-${{ hashFiles('**/package-lock.json') }}
-```
-
-#### 3. Set Appropriate Timeouts
-```yaml
-jobs:
-  swarm-task:
-    timeout-minutes: 30
-    steps:
-      - name: Swarm Operation
-        timeout-minutes: 10
-```
-
-#### 4. Use Workflow Dependencies
-```yaml
-jobs:
-  setup:
-    runs-on: ubuntu-latest
-
-  test:
-    needs: setup
-    runs-on: ubuntu-latest
+            return analysis;
+        env:
+          CHANGES: ${{ steps.changes.outputs.changes }}
 
   deploy:
-    needs: [setup, test]
+    needs: validate
     runs-on: ubuntu-latest
-```
-
-</details>
-
-### 🔒 Security Best Practices
-
-<details>
-<summary>Secure Your GitHub Workflows</summary>
-
-#### 1. Store Configurations Securely
-```yaml
-- name: Setup Swarm
-  env:
-    SWARM_CONFIG: ${{ secrets.SWARM_CONFIG }}
-    API_KEY: ${{ secrets.API_KEY }}
-  run: |
-    npx ruv-swarm init --config "$SWARM_CONFIG"
-```
-
-#### 2. Use OIDC Authentication
-```yaml
-permissions:
-  id-token: write
-  contents: read
-
-- name: Configure AWS Credentials
-  uses: aws-actions/configure-aws-credentials@v2
-  with:
-    role-to-assume: arn:aws:iam::123456789012:role/GitHubAction
-    aws-region: us-east-1
-```
-
-#### 3. Implement Least-Privilege
-```yaml
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
-```
-
-#### 4. Audit Swarm Operations
-```yaml
-- name: Audit Swarm Actions
-  run: |
-    npx ruv-swarm actions audit \
-      --export-logs \
-      --compliance-report
-```
-
-</details>
-
-### ⚡ Performance Optimization
-
-<details>
-<summary>Maximize Workflow Performance</summary>
-
-#### 1. Cache Swarm Dependencies
-```yaml
-- uses: actions/cache@v3
-  with:
-    path: |
-      ~/.npm
-      node_modules
-    key: ${{ runner.os }}-swarm-${{ hashFiles('**/package-lock.json') }}
-```
-
-#### 2. Use Appropriate Runner Sizes
-```yaml
-jobs:
-  heavy-task:
-    runs-on: ubuntu-latest-4-cores
-    steps:
-      - name: Intensive Swarm Operation
-```
-
-#### 3. Implement Early Termination
-```yaml
-- name: Quick Fail Check
-  run: |
-    if ! npx ruv-swarm actions pre-check; then
-      echo "Pre-check failed, terminating early"
-      exit 1
-    fi
-```
-
-#### 4. Optimize Parallel Execution
-```yaml
-strategy:
-  matrix:
-    include:
-      - runner: ubuntu-latest
-        task: test
-      - runner: ubuntu-latest
-        task: lint
-      - runner: ubuntu-latest
-        task: security
-  max-parallel: 3
-```
-
-</details>
-
-## Debugging & Troubleshooting
-
-### 🐛 Debug Tools
-
-<details>
-<summary>Debug GitHub Workflow Issues</summary>
-
-#### Debug Mode
-```yaml
-- name: Debug Swarm
-  run: |
-    npx ruv-swarm actions debug \
-      --verbose \
-      --trace-agents \
-      --export-logs
-  env:
-    ACTIONS_STEP_DEBUG: true
-```
-
-#### Performance Profiling
-```bash
-# Profile workflow performance
-npx ruv-swarm actions profile \
-  --workflow "ci.yml" \
-  --identify-slow-steps \
-  --suggest-optimizations
-```
-
-#### Failure Analysis
-```bash
-# Analyze failed runs
-gh run view <run-id> --json jobs,conclusion | \
-  npx ruv-swarm actions analyze-failure \
-    --suggest-fixes \
-    --auto-retry-flaky
-```
-
-#### Log Analysis
-```bash
-# Download and analyze logs
-gh run download <run-id>
-npx ruv-swarm actions analyze-logs \
-  --directory ./logs \
-  --identify-errors
-```
-
-</details>
-
-## Real-World Examples
-
-### 🚀 Complete Workflows
-
-<details>
-<summary>Production-Ready Integration Examples</summary>
-
-#### Example 1: Full-Stack Application CI/CD
-```yaml
-name: Full-Stack CI/CD with Swarms
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-
-jobs:
-  initialize:
-    runs-on: ubuntu-latest
-    outputs:
-      swarm-id: ${{ steps.init.outputs.swarm-id }}
-    steps:
-      - id: init
-        run: |
-          SWARM_ID=$(npx ruv-swarm init --topology mesh --output json | jq -r '.id')
-          echo "swarm-id=${SWARM_ID}" >> $GITHUB_OUTPUT
-
-  backend:
-    needs: initialize
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Backend Tests
-        run: |
-          npx ruv-swarm agents spawn --type tester \
-            --task "Run backend test suite" \
-            --swarm-id ${{ needs.initialize.outputs.swarm-id }}
-
-  frontend:
-    needs: initialize
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Frontend Tests
-        run: |
-          npx ruv-swarm agents spawn --type tester \
-            --task "Run frontend test suite" \
-            --swarm-id ${{ needs.initialize.outputs.swarm-id }}
-
-  security:
-    needs: initialize
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Security Scan
-        run: |
-          npx ruv-swarm agents spawn --type security \
-            --task "Security audit" \
-            --swarm-id ${{ needs.initialize.outputs.swarm-id }}
-
-  deploy:
-    needs: [backend, frontend, security]
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Deploy
         run: |
-          npx ruv-swarm actions deploy \
-            --strategy progressive \
-            --swarm-id ${{ needs.initialize.outputs.swarm-id }}
+          echo "Deploying to production..."
+          # Deployment commands here
 ```
 
-#### Example 2: Monorepo Management
+### 3.3 Rollback Automation
+
 ```yaml
-name: Monorepo Coordination
-on: push
+# .github/workflows/rollback.yml
+name: Automated Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for rollback"
+        required: true
 
 jobs:
-  detect-changes:
+  rollback:
     runs-on: ubuntu-latest
-    outputs:
-      packages: ${{ steps.detect.outputs.packages }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - id: detect
+      - name: Find last stable version
+        id: stable
         run: |
-          PACKAGES=$(npx ruv-swarm actions detect-changes \
-            --monorepo \
-            --output json)
-          echo "packages=${PACKAGES}" >> $GITHUB_OUTPUT
+          # Find last successful deployment
+          stable=$(git tag -l 'v*' --sort=-version:refname | head -1)
+          echo "version=$stable" >> $GITHUB_OUTPUT
 
-  build-packages:
-    needs: detect-changes
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package: ${{ fromJson(needs.detect-changes.outputs.packages) }}
-    steps:
-      - name: Build Package
+      - name: Rollback
         run: |
-          npx ruv-swarm actions build \
-            --package ${{ matrix.package }} \
-            --parallel-deps
+          git checkout ${{ steps.stable.outputs.version }}
+          # Deploy stable version
+          npm run deploy
+
+      - name: Notify team
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "🔄 Production rolled back to ${{ steps.stable.outputs.version }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Rollback executed*\n• Version: `${{ steps.stable.outputs.version }}`\n• Reason: ${{ inputs.reason }}\n• Triggered by: ${{ github.actor }}"
+                  }
+                }
+              ]
+            }
 ```
-
-#### Example 3: Multi-Repo Synchronization
-```bash
-# Synchronize multiple repositories
-npx claude-flow@alpha github sync-coordinator \
-  "Synchronize version updates across:
-   - github.com/org/repo-a
-   - github.com/org/repo-b
-   - github.com/org/repo-c
-
-   Update dependencies, align versions, create PRs"
-```
-
-</details>
-
-## Command Reference
-
-### 📚 Quick Command Guide
-
-<details>
-<summary>All Available Commands</summary>
-
-#### Workflow Generation
-```bash
-npx ruv-swarm actions generate-workflow [options]
-  --analyze-codebase       Analyze repository structure
-  --detect-languages       Detect programming languages
-  --create-optimal-pipeline Generate optimized workflow
-```
-
-#### Optimization
-```bash
-npx ruv-swarm actions optimize [options]
-  --workflow <path>        Path to workflow file
-  --suggest-parallelization Suggest parallel execution
-  --reduce-redundancy      Remove redundant steps
-  --estimate-savings       Estimate time/cost savings
-```
-
-#### Analysis
-```bash
-npx ruv-swarm actions analyze [options]
-  --commit <sha>           Analyze specific commit
-  --suggest-tests          Suggest test improvements
-  --optimize-pipeline      Optimize pipeline structure
-```
-
-#### Testing
-```bash
-npx ruv-swarm actions smart-test [options]
-  --changed-files <files>  Files that changed
-  --impact-analysis        Analyze test impact
-  --parallel-safe          Only parallel-safe tests
-```
-
-#### Security
-```bash
-npx ruv-swarm actions security [options]
-  --deep-scan             Deep security analysis
-  --format <format>       Output format (json/text)
-  --create-issues         Auto-create GitHub issues
-```
-
-#### Deployment
-```bash
-npx ruv-swarm actions deploy [options]
-  --strategy <type>       Deployment strategy
-  --risk <level>          Risk assessment level
-  --auto-execute          Execute automatically
-```
-
-#### Monitoring
-```bash
-npx ruv-swarm actions analytics [options]
-  --workflow <name>       Workflow to analyze
-  --period <duration>     Analysis period
-  --identify-bottlenecks  Find bottlenecks
-  --suggest-improvements  Improvement suggestions
-```
-
-</details>
-
-## Integration Checklist
-
-### ✅ Setup Verification
-
-<details>
-<summary>Verify Your Setup</summary>
-
-- [ ] GitHub CLI (`gh`) installed and authenticated
-- [ ] Git configured with user credentials
-- [ ] Node.js v16+ installed
-- [ ] `claude-flow@alpha` package available
-- [ ] Repository has `.github/workflows` directory
-- [ ] GitHub Actions enabled on repository
-- [ ] Necessary secrets configured
-- [ ] Runner permissions verified
-
-#### Quick Setup Script
-```bash
-#!/bin/bash
-# setup-github-automation.sh
-
-# Install dependencies
-npm install -g claude-flow@alpha
-
-# Verify GitHub CLI
-gh auth status || gh auth login
-
-# Create workflow directory
-mkdir -p .github/workflows
-
-# Generate initial workflow
-npx ruv-swarm actions generate-workflow \
-  --analyze-codebase \
-  --create-optimal-pipeline > .github/workflows/ci.yml
-
-echo "✅ GitHub workflow automation setup complete"
-```
-
-</details>
-
-## Related Skills
-
-- `github-pr-enhancement` - Advanced PR management
-- `release-coordination` - Release automation
-- `swarm-coordination` - Multi-agent orchestration
-- `ci-cd-optimization` - Pipeline optimization
-
-## Support & Documentation
-
-- **GitHub CLI Docs**: https://cli.github.com/manual/
-- **GitHub Actions**: https://docs.github.com/en/actions
-- **Claude-Flow**: https://github.com/ruvnet/claude-flow
-- **Ruv-Swarm**: https://github.com/ruvnet/ruv-swarm
-
-## Version History
-
-- **v1.0.0** (2025-01-19): Initial skill consolidation
-  - Merged workflow-automation.md (441 lines)
-  - Merged github-modes.md (146 lines)
-  - Added progressive disclosure
-  - Enhanced with swarm coordination patterns
-  - Added comprehensive examples and best practices
 
 ---
 
-**Skill Status**: ✅ Production Ready
-**Last Updated**: 2025-01-19
-**Maintainer**: claude-flow team
+## 4. Git Operations
+
+### 4.1 Automated Rebasing
+
+```yaml
+# .github/workflows/auto-rebase.yml
+name: Auto Rebase
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  rebase:
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/rebase')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Rebase PR
+        run: |
+          # Fetch PR branch
+          gh pr checkout ${{ github.event.issue.number }}
+
+          # Rebase onto main
+          git fetch origin main
+          git rebase origin/main
+
+          # Force push
+          git push --force-with-lease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment result
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ Successfully rebased onto main!'
+            })
+```
+
+### 4.2 Smart Cherry-Pick
+
+```typescript
+// AI-assisted cherry-pick that handles conflicts
+async function smartCherryPick(commitHash: string, targetBranch: string) {
+  // Get commit info
+  const commitInfo = await exec(`git show ${commitHash} --stat`);
+
+  // Check for potential conflicts
+  const targetDiff = await exec(
+    `git diff ${targetBranch}...HEAD -- ${affectedFiles}`
+  );
+
+  // AI analysis
+  const analysis = await ai.analyze(`
+    I need to cherry-pick this commit to ${targetBranch}:
+    
+    ${commitInfo}
+    
+    Current state of affected files on ${targetBranch}:
+    ${targetDiff}
+    
+    Will there be conflicts? If so, suggest resolution strategy.
+  `);
+
+  if (analysis.willConflict) {
+    // Create branch for manual resolution
+    await exec(
+      `git checkout -b cherry-pick-${commitHash.slice(0, 7)} ${targetBranch}`
+    );
+    const result = await exec(`git cherry-pick ${commitHash}`, {
+      allowFail: true,
+    });
+
+    if (result.failed) {
+      // AI-assisted conflict resolution
+      const conflicts = await getConflicts();
+      for (const conflict of conflicts) {
+        const resolution = await ai.resolveConflict(conflict);
+        await applyResolution(conflict.file, resolution);
+      }
+    }
+  } else {
+    await exec(`git checkout ${targetBranch}`);
+    await exec(`git cherry-pick ${commitHash}`);
+  }
+}
+```
+
+### 4.3 Branch Cleanup
+
+```yaml
+# .github/workflows/branch-cleanup.yml
+name: Branch Cleanup
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find stale branches
+        id: stale
+        run: |
+          # Branches not updated in 30 days
+          stale=$(git for-each-ref --sort=-committerdate refs/remotes/origin \
+            --format='%(refname:short) %(committerdate:relative)' | \
+            grep -E '[3-9][0-9]+ days|[0-9]+ months|[0-9]+ years' | \
+            grep -v 'origin/main\|origin/develop' | \
+            cut -d' ' -f1 | sed 's|origin/||')
+
+          echo "branches<<EOF" >> $GITHUB_OUTPUT
+          echo "$stale" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create cleanup PR
+        if: steps.stale.outputs.branches != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branches = `${{ steps.stale.outputs.branches }}`.split('\n').filter(Boolean);
+
+            const body = `## 🧹 Stale Branch Cleanup
+
+The following branches haven't been updated in over 30 days:
+
+${branches.map(b => `- \`${b}\``).join('\n')}
+
+### Actions:
+- [ ] Review each branch
+- [ ] Delete branches that are no longer needed
+- Comment \`/keep branch-name\` to preserve specific branches
+`;
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Stale Branch Cleanup',
+              body: body,
+              labels: ['housekeeping']
+            });
+```
+
+---
+
+## 5. On-Demand Assistance
+
+### 5.1 @mention Bot
+
+```yaml
+# .github/workflows/mention-bot.yml
+name: AI Mention Bot
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  respond:
+    if: contains(github.event.comment.body, '@ai-helper')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract question
+        id: question
+        run: |
+          # Extract text after @ai-helper
+          question=$(echo "${{ github.event.comment.body }}" | sed 's/.*@ai-helper//')
+          echo "question=$question" >> $GITHUB_OUTPUT
+
+      - name: Get context
+        id: context
+        run: |
+          if [ "${{ github.event.issue.pull_request }}" != "" ]; then
+            # It's a PR - get diff
+            gh pr diff ${{ github.event.issue.number }} > context.txt
+          else
+            # It's an issue - get description
+            gh issue view ${{ github.event.issue.number }} --json body -q .body > context.txt
+          fi
+          echo "context=$(cat context.txt)" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: AI Response
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const response = await ai.chat(`
+              Context: ${process.env.CONTEXT}
+              
+              Question: ${process.env.QUESTION}
+              
+              Provide a helpful, specific answer. Include code examples if relevant.
+            `);
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: response
+            });
+        env:
+          CONTEXT: ${{ steps.context.outputs.context }}
+          QUESTION: ${{ steps.question.outputs.question }}
+```
+
+### 5.2 Command Patterns
+
+```markdown
+## Available Commands
+
+| Command              | Description                 |
+| :------------------- | :-------------------------- |
+| `@ai-helper explain` | Explain the code in this PR |
+| `@ai-helper review`  | Request AI code review      |
+| `@ai-helper fix`     | Suggest fixes for issues    |
+| `@ai-helper test`    | Generate test cases         |
+| `@ai-helper docs`    | Generate documentation      |
+| `/rebase`            | Rebase PR onto main         |
+| `/update`            | Update PR branch from main  |
+| `/approve`           | Mark as approved by bot     |
+| `/label bug`         | Add 'bug' label             |
+| `/assign @user`      | Assign to user              |
+```
+
+---
+
+## 6. Repository Configuration
+
+### 6.1 CODEOWNERS
+
+```
+# .github/CODEOWNERS
+
+# Global owners
+* @org/core-team
+
+# Frontend
+/src/frontend/ @org/frontend-team
+*.tsx @org/frontend-team
+*.css @org/frontend-team
+
+# Backend
+/src/api/ @org/backend-team
+/src/database/ @org/backend-team
+
+# Infrastructure
+/.github/ @org/devops-team
+/terraform/ @org/devops-team
+Dockerfile @org/devops-team
+
+# Docs
+/docs/ @org/docs-team
+*.md @org/docs-team
+
+# Security-sensitive
+/src/auth/ @org/security-team
+/src/crypto/ @org/security-team
+```
+
+### 6.2 Branch Protection
+
+```yaml
+# Set up via GitHub API
+- name: Configure branch protection
+  uses: actions/github-script@v7
+  with:
+    script: |
+      await github.rest.repos.updateBranchProtection({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        branch: 'main',
+        required_status_checks: {
+          strict: true,
+          contexts: ['test', 'lint', 'ai-review']
+        },
+        enforce_admins: true,
+        required_pull_request_reviews: {
+          required_approving_review_count: 1,
+          require_code_owner_reviews: true,
+          dismiss_stale_reviews: true
+        },
+        restrictions: null,
+        required_linear_history: true,
+        allow_force_pushes: false,
+        allow_deletions: false
+      });
+```
+
+---
+
+## Best Practices
+
+### Security
+
+- [ ] Store API keys in GitHub Secrets
+- [ ] Use minimal permissions in workflows
+- [ ] Validate all inputs
+- [ ] Don't expose sensitive data in logs
+
+### Performance
+
+- [ ] Cache dependencies
+- [ ] Use matrix builds for parallel testing
+- [ ] Skip unnecessary jobs with path filters
+- [ ] Use self-hosted runners for heavy workloads
+
+### Reliability
+
+- [ ] Add timeouts to jobs
+- [ ] Handle rate limits gracefully
+- [ ] Implement retry logic
+- [ ] Have rollback procedures
+
+---
+
+## Resources
+
+- [Gemini CLI GitHub Action](https://github.com/google-github-actions/run-gemini-cli)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [GitHub REST API](https://docs.github.com/en/rest)
+- [CODEOWNERS Syntax](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)

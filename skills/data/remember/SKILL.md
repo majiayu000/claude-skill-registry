@@ -1,67 +1,64 @@
 ---
 name: remember
-description: Store learnings in memory system for future sessions
+description: Reloads critical instructions when behavior degrades. Use when forgetting tools, not delegating, or missing safety rules. Refreshes orchestration mode, tool awareness, and safety constraints.
+allowed-tools: Read
 ---
 
-# Remember - Store Learning in Memory
+# Remember
 
-Store a learning, pattern, or decision in the memory system for future recall.
+Forcefully reload critical instructions without losing session state.
 
-## Usage
+## When to Use
+
+- Agent doing work directly instead of delegating
+- Forgetting tools (Supabase CLI, Playwright MCP)
+- Missing safety rules or not spawning agents
+- User says "you forgot" or "remember to..."
+- Every 30-45 min in long sessions
+
+## Immediate Actions
+
+### 1. Confirm Safety
+- NO destructive DB commands (`supabase db reset`, `DROP TABLE`, `TRUNCATE`)
+- Use targeted SQL, `createAdminClient()`, incremental migrations instead
+- Inject safety rules into any spawned agents
+
+### 2. Confirm Orchestration
+- I am the **ORCHESTRATOR** — I plan, coordinate, synthesize
+- I **DELEGATE** implementation to specialized agents
+- Frontend work → @frontend-agent
+- Backend work → @backend-agent
+- Code exploration → @research-agent
+- Testing → @test-agent
+
+### 3. Confirm Tool Awareness
+- **Supabase CLI** — Use for ALL database questions
+- **Playwright MCP** — Use AFTER any UI changes
+- **Agent spawning** — Use for implementation work
+
+### 4. Confirm Process
+- 2-gate flow: doc-informed plan → execute with doc updates
+- Context management: spawn agents, query lazily, checkpoint regularly
+
+## Output
 
 ```
-/remember <what you learned>
+## Instructions Refreshed
+
+Safety: ACTIVE | Orchestration: ACTIVE | Tools: LOADED
+
+Behavioral Check:
+- [ ] Delegate frontend → @frontend-agent
+- [ ] Delegate backend → @backend-agent
+- [ ] Use Supabase CLI for database
+- [ ] Use Playwright MCP for UI
+- [ ] NO destructive commands
+
+Ready to continue.
 ```
 
-Or with explicit type:
+## Related
 
-```
-/remember --type WORKING_SOLUTION <what you learned>
-```
-
-## Examples
-
-```
-/remember TypeScript hooks require npm install before they work
-/remember --type ARCHITECTURAL_DECISION Session affinity uses terminal PID
-/remember --type FAILED_APPROACH Don't use subshell for store_learning command
-```
-
-## What It Does
-
-1. Stores the learning in PostgreSQL with BGE embeddings
-2. Auto-detects learning type if not specified
-3. Extracts tags from content
-4. Returns confirmation with ID
-
-## Learning Types
-
-| Type | Use For |
-|------|---------|
-| `WORKING_SOLUTION` | Fixes, solutions that worked (default) |
-| `ARCHITECTURAL_DECISION` | Design choices, system structure |
-| `CODEBASE_PATTERN` | Patterns discovered in code |
-| `FAILED_APPROACH` | What didn't work |
-| `ERROR_FIX` | Specific error resolutions |
-
-## Execution
-
-When this skill is invoked, run:
-
-```bash
-cd $CLAUDE_PROJECT_DIR/opc && PYTHONPATH=. uv run python scripts/store_learning.py \
-  --session-id "manual-$(date +%Y%m%d-%H%M)" \
-  --type <TYPE or WORKING_SOLUTION> \
-  --content "<ARGS>" \
-  --context "manual entry via /remember" \
-  --confidence medium
-```
-
-## Auto-Type Detection
-
-If no `--type` specified, infer from content:
-- Contains "error", "fix", "bug" → ERROR_FIX
-- Contains "decided", "chose", "architecture" → ARCHITECTURAL_DECISION
-- Contains "pattern", "always", "convention" → CODEBASE_PATTERN
-- Contains "failed", "didn't work", "don't" → FAILED_APPROACH
-- Default → WORKING_SOLUTION
+- Full instruction tiers: `CLAUDE.md` sections 2-4
+- Degradation fixes: See [reference/degradation-fixes.md](reference/degradation-fixes.md)
+- When to use /remember vs /compact: See [reference/decision-guide.md](reference/decision-guide.md)

@@ -1,494 +1,252 @@
 ---
 name: creating-skills
-description: Use when creating new Claude Code skills or improving existing ones - ensures skills are discoverable, scannable, and effective through proper structure, CSO optimization, and real examples
+description: |
+  Guides creation of effective Agent Skills with proper structure and validation.
+  Use when users want to create a new skill, update an existing skill, or need
+  guidance on skill design patterns, SKILL.md format, or verify.py implementation.
+  NOT when just using existing skills (use those skills directly).
 ---
 
-# Creating Skills
+# Skill Creator
 
-## Overview
+This skill provides guidance for creating effective skills.
 
-**Skills are reference guides for proven techniques, patterns, or tools.** Write them to help future Claude instances quickly find and apply effective approaches.
+## About Skills
 
-Skills must be **discoverable** (Claude can find them), **scannable** (quick to evaluate), and **actionable** (clear examples).
+Skills are modular, self-contained packages that extend Claude's capabilities by providing specialized knowledge, workflows, and tools. Think of them as "onboarding guides" for specific domains or tasks—they transform Claude from a general-purpose agent into a specialized agent equipped with procedural knowledge that no model can fully possess.
 
-**Core principle**: Default assumption is Claude is already very smart. Only add context Claude doesn't already have.
+### What Skills Provide
 
-## When to Use
+1. Specialized workflows - Multi-step procedures for specific domains
+2. Tool integrations - Instructions for working with specific file formats or APIs
+3. Domain expertise - Company-specific knowledge, schemas, business logic
+4. Bundled resources - Scripts, references, and assets for complex and repetitive tasks
 
-**Create a skill when:**
-- Technique wasn't intuitively obvious
-- Pattern applies broadly across projects
-- You'd reference this again
-- Others would benefit
+## Core Principles
 
-**Don't create for:**
-- One-off solutions specific to single project
-- Standard practices well-documented elsewhere
-- Project conventions (put those in `.claude/CLAUDE.md`)
+### Concise is Key
 
-## Required Structure
+The context window is a public good. Skills share the context window with everything else Claude needs: system prompt, conversation history, other Skills' metadata, and the actual user request.
 
-### Frontmatter (YAML)
+**Default assumption: Claude is already very smart.** Only add context Claude doesn't already have. Challenge each piece of information: "Does Claude really need this explanation?" and "Does this paragraph justify its token cost?"
 
-```yaml
----
-name: skill-name-with-hyphens
-description: Use when [triggers/symptoms] - [what it does and how it helps]
-tags: relevant-tags
----
-```
+Prefer concise examples over verbose explanations.
 
-**Rules:**
-- Only `name` and `description` fields supported (max 1024 chars total)
-- Name: letters, numbers, hyphens only (max 64 chars). Use gerund form (verb + -ing)
-- Avoid reserved words: "anthropic", "claude" in names
-- Description: Third person, starts with "Use when..." (max 1024 chars)
-- Include BOTH triggering conditions AND what skill does
-- Match specificity to task complexity (degrees of freedom)
+### Set Appropriate Degrees of Freedom
 
-### Document Structure
+Match the level of specificity to the task's fragility and variability:
 
-```markdown
-# Skill Name
+**High freedom (text-based instructions)**: Use when multiple approaches are valid, decisions depend on context, or heuristics guide the approach.
 
-## Overview
-Core principle in 1-2 sentences. What is this?
+**Medium freedom (pseudocode or scripts with parameters)**: Use when a preferred pattern exists, some variation is acceptable, or configuration affects behavior.
 
-## When to Use
-- Bullet list with symptoms and use cases
-- When NOT to use
+**Low freedom (specific scripts, few parameters)**: Use when operations are fragile and error-prone, consistency is critical, or a specific sequence must be followed.
 
-## Quick Reference
-Table or bullets for common operations
+Think of Claude as exploring a path: a narrow bridge with cliffs needs specific guardrails (low freedom), while an open field allows many routes (high freedom).
 
-## Implementation
-Inline code for simple patterns
-Link to separate file for heavy reference (100+ lines)
+### Anatomy of a Skill
 
-## Common Mistakes
-What goes wrong + how to fix
-
-## Real-World Impact (optional)
-Concrete results from using this technique
-```
-
-## Degrees of Freedom
-
-**Match specificity to task complexity:**
-
-- **High freedom**: Flexible tasks requiring judgment
-  - Use broad guidance, principles, examples
-  - Let Claude adapt approach to context
-  - Example: "Use when designing APIs - provides REST principles and patterns"
-
-- **Low freedom**: Fragile or critical operations
-  - Be explicit about exact steps
-  - Include validation checks
-  - Example: "Use when deploying to production - follow exact deployment checklist with rollback procedures"
-
-**Red flag**: If skill tries to constrain Claude too much on creative tasks, reduce specificity. If skill is too vague on critical operations, add explicit steps.
-
-## Claude Search Optimization (CSO)
-
-**Critical:** Future Claude reads the description to decide if skill is relevant. Optimize for discovery.
-
-### Description Best Practices
-
-```yaml
-# ❌ BAD - Too vague, doesn't mention when to use
-description: For async testing
-
-# ❌ BAD - First person (injected into system prompt)
-description: I help you with flaky tests
-
-# ✅ GOOD - Triggers + what it does
-description: Use when tests have race conditions or pass/fail inconsistently - replaces arbitrary timeouts with condition polling for reliable async tests
-
-# ✅ GOOD - Technology-specific with explicit trigger
-description: Use when using React Router and handling auth redirects - provides patterns for protected routes and auth state management
-```
-
-### Keyword Coverage
-
-Use words Claude would search for:
-- **Error messages**: "ENOENT", "Cannot read property", "Timeout"
-- **Symptoms**: "flaky", "hanging", "race condition", "memory leak"
-- **Synonyms**: "cleanup/teardown/afterEach", "timeout/hang/freeze"
-- **Tools**: Actual command names, library names, file types
-
-### Naming Conventions
-
-**Use gerund form (verb + -ing):**
-- ✅ `creating-skills` not `skill-creation`
-- ✅ `testing-with-subagents` not `subagent-testing`
-- ✅ `debugging-memory-leaks` not `memory-leak-debugging`
-- ✅ `processing-pdfs` not `pdf-processor`
-- ✅ `analyzing-spreadsheets` not `spreadsheet-analysis`
-
-**Why gerunds work:**
-- Describes the action you're taking
-- Active and clear
-- Consistent with Anthropic conventions
-
-**Avoid:**
-- ❌ Vague names like "Helper" or "Utils"
-- ❌ Passive voice constructions
-
-## Code Examples
-
-**One excellent example beats many mediocre ones.**
-
-### Choose Language by Use Case
-
-- Testing techniques → TypeScript/JavaScript
-- System debugging → Shell/Python
-- Data processing → Python
-- API calls → TypeScript/JavaScript
-
-### Good Example Checklist
-
-- [ ] Complete and runnable
-- [ ] Well-commented explaining **WHY** not just what
-- [ ] From real scenario (not contrived)
-- [ ] Shows pattern clearly
-- [ ] Ready to adapt (not generic template)
-- [ ] Shows both BAD (❌) and GOOD (✅) approaches
-- [ ] Includes realistic context/setup code
-
-### Example Template
-
-```typescript
-// ✅ GOOD - Clear, complete, ready to adapt
-interface RetryOptions {
-  maxAttempts: number;
-  delayMs: number;
-  backoff?: 'linear' | 'exponential';
-}
-
-async function retryOperation<T>(
-  operation: () => Promise<T>,
-  options: RetryOptions
-): Promise<T> {
-  const { maxAttempts, delayMs, backoff = 'linear' } = options;
-
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      return await operation();
-    } catch (error) {
-      if (attempt === maxAttempts) throw error;
-
-      const delay = backoff === 'exponential'
-        ? delayMs * Math.pow(2, attempt - 1)
-        : delayMs * attempt;
-
-      await new Promise(resolve => setTimeout(resolve, delay));
-    }
-  }
-
-  throw new Error('Unreachable');
-}
-
-// Usage
-const data = await retryOperation(
-  () => fetchUserData(userId),
-  { maxAttempts: 3, delayMs: 1000, backoff: 'exponential' }
-);
-```
-
-### Don't
-
-- ❌ Implement in 5+ languages (you're good at porting)
-- ❌ Create fill-in-the-blank templates
-- ❌ Write contrived examples
-- ❌ Show only code without comments
-
-## File Organization
-
-### Self-Contained (Preferred)
+Every skill consists of a required SKILL.md file and optional bundled resources:
 
 ```
-typescript-type-safety/
-  SKILL.md    # Everything inline
+skill-name/
+├── SKILL.md (required)
+│   ├── YAML frontmatter metadata (required)
+│   │   ├── name: (required)
+│   │   └── description: (required)
+│   └── Markdown instructions (required)
+└── Bundled Resources (optional)
+    ├── scripts/          - Executable code (Python/Bash/etc.)
+    ├── references/       - Documentation intended to be loaded into context as needed
+    └── assets/           - Files used in output (templates, icons, fonts, etc.)
 ```
 
-**When:** All content fits in ~500 words, no heavy reference needed
+#### SKILL.md (required)
 
-### With Supporting Files
+Every SKILL.md consists of:
 
-```
-api-integration/
-  SKILL.md           # Overview + patterns
-  retry-helpers.ts   # Reusable code
-  examples/
-    auth-example.ts
-    pagination-example.ts
-```
+- **Frontmatter** (YAML): Contains `name` and `description` fields. These are the only fields that Claude reads to determine when the skill gets used, thus it is very important to be clear and comprehensive in describing what the skill is, and when it should be used.
+- **Body** (Markdown): Instructions and guidance for using the skill. Only loaded AFTER the skill triggers (if at all).
 
-**When:** Reusable tools or multiple complete examples needed
+#### Bundled Resources (optional)
 
-### With Heavy Reference
+##### Scripts (`scripts/`)
 
-```
-aws-sdk/
-  SKILL.md       # Overview + workflows
-  s3-api.md      # 600 lines API reference
-  lambda-api.md  # 500 lines API reference
-```
+Executable code (Python/Bash/etc.) for tasks that require deterministic reliability or are repeatedly rewritten.
 
-**When:** Reference material > 100 lines
+- **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed
+- **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks
+- **Benefits**: Token efficient, deterministic, may be executed without loading into context
+- **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments
 
-## Token Efficiency
+##### References (`references/`)
 
-Skills load into every conversation. Keep them concise.
+Documentation and reference material intended to be loaded as needed into context to inform Claude's process and thinking.
 
-### Target Limits
+- **When to include**: For documentation that Claude should reference while working
+- **Examples**: `references/finance.md` for financial schemas, `references/api_docs.md` for API specifications
+- **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed
+- **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md
 
-- **SKILL.md**: Keep under 500 lines
-- Getting-started workflows: <150 words
-- Frequently-loaded skills: <200 words total
-- Other skills: <500 words
-- Files > 100 lines: Include table of contents
+##### Assets (`assets/`)
 
-**Challenge each piece of information**: "Does Claude really need this explanation?"
+Files not intended to be loaded into context, but rather used within the output Claude produces.
 
-### Compression Techniques
+- **When to include**: When the skill needs files that will be used in the final output
+- **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates
+- **Benefits**: Separates output resources from documentation, enables Claude to use files without loading them into context
 
-```markdown
-# ❌ BAD - Verbose (42 words)
-Your human partner asks: "How did we handle authentication errors in React Router before?"
-You should respond: "I'll search past conversations for React Router authentication patterns."
-Then dispatch a subagent with the search query: "React Router authentication error handling 401"
+#### What to Not Include in a Skill
 
-# ✅ GOOD - Concise (20 words)
-Partner: "How did we handle auth errors in React Router?"
-You: Searching...
-[Dispatch subagent → synthesis]
-```
+A skill should only contain essential files that directly support its functionality. Do NOT create extraneous documentation or auxiliary files, including:
 
-**Techniques:**
-- Reference tool `--help` instead of documenting all flags
-- Cross-reference other skills instead of repeating content
-- Show minimal example of pattern
-- Eliminate redundancy
-- Use progressive disclosure (reference additional files as needed)
-- Organize content by domain for focused context
+- README.md
+- INSTALLATION_GUIDE.md
+- QUICK_REFERENCE.md
+- CHANGELOG.md
 
-## Workflow Recommendations
+The skill should only contain the information needed for an AI agent to do the job at hand.
 
-For multi-step processes, include:
+### Progressive Disclosure Design Principle
 
-1. **Clear sequential steps**: Break complex tasks into numbered operations
-2. **Feedback loops**: Build in verification/validation steps
-3. **Error handling**: What to check when things go wrong
-4. **Checklists**: For processes with many steps or easy-to-miss details
+Skills use a three-level loading system to manage context efficiently:
 
-**Example structure:**
-```markdown
-## Workflow
+1. **Metadata (name + description)** - Always in context (~100 tokens)
+2. **SKILL.md body** - When skill triggers (<5000 tokens)
+3. **Bundled resources** - As needed by Claude (unlimited because scripts can be executed without reading into context window)
 
-1. **Preparation**
-   - Check prerequisites
-   - Validate environment
+Keep SKILL.md body under 500 lines. Split content into separate files when approaching this limit.
 
-2. **Execution**
-   - Step 1: [action + expected result]
-   - Step 2: [action + expected result]
+**Key principle:** When a skill supports multiple variations, keep only the core workflow in SKILL.md. Move variant-specific details into separate reference files.
 
-3. **Verification**
-   - [ ] Check 1 passes
-   - [ ] Check 2 passes
+## Skill Creation Process
 
-4. **Rollback** (if needed)
-   - Steps to undo changes
-```
+Skill creation involves these steps:
 
-## Common Mistakes
+1. Understand the skill with concrete examples
+2. Plan reusable skill contents (scripts, references, assets)
+3. Initialize the skill (run init_skill.py)
+4. Edit the skill (implement resources and write SKILL.md)
+5. Package the skill (run package_skill.py)
+6. Iterate based on real usage
 
-| Mistake | Why It Fails | Fix |
-|---------|--------------|-----|
-| Narrative example | "In session 2025-10-03..." | Focus on reusable pattern |
-| Multi-language dilution | Same example in 5 languages | One excellent example |
-| Code in flowcharts | `step1 [label="import fs"]` | Use markdown code blocks |
-| Generic labels | helper1, helper2, step3 | Use semantic names |
-| Missing description triggers | "For testing" | "Use when tests are flaky..." |
-| First-person description | "I help you..." | "Use when... - provides..." |
-| Deeply nested file references | Multiple @ symbols, complex paths | Keep references simple and direct |
-| Windows-style file paths | `C:\path\to\file` | Use forward slashes |
-| Offering too many options | 10 different approaches | Focus on one proven approach |
-| Punting error handling | "Claude figures it out" | Include explicit error handling in scripts |
-| Time-sensitive information | "As of 2025..." | Keep content evergreen |
-| Inconsistent terminology | Mixing synonyms randomly | Use consistent terms throughout |
+### Step 1: Understanding the Skill with Concrete Examples
 
-## Flowchart Usage
+To create an effective skill, clearly understand concrete examples of how the skill will be used. For example, when building an image-editor skill, relevant questions include:
 
-**Only use flowcharts for:**
-- Non-obvious decision points
-- Process loops where you might stop too early
-- "When to use A vs B" decisions
+- "What functionality should the image-editor skill support?"
+- "Can you give some examples of how this skill would be used?"
+- "What would a user say that should trigger this skill?"
 
-**Never use for:**
-- Reference material → Use tables/lists
-- Code examples → Use markdown blocks
-- Linear instructions → Use numbered lists
+Conclude this step when there is a clear sense of the functionality the skill should support.
 
-## Cross-Referencing Skills
+### Step 2: Planning the Reusable Skill Contents
 
-```markdown
-# ✅ GOOD - Name only with clear requirement
-**REQUIRED:** Use superpowers:test-driven-development before proceeding
+To turn concrete examples into an effective skill, analyze each example by:
 
-**RECOMMENDED:** See typescript-type-safety for proper type guards
+1. Considering how to execute on the example from scratch
+2. Identifying what scripts, references, and assets would be helpful when executing these workflows repeatedly
 
-# ❌ BAD - Unclear if required
-See skills/testing/test-driven-development
+Example: When building a `pdf-editor` skill to handle queries like "Help me rotate this PDF," the analysis shows:
+1. Rotating a PDF requires re-writing the same code each time
+2. A `scripts/rotate_pdf.py` script would be helpful to store in the skill
 
-# ❌ BAD - Force-loads file, wastes context
-@skills/testing/test-driven-development/SKILL.md
-```
+### Step 3: Initializing the Skill
 
-## Advanced Practices
+When creating a new skill from scratch, always run the `init_skill.py` script:
 
-### Iterative Development
-
-**Best approach**: Develop skills iteratively with Claude
-1. Start with minimal viable skill
-2. Test with real use cases
-3. Refine based on what works
-4. Remove what doesn't add value
-
-### Build Evaluations First
-
-Before extensive documentation:
-1. Create test scenarios
-2. Identify what good looks like
-3. Document proven patterns
-4. Skip theoretical improvements
-
-### Utility Scripts
-
-For reliability, provide:
-- Scripts with explicit error handling (don't defer errors to Claude)
-- Exit codes for success/failure
-- Clear error messages
-- Examples of usage
-- List required dependencies explicitly
-
-**Example:**
 ```bash
-#!/bin/bash
-set -e  # Exit on error
-
-if [ ! -f "config.json" ]; then
-  echo "Error: config.json not found" >&2
-  exit 1
-fi
-
-# Script logic here
-echo "Success"
-exit 0
+python3 scripts/init_skill.py <skill-name> --path <output-directory>
 ```
 
-### Verifiable Intermediate Outputs
+The script:
+- Creates the skill directory at the specified path
+- Generates a SKILL.md template with proper frontmatter and TODO placeholders
+- Creates example resource directories: `scripts/`, `references/`, and `assets/`
 
-For complex operations, create validation checkpoints:
-1. Have Claude produce a structured plan file
-2. Validate the plan with a script
-3. Execute only after validation passes
+### Step 4: Edit the Skill
 
-This catches errors before they compound.
+Remember that the skill is being created for another instance of Claude to use. Include information that would be beneficial and non-obvious to Claude.
 
-### Templates for Structured Output
+#### Frontmatter
 
-When skills produce consistent formats:
-```markdown
-## Output Template
+Write the YAML frontmatter with `name` and `description`:
 
-\`\`\`typescript
-interface ExpectedOutput {
-  status: 'success' | 'error';
-  data: YourDataType;
-  errors?: string[];
-}
-\`\`\`
+- `name`: The skill name (gerund form preferred: `deploying-*`, `creating-*`, `fetching-*`)
+- `description`: This is the primary triggering mechanism for your skill
 
-**Usage**: Copy and adapt for your context
+**CRITICAL: Description = When to Use, NOT What It Does**
+
+The description should ONLY describe triggering conditions. Do NOT summarize the skill's process or workflow in the description.
+
+**Why this matters:** When a description summarizes the skill's workflow, Claude may follow the description instead of reading the full skill content. A description saying "dispatches subagent per task with code review" caused Claude to do ONE review, even though the skill body specified TWO reviews. When changed to just triggering conditions, Claude correctly read and followed the full skill.
+
+```yaml
+# BAD: Summarizes workflow - Claude may follow this instead of reading skill
+description: Use when executing plans - dispatches subagent per task with code review
+
+# BAD: Too much process detail
+description: Use for TDD - write test first, watch it fail, write minimal code
+
+# GOOD: Just triggering conditions
+description: Use when executing implementation plans with independent tasks
+
+# GOOD: Triggering conditions with exclusion
+description: |
+  Use when users need to create new documents or work with tracked changes.
+  NOT when converting between formats (use converting-documents skill).
 ```
 
-## Skill Creation Checklist
+**Description checklist:**
+- Start with "Use when..." to focus on triggering conditions
+- Include symptoms, situations, contexts that signal the skill applies
+- Add "NOT when [exclusion]" if collision with other skills possible
+- NEVER summarize the skill's process or workflow
+- Max 1024 characters
 
-**Before writing:**
-- [ ] Technique isn't obvious or well-documented elsewhere
-- [ ] Pattern applies broadly (not project-specific)
-- [ ] I would reference this across multiple projects
+#### Body
 
-**Frontmatter:**
-- [ ] Name uses only letters, numbers, hyphens
-- [ ] Description starts with "Use when..."
-- [ ] Description includes triggers AND what skill does
-- [ ] Description is third person
-- [ ] Total frontmatter < 1024 characters
+Write instructions for using the skill and its bundled resources.
 
-**Content:**
-- [ ] Overview states core principle (1-2 sentences)
-- [ ] "When to Use" section with symptoms
-- [ ] Quick reference table for common operations
-- [ ] One excellent code example (if technique skill)
-- [ ] Common mistakes section
-- [ ] Keywords throughout for searchability
+### Step 5: Packaging a Skill
 
-**Quality:**
-- [ ] Word count appropriate for frequency (see targets above)
-- [ ] SKILL.md under 500 lines
-- [ ] No narrative storytelling
-- [ ] Flowcharts only for non-obvious decisions
-- [ ] Supporting files only if needed (100+ lines reference)
-- [ ] Cross-references use skill name, not file paths
-- [ ] No time-sensitive information
-- [ ] Consistent terminology throughout
-- [ ] Concrete examples (not templates)
-- [ ] Degrees of freedom match task complexity
+Once development is complete, package the skill:
 
-**Testing:**
-- [ ] Tested with Claude Haiku, Sonnet, and Opus (instructions effective for Opus may need more detail for Haiku)
-- [ ] Tested with subagent scenarios (if discipline-enforcing skill)
-- [ ] Addresses common rationalizations
-- [ ] Includes red flags list
-
-## Directory Structure
-
-```
-skills/
-  skill-name/
-    SKILL.md              # Required
-    supporting-file.*     # Optional
-    examples/             # Optional
-      example1.ts
-    scripts/              # Optional
-      helper.py
+```bash
+python3 scripts/package_skill.py <path/to/skill-folder>
 ```
 
-**Flat namespace** - all skills in one searchable directory
+The packaging script will:
+1. **Validate** the skill automatically
+2. **Package** the skill if validation passes, creating a .skill file
 
-## Real-World Impact
+### Step 6: Iterate
 
-**Good skills:**
-- Future Claude finds them quickly (CSO optimization)
-- Can be scanned in seconds (quick reference)
-- Provide clear actionable examples
-- Prevent repeating same research
-- Stay under 500 lines (token efficient)
-- Match specificity to task needs (right degrees of freedom)
+After testing the skill, users may request improvements. Iteration workflow:
 
-**Bad skills:**
-- Get ignored (vague description)
-- Take too long to evaluate (no quick reference)
-- Leave gaps in understanding (no examples)
-- Waste token budget (verbose explanations of obvious things)
-- Over-constrain creative tasks or under-specify critical operations
-- Include time-sensitive or obsolete information
+1. Use the skill on real tasks
+2. Notice struggles or inefficiencies
+3. Identify how SKILL.md or bundled resources should be updated
+4. Implement changes and test again
 
----
+## Verification
 
-**Remember:** Skills are for future Claude, not current you. Optimize for discovery, scanning, and action.
+Run: `python3 scripts/verify.py`
 
-**Golden rule:** Default assumption is Claude is already very smart. Only add context Claude doesn't already have.
+Expected: `✓ creating-skills valid`
+
+To validate another skill:
+```bash
+python3 scripts/verify.py /path/to/skill-folder
+```
+
+## If Verification Fails
+
+1. Run diagnostic: `python3 scripts/verify.py /path/to/skill --verbose`
+2. Check: YAML frontmatter, name format, description trigger
+3. Fix: Ensure "Use when" is in description, name is gerund form
+4. **Stop and report** if still failing - do not proceed with downstream steps
+
+## References
+
+See [references/design-patterns.md](references/design-patterns.md) for workflow patterns and MCP output discipline guidelines.

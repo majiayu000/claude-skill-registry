@@ -1,7 +1,7 @@
 {
   "name": "dynamodb",
-  "repo": "itsmostafa/aws-agent-skills",
-  "path": "skills/dynamodb/SKILL.md",
-  "source": "github.com/itsmostafa/aws-agent-skills",
-  "downloaded_at": "2026-02-02T01:34:18.401648Z"
+  "repo": "northseadl/skillwisp",
+  "path": "skills/@itsmostafa/dynamodb/SKILL.md",
+  "source": "github.com/northseadl/skillwisp",
+  "downloaded_at": "2026-02-04T02:56:12.126987Z"
 }

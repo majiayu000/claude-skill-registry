@@ -1,7 +1,6 @@
 ---
 name: kiro-skill
-description: 'Interactive feature development workflow from idea to implementation. Creates requirements (EARS format), design documents, and task lists. Triggers: "kiro", ".kiro/specs/", "feature spec", "需求文档", "设计文档", "实现计划".'
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash(ls:*), Bash(cat:*), Bash(mkdir:*), Bash(touch:*), Task, WebSearch, WebFetch
+description: Interactive feature development workflow from idea to implementation. Creates requirements (EARS format), design documents, and implementation task lists. Use when creating feature specs, requirements documents, design documents, or implementation plans. Triggered by "kiro" or references to .kiro/specs/ directory.
 ---
 
 # Kiro: Spec-Driven Development Workflow
@@ -488,9 +487,3 @@ Kiro provides a structured, iterative approach to feature development:
 - **Execute** tasks one at a time
 
 Each phase requires explicit user approval before proceeding, ensuring alignment and quality throughout the development process.
-
-## Supporting Files
-
-For additional context and reference:
-- [Kiro Identity](helpers/kiro-identity.md) - Response style and code philosophy guidelines
-- [Workflow Diagrams](helpers/workflow-diagrams.md) - Visual workflow references

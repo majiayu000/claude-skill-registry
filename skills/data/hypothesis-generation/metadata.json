@@ -1,7 +1,7 @@
 {
   "name": "hypothesis-generation",
-  "repo": "K-Dense-AI/claude-scientific-skills",
-  "path": "scientific-skills/hypothesis-generation/SKILL.md",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "downloaded_at": "2026-02-02T01:35:04.564286Z"
+  "repo": "danieldekay/copilot-config-promptops",
+  "path": "skills/hypothesis-generation/SKILL.md",
+  "source": "github.com/danieldekay/copilot-config-promptops",
+  "downloaded_at": "2026-02-04T04:39:59.447680Z"
 }

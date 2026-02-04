@@ -1,7 +1,7 @@
 {
   "name": "evaluation",
-  "repo": "panaversity/agentfactory",
-  "path": "docs/_skills_archive/rare/evaluation/SKILL.md",
-  "source": "github.com/panaversity/agentfactory",
-  "downloaded_at": "2026-02-02T04:49:45.000524Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/evaluation/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:39.255992Z"
 }

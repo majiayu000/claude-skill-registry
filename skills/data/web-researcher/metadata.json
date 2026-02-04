@@ -1,7 +1,7 @@
 {
   "name": "web-researcher",
-  "repo": "turbobeest/squawk",
-  "path": ".claude/skills/web-researcher/SKILL.md",
-  "source": "github.com/turbobeest/squawk",
-  "downloaded_at": "2026-02-02T04:02:31.076056Z"
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/web-researcher/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-02-04T05:18:54.241929Z"
 }

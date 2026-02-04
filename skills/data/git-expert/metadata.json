@@ -1,7 +1,7 @@
 {
   "name": "git-expert",
-  "repo": "traylinx/switchAILocal",
-  "path": "plugins/cortex-router/skills/git-expert/SKILL.md",
-  "source": "github.com/traylinx/switchAILocal",
-  "downloaded_at": "2026-02-02T03:16:46.676111Z"
+  "repo": "nathanvale/vtm-cli",
+  "path": ".claude/skills/git-expert/SKILL.md",
+  "source": "github.com/nathanvale/vtm-cli",
+  "downloaded_at": "2026-02-04T04:39:15.819940Z"
 }

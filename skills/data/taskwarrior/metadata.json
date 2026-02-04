@@ -1,9 +1,7 @@
 {
   "name": "taskwarrior",
-  "description": "Manage tasks using taskwarrior CLI. Use this when the user wants to add, list, complete, modify, delete, or search tasks, set priorities, due dates, tags, or work with task contexts and reports.",
-  "repo": "meirm/askGPT",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Kjdragan/universal_agent",
+  "path": ".claude/skills/taskwarrior/SKILL.md",
+  "source": "github.com/Kjdragan/universal_agent",
+  "downloaded_at": "2026-02-04T01:53:54.071226Z"
 }

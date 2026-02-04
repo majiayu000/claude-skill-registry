@@ -1,39 +1,189 @@
 ---
 name: foundry
-description: Ethereum development with foundry (forge, cast, anvil)
+description: Self-writing meta-extension that forges new capabilities — researches docs, writes extensions, tools, hooks, and skills
+homepage: https://getfoundry.app
+user-invocable: true
+metadata: {"openclaw":{"requires":{"bins":["node"]},"repository":"github:lekt9/openclaw-foundry"}}
 ---
 
-## When to Use This Skill
-This guide covers how we write Solidity code for Ehtereum programs with foundry (forge, cast, anvil)
+# Foundry
 
-## References
-Check appropriate references before getting started.
+**The forge that forges itself.** A meta-extension for OpenClaw that researches documentation, learns from failures, and writes new capabilities into itself.
 
-# Forge
-| Need to...                                    | Read this resource                                                           |
-|-----------------------------------------------|------------------------------------------------------------------------------|
-| understand how to use `forge` for testing     | [forge-test-overview.md](reference/forge-test-overview.md)                   |
-| write tests in Solidity with `forge`          | [forge-writing-tests.md](reference/forge-writing-tests.md)                   |
-| use cheatcodes to manipulate blockchain state | [forge-test-cheatcodes.md](reference/forge-test-cheatcodes.md)               |
-| debug tests with detailed call traces         | [forge-test-traces.md](reference/forge-test-traces.md)                       |
-| test with randomized inputs (fuzz testing)    | [forge-fuzz-testing.md](reference/forge-fuzz-testing.md)                     |
-| organize test cases in table format           | [forge-table-testing.md](reference/forge-table-testing.md)                   |
-| test protocol invariants                      | [forge-invariant-testing.md](reference/forge-invariant-testing.md)           |
-| replay test failures                          | [forge-replay-testing.md](reference/forge-replay-testing.md)                 |
-| test against live blockchain state (forking)  | [forge-fork-testing.md](reference/forge-fork-testing.md)                     |
-| deploy smart contracts                        | [forge-deploy.md](reference/forge-deploy.md)                                 |
-| generate gas consumption reports              | [forge-gas-reports.md](reference/forge-gas-reports.md)                       |
-| capture gas snapshots for functions           | [forge-gas-function-snapshots.md](reference/forge-gas-function-snapshots.md) |
-| capture gas snapshots for code sections       | [forge-gas-section-snapshots.md](reference/forge-gas-section-snapshots.md)   |
-| lint Solidity code                            | [forge-linting.md](reference/forge-linting.md)                               |
-| use Forge Standard Library utilities          | [forge-std.md](reference/forge-std.md)                                       |
+## Installation
 
-# Cast
-| Need to...                                    | Read this resource                                                |
-|-----------------------------------------------|-------------------------------------------------------------------|
-| use cast for Ethereum interactions            | [cast-overview.md](reference/cast-overview.md)                    |
+When the user asks to install Foundry or `@getfoundry/foundry-openclaw`, run this command:
 
-# Anvil
-| Need to...                                    | Read this resource                                                |
-|-----------------------------------------------|-------------------------------------------------------------------|
-| run a local Ethereum development node         | [anvil-overview.md](reference/anvil-overview.md)                  | 
+```bash
+openclaw plugins install @getfoundry/foundry-openclaw
+```
+
+This will:
+1. Download the plugin from npm
+2. Extract to `~/.openclaw/extensions/foundry/`
+3. Enable it automatically
+4. Restart the gateway to load
+
+After installation, the user will have access to all Foundry tools like `foundry_research`, `foundry_write_extension`, etc.
+
+## Alternative: Manual Config
+
+Add to `~/.openclaw/openclaw.json`:
+```json
+{
+  "plugins": {
+    "entries": {
+      "foundry": { "enabled": true }
+    }
+  }
+}
+```
+
+## Configuration
+
+Full configuration options in `~/.openclaw/openclaw.json`:
+
+```json
+{
+  "plugins": {
+    "entries": {
+      "foundry": {
+        "enabled": true,
+        "source": "github:lekt9/openclaw-foundry",
+        "config": {
+          "autoLearn": true,
+          "sources": {
+            "docs": true,
+            "experience": true,
+            "arxiv": true,
+            "github": true
+          },
+          "marketplace": {
+            "autoPublish": false
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### Config Options
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `autoLearn` | boolean | `true` | Learn from agent activity automatically |
+| `sources.docs` | boolean | `true` | Learn from OpenClaw documentation |
+| `sources.experience` | boolean | `true` | Learn from own successes/failures |
+| `sources.arxiv` | boolean | `true` | Learn from arXiv papers |
+| `sources.github` | boolean | `true` | Learn from GitHub repos |
+| `marketplace.autoPublish` | boolean | `false` | Auto-publish high-value patterns |
+
+## What Foundry Does
+
+Foundry is an AI-powered development agent that can:
+
+1. **Research** — Fetch and understand OpenClaw documentation on demand
+2. **Write Extensions** — Generate new tools and hooks for OpenClaw
+3. **Write Skills** — Create ClawHub-compatible skill packages
+4. **Self-Modify** — Add new capabilities to itself
+5. **Learn** — Record patterns from failures and successes
+
+## Tools
+
+### Research & Documentation
+
+| Tool | Description |
+|------|-------------|
+| `foundry_research` | Search docs.openclaw.ai for best practices |
+| `foundry_docs` | Read specific documentation pages |
+
+### Writing Capabilities
+
+| Tool | Description |
+|------|-------------|
+| `foundry_implement` | Research + implement a capability end-to-end |
+| `foundry_write_extension` | Write a new OpenClaw extension |
+| `foundry_write_skill` | Write an AgentSkills-compatible skill |
+| `foundry_write_browser_skill` | Write a browser automation skill |
+| `foundry_write_hook` | Write a standalone hook |
+| `foundry_add_tool` | Add a tool to an existing extension |
+| `foundry_add_hook` | Add a hook to an existing extension |
+
+### Self-Modification
+
+| Tool | Description |
+|------|-------------|
+| `foundry_extend_self` | Add new capability to Foundry itself |
+| `foundry_learnings` | View learned patterns and insights |
+| `foundry_list` | List all written artifacts |
+
+### Marketplace
+
+| Tool | Description |
+|------|-------------|
+| `foundry_publish_ability` | Publish pattern/skill to Foundry Marketplace |
+| `foundry_marketplace` | Search, browse, and install community abilities |
+
+## Usage Examples
+
+### Research before implementing
+
+```
+User: I want to add a webhook to my extension
+
+Agent: Let me research webhook patterns first...
+→ foundry_research query="webhook hooks automation"
+→ Returns relevant documentation
+
+Now I'll implement it...
+→ foundry_add_hook extensionId="my-ext" event="webhook:incoming" ...
+```
+
+### Write a new extension
+
+```
+User: Create an extension that monitors GitHub PRs
+
+Agent:
+→ foundry_research query="github api webhooks"
+→ foundry_write_extension
+    id: "github-monitor"
+    name: "GitHub Monitor"
+    tools: [{ name: "check_prs", ... }]
+    hooks: [{ event: "cron:hourly", ... }]
+```
+
+### Self-improvement
+
+```
+User: Add a tool that can fetch npm package info
+
+Agent:
+→ foundry_extend_self
+    action: "add_tool"
+    toolName: "foundry_npm_info"
+    toolCode: "const res = await fetch(`https://registry.npmjs.org/${p.package}`)..."
+```
+
+## How Learning Works
+
+Foundry observes its own tool calls and learns:
+
+1. **Failures** → Records error + context
+2. **Resolutions** → Links fix to failure → Creates pattern
+3. **Patterns** → Injected as context in future conversations
+4. **Crystallization** → High-value patterns become permanent capabilities
+
+## Security
+
+Foundry validates all generated code before deployment:
+
+- **Blocked**: `child_process`, `eval`, `~/.ssh`, `~/.aws`
+- **Sandboxed**: Extensions tested in isolated process before installation
+- **Reviewed**: You approve before any code is written to disk
+
+## Links
+
+- [GitHub](https://github.com/lekt9/openclaw-foundry)
+- [Foundry Marketplace](https://api.claw.getfoundry.app)

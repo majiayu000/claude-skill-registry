@@ -25,14 +25,14 @@ You move audio files to the correct location in the user's audio directory.
 Expected format: `<file-path> <album-name>`
 
 Examples:
-- `~/Downloads/track.wav shell-no`
-- `~/Downloads/03-t-day-beach.wav shell-no`
+- `~/Downloads/track.wav sample-album`
+- `~/Downloads/03-t-day-beach.wav sample-album`
 
 If arguments are missing, ask:
 ```
 Usage: /import-audio <file-path> <album-name>
 
-Example: /import-audio ~/Downloads/track.wav shell-no
+Example: /import-audio ~/Downloads/track.wav sample-album
 ```
 
 ## Step 2: Read Config (REQUIRED)
@@ -58,12 +58,12 @@ The target path is **ALWAYS**:
 Example with:
 - `audio_root: ~/bitwize-music/audio`
 - `artist: bitwize`
-- `album: shell-no`
+- `album: sample-album`
 - `file: 03-t-day-beach.wav`
 
 Result:
 ```
-~/bitwize-music/audio/bitwize/shell-no/03-t-day-beach.wav
+~/bitwize-music/audio/bitwize/sample-album/03-t-day-beach.wav
 ```
 
 **CRITICAL**: The path MUST include the artist folder. Never put files directly at `{audio_root}/{album}/`.
@@ -107,7 +107,7 @@ Overwrite? (The original was not moved)
 ## Examples
 
 ```
-/import-audio ~/Downloads/03-t-day-beach.wav shell-no
+/import-audio ~/Downloads/03-t-day-beach.wav sample-album
 ```
 
 Config has:
@@ -121,7 +121,7 @@ artist:
 Result:
 ```
 Moved: ~/Downloads/03-t-day-beach.wav
-   To: ~/bitwize-music/audio/bitwize/shell-no/03-t-day-beach.wav
+   To: ~/bitwize-music/audio/bitwize/sample-album/03-t-day-beach.wav
 ```
 
 ---
@@ -133,7 +133,7 @@ Moved: ~/Downloads/03-t-day-beach.wav
 **Wrong:**
 ```bash
 # Assuming audio_root path
-mv file.wav ~/music-projects/audio/shell-no/
+mv file.wav ~/music-projects/audio/sample-album/
 ```
 
 **Right:**
@@ -150,13 +150,13 @@ cat ~/.bitwize-music/config.yaml
 **Wrong destination:**
 ```
 {audio_root}/{album}/file.wav
-# Example: ~/music-projects/audio/shell-no/file.wav
+# Example: ~/music-projects/audio/sample-album/file.wav
 ```
 
 **Correct destination:**
 ```
 {audio_root}/{artist}/{album}/file.wav
-# Example: ~/music-projects/audio/bitwize/shell-no/file.wav
+# Example: ~/music-projects/audio/bitwize/sample-album/file.wav
 ```
 
 **Why it matters:** Audio path structure includes artist name. This is the most common mistake with import-audio.
@@ -166,7 +166,7 @@ cat ~/.bitwize-music/config.yaml
 **Wrong:**
 ```bash
 # Hardcoding artist
-mv file.wav ~/audio/bitwize/shell-no/
+mv file.wav ~/audio/bitwize/sample-album/
 ```
 
 **Right:**
@@ -174,7 +174,7 @@ mv file.wav ~/audio/bitwize/shell-no/
 # Read artist.name from config
 artist=$(yq '.artist.name' ~/.bitwize-music/config.yaml)
 audio_root=$(yq '.paths.audio_root' ~/.bitwize-music/config.yaml)
-mv file.wav "$audio_root/$artist/shell-no/"
+mv file.wav "$audio_root/$artist/sample-album/"
 ```
 
 ### ❌ Don't: Assume current working directory
@@ -182,7 +182,7 @@ mv file.wav "$audio_root/$artist/shell-no/"
 **Wrong:**
 ```bash
 # Moving relative to current directory
-mv ~/Downloads/file.wav ./audio/shell-no/
+mv ~/Downloads/file.wav ./audio/sample-album/
 ```
 
 **Right:**
@@ -197,7 +197,7 @@ audio_root=$(yq '.paths.audio_root' ~/.bitwize-music/config.yaml)
 **Wrong:**
 ```bash
 # Using content_root for audio files
-mv file.wav {content_root}/artists/bitwize/albums/electronic/shell-no/
+mv file.wav {content_root}/artists/bitwize/albums/electronic/sample-album/
 ```
 
 **Right:**

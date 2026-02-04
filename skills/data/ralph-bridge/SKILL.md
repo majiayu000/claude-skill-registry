@@ -1,6 +1,8 @@
 ---
 name: ralph-bridge
 description: Fresh-instance orchestration for multi-story features. Use when N>5 stories risk context exhaustion. Spawns fresh Claude per story via bash script. Triggers on "ralph", "fresh instances", "multi-story loop", "context exhaustion".
+model: opus
+allowed-tools: Bash, Read
 ---
 
 # Ralph Bridge
@@ -247,6 +249,18 @@ Continue to S-002? [Y/n/skip/quit]
 | Rapid iteration needed | Script overhead | `/loop:start` |
 | Debug/investigation | Fresh context loses findings | Standard loop |
 | < 5 stories | Overhead not worth it | `/loop:prd` |
+
+---
+
+## Boundary
+
+**Ralph executes user's decomposition, never creates its own.**
+
+- Before spawning: "I'll execute stories in this order: [...]. Adjust? [proceed/reorder]"
+- Never auto-merge stories or resolve conflicts without asking
+- Never make architectural decisions — decomposition is user's responsibility
+
+Ralph orchestrates execution, not design.
 
 ---
 

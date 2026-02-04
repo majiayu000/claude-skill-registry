@@ -35,10 +35,27 @@ Workers (ln-301, ln-302) handle the actual Linear/File operations based on detec
 
 ## Workflow (concise)
 - **Phase 1 Discovery:** Auto-discover Team ID (docs/tasks/kanban_board.md); parse Story ID from request.
-- **Phase 2 Decompose (always):** Load Story (AC, Technical Notes, Context), assess complexity, build IDEAL plan (1-6 implementation tasks only), apply Foundation-First execution order, extract guide links.
+- **Phase 2 Decompose (always):** Load Story (AC, Technical Notes, Context), assess complexity, build IDEAL plan (1-6 implementation tasks only), apply Foundation-First execution order, **validate Task Independence**, extract guide links.
 - **Phase 3 Check & Detect Mode:** Query Linear for existing tasks (metadata only). Detect mode by count + user keywords (add/replan).
 - **Phase 4 Delegate:** Call the right worker with Story data, IDEAL plan/append request, guide links, existing task IDs if any; autoApprove=true.
 - **Phase 5 Verify:** Ensure worker returns URLs/summary and updated kanban_board.md; report result.
+
+## Task Independence Validation
+
+**CRITICAL Check in Phase 2:**
+- Each Task N can be completed using ONLY Tasks 1 to N-1
+- NO forward dependencies (Task N requires Task N+1, N+2)
+- Foundation-First order naturally prevents most issues
+
+**Validation:**
+- Check that Task N does NOT depend on Task N+1, N+2, etc.
+- ❌ WRONG: "Task 2: Validate token (requires Task 3 to generate keys)"
+- ✅ RIGHT: "Task 1: Generate keys" → "Task 2: Validate token (uses Task 1 keys)"
+
+**If forward dependency detected:**
+- Reorder Tasks to resolve dependency
+- OR refactor Task to remove dependency
+- OR split Task into sequential parts
 
 ## Mode Matrix
 | Condition | Mode | Delegate | Payload |
@@ -94,5 +111,5 @@ Mark each as in_progress when starting, completed when done.
 - Auto-discovery notes: `CLAUDE.md`, `docs/tasks/kanban_board.md`
 
 ---
-**Version:** 3.0.0
-**Last Updated:** 2025-12-23
+**Version:** 4.0.0 (BREAKING: Added Task Independence Validation in Phase 2 Decompose - checks that Task N does NOT depend on Task N+1/N+2. Works with Foundation-First order to ensure sequential task execution per BMAD Method best practices.)
+**Last Updated:** 2026-02-03

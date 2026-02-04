@@ -1,128 +1,144 @@
 ---
 name: create-ticket
-description: Create implementation tickets with proper format and conventions.
-user-invocable: false
+description: Create a new ticket with schema validation
 ---
 
 # Create Ticket
 
-Guidelines for creating implementation tickets in `.workaholic/tickets/`.
+## Purpose
 
-## Frontmatter Template (REQUIRED - DO NOT SKIP)
+This skill provides step-by-step instructions for creating a new ticket with proper schema validation. Tickets are YAML files stored in `.ushabti/tickets/` that capture ideas for future work.
+
+## Prerequisites
+
+Before creating a ticket, invoke the `find-next-ticket-number` skill to determine the next ticket ID.
+
+## Required Fields
+
+Every ticket MUST include these fields:
+
+- **id**: Sequential ticket ID in TNNNN format (e.g., T0001)
+- **title**: Short, descriptive title (used to generate filename slug)
+- **created**: ISO 8601 date in YYYY-MM-DD format (today's date)
+- **priority**: Must be exactly one of: `low`, `medium`, `high`
+- **context**: Multi-line string explaining why this ticket exists
+- **proposed_work**: Multi-line string describing what should be done
+
+## Filename Format
+
+Ticket filenames follow the pattern: `TNNNN-short-description.yaml`
+
+- `TNNNN`: The ticket ID (zero-padded 4 digits)
+- `short-description`: Lowercase, hyphenated slug derived from the title
+  - Convert title to lowercase
+  - Replace spaces with hyphens
+  - Remove special characters except hyphens
+  - Limit to ~5 words for brevity
+
+Example: Title "Improve error messages" becomes `T0042-improve-error-messages.yaml`
+
+## Creation Procedure
+
+### Step 1: Determine Next ID
+
+Use the `find-next-ticket-number` skill to get the next ticket ID.
+
+### Step 2: Gather Information
+
+Collect the required information:
+- Title (brief, descriptive)
+- Priority (low, medium, or high)
+- Context (why does this ticket exist?)
+- Proposed work (what should be done?)
+
+### Step 3: Validate Priority
+
+Ensure priority is exactly one of: `low`, `medium`, `high` (all lowercase).
+
+If priority is not valid, stop and report the error.
+
+### Step 4: Generate Filename
+
+Convert the title to a slug:
+- Lowercase all characters
+- Replace spaces with hyphens
+- Remove special characters (keep letters, numbers, hyphens)
+- Limit to approximately 5 words
+
+Combine with ticket ID: `TNNNN-slug.yaml`
+
+### Step 5: Create YAML Content
+
+Construct the YAML file with all required fields:
 
 ```yaml
----
-created_at: <run: date -Iseconds>
-author: <run: git config user.email>
-type: <enhancement | bugfix | refactoring | housekeeping>
-layer: [<UX | Domain | Infrastructure | DB | Config>]
-effort: <leave empty - filled after implementation>
-commit_hash: <leave empty - filled when archived>
-category: <leave empty - filled when archived>
----
+id: T0042
+title: Improve error messages
+created: 2026-02-01
+priority: medium
+context: |
+  Current error messages are vague and don't help users understand
+  what went wrong or how to fix issues. This makes debugging difficult
+  and reduces the usability of Ushabti.
+proposed_work: |
+  - Audit all error messages across agents
+  - Replace vague messages with specific, actionable guidance
+  - Add error codes for programmatic error handling
+  - Update documentation with common errors and solutions
 ```
 
-**All fields are mandatory.** Run the shell commands to fill `created_at` and `author`.
+### Step 6: Ensure Directory Exists
 
-## Filename Convention
+Ensure the ticket directory exists by running: `mkdir -p .ushabti/tickets`
 
-Format: `YYYYMMDDHHmmss-<short-description>.md`
+This is idempotent and handles cases where bootstrap or onboarding didn't create the directory.
 
-Use current timestamp: `date +%Y%m%d%H%M%S`
+### Step 7: Write File
 
-Example: `20260114153042-add-dark-mode.md`
+Write the YAML content to `.ushabti/tickets/TNNNN-slug.yaml`
 
-## File Structure
+### Step 8: Verify
 
-```markdown
----
-created_at: YYYY-MM-DDTHH:MM:SS+TZ
-author: <git user.email>
-type: enhancement | bugfix | refactoring | housekeeping
-layer: [<layers affected>]
-effort: <filled after implementation>
-commit_hash: <filled when archived>
-category: <filled when archived>
----
+Confirm the file was written successfully and is valid YAML.
 
-# <Title>
+## Validation Checklist
 
-## Overview
+Before considering the ticket created, verify:
 
-<Brief description of what will be implemented>
+- [ ] File exists in `.ushabti/tickets/` (NOT in `.archived/`)
+- [ ] Filename matches `TNNNN-slug.yaml` pattern
+- [ ] YAML is syntactically valid
+- [ ] All six required fields are present
+- [ ] `id` field matches the TNNNN in the filename
+- [ ] `created` field is today's date in YYYY-MM-DD format
+- [ ] `priority` field is exactly `low`, `medium`, or `high`
+- [ ] `context` and `proposed_work` fields have meaningful content
 
-## Key Files
+## Example: Complete Ticket Creation
 
-- `path/to/file.ts` - <why this file is relevant>
-
-## Related History
-
-<1-2 sentence summary synthesizing what historical tickets reveal about this area>
-
-Past tickets that touched similar areas:
-
-- [20260127010716-rename-terminology-to-terms.md](.workaholic/tickets/archive/<branch>/20260127010716-rename-terminology-to-terms.md) - Renamed terminology directory (same layer: Config)
-- [20260125113858-auto-commit-ticket-on-creation.md](.workaholic/tickets/archive/<branch>/20260125113858-auto-commit-ticket-on-creation.md) - Modified ticket.md (same file)
-
-## Implementation Steps
-
-1. <Step 1>
-2. <Step 2>
-   ...
-
-## Considerations
-
-- <Any trade-offs, risks, or things to watch out for>
+```yaml
+id: T0001
+title: Add search functionality to ticket list
+created: 2026-02-01
+priority: low
+context: |
+  As the number of tickets grows, finding specific tickets becomes
+  harder. Currently users must read through all ticket files manually.
+proposed_work: |
+  Create a new skill (search-tickets) that allows filtering tickets by:
+  - Title substring match
+  - Priority level
+  - Date range
+  Update list-tickets to optionally use search criteria.
 ```
 
-## Frontmatter Fields
+Filename: `T0001-add-search-functionality.yaml`
 
-### Required at Creation
+Location: `.ushabti/tickets/T0001-add-search-functionality.yaml`
 
-- **created_at**: Creation timestamp in ISO 8601 format. Use `date -Iseconds`
-- **author**: Git email. Use `git config user.email`
-- **type**: Infer from request context:
-  - `enhancement` - New features or capabilities (keywords: add, create, implement, new)
-  - `bugfix` - Fixing broken behavior (keywords: fix, bug, broken, error)
-  - `refactoring` - Restructuring without changing behavior (keywords: refactor, restructure, reorganize)
-  - `housekeeping` - Maintenance, cleanup, documentation (keywords: clean, update, remove, deprecate)
-- **layer**: Architectural layers affected (YAML array, can specify multiple):
-  - `UX` - User interface, components, styling
-  - `Domain` - Business logic, models, services
-  - `Infrastructure` - External integrations, APIs, networking
-  - `DB` - Database, storage, migrations
-  - `Config` - Configuration, build, tooling
+## Notes
 
-### Filled After Implementation
-
-- **effort**: Time spent in numeric hours. Valid: `0.1h`, `0.25h`, `0.5h`, `1h`, `2h`, `4h`. Invalid: `XS`, `S`, `M`, `10m`. Leave empty when creating ticket.
-- **commit_hash**: Short git commit hash. Set automatically by archive script.
-- **category**: Change category (Added, Changed, or Removed). Set automatically by archive script based on commit message verb.
-
-## Exploring the Codebase
-
-Before writing a ticket:
-
-- Use Glob, Grep, and Read tools to find relevant files
-- Understand existing patterns, architecture, and conventions
-- Identify files that will need to be modified or created
-
-## Related History
-
-The Related History section is populated by the `history-discoverer` subagent (invoked by `/ticket` command).
-
-**Link format**: Use markdown links with repository-relative paths:
-```markdown
-- [filename.md](.workaholic/tickets/archive/<branch>/filename.md) - Description (match reason)
-```
-
-The full path includes the branch directory from the search results (e.g., `feat-20260126-214833`).
-
-If the subagent returns no matches, omit the Related History section entirely.
-
-## Writing Guidelines
-
-- Focus on the "why" and "what", not just "how"
-- Keep implementation steps actionable and specific
-- Reference existing code patterns when applicable
-- Use the Write tool directly - it creates parent directories automatically
+- Tickets are create-only. Once created, they are not edited.
+- If a ticket needs correction, create a new ticket and archive the incorrect one.
+- Tickets remain in `.ushabti/tickets/` until a derived phase completes, then they are archived.
+- Archived tickets are moved to `.ushabti/tickets/.archived/` and become invisible to agents.

@@ -1,7 +1,7 @@
 {
   "name": "root-cause-analysis",
-  "repo": "Prorise-cool/Claude-Code-Multi-Agent",
-  "path": ".claude/skills/business-analysis/root-cause-analysis/SKILL.md",
-  "source": "github.com/Prorise-cool/Claude-Code-Multi-Agent",
-  "downloaded_at": "2026-02-02T05:03:43.893360Z"
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/root-cause-analysis/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-04T04:42:24.703704Z"
 }

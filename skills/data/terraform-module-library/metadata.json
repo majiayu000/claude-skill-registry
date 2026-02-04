@@ -1,7 +1,7 @@
 {
   "name": "terraform-module-library",
-  "repo": "GaitanS/AI-Mancare",
-  "path": ".claude/skills/plugins/cloud-infrastructure/skills/terraform-module-library/SKILL.md",
-  "source": "github.com/GaitanS/AI-Mancare",
-  "downloaded_at": "2026-02-02T04:39:47.647812Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/terraform-module-library/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:33.094974Z"
 }

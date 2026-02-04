@@ -1,49 +1,40 @@
 ---
-name: index
-description: Manage and query the documentation dependency index. Use this to identify which documents need to be updated when code changes.
+name: codex-skills-index
+description: Entry point for Codex-discoverable skills used by the Run-Smart AI coach.
+metadata:
+  short-description: Catalog of AI skills, contracts, telemetry, and guardrails for Run-Smart.
 ---
 
-# Documentation Index Skill
+## Purpose
+Defines the shared conventions, contracts, safety posture, and telemetry used by all Run-Smart AI skills. This index allows Codex to discover available skills and the rules they follow.
 
-This skill allows you to track relationships between code and documentation, enabling "Impact Analysis".
-Before making changes to code, you should check which documents describe that code.
-After making changes, you should update the relevant documents and the index itself.
+## When Codex should use it
+- Before invoking any Run-Smart skill to understand shared schemas, safety guidance, and telemetry.
+- When onboarding a new skill to ensure compliance with common contracts.
 
-## Commands
+## Invocation guidance
+1. Load shared references in `_index/references/` (contracts, telemetry, conventions, smoke-tests).
+2. Select the appropriate skill directory based on the user’s need (plan generation, adjustment, insights, etc.).
+3. Validate request/response payloads against the schemas in `contracts.md` and skill-specific schemas.
 
-### Check Impact
-Find out which documents are affected by a change to a specific file.
-Command: `./scripts/index impact <filepath> [--format json]`
-**Use this before editing any code.**
+## Shared components
+- **Contracts:** `_index/references/contracts.md`
+- **Telemetry:** `_index/references/telemetry.md`
+- **Conventions:** `_index/references/conventions.md`
+- **Smoke tests:** `_index/references/smoke-tests.md`
 
-### List Index
-View all indexed relationships.
-Command: `./scripts/index list [--format json]`
+## Safety & guardrails
+- No medical diagnosis. If pain/dizziness/severe symptoms appear, advise stopping activity and consulting a qualified professional.
+- Prefer conservative adjustments under uncertainty.
+- Emit `SafetyFlag` objects when thresholds are crossed and log via `ai_safety_flag_raised`.
 
-### Add/Update Entry
-Register a relationship between a document and code files, or between documents.
-Command: `./scripts/index add <doc_path> [--related "src/file1.py,src/file2.py"] [--depends "docs/other.md"] [--force]`
-*   `doc_path`: The documentation file (e.g., `docs/architecture/auth.md`).
-*   `--related`: Comma-separated list of files (code or other) that `doc_path` describes.
-*   `--depends`: Comma-separated list of other documents that `doc_path` depends on.
+## Integration points
+- Skills are invoked from chat flows (`v0/app/api/chat/route.ts`, `v0/lib/enhanced-ai-coach.ts`), plan generation APIs (`v0/app/api/generate-plan/route.ts`), background jobs (plan adjustment), and post-run screens.
 
-### Remove Entry
-Remove a document from the index or specific items from it.
-Command: `./scripts/index remove <doc_path> [--item "src/file1.py"] [--section related|depends_on]`
-
-### Check Integrity
-Verify that all paths in the index actually exist.
-Command: `./scripts/index check [--format json]`
-
-### Visualize
-Generate a Mermaid graph of the documentation topology.
-Command: `./scripts/index graph`
-
-## Workflow
-
-1.  **Before Coding**: Run `./scripts/index impact src/target_file.py` to see what docs need attention.
-2.  **After Coding**:
-    *   Update the identified docs.
-    *   If you created new files, add them to the index using `./scripts/index add`.
-    *   If you deprecated files, remove them using `./scripts/index remove`.
-3.  **Validation**: Run `./scripts/index check` to ensure the index is healthy.
+## Telemetry events (standard)
+- `ai_skill_invoked`
+- `ai_plan_generated`
+- `ai_adjustment_applied`
+- `ai_insight_created`
+- `ai_safety_flag_raised`
+- `ai_user_feedback`

@@ -1,6 +1,12 @@
 ---
 name: "QE Chaos Resilience"
 description: "Chaos engineering and resilience testing including fault injection, load testing, and system recovery validation."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-chaos-resilience.yaml
+
 ---
 
 # QE Chaos Resilience

@@ -1,7 +1,7 @@
 {
   "name": "patterns",
-  "repo": "zeyxx/CYNIC",
-  "path": ".claude/skills/patterns/SKILL.md",
-  "source": "github.com/zeyxx/CYNIC",
-  "downloaded_at": "2026-02-02T03:58:18.208019Z"
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/agentdev/skills/patterns/SKILL.md",
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "downloaded_at": "2026-02-04T03:11:44.034780Z"
 }

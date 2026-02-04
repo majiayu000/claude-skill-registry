@@ -26,15 +26,15 @@ You move track markdown files to the correct location in the user's content dire
 Expected format: `<file-path> <album-name> [track-number]`
 
 Examples:
-- `~/Downloads/track.md shell-no 03`
-- `~/Downloads/t-day-beach.md shell-no 03`
-- `~/Downloads/03-t-day-beach.md shell-no` (number already in filename)
+- `~/Downloads/track.md sample-album 03`
+- `~/Downloads/t-day-beach.md sample-album 03`
+- `~/Downloads/03-t-day-beach.md sample-album` (number already in filename)
 
 If arguments are missing, ask:
 ```
 Usage: /import-track <file-path> <album-name> [track-number]
 
-Example: /import-track ~/Downloads/track.md shell-no 03
+Example: /import-track ~/Downloads/track.md sample-album 03
 ```
 
 ## Step 2: Read Config (REQUIRED)
@@ -79,13 +79,13 @@ Example with:
 - `content_root: ~/bitwize-music`
 - `artist: bitwize`
 - `genre: electronic` (found from album location)
-- `album: shell-no`
+- `album: sample-album`
 - `track-number: 03`
 - `track-name: t-day-beach`
 
 Result:
 ```
-~/bitwize-music/artists/bitwize/albums/electronic/shell-no/tracks/03-t-day-beach.md
+~/bitwize-music/artists/bitwize/albums/electronic/sample-album/tracks/03-t-day-beach.md
 ```
 
 **Track numbering**:
@@ -137,7 +137,7 @@ Overwrite? (The original was not moved)
 ## Examples
 
 ```
-/import-track ~/Downloads/t-day-beach.md shell-no 03
+/import-track ~/Downloads/t-day-beach.md sample-album 03
 ```
 
 Config has:
@@ -148,12 +148,12 @@ artist:
   name: bitwize
 ```
 
-Album found at: `~/bitwize-music/artists/bitwize/albums/electronic/shell-no/`
+Album found at: `~/bitwize-music/artists/bitwize/albums/electronic/sample-album/`
 
 Result:
 ```
 Moved: ~/Downloads/t-day-beach.md
-   To: ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/tracks/03-t-day-beach.md
+   To: ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/tracks/03-t-day-beach.md
 ```
 
 ---
@@ -197,13 +197,13 @@ find "$content_root" -name "README.md" -path "*albums/$album_name*"
 **Wrong destination:**
 ```
 {album_path}/01-track.md
-# Example: ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/01-track.md
+# Example: ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/01-track.md
 ```
 
 **Correct destination:**
 ```
 {album_path}/tracks/01-track.md
-# Example: ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/tracks/01-track.md
+# Example: ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/tracks/01-track.md
 ```
 
 **Why it matters:** Tracks always go in the `tracks/` subdirectory within the album folder.
@@ -247,7 +247,7 @@ mv track.md {album_path}/tracks/$track_num-track.md
 **Wrong:**
 ```bash
 # Guessing album is in electronic genre
-mv track.md ~/music-projects/artists/bitwize/albums/electronic/shell-no/tracks/
+mv track.md ~/music-projects/artists/bitwize/albums/electronic/sample-album/tracks/
 ```
 
 **Right:**

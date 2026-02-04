@@ -7,11 +7,11 @@ prerequisites:
 outputs:
   - Implementation files
   - Test files
-  - .signals/phase3-complete.json
+  - .signals/phase7-complete.json
 description: |
   Guides TDD implementation following RED-GREEN-REFACTOR cycle.
   Activates via codeword [ACTIVATE:TDD_IMPLEMENTER_V1] injected by hooks
-  when entering Phase 3 implementation.
+  when entering Phase 7 implementation.
   
   Activation trigger: [ACTIVATE:TDD_IMPLEMENTER_V1]
 ---
@@ -40,12 +40,12 @@ This occurs when:
 
 ## Worktree Isolation Requirements
 
-**CRITICAL**: This skill MUST operate in dedicated worktrees per subtask `phase-3-task-N`:
+**CRITICAL**: This skill MUST operate in dedicated worktrees per subtask `phase-7-task-N`:
 
 ```bash
 # For each subtask implementation:
 ./lib/worktree-manager.sh create 3 <subtask_number>
-cd ./worktrees/phase-3-task-<subtask_number>
+cd ./worktrees/phase-7-task-<subtask_number>
 
 # Validate isolation:
 ./hooks/worktree-enforcer.sh enforce
@@ -65,13 +65,13 @@ cd ./worktrees/phase-3-task-<subtask_number>
 
 ## What This Skill Does
 
-Automates Phase 7: Test-Driven Development implementation in isolated worktrees
+Automates Phase 3: Test-Driven Development implementation in isolated worktrees
 
 - **RED-GREEN-REFACTOR cycle** (tests first, always) per worktree
 - **Mandatory coverage gates** (80% line, 70% branch) validated per subtask
 - **Worktree-based isolation** (one subtask per worktree)
 - **Status updates** (TaskMaster & OpenSpec) from isolated environments
-- **Completion signal** → triggers Phase 8
+- **Completion signal** → triggers Phase 4
 - **NEW**: Complete task isolation prevents implementation conflicts
 - **NEW**: Safe parallel development through worktree boundaries
 
@@ -89,7 +89,7 @@ Stage 3: Implement Tasks (TDD Cycle)
          VALIDATE: Check coverage
 Stage 4: Update Status
 Stage 5: Generate Summary
-Stage 6: Create Signal → Phase 8
+Stage 6: Create Signal → Phase 4
 ```
 
 ## TDD Cycle (Per Task)
@@ -178,92 +178,6 @@ task-master set-task-status --id=[id] --status=done
 openspec archive [proposal-name] --yes
 ```
 
-### VERIFY Phase: Security and Compliance
-
-After VALIDATE passes, run security verification before marking complete.
-
-#### Security Scanning (SAST)
-
-**Python Projects:**
-```bash
-# Bandit - Python security linter
-bandit -r src/ -f json -o .reports/bandit-report.json
-# CRITICAL/HIGH findings = BLOCKING
-
-# Safety - Dependency vulnerability scanner
-safety check --json -r requirements.txt > .reports/safety-report.json
-# Known vulnerabilities = BLOCKING
-
-# pip-audit - Alternative dependency scanner
-pip-audit --json > .reports/pip-audit-report.json
-```
-
-**JavaScript/Node Projects:**
-```bash
-# npm audit - Dependency vulnerabilities
-npm audit --json > .reports/npm-audit-report.json
-# CRITICAL/HIGH vulnerabilities = BLOCKING
-
-# ESLint security plugin
-npx eslint --plugin security src/ --format json > .reports/eslint-security.json
-```
-
-**Multi-Language (if available):**
-```bash
-# Semgrep - Semantic code analysis
-semgrep --config auto --json src/ > .reports/semgrep-report.json
-
-# Trivy - Container/dependency scanning
-trivy fs --format json --output .reports/trivy-report.json .
-```
-
-#### Compliance Checks
-
-```bash
-# 1. Hardcoded Secrets Detection
-# Check for passwords, API keys, tokens in code
-# Look for patterns: password=, api_key=, secret=, token=
-# CRITICAL finding if detected
-
-# 2. License Header Verification
-# All source files should have copyright/license headers
-# WARNING if missing (not blocking)
-
-# 3. Documentation Existence
-# Public functions should have docstrings/JSDoc
-# WARNING if missing (not blocking)
-```
-
-#### VERIFY Phase Pass/Fail Criteria
-
-| Finding Severity | Action |
-|------------------|--------|
-| CRITICAL | **BLOCKING** - Must fix before proceeding |
-| HIGH | **BLOCKING** - Must fix before proceeding |
-| MEDIUM | Warning - Document and acknowledge |
-| LOW | Informational - Log for review |
-
-#### VERIFY Phase Output
-
-Generate `.reports/security-verification.json`:
-```json
-{
-  "task_id": "T-XXX-N.3",
-  "timestamp": "ISO8601",
-  "passed": true,
-  "summary": {
-    "critical": 0,
-    "high": 0,
-    "medium": 2,
-    "low": 5
-  },
-  "tools_run": ["bandit", "safety", "semgrep"],
-  "acknowledged_findings": []
-}
-```
-
-**If VERIFY fails:** Fix security issues, re-run from GREEN phase.
-
 ## Implementation Strategies
 
 ### Strategy A: Sequential (Tightly Coupled)
@@ -322,9 +236,9 @@ jq '.tasks[] | select(.subtasks != null) | {id, subtasks: [.subtasks[].id]}' \
 
 ```bash
 # Create one worktree per parallel subagent
-./lib/worktree-manager.sh create 3 1  # phase-3-task-1
-./lib/worktree-manager.sh create 3 2  # phase-3-task-2
-./lib/worktree-manager.sh create 3 3  # phase-3-task-3
+./lib/worktree-manager.sh create 3 1  # phase-7-task-1
+./lib/worktree-manager.sh create 3 2  # phase-7-task-2
+./lib/worktree-manager.sh create 3 3  # phase-7-task-3
 # ... continue for each parallel implementation slot
 ```
 
@@ -335,18 +249,18 @@ Use Claude Code's Task tool to implement tasks in parallel:
 ```
 Launch 5 parallel subagents for TDD implementation:
 
-Subagent 1 (worktree: phase-3-task-1):
+Subagent 1 (worktree: phase-7-task-1):
   - Implement subtasks 1.1, 1.2, 1.3
   - Follow RED → GREEN → REFACTOR cycle
   - Validate 80% coverage before marking complete
   - Commit to feature/task-1 branch
 
-Subagent 2 (worktree: phase-3-task-2):
+Subagent 2 (worktree: phase-7-task-2):
   - Implement subtasks 2.1, 2.2, 2.3
   - Independent code paths (no conflicts)
   - Commit to feature/task-2 branch
 
-Subagent 3 (worktree: phase-3-task-3):
+Subagent 3 (worktree: phase-7-task-3):
   - Implement subtasks 3.1, 3.2
   - Commit to feature/task-3 branch
 
@@ -416,7 +330,7 @@ npm test:integration
 
 ```json
 {
-  "phase": 7,
+  "phase": 3,
   "status": "success",
   "summary": {
     "tasks_implemented": N,
@@ -426,7 +340,7 @@ npm test:integration
       "branch": 78
     }
   },
-  "next_phase": 8,
+  "next_phase": 4,
   "trigger_next": true
 }
 ```
@@ -443,28 +357,28 @@ tests/
 └── e2e/
 
 .taskmaster/
-├── phase7-summary.md
+├── phase3-summary.md
 └── .signals/phase7-complete.json
 ```
 
 ## CRITICAL: Automatic Phase Transition
 
-**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 8.**
+**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 4.**
 
 When Phase 7 is complete (all tasks implemented with tests passing), you MUST:
 
 1. Output the completion signal:
    ```
-   ✅ PHASE 7 COMPLETE
+   ✅ PHASE 3 COMPLETE
    [SIGNAL:PHASE7_COMPLETE]
    ```
 
-2. **IMMEDIATELY** proceed to Phase 8 by outputting:
+2. **IMMEDIATELY** proceed to Phase 9 by outputting:
    ```
-   [ACTIVATE:CODE_REVIEW_GATE_V1]
+   [ACTIVATE:INTEGRATION_VALIDATOR_V1]
    ```
 
-3. Begin code review gate without waiting for user input.
+3. Begin integration validation without waiting for user input.
 
 **The pipeline is fully autonomous. Do not ask "Would you like to proceed?" - just proceed.**
 
@@ -473,4 +387,4 @@ When Phase 7 is complete (all tasks implemented with tests passing), you MUST:
 - Pipeline Orchestrator (triggers this)
 - Spec Generator (Phase 6, provides input)
 - Test Strategy Generator (provides test guidance)
-- Code Review Gate (Phase 8, triggered by signal)
+- Integration Validator (Phase 9, triggered by signal)

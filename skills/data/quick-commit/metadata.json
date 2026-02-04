@@ -1,12 +1,7 @@
 {
   "name": "quick-commit",
-  "description": "Create a git commit with a short message (up to 50 characters). Use when the user asks to commit changes with a short/concise message.",
-  "repo": "AleksaRistic216/aleksaristic-ecosystem",
-  "category": "design",
-  "tags": [
-    "quick",
-    "commit"
-  ],
-  "stars": 0,
-  "source": "local"
+  "repo": "snkrheadz/laptop",
+  "path": "claude/skills/quick-commit/SKILL.md",
+  "source": "github.com/snkrheadz/laptop",
+  "downloaded_at": "2026-02-04T04:56:06.294771Z"
 }

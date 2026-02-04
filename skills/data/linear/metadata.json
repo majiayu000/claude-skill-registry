@@ -1,7 +1,7 @@
 {
   "name": "linear",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/linear/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:11.751225Z"
+  "repo": "joa23/linear-cli",
+  "path": "internal/skills/linear/SKILL.md",
+  "source": "github.com/joa23/linear-cli",
+  "downloaded_at": "2026-02-04T05:11:17.940846Z"
 }

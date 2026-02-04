@@ -1,9 +1,7 @@
 {
   "name": "large-file-refactor",
-  "description": "Use when Claude Code hits \"File content exceeds maximum allowed tokens\" error, or when files are too large to read. Helps analyze and break apart large files into smaller, focused modules.",
   "repo": "blueraai/bluera-base",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/blueraai/bluera-base"
+  "path": "skills/large-file-refactor/SKILL.md",
+  "source": "github.com/blueraai/bluera-base",
+  "downloaded_at": "2026-02-04T04:17:41.715889Z"
 }

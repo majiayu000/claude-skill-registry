@@ -1,51 +1,49 @@
 ---
 name: radix-ui
-description: Builds accessible components with Radix UI primitives including dialogs, dropdowns, tooltips, and form controls. Use when building accessible interfaces, creating headless components, or implementing complex UI patterns.
+description: Build accessible, unstyled React UI components with Radix Primitives
+when_to_use: When you need accessible, composable UI components that give you full control over styling while ensuring WCAG compliance
 ---
 
-# Radix UI
+# Radix UI Primitives Skill
 
-Unstyled, accessible component primitives for building high-quality design systems.
+Radix UI Primitives provides low-level, unstyled React components with built-in accessibility, keyboard navigation, and focus management. Perfect for building design systems and custom UI components.
 
 ## Quick Start
 
-**Install individual components:**
-```bash
-npm install @radix-ui/react-dialog
-npm install @radix-ui/react-dropdown-menu
-npm install @radix-ui/react-tooltip
-npm install @radix-ui/react-tabs
-```
+### Basic Dialog Example
 
-## Dialog
+```jsx
+import * as Dialog from "@radix-ui/react-dialog";
+import { Cross2Icon } from "@radix-ui/react-icons";
 
-```tsx
-import * as Dialog from '@radix-ui/react-dialog';
-
-function Modal() {
+function BasicDialog() {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button>Open Modal</button>
+        <button className="btn-primary">Edit profile</button>
       </Dialog.Trigger>
-
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-        <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg">
-          <Dialog.Title className="text-lg font-bold">
-            Modal Title
-          </Dialog.Title>
-          <Dialog.Description className="text-gray-500 mt-2">
-            Modal description goes here.
+        <Dialog.Overlay className="dialog-overlay" />
+        <Dialog.Content className="dialog-content">
+          <Dialog.Title className="dialog-title">Edit profile</Dialog.Title>
+          <Dialog.Description className="dialog-description">
+            Make changes to your profile here.
           </Dialog.Description>
 
-          <div className="mt-4">
-            <p>Modal content</p>
+          <div className="dialog-fields">
+            <input placeholder="Name" defaultValue="John Doe" />
+            <input placeholder="Username" defaultValue="@johndoe" />
+          </div>
+
+          <div className="dialog-actions">
+            <Dialog.Close asChild>
+              <button className="btn-primary">Save changes</button>
+            </Dialog.Close>
           </div>
 
           <Dialog.Close asChild>
-            <button className="absolute top-4 right-4">
-              Close
+            <button className="dialog-close" aria-label="Close">
+              <Cross2Icon />
             </button>
           </Dialog.Close>
         </Dialog.Content>
@@ -55,84 +53,46 @@ function Modal() {
 }
 ```
 
-### Controlled Dialog
+### Dropdown Menu Example
 
-```tsx
-function ControlledDialog() {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger asChild>
-        <button>Open</button>
-      </Dialog.Trigger>
-
-      <Dialog.Portal>
-        <Dialog.Overlay />
-        <Dialog.Content>
-          <Dialog.Title>Confirm</Dialog.Title>
-          <div className="flex gap-2 mt-4">
-            <button onClick={() => setOpen(false)}>Cancel</button>
-            <button
-              onClick={() => {
-                handleConfirm();
-                setOpen(false);
-              }}
-            >
-              Confirm
-            </button>
-          </div>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
-  );
-}
-```
-
-## Dropdown Menu
-
-```tsx
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+```jsx
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { HamburgerMenuIcon, CheckIcon } from "@radix-ui/react-icons";
 
 function UserMenu() {
+  const [showBookmarks, setShowBookmarks] = React.useState(true);
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
-        <button className="p-2 rounded-full hover:bg-gray-100">
-          <UserIcon />
+        <button className="icon-btn" aria-label="Menu">
+          <HamburgerMenuIcon />
         </button>
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          className="bg-white rounded-lg shadow-lg p-2 min-w-[200px]"
-          sideOffset={5}
-        >
-          <DropdownMenu.Label className="px-2 py-1 text-sm text-gray-500">
-            My Account
-          </DropdownMenu.Label>
+        <DropdownMenu.Content className="dropdown-content" sideOffset={5}>
+          <DropdownMenu.Item className="dropdown-item">
+            New Tab <div className="shortcut">⌘+T</div>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item className="dropdown-item">
+            New Window <div className="shortcut">⌘+N</div>
+          </DropdownMenu.Item>
 
-          <DropdownMenu.Item
-            className="px-2 py-2 rounded cursor-pointer hover:bg-gray-100 outline-none"
-            onSelect={() => navigate('/profile')}
+          <DropdownMenu.Separator className="dropdown-separator" />
+
+          <DropdownMenu.CheckboxItem
+            className="dropdown-item"
+            checked={showBookmarks}
+            onCheckedChange={setShowBookmarks}
           >
-            Profile
-          </DropdownMenu.Item>
+            <DropdownMenu.ItemIndicator className="item-indicator">
+              <CheckIcon />
+            </DropdownMenu.ItemIndicator>
+            Show Bookmarks
+          </DropdownMenu.CheckboxItem>
 
-          <DropdownMenu.Item className="px-2 py-2 rounded cursor-pointer hover:bg-gray-100 outline-none">
-            Settings
-          </DropdownMenu.Item>
-
-          <DropdownMenu.Separator className="h-px bg-gray-200 my-1" />
-
-          <DropdownMenu.Item
-            className="px-2 py-2 rounded cursor-pointer hover:bg-red-100 text-red-600 outline-none"
-            onSelect={handleLogout}
-          >
-            Logout
-          </DropdownMenu.Item>
-
-          <DropdownMenu.Arrow className="fill-white" />
+          <DropdownMenu.Arrow className="dropdown-arrow" />
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
@@ -140,160 +100,50 @@ function UserMenu() {
 }
 ```
 
-### With Submenu
+## Common Patterns
 
-```tsx
-<DropdownMenu.Root>
-  <DropdownMenu.Trigger asChild>
-    <button>Menu</button>
-  </DropdownMenu.Trigger>
+### Primitive Components
 
-  <DropdownMenu.Portal>
-    <DropdownMenu.Content>
-      <DropdownMenu.Item>New Tab</DropdownMenu.Item>
+Radix provides 30+ primitive components for common UI patterns:
 
-      <DropdownMenu.Sub>
-        <DropdownMenu.SubTrigger className="flex items-center justify-between">
-          More Tools
-          <ChevronRightIcon />
-        </DropdownMenu.SubTrigger>
+```jsx
+// Accordion with animation
+import * as Accordion from "@radix-ui/react-accordion";
 
-        <DropdownMenu.Portal>
-          <DropdownMenu.SubContent>
-            <DropdownMenu.Item>Developer Tools</DropdownMenu.Item>
-            <DropdownMenu.Item>Task Manager</DropdownMenu.Item>
-          </DropdownMenu.SubContent>
-        </DropdownMenu.Portal>
-      </DropdownMenu.Sub>
-    </DropdownMenu.Content>
-  </DropdownMenu.Portal>
-</DropdownMenu.Root>
-```
-
-## Select
-
-```tsx
-import * as Select from '@radix-ui/react-select';
-import { ChevronDownIcon, CheckIcon } from '@radix-ui/react-icons';
-
-function SelectDemo() {
+function FAQAccordion() {
   return (
-    <Select.Root>
-      <Select.Trigger className="flex items-center justify-between w-[200px] px-3 py-2 border rounded">
-        <Select.Value placeholder="Select a fruit" />
-        <Select.Icon>
-          <ChevronDownIcon />
-        </Select.Icon>
-      </Select.Trigger>
-
-      <Select.Portal>
-        <Select.Content className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <Select.ScrollUpButton className="flex items-center justify-center h-6">
-            <ChevronUpIcon />
-          </Select.ScrollUpButton>
-
-          <Select.Viewport className="p-1">
-            <Select.Group>
-              <Select.Label className="px-6 py-1 text-sm text-gray-500">
-                Fruits
-              </Select.Label>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="orange">Orange</SelectItem>
-            </Select.Group>
-
-            <Select.Separator className="h-px bg-gray-200 my-1" />
-
-            <Select.Group>
-              <Select.Label className="px-6 py-1 text-sm text-gray-500">
-                Vegetables
-              </Select.Label>
-              <SelectItem value="carrot">Carrot</SelectItem>
-              <SelectItem value="potato">Potato</SelectItem>
-            </Select.Group>
-          </Select.Viewport>
-
-          <Select.ScrollDownButton className="flex items-center justify-center h-6">
-            <ChevronDownIcon />
-          </Select.ScrollDownButton>
-        </Select.Content>
-      </Select.Portal>
-    </Select.Root>
+    <Accordion.Root type="single" collapsible className="accordion">
+      <Accordion.Item value="item-1" className="accordion-item">
+        <Accordion.Header>
+          <Accordion.Trigger className="accordion-trigger">
+            Is it accessible?
+            <ChevronDownIcon className="accordion-chevron" />
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Content className="accordion-content">
+          Yes. It adheres to WAI-ARIA design patterns.
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion.Root>
   );
 }
 
-function SelectItem({ children, value }: { children: string; value: string }) {
+// Tooltip with delay
+import * as Tooltip from "@radix-ui/react-tooltip";
+
+function TooltipExample() {
   return (
-    <Select.Item
-      value={value}
-      className="flex items-center px-6 py-2 rounded cursor-pointer hover:bg-gray-100 outline-none data-[highlighted]:bg-gray-100"
-    >
-      <Select.ItemIndicator className="absolute left-1">
-        <CheckIcon />
-      </Select.ItemIndicator>
-      <Select.ItemText>{children}</Select.ItemText>
-    </Select.Item>
-  );
-}
-```
-
-## Tabs
-
-```tsx
-import * as Tabs from '@radix-ui/react-tabs';
-
-function TabsDemo() {
-  return (
-    <Tabs.Root defaultValue="account" className="w-full">
-      <Tabs.List className="flex border-b">
-        <Tabs.Trigger
-          value="account"
-          className="px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-blue-500"
-        >
-          Account
-        </Tabs.Trigger>
-        <Tabs.Trigger
-          value="password"
-          className="px-4 py-2 data-[state=active]:border-b-2 data-[state=active]:border-blue-500"
-        >
-          Password
-        </Tabs.Trigger>
-      </Tabs.List>
-
-      <Tabs.Content value="account" className="p-4">
-        <h3 className="font-bold">Account Settings</h3>
-        <p>Manage your account settings here.</p>
-      </Tabs.Content>
-
-      <Tabs.Content value="password" className="p-4">
-        <h3 className="font-bold">Password</h3>
-        <p>Change your password here.</p>
-      </Tabs.Content>
-    </Tabs.Root>
-  );
-}
-```
-
-## Tooltip
-
-```tsx
-import * as Tooltip from '@radix-ui/react-tooltip';
-
-function TooltipDemo() {
-  return (
-    <Tooltip.Provider delayDuration={300}>
+    <Tooltip.Provider delayDuration={800}>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <button>Hover me</button>
+          <button className="icon-btn">
+            <InfoIcon />
+          </button>
         </Tooltip.Trigger>
-
         <Tooltip.Portal>
-          <Tooltip.Content
-            className="bg-gray-900 text-white px-3 py-2 rounded text-sm"
-            sideOffset={5}
-          >
-            Tooltip content
-            <Tooltip.Arrow className="fill-gray-900" />
+          <Tooltip.Content className="tooltip" sideOffset={5}>
+            Additional information
+            <Tooltip.Arrow className="tooltip-arrow" />
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
@@ -302,212 +152,222 @@ function TooltipDemo() {
 }
 ```
 
-## Popover
+### Accessibility Features
 
-```tsx
-import * as Popover from '@radix-ui/react-popover';
+Radix automatically handles accessibility:
 
-function PopoverDemo() {
+```jsx
+// All components include proper ARIA attributes
+// Focus management is handled automatically
+// Keyboard navigation works out of the box
+// Screen reader support is built-in
+
+// Example: Select with proper labeling
+import * as Select from "@radix-ui/react-select";
+
+function AccessibleSelect() {
+  return (
+    <Select.Root>
+      <Select.Trigger aria-label="Select a fruit">
+        <Select.Value placeholder="Choose a fruit…" />
+        <Select.Icon>
+          <ChevronDownIcon />
+        </Select.Icon>
+      </Select.Trigger>
+
+      <Select.Portal>
+        <Select.Content>
+          <Select.Viewport>
+            <Select.Group>
+              <Select.Label>Fruits</Select.Label>
+              <Select.Item value="apple">
+                <Select.ItemText>Apple</Select.ItemText>
+                <Select.ItemIndicator>
+                  <CheckIcon />
+                </Select.ItemIndicator>
+              </Select.Item>
+            </Select.Group>
+          </Select.Viewport>
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
+  );
+}
+```
+
+### Composition with asChild
+
+Compose Radix primitives with your own components:
+
+```jsx
+// Use your existing button styles
+import { Dialog, Tooltip } from "@radix-ui/react-dialog";
+import { Button } from "./your-design-system";
+
+function ComposedDialog() {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <Button variant="primary">Open Dialog</Button>
+      </Dialog.Trigger>
+
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Title>Dialog Title</Dialog.Title>
+          <Dialog.Close asChild>
+            <Button variant="secondary">Close</Button>
+          </Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}
+
+// Multiple primitives on one element
+function TooltipDialogButton() {
+  return (
+    <Dialog.Root>
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild>
+          <Dialog.Trigger asChild>
+            <Button variant="primary">Open Dialog</Button>
+          </Dialog.Trigger>
+        </Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Content>Opens a modal dialog</Tooltip.Content>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+
+      {/* Dialog content */}
+    </Dialog.Root>
+  );
+}
+```
+
+### Custom Component Abstractions
+
+Create your own simplified APIs:
+
+```jsx
+// Custom Dialog wrapper
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+
+export const CustomDialog = ({ children, trigger, title }) => {
+  return (
+    <DialogPrimitive.Root>
+      <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
+      <DialogPrimitive.Portal>
+        <DialogPrimitive.Overlay className="overlay" />
+        <DialogPrimitive.Content className="content">
+          <DialogPrimitive.Title>{title}</DialogPrimitive.Title>
+          {children}
+          <DialogPrimitive.Close asChild>
+            <button className="close-btn">×</button>
+          </DialogPrimitive.Close>
+        </DialogPrimitive.Content>
+      </DialogPrimitive.Portal>
+    </DialogPrimitive.Root>
+  );
+};
+
+// Usage
+<CustomDialog title="Settings" trigger={<Button>Open Settings</Button>}>
+  <div>Settings content here</div>
+</CustomDialog>;
+```
+
+### Styling with Data Attributes
+
+Style components based on their state:
+
+```css
+/* Accordion animations */
+.accordion-content[data-state="open"] {
+  animation: slideDown 300ms ease-out;
+}
+
+.accordion-content[data-state="closed"] {
+  animation: slideUp 300ms ease-out;
+}
+
+/* Dropdown positioning */
+.dropdown-content {
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+}
+
+.dropdown-content[data-side="top"] {
+  animation: slideUp 0.3s ease-out;
+}
+
+.dropdown-content[data-side="bottom"] {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Focus states */
+.dropdown-item[data-highlighted] {
+  background: #f0f0f0;
+}
+
+.dropdown-item[data-state="checked"] {
+  background: #e0e0e0;
+}
+```
+
+### Advanced Patterns
+
+```jsx
+// Controlled components for async operations
+function AsyncDialog() {
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    await submitForm();
+    setLoading(false);
+    setOpen(false);
+  };
+
+  return (
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      <Dialog.Trigger asChild>
+        <Button>Open Form</Button>
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Content>
+          <form onSubmit={handleSubmit}>
+            <input name="email" type="email" required />
+            <Button type="submit" disabled={loading}>
+              {loading ? "Submitting…" : "Submit"}
+            </Button>
+          </form>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}
+
+// Popover with collision detection
+function SmartPopover() {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <button>Open Popover</button>
+        <Button>Click me</Button>
       </Popover.Trigger>
-
       <Popover.Portal>
         <Popover.Content
-          className="bg-white rounded-lg shadow-lg p-4 w-[300px]"
-          sideOffset={5}
+          className="popover"
+          sideOffset={10}
+          collisionPadding={20}
         >
-          <div className="space-y-2">
-            <h4 className="font-medium">Dimensions</h4>
-            <div>
-              <label className="text-sm">Width</label>
-              <input className="w-full border rounded px-2 py-1" />
-            </div>
-            <div>
-              <label className="text-sm">Height</label>
-              <input className="w-full border rounded px-2 py-1" />
-            </div>
-          </div>
-
-          <Popover.Close asChild>
-            <button className="absolute top-2 right-2">
-              <Cross2Icon />
-            </button>
-          </Popover.Close>
-          <Popover.Arrow className="fill-white" />
+          Content that avoids screen edges
+          <Popover.Arrow className="popover-arrow" />
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>
   );
 }
 ```
-
-## Accordion
-
-```tsx
-import * as Accordion from '@radix-ui/react-accordion';
-import { ChevronDownIcon } from '@radix-ui/react-icons';
-
-function AccordionDemo() {
-  return (
-    <Accordion.Root type="single" collapsible className="w-full">
-      <Accordion.Item value="item-1" className="border-b">
-        <Accordion.Header>
-          <Accordion.Trigger className="flex items-center justify-between w-full py-4 group">
-            <span>Is it accessible?</span>
-            <ChevronDownIcon className="transition-transform group-data-[state=open]:rotate-180" />
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Content className="pb-4 text-gray-600">
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </Accordion.Content>
-      </Accordion.Item>
-
-      <Accordion.Item value="item-2" className="border-b">
-        <Accordion.Header>
-          <Accordion.Trigger className="flex items-center justify-between w-full py-4 group">
-            <span>Is it unstyled?</span>
-            <ChevronDownIcon className="transition-transform group-data-[state=open]:rotate-180" />
-          </Accordion.Trigger>
-        </Accordion.Header>
-        <Accordion.Content className="pb-4 text-gray-600">
-          Yes. It's completely unstyled by default.
-        </Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
-  );
-}
-```
-
-## Checkbox
-
-```tsx
-import * as Checkbox from '@radix-ui/react-checkbox';
-import { CheckIcon } from '@radix-ui/react-icons';
-
-function CheckboxDemo() {
-  const [checked, setChecked] = useState<boolean | 'indeterminate'>(false);
-
-  return (
-    <div className="flex items-center gap-2">
-      <Checkbox.Root
-        checked={checked}
-        onCheckedChange={setChecked}
-        className="w-5 h-5 border rounded flex items-center justify-center data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500"
-      >
-        <Checkbox.Indicator>
-          <CheckIcon className="text-white" />
-        </Checkbox.Indicator>
-      </Checkbox.Root>
-      <label>Accept terms</label>
-    </div>
-  );
-}
-```
-
-## Switch
-
-```tsx
-import * as Switch from '@radix-ui/react-switch';
-
-function SwitchDemo() {
-  return (
-    <div className="flex items-center gap-2">
-      <label htmlFor="airplane-mode">Airplane Mode</label>
-      <Switch.Root
-        id="airplane-mode"
-        className="w-11 h-6 bg-gray-200 rounded-full data-[state=checked]:bg-blue-500 relative"
-      >
-        <Switch.Thumb className="block w-5 h-5 bg-white rounded-full shadow transition-transform translate-x-0.5 data-[state=checked]:translate-x-[22px]" />
-      </Switch.Root>
-    </div>
-  );
-}
-```
-
-## Slider
-
-```tsx
-import * as Slider from '@radix-ui/react-slider';
-
-function SliderDemo() {
-  return (
-    <Slider.Root
-      defaultValue={[50]}
-      max={100}
-      step={1}
-      className="relative flex items-center w-full h-5"
-    >
-      <Slider.Track className="bg-gray-200 relative grow rounded-full h-1">
-        <Slider.Range className="absolute bg-blue-500 rounded-full h-full" />
-      </Slider.Track>
-      <Slider.Thumb className="block w-5 h-5 bg-white border-2 border-blue-500 rounded-full hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-    </Slider.Root>
-  );
-}
-```
-
-## Alert Dialog
-
-```tsx
-import * as AlertDialog from '@radix-ui/react-alert-dialog';
-
-function DeleteConfirmation() {
-  return (
-    <AlertDialog.Root>
-      <AlertDialog.Trigger asChild>
-        <button className="text-red-600">Delete</button>
-      </AlertDialog.Trigger>
-
-      <AlertDialog.Portal>
-        <AlertDialog.Overlay className="fixed inset-0 bg-black/50" />
-        <AlertDialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg max-w-md">
-          <AlertDialog.Title className="text-lg font-bold">
-            Are you sure?
-          </AlertDialog.Title>
-          <AlertDialog.Description className="text-gray-500 mt-2">
-            This action cannot be undone. This will permanently delete the item.
-          </AlertDialog.Description>
-
-          <div className="flex justify-end gap-3 mt-4">
-            <AlertDialog.Cancel asChild>
-              <button className="px-4 py-2 border rounded">Cancel</button>
-            </AlertDialog.Cancel>
-            <AlertDialog.Action asChild>
-              <button className="px-4 py-2 bg-red-600 text-white rounded">
-                Delete
-              </button>
-            </AlertDialog.Action>
-          </div>
-        </AlertDialog.Content>
-      </AlertDialog.Portal>
-    </AlertDialog.Root>
-  );
-}
-```
-
-## Best Practices
-
-1. **Use asChild** - Compose with your own elements
-2. **Style with data attributes** - `data-[state=open]`
-3. **Add animations** - Use CSS transitions
-4. **Keep accessible** - Don't remove ARIA attributes
-5. **Wrap in Portals** - For proper stacking context
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Missing Portal | Wrap content in Portal |
-| Removing accessibility | Keep provided ARIA |
-| Direct child styling | Use asChild pattern |
-| Missing Provider | Add Tooltip.Provider |
-| Wrong event handler | Use onSelect, not onClick |
-
-## Reference Files
-
-- [references/components.md](references/components.md) - All components
-- [references/styling.md](references/styling.md) - Styling patterns
-- [references/accessibility.md](references/accessibility.md) - A11y features

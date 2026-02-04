@@ -1,7 +1,7 @@
 {
   "name": "session-intelligence-harvester",
-  "repo": "mjunaidca/mjs-agent-skills",
-  "path": "docs/taskflow-vault/skills/engineering/session-intelligence-harvester/SKILL.md",
-  "source": "github.com/mjunaidca/mjs-agent-skills",
-  "downloaded_at": "2026-02-02T02:50:26.278288Z"
+  "repo": "panaversity/agentfactory",
+  "path": ".claude/skills/session-intelligence-harvester/SKILL.md",
+  "source": "github.com/panaversity/agentfactory",
+  "downloaded_at": "2026-02-04T02:28:41.935187Z"
 }

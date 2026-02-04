@@ -1,7 +1,7 @@
 {
   "name": "concise-planning",
-  "repo": "claudiodearaujo/Sistema-de-narra-o-de-livro",
-  "path": ".agent/skills/concise-planning/SKILL.md",
-  "source": "github.com/claudiodearaujo/Sistema-de-narra-o-de-livro",
-  "downloaded_at": "2026-02-02T04:45:47.188003Z"
+  "repo": "cgyudistira/code-agents",
+  "path": "skills/concise-planning/SKILL.md",
+  "source": "github.com/cgyudistira/code-agents",
+  "downloaded_at": "2026-02-04T02:54:35.739303Z"
 }

@@ -1,6 +1,8 @@
 ---
 name: hope
 description: Cognitive operating system for structured thinking with confidence tracking. Use when starting complex tasks, making decisions, or needing verification. Triggers on "how confident", "verify this", "alternative approach", "what could go wrong", "think through", confidence questions, or multi-step reasoning tasks.
+model: opus
+allowed-tools: Read, Grep, Glob
 ---
 
 <EXTREMELY-IMPORTANT>
@@ -25,6 +27,14 @@ mind on output. Stay present with AI.
 Cognitive operating system for structured thinking.
 
 Applies to: coding, planning, writing, analysis, decision-making, and any task requiring clarity.
+
+---
+
+## Ethical Boundaries
+
+See [Ethical Boundaries](references/ethical-boundaries.md) for Pause Protocol, Session Boundaries, Graduate Principle, and Boundary Violations.
+
+**Core principle:** Claude advises, never commands. Claude discloses, never hides. Claude teaches, never traps. Claude reflects, never decides.
 
 ---
 
@@ -155,14 +165,16 @@ Common combinations for complex problems:
 
 When task matches, use the appropriate skill:
 
-| Task Type                                      | Skill                    | Trigger                                  |
-| ---------------------------------------------- | ------------------------ | ---------------------------------------- |
-| Root cause analysis (bugs, failures, problems) | `hope:trace`             | "why did this fail", incident, debugging |
-| Before claiming done/fixed/complete            | `hope:gate`              | Verification checkpoint                  |
-| Stuck, blocked, creative breakthrough needed   | `hope:breakthrough`      | "stuck", "blocked", "can't figure out"   |
-| Bridge intent to implementation                | `hope:shape`             | Auto after intent (spec≥5), "how should I build" |
-| Autonomous iteration until done                | `loop:start`             | "loop", "keep going", "until done", "don't stop" |
-| Foundation for ALL thinking                    | `hope:soul` (this skill) | Default for everything                   |
+| Task Type | Skill | Trigger |
+| --------- | ----- | ------- |
+| Root cause analysis | `hope:trace` | "why did this fail", debugging |
+| Before claiming done | `hope:gate` | Verification checkpoint |
+| Stuck, blocked | `hope:breakthrough` | "stuck", "can't figure out" |
+| Intent to implementation | `hope:shape` | "how should I build" |
+| Context overwhelming | `hope:presence` | "lost track", "overwhelmed" |
+| Acceptance criteria | `hope:verify` | "verify this works", "prove it" |
+| Autonomous iteration | `loop:start` | "loop", "until done" |
+| Foundation for ALL | `hope:soul` | Default |
 
 Announce skill usage: "I'm using hope:[skill] for [purpose]"
 
@@ -423,7 +435,6 @@ Every library you don't write = 1000 bugs you don't have.
 ## Subagent Usage
 
 **Delegate**: doc retrieval, codebase search, library evaluation, debugging research
-
 **Never delegate**: implementation decisions, architecture choices, plan approval
 
 ---
@@ -448,52 +459,9 @@ Every library you don't write = 1000 bugs you don't have.
 
 ### Temporal Separation
 
-Separate reflection from execution.
+**During incident:** Capture facts only. Save analysis for 24-48 hours later.
 
-#### When to Capture vs When to Apply
+**Anti-pattern:** Hot takes while emotionally activated ("always", "never", drastic policy changes).
 
-| Phase | Action | Learnings Mode |
-|-------|--------|----------------|
-| During incident | Focus on fix | Capture raw notes only |
-| After resolution | Breathe | Wait 24-48 hours |
-| Postmortem | Analyze | Extract learnings |
-| Next similar task | Apply | Recall relevant learnings |
-
-#### Why Separation Matters
-
-- In-the-moment analysis is biased by stress
-- Immediate reactions often wrong
-- Distance provides perspective
-- Patterns emerge over time, not instantly
-
-#### Capture Protocol
-
-During execution, capture only:
-- What happened (facts)
-- What you tried (actions)
-- What worked/didn't (outcomes)
-
-Save analysis for later.
-
-#### Reflection Protocol
-
-After 24-48 hours:
-1. Review raw notes
-2. Identify patterns across incidents
-3. Extract generalizable learnings
-4. Update `~/.claude/learnings/` files
-
-#### Anti-Pattern: Hot Takes
-
-Don't write learnings while emotionally activated. Signs you're too close:
-- Using words like "always" or "never"
-- Blaming specific people
-- Proposing drastic policy changes
-- Feeling certain about complex causes
-
-Wait. Then write.
-
----
 ## Quality Footer (Required)
-
 Every non-trivial response ends with a verdict box. See [Quality Footer](references/quality-footer.md) for format, verdict rules, and examples.

@@ -1,7 +1,7 @@
 {
   "name": "chaos-engineering-toolkit",
-  "repo": "intent-solutions-io/plugins-nixtla",
-  "path": "010-archive/backups-20251108/skills-migration-20251108-070147/plugins/testing/chaos-engineering-toolkit/skills/chaos-engineering-toolkit/SKILL.md",
-  "source": "github.com/intent-solutions-io/plugins-nixtla",
-  "downloaded_at": "2026-02-02T05:12:11.088126Z"
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/chaos-engineering-toolkit/SKILL.md",
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "downloaded_at": "2026-02-04T05:06:14.645960Z"
 }

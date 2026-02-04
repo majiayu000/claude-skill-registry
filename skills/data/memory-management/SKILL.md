@@ -9,75 +9,226 @@ infer: true
 
 Build and maintain a knowledge graph of patterns, decisions, and learnings across sessions.
 
-This is the **SSOT** for MCP memory operations. Other skills should reference this.
+---
+
+## Memory Entity Types
+
+| Entity Type       | Purpose                                | Examples                       |
+| ----------------- | -------------------------------------- | ------------------------------ |
+| `Pattern`         | Recurring code patterns                | CQRS, Validation, Repository   |
+| `Decision`        | Architectural/design decisions         | Why we chose X over Y          |
+| `BugFix`          | Bug solutions for future reference     | Race condition fixes           |
+| `ServiceBoundary` | Service ownership and responsibilities | TextSnippet owns Snippets      |
+| `SessionSummary`  | End-of-session progress snapshots      | Task progress, next steps      |
+| `Dependency`      | Cross-service dependencies             | TextSnippet depends on Accounts|
+| `AntiPattern`     | Patterns to avoid                      | Don't call side effects in cmd |
 
 ---
 
-## Entity Types
+## Memory Operations
 
-| Entity Type       | Purpose                            | Examples                        |
-| ----------------- | ---------------------------------- | ------------------------------- |
-| `Pattern`         | Recurring code patterns            | CQRS, Validation, Repository    |
-| `Decision`        | Architectural/design decisions     | Why we chose X over Y           |
-| `BugFix`          | Bug solutions for future reference | Race condition fixes            |
-| `ServiceBoundary` | Service ownership                  | TextSnippet owns Snippets       |
-| `SessionSummary`  | End-of-session progress            | Task progress, next steps       |
-| `Dependency`      | Cross-service dependencies         | TextSnippet depends on Accounts |
-| `AntiPattern`     | Patterns to avoid                  | Don't call side effects in cmd  |
+### Create New Entity
+
+```javascript
+mcp__memory__create_entities([
+    {
+        name: 'EmployeeValidationPattern',
+        entityType: 'Pattern',
+        observations: [
+            'Use PlatformValidationResult fluent API',
+            'Chain with .And() and .AndAsync()',
+            "Return validation result, don't throw",
+            'Location: Growth.Application/UseCaseCommands/'
+        ]
+    }
+]);
+```
+
+### Create Relationships
+
+```javascript
+mcp__memory__create_relations([
+    {
+        from: 'TextSnippetService',
+        to: 'AccountsService',
+        relationType: 'depends_on'
+    },
+    {
+        from: 'EmployeeEntity',
+        to: 'UserEntity',
+        relationType: 'syncs_from'
+    }
+]);
+```
+
+### Add Observations
+
+```javascript
+mcp__memory__add_observations([
+    {
+        entityName: 'EmployeeValidationPattern',
+        contents: ['Also supports .AndNot() for negative validation', 'Use .Of<IPlatformCqrsRequest>() for type conversion']
+    }
+]);
+```
+
+### Search Knowledge
+
+```javascript
+// Search by query
+mcp__memory__search_nodes({ query: 'validation pattern' });
+
+// Open specific entities
+mcp__memory__open_nodes({ names: ['EmployeeValidationPattern', 'TextSnippetService'] });
+
+// Read entire graph
+mcp__memory__read_graph();
+```
+
+### Delete Outdated Knowledge
+
+```javascript
+// Delete entities
+mcp__memory__delete_entities({ entityNames: ['OutdatedPattern'] });
+
+// Delete specific observations
+mcp__memory__delete_observations([
+    {
+        entityName: 'EmployeeValidationPattern',
+        observations: ['Outdated observation text']
+    }
+]);
+
+// Delete relations
+mcp__memory__delete_relations([
+    {
+        from: 'OldService',
+        to: 'NewService',
+        relationType: 'depends_on'
+    }
+]);
+```
 
 ---
 
-## Quick Operations
-
-| Operation           | Command                                         |
-| ------------------- | ----------------------------------------------- |
-| Create entity       | `mcp__memory__create_entities([...])`           |
-| Create relation     | `mcp__memory__create_relations([...])`          |
-| Add observations    | `mcp__memory__add_observations([...])`          |
-| Search              | `mcp__memory__search_nodes({ query })`          |
-| Open by name        | `mcp__memory__open_nodes({ names })`            |
-| Read all            | `mcp__memory__read_graph()`                     |
-| Delete entity       | `mcp__memory__delete_entities({ entityNames })` |
-| Delete observations | `mcp__memory__delete_observations([...])`       |
-| Delete relation     | `mcp__memory__delete_relations([...])`          |
-
-For detailed examples and templates, see [references/memory-operations.md](references/memory-operations.md).
-
----
-
-## When to Save
+## When to Save to Memory
 
 ### Always Save
-1. Discovered patterns not in documentation
-2. Complex bug solutions
-3. Service boundary ownership
-4. Architectural decisions with rationale
-5. Anti-patterns encountered
+
+1. **Discovered Patterns**: New code patterns not in documentation
+2. **Bug Solutions**: Complex bugs with non-obvious solutions
+3. **Service Boundaries**: Which service owns what
+4. **Architectural Decisions**: Why a particular approach was chosen
+5. **Anti-Patterns**: Mistakes to avoid
 
 ### Save at Session End
-Create `SessionSummary` entity with: Task, Completed, Remaining, Key Files, Discoveries, Next Steps.
+
+```javascript
+// Session summary template
+mcp__memory__create_entities([
+    {
+        name: `Session_${taskName}_${date}`,
+        entityType: 'SessionSummary',
+        observations: [
+            `Task: ${taskDescription}`,
+            `Completed: ${completedItems.join(', ')}`,
+            `Remaining: ${remainingItems.join(', ')}`,
+            `Key Files: ${keyFiles.join(', ')}`,
+            `Discoveries: ${discoveries.join(', ')}`,
+            `Next Steps: ${nextSteps.join(', ')}`
+        ]
+    }
+]);
+```
 
 ---
 
-## Session Workflow
+## Memory Retrieval Patterns
 
-### Session Start
-1. Search for related context: `search_nodes({ query: 'task keywords' })`
-2. Load relevant entities: `open_nodes({ names: [...] })`
-3. Check incomplete sessions: `search_nodes({ query: 'SessionSummary Remaining' })`
+### Session Start Protocol
 
-### During Work
-- Save discoveries as `Pattern` entities
-- Save architectural choices as `Decision` entities
-- Save bugs as `BugFix` entities
+```javascript
+// 1. Search for related context
+const results = mcp__memory__search_nodes({
+    query: 'current feature or task keywords'
+});
 
-### Session End
-- Create `SessionSummary` with progress snapshot
-- Update existing entities with new observations
+// 2. Load relevant entities
+mcp__memory__open_nodes({
+    names: results.entities.map(e => e.name)
+});
+
+// 3. Check for incomplete sessions
+mcp__memory__search_nodes({ query: 'SessionSummary Remaining' });
+```
+
+### Before Implementation
+
+```javascript
+// Check for existing patterns
+mcp__memory__search_nodes({ query: 'CQRS command pattern' });
+
+// Check for anti-patterns
+mcp__memory__search_nodes({ query: 'AntiPattern command' });
+
+// Check for related decisions
+mcp__memory__search_nodes({ query: 'Decision validation' });
+```
+
+### After Bug Fix
+
+```javascript
+// Save the fix
+mcp__memory__create_entities([
+    {
+        name: `BugFix_${bugName}`,
+        entityType: 'BugFix',
+        observations: [
+            `Symptom: ${symptomDescription}`,
+            `Root Cause: ${rootCause}`,
+            `Solution: ${solution}`,
+            `Files: ${affectedFiles.join(', ')}`,
+            `Prevention: ${preventionTip}`
+        ]
+    }
+]);
+```
+
+---
+
+## Knowledge Graph Structure
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     EasyPlatform Knowledge                    │
+├─────────────────────────────────────────────────────────────┤
+│  Services                                                   │
+│  ├── TextSnippetService ──depends_on──> AccountsService          │
+│  ├── TalentsService ──depends_on──> AccountsService         │
+│  └── SurveysService ──depends_on──> AccountsService         │
+│                                                             │
+│  Patterns                                                   │
+│  ├── CQRSCommandPattern                                     │
+│  ├── CQRSQueryPattern                                       │
+│  ├── EntityEventPattern                                     │
+│  └── ValidationPattern                                      │
+│                                                             │
+│  Entities                                                   │
+│  ├── Employee ──syncs_from──> User                          │
+│  ├── Company ──syncs_from──> Organization                   │
+│  └── LeaveRequest ──owned_by──> TextSnippetService               │
+│                                                             │
+│  Sessions                                                   │
+│  ├── Session_LeaveRequest_2025-01-15                        │
+│  └── Session_EmployeeImport_2025-01-14                      │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 
 ## Importance Scoring
+
+When saving observations, prioritize:
 
 | Score | Criteria                                    |
 | ----- | ------------------------------------------- |
@@ -89,16 +240,50 @@ Create `SessionSummary` entity with: Task, Completed, Remaining, Key Files, Disc
 
 ---
 
-## Maintenance
+## Memory Maintenance
 
-- **Consolidation**: Merge fragmented observations into comprehensive ones
-- **Cleanup**: Delete session summaries older than 30 days
-- **Pruning**: Remove outdated patterns no longer relevant
+### Weekly Cleanup
 
-See [references/memory-operations.md](references/memory-operations.md) for operation details and templates.
+```javascript
+// Find old session summaries (> 30 days)
+mcp__memory__search_nodes({ query: 'SessionSummary' });
 
+// Delete outdated sessions
+mcp__memory__delete_entities({
+    entityNames: ['Session_OldTask_2024-12-01']
+});
+```
 
-## IMPORTANT Task Planning Notes
+### Consolidation
 
-- Always plan and break many small todo tasks
-- Always add a final review todo task to review the works done at the end to find any fix or enhancement needed
+When multiple observations cover same topic:
+
+```javascript
+// 1. Read existing entity
+mcp__memory__open_nodes({ names: ['PatternName'] });
+
+// 2. Delete fragmented observations
+mcp__memory__delete_observations([
+    {
+        entityName: 'PatternName',
+        observations: ['Fragment 1', 'Fragment 2']
+    }
+]);
+
+// 3. Add consolidated observation
+mcp__memory__add_observations([
+    {
+        entityName: 'PatternName',
+        contents: ['Consolidated comprehensive observation']
+    }
+]);
+```
+
+---
+
+## Quick Reference
+
+**Create**: `mcp__memory__create_entities` / `mcp__memory__create_relations`
+**Read**: `mcp__memory__read_graph` / `mcp__memory__open_nodes` / `mcp__memory__search_nodes`
+**Update**: `mcp__memory__add_observations`
+**Delete**: `mcp__memory__delete_entities` / `mcp__memory__delete_observations` / `mcp__memory__delete_relations`

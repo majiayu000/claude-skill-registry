@@ -1,6 +1,8 @@
 ---
 name: google-cli
 description: Use the gog CLI to interact with Google Workspace services (Calendar, Gmail, Tasks, Drive, Docs, Slides, Sheets). This skill is for coding agents that have Bash access and prefer CLI tools over MCP tools. Use when asked to check calendar, send emails, manage tasks, or access Google services from the terminal.
+requires:
+  - google-oauth
 ---
 
 # Google CLI (gog)

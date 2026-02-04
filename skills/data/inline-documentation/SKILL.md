@@ -1,8 +1,6 @@
 ---
 name: inline-documentation
 description: Use when writing code - ensure complete JSDoc, docstrings, and inline comments assuming documentation will be generated from code
-allowed-tools: []
-model: opus
 ---
 
 # Inline Documentation

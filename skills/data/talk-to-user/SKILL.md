@@ -11,15 +11,15 @@ Each agent has a distinct voice configured via Nix (`openclaw.tts` option in hom
 
 | Agent   | Voice                    | Accent   | Style              |
 |---------|--------------------------|----------|---------------------|
-| Cleber  | `en-GB-RyanNeural`       | British  | Calm, professional  |
-| Romário | `pt-BR-AntonioNeural`    | Brazilian| Direct, casual      |
+| Clever  | `en-GB-RyanNeural`       | British  | Calm, professional  |
+| Robson  | `pt-BR-AntonioNeural`    | Brazilian| Direct, casual      |
 
-**Config file**: `~/.nix/tts.json` (Nix-managed, read-only)
+**Config file**: `~/@workspacePath@/tts.json` (Nix-managed, read-only)
 ```json
-{"engine":"edge-tts","voice":"en-GB-RyanNeural","voiceAlt":"pt-BR-AntonioNeural"}
+{"engine":"@ttsEngine@","voice":"@ttsVoice@"}
 ```
 
-Read your voice config: `cat ~/clawd/.nix/tts.json | jq -r .voice`
+Read your voice config: `cat ~/@workspacePath@/tts.json | jq -r .voice`
 Default TTS engine: `edge-tts` (Microsoft Edge, free, no API key).
 
 ## When to Speak

@@ -1,7 +1,7 @@
 {
   "name": "quality-standards",
-  "repo": "bejranonda/LLM-Autonomous-Agent-Plugin-for-Claude",
-  "path": "skills/quality-standards/SKILL.md",
-  "source": "github.com/bejranonda/LLM-Autonomous-Agent-Plugin-for-Claude",
-  "downloaded_at": "2026-02-02T04:42:28.372827Z"
+  "repo": "VilnaCRM-Org/user-service",
+  "path": ".claude/skills/quality-standards/SKILL.md",
+  "source": "github.com/VilnaCRM-Org/user-service",
+  "downloaded_at": "2026-02-04T04:40:23.953447Z"
 }

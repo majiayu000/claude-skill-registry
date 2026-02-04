@@ -1,88 +1,37 @@
----
-name: vue
-description: Use when editing .vue files, creating Vue 3 components, writing composables, or testing Vue code - provides Composition API patterns, props/emits best practices, VueUse integration, and reactive destructuring guidance
-license: MIT
----
+## Vuex 기술 요소
+> [참고자료](https://joshua1988.github.io/vue-camp/vuex/state.html)
 
-# Vue 3 Development
 
-Reference for Vue 3 Composition API patterns, component architecture, and testing practices.
 
-**Current stable:** Vue 3.5+ with enhanced reactivity performance (-56% memory, 10x faster array tracking), new SSR features, and improved developer experience.
+|기술|설명|
+|---|---|
+|`state`|여러 컴포넌트에 공유되는 데이터 `data`|
+|`getters`|연산된 state 값을 접근하는 속성 `computed`|
+|`mutations`|state 값을 변경하는 이벤트 로직/메서드 `methods`|
+|`actions`|**비동기 처리 로직** 을 선언하는 메서드 `async methods`|
 
-## Overview
 
-Progressive reference system for Vue 3 projects. Load only files relevant to current task to minimize context usage (~250 tokens base, 500-1500 per sub-file).
+### 1. state
+- 전역적으로 사용하게 끔하는 데이터
 
-## When to Use
+### 2. getter
+- 기능을 좀더 함수화해서 기능별로 호출 가능하게끔 한거
 
-**Use this skill when:**
+### 3. mutation
+- state 값을 변경하는 **유일한 방법** 
+- `commit()` 으로 동작!
 
-- Writing `.vue` components
-- Creating composables (`use*` functions)
-- Building client-side utilities
-- Testing Vue components/composables
+#### 3-1. 😛 왜 state 직접 변경하지 않을까?
+- 여러 개의 컴포넌트에서 state 값 변경 시 추적 어려움 ㅠ,ㅠ
+- 특정 시점에 어떤 컴포넌트가 state 접근하여 변경한 건지 확인 어려움
+- 뷰의 반응성 거스르지 않게 명시적으로 상태 변화 수행 >> **반응성, 디버깅, 테스팅 혜택**
 
-**Use `nuxt` skill instead for:**
+### 4. actions 
+- 뮤테이션 중 비동기 처리 로직들을 정의하는 속성
+  - 동기 처리 >> 뮤테이션
+  - 비동기 처리 >> 액션
 
-- Server routes, API endpoints
-- File-based routing, middleware
-- Nuxt-specific patterns
-
-**For styled UI components:** use `nuxt-ui` skill
-**For headless accessible components:** use `reka-ui` skill
-**For VueUse composables:** use `vueuse` skill
-
-## Quick Reference
-
-| Working on...            | Load file                    |
-| ------------------------ | ---------------------------- |
-| `.vue` in `components/`  | references/components.md     |
-| File in `composables/`   | references/composables.md    |
-| File in `utils/`         | references/utils-client.md   |
-| `.spec.ts` or `.test.ts` | references/testing.md        |
-| TypeScript patterns      | references/typescript.md     |
-| Vue Router typing        | references/router.md         |
-| Reactivity (ref, watch)  | references/reactivity.md     |
-| Custom directives        | references/directives.md     |
-| Provide/inject           | references/provide-inject.md |
-| Edge cases, vue-tsc      | references/gotchas.md        |
-
-## Loading Files
-
-**Consider loading these reference files based on your task:**
-
-- [ ] [references/components.md](references/components.md) - if working in `components/` or writing `.vue` files
-- [ ] [references/composables.md](references/composables.md) - if creating composables (`use*` functions)
-- [ ] [references/utils-client.md](references/utils-client.md) - if working in `utils/` or writing client utilities
-- [ ] [references/testing.md](references/testing.md) - if writing `.spec.ts` or `.test.ts` files
-- [ ] [references/typescript.md](references/typescript.md) - if working with Vue TypeScript patterns or generics
-- [ ] [references/router.md](references/router.md) - if working with Vue Router or route typing
-- [ ] [references/reactivity.md](references/reactivity.md) - if using ref, reactive, computed, watch, or watchEffect
-- [ ] [references/directives.md](references/directives.md) - if creating or using custom directives
-- [ ] [references/provide-inject.md](references/provide-inject.md) - if using provide/inject patterns
-- [ ] [references/gotchas.md](references/gotchas.md) - if debugging edge cases or hydration issues
-
-**DO NOT load all files at once.** Load only what's relevant to your current task.
-
-## Available Guidance
-
-**[references/components.md](references/components.md)** - Props with reactive destructuring, emits patterns, defineModel for v-model, slots shorthand
-
-**[references/composables.md](references/composables.md)** - Composition API structure, VueUse integration, lifecycle hooks, async patterns, reactivity gotchas
-
-**[references/utils-client.md](references/utils-client.md)** - Pure functions, formatters, validators, transformers, when NOT to use utils
-
-**[references/testing.md](references/testing.md)** - Vitest + @vue/test-utils, component testing, composable testing, router mocking
-
-**[references/typescript.md](references/typescript.md)** - InjectionKey for provide/inject, vue-tsc strict templates, tsconfig settings, generic components
-
-**[references/router.md](references/router.md)** - Route meta types, typed params with unplugin-vue-router, scroll behavior, navigation guards
-
-**[references/reactivity.md](references/reactivity.md)** - ref, reactive, computed, watch, watchEffect, reactivity fundamentals
-
-**[references/directives.md](references/directives.md)** - Custom directive hooks, v-focus, v-click-outside, v-tooltip patterns
-
-**[references/provide-inject.md](references/provide-inject.md)** - InjectionKey typing, app-level provide, readonly patterns
-
-**[references/gotchas.md](references/gotchas.md)** - Common gotchas, vue-tsc edge cases, hydration issues, race conditions (from vuejs-ai/skills)
+#### 4-1. 😛 왜 비동기 처리 로직은 actions에 선언해야 할까?
+- 언제 어느 컴포넌트에서 해당 state 호출하고 변경했는지 확인 어려우니까 ㅠ ,ㅠ
+- 여러 개의 컴포넌트에서 mutations로 시간 차를 두고 state를 변경하는 경우
+- ⭐state 값의 변화를 추적하기 어렵기에 mutations 속성에는 동기 처리 로직만 넣어야 함!!!!

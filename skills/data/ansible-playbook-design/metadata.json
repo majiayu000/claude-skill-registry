@@ -1,9 +1,7 @@
 {
   "name": "ansible-playbook-design",
-  "description": "This skill should be used when creating new Ansible playbooks, designing playbook structure, implementing state-based playbooks with present/absent patterns, organizing plays and tasks, or structuring",
   "repo": "basher83/lunar-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-playbook-design/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:29.898158Z"
 }

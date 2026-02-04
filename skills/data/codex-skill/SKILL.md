@@ -1,7 +1,7 @@
 ---
 name: codex-skill
-description: 'Leverage OpenAI Codex/GPT models for autonomous code implementation. Triggers: "codex", "use gpt", "gpt-5", "gpt-5.2", "let openai", "full-auto", "用codex", "让gpt实现".'
-allowed-tools: Read, Write, Glob, Grep, Task, Bash(cat:*), Bash(ls:*), Bash(tree:*), Bash(codex:*), Bash(codex *), Bash(which:*), Bash(npm:*), Bash(brew:*)
+description: Use when user asks to leverage codex, gpt-5, or gpt-5.1 to implement something (usually implement a plan or feature designed by Claude). Provides non-interactive automation mode for hands-off task execution without approval prompts.
+allowed-tools: Read, Write, Glob, Grep, Task, Bash(cat:*), Bash(ls:*), Bash(tree:*), Bash(codex:*)
 ---
 
 # Codex
@@ -72,12 +72,12 @@ Codex uses sandbox policies to control what operations are permitted:
 
 ### Model Selection
 
-Specify which model to use with `-m` or `--model` when asked from user (use default model without -m/--model when not):
+Specify which model to use with `-m` or `--model` (possible values: gpt-5, gpt-5.1, gpt-5.1-codex, gpt-5.1-codex-max, etc):
 
 ```bash
-codex exec -m gpt-5.2 "refactor the payment processing module"
-codex exec -m gpt-5.2-codex "implement the user authentication feature"
-codex exec -m gpt-5.2-codex-max "analyze the codebase architecture"
+codex exec -m gpt-5.1 "refactor the payment processing module"
+codex exec -m gpt-5.1-codex "implement the user authentication feature"
+codex exec -m gpt-5.1-codex-max "analyze the codebase architecture"
 ```
 
 ### Sandbox Modes

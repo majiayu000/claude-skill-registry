@@ -1,222 +1,194 @@
 ---
-description: Start task or begin project with lock acquisition and branch setup
-triggers:
-  - start task
-  - begin task
-  - start project
-  - begin project
-  - new task
+name: start-task
+description: Start work on a task. Use when user says "začni práci na task-XX", "chci pracovat na task-XX", "start task XX", or runs /start-task.
+allowed-tools: Bash, Read, Glob, Grep, AskUserQuestion, WebSearch, WebFetch, Task
 ---
 
-# Start Task Skill
+# Start Task
 
-Use this skill when beginning any assigned task that involves modifying code.
+Validate dependencies, perform thorough research & analysis, present implementation proposal with supporting arguments, and get user approval before starting work.
 
-## 🚨 Read Critical Guidelines First
+## Usage
 
-**Before starting, read:** `claude/developer/guides/CRITICAL-BEFORE-CODE.md`
-
-This checklist covers:
-- Lock file verification and acquisition
-- Branch creation best practices
-- Agent usage requirements (never use direct commands)
-- Using inav-architecture before searching
-
-**Read it now using the Read tool, then proceed with the steps below.**
-
----
-
-## Pre-Work Checklist
-
-Before writing any code, complete ALL of these steps in order:
-
-### 1. Identify the Repository
-
-Determine which repo(s) your task requires:
-- `inav/` - Firmware (C code)
-- `inav-configurator/` - Configurator (JavaScript/Electron)
-
-### 2. Check for Existing Lock
-
-```bash
-# For firmware work
-cat claude/locks/inav.lock 2>/dev/null && echo "LOCKED - STOP" || echo "Available"
-
-# For configurator work
-cat claude/locks/inav-configurator.lock 2>/dev/null && echo "LOCKED - STOP" || echo "Available"
+```
+/start-task 02                # Task 02 - stays on main (default)
+/start-task 02 --branch       # Task 02 - creates feature branch
+/start-task task-02           # Explicit task-02
 ```
 
-**If locked:** STOP. Report to manager that the repo is locked. Do not proceed.
+## Current State
 
-### 3. Verify Clean Working Directory
+Current branch:
+!git branch --show-current
 
+Uncommitted changes:
+!git status --porcelain
+
+Is worktree:
+!test -f "$(git rev-parse --show-toplevel)/.git" && echo "YES - WORKTREE" || echo "NO - main repo"
+
+## Process
+
+### Step 1: Parse Task Identifier
+
+The script accepts multiple formats:
+- `02` or `2` - just task number (uses current or default phase)
+- `task-02` - explicit task ID
+- `--branch` flag - create feature branch instead of staying on main
+
+### Step 2: Validate Dependencies
+
+Before starting, check:
+1. Task file exists in `specification/phase-XX-*/tasks/`
+2. Task is not already in_progress or completed
+3. All dependencies are completed (status: ✅)
+
+If blocked, show which tasks need to be completed first.
+
+### Step 3: Detect Mode & Handle Branch
+
+**Mode detection:**
 ```bash
-# For firmware
-cd inav && git status --porcelain
-
-# For configurator
-cd inav-configurator && git status --porcelain
+IS_WORKTREE=false
+if [[ -f "$(git rev-parse --show-toplevel)/.git" ]]; then
+  IS_WORKTREE=true
+fi
 ```
 
-**If output is not empty:** STOP. There are uncommitted changes. Either:
-- Commit them if they belong to a previous task
-- Stash them: `git stash`
-- Or report to manager for guidance
+**Branch handling by mode:**
 
-### 4. Check Out the Correct Branch
+| Mode | Action |
+|------|--------|
+| MAIN (default) | Stay on main, no branch created |
+| `--branch` flag | Create `phase-XX/task-YY-desc` branch from main |
+| WORKTREE | Branch already exists, just update status |
 
-Check if a branch is specified in the task assignment.
+### Step 4: Update Task Status
 
-**If branch exists:**
-```bash
-git checkout <branch-name>
-git pull origin <branch-name> 2>/dev/null || true  # Pull if remote exists
+Update the task file:
+- Changes `| Status | ⚪ pending |` to `| Status | 🔵 in_progress |`
+
+### Step 5: Research & Analysis (CRITICAL)
+
+**This step is MANDATORY before any implementation begins.**
+
+Perform thorough research based on task scope:
+
+1. **Codebase Analysis**
+   - Use `Glob` and `Grep` to explore existing patterns in the codebase
+   - Check how similar features are implemented
+   - Identify relevant existing code, interfaces, base classes
+
+2. **Web Research**
+   - Use `WebSearch` to find:
+     - Official documentation for libraries/frameworks mentioned in scope
+     - Best practices for the specific technology/pattern
+     - Common pitfalls and how to avoid them
+     - Current recommended approaches (2025/2026)
+   - Use `WebFetch` to read specific documentation pages
+
+3. **Related Specs Review**
+   - Read all files listed in "Related Specs" section of the task
+   - Understand architectural constraints and requirements
+
+### Step 6: Present Implementation Proposal
+
+Create a structured proposal with:
+
+```markdown
+## Implementation Proposal for [Task Name]
+
+### Approach
+[Describe the chosen approach in 2-3 sentences]
+
+### Key Decisions
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| [Decision 1] | [Choice] | [Why - with source reference] |
+| [Decision 2] | [Choice] | [Why - with source reference] |
+
+### Implementation Steps
+1. [Step 1 - specific and actionable]
+2. [Step 2 - specific and actionable]
+...
+
+### Supporting Evidence
+- 📚 [Documentation link or codebase reference]
+- ✅ Best practice: [description with source]
+- ⚠️ Avoided pitfall: [what we're avoiding and why]
+
+### Alternatives Considered
+| Alternative | Why not chosen |
+|-------------|----------------|
+| [Alt 1] | [Reason] |
+
+### Questions/Clarifications (if any)
+- [Question needing user input]
 ```
 
-**If branch doesn't exist - CREATE FROM CORRECT BASE:**
+### Step 7: Get User Approval
 
-⚠️ **CRITICAL:** You MUST specify the base branch when creating a new branch.
+**STOP and ask for user confirmation before implementing:**
 
-**See `.claude/skills/git-workflow/SKILL.md` for complete branching instructions.**
+Use `AskUserQuestion` with options:
+- "Proceed with this approach" (recommended)
+- "Modify the approach"
+- "Need more research on specific area"
+- Other (for custom input)
 
-**Quick reference:**
+**Do NOT start implementation without explicit user approval.**
 
-```bash
-# For INAV/inav-configurator (most common - maintains backward compatibility)
-git checkout -b <new-branch-name> upstream/maintenance-9.x
+### Step 8: Show Task Scope
 
-# For PrivacyLRS
-git checkout -b <new-branch-name> secure_01
+After approval, display the task's scope section and begin implementation.
 
-# For INAV breaking changes (MSP protocol, settings structure, etc.)
-git checkout -b <new-branch-name> upstream/maintenance-10.x
+## Arguments
+
+- `$ARGUMENTS` - Task identifier + optional flags
+  - `02` - task number
+  - `--branch` - create feature branch (otherwise stays on main)
+
+## Output
+
+On success (MAIN mode):
+```
+Started task task-02: Shared Kernel
+Mode: MAIN (commits go directly to main)
+Task file: specification/phase-01-foundation/tasks/task-02-shared-kernel.md
+
+Task scope:
+- [ ] Implement Entity base class
+...
 ```
 
-**❌ NEVER use `git checkout -b <branch-name>` without specifying base branch** - this creates the branch from your current HEAD, which may include unrelated changes.
+On success (BRANCH mode):
+```
+Started task task-02: Shared Kernel
+Mode: FEATURE_BRANCH
+Branch: phase-01/task-02-shared-kernel
+Task file: specification/phase-01-foundation/tasks/task-02-shared-kernel.md
 
-**Branch naming conventions:**
-- **PrivacyLRS:** No slashes (e.g., `fix-counter-sync`, `encryption-tests`)
-- **INAV:** Kebab-case (e.g., `fix-telemetry-bug`, `feature-battery-limit`)
-
-### 5. Acquire the Lock
-
-```bash
-# For firmware
-cat > claude/locks/inav.lock << EOF
-LOCKED_BY: Developer
-TASK: <task-name-from-assignment>
-LOCKED_AT: $(date '+%Y-%m-%d %H:%M')
-BRANCH: <branch-name>
-EOF
-
-# For configurator
-cat > claude/locks/inav-configurator.lock << EOF
-LOCKED_BY: Developer
-TASK: <task-name-from-assignment>
-LOCKED_AT: $(date '+%Y-%m-%d %H:%M')
-BRANCH: <branch-name>
-EOF
+Task scope:
+- [ ] Implement Entity base class
+...
 ```
 
-### 6. Create Workspace Directory
-
-Create a workspace directory for task-related files:
-
-```bash
-mkdir -p claude/developer/workspace/<task-name>
+On error (blocked):
+```
+Error: Task task-03 is blocked by: task-02
+Complete the blocking tasks first or use /task-status to see the full picture.
 ```
 
-This is your scratch space for notes, test scripts, and data. See `claude/developer/INDEX.md` for what goes here vs. in `claude/projects/`.
+## Safety Rules
 
-### 7. Confirm Ready
+1. NEVER start a task with incomplete dependencies
+2. ALWAYS show uncommitted changes warning if present
+3. NEVER force-checkout if there are uncommitted changes
+4. ALWAYS preserve existing branch if it exists
 
-Verify:
-```bash
-# Show lock contents
-cat claude/locks/*.lock 2>/dev/null
+## Integration
 
-# Show current branch
-git branch --show-current
-
-# Confirm clean
-git status --porcelain
-```
-
-## Now Begin Work
-
-Only after completing ALL steps above should you begin implementing the task.
-
-## Example: Starting a Configurator Task
-
-```bash
-# 1. Check lock
-cat claude/locks/inav-configurator.lock 2>/dev/null || echo "Available"
-
-# 2. Check clean
-cd inav-configurator
-git status --porcelain
-
-# 3. Checkout branch (existing)
-git checkout transpiler_clean_copy
-
-# 4. Acquire lock
-cat > claude/locks/inav-configurator.lock << EOF
-LOCKED_BY: Developer
-TASK: fix-decompiler-condition-numbers
-LOCKED_AT: $(date '+%Y-%m-%d %H:%M')
-BRANCH: transpiler_clean_copy
-EOF
-
-# 5. Create workspace
-mkdir -p claude/developer/workspace/fix-decompiler-condition-numbers
-
-# 6. Ready to work!
-```
-
-## When Task is Complete
-
-Remember to release the lock:
-```bash
-rm claude/locks/inav.lock
-# or
-rm claude/locks/inav-configurator.lock
-```
-
-Include in your completion report: "Released <repo>.lock"
-
----
-
-## For Managers: Creating a New Project
-
-When creating a new project to assign to a developer:
-
-### 1. Create Project Directory
-
-```bash
-mkdir -p claude/projects/active/<project-name>
-```
-
-### 2. Create Project Files
-
-- `summary.md` - Project overview, objectives, approach (use template from `claude/projects/README.md`)
-- `todo.md` - Task breakdown (use template from `claude/projects/README.md`)
-
-### 3. Add to INDEX.md
-
-Add concise entry (10-15 lines max):
-- Status, type, priority, dates
-- One-sentence summary
-- Directory: `active/<project-name>/`
-- Assignment email path
-
-### 4. Send Assignment Email
-
-Create in `claude/manager/email/sent/` and copy to `claude/developer/email/inbox/`
-
----
-
-## Related Skills
-
-- **finish-task** - Complete tasks and release locks
-- **git-workflow** - Create branches and manage git state
-- **create-pr** - Create pull request after completing task
+After starting a task:
+- Use `/commit` to commit changes with proper `[XX-YY] type:` format
+- Use `/finish-task` when done (behavior depends on mode)
+- Use `/task-status` to check progress

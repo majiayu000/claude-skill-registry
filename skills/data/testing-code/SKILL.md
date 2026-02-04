@@ -1,608 +1,305 @@
 ---
-name: "Testing Code"
-description: "Generates and improves tests following TDD principles. Activates when new features are implemented, test coverage is low, or user requests tests. Ensures comprehensive test coverage with unit, integration, and edge case tests."
-allowed-tools: ["Read", "Grep", "Glob", "Write", "Edit", "Bash"]
+name: Testing Code
+description: Write automated tests for features, validate functionality against acceptance criteria, and ensure code coverage. Use when writing test code, verifying functionality, or adding test coverage to existing code.
 ---
 
 # Testing Code
 
-You are activating test generation and improvement capabilities. Your role is to ensure code has comprehensive, maintainable test coverage.
+## Core Workflow
 
-## When to Activate
+Test writing follows a systematic approach: determine scope, understand patterns, map to requirements, write tests, verify coverage.
 
-This skill activates when:
+### 1. Determine Test Scope
 
-- New features or functions are implemented
-- User requests tests ("add tests", "test this")
-- Test coverage is low or missing
-- Bugs are found (need regression tests)
-- Refactoring code (need confidence tests pass)
-- Before creating pull requests
+**Read project documentation:**
+- `docs/user-stories/US-###-*.md` for acceptance criteria to test
+- `docs/feature-spec/F-##-*.md` for technical requirements
+- `docs/api-contracts.yaml` for API specifications
+- Existing test files to understand patterns
 
-## Testing Philosophy
+**Choose test types needed:**
+- **Unit tests:** Individual functions, pure logic, utilities
+- **Integration tests:** Multiple components working together, API endpoints
+- **Component tests:** UI components, user interactions
+- **E2E tests:** Complete user flows, critical paths
+- **Contract tests:** API request/response validation
+- **Performance tests:** Load, stress, benchmark testing
 
-### Why Test?
+### 2. Understand Existing Patterns
 
-- **Confidence**: Know code works as expected
-- **Regression Prevention**: Catch bugs from changes
-- **Documentation**: Tests show how code should be used
-- **Design Feedback**: Hard to test = bad design
-- **Refactoring Safety**: Change with confidence
+**Investigate current test approach:**
+- Test framework (Jest, Vitest, Pytest, etc.)
+- Mocking patterns and utilities
+- Test data fixtures and setup/teardown
+- Assertion styles
 
-### Test Pyramid
+Use `code-finder` agents if unfamiliar with test structure.
 
-```
-        /\
-       /  \    E2E Tests (Few)
-      /    \   - Test full workflows
-     /------\
-    /        \ Integration Tests (Some)
-   /          \- Test module interactions
-  /------------\
- /              \ Unit Tests (Many)
-/______________/ - Test individual functions
-```
+### 3. Map Tests to Requirements
 
-## Testing Process
+Convert 3-5 acceptance criteria to specific test cases across test types:
 
-### 1. Analyze Code
+**Example mapping:**
+```markdown
+## User Story: US-101 User Login
 
-Understand what to test:
+### Test Cases
+1. **Unit: Authentication service**
+   - validateCredentials() returns true for valid email/password
+   - validateCredentials() returns false for invalid password
+   - checkAccountStatus() detects locked accounts
 
-- What is the purpose?
-- What are the inputs and outputs?
-- What are the edge cases?
-- What are the error conditions?
-- What are the side effects?
+2. **Integration: Login endpoint**
+   - POST /api/login with valid creds returns 200 + token
+   - POST /api/login with invalid creds returns 401 + error
+   - POST /api/login with locked account returns 403
 
-### 2. Identify Test Cases
+3. **Component: Login form**
+   - Submitting form calls login API
+   - Error message displays on 401 response
+   - Success redirects to /dashboard
 
-#### Happy Path
-
-- Normal, expected usage
-- Valid inputs producing valid outputs
-
-#### Edge Cases
-
-- Boundary values (0, -1, max, empty)
-- Unusual but valid inputs
-- Minimum and maximum values
-
-#### Error Cases
-
-- Invalid inputs
-- Null/undefined/None
-- Wrong types
-- Violations of constraints
-
-#### Integration Points
-
-- External API calls
-- Database interactions
-- File system operations
-- Other modules/classes
-
-### 3. Write Tests
-
-Follow this structure:
-
-```python
-def test_function_name_condition_expected():
-    """
-    Test that function_name handles condition and returns expected result.
-    """
-    # Arrange: Set up test data and conditions
-    input_data = ...
-    expected_output = ...
-
-    # Act: Execute the code under test
-    result = function_name(input_data)
-
-    # Assert: Verify the result
-    assert result == expected_output
+4. **E2E: Complete login flow**
+   - User enters credentials → submits → sees dashboard
+   - User enters wrong password → sees error → retries successfully
 ```
 
-### 4. Check Coverage
+### 4. Write Tests
 
-Ensure comprehensive coverage:
-
-- All code paths executed
-- All branches tested
-- All error conditions tested
-- Edge cases covered
-
-## Test Patterns
-
-### Unit Tests
-
-Test individual functions in isolation.
-
-**Python Example**:
-
-```python
-import pytest
-from mymodule import calculate_total
-
-def test_calculate_total_with_valid_items():
-    """Calculate total for valid items."""
-    items = [
-        {"price": 10.00, "quantity": 2},
-        {"price": 5.00, "quantity": 3},
-    ]
-    assert calculate_total(items) == 35.00
-
-def test_calculate_total_with_empty_list():
-    """Calculate total returns 0 for empty list."""
-    assert calculate_total([]) == 0.00
-
-def test_calculate_total_with_zero_quantity():
-    """Calculate total handles zero quantity."""
-    items = [{"price": 10.00, "quantity": 0}]
-    assert calculate_total(items) == 0.00
-
-def test_calculate_total_raises_on_negative_price():
-    """Calculate total raises ValueError for negative price."""
-    items = [{"price": -10.00, "quantity": 1}]
-    with pytest.raises(ValueError, match="Price cannot be negative"):
-        calculate_total(items)
-```
-
-**JavaScript Example**:
-
+**Unit Test Structure:**
 ```javascript
-import { describe, it, expect } from "vitest";
-import { calculateTotal } from "./cart";
+describe('AuthService', () => {
+  describe('validateCredentials', () => {
+    it('returns true for valid email and password', async () => {
+      const result = await authService.validateCredentials(
+        'user@example.com',
+        'ValidPass123'
+      );
+      expect(result).toBe(true);
+    });
 
-describe("calculateTotal", () => {
-  it("calculates total for valid items", () => {
-    const items = [
-      { price: 10.0, quantity: 2 },
-      { price: 5.0, quantity: 3 },
-    ];
-    expect(calculateTotal(items)).toBe(35.0);
-  });
-
-  it("returns 0 for empty list", () => {
-    expect(calculateTotal([])).toBe(0);
-  });
-
-  it("handles zero quantity", () => {
-    const items = [{ price: 10.0, quantity: 0 }];
-    expect(calculateTotal(items)).toBe(0);
-  });
-
-  it("throws error for negative price", () => {
-    const items = [{ price: -10.0, quantity: 1 }];
-    expect(() => calculateTotal(items)).toThrow("Price cannot be negative");
+    it('returns false for invalid password', async () => {
+      const result = await authService.validateCredentials(
+        'user@example.com',
+        'WrongPassword'
+      );
+      expect(result).toBe(false);
+    });
   });
 });
 ```
 
-### Integration Tests
+**Integration Test Structure:**
+```javascript
+describe('POST /api/auth/login', () => {
+  beforeEach(async () => {
+    await resetTestDatabase();
+    await createTestUser({
+      email: 'test@example.com',
+      password: 'Test123!'
+    });
+  });
 
-Test multiple components working together.
+  it('returns 200 and token for valid credentials', async () => {
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({ email: 'test@example.com', password: 'Test123!' });
 
-**Example**:
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('token');
+    expect(response.body.token).toMatch(/^eyJ/); // JWT format
+  });
 
-```python
-def test_user_registration_flow():
-    """Test complete user registration workflow."""
-    # Arrange: Set up test database
-    db = setup_test_database()
-    api = UserAPI(db)
+  it('returns 401 for invalid password', async () => {
+    const response = await request(app)
+      .post('/api/auth/login')
+      .send({ email: 'test@example.com', password: 'WrongPassword' });
 
-    # Act: Register user
-    response = api.register({
-        "email": "test@example.com",
-        "password": "SecurePass123!",
-    })
-
-    # Assert: User created and email sent
-    assert response.status == 201
-    assert db.users.find_by_email("test@example.com") is not None
-    assert email_was_sent("test@example.com", "Welcome")
+    expect(response.status).toBe(401);
+    expect(response.body.error).toBe('Invalid credentials');
+  });
+});
 ```
 
-### Mocking & Stubbing
+**Component Test Structure:**
+```javascript
+describe('LoginForm', () => {
+  it('submits form with valid data', async () => {
+    const mockLogin = jest.fn().mockResolvedValue({ success: true });
+    render(<LoginForm onLogin={mockLogin} />);
 
-Isolate code from external dependencies.
+    await userEvent.type(screen.getByLabelText(/email/i), 'user@example.com');
+    await userEvent.type(screen.getByLabelText(/password/i), 'Password123');
+    await userEvent.click(screen.getByRole('button', { name: /log in/i }));
 
-**Python Example**:
+    expect(mockLogin).toHaveBeenCalledWith({
+      email: 'user@example.com',
+      password: 'Password123'
+    });
+  });
 
-```python
-from unittest.mock import Mock, patch
+  it('displays error message on API failure', async () => {
+    const mockLogin = jest.fn().mockRejectedValue(new Error('Invalid credentials'));
+    render(<LoginForm onLogin={mockLogin} />);
 
-def test_send_notification_calls_email_service():
-    """Test that send_notification calls email service correctly."""
-    # Arrange: Mock email service
-    mock_email = Mock()
+    await userEvent.type(screen.getByLabelText(/email/i), 'user@example.com');
+    await userEvent.type(screen.getByLabelText(/password/i), 'wrong');
+    await userEvent.click(screen.getByRole('button', { name: /log in/i }));
 
-    # Act: Send notification
-    with patch('mymodule.email_service', mock_email):
-        send_notification("user@example.com", "Hello")
-
-    # Assert: Email service called with correct args
-    mock_email.send.assert_called_once_with(
-        to="user@example.com",
-        subject="Notification",
-        body="Hello"
-    )
+    expect(await screen.findByText(/invalid credentials/i)).toBeInTheDocument();
+  });
+});
 ```
 
-### Parameterized Tests
+**E2E Test Structure:**
+```javascript
+test('user can log in successfully', async ({ page }) => {
+  await page.goto('/login');
 
-Test multiple inputs efficiently.
+  await page.fill('[name="email"]', 'test@example.com');
+  await page.fill('[name="password"]', 'Test123!');
+  await page.click('button:has-text("Log In")');
 
-**Python Example**:
-
-```python
-@pytest.mark.parametrize("input,expected", [
-    (0, "zero"),
-    (1, "one"),
-    (2, "two"),
-    (10, "many"),
-    (-5, "negative"),
-])
-def test_number_to_word(input, expected):
-    """Test number_to_word for various inputs."""
-    assert number_to_word(input) == expected
+  await page.waitForURL('/dashboard');
+  expect(page.url()).toContain('/dashboard');
+});
 ```
 
-### Property-Based Tests
+### 5. Edge Cases & Error Scenarios
 
-Generate test cases automatically.
+Include boundary conditions and error paths:
 
-**Python Example**:
+```javascript
+describe('Edge cases', () => {
+  it('handles empty email gracefully', async () => {
+    await expect(
+      authService.validateCredentials('', 'password')
+    ).rejects.toThrow('Email is required');
+  });
 
-```python
-from hypothesis import given
-from hypothesis.strategies import integers
+  it('handles extremely long password', async () => {
+    const longPassword = 'a'.repeat(10000);
+    await expect(
+      authService.validateCredentials('user@example.com', longPassword)
+    ).rejects.toThrow('Password too long');
+  });
 
-@given(integers())
-def test_double_is_reversible(x):
-    """Test that doubling and halving returns original value."""
-    assert half(double(x)) == x
+  it('handles network timeout', async () => {
+    jest.spyOn(global, 'fetch').mockImplementation(
+      () => new Promise((resolve) => setTimeout(resolve, 10000))
+    );
+
+    await expect(
+      authService.login('user@example.com', 'pass')
+    ).rejects.toThrow('Request timeout');
+  });
+});
 ```
 
-## Test Organization
+**Edge cases to always include:**
+- Empty/null inputs
+- Minimum/maximum values
+- Invalid formats
+- Network failures
+- API errors (4xx, 5xx)
+- Timeout conditions
+- Concurrent operations
 
-### Directory Structure
+### 6. Test Data & Fixtures
 
-```
-project/
-├── src/
-│   └── mymodule/
-│       ├── __init__.py
-│       ├── calculator.py
-│       └── user.py
-└── tests/
-    ├── __init__.py
-    ├── unit/
-    │   ├── test_calculator.py
-    │   └── test_user.py
-    ├── integration/
-    │   └── test_user_flow.py
-    └── conftest.py  # Shared fixtures
-```
+Create reusable test fixtures:
 
-### Naming Conventions
+```javascript
+// tests/fixtures/users.ts
+export const validUser = {
+  email: 'test@example.com',
+  password: 'Test123!',
+  name: 'Test User'
+};
 
-- Test files: `test_*.py` or `*_test.py`
-- Test functions: `test_<function>_<condition>_<expected>`
-- Test classes: `Test<ClassName>`
+export const invalidUsers = {
+  noEmail: { password: 'Test123!' },
+  noPassword: { email: 'test@example.com' },
+  invalidEmail: { email: 'not-an-email', password: 'Test123!' },
+  weakPassword: { email: 'test@example.com', password: '123' }
+};
 
-**Good Names**:
+// Use in tests
+import { validUser, invalidUsers } from './fixtures/users';
 
-- `test_calculate_total_with_empty_list_returns_zero`
-- `test_user_login_with_invalid_password_raises_error`
-- `test_api_returns_404_for_nonexistent_resource`
-
-**Bad Names**:
-
-- `test_calc` (too vague)
-- `test_1` (no meaning)
-- `test_it_works` (what works?)
-
-## Testing Checklist
-
-For each function/class, ensure tests for:
-
-### Functionality
-
-- [ ] Happy path (normal usage)
-- [ ] Return values correct
-- [ ] Side effects occur as expected
-
-### Edge Cases
-
-- [ ] Empty inputs ([], "", 0, None)
-- [ ] Boundary values (min, max, -1)
-- [ ] Large inputs
-- [ ] Special characters/values
-
-### Error Handling
-
-- [ ] Invalid inputs
-- [ ] Null/undefined/None
-- [ ] Wrong types
-- [ ] Constraint violations
-- [ ] External failures (API down, etc.)
-
-### Integration
-
-- [ ] Calls to other functions/modules
-- [ ] Database interactions
-- [ ] File operations
-- [ ] Network requests
-
-## Test Quality Standards
-
-### Good Tests Are:
-
-**Fast**:
-
-- Run in milliseconds
-- No unnecessary I/O
-- Use mocks for external dependencies
-
-**Independent**:
-
-- No shared state between tests
-- Can run in any order
-- Don't depend on other tests
-
-**Repeatable**:
-
-- Same result every time
-- No flaky tests
-- No dependency on external state
-
-**Self-Validating**:
-
-- Pass or fail clearly
-- No manual inspection
-- Descriptive failure messages
-
-**Timely**:
-
-- Written before or with code (TDD)
-- Not as an afterthought
-- Updated when code changes
-
-### Anti-Patterns to Avoid
-
-**Testing Implementation Details**:
-
-```python
-# Bad: Tests internal state
-def test_cache_uses_dict():
-    cache = Cache()
-    assert isinstance(cache._storage, dict)
-
-# Good: Tests behavior
-def test_cache_stores_and_retrieves_value():
-    cache = Cache()
-    cache.set("key", "value")
-    assert cache.get("key") == "value"
+it('validates user data', () => {
+  expect(validate(validUser)).toBe(true);
+  expect(validate(invalidUsers.noEmail)).toBe(false);
+});
 ```
 
-**Overly Complex Tests**:
+### 7. Parallel Test Implementation
 
-```python
-# Bad: Test is hard to understand
-def test_complex():
-    data = [process(x) for x in range(100) if x % 2]
-    result = calculate(data)
-    assert result == sum(data) / len(data)
+When tests are independent (different modules, different test types), spawn parallel agents:
 
-# Good: Clear and simple
-def test_calculate_returns_average():
-    data = [2, 4, 6]
-    assert calculate(data) == 4.0
-```
+**Pattern 1: Layer-based**
+- Agent 1: Unit tests for services/utilities
+- Agent 2: Integration tests for API endpoints
+- Agent 3: Component tests for UI
+- Agent 4: E2E tests for critical flows
 
-**Not Testing Edge Cases**:
+**Pattern 2: Feature-based**
+- Agent 1: All tests for Feature A
+- Agent 2: All tests for Feature B
+- Agent 3: All tests for Feature C
 
-```python
-# Incomplete: Only tests happy path
-def test_divide():
-    assert divide(10, 2) == 5
+**Pattern 3: Type-based**
+- Agent 1: All unit tests
+- Agent 2: All integration tests
+- Agent 3: All E2E tests
 
-# Complete: Tests edge cases too
-def test_divide_with_valid_numbers():
-    assert divide(10, 2) == 5
+### 8. Run & Verify Tests
 
-def test_divide_by_zero_raises_error():
-    with pytest.raises(ZeroDivisionError):
-        divide(10, 0)
-
-def test_divide_with_negative_numbers():
-    assert divide(-10, 2) == -5
-```
-
-## Coverage Targets
-
-### Minimum Coverage
-
-- **Critical paths**: 100%
-- **Business logic**: 95%+
-- **Utilities**: 90%+
-- **UI code**: 70%+
-
-### Focus Areas
-
-1. Business-critical features
-2. Complex algorithms
-3. Error handling
-4. Security-sensitive code
-5. Bug-prone areas
-
-### Don't Obsess Over 100%
-
-- Some code is hard to test (UI rendering, etc.)
-- Focus on meaningful coverage
-- Quality > quantity
-
-## Integration Points
-
-### Invokes
-
-- **Tester Agent**: Core testing logic from `.claude/agents/tester.md`
-- **Code Analysis**: To identify untested code
-- **Coverage Tools**: pytest-cov, coverage.py, jest --coverage
-
-### Escalates To
-
-- **Builder Agent**: To fix code that's hard to test
-- **Reviewer Agent**: To review test quality
-
-### References
-
-- **Testing Guides**: Language-specific best practices
-- **Test Patterns**: Common testing patterns
-- **Fixtures**: Shared test data and setup
-
-## Example Workflow
-
-````
-User: "I just implemented this authentication function. Can you add tests?"
-
-Testing Code Skill:
-
-Let me analyze the authentication function and create comprehensive tests.
-
-## Function Analysis
-
-The `authenticate(username, password)` function:
-- Returns JWT token on success
-- Raises `InvalidCredentialsError` on bad password
-- Raises `UserNotFoundError` if user doesn't exist
-- Hashes password before comparison
-- Logs failed attempts
-
-## Test Plan
-
-I'll create tests for:
-1. Successful authentication (happy path)
-2. Invalid password (error case)
-3. Non-existent user (error case)
-4. Empty username/password (edge case)
-5. SQL injection attempt (security)
-6. Logging of failed attempts (side effect)
-
-## Generated Tests
-
-```python
-import pytest
-from unittest.mock import Mock, patch
-from myapp.auth import authenticate, InvalidCredentialsError, UserNotFoundError
-
-class TestAuthenticate:
-    """Tests for authenticate function."""
-
-    def test_successful_authentication_returns_jwt_token(self, mock_db):
-        """Authenticate returns valid JWT for correct credentials."""
-        # Arrange
-        mock_db.get_user.return_value = User(
-            username="alice",
-            password_hash="$2b$12$..."
-        )
-
-        # Act
-        token = authenticate("alice", "correct_password")
-
-        # Assert
-        assert token is not None
-        assert jwt.decode(token)["username"] == "alice"
-
-    def test_invalid_password_raises_error(self, mock_db):
-        """Authenticate raises InvalidCredentialsError for wrong password."""
-        mock_db.get_user.return_value = User(
-            username="alice",
-            password_hash="$2b$12$..."
-        )
-
-        with pytest.raises(InvalidCredentialsError):
-            authenticate("alice", "wrong_password")
-
-    def test_nonexistent_user_raises_error(self, mock_db):
-        """Authenticate raises UserNotFoundError for unknown user."""
-        mock_db.get_user.return_value = None
-
-        with pytest.raises(UserNotFoundError):
-            authenticate("nobody", "password")
-
-    def test_empty_username_raises_error(self):
-        """Authenticate raises ValueError for empty username."""
-        with pytest.raises(ValueError, match="Username cannot be empty"):
-            authenticate("", "password")
-
-    def test_logs_failed_authentication_attempts(self, mock_db, mock_logger):
-        """Failed authentication attempts are logged."""
-        mock_db.get_user.return_value = User(username="alice", ...)
-
-        try:
-            authenticate("alice", "wrong_password")
-        except InvalidCredentialsError:
-            pass
-
-        mock_logger.warning.assert_called_with(
-            "Failed login attempt for user: alice"
-        )
-
-@pytest.fixture
-def mock_db():
-    """Mock database for tests."""
-    return Mock()
-
-@pytest.fixture
-def mock_logger():
-    """Mock logger for tests."""
-    with patch('myapp.auth.logger') as mock:
-        yield mock
-````
-
-## Coverage Report
-
-Running tests:
-
+**Execute test suite:**
 ```bash
-pytest tests/test_auth.py --cov=myapp.auth --cov-report=term-missing
+# Unit tests
+npm test -- --coverage
+
+# Integration tests
+npm run test:integration
+
+# E2E tests
+npm run test:e2e
+
+# All tests
+npm run test:all
 ```
 
-Current coverage: 95% (missing: edge case for special characters)
+**Verify coverage:**
+- Aim for >80% code coverage
+- 100% coverage of critical paths
+- All acceptance criteria have tests
+- All error scenarios tested
 
-## Suggestions
+## Quality Checklist
 
-Consider adding:
+**Coverage:**
+- [ ] All acceptance criteria from user stories tested
+- [ ] Happy path covered
+- [ ] Edge cases included
+- [ ] Error scenarios tested
+- [ ] Boundary conditions validated
 
-1. Test for rate limiting (if implemented)
-2. Test for account lockout after X failures
-3. Performance test for password hashing time
+**Structure:**
+- [ ] Tests follow existing patterns
+- [ ] Clear test descriptions
+- [ ] Proper setup/teardown
+- [ ] No flaky tests (consistent results)
+- [ ] Tests are isolated (no interdependencies)
 
-Ready to implement these tests?
+**Data:**
+- [ ] Test fixtures reusable
+- [ ] Database properly seeded/reset
+- [ ] Mocks used appropriately
+- [ ] No hardcoded test data in production
 
-```
-
-## Success Criteria
-
-Good test suite:
-- All critical paths covered
-- Edge cases tested
-- Tests are fast (<1s per file)
-- Tests are independent
-- Clear test names
-- Failures are descriptive
-- Easy to add new tests
-
-## Related Capabilities
-
-- **Agent**: Tester agent (this skill invokes it)
-- **Skill**: "Reviewing Code" for test quality review
-- **Skill**: "Debugging Issues" when tests fail
-- **Documentation**: Language-specific testing guides
-
----
-
-Remember: Tests are documentation that proves your code works. Write tests you'll thank yourself for later.
-```
+**Integration:**
+- [ ] Tests run in CI/CD
+- [ ] Coverage thresholds enforced
+- [ ] Fast feedback (quick tests)
+- [ ] Clear failure messages

@@ -1,7 +1,7 @@
 {
   "name": "create-ticket",
-  "repo": "qmu/workaholic",
-  "path": "plugins/core/skills/create-ticket/SKILL.md",
-  "source": "github.com/qmu/workaholic",
-  "downloaded_at": "2026-01-31T03:21:58.379548Z"
+  "repo": "adamrdrew/ushabti",
+  "path": "skills/create-ticket/SKILL.md",
+  "source": "github.com/adamrdrew/ushabti",
+  "downloaded_at": "2026-02-04T02:35:21.480484Z"
 }

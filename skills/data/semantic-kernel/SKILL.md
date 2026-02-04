@@ -1,57 +1,71 @@
 ---
 name: semantic-kernel
-description: Build AI applications with Microsoft Semantic Kernel. Create plugins, planners, memory systems, and AI orchestration. Use for enterprise AI integration, .NET/Python AI development, and LLM application frameworks.
+description: Build AI applications with Microsoft Semantic Kernel. Create plugins, planners, and memory systems. Use for enterprise AI, copilot development, and Microsoft ecosystem integrations.
 ---
 
 # Semantic Kernel
 
-Expert guidance for Microsoft's AI orchestration framework.
+Expert guidance for building AI applications with Microsoft's SDK.
+
+## Triggers
+
+Use this skill when:
+- Building enterprise AI applications with Microsoft technologies
+- Creating copilot-style AI assistants
+- Working with Semantic Kernel plugins, planners, or memory
+- Integrating AI into Microsoft ecosystem (Azure, Office, etc.)
+- Building modular AI applications with plugin architecture
+- Keywords: semantic kernel, microsoft, plugin, planner, memory, copilot, azure ai
 
 ## Installation
 
-```bash
-# Python
-pip install semantic-kernel
-
-# .NET
-dotnet add package Microsoft.SemanticKernel
-```
-
-## Quick Start
-
 ### Python
 
-```python
-import asyncio
-from semantic_kernel import Kernel
-from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
-
-async def main():
-    # Create kernel
-    kernel = Kernel()
-
-    # Add AI service
-    kernel.add_service(OpenAIChatCompletion(
-        service_id="chat",
-        ai_model_id="gpt-4o",
-        api_key="your-api-key"
-    ))
-
-    # Simple completion
-    result = await kernel.invoke_prompt("What is the capital of France?")
-    print(result)
-
-asyncio.run(main())
+```bash
+pip install semantic-kernel
 ```
 
 ### .NET
 
+```bash
+dotnet add package Microsoft.SemanticKernel
+```
+
+## Quick Start (Python)
+
+```python
+import semantic_kernel as sk
+from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
+
+# Create kernel
+kernel = sk.Kernel()
+
+# Add AI service
+kernel.add_service(
+    OpenAIChatCompletion(
+        service_id="chat",
+        ai_model_id="gpt-4o",
+        api_key="your-key"
+    )
+)
+
+# Create and invoke prompt
+result = await kernel.invoke_prompt("What is the capital of France?")
+print(result)
+```
+
+## Quick Start (.NET)
+
 ```csharp
 using Microsoft.SemanticKernel;
 
-var kernel = Kernel.CreateBuilder()
-    .AddOpenAIChatCompletion("gpt-4o", "your-api-key")
-    .Build();
+var builder = Kernel.CreateBuilder();
+builder.AddOpenAIChatCompletion(
+    modelId: "gpt-4o",
+    apiKey: "your-key"
+);
+
+var kernel = builder.Build();
 
 var result = await kernel.InvokePromptAsync("What is the capital of France?");
 Console.WriteLine(result);
@@ -59,163 +73,105 @@ Console.WriteLine(result);
 
 ## Plugins
 
-### Native Functions (Python)
+### Semantic Functions (Prompts)
 
 ```python
+# Python
+from semantic_kernel.functions import KernelFunction
+
+summarize = KernelFunction.from_prompt(
+    prompt="""Summarize the following text in {{$style}} style:
+    {{$input}}
+
+    Summary:""",
+    function_name="summarize",
+    plugin_name="TextPlugin"
+)
+
+kernel.add_function(plugin_name="TextPlugin", function=summarize)
+
+result = await kernel.invoke(
+    summarize,
+    input="Long text here...",
+    style="professional"
+)
+```
+
+```csharp
+// C#
+var summarize = kernel.CreateFunctionFromPrompt(
+    @"Summarize the following text in {{$style}} style:
+    {{$input}}
+
+    Summary:"
+);
+
+var result = await kernel.InvokeAsync(summarize, new() {
+    ["input"] = "Long text here...",
+    ["style"] = "professional"
+});
+```
+
+### Native Functions
+
+```python
+# Python
 from semantic_kernel.functions import kernel_function
 
 class MathPlugin:
-    @kernel_function(name="add", description="Add two numbers")
-    def add(self, a: float, b: float) -> float:
+    @kernel_function(
+        name="add",
+        description="Add two numbers"
+    )
+    def add(self, a: int, b: int) -> int:
         return a + b
 
-    @kernel_function(name="multiply", description="Multiply two numbers")
-    def multiply(self, a: float, b: float) -> float:
+    @kernel_function(
+        name="multiply",
+        description="Multiply two numbers"
+    )
+    def multiply(self, a: int, b: int) -> int:
         return a * b
 
-    @kernel_function(name="calculate_compound_interest")
-    def compound_interest(
-        self,
-        principal: float,
-        rate: float,
-        time: float,
-        n: int = 12
-    ) -> str:
-        """Calculate compound interest.
-
-        Args:
-            principal: Initial amount
-            rate: Annual interest rate (as decimal)
-            time: Time in years
-            n: Compounding frequency per year
-        """
-        amount = principal * (1 + rate/n) ** (n * time)
-        return f"Final amount: ${amount:.2f}"
-
-# Register plugin
-kernel.add_plugin(MathPlugin(), plugin_name="math")
-
-# Invoke
-result = await kernel.invoke(
-    plugin_name="math",
-    function_name="add",
-    a=5,
-    b=3
-)
+kernel.add_plugin(MathPlugin(), plugin_name="Math")
+result = await kernel.invoke("Math", "add", a=5, b=3)
 ```
 
-### Native Functions (.NET)
-
 ```csharp
+// C#
 public class MathPlugin
 {
     [KernelFunction, Description("Add two numbers")]
-    public double Add(double a, double b) => a + b;
+    public int Add(int a, int b) => a + b;
 
     [KernelFunction, Description("Multiply two numbers")]
-    public double Multiply(double a, double b) => a * b;
+    public int Multiply(int a, int b) => a * b;
 }
 
-// Register
-kernel.ImportPluginFromType<MathPlugin>();
-
-// Invoke
-var result = await kernel.InvokeAsync("MathPlugin", "Add",
-    new() { ["a"] = 5, ["b"] = 3 });
+kernel.Plugins.AddFromType<MathPlugin>("Math");
+var result = await kernel.InvokeAsync("Math", "Add", new() { ["a"] = 5, ["b"] = 3 });
 ```
 
-### Prompt Functions
+### Plugin from Directory
 
 ```python
-# Inline prompt
-summarize = kernel.add_function(
-    plugin_name="text",
-    function_name="summarize",
-    prompt="""Summarize the following text in 3 sentences:
-
-{{$input}}
-
-Summary:""",
-    description="Summarize text"
-)
-
-result = await kernel.invoke(summarize, input="Long text here...")
-```
-
-```yaml
-# prompts/summarize/config.json
+# plugins/WriterPlugin/Summarize/config.json
 {
-  "schema": 1,
-  "name": "summarize",
-  "description": "Summarize text",
-  "input_variables": [
-    {
-      "name": "input",
-      "description": "Text to summarize",
-      "required": true
+    "schema": 1,
+    "description": "Summarize text",
+    "execution_settings": {
+        "default": {
+            "max_tokens": 500,
+            "temperature": 0.5
+        }
     }
-  ],
-  "execution_settings": {
-    "default": {
-      "max_tokens": 500,
-      "temperature": 0.3
-    }
-  }
 }
-```
 
-```
-# prompts/summarize/skprompt.txt
-Summarize the following text in 3 sentences:
+# plugins/WriterPlugin/Summarize/skprompt.txt
+Summarize: {{$input}}
 
-{{$input}}
-
-Summary:
-```
-
-```python
-# Load from directory
-kernel.add_plugin(parent_directory="./prompts", plugin_name="text")
-```
-
-## Chat Completion
-
-```python
-from semantic_kernel.contents import ChatHistory
-
-chat_history = ChatHistory()
-chat_history.add_system_message("You are a helpful assistant.")
-
-async def chat(user_input: str):
-    chat_history.add_user_message(user_input)
-
-    result = await kernel.invoke_prompt(
-        prompt="{{$chat_history}}{{$user_input}}",
-        chat_history=chat_history,
-        user_input=user_input
-    )
-
-    chat_history.add_assistant_message(str(result))
-    return result
-
-response = await chat("Hello, how are you?")
-```
-
-## Function Calling
-
-```python
-from semantic_kernel.connectors.ai.function_choice_behavior import FunctionChoiceBehavior
-
-# Enable auto function calling
-execution_settings = OpenAIChatPromptExecutionSettings(
-    function_choice_behavior=FunctionChoiceBehavior.Auto()
-)
-
-# Kernel will automatically call functions when needed
-result = await kernel.invoke_prompt(
-    "What is 25 multiplied by 4?",
-    settings=execution_settings
-)
+# Load plugin
+kernel.add_plugin(parent_directory="./plugins", plugin_name="WriterPlugin")
 ```
 
 ## Planners
@@ -223,23 +179,15 @@ result = await kernel.invoke_prompt(
 ### Function Calling Stepwise Planner
 
 ```python
-from semantic_kernel.planners.function_calling_stepwise_planner import (
-    FunctionCallingStepwisePlanner,
-    FunctionCallingStepwisePlannerOptions
-)
+from semantic_kernel.planners import FunctionCallingStepwisePlanner
 
-planner = FunctionCallingStepwisePlanner(
-    service_id="chat",
-    options=FunctionCallingStepwisePlannerOptions(
-        max_iterations=10,
-        max_tokens=4000
-    )
-)
+planner = FunctionCallingStepwisePlanner(service_id="chat")
 
 result = await planner.invoke(
     kernel,
-    "Send an email to John about the meeting tomorrow at 3pm"
+    question="What is 25 * 4 and then add 10?"
 )
+print(result.final_answer)
 ```
 
 ### Handlebars Planner
@@ -248,13 +196,12 @@ result = await planner.invoke(
 from semantic_kernel.planners.handlebars_planner import HandlebarsPlannerOptions, HandlebarsPlanner
 
 planner = HandlebarsPlanner(
-    service_id="chat",
     options=HandlebarsPlannerOptions(
         allow_loops=True
     )
 )
 
-plan = await planner.create_plan(kernel, "Research and summarize AI trends")
+plan = await planner.create_plan(kernel, goal="Research AI and write summary")
 result = await plan.invoke(kernel)
 ```
 
@@ -265,30 +212,35 @@ result = await plan.invoke(kernel)
 ```python
 from semantic_kernel.memory import SemanticTextMemory
 from semantic_kernel.connectors.memory.azure_cognitive_search import AzureCognitiveSearchMemoryStore
+from semantic_kernel.connectors.ai.open_ai import OpenAITextEmbedding
 
-# Create memory store
+# Setup embedding
+embedding = OpenAITextEmbedding(
+    ai_model_id="text-embedding-3-small",
+    api_key="your-key"
+)
+
+# Setup memory store
 memory_store = AzureCognitiveSearchMemoryStore(
-    endpoint="https://search.search.windows.net",
+    vector_size=1536,
+    search_endpoint="https://your-service.search.windows.net",
     admin_key="your-key"
 )
 
-memory = SemanticTextMemory(
-    storage=memory_store,
-    embeddings_generator=kernel.get_service("embeddings")
-)
+memory = SemanticTextMemory(storage=memory_store, embeddings_generator=embedding)
 
 # Save memory
 await memory.save_information(
     collection="documents",
     id="doc1",
-    text="Semantic Kernel is an AI orchestration framework",
-    description="SK overview"
+    text="Important information here",
+    description="Description of the information"
 )
 
 # Search memory
 results = await memory.search(
     collection="documents",
-    query="What is Semantic Kernel?",
+    query="What is important?",
     limit=5
 )
 ```
@@ -296,34 +248,42 @@ results = await memory.search(
 ### Vector Store
 
 ```python
-from semantic_kernel.connectors.memory.azure_ai_search import AzureAISearchCollection
-from semantic_kernel.data import VectorStoreRecordDefinition
+from semantic_kernel.connectors.memory.chroma import ChromaMemoryStore
 
-# Define record
-@vectorstoremodel
-class Document:
-    id: Annotated[str, VectorStoreRecordKeyField()]
-    content: Annotated[str, VectorStoreRecordDataField()]
-    embedding: Annotated[list[float], VectorStoreRecordVectorField(dimensions=1536)]
+memory_store = ChromaMemoryStore(persist_directory="./chroma_db")
+```
 
-# Create collection
-collection = AzureAISearchCollection(
-    record_type=Document,
-    collection_name="documents"
+## Chat Completion
+
+### Basic Chat
+
+```python
+from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
+from semantic_kernel.contents import ChatHistory
+
+chat_service = kernel.get_service(type=OpenAIChatCompletion)
+
+history = ChatHistory()
+history.add_system_message("You are a helpful assistant.")
+history.add_user_message("What is Python?")
+
+result = await chat_service.get_chat_message_contents(
+    chat_history=history,
+    settings=OpenAIChatPromptExecutionSettings(
+        max_tokens=500,
+        temperature=0.7
+    )
 )
+```
 
-# Upsert
-await collection.upsert(Document(
-    id="1",
-    content="Important information",
-    embedding=await get_embedding("Important information")
-))
+### Streaming
 
-# Search
-results = await collection.vectorized_search(
-    vector=query_embedding,
-    options=VectorSearchOptions(top=5)
-)
+```python
+async for chunk in chat_service.get_streaming_chat_message_contents(
+    chat_history=history,
+    settings=settings
+):
+    print(chunk[0].content, end="")
 ```
 
 ## Filters
@@ -331,47 +291,68 @@ results = await collection.vectorized_search(
 ```python
 from semantic_kernel.filters import FunctionInvocationContext
 
-@kernel.filter(FilterTypes.FUNCTION_INVOCATION)
-async def log_function_calls(
-    context: FunctionInvocationContext,
-    next: Callable
-):
+@kernel.filter(filter_type=FilterTypes.FUNCTION_INVOCATION)
+async def log_filter(context: FunctionInvocationContext, next):
     print(f"Calling: {context.function.name}")
     await next(context)
     print(f"Result: {context.result}")
-
-@kernel.filter(FilterTypes.PROMPT_RENDERING)
-async def modify_prompt(context: PromptRenderContext, next: Callable):
-    await next(context)
-    # Modify rendered prompt if needed
-    context.rendered_prompt = context.rendered_prompt.strip()
 ```
 
-## Azure Services
+## Azure OpenAI
 
 ```python
 from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
 
-kernel.add_service(AzureChatCompletion(
-    service_id="azure-chat",
-    deployment_name="gpt-4o",
-    endpoint="https://your-resource.openai.azure.com/",
+kernel.add_service(
+    AzureChatCompletion(
+        service_id="azure-chat",
+        deployment_name="gpt-4o",
+        endpoint="https://your-resource.openai.azure.com",
+        api_key="your-key"
+    )
+)
+```
+
+## Example: Research Assistant
+
+```python
+import semantic_kernel as sk
+from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
+from semantic_kernel.functions import kernel_function
+
+# Setup
+kernel = sk.Kernel()
+kernel.add_service(OpenAIChatCompletion(
+    service_id="chat",
+    ai_model_id="gpt-4o",
     api_key="your-key"
 ))
 
-# Or with Managed Identity
-from azure.identity import DefaultAzureCredential
+# Define plugins
+class ResearchPlugin:
+    @kernel_function(description="Search for information")
+    def search(self, query: str) -> str:
+        return f"Search results for: {query}"
 
-kernel.add_service(AzureChatCompletion(
-    service_id="azure-chat",
-    deployment_name="gpt-4o",
-    endpoint="https://your-resource.openai.azure.com/",
-    ad_token_provider=DefaultAzureCredential()
-))
+    @kernel_function(description="Summarize text")
+    async def summarize(self, text: str, kernel: sk.Kernel) -> str:
+        result = await kernel.invoke_prompt(
+            f"Summarize this: {text}"
+        )
+        return str(result)
+
+kernel.add_plugin(ResearchPlugin(), "Research")
+
+# Use with planner
+planner = FunctionCallingStepwisePlanner(service_id="chat")
+result = await planner.invoke(
+    kernel,
+    question="Research and summarize AI trends"
+)
 ```
 
 ## Resources
 
 - [Semantic Kernel Documentation](https://learn.microsoft.com/semantic-kernel/)
 - [Semantic Kernel GitHub](https://github.com/microsoft/semantic-kernel)
-- [SK Samples](https://github.com/microsoft/semantic-kernel/tree/main/samples)
+- [Samples](https://github.com/microsoft/semantic-kernel/tree/main/samples)

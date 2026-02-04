@@ -1,202 +1,127 @@
 ---
 name: gemini-cli
-description: "Google Gemini CLI orchestration for AI-assisted development. Capabilities: second opinion/cross-validation, real-time web search (Google Search), codebase architecture analysis, parallel code generation, code review from different perspective. Actions: query, search, analyze, generate, review with Gemini. Keywords: Gemini CLI, second opinion, cross-validation, Google Search, web research, current information, parallel AI, code review, architecture analysis, gemini prompt, AI comparison, real-time search, alternative perspective, code generation. Use when: needing second AI opinion, searching current web information, analyzing codebase architecture, generating code in parallel, getting alternative code review, researching current events/docs."
-allowed-tools:
-  - Bash
-  - Read
-  - Write
-  - Grep
-  - Glob
+description: Google Gemini CLI fundamentals for code analysis, review, and validation. Use when (1) executing gemini commands for code review/analysis, (2) configuring models (gemini-3-flash-preview (default)/gemini-3-pro-preview (complex only)), output formats (text/json/stream-json), or sandbox modes, (3) managing Gemini sessions with /chat save/resume, (4) integrating Gemini into automation scripts and CI/CD pipelines. Do NOT use for orchestration patterns (use gemini-claude-loop instead).
 ---
 
-# Gemini CLI Integration Skill
+# Gemini CLI Skill
 
-This skill enables Claude Code to effectively orchestrate Gemini CLI (v0.16.0+) with Gemini 3 Pro for code generation, review, analysis, and specialized tasks.
+## ⚠️ Environment Notice
 
-## When to Use This Skill
+| Environment | Command Format |
+|-------------|----------------|
+| Interactive terminal | `gemini` (enters interactive mode) |
+| **Claude Code / CI** | `gemini -p "prompt"` (headless mode) |
+| **Scripting with JSON** | `gemini -p "prompt" --output-format json` |
+| **Stdin input** | `echo "prompt" \| gemini` or `cat file \| gemini -p "analyze"` |
 
-### Ideal Use Cases
+**Non-TTY environments** (Claude Code, CI pipelines) require `-p` flag or stdin input.
 
-1. **Second Opinion / Cross-Validation**
-   - Code review after writing code (different AI perspective)
-   - Security audit with alternative analysis
-   - Finding bugs Claude might have missed
+## Quick Start
 
-2. **Google Search Grounding**
-   - Questions requiring current internet information
-   - Latest library versions, API changes, documentation updates
-   - Current events or recent releases
-
-3. **Codebase Architecture Analysis**
-   - Use Gemini's `codebase_investigator` tool
-   - Understanding unfamiliar codebases
-   - Mapping cross-file dependencies
-
-4. **Parallel Processing**
-   - Offload tasks while continuing other work
-   - Run multiple code generations simultaneously
-   - Background documentation generation
-
-5. **Specialized Generation**
-   - Test suite generation
-   - JSDoc/documentation generation
-   - Code translation between languages
-
-### When NOT to Use
-
-- Simple, quick tasks (overhead not worth it)
-- Tasks requiring immediate response (rate limits cause delays)
-- When context is already loaded and understood
-- Interactive refinement requiring conversation
-
-## Core Instructions
-
-### 1. Verify Installation
-
+### Headless Mode (Claude Code/CI)
 ```bash
-command -v gemini || which gemini
+# Basic review
+gemini -p "Review this code for bugs"
+
+# With JSON output for parsing
+gemini -p "Analyze this code" --output-format json
+
+# With specific model and directories
+gemini -m gemini-3-flash-preview --include-directories ./src,./lib -p "Code analysis"
+
+# Stdin input with prompt
+cat src/auth.py | gemini -p "Review for security issues"
 ```
 
-### 2. Basic Command Pattern
-
+### JSON Output Parsing
 ```bash
-gemini "[prompt]" --yolo -o text 2>&1
+result=$(gemini -p "Query" --output-format json)
+response=$(echo "$result" | jq -r '.response')
 ```
 
-Key flags:
-- `--yolo` or `-y`: Auto-approve all tool calls
-- `-o text`: Human-readable output
-- `-o json`: Structured output with stats
-- `-m gemini-2.5-flash`: Use faster model for simple tasks
+## Reference Documentation
 
-### 3. Critical Behavioral Notes
+- **[Commands Reference](references/commands.md)** - Slash commands, @ commands, shell mode
+- **[Options Reference](references/options.md)** - Models, output formats, directories, JSON schema
+- **[Examples](references/examples.md)** - Code review, CI/CD integration, automation scripts
 
-**YOLO Mode Behavior**: Auto-approves tool calls but does NOT prevent planning prompts. Gemini may still present plans and ask "Does this plan look good?" Use forceful language:
-- "Apply now"
-- "Start immediately"
-- "Do this without asking for confirmation"
+## Available Models
 
-**Rate Limits**: Free tier has 60 requests/min, 1000/day. CLI auto-retries with backoff. Expect messages like "quota will reset after Xs".
+| Model | Description | Best For |
+|-------|-------------|----------|
+| `gemini-3-flash-preview` | Fast and efficient (DEFAULT) | Standard reviews, batch operations, general use |
+| `gemini-3-pro-preview` | Flagship model | Complex architecture analysis, security audits only |
 
-### 4. Output Processing
+## Output Formats
 
-For JSON output (`-o json`), parse:
-```json
-{
-  "response": "actual content",
-  "stats": {
-    "models": { "tokens": {...} },
-    "tools": { "byName": {...} }
-  }
-}
-```
+| Format | Description | Use Case |
+|--------|-------------|----------|
+| (default) | Human-readable text | Terminal output |
+| `json` | Structured with stats | Script parsing, automation |
+| `stream-json` | JSONL events | Real-time monitoring |
 
-## Quick Reference Commands
+### JSON Response Structure
+> Full schema: See [Options Reference](references/options.md#json-response-schema)
 
-### Code Generation
+Key fields: `response` (string), `stats` (object), `error` (optional object)
+
+## Key Options
+
+| Option | Alias | Description |
+|--------|-------|-------------|
+| `--prompt` | `-p` | Run in headless mode with prompt |
+| `--model` | `-m` | Model selection |
+| `--output-format` | | Output format (`json`, `stream-json`) |
+| `--include-directories` | | Additional context directories (comma-separated) |
+| `--yolo` | `-y` | Auto-approve all actions |
+| `--sandbox` | `-s` | Sandbox mode (`restrictive`) |
+| `--approval-mode` | | Set approval mode (`auto_edit`) |
+
+## Common Patterns
+
+> **Full examples**: See [Examples](references/examples.md) for detailed patterns
+
+### Essential Patterns
 ```bash
-gemini "Create [description] with [features]. Output complete file content." --yolo -o text
+# Code review with output
+cat src/auth.py | gemini -p "Review for security issues" > review.txt
+
+# JSON output with jq parsing
+result=$(gemini -p "Query" --output-format json)
+echo "$result" | jq -r '.response'
+
+# Cross-directory analysis
+gemini --include-directories ./backend,./frontend -p "Review API integration"
 ```
 
-### Code Review
-```bash
-gemini "Review [file] for: 1) features, 2) bugs/security issues, 3) improvements" -o text
-```
+## Timeout Configuration
 
-### Bug Fixing
-```bash
-gemini "Fix these bugs in [file]: [list]. Apply fixes now." --yolo -o text
-```
+| Task Type | Recommended Timeout | Claude Code Tool |
+|-----------|---------------------|------------------|
+| Quick checks | 2 minutes | `timeout: 120000` |
+| Standard review | 5 minutes | `timeout: 300000` |
+| Deep analysis | **10 minutes** | `timeout: 600000` |
 
-### Test Generation
-```bash
-gemini "Generate [Jest/pytest] tests for [file]. Focus on [areas]." --yolo -o text
-```
-
-### Documentation
-```bash
-gemini "Generate JSDoc for all functions in [file]. Output as markdown." --yolo -o text
-```
-
-### Architecture Analysis
-```bash
-gemini "Use codebase_investigator to analyze this project" -o text
-```
-
-### Web Research
-```bash
-gemini "What are the latest [topic]? Use Google Search." -o text
-```
-
-### Faster Model (Simple Tasks)
-```bash
-gemini "[prompt]" -m gemini-2.5-flash -o text
-```
+**Recommendation**: Use `timeout: 600000` for complex analysis with `gemini-3-pro-preview`.
 
 ## Error Handling
 
-### Rate Limit Exceeded
-- CLI auto-retries with backoff
-- Use `-m gemini-2.5-flash` for lower priority tasks
-- Run in background for long operations
+> **Detailed error handling patterns**: See [Examples](references/examples.md#error-handling)
 
-### Command Failures
-- Check JSON output for detailed error stats
-- Verify Gemini is authenticated: `gemini --version`
-- Check `~/.gemini/settings.json` for config issues
+| Error | Cause | Solution |
+|-------|-------|----------|
+| No output | Missing `-p` flag | Use `gemini -p "prompt"` |
+| Empty response | No stdin/prompt | Provide via `-p` or stdin |
+| Exit code `1` | General error | Check JSON `.error` field |
+| Context too large | Too many files | Use specific paths |
+| Permission denied | Sandbox restrictions | Use `--yolo` carefully |
 
-### Validation After Generation
-Always verify Gemini's output:
-- Check for security vulnerabilities (XSS, injection)
-- Test functionality matches requirements
-- Review code style consistency
-- Verify dependencies are appropriate
+## Best Practices
 
-## Integration Workflow
-
-### Standard Generate-Review-Fix Cycle
-
-```bash
-# 1. Generate
-gemini "Create [code]" --yolo -o text
-
-# 2. Review (Gemini reviews its own work)
-gemini "Review [file] for bugs and security issues" -o text
-
-# 3. Fix identified issues
-gemini "Fix [issues] in [file]. Apply now." --yolo -o text
-```
-
-### Background Execution
-
-For long tasks, run in background and monitor:
-```bash
-gemini "[long task]" --yolo -o text 2>&1 &
-# Monitor with BashOutput tool
-```
-
-## Gemini's Unique Capabilities
-
-These tools are available only through Gemini:
-
-1. **google_web_search** - Real-time internet search via Google
-2. **codebase_investigator** - Deep architectural analysis
-3. **save_memory** - Cross-session persistent memory
-
-## Configuration
-
-### Project Context (Optional)
-
-Create `.gemini/GEMINI.md` in project root for persistent context that Gemini will automatically read.
-
-### Session Management
-
-List sessions: `gemini --list-sessions`
-Resume session: `echo "follow-up" | gemini -r [index] -o text`
-
-## See Also
-
-- `reference.md` - Complete command and flag reference
-- `templates.md` - Prompt templates for common operations
-- `patterns.md` - Advanced integration patterns
-- `tools.md` - Gemini's built-in tools documentation
+1. **Use `-p` flag** in Claude Code and CI environments
+2. **Use `--output-format json`** for script parsing
+3. **Parse with `jq`** for reliable extraction
+4. **Check `.error`** in JSON response for error handling
+5. **Use `--include-directories`** for multi-directory context
+6. **Match model to task**: `gemini-3-flash-preview` for most tasks, `gemini-3-pro-preview` only for complex architecture/security
+7. **Set 10-minute timeout** for deep analysis (`timeout: 600000`)

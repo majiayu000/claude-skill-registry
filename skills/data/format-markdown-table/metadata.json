@@ -1,16 +1,7 @@
 {
   "name": "format-markdown-table",
-  "description": "Generate well-formatted markdown tables from data with proper alignment and spacing. Use for report statistics, comparison tables, or summary data presentation.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "data",
-  "tags": [
-    "format",
-    "markdown",
-    "table"
-  ],
-  "stars": 27,
-  "source": "SkillsMP Synced Skills",
-  "dir_name": "format-markdown-table",
-  "github_path": ".claude/skills/format-markdown-table",
-  "github_branch": "main"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/format-markdown-table/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:12.003520Z"
 }

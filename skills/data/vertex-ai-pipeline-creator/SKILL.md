@@ -1,18 +1,18 @@
 ---
-name: "vertex-ai-pipeline-creator"
+name: vertex-ai-pipeline-creator
 description: |
-  Create vertex ai pipeline creator operations. Auto-activating skill for GCP Skills.
+  Vertex Ai Pipeline Creator - Auto-activating skill for GCP Skills.
   Triggers on: vertex ai pipeline creator, vertex ai pipeline creator
-  Part of the GCP Skills skill category. Use when working with vertex ai pipeline creator functionality. Trigger with phrases like "vertex ai pipeline creator", "vertex creator", "vertex".
-allowed-tools: "Read, Write, Edit, Bash(gcloud:*)"
+  Part of the GCP Skills skill category.
+allowed-tools: Read, Write, Edit, Bash(gcloud:*)
 version: 1.0.0
 license: MIT
-author: "Jeremy Longshore <jeremy@intentsolutions.io>"
+author: Jeremy Longshore <jeremy@intentsolutions.io>
 ---
 
 # Vertex Ai Pipeline Creator
 
-## Overview
+## Purpose
 
 This skill provides automated assistance for vertex ai pipeline creator tasks within the GCP Skills domain.
 
@@ -23,48 +23,18 @@ This skill activates automatically when you:
 - Ask about vertex ai pipeline creator patterns or best practices
 - Need help with google cloud platform skills covering compute, storage, bigquery, vertex ai, and gcp-specific services.
 
-## Instructions
+## Capabilities
 
-1. Provides step-by-step guidance for vertex ai pipeline creator
-2. Follows industry best practices and patterns
-3. Generates production-ready code and configurations
-4. Validates outputs against common standards
+- Provides step-by-step guidance for vertex ai pipeline creator
+- Follows industry best practices and patterns
+- Generates production-ready code and configurations
+- Validates outputs against common standards
 
-## Examples
+## Example Triggers
 
-**Example: Basic Usage**
-Request: "Help me with vertex ai pipeline creator"
-Result: Provides step-by-step guidance and generates appropriate configurations
-
-
-## Prerequisites
-
-- Relevant development environment configured
-- Access to necessary tools and services
-- Basic understanding of gcp skills concepts
-
-
-## Output
-
-- Generated configurations and code
-- Best practice recommendations
-- Validation results
-
-
-## Error Handling
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Configuration invalid | Missing required fields | Check documentation for required parameters |
-| Tool not found | Dependency not installed | Install required tools per prerequisites |
-| Permission denied | Insufficient access | Verify credentials and permissions |
-
-
-## Resources
-
-- Official documentation for related tools
-- Best practices guides
-- Community examples and tutorials
+- "Help me with vertex ai pipeline creator"
+- "Set up vertex ai pipeline creator"
+- "How do I implement vertex ai pipeline creator?"
 
 ## Related Skills
 

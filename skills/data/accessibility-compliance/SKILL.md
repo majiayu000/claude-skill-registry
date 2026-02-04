@@ -100,8 +100,8 @@ function AccessibleButton({
       className={cn(
         // Visible focus ring
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-        // Minimum touch target size (44x44px)
-        "min-h-[44px] min-w-[44px]",
+        // Minimum touch target size (44x44px) - Tailwind v4 syntax
+        "min-h-(--spacing-touch-md) min-w-(--spacing-touch-md)",
         variant === "primary" && "bg-primary text-primary-foreground",
         (disabled || isLoading) && "opacity-50 cursor-not-allowed",
       )}
@@ -169,7 +169,7 @@ function AccessibleDialog({ isOpen, onClose, title, children }: DialogProps) {
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50"
+        className="fixed inset-0 bg-overlay-dark"
         aria-hidden="true"
         onClick={onClose}
       />
@@ -211,7 +211,7 @@ function AccessibleForm() {
           id="form-errors"
           role="alert"
           aria-live="assertive"
-          className="bg-destructive/10 border border-destructive p-4 rounded-md mb-4"
+          className="bg-destructive-subtle border border-destructive p-4 rounded-md mb-4"
         >
           <h2 className="font-semibold text-destructive">
             Please fix the following errors:

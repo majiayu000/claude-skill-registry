@@ -1,7 +1,7 @@
 {
   "name": "create-database-migration",
-  "repo": "GregBaron/ghost-mysandbox",
+  "repo": "TryGhost/Ghost",
   "path": ".claude/skills/create-database-migration/SKILL.md",
-  "source": "github.com/GregBaron/ghost-mysandbox",
-  "downloaded_at": "2026-02-02T04:45:23.512375Z"
+  "source": "github.com/TryGhost/Ghost",
+  "downloaded_at": "2026-02-04T05:15:30.860839Z"
 }

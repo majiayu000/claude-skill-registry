@@ -1,7 +1,7 @@
 {
   "name": "agent-customization",
-  "repo": "microsoft/vscode-copilot-chat",
+  "repo": "Kicey/ungithubbed-copilot",
   "path": "assets/prompts/skills/agent-customization/SKILL.md",
-  "source": "github.com/microsoft/vscode-copilot-chat",
-  "downloaded_at": "2026-02-02T03:17:16.489773Z"
+  "source": "github.com/Kicey/ungithubbed-copilot",
+  "downloaded_at": "2026-02-04T04:07:57.313744Z"
 }

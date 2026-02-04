@@ -1,7 +1,7 @@
 {
   "name": "database-admin",
-  "repo": "rmyndharis/antigravity-skills",
-  "path": "skills/database-admin/SKILL.md",
-  "source": "github.com/rmyndharis/antigravity-skills",
-  "downloaded_at": "2026-02-02T01:46:35.722318Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/database-admin/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:47.210848Z"
 }

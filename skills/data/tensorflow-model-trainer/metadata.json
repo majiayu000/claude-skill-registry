@@ -1,7 +1,7 @@
 {
   "name": "tensorflow-model-trainer",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/skills/07-ml-training/tensorflow-model-trainer/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:26:59.320966Z"
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/07-ml-training/tensorflow-model-trainer/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-04T02:19:15.916644Z"
 }

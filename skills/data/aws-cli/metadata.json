@@ -1,12 +1,7 @@
 {
   "name": "aws-cli",
-  "description": "CLI-first AWS orchestration skill for Lambda, ECS/Fargate, and S3 workflows rooted in `.☁️` runbooks.",
-  "repo": "elasticdotventures/_b00t_",
-  "category": "productivity",
-  "tags": [
-    "aws",
-    "cli"
-  ],
-  "stars": 8,
-  "source": "SkillsMP Synced Skills"
+  "repo": "chaterm/terminal-skills",
+  "path": "cloud-cli/aws-cli/SKILL.md",
+  "source": "github.com/chaterm/terminal-skills",
+  "downloaded_at": "2026-02-04T02:24:48.207603Z"
 }

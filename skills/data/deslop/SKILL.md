@@ -1,4 +1,5 @@
 ---
+# VERSION: 2.43.0
 name: deslop
 description: Remove AI-generated code slop from a branch. Use when cleaning up AI-generated code, removing unnecessary comments, defensive checks, or type casts. Checks diff against main and fixes style inconsistencies.
 ---

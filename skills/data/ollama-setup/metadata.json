@@ -1,7 +1,7 @@
 {
   "name": "ollama-setup",
-  "repo": "HelixDevelopment/HelixAgent",
-  "path": "skills/plugins/ai-ml/ollama-local-ai/ollama-setup/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:44.061073Z"
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/ollama-setup/SKILL.md",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "downloaded_at": "2026-02-04T03:03:33.939340Z"
 }

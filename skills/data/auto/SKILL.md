@@ -1,80 +1,167 @@
 ---
-name: cfn-automatic-memory-persistence
-description: "Automatic, structured persistence of agent outputs to SQLite database. Use when tracking agent outputs across CFN Loop workflows, persisting confidence scores, or querying agent execution history."
-version: 1.0.0
-tags: [memory, persistence, sqlite, auto, agent-tracking]
+name: auto
+description: Autonomous task execution - works through all tasks without stopping
+allowed-tools: Bash, Read, Write, Edit, Grep, Glob, Task, TaskCreate, TaskUpdate, TaskList
+model: opus
+user-invocable: true
 ---
 
-# Automatic Memory Persistence Skill
+# Auto Mode
 
-## Overview
-This skill provides automatic, structured persistence of agent outputs to a SQLite database, ensuring consistent memory tracking across CFN Loop workflows.
+Fully autonomous development. Works through all tasks without stopping until complete.
 
-## Key Components
-- `persist-agent-output.sh`: Primary script for saving agent outputs
-- `query-agent-history.sh`: Query and retrieve past agent outputs
-- `test-memory-persistence.sh`: Validation test suite
+## Entry Flow
 
-## Memory Schema
-```json
-{
-  "agent/[agent-id]/output/[task-id]": {
-    "output": "Raw agent output text",
-    "confidence": 0.85,
-    "iteration": 1,
-    "timestamp": "2025-10-20T15:30:00Z",
-    "parsed_data": null
-  }
+```
+auto
+  ├─ Check prd.json exists?
+  │   ├─ No → Bootstrap from context
+  │   └─ Yes → Check pending tasks
+  │             ├─ None pending → All done!
+  │             └─ Has pending → Execute tasks
+  │
+  └─ Execute until done or interrupted
+```
+
+## CRITICAL: NEVER STOP
+
+**FORBIDDEN:**
+- NEVER use `AskUserQuestion` - make decisions yourself
+- NEVER ask "Should I continue?"
+- NEVER show summaries and wait
+- NEVER say "Let me know..."
+- NEVER output minimal responses (`.`, `—`, `Idle.`)
+
+**REQUIRED:**
+- Make autonomous decisions
+- Log decisions to `.claude/decisions.md`
+- Keep working until truly done
+
+## Bootstrap (No prd.json)
+
+When prd.json doesn't exist:
+
+1. Read CLAUDE.md, README.md, package.json for context
+2. Generate 5-10 starter tasks based on project
+3. Create prd.json with stories
+4. **Continue immediately** - don't stop for approval
+
+## Pre-flight (Quick)
+
+Before first task:
+```bash
+git status --short          # Warn if dirty, continue anyway
+npm run build 2>&1 | tail -5  # Fail if broken, fix first
+```
+
+Skip if takes >10 seconds.
+
+## Task Execution
+
+### Find Next Task
+
+```javascript
+// Find executable tasks (not done, not blocked)
+const executable = stories.filter(s =>
+  s.passes !== true &&
+  (s.blockedBy || []).every(dep =>
+    stories.find(d => d.id === dep)?.passes === true
+  )
+);
+```
+
+### Execute Each Task
+
+1. Read the task description
+2. Implement the solution
+3. `npm run typecheck` - Fix if fails
+4. `npm run build` - Fix if fails
+5. Verify (see below)
+6. Update prd.json: `passes: true`
+7. **IMMEDIATELY** start next task
+
+### Verification
+
+| Task Type | Verification |
+|-----------|--------------|
+| UX/UI | `agent-browser` visual check |
+| Feature | Build passes |
+| API | Endpoint returns expected data |
+| Bug fix | Reproduce → verify fixed |
+
+For UX tasks - browser check required:
+```bash
+agent-browser open http://localhost:3000/path
+agent-browser snapshot -i  # Verify expected element
+```
+
+## Parallel Execution (Optional)
+
+For independent tasks, launch multiple agents:
+```
+Task({ subagent_type: "general-purpose", prompt: "...", run_in_background: true })
+Task({ subagent_type: "general-purpose", prompt: "...", run_in_background: true })
+```
+
+## Smart Retry
+
+On failure:
+1. Log to `.claude/mistakes.md`
+2. Retry 1: Different approach
+3. Retry 2: Simplest implementation
+4. Still fails → `passes: false`, continue to next
+
+## Commit Cadence
+
+- Commit every 3 completed tasks
+- Or after major milestones
+- Use conventional commits: `feat|fix|refactor`
+
+## Auto-Checkpoint (Token Protection)
+
+**After every 3 completed tasks**, save checkpoint and recommend /compact:
+
+```
+if (completedThisSession % 3 === 0) {
+  Write checkpoint to .claude/checkpoint.md
+
+  Output:
+  "💾 Checkpoint saved. Run /compact to reclaim ~40% tokens.
+   Use /clear only at major transitions (~70% but wipes context)."
 }
 ```
 
-## Integration Points
-- Loop 3 output processing
-- Loop 2 output processing
-- Product Owner decision parsing
+**Be concise.** Long responses burn tokens. Short responses = more runway.
 
-## Usage Examples
+## Completion
 
-### Persist Agent Output
-```bash
-./persist-agent-output.sh \
-  "task_authentication_v1" \  # Task ID
-  "backend-dev" \             # Agent ID
-  "Implemented JWT auth" \    # Output
-  0.85 \                      # Confidence
-  1                           # Iteration
+When `stories.every(s => s.passes === true)`:
+
+```
+All [N] tasks complete.
+
+Summary:
+- [X] features implemented
+- [X] bugs fixed
+- [X] improvements made
+
+Run `status` to see full results.
 ```
 
-### Query Agent History
-```bash
-# Get last 5 outputs for a specific agent
-./query-agent-history.sh "backend-dev" "" 5
+## IDLE Detection
 
-# Get outputs for a specific task
-./query-agent-history.sh "backend-dev" "task_authentication_v1"
-```
+If no tasks to work on:
+1. Check: Are ALL stories `passes: true`?
+   - YES → Output completion summary
+   - NO → Find blocked tasks and resolve blockers
 
-## Security & Performance
-- ACL Level 1 (Read-only access)
-- Indexed by tags for fast retrieval
-- Minimal performance overhead
-- Escaped and normalized inputs
+## Quick Reference
 
-## Testing
-Run comprehensive tests:
-```bash
-./test-memory-persistence.sh
-```
-
-## Sprint 7 Insights
-- **Confidence**: 0.95
-- **Priority**: 9
-- Provides robust, zero-configuration memory tracking
-- Eliminates manual output saving
-- Supports multi-iteration workflows
-
-## Best Practices
-- Always use script for output persistence
-- Do not modify SQLite database directly
-- Use query script for retrieval
-- Add structured parsing for complex outputs
+| Situation | Action |
+|-----------|--------|
+| No prd.json | Bootstrap from context |
+| All done | Output completion summary |
+| Build broken | Fix first |
+| Task fails | Retry 2x, then skip |
+| UX task | Browser verify required |
+| Blocked task | Skip, work on unblocked |

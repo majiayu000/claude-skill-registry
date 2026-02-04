@@ -1,10 +1,6 @@
 ---
 name: project-board-enforcement
 description: MANDATORY for all work - the project board is THE source of truth. This skill provides verification functions and gates that other skills MUST call. No work proceeds without project board compliance.
-allowed-tools:
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Project Board Enforcement
@@ -16,19 +12,6 @@ The GitHub Project board is THE source of truth for all work state. Not labels. 
 **Core principle:** If it's not in the project board with correct fields, it doesn't exist.
 
 **This skill is called by other skills at gate points. It is not invoked directly.**
-
-## API Optimization Requirement
-
-**CRITICAL:** All read operations MUST use cached data from `github-api-cache`.
-
-The following environment variables MUST be set before using this skill:
-- `GH_CACHE_ITEMS` - Cached project items JSON
-- `GH_CACHE_FIELDS` - Cached project fields JSON
-- `GH_PROJECT_ID` - Project node ID
-- `GH_STATUS_FIELD_ID` - Status field ID
-- `GH_STATUS_*_ID` - Status option IDs
-
-If these are not set, invoke `session-start` first to initialize the cache.
 
 ## The Rule
 
@@ -43,6 +26,37 @@ This is not optional. This is not a suggestion. This is a hard gate.
 echo $GITHUB_PROJECT      # Full URL: https://github.com/users/USER/projects/N
 echo $GITHUB_PROJECT_NUM  # Just the number: N
 echo $GH_PROJECT_OWNER    # Owner: @me or org name
+
+# If GITHUB_PROJECT is set, derive missing values automatically:
+if [ -z "$GITHUB_PROJECT_NUM" ] && [ -n "$GITHUB_PROJECT" ]; then
+  NUM_CANDIDATE=$(echo "$GITHUB_PROJECT" | sed -E 's#.*/projects/([0-9]+).*#\1#')
+  if [ -n "$NUM_CANDIDATE" ] && [ "$NUM_CANDIDATE" != "$GITHUB_PROJECT" ]; then
+    export GITHUB_PROJECT_NUM="$NUM_CANDIDATE"
+    echo "Derived GITHUB_PROJECT_NUM=$GITHUB_PROJECT_NUM from GITHUB_PROJECT"
+  fi
+fi
+
+if [ -z "$GH_PROJECT_OWNER" ] && [ -n "$GITHUB_OWNER" ]; then
+  export GH_PROJECT_OWNER="$GITHUB_OWNER"
+  echo "Derived GH_PROJECT_OWNER=$GH_PROJECT_OWNER from GITHUB_OWNER"
+fi
+
+if [ -z "$GH_PROJECT_OWNER" ] && [ -n "$GITHUB_PROJECT" ]; then
+  OWNER_CANDIDATE=$(echo "$GITHUB_PROJECT" | sed -E 's#https://github.com/(orgs|users)/([^/]+)/projects/[0-9]+#\2#')
+  if [ -n "$OWNER_CANDIDATE" ] && [ "$OWNER_CANDIDATE" != "$GITHUB_PROJECT" ]; then
+    export GH_PROJECT_OWNER="$OWNER_CANDIDATE"
+    echo "Derived GH_PROJECT_OWNER=$GH_PROJECT_OWNER from GITHUB_PROJECT"
+  fi
+fi
+
+if [ -z "$GH_PROJECT_OWNER" ]; then
+  REMOTE_URL=$(git remote get-url origin 2>/dev/null || true)
+  OWNER_CANDIDATE=$(echo "$REMOTE_URL" | sed -E 's#(git@|https://)github.com[:/]+([^/]+)/[^/]+(\.git)?#\2#')
+  if [ -n "$OWNER_CANDIDATE" ] && [ "$OWNER_CANDIDATE" != "$REMOTE_URL" ]; then
+    export GH_PROJECT_OWNER="$OWNER_CANDIDATE"
+    echo "Derived GH_PROJECT_OWNER=$GH_PROJECT_OWNER from git remote"
+  fi
+fi
 ```
 
 If any are missing, stop and configure them before proceeding.
@@ -56,7 +70,7 @@ Every project MUST have these fields configured:
 | Field | Type | Required Values |
 |-------|------|-----------------|
 | Status | Single select | Backlog, Ready, In Progress, In Review, Done, Blocked |
-| Type | Single select | Feature, Bug, Chore, Research, Spike, Epic, Initiative |
+| Type (or Issue Type) | Single select | Feature, Bug, Chore, Research, Spike, Epic, Initiative |
 | Priority | Single select | Critical, High, Medium, Low |
 
 ### Recommended Fields
@@ -72,18 +86,18 @@ Every project MUST have these fields configured:
 
 ## Verification Functions
 
-**All read operations use cached data (0 API calls). Only writes require API calls.**
-
 ### Verify Issue in Project
 
-**GATE FUNCTION** - Called before any work begins. **0 API calls (uses cache).**
+**GATE FUNCTION** - Called before any work begins.
 
 ```bash
 verify_issue_in_project() {
   local issue=$1
 
-  # Get project item ID FROM CACHE (0 API calls)
-  ITEM_ID=$(echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.content.number == $issue) | .id")
+  # Get project item ID
+  ITEM_ID=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json 2>/dev/null | \
+    jq -r ".items[] | select(.content.number == $issue) | .id")
 
   if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" = "null" ]; then
     echo "BLOCKED: Issue #$issue is not in the project board."
@@ -100,15 +114,17 @@ verify_issue_in_project() {
 
 ### Verify Status Field Set
 
-**GATE FUNCTION** - Called before work proceeds past issue check. **0 API calls (uses cache).**
+**GATE FUNCTION** - Called before work proceeds past issue check.
 
 ```bash
 verify_status_set() {
   local issue=$1
   local item_id=$2
 
-  # Get current status FROM CACHE (0 API calls)
-  STATUS=$(echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.id == \"$item_id\") | .status.name")
+  # Get current status
+  STATUS=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json 2>/dev/null | \
+    jq -r ".items[] | select(.id == \"$item_id\") | .status.name")
 
   if [ -z "$STATUS" ] || [ "$STATUS" = "null" ]; then
     echo "BLOCKED: Issue #$issue has no Status set in project board."
@@ -124,13 +140,13 @@ verify_status_set() {
 
 ### Add Issue to Project
 
-**Called by issue-prerequisite after issue creation. 1 API call + cache refresh.**
+**Called by issue-prerequisite after issue creation.**
 
 ```bash
 add_issue_to_project() {
   local issue_url=$1
 
-  # Add to project (1 API call - unavoidable write)
+  # Add to project
   gh project item-add "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --url "$issue_url"
 
   if [ $? -ne 0 ]; then
@@ -138,12 +154,11 @@ add_issue_to_project() {
     return 1
   fi
 
-  # Refresh cache after adding (1 API call)
-  export GH_CACHE_ITEMS=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json)
-
-  # Get the item ID from refreshed cache
+  # Get the item ID
   local issue_num=$(echo "$issue_url" | grep -oE '[0-9]+$')
-  ITEM_ID=$(echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.content.number == $issue_num) | .id")
+  ITEM_ID=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r ".items[] | select(.content.number == $issue_num) | .id")
 
   echo "$ITEM_ID"
   return 0
@@ -152,39 +167,32 @@ add_issue_to_project() {
 
 ### Set Project Status
 
-**Called at every status transition. 1 API call (uses cached IDs).**
+**Called at every status transition.**
 
 ```bash
 set_project_status() {
   local item_id=$1
   local new_status=$2  # Backlog, Ready, In Progress, In Review, Done, Blocked
 
-  # Use cached IDs (0 API calls for lookups)
-  # GH_PROJECT_ID, GH_STATUS_FIELD_ID set by session-start
+  # Get project ID and field IDs (cache these in practice)
+  PROJECT_ID=$(gh project list --owner "$GH_PROJECT_OWNER" --format json | \
+    jq -r ".projects[] | select(.number == $GITHUB_PROJECT_NUM) | .id")
 
-  # Get option ID from cache
-  local option_id
-  case "$new_status" in
-    "Backlog")     option_id="$GH_STATUS_BACKLOG_ID" ;;
-    "Ready")       option_id="$GH_STATUS_READY_ID" ;;
-    "In Progress") option_id="$GH_STATUS_IN_PROGRESS_ID" ;;
-    "In Review")   option_id="$GH_STATUS_IN_REVIEW_ID" ;;
-    "Done")        option_id="$GH_STATUS_DONE_ID" ;;
-    "Blocked")     option_id="$GH_STATUS_BLOCKED_ID" ;;
-    *)
-      # Fallback: look up from cached fields (0 API calls)
-      option_id=$(echo "$GH_CACHE_FIELDS" | jq -r ".fields[] | select(.name == \"Status\") | .options[] | select(.name == \"$new_status\") | .id")
-      ;;
-  esac
+  STATUS_FIELD_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r '.fields[] | select(.name == "Status") | .id')
 
-  if [ -z "$option_id" ] || [ "$option_id" = "null" ]; then
+  OPTION_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r ".fields[] | select(.name == \"Status\") | .options[] | select(.name == \"$new_status\") | .id")
+
+  if [ -z "$OPTION_ID" ] || [ "$OPTION_ID" = "null" ]; then
     echo "ERROR: Status '$new_status' not found in project."
     return 1
   fi
 
-  # Single API call to update status
-  gh project item-edit --project-id "$GH_PROJECT_ID" --id "$item_id" \
-    --field-id "$GH_STATUS_FIELD_ID" --single-select-option-id "$option_id"
+  gh project item-edit --project-id "$PROJECT_ID" --id "$item_id" \
+    --field-id "$STATUS_FIELD_ID" --single-select-option-id "$OPTION_ID"
 
   return $?
 }
@@ -192,42 +200,49 @@ set_project_status() {
 
 ### Set Project Type
 
-**Called when creating issues. 1 API call (uses cached IDs).**
+**Called when creating issues.**
 
 ```bash
 set_project_type() {
   local item_id=$1
   local type=$2  # Feature, Bug, Chore, Research, Spike, Epic, Initiative
 
-  # Get type field ID and option from cache (0 API calls)
-  local type_field_id=$(echo "$GH_CACHE_FIELDS" | jq -r '.fields[] | select(.name == "Type") | .id')
-  local option_id=$(echo "$GH_CACHE_FIELDS" | jq -r ".fields[] | select(.name == \"Type\") | .options[] | select(.name == \"$type\") | .id")
+  PROJECT_ID=$(gh project list --owner "$GH_PROJECT_OWNER" --format json | \
+    jq -r ".projects[] | select(.number == $GITHUB_PROJECT_NUM) | .id")
 
-  if [ -z "$option_id" ] || [ "$option_id" = "null" ]; then
-    echo "ERROR: Type '$type' not found in project."
-    return 1
+  TYPE_FIELD_NAME="Type"
+  if ! gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | jq -e '.fields[] | select(.name == "Type")' >/dev/null 2>&1; then
+    if gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | jq -e '.fields[] | select(.name == "Issue Type")' >/dev/null 2>&1; then
+      TYPE_FIELD_NAME="Issue Type"
+    fi
   fi
 
-  # Single API call to update type
-  gh project item-edit --project-id "$GH_PROJECT_ID" --id "$item_id" \
-    --field-id "$type_field_id" --single-select-option-id "$option_id"
+  TYPE_FIELD_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r --arg type_field "$TYPE_FIELD_NAME" '.fields[] | select(.name == $type_field) | .id')
+
+  OPTION_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r --arg type_field "$TYPE_FIELD_NAME" --arg type_value "$type" '.fields[] | select(.name == $type_field) | .options[] | select(.name == $type_value) | .id')
+
+  gh project item-edit --project-id "$PROJECT_ID" --id "$item_id" \
+    --field-id "$TYPE_FIELD_ID" --single-select-option-id "$OPTION_ID"
 }
 ```
 
 ## State Queries via Project Board
 
-**All queries use cached data. 0 API calls.**
-
 ### Get Issues by Status
 
-**USE THIS instead of label queries. 0 API calls (uses cache).**
+**USE THIS instead of label queries.**
 
 ```bash
 get_issues_by_status() {
   local status=$1  # Ready, In Progress, etc.
 
-  # Use cached data (0 API calls)
-  echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.status.name == \"$status\") | .content.number"
+  gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r ".items[] | select(.status.name == \"$status\") | .content.number"
 }
 
 # Examples:
@@ -238,37 +253,37 @@ get_issues_by_status() {
 
 ### Get Issues by Type
 
-**0 API calls (uses cache).**
-
 ```bash
 get_issues_by_type() {
   local type=$1  # Epic, Feature, etc.
 
-  echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.type.name == \"$type\") | .content.number"
+  gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r ".items[] | select(.type.name == \"$type\") | .content.number"
 }
 ```
 
 ### Get Epic Children
 
-**0 API calls (uses cache).**
-
 ```bash
 get_epic_children() {
   local epic_num=$1
 
-  echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.epic == \"#$epic_num\") | .content.number"
+  gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq -r ".items[] | select(.epic == \"#$epic_num\") | .content.number"
 }
 ```
 
 ### Count by Status
 
-**0 API calls (uses cache).**
-
 ```bash
 count_by_status() {
   local status=$1
 
-  echo "$GH_CACHE_ITEMS" | jq "[.items[] | select(.status.name == \"$status\")] | length"
+  gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | \
+    jq "[.items[] | select(.status.name == \"$status\")] | length"
 }
 ```
 
@@ -290,13 +305,16 @@ These are the points in workflows where project board verification is MANDATORY:
 
 ## Transition Rules
 
-**Valid transitions:**
+### Valid Status Transitions
+
 ```
-Backlog → Ready → In Progress → In Review → Done
-   ↓        ↓          ↓            ↓
-   └────────┴──────────┴────────────┴──→ Blocked
-                                            ↓
-                                    (return to previous)
+Backlog ──► Ready ──► In Progress ──► In Review ──► Done
+    │         │            │              │
+    │         │            │              │
+    └─────────┴────────────┴──────────────┴──► Blocked
+                                               │
+                                               ▼
+                                        (any previous state)
 ```
 
 ### Transition Enforcement
@@ -314,7 +332,7 @@ validate_transition() {
     "Blocked→Backlog"|"Blocked→Ready"|"Blocked→In Progress")
       return 0 ;;
     *)
-      echo "INVALID_TRANSITION: $current → $target"
+      echo "Invalid transition: $current → $target"
       return 1 ;;
   esac
 }
@@ -322,34 +340,95 @@ validate_transition() {
 
 ## Labels vs Project Board
 
-**WRONG:** Using labels for state (`status:in-progress`)
-**RIGHT:** Using project board Status field
+### WRONG - Do Not Use Labels for State
 
-Labels are only for supplementary info: `epic`, `epic-[name]`, `spawned-from:#N`, `review-finding`
+```bash
+# WRONG - labels are NOT the source of truth
+gh issue list --label "status:pending"
+gh issue edit 123 --add-label "status:in-progress"
+```
+
+### RIGHT - Use Project Board
+
+```bash
+# RIGHT - project board IS the source of truth
+get_issues_by_status "Ready"
+set_project_status "$ITEM_ID" "In Progress"
+```
+
+### When Labels Are Acceptable
+
+Labels are still used for:
+- `epic` - Identifying epic issues (supplementary)
+- `epic-[name]` - Grouping issues in an epic (supplementary)
+- `spawned-from:#N` - Lineage tracking (supplementary)
+- `review-finding` - Origin tracking (supplementary)
+
+But **state** (Ready, In Progress, Blocked, etc.) lives in the project board.
 
 ## Sync Verification
 
-Detect drift by comparing git branches to project board status:
-- Issues with branches should be In Progress or In Review
-- In Progress issues should have active branches
-
-Use cached data (`GH_CACHE_ITEMS`) for 0 API calls. Example:
+Run periodically to detect drift:
 
 ```bash
-# Check if branch status matches project board
-status=$(echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.content.number == $issue) | .status.name")
+verify_project_sync() {
+  echo "## Project Board Sync Check"
+  echo ""
+
+  # Check for issues with branches but Status != In Progress
+  echo "### Issues with branches but not 'In Progress':"
+  for branch in $(git branch -r | grep -E 'feature/[0-9]+' | sed 's/.*feature\///' | cut -d- -f1); do
+    status=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+      --format json | \
+      jq -r ".items[] | select(.content.number == $branch) | .status.name")
+
+    if [ "$status" != "In Progress" ] && [ "$status" != "In Review" ]; then
+      echo "- #$branch: Status='$status' but has active branch"
+    fi
+  done
+
+  # Check for In Progress issues with no recent activity
+  echo ""
+  echo "### 'In Progress' issues with no recent commits:"
+  for issue in $(get_issues_by_status "In Progress"); do
+    branch=$(git branch -r | grep -E "feature/$issue-" | head -1)
+    if [ -z "$branch" ]; then
+      echo "- #$issue: In Progress but no branch exists"
+    fi
+  done
+}
 ```
 
 ## Error Messages
 
-All project board errors provide actionable fixes:
+All project board errors should be clear and actionable:
 
-| Error Code | Message | Fix |
-|------------|---------|-----|
-| NOT_IN_PROJECT | Issue not in project board | `gh project item-add ...` |
-| NO_STATUS | Status field not set | Update Status field |
-| INVALID_TRANSITION | Invalid state change | Use valid transition |
-| PROJECT_NOT_FOUND | Project not accessible | Verify GITHUB_PROJECT_NUM |
+```bash
+project_error() {
+  local code=$1
+  local context=$2
+
+  case "$code" in
+    "NOT_IN_PROJECT")
+      echo "BLOCKED: Issue $context is not in the project board."
+      echo "Fix: gh project item-add $GITHUB_PROJECT_NUM --owner $GH_PROJECT_OWNER --url \$(gh issue view $context --json url -q .url)"
+      ;;
+    "NO_STATUS")
+      echo "BLOCKED: Issue $context has no Status field set."
+      echo "Fix: Update the issue's Status field in the project board."
+      ;;
+    "INVALID_TRANSITION")
+      echo "BLOCKED: Cannot transition $context - invalid state change."
+      ;;
+    "PROJECT_NOT_FOUND")
+      echo "BLOCKED: Project $GITHUB_PROJECT_NUM not found or not accessible."
+      echo "Fix: Verify GITHUB_PROJECT_NUM and GH_PROJECT_OWNER are correct."
+      ;;
+  esac
+
+  return 1
+}
+```
 
 ## Integration
 
@@ -361,30 +440,13 @@ This skill is called by:
 - `session-start` - Sync verification
 - `work-intake` - Project readiness check
 
-This skill requires cache from:
-- `github-api-cache` - Provides GH_CACHE_ITEMS, GH_CACHE_FIELDS, and field IDs
-
 ## Checklist for Callers
 
 Before proceeding past any gate:
 
-- [ ] **GitHub API cache initialized** (GH_CACHE_ITEMS, GH_CACHE_FIELDS set)
-- [ ] Issue exists in project (verified from cache, not API call)
+- [ ] Issue exists in project (verified, not assumed)
 - [ ] Status field is set
 - [ ] Type field is set
 - [ ] Priority field is set (for new issues)
 - [ ] Epic linkage set (if child of epic)
 - [ ] Transition is valid (if changing status)
-
-## API Cost Summary
-
-| Operation | Before Caching | After Caching |
-|-----------|----------------|---------------|
-| verify_issue_in_project | 1 call | 0 calls |
-| verify_status_set | 1 call | 0 calls |
-| add_issue_to_project | 2 calls | 2 calls |
-| set_project_status | 4 calls | 1 call |
-| set_project_type | 3 calls | 1 call |
-| get_issues_by_status | 1 call | 0 calls |
-| count_by_status | 1 call | 0 calls |
-| verify_project_sync (10 branches) | 10 calls | 0 calls |

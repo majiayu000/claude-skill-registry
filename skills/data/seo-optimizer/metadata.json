@@ -1,7 +1,7 @@
 {
   "name": "seo-optimizer",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/marketing-pro-workflow/.claude/skills/seo-optimizer/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:23.602250Z"
+  "repo": "ntaksh42/agents",
+  "path": ".claude/skills/seo-optimizer/SKILL.md",
+  "source": "github.com/ntaksh42/agents",
+  "downloaded_at": "2026-02-04T04:07:16.818457Z"
 }

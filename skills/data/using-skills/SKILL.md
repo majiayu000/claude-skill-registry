@@ -1,102 +1,70 @@
 ---
-name: Getting Started with Skills
-description: Skills wiki intro - mandatory workflows, search tool, brainstorming triggers
-when_to_use: when starting any conversation
-version: 4.0.2
+name: using-skills
+description: "Check for relevant skills before starting any task"
 ---
 
-# Getting Started with Skills
+# Using CodeAssist Skills
 
-## Critical Rules
+## Core Principle
 
-1. **Use Read tool before announcing skill usage.** The session-start hook does NOT read skills for you. Announcing without calling Read = lying.
+Before starting a task, check if any skills apply. Skills are documented best practices that help you work more effectively.
 
-2. **Follow mandatory workflows.** Brainstorming before coding. Check for skills before ANY task.
+## First Response Protocol
 
-3. **Create TodoWrite todos for checklists.** Mental tracking = steps get skipped. Every time.
+For each request:
 
+1. **Check**: Review available skills in `.claude/skills/`
+2. **Read**: If a skill applies, read the skill file
+3. **Announce**: State which skill you're using
+   - Example: "I'm using the code-review skill to review these changes"
+4. **Follow**: Execute the skill's protocol
 
-## Mandatory Workflow: Before ANY Task
+## Why Use Skills
 
-**1. Check skills list** at session start, or run `find-skills [PATTERN]` to filter.
+Skills represent tested approaches that:
+- Provide consistent patterns across projects
+- Include important safety checks
+- Prevent common mistakes
+- Save time by avoiding rework
 
-**2. If relevant skill exists, YOU MUST use it:**
+## Skill Categories
 
-- Use Read tool with full path: `${SUPERPOWERS_SKILLS_ROOT}/skills/category/skill-name/SKILL.md`
-- Read ENTIRE file, not just frontmatter
-- Announce: "I've read [Skill Name] skill and I'm using it to [purpose]"
-- Follow it exactly
+### Core Workflow
+- `brainstorming` - Discuss approach before implementation
+- `writing-plans` - Break work into tasks
+- `executing-plans` - Execute with verification
+- `code-review` - Review before completing
 
-**Don't rationalize:**
-- "I remember this skill" - Skills evolve. Read the current version.
-- "Session-start showed it to me" - That was using-skills/SKILL.md only. Read the actual skill.
-- "This doesn't count as a task" - It counts. Find and read skills.
+### Safety
+- `database-backup` - Backup before database operations
+- `verification-before-completion` - Final checks before declaring done
 
-**Why:** Skills document proven techniques that save time and prevent mistakes. Not using available skills means repeating solved problems and making known errors.
+### Testing
+- `test-driven-development` - Write tests first
+- `condition-based-waiting` - Avoid flaky tests
+- `testing-anti-patterns` - Common mistakes to avoid
 
-If a skill for your task exists, you must use it or you will fail at your task.
+### Workflow
+- `git-workflow` - Branching and commits
+- `git-worktrees` - Parallel development
 
-## Skills with Checklists
+## Skill Discovery
 
-If a skill has a checklist, YOU MUST create TodoWrite todos for EACH item.
+| Task | Relevant Skills |
+|------|-----------------|
+| Starting a new feature | brainstorming → writing-plans |
+| Running tests/migrations | database-backup |
+| Adding functionality | test-driven-development |
+| Finishing work | code-review → verification-before-completion |
+| Multiple features | git-worktrees |
 
-**Don't:**
-- Work through checklist mentally
-- Skip creating todos "to save time"
-- Batch multiple items into one todo
-- Mark complete without doing them
+## Tips
 
-**Why:** Checklists without TodoWrite tracking = steps get skipped. Every time. The overhead of TodoWrite is tiny compared to the cost of missing steps.
+- Read the skill file rather than relying on memory
+- Announce which skill you're using for transparency
+- Follow the skill's checklist if it has one
+- Skills work best when used consistently
 
-**Examples:** skills/testing/test-driven-development/SKILL.md, skills/debugging/systematic-debugging/SKILL.md, skills/meta/writing-skills/SKILL.md
+## Full Skills Index
 
-## Announcing Skill Usage
-
-After you've read a skill with Read tool, announce you're using it:
-
-"I've read the [Skill Name] skill and I'm using it to [what you're doing]."
-
-**Examples:**
-- "I've read the Brainstorming skill and I'm using it to refine your idea into a design."
-- "I've read the Test-Driven Development skill and I'm using it to implement this feature."
-- "I've read the Systematic Debugging skill and I'm using it to find the root cause."
-
-**Why:** Transparency helps your human partner understand your process and catch errors early. It also confirms you actually read the skill.
-
-## How to Read a Skill
-
-Every skill has the same structure:
-
-1. **Frontmatter** - `when_to_use` tells you if this skill matches your situation
-2. **Overview** - Core principle in 1-2 sentences
-3. **Quick Reference** - Scan for your specific pattern
-4. **Implementation** - Full details and examples
-5. **Supporting files** - Load only when implementing
-
-**Many skills contain rigid rules (TDD, debugging, verification).** Follow them exactly. Don't adapt away the discipline.
-
-**Some skills are flexible patterns (architecture, naming).** Adapt core principles to your context.
-
-The skill itself tells you which type it is.
-
-## Instructions ≠ Permission to Skip Workflows
-
-Your human partner's specific instructions describe WHAT to do, not HOW.
-
-"Add X", "Fix Y" = the goal, NOT permission to skip brainstorming, TDD, or RED-GREEN-REFACTOR.
-
-**Red flags:** "Instruction was specific" • "Seems simple" • "Workflow is overkill"
-
-**Why:** Specific instructions mean clear requirements, which is when workflows matter MOST. Skipping process on "simple" tasks is how simple tasks become complex problems.
-
-## Summary
-
-**Starting any task:**
-1. Run find-skills to check for relevant skills
-2. If relevant skill exists → Use Read tool with full path (includes /SKILL.md)
-3. Announce you're using it
-4. Follow what it says
-
-**Skill has checklist?** TodoWrite for every item.
-
-**Finding a relevant skill = mandatory to read and use it. Not optional.**
+See `.claude/skills/README.md` for the complete list of available skills.

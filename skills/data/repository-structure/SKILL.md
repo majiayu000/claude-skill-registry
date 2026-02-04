@@ -1,80 +1,95 @@
 ---
 name: repository-structure
-description: >
-  PRD・機能設計・アーキテクチャからリポジトリ構造定義書（docs/repository-structure.md）を作成する。
-  「ディレクトリ構成を決めて」「フォルダ構造を設計」「ファイル配置ルール」「プロジェクト構造」
-  「どこに何を置くか決めて」などの依頼時に発火。
-  ディレクトリ責務・命名規則・依存ルール・テスト配置・スケーリング方針を出力。
+description: Monorepo structure, subpackage organization, and dependency rules. Use when creating new packages, understanding project layout, or organizing code.
 ---
 
-# Repository Structure Skill
+# Repository Structure
 
-アーキテクチャ設計の「どう構成するか」を「どこに何を置くか」に落とし込む。
+This is a **CDK monorepo** using npm workspaces. All packages share a synchronized `aws-cdk-lib` version.
 
-## 入出力
+## Directory Structure
 
-| 種別 | パス |
-|------|------|
-| 入力 | `docs/product-requirements.md`（PRD） |
-| 入力 | `docs/functional-design.md`（機能設計） |
-| 入力 | `docs/architecture.md`（アーキテクチャ） |
-| 入力 | `docs/repository-structure.md`（既存あれば優先） |
-| 出力 | `docs/repository-structure.md` |
-
-## 参照ファイル
-
-| ファイル | 読むタイミング |
-|----------|----------------|
-| `./template.md` | 新規作成時のベース |
-| `./reference.md` | 設計原則・命名規則・レビュー観点 |
-
-## 手順
-
-### 1. 設計情報の抽出
 ```
-アーキテクチャ・機能設計から以下を抽出：
-- レイヤー構成（UI / Service / Repository等）
-- 主要コンポーネント・機能モジュール
-- テスト戦略（Unit / Integration / E2E）
-- 技術スタック（FW固有の構造があるか）
+cdk-constructs-library/
+├── package.json              # Root package (@cdk-constructs/cdk) - core utilities, types, enums
+├── tsconfig.json             # Root TypeScript config (builds src/)
+├── tsconfig.app.json         # CDK app TypeScript config (builds bin/, lib/)
+├── tsconfig.build.json       # Workspace build references
+├── packages/
+│   ├── aws/                  # @cdk-constructs/aws - AWS account, region, environment enums
+│   ├── codeartifact/         # @cdk-constructs/codeartifact - CodeArtifact constructs
+│   ├── api-gateway/          # @cdk-constructs/api-gateway - API Gateway & Lambda constructs
+│   ├── aurora/               # @cdk-constructs/aurora - Aurora database constructs
+│   ├── cloudwatch/           # @cdk-constructs/cloudwatch - CloudWatch monitoring
+│   ├── eks/                  # @cdk-constructs/eks - EKS utilities and VPC constants
+│   └── waf/                  # @cdk-constructs/waf - WAF configurations
+├── src/                      # Root package source (type-driven development)
+│   ├── constructs/           # Shared base constructs and utilities
+│   ├── enums/                # Shared enums
+│   ├── types/                # Shared types (types, not interfaces)
+│   └── util/                 # Shared utilities
+├── bin/                      # CDK app entry point
+│   ├── app.ts                # Main CDK application
+│   └── environment.ts        # Environment configurations
+├── lib/                      # CDK stack implementations
+│   └── stacks/               # Stack classes for testing
+├── docs/                     # Documentation
+├── scripts/                  # Build and maintenance scripts
+└── test/                     # Test files
 ```
 
-### 2. 既存定義の確認
-- `docs/repository-structure.md` が存在する？
-  - **Yes** → 構造を維持して差分更新
-  - **No** → `./template.md` をコピーして新規作成
+## Architecture Decisions
 
-### 3. 構造設計
+- **Monorepo Strategy**: This is a monorepo containing multiple subpackages, each independently versioned
+- **Type-Driven Development**: All data structures use `type` declarations, not `interface`
+- **Subpackage Structure**: Each subpackage follows `src/types`, `src/enums`, `src/constructs`, etc.
+- **Root Package Purpose**: Provides shared types, enums, and utilities used across subpackages
+- **New Feature Placement**: Domain-specific constructs go in dedicated subpackages (e.g., `@cdk-constructs/api-gateway`)
+- **CDK Version Sync**: All packages must use the same `aws-cdk-lib` version
+- **No Circular Dependencies**: Packages are structured to prevent dependency loops
 
-`./template.md` の構造に従い、以下を埋める：
+## Subpackage Structure
 
-| セクション | 内容 | 必須 |
-|-----------|------|------|
-| ルート構造 | トップレベルディレクトリ一覧 | ✅ |
-| src/ 詳細 | 各ディレクトリの責務・配置ルール | ✅ |
-| 命名規則 | ディレクトリ・ファイル・クラス・関数 | ✅ |
-| 依存関係ルール | レイヤー間の依存方向 | ✅ |
-| テスト配置 | Unit / Integration / E2E の構造 | ✅ |
-| docs配置 | ドキュメント群の配置ルール | ✅ |
-| スケーリング方針 | 分割タイミング・方法 | ✅ |
+Each subpackage follows this standard structure for full organization:
 
-### 4. アーキテクチャとの整合性チェック
+```
+packages/{package-name}/
+├── package.json              # Package config with workspace dependencies
+├── tsconfig.json             # Extends ../../tsconfig-strict.json
+├── src/
+│   ├── index.ts              # Public exports
+│   ├── types/                # Package-specific types (type-driven development)
+│   ├── enums/                # Package-specific enums
+│   ├── constructs/           # CDK construct implementations
+│   └── util/                 # Package-specific utilities
+├── test/                     # Test files and example stacks
+├── docs/                     # Package documentation (optional)
+└── README.md                 # Package documentation
+```
 
-- [ ] アーキテクチャのレイヤー構成がディレクトリに反映されている
-- [ ] 依存ルールがアーキテクチャと一致している
-- [ ] テスト戦略がテスト配置に反映されている
+**Organization Principles:**
 
-### 5. 出力
-`docs/repository-structure.md` を作成/更新し、変更点をサマリ提示
+- `src/types/` - All data structures using `type` declarations (not `interface`)
+- `src/enums/` - Enumeration definitions (e.g., AWS regions, accounts)
+- `src/constructs/` - CDK construct factory functions
+- `src/util/` - Helper functions and utilities
 
-## 発火例
-- 「ディレクトリ構成を決めて」
-- 「フォルダ構造を設計して」
-- 「プロジェクト構造を整理して」
-- 「どこに何を置くかルール化して」
-- 「テストファイルの配置を決めて」
+## Dependency Structure
 
-## 境界（やらないこと）
-- **技術選定** → `architecture-design` スキル
-- **コーディング規約（命名以外）** → `development-guidelines` スキル
-- **実際のディレクトリ作成** → 開発タスクとして別途実施
+```
+@cdk-constructs/cdk (root)
+├── @cdk-constructs/aws (no dependencies on other packages)
+├── @cdk-constructs/codeartifact (depends on: aws)
+├── @cdk-constructs/api-gateway (depends on: cdk)
+├── @cdk-constructs/aurora (depends on: cdk)
+├── @cdk-constructs/eks (depends on: cdk)
+├── @cdk-constructs/waf (depends on: cdk)
+└── @cdk-constructs/cloudwatch (depends on: cdk, api-gateway)
+```
+
+**Rules:**
+
+- Root package never depends on subpackages
+- Subpackages can depend on root package
+- Subpackages can depend on other subpackages only if no cycle is created
+- Always build in dependency order

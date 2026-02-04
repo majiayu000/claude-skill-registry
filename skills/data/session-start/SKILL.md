@@ -1,14 +1,6 @@
 ---
 name: session-start
 description: Use at the beginning of every work session - establishes context by checking GitHub project state, reading memory, verifying environment, and orienting before starting work
-allowed-tools:
-  - Bash
-  - Read
-  - Grep
-  - Glob
-  - mcp__github__*
-  - mcp__memory__*
-model: opus
 ---
 
 # Session Start
@@ -105,46 +97,13 @@ git stash list
 
 Check the current state of work via the **GitHub Project Board** (the source of truth).
 
-**CRITICAL: Use `github-api-cache` to minimize API calls.**
-
 ```bash
-# === CACHE INITIALIZATION (3 API calls total) ===
-# This replaces 20+ individual API calls
+# Verify project is accessible
+gh project view "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json
 
-echo "Initializing GitHub API cache..."
-
-# CALL 1: Cache all project fields
-export GH_CACHE_FIELDS=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json)
-
-# CALL 2: Cache all project items
-export GH_CACHE_ITEMS=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json)
-
-# CALL 3: Get project ID
-export GH_PROJECT_ID=$(gh project list --owner "$GH_PROJECT_OWNER" --format json --limit 100 | \
-  jq -r ".projects[] | select(.number == $GITHUB_PROJECT_NUM) | .id")
-
-# Extract field IDs from cache (NO API CALLS)
-export GH_STATUS_FIELD_ID=$(echo "$GH_CACHE_FIELDS" | jq -r '.fields[] | select(.name == "Status") | .id')
-export GH_STATUS_IN_PROGRESS_ID=$(echo "$GH_CACHE_FIELDS" | jq -r '.fields[] | select(.name == "Status") | .options[] | select(.name == "In Progress") | .id')
-export GH_STATUS_DONE_ID=$(echo "$GH_CACHE_FIELDS" | jq -r '.fields[] | select(.name == "Status") | .options[] | select(.name == "Done") | .id')
-
-echo "Cached $(echo "$GH_CACHE_ITEMS" | jq '.items | length') project items"
-```
-
-**Query from cache (NO API CALLS):**
-
-```bash
-# Get all project items with their status (from cache)
-echo "$GH_CACHE_ITEMS" | jq '.items[] | {number: .content.number, title: .content.title, status: .status.name}'
-
-# Get Ready issues (from cache)
-echo "$GH_CACHE_ITEMS" | jq -r '.items[] | select(.status.name == "Ready") | .content.number'
-
-# Get In Progress issues (from cache)
-echo "$GH_CACHE_ITEMS" | jq -r '.items[] | select(.status.name == "In Progress") | .content.number'
-
-# Get Blocked issues (from cache)
-echo "$GH_CACHE_ITEMS" | jq -r '.items[] | select(.status.name == "Blocked") | .content.number'
+# Get all project items with their status
+gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | \
+  jq '.items[] | {number: .content.number, title: .content.title, status: .status.name}'
 ```
 
 **Key questions:**
@@ -153,7 +112,21 @@ echo "$GH_CACHE_ITEMS" | jq -r '.items[] | select(.status.name == "Blocked") | .
 - Are there any Status = "Blocked" items?
 - What's the highest priority Ready item?
 
-**Skill:** `github-api-cache`
+**Query by status:**
+
+```bash
+# Get Ready issues (work available)
+gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | \
+  jq -r '.items[] | select(.status.name == "Ready") | .content.number'
+
+# Get In Progress issues
+gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | \
+  jq -r '.items[] | select(.status.name == "In Progress") | .content.number'
+
+# Get Blocked issues
+gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | \
+  jq -r '.items[] | select(.status.name == "Blocked") | .content.number'
+```
 
 ---
 
@@ -161,41 +134,41 @@ echo "$GH_CACHE_ITEMS" | jq -r '.items[] | select(.status.name == "Blocked") | .
 
 **MANDATORY:** Verify project board state matches actual work state.
 
-**Uses cached data from Step 3 - NO additional API calls for project queries.**
-
 ```bash
 # Check for sync issues between project board and reality
-# ALL project queries use GH_CACHE_ITEMS (cached in Step 3)
 
 echo "## Project Board Sync Check"
 echo ""
 
-# 1. Issues marked "In Progress" should have active branches (0 API calls)
+# 1. Issues marked "In Progress" should have active branches
 echo "### Checking: In Progress issues have branches"
-for issue in $(echo "$GH_CACHE_ITEMS" | jq -r '.items[] | select(.status.name == "In Progress") | .content.number'); do
+for issue in $(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+  --format json | jq -r '.items[] | select(.status.name == "In Progress") | .content.number'); do
+
   branch=$(git branch -r 2>/dev/null | grep -E "feature/$issue-" | head -1)
   if [ -z "$branch" ]; then
     echo "⚠️ Issue #$issue is 'In Progress' but has no branch"
   fi
 done
 
-# 2. Active branches should have issues marked "In Progress" (0 API calls)
+# 2. Active branches should have issues marked "In Progress"
 echo ""
 echo "### Checking: Active branches have In Progress issues"
 for branch in $(git branch -r 2>/dev/null | grep -E 'origin/feature/[0-9]+' | sed 's/.*feature\///' | cut -d- -f1 | sort -u); do
-  status=$(echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.content.number == $branch) | .status.name")
+  status=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | jq -r ".items[] | select(.content.number == $branch) | .status.name")
 
   if [ "$status" != "In Progress" ] && [ "$status" != "In Review" ]; then
     echo "⚠️ Branch for #$branch exists but project Status='$status' (expected: In Progress or In Review)"
   fi
 done
 
-# 3. Open PRs should have issues marked "In Review" (1 API call for PR list - REST API)
+# 3. Open PRs should have issues marked "In Review"
 echo ""
 echo "### Checking: Open PRs have In Review issues"
 for pr in $(gh pr list --json number,body --jq '.[] | select(.body | contains("Closes #")) | .body' 2>/dev/null | grep -oE 'Closes #[0-9]+' | grep -oE '[0-9]+'); do
-  # Use cached items, not API call
-  status=$(echo "$GH_CACHE_ITEMS" | jq -r ".items[] | select(.content.number == $pr) | .status.name")
+  status=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | jq -r ".items[] | select(.content.number == $pr) | .status.name")
 
   if [ "$status" != "In Review" ]; then
     echo "⚠️ Issue #$pr has open PR but project Status='$status' (expected: In Review)"
@@ -403,11 +376,10 @@ Before proceeding to work:
 
 - [ ] Environment verified (gh, git, env vars)
 - [ ] **GITHUB_PROJECT_NUM and GH_PROJECT_OWNER set**
-- [ ] **GitHub API cache initialized (GH_CACHE_ITEMS, GH_CACHE_FIELDS set)**
 - [ ] Development services detected and status reported
 - [ ] Repository state understood
-- [ ] **GitHub Project state checked (via cached data, not repeated API calls)**
-- [ ] **Project board sync verified (Step 3.5) using cached data**
+- [ ] **GitHub Project state checked (via project board, not labels)**
+- [ ] **Project board sync verified (Step 3.5)**
 - [ ] **Sync discrepancies reported/fixed**
 - [ ] **Active orchestration checked (Step 3.6)** - Resume if found
 - [ ] Memory searched for context
@@ -416,7 +388,7 @@ Before proceeding to work:
 - [ ] Required services started (if applicable)
 - [ ] State reported to user
 
-**Skills:** `github-api-cache`, `project-board-enforcement`
+**Skill:** `project-board-enforcement`
 
 ## Integration
 

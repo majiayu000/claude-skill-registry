@@ -1,7 +1,7 @@
 {
   "name": "docker-compose",
-  "repo": "oimiragieo/agent-studio",
-  "path": ".claude/skills/docker-compose/SKILL.md",
-  "source": "github.com/oimiragieo/agent-studio",
-  "downloaded_at": "2026-02-02T04:36:33.658929Z"
+  "repo": "cuba6112/skillfactory",
+  "path": "skills/docker-compose/SKILL.md",
+  "source": "github.com/cuba6112/skillfactory",
+  "downloaded_at": "2026-02-04T05:05:06.505480Z"
 }

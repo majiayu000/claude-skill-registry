@@ -1,7 +1,7 @@
 {
   "name": "task-planner",
-  "repo": "peterstorm/.dotfiles",
-  "path": ".claude/skills/task-planner/SKILL.md",
-  "source": "github.com/peterstorm/.dotfiles",
-  "downloaded_at": "2026-02-02T02:34:30.962739Z"
+  "repo": "ajianaz/skills-collection",
+  "path": "skills/task-planner/SKILL.md",
+  "source": "github.com/ajianaz/skills-collection",
+  "downloaded_at": "2026-02-04T04:06:45.192807Z"
 }

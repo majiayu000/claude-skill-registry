@@ -1,10 +1,6 @@
 ---
 name: clean-commits
 description: Use when committing code - ensures atomic, descriptive commits that leave the codebase in a merge-ready state at every point
-allowed-tools:
-  - Bash
-  - mcp__git__*
-model: opus
 ---
 
 # Clean Commits

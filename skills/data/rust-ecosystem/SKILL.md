@@ -1,473 +1,188 @@
 ---
-name: Rust Ecosystem
-description: This skill should be used when working with Rust projects, "Cargo.toml", "rustc", "cargo build/test/run", "clippy", "rustfmt", or Rust language patterns. Provides comprehensive Rust ecosystem patterns and best practices.
+name: rust-ecosystem
+description: "Rust 生态专家。处理 crate 选择、库推荐、框架对比、async runtime 选择、序列化库、web 框架等。触发词：crate, library, framework, ecosystem, async runtime, tokio, async-std, serde, reqwest, axum, 库, 框架, 生态"
+globs: ["**/Cargo.toml"]
 ---
 
-<purpose>
-  Provide comprehensive patterns for Rust language, Cargo project management, and toolchain configuration.
-</purpose>
+# Rust 生态
 
-<tools>
-  <tool>Read - Analyze Cargo.toml and Rust source files</tool>
-  <tool>Edit - Modify Rust code and Cargo configuration</tool>
-  <tool>Bash - Run cargo build, cargo test, cargo clippy commands</tool>
-  <tool>mcp__context7__get-library-docs - Fetch latest Rust documentation</tool>
-</tools>
+## 核心问题
 
-<concepts>
-  <concept name="ownership">Each value has one owner; when owner goes out of scope, value is dropped</concept>
-  <concept name="borrowing">Immutable (&T) allows multiple borrows; mutable (&mut T) allows exactly one; cannot mix</concept>
-  <concept name="result_option">Result for recoverable errors (Ok/Err), Option for optional values (Some/None); use ? for propagation</concept>
-  <concept name="traits">Define behavior with traits; use derive for common implementations (Debug, Clone, PartialEq)</concept>
-</concepts>
+**用什么 crate 解决当前问题？**
 
-<rust_language>
-  <ownership_borrowing>
-    <concept name="ownership">
-      <description>Each value has exactly one owner. When owner goes out of scope, value is dropped.</description>
-      <use>Use move semantics by default; explicit Clone when needed</use>
-    </concept>
+选择正确的库是高效 Rust 开发的关键。
 
-    <concept name="borrowing">
-      <description>Immutable and mutable references with strict rules</description>
-      <rules priority="critical">
-        <rule>&T allows multiple simultaneous borrows</rule>
-        <rule>&mut T allows exactly one mutable borrow</rule>
-        <rule>Cannot have &mut T while &T exists</rule>
-      </rules>
-    </concept>
+---
 
-    <concept name="lifetimes">
-      <description>Lifetime annotations for reference validity</description>
-      <pattern name="elision">
-        <description>Compiler infers lifetimes in common patterns</description>
-      </pattern>
-      <pattern name="explicit">
-        <description>Explicit lifetime annotations for complex cases</description>
-        <example>
-          fn foo<'a>(x: &'a str) -> &'a str {
-            x
-          }
-        </example>
-      </pattern>
-      <pattern name="static">
-        <description>'static for values that live entire program</description>
-      </pattern>
-    </concept>
-  </ownership_borrowing>
+## 异步 Runtime
 
-  <traits>
-    <common_traits>
-      <trait name="Clone">Explicit duplication with .clone()</trait>
-      <trait name="Copy">Implicit bitwise copy for simple types</trait>
-      <trait name="Debug">Debug formatting with {:?}</trait>
-      <trait name="Display">User-facing formatting with {}</trait>
-      <trait name="Default">Default value construction</trait>
-      <trait name="PartialEq/Eq">Equality comparison</trait>
-      <trait name="PartialOrd/Ord">Ordering comparison</trait>
-      <trait name="Hash">Hashing for HashMap/HashSet keys</trait>
-      <trait name="From/Into">Type conversions</trait>
-      <trait name="AsRef/AsMut">Cheap reference conversions</trait>
-    </common_traits>
+| Runtime | 特点 | 适用场景 |
+|---------|------|---------|
+| **tokio** | 最流行、功能全 | 通用异步应用 |
+| **async-std** | 类似 std API | 偏好 std 风格 |
+| **actix** | 高性能 | 高性能 Web 服务 |
+| **async-executors** | 统一接口 | 需要切换 runtime |
 
-    <pattern name="derive">
-      <description>Automatically implement common traits</description>
-      <example>
-        #[derive(Debug, Clone, PartialEq, Eq, Hash)]
-        struct MyType {
-          field1: String,
-          field2: i32,
-        }
-      </example>
-    </pattern>
-  </traits>
+```toml
+# Web 服务
+tokio = { version = "1", features = ["full"] }
+axum = "0.7"
 
-  <error_handling>
-    <pattern name="Result">
-      <description>Recoverable errors with Result with T and E type parameters</description>
-      <operators>? for early return on Err</operators>
-      <combinators>map, and_then, unwrap_or, unwrap_or_else</combinators>
-      <decision_tree name="when_to_use">
-        <question>Is this a recoverable error that callers should handle?</question>
-        <if_yes>Return Result type with appropriate error variant</if_yes>
-        <if_no>Use panic only for unrecoverable programming errors</if_no>
-      </decision_tree>
-    </pattern>
+# 轻量级
+async-std = "1"
+```
 
-    <pattern name="Option">
-      <description>Optional values with Option with T type parameter</description>
-      <operators>? for early return on None</operators>
-      <combinators>map, and_then, unwrap_or, unwrap_or_default</combinators>
-    </pattern>
+---
 
-    <pattern name="custom_error">
-      <description>Define custom error types with thiserror or anyhow</description>
-      <example>
-        #[derive(Debug, thiserror::Error)]
-        enum MyError {
-          #[error("IO error: {0}")]
-          Io(#[from] std::io::Error),
-          #[error("Parse error: {msg}")]
-          Parse { msg: String },
-        }
-      </example>
-    </pattern>
-  </error_handling>
+## Web 框架
 
-  <common_patterns>
-    <pattern name="builder">
-      <description>Fluent API for complex object construction</description>
-      <example>
-        MyStruct::builder()
-          .field1(value1)
-          .field2(value2)
-          .build()
-      </example>
-      <decision_tree name="when_to_use">
-        <question>Does the struct have many optional fields or complex construction logic?</question>
-        <if_yes>Implement builder pattern for ergonomic construction</if_yes>
-        <if_no>Use simple constructor function or Default trait</if_no>
-      </decision_tree>
-    </pattern>
+| 框架 | 特点 | 性能 |
+|-----|------|------|
+| **axum** | Tower 中间件、类型安全 | 高 |
+| **actix-web** | 最高性能 | 最高 |
+| **rocket** | 开发者友好 | 中 |
+| **warp** | 组合式、Filter | 高 |
 
-    <pattern name="newtype">
-      <description>Wrapper type for type safety</description>
-      <example>
-        struct UserId(u64);
-      </example>
-    </pattern>
+---
 
-    <pattern name="type_state">
-      <description>Encode state in type system</description>
-      <use_case>Prevent invalid state transitions at compile time</use_case>
-    </pattern>
-  </common_patterns>
+## 序列化
 
-  <anti_patterns>
-    <avoid name="unwrap_in_library">
-      <description>Using unwrap() in library code</description>
-      <instead>Use ? or proper error handling instead</instead>
-    </avoid>
+| 库 | 特点 | 性能 |
+|-----|------|------|
+| **serde** | 标准选择 | 高 |
+| **bincode** | 二进制、紧凑 | 最高 |
+| ** postcard** | 无 std、嵌入式 | 高 |
+| **ron** | 可读性好 | 中 |
 
-    <avoid name="clone_abuse">
-      <description>Cloning values unnecessarily</description>
-      <instead>Prefer borrowing when possible</instead>
-    </avoid>
+```rust
+use serde::{Serialize, Deserialize};
 
-    <avoid name="string_for_everything">
-      <description>Using String for all domain values</description>
-      <instead>Use enums, newtypes for domain modeling</instead>
-    </avoid>
+#[derive(Serialize, Deserialize)]
+struct User {
+    id: u64,
+    name: String,
+}
 
-    <avoid name="arc_mutex_overuse">
-      <description>Defaulting to Arc with Mutex with T for concurrency</description>
-      <instead>Consider channels or ownership patterns first</instead>
-    </avoid>
-  </anti_patterns>
-</rust_language>
+// JSON
+let json = serde_json::to_string(&user)?;
 
-<cargo>
-  <project_structure>
-    <standard_layout>
-      .
-      ├── Cargo.lock
-      ├── Cargo.toml
-      ├── src/
-      │   ├── lib.rs          # Library crate root
-      │   ├── main.rs         # Binary crate root
-      │   └── bin/            # Additional binaries
-      ├── tests/              # Integration tests
-      ├── benches/            # Benchmarks
-      └── examples/           # Example code
-    </standard_layout>
+// 二进制
+let bytes = bincode::serialize(&user)?;
+```
 
-    <module_organization>
-      <pattern name="mod_rs">
-        <description>src/module/mod.rs with submodules</description>
-      </pattern>
-      <pattern name="file_module">
-        <description>src/module.rs (preferred for simple modules)</description>
-      </pattern>
-    </module_organization>
-  </project_structure>
+---
 
-  <cargo_toml>
-    <basic_structure>
-      [package]
-      name = "my-crate"
-      version = "0.1.0"
-      edition = "2021" # Current edition; edition 2024 (upcoming/future)
-      rust-version = "1.83" # Current stable as of Dec 2025
+## HTTP 客户端
 
-      [dependencies]
-      serde = { version = "1.0", features = ["derive"] }
+| 库 | 特点 |
+|-----|------|
+| **reqwest** | 最流行、易用 |
+| **ureq** | 同步、简单 |
+| **surf** | 异步、modern |
 
-      [dev-dependencies]
-      tokio-test = "0.4"
+```rust
+// reqwest
+let response = reqwest::Client::new()
+    .post("https://api.example.com")
+    .json(&payload)
+    .send()
+    .await?;
+```
 
-      [build-dependencies]
-      cc = "1.0"
-    </basic_structure>
+---
 
-    <feature_flags>
-      [features]
-      default = ["std"]
-      std = []
-      async = ["tokio"]
-      full = ["std", "async"]
-    </feature_flags>
+## 数据库
 
-    <profile_optimization>
-      [profile.release]
-      lto = true
-      codegen-units = 1
-      panic = "abort"
-      strip = true
+| 类型 | 库 |
+|-----|------|
+| ORM | **sqlx**, diesel, sea-orm |
+| Raw SQL | **sqlx**, tokio-postgres |
+| NoSQL | mongodb, redis |
+| 连接池 | **sqlx**, deadpool, r2d2 |
 
-      [profile.dev]
-      opt-level = 0
-      debug = true
-    </profile_optimization>
-  </cargo_toml>
+---
 
-  <workspace>
-    <root_cargo_toml>
-      [workspace]
-      resolver = "2"  # Current default for edition 2021; resolver 3 (upcoming, requires Edition 2024)
-      members = ["crate-a", "crate-b"]
+## 并发与并行
 
-      [workspace.package]
-      version = "0.1.0"
-      edition = "2021"
-      license = "MIT"
+| 场景 | 推荐 |
+|-----|------|
+| 数据并行 | **rayon** |
+| 工作窃取 | **crossbeam**, tokio |
+| 通道 | **tokio::sync**, crossbeam, flume |
+| 原子类型 | **std::sync::atomic** |
 
-      [workspace.dependencies]
-      serde = "1.0"
-      tokio = { version = "1", features = ["full"] }
-    </root_cargo_toml>
+---
 
-    <member_inheritance>
-      [package]
-      name = "crate-a"
-      version.workspace = true
-      edition.workspace = true
+## 错误处理
 
-      [dependencies]
-      serde.workspace = true
-    </member_inheritance>
+| 库 | 用途 |
+|-----|------|
+| **thiserror** | 库错误类型 |
+| **anyhow** | 应用错误传播 |
+| **snafu** | 结构化错误 |
 
-    <decision_tree name="when_to_use">
-      <question>Do you have multiple related crates in one repository?</question>
-      <if_yes>Use workspace to share dependencies and build configuration</if_yes>
-      <if_no>Single crate project without workspace structure</if_no>
-    </decision_tree>
-  </workspace>
+---
 
-  <commands>
-    <command name="cargo build">Compile the project</command>
-    <command name="cargo build --release">Compile with optimizations</command>
-    <command name="cargo run">Build and run binary</command>
-    <command name="cargo test">Run all tests</command>
-    <command name="cargo check">Fast syntax/type check without codegen</command>
-    <command name="cargo doc --open">Generate and open documentation</command>
-    <command name="cargo update">Update dependencies</command>
-    <command name="cargo tree">Display dependency tree</command>
-  </commands>
-</cargo>
+## 常用工具库
 
-<toolchain>
-  <clippy>
-    <description>Rust linter for catching common mistakes and improving code</description>
-    <usage>cargo clippy -- -D warnings</usage>
+| 场景 | 库 |
+|-----|------|
+| 命令行 | **clap** (v4), structopt |
+| 日志 | **tracing**, log |
+| 配置 | **config**, dotenvy |
+| 测试 | **tempfile**, rstest |
+| 时间 | **chrono**, time |
 
-    <configuration>
-      <file_reference>In Cargo.toml</file_reference>
-      [lints.clippy]
-      pedantic = "warn"
-      nursery = "warn"
-      unwrap_used = "deny"
-      expect_used = "deny"
+---
 
-      <file_reference>Or in clippy.toml</file_reference>
+## Crate 选择原则
 
-      msrv = "1.70"
-      cognitive-complexity-threshold = 25
-    </configuration>
+1. **活跃维护**：看 GitHub 活跃度、最近更新
+2. **下载量**：crates.io 下载量参考
+3. **MSRV**：最小支持 Rust 版本
+4. **依赖**：依赖数量和安全性
+5. **文档**：完整文档和示例
+6. **License**：MIT/Apache2 兼容性
 
-    <common_lints>
-      <lint name="clippy::unwrap_used">Prefer ? or proper error handling</lint>
-      <lint name="clippy::expect_used">Prefer ? or proper error handling</lint>
-      <lint name="clippy::pedantic">Stricter lints for cleaner code</lint>
-      <lint name="clippy::nursery">Experimental but useful lints</lint>
-    </common_lints>
-  </clippy>
+---
 
-  <rustfmt>
-    <description>Automatic code formatter</description>
-    <usage>cargo fmt</usage>
+## 废弃模式 → 推荐
 
-    <configuration>
-      <file_reference>rustfmt.toml</file_reference>
-      edition = "2021"
-      max_width = 100
-      use_small_heuristics = "Max"
-      imports_granularity = "Crate"
-      group_imports = "StdExternalCrate"
-      reorder_imports = true
-    </configuration>
-  </rustfmt>
+| 废弃 | 推荐 | 原因 |
+|-----|------|------|
+| `lazy_static` | `std::sync::OnceLock` | std 内置 |
+| `rand::thread_rng` | `rand::rng()` | 新 API |
+| `failure` | `thiserror` + `anyhow` | 更流行 |
+| `serde_derive` | `serde` | 统一导入 |
+| `parking_lot::Mutex` | std::sync::Mutex | 足够快，稳定性优先 |
 
-  <cargo_nextest>
-    <description>Next-generation test runner with better output and parallelism</description>
-    <usage>cargo nextest run</usage>
+---
 
-    <features>
-      <feature>Parallel test execution</feature>
-      <feature>Better failure output</feature>
-      <feature>JUnit XML output for CI</feature>
-      <feature>Test retries</feature>
-    </features>
+## 验证 Crate
 
-    <configuration>
-      <file_reference>.config/nextest.toml</file_reference>
-      [profile.default]
-      retries = 2
-      slow-timeout = { period = "60s", terminate-after = 2 }
-      fail-fast = false
-    </configuration>
-  </cargo_nextest>
+```bash
+# 检查安全性
+cargo audit
 
-  <other_tools>
-    <tool name="cargo-audit">
-      <description>Security vulnerability scanning</description>
-    </tool>
-    <tool name="cargo-deny">
-      <description>Dependency license and security checks</description>
-    </tool>
-    <tool name="cargo-outdated">
-      <description>Check for outdated dependencies</description>
-    </tool>
-    <tool name="cargo-watch">
-      <description>Auto-rebuild on file changes</description>
-    </tool>
-    <tool name="cargo-expand">
-      <description>Macro expansion debugging</description>
-    </tool>
-  </other_tools>
-</toolchain>
+# 检查许可证
+cargo deny check
 
-<context7_integration>
-  <description>Use Context7 MCP for up-to-date Rust documentation</description>
+# 检查依赖
+cargo tree -i serde
+```
 
-  <rust_libraries>
-    <library name="The Rust Book" id="/rust-lang/book" />
-    <library name="Cargo" id="/rust-lang/cargo.git" />
-    <library name="Rust Clippy" id="/rust-lang/rust-clippy" />
-    <library name="Rustfmt" id="/rust-lang/rustfmt" />
-    <library name="Rust Reference" id="/rust-lang/reference.git" />
-    <library name="Rust by Example" id="/rust-lang/rust-by-example.git" />
-    <library name="cargo-nextest" id="/websites/nexte_st" />
-  </rust_libraries>
+---
 
-  <usage_patterns>
-    <pattern name="language_reference">
-      <step>resolve-library-id libraryName="rust lang"</step>
-      <step>get-library-docs context7CompatibleLibraryID="/rust-lang/book" topic="ownership"</step>
-    </pattern>
+## 快速参考
 
-    <pattern name="cargo_configuration">
-      <step>get-library-docs context7CompatibleLibraryID="/rust-lang/cargo.git" topic="workspace"</step>
-    </pattern>
+| 场景 | 推荐 Crate |
+|-----|-----------|
+| Web 服务 | axum + tokio + sqlx |
+| CLI 工具 | clap + anyhow |
+| 序列化 | serde + (json/bincode) |
+| 并行计算 | rayon |
+| 配置管理 | config + dotenvy |
+| 日志追踪 | tracing |
+| 测试 | tempfile + proptest |
+| 日期时间 | chrono |
 
-    <pattern name="clippy_lints">
-      <step>get-library-docs context7CompatibleLibraryID="/rust-lang/rust-clippy" topic="lints configuration"</step>
-    </pattern>
-  </usage_patterns>
-</context7_integration>
-
-<best_practices>
-  <practice priority="critical">Use cargo check for fast iteration during development</practice>
-  <practice priority="critical">Run cargo clippy before committing</practice>
-  <practice priority="critical">Format with cargo fmt for consistent style</practice>
-  <practice priority="high">Use workspace for multi-crate projects</practice>
-  <practice priority="high">Prefer &str over String for function parameters</practice>
-  <practice priority="high">Use impl Trait for return types when possible</practice>
-  <practice priority="medium">Document public API with /// doc comments</practice>
-  <practice priority="medium">Write unit tests alongside code in same file</practice>
-  <practice priority="medium">Use integration tests in tests/ for API testing</practice>
-  <practice priority="medium">Set rust-version in Cargo.toml for MSRV</practice>
-</best_practices>
-
-<rules priority="critical">
-  <rule>Run cargo clippy before committing; fix all warnings</rule>
-  <rule>Prefer safe Rust over unsafe blocks; document safety invariants when unsafe is needed</rule>
-  <rule>Use Result and Option types; never unwrap() in library code</rule>
-</rules>
-
-<rules priority="standard">
-  <rule>Use cargo fmt for consistent formatting</rule>
-  <rule>Prefer &str over String for function parameters</rule>
-  <rule>Write unit tests in same file, integration tests in tests/ directory</rule>
-  <rule>Use cargo check for fast iteration during development</rule>
-</rules>
-
-<workflow>
-  <phase name="analyze">
-    <objective>Understand Rust code requirements</objective>
-    <step>1. Check Cargo.toml for crate configuration</step>
-    <step>2. Review existing patterns and traits</step>
-    <step>3. Identify ownership and lifetime requirements</step>
-  </phase>
-  <phase name="implement">
-    <objective>Write safe, idiomatic Rust code</objective>
-    <step>1. Design with ownership in mind</step>
-    <step>2. Use Result/Option for error handling</step>
-    <step>3. Follow Rust API guidelines</step>
-  </phase>
-  <phase name="validate">
-    <objective>Verify Rust code correctness</objective>
-    <step>1. Run cargo check for quick validation</step>
-    <step>2. Run cargo clippy for lints</step>
-    <step>3. Run cargo test for testing</step>
-  </phase>
-</workflow>
-
-<error_escalation>
-  <level severity="low">
-    <example>Clippy warning about style</example>
-    <action>Fix warning, maintain idiomatic code</action>
-  </level>
-  <level severity="medium">
-    <example>Borrow checker error</example>
-    <action>Redesign ownership, avoid unsafe unless necessary</action>
-  </level>
-  <level severity="high">
-    <example>Breaking change in public API</example>
-    <action>Stop, present migration options to user</action>
-  </level>
-  <level severity="critical">
-    <example>Unsafe code without proper justification</example>
-    <action>Block operation, require safe alternatives</action>
-  </level>
-</error_escalation>
-
-<constraints>
-  <must>Prefer safe Rust over unsafe blocks</must>
-  <must>Use Result and Option for error handling</must>
-  <must>Follow Rust API guidelines for public APIs</must>
-  <avoid>Using unwrap() in library code</avoid>
-  <avoid>Unnecessary Clone implementations</avoid>
-  <avoid>Unsafe code without safety documentation</avoid>
-</constraints>
-
-<related_agents>
-  <agent name="design">Ownership architecture, trait design, and type system modeling</agent>
-  <agent name="execute">Rust implementation with proper lifetime management and error handling</agent>
-  <agent name="code-quality">Run cargo clippy, cargo fmt, and enforce Rust idioms</agent>
-</related_agents>
-
-<related_skills>
-  <skill name="serena-usage">Navigate trait implementations and module hierarchies</skill>
-  <skill name="context7-usage">Fetch Rust book, cargo, and clippy documentation</skill>
-  <skill name="investigation-patterns">Debug borrow checker errors, lifetime issues, and performance bottlenecks</skill>
-</related_skills>

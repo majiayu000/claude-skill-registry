@@ -1,7 +1,7 @@
 {
   "name": "coach",
-  "repo": "ErikEvenson/aurora-manual",
-  "path": ".claude/skills/coach/SKILL.md",
-  "source": "github.com/ErikEvenson/aurora-manual",
-  "downloaded_at": "2026-02-02T02:28:15.317461Z"
+  "repo": "netresearch/claude-coach-plugin",
+  "path": "skills/coach/SKILL.md",
+  "source": "github.com/netresearch/claude-coach-plugin",
+  "downloaded_at": "2026-02-04T03:28:12.239525Z"
 }

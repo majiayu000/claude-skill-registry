@@ -1,12 +1,7 @@
 {
   "name": "tdd-refactor",
-  "description": "Execute the REFACTOR phase of TDD by improving code structure while keeping all tests green. Removes duplication, improves naming, and enhances code quality without changing behavior.",
-  "repo": "SwiftyJunnos/Claude-Code-with-TDD",
-  "category": "development",
-  "tags": [
-    "tdd",
-    "refactor"
-  ],
-  "stars": 0,
-  "source": "local"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/tdd-refactor/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:41:04.987301Z"
 }

@@ -17,6 +17,7 @@ The devbox connection uses several port forwards for development tools:
 |------|-----------|---------|
 | 4000 | Local (-L) | eternal-machinery dev server |
 | 4003 | Local (-L) | eternal-machinery (secondary) |
+| 1455 | Local (-L) | OpenCode OAuth callback for ChatGPT Plus authentication |
 | 9222 | Remote (-R) | Chrome DevTools Protocol - control macOS browser from devbox |
 | 3033 | Remote (-R) | chatgpt-relay - `/ask-question` CLI talks to macOS daemon |
 

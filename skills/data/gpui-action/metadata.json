@@ -1,7 +1,7 @@
 {
   "name": "gpui-action",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/gpui-action/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:26.170114Z"
+  "repo": "zerx-lab/zTerm",
+  "path": ".claude/skills/gpui-action/SKILL.md",
+  "source": "github.com/zerx-lab/zTerm",
+  "downloaded_at": "2026-02-04T02:57:45.593338Z"
 }

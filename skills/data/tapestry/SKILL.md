@@ -1,6 +1,7 @@
 ---
 name: tapestry
 description: Unified content extraction and action planning. Use when user says "tapestry <URL>", "weave <URL>", "help me plan <URL>", "extract and plan <URL>", "make this actionable <URL>", or similar phrases indicating they want to extract content and create an action plan. Automatically detects content type (YouTube video, article, PDF) and processes accordingly.
+allowed-tools: Bash,Read,Write
 ---
 
 # Tapestry: Unified Content Extraction + Action Planning

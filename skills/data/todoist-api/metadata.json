@@ -1,7 +1,7 @@
 {
   "name": "todoist-api",
-  "repo": "vamseeachanta/digitalmodel",
-  "path": ".claude/skills/productivity/todoist-api/SKILL.md",
-  "source": "github.com/vamseeachanta/digitalmodel",
-  "downloaded_at": "2026-02-02T04:04:40.791637Z"
+  "repo": "aneym/agent-skills",
+  "path": "skills/todoist-api/SKILL.md",
+  "source": "github.com/aneym/agent-skills",
+  "downloaded_at": "2026-02-04T02:53:49.665835Z"
 }

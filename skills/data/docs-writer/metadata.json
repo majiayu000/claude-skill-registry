@@ -1,7 +1,7 @@
 {
   "name": "docs-writer",
-  "repo": "tech-leads-club/agent-skills",
-  "path": "skills/(development)/docs-writer/SKILL.md",
-  "source": "github.com/tech-leads-club/agent-skills",
-  "downloaded_at": "2026-02-01T03:36:41.868656Z"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/docs-writer/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:41:03.977533Z"
 }

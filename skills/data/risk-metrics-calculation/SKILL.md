@@ -20,12 +20,12 @@ Comprehensive risk measurement toolkit for portfolio management, including Value
 
 ### 1. Risk Metric Categories
 
-| Category          | Metrics         | Use Case             |
-| ----------------- | --------------- | -------------------- |
-| **Volatility**    | Std Dev, Beta   | General risk         |
-| **Tail Risk**     | VaR, CVaR       | Extreme losses       |
-| **Drawdown**      | Max DD, Calmar  | Capital preservation |
-| **Risk-Adjusted** | Sharpe, Sortino | Performance          |
+| Category | Metrics | Use Case |
+|----------|---------|----------|
+| **Volatility** | Std Dev, Beta | General risk |
+| **Tail Risk** | VaR, CVaR | Extreme losses |
+| **Drawdown** | Max DD, Calmar | Capital preservation |
+| **Risk-Adjusted** | Sharpe, Sortino | Performance |
 
 ### 2. Time Horizons
 
@@ -93,12 +93,12 @@ class RiskMetrics:
 
     def var_parametric(self, confidence: float = 0.95) -> float:
         """Parametric VaR assuming normal distribution."""
-        z_score = stats.norm.ppf(1 - confidence)  # Lower tail (5th percentile for 95% conf)
-        return -(self.returns.mean() + z_score * self.returns.std())
+        z_score = stats.norm.ppf(confidence)
+        return self.returns.mean() - z_score * self.returns.std()
 
     def var_cornish_fisher(self, confidence: float = 0.95) -> float:
         """VaR with Cornish-Fisher expansion for non-normality."""
-        z = stats.norm.ppf(1 - confidence)  # Lower tail z-score
+        z = stats.norm.ppf(confidence)
         s = stats.skew(self.returns)  # Skewness
         k = stats.kurtosis(self.returns)  # Excess kurtosis
 
@@ -535,7 +535,6 @@ for metric, value in summary.items():
 ## Best Practices
 
 ### Do's
-
 - **Use multiple metrics** - No single metric captures all risk
 - **Consider tail risk** - VaR isn't enough, use CVaR
 - **Rolling analysis** - Risk changes over time
@@ -543,7 +542,6 @@ for metric, value in summary.items():
 - **Document assumptions** - Distribution, lookback, etc.
 
 ### Don'ts
-
 - **Don't rely on VaR alone** - Underestimates tail risk
 - **Don't assume normality** - Returns are fat-tailed
 - **Don't ignore correlation** - Increases in stress

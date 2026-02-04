@@ -1,48 +1,20 @@
 ---
 name: discount-code-request
-description: |
-  Customer requests discount codes, coupon codes, or promotional pricing.
-sample_size: 388
-validation:
-  required_phrases:
-    - "thanks for reaching out"
-  forbidden_patterns: []
-metrics:
-  sample_size: 388
-  avg_thread_length: 2.87
-  top_phrases:
-    - phrase: "thanks for reaching out"
-      count: 65
-      percent: 16.8
-    - phrase: "https www totaltypescript com"
-      count: 50
-      percent: 12.9
-    - phrase: "let me know if"
-      count: 43
-      percent: 11.1
-    - phrase: "me know if you"
-      count: 38
-      percent: 9.8
-    - phrase: "if you have any"
-      count: 34
-      percent: 8.8
-    - phrase: "interest in the course"
-      count: 29
-      percent: 7.5
-    - phrase: "is no longer available"
-      count: 29
-      percent: 7.5
-    - phrase: "for your interest in"
-      count: 27
-      percent: 7
-    - phrase: "know if you have"
-      count: 26
-      percent: 6.7
-    - phrase: "to upgrade to the"
-      count: 26
-      percent: 6.7
+description: Respond to discount or coupon requests. Use when a customer asks for a promo code or special pricing.
+metadata:
+  trigger_phrases:
+      - "respond discount"
+      - "discount coupon"
+      - "coupon requests"
+  related_skills: ["ppp-pricing", "subscription-renewal-issue", "duplicate-purchase"]
+  sample_size: "388"
+  validation: |
+    required_phrases:
+      - "thanks for reaching out"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 388\navg_thread_length: 2.87\ntop_phrases:\n  - phrase: \"thanks for reaching out\"\n    count: 65\n    percent: 16.8\n  - phrase: \"https www totaltypescript com\"\n    count: 50\n    percent: 12.9\n  - phrase: \"let me know if\"\n    count: 43\n    percent: 11.1\n  - phrase: \"me know if you\"\n    count: 38\n    percent: 9.8\n  - phrase: \"if you have any\"\n    count: 34\n    percent: 8.8\n  - phrase: \"interest in the course\"\n    count: 29\n    percent: 7.5\n  - phrase: \"is no longer available\"\n    count: 29\n    percent: 7.5\n  - phrase: \"for your interest in\"\n    count: 27\n    percent: 7\n  - phrase: \"know if you have\"\n    count: 26\n    percent: 6.7\n  - phrase: \"to upgrade to the\"\n    count: 26\n    percent: 6.7"
 ---
-
 # Discount Code Request
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

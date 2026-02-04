@@ -1,7 +1,9 @@
 ---
-name: math-unified
+name: math
 description: Unified math capabilities - computation, solving, and explanation. I route to the right tool.
+triggers: ["calculate", "compute", "solve", "integrate", "derivative", "eigenvalue", "matrix", "simplify", "factor", "limit", "series", "differential equation", "unit convert", "explain", "what is", "how does"]
 allowed-tools: [Bash, Read, Write]
+priority: high
 ---
 
 # /math - Unified Math Capabilities
@@ -29,7 +31,7 @@ For formal proofs, use `/prove` instead.
 
 ### SymPy (Symbolic Math)
 ```bash
-uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/sympy_compute.py" <command> <args>
+uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/sympy_compute.py" <command> <args>
 ```
 
 | Command | Description | Example |
@@ -81,7 +83,7 @@ uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/sympy_compute.py" <comma
 
 ### Z3 (Constraint Solving)
 ```bash
-uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/z3_solve.py" <command> <args>
+uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/z3_solve.py" <command> <args>
 ```
 
 | Command | Use Case |
@@ -94,7 +96,7 @@ uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/z3_solve.py" <command> <
 
 ### Pint (Units)
 ```bash
-uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/pint_compute.py" convert <value> <from_unit> <to_unit>
+uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/pint_compute.py" convert <value> <from_unit> <to_unit>
 ```
 
 Example: `convert 5 miles kilometers`
@@ -103,7 +105,7 @@ Example: `convert 5 miles kilometers`
 
 ### Math Router (Auto-Route)
 ```bash
-uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/math_router.py" route "<natural language request>"
+uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/math_router.py" route "<natural language request>"
 ```
 
 Returns the exact command to run. Use when unsure which script.
@@ -152,28 +154,28 @@ I decide based on your request:
 ### Solve Equation
 ```
 User: Solve x² - 5x + 6 = 0
-Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/sympy_compute.py" solve "x**2 - 5*x + 6" --var x
+Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/sympy_compute.py" solve "x**2 - 5*x + 6" --var x
 Result: x = 2 or x = 3
 ```
 
 ### Compute Eigenvalues
 ```
 User: Find eigenvalues of [[2, 1], [1, 2]]
-Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/sympy_compute.py" eigenvalues "[[2,1],[1,2]]"
+Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/sympy_compute.py" eigenvalues "[[2,1],[1,2]]"
 Result: {1: 1, 3: 1}  (eigenvalue 1 with multiplicity 1, eigenvalue 3 with multiplicity 1)
 ```
 
 ### Prove Inequality
 ```
 User: Is x² + y² ≥ 2xy always true?
-Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/z3_solve.py" prove "x**2 + y**2 >= 2*x*y"
+Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/z3_solve.py" prove "x**2 + y**2 >= 2*x*y"
 Result: PROVED (equivalent to (x-y)² ≥ 0)
 ```
 
 ### Convert Units
 ```
 User: How many kilometers in 26.2 miles?
-Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/math/pint_compute.py" convert 26.2 miles kilometers
+Claude: uv run python "$CLAUDE_PROJECT_DIR/.claude/scripts/cc_math/pint_compute.py" convert 26.2 miles kilometers
 Result: 42.16 km
 ```
 

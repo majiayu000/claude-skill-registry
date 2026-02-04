@@ -17,42 +17,52 @@ Expert guidance for Microsoft Fabric Real-Time Intelligence using the Fabric RTI
 ## Quick Reference
 
 ### Eventhouse Tools
-- `kusto_query` - Execute KQL queries
-- `kusto_list_tables` - List tables in database
-- `kusto_get_table_schema` - Get table schema
-- `kusto_sample_table_data` - Sample table records
-- `kusto_ingest_inline_into_table` - Ingest CSV data
+
+| Tool | Purpose |
+|------|---------|
+| `kusto_query` | Execute KQL queries |
+| `kusto_list_tables` | List tables in database |
+| `kusto_get_table_schema` | Get table schema |
+| `kusto_sample_table_data` | Sample table records |
+| `kusto_ingest_inline_into_table` | Ingest CSV data |
 
 ### Eventstream Tools
-- `eventstream_list` - List Eventstreams
-- `eventstream_create` - Create new Eventstream
-- `eventstream_add_sample_data_source` - Add sample data source
-- `eventstream_add_eventhouse_destination` - Add Eventhouse destination
-- `eventstream_validate_definition` - Validate configuration
+
+| Tool | Purpose |
+|------|---------|
+| `eventstream_list` | List Eventstreams |
+| `eventstream_create` | Create new Eventstream |
+| `eventstream_add_sample_data_source` | Add sample data source |
+| `eventstream_add_eventhouse_destination` | Add Eventhouse destination |
+| `eventstream_validate_definition` | Validate configuration |
 
 ### Activator Tools
-- `activator_list_artifacts` - List triggers
-- `activator_create_trigger` - Create alert trigger
+
+| Tool | Purpose |
+|------|---------|
+| `activator_list_artifacts` | List triggers |
+| `activator_create_trigger` | Create alert trigger |
 
 ### Map Tools
-- `map_list` - List Maps
-- `map_create` - Create new Map
-- `map_get_definition` - Get Map configuration
 
----
+| Tool | Purpose |
+|------|---------|
+| `map_list` | List Maps |
+| `map_create` | Create new Map |
+| `map_get_definition` | Get Map configuration |
 
-## Instructions
+## Querying Data with KQL
 
-### Querying Data with KQL
+### kusto_query
 
-**kusto_query**
 Execute KQL queries against Eventhouse databases.
 
-Parameters:
-- database (string) - Target database name
-- query (string) - KQL query text
+**Parameters:**
+- `database` (string) - Target database name
+- `query` (string) - KQL query text
 
-Example:
+**Example:**
+
 ```kql
 StormEvents
 | where State == "ILLINOIS" and EventType == "Flood"
@@ -60,38 +70,37 @@ StormEvents
 | order by StartTime desc
 ```
 
-**kusto_sample_table_data**
+### kusto_sample_table_data
+
 Get sample records from a table.
 
-Parameters:
-- table_name (string)
-- sample_count (number, default: 10)
+**Parameters:**
+- `table_name` (string)
+- `sample_count` (number, default: 10)
 
----
+## Managing Eventstreams
 
-### Managing Eventstreams
+### eventstream_create
 
-**eventstream_create**
 Create a new Eventstream for real-time data processing.
 
-Parameters:
-- workspace_id (string)
-- display_name (string)
-- description (string, optional)
+**Parameters:**
+- `workspace_id` (string)
+- `display_name` (string)
+- `description` (string, optional)
 
-**eventstream_add_sample_data_source**
-Add sample data source to Eventstream.
+### eventstream_add_eventhouse_destination
 
-**eventstream_add_eventhouse_destination**
 Route data to Eventhouse for analytics.
 
-Parameters:
-- eventhouse_id (string)
-- kql_database_id (string)
-- table_name (string)
-- input_serialization_type (string) - "Json", "Csv", etc.
+**Parameters:**
+- `eventhouse_id` (string)
+- `kql_database_id` (string)
+- `table_name` (string)
+- `input_serialization_type` (string) - "Json", "Csv", etc.
 
-**Workflow:**
+### Workflow
+
 ```
 1. eventstream_start_definition
 2. eventstream_add_sample_data_source
@@ -100,34 +109,33 @@ Parameters:
 5. eventstream_create_from_definition
 ```
 
----
+## Creating Activator Triggers
 
-### Creating Activator Triggers
+### activator_create_trigger
 
-**activator_create_trigger**
 Create triggers for real-time alerting.
 
-Parameters:
-- workspace_id (string)
-- display_name (string)
-- description (string)
-- eventhouse_id (string)
-- kql_database_id (string)
-- query (string) - KQL query for monitoring
-- notification_type (string) - "Email", "Teams"
-- recipients (array) - Email addresses or Teams webhooks
+**Parameters:**
+- `workspace_id` (string)
+- `display_name` (string)
+- `description` (string)
+- `eventhouse_id` (string)
+- `kql_database_id` (string)
+- `query` (string) - KQL query for monitoring
+- `notification_type` (string) - "Email", "Teams"
+- `recipients` (array) - Email addresses or Teams webhooks
 
-Example: Monitor for floods and send email alert
+**Example:** Monitor for floods and send email alert
+
 ```
 Query: StormEvents | where EventType == "Flood" and State == "ILLINOIS"
 Notification: Email to admin@company.com
 ```
 
----
-
 ## Common Scenarios
 
 ### Query Analysis
+
 ```
 1. kusto_list_databases - Find databases
 2. kusto_list_tables - Find tables
@@ -136,6 +144,7 @@ Notification: Email to admin@company.com
 ```
 
 ### Real-Time Pipeline
+
 ```
 1. eventstream_create - Create pipeline
 2. eventstream_add_custom_endpoint_source - Add data source
@@ -145,13 +154,12 @@ Notification: Email to admin@company.com
 ```
 
 ### Alerting Setup
+
 ```
 1. kusto_query - Test alert condition
 2. activator_create_trigger - Create alert
 3. Monitor for notifications
 ```
-
----
 
 ## When to Use This Skill
 

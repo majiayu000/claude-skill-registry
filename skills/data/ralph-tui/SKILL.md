@@ -1,400 +1,210 @@
 ---
 name: ralph-tui
-description: Run ralph-tui task loops for automated PRD execution. Covers headless mode, PRD preparation, agent selection (opencode/claude), session management, and troubleshooting. Use when asked to "run ralph-tui", "execute PRD tasks", or "start a ralph session".
+description: AI agent loop orchestrator for autonomous task execution - coding, content, any multi-step work
 ---
 
-# Ralph-TUI Agent Execution Guide
+# Ralph TUI - Autonomous Task Execution
 
-> A practical guide for AI agents running ralph-tui task loops
+Break down complex work into tasks, then let AI execute them autonomously.
 
-## Quick Start
+**Why this matters:** Instead of manually prompting for each step, define the work upfront as a PRD, then let ralph-tui orchestrate execution. It selects tasks, builds prompts with context, executes your AI agent, and advances automatically.
 
-```bash
-cd /path/to/project
+## Usage
 
-# Run ralph-tui (both agents work reliably)
-ralph-tui run --prd ./prd.json --agent opencode --headless --iterations 20
-# or
-ralph-tui run --prd ./prd.json --agent claude --headless --iterations 20
-
-# Monitor progress
-ralph-tui status --json | jq '{status, progress: .session.progress}'
+```
+/ralph-tui                    # Show available commands
+/ralph-tui run                # Run autonomous loop on current prd.json
+/ralph-tui create             # Create a new PRD with AI assistance
+/ralph-tui status             # Check execution status
 ```
 
-## Agent Selection
+## On Skill Invoke
 
-**Both agents work reliably** when sessions are properly managed.
+### If no args or "help":
+Show the ralph-tui command reference:
 
-| Agent | Speed | Notes |
-|-------|-------|-------|
-| `opencode` | ~5-10s/task | Lightweight, fast |
-| `claude` | ~20-30s/task | More verbose output, thorough |
-
-```bash
-# OpenCode
-ralph-tui run --prd ./prd.json --agent opencode --headless
-
-# Claude  
-ralph-tui run --prd ./prd.json --agent claude --headless
 ```
+Ralph TUI - AI Agent Loop Orchestrator
+
+Commands:
+  jfl ralph run --prd ./tasks/file.json    Run autonomous task loop
+  jfl ralph create-prd --chat              Create PRD with AI
+  jfl ralph setup                          Initialize in project
+  jfl ralph status                         Show session status
+  jfl ralph resume                         Resume paused session
+
+Quick Start:
+  1. Create PRD: jfl ralph create-prd --chat
+  2. Run loop:   jfl ralph run --prd ./tasks/my-feature.json
+
+Keyboard (in TUI):
+  s = start, p = pause, q = quit
+  j/k = navigate, Enter = details
+```
+
+### If "run" or "start":
+
+1. Check for prd.json files:
+```bash
+ls ./tasks/*.json 2>/dev/null || ls ./prd.json 2>/dev/null
+```
+
+2. If found, ask which to run:
+```
+Found PRD files:
+1. tasks/admin-dashboard-prd.json (15 stories)
+2. tasks/auth-migration.json (8 stories)
+
+Which PRD to execute? (or 'new' to create one)
+```
+
+3. Launch ralph-tui:
+```bash
+jfl ralph run --prd <selected-file>
+```
+
+### If "create" or "new":
+
+1. Ask about the work:
+```
+What do you want to build or accomplish?
+(Describe the feature, fix, or task - I'll break it into stories)
+```
+
+2. Launch the chat-based PRD creator:
+```bash
+jfl ralph create-prd --chat --output ./tasks/
+```
+
+3. After PRD is created, offer to run it:
+```
+PRD created: ./tasks/my-feature.json
+
+Want to start autonomous execution?
+  jfl ralph run --prd ./tasks/my-feature.json
+```
+
+### If "status":
+
+Check ralph-tui status:
+```bash
+jfl ralph status
+```
+
+Show current session info, completed tasks, remaining work.
 
 ---
 
-## Prerequisites
+## PRD Format
 
-1. **ralph-tui installed**: `which ralph-tui`
-2. **Agent CLI installed**: `opencode` or `claude`
-3. **PRD file**: JSON format with user stories
-
----
-
-## Preparing a PRD
-
-### Option 1: Create PRD Interactively
-
-```bash
-ralph-tui create-prd
-# or with AI chat assistance:
-ralph-tui create-prd --chat
-```
-
-### Option 2: Convert Markdown to JSON
-
-```bash
-ralph-tui convert --to json ./prd.md --output ./prd.json
-```
-
-### Option 3: Manual JSON Structure
-
-Create a `prd.json` file:
+Ralph TUI uses JSON PRDs with this structure:
 
 ```json
 {
-  "name": "Project Name",
-  "description": "What this PRD accomplishes",
-  "branchName": "main",
-  "userStories": [
+  "name": "Feature Name",
+  "description": "What we're building",
+  "quality_gates": ["bun run typecheck", "bun run lint"],
+  "stories": [
     {
       "id": "US-001",
-      "title": "Short task title",
-      "description": "Detailed description of what to implement",
-      "acceptanceCriteria": [
-        "Specific verifiable criterion 1",
-        "Specific verifiable criterion 2",
-        "Build succeeds with no new warnings"
-      ],
+      "title": "Story title",
       "priority": 1,
-      "passes": false,
-      "labels": [],
-      "dependsOn": []
-    },
-    {
-      "id": "US-002",
-      "title": "Second task",
-      "description": "Description",
-      "acceptanceCriteria": ["Criteria"],
-      "priority": 2,
-      "passes": false,
-      "labels": [],
-      "dependsOn": ["US-001"]
+      "status": "pending",
+      "description": "What to implement",
+      "acceptance_criteria": ["Criterion 1", "Criterion 2"],
+      "files": ["path/to/file.ts"],
+      "dependencies": ["US-000"],
+      "context": "Additional context for the agent"
     }
   ]
 }
 ```
 
-### Key PRD Fields
+### Story Fields
 
-| Field | Purpose |
-|-------|---------|
-| `id` | Unique identifier (US-001, US-002, etc.) |
-| `title` | Short task name shown in TUI |
-| `description` | Full task description for the agent |
-| `acceptanceCriteria` | Array of verifiable requirements |
-| `priority` | Execution order (1 = highest) |
-| `passes` | `false` = pending, `true` = completed |
-| `dependsOn` | Array of task IDs that must complete first |
-
----
-
-## The `.ralph-tui/` Directory
-
-**Important**: This directory contains valuable session history. Never delete it carelessly.
-
-| File/Dir | Purpose | Persists? |
-|----------|---------|-----------|
-| `config.toml` | Project configuration | ✅ Yes |
-| `progress.md` | Human-readable progress log | ✅ Yes |
-| `iterations/` | Per-iteration agent logs | ✅ Yes |
-| `session.json` | Active session state | ❌ Removed on completion |
-| `ralph.lock` | Prevents concurrent runs | ❌ Removed on completion |
+| Field | Required | Description |
+|-------|----------|-------------|
+| `id` | Yes | Unique ID (US-001 format) |
+| `title` | Yes | Short description |
+| `priority` | Yes | 1 = highest, higher = lower priority |
+| `status` | Yes | pending, in_progress, completed, blocked |
+| `description` | Yes | What to implement |
+| `acceptance_criteria` | Yes | List of requirements |
+| `files` | No | Files likely to be modified |
+| `dependencies` | No | Story IDs that must complete first |
+| `context` | No | Extra info for the agent |
 
 ---
 
-## Running Ralph-TUI
+## Creating Good PRDs
 
-### Standard Execution
+### 1. Keep Stories Small
+Each story should be completable in one agent session (typically <30 min of AI work).
 
-```bash
-cd /path/to/project
+Bad: "Implement user authentication"
+Good: "Add login form component", "Create auth API route", "Add session middleware"
 
-# Ensure config exists
-mkdir -p .ralph-tui
-cat > .ralph-tui/config.toml << 'EOF'
-agent = "opencode"
-tracker = "json"
-EOF
+### 2. Clear Acceptance Criteria
+Make criteria specific and testable.
 
-# Run
-ralph-tui run --prd ./prd.json --headless --iterations 20 > /tmp/ralph.log 2>&1 &
-echo "PID: $!"
-```
+Bad: "Should work well"
+Good: "Returns 401 for invalid credentials", "Sets httpOnly cookie on success"
 
-### Check Status
+### 3. Order Dependencies
+Put foundational work first. Use `dependencies` field when order matters.
 
-```bash
-ralph-tui status --json | jq '{status, progress: .session.progress}'
-```
+### 4. Include Context
+Add relevant info the agent needs but won't find in the codebase.
 
-### Resume Interrupted Session
-
-```bash
-ralph-tui resume --headless
+```json
+{
+  "context": "We're using Drizzle ORM. The users table already has an isAdmin column."
+}
 ```
 
 ---
 
-## Session Management
+## Execution Model
 
-### Starting Fresh (Preserving History)
-
-**Never use `rm -rf .ralph-tui/`** - this destroys valuable iteration logs and progress history.
-
-Instead, archive the old session:
-
-```bash
-# Archive old session before starting fresh
-if [ -d .ralph-tui ]; then
-  ARCHIVE_NAME=".ralph-tui-archive-$(date +%Y%m%d-%H%M%S)"
-  mv .ralph-tui "$ARCHIVE_NAME"
-  echo "Archived to $ARCHIVE_NAME"
-fi
-
-# Create fresh config
-mkdir -p .ralph-tui
-cat > .ralph-tui/config.toml << 'EOF'
-agent = "opencode"
-tracker = "json"
-EOF
-
-# Start new session
-ralph-tui run --prd ./prd.json --headless --iterations 20
-```
-
-### Clearing Only Session State (Keep Config & History)
-
-If you just need to reset session state but keep config and logs:
-
-```bash
-# Remove only session state, keep config and history
-rm -f .ralph-tui/ralph.lock .ralph-tui/session.json
-
-# Resume or start fresh
-ralph-tui run --prd ./prd.json --headless
-```
-
-### Stuck Session Recovery
-
-```bash
-# 1. Check what's blocking
-ralph-tui status --json
-
-# 2. Remove lock if stale
-rm -f .ralph-tui/ralph.lock
-
-# 3. Reset session to paused (preserves progress tracking)
-if [ -f .ralph-tui/session.json ]; then
-  cat .ralph-tui/session.json | jq '.status = "paused"' > /tmp/s.json
-  mv /tmp/s.json .ralph-tui/session.json
-fi
-
-# 4. Resume
-ralph-tui resume --headless
-```
+1. **Task Selection**: Ralph picks the highest-priority pending task with no blocked dependencies
+2. **Prompt Building**: Combines task details with your project context (CLAUDE.md, etc.)
+3. **Agent Execution**: Runs your AI agent (Claude Code, OpenCode, etc.)
+4. **Completion Detection**: Watches for `<promise>COMPLETE</promise>` token
+5. **Quality Gates**: Runs checks (typecheck, lint) before advancing
+6. **Loop**: Moves to next task automatically
 
 ---
 
-## Troubleshooting
+## Integration with JFL
 
-### Problem: "Invalid session file"
-
-**Solution**: Remove only the session file, not the entire directory:
+Ralph TUI is bundled with JFL CLI:
 
 ```bash
-rm -f .ralph-tui/session.json
-ralph-tui run --prd ./prd.json --headless
+# Install JFL (includes ralph-tui)
+npm install -g jfl
+
+# Use ralph via jfl
+jfl ralph run --prd ./tasks/feature.json
+
+# Or directly
+ralph-tui run --prd ./tasks/feature.json
 ```
 
-### Problem: Session Stuck / Agent at 0% CPU
-
-**Diagnosis**:
-```bash
-# Check agent process
-ps aux | grep -E "claude|opencode" | grep -v grep
-
-# Check ralph-tui status
-ralph-tui status --json
-```
-
-**Solution**:
-```bash
-# Kill stuck processes
-pkill -f "ralph-tui run"
-
-# Remove lock, reset session
-rm -f .ralph-tui/ralph.lock
-cat .ralph-tui/session.json | jq '.status = "paused"' > /tmp/s.json && mv /tmp/s.json .ralph-tui/session.json
-
-# Resume
-ralph-tui resume --headless
-```
-
-### Problem: Setup Wizard Blocks Headless Mode
-
-**Cause**: No config.toml exists.
-
-**Solution**: Create config before running:
-```bash
-mkdir -p .ralph-tui
-cat > .ralph-tui/config.toml << 'EOF'
-agent = "opencode"
-tracker = "json"
-EOF
-```
-
-### Problem: Config Validation Warnings
-
-**Note**: Warnings like "Invalid input: expected string, received object" are often non-fatal. Check if tasks are completing:
-
-```bash
-tail /tmp/ralph.log | grep "COMPLETED"
-```
-
----
-
-## Running Multiple PRDs Sequentially
-
-```bash
-#!/bin/bash
-# run-all-prds.sh
-
-PROJECT_DIR=~/dev/my-project
-PRDS=(
-  "./prd.json"
-  "./tasks/prd-phase2.json"
-  "./tasks/prd-phase3.json"
-)
-
-for prd in "${PRDS[@]}"; do
-  echo "=== Running $prd ==="
-  cd "$PROJECT_DIR"
-  
-  # Archive previous session if exists
-  if [ -f .ralph-tui/session.json ]; then
-    ARCHIVE=".ralph-tui-$(basename $prd .json)-$(date +%H%M%S)"
-    cp -r .ralph-tui "$ARCHIVE"
-    rm -f .ralph-tui/session.json .ralph-tui/ralph.lock
-  fi
-  
-  # Run this PRD
-  ralph-tui run --prd "$prd" --headless --iterations 20 > "/tmp/ralph-$(basename $prd .json).log" 2>&1
-  
-  echo "Completed: $prd"
-done
-
-echo "All PRDs completed!"
-```
-
----
-
-## Verifying Completion
-
-```bash
-# Check all tasks passed
-cat prd.json | jq '[.userStories[] | .passes] | all'
-# Should return: true
-
-# Count passed vs pending
-cat prd.json | jq '[.userStories[] | .passes] | group_by(.) | map({passes: .[0], count: length})'
-
-# List any incomplete tasks
-cat prd.json | jq '.userStories[] | select(.passes == false) | {id, title}'
-```
+PRDs are typically stored in `./tasks/` directory within your GTM workspace.
 
 ---
 
 ## Best Practices
 
-1. **Create config.toml** before running headless
-2. **Archive, don't delete** `.ralph-tui/` - history is valuable
-3. **Set reasonable `--iterations`** - 20 is good default
-4. **Log to file** - `> /tmp/ralph.log 2>&1`
-5. **Monitor with status** - `ralph-tui status --json`
-6. **Include "Build succeeds"** in acceptance criteria
+1. **Start with /spec**: Use `/spec` skill to refine your PRD through adversarial review before execution
+2. **Run quality gates**: Always include typecheck/lint in quality_gates
+3. **Review between tasks**: Use `p` to pause and review changes before continuing
+4. **Keep context files updated**: Ralph reads CLAUDE.md for project context
 
 ---
 
-## Command Reference
+## Docs
 
-| Command | Purpose |
-|---------|---------|
-| `ralph-tui run --prd <file>` | Start new session |
-| `ralph-tui resume` | Resume interrupted session |
-| `ralph-tui status --json` | Check session status |
-| `ralph-tui logs` | View iteration logs |
-| `ralph-tui plugins agents` | List available agents |
-| `ralph-tui create-prd` | Create PRD interactively |
-| `ralph-tui convert --to json` | Convert MD to JSON |
+Full documentation: https://ralph-tui.com/docs
 
-### Common Flags
-
-| Flag | Purpose |
-|------|---------|
-| `--headless` | Run without TUI |
-| `--agent <name>` | Agent: `opencode` or `claude` |
-| `--iterations <n>` | Max iterations (0 = unlimited) |
-| `--prd <path>` | PRD file path |
-
----
-
-## Example Session
-
-```bash
-# 1. Prepare project
-cd ~/dev/my-project
-
-# 2. Ensure config exists
-mkdir -p .ralph-tui
-echo 'agent = "opencode"' > .ralph-tui/config.toml
-echo 'tracker = "json"' >> .ralph-tui/config.toml
-
-# 3. Archive any existing session
-if [ -f .ralph-tui/session.json ]; then
-  mv .ralph-tui/session.json ".ralph-tui/session-$(date +%H%M%S).json.bak"
-fi
-
-# 4. Start ralph-tui
-ralph-tui run --prd ./prd.json --headless --iterations 20 > /tmp/ralph.log 2>&1 &
-echo "Started with PID: $!"
-
-# 5. Monitor progress
-watch -n 5 'ralph-tui status --json | jq "{status, progress: .session.progress}"'
-
-# 6. Verify completion
-cat prd.json | jq '[.userStories[] | .passes] | all'
-```
-
----
-
-*Last updated: 2026-01-15*
-*Tested with: ralph-tui v0.1.5, opencode v1.1.6, claude v2.1.7*
-*Both agents verified working*
+Installed docs: `knowledge/RALPH_TUI_DOCS.txt`

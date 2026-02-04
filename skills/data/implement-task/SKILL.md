@@ -1,6 +1,7 @@
 ---
-name: implement-task
+name: implement_task
 description: Implementation agent that executes a single task and creates handoff on completion
+user-invocable: false
 ---
 
 # Implementation Task Agent
@@ -268,7 +269,7 @@ Task(
   [Content of task-02-*.md or "This is the first task"]
 
   ### Handoff Directory:
-  thoughts/shared/handoffs/<session>/
+  thoughts/handoffs/open-source-release/
 
   ---
 
@@ -283,7 +284,7 @@ Task(
 
 Your handoffs will accumulate:
 ```
-thoughts/shared/handoffs/<session>/
+thoughts/handoffs/<session>/
 ├── task-01-setup-schema.md
 ├── task-02-create-endpoints.md
 ├── task-03-add-validation.md      ← You create this

@@ -1,7 +1,7 @@
 {
   "name": "claude-opus-4-5-migration",
-  "repo": "HelixDevelopment/HelixAgent",
-  "path": "skills/claude-code/claude-opus-4-5-migration/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:42.850755Z"
+  "repo": "akiojin/playfab-mcp-server",
+  "path": ".claude/skills/claude-opus-4-5-migration/SKILL.md",
+  "source": "github.com/akiojin/playfab-mcp-server",
+  "downloaded_at": "2026-02-04T04:16:12.059859Z"
 }

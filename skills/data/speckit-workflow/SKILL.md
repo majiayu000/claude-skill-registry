@@ -1,459 +1,363 @@
 ---
 name: speckit-workflow
-description: GitHub Spec Kit 5-phase workflow. Use when following the Constitution → Specify → Plan → Tasks → Implement cycle. Provides phase guidance, file templates, and workflow orchestration.
-allowed-tools: Read, Glob, Grep, Write, Edit, Task
+version: 1.0.0
+description: Spec-driven development workflow for creating feature specifications, clarifying requirements, building technical plans, and generating implementation tasks. Follows the SpecKit methodology for structured software development from natural language descriptions. Use when starting new features, writing specifications, creating implementation plans, or breaking down work into tasks.
 ---
 
-# Spec Kit Workflow
+# SpecKit: Spec-Driven Development Workflow
 
-GitHub Spec Kit 5-phase specification-driven development workflow.
+Guide users through structured specification-driven development from feature description to implementation tasks. This skill implements the complete SpecKit methodology for turning natural language feature descriptions into actionable development work.
 
-## When to Use This Skill
+## Triggers
 
-**Keywords:** Spec Kit, 5-phase workflow, constitution, specify, plan, tasks, implement, feature.md, design.md, tasks.md, specification workflow, GitHub Spec Kit, constitution.md, phased development
-
-**Use this skill when:**
-
-- Implementing specification-driven development workflows
-- Creating or updating project constitution files
-- Generating feature specifications from requirements
-- Creating implementation plans from specifications
-- Breaking down plans into task lists
-- Following the full Specify → Plan → Tasks → Implement cycle
+Use this skill when:
+- Starting a new feature development
+- Writing feature specifications
+- Clarifying ambiguous requirements
+- Creating technical implementation plans
+- Breaking down work into actionable tasks
+- Generating user stories and acceptance criteria
+- Keywords: speckit, specification, spec, feature, requirements, user story, acceptance criteria, implementation plan, task breakdown
 
 ## Workflow Overview
 
-```text
-Phase 0: Constitution (One-time setup)
-    ↓
-Phase 1: Specify (Generate feature.md)
-    ↓
-Phase 2: Plan (Generate design.md)
-    ↓
-Phase 3: Tasks (Generate tasks.md)
-    ↓
-Phase 4: Implement (Code with guidance)
+```
+SPECKIT PIPELINE
+
+  /speckit-specify     Create specification from description
+        |
+        v
+  /speckit-clarify     Identify and resolve ambiguities (optional)
+        |
+        v
+  /speckit-plan        Generate technical implementation plan
+        |
+        v
+  /speckit-tasks       Break plan into actionable tasks
+        |
+        v
+  /speckit-implement   Execute implementation (iterative)
 ```
 
-## Phase 0: Constitution
+---
+
+## Phase 1: Specify - Create Feature Specification
 
 ### Purpose
 
-Establish project-wide principles, constraints, and non-functional requirements that guide ALL specifications.
+Transform natural language feature descriptions into structured specifications. Focus on **WHAT** users need and **WHY** - avoid implementation details.
 
-### File: `.constitution.md`
+### Process
 
-```markdown
-# Project Constitution
+1. **Analyze Description**: Extract key concepts (actors, actions, data, constraints)
+2. **Generate Branch Name**: Create 2-4 word short name (action-noun format)
+3. **Create Spec Directory**: `specs/<NNN-feature-name>/`
+4. **Fill Required Sections**:
+   - User Scenarios with priorities (P1, P2, P3)
+   - Functional Requirements (FR-001, FR-002, etc.)
+   - Success Criteria (measurable, technology-agnostic)
+5. **Mark Ambiguities**: Maximum 3 `[NEEDS CLARIFICATION]` markers
 
-## Core Principles
-- <principle 1>
-- <principle 2>
-
-## Technical Constraints
-- <constraint 1>
-- <constraint 2>
-
-## Quality Standards
-- <standard 1>
-- <standard 2>
-
-## Non-Functional Requirements
-- Performance: <requirement>
-- Security: <requirement>
-- Accessibility: <requirement>
-```
-
-### Constitution Checklist
-
-- [ ] Core development principles defined
-- [ ] Technical constraints documented
-- [ ] Quality standards specified
-- [ ] Non-functional requirements listed
-- [ ] Team conventions captured
-- [ ] Dependencies and integration requirements noted
-
-### When to Update
-
-Update the constitution when:
-
-- New non-functional requirements emerge
-- Team conventions change
-- Architectural decisions impact all features
-- Project-wide constraints are added
-
-## Phase 1: Specify
-
-### Purpose
-
-Transform a feature request or user story into a structured specification with EARS requirements and acceptance criteria.
-
-### Input
-
-- Feature request (natural language)
-- User story (As a... I want... So that...)
-- Problem statement
-
-### Output: `feature.md`
+### Specification Template
 
 ```markdown
-# Feature: <Feature Name>
-
-## Context
-### Problem Statement
-<What problem does this solve?>
-
-### Motivation
-<Why is this important?>
-
-### Scope
-<What's in/out of scope?>
-
-## Requirements
-
-### REQ-001: <Requirement Title>
-**EARS Pattern:** <ubiquitous|state-driven|event-driven|unwanted|optional>
-**Priority:** <must|should|could>
-**Text:** <EARS-formatted requirement>
-
-#### Acceptance Criteria
-- **AC-001:**
-  - Given: <precondition>
-  - When: <action>
-  - Then: <outcome>
-
-### REQ-002: ...
-
-## Dependencies
-- <dependency 1>
-- <dependency 2>
-
-## Risks
-- <risk 1>
-- <risk 2>
-```
-
-### Specify Phase Checklist
-
-- [ ] Problem statement is clear and specific
-- [ ] All requirements use EARS patterns
-- [ ] Each requirement has acceptance criteria
-- [ ] Requirements are prioritized (MoSCoW)
-- [ ] Dependencies identified
-- [ ] Risks documented
-- [ ] Scope boundaries defined
-
-## Phase 2: Plan
-
-### Purpose
-
-Design the technical implementation approach for the specified feature.
-
-### Input
-
-- `feature.md` from Phase 1
-- Constitution constraints
-- Existing codebase context
-
-### Output: `design.md`
-
-```markdown
-# Design: <Feature Name>
+# Feature: [Feature Name]
 
 ## Overview
-<High-level approach>
+[1-2 paragraph summary of the feature]
 
-## Architecture
+## User Scenarios
 
-### Component Design
-- <component 1>: <purpose>
-- <component 2>: <purpose>
-
-### Data Model
-<Entities, relationships, schema changes>
-
-### API Design
-<Endpoints, contracts, interfaces>
-
-## Technical Approach
-
-### Approach Selected
-<Chosen approach with rationale>
-
-### Alternatives Considered
-| Alternative | Pros | Cons | Why Not |
-| --- | --- | --- | --- |
-| <alt 1> | ... | ... | ... |
-
-## Integration Points
-- <integration 1>
-- <integration 2>
-
-## Testing Strategy
-- Unit tests: <approach>
-- Integration tests: <approach>
-- E2E tests: <approach>
-
-## Rollout Plan
-<How will this be deployed?>
-```
-
-### Plan Phase Checklist
-
-- [ ] Architecture aligns with constitution
-- [ ] All requirements can be addressed
-- [ ] Alternatives were considered
-- [ ] Data model is complete
-- [ ] API contracts defined
-- [ ] Testing strategy covers acceptance criteria
-- [ ] Integration points identified
-- [ ] Rollout plan exists
-
-## Phase 3: Tasks
-
-### Purpose
-
-Break down the design into implementable tasks with clear deliverables.
-
-### Input
-
-- `design.md` from Phase 2
-- `feature.md` requirements for traceability
-
-### Output: `tasks.md`
-
-````markdown
-# Tasks: <Feature Name>
-
-## Task List
-
-### TSK-001: <Task Title>
-**Status:** pending
-**Requirement:** REQ-001
-**Estimated Effort:** <S|M|L|XL>
-
-**Description:**
-<What needs to be done>
-
-**Deliverables:**
-- [ ] <deliverable 1>
-- [ ] <deliverable 2>
+### P1: [Primary User Journey] (MVP)
+**As a** [user type]
+**I want to** [action]
+**So that** [benefit]
 
 **Acceptance Criteria:**
-- [ ] <criterion 1>
-- [ ] <criterion 2>
+- Given [context], when [action], then [outcome]
+- Given [context], when [action], then [outcome]
 
-### TSK-002: ...
+### P2: [Secondary Journey]
+[Same format as P1]
 
-## Dependency Graph
+## Functional Requirements
 
-```text
-TSK-001 → TSK-003
-TSK-002 → TSK-003
-TSK-003 → TSK-004
+- **FR-001**: System MUST [specific capability]
+- **FR-002**: System MUST [specific capability]
+- **FR-003**: System SHOULD [optional capability]
+
+## Success Criteria
+
+- Users can complete [journey] in under [time]
+- System supports [scale metric]
+- [Measurable outcome]
+
+## Out of Scope
+- [Explicitly excluded items]
+
+## Clarifications
+[This section populated during clarify phase]
 ```
 
-## Effort Summary
+### Key Rules
 
-| Size | Count | Typical Duration |
-| --- | --- | --- |
-| S | <n> | < 2 hours |
-| M | <n> | 2-4 hours |
-| L | <n> | 4-8 hours |
-| XL | <n> | > 8 hours |
-````
+- Focus on user value and business needs
+- Write for non-technical stakeholders
+- No implementation details (languages, frameworks, APIs)
+- Requirements must be testable and unambiguous
 
-### Tasks Phase Checklist
+---
 
-- [ ] Every requirement has at least one task
-- [ ] Tasks are independently deliverable
-- [ ] Dependencies are mapped
-- [ ] Effort estimates provided
-- [ ] Acceptance criteria are testable
-- [ ] No task is larger than XL
-- [ ] Critical path identified
-
-## Phase 4: Implement
+## Phase 2: Clarify - Resolve Ambiguities
 
 ### Purpose
 
-Execute tasks with continuous validation against specifications.
+Detect and reduce ambiguity in the specification by asking targeted clarification questions and encoding answers back into the spec.
 
-### Input
+### Process
 
-- `tasks.md` from Phase 3
-- `design.md` for technical guidance
-- `feature.md` for acceptance criteria
+1. **Load Specification**: Read current spec file
+2. **Scan for Ambiguities**: Check coverage across categories
+3. **Generate Questions**: Maximum 5 questions, prioritized by impact
+4. **Sequential Questioning**: Present ONE question at a time
+5. **Integrate Answers**: Update spec immediately after each answer
 
-### Workflow
+### Ambiguity Categories
 
-```text
-1. Select next task (respecting dependencies)
-2. Review task deliverables and acceptance criteria
-3. Implement the task
-4. Validate against acceptance criteria
-5. Mark task complete
-6. Repeat until all tasks done
+| Category | What to Check |
+|----------|---------------|
+| Functional Scope | User goals, out-of-scope declarations |
+| Domain & Data Model | Entities, relationships, state transitions |
+| Interaction & UX | User journeys, error states, accessibility |
+| Non-Functional | Performance, scalability, security |
+| Integration | External services, APIs, failure modes |
+| Edge Cases | Negative scenarios, conflict resolution |
+| Constraints | Technical constraints, tradeoffs |
+| Terminology | Glossary consistency |
+| Completion Signals | Testable acceptance criteria |
+
+### Question Format
+
+For Multiple-Choice:
+```markdown
+**Recommended:** Option [X] - [1-2 sentence reasoning]
+
+| Option | Description |
+|--------|-------------|
+| A | Option A description |
+| B | Option B description |
+| C | Option C description |
+
+Reply with option letter, accept recommendation with "yes", or provide your own answer.
 ```
 
-### Implementation Checklist (Per Task)
+For Short-Answer:
+```markdown
+**Suggested:** [proposed answer] - [brief reasoning]
 
-- [ ] Task dependencies are complete
-- [ ] Implementation follows design
-- [ ] Code passes acceptance criteria
-- [ ] Tests written and passing
-- [ ] Documentation updated
-- [ ] Task marked complete in tasks.md
-
-### Feature Completion Checklist
-
-- [ ] All tasks marked complete
-- [ ] All acceptance criteria verified
-- [ ] All tests passing
-- [ ] Documentation complete
-- [ ] Feature reviewed against original request
-
-## Phase Transitions
-
-### Phase 0 → Phase 1
-
-**Gate:** Constitution exists and is current
-
-**Validation:**
-
-- [ ] `.constitution.md` file exists
-- [ ] Constitution reviewed within last quarter
-- [ ] No blocking updates needed
-
-### Phase 1 → Phase 2
-
-**Gate:** Specification is complete and valid
-
-**Validation:**
-
-- [ ] All requirements use EARS patterns
-- [ ] All requirements have acceptance criteria
-- [ ] Priorities assigned
-- [ ] Dependencies identified
-- [ ] Stakeholder approval (if required)
-
-### Phase 2 → Phase 3
-
-**Gate:** Design is implementable
-
-**Validation:**
-
-- [ ] Design addresses all requirements
-- [ ] Architecture aligns with constitution
-- [ ] Technical approach selected
-- [ ] Integration points defined
-- [ ] Testing strategy documented
-
-### Phase 3 → Phase 4
-
-**Gate:** Tasks are ready for implementation
-
-**Validation:**
-
-- [ ] All tasks mapped to requirements
-- [ ] Dependencies graphed
-- [ ] Effort estimated
-- [ ] No blocking dependencies external to feature
-- [ ] Development environment ready
-
-## Prompts Reference
-
-### Specify Prompt
-
-Located at: `prompts/specify.prompt.md`
-
-Key sections:
-
-- Context extraction from user input
-- EARS pattern application
-- Acceptance criteria generation
-- Prioritization guidance
-
-### Plan Prompt
-
-Located at: `prompts/plan.prompt.md`
-
-Key sections:
-
-- Architecture design
-- Alternatives analysis
-- Testing strategy
-- Integration planning
-
-### Tasks Prompt
-
-Located at: `prompts/tasks.prompt.md`
-
-Key sections:
-
-- Task decomposition
-- Dependency mapping
-- Effort estimation
-- Acceptance criteria mapping
-
-## File Organization
-
-```text
-.specs/
-├── <feature-name>/
-│   ├── feature.md      # Phase 1 output
-│   ├── design.md       # Phase 2 output
-│   └── tasks.md        # Phase 3 output
-└── ...
-
-.constitution.md        # Phase 0 (project root)
+Format: Short answer (5 words max). Accept with "yes" or provide your own.
 ```
 
-## Quick Commands
+### Integration Rules
 
-| Phase | Command | Description |
-| --- | --- | --- |
-| 0 | `/spec:constitution` | Create/update constitution |
-| 1 | `/spec:specify` | Generate specification |
-| 2 | `/spec:plan` | Generate design |
-| 3 | `/spec:tasks` | Generate task breakdown |
-| 4 | `/spec:implement` | Guided implementation |
-| All | `/spec:speckit:run` | Full workflow |
-
-## Integration with Canonical Spec
-
-Spec Kit outputs map to the canonical specification model:
-
-| Spec Kit | Canonical Field |
-| --- | --- |
-| feature.md context | `context.problem`, `context.motivation` |
-| REQ-xxx | `requirements[].id` |
-| EARS text | `requirements[].text` |
-| Priority | `requirements[].priority` |
-| AC-xxx | `requirements[].acceptance_criteria[]` |
-| design.md | `implementation_notes` |
-
-## References
-
-**Detailed Documentation:**
-
-- [Constitution Guide](references/constitution.md) - Constitution file patterns
-- [Phase Reference](references/phase-reference.md) - Detailed phase instructions
-- [Prompts Guide](references/prompts-guide.md) - Prompt templates per phase
-
-**Related Skills:**
-
-- `spec-management` - Specification workflow navigation
-- `canonical-spec-format` - Canonical specification structure
-- `ears-authoring` - EARS requirement patterns
-- `gherkin-authoring` - Acceptance criteria syntax
+After each answer:
+1. Add to `## Clarifications` section with session date
+2. Apply to appropriate spec section
+3. Replace conflicting earlier statements
+4. Save immediately
 
 ---
 
-**Last Updated:** 2025-12-24
+## Phase 3: Plan - Create Implementation Plan
 
-## Version History
+### Purpose
 
-- **v1.0.0** (2025-12-26): Initial release
+Create a technical implementation plan from the feature specification. Generate design artifacts including research, data models, and API contracts.
+
+### Process
+
+1. **Load Context**: Read spec and any existing research
+2. **Fill Technical Context**: Tech stack, dependencies, constraints
+3. **Research Phase**: Resolve any NEEDS CLARIFICATION items
+4. **Design Phase**: Generate data models and contracts
+5. **Structure Phase**: Define project layout
+
+### Generated Artifacts
+
+```
+specs/<feature>/
+├── spec.md           # Feature specification
+├── plan.md           # Implementation plan
+├── research.md       # Research and decisions
+├── data-model.md     # Entity definitions
+├── quickstart.md     # Getting started guide
+└── contracts/
+    └── api-spec.json # OpenAPI specification
+```
+
+### Implementation Plan Template
+
+```markdown
+# Implementation Plan: [Feature Name]
+
+## Technical Context
+
+**Language/Version**: [e.g., Python 3.11, TypeScript 5.x]
+**Primary Dependencies**: [e.g., FastAPI, React]
+**Storage**: [e.g., PostgreSQL, MongoDB]
+**Testing**: [e.g., pytest, Jest]
+**Target Platform**: [e.g., Linux container, AWS Lambda]
+
+## Project Structure
+
+src/
+├── models/
+├── services/
+├── api/
+└── lib/
+
+tests/
+├── unit/
+├── integration/
+└── e2e/
+
+## Data Model Summary
+
+[Key entities and relationships]
+
+## API Endpoints Summary
+
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | /api/v1/resource | Create resource |
+| GET | /api/v1/resource/:id | Get resource |
+
+## Implementation Phases
+
+1. Setup & Infrastructure
+2. Core Data Model
+3. Business Logic
+4. API Layer
+5. Testing & Polish
+```
 
 ---
+
+## Phase 4: Tasks - Generate Actionable Tasks
+
+### Purpose
+
+Generate dependency-ordered task list organized by user story from the implementation plan.
+
+### Task Format (Required)
+
+```
+- [ ] T001 [P] [US1] Description with file path
+```
+
+Components:
+- **Checkbox**: Always `- [ ]`
+- **Task ID**: Sequential (T001, T002...)
+- **[P]**: Parallelizable (different files, no dependencies)
+- **[Story]**: User story label (US1, US2...)
+- **Description**: Clear action with exact file path
+
+### Phase Structure
+
+```markdown
+## Phase 1: Setup (Shared Infrastructure)
+- Project initialization
+- Dependencies
+
+## Phase 2: Foundational (Blocking Prerequisites)
+- Database schema
+- Authentication
+- Base models
+**Checkpoint**: Foundation ready
+
+## Phase 3: User Story 1 - [Title] (P1) MVP
+**Goal**: [What this delivers]
+**Independent Test**: [How to verify]
+
+### Tests for User Story 1
+- [ ] T010 [P] [US1] Contract test for endpoint
+
+### Implementation for User Story 1
+- [ ] T012 [P] [US1] Create Model in src/models/
+- [ ] T013 [US1] Implement Service in src/services/
+- [ ] T014 [US1] Implement endpoint in src/api/
+
+**Checkpoint**: US1 complete
+
+## Phase 4+: Additional User Stories
+[Same pattern]
+
+## Phase N: Polish & Cross-Cutting
+- Documentation
+- Performance optimization
+```
+
+### MVP Strategy
+
+1. Complete Setup + Foundational
+2. Complete User Story 1 (P1)
+3. STOP and VALIDATE
+4. Deploy/demo if ready
+5. Then continue with US2, US3...
+
+---
+
+## Integration with Archon
+
+### Create Tasks in Archon
+
+```python
+# For each generated task:
+manage_task("create",
+    project_id="<PROJECT_ID>",
+    title="T001: Create User model",
+    description="Create User model in src/models/user.py with fields...",
+    status="todo",
+    feature="User Story 1",
+    task_order=10
+)
+```
+
+### Task Status Flow
+
+```
+todo -> doing -> review -> done
+```
+
+---
+
+## Best Practices
+
+1. **Start with Why**: Understand user value before technical details
+2. **One Concern Per Section**: Keep spec sections focused
+3. **Testable Everything**: All requirements must be verifiable
+4. **Iterative Refinement**: Multiple clarify passes are OK
+5. **Technology Agnostic Specs**: Keep impl details in plan, not spec
+6. **MVP First**: Prioritize P1 stories for initial delivery
+7. **Checkpoints Matter**: Validate at each phase boundary
+
+---
+
+## Command Reference
+
+| Command | Description |
+|---------|-------------|
+| `/speckit-specify <description>` | Create spec from description |
+| `/speckit-clarify` | Run clarification on current spec |
+| `/speckit-plan <tech-stack>` | Generate implementation plan |
+| `/speckit-tasks` | Generate task breakdown |
+| `/speckit-status` | Show current spec status |
+
+---
+
+## Notes
+
+- Specifications should be written for stakeholders, not developers
+- The plan document is where technical decisions live
+- Tasks should be small enough for one session (30min-4hrs)
+- Use Archon for persistent task tracking across sessions

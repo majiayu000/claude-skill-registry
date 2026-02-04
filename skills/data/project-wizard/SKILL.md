@@ -1,152 +1,332 @@
 ---
 name: project-wizard
-description: Create new GitHub Copilot-enabled projects from the base template with full security configuration, GitHub integration, and Archon project setup. Use when creating new projects, initializing repositories, or setting up new workspaces. Triggers on new project, create project, setup project, project wizard, project template.
+version: 1.0.0
+description: Interactive setup wizard for creating new projects with proper structure, security configurations, GitHub repository, and Archon project tracking. Guides users through project creation from template with pre-commit hooks, branch protection, and customized documentation. Use when starting a new project, setting up a repository, or initializing a new codebase.
 ---
 
-# Project Wizard Skill
+# Project Wizard: New Project Setup
 
-> Create new GitHub Copilot-enabled projects from the base template with full security configuration, GitHub integration, and Archon project setup.
-
----
+Guide users through creating properly configured new projects with security, repository integration, and task tracking. This skill ensures every project starts with consistent structure and best practices.
 
 ## Triggers
 
-Activate this skill when user mentions:
-- "new project", "create project", "setup project"
-- "new workspace", "new codebase"
-- "project wizard", "project template"
-- "initialize repository", "init repo"
-- "#new-project", "#project-wizard"
+Use this skill when:
+- Creating a new project
+- Setting up a new repository
+- Initializing a new codebase
+- Starting a new workspace
+- Cloning a template for new work
+- Keywords: new project, create project, setup project, initialize, project wizard, scaffold, template
+
+## What Gets Created
+
+- Proper folder structure
+- Security configurations (pre-commit hooks, secret detection)
+- GitHub repository with branch protection
+- Archon project for task management
+- Customized documentation
 
 ---
 
-## Description
+## Interactive Setup Flow
 
-The **Project Wizard** skill guides users through creating new projects from the `github-copilot-base` template. It automates:
+```
+PROJECT WIZARD FLOW
 
-1. **Folder Creation** - Creates project directory in specified location
-2. **Template Copy** - Copies all base template files
-3. **Customization** - Updates README, CODEOWNERS, and configs
-4. **Git Setup** - Initializes repo with pre-commit hooks
-5. **GitHub Integration** - Creates repo with branch protection and secret scanning
-6. **Archon Setup** - Creates project for task management
+  ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐
+  │ Basics  │──>│  Tech   │──>│ GitHub  │──>│ Archon  │
+  │ Info    │   │ Stack   │   │ Setup   │   │ Project │
+  └─────────┘   └─────────┘   └─────────┘   └─────────┘
+                                                │
+                                         ┌──────┴──────┐
+                                         │  Generate   │
+                                         │  Summary    │
+                                         └─────────────┘
+```
 
 ---
 
-## Workflow Steps
+## Phase 1: Gather Project Information
 
-### 1. Gather Information
+### Basic Information
 
-Collect the following using `ask_user`:
+```markdown
+## Project Basics
 
-| Question | Purpose | Validation |
-|----------|---------|------------|
-| Project path | Parent directory location | Must exist |
-| Project name | Folder and repo name | Lowercase, hyphens only |
-| Project type | Determines README template | Select from list |
-| Description | README and GitHub description | Max 200 chars |
-| Language | .gitignore additions | Select from list |
-| GitHub org | Where to create repo | Must have access |
-| Visibility | Public or private | Default: private |
+1. **Project Location**
+   Where to create the project folder?
+   > Enter parent directory path (e.g., E:\Repos\MyOrg)
 
-### 2. Execute Setup
+2. **Project Name**
+   What should the project be called?
+   > Must be lowercase with hyphens (e.g., my-awesome-project)
 
-```powershell
-# Create project directory
-$ProjectPath = Join-Path $ParentPath $ProjectName
-New-Item -ItemType Directory -Path $ProjectPath -Force
+3. **Project Type**
+   What kind of project is this?
+   - [ ] Web Frontend (React, Vue, Angular, etc.)
+   - [ ] Backend API (Node.js, Python, .NET, etc.)
+   - [ ] Full-Stack Application
+   - [ ] CLI Tool / Library
+   - [ ] Infrastructure / DevOps
+   - [ ] Other
 
-# Copy template files
-& "$TemplateRepo\scripts\copy-template.ps1" `
-    -SourcePath $TemplateRepo `
-    -DestinationPath $ProjectPath
+4. **Project Description**
+   Brief description (under 200 characters)
+   > Used for README and GitHub repo description
+```
 
+### Technical Stack
+
+```markdown
+## Technical Stack
+
+5. **Primary Language**
+   - TypeScript/JavaScript
+   - Python
+   - C# / .NET
+   - Go
+   - Rust
+   - Java/Kotlin
+   - Other
+
+6. **Framework** (if applicable)
+   Frontend: React, Vue, Svelte, Next.js, etc.
+   Backend: Express, FastAPI, ASP.NET, Gin, etc.
+
+7. **Package Manager**
+   npm, yarn, pnpm, pip/poetry, dotnet, go mod, cargo
+```
+
+### GitHub Configuration
+
+```markdown
+## GitHub Configuration
+
+8. **GitHub Organization**
+   Where to create the repository?
+   > List available with: gh org list
+   > Or use personal account
+
+9. **Repository Visibility**
+   - [ ] Private (recommended)
+   - [ ] Public
+```
+
+---
+
+## Phase 2: Create Project Structure
+
+### Directory Structure
+
+```
+<project_name>/
+├── .github/
+│   ├── workflows/           # CI/CD workflows
+│   ├── CODEOWNERS          # Code ownership
+│   └── dependabot.yml      # Dependency updates
+├── .claude/
+│   ├── commands/           # Custom slash commands
+│   ├── context/            # Path-specific context
+│   └── skills/             # Project-specific skills
+├── src/                    # Source code
+├── tests/                  # Test files
+├── docs/                   # Documentation
+├── .gitignore              # Git ignore rules
+├── .pre-commit-config.yaml # Pre-commit hooks
+├── README.md               # Project documentation
+└── CLAUDE.md               # Claude Code configuration
+```
+
+### Language-Specific Additions
+
+**TypeScript/JavaScript:**
+```
+├── package.json
+├── tsconfig.json
+├── .eslintrc.js
+└── .prettierrc
+```
+
+**Python:**
+```
+├── pyproject.toml
+├── requirements.txt
+├── .python-version
+└── ruff.toml
+```
+
+**C# / .NET:**
+```
+├── *.sln
+├── src/*.csproj
+├── .editorconfig
+└── Directory.Build.props
+```
+
+---
+
+## Phase 3: Initialize Git Repository
+
+### Commands Executed
+
+```bash
 # Initialize git
-Set-Location $ProjectPath
 git init
 
-# Install pre-commit
+# Install pre-commit hooks
 pip install pre-commit
 pre-commit install
 pre-commit install --hook-type commit-msg
 
-# Initial commit
+# Create initial commit
 git add .
-git commit -m "feat: initial project setup from github-copilot-base template"
+git commit -m "feat: initial project setup"
+```
 
-# Create GitHub repo
-gh repo create "$Org/$ProjectName" --private --source=. --push --description "$Description"
+### Pre-commit Configuration
 
-# Enable branch protection
-gh api "repos/$Org/$ProjectName/branches/main/protection" -X PUT `
-    -f required_status_checks='{"strict":true,"contexts":[]}' `
-    -f enforce_admins=false `
-    -f required_pull_request_reviews='{"required_approving_review_count":1}'
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: detect-private-key
+      - id: check-merge-conflict
 
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.0
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.13.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+```
+
+---
+
+## Phase 4: Create GitHub Repository
+
+### Repository Creation
+
+```bash
+# Create remote repository
+gh repo create "<org>/<project_name>" \
+  --private \
+  --source=. \
+  --push \
+  --description "<description>"
+```
+
+### Branch Protection
+
+```bash
+# Configure branch protection for main
+gh api repos/<org>/<project_name>/branches/main/protection \
+  -X PUT \
+  -f required_status_checks='{"strict":true,"contexts":[]}' \
+  -f enforce_admins=false \
+  -f required_pull_request_reviews='{"required_approving_review_count":1}' \
+  -f restrictions=null
+```
+
+### Security Features
+
+```bash
 # Enable secret scanning
-gh api "repos/$Org/$ProjectName" -X PATCH `
-    -f security_and_analysis='{"secret_scanning":{"status":"enabled"},"secret_scanning_push_protection":{"status":"enabled"}}'
+gh api repos/<org>/<project_name> \
+  -X PATCH \
+  -f security_and_analysis='{"secret_scanning":{"status":"enabled"},"secret_scanning_push_protection":{"status":"enabled"}}'
 ```
-
-### 3. Create Archon Project
-
-```javascript
-// Create project
-const project = await manage_project("create", {
-  title: projectName,
-  description: description,
-  github_repo: `https://github.com/${org}/${projectName}`
-});
-
-// Create initial tasks
-await manage_task("create", {
-  project_id: project.id,
-  title: "Complete project setup",
-  description: "Review and customize template files",
-  status: "todo"
-});
-```
-
-### 4. Customize Files
-
-Update these files with project-specific information:
-
-- `README.md` - Replace placeholders with project info
-- `CODEOWNERS` - Update team references
-- `.github/copilot-instructions.md` - Add project context
-
-### 5. Output Summary
-
-Provide completion summary with:
-- Project location and URL
-- What was configured
-- Next steps for the user
 
 ---
 
-## Project Types
+## Phase 5: Create Archon Project
 
-| Type | Description | README Template |
-|------|-------------|-----------------|
-| `web-frontend` | React, Vue, Angular, etc. | `templates/readme/web-frontend.md` |
-| `backend-api` | Node.js, Python, .NET, etc. | `templates/readme/backend-api.md` |
-| `fullstack` | Combined frontend + backend | `templates/readme/fullstack.md` |
-| `cli-library` | CLI tools or packages | `templates/readme/cli-library.md` |
-| `infrastructure` | Terraform, Docker, K8s | `templates/readme/infrastructure.md` |
+### Project Creation
+
+```python
+# Create the project in Archon
+result = manage_project("create",
+    title="<Project Name>",
+    description="<Project Description>",
+    github_repo="https://github.com/<org>/<project_name>"
+)
+
+project_id = result["project"]["id"]
+```
+
+### Initial Tasks
+
+```python
+# Setup completion task
+manage_task("create",
+    project_id=project_id,
+    title="Complete project setup",
+    description="Review and customize copied template files:\n- Update README.md\n- Configure CI/CD workflows\n- Set up development environment",
+    status="todo",
+    feature="Setup",
+    task_order=100
+)
+
+# Architecture documentation task
+manage_task("create",
+    project_id=project_id,
+    title="Define project architecture",
+    description="Create architecture documentation:\n- System overview\n- Component diagram\n- Data flow\n- Technology decisions",
+    status="todo",
+    feature="Documentation",
+    task_order=90
+)
+```
 
 ---
 
-## Language Support
+## Phase 6: Generate Summary
 
-Additional .gitignore patterns by language:
+### Success Output
 
-| Language | Template |
-|----------|----------|
-| JavaScript/TypeScript | `templates/gitignore/node.gitignore` |
-| Python | `templates/gitignore/python.gitignore` |
-| C#/.NET | `templates/gitignore/dotnet.gitignore` |
-| Go | `templates/gitignore/go.gitignore` |
-| Java | `templates/gitignore/java.gitignore` |
+```markdown
+# Project Created Successfully!
+
+## Project Details
+| Item | Value |
+|------|-------|
+| **Name** | <project_name> |
+| **Location** | <full_path> |
+| **Type** | <project_type> |
+| **Repository** | https://github.com/<org>/<project_name> |
+| **Archon Project** | <project_id> |
+
+## What's Included
+- Pre-configured .gitignore
+- Pre-commit hooks with secret detection
+- GitHub Actions workflows
+- Claude Code configuration
+- Branch protection enabled
+- Secret scanning enabled
+
+## Next Steps
+1. Open the project: `code <project_path>`
+2. Review and customize README.md
+3. Check Archon tasks: `find_tasks(project_id="<project_id>")`
+4. Start building!
+
+## Quick Commands
+| Command | Description |
+|---------|-------------|
+| `npm install` / `pip install -e .` | Install dependencies |
+| `npm test` / `pytest` | Run tests |
+| `pre-commit run --all-files` | Run all hooks |
+| `gh pr create` | Create pull request |
+```
 
 ---
 
@@ -154,59 +334,104 @@ Additional .gitignore patterns by language:
 
 | Error | Resolution |
 |-------|------------|
-| Path doesn't exist | Prompt to create or choose different |
-| Folder already exists | Prompt to overwrite or rename |
-| gh not installed | Show installation guide |
-| Not authenticated | Run `gh auth login` |
-| No org access | Use personal account |
+| Path doesn't exist | Create directory or choose different path |
+| Project folder exists | Overwrite or choose different name |
+| gh CLI not installed | Install from https://cli.github.com |
+| gh CLI not authenticated | Run `gh auth login` |
+| Pre-commit install fails | `pip install pre-commit` manually |
+| Archon MCP not available | Skip Archon, note in summary |
 
 ---
 
-## Prerequisites
+## Quick Mode
 
-- **Git** installed and configured
-- **GitHub CLI (`gh`)** installed and authenticated
-- **Python** installed (for pre-commit)
-- **Archon MCP** server running (optional)
+For experienced users, use quick setup:
 
----
+```bash
+# All settings in one command
+/project-wizard --quick \
+  --path "E:\Repos\MyOrg" \
+  --name "my-api" \
+  --type "backend" \
+  --lang "python" \
+  --org "MyOrg" \
+  --private
 
-## Example
-
-```
-User: #new-project
-
-Copilot: 🧙 Project Wizard
-
-Let's create a new project! I'll guide you through the setup.
-
-[Asks questions one by one...]
-
-✅ Creating project folder...
-✅ Copying template files...
-✅ Initializing git repository...
-✅ Installing pre-commit hooks...
-✅ Creating GitHub repository...
-✅ Enabling branch protection...
-✅ Enabling secret scanning...
-✅ Creating Archon project...
-
-🎉 Project "my-awesome-api" created successfully!
-
-📍 Location: E:\Repos\MyOrg\my-awesome-api
-🔗 Repository: https://github.com/MyOrg/my-awesome-api
-📋 Archon Project: proj_abc123
-
-Next steps:
-1. Open in VS Code: code E:\Repos\MyOrg\my-awesome-api
-2. Review README.md and customize
-3. Start building!
+# Or accept all smart defaults
+/project-wizard --auto --name "my-project"
 ```
 
+Auto mode will:
+- Use current directory as parent
+- Detect language from existing files or prompt
+- Use first available GitHub org
+- Default to private repository
+- Create Archon project automatically
+
 ---
 
-## Related
+## Template Customization
 
-- [Project Wizard Agent](../agents/project-wizard.agent.md)
-- [New Project Prompt](../prompts/new-project.prompt.md)
-- [Copy Template Script](../../scripts/copy-template.ps1)
+### README Template by Project Type
+
+**Web Frontend:**
+```markdown
+# Project Name
+
+## Getting Started
+
+npm install
+npm run dev
+
+## Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
+```
+
+**Backend API:**
+```markdown
+# Project Name
+
+## Getting Started
+
+pip install -e ".[dev]"
+uvicorn src.main:app --reload
+
+## API Documentation
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+```
+
+### CLAUDE.md Template
+
+```markdown
+# CLAUDE.md - Project Configuration
+
+## Project Overview
+[Description]
+
+## Tech Stack
+- Language: [Language]
+- Framework: [Framework]
+- Database: [Database]
+
+## Development Commands
+- Build: [command]
+- Test: [command]
+- Lint: [command]
+
+## Archon Project
+- Project ID: [id]
+- GitHub: [url]
+```
+
+---
+
+## Notes
+
+- Always verify paths exist before creating
+- Pre-commit hooks are essential for security
+- Archon integration enables task tracking across sessions
+- Branch protection prevents accidental main branch pushes
+- Secret scanning catches leaked credentials before they're exposed

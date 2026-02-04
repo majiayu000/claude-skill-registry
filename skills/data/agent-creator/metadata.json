@@ -1,7 +1,7 @@
 {
   "name": "agent-creator",
-  "repo": "GGPrompts/my-gg-plugins",
-  "path": "plugins/agent-creator/skills/agent-creator/SKILL.md",
-  "source": "github.com/GGPrompts/my-gg-plugins",
-  "downloaded_at": "2026-02-02T04:47:37.301287Z"
+  "repo": "DNYoussef/ai-chrome-extension",
+  "path": ".claude/skills/agent-creator/SKILL.md",
+  "source": "github.com/DNYoussef/ai-chrome-extension",
+  "downloaded_at": "2026-02-04T02:09:02.393274Z"
 }

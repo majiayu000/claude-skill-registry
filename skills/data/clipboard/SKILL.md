@@ -60,10 +60,10 @@ Expected format: `<content-type> <album-name> <track-number>`
 - `all` - All Suno inputs (Style + Lyrics combined)
 
 Examples:
-- `/clipboard lyrics shell-no 03`
-- `/clipboard style shell-no 05`
-- `/clipboard streaming-lyrics shell-no 02`
-- `/clipboard all shell-no 01`
+- `/clipboard lyrics sample-album 03`
+- `/clipboard style sample-album 05`
+- `/clipboard streaming-lyrics sample-album 02`
+- `/clipboard all sample-album 01`
 
 If arguments are missing:
 ```
@@ -71,7 +71,7 @@ Usage: /clipboard <content-type> <album-name> <track-number>
 
 Content types: lyrics, style, streaming-lyrics, all
 
-Example: /clipboard lyrics shell-no 03
+Example: /clipboard lyrics sample-album 03
 ```
 
 ## Step 3: Read Config (REQUIRED)
@@ -195,38 +195,38 @@ Run /configure to set up.
 ### Copy Suno Lyrics
 
 ```
-/clipboard lyrics shell-no 03
+/clipboard lyrics sample-album 03
 ```
 
 Output:
 ```
 ✓ Copied to clipboard: lyrics from track 03
-  Album: shell-no
+  Album: sample-album
   Track: 03-t-day-beach.md
 ```
 
 ### Copy Style Prompt
 
 ```
-/clipboard style shell-no 05
+/clipboard style sample-album 05
 ```
 
 ### Copy Streaming Lyrics
 
 ```
-/clipboard streaming-lyrics shell-no 02
+/clipboard streaming-lyrics sample-album 02
 ```
 
 ### Copy All Suno Inputs
 
 ```
-/clipboard all shell-no 01
+/clipboard all sample-album 01
 ```
 
 Output:
 ```
 ✓ Copied to clipboard: all suno inputs from track 01
-  Album: shell-no
+  Album: sample-album
   Track: 01-intro.md
 
 Contents:

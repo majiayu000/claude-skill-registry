@@ -1,124 +1,148 @@
 ---
 name: trace
-description: Trace end-to-end integrity of a judgment through the PoJ blockchain. Use when asked to trace, verify, audit, or check the blockchain proof of a specific judgment.
-user-invocable: true
+description: Root cause analysis for complex bugs. Use when initial fix fails or incident is severe. Traces Effect → Cause → Root with confidence levels and prevention hierarchy.
+model: opus
+allowed-tools: Read, Grep, Bash
+hooks:
+  Stop:
+    - hooks:
+        - type: prompt
+          prompt: "If this trace session identified a root cause or prevention pattern, return {\"ok\": false, \"reason\": \"Consider running /hope:learn to capture this root cause pattern for future reference.\"}. If no significant findings, return {\"ok\": true}."
 ---
 
-# /trace - CYNIC Judgment Tracing
+# trace
 
-*"Trust, but verify on-chain"*
+Root cause analysis when surface fixes fail.
 
-## Quick Start
+## When to Use
+
+| Trigger                            | Action    |
+| ---------------------------------- | --------- |
+| Bug persists after initial fix     | Run trace |
+| Production incident (SEV 1-2)      | Run trace |
+| Complex failure (multiple sources) | Run trace |
+| Trivial bug (< 10 min fix)         | Skip      |
+
+## 1. Timeline
 
 ```
-/trace <judgment_id>
+HH:MM - [Event] - [System state] - [Action taken]
 ```
 
-## What It Does
+Note: detection time vs. start time (how long hidden?)
 
-Traces a judgment through the full integrity chain:
+## 2. Five Whys
 
 ```
-Judgment → PoJ Block → Merkle Proof → Solana Anchor
+Effect: [What users/systems experienced]
+
+Why 1: [Immediate cause] (X-Y% confident)
+Why 2: [Underlying mechanism] (X-Y% confident)
+Why 3: [System/process gap] (X-Y% confident)
+Why 4: [Organizational factor] (X-Y% confident)
+Why 5: [Root cause] (X-Y% confident)
 ```
 
-Proves that a judgment:
-1. Was created at a specific time
-2. Has not been tampered with
-3. Is anchored to the blockchain
+**Gates**: < 70% any level → request logs/reproduction
+Root cause = deepest answer with ≥70% confidence
 
-## Trace Output
+## 3. Contributing Factors
 
-| Stage | Verification |
-|-------|--------------|
-| **Judgment** | ID, timestamp, hash |
-| **PoJ Block** | Block number, merkle root |
-| **Merkle Proof** | Inclusion proof path |
-| **Solana** | Transaction signature |
+Beyond root cause, what amplified impact?
 
-## Examples
+**Process**: Monitoring gaps, testing gaps, review gaps
+**People**: Unclear ownership, missing runbooks
+**Technical**: Dependency failures, capacity limits, config drift
+**Context**: Traffic patterns, deployment timing, external factors
 
-### Trace a Judgment
+List 2-4 factors with specific mechanisms.
+
+**Tools:** [Ishikawa](../soul/references/tools/ishikawa.md) for categorization, [Iceberg](../soul/references/tools/iceberg.md) for deep structure analysis.
+
+## 4. Impact
+
+**Users**: Count, experience, business cost (quantified)
+**Systems**: Downstream effects, data integrity, security
+
+## 5. Prevention Hierarchy
+
+### Immediate (< 1 week)
+
 ```
-/trace jdg_abc123
-```
-
-### Trace with Full Details
-```
-/trace jdg_abc123 --verbose
-```
-
-## Implementation
-
-Use the `brain_trace` MCP tool:
-
-```javascript
-brain_trace({
-  judgmentId: "jdg_abc123",
-  includeRaw: false  // Set true for full hashes
-})
+1. [Code/config change]
+   File: [path:line]
+   Verification: [how to confirm]
+   Owner: [who]
 ```
 
-## Verification Levels
+### Short-Term (< 1 month)
 
-| Level | Confidence | What's Verified |
-|-------|------------|-----------------|
-| Local | 38.2% | Judgment exists in DB |
-| Block | 50% | Included in PoJ block |
-| Merkle | 61.8% | Merkle proof valid |
-| Chain | 61.8% | Anchored on Solana |
-
-## PoJ Chain Operations
-
-Check chain status:
-```javascript
-brain_poj_chain({ action: "status" })
+```
+1. [Alert/test/automation]
+   Trigger: [when it fires]
+   Owner: [who]
 ```
 
-Verify chain integrity:
-```javascript
-brain_poj_chain({ action: "verify" })
+### Long-Term (< 1 quarter)
+
+```
+1. [Architectural change]
+   Problem class: [what it prevents]
+   Effort: [story points]
+   Owner: [who]
 ```
 
-Get recent blocks:
-```javascript
-brain_poj_chain({ action: "recent", limit: 5 })
+Each tier needs ≥1 item.
+
+## 6. Blameless
+
+See `soul/references/blameless.md`
+
+Focus on system gaps, not individual mistakes.
+
+## Output
+
+```
+# Incident: [Title]
+
+## Timeline
+[Detection → Resolution]
+
+## Five Whys
+[With confidence per level]
+
+## Contributing Factors
+[2-4 items]
+
+## Impact
+[Quantified]
+
+## Prevention
+[Immediate / Short-Term / Long-Term]
+
+## Top 3 Actions
+1. [Task] | Owner: [Name] | Due: [Date]
+2. ...
+3. ...
 ```
 
-## CYNIC Voice
+## Anti-Patterns
 
-When presenting trace results, embody CYNIC's verification nature:
+| Bad                     | Good                                   |
+| ----------------------- | -------------------------------------- |
+| "Human error"           | Identify automation gap                |
+| "Communication failure" | Identify process gap                   |
+| "Be more careful"       | Add system safeguard                   |
+| "Performance issue"     | Specific: "Pool exhausted at 1K req/s" |
 
-**Opening** (based on integrity):
-- Fully verified: `*tail wag* Chain verified. Truth anchored.`
-- Partial: `*ears perk* Partial trail found.`
-- Not found: `*head tilt* No scent on-chain yet.`
-- Broken: `*GROWL* Integrity compromised.`
+---
 
-**Presentation**:
-```
-*[expression]* Tracing judgment [id]...
+## Boundary
 
-┌─────────────────────────────────────────────────────┐
-│ INTEGRITY TRACE                                      │
-├─────────────────────────────────────────────────────┤
-│ ✓ Judgment    │ jdg_abc123         │ [timestamp]    │
-│ ✓ PoJ Block   │ #47                │ [block hash]   │
-│ ✓ Merkle Proof│ depth: 8           │ [root]         │
-│ ✓ Solana      │ [signature]        │ devnet         │
-├─────────────────────────────────────────────────────┤
-│ CONFIDENCE: 61.8% (φ-bounded maximum)               │
-│ STATUS: IMMUTABLE - This judgment cannot be altered │
-└─────────────────────────────────────────────────────┘
-```
+**System gaps only. If this feels personal, stop.**
 
-**Closing**:
-- Verified: `Don't trust. Verify. ✓ Verified.`
-- Pending: `Awaiting anchor. Check back later.`
-- Failed: `Chain broken at [stage]. Investigate.`
+- Never assign blame to individuals
+- If analysis points to a person, reframe to the system that allowed it
+- User interprets organizational meaning — Claude identifies patterns
 
-## See Also
-
-- `/judge` - Create new judgments
-- `/health` - Check chain health
-- [docs/ARCHITECTURE.md](../../../docs/ARCHITECTURE.md) - PoJ technical details
+Trace finds gaps, not fault.

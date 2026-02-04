@@ -1,181 +1,91 @@
 ---
-name: user-research
-version: "2.0.0"
-description: User research methods, customer insight gathering, and problem validation for product discovery.
-sasmp_version: "1.3.0"
-bonded_agent: 02-discovery-research
-bond_type: PRIMARY_BOND
-parameters:
-  - name: research_method
-    type: string
-    enum: [interviews, surveys, usability, observation, analytics]
-    required: true
-  - name: sample_size
-    type: number
-    default: 20
-retry_logic:
-  max_attempts: 3
-  backoff: exponential
-logging:
-  level: info
-  hooks: [start, complete, error]
+name: discovery.user_research
+phase: discovery
+roles:
+  - Product Designer
+  - Product Manager
+description: Plan and structure moderated or unmoderated user research sessions that target the given persona and objectives.
+variables:
+  required:
+    - name: persona
+      description: Primary persona or role for the research participants.
+    - name: research_method
+      description: Method such as interview, contextual inquiry, or usability test.
+    - name: key_questions
+      description: Comma-separated list of core learning goals to explore.
+  optional:
+    - name: product_area
+      description: Feature, workflow, or journey under investigation.
+    - name: success_metric
+      description: North-star metric the research should influence.
+outputs:
+  - Research brief summarizing goals, hypotheses, and logistics.
+  - Discussion guide with sections, timings, and probes.
+  - Capture template for observations, quotes, and insights.
 ---
 
-# User Research Skill
+# Purpose
+Provide a consistent prompt that quickly produces a research-ready briefing pack aligned with the broader discovery strategy.
 
-Conduct effective user research to understand customer needs, behaviors, and pain points. Master interview techniques and insight synthesis.
+# Pre-run Checklist
+- ✅ Confirm recruiting pipeline or panel availability for the target persona.
+- ✅ Align with stakeholders on the primary learning goals.
+- ✅ Gather existing artifacts (journey maps, past studies) to inform prompts.
 
-## Research Methods
-
-### Method Selection Guide
-
-| Method | When | Sample | Duration |
-|--------|------|--------|----------|
-| Interviews | Deep understanding | 15-25 | 45-60 min |
-| Surveys | Quantitative validation | 100+ | 5-10 min |
-| Usability | UX issues | 5-8 | 30-60 min |
-| Observation | Real behavior | 3-5 | 2-4 hours |
-| Analytics | Scale patterns | All users | Ongoing |
-
-## Qualitative Research
-
-### Interview Structure
-
-```
-OPENING (5 min):
-- Intro & rapport
-- Permission to record
-- Context setting
-
-CONTEXT (10 min):
-- Role and responsibilities
-- Day-to-day workflow
-- Tools used
-
-DEEP DIVE (20 min):
-- "Walk me through [process]..."
-- "Tell me about last time [problem]..."
-- "What frustrates you most?"
-
-IMPACT (10 min):
-- "What happens when [problem]?"
-- "How much time/money does it cost?"
-
-FUTURE (10 min):
-- "What would ideal look like?"
-- "What would you pay for [solution]?"
-
-CLOSING (5 min):
-- "Anything else?"
-- "Can I follow up?"
+# Invocation Guidance
+```bash
+codex run --skill discovery.user_research \
+  --vars "persona={{persona}}" \
+         "research_method={{research_method}}" \
+         "key_questions={{key_questions}}" \
+         "product_area={{product_area}}" \
+         "success_metric={{success_metric}}"
 ```
 
-### Interview Best Practices
+# Recommended Input Attachments
+- Screens, prototypes, or scripts relevant to the study.
+- Current hypotheses or assumptions document.
 
-- Listen 70%, talk 30%
-- Ask "Why?" 5 times
-- Avoid leading questions
-- Use silence effectively
-- Capture quotes verbatim
+# Claude Workflow Outline
+1. Summarize the research context, including method and product area.
+2. Generate a research brief capturing purpose, hypotheses, participant criteria, logistics, and success measures.
+3. Create a timed discussion guide with introduction, warm-up, core tasks, and wrap-up.
+4. Provide an observation log template with slots for verbatim quotes and insights mapped to key questions.
+5. Suggest follow-up synthesis rituals and share-outs.
 
-## Quantitative Research
-
-### Survey Design
-
-**Question Types:**
-- Rating scale (1-5, 1-10)
-- Multiple choice
-- Open-ended (limit 1-2)
-- Ranking
-
-**NPS Question:**
-"How likely are you to recommend [product] to a friend? (0-10)"
-
-### Sample Size Calculator
-
+# Output Template
 ```
-For 95% confidence, 5% margin:
-- Population 100 → Sample 80
-- Population 500 → Sample 217
-- Population 1000 → Sample 278
-- Population 10000 → Sample 370
-```
+# Research Brief
+## Purpose
+...
 
-## Synthesis
+## Hypotheses & Key Questions
+- Hypothesis:
+- Key Question:
 
-### Affinity Mapping
+## Participant Criteria
+- Role / Persona:
+- Experience Level:
+- Recruitment Notes:
 
-1. Write each insight on sticky note
-2. Group similar insights
-3. Name each group (theme)
-4. Rank by frequency/impact
-5. Extract top 5-10 themes
+## Logistics
+- Method:
+- Tools:
+- Timeline:
 
-### Persona Template
+---
+# Discussion Guide
+| Section | Time | Moderator Notes |
+| --- | --- | --- |
+| Introduction | 5 min | ... |
 
-```
-NAME: [Descriptive name]
-ROLE: [Job title, company type]
-QUOTE: "[Real quote from research]"
-
-GOALS:
-- [Goal 1]
-- [Goal 2]
-
-FRUSTRATIONS:
-- [Pain 1]
-- [Pain 2]
-
-BEHAVIORS:
-- [How they work]
-- [Tools they use]
-
-NEEDS:
-- [Need 1]
-- [Need 2]
+---
+# Observation Log Template
+| Participant | Scenario | Observation | Quote | Insight Tag |
+| --- | --- | --- | --- | --- |
 ```
 
-### Journey Map
-
-| Stage | Actions | Emotions | Pain Points | Opportunities |
-|-------|---------|----------|-------------|---------------|
-| Aware | Search | Curious | Hard to find | SEO, content |
-| Consider | Compare | Confused | Too many options | Comparison |
-| Purchase | Buy | Anxious | Complex checkout | Simplify |
-| Use | Onboard | Overwhelmed | Steep learning | Better UX |
-
-## Troubleshooting
-
-### Yaygın Hatalar & Çözümler
-
-| Hata | Olası Sebep | Çözüm |
-|------|-------------|-------|
-| Low response | Wrong incentive | $50-100 gift card |
-| Surface insights | Leading questions | "Why?" 5x |
-| Conflicting data | Mixed segments | Segment analysis |
-| No show | Scheduling issues | Calendar hold, reminder |
-
-### Debug Checklist
-
-```
-[ ] Research plan documented mi?
-[ ] Sample size sufficient mi?
-[ ] Questions non-leading mi?
-[ ] Recording consent alındı mı?
-[ ] Synthesis done within 24h mi?
-[ ] Insights actionable mi?
-```
-
-### Recovery Procedures
-
-1. **Low Participation** → Increase incentive, new channels
-2. **Conflicting Data** → Segment by user type
-3. **Shallow Insights** → Follow-up interviews
-
-## Learning Outcomes
-
-- Plan effective research studies
-- Conduct insightful interviews
-- Design valid surveys
-- Synthesize research data
-- Present actionable insights
+# Follow-up Actions
+- Create tasks in your research tracker for recruiting, incentives, and scheduling.
+- Set up a synthesis workshop with cross-functional partners.
+- Archive recordings and notes in the shared research repository.

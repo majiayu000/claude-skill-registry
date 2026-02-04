@@ -1,11 +1,7 @@
 {
   "name": "polish",
-  "description": "This skill should be used when polishing academic research paper text for grammar, clarity, fluency, and natural phrasing. Specifically designed for non-native English speakers writing for top-tier co",
-  "repo": "minhuw/claude-writer",
-  "category": "design",
-  "tags": [
-    "polish"
-  ],
-  "stars": 3,
-  "source": "local"
+  "repo": "emirrtopaloglu/claude-code-virtuoso",
+  "path": ".claude/skills/polish/SKILL.md",
+  "source": "github.com/emirrtopaloglu/claude-code-virtuoso",
+  "downloaded_at": "2026-02-04T04:39:40.486991Z"
 }

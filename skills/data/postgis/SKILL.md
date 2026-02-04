@@ -1,13 +1,6 @@
 ---
 name: postgis
 description: MANDATORY when working with geographic data, spatial queries, geometry operations, or location-based features - enforces PostGIS 3.6.1 best practices including ST_CoverageClean, SFCGAL 3D functions, and bigint topology
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # PostGIS 3.6.1 Spatial Database

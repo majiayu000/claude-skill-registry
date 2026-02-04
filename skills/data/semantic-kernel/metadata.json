@@ -1,7 +1,7 @@
 {
   "name": "semantic-kernel",
-  "repo": "fgarofalo56/Suppercharge_Microsoft_Fabric",
-  "path": ".github/skills/semantic-kernel/SKILL.md",
-  "source": "github.com/fgarofalo56/Suppercharge_Microsoft_Fabric",
-  "downloaded_at": "2026-02-02T02:08:45.084709Z"
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/semantic-kernel/SKILL.md",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "downloaded_at": "2026-02-04T02:55:12.843985Z"
 }

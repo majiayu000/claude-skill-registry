@@ -1,7 +1,7 @@
 # devian-unity-samples — Policy
 
-> **도메인:** devian-upm-samples  
-> **정책 문서 버전:** v3
+> **도메인:** devian-upm-samples
+> **정책 문서 버전:** v4
 
 ---
 
@@ -49,13 +49,13 @@ Samples~/<TemplateName>/
 ### 3.3 asmdef 이름 (어셈블리명)
 
 ```
-`Devian` + `.Templates.<TemplateName>`
-`Devian` + `.Templates.<TemplateName>.Editor`
+Devian.Samples.<TemplateName>
+Devian.Samples.<TemplateName>.Editor
 ```
 
 예시:
-- `Devian` + `.Templates.Network`
-- `Devian` + `.Templates.Network.Editor`
+- `Devian.Samples.Network`
+- `Devian.Samples.Network.Editor`
 
 > **주의**: 위는 asmdef의 `name`(어셈블리명)이다. 코드의 namespace와 혼동하지 않는다.
 
@@ -69,17 +69,36 @@ namespace Devian
 
 > asmdef의 `rootNamespace`도 `"Devian"`으로 설정한다.
 
+### 3.4.1 Protocol handlers 구현 정책 (Hard Rule)
+
+**어셈블리 제약:**
+`Devian.Protocol.*` 어셈블리에서 생성된 `*_Handlers.g.cs`는 **다른 asmdef(샘플 asmdef 포함)에서 partial로 확장할 수 없다.**
+(C#의 partial class는 동일 어셈블리 내에서만 동작)
+
+**따라서 샘플에서 수신 처리 예시는 아래 방법으로 구현한다:**
+
+1. **Stub 상속 (권장):** `Devian.Protocol.{Group}.{ProtocolName}.Stub`를 샘플 어셈블리에서 상속 구현
+   - 예: `class SampleGame2CStub : Game2C.Stub`
+   - 샘플이 자체 어셈블리에서 자유롭게 구현 가능
+
+2. **(참고) 프로토콜 패키지 내부:** partial 확장은 프로토콜 패키지 내부에서만 가능 (샘플 범위 밖)
+
+**금지 (Hard):**
+- 샘플에서 `partial class *_Handlers` 형태로 확장 시도 금지 (컴파일 불가, 오해 유발)
+- 샘플에서 `namespace Devian.Protocol.*` 사용 금지 (Stub 상속 시에도 `namespace Devian` 사용)
+
 ### 3.5 금지 프리픽스 (네임스페이스)
 
 샘플 코드에서 다음 네임스페이스 사용 금지:
 
-- `Devian` + `.Network.*`
-- `Devian` + `.Protocol.*`
-- `Devian` + `.Domain.*`
-- `Devian` + `.Core.*`
-- `Devian` + `.Templates.*`
+- `Devian.Network.*`
+- `Devian.Protocol.*` (샘플 어셈블리에서 사용 불가 — 3.4.1 참조)
+- `Devian.Domain.*`
+- `Devian.Core.*`
+- `Devian.Templates.*` (샘플 코드 namespace로 사용 금지)
+- `Devian.Samples.*` (샘플 코드 namespace로 사용 금지 — asmdef name으로만 사용)
 
-> 어셈블리명(asmdef name)은 `Devian` + `.Templates.*`를 사용하지만, namespace는 `Devian` 단일만 사용한다.
+> 어셈블리명(asmdef name)은 `Devian.Samples.*`를 사용하지만, namespace는 `Devian` 단일만 사용한다.
 
 ---
 
@@ -93,10 +112,10 @@ framework-cs/upm/com.devian.samples/
 ├── Samples~/
 │   ├── Network/
 │   │   ├── Runtime/
-│   │   │   ├── `[asmdef: Devian` + `.Templates.Network]`
+│   │   │   ├── [asmdef: Devian.Samples.Network]
 │   │   │   └── *.cs
 │   │   ├── Editor/
-│   │   │   ├── `[asmdef: Devian` + `.Templates.Network.Editor]`
+│   │   │   ├── [asmdef: Devian.Samples.Network.Editor]
 │   │   │   └── *.cs
 │   │   └── README.md
 │   └── (다른 템플릿들...)
@@ -149,13 +168,13 @@ Assets/Samples/Devian Templates/{version}/{TemplateName}/
 ### 6.2 설치 후 위치
 
 ```
-Assets/Samples/Devian Templates/0.1.0/Network/
-├── Runtime/
-│   ├── `[asmdef: Devian` + `.Templates.Network]`
-│   └── EchoWsClientSample.cs
-└── Editor/
-    ├── `[asmdef: Devian` + `.Templates.Network.Editor]`
-    └── EchoWsClientSampleEditor.cs
+Assets/Samples/Devian Samples/0.1.0/Network/
+├── README.md
+└── Runtime/
+    ├── [asmdef: Devian.Samples.Network]
+    ├── GameNetworkClientSample.cs
+    ├── GameNetworkClient.cs
+    └── GameNetworkClient_Stub.cs   (Game2C.Stub 상속 구현)
 ```
 
 ---
@@ -171,7 +190,8 @@ Assets/Samples/Devian Templates/0.1.0/Network/
 
 ## 8. FAIL 조건
 
-- [ ] Templates 패키지에 Devian.Network.*/Devian.Protocol.* asmdef가 존재
+- [ ] 샘플 패키지에 `Devian.Network.*`/`Devian.Protocol.*` namespace 코드가 존재
+- [ ] 샘플에서 `partial class *_Handlers` 확장 시도 (컴파일 불가)
 - [ ] package.json name이 `com.devian.samples`가 아님
 - [ ] Samples~ 폴더가 없거나 비어있음
 - [ ] samples 메타데이터가 package.json에 없음

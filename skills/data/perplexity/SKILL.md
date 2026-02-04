@@ -1,108 +1,128 @@
 ---
 name: perplexity
-description: AI-powered search engine with real-time answers.
-category: ai
+description: Web search and research using Perplexity AI. Use when user says "search", "find", "look up", "ask", "research", or "what's the latest" for generic queries. NOT for library/framework docs (use Context7) or workspace questions.
 ---
-# Perplexity Skill
 
-AI-powered search engine with real-time answers.
+# Perplexity Tools
 
-## Quick Install
+Use ONLY when user says "search", "find", "look up", "ask", "research", or "what's the latest" for generic queries. NOT for library/framework docs (use Context7), gt CLI (use Graphite MCP), or workspace questions (use Nx MCP).
 
-```bash
-curl -sSL https://canifi.com/skills/perplexity/install.sh | bash
+## Quick Reference
+
+**Which Perplexity tool?**
+- Need search results/URLs? → **Perplexity Search**
+- Need conversational answer? → **Perplexity Ask**
+- Need deep research? → **Researcher agent** (`/research <topic>`)
+
+**NOT Perplexity - use these instead:**
+- Library/framework docs → **Context7 MCP**
+- Graphite `gt` CLI → **Graphite MCP**
+- THIS workspace → **Nx MCP**
+- Specific URL → **URL Crawler**
+
+## Perplexity Search
+
+**When to use:**
+- Generic searches, finding resources
+- Current best practices, recent information
+- Tutorial/blog post discovery
+- User says "search for...", "find...", "look up..."
+
+**Default parameters (ALWAYS USE):**
+```typescript
+mcp__perplexity__perplexity_search({
+  query: "your search query",
+  max_results: 3,           // Default is 10 - too many!
+  max_tokens_per_page: 512  // Reduce per-result content
+})
 ```
 
-Or manually:
-```bash
-cp -r skills/perplexity ~/.canifi/skills/
+**When to increase limits:**
+Only if:
+- User explicitly needs comprehensive results
+- Initial search found nothing useful
+- Complex topic needs multiple sources
+
+```typescript
+// Increased limits (use sparingly)
+mcp__perplexity__perplexity_search({
+  query: "complex topic",
+  max_results: 5,
+  max_tokens_per_page: 1024
+})
 ```
 
-## Setup
+## Perplexity Ask
 
-Configure via [canifi-env](https://canifi.com/setup/scripts):
+**When to use:**
+- Need conversational explanation, not search results
+- Synthesize information from web
+- Explain concepts with current context
 
-```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
-
-canifi-env set PERPLEXITY_API_KEY "your_api_key"
+**Usage:**
+```typescript
+mcp__perplexity__perplexity_ask({
+  messages: [
+    {
+      role: "user",
+      content: "Explain how postgres advisory locks work"
+    }
+  ]
+})
 ```
 
-## Privacy & Authentication
+**NOT for:**
+- Library documentation (use Context7)
+- Deep multi-source research (use researcher agent)
 
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
+## Prohibited Tool
 
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
+**NEVER use:** `mcp__perplexity__perplexity_research`
 
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
-```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
-```
+**Use instead:** Researcher agent (`/research <topic>`)
+- Token cost: 30-50k tokens
+- Provides multi-source synthesis with citations
+- Use sparingly for complex questions only
 
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
+## Tool Selection Chain
 
-## Capabilities
+**Priority order:**
+1. **Context7 MCP** - Library/framework docs
+2. **Graphite MCP** - Any `gt` CLI mention
+3. **Nx MCP** - THIS workspace questions
+4. **Perplexity Search** - Generic searches
+5. **Perplexity Ask** - Conversational answers
+6. **Researcher agent** - Deep multi-source research
+7. **WebSearch** - Last resort (after Perplexity exhausted)
 
-1. **Search Answers**: Get sourced responses
-2. **Pro Search**: Deep research mode
-3. **Collections**: Organize research
-4. **Focus Modes**: Academic, writing, etc.
-5. **Follow-ups**: Refine queries
+## Examples
 
-## Usage Examples
+**✅ CORRECT - Use Perplexity Search:**
+- "Find postgres migration best practices"
+- "Search for React testing tutorials"
+- "Look up latest trends in microservices"
 
-### Quick Search
-```
-User: "Ask Perplexity about recent AI developments"
-Assistant: Returns sourced answer
-```
+**✅ CORRECT - Use Perplexity Ask:**
+- "Explain how postgres advisory locks work"
+- "What are the trade-offs of microservices?"
 
-### Pro Research
-```
-User: "Do a deep dive on climate technology"
-Assistant: Runs comprehensive research
-```
+**❌ WRONG - Use Context7 instead:**
+- "Search for React hooks documentation" → Context7 MCP
+- "Find Next.js routing docs" → Context7 MCP
+- "Look up Temporal workflow API" → Context7 MCP
 
-### Academic Search
-```
-User: "Find academic sources on this topic"
-Assistant: Returns scholarly citations
-```
+**❌ WRONG - Use Graphite MCP instead:**
+- "Search for gt stack commands" → Graphite MCP
+- "Find gt branch workflow" → Graphite MCP
 
-### Follow Up
-```
-User: "Tell me more about that third source"
-Assistant: Expands on specific result
-```
+**❌ WRONG - Use Nx MCP instead:**
+- "Search for build config" (in THIS workspace) → Nx MCP
+- "Find project dependencies" (in THIS workspace) → Nx MCP
 
-## Authentication Flow
+## Key Points
 
-1. API key authentication
-2. Pro subscription for advanced
-3. OAuth for integrations
-4. Rate limits apply
-
-## Error Handling
-
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Auth Failed | Invalid key | Check API key |
-| Rate Limited | Too many queries | Wait |
-| Pro Required | Feature limited | Upgrade |
-| Search Failed | Query issue | Rephrase |
-
-## Notes
-
-- Real-time web search
-- Source citations
-- Pro Search depth
-- Focus modes
-- Collections
-- API available
+- **Default to limited results** - avoid context bloat
+- **Library docs = Context7** - ALWAYS try Context7 first
+- **"gt" = Graphite MCP** - ANY "gt" mention uses Graphite
+- **Deep research = /research** - NOT perplexity_research tool
+- **Fallback chain** - Search → Ask → WebSearch (last resort)

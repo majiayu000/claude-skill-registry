@@ -13,13 +13,13 @@ World-class senior ml/ai engineer skill for production-grade AI/ML/Data systems.
 
 ```bash
 # Core Tool 1
-python3 ~/.{TOOL}/skills/senior-ml-engineer/scripts/model_deployment_pipeline.py --input data/ --output results/
+python scripts/model_deployment_pipeline.py --input data/ --output results/
 
 # Core Tool 2  
-python3 ~/.{TOOL}/skills/senior-ml-engineer/scripts/rag_system_builder.py --target project/ --analyze
+python scripts/rag_system_builder.py --target project/ --analyze
 
 # Core Tool 3
-python3 ~/.{TOOL}/skills/senior-ml-engineer/scripts/ml_monitoring_suite.py --config config.yaml --deploy
+python scripts/ml_monitoring_suite.py --config config.yaml --deploy
 ```
 
 ## Core Expertise
@@ -171,8 +171,8 @@ python -m black src/
 python -m pylint src/
 
 # Training
-python3 ~/.{TOOL}/skills/senior-ml-engineer/scripts/train.py --config prod.yaml
-python3 ~/.{TOOL}/skills/senior-ml-engineer/scripts/evaluate.py --model best.pth
+python scripts/train.py --config prod.yaml
+python scripts/evaluate.py --model best.pth
 
 # Deployment
 docker build -t service:v1 .
@@ -181,7 +181,7 @@ helm upgrade service ./charts/
 
 # Monitoring
 kubectl logs -f deployment/service
-python3 ~/.{TOOL}/skills/senior-ml-engineer/scripts/health_check.py
+python scripts/health_check.py
 ```
 
 ## Resources

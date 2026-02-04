@@ -13,6 +13,11 @@ quick_reference_card: true
 tags: [testability, scoring, playwright, vibium, assessment, 10-principles, intrinsic-testability, james-bach, michael-bolton]
 contributor: "@fndlalit"
 vibium_integration: optional
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/testability-scoring.yaml
 ---
 
 # Testability Scoring

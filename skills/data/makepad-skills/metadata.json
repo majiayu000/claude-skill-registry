@@ -1,7 +1,7 @@
 {
   "name": "makepad-skills",
-  "repo": "vuongng2212/TalentFlow-AI",
-  "path": ".claude/skills/makepad-skills/SKILL.md",
-  "source": "github.com/vuongng2212/TalentFlow-AI",
-  "downloaded_at": "2026-02-01T04:15:35.833019Z"
+  "repo": "milosriki/client-vital-suite",
+  "path": ".agent/skills/skills/makepad-skills/SKILL.md",
+  "source": "github.com/milosriki/client-vital-suite",
+  "downloaded_at": "2026-02-04T03:18:26.405952Z"
 }

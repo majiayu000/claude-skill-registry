@@ -1,7 +1,7 @@
 {
   "name": "ralph",
-  "repo": "carmandale/agent-config",
-  "path": "skills/tools/ralph/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:34.422451Z"
+  "repo": "rohunj/claude-build-workflow",
+  "path": "skills/ralph/SKILL.md",
+  "source": "github.com/rohunj/claude-build-workflow",
+  "downloaded_at": "2026-02-04T04:52:50.729959Z"
 }

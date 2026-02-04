@@ -1,7 +1,7 @@
 {
   "name": "spec-kit-skill",
-  "repo": "feiskyer/claude-code-settings",
-  "path": "plugins/spec-kit-skill/skills/spec-kit-skill/SKILL.md",
-  "source": "github.com/feiskyer/claude-code-settings",
-  "downloaded_at": "2026-02-02T04:56:11.373213Z"
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/spec-kit-skill/SKILL.md",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "downloaded_at": "2026-02-04T04:51:37.648969Z"
 }

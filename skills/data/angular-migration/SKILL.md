@@ -20,21 +20,18 @@ Master AngularJS to Angular migration, including hybrid apps, component conversi
 ## Migration Strategies
 
 ### 1. Big Bang (Complete Rewrite)
-
 - Rewrite entire app in Angular
 - Parallel development
 - Switch over at once
 - **Best for:** Small apps, green field projects
 
 ### 2. Incremental (Hybrid Approach)
-
 - Run AngularJS and Angular side-by-side
 - Migrate feature by feature
 - ngUpgrade for interop
 - **Best for:** Large apps, continuous delivery
 
 ### 3. Vertical Slice
-
 - Migrate one feature completely
 - New features in Angular, maintain old in AngularJS
 - Gradually replace
@@ -44,27 +41,30 @@ Master AngularJS to Angular migration, including hybrid apps, component conversi
 
 ```typescript
 // main.ts - Bootstrap hybrid app
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
-import { UpgradeModule } from '@angular/upgrade/static'
-import { AppModule } from './app/app.module'
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { UpgradeModule } from '@angular/upgrade/static';
+import { AppModule } from './app/app.module';
 
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
-  .then((platformRef) => {
-    const upgrade = platformRef.injector.get(UpgradeModule)
+  .then(platformRef => {
+    const upgrade = platformRef.injector.get(UpgradeModule);
     // Bootstrap AngularJS
-    upgrade.bootstrap(document.body, ['myAngularJSApp'], { strictDi: true })
-  })
+    upgrade.bootstrap(document.body, ['myAngularJSApp'], { strictDi: true });
+  });
 ```
 
 ```typescript
 // app.module.ts
-import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { UpgradeModule } from '@angular/upgrade/static'
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { UpgradeModule } from '@angular/upgrade/static';
 
 @NgModule({
-  imports: [BrowserModule, UpgradeModule],
+  imports: [
+    BrowserModule,
+    UpgradeModule
+  ]
 })
 export class AppModule {
   constructor(private upgrade: UpgradeModule) {}
@@ -78,28 +78,27 @@ export class AppModule {
 ## Component Migration
 
 ### AngularJS Controller → Angular Component
-
 ```javascript
 // Before: AngularJS controller
-angular.module('myApp').controller('UserController', function ($scope, UserService) {
-  $scope.user = {}
+angular.module('myApp').controller('UserController', function($scope, UserService) {
+  $scope.user = {};
 
-  $scope.loadUser = function (id) {
-    UserService.getUser(id).then(function (user) {
-      $scope.user = user
-    })
-  }
+  $scope.loadUser = function(id) {
+    UserService.getUser(id).then(function(user) {
+      $scope.user = user;
+    });
+  };
 
-  $scope.saveUser = function () {
-    UserService.saveUser($scope.user)
-  }
-})
+  $scope.saveUser = function() {
+    UserService.saveUser($scope.user);
+  };
+});
 ```
 
 ```typescript
 // After: Angular component
-import { Component, OnInit } from '@angular/core'
-import { UserService } from './user.service'
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-user',
@@ -108,53 +107,52 @@ import { UserService } from './user.service'
       <h2>{{ user.name }}</h2>
       <button (click)="saveUser()">Save</button>
     </div>
-  `,
+  `
 })
 export class UserComponent implements OnInit {
-  user: any = {}
+  user: any = {};
 
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.loadUser(1)
+    this.loadUser(1);
   }
 
   loadUser(id: number) {
-    this.userService.getUser(id).subscribe((user) => {
-      this.user = user
-    })
+    this.userService.getUser(id).subscribe(user => {
+      this.user = user;
+    });
   }
 
   saveUser() {
-    this.userService.saveUser(this.user)
+    this.userService.saveUser(this.user);
   }
 }
 ```
 
 ### AngularJS Directive → Angular Component
-
 ```javascript
 // Before: AngularJS directive
-angular.module('myApp').directive('userCard', function () {
+angular.module('myApp').directive('userCard', function() {
   return {
     restrict: 'E',
     scope: {
       user: '=',
-      onDelete: '&',
+      onDelete: '&'
     },
     template: `
       <div class="card">
         <h3>{{ user.name }}</h3>
         <button ng-click="onDelete()">Delete</button>
       </div>
-    `,
-  }
-})
+    `
+  };
+});
 ```
 
 ```typescript
 // After: Angular component
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
@@ -163,11 +161,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
       <h3>{{ user.name }}</h3>
       <button (click)="delete.emit()">Delete</button>
     </div>
-  `,
+  `
 })
 export class UserCardComponent {
-  @Input() user: any
-  @Output() delete = new EventEmitter<void>()
+  @Input() user: any;
+  @Output() delete = new EventEmitter<void>();
 }
 
 // Usage: <app-user-card [user]="user" (delete)="handleDelete()"></app-user-card>
@@ -177,36 +175,36 @@ export class UserCardComponent {
 
 ```javascript
 // Before: AngularJS service
-angular.module('myApp').factory('UserService', function ($http) {
+angular.module('myApp').factory('UserService', function($http) {
   return {
-    getUser: function (id) {
-      return $http.get('/api/users/' + id)
+    getUser: function(id) {
+      return $http.get('/api/users/' + id);
     },
-    saveUser: function (user) {
-      return $http.post('/api/users', user)
-    },
-  }
-})
+    saveUser: function(user) {
+      return $http.post('/api/users', user);
+    }
+  };
+});
 ```
 
 ```typescript
 // After: Angular service
-import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UserService {
   constructor(private http: HttpClient) {}
 
   getUser(id: number): Observable<any> {
-    return this.http.get(`/api/users/${id}`)
+    return this.http.get(`/api/users/${id}`);
   }
 
   saveUser(user: any): Observable<any> {
-    return this.http.post('/api/users', user)
+    return this.http.post('/api/users', user);
   }
 }
 ```
@@ -214,31 +212,30 @@ export class UserService {
 ## Dependency Injection Changes
 
 ### Downgrading Angular → AngularJS
-
 ```typescript
 // Angular service
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class NewService {
   getData() {
-    return 'data from Angular'
+    return 'data from Angular';
   }
 }
 
 // Make available to AngularJS
-import { downgradeInjectable } from '@angular/upgrade/static'
+import { downgradeInjectable } from '@angular/upgrade/static';
 
-angular.module('myApp').factory('newService', downgradeInjectable(NewService))
+angular.module('myApp')
+  .factory('newService', downgradeInjectable(NewService));
 
 // Use in AngularJS
-angular.module('myApp').controller('OldController', function (newService) {
-  console.log(newService.getData())
-})
+angular.module('myApp').controller('OldController', function(newService) {
+  console.log(newService.getData());
+});
 ```
 
 ### Upgrading AngularJS → Angular
-
 ```typescript
 // AngularJS service
 angular.module('myApp').factory('oldService', function() {
@@ -277,30 +274,30 @@ export class NewComponent {
 
 ```javascript
 // Before: AngularJS routing
-angular.module('myApp').config(function ($routeProvider) {
+angular.module('myApp').config(function($routeProvider) {
   $routeProvider
     .when('/users', {
-      template: '<user-list></user-list>',
+      template: '<user-list></user-list>'
     })
     .when('/users/:id', {
-      template: '<user-detail></user-detail>',
-    })
-})
+      template: '<user-detail></user-detail>'
+    });
+});
 ```
 
 ```typescript
 // After: Angular routing
-import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
-  { path: 'users/:id', component: UserDetailComponent },
-]
+  { path: 'users/:id', component: UserDetailComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
 ```
@@ -310,8 +307,8 @@ export class AppRoutingModule {}
 ```html
 <!-- Before: AngularJS -->
 <form name="userForm" ng-submit="saveUser()">
-  <input type="text" ng-model="user.name" required />
-  <input type="email" ng-model="user.email" required />
+  <input type="text" ng-model="user.name" required>
+  <input type="email" ng-model="user.email" required>
   <button ng-disabled="userForm.$invalid">Save</button>
 </form>
 ```

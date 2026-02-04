@@ -1,126 +1,231 @@
 ---
-name: expo
-description: Expo React Native performance optimization guidelines. This skill should be used when writing, reviewing, or refactoring Expo React Native code to ensure optimal performance patterns. Triggers on tasks involving React Native components, navigation, lists, images, animations, bundle optimization, or mobile performance improvements.
+name: expo-expert
+description: Comprehensive Expo expert with access to complete official documentation covering React Native development, EAS Build, EAS Submit, EAS Update, Expo Router, Expo Modules API, configuration, deployment, and all platform features. Invoke when user mentions Expo, React Native, EAS, Expo Router, mobile app development, iOS/Android development, or cross-platform development.
+allowed-tools: Read, Grep, Glob
+model: sonnet
 ---
 
-# Community Expo React Native Best Practices
+# Expo Integration Expert
 
-Comprehensive performance optimization guide for Expo React Native applications. Contains 54 rules across 9 categories, prioritized by impact to guide automated refactoring and code generation.
+## Purpose
 
-## When to Apply
+Provide expert guidance on Expo and React Native development, covering the complete Expo ecosystem including EAS services, Expo Router, modules, configuration, and deployment workflows.
 
-Reference these guidelines when:
-- Writing new Expo React Native components
-- Optimizing app startup and Time to Interactive
-- Implementing lists, images, or animations
-- Reducing bundle size and memory usage
-- Reviewing code for mobile performance issues
+## When to Use
 
-## Rule Categories by Priority
+Auto-invoke when users mention:
+- Expo or React Native development
+- EAS Build, EAS Submit, EAS Update
+- Expo Router navigation
+- Mobile app development (iOS/Android)
+- Expo CLI or development workflow
+- Expo Modules API or native modules
+- App deployment and distribution
+- Cross-platform development
+- expo-* packages or APIs
 
-| Priority | Category | Impact | Prefix |
-|----------|----------|--------|--------|
-| 1 | Launch Time Optimization | CRITICAL | `launch-` |
-| 2 | Bundle Size Optimization | CRITICAL | `bundle-` |
-| 3 | List Virtualization | HIGH | `list-` |
-| 4 | Image Optimization | HIGH | `image-` |
-| 5 | Data Fetching Patterns | HIGH | `data-` |
-| 6 | Navigation Performance | MEDIUM-HIGH | `nav-` |
-| 7 | Re-render Prevention | MEDIUM | `rerender-` |
-| 8 | Animation Performance | MEDIUM | `anim-` |
-| 9 | Memory Management | LOW-MEDIUM | `mem-` |
+## Knowledge Base
 
-## Quick Reference
+Complete Expo documentation stored in `.claude/skills/frontend/expo/docs/docs_expo_dev/`
 
-### 1. Launch Time Optimization (CRITICAL)
+Coverage includes:
+- Getting started and core concepts
+- EAS Build (cloud builds for iOS/Android)
+- EAS Submit (app store submissions)
+- EAS Update (over-the-air updates)
+- Expo Router (file-based routing)
+- Expo Modules API (native module development)
+- Configuration (app.json, eas.json, config plugins)
+- Development workflow and debugging
+- Deployment strategies
+- Platform-specific features (iOS/Android)
+- Bare workflow and brownfield integration
+- Account management and billing
 
-- `launch-splash-screen-control` - Control splash screen visibility during asset loading
-- `launch-preload-critical-assets` - Preload fonts and images during splash
-- `launch-hermes-engine` - Use Hermes engine for faster startup
-- `launch-defer-non-critical` - Defer non-critical initialization
-- `launch-new-architecture` - Enable New Architecture for synchronous native communication
-- `launch-minimize-root-imports` - Minimize imports in root App component
+## Process
 
-### 2. Bundle Size Optimization (CRITICAL)
+When a user asks about Expo:
 
-- `bundle-avoid-barrel-files` - Avoid barrel file imports
-- `bundle-analyze-size` - Analyze bundle size before release
-- `bundle-remove-unused-dependencies` - Remove unused dependencies
-- `bundle-split-by-architecture` - Generate architecture-specific APKs
-- `bundle-enable-proguard` - Enable ProGuard for Android release builds
-- `bundle-optimize-fonts` - Subset custom fonts to used characters
-- `bundle-use-lightweight-alternatives` - Use lightweight library alternatives
+1. **Identify the Topic**
+   - Determine the specific Expo feature or concept
+   - Examples: EAS Build, Expo Router, configuration, deployment, native modules
 
-### 3. List Virtualization (HIGH)
+2. **Search Documentation**
+   ```
+   Use Grep to search: Grep "keyword" .claude/skills/frontend/expo/docs/
+   ```
 
-- `list-use-flashlist` - Use FlashList instead of FlatList
-- `list-provide-estimated-size` - Provide accurate estimatedItemSize
-- `list-avoid-inline-functions` - Avoid inline functions in renderItem
-- `list-provide-getitemlayout` - Provide getItemLayout for fixed-height items
-- `list-avoid-key-prop` - Avoid key prop inside FlashList items
-- `list-batch-rendering` - Configure list batch rendering
-- `list-memoize-item-components` - Memoize list item components
+   Common search patterns:
+   - EAS Build: `Grep "eas build" .claude/skills/frontend/expo/docs/ -i`
+   - Expo Router: `Grep "router" .claude/skills/frontend/expo/docs/ -i`
+   - Configuration: `Grep "app.json|eas.json" .claude/skills/frontend/expo/docs/`
+   - Native modules: `Grep "expo modules" .claude/skills/frontend/expo/docs/ -i`
 
-### 4. Image Optimization (HIGH)
+3. **Read Relevant Documentation**
+   ```
+   Use Read to load specific files found in search
+   Read .claude/skills/frontend/expo/docs/docs_expo_dev/[filename].md
+   ```
 
-- `image-use-expo-image` - Use expo-image instead of React Native Image
-- `image-resize-to-display-size` - Resize images to display size
-- `image-use-webp-format` - Use WebP format for smaller file sizes
-- `image-use-placeholders` - Use BlurHash or ThumbHash placeholders
-- `image-preload-critical` - Preload critical above-the-fold images
-- `image-lazy-load-offscreen` - Lazy load off-screen images
+4. **Provide Structured Answer**
 
-### 5. Data Fetching Patterns (HIGH)
+   Format responses with:
+   - **Overview**: Brief explanation of the concept
+   - **Setup/Configuration**: Required configuration or setup steps
+   - **Code Examples**: Practical implementation examples
+   - **Best Practices**: Recommendations and common patterns
+   - **Common Issues**: Known gotchas or troubleshooting tips
+   - **Related Topics**: Links to related Expo features
+   - **Source**: Reference the documentation file used
 
-- `data-parallel-fetching` - Fetch independent data in parallel
-- `data-request-deduplication` - Deduplicate concurrent requests
-- `data-abort-requests` - Abort requests on component unmount
-- `data-pagination` - Implement efficient pagination strategies
-- `data-cache-strategies` - Use appropriate caching strategies
-- `data-optimistic-updates` - Apply optimistic updates for responsiveness
+## Example Workflows
 
-### 6. Navigation Performance (MEDIUM-HIGH)
+### EAS Build Questions
+```
+User: "How do I set up EAS Build for my Expo app?"
 
-- `nav-use-native-stack` - Use native stack navigator
-- `nav-unmount-inactive-screens` - Unmount inactive tab screens
-- `nav-prefetch-screen-data` - Prefetch data before navigation
-- `nav-optimize-screen-options` - Optimize screen options
-- `nav-avoid-deep-nesting` - Avoid deeply nested navigators
+1. Search: Grep "eas build" .claude/skills/frontend/expo/docs/ -i
+2. Read: build_introduction.md, build_setup.md
+3. Answer with setup steps, configuration, and examples
+```
 
-### 7. Re-render Prevention (MEDIUM)
+### Expo Router Questions
+```
+User: "How does file-based routing work in Expo Router?"
 
-- `rerender-use-memo-components` - Memoize expensive components with React.memo
-- `rerender-use-callback` - Stabilize callbacks with useCallback
-- `rerender-use-memo-values` - Memoize expensive computations with useMemo
-- `rerender-avoid-context-overuse` - Avoid overusing Context for frequent updates
-- `rerender-split-component-state` - Split components to isolate updating state
-- `rerender-use-react-compiler` - Enable React Compiler for automatic memoization
-- `rerender-avoid-anonymous-components` - Avoid anonymous components in JSX
+1. Search: Grep "router|routing" .claude/skills/frontend/expo/docs/ -i
+2. Read: Router documentation files
+3. Explain routing patterns, file structure, navigation
+```
 
-### 8. Animation Performance (MEDIUM)
+### Configuration Questions
+```
+User: "What are config plugins in Expo?"
 
-- `anim-use-reanimated` - Use Reanimated for UI thread animations
-- `anim-use-native-driver` - Enable useNativeDriver for Animated API
-- `anim-avoid-layout-animation` - Prefer transform over layout animations
-- `anim-gesture-handler-integration` - Use Gesture Handler with Reanimated
-- `anim-interaction-manager` - Defer heavy work during animations
+1. Search: Grep "config plugin" .claude/skills/frontend/expo/docs/ -i
+2. Read: config-plugins_introduction.md, related files
+3. Explain plugins, usage, development, examples
+```
 
-### 9. Memory Management (LOW-MEDIUM)
+### Deployment Questions
+```
+User: "How do I submit my Expo app to the App Store?"
 
-- `mem-cleanup-useeffect` - Clean up subscriptions and timers
-- `mem-abort-fetch-requests` - Abort fetch requests on unmount
-- `mem-avoid-closure-leaks` - Avoid closure-based memory leaks
-- `mem-release-heavy-resources` - Release heavy resources when not needed
-- `mem-profile-with-tools` - Profile memory usage with development tools
+1. Search: Grep "submit|app store" .claude/skills/frontend/expo/docs/ -i
+2. Read: deploy documentation, EAS Submit guides
+3. Provide submission workflow, requirements, automation
+```
 
-## How to Use
+## Response Format
 
-Read individual reference files for detailed explanations and code examples:
+Always structure responses as:
 
-- [Section definitions](references/_sections.md) - Category structure and impact levels
-- [Rule template](assets/templates/_template.md) - Template for adding new rules
-- Example rules: [launch-splash-screen-control](references/launch-splash-screen-control.md), [list-use-flashlist](references/list-use-flashlist.md)
+```markdown
+## [Topic Name]
 
-## Full Compiled Document
+[Brief overview paragraph]
 
-For the complete guide with all rules expanded: `AGENTS.md`
+### Setup
+
+[Configuration steps, installation, prerequisites]
+
+### Implementation
+
+```typescript
+// Code examples with comments
+```
+
+### Key Points
+
+- Important concept 1
+- Important concept 2
+- Important concept 3
+
+### Common Issues
+
+- Issue and solution
+- Gotcha and workaround
+
+### Related
+
+- Related feature or concept
+- Link to additional documentation
+
+**Source:** `.claude/skills/frontend/expo/docs/docs_expo_dev/[filename].md`
+```
+
+## Important Notes
+
+- Always search documentation first before answering
+- Reference specific documentation files in responses
+- Provide practical, working code examples
+- Explain platform-specific differences (iOS vs Android)
+- Mention EAS services when relevant (Build, Submit, Update)
+- Include configuration examples when applicable
+- Highlight breaking changes or version-specific features
+- Use TypeScript examples by default
+- Consider bare workflow users when relevant
+
+## Coverage Areas
+
+**Development Workflow**
+- Expo CLI and development tools
+- Hot reloading and fast refresh
+- Debugging tools and strategies
+- Development builds
+
+**EAS Services**
+- EAS Build (cloud builds)
+- EAS Submit (app store automation)
+- EAS Update (OTA updates)
+- EAS Metadata (store listings)
+
+**Navigation & Routing**
+- Expo Router file-based routing
+- Navigation patterns
+- Deep linking
+- Authentication flows
+
+**Native Integration**
+- Expo Modules API
+- Config plugins
+- Native code integration
+- Bare workflow
+
+**Configuration**
+- app.json / app.config.js
+- eas.json
+- Config plugins
+- Environment variables
+
+**Deployment**
+- App store submission
+- Internal distribution
+- TestFlight and Google Play
+- CI/CD integration
+
+**Platform Features**
+- Push notifications
+- File system
+- Camera and media
+- Location services
+- Authentication
+- Analytics
+
+## Do Not
+
+- Provide outdated information (check doc version/date)
+- Make assumptions about user's Expo SDK version
+- Recommend deprecated approaches
+- Provide React Native CLI solutions when Expo has a better way
+- Ignore platform-specific requirements
+
+## Always
+
+- Search documentation before answering
+- Provide working code examples
+- Reference source documentation
+- Mention version requirements if relevant
+- Consider both managed and bare workflows
+- Link related Expo features
+- Highlight EAS service integration opportunities

@@ -1,191 +1,134 @@
 ---
 name: context-audit
-description: Audit current context composition and identify optimization opportunities. Use when context window is overloaded, agents are underperforming, or applying the R&D framework to optimize token usage.
-allowed-tools: Read, Grep, Glob
+description: Comprehensive quality audit for CLAUDE.md context files. Use when performing thorough quality checks, preparing for releases, ensuring context efficiency, or verifying token optimization.
+allowed-tools: Read, Glob, Grep, Bash
+context: fork
+agent: context-doc-agent
 ---
 
-# Context Audit Skill
+# LLM Context Comprehensive Audit
 
-Audit a codebase's context engineering health and identify optimization opportunities.
+Performs deep quality audits of CLAUDE.md context files, checking structure,
+content quality, efficiency, design doc references, and compliance with
+standards.
 
-## Purpose
+## Overview
 
-A focused agent is a performant agent. This skill helps you understand what's consuming your context window and where to apply the R&D framework.
+This skill provides comprehensive quality auditing for LLM context files
+by running all validation checks, analyzing content efficiency, verifying
+design doc pointers, checking line limits, and generating detailed audit
+reports with prioritized recommendations.
 
-## When to Use
+## Quick Start
 
-- Starting work on a new codebase
-- Agent performance feels sluggish
-- Context warnings appearing
-- Before optimizing context strategy
-- Periodic context health checks
+**Audit all context files:**
 
-## Audit Process
-
-### 1. Memory File Analysis
-
-Scan for CLAUDE.md and related memory files:
-
-```text
-Check:
-- Root CLAUDE.md size (target: <2KB)
-- Number of imports
-- Per-directory CLAUDE.md files
-- Total memory file tokens
+```bash
+/context-audit
 ```
 
-Score memory health:
+**Audit specific file:**
 
-| Size | Score | Assessment |
-| --- | --- | --- |
-| <1KB | Excellent | Minimal and focused |
-| 1-2KB | Good | Within target range |
-| 2-5KB | Needs Review | Growing, audit content |
-| >5KB | Action Required | Bloated, needs R&D |
-
-### 2. MCP Server Analysis
-
-Check MCP configurations:
-
-```text
-Check:
-- .mcp.json existence
-- Number of MCP servers configured
-- Per-server token estimate (2-5% each)
-- Active vs unused servers
+```bash
+/context-audit CLAUDE.md
 ```
 
-Score MCP health:
+**Audit package context:**
 
-| Servers | Score | Assessment |
-| --- | --- | --- |
-| 0 | Excellent | No MCP bloat |
-| 1-2 | Good | Targeted usage |
-| 3-5 | Review | May be over-provisioned |
-| >5 | Action Required | Likely consuming 15%+ |
-
-### 3. Commands Analysis
-
-Review .claude/commands/:
-
-```text
-Check:
-- Number of commands
-- Command complexity (simple vs complex)
-- Priming commands present?
-- Task-type coverage
+```bash
+/context-audit pkgs/effect-type-registry/CLAUDE.md
 ```
 
-Score command health:
+**Quick audit (non-strict):**
 
-| Commands | Score | Assessment |
-| --- | --- | --- |
-| Has priming | Excellent | Dynamic context loading |
-| No priming | Needs Attention | Relying on static memory |
-
-### 4. Hooks Analysis
-
-Check for context-consuming hooks:
-
-```text
-Check:
-- Number of hooks
-- Hook event types
-- Potential context injection
+```bash
+/context-audit --strict=false
 ```
 
-### 5. Overall Context Score
+## Parameters
 
-Calculate overall context engineering score:
+### Optional
 
-| Component | Weight | Max Points |
-| --- | --- | --- |
-| Memory Files | 30% | 30 |
-| MCP Configuration | 25% | 25 |
-| Command Infrastructure | 25% | 25 |
-| Context Patterns | 20% | 20 |
+- `target`: Path to CLAUDE.md file or "all" (default: all)
+- `strict`: Enable strict mode with additional checks (default: true)
+- `check-refs`: Validate design doc references exist (default: true)
+- `output`: Output file path for audit report
+
+## Workflow
+
+High-level audit process:
+
+1. **Parse parameters** to determine audit scope and strictness
+2. **Load design.config.json** to get quality standards (line limits, etc.)
+3. **Discover CLAUDE.md files** using Glob (root + package-level)
+4. **Run validation checks** (structure, formatting, markdown quality)
+5. **Analyze content quality** (efficiency, organization, token usage)
+6. **Check design doc pointers** (existence, validity, coverage)
+7. **Verify line limits** (root: 500, child: 300 from config)
+8. **Calculate health scores** (file, package, overall)
+9. **Identify issues** by severity (critical, high, medium, low)
+10. **Generate recommendations** prioritized by impact
+11. **Output audit report** with actionable improvements
+
+## Instructions
+
+**IMPORTANT:** Follow the detailed step-by-step instructions in
+`instructions.md` to perform the audit correctly.
+
+For usage examples and common scenarios, see `examples.md`.
 
 ## Output Format
 
-```json
-{
-  "score": 75,
-  "grade": "B",
-  "components": {
-    "memory": {
-      "score": 20,
-      "max": 30,
-      "files_found": ["CLAUDE.md"],
-      "total_tokens": 1500,
-      "issues": ["No priming commands detected"]
-    },
-    "mcp": {
-      "score": 25,
-      "max": 25,
-      "servers_found": 0,
-      "estimated_consumption": "0%"
-    },
-    "commands": {
-      "score": 15,
-      "max": 25,
-      "count": 5,
-      "has_priming": false,
-      "issues": ["Missing /prime command"]
-    },
-    "patterns": {
-      "score": 15,
-      "max": 20,
-      "issues": ["No output styles defined"]
-    }
-  },
-  "recommendations": [
-    "Create /prime command for dynamic context loading",
-    "Reduce CLAUDE.md size by delegating to priming",
-    "Consider output styles for token efficiency"
-  ]
-}
-```
+The audit generates a structured report with:
 
-## Grading Scale
+### Summary Section
 
-| Score | Grade | Status |
-| --- | --- | --- |
-| 90-100 | A | Elite context engineering |
-| 80-89 | B | Good practices, minor optimizations |
-| 70-79 | C | Functional, needs attention |
-| 60-69 | D | Significant issues |
-| <60 | F | Context bloat, major rework needed |
+- Total files audited
+- Overall health score (0-100)
+- Critical/high/medium/low issue counts
+- Pass/fail status
 
-## Recommendations Framework
+### File-Level Details
 
-Based on findings, recommend:
+For each CLAUDE.md file:
 
-### For Memory Bloat (Reduce)
+- File path and role (root vs child)
+- Line count vs limit
+- Structure validation results
+- Content quality score
+- Design doc pointer status
+- Specific issues found
 
-- Identify content that can move to priming commands
-- Flag outdated or contradictory guidance
-- Suggest minimal CLAUDE.md structure
+### Recommendations
 
-### For Missing Infrastructure (Delegate)
+Prioritized list of improvements:
 
-- Recommend priming command creation
-- Suggest output styles for verbosity control
-- Propose agent expert patterns
+1. Critical issues (must fix)
+2. High priority (should fix)
+3. Medium priority (nice to have)
+4. Low priority (optional)
 
-## Cross-References
+### Quality Metrics
 
-- @rd-framework.md - Reduce and Delegate strategies
-- @context-layers.md - Understanding context composition
-- @context-rot-vs-pollution.md - Diagnosing context problems
-- @context-priming-patterns.md - Dynamic context loading
+- Average line count
+- Design doc pointer coverage
+- Content efficiency score
+- Token optimization score
 
-## Version History
+## Success Criteria
 
-- **v1.0.0** (2025-12-26): Initial release
+The audit passes when:
 
----
+- All files under line limits (root: 500, child: 300)
+- No critical or high severity issues
+- All design doc pointers valid and exist
+- Content is lean imperative instructions (not implementation details)
+- Proper separation between root and child contexts
 
-## Last Updated
+## Related Skills
 
-**Date:** 2025-12-26
-**Model:** claude-opus-4-5-20251101
+- `/context-validate` - Basic structure and formatting validation
+- `/context-review` - Quality and efficiency review
+- `/context-update` - Update context files based on audit findings
+- `/context-split` - Split large files that exceed limits
+- `/design-audit` - Similar comprehensive audit for design docs

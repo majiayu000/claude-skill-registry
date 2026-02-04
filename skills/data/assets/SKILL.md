@@ -117,7 +117,7 @@ ktui task list --json
 ktui task create "Task Title" --description "Details" --column COLUMN_ID --category CATEGORY_ID --due-date 2026-01-20 --depends-on TASK_ID
 ```
 **Options**:
-- `--column`: Target column ID (omit for leftmost visible column)
+- `--column`: Target column ID (omit for leftmost visible column of active board)
 - `--category`: Category ID to assign to the task
 - `--due-date`: Format MUST be `YYYY-MM-DD` (e.g., "2026-01-20")
 - `--depends-on`: Dependency task ID (use multiple times for multiple dependencies)
@@ -127,11 +127,39 @@ ktui task create "Task Title" --description "Details" --column COLUMN_ID --categ
 ktui task create "Deploy to prod" --depends-on 5 --depends-on 7 --depends-on 9
 ```
 
+**Note**: To create tasks on other boards, only use the `--column` flag to reference a column on that board
+
 #### Update Task
 ```bash
-ktui task update TASK_ID --title "New Title" --description "New Desc" --category CATEGORY_ID --due-date 2026-01-21
+ktui task update TASK_ID --title "New Title" --description "New Desc" --category CATEGORY_ID --due-date 2026-01-21 --depends-on TASK_ID --remove-dependency TASK_ID
 ```
+**Options**:
+- `--title`: Update task title
+- `--description`: Update task description
+- `--category`: Update category ID
+- `--due-date`: Update due date (format: `YYYY-MM-DD`)
+- `--depends-on`: Add dependency task ID (use multiple times for multiple dependencies)
+- `--remove-dependency`: Remove dependency task ID (use multiple times for multiple dependencies)
+
 **Note**: Only specified fields are updated; others remain unchanged
+
+**Dependency Management Examples**:
+```bash
+# Add single dependency
+ktui task update 42 --depends-on 15
+
+# Add multiple dependencies
+ktui task update 42 --depends-on 15 --depends-on 20 --depends-on 25
+
+# Remove dependency
+ktui task update 42 --remove-dependency 15
+
+# Update title and add dependencies
+ktui task update 42 --title "Updated Task" --depends-on 15 --depends-on 20
+```
+
+**Validation**: The system validates dependencies when updating:
+- Checks if dependency tasks exist and prevents duplicate and circular dependencies
 
 #### Move Task Between Columns
 ```bash
@@ -161,12 +189,7 @@ ktui column list --json
 ## Task Dependencies System
 
 ### Dependency Behavior
-- **Blocking**: Tasks with unfinished dependencies cannot move to start/finish columns
-- **Circular Prevention**: System prevents circular dependencies (A→B→A)
-- **Visual Indicators** (in TUI):
-  - ⚠️ "Blocked by X unfinished tasks"
-  - 🔗 "Blocking Y tasks"
-  - ✅ "No dependencies"
+- **Blocking**: Tasks with unfinished dependencies cannot move to start column
 
 ### Dependency Patterns
 
@@ -232,8 +255,7 @@ ktui task list --json
 
 **Actions**:
 ```bash
-# Create board with workflow columns
-# Always prefer default columns, i.e. no -c options, if not told otherwise, to ensure already working status columns
+# Create board with workflow columns Always prefer default columns, i.e. no -c options, if not told otherwise, to ensure already working status columns
 
 ktui board create "API Development" --icon "⚙️" --set-active
 
@@ -291,9 +313,6 @@ ktui board list --json
 # For each board, check actionable tasks
 ktui task list --json --board 1 --actionable
 ktui task list --json --board 2 --actionable
-ktui task list --json --board 3 --actionable
-
-# Parse JSON to identify tasks with near-term due dates
 ```
 
 ## JSON Response Structures
@@ -379,12 +398,6 @@ Before executing commands:
 
 ## System Information
 
-### Data Locations
-Query with: `ktui info`
-- **Database**: `~/.local/share/kanban_tui/kanban_tui.db` (SQLite)
-- **Config**: `~/.config/kanban_tui/config.toml`
-- **Auth**: `~/.config/kanban_tui/auth/authentication.toml`
-
 ### Additional Commands for humans
 - `ktui`: Launch TUI interface (exit with `ctrl+q`)
 - `ktui demo`: Temporary demo instance with example data
@@ -451,23 +464,6 @@ TASKS=$(ktui task list --json --column 2 --actionable)
 # Parse JSON, filter by criteria, move qualifying tasks
 ktui task move TASK_ID 3
 ```
-
-### Due Date Monitoring
-```bash
-# List all tasks with due dates
-ktui task list --json | jq '.[] | select(.due_date != null) | {task_id, title, due_date}'
-# Compare dates, flag overdue/upcoming tasks
-```
-
-### Cross-Board Status Reports
-```bash
-# Generate project status across multiple boards
-for board_id in 1 2 3; do
-  echo "Board $board_id:"
-  ktui task list --json --board $board_id | jq 'group_by(.column_id) | length'
-done
-```
-
 ## Troubleshooting Common Issues
 
 ### "Task cannot be moved" Error

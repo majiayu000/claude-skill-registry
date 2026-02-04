@@ -1,200 +1,209 @@
 ---
 name: code-cleanup
-description: Dead code detection and removal using knip (recommended) or standard tooling. Use when removing unused imports, variables, or dead files.
+description: "Refactor and clean up code following best practices for readability and maintainability"
 ---
 
-# SKILL: Code Cleanup
+# Code Cleanup
 
-> **Purpose**: Dead code detection and removal using knip (recommended) or ESLint/TypeScript fallback
-> **Target**: Coder Agent, cleanup commands
+Clean up and refactor the following code to improve readability, maintainability, and follow best practices.
 
----
+## Code to Clean
 
-## ⚠️ EXECUTION DIRECTIVE
+$ARGUMENTS
 
-**IMPORTANT**: Execute ALL steps IMMEDIATELY and AUTOMATICALLY.
+## Cleanup Checklist for Solo Developers
 
-**Core Philosophy**: Auto-apply Low/Medium risk | High-risk: User confirmation | Safe flags: `--dry-run`, `--apply` | Verification after each batch
+### 1. **Code Smells to Fix**
 
----
+**Naming**
+- Descriptive variable/function names
+- Consistent naming conventions (camelCase, PascalCase)
+- Avoid abbreviations unless obvious
+- Boolean names start with is/has/can
 
-## Quick Start
+**Functions**
+- Single responsibility per function
+- Keep functions small (<50 lines)
+- Reduce parameters (max 3-4)
+- Extract complex logic
+- Avoid side effects where possible
 
-### When to Use This Skill
-- Remove unused import statements
-- Detect and delete dead files (zero references)
-- Clean up codebase after refactoring
+**DRY (Don't Repeat Yourself)**
+- Extract repeated code to utilities
+- Create reusable components
+- Use TypeScript generics for type reuse
+- Centralize constants/configuration
 
-### Usage
-```bash
-MODE="${1:-files}"  # imports|files|all
-SCOPE="${2:-repo}"  # repo|path=...
+**Complexity**
+- Reduce nested if statements
+- Replace complex conditions with functions
+- Use early returns
+- Simplify boolean logic
+
+**TypeScript**
+- Remove `any` types
+- Add proper type annotations
+- Use interfaces for object shapes
+- Leverage utility types (Pick, Omit, Partial)
+
+### 2. **Modern Patterns to Apply**
+
+**JavaScript/TypeScript**
+```typescript
+// Use optional chaining
+const value = obj?.prop?.nested
+
+// Use nullish coalescing
+const result = value ?? defaultValue
+
+// Use destructuring
+const { name, email } = user
+
+// Use template literals
+const message = `Hello, ${name}!`
+
+// Use array methods
+const filtered = arr.filter(x => x.active)
 ```
 
----
+**React**
+```typescript
+// Extract custom hooks
+const useUserData = () => {
+  // logic here
+}
 
-## .cleanup-ignore Support
+// Use proper TypeScript types
+interface Props {
+  user: User
+  onUpdate: (user: User) => void
+}
 
-Create `.cleanup-ignore` file in project root:
-
-```gitignore
-# Core infrastructure
-**/auth/**
-**/database/**
-**/*.config.*
-
-# Entry points
-**/index.ts
-**/main.ts
-
-# Generated files
-**/generated/**
-**/*.gen.ts
+// Avoid prop drilling with composition
+<Provider value={data}>
+  <Component />
+</Provider>
 ```
 
-**Loading order**: Read `.cleanup-ignore` → Apply patterns → Exclude protected files
+### 3. **Refactoring Techniques**
 
----
+**Extract Function**
+```typescript
+// Before
+const process = () => {
+  // 50 lines of code
+}
 
-## Step 1: Detect Dead Code
+// After
+const validate = () => { /* ... */ }
+const transform = () => { /* ... */ }
+const save = () => { /* ... */ }
 
-### Detection Tools
-
-**Recommended: knip**
-```bash
-npx knip                    # Full analysis
-npx knip --reporter compact # Concise output
-npx knip --fix              # Auto-fix safe issues
-```
-
-**Fallback: Standard tooling**
-```bash
-grep -r "import.*from" src/ --include="*.ts"  # Unused imports
-find src/ -name "*.ts" -exec grep -l "{}" \;   # Dead files
-```
-
-### Dead File Detection Procedure
-
-```bash
-EXCLUDE="--glob '!*.test.ts' --glob '!*.spec.ts' --glob '!index.ts'"
-rg --files $EXCLUDE src/ | while read file; do
-  refs=$(rg -c "from.*['\"]$file" src/ || echo 0)
-  [ "$refs" -eq 0 ] && echo "$file: 0 references"
-done
-```
-
----
-
-## Step 2: Risk Classification (4-Level)
-
-| Risk | File Types | Action |
-|------|------------|--------|
-| **SAFE** | Tests (`*.test.*`), mocks, fixtures | auto-remove |
-| **CAUTION** | Utils, helpers, internal modules | auto-remove + prompt |
-| **WARNING** | Components, services, hooks | tests pass first |
-| **DANGER** | Auth, database, config, API routes | require `--force` |
-
-```bash
-classify_risk() {
-  case "$1" in
-    *.test.* | *.spec.* | */__mocks__/*) echo "SAFE" ;;
-    */utils/* | */helpers/* | */lib/*) echo "CAUTION" ;;
-    */components/* | */services/* | */hooks/*) echo "WARNING" ;;
-    */auth/* | */database/* | *.config.* | */api/*) echo "DANGER" ;;
-    *) echo "CAUTION" ;;
-  esac
+const process = () => {
+  validate()
+  const data = transform()
+  save(data)
 }
 ```
 
----
+**Replace Conditional with Polymorphism**
+```typescript
+// Before
+if (type === 'A') return processA()
+if (type === 'B') return processB()
 
-## Step 3: Cleanup with Confirmation
-
-```bash
-detect_dead_files() {
-  rg --files --glob '!*.test.ts' src/ | while read file; do
-    refs=$(rg -c "from.*['\"]$file" src/ || echo 0)
-    [ "$refs" -eq 0 ] && echo "$file|$(classify_risk "$file")"
-  done
+// After
+const processors = {
+  A: processA,
+  B: processB
 }
-# Auto-apply SAFE/CAUTION/WARNING, confirm DANGER
-detect_dead_files | while IFS='|' read -r file risk; do
-  if [ "$risk" = "DANGER" ]; then
-    echo "DANGER: $file [A) Delete / B) Skip]"
-    read -p "Choose: " choice
-    [ "$choice" = "A" ] && rm "$file"
-  else
-    echo "Auto-deleting: $file" && rm "$file"
-  fi
-done
+return processors[type]()
 ```
 
----
+**Introduce Parameter Object**
+```typescript
+// Before
+function create(name, email, age, address)
 
-## Step 4: Verification
-
-```bash
-npm test || { echo "❌ Tests failed"; git checkout -- .; exit 1; }
-npm run type-check || { echo "❌ Type check failed"; git checkout -- .; exit 1; }
-npm run lint || { echo "❌ Lint failed"; git checkout -- .; exit 1; }
-echo "✅ All checks passed"
+// After
+interface UserData {
+  name: string
+  email: string
+  age: number
+  address: string
+}
+function create(userData: UserData)
 ```
 
-**Rollback on failure**: `git checkout -- .`
+### 4. **Common Cleanup Tasks**
 
----
+**Remove Dead Code**
+- Unused imports
+- Unreachable code
+- Commented out code
+- Unused variables
 
-## Step 5: Execution Logging
+**Improve Error Handling**
+```typescript
+// Before
+try { doSomething() } catch (e) { console.log(e) }
 
-```bash
-mkdir -p .cleanup
-LOG_FILE=".cleanup/$(date +%Y-%m-%d_%H%M%S).log"
-if [ "$DELETED_COUNT" -gt 0 ]; then
-  echo "# Cleanup Log - $(date +%Y-%m-%d)" > "$LOG_FILE"
-  echo "## Deleted: $DELETED_COUNT files" >> "$LOG_FILE"
-  echo "✓ Log saved: $LOG_FILE"
-fi
+// After
+try {
+  doSomething()
+} catch (error) {
+  if (error instanceof ValidationError) {
+    // Handle validation
+  } else {
+    logger.error('Unexpected error', { error })
+    throw error
+  }
+}
 ```
 
-**stdout**: `✅ Cleanup Complete - Deleted: 5 files, Tests: PASS`
+**Consistent Formatting**
+- Proper indentation
+- Consistent quotes
+- Line length (<100 characters)
+- Organized imports
 
----
+**Better Comments**
+- Remove obvious comments
+- Add why, not what
+- Document complex logic
+- Update outdated comments
 
-## Parallel Detection (Optional)
+### 5. **Next.js/React Specific**
 
-```markdown
-Task A: npx knip --reporter json
-Task B: eslint . --report-unused-disable-directives --format json
-Task C: tsc --noUnusedLocals --noEmit 2>&1
-# Merge: Deduplicate → Apply .cleanup-ignore → Classify by risk
+**Server vs Client Components**
+```typescript
+// Move state to client component
+'use client'
+function Interactive() {
+  const [state, setState] = useState()
+}
+
+// Keep data fetching in server component
+async function Page() {
+  const data = await fetchData()
+}
 ```
 
-**Safe**: All detection commands are read-only.
+**Proper Data Fetching**
+```typescript
+// Use SWR/React Query for client
+const { data } = useSWR('/api/user')
 
----
-
-## Pre-flight Safety
-
-```bash
-[ -n "$(git status --porcelain)" ] && { echo "⚠️  Working directory not clean"; exit 2; }
+// Use direct fetch in server components
+const data = await fetch('/api/user').then(r => r.json())
 ```
 
----
+## Output Format
 
-## Troubleshooting
+1. **Issues Found** - List of code smells and problems
+2. **Cleaned Code** - Refactored version
+3. **Explanations** - What changed and why
+4. **Before/After Comparison** - Side-by-side if helpful
+5. **Further Improvements** - Optional enhancements
 
-**False Positives**: Dynamic imports, runtime requires | **Test Failures**: `git checkout -- .`
-
----
-
-## Best Practices
-
-- **Run tests after each batch**: Max 10 deletions per batch | **Conservative exclusion**: Exclude index.*, main.*, *.config.* | **Risk-based approach**: Auto-apply Low/Medium, confirm High | **Clean working directory**: Block if modified/staged files exist
-
----
-
-## Further Reading
-
-**Internal**: @.claude/skills/code-cleanup/REFERENCE.md | @.claude/skills/vibe-coding/SKILL.md
-
-**External**: [ESLint Unused Vars Rule](https://typescript-eslint.io/rules/no-unused-vars/) | [knip](https://knip.dev/) | **⚠️ SAFETY**: Auto-rollback on verification failure
+Focus on practical improvements that make code more maintainable without over-engineering. Balance clean code with pragmatism.

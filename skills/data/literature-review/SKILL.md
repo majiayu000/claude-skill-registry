@@ -1,6 +1,7 @@
 ---
 name: literature-review
 description: Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature reviews, meta-analyses, research synthesis, or comprehensive literature searches across biomedical, scientific, and technical domains. Creates professionally formatted markdown documents and PDFs with verified citations in multiple citation styles (APA, Nature, Vancouver, etc.).
+allowed-tools: [Read, Write, Edit, Bash]
 ---
 
 # Literature Review
@@ -21,6 +22,43 @@ Use this skill when:
 - Investigating the state of the art in a research domain
 - Identifying research gaps and future directions
 - Requiring verified citations and professional formatting
+
+## Visual Enhancement with Scientific Schematics
+
+**⚠️ MANDATORY: Every literature review MUST include at least 1-2 AI-generated figures using the scientific-schematics skill.**
+
+This is not optional. Literature reviews without visual elements are incomplete. Before finalizing any document:
+1. Generate at minimum ONE schematic or diagram (e.g., PRISMA flow diagram for systematic reviews)
+2. Prefer 2-3 figures for comprehensive reviews (search strategy flowchart, thematic synthesis diagram, conceptual framework)
+
+**How to generate figures:**
+- Use the **scientific-schematics** skill to generate AI-powered publication-quality diagrams
+- Simply describe your desired diagram in natural language
+- Nano Banana Pro will automatically generate, review, and refine the schematic
+
+**How to generate schematics:**
+```bash
+python scripts/generate_schematic.py "your diagram description" -o figures/output.png
+```
+
+The AI will automatically:
+- Create publication-quality images with proper formatting
+- Review and refine through multiple iterations
+- Ensure accessibility (colorblind-friendly, high contrast)
+- Save outputs in the figures/ directory
+
+**When to add schematics:**
+- PRISMA flow diagrams for systematic reviews
+- Literature search strategy flowcharts
+- Thematic synthesis diagrams
+- Research gap visualization maps
+- Citation network diagrams
+- Conceptual framework illustrations
+- Any complex concept that benefits from visualization
+
+For detailed guidance on creating schematics, refer to the scientific-schematics skill documentation.
+
+---
 
 ## Core Workflow
 
@@ -512,7 +550,7 @@ This skill works seamlessly with other scientific skills:
 
 ### Required Python Packages
 ```bash
-uv pip install requests  # For citation verification
+pip install requests  # For citation verification
 ```
 
 ### Required System Tools

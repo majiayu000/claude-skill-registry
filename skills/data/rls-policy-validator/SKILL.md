@@ -5,6 +5,12 @@ description: Expert assistant for validating and creating Row Level Security (RL
 
 # RLS Policy Validator
 
+## Context Files (Read First)
+
+For tables and security patterns, read from `Docs/context/`:
+- `Docs/context/db-schema-short.md` - Table structures
+- `Docs/context/supabase-map.md` - Access matrix
+
 ## Capabilities
 - Review and suggest RLS policies for new tables
 - Validate that user data is properly protected

@@ -1,91 +1,71 @@
 ---
 name: handoff
-description: Use handoff tools for session continuity. Create handoffs at end of session, read handoffs at start, search past handoffs for context. Trigger words - "handoff", "end session", "wrap up", "continue from", "where we left off", "context high", "running low", "before I forget".
+description: >
+  Hand off to a fresh Claude session. Use when context is full, you've finished
+  a logical chunk of work, or need a fresh perspective. Work continues from hook.
+allowed-tools: "Bash(gt handoff:*),Bash(gt mail send:*)"
+version: "1.0.0"
+author: "Gas Town"
 ---
 
-# Handoff Skill
+# Handoff - Session Cycling for Gas Town Agents
 
-> "Session continuity through structured handoffs"
+Hand off your current session to a fresh Claude instance while preserving work context.
 
-## Proactive Triggers
+## When to Use
 
-### MUST Create Handoff When:
-- Context > 80% and significant work done
-- User says: "wrap up", "end session", "that's all", "done for now"
-- User says: "before I forget", "note this down"
-- Session has 3+ commits without handoff today
+- Context getting full (approaching token limit)
+- Finished a logical chunk of work
+- Need a fresh perspective on a problem
+- Human requests session cycling
 
-### SHOULD Read Handoff When:
-- Session starts and recent handoff exists
-- User says: "where were we", "continue from", "last time"
-- User references previous work
-
-### SHOULD Search Handoffs When:
-- User asks about past work on a topic
-- User says: "did we work on", "when did we", "find the handoff"
-
-## Tool Usage
-
-### handoff_create
-```javascript
-handoff_create({
-  done: ["Completed X", "Fixed Y"],
-  pending: ["Test X", "Review Y"],
-  context: "Branch: feature/x, Issue: #123",
-  title: "Feature X Progress",
-  context_percent: 85
-})
-```
-
-### handoff_read
-```javascript
-handoff_read({ limit: 1 })  // Latest
-handoff_read({ limit: 3 })  // Recent 3
-```
-
-### handoff_search
-```javascript
-handoff_search({
-  query: "authentication",
-  limit: 5
-})
-```
-
-## Commands Available
-
-| Command | Action |
-|---------|--------|
-| `/handoff` | Create handoff interactively |
-| `/handoff-read` | Read latest handoff |
-| `/handoff-search [query]` | Search past handoffs |
-| `/handoff-help` | Show all options |
-
-## Integration Map
+## Usage
 
 ```
-┌──────────────────────────────────────────┐
-│            Session Lifecycle              │
-├──────────────────────────────────────────┤
-│ START → handoff_read (auto via hook)     │
-│                                          │
-│ WORK  → claude-mem (auto via worker)     │
-│       → Oracle (consult for decisions)   │
-│                                          │
-│ END   → handoff_create (manual/reminder) │
-└──────────────────────────────────────────┘
+/handoff [optional message]
 ```
 
-| System | Question | Auto |
-|--------|----------|------|
-| **handoff** | "Where were we?" | Hook on start |
-| **claude-mem** | "What happened?" | Background worker |
-| **Oracle** | "What should I do?" | On-demand |
+## How It Works
 
-## Quick Reference
+1. If you provide a message, it's sent as handoff mail to yourself
+2. `gt handoff` respawns your session with a fresh Claude
+3. New session auto-primes via SessionStart hook
+4. Work continues from your hook (pinned molecule persists)
 
-| Context | Action |
-|---------|--------|
-| High context (>80%) | Prompt to create handoff |
-| No handoff today + commits | Reminder on Stop |
-| User asks about past | Search handoffs |
-| Session start | Auto-show latest handoff |
+## Examples
+
+```bash
+# Simple handoff (molecule persists, fresh context)
+/handoff
+
+# Handoff with context notes
+/handoff "Found the bug in token refresh - check line 145 in auth.go first"
+```
+
+## What Persists
+
+- **Hooked molecule**: Your work assignment stays on your hook
+- **Beads state**: All issues, dependencies, progress
+- **Git state**: Commits, branches, staged changes
+
+## What Resets
+
+- **Conversation context**: Fresh Claude instance
+- **TodoWrite items**: Ephemeral, session-scoped
+- **In-memory state**: Any uncommitted analysis
+
+## Implementation
+
+When invoked, execute:
+
+1. If user provided a message, send handoff mail:
+   ```bash
+   gt mail send <your-address> -s "HANDOFF: Session cycling" -m "<message>"
+   ```
+
+2. Run the handoff command:
+   ```bash
+   gt handoff
+   ```
+
+The new session will find your handoff mail and hooked work automatically.

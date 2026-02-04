@@ -1,182 +1,247 @@
 ---
 name: netlify-deploy
-description: Déploiement et gestion du site MyGGV GPS sur Netlify. Utiliser pour déployer, vérifier le statut, gérer les variables d'environnement et les configurations de projet.
-allowed-tools:
-  - mcp__netlify__netlify-deploy-services-reader
-  - mcp__netlify__netlify-deploy-services-updater
-  - mcp__netlify__netlify-project-services-reader
-  - mcp__netlify__netlify-project-services-updater
-  - mcp__netlify__netlify-user-services-reader
-  - mcp__netlify__netlify-team-services-reader
-  - mcp__netlify__netlify-extension-services-reader
-  - mcp__netlify__netlify-coding-rules
-  - Bash
-  - Read
+description: Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys.
 ---
 
-# Netlify Deploy - MyGGV GPS
+# Netlify Deployment Skill
 
-## Objectif
+Deploy web projects to Netlify using the Netlify CLI with intelligent detection of project configuration and deployment context.
 
-Gérer le déploiement et la configuration du site MyGGV GPS sur Netlify.
+## Overview
 
-## Périmètre
+This skill automates Netlify deployments by:
+- Verifying Netlify CLI authentication
+- Detecting project configuration and framework
+- Linking to existing sites or creating new ones
+- Deploying to production or preview environments
 
-### Inclus
+## Prerequisites
 
-- Déploiement du site (`deploy-site`)
-- Vérification du statut des déploiements
-- Gestion des variables d'environnement
-- Configuration du projet (nom, formulaires, accès)
-- Vérification des extensions installées
+- **Netlify CLI**: Installed via npx (no global install required)
+- **Authentication**: Netlify account with active login session
+- **Project**: Valid web project in current directory
+- When sandboxing blocks the deployment network calls, rerun with `sandbox_permissions=require_escalated`.
+- The deployment might take a few minutes. Use appropriate timeout values.
 
-### Exclus
+## Authentication Pattern
 
-- Base de données → utiliser `supabase-database`
-- Documentation → utiliser `archon-project`
+The skill uses the **pre-authenticated Netlify CLI** approach:
 
-## Configuration Actuelle
+1. Check authentication status with `npx netlify status`
+2. If not authenticated, guide user through `npx netlify login`
+3. Fail gracefully if authentication cannot be established
 
-### netlify.toml
+Authentication uses either:
+- **Browser-based OAuth** (primary): `netlify login` opens browser for authentication
+- **API Key** (alternative): Set `NETLIFY_AUTH_TOKEN` environment variable
 
-```toml
-[build]
-  command = "npm run build:netlify"
-  publish = "dist"
+## Workflow
 
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
-```
+### 1. Verify Netlify CLI Authentication
 
-### Variables d'Environnement Requises
-
-- `VITE_SUPABASE_URL` - URL Supabase
-- `VITE_SUPABASE_ANON_KEY` - Clé publique Supabase
-
-## Workflow de Déploiement
-
-### 1. Avant de déployer - Vérifier les règles
-
-```javascript
-mcp__netlify__netlify -
-  coding -
-  rules({
-    creationType: "serverless", // ou "edge-functions", "blobs", etc.
-  });
-```
-
-### 2. Build local pour test
+Check if the user is logged into Netlify:
 
 ```bash
-npm run build:netlify
+npx netlify status
 ```
 
-### 3. Déployer sur Netlify
+**Expected output patterns**:
+- ✅ Authenticated: Shows logged-in user email and site link status
+- ❌ Not authenticated: "Not logged into any site" or authentication error
 
-```javascript
-mcp__netlify__netlify -
-  deploy -
-  services -
-  updater({
-    selectSchema: {
-      operation: "deploy-site",
-      params: {
-        deployDirectory: "/home/charles/Bureau/new-ggv-gps",
-        siteId: "<site-id>", // Obtenir via netlify link ou get-projects
-      },
-    },
-  });
-```
-
-### 4. Vérifier le déploiement
-
-```javascript
-mcp__netlify__netlify -
-  deploy -
-  services -
-  reader({
-    selectSchema: {
-      operation: "get-deploy",
-      params: { deployId: "<deploy-id>" },
-    },
-  });
-```
-
-## Gestion des Variables d'Environnement
-
-### Lister les variables
-
-```javascript
-mcp__netlify__netlify -
-  project -
-  services -
-  updater({
-    selectSchema: {
-      operation: "manage-env-vars",
-      params: {
-        siteId: "<site-id>",
-        getAllEnvVars: true,
-      },
-    },
-  });
-```
-
-### Ajouter/Modifier une variable
-
-```javascript
-mcp__netlify__netlify -
-  project -
-  services -
-  updater({
-    selectSchema: {
-      operation: "manage-env-vars",
-      params: {
-        siteId: "<site-id>",
-        upsertEnvVar: true,
-        envVarKey: "VITE_SUPABASE_URL",
-        envVarValue: "https://xxx.supabase.co",
-        envVarIsSecret: false,
-        newVarContext: "all",
-      },
-    },
-  });
-```
-
-## Headers de Sécurité
-
-Le fichier `public/_headers` configure :
-
-- X-Frame-Options: DENY
-- X-Content-Type-Options: nosniff
-- Referrer-Policy: strict-origin-when-cross-origin
-- Permissions-Policy: geolocation autorisé
-
-## Commandes Utiles
-
-### Lier le projet (CLI)
+**If not authenticated**, guide the user:
 
 ```bash
-cd /home/charles/Bureau/new-ggv-gps
-netlify link
+npx netlify login
 ```
 
-### Obtenir le site ID
+This opens a browser window for OAuth authentication. Wait for user to complete login, then verify with `netlify status` again.
 
-```javascript
-mcp__netlify__netlify -
-  project -
-  services -
-  reader({
-    selectSchema: {
-      operation: "get-projects",
-      params: { projectNameSearchValue: "ggv" },
-    },
-  });
+**Alternative: API Key authentication**
+
+If browser authentication isn't available, users can set:
+
+```bash
+export NETLIFY_AUTH_TOKEN=your_token_here
 ```
 
-## Bonnes Pratiques
+Tokens can be generated at: https://app.netlify.com/user/applications#personal-access-tokens
 
-1. **Toujours builder localement** avant de déployer
-2. **Vérifier les variables d'environnement** sont configurées
-3. **Vérifier les headers** de sécurité avec les DevTools
+### 2. Detect Site Link Status
+
+From `netlify status` output, determine:
+- **Linked**: Site already connected to Netlify (shows site name/URL)
+- **Not linked**: Need to link or create site
+
+### 3. Link to Existing Site or Create New
+
+**If already linked** → Skip to step 4
+
+**If not linked**, attempt to link by Git remote:
+
+```bash
+# Check if project is Git-based
+git remote show origin
+
+# If Git-based, extract remote URL
+# Format: https://github.com/username/repo or git@github.com:username/repo.git
+
+# Try to link by Git remote
+npx netlify link --git-remote-url <REMOTE_URL>
+```
+
+**If link fails** (site doesn't exist on Netlify):
+
+```bash
+# Create new site interactively
+npx netlify init
+```
+
+This guides user through:
+1. Choosing team/account
+2. Setting site name
+3. Configuring build settings
+4. Creating netlify.toml if needed
+
+### 4. Verify Dependencies
+
+Before deploying, ensure project dependencies are installed:
+
+```bash
+# For npm projects
+npm install
+
+# For other package managers, detect and use appropriate command
+# yarn install, pnpm install, etc.
+```
+
+### 5. Deploy to Netlify
+
+Choose deployment type based on context:
+
+**Preview/Draft Deploy** (default for existing sites):
+
+```bash
+npx netlify deploy
+```
+
+This creates a deploy preview with a unique URL for testing.
+
+**Production Deploy** (for new sites or explicit production deployments):
+
+```bash
+npx netlify deploy --prod
+```
+
+This deploys to the live production URL.
+
+**Deployment process**:
+1. CLI detects build settings (from netlify.toml or prompts user)
+2. Builds the project locally
+3. Uploads built assets to Netlify
+4. Returns deployment URL
+
+### 6. Report Results
+
+After deployment, report to user:
+- **Deploy URL**: Unique URL for this deployment
+- **Site URL**: Production URL (if production deploy)
+- **Deploy logs**: Link to Netlify dashboard for logs
+- **Next steps**: Suggest `netlify open` to view site or dashboard
+
+## Handling netlify.toml
+
+If a `netlify.toml` file exists, the CLI uses it automatically. If not, the CLI will prompt for:
+- **Build command**: e.g., `npm run build`, `next build`
+- **Publish directory**: e.g., `dist`, `build`, `.next`
+
+Common framework defaults:
+- **Next.js**: build command `npm run build`, publish `.next`
+- **React (Vite)**: build command `npm run build`, publish `dist`
+- **Static HTML**: no build command, publish current directory
+
+The skill should detect framework from `package.json` if possible and suggest appropriate settings.
+
+## Example Full Workflow
+
+```bash
+# 1. Check authentication
+npx netlify status
+
+# If not authenticated:
+npx netlify login
+
+# 2. Link site (if needed)
+# Try Git-based linking first
+git remote show origin
+npx netlify link --git-remote-url https://github.com/user/repo
+
+# If no site exists, create new one:
+npx netlify init
+
+# 3. Install dependencies
+npm install
+
+# 4. Deploy (preview for testing)
+npx netlify deploy
+
+# 5. Deploy to production (when ready)
+npx netlify deploy --prod
+```
+
+## Error Handling
+
+Common issues and solutions:
+
+**"Not logged in"**
+→ Run `npx netlify login`
+
+**"No site linked"**
+→ Run `npx netlify link` or `npx netlify init`
+
+**"Build failed"**
+→ Check build command and publish directory in netlify.toml or CLI prompts
+→ Verify dependencies are installed
+→ Review build logs for specific errors
+
+**"Publish directory not found"**
+→ Verify build command ran successfully
+→ Check publish directory path is correct
+
+## Troubleshooting
+
+### Escalated Network Access
+
+If deployment fails due to network issues (timeouts, DNS errors, connection resets), rerun the deploy with escalated permissions (use `sandbox_permissions=require_escalated`). The deploy requires escalated network access when sandbox networking blocks outbound requests.
+
+Example guidance to the user:
+
+```
+The deploy needs escalated network access to deploy to Netlify. I can rerun the command with escalated permissions—want me to proceed?
+```
+
+## Environment Variables
+
+For secrets and configuration:
+
+1. Never commit secrets to Git
+2. Set in Netlify dashboard: Site Settings → Environment Variables
+3. Access in builds via `process.env.VARIABLE_NAME`
+
+## Tips
+
+- Use `netlify deploy` (no `--prod`) first to test before production
+- Run `netlify open` to view site in Netlify dashboard
+- Run `netlify logs` to view function logs (if using Netlify Functions)
+- Use `netlify dev` for local development with Netlify Functions
+
+## Reference
+
+- Netlify CLI Docs: https://docs.netlify.com/cli/get-started/
+- netlify.toml Reference: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+## Bundled References (Load As Needed)
+
+- [CLI commands](references/cli-commands.md)
+- [Deployment patterns](references/deployment-patterns.md)
+- [netlify.toml guide](references/netlify-toml.md)

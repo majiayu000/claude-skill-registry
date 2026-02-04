@@ -21,7 +21,9 @@ Devian 런타임에 **WebSocket 기반 클라이언트 런타임**을 추가한�
 
 ### 목표 (In Scope)
 
-- `NetWsClient`: WebSocket 클라이언트 (sync public API, background threads)
+- `NetWsClient`: WebSocket 클라이언트 (sync public API)
+  - **Non-WebGL**: background threads 기반
+  - **WebGL**: thread 없음, `Tick()` 기반 폴링
 - `NetClient`: 프레임 수신 → 디스패치 라우팅
 - `INetRuntime`: opcode 기반 디스패치 인터페이스 (이미 Net 포함, 유지)
 - `NetFrameV1`: 프레임 포맷 파서 (`[opcode:int32LE][payload...]`)
@@ -165,7 +167,18 @@ namespace Devian
 
         /// <summary>
         /// Process dispatch queue on calling thread (Unity main thread).
+        /// WebGL에서는 WS_PollEvent drain도 수행한다.
+        ///
+        /// 문서 표준 호출명: Tick()
+        /// Update()는 alias로 유지 (레거시, Unity MonoBehaviour.Update 혼동 방지)
         /// </summary>
+        public void Tick();
+
+        /// <summary>
+        /// Alias for Tick(). 레거시 호환용, 사용 비권장.
+        /// Unity MonoBehaviour.Update()와 혼동 금지.
+        /// </summary>
+        [Obsolete("Use Tick() instead")]
         public void Update();
 
         public void Dispose();
@@ -214,7 +227,7 @@ namespace Devian
 3. **Send는 sync enqueue (Non-WebGL)**: `SendFrame()`은 즉시 반환, 실제 전송은 send thread
 4. **Receive는 pool buffer 누적 (Non-WebGL)**: `EndOfMessage`에서만 core로 전달
 
-> **WebGL Note:** 이 문서에서 "send/recv thread"는 **Non-WebGL**을 의미한다. WebGL에서는 스레드가 없으며, WebSocket **메시지 경계가 프레임 경계**가 된다. 따라서 수신은 브라우저 콜백에서 `NetworkClient` 파이프라인으로 전달되고, 전송은 JS WebSocket send로 수행된다.
+> **WebGL Note:** 이 문서에서 "send/recv thread"는 **Non-WebGL**을 의미한다. WebGL에서는 스레드가 없으며, 수신은 **콜백 전달이 아니라 폴링 전달**로 수행된다. **ToArray 금지, ArrayPool 재사용, 핫 경로 alloc 금지**는 동일하게 적용된다. ptr/len free 규칙은 [77-webgl-jslib-memory-rules](../77-webgl-jslib-memory-rules/SKILL.md)에 위임한다.
 
 ### MUST NOT
 
@@ -230,13 +243,13 @@ namespace Devian
 │   Main Thread   │
 │  (Unity Update) │
 │                 │
-│  Update() ──────┼──→ dispatch queue drain
+│  Tick() ────────┼──→ dispatch queue drain + (WebGL: WS_PollEvent drain)
 │  SendFrame() ───┼──→ send queue enqueue
 │  Connect()      │
 │  Close()        │
 └─────────────────┘
          │
-         ▼
+         ▼ (Non-WebGL only)
 ┌─────────────────┐     ┌─────────────────┐
 │   Send Thread   │     │   Recv Thread   │
 │                 │     │                 │
@@ -245,13 +258,28 @@ namespace Devian
 └─────────────────┘     └─────────────────┘
 ```
 
-> **WebGL Exception** (`UNITY_WEBGL && !UNITY_EDITOR`)
-> 
-> WebGL에서는 브라우저 제약으로 스레드 기반 send/recv 루프를 사용하지 않는다.
-> - **송신**: `ArrayPool<byte>` + `GCHandle.Alloc(Pinned)` → `WS_SendBinary(ptr,len)` (ToArray 없음)
-> - **수신**: JS가 `_malloc`으로 WASM heap에 복사 → C#이 `Marshal.Copy`로 `ArrayPool<byte>`에 복사 후 처리 → `WS_FreeBuffer(ptr)`로 해제
-> - Public API 및 프레임 처리 파이프라인(`NetClient`로 전달)은 동일하다.
-> - **Performance/GC Hard Rules(ToArray 금지, pool 재사용, 핫 경로 alloc 금지)를 WebGL도 동일하게 만족한다.**
+> **Tick() vs Update() 표준화:**
+> - `Tick()` = dispatch queue drain + (WebGL이면 WS_PollEvent drain)
+> - `Update()` = `Tick()` alias (레거시, Unity MonoBehaviour.Update 혼동 방지 목적상 사용 비권장)
+
+### WebGL Exception (`UNITY_WEBGL && !UNITY_EDITOR`)
+
+WebGL에서는 브라우저 제약으로 **스레드 기반 send/recv 루프를 사용하지 않는다**.
+
+**폴링 기반 모델 (콜백/SendMessage 금지):**
+
+- `.jslib`가 이벤트 큐를 유지
+- `Tick()`에서 `WS_PollEvent`를 최대 N개까지 drain하여:
+  - `OPEN/CLOSE/ERROR` → 내부 dispatch queue에 enqueue
+  - `MESSAGE(ptr, len)` → `Marshal.Copy` → `core.OnFrame(sessionId, frame)`
+- **송신**: `ArrayPool<byte>` + `GCHandle.Alloc(Pinned)` → `WS_SendBinary(ptr,len)` (ToArray 없음)
+- **수신**: `.jslib`가 `_malloc`으로 WASM heap에 복사 → C#이 `Marshal.Copy`로 `ArrayPool<byte>`에 복사 후 처리 → `WS_FreeBuffer(ptr)`로 해제
+
+**메모리 규칙:**
+- ptr/len/문자열 Free 규칙은 [77-webgl-jslib-memory-rules](../77-webgl-jslib-memory-rules/SKILL.md) 참조
+
+**계약 정본:**
+- [76-webgl-ws-polling-bridge](../76-webgl-ws-polling-bridge/SKILL.md)
 
 ---
 
@@ -263,7 +291,8 @@ namespace Devian
 | `OnClose` | `ushort code, string reason` | 연결 종료 |
 | `OnError` | `Exception ex` | 오류 발생 |
 
-- 이벤트는 **dispatch queue**를 통해 `Update()`에서 실행 (Unity 호환)
+- 이벤트는 **dispatch queue**를 통해 `Tick()`에서 실행 (Unity 호환)
+- `Update()`는 `Tick()` alias (레거시 호환)
 - Unity가 아닌 환경에서는 즉시 호출로 변경 가능
 
 ---
@@ -280,3 +309,5 @@ namespace Devian
 
 - Parent Module: `Devian` (단일 런타임 모듈, `namespace Devian`)
 - Related: `skills/devian-core/10-core-runtime/SKILL.md`
+- WebGL 폴링 계약: [76-webgl-ws-polling-bridge](../76-webgl-ws-polling-bridge/SKILL.md)
+- WebGL 메모리 규칙: [77-webgl-jslib-memory-rules](../77-webgl-jslib-memory-rules/SKILL.md)

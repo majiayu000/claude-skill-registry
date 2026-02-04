@@ -1,9 +1,7 @@
 {
   "name": "quality-gates-enforcer",
-  "description": "Enforces minimum quality thresholds in CI including code coverage, linting, type checking, and security scanning. Provides required checks, PR rules, and automated enforcement. Use for \"quality gates\"",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/quality-gates-enforcer/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:31.244268Z"
 }

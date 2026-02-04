@@ -1,69 +1,17 @@
 ---
 name: building-rag-systems
-description: Build production RAG systems with LangChain orchestration and Qdrant vector store. Covers 8 RAG architectures (Simple, HyDE, CRAG, Self-RAG, Agentic), document processing, semantic chunking, retrieval chains, and evaluation with LangSmith/RAGAS. Use when implementing RAG pipelines, semantic search, or AI knowledge systems. NOT for simple keyword search.
+description: |
+  Build production RAG systems with semantic chunking, incremental indexing, and filtered retrieval.
+  Use when implementing document ingestion pipelines, vector search with Qdrant, or context-aware
+  retrieval. Covers chunking strategies, change detection, payload indexing, and context expansion.
+  NOT when doing simple similarity search without production requirements.
 ---
 
 # Building RAG Systems
 
-Production-grade RAG with LangChain, Qdrant, and advanced retrieval patterns.
+Production-grade RAG with semantic chunking, incremental updates, and filtered retrieval.
 
-## Quick Start (LangChain)
-
-```bash
-# Dependencies
-pip install langchain langchain-qdrant langchain-openai langchain-text-splitters
-pip install qdrant-client fastembed  # For hybrid search
-
-# Start Qdrant
-docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant
-```
-
-```python
-from langchain_openai import OpenAIEmbeddings
-from langchain_qdrant import QdrantVectorStore
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-# Load and split documents
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
-    chunk_overlap=200,
-    add_start_index=True,
-)
-splits = text_splitter.split_documents(docs)
-
-# Create vector store
-embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
-vector_store = QdrantVectorStore.from_documents(
-    splits,
-    embeddings,
-    url="http://localhost:6333",
-    collection_name="my_docs",
-)
-
-# Search
-results = vector_store.similarity_search("query", k=4)
-```
-
----
-
-## RAG Architectures (8 Patterns)
-
-| Pattern | When to Use | Key Feature |
-|---------|-------------|-------------|
-| **Simple RAG** | FAQ, known scope | Single retrieval → generate |
-| **+Memory** | Conversations | Context-aware retrieval |
-| **Branched** | Multi-domain | Route to specialized retrievers |
-| **HyDE** | Vague queries | Generate hypothetical answer first |
-| **Adaptive** | Variable complexity | Adjust strategy dynamically |
-| **CRAG** | High accuracy | Grade docs, fallback to web |
-| **Self-RAG** | Research | Self-assess and re-retrieve |
-| **Agentic** | Complex reasoning | Multi-tool agent orchestration |
-
-See [references/rag-architectures.md](references/rag-architectures.md) for implementations.
-
----
-
-## Quick Start (Raw Qdrant)
+## Quick Start
 
 ```bash
 # Dependencies
@@ -401,11 +349,5 @@ Run: `python scripts/verify.py`
 
 ## References
 
-### LangChain Patterns
-- [references/langchain-patterns.md](references/langchain-patterns.md) - LangChain RAG with Qdrant integration
-- [references/rag-architectures.md](references/rag-architectures.md) - 8 RAG patterns (Simple to Agentic)
-- [references/evaluation-patterns.md](references/evaluation-patterns.md) - LangSmith + RAGAS evaluation
-
-### Raw Implementation
 - [references/ingestion-patterns.md](references/ingestion-patterns.md) - Full ingestion pipeline
 - [references/retrieval-patterns.md](references/retrieval-patterns.md) - Filter strategies, context expansion

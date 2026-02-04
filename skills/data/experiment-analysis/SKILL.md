@@ -1,67 +1,87 @@
 ---
-name: experiment-analysis
-description: Analyze GRPO training runs for learning dynamics and pipeline performance. Use when diagnosing training issues, reviewing Elo progression, checking throughput, or updating experiment results.
+name: optimization.experiment_analysis
+phase: optimization
+roles:
+  - Data Analyst
+  - Product Manager
+description: Analyze completed experiments and craft executive-ready summaries with insights and recommendations.
+variables:
+  required:
+    - name: experiment_name
+      description: Identifier for the experiment.
+    - name: primary_metric
+      description: Primary metric evaluated.
+  optional:
+    - name: secondary_metrics
+      description: Additional metrics tracked.
+    - name: audience
+      description: Audience for the analysis (e.g., execs, squad).
+outputs:
+  - Results summary with statistical interpretation.
+  - Customer and business impact assessment.
+  - Recommendations and decision rationale.
 ---
 
-# Experiment Analysis
+# Purpose
+Accelerate experiment readouts by combining statistical rigor with storytelling tailored to executive stakeholders.
 
-Diagnose GRPO training runs using WandB metrics and Axiom logs.
+# Pre-run Checklist
+- ✅ Export experiment results (variant metrics, significance, sample sizes).
+- ✅ Gather qualitative feedback or session notes if applicable.
+- ✅ Align on rollout decisions pending the analysis.
 
-## Quick Reference
+# Invocation Guidance
+```bash
+codex run --skill optimization.experiment_analysis \
+  --input data/{{experiment_name}}-results.csv \
+  --vars "experiment_name={{experiment_name}}" \
+         "primary_metric={{primary_metric}}" \
+         "secondary_metrics={{secondary_metrics}}" \
+         "audience={{audience}}"
+```
 
-| Question | Command |
-|----------|---------|
-| **Full Elo analysis** | `uv run python .claude/skills/experiment-analysis/analyze_elo.py <run>` |
-| **Compare sweep runs** | `uv run python .claude/skills/experiment-analysis/analyze_sweep.py --sweep <prefix>` |
-| Is model learning? | `uv run python scripts/wandb_cli.py get-metrics -r <run> --all-metrics` |
-| Rollout throughput? | `uv run python scripts/axiom_cli.py rollout-timing --last 6h` |
-| Any errors? | `uv run python scripts/axiom_cli.py errors --last 1h` |
-| Extraction rate? | `uv run python scripts/axiom_cli.py extraction-stats --last 24h` |
-| System health? | `uv run python scripts/axiom_cli.py health --last 1h` |
+# Recommended Input Attachments
+- Experiment tracking sheet or stats engine export.
+- Screenshots of variants.
+- Customer feedback related to the experiment.
 
-## Tools Overview
+# Claude Workflow Outline
+1. Summarize experiment purpose, setup, and success criteria.
+2. Present results for primary and secondary metrics with statistical significance.
+3. Interpret findings, including customer behavior shifts and operational considerations.
+4. Recommend decisions (ship, iterate, stop) with supporting rationale.
+5. Highlight next steps, follow-up analyses, and knowledge base updates.
 
-### WandB CLI (`scripts/wandb_cli.py`)
-Training metrics and Elo ratings. Use for:
-- Elo trajectory analysis (learning signal)
-- Reward/loss curves
-- KL divergence and grad norm
+# Output Template
+```
+# Experiment Analysis — {{experiment_name}}
 
-### Axiom CLI (`scripts/axiom_cli.py`)
-Real-time logs and events. Use for:
-- Rollout timing and throughput
-- Inference engine performance
-- Error monitoring
-- Order extraction stats
+## Overview
+- Objective:
+- Dates:
+- Audience:
 
-## Detailed Guides
+## Results Summary
+| Metric | Control | Variant | Δ | Significance | Notes |
+| --- | --- | --- | --- | --- | --- |
 
-- [Learning Dynamics](learning-dynamics.md) - Elo, rewards, KL analysis
-- [Pipeline Performance](pipeline-performance.md) - Throughput, timing, errors
-- [Experiment Tracker Guide](experiment-tracker-guide.md) - Updating docs/experiment-tracker.md
-- [Examples](examples.md) - Real analysis walkthrough
+## Interpretation
+- Customer Impact:
+- Business Impact:
+- Operational Considerations:
 
-## Key Metrics
+## Recommendation
+- Decision:
+- Rationale:
+- Dependencies:
 
-### Learning Signal (Fixed Reference Analysis)
+## Next Steps
+- Action:
+- Owner:
+- Timeline:
+```
 
-**Key insight:** Win rate against a dynamic league is meaningless. Use FIXED references.
-
-| Metric | Good Sign | Bad Sign |
-|--------|-----------|----------|
-| base_model Elo | Declining | Stable/Rising |
-| Baseline bot Elo | Declining (exploited) | Rising |
-| Best checkpoint - base_model gap | Growing | Shrinking |
-| Older checkpoint Elo | Declining | Stable |
-| KL divergence | Stable <0.1 | Spikes >0.2 |
-
-**Fixed references** (base_model, chaos_bot, etc.) don't change, so their Elo changes = learning.
-**Elo gap** (best checkpoint - base_model) measures how much better trained model is.
-
-### Performance
-| Metric | Target | Action if Miss |
-|--------|--------|----------------|
-| Rollout p95 duration | <120s | Check inference engine |
-| Extraction rate | >95% | Check logits processor |
-| Error rate | <1% | Check Axiom errors |
-| Grad norm | <50 | Policy may be unstable |
+# Follow-up Actions
+- Present findings in the growth or optimization forum.
+- Update experiment backlog with learnings and links to artifacts.
+- Coordinate rollout or rollback actions per recommendation.

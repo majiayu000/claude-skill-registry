@@ -1,11 +1,148 @@
 ---
 name: audit-code
 description: Run a single-session code review audit on the codebase
+supports_parallel: true
+fallback_available: true
+estimated_time_parallel: 15 min
+estimated_time_sequential: 50 min
 ---
 
 # Single-Session Code Review Audit
 
+## Execution Mode Selection
+
+| Condition                                 | Mode       | Time    |
+| ----------------------------------------- | ---------- | ------- |
+| Task tool available + no context pressure | Parallel   | ~15 min |
+| Task tool unavailable                     | Sequential | ~50 min |
+| Context running low (<20% remaining)      | Sequential | ~50 min |
+| User requests sequential                  | Sequential | ~50 min |
+
+---
+
+## Section A: Parallel Architecture (3 Agents)
+
+**When to use:** Task tool available, sufficient context budget
+
+### Agent 1: hygiene-and-types
+
+**Focus Areas:**
+
+- Code Hygiene (unused imports, dead code, console.logs)
+- Types & Correctness (any types, type safety, null checks)
+
+**Files:**
+
+- `app/**/*.tsx`, `components/**/*.tsx`
+- `lib/**/*.ts`, `hooks/**/*.ts`
+- `types/**/*.ts`
+
+### Agent 2: framework-and-testing
+
+**Focus Areas:**
+
+- Framework Best Practices (React patterns, Next.js conventions)
+- Testing Coverage (untested functions, missing edge cases)
+
+**Files:**
+
+- `app/**/*.tsx` (routing, layouts)
+- `components/**/*.tsx` (component patterns)
+- `tests/**/*.test.ts`
+
+### Agent 3: security-and-debugging
+
+**Focus Areas:**
+
+- Security Surface (input validation, auth checks)
+- AI-Generated Code Failure Modes
+- Debugging Ergonomics
+
+**Files:**
+
+- `lib/auth*.ts`, `middleware.ts`
+- `functions/src/**/*.ts`
+- Error handling code, logging patterns
+
+### Parallel Execution Command
+
+```markdown
+Invoke all 3 agents in a SINGLE Task message:
+
+Task 1: hygiene-and-types agent - audit code hygiene and TypeScript patterns
+Task 2: framework-and-testing agent - audit React/Next.js patterns and test
+coverage Task 3: security-and-debugging agent - audit security, AI patterns,
+debugging
+```
+
+### Coordination Rules
+
+1. Each agent writes findings to separate JSONL section
+2. Hygiene findings have lowest priority in conflicts
+3. Security findings have highest priority
+4. Framework agent handles boundary issues
+
+---
+
+## Section B: Sequential Fallback (Single Agent)
+
+**When to use:** Task tool unavailable, context limits, or user preference
+
+**Execution Order:**
+
+1. AICode Patterns (catches hallucinations early) - 15 min
+2. Types & Correctness - 10 min
+3. Testing Coverage - 10 min
+4. Remaining categories - 15 min
+
+**Total:** ~50 min (vs ~15 min parallel)
+
+### Checkpoint Format
+
+```json
+{
+  "started_at": "ISO timestamp",
+  "categories_completed": ["Hygiene", "Types"],
+  "current_category": "Framework",
+  "findings_count": 18,
+  "last_file_written": "stage-2-findings.jsonl"
+}
+```
+
+---
+
 ## Pre-Audit Validation
+
+**Step 0: Episodic Memory Search (Session #128)**
+
+Before running code audit, search for context from past code review sessions:
+
+```javascript
+// Search for past code audit findings
+mcp__plugin_episodic -
+  memory_episodic -
+  memory__search({
+    query: ["code audit", "patterns", "quality"],
+    limit: 5,
+  });
+
+// Search for AI-generated code issues addressed before
+mcp__plugin_episodic -
+  memory_episodic -
+  memory__search({
+    query: ["AICode", "hallucinated", "dead code"],
+    limit: 5,
+  });
+```
+
+**Why this matters:**
+
+- Compare against previous code quality findings
+- Identify recurring anti-patterns (may indicate architectural debt)
+- Track which issues were resolved vs regressed
+- Prevent re-flagging known patterns
+
+---
 
 **Step 1: Check Thresholds**
 
@@ -76,12 +213,19 @@ If outdated, note discrepancies but proceed with current values.
 4. Testing Coverage (untested functions, missing edge cases)
 5. Security Surface (input validation, auth checks)
 6. AICode (AI-Generated Code Failure Modes):
-   - "Happy-path only" logic, missing edge cases and error handling
-   - Tests that exist but don't assert meaningful behavior
-   - Hallucinated dependencies/APIs that don't exist
+   - "Happy-path only" logic, missing edge cases and error handling (S1)
+   - Tests that exist but don't assert meaningful behavior (S1)
+   - Hallucinated dependencies/APIs that don't exist (S1)
    - Copy/paste anti-patterns (similar code blocks that should be abstracted)
-   - Inconsistent architecture patterns across files
-   - Overly complex functions (deep nesting, >50 lines)
+     (S2)
+   - Inconsistent architecture patterns across files (S2)
+   - Overly complex functions (deep nesting, >50 lines) (S2)
+   - Session Boundary Inconsistencies: Conflicting patterns from different AI
+     sessions (S2)
+   - Dead Code from Iterations: Commented code, unused variables from AI
+     iterations (S3)
+   - AI TODO Markers: "TODO: AI should fix this", "FIXME: Claude" patterns (S3)
+   - Over-Engineering: Unnecessary abstractions, premature optimization (S2)
 7. Debugging (Debugging Ergonomics) (NEW - 2026-01-13):
    - Correlation IDs / request tracing (frontend to backend)
    - Structured logging with context (not just console.log)
@@ -225,34 +369,54 @@ Document dual-pass result in finding: `"verified": "DUAL_PASS_CONFIRMED"` or
 
 Create file: `docs/audits/single-session/code/audit-[YYYY-MM-DD].jsonl`
 
-Each line (UPDATED SCHEMA with confidence and verification):
+**CRITICAL - Use JSONL_SCHEMA_STANDARD.md format:**
 
 ```json
 {
-  "id": "CODE-001",
-  "category": "Hygiene|Types|Framework|Testing|Security|AICode|Debugging",
+  "category": "code-quality",
+  "title": "Short specific title",
+  "fingerprint": "code-quality::path/to/file.ts::identifier",
   "severity": "S0|S1|S2|S3",
   "effort": "E0|E1|E2|E3",
-  "confidence": "HIGH|MEDIUM|LOW",
-  "verified": "DUAL_PASS_CONFIRMED|TOOL_VALIDATED|MANUAL_ONLY",
-  "file": "path/to/file.ts",
-  "line": 123,
-  "title": "Short description",
-  "description": "Detailed issue",
-  "recommendation": "How to fix",
-  "evidence": ["code snippet", "grep output", "lint output"],
-  "cross_ref": "eslint|typescript|tests|MANUAL_ONLY"
+  "confidence": 90,
+  "files": ["path/to/file.ts:123"],
+  "why_it_matters": "1-3 sentences explaining impact",
+  "suggested_fix": "Concrete remediation direction",
+  "acceptance_tests": ["Array of verification steps"],
+  "evidence": ["code snippet", "grep output", "lint output"]
 }
 ```
 
-**⚠️ REQUIRED FIELDS (for deduplication/cross-reference):**
+**For S0/S1 findings, ALSO include verification_steps:**
 
-- `file` - REQUIRED: Full path from repo root (e.g.,
-  `components/admin/users-tab.tsx`)
-- `line` - REQUIRED: Specific line number where issue occurs (use line 1 if
-  file-wide)
-- These fields enable the aggregator to match findings against existing ROADMAP
-  items
+```json
+{
+  "verification_steps": {
+    "first_pass": {
+      "method": "grep|tool_output|file_read|code_search",
+      "evidence_collected": ["initial evidence"]
+    },
+    "second_pass": {
+      "method": "contextual_review|exploitation_test|manual_verification",
+      "confirmed": true,
+      "notes": "Confirmation notes"
+    },
+    "tool_confirmation": {
+      "tool": "eslint|typescript|sonarcloud|patterns_check|NONE",
+      "reference": "Tool output or NONE justification"
+    }
+  }
+}
+```
+
+**⚠️ REQUIRED FIELDS (per JSONL_SCHEMA_STANDARD.md):**
+
+- `category` - MUST be `code-quality` (normalized from
+  Hygiene/Types/Framework/etc.)
+- `fingerprint` - Format: `<category>::<primary_file>::<identifier>`
+- `files` - Array with file paths (include line as `file.ts:123`)
+- `confidence` - Number 0-100 (not string)
+- `acceptance_tests` - Non-empty array of verification steps
 
 **3. Markdown Report (save to file):**
 
@@ -347,3 +511,25 @@ node scripts/add-false-positive.js \
   --reason "Explanation of why this is not an issue" \
   --source "AI_REVIEW_LEARNINGS_LOG.md#review-XXX"
 ```
+
+---
+
+## Documentation References
+
+Before running this audit, review:
+
+### TDMS Integration (Required)
+
+- [PROCEDURE.md](docs/technical-debt/PROCEDURE.md) - Full TDMS workflow
+- [MASTER_DEBT.jsonl](docs/technical-debt/MASTER_DEBT.jsonl) - Canonical debt
+  store
+- Intake command:
+  `node scripts/debt/intake-audit.js <output.jsonl> --source "audit-code-<date>"`
+
+### Documentation Standards (Required)
+
+- [JSONL_SCHEMA_STANDARD.md](docs/templates/JSONL_SCHEMA_STANDARD.md) - Output
+  format requirements and TDMS field mapping
+- [DOCUMENTATION_STANDARDS.md](docs/DOCUMENTATION_STANDARDS.md) - 5-tier doc
+  hierarchy
+- [CODE_PATTERNS.md](docs/agent_docs/CODE_PATTERNS.md) - Anti-patterns to check

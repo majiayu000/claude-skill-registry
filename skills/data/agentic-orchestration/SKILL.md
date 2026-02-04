@@ -480,11 +480,11 @@ The FrankX system uses weighted synthesis:
 │        (Meta-intelligence coordinator)              │
 ├────────────────────────────────────────────────────┤
 │                                                     │
-│  Weight Distribution for Strategic Decisions:       │
-│  ├── Starlight Architect: 30%  (Systems design)    │
-│  ├── Creation Engine: 25%      (Content/product)   │
-│  ├── Luminor Oracle: 25%       (Future strategy)   │
-│  └── Frequency Alchemist: 20%  (Consciousness)     │
+│  Specialist Domains:                                │
+│  ├── Starlight Architect   (Systems design)        │
+│  ├── Creation Engine       (Content/product)       │
+│  ├── Luminor Oracle        (Future strategy)       │
+│  └── Sonic Engineer        (Music/audio)           │
 │                                                     │
 │  Synthesis Process:                                 │
 │  1. Each agent provides perspective                 │

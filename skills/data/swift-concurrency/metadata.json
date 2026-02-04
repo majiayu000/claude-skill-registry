@@ -1,7 +1,7 @@
 {
   "name": "swift-concurrency",
-  "repo": "0x7067/claude-code-setup",
-  "path": ".claude/skills/swift-concurrency/SKILL.md",
-  "source": "github.com/0x7067/claude-code-setup",
-  "downloaded_at": "2026-02-02T03:03:25.766809Z"
+  "repo": "AvdLee/Swift-Concurrency-Agent-Skill",
+  "path": "swift-concurrency/SKILL.md",
+  "source": "github.com/AvdLee/Swift-Concurrency-Agent-Skill",
+  "downloaded_at": "2026-02-04T03:54:14.892517Z"
 }

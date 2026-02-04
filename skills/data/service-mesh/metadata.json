@@ -1,9 +1,7 @@
 {
   "name": "service-mesh",
-  "description": "| Atributo | Valor |",
-  "repo": "lapc506/flutter-agentic-boilerplate",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/lapc506/flutter-agentic-boilerplate"
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/devops-sre-platform/skills/service-mesh/SKILL.md",
+  "source": "github.com/a5c-ai/babysitter",
+  "downloaded_at": "2026-02-04T02:37:04.312244Z"
 }

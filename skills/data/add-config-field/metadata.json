@@ -1,9 +1,7 @@
 {
   "name": "add-config-field",
-  "description": "Add new field to .agents.yml config schema (updates init.md templates, version, migration)",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
+  "repo": "martin-janci/claude-code-reviewer",
+  "path": ".claude/skills/add-config-field/skill.md",
+  "source": "github.com/martin-janci/claude-code-reviewer",
+  "downloaded_at": "2026-02-04T04:38:39.176655Z"
 }

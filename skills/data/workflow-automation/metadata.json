@@ -1,7 +1,7 @@
 {
   "name": "workflow-automation",
-  "repo": "claudiodearaujo/IzaCenter",
-  "path": ".gemini/skills/workflow-automation/SKILL.md",
-  "source": "github.com/claudiodearaujo/IzaCenter",
-  "downloaded_at": "2026-02-02T04:54:20.790122Z"
+  "repo": "datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
+  "path": "2_DDC_Book/4.2-ETL-Automation/workflow-automation/SKILL.md",
+  "source": "github.com/datadrivenconstruction/DDC_Skills_for_AI_Agents_in_Construction",
+  "downloaded_at": "2026-02-04T04:57:02.660165Z"
 }

@@ -1,9 +1,7 @@
 {
   "name": "tech-spike",
-  "description": "技術検証（Tech Spike）ワークフロー。ライブラリ選定やアーキテクチャ判断の前に最小限の実験コードで技術的妥当性を検証。使用タイミング:(1) 複数の技術選択肢がある場合（ライブラリA vs B）(2) 新しいライブラリ・技術の学習コストが高い場合(3) パフォーマンス・互換性の懸念がある場合(4) 既存システムとの統合リスクがある場合(5) 「技術検証」「ライブラリ調査」「スパイク」リクエ",
-  "repo": "hyt-sasaki/ai-knowledge-promoter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "edwardmonteiro/Aiskillinpractice",
+  "path": "skills/definition/tech_spike/SKILL.md",
+  "source": "github.com/edwardmonteiro/Aiskillinpractice",
+  "downloaded_at": "2026-02-04T05:15:53.151749Z"
 }

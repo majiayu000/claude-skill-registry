@@ -19,7 +19,6 @@ Comprehensive guide for modern React development, emphasizing Suspense-based dat
 - Performance optimization
 - Organizing frontend code
 - TypeScript best practices
-- Applying inline HTML/CSS styling (e.g., for Jupyter presentation notebooks)
 
 ---
 

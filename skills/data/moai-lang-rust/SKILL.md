@@ -1,456 +1,158 @@
 ---
-name: moai-lang-rust
-version: 4.0.0
-updated: '2025-11-19'
-status: stable
-stability: stable
-description: Enterprise Rust with ownership model and safety guarantees: Rust 1.91.1,
+name: "moai-lang-rust"
+description: "Rust 1.92+ development specialist covering Axum, Tokio, SQLx, and memory-safe systems programming. Use when building high-performance, memory-safe applications or WebAssembly."
+version: 1.2.0
+category: "language"
+modularized: false
+user-invocable: false
+tags: ["language", "rust", "axum", "tokio", "sqlx", "serde", "wasm", "cargo"]
+updated: 2026-01-11
+status: "active"
 allowed-tools:
-- Read
-- Bash
-- WebSearch
-- WebFetch
+  - Read
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
+## Quick Reference (30 seconds)
 
+Rust 1.92+ Development Specialist with deep patterns for high-performance, memory-safe applications.
 
-# Rust Systems Programming — Enterprise  
+Auto-Triggers: `.rs`, `Cargo.toml`, async/await, Tokio, Axum, SQLx, serde, lifetimes, traits
 
-## Technology Stack (November 2025 Stable)
+Core Use Cases:
 
-### Core Language
-- **Rust 1.91.1** (Latest stable, November 2025)
-  - Ownership and borrowing system
-  - Zero-cost abstractions
-  - Memory safety without GC
-  - Performance optimization
+- High-performance REST APIs and microservices
+- Memory-safe concurrent systems
+- CLI tools and system utilities
+- WebAssembly applications
+- Low-latency networking services
 
-### Async Runtime
-- **Tokio 1.48.x** (Production async runtime)
-  - Async I/O
-  - Task scheduling
-  - Synchronization primitives
-  - Macro utilities
+Quick Patterns:
 
-- **async-std 1.13.x** (Alternative runtime)
-  - Compatible API
-  - Task-based execution
+Axum REST API: Create Router with route macro chaining path and handler. Add with_state for shared state. Bind TcpListener with tokio::net and serve with axum::serve.
 
-### Web & Network
-- **Axum 0.8.x** (Web framework)
-  - Composable handlers
-  - Router support
-  - Type-safe extractors
-
-- **Rocket 0.5.x** (Developer-friendly framework)
-  - Macro-driven API
-  - Type-safe routing
-
-- **Warp 0.3.x** (Filter-based framework)
-  - Composable filters
-  - High performance
-
-### Serialization
-- **serde 1.0.x** (Serialization framework)
-  - Derive macros
-  - Custom implementations
-  - Format support
-
-- **serde_json 1.0.x** (JSON support)
-
-### Macros & Code Generation
-- **proc-macro 1.1.x** (Procedural macros)
-- **syn 2.x** (Parser for Rust code)
-- **quote 1.x** (Code generation)
-
-### Testing & Profiling
-- **cargo test** (Built-in testing)
-- **proptest 1.5.x** (Property-based testing)
-- **criterion 0.5.x** (Benchmarking)
+Async Handler with SQLx: Define async handler function taking State extractor for AppState and Path extractor for id. Use sqlx::query_as! macro with SQL string and bind parameters. Call fetch_optional on pool, await, and use ok_or for error conversion. Return Json wrapped result.
 
 ---
 
-## Level 1: Quick Reference
+## Implementation Guide (5 minutes)
 
-### Rust 1.91 Ownership System
+### Rust 1.92 Features
 
-**Ownership Basics**:
-```rust
-fn main() {
-    let s1 = String::from("hello");
-    let s2 = s1; // Move: s1 no longer valid
-    
-    // println!("{}", s1); // Compile error!
-    println!("{}", s2); // OK
-    
-    let s3 = String::from("world");
-    let s4 = &s3; // Borrow: s3 still valid
-    let s5 = &s3; // Multiple immutable borrows OK
-    
-    println!("{} {}", s4, s5);
-    println!("{}", s3); // Still valid
-}
-```
+Modern Rust Features:
 
-**Mutable References**:
-```rust
-fn change_string(s: &mut String) {
-    s.push_str(" world");
-}
+- Rust 2024 Edition available (released with Rust 1.85)
+- Async traits in stable (no more async-trait crate needed)
+- Const generics for compile-time array sizing
+- let-else for pattern matching with early return
+- Improved borrow checker with polonius
 
-fn main() {
-    let mut s = String::from("hello");
-    change_string(&mut s);
-    println!("{}", s); // "hello world"
-    
-    // Can't have immutable references while mutable borrow exists
-    let r1 = &mut s;
-    // let r2 = &s; // Compile error!
-    r1.push_str("!");
-    println!("{}", r1);
-}
-```
+Async Traits (Stable): Define trait with async fn signatures. Implement trait for concrete types with async fn implementations. Call sqlx macros directly in trait methods.
 
-**Lifetimes**:
-```rust
-fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-    if x.len() > y.len() {
-        x
-    } else {
-        y
-    }
-}
+Let-Else Pattern: Use let Some(value) = option else with return for early exit. Chain multiple let-else statements for sequential validation. Return error types in else blocks.
 
-fn main() {
-    let s1 = String::from("hello");
-    let s2 = "world";
-    let result = longest(&s1, s2);
-    println!("{}", result);
-}
-```
+### Web Framework: Axum 0.8
 
-### Tokio Async Runtime
+Installation: In Cargo.toml dependencies section, add axum version 0.8, tokio version 1.48 with full features, and tower-http version 0.6 with cors and trace features.
 
-**Basic Async Tasks**:
-```rust
-use tokio::task;
-use tokio::time::{sleep, Duration};
+Complete API Setup: Import extractors from axum::extract and routing macros. Define Clone-derive AppState struct holding PgPool. In tokio::main async main, create pool with PgPoolOptions setting max_connections and connecting with DATABASE_URL from env. Build Router with route chains for paths and handlers, add CorsLayer, and call with_state. Bind TcpListener and call axum::serve.
 
-#[tokio::main]
-async fn main() {
-    let handle = task::spawn(async {
-        sleep(Duration::from_secs(1)).await;
-        println!("Task completed!");
-    });
-    
-    // Wait for task
-    handle.await.unwrap();
-}
-```
+Handler Patterns: Define async handlers taking State, Path, and Query extractors with appropriate types. Use sqlx::query_as! for type-safe queries with positional binds. Return Result with Json success and AppError failure.
 
-**Error Handling**:
-```rust
-use std::fs;
-use std::io;
+### Async Runtime: Tokio 1.48
 
-fn read_file(path: &str) -> Result<String, io::Error> {
-    fs::read_to_string(path)
-}
+Task Spawning and Channels: Create mpsc channel with capacity. Spawn worker tasks with tokio::spawn that receive from channel in loop. For timeouts, use tokio::select! macro with operation branch and sleep branch, returning error on timeout.
 
-fn main() {
-    match read_file("data.txt") {
-        Ok(contents) => println!("{}", contents),
-        Err(e) => eprintln!("Error: {}", e),
-    }
-    
-    // Shorthand
-    let result = read_file("data.txt").expect("Failed to read");
-}
-```
+### Database: SQLx 0.8
+
+Type-Safe Queries: Derive sqlx::FromRow on structs for automatic mapping. Use query_as! macro for compile-time checked queries. Call fetch_one or fetch_optional on pool. For transactions, call pool.begin, execute queries on transaction reference, and call tx.commit.
+
+### Serialization: Serde 1.0
+
+Derive Serialize and Deserialize on structs. Use serde attribute with rename_all for case conversion. Use rename attribute for field-specific naming. Use skip_serializing_if with Option::is_none. Use default attribute for default values.
+
+### Error Handling
+
+thiserror: Derive Error on enum with error attribute for display messages. Use from attribute for automatic conversion from source errors. Implement IntoResponse by matching on variants and returning status code with Json body containing error message.
+
+### CLI Development: clap
+
+Derive Parser on main Cli struct with command attributes for name, version, about. Use arg attribute for global flags. Derive Subcommand on enum for commands. Match on command in main to dispatch logic.
+
+### Testing Patterns
+
+Create test module with cfg(test) attribute. Define tokio::test async functions. Call setup helpers, invoke functions under test, and use assert! macros for verification.
 
 ---
 
-## Level 2: Core Implementation
-
-### Custom Error Types
-
-```rust
-use std::fmt;
-
-#[derive(Debug)]
-enum ParseError {
-    InvalidFormat,
-    OutOfRange,
-}
-
-impl fmt::Display for ParseError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            ParseError::InvalidFormat => write!(f, "Invalid format"),
-            ParseError::OutOfRange => write!(f, "Out of range"),
-        }
-    }
-}
-
-impl std::error::Error for ParseError {}
-
-fn parse_number(s: &str) -> Result<i32, ParseError> {
-    let num = s.parse::<i32>()
-        .map_err(|_| ParseError::InvalidFormat)?;
-    
-    if num < 0 || num > 100 {
-        return Err(ParseError::OutOfRange);
-    }
-    
-    Ok(num)
-}
-```
-
-### Procedural Macros
-
-**Custom Derive Macro**:
-```rust
-// Cargo.toml
-[lib]
-proc-macro = true
-
-// lib.rs
-use proc_macro::TokenStream;
-use quote::quote;
-use syn::{parse_macro_input, DeriveInput};
-
-#[proc_macro_derive(MyDerive)]
-pub fn my_derive(input: TokenStream) -> TokenStream {
-    let input = parse_macro_input!(input as DeriveInput);
-    let name = &input.ident;
-    
-    let expanded = quote! {
-        impl #name {
-            fn describe() -> &'static str {
-                stringify!(#name)
-            }
-        }
-    };
-    
-    TokenStream::from(expanded)
-}
-
-// Usage
-#[derive(MyDerive)]
-struct MyStruct;
-
-fn main() {
-    println!("{}", MyStruct::describe());
-}
-```
-
-### Async with Tokio Channels
-
-**MPSC Channel**:
-```rust
-use tokio::sync::mpsc;
-use tokio::task;
-
-#[tokio::main]
-async fn main() {
-    let (tx, mut rx) = mpsc::channel(32);
-    
-    task::spawn(async move {
-        for i in 0..10 {
-            tx.send(i).await.ok();
-        }
-    });
-    
-    while let Some(value) = rx.recv().await {
-        println!("Received: {}", value);
-    }
-}
-```
-
-### Web Server with Axum
-
-```rust
-use axum::{
-    extract::{Path, State},
-    http::StatusCode,
-    response::Json,
-    routing::{get, post},
-    Router,
-};
-use serde::{Deserialize, Serialize};
-use std::sync::Arc;
-
-#[derive(Serialize, Deserialize)]
-struct User {
-    id: u32,
-    name: String,
-}
-
-#[derive(Clone)]
-struct AppState {
-    users: Arc<Vec<User>>,
-}
-
-async fn get_user(Path(id): Path<u32>, State(state): State<AppState>) -> Result<Json<User>, StatusCode> {
-    state.users
-        .iter()
-        .find(|user| user.id == id)
-        .cloned()
-        .ok_or(StatusCode::NOT_FOUND)
-        .map(Json)
-}
-
-async fn create_user(
-    State(state): State<AppState>,
-    Json(user): Json<User>,
-) -> Result<Json<User>, StatusCode> {
-    // In a real app, you'd add to database
-    Ok(Json(user))
-}
-
-#[tokio::main]
-async fn main() {
-    let state = AppState {
-        users: Arc::new(vec![
-            User { id: 1, name: "Alice".to_string() },
-            User { id: 2, name: "Bob".to_string() },
-        ]),
-    };
-
-    let app = Router::new()
-        .route("/users/:id", get(get_user))
-        .route("/users", post(create_user))
-        .with_state(state);
-
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    axum::serve(listener, app).await.unwrap();
-}
-```
-
----
-
-## Level 3: Advanced Features
-
-### Testing Rust Code
-
-**Unit Tests**:
-```rust
-#[cfg(test)]
-mod tests {
-    use super::*;
-    
-    #[test]
-    fn test_addition() {
-        assert_eq!(2 + 2, 4);
-    }
-    
-    #[test]
-    fn test_error_handling() {
-        match parse_number("50") {
-            Ok(num) => assert_eq!(num, 50),
-            Err(_) => panic!("Should not error"),
-        }
-        
-        assert!(parse_number("150").is_err());
-        assert!(parse_number("abc").is_err());
-    }
-}
-
-// Run with: cargo test
-```
-
-**Async Tests**:
-```rust
-#[tokio::test]
-async fn test_async_operation() {
-    let result = async_function().await;
-    assert_eq!(result, expected);
-}
-
-#[tokio::test]
-async fn test_web_server() {
-    let app = create_test_app();
-    let response = app
-        .oneshot(Request::builder()
-            .uri("/users/1")
-            .body(Body::empty())
-            .unwrap())
-        .await
-        .unwrap();
-    
-    assert_eq!(response.status(), StatusCode::OK);
-}
-```
+## Advanced Patterns
 
 ### Performance Optimization
 
-**Cargo.toml**:
-```toml
-[profile.release]
-opt-level = 3
-lto = true
-codegen-units = 1
-strip = true
-panic = "abort"
-```
+Release Build: In Cargo.toml profile.release section, enable lto, set codegen-units to 1, set panic to abort, and enable strip.
 
-**Benchmarking with Criterion**:
-```rust
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+### Deployment
 
-fn fibonacci(n: u64) -> u64 {
-    match n {
-        0 => 1,
-        1 => 1,
-        n => fibonacci(n - 1) + fibonacci(n - 2),
-    }
-}
+Minimal Container: Use multi-stage Dockerfile. First stage uses rust alpine image, copies Cargo files, creates dummy main for dependency caching, builds release, copies source, touches main.rs for rebuild, builds final release. Second stage uses alpine, copies binary from builder, exposes port, and sets CMD.
 
-fn criterion_benchmark(c: &mut Criterion) {
-    c.bench_function("fib 20", |b| b.iter(|| fibonacci(black_box(20))));
-}
+### Concurrency
 
-criterion_group!(benches, criterion_benchmark);
-criterion_main!(benches);
-```
+Rate-Limited Operations: Create Arc-wrapped Semaphore with max permits. Map over items spawning tasks that acquire permit, process, and return result. Use futures::future::join_all to collect results.
 
 ---
 
-## Level 4: Production Deployment
+## Context7 Integration
 
-### Docker Deployment
+Library Documentation Access:
 
-```dockerfile
-FROM rust:1.91 as builder
-WORKDIR /app
-COPY . .
-RUN cargo build --release
-
-FROM debian:bookworm-slim
-COPY --from=builder /app/target/release/app /usr/local/bin/
-CMD ["app"]
-```
-
-### Production Best Practices
-
-1. **Embrace the borrow checker**
-2. **Use Result for error handling**
-3. **Leverage type system for correctness**
-4. **Test thoroughly with #[test]**
-5. **Optimize with release profile**
-6. **Use Tokio for async I/O**
-7. **Implement proper error types**
-8. **Profile with perf tools**
-9. **Document unsafe code**
-10. **Keep dependencies minimal**
-
-### Related Skills
-- `Skill("moai-essentials-perf")` for performance optimization
-- `Skill("moai-security-backend")` for security patterns
-- `Skill("moai-domain-cli-tool")` for CLI development
+- `/rust-lang/rust` - Rust language and stdlib
+- `/tokio-rs/tokio` - Tokio async runtime
+- `/tokio-rs/axum` - Axum web framework
+- `/launchbadge/sqlx` - SQLx async SQL
+- `/serde-rs/serde` - Serialization framework
+- `/dtolnay/thiserror` - Error derive
+- `/clap-rs/clap` - CLI parser
 
 ---
 
-**Version**: 4.0.0 Enterprise  
-**Last Updated**: 2025-11-13  
-**Status**: Production Ready
+## Works Well With
+
+- `moai-lang-go` - Go systems programming patterns
+- `moai-domain-backend` - REST API architecture and microservices patterns
+- `moai-foundation-quality` - Security hardening for Rust applications
+- `moai-workflow-testing` - Test-driven development workflows
+
+---
+
+## Troubleshooting
+
+Common Issues:
+
+- Cargo errors: Run cargo clean followed by cargo build
+- Version check: Run rustc --version and cargo --version
+- Dependency issues: Run cargo update and cargo tree
+- Compile-time SQL check: Run cargo sqlx prepare
+
+Performance Characteristics:
+
+- Startup Time: 50-100ms
+- Memory Usage: 5-20MB base
+- Throughput: 100k-200k req/s
+- Latency: p99 less than 5ms
+- Container Size: 5-15MB (alpine)
+
+---
+
+## Additional Resources
+
+See [reference.md](reference.md) for complete language reference and Context7 library mappings.
+
+See [examples.md](examples.md) for production-ready code examples.
+
+---
+
+Last Updated: 2026-01-11
+Version: 1.2.0

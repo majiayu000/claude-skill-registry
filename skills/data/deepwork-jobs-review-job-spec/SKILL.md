@@ -1,12 +1,59 @@
 ---
 name: deepwork_jobs.review_job_spec
-description: "Reviews job.yml against quality criteria using a sub-agent for unbiased validation. Use after defining a job specification."user-invocable: false---
+description: "Reviews job.yml against quality criteria using a sub-agent for unbiased validation. Use after defining a job specification."
+user-invocable: false
+hooks:
+  Stop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **Sub-Agent Used**: Was a sub-agent spawned to provide unbiased review?
+            2. **All doc spec Criteria Evaluated**: Did the sub-agent assess all 9 quality criteria?
+            3. **Findings Addressed**: Were all failed criteria addressed by the main agent?
+            4. **Validation Loop Complete**: Did the review-fix cycle continue until all criteria passed?
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+  SubagentStop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **Sub-Agent Used**: Was a sub-agent spawned to provide unbiased review?
+            2. **All doc spec Criteria Evaluated**: Did the sub-agent assess all 9 quality criteria?
+            3. **Findings Addressed**: Were all failed criteria addressed by the main agent?
+            4. **Validation Loop Complete**: Did the review-fix cycle continue until all criteria passed?
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+---
 
 # deepwork_jobs.review_job_spec
 
-**Step 2/3** in **new_job** workflow
-
-> Create a new DeepWork job from scratch through definition, review, and implementation
+**Step 2/4** in **deepwork_jobs** workflow
 
 > Creates and manages multi-step AI workflows. Use when defining, implementing, or improving DeepWork jobs.
 
@@ -234,11 +281,11 @@ The validated `job.yml` file at `.deepwork/jobs/[job_name]/job.yml` that passes 
 Core commands for managing DeepWork jobs. These commands help you define new multi-step
 workflows and learn from running them.
 
-The `new_job` workflow guides you through defining and implementing a new job by
+The `define` command guides you through an interactive process to create a new job by
 asking structured questions about your workflow, understanding each step's inputs and outputs,
-reviewing the specification, and generating all necessary files.
+and generating all necessary files.
 
-The `learn` skill reflects on conversations where DeepWork jobs were run, identifies
+The `learn` command reflects on conversations where DeepWork jobs were run, identifies
 confusion or inefficiencies, and improves job instructions. It also captures bespoke
 learnings specific to the current run into AGENTS.md files in the working folder.
 
@@ -453,26 +500,21 @@ Use branch format: `deepwork/deepwork_jobs-[instance]-YYYYMMDD`
 
 ## Quality Validation
 
-**Before completing this step, you MUST have your work reviewed against the quality criteria below.**
-
-Use a sub-agent (Haiku model) to review your work against these criteria:
+Stop hooks will automatically validate your work. The loop continues until all criteria pass.
 
 **Criteria (all must be satisfied)**:
 1. **Sub-Agent Used**: Was a sub-agent spawned to provide unbiased review?
 2. **All doc spec Criteria Evaluated**: Did the sub-agent assess all 9 quality criteria?
 3. **Findings Addressed**: Were all failed criteria addressed by the main agent?
 4. **Validation Loop Complete**: Did the review-fix cycle continue until all criteria passed?
-**Review Process**:
-1. Once you believe your work is complete, spawn a sub-agent using Haiku to review your work against the quality criteria above
-2. The sub-agent should examine your outputs and verify each criterion is met
-3. If the sub-agent identifies valid issues, fix them
-4. Have the sub-agent review again until all valid feedback has been addressed
-5. Only mark the step complete when the sub-agent confirms all criteria are satisfied
+
+
+**To complete**: Include `<promise>✓ Quality Criteria Met</promise>` in your final response only after verifying ALL criteria are satisfied.
 
 ## On Completion
 
 1. Verify outputs are created
-2. Inform user: "new_job step 2/3 complete, outputs: job.yml"
+2. Inform user: "Step 2/4 complete, outputs: job.yml"
 3. **Continue workflow**: Use Skill tool to invoke `/deepwork_jobs.implement`
 
 ---

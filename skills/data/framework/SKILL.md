@@ -1,771 +1,538 @@
 ---
-name: aptos-framework
-description: Expert on Aptos Framework (0x1 standard library) - account, coin, fungible_asset, object, timestamp, table, event, vector, string, option, error, and other core modules. Triggers on keywords aptos framework, 0x1, account module, table, smarttable, event, timestamp, randomness, aggregator, resource account
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash
-model: sonnet
+name: framework
+description: Expert on SpecWeave framework structure, rules, and spec-driven development conventions. Use when learning SpecWeave best practices, understanding increment lifecycle, or configuring hooks. Covers source-of-truth discipline, tasks.md/spec.md formats, living docs sync, and file organization patterns.
+allowed-tools: Read, Grep, Glob
+user-invocable: false
 ---
 
-# Aptos Framework Expert
+# SpecWeave Framework Expert
 
-## Purpose
+I am an expert on the SpecWeave framework - a spec-driven development framework for Claude Code (and other AI coding assistants). I have deep knowledge of its structure, rules, conventions, and best practices.
 
-Provide comprehensive guidance on the Aptos Framework (0x1 address) - the standard library of core modules that power Aptos blockchain. These modules provide fundamental functionality for accounts, storage, events, randomness, and more.
+## Core Philosophy
 
-## When to Use
+SpecWeave follows **spec-driven development** with **increment-based workflows**:
 
-Auto-invoke when users mention:
-- **Framework Modules** - 0x1::*, aptos_framework::*, standard library
-- **Account Management** - account creation, auth keys, rotation
-- **Storage** - Table, SimpleMap, SmartTable, efficient data structures
-- **Events** - event emission, event handles, indexing
-- **Randomness** - VRF, secure random numbers
-- **Time** - timestamp, block time access
-- **Resources** - resource accounts, deterministic addresses
-- **Aggregator** - parallel execution primitives
+1. **Specification First** - Write WHAT and WHY before HOW
+2. **Incremental Delivery** - Ship small, complete features
+3. **Living Documentation** - Docs update automatically via hooks
+4. **Source of Truth Discipline** - Single source, zero duplication
+5. **Multi-Tool Support** - Works with Claude, Cursor, Copilot, and generic AI
 
-## Framework Architecture
+## Increment-Based Development
 
-### Core Framework Modules (0x1::)
+### What is an Increment?
 
-```
-aptos_framework/
-├── account.move           - Account management
-├── aptos_account.move     - High-level account operations
-├── aptos_coin.move        - Native APT token
-├── aptos_governance.move  - On-chain governance
-├── coin.move              - Fungible token standard (v1)
-├── fungible_asset.move    - Fungible asset standard (v2)
-├── object.move            - Object model primitives
-├── timestamp.move         - Block timestamp access
-├── table.move             - Key-value storage
-├── smart_table.move       - Auto-split table
-├── event.move             - Event emission
-├── randomness.move        - Secure randomness
-├── aggregator.move        - Parallel execution
-├── aggregator_v2.move     - Improved aggregator
-├── resource_account.move  - Deterministic deployment
-├── transaction_fee.move   - Fee collection
-└── staking_contract.move  - Validator staking
-```
+An **increment** = a complete feature with:
+- `spec.md` - Product requirements (WHAT and WHY) — **required**
+- `plan.md` - Technical architecture (HOW to implement) — **optional**, for complex features only
+- `tasks.md` - Task breakdown (WORK to do) — **required**
+- `metadata.json` - State tracking — **required**
 
-### Standard Library (std::)
+> **When to skip plan.md**: Bug fixes, simple migrations, hotfixes, and straightforward tasks where spec.md already describes the approach.
 
-```
-move-stdlib/
-├── vector.move      - Dynamic arrays
-├── option.move      - Optional values
-├── string.move      - UTF8 strings
-├── signer.move      - Signer operations
-├── error.move       - Error codes
-├── bcs.move         - Binary serialization
-├── hash.move        - Cryptographic hashing
-└── fixed_point64.move - Fixed-point math
+### spec.md Mandatory Fields
+
+**CRITICAL**: spec.md YAML frontmatter MUST include project (and board for 2-level structures):
+
+```yaml
+# 1-level structure (single-project or multiProject):
+---
+increment: 0001-feature-name
+project: my-project          # REQUIRED
+---
+
+# 2-level structure (ADO area paths, JIRA boards, umbrella teams):
+---
+increment: 0001-feature-name
+project: acme-corp           # REQUIRED
+board: digital-operations    # REQUIRED for 2-level
+---
 ```
 
-## account.move - Account Management
+**Why?** Ensures increment syncs to correct location in living docs. Without explicit project/board, sync-specs may fail or place specs in wrong folder.
 
-### Core Functions
+**Detection**: Use `src/utils/structure-level-detector.ts` to determine if 1-level or 2-level structure is needed.
 
-```move
-use aptos_framework::account;
+**See**: [ADR-0190](/internal/architecture/adr/0190-spec-project-board-requirement.md)
 
-// Create new account at address
-public fun create_account(new_address: address) {
-    account::create_account(new_address);
-}
+### Increment Naming Convention
 
-// Get account's sequence number
-public fun get_sequence_number(addr: address): u64 {
-    account::get_sequence_number(addr)
-}
+**CRITICAL RULE**: All increments MUST use descriptive names, not just numbers!
 
-// Get authentication key
-public fun get_authentication_key(addr: address): vector<u8> {
-    account::get_authentication_key(addr)
-}
+**Format**: `####-descriptive-kebab-case-name`
 
-// Check if account exists
-public fun exists_at(addr: address): bool {
-    account::exists_at(addr)
-}
+**Examples**:
+- ✅ `0001-core-framework`
+- ✅ `0002-core-enhancements`
+- ✅ `0003-intelligent-model-selection`
+- ✅ `0004-plugin-architecture`
+- ✅ `0006-llm-native-i18n`
+- ❌ `0003` (too generic, rejected!)
+- ❌ `0004` (no description, rejected!)
+
+**Rationale**:
+- Clear intent at a glance
+- Easy to reference in conversation
+- Better git history
+- Searchable by feature name
+- Self-documenting increment folders
+
+### Increment Lifecycle
+
+```
+1. Plan    → /sw:inc "feature-name"
+            ↓ PM agent creates spec.md, plan.md, tasks.md, tests.md
+
+2. Execute → /sw:do
+            ↓ Selects next task, executes, marks complete
+
+3. Validate → /sw:validate 0001
+            ↓ Checks spec compliance, test coverage
+
+4. Close   → /sw:done 0001
+            ↓ Creates COMPLETION-SUMMARY.md, archives
 ```
 
-### Account Rotation
+### Increment Discipline
 
-```move
-// Rotate authentication key
-public entry fun rotate_authentication_key(
-    account: &signer,
-    new_auth_key: vector<u8>
-) {
-    account::rotate_authentication_key(account, new_auth_key);
-}
+**THE IRON RULE**: Cannot start increment N+1 until increment N is DONE!
 
-// Offer rotation capability to another address
-public entry fun offer_rotation_capability(
-    account: &signer,
-    rotation_capability_offerer: address
-) {
-    account::offer_rotation_capability(
-        account,
-        rotation_capability_offerer,
-        vector::empty()
-    );
-}
+**Enforcement**:
+- `/sw:inc` **blocks** if previous increments incomplete
+- Use `/sw:status` to check all increments
+- Use `/sw:close` to close incomplete work
+- `--force` flag for emergencies (logged, should be rare)
+
+**What "DONE" Means**:
+1. All tasks in `tasks.md` marked `[x] Completed`, OR
+2. `COMPLETION-SUMMARY.md` exists with "✅ COMPLETE" status, OR
+3. Explicit closure via `/sw:close`
+
+**Three Options for Closing**:
+1. **Adjust Scope** - Remove features from spec.md, regenerate tasks
+2. **Move Scope** - Transfer incomplete tasks to next increment
+3. **Extend Existing** - Update spec.md, add tasks, continue in same increment
+
+**Example**:
+```bash
+# Check status
+/sw:status
+# Shows: 0002 (73% complete), 0003 (50% complete)
+
+# Try to start new increment
+/sw:inc "0004-new-feature"
+# ❌ Blocked! "Close 0002 and 0003 first"
+
+# Close previous work
+/sw:close
+# Interactive: Choose force-complete, move tasks, or reduce scope
+
+# Now can proceed
+/sw:inc "0004-new-feature"
+# ✅ Works! Clean slate
 ```
 
-### SignerCapability Pattern
+## Directory Structure
 
-```move
-use aptos_framework::account::{Self, SignerCapability};
+### Root-Level .specweave/ Folder (MANDATORY)
 
-struct ModuleData has key {
-    signer_cap: SignerCapability
-}
+**CRITICAL ARCHITECTURE RULE**: SpecWeave ONLY supports root-level `.specweave/` folders.
 
-public fun initialize(deployer: &signer) {
-    let (resource_signer, signer_cap) = account::create_resource_account(
-        deployer,
-        b"SEED"
-    );
-
-    move_to(&resource_signer, ModuleData { signer_cap });
-}
-
-public fun use_resource_account() acquires ModuleData {
-    let module_data = borrow_global<ModuleData>(@my_module);
-    let resource_signer = account::create_signer_with_capability(&module_data.signer_cap);
-
-    // Use resource_signer for operations
-}
+**Correct Structure**:
+```
+my-project/
+├── .specweave/              ← ONE source of truth (root-level)
+│   ├── increments/
+│   │   ├── 0001-core-framework/
+│   │   │   ├── spec.md
+│   │   │   ├── plan.md
+│   │   │   ├── tasks.md
+│   │   │   ├── tests.md
+│   │   │   ├── logs/        ← Session logs
+│   │   │   ├── scripts/     ← Helper scripts
+│   │   │   └── reports/     ← Analysis files
+│   │   └── _backlog/
+│   ├── docs/
+│   │   ├── internal/        ← Strategic docs (NEVER published)
+│   │   │   ├── strategy/    ← Business strategy
+│   │   │   ├── architecture/ ← ADRs, RFCs, diagrams
+│   │   │   └── delivery/    ← Implementation notes
+│   │   └── public/          ← User-facing docs (can publish)
+│   └── logs/
+├── frontend/
+├── backend/
+└── infrastructure/
 ```
 
-## table.move - Scalable Key-Value Storage
-
-### Basic Table Operations
-
-```move
-use aptos_framework::table::{Self, Table};
-
-struct Registry has key {
-    data: Table<address, UserData>
-}
-
-public fun initialize(account: &signer) {
-    move_to(account, Registry {
-        data: table::new()
-    });
-}
-
-public fun add_user(
-    registry_addr: address,
-    user_addr: address,
-    user_data: UserData
-) acquires Registry {
-    let registry = borrow_global_mut<Registry>(registry_addr);
-    table::add(&mut registry.data, user_addr, user_data);
-}
-
-public fun get_user(
-    registry_addr: address,
-    user_addr: address
-): &UserData acquires Registry {
-    let registry = borrow_global<Registry>(registry_addr);
-    table::borrow(&registry.data, user_addr)
-}
-
-public fun update_user(
-    registry_addr: address,
-    user_addr: address
-): &mut UserData acquires Registry {
-    let registry = borrow_global_mut<Registry>(registry_addr);
-    table::borrow_mut(&mut registry.data, user_addr)
-}
-
-public fun remove_user(
-    registry_addr: address,
-    user_addr: address
-): UserData acquires Registry {
-    let registry = borrow_global_mut<Registry>(registry_addr);
-    table::remove(&mut registry.data, user_addr)
-}
-
-public fun has_user(
-    registry_addr: address,
-    user_addr: address
-): bool acquires Registry {
-    let registry = borrow_global<Registry>(registry_addr);
-    table::contains(&registry.data, user_addr)
-}
+**WRONG** (nested .specweave/ folders - NOT SUPPORTED):
+```
+my-project/
+├── .specweave/              ← Root level
+├── backend/
+│   └── .specweave/          ← ❌ NESTED - PREVENTS THIS!
+└── frontend/
+    └── .specweave/          ← ❌ NESTED - PREVENTS THIS!
 ```
 
-### Table vs SimpleMap vs SmartTable
+**Why Root-Level Only?**
+- ✅ Single source of truth
+- ✅ Cross-cutting features natural (frontend + backend + infra)
+- ✅ No duplication or fragmentation
+- ✅ Clear ownership
+- ✅ Simplified living docs sync
 
-| Feature | Vector | SimpleMap | Table | SmartTable |
-|---------|--------|-----------|-------|------------|
-| Max size | ~1000 | ~1000 | Unlimited | Unlimited |
-| Gas cost (read) | O(n) | O(n) | O(1) | O(1) |
-| Gas cost (write) | O(n) | O(n) | O(1) | O(1) |
-| Storage | On-chain | On-chain | Global storage | Global + auto-split |
-| Iteration | ✅ Easy | ✅ Easy | ❌ Not supported | ⚠️ Complex |
-| Best for | Small lists | Small maps | Large maps | Very large maps |
-
-### SmartTable (Auto-Splitting)
-
-```move
-use aptos_framework::smart_table::{Self, SmartTable};
-
-struct LargeRegistry has key {
-    data: SmartTable<address, UserData>
-}
-
-public fun initialize(account: &signer) {
-    move_to(account, LargeRegistry {
-        data: smart_table::new()
-    });
-}
-
-// Same API as Table
-public fun add_user(addr: address, data: UserData) acquires LargeRegistry {
-    let registry = borrow_global_mut<LargeRegistry>(@my_module);
-    smart_table::add(&mut registry.data, addr, data);
-}
-
-// SmartTable automatically splits when buckets get large
-// Better for very large datasets (100k+ entries)
+**Multi-Repo Solution**:
+For huge projects with multiple repos, create a **parent folder**:
+```
+my-big-project/              ← Create parent folder
+├── .specweave/              ← ONE source of truth for ALL repos
+├── auth-service/            ← Separate git repo
+├── payment-service/         ← Separate git repo
+├── frontend/                ← Separate git repo
+└── infrastructure/          ← Separate git repo
 ```
 
-## event.move - Event Emission
+## Source of Truth Discipline
 
-### Event Handles (V1)
+**CRITICAL PRINCIPLE**: SpecWeave has strict source-of-truth rules!
 
-```move
-use aptos_framework::event::{Self, EventHandle};
+### Three Directories, Three Purposes
 
-struct TransferEvent has drop, store {
-    from: address,
-    to: address,
-    amount: u64,
-}
+```
+src/                         ← SOURCE OF TRUTH (version controlled)
+├── skills/                  ← Source for skills
+├── agents/                  ← Source for agents
+├── commands/                ← Source for slash commands
+├── hooks/                   ← Source for hooks
+├── adapters/                ← Tool adapters (Claude/Cursor/Copilot/Generic)
+└── templates/               ← Templates for user projects
 
-struct Events has key {
-    transfer_events: EventHandle<TransferEvent>
-}
+.claude/                     ← INSTALLED (gitignored in user projects)
+├── skills/                  ← Installed from src/skills/
+├── agents/                  ← Installed from src/agents/
+├── commands/                ← Installed from src/commands/
+└── hooks/                   ← Installed from src/hooks/
 
-public fun initialize(account: &signer) {
-    move_to(account, Events {
-        transfer_events: account::new_event_handle<TransferEvent>(account)
-    });
-}
-
-public fun emit_transfer(
-    from: address,
-    to: address,
-    amount: u64
-) acquires Events {
-    let events = borrow_global_mut<Events>(@my_module);
-    event::emit_event(&mut events.transfer_events, TransferEvent {
-        from,
-        to,
-        amount,
-    });
-}
+.specweave/                  ← FRAMEWORK DATA (always present)
+├── increments/              ← Feature development
+├── docs/                    ← Strategic documentation
+└── logs/                    ← Logs and execution history
 ```
 
-### Event API (V2 - Recommended)
+### Golden Rules
 
-```move
-use aptos_framework::event;
+1. **✅ ALWAYS edit files in `src/`** (source of truth)
+2. **✅ Run install scripts to sync changes to `.claude/`**
+3. **❌ NEVER edit files in `.claude/` directly** (they get overwritten)
+4. **❌ NEVER create new files in project root** (use increment folders)
 
-#[event]
-struct TransferEvent has drop, store {
-    from: address,
-    to: address,
-    amount: u64,
-}
+**Example Workflow**:
+```bash
+# CORRECT: Edit source
+vim src/skills/increment-planner/SKILL.md
 
-public fun transfer(from: address, to: address, amount: u64) {
-    // Direct emission (no EventHandle needed!)
-    event::emit(TransferEvent { from, to, amount });
-}
+# Sync to .claude/
+npm run install:skills
+
+# Test (skill activates from .claude/)
+/sw:inc "test feature"
+
+# WRONG: Edit installed file
+vim .claude/skills/increment-planner/SKILL.md  # ❌ Gets overwritten!
 ```
 
-**Event V2 Advantages:**
-- No EventHandle management
-- Cleaner code
-- Better indexing support
-- Automatic event routing
+### File Organization Rules
 
-## timestamp.move - Block Time
+**✅ ALLOWED in Root**:
+- `CLAUDE.md` (this file)
+- `README.md`, `CHANGELOG.md`, `LICENSE`
+- Standard config files (`package.json`, `tsconfig.json`, `.gitignore`)
+- Build artifacts (`dist/`, only if needed temporarily)
 
-```move
-use aptos_framework::timestamp;
+**❌ NEVER Create in Root** (pollutes repository):
+All AI-generated files MUST go into increment folders:
 
-public fun get_current_time(): u64 {
-    timestamp::now_seconds()
-}
+```
+❌ WRONG:
+/SESSION-SUMMARY-2025-10-28.md          # NO!
+/ADR-006-DEEP-ANALYSIS.md               # NO!
+/ANALYSIS-MULTI-TOOL-COMPARISON.md      # NO!
 
-public fun get_current_time_microseconds(): u64 {
-    timestamp::now_microseconds()
-}
-
-// Time-based logic
-public fun is_expired(deadline: u64): bool {
-    timestamp::now_seconds() >= deadline
-}
-
-public fun create_with_deadline(duration: u64): u64 {
-    timestamp::now_seconds() + duration
-}
+✅ CORRECT:
+.specweave/increments/0002-core-enhancements/
+├── reports/
+│   ├── SESSION-SUMMARY-2025-10-28.md
+│   ├── ADR-006-DEEP-ANALYSIS.md
+│   └── ANALYSIS-MULTI-TOOL-COMPARISON.md
+├── logs/
+│   └── execution-2025-10-28.log
+└── scripts/
+    └── migration-helper.sh
 ```
 
-**Important:** Block timestamp is set by validators, can have small drift.
+**Why?**
+- ✅ Complete traceability (which increment created which files)
+- ✅ Easy cleanup (delete increment folder = delete all files)
+- ✅ Clear context (all files for a feature in one place)
+- ✅ No root clutter
 
-## randomness.move - Secure Randomness
+## Hook System
 
-### VRF-based Random Numbers
+### What are Hooks?
 
-```move
-use aptos_framework::randomness;
+Hooks are shell scripts that fire automatically on SpecWeave events:
+- `post-task-completion` - After EVERY task completion via TodoWrite
+- `pre-task-plugin-detect` - Before task execution (plugin detection)
+- `post-increment-plugin-detect` - After increment creation
+- `pre-implementation` - Before implementation starts
 
-#[randomness]
-public entry fun random_mint(user: &signer) {
-    let random_value = randomness::u64_integer();
+### Current Hook: post-task-completion
 
-    let rarity = if (random_value % 100 < 1) {
-        // 1% chance - legendary
-        3
-    } else if (random_value % 100 < 10) {
-        // 9% chance - rare
-        2
-    } else {
-        // 90% chance - common
-        1
-    };
+**Fires**: After EVERY TodoWrite call
+**Purpose**: Notify when work completes
 
-    mint_nft(user, rarity);
-}
+**What it does**:
+- ✅ Detects session end (inactivity-based, 15s threshold)
+- ✅ Plays notification sound (macOS/Linux/Windows)
+- ✅ Shows completion message
+- ✅ Logs to `.specweave/logs/hooks-debug.log`
+- ✅ Debounces duplicate fires (2s window)
 
-// Random in range
-#[randomness]
-public entry fun random_reward(user: &signer) {
-    let amount = randomness::u64_range(100, 1000); // 100 to 999
-    transfer_reward(user, amount);
-}
+**What it does NOT do yet**:
+- ⏳ Update `tasks.md` completion status
+- ⏳ Sync living docs automatically
+- ⏳ Consolidate GitHub/Jira tasks
+- ⏳ Calculate increment progress percentage
+
+**Smart Session-End Detection**:
+```
+Problem: Claude creates multiple todo lists → sound plays multiple times
+Solution: Track inactivity gaps between TodoWrite calls
+- Rapid completions (< 15s gap) = Claude still working → skip sound
+- Long gap (> 15s) + all done = Session ending → play sound!
 ```
 
-**Requirements:**
-- Must use `#[randomness]` attribute
-- Must be entry function
-- Only works on-chain (not in view functions)
+### Hook Configuration
 
-### Random Bytes
+**File**: `.specweave/config.json`
 
-```move
-#[randomness]
-public entry fun random_selection() {
-    let random_bytes = randomness::bytes(32); // 32 random bytes
-    // Use for cryptographic purposes
-}
-```
-
-## resource_account.move - Deterministic Deployment
-
-### Creating Resource Accounts
-
-```move
-use aptos_framework::resource_account;
-use aptos_framework::account;
-
-public fun create_resource_acct(deployer: &signer) {
-    let seed = b"MY_RESOURCE";
-
-    // Create resource account
-    let (resource_signer, signer_cap) = account::create_resource_account(
-        deployer,
-        seed
-    );
-
-    // Resource account address is deterministic:
-    // hash(deployer_address, seed)
-    let resource_addr = signer::address_of(&resource_signer);
-
-    // Store signer capability to use later
-    move_to(&resource_signer, ResourceData {
-        signer_cap
-    });
-}
-```
-
-### Use Cases for Resource Accounts
-
-1. **Module Storage** - Store module data at predictable address
-2. **Liquidity Pools** - Each pool at deterministic address
-3. **Protocol Treasuries** - Controlled programmatically
-4. **Registry Systems** - Well-known addresses
-
-```move
-// Example: Liquidity Pool at deterministic address
-public fun create_pool<X, Y>(deployer: &signer) {
-    let seed = b"POOL_";
-    vector::append(&mut seed, type_name<X>());
-    vector::append(&mut seed, b"_");
-    vector::append(&mut seed, type_name<Y>());
-
-    let (pool_signer, signer_cap) = account::create_resource_account(
-        deployer,
-        seed
-    );
-
-    move_to(&pool_signer, Pool<X, Y> {
-        reserve_x: 0,
-        reserve_y: 0,
-        signer_cap,
-    });
-}
-```
-
-## aggregator_v2.move - Parallel Execution
-
-### Aggregators for Concurrent Modification
-
-```move
-use aptos_framework::aggregator_v2::{Self, Aggregator};
-
-struct Stats has key {
-    total_users: Aggregator<u64>,
-    total_volume: Aggregator<u64>,
-}
-
-public fun initialize(account: &signer) {
-    move_to(account, Stats {
-        total_users: aggregator_v2::create_aggregator(0),
-        total_volume: aggregator_v2::create_aggregator(0),
-    });
-}
-
-public fun increment_users() acquires Stats {
-    let stats = borrow_global_mut<Stats>(@my_module);
-    aggregator_v2::add(&mut stats.total_users, 1);
-}
-
-public fun add_volume(amount: u64) acquires Stats {
-    let stats = borrow_global_mut<Stats>(@my_module);
-    aggregator_v2::add(&mut stats.total_volume, amount);
-}
-
-public fun get_total_users(): u64 acquires Stats {
-    let stats = borrow_global<Stats>(@my_module);
-    aggregator_v2::read(&stats.total_users)
-}
-```
-
-**Why Use Aggregators:**
-- Enable parallel transaction execution
-- Multiple transactions can increment same aggregator concurrently
-- No conflicts/retries like regular u64 fields
-- **Critical for high-throughput protocols**
-
-## option.move - Optional Values
-
-```move
-use std::option::{Self, Option};
-
-struct Profile has key {
-    name: String,
-    bio: Option<String>,  // Optional field
-}
-
-public fun create_profile(account: &signer, name: String) {
-    move_to(account, Profile {
-        name,
-        bio: option::none()  // No bio initially
-    });
-}
-
-public fun set_bio(account: &signer, bio: String) acquires Profile {
-    let addr = signer::address_of(account);
-    let profile = borrow_global_mut<Profile>(addr);
-
-    if (option::is_some(&profile.bio)) {
-        // Update existing bio
-        *option::borrow_mut(&mut profile.bio) = bio;
-    } else {
-        // Set bio for first time
-        option::fill(&mut profile.bio, bio);
+```json
+{
+  "hooks": {
+    "post_task_completion": {
+      "enabled": true,
+      "update_tasks_md": false,
+      "sync_living_docs": false,
+      "play_sound": true,
+      "show_message": true
     }
-}
-
-public fun get_bio(addr: address): Option<String> acquires Profile {
-    let profile = borrow_global<Profile>(addr);
-    option::clone(&profile.bio)
-}
-
-// Using option value
-public fun print_bio(addr: address) acquires Profile {
-    let bio_opt = get_bio(addr);
-    if (option::is_some(&bio_opt)) {
-        let bio = option::extract(&mut bio_opt);
-        // Use bio
-    } else {
-        // No bio set
-    }
+  }
 }
 ```
 
-## string.move - UTF8 Strings
+### Manual Actions
 
-```move
-use std::string::{Self, String};
+Until hooks are fully automated, **YOU MUST**:
+- Update `CLAUDE.md` when structure changes
+- Update `README.md` for user-facing changes
+- Update `CHANGELOG.md` for API changes
+- Update `tasks.md` completion status manually (or use TodoWrite carefully)
 
-public fun create_message(): String {
-    string::utf8(b"Hello, Aptos!")
-}
+## Plugin Architecture
 
-public fun concatenate(s1: String, s2: String): String {
-    let mut result = s1;
-    string::append(&mut result, s2);
-    result
-}
+### Core vs. Plugin
 
-public fun substring(s: &String, start: u64, end: u64): String {
-    string::sub_string(s, start, end)
-}
+**Core Framework** (always loaded):
+- 8 core skills (increment-planner, spec-generator, context-loader, etc.)
+- 3 core agents (PM, Architect, Tech Lead)
+- 7 core commands (/sw:inc, /sw:do, etc.)
 
-public fun string_length(s: &String): u64 {
-    string::length(s)
-}
+**Plugins** (opt-in):
+- `specweave-github` - GitHub integration (issue sync, PR creation)
+- `specweave-jira` - Jira integration (task sync)
+- `specweave-kubernetes` - K8s deployment (planned)
+- `specweave-frontend-stack` - React/Vue/Angular (planned)
+- `specweave-ml-ops` - Machine learning (planned)
 
-// String to bytes
-public fun to_bytes(s: &String): vector<u8> {
-    *string::bytes(s)
-}
+### Context Reduction
+
+**Before plugins**:
+- Simple React app: 50K tokens (ALL 44 skills + 20 agents loaded)
+- Backend API: 50K tokens
+- ML pipeline: 50K tokens
+
+**After plugins**:
+- Simple React app: Core + frontend-stack + github ≈ **16K tokens** (68% reduction!)
+- Backend API: Core + nodejs-backend + github ≈ **15K tokens** (70% reduction!)
+- ML pipeline: Core + ml-ops + github ≈ **18K tokens** (64% reduction!)
+
+### Four-Phase Plugin Detection
+
+1. **Init-Time** (during `specweave init`):
+   - Scans package.json, directories, env vars
+   - Suggests plugins: "Found React. Enable frontend-stack? (Y/n)"
+
+2. **First Increment** (during `/sw:inc`):
+   - Analyzes increment description for keywords
+   - Suggests before creating spec: "This needs kubernetes plugin. Enable? (Y/n)"
+
+3. **Pre-Task** (before task execution):
+   - Hook scans task description
+   - Non-blocking suggestion: "This task mentions K8s. Consider enabling plugin."
+
+4. **Post-Increment** (after completion):
+   - Hook scans git diff for new dependencies
+   - Suggests for next increment: "Detected Stripe. Enable payment-processing plugin?"
+
+### Hybrid Plugin System
+
+SpecWeave plugins support **dual distribution**:
+
+1. **NPM Package** (SpecWeave CLI):
+   - `npm install -g specweave`
+   - `specweave plugin install sw-github`
+   - Works with ALL tools (Claude, Cursor, Copilot, Generic)
+
+2. **Claude Code Marketplace** (Native `/plugin`):
+   - `/plugin marketplace add https://github.com/anton-abyzov/specweave`
+   - `/plugin install sw-github@specweave`
+   - Best UX for Claude Code users (use HTTPS URL for public repos!)
+
+**Plugin Manifests** (both required):
+- `plugin.json` - Claude Code native format
+- `manifest.json` - SpecWeave custom format (richer metadata)
+
+## Multi-Tool Support
+
+SpecWeave works with multiple AI coding assistants:
+
+### Claude Code (⭐⭐⭐⭐⭐ 100%)
+- Native `.claude/` installation
+- Skills auto-activate
+- Hooks fire automatically
+- Slash commands work natively
+- Agents isolate context
+- **BEST EXPERIENCE**
+
+### Cursor 2.0 (⭐⭐⭐⭐ 85%)
+- `AGENTS.md` compilation
+- Team commands via dashboard
+- `@context` shortcuts
+- Shared agent context (8 parallel agents)
+- Manual hook triggers
+
+### GitHub Copilot (⭐⭐⭐ 60%)
+- `.github/copilot/instructions.md` compilation
+- Natural language instructions only
+- Manual workflows
+- No hooks or slash commands
+
+### Generic (⭐⭐ 40%)
+- `SPECWEAVE-MANUAL.md` for copy-paste
+- Manual workflows
+- No automation
+
+**Recommendation**: Use Claude Code for SpecWeave. Other tools work, but you'll miss the magic.
+
+## Key Commands
+
+### Increment Lifecycle
+- `/sw:inc "feature-name"` - Plan new increment (PM-led process)
+- `/sw:do` - Execute next task (smart resume)
+- `/sw:progress` - Show progress, PM gate status, next action
+- `/sw:validate 0001` - Validate spec, tests, quality
+- `/sw:done 0001` - Close increment (PM validation)
+- `/sw:next` - Auto-close if ready, suggest next work
+
+### Increment Discipline
+- `/sw:status` - Show all increments and completion status
+- `/sw:close` - Interactive closure of incomplete increments
+
+### Documentation Sync
+- `/sw:sync-docs review` - Review strategic docs before implementation
+- `/sw:sync-docs update` - Update living docs from completed increments
+
+### External Platform Sync
+- `/sw:sync-github` - Bidirectional GitHub sync
+- `/sw:sync-jira` - Bidirectional Jira sync
+
+## Common Questions
+
+### Q: Where do I create a new increment?
+**A**: Use `/sw:inc "####-descriptive-name"`. It creates:
+```
+.specweave/increments/####-descriptive-name/
+├── spec.md
+├── plan.md
+├── tasks.md
+└── tests.md
 ```
 
-## vector.move - Dynamic Arrays
-
-```move
-use std::vector;
-
-public fun vector_operations() {
-    let mut v = vector::empty<u64>();
-
-    // Add elements
-    vector::push_back(&mut v, 10);
-    vector::push_back(&mut v, 20);
-    vector::push_back(&mut v, 30);
-
-    // Get length
-    let len = vector::length(&v);  // 3
-
-    // Access elements
-    let first = *vector::borrow(&v, 0);  // 10
-
-    // Modify elements
-    let second = vector::borrow_mut(&mut v, 1);
-    *second = 25;
-
-    // Remove element
-    let last = vector::pop_back(&mut v);  // 30
-
-    // Check if contains
-    let has_ten = vector::contains(&v, &10);  // true
-
-    // Find index
-    let (found, index) = vector::index_of(&v, &25);
-
-    // Reverse
-    vector::reverse(&mut v);
-
-    // Append another vector
-    vector::append(&mut v, vector[40, 50]);
-
-    // Remove and return element
-    let removed = vector::remove(&mut v, 0);
-
-    // Swap elements
-    vector::swap(&mut v, 0, 1);
-}
+### Q: Where do I put analysis files?
+**A**: In the increment's `reports/` folder:
+```
+.specweave/increments/0002-core-enhancements/reports/
+└── ANALYSIS-XYZ.md
 ```
 
-## Common Patterns
+### Q: How do I know what tasks are left?
+**A**: Use `/sw:progress` or read `.specweave/increments/####/tasks.md`
 
-### Pattern 1: Registry with Table
+### Q: Can I start a new increment before finishing the current one?
+**A**: NO! The framework **blocks** you. Use `/sw:status` to check, `/sw:close` to close.
 
-```move
-use aptos_framework::table::{Self, Table};
+### Q: Where do I edit skills/agents/commands?
+**A**: Edit in `src/` (source of truth), then run `npm run install:all` to sync to `.claude/`
 
-struct Registry<K: copy + drop, V: store> has key {
-    data: Table<K, V>,
-    count: u64,
-}
+### Q: How do I know if a plugin is needed?
+**A**: SpecWeave auto-detects! It will suggest plugins during init or increment creation.
 
-public fun initialize<K: copy + drop, V: store>(account: &signer) {
-    move_to(account, Registry<K, V> {
-        data: table::new(),
-        count: 0,
-    });
-}
+### Q: Why does the hook play a sound?
+**A**: Session-end detection! If all tasks complete AND you've been idle > 15s, it assumes you're done. Configurable in `.specweave/config.json`.
 
-public fun register<K: copy + drop, V: store>(
-    registry_addr: address,
-    key: K,
-    value: V
-) acquires Registry {
-    let registry = borrow_global_mut<Registry<K, V>>(registry_addr);
-    assert!(!table::contains(&registry.data, key), ERROR_ALREADY_EXISTS);
+### Q: How do I disable a hook?
+**A**: Edit `hooks/hooks.json` and set `"enabled": false` for that hook.
 
-    table::add(&mut registry.data, key, value);
-    registry.count = registry.count + 1;
-}
+## Activation Keywords
+
+I activate when you ask about:
+- SpecWeave rules / conventions / best practices
+- Increment naming / structure / lifecycle
+- Where files go / directory structure
+- Source of truth / what to edit
+- Hook system / automation
+- Plugin architecture / context reduction
+- How to use SpecWeave / getting started
+- What is spec.md / plan.md / tasks.md
+- Living docs sync
+- Increment discipline / closure
+- Multi-tool support (Claude/Cursor/Copilot)
+
+## When to Use Other Skills/Agents
+
+- **increment-planner** - Planning NEW increments (/sw:inc)
+- **PM agent** - Leading increment creation (auto-invoked by /sw:inc)
+- **Architect agent** - Designing system architecture
+- **Tech Lead agent** - Code review, best practices
+- **spec-generator** - Creating detailed technical RFCs
+- **context-loader** - Explaining context efficiency
+- **diagrams-architect** - Creating C4/Mermaid diagrams
+
+I focus on **framework knowledge**. For **increment execution**, use the PM agent and commands!
+
+---
+
+Let me help you understand and use SpecWeave correctly! 🚀
+
+## Project-Specific Learnings
+
+**Before starting work, check for project-specific learnings:**
+
+```bash
+# Check if skill memory exists for this skill
+cat .specweave/skill-memories/framework.md 2>/dev/null || echo "No project learnings yet"
 ```
 
-### Pattern 2: Event-Driven State Changes
+Project learnings are automatically captured by the reflection system when corrections or patterns are identified during development. These learnings help you understand project-specific conventions and past decisions.
 
-```move
-#[event]
-struct StateChanged has drop, store {
-    old_state: u8,
-    new_state: u8,
-    timestamp: u64,
-}
-
-public fun change_state(new_state: u8) acquires State {
-    let state = borrow_global_mut<State>(@my_module);
-    let old = state.value;
-
-    state.value = new_state;
-
-    event::emit(StateChanged {
-        old_state: old,
-        new_state,
-        timestamp: timestamp::now_seconds(),
-    });
-}
-```
-
-### Pattern 3: Time-Locked Operations
-
-```move
-struct TimeLock has key {
-    unlock_time: u64,
-    amount: u64,
-}
-
-public fun create_timelock(
-    account: &signer,
-    amount: u64,
-    lock_duration: u64
-) {
-    let unlock_time = timestamp::now_seconds() + lock_duration;
-
-    move_to(account, TimeLock {
-        unlock_time,
-        amount,
-    });
-}
-
-public fun withdraw(account: &signer) acquires TimeLock {
-    let addr = signer::address_of(account);
-    let timelock = move_from<TimeLock>(addr);
-
-    assert!(
-        timestamp::now_seconds() >= timelock.unlock_time,
-        ERROR_STILL_LOCKED
-    );
-
-    let TimeLock { unlock_time: _, amount } = timelock;
-    // Transfer amount to user
-}
-```
-
-### Pattern 4: Resource Account Pool
-
-```move
-struct Pool<phantom X, phantom Y> has key {
-    reserve_x: u64,
-    reserve_y: u64,
-    signer_cap: SignerCapability,
-}
-
-public fun create_pool<X, Y>(creator: &signer) {
-    let seed = b"POOL";
-    let (pool_signer, signer_cap) = account::create_resource_account(
-        creator,
-        seed
-    );
-
-    coin::register<X>(&pool_signer);
-    coin::register<Y>(&pool_signer);
-
-    move_to(&pool_signer, Pool<X, Y> {
-        reserve_x: 0,
-        reserve_y: 0,
-        signer_cap,
-    });
-}
-
-public fun swap<X, Y>(amount_in: u64): u64 acquires Pool {
-    let pool_addr = account::create_resource_address(&@my_module, b"POOL");
-    let pool = borrow_global_mut<Pool<X, Y>>(pool_addr);
-
-    // Swap logic using signer_cap for transfers
-    let pool_signer = account::create_signer_with_capability(&pool.signer_cap);
-    // ...
-}
-```
-
-## Framework Module Reference
-
-### Quick Reference Table
-
-| Module | Key Functions | Use Case |
-|--------|--------------|----------|
-| account | create_account, rotate_authentication_key | Account management |
-| coin | transfer, balance, register | Fungible tokens |
-| fungible_asset | mint, burn, transfer | Advanced tokens |
-| object | create_object, transfer | Object model |
-| table | add, borrow, remove | Large key-value stores |
-| smart_table | add, borrow, remove | Very large stores |
-| event | emit, emit_event | Event emission |
-| timestamp | now_seconds | Time access |
-| randomness | u64_integer, bytes | Secure randomness |
-| aggregator_v2 | create, add, read | Parallel execution |
-| resource_account | create_resource_account | Deterministic addresses |
-
-## Best Practices
-
-### ✅ Do
-
-- **Use SmartTable for large datasets** - Better than Table for 100k+ entries
-- **Use Event V2 API** - Simpler than EventHandle
-- **Use Aggregator for counters** - Enables parallel execution
-- **Use resource accounts for protocols** - Deterministic addresses
-- **Check timestamp carefully** - Validator-set, can have drift
-- **Use randomness for fair selection** - VRF-based security
-
-### ❌ Avoid
-
-- **Don't iterate over Tables** - Not supported, use vector/map if needed
-- **Don't trust timestamp for exact timing** - Block-level granularity
-- **Don't use randomness in view functions** - Not supported
-- **Don't forget to handle Option::none** - Check before unwrapping
-- **Don't create too many event handles** - Use Event V2 instead
-
-## Response Style
-
-- **Module-focused** - Reference specific framework modules
-- **Pattern-driven** - Show common framework usage patterns
-- **Performance-aware** - Mention gas implications
-- **Practical** - Real-world examples with framework modules
-- **Reference docs** - Link to specific module documentation
-
-## Follow-up Suggestions
-
-After helping with framework modules, suggest:
-- Gas optimization for storage structures
-- Event indexing strategies
-- Parallel execution with aggregators
-- Resource account architectures
-- Time-based protocol designs
-- Random number generation patterns

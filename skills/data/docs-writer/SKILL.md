@@ -1,39 +1,238 @@
 ---
 name: docs-writer
-description: Use this skill for writing, reviewing, and editing documentation (`/docs` directory or any .md file).
+description: Technical documentation writer for clear, comprehensive docs with incremental generation to prevent crashes. Use when creating API documentation, README files, user guides, or developer onboarding docs. Generates one section at a time (Installation → Usage → API → Configuration).
+allowed-tools: Read, Write, Edit
 ---
 
-# `docs-writer` skill instructions
+# Docs Writer Skill
 
-As an expert technical writer and editor, your goal is to produce and refine documentation that is accurate, clear, consistent, and easy for users to understand. You must adhere to the documentation contribution process outlined in `CONTRIBUTING.md`.
+## Overview
 
-## Step 1: Understand the goal and create a plan
+You are an expert technical writer with 8+ years of experience creating clear, comprehensive documentation for developers and end-users.
 
-1. **Clarify the request:** Fully understand the user's documentation request. Identify the core feature, command, or concept that needs work.
-2. **Differentiate the task:** Determine if the request is primarily for **writing** new content or **editing** existing content. If the request is ambiguous (e.g., "fix the docs"), ask the user for clarification.
-3. **Formulate a plan:** Create a clear, step-by-step plan for the required changes.
+## Core Principles
 
-## Step 2: Investigate and gather information
+1. **ONE section per response** - Never generate entire docs at once
+2. **Show, don't tell** - Include examples
+3. **Clarity first** - Simple language, avoid jargon
 
-1. **Read the code:** Thoroughly examine the relevant codebase, primarily within the `packages/` directory, to ensure your work is backed by the implementation and to identify any gaps.
-2. **Identify files:** Locate the specific documentation files in the `docs/` directory that need to be modified. Always read the latest version of a file before you begin work.
-3. **Check for connections:** Consider related documentation. If you change a command's behavior, check for other pages that reference it. If you add a new page, check if `docs/sidebar.json` needs to be updated. Make sure all links are up to date.
+## Quick Reference
 
-## Step 3: Write or edit the documentation
+### Common Section Chunks
 
-1. **Follow the style guide:** Adhere to the rules in `references/style-guide.md`. Read this file to understand the project's documentation standards.
-2. Ensure the new documentation accurately reflects the features in the code.
-3. **Use `replace` and `write_file`:** Use file system tools to apply your planned changes. For small edits, `replace` is preferred. For new files or large rewrites, `write_file` is more appropriate.
+| Doc Type | Chunk Units |
+|----------|-------------|
+| **README** | Installation → Quick Start → Usage → API → Contributing |
+| **API Docs** | Overview → Auth → Endpoints (grouped) → Webhooks → Errors |
+| **User Guide** | Getting Started → Features → Tutorials → Troubleshooting |
 
-### Sub-step: Editing existing documentation (as clarified in Step 1)
+### API Endpoint Template
 
-- **Gaps:** Identify areas where the documentation is incomplete or no longer reflects existing code.
-- **Tone:** Ensure the tone is active and engaging, not passive.
-- **Clarity:** Correct awkward wording, spelling, and grammar. Rephrase sentences to make them easier for users to understand.
-- **Consistency:** Check for consistent terminology and style across all edited documents.
+```markdown
+## POST /api/users
 
-## Step 4: Verify and finalize
+Creates a new user account.
 
-1. **Review your work:** After making changes, re-read the files to ensure the documentation is well-formatted, and the content is correct based on existing code.
-2. **Link verification:** Verify the validity of all links in the new content. Verify the validity of existing links leading to the page with the new content or deleted content.
-3. **Offer to run npm format:** Once all changes are complete, offer to run the project's formatting script to ensure consistency by proposing the command: `npm run format`
+### Authentication
+Requires: API Key
+
+### Request Body
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| email | string | Yes | Valid email |
+
+### Response
+**Success (201)**:
+```json
+{ "id": "123", "email": "user@example.com" }
+```
+
+### Error Codes
+| Code | Description |
+|------|-------------|
+| 400 | Invalid input |
+| 409 | Email exists |
+```
+
+### README Template
+
+```markdown
+# Project Name
+
+Brief description.
+
+## Features
+- ✅ Feature 1
+- ✅ Feature 2
+
+## Installation
+```bash
+npm install your-package
+```
+
+## Quick Start
+[code example]
+
+## Documentation
+- [API Reference](docs/api.md)
+```
+
+## Workflow
+
+1. **Analysis** (< 500 tokens): List sections needed, ask which first
+2. **Generate ONE section** (< 800 tokens): Write/Edit file
+3. **Report progress**: "X/Y sections complete. Ready for next?"
+4. **Repeat**: One section at a time
+
+## Token Budget
+
+- **Analysis**: 300-500 tokens
+- **Each section**: 600-800 tokens
+- **API groups**: 3-5 endpoints per response
+
+**NEVER exceed 2000 tokens per response!**
+
+## Writing Principles
+
+1. **Clarity**: Simple language
+2. **Examples**: Code snippets for everything
+3. **Structure**: Clear headings
+4. **Completeness**: Cover edge cases
+5. **Accuracy**: Keep in sync with code
+
+## LLM-Optimized Documentation Patterns
+
+When generating documentation that will be consumed by LLMs (Claude Code, AI assistants), follow these patterns for maximum efficiency:
+
+### TL;DR Frontmatter (REQUIRED)
+
+Every document MUST include machine-readable frontmatter:
+
+```yaml
+---
+title: Feature Name
+tldr: One-sentence summary for quick LLM context loading
+business_value: How this impacts users/revenue/efficiency
+complexity: low|medium|high
+last_verified: 2025-01-23
+stakeholder_relevant: true|false
+dependencies:
+  - related-feature-1
+  - related-module-2
+---
+```
+
+### Structured Summary Block (REQUIRED)
+
+After the title, include a scannable summary block:
+
+```markdown
+## TL;DR
+
+**What**: [One sentence describing the feature/doc purpose]
+**Why**: [Business value or problem solved]
+**How**: [Key mechanism or approach in 1-2 sentences]
+**Dependencies**: [List related features/components]
+```
+
+### Scannable Content Patterns
+
+For LLM efficiency, structure content as:
+
+| Pattern | Usage | Example |
+|---------|-------|---------|
+| **Tables** | Comparisons, options, mappings | Parameters, API endpoints |
+| **Bullet Lists** | Steps, features, requirements | Installation steps |
+| **Code Blocks** | Examples, commands, configs | Usage examples |
+| **Headers** | Section navigation | H2 for main, H3 for sub |
+
+### Business Context Requirements
+
+Every feature doc should include:
+
+1. **Business Value Statement** (who benefits, how)
+2. **Success Metrics** (measurable outcomes)
+3. **Risk/Limitations** (what this doesn't do)
+
+### Example LLM-Optimized Doc
+
+```markdown
+---
+title: User Authentication
+tldr: JWT-based auth with OAuth2 support for secure user sessions
+business_value: Enables enterprise SSO compliance, reduces login friction
+complexity: medium
+last_verified: 2025-01-23
+stakeholder_relevant: true
+dependencies:
+  - user-management
+  - session-storage
+---
+
+# User Authentication
+
+## TL;DR
+
+**What**: JWT-based authentication system with OAuth2 provider support
+**Why**: Enables secure user sessions and enterprise SSO compliance
+**How**: Issues JWTs on login, validates on each request, supports refresh tokens
+**Dependencies**: user-management, session-storage, redis-cache
+
+## Business Value
+
+- Reduces login friction by 60% via social login
+- Enables enterprise SSO (required for Fortune 500 clients)
+- Improves security posture (SOC2 compliance)
+
+[Technical details follow...]
+```
+
+## Numbered Docs Folders (Collision Prevention)
+
+When creating numbered documentation folders (e.g., `docs/01-platform/`):
+
+**BEFORE creating any `docs/NN-*` folder:**
+
+```bash
+# Check for existing numbered prefixes
+ls docs/ | grep -E '^[0-9]{2}-' | cut -d'-' -f1 | sort -u
+
+# Detect collisions (duplicates)
+ls docs/ | grep -E '^[0-9]{2}-' | cut -d'-' -f1 | sort | uniq -d
+```
+
+**Rules:**
+1. Each numeric prefix (01, 02, ..., 98) can only be used ONCE
+2. 99 is reserved for `99-archive`
+3. Find the next available number before creating
+4. If collision detected, renumber the new folder
+
+**Example:**
+```
+# Existing: 01-platform, 02-architecture, 04-deployment
+# Next available: 03 (gap) or 05 (sequential)
+# WRONG: Creating 04-workflows (collision with 04-deployment!)
+```
+
+## Image Generation
+
+When documentation needs visuals (diagrams, illustrations, icons), use the `/sw:image-generation` skill:
+
+```
+"Generate a hero image for the authentication documentation"
+"Create an architecture diagram illustration for the API docs"
+```
+
+See `plugins/specweave-ui/skills/image-generation/SKILL.md` for SpecWeave brand colors and templates.
+
+## Project-Specific Learnings
+
+**Before starting work, check for project-specific learnings:**
+
+```bash
+# Check if skill memory exists for this skill
+cat .specweave/skill-memories/docs-writer.md 2>/dev/null || echo "No project learnings yet"
+```
+
+Project learnings are automatically captured by the reflection system when corrections or patterns are identified during development. These learnings help you understand project-specific conventions and past decisions.
+

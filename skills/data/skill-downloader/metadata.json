@@ -1,7 +1,7 @@
 {
   "name": "skill-downloader",
-  "repo": "nicepkg/ai-workflow",
+  "repo": "nicepkg/vsync",
   "path": ".claude/skills/skill-downloader/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:20.928545Z"
+  "source": "github.com/nicepkg/vsync",
+  "downloaded_at": "2026-02-04T04:34:09.796272Z"
 }

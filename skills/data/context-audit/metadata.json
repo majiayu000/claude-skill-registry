@@ -1,7 +1,7 @@
 {
   "name": "context-audit",
-  "repo": "melodic-software/claude-code-plugins",
-  "path": "plugins/tac/skills/context-audit/SKILL.md",
-  "source": "github.com/melodic-software/claude-code-plugins",
-  "downloaded_at": "2026-02-02T02:53:28.624397Z"
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/context-audit/SKILL.md",
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "downloaded_at": "2026-02-04T05:05:24.342348Z"
 }

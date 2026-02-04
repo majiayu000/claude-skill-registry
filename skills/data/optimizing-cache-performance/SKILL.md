@@ -1,15 +1,8 @@
 ---
-name: optimizing-cache-performance
+name: Optimizing Cache Performance
 description: |
-  Execute this skill enables AI assistant to analyze and improve application caching strategies. it optimizes cache hit rates, ttl configurations, cache key design, and invalidation strategies. use this skill when the user requests to "optimize cache performance"... Use when optimizing performance. Trigger with phrases like 'optimize', 'performance', or 'speed up'.
-allowed-tools: Read, Write, Bash(cmd:*), Grep
-version: 1.0.0
-author: Jeremy Longshore <jeremy@intentsolutions.io>
-license: MIT
+  This skill enables Claude to analyze and improve application caching strategies. It optimizes cache hit rates, TTL configurations, cache key design, and invalidation strategies. Use this skill when the user requests to "optimize cache performance", "improve caching strategy", "analyze cache hit rate", or needs assistance with "cache key design", "TTL optimization", or "cache invalidation". The skill identifies potential bottlenecks and recommends adjustments for improved performance and efficiency of caching mechanisms like Redis.
 ---
-# Cache Performance Optimizer
-
-This skill provides automated assistance for cache performance optimizer tasks.
 
 ## Overview
 
@@ -55,30 +48,3 @@ The skill will:
 ## Integration
 
 This skill can integrate with code analysis tools to automatically identify caching implementations and configuration. It can also work with monitoring tools to track cache hit rates and performance metrics.
-
-## Prerequisites
-
-- Appropriate file access permissions
-- Required dependencies installed
-
-## Instructions
-
-1. Invoke this skill when the trigger conditions are met
-2. Provide necessary context and parameters
-3. Review the generated output
-4. Apply modifications as needed
-
-## Output
-
-The skill produces structured output relevant to the task.
-
-## Error Handling
-
-- Invalid input: Prompts for correction
-- Missing dependencies: Lists required components
-- Permission errors: Suggests remediation steps
-
-## Resources
-
-- Project documentation
-- Related skills and commands

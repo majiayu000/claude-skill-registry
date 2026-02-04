@@ -1,51 +1,22 @@
 ---
 name: login-link
-description: |
-  Login link delivery issues. Triggers when customer can't access course,
-  didn't receive login email, "magic link", "can't log in", or access problems.
-sample_size: 999
-validation:
-  required_phrases:
-    - "email"
-    - "spam"
-  forbidden_patterns:
-    - "(?i)why"
-metrics:
-  sample_size: 999
-  avg_thread_length: 3.59
-  top_phrases:
-    - phrase: "let me know if"
-      count: 295
-      percent: 29.5
-    - phrase: "me know if you"
-      count: 253
-      percent: 25.3
-    - phrase: "you ll need to"
-      count: 244
-      percent: 24.4
-    - phrase: "if you have any"
-      count: 238
-      percent: 23.8
-    - phrase: "to purchase the course"
-      count: 178
-      percent: 17.8
-    - phrase: "ll need to enter"
-      count: 172
-      percent: 17.2
-    - phrase: "enter the email address"
-      count: 169
-      percent: 16.9
-    - phrase: "need to enter the"
-      count: 168
-      percent: 16.8
-    - phrase: "to enter the email"
-      count: 168
-      percent: 16.8
-    - phrase: "at the top of"
-      count: 167
-      percent: 16.7
+description: Provide login link help. Use when a customer cannot access courses and requests a login link or access email.
+metadata:
+  trigger_phrases:
+      - "provide login"
+      - "login link"
+      - "link customer"
+  related_skills: ["email-change", "website-bug-report", "invoice-billing-statement"]
+  sample_size: "999"
+  validation: |
+    required_phrases:
+      - "email"
+      - "spam"
+    forbidden_patterns:
+      - "(?i)why"
+    max_length: 500
+  metrics: "sample_size: 999\navg_thread_length: 3.59\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 295\n    percent: 29.5\n  - phrase: \"me know if you\"\n    count: 253\n    percent: 25.3\n  - phrase: \"you ll need to\"\n    count: 244\n    percent: 24.4\n  - phrase: \"if you have any\"\n    count: 238\n    percent: 23.8\n  - phrase: \"to purchase the course\"\n    count: 178\n    percent: 17.8\n  - phrase: \"ll need to enter\"\n    count: 172\n    percent: 17.2\n  - phrase: \"enter the email address\"\n    count: 169\n    percent: 16.9\n  - phrase: \"need to enter the\"\n    count: 168\n    percent: 16.8\n  - phrase: \"to enter the email\"\n    count: 168\n    percent: 16.8\n  - phrase: \"at the top of\"\n    count: 167\n    percent: 16.7"
 ---
-
 # Login Link Issues
 
 Customer bought a course but can't get the magic link to access it.
@@ -108,3 +79,4 @@ Draft must:
 - [ ] State what action was taken
 - [ ] Reference the specific email address
 - [ ] Suggest checking spam/junk folder
+- [ ] NOT blame their email provider

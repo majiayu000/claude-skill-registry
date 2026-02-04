@@ -1,6 +1,6 @@
 ---
 name: tour
-description: Interactive guided tour of codebase
+description: Friendly onboarding when users ask about capabilities
 ---
 
 # Tour: What Can I Do?

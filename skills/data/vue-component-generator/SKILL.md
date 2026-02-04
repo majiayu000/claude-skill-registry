@@ -1,23 +1,72 @@
 ---
-name: vue-component-generator
-description: Generate Vue 3 components with Composition API TypeScript and scoped styles. Triggers on "create vue component", "generate vue file", "vue 3 component", ".vue component".
+name: "vue-component-generator"
+description: |
+  Generate vue component generator operations. Auto-activating skill for Frontend Development.
+  Triggers on: vue component generator, vue component generator
+  Part of the Frontend Development skill category. Use when working with vue component generator functionality. Trigger with phrases like "vue component generator", "vue generator", "vue".
+allowed-tools: "Read, Write, Edit, Bash(cmd:*), Grep"
+version: 1.0.0
+license: MIT
+author: "Jeremy Longshore <jeremy@intentsolutions.io>"
 ---
 
 # Vue Component Generator
 
-Generate Vue 3 components with Composition API and TypeScript.
+## Overview
 
-## Output Requirements
+This skill provides automated assistance for vue component generator tasks within the Frontend Development domain.
 
-**File Output:** `*.vue` component files
-**Format:** Valid Vue 3 SFC
-**Standards:** Vue 3.4+, script setup, TypeScript
+## When to Use
 
-## When Invoked
+This skill activates automatically when you:
+- Mention "vue component generator" in your request
+- Ask about vue component generator patterns or best practices
+- Need help with frontend skills covering react, vue, css, accessibility, performance optimization, and modern web development patterns.
 
-Immediately generate a complete Vue component with props, emits, and styles.
+## Instructions
 
-## Example Invocations
+1. Provides step-by-step guidance for vue component generator
+2. Follows industry best practices and patterns
+3. Generates production-ready code and configurations
+4. Validates outputs against common standards
 
-**Prompt:** "Create Vue button component"
-**Output:** Complete `Button.vue` with variants and TypeScript.
+## Examples
+
+**Example: Basic Usage**
+Request: "Help me with vue component generator"
+Result: Provides step-by-step guidance and generates appropriate configurations
+
+
+## Prerequisites
+
+- Relevant development environment configured
+- Access to necessary tools and services
+- Basic understanding of frontend development concepts
+
+
+## Output
+
+- Generated configurations and code
+- Best practice recommendations
+- Validation results
+
+
+## Error Handling
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| Configuration invalid | Missing required fields | Check documentation for required parameters |
+| Tool not found | Dependency not installed | Install required tools per prerequisites |
+| Permission denied | Insufficient access | Verify credentials and permissions |
+
+
+## Resources
+
+- Official documentation for related tools
+- Best practices guides
+- Community examples and tutorials
+
+## Related Skills
+
+Part of the **Frontend Development** skill category.
+Tags: react, vue, css, accessibility, web

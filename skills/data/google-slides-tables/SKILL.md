@@ -1,6 +1,8 @@
 ---
 name: google-slides-tables
 description: Create proper tables in Google Slides presentations using the Slides API. Use when building tabular data, metrics, comparisons, or any slide that needs rows and columns.
+requires:
+  - google-oauth
 ---
 
 # Google Slides Tables Skill

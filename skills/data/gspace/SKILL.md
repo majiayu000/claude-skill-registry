@@ -1,10 +1,12 @@
 ---
 name: gspace
-description: Use gspace CLI and MCP tools for Google Workspace operations including Drive file management, Gmail, Docs, Sheets, Calendar, and Tasks with 40+ MCP tools available.
+description: Use gspace CLI and MCP tools for Google Workspace operations (Drive, Gmail, Docs, Sheets, Calendar, Tasks). Use when working with Google Workspace URLs (docs.google.com, drive.google.com, sheets.google.com, slides.google.com, mail.google.com), Google Drive file IDs, or any Google Workspace file/email/calendar operations. Supports both CLI commands (via Bash) and 40+ MCP tools.
 ---
 # Google Workspace (gspace) Skill
 
-You are a Google Workspace specialist with access to both the gspace CLI and MCP (Model Context Protocol) tools. This skill provides comprehensive guidance for working with Google Drive, Gmail, Docs, Sheets, Calendar, and Tasks operations through both interfaces.
+You are a Google Workspace specialist with access to both the **gspace CLI** (a command-line tool you can invoke via Bash) and **MCP (Model Context Protocol) tools**. This skill provides comprehensive guidance for working with Google Drive, Gmail, Docs, Sheets, Calendar, and Tasks operations through both interfaces.
+
+**IMPORTANT:** gspace is a CLI tool installed on the system. Use it via the Bash tool with commands like `gspace drive files ls` or `gspace gmail search --query "subject:urgent"`. It is NOT only an MCP server.
 
 ## MCP vs CLI: When to Use Each
 
@@ -23,6 +25,144 @@ You are a Google Workspace specialist with access to both the gspace CLI and MCP
 - **File uploads/downloads**: Transferring large files to/from local system
 - **Interactive operations**: Authentication flows, confirmations
 - **Shell automation**: Integration with other command-line tools
+
+## Working with Google Docs/Sheets/Slides URLs
+
+**IMPORTANT:** When the user provides a Google Workspace URL, you can use it directly with CLI commands or extract the file ID for MCP tools.
+
+### CLI Commands for Downloading
+
+**For Google Docs (markdown output):**
+- **Recommended:** `gspace docs download FILE_ID /path/output.md` - Cleaner markdown output, handles multi-tab docs automatically, no embedded images by default
+- **Alternative:** `gspace files download FILE_ID /path/output.md --export markdown` - Includes base64-encoded images inline, more verbose
+
+**For format conversion:**
+- Use `gspace files download FILE_ID /path/output.{pdf,docx,xlsx}` with `--export` flag (supports pdf, docx, xlsx, html, text, etc.)
+
+**Important Notes:**
+- `gspace files download` accepts file IDs (recommended) or full Google URLs (may fail with URL fragments)
+- `gspace docs download` only accepts file IDs
+- For cleaner, more readable markdown from Google Docs, prefer `gspace docs download`
+
+### URL Patterns and File ID Extraction
+
+**Google Docs:**
+```
+https://docs.google.com/document/d/FILE_ID/edit...
+```
+
+**Google Sheets:**
+```
+https://docs.google.com/spreadsheets/d/FILE_ID/edit...
+```
+
+**Google Slides:**
+```
+https://docs.google.com/presentation/d/FILE_ID/edit...
+```
+
+**Extraction:** The file ID is the long alphanumeric string between `/d/` and `/edit`
+
+### Common URL Operations
+
+**Example URL:** `https://docs.google.com/document/d/1711ddafVoaLzT8xPkL8RgqsJLY8HwzZqppxzWFjh0Gc/edit?tab=t.nlbxgkk0bjwu`
+- **File ID:** `1711ddafVoaLzT8xPkL8RgqsJLY8HwzZqppxzWFjh0Gc`
+- **Tab ID:** `t.nlbxgkk0bjwu` (optional, for multi-tab docs)
+
+### Workflow: Fetch and Download from URL
+
+```python
+# 1. Extract file ID from URL
+file_id = "1711ddafVoaLzT8xPkL8RgqsJLY8HwzZqppxzWFjh0Gc"
+
+# 2. Get metadata to understand the file
+metadata = mcp__gdrive__drive_files_metadata(file_id=file_id)
+# Returns: name, mimeType, created/modified times
+
+# 3. Download the file in desired format
+mcp__gdrive__drive_files_download(
+    file_id=file_id,
+    local_path="/tmp/document.md",
+    export_format="markdown"
+)
+
+# For multi-tab docs, specify tab_id
+mcp__gdrive__drive_files_download(
+    file_id=file_id,
+    local_path="/tmp/specific_tab.md",
+    export_format="markdown",
+    tab_id="t.nlbxgkk0bjwu"
+)
+```
+
+### Supported Export Formats
+
+**Google Docs:**
+- `markdown` - Best for readable text (recommended)
+- `pdf` - Preserves formatting
+- `docx` - Microsoft Word format
+- `text` - Plain text only
+
+**Google Sheets:**
+- `xlsx` - Excel format (preserves all sheets and formulas)
+- `csv` - Single sheet as CSV
+- `pdf` - Printable format
+
+**Google Slides:**
+- `pdf` - Each slide as page
+- `pptx` - Microsoft PowerPoint format
+
+### URL-Based Workflows
+
+**Workflow 1: Read Doc from URL**
+```python
+# User provides: https://docs.google.com/document/d/ABC123/edit
+file_id = "ABC123"
+
+# Download and read
+mcp__gdrive__drive_files_download(
+    file_id=file_id,
+    local_path="/tmp/doc.md",
+    export_format="markdown"
+)
+# Then read /tmp/doc.md using Read tool
+```
+
+**Workflow 2: Comment on Doc from URL**
+```python
+# Add comment to document
+mcp__gdrive__docs_comments_create(
+    file_id="ABC123",
+    content="This section needs updating"
+)
+```
+
+**Workflow 3: Share Doc from URL**
+```python
+# Grant access to document
+mcp__gdrive__permissions_grant(
+    file_id="ABC123",
+    role="reader",
+    type="user",
+    email="colleague@example.com"
+)
+```
+
+**Workflow 4: Parse Sheet from URL**
+```python
+# For Google Sheets saved as .xlsx in Drive
+file_id = "SHEET123"
+
+# If it's a Google Sheet, download as xlsx first
+mcp__gdrive__drive_files_download(
+    file_id=file_id,
+    local_path="/tmp/sheet.xlsx",
+    export_format="xlsx"
+)
+
+# Then parse the .xlsx file
+# (Note: For native Google Sheets, use sheets_* tools instead)
+```
 
 ## MCP Tools Complete Reference
 
@@ -1042,9 +1182,11 @@ gspace auth login
 gspace drive files ls
 gspace drive files ls --owner user@example.com --limit 20
 
-# Download files
-gspace drive files download FILE_ID /tmp/document.pdf
-gspace drive files download FILE_ID /tmp/doc.md --export markdown
+# Download files (accepts file IDs or full Google URLs)
+gspace files download FILE_ID /tmp/document.pdf
+gspace files download FILE_ID_OR_URL /tmp/doc.md --export markdown
+gspace files download "https://docs.google.com/document/d/FILE_ID/edit" /tmp/doc.md --export markdown
+gspace files download FILE_ID /tmp/sheet.xlsx --export xlsx
 
 # Upload files
 gspace drive files upload /path/to/file "File Name"
@@ -1092,8 +1234,14 @@ gspace permissions revoke FILE_ID PERMISSION_ID
 # Create doc from markdown
 gspace docs create /path/to/notes.md "Document Title"
 
-# Download doc
-gspace docs download DOC_ID /tmp/output.md --export markdown
+# Download doc as markdown (specialized command, auto-handles single/multi-tab docs)
+gspace docs download DOC_ID /tmp/output.md
+gspace docs download DOC_ID /tmp/output.md --include-images
+
+# Download doc with format conversion (use files download for format control)
+gspace files download DOC_ID /tmp/output.md --export markdown
+gspace files download DOC_ID /tmp/output.pdf --export pdf
+gspace files download DOC_ID /tmp/output.docx --export docx
 
 # Find and replace
 gspace docs find-replace DOC_ID "old text" "new text"

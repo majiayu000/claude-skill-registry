@@ -1,189 +1,274 @@
 ---
 name: ux-design
-description: UX心理学に基づくUIデザインスキル。UIコンポーネント設計時、フォーム設計時、ユーザーフロー設計時、UXレビュー時に使用。認知心理学・行動経済学の原則を適用して使いやすいインターフェースを設計する。
+description: User experience and visual design expert - creates wireframes, mockups, and interactive prototypes. Ensures WCAG accessibility and mobile responsiveness. Self-evaluates using 8-metric UX standard (8.0/10 minimum).
+version: 2.0.0
 ---
 
-# UX Design スキル
+# GabeDA UX Design Expert
 
-認知心理学・行動経済学に基づくUXデザイン原則を適用し、
-ユーザーにとって使いやすく、心地よいインターフェースを設計する。
+## Purpose
 
-## このスキルを使う場面
+This skill creates **user experience and visual designs** for the GabeDA platform. It produces wireframes, mockups, and design specifications while ensuring accessibility, mobile responsiveness, and professional quality.
 
-- UIコンポーネントの設計・実装時
-- フォーム・入力インターフェースの設計時
-- オンボーディング・ユーザーフローの設計時
-- 既存UIのUXレビュー・改善時
-- ローディング・フィードバック設計時
+**Core Functions:**
+- Visual design (colors, typography, spacing, imagery)
+- Wireframing and mockups (lo-fi and hi-fi prototypes)
+- Responsive design (mobile-first, breakpoints, touch targets)
+- Accessibility compliance (WCAG 2.1 AA)
+- Interaction design (hover states, transitions, animations)
+- Design systems (component libraries, style guides)
+- Quality assurance (self-evaluation using 8-metric UX standard)
 
-## 主要原則（頻出）
+**Key Differentiator:** This skill executes visual design. Business and marketing skills define UX strategy (who, what, why).
 
-### 1. Aesthetic-Usability Effect（美的ユーザビリティ効果）
+## When to Use This Skill
 
-美しいデザインは、より使いやすいと感じられる。
+Invoke this skill when:
+- Creating webpage designs or mockups
+- Designing dashboard layouts and data visualizations
+- Ensuring WCAG accessibility compliance
+- Creating responsive designs (mobile/tablet/desktop)
+- Designing interaction patterns (hover, animations, transitions)
+- Evaluating existing designs for UX quality
+- Creating design systems and component libraries
 
-```tsx
-// ✅ 統一されたデザインシステム
-<Card className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-  <CardHeader className="space-y-1">
-    <CardTitle className="text-xl font-semibold">タイトル</CardTitle>
-    <CardDescription className="text-gray-500">説明文</CardDescription>
-  </CardHeader>
-</Card>
+**NOT for:**
+- User research or personas (use **business** skill)
+- Marketing messaging or content (use **marketing** skill)
+- Data analysis or insights (use **insights** skill)
+- Code implementation (use **architect** skill)
 
-// ❌ バラバラなスタイル
-<div style={{ border: "1px solid black", padding: 10 }}>
-  <h1>タイトル</h1>
-  <p>説明文</p>
-</div>
-```
+## Quality Standard
 
-### 2. Doherty Threshold（0.4秒の壁）
+**CRITICAL:** All designs MUST meet the **UX Design Standard** before production.
 
-0.4秒以上の待ち時間はユーザーの興味を失わせる。
+**Standard Location:** [ai/standards/UX_DESIGN_STANDARD.md](../../../ai/standards/UX_DESIGN_STANDARD.md)
 
-```tsx
-// ✅ 即座のフィードバック + ストリーミング
-const [isPending, startTransition] = useTransition();
+### 8 Measurable Metrics (0-10 scale)
 
-<Button disabled={isPending}>
-  {isPending ? <Spinner className="animate-spin" /> : "送信"}
-</Button>
+1. **Visual Hierarchy** (12.5%) - Clear prioritization through size, color, spacing
+2. **Color & Contrast** (12.5%) - WCAG AA compliance, intentional palette
+3. **Whitespace & Spacing** (12.5%) - Consistent 8px grid, breathing room
+4. **Typography** (12.5%) - 2 fonts max, 16px+ body text, readability
+5. **Mobile Responsiveness** (12.5%) - 44px+ touch targets, no horizontal scroll
+6. **User Flow & Navigation** (12.5%) - Clear CTAs, 3-click rule, intuitive paths
+7. **Content Clarity** (12.5%) - Scannable text, jargon-free, value-first
+8. **Visual Polish** (12.5%) - Consistent styling, aligned elements, professional
 
-// ✅ Optimistic Update
-const { mutate } = useMutation({
-  onMutate: async (newData) => {
-    // 即座にUIを更新
-    queryClient.setQueryData(["items"], (old) => [...old, newData]);
-  },
-});
-```
+### Passing Criteria
 
-### 3. Familiarity Bias（親近性バイアス）
+- ✅ **8.0 - 10.0/10:** Production-ready (excellent)
+- 🟡 **7.0 - 7.9/10:** Needs refinement (good but not ready)
+- ❌ **< 7.0/10:** Requires major revision (not acceptable)
 
-既知のUIパターンを使うことで認知負荷を下げる。
+**No single metric can score below 6/10** (even if average is 8.0+)
 
-```tsx
-// ✅ 標準的なチャットUI
-<div className="flex flex-col h-screen">
-  <header className="border-b p-4">タイトル</header>
-  <main className="flex-1 overflow-y-auto p-4">
-    {/* メッセージ一覧 */}
-  </main>
-  <footer className="border-t p-4">
-    <input placeholder="メッセージを入力..." />
-  </footer>
-</div>
-```
+### Self-Evaluation Process
 
-### 4. Labor Illusion（労力の錯覚）
+After creating any design:
 
-処理中であることを示すと、ユーザーは結果をより価値あるものと感じる。
+1. **Evaluate** using 8-metric checklist (see UX_DESIGN_STANDARD.md)
+2. **Calculate** total score (average of 8 metrics)
+3. **If score < 8.0:**
+   - Identify lowest-scoring metrics
+   - Apply specific fixes from standard
+   - Re-evaluate
+   - Iterate up to 3 times
+4. **If still < 8.0 after 3 iterations:** Escalate to executive skill
+5. **Document** final score in deliverable
 
-```tsx
-// ✅ 処理中の可視化
-{isLoading && (
-  <div className="flex items-center gap-2 text-gray-500">
-    <Spinner className="animate-spin" />
-    <span>AIが回答を生成中...</span>
-  </div>
-)}
-```
+## Design Principles
 
-### 5. Progressive Disclosure（段階的開示）
+### Audience: Business Owners & Analysts
 
-情報を段階的に表示し、必要な時に必要な情報にアクセスできるようにする。
+- **Clarity over creativity** - Users care about insights, not flashy design
+- **Data-driven aesthetic** - Professional, trustworthy, credible
+- **Reduce cognitive load** - Minimize choices, simplify decisions
+- **Build trust** - Use testimonials, logos, stats
 
-```tsx
-// ✅ 詳細は折りたたみ
-<Accordion>
-  <AccordionItem>
-    <AccordionTrigger>詳細オプション</AccordionTrigger>
-    <AccordionContent>
-      {/* 高度な設定 */}
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
+### Brand Characteristics
 
-// ✅ ステップ形式のフォーム
-<Stepper currentStep={step}>
-  <Step title="基本情報" />
-  <Step title="詳細設定" />
-  <Step title="確認" />
-</Stepper>
-```
+- **Professional but approachable** - Not corporate-stiff, not startup-playful
+- **Data-focused** - Charts, numbers, metrics prominent
+- **LATAM-friendly** - Spanish language, Chilean currency (CLP)
+- **Efficiency-focused** - Emphasize time savings, automation
 
-## 設計時の適用フロー
+**For detailed design principles:** See [references/design_principles.md](references/design_principles.md)
 
-### 1. ユーザーの状態を把握
+## Core Workflows
 
-| 状態 | 適用すべき原則 |
-|------|---------------|
-| 初めて使う | Familiarity Bias, Progressive Disclosure |
-| 待っている | Doherty Threshold, Labor Illusion |
-| 選択に迷っている | Default Bias, Decoy Effect |
-| 離脱しそう | Peak-End Rule, Goal Gradient Effect |
+### Workflow 1: Design Landing Page
 
-### 2. 認知負荷を最小化
+**Input from other skills:**
+- **executive:** Requirements, target audience, key messages
+- **business:** User personas, use cases, value propositions
+- **marketing:** Messaging, content hierarchy, CTAs
 
-- **視覚的階層**: 重要な情報を目立たせる
-- **チャンキング**: 情報をグループ化する
-- **一貫性**: 同じ操作は同じ見た目にする
+**UX Design Output:**
+1. **Wireframe** (lo-fi mockup showing layout)
+2. **Hi-fi mockup** (full design with colors, typography, images)
+3. **Responsive versions** (mobile, tablet, desktop)
+4. **Interaction specs** (hover states, animations)
+5. **Self-evaluation** (8-metric score)
 
-### 3. フィードバックを設計
+**Template:** [assets/templates/landing_page_design_template.md](assets/templates/landing_page_design_template.md)
 
-- **即時性**: 0.4秒以内に何らかの反応
-- **進捗表示**: 長い処理はプログレス表示
-- **完了確認**: 成功・失敗を明確に伝える
+### Workflow 2: Design Dashboard Layout
 
-## 参照ドキュメント
+**Input from other skills:**
+- **insights:** Data to display, chart types, KPIs
+- **business:** User goals, decision-making context
+- **executive:** Priority hierarchy
 
-詳細な原則と実装パターンは以下を参照:
+**UX Design Output:**
+1. **Information architecture** (what data where)
+2. **Dashboard mockup** (layout, widgets, navigation)
+3. **Data visualization design** (chart styles, colors)
+4. **Responsive behavior** (how dashboard adapts to mobile)
+5. **Self-evaluation** (8-metric score)
 
-- [PRINCIPLES.md](PRINCIPLES.md) - UX心理学原則一覧（43原則）
-- [PATTERNS.md](PATTERNS.md) - 実装パターン集
-- [CHECKLIST.md](CHECKLIST.md) - UXレビューチェックリスト
+**Dashboard Design Checklist:**
+- [ ] Most important KPIs above fold
+- [ ] Clear visual hierarchy (primary → secondary → tertiary)
+- [ ] Consistent chart styles (colors, fonts, legends)
+- [ ] Filters/controls easily accessible
+- [ ] Responsive grid layout (desktop 3-col, tablet 2-col, mobile 1-col)
+- [ ] Loading states for data fetching
+- [ ] Empty states for no data
 
-## クイックリファレンス
+**Template:** [assets/templates/dashboard_design_template.md](assets/templates/dashboard_design_template.md)
 
-### フォーム設計
+### Workflow 3: Evaluate Existing Design
 
-| 課題 | 原則 | 実装 |
-|------|------|------|
-| 入力が面倒 | Default Bias | 適切なデフォルト値を設定 |
-| 項目が多い | Progressive Disclosure | ステップ分割・折りたたみ |
-| エラーが分かりにくい | Cognitive Load | インラインバリデーション |
-| 送信に不安 | Social Proof | 「〇〇人が利用」表示 |
+**Input:**
+- URL or screenshot of current design
+- Specific concerns (if any)
 
-### ボタン・CTA設計
+**UX Design Output:**
+1. **Evaluation** using 8-metric standard
+2. **Prioritized improvements** (fix lowest-scoring metrics first)
+3. **Redesign proposal** (if score < 7.0)
 
-| 課題 | 原則 | 実装 |
-|------|------|------|
-| クリックされない | Visual Hierarchy | 色・サイズで強調 |
-| 迷う | Decoy Effect | 推奨プランを明示 |
-| 押すのが不安 | Loss Aversion | 「無料」「いつでも解約可」 |
+**Template:** [assets/templates/evaluation_report_template.md](assets/templates/evaluation_report_template.md)
 
-### ローディング設計
+### Workflow 4: Create Design System
 
-| 課題 | 原則 | 実装 |
-|------|------|------|
-| 待ち時間が長い | Doherty Threshold | ストリーミング・スケルトン |
-| 進捗が分からない | Labor Illusion | 処理内容を表示 |
-| 完了が分からない | Peak-End Rule | 成功アニメーション |
+**Input from other skills:**
+- **executive:** Scope (full design system vs component library)
+- **marketing:** Brand guidelines (if available)
 
-## アンチパターン
+**UX Design Output:**
+1. **Color palette** (primary, secondary, accent, neutrals, semantic)
+2. **Typography scale** (H1-H6, body, captions)
+3. **Spacing system** (8px grid)
+4. **Component library** (buttons, inputs, cards, modals)
+5. **Icon set** (consistent style, stroke width)
+6. **Documentation** (usage guidelines for each component)
 
-### ❌ ダークパターン
+**Example:** [assets/examples/design_system_example.md](assets/examples/design_system_example.md)
 
-以下は避けるべき操作的なUXパターン:
+## Working Directory
 
-- **Confirmshaming**: 拒否オプションを恥ずかしい文言にする
-- **Hidden Costs**: 最後まで追加料金を隠す
-- **Roach Motel**: 登録は簡単、解約は困難
-- **Trick Questions**: 紛らわしいチェックボックス
+**UX Design Workspace:** `/ai/ux-design/`
+- `wireframe_[page_name].md` - Wireframe specifications
+- `mockup_[page_name].md` - High-fidelity mockups
+- `evaluation_[page].md` - Design evaluations (with UX standard scores)
+- `component_library.md` - Reusable component catalog
 
-### ❌ 過剰な適用
+**Bundled Resources:**
+- `references/design_principles.md` - Brand, colors, typography, spacing
+- `references/accessibility_guidelines.md` - WCAG 2.1 AA compliance (10 requirements)
+- `references/component_library.md` - 10 reusable UI components
+- `references/responsive_design.md` - Breakpoints, mobile-first approach, touch optimization
+- `references/tools_resources.md` - Figma, contrast checkers, design inspiration (25+ tools)
+- `assets/templates/` - 3 design templates (landing page, dashboard, evaluation)
+- `assets/examples/` - Design system example
 
-- Gamificationの乱用（ポイント・バッジの氾濫）
-- Scarcity Effectの嘘（常に「残りわずか」）
-- Nudgeの強制（選択肢がないように見せる）
+**Context Folders (Reference as Needed):**
+- `/ai/frontend/` - React frontend context ([FRONTEND_ARCHITECTURE.md](../../ai/frontend/FRONTEND_ARCHITECTURE.md))
+- `/ai/backend/` - Django backend API specs
+
+**Living Documents (Append Only):**
+- `/ai/CHANGELOG.md` - When updating frontend components/styles
+- `/ai/FEATURE_IMPLEMENTATIONS.md` - When implementing new UI features
+- See [Documentation Guidelines](../../ai/standards/DOCUMENTATION_STANDARD.md)
+
+## Integration with Other Skills
+
+### From Business Skill
+- **Receive:** User personas, use cases, value propositions
+- **Use for:** Understanding audience needs, goals, pain points
+
+### From Marketing Skill
+- **Receive:** Content hierarchy, messaging, CTAs
+- **Use for:** Placing content strategically, writing microcopy
+
+### From Insights Skill
+- **Receive:** Data to visualize, chart types, dashboard requirements
+- **Use for:** Designing data visualizations and dashboards
+
+### To Architect Skill
+- **Deliver:** Design mockups, interaction specs, responsive breakpoints
+- **Expect:** Technical feasibility feedback, implementation effort estimates
+
+### To Executive Skill
+- **Escalate:** Designs that fail quality standard after 3 iterations
+- **Request:** Strategic guidance on design trade-offs
+
+## Best Practices
+
+1. **Always review business personas first** - Design for specific audience
+2. **WCAG AA compliance is non-negotiable** - All designs must pass accessibility
+3. **Clarity over creativity** - Business users prefer simple over flashy
+4. **Always score designs before declaring "done"** - Use 8-metric standard
+5. **Test on mobile** - 50%+ users are on mobile devices
+6. **Use real screenshots or data** - Avoid generic stock photos
+7. **Max 2 font families** - Stick to Inter + JetBrains Mono
+8. **Always check WCAG contrast ratios** - Use WebAIM Contrast Checker
+9. **Progressive disclosure** - Don't overwhelm with too much at once
+10. **Iterate based on feedback** - Design is never "done" on first try
+
+## Common Pitfalls to Avoid
+
+1. **Designing without understanding audience** → Review business personas first
+2. **Ignoring accessibility** → WCAG AA compliance is required, not optional
+3. **Overdesigning** → Business users prefer clarity over creativity
+4. **Skipping self-evaluation** → Always score designs before declaring "done"
+5. **Not testing on mobile** → 50%+ users are on mobile
+6. **Generic stock photos** → Use real screenshots or data visualizations
+7. **Too many fonts** → Max 2 font families (Inter + JetBrains Mono)
+8. **Low-contrast text** → Always check WCAG ratios (4.5:1 for normal, 3:1 for large)
+
+## Success Criteria
+
+A design is **production-ready** when:
+- ✅ UX Standard score ≥ 8.0/10
+- ✅ All metrics ≥ 6/10 (no single metric below 6)
+- ✅ WCAG AA compliant (contrast ratios pass)
+- ✅ Mobile-responsive (tested on 3 devices: phone, tablet, desktop)
+- ✅ Navigation intuitive (3-click rule met)
+- ✅ CTAs clear and prominent
+- ✅ Content scannable (bullets, short paragraphs)
+- ✅ Visual polish (consistent styling, no alignment issues)
+
+## Version History
+
+**v2.0.0** (2025-10-30)
+- Refactored to use progressive disclosure pattern
+- Extracted detailed content to `references/` (5 files) and `assets/` (4 files)
+- Converted to imperative form (removed second-person voice)
+- Reduced from 452 lines to ~290 lines (36% reduction)
+- Added clear workflow sections with templates
+- Enhanced bundled resources with comprehensive guidelines
+
+**v1.0.0** (2025-10-28)
+- Initial UX Design skill
+- Integrated with UX Design Standard (8-metric evaluation)
+- GabeDA-specific design principles
+- Self-evaluation workflow
+
+---
+
+**Last Updated:** 2025-10-30
+**Core Principle:** All designs must meet 8.0/10 UX standard before production
+**Quality Gate:** Self-evaluation → Iteration → Executive escalation if needed

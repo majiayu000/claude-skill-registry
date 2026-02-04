@@ -1,7 +1,7 @@
 {
   "name": "create-pr",
-  "repo": "sensei-hacker/inav-claude",
-  "path": ".claude/skills/create-pr/SKILL.md",
-  "source": "github.com/sensei-hacker/inav-claude",
-  "downloaded_at": "2026-02-02T04:58:19.128666Z"
+  "repo": "FradSer/dotclaude",
+  "path": "github/skills/create-pr/SKILL.md",
+  "source": "github.com/FradSer/dotclaude",
+  "downloaded_at": "2026-02-04T05:21:56.441735Z"
 }

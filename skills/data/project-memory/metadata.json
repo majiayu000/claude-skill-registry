@@ -1,7 +1,7 @@
 {
   "name": "project-memory",
-  "repo": "BerryKuipers/claude-code-toolkit",
-  "path": ".claude/skills/memory/project-memory/SKILL.md",
-  "source": "github.com/BerryKuipers/claude-code-toolkit",
-  "downloaded_at": "2026-02-02T03:48:06.286241Z"
+  "repo": "SpillwaveSolutions/code_agent_context_hooks",
+  "path": ".opencode/skill/project-memory/SKILL.md",
+  "source": "github.com/SpillwaveSolutions/code_agent_context_hooks",
+  "downloaded_at": "2026-02-04T05:05:49.844885Z"
 }

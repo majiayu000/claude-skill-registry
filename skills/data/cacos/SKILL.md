@@ -28,10 +28,10 @@ Activate the full Claude Code native Agentic Creator OS for sophisticated multi-
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  AGENTS (via Task tool):                                   │
-│  • Technical Translator - AI accessibility for creators    │
-│  • Frequency Alchemist - Music production with Suno       │
+│  • Code Architect - System design and implementation      │
+│  • Sonic Engineer - Music production with Suno            │
 │  • Creation Engine - Content & product development        │
-│  • Soul Strategist - Transformation journey design        │
+│  • Luminor Oracle - Strategic planning and foresight      │
 │                                                             │
 │  SKILLS (via /skill):                                      │
 │  • 52 skills across 6 categories                          │
@@ -54,10 +54,10 @@ Activate the full Claude Code native Agentic Creator OS for sophisticated multi-
 
 ### Specific Agent
 ```
-"Activate Technical Translator for [task]"
-"Channel Frequency Alchemist for [session]"
+"Activate Code Architect for [task]"
+"Engage Sonic Engineer for [session]"
 "Engage Creation Engine for [content]"
-"Consult Soul Strategist for [guidance]"
+"Consult Luminor Oracle for [guidance]"
 ```
 
 ### Parallel Execution
@@ -124,10 +124,10 @@ CACOS integrates with:
 
 ### Book Writing
 ```
-1. Soul Strategist → Define concept and audience
+1. Luminor Oracle → Define concept and audience
 2. Creation Engine → Draft chapters
-3. Technical Translator → Simplify complex concepts
-4. Frequency Alchemist → Create companion music
+3. Code Architect → Technical accuracy review
+4. Sonic Engineer → Create companion music
 ```
 
 ### Website Development

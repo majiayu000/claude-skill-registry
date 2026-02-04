@@ -1,503 +1,759 @@
 ---
 name: rag-architecture
-description: Retrieval-Augmented Generation (RAG) system design patterns, chunking strategies, embedding models, retrieval techniques, and context assembly. Use when designing RAG pipelines, improving retrieval quality, or building knowledge-grounded LLM applications.
-allowed-tools: Read, Glob, Grep
+description: "Use when building retrieval-augmented generation systems. Covers chunking strategies, embedding models, vector databases, retrieval patterns, and hybrid search. Apply when adding knowledge bases, document Q&A, or semantic search to applications."
 ---
 
 # RAG Architecture
 
+## Core Principle
+
+RAG quality depends on retrieval quality. Optimize the retrieval pipeline before tuning the generation.
+
 ## When to Use This Skill
 
-Use this skill when:
+- Building document Q&A systems
+- Adding knowledge bases to chatbots
+- Implementing semantic search
+- Creating context-aware AI features
+- Reducing hallucinations with grounded responses
+- Building enterprise search systems
 
-- Designing RAG pipelines for LLM applications
-- Choosing chunking and embedding strategies
-- Optimizing retrieval quality and relevance
-- Building knowledge-grounded AI systems
-- Implementing hybrid search (dense + sparse)
-- Designing multi-stage retrieval pipelines
+## The Iron Law
 
-**Keywords:** RAG, retrieval-augmented generation, embeddings, chunking, vector search, semantic search, context window, grounding, knowledge base, hybrid search, reranking, BM25, dense retrieval
+**GARBAGE IN, GARBAGE OUT.**
 
-## RAG Architecture Overview
+If your chunks are poorly structured or your embeddings don't capture semantics, no amount of prompt engineering will save you.
 
-```text
-┌─────────────────────────────────────────────────────────────────────┐
-│                       RAG Pipeline                                  │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐  │
-│  │   Ingestion  │    │   Indexing   │    │    Vector Store      │  │
-│  │   Pipeline   │───▶│   Pipeline   │───▶│    (Embeddings)      │  │
-│  └──────────────┘    └──────────────┘    └──────────────────────┘  │
-│         │                   │                       │               │
-│    Documents           Chunks +                 Indexed             │
-│                       Embeddings               Vectors              │
-│                                                     │               │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────────────┐  │
-│  │    Query     │    │  Retrieval   │    │   Context Assembly   │  │
-│  │  Processing  │───▶│   Engine     │───▶│   + Generation       │  │
-│  └──────────────┘    └──────────────┘    └──────────────────────┘  │
-│         │                   │                       │               │
-│    User Query          Top-K Chunks            LLM Response         │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
+## Why RAG?
+
+**Benefits:**
+- Grounds LLM responses in actual data
+- Reduces hallucinations significantly
+- Enables domain-specific knowledge
+- Keeps data private (no fine-tuning needed)
+- Easy to update (just re-index)
+- Cost-effective vs fine-tuning
+
+**Without RAG:**
+- LLM makes up facts
+- Knowledge cutoff limits usefulness
+- No access to private data
+- Expensive fine-tuning for updates
+- Generic responses
+
+## RAG Pipeline Overview
+
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Documents  │───▶│  Chunking   │───▶│  Embedding  │
+└─────────────┘    └─────────────┘    └─────────────┘
+                                             │
+                                             ▼
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Response   │◀───│     LLM     │◀───│  Retrieval  │
+└─────────────┘    └─────────────┘    └─────────────┘
+                          ▲
+                          │
+                   ┌─────────────┐
+                   │    Query    │
+                   └─────────────┘
 ```
 
-## Document Ingestion Pipeline
+## Step 1: Document Ingestion
 
-### Document Processing Steps
+### Supported Formats
 
-```text
-Raw Documents
-      │
-      ▼
-┌─────────────┐
-│   Extract   │ ← PDF, HTML, DOCX, Markdown
-│   Content   │
-└─────────────┘
-      │
-      ▼
-┌─────────────┐
-│   Clean &   │ ← Remove boilerplate, normalize
-│  Normalize  │
-└─────────────┘
-      │
-      ▼
-┌─────────────┐
-│   Chunk     │ ← Split into retrievable units
-│  Documents  │
-└─────────────┘
-      │
-      ▼
-┌─────────────┐
-│  Generate   │ ← Create vector representations
-│ Embeddings  │
-└─────────────┘
-      │
-      ▼
-┌─────────────┐
-│   Store     │ ← Persist vectors + metadata
-│  in Index   │
-└─────────────┘
+```python
+# Common document loaders
+SUPPORTED_FORMATS = {
+    'text': ['.txt', '.md', '.rst'],
+    'documents': ['.pdf', '.docx', '.doc', '.pptx'],
+    'code': ['.py', '.js', '.ts', '.java', '.go'],
+    'data': ['.csv', '.json', '.xml'],
+    'web': ['html', 'urls', 'sitemaps'],
+}
 ```
 
-## Chunking Strategies
+### Pre-processing
 
-### Strategy Comparison
+```python
+def preprocess_document(doc):
+    """Clean and prepare document for chunking."""
+    # 1. Extract text
+    text = extract_text(doc)
 
-| Strategy | Description | Best For | Chunk Size |
-| -------- | ----------- | -------- | ---------- |
-| **Fixed-size** | Split by token/character count | Simple documents | 256-512 tokens |
-| **Sentence-based** | Split at sentence boundaries | Narrative text | Variable |
-| **Paragraph-based** | Split at paragraph boundaries | Structured docs | Variable |
-| **Semantic** | Split by topic/meaning | Long documents | Variable |
-| **Recursive** | Hierarchical splitting | Mixed content | Configurable |
-| **Document-specific** | Custom per doc type | Specialized (code, tables) | Variable |
+    # 2. Clean artifacts
+    text = remove_headers_footers(text)
+    text = normalize_whitespace(text)
+    text = fix_encoding_issues(text)
 
-### Chunking Decision Tree
+    # 3. Preserve structure
+    sections = identify_sections(text)
 
-```text
-What type of content?
-├── Code
-│   └── AST-based or function-level chunking
-├── Tables/Structured
-│   └── Keep tables intact, chunk surrounding text
-├── Long narrative
-│   └── Semantic or recursive chunking
-├── Short documents (<1 page)
-│   └── Whole document as chunk
-└── Mixed content
-    └── Recursive with type-specific handlers
+    # 4. Extract metadata
+    metadata = {
+        'source': doc.path,
+        'title': extract_title(doc),
+        'date': extract_date(doc),
+        'type': doc.type,
+    }
+
+    return text, sections, metadata
 ```
 
-### Chunk Overlap
+## Step 2: Chunking Strategies
 
-```text
-Without Overlap:
-[Chunk 1: "The quick brown"] [Chunk 2: "fox jumps over"]
-                             ↑
-               Information lost at boundary
+### Strategy Selection
 
-With Overlap (20%):
-[Chunk 1: "The quick brown fox"]
-                    [Chunk 2: "brown fox jumps over"]
-                         ↑
-              Context preserved across boundaries
+| Content Type | Strategy | Chunk Size | Overlap |
+|--------------|----------|------------|---------|
+| Documentation | Semantic | 500-1000 | 100-200 |
+| Code | Function/Class | Varies | Minimal |
+| Legal/Contracts | Paragraph | 300-500 | 50-100 |
+| Chat logs | Message groups | 5-10 msgs | 2-3 msgs |
+| Q&A pairs | Per pair | Full pair | None |
+
+### Fixed-Size Chunking
+
+```python
+def fixed_size_chunk(text, chunk_size=500, overlap=100):
+    """Simple but effective for uniform content."""
+    chunks = []
+    start = 0
+
+    while start < len(text):
+        end = start + chunk_size
+        chunk = text[start:end]
+
+        # Don't cut mid-word
+        if end < len(text):
+            last_space = chunk.rfind(' ')
+            if last_space > chunk_size * 0.8:
+                chunk = chunk[:last_space]
+                end = start + last_space
+
+        chunks.append(chunk.strip())
+        start = end - overlap
+
+    return chunks
 ```
 
-**Recommended overlap:** 10-20% of chunk size
+### Semantic Chunking
 
-### Chunk Size Trade-offs
+```python
+def semantic_chunk(text, max_chunk_size=1000):
+    """Chunk by semantic boundaries (paragraphs, sections)."""
+    # Split by semantic boundaries
+    paragraphs = text.split('\n\n')
 
-```text
-Smaller Chunks (128-256 tokens)        Larger Chunks (512-1024 tokens)
-├── More precise retrieval             ├── More context per chunk
-├── Less context per chunk             ├── May include irrelevant content
-├── More chunks to search              ├── Fewer chunks to search
-├── Better for factoid Q&A             ├── Better for summarization
-└── Higher retrieval recall            └── Higher retrieval precision
+    chunks = []
+    current_chunk = []
+    current_size = 0
+
+    for para in paragraphs:
+        para_size = len(para)
+
+        if current_size + para_size > max_chunk_size and current_chunk:
+            chunks.append('\n\n'.join(current_chunk))
+            current_chunk = []
+            current_size = 0
+
+        current_chunk.append(para)
+        current_size += para_size
+
+    if current_chunk:
+        chunks.append('\n\n'.join(current_chunk))
+
+    return chunks
 ```
 
-## Embedding Models
+### Recursive Chunking (LangChain style)
 
-### Model Comparison
+```python
+def recursive_chunk(text, chunk_size=500, separators=None):
+    """Recursively split on increasingly fine separators."""
+    if separators is None:
+        separators = ['\n\n', '\n', '. ', ' ', '']
 
-| Model | Dimensions | Context | Strengths |
-| ----- | ---------- | ------- | --------- |
-| **OpenAI text-embedding-3-large** | 3072 | 8K | High quality, expensive |
-| **OpenAI text-embedding-3-small** | 1536 | 8K | Good quality/cost ratio |
-| **Cohere embed-v3** | 1024 | 512 | Multilingual, fast |
-| **BGE-large** | 1024 | 512 | Open source, competitive |
-| **E5-large-v2** | 1024 | 512 | Open source, instruction-tuned |
-| **GTE-large** | 1024 | 512 | Alibaba, good for Chinese |
-| **Sentence-BERT** | 768 | 512 | Classic, well-understood |
+    separator = separators[0]
+    splits = text.split(separator)
 
-### Embedding Selection
+    chunks = []
+    current = []
+    current_len = 0
 
-```text
-Need best quality, cost OK?
-├── Yes → OpenAI text-embedding-3-large
-└── No
-    └── Need self-hosted/open source?
-        ├── Yes → BGE-large or E5-large-v2
-        └── No
-            └── Need multilingual?
-                ├── Yes → Cohere embed-v3
-                └── No → OpenAI text-embedding-3-small
+    for split in splits:
+        if current_len + len(split) > chunk_size:
+            if current:
+                chunk_text = separator.join(current)
+                # Recursively split if still too large
+                if len(chunk_text) > chunk_size and len(separators) > 1:
+                    chunks.extend(recursive_chunk(
+                        chunk_text, chunk_size, separators[1:]
+                    ))
+                else:
+                    chunks.append(chunk_text)
+            current = [split]
+            current_len = len(split)
+        else:
+            current.append(split)
+            current_len += len(split) + len(separator)
+
+    if current:
+        chunks.append(separator.join(current))
+
+    return chunks
 ```
 
-### Embedding Optimization
+### Code-Aware Chunking
 
-| Technique | Description | When to Use |
-| --------- | ----------- | ----------- |
-| **Matryoshka embeddings** | Truncatable to smaller dims | Memory-constrained |
-| **Quantized embeddings** | INT8/binary embeddings | Large-scale search |
-| **Instruction-tuned** | Prefix with task instruction | Specialized retrieval |
-| **Fine-tuned embeddings** | Domain-specific training | Specialized domains |
+```python
+def code_chunk(source_code, language='python'):
+    """Chunk code by logical units."""
+    import ast
 
-## Retrieval Strategies
+    if language == 'python':
+        tree = ast.parse(source_code)
+        chunks = []
 
-### Dense Retrieval (Semantic Search)
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
+                chunk = ast.get_source_segment(source_code, node)
+                chunks.append({
+                    'content': chunk,
+                    'type': type(node).__name__,
+                    'name': node.name,
+                    'line_start': node.lineno,
+                })
 
-```text
-Query: "How to deploy containers"
-         │
-         ▼
-    ┌─────────┐
-    │ Embed   │
-    │ Query   │
-    └─────────┘
-         │
-         ▼
-    ┌─────────────────────────────────┐
-    │ Vector Similarity Search        │
-    │ (Cosine, Dot Product, L2)       │
-    └─────────────────────────────────┘
-         │
-         ▼
-    Top-K semantically similar chunks
+        return chunks
 ```
 
-### Sparse Retrieval (BM25/TF-IDF)
+### Chunking Best Practices
 
-```text
-Query: "Kubernetes pod deployment YAML"
-         │
-         ▼
-    ┌─────────┐
-    │Tokenize │
-    │ + Score │
-    └─────────┘
-         │
-         ▼
-    ┌─────────────────────────────────┐
-    │ BM25 Ranking                    │
-    │ (Term frequency × IDF)          │
-    └─────────────────────────────────┘
-         │
-         ▼
-    Top-K lexically matching chunks
+```
+DO:
+- Keep related content together
+- Include context in each chunk
+- Preserve code blocks intact
+- Add metadata for filtering
+- Test with real queries
+
+DON'T:
+- Cut mid-sentence
+- Split code functions
+- Ignore document structure
+- Use one-size-fits-all
+- Forget about overlap
 ```
 
-### Hybrid Search (Best of Both)
+## Step 3: Embedding Models
 
-```text
-Query ──┬──▶ Dense Search ──┬──▶ Fusion ──▶ Final Ranking
-        │                   │      │
-        └──▶ Sparse Search ─┘      │
-                                   │
-        Fusion Methods:            ▼
-        • RRF (Reciprocal Rank Fusion)
-        • Linear combination
-        • Learned reranking
+### Model Selection
+
+| Model | Dimensions | Speed | Quality | Cost |
+|-------|------------|-------|---------|------|
+| OpenAI text-embedding-3-small | 1536 | Fast | Good | $0.02/1M |
+| OpenAI text-embedding-3-large | 3072 | Medium | Best | $0.13/1M |
+| Cohere embed-v3 | 1024 | Fast | Good | $0.10/1M |
+| Voyage-2 | 1024 | Medium | Excellent | $0.10/1M |
+| BGE-large (local) | 1024 | Varies | Good | Free |
+| all-MiniLM-L6 (local) | 384 | Fast | Decent | Free |
+
+### Embedding Implementation
+
+```python
+from openai import OpenAI
+
+client = OpenAI()
+
+def embed_texts(texts, model="text-embedding-3-small"):
+    """Embed multiple texts efficiently."""
+    # Batch for efficiency (max 2048 texts per call)
+    embeddings = []
+    batch_size = 2048
+
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i:i + batch_size]
+        response = client.embeddings.create(
+            model=model,
+            input=batch
+        )
+        embeddings.extend([e.embedding for e in response.data])
+
+    return embeddings
+
+def embed_query(query, model="text-embedding-3-small"):
+    """Embed a single query."""
+    response = client.embeddings.create(
+        model=model,
+        input=query
+    )
+    return response.data[0].embedding
 ```
 
-### Reciprocal Rank Fusion (RRF)
+### Local Embedding (Cost-Free)
 
-```text
-RRF Score = Σ 1 / (k + rank_i)
+```python
+from sentence_transformers import SentenceTransformer
 
-Where:
-- k = constant (typically 60)
-- rank_i = rank in each retrieval result
+# Load model once
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
-Example:
-Doc A: Dense rank=1, Sparse rank=5
-RRF(A) = 1/(60+1) + 1/(60+5) = 0.0164 + 0.0154 = 0.0318
-
-Doc B: Dense rank=3, Sparse rank=1
-RRF(B) = 1/(60+3) + 1/(60+1) = 0.0159 + 0.0164 = 0.0323
-
-Result: Doc B ranks higher (better combined relevance)
+def embed_local(texts):
+    """Free local embedding."""
+    return model.encode(texts, convert_to_numpy=True)
 ```
 
-## Multi-Stage Retrieval
+## Step 4: Vector Database Selection
 
-### Two-Stage Pipeline
+### Database Comparison
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│ Stage 1: Recall (Fast, High Recall)                     │
-│ • ANN search (HNSW, IVF)                                │
-│ • Retrieve top-100 candidates                           │
-│ • Latency: 10-50ms                                      │
-└─────────────────────────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────┐
-│ Stage 2: Rerank (Slow, High Precision)                  │
-│ • Cross-encoder or LLM reranking                        │
-│ • Score top-100 → return top-10                         │
-│ • Latency: 100-500ms                                    │
-└─────────────────────────────────────────────────────────┘
+| Database | Type | Scale | Features | Best For |
+|----------|------|-------|----------|----------|
+| **Pinecone** | Managed | Billions | Metadata, namespaces | Production, scale |
+| **Weaviate** | Self/Managed | Millions | Hybrid search, GraphQL | Flexibility |
+| **Qdrant** | Self/Managed | Millions | Filtering, payloads | Performance |
+| **ChromaDB** | Embedded | Thousands | Simple API | Prototyping |
+| **pgvector** | Extension | Millions | SQL integration | Existing Postgres |
+| **Milvus** | Self-hosted | Billions | Enterprise features | Large scale |
+
+### ChromaDB (Quick Start)
+
+```python
+import chromadb
+
+# Initialize
+client = chromadb.Client()
+collection = client.create_collection("documents")
+
+# Add documents
+collection.add(
+    documents=["Doc 1 content", "Doc 2 content"],
+    metadatas=[{"source": "file1"}, {"source": "file2"}],
+    ids=["doc1", "doc2"]
+)
+
+# Query
+results = collection.query(
+    query_texts=["search query"],
+    n_results=5
+)
 ```
 
-### Reranking Options
+### Pinecone (Production)
 
-| Reranker | Latency | Quality | Cost |
-| -------- | ------- | ------- | ---- |
-| **Cross-encoder (local)** | Medium | High | Compute |
-| **Cohere Rerank** | Fast | High | API cost |
-| **LLM-based rerank** | Slow | Highest | High API cost |
-| **BGE-reranker** | Fast | Good | Compute |
+```python
+from pinecone import Pinecone
 
-## Context Assembly
+pc = Pinecone(api_key="your-api-key")
+index = pc.Index("your-index")
 
-### Context Window Management
+# Upsert vectors
+index.upsert(
+    vectors=[
+        {
+            "id": "doc1",
+            "values": embedding_vector,
+            "metadata": {"source": "file1", "category": "docs"}
+        }
+    ],
+    namespace="production"
+)
 
-```text
-Context Budget: 128K tokens
-├── System prompt: 500 tokens (fixed)
-├── Conversation history: 4K tokens (sliding window)
-├── Retrieved context: 8K tokens (dynamic)
-└── Generation buffer: ~115K tokens (available)
-
-Strategy: Maximize retrieved context quality within budget
+# Query with metadata filter
+results = index.query(
+    vector=query_embedding,
+    top_k=10,
+    filter={"category": {"$eq": "docs"}},
+    include_metadata=True,
+    namespace="production"
+)
 ```
 
-### Context Assembly Strategies
+### pgvector (Postgres)
 
-| Strategy | Description | When to Use |
-| -------- | ----------- | ----------- |
-| **Simple concatenation** | Join top-K chunks | Small context, simple Q&A |
-| **Relevance-ordered** | Most relevant first | General retrieval |
-| **Chronological** | Time-ordered | Temporal queries |
-| **Hierarchical** | Summary + details | Long-form generation |
-| **Interleaved** | Mix sources | Multi-source queries |
+```sql
+-- Enable extension
+CREATE EXTENSION vector;
 
-### Lost-in-the-Middle Problem
+-- Create table
+CREATE TABLE documents (
+    id SERIAL PRIMARY KEY,
+    content TEXT,
+    embedding vector(1536),
+    metadata JSONB
+);
 
-```text
-LLM Attention Pattern:
-┌─────────────────────────────────────────────────────────┐
-│ Beginning           Middle            End               │
-│    ████              ░░░░             ████              │
-│  High attention   Low attention   High attention        │
-└─────────────────────────────────────────────────────────┘
+-- Create index for fast search
+CREATE INDEX ON documents
+USING ivfflat (embedding vector_cosine_ops)
+WITH (lists = 100);
 
-Mitigation:
-1. Put most relevant at beginning AND end
-2. Use shorter context windows when possible
-3. Use hierarchical summarization
-4. Fine-tune for long-context attention
+-- Query
+SELECT content, metadata,
+       1 - (embedding <=> $1) AS similarity
+FROM documents
+ORDER BY embedding <=> $1
+LIMIT 10;
 ```
 
-## Advanced RAG Patterns
+## Step 5: Retrieval Strategies
 
-### Query Transformation
+### Basic Similarity Search
 
-```text
-Original Query: "Tell me about the project"
-                           │
-         ┌─────────────────┼─────────────────┐
-         ▼                 ▼                 ▼
-    ┌─────────┐      ┌──────────┐     ┌──────────┐
-    │ HyDE    │      │ Query    │     │ Sub-query│
-    │ (Hypo   │      │ Expansion│     │ Decomp.  │
-    │ Doc)    │      │          │     │          │
-    └─────────┘      └──────────┘     └──────────┘
-         │                 │                 │
-         ▼                 ▼                 ▼
-    Hypothetical      "project,        "What is the
-    answer to         goals,           project scope?"
-    embed             timeline,        "What are the
-                      deliverables"    deliverables?"
+```python
+def retrieve_similar(query, k=5):
+    """Basic vector similarity search."""
+    query_embedding = embed_query(query)
+
+    results = vector_db.query(
+        vector=query_embedding,
+        top_k=k
+    )
+
+    return [r.content for r in results]
 ```
 
-### HyDE (Hypothetical Document Embeddings)
+### Hybrid Search (Vector + Keyword)
 
-```text
-Query: "How does photosynthesis work?"
-                │
-                ▼
-        ┌───────────────┐
-        │ LLM generates │
-        │ hypothetical  │
-        │ answer        │
-        └───────────────┘
-                │
-                ▼
-"Photosynthesis is the process by which
-plants convert sunlight into energy..."
-                │
-                ▼
-        ┌───────────────┐
-        │ Embed hypo    │
-        │ document      │
-        └───────────────┘
-                │
-                ▼
-    Search with hypothetical embedding
-    (Better matches actual documents)
+```python
+def hybrid_search(query, k=5, alpha=0.5):
+    """Combine semantic and keyword search."""
+    # Semantic search
+    semantic_results = vector_search(query, k=k*2)
+
+    # Keyword search (BM25)
+    keyword_results = bm25_search(query, k=k*2)
+
+    # Reciprocal Rank Fusion
+    combined = reciprocal_rank_fusion(
+        [semantic_results, keyword_results],
+        weights=[alpha, 1-alpha]
+    )
+
+    return combined[:k]
+
+def reciprocal_rank_fusion(result_lists, weights, k=60):
+    """RRF scoring for combining rankings."""
+    scores = {}
+
+    for results, weight in zip(result_lists, weights):
+        for rank, doc in enumerate(results):
+            doc_id = doc.id
+            if doc_id not in scores:
+                scores[doc_id] = 0
+            scores[doc_id] += weight * (1 / (k + rank + 1))
+
+    sorted_docs = sorted(scores.items(), key=lambda x: -x[1])
+    return [doc_id for doc_id, score in sorted_docs]
 ```
 
-### Self-RAG (Retrieval-Augmented LM with Self-Reflection)
+### Multi-Query Retrieval
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│ 1. Generate initial response                            │
-│ 2. Decide: Need more retrieval? (critique token)        │
-│    ├── Yes → Retrieve more, regenerate                  │
-│    └── No → Check factuality (isRel, isSup tokens)      │
-│ 3. Verify claims against sources                        │
-│ 4. Regenerate if needed                                 │
-│ 5. Return verified response                             │
-└─────────────────────────────────────────────────────────┘
+```python
+def multi_query_retrieve(query, k=5):
+    """Generate query variations for better recall."""
+    # Generate variations
+    variations = generate_query_variations(query)
+
+    all_results = []
+    for q in [query] + variations:
+        results = vector_search(q, k=k)
+        all_results.extend(results)
+
+    # Dedupe and rank
+    unique = deduplicate_by_id(all_results)
+    return rerank(query, unique)[:k]
+
+def generate_query_variations(query):
+    """Use LLM to generate query variations."""
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{
+            "role": "user",
+            "content": f"""Generate 3 alternative phrasings of this search query.
+            Return only the queries, one per line.
+
+            Query: {query}"""
+        }]
+    )
+    return response.choices[0].message.content.strip().split('\n')
 ```
 
-### Agentic RAG
+### Contextual Retrieval
 
-```text
-Query: "Compare Q3 revenue across regions"
-                │
-                ▼
-        ┌───────────────┐
-        │ Query Agent   │
-        │ (Plan steps)  │
-        └───────────────┘
-                │
-    ┌───────────┼───────────┐
-    ▼           ▼           ▼
-┌───────┐   ┌───────┐   ┌───────┐
-│Search │   │Search │   │Search │
-│ EMEA  │   │ APAC  │   │ AMER  │
-│ docs  │   │ docs  │   │ docs  │
-└───────┘   └───────┘   └───────┘
-    │           │           │
-    └───────────┼───────────┘
-                ▼
-        ┌───────────────┐
-        │  Synthesize   │
-        │  Comparison   │
-        └───────────────┘
+```python
+def contextual_retrieve(query, conversation_history, k=5):
+    """Consider conversation context for retrieval."""
+    # Rewrite query with context
+    contextualized_query = rewrite_with_context(
+        query,
+        conversation_history
+    )
+
+    return vector_search(contextualized_query, k=k)
+
+def rewrite_with_context(query, history):
+    """Make query self-contained using conversation context."""
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{
+            "role": "system",
+            "content": "Rewrite the query to be self-contained, incorporating relevant context from the conversation."
+        }, {
+            "role": "user",
+            "content": f"Conversation:\n{history}\n\nQuery: {query}"
+        }]
+    )
+    return response.choices[0].message.content
+```
+
+## Step 6: Reranking
+
+### Cross-Encoder Reranking
+
+```python
+from sentence_transformers import CrossEncoder
+
+reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+def rerank(query, documents, top_k=5):
+    """Rerank retrieved documents for relevance."""
+    pairs = [[query, doc.content] for doc in documents]
+    scores = reranker.predict(pairs)
+
+    ranked = sorted(
+        zip(documents, scores),
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    return [doc for doc, score in ranked[:top_k]]
+```
+
+### Cohere Rerank API
+
+```python
+import cohere
+
+co = cohere.Client("your-api-key")
+
+def cohere_rerank(query, documents, top_k=5):
+    """Use Cohere's rerank endpoint."""
+    response = co.rerank(
+        model="rerank-english-v3.0",
+        query=query,
+        documents=[d.content for d in documents],
+        top_n=top_k
+    )
+
+    return [documents[r.index] for r in response.results]
+```
+
+## Step 7: Generation with Context
+
+### Basic RAG Prompt
+
+```python
+def generate_response(query, retrieved_docs):
+    """Generate response using retrieved context."""
+    context = "\n\n".join([
+        f"[Source: {doc.metadata['source']}]\n{doc.content}"
+        for doc in retrieved_docs
+    ])
+
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {
+                "role": "system",
+                "content": """Answer the question based on the provided context.
+                If the context doesn't contain the answer, say so.
+                Cite sources using [Source: filename] format."""
+            },
+            {
+                "role": "user",
+                "content": f"Context:\n{context}\n\nQuestion: {query}"
+            }
+        ]
+    )
+
+    return response.choices[0].message.content
+```
+
+### Streaming Response
+
+```python
+def stream_rag_response(query, retrieved_docs):
+    """Stream the RAG response for better UX."""
+    context = format_context(retrieved_docs)
+
+    stream = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": RAG_SYSTEM_PROMPT},
+            {"role": "user", "content": f"Context:\n{context}\n\nQuestion: {query}"}
+        ],
+        stream=True
+    )
+
+    for chunk in stream:
+        if chunk.choices[0].delta.content:
+            yield chunk.choices[0].delta.content
+```
+
+## Advanced Patterns
+
+### Parent-Child Chunking
+
+```python
+def parent_child_index(document):
+    """Index small chunks but retrieve larger context."""
+    # Create parent chunks (larger)
+    parent_chunks = semantic_chunk(document, max_size=2000)
+
+    # Create child chunks (smaller, for retrieval)
+    for i, parent in enumerate(parent_chunks):
+        child_chunks = fixed_size_chunk(parent, chunk_size=200)
+
+        for j, child in enumerate(child_chunks):
+            index_chunk(
+                content=child,
+                metadata={
+                    'parent_id': f'parent_{i}',
+                    'parent_content': parent,  # Store parent
+                }
+            )
+
+def retrieve_with_parent(query, k=3):
+    """Retrieve children, return parents."""
+    results = vector_search(query, k=k*3)
+
+    # Get unique parents
+    parent_ids = list(set(r.metadata['parent_id'] for r in results))
+
+    # Return parent content
+    return [get_parent_content(pid) for pid in parent_ids[:k]]
+```
+
+### Self-Querying Retriever
+
+```python
+def self_query_retrieve(natural_query):
+    """Extract structured filters from natural language."""
+    # Use LLM to parse query
+    parsed = parse_query_with_llm(natural_query)
+
+    # Example: "Show me Python tutorials from 2024"
+    # parsed = {
+    #     "query": "Python tutorials",
+    #     "filters": {"language": "python", "year": 2024}
+    # }
+
+    return vector_search(
+        query=parsed["query"],
+        filter=parsed["filters"]
+    )
 ```
 
 ## Evaluation Metrics
 
 ### Retrieval Metrics
 
-| Metric | Description | Target |
-| ------ | ----------- | ------ |
-| **Recall@K** | % relevant docs in top-K | >80% |
-| **Precision@K** | % of top-K that are relevant | >60% |
-| **MRR (Mean Reciprocal Rank)** | 1/rank of first relevant | >0.5 |
-| **NDCG** | Graded relevance ranking | >0.7 |
+```python
+def evaluate_retrieval(queries, ground_truth):
+    """Evaluate retrieval quality."""
+    metrics = {
+        'precision@k': [],
+        'recall@k': [],
+        'mrr': [],  # Mean Reciprocal Rank
+    }
 
-### End-to-End Metrics
+    for query, relevant_ids in zip(queries, ground_truth):
+        retrieved = retrieve(query, k=10)
+        retrieved_ids = [r.id for r in retrieved]
 
-| Metric | Description | Target |
-| ------ | ----------- | ------ |
-| **Answer correctness** | Is the answer factually correct? | >90% |
-| **Faithfulness** | Is the answer grounded in context? | >95% |
-| **Answer relevance** | Does it answer the question? | >90% |
-| **Context relevance** | Is retrieved context relevant? | >80% |
+        # Precision@K
+        relevant_retrieved = len(set(retrieved_ids) & set(relevant_ids))
+        metrics['precision@k'].append(relevant_retrieved / len(retrieved_ids))
 
-### Evaluation Framework
+        # Recall@K
+        metrics['recall@k'].append(relevant_retrieved / len(relevant_ids))
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│                RAG Evaluation Pipeline                  │
-├─────────────────────────────────────────────────────────┤
-│ 1. Query Set: Representative questions                  │
-│ 2. Ground Truth: Expected answers + source docs         │
-│ 3. Metrics:                                             │
-│    • Retrieval: Recall@K, MRR, NDCG                     │
-│    • Generation: Correctness, Faithfulness              │
-│ 4. A/B Testing: Compare configurations                  │
-│ 5. Error Analysis: Identify failure patterns            │
-└─────────────────────────────────────────────────────────┘
+        # MRR
+        for i, rid in enumerate(retrieved_ids):
+            if rid in relevant_ids:
+                metrics['mrr'].append(1 / (i + 1))
+                break
+        else:
+            metrics['mrr'].append(0)
+
+    return {k: sum(v)/len(v) for k, v in metrics.items()}
 ```
 
-## Common Failure Modes
+### End-to-End Evaluation
 
-| Failure Mode | Cause | Mitigation |
-| ------------ | ----- | ---------- |
-| **Retrieval miss** | Query-doc mismatch | Hybrid search, query expansion |
-| **Wrong chunk** | Poor chunking | Better segmentation, overlap |
-| **Hallucination** | Poor grounding | Faithfulness training, citations |
-| **Lost context** | Long-context issues | Hierarchical, summarization |
-| **Stale data** | Outdated index | Incremental updates, TTL |
+```python
+def evaluate_rag(test_cases):
+    """Evaluate full RAG pipeline."""
+    results = []
 
-## Scaling Considerations
+    for case in test_cases:
+        response = rag_pipeline(case['question'])
 
-### Index Scaling
+        results.append({
+            'question': case['question'],
+            'expected': case['expected_answer'],
+            'actual': response,
+            'relevance': judge_relevance(response, case['expected_answer']),
+            'faithfulness': judge_faithfulness(response, retrieved_context),
+        })
 
-| Scale | Approach |
-| ----- | -------- |
-| <1M docs | Single node, exact search |
-| 1-10M docs | Single node, HNSW |
-| 10-100M docs | Distributed, sharded |
-| >100M docs | Distributed + aggressive filtering |
-
-### Latency Budget
-
-```text
-Typical RAG Pipeline Latency:
-
-Query embedding:     10-50ms
-Vector search:       20-100ms
-Reranking:          100-300ms
-LLM generation:     500-2000ms
-────────────────────────────
-Total:              630-2450ms
-
-Target p95: <3 seconds for interactive use
+    return results
 ```
 
-## Related Skills
+## Common Mistakes
 
-- `llm-serving-patterns` - LLM inference infrastructure
-- `vector-databases` - Vector store selection and optimization
-- `ml-system-design` - End-to-end ML pipeline design
-- `estimation-techniques` - Capacity planning for RAG systems
+| Mistake | Impact | Fix |
+|---------|--------|-----|
+| Chunks too small | Lost context | Increase size, add overlap |
+| Chunks too large | Noise in retrieval | Decrease size, semantic split |
+| Wrong embedding model | Poor retrieval | Match model to content type |
+| No metadata | Can't filter | Add source, date, category |
+| Ignoring structure | Broken code/tables | Use format-aware chunking |
+| No reranking | Irrelevant results | Add cross-encoder reranker |
 
-## Version History
+## Integration with Skills
 
-- v1.0.0 (2025-12-26): Initial release - RAG architecture patterns for systems design
+**Use with:**
+- `llm-integration` - API patterns for embeddings and generation
+- `agentic-design` - RAG as a tool in agent systems
+- `test-driven-development` - Test retrieval quality
+
+## Checklist
+
+Before deploying RAG:
+- [ ] Document formats properly handled
+- [ ] Chunking strategy tested with real queries
+- [ ] Embedding model appropriate for domain
+- [ ] Vector database can handle scale
+- [ ] Metadata indexed for filtering
+- [ ] Retrieval quality measured
+- [ ] Reranking improves results
+- [ ] Response cites sources
+- [ ] Latency acceptable
+- [ ] Cost estimated
+
+## Authority
+
+**Based on:**
+- Anthropic RAG best practices
+- OpenAI cookbook patterns
+- LangChain documentation
+- Academic research on dense retrieval
+- Production systems at scale
 
 ---
 
-## Last Updated
-
-**Date:** 2025-12-26
+**Bottom Line**: RAG quality = Retrieval quality. Invest in chunking, embeddings, and retrieval before optimizing prompts. Test with real queries, measure retrieval metrics, iterate.

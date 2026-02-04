@@ -11,6 +11,12 @@ last_optimized: 2026-01-21
 dependencies: [visual-testing-advanced, security-testing, accessibility-testing]
 quick_reference_card: true
 tags: [security, visual-testing, pii, accessibility, wcag, parallel-viewport, regression]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/security-visual-testing.yaml
+
 ---
 
 # Security Visual Testing

@@ -1,9 +1,6 @@
 ---
 name: issue-decomposition
 description: Use when an issue is too large for a single task - breaks into linked sub-issues with full documentation, ensuring manageable work units
-allowed-tools:
-  - mcp__github__*
-model: opus
 ---
 
 # Issue Decomposition

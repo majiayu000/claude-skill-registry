@@ -1,7 +1,7 @@
 {
   "name": "create-story",
-  "repo": "grahama1970/agent-skills",
-  "path": "skills/create-story/SKILL.md",
-  "source": "github.com/grahama1970/agent-skills",
-  "downloaded_at": "2026-02-02T01:19:53.047503Z"
+  "repo": "PabloLION/bmad-plugin",
+  "path": "plugins/bmad/skills/create-story/SKILL.md",
+  "source": "github.com/PabloLION/bmad-plugin",
+  "downloaded_at": "2026-02-04T03:30:57.091561Z"
 }

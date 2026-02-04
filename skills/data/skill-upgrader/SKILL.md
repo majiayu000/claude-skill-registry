@@ -235,6 +235,7 @@ Use v5 Hybrid template:
 ---
 name: {original_name}
 description: {original_description}
+version: 5.1-hybrid
 ---
 
 # Option: {name}

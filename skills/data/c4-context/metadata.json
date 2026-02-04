@@ -1,7 +1,7 @@
 {
   "name": "c4-context",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/c4-context/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:19.515764Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/c4-context/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:38.392754Z"
 }

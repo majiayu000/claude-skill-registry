@@ -11,6 +11,10 @@ last_optimized: 2025-12-02
 dependencies: []
 quick_reference_card: true
 tags: [pact, agents, fleet, coordination, autonomous, foundational]
+trust_tier: 1
+validation:
+  schema_path: schemas/output.json
+
 ---
 
 # Agentic Quality Engineering

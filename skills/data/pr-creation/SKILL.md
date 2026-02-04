@@ -1,12 +1,6 @@
 ---
 name: pr-creation
 description: Use after completing implementation - create pull request with complete documentation, proper labels, linked issues, and verification summary
-allowed-tools:
-  - Bash
-  - Read
-  - mcp__github__*
-  - mcp__git__*
-model: opus
 ---
 
 # PR Creation

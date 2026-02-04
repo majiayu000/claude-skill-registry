@@ -1,15 +1,7 @@
 {
   "name": "parse-git-status",
-  "description": "Parse git status output into structured data showing staged, modified, and untracked files. Use for pre-flight validation, checking clean working directory, or listing changed files before commits.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "data",
-  "tags": [
-    "parse",
-    "git",
-    "status"
-  ],
-  "stars": 27,
-  "dir_name": "parse-git-status",
-  "github_path": ".claude/skills/parse-git-status",
-  "github_branch": "main"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/parse-git-status/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:10.113262Z"
 }

@@ -1,9 +1,7 @@
 {
   "name": "optimizing-cache-performance",
-  "description": "This skill enables AI assistant to analyze and improve application caching strategies. it optimizes cache hit rates, ttl configurations, cache key design, and invalidation strategies. use this skill w",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "NovaAI-innovation/Infinite-Agency",
+  "path": ".qwen/skills/Optimizing Cache Performance/SKILL.md",
+  "source": "github.com/NovaAI-innovation/Infinite-Agency",
+  "downloaded_at": "2026-02-04T03:03:39.811138Z"
 }

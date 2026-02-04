@@ -1,619 +1,117 @@
 ---
 name: playwright
-description: General-purpose browser automation skill for Playwright. Use this skill when the user wants to automate browser tasks like testing login flows, scraping data, taking screenshots, filling forms, clicking elements, or any interactive web automation. This skill provides smart utilities for session management, error handling, and development server detection. NOT for scheduled monitoring (use web-monitor-bot instead).
+description: Playwright testing best practices for Next.js applications (formerly test-playwright). This skill should be used when writing, reviewing, or debugging E2E tests with Playwright. Triggers on tasks involving test selectors, flaky tests, authentication state, API mocking, hydration testing, parallel execution, CI configuration, or debugging test failures.
 ---
 
-# Playwright Browser Automation
+# Playwright + Next.js Testing Best Practices
+
+Comprehensive testing optimization guide for Playwright with Next.js applications. Contains 43 rules across 8 categories, prioritized by impact to guide reliable, fast, and maintainable E2E tests.
+
+## When to Apply
+
+Reference these guidelines when:
+- Writing new Playwright tests for Next.js apps
+- Debugging flaky or failing tests
+- Optimizing test execution speed
+- Setting up authentication state reuse
+- Configuring CI/CD pipelines for testing
+- Testing Server Components and App Router features
+- Reviewing test code for reliability issues
+
+## Rule Categories by Priority
+
+| Priority | Category | Impact | Prefix |
+|----------|----------|--------|--------|
+| 1 | Test Architecture | CRITICAL | `arch-` |
+| 2 | Selectors & Locators | CRITICAL | `loc-` |
+| 3 | Waiting & Assertions | HIGH | `wait-` |
+| 4 | Authentication & State | HIGH | `auth-` |
+| 5 | Mocking & Network | MEDIUM-HIGH | `mock-` |
+| 6 | Next.js Integration | MEDIUM | `next-` |
+| 7 | Performance & Speed | MEDIUM | `perf-` |
+| 8 | Debugging & CI | LOW-MEDIUM | `debug-` |
+
+## Quick Reference
+
+### 1. Test Architecture (CRITICAL)
+
+- [`arch-test-isolation`](references/arch-test-isolation.md) - Use fresh browser context for each test
+- [`arch-parallel-execution`](references/arch-parallel-execution.md) - Enable parallel test execution
+- [`arch-page-object-model`](references/arch-page-object-model.md) - Use Page Object Model for complex pages
+- [`arch-fixtures`](references/arch-fixtures.md) - Use fixtures for shared setup
+- [`arch-test-production`](references/arch-test-production.md) - Test against production builds
+- [`arch-cleanup-state`](references/arch-cleanup-state.md) - Clean up test state after each test
+
+### 2. Selectors & Locators (CRITICAL)
+
+- [`loc-role-selectors`](references/loc-role-selectors.md) - Use role-based selectors over CSS
+- [`loc-data-testid`](references/loc-data-testid.md) - Use data-testid for dynamic elements
+- [`loc-label-selectors`](references/loc-label-selectors.md) - Use getByLabel for form inputs
+- [`loc-text-selectors`](references/loc-text-selectors.md) - Use getByText for static content
+- [`loc-avoid-xpath`](references/loc-avoid-xpath.md) - Avoid XPath selectors
+- [`loc-chained-locators`](references/loc-chained-locators.md) - Chain locators for specificity
+- [`loc-placeholder-selector`](references/loc-placeholder-selector.md) - Use getByPlaceholder sparingly
+
+### 3. Waiting & Assertions (HIGH)
+
+- [`wait-web-first-assertions`](references/wait-web-first-assertions.md) - Use web-first assertions
+- [`wait-avoid-hard-waits`](references/wait-avoid-hard-waits.md) - Avoid hard waits
+- [`wait-network-idle`](references/wait-network-idle.md) - Use network idle for complex pages
+- [`wait-action-retries`](references/wait-action-retries.md) - Let actions auto-wait before interacting
+- [`wait-soft-assertions`](references/wait-soft-assertions.md) - Use soft assertions for non-critical checks
+- [`wait-custom-timeout`](references/wait-custom-timeout.md) - Configure timeouts appropriately
+
+### 4. Authentication & State (HIGH)
+
+- [`auth-storage-state`](references/auth-storage-state.md) - Reuse authentication with storage state
+- [`auth-multiple-roles`](references/auth-multiple-roles.md) - Use separate storage states for different roles
+- [`auth-session-storage`](references/auth-session-storage.md) - Handle session storage for auth
+- [`auth-api-login`](references/auth-api-login.md) - Use API login for faster auth setup
+- [`auth-parallel-workers`](references/auth-parallel-workers.md) - Use worker-scoped auth for parallel tests
+
+### 5. Mocking & Network (MEDIUM-HIGH)
+
+- [`mock-api-responses`](references/mock-api-responses.md) - Mock API responses for deterministic tests
+- [`mock-intercept-modify`](references/mock-intercept-modify.md) - Intercept and modify real responses
+- [`mock-har-files`](references/mock-har-files.md) - Use HAR files for complex mock scenarios
+- [`mock-abort-requests`](references/mock-abort-requests.md) - Abort unnecessary requests
+- [`mock-network-conditions`](references/mock-network-conditions.md) - Simulate network conditions
+
+### 6. Next.js Integration (MEDIUM)
+
+- [`next-wait-hydration`](references/next-wait-hydration.md) - Wait for hydration before interacting
+- [`next-server-components`](references/next-server-components.md) - Test server components correctly
+- [`next-app-router-navigation`](references/next-app-router-navigation.md) - Test App Router navigation patterns
+- [`next-server-actions`](references/next-server-actions.md) - Test server actions end-to-end
+- [`next-baseurl-config`](references/next-baseurl-config.md) - Configure baseURL for clean navigation
+
+### 7. Performance & Speed (MEDIUM)
+
+- [`perf-sharding`](references/perf-sharding.md) - Use sharding for large test suites
+- [`perf-headless-ci`](references/perf-headless-ci.md) - Use headless mode in CI
+- [`perf-browser-selection`](references/perf-browser-selection.md) - Select browsers strategically
+- [`perf-reuse-server`](references/perf-reuse-server.md) - Reuse development server when possible
+- [`perf-retries`](references/perf-retries.md) - Configure retries for flaky test recovery
+
+### 8. Debugging & CI (LOW-MEDIUM)
+
+- [`debug-trace-viewer`](references/debug-trace-viewer.md) - Use trace viewer for failed tests
+- [`debug-screenshots-videos`](references/debug-screenshots-videos.md) - Capture screenshots and videos on failure
+- [`debug-inspector`](references/debug-inspector.md) - Use Playwright Inspector for interactive debugging
+- [`debug-ci-reporters`](references/debug-ci-reporters.md) - Configure reporters for CI integration
+
+## How to Use
+
+Read individual reference files for detailed explanations and code examples:
+
+- [Section definitions](references/_sections.md) - Category structure and impact levels
+- [Rule template](assets/templates/_template.md) - Template for adding new rules
 
-## Overview
+## Reference Files
 
-This skill enables general-purpose browser automation using Playwright. It's designed for one-off automation tasks, interactive testing, and ad-hoc browser scripting. The skill includes intelligent utilities for session persistence, error handling, server detection, and common automation patterns extracted from production bots.
-
-## When to Use This Skill
-
-Invoke this skill when the user requests:
-- "Automate logging into this website"
-- "Take screenshots of this page"
-- "Fill out this form automatically"
-- "Test this login flow"
-- "Extract data from this website"
-- "Click through this multi-step process"
-- Any interactive browser automation task
-
-**DO NOT use for scheduled monitoring** - use the `web-monitor-bot` skill instead for cron-based periodic checks with analytics.
-
-## Quick Start
-
-### 1. Installation
-
-Install dependencies in your project or test directory:
-
-```bash
-npm install playwright playwright-extra puppeteer-extra-plugin-stealth dotenv
-npx playwright install chromium
-```
-
-### 2. Run a Script
-
-Execute automation scripts using the provided runner:
-
-```bash
-node run.js path/to/your-script.js
-```
-
-Or run inline code:
-
-```bash
-node run.js "await page.goto('https://example.com'); await page.screenshot({ path: 'screenshot.png' });"
-```
-
-Or pipe code via stdin:
-
-```bash
-cat script.js | node run.js
-```
-
-### 3. Use Helper Utilities
-
-Import the utilities library for advanced patterns:
-
-```javascript
-const utils = require('./lib/utils.js');
-
-// Safe click with retry
-await utils.safeClick(page, 'button.submit', { retries: 3 });
-
-// Type with human-like delays
-await utils.humanType(page, '#email', 'user@example.com');
-
-// Session management
-await utils.saveCookies(context, 'session.json');
-await utils.loadCookies(context, 'session.json');
-
-// Screenshot with error handling
-await utils.captureScreenshot(page, 'step-1.png');
-```
-
-## Core Features
-
-### Session Persistence
-
-Save and restore browser sessions to avoid repeated logins:
-
-```javascript
-const { saveCookies, loadCookies } = require('./lib/utils.js');
-
-// After successful login
-await saveCookies(context, 'my-session.json');
-
-// On subsequent runs
-const hasCookies = await loadCookies(context, 'my-session.json');
-if (hasCookies) {
-  console.log('Session restored!');
-  await page.goto(protectedUrl);
-} else {
-  // Perform login
-}
-```
-
-**Benefits:**
-- Skip login flows on repeated runs
-- Maintain authentication state
-- Avoid rate limiting from frequent logins
-- Faster execution times
-
-### Development Server Detection
-
-Automatically detect running development servers before executing scripts:
-
-```javascript
-const { detectDevServers } = require('./lib/utils.js');
-
-const servers = await detectDevServers();
-if (servers.length > 0) {
-  console.log('Found servers:', servers);
-  // Use detected server URLs in your automation
-}
-```
-
-### Stealth Mode
-
-Built-in stealth plugin to bypass basic bot detection:
-
-```javascript
-const { chromium } = require('playwright-extra');
-const stealth = require('puppeteer-extra-plugin-stealth')();
-
-chromium.use(stealth);
-
-const browser = await chromium.launch({
-  headless: false,
-  args: ['--no-sandbox', '--disable-setuid-sandbox']
-});
-```
-
-### Error Handling & Retries
-
-Robust error handling with automatic retries:
-
-```javascript
-const { retryWithBackoff } = require('./lib/utils.js');
-
-// Retry an operation up to 3 times with exponential backoff
-const result = await retryWithBackoff(async () => {
-  await page.waitForSelector('.dynamic-content', { timeout: 10000 });
-  return await page.textContent('.dynamic-content');
-}, { maxRetries: 3, initialDelay: 1000 });
-```
-
-## Common Automation Patterns
-
-### Pattern 1: Login Flow Automation
-
-```javascript
-const { chromium } = require('playwright-extra');
-const stealth = require('puppeteer-extra-plugin-stealth')();
-const { saveCookies, loadCookies, humanType, safeClick } = require('./lib/utils.js');
-
-chromium.use(stealth);
-
-const browser = await chromium.launch({ headless: false });
-const context = await browser.newContext();
-const page = await context.newPage();
-
-// Try to load saved session
-const hasCookies = await loadCookies(context, 'session.json');
-
-if (!hasCookies) {
-  // Perform login
-  await page.goto('https://example.com/login');
-  await humanType(page, '#email', 'user@example.com');
-  await humanType(page, '#password', 'password123');
-  await safeClick(page, 'button[type="submit"]');
-
-  await page.waitForNavigation();
-
-  // Save session for next time
-  await saveCookies(context, 'session.json');
-  console.log('Login successful, session saved!');
-} else {
-  console.log('Using saved session');
-  await page.goto('https://example.com/dashboard');
-}
-
-await browser.close();
-```
-
-### Pattern 2: Form Filling & Submission
-
-```javascript
-const { humanType, safeClick, captureScreenshot } = require('./lib/utils.js');
-
-await page.goto('https://example.com/form');
-
-// Fill form fields with human-like typing
-await humanType(page, '#name', 'John Doe');
-await humanType(page, '#email', 'john@example.com', { delay: 50 });
-await page.selectOption('#country', 'US');
-await page.check('#terms');
-
-// Screenshot before submission
-await captureScreenshot(page, 'before-submit.png');
-
-// Submit with retry logic
-await safeClick(page, 'button#submit', { retries: 3 });
-
-// Wait for success
-await page.waitForSelector('.success-message', { timeout: 15000 });
-await captureScreenshot(page, 'after-submit.png');
-```
-
-### Pattern 3: Data Extraction
-
-```javascript
-const { retryWithBackoff } = require('./lib/utils.js');
-
-await page.goto('https://example.com/data');
-
-// Extract data with retry logic
-const data = await retryWithBackoff(async () => {
-  await page.waitForSelector('.data-table', { timeout: 10000 });
-
-  const rows = await page.$$('.data-table tr');
-  const results = [];
-
-  for (const row of rows) {
-    const cells = await row.$$('td');
-    const rowData = await Promise.all(cells.map(cell => cell.textContent()));
-    results.push(rowData);
-  }
-
-  return results;
-}, { maxRetries: 3 });
-
-console.log('Extracted data:', data);
-```
-
-### Pattern 4: Multi-Step Workflow
-
-```javascript
-const { safeClick, humanType, captureScreenshot } = require('./lib/utils.js');
-
-// Step 1: Search
-await page.goto('https://example.com');
-await humanType(page, '#search', 'playwright automation');
-await safeClick(page, 'button.search');
-await page.waitForTimeout(2000);
-await captureScreenshot(page, 'step-1-search.png');
-
-// Step 2: Filter results
-await safeClick(page, '.filter-option[data-filter="recent"]');
-await page.waitForTimeout(1000);
-await captureScreenshot(page, 'step-2-filtered.png');
-
-// Step 3: Select item
-await safeClick(page, '.result-item:first-child');
-await page.waitForNavigation();
-await captureScreenshot(page, 'step-3-details.png');
-
-// Step 4: Complete action
-await safeClick(page, 'button.add-to-cart');
-await page.waitForSelector('.cart-notification', { timeout: 5000 });
-await captureScreenshot(page, 'step-4-added.png');
-```
-
-### Pattern 5: Screenshot Capture with Responsive Testing
-
-```javascript
-const { captureScreenshot } = require('./lib/utils.js');
-
-const viewports = [
-  { width: 1920, height: 1080, name: 'desktop' },
-  { width: 768, height: 1024, name: 'tablet' },
-  { width: 375, height: 667, name: 'mobile' }
-];
-
-for (const viewport of viewports) {
-  await page.setViewportSize({ width: viewport.width, height: viewport.height });
-  await page.goto('https://example.com');
-  await captureScreenshot(page, `screenshot-${viewport.name}.png`);
-}
-```
-
-### Pattern 6: Cloudflare Challenge Handling (Production-Ready)
-
-```javascript
-const { detectCloudflare, saveCookies } = require('./lib/utils.js');
-
-await page.goto('https://protected-site.com');
-
-// Intelligent Cloudflare detection with 90s polling
-try {
-  const wasBlocked = await detectCloudflare(page, context, 'initial page load', {
-    maxWaitSeconds: 90,        // Poll for up to 90 seconds
-    pollIntervalSeconds: 10,   // Check every 10 seconds
-    cookiePath: 'session.json' // Save cookies immediately after solve
-  });
-
-  if (wasBlocked) {
-    console.log('Cloudflare challenge auto-solved! Proceeding...');
-  } else {
-    console.log('No Cloudflare challenge detected');
-  }
-
-  // Continue with automation
-  await page.click('.protected-button');
-
-} catch (error) {
-  // Challenge not solved after 90s
-  console.error('Cloudflare blocked:', error.message);
-  // Screenshots auto-saved: cloudflare-detected.png, cloudflare-timeout.png
-  process.exit(1);
-}
-```
-
-**Features:**
-- **Smart polling**: Checks every 10s for up to 90s (not single wait)
-- **Block tracking**: Tracks consecutive/total blocks in `cloudflare-blocks.json`
-- **Auto-screenshots**: `cloudflare-detected.png` (when detected), `cloudflare-cleared.png` (when solved), `cloudflare-timeout.png` (if fails)
-- **Cookie persistence**: Saves session immediately after challenge clears
-- **Progress updates**: Console logs every 30s during wait
-
-**Block Tracking:**
-```javascript
-const { getCloudflareBlocks } = require('./lib/utils.js');
-
-const blocks = getCloudflareBlocks();
-console.log(`Consecutive blocks: ${blocks.consecutive}`);
-console.log(`Total blocks: ${blocks.total}`);
-console.log(`Last 10 events:`, blocks.history.slice(-10));
-```
-
-## Utility Functions Reference
-
-### Session Management
-
-```javascript
-// Save browser cookies to file
-await saveCookies(context, filepath);
-
-// Load browser cookies from file
-const restored = await loadCookies(context, filepath);
-// Returns: true if cookies were loaded, false if file doesn't exist
-```
-
-### Safe Interactions
-
-```javascript
-// Click with automatic retry and error handling
-await safeClick(page, selector, { retries: 3, timeout: 10000 });
-
-// Click with human-like mouse movement (curved path + random position)
-await humanClick(page, selector, { timeout: 10000 });
-
-// Type with human-like delays (randomized between chars)
-await humanType(page, selector, text, { delay: 100 });
-
-// Generate random delay for timing variation
-const delay = randomDelay(1000, 2500); // Returns random ms between 1000-2500
-await page.waitForTimeout(delay);
-```
-
-### Screenshots
-
-```javascript
-// Capture screenshot with automatic error handling
-await captureScreenshot(page, filepath);
-```
-
-### Retry Logic
-
-```javascript
-// Retry async operation with exponential backoff
-const result = await retryWithBackoff(asyncFunction, {
-  maxRetries: 3,
-  initialDelay: 1000,
-  backoffMultiplier: 2
-});
-```
-
-### Server Detection
-
-```javascript
-// Detect running development servers on localhost
-const servers = await detectDevServers();
-// Returns: Array of { port, url } objects
-```
-
-## Advanced Configuration
-
-### Timeout Strategies
-
-Implement dynamic timeouts based on conditions:
-
-```javascript
-const isPeakTime = new Date().getHours() === 17; // 5 PM
-const timeout = isPeakTime ? 60000 : 30000;
-
-await page.goto(url, { timeout });
-await page.waitForSelector(selector, { timeout });
-```
-
-### Headless vs. Headed Mode
-
-```javascript
-// Headed (visible browser) - useful for debugging
-const browser = await chromium.launch({ headless: false });
-
-// Headless (background) - useful for production/CI
-const browser = await chromium.launch({ headless: true });
-```
-
-### Custom User Agents
-
-```javascript
-const context = await browser.newContext({
-  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-});
-```
-
-### Browser Arguments
-
-```javascript
-const browser = await chromium.launch({
-  headless: false,
-  args: [
-    '--no-sandbox',
-    '--disable-setuid-sandbox',
-    '--disable-dev-shm-usage',
-    '--disable-blink-features=AutomationControlled'
-  ]
-});
-```
-
-## Best Practices
-
-### 1. Use Session Persistence
-
-Always save cookies after authentication to speed up subsequent runs:
-
-```javascript
-// After login
-await saveCookies(context, 'session.json');
-
-// Before automation
-const hasCookies = await loadCookies(context, 'session.json');
-```
-
-### 2. Implement Retry Logic
-
-Use retries for flaky network requests or dynamic content:
-
-```javascript
-await retryWithBackoff(async () => {
-  await page.waitForSelector('.dynamic-element', { timeout: 10000 });
-  return await page.textContent('.dynamic-element');
-}, { maxRetries: 3 });
-```
-
-### 3. Capture Screenshots on Errors
-
-Always save evidence when things go wrong:
-
-```javascript
-try {
-  await page.click('.submit-button');
-} catch (error) {
-  await captureScreenshot(page, 'error.png');
-  throw error;
-}
-```
-
-### 4. Use Human-Like Interactions
-
-Avoid detection by simulating natural human behavior:
-
-```javascript
-const { humanClick, humanType, randomDelay } = require('./lib/utils.js');
-
-// Bad: Instant, robotic interactions
-await page.fill('#input', text);
-await page.click('button');
-
-// Good: Human-like behavior
-await humanType(page, '#input', text, { delay: 50 });
-await page.waitForTimeout(randomDelay(500, 1500)); // Random pause
-await humanClick(page, 'button'); // Mouse movement + random click position
-```
-
-**Anti-Detection Checklist:**
-- ✅ Use `humanClick()` instead of `.click()` (adds mouse movement)
-- ✅ Use `humanType()` instead of `.fill()` (adds typing delays)
-- ✅ Use `randomDelay()` for all `waitForTimeout()` calls (avoid fixed timing)
-- ✅ Add random pauses between actions (humans don't act instantly)
-- ✅ Handle Cloudflare with `detectCloudflare()` (smart polling + tracking)
-
-### 5. Clean Up Resources
-
-Always close browsers and remove temporary files:
-
-```javascript
-try {
-  // ... automation code ...
-} finally {
-  await browser.close();
-  // Clean up lock files, temp files, etc.
-}
-```
-
-## File Organization
-
-Recommended structure for automation projects:
-
-```
-my-automation/
-├── run.js              # Script runner
-├── lib/
-│   └── utils.js        # Utility functions
-├── scripts/
-│   ├── login.js        # Login automation
-│   ├── scrape.js       # Data extraction
-│   └── test-flow.js    # Test workflows
-├── sessions/
-│   └── cookies.json    # Saved sessions
-├── screenshots/        # Captured images
-├── .env                # Environment variables
-└── package.json
-```
-
-## Environment Variables
-
-Use `.env` files for configuration:
-
-```bash
-# .env
-TARGET_URL=https://example.com
-LOGIN_EMAIL=user@example.com
-LOGIN_PASSWORD=secretpass
-HEADLESS=false
-TIMEOUT=30000
-```
-
-Load in scripts:
-
-```javascript
-require('dotenv').config();
-
-const targetUrl = process.env.TARGET_URL;
-const headless = process.env.HEADLESS === 'true';
-const timeout = parseInt(process.env.TIMEOUT) || 30000;
-```
-
-## Troubleshooting
-
-### Script not finding elements
-
-1. Use `page.waitForSelector()` before interactions
-2. Increase timeout values for slow-loading pages
-3. Verify selectors in browser DevTools
-4. Use `captureScreenshot()` to see page state
-
-### Bot detection issues
-
-1. Enable stealth mode with `playwright-extra`
-2. Use `humanType()` instead of `fill()`
-3. Add random delays: `await page.waitForTimeout(Math.random() * 2000 + 1000)`
-4. Use realistic user agents
-5. Handle Cloudflare challenges with manual intervention pattern
-
-### Session not persisting
-
-1. Ensure cookies are saved after successful login
-2. Check file permissions on cookie file
-3. Verify cookie expiration times
-4. Re-login and save fresh cookies
-
-### Timeouts on slow pages
-
-1. Increase timeout values: `{ timeout: 60000 }`
-2. Use `waitUntil: 'domcontentloaded'` instead of `'load'`
-3. Implement retry logic with backoff
-4. Check network tab for slow requests
-
-## Comparison with web-monitor-bot
-
-| Feature | playwright (this skill) | web-monitor-bot |
-|---------|------------------------|-----------------|
-| **Use Case** | One-off automation tasks | Scheduled monitoring |
-| **Execution** | Manual/on-demand | Cron-based periodic |
-| **Analytics** | No | Yes (built-in dashboard) |
-| **Notifications** | Manual implementation | Slack/webhook integration |
-| **Session Management** | Yes (utilities) | Yes (built-in) |
-| **Concurrency Control** | Manual | Lock files (built-in) |
-| **Best For** | Testing, scraping, workflows | Availability tracking, alerts |
-
-## Examples
-
-See the `examples/` directory for complete working scripts:
-
-- `examples/login-flow.js` - Full login automation with session persistence
-- `examples/form-submission.js` - Multi-step form filling
-- `examples/data-extraction.js` - Scraping with retry logic
-- `examples/screenshot-tool.js` - Responsive screenshot capture
-- `examples/cloudflare-handler.js` - Handling bot protection
-
-## Resources
-
-### Dependencies
-- [Playwright](https://playwright.dev/) - Browser automation framework
-- [playwright-extra](https://github.com/berstend/puppeteer-extra/tree/master/packages/playwright-extra) - Plugin support
-- [puppeteer-extra-plugin-stealth](https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-stealth) - Bot detection bypass
-
-### Documentation
-- [Playwright API Docs](https://playwright.dev/docs/api/class-playwright)
-- [Selectors Guide](https://playwright.dev/docs/selectors)
-- [Best Practices](https://playwright.dev/docs/best-practices)
-
-## License
-
-MIT
+| File | Description |
+|------|-------------|
+| [AGENTS.md](AGENTS.md) | Complete compiled guide with all rules |
+| [references/_sections.md](references/_sections.md) | Category definitions and ordering |
+| [assets/templates/_template.md](assets/templates/_template.md) | Template for new rules |
+| [metadata.json](metadata.json) | Version and reference information |

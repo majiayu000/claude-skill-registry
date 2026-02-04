@@ -1,9 +1,6 @@
 ---
 name: issue-lifecycle
 description: Use throughout all work - ensures GitHub issues are updated continuously as work happens, not batched at the end
-allowed-tools:
-  - mcp__github__*
-model: opus
 ---
 
 # Issue Lifecycle

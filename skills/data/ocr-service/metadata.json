@@ -1,9 +1,7 @@
 {
   "name": "ocr-service",
-  "description": "高精度光学字符识别（OCR）服务。支持多语言、多格式图像的文字检测与提取，并提供文本区域坐标与置信度评分，适用于文档数字化与图像内容分析。",
   "repo": "Lin-A1/skills-agent",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Lin-A1/skills-agent"
+  "path": "services/ocr_service/SKILL.md",
+  "source": "github.com/Lin-A1/skills-agent",
+  "downloaded_at": "2026-02-04T01:10:30.486869Z"
 }

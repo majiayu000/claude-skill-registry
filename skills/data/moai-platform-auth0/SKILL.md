@@ -1,26 +1,23 @@
 ---
-name: moai-platform-auth0
-description: >
-  Auth0 security specialist covering attack protection, multi-factor authentication,
-  token security, sender constraining, and compliance. Use when implementing Auth0
-  security features, configuring attack defenses, setting up MFA, or meeting
-  regulatory requirements.
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Write Edit Grep Glob WebFetch WebSearch Bash
+name: "moai-platform-auth0"
+description: "Auth0 security specialist covering attack protection, multi-factor authentication, token security, sender constraining, and compliance. Use when implementing Auth0 security features, configuring attack defenses, setting up MFA, or meeting regulatory requirements."
+version: 1.0.0
+category: "security"
+modularized: true
 user-invocable: false
-metadata:
-  version: "1.0.0"
-  category: "security"
-  status: "active"
-  updated: "2026-01-08"
-  modularized: "true"
-  tags: "auth0, security, mfa, attack-protection, tokens, dpop, mtls, compliance, fapi, gdpr"
-  context7-libraries: "/auth0/docs"
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["auth0", "authentication", "oauth", "sso", "identity", "mfa", "token security"]
+tags: ['auth0', 'security', 'mfa', 'attack-protection', 'tokens', 'dpop', 'mtls', 'compliance', 'fapi', 'gdpr']
+updated: 2026-01-08
+status: "active"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Grep
+  - Glob
+  - WebFetch
+  - WebSearch
+  - Bash
+context7-libraries: "/auth0/docs"
 ---
 
 # Auth0 Security Specialist
@@ -76,7 +73,7 @@ Security Center: Dashboard > Security > Security Center
 
 ### Attack Protection
 
-Bot Detection: Navigate to Dashboard > Security > Attack Protection > Bot Detection. Configure sensitivity (Low/Medium/High) and response type (Auth Challenge recommended, Simple CAPTCHA, or third-party). IP AllowList supports up to 100 adddesses/CIDR ranges.
+Bot Detection: Navigate to Dashboard > Security > Attack Protection > Bot Detection. Configure sensitivity (Low/Medium/High) and response type (Auth Challenge recommended, Simple CAPTCHA, or third-party). IP AllowList supports up to 100 addresses/CIDR ranges.
 
 Supported flows: Universal Login, Classic Login, Lock.js v12.4.0+, native apps. Unsupported: Enterprise connections, social login, cross-origin authentication.
 

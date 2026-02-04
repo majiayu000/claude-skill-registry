@@ -81,15 +81,15 @@ Delegate to workers in parallel (independent tasks):
 ```
 ln-730 (Coordinator)
     |
-    +---> ln-731-docker-generator
+    +---> ln-731-docker-generator (via Task tool)
     |         Input: stack config, versions
     |         Output: Dockerfile.*, docker-compose.yml, .dockerignore
     |
-    +---> ln-732-cicd-generator
+    +---> ln-732-cicd-generator (via Task tool)
     |         Input: stack config, detected commands
     |         Output: .github/workflows/ci.yml
     |
-    +---> ln-733-env-configurator
+    +---> ln-733-env-configurator (via Task tool)
               Input: detected environment variables
               Output: .env.example, .env.development, .gitignore updates
 ```

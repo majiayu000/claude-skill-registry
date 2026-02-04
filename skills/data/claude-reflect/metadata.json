@@ -1,7 +1,7 @@
 {
   "name": "claude-reflect",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/community/claude-reflect/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:26:46.485479Z"
+  "repo": "BayramAnnakov/claude-reflect",
+  "path": "SKILL.md",
+  "source": "github.com/BayramAnnakov/claude-reflect",
+  "downloaded_at": "2026-02-04T03:45:53.693240Z"
 }

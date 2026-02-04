@@ -1,8 +1,8 @@
 {
   "name": "skillsmatrix",
-  "description": "Operator training and competency tracking for MNMUK machine shop.\nSupports IATF 16949 competency requirements and workforce planning.\nUSE WHEN user asks 'who can run', 'training matrix', 'competency',",
+  "description": "Operator training and competency tracking for MNMUK machine shop. Supports IATF 16949 competency requirements and workforce planning. USE WHEN user asks 'who can run', 'training matrix', 'competency',",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

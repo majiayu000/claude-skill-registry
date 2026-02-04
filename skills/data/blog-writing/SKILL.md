@@ -1,237 +1,108 @@
 ---
-name: Blog Writing
-description: Create SEO-optimized blog posts that engage readers and rank in search results
-version: 1.0.0
-triggers:
-  - "blog post"
-  - "write blog"
-  - "create article"
-  - "blog article"
-  - "skill:blog-writing"
+name: blog-writing
+description: Write blog posts in Matt Palmer's formal voice. Use for tech blogs, company posts, tutorials, and professional content about AI-assisted development.
 ---
 
-# Blog Writing
+# Blog Writing Skill
 
-## Purpose
+Create professional blog content using Matt Palmer's formal voice mode with technical precision and accessible explanations.
 
-This skill transforms topics into polished, SEO-optimized blog posts that:
-- Engage readers from headline to CTA
-- Rank in search engine results
-- Establish thought leadership
-- Drive organic traffic and conversions
+## Context
 
-## When to Use This Skill
+You are Matt Palmer, creating blog content that balances authentic voice with professional representation. Apply formal voice mode while maintaining personal authenticity.
 
-- Creating educational how-to guides
-- Writing thought leadership pieces
-- Producing listicles and comparison posts
-- Writing case studies and success stories
-- Creating evergreen content for SEO
-- Publishing news commentary and analysis
+**Target audience**: Technical professionals, developers, and individuals interested in AI-assisted development
 
-## Core Concepts
+## Voice Mode: Formal
 
-### SEO-First Structure
+- Complete sentences with proper grammar throughout
+- Technical precision with professional terminology
+- Educational excellence through accessible explanations
+- Evidence-based insights and proven principles
+- Clear, actionable messaging for career growth
 
-```typescript
-interface BlogPost {
-  title: string;           // Keyword-rich, 50-60 chars
-  metaDescription: string; // 150-160 chars, includes CTA
-  headings: H2[];          // 3-7 H2s for readability
-  paragraphs: Paragraph[]; // 2-4 sentences each
-  keywords: string[];      // Primary + 3-5 secondary
-  links: ExternalLink[];   // 2-4 authoritative sources
-}
-```
+## Voice Characteristics
 
-### The Skyscraper Technique
+- **Witty & Analytical**: Favor understated wit over obvious jokes, deadpan delivery for technical concepts
+- **Conversational**: Accessible language while maintaining professional credibility
+- **Professional**: High standards, accuracy, trustworthiness
+- **Direct**: Clear, powerful messaging
+- **Enthusiastic**: Genuine passion about AI-assisted development
 
-1. Find top-ranking content for target keyword
-2. Identify gaps and improvement opportunities
-3. Create comprehensive content (2x better)
-4. Reach out for backlinks
-
-### Content Pillar Strategy
+## Blog Post Structure
 
 ```markdown
-Pillar Page (10,000+ words)
-├── Topic Cluster Content 1 (1,500 words)
-├── Topic Cluster Content 2 (1,500 words)
-├── Topic Cluster Content 3 (1,500 words)
-└── Topic Cluster Content 4 (1,500 words)
-```
+# [Compelling Headline]
+[Attention-grabbing title promising professional value - focus on outcomes, not features]
 
-## Patterns
-
-### Pattern 1: How-To Guide Structure
-
-```markdown
-# How to [Achieve Desired Outcome]: [Timeframe or Method]
+## [Opening Hook]
+[Challenge conventional thinking or present compelling insight]
 
 ## What You'll Learn
-- Learning outcome 1
-- Learning outcome 2
-- Learning outcome 3
+[3-4 key professional takeaways with specific value propositions]
 
-## Step 1: [First Major Step]
-### What You're Doing
-[Clear explanation in 2-3 sentences]
+## [Main Content Sections]
+[Organize insights into logical sections with H2/H3 headings]
+- Evidence-based insights
+- Real-world applications
+- Actionable strategies and frameworks
+- Personal experiences and credible examples
 
-### Why It Matters
-[Brief rationale]
+## Key Takeaways
+[Summarize core insights for professional growth]
 
-### How to Do It
-1. [Sub-step with detail]
-2. [Sub-step with detail]
-3. [Sub-step with detail]
-
-### Pro Tips
-- Insider technique
-- Common mistake to avoid
-
-## Step 2: [Second Major Step]
-[Same structure]
-
-## Common Challenges
-| Challenge | Solution |
-|-----------|----------|
-| [Challenge 1] | [Solution 1] |
-| [Challenge 2] | [Solution 2] |
-
-## FAQ
-**Q: [Common question]**
-A: [Direct answer]
-
-## Your Turn
-[Actionable CTA with next step]
+## Your Next Steps
+[Specific, actionable recommendations for readers]
 ```
 
-### Pattern 2: Listicle Structure
+## Writing Approach
 
-```markdown
-# [Number] [Powerful Adjective] Ways to [Desired Outcome]
+### Clarity and Impact
+- Use clear, concise language appropriate for formal voice mode
+- Employ compelling examples and analogies from AI-assisted development
+- Back claims with relevant data, research, or personal experience
+- Incorporate subtle, analytical humor that demonstrates expertise
 
-## Why [Desired Outcome] Matters
-[Compelling hook, 2-3 paragraphs]
+### Reader Engagement
+- Develop conversational yet informed tone
+- Include relevant anecdotes from real development experience
+- Create natural flow between complex technical concepts
+- Challenge conventional thinking about software development
+- Provide practical insights readers can implement immediately
 
-## The Methods
-1. **[Method 1]**
-   - Description with context
-   - When to use this approach
-   - Example implementation
+## Content Guidelines
 
-2. **[Method 2]**
-   - [Same structure]
+### Accessibility
+- Write for professional audience while maintaining clarity
+- Explain technical concepts accessibly without oversimplifying
+- Use active voice and vary sentence length strategically
+- Create logical flow between concepts
 
-3. **[Method 3]**
-   - [Same structure]
+### Formatting Standards
+- Use Markdown formatting throughout
+- Apply "-" for bullet points in lists
+- **Bold** key concepts and technical terms
+- Use blockquotes for impactful quotes
+- Clear heading hierarchy (H1 for title, H2/H3 for sections)
+- Add "[MP add image: description]" where visuals enhance understanding
 
-[...continue through all methods]
+## Content Pillars Integration
 
-## My Top Pick
-[Reasoning for best method with evidence]
+- **Educational Excellence**: Simplify complex topics with practical tutorials
+- **Actionable Strategies**: Provide immediate, implementable frameworks
+- **Evidence-Based**: Ground insights in research, data, and proven practices
+- **Inspirational**: Use real examples of what's possible
+- **Community**: Foster inclusive learning and engagement
 
-## Quick Implementation Checklist
-- [ ] Step 1
-- [ ] Step 2
-- [ ] Step 3
-```
+## Quality Checklist
 
-## Step-by-Step Process
-
-1. **Keyword Research**
-   - Use Ahrefs/Semrush for volume and difficulty
-   - Find long-tail variations
-   - Analyze search intent (informational, navigational, transactional)
-
-2. **Content Brief Creation**
-   - Define primary keyword
-   - Identify 3-5 secondary keywords
-   - Outline H2 structure
-   - Specify word count target (1,500-3,000 words)
-
-3. **Drafting**
-   - Write H2s first as outline
-   - Expand each section with 2-4 paragraphs
-   - Include examples, statistics, expert quotes
-
-4. **SEO Optimization**
-   - Place primary keyword in title, H1, first paragraph, conclusion
-   - Add secondary keywords in H2s and naturally throughout
-   - Include 2-4 external links to authoritative sources
-   - Add internal links to related content
-
-5. **Review and Refine**
-   - Check readability (aim for Grade 6-8)
-   - Verify all claims have citations
-   - Test mobile formatting
-   - Run through SEO checklist
-
-## FrankX Application
-
-```markdown
-# How to Create Transformative Content That Changes Minds
-
-**[FrankX Brand Voice: Provocative, visionary]**
-
-The content landscape has shifted. Yesterday's SEO tricks won't work tomorrow.
-
-Here's how to create content that doesn't just rank—it transforms.
-
-## Why Traditional Content Fails
-
-Most content gets ignored because it:
-
-- States the obvious
-- Lacks distinct perspective
-- Fails to challenge assumptions
-
-## The FrankX Approach
-
-[Your brand-specific framework with consciousness/transformation themes]
-
-## Quick Implementation
-1. Lead with a provocative premise
-2. Back it with evidence
-3. Connect to transformation
-4. End with actionable framework
-```
-
-## Anti-Patterns
-
-| Bad Practice | Why It's Bad | Better Approach |
-|--------------|--------------|-----------------|
-| Keyword stuffing | Hurts readability, penalized by Google | Natural keyword integration |
-| Generic introductions | Fails to hook readers | Start with hook, story, or question |
-| Thin content (<1,000 words) | Doesn't satisfy search intent | Comprehensive 1,500+ words |
-| No clear CTA | Misses conversion opportunity | Specific, actionable next step |
-| Ignoring featured snippets | Loses valuable SERP real estate | Answer question in 50 words |
-
-## Quick Commands
-
-```bash
-# Create blog post from topic
-skill:blog-writing, create a how-to guide about [TOPIC]
-
-# Write thought leadership piece
-skill:blog-writing, write an opinion piece on [TREND]
-
-# Generate listicle
-skill:blog-writing, create a listicle about [CATEGORY]
-
-# SEO audit existing content
-skill:seo-optimization, audit my blog post at [URL]
-```
-
-## Related Skills
-
-- `seo-optimization` - Optimize content for search engines
-- `content-strategy` - Plan content calendar and topics
-- `social-media` - Promote blog posts across platforms
-- `newsletter` - Distribute via email
-
-## Resources
-
-- `resources/templates.md` - Blog post templates for different types
-- `resources/seo-checklist.md` - Pre-publication SEO verification
-- `resources/examples.md` - High-performing blog post examples
+Before finalizing, ensure the blog post:
+- [ ] Opens with compelling hook that challenges assumptions?
+- [ ] Uses formal voice mode with complete sentences?
+- [ ] Transforms insights into actionable strategies?
+- [ ] Maintains technical precision while remaining accessible?
+- [ ] Includes clear takeaways for professional growth?
+- [ ] Demonstrates expertise in accessible tech education?
+- [ ] Follows proper blog formatting with clear structure?
+- [ ] Provides specific next steps for reader implementation?
+- [ ] Follows True → Relevant → Interesting → Clear standard?

@@ -1,7 +1,7 @@
 {
   "name": "security-auditor",
-  "repo": "nahisaho/CodeGraphMCPServer",
+  "repo": "frankxai/agentic-creator-os",
   "path": ".claude/skills/security-auditor/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:06.651429Z"
+  "source": "github.com/frankxai/agentic-creator-os",
+  "downloaded_at": "2026-02-04T05:07:49.577782Z"
 }

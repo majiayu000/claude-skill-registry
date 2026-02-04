@@ -1,60 +1,190 @@
 ---
 name: ux
-description: Product management UX skill for designing user journeys, information architecture, interaction flows, wireframe-level specs, usability heuristics, and experiment-driven iteration. Use for tasks like refining PRDs with UX requirements, defining success metrics, writing microcopy, accessibility considerations, and conducting user testing plans.
+description: "创建卓越的用户体验设计，包含用户研究、信息架构、交互设计、可用性评估。当用户需要设计界面、优化用户体验、进行可用性分析、创建用户流程、设计交互原型，或提到「ux」「用户体验」「交互设计」「可用性」「用户研究」时使用。产出专业、有洞察力的 UX 设计方案，避免通用化设计。"
+license: MIT
 ---
 
-# ux
+# UX - 用户体验设计
 
-Use this skill for PM 视角的 UX 设计与评审：从需求到体验闭环。
+本技能指导创建卓越的用户体验设计，避免通用化的「AI 设计」美学。以用户为中心，产出专业、有洞察力、可执行的 UX 设计方案。
 
-## Outputs (choose what the task needs)
+用户提供 UX 需求：一个组件、页面、应用或界面需要设计。可能包含关于目的、受众或技术约束的上下文。
 
-- User journeys / storyboards
-- Information architecture (IA) + navigation map
-- Key flows (happy path + edge cases) with states
-- Wireframe-level spec (components, behavior, copy)
-- UX acceptance criteria (可测试的验收标准)
-- Metrics and experiment plan (A/B, funnel, retention)
+---
 
-## Workflow
+## 设计思维
 
-1) Clarify users and jobs
-- ICPs, triggers, JTBD / Job Story.
-- Define “success” in measurable outcomes.
+在开始设计前，理解上下文并确定**明确的设计方向**：
 
-2) Map journeys and flows
-- Identify critical journeys; pick 1–2 primary flows first.
-- Define states: empty/loading/error/success/permission denied.
-- Define drop-off points and recovery paths.
+- **用户与场景**：谁在使用？在什么场景下？解决什么问题？
+- **目标与价值**：这个界面要达成什么目标？为用户创造什么价值？
+- **约束条件**：技术限制（框架、性能、可访问性）、业务约束、时间资源。
+- **差异化**：什么让这个体验**令人难忘**？用户会记住什么？
 
-3) Information architecture
-- Group content by user mental model.
-- Keep navigation shallow; avoid hidden complexity in MVP.
-- Name things consistently with domain language.
+**关键**：选择清晰的概念方向并精准执行。极简与丰富都可以——关键是**意图明确**，而非强度。
 
-4) Interaction design principles
-- Reduce cognitive load: progressive disclosure, sensible defaults.
-- Make system status visible (progress, confirmations, undo).
-- Prevent errors; when errors happen, provide recovery.
-- Keep copy short, specific, and action-oriented.
+然后产出包含以下内容的 UX 设计方案：
 
-5) Accessibility & inclusivity
-- Keyboard/gesture alternatives where applicable.
-- Color contrast, dynamic text, screen reader labels.
-- Avoid relying on color alone to convey meaning.
+- 用户研究与画像
+- 信息架构与导航
+- 交互流程与原型
+- 视觉设计指导
+- 可用性评估标准
 
-6) Metrics & experiments
-- Define funnel events and North Star Metric.
-- Prioritize experiments tied to a hypothesis with guardrails.
+---
 
-7) Usability testing plan
-- Script tasks, success criteria, and note-taking template.
-- Recruit target users; run quick iterative rounds (5–8 users).
+## UX 设计流程
 
-## UX acceptance criteria template
+### 1. 用户研究
 
-- Given [context], when [user action], then [expected behavior].
-- Empty state: [copy + CTA + example].
-- Error state: [message + retry + fallback].
-- Loading: [skeleton/spinner + timeout handling].
+**理解用户：**
+- 用户画像（Persona）：目标用户是谁？他们的目标、痛点、行为模式？
+- 用户旅程（User Journey）：用户如何完成关键任务？在哪些触点遇到障碍？
+- 竞品分析：同类产品如何解决类似问题？有哪些可借鉴或需规避的模式？
 
+**关键问题：**
+- 用户的主要目标是什么？
+- 用户当前如何解决这个问题？
+- 用户在使用过程中会遇到什么挫折？
+- 什么会让用户感到愉悦或惊喜？
+
+### 2. 信息架构
+
+**组织内容：**
+- 内容清单：需要展示哪些信息？
+- 信息层级：哪些信息最重要？如何分组？
+- 导航结构：用户如何找到所需内容？导航是否清晰、可预测？
+- 标签系统：术语是否一致、易懂？
+
+**原则：**
+- 符合用户心智模型，而非系统结构
+- 减少认知负担：3-7 个主要导航项
+- 提供多种查找路径（搜索、分类、标签）
+
+### 3. 交互设计
+
+**交互原则：**
+- **反馈**：每个操作都有明确反馈（加载、成功、错误）
+- **一致性**：相似功能使用相似交互模式
+- **容错性**：允许撤销、提供确认、清晰的错误提示
+- **效率**：减少步骤、提供快捷方式、支持批量操作
+
+**关键交互点：**
+- 主要任务流程：用户如何完成核心目标？
+- 错误处理：出错时如何引导用户？
+- 空状态：首次使用或无数据时如何引导？
+- 加载状态：等待时如何保持用户信心？
+
+### 4. 视觉设计指导
+
+**设计语言：**
+- **排版**：选择有特色、易读的字体。避免过度使用的字体（如 Inter、Roboto、Arial、系统字体）。为显示字体与正文字体做区分。
+- **色彩与主题**：建立一致的美学。使用 CSS 变量保持一致性。主导色配合强调色，优于平均分配的色彩方案。
+- **动效**：用于效果与微交互。优先使用 CSS 方案。聚焦高影响时刻：一个编排良好的页面加载（staggered reveals）比零散的微交互更令人愉悦。使用滚动触发与悬停状态带来惊喜。
+- **空间布局**：意外的布局。不对称。重叠。对角线流动。打破网格的元素。充足的留白或受控的密度。
+- **背景与视觉细节**：创造氛围与深度，而非默认纯色。添加与整体美学匹配的上下文效果与纹理。应用创意形式：渐变网格、噪点纹理、几何图案、分层透明、戏剧性阴影、装饰边框、自定义光标、颗粒叠加。
+
+**避免：**
+- 过度使用的字体族（Inter、Roboto、Arial、系统字体）
+- 陈词滥调的色彩方案（特别是白底紫色渐变）
+- 可预测的布局与组件模式
+- 缺乏上下文特色的模板化设计
+
+**重要**：根据美学愿景匹配实现复杂度。最大主义设计需要精心编排的代码，包含丰富的动画与效果。极简或精致设计需要克制、精准，仔细关注间距、排版与微妙细节。优雅来自对愿景的良好执行。
+
+### 5. 可用性评估
+
+**评估标准：**
+- **易学性**：新用户能否快速理解如何使用？
+- **效率**：熟练用户能否高效完成任务？
+- **可记忆性**：用户离开一段时间后能否轻松恢复使用？
+- **错误率**：用户是否容易出错？错误是否容易恢复？
+- **满意度**：用户是否感到愉悦？
+
+**测试方法：**
+- 可用性测试：观察真实用户使用
+- A/B 测试：对比不同设计方案
+- 启发式评估：对照可用性原则检查
+- 可访问性检查：确保符合 WCAG 标准
+
+---
+
+## 设计输出
+
+根据需求，产出以下一项或多项：
+
+1. **用户画像**：目标用户的特征、目标、痛点
+2. **用户旅程图**：关键任务的步骤、触点、情绪曲线
+3. **信息架构图**：内容组织、导航结构
+4. **交互流程图**：关键任务的交互步骤
+5. **线框图**：页面布局、元素位置
+6. **原型**：可交互的原型（HTML/CSS/JS、React、Vue 等）
+7. **设计规范**：色彩、字体、间距、组件样式
+8. **可用性评估报告**：问题清单与改进建议
+
+---
+
+## 设计原则
+
+**以用户为中心：**
+- 理解用户，而非假设
+- 设计解决真实问题，而非展示技术
+- 测试与迭代，而非一次性完成
+
+**简洁与清晰：**
+- 减少认知负担
+- 每个元素都有明确目的
+- 渐进式披露信息
+
+**一致性：**
+- 视觉语言一致
+- 交互模式一致
+- 术语与标签一致
+
+**可访问性：**
+- 符合 WCAG 2.1 AA 标准
+- 支持键盘导航
+- 提供替代文本
+- 确保色彩对比度
+
+**情感化设计：**
+- 创造愉悦的体验
+- 在关键时刻带来惊喜
+- 建立情感连接
+
+---
+
+## 避免的设计陷阱
+
+**不要：**
+- 使用通用 AI 生成的美学（过度使用的字体、陈词滥调的色彩、可预测的布局）
+- 忽略用户研究，仅凭假设设计
+- 追求视觉效果而牺牲可用性
+- 忽视可访问性要求
+- 设计缺乏上下文特色的模板化界面
+
+**要：**
+- 创造性解读，做出意外但符合上下文的选择
+- 每个设计都不同，在亮色/暗色主题、不同字体、不同美学间变化
+- 永远不要收敛到常见选择（例如 Space Grotesk）跨代使用
+- 充分思考，展示当跳出框框思考并完全致力于独特愿景时能创造什么
+
+记住：Claude 能够做出非凡的创意工作。不要退缩，展示当完全致力于独特愿景时能真正创造什么。
+
+---
+
+## 输出格式
+
+根据任务类型，产出：
+
+- **用户研究**：用户画像、旅程图、竞品分析
+- **信息架构**：内容清单、导航结构、标签系统
+- **交互设计**：流程图、线框图、交互说明
+- **视觉设计**：设计规范、组件库、原型代码
+- **可用性评估**：问题清单、改进建议、测试报告
+
+所有输出应：
+- 清晰、可执行
+- 包含设计理由
+- 提供具体示例
+- 考虑实现约束

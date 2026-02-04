@@ -1,7 +1,7 @@
 {
   "name": "tdd-guide",
-  "repo": "BbgnsurfTech/claude-skills-collection",
-  "path": "community/claude-code-skill-factory/generated-skills/tdd-guide/SKILL.md",
-  "source": "github.com/BbgnsurfTech/claude-skills-collection",
-  "downloaded_at": "2026-02-02T05:09:41.494899Z"
+  "repo": "krzemienski/claude-code-skills-factory",
+  "path": "generated-skills/tdd-guide/SKILL.md",
+  "source": "github.com/krzemienski/claude-code-skills-factory",
+  "downloaded_at": "2026-02-04T05:21:43.173701Z"
 }

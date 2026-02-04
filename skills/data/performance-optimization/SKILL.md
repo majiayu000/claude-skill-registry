@@ -1,713 +1,656 @@
 ---
 name: performance-optimization
-description: Comprehensive performance optimization strategies for Next.js 16 applications including Core Web Vitals, caching, image optimization, bundle analysis, database query optimization, and Lighthouse audits. Use when user wants to improve performance, fix slow pages, reduce load times, or optimize for production.
+description: Skill for performance profiling and optimization of web applications. Use when conducting Lighthouse audits, analyzing bundles, implementing code splitting, optimizing images, configuring caching strategies, or improving Core Web Vitals. Provides patterns for frontend and backend performance improvements, including browser, CDN, and server caching.
 ---
 
-# Performance Optimization Skill
+# Performance Optimization
 
-Complete guide for optimizing The Simpsons API application performance, targeting Core Web Vitals excellence and production-ready metrics.
+Skill for profiling and optimizing web application performance.
 
-## When to Use This Skill
+## Overview
 
-Use this skill when the user requests:
+This skill provides guidance for:
+1. **Performance Profiling** - Lighthouse, bundle analysis, profiling tools
+2. **Frontend Optimization** - Code splitting, lazy loading, image optimization
+3. **Caching Strategies** - Browser, CDN, server-side caching
+4. **Core Web Vitals** - LCP, FID/INP, CLS optimization
 
-✅ **Primary Use Cases**
+## Core Web Vitals
 
-- "Improve performance"
-- "Fix slow page"
-- "Optimize load time"
-- "Reduce bundle size"
-- "Improve Core Web Vitals"
-- "Make it faster"
+### Metrics Overview
 
-✅ **Secondary Use Cases**
+| Metric | Target | Description |
+|--------|--------|-------------|
+| LCP (Largest Contentful Paint) | < 2.5s | Time to render largest content element |
+| INP (Interaction to Next Paint) | < 200ms | Responsiveness to user interactions |
+| CLS (Cumulative Layout Shift) | < 0.1 | Visual stability during page load |
 
-- "Analyze bundle"
-- "Check lighthouse score"
-- "Optimize images"
-- "Add caching"
-- "Fix layout shift"
-- "Reduce LCP"
+### Measurement Tools
 
-❌ **Do NOT use when**
+```bash
+# Lighthouse CLI
+npx lighthouse https://example.com --output=json --output-path=./lighthouse-report.json
 
-- Fixing functional bugs (use debugging)
-- Adding new features (use component-development)
-- Database schema changes (use neon-database-management)
-- Security improvements (use security tools)
+# Web Vitals in code
+npm install web-vitals
+```
 
----
+```typescript
+// lib/web-vitals.ts
+import { onLCP, onINP, onCLS } from 'web-vitals';
 
-## Core Web Vitals Targets
+export function reportWebVitals() {
+  onLCP((metric) => {
+    console.log('LCP:', metric.value);
+    // Send to analytics
+  });
 
-| Metric | Target | Good | Needs Work | Poor |
-|--------|--------|------|------------|------|
-| **LCP** (Largest Contentful Paint) | < 2.0s | ≤ 2.5s | 2.5-4.0s | > 4.0s |
-| **INP** (Interaction to Next Paint) | < 100ms | ≤ 200ms | 200-500ms | > 500ms |
-| **CLS** (Cumulative Layout Shift) | < 0.05 | ≤ 0.1 | 0.1-0.25 | > 0.25 |
-| **FCP** (First Contentful Paint) | < 1.0s | ≤ 1.8s | 1.8-3.0s | > 3.0s |
-| **TTFB** (Time to First Byte) | < 200ms | ≤ 800ms | 800-1800ms | > 1800ms |
+  onINP((metric) => {
+    console.log('INP:', metric.value);
+  });
 
----
+  onCLS((metric) => {
+    console.log('CLS:', metric.value);
+  });
+}
+```
 
-## Part 1: Next.js Optimization
+## Lighthouse Audits
 
-### 1.1 Image Optimization
+### Running Audits
 
-```tsx
-// ✅ GOOD: Use Next.js Image component
-import Image from "next/image";
+```bash
+# Full audit
+npx lighthouse https://example.com --view
 
-export function CharacterImage({ src, name }: { src: string; name: string }) {
+# Specific categories
+npx lighthouse https://example.com --only-categories=performance,accessibility
+
+# Mobile simulation
+npx lighthouse https://example.com --preset=mobile
+
+# CI integration
+npx lighthouse https://example.com --budget-path=./budget.json --output=json
+```
+
+### Performance Budget
+
+```json
+// budget.json
+[
+  {
+    "resourceSizes": [
+      { "resourceType": "script", "budget": 300 },
+      { "resourceType": "image", "budget": 500 },
+      { "resourceType": "stylesheet", "budget": 100 },
+      { "resourceType": "total", "budget": 1000 }
+    ],
+    "resourceCounts": [
+      { "resourceType": "script", "budget": 10 },
+      { "resourceType": "third-party", "budget": 5 }
+    ],
+    "timings": [
+      { "metric": "largest-contentful-paint", "budget": 2500 },
+      { "metric": "first-contentful-paint", "budget": 1500 },
+      { "metric": "interactive", "budget": 3500 }
+    ]
+  }
+]
+```
+
+### Common Lighthouse Issues and Fixes
+
+| Issue | Impact | Fix |
+|-------|--------|-----|
+| Render-blocking resources | LCP | Async/defer scripts, inline critical CSS |
+| Large DOM size | All | Virtualization, pagination |
+| Unused JavaScript | LCP | Code splitting, tree shaking |
+| Unoptimized images | LCP | Next/Image, WebP, lazy loading |
+| Layout shifts | CLS | Size attributes, font-display |
+| Long tasks | INP | Code splitting, web workers |
+
+## Bundle Analysis
+
+### Webpack Bundle Analyzer
+
+```bash
+# Install
+npm install --save-dev webpack-bundle-analyzer
+
+# Next.js configuration
+npm install @next/bundle-analyzer
+```
+
+```javascript
+// next.config.js
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer({
+  // Next.js config
+});
+```
+
+```bash
+# Run analysis
+ANALYZE=true npm run build
+```
+
+### Identifying Bundle Issues
+
+| Issue | Indicator | Solution |
+|-------|-----------|----------|
+| Large dependencies | Single package > 100KB | Find smaller alternative |
+| Duplicate packages | Same package multiple versions | Dedupe, peer dependencies |
+| Unused exports | Large modules partially used | Tree shaking, selective imports |
+| Dev dependencies in prod | moment locales, lodash full | Selective imports |
+
+### Import Optimization
+
+```typescript
+// BAD: Imports entire library
+import _ from 'lodash';
+const result = _.debounce(fn, 300);
+
+// GOOD: Import only what you need
+import debounce from 'lodash/debounce';
+const result = debounce(fn, 300);
+
+// BAD: Barrel imports
+import { Button, Input, Modal } from '@/components';
+
+// GOOD: Direct imports (when barrel causes issues)
+import { Button } from '@/components/Button';
+import { Input } from '@/components/Input';
+```
+
+## Code Splitting Strategies
+
+### Route-Based Splitting (Next.js)
+
+```typescript
+// Automatic with App Router - each page is a separate chunk
+// app/dashboard/page.tsx - separate chunk
+// app/settings/page.tsx - separate chunk
+```
+
+### Component-Based Splitting
+
+```typescript
+// Dynamic import for heavy components
+import dynamic from 'next/dynamic';
+
+// Lazy load with loading state
+const HeavyChart = dynamic(() => import('@/components/HeavyChart'), {
+  loading: () => <ChartSkeleton />,
+  ssr: false, // Disable SSR for client-only components
+});
+
+// Conditional loading
+const AdminPanel = dynamic(() => import('@/components/AdminPanel'), {
+  loading: () => <div>Loading admin panel...</div>,
+});
+
+export default function Dashboard({ isAdmin }) {
   return (
-    <Image
-      src={src}
-      alt={name}
-      width={400}
-      height={300}
-      priority={false}
-      loading="lazy"
-      placeholder="blur"
-      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
-      className="rounded-lg object-cover"
-    />
+    <div>
+      <HeavyChart data={data} />
+      {isAdmin && <AdminPanel />}
+    </div>
   );
 }
+```
 
-// ✅ GOOD: Priority for above-the-fold images
+### Library Splitting
+
+```typescript
+// Lazy load heavy libraries
+const loadPdfLib = () => import('pdf-lib');
+
+async function generatePdf() {
+  const { PDFDocument } = await loadPdfLib();
+  const doc = await PDFDocument.create();
+  // ...
+}
+```
+
+## Image Optimization
+
+### Next.js Image Component
+
+```typescript
+import Image from 'next/image';
+
+// Responsive image with automatic optimization
 export function HeroImage() {
   return (
     <Image
       src="/hero.jpg"
-      alt="The Simpsons"
-      width={1920}
-      height={1080}
-      priority // Preloads the image
-      fetchPriority="high"
-      className="w-full"
+      alt="Hero image"
+      width={1200}
+      height={600}
+      priority // Preload for LCP
+      placeholder="blur"
+      blurDataURL={blurDataUrl}
     />
   );
 }
 
-// ✅ GOOD: Responsive images with sizes
-export function ResponsiveImage({ src }: { src: string }) {
+// Fill container
+export function BackgroundImage() {
   return (
-    <Image
-      src={src}
-      alt=""
-      fill
-      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      className="object-cover"
-    />
-  );
-}
-```
-
-### 1.2 Font Optimization
-
-```tsx
-// app/layout.tsx
-import { Inter } from "next/font/google";
-
-// ✅ GOOD: Load subset and display swap
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-  preload: true,
-});
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans">{children}</body>
-    </html>
-  );
-}
-```
-
-### 1.3 Script Optimization
-
-```tsx
-import Script from "next/script";
-
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      {children}
-      
-      {/* ✅ GOOD: Load analytics after page is interactive */}
-      <Script
-        src="https://analytics.example.com/script.js"
-        strategy="afterInteractive"
-      />
-      
-      {/* ✅ GOOD: Load non-critical scripts on worker thread */}
-      <Script
-        src="https://widget.example.com/script.js"
-        strategy="lazyOnload"
-      />
-      
-      {/* ✅ GOOD: Inline critical scripts */}
-      <Script id="critical-script" strategy="beforeInteractive">
-        {`window.dataLayer = window.dataLayer || [];`}
-      </Script>
-    </>
-  );
-}
-```
-
-### 1.4 Metadata Optimization
-
-```tsx
-// app/layout.tsx
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: {
-    template: "%s | The Simpsons API",
-    default: "The Simpsons API",
-  },
-  description: "Explore characters, episodes, and more from The Simpsons",
-  // Preconnect to external resources
-  other: {
-    "link": [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "dns-prefetch", href: "https://api.thesimpsonsapi.com" },
-    ],
-  },
-};
-```
-
----
-
-## Part 2: Caching Strategies
-
-### 2.1 Route Segment Config
-
-```tsx
-// app/characters/page.tsx
-
-// Static generation (cached at build time)
-export const dynamic = "force-static";
-export const revalidate = 3600; // Revalidate every hour
-
-// For dynamic data
-export const dynamic = "force-dynamic";
-
-// For streaming
-export const runtime = "edge";
-```
-
-### 2.2 Data Caching with unstable_cache
-
-```tsx
-import { unstable_cache } from "next/cache";
-import { findAllCharacters } from "@/app/_lib/repositories";
-
-const getCachedCharacters = unstable_cache(
-  async () => {
-    return findAllCharacters();
-  },
-  ["all-characters"],
-  {
-    revalidate: 3600, // 1 hour
-    tags: ["characters"],
-  }
-);
-
-export default async function CharactersPage() {
-  const characters = await getCachedCharacters();
-  return <CharacterList characters={characters} />;
-}
-```
-
-### 2.3 Request Memoization
-
-```tsx
-// Next.js automatically dedupes fetch requests in the same render
-async function getCharacter(id: number) {
-  const res = await fetch(`/api/characters/${id}`, {
-    next: { revalidate: 3600 },
-  });
-  return res.json();
-}
-
-// These calls are deduplicated - only 1 request made
-export default async function Page() {
-  const [character1, character2] = await Promise.all([
-    getCharacter(1), // Same request
-    getCharacter(1), // Deduplicated!
-  ]);
-  return <div>{character1.name}</div>;
-}
-```
-
-### 2.4 Static Generation with generateStaticParams
-
-```tsx
-// app/characters/[id]/page.tsx
-import { findAllCharacterIds } from "@/app/_lib/repositories";
-
-export async function generateStaticParams() {
-  const ids = await findAllCharacterIds();
-  return ids.map((id) => ({ id: String(id) }));
-}
-
-export default async function CharacterPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const character = await findCharacterById(Number(params.id));
-  return <CharacterDetail character={character} />;
-}
-```
-
----
-
-## Part 3: Bundle Optimization
-
-### 3.1 Bundle Analysis
-
-```bash
-# Install analyzer
-pnpm add -D @next/bundle-analyzer
-
-# Update next.config.ts
-```
-
-```typescript
-// next.config.ts
-import type { NextConfig } from "next";
-
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
-const nextConfig: NextConfig = {
-  // ... your config
-};
-
-export default withBundleAnalyzer(nextConfig);
-```
-
-```bash
-# Analyze bundle
-ANALYZE=true pnpm build
-```
-
-### 3.2 Dynamic Imports
-
-```tsx
-import dynamic from "next/dynamic";
-
-// ✅ GOOD: Lazy load heavy components
-const HeavyChart = dynamic(() => import("@/components/HeavyChart"), {
-  loading: () => <div className="h-64 animate-pulse bg-muted rounded" />,
-  ssr: false, // Client-only component
-});
-
-// ✅ GOOD: Lazy load below-the-fold content
-const Comments = dynamic(() => import("@/components/Comments"));
-
-export function CharacterPage({ character }) {
-  return (
-    <div>
-      <CharacterHeader character={character} />
-      <Suspense fallback={<CommentsSkeleton />}>
-        <Comments characterId={character.id} />
-      </Suspense>
-    </div>
-  );
-}
-```
-
-### 3.3 Tree Shaking
-
-```typescript
-// ❌ BAD: Imports entire library
-import _ from "lodash";
-_.debounce(fn, 300);
-
-// ✅ GOOD: Import specific function
-import debounce from "lodash/debounce";
-debounce(fn, 300);
-
-// ❌ BAD: Import all icons
-import * as Icons from "lucide-react";
-
-// ✅ GOOD: Import specific icons
-import { Home, User, Settings } from "lucide-react";
-```
-
-### 3.4 Package Import Optimization
-
-```typescript
-// next.config.ts
-const nextConfig: NextConfig = {
-  experimental: {
-    optimizePackageImports: [
-      "lucide-react",
-      "@radix-ui/react-icons",
-      "date-fns",
-    ],
-  },
-};
-```
-
----
-
-## Part 4: Rendering Optimization
-
-### 4.1 Streaming with Suspense
-
-```tsx
-import { Suspense } from "react";
-
-export default function Page() {
-  return (
-    <div>
-      {/* Critical content - renders immediately */}
-      <h1>Characters</h1>
-      
-      {/* Streamed content - loads progressively */}
-      <Suspense fallback={<CharacterListSkeleton />}>
-        <CharacterList />
-      </Suspense>
-      
-      {/* Lower priority content */}
-      <Suspense fallback={<RecommendationsSkeleton />}>
-        <Recommendations />
-      </Suspense>
-    </div>
-  );
-}
-```
-
-### 4.2 Parallel Data Fetching
-
-```tsx
-// ✅ GOOD: Parallel data fetching
-export default async function Page() {
-  // These run in parallel
-  const [characters, episodes, stats] = await Promise.all([
-    getCharacters(),
-    getEpisodes(),
-    getStats(),
-  ]);
-
-  return (
-    <div>
-      <Characters data={characters} />
-      <Episodes data={episodes} />
-      <Stats data={stats} />
-    </div>
-  );
-}
-
-// ❌ BAD: Sequential data fetching
-export default async function Page() {
-  const characters = await getCharacters(); // Wait...
-  const episodes = await getEpisodes(); // Wait...
-  const stats = await getStats(); // Wait...
-  // Total time = sum of all requests
-}
-```
-
-### 4.3 Avoid Layout Shifts
-
-```tsx
-// ✅ GOOD: Reserve space for dynamic content
-export function ImageCard() {
-  return (
-    <div className="relative aspect-video"> {/* Fixed aspect ratio */}
+    <div className="relative w-full h-64">
       <Image
-        src="/image.jpg"
-        alt=""
+        src="/background.jpg"
+        alt="Background"
         fill
-        className="object-cover"
+        style={{ objectFit: 'cover' }}
+        sizes="100vw"
       />
     </div>
   );
 }
-
-// ✅ GOOD: Skeleton with matching dimensions
-export function CardSkeleton() {
-  return (
-    <div className="w-full h-48 bg-muted animate-pulse rounded-lg" />
-  );
-}
-
-// ✅ GOOD: Font display swap
-const font = Inter({
-  display: "swap", // Shows fallback font immediately
-});
 ```
 
-### 4.4 Reduce Client-Side JavaScript
+### Image Format Selection
 
-```tsx
-// ✅ GOOD: Server Component (default)
-// No "use client" = 0 JS sent to client
-export function StaticContent() {
-  return <div>This sends no JavaScript</div>;
-}
+| Format | Use Case | Browser Support |
+|--------|----------|-----------------|
+| WebP | General purpose, photos | Modern browsers |
+| AVIF | Best compression, photos | Chrome, Firefox |
+| SVG | Icons, logos, illustrations | All |
+| PNG | Transparency needed | All |
+| JPEG | Photos (fallback) | All |
 
-// ⚠️ Use sparingly: Client Component
-"use client";
-// Only use when you need:
-// - useState, useEffect
-// - Event handlers (onClick, onChange)
-// - Browser APIs
-export function InteractiveContent() {
-  const [count, setCount] = useState(0);
-  return <button onClick={() => setCount(c => c + 1)}>{count}</button>;
-}
-```
-
----
-
-## Part 5: Database Optimization
-
-### 5.1 Query Optimization
+### Responsive Images
 
 ```typescript
-// ❌ BAD: N+1 Query Problem
-for (const character of characters) {
-  const episodes = await query(
-    `SELECT * FROM ${TABLES.episodes} WHERE character_id = $1`,
-    [character.id]
-  );
-}
-
-// ✅ GOOD: Single JOIN query
-const data = await query(`
-  SELECT c.*, json_agg(e.*) as episodes
-  FROM ${TABLES.characters} c
-  LEFT JOIN ${TABLES.character_episodes} ce ON ce.character_id = c.id
-  LEFT JOIN ${TABLES.episodes} e ON e.id = ce.episode_id
-  GROUP BY c.id
-`);
-
-// ✅ GOOD: Batch query with ANY
-const characterIds = characters.map(c => c.id);
-const allEpisodes = await query(`
-  SELECT * FROM ${TABLES.episodes}
-  WHERE character_id = ANY($1)
-`, [characterIds]);
-```
-
-### 5.2 Indexing Strategy
-
-```sql
--- Check slow queries first
-SELECT 
-  query,
-  calls,
-  mean_time,
-  total_time
-FROM pg_stat_statements
-ORDER BY mean_time DESC
-LIMIT 10;
-
--- Add indexes for common query patterns
-CREATE INDEX CONCURRENTLY idx_characters_name 
-ON the_simpson.characters(name);
-
-CREATE INDEX CONCURRENTLY idx_episodes_season_episode 
-ON the_simpson.episodes(season, episode_number);
-
--- Partial index for common filter
-CREATE INDEX CONCURRENTLY idx_active_users 
-ON the_simpson.users(id) 
-WHERE deleted_at IS NULL;
-```
-
-### 5.3 Connection Optimization
-
-```typescript
-// Already optimized in db.ts
-import { neonConfig } from "@neondatabase/serverless";
-
-// HTTP mode for serverless - best performance
-neonConfig.poolQueryViaFetch = true;
-```
-
----
-
-## Part 6: Monitoring & Measurement
-
-### 6.1 Lighthouse CI
-
-```bash
-# Install Lighthouse CI
-pnpm add -D @lhci/cli
-
-# Create config
-cat > lighthouserc.js << 'EOF'
+// next.config.js
 module.exports = {
-  ci: {
-    collect: {
-      url: ['http://localhost:3000/', 'http://localhost:3000/characters'],
-      startServerCommand: 'pnpm start',
-      numberOfRuns: 3,
-    },
-    assert: {
-      assertions: {
-        'categories:performance': ['error', { minScore: 0.9 }],
-        'categories:accessibility': ['error', { minScore: 0.9 }],
-        'categories:best-practices': ['error', { minScore: 0.9 }],
-        'categories:seo': ['error', { minScore: 0.9 }],
-        'first-contentful-paint': ['error', { maxNumericValue: 1800 }],
-        'largest-contentful-paint': ['error', { maxNumericValue: 2500 }],
-        'cumulative-layout-shift': ['error', { maxNumericValue: 0.1 }],
-      },
-    },
-    upload: {
-      target: 'temporary-public-storage',
-    },
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    formats: ['image/avif', 'image/webp'],
   },
 };
-EOF
-
-# Run Lighthouse CI
-pnpm lhci autorun
 ```
 
-### 6.2 Web Vitals Monitoring
+```typescript
+// Specify sizes for responsive loading
+<Image
+  src="/product.jpg"
+  alt="Product"
+  fill
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+/>
+```
 
-```tsx
-// app/_components/WebVitals.tsx
-"use client";
+## Caching Strategies
 
-import { useReportWebVitals } from "next/web-vitals";
+### Browser Caching
 
-export function WebVitals() {
-  useReportWebVitals((metric) => {
-    // Log to console in development
-    if (process.env.NODE_ENV === "development") {
-      console.log(metric);
-    }
+```typescript
+// next.config.js - Static asset caching
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
+};
+```
 
-    // Send to analytics in production
-    if (process.env.NODE_ENV === "production") {
-      // Example: Send to your analytics endpoint
-      fetch("/api/vitals", {
-        method: "POST",
-        body: JSON.stringify(metric),
-        headers: { "Content-Type": "application/json" },
-      });
-    }
+### CDN Caching
+
+```typescript
+// API route with CDN caching
+export async function GET(request: Request) {
+  const data = await fetchData();
+
+  return Response.json(data, {
+    headers: {
+      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+    },
+  });
+}
+```
+
+### Cache Control Headers
+
+| Directive | Use Case |
+|-----------|----------|
+| `public, max-age=31536000, immutable` | Versioned static assets (CSS, JS) |
+| `public, max-age=3600` | Semi-static content |
+| `public, s-maxage=60, stale-while-revalidate=300` | CDN caching with background refresh |
+| `private, no-cache` | User-specific data |
+| `no-store` | Sensitive data |
+
+### Server-Side Caching (FastAPI)
+
+```python
+# Redis caching for API responses
+from fastapi import FastAPI
+from functools import wraps
+import redis
+import json
+
+redis_client = redis.Redis(host='localhost', port=6379, db=0)
+
+def cache_response(ttl_seconds: int = 300):
+    """Cache decorator for API endpoints."""
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            # Generate cache key
+            cache_key = f"{func.__name__}:{str(args)}:{str(kwargs)}"
+
+            # Check cache
+            cached = redis_client.get(cache_key)
+            if cached:
+                return json.loads(cached)
+
+            # Execute and cache
+            result = await func(*args, **kwargs)
+            redis_client.setex(cache_key, ttl_seconds, json.dumps(result))
+            return result
+        return wrapper
+    return decorator
+
+@app.get("/products")
+@cache_response(ttl_seconds=300)
+async def get_products():
+    return await product_service.get_all()
+```
+
+### Database Query Caching
+
+```python
+# SQLAlchemy query caching
+from sqlalchemy import event
+from functools import lru_cache
+
+class CachedRepository:
+    def __init__(self, session):
+        self.session = session
+        self._cache = {}
+
+    async def get_by_id(self, entity_id: int):
+        cache_key = f"entity:{entity_id}"
+
+        if cache_key in self._cache:
+            return self._cache[cache_key]
+
+        result = await self.session.get(Entity, entity_id)
+        self._cache[cache_key] = result
+        return result
+
+    def invalidate(self, entity_id: int):
+        cache_key = f"entity:{entity_id}"
+        self._cache.pop(cache_key, None)
+```
+
+## Frontend Performance Patterns
+
+### Virtualization for Long Lists
+
+```typescript
+import { useVirtualizer } from '@tanstack/react-virtual';
+
+function VirtualList({ items }) {
+  const parentRef = useRef<HTMLDivElement>(null);
+
+  const virtualizer = useVirtualizer({
+    count: items.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 50,
+    overscan: 5,
   });
 
-  return null;
-}
-
-// Add to app/layout.tsx
-import { WebVitals } from "./_components/WebVitals";
-
-export default function RootLayout({ children }) {
   return (
-    <html>
-      <body>
-        <WebVitals />
-        {children}
-      </body>
-    </html>
+    <div ref={parentRef} className="h-96 overflow-auto">
+      <div
+        style={{
+          height: `${virtualizer.getTotalSize()}px`,
+          position: 'relative',
+        }}
+      >
+        {virtualizer.getVirtualItems().map((virtualItem) => (
+          <div
+            key={virtualItem.key}
+            style={{
+              position: 'absolute',
+              top: 0,
+              transform: `translateY(${virtualItem.start}px)`,
+              height: `${virtualItem.size}px`,
+            }}
+          >
+            {items[virtualItem.index].name}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 ```
 
-### 6.3 Chrome DevTools Performance
-
-Using the webapp-testing skill:
+### Debouncing User Input
 
 ```typescript
-// Start performance trace
-mcp_chrome_devtoo_performance_start_trace({
-  reload: true,
-  autoStop: true,
-});
+import { useDeferredValue, useState } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 
-// Analyze specific insight
-mcp_chrome_devtoo_performance_analyze_insight({
-  insightSetId: "trace_id",
-  insightName: "LCPBreakdown",
-});
+function SearchInput() {
+  const [query, setQuery] = useState('');
+  const deferredQuery = useDeferredValue(query);
+
+  // Or with explicit debounce
+  const debouncedSearch = useDebouncedCallback(
+    (value: string) => {
+      performSearch(value);
+    },
+    300
+  );
+
+  return (
+    <input
+      value={query}
+      onChange={(e) => {
+        setQuery(e.target.value);
+        debouncedSearch(e.target.value);
+      }}
+    />
+  );
+}
 ```
 
----
+### Optimistic Updates
 
-## Part 7: Production Checklist
+```typescript
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-### Pre-Deployment Optimization
+function TodoItem({ todo }) {
+  const queryClient = useQueryClient();
 
-- [ ] **Images**
-  - [ ] All images use `next/image`
-  - [ ] Hero/LCP images have `priority`
-  - [ ] Images have correct `sizes` prop
-  - [ ] Images are in modern formats (WebP/AVIF)
+  const toggleMutation = useMutation({
+    mutationFn: (completed: boolean) =>
+      api.updateTodo(todo.id, { completed }),
 
-- [ ] **JavaScript**
-  - [ ] Bundle analyzed for large dependencies
-  - [ ] Heavy components dynamically imported
-  - [ ] Tree shaking verified
-  - [ ] No unnecessary client components
+    onMutate: async (completed) => {
+      // Cancel outgoing refetches
+      await queryClient.cancelQueries({ queryKey: ['todos'] });
 
-- [ ] **Caching**
-  - [ ] Static pages are pre-rendered
-  - [ ] Dynamic data has appropriate revalidation
-  - [ ] API routes have cache headers
-  - [ ] Database queries are optimized
+      // Snapshot previous value
+      const previousTodos = queryClient.getQueryData(['todos']);
 
-- [ ] **Loading**
-  - [ ] Suspense boundaries for streaming
-  - [ ] Skeleton loaders match content dimensions
-  - [ ] Fonts use `display: swap`
-  - [ ] Critical CSS is inlined
+      // Optimistically update
+      queryClient.setQueryData(['todos'], (old: Todo[]) =>
+        old.map((t) =>
+          t.id === todo.id ? { ...t, completed } : t
+        )
+      );
 
-- [ ] **Metrics**
-  - [ ] Lighthouse score > 90 on all categories
-  - [ ] LCP < 2.5s
-  - [ ] INP < 200ms
-  - [ ] CLS < 0.1
+      return { previousTodos };
+    },
 
-### Common Performance Fixes
+    onError: (err, completed, context) => {
+      // Rollback on error
+      queryClient.setQueryData(['todos'], context?.previousTodos);
+    },
+  });
 
-| Issue | Solution |
-|-------|----------|
-| High LCP | Add `priority` to LCP image, preload critical resources |
-| High CLS | Set explicit dimensions, use skeletons |
-| High INP | Reduce JS bundle, use `useDeferredValue` |
-| Slow TTFB | Add caching, use edge runtime |
-| Large bundle | Dynamic imports, tree shaking |
-| Slow images | Use next/image, optimize formats |
-| Font flash | Use `display: swap`, preload fonts |
+  return (
+    <input
+      type="checkbox"
+      checked={todo.completed}
+      onChange={(e) => toggleMutation.mutate(e.target.checked)}
+    />
+  );
+}
+```
 
----
+## Backend Performance Patterns
 
-## Related Skills
+### Database Query Optimization
 
-- [webapp-testing](../webapp-testing/SKILL.md) - Performance measurement
-- [neon-database-management](../neon-database-management/SKILL.md) - Query optimization
-- [component-development](../component-development/SKILL.md) - Efficient components
+```python
+# Eager loading to avoid N+1 queries
+from sqlalchemy.orm import joinedload, selectinload
 
----
+# BAD: N+1 queries
+users = session.query(User).all()
+for user in users:
+    print(user.orders)  # Separate query for each user!
+
+# GOOD: Eager load relationships
+users = session.query(User).options(
+    selectinload(User.orders)
+).all()
+
+# For nested relationships
+users = session.query(User).options(
+    selectinload(User.orders).selectinload(Order.items)
+).all()
+```
+
+### Connection Pooling
+
+```python
+# SQLAlchemy connection pool configuration
+from sqlalchemy import create_engine
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_size=20,           # Number of persistent connections
+    max_overflow=10,        # Additional connections when pool exhausted
+    pool_timeout=30,        # Timeout waiting for connection
+    pool_recycle=1800,      # Recycle connections after 30 mins
+    pool_pre_ping=True,     # Verify connection before use
+)
+```
+
+### Async Operations
+
+```python
+from fastapi import FastAPI
+import asyncio
+
+@app.get("/dashboard")
+async def get_dashboard():
+    # Run independent queries concurrently
+    user_data, orders, notifications = await asyncio.gather(
+        get_user_profile(),
+        get_recent_orders(),
+        get_notifications(),
+    )
+
+    return {
+        "user": user_data,
+        "orders": orders,
+        "notifications": notifications,
+    }
+```
+
+## Performance Monitoring
+
+### Real User Monitoring (RUM)
+
+```typescript
+// Send performance data to analytics
+export function trackPagePerformance() {
+  if (typeof window === 'undefined') return;
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const timing = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+
+      const metrics = {
+        dns: timing.domainLookupEnd - timing.domainLookupStart,
+        tcp: timing.connectEnd - timing.connectStart,
+        ttfb: timing.responseStart - timing.requestStart,
+        download: timing.responseEnd - timing.responseStart,
+        domInteractive: timing.domInteractive - timing.fetchStart,
+        domComplete: timing.domComplete - timing.fetchStart,
+        loadComplete: timing.loadEventEnd - timing.fetchStart,
+      };
+
+      // Send to analytics
+      analytics.track('page_performance', metrics);
+    }, 0);
+  });
+}
+```
+
+## Performance Optimization Checklist
+
+### Frontend
+
+- [ ] Lighthouse score > 90 for Performance
+- [ ] LCP < 2.5s
+- [ ] INP < 200ms
+- [ ] CLS < 0.1
+- [ ] Bundle size within budget
+- [ ] Images optimized (WebP/AVIF, lazy loading)
+- [ ] Critical CSS inlined
+- [ ] JavaScript async/deferred
+- [ ] Code splitting implemented
+- [ ] Fonts optimized (font-display: swap)
+
+### Backend
+
+- [ ] Database queries optimized (no N+1)
+- [ ] Connection pooling configured
+- [ ] Caching strategy implemented
+- [ ] Async operations where beneficial
+- [ ] Response compression enabled
+- [ ] Indexes on frequently queried columns
+
+### Caching
+
+- [ ] Static assets cached with long TTL
+- [ ] CDN configured for static content
+- [ ] API responses cached appropriately
+- [ ] Cache invalidation strategy defined
 
 ## References
 
-- [Next.js Performance](https://nextjs.org/docs/app/building-your-application/optimizing)
-- [Web Vitals](https://web.dev/vitals/)
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
-- [Core Web Vitals](https://web.dev/articles/vitals)
-
----
-
-**Last Updated:** January 14, 2026  
-**Maintained By:** Development Team  
-**Status:** ✅ Production Ready
+For detailed guidance, see:
+- `references/lighthouse-guide.md` - Comprehensive Lighthouse optimization
+- `references/caching-patterns.md` - Advanced caching strategies

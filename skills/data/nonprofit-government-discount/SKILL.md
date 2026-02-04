@@ -1,48 +1,20 @@
 ---
 name: nonprofit-government-discount
-description: |
-  Non-profit, educational, or government organizations inquire about special pricing.
-sample_size: 21
-validation:
-  required_phrases:
-    - "https github com epicweb"
-  forbidden_patterns: []
-metrics:
-  sample_size: 21
-  avg_thread_length: 4.33
-  top_phrases:
-    - phrase: "https github com epicweb"
-      count: 4
-      percent: 19
-    - phrase: "github com epicweb dev"
-      count: 4
-      percent: 19
-    - phrase: "thanks for reaching out"
-      count: 4
-      percent: 19
-    - phrase: "com epicweb dev mcp"
-      count: 3
-      percent: 14.3
-    - phrase: "sep 17 2025 at"
-      count: 3
-      percent: 14.3
-    - phrase: "email wrote hello kent"
-      count: 3
-      percent: 14.3
-    - phrase: "please let me know"
-      count: 3
-      percent: 14.3
-    - phrase: "if you have any"
-      count: 3
-      percent: 14.3
-    - phrase: "thanks for your interest"
-      count: 3
-      percent: 14.3
-    - phrase: "for your interest in"
-      count: 3
-      percent: 14.3
+description: Respond to nonprofit or government discount requests. Use when an organization asks about special pricing for nonprofit, education, or government.
+metadata:
+  trigger_phrases:
+      - "respond nonprofit"
+      - "nonprofit government"
+      - "government discount"
+  related_skills: ["student-discount-request", "discount-code-request", "pricing-inquiry", "continuing-education-credits", "installment-payment-option"]
+  sample_size: "21"
+  validation: |
+    required_phrases:
+      - "https github com epicweb"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 21\navg_thread_length: 4.33\ntop_phrases:\n  - phrase: \"https github com epicweb\"\n    count: 4\n    percent: 19\n  - phrase: \"github com epicweb dev\"\n    count: 4\n    percent: 19\n  - phrase: \"thanks for reaching out\"\n    count: 4\n    percent: 19\n  - phrase: \"com epicweb dev mcp\"\n    count: 3\n    percent: 14.3\n  - phrase: \"sep 17 2025 at\"\n    count: 3\n    percent: 14.3\n  - phrase: \"email wrote hello kent\"\n    count: 3\n    percent: 14.3\n  - phrase: \"please let me know\"\n    count: 3\n    percent: 14.3\n  - phrase: \"if you have any\"\n    count: 3\n    percent: 14.3\n  - phrase: \"thanks for your interest\"\n    count: 3\n    percent: 14.3\n  - phrase: \"for your interest in\"\n    count: 3\n    percent: 14.3"
 ---
-
 # Nonprofit and Government Discounts
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

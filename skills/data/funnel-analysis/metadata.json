@@ -1,7 +1,7 @@
 {
   "name": "funnel-analysis",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/marketing-pro-workflow/.claude/skills/funnel-analysis/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:25.374912Z"
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/funnel-analysis/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-04T04:42:12.044043Z"
 }

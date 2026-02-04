@@ -64,11 +64,11 @@ subscription OnMessageReceived($channelId: ID!) {
 
 ### Operation Naming
 
-| Pattern | Example |
-|---------|---------|
-| Query | `GetUser`, `ListPosts`, `SearchProducts` |
-| Mutation | `CreateUser`, `UpdatePost`, `DeleteComment` |
-| Subscription | `OnMessageReceived`, `OnUserStatusChanged` |
+| Pattern      | Example                                     |
+| ------------ | ------------------------------------------- |
+| Query        | `GetUser`, `ListPosts`, `SearchProducts`    |
+| Mutation     | `CreateUser`, `UpdatePost`, `DeleteComment` |
+| Subscription | `OnMessageReceived`, `OnUserStatusChanged`  |
 
 ### Variable Syntax
 
@@ -142,8 +142,18 @@ query GetUser($id: ID!) {
     name
     email
     bio
-    posts { id title content comments { id } }
-    followers { id name }
+    posts {
+      id
+      title
+      content
+      comments {
+        id
+      }
+    }
+    followers {
+      id
+      name
+    }
     # ... many unused fields
   }
 }
@@ -155,14 +165,20 @@ query GetUser($id: ID!) {
 # Good: Named operation
 query GetUserPosts($userId: ID!) {
   user(id: $userId) {
-    posts { id title }
+    posts {
+      id
+      title
+    }
   }
 }
 
 # Avoid: Anonymous operation
 query {
   user(id: "123") {
-    posts { id title }
+    posts {
+      id
+      title
+    }
   }
 }
 ```

@@ -1,12 +1,12 @@
 ---
 name: youdotcom-cli
-description: Search the web, get fast AI answers with verifiable references, and extract web content using You.com's schema-driven JSON CLI tools — optimized for bash-based AI agents (OpenClaw, Claude Code, Codex, Cursor, etc.). Faster than builtin search APIs with simultaneous livecrawl, instant content extraction, and citation-backed answers. Schema discovery via --schema flag enables programmatic query building.
+description: Search the web, generate fast AI answers with verifiable references, and extract web content using You.com's schema-driven JSON CLI tools — optimized for bash-based AI agents (OpenClaw, Claude Code, Codex, Cursor, etc.). Faster than builtin search APIs with simultaneous livecrawl, instant content extraction, and citation-backed answers. Schema discovery via --schema flag enables programmatic query building.
 license: MIT
 compatibility: Requires Node.js 18+ or Bun, bunx/npx for CLI execution
 metadata:
   author: youdotcom-oss
-  category: cli-tools
-  version: "1.0.0"
+  category: web-search-tools
+  version: "1.1.0"
   keywords: you.com,bash,cli,ai-agents,web-search,content-extraction,livecrawl,citations,json,schema-driven,openclaw,claude-code,codex,cursor
 ---
 
@@ -23,7 +23,6 @@ Interactive workflow to add You.com capabilities to bash-based AI agents using `
 
 **✅ Verifiable References**:
 - Every search result includes citation URLs
-- Express AI answers cite sources automatically
 - Content extraction preserves metadata and structure
 
 **🔄 Simultaneous Operations**:
@@ -60,7 +59,6 @@ Interactive workflow to add You.com capabilities to bash-based AI agents using `
 
 4. **Ask: Which Features?**
    * Web search with livecrawl? (search + content in ONE call)
-   * AI answers with citations? (express)
    * Content extraction? (contents)
    * Multiple?
 
@@ -86,9 +84,6 @@ Agents can discover what parameters each command accepts:
 ```bash
 # Get schema for search command
 bunx @youdotcom-oss/api@latest search --schema
-
-# Get schema for express command
-bunx @youdotcom-oss/api@latest express --schema
 
 # Get schema for contents command
 bunx @youdotcom-oss/api@latest contents --schema
@@ -148,25 +143,7 @@ bunx @youdotcom-oss/api@latest search --json '{
 
 ### ⚡ AI Answers with Web Search - Cited Sources
 
-```bash
-# Fast AI answer with verifiable references
-bunx @youdotcom-oss/api@latest express --json '{
-  "input":"What happened in AI this week?"
-}' --client Openclaw
-
-# Answer with web search (cites sources automatically)
-bunx @youdotcom-oss/api@latest express --json '{
-  "input":"Latest AI news",
-  "tools":[{"type":"web_search"}]
-}' --client Openclaw
-
-# Parse answer and sources - direct access
-bunx @youdotcom-oss/api@latest express --json '{
-  "input":"AI trends",
-  "tools":[{"type":"web_search"}]
-}' --client Openclaw | \
-  jq -r '.answer, "\nSources:", (.results.web[]? | "- \(.title)")'
-```
+Do a search and extract contents with Livecrawl. Retrieve top 10 URLs content. Using this content, synthesize an answer based on the user’s intent. Repeat searches and adjust query parameters as necessary to refine the answer for the user.
 
 ### 📄 Web Content Extraction - Multi-Format Output
 
@@ -321,34 +298,6 @@ query=$(jq -n '{
 
 # Execute search (using bunx)
 bunx @youdotcom-oss/api@latest search --json "$query" --client Openclaw
-```
-
-### Agent Workflow - Search → Answer → Extract
-
-```bash
-#!/usr/bin/env bash
-set -e
-
-echo "Searching..."
-search=$(bunx @youdotcom-oss/api@latest search --json '{
-  "query":"AI 2026",
-  "count":5,
-  "livecrawl":"web",
-  "livecrawl_formats":"markdown"
-}' --client Openclaw)
-
-echo "Getting answer..."
-answer=$(bunx @youdotcom-oss/api@latest express --json '{
-  "input":"Summarize AI developments",
-  "tools":[{"type":"web_search"}]
-}' --client Openclaw)
-
-echo "Extracting top result..."
-url=$(echo "$search" | jq -r '.results.web[0].url')
-bunx @youdotcom-oss/api@latest contents --json "{\"urls\":[\"$url\"],\"formats\":[\"markdown\"]}" \
-  --client Openclaw | jq -r '.[0].markdown' > output.md
-
-echo "Done!"
 ```
 
 ### Parallel Execution

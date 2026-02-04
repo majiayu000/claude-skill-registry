@@ -3,33 +3,33 @@ name: strategic-compact
 description: Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.
 ---
 
-# Strategic Compact Skill
+# 策略性壓縮技能
 
-Suggests manual `/compact` at strategic points in your workflow rather than relying on arbitrary auto-compaction.
+在工作流程的策略點建議手動 `/compact`，而非依賴任意的自動壓縮。
 
-## Why Strategic Compaction?
+## 為什麼需要策略性壓縮？
 
-Auto-compaction triggers at arbitrary points:
-- Often mid-task, losing important context
-- No awareness of logical task boundaries
-- Can interrupt complex multi-step operations
+自動壓縮在任意點觸發：
+- 經常在任務中途，丟失重要上下文
+- 不知道邏輯任務邊界
+- 可能中斷複雜的多步驟操作
 
-Strategic compaction at logical boundaries:
-- **After exploration, before execution** - Compact research context, keep implementation plan
-- **After completing a milestone** - Fresh start for next phase
-- **Before major context shifts** - Clear exploration context before different task
+邏輯邊界的策略性壓縮：
+- **探索後、執行前** - 壓縮研究上下文，保留實作計畫
+- **完成里程碑後** - 為下一階段重新開始
+- **主要上下文轉換前** - 在不同任務前清除探索上下文
 
-## How It Works
+## 運作方式
 
-The `suggest-compact.sh` script runs on PreToolUse (Edit/Write) and:
+`suggest-compact.sh` 腳本在 PreToolUse（Edit/Write）執行並：
 
-1. **Tracks tool calls** - Counts tool invocations in session
-2. **Threshold detection** - Suggests at configurable threshold (default: 50 calls)
-3. **Periodic reminders** - Reminds every 25 calls after threshold
+1. **追蹤工具呼叫** - 計算工作階段中的工具呼叫次數
+2. **門檻偵測** - 在可設定門檻建議（預設：50 次呼叫）
+3. **定期提醒** - 門檻後每 25 次呼叫提醒一次
 
-## Hook Setup
+## Hook 設定
 
-Add to your `~/.claude/settings.json`:
+新增到你的 `~/.claude/settings.json`：
 
 ```json
 {
@@ -45,19 +45,19 @@ Add to your `~/.claude/settings.json`:
 }
 ```
 
-## Configuration
+## 設定
 
-Environment variables:
-- `COMPACT_THRESHOLD` - Tool calls before first suggestion (default: 50)
+環境變數：
+- `COMPACT_THRESHOLD` - 第一次建議前的工具呼叫次數（預設：50）
 
-## Best Practices
+## 最佳實務
 
-1. **Compact after planning** - Once plan is finalized, compact to start fresh
-2. **Compact after debugging** - Clear error-resolution context before continuing
-3. **Don't compact mid-implementation** - Preserve context for related changes
-4. **Read the suggestion** - The hook tells you *when*, you decide *if*
+1. **規劃後壓縮** - 計畫確定後，壓縮以重新開始
+2. **除錯後壓縮** - 繼續前清除錯誤解決上下文
+3. **不要在實作中途壓縮** - 為相關變更保留上下文
+4. **閱讀建議** - Hook 告訴你*何時*，你決定*是否*
 
-## Related
+## 相關
 
-- [The Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) - Token optimization section
-- Memory persistence hooks - For state that survives compaction
+- [Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) - Token 優化章節
+- 記憶持久性 hooks - 用於壓縮後存活的狀態

@@ -1,7 +1,7 @@
 {
   "name": "resource-scout",
-  "repo": "nicepkg/ai-workflow",
+  "repo": "nicepkg/vsync",
   "path": ".claude/skills/resource-scout/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:20.708206Z"
+  "source": "github.com/nicepkg/vsync",
+  "downloaded_at": "2026-02-04T04:34:09.570077Z"
 }

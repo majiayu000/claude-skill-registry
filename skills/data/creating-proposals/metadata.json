@@ -1,9 +1,7 @@
 {
   "name": "creating-proposals",
-  "description": "クライアント向け提案資料の作成を支援します。コンサル流のノウハウに基づき、意思決定を促す資料構成・原稿を作成します。提案書、企画書、営業資料が必要なときに使用してください。",
-  "repo": "sekka/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "PerryB-GIT/claude-code-skills",
+  "path": "creating-proposals/SKILL.md",
+  "source": "github.com/PerryB-GIT/claude-code-skills",
+  "downloaded_at": "2026-02-04T01:36:30.691445Z"
 }

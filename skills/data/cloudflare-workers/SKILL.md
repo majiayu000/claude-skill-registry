@@ -1,134 +1,324 @@
 ---
-name: Cloudflare Workers
-description: Edge deployment patterns and Cloudflare-specific considerations for LivestockAI
+name: cloudflare-workers
+description: >
+  Cloudflare Workers essentials - Hono routing, middleware, request handling, bindings.
+  Trigger: When working with Cloudflare Workers, Hono framework, serverless APIs, edge computing.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
 ---
 
-# Cloudflare Workers
+## Critical Patterns
 
-LivestockAI is deployed on Cloudflare Workers for global edge performance. This skill covers Workers-specific patterns and constraints.
-
-## Key Constraints
-
-### No `process.env`
-
-Cloudflare Workers does NOT support `process.env`. Environment variables come from:
-
-- **Local dev**: `.dev.vars` file
-- **Production**: Wrangler secrets
-
-```bash
-# .dev.vars (local)
-DATABASE_URL=postgres://...
-BETTER_AUTH_SECRET=...
-
-# Production secrets
-wrangler secret put DATABASE_URL
-wrangler secret put BETTER_AUTH_SECRET
-```
-
-### Dynamic Imports Required
-
-Database and auth modules must use dynamic imports in server functions:
+### Basic Hono App
 
 ```typescript
-// ✅ Correct - works on Workers
-export const fn = createServerFn().handler(async () => {
-  const { getDb } = await import('~/lib/db')
-  const db = await getDb()
-  // ...
+import { Hono } from "hono"
+
+type Env = {
+  DB: D1Database
+  MY_BUCKET: R2Bucket
+  API_KEY: string
+}
+
+const app = new Hono<{ Bindings: Env }>()
+
+app.get("/", (c) => c.text("Hello!"))
+
+app.get("/api/users", async (c) => {
+  const users = await c.env.DB.prepare("SELECT * FROM users").all()
+  return c.json(users.results)
 })
 
-// ❌ Wrong - fails on Workers
-import { db } from '~/lib/db'
+export default app
 ```
 
-### Memory Limits
+### Routes
 
-Workers have a 128MB memory limit. For large operations:
+```typescript
+// GET, POST, PUT, DELETE
+app.get("/users", (c) => c.json({ users: [] }))
+app.post("/users", async (c) => {
+  const body = await c.req.json()
+  return c.json({ created: true }, 201)
+})
 
-- Stream responses instead of buffering
-- Paginate database queries
-- Avoid loading large datasets into memory
+// Dynamic params
+app.get("/users/:id", (c) => {
+  const id = c.req.param("id")
+  return c.json({ id })
+})
 
-## Configuration
+// Multiple params
+app.get("/posts/:postId/comments/:commentId", (c) => {
+  const postId = c.req.param("postId")
+  const commentId = c.req.param("commentId")
+  return c.json({ postId, commentId })
+})
 
-The `wrangler.jsonc` file configures the Worker:
+// Query params
+app.get("/search", (c) => {
+  const query = c.req.query("q")
+  const page = c.req.query("page") || "1"
+  return c.json({ query, page })
+})
+```
 
-```jsonc
-{
-  "name": "livestockai",
-  "compatibility_date": "2024-01-01",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "./dist/server/index.mjs",
+### Request Handling
+
+```typescript
+app.post("/api/data", async (c) => {
+  // JSON body
+  const body = await c.req.json()
+  
+  // Form data
+  const formData = await c.req.formData()
+  const file = formData.get("file")
+  
+  // Headers
+  const auth = c.req.header("Authorization")
+  
+  // Cookies
+  const sessionId = c.req.cookie("session_id")
+  
+  return c.json({ success: true })
+})
+```
+
+### Response Types
+
+```typescript
+// JSON
+app.get("/json", (c) => c.json({ message: "Hello" }, 200))
+
+// Text
+app.get("/text", (c) => c.text("Plain text"))
+
+// HTML
+app.get("/html", (c) => c.html("<h1>Hello</h1>"))
+
+// Redirect
+app.get("/redirect", (c) => c.redirect("/new-location", 301))
+
+// Custom
+app.get("/custom", (c) => {
+  return new Response("Custom", {
+    status: 200,
+    headers: { "X-Custom": "value" }
+  })
+})
+```
+
+### Middleware
+
+```typescript
+// Global logging
+app.use('*', async (c, next) => {
+  console.log(`[${c.req.method}] ${c.req.url}`)
+  await next()
+})
+
+// Auth middleware
+const authMiddleware = async (c, next) => {
+  const token = c.req.header("Authorization")
+  
+  if (!token || !token.startsWith("Bearer ")) {
+    return c.json({ error: "Unauthorized" }, 401)
+  }
+  
+  const user = await verifyToken(token.substring(7))
+  c.set("user", user) // Store in context
+  await next()
 }
+
+// Apply to routes
+app.use('/api/*', authMiddleware)
+
+// Access in route
+app.get('/api/profile', (c) => {
+  const user = c.get("user")
+  return c.json({ user })
+})
+
+// CORS
+import { cors } from "hono/cors"
+
+app.use('*', cors({
+  origin: ["https://yourapp.com"],
+  allowMethods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}))
+
+// Error handler
+app.onError((err, c) => {
+  console.error(err)
+  return c.json({ error: "Internal Error" }, 500)
+})
+
+// 404 handler
+app.notFound((c) => c.json({ error: "Not Found" }, 404))
 ```
 
-## Deployment
+### Grouped Routes
+
+```typescript
+const api = new Hono()
+
+api.get("/users", (c) => c.json({ users: [] }))
+api.post("/users", (c) => c.json({ created: true }))
+api.get("/users/:id", (c) => c.json({ id: c.req.param("id") }))
+
+// Mount group
+app.route("/api", api)
+
+// Routes: /api/users, /api/users/:id
+```
+
+### Background Tasks
+
+```typescript
+app.post("/analytics", async (c) => {
+  const event = await c.req.json()
+  
+  // Run in background (non-blocking)
+  c.executionCtx.waitUntil(
+    fetch("https://analytics.example.com/track", {
+      method: "POST",
+      body: JSON.stringify(event)
+    })
+  )
+  
+  return c.json({ success: true })
+})
+```
+
+### Fetch API (Proxy)
+
+```typescript
+app.get("/proxy", async (c) => {
+  const response = await fetch("https://api.example.com", {
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${c.env.API_KEY}`,
+      "Content-Type": "application/json"
+    }
+  })
+  
+  if (!response.ok) {
+    return c.json({ error: "Failed" }, response.status)
+  }
+  
+  const data = await response.json()
+  return c.json(data)
+})
+```
+
+## Complete REST API Example
+
+```typescript
+import { Hono } from "hono"
+import { cors } from "hono/cors"
+
+const app = new Hono<{ Bindings: Env }>()
+
+// Middleware
+app.use('*', cors())
+
+// Health check
+app.get("/health", (c) => c.json({ status: "ok" }))
+
+// API routes
+const api = new Hono()
+
+api.get("/users", async (c) => {
+  const users = await c.env.DB.prepare("SELECT * FROM users").all()
+  return c.json(users.results)
+})
+
+api.post("/users", async (c) => {
+  const { name, email } = await c.req.json()
+  
+  const result = await c.env.DB.prepare(
+    "INSERT INTO users (name, email) VALUES (?, ?)"
+  ).bind(name, email).run()
+  
+  return c.json({ id: result.meta.last_row_id }, 201)
+})
+
+api.get("/users/:id", async (c) => {
+  const id = c.req.param("id")
+  const user = await c.env.DB.prepare(
+    "SELECT * FROM users WHERE id = ?"
+  ).bind(id).first()
+  
+  if (!user) {
+    return c.json({ error: "Not found" }, 404)
+  }
+  
+  return c.json(user)
+})
+
+api.delete("/users/:id", async (c) => {
+  const id = c.req.param("id")
+  await c.env.DB.prepare("DELETE FROM users WHERE id = ?").bind(id).run()
+  return c.json({ success: true })
+})
+
+app.route("/api", api)
+
+// Handlers
+app.notFound((c) => c.json({ error: "Not Found" }, 404))
+app.onError((err, c) => {
+  console.error(err)
+  return c.json({ error: "Internal Error" }, 500)
+})
+
+export default app
+```
+
+## Performance Tips
+
+```typescript
+// ✅ Use waitUntil for non-blocking tasks
+c.executionCtx.waitUntil(logAnalytics(event))
+return c.json({ success: true })
+
+// ❌ Don't await non-critical tasks
+await logAnalytics(event) // Blocks response
+return c.json({ success: true })
+
+// ✅ Cache responses
+app.get("/static-data", (c) => {
+  return c.json(data, 200, {
+    "Cache-Control": "public, max-age=3600"
+  })
+})
+
+// ✅ Stream large responses
+app.get("/large-file", async (c) => {
+  const object = await c.env.BUCKET.get("large.json")
+  return new Response(object.body)
+})
+```
+
+## Commands
 
 ```bash
-# Deploy to production
-bun run deploy
-# or
+# Init worker
+wrangler init my-worker
+
+# Dev server
+wrangler dev
+
+# Deploy
 wrangler deploy
 
-# Preview deployment
-wrangler deploy --env preview
-
-# View logs
+# Tail logs
 wrangler tail
 ```
 
-## MCP Servers for Cloudflare
+## Resources
 
-The `devops-engineer` agent has access to Cloudflare MCP servers:
-
-| Server                     | Purpose                    |
-| -------------------------- | -------------------------- |
-| `cloudflare-bindings`      | Manage Workers, KV, R2, D1 |
-| `cloudflare-builds`        | Deployment status and logs |
-| `cloudflare-observability` | Worker logs and debugging  |
-| `cloudflare-docs`          | Documentation search       |
-
-Other agents should delegate Cloudflare tasks to `devops-engineer`.
-
-## Common Issues
-
-### "Cannot find module" errors
-
-Use dynamic imports for database connections:
-
-```typescript
-const { getDb } = await import('~/lib/db')
-const db = await getDb()
-```
-
-### Cold start latency
-
-Minimize bundle size and avoid heavy initialization code.
-
-### Environment variable access
-
-```typescript
-// ✅ Works - uses getDb() which handles env detection
-const { getDb } = await import('~/lib/db')
-const db = await getDb()
-
-// ❌ Fails - process.env not available
-const url = process.env.DATABASE_URL
-```
-
-## Request Flow
-
-```
-Browser → Cloudflare CDN → Worker → TanStack Start → Server Functions → Neon PostgreSQL
-```
-
-## Static Assets
-
-Static assets are served from Cloudflare's CDN automatically. The `public/` directory contents are deployed alongside the Worker.
-
-## Related Skills
-
-- `neon-database` - Database connection patterns
-- `dynamic-imports` - Why dynamic imports are required
-- `tanstack-start` - Server function patterns
+- **Docs**: [developers.cloudflare.com/workers](https://developers.cloudflare.com/workers)
+- **Hono**: [hono.dev](https://hono.dev)

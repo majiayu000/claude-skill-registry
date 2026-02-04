@@ -1,683 +1,677 @@
 ---
 name: coverage-analyzer
-description: Analyze test coverage with detailed metrics, identify gaps, and generate
-  comprehensive reports. Use when measuring code coverage, finding untested code,
-  or validating coverage thresholds.
-allowed-tools: Read, Bash, Grep, Glob
+description: Advanced coverage analysis with actionable insights. Use to identify coverage gaps, suggest specific tests, track coverage trends, and highlight critical uncovered code. Essential for reaching 80%+ coverage target.
 ---
 
-# Coverage Analyzer Skill
+# Coverage Analyzer
 
-## Purpose
+## ⚠️ MANDATORY: Read Project Documentation First
 
-This skill provides comprehensive test coverage analysis, gap identification, threshold validation, and detailed reporting to ensure code quality and adequate test coverage across the codebase.
+**BEFORE starting coverage analysis, you MUST read and understand the following project documentation:**
+
+### Core Project Documentation
+
+1. **README.md** - Project overview, features, and getting started
+2. **AI_DOCS/project-context.md** - Tech stack, architecture, development workflow
+3. **AI_DOCS/code-conventions.md** - Code style, formatting, best practices
+4. **AI_DOCS/tdd-workflow.md** - TDD process, testing standards, coverage requirements
+
+### Session Context (if available)
+
+5. **.ai-context/ACTIVE_TASKS.md** - Current tasks and priorities
+6. **.ai-context/CONVENTIONS.md** - Project-specific conventions
+7. **.ai-context/RECENT_DECISIONS.md** - Recent architectural decisions
+8. **.ai-context/LAST_SESSION_SUMMARY.md** - Previous session summary
+
+### Additional AI Documentation
+
+9. **AI_DOCS/ai-tools.md** - Session management workflow
+10. **AI_DOCS/ai-skills.md** - Other specialized skills/agents available
+
+### Why This Matters
+
+- **Coverage Requirements**: Understand project-specific coverage thresholds (80%+ minimum)
+- **Testing Patterns**: Follow established testing conventions when suggesting tests
+- **Code Context**: Understand module structure and dependencies
+- **Recent Changes**: Be aware of recent test additions or coverage improvements
+
+**After reading these files, proceed with your coverage analysis task below.**
+
+---
+
+## Overview
+
+Provide advanced test coverage analysis with actionable insights for improving coverage to meet the 80%+ requirement.
 
 ## When to Use
 
-- Measuring test coverage for a module or project
-- Identifying untested code and coverage gaps
-- Validating coverage meets threshold (≥ 80%)
-- Generating coverage reports for review
-- Analyzing coverage trends over time
-- Finding missing branch coverage
+- After running `make coverage` to understand gaps
+- Before completing a feature (ensure adequate coverage)
+- When coverage is below 80% target
+- To identify critical uncovered code paths
+- For tracking coverage trends over time
 
-## Coverage Analysis Workflow
+## What This Skill Provides
 
-### 1. Basic Coverage Measurement
+✅ **Detailed Coverage Analysis**
+- Current coverage percentage
+- Uncovered lines by file
+- Missing branches
 
-**Run Tests with Coverage:**
+✅ **Actionable Recommendations**
+- Specific tests to write
+- Code locations needing tests
+- Priority of coverage gaps
+
+✅ **Coverage Gaps Identification**
+- Critical uncovered paths (error handling)
+- Edge cases not tested
+- Integration points missing tests
+
+✅ **Test Suggestions**
+- Concrete test code recommendations
+- Parametrized test suggestions
+- Fixture recommendations
+
+✅ **Trend Tracking**
+- Coverage history over time
+- Improvement/regression detection
+- Progress toward 80%+ goal
+
+## Usage Examples
+
+### Analyze Current Coverage
+
 ```bash
-# Install pytest-cov if not installed
-pip install pytest-cov
-
-# Basic coverage measurement
-pytest --cov=src tests/
-
-# Coverage with terminal report
-pytest --cov=src --cov-report=term tests/
-
-# Coverage with missing lines
-pytest --cov=src --cov-report=term-missing tests/
-
-# Coverage for specific module
-pytest --cov=src.tools.feature tests/
+# Generate detailed coverage analysis
+analyze test coverage
 ```
 
-**Quick Coverage Check:**
+**Output:** Comprehensive report with gaps and recommendations
+
+### Find Critical Gaps
+
 ```bash
-# Show percentage only
-pytest --cov=src --cov-report=term tests/ | grep TOTAL
-
-# Check if coverage meets threshold
-pytest --cov=src --cov-fail-under=80 tests/
-
-# Quiet mode with coverage
-pytest --cov=src --cov-report=term -q tests/
+# Focus on critical uncovered code
+show critical coverage gaps
 ```
 
-**Deliverable:** Basic coverage metrics
+**Output:** High-priority uncovered code (error handling, security, edge cases)
 
----
+### Get Test Suggestions
 
-### 2. Detailed Coverage Analysis
-
-**Generate Detailed Reports:**
 ```bash
-# HTML coverage report (most detailed)
-pytest --cov=src --cov-report=html tests/
-# Open htmlcov/index.html in browser
-
-# XML coverage report (for CI/CD)
-pytest --cov=src --cov-report=xml tests/
-
-# JSON coverage report
-pytest --cov=src --cov-report=json tests/
-
-# Multiple report formats
-pytest --cov=src \
-  --cov-report=html \
-  --cov-report=xml \
-  --cov-report=term-missing \
-  tests/
+# Get specific test recommendations
+suggest tests for uncovered code in src/python_modern_template/validators.py
 ```
 
-**Analyze Coverage by Module:**
+**Output:** Concrete test cases to add
+
+### Track Coverage Trends
+
 ```bash
-# Show coverage for each file
-pytest --cov=src --cov-report=term tests/
-
-# Coverage with line numbers
-pytest --cov=src --cov-report=term-missing tests/
-
-# Annotated source files
-pytest --cov=src --cov-report=annotate tests/
-# Creates .py,cover files with coverage annotations
+# See coverage over time
+show coverage trend for last month
 ```
 
-**Deliverable:** Detailed coverage reports
+**Output:** Graph showing coverage changes
 
----
+## Step-by-Step Analysis Process
 
-### 3. Coverage Gap Identification
+### Step 1: Run Coverage
 
-**Find Untested Code:**
 ```bash
-# Show missing lines
-pytest --cov=src --cov-report=term-missing tests/
-
-# Show missing branches
-pytest --cov=src --cov-branch --cov-report=term-missing tests/
-
-# Generate HTML report to visualize gaps
-pytest --cov=src --cov-report=html tests/
-# Open htmlcov/index.html to see line-by-line coverage
+# Generate coverage report
+make coverage
 ```
 
-**Identify Low Coverage Modules:**
+This creates:
+- Terminal output with overall percentage
+- HTML report in `htmlcov/`
+- `.coverage` data file
+
+### Step 2: Parse Coverage Data
+
+Read coverage data from multiple sources:
+
 ```bash
-# Run coverage and parse output
-pytest --cov=src --cov-report=term tests/ | grep -v "100%"
-
-# Find files below 80% coverage
-pytest --cov=src --cov-report=term tests/ | awk '$NF ~ /%/ && $NF+0 < 80'
-
-# Sort by coverage percentage
-pytest --cov=src --cov-report=term tests/ | sort -k4 -n
+# Read terminal output for overall stats
+# Read htmlcov/index.html for detailed breakdown
+# Parse .coverage file for line-by-line data
 ```
 
-**Analyze Coverage by Test Type:**
-```bash
-# Coverage from unit tests only
-pytest --cov=src --cov-report=term tests/unit/
+### Step 3: Identify Uncovered Lines
 
-# Coverage from integration tests only
-pytest --cov=src --cov-report=term tests/integration/
+For each source file:
+- List uncovered line numbers
+- Group by type (functions, error handling, edge cases)
+- Prioritize by criticality
 
-# Combined coverage
-pytest --cov=src --cov-report=term tests/unit/ tests/integration/
+### Step 4: Analyze Context
 
-# Incremental coverage (append mode)
-pytest --cov=src --cov-append --cov-report=term tests/unit/
-pytest --cov=src --cov-append --cov-report=term tests/integration/
-```
+For each uncovered section:
+- Read surrounding code
+- Understand what the code does
+- Identify why it's not covered
+- Determine appropriate test type
 
-**Deliverable:** Coverage gap analysis
+### Step 5: Generate Recommendations
 
----
+Create specific test suggestions:
+- Test function name
+- Test scenario
+- Example test code
+- Parameters to test
 
-### 4. Branch Coverage Analysis
+### Step 6: Calculate Priority
 
-**Measure Branch Coverage:**
-```bash
-# Enable branch coverage
-pytest --cov=src --cov-branch --cov-report=term-missing tests/
+**CRITICAL** - Must cover immediately:
+- Error handling paths
+- Security-related code
+- Data validation
+- Authorization checks
 
-# Branch coverage with HTML report
-pytest --cov=src --cov-branch --cov-report=html tests/
+**HIGH** - Should cover soon:
+- Edge cases
+- Boundary conditions
+- Integration points
+- Public API functions
 
-# Show partial branches
-pytest --cov=src --cov-branch --cov-report=term-missing tests/ | grep "!->"
-```
+**MEDIUM** - Good to cover:
+- Internal helper functions
+- Logging statements
+- Configuration parsing
 
-**Analyze Conditional Coverage:**
-```bash
-# Find untested conditionals
-pytest --cov=src --cov-branch --cov-report=term-missing tests/ | grep "if"
+**LOW** - Optional:
+- Debug code
+- Development-only paths
+- Deprecated functions
 
-# Check switch/case coverage
-pytest --cov=src --cov-branch --cov-report=term-missing tests/ | grep "case"
-```
+## Analysis Report Format
 
-**Deliverable:** Branch coverage metrics
-
----
-
-### 5. Coverage Threshold Validation
-
-**Validate Minimum Coverage:**
-```bash
-# Fail if coverage below 80%
-pytest --cov=src --cov-fail-under=80 tests/
-
-# Fail if coverage below 90%
-pytest --cov=src --cov-fail-under=90 tests/
-
-# Check with specific threshold and report
-pytest --cov=src --cov-fail-under=80 --cov-report=term-missing tests/
-```
-
-**Per-Module Thresholds:**
-```bash
-# Core logic: 90% minimum
-pytest --cov=src.core --cov-fail-under=90 tests/
-
-# Utilities: 85% minimum
-pytest --cov=src.utils --cov-fail-under=85 tests/
-
-# Interfaces: 80% minimum
-pytest --cov=src.interfaces --cov-fail-under=80 tests/
-```
-
-**Deliverable:** Threshold validation report
-
----
-
-### 6. Coverage Configuration
-
-**Configure .coveragerc:**
-```ini
-# .coveragerc
-[run]
-source = src
-omit =
-    tests/*
-    */__init__.py
-    */venv/*
-    */.venv/*
-    */migrations/*
-
-branch = True
-
-[report]
-exclude_lines =
-    # Default pragmas
-    pragma: no cover
-
-    # Don't complain about missing debug-only code
-    def __repr__
-    def __str__
-
-    # Don't complain if tests don't hit defensive assertion code
-    raise AssertionError
-    raise NotImplementedError
-
-    # Don't complain if non-runnable code isn't run
-    if __name__ == .__main__.:
-    if TYPE_CHECKING:
-
-    # Don't complain about abstract methods
-    @abstractmethod
-
-precision = 2
-show_missing = True
-
-[html]
-directory = htmlcov
-
-[xml]
-output = coverage.xml
-```
-
-**Configure pyproject.toml:**
-```toml
-# pyproject.toml
-[tool.coverage.run]
-source = ["src"]
-omit = [
-    "tests/*",
-    "*/__init__.py",
-    "*/venv/*",
-    "*/.venv/*",
-]
-branch = true
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "raise AssertionError",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:",
-    "@abstractmethod",
-]
-precision = 2
-show_missing = true
-fail_under = 80
-
-[tool.coverage.html]
-directory = "htmlcov"
-
-[tool.coverage.xml]
-output = "coverage.xml"
-```
-
-**Deliverable:** Coverage configuration
-
----
-
-### 7. Coverage Reporting
-
-**Generate Coverage Reports:**
-```bash
-# Terminal report
-pytest --cov=src --cov-report=term tests/
-
-# Terminal report with missing lines
-pytest --cov=src --cov-report=term-missing tests/
-
-# HTML report for detailed analysis
-pytest --cov=src --cov-report=html tests/
-
-# XML report for CI/CD integration
-pytest --cov=src --cov-report=xml tests/
-
-# JSON report for programmatic access
-pytest --cov=src --cov-report=json tests/
-
-# All reports
-pytest --cov=src \
-  --cov-report=term-missing \
-  --cov-report=html \
-  --cov-report=xml \
-  --cov-report=json \
-  tests/
-```
-
-**Coverage Summary Report:**
 ```markdown
-# Coverage Report
+# Test Coverage Analysis
 
-## Overall Coverage: 87%
+## Executive Summary
 
-### By Module
-| Module | Coverage | Missing Lines |
-|--------|----------|---------------|
-| src.core | 95% | 45-47, 89 |
-| src.utils | 88% | 12-15, 67-70 |
-| src.interfaces | 82% | 23, 56-58 |
-| src.models | 100% | - |
+**Current Coverage:** 75.3%
+**Target:** 80%+
+**Gap:** 4.7% (23 uncovered lines)
+**Status:** ⚠️ Below target
 
-### Critical Gaps
-1. Error handling in `src.core.process()` (lines 45-47)
-2. Edge case validation in `src.utils.validate()` (lines 67-70)
-3. Exception paths in `src.interfaces.execute()` (lines 56-58)
-
-### Recommendations
-- Add tests for error conditions in core module
-- Improve edge case coverage in utilities
-- Test exception handling in interfaces
-
-### Status
-✅ Overall coverage: 87% (target: 80%)
-✅ Core business logic: 95% (target: 90%)
-✅ Utilities: 88% (target: 85%)
-✅ All thresholds met
-```
-
-**Deliverable:** Comprehensive coverage reports
+**Breakdown:**
+- src/python_modern_template/: 73.2% (18 uncovered lines)
+- tests/: 100% (fully covered)
 
 ---
 
-### 8. Coverage Trend Analysis
+## Critical Gaps (MUST FIX)
 
-**Track Coverage Over Time:**
-```bash
-# Generate coverage badge
-pip install coverage-badge
-coverage-badge -o coverage.svg
+### 1. Error Handling in validators.py ⚠️ CRITICAL
 
-# Save coverage history
-pytest --cov=src --cov-report=json tests/
-mv coverage.json coverage-$(date +%Y%m%d).json
+**File:** src/python_modern_template/validators.py
+**Lines:** 45-52 (8 lines)
+**Function:** `validate_email()`
 
-# Compare coverage between runs
-coverage json
-python -c "import json; print(json.load(open('coverage.json'))['totals']['percent_covered'])"
+**Uncovered Code:**
+```python
+45: except ValueError as e:
+46:     logger.error(f"Email validation failed: {e}")
+47:     raise ValidationError(
+48:         "Invalid email format"
+49:     ) from e
+50: except Exception:
+51:     logger.critical("Unexpected validation error")
+52:     return False
 ```
 
-**Coverage Diff:**
-```bash
-# Coverage for current branch
-pytest --cov=src --cov-report=json tests/
-cp coverage.json coverage-current.json
+**Why Critical:** Error handling paths are not tested, could hide bugs
 
-# Coverage for main branch
-git checkout main
-pytest --cov=src --cov-report=json tests/
-cp coverage.json coverage-main.json
+**Recommended Test:**
+```python
+def test_validate_email_value_error_handling() -> None:
+    """Test email validation handles ValueError correctly."""
+    # Arrange
+    invalid_email = "not-an-email"
 
-# Compare
-diff <(jq '.totals.percent_covered' coverage-main.json) \
-     <(jq '.totals.percent_covered' coverage-current.json)
+    # Act & Assert
+    with pytest.raises(ValidationError) as exc_info:
+        validate_email(invalid_email)
+
+    assert "Invalid email format" in str(exc_info.value)
+    assert exc_info.value.__cause__ is not None
+
+def test_validate_email_unexpected_error_handling() -> None:
+    """Test email validation handles unexpected errors."""
+    # Arrange
+    # Mock to raise unexpected exception
+    with patch('validators.EMAIL_REGEX.match', side_effect=RuntimeError("Unexpected")):
+        # Act
+        result = validate_email("test@example.com")
+
+        # Assert
+        assert result is False
 ```
 
-**Deliverable:** Coverage trends and comparisons
+**Impact:** Covers 8 lines, adds 3.5% coverage
 
 ---
 
-## Coverage Analysis Patterns
+### 2. Edge Case in parser.py ⚠️ CRITICAL
 
-### Quick Coverage Check
+**File:** src/python_modern_template/parser.py
+**Lines:** 67-70 (4 lines)
+**Function:** `parse_config()`
 
-```bash
-# Fast coverage check during development
-pytest --cov=src --cov-report=term-missing -q tests/unit/
+**Uncovered Code:**
+```python
+67: if not config_data:
+68:     logger.warning("Empty configuration provided")
+69:     return DEFAULT_CONFIG
+70:     # Unreachable line removed
 ```
 
-### Comprehensive Coverage Analysis
+**Why Critical:** Edge case handling not tested
 
-```bash
-# Full coverage analysis with all reports
-pytest --cov=src \
-  --cov-branch \
-  --cov-report=html \
-  --cov-report=xml \
-  --cov-report=term-missing \
-  --cov-fail-under=80 \
-  tests/
+**Recommended Test:**
+```python
+def test_parse_config_empty_data() -> None:
+    """Test parser handles empty configuration."""
+    # Arrange
+    empty_config = {}
+
+    # Act
+    result = parse_config(empty_config)
+
+    # Assert
+    assert result == DEFAULT_CONFIG
+
+def test_parse_config_none_data() -> None:
+    """Test parser handles None configuration."""
+    # Arrange
+    # Act
+    result = parse_config(None)
+
+    # Assert
+    assert result == DEFAULT_CONFIG
 ```
 
-### CI/CD Coverage Check
+**Impact:** Covers 4 lines, adds 1.7% coverage
 
-```bash
-# Coverage check for CI/CD pipeline
-pytest --cov=src \
-  --cov-report=xml \
-  --cov-report=term \
-  --cov-fail-under=80 \
-  tests/
+---
+
+## High Priority Gaps
+
+### 3. Integration Point in api_client.py
+
+**File:** src/python_modern_template/api_client.py
+**Lines:** 112-118 (7 lines)
+**Function:** `retry_with_backoff()`
+
+**Uncovered Code:**
+```python
+112: @retry(max_attempts=3, backoff=2.0)
+113: def retry_with_backoff(self, operation: Callable) -> Any:
+114:     """Retry operation with exponential backoff."""
+115:     try:
+116:         return operation()
+117:     except ConnectionError:
+118:         logger.warning("Connection failed, retrying...")
 ```
 
-### Coverage Gap Investigation
+**Why High:** Integration logic with retry mechanism
+
+**Recommended Test:**
+```python
+@pytest.mark.parametrize("attempt,should_succeed", [
+    (1, True),  # Succeeds first try
+    (2, True),  # Succeeds second try
+    (3, True),  # Succeeds third try
+    (4, False), # Fails after max attempts
+])
+def test_retry_with_backoff(attempt: int, should_succeed: bool) -> None:
+    """Test retry mechanism with various scenarios."""
+    # Arrange
+    client = APIClient()
+    call_count = 0
+
+    def flaky_operation():
+        nonlocal call_count
+        call_count += 1
+        if call_count < attempt:
+            raise ConnectionError("Connection failed")
+        return "success"
+
+    # Act & Assert
+    if should_succeed:
+        result = client.retry_with_backoff(flaky_operation)
+        assert result == "success"
+        assert call_count == attempt
+    else:
+        with pytest.raises(ConnectionError):
+            client.retry_with_backoff(flaky_operation)
+```
+
+**Impact:** Covers 7 lines, adds 3.0% coverage
+
+---
+
+## Coverage By Module
+
+| Module | Coverage | Uncovered Lines | Priority |
+|--------|----------|----------------|----------|
+| validators.py | 65% | 12 | CRITICAL |
+| parser.py | 80% | 4 | HIGH |
+| api_client.py | 75% | 7 | HIGH |
+| utils.py | 95% | 1 | LOW |
+
+**Total:** 75.3% (23 uncovered lines)
+
+---
+
+## Quick Win Recommendations
+
+These tests would quickly boost coverage:
+
+1. **Add error handling tests** (validators.py)
+   - +3.5% coverage
+   - 10 minutes to write
+
+2. **Add edge case tests** (parser.py)
+   - +1.7% coverage
+   - 5 minutes to write
+
+3. **Add integration tests** (api_client.py)
+   - +3.0% coverage
+   - 15 minutes to write
+
+**Total Impact:** +8.2% coverage (reaching 83.5%)
+**Total Time:** ~30 minutes
+
+---
+
+## Coverage Trend
+
+```
+Week 1: 70% ███████░░░
+Week 2: 72% ███████▓░░
+Week 3: 75% ████████░░
+Week 4: 75% ████████░░  ← Current (stalled)
+
+Target: 80% ████████▓░
+```
+
+**Trend:** +5% over 3 weeks, then stalled
+**Recommendation:** Focus on quick wins above to break through 80%
+
+---
+
+## Detailed File Analysis
+
+### src/python_modern_template/validators.py (65% coverage)
+
+**Covered:**
+- Basic email validation (happy path)
+- URL validation (happy path)
+- Phone number validation
+
+**Not Covered:**
+- Error handling (lines 45-52)
+- Edge cases (empty strings, None)
+- Invalid format handling
+
+**Missing Test Types:**
+- Parametrized tests for invalid inputs
+- Exception handling tests
+- Edge case tests
+
+### src/python_modern_template/parser.py (80% coverage)
+
+**Covered:**
+- Standard config parsing
+- Type conversion
+- Default value handling
+
+**Not Covered:**
+- Empty config handling (lines 67-70)
+
+**Missing Test Types:**
+- Edge case tests (empty, None)
+
+### src/python_modern_template/api_client.py (75% coverage)
+
+**Covered:**
+- Basic API calls
+- Authentication
+- Response parsing
+
+**Not Covered:**
+- Retry logic (lines 112-118)
+- Connection error handling
+- Backoff mechanism
+
+**Missing Test Types:**
+- Integration tests with retries
+- Failure scenario tests
+
+---
+
+## Next Steps
+
+### Immediate Actions (30 minutes)
+
+1. **Add error handling tests to validators.py**
+   ```bash
+   # Edit tests/test_validators.py
+   # Add test_validate_email_value_error_handling()
+   # Add test_validate_email_unexpected_error_handling()
+   ```
+
+2. **Add edge case tests to parser.py**
+   ```bash
+   # Edit tests/test_parser.py
+   # Add test_parse_config_empty_data()
+   # Add test_parse_config_none_data()
+   ```
+
+3. **Add integration tests to api_client.py**
+   ```bash
+   # Edit tests/test_api_client.py
+   # Add test_retry_with_backoff()
+   ```
+
+4. **Run coverage again**
+   ```bash
+   make coverage
+   ```
+
+**Expected Result:** 83.5% coverage (exceeds 80% target!)
+
+### Verify Implementation
 
 ```bash
-# Find and analyze coverage gaps
-pytest --cov=src --cov-report=html tests/
-# Open htmlcov/index.html
-# Click on files with low coverage
-# Review highlighted untested lines
+# Run tests to ensure they fail (TDD)
+make test
+
+# Verify uncovered code is exercised
+# Fix any test issues
+# Re-run coverage
+make coverage
+
+# Should see 80%+ coverage
 ```
 
 ---
 
-## Coverage Metrics and Thresholds
+## Additional Recommendations
 
-### Coverage Targets
+### Use Parametrized Tests
 
-**By Module Type:**
-- Core Business Logic: ≥ 90%
-- Services/APIs: ≥ 85%
-- Utilities/Helpers: ≥ 85%
-- Models/DTOs: ≥ 90%
-- Interfaces/Contracts: ≥ 80%
-- CLI/Main: ≥ 70%
-
-**By Coverage Type:**
-- Line Coverage: ≥ 80%
-- Branch Coverage: ≥ 75%
-- Function Coverage: ≥ 85%
-
-**Overall Project:**
-- Minimum: 80%
-- Target: 85%
-- Excellent: 90%+
-
-### Acceptable Exclusions
+For multiple similar test cases:
 
 ```python
-# Acceptable to exclude from coverage
-def __repr__(self):  # pragma: no cover
-    return f"Object({self.id})"
-
-if __name__ == "__main__":  # pragma: no cover
-    main()
-
-if TYPE_CHECKING:  # pragma: no cover
-    from typing import Optional
-
-@abstractmethod
-def interface_method(self):  # pragma: no cover
-    pass
-
-def debug_helper():  # pragma: no cover
-    # Debug code not run in production
-    pass
+@pytest.mark.parametrize("email,valid", [
+    ("test@example.com", True),
+    ("invalid-email", False),
+    ("", False),
+    (None, False),
+    ("test@", False),
+    ("@example.com", False),
+])
+def test_validate_email_parametrized(email: str | None, valid: bool) -> None:
+    """Test email validation with various inputs."""
+    if valid:
+        assert validate_email(email) is True
+    else:
+        assert validate_email(email) is False
 ```
 
----
+### Use Fixtures for Common Setup
 
-## Coverage Analysis Checklist
+```python
+@pytest.fixture
+def sample_config():
+    """Provide sample configuration for tests."""
+    return {
+        "api_url": "https://api.example.com",
+        "timeout": 30,
+        "retries": 3,
+    }
 
-### Pre-Analysis
-- [ ] Tests are running and passing
-- [ ] pytest-cov installed
-- [ ] Coverage configuration set (.coveragerc or pyproject.toml)
-- [ ] Exclusions configured properly
+def test_parse_config_with_defaults(sample_config):
+    """Test config parsing with defaults."""
+    result = parse_config(sample_config)
+    assert result["timeout"] == 30
+```
 
-### Analysis
-- [ ] Line coverage calculated
-- [ ] Branch coverage calculated
-- [ ] Coverage by module analyzed
-- [ ] Coverage gaps identified
-- [ ] Critical gaps prioritized
+### Focus on Critical Paths
 
-### Threshold Validation
-- [ ] Overall coverage ≥ 80%
-- [ ] Core business logic ≥ 90%
-- [ ] Utilities ≥ 85%
-- [ ] No critical code untested
-- [ ] Branch coverage ≥ 75%
-
-### Reporting
-- [ ] Terminal report generated
-- [ ] HTML report generated (for detailed review)
-- [ ] XML report generated (for CI/CD)
-- [ ] Coverage summary documented
-- [ ] Gaps documented with recommendations
+Priority order:
+1. Error handling (catch exceptions)
+2. Edge cases (empty, None, invalid)
+3. Security checks (validation, authorization)
+4. Integration points (API calls, database)
+5. Business logic
+6. Utility functions
 
 ---
 
-## Common Coverage Commands
+## Coverage Best Practices
 
-### Quick Reference
+1. **Write tests FIRST (TDD)** - Coverage comes naturally
+2. **Test behavior, not implementation** - Focus on what, not how
+3. **Use real code over mocks** - Only mock external dependencies
+4. **Aim for 100% of new code** - Don't lower the bar
+5. **Track trends** - Ensure coverage doesn't regress
+6. **Review uncovered code regularly** - Don't let gaps accumulate
+
+---
+
+## Integration with Quality Tools
+
+### With make check
 
 ```bash
-# Basic coverage
-pytest --cov=src tests/
+# Coverage is part of quality gates
+make check
 
-# Coverage with gaps
-pytest --cov=src --cov-report=term-missing tests/
-
-# Coverage with threshold
-pytest --cov=src --cov-fail-under=80 tests/
-
-# Branch coverage
-pytest --cov=src --cov-branch --cov-report=term-missing tests/
-
-# HTML report
-pytest --cov=src --cov-report=html tests/
-
-# Full analysis
-pytest --cov=src \
-  --cov-branch \
-  --cov-report=html \
-  --cov-report=term-missing \
-  --cov-fail-under=80 \
-  tests/
+# Must pass 80%+ coverage requirement
 ```
 
----
-
-## Coverage Analysis Troubleshooting
-
-### Coverage Tool Not Found
+### With TDD Reviewer
 
 ```bash
-# Install pytest-cov
-pip install pytest-cov
+# TDD reviewer checks coverage compliance
+[tdd-reviewer]
 
-# Verify installation
-pytest --version
-pip show pytest-cov
+# Includes coverage verification
 ```
 
-### Incorrect Coverage (Too Low/High)
+### With Coverage Command
 
 ```bash
-# Check source configuration
-cat .coveragerc
-cat pyproject.toml
+# Generate HTML report
+make coverage
 
-# Verify source parameter
-pytest --cov=src tests/  # Correct
-pytest --cov tests/      # Wrong - testing test code
-
-# Clear coverage cache
-rm -rf .coverage htmlcov/
-pytest --cov=src tests/
+# View in browser
+open htmlcov/index.html
 ```
 
-### Missing Files in Coverage
+---
+
+## Remember
+
+> "Coverage percentage is a measure, not a goal."
+> "Aim for meaningful tests, not just high numbers."
+
+**Good coverage means:**
+- ✅ Critical paths tested
+- ✅ Error handling verified
+- ✅ Edge cases covered
+- ✅ Integration points tested
+
+**Bad coverage means:**
+- ❌ Tests just to hit lines
+- ❌ Meaningless assertions
+- ❌ Over-mocking everything
+- ❌ Ignoring critical gaps
+
+Focus on **quality coverage**, not just quantity!
+```
+
+## Advanced Features
+
+### Historical Tracking
+
+Store coverage data over time:
 
 ```bash
-# Check omit configuration
-grep -A5 "\[run\]" .coveragerc
+# Save current coverage
+echo "$(date +%Y-%m-%d),$(coverage report | grep TOTAL | awk '{print $4}')" >> .coverage_history
 
-# Verify files are imported
-pytest --cov=src --cov-report=term tests/ | grep "filename"
-
-# Check test imports
-grep -r "^import\|^from" tests/
+# View trend
+cat .coverage_history
 ```
 
-### Branch Coverage Not Working
+### Per-Module Breakdown
+
+Analyze each module separately:
 
 ```bash
-# Enable branch coverage
-pytest --cov=src --cov-branch tests/
-
-# Check configuration
-grep "branch" .coveragerc
-
-# Verify branches exist
-grep -r "if\|else\|elif" src/
+# Get coverage for specific module
+coverage report --include="src/python_modern_template/validators.py"
 ```
 
----
+### Branch Coverage
 
-## Integration with Test Runner Specialist
+Not just line coverage, but branch coverage:
 
-**Input:** Completed test execution with coverage enabled
-**Process:** Analyze coverage, identify gaps, validate thresholds
-**Output:** Coverage report with gap analysis and recommendations
-**Next Step:** Report to test-runner-specialist for decision
+```bash
+# Enable branch coverage in pyproject.toml
+[tool.pytest.ini_options]
+branch = true
 
----
+# Shows uncovered branches (if/else not both tested)
+```
 
-## Coverage Analysis Best Practices
+### Diff Coverage
 
-### Development
-- Check coverage frequently during TDD
-- Aim for >90% coverage on new code
-- Review coverage reports locally
-- Fix coverage gaps before committing
+Focus on changed lines only:
 
-### Pre-Commit
-- Verify coverage meets threshold
-- Review coverage diff vs main branch
-- Ensure new code is well tested
-- Check branch coverage for complex logic
+```bash
+# Install diff-cover
+pip install diff-cover
 
-### CI/CD
-- Generate coverage reports for every build
-- Fail build if coverage below threshold
-- Track coverage trends over time
-- Archive coverage reports
+# Check coverage of git diff
+diff-cover htmlcov/coverage.xml --compare-branch=main
+```
 
-### Review
-- Focus on critical paths first
-- Prioritize business logic coverage
-- Don't chase 100% coverage unnecessarily
-- Exclude unreachable code appropriately
+## Remember
 
----
+Coverage analysis is a **tool for improvement**, not a report card. Use it to:
+- Find gaps in testing
+- Prioritize test writing
+- Track progress
+- Ensure quality
 
-## Coverage Gap Prioritization
-
-### High Priority (Fix Immediately)
-- Core business logic uncovered
-- Error handling paths untested
-- Security-critical code uncovered
-- Data validation missing tests
-- API endpoints without tests
-
-### Medium Priority (Fix Soon)
-- Utilities with <80% coverage
-- Branch coverage gaps in logic
-- Edge cases not tested
-- Configuration parsing untested
-
-### Low Priority (Fix When Possible)
-- Representation methods (__repr__, __str__)
-- Debug/logging code
-- CLI help text
-- Non-critical utilities
-
-### Acceptable to Exclude
-- Abstract methods
-- TYPE_CHECKING blocks
-- if __name__ == "__main__"
-- Platform-specific code not running in CI
-- Deprecated code scheduled for removal
-
----
-
-## Supporting Resources
-
-- **pytest-cov documentation**: https://pytest-cov.readthedocs.io
-- **coverage.py documentation**: https://coverage.readthedocs.io
-- **Coverage best practices**: https://testing.googleblog.com
-- **Sample .coveragerc**: In project root
-
----
-
-## Success Metrics
-
-- [ ] Coverage calculated accurately
-- [ ] Overall coverage ≥ 80%
-- [ ] Critical code coverage ≥ 90%
-- [ ] Coverage gaps identified
-- [ ] Reports generated successfully
-- [ ] Thresholds validated
-- [ ] Recommendations provided
+But always remember: **100% coverage ≠ bug-free code**. Write meaningful tests!

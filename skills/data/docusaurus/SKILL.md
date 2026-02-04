@@ -1,437 +1,436 @@
 ---
 name: docusaurus
-description: Build modern documentation websites with Docusaurus. Covers docs, blog, pages, versioning, i18n, search integration, and deployment patterns. React-based with MDX support for interactive documentation.
-version: 1.0.0
-category: documentation
-type: skill
-capabilities:
-  - React-based documentation sites
-  - MDX for interactive content
-  - Docs, blog, and pages
-  - Multi-version documentation
-  - Internationalization (i18n)
-  - Algolia DocSearch integration
-  - Plugin ecosystem
-  - Theme customization
-  - SEO optimization
-  - GitHub Pages deployment
-tools:
-  - docusaurus
-  - node
-  - npm
-  - react
-  - mdx
-  - algolia
-tags:
-  - documentation
-  - react
-  - static-site
-  - mdx
-  - versioning
-  - i18n
-  - search
-platforms:
-  - linux
-  - macos
-  - windows
-related_skills:
-  - mkdocs
-  - sphinx
-  - gatsby
+description: Docusaurus 3.x documentation framework - MDX authoring, theming, versioning, i18n. Use for documentation sites or spec-weave.com.
 ---
 
-# Docusaurus Documentation Skill
+# Docusaurus Expert Skill
 
-Build fast, optimized documentation websites with Docusaurus. This skill covers project setup, versioning, internationalization, and search integration.
+Expert in Docusaurus 3.x documentation framework - the modern static site generator for technical documentation, blogs, and landing pages.
 
-## When to Use This Skill
+## Core Competencies
 
-### USE When
+### 1. Site Setup & Configuration
+- **Installation**: Quick start with templates
+- **Configuration**: `docusaurus.config.ts` best practices
+- **Plugins**: Content, search, analytics, sitemap
+- **Themes**: Classic, Material, custom themes
+- **Deployment**: GitHub Pages, Netlify, Vercel, AWS
 
-- Building documentation for open source projects
-- Need React components in documentation
-- Require multi-version documentation
-- Need internationalized documentation
-- Want blog functionality alongside docs
-- Building developer portals
-- Need fast, SEO-optimized static sites
-- Want MDX for interactive examples
+### 2. Content Authoring
+- **Markdown**: Standard Markdown with Docusaurus extensions
+- **MDX**: React components in Markdown
+- **Code Blocks**: Syntax highlighting, live code editors
+- **Admonitions**: Notes, tips, warnings, danger alerts
+- **Tabs**: Multi-language examples, platform-specific content
 
-### DON'T USE When
+### 3. Advanced Features
+- **Versioning**: Multi-version documentation management
+- **i18n**: Internationalization and localization
+- **Search**: Algolia DocSearch, local search plugins
+- **Mermaid**: Diagram support with @docusaurus/theme-mermaid
+- **OpenAPI**: API documentation with docusaurus-plugin-openapi-docs
 
-- Simple single-page documentation (use basic HTML)
-- Python-specific API docs with autodoc (use Sphinx)
-- No React experience and simple needs (use MkDocs)
-- Need real-time collaborative editing (use GitBook)
-- Building slide presentations (use Marp)
+### 4. Customization
+- **Custom Components**: React components for docs
+- **Styling**: CSS modules, Tailwind CSS integration
+- **Swizzling**: Customize theme components
+- **Plugins**: Custom plugin development
 
-## Prerequisites
+## Quick Start
 
 ### Installation
 
 ```bash
-# Create new Docusaurus project
-npx create-docusaurus@latest my-website classic
-
-# With TypeScript
 npx create-docusaurus@latest my-website classic --typescript
-
 cd my-website
 npm start
 ```
 
-### System Requirements
-
-- Node.js 18.0 or higher
-- npm 8 or yarn 1.22+
-- Git (for versioning features)
-
-## Core Capabilities
-
-### 1. Project Structure
+### Project Structure
 
 ```
 my-website/
-├── blog/                    # Blog posts
-├── docs/                    # Documentation
+├── docs/                  # Documentation pages
 │   ├── intro.md
-│   └── tutorial-basics/
+│   └── tutorial/
+├── blog/                  # Blog posts (optional)
+│   └── 2024-01-01-post.md
 ├── src/
-│   ├── components/          # React components
-│   ├── css/                 # Custom styles
-│   └── pages/               # Custom pages
-├── static/                  # Static assets
-├── docusaurus.config.js     # Main configuration
-└── sidebars.js              # Sidebar configuration
+│   ├── components/       # Custom React components
+│   ├── css/             # Custom styles
+│   └── pages/           # Standalone pages
+├── static/              # Static assets
+│   └── img/
+├── docusaurus.config.ts # Main configuration
+├── sidebars.ts          # Sidebar configuration
+└── package.json
 ```
 
-### 2. Main Configuration
+## Configuration
 
-```javascript
-// docusaurus.config.js
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+### Basic Configuration
+
+```typescript
+// docusaurus.config.ts
+import {Config} from '@docusaurus/types';
+
+const config: Config = {
   title: 'My Project',
-  tagline: 'A powerful documentation framework',
-  favicon: 'img/favicon.ico',
-  url: 'https://myproject.github.io',
+  tagline: 'Documentation made easy',
+  url: 'https://myproject.com',
   baseUrl: '/',
-  organizationName: 'myorg',
-  projectName: 'my-project',
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  // GitHub Pages deployment config
+  organizationName: 'facebook',
+  projectName: 'docusaurus',
 
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
-
-  presets: [
-    ['classic', {
-      docs: {
-        sidebarPath: './sidebars.js',
-        editUrl: 'https://github.com/myorg/my-project/tree/main/',
-        showLastUpdateTime: true,
-      },
-      blog: {
-        showReadingTime: true,
-        postsPerPage: 10,
-      },
-      theme: {
-        customCss: './src/css/custom.css',
-      },
-    }],
-  ],
-
+  // Theme config
   themeConfig: {
     navbar: {
       title: 'My Project',
-      logo: { alt: 'Logo', src: 'img/logo.svg' },
+      logo: {
+        alt: 'My Project Logo',
+        src: 'img/logo.svg',
+      },
       items: [
-        { type: 'docSidebar', sidebarId: 'tutorialSidebar', label: 'Docs' },
-        { to: '/blog', label: 'Blog' },
-        { type: 'docsVersionDropdown' },
-        { href: 'https://github.com/myorg/my-project', position: 'right' },
+        {
+          type: 'doc',
+          docId: 'intro',
+          position: 'left',
+          label: 'Docs',
+        },
+        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          href: 'https://github.com/facebook/docusaurus',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
       style: 'dark',
       links: [
-        { title: 'Docs', items: [{ label: 'Getting Started', to: '/docs/intro' }] },
-        { title: 'Community', items: [{ label: 'Discord', href: 'https://discord.gg/xxx' }] },
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Tutorial',
+              to: '/docs/intro',
+            },
+          ],
+        },
       ],
-      copyright: `Copyright ${new Date().getFullYear()} My Project.`,
-    },
-    prism: {
-      theme: require('prism-react-renderer').themes.github,
-      darkTheme: require('prism-react-renderer').themes.dracula,
-      additionalLanguages: ['bash', 'python', 'yaml'],
+      copyright: `Copyright © ${new Date().getFullYear()} My Project`,
     },
   },
-};
 
-module.exports = config;
-```
-
-### 3. Sidebar Configuration
-
-```javascript
-// sidebars.js
-const sidebars = {
-  tutorialSidebar: [
-    'intro',
-    {
-      type: 'category',
-      label: 'Getting Started',
-      collapsed: false,
-      items: [
-        'getting-started/installation',
-        'getting-started/quick-start',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Guides',
-      link: { type: 'doc', id: 'guides/index' },
-      items: ['guides/basic-usage', 'guides/advanced'],
-    },
-    {
-      type: 'category',
-      label: 'Examples',
-      items: [{ type: 'autogenerated', dirName: 'examples' }],
-    },
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: './sidebars.ts',
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/',
+        },
+        blog: {
+          showReadingTime: true,
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/',
+        },
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      },
+    ],
   ],
 };
 
-module.exports = sidebars;
+export default config;
 ```
 
-### 4. Documentation Pages
+## MDX Content Features
 
-```markdown
-<!-- docs/intro.md -->
----
-id: intro
-title: Introduction
-sidebar_position: 1
-description: Introduction to My Project
----
-
-# Introduction
-
-Welcome to **My Project** documentation!
-
-## Quick Example
-
-```javascript
-import { MyProject } from 'my-project';
-const project = new MyProject();
-```
-
-:::tip Did you know?
-You can use admonitions for callouts!
-:::
-```
-
-### 5. MDX and React Components
-
-```jsx
-// docs/interactive-example.mdx
----
-id: interactive-example
-title: Interactive Example
----
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-# Interactive Example
-
-<Tabs>
-  <TabItem value="js" label="JavaScript" default>
-
-```javascript
-function hello() {
-  console.log('Hello!');
-}
-```
-
-  </TabItem>
-  <TabItem value="py" label="Python">
-
-```python
-def hello():
-    print("Hello!")
-```
-
-  </TabItem>
-</Tabs>
-
-## Inline JSX
-
-export const Highlight = ({children, color}) => (
-  <span style={{ backgroundColor: color, padding: '0.2rem', borderRadius: '4px' }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">highlighted</Highlight> text.
-```
-
-### 6. Admonitions
+### Admonitions
 
 ```markdown
 :::note
-This is a note.
+This is a note
 :::
 
-:::tip Pro Tip
-Use tips for helpful suggestions.
+:::tip
+This is a tip
 :::
 
-:::info
-Informational content.
+:::warning
+This is a warning
 :::
 
-:::caution
-Warnings about potential issues.
+:::danger
+This is a danger alert
 :::
 
-:::danger Critical
-Critical warnings.
-:::
-
-:::note Custom Title
-Admonition with custom title.
+:::info Custom Title
+This is an info box with a custom title
 :::
 ```
 
-### 7. Blog Posts
+### Code Blocks with Features
 
 ```markdown
-<!-- blog/2024-01-15-release-v2.md -->
----
-slug: release-v2
-title: Releasing Version 2.0
-authors:
-  - name: John Doe
-    title: Lead Developer
-    image_url: https://github.com/johndoe.png
-tags: [release, announcement]
-image: /img/blog/v2-release.png
----
+\```typescript title="src/components/HelloWorld.tsx" showLineNumbers {1,3-5}
+import React from 'react';
 
-# Releasing Version 2.0
-
-We are excited to announce v2.0!
-
-<!-- truncate -->
-
-## What's New
-
-- Feature 1
-- Feature 2
-
-## Migration Guide
-
-See our [migration guide](/docs/migration/v2).
+export function HelloWorld() {
+  return <h1>Hello World!</h1>;
+}
+\```
 ```
 
-### 8. Versioning
+### Tabs
+
+```markdown
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="js" label="JavaScript">
+    \```js
+    const greeting = 'Hello';
+    \```
+  </TabItem>
+  <TabItem value="ts" label="TypeScript">
+    \```ts
+    const greeting: string = 'Hello';
+    \```
+  </TabItem>
+</Tabs>
+```
+
+### Interactive Code Editors
+
+```markdown
+\```jsx live
+function Clock() {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timerID = setInterval(() => setDate(new Date()), 1000);
+    return () => clearInterval(timerID);
+  }, []);
+  return <div>{date.toLocaleTimeString()}</div>;
+}
+\```
+```
+
+## Plugins
+
+### Essential Plugins
+
+```typescript
+// docusaurus.config.ts
+plugins: [
+  // Multiple docs instances
+  [
+    '@docusaurus/plugin-content-docs',
+    {
+      id: 'api',
+      path: 'api',
+      routeBasePath: 'api',
+      sidebarPath: './sidebarsApi.ts',
+    },
+  ],
+
+  // Sitemap
+  [
+    '@docusaurus/plugin-sitemap',
+    {
+      changefreq: 'weekly',
+      priority: 0.5,
+    },
+  ],
+
+  // Google Analytics
+  [
+    '@docusaurus/plugin-google-gtag',
+    {
+      trackingID: 'G-XXXXXXXXXX',
+      anonymizeIP: true,
+    },
+  ],
+],
+```
+
+### Mermaid Diagrams
 
 ```bash
-# Create a new version
-npm run docusaurus docs:version 1.0
-
-# Creates:
-# - versioned_docs/version-1.0/
-# - versioned_sidebars/version-1.0-sidebars.json
-# - versions.json
+npm install @docusaurus/theme-mermaid
 ```
 
-```javascript
-// docusaurus.config.js
-module.exports = {
-  presets: [['@docusaurus/preset-classic', {
-    docs: {
-      lastVersion: 'current',
-      versions: {
-        current: { label: '2.0 (Next)', path: 'next' },
-        '1.0': { label: '1.0', path: '1.0' },
-      },
-    },
-  }]],
-};
+```typescript
+// docusaurus.config.ts
+themes: ['@docusaurus/theme-mermaid'],
+markdown: {
+  mermaid: true,
+},
 ```
 
-### 9. Internationalization (i18n)
+```markdown
+\```mermaid
+graph TD
+  A[Start] -->|Process| B[End]
+\```
+```
 
-```javascript
-// docusaurus.config.js
-module.exports = {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr', 'de'],
-    localeConfigs: {
-      en: { label: 'English', htmlLang: 'en-US' },
-      fr: { label: 'Francais', htmlLang: 'fr-FR' },
-    },
+### Search
+
+#### Algolia DocSearch
+
+```typescript
+themeConfig: {
+  algolia: {
+    appId: 'YOUR_APP_ID',
+    apiKey: 'YOUR_SEARCH_API_KEY',
+    indexName: 'YOUR_INDEX_NAME',
   },
-};
+},
 ```
+
+#### Local Search
 
 ```bash
-# Generate translation files
-npm run write-translations -- --locale fr
-
-# Copy docs to translate
-mkdir -p i18n/fr/docusaurus-plugin-content-docs/current
-cp -r docs/* i18n/fr/docusaurus-plugin-content-docs/current/
-
-# Start in French
-npm run start -- --locale fr
-```
-
-### 10. Search with Algolia
-
-```javascript
-// docusaurus.config.js
-module.exports = {
-  themeConfig: {
-    algolia: {
-      appId: 'YOUR_APP_ID',
-      apiKey: 'YOUR_SEARCH_API_KEY',
-      indexName: 'your_index_name',
-      contextualSearch: true,
-    },
-  },
-};
-```
-
-```bash
-# Alternative: Local search plugin
 npm install @easyops-cn/docusaurus-search-local
 ```
 
-### 11. Custom CSS
-
-```css
-/* src/css/custom.css */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-code-font-size: 95%;
-  --ifm-font-family-base: 'Inter', sans-serif;
-}
-
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-}
-
-.navbar { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+```typescript
+themes: [
+  [
+    require.resolve('@easyops-cn/docusaurus-search-local'),
+    {
+      hashed: true,
+      language: ['en', 'zh'],
+    },
+  ],
+],
 ```
 
-### 12. GitHub Pages Deployment
+## Versioning
+
+### Enable Versioning
+
+```bash
+npm run docusaurus docs:version 1.0.0
+```
+
+### Version Structure
+
+```
+website/
+├── docs/               # Current version (Next)
+├── versioned_docs/
+│   ├── version-1.0.0/  # Version 1.0.0
+│   └── version-2.0.0/  # Version 2.0.0
+├── versioned_sidebars/
+│   ├── version-1.0.0-sidebars.json
+│   └── version-2.0.0-sidebars.json
+└── versions.json       # List of versions
+```
+
+### Version Configuration
+
+```typescript
+themeConfig: {
+  navbar: {
+    items: [
+      {
+        type: 'docsVersionDropdown',
+        position: 'right',
+      },
+    ],
+  },
+},
+```
+
+## Internationalization (i18n)
+
+### Configuration
+
+```typescript
+// docusaurus.config.ts
+i18n: {
+  defaultLocale: 'en',
+  locales: ['en', 'fr', 'es'],
+  localeConfigs: {
+    en: {
+      label: 'English',
+    },
+    fr: {
+      label: 'Français',
+    },
+    es: {
+      label: 'Español',
+    },
+  },
+},
+```
+
+### Directory Structure
+
+```
+website/
+├── i18n/
+│   ├── en/
+│   │   ├── docusaurus-plugin-content-docs/
+│   │   └── docusaurus-theme-classic/
+│   ├── fr/
+│   └── es/
+└── docs/              # Default locale content
+```
+
+### Build for Specific Locale
+
+```bash
+npm run build -- --locale fr
+```
+
+## Custom Components
+
+### Create Component
+
+```tsx
+// src/components/FeatureCard.tsx
+import React from 'react';
+import styles from './styles.module.css';
+
+export function FeatureCard({title, description, icon}) {
+  return (
+    <div className={styles.featureCard}>
+      <div className={styles.icon}>{icon}</div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+}
+```
+
+### Use in MDX
+
+```markdown
+---
+title: Features
+---
+
+import {FeatureCard} from '@site/src/components/FeatureCard';
+
+# Our Features
+
+<FeatureCard
+  title="Fast"
+  description="Lightning-fast performance"
+  icon="⚡"
+/>
+```
+
+## Deployment
+
+### GitHub Pages
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -441,344 +440,142 @@ on:
   push:
     branches: [main]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: build
-
   deploy:
-    environment:
-      name: github-pages
     runs-on: ubuntu-latest
-    needs: build
     steps:
-      - uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
 ```
 
-```bash
-# Manual deployment
-npm run build
-npm run deploy
-```
-
-### 13. Vercel/Netlify Deployment
-
-```json
-// vercel.json
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "build",
-  "framework": "docusaurus-2"
-}
-```
+### Netlify
 
 ```toml
 # netlify.toml
 [build]
   command = "npm run build"
   publish = "build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 ```
 
-## Integration Examples
+### Vercel
 
-### Integration with TypeDoc
-
-```bash
-npm install typedoc docusaurus-plugin-typedoc
-```
-
-```javascript
-module.exports = {
-  plugins: [
-    ['docusaurus-plugin-typedoc', {
-      entryPoints: ['../src/index.ts'],
-      tsconfig: '../tsconfig.json',
-      out: 'api',
-    }],
-  ],
-};
-```
-
-### Integration with OpenAPI
-
-```bash
-npm install docusaurus-plugin-openapi-docs docusaurus-theme-openapi-docs
-```
-
-```javascript
-module.exports = {
-  plugins: [
-    ['docusaurus-plugin-openapi-docs', {
-      id: 'openapi',
-      config: {
-        petstore: {
-          specPath: 'api/openapi.yaml',
-          outputDir: 'docs/api',
-        },
-      },
-    }],
-  ],
-  themes: ['docusaurus-theme-openapi-docs'],
-};
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build"
+}
 ```
 
 ## Best Practices
 
-### 1. Documentation Structure
+### 1. Organize Content Logically
 
 ```
 docs/
-├── intro.md
 ├── getting-started/
-│   ├── _category_.json
 │   ├── installation.md
 │   └── quick-start.md
 ├── guides/
-│   ├── _category_.json
-│   ├── index.md
-│   └── advanced.md
-├── api/
-│   └── reference.md
-├── faq.md
-└── changelog.md
+│   ├── beginner/
+│   ├── intermediate/
+│   └── advanced/
+└── reference/
+    ├── api/
+    └── cli/
 ```
 
-```json
-// docs/getting-started/_category_.json
-{
-  "label": "Getting Started",
-  "position": 1,
-  "collapsible": true,
-  "collapsed": false
-}
-```
-
-### 2. SEO Optimization
+### 2. Use Frontmatter
 
 ```markdown
 ---
-title: My Page | Brand Name
-description: Description for search engines (150-160 chars)
-keywords: [keyword1, keyword2]
-image: /img/og/my-page.png
----
-```
-
-### 3. Content Guidelines
-
-```markdown
----
-id: unique-id
-title: Clear Title
+id: my-doc
+title: My Document
 sidebar_label: Short Label
-description: SEO description
+sidebar_position: 1
+description: Document description for SEO
+keywords: [docusaurus, documentation, seo]
 ---
+```
 
-# Page Title (H1 - only one)
+### 3. Leverage MDX
 
-## Section (H2)
+```markdown
+import MyComponent from '@site/src/components/MyComponent';
 
-### Subsection (H3)
+<MyComponent prop="value" />
+```
 
-:::tip Best Practice
-Use admonitions appropriately.
-:::
+### 4. Optimize Images
 
-See also: [Related Page](./related.md)
+```markdown
+![Alt text](./img/photo.jpg)
+
+<!-- Or with sizing -->
+<img src={require('./img/photo.jpg').default} width="600" />
+```
+
+### 5. Add Edit Links
+
+```typescript
+docs: {
+  editUrl: 'https://github.com/org/repo/edit/main/',
+},
 ```
 
 ## Troubleshooting
 
-### Build Fails with Module Not Found
+### Build Errors
 
 ```bash
-rm -rf node_modules .docusaurus build
-npm install
-npm run build
-```
-
-### Hot Reload Not Working
-
-```bash
+# Clear cache
 npm run clear
-npm run start
+npm run build
 ```
 
 ### Broken Links
 
-```javascript
-module.exports = {
-  onBrokenLinks: 'warn', // Change from 'throw' for debugging
-};
+```bash
+# Check for broken links during build
+npm run build -- --debug
 ```
 
-### i18n Build Issues
+### Port Already in Use
 
 ```bash
-npm run build -- --locale en
-npm run write-translations -- --locale fr
+PORT=3001 npm start
 ```
 
-### Debug Mode
+## Resources
 
-```bash
-DEBUG=docusaurus* npm run build
-npm run start -- --port 3001
-```
+- [Official Docs](https://docusaurus.io/)
+- [Showcase](https://docusaurus.io/showcase)
+- [Discord Community](https://discord.gg/docusaurus)
+- [GitHub](https://github.com/facebook/docusaurus)
 
-### Algolia Indexing Issues
+## Activation Keywords
 
-```javascript
-// Check Algolia configuration
-module.exports = {
-  themeConfig: {
-    algolia: {
-      appId: 'YOUR_APP_ID',       // Not the API key
-      apiKey: 'SEARCH_ONLY_KEY',  // Search-only API key
-      indexName: 'your_index',
-      debug: true,                // Enable debug mode
-    },
-  },
-};
-```
-
-### Version Dropdown Not Showing
-
-```javascript
-// Ensure versions.json exists and navbar is configured
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        { type: 'docsVersionDropdown', position: 'right' },
-      ],
-    },
-  },
-};
-```
-
-## Advanced Configuration
-
-### Custom Homepage
-
-```jsx
-// src/pages/index.js
-import React from 'react';
-import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={styles.heroBanner}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <a className="button button--primary button--lg" href="/docs/intro">
-            Get Started
-          </a>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default function Home() {
-  return (
-    <Layout title="Home" description="Welcome to our documentation">
-      <HomepageHeader />
-      <main>
-        <section className={styles.features}>
-          <div className="container">
-            <div className="row">
-              <Feature title="Easy to Use" description="Simple setup and configuration" />
-              <Feature title="Powerful" description="Full React and MDX support" />
-              <Feature title="Fast" description="Optimized for performance" />
-            </div>
-          </div>
-        </section>
-      </main>
-    </Layout>
-  );
-}
-```
-
-### Plugin Development
-
-```javascript
-// plugins/my-plugin/index.js
-module.exports = function myPlugin(context, options) {
-  return {
-    name: 'my-plugin',
-
-    async loadContent() {
-      return { data: 'example' };
-    },
-
-    async contentLoaded({ content, actions }) {
-      const { createData, addRoute } = actions;
-      const dataPath = await createData('my-data.json', JSON.stringify(content));
-
-      addRoute({
-        path: '/custom-page',
-        component: '@site/src/components/CustomPage',
-        modules: { data: dataPath },
-        exact: true,
-      });
-    },
-
-    configureWebpack(config, isServer) {
-      return {
-        resolve: {
-          alias: { '@data': path.resolve(__dirname, 'data') },
-        },
-      };
-    },
-  };
-};
-```
-
-## Version History
-
-### v1.0.0 (2026-01-17)
-
-- Initial skill creation
-- Project setup and configuration
-- Documentation pages with MDX
-- Blog functionality
-- Sidebar configuration
-- Theme customization
-- Versioning setup
-- Internationalization (i18n)
-- Algolia search integration
-- GitHub Pages deployment
-- Best practices and troubleshooting
-
-## Related Resources
-
-- [Docusaurus Documentation](https://docusaurus.io/docs)
-- [Docusaurus GitHub](https://github.com/facebook/docusaurus)
-- [MDX Documentation](https://mdxjs.com/)
-- [Algolia DocSearch](https://docsearch.algolia.com/)
-- [Docusaurus Showcase](https://docusaurus.io/showcase)
-
----
-
-*Build blazing-fast documentation websites with React and MDX.*
+Ask me about:
+- "How do I set up Docusaurus?"
+- "Docusaurus configuration best practices"
+- "Adding search to Docusaurus"
+- "Docusaurus versioning"
+- "MDX components in Docusaurus"
+- "Deploy Docusaurus to GitHub Pages"
+- "Internationalization in Docusaurus"
+- "Custom Docusaurus themes"

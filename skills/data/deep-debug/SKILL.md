@@ -8,7 +8,7 @@ user-invocable: true
 # Deep Debug - Multi-Agent Investigation
 
 **Status**: Production Ready
-**Last Updated**: 2026-02-02
+**Last Updated**: 2026-02-03
 **Dependencies**: Chrome MCP tools (optional), debugger agent, code-reviewer agent
 
 ---
@@ -20,10 +20,16 @@ user-invocable: true
 - **Symptoms don't match expectations** - Something deeper is wrong
 - **Complex state management bugs** - React hooks, closures, race conditions
 
+## Commands
+
+| Command | Purpose |
+|---------|---------|
+| `/debug` | Guided debugging workflow with evidence gathering and parallel investigation |
+
 ## Quick Start
 
 ```
-/deep-debug [description of the bug]
+/debug [description of the bug]
 ```
 
 Or invoke naturally:

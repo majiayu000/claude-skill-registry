@@ -1,3 +1,10 @@
+---
+name: cad-mesh-generation
+version: "1.0.0"
+category: data
+description: "CAD and Mesh Generation Skill"
+---
+
 # CAD and Mesh Generation Skill
 
 ```yaml

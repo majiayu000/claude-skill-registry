@@ -1,296 +1,113 @@
 ---
-name: Code Reviewer
-description: Code review, PR analysis, and quality feedback. USE WHEN user mentions review, PR, pull request, code quality, best practices, feedback, suggestions, improvements, code smell, or asks to look at code for issues.
+name: reviewer
+description: 코드 리뷰 스킬. 버그, 보안, 성능, 가독성 체크. PR 리뷰, 자기 검토 시 사용.
 ---
 
-# Code Reviewer Skill
+# Reviewer Skill
 
-AI-powered code review guidance for analyzing code changes, identifying issues, suggesting improvements, and ensuring best practices with focus on maintainability, correctness, and team standards.
+## 리뷰 원칙
 
-## What This Skill Does
+- 비판이 아닌 개선 방향 제시
+- 문제 제기 시 대안 제시
+- 우선순위 태그 사용
 
-This skill provides expert-level code review guidance including identifying bugs, security issues, performance problems, style violations, and opportunities for improvement. It combines code review best practices with constructive, actionable feedback.
+## 우선순위 태그
 
-**Key Capabilities:**
-- **Bug Detection**: Logic errors, edge cases, null handling, race conditions
-- **Security Analysis**: Vulnerability scanning, injection risks, auth issues
-- **Performance Review**: Inefficiencies, N+1 queries, memory concerns
-- **Style Consistency**: Naming conventions, formatting, idiomatic code
-- **Maintainability**: Complexity, readability, documentation gaps
-- **PR Best Practices**: Commit hygiene, change scope, description quality
+| 태그 | 의미 |
+|------|------|
+| **[Critical]** | 반드시 수정 (버그, 보안) |
+| **[Major]** | 수정 권장 (성능, 설계) |
+| **[Minor]** | 제안 (가독성, 스타일) |
 
-## Core Principles
+## 체크리스트
 
-### The Constructive Review Mindset
-- **Assume Positive Intent**: The author is trying their best
-- **Ask, Don't Tell**: Frame suggestions as questions when possible
-- **Explain Why**: Context helps the author learn and decide
-- **Praise Good Work**: Acknowledge patterns done well
-- **Pick Your Battles**: Not everything needs to be perfect
+### 버그 & 로직
+- [ ] Null/Undefined 처리
+- [ ] 경계 조건 (빈 배열, 0 등)
+- [ ] 비동기 에러 핸들링
+- [ ] useEffect 의존성 배열
 
-### Review Priority Hierarchy
-1. **Correctness** - Does it work? Will it break things?
-2. **Security** - Are there vulnerabilities or data risks?
-3. **Performance** - Are there obvious performance issues?
-4. **Maintainability** - Can others understand and modify it?
-5. **Style** - Does it follow team conventions?
+### 보안
+- [ ] XSS (dangerouslySetInnerHTML 사용 여부)
+- [ ] Chrome Storage 데이터 검증
+- [ ] 외부 URL 처리 (window.open, href)
+- [ ] 민감 정보 노출 여부
 
-## Code Review Workflow
+### 성능
+- [ ] 불필요한 리렌더링
+- [ ] 대용량 데이터 처리 (링크 수천 개)
+- [ ] 메모이제이션 필요 여부 (useMemo, useCallback)
+- [ ] Storage 호출 최적화
 
-### 1. Understand Context
-```
-Before reviewing code:
-├── Read the PR description/ticket
-├── Understand the goal (what problem is being solved?)
-├── Check the scope (is this the right size change?)
-├── Review related changes (tests included?)
-└── Check target branch (main, feature, hotfix?)
-```
+### 아키텍처 (Kent Beck Style)
+- [ ] SRP 준수 (하나의 함수 = 하나의 책임)
+- [ ] 순수 함수 사용 (사이드 이펙트 격리)
+- [ ] 불변성 패턴 (객체 수정 대신 새 객체)
+- [ ] 명확한 의도 (이름만으로 역할 파악)
+- [ ] YAGNI/KISS 준수 (불필요한 추상화 없음)
 
-### 2. First Pass - Big Picture
-```
-High-level review:
-├── Architecture (does this fit the existing patterns?)
-├── Design (is this the right approach?)
-├── Completeness (are all cases handled?)
-├── Tests (are changes adequately tested?)
-└── Breaking Changes (will this break existing code?)
-```
+### 컨벤션
+- [ ] Storage 유틸리티 사용 (직접 호출 X)
+- [ ] 타입 안전성
+- [ ] 기존 패턴과 일관성
 
-### 3. Detailed Review
-```
-Line-by-line analysis:
-├── Logic (correct algorithms, edge cases)
-├── Security (input validation, auth checks)
-├── Error Handling (exceptions, edge cases)
-├── Performance (loops, queries, memory)
-├── Naming (clear, consistent, meaningful)
-├── Comments (necessary, accurate, helpful)
-└── Style (formatting, conventions)
-```
+## 리뷰 템플릿
 
-### 4. Provide Feedback
-Generate feedback that is:
-- Specific (point to exact lines)
-- Actionable (say what to change)
-- Educational (explain why it matters)
-- Prioritized (must-fix vs nice-to-have)
-
-## Review Comment Categories
-
-### Comment Severity Levels
-| Level | Prefix | Meaning | Example |
-|-------|--------|---------|---------|
-| **Blocking** | 🔴 | Must fix before merge | Security vulnerability |
-| **Major** | 🟠 | Should fix, discuss if not | Bug, missing test |
-| **Minor** | 🟡 | Nice to have | Style improvement |
-| **Nitpick** | ⚪ | Optional, FYI | Preference, suggestion |
-| **Praise** | 🟢 | Good job! | Clean pattern |
-
-### Comment Types
-```
-🔴 Bug: This will throw NullPointerException when user is null
-🟠 Test: Missing test for the error case on line 45
-🟡 Style: Consider extracting this to a helper function
-⚪ Nit: Typo in variable name "recieve" → "receive"
-🟢 Nice: Great use of the Strategy pattern here!
-❓ Question: What happens if the queue is empty?
-```
-
-## Common Issues to Look For
-
-### Logic Issues
-| Issue | Look For | Example |
-|-------|----------|---------|
-| **Off-by-one** | Loops, array indices | `i <= length` vs `i < length` |
-| **Null/undefined** | Optional values, API responses | Missing null checks |
-| **Type confusion** | Type coercion, casting | String vs number comparison |
-| **Boundary conditions** | Empty arrays, zero values | `items.length > 0` checks |
-| **State management** | Shared state, async updates | Race conditions |
-
-### Security Issues
-| Issue | Look For | Example |
-|-------|----------|---------|
-| **Injection** | User input in queries/commands | SQL, command injection |
-| **Auth bypass** | Missing permission checks | Direct object reference |
-| **Data exposure** | Logging, error messages | Passwords in logs |
-| **XSS** | User content rendered as HTML | Unsanitized output |
-| **CSRF** | State-changing GET requests | Missing CSRF tokens |
-
-### Performance Issues
-| Issue | Look For | Example |
-|-------|----------|---------|
-| **N+1 queries** | Loops with DB calls | Fetch in loop |
-| **Unbounded growth** | Collections without limits | Memory leaks |
-| **Unnecessary work** | Redundant calculations | Computing in loop |
-| **Missing caching** | Repeated expensive ops | Re-fetching static data |
-| **Blocking operations** | Sync in async context | Blocking I/O |
-
-### Maintainability Issues
-| Issue | Look For | Example |
-|-------|----------|---------|
-| **Long methods** | > 50 lines | Extract helper functions |
-| **Deep nesting** | > 3 levels of indentation | Guard clauses, extraction |
-| **Magic numbers** | Hardcoded values | Use named constants |
-| **Poor naming** | Single letters, abbreviations | Descriptive names |
-| **Missing docs** | Public APIs without docs | Add JSDoc/docstrings |
-
-## Effective Feedback Templates
-
-### Suggesting Alternatives
 ```markdown
-**Instead of:**
-```python
-result = []
-for item in items:
-    if item.active:
-        result.append(item.name)
+## 요약
+[변경 사항 요약]
+
+## 좋은 점
+- ...
+
+## 개선 필요
+
+### [Critical] 제목
+- 위치: `파일:라인`
+- 문제: ...
+- 제안: ...
+
+### [Major] 제목
+- 위치: `파일:라인`
+- 문제: ...
+- 제안: ...
+
+### [Minor] 제목
+- 위치: `파일:라인`
+- 제안: ...
 ```
 
-**Consider:**
-```python
-result = [item.name for item in items if item.active]
-```
+## 예시
 
-This is more Pythonic and expresses the intent more clearly.
-```
+### 리뷰 결과
 
-### Asking Questions
 ```markdown
-❓ I'm curious about the choice to use recursion here. 
-Given that the input could be deeply nested (up to 1000 levels),
-would an iterative approach with an explicit stack be safer 
-to avoid potential stack overflow?
+## 요약
+태그 필터링 기능 추가
+
+## 좋은 점
+- 타입 안전성 확보
+- 컴포넌트 분리 적절
+
+## 개선 필요
+
+### [Critical] 빈 배열 처리 누락
+- 위치: `src/popup/hooks/useLinks.ts:25`
+- 문제: links가 undefined일 때 에러 발생
+- 제안: `links ?? []` 기본값 처리
+
+### [Major] 불필요한 리렌더링
+- 위치: `src/popup/components/TagFilter.tsx:12`
+- 문제: 매 렌더링마다 새 함수 생성
+- 제안: useCallback으로 메모이제이션
+
+### [Minor] 변수명 개선
+- 위치: `src/shared/utils/search.ts:8`
+- 제안: `res` → `searchResults`로 명확하게
 ```
 
-### Explaining Concerns
-```markdown
-🟠 **Concern: Race Condition Risk**
+## 주의사항
 
-Lines 45-50 read the counter, increment it, and write back.
-If two requests hit this simultaneously, they could both read 
-the same value, leading to a lost update.
-
-**Suggestion:** Use atomic operations or database transactions:
-```python
-Counter.objects.filter(id=1).update(value=F('value') + 1)
-```
-```
-
-### Praising Good Work
-```markdown
-🟢 **Nice pattern here!** 
-
-Using the factory method makes this extensible without modifying 
-existing code. I like that you also included the type hints - 
-makes the intent crystal clear.
-```
-
-## PR Best Practices Guide
-
-### Good PR Characteristics
-- **Small and Focused**: One logical change per PR
-- **Descriptive Title**: Summarizes what the change does
-- **Clear Description**: Why, what, and how
-- **Self-Reviewed**: Author reviewed before requesting
-- **Tests Included**: New/changed code has tests
-- **Passing CI**: All checks green before review
-
-### PR Review Checklist
-- [ ] **Title clear?** Does it summarize the change?
-- [ ] **Description complete?** Context, testing, rollback?
-- [ ] **Right size?** < 400 lines is ideal
-- [ ] **Tests passing?** CI all green?
-- [ ] **Tests adequate?** New behavior covered?
-- [ ] **No debug code?** Console.logs, print statements removed?
-- [ ] **Dependencies updated?** Lock files included?
-- [ ] **Documentation updated?** README, API docs?
-
-## Language-Specific Review Points
-
-### Python
-```python
-# Check for:
-- Type hints on public functions
-- Docstrings on public classes/methods
-- No mutable default arguments (def foo(items=[]))
-- Context managers for resources (with open(...))
-- List comprehensions over map/filter when cleaner
-- f-strings for formatting (not % or .format)
-```
-
-### JavaScript/TypeScript
-```typescript
-// Check for:
-- Proper async/await usage (not mixing with .then())
-- Null coalescing (??) vs OR (||) for defaults
-- Optional chaining (?.) for nested access
-- const over let, avoid var
-- Arrow functions where appropriate
-- TypeScript: strict types, no any
-```
-
-### Java
-```java
-// Check for:
-- Proper null handling (Optional, @Nullable)
-- Try-with-resources for AutoCloseable
-- Immutable objects where possible
-- Builder pattern for complex constructors
-- Stream API over imperative loops when clearer
-- Proper equals/hashCode implementation
-```
-
-### Go
-```go
-// Check for:
-- Error handling (not _ for errors)
-- Defer for cleanup
-- Context propagation
-- Proper goroutine lifecycle
-- Interface compliance (compile-time checks)
-- Effective naming (short but clear)
-```
-
-## When to Use This Skill
-
-**Trigger Phrases:**
-- "Review this code..."
-- "What do you think about..."
-- "Can you check this PR..."
-- "Is this approach correct?"
-- "Any suggestions for improvement?"
-- "What issues do you see?"
-- "How can I make this better?"
-- "Does this look right?"
-
-**Example Requests:**
-1. "Review this function for potential bugs"
-2. "What security issues do you see in this API?"
-3. "Is this the right way to structure this?"
-4. "Does this follow best practices?"
-5. "Help me review this PR before merging"
-6. "What would you improve about this code?"
-
-## Review Quality Checklist
-
-Before submitting review feedback:
-
-- [ ] **Constructive?** Would I want to receive this feedback?
-- [ ] **Specific?** Did I point to exact lines/issues?
-- [ ] **Actionable?** Is it clear what to change?
-- [ ] **Prioritized?** Are blocking issues clearly marked?
-- [ ] **Complete?** Did I cover correctness, security, tests?
-- [ ] **Balanced?** Did I acknowledge what was done well?
-- [ ] **Respectful?** Is the tone collaborative?
-
-## Integration with Other Skills
-
-- **Architect**: Architecture review during design phase
-- **Tester**: Test coverage and quality review
-- **Troubleshooter**: Reviewing fixes for bugs
-- **Refactorer**: Post-merge improvement suggestions
-
----
-
-*Skill designed for Thanos + Antigravity integration*
+- **상세 패턴은 코드베이스의 기존 구현 참조**
+- 리뷰 후 수정이 필요하면 /developer 또는 /frontend 스킬로 수정
+- [Critical], [Major] 이슈는 반드시 수정 후 재리뷰

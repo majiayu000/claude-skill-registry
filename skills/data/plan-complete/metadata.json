@@ -1,7 +1,7 @@
 {
   "name": "plan-complete",
-  "repo": "brmatola/gremlins",
-  "path": "skills/plan-complete/SKILL.md",
-  "source": "github.com/brmatola/gremlins",
-  "downloaded_at": "2026-02-02T03:29:25.213292Z"
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-complete/SKILL.md",
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "downloaded_at": "2026-02-04T05:05:22.761493Z"
 }

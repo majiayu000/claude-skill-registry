@@ -21,6 +21,7 @@ Parse git status command output into structured JSON for programmatic analysis.
 Accept raw git status output as input.
 
 **Expected Input**:
+
 - `gitStatusOutput`: String (raw output from `git status --porcelain` or regular `git status`)
 
 ### Step 2: Parse Branch Information
@@ -28,6 +29,7 @@ Accept raw git status output as input.
 Extract current branch and tracking information.
 
 **Patterns**:
+
 - `## branch-name`: Current branch
 - `## branch-name...origin/branch-name`: Tracking branch
 - `[ahead N]` or `[behind N]`: Ahead/behind commits
@@ -37,6 +39,7 @@ Extract current branch and tracking information.
 Parse file status indicators and categorize.
 
 **Status Indicators** (porcelain format):
+
 - `M `: Modified (staged)
 - ` M`: Modified (unstaged)
 - `A `: Added (staged)
@@ -50,6 +53,7 @@ Parse file status indicators and categorize.
 Return parsed data as JSON object.
 
 **Expected Output**:
+
 ```json
 {
   "branch": "main",
@@ -76,6 +80,7 @@ Return parsed data as JSON object.
 ### Example 1: Clean Working Directory
 
 **Input**:
+
 ```
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -84,6 +89,7 @@ nothing to commit, working tree clean
 ```
 
 **Output**:
+
 ```json
 {
   "branch": "main",
@@ -102,6 +108,7 @@ nothing to commit, working tree clean
 ### Example 2: Modified Files
 
 **Input** (porcelain format):
+
 ```
 ## main...origin/main [ahead 2]
 M  src/utils.ts
@@ -111,6 +118,7 @@ A  src/new-feature.ts
 ```
 
 **Output**:
+
 ```json
 {
   "branch": "main",
@@ -129,12 +137,14 @@ A  src/new-feature.ts
 ### Example 3: Detached HEAD
 
 **Input**:
+
 ```
 ## HEAD (no branch)
  M README.md
 ```
 
 **Output**:
+
 ```json
 {
   "branch": "HEAD (detached)",

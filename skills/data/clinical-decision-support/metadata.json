@@ -1,7 +1,7 @@
 {
   "name": "clinical-decision-support",
-  "repo": "K-Dense-AI/claude-scientific-skills",
-  "path": "scientific-skills/clinical-decision-support/SKILL.md",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "downloaded_at": "2026-02-02T01:34:58.696828Z"
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/scientific-skills/skills/clinical-decision-support/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-04T02:46:11.583874Z"
 }

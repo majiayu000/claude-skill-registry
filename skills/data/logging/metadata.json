@@ -1,7 +1,9 @@
 {
   "name": "logging",
-  "repo": "HoangNguyen0403/agent-skills-standard",
-  "path": "skills/golang/logging/SKILL.md",
-  "source": "github.com/HoangNguyen0403/agent-skills-standard",
-  "downloaded_at": "2026-02-02T01:25:38.049483Z"
+  "description": "UTF-8 file logging with automatic date-based filenames and thread-safe operations for RocsMiddleware services",
+  "repo": "lawless-m/Earwig",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig"
 }

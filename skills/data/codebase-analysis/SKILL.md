@@ -141,6 +141,7 @@ Execute a structured 4-phase codebase analysis workflow to gather insights.
    - **Update README.md with analysis insights** — Add architecture/structure info to README
    - **Update CLAUDE.md with analysis insights** — Add patterns/conventions to CLAUDE.md
    - **Keep a condensed summary in memory** — Retain a quick-reference summary in conversation context
+   - **Address actionable insights** — Fix challenges and implement recommendations from the report
 
    If the user selects no actions, the workflow is complete. Thank the user and end.
 
@@ -195,6 +196,57 @@ Execute a structured 4-phase codebase analysis workflow to gather insights.
      - **Watch Out For** — Top risks or complexity hotspots
    - No file is written — this summary stays in conversation context for reference during the session
 
+   ### Action: Address Actionable Insights
+
+   **IMPORTANT:** This action always executes **last** among all selected actions. Code changes could invalidate analysis if documentation is generated after, and this is the most interactive action — it should not block simpler actions.
+
+   **Step 1: Extract actionable items from the report**
+
+   Parse the Phase 3 report (in conversation context) to extract items from:
+   - **Challenges & Risks** table rows — title from Challenge column, severity from Severity column, description from Impact column
+   - **Recommendations** section — each numbered item; infer severity from linked challenges (High if linked to a High challenge, otherwise Medium)
+   - **Other findings** with concrete fixes — default to Low severity
+
+   If no actionable items are found, inform the user and skip this action.
+
+   **Step 2: Present severity-ranked item list**
+
+   - Load reference template from `${CLAUDE_PLUGIN_ROOT}/skills/codebase-analysis/references/actionable-insights-template.md`
+   - Present items sorted High → Medium → Low, each showing:
+     - Title
+     - Severity (High / Medium / Low)
+     - Source section (Challenges & Risks, Recommendations, or Other)
+     - Brief description
+   - Use `AskUserQuestion` with `multiSelect: true` for the user to select which items to address
+   - If no items selected, skip this action
+
+   **Step 3: Process each selected item in priority order (High → Medium → Low)**
+
+   For each item:
+
+   1. **Assess complexity:**
+      - **Simple** — Single file, clear fix, localized change
+      - **Complex** — Multi-file, architectural impact, requires investigation
+
+   2. **Plan the fix:**
+      - Simple: Read the target file, propose changes directly
+      - Complex (architectural): Launch `dev-tools:code-architect` agent with `model: "opus"` to design the fix
+      - Complex (needs investigation): Launch `dev-tools:code-explorer` agent to investigate before proposing
+
+   3. **Present proposal:** Show files to modify, specific changes, and rationale
+
+   4. **User approval** via `AskUserQuestion`:
+      - **Apply** — Execute changes with Edit/Write tools, confirm success
+      - **Skip** — Record the skip, move to next item
+      - **Modify** — User describes adjustments, re-propose the fix (max 3 revision cycles, then must Apply or Skip)
+
+   **Step 4: Summarize results**
+
+   Present a summary covering:
+   - Items addressed (with list of files modified per item)
+   - Items skipped
+   - Total files modified table
+
 3. **Complete the workflow:**
    Summarize which actions were executed and confirm the workflow is complete.
 
@@ -227,3 +279,4 @@ When calling Task tool for agents:
 ## Additional Resources
 
 - For report structure, see [references/report-template.md](references/report-template.md)
+- For actionable insights format, see [references/actionable-insights-template.md](references/actionable-insights-template.md)

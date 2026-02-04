@@ -1,24 +1,73 @@
 ---
 name: workflow
-description: Standard workflow for implementing features with specs and planning documents. Use when starting a new feature, planning implementation, or working on any non-trivial task.
+description: Skill orchestration - user commands vs auto-triggered
+user-invocable: false
+model: haiku
 ---
 
-# Standard Workflow
+# Workflow Overview
 
-1. First think through the problem, read the codebase for relevant files, and write a plan to specs/[timestamp] [feature-name].md where [timestamp] is the timestamp in YYYYMMDDThhmmss format and [feature-name] is the name of the feature.
-2. The plan should have a list of todo items that you can check off as you complete them
-3. Before you begin working, check in with me and I will verify the plan.
-4. Then, begin working on the todo items, marking them as complete as you go.
-5. Please every step of the way just give me a high level explanation of what changes you made
-6. Make every task and code change you do as simple as possible. We want to avoid making any massive or complex changes. Every change should impact as little code as possible. Everything is about simplicity.
-7. Finally, add a review section to the .md file with a summary of the changes you made and any other relevant information.
+## User Commands (6)
 
-# Spec Placement
+```
+┌─────────────────────────────────────────────────────────┐
+│  "auto"          → Execute all tasks autonomously       │
+│  "review"        → Code quality check on recent changes │
+│  "brainstorm"    → Scan → propose → create stories      │
+│  "test"          → npm test + browser tests on latest   │
+│  "audit"         → Rate aspects → create stories        │
+│  "status"        → Quick progress check                 │
+└─────────────────────────────────────────────────────────┘
 
-Specs always live at the root level of their scope (not inside `docs/`):
+Aliases: "what next" = brainstorm
+```
 
-- **`/specs/`** - Cross-cutting features, architecture decisions, general tooling
-- **`/apps/[app]/specs/`** - Features specific to one app only
-- **`/packages/[pkg]/specs/`** - Package-specific implementation details
+## Auto-Triggered (Internal)
 
-When in doubt, use `/specs/`. Move to app/package-specific only if the spec truly belongs there.
+| Trigger | Action |
+|---------|--------|
+| Task complete | `verify` runs automatically |
+| Every 5 tasks | `checkpoint` saves context |
+| User says "ship" | `deploy` runs |
+| Artifacts pile up | `clean` suggested |
+
+## Analysis → Stories Flow
+
+```
+brainstorm / audit / what next
+    ↓
+Parallel scans (6 Haiku agents)
+    ↓
+Rate aspects / Present scenarios
+    ↓
+Auto-create stories for top issues
+    ↓
+User says "auto" → Execute
+```
+
+## Task Lifecycle
+
+```
+TaskCreate (from brainstorm/audit)
+    ↓
+auto picks up task
+    ↓
+Implement → Typecheck → Build
+    ↓
+verify (auto) → Browser test if UX
+    ↓
+TaskUpdate: completed
+    ↓
+checkpoint (every 5) → Next task
+```
+
+## Quick Reference
+
+| Want to... | Say |
+|------------|-----|
+| Work through tasks | `auto` |
+| Check quality | `review` |
+| Don't know what's next | `brainstorm` or `what next` |
+| Run all tests | `test` |
+| Rate the app | `audit` |
+| See progress | `status` |

@@ -41,6 +41,21 @@ Either way: Verify every plan task was implemented, tested adequately, and meets
 
 The specification is optional — the review can proceed with just the plan.
 
+---
+
+## Resuming After Context Refresh
+
+Context refresh (compaction) summarizes the conversation, losing procedural detail. When you detect a context refresh has occurred — the conversation feels abruptly shorter, you lack memory of recent steps, or a summary precedes this message — follow this recovery protocol:
+
+1. **Re-read this skill file completely.** Do not rely on your summary of it. The full process, steps, and rules must be reloaded.
+2. **Read all tracking and state files** for the current topic — plan index files, review tracking files, implementation tracking files, or any working documents this skill creates. These are your source of truth for progress.
+3. **Check git state.** Run `git status` and `git log --oneline -10` to see recent commits. Commit messages follow a conventional pattern that reveals what was completed.
+4. **Announce your position** to the user before continuing: what step you believe you're at, what's been completed, and what comes next. Wait for confirmation.
+
+Do not guess at progress or continue from memory. The files on disk and git history are authoritative — your recollection is not.
+
+---
+
 ## Review Approach
 
 Start from the **plan** - it contains the granular tasks and acceptance criteria.
@@ -59,7 +74,7 @@ Plan (tasks + acceptance criteria)
         → Check Code Quality (readable, conventions)
 ```
 
-**Use parallel `chain-verifier` subagents** to verify ALL plan tasks simultaneously. Each verifier checks one task for implementation, tests, and quality. This enables comprehensive review without sequential bottlenecks.
+**Use parallel `review-task-verifier` subagents** to verify ALL plan tasks simultaneously. Each verifier checks one task for implementation, tests, and quality. This enables comprehensive review without sequential bottlenecks.
 
 ## What You Verify (Per Task)
 
@@ -100,8 +115,8 @@ Review as a senior architect would:
 1. **Read the plan** - Understand all phases, tasks, and acceptance criteria
 2. **Read the specification** - Load context for the feature being reviewed
 3. **Extract all tasks** - List every task from every phase
-4. **Spawn chain-verifiers in parallel** - One subagent per task, all running simultaneously
-5. **Aggregate findings** - Collect reports from all chain-verifiers
+4. **Spawn review-task-verifiers in parallel** - One subagent per task, all running simultaneously
+5. **Aggregate findings** - Collect reports from all review-task-verifiers
 6. **Check project skills** - Framework/language conventions
 7. **Produce review** - Structured feedback covering all tasks
 

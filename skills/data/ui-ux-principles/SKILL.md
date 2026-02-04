@@ -1,338 +1,398 @@
 ---
 name: ui-ux-principles
-description: Modern UI/UX: minimalist, keyboard-driven, accessible
-allowed-tools: Read, Grep, Write, Edit
+description: Apply core UI/UX design principles for intuitive, beautiful interfaces. Covers visual hierarchy, color theory, typography, spacing systems, Gestalt principles, usability heuristics, and user-centered design. Use for design decisions, layout planning, and creating polished user experiences.
 ---
 
-# Modern UI/UX Design Principles - 2025
+# UI/UX Design Principles
 
-## Core Philosophy
+Create intuitive, visually appealing interfaces based on proven design principles.
 
-> "Simplicity is the ultimate sophistication." - Leonardo da Vinci
+## Instructions
 
-Modern UI/UX design in 2025 is defined by **functional reduction** aligned with **technical performance**, moving beyond mere visual simplicity to create genuinely efficient user experiences.
+1. **Establish visual hierarchy** - Guide users to important content first
+2. **Maintain consistency** - Reuse patterns, colors, and interactions
+3. **Provide clear feedback** - Every action should have a visible response
+4. **Reduce cognitive load** - Simplify choices and minimize complexity
+5. **Design for errors** - Prevent, detect, and help users recover from mistakes
 
----
+## Visual Hierarchy
 
-## 1. Minimalism Principles
+### Size & Weight
 
-### 1.1 Functional Reduction
-- **Less is More**: Include only elements that serve a clear purpose
-- **Every element must justify its existence**: If it doesn't add value, remove it
-- **Eliminate decorative elements**: Focus on content and functionality
-
-### 1.2 White Space Strategy
-- **Negative space as power**: Use ample white space to highlight essential elements
-- **Breathing room**: Create visual hierarchy through spacing, not lines
-- **Cognitive load reduction**: White space improves focus and comprehension
-
-### 1.3 Technical Minimalism
-- **Performance-first**: Optimize SVGs for GPU, lazy-load components
-- **Skeleton screens**: Show structure while content loads
-- **Micro-functional UI**: Replace monolithic pages with adaptive components
-
----
-
-## 2. Efficiency-First Design
-
-### 2.1 Keyboard-Driven Interface
-- **Shortcuts are fastest**: Keyboard > Mouse > Touch
-- **Command palette pattern**: `Cmd+K` for universal action access (Linear, Raycast)
-- **Discoverability**: Show shortcuts on hover (2-3 second delay)
-- **Fuzzy search**: Be forgiving with typos and partial matches
-
-### 2.2 Command Palette Best Practices
 ```
-✓ Include all menu and context actions
-✓ Display associated hotkeys
-✓ Support aliases for frequently used commands
-✓ Group related actions with sections
-✓ Show loading states for async operations
-✗ Don't overwhelm with low-level system utilities by default
+PRIMARY ACTION     -> Largest, boldest, most prominent
+Secondary Action   -> Medium size, less visual weight
+tertiary action    -> Smallest, subtle styling
 ```
 
-### 2.3 Interaction Minimization
-- **Reduce steps**: Fewest steps to complete core tasks
-- **Automate decisions**: Make smart defaults instead of asking
-- **Inline actions**: Edit in place, don't open dialogs
-- **Progressive disclosure**: Show complexity only when needed
-
----
-
-## 3. Developer Tools UX
-
-### 3.1 Developer-Centric Principles
-- **Functionality over aesthetics**: Think Vim/Sublime, not flashy interfaces
-- **Efficiency is beauty**: Speed is the most important feature
-- **Adjustability**: Let users customize workflows
-- **Power user features**: Expert shortcuts and advanced modes
-
-### 3.2 Visual Minimalism for Devs
-- **Minimal color palette**: Neutral base + single accent color
-- **Functional colors only**: Green/Red/Yellow for status/trends, not decoration
-- **Classic readable fonts**: System fonts (SF, Roboto, Segoe UI)
-- **No distractions**: Remove anything that doesn't serve a purpose
-
-### 3.3 Information Architecture
-- **High information density**: Organize lots of data without clutter
-- **Visual grouping**: Cards, sections, heatmaps for organization
-- **Trend visualization**: Show changes over time clearly
-- **Context awareness**: Adapt interface based on user's current task
-
----
-
-## 4. Component Architecture
-
-### 4.1 Atomic Design Hierarchy (2025 Evolution)
-```
-Ions → Atoms → Molecules → Organisms → Templates → Pages
-(Design tokens) → (Basic elements) → (Simple combinations) →
-(Complex components) → (Layouts) → (Final instances)
+```tsx
+// Clear hierarchy example
+<div className="space-y-4">
+  <h1 className="text-4xl font-bold text-gray-900">
+    Main Headline
+  </h1>
+  <p className="text-xl text-gray-600">
+    Supporting description that explains the headline
+  </p>
+  <div className="flex gap-4">
+    <button className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg">
+      Primary Action
+    </button>
+    <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg">
+      Secondary
+    </button>
+  </div>
+</div>
 ```
 
-**Key Updates for 2025:**
-- **Flexible hierarchy**: Not strictly rigid, use semantics over categories
-- **Design tokens**: Single source of truth for colors, spacing, typography
-- **Behavioral patterns**: Interaction logic (modals, confirmations) as components
+### Spacing Scale
 
-### 4.2 Consistency Strategy
-- **Design tokens first**: Define values before components
-- **Component composition**: Build complex UIs from simple, reusable parts
-- **Style guides**: Document patterns, not just components
-- **Cross-platform consistency**: Tokens ensure unity across web, desktop, mobile
-
----
-
-## 5. Typography & Visual Design
-
-### 5.1 Typography Principles
-- **One typeface**: Use system fonts, play with weight/style/size
-- **Clear hierarchy**: Size, weight, and color create visual order
-- **Legibility first**: Never sacrifice readability for aesthetics
-- **Line length**: 60-75 characters for optimal readability
-- **Line height**: 1.5-1.7 for body text
-
-### 5.2 Color Strategy
-- **Monochromatic base**: Neutral grays for structure
-- **Single accent**: One color for primary actions/brand
-- **Functional colors**: Status colors have specific meanings
-  - Green: Success/complete
-  - Red: Error/delete
-  - Yellow: Warning/pending
-  - Blue: Info/neutral
-- **Dark mode**: Essential feature, not afterthought
-- **High contrast**: Ensure WCAG AA compliance (4.5:1 for text)
-
-### 5.3 Visual Hierarchy
-- **Size hierarchy**: Larger = more important
-- **Color weight**: Darker/bolder = higher priority
-- **Position**: Top/left = primary (in LTR languages)
-- **No zig-zag**: One-dimensional scrolling when possible
-- **Alignment**: Consistent alignment creates structure
-
----
-
-## 6. Performance & Responsiveness
-
-### 6.1 Speed as a Feature
-- **Perceived performance**: Show progress immediately
-- **Streaming responses**: Display content as it arrives
-- **Optimize first paint**: Above-fold content loads first
-- **Defer non-critical**: Load secondary content after main interface
-
-### 6.2 Adaptive Interfaces
-- **Context-aware layouts**: Adjust based on screen size and user state
-- **Device continuity**: Seamless experience across devices
-- **Responsive by default**: Mobile-first approach
-- **Touch-friendly**: Minimum 44x44px tap targets
-
-### 6.3 Loading States
-- **Skeleton screens**: Show structure, don't spin
-- **Progressive loading**: Load content in priority order
-- **Optimistic UI**: Show expected result, rollback on error
-- **Error boundaries**: Graceful degradation
-
----
-
-## 7. Interaction Patterns
-
-### 7.1 Micro-interactions
-- **Subtle animations**: 200-300ms transitions
-- **Purposeful motion**: Every animation has meaning
-- **Fluid like water**: Soft, natural timing curves (ease-out)
-- **Status feedback**: Instant response to every action
-
-### 7.2 Feedback Loops
-- **Immediate acknowledgment**: Show action registered
-- **Progress indication**: Long operations show progress
-- **Clear completion**: Confirm when task finishes
-- **Error handling**: Explain what went wrong and how to fix
-
-### 7.3 Common Patterns
-- **Command palette**: Universal action access
-- **Inline editing**: Edit without modal dialogs
-- **Context menus**: Right-click for actions
-- **Keyboard navigation**: Full keyboard support
-- **Undo/redo**: Make actions reversible
-
----
-
-## 8. Accessibility & Inclusivity
-
-### 8.1 WCAG Standards
-- **Color contrast**: Minimum 4.5:1 for normal text
-- **Keyboard navigation**: All features accessible via keyboard
-- **Screen reader support**: Proper ARIA labels and semantics
-- **Focus indicators**: Visible focus states (never `outline: none`)
-
-### 8.2 Inclusive Design
-- **Design for extremes**: If it works for disabilities, it works for everyone
-- **Color blindness**: Don't rely on color alone to convey meaning
-- **Motion preferences**: Respect `prefers-reduced-motion`
-- **Text sizing**: Support 200% zoom without breaking layout
-
----
-
-## 9. Design System Integration
-
-### 9.1 Design Token Structure
 ```css
-/* Semantic, not presentational */
---color-bg-primary: not --color-gray-50
---color-text-default: not --color-black
---spacing-unit: not --spacing-8px
---font-size-body: not --font-size-16px
+/* Consistent spacing system (4px base) */
+--space-1: 0.25rem;  /* 4px - tight spacing */
+--space-2: 0.5rem;   /* 8px - related items */
+--space-3: 0.75rem;  /* 12px */
+--space-4: 1rem;     /* 16px - standard gap */
+--space-6: 1.5rem;   /* 24px - section spacing */
+--space-8: 2rem;     /* 32px - major sections */
+--space-12: 3rem;    /* 48px - page sections */
+--space-16: 4rem;    /* 64px - large gaps */
 ```
 
-### 9.2 Component Guidelines
-- **Single responsibility**: Each component does one thing well
-- **Composable**: Combine components to build complex UIs
-- **Configurable**: Props control behavior, not styles
-- **Documented**: Examples, not just descriptions
+## Color Theory
 
-### 9.3 Consistency Enforcement
-- **Linting tools**: Automated style checking
-- **Code review**: Human verification
-- **Design reviews**: Regular UI/UX audits
-- **User testing**: Validate with real users
+### Color System
 
----
+```tsx
+// Semantic color usage
+const colors = {
+  // Primary - brand identity, main CTAs
+  primary: {
+    base: '#2563eb',   // Blue-600
+    hover: '#1d4ed8',  // Blue-700
+    light: '#dbeafe',  // Blue-100
+  },
 
-## 10. Metrics & Validation
+  // Success - confirmations, positive actions
+  success: {
+    base: '#16a34a',   // Green-600
+    light: '#dcfce7',  // Green-100
+  },
 
-### 10.1 Quantitative Metrics
-- **Task completion rate**: % users who complete core tasks
-- **Time to completion**: Average time for key workflows
-- **Error rate**: Frequency of user errors
-- **NPS/Satisfaction**: User happiness scores
+  // Warning - caution, non-critical issues
+  warning: {
+    base: '#d97706',   // Amber-600
+    light: '#fef3c7',  // Amber-100
+  },
 
-### 10.2 Qualitative Validation
-- **User interviews**: Talk to actual users regularly
-- **Usability testing**: Observe real usage patterns
-- **A/B testing**: Compare design alternatives
-- **Heatmaps/analytics**: See how users interact
+  // Error - errors, destructive actions
+  error: {
+    base: '#dc2626',   // Red-600
+    light: '#fee2e2',  // Red-100
+  },
 
-### 10.3 Continuous Improvement
-- **Data-driven decisions**: Use metrics to guide changes
-- **Iterate quickly**: Ship, measure, improve
-- **User feedback loops**: Easy way to report issues
-- **Regular audits**: Periodic UX reviews
+  // Neutral - text, backgrounds, borders
+  neutral: {
+    900: '#111827',    // Primary text
+    700: '#374151',    // Secondary text
+    500: '#6b7280',    // Placeholder, disabled
+    300: '#d1d5db',    // Borders
+    100: '#f3f4f6',    // Backgrounds
+  },
+};
+```
 
----
+### Color Accessibility
 
-## 11. Anti-Patterns to Avoid
+```
+Text on white background:
+- Gray-900 (#111827) -> Contrast 16:1 (excellent)
+- Gray-700 (#374151) -> Contrast 10:1 (excellent)
+- Gray-500 (#6b7280) -> Contrast 5.2:1 (minimum for text)
+- Gray-400 (#9ca3af) -> Contrast 3.5:1 (fails for body text)
 
-### 11.1 Common Mistakes
-- ❌ Feature bloat: Adding features without clear user need
-- ❌ Inconsistent patterns: Different ways to do same thing
-- ❌ Over-animation: Motion that distracts or slows users
-- ❌ Modal fatigue: Too many popups and dialogs
-- ❌ Hidden functionality: Features users can't discover
+Large text (18pt+) can use 3:1 minimum contrast
+```
 
-### 11.2 Red Flags
-- ⚠️ Users need training: Interface should be self-explanatory
-- ⚠️ Multiple clicks for common tasks: Optimize frequent workflows
-- ⚠️ Visual clutter: Too much competing for attention
-- ⚠️ Slow performance: Users notice >100ms delays
-- ⚠️ Accessibility issues: Excluding users is unacceptable
+## Typography
 
----
+### Type Scale
 
-## 12. Modern Tool Examples
+```css
+/* Modular scale (1.25 ratio) */
+--text-xs: 0.75rem;    /* 12px */
+--text-sm: 0.875rem;   /* 14px */
+--text-base: 1rem;     /* 16px - body */
+--text-lg: 1.125rem;   /* 18px */
+--text-xl: 1.25rem;    /* 20px */
+--text-2xl: 1.5rem;    /* 24px */
+--text-3xl: 1.875rem;  /* 30px */
+--text-4xl: 2.25rem;   /* 36px */
+--text-5xl: 3rem;      /* 48px */
+```
 
-### 12.1 Reference Applications
-- **Linear**: Keyboard-driven, minimal UI, blazing fast
-- **Raycast**: Command palette, extensible, developer-focused
-- **Arc**: Spatial organization, visual delight, power features
-- **Notion**: Block-based, flexible, clean hierarchy
-- **VS Code**: Keyboard shortcuts, command palette, extensions
+### Typography Best Practices
 
-### 12.2 Common Patterns
-- `Cmd+K`: Command palette
-- `Cmd/Ctrl+P`: Quick open
-- `/`: Command mode in editors
-- `G + key`: Navigate to section (vim-style)
-- `Esc`: Clear selection/go back
+```tsx
+// Readable line length (45-75 characters)
+<article className="max-w-prose mx-auto">
+  <h1 className="text-4xl font-bold tracking-tight">
+    Headline with Tighter Tracking
+  </h1>
+  <p className="text-lg leading-relaxed text-gray-600">
+    Body text with comfortable line height (1.625-1.75)
+    for better readability. Keep paragraphs short.
+  </p>
+</article>
 
----
+// Line heights
+// Headings: 1.1-1.3 (tight)
+// Body: 1.5-1.75 (relaxed)
+// Small text: 1.4-1.5
+```
 
-## 13. Implementation Checklist
+## Gestalt Principles
 
-### 13.1 Pre-Design
-- [ ] Define core user goals
-- [ ] Identify key workflows
-- [ ] Research user mental models
-- [ ] Establish performance budgets
+### Proximity
 
-### 13.2 Design Phase
-- [ ] Create design tokens first
-- [ ] Build component library
-- [ ] Document patterns
-- [ ] Test with real users
+```tsx
+// Related items are grouped
+<div className="space-y-8">
+  {/* Group 1 - User Info */}
+  <div className="space-y-2">
+    <Input label="First Name" />
+    <Input label="Last Name" />
+    <Input label="Email" />
+  </div>
 
-### 13.3 Development
-- [ ] Implement keyboard navigation
-- [ ] Add loading/error states
-- [ ] Ensure accessibility
-- [ ] Optimize performance
+  {/* Group 2 - Address (clearly separate) */}
+  <div className="space-y-2">
+    <Input label="Street" />
+    <Input label="City" />
+    <Input label="ZIP" />
+  </div>
+</div>
+```
 
-### 13.4 Launch & Iterate
-- [ ] Monitor usage metrics
-- [ ] Gather user feedback
-- [ ] A/B test improvements
-- [ ] Regular UX audits
+### Similarity
 
----
+```tsx
+// Similar items look alike
+<div className="flex gap-4">
+  {/* All primary actions look the same */}
+  <button className="btn-primary">Save</button>
+  <button className="btn-primary">Submit</button>
 
-## 14. Quick Reference: Design Decision Framework
+  {/* All secondary actions look the same */}
+  <button className="btn-secondary">Cancel</button>
+  <button className="btn-secondary">Skip</button>
+</div>
+```
 
-When making design decisions, ask:
+### Continuity
 
-1. **Purpose**: What problem does this solve?
-2. **Necessity**: Is this essential for the core task?
-3. **Simplicity**: Can we make it simpler?
-4. **Efficiency**: Is this the fastest way?
-5. **Accessibility**: Can everyone use this?
-6. **Performance**: Will this slow things down?
-7. **Consistency**: Does this match existing patterns?
-8. **Maintainability**: Can we sustain this long-term?
+```tsx
+// Elements aligned create visual flow
+<nav className="flex items-center space-x-6">
+  <Logo />
+  <NavLink>Home</NavLink>
+  <NavLink>Products</NavLink>
+  <NavLink>About</NavLink>
+  <NavLink>Contact</NavLink>
+</nav>
+```
 
-If the answer to any of these is negative, reconsider the design.
+## Usability Heuristics
 
----
+### 1. Visibility of System Status
 
-## Sources
+```tsx
+// Always show what's happening
+<button disabled={isLoading}>
+  {isLoading ? (
+    <>
+      <Spinner className="mr-2" />
+      Saving...
+    </>
+  ) : (
+    'Save Changes'
+  )}
+</button>
 
-- [Best UI/UX Design Trends 2025](https://nevinainfotech25.medium.com/best-ui-ux-design-trends-to-follow-in-2025-c31d3e62779c)
-- [Minimalist UI/UX Design in 2025](https://rmconnection.com/how-minimalist-ui-ux-design-will-be-a-big-trend-in-2025/)
-- [The Rise of Minimalist UI/UX Design](https://www.linkedin.com/pulse/rise-minimalist-uiux-design-2025-surendhar-pv-ttumc)
-- [Developers Are Humans and Other Rules of UX](https://www.eleken.co/blog-posts/designing-tools-for-software-developers)
-- [Linear Design Philosophy](https://linear.app/docs/conceptual-model)
-- [The Elegant Design of Linear.app](https://telablog.com/the-elegant-design-of-linear-app/)
-- [Raycast Design Principles](https://www.raycast.com/blog/a-fresh-look-and-feel)
-- [Raycast API Best Practices](https://developers.raycast.com/information/best-practices)
-- [Command K Bars](https://maggieappleton.com/command-bar)
-- [Atomic Design in 2025](https://medium.com/design-bootcamp/atomic-design-in-2025-from-rigid-theory-to-flexible-practice-91f7113b9274)
-- [The Art of Minimalism in Mobile App UI](https://babich.biz/blog/the-art-of-minimalism-in-mobile-app-ui-design/)
-- [Command Palette Design](https://destiner.io/blog/post/designing-a-command-palette/)
-- [Minimum UI for Maximum UX](https://blog.prototypr.io/minimum-ui-for-maximum-ux-b3495f669314)
+// Progress indicators
+<div className="space-y-2">
+  <div className="flex justify-between text-sm">
+    <span>Uploading...</span>
+    <span>{progress}%</span>
+  </div>
+  <div className="h-2 bg-gray-200 rounded-full">
+    <div
+      className="h-2 bg-blue-600 rounded-full transition-all"
+      style={{ width: `${progress}%` }}
+    />
+  </div>
+</div>
+```
+
+### 2. Match Real World
+
+```tsx
+// Use familiar icons and language
+<button>
+  <TrashIcon /> Delete  {/* Not "Remove instance" */}
+</button>
+
+<button>
+  <SaveIcon /> Save     {/* Not "Persist changes" */}
+</button>
+```
+
+### 3. Error Prevention
+
+```tsx
+// Confirm destructive actions
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <button className="text-red-600">Delete Account</button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This will permanently delete your account and all data.
+        This action cannot be undone.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction className="bg-red-600">
+        Yes, delete my account
+      </AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+### 4. Recognition Over Recall
+
+```tsx
+// Show options, don't make users remember
+<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a category" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="electronics">Electronics</SelectItem>
+    <SelectItem value="clothing">Clothing</SelectItem>
+    <SelectItem value="books">Books</SelectItem>
+  </SelectContent>
+</Select>
+
+// Show recent/suggested items
+<Combobox>
+  <ComboboxInput placeholder="Search..." />
+  <ComboboxOptions>
+    <div className="text-xs text-gray-500 px-3 py-1">Recent</div>
+    {recentItems.map(item => (
+      <ComboboxOption key={item.id} value={item} />
+    ))}
+  </ComboboxOptions>
+</Combobox>
+```
+
+## Layout Principles
+
+### The Rule of Thirds
+
+```
++---+---+---+
+|   | X |   |   Place key elements at intersections
++---+---+---+
+|   |   | X |
++---+---+---+
+|   |   |   |
++---+---+---+
+```
+
+### F-Pattern for Content
+
+```tsx
+// Users scan in F pattern - put important content top-left
+<div className="grid grid-cols-12 gap-6">
+  <header className="col-span-12">
+    {/* First scan: full-width header */}
+  </header>
+  <main className="col-span-8">
+    {/* Second scan: main content left */}
+  </main>
+  <aside className="col-span-4">
+    {/* Less important: sidebar right */}
+  </aside>
+</div>
+```
+
+### Z-Pattern for Marketing
+
+```tsx
+// Landing pages follow Z pattern
+<div>
+  <header className="flex justify-between">
+    <Logo />                          {/* Top left - brand */}
+    <nav>...</nav>                    {/* Top right - navigation */}
+  </header>
+
+  <main className="text-center">
+    <h1>Main Message</h1>             {/* Diagonal - key content */}
+    <p>Supporting content</p>
+  </main>
+
+  <footer className="flex justify-between">
+    <p>More info</p>                  {/* Bottom left */}
+    <button>Call to Action</button>   {/* Bottom right - CTA */}
+  </footer>
+</div>
+```
+
+## Feedback Patterns
+
+### States and Transitions
+
+```tsx
+// Interactive element states
+<button className="
+  /* Default */
+  bg-blue-600 text-white
+
+  /* Hover - lighter */
+  hover:bg-blue-500
+
+  /* Active/Pressed - darker */
+  active:bg-blue-700
+
+  /* Focus - visible ring */
+  focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+
+  /* Disabled - muted */
+  disabled:bg-gray-300 disabled:cursor-not-allowed
+
+  /* Transition */
+  transition-colors duration-150
+">
+  Click Me
+</button>
+```
+
+## When to Use
+
+- Planning UI layouts and component design
+- Making design decisions without a designer
+- Reviewing and improving existing interfaces
+- Creating style guides and design systems
+- Onboarding new team members to design principles
+
+## Notes
+
+- These principles apply across all platforms (web, mobile, desktop)
+- User testing validates assumptions - principles are guidelines, not rules
+- Accessibility is a core principle, not an afterthought
+- Performance affects perceived usability

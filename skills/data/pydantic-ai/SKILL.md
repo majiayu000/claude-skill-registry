@@ -1,105 +1,31 @@
 ---
-
 name: pydantic-ai
-description: "Build production AI agents with Pydantic AI: type-safe tools, structured output, embeddings, MCP, 30+ model providers, evals, graphs, and observability."
-version: "1.51.0"
-release_date: "2026-01-30"
+description: Build AI agents with PydanticAI. Type-safe agent framework with structured outputs, tools, and dependency injection. Use for production AI agents, type-safe LLM applications, and Python AI development.
+---
 
-# Pydantic AI
+# PydanticAI
 
-Python agent framework for building production-grade GenAI applications with the "FastAPI feeling".
-
-## Quick Navigation
-
-| Topic        | Reference                                     |
-| ------------ | --------------------------------------------- |
-| Agents       | [agents.md](references/agents.md)             |
-| Tools        | [tools.md](references/tools.md)               |
-| Models       | [models.md](references/models.md)             |
-| Embeddings   | [embeddings.md](references/embeddings.md)     |
-| Evals        | [evals.md](references/evals.md)               |
-| Integrations | [integrations.md](references/integrations.md) |
-| Graphs       | [graphs.md](references/graphs.md)             |
-| UI Streams   | [ui.md](references/ui.md)                     |
-
-## When to Use
-
-- Building AI agents with structured output
-- Need type-safe, IDE-friendly agent development
-- Require dependency injection for tools
-- Multi-model support (OpenAI, Anthropic, Gemini, etc.)
-- Production observability with Logfire
-- Complex workflows with graphs
+Expert guidance for building type-safe AI agents with Pydantic.
 
 ## Installation
 
-**Requires Python 3.10+**
-
 ```bash
-# Full install (all model dependencies)
 pip install pydantic-ai
-
-# With examples
-pip install "pydantic-ai[examples]"
 ```
-
-### Slim Install
-
-Use `pydantic-ai-slim` for minimal dependencies:
-
-```bash
-# Single model
-pip install "pydantic-ai-slim[openai]"
-
-# Multiple models
-pip install "pydantic-ai-slim[openai,anthropic,logfire]"
-```
-
-**Optional Groups:**
-
-| Group                   | Dependency                 |
-| ----------------------- | -------------------------- |
-| `openai`                | OpenAI models & embeddings |
-| `anthropic`             | Anthropic Claude           |
-| `google`                | Google Gemini & embeddings |
-| `xai`                   | xAI Grok (native SDK)      |
-| `groq`                  | Groq models                |
-| `mistral`               | Mistral models             |
-| `bedrock`               | AWS Bedrock                |
-| `vertexai`              | Google Vertex AI           |
-| `cohere`                | Cohere models & embeddings |
-| `huggingface`           | Hugging Face Inference     |
-| `voyageai`              | VoyageAI embeddings        |
-| `sentence-transformers` | Local embeddings           |
-| `logfire`               | Pydantic Logfire           |
-| `evals`                 | Pydantic Evals             |
-| `mcp`                   | MCP protocol               |
-| `fastmcp`               | FastMCP                    |
-| `a2a`                   | Agent-to-Agent             |
-| `tavily`                | Tavily search              |
-| `duckduckgo`            | DuckDuckGo search          |
-| `exa`                   | Exa neural search          |
-| `cli`                   | CLI tools                  |
-| `dbos`                  | DBOS durable execution     |
-| `prefect`               | Prefect durable execution  |
 
 ## Quick Start
-
-### Basic Agent
 
 ```python
 from pydantic_ai import Agent
 
-agent = Agent(
-    'openai:gpt-4o',
-    instructions='Be concise, reply with one sentence.'
-)
+# Simple agent
+agent = Agent('openai:gpt-4o')
 
-result = agent.run_sync('Where does "hello world" come from?')
-print(result.output)
+result = agent.run_sync('What is the capital of France?')
+print(result.data)  # Paris
 ```
 
-### With Structured Output
+## Agents with Structure
 
 ```python
 from pydantic import BaseModel
@@ -109,161 +35,272 @@ class CityInfo(BaseModel):
     name: str
     country: str
     population: int
+    notable_landmarks: list[str]
 
-agent = Agent('openai:gpt-4o', output_type=CityInfo)
+agent = Agent(
+    'openai:gpt-4o',
+    result_type=CityInfo,
+    system_prompt='You are a geography expert. Provide accurate city information.'
+)
+
 result = agent.run_sync('Tell me about Paris')
-print(result.output)  # CityInfo(name='Paris', country='France', population=2161000)
+city = result.data
+print(f"{city.name}, {city.country}: pop {city.population:,}")
 ```
 
-### With Tools and Dependencies
+## Tools
+
+### Basic Tools
+
+```python
+from pydantic_ai import Agent, RunContext
+
+agent = Agent('openai:gpt-4o')
+
+@agent.tool
+def get_weather(ctx: RunContext[None], city: str) -> str:
+    """Get current weather for a city."""
+    # In real app, call weather API
+    return f"Weather in {city}: 72°F, sunny"
+
+@agent.tool
+def calculate(ctx: RunContext[None], expression: str) -> float:
+    """Calculate a mathematical expression."""
+    return eval(expression)
+
+result = agent.run_sync('What is the weather in NYC and what is 25 * 4?')
+```
+
+### Tools with Dependencies
 
 ```python
 from dataclasses import dataclass
 from pydantic_ai import Agent, RunContext
 
 @dataclass
-class Deps:
-    user_id: int
+class Dependencies:
+    api_key: str
+    user_id: str
 
-agent = Agent('openai:gpt-4o', deps_type=Deps)
+agent = Agent('openai:gpt-4o', deps_type=Dependencies)
 
 @agent.tool
-async def get_user_name(ctx: RunContext[Deps]) -> str:
-    """Get the current user's name."""
-    return f"User #{ctx.deps.user_id}"
+def fetch_user_data(ctx: RunContext[Dependencies], field: str) -> str:
+    """Fetch user data from database."""
+    # Access dependencies
+    user_id = ctx.deps.user_id
+    return f"User {user_id}'s {field}: ..."
 
-result = agent.run_sync('What is my name?', deps=Deps(user_id=123))
+result = agent.run_sync(
+    'Get my email address',
+    deps=Dependencies(api_key='key123', user_id='user456')
+)
 ```
 
-## Key Features
-
-| Feature              | Description                     |
-| -------------------- | ------------------------------- |
-| Type-safe            | Full IDE support, type checking |
-| Model-agnostic       | 30+ providers supported         |
-| Dependency Injection | Pass context to tools           |
-| Structured Output    | Pydantic model validation       |
-| Embeddings           | Multi-provider vector support   |
-| Logfire Integration  | Built-in observability          |
-| MCP Support          | External tools and data         |
-| Evals                | Systematic testing              |
-| Graphs               | Complex workflow support        |
-
-## Supported Models
-
-| Provider  | Models                   |
-| --------- | ------------------------ |
-| OpenAI    | GPT-4o, GPT-4, o1, o3    |
-| Anthropic | Claude 4, Claude 3.5     |
-| Google    | Gemini 2.0, Gemini 1.5   |
-| xAI       | Grok-4 (native SDK)      |
-| Groq      | Llama, Mixtral           |
-| Mistral   | Mistral Large, Codestral |
-| Azure     | Azure OpenAI             |
-| Bedrock   | AWS Bedrock + Nova 2.0   |
-| SambaNova | SambaNova models         |
-| Ollama    | Local models             |
-
-## Best Practices
-
-1. **Use type hints** — enables IDE support and validation
-2. **Define output types** — guarantees structured responses
-3. **Use dependencies** — inject context into tools
-4. **Add tool docstrings** — LLM uses them as descriptions
-5. **Enable Logfire** — for production observability
-6. **Use `run_sync` for simple cases** — `run` for async
-7. **Override deps for testing** — `agent.override(deps=...)`
-8. **Set usage limits** — prevent infinite loops with `UsageLimits`
-
-## Prohibitions
-
-- Do not expose API keys in code
-- Do not skip output validation in production
-- Do not ignore tool errors
-- Do not use `run_stream` without handling partial outputs
-- Do not forget to close MCP connections (`async with agent`)
-
-## Common Patterns
-
-### Streaming Response
+### Dynamic Tools
 
 ```python
-async with agent.run_stream('Query') as response:
-    async for text in response.stream_text():
-        print(text, end='')
+from pydantic_ai import Agent, RunContext
+from pydantic_ai.tools import Tool
+
+def create_search_tool(index_name: str) -> Tool:
+    async def search(ctx: RunContext[None], query: str) -> list[str]:
+        """Search the index."""
+        return [f"Result from {index_name}: {query}"]
+
+    return Tool(search, name=f"search_{index_name}")
+
+agent = Agent('openai:gpt-4o')
+agent.tools.append(create_search_tool('documents'))
+agent.tools.append(create_search_tool('emails'))
 ```
 
-### Fallback Models
+## System Prompts
+
+### Static System Prompt
 
 ```python
-from pydantic_ai.models.fallback import FallbackModel
-
-fallback = FallbackModel(openai_model, anthropic_model)
-agent = Agent(fallback)
+agent = Agent(
+    'openai:gpt-4o',
+    system_prompt="""You are a helpful coding assistant.
+    Always provide code examples in Python.
+    Explain your reasoning step by step."""
+)
 ```
 
-### MCP Integration
+### Dynamic System Prompt
 
 ```python
-from pydantic_ai.mcp import MCPServerStdio
+from pydantic_ai import Agent, RunContext
 
-server = MCPServerStdio('python', args=['mcp_server.py'])
-agent = Agent('openai:gpt-4o', toolsets=[server])
+@dataclass
+class UserContext:
+    name: str
+    expertise_level: str
+
+agent = Agent('openai:gpt-4o', deps_type=UserContext)
+
+@agent.system_prompt
+def get_system_prompt(ctx: RunContext[UserContext]) -> str:
+    return f"""You are helping {ctx.deps.name}.
+    Their expertise level is: {ctx.deps.expertise_level}.
+    Adjust your explanations accordingly."""
+
+result = agent.run_sync(
+    'Explain recursion',
+    deps=UserContext(name='Alice', expertise_level='beginner')
+)
 ```
 
-### Testing with TestModel
+## Streaming
 
 ```python
+from pydantic_ai import Agent
+
+agent = Agent('openai:gpt-4o')
+
+async def stream_response():
+    async with agent.run_stream('Tell me a story') as response:
+        async for text in response.stream():
+            print(text, end='', flush=True)
+
+# Or sync
+with agent.run_stream_sync('Tell me a story') as response:
+    for text in response.stream():
+        print(text, end='', flush=True)
+```
+
+## Structured Streaming
+
+```python
+from pydantic import BaseModel
+from pydantic_ai import Agent
+
+class Story(BaseModel):
+    title: str
+    chapters: list[str]
+    moral: str
+
+agent = Agent('openai:gpt-4o', result_type=Story)
+
+async def stream_structured():
+    async with agent.run_stream('Write a short fable') as response:
+        async for partial in response.stream_structured():
+            print(partial)  # Partial Story object
+```
+
+## Conversation History
+
+```python
+from pydantic_ai import Agent
+
+agent = Agent('openai:gpt-4o')
+
+# First message
+result1 = agent.run_sync('My name is Alice')
+
+# Continue conversation
+result2 = agent.run_sync(
+    'What is my name?',
+    message_history=result1.all_messages()
+)
+```
+
+## Multiple Models
+
+```python
+from pydantic_ai import Agent
+
+# OpenAI
+agent_openai = Agent('openai:gpt-4o')
+
+# Anthropic
+agent_claude = Agent('anthropic:claude-3-5-sonnet-20241022')
+
+# Ollama (local)
+agent_local = Agent('ollama:llama3.1')
+
+# Azure OpenAI
+agent_azure = Agent(
+    'azure:gpt-4o',
+    api_key='your-key',
+    azure_endpoint='https://your-resource.openai.azure.com'
+)
+```
+
+## Retries and Validation
+
+```python
+from pydantic import BaseModel, field_validator
+from pydantic_ai import Agent
+
+class ValidatedOutput(BaseModel):
+    score: int
+    explanation: str
+
+    @field_validator('score')
+    @classmethod
+    def validate_score(cls, v):
+        if not 1 <= v <= 10:
+            raise ValueError('Score must be between 1 and 10')
+        return v
+
+agent = Agent(
+    'openai:gpt-4o',
+    result_type=ValidatedOutput,
+    retries=3  # Retry on validation failure
+)
+
+result = agent.run_sync('Rate this: "Hello World" on scale 1-10')
+```
+
+## Result Validators
+
+```python
+from pydantic_ai import Agent, RunContext
+
+agent = Agent('openai:gpt-4o', result_type=str)
+
+@agent.result_validator
+def validate_result(ctx: RunContext[None], result: str) -> str:
+    if len(result) < 10:
+        raise ValueError('Response too short')
+    return result.strip()
+```
+
+## Logfire Integration
+
+```python
+import logfire
+from pydantic_ai import Agent
+
+logfire.configure()
+
+agent = Agent('openai:gpt-4o')
+
+# All agent calls are automatically traced
+result = agent.run_sync('Hello!')
+```
+
+## Testing
+
+```python
+from pydantic_ai import Agent
 from pydantic_ai.models.test import TestModel
 
-agent = Agent(model=TestModel())
-result = agent.run_sync('test')  # Deterministic output
+# Use test model
+agent = Agent(TestModel())
+
+# Mock responses
+test_model = TestModel()
+test_model.seed_response('Paris is the capital of France')
+
+agent = Agent(test_model)
+result = agent.run_sync('What is the capital of France?')
 ```
 
-### Embeddings
+## Resources
 
-```python
-from pydantic_ai import Embedder
-
-embedder = Embedder('openai:text-embedding-3-small')
-
-# Embed search query
-result = await embedder.embed_query('What is ML?')
-
-# Embed documents for indexing
-docs = ['Doc 1', 'Doc 2', 'Doc 3']
-result = await embedder.embed_documents(docs)
-```
-
-See [embeddings.md](references/embeddings.md) for providers and settings.
-
-### xAI Provider
-
-```python
-from pydantic_ai import Agent
-
-agent = Agent('xai:grok-4-1-fast-non-reasoning')
-```
-
-See [models.md](references/models.md#xai-grok) for configuration details.
-
-### Exa Neural Search
-
-```python
-import os
-from pydantic_ai import Agent
-from pydantic_ai.common_tools.exa import ExaToolset
-
-api_key = os.getenv('EXA_API_KEY')
-toolset = ExaToolset(api_key, num_results=5, include_search=True)
-agent = Agent('openai:gpt-4o', toolsets=[toolset])
-```
-
-See [tools.md](references/tools.md#exa-neural-search) for all Exa tools.
-
-## Links
-
-- [Documentation](https://ai.pydantic.dev/)
-- [Releases](https://github.com/pydantic/pydantic-ai/releases)
-- [GitHub](https://github.com/pydantic/pydantic-ai)
-- [PyPI](https://pypi.org/project/pydantic-ai/)
+- [PydanticAI Documentation](https://ai.pydantic.dev/)
+- [PydanticAI GitHub](https://github.com/pydantic/pydantic-ai)
+- [Examples](https://ai.pydantic.dev/examples/)

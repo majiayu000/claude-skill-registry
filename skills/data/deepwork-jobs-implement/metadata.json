@@ -1,9 +1,7 @@
 {
   "name": "deepwork-jobs-implement",
-  "description": "Generates step instruction files and syncs slash commands from the job.yml specification. Use after job spec review passes.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
+  "repo": "ncrmro/deepwork-permanent-portfolio",
+  "path": ".claude/skills/deepwork_jobs.implement/SKILL.md",
+  "source": "github.com/ncrmro/deepwork-permanent-portfolio",
+  "downloaded_at": "2026-02-04T04:19:31.869695Z"
 }

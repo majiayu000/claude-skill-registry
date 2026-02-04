@@ -1,105 +1,154 @@
-# skill
-
-Manage skills - reusable, parameterized prompts.
-
-## Usage
-
-```bash
-codegeass skill [OPTIONS] COMMAND [ARGS]...
-```
-
-## Commands
-
-::: mkdocs-click
-    :module: codegeass.cli.commands.skill
-    :command: skill
-    :prog_name: codegeass skill
-    :depth: 1
-
-## Examples
-
-### List Skills
-
-```bash
-# List all available skills
-codegeass skill list
-
-# List with details
-codegeass skill list --verbose
-```
-
-### Show Skill Details
-
-```bash
-codegeass skill show review
-```
-
-### Validate a Skill
-
-```bash
-# Validate SKILL.md format
-codegeass skill validate .claude/skills/review/SKILL.md
-
-# Validate all skills
-codegeass skill validate --all
-```
-
-### Render a Skill
-
-Preview the rendered prompt with arguments:
-
-```bash
-codegeass skill render review "Check authentication code"
-```
-
-## Skill Format
-
-Skills use YAML frontmatter in SKILL.md files:
-
-```markdown
 ---
-name: review
-description: Review code for issues
-context: fork
-agent: Explore
-allowed-tools: Read, Grep, Glob
+name: sayt-cli
+description: >
+  How to write .mise.toml files with correct tool versions, settings, and platform stubs.
+  Use when setting up project toolchains, fixing missing tools, or configuring sayt setup/doctor.
+user-invocable: false
 ---
 
-# Code Review
+# setup / doctor — Tool Management with mise
 
-$ARGUMENTS
+`sayt setup` installs project toolchains. `sayt doctor` verifies each environment tier is ready.
 
-Focus on:
-- Code quality
-- Potential bugs
-- Security issues
+## How It Works
+
+1. `sayt setup` looks for `.mise.toml` in the current directory
+2. Runs `mise trust -y -a -q` to trust the config
+3. Runs `mise install` to install all specified tools
+4. Preloads vscode-task-runner (`vtr`) into the uvx cache for offline use
+5. If `.sayt.nu` exists, recursively calls it with `setup` for custom logic
+
+`sayt doctor` checks which environment tiers have their required tools available:
+
+| Tier | Tools checked |
+|------|--------------|
+| pkg | mise (or scoop on Windows) |
+| cli | cue, gomplate |
+| ide | vtr (vscode-task-runner) |
+| cnt | docker |
+| k8s | kind, skaffold |
+| cld | gcloud |
+| xpl | crossplane |
+
+## `.mise.toml` File Format
+
+mise uses TOML configuration to specify tool versions per project.
+
+### Structure
+
+```toml
+[settings]
+locked = true           # Use lockfile for reproducible installs
+lockfile = true         # Generate/use mise.lock
+experimental = true     # Enable experimental features
+paranoid = false        # Disable paranoid mode
+
+[tools]
+# Standard registry tools
+node = "22.14.0"
+go = "1.22"
+java = "openjdk-21.0"
+python = "3.12"
+
+# GitHub-hosted tools (not in default registry)
+"github:pnpm/pnpm" = "9.15.2"
+"github:sqlc-dev/sqlc" = "1.28.0"
+"github:bufbuild/buf" = "1.32.1"
 ```
 
-### Frontmatter Fields
+### Settings Reference
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Skill identifier |
-| `description` | Yes | What the skill does |
-| `context` | No | Execution context |
-| `agent` | No | Agent type |
-| `allowed-tools` | No | Permitted tools |
-
-## Skill Locations
-
-Skills are searched in:
-
-1. `.claude/skills/` in the current project
-2. `~/.claude/skills/` for global skills
-
-## Using Skills with Tasks
-
-```bash
-# Create a task that uses a skill
-codegeass task create \
-  --name review-task \
-  --schedule "0 9 * * *" \
-  --mode skill \
-  --skill review \
-  --skill-args "Review the API module"
+```toml
+[settings]
+locked = true                       # Require lockfile to exist
+lockfile = true                     # Create/update mise.lock
+experimental = true                 # Needed for some plugin features
+paranoid = false                    # Don't verify checksums aggressively
+github.slsa = false                 # Skip SLSA provenance verification
+github.github_attestations = false  # Skip GitHub attestations
+aqua.github_attestations = false    # Skip aqua GitHub attestations
+aqua.cosign = false                 # Skip cosign verification
+aqua.slsa = false                   # Skip aqua SLSA verification
+aqua.minisign = false               # Skip minisign verification
 ```
+
+These security settings are commonly disabled during development for speed. Enable them in CI/production.
+
+### Common Tool Specs
+
+**Node.js project:**
+```toml
+[tools]
+node = "22.14.0"
+"github:pnpm/pnpm" = "9.15.2"
+```
+
+**Go project:**
+```toml
+[tools]
+go = "1.22"
+"github:sqlc-dev/sqlc" = "1.28.0"
+"github:gotestyourself/gotestsum" = "1.12.0"
+```
+
+**JVM project:**
+```toml
+[tools]
+java = "openjdk-21.0"
+```
+
+**Python project:**
+```toml
+[tools]
+python = "3.12"
+```
+
+**Multi-language project:**
+```toml
+[tools]
+node = "22.14.0"
+go = "1.22"
+"github:bufbuild/buf" = "1.32.1"
+```
+
+### Platform-Specific Stubs
+
+sayt uses mise "tool stubs" for tools like CUE, Docker, and uvx. These have platform-specific TOML configs:
+
+- `cue.toml` — Standard CUE stub
+- `cue.musl.toml` — Alpine/musl Linux variant
+- `docker.toml` / `docker.musl.toml` — Docker stub
+- `uvx.toml` / `uvx.musl.toml` — Python uvx stub
+- `nu.toml` / `nu.musl.toml` — Nushell stub
+
+The musl variant is automatically selected when running on musl-based Linux (e.g., Alpine containers).
+
+## Custom Setup Logic via `.sayt.nu`
+
+If your project needs setup beyond what mise provides, create `.sayt.nu`:
+
+```nushell
+# .sayt.nu — Custom setup hooks
+def "main setup" [] {
+    # Example: install Nix packages
+    nix-env -iA nixpkgs.myTool
+
+    # Example: run database migrations
+    sqlc generate
+}
+```
+
+sayt automatically detects and runs `.sayt.nu setup` after the mise-based setup completes.
+
+## Writing Good `.mise.toml` Files
+
+1. **Pin exact versions** — Use `"22.14.0"` not `"22"` for reproducibility
+2. **Use lockfiles** — Set `locked = true` and `lockfile = true`
+3. **Prefer registry names** — Use `node` not `"github:nodejs/node"` when available
+4. **Use `github:` prefix** — For tools not in the default mise registry
+5. **Keep settings section** — Even if using defaults, be explicit about security settings
+
+## Current flags
+
+!`sayt help setup 2>&1 || true`
+!`sayt help doctor 2>&1 || true`

@@ -247,7 +247,7 @@ When you discover new pronunciation issues specific to the user's content:
 
 **Example entry:**
 ```markdown
-| Larocca | larocca | Luh-rock-uh | Character in "shell-no" album |
+| Larocca | larocca | Luh-rock-uh | Character in "sample-album" album |
 ```
 
 **DO NOT** edit the base guide (`/reference/suno/pronunciation-guide.md`) - plugin updates will overwrite it.

@@ -1,115 +1,71 @@
 ---
-name: "planning-under-uncertainty"
-description: "Plan and lead execution when outcomes are uncertain and requirements are ambiguous. Produces an Uncertainty Planning Pack (uncertainty map, hypotheses + experiments, buffers + triggers, cadence + comms). Use for ambiguity, unknowns, hypothesis-driven planning, experimentation, contingency planning."
+name: planning-under-uncertainty
+description: Help users plan products and strategy when outcomes are unpredictable. Use when someone is dealing with ambiguous timelines, building in fast-moving markets, planning AI/ML projects, or asking how to make commitments when they don't know what will happen.
 ---
 
 # Planning Under Uncertainty
 
-## Scope
+Help the user navigate product planning when the future is unclear using adaptive planning frameworks from 44 product leaders.
 
-**Covers**
-- Turning ambiguity into an executable plan via **hypotheses, experiments, and decision triggers**
-- Diagnosing “what’s actually happening” before acting (especially in **crisis / wartime** situations)
-- Using data as a **compass (directional checks)** rather than a GPS (false precision)
-- Building **buffers and contingencies** so the plan survives chaos
-- Setting a **cadence** for learning, decision-making, and stakeholder communication
+## How to Help
 
-**When to use**
-- “We need a plan, but the requirements are unclear and the outcome is uncertain.”
-- “Create a hypothesis-driven plan (experiments + decision rules) for this initiative.”
-- “We’re in a crisis (drop in retention/revenue/reliability) and need a wartime diagnosis + action plan.”
-- “Help us build contingencies, buffers, and pivot triggers before we commit.”
+When the user asks for help with planning under uncertainty:
 
-**When NOT to use**
-- You don’t agree on the underlying problem/opportunity (use `problem-definition`).
-- You need to choose what to do among many options (use `prioritizing-roadmap`).
-- You already have a clear plan and only need dates/milestones and stakeholder cadence (use `managing-timelines`).
-- You need a decision-ready PRD/spec for build execution (use `writing-prds` / `writing-specs-designs`).
+1. **Understand the uncertainty type** - Ask what's driving the ambiguity: technical unknowns, market volatility, AI/ML unpredictability, or organizational change
+2. **Assess planning horizon** - Determine if they need short-term execution tactics or long-term strategic flexibility
+3. **Match framework to context** - Recommend appropriate planning approaches based on their uncertainty profile
+4. **Build in adaptation mechanisms** - Help them create checkpoints and decision criteria for pivoting
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- The initiative context and desired outcome (“what are we trying to change?”)
-- Time horizon and urgency (wartime vs peacetime)
-- Constraints/guardrails (quality, compliance, brand, budget, “must not worsen” metrics)
-- Stakeholders and decision rights (who decides pivot/stop/scale?)
-- Top unknowns/assumptions (what would change the plan?)
-- Current signals (what data exists; what feels true but unproven?)
+### Embrace optionality over prediction
+Amjad Masad: "Being agile, not being stuck with roadmaps, being able to just say, oh, we're just going to switch priorities right away, is going to be super important." In rapidly changing environments like AI, maintain flexibility to pivot when new capabilities emerge rather than committing to rigid long-term plans.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with explicit assumptions and list **Open questions** that could change the plan.
+### Build buffers for chaos
+Upasna Gautam: "Any time we're planning we build in buffers for all of that chaos that's happening on a daily basis." In chaotic environments, planning must include explicit time buffers and contingency plans ranging from days to months depending on scope.
 
-## Outputs (deliverables)
+### Use data as compass, not GPS
+Shaun Clowes: "Data is more like a compass than a GPS. If you look at data as a way of giving you the answer, you're always wrong." Use data to validate or invalidate intuition rather than waiting for it to tell you exactly what to do.
 
-Produce an **Uncertainty Planning Pack** in Markdown (in-chat; or as files if the user requests), containing:
+### Value learning over winning
+Ramesh Johari: "Experimentation was never historically in science about winners and losers... Experimentation is always very hypothesis driven. It's about, what are you learning?" A healthy experimentation culture values learning from "failed" risky bets more than safe, incremental "wins."
 
-1) **Decision frame** (objective, “why now”, success + guardrails, time horizon, decision owner)
-2) **Uncertainty map** (assumptions/unknowns, confidence, impact, validation plan)
-3) **Hypotheses + experiment portfolio** (what we’ll learn, how, and what decision it enables)
-4) **Plan v0 with buffers + contingencies** (phases/options, triggers, fallbacks, pivot criteria)
-5) **Cadence + comms** (learning review ritual, update template, decision log)
-6) **Risks / Open questions / Next steps** (always included)
+### Develop reproducible testing processes
+Nikita Bier: "Develop a reproducible testing process, and that will actually influence the probability of your success more than anything." Success in uncertain markets is driven by the quality and speed of the testing process rather than the initial idea.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Diagnose before acting in crisis
+Alex Hardimen: "There's this incredible humility that was needed to really understand and first diagnose what was actually happening on the platform." Managing through a crisis requires "wartime" humility to accurately diagnose problems before attempting solutions.
 
-## Workflow (7 steps)
+### Create decision triggers, not fixed plans
+Eric Ries: "Give yourself a fixed period of time to take some decisive action and see if it feels better." Build checkpoints into plans where you'll reassess based on what you've learned, not just calendar dates.
 
-### 1) Intake + mode setting (wartime vs peacetime)
-- **Inputs:** User request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify urgency, stakes, and what decision is needed. Decide whether you’re in **diagnosis-first wartime mode** or **exploration peacetime mode**.
-- **Outputs:** Short decision frame draft + mode declaration.
-- **Checks:** You can state: “We’re optimizing for <fast stabilization / learning / growth>. The decision we need by <date> is <pivot/stop/scale/commit>.”
+### Distinguish reversible from irreversible decisions
+Claire Hughes Johnson: "Type one, type two decisions. Is it high impact? Is it irreversible? Is it not?" Spend more time on one-way doors and move quickly on reversible decisions that can be adjusted later.
 
-### 2) Diagnose reality (humility first)
-- **Inputs:** Current signals, anecdotes, dashboards, incident reports, qualitative inputs.
-- **Actions:** Separate symptoms from hypotheses. Write 3–7 plausible explanations, and identify what evidence would falsify each. Avoid prematurely picking a favorite story.
-- **Outputs:** “What we know / don’t know” + initial hypothesis set.
-- **Checks:** At least one hypothesis contradicts the team’s initial intuition (to reduce confirmation bias).
+## Questions to Help Users
 
-### 3) Build the uncertainty map (assumptions → validation plan)
-- **Inputs:** Hypotheses; constraints; stakeholders; time horizon.
-- **Actions:** Create an uncertainty map of assumptions/unknowns with confidence and impact; prioritize the top items that would change the plan.
-- **Outputs:** Uncertainty map table + prioritized “top 5 unknowns”.
-- **Checks:** Every top unknown has a clear validation method and an owner.
+- "What would need to be true for your current plan to work? Which of those assumptions are you least confident about?"
+- "If this takes twice as long as expected, what would you do differently? What if it takes half as long?"
+- "What's the smallest thing you could ship to learn whether your core hypothesis is correct?"
+- "Is this a one-way door or a two-way door decision?"
+- "What signals would tell you to pivot or kill this initiative?"
+- "How much buffer have you built in for unexpected chaos?"
 
-### 4) Define hypotheses + decision rules (learning over “wins”)
-- **Inputs:** Top unknowns; success/guardrails; risk tolerance.
-- **Actions:** Turn unknowns into testable hypotheses. For each hypothesis, define: expected learning, success signal(s), guardrails, and the decision the result enables (stop/pivot/scale).
-- **Outputs:** Hypothesis statements + decision rules.
-- **Checks:** Each hypothesis ties to a decision; “winning” is defined as learning, not just positive results.
+## Common Mistakes to Flag
 
-### 5) Design a reproducible testing process (many shots at bat)
-- **Inputs:** Hypothesis set; available tools; team capacity.
-- **Actions:** Create an experiment portfolio that balances speed vs confidence (smoke tests, prototypes, A/Bs, customer calls, operational drills). Set a cadence to run and review tests continuously.
-- **Outputs:** Experiment portfolio table + review cadence.
-- **Checks:** At least 1 fast test can run within the next 1–2 weeks (or faster in wartime).
+- **Over-planning** - Creating detailed long-term roadmaps that create false confidence and resist necessary pivots
+- **Analysis paralysis** - Waiting for perfect information instead of making decisions with 70% confidence
+- **Ignoring leading indicators** - Not tracking intermediate signals that could tell you earlier if you're on track
+- **Judging experiments by outcomes alone** - Not valuing the learning from "failed" experiments that tested important hypotheses
+- **Planning theater** - Spending excessive time on documents and processes that don't reduce actual uncertainty
 
-### 6) Turn learning into a plan with buffers, contingencies, and triggers
-- **Inputs:** Experiment portfolio; constraints; dependencies; timeline needs.
-- **Actions:** Draft Plan v0 with phases/options; add buffers; define contingencies and explicit triggers for pivot/rollback/escalation. Use data as a compass: focus on directional signals and early warnings, not false certainty.
-- **Outputs:** Plan v0 + buffer/contingency section + trigger list.
-- **Checks:** There is a clear “if X happens, we will do Y” for the top risks/unknowns.
+## Deep Dive
 
-### 7) Quality gate + finalize
-- **Inputs:** Full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Ensure **Risks / Open questions / Next steps** exist with owners and time bounds.
-- **Outputs:** Final Uncertainty Planning Pack.
-- **Checks:** A stakeholder can approve the plan async and the team can execute without re-litigating the ambiguity.
+For all 52 insights from 44 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (ambiguous initiative):** “We think onboarding is hurting conversion, but we’re not sure why. Create an uncertainty plan with hypotheses, experiments, and pivot triggers.”  
-Expected: an uncertainty map + experiment portfolio (qual + quant) + a Plan v0 that commits to learning milestones, not premature delivery dates.
-
-**Example 2 (wartime):** “Retention dropped 15% this week after a release. We need a wartime plan: diagnose root causes, run rapid tests, and decide whether to rollback or patch.”  
-Expected: diagnosis-first workflow with falsifiable hypotheses, tight guardrails, and explicit rollback/escalation triggers.
-
-**Boundary example:** “Write a full PRD for Feature X.”  
-Response: clarify uncertainty first (this skill), then use `writing-prds` once the hypotheses, constraints, and decision gates are clear.
-
+- prioritizing-roadmap
+- running-decision-processes
+- scoping-cutting
+- problem-definition

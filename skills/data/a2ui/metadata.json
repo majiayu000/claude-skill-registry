@@ -1,9 +1,7 @@
 {
   "name": "a2ui",
-  "description": "Generate A2UI 0.8 protocol compliant UI code. Use when building agent-driven interfaces, generating JSONL messages for surfaceUpdate/dataModelUpdate/beginRendering, creating forms, lists, cards, or an",
-  "repo": "kobe4cn/a2ui_skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "xfstudio/skills",
+  "path": "a2ui/SKILL.md",
+  "source": "github.com/xfstudio/skills",
+  "downloaded_at": "2026-02-04T01:58:14.757897Z"
 }

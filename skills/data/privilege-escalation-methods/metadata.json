@@ -1,7 +1,7 @@
 {
   "name": "privilege-escalation-methods",
-  "repo": "claudiodearaujo/IzaCenter",
-  "path": ".gemini/skills/privilege-escalation-methods/SKILL.md",
-  "source": "github.com/claudiodearaujo/IzaCenter",
-  "downloaded_at": "2026-02-02T04:54:16.261307Z"
+  "repo": "cgyudistira/code-agents",
+  "path": "skills/privilege-escalation-methods/SKILL.md",
+  "source": "github.com/cgyudistira/code-agents",
+  "downloaded_at": "2026-02-04T02:54:34.571340Z"
 }

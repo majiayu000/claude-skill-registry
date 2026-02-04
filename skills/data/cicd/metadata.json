@@ -1,7 +1,7 @@
 {
   "name": "cicd",
-  "repo": "ngxtm/devkit",
-  "path": "rules/flutter/cicd/SKILL.md",
-  "source": "github.com/ngxtm/devkit",
-  "downloaded_at": "2026-02-02T03:10:59.687273Z"
+  "repo": "HoangNguyen0403/agent-skills-standard",
+  "path": "skills/flutter/cicd/SKILL.md",
+  "source": "github.com/HoangNguyen0403/agent-skills-standard",
+  "downloaded_at": "2026-02-04T04:31:02.087141Z"
 }

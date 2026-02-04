@@ -1,7 +1,7 @@
 {
   "name": "codex-skill",
-  "repo": "feiskyer/claude-code-settings",
-  "path": "plugins/codex-skill/skills/codex-skill/SKILL.md",
-  "source": "github.com/feiskyer/claude-code-settings",
-  "downloaded_at": "2026-02-02T04:56:07.649993Z"
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/codex-skill/SKILL.md",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "downloaded_at": "2026-02-04T04:51:27.473511Z"
 }

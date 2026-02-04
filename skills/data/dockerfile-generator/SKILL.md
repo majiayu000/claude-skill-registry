@@ -1,75 +1,204 @@
 ---
 name: dockerfile-generator
-category: codegen-scaffolding
-description: Create optimized multi-stage container builds.
+description: Generate optimized Dockerfiles with multi-stage builds and best practices. Use when containerizing applications or creating Docker configurations.
 ---
 
-# Dockerfile Generator
+# Dockerfile Generator Skill
 
-## Purpose
-- Create optimized multi-stage container builds.
+最適化されたDockerfileを生成するスキルです。
 
-## Preconditions
-- Access to system context (repos, infra, environments)
-- Confirmed requirements and constraints
-- Required approvals for security, compliance, or governance
+## 概要
 
-## Inputs
-- Problem statement and scope
-- Current architecture or system constraints
-- Non-functional requirements (performance, security, compliance)
-- Target stack and environment
+プロジェクトの種類に応じた、セキュアで効率的なDockerfileを自動生成します。
 
-## Outputs
-- Design or implementation plan
-- Required artifacts (diagrams, configs, specs, checklists)
-- Validation steps and acceptance criteria
+## 主な機能
 
-## Detailed Step-by-Step Procedures
-1. Clarify scope, constraints, and success metrics.
-2. Review current system state, dependencies, and integration points.
-3. Select patterns, tools, and architecture options that match constraints.
-4. Produce primary artifacts (docs/specs/configs/code stubs).
-5. Validate against requirements and known risks.
-6. Provide rollout and rollback guidance.
+- **マルチステージビルド**: イメージサイズ削減
+- **セキュリティ**: 非rootユーザー、最小権限
+- **キャッシュ最適化**: ビルド時間短縮
+- **ベストプラクティス**: Docker推奨設定
+- **複数言語対応**: Node.js、Python、Go、Java等
 
-## Decision Trees and Conditional Logic
-- If compliance or regulatory scope applies -> add required controls and audit steps.
-- If latency budget is strict -> choose low-latency storage and caching.
-- Else -> prefer cost-optimized storage and tiering.
-- If data consistency is critical -> prefer transactional boundaries and strong consistency.
-- Else -> evaluate eventual consistency or async processing.
+## 生成例
 
-## Error Handling and Edge Cases
-- Partial failures across dependencies -> isolate blast radius and retry with backoff.
-- Data corruption or loss risk -> enable backups and verify restore path.
-- Limited access to systems -> document gaps and request access early.
-- Legacy dependencies with limited change tolerance -> use adapters and phased rollout.
+### Node.js (Express)
 
-## Tool Requirements and Dependencies
-- CLI and SDK tooling for the target stack
-- Credentials or access tokens for required environments
-- Diagramming or spec tooling when producing docs
+```dockerfile
+# マルチステージビルド
+FROM node:18-alpine AS builder
 
-## Stack Profiles
-- Use Profile A, B, or C from `skills/STACK_PROFILES.md`.
-- Note selected profile in outputs for traceability.
+WORKDIR /app
 
-## Validation
-- Requirements coverage check
-- Security and compliance review
-- Performance and reliability review
-- Peer or stakeholder sign-off
+# 依存関係のみ先にコピー（キャッシュ最適化）
+COPY package*.json ./
+RUN npm ci --only=production
 
-## Rollback Procedures
-- Revert config or deployment to last known good state.
-- Roll back database migrations if applicable.
-- Verify service health, data integrity, and error rates after rollback.
+# ソースコードコピー
+COPY . .
 
-## Success Metrics
-- Measurable outcomes (latency, error rate, uptime, cost)
-- Acceptance thresholds defined with stakeholders
+# 本番イメージ
+FROM node:18-alpine
 
-## Example Workflows and Use Cases
-- Minimal: apply the skill to a small service or single module.
-- Production: apply the skill to a multi-service or multi-tenant system.
+# 非rootユーザー作成
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+WORKDIR /app
+
+# ビルド成果物をコピー
+COPY --from=builder --chown=nodejs:nodejs /app/node_modules ./node_modules
+COPY --chown=nodejs:nodejs . .
+
+USER nodejs
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
+```
+
+### Python (FastAPI)
+
+```dockerfile
+FROM python:3.11-slim AS builder
+
+WORKDIR /app
+
+# システム依存関係
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends gcc && \
+    rm -rf /var/lib/apt/lists/*
+
+# Python依存関係
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# 本番イメージ
+FROM python:3.11-slim
+
+RUN adduser --disabled-password --gecos '' appuser
+
+WORKDIR /app
+
+# ビルドしたパッケージをコピー
+COPY --from=builder /root/.local /home/appuser/.local
+COPY --chown=appuser:appuser . .
+
+USER appuser
+
+ENV PATH=/home/appuser/.local/bin:$PATH
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+### Go
+
+```dockerfile
+# ビルドステージ
+FROM golang:1.21-alpine AS builder
+
+WORKDIR /app
+
+# 依存関係
+COPY go.mod go.sum ./
+RUN go mod download
+
+# ビルド
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+
+# 最小イメージ
+FROM scratch
+
+COPY --from=builder /app/main /main
+
+EXPOSE 8080
+
+ENTRYPOINT ["/main"]
+```
+
+### React (静的サイト)
+
+```dockerfile
+# ビルドステージ
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+# Nginxで配信
+FROM nginx:alpine
+
+COPY --from=builder /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+## .dockerignore
+
+```
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.DS_Store
+*.log
+dist
+build
+coverage
+```
+
+## docker-compose.yml
+
+```yaml
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  database:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: myapp
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+```
+
+## ベストプラクティス
+
+1. **マルチステージビルド**: イメージサイズ削減
+2. **レイヤーキャッシュ**: 変更の少ないファイルから順に
+3. **非rootユーザー**: セキュリティ向上
+4. **.dockerignore**: 不要ファイル除外
+5. **ヘルスチェック**: コンテナ監視
+
+## バージョン情報
+
+- スキルバージョン: 1.0.0

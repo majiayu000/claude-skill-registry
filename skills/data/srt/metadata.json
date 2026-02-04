@@ -1,9 +1,7 @@
 {
   "name": "srt",
-  "description": "Sandbox Runtime (srt) patterns for CLI/autonomous Claude runs. For interactive sandboxing, use Claude Code's built-in `/sandbox` command instead.",
-  "repo": "rbergman/dark-matter-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/rbergman/dark-matter-marketplace"
+  "repo": "openclaw/skills",
+  "path": "skills/khj809/srt/SKILL.md",
+  "source": "github.com/openclaw/skills",
+  "downloaded_at": "2026-02-04T01:57:58.947743Z"
 }

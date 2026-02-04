@@ -1,7 +1,7 @@
 {
   "name": "browser-automation",
-  "repo": "civitai/civitai",
-  "path": ".claude/skills/browser-automation/SKILL.md",
-  "source": "github.com/civitai/civitai",
-  "downloaded_at": "2026-02-02T04:35:59.843517Z"
+  "repo": "davila7/claude-code-templates",
+  "path": "cli-tool/components/skills/utilities/browser-automation/SKILL.md",
+  "source": "github.com/davila7/claude-code-templates",
+  "downloaded_at": "2026-02-04T02:29:14.435855Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "create",
-  "repo": "gohypergiant/agent-skills",
-  "path": "commands/create/skill.md",
-  "source": "github.com/gohypergiant/agent-skills",
-  "downloaded_at": "2026-01-27T03:21:51.986185Z"
+  "repo": "blueraai/bluera-base",
+  "path": "skills/create/SKILL.md",
+  "source": "github.com/blueraai/bluera-base",
+  "downloaded_at": "2026-02-04T04:17:39.364842Z"
 }

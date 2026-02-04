@@ -1,322 +1,359 @@
 ---
 name: prp-framework
-description: "PRP (Product Requirement Prompt) methodology for one-pass implementation success. Provides context-rich development workflow with PRD creation, planning, implementation, and validation. Use when implementing features, fixing bugs, or creating comprehensive development plans. Triggers: prp, product requirement prompt, implementation plan, feature planning."
+description: Product Requirement Prompt framework for generating comprehensive PRDs, implementation plans, and feature specifications. Use when creating technical specs, planning features, investigating issues, or documenting requirements for development.
 ---
 
-# PRP (Product Requirement Prompt) Framework
+# PRP Framework Skill
 
-## What is PRP?
+## Triggers
 
-**PRP = PRD + curated codebase intelligence + agent/runbook**
+Use this skill when you see:
+- prp, prd, implementation plan, feature spec
+- requirements document, technical spec
+- issue investigation, root cause analysis
+- feature planning, epic breakdown
 
-The minimum viable packet an AI needs to ship production-ready code on the first pass.
+## Instructions
 
-A PRP supplies an AI coding agent with everything it needs to deliver a vertical slice of working software—no more, no less.
+### PRP Types Overview
 
-## How PRP Differs from Traditional PRD
+| Type | Use Case | Output |
+|------|----------|--------|
+| Feature PRP | New feature development | Full PRD + implementation plan |
+| Bug Investigation PRP | Debug complex issues | Root cause + fix plan |
+| Refactor PRP | Code improvement | Impact analysis + migration plan |
+| Integration PRP | Third-party integrations | API mapping + implementation |
+| Migration PRP | System migrations | Risk analysis + rollback plan |
 
-A traditional PRD clarifies _what_ the product must do and _why_ customers need it, but deliberately avoids _how_ it will be built.
-
-A PRP keeps the goal and justification sections of a PRD yet adds AI-critical layers:
-
-- **Context**: Precise file paths, library versions, code snippet examples
-- **Patterns**: Existing codebase conventions to follow
-- **Validation**: Executable commands the AI can run to verify its work
-
----
-
-## Core Methodology
-
-### The PRP Workflow
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        LARGE FEATURES                               │
-│                                                                     │
-│  1. PRD Creation (#prp-prd)                                        │
-│     └─> Creates PRD with Implementation Phases                      │
-│                                                                     │
-│  2. Plan Creation (#prp-plan)                                       │
-│     └─> Selects next phase, creates implementation plan             │
-│                                                                     │
-│  3. Implementation (#prp-implement)                                 │
-│     └─> Executes plan with validation loops                         │
-│                                                                     │
-│  4. Review (#prp-review)                                            │
-│     └─> Comprehensive code review                                   │
-│                                                                     │
-│  5. Repeat for each phase                                           │
-└─────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────┐
-│                       MEDIUM FEATURES                               │
-│                                                                     │
-│  1. Plan Creation (#prp-plan "feature description")                 │
-│     └─> Creates implementation plan directly                        │
-│                                                                     │
-│  2. Implementation (#prp-implement)                                 │
-│     └─> Executes plan with validation loops                         │
-└─────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────┐
-│                         BUG FIXES                                   │
-│                                                                     │
-│  1. Investigation (#prp-issue-investigate 123)                      │
-│     └─> Analyzes issue, finds root cause                           │
-│                                                                     │
-│  2. Fix (#prp-issue-fix 123)                                        │
-│     └─> Implements fix from investigation                           │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Core Principles
-
-### 1. Context is King
-
-Include ALL necessary information in the PRP:
-- Documentation URLs with specific sections
-- Code examples from the actual codebase
-- Known gotchas and pitfalls
-- File:line references for every pattern
-
-**Anti-pattern**: Minimal context prompts that leave the AI guessing.
-
-### 2. Validation Loops
-
-Every PRP must include executable validation:
-- Build commands
-- Lint commands
-- Test commands
-- Integration verification
-
-The AI should be able to run these and fix any failures.
-
-**Anti-pattern**: PRPs without testable success criteria.
-
-### 3. Information Dense
-
-Use keywords and patterns from the codebase:
-- Actual function names
-- Real type definitions
-- Existing error patterns
-- Current naming conventions
-
-**Anti-pattern**: Generic descriptions instead of specific references.
-
-### 4. Bounded Scope
-
-Each plan should be completable in one AI session:
-- Clear start and end points
-- Explicit out-of-scope items
-- Dependencies listed and checked
-
-**Anti-pattern**: Unbounded plans that grow during implementation.
-
----
-
-## PRP Structure
-
-### PRD Structure (for large features)
+### Feature PRP Template
 
 ```markdown
-# {Feature Name}
+# Feature PRP: [Feature Name]
+
+## Executive Summary
+[2-3 sentence overview of what this feature does and why it matters]
 
 ## Problem Statement
-{Who has what problem, cost of not solving}
+### Current State
+[Describe the current situation and pain points]
 
-## Evidence
-{Proof the problem exists}
+### Desired State
+[Describe the ideal end state]
 
-## Proposed Solution
-{What we're building and why}
+### Success Metrics
+- [ ] Metric 1: [Measurable outcome]
+- [ ] Metric 2: [Measurable outcome]
 
-## Key Hypothesis
-We believe {capability} will {solve problem} for {users}.
-We'll know we're right when {measurable outcome}.
+## Requirements
 
-## Implementation Phases
-| # | Phase | Description | Status | Parallel | Depends |
-|---|-------|-------------|--------|----------|---------|
-| 1 | ... | ... | pending | - | - |
+### Functional Requirements
+| ID | Requirement | Priority | Notes |
+|----|-------------|----------|-------|
+| FR-1 | [Requirement] | Must Have | |
+| FR-2 | [Requirement] | Should Have | |
+| FR-3 | [Requirement] | Nice to Have | |
+
+### Non-Functional Requirements
+- **Performance**: [Response time, throughput]
+- **Scalability**: [Expected load, growth]
+- **Security**: [Auth, data protection]
+- **Accessibility**: [WCAG level, requirements]
+
+### Out of Scope
+- [Explicitly excluded item 1]
+- [Explicitly excluded item 2]
+
+## Technical Design
+
+### Architecture Overview
+[High-level architecture diagram or description]
+
+### Data Model
+```
+[Entity/Schema definitions]
 ```
 
-### Plan Structure (for implementation)
+### API Design
+```
+[Endpoint definitions]
+```
+
+### Dependencies
+- [Internal dependency 1]
+- [External dependency 1]
+
+## Implementation Plan
+
+### Phase 1: Foundation
+**Duration**: [X days/weeks]
+**Tasks**:
+1. [ ] Task 1
+2. [ ] Task 2
+
+### Phase 2: Core Implementation
+**Duration**: [X days/weeks]
+**Tasks**:
+1. [ ] Task 1
+2. [ ] Task 2
+
+### Phase 3: Polish & Testing
+**Duration**: [X days/weeks]
+**Tasks**:
+1. [ ] Task 1
+2. [ ] Task 2
+
+## Testing Strategy
+
+### Unit Tests
+- [Test category 1]
+- [Test category 2]
+
+### Integration Tests
+- [Test scenario 1]
+- [Test scenario 2]
+
+### E2E Tests
+- [User flow 1]
+- [User flow 2]
+
+## Rollout Plan
+
+### Feature Flags
+- `feature_name_enabled`: [Description]
+
+### Rollout Stages
+1. **Internal**: [Criteria]
+2. **Beta**: [X% of users, criteria]
+3. **GA**: [Full rollout]
+
+### Rollback Plan
+[How to rollback if issues arise]
+
+## Risks & Mitigations
+
+| Risk | Impact | Likelihood | Mitigation |
+|------|--------|------------|------------|
+| [Risk 1] | High/Med/Low | High/Med/Low | [Strategy] |
+
+## Timeline
+
+| Milestone | Date | Owner |
+|-----------|------|-------|
+| Design Complete | [Date] | [Name] |
+| Implementation Complete | [Date] | [Name] |
+| Testing Complete | [Date] | [Name] |
+| Release | [Date] | [Name] |
+
+## Appendix
+- [Link to designs]
+- [Link to related docs]
+- [Technical references]
+```
+
+### Bug Investigation PRP Template
 
 ```markdown
-# Feature: {Name}
+# Bug Investigation PRP: [Bug Title]
 
-## Summary
-{What we're building}
+## Issue Summary
+**Reported**: [Date]
+**Severity**: [Critical/High/Medium/Low]
+**Affected Users**: [Scope]
 
-## User Story
-As a {user}, I want to {action}, so that {benefit}
+### Symptoms
+[What users are experiencing]
 
-## Patterns to Mirror
-{Actual code snippets from codebase with file:line}
+### Expected Behavior
+[What should happen]
 
-## Files to Change
-| File | Action | Justification |
-|------|--------|---------------|
-| ... | CREATE/UPDATE | ... |
+### Actual Behavior
+[What is happening]
 
-## Step-by-Step Tasks
-### Task 1: {Description}
-- ACTION: {what to do}
-- MIRROR: {file:line to copy}
-- VALIDATE: {command to run}
+## Investigation
 
-## Validation Commands
-{Executable commands for each level}
+### Reproduction Steps
+1. [Step 1]
+2. [Step 2]
+3. [Observe: Error/Unexpected behavior]
 
-## Acceptance Criteria
-{Checkboxes for completion}
+### Environment
+- **Browser/Client**: [Version]
+- **OS**: [Version]
+- **Backend Version**: [Version]
+- **Database**: [Version]
+
+### Evidence
+- [Log snippets]
+- [Error messages]
+- [Screenshots]
+
+## Root Cause Analysis
+
+### Hypothesis 1: [Theory]
+**Evidence For**: [Supporting data]
+**Evidence Against**: [Contradicting data]
+**Verdict**: [Confirmed/Ruled Out/Needs More Data]
+
+### Hypothesis 2: [Theory]
+...
+
+### Confirmed Root Cause
+[Detailed explanation of the actual cause]
+
+### Contributing Factors
+- [Factor 1]
+- [Factor 2]
+
+## Fix Plan
+
+### Immediate Fix
+[Quick fix to stop the bleeding]
+
+### Permanent Fix
+[Proper solution]
+
+### Code Changes
+```
+[Files to modify and changes needed]
 ```
 
----
+### Testing the Fix
+1. [Verification step 1]
+2. [Verification step 2]
 
-## Available Commands
+## Prevention
 
-| Command | Purpose | Input |
-|---------|---------|-------|
-| `#prp-prd` | Create PRD with phases | Feature description |
-| `#prp-plan` | Create implementation plan | PRD path or description |
-| `#prp-implement` | Execute plan | Plan path |
-| `#prp-review` | Review code changes | Diff scope |
-| `#prp-issue-investigate` | Analyze GitHub issue | Issue number |
-| `#prp-issue-fix` | Fix from investigation | Issue number |
-| `#prp-debug` | Root cause analysis | Problem description |
+### Process Improvements
+- [Improvement 1]
 
----
+### Technical Improvements
+- [Improvement 1]
 
-## Validation Levels
-
-### Level 1: Static Analysis
-
-**.NET/C#:**
-```bash
-dotnet build
-dotnet format --verify-no-changes
+### Monitoring
+- [Alert/metric to add]
 ```
 
-**Python:**
-```bash
-ruff check . && mypy .
+### Refactor PRP Template
+
+```markdown
+# Refactor PRP: [Component/System Name]
+
+## Current State Assessment
+
+### Code Quality Issues
+- [ ] [Issue 1]: [Location, impact]
+- [ ] [Issue 2]: [Location, impact]
+
+### Technical Debt
+| Item | Severity | Effort | Impact |
+|------|----------|--------|--------|
+| [Debt item] | High | Large | [Impact] |
+
+### Pain Points
+- [Developer pain point 1]
+- [Performance pain point 1]
+
+## Proposed Changes
+
+### Architecture Changes
+[Before/After comparison]
+
+### Code Changes
+| Current | Proposed | Rationale |
+|---------|----------|-----------|
+| [Pattern A] | [Pattern B] | [Why] |
+
+### API Changes
+[Breaking changes, if any]
+
+## Impact Analysis
+
+### Affected Components
+- [Component 1]: [How affected]
+- [Component 2]: [How affected]
+
+### Breaking Changes
+- [Change 1]: [Migration path]
+
+### Performance Impact
+- [Expected improvement/degradation]
+
+## Migration Plan
+
+### Phase 1: Preparation
+- [ ] Add feature flags
+- [ ] Create migration scripts
+- [ ] Update documentation
+
+### Phase 2: Incremental Migration
+- [ ] Migrate [component 1]
+- [ ] Migrate [component 2]
+
+### Phase 3: Cleanup
+- [ ] Remove old code
+- [ ] Remove feature flags
+- [ ] Update tests
+
+### Rollback Strategy
+[How to rollback at each phase]
+
+## Success Criteria
+- [ ] [Metric 1 improved by X%]
+- [ ] [All tests passing]
+- [ ] [No performance regression]
 ```
 
-**TypeScript/React:**
-```bash
-npm run lint && npm run type-check
+### Quick PRP (Lightweight)
+
+For smaller features or quick tasks:
+
+```markdown
+# Quick PRP: [Title]
+
+## What
+[1-2 sentences describing the change]
+
+## Why
+[Business/technical justification]
+
+## How
+[High-level approach]
+
+## Tasks
+1. [ ] [Task 1]
+2. [ ] [Task 2]
+3. [ ] [Task 3]
+
+## Testing
+- [ ] [Test 1]
+- [ ] [Test 2]
+
+## Done When
+- [ ] [Acceptance criterion 1]
+- [ ] [Acceptance criterion 2]
 ```
 
-### Level 2: Unit Tests
+### Best Practices
 
-**.NET/C#:**
-```bash
-dotnet test --filter "Category=Unit"
+1. **Start with Why**: Always explain the business value
+2. **Be Specific**: Vague requirements lead to rework
+3. **Include Acceptance Criteria**: Define "done"
+4. **Consider Edge Cases**: Document error handling
+5. **Plan for Failure**: Include rollback strategies
+6. **Get Feedback Early**: Share drafts before implementing
+7. **Keep Updated**: PRPs are living documents
+8. **Link Everything**: Connect to issues, PRs, docs
+
+### Converting PRP to Tasks
+
+After PRP approval, create Archon tasks:
+
+```python
+# For each implementation phase
+manage_task("create",
+    project_id="...",
+    title="[Phase]: [Task name]",
+    description="From PRP: [link]\n\nAcceptance criteria:\n- [ ] ...",
+    feature="prp-feature-name"
+)
 ```
-
-**Python:**
-```bash
-pytest tests/unit -v
-```
-
-**TypeScript/React:**
-```bash
-npm test -- --coverage
-```
-
-### Level 3: Full Suite
-
-**.NET/C#:**
-```bash
-dotnet test && dotnet build --configuration Release
-```
-
-**Python:**
-```bash
-pytest && python -m build
-```
-
-**TypeScript/React:**
-```bash
-npm test && npm run build
-```
-
----
-
-## Artifacts Structure
-
-```
-PRPs/
-├── prds/              # Product requirement documents
-│   └── feature.prd.md
-├── plans/             # Implementation plans
-│   ├── feature.plan.md
-│   └── completed/     # Archived completed plans
-├── reports/           # Implementation reports
-│   └── feature-report.md
-├── issues/            # Issue investigations
-│   ├── 123-investigation.md
-│   └── completed/     # Archived investigations
-└── templates/         # Reusable templates
-    ├── prp-base.md
-    └── prp-story.md
-```
-
----
-
-## Best Practices
-
-### DO
-
-- Start with codebase exploration before planning
-- Include actual code snippets, not generic examples
-- Define validation commands for every task
-- Mark out-of-scope items explicitly
-- Update PRD status after each phase
-
-### DON'T
-
-- Create plans without understanding existing patterns
-- Skip validation steps
-- Ignore the structured format
-- Hardcode values that should be config
-- Catch all exceptions without specific handling
-
----
-
-## Success Metrics
-
-| Metric | Target | Description |
-|--------|--------|-------------|
-| First-Pass Success | > 80% | Plans implemented without replanning |
-| Validation Pass Rate | > 95% | Implementations passing all checks |
-| Context Completeness | 100% | All patterns documented with file:line |
-| Test Coverage | > 80% | New code covered by tests |
-
----
-
-## Quick Reference
-
-### Starting a New Feature
-
-1. Assess size: Large (needs PRD) or Medium (direct to plan)
-2. Large: `#prp-prd "feature description"`
-3. Medium: `#prp-plan "feature description"`
-4. Review generated artifact
-5. Implement: `#prp-implement {path}`
-
-### Fixing a Bug
-
-1. Investigate: `#prp-issue-investigate {number}`
-2. Review investigation findings
-3. Fix: `#prp-issue-fix {number}`
-4. Create PR
-
-### Debugging an Issue
-
-1. Analyze: `#prp-debug "problem description"`
-2. Review 5 Whys analysis
-3. Use findings to create plan or fix

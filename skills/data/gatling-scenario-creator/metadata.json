@@ -1,9 +1,7 @@
 {
   "name": "gatling-scenario-creator",
-  "description": "Gatling Scenario Creator - Auto-activating skill for Performance Testing.Triggers on: gatling scenario creator, gatling scenario creatorPart of the Performance Testing skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/10-performance-testing/gatling-scenario-creator/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:28.721660Z"
 }

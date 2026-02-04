@@ -1,8 +1,10 @@
 ---
 name: tasks-documentation
-description: Use for WRITING documentation with ready-to-use code templates (C# XML docs, TypeScript JSDoc, API docs, README patterns). Best for implementing actual documentation, adding code comments, and creating docs from scratch. NOT for documentation planning (use documentation instead).
+description: Use when creating or updating technical documentation, API documentation, or inline code documentation.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
 ---
+
+> **Skill Variant:** Use this skill for **autonomous documentation generation** with structured templates. For interactive documentation tasks with user feedback, use `documentation` instead.
 
 # Documentation Workflow
 

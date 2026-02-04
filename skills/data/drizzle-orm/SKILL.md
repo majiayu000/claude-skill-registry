@@ -1,94 +1,82 @@
 ---
 name: drizzle-orm
-description: Drizzle ORM patterns for type branding and custom types. Use when working with Drizzle column definitions, branded types, or custom type conversions.
+description: Enforces project Drizzle ORM coding conventions when creating or modifying database queries, schemas, and migrations. This skill ensures consistent patterns for query structure, type safety, permission filtering, pagination, resilience, and database operations.
 ---
 
-# Drizzle ORM Guidelines
+# Drizzle ORM Skill
 
-## Use $type<T>() for Branded Strings, Not customType
+## Purpose
 
-When you need a column with a branded TypeScript type but no actual data transformation, use `$type<T>()` instead of `customType`.
+This skill enforces the project Drizzle ORM coding conventions automatically during database query development. It ensures consistent patterns for query structure, type safety, permission filtering, pagination, circuit breaker resilience, and database operations.
 
-### The Rule
+## Activation
 
-If `toDriver` and `fromDriver` would be identity functions `(x) => x`, use `$type<T>()` instead.
+This skill activates when:
 
-### Why
+- Creating new query files in `src/lib/queries/`
+- Modifying database schema in `src/lib/db/schema/`
+- Writing database migrations
+- Working with Drizzle query builders
+- Implementing permission filtering or soft delete logic
 
-Even with identity functions, `customType` still invokes `mapFromDriverValue` on every row:
+## Workflow
 
-```typescript
-// drizzle-orm/src/utils.ts - runs for EVERY column of EVERY row
-const rawValue = row[columnIndex]!;
-const value = rawValue === null ? null : decoder.mapFromDriverValue(rawValue);
-```
+1. Detect Drizzle ORM work (file imports from `drizzle-orm` or path contains `queries/` or `db/schema`)
+2. Load `references/Drizzle-ORM-Conventions.md`
+3. Generate/modify code following all conventions
+4. Scan for violations of query patterns
+5. Auto-fix all violations (no permission needed)
+6. Report fixes applied
 
-Query 1000 rows with 3 date columns = 3000 function calls doing nothing.
+## Key Patterns
 
-### Bad Pattern
+### Query Classes
 
-```typescript
-// Runtime overhead for identity functions
-customType<{ data: DateTimeString; driverParam: DateTimeString }>({
-	dataType: () => 'text',
-	toDriver: (value) => value, // called on every write
-	fromDriver: (value) => value, // called on every read
-});
-```
+- Extend `BaseQuery` class for all query classes
+- Use `QueryContext` for database instance and user context
+- Use `this.getDbInstance(context)` for database access
+- Apply `this.applyPagination(options)` for list queries
+- Use `this.combineFilters()` to combine multiple SQL conditions
 
-### Good Pattern
+### Context Types
 
-```typescript
-// Zero runtime overhead - pure type assertion
-text().$type<DateTimeString>();
-```
+- `createPublicQueryContext()` - public read operations (isPublic = true)
+- `createUserQueryContext(userId)` - authenticated user operations
+- `createProtectedQueryContext(requiredUserId)` - owner-only operations
+- `createAdminQueryContext(adminUserId)` - admin access to all content
 
-`$type<T>()` is a compile-time-only type override:
+### Permission Filtering
 
-```typescript
-// drizzle-orm/src/column-builder.ts
-$type<TType>(): $Type<this, TType> {
-  return this as $Type<this, TType>;
-}
-```
+- Use `this.buildBaseFilters(isPublicCol, userIdCol, deletedAtCol, context)` for permission + soft delete
+- Import standalone filters from `@/lib/queries/base/permission-filters`:
+  - `buildPermissionFilter()` - handles public/user/owner visibility
+  - `buildSoftDeleteFilter()` - handles deletedAt filtering (returns `isNull(deletedAt)`)
+  - `buildOwnershipFilter()` - handles owner-only access
+  - `combineFilters()` - combines multiple SQL conditions with AND
 
-### When to Use customType
+### Resilience
 
-Only when data genuinely transforms between app and database:
+- Use `this.executeWithRetry(operation, operationName)` for circuit breaker + retry logic
+- Use `this.executeWithRetryDetails(operation, operationName)` when you need retry metadata
 
-```typescript
-// JSON: object ↔ string - actual transformation
-customType<{ data: UserPrefs; driverParam: string }>({
-	toDriver: (value) => JSON.stringify(value),
-	fromDriver: (value) => JSON.parse(value),
-});
-```
+### Return Values
 
-## Keep Data in Intermediate Representation
+- Single item: `T | null` (return `null` for not found)
+- List: `Array<T>` (return `[]` for empty)
+- Count: `number` (return `0` for none)
+- Boolean check: `boolean` (return `false` for not found)
+- Map: `Map<K, V>` (return `new Map()` for empty)
 
-Prefer keeping data serialized (strings) through the system, parsing only at the edges (UI components).
+## Anti-Patterns to Avoid
 
-**The principle**: If data enters serialized and leaves serialized, keep it serialized in the middle. Parse at the edges where you actually need the rich representation.
+1. **Never access `db` directly** - Always use `this.getDbInstance(context)`
+2. **Never skip permission filters** - Always use `buildBaseFilters` for user-visible data
+3. **Never return undefined** - Return `null` for missing single items
+4. **Never use raw strings in queries** - Use parameterized queries via Drizzle
+5. **Never skip pagination limits** - Always apply `applyPagination`
+6. **Never hard delete** - Use soft delete with `deletedAt` timestamp column
+7. **Never ignore circuit breaker** - Use `executeWithRetry` for external calls
 
-### Example: DateTimeString
+## References
 
-Instead of parsing `DateTimeString` into `Temporal.ZonedDateTime` at the database layer:
-
-```typescript
-// Bad: parse on every read, re-serialize at API boundaries
-customType<{ data: Temporal.ZonedDateTime; driverParam: string }>({
-	fromDriver: (value) => fromDateTimeString(value),
-});
-```
-
-Keep it as a string until the UI actually needs it:
-
-```typescript
-// Good: string stays string, parse only in date-picker component
-text().$type<DateTimeString>();
-
-// In UI component:
-const temporal = fromDateTimeString(row.createdAt);
-// After edit:
-const updated = toDateTimeString(temporal);
-```
+- `references/Drizzle-ORM-Conventions.md` - Complete Drizzle ORM conventions

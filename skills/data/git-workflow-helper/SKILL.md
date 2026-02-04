@@ -1,248 +1,264 @@
 ---
 name: git-workflow-helper
-description: Handle common git scenarios, conflicts, and hook failures
-version: 1.1.0
-tags: [git, troubleshooting, automation, ssh, github]
-owner: devops
-status: active
+description: Guide Git workflows including branching, merging, rebasing, and conflict resolution. Use when managing Git operations or resolving complex Git scenarios.
 ---
 
 # Git Workflow Helper Skill
 
-## Overview
+Gitワークフローを支援するスキルです。
 
-Resolve common git interruptions and ensure correct SSH configuration.
+## 概要
 
-## Usage
+Git操作のベストプラクティス、コマンド生成、トラブルシューティングを提供します。
+
+## 主な機能
+
+- **ワークフロー提案**: GitFlow、GitHub Flow、Trunk-Based
+- **コマンド生成**: 複雑な操作の安全なコマンド
+- **コンフリクト解決**: マージコンフリクトの解決支援
+- **歴史の整理**: rebase、squash、cherry-pick
+- **トラブルシューティング**: よくある問題の解決
+- **フック生成**: pre-commit、pre-push等
+
+## 使用方法
 
 ```
-/git-workflow-helper
+以下の操作のGitコマンドを生成：
+- ブランチを作成
+- 変更をコミット
+- リモートにプッシュ
+- プルリクエスト作成の準備
 ```
 
-## Identity
-**Role**: Git Workflow Specialist
-**Objective**: Automate the resolution of common git interruptions (merge conflicts, rebase stopping, hook failures) and ensure proper SSH configuration for GitHub.
+## ワークフローパターン
 
-## CRITICAL: Always Use SSH for GitHub
+### GitHub Flow
 
-**All GitHub operations MUST use SSH, never HTTPS.**
-
-### Why SSH?
-- No password prompts on every push/pull
-- More secure (key-based authentication)
-- Required for automated workflows
-- Works with 2FA without tokens
-
-### Verify Current Remote
 ```bash
-# Check current remote URL
-git remote -v
+# 1. 最新のmainブランチを取得
+git checkout main
+git pull origin main
 
-# If you see HTTPS (bad):
-# origin  https://github.com/user/repo.git (fetch)
+# 2. 機能ブランチを作成
+git checkout -b feature/user-authentication
 
-# Should be SSH (good):
-# origin  git@github.com:user/repo.git (fetch)
+# 3. 変更を加えてコミット
+git add .
+git commit -m "Add user authentication"
+
+# 4. リモートにプッシュ
+git push -u origin feature/user-authentication
+
+# 5. プルリクエストを作成（GitHubで）
+
+# 6. レビュー後、mainにマージ
+# 7. ブランチを削除
+git branch -d feature/user-authentication
 ```
 
-### Convert HTTPS to SSH
+### Git Flow
+
 ```bash
-# Convert origin from HTTPS to SSH
-git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+# develop ブランチから機能ブランチを作成
+git checkout develop
+git checkout -b feature/new-feature
 
-# Verify the change
-git remote -v
+# 完了後、developにマージ
+git checkout develop
+git merge --no-ff feature/new-feature
+
+# リリースブランチ
+git checkout -b release/1.2.0 develop
+
+# リリース準備完了
+git checkout main
+git merge --no-ff release/1.2.0
+git tag -a v1.2.0 -m "Release version 1.2.0"
 ```
 
-### SSH URL Format
-```
-# GitHub SSH format
-git@github.com:OWNER/REPO.git
+## よく使うコマンド
 
-# Examples
-git@github.com:anthropics/claude-code.git
-git@github.com:myorg/myproject.git
-```
+### 変更の取り消し
 
-### Clone with SSH (Always)
 ```bash
-# CORRECT - Use SSH
-git clone git@github.com:owner/repo.git
+# ステージング取り消し
+git reset HEAD <file>
 
-# WRONG - Never use HTTPS
-# git clone https://github.com/owner/repo.git
+# ローカル変更を破棄
+git checkout -- <file>
+
+# 直前のコミットを修正
+git commit --amend
+
+# コミットを取り消し（変更は保持）
+git reset --soft HEAD~1
+
+# コミットを完全に取り消し
+git reset --hard HEAD~1
 ```
 
-### SSH Setup (One-Time)
+### ブランチ操作
 
-**1. Generate SSH Key** (if not exists):
 ```bash
-# Check for existing keys
-ls -la ~/.ssh/id_ed25519.pub
+# ブランチ一覧
+git branch -a
 
-# Generate new key (Ed25519 recommended)
-ssh-keygen -t ed25519 -C "your_email@example.com"
+# リモートブランチを削除
+git push origin --delete <branch-name>
 
-# Or RSA if Ed25519 not supported
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# ローカルブランチを削除
+git branch -d <branch-name>
+
+# 強制削除
+git branch -D <branch-name>
+
+# ブランチ名変更
+git branch -m <old-name> <new-name>
 ```
 
-**2. Add Key to SSH Agent**:
+### コンフリクト解決
+
 ```bash
-# Start SSH agent
-eval "$(ssh-agent -s)"
+# マージ中にコンフリクト発生
+git merge feature-branch
 
-# Add key
-ssh-add ~/.ssh/id_ed25519
+# コンフリクトを確認
+git status
+
+# ファイルを編集してコンフリクトマーカーを削除
+# <<<<<<<, =======, >>>>>>> を解決
+
+# 解決済みとしてマーク
+git add <resolved-file>
+
+# マージを完了
+git commit
+
+# マージを中止する場合
+git merge --abort
 ```
 
-**3. Add Public Key to GitHub**:
+### 歴史の整理
+
 ```bash
-# Copy public key
-cat ~/.ssh/id_ed25519.pub
-# Then add at: GitHub → Settings → SSH and GPG keys → New SSH key
+# 直近3つのコミットをsquash
+git rebase -i HEAD~3
+
+# エディタで pick を squash に変更
+
+# コミットメッセージを統合
+
+# 強制プッシュ（注意！）
+git push --force-with-lease
 ```
 
-**4. Test Connection**:
+### スタッシュ
+
 ```bash
-ssh -T git@github.com
-# Should see: "Hi USERNAME! You've successfully authenticated..."
+# 変更を一時保存
+git stash
+
+# メッセージ付き
+git stash save "Work in progress on feature X"
+
+# 一覧
+git stash list
+
+# 適用
+git stash apply
+
+# 適用して削除
+git stash pop
+
+# 削除
+git stash drop stash@{0}
 ```
 
-### SSH Config for Multiple Accounts
+## トラブルシューティング
+
+### 問題: 間違ったブランチにコミット
+
 ```bash
-# ~/.ssh/config
-Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_ed25519
+# 1. 現在のブランチ名を確認
+git branch
 
-Host github-work
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_ed25519_work
+# 2. コミットを取り消し（変更は保持）
+git reset --soft HEAD~1
 
-# Usage: git clone git@github-work:company/repo.git
+# 3. 正しいブランチに切り替え
+git checkout correct-branch
+
+# 4. 再度コミット
+git add .
+git commit -m "Your commit message"
 ```
 
-### Troubleshooting SSH
+### 問題: 機密情報をコミット
 
-| Error | Solution |
-|-------|----------|
-| "Permission denied (publickey)" | Key not added to GitHub or ssh-agent |
-| "Host key verification failed" | Run `ssh-keyscan github.com >> ~/.ssh/known_hosts` |
-| "Connection timed out" | Firewall blocking port 22, try SSH over HTTPS port (see below) |
-| "Could not resolve hostname" | DNS issue, check network connection |
-
-**SSH Over HTTPS Port** (if port 22 blocked):
 ```bash
-# ~/.ssh/config
-Host github.com
-    HostName ssh.github.com
-    Port 443
-    User git
-    IdentityFile ~/.ssh/id_ed25519
+# 最新コミットの場合
+git reset --soft HEAD~1
+# ファイルを修正
+git add .
+git commit -m "Fixed commit"
+
+# 既にプッシュ済みの場合
+# 1. ファイルを履歴から削除
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch path/to/secret/file" \
+  --prune-empty --tag-name-filter cat -- --all
+
+# 2. 強制プッシュ
+git push --force --all
 ```
 
-### Auto-Convert HTTPS to SSH (Git Config)
+### 問題: リベース失敗
+
 ```bash
-# Global setting: automatically rewrite HTTPS to SSH
-git config --global url."git@github.com:".insteadOf "https://github.com/"
+# リベース中止
+git rebase --abort
 
-# Verify
-git config --global --get-regexp url
+# または続行
+git rebase --continue
 ```
+
+## Pre-commit Hook
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+
+# ESLint実行
+npm run lint || exit 1
+
+# テスト実行
+npm test || exit 1
+
+# 機密情報チェック
+if git diff --cached | grep -i "password\|secret\|api[_-]key"; then
+  echo "機密情報が含まれている可能性があります"
+  exit 1
+fi
+
+exit 0
+```
+
+## バージョン情報
+
+- スキルバージョン: 1.0.0
+- 最終更新: 2025-01-22
 
 ---
 
-## Scenarios & Playbooks
+**使用例**:
 
-### Scenario A: Pre-Commit Hook Failure
-**Trigger**: `git commit` exits with code > 0.
-**Action**:
-1.  **Analyze Log**: Grep stdout/stderr for keywords: `eslint`, `prettier`, `test failed`.
-2.  **Fix**:
-    - If lint error: Run `npm run lint:fix` (or equivalent).
-    - If format error: Run `npm run format`.
-    - If test failure: Check if failure is related to staged changes.
-3.  **Recover**:
-    - `git add <fixed-files>`
-    - Retry the commit.
-4.  **Fallback**: If fix is complex or manual, notify user. Only use `git commit --no-verify` if explicitly authorized.
+```
+以下の操作のGitコマンドを教えて：
+1. 新しいブランチを作成
+2. 変更をコミット
+3. mainブランチの最新を取り込む
+4. コンフリクトを解決
+5. プッシュ
+```
 
-### Scenario B: Merge/Rebase Conflict
-**Trigger**: `git merge` or `git rebase` stops with "CONFLICT".
-**Action**:
-1.  **Identify**: Run `git status` to see `both modified` files.
-2.  **Resolve**:
-    - For lockfiles (`package-lock.json`, `pnpm-lock.yaml`): **Discard** changes and regenerate (`npm install`). Do not attempt text merge on lockfiles.
-    - For source code:
-        - Read conflict markers.
-        - Start with 'Incoming Change' or 'Current Change' logic depending on context (e.g., if rebasing strict-feature on main, honor main).
-3.  **Continue**:
-    - `git add <resolved-files>`
-    - `git rebase --continue` (or `git commit` for merge).
-4.  **Abort**: If loop detected (same conflict > 2 times), run `git rebase --abort`.
-
-### Scenario C: Undo/Rewrite
-**Trigger**: User wants to undo last commit or change message.
-**Action**:
-- **Undo Last Commit (Soft)**: `git reset --soft HEAD~1` (keeps changes staged).
-- **Amend Message**: `git commit --amend` (opens editor) or `git commit --amend -m "new message"`.
-- **Discard All Local Changes**: `git reset --hard HEAD` (WARNING: Data Loss).
-
-### Scenario D: SSH Authentication Failure
-**Trigger**: `git push` or `git pull` fails with "Permission denied (publickey)" or similar.
-**Action**:
-1.  **Check Remote URL**:
-    ```bash
-    git remote -v
-    ```
-    - If HTTPS: Convert to SSH (see "Convert HTTPS to SSH" above).
-2.  **Verify SSH Agent**:
-    ```bash
-    ssh-add -l
-    # If "Could not open connection to agent", start it:
-    eval "$(ssh-agent -s)"
-    ssh-add ~/.ssh/id_ed25519
-    ```
-3.  **Test GitHub Connection**:
-    ```bash
-    ssh -T git@github.com
-    ```
-4.  **If Still Failing**:
-    - Verify key is added to GitHub: `cat ~/.ssh/id_ed25519.pub`
-    - Check SSH config: `cat ~/.ssh/config`
-    - Try verbose mode: `ssh -vT git@github.com`
-
-### Scenario E: HTTPS Remote Detected
-**Trigger**: During any git operation, detect HTTPS remote.
-**Action**:
-1.  **Auto-Convert to SSH**:
-    ```bash
-    # Get current URL
-    CURRENT_URL=$(git remote get-url origin)
-
-    # If HTTPS, convert
-    if [[ "$CURRENT_URL" == https://github.com/* ]]; then
-        # Extract owner/repo from HTTPS URL
-        SSH_URL=$(echo "$CURRENT_URL" | sed 's|https://github.com/|git@github.com:|')
-        git remote set-url origin "$SSH_URL"
-        echo "Converted to SSH: $SSH_URL"
-    fi
-    ```
-2.  **Verify**: `git remote -v`
-3.  **Proceed** with original operation.
-
-## Safety Constraints
-- **Never** Force Push (`git push -f`) on `main` or `master` branch.
-- **Never** `git reset --hard` without explicit user confirmation of data loss.
-- **Always** verify state (`git status`) before and after operations.
-
-## Outputs
-
-- Cleaned git state or a clear recovery path.
-
-## Related Skills
-
-- `/pr-create` - Create pull requests after fixes
+安全で正確なGitコマンドが生成されます！

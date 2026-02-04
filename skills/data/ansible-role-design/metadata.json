@@ -1,9 +1,7 @@
 {
   "name": "ansible-role-design",
-  "description": "This skill should be used when creating Ansible roles, designing role directory structure, organizing role variables in defaults vs vars, writing role handlers, or structuring role tasks. Based on ana",
   "repo": "basher83/lunar-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-role-design/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:29.621578Z"
 }

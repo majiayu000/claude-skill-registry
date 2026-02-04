@@ -1,7 +1,7 @@
 {
   "name": "market-data",
-  "repo": "ZhiruiFeng/LocalAgentCrew",
-  "path": ".claude/skills/market-data/SKILL.md",
-  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
-  "downloaded_at": "2026-02-02T04:18:16.644523Z"
+  "repo": "marketcalls/openalgo-claude-plugin",
+  "path": "plugins/openalgo-python/skills/market-data/SKILL.md",
+  "source": "github.com/marketcalls/openalgo-claude-plugin",
+  "downloaded_at": "2026-02-04T04:22:05.173935Z"
 }

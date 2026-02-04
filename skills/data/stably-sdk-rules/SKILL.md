@@ -108,6 +108,17 @@ const userData = await page.locator(".user-panel").extract("Get user info", { sc
 
 ## AI Agent (autonomous workflows)
 
+### When Test Generation Uses `agent.act()` vs Raw Playwright
+
+Stably's test generation agent intelligently chooses between raw Playwright code and `agent.act()`:
+
+- **For repeatable, stable actions**: The test generation agent will try to turn these into raw Playwright code when first generating tests. Raw Playwright is faster and more cost-effective.
+- **For dynamic or unstable pages**: If the agent finds that the page changes frequently and it can't find stable Playwright selectors/code for an action, it will use `agent.act()` instead.
+
+This means you may see a mix of both in generated tests—this is intentional and optimizes for reliability while keeping costs down where possible.
+
+### Using the Agent Fixture
+
 Use the `agent` fixture to execute complex, human-like workflows:
 
 ```ts

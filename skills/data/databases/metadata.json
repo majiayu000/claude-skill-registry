@@ -1,7 +1,9 @@
 {
   "name": "databases",
-  "repo": "binjuhor/shadcn-lar",
-  "path": ".claude/skills/databases/SKILL.md",
-  "source": "github.com/binjuhor/shadcn-lar",
-  "downloaded_at": "2026-02-02T05:07:40.393513Z"
+  "description": "RDBMS access patterns for DuckDB, MySQL (keycloak), PostgreSQL (dw, x3rocs), SQL Server (sage1000, x3), and DBISAM (Exportmaster) using ODBC and native drivers",
+  "repo": "lawless-m/Earwig",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig"
 }

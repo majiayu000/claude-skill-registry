@@ -1,124 +1,75 @@
 ---
 name: miro
-description: Collaborate on digital whiteboards with Miro - create mind maps, flowcharts, wireframes, and run brainstorming sessions
-category: design
+description: Manage Miro boards, sticky notes, and shapes via Miro API. Create collaborative whiteboards programmatically.
+metadata: {"clawdbot":{"emoji":"🎨","requires":{"env":["MIRO_ACCESS_TOKEN"]}}}
 ---
 
-# Miro Skill
+# Miro
 
-## Overview
-Enables Claude to use Miro for visual collaboration including creating and editing boards, adding shapes and content, managing templates, and organizing brainstorming or planning sessions.
+Collaborative whiteboard platform.
 
-## Quick Install
-
-```bash
-curl -sSL https://canifi.com/skills/miro/install.sh | bash
-```
-
-Or manually:
-```bash
-cp -r skills/miro ~/.canifi/skills/
-```
-
-## Setup
-
-Configure via [canifi-env](https://canifi.com/setup/scripts):
+## Environment
 
 ```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
-
-canifi-env set MIRO_EMAIL "your-email@example.com"
-canifi-env set MIRO_PASSWORD "your-password"
+export MIRO_ACCESS_TOKEN="xxxxxxxxxx"
 ```
 
-## Privacy & Authentication
+## List Boards
 
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
-
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
-
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
 ```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
+curl "https://api.miro.com/v2/boards" \
+  -H "Authorization: Bearer $MIRO_ACCESS_TOKEN"
 ```
 
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
+## Create Board
 
-## Capabilities
-- Create and navigate Miro boards
-- Add shapes, sticky notes, and text
-- Create flowcharts and diagrams
-- Apply templates for various workflows
-- Export boards as images or PDFs
-- Manage board sharing and permissions
-
-## Usage Examples
-
-### Example 1: Create Mind Map
-```
-User: "Create a mind map for our Q1 planning"
-Claude: I'll create a mind map board for Q1 planning.
-1. Opening Miro via Playwright MCP
-2. Creating new board with mind map template
-3. Adding central topic "Q1 Planning"
-4. Creating branches for key initiatives
-5. Sharing board link with you
+```bash
+curl -X POST "https://api.miro.com/v2/boards" \
+  -H "Authorization: Bearer $MIRO_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Project Planning", "description": "Sprint planning board"}'
 ```
 
-### Example 2: Export Board
-```
-User: "Export the product roadmap board as PDF"
-Claude: I'll export your roadmap board.
-1. Navigating to the product roadmap board
-2. Opening export options
-3. Selecting PDF format with high quality
-4. Downloading the exported file
+## Get Board
+
+```bash
+curl "https://api.miro.com/v2/boards/{board_id}" \
+  -H "Authorization: Bearer $MIRO_ACCESS_TOKEN"
 ```
 
-### Example 3: Add Flowchart
+## Create Sticky Note
+
+```bash
+curl -X POST "https://api.miro.com/v2/boards/{board_id}/sticky_notes" \
+  -H "Authorization: Bearer $MIRO_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "data": {"content": "New idea!", "shape": "square"},
+    "position": {"x": 0, "y": 0},
+    "style": {"fillColor": "yellow"}
+  }'
 ```
-User: "Add a user flow diagram to my UX board"
-Claude: I'll add a user flow to your board.
-1. Opening the UX board in Miro
-2. Adding flowchart shapes
-3. Creating connections between steps
-4. Labeling each flow step
-5. Organizing layout for clarity
+
+## Create Shape
+
+```bash
+curl -X POST "https://api.miro.com/v2/boards/{board_id}/shapes" \
+  -H "Authorization: Bearer $MIRO_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "data": {"shape": "rectangle", "content": "Task 1"},
+    "position": {"x": 100, "y": 100},
+    "geometry": {"width": 200, "height": 100}
+  }'
 ```
 
-## Authentication Flow
-1. Navigate to miro.com via Playwright MCP
-2. Click "Log in" and enter email
-3. Enter password
-4. Handle SSO if configured
-5. Complete 2FA if required (via iMessage)
-6. Maintain session for board operations
+## Get All Items on Board
 
-## Error Handling
-- **Login Failed**: Retry up to 3 times, notify via iMessage
-- **Session Expired**: Re-authenticate automatically
-- **Rate Limited**: Implement exponential backoff
-- **2FA Required**: Send iMessage for verification code
-- **Board Not Found**: Search boards or prompt for correct name
-- **Permission Denied**: Notify about access restrictions
+```bash
+curl "https://api.miro.com/v2/boards/{board_id}/items" \
+  -H "Authorization: Bearer $MIRO_ACCESS_TOKEN"
+```
 
-## Self-Improvement Instructions
-When Miro updates its interface:
-1. Document new tools and template locations
-2. Update board navigation patterns
-3. Test shape creation and editing workflows
-4. Log any selector or UI changes
-
-## Notes
-- Large boards may have performance impacts
-- Real-time collaboration shows other users
-- Some templates require paid plans
-- Export quality varies by format choice
-- Embedded content may not export fully
+## Links
+- Dashboard: https://miro.com/app/dashboard/
+- Docs: https://developers.miro.com/reference/api-reference

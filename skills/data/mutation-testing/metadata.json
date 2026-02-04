@@ -1,7 +1,7 @@
 {
   "name": "mutation-testing",
-  "repo": "alexanderop/workoutTracker",
-  "path": ".claude/skills/mutation-testing/SKILL.md",
-  "source": "github.com/alexanderop/workoutTracker",
-  "downloaded_at": "2026-02-02T04:46:49.311086Z"
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/mutation-testing/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-04T04:42:16.796479Z"
 }

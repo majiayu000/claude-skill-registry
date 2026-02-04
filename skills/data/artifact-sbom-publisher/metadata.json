@@ -1,11 +1,7 @@
 {
   "name": "artifact-sbom-publisher",
-  "repo": "patricio0312rev/skillset",
-  "category": "data",
-  "description": "Produces build artifacts with Software Bill of Materials (SBOM) and supply chain metadata for security and compliance. Use for \"artifact publishing\", \"SBOM generation\", \"supply chain security\", or \"bu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:06.419190Z",
-  "dir_name": "artifact-sbom-publisher",
-  "github_path": "templates/ci-cd/artifact-sbom-publisher",
-  "github_branch": "main"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/artifact-sbom-publisher/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:32.361658Z"
 }

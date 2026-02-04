@@ -20,12 +20,12 @@ Front uses base-36 encoded IDs with prefixes. Convert the numeric URL ID to API 
 
 From a Front URL like:
 ```
-https://app.frontapp.com/inboxes/teams/folders/7256583/unassigned/...
+https://app.frontapp.com/inboxes/teams/folders/[PHONE]/unassigned/...
 ```
 
-The inbox ID (7256583) converts to:
+The inbox ID ([PHONE]) converts to:
 ```javascript
-'inb_' + (7256583).toString(36)  // => "inb_4bj7r"
+'inb_' + ([PHONE]).toString(36)  // => "inb_4bj7r"
 ```
 
 See `@.claude/skills/front-id-converter/SKILL.md` for full reference.

@@ -1,48 +1,20 @@
 ---
 name: gift-purchase-option
-description: |
-  Customer wants to purchase a course as a gift for someone else.
-sample_size: 47
-validation:
-  required_phrases:
-    - "let me know if"
-  forbidden_patterns: []
-metrics:
-  sample_size: 47
-  avg_thread_length: 3.7
-  top_phrases:
-    - phrase: "let me know if"
-      count: 28
-      percent: 59.6
-    - phrase: "if you have any"
-      count: 22
-      percent: 46.8
-    - phrase: "me know if you"
-      count: 15
-      percent: 31.9
-    - phrase: "know if you have"
-      count: 15
-      percent: 31.9
-    - phrase: "please let me know"
-      count: 14
-      percent: 29.8
-    - phrase: "email let me know"
-      count: 11
-      percent: 23.4
-    - phrase: "using that email address"
-      count: 11
-      percent: 23.4
-    - phrase: "you have any further"
-      count: 10
-      percent: 21.3
-    - phrase: "have any further questions"
-      count: 10
-      percent: 21.3
-    - phrase: "license to email let"
-      count: 10
-      percent: 21.3
+description: Guide gift purchases. Use when a customer wants to buy a course for someone else.
+metadata:
+  trigger_phrases:
+      - "guide gift"
+      - "gift purchases"
+      - "purchases customer"
+  related_skills: ["duplicate-purchase", "pricing-inquiry", "learning-path-guidance", "installment-payment-option", "course-difficulty-concern"]
+  sample_size: "47"
+  validation: |
+    required_phrases:
+      - "let me know if"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 47\navg_thread_length: 3.7\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 28\n    percent: 59.6\n  - phrase: \"if you have any\"\n    count: 22\n    percent: 46.8\n  - phrase: \"me know if you\"\n    count: 15\n    percent: 31.9\n  - phrase: \"know if you have\"\n    count: 15\n    percent: 31.9\n  - phrase: \"please let me know\"\n    count: 14\n    percent: 29.8\n  - phrase: \"email let me know\"\n    count: 11\n    percent: 23.4\n  - phrase: \"using that email address\"\n    count: 11\n    percent: 23.4\n  - phrase: \"you have any further\"\n    count: 10\n    percent: 21.3\n  - phrase: \"have any further questions\"\n    count: 10\n    percent: 21.3\n  - phrase: \"license to email let\"\n    count: 10\n    percent: 21.3"
 ---
-
 # Gift Purchase Option
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

@@ -1,7 +1,7 @@
 {
   "name": "design-postgres-tables",
-  "repo": "HelixDevelopment/HelixAgent",
-  "path": "skills/postgres-mcp/design-postgres-tables/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:42.597522Z"
+  "repo": "timescale/pg-aiguide",
+  "path": "skills/design-postgres-tables/SKILL.md",
+  "source": "github.com/timescale/pg-aiguide",
+  "downloaded_at": "2026-02-04T05:24:05.754412Z"
 }

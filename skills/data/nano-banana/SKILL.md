@@ -1,150 +1,196 @@
 ---
 name: nano-banana
-description: REQUIRED for all image generation requests. Generate and edit images using Nano Banana (Gemini CLI). Handles blog featured images, YouTube thumbnails, icons, diagrams, patterns, illustrations, photos, visual assets, graphics, artwork, pictures. Use this skill whenever the user asks to create, generate, make, draw, design, or edit any image or visual content.
-allowed-tools: Bash(gemini:*)
+description: "AI image generation using Nano Banana PRO (Gemini 3 Pro Image) and Nano Banana (Gemini 2.5 Flash Image). Use this skill when: (1) Generating images from text prompts, (2) Editing existing images, (3) Creating professional visual assets like infographics, logos, product shots, stickers, (4) Working with character consistency across multiple images, (5) Creating images with accurate text rendering, (6) Any task requiring AI-generated visuals. Triggers on: 'generate image', 'create image', 'make a picture', 'design a logo', 'create infographic', 'AI image', 'nano banana', or any image generation request."
 ---
 
-# Nano Banana Image Generation
+# Nano Banana PRO Image Generation
 
-Generate professional images via the Gemini CLI's nanobanana extension.
+Generate professional AI images using Google's Nano Banana models via the Gemini API.
 
-## When to Use This Skill
+## Prerequisites
 
-ALWAYS use this skill when the user:
-- Asks for any image, graphic, illustration, or visual
-- Wants a thumbnail, featured image, or banner
-- Requests icons, diagrams, or patterns
-- Asks to edit, modify, or restore a photo
-- Uses words like: generate, create, make, draw, design, visualize
-
-Do NOT attempt to generate images through any other method.
-
-## Before First Use
-
-1. Verify extension is installed:
-   ```bash
-   gemini extensions list | grep nanobanana
-   ```
-2. If missing, install it:
-   ```bash
-   gemini extensions install https://github.com/gemini-cli-extensions/nanobanana
-   ```
-3. Verify API key is set:
-   ```bash
-   [ -n "$GEMINI_API_KEY" ] && echo "API key configured" || echo "Missing GEMINI_API_KEY"
-   ```
-
-## Command Selection
-
-| User Request | Command |
-|--------------|---------|
-| "make me a blog header" | `/generate` |
-| "create an app icon" | `/icon` |
-| "draw a flowchart of..." | `/diagram` |
-| "fix this old photo" | `/restore` |
-| "remove the background" | `/edit` |
-| "create a repeating texture" | `/pattern` |
-| "make a comic strip" | `/story` |
-
-## Available Commands
-
-**Note:** Always use the `--yolo` flag to automatically approve all tool actions.
-
-| Command | Use Case |
-|---------|----------|
-| `gemini --yolo "/generate 'prompt'"` | Text-to-image generation |
-| `gemini --yolo "/edit file.png 'instruction'"` | Modify existing image |
-| `gemini --yolo "/restore old_photo.jpg 'fix scratches'"` | Repair damaged photos |
-| `gemini --yolo "/icon 'description'"` | App icons, favicons, UI elements |
-| `gemini --yolo "/diagram 'description'"` | Flowcharts, architecture diagrams |
-| `gemini --yolo "/pattern 'description'"` | Seamless textures and patterns |
-| `gemini --yolo "/story 'description'"` | Sequential/narrative images |
-| `gemini --yolo "/nanobanana prompt"` | Natural language interface |
-
-## Common Options
-
-- `--yolo` - **Required.** Auto-approve all tool actions (no confirmation prompts)
-- `--count=N` - Generate N variations (1-8)
-- `--preview` - Auto-open generated images
-- `--styles="style1,style2"` - Apply artistic styles
-- `--format=grid|separate` - Output arrangement
-
-## Common Sizes
-
-| Use Case | Dimensions | Notes |
-|----------|------------|-------|
-| YouTube thumbnail | 1280x720 | `--aspect=16:9` |
-| Blog featured image | 1200x630 | Social preview friendly |
-| Square social | 1080x1080 | Instagram, LinkedIn |
-| Twitter/X header | 1500x500 | Wide banner |
-| Vertical story | 1080x1920 | `--aspect=9:16` |
+- API key must be set as `GEMINI_API_KEY` environment variable
+- Uses curl for all API calls (no SDK required)
 
 ## Model Selection
 
-Default: `gemini-2.5-flash-image` (~$0.04/image)
+| Model | Identifier | Best For |
+|-------|------------|----------|
+| **Nano Banana PRO** | `gemini-3-pro-image-preview` | Professional assets, text rendering, infographics, 4K output, complex multi-turn editing |
+| **Nano Banana** | `gemini-2.5-flash-image` | Fast generation, simple edits, lower cost |
 
-For higher quality (4K, better reasoning):
+**Default to PRO** for quality work. Use Flash for rapid iterations or simple tasks.
+
+## CRITICAL: Prompt Engineering First
+
+**BEFORE calling the API, always craft an effective prompt.** Read [`references/prompting-guide.md`](references/prompting-guide.md) for comprehensive prompting strategies. Key principles:
+
+### The Golden Rules
+
+1. **Describe scenes, don't list keywords** - Write narrative descriptions, not tag soup
+2. **Use natural language** - Full sentences with proper grammar
+3. **Be specific** - Define subject, setting, lighting, mood, materials
+4. **Provide context** - The "why" helps the model make better artistic decisions
+5. **Edit, don't re-roll** - If 80% correct, ask for specific changes
+
+### The ICS Framework (Quick Reference)
+
+For any image, specify:
+- **I**mage type: What kind of visual (photo, infographic, logo, sticker, etc.)
+- **C**ontent: Specific elements, data, or information to include
+- **S**tyle: Visual style, color palette, artistic approach
+
+## API Reference
+
+### Text-to-Image Generation
+
 ```bash
-export NANOBANANA_MODEL=gemini-3-pro-image-preview
+curl -s -X POST \
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent" \
+  -H "x-goog-api-key: $GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contents": [{
+      "parts": [{"text": "YOUR_PROMPT_HERE"}]
+    }],
+    "generationConfig": {
+      "responseModalities": ["TEXT", "IMAGE"],
+      "imageConfig": {
+        "aspectRatio": "16:9",
+        "imageSize": "2K"
+      }
+    }
+  }'
 ```
 
-## Blog Featured Image Examples
+### Image Editing (with input image)
 
 ```bash
-# Modern illustration style
-gemini --yolo "/generate 'modern flat illustration of developer coding at laptop, purple and blue gradient background, minimalist style, no text' --preview"
-
-# Professional photography style
-gemini --yolo "/generate 'professional editorial photo of coffee cup next to laptop on wooden desk, morning sunlight, shallow depth of field, no text' --count=3"
-
-# Tech/abstract
-gemini --yolo "/generate 'abstract visualization of neural network connections, dark background with glowing blue nodes, futuristic style' --preview"
+curl -s -X POST \
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent" \
+  -H "x-goog-api-key: $GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contents": [{
+      "parts": [
+        {"text": "YOUR_EDIT_INSTRUCTION"},
+        {"inline_data": {"mime_type": "image/png", "data": "BASE64_IMAGE_DATA"}}
+      ]
+    }],
+    "generationConfig": {
+      "responseModalities": ["TEXT", "IMAGE"]
+    }
+  }'
 ```
 
-## Icon Generation
+### Configuration Options
+
+| Parameter | Values | Notes |
+|-----------|--------|-------|
+| `aspectRatio` | `1:1`, `2:3`, `3:2`, `3:4`, `4:3`, `4:5`, `5:4`, `9:16`, `16:9`, `21:9` | Match use case |
+| `imageSize` | `1K`, `2K`, `4K` | Use uppercase K; PRO model only for 4K |
+
+### Google Search Grounding (Real-time Data)
+
+Add `"tools": [{"google_search": {}}]` to generate images based on current information:
 
 ```bash
-gemini --yolo "/icon 'minimalist app logo for productivity tool' --sizes='64,128,256,512' --type='app-icon' --corners='rounded'"
+curl -s -X POST \
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent" \
+  -H "x-goog-api-key: $GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contents": [{"parts": [{"text": "Create an infographic of current tech stock prices"}]}],
+    "tools": [{"google_search": {}}],
+    "generationConfig": {
+      "responseModalities": ["TEXT", "IMAGE"],
+      "imageConfig": {"aspectRatio": "16:9"}
+    }
+  }'
 ```
 
-## Diagram Generation
+## Workflow
+
+### Step 1: Craft the Prompt
+
+Use the ICS framework and prompting guide. Examples:
+
+**Photorealistic:**
+```
+A photorealistic close-up portrait of an elderly Japanese ceramicist with deep wrinkles and a warm smile, inspecting a tea bowl. Soft golden hour light from a window. 85mm lens, shallow depth of field. Serene mood.
+```
+
+**Infographic:**
+```
+Create a clean, modern infographic explaining photosynthesis as a recipe. Show "ingredients" (sunlight, water, CO2) and "finished dish" (energy). Style like a colorful kids' cookbook page.
+```
+
+**Product Shot:**
+```
+High-resolution studio photograph of a matte black ceramic coffee mug on polished concrete. Three-point softbox lighting, 45-degree angle, sharp focus on rising steam. Square format.
+```
+
+### Step 2: Generate Image
+
+Use `scripts/generate-image.sh` or call API directly:
 
 ```bash
-gemini --yolo "/diagram 'user authentication flow with OAuth' --type='flowchart' --style='modern'"
+./scripts/generate-image.sh "Your prompt here" output.png --ratio 16:9 --size 2K
 ```
 
-## Output Location
+### Step 3: Process Response
 
-All generated images are saved to `./nanobanana-output/` in the current directory.
+The API returns base64-encoded image data. Extract and decode:
 
-## Presenting Results
+```bash
+# Response contains: {"candidates":[{"content":{"parts":[{"inlineData":{"mimeType":"image/png","data":"BASE64..."}}]}}]}
+# Extract with jq and decode:
+cat response.json | jq -r '.candidates[0].content.parts[] | select(.inlineData) | .inlineData.data' | base64 -d > image.png
+```
 
-After generation completes:
-1. List contents of `./nanobanana-output/` to find generated files
-2. Present the most recent image(s) to the user
-3. Offer to regenerate with variations if needed
+## Common Use Cases
 
-## Refinements and Iterations
+### Landing Pages & Ads
+- Use 16:9 or 21:9 for hero images
+- Specify brand colors, modern/minimal style
+- Include text requirements in prompt
 
-When the user asks for changes:
-- **"Try again" / "Give me options"**: Regenerate with `--count=3`
-- **"Make it more [adjective]"**: Adjust prompt and regenerate
-- **"Edit this one"**: Use `gemini --yolo "/edit nanobanana-output/filename.png 'adjustment'"`
-- **"Different style"**: Add `--styles="requested_style"` to the command
+### Logos & Icons
+- Use 1:1 aspect ratio
+- Request "minimalist", "clean lines", "vector-style"
+- Specify color scheme explicitly
 
-## Prompt Tips
+### Product Photography
+- Describe lighting setup (softbox, natural, studio)
+- Mention surface/background materials
+- Include camera angle and lens type
 
-1. **Be specific**: Include style, mood, colors, composition details
-2. **Add "no text"**: If you don't want text rendered in the image
-3. **Reference styles**: "editorial photography", "flat illustration", "3D render", "watercolor"
-4. **Specify aspect ratio context**: "wide banner", "square thumbnail", "vertical story"
+### Infographics
+- Define data to visualize
+- Specify style (corporate, playful, technical)
+- Request clear text and labeled sections
 
-## Troubleshooting
+### Stickers & Illustrations
+- Request "bold outlines", "kawaii", "cel-shading"
+- Specify "white background" or "transparent background"
+- Define color palette
 
-| Problem | Solution |
-|---------|----------|
-| `GEMINI_API_KEY` not set | `export GEMINI_API_KEY="your-key"` |
-| Extension not found | Run install command from setup section |
-| Quota exceeded | Wait for reset or switch to flash model |
-| Image generation failed | Check prompt for policy violations, simplify request |
-| Output directory missing | Will be created automatically on first run |
+### Character Consistency (Multiple Images)
+- PRO supports up to 14 reference images
+- Explicitly state: "Keep facial features exactly the same as Image 1"
+- Describe expression/pose changes while maintaining identity
+
+## Scripts
+
+See [`scripts/generate-image.sh`](scripts/generate-image.sh) for a ready-to-use generation script.
+
+## Detailed Prompting Guide
+
+For advanced techniques including:
+- Photorealistic scene templates
+- Text rendering best practices  
+- Sequential art and storyboarding
+- Dimensional translation (2D↔3D)
+- Search grounding for real-time data
+
+Read [`references/prompting-guide.md`](references/prompting-guide.md).

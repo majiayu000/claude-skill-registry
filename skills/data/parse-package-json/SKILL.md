@@ -22,6 +22,7 @@ Extract structured data from package.json files for version management, dependen
 Use Read tool to load package.json file.
 
 **Expected Input**:
+
 - `file_path`: Path to package.json (default: `./package.json`)
 
 **Tools Used**: Read
@@ -31,6 +32,7 @@ Use Read tool to load package.json file.
 Parse the JSON content and validate structure.
 
 **Validation**:
+
 - File must be valid JSON
 - Must contain `name` and `version` fields at minimum
 - Dependencies should be objects (if present)
@@ -40,6 +42,7 @@ Parse the JSON content and validate structure.
 Extract relevant fields into structured output.
 
 **Fields to Extract**:
+
 - `version`: Semantic version string
 - `name`: Package name
 - `description`: Package description (optional)
@@ -54,6 +57,7 @@ Extract relevant fields into structured output.
 Return extracted data as JSON object.
 
 **Expected Output**:
+
 ```json
 {
   "version": "0.7.0",
@@ -86,11 +90,13 @@ Return extracted data as JSON object.
 ### Example 1: Extract Version
 
 **Input**:
+
 ```
 file_path: ./package.json
 ```
 
 **Output**:
+
 ```json
 {
   "version": "0.7.0",
@@ -101,11 +107,13 @@ file_path: ./package.json
 ### Example 2: Full Package Info
 
 **Input**:
+
 ```
 file_path: ./packages/client/package.json
 ```
 
 **Output**:
+
 ```json
 {
   "version": "1.2.3",
@@ -124,11 +132,13 @@ file_path: ./packages/client/package.json
 ### Example 3: Error - File Not Found
 
 **Input**:
+
 ```
 file_path: ./nonexistent.json
 ```
 
 **Output**:
+
 ```json
 {
   "error": "package.json not found at ./nonexistent.json",

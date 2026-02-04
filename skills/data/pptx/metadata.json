@@ -1,7 +1,7 @@
 {
   "name": "pptx",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/talk-to-slidev-workflow/.claude/skills/pptx/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:21.532798Z"
+  "repo": "shajith003/awesome-claude-skills",
+  "path": "document-skills/pptx/SKILL.md",
+  "source": "github.com/shajith003/awesome-claude-skills",
+  "downloaded_at": "2026-02-04T05:21:37.977166Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "github-sync",
-  "repo": "arbgjr/satra",
-  "path": ".claude/skills/github-sync/SKILL.md",
-  "source": "github.com/arbgjr/satra",
-  "downloaded_at": "2026-02-02T05:06:50.269826Z"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave-github/skills/github-sync/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:41:11.880296Z"
 }

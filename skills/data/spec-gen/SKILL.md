@@ -106,6 +106,38 @@ Load `.taskmaster/tasks/tasks.json`:
 - Total subtasks (expect 30-60)
 - Dependencies from TaskMaster structure
 
+## Stage 1.5: Load Dependency Documentation (CRITICAL)
+
+**Read captured dependency documentation from discovery:**
+
+```bash
+# Check for dependency documentation
+ls -la docs/discovery/dependencies/
+```
+
+**Load:**
+- `docs/discovery/dependencies/dependency-manifest.yaml` — Version-pinned dependencies
+- `docs/discovery/dependencies/host-systems/*.md` — OS/platform API docs
+- `docs/discovery/dependencies/libraries/*/*.md` — Library-specific documentation
+
+**Extract for each dependency:**
+- Exact version (e.g., `1.6.0` NOT `^1.6.0`)
+- Relevant API methods and signatures
+- Error handling patterns
+- Breaking changes from previous versions
+- Platform-specific requirements (e.g., macOS accessibility permissions)
+
+**CRITICAL:** If dependency documentation is missing, HALT and notify user:
+```
+❌ DEPENDENCY DOCUMENTATION MISSING
+
+OpenSpec proposals require version-pinned dependency documentation.
+Missing: docs/discovery/dependencies/dependency-manifest.yaml
+
+Run Stage 2.4.5: Dependency Documentation Capture in Discovery
+before proceeding with OpenSpec generation.
+```
+
 ## Stage 2: Determine Batching
 
 **Batch by master tasks (5-10 per batch):**
@@ -130,6 +162,10 @@ Load `.taskmaster/tasks/tasks.json`:
    - Test Strategy: From subtask.testStrategy
    - Acceptance Criteria: From subtask.acceptanceCriteria
    - Dependencies: From TaskMaster dependencies
+   - **Dependency Contracts**: From `docs/discovery/dependencies/` (REQUIRED)
+     - Reference exact API versions and methods used
+     - Include platform-specific requirements (e.g., `macos-15.1-accessibility.md`)
+     - Note breaking changes and migration considerations
 
 3. **Update TASKMASTER_OPENSPEC_MAP.md:**
    ```markdown
@@ -274,3 +310,5 @@ When Phase 6 is complete (all proposals created), you MUST:
 - PRD-to-Tasks skill (generates TaskMaster format)
 - TaskMaster documentation (for hierarchical structure)
 - Test Strategy Generator skill (Phase 6.1, auto-enhances proposals)
+- **Discovery Stage 2.4.5** (captures dependency documentation - REQUIRED before OpenSpec)
+- **PRD-AUDIT-FRAMEWORK.md Category XXII** (Dependency Contract Compliance audits)

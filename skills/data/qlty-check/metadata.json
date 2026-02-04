@@ -1,7 +1,7 @@
 {
   "name": "qlty-check",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/qlty-check/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:37.914143Z"
+  "repo": "scooter-lacroix/Maestro",
+  "path": "maestro/skills/quality/qlty-check/SKILL.md",
+  "source": "github.com/scooter-lacroix/Maestro",
+  "downloaded_at": "2026-02-04T03:20:53.567182Z"
 }

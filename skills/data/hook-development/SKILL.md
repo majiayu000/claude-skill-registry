@@ -1,13 +1,7 @@
 ---
-name: Hook Development
+name: hook-development
 description: This skill should be used when the user asks to "create a hook", "add a PreToolUse/PostToolUse/Stop hook", "validate tool use", "implement prompt-based hooks", "use ${CLAUDE_PLUGIN_ROOT}", "set up event-driven automation", "block dangerous commands", or mentions hook events (PreToolUse, PostToolUse, Stop, SubagentStop, SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification). Provides comprehensive guidance for creating and implementing Claude Code plugin hooks with focus on advanced prompt-based hooks API.
-version: 0.1.0
 ---
-
-# SOURCE: anthropics/claude-plugins-official
-# PATH: plugins/plugin-dev/skills/hook-development/SKILL.md
-# DO NOT EDIT: This file is synced from external source
-
 
 # Hook Development for Claude Code Plugins
 

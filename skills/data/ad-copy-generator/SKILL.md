@@ -1,288 +1,497 @@
 ---
-name: ad-copy-generator
-description: Generate high-converting ad copy for Google Ads, Meta (Facebook/Instagram), LinkedIn, and TikTok. Creates multiple variations with A/B testing in mind. Includes headlines, descriptions, CTAs, and platform-specific formats. Use when creating ads, generating ad variations, or A/B testing ad copy.
+name: writing-ad-copy
+description: Creates platform-specific ad copy for paid campaigns with A/B variants. Use when the user asks about ad copy, PPC ads, Google Ads, Facebook ads, LinkedIn ads, or paid campaign copy.
 ---
 
 # Ad Copy Generator
 
-Generate platform-optimized advertising copy with multiple variations for A/B testing.
+## When to use this skill
 
-## Supported Platforms
+- User asks to write ad copy
+- User needs Google Ads headlines
+- User wants Facebook/Instagram ad copy
+- User mentions LinkedIn ads
+- User needs A/B testing variants
 
-| Platform | Ad Types | Key Constraints |
-|----------|----------|-----------------|
-| Google Ads | Search, Display, YouTube | Headlines 30 chars, Descriptions 90 chars |
-| Meta (FB/IG) | Image, Video, Carousel, Stories | Primary text 125 chars, Headline 40 chars |
-| LinkedIn | Sponsored Content, Message Ads, Text Ads | Intro 150 chars, Headline 70 chars |
-| TikTok | In-Feed, TopView, Spark | Text 100 chars, CTA driven |
+## Workflow
 
-## How to Use
+- [ ] Identify platform and campaign goal
+- [ ] Gather offer and audience details
+- [ ] Generate headline variants
+- [ ] Write description/body copy
+- [ ] Create A/B test variations
+- [ ] Validate character limits
 
-### Basic Usage
+## Instructions
 
+### Step 1: Identify Platform Requirements
+
+| Platform           | Headlines      | Description                | Character Limits           |
+| ------------------ | -------------- | -------------------------- | -------------------------- |
+| Google Search      | 3 headlines    | 2 descriptions             | H: 30 chars, D: 90 chars   |
+| Google Display     | 1-5 headlines  | 1-5 descriptions           | H: 30 chars, D: 90 chars   |
+| Facebook/Instagram | 1 primary text | 1 headline + 1 description | Primary: 125, H: 40, D: 30 |
+| LinkedIn           | 1 intro text   | 1 headline                 | Intro: 150, H: 70          |
+| Twitter/X          | 1 ad copy      | —                          | 280 chars total            |
+| TikTok             | 1 ad text      | —                          | 100 chars                  |
+| Microsoft Ads      | 3 headlines    | 2 descriptions             | H: 30 chars, D: 90 chars   |
+| Pinterest          | 1 title        | 1 description              | T: 100, D: 500             |
+
+### Step 2: Campaign Goal Selection
+
+| Goal          | Focus              | CTA Style            |
+| ------------- | ------------------ | -------------------- |
+| Awareness     | Brand, reach       | Learn more, Discover |
+| Consideration | Features, benefits | See how, Find out    |
+| Conversion    | Action, urgency    | Buy now, Get started |
+| Lead gen      | Value exchange     | Download, Get free   |
+| App install   | Features, ratings  | Install, Try free    |
+| Traffic       | Curiosity, value   | Read more, Visit     |
+
+### Step 3: Headline Formulas
+
+**Google Ads headlines (30 characters max):**
+
+| Formula                 | Example                     |
+| ----------------------- | --------------------------- |
+| [Benefit] + [Timeframe] | "Lose 10 Pounds in 30 Days" |
+| [Action] + [Product]    | "Try TaskFlow Free Today"   |
+| [Number] + [Result]     | "50% More Leads Guaranteed" |
+| [Question hook]         | "Still Using Spreadsheets?" |
+| [Problem solver]        | "End Invoice Chaos Now"     |
+| [Social proof]          | "Join 10,000+ Happy Users"  |
+| [Urgency]               | "Sale Ends Tonight"         |
+| [Price/offer]           | "Plans Starting at $9/mo"   |
+
+**Facebook/Instagram headlines (40 characters):**
+
+| Formula                       | Example                         |
+| ----------------------------- | ------------------------------- |
+| [Outcome] Made Easy           | "Email Marketing Made Easy"     |
+| The [Adjective] Way to [Goal] | "The Fastest Way to Learn Code" |
+| [Number] [Audience] Love This | "50K Marketers Love This Tool"  |
+| Stop [Pain], Start [Gain]     | "Stop Guessing, Start Growing"  |
+| Finally, [Solution]           | "Finally, Affordable Design"    |
+
+**LinkedIn headlines (70 characters):**
+
+| Formula                            | Example                               |
+| ---------------------------------- | ------------------------------------- |
+| [Result] for [Audience]            | "Pipeline Growth for B2B Sales Teams" |
+| How [Company Type] [Achieve Goal]  | "How Agencies Scale Without Hiring"   |
+| The [Industry] Guide to [Topic]    | "The Enterprise Guide to AI Adoption" |
+| [Number]+ [Audience] Trust [Brand] | "5,000+ CFOs Trust Our Platform"      |
+
+### Step 4: Body Copy Templates
+
+**Google Ads descriptions (90 characters max):**
+
+```markdown
+**Template 1: Benefit-focused**
+[Key benefit]. [Supporting feature]. [CTA] today.
+Example: "Save 10+ hours weekly on reports. Auto-sync from 50+ sources. Start free trial today."
+
+**Template 2: Problem-solution**
+[Pain point]? [Solution]. [Proof point]. [CTA].
+Example: "Tired of missed deadlines? TaskFlow keeps teams on track. Rated #1 on G2. Try it free."
+
+**Template 3: Offer-focused**
+[Offer]. [What you get]. [Urgency/guarantee]. [CTA].
+Example: "Get 50% off annual plans. All features included. Cancel anytime. Sign up now."
 ```
-Generate 5 Google Ads variations for a project management SaaS targeting startups
+
+**Facebook/Instagram primary text (125 characters optimal):**
+
+```markdown
+**Template 1: Hook + benefit + CTA**
+[Attention hook]
+
+[Key benefit in 1-2 sentences]
+
+[CTA with link]
+
+**Example:**
+Spending hours on social media with nothing to show for it?
+
+Our tool schedules a month of content in 10 minutes.
+
+👉 Try free for 14 days
+
+---
+
+**Template 2: Problem + solution + proof**
+[State the problem]
+
+[Introduce your solution]
+
+[Social proof]
+
+[CTA]
+
+**Example:**
+Creating content is exhausting.
+
+ContentAI writes posts that sound like you—in seconds.
+
+Used by 25,000+ creators.
+
+🚀 Get started free
 ```
 
-```
-Create Meta ad copy for a B2B lead generation campaign about [product]
+**LinkedIn intro text (150 characters optimal):**
+
+```markdown
+**Template 1: Professional pain + solution**
+[Industry pain point] is costing you [what].
+
+[Your solution] helps [audience] [achieve result].
+
+[CTA with value prop]
+
+**Example:**
+Manual reporting is costing your team 15+ hours per week.
+
+DataSync automates dashboards for finance teams—so you can focus on insights.
+
+Download our free ROI calculator →
+
+---
+
+**Template 2: Results-focused**
+[Client type] are seeing [specific result] with [solution].
+
+[Brief explanation of how]
+
+[CTA]
+
+**Example:**
+B2B SaaS companies are seeing 3x pipeline growth with our outbound system.
+
+We combine AI prospecting with human-written sequences.
+
+Book a demo to see your custom plan →
 ```
 
-```
-Write LinkedIn ads for promoting a webinar about [topic]
+### Step 5: A/B Testing Variants
+
+**Create 3-5 variants per element:**
+
+```markdown
+## Headline Variants
+
+**Angle 1: Benefit-focused**
+
+- "Save 10 Hours Every Week"
+- "Get Back Your Evenings"
+- "Work Less, Achieve More"
+
+**Angle 2: Problem-focused**
+
+- "Stop Wasting Time on Reports"
+- "End Spreadsheet Chaos"
+- "Tired of Manual Work?"
+
+**Angle 3: Social proof**
+
+- "Join 10,000+ Happy Teams"
+- "Rated #1 by Analysts"
+- "Trusted by Fortune 500"
+
+**Angle 4: Offer-focused**
+
+- "Start Free—No Card Needed"
+- "Try Premium Free for 30 Days"
+- "50% Off This Week Only"
 ```
 
-### Advanced Usage
+**Description variants:**
 
+```markdown
+## Description Variants
+
+**V1 (Benefit + feature):**
+"Automate your workflow and save 10+ hours per week.
+Integrates with 100+ tools. Start your free trial."
+
+**V2 (Problem + solution):**
+"Stop drowning in manual tasks. Our AI handles the
+boring work so you can focus on growth. Try free."
+
+**V3 (Social proof + CTA):**
+"Trusted by 25,000+ teams worldwide. See why companies
+choose us for workflow automation. Book a demo."
+
+**V4 (Urgency + offer):**
+"Limited time: 50% off all plans. Get started in
+minutes with our no-code setup. Offer ends Friday."
 ```
-Create an A/B test framework with 10 headline variations and 5 description variations for:
-- Product: [description]
-- Target: [audience]
-- Goal: [conversions/awareness/leads]
-- USP: [unique selling point]
+
+### Step 6: Platform-Specific Templates
+
+**Google Responsive Search Ad:**
+
+```markdown
+## Google RSA: [Campaign Name]
+
+### Headlines (15 required, 30 chars each)
+
+1. [Benefit headline]
+2. [Feature headline]
+3. [Brand + product]
+4. [Question hook]
+5. [Social proof]
+6. [Offer/price]
+7. [Urgency]
+8. [Action + benefit]
+9. [Problem solver]
+10. [Outcome focused]
+11. [Keyword insertion: {KeyWord:Default}]
+12. [Location: {LOCATION(City)}]
+13. [Countdown: {COUNTDOWN...}]
+14. [Alternative benefit]
+15. [CTA focused]
+
+### Descriptions (4 required, 90 chars each)
+
+1. [Full benefit + feature + CTA]
+2. [Problem + solution + proof]
+3. [Offer + guarantee + CTA]
+4. [Differentiator + social proof]
+
+### Pin suggestions:
+
+- Pin brand name to H1 or H2
+- Pin primary CTA to D1
 ```
+
+**Facebook/Instagram Ad:**
+
+```markdown
+## Meta Ad: [Campaign Name]
+
+### Primary Text (3 variants)
+
+**V1:**
+[Hook question or statement]
+
+[2-3 lines of benefit copy]
+
+[Social proof if available]
+
+[CTA with emoji] [Link]
+
+**V2:**
+[Problem statement]
+
+[Solution introduction]
+
+[Key differentiator]
+
+[CTA]
+
+**V3:**
+[Story hook]
+
+[Outcome achieved]
+
+[How they can get it too]
+
+[CTA]
+
+### Headlines (5 variants, 40 chars)
+
+1.
+2.
+3.
+4.
+5.
+
+### Descriptions (3 variants, 30 chars)
+
+1.
+2.
+3.
+
+### CTA Button: [Select: Learn More / Sign Up / Shop Now / etc.]
+```
+
+**LinkedIn Ad:**
+
+```markdown
+## LinkedIn Ad: [Campaign Name]
+
+### Intro Text (3 variants, 150 chars optimal)
+
+**V1 (Problem-solution):**
+[Problem] → [Solution] → [CTA]
+
+**V2 (Results-focused):**
+[Result achieved] → [How] → [CTA]
+
+**V3 (Question hook):**
+[Question] → [Answer teaser] → [CTA]
+
+### Headlines (3 variants, 70 chars)
+
+1.
+2.
+3.
+
+### CTA: [Select from LinkedIn options]
+```
+
+### Step 7: Emotional Triggers
+
+**Power words by emotion:**
+
+| Emotion      | Words                                          |
+| ------------ | ---------------------------------------------- |
+| Urgency      | Now, today, limited, fast, instant, hurry      |
+| Exclusivity  | Secret, insider, VIP, exclusive, members-only  |
+| Fear of loss | Don't miss, last chance, before it's gone      |
+| Trust        | Proven, guaranteed, certified, secure, trusted |
+| Curiosity    | Discover, reveal, unlock, hidden, surprising   |
+| Savings      | Free, save, discount, deal, bonus, extra       |
+| Results      | Boost, increase, grow, double, transform       |
+
+### Step 8: CTA Best Practices
+
+**CTAs by platform:**
+
+| Platform  | Strong CTAs                                 |
+| --------- | ------------------------------------------- |
+| Google    | Get Quote, Shop Now, Learn More, Start Free |
+| Facebook  | Shop Now, Learn More, Sign Up, Get Offer    |
+| Instagram | Shop Now, Learn More, Swipe Up              |
+| LinkedIn  | Learn More, Download, Sign Up, Request Demo |
+| Twitter   | Learn More, Shop, Sign Up                   |
+
+**CTA formulas:**
+
+| Pattern               | Example                       |
+| --------------------- | ----------------------------- |
+| Action + benefit      | "Get your free guide"         |
+| Action + urgency      | "Claim your spot now"         |
+| Action + low friction | "Start free—no card required" |
+| Action + specificity  | "Book your 15-min demo"       |
+
+### Step 9: Compliance Checklist
+
+**Before publishing:**
+
+- [ ] No trademarked terms (unless authorized)
+- [ ] No superlatives without proof ("best", "fastest")
+- [ ] No misleading claims or fake urgency
+- [ ] Landing page matches ad promise
+- [ ] Proper disclosures for offers/pricing
+- [ ] No prohibited content per platform
+- [ ] Dynamic insertions have fallback text
+- [ ] Character limits respected
+
+**Platform-specific rules:**
+
+| Platform | Key Restrictions                               |
+| -------- | ---------------------------------------------- |
+| Google   | No exclamation marks in headlines, no ALL CAPS |
+| Facebook | 20% text rule for images relaxed but minimized |
+| LinkedIn | Professional tone, no clickbait                |
+| All      | No deceptive claims, landing page relevance    |
+
+### Step 10: Performance Optimization Notes
+
+**Test priority order:**
+
+1. Headlines (biggest impact)
+2. Primary CTA
+3. Offer/value proposition
+4. Description copy
+5. Visual elements (separate from copy)
+
+**Metrics to track:**
+
+| Metric                 | Meaning                        |
+| ---------------------- | ------------------------------ |
+| CTR                    | Ad relevance and appeal        |
+| Conversion rate        | Landing page + offer alignment |
+| CPC                    | Auction competitiveness        |
+| Quality Score (Google) | Ad relevance + experience      |
+| Relevance Score (Meta) | Audience targeting fit         |
 
 ## Output Format
 
-### Google Ads (Responsive Search Ads)
+```markdown
+## Ad Copy: [Campaign/Product Name]
 
-```
-CAMPAIGN: [Campaign Name]
-TARGET AUDIENCE: [Description]
-GOAL: [Conversions/Clicks/Awareness]
-
-HEADLINES (15 required, 30 chars max each):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Value Props (5):
-1. [Headline] (XX chars)
-2. [Headline] (XX chars)
-...
-
-Features (5):
-6. [Headline] (XX chars)
-...
-
-Social Proof (3):
-11. [Headline] (XX chars)
-...
-
-CTAs (2):
-14. [Headline] (XX chars)
-15. [Headline] (XX chars)
-
-DESCRIPTIONS (4 required, 90 chars max each):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-D1: [Primary value prop + CTA] (XX chars)
-D2: [Feature list + differentiator] (XX chars)
-D3: [Social proof + urgency] (XX chars)
-D4: [Backup generic] (XX chars)
-
-RECOMMENDED PINNING:
-- Pin H1 to Position 1: [Best headline]
-- Pin D1 to Position 1: [Best description]
-```
-
-### Meta Ads (Facebook/Instagram)
-
-```
-CAMPAIGN: [Campaign Name]
-OBJECTIVE: [Traffic/Conversions/Lead Gen]
-PLACEMENT: [Feed/Stories/Reels]
-
-VARIATION 1:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Primary Text (125 chars for above-fold):
-[Copy that hooks immediately]
-
-Headline (40 chars):
-[Benefit-focused headline]
-
-Description (30 chars, optional):
-[Supporting text]
-
-CTA Button: [Learn More / Sign Up / Shop Now / Get Quote]
-
-Full Primary Text (if needed):
-[Expanded copy for longer format]
+**Platform:** [Google/Facebook/LinkedIn/etc.]
+**Goal:** [Awareness/Consideration/Conversion]
+**Target audience:** [Who this is for]
+**Offer:** [What you're promoting]
 
 ---
-VARIATION 2:
-[Same structure...]
 
-A/B TEST RECOMMENDATION:
-- Test 1: Headline A vs B (same primary)
-- Test 2: Primary text short vs long
-- Test 3: Different CTAs
-```
+### Headlines (A/B Variants)
 
-### LinkedIn Ads
+1. [Headline 1]
+2. [Headline 2]
+3. [Headline 3]
+4. [Headline 4]
+5. [Headline 5]
 
-```
-CAMPAIGN: [Campaign Name]
-FORMAT: [Single Image / Carousel / Video / Message]
-AUDIENCE: [Job titles, industries, company size]
+### Descriptions / Body Copy (A/B Variants)
 
-VARIATION 1:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Introductory Text (150 chars for preview):
-[Hook that resonates with professionals]
+**V1:**
+[Full copy]
 
-Full Intro (600 chars max):
-[Expanded professional copy]
+**V2:**
+[Full copy]
 
-Headline (70 chars):
-[Clear value proposition]
+**V3:**
+[Full copy]
 
-CTA: [Learn More / Download / Register / Request Demo]
+### CTA
+
+Primary: [CTA button/text]
+Secondary: [If applicable]
 
 ---
-VARIATION 2:
-[Same structure...]
+
+### Character Count Validation
+
+| Element     | Limit | V1  | V2  | V3  |
+| ----------- | ----- | --- | --- | --- |
+| Headline    | [X]   | ✓/✗ | ✓/✗ | ✓/✗ |
+| Description | [X]   | ✓/✗ | ✓/✗ | ✓/✗ |
+
+### Testing Notes
+
+- Test [element] against [element]
+- Primary hypothesis: [What you expect to win]
 ```
 
-## Copywriting Frameworks
+## Validation
 
-### AIDA (Awareness → Interest → Desire → Action)
-```
-Headline: [Attention-grabbing statement]
-Body: [Build interest with benefits]
-Desire: [Create want with proof/urgency]
-CTA: [Clear action step]
-```
+Before completing:
 
-### PAS (Problem → Agitate → Solution)
-```
-Problem: [State the pain point]
-Agitate: [Make it worse/urgent]
-Solution: [Your product as the answer]
-```
+- [ ] Character limits met for all elements
+- [ ] At least 3-5 headline variants
+- [ ] At least 2-3 description variants
+- [ ] CTA included and appropriate
+- [ ] No policy-violating content
+- [ ] Clear value proposition
+- [ ] Matches landing page messaging
+- [ ] Testing recommendations provided
 
-### 4Ps (Promise → Picture → Proof → Push)
-```
-Promise: [What you'll deliver]
-Picture: [Paint the transformed state]
-Proof: [Evidence it works]
-Push: [Urgency to act now]
-```
+## Error Handling
 
-### Before-After-Bridge
-```
-Before: [Current painful state]
-After: [Desired future state]
-Bridge: [Your solution gets them there]
-```
+- **No platform specified**: Ask which platform(s); provide Google + Meta templates as default.
+- **Exceeds character limits**: Shorten while preserving meaning; suggest alternate wording.
+- **No clear offer**: Ask what the user wants prospects to do (buy, sign up, download).
+- **Generic copy**: Add specific numbers, outcomes, or differentiators.
+- **Missing audience**: Ask who the ideal customer is to tailor messaging.
 
-## Platform-Specific Best Practices
+## Resources
 
-### Google Ads
-- Include keywords in headlines (improves Quality Score)
-- Use numbers and stats ("Save 50%", "10x Faster")
-- Include brand name in at least 2 headlines
-- Use power words: Free, New, Exclusive, Limited, Proven
-- Always include CTA: Get, Try, Start, Discover, Learn
-
-### Meta Ads
-- Hook in first 3 words (most scroll quickly)
-- Use emojis sparingly for B2C, avoid for B2B
-- Ask questions to increase engagement
-- Social proof performs well (X customers trust us)
-- Video: Hook in first 3 seconds
-
-### LinkedIn Ads
-- Professional tone, but not boring
-- Lead with value, not sales pitch
-- Industry-specific language builds credibility
-- Stats and data resonate with B2B audience
-- Thought leadership angle often outperforms direct sales
-
-### TikTok Ads
-- Casual, authentic tone (not corporate)
-- Hook in first 1-2 seconds
-- Trending sounds/formats increase reach
-- User-generated content style performs best
-- Strong CTA at the end
-
-## A/B Testing Strategy
-
-### Variables to Test
-
-**Headlines**:
-1. Question vs. Statement
-2. Benefit-led vs. Feature-led
-3. With numbers vs. Without
-4. Short vs. Long
-5. Emotional vs. Rational
-
-**Primary Text**:
-1. Short (1-2 sentences) vs. Long (paragraph)
-2. Problem-focused vs. Solution-focused
-3. First person vs. Second person
-4. With social proof vs. Without
-5. With urgency vs. Without
-
-**CTAs**:
-1. Direct ("Buy Now") vs. Soft ("Learn More")
-2. Benefit-based ("Get Your Free Trial") vs. Action-based ("Start Now")
-
-### Testing Protocol
-1. Test one variable at a time
-2. Run for minimum 7 days or 1000 impressions
-3. 95% statistical significance before declaring winner
-4. Document all tests and results
-5. Apply learnings to future campaigns
-
-## Example Output
-
-**Input**: "Create Google Ads for a CRM software targeting small business owners"
-
-**Output**:
-
-```
-CAMPAIGN: CRM-SMB-Search
-TARGET: Small business owners, 5-50 employees
-GOAL: Free trial signups
-
-HEADLINES (30 chars max):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Value Props:
-1. Grow Sales 3x Faster (20 chars)
-2. Never Lose a Lead Again (22 chars)
-3. CRM Built for Small Biz (23 chars)
-4. Close Deals 50% Faster (21 chars)
-5. Your Sales, Organized (19 chars)
-
-Features:
-6. Easy CRM - No Training (22 chars)
-7. All-in-One Sales Tool (20 chars)
-8. Mobile CRM App Included (23 chars)
-9. Email + Phone + Tasks (20 chars)
-10. Integrates with Gmail (20 chars)
-
-Social Proof:
-11. 10,000+ Businesses Trust Us (26 chars)
-12. 4.9★ Rating on G2 (16 chars)
-13. #1 CRM for Small Teams (21 chars)
-
-CTAs:
-14. Start Free Trial Today (21 chars)
-15. Try Free for 14 Days (19 chars)
-
-DESCRIPTIONS (90 chars max):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-D1: Simple CRM that helps small businesses close more deals. Start your free trial today. (88 chars)
-D2: Track leads, manage contacts, and grow revenue. No complex setup. Works in minutes. (83 chars)
-D3: Join 10,000+ small businesses. 4.9★ rated. Cancel anytime. Get started free. (76 chars)
-D4: The CRM designed for growing businesses. Affordable plans starting at $29/mo. (77 chars)
-
-RECOMMENDED PINNING:
-- Pin "CRM Built for Small Biz" to Position 1
-- Pin D1 to Position 1
-```
-
-## Integration
-
-Works well with:
-- **keyword-cluster-builder** - Find keywords to include in ad copy
-- **competitive-ads-extractor** - Analyze competitor ad strategies
-- **landing-page-copywriter** - Create matching landing page copy
-- **social-media-analyzer** - Measure ad performance
+- [Google Ads Policies](https://support.google.com/adspolicy) - Compliance guidelines
+- [Facebook Ad Library](https://www.facebook.com/ads/library) - Competitor research
+- [SparkToro](https://sparktoro.com/) - Audience research
+- [Hemingway Editor](https://hemingwayapp.com/) - Readability check

@@ -1,88 +1,57 @@
 ---
 name: jq
-description: JSON processor for filtering, transforming, and manipulating JSON data in command line.
+description: Extract specific fields from JSON files efficiently using jq instead of reading entire files, saving 80-95% context.
 ---
 
-# jq — JSON Processor
+# jq: JSON Data Extraction Tool
 
-**Basic Operations**
+Use jq to extract specific fields from JSON files without loading entire file contents into context.
 
-```bash
-# Pretty-print JSON
-jq '.' file.json
+## When to Use jq vs Read
 
-# Filter specific field
-jq '.fieldName' file.json
+**Use jq when:**
+- Need specific field(s) from structured data file
+- File is large (>50 lines) and only need subset
+- Querying nested structures
+- Filtering/transforming data
+- **Saves 80-95% context** vs reading entire file
 
-# Filter array element by index
-jq '.[index]' file.json
+**Just use Read when:**
+- File is small (<50 lines)
+- Need to understand overall structure
+- Making edits (need full context anyway)
 
-# Output all elements from arrays
-jq '.[*]' file.json
+## Common File Types
 
-# Parse from stdin
-cat file.json | jq '.fieldName'
+JSON files where jq excels:
+- package.json, tsconfig.json
+- Lock files (package-lock.json, yarn.lock in JSON format)
+- API responses
+- Configuration files
 
-# Load JSON from URL
-curl -s "http://example.com/file.json" | jq '.fieldName'
-```
-
-**Filtering & Transformation**
-
-```bash
-# Select multiple fields
-jq '{field1: .field1, field2: .field2}' file.json
-
-# Query nested data
-jq '.outerField.innerField' file.json
-
-# Filter by condition
-jq 'select(.fieldName == "value")' file.json
-
-# Modify field value
-jq '.fieldName = "newValue"' file.json
-
-# Delete a field
-jq 'del(.fieldName)' file.json
-```
-
-**Array Operations**
+## Quick Examples
 
 ```bash
-# Count elements
-jq '.arrayName | length' file.json
+# Get version from package.json
+jq -r .version package.json
 
-# Apply function to each element
-jq '.arrayName[] | .fieldName' file.json
+# Get nested dependency version
+jq -r '.dependencies.react' package.json
 
-# First element
-jq '.[0]' file.json
-
-# First element's key
-jq '.[0].key_name' file.json
+# List all dependencies
+jq -r '.dependencies | keys[]' package.json
 ```
 
-**Advanced**
+## Core Principle
 
-```bash
-# Concatenate fields
-jq '.field1 + " " + .field2' file.json
+Extract exactly what is needed in one command - massive context savings compared to reading entire files.
 
-# Group by field
-jq 'group_by(.fieldName)' file.json
+## Detailed Reference
 
-# Sort by field
-jq 'sort_by(.fieldName)' file.json
-
-# Find unique values
-jq 'unique' file.json
-
-# Print keys and values
-jq 'to_entries | .[] | "\(.key): \(.value)"' file.json
-
-# Combine two JSON files
-jq -s '.[0] + .[1]' file1.json file2.json
-
-# Compact output (no whitespace)
-jq -c '.' file.json
-```
+For comprehensive jq patterns, syntax, and examples, load [jq guide](./reference/jq-guide.md):
+- Core patterns (80% of use cases)
+- Real-world workflows
+- Advanced patterns
+- Pipe composition
+- Error handling
+- Integration with other tools

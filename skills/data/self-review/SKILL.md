@@ -1,187 +1,34 @@
 ---
 name: self-review
-description: タスク完了前のセルフレビュー。Gemini CLI + Claude subagentで多角的に検証。
+description: Scale review effort to task complexity
+user-invocable: false
+model: sonnet
 ---
 
-# Self Review Skill
+# Adaptive Review
 
-タスク完了マーク（TodoWrite completed）の前に実行するセルフレビュー手順。
+Scale your effort to the task. Don't over-review trivial changes, don't under-review critical ones.
 
-## トリガー条件
+## Effort Levels
 
-以下の場合にこのスキルを適用:
-- TodoWriteでタスクを `completed` にマークする直前
-- ユーザーから `/self-review` コマンドで明示的に呼び出された場合
+| Task Type | Review Depth |
+|-----------|--------------|
+| Typo, one-liner | Does it work? Ship it. |
+| Feature, component | Build + types + looks right |
+| Architecture, refactor | All above + system impact + docs |
 
-## レビュー手順
+## Quick Check
 
-### Phase 1: 変更差分の収集
+After any change:
+1. `npm run typecheck && npm run build` - must pass
+2. Does it solve the problem? (not just technically correct)
+3. Would I approve this PR?
 
-```bash
-# 変更されたファイル一覧
-git diff --name-only HEAD
+If yes to all, move on.
 
-# 変更内容の取得
-git diff HEAD
-```
+## When to Dig Deeper
 
-### Phase 2: Gemini CLI レビュー（外部モデル視点）
+**More review:** Money, security, user data, unfamiliar code
+**Less review:** Isolated changes, low risk, well-understood code
 
-変更されたDartファイルに対してGemini CLIでレビューを実行:
-
-```bash
-git diff HEAD -- "*.dart" | gemini -p "
-以下のコード変更をレビューしてください。
-
-## 観点（すべてチェック）
-
-### 1. コード品質
-- 可読性（理解しやすいか）
-- 命名（適切な変数名・関数名）
-- 構造化（適切な分割・責務分離）
-
-### 2. バグ・エラー
-- null安全性
-- エッジケース
-- 例外処理
-- メモリリーク
-
-### 3. 設計パターン
-- アーキテクチャ整合性
-- 依存関係の適切さ
-- 重複コード
-
-## 出力形式
-- 重大な問題: [ファイル:行] [問題の説明と修正提案]
-- 軽微な問題: [ファイル:行] [問題の説明]
-- 問題なし: 'LGTM'
-
-日本語で回答してください。
-"
-```
-
-### Phase 3: Claude subagent レビュー（別コンテキスト視点）
-
-Task toolで別コンテキストのレビューエージェントを起動:
-
-```
-subagent_type: general-purpose
-
-プロンプト例:
----
-以下のコード変更をレビューしてください。
-
-## 変更ファイル
-[git diff --name-only HEADの結果]
-
-## 変更内容
-[git diff HEADの結果]
-
-## レビュー観点（すべてチェック）
-
-### 共通観点
-1. コード品質（可読性、命名、構造化）
-2. バグ・エラー（null安全性、エッジケース、例外処理、メモリリーク）
-3. 設計パターン（アーキテクチャ整合性、依存関係、重複コード）
-
-### プロジェクト固有観点
-4. 命名規則（ファイル: snake_case、クラス: PascalCase、変数/関数: camelCase）
-5. アーキテクチャパターン（features/*/data/models/, repositories/, providers/, ui/）
-6. Flutter固有（Semantics対応、Riverpod AsyncNotifier使用）
-
-## 出力形式
-- 重大な問題: [ファイル:行] [問題の説明と修正提案]
-- 軽微な問題: [ファイル:行] [問題の説明]
-- 問題なし: 'LGTM'
-
-日本語で回答してください。
----
-```
-
-### Phase 4: 結果統合・比較
-
-両方のレビュー結果を統合し、判定:
-
-| 判定 | 条件 | アクション |
-|------|------|----------|
-| PASS | 両方LGTM | タスク完了可 |
-| MINOR | 軽微な問題のみ | 警告表示後、タスク完了可 |
-| FAIL | 重大な問題あり | 修正タスク追加、再レビュー必要 |
-
-### Phase 5: フィードバックループ
-
-FAIL判定の場合:
-1. 問題箇所を修正
-2. Phase 1-4 を再実行
-3. PASSになるまで繰り返し
-
-## レビュー観点チェックリスト
-
-### コード品質
-
-- [ ] 関数が単一責任原則に従っているか
-- [ ] 適切なエラーハンドリングがあるか
-- [ ] コメントは必要最小限で明確か
-- [ ] マジックナンバーが定数化されているか
-
-### バグ・エラー
-
-- [ ] null許容型の安全な扱い
-- [ ] 非同期処理のエラーハンドリング
-- [ ] リソースの適切な解放（dispose）
-- [ ] 境界値・エッジケースの考慮
-
-### 設計パターン
-
-- [ ] プロジェクト構造に従っているか
-- [ ] 既存のユーティリティ/ヘルパーを活用しているか
-- [ ] 重複コードがないか
-- [ ] テストしやすい設計か
-
-### プロジェクト固有
-
-- [ ] ファイル名: snake_case
-- [ ] クラス名: PascalCase
-- [ ] 変数/関数: camelCase
-- [ ] Semantics対応（E2Eテスト用）
-- [ ] Riverpod AsyncNotifierの適切な使用
-
-## 出力テンプレート
-
-```markdown
-## Self Review Result
-
-### Gemini Review (外部モデル)
-[Geminiからの出力]
-
-### Claude subagent Review (別コンテキスト)
-[subagentからの出力]
-
-### 比較分析
-- 共通の指摘: [両方が指摘した問題]
-- Geminiのみの指摘: [Geminiだけが発見した問題]
-- subagentのみの指摘: [subagentだけが発見した問題]
-
-### 判定: [PASS/MINOR/FAIL]
-
-#### 問題点（該当する場合）
-- [ ] [ファイル:行] [問題の説明]
-
-#### 次のアクション
-- [タスク完了 / 修正必要]
-```
-
-## 変更規模による調整
-
-全タスクで完全なデュアルレビューを実行すると時間がかかる場合:
-
-```bash
-# 変更行数で判定
-git diff --stat HEAD | tail -1
-```
-
-| 変更規模 | 行数目安 | レビュー方法 |
-|---------|---------|-------------|
-| 小 | ~30行 | Gemini CLIのみ（軽量） |
-| 中 | 31-100行 | デュアルレビュー |
-| 大 | 100行以上 | デュアルレビュー + 詳細分析 |
+→ For detailed verification workflow, use `verify` command.

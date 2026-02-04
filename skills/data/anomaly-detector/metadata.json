@@ -1,7 +1,7 @@
 {
   "name": "anomaly-detector",
-  "repo": "anton-abyzov/specweave",
-  "path": "plugins/specweave-ml/skills/anomaly-detector/SKILL.md",
-  "source": "github.com/anton-abyzov/specweave",
-  "downloaded_at": "2026-01-31T03:21:10.417311Z"
+  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+  "path": "planned-skills/generated/12-data-analytics/anomaly-detector/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-04T02:19:09.050748Z"
 }

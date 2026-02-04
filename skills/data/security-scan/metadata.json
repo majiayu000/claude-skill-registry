@@ -1,7 +1,7 @@
 {
   "name": "security-scan",
-  "repo": "muyen/vibe-to-prod",
-  "path": ".claude/skills/security-scan/SKILL.md",
-  "source": "github.com/muyen/vibe-to-prod",
-  "downloaded_at": "2026-02-02T03:24:57.120589Z"
+  "repo": "manastalukdar/claude-devstudio",
+  "path": "skills/security-scan/SKILL.md",
+  "source": "github.com/manastalukdar/claude-devstudio",
+  "downloaded_at": "2026-02-04T04:14:26.475323Z"
 }

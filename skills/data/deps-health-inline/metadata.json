@@ -1,13 +1,7 @@
 {
   "name": "deps-health-inline",
-  "description": "Inline orchestration workflow for dependency audit and updates. Provides step-by-step phases for dependency-auditor detection, priority-based updates with dependency-updater, and verification cycles.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "productivity",
-  "tags": [
-    "deps",
-    "health",
-    "inline"
-  ],
-  "stars": 27,
-  "source": "SkillsMP Synced Skills"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/deps-health-inline/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:11.018564Z"
 }

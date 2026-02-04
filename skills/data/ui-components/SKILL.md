@@ -1,121 +1,48 @@
 ---
 name: ui-components
-description: UI component generation patterns for IntelliFill. Replaces magic/21st.dev MCP to save ~3.4k tokens.
+description: Enforces project UI component conventions when creating or modifying React components, forms, dialogs, and other UI elements. This skill ensures consistent patterns for Radix UI integration, form handling with TanStack Form, test IDs, accessibility, and component composition.
 ---
 
-# UI Components
+# UI Components Skill
 
-This skill covers component creation patterns for IntelliFill's React frontend. It replaces the 21st.dev/magic MCP server with lazy-loaded guidance.
+## Purpose
 
-## When I Need This
+This skill enforces the project UI component conventions automatically during UI development. It ensures consistent patterns for Radix UI integration, form handling with TanStack Form, test ID generation, accessibility, and component composition.
 
-- Creating new React components
-- Building forms with validation
-- Adding modal dialogs
-- Creating data tables
-- Implementing loading states
+## Activation
 
-## Component Stack
+This skill activates when:
 
-IntelliFill uses: React 18, Radix UI, TailwindCSS 4.0, CVA for variants, Zustand for state.
+- Creating new components in `src/components/`
+- Working with Radix UI primitives
+- Implementing forms with TanStack Form
+- Building dialogs, dropdowns, or other interactive UI
+- Working with UI component variants using CVA
 
-## File Location
+## Workflow
 
-New components go in `quikadmin-web/src/components/` with structure:
-```
-components/
-├── ui/           # Base primitives (Button, Input, Dialog)
-├── forms/        # Form-related (ProfileForm, UploadForm)
-├── documents/    # Document-specific (DocumentList, DocumentViewer)
-└── layout/       # Layout (Sidebar, Header, ProtectedRoute)
-```
+1. Detect UI component work (file path contains `components/` or imports from Radix/form libraries)
+2. Load `references/UI-Components-Conventions.md`
+3. Also apply `react-coding-conventions` skill
+4. Generate/modify code following all conventions
+5. Scan for violations of UI patterns
+6. Auto-fix all violations (no permission needed)
+7. Report fixes applied
 
-## Component Template
+## Key Patterns
 
-```tsx
-// quikadmin-web/src/components/ui/ComponentName.tsx
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+- Use arrow function components with named exports (`export const Button = () => {}`)
+- Use `ComponentProps<'element'>` with `ComponentTestIdProps` for type definitions
+- Include `data-slot` attribute on every component element
+- Include `data-testid` using `generateTestId()` from `@/lib/test-ids`
+- Use `is` prefix for boolean props (`isLoading`, `isDisabled`, `isCondition`)
+- Use Radix UI primitives for accessible components
+- Use TanStack Form hooks (`useFieldContext`, `useFormContext`) for form handling
+- Use CVA for component variants
+- Use `$path` from next-typesafe-url for links
+- Use `cn` from `@/utils/tailwind-utils` for class merging
+- Use `Conditional` component with `isCondition` prop for conditional rendering
 
-const componentVariants = cva(
-  'base-classes-here',
-  {
-    variants: {
-      variant: {
-        default: 'variant-default-classes',
-        secondary: 'variant-secondary-classes',
-      },
-      size: {
-        sm: 'text-sm px-2 py-1',
-        md: 'text-base px-4 py-2',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md',
-    },
-  }
-);
+## References
 
-interface Props extends VariantProps<typeof componentVariants> {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export function ComponentName({ variant, size, className, children }: Props) {
-  return (
-    <div className={cn(componentVariants({ variant, size }), className)}>
-      {children}
-    </div>
-  );
-}
-```
-
-## Common Patterns
-
-### Form Field
-```tsx
-<div className="space-y-2">
-  <Label htmlFor="field">Label</Label>
-  <Input id="field" placeholder="Placeholder" {...register('field')} />
-  {errors.field && <p className="text-sm text-red-500">{errors.field.message}</p>}
-</div>
-```
-
-### Modal Dialog
-```tsx
-<Dialog open={open} onOpenChange={setOpen}>
-  <DialogTrigger asChild>
-    <Button>Open</Button>
-  </DialogTrigger>
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle>Title</DialogTitle>
-      <DialogDescription>Description</DialogDescription>
-    </DialogHeader>
-    {/* Content */}
-    <DialogFooter>
-      <Button onClick={() => setOpen(false)}>Close</Button>
-    </DialogFooter>
-  </DialogContent>
-</Dialog>
-```
-
-### Loading State
-```tsx
-{isLoading ? (
-  <div className="flex items-center justify-center p-8">
-    <Loader2 className="h-8 w-8 animate-spin text-primary" />
-  </div>
-) : (
-  <>{/* Content */}</>
-)}
-```
-
-## Existing UI Components
-
-Check `quikadmin-web/src/components/ui/` for existing primitives before creating new ones. We have: Button, Input, Label, Dialog, Select, Card, Table, Tabs, Toast.
-
-## For Inspiration
-
-If you need design inspiration for a component, use Web Search to find examples or check the existing components in the codebase first.
+- `references/UI-Components-Conventions.md` - Complete UI component conventions

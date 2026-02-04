@@ -1,7 +1,7 @@
 {
   "name": "web-design-guidelines",
-  "repo": "seanchiuai/claude-web-template",
-  "path": ".claude/skills/web-design-guidelines/SKILL.md",
-  "source": "github.com/seanchiuai/claude-web-template",
-  "downloaded_at": "2026-02-02T04:59:25.335902Z"
+  "repo": "kimny1143/claude-code-template",
+  "path": ".agents/skills/web-design-guidelines/SKILL.md",
+  "source": "github.com/kimny1143/claude-code-template",
+  "downloaded_at": "2026-02-04T05:19:03.004760Z"
 }

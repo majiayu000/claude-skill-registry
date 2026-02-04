@@ -145,13 +145,9 @@ ln-110-project-docs-coordinator (this skill)
 - `ln-115-devops-docs-creator` if hasDocker
 
 **Delegation Pattern:**
-```
-For each worker:
-  1. Invoke Skill tool with skill name
-  2. Pass Context Store and flags
-  3. Wait for completion
-  4. Collect result (created, skipped, tbd_count, validation)
-```
+- Pass Context Store and flags to workers via direct Skill tool invocation
+- Wait for completion
+- Collect result (created, skipped, tbd_count, validation)
 
 ### Phase 3: Aggregate Results
 

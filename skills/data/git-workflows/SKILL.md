@@ -1,229 +1,241 @@
 ---
-name: git-workflows
-description: Execute git operations using Conventional Commits format with proper branching strategies and safe workflows. Use when making commits, managing branches, or performing git operations.
+name: gitworfkflows
+description: Git workflows including branching strategies, commits, merging, rebasing, and GitHub collaboration. Activate for git commands, version control, PRs, and repository management.
+allowed-tools:
+  - Bash
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
 ---
 
 # Git Workflows Skill
 
-## When to Activate
+Provides comprehensive Git version control capabilities for the Golden Armada AI Agent Fleet Platform.
 
-Activate this skill when:
-- Making git commits
-- Creating or merging branches
-- Initializing repositories
-- Resolving merge conflicts
-- Reviewing git history
+## When to Use This Skill
 
-## Conventional Commits Format
-
-```
-<type>: <brief description>
-
-<optional body>
-
-<optional footer>
-```
-
-### Commit Types
-
-| Type | Purpose | Example |
-|------|---------|---------|
-| `feat` | New feature | `feat: Add user authentication` |
-| `fix` | Bug fix | `fix: Correct validation error` |
-| `docs` | Documentation | `docs: Update README` |
-| `style` | Code formatting | `style: Format with Black` |
-| `refactor` | Code restructure | `refactor: Extract helper function` |
-| `test` | Add/modify tests | `test: Add auth tests` |
-| `chore` | Maintenance | `chore: Update dependencies` |
-| `perf` | Performance | `perf: Optimize query speed` |
+Activate this skill when working with:
+- Git commands and operations
+- Branching strategies
+- Commit management
+- Pull requests and merges
+- Repository configuration
 
 ## Quick Reference
 
-```bash
-# Check status
+### Basic Commands
+\`\`\`bash
+# Status and info
 git status
-git diff --stat
+git log --oneline -10
+git diff
+git diff --staged
 
-# Stage and commit
+# Staging
+git add <file>
 git add .
-git commit -m "feat: add new feature"
+git add -p              # Interactive staging
 
-# View history
-git log --oneline -5
-git log --graph --oneline --all
+# Committing
+git commit -m "message"
+git commit -am "message"  # Add and commit
+git commit --amend
 
-# Undo operations
-git restore <file>              # Discard changes
-git restore --staged <file>     # Unstage
-git reset HEAD~1                # Undo last commit (keep changes)
-```
+# Branching
+git branch
+git branch <name>
+git checkout <branch>
+git checkout -b <branch>
+git switch <branch>
+git switch -c <branch>
 
-## Commit Examples
+# Merging
+git merge <branch>
+git merge --no-ff <branch>
+git rebase <branch>
 
-### Feature
-```bash
-git commit -m "feat: Add dark mode toggle
+# Remote
+git fetch
+git pull
+git push
+git push -u origin <branch>
+\`\`\`
 
-- Implement theme switching logic
-- Add localStorage persistence
-- Update CSS variables"
-```
+## Branching Strategy (Git Flow)
 
-### Bug Fix
-```bash
-git commit -m "fix: Correct timezone handling bug
-
-Fixes off-by-one error in date calculations.
-
-Closes #123"
-```
-
-### Breaking Change
-```bash
-git commit -m "feat!: Replace XML config with YAML
-
-BREAKING CHANGE: XML configuration no longer supported.
-See docs/migration.md for upgrade instructions."
-```
-
-## Branching Strategy
-
-### Feature Branches
-```bash
-# Create and switch
-git checkout -b feature/user-auth
-
-# Work and commit
-git add .
-git commit -m "feat: add JWT authentication"
-
-# Merge back
-git checkout main
-git merge feature/user-auth
-git branch -d feature/user-auth
-```
+\`\`\`
+main          ─────●─────────────●─────────────●───────
+                   │             │             │
+release       ─────┼─────●───────┼─────────────┼───────
+                   │     │       │             │
+develop       ─────●─────┼───────●─────────────●───────
+                   │     │       │             │
+feature       ─────●─────┘       │             │
+                                 │             │
+hotfix        ───────────────────●─────────────┘
+\`\`\`
 
 ### Branch Naming
-```
-feature/feature-name    # New features
-fix/bug-description     # Bug fixes
-experiment/new-idea     # Experiments
-release/v1.0.0          # Releases
-```
+\`\`\`bash
+# Features
+feature/add-agent-api
+feature/GA-123-user-auth
 
-## Repository Setup
+# Bugfixes
+bugfix/fix-agent-timeout
+bugfix/GA-456-memory-leak
 
-```bash
-# Initialize new repo
-git init
+# Hotfixes
+hotfix/critical-security-patch
 
-# Create .gitignore
-cat > .gitignore << 'EOF'
-secrets.json
-*.log
-__pycache__/
-.DS_Store
-.venv/
-node_modules/
-.env
-EOF
+# Releases
+release/v1.0.0
+\`\`\`
 
-# Initial commit
+## Commit Message Convention
+
+\`\`\`bash
+# Format
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+
+# Types
+feat:     New feature
+fix:      Bug fix
+docs:     Documentation
+style:    Formatting (no code change)
+refactor: Code refactoring
+test:     Adding tests
+chore:    Maintenance
+
+# Examples
+git commit -m "feat(agent): add Claude agent support"
+git commit -m "fix(api): resolve timeout in task processing"
+git commit -m "docs: update deployment instructions"
+\`\`\`
+
+## Common Workflows
+
+### Start Feature
+\`\`\`bash
+git checkout develop
+git pull origin develop
+git checkout -b feature/new-feature
+# ... work ...
 git add .
-git commit -m "chore: initialize repository"
-```
+git commit -m "feat: implement new feature"
+git push -u origin feature/new-feature
+# Create PR to develop
+\`\`\`
 
-## Stashing Changes
+### Sync Feature Branch
+\`\`\`bash
+git checkout develop
+git pull origin develop
+git checkout feature/my-feature
+git rebase develop
+# Resolve conflicts if any
+git push --force-with-lease
+\`\`\`
 
-```bash
-# Stash current work
-git stash push -m "WIP: auth feature"
+### Squash Commits
+\`\`\`bash
+git rebase -i HEAD~3  # Interactive rebase last 3 commits
+# Change 'pick' to 'squash' for commits to combine
+\`\`\`
 
-# List stashes
-git stash list
+### Undo Changes
+\`\`\`bash
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
 
-# Apply most recent
-git stash pop
-
-# Apply specific stash
-git stash apply stash@{1}
-```
-
-## Undoing Changes
-
-### Git Restore (Recommended)
-```bash
-git restore file.py           # Discard changes
-git restore --staged file.py  # Unstage
-```
-
-### Git Reset
-```bash
-git reset --soft HEAD~1  # Undo commit, keep staged
-git reset HEAD~1         # Undo commit, keep unstaged
-git reset --hard HEAD~1  # Undo commit, discard (DANGEROUS)
-```
-
-### Git Revert (Safe for Shared History)
-```bash
-git revert abc1234  # Create new commit undoing changes
-```
-
-## Merge Conflicts
-
-```bash
-# After conflict:
-git status  # See conflicted files
-
-# Edit files to resolve:
-# <<<<<<< HEAD
-# Your changes
-# =======
-# Incoming changes
-# >>>>>>> feature-branch
-
-# Complete merge
-git add resolved-file.py
-git commit
-```
-
-## Best Practices
-
-### DO ✅
-- Use conventional commit format
-- One logical change per commit
-- Keep subject under 50 characters
-- Use imperative mood ("Add" not "Added")
-- Add body for complex changes
-
-### DON'T ❌
-- Use vague messages ("Update files")
-- Combine multiple concerns
-- Use past tense ("Added feature")
-- End subject with period
-
-## Troubleshooting
-
-### Committed to wrong branch
-```bash
-git log --oneline -1  # Note commit hash
-git checkout correct-branch
-git cherry-pick abc1234
-git checkout wrong-branch
+# Undo last commit (discard changes)
 git reset --hard HEAD~1
-```
 
-### Lost commits
-```bash
-git reflog  # Find lost commit
-git checkout abc1234
-git checkout -b recovery-branch
-```
+# Undo staged changes
+git restore --staged <file>
 
-## Related Resources
+# Discard working directory changes
+git restore <file>
 
-See `AgentUsage/git_guide.md` for complete documentation including:
-- Breaking change handling
-- Dev/main branch strategy
-- Semantic versioning integration
-- Automation tools
+# Revert a commit (creates new commit)
+git revert <commit-hash>
+\`\`\`
+
+## GitHub CLI
+
+\`\`\`bash
+# PR Management
+gh pr create --title "Feature: Add agent API" --body "Description"
+gh pr list
+gh pr checkout <number>
+gh pr merge <number>
+gh pr review <number> --approve
+
+# Issues
+gh issue create --title "Bug: Agent timeout" --label bug
+gh issue list
+gh issue close <number>
+
+# Repository
+gh repo clone <owner>/<repo>
+gh repo view --web
+\`\`\`
+
+## .gitignore Patterns
+
+\`\`\`gitignore
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Environment
+.env
+.env.local
+*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Secrets (never commit!)
+*.pem
+*.key
+credentials.json
+\`\`\`
+
+## Git Hooks
+
+\`\`\`bash
+# .git/hooks/pre-commit
+#!/bin/sh
+npm run lint
+npm run test
+
+# .git/hooks/commit-msg
+#!/bin/sh
+if ! grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .{1,50}" "$1"; then
+    echo "Invalid commit message format"
+    exit 1
+fi
+\`\`\`

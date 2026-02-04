@@ -1,7 +1,7 @@
 {
   "name": "builder",
-  "repo": "rdmptv/AdbAutoPlayer",
-  "path": ".moai/backups/.moai.backup.1764591304/backups/.claude.backup.1764591304/commands/builder/generate-skill.md",
-  "source": "github.com/rdmptv/AdbAutoPlayer",
-  "downloaded_at": "2026-02-02T05:04:00.048400Z"
+  "repo": "masharratt/claude-flow-novice",
+  "path": ".claude/skills/cfn-skill-management/lib/builder/SKILL.md",
+  "source": "github.com/masharratt/claude-flow-novice",
+  "downloaded_at": "2026-02-04T01:18:09.111465Z"
 }

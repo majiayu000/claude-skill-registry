@@ -1,18 +1,18 @@
 ---
-name: zapier-integration-helper
+name: "zapier-integration-helper"
 description: |
-  Zapier Integration Helper - Auto-activating skill for Business Automation.
+  Assist with zapier integration helper operations. Auto-activating skill for Business Automation.
   Triggers on: zapier integration helper, zapier integration helper
-  Part of the Business Automation skill category.
-allowed-tools: Read, Write, Edit, Bash
+  Part of the Business Automation skill category. Use when working with APIs or building integrations. Trigger with phrases like "zapier integration helper", "zapier helper", "zapier".
+allowed-tools: "Read, Write, Edit, Bash(cmd:*)"
 version: 1.0.0
 license: MIT
-author: Jeremy Longshore <jeremy@intentsolutions.io>
+author: "Jeremy Longshore <jeremy@intentsolutions.io>"
 ---
 
 # Zapier Integration Helper
 
-## Purpose
+## Overview
 
 This skill provides automated assistance for zapier integration helper tasks within the Business Automation domain.
 
@@ -23,18 +23,48 @@ This skill activates automatically when you:
 - Ask about zapier integration helper patterns or best practices
 - Need help with business automation skills covering workflow automation, email processing, spreadsheet operations, and business process optimization.
 
-## Capabilities
+## Instructions
 
-- Provides step-by-step guidance for zapier integration helper
-- Follows industry best practices and patterns
-- Generates production-ready code and configurations
-- Validates outputs against common standards
+1. Provides step-by-step guidance for zapier integration helper
+2. Follows industry best practices and patterns
+3. Generates production-ready code and configurations
+4. Validates outputs against common standards
 
-## Example Triggers
+## Examples
 
-- "Help me with zapier integration helper"
-- "Set up zapier integration helper"
-- "How do I implement zapier integration helper?"
+**Example: Basic Usage**
+Request: "Help me with zapier integration helper"
+Result: Provides step-by-step guidance and generates appropriate configurations
+
+
+## Prerequisites
+
+- Relevant development environment configured
+- Access to necessary tools and services
+- Basic understanding of business automation concepts
+
+
+## Output
+
+- Generated configurations and code
+- Best practice recommendations
+- Validation results
+
+
+## Error Handling
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| Configuration invalid | Missing required fields | Check documentation for required parameters |
+| Tool not found | Dependency not installed | Install required tools per prerequisites |
+| Permission denied | Insufficient access | Verify credentials and permissions |
+
+
+## Resources
+
+- Official documentation for related tools
+- Best practices guides
+- Community examples and tutorials
 
 ## Related Skills
 

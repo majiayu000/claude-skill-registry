@@ -1,7 +1,7 @@
 {
   "name": "uniprot-database",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/uniprot-database/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:10.631458Z"
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/uniprot-database/SKILL.md",
+  "source": "github.com/ovachiever/droid-tings",
+  "downloaded_at": "2026-02-04T03:28:46.104697Z"
 }

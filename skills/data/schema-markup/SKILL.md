@@ -1,360 +1,59 @@
 ---
 name: schema-markup
-description: >
-  Design, validate, and optimize schema.org structured data for eligibility,
-  correctness, and measurable SEO impact. Use when the user wants to add, fix,
-  audit, or scale schema markup (JSON-LD) for rich results. This skill evaluates
-  whether schema should be implemented, what types are valid, and how to deploy
-  safely according to Google guidelines.
-allowed-tools: Read, Glob, Grep
+description: "添加、修复或优化站点上的 schema 与结构化数据时使用。触发词：schema markup、structured data、JSON-LD、rich snippets、schema.org、FAQ schema、product schema、breadcrumb schema。整体 SEO 见 seo-audit。"
+license: MIT
 ---
 
----
+# Schema 与结构化数据
 
-# Schema Markup & Structured Data
+实现 schema.org 标记，帮助搜索引擎理解内容并争取富结果。
 
-You are an expert in **structured data and schema markup** with a focus on
-**Google rich result eligibility, accuracy, and impact**.
+## 前置了解
 
-Your responsibility is to:
+页面类型与主内容、可能的富结果；现有 schema 与报错；目标富结果与业务价值。
 
-- Determine **whether schema markup is appropriate**
-- Identify **which schema types are valid and eligible**
-- Prevent invalid, misleading, or spammy markup
-- Design **maintainable, correct JSON-LD**
-- Avoid over-markup that creates false expectations
+## 原则
 
-You do **not** guarantee rich results.
-You do **not** add schema that misrepresents content.
+1. **准确优先**：schema 如实反映页面内容，不标记不存在的内容，内容变更时同步更新。  
+2. **用 JSON-LD**：放入 `<head>` 或 `</body>` 前，便于维护。  
+3. **遵循 Google 指南**：仅用其支持的标记，避免 spam，满足富结果资格。  
+4. **全部校验**：上线前测试，用 Search Console 监控，及时修错。
 
----
+## 常见类型与必填项
 
-## Phase 0: Schema Eligibility & Impact Index (Required)
+| 类型 | 用途 | 必填 |
+|------|------|------|
+| **Organization** | 品牌/关于页 | name, url；建议 logo, sameAs, contactPoint |
+| **WebSite** + SearchAction | 首页、站内搜索框 | name, url；搜索框用 potentialAction |
+| **Article/BlogPosting** | 博客、新闻 | headline, image, datePublished, author |
+| **Product** | 产品页 | name, image, offers（含 price、availability） |
+| **SoftwareApplication** | SaaS/应用页 | name, offers 或免费标识 |
+| **FAQPage** | FAQ 页 | mainEntity（Question/Answer 数组） |
+| **HowTo** | 教程 | name, step 数组 |
+| **BreadcrumbList** | 面包屑 | itemListElement（ListItem + position, name, item） |
+| **LocalBusiness** | 本地商户 | name, address 等 |
+| **Event** | 活动/会议 | name, startDate, location 或 eventAttendanceMode |
 
-Before writing or modifying schema, calculate the **Schema Eligibility & Impact Index**.
+Review/AggregateRating 仅用于真实用户评价，不得自评。
 
-### Purpose
+## 同页多类型
 
-The index answers:
+用 `@graph` 组合多种 schema，通过 `@id` 相互引用（如 Organization → WebSite → BreadcrumbList）。
 
-> **Is schema markup justified here, and is it likely to produce measurable benefit?**
+## 校验与工具
 
----
+- [Google Rich Results Test](https://search.google.com/test/rich-results)  
+- [validator.schema.org](https://validator.schema.org/)  
+- Search Console 增强功能报告  
 
-## 🔢 Schema Eligibility & Impact Index
+常见错误：缺必填属性、日期非 ISO 8601、URL 非完整、枚举值不符、与页面内容不一致。
 
-### Total Score: **0–100**
+## 实现方式
 
-This is a **diagnostic score**, not a promise of rich results.
+静态站：模板中直接插入 JSON-LD。  
+动态站（React、Next 等）：服务端渲染组件输出 JSON-LD。  
+CMS/WordPress：Yoast、Rank Math、Schema Pro 等插件或主题/自定义字段。
 
----
+## 相关技能
 
-### Scoring Categories & Weights
-
-| Category                         | Weight  |
-| -------------------------------- | ------- |
-| Content–Schema Alignment         | 25      |
-| Rich Result Eligibility (Google) | 25      |
-| Data Completeness & Accuracy     | 20      |
-| Technical Correctness            | 15      |
-| Maintenance & Sustainability     | 10      |
-| Spam / Policy Risk               | 5       |
-| **Total**                        | **100** |
-
----
-
-### Category Definitions
-
-#### 1. Content–Schema Alignment (0–25)
-
-- Schema reflects **visible, user-facing content**
-- Marked entities actually exist on the page
-- No hidden or implied content
-
-**Automatic failure** if schema describes content not shown.
-
----
-
-#### 2. Rich Result Eligibility (0–25)
-
-- Schema type is **supported by Google**
-- Page meets documented eligibility requirements
-- No known disqualifying patterns (e.g. self-serving reviews)
-
----
-
-#### 3. Data Completeness & Accuracy (0–20)
-
-- All required properties present
-- Values are correct, current, and formatted properly
-- No placeholders or fabricated data
-
----
-
-#### 4. Technical Correctness (0–15)
-
-- Valid JSON-LD
-- Correct nesting and types
-- No syntax, enum, or formatting errors
-
----
-
-#### 5. Maintenance & Sustainability (0–10)
-
-- Data can be kept in sync with content
-- Updates won’t break schema
-- Suitable for templates if scaled
-
----
-
-#### 6. Spam / Policy Risk (0–5)
-
-- No deceptive intent
-- No over-markup
-- No attempt to game rich results
-
----
-
-### Eligibility Bands (Required)
-
-| Score  | Verdict               | Interpretation                        |
-| ------ | --------------------- | ------------------------------------- |
-| 85–100 | **Strong Candidate**  | Schema is appropriate and low risk    |
-| 70–84  | **Valid but Limited** | Use selectively, expect modest impact |
-| 55–69  | **High Risk**         | Implement only with strict controls   |
-| <55    | **Do Not Implement**  | Likely invalid or harmful             |
-
-If verdict is **Do Not Implement**, stop and explain why.
-
----
-
-## Phase 1: Page & Goal Assessment
-
-(Proceed only if score ≥ 70)
-
-### 1. Page Type
-
-- What kind of page is this?
-- Primary content entity
-- Single-entity vs multi-entity page
-
-### 2. Current State
-
-- Existing schema present?
-- Errors or warnings?
-- Rich results currently shown?
-
-### 3. Objective
-
-- Which rich result (if any) is targeted?
-- Expected benefit (CTR, clarity, trust)
-- Is schema _necessary_ to achieve this?
-
----
-
-## Core Principles (Non-Negotiable)
-
-### 1. Accuracy Over Ambition
-
-- Schema must match visible content exactly
-- Do not “add content for schema”
-- Remove schema if content is removed
-
----
-
-### 2. Google First, Schema.org Second
-
-- Follow **Google rich result documentation**
-- Schema.org allows more than Google supports
-- Unsupported types provide minimal SEO value
-
----
-
-### 3. Minimal, Purposeful Markup
-
-- Add only schema that serves a clear purpose
-- Avoid redundant or decorative markup
-- More schema ≠ better SEO
-
----
-
-### 4. Continuous Validation
-
-- Validate before deployment
-- Monitor Search Console enhancements
-- Fix errors promptly
-
----
-
-## Supported & Common Schema Types
-
-_(Only implement when eligibility criteria are met.)_
-
-### Organization
-
-Use for: brand entity (homepage or about page)
-
-### WebSite (+ SearchAction)
-
-Use for: enabling sitelinks search box
-
-### Article / BlogPosting
-
-Use for: editorial content with authorship
-
-### Product
-
-Use for: real purchasable products
-**Must show price, availability, and offers visibly**
-
----
-
-### SoftwareApplication
-
-Use for: SaaS apps and tools
-
----
-
-### FAQPage
-
-Use only when:
-
-- Questions and answers are visible
-- Not used for promotional content
-- Not user-generated without moderation
-
----
-
-### HowTo
-
-Use only for:
-
-- Genuine step-by-step instructional content
-- Not marketing funnels
-
----
-
-### BreadcrumbList
-
-Use whenever breadcrumbs exist visually
-
----
-
-### LocalBusiness
-
-Use for: real, physical business locations
-
----
-
-### Review / AggregateRating
-
-**Strict rules:**
-
-- Reviews must be genuine
-- No self-serving reviews
-- Ratings must match visible content
-
----
-
-### Event
-
-Use for: real events with clear dates and availability
-
----
-
-## Multiple Schema Types per Page
-
-Use `@graph` when representing multiple entities.
-
-Rules:
-
-- One primary entity per page
-- Others must relate logically
-- Avoid conflicting entity definitions
-
----
-
-## Validation & Testing
-
-### Required Tools
-
-- Google Rich Results Test
-- Schema.org Validator
-- Search Console Enhancements
-
-### Common Failure Patterns
-
-- Missing required properties
-- Mismatched values
-- Hidden or fabricated data
-- Incorrect enum values
-- Dates not in ISO 8601
-
----
-
-## Implementation Guidance
-
-### Static Sites
-
-- Embed JSON-LD in templates
-- Use includes for reuse
-
-### Frameworks (React / Next.js)
-
-- Server-side rendered JSON-LD
-- Data serialized directly from source
-
-### CMS / WordPress
-
-- Prefer structured plugins
-- Use custom fields for dynamic values
-- Avoid hardcoded schema in themes
-
----
-
-## Output Format (Required)
-
-### Schema Strategy Summary
-
-- Eligibility Index score + verdict
-- Supported schema types
-- Risks and constraints
-
-### JSON-LD Implementation
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "...",
-  ...
-}
-```
-
-### Placement Instructions
-
-Where and how to add it
-
-### Validation Checklist
-
-- [ ] Valid JSON-LD
-- [ ] Passes Rich Results Test
-- [ ] Matches visible content
-- [ ] Meets Google eligibility rules
-
----
-
-## Questions to Ask (If Needed)
-
-1. What content is visible on the page?
-2. Which rich result are you targeting (if any)?
-3. Is this content templated or editorial?
-4. How is this data maintained?
-5. Is schema already present?
-
----
-
-## Related Skills
-
-- **seo-audit** – Full SEO review including schema
-- **programmatic-seo** – Templated schema at scale
-- **analytics-tracking** – Measure rich result impact
+seo-audit、programmatic-seo、analytics-tracking。

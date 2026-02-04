@@ -1,6 +1,12 @@
 ---
 name: "QE Quality Assessment"
 description: "Comprehensive quality gates, metrics analysis, and deployment readiness assessment for continuous quality assurance."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-quality-assessment.yaml
+
 ---
 
 # QE Quality Assessment

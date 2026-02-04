@@ -1,9 +1,7 @@
 {
   "name": "encryption-at-rest-checker",
-  "description": "Encryption At Rest Checker - Auto-activating skill for Security Advanced.Triggers on: encryption at rest checker, encryption at rest checkerPart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/04-security-advanced/encryption-at-rest-checker/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:27.719580Z"
 }

@@ -53,20 +53,12 @@ The server starts a Chromium browser with a REST API for page management (defaul
 
 ## Writing Scripts
 
-Execute scripts inline using heredocs—no need to write files for one-off automation.
-
-> **CRITICAL: Always run scripts from `skills/dev-browser/`**
->
-> Scripts must be executed from the `skills/dev-browser/` directory. The `@/` import alias (e.g., `@/client.js`) is configured in this directory's `tsconfig.json` and `package.json`. Running from any other directory will fail with:
->
-> ```
-> ERR_MODULE_NOT_FOUND: Cannot find package '@/client.js'
-> ```
+Execute scripts inline using heredocs—no need to write files for one-off automation:
 
 ```bash
 cd skills/dev-browser && bun x tsx <<'EOF'
 import { connect } from "@/client.js";
-const client = await connect();
+const client = await connect("http://localhost:9222");
 const page = await client.page("main");
 // Your automation code here
 await client.disconnect();
@@ -87,9 +79,8 @@ Use the `@/client.js` import path for all scripts.
 cd skills/dev-browser && bun x tsx <<'EOF'
 import { connect, waitForPageLoad } from "@/client.js";
 
-const client = await connect();
+const client = await connect("http://localhost:9222");
 const page = await client.page("main"); // get or create a named page
-await page.setViewportSize({ width: 1280, height: 800 }); // Required for screenshots
 
 // Your automation code here
 await page.goto("https://example.com");
@@ -144,7 +135,7 @@ Follow this pattern for complex tasks:
 ## Client API
 
 ```typescript
-const client = await connect();
+const client = await connect("http://localhost:9222");
 const page = await client.page("name"); // Get or create named page
 const pages = await client.list(); // List all page names
 await client.close("name"); // Close a page
@@ -198,7 +189,7 @@ Use `getAISnapshot()` when you don't know the page layout and need to discover w
 cd skills/dev-browser && bun x tsx <<'EOF'
 import { connect, waitForPageLoad } from "@/client.js";
 
-const client = await connect();
+const client = await connect("http://localhost:9222");
 const page = await client.page("main");
 
 await page.goto("https://news.ycombinator.com");
@@ -257,7 +248,7 @@ Use `selectSnapshotRef()` to get a Playwright ElementHandle for any ref:
 cd skills/dev-browser && bun x tsx <<'EOF'
 import { connect, waitForPageLoad } from "@/client.js";
 
-const client = await connect();
+const client = await connect("http://localhost:9222");
 const page = await client.page("main");
 
 await page.goto("https://news.ycombinator.com");
@@ -298,7 +289,7 @@ If a script fails, the page state is preserved. You can:
 cd skills/dev-browser && bun x tsx <<'EOF'
 import { connect } from "@/client.js";
 
-const client = await connect();
+const client = await connect("http://localhost:9222");
 const page = await client.page("main");
 
 await page.screenshot({ path: "tmp/debug.png" });

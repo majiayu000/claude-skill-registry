@@ -1,7 +1,7 @@
 {
   "name": "create-command",
-  "repo": "sasamuku/dotfiles",
-  "path": ".claude/skills/create-command/SKILL.md",
-  "source": "github.com/sasamuku/dotfiles",
-  "downloaded_at": "2026-02-02T01:42:23.992708Z"
+  "repo": "ronnycoding/.claude",
+  "path": "skills/create-command/SKILL.md",
+  "source": "github.com/ronnycoding/.claude",
+  "downloaded_at": "2026-02-04T01:17:10.711411Z"
 }

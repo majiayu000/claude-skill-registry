@@ -1,95 +1,103 @@
 ---
 name: security-expert
-description: Expert in application security, vulnerability analysis, secure coding practices, and security auditing. Use for security reviews, threat modeling, authentication/authorization design, and fixing security vulnerabilities.
-required-capability: reasoning
+description: "This skill should be used when the user asks to 'secure my API', 'implement authentication', 'configure Keycloak', 'add authorization', 'fix JWT issues', 'set up OAuth', 'review security', 'security audit', 'pen test prep', 'prevent SQL injection', 'fix XSS', 'CSRF protection', or works with JWT tokens, OAuth 2.0/OIDC flows, Spring Security, ABAC/RBAC policies, CORS, CSRF, XSS prevention, SQL injection, OWASP guidelines, or debugging auth failures in Spring/Keycloak environments."
 ---
 
-# Security Expert
+# Security Expert Skill
 
-You are a Senior Security Engineer specializing in application security and secure development.
+Expert guidance for API security, authentication, authorization, and identity management.
 
-## Security Review Process
+## Core Competencies
 
-1. **Threat Modeling**: Identify assets, entry points, and potential attackers
-2. **Code Review**: Look for common vulnerability patterns
-3. **Configuration Audit**: Check for misconfigurations
-4. **Dependency Analysis**: Identify vulnerable dependencies
+- **Authentication**: JWT, OAuth 2.0, OpenID Connect, SAML, session management
+- **Authorization**: RBAC, ABAC, ReBAC, policy engines
+- **Identity Providers**: Keycloak, Okta, Auth0, Azure AD
+- **Frameworks**: Spring Security, Spring Boot, Jakarta EE Security
+- **Web Security**: OWASP Top 10, CSP, CORS, CSRF, XSS prevention
+- **Injection Prevention**: SQL injection, parameterized queries, input validation
+- **Frontend Security**: React XSS protection, DOMPurify, URL sanitization, CSP for SPAs
 
-## Common Vulnerabilities (OWASP Top 10)
+## Quick Reference
 
-### Injection (SQL, Command, LDAP)
-- Always use parameterized queries
-- Validate and sanitize all inputs
-- Use allowlists over denylists
+### JWT Best Practices
+- Always validate: signature, expiration (`exp`), issuer (`iss`), audience (`aud`)
+- Use RS256/ES256 for distributed systems (asymmetric), HS256 only for single-service
+- Keep tokens short-lived (5-15 min access, hours-days refresh)
+- Never store sensitive data in JWT payload (it's base64, not encrypted)
+- Implement token revocation via blacklist or short expiry + refresh rotation
 
-### Broken Authentication
-- Use strong password hashing (bcrypt, argon2)
-- Implement rate limiting
-- Use secure session management
-- Enable MFA where possible
-
-### Sensitive Data Exposure
-- Encrypt data at rest and in transit
-- Use TLS 1.3 for all connections
-- Never log sensitive data
-- Implement proper key management
-
-### XSS (Cross-Site Scripting)
-- Escape output based on context (HTML, JS, URL)
-- Use Content Security Policy headers
-- Sanitize HTML input with allowlists
-
-### CSRF (Cross-Site Request Forgery)
-- Use anti-CSRF tokens
-- Verify Origin/Referer headers
-- Use SameSite cookie attribute
-
-## Secure Coding Patterns
-
-### Input Validation
-- Validate type, length, format, range
-- Reject invalid input early
-- Use schema validation (JSON Schema, Zod)
-
-### Authentication
-- Hash passwords with salt (bcrypt cost 12+)
-- Use constant-time comparison for secrets
-- Implement account lockout after failures
-
-### Authorization
-- Implement principle of least privilege
-- Check authorization on every request
-- Use role-based or attribute-based access control
-
-### Secrets Management
-- Never hardcode secrets
-- Use environment variables or secret managers
-- Rotate secrets regularly
-- Audit secret access
-
-## Security Headers
-
-```
-Content-Security-Policy: default-src 'self'
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-X-XSS-Protection: 0 (deprecated, use CSP)
+### Spring Security + Keycloak Integration Pattern
+```java
+// Minimal resource server config
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/public/**").permitAll()
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated());
+        return http.build();
+    }
+}
 ```
 
-## Dependency Security
+### ABAC vs RBAC Decision Matrix
+| Use RBAC when | Use ABAC when |
+|---------------|---------------|
+| Simple role hierarchy | Context-dependent access (time, location) |
+| Static permissions | Resource-level attributes matter |
+| Small number of roles | Complex business rules |
+| Audit simplicity needed | Fine-grained, dynamic policies |
 
-- Run `npm audit` / `pip-audit` / `go mod verify`
-- Use Dependabot or Renovate for updates
-- Pin dependency versions in production
-- Review changelogs before updating
+## Reference Files
 
-## When Reviewing Code
+For detailed guidance, consult these references:
 
-1. Check all user inputs for validation
-2. Verify authentication on protected routes
-3. Confirm authorization checks exist
-4. Look for hardcoded secrets
-5. Check for SQL/command injection
-6. Verify proper error handling (no stack traces to users)
-7. Check logging for sensitive data leaks
+- **[references/jwt-security.md](references/jwt-security.md)**: JWT vulnerabilities, attack vectors, secure implementation
+- **[references/keycloak.md](references/keycloak.md)**: Keycloak realm setup, client types, mappers, flows
+- **[references/spring-security.md](references/spring-security.md)**: Filter chain, method security, OAuth2 client/resource server
+- **[references/authorization-patterns.md](references/authorization-patterns.md)**: RBAC, ABAC, ReBAC patterns and policy engines
+- **[references/owasp-api-security.md](references/owasp-api-security.md)**: OWASP API Security Top 10 with mitigations
+- **[references/security-headers.md](references/security-headers.md)**: HTTP security headers, CSP, CORS configuration
+- **[references/injection-prevention.md](references/injection-prevention.md)**: SQL injection prevention, parameterized queries, JPA patterns
+- **[references/xss-prevention.md](references/xss-prevention.md)**: React XSS protection, DOMPurify, URL validation, CSP for SPAs
+- **[references/csrf-prevention.md](references/csrf-prevention.md)**: CSRF tokens, double submit, SameSite cookies, Spring CSRF
+
+## Workflow: Security Review
+
+1. **Identify attack surface**: Public endpoints, auth flows, data exposure
+2. **Check authentication**: Token validation, session handling, credential storage
+3. **Check authorization**: Access control at endpoint and resource level
+4. **Review data handling**: Input validation, output encoding, sensitive data exposure
+5. **Examine configuration**: Security headers, CORS, error handling, logging
+6. **Test edge cases**: Token expiry, concurrent sessions, privilege escalation
+
+## Common Security Pitfalls
+
+```
+❌ Trusting JWT without signature validation
+❌ Storing tokens in localStorage (XSS vulnerable)
+❌ Using symmetric keys across services
+❌ Missing audience validation
+❌ Exposing stack traces in errors
+❌ Permissive CORS (Access-Control-Allow-Origin: *)
+❌ Missing rate limiting on auth endpoints
+❌ Logging sensitive data (tokens, passwords)
+❌ String concatenation in SQL queries (injection)
+❌ Using innerHTML without sanitization
+❌ Allowing javascript: URLs in user-controlled hrefs
+❌ Disabling CSRF for cookie-authenticated APIs
+❌ GET requests with side effects (CSRF vulnerable)
+```
+
+## Debugging Security Issues
+
+For auth failures, check in order:
+1. Token format and encoding (is it valid JWT structure?)
+2. Signature verification (correct algorithm and key?)
+3. Claims validation (exp, iss, aud correct?)
+4. Role/scope mapping (Keycloak mappers configured?)
+5. Spring Security filter chain (debug with `logging.level.org.springframework.security=DEBUG`)

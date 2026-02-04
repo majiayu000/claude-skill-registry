@@ -1,7 +1,7 @@
 {
   "name": "rspress-sync",
-  "repo": "savvy-web/pnpm-module-template",
+  "repo": "spencerbeggs/claude-design-coordinator",
   "path": ".claude/skills/rspress-sync/SKILL.md",
-  "source": "github.com/savvy-web/pnpm-module-template",
-  "downloaded_at": "2026-02-01T04:27:58.133970Z"
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "downloaded_at": "2026-02-04T05:05:22.170297Z"
 }

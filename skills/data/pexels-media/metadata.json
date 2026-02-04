@@ -1,7 +1,7 @@
 {
   "name": "pexels-media",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/video-creator-workflow/.claude/skills/pexels-media/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:23.118546Z"
+  "repo": "troykelly/codex-skills",
+  "path": "skills/pexels-media/SKILL.md",
+  "source": "github.com/troykelly/codex-skills",
+  "downloaded_at": "2026-02-04T04:41:32.655425Z"
 }

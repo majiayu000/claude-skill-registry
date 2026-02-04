@@ -1,7 +1,7 @@
 {
   "name": "vercel-deploy",
-  "repo": "yuch4/dx-selecta",
-  "path": ".github/skills/vercel-deploy/SKILL.md",
-  "source": "github.com/yuch4/dx-selecta",
-  "downloaded_at": "2026-02-02T04:31:08.428816Z"
+  "repo": "ninehills/skills",
+  "path": "skills/vercel-deploy/SKILL.md",
+  "source": "github.com/ninehills/skills",
+  "downloaded_at": "2026-02-04T03:29:13.416726Z"
 }

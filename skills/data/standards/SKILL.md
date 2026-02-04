@@ -1,64 +1,110 @@
 ---
 name: standards
-description: 'Language-specific coding standards and validation rules. Provides Python, Go, TypeScript, Shell, YAML, JSON, and Markdown standards. Auto-loaded by /vibe, /implement, /doc, /bug-hunt, /complexity based on file types.'
+description: Plaited code conventions and development standards. Use when writing or editing TypeScript code in Plaited projects, following code conventions (type system, function style, imports), generating code, or verifying code quality.
+license: ISC
+compatibility: Requires bun
 ---
 
-# Standards Skill
-
-Language-specific coding standards loaded on-demand by other skills.
+# Plaited Standards
 
 ## Purpose
 
-This is a **library skill** - it doesn't run standalone but provides standards
-references that other skills load based on file types being processed.
+This skill provides code conventions and development standards that apply to **all** Plaited code—whether behavioral programs, UI templates, utilities, or tests.
 
-## Standards Available
+**Use this when:**
+- Writing or editing TypeScript code in Plaited projects
+- Following Plaited code conventions
+- Generating code for Plaited applications
+- Verifying code quality before presenting to users
+- Understanding import path standards
+- Applying the 95% confidence threshold
 
-| Language | Reference | Loaded By |
-|----------|-----------|-----------|
-| Python | `references/python.md` | vibe, implement, complexity |
-| Go | `references/go.md` | vibe, implement, complexity |
-| TypeScript | `references/typescript.md` | vibe, implement |
-| Shell | `references/shell.md` | vibe, implement |
-| YAML | `references/yaml.md` | vibe |
-| JSON | `references/json.md` | vibe |
-| Markdown | `references/markdown.md` | vibe, doc |
+## Quick Reference
 
-## How It Works
+| Reference | Use For |
+|-----------|---------|
+| [code-conventions.md](references/code-conventions.md) | Type system, function style, templates, imports, null handling |
+| [standards.md](references/standards.md) | 95% confidence threshold, documentation guidelines, Bun APIs |
+| [verification-workflow.md](references/verification-workflow.md) | Complete code generation workflow |
 
-Skills declare `standards` as a dependency:
+## Code Conventions
 
-```yaml
-skills:
-  - standards
+**[code-conventions.md](references/code-conventions.md)**
+
+### Type System
+- Prefer `type` over `interface`
+- Use `type` for object shapes, unions, intersections
+- Use arrow functions over function declarations
+
+### Function Style
+- Arrow functions for all functions
+- Object parameters for functions with 2+ parameters
+- Destructure in function signature
+
+### Templates
+- JSX syntax only (not `h()` or `createTemplate()`)
+- Use "template" not "component"
+
+### Imports
+- Package imports in tests: `'plaited'`, `'plaited/ui'`, `'plaited/testing'`
+- `plaited` for behavioral programming (useBehavioral, useSignal, useWorker)
+- `plaited/ui` for templates and custom elements (bElement, createStyles, FT)
+- Relative imports within packages
+
+### Null Handling
+- Prefer `undefined` over `null`
+- Use optional chaining and nullish coalescing
+
+## Development Standards
+
+**[standards.md](references/standards.md)**
+
+### 95% Confidence Threshold
+- Verify information before stating implementation details
+- Read files in real-time to verify accuracy
+- Use typescript-lsp@plaited_development-skills skill for type verification
+- Report uncertainty rather than guess
+
+### Documentation Guidelines
+- TSDoc for public APIs
+- No `@example` sections (tests/stories are living examples)
+- Use `@internal` for non-public APIs
+
+### Bun Platform APIs
+- Prefer Bun native APIs over Node.js equivalents
+- Use `Bun.file()`, `Bun.write()`, `Bun.spawn()`
+- Use `bun:test` for testing
+
+## Verification Workflow
+
+**[verification-workflow.md](references/verification-workflow.md)**
+
+### Code Generation Phases
+
+1. **API Verification** - Check imports, verify types with LSP
+2. **Code Generation** - Apply patterns from framework skills
+3. **Post-Generation Validation** - Verify against standards
+
+### Confidence Protocol
+
+```
+Before presenting code:
+1. Verify all imports exist
+2. Confirm type signatures with LSP
+3. Check patterns against skill references
+4. Only present if 95%+ confident
 ```
 
-Then load the appropriate reference based on file type:
+## Terminology
 
-```python
-# Pseudo-code for standard loading
-if file.endswith('.py'):
-    load('standards/references/python.md')
-elif file.endswith('.go'):
-    load('standards/references/go.md')
-# etc.
-```
+Plaited is a **template-driven** framework:
+- Use "template" not "component"
+- Use "behavioral element" or "bElement" for interactive elements
+- Refer to browser APIs by specific names (Custom Elements, Shadow DOM)
 
-## Deep Standards
+## Related Skills
 
-For comprehensive audits, skills can load extended standards from
-`vibe/references/*-standards.md` which contain full compliance catalogs.
-
-| Standard | Size | Use Case |
-|----------|------|----------|
-| Tier 1 (this skill) | ~5KB each | Normal validation |
-| Tier 2 (vibe/references) | ~15-20KB each | Deep audits, `--deep` flag |
-
-## Integration
-
-Skills that use standards:
-- `/vibe` - Loads based on changed file types
-- `/implement` - Loads for files being modified
-- `/doc` - Loads markdown standards
-- `/bug-hunt` - Loads for root cause analysis
-- `/complexity` - Loads for refactoring recommendations
+- **behavioral-core** - BP coordination patterns
+- **ui-patterns** - Templates, bElements, styling
+- **typescript-lsp@plaited_development-skills** - Type verification and symbol discovery
+- **code-documentation@plaited_development-skills** - TSDoc writing standards

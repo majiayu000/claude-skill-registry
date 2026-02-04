@@ -1,12 +1,7 @@
 {
   "name": "searxng-search",
-  "description": "Enhanced web and package repository search using local SearXNG instance",
-  "repo": "YPares/agent-skills",
-  "category": "development",
-  "tags": [
-    "searxng",
-    "search"
-  ],
-  "stars": 2,
-  "source": "local"
+  "repo": "glwlg/X-bot",
+  "path": "skills/builtin/searxng_search/SKILL.md",
+  "source": "github.com/glwlg/X-bot",
+  "downloaded_at": "2026-02-04T02:00:27.100074Z"
 }

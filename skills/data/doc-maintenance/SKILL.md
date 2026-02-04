@@ -1,412 +1,305 @@
 ---
 name: doc-maintenance
-description: Guide documentation updates when changing versions, adding content, or preparing releases
+description: |
+  Automatic documentation updates after task completion. Use when:
+  (1) completing tasks, (2) adding features, (3) fixing bugs,
+  (4) refactoring code. Updates root PLAN.md (consolidated) and
+  README.md when features change. Chains markdown-writer for style.
+category: documentation
+user-invocable: true
 ---
 
 # Documentation Maintenance
 
-**Purpose**: Guide documentation updates when changing versions, adding content, or preparing releases.
+Automatically updates project documentation after task completion.
 
-**How it works**: This skill is automatically activated when you mention tasks related to:
-- Updating Minecraft or dependency versions
-- Adding new bosses, structures, or items
-- Preparing for a release
-- Adding new mod dependencies
+## Consolidated Plan Location
 
-Simply describe what you want to do, and Claude will reference the appropriate checklist from this skill.
+All plan updates go to root `PLAN.md`. This is the single source of truth for project planning. Package-level PLAN.md files should be consolidated into the root PLAN.md.
 
----
+## Trigger Conditions
 
-## Version Update Checklist
+Invoke after:
+- Completing any task
+- Adding a new feature
+- Fixing a bug
+- Refactoring code
+- Resolving a blocked item
 
-**When to use**: Updating Minecraft version, mod loader versions, or dependency versions
+Also invoke explicitly with:
+- `/doc-maintenance`
+- "update documentation"
+- "sync docs"
 
-### Files to Update
+### Pre-Merge Cleanup
 
-1. **gradle.properties**
-   - Update version properties
-   - Example: `minecraft_version=1.21.1`
+When owner says **"clean up before merge"** or similar, run this checklist:
 
-2. **README.md** (lines ~47-50)
-   - Section: "Requirements" → "Dependencies"
-   - Update all version numbers
+```bash
+# 1. Sync CLAUDE.md with installed skills (removes stale refs)
+skills claudemd sync
 
-3. **docs/player_guide.md** (lines ~25-56)
-   - Sections: "Prerequisites" and "Required Dependencies"
-   - Update version numbers and download links
+# 2. Scan for test artifacts and slop
+skills hygiene scan
 
-4. **docs/developer_guide.md** (lines ~32-45)
-   - Section: "Key Technologies"
-   - Update version specifications
+# 3. If slop found, clean it
+skills hygiene clean --confirm
 
-5. **docs/curseforge_description.md** (lines ~125-128)
-   - Section: "Technical Details" → "Requirements" → "Dependencies"
-   - Update version numbers
+# 4. Validate chain config (if chain files changed)
+chain validate
 
-6. **docs/modrinth_description.md** (lines ~30-39)
-   - Sections: "Requirements" (both Fabric and NeoForge)
-   - Update version numbers
+# 5. Update PLAN.md with completed work
+# (follow doc-maintenance procedure below)
 
-7. **fabric/src/main/resources/fabric.mod.json**
-   - Update `depends` section version ranges
-   - Update `recommends` section if applicable
-
-8. **neoforge/src/main/resources/META-INF/neoforge.mods.toml**
-   - Update `[[dependencies.chronodawn]]` entries
-   - Update `versionRange` fields
-
-9. **THIRD_PARTY_LICENSES.md**
-   - Update version numbers in "Runtime Dependencies" section
-   - Update: Minecraft, Fabric Loader, Fabric API, NeoForge, Architectury API
-   - Update "Last updated" date at the bottom
-
-### Current Versions (Reference)
-
-```
-Minecraft: 1.21.1
-Fabric Loader: 0.17.3+
-Fabric API: 0.116.7+
-NeoForge: 21.1.209+
-Architectury API: 13.0.8+
+# 6. Commit and push
+git add -A && git commit -m "chore: pre-merge cleanup" && git push
 ```
 
-**After updating**, update this reference list in this skill file.
+This is the standard cleanup before any PR merge.
 
----
+## Procedure
 
-## Adding a New Boss
+### Step 1: Read Current State
 
-**When to use**: Adding a new boss enemy to the mod
+Read these files:
+- `PLAN.md` (root, consolidated project plan)
+- `README.md` (feature documentation)
+- `packages/*/PLAN.md` (check for package-level plans to consolidate into root)
+- Recent git commits (what changed)
 
-### Files to Update
+### Step 2: Consolidate Package Plans
 
-1. **README.md** (lines ~25-31)
-   - Section: "Boss Enemies" list
-   - Add: `- Boss Name (description, drops Item Name)`
+If `packages/*/PLAN.md` files exist, consolidate their content into root `PLAN.md`:
 
-2. **docs/player_guide.md**
-   - Section: "Boss Battles"
-   - Add full entry with:
-     - Stats (Health, Attack, Defense)
-     - Abilities (list special attacks)
-     - Strategy (combat tips)
-     - Drops (items dropped)
+1. Each package gets a section: `## Package: {name}`
+2. Move completed items to the Completed section
+3. Move pending items to the appropriate sprint/backlog section
+4. Delete the package-level PLAN.md after consolidation
 
-3. **docs/curseforge_description.md** (lines ~28-35)
-   - Section: "Powerful Boss Battles"
-   - Add boss to appropriate category (mini-boss, mid-boss, final boss)
+Structure for root `PLAN.md`:
+```markdown
+# Project Plan
 
-4. **docs/modrinth_description.md** (lines ~105-140)
-   - Section: "Boss Battles"
-   - Add boss entry with stats and abilities
+## Current Sprint
+- Active work items across all packages
 
-5. **specs/chrono-dawn-mod/spec.md**
-   - Add to User Stories if boss is critical to progression
-   - Add to Requirements section
+## Package: chain
+- Package-specific in-progress work
 
-6. **specs/chrono-dawn-mod/data-model.md**
-   - Add boss entity definition with complete specifications
+## Package: cli
+- Package-specific in-progress work
 
-7. **specs/chrono-dawn-mod/tasks.md**
-   - Add implementation tasks for the boss
+## Backlog
+- Future work items
 
-### Template
+## Completed
+- Timestamped completed items
+
+## Blocked
+- Items waiting on dependencies
+```
+
+### Step 3: Analyze Changes
+
+Determine what was accomplished:
+- Which PLAN.md items are now complete?
+- Were new features added?
+- Were bugs fixed?
+- Did refactoring occur?
+- Were new issues discovered?
+
+### Step 4: Update PLAN.md
+
+**Mark completed items:**
+```markdown
+## Current Sprint
+- [x] Implement user authentication  # Was [ ]
+- [ ] Add password reset flow
+```
+
+**Add discovered work:**
+```markdown
+## Backlog
+- [ ] Discovered: Need rate limiting for auth endpoints
+- [ ] Tech debt: Refactor auth middleware
+```
+
+**Move completed items with timestamp:**
+```markdown
+## Completed
+- [x] Implement user authentication (2026-01-30)
+```
+
+**Update blocked items:**
+```markdown
+## Blocked
+- Password reset: Waiting for email service setup
+```
+
+### Step 5: Update README.md (If Features Changed)
+
+**When to update README.md:**
+- New user-facing feature added
+- API changed
+- New command available
+- Installation steps changed
+
+**What to update:**
+- Features list
+- Usage examples
+- API reference
+- Installation instructions
+
+### Step 6: Report Changes
+
+Output a summary:
+
+```
+Documentation updated:
+
+PLAN.md:
+  - Marked complete: "Implement user authentication"
+  - Added to backlog: "Need rate limiting for auth endpoints"
+  - Moved to completed: 1 item
+  - Consolidated from: packages/chain/PLAN.md
+
+README.md:
+  - Updated features list with authentication
+  - Added auth usage example
+```
+
+## Skill Chaining
+
+### With markdown-writer
+
+All documentation updates MUST follow markdown-writer style:
+- Short sentences, direct claims
+- No em dashes
+- Active voice
+- Tables for structured data
+
+Implicitly chain markdown-writer when editing any .md file.
+
+### After TDD Completion
+
+When TDD workflow completes (GREEN phase):
+1. Mark the related PLAN.md task as complete
+2. Add any discovered edge cases to backlog
+
+### After Bug Fix
+
+When a bug is fixed:
+1. Mark bug item as complete in PLAN.md
+2. Add regression test to PLAN.md if not present
+
+### After Refactoring
+
+When refactoring completes:
+1. Mark refactoring task as complete
+2. Update any affected API documentation
+
+### Terminal Chain
+
+After any documentation update: **repo-hygiene** (clean stale references)
+
+## Update Patterns
+
+### Marking Tasks Complete
+
+**Before:**
+```markdown
+- [ ] Implement feature X
+```
+
+**After:**
+```markdown
+- [x] Implement feature X
+```
+
+### Adding Discovered Work
+
+When you discover new tasks during implementation:
 
 ```markdown
-### Boss Name (Category)
-
-**Location**: Structure Name
-
-**Stats**:
-- Health: XXX HP
-- Attack: XX damage
-- Defense: XX armor points
-
-**Abilities**:
-- Ability 1: Description
-- Ability 2: Description
-
-**Strategy**:
-- Tip 1
-- Tip 2
-
-**Drops**:
-- **Item Name**: Description
-- Experience points
+## Backlog
+- [ ] (discovered) New task from implementation
+- [ ] (tech debt) Code that needs cleanup
+- [ ] (bug) Issue found during testing
 ```
 
----
+### Timestamping Completed Items
 
-## Adding a New Structure
-
-**When to use**: Adding a new structure to the mod
-
-### Files to Update
-
-1. **README.md** (lines ~17-24)
-   - Section: "Major Structures" list
-   - Add: `- Structure Name (location, description)`
-
-2. **docs/player_guide.md**
-   - Section: "Exploring the Chrono Dawn" or appropriate section
-   - Add structure description and how to find it
-
-3. **docs/curseforge_description.md** (lines ~22-29)
-   - Section: "Epic Structures"
-   - Add structure to the list
-
-4. **docs/modrinth_description.md** (lines ~89-97)
-   - Section: "Structures"
-   - Add structure entry
-
-5. **specs/chrono-dawn-mod/spec.md**
-   - Add to User Stories if structure is critical
-   - Add to Requirements if needed
-
-6. **specs/chrono-dawn-mod/data-model.md**
-   - Add structure definition (generation rules, loot, etc.)
-
----
-
-## Adding a New Ultimate Artifact
-
-**When to use**: Adding a new ultimate artifact item
-
-### Files to Update
-
-1. **README.md** (line ~32)
-   - Section: "Ultimate Artifacts" list
-   - Add: `Item Name (type), Description`
-
-2. **docs/player_guide.md**
-   - Section: "Ultimate Artifacts"
-   - Add full entry with:
-     - Stats (damage, armor, durability)
-     - Special Ability (detailed description)
-     - Recipe (crafting requirements)
-
-3. **docs/curseforge_description.md** (lines ~41-46)
-   - Section: "Ultimate Artifacts"
-   - Add brief description
-
-4. **docs/modrinth_description.md** (lines ~143-167)
-   - Section: "Ultimate Artifacts"
-   - Add item entry with ability description
-
-5. **specs/chrono-dawn-mod/data-model.md**
-   - Add item definition with complete specifications
-
-### Template
+Add date to completed items:
 
 ```markdown
-### Item Name (Type)
-
-**Stats**:
-- Stat 1: Value
-- Stat 2: Value
-
-**Special Ability**: **Ability Name**
-- Effect description
-- Usage notes
-
-**Recipe**:
-\`\`\`
-- Ingredient 1
-- Ingredient 2
-- Ingredient 3
-\`\`\`
+## Completed
+- [x] Task description (2026-01-30)
 ```
 
----
+### Feature Documentation
 
-## Updating Content Counts and Lists
+When adding a feature to README.md:
 
-**When to use**: Adding or removing biomes, bosses, structures, wood types, or other countable content
+```markdown
+## Features
 
-**Purpose**: Ensure numeric descriptions (e.g., "8 unique biomes", "4 mid-bosses", "three wood types") remain accurate across all documentation
+- **Authentication**: Secure user login with JWT tokens
+- **Password Reset**: Email-based password recovery
+```
 
-### Files to Check
+## Rationalizations (Do Not Skip)
 
-1. **README.md**
-   - Check: Biome count, boss count, structure count, wood type count
-   - Look for: "8 unique biomes", "Boss Enemies" list length, "Major Structures" list length
+| Rationalization | Why It's Wrong | Required Action |
+|-----------------|----------------|-----------------|
+| "Too small to document" | Small changes accumulate | Update PLAN.md |
+| "I'll remember" | Context is lost between sessions | Write it down |
+| "README is fine" | Feature docs get stale | Verify accuracy |
+| "Just a bug fix" | Bugs deserve tracking | Mark complete |
+| "Package has its own PLAN" | Fragmentation causes confusion | Consolidate to root PLAN.md |
 
-2. **docs/player_guide.md**
-   - Check: Biome count, boss count (categorized: mini-boss, mid-bosses, final boss), structure count, wood type count
-   - Look for: "8 unique biomes", "three wood types", mid-boss descriptions ("4 mid-bosses")
+## Example Session
 
-3. **docs/curseforge_description.md**
-   - Check: Biome count, boss count, structure count, artifact count
-   - Look for: "8 Unique Biomes", boss list lengths, structure list
+**Task:** Add user authentication
 
-4. **docs/modrinth_description.md**
-   - Check: Biome count, boss count, structure count, wood type count
-   - Look for: "8 unique biomes", boss list, structure list
+**After completion:**
 
-5. **CLAUDE.md**
-   - Check: Current versions list if content affects version compatibility
-   - Look for: "8 unique biomes" in Recent Changes or Active Technologies
+```
+/doc-maintenance
 
-### Verification Method
+Analyzing changes...
 
-When adding/removing content:
-1. Search for numeric descriptions (e.g., "8", "four", "4 mid-bosses")
-2. Verify counts match actual implementation
-3. Update Table of Contents if section counts change
-4. Check for phrases like "all X", "both", "each of the Y"
+Found:
+- New auth middleware in src/middleware/auth.ts
+- New login endpoint in src/routes/auth.ts
+- 5 new test files
+- Git commit: "Add JWT authentication"
+- packages/chain/PLAN.md exists (needs consolidation)
 
-**Tip**: Use `grep -r "8 unique biomes" docs/` to find all occurrences quickly
+Updates:
 
----
+PLAN.md:
+  Current Sprint:
+    - [x] Implement user authentication
+  Backlog:
+    + [ ] (discovered) Add refresh token support
+    + [ ] (discovered) Rate limit login attempts
+  Consolidated:
+    - Merged packages/chain/PLAN.md content
 
-## Adding a New Dependency
+README.md:
+  Features:
+    + Authentication: JWT-based user authentication
+  Usage:
+    + Added auth example code
+```
 
-**When to use**: Adding a new mod dependency (required or optional)
+## Notes
 
-### Files to Update
-
-1. **gradle.properties**
-   - Add version property if needed
-   - Example: `new_mod_version=1.0.0`
-
-2. **fabric/build.gradle**
-   - Add to `dependencies` section
-   - Use `modImplementation`, `modApi`, or `modCompileOnly` as appropriate
-
-3. **neoforge/build.gradle**
-   - Add to `dependencies` section
-   - Use `modImplementation`, `modApi`, or `modCompileOnly` as appropriate
-
-4. **fabric/src/main/resources/fabric.mod.json**
-   - Add to `depends` (required) or `recommends` (optional)
-   - Specify version range
-
-5. **neoforge/src/main/resources/META-INF/neoforge.mods.toml**
-   - Add `[[dependencies.chronodawn]]` entry
-   - Set `type` to "required" or "optional"
-   - Specify `versionRange`
-
-6. **README.md** (lines ~47-50)
-   - Section: "Requirements" → "Dependencies"
-   - Add dependency with version and description
-
-7. **docs/player_guide.md** (lines ~41-56)
-   - Section: "Required Dependencies"
-   - Add numbered entry with links to CurseForge and Modrinth
-
-8. **docs/curseforge_description.md** (lines ~125-128)
-   - Section: "Requirements" → "Dependencies"
-   - Add dependency to the list
-
-9. **docs/modrinth_description.md** (lines ~30-39)
-   - Sections: "Requirements" (both Fabric and NeoForge)
-   - Add dependency to both loader sections
-
-10. **THIRD_PARTY_LICENSES.md**
-    - Add new dependency entry to "Runtime Dependencies" or "Development Dependencies" section
-    - Include: Project name, version, developer/organization, license, URL, license URL
-    - Add license summary if it's a new license type
-    - Update "Last updated" date at the bottom
-    - Research license information from project's GitHub repository or official page
-
-### Dependency Type Guidelines
-
-- **Required (`depends` / `required`)**: Mod cannot function without it
-- **Optional (`recommends` / `optional`)**: Adds features but not essential
-- **Include in JAR**: Use `include` in Fabric for bundling
-
----
-
-## Pre-Release Verification
-
-**When to use**: Before creating a release or publishing to CurseForge/Modrinth
-
-### Checklist
-
-- [ ] **Version Consistency**
-  - All documentation files show consistent version numbers
-  - gradle.properties matches documentation
-  - fabric.mod.json and neoforge.mods.toml dependencies match gradle files
-
-- [ ] **Documentation Accuracy**
-  - README.md is accurate and up-to-date
-  - player_guide.md is complete with all features
-  - developer_guide.md reflects current architecture
-  - curseforge_description.md ready for publication
-  - modrinth_description.md ready for publication
-
-- [ ] **Configuration Files**
-  - fabric.mod.json has correct dependencies
-  - neoforge.mods.toml has correct dependencies
-  - All dependency versions are tested and working
-
-- [ ] **Build Verification**
-  - `./gradlew clean build` succeeds for both loaders
-  - JAR files are generated correctly
-  - No build warnings or errors
-
-- [ ] **Testing**
-  - All unit tests pass (`./gradlew test`)
-  - Manual testing completed (see quickstart.md checklist)
-  - Both Fabric and NeoForge builds tested in-game
-
-- [ ] **CHANGELOG** (if using)
-  - CHANGELOG.md exists and is current
-  - All user-facing changes documented
-
-- [ ] **GitHub Repository**
-  - All changes committed and pushed
-  - Branch is up-to-date with main/develop
-  - Tags are ready for release version
-
----
-
-## Quick Reference
-
-### Documentation Files by Purpose
-
-**User-Facing**:
-- `README.md` - Project overview, installation, build instructions
-- `docs/player_guide.md` - Complete gameplay guide
-- `docs/curseforge_description.md` - CurseForge mod page content
-- `docs/modrinth_description.md` - Modrinth mod page content
-
-**Legal**:
-- `LICENSE` - Project license (MIT)
-- `THIRD_PARTY_LICENSES.md` - Dependency licenses and version information
-
-**Developer**:
-- `docs/developer_guide.md` - Development setup and architecture
-- `specs/chrono-dawn-mod/spec.md` - Feature specification
-- `specs/chrono-dawn-mod/data-model.md` - Data models
-- `specs/chrono-dawn-mod/tasks.md` - Implementation tasks
-
-**Configuration**:
-- `gradle.properties` - Version definitions
-- `fabric/src/main/resources/fabric.mod.json` - Fabric metadata
-- `neoforge/src/main/resources/META-INF/neoforge.mods.toml` - NeoForge metadata
-
-### Common Line Number References
-
-- README.md Dependencies: ~47-50
-- player_guide.md Prerequisites: ~25-56
-- developer_guide.md Technologies: ~32-45
-- curseforge_description.md Requirements: ~125-128
-- modrinth_description.md Requirements: ~30-39
-- README.md Boss List: ~25-31
-- README.md Structure List: ~17-24
-
----
-
-## Tips
-
-1. **Always update in pairs**: When updating Fabric configs, update NeoForge configs too
-2. **Test both loaders**: Changes to dependencies affect both Fabric and NeoForge differently
-3. **Use search**: Use `grep` or IDE search to find all occurrences of version numbers
-4. **Keep CLAUDE.md current**: Update the current versions list after major updates
-5. **Commit frequently**: Commit documentation changes separately from code changes
-
----
-
-**Last Updated**: 2025-12-08 (Added THIRD_PARTY_LICENSES.md to maintenance checklists)
-**Maintained by**: Chrono Dawn Development Team
+- All plan updates go to root `PLAN.md` (consolidated)
+- Package-level PLAN.md files should be consolidated, not maintained separately
+- Never removes items from PLAN.md (only marks complete)
+- Preserves existing formatting
+- Adds timestamps to completed items
+- Creates backlog items for discovered work
+- Only updates README.md when features change
+- Always follows markdown-writer style

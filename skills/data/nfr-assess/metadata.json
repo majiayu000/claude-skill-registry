@@ -1,7 +1,7 @@
 {
   "name": "nfr-assess",
-  "repo": "adolfoaranaes12/BMAD-ENHANCED",
-  "path": ".claude/skills/nfr-assess/SKILL.md",
-  "source": "github.com/adolfoaranaes12/BMAD-ENHANCED",
-  "downloaded_at": "2026-02-01T03:53:15.488720Z"
+  "repo": "PabloLION/bmad-plugin",
+  "path": "plugins/bmad/skills/nfr-assess/SKILL.md",
+  "source": "github.com/PabloLION/bmad-plugin",
+  "downloaded_at": "2026-02-04T03:30:55.676794Z"
 }

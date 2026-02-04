@@ -1,308 +1,494 @@
 ---
 name: security-review
-description: MANDATORY for security-sensitive code changes - OWASP-based security review with dedicated checklist, required before PR for auth, input handling, API, database, or credential code
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - mcp__github__*
-model: opus
+description: Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and patterns.
 ---
 
-# Security Review
+# 安全性審查技能
 
-## Overview
+此技能確保所有程式碼遵循安全性最佳實務並識別潛在漏洞。
 
-Dedicated security review for code handling authentication, authorization, user input, APIs, databases, or credentials.
+## 何時啟用
 
-**Core principle:** Security issues require specialized attention beyond general code review.
+- 實作認證或授權
+- 處理使用者輸入或檔案上傳
+- 建立新的 API 端點
+- 處理密鑰或憑證
+- 實作支付功能
+- 儲存或傳輸敏感資料
+- 整合第三方 API
 
-**Trigger:** This review is MANDATORY when changes touch security-sensitive paths.
+## 安全性檢查清單
 
-**Announce at start:** "I'm performing a security review of this code."
+### 1. 密鑰管理
 
-## When Required
-
-This skill is MANDATORY when ANY of these files are modified:
-
-| Pattern | Examples |
-|---------|----------|
-| `**/auth/**` | src/auth/login.ts, lib/auth/session.js |
-| `**/security/**` | src/security/encryption.ts |
-| `**/middleware/**` | src/middleware/authenticate.ts |
-| `**/api/**` | src/api/endpoints.ts |
-| `**/*password*` | utils/passwordHash.ts |
-| `**/*token*` | services/tokenService.ts |
-| `**/*secret*` | config/secrets.ts |
-| `**/*credential*` | lib/credentials.js |
-| `**/*session*` | middleware/session.ts |
-| `**/routes/**` | src/routes/protected.ts |
-| `**/*.sql` | migrations/001_users.sql |
-
-Check with:
-```bash
-git diff --name-only HEAD~1 | grep -E '(auth|security|middleware|api|password|token|secret|credential|session|routes|\.sql)'
-```
-
-## OWASP Top 10 Checklist
-
-Review against each category:
-
-### 1. Injection (A03:2021)
-
-| Check | Verify |
-|-------|--------|
-| SQL Injection | All queries use parameterized statements |
-| Command Injection | No user input in shell commands, or properly escaped |
-| LDAP Injection | LDAP queries use proper escaping |
-| XPath Injection | XPath queries use parameterized approach |
-| Template Injection | Template engines configured safely |
-
+#### ❌ 絕不這樣做
 ```typescript
-// VULNERABLE
-db.query(`SELECT * FROM users WHERE id = '${userId}'`);
-
-// SECURE
-db.query('SELECT * FROM users WHERE id = ?', [userId]);
+const apiKey = "sk-proj-xxxxx"  // 寫死的密鑰
+const dbPassword = "password123" // 在原始碼中
 ```
 
-### 2. Broken Authentication (A07:2021)
-
-| Check | Verify |
-|-------|--------|
-| Password Storage | Passwords hashed with bcrypt/argon2 (not MD5/SHA1) |
-| Session Management | Secure, HttpOnly, SameSite cookies |
-| Token Handling | JWTs signed, validated, short-lived |
-| Brute Force Protection | Rate limiting on auth endpoints |
-| Credential Exposure | No credentials in logs, errors, or responses |
-
-### 3. Sensitive Data Exposure (A02:2021)
-
-| Check | Verify |
-|-------|--------|
-| Data in Transit | HTTPS enforced, TLS 1.2+ |
-| Data at Rest | Sensitive data encrypted |
-| Secrets in Code | No hardcoded API keys, passwords, tokens |
-| Error Messages | No sensitive info in error responses |
-| Logging | No sensitive data logged |
-
-```bash
-# Check for hardcoded secrets
-grep -rE '(password|secret|api_key|token)\s*[:=]\s*["\047][^"\047]+["\047]' src/
-```
-
-### 4. XML External Entities (A05:2021)
-
-| Check | Verify |
-|-------|--------|
-| XML Parsing | External entities disabled |
-| DTD Processing | DTD processing disabled if not needed |
-
-### 5. Broken Access Control (A01:2021)
-
-| Check | Verify |
-|-------|--------|
-| Authorization Checks | Every endpoint verifies permissions |
-| Direct Object References | Object access validated against user |
-| Privilege Escalation | Cannot elevate own privileges |
-| CORS | Properly restricted origins |
-| Method Restriction | Only allowed HTTP methods accepted |
-
-### 6. Security Misconfiguration (A05:2021)
-
-| Check | Verify |
-|-------|--------|
-| Default Credentials | No default passwords in use |
-| Error Handling | Stack traces not exposed to users |
-| Security Headers | CSP, X-Frame-Options, etc. set |
-| Debug Mode | Disabled in production |
-| Unnecessary Features | Unused endpoints/features removed |
-
-### 7. Cross-Site Scripting (A03:2021)
-
-| Check | Verify |
-|-------|--------|
-| Output Encoding | User input encoded before display |
-| DOM XSS | innerHTML not used with user input |
-| Template Safety | Template engine auto-escapes |
-| CSP | Content Security Policy configured |
-
+#### ✅ 總是這樣做
 ```typescript
-// VULNERABLE
-element.innerHTML = userInput;
+const apiKey = process.env.OPENAI_API_KEY
+const dbUrl = process.env.DATABASE_URL
 
-// SECURE
-element.textContent = userInput;
-// OR
-element.innerHTML = DOMPurify.sanitize(userInput);
+// 驗證密鑰存在
+if (!apiKey) {
+  throw new Error('OPENAI_API_KEY not configured')
+}
 ```
 
-### 8. Insecure Deserialization (A08:2021)
+#### 驗證步驟
+- [ ] 無寫死的 API 金鑰、Token 或密碼
+- [ ] 所有密鑰在環境變數中
+- [ ] `.env.local` 在 .gitignore 中
+- [ ] git 歷史中無密鑰
+- [ ] 生產密鑰在託管平台（Vercel、Railway）中
 
-| Check | Verify |
-|-------|--------|
-| Object Deserialization | Untrusted data not deserialized |
-| JSON Parsing | Safe JSON.parse usage |
-| Type Validation | Deserialized objects validated |
+### 2. 輸入驗證
 
-### 9. Using Components with Known Vulnerabilities (A06:2021)
+#### 總是驗證使用者輸入
+```typescript
+import { z } from 'zod'
 
-| Check | Verify |
-|-------|--------|
-| Dependency Audit | `pnpm audit` / `pip audit` clean |
-| Outdated Packages | No critically outdated dependencies |
-| CVE Check | No known CVEs in dependencies |
+// 定義驗證 schema
+const CreateUserSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(1).max(100),
+  age: z.number().int().min(0).max(150)
+})
 
+// 處理前驗證
+export async function createUser(input: unknown) {
+  try {
+    const validated = CreateUserSchema.parse(input)
+    return await db.users.create(validated)
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return { success: false, errors: error.errors }
+    }
+    throw error
+  }
+}
+```
+
+#### 檔案上傳驗證
+```typescript
+function validateFileUpload(file: File) {
+  // 大小檢查（最大 5MB）
+  const maxSize = 5 * 1024 * 1024
+  if (file.size > maxSize) {
+    throw new Error('File too large (max 5MB)')
+  }
+
+  // 類型檢查
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/gif']
+  if (!allowedTypes.includes(file.type)) {
+    throw new Error('Invalid file type')
+  }
+
+  // 副檔名檢查
+  const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif']
+  const extension = file.name.toLowerCase().match(/\.[^.]+$/)?.[0]
+  if (!extension || !allowedExtensions.includes(extension)) {
+    throw new Error('Invalid file extension')
+  }
+
+  return true
+}
+```
+
+#### 驗證步驟
+- [ ] 所有使用者輸入以 schema 驗證
+- [ ] 檔案上傳受限（大小、類型、副檔名）
+- [ ] 查詢中不直接使用使用者輸入
+- [ ] 白名單驗證（非黑名單）
+- [ ] 錯誤訊息不洩露敏感資訊
+
+### 3. SQL 注入預防
+
+#### ❌ 絕不串接 SQL
+```typescript
+// 危險 - SQL 注入漏洞
+const query = `SELECT * FROM users WHERE email = '${userEmail}'`
+await db.query(query)
+```
+
+#### ✅ 總是使用參數化查詢
+```typescript
+// 安全 - 參數化查詢
+const { data } = await supabase
+  .from('users')
+  .select('*')
+  .eq('email', userEmail)
+
+// 或使用原始 SQL
+await db.query(
+  'SELECT * FROM users WHERE email = $1',
+  [userEmail]
+)
+```
+
+#### 驗證步驟
+- [ ] 所有資料庫查詢使用參數化查詢
+- [ ] SQL 中無字串串接
+- [ ] ORM/查詢建構器正確使用
+- [ ] Supabase 查詢正確淨化
+
+### 4. 認證與授權
+
+#### JWT Token 處理
+```typescript
+// ❌ 錯誤：localStorage（易受 XSS 攻擊）
+localStorage.setItem('token', token)
+
+// ✅ 正確：httpOnly cookies
+res.setHeader('Set-Cookie',
+  `token=${token}; HttpOnly; Secure; SameSite=Strict; Max-Age=3600`)
+```
+
+#### 授權檢查
+```typescript
+export async function deleteUser(userId: string, requesterId: string) {
+  // 總是先驗證授權
+  const requester = await db.users.findUnique({
+    where: { id: requesterId }
+  })
+
+  if (requester.role !== 'admin') {
+    return NextResponse.json(
+      { error: 'Unauthorized' },
+      { status: 403 }
+    )
+  }
+
+  // 繼續刪除
+  await db.users.delete({ where: { id: userId } })
+}
+```
+
+#### Row Level Security（Supabase）
+```sql
+-- 在所有表格上啟用 RLS
+ALTER TABLE users ENABLE ROW LEVEL SECURITY;
+
+-- 使用者只能查看自己的資料
+CREATE POLICY "Users view own data"
+  ON users FOR SELECT
+  USING (auth.uid() = id);
+
+-- 使用者只能更新自己的資料
+CREATE POLICY "Users update own data"
+  ON users FOR UPDATE
+  USING (auth.uid() = id);
+```
+
+#### 驗證步驟
+- [ ] Token 儲存在 httpOnly cookies（非 localStorage）
+- [ ] 敏感操作前有授權檢查
+- [ ] Supabase 已啟用 Row Level Security
+- [ ] 已實作基於角色的存取控制
+- [ ] 工作階段管理安全
+
+### 5. XSS 預防
+
+#### 淨化 HTML
+```typescript
+import DOMPurify from 'isomorphic-dompurify'
+
+// 總是淨化使用者提供的 HTML
+function renderUserContent(html: string) {
+  const clean = DOMPurify.sanitize(html, {
+    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'p'],
+    ALLOWED_ATTR: []
+  })
+  return <div dangerouslySetInnerHTML={{ __html: clean }} />
+}
+```
+
+#### Content Security Policy
+```typescript
+// next.config.js
+const securityHeaders = [
+  {
+    key: 'Content-Security-Policy',
+    value: `
+      default-src 'self';
+      script-src 'self' 'unsafe-eval' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      font-src 'self';
+      connect-src 'self' https://api.example.com;
+    `.replace(/\s{2,}/g, ' ').trim()
+  }
+]
+```
+
+#### 驗證步驟
+- [ ] 使用者提供的 HTML 已淨化
+- [ ] CSP headers 已設定
+- [ ] 無未驗證的動態內容渲染
+- [ ] 使用 React 內建 XSS 保護
+
+### 6. CSRF 保護
+
+#### CSRF Tokens
+```typescript
+import { csrf } from '@/lib/csrf'
+
+export async function POST(request: Request) {
+  const token = request.headers.get('X-CSRF-Token')
+
+  if (!csrf.verify(token)) {
+    return NextResponse.json(
+      { error: 'Invalid CSRF token' },
+      { status: 403 }
+    )
+  }
+
+  // 處理請求
+}
+```
+
+#### SameSite Cookies
+```typescript
+res.setHeader('Set-Cookie',
+  `session=${sessionId}; HttpOnly; Secure; SameSite=Strict`)
+```
+
+#### 驗證步驟
+- [ ] 狀態變更操作有 CSRF tokens
+- [ ] 所有 cookies 設定 SameSite=Strict
+- [ ] 已實作 Double-submit cookie 模式
+
+### 7. 速率限制
+
+#### API 速率限制
+```typescript
+import rateLimit from 'express-rate-limit'
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 分鐘
+  max: 100, // 每視窗 100 個請求
+  message: 'Too many requests'
+})
+
+// 套用到路由
+app.use('/api/', limiter)
+```
+
+#### 昂貴操作
+```typescript
+// 搜尋的積極速率限制
+const searchLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 分鐘
+  max: 10, // 每分鐘 10 個請求
+  message: 'Too many search requests'
+})
+
+app.use('/api/search', searchLimiter)
+```
+
+#### 驗證步驟
+- [ ] 所有 API 端點有速率限制
+- [ ] 昂貴操作有更嚴格限制
+- [ ] 基於 IP 的速率限制
+- [ ] 基於使用者的速率限制（已認證）
+
+### 8. 敏感資料暴露
+
+#### 日誌記錄
+```typescript
+// ❌ 錯誤：記錄敏感資料
+console.log('User login:', { email, password })
+console.log('Payment:', { cardNumber, cvv })
+
+// ✅ 正確：遮蔽敏感資料
+console.log('User login:', { email, userId })
+console.log('Payment:', { last4: card.last4, userId })
+```
+
+#### 錯誤訊息
+```typescript
+// ❌ 錯誤：暴露內部細節
+catch (error) {
+  return NextResponse.json(
+    { error: error.message, stack: error.stack },
+    { status: 500 }
+  )
+}
+
+// ✅ 正確：通用錯誤訊息
+catch (error) {
+  console.error('Internal error:', error)
+  return NextResponse.json(
+    { error: 'An error occurred. Please try again.' },
+    { status: 500 }
+  )
+}
+```
+
+#### 驗證步驟
+- [ ] 日誌中無密碼、token 或密鑰
+- [ ] 使用者收到通用錯誤訊息
+- [ ] 詳細錯誤只在伺服器日誌
+- [ ] 不向使用者暴露堆疊追蹤
+
+### 9. 區塊鏈安全（Solana）
+
+#### 錢包驗證
+```typescript
+import { verify } from '@solana/web3.js'
+
+async function verifyWalletOwnership(
+  publicKey: string,
+  signature: string,
+  message: string
+) {
+  try {
+    const isValid = verify(
+      Buffer.from(message),
+      Buffer.from(signature, 'base64'),
+      Buffer.from(publicKey, 'base64')
+    )
+    return isValid
+  } catch (error) {
+    return false
+  }
+}
+```
+
+#### 交易驗證
+```typescript
+async function verifyTransaction(transaction: Transaction) {
+  // 驗證收款人
+  if (transaction.to !== expectedRecipient) {
+    throw new Error('Invalid recipient')
+  }
+
+  // 驗證金額
+  if (transaction.amount > maxAmount) {
+    throw new Error('Amount exceeds limit')
+  }
+
+  // 驗證使用者有足夠餘額
+  const balance = await getBalance(transaction.from)
+  if (balance < transaction.amount) {
+    throw new Error('Insufficient balance')
+  }
+
+  return true
+}
+```
+
+#### 驗證步驟
+- [ ] 錢包簽章已驗證
+- [ ] 交易詳情已驗證
+- [ ] 交易前有餘額檢查
+- [ ] 無盲目交易簽署
+
+### 10. 依賴安全
+
+#### 定期更新
 ```bash
-# Run dependency audit
-pnpm audit --prod
-# or
-pip-audit
+# 檢查漏洞
+npm audit
+
+# 自動修復可修復的問題
+npm audit fix
+
+# 更新依賴
+npm update
+
+# 檢查過時套件
+npm outdated
 ```
 
-### 10. Insufficient Logging & Monitoring (A09:2021)
-
-| Check | Verify |
-|-------|--------|
-| Auth Events | Login success/failure logged |
-| Access Control | Permission denials logged |
-| Input Validation | Validation failures logged |
-| Sensitive Actions | Admin actions logged |
-| Log Integrity | Logs protected from tampering |
-
-## Review Process
-
-### Step 1: Identify Security-Sensitive Changes
-
+#### Lock 檔案
 ```bash
-# List changed files matching security patterns
-git diff --name-only HEAD~1 | grep -E '(auth|security|middleware|api|password|token|secret|session)'
+# 總是 commit lock 檔案
+git add package-lock.json
+
+# 在 CI/CD 中使用以獲得可重現的建置
+npm ci  # 而非 npm install
 ```
 
-### Step 2: Review Each File
+#### 驗證步驟
+- [ ] 依賴保持最新
+- [ ] 無已知漏洞（npm audit 乾淨）
+- [ ] Lock 檔案已 commit
+- [ ] GitHub 上已啟用 Dependabot
+- [ ] 定期安全更新
 
-For each security-sensitive file:
-1. Read the entire file (not just diff)
-2. Check against all 10 OWASP categories
-3. Note any findings with severity
+## 安全測試
 
-### Step 3: Check Dependencies
+### 自動化安全測試
+```typescript
+// 測試認證
+test('requires authentication', async () => {
+  const response = await fetch('/api/protected')
+  expect(response.status).toBe(401)
+})
 
-```bash
-# Audit dependencies
-pnpm audit --prod
+// 測試授權
+test('requires admin role', async () => {
+  const response = await fetch('/api/admin', {
+    headers: { Authorization: `Bearer ${userToken}` }
+  })
+  expect(response.status).toBe(403)
+})
 
-# Check for outdated
-pnpm outdated
+// 測試輸入驗證
+test('rejects invalid input', async () => {
+  const response = await fetch('/api/users', {
+    method: 'POST',
+    body: JSON.stringify({ email: 'not-an-email' })
+  })
+  expect(response.status).toBe(400)
+})
+
+// 測試速率限制
+test('enforces rate limits', async () => {
+  const requests = Array(101).fill(null).map(() =>
+    fetch('/api/endpoint')
+  )
+
+  const responses = await Promise.all(requests)
+  const tooManyRequests = responses.filter(r => r.status === 429)
+
+  expect(tooManyRequests.length).toBeGreaterThan(0)
+})
 ```
 
-### Step 4: Document Findings
+## 部署前安全檢查清單
 
-Use severity levels:
+任何生產部署前：
 
-| Severity | Description | Action |
-|----------|-------------|--------|
-| CRITICAL | Exploitable vulnerability, data breach risk | MUST fix before merge |
-| HIGH | Significant security weakness | MUST fix before merge |
-| MEDIUM | Defense-in-depth issue | SHOULD fix before merge |
-| LOW | Minor improvement | MAY fix in future issue |
+- [ ] **密鑰**：無寫死密鑰，全在環境變數中
+- [ ] **輸入驗證**：所有使用者輸入已驗證
+- [ ] **SQL 注入**：所有查詢已參數化
+- [ ] **XSS**：使用者內容已淨化
+- [ ] **CSRF**：保護已啟用
+- [ ] **認證**：正確的 token 處理
+- [ ] **授權**：角色檢查已就位
+- [ ] **速率限制**：所有端點已啟用
+- [ ] **HTTPS**：生產環境強制使用
+- [ ] **安全標頭**：CSP、X-Frame-Options 已設定
+- [ ] **錯誤處理**：錯誤中無敏感資料
+- [ ] **日誌記錄**：無敏感資料被記錄
+- [ ] **依賴**：最新，無漏洞
+- [ ] **Row Level Security**：Supabase 已啟用
+- [ ] **CORS**：正確設定
+- [ ] **檔案上傳**：已驗證（大小、類型）
+- [ ] **錢包簽章**：已驗證（如果是區塊鏈）
 
-### Step 5: Add Security Section to Review Artifact
+## 資源
 
-Add to the main review artifact:
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [Next.js Security](https://nextjs.org/docs/security)
+- [Supabase Security](https://supabase.com/docs/guides/auth)
+- [Web Security Academy](https://portswigger.net/web-security)
 
-```markdown
-### Security Review
+---
 
-**Security-Sensitive:** YES
-**Reviewed By:** [WORKER_ID or security-reviewer subagent]
-**OWASP Categories Checked:** 10/10
-
-#### Security Findings
-
-| # | OWASP Category | Severity | Finding | Status |
-|---|----------------|----------|---------|--------|
-| 1 | A03 Injection | CRITICAL | SQL injection in findUser() | FIXED |
-| 2 | A02 Sensitive Data | HIGH | API key in config.ts | DEFERRED #456 |
-| 3 | A01 Access Control | MEDIUM | Missing auth on /admin | FIXED |
-
-#### Dependency Audit
-
-```
-pnpm audit: 0 vulnerabilities
-```
-
-**Security Review Status:** [PASS|ISSUES_FIXED|ISSUES_DEFERRED]
-```
-
-## Security Review Artifact (Standalone)
-
-If security review is extensive, post as separate comment:
-
-```markdown
-<!-- SECURITY_REVIEW:START -->
-## Security Review
-
-| Property | Value |
-|----------|-------|
-| Issue | #123 |
-| Reviewer | `security-reviewer` subagent |
-| Reviewed | 2025-12-29T10:30:00Z |
-
-### Files Reviewed
-
-- src/auth/login.ts
-- src/middleware/authenticate.ts
-- src/api/users.ts
-
-### OWASP Checklist Results
-
-| # | Category | Status | Notes |
-|---|----------|--------|-------|
-| A01 | Broken Access Control | PASS | Auth middleware on all protected routes |
-| A02 | Cryptographic Failures | PASS | bcrypt for passwords, TLS enforced |
-| A03 | Injection | FIXED | Parameterized SQL queries now |
-| A04 | Insecure Design | PASS | - |
-| A05 | Security Misconfiguration | PASS | - |
-| A06 | Vulnerable Components | PASS | pnpm audit clean |
-| A07 | Auth Failures | PASS | Rate limiting, secure sessions |
-| A08 | Data Integrity Failures | PASS | - |
-| A09 | Logging Failures | NOTE | Consider adding auth failure logging |
-| A10 | SSRF | N/A | No server-side requests |
-
-### Dependency Audit
-
-```
-found 0 vulnerabilities
-```
-
-**Security Review Status:** PASS
-<!-- SECURITY_REVIEW:END -->
-```
-
-## Checklist
-
-Before completing security review:
-
-- [ ] All changed security-sensitive files reviewed
-- [ ] All 10 OWASP categories checked
-- [ ] Dependency audit run
-- [ ] All CRITICAL/HIGH findings fixed
-- [ ] Any deferred findings have tracking issues
-- [ ] Security section added to review artifact
-- [ ] Security-Sensitive marked YES in main artifact
-
-## Integration
-
-This skill is triggered by:
-- Changes to security-sensitive file patterns
-- Explicit invocation
-- `security-reviewer` subagent
-
-This skill integrates with:
-- `comprehensive-review` - Security is criterion #4
-- `review-gate` - Verifies security review for sensitive changes
-
-This skill is enforced by:
-- `.claude/rules/security-sensitive.md` conditional rules
-- `PreToolUse` hook (PR blocked if security-sensitive without review)
+**記住**：安全性不是可選的。一個漏洞可能危及整個平台。有疑慮時，選擇謹慎的做法。

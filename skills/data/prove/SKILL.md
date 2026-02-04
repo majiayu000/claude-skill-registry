@@ -1,7 +1,9 @@
 ---
 name: prove
 description: Formal theorem proving with research, testing, and verification phases
+triggers: ["prove", "verify", "show that", "is it true", "formalize"]
 allowed-tools: [Bash, Read, Write, Edit, WebSearch, WebFetch, AskUserQuestion, Grep, Glob]
+priority: high
 ---
 
 # /prove - Machine-Verified Proofs (5-Phase Workflow)

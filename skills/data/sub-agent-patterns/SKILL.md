@@ -10,7 +10,7 @@ user-invocable: true
 # Sub-Agents in Claude Code
 
 **Status**: Production Ready ✅
-**Last Updated**: 2026-01-14
+**Last Updated**: 2026-02-02
 **Source**: https://code.claude.com/docs/en/sub-agents
 
 Sub-agents are specialized AI assistants that Claude Code can delegate tasks to. Each sub-agent has its own context window, configurable tools, and custom system prompt.
@@ -169,11 +169,33 @@ Include specific instructions, best practices, and constraints.
 |-------|----------|-------------|
 | `name` | Yes | Unique identifier (lowercase, hyphens) |
 | `description` | Yes | When Claude should use this agent |
-| `tools` | No | Comma-separated list. Omit = inherit all tools |
+| `tools` | No | Comma-separated list. **Omit entirely** = inherit ALL tools (including MCP) |
 | `model` | No | `sonnet`, `opus`, `haiku`, or `inherit`. Default: sonnet |
 | `permissionMode` | No | `default`, `acceptEdits`, `dontAsk`, `bypassPermissions`, `plan`, `ignore` |
 | `skills` | No | Comma-separated skills to auto-load (sub-agents don't inherit parent skills) |
 | `hooks` | No | `PreToolUse`, `PostToolUse`, `Stop` event handlers |
+
+### MCP Tool Inheritance (CRITICAL)
+
+**To access MCP tools from a sub-agent, you MUST omit the `tools` field entirely.**
+
+When you specify ANY tools in the `tools` field, it becomes an **allowlist**. There is no wildcard syntax.
+
+```yaml
+# ❌ WRONG - "*" is interpreted literally as a tool named "*", not a wildcard
+tools: Read, Grep, Glob, "*"
+
+# ❌ WRONG - this is an allowlist, agent cannot access MCP tools
+tools: Read, Grep, Glob
+
+# ✅ CORRECT - omit tools field entirely to inherit ALL tools including MCP
+# tools field omitted
+model: sonnet
+```
+
+**Key insight**: The `"*"` is NOT valid wildcard syntax. When parsed, it's treated as a literal tool name that doesn't exist.
+
+**Agent restart required**: Changes to agent config files only take effect after restarting Claude Code session.
 
 ### Available Tools Reference
 
@@ -1085,4 +1107,4 @@ Resume agents:
 
 ---
 
-**Last Updated**: 2026-01-14
+**Last Updated**: 2026-02-02

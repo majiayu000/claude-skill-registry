@@ -1,9 +1,7 @@
 {
   "name": "triton-inference-config",
-  "description": "Triton Inference Config - Auto-activating skill for ML Deployment.Triggers on: triton inference config, triton inference configPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/08-ml-deployment/triton-inference-config/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:43.333667Z"
 }

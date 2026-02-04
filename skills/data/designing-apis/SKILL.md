@@ -1,211 +1,113 @@
 ---
 name: designing-apis
-description: Designs REST and GraphQL APIs including endpoints, error handling, versioning, and documentation. Use when creating new APIs, designing endpoints, reviewing API contracts, or when asked about REST, GraphQL, or API patterns.
+description: Design clean, consistent APIs. Use when creating new endpoints, defining contracts, or improving API ergonomics. Covers REST, versioning, and error handling.
+allowed-tools: Read, Write, Glob, Grep
 ---
 
 # Designing APIs
 
-## API Design Workflow
+## Workflows
 
-Copy this checklist and track progress:
+- [ ] **Resources**: Identify resources and relationships
+- [ ] **Endpoints**: Define URL structure and methods
+- [ ] **Request/Response**: Define payloads and schemas
+- [ ] **Errors**: Define error responses
+- [ ] **Document**: Create OpenAPI spec
 
-```
-API Design Progress:
-- [ ] Step 1: Define resources and relationships
-- [ ] Step 2: Design endpoint structure
-- [ ] Step 3: Define request/response formats
-- [ ] Step 4: Plan error handling
-- [ ] Step 5: Add authentication/authorization
-- [ ] Step 6: Document with OpenAPI spec
-- [ ] Step 7: Validate design against checklist
-```
+## REST Principles
 
-## REST API Design
+### Resource Naming
+- Use nouns, not verbs: `/users` not `/getUsers`
+- Use plural: `/users` not `/user`
+- Use kebab-case: `/user-profiles` not `/userProfiles`
+- Nest for relationships: `/users/{id}/orders`
 
-### URL Structure
-```
-# Resource-based URLs (nouns, not verbs)
-GET    /users              # List users
-GET    /users/:id          # Get user
-POST   /users              # Create user
-PUT    /users/:id          # Replace user
-PATCH  /users/:id          # Update user
-DELETE /users/:id          # Delete user
+### HTTP Methods
+| Method | Purpose | Idempotent |
+|--------|---------|------------|
+| GET | Read | Yes |
+| POST | Create | No |
+| PUT | Replace | Yes |
+| PATCH | Update | Yes |
+| DELETE | Remove | Yes |
 
-# Nested resources
-GET    /users/:id/orders   # User's orders
-POST   /users/:id/orders   # Create order for user
+### Status Codes
+| Code | Meaning |
+|------|---------|
+| 200 | Success |
+| 201 | Created |
+| 204 | No Content |
+| 400 | Bad Request |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not Found |
+| 409 | Conflict |
+| 422 | Unprocessable Entity |
+| 500 | Internal Server Error |
 
-# Query parameters for filtering/pagination
-GET    /users?role=admin&status=active
-GET    /users?page=2&limit=20&sort=-createdAt
-```
+## Error Response Format
 
-### HTTP Status Codes
-| Code | Meaning | Use Case |
-|------|---------|----------|
-| 200 | OK | Successful GET, PUT, PATCH |
-| 201 | Created | Successful POST |
-| 204 | No Content | Successful DELETE |
-| 400 | Bad Request | Invalid input |
-| 401 | Unauthorized | Missing/invalid auth |
-| 403 | Forbidden | Valid auth, no permission |
-| 404 | Not Found | Resource doesn't exist |
-| 409 | Conflict | Duplicate, state conflict |
-| 422 | Unprocessable | Validation failed |
-| 429 | Too Many Requests | Rate limited |
-| 500 | Internal Error | Server error |
-
-### Response Formats
-
-**Success Response:**
-```json
-{
-  "data": {
-    "id": "123",
-    "type": "user",
-    "attributes": {
-      "name": "John Doe",
-      "email": "john@example.com"
-    }
-  },
-  "meta": {
-    "requestId": "abc-123"
-  }
-}
-```
-
-**List Response with Pagination:**
-```json
-{
-  "data": [...],
-  "meta": {
-    "total": 100,
-    "page": 1,
-    "limit": 20,
-    "totalPages": 5
-  },
-  "links": {
-    "self": "/users?page=1",
-    "next": "/users?page=2",
-    "last": "/users?page=5"
-  }
-}
-```
-
-**Error Response:**
 ```json
 {
   "error": {
     "code": "VALIDATION_ERROR",
-    "message": "Invalid input data",
+    "message": "Request validation failed",
     "details": [
       {
         "field": "email",
-        "message": "Must be a valid email address"
+        "message": "Invalid email format"
       }
     ]
-  },
-  "meta": {
-    "requestId": "abc-123"
   }
 }
 ```
 
-## API Versioning
+## Versioning
 
-**URL Versioning (Recommended):**
+### URL Versioning (Recommended)
 ```
-/api/v1/users
-/api/v2/users
-```
-
-**Header Versioning:**
-```
-Accept: application/vnd.api+json; version=1
+GET /api/v1/users
+GET /api/v2/users
 ```
 
-## Authentication Patterns
-
-**JWT Bearer Token:**
+### Header Versioning
 ```
-Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
-```
-
-**API Key:**
-```
-X-API-Key: your-api-key
+GET /api/users
+Accept: application/vnd.api+json;version=1
 ```
 
-## Rate Limiting Headers
-```
-X-RateLimit-Limit: 100
-X-RateLimit-Remaining: 95
-X-RateLimit-Reset: 1609459200
-Retry-After: 60
-```
+## Pagination
 
-## GraphQL Patterns
-
-**Schema Design:**
-```graphql
-type Query {
-  user(id: ID!): User
-  users(filter: UserFilter, pagination: Pagination): UserConnection!
-}
-
-type Mutation {
-  createUser(input: CreateUserInput!): UserPayload!
-  updateUser(id: ID!, input: UpdateUserInput!): UserPayload!
-}
-
-type User {
-  id: ID!
-  name: String!
-  email: String!
-  orders(first: Int, after: String): OrderConnection!
-}
-
-input CreateUserInput {
-  name: String!
-  email: String!
-}
-
-type UserPayload {
-  user: User
-  errors: [Error!]
+```json
+{
+  "data": [...],
+  "pagination": {
+    "page": 1,
+    "per_page": 20,
+    "total": 100,
+    "total_pages": 5
+  }
 }
 ```
 
-## OpenAPI Specification Template
+## OpenAPI Example
 
-See [OPENAPI-TEMPLATE.md](OPENAPI-TEMPLATE.md) for the full OpenAPI 3.0 specification template.
-
-## API Design Validation
-
-After completing the design, validate against this checklist:
-
+```yaml
+openapi: 3.0.0
+info:
+  title: Users API
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      summary: List users
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
 ```
-Validation Checklist:
-- [ ] All endpoints use nouns, not verbs
-- [ ] HTTP methods match operations correctly
-- [ ] Consistent response format across endpoints
-- [ ] Error responses include actionable details
-- [ ] Pagination implemented for list endpoints
-- [ ] Authentication defined for protected endpoints
-- [ ] Rate limiting headers documented
-- [ ] OpenAPI spec is complete and valid
-```
-
-If validation fails, return to the relevant design step and address the issues.
-
-## Security Checklist
-- [ ] HTTPS only
-- [ ] Authentication on all endpoints
-- [ ] Authorization checks
-- [ ] Input validation
-- [ ] Rate limiting
-- [ ] Request size limits
-- [ ] CORS properly configured
-- [ ] No sensitive data in URLs
-- [ ] Audit logging

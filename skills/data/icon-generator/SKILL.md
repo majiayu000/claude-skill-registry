@@ -1,115 +1,48 @@
 ---
 name: icon-generator
-description: Generate app icons and favicons in multiple sizes from a single source image. Support for iOS, Android, web favicon, and social media formats.
+description: Generate web UI/UX icon assets (favicon.ico, apple-touch-icon, PWA icons incl. maskable) and optionally Unreal Engine packaging icons (Windows .ico, macOS .iconset/.icns, Linux .png) from a single source SVG/PNG; use when you need correct multi-size icon files, safe-area guidance, manifests/head tags, or automation.
 ---
 
 # Icon Generator
 
-Generate app icons in all required sizes from a single image.
+You generate icon asset bundles for **web UI/UX first** (favicons + PWA icons), and you can also generate **Unreal Engine packaging** icon assets when needed.
 
-## Features
+## Fast workflow
 
-- **Multi-Platform**: iOS, Android, Web, macOS, Windows
-- **Batch Generation**: All sizes from one source
-- **Smart Scaling**: Maintain quality at all sizes
-- **Format Support**: PNG, ICO, ICNS
-- **Presets**: Platform-specific size sets
-- **Rounding Options**: Square or rounded corners
+1. Pick target(s): Web UI/UX (favicon + PWA icons) and/or Unreal Engine packaging (optional).
 
-## Quick Start
+2. Pick the source icon: prefer a **1024x1024 PNG** (square) or a clean **SVG**. If it's not square, choose whether to crop or pad (default: pad).
 
-```python
-from icon_generator import IconGenerator
+3. Generate the assets using [`scripts/generate_icons.py`](scripts/generate_icons.py).
 
-gen = IconGenerator()
+Web/PWA sizes and safe-area rules: [`references/web-ui-ux.md`](references/web-ui-ux.md)
 
-# Generate all iOS icons
-gen.load("logo.png")
-gen.generate_ios("ios_icons/")
+Unreal Engine formats and expectations: [`references/unreal-engine.md`](references/unreal-engine.md)
 
-# Generate all favicon sizes
-gen.load("logo.png")
-gen.generate_favicon("favicon/")
+Full size tables: [`references/icon-sizes.md`](references/icon-sizes.md)
 
-# Generate specific sizes
-gen.load("logo.png")
-gen.generate_sizes([16, 32, 64, 128, 256, 512], "icons/")
-```
+4. Verify output quality: ensure the `.ico` contains multiple sizes, and the 16/24/32 px variants are crisp.
 
-## CLI Usage
+## Quality rules (what "good" looks like)
 
-```bash
-# Generate iOS icons
-python icon_generator.py --input logo.png --preset ios --output-dir ios_icons/
+- **Design for small sizes**: avoid thin strokes, tiny text, and busy details.
+- **Prefer transparent backgrounds** for desktop icons unless you intentionally "plate" the icon.
+- **Preview at 16px and 24px**. If it becomes muddy, create a simpler variant.
 
-# Generate Android icons
-python icon_generator.py --input logo.png --preset android --output-dir android_icons/
+## Automation (recommended)
 
-# Generate favicons
-python icon_generator.py --input logo.png --preset favicon --output-dir favicon/
+Run and customize the script:
 
-# Custom sizes
-python icon_generator.py --input logo.png --sizes 16 32 64 128 256 -o icons/
+- Script: [`scripts/generate_icons.py`](scripts/generate_icons.py)
+- It supports:
+  - Web/PWA set: `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png`
+  - UE sets (optional): Windows `.ico`, macOS `.iconset`, Linux `.png`
 
-# Generate all platforms
-python icon_generator.py --input logo.png --preset all --output-dir app_icons/
-```
+If you need HTML `<head>` snippets, `manifest.webmanifest` examples, and maskable safe-area guidance, read:
 
-## API Reference
+- [`references/web-ui-ux.md`](references/web-ui-ux.md)
 
-### IconGenerator Class
+## Notes
 
-```python
-class IconGenerator:
-    def __init__(self)
-
-    # Loading
-    def load(self, filepath: str) -> 'IconGenerator'
-
-    # Generation
-    def generate_ios(self, output_dir: str) -> List[str]
-    def generate_android(self, output_dir: str) -> List[str]
-    def generate_favicon(self, output_dir: str) -> List[str]
-    def generate_macos(self, output_dir: str) -> List[str]
-    def generate_windows(self, output_dir: str) -> List[str]
-    def generate_pwa(self, output_dir: str) -> List[str]
-    def generate_all(self, output_dir: str) -> Dict[str, List[str]]
-
-    # Custom
-    def generate_sizes(self, sizes: List[int], output_dir: str,
-                      prefix: str = "icon") -> List[str]
-    def generate_single(self, size: int, output: str) -> str
-
-    # Options
-    def set_rounding(self, radius_percent: float) -> 'IconGenerator'
-    def set_padding(self, padding_percent: float) -> 'IconGenerator'
-    def set_background(self, color: Tuple) -> 'IconGenerator'
-```
-
-## Platform Sizes
-
-### iOS (App Store)
-- 20x20, 29x29, 40x40, 60x60, 76x76, 83.5x83.5
-- 1024x1024 (App Store)
-- @2x and @3x variants
-
-### Android
-- mdpi: 48x48
-- hdpi: 72x72
-- xhdpi: 96x96
-- xxhdpi: 144x144
-- xxxhdpi: 192x192
-- Play Store: 512x512
-
-### Favicon
-- 16x16, 32x32, 48x48
-- 180x180 (Apple Touch)
-- 192x192, 512x512 (PWA)
-
-### Windows
-- 16x16, 32x32, 48x48
-- 256x256 (ICO)
-
-## Dependencies
-
-- pillow>=10.0.0
+- If your input is SVG and Python SVG rasterization is unavailable on your machine, export a 1024x1024 PNG first (e.g., Inkscape), then rerun the script using the PNG.
+- Keep this SKILL.md lean; detailed size tables live in the reference files.

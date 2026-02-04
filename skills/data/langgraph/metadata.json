@@ -1,7 +1,9 @@
 {
   "name": "langgraph",
-  "repo": "omer-metin/skills-for-antigravity",
-  "path": "skills/langgraph/SKILL.md",
-  "source": "github.com/omer-metin/skills-for-antigravity",
-  "downloaded_at": "2026-02-02T03:38:27.214049Z"
+  "description": "LangGraph skill for building stateful agent graphs, subgraphs, checkpoints, conditional flows, parallel execution, streaming, and multi-agent orchestration.",
+  "repo": "Sameeh07/AGENT-SKILLS",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Sameeh07/AGENT-SKILLS"
 }

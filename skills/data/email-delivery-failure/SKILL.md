@@ -1,48 +1,20 @@
 ---
 name: email-delivery-failure
-description: |
-  Bounce-back or delivery failure notices for emails sent to customer addresses.
-sample_size: 47
-validation:
-  required_phrases:
-    - "let me know if"
-  forbidden_patterns: []
-metrics:
-  sample_size: 47
-  avg_thread_length: 3.96
-  top_phrases:
-    - phrase: "let me know if"
-      count: 12
-      percent: 25.5
-    - phrase: "if you have any"
-      count: 12
-      percent: 25.5
-    - phrase: "me know if you"
-      count: 10
-      percent: 21.3
-    - phrase: "you have any trouble"
-      count: 7
-      percent: 14.9
-    - phrase: "using the email login"
-      count: 6
-      percent: 12.8
-    - phrase: "the email login link"
-      count: 6
-      percent: 12.8
-    - phrase: "email login link at"
-      count: 6
-      percent: 12.8
-    - phrase: "login link at the"
-      count: 6
-      percent: 12.8
-    - phrase: "link at the top"
-      count: 6
-      percent: 12.8
-    - phrase: "at the top of"
-      count: 6
-      percent: 12.8
+description: Handle email delivery failures. Use when messages bounce or a customer reports not receiving emails.
+metadata:
+  trigger_phrases:
+      - "handle email"
+      - "email delivery"
+      - "delivery failures"
+  related_skills: ["subscription-renewal-issue", "broken-link-404-error", "website-bug-report", "password-reset-issue", "login-link"]
+  sample_size: "47"
+  validation: |
+    required_phrases:
+      - "let me know if"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 47\navg_thread_length: 3.96\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 12\n    percent: 25.5\n  - phrase: \"if you have any\"\n    count: 12\n    percent: 25.5\n  - phrase: \"me know if you\"\n    count: 10\n    percent: 21.3\n  - phrase: \"you have any trouble\"\n    count: 7\n    percent: 14.9\n  - phrase: \"using the email login\"\n    count: 6\n    percent: 12.8\n  - phrase: \"the email login link\"\n    count: 6\n    percent: 12.8\n  - phrase: \"email login link at\"\n    count: 6\n    percent: 12.8\n  - phrase: \"login link at the\"\n    count: 6\n    percent: 12.8\n  - phrase: \"link at the top\"\n    count: 6\n    percent: 12.8\n  - phrase: \"at the top of\"\n    count: 6\n    percent: 12.8"
 ---
-
 # Email Delivery Failure
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

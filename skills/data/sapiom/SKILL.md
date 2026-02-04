@@ -9,27 +9,27 @@ Instant access to paid services with pay-per-use pricing. No vendor account setu
 
 ## Documentation
 
-For detailed, up-to-date endpoint documentation, fetch the markdown docs:
+**Always fetch the markdown docs for endpoint details, parameters, and examples.**
 
-| Topic | Markdown URL |
-|-------|--------------|
-| Quick Start | https://docs.sapiom.ai/md/quick-start.md |
-| Verify Users | https://docs.sapiom.ai/md/capabilities/verify.md |
-| Web Search | https://docs.sapiom.ai/md/capabilities/search.md |
+| Service | Documentation |
+|---------|---------------|
+| Verify | https://docs.sapiom.ai/md/capabilities/verify.md |
+| Search | https://docs.sapiom.ai/md/capabilities/search.md |
 | AI Models | https://docs.sapiom.ai/md/capabilities/ai-models.md |
 | Images | https://docs.sapiom.ai/md/capabilities/images.md |
-| Service Proxy (Python) | https://docs.sapiom.ai/md/service-proxy.md |
+| Service Proxy | https://docs.sapiom.ai/md/service-proxy.md |
 
-## Setup
+## Two Access Patterns
 
-1. Get your API key from https://app.sapiom.ai/settings
-2. Set environment variable:
-   ```bash
-   export SAPIOM_API_KEY="your_key"
-   ```
+Sapiom offers two ways to call services. Choose based on your language and needs:
 
-### Node.js
+### 1. Direct Access (Node.js SDK)
 
+Use the SDK to call provider gateways directly. The SDK handles payment negotiation automatically.
+
+**When to use:** Node.js/TypeScript projects. Gives access to full provider API features.
+
+**Setup:**
 ```bash
 npm install @sapiom/axios axios
 ```
@@ -41,12 +41,33 @@ import axios from "axios";
 const client = withSapiom(axios.create(), {
   apiKey: process.env.SAPIOM_API_KEY,
 });
+
+// Example: Search with Linkup
+const { data } = await client.post(
+  "https://linkup.services.sapiom.ai/v1/search",
+  { query: "quantum computing", depth: "standard", outputType: "sourcedAnswer" }
+);
 ```
 
-### Python (Service Proxy)
+**Provider Gateway URLs:**
 
-No SDK required. Use REST API with Bearer token authentication.
+| Service | Base URL |
+|---------|----------|
+| Verify | `https://prelude.services.sapiom.ai` |
+| Search (Linkup) | `https://linkup.services.sapiom.ai` |
+| Search (You.com) | `https://you-com.services.sapiom.ai` |
+| AI Models | `https://openrouter.services.sapiom.ai` |
+| Images | `https://fal-ai.services.sapiom.ai` |
 
+### 2. Semantic Endpoints (Python/REST)
+
+Use simplified REST endpoints via the Service Proxy. No SDK required — just Bearer token auth.
+
+**When to use:** Python, Go, Ruby, or any language without SDK support.
+
+**Important:** Do NOT wrap Service Proxy calls with the SDK. The proxy handles payment server-side.
+
+**Setup:**
 ```python
 import requests
 import os
@@ -55,110 +76,50 @@ headers = {
     "Authorization": f"Bearer {os.environ['SAPIOM_API_KEY']}",
     "Content-Type": "application/json"
 }
-```
 
-**Note:** Service Proxy currently supports Verify only. See https://docs.sapiom.ai/md/service-proxy.md
-
-## Services
-
-| Service | Base URL | Docs |
-|---------|----------|------|
-| Verify | `https://prelude.services.sapiom.ai` | [verify.md](https://docs.sapiom.ai/md/capabilities/verify.md) |
-| Search (Linkup) | `https://linkup.services.sapiom.ai` | [search.md](https://docs.sapiom.ai/md/capabilities/search.md) |
-| Search (You.com) | `https://you-com.services.sapiom.ai` | [search.md](https://docs.sapiom.ai/md/capabilities/search.md) |
-| AI Models | `https://openrouter.services.sapiom.ai` | [ai-models.md](https://docs.sapiom.ai/md/capabilities/ai-models.md) |
-| Images | `https://fal-ai.services.sapiom.ai` | [images.md](https://docs.sapiom.ai/md/capabilities/images.md) |
-
-## Quick Examples
-
-### Search with AI Answer (Node.js)
-
-```typescript
-const { data } = await client.post(
-  "https://linkup.services.sapiom.ai/v1/search",
-  { query: "quantum computing", depth: "standard", outputType: "sourcedAnswer" }
-);
-console.log(data.answer);
-```
-
-### Verify Phone (Node.js)
-
-```typescript
-// Step 1: Send code
-const { data: send } = await client.post(
-  "https://prelude.services.sapiom.ai/verifications",
-  { target: { type: "phone_number", value: "+15551234567" } }
-);
-
-// Step 2: Check code
-const { data: check } = await client.post(
-  "https://prelude.services.sapiom.ai/verifications/check",
-  { verificationRequestId: send.id, code: "123456" }
-);
-```
-
-### Verify Phone (Python)
-
-```python
-# Step 1: Send code
+# Example: Verify a phone number
 resp = requests.post(
     "https://api.sapiom.ai/v1/services/verify/send",
     headers=headers,
     json={"phoneNumber": "+15551234567"}
 )
-request_id = resp.json()["verificationRequestId"]
+verification_id = resp.json()["verificationRequestId"]
 
-# Step 2: Check code
+# Check the code
 resp = requests.post(
     "https://api.sapiom.ai/v1/services/verify/check",
     headers=headers,
-    json={"verificationRequestId": request_id, "code": "123456"}
+    json={"verificationRequestId": verification_id, "code": "123456"}
 )
 ```
 
-### AI Models (Node.js)
+**Available semantic endpoints:** Currently Verify only. See https://docs.sapiom.ai/md/service-proxy.md
 
-```typescript
-const { data } = await client.post(
-  "https://openrouter.services.sapiom.ai/v1/chat/completions",
-  {
-    model: "openai/gpt-4o-mini",
-    messages: [{ role: "user", content: "Hello!" }],
-    max_tokens: 100,
-  }
-);
-```
+Other services (Search, AI Models, Images) require the Node.js SDK with direct access.
 
-## Pricing
+## Setup
 
-| Service | Price |
-|---------|-------|
-| Verify | $0.015/verification |
-| Search (Linkup) | $0.01-$0.08/search |
-| Search (You.com) | $0.006/search |
-| AI Models | Per-token (see [OpenRouter](https://openrouter.ai/docs#models)) |
-| Images | $0.004-$0.04/megapixel |
+1. Get your API key from https://app.sapiom.ai/settings
+2. Set environment variable:
+   ```bash
+   export SAPIOM_API_KEY="your_key"
+   ```
 
 ## Navigating Documentation
 
-Links within markdown docs use relative paths (e.g., `/capabilities/search`). To get the markdown version:
+Links within markdown docs use relative paths. To get the full markdown URL:
 
-| HTML Path | Markdown Path |
-|-----------|---------------|
-| `/capabilities/search` | `/md/capabilities/search.md` |
-| `/quick-start` | `/md/quick-start.md` |
-| `/governance` | `/md/governance.md` |
+| Path in docs | Markdown URL |
+|--------------|--------------|
+| `/capabilities/search` | `https://docs.sapiom.ai/md/capabilities/search.md` |
+| `/quick-start` | `https://docs.sapiom.ai/md/quick-start.md` |
+| `/service-proxy` | `https://docs.sapiom.ai/md/service-proxy.md` |
 
-**Pattern:** Prepend `/md/` and append `.md` to any doc path.
+**Pattern:** Prepend `https://docs.sapiom.ai/md/` and append `.md`
 
-**Alternative:** Use `Accept: text/markdown` header with the regular URL:
-```bash
-curl -H "Accept: text/markdown" https://docs.sapiom.ai/capabilities/search
-```
+## Need Details?
 
-## Need More Details?
-
-Fetch the markdown documentation for complete endpoint specs, parameters, and examples:
+Fetch the markdown documentation for complete endpoint specs:
 
 ```bash
 curl https://docs.sapiom.ai/md/capabilities/verify.md

@@ -1,381 +1,388 @@
 ---
 name: mssql-mcp
-description: Expert guidance for SQL Server database operations using natural language via the MssqlMcp server. Execute queries, manage schemas, perform CRUD operations, and inspect database structures through conversational interface. Use when working with SQL Server, T-SQL, database queries, data manipulation, or schema management.
+description: Query and manage Microsoft SQL Server databases via MCP natural language interface. Execute queries, inspect schemas, modify data with built-in safety features. Use when working with SQL Server, Azure SQL Database, or building data applications on Microsoft database platforms.
 ---
 
-# SQL Server Database Expert (MssqlMcp)
+# Microsoft SQL Server MCP Skill
 
-Expert guidance for SQL Server database operations using the MssqlMcp server. Interact with MSSQL databases through natural language - query data, modify records, manage schemas, and inspect structures without writing SQL directly.
-
-## Core Capabilities
-
-1. **Query Execution** - Run SQL queries via natural language
-2. **Data Modification** - Create, update, and delete records
-3. **Schema Management** - Create and modify tables, indexes, constraints
-4. **Database Inspection** - List tables, view schemas, explore structure
-5. **Secure Operations** - Built-in safety constraints (WHERE clause requirements)
-
-## Natural Language Interface
-
-The MssqlMcp server translates conversational requests into SQL operations.
-
-### Query Examples
-
-**Information Retrieval:**
-```
-"Show me all users from New York"
-"Get the top 10 orders by total amount"
-"Find all products where price is greater than $100"
-"List customers who signed up in the last 30 days"
-```
-
-**Aggregations:**
-```
-"What's the total revenue by month for 2024?"
-"Count how many orders are in 'pending' status"
-"Calculate average order value by customer segment"
-"Show me the distribution of users by state"
-```
-
-**Schema Inspection:**
-```
-"List all tables in the database"
-"Show me the structure of the users table"
-"What indexes exist on the orders table?"
-"Display all foreign key relationships"
-```
-
-### Data Modification Examples
-
-**Insert Records:**
-```
-"Add a new user with name John Doe, email john@example.com"
-"Create a product named 'Laptop' with price $999"
-"Insert an order for customer ID 123 with items A, B, C"
-```
-
-**Update Records:**
-```
-"Update all pending orders to completed status" (with WHERE clause)
-"Change the price of product ID 456 to $1299"
-"Set the email for user ID 789 to newemail@example.com"
-```
-
-**Delete Records:**
-```
-"Delete all orders older than 2 years" (with WHERE clause)
-"Remove the user with ID 999"
-"Clear all temporary records from the staging table"
-```
-
-### Schema Management Examples
-
-**Create Tables:**
-```
-"Create a new table called products with columns for id, name, and price"
-"Add a customers table with id, name, email, and created_date fields"
-"Create an orders table with foreign keys to customers and products"
-```
-
-**Modify Schema:**
-```
-"Add a 'phone' column to the customers table"
-"Create an index on the email column in users"
-"Add a foreign key constraint from orders to customers"
-"Drop the unused 'temp_data' table"
-```
-
----
+Query and manage SQL Server databases through natural language interface with built-in safety features.
 
 ## Configuration
 
-### Environment Variables
+### Required Environment Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| SERVER_NAME | Yes | SQL Server address (e.g., "localhost" or "myserver.database.windows.net") |
-| DATABASE_NAME | Yes | Target database name |
-| READONLY | No | Set to "true" for read-only access (default: false) |
-| CONNECTION_TIMEOUT | No | Connection timeout in seconds |
-| TRUST_SERVER_CERTIFICATE | No | Accept self-signed certificates (set to "true" if needed) |
+```bash
+SERVER_NAME=myserver.database.windows.net
+DATABASE_NAME=MyDatabase
+```
 
-### Authentication
+### Optional Environment Variables
 
-Uses SQL Server authentication or Windows authentication depending on configuration:
+```bash
+READONLY=true                  # Enable read-only mode
+CONNECTION_TIMEOUT=30          # Connection timeout (seconds)
+TRUST_SERVER_CERTIFICATE=true  # Accept self-signed certificates
+```
+
+### Authentication Options
 
 **SQL Authentication:**
-```
-SERVER_NAME=myserver.database.windows.net
-DATABASE_NAME=ProductionDB
-USER=dbuser
-PASSWORD=securepassword
+```bash
+USER=dbusername
+PASSWORD=dbpassword
 ```
 
-**Windows/Azure AD Authentication:**
+**Windows/Azure AD:**
+Use integrated authentication (no explicit credentials needed)
+
+---
+
+## Core Capabilities
+
+### 1. Query Execution
+
+Execute SQL queries through natural language requests.
+
+**Examples:**
+- "Get all users from California"
+- "Show top 100 orders by date"
+- "Calculate total revenue by month"
+- "Find products with price > $50"
+
+**Security:** Requires WHERE clauses for safety.
+
+### 2. Data Modification
+
+Create, update, and delete records.
+
+**Insert:**
+- "Add new user: John Doe, john@example.com"
+- "Create product: Laptop, $999"
+
+**Update:**
+- "Update user ID 123 email to new@example.com"
+- "Change order status to 'shipped' for order 456"
+
+**Delete:**
+- "Delete orders older than 1 year"
+- "Remove user with ID 789"
+
+**Security:** UPDATE and DELETE require WHERE clauses.
+
+### 3. Schema Management
+
+Create and modify database structures.
+
+**Create Tables:**
+- "Create users table with id, name, email"
+- "Add products table with id, name, price, category"
+
+**Modify Schema:**
+- "Add phone column to customers table"
+- "Create index on email in users"
+- "Add foreign key from orders to customers"
+
+**Drop Objects:**
+- "Drop table temp_data"
+- "Remove index idx_email from users"
+
+### 4. Database Inspection
+
+Explore database structure and metadata.
+
+**Tables:**
+- "List all tables"
+- "Show tables in database"
+
+**Schema:**
+- "Describe users table"
+- "Show structure of orders table"
+- "What columns are in products table?"
+
+**Relationships:**
+- "List foreign keys"
+- "Show table relationships"
+- "Display indexes on orders table"
+
+---
+
+## Common Query Patterns
+
+### Filtering
+
 ```
-SERVER_NAME=myserver.database.windows.net
-DATABASE_NAME=ProductionDB
-(Uses integrated authentication)
+"WHERE" conditions for targeting specific records:
+- "users from New York"
+- "orders created this month"
+- "products with price between $10 and $50"
+- "customers who signed up in 2024"
+```
+
+### Aggregations
+
+```
+Calculations across datasets:
+- "count of users by state"
+- "total revenue by quarter"
+- "average order value"
+- "maximum price in each category"
+```
+
+### Sorting & Limiting
+
+```
+Ordering and constraining results:
+- "top 10 orders by amount"
+- "latest 50 users"
+- "highest grossing products"
+- "most recent transactions"
+```
+
+### Joins & Relationships
+
+```
+Combining data from multiple tables:
+- "orders with customer names"
+- "products with their category names"
+- "users with their order counts"
+- "customers and their total spend"
 ```
 
 ---
 
-## Security Features
+## Safety Features
 
 ### Mandatory WHERE Clauses
 
-**Read Operations:**
-- All SELECT queries must include WHERE clauses
-- Prevents accidental full table scans
-- Protects against unintended data exposure
+**SELECT Queries:**
+Must include filtering conditions to prevent full table scans.
 
-**Update Operations:**
-- UPDATE statements require explicit WHERE clauses
-- Prevents accidental bulk updates
-- Ensures targeted modifications
+Good: "Get users where state = 'CA'"
+Bad: "Get all users" (blocked)
 
-**Delete Operations:**
-- DELETE statements require WHERE clauses
-- Prevents accidental data loss
-- Ensures intentional deletions
+**UPDATE Statements:**
+Must specify which records to update.
+
+Good: "Update email for user ID 123"
+Bad: "Update all emails" (blocked)
+
+**DELETE Statements:**
+Must specify which records to delete.
+
+Good: "Delete orders older than 2 years"
+Bad: "Delete all orders" (blocked)
 
 ### Read-Only Mode
 
 Set `READONLY=true` to:
-- Disable INSERT, UPDATE, DELETE operations
-- Allow only SELECT queries and schema inspection
-- Provide safe exploration environment
-- Protect production data from modifications
+- Disable INSERT, UPDATE, DELETE
+- Allow only SELECT and schema inspection
+- Safe for production database exploration
+- Prevent accidental data changes
 
 ---
 
-## Common Workflows
+## SQL Server Data Types
 
-### Data Analysis Workflow
+### Numeric
 
+- `INT`, `BIGINT`, `SMALLINT`, `TINYINT`
+- `DECIMAL(p,s)`, `NUMERIC(p,s)`
+- `FLOAT`, `REAL`
+- `MONEY`, `SMALLMONEY`
+
+### String
+
+- `VARCHAR(n)`, `NVARCHAR(n)`
+- `CHAR(n)`, `NCHAR(n)`
+- `TEXT`, `NTEXT` (deprecated)
+
+### Date/Time
+
+- `DATE`, `TIME`
+- `DATETIME`, `DATETIME2`
+- `SMALLDATETIME`
+- `DATETIMEOFFSET`
+
+### Binary
+
+- `BINARY(n)`, `VARBINARY(n)`
+- `IMAGE` (deprecated)
+
+### Other
+
+- `BIT` (boolean)
+- `UNIQUEIDENTIFIER` (GUID)
+- `XML`
+- `JSON` (via NVARCHAR)
+
+---
+
+## Common Schema Patterns
+
+### Users Table
+
+```sql
+CREATE TABLE users (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    username NVARCHAR(50) UNIQUE NOT NULL,
+    email NVARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at DATETIME2 DEFAULT GETUTCDATE(),
+    updated_at DATETIME2 DEFAULT GETUTCDATE(),
+    is_active BIT DEFAULT 1
+);
 ```
-1. "List all tables in the database"
-   - Discover available data
 
-2. "Show me the structure of the sales table"
-   - Understand schema
+### Orders Table
 
-3. "Get the top 10 sales by amount for 2024"
-   - Query specific data
-
-4. "What's the total revenue by quarter?"
-   - Aggregate analysis
+```sql
+CREATE TABLE orders (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    customer_id INT NOT NULL FOREIGN KEY REFERENCES customers(id),
+    order_date DATETIME2 DEFAULT GETUTCDATE(),
+    total_amount DECIMAL(10,2) NOT NULL,
+    status VARCHAR(20) DEFAULT 'pending',
+    created_at DATETIME2 DEFAULT GETUTCDATE()
+);
 ```
 
-### Application Development Workflow
+### Products Table
 
-```
-1. "Create a users table with id, name, email, created_at"
-   - Set up schema
-
-2. "Add an index on the email column"
-   - Optimize queries
-
-3. "Insert a test user with name Test User"
-   - Add test data
-
-4. "Show me all users created today"
-   - Verify data
-```
-
-### Data Maintenance Workflow
-
-```
-1. "Count records in the temp_logs table older than 30 days"
-   - Check data volume
-
-2. "Delete records from temp_logs older than 30 days"
-   - Clean up data
-
-3. "Update all NULL email addresses to 'unknown@example.com' in users"
-   - Data quality improvements
-```
-
-### Reporting Workflow
-
-```
-1. "Calculate total orders by month for the last year"
-   - Time-series analysis
-
-2. "Show customer segments by total spend"
-   - Customer analysis
-
-3. "List top 20 products by revenue"
-   - Product performance
+```sql
+CREATE TABLE products (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL,
+    description NVARCHAR(MAX),
+    price DECIMAL(10,2) NOT NULL,
+    category_id INT FOREIGN KEY REFERENCES categories(id),
+    stock_quantity INT DEFAULT 0,
+    created_at DATETIME2 DEFAULT GETUTCDATE()
+);
 ```
 
 ---
 
 ## Best Practices
 
-### Querying Data
+### 1. Query Optimization
 
-1. **Be Specific** - Include clear filtering criteria
-2. **Limit Results** - Request "top N" for large datasets
-3. **Use Aggregations** - Count, sum, average rather than full scans
-4. **Include Time Ranges** - Filter by date when working with time-series data
+- Limit result sets: "top N records"
+- Include time ranges: "in the last 30 days"
+- Use specific filters: "where status = 'active'"
+- Aggregate when possible: "count by category"
 
-**Good Examples:**
-```
-"Show me the last 50 orders"
-"Get users who signed up this month"
-"Count products by category"
-```
+### 2. Data Safety
 
-**Avoid:**
-```
-"Show me all records" (too broad)
-"Get everything" (unspecific)
-```
+- Query before modifying: verify target records
+- Use transactions: for related changes
+- Backup before schema changes
+- Test in development first
 
-### Modifying Data
+### 3. Performance
 
-1. **Always Include Conditions** - Specify exactly which records to modify
-2. **Verify First** - Query before updating/deleting
-3. **Use Transactions** - For related changes
-4. **Test in Dev** - Never test destructive operations in production first
+- Add indexes on frequently queried columns
+- Filter early with WHERE clauses
+- Avoid SELECT * patterns
+- Use appropriate data types
 
-**Safe Pattern:**
-```
-1. "Show me orders with status 'pending' older than 7 days"
-   (Review what will be affected)
+### 4. Security
 
-2. "Update orders to 'expired' status where status is 'pending' and created more than 7 days ago"
-   (Execute with confidence)
-```
-
-### Schema Management
-
-1. **Plan Changes** - Think through impacts before creating/modifying
-2. **Backup First** - Always backup before schema changes
-3. **Check Dependencies** - Understand relationships before dropping tables
-4. **Add Indexes Strategically** - Index frequently queried columns
-
-### Security
-
-1. **Use Read-Only Mode** - For exploratory analysis
-2. **Limit Permissions** - Use accounts with minimal required permissions
-3. **Never Share Credentials** - Use environment variables
-4. **Audit Changes** - Log all data modifications
-5. **Review Queries** - Understand what's being executed
+- Use read-only mode for analysis
+- Minimum privilege accounts
+- Never hardcode credentials
+- Audit all modifications
+- Review generated queries
 
 ---
 
 ## Troubleshooting
 
-### Connection Issues
+### Connection Failures
 
-**Problem:** Cannot connect to server
-
-**Solutions:**
-- Verify SERVER_NAME is correct
-- Check network connectivity
-- Ensure SQL Server is running
-- Verify firewall rules allow connection
-- Check authentication credentials
-- Set TRUST_SERVER_CERTIFICATE=true for self-signed certs
+- Verify SERVER_NAME format
+- Check network/firewall
+- Confirm SQL Server is running
+- Validate credentials
+- Set TRUST_SERVER_CERTIFICATE if needed
 
 ### Query Errors
 
-**Problem:** "WHERE clause required" error
+- Add WHERE clauses for filtering
+- Reduce result set size
+- Check syntax in generated SQL
+- Verify column names exist
 
-**Solution:** All read/update/delete operations need filtering conditions. Be specific about which records to target.
+### Permission Denied
 
-**Problem:** Timeout errors
+- Check account permissions
+- Verify READONLY mode isn't blocking writes
+- Confirm database user roles
+- Review table-level permissions
 
-**Solutions:**
-- Reduce result set size (use TOP N)
-- Add WHERE clauses to filter data
-- Increase CONNECTION_TIMEOUT value
-- Optimize query performance with indexes
+### Timeout Issues
 
-### Permission Errors
-
-**Problem:** "Permission denied" on operations
-
-**Solutions:**
-- Verify account has required permissions
-- Check if READONLY mode is enabled (disables modifications)
-- Ensure database user has appropriate roles
-- Review database-level and table-level permissions
+- Increase CONNECTION_TIMEOUT
+- Optimize queries with indexes
+- Reduce data volume with filters
+- Check server performance
 
 ---
 
-## Examples by Scenario
+## T-SQL Quick Reference
 
-### E-Commerce Database
+### Common Functions
 
-**Customer Analysis:**
-```
-"Show me customers who haven't ordered in 90 days"
-"Calculate average order value by customer segment"
-"Find customers with more than 5 orders"
-```
+```sql
+-- String functions
+LEN(column), SUBSTRING(col, start, length), CONCAT(a, b)
+UPPER(col), LOWER(col), TRIM(col), REPLACE(col, old, new)
 
-**Inventory Management:**
-```
-"List products with stock below 10 units"
-"Show me products that haven't sold in 6 months"
-"Calculate inventory turnover rate by category"
-```
+-- Date functions
+GETDATE(), GETUTCDATE(), DATEADD(day, 7, date)
+DATEDIFF(day, start, end), YEAR(date), MONTH(date)
+FORMAT(date, 'yyyy-MM-dd')
 
-**Sales Reporting:**
-```
-"Total revenue by day for the last 30 days"
-"Top 10 products by revenue this quarter"
-"Customer lifetime value calculation"
+-- Aggregate functions
+COUNT(*), SUM(col), AVG(col), MIN(col), MAX(col)
+COUNT(DISTINCT col)
+
+-- NULL handling
+ISNULL(col, default), COALESCE(col1, col2, default)
+NULLIF(a, b)
 ```
 
-### User Management System
+### Window Functions
 
-**User Queries:**
-```
-"Count active users by subscription tier"
-"Find users who haven't logged in for 30 days"
-"List recently registered users"
-```
+```sql
+-- Ranking
+ROW_NUMBER() OVER (ORDER BY col)
+RANK() OVER (PARTITION BY cat ORDER BY col)
+DENSE_RANK() OVER (ORDER BY col DESC)
 
-**User Updates:**
-```
-"Deactivate users who haven't verified email after 7 days"
-"Update subscription expiry dates for annual users"
-"Reset failed login attempts for user ID 123"
-```
-
-### Analytics Database
-
-**Aggregations:**
-```
-"Calculate daily active users for the last week"
-"Show page view trends by hour of day"
-"Conversion rate by traffic source"
+-- Aggregates
+SUM(amount) OVER (ORDER BY date)
+AVG(price) OVER (PARTITION BY category)
+LAG(col, 1) OVER (ORDER BY date)
+LEAD(col, 1) OVER (ORDER BY date)
 ```
 
-**Performance Queries:**
-```
-"Average response time by API endpoint"
-"Error rate by service over time"
-"Database query performance metrics"
+### Common Table Expressions
+
+```sql
+WITH cte AS (
+    SELECT column1, column2
+    FROM table
+    WHERE condition
+)
+SELECT * FROM cte;
 ```
 
 ---
 
-## When to Use This Skill
+## Additional Resources
 
-- Querying SQL Server databases conversationally
-- Exploring database schemas and structures
-- Performing data analysis without writing SQL
-- Managing database records (CRUD operations)
-- Creating and modifying table structures
-- Generating reports from SQL Server data
-- Database maintenance and cleanup tasks
-- Learning SQL Server concepts through natural language
-
-## Keywords
-
-sql server, mssql, t-sql, database, queries, crud operations, schema management, natural language sql, database interaction, data analysis, sql queries, table management, database inspection, data modification, sql automation
+- [SQL Server Documentation](https://learn.microsoft.com/sql/sql-server/)
+- [T-SQL Reference](https://learn.microsoft.com/sql/t-sql/language-reference)
+- [Azure SQL Database](https://learn.microsoft.com/azure/azure-sql/)
+- [MssqlMcp GitHub](https://github.com/Azure-Samples/SQL-AI-samples/tree/main/MssqlMcp)

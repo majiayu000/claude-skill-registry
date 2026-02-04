@@ -48,29 +48,6 @@ This skill orchestrates other skills at the appropriate stages:
 
 Follow these phases in order. Do not skip steps.
 
-### Phase 0: Verify Working Directory
-
-**⚠️ CRITICAL: Before starting ANY Content Driven Development work:**
-
-Verify you're in the project root directory:
-
-```bash
-pwd
-# Should output: /Users/tomcranstoun/Documents/GitHub/allaboutV2
-```
-
-If you're in a subdirectory, navigate to project root:
-```bash
-cd /Users/tomcranstoun/Documents/GitHub/allaboutV2
-```
-
-Verify project markers exist:
-```bash
-ls -la | grep -E "(\.claude|blocks|package\.json|CLAUDE\.md)"
-```
-
-All four must exist. If not, you're in the wrong directory and must navigate to project root before proceeding.
-
 ### Phase 1: Content Discovery and Modeling
 
 The first phase establishes what content you're working with and ensures the content model is author-friendly.

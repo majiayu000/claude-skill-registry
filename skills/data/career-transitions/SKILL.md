@@ -1,126 +1,74 @@
 ---
-name: "career-transitions"
-description: "Plan and execute a career transition and produce a Career Transition Pack (progress metric + push/pull map, target archetypes, option scorecard, opportunity pipeline + outreach scripts, skills plan, 4–12 week experiment plan). Use for career change, career pivot, career transition, switching roles. Category: Career."
+name: career-transitions
+description: Help users navigate career changes and pivots. Use when someone is considering a new role, transitioning into product management, evaluating job offers, taking a sabbatical, or feeling stuck in their current position.
 ---
 
 # Career Transitions
 
-## Scope
+Help the user navigate career changes using frameworks from 76 product leaders who have successfully pivoted roles, industries, and career stages.
 
-**Covers**
-- Clarifying what “progress” means to you (beyond compensation) and using it as a decision rule
-- Mapping your current situation into **pushes** (frictions) and **pulls** (attractions)
-- Defining a motivating “genie goal” (what you’d do if success were guaranteed) and backcasting into near-term moves
-- Turning vague ideas into 2–4 concrete **target archetypes** (roles/companies/paths) with clear fit filters
-- Building an opportunity pipeline (network map + weekly outreach plan) and ready-to-send outreach scripts
-- Creating a realistic 4–12 week experiment plan to de-risk the transition
+## How to Help
 
-**When to use**
-- “I want to change careers / pivot roles but I’m not sure to what.”
-- “Help me evaluate two career paths and pick one.”
-- “I feel stuck; help me figure out what I actually want next and how to get there.”
-- “I want a structured plan for a career transition, including networking/outreach scripts.”
+When the user asks for help with a career transition:
 
-**When NOT to use**
-- You need clinical mental health support for burnout/anxiety/depression (seek professional support; this skill can complement, not replace it).
-- You need legal advice (employment law, immigration/visa, contracts) or financial/tax planning.
-- You only want a resume/LinkedIn rewrite with no decision/process work (use a resume-specific workflow instead).
-- You are in an urgent workplace investigation/HR escalation where legal/process guidance is required.
+1. **Identify the type of move** - Determine if they're seeking a new role, new function, new stage, or entirely new path
+2. **Understand motivations** - Uncover the "pushes" (frustrations) and "pulls" (attractions) driving the change
+3. **Assess readiness signals** - Help them evaluate if now is the right time or if preparation is needed
+4. **Design experiments** - Suggest low-risk ways to test hypotheses before committing fully
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Your current role/situation (title, scope, industry) and what’s prompting change
-- Your constraints (location/remote, time, money/runway, family, visa, schedule)
-- Your timeline (when you need a decision; when you could start something new)
-- What you’re optimizing for (learning, autonomy, mission, stability, leadership, compensation, flexibility)
-- 2–6 candidate directions you’re considering (even if vague) OR what you explicitly want to avoid
-- Your current “assets” (skills, strengths, portfolio/work examples, network access)
+### Progress matters more than pay
+Bob Moesta: "Over 50% of the people who got new jobs didn't get more money. It's a lie. It's about progress. It's about what do they want to learn? What skills do they want to get?" Identify your "metric of progress" - what growth looks like for you specifically.
 
-**Missing-info strategy**
-- Ask **3–5 questions at a time** from [references/INTAKE.md](references/INTAKE.md).
-- If the user is unsure of targets, propose 2–3 plausible archetypes and label assumptions for the user to correct.
-- If numbers are missing (runway/comp), proceed with ranges and decision thresholds.
-- Never request confidential employer information; use redacted details.
+### Use the Genie Framework
+Graham Weaver: "What if you had one wish... whatever you throw yourself into, it's going to turn out great." Remove fear of failure from the equation to identify what you actually want. Work backwards from a successful 10-year outcome.
 
-## Outputs (deliverables)
+### Build serendipity through relationships
+Gokul Rajaram: "Great careers are built by knowing a lot of people doing great work so they know and want you on their teams, and just waiting for serendipity and then seizing it." Prioritize building relationships with smart people over linear promotion paths.
 
-Produce a **Career Transition Pack** (Markdown in chat; or as files if requested) in this order:
+### Follow intuition over spreadsheets
+Ami Vora: "The thing that has consistently served me is to do the thing that feels right, go to the place that feels like home, work with the people who feel like my friends." Choose roles where you feel "lucky" to be there.
 
-1) **Current State + Constraints Snapshot** (what’s true now; must-haves; timeline)
-2) **Progress Metric + Push/Pull Map** (what “progress” means; why now)
-3) **Genie Goal + 10-Year Backcast** (vision; 3-year waypoint; next 12 weeks)
-4) **Target Archetypes + Fit Filters** (2–4 options with “fit signals” and dealbreakers)
-5) **Option Scorecard + Decision Rule** (how you’ll choose; what evidence you need)
-6) **Opportunity Pipeline Plan** (network map, weekly outreach cadence, tracking)
-7) **Skills & Proof Plan** (gaps, learning sprints, portfolio/proof artifacts)
-8) **Experiment Plan (4–12 weeks)** (tests to run; sequencing; sabbatical/bridge option if relevant)
-9) **Risks / Open questions / Next steps** (always)
+### Three months is attainable
+Paul Millerd: "A three month sabbatical is much more attainable than people think... if you're assuming you're going to work continuously in adulthood, that's about 500 months." Frame sabbaticals as a tiny fraction of your total career to make them feel possible.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Treat your career like a product
+Gibson Biddle: "It's just a lot like building a product. You have theories and hypotheses, you find ways to experiment with them." Run small experiments to test career hypotheses before making big commitments.
 
-## Workflow (8 steps)
+### Internal moves are easier
+Anneka Gupta: "Doing it within the same company is a lot easier than trying to switch companies and switch jobs at the same time because you've already built credibility." Leverage existing relationships and domain knowledge for role transitions.
 
-### 1) Intake + current state snapshot
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Capture the current role, what’s driving the change, constraints, and decision timeline. Identify what must remain true (e.g., location, comp floor, hours, mission).
-- **Outputs:** **Current State + Constraints Snapshot** + assumptions/unknowns list.
-- **Checks:** Constraints are explicit; timeline has dates; unknowns are listed.
+### Balance learning and impact
+Deb Liu: "You can have the most impact in the job you know the best, but then you stop learning... How do you keep going back and forth so that you're not going straight up?" Alternate between mastery roles and "newbie" roles to avoid stagnation.
 
-### 2) Define progress metric + push/pull map
-- **Inputs:** frustrations and attractions; desired learning; values.
-- **Actions:** Translate “I want a change” into: (a) a **progress metric** (what you want more/less of), (b) a push/pull map, and (c) what you refuse to repeat.
-- **Outputs:** **Progress Metric + Push/Pull Map**.
-- **Checks:** Progress metric is measurable/observable; pushes and pulls are not contradictory.
+### Join winning teams
+Matt MacInnis: "As an early career product manager... you should join a winning team. I want to hear what they learned from being part of a winning team." High-growth companies provide more learning than struggling ones.
 
-### 3) Create a motivating north-star (genie goal) + backcast
-- **Inputs:** aspiration; risk tolerance; constraints.
-- **Actions:** Use the “genie” prompt to surface the most compelling path if success were guaranteed. Backcast to define a 10-year picture, a 3-year waypoint, and the next 12 weeks.
-- **Outputs:** **Genie Goal + 10-Year Backcast**.
-- **Checks:** Backcast produces concrete near-term moves (not just vision).
+## Questions to Help Users
 
-### 4) Generate 2–4 target archetypes + fit filters
-- **Inputs:** progress metric; backcast; constraints.
-- **Actions:** Turn the vision into 2–4 **target archetypes** (role + environment). Define fit filters: culture/people fit, learning, autonomy, trust, pace, stability, mission, comp.
-- **Outputs:** **Target Archetypes + Fit Filters**.
-- **Checks:** Each archetype has clear “fit signals” and “no-go” signals.
+- "If success were guaranteed, what would you pursue?"
+- "What are you running away from versus running toward?"
+- "When did you last feel truly energized by your work?"
+- "What would you do if you didn't have to make money?"
+- "Who are the three people whose careers you most admire?"
+- "What's the smallest experiment you could run to test this path?"
 
-### 5) Build an option scorecard + decision rule
-- **Inputs:** archetypes; priorities; constraints.
-- **Actions:** Create a lightweight scorecard (weighted criteria) and a decision rule (what evidence is required to choose). Identify the 3–6 biggest unknowns and how to resolve them.
-- **Outputs:** **Option Scorecard + Decision Rule**.
-- **Checks:** Criteria map to progress metric; weights reflect priorities; unknowns have a plan.
+## Common Mistakes to Flag
 
-### 6) Build an opportunity pipeline (network + serendipity plan)
-- **Inputs:** existing network; target archetypes; time available weekly.
-- **Actions:** Build a list of people/communities to engage, a weekly outreach cadence, and a tracking system. Draft outreach scripts (informational interview, referral, follow-up).
-- **Outputs:** **Opportunity Pipeline Plan** + outreach scripts.
-- **Checks:** Pipeline has weekly targets (e.g., 3 outreach messages/week); next 7 days are scheduled.
+- **Optimizing for compensation early** - Early career earnings are negligible compared to back-loaded executive compensation
+- **Staying due to inertia** - Monitor if your environment still provides learning or if you're the "boiling frog"
+- **Title chasing** - A senior role at a losing company often beats a junior role at a market leader
+- **Skipping the sabbatical buffer** - Moving between intense roles without recalibration leads to carrying old culture baggage
+- **Ignoring the "habitat" fit** - Failing in one environment doesn't mean you lack skills; it may mean wrong environment
 
-### 7) Skills & proof plan (learning sprints + portfolio)
-- **Inputs:** target archetypes; current assets; gaps.
-- **Actions:** Identify the 3–5 highest-leverage gaps and design learning sprints. Define proof artifacts (project, write-up, demo, case study) that signal capability.
-- **Outputs:** **Skills & Proof Plan**.
-- **Checks:** Each gap has a concrete proof artifact; plan fits time/runway.
+## Deep Dive
 
-### 8) Quality gate + finalize the 4–12 week experiment plan
-- **Inputs:** full draft pack.
-- **Actions:** Turn unknowns into a sequenced experiment plan (informational interviews, shadowing, mini-projects, internal transfer, sabbatical/bridge proposal). Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**.
-- **Outputs:** Final **Career Transition Pack**.
-- **Checks:** The next 2 weeks have scheduled actions; risks and unknowns are explicit; decision rule is clear.
+For all 111 insights from 76 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (pivot with constraints):** “I’m a PM considering a move into product marketing or developer relations. I have 10 hours/week and need to stay remote. Use `career-transitions` to create a Career Transition Pack with an option scorecard and a 6-week experiment plan.”  
-Expected: archetypes + scorecard + outreach/scripts + experiment plan.
-
-**Example 2 (stay vs go):** “I’m feeling stuck at my current company. I’m not sure whether to ask for a 3-month sabbatical, transfer internally, or leave. Use `career-transitions` to help me decide and draft a sabbatical/bridge proposal.”  
-Expected: push/pull + progress metric + decision rule + sabbatical proposal + next steps.
-
-**Boundary example:** “Tell me whether I should quit tomorrow and move countries on a visa without any plan.”  
-Response: out of scope for legal/immigration advice; recommend professional support and a safer decision process; offer to help build a plan once constraints are clarified.
+- Building a Promotion Case
+- Negotiating Offers
+- Finding Mentors & Sponsors
+- Managing Imposter Syndrome

@@ -22,6 +22,17 @@ The Stably CLI provides both interactive and automated workflows for test manage
 - **Interactive Mode**: Conversational AI agent for creating and debugging tests
 - **Automated Mode**: Headless commands for CI/CD integration
 
+## First: Check if Stably CLI is Installed
+
+**IMPORTANT:** Before helping with any Stably CLI task, you MUST first check if the CLI is installed by running:
+
+```bash
+stably --version
+```
+
+- **If the command succeeds:** Proceed with the user's request.
+- **If the command fails (command not found):** Guide the user to install the CLI first using the Installation section below before proceeding with any other commands.
+
 ## Prerequisites
 
 Before using Stably CLI, ensure the user has:

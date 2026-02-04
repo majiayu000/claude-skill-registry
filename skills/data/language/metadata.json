@@ -1,7 +1,7 @@
 {
   "name": "language",
-  "repo": "ngxtm/devkit",
-  "path": "rules/dart/language/SKILL.md",
-  "source": "github.com/ngxtm/devkit",
-  "downloaded_at": "2026-02-02T03:11:01.669573Z"
+  "repo": "HoangNguyen0403/agent-skills-standard",
+  "path": "skills/javascript/language/SKILL.md",
+  "source": "github.com/HoangNguyen0403/agent-skills-standard",
+  "downloaded_at": "2026-02-04T04:31:14.471747Z"
 }

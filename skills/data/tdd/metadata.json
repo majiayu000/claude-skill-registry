@@ -1,7 +1,9 @@
 {
   "name": "tdd",
-  "repo": "fyuuki0jp/SourceDoc",
-  "path": ".claude/skills/tdd/SKILL.md",
-  "source": "github.com/fyuuki0jp/SourceDoc",
-  "downloaded_at": "2026-02-02T05:11:41.708160Z"
+  "description": "Use when implementing any feature or bugfix, before writing implementation code",
+  "repo": "RockwallJMC/piercedesk6",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/RockwallJMC/piercedesk6"
 }

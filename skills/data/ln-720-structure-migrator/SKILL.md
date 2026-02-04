@@ -35,7 +35,7 @@ Coordinates project restructuring from prototype layout to Clean Architecture.
 |-------|------|---------|--------|
 | 1 | Analyze | Scan current structure, detect framework, map files | File inventory |
 | 2 | Plan | Calculate moves, identify conflicts | Migration plan |
-| 3 | Execute | Delegate to workers (ln-724, ln-721, ln-722, ln-723) | Restructured project |
+| 3 | Execute | Delegate to workers (ln-724, ln-721, ln-722, ln-723) via Task tool | Restructured project |
 | 4 | Verify | Run builds, check imports, validate structure | Success report |
 
 ---

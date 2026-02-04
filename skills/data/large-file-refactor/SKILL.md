@@ -93,7 +93,7 @@ When you can't read the whole file:
 
 ## Language-Specific Patterns
 
-See `@large-file-refactor/references/breakout-patterns.md` for detailed examples.
+See `skills/large-file-refactor/references/breakout-patterns.md` for detailed examples.
 
 | Language | Primary Pattern |
 |----------|-----------------|
@@ -111,6 +111,6 @@ See `@large-file-refactor/references/breakout-patterns.md` for detailed examples
 
 ## References
 
-- `@large-file-refactor/references/analysis-strategies.md` - Detailed analysis techniques
-- `@large-file-refactor/references/breakout-patterns.md` - Language-specific examples
-- `@large-file-refactor/references/validation-checklist.md` - Pre/post refactor checks
+- `skills/large-file-refactor/references/analysis-strategies.md` - Detailed analysis techniques
+- `skills/large-file-refactor/references/breakout-patterns.md` - Language-specific examples
+- `skills/large-file-refactor/references/validation-checklist.md` - Pre/post refactor checks

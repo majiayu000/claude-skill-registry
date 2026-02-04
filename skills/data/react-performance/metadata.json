@@ -1,7 +1,7 @@
 {
   "name": "react-performance",
-  "repo": "CoderMariusz/MonoPilot",
-  "path": ".claude/skills/react-performance/SKILL.md",
-  "source": "github.com/CoderMariusz/MonoPilot",
-  "downloaded_at": "2026-02-02T02:41:53.105948Z"
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/react-master/skills/react-performance/SKILL.md",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "downloaded_at": "2026-02-04T03:37:46.333758Z"
 }

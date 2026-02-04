@@ -1,7 +1,7 @@
 {
   "name": "storyboard-generator",
-  "repo": "WalkerHi11/mediabuy-plugins",
+  "repo": "minicoohei/aiagent-base",
   "path": ".claude/skills/storyboard-generator/SKILL.md",
-  "source": "github.com/WalkerHi11/mediabuy-plugins",
-  "downloaded_at": "2026-02-02T03:39:54.176271Z"
+  "source": "github.com/minicoohei/aiagent-base",
+  "downloaded_at": "2026-02-04T03:34:24.584725Z"
 }

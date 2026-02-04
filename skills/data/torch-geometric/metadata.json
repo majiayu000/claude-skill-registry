@@ -1,9 +1,7 @@
 {
   "name": "torch-geometric",
-  "description": "Graph Neural Networks (PyG). Node/graph classification, link prediction, GCN, GAT, GraphSAGE, heterogeneous graphs, molecular property prediction, for geometric deep learning.",
-  "repo": "hxk622/TokenDance",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/hxk622/TokenDance"
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/torch_geometric/SKILL.md",
+  "source": "github.com/sanand0/scientific-research",
+  "downloaded_at": "2026-02-04T02:57:39.572245Z"
 }

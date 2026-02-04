@@ -1,119 +1,74 @@
 ---
-name: "partnership-bd"
-description: "Create a Partnership & BD Execution Pack (partner thesis, target list + scoring, outreach kit, scalable offer + negotiation guardrails, and launch plan). Use for partnerships, business development (BD), strategic partnerships, channel partners, platform/integration partnerships, and partner outreach. Category: Sales & GTM."
+name: partnership-bd
+description: Help users build strategic partnerships and business development deals. Use when someone is pursuing a partnership, negotiating a BD deal, working with platforms like Google or Facebook, or trying to build distribution through partners.
 ---
 
 # Partnership & BD
 
-## Scope
+Help the user build strategic partnerships and business development deals using insights from 9 product leaders.
 
-**Covers**
-- Defining partnership goals and selecting the right partnership type (platform, integration, channel, referral, co-marketing)
-- Building a prioritized partner target list with a scoring model and “finger-on-the-button” decision-maker mapping
-- Crafting a clear value exchange (why them / why us / why now), including alpha/beta + case-study angles
-- Designing an outreach + relationship system (warm intros + ethical cold outreach + lightweight content plan)
-- Aligning internally on a scalable partner offer (avoid bespoke one-off deals; define negotiation parameters)
-- Negotiation prep (guardrails, walk-away, patience) and a simple deal process (MAP + pilot)
-- Partner launch + operating cadence (enablement, metrics, check-ins)
+## How to Help
 
-**When to use**
-- “Create a partnership strategy and a target partner list.”
-- “We need an integration/platform partnership—draft a pitch and outreach sequence.”
-- “Design a channel/referral partner program for distribution.”
-- “Help me negotiate partnership terms and define what’s negotiable vs standard.”
-- “We signed a partner—build a launch plan + operating cadence.”
+When the user asks for help with partnerships or BD:
 
-**When NOT to use**
-- You need to define the product/ICP/positioning from scratch (do that first; then return here)
-- You want high-volume spam outreach or anything deceptive/manipulative
-- You need legal advice or contract language (use this skill for non-legal term framing only; involve counsel)
-- You’re doing M&A, fundraising, or procurement/vendor selection (different motion)
+1. **Understand the opportunity** - Ask about the potential partner, what each side wants, and what the ideal outcome looks like
+2. **Assess network vs. merit dynamics** - Determine if success depends on relationships or product quality, and plan accordingly
+3. **Design the approach** - Help them craft a pitch that shows mutual benefit, not just their own needs
+4. **Navigate the negotiation** - Guide them on timing, leverage, and when to say no
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Partnership objective(s) + success metric(s) (e.g., qualified pipeline, revenue, distribution, integrations shipped)
-- Product summary + differentiation (1–2 sentences) and what you can offer partners (API/integration, audience, revenue share, credibility, data)
-- Target customer/market and the partner archetype(s) you want (platform, integration, channel, referral, strategic)
-- Constraints: timeline, geo/segment focus, compliance/regulatory constraints, exclusivity appetite, budget
-- Internal capacity: BD owner, engineering bandwidth (if integration), marketing bandwidth (if co-marketing)
+### Partnerships are network-dependent in some industries
+Ayo Omojola: "Very often the way to make things happen is network-dependent, not necessarily about the merit of the thing itself. There are companies that exist because the founders know the CEO of every major payer." In industries like healthcare, finance, or enterprise, relationships matter more than product. Determine if your business is network-dependent early.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If key data is missing, proceed with explicit assumptions and include an **Assumptions & unknowns** section.
-- For high-stakes commitments (exclusivity, data sharing, regulated claims), require human review and document a safe default.
+### Position yourself as a case study for the platform
+Adam Grenier: "Let me into your alpha, because I have five years of experience buying mobile ads. If you get us to work, we're a killer case study for a category you want to grow." When partnering with major platforms, show how your success helps them prove their business model. Offer to be an alpha tester for new features.
 
-## Outputs (deliverables)
+### Build scalable platforms, not bespoke deals
+Keith Yandell: "We'll build you a product so you won't need to ask us every time. Then you'll know the parameters in which you can negotiate." Effective BD teams work with Product to create self-serve platforms for partners rather than negotiating one-off integrations. This increases velocity and reduces engineering load.
 
-Produce a **Partnership & BD Execution Pack** (Markdown):
+### Strategic patience leads to better deals
+Jason Droege: "McDonald's approached us and I said 'No.' I pushed them off for four or five months. It ended up being a net benefit because we got a great deal." Don't rush into partnerships just because of the partner's size. Initial resistance can lead to better terms or exclusivity.
 
-1) **Context snapshot** (objective, constraints, current baseline)
-2) **Partnership thesis** (why partner, why now, partner types, non-goals)
-3) **Partner target list + scoring** (top 10–30) + decision-maker + intro path
-4) **Partner pitch kit** (1-page pitch + case-study/alpha angle + outreach templates)
-5) **Scalable offer + negotiation parameters** (tiers, what’s standard vs bespoke, guardrails)
-6) **Deal process plan** (MAP/pilot definition, stakeholders, timeline, “walk-away”)
-7) **Launch + operating cadence** (enablement, co-marketing plan, metrics, check-ins)
-8) **Risks / Open questions / Next steps** (always included)
+### Channel partners won't sell like founders
+Jen Abel: "The problem with channel partnerships is there are a hundred of you on the list and you're expecting them to sell on your behalf. They're not visionaries, they're consultants." Don't expect Accenture or Deloitte to evangelize your product. They lack the founder's vision-casting ability.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Use corp dev to find internal sponsors
+Julia Schottenstein: "Use that corp dev team to your advantage. Take that meeting, say you're not interested in acquisition yet, but push them for an introduction to someone who could sponsor the deal - usually someone in Product or a GM." Corp dev teams are gateways to internal sponsors even if you're not looking to sell.
 
-## Workflow (7 steps)
+### Find partners at the moment of need
+Meltem Kuran: "VCs ask portfolio companies 'What platform do you trust for hiring?' So people go to their VCs for that kind of question." The best partners are those your target audience already consults at the exact moment the problem arises.
 
-### 1) Intake + choose the partnership motion
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify the objective and pick the partnership type(s): platform/integration, channel/referral, strategic/co-marketing. Identify whether the motion is **network-dependent** (regulated or concentrated buyer markets) and what “success” looks like in 30/60/90 days.
-- **Outputs:** Context snapshot + partnership thesis draft + assumptions.
-- **Checks:** Objective is measurable; non-goals and constraints are explicit.
+### Treat partnerships as iterated prisoner's dilemma
+Tobi Lutke: "Being a good partner is like a corporate marshmallow test companies tend to fail. The correct way to play iterated prisoner's dilemma is coordinate for both sides - it's way more valuable over long periods." Resist pulling future profits forward at the expense of a partner. Long-term coordination always beats short-term defection.
 
-### 2) Define a scalable partner offer (avoid bespoke deals)
-- **Inputs:** Product capabilities; engineering/marketing constraints.
-- **Actions:** Draft the “partner package”: what you can reliably offer (integration tier, enablement, support, co-marketing) and what you will not do. Define negotiation parameters and pre-approved ranges to increase deal velocity.
-- **Outputs:** Offer tiers + negotiation parameters sheet.
-- **Checks:** A teammate could run a partner conversation without inventing bespoke promises.
+### Test with manual operations before building
+Keith Yandell: "We should have tested this at one hotel with hacky operations before asking for product resources." Validate partnership hypotheses with manual operations before committing engineering time. Dream big, start small.
 
-### 3) Build the partner universe + score + pick the first wedge
-- **Inputs:** Target market; competitor/adjacent ecosystem; any existing relationships.
-- **Actions:** List plausible partners, then score and shortlist based on mutual value, reach, feasibility, and decision velocity. For each top candidate, identify the “finger-on-the-button” decision-maker and the lowest-social-capital intro path.
-- **Outputs:** Partner list table + scoring model + top wedge recommendation.
-- **Checks:** Each top partner has a clear “why them” and a specific next action (intro, email, event, content hook).
+## Questions to Help Users
 
-### 4) Craft the value exchange + pitch narrative (case study / alpha angle)
-- **Inputs:** Offer tiers; proof points; partner incentives.
-- **Actions:** Write a 1-page pitch that shows how *your* success helps *their* goals. For major platforms, propose an alpha/beta or “flagship case study” angle. Keep the ask crisp and low-friction.
-- **Outputs:** 1-page pitch + talk track + proof points.
-- **Checks:** The pitch answers: “Why now?”, “Why us?”, “What do you want?”, “What’s in it for them?”
+- "What does the partner want from this deal? What's in it for them?"
+- "Is this industry network-dependent, or will product merit win?"
+- "Can you position yourself as a case study for something they want to prove?"
+- "What's your leverage? Can you afford to say no?"
+- "Are you building toward a scalable platform or negotiating a one-off deal?"
+- "Who inside the partner organization can sponsor this internally?"
 
-### 5) Outreach + relationship system (warm first, ethical cold second)
-- **Inputs:** Target list; pitch; available channels.
-- **Actions:** Build outreach sequences (warm intro asks, cold emails/DMs, follow-ups) and a lightweight content plan to build credibility. Track outreach as experiments: message → meetings → iteration.
-- **Outputs:** Outreach kit + 2–4 week execution plan.
-- **Checks:** Messages are specific, respectful, and permissioned; each has a single clear ask.
+## Common Mistakes to Flag
 
-### 6) Deal process + negotiation (patience + guardrails)
-- **Inputs:** Negotiation parameters; partner priorities; risk constraints.
-- **Actions:** Define a deal path (discovery → pilot → term sheet → launch). Use strategic patience when leverage is asymmetric; be willing to say “not yet” to improve terms. Document walk-away conditions and any exclusivity logic.
-- **Outputs:** Mutual action plan (MAP) + pilot definition + key terms outline.
-- **Checks:** You can explain what you will trade (and won’t) in one minute; the next step is scheduled and owned.
+- **Expecting partners to sell for you** - Channel partners and consultants won't evangelize like founders. Don't outsource vision-casting
+- **Rushing into big-name partnerships** - Strategic patience often leads to better deal terms. Don't let FOMO drive bad deals
+- **Building before validating** - Test partnership ideas with manual operations before committing engineering resources
+- **Ignoring network dynamics** - In some industries, relationships matter more than product. Know which game you're playing
+- **Short-term defection** - Pulling profits forward at a partner's expense destroys long-term value. Play the long game
 
-### 7) Launch + operate + quality gate
-- **Inputs:** Draft pack; [references/CHECKLISTS.md](references/CHECKLISTS.md); [references/RUBRIC.md](references/RUBRIC.md).
-- **Actions:** Produce a launch plan (enablement + co-marketing + measurement) and an operating cadence (weekly/biweekly check-ins, QBR). Run the checklist and score the rubric. Always add **Risks / Open questions / Next steps**.
-- **Outputs:** Final Partnership & BD Execution Pack.
-- **Checks:** The plan is executable this week and includes a learning loop.
+## Deep Dive
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+For all 11 insights from 9 guests, see `references/guest-insights.md`
 
-## Examples
+## Related Skills
 
-**Example 1 (platform/integration partnership):**  
-“Use `partnership-bd`. We’re a B2B SaaS analytics tool. Goal: 3 co-sell integrations that each drive 5 qualified leads/month by end of Q2. Targets: HubSpot + Snowflake ecosystem partners. Constraints: 1 engineer half-time. Output: a Partnership & BD Execution Pack with partner scoring, an integration-tier offer, outreach sequences, and a launch cadence.”
-
-**Example 2 (regulated, network-dependent BD):**  
-“Use `partnership-bd`. We’re selling into healthcare and need payer/provider partnerships. We have one warm connector but intros are expensive. Output: a prioritized partner list, crisp use-case one-pager, intro asks, and a deal process with walk-away conditions.”
-
-**Boundary example:**  
-“Write a generic cold email that works for anyone and send 10,000 messages.”  
-Response: refuse spam; ask for a defined partner archetype and a small, ethical outreach experiment plan. If the goal is broad demand gen, use a marketing/content skill instead.
+- Founder Sales
+- Enterprise Sales
+- Building Sales Team
+- Negotiating Offers

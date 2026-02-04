@@ -1,48 +1,20 @@
 ---
 name: cohort-access-request
-description: |
-  Customer seeks access to cohort materials, workshop content, or live session recordings.
-sample_size: 121
-validation:
-  required_phrases:
-    - "let me know if"
-  forbidden_patterns: []
-metrics:
-  sample_size: 121
-  avg_thread_length: 3.37
-  top_phrases:
-    - phrase: "let me know if"
-      count: 26
-      percent: 21.5
-    - phrase: "me know if you"
-      count: 18
-      percent: 14.9
-    - phrase: "know if you have"
-      count: 12
-      percent: 9.9
-    - phrase: "https click convertkit mail"
-      count: 11
-      percent: 9.1
-    - phrase: "click convertkit mail com"
-      count: 11
-      percent: 9.1
-    - phrase: "convertkit mail com d0u0eq3vz2a0hoekdowamhzn73444hlh5xp3"
-      count: 11
-      percent: 9.1
-    - phrase: "convertkit mail2 com 4zume0z58lbeh5vepv3cxh3d7pv77"
-      count: 10
-      percent: 8.3
-    - phrase: "https click convertkit mail2"
-      count: 9
-      percent: 7.4
-    - phrase: "click convertkit mail2 com"
-      count: 9
-      percent: 7.4
-    - phrase: "have access to the"
-      count: 8
-      percent: 6.6
+description: Help with access to cohort materials and recordings. Use when a customer cannot find or access cohort content, workshop materials, or live session recordings.
+metadata:
+  trigger_phrases:
+      - "access cohort"
+      - "cohort materials"
+      - "materials recordings"
+  related_skills: ["course-content-locked", "access-locked-out", "technical-issue-course-content", "login-link", "outdated-course-content"]
+  sample_size: "121"
+  validation: |
+    required_phrases:
+      - "let me know if"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 121\navg_thread_length: 3.37\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 26\n    percent: 21.5\n  - phrase: \"me know if you\"\n    count: 18\n    percent: 14.9\n  - phrase: \"know if you have\"\n    count: 12\n    percent: 9.9\n  - phrase: \"https click convertkit mail\"\n    count: 11\n    percent: 9.1\n  - phrase: \"click convertkit mail com\"\n    count: 11\n    percent: 9.1\n  - phrase: \"convertkit mail com d0u0eq3vz2a0hoekdowamhzn73444hlh5xp3\"\n    count: 11\n    percent: 9.1\n  - phrase: \"convertkit mail2 com 4zume0z58lbeh5vepv3cxh3d7pv77\"\n    count: 10\n    percent: 8.3\n  - phrase: \"https click convertkit mail2\"\n    count: 9\n    percent: 7.4\n  - phrase: \"click convertkit mail2 com\"\n    count: 9\n    percent: 7.4\n  - phrase: \"have access to the\"\n    count: 8\n    percent: 6.6"
 ---
-
 # Cohort or Workshop Access
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

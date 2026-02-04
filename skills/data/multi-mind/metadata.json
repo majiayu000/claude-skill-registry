@@ -1,9 +1,7 @@
 {
   "name": "multi-mind",
-  "description": "Multi-specialist collaborative analysis for complex decisions. Spawns parallel subagents with diverse domain expertise to analyze a topic from multiple angles. Use when user says \"multi-mind\", or for ",
-  "repo": "kaushikgopal/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "elsolal/Skillz-Claude",
+  "path": ".claude/skills/multi-mind/SKILL.md",
+  "source": "github.com/elsolal/Skillz-Claude",
+  "downloaded_at": "2026-02-04T02:28:07.312225Z"
 }

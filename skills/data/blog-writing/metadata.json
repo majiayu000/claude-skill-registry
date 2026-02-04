@@ -1,7 +1,7 @@
 {
   "name": "blog-writing",
-  "repo": "frankxai/agentic-creator-os",
-  "path": "skills/blog-writing/SKILL.md",
-  "source": "github.com/frankxai/agentic-creator-os",
-  "downloaded_at": "2026-02-02T03:42:48.664731Z"
+  "repo": "mattppal/prompts",
+  "path": ".claude/skills/blog-writing/SKILL.md",
+  "source": "github.com/mattppal/prompts",
+  "downloaded_at": "2026-02-04T05:09:19.511068Z"
 }

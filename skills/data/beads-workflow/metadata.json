@@ -1,7 +1,7 @@
 {
   "name": "beads-workflow",
-  "repo": "timequity/vibe-coder",
-  "path": "skills/beads-workflow/SKILL.md",
-  "source": "github.com/timequity/vibe-coder",
-  "downloaded_at": "2026-02-01T05:04:26.900059Z"
+  "repo": "dralgorhythm/claude-agentic-framework",
+  "path": ".claude/skills/operations/beads-workflow/SKILL.md",
+  "source": "github.com/dralgorhythm/claude-agentic-framework",
+  "downloaded_at": "2026-02-04T03:33:00.894015Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "documentation-standards",
-  "repo": "pr-pm/prpm",
-  "path": ".claude/skills/documentation-standards/SKILL.md",
-  "source": "github.com/pr-pm/prpm",
-  "downloaded_at": "2026-02-02T04:17:19.534725Z"
+  "repo": "crmagz/cdk-constructs-library",
+  "path": ".claude/skills/documentation-standards/skill.md",
+  "source": "github.com/crmagz/cdk-constructs-library",
+  "downloaded_at": "2026-02-04T02:39:06.951707Z"
 }

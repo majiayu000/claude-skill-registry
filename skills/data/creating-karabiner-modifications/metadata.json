@@ -1,13 +1,7 @@
 {
   "name": "creating-karabiner-modifications",
-  "description": "Use when configuring Karabiner-Elements keyboard customizations, before writing JSON - provides systematic workflow for complex modifications with correct structure, common patterns, and guidance on m",
   "repo": "AJBcoding/claude-skill-eval",
-  "category": "design",
-  "tags": [
-    "creating",
-    "karabiner",
-    "modifications"
-  ],
-  "stars": 0,
-  "source": "SkillsMP Synced Skills"
+  "path": ".claude/skills/creating-karabiner-modifications/SKILL.md",
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "downloaded_at": "2026-02-04T03:28:21.244996Z"
 }

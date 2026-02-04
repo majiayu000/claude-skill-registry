@@ -1,391 +1,346 @@
 ---
 name: secrets-management
-description: Enterprise secrets management across platforms. Manage secrets with HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, and Kubernetes secrets. Configure rotation, policies, and access controls.
-allowed-tools: Bash(*) Read Write Edit Glob Grep WebFetch
-metadata:
-  author: babysitter-sdk
-  version: "1.0.0"
-  category: security
-  backlog-id: SK-008
+description: Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive credentials, rotating secrets, or securing CI/CD environments.
 ---
 
-# secrets-management
+# Secrets Management
 
-You are **secrets-management** - a specialized skill for enterprise secrets management across multiple platforms. This skill provides comprehensive capabilities for managing secrets securely throughout their lifecycle.
+Secure secrets management practices for CI/CD pipelines using Vault, AWS Secrets Manager, and other tools.
 
-## Overview
+## Purpose
 
-This skill enables AI-powered secrets management including:
-- HashiCorp Vault operations and policy configuration
-- AWS Secrets Manager integration
-- Azure Key Vault operations
-- GCP Secret Manager integration
-- Kubernetes secrets and sealed secrets
-- Secret rotation automation
-- Access policy configuration
+Implement secure secrets management in CI/CD pipelines without hardcoding sensitive information.
 
-## Prerequisites
+## When to Use
 
-- Access to secrets management platform
-- Appropriate authentication credentials
-- CLI tools: vault, aws, az, gcloud, kubectl
+- Store API keys and credentials
+- Manage database passwords
+- Handle TLS certificates
+- Rotate secrets automatically
+- Implement least-privilege access
 
-## Capabilities
+## Secrets Management Tools
 
-### 1. HashiCorp Vault
+### HashiCorp Vault
+- Centralized secrets management
+- Dynamic secrets generation
+- Secret rotation
+- Audit logging
+- Fine-grained access control
 
-Operations and policy management:
+### AWS Secrets Manager
+- AWS-native solution
+- Automatic rotation
+- Integration with RDS
+- CloudFormation support
+
+### Azure Key Vault
+- Azure-native solution
+- HSM-backed keys
+- Certificate management
+- RBAC integration
+
+### Google Secret Manager
+- GCP-native solution
+- Versioning
+- IAM integration
+
+## HashiCorp Vault Integration
+
+### Setup Vault
 
 ```bash
-# Login and check status
-vault status
-vault login -method=oidc
+# Start Vault dev server
+vault server -dev
 
-# Secret operations
-vault kv put secret/myapp/config username=admin password=secret
-vault kv get secret/myapp/config
-vault kv get -format=json secret/myapp/config
+# Set environment
+export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_TOKEN='root'
 
 # Enable secrets engine
 vault secrets enable -path=secret kv-v2
 
-# List secrets
-vault kv list secret/myapp/
-
-# Delete secret
-vault kv delete secret/myapp/config
-vault kv destroy -versions=1 secret/myapp/config
+# Store secret
+vault kv put secret/database/config username=admin password=secret
 ```
 
-#### Vault Policies
+### GitHub Actions with Vault
+
+```yaml
+name: Deploy with Vault Secrets
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Import Secrets from Vault
+      uses: hashicorp/vault-action@v2
+      with:
+        url: https://vault.example.com:8200
+        token: ${{ secrets.VAULT_TOKEN }}
+        secrets: |
+          secret/data/database username | DB_USERNAME ;
+          secret/data/database password | DB_PASSWORD ;
+          secret/data/api key | API_KEY
+
+    - name: Use secrets
+      run: |
+        echo "Connecting to database as $DB_USERNAME"
+        # Use $DB_PASSWORD, $API_KEY
+```
+
+### GitLab CI with Vault
+
+```yaml
+deploy:
+  image: vault:latest
+  before_script:
+    - export VAULT_ADDR=https://vault.example.com:8200
+    - export VAULT_TOKEN=$VAULT_TOKEN
+    - apk add curl jq
+  script:
+    - |
+      DB_PASSWORD=$(vault kv get -field=password secret/database/config)
+      API_KEY=$(vault kv get -field=key secret/api/credentials)
+      echo "Deploying with secrets..."
+      # Use $DB_PASSWORD, $API_KEY
+```
+
+**Reference:** See `references/vault-setup.md`
+
+## AWS Secrets Manager
+
+### Store Secret
+
+```bash
+aws secretsmanager create-secret \
+  --name production/database/password \
+  --secret-string "super-secret-password"
+```
+
+### Retrieve in GitHub Actions
+
+```yaml
+- name: Configure AWS credentials
+  uses: aws-actions/configure-aws-credentials@v4
+  with:
+    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    aws-region: us-west-2
+
+- name: Get secret from AWS
+  run: |
+    SECRET=$(aws secretsmanager get-secret-value \
+      --secret-id production/database/password \
+      --query SecretString \
+      --output text)
+    echo "::add-mask::$SECRET"
+    echo "DB_PASSWORD=$SECRET" >> $GITHUB_ENV
+
+- name: Use secret
+  run: |
+    # Use $DB_PASSWORD
+    ./deploy.sh
+```
+
+### Terraform with AWS Secrets Manager
 
 ```hcl
-# Policy for application access
-path "secret/data/myapp/*" {
-  capabilities = ["read", "list"]
+data "aws_secretsmanager_secret_version" "db_password" {
+  secret_id = "production/database/password"
 }
 
-path "secret/metadata/myapp/*" {
-  capabilities = ["list"]
-}
-
-# Admin policy
-path "secret/*" {
-  capabilities = ["create", "read", "update", "delete", "list"]
-}
-
-# Database credentials
-path "database/creds/myapp" {
-  capabilities = ["read"]
+resource "aws_db_instance" "main" {
+  allocated_storage    = 100
+  engine              = "postgres"
+  instance_class      = "db.t3.large"
+  username            = "admin"
+  password            = jsondecode(data.aws_secretsmanager_secret_version.db_password.secret_string)["password"]
 }
 ```
 
-#### AppRole Authentication
+## GitHub Secrets
 
-```bash
-# Enable AppRole
-vault auth enable approle
+### Organization/Repository Secrets
 
-# Create role
-vault write auth/approle/role/myapp \
-  token_policies="myapp-policy" \
-  token_ttl=1h \
-  token_max_ttl=4h
-
-# Get role ID
-vault read auth/approle/role/myapp/role-id
-
-# Generate secret ID
-vault write -f auth/approle/role/myapp/secret-id
+```yaml
+- name: Use GitHub secret
+  run: |
+    echo "API Key: ${{ secrets.API_KEY }}"
+    echo "Database URL: ${{ secrets.DATABASE_URL }}"
 ```
 
-### 2. AWS Secrets Manager
+### Environment Secrets
 
-```bash
-# Create secret
-aws secretsmanager create-secret \
-  --name myapp/production/db \
-  --secret-string '{"username":"admin","password":"secret"}'
-
-# Get secret value
-aws secretsmanager get-secret-value \
-  --secret-id myapp/production/db \
-  --query SecretString --output text
-
-# Update secret
-aws secretsmanager update-secret \
-  --secret-id myapp/production/db \
-  --secret-string '{"username":"admin","password":"newsecret"}'
-
-# Enable rotation
-aws secretsmanager rotate-secret \
-  --secret-id myapp/production/db \
-  --rotation-lambda-arn arn:aws:lambda:region:account:function:rotation
-
-# List secrets
-aws secretsmanager list-secrets --filter Key=name,Values=myapp
+```yaml
+deploy:
+  runs-on: ubuntu-latest
+  environment: production
+  steps:
+  - name: Deploy
+    run: |
+      echo "Deploying with ${{ secrets.PROD_API_KEY }}"
 ```
 
-#### IAM Policy for Secrets Access
+**Reference:** See `references/github-secrets.md`
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "secretsmanager:GetSecretValue",
-        "secretsmanager:DescribeSecret"
-      ],
-      "Resource": "arn:aws:secretsmanager:*:*:secret:myapp/*"
-    }
-  ]
-}
+## GitLab CI/CD Variables
+
+### Project Variables
+
+```yaml
+deploy:
+  script:
+    - echo "Deploying with $API_KEY"
+    - echo "Database: $DATABASE_URL"
 ```
 
-### 3. Azure Key Vault
+### Protected and Masked Variables
+- Protected: Only available in protected branches
+- Masked: Hidden in job logs
+- File type: Stored as file
 
-```bash
-# Create vault
-az keyvault create \
-  --name myapp-vault \
-  --resource-group myapp-rg \
-  --location eastus
+## Best Practices
 
-# Set secret
-az keyvault secret set \
-  --vault-name myapp-vault \
-  --name db-password \
-  --value "secret"
+1. **Never commit secrets** to Git
+2. **Use different secrets** per environment
+3. **Rotate secrets regularly**
+4. **Implement least-privilege access**
+5. **Enable audit logging**
+6. **Use secret scanning** (GitGuardian, TruffleHog)
+7. **Mask secrets in logs**
+8. **Encrypt secrets at rest**
+9. **Use short-lived tokens** when possible
+10. **Document secret requirements**
 
-# Get secret
-az keyvault secret show \
-  --vault-name myapp-vault \
-  --name db-password \
-  --query value -o tsv
+## Secret Rotation
 
-# List secrets
-az keyvault secret list \
-  --vault-name myapp-vault
+### Automated Rotation with AWS
 
-# Set access policy
-az keyvault set-policy \
-  --name myapp-vault \
-  --spn $SERVICE_PRINCIPAL_ID \
-  --secret-permissions get list
+```python
+import boto3
+import json
+
+def lambda_handler(event, context):
+    client = boto3.client('secretsmanager')
+
+    # Get current secret
+    response = client.get_secret_value(SecretId='my-secret')
+    current_secret = json.loads(response['SecretString'])
+
+    # Generate new password
+    new_password = generate_strong_password()
+
+    # Update database password
+    update_database_password(new_password)
+
+    # Update secret
+    client.put_secret_value(
+        SecretId='my-secret',
+        SecretString=json.dumps({
+            'username': current_secret['username'],
+            'password': new_password
+        })
+    )
+
+    return {'statusCode': 200}
 ```
 
-### 4. GCP Secret Manager
+### Manual Rotation Process
 
-```bash
-# Create secret
-gcloud secrets create db-password \
-  --replication-policy="automatic"
+1. Generate new secret
+2. Update secret in secret store
+3. Update applications to use new secret
+4. Verify functionality
+5. Revoke old secret
 
-# Add secret version
-echo -n "secret" | gcloud secrets versions add db-password --data-file=-
+## External Secrets Operator
 
-# Access secret
-gcloud secrets versions access latest --secret=db-password
-
-# Grant access
-gcloud secrets add-iam-policy-binding db-password \
-  --member="serviceAccount:myapp@project.iam.gserviceaccount.com" \
-  --role="roles/secretmanager.secretAccessor"
-
-# List secrets
-gcloud secrets list
-```
-
-### 5. Kubernetes Secrets
-
-```bash
-# Create secret
-kubectl create secret generic myapp-secrets \
-  --from-literal=username=admin \
-  --from-literal=password=secret \
-  -n production
-
-# Create from file
-kubectl create secret generic tls-certs \
-  --from-file=tls.crt=./cert.pem \
-  --from-file=tls.key=./key.pem
-
-# View secret (base64 encoded)
-kubectl get secret myapp-secrets -o yaml
-
-# Decode secret
-kubectl get secret myapp-secrets -o jsonpath='{.data.password}' | base64 -d
-```
-
-#### Sealed Secrets (Bitnami)
-
-```bash
-# Install kubeseal
-brew install kubeseal
-
-# Seal a secret
-kubeseal --format yaml < secret.yaml > sealed-secret.yaml
-
-# Apply sealed secret
-kubectl apply -f sealed-secret.yaml
-```
-
-#### External Secrets Operator
+### Kubernetes Integration
 
 ```yaml
 apiVersion: external-secrets.io/v1beta1
+kind: SecretStore
+metadata:
+  name: vault-backend
+  namespace: production
+spec:
+  provider:
+    vault:
+      server: "https://vault.example.com:8200"
+      path: "secret"
+      version: "v2"
+      auth:
+        kubernetes:
+          mountPath: "kubernetes"
+          role: "production"
+
+---
+apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: myapp-secret
+  name: database-credentials
+  namespace: production
 spec:
   refreshInterval: 1h
   secretStoreRef:
     name: vault-backend
     kind: SecretStore
   target:
-    name: myapp-secret
+    name: database-credentials
     creationPolicy: Owner
   data:
-    - secretKey: password
-      remoteRef:
-        key: secret/data/myapp/config
-        property: password
+  - secretKey: username
+    remoteRef:
+      key: database/config
+      property: username
+  - secretKey: password
+    remoteRef:
+      key: database/config
+      property: password
 ```
 
-### 6. Secret Rotation
+## Secret Scanning
 
-#### Vault Dynamic Secrets
+### Pre-commit Hook
 
 ```bash
-# Enable database secrets engine
-vault secrets enable database
+#!/bin/bash
+# .git/hooks/pre-commit
 
-# Configure PostgreSQL connection
-vault write database/config/mydb \
-  plugin_name=postgresql-database-plugin \
-  allowed_roles="myapp" \
-  connection_url="postgresql://{{username}}:{{password}}@db:5432/mydb" \
-  username="vault_admin" \
-  password="admin_password"
+# Check for secrets with TruffleHog
+docker run --rm -v "$(pwd):/repo" \
+  trufflesecurity/trufflehog:latest \
+  filesystem --directory=/repo
 
-# Create role for dynamic credentials
-vault write database/roles/myapp \
-  db_name=mydb \
-  creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}'; GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";" \
-  default_ttl="1h" \
-  max_ttl="24h"
-
-# Generate credentials
-vault read database/creds/myapp
+if [ $? -ne 0 ]; then
+  echo "❌ Secret detected! Commit blocked."
+  exit 1
+fi
 ```
 
-## MCP Server Integration
-
-This skill can leverage the following MCP servers:
-
-| Server | Description | Installation |
-|--------|-------------|--------------|
-| claude-vault-mcp | HashiCorp Vault with TOKEN system | [PyPI](https://libraries.io/pypi/claude-vault-mcp) |
-
-### claude-vault-mcp Features
-
-- **TOKEN System**: AI sees tokenized references, not actual secrets
-- **WebAuthn Approval**: Human-in-the-loop for sensitive operations
-- **Secret Migration**: Move from .env files to Vault
-- **Audit Trail**: Full operation logging
-
-## Best Practices
-
-### Security
-
-1. **Never hardcode secrets** - Always use secret managers
-2. **Least privilege** - Minimal access permissions
-3. **Audit logging** - Enable and monitor access logs
-4. **Rotation** - Implement automatic rotation
-5. **Encryption** - Encrypt at rest and in transit
-
-### Architecture
-
-1. **Centralized management** - Single source of truth
-2. **Dynamic secrets** - Short-lived credentials when possible
-3. **Secret versioning** - Track secret history
-4. **Access policies** - Role-based access control
-5. **Emergency access** - Break-glass procedures
-
-### Application Integration
+### CI/CD Secret Scanning
 
 ```yaml
-# Kubernetes pod with secret injection
-apiVersion: v1
-kind: Pod
-metadata:
-  name: myapp
-spec:
-  containers:
-    - name: app
-      image: myapp:latest
-      env:
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: myapp-secrets
-              key: password
-      volumeMounts:
-        - name: secrets
-          mountPath: /etc/secrets
-          readOnly: true
-  volumes:
-    - name: secrets
-      secret:
-        secretName: myapp-secrets
+secret-scan:
+  stage: security
+  image: trufflesecurity/trufflehog:latest
+  script:
+    - trufflehog filesystem .
+  allow_failure: false
 ```
 
-## Process Integration
+## Reference Files
 
-This skill integrates with the following processes:
-- `secrets-management.js` - Initial secrets setup
-- `security-scanning.js` - Secret leak detection
-- `kubernetes-setup.js` - K8s secret configuration
+- `references/vault-setup.md` - HashiCorp Vault configuration
+- `references/github-secrets.md` - GitHub Secrets best practices
 
-## Output Format
+## Related Skills
 
-When executing operations, provide structured output:
-
-```json
-{
-  "operation": "create-secret",
-  "platform": "vault",
-  "status": "success",
-  "secret": {
-    "path": "secret/data/myapp/config",
-    "version": 1,
-    "created_time": "2026-01-24T10:00:00Z"
-  },
-  "policy": {
-    "name": "myapp-policy",
-    "applied": true
-  },
-  "artifacts": ["policy.hcl"]
-}
-```
-
-## Error Handling
-
-### Common Issues
-
-| Error | Cause | Resolution |
-|-------|-------|------------|
-| `Permission denied` | Insufficient policy | Review and update policies |
-| `Secret not found` | Path incorrect | Verify secret path |
-| `Token expired` | Authentication timeout | Re-authenticate |
-| `Sealed vault` | Vault needs unsealing | Unseal with threshold keys |
-
-## Constraints
-
-- Never log or display secret values
-- Always use secure channels for transmission
-- Verify permissions before granting access
-- Document all policy changes
-- Test rotation procedures regularly
+- `github-actions-templates` - For GitHub Actions integration
+- `gitlab-ci-patterns` - For GitLab CI integration
+- `deployment-pipeline-design` - For pipeline architecture

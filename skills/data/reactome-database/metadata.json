@@ -1,7 +1,7 @@
 {
   "name": "reactome-database",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/reactome-database/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:12.347302Z"
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "scientific-skills/reactome-database/SKILL.md",
+  "source": "github.com/K-Dense-AI/claude-scientific-skills",
+  "downloaded_at": "2026-02-04T02:39:31.598650Z"
 }

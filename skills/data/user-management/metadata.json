@@ -1,7 +1,7 @@
 {
   "name": "user-management",
-  "repo": "hirokazu-kobayashi-koba-hiro/idp-server",
-  "path": ".claude/skills/user-management/skill.md",
-  "source": "github.com/hirokazu-kobayashi-koba-hiro/idp-server",
-  "downloaded_at": "2026-02-02T03:59:52.756403Z"
+  "repo": "clix-so/skills",
+  "path": "skills/user-management/SKILL.md",
+  "source": "github.com/clix-so/skills",
+  "downloaded_at": "2026-02-04T03:06:26.855003Z"
 }

@@ -3,7 +3,7 @@ name: bump-plugin-version
 description: Bump the version of a plugin in this repository. Use to increment plugin versions and update marketplace metadata.
 model: haiku
 user-invocable: true
-disable-model-invocation: true
+disable-model-invocation: false
 allowed-tools: Read, Edit, Glob, AskUserQuestion, Bash
 ---
 

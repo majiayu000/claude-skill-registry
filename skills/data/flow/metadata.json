@@ -1,7 +1,7 @@
 {
   "name": "flow",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/flow/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:10.916934Z"
+  "repo": "facebook/react",
+  "path": ".claude/skills/flow/SKILL.md",
+  "source": "github.com/facebook/react",
+  "downloaded_at": "2026-02-04T04:58:05.383735Z"
 }

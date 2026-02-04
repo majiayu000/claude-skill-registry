@@ -1,8 +1,6 @@
 ---
 name: ipv6-first
 description: IPv6 is THE first-class citizen. All code, tests, documentation, and configurations MUST be IPv6-first. IPv4 MAY be added only for legacy support as a second-class citizen.
-allowed-tools: []
-model: opus
 ---
 
 # IPv6-First Development

@@ -1,14 +1,7 @@
 {
   "name": "managing-dotfiles",
-  "description": "Use this skill when working with dotfiles managed by yadm. This includes pulling remote changes, committing and pushing dotfile changes, modifying configuration files (shell, editor, terminal, git, et",
   "repo": "tdhopper/dotfiles2.0",
-  "category": "data",
-  "tags": [
-    "managing",
-    "dotfiles"
-  ],
-  "stars": 0,
-  "dir_name": "managing-dotfiles",
-  "github_path": ".claude/skills/managing-dotfiles",
-  "github_branch": "main"
+  "path": ".claude/skills/managing-dotfiles/SKILL.md",
+  "source": "github.com/tdhopper/dotfiles2.0",
+  "downloaded_at": "2026-02-04T03:15:07.698761Z"
 }

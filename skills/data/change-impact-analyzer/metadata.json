@@ -1,7 +1,7 @@
 {
   "name": "change-impact-analyzer",
-  "repo": "nahisaho/CodeGraphMCPServer",
-  "path": ".claude/skills/change-impact-analyzer/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:08.043723Z"
+  "repo": "nahisaho/MUSUBI",
+  "path": "src/templates/agents/claude-code/skills/change-impact-analyzer/SKILL.md",
+  "source": "github.com/nahisaho/MUSUBI",
+  "downloaded_at": "2026-02-04T04:06:15.881545Z"
 }

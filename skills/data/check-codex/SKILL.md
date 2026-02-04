@@ -239,4 +239,57 @@ gh api repos/$(gh repo view --json nameWithOwner -q '.nameWithOwner')/pulls/$(gh
 
 ---
 
+## Codex Interfaces (Feb 2026)
+
+The Codex ecosystem now includes multiple interfaces:
+
+| Interface | Purpose | This Skill Covers |
+|-----------|---------|-------------------|
+| **macOS App** | Multi-agent parallel work, automations | No (user-facing) |
+| **CLI** | CI/CD pipelines, scripting | Partial (headless) |
+| **Web (Cloud)** | Quick tasks, PR reviews | Yes (primary) |
+| **IDE Extension** | In-editor assistance | No |
+
+### macOS App Capabilities (New Feb 2, 2026)
+
+The Codex app introduces:
+- **Multi-agent parallel execution** - up to 30 min per agent
+- **Worktree isolation** - each agent gets isolated copy
+- **Automations** - scheduled background tasks
+- **Review queue** - completed work for your review
+
+### Default Automations
+
+| Automation | Output | When |
+|------------|--------|------|
+| Daily Bug Scan | PR with fixes | Daily 6am |
+| Test Gap Detection | PR with tests | Daily 7am |
+| Nightly CI Report | Summary comment | Nightly 11pm |
+| CI Monitor | Grouped failures | On CI failure |
+| Issue Triage | Label suggestions | On new issue |
+
+### Automation Output Interpretation
+
+When checking feedback from automations (vs manual `@codex review`):
+
+```json
+{
+  "automation": "Daily Bug Scan",
+  "status": "completed",
+  "branch": "codex/bug-scan-20260202",
+  "pr_url": "https://github.com/.../pull/806"
+}
+```
+
+**Action:** Review the auto-created PR, merge if valid.
+
+---
+
+## Documentation References
+
+- **Human Guide:** `docs/tools/CODEX_APP.md`
+- **LLM Reference:** `.claude/dontreadme/tools/CODEX_INTEGRATION.md`
+
+---
+
 *Codex feedback is the rate-limiting step before merge. Address issues early, merge smoothly.*

@@ -1,7 +1,7 @@
 {
   "name": "fp-ts-react",
-  "repo": "vjrivmon/Setup-Software-IA",
-  "path": ".agents/skills/fp-ts-react/SKILL.md",
-  "source": "github.com/vjrivmon/Setup-Software-IA",
-  "downloaded_at": "2026-02-02T02:41:42.787156Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/fp-ts-react/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:41.308604Z"
 }

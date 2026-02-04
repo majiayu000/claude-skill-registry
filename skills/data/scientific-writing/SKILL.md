@@ -1,13 +1,18 @@
 ---
 name: scientific-writing
-description: "Write scientific manuscripts. IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, reporting guidelines (CONSORT/STROBE/PRISMA), abstracts, for research papers and journal submissions."
+description: "Core skill for the deep research and writing tool. Write scientific manuscripts in full paragraphs (never bullet points). Use two-stage process: (1) create section outlines with key points using research-lookup, (2) convert to flowing prose. IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, reporting guidelines (CONSORT/STROBE/PRISMA), for research papers and journal submissions."
+allowed-tools: [Read, Write, Edit, Bash]
 ---
 
 # Scientific Writing
 
 ## Overview
 
+**This is the core skill for the deep research and writing tool**—combining AI-driven deep research with well-formatted written outputs. Every document produced is backed by comprehensive literature search and verified citations through the research-lookup skill.
+
 Scientific writing is a process for communicating research with precision and clarity. Write manuscripts using IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, and reporting guidelines (CONSORT/STROBE/PRISMA). Apply this skill for research papers and journal submissions.
+
+**Critical Principle: Always write in full paragraphs with flowing prose. Never submit bullet points in the final manuscript.** Use a two-stage process: first create section outlines with key points using research-lookup, then convert those outlines into complete paragraphs.
 
 ## When to Use This Skill
 
@@ -22,6 +27,43 @@ This skill should be used when:
 - Improving writing clarity, conciseness, and precision
 - Ensuring proper use of field-specific terminology and nomenclature
 - Addressing reviewer comments and revising manuscripts
+
+## Visual Enhancement with Scientific Schematics
+
+**⚠️ MANDATORY: Every scientific paper MUST include at least 1-2 AI-generated figures using the scientific-schematics skill.**
+
+This is not optional. Scientific papers without visual elements are incomplete. Before finalizing any document:
+1. Generate at minimum ONE schematic or diagram using scientific-schematics
+2. Prefer 2-3 figures for comprehensive papers (methods flowchart, results visualization, conceptual diagram)
+
+**How to generate figures:**
+- Use the **scientific-schematics** skill to generate AI-powered publication-quality diagrams
+- Simply describe your desired diagram in natural language
+- Nano Banana Pro will automatically generate, review, and refine the schematic
+
+**How to generate schematics:**
+```bash
+python scripts/generate_schematic.py "your diagram description" -o figures/output.png
+```
+
+The AI will automatically:
+- Create publication-quality images with proper formatting
+- Review and refine through multiple iterations
+- Ensure accessibility (colorblind-friendly, high contrast)
+- Save outputs in the figures/ directory
+
+**When to add schematics:**
+- Study design and methodology flowcharts (CONSORT, PRISMA, STROBE)
+- Conceptual framework diagrams
+- Experimental workflow illustrations
+- Data analysis pipeline diagrams
+- Biological pathway or mechanism diagrams
+- System architecture visualizations
+- Any complex concept that benefits from visualization
+
+For detailed guidance on creating schematics, refer to the scientific-schematics skill documentation.
+
+---
 
 ## Core Capabilities
 
@@ -160,7 +202,110 @@ Apply fundamental scientific writing principles. For detailed guidance, refer to
 - Acknowledge conflicting evidence
 - Maintain professional, neutral tone
 
-### 7. Journal-Specific Formatting
+### 7. Writing Process: From Outline to Full Paragraphs
+
+**CRITICAL: Always write in full paragraphs, never submit bullet points in scientific papers.**
+
+Scientific papers must be written in complete, flowing prose. Use this two-stage approach for effective writing:
+
+**Stage 1: Create Section Outlines with Key Points**
+
+When starting a new section:
+1. Use the research-lookup skill to gather relevant literature and data
+2. Create a structured outline with bullet points marking:
+   - Main arguments or findings to present
+   - Key studies to cite
+   - Data points and statistics to include
+   - Logical flow and organization
+3. These bullet points serve as scaffolding—they are NOT the final manuscript
+
+**Example outline (Introduction section):**
+```
+- Background: AI in drug discovery gaining traction
+  * Cite recent reviews (Smith 2023, Jones 2024)
+  * Traditional methods are slow and expensive
+- Gap: Limited application to rare diseases
+  * Only 2 prior studies (Lee 2022, Chen 2023)
+  * Small datasets remain a challenge
+- Our approach: Transfer learning from common diseases
+  * Novel architecture combining X and Y
+- Study objectives: Validate on 3 rare disease datasets
+```
+
+**Stage 2: Convert Key Points to Full Paragraphs**
+
+Once the outline is complete, expand each bullet point into proper prose:
+
+1. **Transform bullet points into complete sentences** with subjects, verbs, and objects
+2. **Add transitions** between sentences and ideas (however, moreover, in contrast, subsequently)
+3. **Integrate citations naturally** within sentences, not as lists
+4. **Expand with context and explanation** that bullet points omit
+5. **Ensure logical flow** from one sentence to the next within each paragraph
+6. **Vary sentence structure** to maintain reader engagement
+
+**Example conversion to prose:**
+
+```
+Artificial intelligence approaches have gained significant traction in drug discovery 
+pipelines over the past decade (Smith, 2023; Jones, 2024). While these computational 
+methods show promise for accelerating the identification of therapeutic candidates, 
+traditional experimental approaches remain slow and resource-intensive, often requiring 
+years of laboratory work and substantial financial investment. However, the application 
+of AI to rare diseases has been limited, with only two prior studies demonstrating 
+proof-of-concept results (Lee, 2022; Chen, 2023). The primary obstacle has been the 
+scarcity of training data for conditions affecting small patient populations. 
+
+To address this challenge, we developed a transfer learning approach that leverages 
+knowledge from well-characterized common diseases to predict therapeutic targets for 
+rare conditions. Our novel neural architecture combines convolutional layers for 
+molecular feature extraction with attention mechanisms for protein-ligand interaction 
+modeling. The objective of this study was to validate our approach across three 
+independent rare disease datasets, assessing both predictive accuracy and biological 
+interpretability of the results.
+```
+
+**Key Differences Between Outlines and Final Text:**
+
+| Outline (Planning Stage) | Final Manuscript |
+|--------------------------|------------------|
+| Bullet points and fragments | Complete sentences and paragraphs |
+| Telegraphic notes | Full explanations with context |
+| List of citations | Citations integrated into prose |
+| Abbreviated ideas | Developed arguments with transitions |
+| For your eyes only | For publication and peer review |
+
+**Common Mistakes to Avoid:**
+
+- ❌ **Never** leave bullet points in the final manuscript
+- ❌ **Never** submit lists where paragraphs should be
+- ❌ **Don't** use numbered or bulleted lists in Results or Discussion sections (except for specific cases like study hypotheses or inclusion criteria)
+- ❌ **Don't** write sentence fragments or incomplete thoughts
+- ✅ **Do** use occasional lists only in Methods (e.g., inclusion/exclusion criteria, materials lists)
+- ✅ **Do** ensure every section flows as connected prose
+- ✅ **Do** read paragraphs aloud to check for natural flow
+
+**When Lists ARE Acceptable (Limited Cases):**
+
+Lists may appear in scientific papers only in specific contexts:
+- **Methods**: Inclusion/exclusion criteria, materials and reagents, participant characteristics
+- **Supplementary Materials**: Extended protocols, equipment lists, detailed parameters
+- **Never in**: Abstract, Introduction, Results, Discussion, Conclusions
+
+**Integration with Research Lookup:**
+
+The research-lookup skill is essential for Stage 1 (creating outlines):
+1. Search for relevant papers using research-lookup
+2. Extract key findings, methods, and data
+3. Organize findings as bullet points in your outline
+4. Then convert the outline to full paragraphs in Stage 2
+
+This two-stage process ensures you:
+- Gather and organize information systematically
+- Create logical structure before writing
+- Produce polished, publication-ready prose
+- Maintain focus on the narrative flow
+
+### 8. Journal-Specific Formatting
 
 Adapt manuscripts to journal requirements:
 - Follow author guidelines for structure, length, and format
@@ -170,7 +315,7 @@ Adapt manuscripts to journal requirements:
 - Adhere to word limits for each section
 - Format according to template requirements when provided
 
-### 8. Field-Specific Language and Terminology
+### 9. Field-Specific Language and Terminology
 
 Adapt language, terminology, and conventions to match the specific scientific discipline. Each field has established vocabulary, preferred phrasings, and domain-specific conventions that signal expertise and ensure clarity for the target audience.
 
@@ -260,7 +405,7 @@ Adapt language, terminology, and conventions to match the specific scientific di
 - Use domain-specific databases and ontologies (e.g., Gene Ontology, MeSH terms)
 - When uncertain, cite a key reference that establishes terminology
 
-### 9. Common Pitfalls to Avoid
+### 10. Common Pitfalls to Avoid
 
 **Top Rejection Reasons:**
 1. Inappropriate, incomplete, or insufficiently described statistics
@@ -287,14 +432,19 @@ Adapt language, terminology, and conventions to match the specific scientific di
 3. Outline manuscript structure (usually IMRAD)
 4. Plan figures and tables as the backbone of the paper
 
-**Stage 2: Drafting**
+**Stage 2: Drafting** (Use two-stage writing process for each section)
 1. Start with figures and tables (the core data story)
-2. Write Methods (often easiest to draft first)
-3. Draft Results (describing figures/tables objectively)
-4. Compose Discussion (interpreting findings)
-5. Write Introduction (setting up the research question)
-6. Craft Abstract (synthesizing the complete story)
-7. Create Title (concise and descriptive)
+2. For each section below, follow the two-stage process:
+   - **First**: Create outline with bullet points using research-lookup
+   - **Second**: Convert bullet points to full paragraphs with flowing prose
+3. Write Methods (often easiest to draft first)
+4. Draft Results (describing figures/tables objectively)
+5. Compose Discussion (interpreting findings)
+6. Write Introduction (setting up the research question)
+7. Craft Abstract (synthesizing the complete story)
+8. Create Title (concise and descriptive)
+
+**Remember**: Bullet points are for planning only—the final manuscript must be in complete paragraphs.
 
 **Stage 3: Revision**
 1. Check logical flow and "red thread" throughout

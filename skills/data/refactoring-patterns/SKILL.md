@@ -1,205 +1,174 @@
 ---
 name: refactoring-patterns
-description: "Apply safe refactoring patterns to improve code structure without changing behavior. Use when cleaning up code, reducing technical debt, or improving maintainability."
-category: development-practices
-priority: medium
-tokenEstimate: 1000
-agents: [qe-code-reviewer, qe-quality-analyzer, qe-test-refactorer]
-implementation_status: optimized
-optimization_version: 1.0
-last_optimized: 2025-12-03
-dependencies: []
-quick_reference_card: true
-tags: [refactoring, code-quality, technical-debt, maintainability, clean-code]
+description: Apply when improving code structure without changing behavior: reducing duplication, simplifying complexity, or improving readability.
+version: 1.0.0
+tokens: ~650
+confidence: high
+sources:
+  - https://refactoring.guru/refactoring/catalog
+  - https://martinfowler.com/books/refactoring.html
+last_validated: 2025-01-10
+next_review: 2025-01-24
+tags: [refactoring, code-quality, patterns, clean-code]
 ---
 
-# Refactoring Patterns
+## When to Use
 
-<default_to_action>
-When refactoring:
-1. ENSURE tests pass (never refactor without tests)
-2. MAKE small change (one refactoring at a time)
-3. RUN tests (must stay green)
-4. COMMIT (save progress)
-5. REPEAT
+Apply when improving code structure without changing behavior: reducing duplication, simplifying complexity, or improving readability.
 
-**Safe Refactoring Cycle:**
-```bash
-npm test               # Green ✅
-# Make ONE small change
-npm test               # Still green ✅
-git commit -m "refactor: extract calculateTotal"
-# Repeat
-```
+## Patterns
 
-**Code Smells → Refactoring:**
-| Smell | Refactoring |
-|-------|-------------|
-| Long method (>20 lines) | Extract Method |
-| Large class | Extract Class |
-| Long parameter list (>3) | Introduce Parameter Object |
-| Duplicated code | Extract Method/Class |
-| Complex conditional | Decompose Conditional |
-| Magic numbers | Named Constants |
-| Nested loops | Replace Loop with Pipeline |
+### Pattern 1: Extract Function
+```typescript
+// Source: https://refactoring.guru/extract-method
+// BEFORE
+function processOrder(order: Order) {
+  // Validate
+  if (!order.items.length) throw new Error('Empty');
+  if (!order.customer) throw new Error('No customer');
 
-**NEVER REFACTOR:**
-- Without tests (write tests first)
-- When deadline is tomorrow
-- Code you don't understand
-- Code that works and won't be touched
-</default_to_action>
+  // Calculate total
+  let total = 0;
+  for (const item of order.items) {
+    total += item.price * item.quantity;
+  }
+  total *= 1.1; // Tax
 
-## Quick Reference Card
-
-### Common Refactorings
-
-| Pattern | Before | After |
-|---------|--------|-------|
-| **Extract Method** | 50-line function | 5 small functions |
-| **Extract Class** | Class doing 5 things | 5 single-purpose classes |
-| **Parameter Object** | `fn(a,b,c,d,e,f)` | `fn(options)` |
-| **Replace Conditional** | `if (type === 'a') {...}` | Polymorphism |
-| **Pipeline** | Nested loops | `.filter().map().reduce()` |
-
-### The Rule of Three
-
-1. First time → Just do it
-2. Second time → Wince and duplicate
-3. Third time → **Refactor**
-
----
-
-## Key Patterns
-
-### Extract Method
-```javascript
-// Before: Long method
-function processOrder(order) {
-  // 50 lines of validation, calculation, saving, emailing...
+  // Save
+  db.orders.create({ ...order, total });
 }
 
-// After: Clear responsibilities
-function processOrder(order) {
+// AFTER
+function processOrder(order: Order) {
   validateOrder(order);
-  const pricing = calculatePricing(order);
-  const saved = saveOrder(order, pricing);
-  sendConfirmationEmail(saved);
-  return saved;
+  const total = calculateTotal(order.items);
+  saveOrder(order, total);
 }
+
+function validateOrder(order: Order) { /* ... */ }
+function calculateTotal(items: Item[]) { /* ... */ }
+function saveOrder(order: Order, total: number) { /* ... */ }
 ```
 
-### Replace Loop with Pipeline
-```javascript
-// Before
-let results = [];
-for (let item of items) {
-  if (item.inStock) {
-    results.push(item.name.toUpperCase());
+### Pattern 2: Replace Conditional with Polymorphism
+```typescript
+// Source: https://refactoring.guru/replace-conditional-with-polymorphism
+// BEFORE
+function getPrice(item: Item) {
+  switch (item.type) {
+    case 'book': return item.basePrice * 0.9;
+    case 'electronics': return item.basePrice * 1.1;
+    case 'food': return item.basePrice;
   }
 }
 
-// After
-const results = items
-  .filter(item => item.inStock)
-  .map(item => item.name.toUpperCase());
-```
-
-### Decompose Conditional
-```javascript
-// Before
-if (order.total > 1000 && customer.isPremium && allInStock(order)) {
-  return 'FREE_SHIPPING';
+// AFTER
+interface PricingStrategy {
+  calculate(basePrice: number): number;
 }
 
-// After
-function isEligibleForFreeShipping(order, customer) {
-  return isLargeOrder(order) &&
-         isPremiumCustomer(customer) &&
-         allInStock(order);
+const strategies: Record<string, PricingStrategy> = {
+  book: { calculate: (p) => p * 0.9 },
+  electronics: { calculate: (p) => p * 1.1 },
+  food: { calculate: (p) => p },
+};
+
+function getPrice(item: Item) {
+  return strategies[item.type].calculate(item.basePrice);
 }
 ```
 
----
-
-## Refactoring Anti-Patterns
-
-| ❌ Anti-Pattern | Problem | ✅ Better |
-|-----------------|---------|-----------|
-| Without tests | No safety net | Write tests first |
-| Big bang | Rewrite everything | Small incremental steps |
-| For perfection | Endless tweaking | Good enough, move on |
-| Premature abstraction | Pattern not clear yet | Wait for Rule of Three |
-| During feature work | Mixed changes | Separate commits |
-
----
-
-## Agent Integration
-
+### Pattern 3: Introduce Parameter Object
 ```typescript
-// Detect code smells
-const smells = await Task("Detect Code Smells", {
-  source: 'src/services/',
-  patterns: ['long-method', 'large-class', 'duplicate-code']
-}, "qe-quality-analyzer");
+// Source: https://refactoring.guru/introduce-parameter-object
+// BEFORE
+function searchProducts(
+  query: string,
+  minPrice: number,
+  maxPrice: number,
+  category: string,
+  inStock: boolean,
+  sortBy: string,
+  page: number
+) { /* ... */ }
 
-// Safe refactoring with test verification
-await Task("Verify Refactoring", {
-  beforeCommit: 'abc123',
-  afterCommit: 'def456',
-  expectSameBehavior: true
-}, "qe-test-executor");
+// AFTER
+interface SearchParams {
+  query: string;
+  priceRange?: { min: number; max: number };
+  category?: string;
+  inStock?: boolean;
+  sortBy?: string;
+  page?: number;
+}
+
+function searchProducts(params: SearchParams) { /* ... */ }
 ```
 
----
-
-## Agent Coordination Hints
-
-### Memory Namespace
-```
-aqe/refactoring/
-├── smells/*          - Detected code smells
-├── suggestions/*     - Refactoring recommendations
-├── verifications/*   - Behavior preservation checks
-└── history/*         - Refactoring log
-```
-
-### Fleet Coordination
+### Pattern 4: Replace Magic Numbers
 ```typescript
-const refactoringFleet = await FleetManager.coordinate({
-  strategy: 'refactoring',
-  agents: [
-    'qe-quality-analyzer',   // Identify targets
-    'qe-test-generator',     // Add safety tests
-    'qe-test-executor',      // Verify behavior
-    'qe-test-refactorer'     // TDD refactor phase
-  ],
-  topology: 'sequential'
-});
+// Source: https://refactoring.guru/replace-magic-number-with-symbolic-constant
+// BEFORE
+if (user.age >= 18) { /* ... */ }
+setTimeout(fn, 86400000);
+
+// AFTER
+const LEGAL_AGE = 18;
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+if (user.age >= LEGAL_AGE) { /* ... */ }
+setTimeout(fn, ONE_DAY_MS);
 ```
 
----
+### Pattern 5: Guard Clauses (Early Return)
+```typescript
+// Source: https://refactoring.guru/replace-nested-conditional-with-guard-clauses
+// BEFORE
+function getPayment(employee: Employee) {
+  let result;
+  if (employee.isSeparated) {
+    result = separatedAmount();
+  } else {
+    if (employee.isRetired) {
+      result = retiredAmount();
+    } else {
+      result = normalAmount();
+    }
+  }
+  return result;
+}
 
-## Related Skills
-- [tdd-london-chicago](../tdd-london-chicago/) - TDD refactor phase
-- [code-review-quality](../code-review-quality/) - Review refactored code
-- [xp-practices](../xp-practices/) - Collective ownership
+// AFTER
+function getPayment(employee: Employee) {
+  if (employee.isSeparated) return separatedAmount();
+  if (employee.isRetired) return retiredAmount();
+  return normalAmount();
+}
+```
 
----
+### Pattern 6: Compose Method
+```typescript
+// Source: https://refactoring.guru/compose-method
+// Goal: Each function does ONE thing at ONE level of abstraction
+function processUser(userData: UserInput) {
+  const validated = validateUserData(userData);
+  const normalized = normalizeUserData(validated);
+  const enriched = enrichWithDefaults(normalized);
+  return saveUser(enriched);
+}
+```
 
-## Remember
+## Anti-Patterns
 
-**Refactoring is NOT:**
-- Adding features
-- Fixing bugs
-- Performance optimization
-- Rewriting from scratch
+- **Refactoring without tests** - Tests must pass before AND after
+- **Big bang refactor** - Small incremental changes
+- **Premature abstraction** - Wait for duplication (Rule of 3)
+- **Refactoring during feature work** - Separate commits
 
-**Refactoring IS:**
-- Improving structure
-- Making code clearer
-- Reducing complexity
-- Removing duplication
-- **Without changing behavior**
+## Verification Checklist
 
-**Always have tests. Always take small steps. Always keep tests green.**
+- [ ] Tests pass before refactoring
+- [ ] Tests pass after refactoring
+- [ ] Behavior unchanged
+- [ ] Each commit is atomic (compilable)
+- [ ] Code review before merge

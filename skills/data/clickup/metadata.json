@@ -1,7 +1,7 @@
 {
   "name": "clickup",
-  "repo": "civitai/civitai",
-  "path": ".claude/skills/clickup/SKILL.md",
-  "source": "github.com/civitai/civitai",
-  "downloaded_at": "2026-02-02T04:35:58.692951Z"
+  "repo": "NeverSight/skills_feed",
+  "path": "data/skills-md/civitai/civitai/clickup/SKILL.md",
+  "source": "github.com/NeverSight/skills_feed",
+  "downloaded_at": "2026-02-04T02:32:59.763153Z"
 }

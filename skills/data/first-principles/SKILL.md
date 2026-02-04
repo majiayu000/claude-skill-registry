@@ -1,122 +1,187 @@
 ---
 name: first-principles
-description: Apply first-principles thinking to break down complex problems into fundamental truths and rebuild solutions from the ground up. Use when solving strategic decisions, breaking through blockers, or challenging assumptions. Triggers on first principles, Elon Musk methodology, fundamental truths, strip assumptions, physics of the problem, rebuild from scratch.
+description: "設計原則から再考。行き詰まった時に根本から考え直す。前提を疑い、本質的な解決策を探る。トリガー: /first-principles, 原点回帰, 根本から, ゼロベース"
+user-invocable: true
+allowed-tools: Read, Grep, Glob, WebSearch
+model: sonnet
 ---
 
-# First-Principles Thinking
+# First Principles Thinking
 
-Apply systematic first-principles analysis to break down complex problems into fundamental truths and rebuild solutions from the ground up.
+行き詰まった時、複雑になりすぎた時に、根本から考え直すためのスキル。
 
-## When to Apply This Framework
+## いつ使うか
 
-Use first-principles thinking when you encounter:
-- Complex decisions with no clear answer
-- Conventional approaches that aren't working
-- Assumptions that may be limiting solutions
-- Need to innovate beyond industry norms
-- Problems that feel "impossible"
+- 実装が複雑になりすぎた
+- 何を作ろうとしていたか見失った
+- 技術的な解決策に固執している
+- トレードオフの判断に迷っている
+- 「なぜこうなっているのか」がわからなくなった
 
-## The 15 First-Principles Prompts
+## 思考フレームワーク
 
-### Category 1: Foundation (Strip to Fundamentals)
+### Step 1: 本質的な問題の特定
 
-**1. "What are the physics of this problem?"**
-Strip everything to objective reality. Remove opinions, preferences, and history.
-> *Apply when:* You need to understand what's actually true vs what you believe is true.
+```markdown
+## 今、何を解決しようとしている？
 
-**2. "If I couldn't rely on existing assumptions, how would I solve this?"**
-Assumptions are invisible cages. This prompt forces fresh thinking.
-> *Apply when:* You're stuck in conventional approaches or "the way things are done."
+**表面的な問題**:
+（技術的な実装の話）
 
-**3. "What are the problem's fundamental components?"**
-Break problems into atoms. What are the irreducible elements?
-> *Apply when:* A problem feels overwhelming or too complex to tackle.
+**本質的な問題**:
+（ユーザー/ビジネスにとっての価値）
 
-### Category 2: Ideal State (Unconstrained Vision)
+**確認質問**:
+- この問題が解決されると、誰がどう嬉しい？
+- この機能がなかったら、どんな困りごとがある？
+```
 
-**4. "What would the optimal solution look like if cost didn't exist?"**
-Constraints ruin creativity too early. First imagine the ideal, then work backward.
-> *Apply when:* Budget or resources are limiting your thinking prematurely.
+### Step 2: 前提の洗い出しと疑問
 
-**5. "If I were forced to cut 90 percent of this, what would remain?"**
-Brutal prioritization. What is truly essential?
-> *Apply when:* You have too many options, features, or tasks competing for attention.
+```markdown
+## 暗黙の前提
 
-### Category 3: Risk Analysis (Failure Modes)
+現在の実装で当然としている前提を列挙:
 
-**6. "If this failed completely, what would be the root cause?"**
-Start with failure to engineer success. Pre-mortem thinking.
-> *Apply when:* Planning a launch, making a major commitment, or assessing risk.
+1. [ ] <前提1> → 本当にそうか？
+2. [ ] <前提2> → なぜそう思った？
+3. [ ] <前提3> → 別の方法はないか？
 
-**7. "What would a solution look like if I ignored industry norms?"**
-Bypass entire industries by refusing to copy them.
-> *Apply when:* You're building something new or disrupting an existing market.
+**疑うべき前提**:
+- 「〜でなければならない」
+- 「〜は無理」
+- 「みんなそうしている」
+- 「前からこうだった」
+```
 
-**8. "What part of this is actually impossible and what part just feels impossible?"**
-Most limits are emotional, not physical. Separate real constraints from fear.
-> *Apply when:* You're hesitating on a big decision or feeling stuck.
+### Step 3: 制約の再確認
 
-### Category 4: Breakthrough (Minimum Viable Impact)
+```markdown
+## 本当の制約 vs 思い込み
 
-**9. "What is the minimum viable breakthrough?"**
-Not minimum viable product. Minimum viable *breakthrough*. What's the smallest thing that changes everything?
-> *Apply when:* You need traction but resources are limited.
+| 制約 | 種類 | 根拠 |
+|------|------|------|
+| 予算 100万円 | 🔒 固定 | 承認済み |
+| React使用 | ⚠️ 要確認 | 「チームが慣れている」だけ？ |
+| REST API | ⚠️ 要確認 | GraphQLではダメな理由は？ |
+| 1週間で完成 | 🔒 固定 | リリース日決定済み |
+```
 
-**10. "If I restarted this entire project today, knowing what I know now, what would I build?"**
-Clean slate thinking. Sunk costs are irrelevant.
-> *Apply when:* You've accumulated technical debt, complexity, or legacy decisions.
+### Step 4: ゼロベースでの選択肢
 
-### Category 5: Constraints & Politics (Hidden Blockers)
+```markdown
+## もし最初からやり直すなら？
 
-**11. "What are the hidden constraints I'm not questioning?"**
-Most problems hide fake walls. Find and challenge them.
-> *Apply when:* Growth has plateaued or you feel artificially limited.
+**制約だけを条件に、白紙から考えた選択肢**:
 
-**12. "How would I solve this if I only cared about physics, not politics?"**
-Remove social friction from problem solving. What's the objectively best answer?
-> *Apply when:* Organizational dynamics are clouding decision-making.
+1. **案A**: <description>
+   - メリット:
+   - デメリット:
 
-### Category 6: Scale & Leverage (10x Thinking)
+2. **案B**: <description>
+   - メリット:
+   - デメリット:
 
-**13. "If I had to achieve this 10 times faster, what would I do?"**
-Extreme deadlines force extreme creativity. Compression reveals what's essential.
-> *Apply when:* You need to accelerate timelines dramatically.
+3. **案C（現在の方向性）**: <description>
+   - メリット:
+   - デメリット:
 
-**14. "What would this look like if it had to scale to millions?"**
-Think in orders of magnitude. What breaks? What must change?
-> *Apply when:* Planning for growth or designing systems.
+**最もシンプルな解決策は？**
+（機能を削る、別のアプローチ、やらない選択肢）
+```
 
-**15. "Which part of this solution creates the most leverage?"**
-Always build the part that changes everything first.
-> *Apply when:* Deciding where to focus limited resources.
+### Step 5: 判断と次のアクション
 
-## Meta-Prompts (Combining Multiple Lenses)
+```markdown
+## 結論
 
-**Full Analysis Stack:**
-> "Break my problem into fundamental truths, strip all assumptions, find the optimal solution, identify hidden constraints, and rebuild the idea from first principles."
+**選択**: 案X
 
-**Universal Reset:**
-> "If I rebuilt this from raw truth, what would it become?"
+**理由**:
+1. <reason1>
+2. <reason2>
 
-## How to Structure Your Analysis
+**捨てるもの**:
+- <what to drop>
 
-When applying first-principles thinking, produce:
+**次のアクション**:
+1. [ ] <action1>
+2. [ ] <action2>
+```
 
-1. **Problem Statement** - Clarified, specific challenge
-2. **Assumptions Identified** - List of assumptions being questioned
-3. **Fundamental Truths** - What is objectively true
-4. **Analysis** - Application of relevant prompts from above
-5. **Insights** - Key realizations from the analysis
-6. **Recommendations** - Actionable next steps
-7. **Open Questions** - What still needs investigation
+## 質問リスト
 
-## Quick Reference by Situation
+行き詰まった時に自問する質問:
 
-| Situation | Start With Prompts |
-|-----------|-------------------|
-| Stuck on a decision | #8 (impossible vs feels impossible), #5 (cut 90%) |
-| Building something new | #7 (ignore industry norms), #9 (minimum viable breakthrough) |
-| Scaling challenges | #13 (10x faster), #14 (scale to millions) |
-| Technical debt | #10 (restart today), #3 (fundamental components) |
-| Resource constraints | #4 (if cost didn't exist), #15 (maximum leverage) |
-| Risk assessment | #6 (pre-mortem), #11 (hidden constraints) |
+### 問題について
+- 「そもそも、これは解決すべき問題か？」
+- 「問題の定義は正しいか？」
+- 「誰のための機能か？」
+
+### 解決策について
+- 「最もシンプルな解決策は何か？」
+- 「この機能を作らない選択肢は？」
+- 「80%の価値を20%の労力で得る方法は？」
+- 「完璧でなくていいなら、どうする？」
+
+### 前提について
+- 「なぜそう思った？」
+- 「それは事実か、推測か？」
+- 「逆のことが正しい可能性は？」
+- 「5年後もこの前提は有効か？」
+
+## 出力形式
+
+```markdown
+## First Principles 分析
+
+### 現状
+**やろうとしていること**:
+<description>
+
+**行き詰まっている点**:
+<description>
+
+---
+
+### 本質
+
+**解決すべき本当の問題**:
+<core problem>
+
+**成功の定義**:
+<what success looks like>
+
+---
+
+### 前提の検証
+
+| 前提 | 検証結果 |
+|------|---------|
+| <assumption1> | ✅ 有効 / ❌ 無効 / ⚠️ 要確認 |
+
+---
+
+### 再考後の選択肢
+
+1. **シンプル案**: <description>
+2. **現行案の修正**: <description>
+3. **やらない案**: <description>
+
+---
+
+### 推奨
+
+**選択**: <option>
+
+**理由**: <rationale>
+
+**削ぎ落とすもの**: <what to cut>
+```
+
+## 注意事項
+
+- **分析麻痺を避ける**: 考えすぎず、行動につなげる
+- **完璧を求めない**: 70%の解決策で十分なこともある
+- **チームと共有**: 一人で抱え込まず、視点を借りる
+- **時間を区切る**: 30分考えて結論が出なければ相談

@@ -1,7 +1,7 @@
 {
   "name": "tooling",
-  "repo": "TheBeardedBearSAS/claude-craft",
-  "path": "Dev/i18n/es/Flutter/skills/tooling/SKILL.md",
-  "source": "github.com/TheBeardedBearSAS/claude-craft",
-  "downloaded_at": "2026-02-02T03:34:53.417316Z"
+  "repo": "HoangNguyen0403/agent-skills-standard",
+  "path": "skills/javascript/tooling/SKILL.md",
+  "source": "github.com/HoangNguyen0403/agent-skills-standard",
+  "downloaded_at": "2026-02-04T04:31:13.072402Z"
 }

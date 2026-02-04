@@ -1,7 +1,7 @@
 {
   "name": "claude-code",
-  "repo": "binjuhor/shadcn-lar",
-  "path": ".claude/skills/claude-code/skill.md",
-  "source": "github.com/binjuhor/shadcn-lar",
-  "downloaded_at": "2026-02-02T05:07:36.236912Z"
+  "repo": "anhxuanpham/astro-chart",
+  "path": "your-project/skills/claude-code/skill.md",
+  "source": "github.com/anhxuanpham/astro-chart",
+  "downloaded_at": "2026-02-04T05:20:57.014404Z"
 }

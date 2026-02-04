@@ -2,6 +2,7 @@
 name: ai-data-analyst
 description: Perform comprehensive data analysis, statistical modeling, and data visualization by writing and executing self-contained Python scripts. Use when you need to analyze datasets, perform statistical tests, create visualizations, or build predictive models with reproducible, code-based workflows.
 ---
+
 # Skill: AI data analyst
 
 ## Purpose
@@ -48,23 +49,27 @@ Unlike point-solution data analysis tools:
 ## Conventions and best practices
 
 ### Python environment
+
 - Use **virtual environments** to isolate dependencies.
 - Install only necessary packages for the specific analysis.
 - Document all dependencies in `requirements.txt` or `environment.yml`.
 
 ### Code structure
+
 - Write **self-contained scripts** that can be re-run by others.
 - Use **clear variable names** and add comments for complex logic.
 - **Separate concerns**: data loading, cleaning, analysis, visualization.
 - Save **intermediate results** to files when analysis is multi-stage.
 
 ### Data handling
+
 - **Never modify source data files** – work on copies or in-memory dataframes.
 - **Document data transformations** clearly in code comments.
 - **Handle missing values** explicitly and document approach.
 - **Validate data quality** before analysis (check for nulls, outliers, duplicates).
 
 ### Visualization best practices
+
 - Choose **appropriate chart types** for the data and question.
 - Use **clear labels, titles, and legends** on all charts.
 - Apply **appropriate color schemes** (colorblind-friendly when possible).
@@ -72,6 +77,7 @@ Unlike point-solution data analysis tools:
 - Save visualizations in **high-resolution formats** (PNG 300 DPI, SVG for vector graphics).
 
 ### Statistical analysis
+
 - **State assumptions** for statistical tests clearly.
 - **Check assumptions** before applying tests (normality, homoscedasticity, etc.).
 - **Report effect sizes** not just p-values.
@@ -106,6 +112,7 @@ Unlike point-solution data analysis tools:
 ## Implementation checklist
 
 ### 1. Data exploration and preparation
+
 - [ ] Load data and inspect structure (shape, columns, types)
 - [ ] Check for missing values, duplicates, outliers
 - [ ] Generate summary statistics (mean, median, std, min, max)
@@ -113,6 +120,7 @@ Unlike point-solution data analysis tools:
 - [ ] Document data quality issues found
 
 ### 2. Data cleaning and transformation
+
 - [ ] Handle missing values (impute, drop, or flag)
 - [ ] Address outliers if needed (cap, transform, or document)
 - [ ] Create derived variables if needed
@@ -120,6 +128,7 @@ Unlike point-solution data analysis tools:
 - [ ] Split data if doing train/test analysis
 
 ### 3. Analysis execution
+
 - [ ] Choose appropriate analytical methods
 - [ ] Check statistical assumptions
 - [ ] Execute analysis with proper parameters
@@ -127,6 +136,7 @@ Unlike point-solution data analysis tools:
 - [ ] Perform sensitivity analyses if appropriate
 
 ### 4. Visualization
+
 - [ ] Create exploratory visualizations
 - [ ] Generate publication-quality final charts
 - [ ] Ensure all charts have clear labels and titles
@@ -134,6 +144,7 @@ Unlike point-solution data analysis tools:
 - [ ] Save in high-resolution formats
 
 ### 5. Reporting
+
 - [ ] Write clear summary of methods used
 - [ ] Present key findings with supporting evidence
 - [ ] Explain practical significance of results
@@ -141,6 +152,7 @@ Unlike point-solution data analysis tools:
 - [ ] Provide actionable recommendations
 
 ### 6. Reproducibility
+
 - [ ] Test that script runs from clean environment
 - [ ] Document all dependencies
 - [ ] Add comments explaining non-obvious code
@@ -151,6 +163,7 @@ Unlike point-solution data analysis tools:
 When working with Convex (backend, database, schemas), you **MUST** follow this specialized workflow:
 
 ### 1. Protocols & Rules
+
 - **READ FIRST**: Always read `resources/convex_rules.md` before writing any Convex code.
   - Command: `view_file(AbsolutePath=".../resources/convex_rules.md")`
 - **MCP Integration**: Use `mcp_convex` tools to inspect CURRENT state before proposing changes.
@@ -159,6 +172,7 @@ When working with Convex (backend, database, schemas), you **MUST** follow this 
   - `mcp_convex_logs`: Analyze recent failures.
 
 ### 2. Implementation & fix
+
 - **CLI First**: Use `bunx convex` for all operations.
   - DO NOT use generic SQL or other DB commands.
   - Example: `bunx convex run serena/actions:doSomething`
@@ -167,10 +181,10 @@ When working with Convex (backend, database, schemas), you **MUST** follow this 
   - Analyze stack traces using Python scripts if text analysis is insufficient.
 
 ### 3. Code Generation
+
 - **Schema**: Define in `convex/schema.ts` using `defineSchema` and `defineTable`.
 - **Functions**: Use `query`, `mutation`, `action` from `_generated/server`.
 - **Validation**: Ensure `args` and `returns` validators (e.g., `v.string()`, `v.id()`) are strictly typed.
-
 
 ## Verification
 
@@ -202,6 +216,7 @@ The skill is complete when:
 ## Common analysis patterns
 
 ### Exploratory Data Analysis (EDA)
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -227,6 +242,7 @@ plt.savefig('correlations.png', dpi=300)
 ```
 
 ### Time series analysis
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -259,6 +275,7 @@ plt.savefig('trends.png', dpi=300)
 ```
 
 ### Statistical hypothesis testing
+
 ```python
 from scipy import stats
 import numpy as np
@@ -292,6 +309,7 @@ print(f"Effect size (Cohen's d): {cohens_d:.4f}")
 ```
 
 ### Predictive modeling
+
 ```python
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
@@ -336,32 +354,38 @@ plt.savefig('feature_importance.png', dpi=300)
 ## Recommended Python libraries
 
 ### Data manipulation
+
 - **pandas**: Data manipulation and analysis
 - **numpy**: Numerical computing
 - **polars**: High-performance DataFrame library (alternative to pandas)
 
 ### Visualization
+
 - **matplotlib**: Foundational plotting library
 - **seaborn**: Statistical visualizations
 - **plotly**: Interactive charts
 - **altair**: Declarative statistical visualization
 
 ### Statistical analysis
+
 - **scipy.stats**: Statistical functions and tests
 - **statsmodels**: Statistical modeling
 - **pingouin**: Statistical tests with clear output
 
 ### Machine learning
+
 - **scikit-learn**: ML algorithms and tools
 - **xgboost**: Gradient boosting
 - **lightgbm**: Fast gradient boosting
 
 ### Time series
+
 - **statsmodels.tsa**: Time series analysis
 - **prophet**: Forecasting tool
 - **pmdarima**: Auto ARIMA
 
 ### Specialized
+
 - **networkx**: Network analysis
 - **geopandas**: Geospatial data analysis
 - **textblob** / **spacy**: Natural language processing

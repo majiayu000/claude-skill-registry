@@ -1,7 +1,7 @@
 {
   "name": "image-processing",
-  "repo": "nathanielcrowell12-spec/photo-vault",
-  "path": ".claude/skills/image-processing/SKILL.md",
-  "source": "github.com/nathanielcrowell12-spec/photo-vault",
-  "downloaded_at": "2026-01-29T04:08:52.415104Z"
+  "repo": "johnlindquist/script-kit-next",
+  "path": ".opencode/skill/image-processing/SKILL.md",
+  "source": "github.com/johnlindquist/script-kit-next",
+  "downloaded_at": "2026-02-04T03:27:57.842883Z"
 }

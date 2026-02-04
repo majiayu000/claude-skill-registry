@@ -7,6 +7,16 @@ description: Run local AI models with LocalAI. Deploy OpenAI-compatible API for 
 
 Expert guidance for self-hosted OpenAI-compatible AI API.
 
+## Triggers
+
+Use this skill when:
+- Running self-hosted AI models locally
+- Deploying OpenAI-compatible APIs without cloud dependencies
+- Setting up privacy-focused AI deployments
+- Working with LocalAI for LLMs, embeddings, audio, or images
+- Building offline AI inference systems
+- Keywords: localai, self-hosted, openai compatible, local ai, offline, privacy, llm server
+
 ## Installation
 
 ### Docker
@@ -259,7 +269,8 @@ parameters:
 ## Kubernetes Deployment
 
 ```yaml
-apikind: Deployment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: localai
 spec:

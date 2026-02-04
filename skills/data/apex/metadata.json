@@ -1,7 +1,7 @@
 {
   "name": "apex",
-  "repo": "cedricfressin/claude-config",
-  "path": "skills/apex/SKILL.md",
-  "source": "github.com/cedricfressin/claude-config",
-  "downloaded_at": "2026-02-02T01:31:15.317707Z"
+  "repo": "fusengine/agents",
+  "path": "plugins/ai-pilot/skills/apex/SKILL.md",
+  "source": "github.com/fusengine/agents",
+  "downloaded_at": "2026-02-04T01:11:51.734617Z"
 }

@@ -1,271 +1,275 @@
 ---
 name: orchestrate
-description: |
-  Task Decomposition Engine - Breaks down complex tasks into phases,
-  creates Native Tasks with dependencies, and generates worker prompts.
-
-  Pipeline Position: After /planning, Before /assign
-  Handoff: /assign --workload {slug}
+description: Guide a project from idea to implementation using the appropriate workflow depth
+argument-hint: <project idea or goal>
 user-invocable: true
-model: opus
-version: "4.0.0"
-argument-hint: "--plan-slug <slug> | <task-description>"
 allowed-tools:
   - Read
-  - Write
   - Glob
-  - Grep
   - Task
+  - AskUserQuestion
   - TaskCreate
   - TaskUpdate
   - TaskList
-  - TaskGet
-  - mcp__sequential-thinking__sequentialthinking
-hooks:
-  Setup:
-    - type: command
-      command: "source /home/palantir/.claude/skills/shared/parallel-agent.sh"
-      timeout: 5000
-  PreToolUse:
-    - type: command
-      command: "/home/palantir/.claude/hooks/orchestrate-validate.sh"
-      timeout: 30000
-      matcher: "TaskCreate"
-
-# =============================================================================
-# EFL Pattern Configuration (P1-P6)
-# =============================================================================
-agent_delegation:
-  enabled: true
-  default_mode: true
-  max_sub_agents: 5
-  delegation_strategy: "complexity-based"
-
-parallel_agent_config:
-  enabled: true
-  agent_count_by_complexity:
-    simple: 1
-    moderate: 2
-    complex: 3
-    very_complex: 4
-
-synthesis_config:
-  phase_3a_l2_horizontal:
-    enabled: true
-    validation_criteria:
-      - cross_phase_consistency
-      - dependency_acyclicity
-      - target_file_coverage
-  phase_3b_l3_vertical:
-    enabled: true
-    validation_criteria:
-      - plan_alignment
-      - file_existence_verification
-      - criteria_measurability
-
-selective_feedback:
-  enabled: true
-  severity_filter: "warning"
-  feedback_targets:
-    - gate: "ORCHESTRATE"
-      action: "block_on_error"
-
-agent_internal_feedback_loop:
-  enabled: true
-  max_iterations: 3
-  validation_criteria:
-    - "Each phase has clear completion criteria"
-    - "Dependencies form DAG (no cycles)"
-    - "Target files are specified for each phase"
-    - "Phase count is reasonable (3-10)"
 ---
 
-# /orchestrate - Task Decomposition Engine
+# /orchestrate - Workflow Orchestration
 
-> **Version:** 4.0.0 | **Model:** opus
-> **Pipeline:** /planning -> [/orchestrate] -> /assign
-> **EFL:** P1-P6 Complete
+Guide a project through the appropriate development workflow based on complexity.
 
----
+## Purpose
 
-## 1. Purpose
+Orchestrate the full development lifecycle by:
+- Assessing project complexity
+- Selecting appropriate workflow depth
+- Coordinating agents through the workflow
+- Consulting user at key decision points
+- Ensuring artifacts flow between phases
 
-Task Decomposition Engine that:
-1. Breaks down complex tasks into phases
-2. Creates Native Tasks via `TaskCreate`
-3. Sets up dependencies via `TaskUpdate(addBlockedBy)`
-4. Generates worker prompt files (`.agent/prompts/{slug}/pending/`)
-5. Initializes workload-specific context and progress tracking
+**CRITICAL**: The orchestrator NEVER edits files or runs bash directly. All implementation work is delegated to subagents via the Task tool.
 
-**Does NOT:**
-- Assign tasks to terminals (use `/assign`)
-- Execute tasks (handled by `/worker`)
-- Set `owner` field (remains null until `/assign`)
+## Context Discipline
 
----
+**CRITICAL for orchestration quality**: Lean context = clear signal.
 
-## 2. Task API Integration
+### What to Read (High-Level Only)
+- `docs/objectives/ROADMAP.md` - milestone/phase overview
+- `docs/development/BACKLOG.md` - task table only (not full details)
+- `docs/architecture/PRD.md` - requirements summary
+- Agent results - summary output from Task tool
 
-### Task Creation Pattern
-```javascript
-// Create tasks in dependency order
-for (phase of analysis.phases) {
-  task = TaskCreate({
-    subject: phase.name,
-    description: phase.description,
-    activeForm: `Working on ${phase.name}`,
-    metadata: {
-      phaseId: phase.id,
-      priority: phase.priority || "P1",
-      promptFile: `${workloadPromptDir}/pending/${filename}`
-    }
-  })
-  taskMap[phase.id] = task.id
-}
+### What to NEVER Read Directly
+- Source code files
+- Full file contents
+- Detailed implementations
+- Test files
+- Logs
 
-// Set up dependencies
-for (phase of analysis.phases) {
-  if (phase.dependencies.length > 0) {
-    TaskUpdate({
-      taskId: taskMap[phase.id],
-      addBlockedBy: phase.dependencies.map(d => taskMap[d])
-    })
-  }
-}
+### Why This Matters
+Cluttered context causes:
+- Missed decision points
+- Wrong workflow depth selection
+- Failure to catch blockers
+- Lost orchestration thread
+
+**Rule**: If you need details, spawn an agent to analyze and summarize.
+
+### Context Budget
+- Keep orchestrator turns focused on: assess → delegate → checkpoint → proceed
+- Each phase transition: brief status, next action
+- Avoid: debugging, code review, detailed analysis (delegate these)
+
+## Inputs
+
+- `$ARGUMENTS`: Project idea, goal, or feature description
+- `${PROJECT_NAME}`: Current project context
+- Existing docs in `docs/` (if resuming)
+
+## Outputs
+
+Artifacts produced by each phase:
+- PRD at `docs/architecture/PRD.md` (/spec)
+- Architecture at `docs/architecture/ARCHITECTURE.md` (/design)
+- ROADMAP/BACKLOG at `docs/objectives/` and `docs/development/` (/plan)
+- Code and tests in source files (/implement)
+
+## Workflow Depths
+
+### Full Workflow
+**Use when**: New product, complex system, multiple components, unclear requirements
+
+```
+/spec → /design → /plan → /implement → /validate → /deploy → /document
 ```
 
-### Output Files
-| File | Purpose |
-|------|---------|
-| `_context.yaml` | Project context and phase definitions |
-| `_progress.yaml` | Progress tracking per terminal |
-| `pending/*.yaml` | Worker task prompts |
+Phases:
+1. **Specification**: Elicit requirements, define acceptance criteria
+2. **Design**: Architecture, components, ADRs
+3. **Planning**: Milestones, epics, tasks
+4. **Implementation**: Code and tests
+5. **Validation**: Testing, verification
+6. **Deployment**: Build, deploy, release
+7. **Documentation**: User docs, guides
 
----
+### Medium Workflow
+**Use when**: New feature, moderate complexity, clear scope
 
-## 3. Invocation
-
-```bash
-# With plan slug (from /planning)
-/orchestrate --plan-slug user-auth-20260128
-
-# Standalone (auto-generates workload)
-/orchestrate "Implement user authentication system"
+```
+/spec → /plan → /implement → /validate
 ```
 
----
+Phases:
+1. **Specification**: Quick PRD with acceptance criteria
+2. **Planning**: Task breakdown
+3. **Implementation**: Code and tests
+4. **Validation**: Testing
 
-## 4. Execution Protocol
+### Light Workflow
+**Use when**: Simple change, bug fix, clear task
 
-### Phase 1: Requirements Analysis
-```javascript
-// Parse input and generate workload ID
-const workloadId = generateWorkloadId(projectSlug)
-const workloadSlug = generateSlugFromWorkload(workloadId)
-
-// Analyze task for decomposition
-const analysis = analyzeTask(input)
-// Returns: { project, objectives, phases[], estimatedWorkers }
+```
+/plan → /implement
 ```
 
-### Phase 2: Gate 4 Validation (Shift-Left)
-```javascript
-// Validate phase dependencies BEFORE creating tasks
-const gate4Result = await validatePhaseDependencies(phases)
+Phases:
+1. **Planning**: Quick task definition
+2. **Implementation**: Code and tests
 
-if (gate4Result.hasErrors) {
-  return { status: "gate4_failed", errors: gate4Result.errors }
-}
-// Log warnings but continue
-if (gate4Result.hasWarnings) {
-  logValidationWarnings("ORCHESTRATE", gate4Result.warnings)
-}
+## Complexity Assessment
+
+Assess complexity to select workflow depth:
+
+| Factor | Score |
+|--------|-------|
+| New system/product | +3 |
+| Multiple components | +2 |
+| Integration needed | +2 |
+| New API | +1 |
+| UI changes | +1 |
+| Simple fix | -2 |
+| Documentation only | -3 |
+
+**Scoring**:
+- Score >= 4: **Full** workflow
+- Score 1-3: **Medium** workflow
+- Score <= 0: **Light** workflow
+
+## Orchestration Process
+
+### 1. Assess Request
+Read `$ARGUMENTS` and assess:
+- What is being requested?
+- Is this new or modification?
+- How many components involved?
+- Are requirements clear?
+
+### 2. Select Workflow Depth
+Based on complexity assessment, propose a workflow:
+
+```
+I've assessed this as a [complexity] project.
+
+Recommended workflow: [Full/Medium/Light]
+- Phase 1: [description]
+- Phase 2: [description]
+...
+
+Proceed with this workflow?
 ```
 
-### Phase 3: Initialize Workload Directory
-```javascript
-// Create workload structure
-Bash(`source .claude/skills/shared/workload-tracker.sh && init_workload_directories "${workloadId}"`)
-Bash(`source .claude/skills/shared/workload-files.sh && set_active_workload "${workloadId}"`)
+Use `AskUserQuestion` to confirm with user.
+
+### 3. Execute Phases
+For each phase in the selected workflow:
+
+**Option A - Agent Delegation (Recommended)**:
+Use `Task` tool to spawn the appropriate agent:
+```
+Task(subagent_type="business-analyst", prompt="Create PRD for: ...")
+Task(subagent_type="architect", prompt="Design architecture for: ...")
+Task(subagent_type="project-manager", prompt="Create implementation plan for: ...")
+Task(subagent_type="developer", prompt="Implement task T-001: ...")
 ```
 
-### Phase 4: Native Task Creation
-```javascript
-// Create tasks with TaskCreate
-for (phase of phases) {
-  const task = TaskCreate({
-    subject: phase.name,
-    description: phase.description,
-    activeForm: `Working on ${phase.name}`
-  })
-  taskMap[phase.id] = task.id
-}
+**IMPORTANT**: Always use Option A. The orchestrator coordinates; subagents execute.
+
+### 4. Checkpoint Between Phases
+After each major phase:
+- Verify artifacts were produced
+- Check for blockers or issues
+- Consult user if decisions needed
+- Proceed to next phase
+
+### 5. Handle Blockers
+If a phase is blocked:
+1. Document the blocker
+2. Ask user for guidance
+3. Either resolve or skip to next feasible phase
+
+## Agent Invocation Pattern
+
+When spawning agents via Task tool:
+
+```python
+# Spawn Business Analyst for /spec
+Task(
+    subagent_type="business-analyst",
+    description="Generate PRD",
+    prompt=f"""
+    Create a Product Requirements Document for:
+    {$ARGUMENTS}
+
+    Project context: {$PROJECT_NAME}
+    Output to: docs/architecture/PRD.md
+
+    Follow the /spec skill workflow.
+    """
+)
 ```
 
-### Phase 5: Dependency Setup
-```javascript
-// Set blockers with TaskUpdate
-for (phase of phases) {
-  if (phase.dependencies.length > 0) {
-    TaskUpdate({
-      taskId: taskMap[phase.id],
-      addBlockedBy: phase.dependencies.map(d => taskMap[d])
-    })
-  }
-}
+Agents have skills injected via their `skills:` frontmatter, so they will follow the skill instructions.
+
+## Decision Points
+
+Consult user at these points:
+1. **Workflow selection**: Confirm depth is appropriate
+2. **Scope changes**: If requirements significantly different than expected
+3. **Trade-offs**: When design decisions have significant impact
+4. **Blockers**: When unable to proceed
+5. **Phase completion**: Before major transitions (design → implement)
+
+## Example Session
+
+```
+User: /orchestrate Build a CLI tool for managing todo items
+
+Orchestrator:
+I've assessed this request:
+- New tool (not modification): +3
+- Single component (CLI): 0
+- No integration: 0
+- Simple scope: -1
+
+Total: 2 → Medium workflow
+
+Recommended workflow:
+1. /spec - Define requirements and CLI interface
+2. /plan - Break into implementable tasks
+3. /implement - Build the CLI
+4. /validate - Test functionality
+
+Proceed with Medium workflow?
+
+User: Yes
+
+Orchestrator: [Spawns business-analyst agent for /spec]
+...
+Orchestrator: PRD complete. Proceeding to /plan.
+[Spawns project-manager agent for /plan]
+...
 ```
 
-### Phase 6: Generate Context Files
-- `_context.yaml`: Project metadata, phases, dependency graph
-- `_progress.yaml`: Terminal status, phase progress
+## Parallel Execution
 
-### Phase 7: Generate Worker Prompts
-- Create `pending/worker-phase-{n}-{slug}-task.yaml` for each phase
-- Include scope, target files, completion criteria, validation
+When tasks are independent, spawn multiple agents in a single message:
+- Multiple implementation tasks → parallel developer agents
+- Multiple validation tasks → parallel validator agents
+- Independent research → parallel explore agents
 
-### Phase 8: Summary Output
+Example:
 ```
-=== Orchestration Complete ===
-Project: {project}
-Tasks: {count}
-Next: /assign auto
+Task(subagent_type="developer", prompt="Implement T-001...")
+Task(subagent_type="developer", prompt="Implement T-002...")
+Task(subagent_type="developer", prompt="Implement T-003...")
 ```
 
----
+All three run concurrently, results collected together.
 
-## 5. Error Handling
-
-| Error | Recovery |
-|-------|----------|
-| Invalid input | Prompt for clarification |
-| Too many phases (>10) | Suggest sub-orchestration |
-| Circular dependency | Reject, show cycle |
-| Gate 4 failed | Show errors, abort |
-
----
-
-## 6. Handoff Contract
-
-```yaml
-# On completion, output:
-handoff:
-  skill: "orchestrate"
-  workload_slug: "{slug}"
-  status: "completed"
-  next_action:
-    skill: "/assign"
-    arguments: "--workload {slug}"
-```
-
----
-
-## 7. Version History
-
-| Version | Changes |
-|---------|---------|
-| 4.0.0 | Deduplicated, V2.1.19 frontmatter, Task API patterns |
-| 3.0.0 | Full EFL P1-P6 implementation |
-| 2.1.0 | V2.1.19 Spec compatibility |
-| 1.0.0 | Initial task orchestration |
-
-**End of Skill Documentation**
+## Validation Checklist
+- [ ] Workflow depth matches complexity
+- [ ] User confirmed workflow selection
+- [ ] Each phase produced expected artifacts
+- [ ] Artifacts flow correctly between phases
+- [ ] Decision points consulted user appropriately
+- [ ] Context stayed lean (no code/detail clutter)
+- [ ] Blockers documented if any

@@ -1,317 +1,518 @@
 ---
 name: market-data
-description: Fetches real-time and historical stock market data from authorized APIs including prices, fundamentals, news, and economic data
-triggers:
-  - stock price
-  - get quote
-  - market data
-  - stock data
-  - historical prices
-  - stock news
-  - earnings calendar
-  - economic calendar
-  - real-time data
+description: Market data retrieval with OpenAlgo - real-time quotes, historical OHLCV, market depth, option chains, WebSocket streaming, and symbol search
 ---
 
-# Market Data Skill
+# OpenAlgo Market Data
 
-You are the **Market Data Agent** specialized in fetching real-time and historical financial market data from authorized APIs.
+Access real-time and historical market data using OpenAlgo's unified Python SDK. Supports REST API for on-demand data and WebSocket for real-time streaming.
 
-## Capabilities
-- Real-time stock quotes and market data
-- Historical price data (OHLCV)
-- Company fundamental data (financials, ratios)
-- Market news and company news
-- Earnings calendar data
-- Economic calendar events
-- Technical indicator data
-- Index and sector data
+## Environment Setup
 
-## When to Activate
-Activate this skill when the user requests:
-- "What's the price of AAPL?"
-- "Get me a quote for Tesla"
-- "Historical prices for MSFT"
-- "Latest news on Amazon"
-- "When is NVDA earnings?"
-- "Economic data releases today"
-- "Market data for my watchlist"
+```python
+from openalgo import api
 
-## Process
+# REST API only
+client = api(
+    api_key='your_api_key_here',
+    host='http://127.0.0.1:5000'
+)
 
-1. **Identify Data Need**: Determine what data type is requested
-2. **Select Data Source**: Choose appropriate API based on data type
-3. **Fetch Data**: Retrieve data from authorized sources
-4. **Validate Response**: Verify data quality and completeness
-5. **Format Output**: Present data in clear, structured format
-
-## Data Sources & Capabilities
-
-### Real-Time Quotes (Finnhub)
-**API**: `https://finnhub.io/api/v1`
-**Rate Limit**: 60 calls/minute
-
-```markdown
-## Stock Quote: {TICKER}
-
-**{Company Name}**
-**Last Updated**: {Timestamp}
-
-| Metric | Value |
-|--------|-------|
-| Current Price | ${current_price} |
-| Change | ${change} ({change_pct}%) |
-| Open | ${open} |
-| High | ${high} |
-| Low | ${low} |
-| Previous Close | ${prev_close} |
-| Volume | {volume} |
-| 52-Week High | ${high_52w} |
-| 52-Week Low | ${low_52w} |
-
-**Status**: {Pre-Market / Market Open / After Hours / Closed}
+# With WebSocket streaming
+client = api(
+    api_key='your_api_key_here',
+    host='http://127.0.0.1:5000',
+    ws_url='ws://127.0.0.1:8765',
+    verbose=True  # Enable connection logs
+)
 ```
 
-### Historical Data (Alpha Vantage)
-**API**: `https://www.alphavantage.co/query`
-**Rate Limit**: 5 calls/minute
+## Quick Start Scripts
 
-```markdown
-## Historical Prices: {TICKER}
-
-**Period**: {Start Date} to {End Date}
-**Frequency**: {Daily / Weekly / Monthly}
-
-| Date | Open | High | Low | Close | Volume |
-|------|------|------|-----|-------|--------|
-| {date} | ${o} | ${h} | ${l} | ${c} | {vol} |
-| {date} | ${o} | ${h} | ${l} | ${c} | {vol} |
-...
-
-### Summary Statistics
-- **Period Return**: {return}%
-- **High**: ${high} on {date}
-- **Low**: ${low} on {date}
-- **Average Volume**: {avg_vol}
+### Get Quotes
+```bash
+python scripts/quotes.py --symbol RELIANCE --exchange NSE
+python scripts/quotes.py --symbols RELIANCE,TCS,INFY --exchange NSE
 ```
 
-### Fundamental Data (Financial Modeling Prep)
-**API**: `https://financialmodelingprep.com/api/v3`
-**Rate Limit**: 250 calls/day
-
-```markdown
-## Company Fundamentals: {TICKER}
-
-**{Company Name}**
-**Last Updated**: {Date}
-
-### Valuation Metrics
-| Metric | Value |
-|--------|-------|
-| Market Cap | ${market_cap}B |
-| Enterprise Value | ${ev}B |
-| P/E Ratio | {pe} |
-| PEG Ratio | {peg} |
-| P/B Ratio | {pb} |
-| P/S Ratio | {ps} |
-| EV/EBITDA | {ev_ebitda} |
-
-### Profitability Metrics
-| Metric | Value |
-|--------|-------|
-| Gross Margin | {gross_margin}% |
-| Operating Margin | {op_margin}% |
-| Net Margin | {net_margin}% |
-| ROE | {roe}% |
-| ROA | {roa}% |
-
-### Financial Health
-| Metric | Value |
-|--------|-------|
-| Current Ratio | {current_ratio} |
-| Debt/Equity | {debt_equity} |
-| Interest Coverage | {int_coverage}x |
-
-### Dividend Info
-| Metric | Value |
-|--------|-------|
-| Dividend Yield | {div_yield}% |
-| Payout Ratio | {payout}% |
-| Ex-Dividend Date | {ex_date} |
+### Get Historical Data
+```bash
+python scripts/history.py --symbol SBIN --exchange NSE --interval 5m --start 2025-01-01 --end 2025-01-15
 ```
 
-### Company News (Finnhub)
-```markdown
-## Recent News: {TICKER}
+### Get Market Depth
+```bash
+python scripts/depth.py --symbol SBIN --exchange NSE
+```
 
-**{Company Name}** | Last {N} articles
+### Stream Live Data
+```bash
+python scripts/stream.py --symbols NIFTY,BANKNIFTY --exchange NSE_INDEX --mode ltp
+```
 
 ---
 
-### {Headline 1}
-**Source**: {source} | **Date**: {date}
-{Summary}
-[Read more]({url})
+## REST API Methods
+
+### 1. Single Quote
+
+Get current market quote for a symbol:
+
+```python
+response = client.quotes(symbol="RELIANCE", exchange="NSE")
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "open": 1172.0,
+    "high": 1196.6,
+    "low": 1163.3,
+    "ltp": 1187.75,
+    "ask": 1188.0,
+    "bid": 1187.85,
+    "prev_close": 1165.7,
+    "volume": 14414545
+  }
+}
+```
+
+### 2. Multiple Quotes
+
+Get quotes for multiple symbols in one call:
+
+```python
+response = client.multiquotes(symbols=[
+    {"symbol": "RELIANCE", "exchange": "NSE"},
+    {"symbol": "TCS", "exchange": "NSE"},
+    {"symbol": "INFY", "exchange": "NSE"},
+    {"symbol": "NIFTY", "exchange": "NSE_INDEX"}
+])
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "results": [
+    {
+      "symbol": "RELIANCE",
+      "exchange": "NSE",
+      "data": {
+        "open": 1542.3,
+        "high": 1571.6,
+        "low": 1540.5,
+        "ltp": 1569.9,
+        "prev_close": 1539.7,
+        "ask": 1569.9,
+        "bid": 1569.8,
+        "oi": 0,
+        "volume": 14054299
+      }
+    },
+    ...
+  ]
+}
+```
+
+### 3. Market Depth (Level 2)
+
+Get order book with 5 best bid/ask levels:
+
+```python
+response = client.depth(symbol="SBIN", exchange="NSE")
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "open": 760.0,
+    "high": 774.0,
+    "low": 758.15,
+    "ltp": 769.6,
+    "ltq": 205,
+    "prev_close": 746.9,
+    "volume": 9362799,
+    "oi": 161265750,
+    "totalbuyqty": 591351,
+    "totalsellqty": 835701,
+    "asks": [
+      {"price": 769.6, "quantity": 767},
+      {"price": 769.65, "quantity": 115},
+      {"price": 769.7, "quantity": 162},
+      {"price": 769.75, "quantity": 1121},
+      {"price": 769.8, "quantity": 430}
+    ],
+    "bids": [
+      {"price": 769.4, "quantity": 886},
+      {"price": 769.35, "quantity": 212},
+      {"price": 769.3, "quantity": 351},
+      {"price": 769.25, "quantity": 343},
+      {"price": 769.2, "quantity": 399}
+    ]
+  }
+}
+```
+
+### 4. Historical Data (OHLCV)
+
+Get historical candlestick data:
+
+```python
+response = client.history(
+    symbol="SBIN",
+    exchange="NSE",
+    interval="5m",
+    start_date="2025-01-01",
+    end_date="2025-01-15"
+)
+```
+
+**Response (Pandas DataFrame):**
+```
+                            close    high     low    open  volume
+timestamp
+2025-01-01 09:15:00+05:30  772.50  774.00  763.20  766.50  318625
+2025-01-01 09:20:00+05:30  773.20  774.95  772.10  772.45  197189
+2025-01-01 09:25:00+05:30  775.15  775.60  772.60  773.20  227544
+...
+```
+
+**Available Intervals:**
+```python
+response = client.intervals()
+# Returns: {'minutes': ['1m', '3m', '5m', '10m', '15m', '30m'],
+#           'hours': ['1h'], 'days': ['D']}
+```
+
+### 5. Option Chain
+
+Get complete option chain for an underlying:
+
+```python
+chain = client.optionchain(
+    underlying="NIFTY",
+    exchange="NSE_INDEX",
+    expiry_date="30JAN25",
+    strike_count=10  # ±10 strikes from ATM (optional)
+)
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "underlying": "NIFTY",
+  "underlying_ltp": 26215.55,
+  "expiry_date": "30JAN25",
+  "atm_strike": 26200.0,
+  "chain": [
+    {
+      "strike": 26100.0,
+      "ce": {
+        "symbol": "NIFTY30JAN2526100CE",
+        "label": "ITM2",
+        "ltp": 490,
+        "bid": 490,
+        "ask": 491,
+        "volume": 1195800,
+        "oi": 5000000,
+        "lotsize": 75
+      },
+      "pe": {
+        "symbol": "NIFTY30JAN2526100PE",
+        "label": "OTM2",
+        "ltp": 193,
+        "bid": 191.2,
+        "ask": 193,
+        "volume": 1832700,
+        "oi": 4500000,
+        "lotsize": 75
+      }
+    },
+    ...
+  ]
+}
+```
+
+### 6. Expiry Dates
+
+Get available expiry dates:
+
+```python
+response = client.expiry(
+    symbol="NIFTY",
+    exchange="NFO",
+    instrumenttype="options"  # or "futures"
+)
+# Returns: ['30-JAN-25', '06-FEB-25', '13-FEB-25', ...]
+```
 
 ---
 
-### {Headline 2}
-**Source**: {source} | **Date**: {date}
-{Summary}
-[Read more]({url})
+## Symbol Search & Discovery
+
+### Search Symbols
+
+```python
+response = client.search(query="NIFTY 26000 JAN CE", exchange="NFO")
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "message": "Found 7 matching symbols",
+  "data": [
+    {
+      "symbol": "NIFTY30JAN2526000CE",
+      "exchange": "NFO",
+      "expiry": "30-JAN-25",
+      "strike": 26000,
+      "instrumenttype": "CE",
+      "lotsize": 75
+    },
+    ...
+  ]
+}
+```
+
+### Get Symbol Details
+
+```python
+response = client.symbol(symbol="NIFTY30JAN25FUT", exchange="NFO")
+```
+
+**Response:**
+```json
+{
+  "status": "success",
+  "data": {
+    "symbol": "NIFTY30JAN25FUT",
+    "exchange": "NFO",
+    "name": "NIFTY",
+    "expiry": "30-JAN-25",
+    "instrumenttype": "FUT",
+    "lotsize": 75,
+    "freeze_qty": 1800,
+    "tick_size": 10
+  }
+}
+```
+
+### Get All Instruments
+
+Download complete instrument list for an exchange:
+
+```python
+instruments = client.instruments(exchange="NSE")
+# Returns Pandas DataFrame with all symbols
+```
 
 ---
 
-### {Headline 3}
-**Source**: {source} | **Date**: {date}
-{Summary}
-[Read more]({url})
+## WebSocket Streaming
+
+### Connection Setup
+
+```python
+from openalgo import api
+import time
+
+client = api(
+    api_key='your_api_key',
+    host='http://127.0.0.1:5000',
+    ws_url='ws://127.0.0.1:8765',
+    verbose=True  # Show connection logs
+)
+
+# Connect to WebSocket
+client.connect()
 ```
 
-### Earnings Calendar (Finnhub)
-```markdown
-## Earnings Calendar
+### Verbose Levels
 
-### Upcoming Earnings: {Date Range}
+| Level | Value | Description |
+|-------|-------|-------------|
+| Silent | `False` or `0` | Errors only (default) |
+| Basic | `True` or `1` | Connection, auth, subscription logs |
+| Debug | `2` | All market data updates |
 
-| Date | Company | Symbol | Time | EPS Est | Rev Est |
-|------|---------|--------|------|---------|---------|
-| {date} | {company} | {ticker} | {BMO/AMC} | ${eps} | ${rev}B |
-| {date} | {company} | {ticker} | {BMO/AMC} | ${eps} | ${rev}B |
-...
+### Stream LTP (Last Traded Price)
 
-### Past Earnings (Last Week)
+```python
+instruments = [
+    {"exchange": "NSE", "symbol": "RELIANCE"},
+    {"exchange": "NSE", "symbol": "INFY"},
+    {"exchange": "NSE_INDEX", "symbol": "NIFTY"}
+]
 
-| Date | Company | Symbol | EPS Act | EPS Est | Surprise |
-|------|---------|--------|---------|---------|----------|
-| {date} | {company} | {ticker} | ${act} | ${est} | {+/-}% |
-...
+def on_ltp(data):
+    print(f"{data['symbol']}: {data['data']['ltp']}")
+
+client.subscribe_ltp(instruments, on_data_received=on_ltp)
+
+# Run for 60 seconds
+time.sleep(60)
+
+# Cleanup
+client.unsubscribe_ltp(instruments)
+client.disconnect()
 ```
 
-### Economic Calendar (Finnhub)
-```markdown
-## Economic Calendar
+### Stream Quotes (OHLC + Bid/Ask)
 
-### Today's Events: {Date}
+```python
+def on_quote(data):
+    d = data['data']
+    print(f"{data['symbol']}: O={d['open']} H={d['high']} L={d['low']} LTP={d['ltp']}")
 
-| Time (ET) | Event | Country | Actual | Forecast | Previous |
-|-----------|-------|---------|--------|----------|----------|
-| {time} | {event} | {country} | {actual} | {forecast} | {previous} |
-...
-
-### Upcoming This Week
-
-| Date | Time | Event | Importance |
-|------|------|-------|------------|
-| {date} | {time} | {event} | {High/Medium/Low} |
-...
+client.subscribe_quote(instruments, on_data_received=on_quote)
 ```
 
-### Market Indices
-```markdown
-## Market Overview
+### Stream Market Depth
 
-### Major Indices
-| Index | Level | Change | % Change |
-|-------|-------|--------|----------|
-| S&P 500 | {level} | {change} | {pct}% |
-| Nasdaq | {level} | {change} | {pct}% |
-| Dow Jones | {level} | {change} | {pct}% |
-| Russell 2000 | {level} | {change} | {pct}% |
+```python
+def on_depth(data):
+    d = data['data']
+    print(f"{data['symbol']}: Best Bid={d['bids'][0]['price']} Best Ask={d['asks'][0]['price']}")
 
-### Sector Performance
-| Sector | Performance |
-|--------|-------------|
-| {sector} | {+/-}X.XX% |
-...
-
-### Market Sentiment
-- **VIX**: {level} ({change})
-- **Put/Call Ratio**: {ratio}
+client.subscribe_depth(instruments, on_data_received=on_depth)
 ```
 
-### Batch Quotes (Multiple Stocks)
-```markdown
-## Watchlist Quotes
+### Get Cached Data
 
-**Updated**: {Timestamp}
+Access latest cached data without callback:
 
-| Symbol | Company | Price | Change | % Change | Volume |
-|--------|---------|-------|--------|----------|--------|
-| {tick} | {name} | ${price} | ${chg} | {pct}% | {vol} |
-| {tick} | {name} | ${price} | ${chg} | {pct}% | {vol} |
-| {tick} | {name} | ${price} | ${chg} | {pct}% | {vol} |
-...
+```python
+# After subscribing
+ltp_data = client.get_ltp()
+quote_data = client.get_quotes()
+depth_data = client.get_depth()
 
-**Market Status**: {Pre-Market / Open / After Hours / Closed}
+# Access specific symbol
+nifty_ltp = ltp_data['ltp']['NSE_INDEX']['NIFTY']['ltp']
 ```
 
-## Data Freshness Guidelines
+---
 
-| Data Type | Freshness | Cache Duration |
-|-----------|-----------|----------------|
-| Real-time Quotes | Live (market hours) | 15 seconds |
-| Historical Daily | End of day | 24 hours |
-| Fundamentals | Quarterly | 24-48 hours |
-| News | Real-time | 1 hour |
-| Earnings Calendar | Weekly update | 24 hours |
-| Economic Calendar | Daily update | 12 hours |
+## Market Information
 
-## API Rate Limit Management
+### Trading Holidays
 
-### Finnhub (Primary)
-- **Limit**: 60 calls/minute
-- **Best For**: Real-time quotes, news, calendars
-- **Strategy**: Use for most requests, ample capacity
-
-### Alpha Vantage (Historical)
-- **Limit**: 5 calls/minute, 500/day
-- **Best For**: Historical price data
-- **Strategy**: Queue requests, cache results
-
-### Financial Modeling Prep (Fundamentals)
-- **Limit**: 250 calls/day
-- **Best For**: Financial statements, ratios
-- **Strategy**: Daily batch updates, aggressive caching
-
-## Error Handling
-
-```markdown
-## Data Request Status
-
-**Request**: {What was requested}
-**Status**: {Success / Partial / Failed}
-
-{If Failed}
-⚠️ **Error**: {Error description}
-**Reason**: {API limit reached / Symbol not found / Service unavailable}
-**Suggestion**: {Try again in X minutes / Check symbol / Use alternative source}
-
-{If Partial}
-ℹ️ **Note**: Some data unavailable
-**Available**: {What was retrieved}
-**Missing**: {What couldn't be retrieved}
+```python
+response = client.holidays(year=2025)
 ```
 
-## Output Guidelines
+**Response:**
+```json
+{
+  "data": [
+    {
+      "date": "2025-01-26",
+      "description": "Republic Day",
+      "holiday_type": "TRADING_HOLIDAY",
+      "closed_exchanges": ["NSE", "BSE", "NFO", "MCX"]
+    },
+    ...
+  ]
+}
+```
 
-### Data Presentation
-- Always include timestamps
-- Note if data is delayed
-- Format numbers clearly ($1,234.56)
-- Use tables for multiple data points
-- Include data source attribution
+### Exchange Timings
 
-### Status Indicators
-- 🟢 Real-time data
-- 🟡 Delayed data (15-20 min)
-- 🔴 Stale data (>1 hour)
-- ⚠️ Data unavailable
+```python
+response = client.timings(date="2025-01-15")
+```
 
-## Constraints
-- Only use authorized API sources
-- Respect rate limits
-- Note data delays clearly
-- Don't expose API credentials
-- Validate data before presenting
-- This is data retrieval, not advice
+**Response:**
+```json
+{
+  "data": [
+    {"exchange": "NSE", "start_time": 1705293300000, "end_time": 1705315800000},
+    {"exchange": "BSE", "start_time": 1705293300000, "end_time": 1705315800000},
+    {"exchange": "MCX", "start_time": 1705293000000, "end_time": 1705346700000}
+  ]
+}
+```
+
+---
+
+## Common Patterns
+
+### Build a Watchlist
+
+```python
+watchlist = [
+    {"symbol": "NIFTY", "exchange": "NSE_INDEX"},
+    {"symbol": "BANKNIFTY", "exchange": "NSE_INDEX"},
+    {"symbol": "RELIANCE", "exchange": "NSE"},
+    {"symbol": "HDFCBANK", "exchange": "NSE"},
+    {"symbol": "INFY", "exchange": "NSE"}
+]
+
+quotes = client.multiquotes(symbols=watchlist)
+
+for item in quotes.get('results', []):
+    data = item.get('data', {})
+    change = ((data['ltp'] - data['prev_close']) / data['prev_close']) * 100
+    print(f"{item['symbol']}: {data['ltp']} ({change:+.2f}%)")
+```
+
+### Fetch Intraday Data
+
+```python
+from datetime import date
+
+today = date.today().strftime("%Y-%m-%d")
+
+intraday = client.history(
+    symbol="NIFTY",
+    exchange="NSE_INDEX",
+    interval="1m",
+    start_date=today,
+    end_date=today
+)
+
+print(f"Today's range: High={intraday['high'].max()}, Low={intraday['low'].min()}")
+```
+
+### Monitor Option Chain Changes
+
+```python
+import time
+
+while True:
+    chain = client.optionchain(
+        underlying="NIFTY",
+        exchange="NSE_INDEX",
+        expiry_date="30JAN25",
+        strike_count=5
+    )
+
+    atm = chain.get('atm_strike')
+    print(f"\nNIFTY ATM: {atm}, LTP: {chain.get('underlying_ltp')}")
+
+    for strike in chain.get('chain', []):
+        if strike['strike'] == atm:
+            ce = strike['ce']
+            pe = strike['pe']
+            print(f"  CE: {ce['ltp']} (Vol: {ce['volume']})")
+            print(f"  PE: {pe['ltp']} (Vol: {pe['volume']})")
+
+    time.sleep(5)
+```
+
+---
+
+## Notes
+
+- Use WebSocket for real-time data (lower latency, no rate limits)
+- REST API is better for on-demand queries
+- Historical data returns Pandas DataFrame for easy analysis
+- Option chain includes OI, volume, bid/ask for all strikes
+- Use `verbose=2` for debugging WebSocket issues

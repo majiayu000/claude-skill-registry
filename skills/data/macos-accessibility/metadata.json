@@ -1,12 +1,7 @@
 {
   "name": "macos-accessibility",
-  "description": "\"Expert in macOS Accessibility APIs (AXUIElement) for desktop automation. Specializes in secure automation of macOS applications with proper TCC permissions, element discovery, and system interaction.",
-  "repo": "martinholovsky/claude-skills-generator",
-  "category": "design",
-  "tags": [
-    "macos",
-    "accessibility"
-  ],
-  "stars": 3,
-  "source": "local"
+  "repo": "johnlindquist/script-kit-next",
+  "path": ".opencode/skill/macos-accessibility/SKILL.md",
+  "source": "github.com/johnlindquist/script-kit-next",
+  "downloaded_at": "2026-02-04T03:28:00.291609Z"
 }

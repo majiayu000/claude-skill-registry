@@ -1,318 +1,203 @@
 ---
 name: specify
-description: "Create feature specification from natural language description. Use when starting a new feature or creating a spec. Triggers on: create spec, specify feature, new feature spec."
+version: "1.0.0"
+description: "This skill should be used when the user asks to 'specify a feature', 'write requirements', 'define what we're building', 'capture requirements', 'document the spec', or before invoking /architecture-tech-lead for non-trivial features. Produces formal specifications (WHAT/WHY) that feed into architecture and planning phases."
 ---
 
-# Feature Specification Generator
+# Specify - Requirements Before Design
 
-Create structured feature specifications from natural language descriptions.
+Formalize requirements into structured specifications before architecture/planning. Focus exclusively on WHAT and WHY - never HOW.
 
----
-
-## SpecKit Workflow
-
-This skill is **Step 1 of 6** in the Relentless workflow:
-
-**specify** → plan → tasks → analyze → implement (task by task) or relentless run --feature [FEATURE NAME] --tui
-
-What flows to next step:
-- User requirements → plan will create technical approach
-- Routing preference → carried through all artifacts
-- Acceptance criteria → basis for TDD in implementation
+**Position in flow:** `/brainstorming` → `/specify` → `/clarify` (auto) → `/architecture-tech-lead` → `/task-planner`
 
 ---
 
-## TDD is MANDATORY
+## Arguments
 
-The specification MUST include testable acceptance criteria:
-- Every user requirement should be verifiable with tests
-- Test scenarios should be part of each story
-- Edge cases should be documented for test coverage
-
-**All acceptance criteria must be written in Given/When/Then format** to enable direct test implementation.
+- `/specify "feature description"` - Create new specification
+- `/specify --update` - Update existing spec with new info
+- `/specify --status` - Show spec completeness
 
 ---
 
-## The Job
+## Output
 
-1. Receive feature description from user
-2. **Confirm routing preference (Step 0)**
-3. Generate short name and feature number
-4. Create branch and feature directory in `relentless/features/NNN-feature-name/`
-5. Generate specification using template
-6. Validate specification quality (including TDD readiness)
-7. Save to `spec.md`
+Creates `.claude/specs/{YYYY-MM-DD}-{slug}/spec.md`
 
----
-
-## Step 0: Confirm Routing Preference (BEFORE generating spec)
-
-Ask the user these specific questions:
-
-1. **"Which routing mode?"** (free/cheap/good/genius) - Default: `good`
-2. **"Allow free models in fallback?"** - Default: `yes`
-3. **"Specific harness/model preference?"** - Default: `auto`
-
-Record the answer in spec.md metadata:
+Structure:
 ```
-**Routing Preference**: auto: good | allow free: yes
-<!-- Options: auto: free|cheap|good|genius | allow free: yes|no | OR specific: harness/model -->
+.claude/specs/2025-01-29-user-auth/
+├── spec.md          # Main specification
+└── clarifications/  # Resolved uncertainty log (created by /clarify)
 ```
 
 ---
 
-## Step 1: Create Feature Structure
+## Specification Process
 
-Run the create-new-feature script to set up the branch and directory:
+### 1. Extract Short Name
+
+From description, derive 2-4 word slug:
+- Action-noun format: `user-auth`, `email-validation`, `payment-flow`
+- Preserve technical terms
+- Lowercase, hyphenated
+
+### 2. Explore Context
+
+Before writing spec:
+- Check existing specs: `ls .claude/specs/`
+- Review related code areas
+- Understand current state
+
+### 3. Write Specification
+
+Load `references/spec-template.md` and populate sections.
+
+**Critical constraint:** Spec describes WHAT users need and WHY. NO implementation details:
+- No tech stack mentions
+- No API designs
+- No database schemas
+- No framework references
+- No code patterns
+
+If tempted to write HOW, mark as `[NEEDS CLARIFICATION: technical approach TBD]` and move on.
+
+### 4. Mark Uncertainties
+
+For ANY ambiguity, use marker syntax:
+
+```markdown
+- FR-003: System MUST validate user input [NEEDS CLARIFICATION: validation rules undefined]
+```
+
+Categories of uncertainty:
+- **Business logic** - rules, thresholds, behaviors
+- **Scope boundaries** - what's in/out
+- **Edge cases** - error states, limits
+- **Technical** - feasibility questions (arch-lead resolves these)
+- **User expectations** - unclear acceptance criteria
+
+### 5. Auto-Trigger Clarify
+
+After writing spec, count markers:
 
 ```bash
-.claude/skills/specify/scripts/bash/create-new-feature.sh --json "FEATURE_DESCRIPTION"
+grep -c "NEEDS CLARIFICATION" .claude/specs/*/spec.md
 ```
 
-This will output JSON with:
-- `BRANCH_NAME`: e.g., "003-user-auth"
-- `SPEC_FILE`: Full path to spec.md
-- `FEATURE_DIR`: Full path to feature directory
-- `FEATURE_NUM`: e.g., "003"
+If count > 3: Invoke `/clarify` before proceeding.
 
-**Important:** Parse this JSON and use these paths for all subsequent operations.
+If count <= 3: Note markers for arch-lead to address during research phase.
 
 ---
 
-## Step 2: Load Constitution & Context
+## Spec Template Reference
 
-1. Read `relentless/constitution.md` for project governance
-2. Note any MUST/SHOULD rules that apply to specifications
-3. Keep these principles in mind while generating the spec
-4. **Pay special attention to TDD requirements** - all features must be testable
+See `references/spec-template.md` for full template. Key sections:
 
----
-
-## Step 3: Generate Specification
-
-Using the template at `templates/spec.md`, create a specification with:
-
-### Required Sections:
-
-**1. Feature Overview**
-- One-paragraph summary
-- User value proposition
-- Problem being solved
-
-**2. User Scenarios & Testing**
-- Concrete user stories with priorities (P1, P2, P3...)
-- Step-by-step flows
-- Expected outcomes
-- **Given/When/Then acceptance scenarios (MANDATORY)**
-- **Independent testability explanation for each story**
-
-**3. Functional Requirements**
-- What the system must do
-- Testable requirements (no implementation details)
-- Clear success criteria
-
-**4. Test Strategy (MANDATORY)**
-- Unit test approach
-- Integration test scenarios
-- Edge case tests
-- Test data requirements
-
-**5. Success Criteria**
-- Measurable, technology-agnostic outcomes
-- Quantitative metrics (time, performance, volume)
-- Qualitative measures (user satisfaction, task completion)
-
-**6. Key Entities (if applicable)**
-- Data models and relationships
-- Fields and types (logical, not implementation)
-
-**7. Dependencies & Assumptions**
-- External systems required
-- Prerequisites
-- Assumptions made
-
-**8. Out of Scope**
-- What this feature explicitly does NOT include
-- Future considerations
-
----
-
-## Step 4: Handle Ambiguities
-
-If aspects are unclear:
-- Interview the user first with questions to clarify any doubts, concerns or about his opinion on eventual ideas to improve the feature.
-- Only mark `[NEEDS CLARIFICATION: specific question]` if:
-  - Choice significantly impacts scope or UX
-  - Multiple reasonable interpretations exist
-  - No reasonable default exists
-  - Question not already solved by interview
-- **LIMIT: Maximum 3 clarifications**
-
-If clarifications needed, present to user:
+### User Scenarios (Required)
 
 ```markdown
-## Clarification Needed
-
-**Q1: [Topic]**
-Context: [Quote spec section]
-Question: [Specific question]
-
-Options:
-A. [Option 1] - [Implications]
-B. [Option 2] - [Implications]
-C. Custom - [Your answer]
-
-Your choice: _
-```
-
----
-
-## Step 5: Validate Quality
-
-Check the specification against:
-
-### General Quality
-- [ ] No implementation details (languages, frameworks, APIs)
-- [ ] Focused on user value and business needs
-- [ ] All requirements are testable
-- [ ] Success criteria are measurable
-- [ ] User scenarios cover primary flows
-- [ ] Dependencies identified
-- [ ] Scope clearly bounded
-- [ ] No more than 3 `[NEEDS CLARIFICATION]` markers
-
-### TDD Readiness (MANDATORY)
-- [ ] Every user story has Given/When/Then acceptance criteria
-- [ ] Acceptance criteria are specific enough to write tests against
-- [ ] Edge cases are documented for test coverage
-- [ ] Test strategy section is complete
-
-### Routing Compliance
-- [ ] Routing preference is recorded in metadata
-- [ ] Routing choice is reasonable for feature complexity
-
-If validation fails, revise and re-check (max 3 iterations).
-
----
-
-## Step 6: Save & Validate
-
-1. Write complete specification to `SPEC_FILE` from JSON output
-2. **Run the validator to ensure spec.md is correctly formatted:**
-   ```bash
-   .claude/skills/validators/scripts/validate-spec.sh "$SPEC_FILE"
-   ```
-   - If validation fails, fix the errors and re-run
-   - Warnings are acceptable but should be reviewed
-3. Create progress.txt if it doesn't exist (note that markdown frontmatter must be properly formatted YAML):
-   ```markdown
-   ---
-   feature: FEATURE_NAME
-   started: DATE
-   last_updated: DATE
-   stories_completed: 0
-   routing_preference: "[auto: mode | allow free: yes/no]"
-   ---
-
-   # Progress Log: FEATURE_NAME
-   ```
-
-4. Report to user:
-   - Branch created: `BRANCH_NAME`
-   - Spec saved: `SPEC_FILE`
-   - Quality validation: PASSED/FAILED
-   - TDD readiness: PASSED/FAILED
-   - Routing preference: [recorded value]
-   - Next step: `/relentless.plan` or `/relentless.clarify`
-
----
-
-## Example Output
-
-```markdown
-# Feature: User Authentication
-
-**Routing Preference**: auto: good | allow free: yes
-
-## Overview
-Enable users to create accounts and log in securely using email/password.
-
 ## User Scenarios
 
-### User Story 1: New User Registration (Priority: P1)
+### US1: [P1] Account Creation
+**As a** new user
+**I want to** create an account with email
+**So that** I can access personalized features
 
-User visits signup page, enters email and password, and creates an account.
+**Why P1:** Core functionality, blocks all other features
 
-**Why this priority**: Core functionality, blocks all other auth features.
+**Acceptance Scenarios:**
+- Given valid email and password, When I submit, Then account is created and confirmation sent
+- Given existing email, When I submit, Then error shown with login link
+- Given weak password, When I submit, Then requirements shown inline
+```
 
-**Independent Test**: Can be fully tested by registering a new account and verifying the account exists.
+Priority levels:
+- **P1** - Must have, blocks other work
+- **P2** - Should have, significant value
+- **P3** - Nice to have, defer if needed
 
-**Acceptance Scenarios**:
+### Functional Requirements (Required)
 
-1. **Given** a visitor on the signup page, **When** they submit valid email and password, **Then** the account is created and confirmation email sent
-2. **Given** an email already in use, **When** visitor tries to register, **Then** error message shown without revealing account exists
-
+```markdown
 ## Functional Requirements
 
-**REQ-1:** System must validate email format
-**REQ-2:** System must require passwords ≥ 8 characters
-**REQ-3:** System must send confirmation email within 1 minute
-**REQ-4:** System must hash passwords before storage
+- FR-001: System MUST allow email/password registration
+- FR-002: System MUST send confirmation email within 60 seconds
+- FR-003: System MUST enforce password policy [NEEDS CLARIFICATION: policy rules]
+- FR-004: System SHOULD support OAuth providers [NEEDS CLARIFICATION: which providers?]
+```
 
-## Test Strategy (MANDATORY)
+Use MUST/SHOULD/MAY (RFC 2119):
+- **MUST** - Absolute requirement
+- **SHOULD** - Strong recommendation, exceptions need justification
+- **MAY** - Optional, nice-to-have
 
-### Unit Test Approach
-- Email validation logic
-- Password strength validation
-- Password hashing utility
+### Success Criteria (Required)
 
-### Integration Test Scenarios
-- Full registration flow (submit form → create account → send email)
-- Duplicate email rejection
-
-### Edge Case Tests
-- Invalid email formats (missing @, invalid domain)
-- Password too short
-- Unicode in email/password
-
-### Test Data Requirements
-- Valid test email addresses
-- Various invalid email formats
-- Password examples at boundary conditions
-
+```markdown
 ## Success Criteria
 
-1. 95% of signups complete within 60 seconds
-2. Zero plaintext passwords in database
-3. Email confirmation rate > 80%
+- SC-001: 95% of registrations complete without error
+- SC-002: Confirmation emails delivered within 60 seconds (p95)
+- SC-003: Password validation feedback in <100ms
+- SC-004: Zero accounts created with invalid email format
+```
 
-## Key Entities
+Criteria MUST be:
+- **Measurable** - specific numbers, not "fast" or "reliable"
+- **Verifiable** - can write test/metric for it
+- **Technology-agnostic** - no "Redis cache hit rate"
 
-**User**
-- email: string (unique)
-- password_hash: string
-- confirmed: boolean
-- created_at: timestamp
+### Out of Scope (Required)
 
-## Dependencies
-
-- Email service provider (e.g., SendGrid, Mailgun)
-- Session management system
-
+```markdown
 ## Out of Scope
 
-- Social login (OAuth)
-- Two-factor authentication
-- Password reset (separate feature)
+Explicitly NOT part of this feature:
+- Social login (separate spec)
+- Account deletion (future work)
+- Profile editing (separate spec)
+- Admin user management
 ```
+
+Prevents scope creep during implementation.
 
 ---
 
-## Notes
+## Quality Checks
 
-- Always run the script first to get proper paths
-- Use absolute paths from JSON output
-- Validate before marking complete
-- Keep specification technology-agnostic
-- Focus on WHAT, not HOW
-- **TDD readiness is non-negotiable** - all acceptance criteria must be testable
+Before finalizing spec, verify:
+
+| Check | Criteria |
+|-------|----------|
+| No HOW | Zero tech stack, API, or implementation mentions |
+| Testable | Every FR has clear pass/fail condition |
+| Measurable | Every SC has specific metric |
+| Scoped | Out of Scope section populated |
+| Prioritized | All user scenarios have P1/P2/P3 |
+| Uncertain marked | Ambiguities use `[NEEDS CLARIFICATION]` |
+
+---
+
+## Handoff to Architecture
+
+When spec is ready (markers <= 3 or clarified):
+
+1. Commit spec: `git add .claude/specs/ && git commit -m "spec: {slug}"`
+2. Invoke arch-lead: `/architecture-tech-lead`
+3. Arch-lead reads spec, produces plan with technical decisions
+
+Arch-lead resolves technical uncertainties during research phase.
+
+---
+
+## Constraints
+
+- NEVER include implementation details
+- NEVER skip User Scenarios section
+- NEVER use vague success criteria ("fast", "reliable")
+- ALWAYS mark uncertainties explicitly
+- ALWAYS include Out of Scope section
+- Auto-trigger /clarify if >3 markers

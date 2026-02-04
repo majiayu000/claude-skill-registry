@@ -1,354 +1,132 @@
 ---
 name: github-issues
-description: Query and search GitHub issues using gh CLI with web fallback. Supports filtering by labels, state, assignees, and full-text search. Use when troubleshooting errors, checking if an issue is already reported, or finding workarounds.
-allowed-tools: Bash, Read, Glob, Grep, WebFetch, WebSearch
+description: 'Create, update, and manage GitHub issues using MCP tools. Use this skill when users want to create bug reports, feature requests, or task issues, update existing issues, add labels/assignees/milestones, or manage issue workflows. Triggers on requests like "create an issue", "file a bug", "request a feature", "update issue X", or any GitHub issue management task.'
 ---
 
-# GitHub Issues Lookup
+# GitHub Issues
 
-Query and search GitHub issues for troubleshooting, bug tracking, and finding workarounds. Supports `gh` CLI with automatic web fallback.
+Manage GitHub issues using the `@modelcontextprotocol/server-github` MCP server.
 
-## Overview
+## Available MCP Tools
 
-This skill provides comprehensive guidance for querying GitHub issues from any repository. It prioritizes the GitHub CLI (`gh`) for fast, reliable access with automatic fallback to web-based methods when gh is unavailable.
+| Tool | Purpose |
+|------|---------|
+| `mcp__github__create_issue` | Create new issues |
+| `mcp__github__update_issue` | Update existing issues |
+| `mcp__github__get_issue` | Fetch issue details |
+| `mcp__github__search_issues` | Search issues |
+| `mcp__github__add_issue_comment` | Add comments |
+| `mcp__github__list_issues` | List repository issues |
 
-**Core value:** Quickly find relevant issues when troubleshooting errors, checking if bugs are already reported, or discovering workarounds for known problems.
+## Workflow
 
-## When to Use This Skill
+1. **Determine action**: Create, update, or query?
+2. **Gather context**: Get repo info, existing labels, milestones if needed
+3. **Structure content**: Use appropriate template from [references/templates.md](references/templates.md)
+4. **Execute**: Call the appropriate MCP tool
+5. **Confirm**: Report the issue URL to user
 
-This skill should be used when:
+## Creating Issues
 
-- **Troubleshooting errors** - Search for issues matching error messages or symptoms
-- **Checking if issue exists** - Before reporting a bug, search for duplicates
-- **Finding workarounds** - Discover solutions from issue discussions
-- **Tracking features** - Search for feature requests and their status
-- **Understanding history** - Find closed issues explaining past decisions
+### Required Parameters
 
-**Trigger keywords:** github issues, search issues, find issue, bug report, issue lookup, gh issue, troubleshoot, workaround, known issue
-
-## Prerequisites
-
-**Recommended (not required):**
-
-- **GitHub CLI (gh)** - Install from <https://cli.github.com/>
-- **Authentication** - Run `gh auth login` for private repos
-
-The skill works without `gh` by falling back to web-based methods.
-
-## Quick Start
-
-### Search Issues (gh CLI)
-
-```bash
-# Check if gh is available
-gh --version
-
-# Search for issues by keyword
-gh issue list --repo owner/repo --search "keyword" --state all
-
-# Filter by label
-gh issue list --repo owner/repo --label "bug" --state open
-
-# View specific issue
-gh issue view 11984 --repo owner/repo
-
-# Search with multiple terms
-gh issue list --repo owner/repo --search "error message here" --limit 20
+```
+owner: repository owner (org or user)
+repo: repository name  
+title: clear, actionable title
+body: structured markdown content
 ```
 
-### Search Issues (Web Fallback)
+### Optional Parameters
 
-When gh is unavailable, use WebSearch or WebFetch:
-
-```text
-# Search via web (using WebSearch tool)
-Search: "site:github.com/owner/repo/issues keyword"
-
-# Direct URL pattern
-https://github.com/owner/repo/issues?q=keyword
+```
+labels: ["bug", "enhancement", "documentation", ...]
+assignees: ["username1", "username2"]
+milestone: milestone number (integer)
 ```
 
-## Core Capabilities
+### Title Guidelines
 
-### 1. Basic Issue Search
+- Start with type prefix when useful: `[Bug]`, `[Feature]`, `[Docs]`
+- Be specific and actionable
+- Keep under 72 characters
+- Examples:
+  - `[Bug] Login fails with SSO enabled`
+  - `[Feature] Add dark mode support`
+  - `Add unit tests for auth module`
 
-Search issues by keywords, matching title and body text.
+### Body Structure
 
-**gh CLI:**
+Always use the templates in [references/templates.md](references/templates.md). Choose based on issue type:
 
-```bash
-# Basic keyword search (all states)
-gh issue list --repo anthropics/claude-code --search "path doubling" --state all
+| User Request | Template |
+|--------------|----------|
+| Bug, error, broken, not working | Bug Report |
+| Feature, enhancement, add, new | Feature Request |
+| Task, chore, refactor, update | Task |
 
-# Open issues only
-gh issue list --repo anthropics/claude-code --search "path doubling" --state open
+## Updating Issues
 
-# Closed issues only
-gh issue list --repo anthropics/claude-code --search "path doubling" --state closed
+Use `mcp__github__update_issue` with:
+
+```
+owner, repo, issue_number (required)
+title, body, state, labels, assignees, milestone (optional - only changed fields)
 ```
 
-**For detailed query syntax:** See [references/query-patterns.md](references/query-patterns.md)
+State values: `open`, `closed`
 
----
+## Examples
 
-### 2. Filter by Labels
+### Example 1: Bug Report
 
-Narrow results using repository labels.
+**User**: "Create a bug issue - the login page crashes when using SSO"
 
-```bash
-# Single label
-gh issue list --repo owner/repo --label "bug"
-
-# Multiple labels (AND)
-gh issue list --repo owner/repo --label "bug" --label "high-priority"
-
-# Common label patterns
-gh issue list --repo owner/repo --label "enhancement" --state open
-gh issue list --repo owner/repo --label "documentation"
+**Action**: Call `mcp__github__create_issue` with:
+```json
+{
+  "owner": "github",
+  "repo": "awesome-copilot",
+  "title": "[Bug] Login page crashes when using SSO",
+  "body": "## Description\nThe login page crashes when users attempt to authenticate using SSO.\n\n## Steps to Reproduce\n1. Navigate to login page\n2. Click 'Sign in with SSO'\n3. Page crashes\n\n## Expected Behavior\nSSO authentication should complete and redirect to dashboard.\n\n## Actual Behavior\nPage becomes unresponsive and displays error.\n\n## Environment\n- Browser: [To be filled]\n- OS: [To be filled]\n\n## Additional Context\nReported by user.",
+  "labels": ["bug"]
+}
 ```
 
----
+### Example 2: Feature Request
 
-### 3. Filter by Assignee/Author
+**User**: "Create a feature request for dark mode with high priority"
 
-Find issues by who created or is assigned to them.
-
-```bash
-# By assignee
-gh issue list --repo owner/repo --assignee username
-
-# By author
-gh issue list --repo owner/repo --author username
-
-# Combined filters
-gh issue list --repo owner/repo --author username --state closed
+**Action**: Call `mcp__github__create_issue` with:
+```json
+{
+  "owner": "github",
+  "repo": "awesome-copilot",
+  "title": "[Feature] Add dark mode support",
+  "body": "## Summary\nAdd dark mode theme option for improved user experience and accessibility.\n\n## Motivation\n- Reduces eye strain in low-light environments\n- Increasingly expected by users\n- Improves accessibility\n\n## Proposed Solution\nImplement theme toggle with system preference detection.\n\n## Acceptance Criteria\n- [ ] Toggle switch in settings\n- [ ] Persists user preference\n- [ ] Respects system preference by default\n- [ ] All UI components support both themes\n\n## Alternatives Considered\nNone specified.\n\n## Additional Context\nHigh priority request.",
+  "labels": ["enhancement", "high-priority"]
+}
 ```
 
----
-
-### 4. View Issue Details
-
-Get full issue content including description and comments.
-
-```bash
-# View issue (opens in terminal)
-gh issue view 11984 --repo anthropics/claude-code
-
-# View with comments
-gh issue view 11984 --repo anthropics/claude-code --comments
-
-# JSON output for parsing
-gh issue view 11984 --repo anthropics/claude-code --json title,body,comments
-```
-
----
-
-### 5. Web Fallback Strategy
-
-When gh CLI is unavailable, fall back to web-based methods.
-
-**Detection:**
-
-```bash
-# Check if gh is available
-if command -v gh &> /dev/null; then
-    echo "gh available"
-else
-    echo "falling back to web"
-fi
-```
-
-**Web methods (in order of preference):**
-
-1. **WebSearch tool**: `site:github.com/owner/repo/issues keyword`
-2. **firecrawl MCP**: Scrape GitHub search results
-3. **Direct URL**: `https://github.com/owner/repo/issues?q=keyword`
-
-**For detailed fallback guidance:** See [references/web-fallback.md](references/web-fallback.md)
-
----
-
-## Output Formats
-
-The skill supports three output formats:
-
-### Compact (default)
-
-One line per issue, good for scanning:
-
-```text
-#11984 [open] Path doubling in PowerShell hooks (bug, hooks)
-#11523 [closed] Fix memory leak in long sessions (bug, fixed)
-#10892 [open] Add custom status line support (enhancement)
-```
-
-### Table
-
-Markdown table format for structured display:
-
-```markdown
-| # | State | Title | Labels |
-| --- | --- | --- | --- |
-| 11984 | open | Path doubling in PowerShell hooks | bug, hooks |
-| 11523 | closed | Fix memory leak in long sessions | bug, fixed |
-```
-
-### Detailed
-
-Full information for deep investigation:
-
-```markdown
-### #11984 - Path doubling in PowerShell hooks
-**State:** open | **Labels:** bug, hooks | **Created:** 2024-12-01
-**URL:** https://github.com/anthropics/claude-code/issues/11984
-
-When using cd && in PowerShell, paths get doubled...
-```
-
----
-
-## Common Workflows
-
-### Troubleshooting an Error
-
-1. Extract key terms from error message
-2. Search issues with those terms
-3. Check both open and closed issues
-4. Look for workarounds in comments
-
-```bash
-# Example: Troubleshoot a specific error
-gh issue list --repo anthropics/claude-code --search "ENOENT" --state all --limit 10
-```
-
-### Before Reporting a Bug
-
-1. Search for existing issues with similar symptoms
-2. Check closed issues for past fixes
-3. If duplicate exists, add your context as a comment
-
-```bash
-# Search before reporting
-gh issue list --repo owner/repo --search "feature not working" --state all
-```
-
-### Finding Workarounds
-
-1. Search closed issues with your problem keywords
-2. Look for issues with "workaround" or "solution" in body
-3. Check issue comments for community solutions
-
-```bash
-# Find workarounds
-gh issue list --repo owner/repo --search "workaround" --state closed --label "bug"
-```
-
----
-
-## Error Handling
-
-### gh not installed
-
-```text
-Error: gh: command not found
-
-Solution: Install GitHub CLI from https://cli.github.com/
-  - macOS: brew install gh
-  - Windows: winget install --id GitHub.cli
-  - Linux: See https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-
-Alternatively, falling back to web-based search...
-```
-
-### Not authenticated
-
-```text
-Error: gh requires authentication
-
-Solution: Run `gh auth login` and follow the prompts.
-For public repos, web fallback can be used without authentication.
-```
-
-### Rate limited
-
-```text
-Error: API rate limit exceeded
-
-Solution: Wait 60 seconds before retrying.
-Authenticated requests have higher limits (5000/hour vs 60/hour).
-```
-
-### No results found
-
-```text
-No issues found matching "very specific query"
-
-Suggestions:
-- Try broader search terms
-- Remove filters (state, label)
-- Check spelling
-- Search closed issues too (--state all)
-```
-
----
-
-## References
-
-**Detailed Guides:**
-
-- [references/gh-cli-guide.md](references/gh-cli-guide.md) - Installation, authentication, advanced usage
-- [references/query-patterns.md](references/query-patterns.md) - Search syntax and filter examples
-- [references/web-fallback.md](references/web-fallback.md) - Web-based fallback strategies
-
-**Related Agents:**
-
-- **history-reviewer** agent - Git history exploration and summarization
-
----
-
-## Test Scenarios
-
-### Scenario 1: Basic issue search
-
-**Query:** "Search for issues about hooks in the Claude Code repo"
-
-**Expected Behavior:**
-
-- Skill activates on "issues", "hooks", "Claude Code"
-- Checks if gh CLI is available
-- Runs `gh issue list --repo anthropics/claude-code --search "hooks" --state all`
-- Returns formatted results
-
-### Scenario 2: Troubleshooting error
-
-**Query:** "I'm getting a path doubling error in PowerShell. Is this a known issue?"
-
-**Expected Behavior:**
-
-- Skill activates on "error", "known issue", "PowerShell"
-- Searches for related issues
-- Finds #11984 and similar
-- Provides workaround if available
-
-### Scenario 3: Fallback to web
-
-**Query:** "Search for issues but gh isn't installed"
-
-**Expected Behavior:**
-
-- Detects gh not available
-- Falls back to WebSearch with `site:github.com/owner/repo/issues`
-- Returns results in same format
-
-## Version History
-
-- **v1.0.0** (2025-12-26): Initial release
-
----
-
-## Last Updated
-
-**Date:** 2025-12-05
-**Model:** claude-opus-4-5-20251101
-
-**Audit Status:** NEW - Pending initial audit
+## Common Labels
+
+Use these standard labels when applicable:
+
+| Label | Use For |
+|-------|---------|
+| `bug` | Something isn't working |
+| `enhancement` | New feature or improvement |
+| `documentation` | Documentation updates |
+| `good first issue` | Good for newcomers |
+| `help wanted` | Extra attention needed |
+| `question` | Further information requested |
+| `wontfix` | Will not be addressed |
+| `duplicate` | Already exists |
+| `high-priority` | Urgent issues |
+
+## Tips
+
+- Always confirm the repository context before creating issues
+- Ask for missing critical information rather than guessing
+- Link related issues when known: `Related to #123`
+- For updates, fetch current issue first to preserve unchanged fields

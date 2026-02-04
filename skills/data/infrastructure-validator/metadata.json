@@ -1,7 +1,7 @@
 {
   "name": "infrastructure-validator",
-  "repo": "turbobeest/squawk",
-  "path": ".claude/skills/infrastructure-validator/SKILL.md",
-  "source": "github.com/turbobeest/squawk",
-  "downloaded_at": "2026-02-02T04:02:33.150395Z"
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/infrastructure-validator/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-02-04T05:18:55.528409Z"
 }

@@ -1,6 +1,8 @@
 ---
 name: interactive-code-review
 description: Human-in-the-loop code review with chunk-by-chunk approve/reject/chat loop (git add -p style). Use when reviewing PRs, diffs, patches, or documents interactively. Triggers on "review my PR", "walk through changes", "interactive review".
+model: sonnet
+allowed-tools: Read, Bash, Glob
 ---
 
 # Interactive Code Review

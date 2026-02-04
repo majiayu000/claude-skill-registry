@@ -1,7 +1,7 @@
 {
   "name": "qa-workflow",
-  "repo": "oimiragieo/agent-studio",
-  "path": ".claude/skills/qa-workflow/SKILL.md",
-  "source": "github.com/oimiragieo/agent-studio",
-  "downloaded_at": "2026-02-02T04:36:32.473246Z"
+  "repo": "khw1031/ai-library",
+  "path": "skills/qa-workflow/SKILL.md",
+  "source": "github.com/khw1031/ai-library",
+  "downloaded_at": "2026-02-04T02:46:50.327142Z"
 }

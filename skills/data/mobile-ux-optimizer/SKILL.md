@@ -17,6 +17,10 @@ tags:
 
 Build touch-optimized, performant mobile experiences with proper viewport handling and responsive patterns.
 
+> **⚠️ TREIDO PROJECT:** This project uses **Tailwind v4** with CSS variables.
+> Use `min-h-(--spacing-touch-md)` NOT `min-h-[44px]`.
+> See [globals.css](app/globals.css) for all tokens.
+
 ## When to Use
 
 ✅ **USE this skill for:**
@@ -51,17 +55,76 @@ Build touch-optimized, performant mobile experiences with proper viewport handli
 
 Apple's Human Interface Guidelines specify **44×44 points** as minimum touch target. Google Material suggests **48×48dp**.
 
+---
+
+## 🎯 TREIDO PROJECT: Tailwind v4 Token Syntax
+
+**This project uses Tailwind v4 with CSS variables.** Do NOT use arbitrary values.
+
+### Touch Target Tokens (from globals.css)
+
+```css
+--spacing-touch-xs: 2rem;      /* 32px - minimum WCAG */
+--spacing-touch-sm: 2.25rem;   /* 36px - compact */
+--spacing-touch: 2.5rem;       /* 40px - default */
+--spacing-touch-md: 2.75rem;   /* 44px - Apple minimum */
+--spacing-touch-lg: 3rem;      /* 48px - bottom nav */
+```
+
+### Correct Tailwind v4 Syntax
+
 ```tsx
-// Touch-friendly button
+// ❌ WRONG - Arbitrary values (v3/generic style)
 <button className="min-h-[44px] min-w-[44px] px-4 py-3">
+
+// ✅ CORRECT - Tailwind v4 CSS variable syntax
+<button className="min-h-(--spacing-touch-md) px-4 py-3">
+
+// For square touch targets
+<button className="size-(--spacing-touch-md)">
+```
+
+### Treido-Specific Patterns
+
+| Component | Token | Class |
+|-----------|-------|-------|
+| Bottom nav items | 48px | `h-(--spacing-touch-lg)` |
+| Header icons | 44px | `size-(--spacing-touch-md)` |
+| Buttons | 44px | `h-(--spacing-button)` |
+| Small buttons | 36px | `h-(--spacing-button-sm)` |
+| Input fields | 44px | `h-(--spacing-input)` |
+| Category pills | 40px | `min-h-(--spacing-touch)` |
+| Compact list items | 36px | `min-h-(--spacing-touch-sm)` |
+
+### Full Touch-Friendly Example
+
+```tsx
+// Touch-friendly button with proper tokens
+<button 
+  className="
+    min-h-(--spacing-touch-md) 
+    min-w-(--spacing-touch-md)
+    px-4 
+    rounded-lg
+    active:opacity-80
+    transition-opacity
+  "
+>
   Tap me
 </button>
 
-// Touch-friendly link with adequate padding
-<a href="/page" className="inline-block py-3 px-4">
+// Touch-friendly link with padding
+<Link 
+  href="/page" 
+  className="inline-flex items-center min-h-(--spacing-touch-md) px-4"
+>
   Link text
-</a>
+</Link>
 ```
+
+---
+
+### Generic Reference (Non-Treido Projects)
 
 ## Viewport Handling
 
@@ -130,7 +193,7 @@ Mobile browsers have dynamic toolbars. `100vh` includes the URL bar, causing con
 ### Bottom Navigation (Recommended for Mobile)
 
 ```tsx
-// components/BottomNav.tsx
+// components/BottomNav.tsx - Treido Pattern
 'use client';
 
 import { usePathname } from 'next/navigation';
@@ -147,7 +210,7 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-leather-900 border-t border-leather-700 pb-safe">
+    <nav className="fixed bottom-0 left-0 right-0 bg-background border-t border-border pb-safe">
       <div className="flex justify-around">
         {navItems.map(({ href, icon: Icon, label }) => {
           const isActive = pathname === href || pathname.startsWith(`${href}/`);
@@ -155,12 +218,16 @@ export function BottomNav() {
             <Link
               key={href}
               href={href}
-              className={`
-                flex flex-col items-center py-2 px-3 min-h-[56px] min-w-[64px]
-                ${isActive ? 'text-ember-400' : 'text-leather-400'}
-              `}
+              className={cn(
+                "flex flex-col items-center justify-center",
+                "h-(--spacing-touch-lg)",           // 48px height
+                "min-w-(--spacing-touch-lg)",       // 48px min width
+                "px-3",
+                "active:opacity-80 transition-opacity",
+                isActive ? 'text-primary' : 'text-muted-foreground'
+              )}
             >
-              <Icon className="w-6 h-6" />
+              <Icon className="size-(--size-icon)" /> {/* 24px icon */}
               <span className="text-xs mt-1">{label}</span>
             </Link>
           );
@@ -211,16 +278,20 @@ export function Drawer({ isOpen, onClose, children }: DrawerProps) {
     <div className="fixed inset-0 z-50">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-overlay-dark backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Drawer */}
+      {/* Drawer - Use Treido token for width */}
       <div
-        className="absolute left-0 top-0 h-full w-[280px] max-w-[80vw]
-                   bg-leather-900 shadow-xl transform transition-transform
-                   animate-slide-in-left"
+        className="
+          absolute left-0 top-0 h-full 
+          w-(--width-sheet-mobile)
+          bg-background shadow-xl 
+          transform transition-transform
+          animate-slide-in-left
+        "
         role="dialog"
         aria-modal="true"
       >
@@ -233,6 +304,8 @@ export function Drawer({ isOpen, onClose, children }: DrawerProps) {
   );
 }
 ```
+
+**Note:** Treido uses vaul Drawer component from `components/ui/drawer.tsx` for production.
 
 ## Touch Gestures
 
@@ -300,15 +373,15 @@ const Comments = dynamic(() => import('@/components/Comments'));
 ### Skeleton Screens (Not Spinners)
 
 ```tsx
-// Skeleton that matches final content layout
+// Skeleton that matches final content layout - Treido pattern
 function MeetingCardSkeleton() {
   return (
-    <div className="p-4 bg-leather-800 rounded-lg animate-pulse">
-      <div className="h-4 bg-leather-700 rounded w-3/4 mb-2" />
-      <div className="h-3 bg-leather-700 rounded w-1/2 mb-4" />
+    <div className="p-4 bg-muted rounded-lg animate-pulse">
+      <div className="h-4 bg-muted-foreground/20 rounded w-3/4 mb-2" />
+      <div className="h-3 bg-muted-foreground/20 rounded w-1/2 mb-4" />
       <div className="flex gap-2">
-        <div className="h-6 w-16 bg-leather-700 rounded" />
-        <div className="h-6 w-16 bg-leather-700 rounded" />
+        <div className="h-6 w-16 bg-muted-foreground/20 rounded" />
+        <div className="h-6 w-16 bg-muted-foreground/20 rounded" />
       </div>
     </div>
   );
@@ -323,6 +396,8 @@ function MeetingCardSkeleton() {
   meetings.map(m => <MeetingCard key={m.id} meeting={m} />)
 )}
 ```
+
+**Note:** Treido uses `components/ui/skeleton.tsx` for production skeletons.
 
 ## Responsive Patterns
 
@@ -343,11 +418,11 @@ xl: 1280px  - Desktops
   <main className="flex-1">Content</main>
 </div>
 
-// Mobile: bottom nav, Desktop: sidebar
+// Treido pattern: Mobile-only vs Desktop-only
 <nav className="md:hidden fixed bottom-0 left-0 right-0">
   <BottomNav />
 </nav>
-<aside className="hidden md:block w-64">
+<aside className="hidden md:flex w-(--layout-sidebar-w)">
   <SidebarNav />
 </aside>
 ```
@@ -396,15 +471,18 @@ ngrok http 3000
 
 ## Quick Reference
 
-| Issue | Solution |
-|-------|----------|
-| Content cut off at bottom | Use `100dvh` instead of `100vh` |
+| Issue | Solution (Treido Tailwind v4) |
+|-------|-------------------------------|
+| Content cut off at bottom | Use `min-h-dvh` (not `100vh`) |
 | Notch overlaps content | Add `pt-safe` / `pb-safe` |
-| Touch targets too small | Min 44×44px |
+| Touch targets too small | `min-h-(--spacing-touch-md)` (44px) |
+| Bottom nav height | `h-(--spacing-touch-lg)` (48px) |
 | Scroll locked | Check `overflow: hidden` on body |
 | Keyboard covers input | Use `visualViewport` API |
 | Janky scrolling | Use `will-change: transform` |
 | Double-tap zoom | Add `touch-action: manipulation` |
+| Icon sizing | `size-(--size-icon)` (24px) |
+| Button height | `h-(--spacing-button)` (44px) |
 
 ## References
 

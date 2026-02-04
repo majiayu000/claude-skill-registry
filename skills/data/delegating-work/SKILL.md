@@ -1,115 +1,70 @@
 ---
-name: "delegating-work"
-description: "Create a Delegation Pack (delegation brief, decision rights, context handoff, check-in cadence, review plan, debrief). Use for delegation, letting go, empowering reports, and avoiding micromanagement."
+name: delegating-work
+description: Help users delegate effectively. Use when someone is struggling to let go of tasks, deciding what to delegate, building team autonomy, or balancing being hands-on vs hands-off.
 ---
 
 # Delegating Work
 
-## Scope
+Help the user delegate effectively using frameworks from 38 product leaders who have scaled themselves and their organizations.
 
-**Covers**
-- Delegating a specific project/problem/decision to a direct report (or cross-functional owner)
-- Transferring **context without control** (clear outcomes + guardrails, not step-by-step instructions)
-- Setting **decision rights**, check-in cadence, and “in-the-details” quality reviews without micromanaging
+## How to Help
 
-**When to use**
-- “Help me delegate this project/task to someone on my team.”
-- “I’m holding onto too much / I need to give away my Lego.”
-- “I’m worried I’m micromanaging—how do I stay in the details but empower ownership?”
-- “Draft a delegation brief + decision rights + check-in plan.”
+When the user asks for help with delegating:
 
-**When NOT to use**
-- The work is primarily a **performance problem** (use coaching/feedback workflows instead)
-- You need to decide *what* work to do (prioritization/scope first)
-- You lack a clear outcome, constraints, or success criteria (do a quick problem-definition first)
+1. **Diagnose the blocker** - Determine if they're holding on due to identity, control, or lack of trust
+2. **Identify what to delegate** - Use energy audits and the Eisenhower Matrix to find candidates
+3. **Match delegation style to context** - Help them calibrate between autonomy and involvement
+4. **Design for success** - Set up the delegation with context, parameters, and feedback loops
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- The work item to delegate (project/problem/decision) + why now
-- Desired outcome (definition of done) + success metrics or acceptance criteria
-- Constraints/non-negotiables (timeline, budget, quality bar, policies, stakeholders)
-- Delegatee context (role, current load, experience level, growth goals if relevant)
+### Context, not control
+Ray Cao: "The number one thing is context, not control. That's the reason why we're always encouraging people to see themselves as a business owner." Provide all necessary information so employees can 'connect the dots' themselves rather than waiting for instructions.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If details are unavailable, proceed with explicit assumptions and label unknowns.
+### Refuse to rule
+Boz: "One of the most powerful things we do is refuse to rule. Someone will bring me a thing. I'll be like, 'Nope, but look, I think you've got it.'" Intentionally step back when the team is struggling with the 'right' problems to build their autonomy.
 
-## Outputs (deliverables)
+### Give away your Legos
+Cam Adams: "Finding joy in the other things of building a team, passing on your experience, helping other people do great writing or great product building is really what giving away your Lego is about." Find fulfillment in enabling others to succeed rather than holding onto tasks for personal identity.
 
-Produce a **Delegation Pack** (Markdown in-chat, or files if requested) in this order:
-1) **Delegation brief** (outcome, context, constraints, stakeholders, timeline)
-2) **Decision rights + guardrails** (what they can decide, escalation triggers, review points)
-3) **Context handoff pack** (links, background, “known gotchas”, example outputs)
-4) **Execution cadence** (check-ins, update format, what “good” looks like)
-5) **Review plan** (how to be in the details without telling them how to do it)
-6) **Debrief plan** (learning capture + ownership updates)
-7) **Risks / Open questions / Next steps** (always included)
+### Being in details is not micromanagement
+Brian Chesky: "There's a difference between micromanagement, which is like telling people exactly what to do, and being in the details. If you don't know the details, how do you know people are doing a good job?" Deep involvement ensures quality; micromanagement prescribes every action.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Don't delegate your superpower
+Brian Chesky (citing Ben Horowitz): "A lot of people tell product led founders to step away and delegate their product to other people, but suddenly they've delegated away the thing they're best at. The thing that is hardest for them to replace." Retain direct involvement in your core competency.
 
-## Workflow (8 steps)
+### Doer to editor transition
+Fareed Mosavat: "You have to shift from, 'My job is to do the work,' to, 'My job is to make the work better. My job is to plus the work, to review the work.'" The transition to management requires becoming an editor, not just a delegator.
 
-### 1) Frame the delegation decision
-- **Inputs:** Work item + why now; constraints.
-- **Actions:** Define the outcome, the “why” (business context), and what must not change (non-negotiables). Decide what “good” looks like.
-- **Outputs:** Draft Delegation Brief (top section).
-- **Checks:** The outcome is measurable/testable (someone can say “done” unambiguously).
+### Use selective micromanagement
+Ravi Mehta: "If you don't feel confident in the direction that your team is moving, the right answer is not to be hands-off. The right answer is to micromanage, but do it in a very tactical and a very temporary way." Know when to step in deeply and when to pull back.
 
-### 2) Pick the owner + choose the autonomy level
-- **Inputs:** Candidate owner(s); their experience and growth goals.
-- **Actions:** Select the delegatee. Set an explicit autonomy level (e.g., “propose + I approve” vs “you decide, inform me”). Call out which parts are “on assignment” vs “high flexibility.”
-- **Outputs:** Owner + autonomy statement + boundaries.
-- **Checks:** Both of you can repeat: “What decisions are yours vs mine?”
+### Six-month calibration test
+Peter Deng: "In 6 months, if I'm telling you what to do, I've hired the wrong person. The meta goal becomes, are we calibrating enough? Are we getting into a spot where you're the one telling me what needs to be done?" Effective delegation means the report drives the work within six months.
 
-### 3) Transfer context (not instructions)
-- **Inputs:** Background docs; prior decisions; stakeholders; constraints.
-- **Actions:** Provide full context so the owner can connect the dots. Share the “why”, the tradeoffs, and known pitfalls. Avoid prescribing the exact path.
-- **Outputs:** Context Handoff Pack.
-- **Checks:** Owner can explain the problem, constraints, and success criteria in their own words.
+## Questions to Help Users
 
-### 4) Define decision rights + guardrails
-- **Inputs:** Non-negotiables; risks; stakeholders.
-- **Actions:** Write decision rights, escalation triggers, and review points. Set “red lines” (quality, policy, safety, customer impact).
-- **Outputs:** Decision Rights + Guardrails.
-- **Checks:** Escalation triggers are specific (not “if it feels risky”).
+- "What tasks are you holding onto because of identity rather than necessity?"
+- "If you did an energy audit, which calendar items would be red (draining)?"
+- "Does this task need to be done, can someone else do it, or can you change the methodology?"
+- "Are you giving context and parameters, or prescribing every step?"
+- "In six months, will this person be telling you what to do, or still waiting for direction?"
 
-### 5) Align on plan + milestones (owner-led)
-- **Inputs:** Draft Delegation Brief + guardrails.
-- **Actions:** Ask the owner to propose a plan, milestones, and tradeoffs. Act as a thought partner: ask questions instead of giving the answer.
-- **Outputs:** Milestone plan + first-week plan.
-- **Checks:** Plan has milestones tied to outcomes, not just activities.
+## Common Mistakes to Flag
 
-### 6) Set the execution cadence
-- **Inputs:** Timeline; team routines; stakeholder needs.
-- **Actions:** Set check-in frequency, update format, and what you want to see (risks, decisions, asks). Establish how you’ll “refuse to rule” unless a trigger is hit.
-- **Outputs:** Cadence + Update Template.
-- **Checks:** Check-ins focus on outcomes/risks/decisions, not task-by-task status.
+- **Delegating your superpower** - Giving away the core competency that's hardest to replace
+- **All-or-nothing thinking** - Believing you must either micromanage or be completely hands-off
+- **Delegating without context** - Expecting results without giving the information needed to succeed
+- **Failing to teach** - Not investing time upfront to train people, then being overwhelmed
+- **Overdelegating early** - Hiring senior executives too soon when founders should stay in the weeds
 
-### 7) Review in the details without micromanaging
-- **Inputs:** Work artifacts; review points.
-- **Actions:** Review output quality via artifacts (docs, specs, results) and criteria. When the team is struggling with the *right* problems, step back. When it’s the wrong problem, intervene with clarity on outcome/guardrails.
-- **Outputs:** Review notes + decisions (approve/adjust/escalate).
-- **Checks:** Feedback is framed as “quality bar + constraints” (not “do it my way”).
+## Deep Dive
 
-### 8) Close the loop (debrief + “give away the Lego”)
-- **Inputs:** Final deliverable; what happened; learnings.
-- **Actions:** Debrief what worked/what didn’t, update ownership maps, and explicitly acknowledge the new owner. Capture improvements to templates/guardrails.
-- **Outputs:** Debrief notes + next delegation candidates.
-- **Checks:** Ownership is durable (not “it snaps back to you” after delivery).
+For all 46 insights from 38 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1:** “Delegate discovery + recommendation for improving onboarding activation to my PM.”  
-Expected: delegation brief, decision rights (what PM decides vs escalates), context pack (data + constraints), weekly cadence, review plan for the final recommendation doc.
-
-**Example 2:** “Delegate building a lightweight internal tool to an engineer, but I’m worried about security/compliance.”  
-Expected: guardrails + escalation triggers, clear non-negotiables, review points for design + launch readiness, and a debrief plan.
-
-**Boundary example:** “Delegate ‘make the company strategy better.’”  
-Response: require a narrower outcome (decision to support, artifacts, time box) before producing the Delegation Pack.
-
+- Running Effective 1:1s
+- Having Difficult Conversations
+- Managing Up
+- Running Decision Processes

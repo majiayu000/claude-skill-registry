@@ -1,46 +1,115 @@
 ---
 name: docs-sync
-description: Keep documentation in sync with code changes across README, docs sites, API docs, runbooks, and configuration. Use when the user asks to update docs, ensure docs match behavior, or prepare docs for a release/PR.
+description: Sync user documentation with design doc changes. Use when design docs
+  have been updated and user docs need to reflect the changes.
+allowed-tools: Read, Glob, Edit, Write
+context: fork
+agent: docs-gen-agent
 ---
 
-# Docs sync
+# Sync User Documentation
 
-## Goal
-Update documentation so it matches the current code and is easy for the target audience to follow.
+Syncs user documentation with changes in design docs to keep them current.
 
-## Inputs to ask for (if missing)
-- What changed (feature/bugfix/refactor) and who the docs are for.
-- Which docs surfaces matter: README, `/docs`, wiki, runbooks, API spec, changelog, onboarding.
-- Any required format/voice (company style guide, "keep it short", etc.).
+## Overview
 
-## Workflow (checklist)
-1) Identify what changed
-   - Use the diff to locate impacted areas:
-     - `git diff --name-only`
-     - `git diff`
-2) Inventory docs surfaces in the repo
-   - Common locations: `README.md`, `docs/`, `CONTRIBUTING.md`, `CHANGELOG.md`, `openapi.*`, `schema.graphql`, `adr/`, `runbooks/`.
-   - For Spring: check for generated OpenAPI/Swagger docs or endpoint annotations.
-   - For Next/TypeScript: check for docs pages, Storybook, or typed API clients.
-   - If your repo uses `docs/` as the primary doc root, see `references/docs-structure.md` for a suggested layout.
-3) Decide what needs updating
-   - Ensure docs cover:
-     - setup and local dev commands
-     - required env vars / config keys
-     - API contract changes (request/response examples)
-     - DB migrations and operational steps
-     - behavior changes visible to users
-   - If the change is an architectural/behavioral decision, add or update an ADR (use `references/adr-template.md`).
-4) Apply edits with minimal churn
-   - Prefer small, targeted edits over rewrites.
-   - Add examples that are copy/paste runnable.
-   - Keep headings stable to avoid breaking deep links.
-   - Use templates in `references/` when helpful.
-5) Verify docs are consistent
-   - Run the repo's existing doc checks if present (md lint, docs build, site build).
-   - At minimum: ensure code fences match the actual commands and file paths, and env var names match the code.
+This skill detects changes in design docs and updates corresponding
+user documentation by:
 
-## Deliverable
-Provide:
-- The list of docs files updated and why.
-- A short "How to verify" section (commands or manual checks).
+1. Comparing design doc timestamps with user doc timestamps
+2. Identifying which user docs are affected
+3. Regenerating or updating affected sections
+4. Preserving custom user-added content
+5. Updating sync timestamps
+
+## Quick Start
+
+**Sync all levels for a module:**
+
+```bash
+/docs-sync effect-type-registry
+```
+
+**Sync specific level only:**
+
+```bash
+/docs-sync rspress-plugin-api-extractor --level=1
+```
+
+**Preview changes without writing:**
+
+```bash
+/docs-sync website --dry-run
+```
+
+## How It Works
+
+### 1. Parse Parameters
+
+- `module`: Module to sync [REQUIRED]
+- `--level`: Sync specific level (1=README, 2=repo, 3=site)
+- `--dry-run`: Preview changes without writing
+
+### 2. Detect Changes
+
+Compare timestamps:
+
+- Design doc `updated` field
+- User doc last modification time
+- Identify stale user docs (design newer than user docs)
+
+### 3. Analyze Impact
+
+For each changed design doc:
+
+- Determine which user docs it affects
+- Identify sections that need updates
+- Check for breaking changes
+
+### 4. Update User Documentation
+
+Update strategies:
+
+- **README** - Regenerate features, quick start, API overview
+- **Repository Docs** - Update affected topic guides
+- **Site Docs** - Refresh concept docs and guides
+
+### 5. Preserve Custom Content
+
+Protect user additions:
+
+- Custom examples
+- Additional sections
+- Badges and shields
+- Screenshots and GIFs
+
+### 6. Update Timestamps
+
+Mark synced docs with current timestamp.
+
+## Supporting Documentation
+
+- `instructions.md` - Detailed sync process
+- `examples.md` - Sync scenarios and outputs
+
+## Success Criteria
+
+- ✅ Stale docs identified correctly
+- ✅ Affected sections updated
+- ✅ Custom content preserved
+- ✅ Timestamps updated
+- ✅ No broken links introduced
+
+## Integration Points
+
+- Uses `.claude/design/design.config.json`
+- Reads design docs from `designDocsPath`
+- Updates files in `userDocs` paths
+- Respects quality standards
+
+## Related Skills
+
+- `/docs-generate-readme` - Regenerate README
+- `/docs-generate-repo` - Regenerate repo docs
+- `/docs-generate-site` - Regenerate site docs
+- `/docs-review` - Review sync quality

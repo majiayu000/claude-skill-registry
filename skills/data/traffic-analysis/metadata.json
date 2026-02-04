@@ -1,9 +1,7 @@
 {
   "name": "traffic-analysis",
-  "description": "Analyze network traffic patterns, identify top applications and bandwidth usage, and optimize traffic management. Perform DPI-based traffic classification.",
-  "repo": "surrealwolf/unifi-network-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "chaterm/terminal-skills",
+  "path": "network/traffic-analysis/SKILL.md",
+  "source": "github.com/chaterm/terminal-skills",
+  "downloaded_at": "2026-02-04T02:24:46.139796Z"
 }

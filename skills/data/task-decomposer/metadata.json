@@ -1,7 +1,7 @@
 {
   "name": "task-decomposer",
-  "repo": "turbobeest/squawk",
-  "path": ".claude/skills/task-decomposer/SKILL.md",
-  "source": "github.com/turbobeest/squawk",
-  "downloaded_at": "2026-02-02T04:02:33.962249Z"
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/task-decomposer/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-02-04T05:18:55.212220Z"
 }

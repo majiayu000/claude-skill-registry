@@ -1,47 +1,19 @@
 ---
 name: clean
-description: Clean build artifacts and reset state
+description: Remove temporary artifacts
+allowed-tools: Bash, Glob
 model: haiku
-allowed-tools:
-  - Bash
+user-invocable: false
 ---
 
-# Clean Build
+# Clean
 
-Remove build artifacts and optionally reset simulator.
+Remove Claude Code artifacts.
 
-## Steps
+## Process
+1. Delete `.claude/screenshots/*.png`
+2. Delete `.playwright-mcp/` folder
+3. Delete any leftover v3 artifacts: `prd-backup-*.json`, `handoff-*.md`
+4. Report files removed
 
-### 1. Clean Xcode Build
-```bash
-xcodebuild -scheme GridRacer clean 2>&1 | tail -5
-```
-
-### 2. Remove DerivedData (optional, for deep clean)
-```bash
-rm -rf ~/Library/Developer/Xcode/DerivedData/GridRacer-*
-echo "DerivedData cleaned"
-```
-
-### 3. Reset Simulator (optional)
-```bash
-# Stop the app if running
-xcrun simctl terminate booted trouarat.GridRacer 2>/dev/null || true
-
-# Uninstall the app
-xcrun simctl uninstall booted trouarat.GridRacer 2>/dev/null || true
-
-echo "Simulator reset"
-```
-
-### 4. Verify
-```bash
-# Check no cached builds
-ls ~/Library/Developer/Xcode/DerivedData/ | grep -c GridRacer || echo "Clean"
-```
-
-## Output
-```
-Build artifacts cleaned.
-Ready for fresh build with /build.
-```
+Never touches source code, project-meta.json, or config.

@@ -1,31 +1,19 @@
 ---
-name: moai-lang-scala
-description: >
-  Scala 3.4+ development specialist covering Akka, Cats Effect, ZIO, and
-  Spark patterns. Use when building distributed systems, big data pipelines,
-  or functional programming applications.
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Grep Glob mcp__context7__resolve-library-id mcp__context7__get-library-docs
+name: "moai-lang-scala"
+description: "Scala 3.4+ development specialist covering Akka, Cats Effect, ZIO, and Spark patterns. Use when building distributed systems, big data pipelines, or functional programming applications."
+version: 2.1.0
+category: "language"
+modularized: true
 user-invocable: false
-metadata:
-  version: "2.1.0"
-  category: "language"
-  status: "active"
-  updated: "2026-01-11"
-  modularized: "true"
-  tags: "language, scala, akka, cats-effect, zio, spark, sbt"
-
-# MoAI Extension: Progressive Disclosure
-progressive_disclosure:
-  enabled: true
-  level1_tokens: 100
-  level2_tokens: 5000
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["Scala", "Akka", "Cats Effect", "ZIO", "Spark", ".scala", ".sc", "build.sbt", "sbt"]
-  languages: ["scala"]
+tags: ["language", "scala", "akka", "cats-effect", "zio", "spark", "sbt"]
+status: "active"
+updated: 2026-01-11
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 # Scala 3.4+ Development Specialist

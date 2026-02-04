@@ -1,122 +1,60 @@
 ---
-name: "platform-infrastructure"
-description: "Produce a Platform & Infrastructure Improvement Pack (shared capabilities plan, reliability/performance/privacy targets, scaling triggers, analytics + discoverability decisions, execution roadmap). Use for platform engineering, infrastructure planning, scalability, reliability, and architecture foundations."
+name: platform-infrastructure
+description: Help users build and scale internal platforms and technical infrastructure. Use when someone is deciding whether to build vs buy tooling, designing developer platforms, creating shared services, or managing technical debt at scale.
 ---
 
-# Platform & Infrastructure
+# Platform Infrastructure
 
-## Scope
+Help the user design and scale internal platforms and shared technical infrastructure using insights from 5 product and engineering leaders.
 
-**Covers**
-- Platform engineering / “paved roads”: shared capabilities that multiple product teams reuse
-- Infrastructure quality attributes: reliability, performance, privacy/safety, operability, cost
-- Scalability planning: capacity limits, leading indicators, “doomsday clock” triggers, sequencing
-- Instrumentation strategy: server-side event tracking, data quality, observability gaps
-- Discoverability architecture for web platforms (optional): sitemap + internal linking
+## How to Help
 
-**When to use**
-- “Create a platform infrastructure plan to increase feature velocity without repeating work.”
-- “Turn reliability/performance/privacy goals into concrete SLOs and an execution roadmap.”
-- “We’re approaching scaling limits—define triggers and the next infra projects.”
-- “Our analytics is messy—design a server-side tracking plan and event contract.”
-- “For a large web property, define sitemap + internal-linking requirements for crawlability.”
+When the user asks for help with platform infrastructure:
 
-**When NOT to use**
-- You are handling an active incident or outage (use incident response/runbooks first).
-- You only need a single localized perf fix or refactor (just do the work).
-- You need product strategy/positioning for a platform-as-product (use `platform-strategy`).
-- You need a full feature spec or UX flows (use `writing-specs-designs` / `writing-prds`).
-- SEO/content strategy is the primary workstream (use `content-marketing`).
+1. **Understand the platform's purpose** - Ask whether they're building for internal developers, external partners, or both
+2. **Assess organizational readiness** - Determine if they have the adoption and governance structures to support a platform
+3. **Identify the leverage points** - Help them find where platform investment creates the most value multiplication
+4. **Design for adoption** - Ensure the platform solves real developer problems, not theoretical ones
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- System boundary (services/apps) + primary users/customers
-- Current pains (pick 1–3): reliability, performance, cost, privacy/security/compliance, developer velocity, data quality/analytics, SEO/discoverability
-- Current architecture constraints (data stores, runtime, deployment model, key dependencies)
-- Scale + trajectory (rough): current usage + expected growth + known upcoming spikes
-- Constraints: deadlines, staffing/capacity, risk tolerance, compliance/privacy requirements
+### Abstract common capabilities into shared infrastructure
+Daniel Lereya: "We actually stopped for the first time and say, 'What is the column like?' And we also organized all the product architecture around it... making the work of adding a new column just thinking about the specific." Scaling feature velocity requires abstracting repetitive components into a shared infrastructure so developers only focus on unique logic.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If details remain missing, proceed with explicit assumptions and provide 2–3 options.
-- If asked to change production systems or run commands, require explicit confirmation and include rollback guidance.
+### Invisible infrastructure often matters most
+Asha Sharma: "It wasn't the hundreds of features, it was all in the infrastructure and the platform... performance, reliability, privacy, safety, all of those things." The success of major platforms often depends on "invisible" qualities like reliability and speed rather than visible features.
 
-## Outputs (deliverables)
+### Plan for scale before you need it
+Ivan Zhao: "During COVID, we just couldn't scale up our infrastructure. For the longest time, Simon's really good at don't do premature optimization... we're running off even the largest instance there is for Postgres." While avoiding premature optimization is good, infrastructure must be planned far enough ahead to avoid "doomsday" scenarios when usage spikes.
 
-Produce a **Platform & Infrastructure Improvement Pack** in Markdown (in-chat; or as files if requested), in this order:
+### Build discoverability into the architecture
+Eli Schwartz: "If you create a categorized sitemap where you can say, 'These are all the questions on health and from the sitemap... then a search engine can navigate through the entire site, and all of the questions and answers are discoverable.'" For large-scale platforms, structural decisions like HTML sitemaps and internal linking are critical for search engine discoverability.
 
-1) **Context snapshot** (scope, constraints, assumptions, stakeholders, success definition)
-2) **Shared capabilities inventory + platformization plan** (what to standardize, why, and how)
-3) **Quality attributes spec** (reliability/perf/privacy/safety targets; proposed SLOs/SLIs)
-4) **Scaling “doomsday clock” + capacity plan** (limits, triggers, lead time, projects)
-5) **Instrumentation plan** (observability gaps + server-side analytics event contract)
-6) **Discoverability plan (optional)** for web platforms (sitemap + internal linking requirements)
-7) **Execution roadmap** (sequencing, milestones, owners, dependencies, comms)
-8) **Risks / Open questions / Next steps** (always included)
+### Default to server-side tracking
+Vijay: "The biggest mistake is setting up analytics using client side SDKs... start tracking events from your servers instead of from your clients." Server-side tracking is superior to client-side SDKs for data reliability, cross-platform consistency, and developer maintenance.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+## Questions to Help Users
 
-## Workflow (8 steps)
+- "Who are the 'users' of this platform and what problems are they trying to solve today?"
+- "What's the current developer experience pain point that's costing the most productivity?"
+- "How will you measure whether this platform is actually being adopted?"
+- "Is this a build vs buy decision, or should this remain a manual process for now?"
+- "What's your 'doomsday clock' - when will current infrastructure hit its limits?"
 
-### 1) Intake + define “what decision will this enable?”
-- **Inputs:** Context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm scope boundaries, top pains, and time horizon. Write a 1–2 sentence decision statement (e.g., “We will standardize X and commit to SLO Y by date Z.”).
-- **Outputs:** Context snapshot (draft).
-- **Checks:** A stakeholder can answer: “What will we do differently after reading this?”
+## Common Mistakes to Flag
 
-### 2) Find repeatable product capabilities worth platformizing
-- **Inputs:** Recent roadmap/initiatives; architecture overview; pain points.
-- **Actions:** Inventory repeated “feature components” (e.g., export, filtering, permissions, audit logs, notifications). Identify 3–7 candidates for shared infrastructure. Define what becomes the platform contract vs what remains product-specific.
-- **Outputs:** Shared capabilities inventory + platformization plan (draft).
-- **Checks:** Each candidate has: (a) at least 2 consumers, (b) a clear API/contract idea, (c) a migration/rollout approach.
+- **Building for the abstract future** - Creating capabilities based on anticipated needs rather than current developer pain
+- **Platform without product ownership** - Treating infrastructure as a technical project without dedicated product management
+- **Avoiding premature optimization until it's too late** - Not monitoring infrastructure limits to trigger scaling projects before failure
+- **Client-side tracking by default** - Using browser SDKs instead of server-side event tracking
+- **Ignoring the migration cost** - Building new platforms without accounting for the effort to move teams off existing solutions
 
-### 3) Define quality attributes and targets (make “invisible work” explicit)
-- **Inputs:** Reliability/perf/privacy needs; customer expectations; compliance constraints.
-- **Actions:** Write the quality attributes spec. Propose SLOs/SLIs for reliability and performance; document privacy/safety requirements (data residency, encryption, access controls, retention).
-- **Outputs:** Quality attributes spec (draft).
-- **Checks:** Targets are measurable and owned (even if initial numbers are estimates + confidence).
+## Deep Dive
 
-### 4) Build the scaling “doomsday clock”
-- **Inputs:** Current bottlenecks/limits; growth expectations; lead times for major changes.
-- **Actions:** Identify top 3–10 capacity limits (DB size/IOPS, queue depth, cache hit rate, deploy throughput, rate limits). Define thresholds that trigger scaling projects early enough (lead time-aware).
-- **Outputs:** Doomsday clock table + capacity plan (draft).
-- **Checks:** Each limit has a metric, an alert threshold, a lead time estimate, and a named mitigation project.
+For all 6 insights from 5 guests, see `references/guest-insights.md`
 
-### 5) Decide instrumentation: observability + server-side analytics
-- **Inputs:** Current logging/metrics/tracing; current analytics tracking approach.
-- **Actions:** Specify observability gaps (must-have dashboards/alerts) and define an event contract for server-side analytics (names, properties, identity strategy, delivery guarantees, QA checks).
-- **Outputs:** Instrumentation plan (draft).
-- **Checks:** Event definitions are consistent across clients; key events are captured server-side; data-quality checks exist.
+## Related Skills
 
-### 6) (Optional) Discoverability architecture for web platforms
-- **Inputs:** If applicable: site/app information architecture; SEO importance; crawl constraints.
-- **Actions:** Define sitemap requirements (categorization, pagination, freshness) and internal-linking rules (“related content”, indexability controls, canonicalization).
-- **Outputs:** Discoverability plan (draft) or “Not applicable” decision.
-- **Checks:** A crawler can reach all indexable pages via links/sitemaps; “noindex”/canonicals are intentional.
-
-### 7) Turn decisions into a sequenced execution roadmap
-- **Inputs:** Draft deliverables; constraints; dependencies; capacity.
-- **Actions:** Prioritize initiatives using impact × risk × effort × lead time. Create milestones, owners, and rollout plans (including deprecation/decommission for old paths).
-- **Outputs:** Execution roadmap (draft).
-- **Checks:** Roadmap has a first executable milestone, explicit dependencies, and measurable acceptance criteria.
-
-### 8) Quality gate + finalize
-- **Inputs:** Full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Tighten unclear contracts, add missing measures, and always include **Risks / Open questions / Next steps**.
-- **Outputs:** Final Platform & Infrastructure Improvement Pack.
-- **Checks:** A team can execute without extra meetings; unknowns are explicit and owned.
-
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (shared capabilities):** “Use `platform-infrastructure` for a B2B analytics app where every team keeps rebuilding export, filtering, and permissions. Output a platformization plan + roadmap + SLO targets.”
-
-**Example 2 (scaling readiness):** “We expect 5× traffic in 6 months. Define a doomsday clock for Postgres limits, propose scaling projects, and set reliability/performance SLOs. Also standardize server-side analytics.”
-
-**Boundary example:** “We’re mid-incident and pages are down—tell us what to do right now.”  
-Response: out of scope; recommend incident response first, then use this skill post-incident to create the scaling plan and reliability roadmap.
-
+- platform-strategy
+- product-operations
+- scoping-cutting

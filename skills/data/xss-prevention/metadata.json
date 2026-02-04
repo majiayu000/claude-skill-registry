@@ -1,7 +1,7 @@
 {
   "name": "xss-prevention",
-  "repo": "secondsky/claude-skills",
-  "path": "plugins/xss-prevention/skills/xss-prevention/SKILL.md",
-  "source": "github.com/secondsky/claude-skills",
-  "downloaded_at": "2026-02-02T02:14:07.700075Z"
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/xss-prevention/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-04T04:42:11.503252Z"
 }

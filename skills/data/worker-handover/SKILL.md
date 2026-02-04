@@ -1,14 +1,6 @@
 ---
 name: worker-handover
 description: Defines context handover format when workers hit turn limit. Posts structured handover to GitHub issue comments enabling replacement workers to continue seamlessly.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - mcp__github__*
-  - mcp__memory__*
-model: opus
 ---
 
 # Worker Handover

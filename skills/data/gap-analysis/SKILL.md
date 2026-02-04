@@ -1,310 +1,470 @@
 ---
 name: gap-analysis
-description: |
-  技術選定や競合分析を行う際に自律的にギャップ分析を行うメタスキルです。
-  複数の軸で類似概念を調査し、現行システムとのギャップを洗い出し、
-  なぜそのギャップが生じているのかを自問して戦略を立案します。
-  Trigger: 技術選定, 競合分析, 改善提案, ギャップ分析
-user-invocable: false
+description: Identify differences between current state and desired future state. Analyze gaps in capabilities, processes, skills, and technology to plan improvements and investments.
 ---
 
-## 目的
+# Gap Analysis
 
-表面的な比較ではなく、ギャップの根本原因を理解し、付け焼き刃ではない本質的な改善戦略を立案する。
+## Overview
 
-## ギャップ分析フレームワーク
+Gap analysis systematically compares current capabilities with desired future state, revealing what needs to change and what investments are required.
 
-### 1. 分析軸の定義
+## When to Use
 
-単一の軸ではなく、複数の観点から対象を捉える。
+- Strategic planning and goal setting
+- Technology modernization assessment
+- Process improvement initiatives
+- Skills and training planning
+- System evaluation and selection
+- Organizational change planning
+- Capability building programs
 
-<example>
-<input>
-状況: 認証基盤のギャップ分析
-</input>
-<thinking>
-分析軸を網羅的に洗い出す：
-- 機能軸: 認証方式、MFA対応、SSO連携
-- 品質軸: 可用性、レイテンシ、スケーラビリティ
-- 運用軸: 監視、ログ、障害対応
-- セキュリティ軸: 暗号化、監査、コンプライアンス
-- コスト軸: 初期費用、運用費用、スケール時コスト
-</thinking>
-<output>
-## 分析軸
+## Instructions
 
-| 軸 | 観点 | 重要度 |
-|----|------|--------|
-| 機能 | 何ができるか | 高 |
-| 品質 | どれだけ信頼できるか | 高 |
-| 運用 | どれだけ管理しやすいか | 中 |
-| セキュリティ | どれだけ安全か | 高 |
-| コスト | どれだけ費用対効果があるか | 中 |
-</output>
-</example>
+### 1. **Gap Identification Framework**
 
-### 2. 類似概念の調査
+```python
+# Systematic gap identification
 
-各軸において、業界標準や先行事例を調査する。
+class GapAnalysis:
+    GAP_CATEGORIES = {
+        'Business Capability': 'Functions organization can perform',
+        'Process': 'How work gets done',
+        'Technology': 'Tools and systems available',
+        'Skills': 'Knowledge and expertise',
+        'Data': 'Information available',
+        'People/Culture': 'Team composition and mindset',
+        'Organization': 'Structure and roles',
+        'Metrics': 'Ability to measure performance'
+    }
 
-<example>
-<input>
-状況: 現行のEC2ベース認証基盤とマネージドサービスの比較
-</input>
-<thinking>
-この機能に関連する類似概念は何か：
-- Amazon Cognito: AWSマネージド認証
-- Auth0: SaaS型認証プラットフォーム
-- Keycloak: OSS認証サーバー
-- Firebase Auth: Googleマネージド認証
+    def identify_gaps(self, current_state, future_state):
+        """Compare current vs desired and find gaps"""
+        gaps = []
 
-それぞれがどのようにこの問題を解決しているか調査する。
-</thinking>
-<output>
-## 類似概念調査
+        for capability in future_state['capabilities']:
+            current_capability = self.find_capability(
+                capability['name'],
+                current_state['capabilities']
+            )
 
-| 概念 | アプローチ | 強み | 弱み |
-|------|-----------|------|------|
-| Cognito | AWSマネージド | AWS統合、スケーラビリティ | カスタマイズ制限 |
-| Auth0 | SaaS | 機能豊富、SDK充実 | コスト高、ベンダーロック |
-| Keycloak | OSS自前運用 | 柔軟性、コスト | 運用負荷 |
-| Firebase Auth | Googleマネージド | 導入容易 | AWS連携が弱い |
+            if current_capability is None:
+                gaps.append({
+                    'capability': capability['name'],
+                    'gap_type': 'Missing',
+                    'description': f"Organization lacks {capability['name']}",
+                    'importance': capability['importance'],
+                    'impact': 'High' if capability['importance'] == 'Critical' else 'Medium'
+                })
+            elif current_capability['maturity'] < capability['target_maturity']:
+                gaps.append({
+                    'capability': capability['name'],
+                    'gap_type': 'Maturity',
+                    'current_maturity': current_capability['maturity'],
+                    'target_maturity': capability['target_maturity'],
+                    'gap_size': capability['target_maturity'] - current_capability['maturity'],
+                    'importance': capability['importance'],
+                    'impact': 'Medium'
+                })
 
-**業界標準**: OAuth 2.0 / OIDC、SAML 2.0
-**先行事例**: Netflix（自前基盤）、Spotify（Auth0採用）
-</output>
-</example>
+        return gaps
 
-### 3. ギャップの洗い出し
+    def prioritize_gaps(self, gaps):
+        """Rank gaps by importance and effort"""
+        scored_gaps = []
 
-現行システムと類似概念との差分を特定する。
+        for gap in gaps:
+            importance = self.score_importance(gap)
+            effort = self.estimate_effort(gap)
+            value = importance / effort if effort > 0 else 0
 
-<example>
-<input>
-状況: 現行EC2認証基盤とCognitoのギャップ
-</input>
-<output>
-## ギャップマトリクス
+            scored_gaps.append({
+                **gap,
+                'importance_score': importance,
+                'effort_score': effort,
+                'value_score': value,
+                'priority': self.assign_priority(value)
+            })
 
-### 現行システムが優れている点
-| 機能 | 現行 | Cognito | ギャップ |
-|------|------|---------|----------|
-| カスタム認証フロー | ◎ 完全自由 | △ 制限あり | +柔軟性 |
-| 既存DB統合 | ◎ 直接接続 | △ Lambda必要 | +シンプル |
-| 監査ログ形式 | ◎ 自社標準 | △ CloudTrail形式 | +統一性 |
+        return sorted(scored_gaps, key=lambda x: x['value_score'], reverse=True)
 
-### 現行システムが劣っている点
-| 機能 | 現行 | Cognito | ギャップ |
-|------|------|---------|----------|
-| 可用性 | △ 99.9% | ◎ 99.99% | -0.09% |
-| MFA対応 | △ TOTP のみ | ◎ 多方式 | -3方式 |
-| スケーラビリティ | △ 手動 | ◎ 自動 | -自動化 |
-</output>
-</example>
+    def score_importance(self, gap):
+        """Score how important gap is"""
+        if gap['importance'] == 'Critical':
+            return 10
+        elif gap['importance'] == 'High':
+            return 7
+        else:
+            return 4
 
-### 4. 根本原因の自問
+    def estimate_effort(self, gap):
+        """Estimate effort to close gap"""
+        # Returns 1-10 scale
+        return gap.get('effort_estimate', 5)
 
-**なぜそのギャップが生じているのか**を掘り下げる。
-
-<example>
-<input>
-状況: MFA対応のギャップがある
-</input>
-<thinking>
-問題: MFA方式がTOTPのみ
-↓ なぜ？
-他の方式を実装していないから
-↓ なぜ？
-開発リソースを他に優先したから
-↓ なぜ？
-ビジネス要件としてTOTPで十分だったから
-↓ 根本原因
-**要件定義時のスコープ決定**: 当時のユーザー規模ではTOTPで十分と判断した
-
-これはギャップではなく、当時の合理的判断の結果である。
-</thinking>
-<output>
-## 根本原因分析
-
-### ギャップ1: MFA方式の制限
-| 層 | 問い | 回答 |
-|----|------|------|
-| 表層 | なぜTOTPのみ？ | 他を実装していないから |
-| 中層 | なぜ実装していない？ | リソースを他に優先したから |
-| 深層 | なぜ優先しなかった？ | 当時の要件で十分だったから |
-| 根本 | **スコープ決定** | 当時の規模に最適化した設計 |
-
-**結論**: 規模拡大に伴い「埋めるべきギャップ」に変化
-
-### ギャップ2: 可用性
-| 層 | 問い | 回答 |
-|----|------|------|
-| 表層 | なぜ99.9%止まり？ | 単一AZ構成だから |
-| 中層 | なぜ単一AZ？ | コスト最適化のため |
-| 深層 | なぜコスト優先？ | スタートアップ期の制約 |
-| 根本 | **リソース制約** | 成長段階に応じた投資判断 |
-
-**結論**: 事業成長に伴いマルチAZ化を検討すべき
-</output>
-</example>
-
-### 5. 戦略立案
-
-根本原因に基づき、付け焼き刃ではない戦略を策定する。
-
-<example>
-<input>
-状況: ギャップ分析結果から戦略を立案
-</input>
-<thinking>
-ギャップの分類:
-1. 意図的トレードオフ → 受容、ただし再評価
-2. 成長による陳腐化 → 対応検討
-3. リソース制約 → 優先順位付け
-
-戦略の選択肢:
-- 全面Cognito移行 → 移行コスト大、カスタム機能喪失
-- 段階的ハイブリッド → 複雑性増、柔軟性維持
-- 現行強化 → 運用負荷増、完全制御維持
-</thinking>
-<output>
-## 戦略立案
-
-### 戦略方針: 「段階的ハイブリッド移行」
-
-現行の強みを維持しながら、マネージドサービスの利点を取り込む。
-
-### ギャップ別対応戦略
-
-| ギャップ | 根本原因 | 戦略 | 対応 |
-|----------|---------|------|------|
-| MFA方式 | スコープ決定 | **転嫁** | Cognito MFAを部分導入 |
-| 可用性 | リソース制約 | **軽減** | マルチAZ化を実施 |
-| カスタム認証 | 意図的設計 | **受容** | 現行維持、強みとして活用 |
-
-### 具体的アクション
-
-1. **優先度: 高**
-   - 現行システムのマルチAZ化
-   - 可用性99.95%を目標
-
-2. **優先度: 中**
-   - Cognito MFAの部分導入検証
-   - 既存フローとの統合設計
-
-3. **優先度: 低**
-   - ハイブリッド構成の本番適用
-   - 監視・運用体制の整備
-
-### 戦略の根拠
-
-**なぜこの戦略か？**
-- 全面移行はリスクが高く、カスタム機能を失う
-- 現行の強み（柔軟性）は競争優位性
-- マネージドサービスの「良いとこ取り」が最適
-- 段階的移行でリスクを分散
-</output>
-</example>
-
-## ギャップ分析テンプレート
-
-```markdown
-# [対象] ギャップ分析
-
-## 1. 分析軸
-| 軸 | 観点 | 重要度 |
-|----|------|--------|
-| | | |
-
-## 2. 類似概念調査
-| 概念 | アプローチ | 強み | 弱み |
-|------|-----------|------|------|
-| | | | |
-
-## 3. ギャップマトリクス
-### 優れている点
-| 項目 | 現行 | 競合/標準 | 差分 |
-|------|------|----------|------|
-| | | | |
-
-### 劣っている点
-| 項目 | 現行 | 競合/標準 | 差分 |
-|------|------|----------|------|
-| | | | |
-
-## 4. 根本原因分析
-### ギャップ: [名前]
-| 層 | 問い | 回答 |
-|----|------|------|
-| 表層 | | |
-| 中層 | | |
-| 深層 | | |
-| 根本 | | |
-
-**結論**: [埋めるべき/受け入れる]
-
-## 5. 戦略立案
-### 方針: [一言で]
-
-### ギャップ別対応
-| ギャップ | 根本原因 | 戦略 | 対応 |
-|----------|---------|------|------|
-| | | 回避/軽減/転嫁/受容 | |
-
-### アクション
-- 優先度 高:
-- 優先度 中:
-- 優先度 低:
-
-### 戦略の根拠
-**なぜこの戦略か？**
--
+    def assign_priority(self, value_score):
+        """Assign priority based on value"""
+        if value_score > 2:
+            return 'High'
+        elif value_score > 1:
+            return 'Medium'
+        else:
+            return 'Low'
 ```
 
-## 自問チェックリスト
+### 2. **Gap Analysis Template**
 
-ギャップを特定したら、以下を必ず自問する：
+```yaml
+Gap Analysis Report:
 
-- [ ] なぜこのギャップが存在するのか？
-- [ ] これは意図的なトレードオフか、見落としか？
-- [ ] ギャップを埋めることで何を失うか？
-- [ ] ギャップを埋めないことで何を失うか？
-- [ ] 同じ問題を別のアプローチで解決できないか？
-- [ ] このギャップはユーザーにとって本当に重要か？
+Organization: Customer Analytics Platform
+Analysis Date: January 2025
+Prepared For: Executive Team
 
-## アンチパターン
+---
 
-| 振る舞い | 問題 | 代わりに |
-|----------|------|----------|
-| 全ギャップを埋めようとする | 差別化喪失、リソース浪費 | 優先順位を付ける |
-| 表面的な機能追加 | 根本解決にならない | なぜなぜ分析で原因特定 |
-| 競合の模倣 | 二番煎じ | 独自の強みを伸ばす |
-| ギャップを隠す | 信頼喪失 | 透明に説明し代替案提示 |
+Executive Summary:
 
-## ADRへの記録
+Current State: Legacy on-premise system with manual processes
+Future State: Cloud-native platform with real-time analytics
+Gap Magnitude: Significant
 
-ギャップ分析に基づく重要な意思決定は `./docs/adr` に記録する。
+Key Findings:
+  - 7 critical capability gaps
+  - Estimated investment: $500K - $750K
+  - Timeline: 12-18 months
+  - Primary gaps: Technology, Process, Skills
 
-```markdown
-# ADR-XXXX: [ギャップ]への対応方針
+---
 
-## ステータス
-採用
+Detailed Gap Analysis:
 
-## コンテキスト
-ギャップ分析により、[対象]において[ギャップ]が特定された。
+## Category: Technology
 
-## 根本原因
-[なぜなぜ分析の結果]
+Gap 1: Cloud Infrastructure
+  Current: On-premise data center
+  Desired: Multi-cloud (AWS primary, Azure backup)
+  Gap Size: Large
+  Effort: 16 weeks
+  Cost: $200K
+  Dependencies: None (can start immediately)
+  Priority: Critical
 
-## 決定
-[戦略: 回避/軽減/転嫁/受容]を選択する。
+Gap 2: Real-Time Data Processing
+  Current: Batch processing (nightly)
+  Desired: Streaming (sub-second latency)
+  Gap Size: Large
+  Effort: 20 weeks
+  Cost: $150K
+  Dependencies: Cloud infrastructure (Gap 1)
+  Priority: High
 
-## 理由
-- [根本原因に基づく理由]
-- [トレードオフの考慮]
+Gap 3: Analytics Tools
+  Current: Custom-built dashboard
+  Desired: Enterprise BI platform (Tableau/Power BI)
+  Gap Size: Medium
+  Effort: 8 weeks
+  Cost: $80K (software + training)
+  Dependencies: Data warehouse modernization
+  Priority: High
 
-## 結果
-- 期待される効果:
-- 受け入れるリスク:
+---
+
+## Category: Skills
+
+Gap 4: Cloud Engineering Expertise
+  Current: 0 cloud engineers
+  Desired: 3 dedicated cloud engineers
+  Gap Size: Large
+  Solution: Hire 2, train 1 existing
+  Effort: 8 weeks hiring + 4 weeks training
+  Cost: $300K annual
+  Priority: Critical
+
+Gap 5: Data Science Capability
+  Current: 1 analyst (spreadsheet based)
+  Desired: 3 data scientists (ML/Python)
+  Gap Size: Large
+  Solution: Hire 2 data scientists
+  Effort: 12 weeks recruiting
+  Cost: $400K annual
+  Priority: High
+
+---
+
+## Category: Process
+
+Gap 6: Continuous Integration/Deployment
+  Current: Manual deployment (quarterly)
+  Desired: Automated CI/CD (daily)
+  Gap Size: Medium
+  Effort: 12 weeks
+  Cost: $60K (tools + training)
+  Dependencies: Cloud infrastructure
+  Priority: High
+
+Gap 7: Data Governance
+  Current: Informal, ad-hoc
+  Desired: Formal governance framework
+  Gap Size: Small
+  Effort: 4 weeks
+  Cost: $20K (training + tools)
+  Dependencies: None
+  Priority: Medium
+
+---
+
+## Gap Closure Plan
+
+High Priority Gaps (Start Now):
+  1. Cloud Infrastructure - 16 weeks
+  2. Cloud Engineering Skills - 8 weeks + training
+  3. Data Governance Framework - 4 weeks
+
+Medium Priority Gaps (Start after Cloud ready):
+  1. Real-Time Data Processing - 20 weeks (depends on Gap 1)
+  2. Analytics Tools - 8 weeks
+  3. CI/CD Implementation - 12 weeks
+
+---
+
+Investment Summary:
+
+Capital Expenditure:
+  - Cloud infrastructure setup: $200K
+  - Technology/tools: $250K
+  - Hiring/recruitment: $50K
+  - Total CapEx: $500K
+
+Operational Expenditure (Annual):
+  - Cloud services: $150K
+  - Tool licenses: $80K
+  - Salary (3 engineers): $700K
+  - Total OpEx: $930K
+
+---
+
+Timeline: 12-18 Months
+
+Q1 2025: Planning & Infrastructure
+  - Finalize architecture
+  - Begin cloud migration
+  - Recruit cloud engineers
+
+Q2 2025: Development & Hiring
+  - Cloud infrastructure operational
+  - Data engineering foundation
+  - Hire data scientists
+
+Q3 2025: Analytics Platform
+  - Deploy real-time pipeline
+  - Implement BI tools
+  - User training
+
+Q4 2025: Production Launch
+  - Full platform operational
+  - Legacy system decommission
+  - Performance optimization
+
+---
+
+Success Metrics:
+
+Before:
+  - Query time: 24 hours (batch)
+  - Data freshness: 1 day old
+  - Cost: $100K/month
+  - User satisfaction: 2.5/5
+
+After:
+  - Query time: <1 second (real-time)
+  - Data freshness: Real-time
+  - Cost: $60K/month (40% reduction)
+  - User satisfaction: 4.5/5
+
+ROI: Break-even in 18 months
 ```
+
+### 3. **Gap Closure Planning**
+
+```javascript
+// Create action plans to close gaps
+
+class GapClosurePlanning {
+  createClosurePlan(gap) {
+    return {
+      gap_id: gap.id,
+      gap_description: gap.description,
+      target_state: gap.target_state,
+
+      approach: gap.gap_type === 'Maturity'
+        ? this.createMaturityPlan(gap)
+        : this.createCapabilityPlan(gap),
+
+      timeline: {
+        start_date: gap.start_date,
+        target_completion: gap.target_date,
+        duration_weeks: Math.ceil(gap.effort_estimate),
+        milestones: this.defineMilestones(gap)
+      },
+
+      resources: {
+        people: gap.required_staff,
+        budget: gap.estimated_cost,
+        tools: gap.required_tools
+      },
+
+      success_criteria: gap.success_metrics,
+
+      risks: this.identifyClosureRisks(gap),
+
+      dependencies: gap.dependencies
+    };
+  }
+
+  createMaturityPlan(gap) {
+    // Plan for improving existing capability
+    return {
+      strategy: 'Improve capability maturity',
+      phases: [
+        {
+          phase: 'Assess Current',
+          activities: ['Document current state', 'Identify improvement areas'],
+          duration: '2 weeks'
+        },
+        {
+          phase: 'Plan Improvements',
+          activities: ['Define target maturity', 'Create roadmap', 'Allocate resources'],
+          duration: '2 weeks'
+        },
+        {
+          phase: 'Implement',
+          activities: ['Execute improvement', 'Training', 'Process changes'],
+          duration: gap.effort_estimate + ' weeks'
+        },
+        {
+          phase: 'Validate',
+          activities: ['Measure against targets', 'Validate maturity', 'Document learnings'],
+          duration: '2 weeks'
+        }
+      ]
+    };
+  }
+
+  createCapabilityPlan(gap) {
+    // Plan for building new capability
+    return {
+      strategy: 'Build new capability',
+      phases: [
+        {
+          phase: 'Design',
+          activities: ['Define requirements', 'Design solution', 'Get approvals'],
+          duration: '4 weeks'
+        },
+        {
+          phase: 'Build',
+          activities: ['Develop', 'Test', 'Integrate'],
+          duration: gap.effort_estimate + ' weeks'
+        },
+        {
+          phase: 'Deploy',
+          activities: ['Pilot', 'Roll out', 'Support transition'],
+          duration: '4 weeks'
+        }
+      ]
+    };
+  }
+
+  defineMilestones(gap) {
+    return [
+      { name: 'Gap closure initiated', date_offset: 'Week 0' },
+      { name: 'First deliverable', date_offset: `Week ${Math.ceil(gap.effort_estimate / 3)}` },
+      { name: 'Mid-point review', date_offset: `Week ${Math.ceil(gap.effort_estimate / 2)}` },
+      { name: 'Final validation', date_offset: `Week ${gap.effort_estimate}` }
+    ];
+  }
+}
+```
+
+### 4. **Communication & Tracking**
+
+```yaml
+Gap Analysis Communication:
+
+Stakeholder Updates:
+
+Executive Summary (1 page):
+  - What gaps exist?
+  - Why do they matter?
+  - What's the investment?
+  - When will we close them?
+
+Detailed Report (10 pages):
+  - Gap identification methodology
+  - Gap descriptions and impacts
+  - Priority and sequencing
+  - Detailed closure plans
+  - Risk assessment
+
+Team Briefing (30 min):
+  - Overview of gaps
+  - Impact on team
+  - Their role in closure
+  - Timeline and changes
+
+---
+
+Tracking Dashboard:
+
+Gap 1: Cloud Infrastructure
+  Status: In Progress (40%)
+  Timeline: On track
+  Budget: On budget ($200K allocated, $80K spent)
+  Next Milestone: Infrastructure provisioning (due Feb 15)
+
+Gap 2: Cloud Engineering Skills
+  Status: Not started
+  Timeline: At risk (delayed by hiring)
+  Budget: On budget
+  Next Milestone: 2nd engineer hire (due Feb 28)
+
+Gap 3: Data Governance
+  Status: Completed
+  Timeline: Complete
+  Budget: Under budget ($18K vs $20K)
+  Business Impact: 30% improvement in data quality
+```
+
+## Best Practices
+
+### ✅ DO
+- Compare current to clearly defined future state
+- Include all relevant capability areas
+- Involve stakeholders in gap identification
+- Prioritize by value and effort
+- Create detailed closure plans
+- Track progress to closure
+- Document gap analysis findings
+- Review and update analysis quarterly
+- Link gaps to business strategy
+- Communicate findings transparently
+
+### ❌ DON'T
+- Skip current state assessment
+- Create vague future state
+- Identify gaps without solutions
+- Ignore implementation effort
+- Plan all gaps in parallel
+- Forget about dependencies
+- Ignore resource constraints
+- Hide difficult findings
+- Plan for 100% effort allocation
+- Forget about change management
+
+## Gap Analysis Tips
+
+- Involve people doing the work
+- Be realistic about effort estimates
+- Start with highest-value gaps
+- Build dependencies and sequencing
+- Monitor progress weekly

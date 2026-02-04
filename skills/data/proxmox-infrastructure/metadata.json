@@ -1,9 +1,7 @@
 {
   "name": "proxmox-infrastructure",
-  "description": "Proxmox VE cluster management including VM provisioning, template creation with cloud-init, QEMU guest agent integration, storage pool management, VLAN-aware bridge configuration, and Proxmox API inte",
   "repo": "basher83/lunar-claude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/proxmox-infrastructure/skills/proxmox-infrastructure/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:28.361041Z"
 }

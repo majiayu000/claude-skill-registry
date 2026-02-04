@@ -1,7 +1,7 @@
 {
   "name": "release",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/release/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:34.545625Z"
+  "repo": "u9401066/rootcause-mcp",
+  "path": ".claude/skills/release/SKILL.md",
+  "source": "github.com/u9401066/rootcause-mcp",
+  "downloaded_at": "2026-02-04T05:23:05.019161Z"
 }

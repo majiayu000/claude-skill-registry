@@ -1,7 +1,7 @@
 {
   "name": "kubernetes",
-  "repo": "FlexNetOS/ripple-env",
-  "path": ".claude/skills/kubernetes/SKILL.md",
-  "source": "github.com/FlexNetOS/ripple-env",
-  "downloaded_at": "2026-02-02T04:35:26.173257Z"
+  "repo": "liauw-media/CodeAssist",
+  "path": "skills/infrastructure/kubernetes/SKILL.md",
+  "source": "github.com/liauw-media/CodeAssist",
+  "downloaded_at": "2026-02-04T04:39:03.664231Z"
 }

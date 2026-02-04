@@ -1,7 +1,7 @@
 {
   "name": "video-processor",
-  "repo": "GolferGeek/orchestrator-ai",
-  "path": ".claude/skills/video-processor/SKILL.md",
-  "source": "github.com/GolferGeek/orchestrator-ai",
-  "downloaded_at": "2026-02-02T02:28:20.234124Z"
+  "repo": "basher83/lunar-claude",
+  "path": "examples/skills/video-processor/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:26.086382Z"
 }

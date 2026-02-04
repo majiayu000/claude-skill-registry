@@ -1,7 +1,7 @@
 {
   "name": "supply-chain-security",
-  "repo": "melodic-software/claude-code-plugins",
-  "path": "plugins/security/skills/supply-chain-security/SKILL.md",
-  "source": "github.com/melodic-software/claude-code-plugins",
-  "downloaded_at": "2026-02-02T02:53:34.933506Z"
+  "repo": "cornmanwtf/ABANG-COLEK",
+  "path": "skills/security-compliance/supply-chain-security/SKILL.md",
+  "source": "github.com/cornmanwtf/ABANG-COLEK",
+  "downloaded_at": "2026-02-04T03:43:55.710341Z"
 }

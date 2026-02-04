@@ -1,7 +1,7 @@
 {
   "name": "caching",
-  "repo": "BerryKuipers/claude-code-toolkit",
-  "path": ".claude/skills/gemini-api/caching/SKILL.md",
-  "source": "github.com/BerryKuipers/claude-code-toolkit",
-  "downloaded_at": "2026-02-02T03:48:05.789790Z"
+  "repo": "HoangNguyen0403/agent-skills-standard",
+  "path": "skills/nextjs/caching/SKILL.md",
+  "source": "github.com/HoangNguyen0403/agent-skills-standard",
+  "downloaded_at": "2026-02-04T04:31:06.338708Z"
 }

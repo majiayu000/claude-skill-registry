@@ -1,7 +1,7 @@
 {
   "name": "design-init",
-  "repo": "savvy-web/pnpm-module-template",
+  "repo": "spencerbeggs/claude-design-coordinator",
   "path": ".claude/skills/design-init/SKILL.md",
-  "source": "github.com/savvy-web/pnpm-module-template",
-  "downloaded_at": "2026-02-01T04:27:58.910889Z"
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "downloaded_at": "2026-02-04T05:05:24.139710Z"
 }

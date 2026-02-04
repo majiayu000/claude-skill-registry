@@ -1,7 +1,7 @@
 {
   "name": "gitflow",
-  "repo": "metalagman/agent-skills",
-  "path": "gitflow/SKILL.md",
-  "source": "github.com/metalagman/agent-skills",
-  "downloaded_at": "2026-02-01T04:23:41.957526Z"
+  "repo": "oimiragieo/agent-studio",
+  "path": ".claude/skills/gitflow/SKILL.md",
+  "source": "github.com/oimiragieo/agent-studio",
+  "downloaded_at": "2026-02-04T02:46:20.297182Z"
 }

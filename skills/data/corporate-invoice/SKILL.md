@@ -1,50 +1,24 @@
 ---
 name: corporate-invoice
-description: |
-  Invoice and billing requests for corporate reimbursement. Triggers on "invoice",
-  "VAT", "tax info", "company purchase", "expense report", "reimbursement".
-sample_size: 720
-validation:
-  forbidden_patterns:
-    - "(?i)we can fill (out )?your tax form"
-    - "(?i)we will fill (out )?your tax form"
-    - "(?i)we can complete the .*tax form"
-metrics:
-  sample_size: 720
-  avg_thread_length: 3.73
-  top_phrases:
-    - phrase: "let me know if"
-      count: 232
-      percent: 32.2
-    - phrase: "a fully customized invoice"
-      count: 207
-      percent: 28.7
-    - phrase: "fully customized invoice here"
-      count: 205
-      percent: 28.5
-    - phrase: "customized invoice here https"
-      count: 205
-      percent: 28.5
-    - phrase: "me know if you"
-      count: 198
-      percent: 27.5
-    - phrase: "view a fully customized"
-      count: 197
-      percent: 27.4
-    - phrase: "the prepared for section"
-      count: 178
-      percent: 24.7
-    - phrase: "you re logged in"
-      count: 176
-      percent: 24.4
-    - phrase: "to the prepared for"
-      count: 173
-      percent: 24.0
-    - phrase: "re logged in you"
-      count: 172
-      percent: 23.9
+description: Handle corporate invoice and reimbursement requests. Use when a customer needs an invoice, VAT or tax info, or documentation for company reimbursement.
+metadata:
+  trigger_phrases:
+      - "handle corporate"
+      - "corporate invoice"
+      - "invoice reimbursement"
+  related_skills: ["team-license-purchase", "email-change", "invoice-billing-statement"]
+  sample_size: "720"
+  validation: |
+    required_phrases:
+      - "invoice"
+      - "purchases page"
+    forbidden_patterns:
+      - "(?i)we can fill (out )?your tax form"
+      - "(?i)we will fill (out )?your tax form"
+      - "(?i)we can complete the .*tax form"
+    max_length: 500
+  metrics: "sample_size: 720\navg_thread_length: 3.73\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 232\n    percent: 32.2\n  - phrase: \"a fully customized invoice\"\n    count: 207\n    percent: 28.7\n  - phrase: \"fully customized invoice here\"\n    count: 205\n    percent: 28.5\n  - phrase: \"customized invoice here https\"\n    count: 205\n    percent: 28.5\n  - phrase: \"me know if you\"\n    count: 198\n    percent: 27.5\n  - phrase: \"view a fully customized\"\n    count: 197\n    percent: 27.4\n  - phrase: \"the prepared for section\"\n    count: 178\n    percent: 24.7\n  - phrase: \"you re logged in\"\n    count: 176\n    percent: 24.4\n  - phrase: \"to the prepared for\"\n    count: 173\n    percent: 24.0\n  - phrase: \"re logged in you\"\n    count: 172\n    percent: 23.9"
 ---
-
 # Corporate Invoice
 
 You're handling an invoice or billing request for corporate reimbursement.
@@ -108,3 +82,4 @@ Direct customers to their purchases page to edit invoices:
 Draft must:
 - [ ] Provide a path forward (link or instructions)
 - [ ] Be clear about limitations if declining
+- [ ] NOT create custom invoices for individual purchases

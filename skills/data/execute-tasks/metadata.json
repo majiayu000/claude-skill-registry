@@ -1,7 +1,7 @@
 {
   "name": "execute-tasks",
-  "repo": "sequenzia/claude-alchemy",
-  "path": "plugins/sdd/skills/execute-tasks/SKILL.md",
-  "source": "github.com/sequenzia/claude-alchemy",
-  "downloaded_at": "2026-02-02T04:02:25.789092Z"
+  "repo": "Brownbull/taskflow",
+  "path": ".claude/skills/core/execute-tasks/skill.md",
+  "source": "github.com/Brownbull/taskflow",
+  "downloaded_at": "2026-02-04T04:16:31.601566Z"
 }

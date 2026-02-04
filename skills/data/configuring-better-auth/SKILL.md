@@ -1,6 +1,10 @@
 ---
 name: configuring-better-auth
-description: Implement OAuth 2.1 / OIDC authentication using Better Auth with MCP assistance. Use when setting up a centralized auth server (SSO provider), implementing SSO clients in Next.js apps, configuring PKCE flows, or managing tokens with JWKS verification. Uses Better Auth MCP for guided setup. NOT when using simple session-only auth without OAuth/OIDC requirements.
+description: |
+  Implement OAuth 2.1 / OIDC authentication using Better Auth with MCP assistance. Use when setting
+  up a centralized auth server (SSO provider), implementing SSO clients in Next.js apps, configuring
+  PKCE flows, or managing tokens with JWKS verification. Uses Better Auth MCP for guided setup.
+  NOT when using simple session-only auth without OAuth/OIDC requirements.
 ---
 
 # Better Auth OAuth/OIDC

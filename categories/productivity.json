@@ -1,7 +1,7 @@
 {
   "category": "productivity",
-  "count": 1532,
-  "updated_at": "2026-02-02T05:16:13.325628Z",
+  "count": 1524,
+  "updated_at": "2026-02-04T05:27:36.796609Z",
   "skills": [
     {
       "name": "commit-helper",
@@ -1717,22 +1717,6 @@
       "name": "calculate-priority-score",
       "description": "Calculate priority score for bugs, issues, or tasks based on severity, impact, and likelihood. Use for bug prioritization, task ordering, or risk assessment.",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/calculate-priority-score",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "calculate",
-        "priority",
-        "score"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "calculate-priority-score",
-      "description": "Calculate priority score for bugs, issues, or tasks based on severity, impact, and likelihood. Use for bug prioritization, task ordering, or risk assessment.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/calculate-priority-score",
       "branch": "main",
       "category": "productivity",
@@ -1749,22 +1733,6 @@
       "name": "deps-health-inline",
       "description": "Inline orchestration workflow for dependency audit and updates. Provides step-by-step phases for dependency-auditor detection, priority-based updates with dependency-updater, and verification cycles.",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/deps-health-inline",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "deps",
-        "health",
-        "inline"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "deps-health-inline",
-      "description": "Inline orchestration workflow for dependency audit and updates. Provides step-by-step phases for dependency-auditor detection, priority-based updates with dependency-updater, and verification cycles.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/deps-health-inline",
       "branch": "main",
       "category": "productivity",
@@ -1775,22 +1743,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/deps-health-inline",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "format-todo-list",
-      "description": "Generate properly formatted TodoWrite lists for orchestrator progress tracking. Use when creating phase checklists, updating task status, or ensuring consistent todo formatting.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/format-todo-list",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "format",
-        "todo",
-        "list"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -2872,20 +2824,6 @@
       "name": "apify",
       "description": "Web scraping and automation platform with pre-built Actors for common tasks",
       "repo": "vm0-ai/vm0-skills",
-      "path": "data/apify",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "apify"
-      ],
-      "stars": 8,
-      "install": "vm0-ai/vm0-skills",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "apify",
-      "description": "Web scraping and automation platform with pre-built Actors for common tasks",
-      "repo": "vm0-ai/vm0-skills",
       "path": "apify",
       "branch": "main",
       "category": "productivity",
@@ -2894,21 +2832,6 @@
       ],
       "stars": 8,
       "install": "vm0-ai/vm0-skills/apify",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "aws-cli",
-      "description": "CLI-first AWS orchestration skill for Lambda, ECS/Fargate, and S3 workflows rooted in `.☁️` runbooks.",
-      "repo": "elasticdotventures/_b00t_",
-      "path": "data/aws-cli",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [
-        "aws",
-        "cli"
-      ],
-      "stars": 8,
-      "install": "elasticdotventures/_b00t_",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -13274,18 +13197,6 @@
       "name": "google-sheets-automation",
       "description": "Google Sheets Automation - Auto-activating skill for Business Automation.Triggers on: google sheets automation, google sheets automationPart of the Business Automation skill category.",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/google-sheets-automation",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "google-sheets-automation",
-      "description": "Google Sheets Automation - Auto-activating skill for Business Automation.Triggers on: google sheets automation, google sheets automationPart of the Business Automation skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
       "path": "planned-skills/generated/19-business-automation/google-sheets-automation",
       "branch": "main",
       "category": "productivity",
@@ -19187,18 +19098,6 @@
       "name": "survey-creator",
       "description": "Survey Creator - Auto-activating skill for Business Automation.Triggers on: survey creator, survey creatorPart of the Business Automation skill category.",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/survey-creator",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "survey-creator",
-      "description": "Survey Creator - Auto-activating skill for Business Automation.Triggers on: survey creator, survey creatorPart of the Business Automation skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
       "path": "planned-skills/generated/19-business-automation/survey-creator",
       "branch": "main",
       "category": "productivity",
@@ -19603,18 +19502,6 @@
       "tags": [],
       "stars": 0,
       "install": "zby/llm-do/.codex/skills/tasks-system",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "taskwarrior",
-      "description": "Manage tasks using taskwarrior CLI. Use this when the user wants to add, list, complete, modify, delete, or search tasks, set priorities, due dates, tags, or work with task contexts and reports.",
-      "repo": "meirm/askGPT",
-      "path": "data/taskwarrior",
-      "branch": "main",
-      "category": "productivity",
-      "tags": [],
-      "stars": 0,
-      "install": "meirm/askGPT",
       "source": "SkillsMP + GitHub Raw"
     },
     {

@@ -1,10 +1,6 @@
 ---
 name: epic-management
 description: Use for LARGE work requiring feature-level grouping. Creates epic tracking issues, manages related issues under a common label, tracks epic progress, and coordinates with milestones.
-allowed-tools:
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Epic Management
@@ -137,15 +133,22 @@ PROJECT_ID=$(gh project list --owner "$GH_PROJECT_OWNER" --format json | \
 STATUS_FIELD_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
   --format json | jq -r '.fields[] | select(.name == "Status") | .id')
 
+TYPE_FIELD_NAME="Type"
+if ! gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | jq -e '.fields[] | select(.name == "Type")' >/dev/null 2>&1; then
+  if gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" --format json | jq -e '.fields[] | select(.name == "Issue Type")' >/dev/null 2>&1; then
+    TYPE_FIELD_NAME="Issue Type"
+  fi
+fi
+
 TYPE_FIELD_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
-  --format json | jq -r '.fields[] | select(.name == "Type") | .id')
+  --format json | jq -r --arg type_field "$TYPE_FIELD_NAME" '.fields[] | select(.name == $type_field) | .id')
 
 # Get option IDs
 BACKLOG_OPTION_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
   --format json | jq -r '.fields[] | select(.name == "Status") | .options[] | select(.name == "Backlog") | .id')
 
 EPIC_TYPE_OPTION_ID=$(gh project field-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
-  --format json | jq -r '.fields[] | select(.name == "Type") | .options[] | select(.name == "Epic") | .id')
+  --format json | jq -r --arg type_field "$TYPE_FIELD_NAME" '.fields[] | select(.name == $type_field) | .options[] | select(.name == "Epic") | .id')
 
 # Set Status = Backlog (or Ready if no issues yet to create)
 gh project item-edit --project-id "$PROJECT_ID" --id "$ITEM_ID" \

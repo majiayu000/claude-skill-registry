@@ -1,7 +1,7 @@
 {
   "name": "moai-foundation-quality",
-  "repo": "rdmptv/AdbAutoPlayer",
-  "path": ".moai/backups/.moai.backup.1764591304/backups/.claude.backup.1764591304/skills/moai-foundation-quality/SKILL.md",
-  "source": "github.com/rdmptv/AdbAutoPlayer",
-  "downloaded_at": "2026-02-02T05:04:01.764723Z"
+  "repo": "windysky/claude_notification_wsl2",
+  "path": ".claude/skills/moai-foundation-quality/SKILL.md",
+  "source": "github.com/windysky/claude_notification_wsl2",
+  "downloaded_at": "2026-02-04T05:12:10.791465Z"
 }

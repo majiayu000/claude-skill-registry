@@ -1,140 +1,119 @@
 ---
 name: component-docs
-description: Guide for documenting project components and features. Creates or updates documentation in docs/components/ by exploring git changes to understand implementation details. Provides templates and conventions for consistent, developer-friendly component catalogs.
+description: Generate or update component documentation with usage examples, props tables, and Storybook stories. Use when documenting new components, creating usage examples, or setting up Storybook stories.
+allowed-tools: Read, Edit, Write, Grep, Glob
 ---
 
 # Component Documentation Skill
 
-## Overview
+Documentation lives in `packages/ui/`.
 
-This skill helps document components and features in the jimmodel project. It enables developers to create comprehensive, git-driven documentation that captures **what was implemented, where the code lives, what libraries were used, and how it all works together**.
+## Component Documentation Template
 
-The skill automatically explores git changes to discover implementation details, checks for existing documentation, and either creates new component docs or updates existing ones with the latest changes. All documentation follows consistent templates and conventions, making it easy for future developers to understand each component.
+```markdown
+# Button
 
-## When to Use This Skill
+A customizable button component built with Radix UI primitives.
 
-Trigger this skill when:
-- You've just implemented a significant feature or component
-- You want to document an existing feature that's undocumented
-- You've made updates to a documented component and want to keep docs current
-- A teammate needs to understand how a feature works
-- You're onboarding and want to document what you're learning
+## Usage
 
-Examples:
-- "I just finished implementing the authentication system, help me document it"
-- "Update the database schema docs with the new tables I added"
-- "Help me document the API routes structure"
-- "Create docs for the styling system"
+\`\`\`tsx
+import { Button } from "@sgcarstrends/ui";
 
-## How It Works
+<Button variant="default">Click me</Button>
+\`\`\`
 
-### Core Workflow: Document a Component
+## Variants
 
-See: **`references/workflows/document-component.md`** for detailed step-by-step instructions.
+\`\`\`tsx
+<Button variant="default">Default</Button>
+<Button variant="destructive">Delete</Button>
+<Button variant="outline">Outline</Button>
+\`\`\`
 
-The workflow:
+## Sizes
 
-1. **Identify the component** - Determine what you want to document
-2. **Explore git changes** - Use git commands to discover what was actually implemented
-3. **Check existing docs** - Is this a new component or an update to existing docs?
-4. **Gather details** - Extract files, technologies, configuration from git exploration
-5. **Create or update docs** - Use the template to write documentation
-6. **Validate** - Use the checklist to ensure completeness
+\`\`\`tsx
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>
+<Button size="icon"><Icon /></Button>
+\`\`\`
 
-### Key Innovation: Git-Driven Discovery
+## Props
 
-Instead of relying on memory or assumptions, this skill uses git commands to objectively discover:
-- Which files were created/modified
-- What dependencies were added
-- Configuration changes made
-- The actual scope of implementation
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| variant | `"default" \| "destructive" \| "outline"` | `"default"` | Visual style |
+| size | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | Button size |
+| asChild | `boolean` | `false` | Render as child element |
 
-**See:** `references/git-exploration-guide.md` for git commands and examples.
+## Accessibility
 
-### Documentation Template
+- Uses semantic `<button>` element
+- Supports keyboard navigation (Enter, Space)
+- Proper focus states
+```
 
-The template in `assets/component-template.md` includes sections for:
-- Overview (what and why)
-- Files & Locations (where the code is)
-- Technologies & Libraries (what was used)
-- Configuration (how to set it up)
-- How It Works (the implementation)
-- Related Documentation (external links)
-- Future Considerations (tech debt, improvements)
+## JSDoc Comments
 
-## Workflows
+```typescript
+/**
+ * A customizable button component.
+ *
+ * @example
+ * <Button variant="default">Click me</Button>
+ */
+export interface ButtonProps {
+  /** Visual style variant @default "default" */
+  variant?: "default" | "destructive" | "outline";
+  /** Button size @default "default" */
+  size?: "default" | "sm" | "lg" | "icon";
+}
+```
 
-### 1. **Document a Component (New or Update)**
-**File:** `references/workflows/document-component.md`
-**Checklist:** `references/checklists/component-docs-checklist.md`
+## Storybook Stories
 
-Complete guide for creating or updating a component document. Includes:
-- Git exploration strategy to discover implementation details
-- Template population based on findings
-- Validation steps to ensure quality
+```typescript
+// packages/ui/src/components/button.stories.tsx
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "./button";
 
-### 2. **Quick Checklist for Validation**
-**File:** `references/checklists/component-docs-checklist.md`
+const meta = {
+  title: "Components/Button",
+  component: Button,
+  tags: ["autodocs"],
+  argTypes: {
+    variant: { control: "select", options: ["default", "destructive", "outline"] },
+    size: { control: "select", options: ["default", "sm", "lg", "icon"] },
+  },
+} satisfies Meta<typeof Button>;
 
-Use this checklist to verify your component documentation is complete and ready.
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-## Resources
+export const Default: Story = { args: { children: "Button" } };
+export const Destructive: Story = { args: { variant: "destructive", children: "Delete" } };
+```
 
-### references/
-- **`workflows/document-component.md`** - Detailed step-by-step workflow for documenting components
-- **`checklists/component-docs-checklist.md`** - Checklist to validate documentation completeness
-- **`git-exploration-guide.md`** - Guide to using git commands to discover implementation details
+## Documentation Checklist
 
-### assets/
-- **`component-template.md`** - Markdown template showing all sections and example content for component docs
+- [ ] JSDoc comments on component and props
+- [ ] Markdown documentation with usage examples
+- [ ] Props table included
+- [ ] Variants documented
+- [ ] Accessibility notes
+- [ ] Storybook stories (if using Storybook)
+- [ ] Exported from package index
 
-## File Location
+## Best Practices
 
-All component documentation goes in: **`docs/components/`**
+1. **Clear Examples**: Provide complete, working code
+2. **Props Documentation**: Document every prop with type and description
+3. **Accessibility**: Include a11y notes
+4. **Keep Updated**: Update docs when components change
 
-Files follow naming convention: **`[component-name].md`** (kebab-case)
+## References
 
-Examples:
-- `docs/components/authentication.md`
-- `docs/components/database-schema.md`
-- `docs/components/api-routes.md`
-- `docs/components/styling-system.md`
-
-## Template Sections at a Glance
-
-| Section | Purpose | Key Info |
-|---------|---------|----------|
-| **Overview** | What and why | 1-2 sentence summary |
-| **Files & Locations** | Where the code lives | File paths with descriptions |
-| **Technologies & Libraries** | What was used | Library names, versions, docs links |
-| **Configuration** | How to set it up | Env vars, config files, setup steps |
-| **How It Works** | The implementation | Flow explanation with file references |
-| **API Endpoints** | (if applicable) | Route documentation |
-| **Usage Examples** | (if applicable) | Code snippets showing usage |
-| **Related Documentation** | Reference links | External docs, internal docs |
-| **Future Considerations** | (optional) | Tech debt, planned improvements |
-
-## Quick Start Example
-
-**User:** "I just implemented database schema with Drizzle ORM, can you help me document it?"
-
-**What the skill does:**
-1. Asks: "Component name?" → "database-schema"
-2. Runs git commands to find changed files in `db/schema/`, `drizzle/`, and `package.json`
-3. Checks if `docs/components/database-schema.md` exists (doesn't)
-4. Extracts from git:
-   - Files: `db/schema/index.ts`, `drizzle/migrations/`, `drizzle.config.ts`
-   - Libraries: `drizzle-orm`, `@neondatabase/serverless`
-   - Config: Database connection setup
-5. Creates `docs/components/database-schema.md` using template
-6. Validates against checklist
-
-**Result:** A complete, git-informed component document ready for the team.
-
-## Design Principles
-
-1. **Git-Driven** - Use git to discover facts, not opinions
-2. **Template-Based** - Consistency across all component docs
-3. **Developer-Focused** - Written for future developers to understand quickly
-4. **Comprehensive** - Include all context needed to work with the component
-5. **Maintainable** - Easy to update as components evolve
+- `packages/ui/CLAUDE.md` for package details
+- shadcn/ui: https://ui.shadcn.com

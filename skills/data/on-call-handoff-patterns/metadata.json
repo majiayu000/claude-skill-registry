@@ -1,7 +1,7 @@
 {
   "name": "on-call-handoff-patterns",
-  "repo": "GaitanS/AI-Mancare",
-  "path": ".claude/skills/plugins/incident-response/skills/on-call-handoff-patterns/SKILL.md",
-  "source": "github.com/GaitanS/AI-Mancare",
-  "downloaded_at": "2026-02-02T04:39:44.475486Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/on-call-handoff-patterns/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:33.540441Z"
 }

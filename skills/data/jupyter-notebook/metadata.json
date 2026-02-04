@@ -1,11 +1,7 @@
 {
   "name": "jupyter-notebook",
-  "repo": "i9wa4/dotfiles",
-  "category": "data",
-  "description": "Jupyter Notebook エキスパートスキル - ノートブックの実行方法、Databricks カーネル連携に関するガイドを提供",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.061011Z",
-  "dir_name": "jupyter-notebook",
-  "github_path": "config/claude/skills/jupyter-notebook",
-  "github_branch": "main"
+  "repo": "openai/skills",
+  "path": "skills/.curated/jupyter-notebook/SKILL.md",
+  "source": "github.com/openai/skills",
+  "downloaded_at": "2026-02-04T03:04:47.706401Z"
 }

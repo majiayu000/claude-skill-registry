@@ -1,7 +1,7 @@
 {
   "name": "execute-plan",
-  "repo": "Meme-Lords/granhackaria-run1",
-  "path": ".claude/skills/gsd/workflows/execute-plan/SKILL.md",
-  "source": "github.com/Meme-Lords/granhackaria-run1",
-  "downloaded_at": "2026-02-02T04:52:00.645544Z"
+  "repo": "Microck/ordinary-claude-skills",
+  "path": "skills_all/execute-plan/SKILL.md",
+  "source": "github.com/Microck/ordinary-claude-skills",
+  "downloaded_at": "2026-02-04T04:51:31.963471Z"
 }

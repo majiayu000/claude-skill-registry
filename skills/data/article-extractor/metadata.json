@@ -1,7 +1,7 @@
 {
   "name": "article-extractor",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/content-creator-workflow/.claude/skills/article-extractor/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:28.300508Z"
+  "repo": "XSIJIE975/agents-skills",
+  "path": "skills/article-extractor/SKILL.md",
+  "source": "github.com/XSIJIE975/agents-skills",
+  "downloaded_at": "2026-02-04T04:07:06.173178Z"
 }

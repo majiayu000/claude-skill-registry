@@ -41,8 +41,8 @@ function urlToApiId(urlId: number, prefix: string): string {
   return `${prefix}${urlId.toString(36)}`
 }
 
-// Example: Inbox 7256583 → inb_4bj7r
-urlToApiId(7256583, 'inb_') // => "inb_4bj7r"
+// Example: Inbox [PHONE] → inb_4bj7r
+urlToApiId([PHONE], 'inb_') // => "inb_4bj7r"
 ```
 
 ## API ID to URL
@@ -53,15 +53,15 @@ function apiIdToUrl(apiId: string): number {
   return parseInt(base36, 36)
 }
 
-// Example: inb_4bj7r → 7256583
-apiIdToUrl('inb_4bj7r') // => 7256583
+// Example: inb_4bj7r → [PHONE]
+apiIdToUrl('inb_4bj7r') // => [PHONE]
 ```
 
 ## Quick Bash Conversion
 
 ```bash
 # URL ID to API ID (requires node)
-node -e "console.log('inb_' + (7256583).toString(36))"
+node -e "console.log('inb_' + ([PHONE]).toString(36))"
 
 # API ID to URL ID
 node -e "console.log(parseInt('4bj7r', 36))"
@@ -70,9 +70,9 @@ node -e "console.log(parseInt('4bj7r', 36))"
 ## Common Use Cases
 
 ### From Front URL
-Given: `https://app.frontapp.com/inboxes/teams/folders/7256583/unassigned/120537545061`
-- Inbox ID: `7256583` → `inb_4bj7r`
-- Conversation ID: `120537545061` → `cnv_1z2x3y4z` (calculate as needed)
+Given: `https://app.frontapp.com/inboxes/teams/folders/[PHONE]/unassigned/[PHONE]`
+- Inbox ID: `[PHONE]` → `inb_4bj7r`
+- Conversation ID: `[PHONE]` → `cnv_1z2x3y4z` (calculate as needed)
 
 ### Validating API Responses
 When Front API returns an ID like `inb_4bj7r`, you can verify it matches the expected inbox by converting back to the URL ID.

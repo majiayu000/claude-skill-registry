@@ -1,7 +1,7 @@
 {
   "name": "explain",
-  "repo": "pwittchen/varun.surf",
-  "path": ".claude/skills/explain/SKILL.md",
-  "source": "github.com/pwittchen/varun.surf",
-  "downloaded_at": "2026-02-02T04:32:04.148834Z"
+  "repo": "blueraai/bluera-base",
+  "path": "skills/explain/SKILL.md",
+  "source": "github.com/blueraai/bluera-base",
+  "downloaded_at": "2026-02-04T04:17:42.874537Z"
 }

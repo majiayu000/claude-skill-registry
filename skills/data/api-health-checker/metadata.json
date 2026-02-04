@@ -1,9 +1,7 @@
 {
   "name": "api-health-checker",
-  "description": "Api Health Checker - Auto-activating skill for API Integration.Triggers on: api health checker, api health checkerPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/16-api-integration/api-health-checker/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:26.499057Z"
 }

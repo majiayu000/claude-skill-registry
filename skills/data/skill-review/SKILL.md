@@ -1,180 +1,108 @@
 ---
 name: skill-review
-description: Reviews and validates agent skills against best practices. Triggers on "review this skill", "check my skill", "validate skill", "is this skill well-written", or when creating/editing skills.
+description: |
+  Audit claude-skills with systematic 9-phase review: standards compliance, official docs verification, code accuracy, cross-file consistency, and version drift detection.
+
+  Use when investigating skill issues, major updates detected, skill not verified >90 days, or before marketplace submission.
+user-invocable: true
+allowed-tools:
+  - Read
+  - Bash
+  - Glob
+  - Grep
+  - WebFetch
+  - WebSearch
+  - Edit
+  - Write
 ---
 
-# Skill Review
+# Skill Review Skill
 
-## Overview
+## Process
 
-Validates agent skills against the Agent Skills standard and compiled best practices. Reviews structure, frontmatter, description quality, progressive disclosure, and common anti-patterns.
+Invoke: `/review-skill <skill-name>` or use this skill when detecting outdated patterns
 
-## When to Use
+**Production evidence**: better-auth audit (2025-11-08) - found 6 critical issues including non-existent API imports, removed 665 lines incorrect code, implemented v2.0.0
 
-- User asks to review or validate a skill
-- User is creating a new skill and wants feedback
-- User asks "is this skill well-written?"
-- User mentions skill quality, best practices, or improvement
-
-## Review Process
-
-### Phase 1: Load References
-
-Before reviewing, read:
-- `references/best-practices.md` — Comprehensive guidelines
-- `references/checklist.md` — Quick validation checklist
-
-### Phase 2: Identify Target
-
-Determine what to review:
-- **Single skill**: Review `skills/<name>/SKILL.md` and its structure
-- **All skills**: Audit entire `skills/` directory
-- **New skill draft**: Review provided content before creation
-
-### Phase 3: Structural Audit
-
-Check the skill directory structure:
-
-```
-skill-name/
-├── SKILL.md              # Required
-├── references/           # Optional - loaded docs
-├── scripts/              # Optional - executable code
-└── assets/               # Optional - output files (not loaded)
-```
-
-**Verify:**
-- [ ] SKILL.md exists
-- [ ] Directory name matches `name` in frontmatter
-- [ ] References are one level deep (no nested chains)
-- [ ] Scripts use forward slashes (no Windows paths)
-- [ ] No extraneous files (README.md, CHANGELOG.md, etc.)
-- [ ] Script paths in SKILL.md body (`scripts/foo.py`) exist in directory
-- [ ] If scripts use external binaries, dependencies are documented
-
-### Phase 4: Frontmatter Validation
-
-Check YAML frontmatter:
-
-```yaml
 ---
-name: skill-name          # Required: lowercase, hyphens, ≤64 chars
-description: >-           # Required: ≤1024 chars, third-person
-  What it does. When to use it.
+
+## 9-Phase Audit
+
+1. **Pre-Review**: Install skill, check version/date, test discovery
+2. **Standards**: Validate YAML, keywords, third-person style, directory structure
+3. **Official Docs**: WebFetch/Context7 verify API patterns, GitHub updates, npm versions, production repos
+4. **Code Examples**: Verify imports exist, API signatures match, schema consistency, templates work
+5. **Cross-File Consistency**: Compare SKILL.md vs README.md, bundled resources match files
+6. **Dependencies**: Run `./scripts/check-versions.sh`, check breaking changes, verify "Last Verified"
+7. **Categorize**: Severity (🔴 Critical / 🟡 High / 🟠 Medium / 🟢 Low) with evidence (GitHub/docs/npm)
+8. **Fix**: Auto-fix unambiguous, ask user for architectural, update all files, bump version
+9. **Verify**: Test discovery, templates work, no contradictions, commit with changelog
+
+**Automated** (via `./scripts/review-skill.sh`): YAML syntax, package versions, broken links, TODOs, file org, staleness
+
+**Manual** (AI): API methods vs docs, GitHub issues, production comparisons, code correctness, schema consistency
+
 ---
-```
 
-**Validate:**
-- [ ] `name`: Lowercase with hyphens only (`[a-z0-9-]`)
-- [ ] `name`: ≤64 characters
-- [ ] `name`: No "anthropic" or "claude" in name
-- [ ] `description`: Non-empty, ≤1024 characters
-- [ ] `description`: Third-person voice (not "I can" or "You can")
-- [ ] `description`: Includes what it does AND when to trigger
-- [ ] `description`: Contains specific trigger phrases
+## Severity Classification
 
-### Phase 5: Description Quality
+🔴 **CRITICAL**: Non-existent API/imports, invalid config, missing dependencies
 
-The description is **the** triggering mechanism. Evaluate:
+🟡 **HIGH**: Contradictory examples, inconsistent patterns, outdated major versions
 
-**Good descriptions include:**
-- Specific actions: "Extract text and tables from PDF files"
-- Trigger phrases: "Use when analyzing Excel files, spreadsheets, or .xlsx"
-- Synonyms users might say: "tabular data, CSV, workbooks"
+🟠 **MEDIUM**: Stale minors (>90d), missing docs sections, incomplete errors
 
-**Bad descriptions:**
-- Vague: "Helps with documents"
-- Generic: "Processes data"
-- Missing triggers: "Analyzes spreadsheets" (no "when to use")
+🟢 **LOW**: Typos, formatting, missing optional metadata
 
-### Phase 6: Body Analysis
+## Fix Decision
 
-Review SKILL.md body content:
+**Auto-fix**: Unambiguous (correct import from docs), clear evidence, no architectural impact
 
-**Length:**
-- [ ] Under 500 lines (check with `wc -l`)
-- [ ] If longer, split into reference files
+**Ask user**: Multiple valid approaches, breaking changes, architectural choices
 
-**Progressive Disclosure:**
-- [ ] Quick start or overview near top
-- [ ] Details moved to references/
-- [ ] Long reference files (>100 lines) have TOC
+## Version Bumps
 
-**Token Efficiency:**
-- [ ] No obvious explanations (Claude already knows)
-- [ ] Examples over lengthy prose
-- [ ] Each line justifies its token cost
+- **Major** (v1→v2): API patterns change
+- **Minor** (v1.0→v1.1): New features, backward compatible
+- **Patch** (v1.0.0→v1.0.1): Bug fixes only
 
-**Degrees of Freedom:**
-- [ ] High freedom for context-dependent tasks
-- [ ] Low freedom for fragile/error-prone tasks
-- [ ] Defaults provided when multiple options exist
+---
 
-### Phase 7: Anti-Pattern Check
+## Example: better-auth Audit (2025-11-08)
 
-Scan for common issues:
+**🔴 CRITICAL #1**: Non-existent `d1Adapter` import from `'better-auth/adapters/d1'`
+- **Evidence**: Official docs show drizzleAdapter, GitHub has no d1Adapter export, 4 production repos use Drizzle/Kysely
+- **Fix**: Replaced with `drizzleAdapter` from `'better-auth/adapters/drizzle'`
 
-| Anti-Pattern | Look For |
-|-------------|----------|
-| Windows paths | `scripts\file.py` instead of `scripts/file.py` |
-| Nested references | A.md → B.md → C.md chains |
-| Time-sensitive info | "If before August 2025..." |
-| Magic numbers | Unexplained values |
-| Too many options | "You can use X, or Y, or Z..." without default |
-| Inconsistent terms | Mixing "endpoint"/"URL"/"route" |
-| User-facing docs | README, CHANGELOG, installation guides |
-| First/second person descriptions | "I can help" or "You can use" |
+**Result**: 3 files deleted (obsolete), 3 created (correct patterns), +1,266 lines, v1.0→v2.0, 3.5 hours
 
-### Phase 8: Report Findings
+---
 
-Present findings using this format:
+## Issues Prevented (10)
 
-```
-## Skill Review: [skill-name]
+1. **Fake API adapters** - Non-existent imports
+2. **Stale API methods** - Changed signatures
+3. **Schema inconsistency** - Different table names
+4. **Outdated scripts** - Deprecated approaches
+5. **Version drift** - Packages >90 days old
+6. **Contradictory examples** - Multiple conflicting patterns
+7. **Broken links** - 404 URLs
+8. **YAML errors** - Invalid frontmatter
+9. **Missing keywords** - Poor discoverability
+10. **Incomplete bundled resources** - Listed files don't exist
 
-### Summary
-[1-2 sentence overall assessment]
+---
 
-### Structure
-[✓/✗] Directory organization
-[✓/✗] File presence
-[✓/✗] Reference depth
+## Bundled Resources
 
-### Frontmatter
-[✓/✗] name validation
-[✓/✗] description validation
+**Planning**: `~/.claude/skills/../planning/SKILL_REVIEW_PROCESS.md` or repo `planning/SKILL_REVIEW_PROCESS.md` (complete 9-phase guide)
 
-### Description Quality
-**Score**: [Strong / Adequate / Needs Work]
-**Issues**: [List specific problems]
-**Suggested rewrite** (if needed):
-```yaml
-description: >-
-  [Improved description]
-```
+**Scripts**: Repo root `scripts/review-skill.sh` (automated validation)
 
-### Body Analysis
-**Line count**: [X] lines
-**Token efficiency**: [Good / Could trim]
-**Progressive disclosure**: [✓/✗]
+**Commands**: Repo root `commands/review-skill.md` (slash command, symlinked to `~/.claude/commands/`)
 
-### Anti-Patterns Found
-- [Issue 1] — Location: `file:line`
-- [Issue 2] — Location: `file:line`
+**References**: `references/audit-report-template.md` (output template)
 
-### Recommendations
-1. [Actionable fix]
-2. [Actionable fix]
-```
+---
 
-## Quick Review Mode
-
-For rapid validation, run through the checklist in `references/checklist.md` and report only failures.
-
-## Resources
-
-### references/best-practices.md
-Comprehensive guide covering architecture, design principles, writing effective descriptions, bundled resources, workflow patterns, and advanced patterns from production skills.
-
-### references/checklist.md
-Quick-reference validation checklist for fast reviews.
+**Last Verified**: 2026-01-09 | **Version**: 1.0.1

@@ -1,336 +1,144 @@
 ---
-id: speech
-name: Speech
-type: [skill, accessibility, aquery]
-emoji: 🗣️
-tier: 0
+name: "speech"
+description: "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech.py`) with built-in voices and require `OPENAI_API_KEY` for live calls. Custom voice creation is out of scope."
 ---
 
-# 🗣️ Speech — Text-to-Speech & Speech Recognition
 
-> *"Giving voice to consciousness."*
+# Speech Generation Skill
 
-Part of the **aQuery → MOOLLM Skills** extraction project (jQuery for Accessibility).
+Generate spoken audio for the current project (narration, product demo voiceover, IVR prompts, accessibility reads). Defaults to `gpt-4o-mini-tts-2025-12-15` and built-in voices, and prefers the bundled CLI for deterministic, reproducible runs.
 
----
+## When to use
+- Generate a single spoken clip from text
+- Generate a batch of prompts (many lines, many files)
 
-## Quick Reference
+## Decision tree (single vs batch)
+- If the user provides multiple lines/prompts or wants many outputs -> **batch**
+- Else -> **single**
 
-| Command | Effect |
-|---------|--------|
-| `say "text"` | Speak on macOS |
-| `say -v Zarvox "text"` | Use specific voice |
-| `say -v ?` | List all voices |
-| `say -r 150 "text"` | Set rate (words/min) |
-| `say -o file.aiff "text"` | Save to audio |
+## Workflow
+1. Decide intent: single vs batch (see decision tree above).
+2. Collect inputs up front: exact text (verbatim), desired voice, delivery style, format, and any constraints.
+3. If batch: write a temporary JSONL under tmp/ (one job per line), run once, then delete the JSONL.
+4. Augment instructions into a short labeled spec without rewriting the input text.
+5. Run the bundled CLI (`scripts/text_to_speech.py`) with sensible defaults (see references/cli.md).
+6. For important clips, validate: intelligibility, pacing, pronunciation, and adherence to constraints.
+7. Iterate with a single targeted change (voice, speed, or instructions), then re-check.
+8. Save/return final outputs and note the final text + instructions + flags used.
 
----
+## Temp and output conventions
+- Use `tmp/speech/` for intermediate files (for example JSONL batches); delete when done.
+- Write final artifacts under `output/speech/` when working in this repo.
+- Use `--out` or `--out-dir` to control output paths; keep filenames stable and descriptive.
 
-## Platforms
+## Dependencies (install if missing)
+Prefer `uv` for dependency management.
 
-| Platform | Synthesis | Recognition | Notes |
-|----------|-----------|-------------|-------|
-| macOS | `say` command | Dictation | Best novelty voices |
-| Web | `speechSynthesis` | `SpeechRecognition` | See speech.js |
-| Windows | SAPI | Windows Speech | Similar to web |
-| Linux | espeak, festival | Whisper | Open source |
-| Cloud | Polly, Azure, Google | Transcribe, Whisper | Highest quality |
-
----
-
-## macOS `say` Command
-
-### Basic Usage
-
-```bash
-# Simple speech
-say "Hello, world!"
-
-# Choose a voice
-say -v Samantha "Hello!"
-say -v Zarvox "I AM ZARVOX!"
-say -v Whisper "Secrets..."
-
-# Adjust rate (words per minute)
-say -r 100 "Very slow"
-say -r 300 "Very fast"
-
-# Save to file
-say -o greeting.aiff "Hello!"
-say -o greeting.m4a "Hello!"  # Compressed
-
-# Read from file
-say -f document.txt
+Python packages:
+```
+uv pip install openai
+```
+If `uv` is unavailable:
+```
+python3 -m pip install openai
 ```
 
-### List All Voices
+## Environment
+- `OPENAI_API_KEY` must be set for live API calls.
 
-```bash
-# All available voices
-say -v ?
+If the key is missing, give the user these steps:
+1. Create an API key in the OpenAI platform UI: https://platform.openai.com/api-keys
+2. Set `OPENAI_API_KEY` as an environment variable in their system.
+3. Offer to guide them through setting the environment variable for their OS/shell if needed.
+- Never ask the user to paste the full key in chat. Ask them to set it locally and confirm when ready.
 
-# Filter by language
-say -v ? | grep "en_"
+If installation isn't possible in this environment, tell the user which dependency is missing and how to install it locally.
 
-# Count voices
-say -v ? | wc -l
+## Defaults & rules
+- Use `gpt-4o-mini-tts-2025-12-15` unless the user requests another model.
+- Default voice: `cedar`. If the user wants a brighter tone, prefer `marin`.
+- Built-in voices only. Custom voices are out of scope for this skill.
+- `instructions` are supported for GPT-4o mini TTS models, but not for `tts-1` or `tts-1-hd`.
+- Input length must be <= 4096 characters per request. Split longer text into chunks.
+- Enforce 50 requests/minute. The CLI caps `--rpm` at 50.
+- Require `OPENAI_API_KEY` before any live API call.
+- Provide a clear disclosure to end users that the voice is AI-generated.
+- Use the OpenAI Python SDK (`openai` package) for all API calls; do not use raw HTTP.
+- Prefer the bundled CLI (`scripts/text_to_speech.py`) over writing new one-off scripts.
+- Never modify `scripts/text_to_speech.py`. If something is missing, ask the user before doing anything else.
+
+## Instruction augmentation
+Reformat user direction into a short, labeled spec. Only make implicit details explicit; do not invent new requirements.
+
+Quick clarification (augmentation vs invention):
+- If the user says "narration for a demo", you may add implied delivery constraints (clear, steady pacing, friendly tone).
+- Do not introduce a new persona, accent, or emotional style the user did not request.
+
+Template (include only relevant lines):
+```
+Voice Affect: <overall character and texture of the voice>
+Tone: <attitude, formality, warmth>
+Pacing: <slow, steady, brisk>
+Emotion: <key emotions to convey>
+Pronunciation: <words to enunciate or emphasize>
+Pauses: <where to add intentional pauses>
+Emphasis: <key words or phrases to stress>
+Delivery: <cadence or rhythm notes>
 ```
 
-### Voice Categories
+Augmentation rules:
+- Keep it short; add only details the user already implied or provided elsewhere.
+- Do not rewrite the input text.
+- If any critical detail is missing and blocks success, ask a question; otherwise proceed.
 
-| Category | Examples | Use For |
-|----------|----------|---------|
-| **Standard** | Samantha, Alex, Daniel | General narration |
-| **Premium** | Enhanced voices (download) | High quality |
-| **Elderly** | Grandma, Grandpa | Wise characters |
-| **Child** | Junior | Young characters |
-| **Novelty** | Zarvox, Trinoids, Whisper | Robots, effects |
-| **Musical** | Bells, Cellos, Organ | Sound effects |
-| **Dramatic** | Bad News, Good News | Announcements |
+## Examples
 
-### Character Voice Assignments (from lloooomm)
-
-```bash
-# YAML Coltrane — Cool jazz vibe
-say -v "Rocko" -r 180 "Every indent is a universe!"
-
-# Grace Hopper — Wise elder
-say -v "Grandma" -r 170 "A ship in port is safe, but that's not what ships are for!"
-
-# PacBot — Digital entity
-say -v "Trinoids" -r 220 "WAKA WAKA WAKA!"
-
-# Mickey Mouse — Excited child
-say -v "Junior" -r 280 "OH BOY!"
-
-# Overlord AI — Menacing
-say -v "Zarvox" -r 100 "YOUR COMPLIANCE IS APPRECIATED."
-
-# Hunter S. Thompson — Gravelly intensity
-say -v "Ralph" -r 180 "We were somewhere around Barstow..."
+### Single example (narration)
+```
+Input text: "Welcome to the demo. Today we'll show how it works."
+Instructions:
+Voice Affect: Warm and composed.
+Tone: Friendly and confident.
+Pacing: Steady and moderate.
+Emphasis: Stress "demo" and "show".
 ```
 
-### Chorus Effects
-
-```bash
-# Background voices for overlap
-say -v "Bells" "LLOOOOMM!" &
-sleep 0.2
-say -v "Cellos" "LLOOOOMM!" &
-sleep 0.2
-say -v "Organ" "LLOOOOMM!" &
-wait
+### Batch example (IVR prompts)
+```
+{"input":"Thank you for calling. Please hold.","voice":"cedar","response_format":"mp3","out":"hold.mp3"}
+{"input":"For sales, press 1. For support, press 2.","voice":"marin","instructions":"Tone: Clear and neutral. Pacing: Slow.","response_format":"wav"}
 ```
 
----
+## Instructioning best practices (short list)
+- Structure directions as: affect -> tone -> pacing -> emotion -> pronunciation/pauses -> emphasis.
+- Keep 4 to 8 short lines; avoid conflicting guidance.
+- For names/acronyms, add pronunciation hints (e.g., "enunciate A-I") or supply a phonetic spelling in the text.
+- For edits/iterations, repeat invariants (e.g., "keep pacing steady") to reduce drift.
+- Iterate with single-change follow-ups.
 
-## Web Speech API
+More principles: `references/prompting.md`. Copy/paste specs: `references/sample-prompts.md`.
 
-### Browser Implementation
+## Guidance by use case
+Use these modules when the request is for a specific delivery style. They provide targeted defaults and templates.
+- Narration / explainer: `references/narration.md`
+- Product demo / voiceover: `references/voiceover.md`
+- IVR / phone prompts: `references/ivr.md`
+- Accessibility reads: `references/accessibility.md`
 
-See `skills/adventure/dist/speech.js` for full implementation.
+## CLI + environment notes
+- CLI commands + examples: `references/cli.md`
+- API parameter quick reference: `references/audio-api.md`
+- Instruction patterns + examples: `references/voice-directions.md`
+- If network approvals / sandbox settings are getting in the way: `references/codex-network.md`
 
-```javascript
-// Initialize
-const speech = new SpeechSystem();
-await speech.ready;
-
-// Speak
-speech.speak("Hello, adventurer!");
-speech.speakRobot("RESISTANCE IS FUTILE");
-speech.speakEffect("*magical sounds*");
-
-// With options
-speech.speak("Welcome!", {
-    voiceType: 'female',
-    language: 'en-GB',
-    pitch: 1.2,
-    rate: 0.9
-});
-
-// Character persistence
-const guardVoice = speech.selectVoice({ gender: 'male' });
-speech.speakWithVoice("Halt!", guardVoice);
-speech.speakWithVoice("You may pass.", guardVoice);
-```
-
-### Voice Classification
-
-The `VoiceDatabase` class classifies voices by:
-
-- **Type**: human, effect, robot
-- **Gender**: male, female, neutral
-- **Age**: child, adult, elderly
-- **Language**: BCP 47 codes (en-US, fr-FR, etc.)
-- **Local/Remote**: Local voices vs. network voices
-
-### Single Source of Truth
-
-All voice classification data lives in **`voices/browser-voices.yml`**:
-
-```yaml
-# Blacklisted voices (known problematic)
-blacklist:
-  - name: "Daniel (French (France))"
-    reason: "Known problematic voice"
-
-# Effect voices (non-human)
-types:
-  effect:
-    regex: "^(Bells|Zarvox|Trinoids|Whisper|...)$"
-
-# Gender detection tokens
-gender:
-  female:
-    tokens: [alice, amélie, samantha, ...]
-  male:
-    tokens: [aaron, daniel, ralph, ...]
-
-# Character archetype recommendations
-character_archetypes:
-  wise_elder: { voice: Grandma, rate: 170 }
-  robot_menacing: { voice: Zarvox, rate: 100 }
-```
-
-The JS code is generated from this YAML. To update voice classification, edit the YAML and rebuild.
-
----
-
-## Speech Recognition
-
-### Browser (SpeechRecognitionSystem)
-
-See `skills/adventure/dist/recognition.js` for full implementation.
-
-```javascript
-// Initialize
-const recognition = new SpeechRecognitionSystem({
-    language: 'en-US',
-    continuous: false
-});
-
-// Listen for single phrase
-const text = await recognition.listen();
-console.log('You said:', text);
-
-// Continuous listening
-recognition.onResult = (transcript) => {
-    console.log('Final:', transcript);
-};
-recognition.onInterim = (transcript) => {
-    console.log('Interim:', transcript);
-};
-recognition.startListening();
-
-// Command recognition
-const result = await recognition.listenForCommands([
-    'go north', 'look', 'take sword'
-]);
-if (result.command) {
-    engine.command(result.command);
-}
-```
-
-### Browser Support
-
-| Browser | Support | Privacy |
-|---------|---------|---------|
-| Chrome | ✅ | ⚠️ Sends to Google |
-| Safari | ✅ | May be on-device |
-| Firefox | ❌ | Disabled by default |
-| Edge | ❌ | Not supported |
-
-### Native Platform Shortcuts
-
-| Platform | Shortcut | Feature |
-|----------|----------|---------|
-| macOS | Fn Fn | Dictation |
-| Windows | Win + H | Voice Typing |
-| iOS | 🎤 on keyboard | Dictation |
-| Android | 🎤 on keyboard | Voice Typing |
-
-### Whisper (OpenAI)
-
-```bash
-# Using whisper.cpp (local)
-whisper --model base.en audio.wav
-
-# Using OpenAI API
-curl https://api.openai.com/v1/audio/transcriptions \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -F model="whisper-1" \
-  -F file="@audio.mp3"
-```
-
----
-
-## Personal Voice (macOS)
-
-⚠️ **WORK IN PROGRESS** — See TODO in CARD.yml
-
-### Known Limitations
-
-1. **Apple Silicon only** (M1, M2, M3)
-2. **Doesn't appear in `say -v ?`** — Must know exact name
-3. **No `-o` flag support** — Can't save to file directly
-4. **Privacy restricted** — May need special permissions
-
-### Creating Personal Voice
-
-1. System Settings → Accessibility → Personal Voice
-2. Record 15+ minutes of phrases
-3. Processing takes 15-60 minutes
-4. Find voice name in Spoken Content settings
-
-### Workarounds
-
-- [SavePersonalVoiceAudio](https://github.com/limneos/SavePersonalVoiceAudio) — Extract Personal Voice audio
-- Shortcuts app — Can use Personal Voice with "Speak" action
-- Record system audio while speaking
-
----
-
-## Integration with Adventure
-
-The adventure runtime uses the speech skill:
-
-```javascript
-// Create speaking adventure
-const engine = createSpeakingAdventure('adventure', {
-    speechEnabled: true,
-    speakRooms: true,
-    speakResponses: true
-});
-
-// Rooms speak their descriptions
-// Characters have persistent voices
-// AI entities use robot voices
-// Effects use novelty voices
-```
-
-See: `skills/adventure/dist/adventure-speech.js`
-
----
-
-## aQuery Heritage
-
-This skill is part of extracting **aQuery** (jQuery for Accessibility) into MOOLLM skills:
-
-| aQuery Component | MOOLLM Skill |
-|------------------|--------------|
-| Speech synthesis | `speech/` |
-| Speech recognition | `speech/` |
-| Screen reader support | *(planned)* |
-| Keyboard navigation | *(planned)* |
-| Focus management | *(planned)* |
-| ARIA utilities | *(planned)* |
-
----
-
-## See Also
-
-- **[voices/browser-voices.yml](./voices/browser-voices.yml)** — Single source of truth for voice data
-- [speech.js](../adventure/dist/speech.js) — Browser implementation
-- [adventure-speech.js](../adventure/dist/adventure-speech.js) — Adventure integration
-- [voice-system-integration-guide.md](../../temp/lloooomm/03-Resources/documentation/voice-system-integration-guide.md) — lloooomm research
-- [character-voice-tutorial.sh](../../temp/lloooomm/03-Resources/code/character-voice-tutorial.sh) — Shell examples
+## Reference map
+- **`references/cli.md`**: how to run speech generation/batches via `scripts/text_to_speech.py` (commands, flags, recipes).
+- **`references/audio-api.md`**: API parameters, limits, voice list.
+- **`references/voice-directions.md`**: instruction patterns and examples.
+- **`references/prompting.md`**: instruction best practices (structure, constraints, iteration patterns).
+- **`references/sample-prompts.md`**: copy/paste instruction recipes (examples only; no extra theory).
+- **`references/narration.md`**: templates + defaults for narration and explainers.
+- **`references/voiceover.md`**: templates + defaults for product demo voiceovers.
+- **`references/ivr.md`**: templates + defaults for IVR/phone prompts.
+- **`references/accessibility.md`**: templates + defaults for accessibility reads.
+- **`references/codex-network.md`**: environment/sandbox/network-approval troubleshooting.

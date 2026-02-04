@@ -1,64 +1,33 @@
 ---
 name: bump-version
-description: Bump the version of the zenoh-ros2-sdk package across all configuration files. Use when the user asks to update, bump, or change the package version, or when preparing a new release.
+description: Bump version numbers for a new release. Use when releasing, updating version, or preparing a new version.
 ---
 
 # Bump Version
 
-This skill guides you through upgrading the version number of the `zenoh-ros2-sdk` package.
+Update the version string in **both** of these files (they must match):
 
-## When to Use
+1. `pyproject.toml` line 7:
+   ```toml
+   version = "X.Y.Z"
+   ```
 
-- User asks to "bump", "update", or "change" the version
-- Preparing a new release (major, minor, or patch)
-- Version numbers are out of sync across config files
+2. `pytest_claude_agent_sdk/__init__.py` line 27:
+   ```python
+   __version__ = "X.Y.Z"
+   ```
 
-## 1. Determine the New Version
+## Steps
 
-Decide whether this is a Major, Minor, or Patch release.
-- **Current Version**: Check `pyproject.toml` or `zenoh_ros2_sdk/__init__.py`.
-- **Example**: `0.1.2` -> `0.1.3` (Patch)
+1. Ask user for the new version if not provided
+2. Read both files to confirm current version
+3. Update both files with new version
+4. Show diff of changes
+5. Suggest commit message: `Bump version to X.Y.Z`
 
-## 2. Update Files
+## Version Format
 
-You must update the version string in the following **3 files**. Ensure they all match exactly.
-
-### A. `pyproject.toml`
-Update the `version` field under `[project]`:
-```toml
-[project]
-name = "zenoh-ros2-sdk"
-version = "0.1.3"  # <--- Update this
-```
-
-### B. `zenoh_ros2_sdk/__init__.py`
-Update the `__version__` variable:
-```python
-__version__ = "0.1.3"  # <--- Update this
-```
-
-### C. `setup.py`
-Update the `version` argument in the `setup()` call:
-```python
-setup(
-    name="zenoh-ros2-sdk",
-    version="0.1.3",  # <--- Update this
-    # ...
-)
-```
-
-## 3. Verify Changes
-
-Run the following command to verify consistency:
-```bash
-python3 setup.py --version
-```
-The output **must** match your new version.
-
-## 4. Commit Changes
-
-Commit the changes with a standard message:
-```bash
-git add pyproject.toml setup.py zenoh_ros2_sdk/__init__.py
-git commit -m "bump(version): update version to 0.1.3"
-```
+Use semantic versioning: `MAJOR.MINOR.PATCH`
+- MAJOR: Breaking changes
+- MINOR: New features, backward compatible
+- PATCH: Bug fixes, backward compatible

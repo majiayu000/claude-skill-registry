@@ -1,9 +1,7 @@
 {
   "name": "osint",
-  "description": "Gathers intelligence from public sources. Use when searching for usernames, geolocating images, investigating social media, analyzing domains, or solving information gathering challenges.",
-  "repo": "kiwamizamurai/cctf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.3/.claude/skills/OSINT/SKILL.md",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "downloaded_at": "2026-02-04T05:12:56.277686Z"
 }

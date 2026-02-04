@@ -16,6 +16,36 @@ streaming: supported
 
 # MCP-to-Skill Converter
 
+## Installation
+
+The skill invokes `.claude/tools/integrations/mcp-converter/batch_converter.py`. Requirements:
+
+- **Python 3.10+**: [python.org](https://www.python.org/downloads/) or `winget install Python.Python.3.12` (Windows), `brew install python@3.12` (macOS).
+- **pip**: Usually included with Python; verify with `pip --version`.
+- **Dependencies**: From the repo root, install deps for the integration (e.g. PyYAML if required):
+  ```bash
+  pip install pyyaml
+  ```
+  Run from project root; the script uses `.claude/tools/integrations/mcp-converter/` (catalog: `mcp-catalog.yaml`).
+
+## Cheat Sheet & Best Practices
+
+**MCP design:** Single responsibility per server; bounded toolsets; contracts first (strict I/O schemas); stateless by default; additive changes; security (identity, auth, audit). Prefer stdio for local, Streamable HTTP for remote; use a gateway for multi-tenant/centralized policy.
+
+**Conversion:** Introspect server; estimate token usage of tool schemas; generate skill with progressive disclosure. Test converted skills before relying on them. Use catalog + batch_converter for rules-driven conversion.
+
+**Hacks:** Focus on high-token or high-value servers first. Keep generated SKILL.md and wrappers in version control. Use `mcp-catalog.yaml` to mark `keep_as_mcp` or auto-convert thresholds.
+
+## Certifications & Training
+
+**MCP:** [MCP Best Practices](https://mcp-best-practice.github.io/mcp-best-practice/), [modelcontextprotocol.info](https://modelcontextprotocol.info/docs/best-practices/). **Skill data:** Single responsibility, bounded tools, contracts first, stateless; stdio vs HTTP; gateway pattern; introspect → generate skill.
+
+## Hooks & Workflows
+
+**Suggested hooks:** Post–MCP config change: optional batch_converter run to refresh skills. Use with **evolution-orchestrator** (add mcp-converter to secondary) when creating skills from MCP servers.
+
+**Workflows:** Use with **evolution-orchestrator**. Flow: list servers → convert server or batch → test converted skill. See `creators/skill-creator-workflow.yaml`; mcp-converter feeds skill-creator input.
+
 ## 🚀 Usage
 
 ### 1. List Available MCP Servers

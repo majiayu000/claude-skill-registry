@@ -1,12 +1,7 @@
 {
   "name": "azure-cli",
-  "description": "When users share links (such as visualstudio.com or dev.azure.com) and/or mention Azure DevOps, use the Azure DevOps CLI to interact with work items, pull requests (PRs), repositories, and more.",
-  "repo": "scaryrawr/skillz",
-  "category": "development",
-  "tags": [
-    "azure",
-    "cli"
-  ],
-  "stars": 0,
-  "source": "SkillsMP Synced Skills"
+  "repo": "chaterm/terminal-skills",
+  "path": "cloud-cli/azure-cli/SKILL.md",
+  "source": "github.com/chaterm/terminal-skills",
+  "downloaded_at": "2026-02-04T02:24:43.549270Z"
 }

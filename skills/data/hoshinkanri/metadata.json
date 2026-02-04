@@ -1,8 +1,8 @@
 {
   "name": "hoshinkanri",
-  "description": "Strategic policy deployment system for automotive manufacturing. Cascades Group-level targets to shop floor through X-Matrix, catchball process, and bowling chart tracking.\n\nUSE WHEN user says 'hoshin",
+  "description": "Strategic policy deployment system for automotive manufacturing. Cascades Group-level targets to shop floor through X-Matrix, catchball process, and bowling chart tracking.  USE WHEN user says 'hoshin",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

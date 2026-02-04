@@ -1,222 +1,427 @@
 ---
 name: code-organization
-description: Python code organization conventions for this codebase. Apply when structuring modules, organizing imports, and designing file layouts.
-user-invocable: false
+description: Enforce code organization principles - "Directory X contains ONLY class type X", DDD naming patterns, PHP best practices, type safety, and SOLID principles. Use when reviewing code structure, placing classes, or ensuring proper organization.
 ---
 
-# Code Organization Conventions
+# Code Organization Skill
 
-Apply these organization patterns when writing Python code in this repository.
+## Core Principle
 
-## Quick Reference
+> **Directory X contains ONLY class type X**
 
-| Aspect | Pattern |
-|--------|---------|
-| File layout | Imports → Public interface → Private helpers |
-| Module size | Split at ~800 lines or multiple responsibilities |
-| Import order | stdlib → third-party → local |
-| Import style | Absolute imports, no wildcards |
-| Private members | Single `_` prefix |
-| Cohesion | Group by feature/responsibility |
-| Coupling | Depend on abstractions, not concretions |
-| Dependencies | No circular imports |
-| Responsibility | One purpose per function/class |
+This is the fundamental rule for code organization in this codebase.
 
-## Module Structure
+## Context (Input)
 
-**Pattern**: Public interface at top, private helpers below. Within each section,
-group related classes and functions together and order them by logical flow. 
+- Creating new classes and determining correct directory
+- Moving classes to proper locations
+- Reviewing code for organizational compliance
+- Fixing organizational issues from code reviews
+- Ensuring class names match their responsibilities
 
-```python
-# src/package/module/file.py
+## Task (Function)
 
-# Imports (organized by section)
-...
+Enforce strict code organization principles: proper directory structure, DDD naming conventions, specific variable names, type safety, SOLID principles, and PHP best practices.
 
-# Public interface
-class PublicClass:
-    """Public API class."""
-    ...
+## Directory Type Classification
 
-def public_function() -> ReturnType:
-    """Public API function."""
-    ...
+Classes MUST be in directories matching their type:
 
-# Private helpers
-def _private_helper() -> ReturnType:
-    """Internal implementation detail."""
-    ...
+| Directory          | Contains ONLY                   | Example                            |
+| ------------------ | ------------------------------- | ---------------------------------- |
+| `Converter/`       | Type converters                 | `UlidTypeConverter`                |
+| `Transformer/`     | Data transformers (DB/serial)   | `CustomerToArrayTransformer`       |
+| `Validator/`       | Validation logic                | `UlidValidator`                    |
+| `Builder/`         | Object builders                 | `QueryBuilder`                     |
+| `Fixer/`           | Data fixers/modifiers           | `DataFixer`                        |
+| `Cleaner/`         | Data cleaners/filters           | `DataCleaner`                      |
+| `Factory/`         | Object factories                | `CustomerFactory`                  |
+| `Resolver/`        | Value resolvers                 | `CustomerUpdateScalarResolver`     |
+| `Serializer/`      | Serializers/normalizers         | `CustomerNormalizer`               |
+| `Formatter/`       | Data formatters                 | `CustomerNameFormatter`            |
+| `Mapper/`          | Data mappers                    | `PathsMapper`                      |
+| `Provider/`        | Data/service providers          | `TimestampProvider`                |
+| `Processor/`       | API Platform processors         | `CreateCustomerProcessor`          |
+| `EventListener/`   | Event listeners (Symfony)       | `QueryParameterValidationListener` |
+| `EventSubscriber/` | Event subscribers (Symfony/App) | `SendEmailOnCustomerCreated`       |
+
+## DDD Naming Patterns
+
+### By Layer and Type
+
+| Layer              | Class Type         | Naming Pattern                       | Example                           |
+| ------------------ | ------------------ | ------------------------------------ | --------------------------------- |
+| **Domain**         | Entity             | `{EntityName}.php`                   | `Customer.php`                    |
+|                    | Value Object       | `{ConceptName}.php`                  | `Email.php`, `Money.php`          |
+|                    | Domain Event       | `{Entity}{PastTenseAction}.php`      | `CustomerCreated.php`             |
+|                    | Repository Iface   | `{Entity}RepositoryInterface.php`    | `CustomerRepositoryInterface.php` |
+|                    | Exception          | `{SpecificError}Exception.php`       | `InvalidEmailException.php`       |
+| **Application**    | Command            | `{Action}{Entity}Command.php`        | `CreateCustomerCommand.php`       |
+|                    | Command Handler    | `{Action}{Entity}Handler.php`        | `CreateCustomerHandler.php`       |
+|                    | Event Subscriber   | `{Action}On{Event}.php`              | `SendEmailOnCustomerCreated.php`  |
+|                    | DTO                | `{Entity}{Type}.php`                 | `CustomerInput.php`               |
+|                    | Processor          | `{Action}{Entity}Processor.php`      | `CreateCustomerProcessor.php`     |
+|                    | Transformer        | `{From}To{To}Transformer.php`        | `CustomerToArrayTransformer.php`  |
+| **Infrastructure** | Repository         | `{Technology}{Entity}Repository.php` | `MySQLCustomerRepository.php`     |
+|                    | Doctrine Type      | `{ConceptName}Type.php`              | `UlidType.php`                    |
+|                    | Bus Implementation | `{Framework}{Type}Bus.php`           | `SymfonyCommandBus.php`           |
+
+### Directory Structure by Layer
+
+```
+src/{Context}/
+├── Application/
+│   ├── Command/          ← Commands
+│   ├── CommandHandler/   ← Command Handlers
+│   ├── EventSubscriber/  ← Event Subscribers
+│   ├── DTO/              ← Data Transfer Objects
+│   ├── Processor/        ← API Platform Processors
+│   ├── Transformer/      ← Data Transformers
+│   ├── Validator/        ← Validators
+│   ├── Converter/        ← Type Converters
+│   ├── Resolver/         ← Value Resolvers
+│   ├── Factory/          ← Factories
+│   ├── Builder/          ← Builders
+│   ├── Formatter/        ← Formatters
+│   └── MutationInput/    ← GraphQL Mutation Inputs
+├── Domain/
+│   ├── Entity/           ← Entities & Aggregates
+│   ├── ValueObject/      ← Value Objects
+│   ├── Event/            ← Domain Events
+│   ├── Repository/       ← Repository Interfaces
+│   └── Exception/        ← Domain Exceptions
+└── Infrastructure/
+    ├── Repository/       ← Repository Implementations
+    ├── DoctrineType/     ← Custom Doctrine Types
+    ├── EventSubscriber/  ← Infrastructure Event Subscribers
+    ├── EventListener/    ← Symfony Event Listeners
+    └── Bus/              ← Message Bus Implementations
 ```
 
-### Module Size Rules
+## Verification Checklist
 
-| Condition | Action |
-|-----------|--------|
-| File exceeds ~800 lines | Split into multiple modules |
-| File has multiple unrelated responsibilities | Split by responsibility |
-| Functions are tightly related | Keep in same module |
+When creating or reviewing a class, verify:
 
-## Import Organization
+1. ✅ **Class Type Matches Directory** (Directory X contains ONLY class type X)
+   - Example: `UlidValidator` in `Validator/`, NOT `Transformer/`
+2. ✅ **Class Name Follows DDD Pattern** for its type
+3. ✅ **Namespace Matches Directory Structure** exactly
+4. ✅ **Class Name Reflects Actual Functionality**
+5. ✅ **Correct Layer** (Domain/Application/Infrastructure)
+6. ✅ **Domain Layer Has NO Framework Imports** (Symfony/Doctrine/API Platform)
+7. ✅ **Variable Names Are Specific** (not vague)
+   - ✅ `$typeConverter`, `$scalarResolver` (specific)
+   - ❌ `$converter`, `$resolver` (too vague)
+8. ✅ **Parameter Names Match Actual Types**
+   - ✅ `mixed $value` when accepts any type
+   - ❌ `string $binary` when accepts mixed
+9. ✅ **No "Helper" or "Util" Classes** (extract specific responsibilities)
 
-**Pattern**: Three sections in order, separated by blank lines (enforced by ruff)
+## PHP Best Practices
 
-```python
-# 1. Standard library
-import json
-from collections.abc import Sequence
-from pathlib import Path
+### Required Patterns
 
-# 2. Third-party packages
-import numpy as np
-from pydantic import BaseModel
+- ✅ **Constructor property promotion**
+- ✅ **Inject ALL dependencies** (no default instantiation)
+- ✅ **Use `readonly`** when appropriate
+- ✅ **Use `final`** for classes that shouldn't be extended
+- ✅ **No static methods** (except named constructors like `create()`, `from()`)
 
-# 3. Local application imports
-from chain_reaction.core import Config
-from chain_reaction.utils import validate_input
+### Anti-Patterns (Forbidden)
+
+- ❌ **Helper/Util classes** - Extract specific responsibilities
+- ❌ **Default instantiation in constructors** - Inject dependencies
+- ❌ **Vague variable names** - Be specific
+- ❌ **Namespace mismatches** - Must match directory structure
+
+## Factory Pattern (Maintainability & Flexibility)
+
+> **Use factories when creating typed classes with dependencies or configuration**
+
+### When Factories Are REQUIRED (Production Code)
+
+1. Objects with injected dependencies (timestamp providers, config, etc.)
+2. Objects requiring complex construction logic
+3. Objects needing different implementations per environment
+4. Objects created from external input (DTOs, metrics, etc.)
+
+### When Factories Are OPTIONAL (Tests)
+
+- Tests can instantiate objects directly for simplicity
+- Test-specific factories can be created for reusable fixtures
+
+### Factory Benefits
+
+- ✅ Centralized object creation logic
+- ✅ Easy to inject different implementations
+- ✅ Configuration changes don't affect consumers
+- ✅ Single place for validation/transformation
+- ✅ Enables dependency injection for complex objects
+
+### Example: Bad vs Good
+
+```php
+// ❌ BAD: Direct instantiation with configuration
+public function emit(BusinessMetric $metric): void
+{
+    $timestamp = (int)(microtime(true) * 1000);
+    $payload = new EmfPayload(
+        new EmfAwsMetadata($timestamp, new EmfCloudWatchMetricConfig(...)),
+        new EmfDimensionValueCollection(...),
+        new EmfMetricValueCollection(...)
+    );
+    $this->logger->info($payload);
+}
+
+// ✅ GOOD: Factory handles complexity
+public function emit(BusinessMetric $metric): void
+{
+    $payload = $this->payloadFactory->createFromMetric($metric);
+    $this->logger->info($payload);
+}
 ```
 
-### Import Rules
+### Factory Naming Convention
 
-| Rule | Correct | Incorrect |
-|------|---------|-----------|
-| Use absolute imports | `from chain_reaction.core import X` | `from .core import X` |
-| No wildcard imports | `from module import func1, func2` | `from module import *` |
-| Group related imports | `from typing import Final, TypeVar` | Separate lines for same module |
+- `{ObjectName}Factory` - creates `{ObjectName}` instances
+- Location: Same namespace as the object being created
+- Example: `EmfPayloadFactory` creates `EmfPayload`
 
-## Private Members
+## Type Safety: Classes Over Arrays
 
-**Pattern**: Single underscore `_` prefix for internal implementation
+> **Prefer typed classes and collections over arrays for structured data**
 
-| Element | Public | Private |
-|---------|--------|---------|
-| Functions | `validate_input()` | `_normalize_data()` |
-| Methods | `process()` | `_internal_step()` |
-| Attributes | `self.config` | `self._cache` |
-| Module-level | `DEFAULT_CONFIG` | `_INTERNAL_STATE` |
+Arrays lack type safety and self-documentation. Use concrete classes instead.
 
-```python
-# CORRECT - clear public/private distinction
-class DataProcessor:
-    def __init__(self, config: Config) -> None:
-        self.config = config           # Public attribute
-        self._cache: dict[str, Any] = {}  # Private attribute
+### Array vs Class Comparison
 
-    def process(self, data: Data) -> Result:  # Public method
-        normalized = self._normalize(data)
-        return self._transform(normalized)
+| Pattern       | Bad (Array)                               | Good (Class)                                |
+| ------------- | ----------------------------------------- | ------------------------------------------- |
+| Configuration | `['endpoint' => 'X', 'operation' => 'Y']` | `new EndpointOperationDimensions('X', 'Y')` |
+| Return data   | `return ['name' => $n, 'value' => $v]`    | `return new MetricData($n, $v)`             |
+| Method params | `function emit(array $metrics)`           | `function emit(MetricCollection $metrics)`  |
+| Events data   | `['type' => 'created', 'id' => $id]`      | `new CustomerCreatedEvent($id)`             |
 
-    def _normalize(self, data: Data) -> Data:  # Private method
-        """Normalize input data."""
-        ...
+### Benefits of Typed Classes
 
-    def _transform(self, data: Data) -> Result:  # Private method
-        """Transform normalized data to result."""
-        ...
+- ✅ IDE autocompletion and refactoring support
+- ✅ Static analysis catches type errors
+- ✅ Self-documenting code
+- ✅ Encapsulation (validation in constructor)
+- ✅ Single Responsibility
+- ✅ Open/Closed principle (extend via new classes)
+
+### Collection Pattern
+
+```php
+// ❌ BAD: Array of arrays
+$metrics = [
+    ['name' => 'OrdersPlaced', 'value' => 1],
+    ['name' => 'OrderValue', 'value' => 99.99],
+];
+
+// ✅ GOOD: Typed collection of objects
+$metrics = new MetricCollection(
+    new OrdersPlacedMetric(value: 1),
+    new OrderValueMetric(value: 99.99)
+);
 ```
 
-## Module Design Principles
+### When Arrays ARE Acceptable
 
-### High Cohesion
+- Simple key-value maps for serialization output (`toArray()` methods)
+- Framework integration points requiring arrays
+- Temporary internal data within a single method
 
-Group code by feature or responsibility:
+## Cross-Cutting Concerns Pattern
 
-```python
-# CORRECT - user module contains all user-related code
-# src/chain_reaction/users/repository.py
-def fetch_user_by_id(user_id: int) -> User: ...
-def create_user(data: UserCreate) -> User: ...
-def update_user(user_id: int, data: UserUpdate) -> User: ...
+> **Use event subscribers for cross-cutting concerns (metrics, logging), NOT direct injection into handlers**
 
-# INCORRECT - mixed responsibilities
-# src/chain_reaction/database.py
-def fetch_user_by_id(user_id: int) -> User: ...
-def fetch_order_by_id(order_id: int) -> Order: ...
-def create_user(data: UserCreate) -> User: ...
-def create_order(data: OrderCreate) -> Order: ...
+### Anti-Pattern: Metrics in Command Handler
+
+```php
+// ❌ WRONG: Metrics in command handler
+final class CreateCustomerHandler
+{
+    public function __construct(
+        private CustomerRepository $repository,
+        private BusinessMetricsEmitterInterface $metrics  // Wrong place!
+    ) {}
+
+    public function __invoke(CreateCustomerCommand $cmd): void
+    {
+        $customer = Customer::create(...);
+        $this->repository->save($customer);
+        $this->metrics->emit(new CustomersCreatedMetric());  // Violates SRP
+    }
+}
 ```
 
-### Low Coupling
+### Correct Pattern: Dedicated Event Subscriber
 
-Changes to one module should not require changes to others:
+```php
+// ✅ CORRECT: Clean command handler
+final class CreateCustomerHandler
+{
+    public function __construct(
+        private CustomerRepository $repository,
+        private EventBusInterface $eventBus
+    ) {}
 
-```python
-# CORRECT - module depends on abstraction
-from chain_reaction.interfaces import Storage
+    public function __invoke(CreateCustomerCommand $cmd): void
+    {
+        $customer = Customer::create(...);
+        $this->repository->save($customer);
+        $this->eventBus->publish(...$customer->pullDomainEvents());
+        // Metrics subscriber handles emission
+    }
+}
 
-def save_data(storage: Storage, data: Data) -> None:
-    storage.write(data)
-
-# INCORRECT - module depends on concrete implementation
-from chain_reaction.s3 import S3Client
-
-def save_data(data: Data) -> None:
-    client = S3Client()
-    client.upload(data)
+// ✅ CORRECT: Metrics in dedicated subscriber
+final class CustomerCreatedMetricsSubscriber implements DomainEventSubscriberInterface
+{
+    public function __invoke(CustomerCreatedEvent $event): void
+    {
+        // Error handling is automatic via DomainEventMessageHandler.
+        // Subscribers are executed in async workers - failures are logged + emit metrics.
+        // This ensures observability never breaks the main request (AP from CAP).
+        $this->metricsEmitter->emit($this->metricFactory->create());
+    }
+}
 ```
 
-### No Circular Dependencies
+## Common Issues and Fixes
 
-```python
-# INCORRECT - circular import
-# module_a.py
-from module_b import func_b
-def func_a(): return func_b()
+### Issue 1: Class in Wrong Type Directory
 
-# module_b.py
-from module_a import func_a  # Circular!
-def func_b(): return func_a()
+```bash
+❌ WRONG:
+src/Shared/Infrastructure/Transformer/UlidValidator.php
 
-# CORRECT - extract shared code to third module
-# shared.py
-def shared_func(): ...
+✅ CORRECT:
+src/Shared/Infrastructure/Validator/UlidValidator.php
 
-# module_a.py
-from shared import shared_func
-
-# module_b.py
-from shared import shared_func
+# Fix:
+mv src/Shared/Infrastructure/Transformer/UlidValidator.php \
+   src/Shared/Infrastructure/Validator/UlidValidator.php
+# Update namespace and all imports
 ```
 
-### Single Responsibility
+### Issue 2: Vague Variable Names
 
-Each function/class should have one clear purpose:
+```php
+❌ WRONG:
+private UlidTypeConverter $converter;  // Converter of what?
 
-```python
-# CORRECT - single responsibility
-def validate_email(email: str) -> bool:
-    """Check if email format is valid."""
-    ...
-
-def send_email(to: str, subject: str, body: str) -> None:
-    """Send an email to recipient."""
-    ...
-
-# INCORRECT - multiple responsibilities
-def validate_and_send_email(email: str, subject: str, body: str) -> bool:
-    """Validate email and send if valid."""
-    ...
+✅ CORRECT:
+private UlidTypeConverter $typeConverter;  // Specific!
 ```
 
-## DRY Without Tight Coupling
+### Issue 3: Misleading Parameter Names
 
-Follow DRY, but never create tight coupling just to avoid repetition:
+```php
+❌ WRONG:
+public function fromBinary(mixed $binary): Ulid  // Accepts mixed, not just binary
 
-```python
-# CORRECT - acceptable duplication to avoid coupling
-# orders/validation.py
-def validate_order_amount(amount: Decimal) -> bool:
-    return amount > 0 and amount < MAX_ORDER_AMOUNT
-
-# payments/validation.py
-def validate_payment_amount(amount: Decimal) -> bool:
-    return amount > 0 and amount < MAX_PAYMENT_AMOUNT
-
-# INCORRECT - forced coupling to avoid duplication
-# shared/validation.py
-def validate_amount(amount: Decimal, max_amount: Decimal) -> bool:
-    return amount > 0 and amount < max_amount
-
-# Now orders and payments both depend on shared module
+✅ CORRECT:
+public function fromBinary(mixed $value): Ulid  // Accurate!
 ```
 
+### Issue 4: Helper/Util Classes
 
+```php
+❌ WRONG:
+class CustomerHelper {
+    public function validateEmail() {}
+    public function formatName() {}
+    public function convertData() {}
+}
+
+✅ CORRECT: Extract specific responsibilities
+- CustomerEmailValidator (Validator/)
+- CustomerNameFormatter (Formatter/)
+- CustomerDataConverter (Converter/)
+```
+
+### Issue 5: Namespace Mismatch
+
+```php
+❌ WRONG:
+// File: src/Shared/Infrastructure/Validator/UlidValidator.php
+namespace App\Shared\Infrastructure\Transformer;  // Mismatch!
+
+✅ CORRECT:
+// File: src/Shared/Infrastructure/Validator/UlidValidator.php
+namespace App\Shared\Infrastructure\Validator;  // Matches directory!
+```
+
+## Decision Tree: Where Does It Belong?
+
+```text
+What does the class DO?
+
+├─ Converts between types (string ↔ object)? → Converter/
+├─ Transforms for DB/serialization? → Transformer/
+├─ Validates values? → Validator/
+├─ Builds/constructs objects? → Builder/
+├─ Fixes/modifies data? → Fixer/
+├─ Cleans/filters data? → Cleaner/
+├─ Creates complex objects? → Factory/
+├─ Resolves/determines values? → Resolver/
+├─ Normalizes/serializes? → Serializer/
+├─ Formats data for display? → Formatter/
+├─ Maps data between structures? → Mapper/
+└─ Something else? → Define specific responsibility!
+```
+
+## Verification Commands
+
+```bash
+# Check namespace consistency
+make phpcsfixer
+make psalm
+
+# Find organizational issues
+grep -r "class.*Helper" src/      # Find Helper classes
+grep -r "class.*Util" src/        # Find Util classes
+grep -r "private.*\$converter;" src/  # Find vague names
+
+# Verify architecture compliance
+make deptrac  # Must show 0 violations
+```
+
+## Constraints (Never Do This)
+
+**NEVER**:
+
+- Place class in wrong type directory (violates "Directory X contains ONLY class type X")
+- Allow Domain layer to import framework code (Symfony/Doctrine/API Platform)
+- Use vague variable names (`$converter`, `$resolver` - be specific!)
+- Create "Helper" or "Util" classes (extract specific responsibilities)
+- Allow namespace to mismatch directory structure
+- Use arrays for structured data when typed classes would be appropriate
+- Inject cross-cutting concerns (metrics, logging) into command handlers
+- Create complex objects directly without factories in production code
+
+**ALWAYS**:
+
+- Verify "Directory X contains ONLY class type X" principle
+- Use specific variable names (`$typeConverter`, not `$converter`)
+- Use accurate parameter names (match actual types)
+- Ensure namespace matches directory structure exactly
+- Extract specific responsibilities from Helper/Util classes
+- Prefer typed classes over arrays for structured data
+- Use collections instead of arrays of objects
+- Use event subscribers for cross-cutting concerns
+- Use factories for complex object creation in production code
+
+## Related Skills
+
+- **code-review**: References this skill for organization verification during PR reviews
+- **implementing-ddd-architecture**: DDD patterns and layer structure
+- **deptrac-fixer**: Fixes architectural boundary violations
+- **quality-standards**: Maintains overall code quality metrics
+
+## Related Documentation
+
+See `reference/troubleshooting.md` for detailed troubleshooting and `examples/organization-fixes.md` for real-world examples.

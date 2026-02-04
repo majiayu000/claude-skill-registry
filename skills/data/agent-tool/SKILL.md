@@ -47,7 +47,7 @@ export const supportAgent = new Agent({
     - Don't apologize excessively
     - Focus on resolution, not explanation
   `,
-  model: { provider: 'anthropic', name: 'claude-sonnet-4-20250514' },
+  model: { provider: 'anthropic', name: 'claude-sonnet-4-[PHONE]' },
   tools: supportTools,
 })
 ```

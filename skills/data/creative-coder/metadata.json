@@ -1,12 +1,7 @@
 {
   "name": "creative-coder",
-  "description": "体験品質（動き/触感/視線誘導）を「実装可能な制約」に落とし、アクセシビリティとパフォーマンスを犠牲にせずに表現を実現する。UIの表現・アニメーション・インタラクション設計/実装の相談で使う。",
   "repo": "mae616/ai-template",
-  "category": "development",
-  "tags": [
-    "creative",
-    "coder"
-  ],
-  "stars": 8,
-  "source": "SkillsMP Synced Skills"
+  "path": ".claude/skills/creative-coder/SKILL.md",
+  "source": "github.com/mae616/ai-template",
+  "downloaded_at": "2026-02-04T02:17:58.654638Z"
 }

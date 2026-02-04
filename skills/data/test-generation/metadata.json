@@ -1,7 +1,7 @@
 {
   "name": "test-generation",
-  "repo": "cristian-robert/autonomous-automation-tester",
-  "path": ".claude/skills/test-generation/SKILL.md",
-  "source": "github.com/cristian-robert/autonomous-automation-tester",
-  "downloaded_at": "2026-02-02T04:36:49.433915Z"
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/test-generation/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-04T05:07:22.101467Z"
 }

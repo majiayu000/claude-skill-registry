@@ -1,14 +1,7 @@
 {
   "name": "prepare-release",
-  "description": "Prepare a new release by updating CHANGELOG.md with changes since the last tag and bumping version numbers in pyproject.toml and ui/package.json",
-  "repo": "Agent-CI/agentexec",
-  "category": "data",
-  "tags": [
-    "prepare",
-    "release"
-  ],
-  "stars": 2,
-  "dir_name": "prepare-release",
-  "github_path": ".claude/skills/prepare-release",
-  "github_branch": "main"
+  "repo": "martin-janci/claude-code-reviewer",
+  "path": ".claude/skills/prepare-release/skill.md",
+  "source": "github.com/martin-janci/claude-code-reviewer",
+  "downloaded_at": "2026-02-04T04:38:39.338272Z"
 }

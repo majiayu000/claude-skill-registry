@@ -1,12 +1,10 @@
 ---
 name: sentry-setup-ai-monitoring
 description: Setup Sentry AI Agent Monitoring in any project. Use this when asked to add AI monitoring, track LLM calls, monitor AI agents, or instrument OpenAI/Anthropic/Vercel AI/LangChain/Google GenAI. Automatically detects installed AI SDKs and configures the appropriate Sentry integration.
-allowed-tools: Read, Edit, Write, Bash, Grep, Glob, AskUserQuestion
 ---
 
 # SOURCE: getsentry/sentry-for-claude
 # PATH: skills/sentry-setup-ai-monitoring/SKILL.md
-# DO NOT EDIT: This file is synced from external source
 
 
 # Setup Sentry AI Agent Monitoring

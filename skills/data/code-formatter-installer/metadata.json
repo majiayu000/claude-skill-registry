@@ -1,9 +1,7 @@
 {
   "name": "code-formatter-installer",
-  "description": "Installs and configures Prettier, ESLint, EditorConfig, and other code quality tools to enforce consistent code style across the team. Generates config files, npm scripts, editor settings recommendati",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/code-formatter-installer/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:33.834400Z"
 }

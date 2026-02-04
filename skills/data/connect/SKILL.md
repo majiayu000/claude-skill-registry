@@ -1,15 +1,15 @@
 ---
 name: connect
-description: Connect Codex to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services.
+description: Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services.
 ---
 
 # Connect
 
-Connect Codex to any app. Stop generating text about what you could do - actually do it.
+Connect Claude to any app. Stop generating text about what you could do - actually do it.
 
 ## When to Use This Skill
 
-Use this skill when you need Codex to:
+Use this skill when you need Claude to:
 
 - **Send that email** instead of drafting it
 - **Create that issue** instead of describing it
@@ -57,7 +57,7 @@ pip install composio          # Python
 npm install @composio/core    # TypeScript
 ```
 
-Done. Codex can now connect to any app.
+Done. Claude can now connect to any app.
 
 ## Examples
 
@@ -85,7 +85,7 @@ Find GitHub issues labeled "bug" from this week, summarize, post to #bugs on Sla
 
 Uses Composio Tool Router:
 
-1. **You ask** Codex to do something
+1. **You ask** Claude to do something
 2. **Tool Router finds** the right tool (1000+ options)
 3. **OAuth handled** automatically
 4. **Action executes** and returns result
@@ -94,12 +94,14 @@ Uses Composio Tool Router:
 
 ```python
 from composio import Composio
+from claude_agent_sdk.client import ClaudeSDKClient
+from claude_agent_sdk.types import ClaudeAgentOptions
 import os
 
 composio = Composio(api_key=os.environ["COMPOSIO_API_KEY"])
 session = composio.create(user_id="user_123")
 
-options = {
+options = ClaudeAgentOptions(
     system_prompt="You can take actions in external apps.",
     mcp_servers={
         "composio": {
@@ -108,10 +110,10 @@ options = {
             "headers": {"x-api-key": os.environ["COMPOSIO_API_KEY"]},
         }
     },
-}
+)
 
-# Hand these options to Codex (or your agent runtime) so tool calls route through Composio.
-# Example Codex prompt: "Send Slack message to #general: Hello!"
+async with ClaudeSDKClient(options) as client:
+    await client.query("Send Slack message to #general: Hello!")
 ```
 
 ## Auth Flow
@@ -129,6 +131,7 @@ Connection persists after that.
 
 | Framework | Install |
 |-----------|---------|
+| Claude Agent SDK | `pip install composio claude-agent-sdk` |
 | OpenAI Agents | `pip install composio openai-agents` |
 | Vercel AI | `npm install @composio/core @composio/vercel` |
 | LangChain | `pip install composio-langchain` |

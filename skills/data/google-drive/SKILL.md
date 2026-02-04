@@ -1,245 +1,197 @@
 ---
 name: google-drive
-description: Search and read Google Drive files including Docs, Sheets, and other documents.
+description: |
+  gogcli (gog) を使用してGoogle Driveを操作するスキル。ファイルの検索、アップロード、ダウンロード、共有、フォルダ管理などをCLI経由で実行。
+  Use when: (1) ドライブのファイルを検索したい、(2) ファイルをアップロードしたい、(3) ファイルをダウンロードしたい、(4) Google Driveを操作したい、(5) ファイルを共有したい、(6) フォルダを作成したい
+  Trigger: drive, ドライブ, google drive, ファイル検索, アップロード, ダウンロード, 共有
 ---
 
-# Google Drive Integration
+# Google Drive Operations with gogcli
 
-This skill provides access to Google Drive and Google Docs/Sheets/Slides via the Drive API.
+`gog` CLIを使用してGoogle Driveを操作する。
 
-## Setup Required
-
-Uses OAuth with persistent refresh token (same setup for Calendar, Gmail, Drive).
-
-**One-time setup:**
-```bash
-google-oauth-setup <path-to-client-secret.json>
-```
-
-See `claude/skills/SETUP.md` for detailed OAuth setup instructions.
-
-**Get Access Token (auto-refreshes):**
-```bash
-ACCESS_TOKEN=$(google-oauth-token)
-```
-
-## Re-authentication
-
-If you get `invalid_grant` or `reauth related error`, the OAuth token has expired. Re-authenticate using gcloud:
+## Prerequisites
 
 ```bash
-# Re-authenticate with required scopes
-gcloud auth application-default login \
-  --scopes="https://www.googleapis.com/auth/calendar.readonly,https://www.googleapis.com/auth/gmail.readonly,https://www.googleapis.com/auth/drive.readonly,https://www.googleapis.com/auth/cloud-platform"
+# Installation
+brew install gogcli
 
-# Migrate the new credentials
-google-oauth-setup --migrate-gcloud
+# Authentication (初回のみ)
+gog auth login
 ```
 
-This will open a browser for authentication, then migrate the credentials to the google-oauth config.
+## Commands Reference
 
-**Required header for all requests:**
+### List Files
+
 ```bash
--H "x-goog-user-project: ${GOOGLE_QUOTA_PROJECT}"
+# ルートフォルダのファイル一覧
+gog drive ls
+
+# 特定フォルダの一覧
+gog drive ls --parent="<folderId>"
+
+# 最大件数指定
+gog drive ls --max=50
+
+# クエリフィルタ付き
+gog drive ls --query="mimeType='application/vnd.google-apps.folder'"
 ```
 
-## When to Use
+### Search Files
 
-Use this skill when the user:
-- Asks about Google Drive files or documents
-- Wants to search for a document
-- Needs to read content from a Google Doc or Sheet
-- Asks about recent files
-- Mentions "Drive", "Google Docs", or "Google Sheets"
-
-## API Endpoints
-
-### Drive API (files, search)
-
-Base URL: `https://www.googleapis.com/drive/v3`
-
-**List Recent Files**:
 ```bash
-curl -s "https://www.googleapis.com/drive/v3/files?pageSize=20&orderBy=modifiedTime%20desc" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}" | jq '.files[] | {name, id, mimeType}'
+# フルテキスト検索
+gog drive search "検索キーワード"
+
+# 複数キーワード
+gog drive search "報告書 2024"
+
+# JSON形式で出力
+gog drive search "議事録" --json --max=20
 ```
 
-**Search Files**:
+### Download Files
+
 ```bash
-curl -s -G "https://www.googleapis.com/drive/v3/files" \
-  --data-urlencode "q=name contains 'meeting notes'" \
-  --data-urlencode "pageSize=20" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+# ファイルをダウンロード
+gog drive download <fileId>
+
+# 出力先を指定
+gog drive download <fileId> --out="/path/to/output.pdf"
+
+# Google Docsのエクスポート形式を指定
+gog drive download <fileId> --format=pdf    # PDF形式
+gog drive download <fileId> --format=docx   # Word形式
+gog drive download <fileId> --format=xlsx   # Excel形式
+gog drive download <fileId> --format=pptx   # PowerPoint形式
+gog drive download <fileId> --format=csv    # CSV形式
+gog drive download <fileId> --format=txt    # テキスト形式
 ```
 
-**Get File Metadata**:
+### Upload Files
+
 ```bash
-curl -s "https://www.googleapis.com/drive/v3/files/{FILE_ID}?fields=*" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+# ファイルをアップロード（ルートへ）
+gog drive upload /path/to/file.pdf
+
+# ファイル名を変更してアップロード
+gog drive upload /path/to/file.pdf --name="新しいファイル名.pdf"
+
+# 特定フォルダへアップロード
+gog drive upload /path/to/file.pdf --parent="<folderId>"
 ```
 
-**Export Google Doc as Text**:
+### Create Folder
+
 ```bash
-curl -s "https://www.googleapis.com/drive/v3/files/{FILE_ID}/export?mimeType=text/plain" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+# ルートにフォルダ作成
+gog drive mkdir "新しいフォルダ"
+
+# 特定フォルダ内にサブフォルダ作成
+gog drive mkdir "サブフォルダ" --parent="<parentFolderId>"
 ```
 
-### Docs API (read document content)
+### File Operations
 
-Base URL: `https://docs.googleapis.com/v1`
-
-**Get Document Content**:
 ```bash
-curl -s "https://docs.googleapis.com/v1/documents/{DOCUMENT_ID}" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+# ファイルのメタデータ取得
+gog drive get <fileId>
+
+# ファイルをコピー
+gog drive copy <fileId> "コピー後の名前"
+
+# ファイルを移動
+gog drive move <fileId> --parent="<newParentFolderId>"
+
+# ファイル名を変更
+gog drive rename <fileId> "新しい名前"
+
+# ファイルを削除（ゴミ箱へ）
+gog drive delete <fileId>
+
+# WebのURLを取得
+gog drive url <fileId>
 ```
 
-### Sheets API (read spreadsheet data)
+### Share Files
 
-Base URL: `https://sheets.googleapis.com/v4`
-
-**Get Spreadsheet Metadata**:
 ```bash
-curl -s "https://sheets.googleapis.com/v4/spreadsheets/{SPREADSHEET_ID}" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+# 特定ユーザーと共有（閲覧権限）
+gog drive share <fileId> --email="user@example.com" --role="reader"
+
+# 特定ユーザーと共有（編集権限）
+gog drive share <fileId> --email="user@example.com" --role="writer"
+
+# 公開リンクを作成
+gog drive share <fileId> --anyone --role="reader"
+
+# 権限一覧を表示
+gog drive permissions <fileId>
+
+# 権限を削除
+gog drive unshare <fileId> <permissionId>
 ```
 
-**Read Sheet Values**:
+### Shared Drives
+
 ```bash
-curl -s "https://sheets.googleapis.com/v4/spreadsheets/{SPREADSHEET_ID}/values/{RANGE}" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
-# Example RANGE: Sheet1!A1:D10, or just A1:D10 for first sheet
+# 共有ドライブ一覧
+gog drive drives
 ```
 
-## Search Query Syntax
+### Comments
 
-The `q` parameter uses Drive search syntax:
+```bash
+# ファイルのコメント一覧
+gog drive comments list <fileId>
 
-| Query | Description |
-|-------|-------------|
-| `name contains 'report'` | Name contains text |
-| `name = 'Exact Name'` | Exact name match |
-| `fullText contains 'search term'` | Content contains text |
-| `mimeType = 'application/vnd.google-apps.document'` | Google Docs |
-| `mimeType = 'application/vnd.google-apps.spreadsheet'` | Google Sheets |
-| `mimeType = 'application/pdf'` | PDF files |
-| `modifiedTime > '2024-01-01'` | Modified after date |
-| `'folder_id' in parents` | Files in specific folder |
-| `starred = true` | Starred files |
-| `trashed = false` | Not in trash |
-
-Combine with `and`/`or`: `name contains 'meeting' and mimeType = 'application/vnd.google-apps.document'`
-
-## MIME Types
-
-| Type | MIME Type |
-|------|-----------|
-| Google Doc | `application/vnd.google-apps.document` |
-| Google Sheet | `application/vnd.google-apps.spreadsheet` |
-| Google Slides | `application/vnd.google-apps.presentation` |
-| Google Form | `application/vnd.google-apps.form` |
-| Folder | `application/vnd.google-apps.folder` |
+# コメントを追加
+gog drive comments add <fileId> "コメント内容"
+```
 
 ## Common Workflows
 
-### Search for a Document
-```bash
-ACCESS_TOKEN=$(google-oauth-token)
+### 最近のファイルを確認
 
-curl -s -G "https://www.googleapis.com/drive/v3/files" \
-  --data-urlencode "q=name contains 'project plan' and mimeType = 'application/vnd.google-apps.document'" \
-  --data-urlencode "fields=files(id,name,modifiedTime,webViewLink)" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+```bash
+gog drive ls --max=10
 ```
 
-### Read a Google Doc
+### 特定の名前のファイルを検索
+
 ```bash
-# Export as plain text
-DOC_ID="1abc123..."
-curl -s "https://www.googleapis.com/drive/v3/files/${DOC_ID}/export?mimeType=text/plain" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+gog drive search "週報"
 ```
 
-### Read a Google Sheet
+### Google Docsをローカルにダウンロード
+
 ```bash
-SHEET_ID="1abc123..."
-# Get all values from first sheet
-curl -s "https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A:Z" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}" | jq '.values'
+# PDF形式でダウンロード
+gog drive download <fileId> --format=pdf --out="./document.pdf"
 ```
 
-### List Recent Docs
+### ローカルファイルを特定フォルダにアップロード
+
 ```bash
-curl -s -G "https://www.googleapis.com/drive/v3/files" \
-  --data-urlencode "q=mimeType = 'application/vnd.google-apps.document'" \
-  --data-urlencode "orderBy=modifiedTime desc" \
-  --data-urlencode "pageSize=10" \
-  --data-urlencode "fields=files(id,name,modifiedTime)" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
+# まずフォルダIDを確認
+gog drive search "プロジェクトフォルダ" --json
+
+# フォルダにアップロード
+gog drive upload ./report.pdf --parent="<folderId>"
 ```
 
-### Search File Content
-```bash
-curl -s -G "https://www.googleapis.com/drive/v3/files" \
-  --data-urlencode "q=fullText contains 'quarterly review'" \
-  --data-urlencode "fields=files(id,name,mimeType,webViewLink)" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}"
-```
+## Output Formats
 
-## Export Formats
+| Flag | Description |
+|------|-------------|
+| `--json` | JSON形式で出力（スクリプト向け） |
+| `--plain` | TSV形式で出力（パース容易） |
+| (default) | 人間が読みやすい形式 |
 
-Google Docs can be exported to various formats:
+## Tips
 
-| Original | Export MIME Type |
-|----------|------------------|
-| Document | `text/plain`, `text/html`, `application/pdf`, `application/vnd.openxmlformats-officedocument.wordprocessingml.document` |
-| Spreadsheet | `text/csv`, `application/pdf`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` |
-| Presentation | `application/pdf`, `text/plain` |
-
-## Extracting File IDs from URLs
-
-Google Drive URLs:
-- Doc: `https://docs.google.com/document/d/{FILE_ID}/edit`
-- Sheet: `https://docs.google.com/spreadsheets/d/{FILE_ID}/edit`
-- Drive: `https://drive.google.com/file/d/{FILE_ID}/view`
-
-The FILE_ID is the long alphanumeric string between `/d/` and the next `/`.
-
-## Google Docs Revision History
-
-To access historical revisions of a Google Doc:
-
-**Get revision list:**
-```bash
-curl -s "https://www.googleapis.com/drive/v3/files/${DOC_ID}/revisions?fields=revisions(id,modifiedTime,exportLinks,lastModifyingUser(displayName))" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-  -H "x-goog-user-project: ${GOOGLE_QUOTA_PROJECT}"
-```
-
-**Export a specific revision (use exportLinks, NOT the export endpoint):**
-```bash
-# IMPORTANT: The Drive export endpoint ignores the revision parameter for Google Docs!
-# You MUST use the exportLinks from the revision metadata instead.
-
-# Get the exportLink for a specific revision
-EXPORT_URL=$(curl -s "https://www.googleapis.com/drive/v3/files/${DOC_ID}/revisions/${REV_ID}?fields=exportLinks" \
-  -H "Authorization: Bearer ${ACCESS_TOKEN}" | jq -r '.exportLinks["text/plain"]')
-
-# Download using that link
-curl -sL "$EXPORT_URL" -H "Authorization: Bearer ${ACCESS_TOKEN}"
-```
-
-**IMPORTANT CAVEATS:**
-- The `revision` parameter on `/export` is IGNORED for Google Docs - it always returns current content
-- You MUST use the `exportLinks` URLs from the revisions API to get historical content
-- Rate limiting is aggressive - add 2-3 second delays between revision downloads
-- Documents with multiple tabs: the text export only includes the main tab
-- Deleted tabs: revisions may reference content from tabs that no longer exist
-
-## Notes
-
-- Access tokens expire after 1 hour
-- Google Docs exported as text lose formatting
-- For Sheets, specify range to avoid downloading huge datasets
-- `fields` parameter reduces response size (use for faster queries)
-- Full-text search only works on files owned or shared with you
+- `--account=email@example.com` で複数アカウントを切り替え
+- ファイルIDはURLから取得可能: `https://drive.google.com/file/d/<fileId>/view`
+- フォルダIDもURLから取得可能: `https://drive.google.com/drive/folders/<folderId>`
+- `--force` で確認をスキップ（削除時など注意して使用）

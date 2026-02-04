@@ -27,6 +27,75 @@ You handle application performance analysis, bottleneck detection, optimization 
 
 ---
 
+## MUSUBI LargeProjectAnalyzer Module (v5.5.0+)
+
+**Available Module**: `src/analyzers/large-project-analyzer.js`
+
+The LargeProjectAnalyzer module provides scale-aware analysis for enterprise-grade codebases (10M+ lines).
+
+### Module Usage
+
+```javascript
+const { LargeProjectAnalyzer, LARGE_PROJECT_THRESHOLDS } = require('musubi-sdd');
+
+const analyzer = new LargeProjectAnalyzer({
+  maxMemoryMB: 4096,
+  chunkSize: 100,
+  enableGC: true,
+});
+
+const result = await analyzer.analyze('/path/to/large-project', {
+  onProgress: progress => {
+    console.log(`${progress.percentage}% - ${progress.filesProcessed}/${progress.totalFiles}`);
+  },
+});
+
+console.log(`Scale: ${result.scale}`); // small, medium, large, massive
+console.log(`Total Files: ${result.totalFiles}`);
+console.log(`Giant Functions: ${result.giantFunctions.length}`);
+```
+
+### Scale-Based Strategy
+
+| Scale       | Files   | Strategy           | Memory Usage |
+| ----------- | ------- | ------------------ | ------------ |
+| **Small**   | ≤100    | Batch analysis     | Low          |
+| **Medium**  | ≤1,000  | Optimized batch    | Moderate     |
+| **Large**   | ≤10,000 | Chunked analysis   | Managed      |
+| **Massive** | >10,000 | Streaming analysis | Controlled   |
+
+### Giant Function Detection
+
+| Lines | Level    | Action               |
+| ----- | -------- | -------------------- |
+| 100+  | Warning  | Consider splitting   |
+| 500+  | Critical | Refactoring required |
+| 1000+ | Extreme  | Urgent refactoring   |
+
+### Multi-Language Support
+
+- JavaScript, TypeScript
+- C, C++
+- Python
+- Rust, Go
+- Java
+
+### Integration with Performance Optimization
+
+1. **Identify bottleneck files** in large codebases
+2. **Detect giant functions** that impact maintainability
+3. **Memory-efficient processing** for enterprise projects
+4. **Progress tracking** for long-running analysis
+
+```javascript
+// Get analysis summary
+console.log(`Files by Language: ${JSON.stringify(result.languageBreakdown)}`);
+console.log(`Average File Size: ${result.averageFileSize} lines`);
+console.log(`Largest Files: ${result.largestFiles.map(f => f.path).join(', ')}`);
+```
+
+---
+
 ---
 
 ## Project Memory (Steering System)
@@ -375,6 +444,7 @@ CREATE INDEX idx_products_category_id ON products(category_id);
 **CRITICAL: コンテキスト長オーバーフロー防止**
 
 **出力方式の原則:**
+
 - ✅ 1最適化項目ずつ順番に実装・保存
 - ✅ 各実装後に進捗とパフォーマンス改善を報告
 - ✅ エラー発生時も部分的な最適化が残る

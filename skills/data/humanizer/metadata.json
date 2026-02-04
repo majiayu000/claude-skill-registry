@@ -1,7 +1,7 @@
 {
   "name": "humanizer",
-  "repo": "softaworks/agent-toolkit",
-  "path": "skills/humanizer/SKILL.md",
-  "source": "github.com/softaworks/agent-toolkit",
-  "downloaded_at": "2026-02-02T04:46:27.547181Z"
+  "repo": "erwinkn/ai-config",
+  "path": ".claude/skills/humanizer/SKILL.md",
+  "source": "github.com/erwinkn/ai-config",
+  "downloaded_at": "2026-02-04T04:57:54.003408Z"
 }

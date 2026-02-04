@@ -1,118 +1,58 @@
 ---
-name: "managing-imposter-syndrome"
-description: "Manage imposter syndrome at work and produce an Imposter Syndrome Management Pack (trigger & pattern map, reframes, evidence bank, experiment plan, support scripts, maintenance routine). Use for self-doubt, feeling like a fraud, new role anxiety, stretch assignments. Category: Career."
+name: managing-imposter-syndrome
+description: Help users work through feelings of inadequacy and self-doubt. Use when someone feels like a fraud, doubts their qualifications, is anxious about being "found out," or struggling with confidence in a new or challenging role.
 ---
 
 # Managing Imposter Syndrome
 
-## Scope
+Help the user work through imposter syndrome using frameworks from product leaders.
 
-**Covers**
-- Identifying your imposter “episodes” (triggers → thoughts → feelings → behaviors) and the costs they create
-- Reframing imposter feelings as a **normal signal of growth** when you’re stretching (not proof you’re a fraud)
-- Separating **confidence gaps** (perception) from **competence gaps** (skills) and choosing the right response
-- Building an **evidence bank** (“receipts”) to calibrate self-assessment and reduce distorted thinking
-- Designing a short **experiment plan** to act despite doubt (feedback asks, exposure ladder, small deliveries)
-- Creating a **support plan** (manager/mentor/peer scripts) and a maintenance routine to prevent relapse
+## How to Help
 
-**When to use**
-- “I feel like a fraud at work even though I’m performing.”
-- “I’m starting a new role / leading a bigger scope and my self-doubt is spiking.”
-- “I avoid visibility (speaking up, shipping, applying) because I’m scared I’ll be exposed.”
-- “I want a structured plan to manage imposter syndrome, not generic reassurance.”
+When the user shares feelings of imposter syndrome:
 
-**When NOT to use**
-- You are in (or at risk of) self-harm, suicidal ideation, or a mental health crisis (seek urgent professional help; this skill is not a substitute for care).
-- Your core issue is primarily clinical anxiety/depression, trauma, or substance use (get professional support; this can complement but not replace it).
-- You need legal/HR guidance for harassment, discrimination, retaliation, or workplace investigation processes.
-- You have an objective skill gap that requires training/certification (use this skill only as a support layer alongside a skills plan).
+1. **Normalize the experience** - Help them understand that imposter syndrome is nearly universal among high performers, especially during growth periods
+2. **Reframe the discomfort** - Connect their uncomfortable feelings to evidence that they're growing and being challenged appropriately
+3. **Identify the specific fear** - Help them articulate exactly what they're afraid of (being exposed, making mistakes, not belonging)
+4. **Build practical strategies** - Develop tactics for managing the feelings when they arise
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Your role, seniority, and what “good” looks like in your environment (even if approximate)
-- 1–3 recent imposter episodes (what happened, what you thought, what you did)
-- The highest-stakes trigger (presentation, new team, promotion, code review, leadership meeting, etc.)
-- What you’re avoiding or over-doing because of imposter feelings (e.g., perfectionism, silence, overwork)
-- Your support context (manager relationship, mentor/peer access) and any constraints (time, privacy)
+### Discomfort signals growth, not fraud
+Julie Zhuo: "Being in an uncomfortable situation... coincides with the fastest and most intense periods of growth in one's career." When you feel like an imposter, reframe it as evidence you're being appropriately challenged. The discomfort means you're in a growth zone, not that you don't belong.
 
-**Missing-info strategy**
-- Ask **3–5 questions at a time** from [references/INTAKE.md](references/INTAKE.md).
-- If the user can’t name episodes, propose common triggers/patterns and let them select + correct.
-- If “success criteria” is vague, define a behavioral target (e.g., “speak once per meeting”).
-- If there are safety signals (panic, inability to function, self-harm thoughts), stop and recommend professional support.
+### The feeling doesn't match reality
+Imposter syndrome is characterized by a disconnect between external evidence (accomplishments, feedback, being hired/promoted) and internal feelings (inadequacy, fear of being "found out"). Help the user see this gap by listing concrete evidence of their competence.
 
-## Outputs (deliverables)
+### Vulnerability is strength, not weakness
+Admitting what you don't know is not a sign of fraud - it's how leaders like Brian Chesky learned from experts. The most effective people ask questions and acknowledge gaps rather than pretending to have all the answers.
 
-Produce an **Imposter Syndrome Management Pack** (Markdown in chat; or as files if requested) in this order:
+### You were hired for a reason
+Someone with decision-making authority evaluated your qualifications and chose you. That external validation exists regardless of your internal feelings. Trust the judgment of the people who put you in this role.
 
-1) **Situation Snapshot + Success Criteria** (context, stakes, what “better” looks like)
-2) **Trigger & Pattern Map** (triggers, inner script, distortions, behaviors, costs)
-3) **Reframe Set + Growth Narrative** (3–7 reframes + “growth zone” interpretation)
-4) **Evidence Bank** (receipts: outcomes, feedback, skills, prior wins) + calibration notes
-5) **Experiment Plan (2–4 weeks)** (exposure ladder + feedback loops + delivery plan)
-6) **Support Plan + Scripts** (manager/mentor/peer asks; boundaries; check-ins)
-7) **Maintenance + Relapse Plan** (daily/weekly routine; what to do when it returns)
-8) **Risks / Open questions / Next steps** (always)
+## Questions to Help Users
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+- "What specific situation is triggering these feelings right now?"
+- "What would 'being found out' actually look like? What's the feared scenario?"
+- "What evidence do you have that you're competent in this role? What have you accomplished?"
+- "Have you ever felt this way before in past roles? What happened?"
+- "Who hired or promoted you into this role? Do you trust their judgment in general?"
+- "What would you tell a friend who described feeling this way?"
 
-## Workflow (7 steps)
+## Common Mistakes to Flag
 
-### 1) Intake + safety boundary check
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm the goal (reduce imposter costs, increase healthy visibility). Screen for out-of-scope safety/clinical needs. Define success criteria as behaviors/outcomes.
-- **Outputs:** Situation Snapshot + explicit assumptions/unknowns.
-- **Checks:** Success criteria is observable; boundaries are stated.
+- **Waiting until you "feel ready"** - The feeling of readiness often doesn't come until after you've done the thing. Act despite the discomfort
+- **Comparing your inside to others' outside** - You see your own doubts and others' polished presentations. Everyone has internal struggles you don't see
+- **Interpreting discomfort as signal to retreat** - Discomfort during growth is normal. Retreating to comfort means stagnating
+- **Keeping it secret** - Imposter syndrome thrives in isolation. Talking about it with trusted peers often reveals that everyone feels this way
 
-### 2) Capture 1–3 “episodes” (make it concrete)
-- **Inputs:** recent examples; stakes; avoidance/perfectionism patterns.
-- **Actions:** Write short episode logs: trigger → interpretation → emotion → behavior → consequence. Identify the recurring loop (avoidance, overwork, people-pleasing, silence).
-- **Outputs:** Trigger & Pattern Map (first draft).
-- **Checks:** At least one controllable behavior is identified (not only feelings).
+## Deep Dive
 
-### 3) Diagnose the thinking pattern (confidence vs competence)
-- **Inputs:** episode logs; role expectations; feedback history.
-- **Actions:** Separate: (a) **competence gap** (needs skill-building) vs (b) **confidence gap** (distortion/overly harsh standards). Name distortions (mind-reading, catastrophizing, discounting positives).
-- **Outputs:** Pattern Map (final) + “gap type” call.
-- **Checks:** Each claimed gap has evidence; uncertainties are labeled.
+For all 1 insights from 1 guests, see `references/guest-insights.md`
 
-### 4) Build reframes + a “growth zone” narrative
-- **Inputs:** pattern map; user values; what’s new/stretching.
-- **Actions:** Create 3–7 reframes that are specific and believable. Include a “growth zone” framing: discomfort often accompanies rapid learning and scope increase.
-- **Outputs:** Reframe Set + Growth Narrative.
-- **Checks:** Reframes are actionable (they change what the user does next), not generic affirmations.
+## Related Skills
 
-### 5) Build an evidence bank (receipts, not vibes)
-- **Inputs:** past outcomes; artifacts; feedback; peers/managers quotes (if available).
-- **Actions:** Create an evidence table: wins, metrics/proxies, decisions made, skills demonstrated, external validation. Add “counter-evidence” to catastrophic beliefs.
-- **Outputs:** Evidence Bank + calibration notes (what’s strong vs uncertain).
-- **Checks:** Each core fear has at least 2 evidence counterpoints or a plan to gather evidence.
-
-### 6) Design a 2–4 week experiment plan (act despite doubt)
-- **Inputs:** success criteria; constraints; biggest avoidance.
-- **Actions:** Build an exposure ladder (easy→hard) and pick 3–5 experiments (e.g., speak once, ask for feedback, ship a draft, request a review). Add weekly reflection + adjustments.
-- **Outputs:** Experiment Plan (2–4 weeks).
-- **Checks:** Experiments are small, scheduled, and have pass/fail signals.
-
-### 7) Quality gate + finalize support + maintenance
-- **Inputs:** full draft pack.
-- **Actions:** Draft scripts for manager/mentor/peer support. Create a daily/weekly routine and a relapse response. Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**.
-- **Outputs:** Final Imposter Syndrome Management Pack.
-- **Checks:** Plan is realistic for time/energy; includes support; risks and unknowns are explicit.
-
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (new scope):** “I was promoted and now I’m leading cross-functional work. I’m afraid I’ll be exposed as incompetent and I’m overworking. Use `managing-imposter-syndrome` to create a 4-week plan with an evidence bank and an exposure ladder.”  
-Expected: pack with episode logs, reframes, evidence bank, experiments, manager script.
-
-**Example 2 (visibility avoidance):** “I avoid speaking in leadership meetings because I assume my questions are dumb. Use `managing-imposter-syndrome` to map my trigger pattern and design a 2-week experiment plan.”  
-Expected: trigger map + reframes + scheduled micro-exposures + reflection routine.
-
-**Boundary example:** “I’m having panic attacks daily and can’t function, and I’m thinking about hurting myself.”  
-Response: out of scope; advise urgent professional support and local emergency/crisis resources; offer to help later with a gentle plan once safe.
+- Building a Promotion Case
+- Finding Mentors & Sponsors
+- Career Transitions
+- Energy Management

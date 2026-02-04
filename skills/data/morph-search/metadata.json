@@ -1,7 +1,7 @@
 {
   "name": "morph-search",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/morph-search/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:40.223802Z"
+  "repo": "Ven0m0/claude-config",
+  "path": "claude/skills/morph-search/SKILL.md",
+  "source": "github.com/Ven0m0/claude-config",
+  "downloaded_at": "2026-02-04T04:37:45.284643Z"
 }

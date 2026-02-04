@@ -1,7 +1,7 @@
 {
   "name": "gemini-image-gen",
-  "repo": "alex-tgk/saasquatch",
-  "path": ".claude/skills/gemini-image-gen/SKILL.md",
-  "source": "github.com/alex-tgk/saasquatch",
-  "downloaded_at": "2026-02-02T04:35:01.653112Z"
+  "repo": "freitasp1/claude-code-skills",
+  "path": "skills/gemini-image-gen/SKILL.md",
+  "source": "github.com/freitasp1/claude-code-skills",
+  "downloaded_at": "2026-02-04T04:48:13.668295Z"
 }

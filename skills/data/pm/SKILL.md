@@ -1,257 +1,128 @@
 ---
 name: pm
-description: Create incident postmortems by reading Slack incident channels and creating structured postmortem documents in Notion. Use when conducting postmortem reviews or documenting incident responses.
+description: Product Manager for spec-driven development with SpecWeave conventions. Use when writing user stories, defining acceptance criteria, planning MVPs, or prioritizing features. Creates specs with proper AC-IDs, manages requirements, and maintains product roadmaps.
+allowed-tools: Read, Write, Grep, Glob
+context: fork
+model: opus
 ---
 
-# Incident Postmortem Generator
+# Product Manager Skill
 
-Create comprehensive incident postmortem documents by reading Slack incident channels and storing structured postmortems in Notion.
+## Overview
 
-## When to Use
+You are a Product Manager with expertise in spec-driven development. You guide the creation of product specifications, user stories, and acceptance criteria following SpecWeave conventions.
 
-- After resolving a production incident
-- When conducting postmortem reviews
-- When documenting incident responses for team learning
-- To generate action items from incident discussions
+## Progressive Disclosure
 
-## Prerequisites
+This skill uses phased loading to prevent context bloat. Load only what you need:
 
-This skill requires the following MCP servers to be configured:
-- **Slack MCP** - For reading incident channel history
-- **Notion MCP** - For creating postmortem documents in the Notes database
+| Phase | When to Load | File |
+|-------|--------------|------|
+| Deep Interview | **CHECK FIRST!** If enabled in config | `phases/00-deep-interview.md` |
+| Research | Gathering requirements | `phases/01-research.md` |
+| Spec Creation | Writing spec.md | `phases/02-spec-creation.md` |
+| Validation | Final quality check | `phases/03-validation.md` |
+| Templates | Need spec template | `templates/spec-template.md` |
 
-Optional:
-- **Betterstack MCP** - For including telemetry and uptime links
+## Deep Interview Mode Check (MANDATORY)
 
-## Process
+**Before starting any spec work, check if Deep Interview Mode is enabled:**
 
-### 1. Identify the Incident Channel
-
-Ask the user for the Slack channel name or ID. The channel should be the dedicated incident channel (typically named like `#incident-<name>` or `#inc-<date>-<description>`).
-
-### 2. Read Slack Channel History
-
-Use the Slack MCP to fetch the channel's message history:
-
-```
-mcp__slack__slack_list_channels
+```bash
+# Check config - if true, you MUST do extensive interviewing first
+jq -r '.planning.deepInterview.enabled // false' .specweave/config.json
 ```
 
-Find the channel ID, then fetch history:
+If `true`:
+1. Load `phases/00-deep-interview.md`
+2. **THINK about complexity first** - don't blindly ask questions:
+   - Trivial features: 0-3 questions
+   - Small features: 4-8 questions
+   - Medium features: 9-18 questions
+   - Large features: 19-40+ questions
+3. Cover relevant categories (skip those that don't apply)
+4. Only proceed to Research phase after sufficient clarity
 
+## Core Principles
+
+1. **Phased Approach**: Work in phases, not all at once
+2. **Chunking**: Large specs (6+ user stories) must be chunked
+3. **Validation**: Every spec needs acceptance criteria
+4. **Traceability**: User stories link to acceptance criteria
+
+## Quick Reference
+
+### Spec Structure
 ```
-mcp__slack__slack_get_channel_history with channel_id
+.specweave/increments/####-name/
+├── spec.md    # Product specification (you create this)
+├── plan.md    # Technical plan (architect creates)
+├── tasks.md   # Implementation tasks (planner creates)
+└── metadata.json
 ```
 
-For threaded discussions, also fetch thread replies:
-
-```
-mcp__slack__slack_get_thread_replies with channel_id and thread_ts
-```
-
-Get user information to resolve mentions:
-
-```
-mcp__slack__slack_get_users
-```
-
-### 3. Analyze the Incident
-
-From the Slack messages, extract:
-
-1. **Timeline**: Key events in chronological order
-   - When was the incident first detected?
-   - When was it acknowledged?
-   - What investigation steps were taken?
-   - When was it mitigated/resolved?
-
-2. **Root Cause**: The underlying technical issue
-   - What broke?
-   - Why did it break?
-   - What dependencies were involved?
-
-3. **Impact**: The effect on users/systems
-   - What services were affected?
-   - How many users impacted?
-   - What was the duration?
-
-4. **Open Questions**: Unresolved items from discussion
-   - Unclear technical details
-   - Areas needing further investigation
-   - Decisions that need to be made
-
-5. **Action Items**: Follow-up tasks with assignees
-   - Preventive measures
-   - Monitoring improvements
-   - Documentation updates
-   - Process changes
-
-### 4. Generate Postmortem Document
-
-Create a markdown document following this structure:
-
+### User Story Format
 ```markdown
-# Incident Postmortem: [Brief Title]
+### US-001: [Title]
+**Project**: [project-name]
+**As a** [role]
+**I want** [capability]
+**So that** [benefit]
 
-**Date:** [Incident Date]
-**Severity:** [P0/P1/P2/P3]
-**Duration:** [Total incident duration]
-**Author:** [Person creating postmortem]
-
-## Summary
-
-[2-3 sentence summary of what happened and the impact]
-
-## Timeline
-
-| Time (UTC) | Event |
-|------------|-------|
-| HH:MM | Incident detected via [source] |
-| HH:MM | Team alerted |
-| HH:MM | Investigation began |
-| HH:MM | Root cause identified |
-| HH:MM | Mitigation deployed |
-| HH:MM | Incident resolved |
-
-## Impact
-
-- **Services Affected:** [List of affected services]
-- **Users Impacted:** [Number or percentage]
-- **Duration:** [How long users were affected]
-- **Data Loss:** [Yes/No, details if applicable]
-
-## Root Cause Analysis
-
-### What Happened
-
-[Detailed technical explanation of the failure]
-
-### Why It Happened
-
-[Contributing factors, systemic issues]
-
-### Detection
-
-[How was the incident discovered? Could we have detected it sooner?]
-
-## Telemetry & Monitoring
-
-[If Betterstack MCP is available, include relevant links]
-
-- **Uptime Dashboard:** [Link]
-- **Error Metrics:** [Link]
-- **Relevant Alerts:** [Link]
-
-## Open Questions
-
-- [ ] [Unresolved question 1]
-- [ ] [Unresolved question 2]
-
-## Action Items
-
-| Action | Assignee | Priority | Status |
-|--------|----------|----------|--------|
-| [Action description] | @[username] | High/Medium/Low | Open |
-| [Action description] | @[username] | High/Medium/Low | Open |
-
-## Lessons Learned
-
-### What Went Well
-
-- [Positive aspects of incident response]
-
-### What Could Be Improved
-
-- [Areas for improvement]
-
-## References
-
-- **Incident Channel:** #[channel-name]
-- **Related PRs:** [Links to fix PRs]
-- **Related Docs:** [Links to relevant documentation]
+**Acceptance Criteria**:
+- [ ] **AC-US1-01**: [Criterion 1]
+- [ ] **AC-US1-02**: [Criterion 2]
 ```
 
-### 5. Create Notion Page
+## Workflow
 
-Use the Notion MCP to create the postmortem in the Notes database:
+0. **Check Deep Interview Mode** → If enabled, load `phases/00-deep-interview.md` and interview FIRST
+1. **User describes feature** → Read `phases/01-research.md`
+2. **Requirements clear** → Read `phases/02-spec-creation.md` + `templates/spec-template.md`
+3. **Spec written** → **INVOKE ARCHITECT SKILL** (see below)
+4. **Plan ready** → Read `phases/03-validation.md`
 
-First, search for the Notes database:
+## ⚠️ MANDATORY: Skill Chaining
 
-```
-mcp__claude_ai_Notion__notion-search with query: "Notes"
-```
+**After completing spec.md, you MUST invoke the Architect skill:**
 
-Or use the Notion skill:
-
-```
-Skill: notion-search with "Notes database"
-```
-
-Then create the page with the postmortem content:
-
-```
-mcp__claude_ai_Notion__notion-create-pages with:
-- parent: Notes database ID
-- title: "Incident Postmortem: [Brief Title]"
-- content: [Generated markdown content]
+```typescript
+// After writing spec.md, ALWAYS invoke:
+Skill({ skill: "sw:architect", args: "Design architecture for increment XXXX" })
 ```
 
-**Important:** Add the required tags to the page:
-- `eng`
-- `postmortem`
+| Your Output | Next Skill to Invoke | Why |
+|-------------|---------------------|-----|
+| spec.md complete | `sw:architect` | Creates plan.md with ADRs |
+| Multi-domain request | Domain skills | `sw-frontend:*`, `sw-backend:*` |
 
-If the Notion MCP supports tags/properties, set them during creation. Otherwise, use the update page tool:
+**DO NOT** just say "coordinate with architect" - **INVOKE the skill explicitly!**
 
+## Token Budget Per Response
+
+- **Research phase**: < 500 tokens
+- **Spec creation**: < 600 tokens per chunk
+- **Validation**: < 400 tokens
+
+**NEVER exceed 2000 tokens in a single response!**
+
+## When This Skill Activates
+
+This skill auto-activates when you mention:
+- Product planning, requirements, user stories
+- Feature specifications, roadmaps, MVPs
+- Acceptance criteria, backlog grooming
+- Prioritization (RICE, MoSCoW)
+- PRD, product specs, story mapping
+
+## Project-Specific Learnings
+
+**Before starting work, check for project-specific learnings:**
+
+```bash
+# Check if skill memory exists for this skill
+cat .specweave/skill-memories/pm.md 2>/dev/null || echo "No project learnings yet"
 ```
-mcp__claude_ai_Notion__notion-update-page with:
-- page_id: [created page ID]
-- properties: { tags: ["eng", "postmortem"] }
-```
 
-### 6. Share Results
+Project learnings are automatically captured by the reflection system when corrections or patterns are identified during development. These learnings help you understand project-specific conventions and past decisions.
 
-After creating the postmortem:
-
-1. Provide the Notion page link to the user
-2. Optionally post a summary back to the Slack channel:
-
-```
-mcp__slack__slack_post_message with:
-- channel: [incident channel ID]
-- text: "Postmortem document created: [Notion link]"
-```
-
-## Tips for Quality Postmortems
-
-### Blameless Culture
-
-- Focus on systems and processes, not individuals
-- Use "the system failed to..." rather than "person X failed to..."
-- Treat failures as learning opportunities
-
-### Be Specific
-
-- Include exact timestamps when available
-- Reference specific commits, PRs, or deployments
-- Quantify impact with numbers when possible
-
-### Actionable Items
-
-- Each action item should be specific and achievable
-- Assign clear owners
-- Set priorities to help with planning
-
-### Capture Context
-
-- Include relevant Slack threads and discussions
-- Link to monitoring dashboards and alerts
-- Reference any related incidents
-
-## Output
-
-Provide to the user:
-
-1. **Summary** of what was extracted from Slack
-2. **Notion link** to the created postmortem
-3. **List of action items** for easy reference
-4. **Any gaps** that need manual filling (if information was missing from Slack)

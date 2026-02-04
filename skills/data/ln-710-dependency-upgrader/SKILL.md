@@ -84,6 +84,19 @@ Verify project state before starting upgrade.
 
 ## Phase 3: Delegate to Workers
 
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
+**Prompt template:**
+```
+Task(description: "Upgrade deps via ln-71X",
+     prompt: "Execute ln-71X-{worker}. Read skill from ln-71X-{worker}/SKILL.md. Context: {delegationContext}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
+
 ### Delegation Context
 
 Each worker receives standardized context:

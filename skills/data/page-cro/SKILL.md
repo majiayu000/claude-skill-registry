@@ -1,334 +1,68 @@
 ---
 name: page-cro
-description: When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says "CRO," "conversion rate optimization," "this page isn't converting," "improve conversions," or "why isn't this page working." For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro.
+description: "优化任何营销页面的转化时使用：首页、落地页、定价页、功能页、博客。触发词：CRO、conversion rate optimization、this page isn't converting、improve conversions、why isn't this page working。注册流程见 signup-flow-cro；注册后激活见 onboarding-cro；非注册表单见 form-cro；弹窗见 popup-cro。"
+license: MIT
 ---
 
-# Page Conversion Rate Optimization (CRO)
-
-You are a conversion rate optimization expert. Your goal is to analyze marketing pages and provide actionable recommendations to improve conversion rates.
-
-## Initial Assessment
-
-Before providing recommendations, identify:
-
-1. **Page Type**: What kind of page is this?
-   - Homepage
-   - Landing page (paid traffic, specific campaign)
-   - Pricing page
-   - Feature/product page
-   - Blog post with CTA
-   - About page
-   - Other
-
-2. **Primary Conversion Goal**: What's the one thing this page should get visitors to do?
-   - Sign up / Start trial
-   - Request demo
-   - Purchase
-   - Subscribe to newsletter
-   - Download resource
-   - Contact sales
-   - Other
-
-3. **Traffic Context**: If known, where are visitors coming from?
-   - Organic search (what intent?)
-   - Paid ads (what messaging?)
-   - Social media
-   - Email
-   - Referral
-   - Direct
-
-## CRO Analysis Framework
-
-Analyze the page across these dimensions, in order of impact:
-
-### 1. Value Proposition Clarity (Highest Impact)
-
-**Check for:**
-- Can a visitor understand what this is and why they should care within 5 seconds?
-- Is the primary benefit clear, specific, and differentiated?
-- Does it address a real pain point or desire?
-- Is it written in the customer's language (not company jargon)?
-
-**Common issues:**
-- Feature-focused instead of benefit-focused
-- Too vague ("The best solution for your needs")
-- Too clever (sacrificing clarity for creativity)
-- Trying to say everything instead of the one most important thing
-
-### 2. Headline Effectiveness
-
-**Evaluate:**
-- Does it communicate the core value proposition?
-- Is it specific enough to be meaningful?
-- Does it create curiosity or urgency without being clickbait?
-- Does it match the traffic source's messaging (ad → landing page consistency)?
-
-**Strong headline patterns:**
-- Outcome-focused: "Get [desired outcome] without [pain point]"
-- Specificity: Include numbers, timeframes, or concrete details
-- Social proof baked in: "Join 10,000+ teams who..."
-- Direct address of pain: "Tired of [specific problem]?"
-
-### 3. CTA Placement, Copy, and Hierarchy
-
-**Primary CTA assessment:**
-- Is there one clear primary action?
-- Is it visible without scrolling (above the fold)?
-- Does the button copy communicate value, not just action?
-  - Weak: "Submit," "Sign Up," "Learn More"
-  - Strong: "Start Free Trial," "Get My Report," "See Pricing"
-- Is there sufficient contrast and visual weight?
-
-**CTA hierarchy:**
-- Is there a logical primary vs. secondary CTA structure?
-- Are CTAs repeated at key decision points (after benefits, after social proof, etc.)?
-- Is the commitment level appropriate for the page stage?
-
-### 4. Visual Hierarchy and Scannability
-
-**Check:**
-- Can someone scanning get the main message?
-- Are the most important elements visually prominent?
-- Is there clear information hierarchy (H1 → H2 → body)?
-- Is there enough white space to let elements breathe?
-- Do images support or distract from the message?
-
-**Common issues:**
-- Wall of text with no visual breaks
-- Competing elements fighting for attention
-- Important information buried below the fold
-- Stock photos that add nothing
-
-### 5. Trust Signals and Social Proof
-
-**Types to look for:**
-- Customer logos (especially recognizable ones)
-- Testimonials (specific, attributed, with photos)
-- Case study snippets with real numbers
-- Review scores and counts
-- Security badges (where relevant)
-- "As seen in" media mentions
-- Team/founder credibility
+# 页面转化率优化（CRO）
 
-**Placement:**
-- Near CTAs (to reduce friction at decision point)
-- After benefit claims (to validate them)
-- Throughout the page at natural break points
+分析营销页面并提供可执行的改进建议以提升转化率。
 
-### 6. Objection Handling
-
-**Identify likely objections for this page type:**
-- Price/value concerns
-- "Will this work for my situation?"
-- Implementation difficulty
-- Time to value
-- Switching costs
-- Trust/legitimacy concerns
-- "What if it doesn't work?"
-
-**Check if the page addresses these through:**
-- FAQ sections
-- Guarantee/refund policies
-- Comparison content
-- Feature explanations
-- Process transparency
-
-### 7. Friction Points
-
-**Look for unnecessary friction:**
-- Too many form fields
-- Unclear next steps
-- Confusing navigation
-- Required information that shouldn't be required
-- Broken or slow elements
-- Mobile experience issues
-- Long load times
-
-## Output Format
-
-Structure your recommendations as:
-
-### Quick Wins (Implement Now)
-Changes that are easy to make and likely to have immediate impact.
-
-### High-Impact Changes (Prioritize)
-Bigger changes that require more effort but will significantly improve conversions.
-
-### Test Ideas
-Hypotheses worth A/B testing rather than assuming.
-
-### Copy Alternatives
-For key elements (headlines, CTAs, value props), provide 2-3 alternative versions with rationale.
-
----
-
-## Page-Specific Frameworks
-
-### Homepage CRO
-
-Homepages serve multiple audiences. Focus on:
-- Clear positioning statement that works for cold visitors
-- Quick path to most common conversion action
-- Navigation that helps visitors self-select
-- Handling both "ready to buy" and "still researching" visitors
-
-### Landing Page CRO
-
-Single-purpose pages. Focus on:
-- Message match with traffic source
-- Single CTA (remove navigation if possible)
-- Complete argument on one page (minimize clicks to convert)
-- Urgency/scarcity if genuine
-
-### Pricing Page CRO
-
-High-intent visitors. Focus on:
-- Clear plan comparison
-- Recommended plan indication
-- Feature clarity (what's included/excluded)
-- Addressing "which plan is right for me?" anxiety
-- Easy path from pricing to checkout
-
-### Feature Page CRO
-
-Visitors researching specifics. Focus on:
-- Connecting feature to benefit
-- Use cases and examples
-- Comparison to alternatives
-- Clear CTA to try/buy
-
-### Blog Post CRO
-
-Content-to-conversion. Focus on:
-- Contextual CTAs that match content topic
-- Lead magnets related to article subject
-- Inline CTAs at natural stopping points
-- Exit-intent as backup
-
----
-
-## Experiment Ideas by Page Type
-
-### Homepage Experiments
-
-**Hero Section**
-- Test headline variations (specific vs. abstract, benefit vs. feature)
-- Add or refine subheadline for clarity
-- Include or exclude prominent CTA above the fold
-- Test hero visual: screenshot vs. GIF vs. illustration vs. video
-- A/B test CTA button colors for contrast
-- Test different CTA button text ("Start Free Trial" vs. "Get Started" vs. "See Demo")
-- Add interactive demo to engage visitors immediately
-
-**Trust & Social Proof**
-- Test placement of customer logos (hero vs. below fold)
-- Showcase case studies or testimonials in hero section
-- Add trust badges (security, compliance, awards)
-- Test customer count or social proof in headline
-
-**Features & Content**
-- Highlight key features with icons and brief descriptions
-- Test feature section order and prominence
-- Add or remove secondary CTAs throughout page
-
-**Navigation & UX**
-- Add sticky navigation bar with persistent CTA
-- Test navigation menu order (high-priority items at edges)
-- Add prominent CTA button in nav bar
-- Live chat widget vs. AI chatbot for instant support
-- Optimize footer for clarity and secondary conversions
-
----
-
-### Pricing Page Experiments
-
-**Price Presentation**
-- Highlight annual billing discounts vs. show monthly only vs. show both
-- Test different pricing points ($99 vs. $100 vs. $97)
-- Add "Most Popular" or "Recommended" badge to target plan
-- Experiment with number of visible tiers (3 vs. 4 vs. 2)
-- Use price anchoring strategically
-
-**Pricing UX**
-- Add pricing calculator for complex/usage-based pricing
-- Turn complex pricing table into guided multistep form
-- Test feature comparison table formats
-- Add toggle for monthly/annual with savings highlighted
-- Test "Contact Sales" vs. showing enterprise pricing
-
-**Objection Handling**
-- Add FAQ section addressing common pricing objections
-- Include ROI calculator or value demonstration
-- Add money-back guarantee prominently
-- Show price-per-user breakdowns for team plans
-- Include "What's included" clarity for each tier
-
-**Trust Signals**
-- Add testimonials specific to pricing/value
-- Show customer logos near pricing
-- Display review scores from G2/Capterra
-
----
-
-### Demo Request Page Experiments
-
-**Form Optimization**
-- Simplify demo request form (fewer fields)
-- Test multi-step form with progress bar vs. single-step
-- Test form placement: above fold vs. after content
-- Add or remove phone number field
-- Use field enrichment to hide known fields
-
-**Page Content**
-- Optimize demo page content with benefits above form
-- Add product video or GIF showing demo experience
-- Include "What You'll Learn" section
-- Add customer testimonials near form
-- Address common objections in FAQ
-
-**CTA & Routing**
-- Test demo button CTAs ("Book Your Demo" vs. "Schedule 15-Min Call")
-- Offer on-demand demo alongside live option
-- Personalize demo page messaging based on visitor data
-- Remove navigation to reduce distractions
-- Optimize routing: calendar link for qualified, self-serve for others
-
----
-
-### Resource/Blog Page Experiments
-
-**Content CTAs**
-- Add floating or sticky CTAs on blog posts
-- Test inline CTAs within content vs. end-of-post only
-- Show estimated reading time
-- Add related resources at end of article
-- Test gated vs. free content strategies
-
-**Resource Section**
-- Optimize resource section navigation and filtering
-- Add search functionality
-- Highlight featured or popular resources
-- Test grid vs. list view layouts
-- Create resource bundles by topic
-
----
-
-## Questions to Ask the User
-
-If you need more context, ask:
-
-1. What's your current conversion rate and goal?
-2. Where is traffic coming from?
-3. What does your signup/purchase flow look like after this page?
-4. Do you have any user research, heatmaps, or session recordings?
-5. What have you already tried?
-
----
-
-## Related Skills
-
-- **signup-flow-cro**: If the issue is in the signup process itself, not the page leading to it
-- **form-cro**: If forms on the page need optimization
-- **popup-cro**: If considering popups as part of the conversion strategy
-- **copywriting**: If the page needs a complete copy rewrite rather than CRO tweaks
-- **ab-test-setup**: To properly test recommended changes
+## 前置了解
+
+页面类型（首页/落地/定价/功能/博客）、主要转化目标（注册/试用/购买/订阅/下载/联系销售）、流量来源（有机/付费/社媒/邮件/推荐/直接）。
+
+## CRO 分析框架（按影响排序）
+
+### 1. 价值主张清晰度（影响最高）
+5 秒内能否理解这是什么、为什么要在意？主利益是否清晰、具体、差异化？是否解决真实痛点或愿望？是否用客户语言（非公司行话）？  
+**常见问题**：功能导向而非利益、太模糊、太聪明（牺牲清晰）、试图说一切而非最重要的一点。
+
+### 2. 标题有效性
+是否传达核心价值主张？是否足够具体？是否创造好奇或紧迫而非标题党？是否匹配流量来源信息（广告→落地页一致性）？  
+**强标题模式**：结果导向、具体（含数字/时间/细节）、内置社会证明、直接解决痛点。
+
+### 3. CTA 位置、文案与层级
+**主 CTA 评估**：是否有一个明确主行动？是否无需滚动可见（首屏）？按钮文案是否传达价值而非仅动作？是否有足够对比与视觉重量？  
+**CTA 层级**：是否有逻辑的主/次 CTA 结构？是否在关键决策点重复（利益后、社会证明后等）？承诺级别是否适合页面阶段？
+
+### 4. 视觉层级与可扫描性
+能否扫描获取主信息？最重要元素是否视觉突出？是否有清晰信息层级（H1→H2→正文）？是否有足够留白？图片是否支持而非分散信息？  
+**常见问题**：无视觉断点的文字墙、竞争元素争抢注意、重要信息埋没在首屏下、无意义的图库照片。
+
+### 5. 信任信号与社会证明
+**类型**：客户 logo（特别是知名）、证言（具体、署名、有照片）、案例片段（真实数字）、评分与数量、安全标识（如适用）、「见于」媒体提及、团队/创始人可信度。  
+**位置**：CTA 附近（决策点减摩擦）、利益声明后（验证）、页面自然断点。
+
+### 6. 异议处理
+识别该页面类型的可能异议：价格/价值担忧、「适合我的情况吗？」、实施难度、价值时间、切换成本、信任/合法性、「如果没用怎么办？」。  
+检查页面是否通过 FAQ、保证/退款政策、对比内容、功能解释、流程透明处理这些。
+
+### 7. 摩擦点
+查找不必要摩擦：字段过多、下一步不清、导航混乱、不应要求的信息、损坏或慢的元素、移动体验问题、加载时间长。
+
+## 输出格式
+
+**快速获胜**：易做且可能有即时影响。  
+**高影响变更**：需更多努力但显著提升转化。  
+**测试想法**：值得 A/B 测试而非假设。  
+**文案备选**：关键元素（标题、CTA、价值主张）提供 2～3 个备选版本与理由。
+
+## 页面特定框架
+
+**首页**：多受众，清晰定位、快速路径到最常见转化、导航帮助自选、处理「准备购买」与「仍在研究」。  
+**落地页**：单目的，与流量来源信息匹配、单一 CTA（可能移除导航）、一页完整论证、真实紧迫/稀缺。  
+**定价页**：高意图访客，清晰计划对比、推荐计划指示、功能清晰、解决「哪个适合我？」焦虑、从定价到结账的简单路径。  
+**功能页**：研究特定内容的访客，连接功能到利益、用例与示例、与替代方案对比、清晰的试用/购买 CTA。  
+**博客**：内容到转化，上下文相关 CTA 匹配主题、与文章主题相关的线索磁铁、内联 CTA 在自然停点、退出意图作为备份。
+
+## 实验想法（按页面类型）
+
+**首页**：Hero 标题变体、CTA 颜色/文案、客户 logo 位置、粘性导航、实时聊天 vs AI 聊天机器人。  
+**定价页**：年付折扣展示、价格点测试、推荐徽章、层级数量、FAQ、ROI 计算器、月/年切换。  
+**Demo 请求页**：表单简化、多步表单、表单位置、产品视频/GIF、日历链接。  
+**资源/博客页**：浮动/粘性 CTA、内联 CTA、阅读时间、相关资源、资源部分导航/筛选。
+
+## 相关技能
+
+signup-flow-cro、form-cro、popup-cro、copywriting、ab-test-setup。

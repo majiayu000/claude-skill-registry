@@ -1,13 +1,7 @@
 {
   "name": "vue-component-generator",
-  "description": "Generate Vue 3 components with Composition API TypeScript and scoped styles. Triggers on \"create vue component\", \"generate vue file\", \"vue 3 component\", \".vue component\".",
-  "repo": "ehtbanton/ClaudeSkillsRepo",
-  "category": "development",
-  "tags": [
-    "vue",
-    "component",
-    "generator"
-  ],
-  "stars": 0,
-  "source": "local"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/05-frontend-dev/vue-component-generator/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:35.586919Z"
 }

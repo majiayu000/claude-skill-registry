@@ -1,40 +1,40 @@
 ---
 name: obsidian-plan-wiki
-description: Create and manage behavior specification wikis in Obsidian format. Use when creating specs, documenting features, or when user mentions "wiki", "spec", or "workstream". Uses Last-Writer-Wins model - specs and code flip source-of-truth based on which changed last.
+description: Create and manage behavior specification wikis in Obsidian format. Use when creating specs, documenting features, or when user mentions "wiki", "spec", "feature", or "Obsidian".
 ---
 
 # Obsidian Spec Wiki
 
-Create and manage specification wikis as Obsidian-compatible markdown. Workstreams capture both **what** the system does (specs) and **how** to build it (plans).
+Create and manage specification wikis as Obsidian-compatible markdown. Feature areas capture both **what** the system does (specs) and **how** to build it (plans).
 
-## Last-Writer-Wins Source of Truth
+## Change Tracking (No LWW)
 
-Specs and code are **bidirectional**. The most recent authoritative change wins:
+There is no LWW model. Specs, plans, and code are updated intentionally and together.
 
-| Situation | Action |
-|-----------|--------|
-| **Docs newer** (DOCS-ahead) | Code must be rewritten to match spec |
-| **Code newer** (CODE-ahead) | Spec must be updated to match code |
+**Required change workflow:**
+1. Open or reference a `tk` ticket (https://github.com/wedow/ticket).
+2. Update the relevant feature spec/plan.
+3. Update the code.
+4. Add a changelog entry via `tinychange`.
+5. Link the `tk` ticket and feature ID in the changelog entry or spec note.
 
-**Authoritative changes** = behavior decisions (not typos/refactors).
-
-**Per-feature, not global** - different features can have different directions.
-
-**Decision procedure:**
-1. Identify the feature/spec
-2. Find docs location and code location
-3. Check git history for most recent behavior change
-4. Tag as DOCS-ahead or CODE-ahead
-5. Apply the appropriate action
-
-See [[references/last-writer-wins]] for full model details.
+**ADRs:** Store decisions in `docs/reference/decisions/` with Johnny Decimal IDs. Track updates like any other change.
 
 ## When to Use
 
 - Creating new project specs or documentation
-- Working with existing wikis using `%% [ ] 🙋‍♂️/🤖: %%` task format
-- User mentions "wiki", "spec", "workstream", or "Obsidian"
+- Working with existing wikis using the open-questions format: `%% 🙋‍♂️ ... %%` / `%% 🤖 ... %%`
+- User mentions "wiki", "spec", "feature", or "Obsidian"
 - Need to document behavior for agent-driven code updates
+
+## One-Shot Usage (LLM Quickstart)
+
+When asked to use this skill, follow this sequence in a single pass:
+1. Read `docs/AGENTS.md` (and `docs/handbook/README.md` if present).
+2. Identify the structure: `features/` or `workstreams/` (treat workstreams as feature areas).
+3. Use Johnny Decimal with two-digit decimals (`NN.NN`).
+4. Apply the open-questions format with `🙋‍♂️/🤖/✅` and block IDs.
+5. Record changes via `tk` and `tinychange` (merge to `docs/changelog.md`).
 
 ## Wiki Discovery
 
@@ -50,17 +50,19 @@ First match wins. **Always use `docs/` for new wikis.**
 
 ```
 docs/
-├── README.md              # Index with workstream table
+├── README.md              # Index with feature table (Johnny Decimal)
 ├── CLAUDE.md              # Symlink → AGENTS.md
 ├── AGENTS.md              # Actual agent instructions
-├── changelog.md           # Keep a Changelog format
-├── workstreams/
-│   └── NN-name/
-│       ├── README.md      # Executive summary + spec/plan tables
-│       ├── AGENTS.md      # Optional: workstream-specific agent rules
-│       ├── N.N-spec.md    # Behavior specs (what)
-│       └── N.N-plan.md    # Implementation plans (how)
-├── reference/             # Shared architecture docs
+├── changelog.md           # Keep a Changelog format (generated via tinychange)
+├── handbook/              # Process/tooling docs (Johnny Decimal)
+├── reference/             # Architecture + research (Johnny Decimal)
+│   └── decisions/         # ADRs (Johnny Decimal IDs)
+├── features/              # OR workstreams/ (treat as feature areas)
+│   └── NN-name/           # Johnny Decimal area (10-19, 20-29, ...)
+│       ├── README.md      # Area summary + feature tables
+│       ├── AGENTS.md      # Optional: area-specific agent rules
+│       ├── NN.NN-spec.md  # Feature specs (what)
+│       └── NN.NN-plan.md  # Implementation plans (how)
 └── research/              # Oracle outputs (frozen)
 ```
 
@@ -71,10 +73,18 @@ docs/
 **Why symlink?** The `@filename` convention in file contents causes some tools to ignore the file entirely. A symlink ensures CLAUDE.md is always read as the actual AGENTS.md content.
 
 **Key concepts:**
-- **Workstreams** = logical functional areas (not temporal phases)
+- **Feature areas** = Johnny Decimal functional areas (not temporal phases). Treat everything as a feature (product, infra, tooling, docs)
 - **Specs** = behavior documents (what the system does)
 - **Plans** = implementation documents (how to build it)
 - **Research** = Oracle/Delphi outputs (frozen snapshots)
+
+## Codebase AGENTS.md (Required)
+
+Every top-level code or source folder must include an `AGENTS.md` that explains:
+- The folder's purpose
+- Feature area IDs it implements (link to `docs/features/`)
+- Boundaries (what does NOT belong here)
+- Primary entry points and tests
 
 ## Core Principles
 
@@ -83,39 +93,52 @@ docs/
 Load only what's needed:
 
 ```
-User asks about auth → Read workstreams/01-auth/README.md
-User asks about login → Read workstreams/01-auth/1.1-login.md
+User asks about auth → Read features/10-core/README.md
+User asks about login → Read features/10-core/10.01-auth-spec.md
 User asks for overview → Read README.md only
 ```
 
 Load only what each task requires.
 
-### 2. Wiki Links Everywhere
+### 2. Johnny Decimal Structure
+
+Organize all feature areas using Johnny Decimal (johnnydecimal.com). Use ranges like 10-19, 20-29, ... Each feature has an ID `NN.NN` and uses that prefix in filenames.
+
+Example:
+```
+docs/features/10-core/
+├── README.md
+├── 10.01-auth-spec.md
+└── 10.01-auth-plan.md
+```
+
+### 3. Wiki Links Everywhere
 
 All references use `[[wiki-links]]`. Broken links = sync signal.
 
 ```markdown
-[[workstreams/01-auth/1.1-login|Login Flow]]
+[[features/10-core/10.01-auth-spec|Login Flow]]
 [[reference/architecture#auth-middleware|Auth Middleware]]
 ```
 
-### 3. Task Tracking with Obsidian Comments
+### 4. Task Tracking with Obsidian Comments
 
-Track open questions using hidden comments with emoji prefixes and block references:
+Track open questions using hidden comments with emoji prefixes and block references. Multi-line is allowed if it improves readability.
 
 ```markdown
-%% [ ] 🙋‍♂️: human task or instruction %% ^q-scope-descriptor
+%% 🙋‍♂️ Human question/task %% ^q-scope-descriptor
 
-%% [ ] 🤖: agent question needing human input %% ^q-scope-question
+%% 🤖 Agent question waiting on human %% ^q-scope-question
 
-%% [x] 🤖: resolved → answer here %% ^q-scope-resolved
+%% ✅ Question here → Answer here %% ^q-scope-resolved
 ```
 
 **CRITICAL: Separate each question with a blank line.** Obsidian treats consecutive lines as a single block; only the last block ID works.
 
 **Format components:**
-- `🙋‍♂️:` = **human wrote this** → AGENTS SHOULD ACTION/ANSWER
-- `🤖:` = **agent wrote this** → AGENTS MUST SKIP (waiting for human)
+- `🙋‍♂️` = **human wrote this** → AGENTS SHOULD ACTION/ANSWER
+- `🤖` = **agent wrote this** → AGENTS MUST SKIP (waiting for human)
+- `✅` = **resolved** → no action needed
 - `^q-{scope}-{descriptor}` = block ID for Obsidian navigation
 
 **WHO ANSWERS WHAT:**
@@ -123,66 +146,83 @@ Track open questions using hidden comments with emoji prefixes and block referen
 |-------|--------------|--------------------------|
 | 🙋‍♂️ | Human | **Agent** (this is work for you!) |
 | 🤖 | Agent | **Human** (skip this, you asked it) |
+| ✅ | Resolved | **No one** |
 
 **Conversation threading:** Questions can have inline replies. The **LAST emoji** determines whose turn:
 ```
-%% [ ] 🤖: Should we cache? 🙋‍♂️ yes 🤖: what limit? %% ^q-cache
+%% 🤖 Should we cache? 🙋‍♂️ yes 🤖 what limit? %% ^q-cache
 ```
-Last emoji is 🤖 → Human's turn. When `[x]` → Done.
+Last emoji is 🤖 → Human's turn. When `✅` → Done.
 
 **Block ID convention:** `^q-{scope}-{descriptor}`
-- `^q-auth-oauth` (auth workstream, OAuth question)
-- `^q-tabs-persist` (tabs workstream, persistence question)
+- `^q-auth-oauth` (auth feature, OAuth question)
+- `^q-tabs-persist` (tabs feature, persistence question)
 
 **Workflow:**
-- Agent adds `🤖:` question → human answers (agent skips these)
-- Human answers → convert to `🙋‍♂️:` (now actionable by agent) or `[x]` (resolved)
-- Human adds `🙋‍♂️:` task → agent should action this
-- Resolved format: `%% [x] 🤖: question → answer %% ^q-id`
+- Agent adds `🤖` question → human answers (agent skips these)
+- Human answers → convert to `🙋‍♂️` (now actionable by agent) or `✅` (resolved)
+- Human adds `🙋‍♂️` task → agent should action this
+- Resolved format: `%% ✅ question → answer %% ^q-id`
 
 **Linking to questions:**
 ```markdown
-[[workstreams/01-auth/1.1-login#^q-auth-oauth|OAuth question]]
+[[features/10-core/10.01-auth-spec#^q-auth-oauth|OAuth question]]
 ```
 
-**Search in Obsidian:** Search for the emoji, or create a Dataview index (see references).
+**Search in Obsidian:** Search for the emoji.
 
 **Find via terminal:**
 ```bash
-grep -rn '%% \[ \]' docs/              # all open
-grep -rn '🤖:' docs/                   # agent questions
-grep -rn '🙋‍♂️:' docs/                  # human tasks
-grep -rn '%% \[ \].*%%$' docs/         # missing block IDs
+rg "🙋‍♂️" docs/                 # human tasks
+rg "🤖" docs/                    # agent questions
+rg "✅" docs/                    # resolved
+rg "%% .*%%$" docs/              # missing block IDs (lines ending with %%)
 ```
 
-**Agent responsibility:** Add block IDs to any question missing one. Generate the ID from the file's workstream/spec and the question topic:
+**Agent responsibility:** Add block IDs to any question missing one. Generate the ID from the file's feature/spec and the question topic:
 ```
-%% [ ] 🤖: how to handle OAuth? %%           → missing block ID
-%% [ ] 🤖: how to handle OAuth? %% ^q-auth-oauth   → fixed
+%% 🤖 how to handle OAuth? %%           → missing block ID
+%% 🤖 how to handle OAuth? %% ^q-auth-oauth   → fixed
 ```
 
-### 4. Changelog Protocol
+### 5. Changelog Protocol
 
-Log every change in `changelog.md`:
+Update `changelog.md` via `tinychange`. Do not hand-edit.
 
-```markdown
-## YYYY-MM-DD
-
-### Added
-- [[path/to/file]] - Description
-
-### Changed
-- [[path/to/file]] - What changed and why
+Setup (once):
+```bash
+tinychange init
 ```
+
+Add entry (interactive):
+```bash
+tinychange
+```
+
+Add entry (scripted):
+```bash
+tinychange new --kind Added --message "Describe the change" --author "Your Name"
+```
+
+Include the `tk` ticket ID in the message when available (e.g., "[tk-123] Add feature X").
+
+Merge entries into `docs/changelog.md`:
+```bash
+tinychange merge
+```
+
+Ensure `tinychange.toml` points to `docs/changelog.md` and uses Keep a Changelog format.
 
 ## Templates
 
 ### Spec File Template
 
 ```markdown
-# N.N Spec Name
+# NN.NN Spec Name
 
-> **Workstream:** [[../README|NN-Workstream-Name]]
+> **Feature Area:** [[../README|NN-Feature-Area-Name]]
+> **Feature ID:** NN.NN
+> **Ticket:** tk-000 (optional)
 
 ## Behavior
 
@@ -216,7 +256,7 @@ Log every change in `changelog.md`:
 
 ### Open Questions
 
-%% [ ] 🤖: Question needing resolution? %% ^q-specname-topic
+%% 🤖 Question needing resolution? %% ^q-specname-topic
 
 ## Integration
 
@@ -237,10 +277,11 @@ graph LR
 ### Plan File Template
 
 ```markdown
-# N.N Plan Name
+# NN.NN Plan Name
 
-> **Workstream:** [[../README|NN-Workstream-Name]]
-> **Related Spec:** [[N.N-spec-name]] (optional)
+> **Feature Area:** [[../README|NN-Feature-Area-Name]]
+> **Related Spec:** [[NN.NN-spec-name]] (optional)
+> **Ticket:** tk-000 (optional)
 
 ## Goal
 What this plan achieves.
@@ -274,41 +315,41 @@ How to verify the implementation works.
 
 ## Open Questions
 
-%% [ ] 🤖: Implementation question? %% ^q-planname-topic
+%% 🤖 Implementation question? %% ^q-planname-topic
 ```
 
-### Workstream README Template
+### Feature Area README Template
 
 ```markdown
-# NN Workstream Name
+# NN Feature Area Name
 
-> Brief description of what this workstream covers.
+> Brief description of what this feature area covers.
 
 ## Goal
-What this workstream achieves.
+What this feature area achieves.
 
 ## Specs
 
 | Spec | Description | Status |
 |------|-------------|--------|
-| [[N.1-spec-name]] | Brief description | Status |
-| [[N.2-spec-name]] | Brief description | Status |
+| [[NN.NN-spec-name]] | Brief description | Status |
+| [[NN.NN-spec-name]] | Brief description | Status |
 
 ## Plans
 
 | Plan | Description | Status |
 |------|-------------|--------|
-| [[N.1-plan-name]] | Implementation approach | Status |
+| [[NN.NN-plan-name]] | Implementation approach | Status |
 
 ## Shared Decisions
 
-ADRs that apply to all specs in this workstream:
+ADRs that apply to all specs in this feature area:
 - **Decision:** Brief summary
 
 ## Integration Points
 
-This workstream connects to:
-- [[../other-workstream/README|Other Workstream]] - how
+This feature area connects to:
+- [[../20-other-area/README|Other Feature Area]] - how
 ```
 
 ### CLAUDE.md Setup (Symlink)
@@ -335,48 +376,53 @@ Agent instructions belong here:
 
 ## Wiki Operations
 
-**IMPORTANT:** When working with this wiki, use the `obsidian-plan-wiki` skill if available. It provides the full spec format, LWW source-of-truth model, and workflow patterns.
+**IMPORTANT:** When working with this wiki, use the `obsidian-plan-wiki` skill if available. It provides the full spec format and workflow patterns.
 
 This documentation uses Obsidian vault format. Follow these patterns.
 
-### Last-Writer-Wins Source of Truth
+### Change Tracking (No LWW)
 
-Specs and code flip source-of-truth based on which changed last:
-- **DOCS-ahead** (spec newer) → update code to match spec
-- **CODE-ahead** (code newer) → update spec to match code
+Specs, plans, and code are updated intentionally and together. Track changes via `tk` tickets and `tinychange` entries.
 
-Check git history to determine direction. Per-feature, not global.
+### Ticketing (tk)
+
+All work is tracked via `tk` (https://github.com/wedow/ticket). Include ticket IDs in spec/plan headers and in `tinychange` messages.
 
 ### Progressive Disclosure
 
 **Don't load everything.** Navigate in layers:
 
-1. **Start at workstream README** - `workstreams/##-name/README.md`
+1. **Start at feature area README** - `features/NN-name/README.md`
    - Understand scope and current status
    - See which specs exist
 
-2. **Read specific specs as needed** - `workstreams/##-name/#.#-spec.md`
+2. **Read specific specs as needed** - `features/NN-name/NN.NN-*-spec.md`
    - Load only the spec you're implementing
    - Check "Integration" section for related specs
 
-3. **Dive into reference docs for deep context** - `reference/` or `workstreams/##-name/reference/`
+3. **Dive into reference docs for deep context** - `reference/` or `features/NN-name/reference/`
 
 4. **Check research for background** - `research/topic/`
 
+### Johnny Decimal Features
+
+Feature areas use Johnny Decimal IDs with two-digit decimals. Specs/plans use `NN.NN-` prefixes.
+
 ### Open Questions System
 
-See [[reference/obsidian-open-questions-system]] for full spec.
+See [[handbook/10-docs/10.01-open-questions-system]] for full spec.
 
 **WHO ANSWERS WHAT:**
 | Emoji | Who wrote it | Who should answer/action |
 |-------|--------------|--------------------------|
 | 🙋‍♂️ | Human | **Agent** (this is work for you!) |
 | 🤖 | Agent | **Human** (skip this, you asked it) |
+| ✅ | Resolved | **No one** |
 
 ### Updating Specs
 
 **Before:** Read Assumptions and Failure Modes
-**During:** Mark `🙋‍♂️:` questions resolved, note discoveries
+**During:** Mark open questions resolved with `✅`, note discoveries
 **After:** Update Success Criteria checkboxes, update README status
 
 ### Link Format
@@ -385,27 +431,36 @@ See [[reference/obsidian-open-questions-system]] for full spec.
 |--------|--------|
 | Same directory | `[text](filename.md)` |
 | Parent | `[text](../README.md)` |
-| Cross-workstream | `[text](../06-name/README.md)` |
+| Cross-feature area | `[text](../20-name/README.md)` |
 ```
+
+### Codebase AGENTS.md
+
+Every top-level code or source folder must include an `AGENTS.md` that explains:
+- The folder's purpose
+- Feature area IDs it implements (link to `docs/features/`)
+- Boundaries (what does NOT belong here)
+- Primary entry points and tests
 
 ### Root README Template
 
 ```markdown
 # Project Wiki
 
-> **For Claude:** Start here. Read workstream READMEs for context, then specific specs as needed.
+> **For Claude:** Start here. Read feature area READMEs for context, then specific specs as needed.
 
-## Workstreams
+## Feature Areas
 
-| # | Workstream | Description |
-|---|------------|-------------|
-| 01 | [[workstreams/01-name/README\|Name]] | Description |
+| # | Feature Area | Description |
+|---|--------------|-------------|
+| 10 | [[features/10-name/README\|Name]] | Description |
 
 ## Quick Links
 
 - [[AGENTS]] - Rules for agents
 - [[changelog]] - What changed and when
 - [[reference/architecture]] - System overview
+- [[reference/decisions]] - ADRs
 
 ## Research
 
@@ -418,67 +473,53 @@ Oracle/Delphi outputs (frozen snapshots):
 ### Creating a New Wiki
 
 1. Create `docs/` directory structure
-2. Write README.md with workstream table
+2. Write README.md with feature area table (Johnny Decimal)
 3. Create AGENTS.md with actual agent instructions
 4. Create CLAUDE.md as a symlink: `ln -s AGENTS.md CLAUDE.md`
-5. Initialize changelog.md
-6. Create workstream folders with README.md
+5. Initialize changelog via `tinychange init`
+6. Create feature area folders with README.md
 7. Add specs as needed
 
 ### Adding a Spec
 
-1. Create `N.N-spec-name.md` in workstream folder
-2. Fill in Behavior (contract + scenarios)
-3. Document Decisions (ADRs)
-4. Map Integration (dependencies + consumers with wiki links)
-5. Update workstream README table
-6. Add to changelog
+1. Create `NN.NN-spec-name.md` in feature area folder
+2. Add `tk` ticket in the header if applicable
+3. Fill in Behavior (contract + scenarios)
+4. Document Decisions (ADRs)
+5. Map Integration (dependencies + consumers with wiki links)
+6. Update feature area README table
+7. Update changelog via CLI
 
 ### Adding a Plan
 
-1. Create `N.N-plan-name.md` in workstream folder
+1. Create `NN.NN-plan-name.md` in feature area folder
 2. Link to related spec if one exists
-3. Fill in Implementation Steps with checkboxes
-4. List Files to Modify
-5. Document Risks & Mitigations
-6. Update workstream README plans table
-7. Add to changelog
+3. Add `tk` ticket in the header if applicable
+4. Fill in Implementation Steps with checkboxes
+5. List Files to Modify
+6. Document Risks & Mitigations
+7. Update feature area README plans table
+8. Update changelog via CLI
 
 ### Research Workflow
 
-When a `%% [ ] 🙋‍♂️/🤖: %%` needs research:
+When a `%% 🙋‍♂️ ... %%` or `%% 🤖 ... %%` comment needs research:
 
 **Simple question:** Launch oracle agent
 **Complex/uncertain:** Use Delphi (3 parallel oracles + synthesis)
 
 Store results in `research/`, link from spec:
 ```markdown
-%% [x] question → see [[research/topic]] %%
+%% ✅ question → see [[research/topic]] %% ^q-scope-topic
 ```
 
-### Syncing Specs and Code (LWW in Practice)
+### Keeping Specs and Code in Sync
 
-**DOCS-ahead: Update code from spec**
-1. Agent reads the spec's Behavior section (contract + scenarios)
-2. Agent reads the Integration section (what it touches)
-3. Agent implements/updates code to match spec
-4. Agent marks spec as implemented, updates changelog
-
-**CODE-ahead: Update spec from code**
-1. Agent reads the implementation code
-2. Agent identifies behavior that differs from spec (or isn't documented)
-3. Agent updates spec to match actual code behavior
-4. Agent updates changelog with spec sync
-
-**Determining direction:**
-```bash
-# Find last behavior change in spec
-git log -1 --format='%ci' -- docs/workstreams/NN-feature/
-
-# Find last behavior change in code
-git log -1 --format='%ci' -- src/feature/
-```
-Compare dates. Newer wins.
+Specs and code are updated together. If you discover drift:
+1. Open or link a `tk` ticket.
+2. Decide the intended behavior (document in spec or ADR).
+3. Update spec/plan and code to match that decision.
+4. Add a `tinychange` entry.
 
 ### Updating Specs During Implementation
 
@@ -486,13 +527,13 @@ Compare dates. Newer wins.
 
 **During implementation:**
 - Add implementation notes to the spec
-- Mark open questions as resolved: `%% [x] Decided → [outcome] %%`
+- Mark open questions as resolved: `%% ✅ Decided → [outcome] %%`
 - Note any discovered failure modes
 
 **After completing:**
 - Update Success Criteria checkboxes
 - Add commit hash if significant
-- Update workstream README status if needed
+- Update feature area README status if needed
 
 ## Link Format
 
@@ -503,27 +544,28 @@ Use relative markdown links (Obsidian-compatible):
 | Same directory | `[text](filename.md)` |
 | Parent directory | `[text](../README.md)` |
 | Subdirectory | `[text](reference/file.md)` |
-| Cross-workstream | `[text](../06-context-menu/README.md)` |
+| Cross-feature area | `[text](../20-context-menu/README.md)` |
 | Heading anchor | `[text](file.md#section-name)` |
 
 ## When to Create New Documentation
 
 | Situation | Action |
 |-----------|--------|
-| New feature area | Create new workstream directory |
-| New behavior to document | Create numbered spec file (`N.N-spec.md`) |
-| New implementation approach | Create numbered plan file (`N.N-plan.md`) |
+| New feature area | Create new feature area directory |
+| New behavior to document | Create numbered spec file (`NN.NN-spec.md`) |
+| New implementation approach | Create numbered plan file (`NN.NN-plan.md`) |
 | Deep technical topic | Add to `reference/` subdirectory |
 | Research question | Use Oracle, save to `research/` |
-| Workstream-specific rules | Create `AGENTS.md` in workstream |
+| Feature-area-specific rules | Create `AGENTS.md` in feature area |
+| New code/source folder | Create `AGENTS.md` in that folder |
 
 ## Best Practices
 
 1. **Specs describe behavior** - What it does (contract, scenarios)
 2. **Plans describe implementation** - How to build it (steps, files, risks)
 3. **All references are wiki links** - Broken links signal sync issues
-4. **Update changelog immediately** - Don't batch changes
+4. **Update changelog via CLI immediately** - Don't hand-edit
 5. **One spec per feature/component** - Keep focused
 6. **Research before deciding** - Use oracles for uncertain questions
-7. **Optional AGENTS.md per workstream** - For scoped agent rules
+7. **Optional AGENTS.md per feature area** - For scoped agent rules
 8. **CLAUDE.md is a symlink** - Points to AGENTS.md via symlink

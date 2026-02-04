@@ -1,145 +1,114 @@
 ---
 name: readme-writer
-description: Use when creating or editing a README.md file in any project or package. Recursively parses codebase from README location, suggests changes based on missing or changed functionality, and generates thorough, human-sounding documentation with copy-pasteable code blocks and practical examples.
-metadata:
-  author: gohypergiant
-  version: "1.0"
+description: |
+  Write effective README files following SOTA 2026 conventions.
+  Use when: (1) creating new README.md, (2) improving existing README,
+  (3) reviewing README quality. Covers badges, ToC, quick start,
+  GIF demos, CLI documentation patterns.
+category: documentation
+user-invocable: true
 ---
 
 # README Writer
 
-This skill guides the creation and maintenance of comprehensive, human-friendly README documentation by analyzing the codebase and ensuring documentation stays in sync with actual functionality.
+Write effective README files following SOTA 2026 best practices.
 
-## When to Activate This Skill
+## Quick Reference
 
-Use this skill when:
+| Section | Priority | Purpose |
+|---------|----------|---------|
+| Title + Tagline | Required | One sentence explaining what it does |
+| Badges | High | Build status, version, license at a glance |
+| Hero Example | Required | Copy-paste code that works immediately |
+| What It Does | Required | 3-5 bullets explaining value |
+| Quick Start | Required | Get running in under 10 minutes |
+| Why/Motivation | Medium | Problem-solution framing |
+| Features | Medium | Categorized feature list |
+| Installation | High | Step-by-step for different platforms |
+| Usage/Examples | High | Code examples with expected output |
+| API Reference | Medium | For libraries/CLIs with many commands |
+| Configuration | Medium | Config file locations and options |
+| Contributing | Medium | Link to CONTRIBUTING.md |
+| License | Required | Clear license statement |
+| ToC | High | For READMEs over 200 lines |
 
-- Creating a new README.md for a project or package
-- Updating an existing README.md after code changes
-- Auditing documentation for completeness and accuracy
-- Converting sparse documentation into thorough guides
-- User asks to "document this package" or "write a README"
-- User mentions README in context of a monorepo subdirectory
+## When to Use
 
-## When NOT to Use This Skill
+- Creating a new open source project
+- Improving an existing README that feels incomplete
+- Reviewing README quality before release
+- Converting internal docs to public README
 
-Do not activate for:
+## Hero Pattern
 
-- API documentation generation (use JSDoc/TSDoc tools)
-- Changelog or release notes
-- Internal developer notes not meant for README
-- Documentation in formats other than Markdown
+The first thing users see should be:
 
-## How to Use
+1. **Title**: Project name
+2. **Tagline**: One sentence (under 120 chars)
+3. **Badges**: npm version, build status, license
+4. **Hero code**: Runnable example in under 5 lines
 
-### Step 1: Locate the README Context
+```markdown
+# project-name
 
-Identify where the README should live. In monorepos, this determines the scope of codebase analysis:
+Brief tagline explaining what this does.
 
-```
-project-root/           # README here documents entire monorepo
-├── packages/
-│   └── my-lib/         # README here documents only my-lib
-│       └── README.md
-└── README.md
-```
+[![npm](https://img.shields.io/npm/v/project-name)](https://npmjs.com/package/project-name)
+[![build](https://github.com/user/repo/actions/workflows/ci.yml/badge.svg)](https://github.com/user/repo/actions)
 
-### Step 2: Analyze the Codebase
-
-Recursively parse code starting from the README's directory:
-
-1. **Identify entry points**: Look for `index.ts`, `main.ts`, package.json `main`/`exports`
-2. **Map public API**: Find all exported functions, classes, types, constants
-3. **Trace dependencies**: Understand what the package depends on
-4. **Find examples**: Look for `examples/`, test files, or inline usage comments
-5. **Check package.json**: Extract scripts, dependencies, peer dependencies
-
-### Step 3: Compare Against Existing README
-
-If a README exists, identify gaps:
-
-- **Missing exports**: Public API not documented
-- **Stale examples**: Code samples using deprecated patterns
-- **Missing sections**: No installation, no quick start, no API reference
-- **Outdated commands**: Wrong package manager, missing scripts
-
-### Step 4: Generate or Update README
-
-Follow the [README Structure](references/readme-structure.md) and apply [Writing Principles](references/writing-principles.md).
-
-Use the [README Template](references/readme-template.md) as a starting point for new READMEs.
-
-## README Workflow Decision Tree
-
-```
-Start
-  ↓
-Does README.md exist?
-  ├─ No → Analyze codebase → Generate from template
-  └─ Yes → Analyze codebase → Compare with existing
-             ↓
-         Identify gaps and staleness
-             ↓
-         Suggest specific changes
-             ↓
-         Apply updates (with user confirmation)
+\`\`\`bash
+npx project-name init
+\`\`\`
 ```
 
-## Key References
+## Decision Tree
 
-Load these as needed for detailed guidance:
+**How long is the README?**
+- Under 100 lines: No ToC needed
+- 100-200 lines: Optional ToC
+- Over 200 lines: ToC required
 
-- [references/readme-structure.md](references/readme-structure.md) - Section ordering and content requirements
-- [references/writing-principles.md](references/writing-principles.md) - How to write human-sounding, thorough docs
-- [references/codebase-analysis.md](references/codebase-analysis.md) - How to parse and understand code for documentation
-- [references/readme-template.md](references/readme-template.md) - Copy-pasteable template for new READMEs
+**Is it a CLI tool?**
+- Yes: Document `--help`, `--json`, show GIF demos
+- No: Focus on code examples
 
-## Example Trigger Phrases
+**Is it a library?**
+- Yes: API reference with types
+- No: Usage examples sufficient
 
-- "Create a README for this package"
-- "Update the README to reflect recent changes"
-- "The README is out of date, can you fix it?"
-- "Document this library"
-- "Write docs for packages/my-lib"
-- "This package needs better documentation"
+**Is it a monorepo?**
+- Yes: Use `monorepo-readme` skill instead
+- No: Standard structure applies
 
-## Required Skills
+## Quality Checklist
 
-This skill requires the `humanizer` skill for reviewing generated content.
+Before publishing, verify:
 
-If `humanizer` is not available:
-1. Check Settings > Capabilities to enable it
-2. Or invoke it with `/skill humanizer`
+- [ ] New user can get running in under 10 minutes
+- [ ] Hero example works with copy-paste
+- [ ] All code examples are tested
+- [ ] No broken links
+- [ ] License is specified
+- [ ] Contact/contributing info exists
 
-The humanizer skill removes AI writing patterns and ensures documentation sounds natural. Without it, generated READMEs may contain robotic language, inflated significance claims, and other AI artifacts.
+## Reference Files
 
-## Important Notes
+| Topic | File |
+|-------|------|
+| Section ordering | [references/structure.md](references/structure.md) |
+| Badge patterns | [references/badges.md](references/badges.md) |
+| CLI documentation | [references/cli-docs.md](references/cli-docs.md) |
+| Full checklist | [references/checklist.md](references/checklist.md) |
 
-### Package Manager Detection
+## Skill Chaining
 
-Always use the correct package manager based on lockfiles:
+This skill works with:
+- **markdown-writer**: For consistent prose style
+- **doc-maintenance**: For keeping README updated
+- **monorepo-readme**: For multi-package projects
 
-| Lockfile | Package Manager | Install Command |
-|----------|-----------------|-----------------|
-| `pnpm-lock.yaml` | pnpm | `pnpm install` |
-| `package-lock.json` | npm | `npm install` |
-| `yarn.lock` | yarn | `yarn` |
-| `bun.lockb` | bun | `bun install` |
+## Sources
 
-### Table of Contents
-
-Include a TOC for READMEs over ~200 lines. Place it after the heading area, before the Installation section.
-
-### Human-Sounding Writing
-
-**REQUIRED SUB-SKILL:** Use `humanizer` to review and refine generated README content.
-
-Documentation should sound like it was written by someone who genuinely wants to help. The humanizer skill identifies and removes AI writing patterns including:
-
-- Inflated significance language ("pivotal", "testament", "crucial")
-- Promotional/advertisement-like tone
-- Superficial -ing analyses
-- Vague attributions and weasel words
-- Em dash overuse and rule-of-three patterns
-
-After generating README content, apply the humanizer skill to ensure the output sounds natural and human-written. See [references/writing-principles.md](references/writing-principles.md) for additional guidance specific to technical documentation.
+- [Make a README](https://www.makeareadme.com/)
+- [awesome-readme](https://github.com/matiassingers/awesome-readme)
+- [readme-best-practices](https://github.com/jehna/readme-best-practices)

@@ -1,37 +1,84 @@
 ---
-name: postmortem
-description: |
-  POSTMORTEM
+name: optimization.postmortem
+phase: optimization
+roles:
+  - Engineering Lead
+  - SRE
+  - QA Lead
+description: Produce a post-incident analysis capturing timeline, root causes, impact, and corrective actions.
+variables:
+  required:
+    - name: incident_summary
+      description: High-level summary of the incident.
+    - name: impact_scope
+      description: Systems, users, or KPIs impacted.
+  optional:
+    - name: duration
+      description: Incident duration or timestamps.
+    - name: mitigation_steps
+      description: Steps taken during mitigation.
+outputs:
+  - Incident timeline and contributing factors.
+  - Root cause analysis with classification and detection gaps.
+  - Corrective and preventive actions with owners.
 ---
 
----
-description: Create blameless postmortem from the incident we just resolved
-argument-hint: [optional: additional context or specific focus]
----
+# Purpose
+Standardize postmortem creation so engineering and reliability teams can rapidly document learnings and accountability.
 
-# POSTMORTEM
+# Pre-run Checklist
+- ✅ Gather incident alerts, logs, and chat transcripts.
+- ✅ Confirm timeline with responders.
+- ✅ Align on severity classification and stakeholders.
 
-Generate a blameless postmortem from this conversation.
+# Invocation Guidance
+```bash
+codex run --skill optimization.postmortem \
+  --vars "incident_summary={{incident_summary}}" \
+         "impact_scope={{impact_scope}}" \
+         "duration={{duration}}" \
+         "mitigation_steps={{mitigation_steps}}"
+```
 
-You just helped resolve an incident. The investigation context, hypotheses, evidence, and fix are all in this conversation (and likely in an INCIDENT.md file).
+# Recommended Input Attachments
+- Incident timeline exports (PagerDuty, Opsgenie, Slack).
+- Monitoring dashboards or screenshots.
+- Customer communications sent during the incident.
 
-## Output Structure
+# Claude Workflow Outline
+1. Summarize incident context, severity, impact, and timeline.
+2. Detail sequence of events with timestamps and decision points.
+3. Perform root cause analysis using techniques like 5 Whys or fishbone.
+4. Document detection gaps and monitoring improvements.
+5. Provide corrective and preventive actions with owners and deadlines.
 
-Write a postmortem with:
-- **Summary**: One paragraph - what happened, impact, resolution
-- **Timeline**: Key events in UTC (use conversation timestamps if available)
-- **Root Cause**: The actual underlying cause (not symptoms)
-- **5 Whys**: Dig to systemic factors
-- **What Went Well**: Recognition of good practices during response
-- **What Went Wrong**: Honest assessment without blame
-- **Follow-up Actions**: Concrete items with clear ownership
+# Output Template
+```
+# Postmortem — {{incident_summary}}
 
-## Philosophy
+## Impact & Timeline
+- Severity:
+- Impact Scope:
+- Duration:
+| Time | Event | Owner | Notes |
+| --- | --- | --- | --- |
 
-- **Blameless**: Focus on systems, processes, and tools - not people
-- **Honest**: Don't minimize or exaggerate
-- **Actionable**: Every lesson should have a concrete follow-up
+## Root Cause Analysis
+- Primary Cause:
+- Contributing Factors:
+- Detection Gaps:
 
-If INCIDENT.md exists, update its postmortem section. Otherwise create POSTMORTEM-{timestamp}.md.
+## Corrective Actions
+| Action | Owner | Due Date | Status |
+| --- | --- | --- | --- |
 
-Optional focus: **$ARGUMENTS**
+## Preventive Measures
+- Monitoring Updates:
+- Process Improvements:
+- Follow-up Reviews:
+```
+
+# Follow-up Actions
+- Review postmortem in reliability or engineering forums.
+- Track actions in the incident management system.
+- Schedule follow-up to verify preventive measures are in place.

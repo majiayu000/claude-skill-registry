@@ -142,7 +142,7 @@ When user asks for a retrospective, follow these steps:
   ```
 
 ## I/O Contract
-Underlying scripts return JSON:
+CLI commands return JSON:
 - Memory recall: `{ status: "ok", action: "load", facts: [...] }`
 - Memory add: `{ status: "ok", action: "add", text: "..." }`
 - Task list: `{ status: "ok", action: "list", tasks: [...] }`

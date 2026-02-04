@@ -339,7 +339,7 @@ async function fixDuplicates() {
     DELETE FROM users
     WHERE id IN (
       SELECT id FROM (
-        SELECT id, 
+        SELECT id,
                ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at DESC) as rn
         FROM users
       ) t
@@ -471,7 +471,7 @@ async function getDataQualityMetrics() {
       SELECT COUNT(*) FROM products WHERE price < 0
     `,
     missingData: await prisma.$queryRaw`
-      SELECT 
+      SELECT
         SUM(CASE WHEN email IS NULL THEN 1 ELSE 0 END) as users_no_email,
         SUM(CASE WHEN total IS NULL THEN 1 ELSE 0 END) as orders_no_total
       FROM users

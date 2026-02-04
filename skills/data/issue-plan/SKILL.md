@@ -34,6 +34,7 @@ If no issue ID is provided in args, ask the user: "Which issue would you like to
 - Follow software engineering best practices: create independent feature branches (git checkout -b feature/issue-{id}-xxx)
 - Commit messages must follow Conventional Commits specification (feat / fix / docs / refactor / test / chore)
 - Follow the small iteration principle: implement small, focused changes with corresponding test cases
+- **Include test strategy in the plan following `/testing` conventions**
 - After each change, run relevant tests to verify functionality before proceeding
 - When fixing bugs: reproduce via tests first, then fix, then verify tests pass
 - In regression testing: fix failed tests one at a time, verify each individually
@@ -82,15 +83,7 @@ For each missing phase, execute in order, then post comments to the issue:
 
 2. **Post research comment to issue**:
    ```bash
-   gh issue comment {issue-id} --body "$(cat <<'EOF'
-   ## Research Phase
-
-   [Contents of research.md]
-
-   ---
-   *Phase 1/3 of deep-dive workflow*
-   EOF
-   )"
+   gh issue comment {issue-id} --body-file /tmp/deep-dive/{task-name}/research.md
    ```
    - **Update todo:** Mark "Post research comment to issue" as completed
 
@@ -105,15 +98,7 @@ For each missing phase, execute in order, then post comments to the issue:
 
 2. **Post innovation comment to issue**:
    ```bash
-   gh issue comment {issue-id} --body "$(cat <<'EOF'
-   ## Innovation Phase
-
-   [Contents of innovate.md]
-
-   ---
-   *Phase 2/3 of deep-dive workflow*
-   EOF
-   )"
+   gh issue comment {issue-id} --body-file /tmp/deep-dive/{task-name}/innovate.md
    ```
    - **Update todo:** Mark "Post innovate comment to issue" as completed
 
@@ -129,15 +114,7 @@ For each missing phase, execute in order, then post comments to the issue:
 
 2. **Post plan comment to issue**:
    ```bash
-   gh issue comment {issue-id} --body "$(cat <<'EOF'
-   ## Plan Phase
-
-   [Contents of plan.md]
-
-   ---
-   *Phase 3/3 - Ready for approval*
-   EOF
-   )"
+   gh issue comment {issue-id} --body-file /tmp/deep-dive/{task-name}/plan.md
    ```
    - **Update todo:** Mark "Post plan comment to issue" as completed
 

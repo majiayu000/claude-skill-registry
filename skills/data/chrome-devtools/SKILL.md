@@ -34,6 +34,14 @@ cd "$SKILL_DIR"
 | **Debug issues** | Collect console logs, analyze with session storage |
 | **Accessibility audit** | Use ARIA snapshot for semantic structure analysis |
 
+## Automation Browsing Running Mode
+
+- Detect current OS and launch browser as headless only when running on Linux, WSL, or CI environments.
+- For macOS/Windows, browser always runs in headed mode for better debugging.
+- Run multiple scripts/sessions in parallel to simulate real user interactions.
+- Run multiple scripts/sessions in parallel to simulate different device types (mobile, tablet, desktop).
+- Skills can exist in **project-scope** or **user-scope**. Priority: project-scope > user-scope.
+
 ## ARIA Snapshot (Element Discovery)
 
 When page structure is unknown, use `aria-snapshot.js` to get a YAML-formatted accessibility tree with semantic roles, accessible names, states, and stable element references.
@@ -170,14 +178,6 @@ node navigate.js --url https://example.com
 ```
 
 **Linux/WSL only**: Run `./install-deps.sh` first for Chrome system libraries.
-
-## Environment Configuration
-
-- Detect current OS and launch browser as headless only when running on Linux, WSL, or CI environments.
-- For local development on macOS/Windows, browser runs in headed mode for better debugging.
-- Run multiple scripts/sessions in parallel to simulate real user interactions.
-- Run multiple scripts/sessions in parallel to simulate different device types (mobile, tablet, desktop).
-- Skills can exist in **project-scope** or **user-scope**. Priority: project-scope > user-scope.
 
 ## Session Persistence
 

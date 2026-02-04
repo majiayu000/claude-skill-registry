@@ -1,9 +1,7 @@
 {
   "name": "vercel-observability",
-  "description": "Set up comprehensive observability for Vercel integrations with metrics, traces, and alerts.Use when implementing monitoring for Vercel operations, setting up dashboards,or configuring alerting for Ve",
   "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/saas-packs/vercel-pack/skills/vercel-observability/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-04T02:19:07.566207Z"
 }

@@ -25,7 +25,6 @@ Master advanced Git techniques to maintain clean history, collaborate effectivel
 Interactive rebase is the Swiss Army knife of Git history editing.
 
 **Common Operations:**
-
 - `pick`: Keep commit as-is
 - `reword`: Change commit message
 - `edit`: Amend commit content
@@ -34,7 +33,6 @@ Interactive rebase is the Swiss Army knife of Git history editing.
 - `drop`: Remove commit entirely
 
 **Basic Usage:**
-
 ```bash
 # Rebase last 5 commits
 git rebase -i HEAD~5
@@ -88,7 +86,6 @@ git bisect reset
 ```
 
 **Automated Bisect:**
-
 ```bash
 # Use script to test automatically
 git bisect start HEAD v1.0.0
@@ -106,13 +103,13 @@ Work on multiple branches simultaneously without stashing or switching.
 git worktree list
 
 # Add new worktree for feature branch
-git worktree add ~/worktrees/project-feature feature/new-feature
+git worktree add ../project-feature feature/new-feature
 
 # Add worktree and create new branch
-git worktree add -b bugfix/urgent ~/worktrees/project-hotfix main
+git worktree add -b bugfix/urgent ../project-hotfix main
 
 # Remove worktree
-git worktree remove ~/worktrees/project-feature
+git worktree remove ../project-feature
 
 # Prune stale worktrees
 git worktree prune
@@ -212,11 +209,11 @@ git bisect run npm test
 # Main project directory
 cd ~/projects/myapp
 
-# Create worktree for urgent bugfix in a known location
-git worktree add ~/worktrees/myapp-hotfix hotfix/critical-bug
+# Create worktree for urgent bugfix
+git worktree add ../myapp-hotfix hotfix/critical-bug
 
 # Work on hotfix in separate directory
-cd ~/worktrees/myapp-hotfix
+cd ../myapp-hotfix
 # Make changes, commit
 git commit -m "fix: resolve critical bug"
 git push origin hotfix/critical-bug
@@ -227,7 +224,7 @@ git fetch origin
 git cherry-pick hotfix/critical-bug
 
 # Clean up when done
-git worktree remove ~/worktrees/myapp-hotfix
+git worktree remove ../myapp-hotfix
 ```
 
 ### Workflow 5: Recover from Mistakes
@@ -254,13 +251,11 @@ git branch recovery def456
 ### Rebase vs Merge Strategy
 
 **When to Rebase:**
-
 - Cleaning up local commits before pushing
 - Keeping feature branch up-to-date with main
 - Creating linear history for easier review
 
 **When to Merge:**
-
 - Integrating completed features into main
 - Preserving exact history of collaboration
 - Public branches used by others

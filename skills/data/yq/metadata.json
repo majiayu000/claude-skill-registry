@@ -1,9 +1,7 @@
 {
   "name": "yq",
-  "description": "This skill should be used when the user asks to \"get a field from docker-compose\", \"extract value from yaml\", \"what services are in this compose file\", \"get the image from kubernetes manifest\", \"pull ",
-  "repo": "kylesnowschwartz/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Ven0m0/claude-config",
+  "path": "claude/skills/context-efficient-tools/yq/SKILL.md",
+  "source": "github.com/Ven0m0/claude-config",
+  "downloaded_at": "2026-02-04T04:37:43.822575Z"
 }

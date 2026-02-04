@@ -1,10 +1,6 @@
 ---
 name: verification-before-merge
 description: Use before merging PR - final gate ensuring all tests pass, review complete, CI green, and acceptance criteria verified
-allowed-tools:
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Verification Before Merge

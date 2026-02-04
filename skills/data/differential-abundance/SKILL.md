@@ -1,109 +1,128 @@
 ---
-name: bio-proteomics-differential-abundance
-description: Statistical testing for differentially abundant proteins between conditions. Covers limma and MSstats workflows with multiple testing correction. Use when identifying proteins with significant abundance changes between experimental groups.
-tool_type: mixed
-primary_tool: MSstats
+name: bio-microbiome-differential-abundance
+description: Differential abundance testing for microbiome data using compositionally-aware methods like ALDEx2, ANCOM-BC2, and MaAsLin2. Use when identifying taxa that differ between experimental groups while accounting for the compositional nature of microbiome data.
+tool_type: r
+primary_tool: ALDEx2
 ---
 
-# Differential Protein Abundance
+# Differential Abundance Testing
 
-## MSstats Group Comparison
+## The Compositionality Problem
 
-```r
-library(MSstats)
+Microbiome data is compositional - abundances are relative, not absolute. Standard tests (t-test, DESeq2) can give false positives.
 
-# After dataProcess()
-comparison_matrix <- matrix(c(1, -1, 0, 0,
-                               1, 0, -1, 0,
-                               0, 1, -1, 0),
-                             nrow = 3, byrow = TRUE)
-rownames(comparison_matrix) <- c('Treatment1-Control', 'Treatment2-Control', 'Treatment1-Treatment2')
-colnames(comparison_matrix) <- c('Control', 'Treatment1', 'Treatment2', 'Treatment3')
-
-results <- groupComparison(contrast.matrix = comparison_matrix, data = processed)
-
-# Significant proteins
-sig_proteins <- results$ComparisonResult[results$ComparisonResult$adj.pvalue < 0.05 &
-                                          abs(results$ComparisonResult$log2FC) > 1, ]
-```
-
-## limma for Proteomics
+## ALDEx2 (Recommended)
 
 ```r
-library(limma)
+library(ALDEx2)
+library(phyloseq)
 
-# Log2 intensities matrix (proteins x samples)
-design <- model.matrix(~ 0 + condition, data = sample_info)
-colnames(design) <- levels(sample_info$condition)
+ps <- readRDS('phyloseq_object.rds')
+otu <- as.data.frame(otu_table(ps))
+if (!taxa_are_rows(ps)) otu <- t(otu)
 
-fit <- lmFit(protein_matrix, design)
+# Define groups
+groups <- sample_data(ps)$Group
 
-contrast_matrix <- makeContrasts(Treatment - Control, levels = design)
-fit2 <- contrasts.fit(fit, contrast_matrix)
-fit2 <- eBayes(fit2)
+# Run ALDEx2 (CLR transformation + Welch's t-test)
+aldex_results <- aldex(otu, groups, mc.samples = 128, test = 'welch',
+                       effect = TRUE, include.sample.summary = FALSE)
 
-results <- topTable(fit2, number = Inf, adjust.method = 'BH')
-sig_results <- results[results$adj.P.Val < 0.05 & abs(results$logFC) > 1, ]
+# Filter significant
+sig_aldex <- aldex_results[aldex_results$we.eBH < 0.05 & abs(aldex_results$effect) > 1, ]
+
+# Volcano-like plot
+aldex.plot(aldex_results, type = 'MW', test = 'welch')
 ```
 
-## QFeatures/proDA (Modern Alternative)
+## ANCOM-BC2 (Recommended)
 
 ```r
-library(QFeatures)
-library(proDA)
+library(ANCOMBC)
 
-# proDA handles missing values probabilistically
-fit <- proDA(protein_matrix, design = ~ condition, data = sample_info)
+# Run ANCOM-BC2 with sensitivity analysis
+ancom_result <- ancombc2(data = ps, fix_formula = 'Group',
+                         p_adj_method = 'BH', pseudo_sens = TRUE,
+                         prv_cut = 0.1, lib_cut = 1000,
+                         group = 'Group', struc_zero = TRUE)
 
-# Test differential abundance
-results <- test_diff(fit, contrast = 'conditionTreatment')
-results$adj_pval <- p.adjust(results$pval, method = 'BH')
-sig_results <- results[results$adj_pval < 0.05 & abs(results$diff) > 1, ]
+# Extract results (includes sensitivity analysis)
+res_df <- ancom_result$res
+
+# Primary results
+sig_ancom <- res_df[res_df$diff_Group == TRUE, ]
+
+# Check sensitivity (passed_ss = passed sensitivity analysis)
+robust_hits <- res_df[res_df$diff_Group == TRUE & res_df$passed_ss_Group == TRUE, ]
 ```
 
-## Python: scipy/statsmodels
+## MaAsLin2
 
-```python
-import pandas as pd
-import numpy as np
-from scipy import stats
-from statsmodels.stats.multitest import multipletests
+```r
+library(Maaslin2)
 
-def differential_test(intensities, group1_cols, group2_cols):
-    results = []
-    for protein in intensities.index:
-        g1 = intensities.loc[protein, group1_cols].dropna()
-        g2 = intensities.loc[protein, group2_cols].dropna()
+# Prepare data
+features <- as.data.frame(t(otu_table(ps)))
+metadata <- as.data.frame(sample_data(ps))
 
-        if len(g1) >= 2 and len(g2) >= 2:
-            stat, pval = stats.ttest_ind(g1, g2)
-            log2fc = g2.mean() - g1.mean()
-            results.append({'protein': protein, 'log2FC': log2fc, 'pvalue': pval})
+# Run MaAsLin2
+maaslin_results <- Maaslin2(
+    input_data = features,
+    input_metadata = metadata,
+    output = 'maaslin2_output',
+    fixed_effects = 'Group',
+    normalization = 'CLR',
+    transform = 'NONE',
+    analysis_method = 'LM'
+)
 
-    df = pd.DataFrame(results)
-    df['adj_pvalue'] = multipletests(df['pvalue'], method='fdr_bh')[1]
-    return df
+# Results in maaslin2_output/all_results.tsv
+sig_maaslin <- maaslin_results$results[maaslin_results$results$qval < 0.05, ]
+```
 
-# Significance thresholds
-sig = results[(results['adj_pvalue'] < 0.05) & (abs(results['log2FC']) > 1)]
+## DESeq2 (with caution)
+
+```r
+library(DESeq2)
+library(phyloseq)
+
+# Convert to DESeq2 (use geometric mean of poscounts)
+ps_deseq <- ps
+ps_deseq <- prune_samples(sample_sums(ps_deseq) > 1000, ps_deseq)
+
+dds <- phyloseq_to_deseq2(ps_deseq, ~ Group)
+dds <- DESeq(dds, test = 'Wald', fitType = 'parametric', sfType = 'poscounts')
+
+res <- results(dds, alpha = 0.05)
+sig_deseq <- res[which(res$padj < 0.05 & abs(res$log2FoldChange) > 1), ]
 ```
 
 ## Visualization
 
 ```r
-# Volcano plot
 library(ggplot2)
 
-ggplot(results, aes(x = log2FC, y = -log10(adj.P.Val))) +
-    geom_point(aes(color = significant), alpha = 0.6) +
+# Volcano plot from ALDEx2
+ggplot(aldex_results, aes(x = effect, y = -log10(we.eBH))) +
+    geom_point(aes(color = we.eBH < 0.05 & abs(effect) > 1), alpha = 0.6) +
     geom_hline(yintercept = -log10(0.05), linetype = 'dashed') +
     geom_vline(xintercept = c(-1, 1), linetype = 'dashed') +
     scale_color_manual(values = c('grey', 'red')) +
-    theme_minimal()
+    theme_minimal() +
+    labs(x = 'Effect Size', y = '-log10(Adjusted P-value)')
 ```
+
+## Method Comparison
+
+| Method | Handles | Covariates | Speed | Notes |
+|--------|---------|------------|-------|-------|
+| ALDEx2 | Compositionality | Limited | Slow | Best for simple designs |
+| ANCOM-BC2 | Compositionality, zeros, sensitivity | Yes | Medium | Recommended for complex designs |
+| MaAsLin2 | Compositionality | Yes | Fast | Good for longitudinal |
+| DESeq2 | Sparsity (less ideal) | Yes | Fast | Use with caution for microbiome |
 
 ## Related Skills
 
-- quantification - Prepare normalized data for testing
-- differential-expression/deseq2-basics - Similar concepts for RNA-seq
-- data-visualization/specialized-omics-plots - Volcano plots, MA plots
+- diversity-analysis - Identify overall differences first
+- differential-expression/deseq2-basics - Similar concepts
+- pathway-analysis/go-enrichment - Enrichment of differential taxa

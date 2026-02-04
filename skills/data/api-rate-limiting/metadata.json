@@ -1,7 +1,7 @@
 {
   "name": "api-rate-limiting",
-  "repo": "secondsky/claude-skills",
-  "path": "plugins/api-rate-limiting/skills/api-rate-limiting/SKILL.md",
-  "source": "github.com/secondsky/claude-skills",
-  "downloaded_at": "2026-02-02T02:14:08.510137Z"
+  "repo": "aj-geddes/useful-ai-prompts",
+  "path": "skills/api-rate-limiting/SKILL.md",
+  "source": "github.com/aj-geddes/useful-ai-prompts",
+  "downloaded_at": "2026-02-04T04:42:18.157763Z"
 }

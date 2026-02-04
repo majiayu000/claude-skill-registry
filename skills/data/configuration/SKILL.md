@@ -1,706 +1,353 @@
 ---
-name: microsoft-extensions-configuration
-description: Microsoft.Extensions.Options patterns including IValidateOptions, strongly-typed settings, validation on startup, and the Options pattern for clean configuration management.
-invocable: false
+name: configuration
+description: Reads config.json and prompts user for application parameters. Merges configuration with defaults for project generation.
 ---
 
-# Microsoft.Extensions Configuration Patterns
+# Configuration Management Skill
 
-## When to Use This Skill
+## Purpose
+Read and merge application configuration from `config.json` file with interactive prompts and default values.
 
-Use this skill when:
-- Binding configuration from appsettings.json to strongly-typed classes
-- Validating configuration at application startup (fail fast)
-- Implementing complex validation logic for settings
-- Designing configuration classes that are testable and maintainable
-- Understanding IOptions<T>, IOptionsSnapshot<T>, and IOptionsMonitor<T>
+**IMPORTANT**: When prompting users interactively, ask questions **ONE AT A TIME** in a conversational manner. Wait for each answer before asking the next question.
 
-## Why Configuration Validation Matters
+## When to Use
+Execute this skill at the beginning of the application generation process (Step 2 in AGENT_INSTRUCTIONS.md).
 
-**The Problem:** Applications often fail at runtime due to misconfiguration - missing connection strings, invalid URLs, out-of-range values. These failures happen deep in business logic, far from where configuration is loaded, making debugging difficult.
+## Input Parameters
+None - reads from project root
 
-**The Solution:** Validate configuration at startup. If configuration is invalid, the application fails immediately with a clear error message. This is the "fail fast" principle.
+## Configuration Sources Priority
+1. **config.json** (if exists in project root) - Highest priority
+2. **Interactive prompts** - For missing required fields
+3. **Default values** - For optional fields not provided
 
-```csharp
-// BAD: Fails at runtime when someone tries to use the service
-public class EmailService
-{
-    public EmailService(IOptions<SmtpSettings> options)
-    {
-        var settings = options.Value;
-        // Throws NullReferenceException 10 minutes into production
-        _client = new SmtpClient(settings.Host, settings.Port);
-    }
-}
+## Instructions
 
-// GOOD: Fails at startup with clear error
-// "SmtpSettings validation failed: Host is required"
-```
+### Step 1: Check for config.json
+```javascript
+const configPath = path.join(process.cwd(), 'config.json');
+const configExists = fs.existsSync(configPath);
 
----
-
-## Pattern 1: Basic Options Binding
-
-### Define a Settings Class
-
-```csharp
-public class SmtpSettings
-{
-    public const string SectionName = "Smtp";
-
-    public string Host { get; set; } = string.Empty;
-    public int Port { get; set; } = 587;
-    public string? Username { get; set; }
-    public string? Password { get; set; }
-    public bool UseSsl { get; set; } = true;
+if (configExists) {
+  console.log('✓ Found config.json - loading configuration...\n');
+} else {
+  console.log('ℹ  No config.json found - will use interactive prompts\n');
 }
 ```
 
-### Bind from Configuration
+### Step 2: Load and Validate Configuration
+```javascript
+let userConfig = {};
 
-```csharp
-// In Program.cs or service registration
-builder.Services.AddOptions<SmtpSettings>()
-    .BindConfiguration(SmtpSettings.SectionName);
+if (configExists) {
+  const configContent = fs.readFileSync(configPath, 'utf-8');
+  userConfig = JSON.parse(configContent);
+  
+  // Validate against schema
+  const schemaPath = '.github/agents/agents-context/app-starter/config.schema.json';
+  const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf-8'));
+  
+  // Use a JSON schema validator (e.g., ajv)
+  const valid = validateSchema(userConfig, schema);
+  
+  if (!valid) {
+    console.error('❌ config.json validation failed');
+    console.error('   Please check your configuration against config.schema.json');
+    process.exit(1);
+  }
+  
+  console.log('✓ Configuration validated successfully\n');
+}
+```
 
-// appsettings.json
-{
-  "Smtp": {
-    "Host": "smtp.example.com",
-    "Port": 587,
-    "Username": "user@example.com",
-    "Password": "secret",
-    "UseSsl": true
+### Step 3: Apply Default Values
+```javascript
+// Static defaults
+const defaults = {
+  node_version: "v22.16.0",
+  vue_version: "^3.5.13",
+  vite_version: "^6.3.5",
+  typescript_version: "^5.7.3",
+  test_framework: "jest",
+  state_management: "vuex",
+  enable_single_spa: true,
+  enable_datadog: true,
+  include_component_library: false,  // Default to no component library
+  component_library: "@royalaholddelhaize/pdl-spectrum-component-library-web",
+  component_library_version: "^1.0.3"
+};
+
+// Merge with defaults (config.json values take priority)
+userConfig = { ...defaults, ...userConfig };
+```
+
+### Step 4: Prompt for Missing Required Fields
+
+**Ask questions ONE AT A TIME in order. Wait for user response before asking next question.**
+
+```javascript
+const requiredFields = [
+  'application_name',
+  'project_scope',
+  'router_base_path',
+  'api_base_path',
+  'default_port',
+  'application_type',
+  'use_latest_versions'  // Added as required field
+];
+
+// Ask ONE question at a time
+for (const field of requiredFields) {
+  if (!userConfig[field]) {
+    // Show context and ask single question
+    console.log(`\n📝 Question ${requiredFields.indexOf(field) + 1}/${requiredFields.length}`);
+    userConfig[field] = await promptUser(field);
+    
+    // Confirm response before moving to next question
+    console.log(`✓ Got it: ${userConfig[field]}\n`);
+  } else {
+    console.log(`✓ Using ${field} from config: ${userConfig[field]}`);
   }
 }
 ```
 
-### Consume in Services
-
-```csharp
-public class EmailService
-{
-    private readonly SmtpSettings _settings;
-
-    // IOptions<T> - singleton, read once at startup
-    public EmailService(IOptions<SmtpSettings> options)
-    {
-        _settings = options.Value;
-    }
-}
-```
-
----
-
-## Pattern 2: Data Annotations Validation
-
-For simple validation rules, use Data Annotations:
-
-```csharp
-using System.ComponentModel.DataAnnotations;
-
-public class SmtpSettings
-{
-    public const string SectionName = "Smtp";
-
-    [Required(ErrorMessage = "SMTP host is required")]
-    public string Host { get; set; } = string.Empty;
-
-    [Range(1, 65535, ErrorMessage = "Port must be between 1 and 65535")]
-    public int Port { get; set; } = 587;
-
-    [EmailAddress(ErrorMessage = "Username must be a valid email address")]
-    public string? Username { get; set; }
-
-    public string? Password { get; set; }
-
-    public bool UseSsl { get; set; } = true;
-}
-```
-
-### Enable Data Annotations Validation
-
-```csharp
-builder.Services.AddOptions<SmtpSettings>()
-    .BindConfiguration(SmtpSettings.SectionName)
-    .ValidateDataAnnotations()  // Enable attribute-based validation
-    .ValidateOnStart();         // Validate immediately at startup
-```
-
-**Key Point:** `.ValidateOnStart()` is critical. Without it, validation only runs when the options are first accessed, which could be minutes or hours into application runtime.
-
----
-
-## Pattern 3: IValidateOptions<T> for Complex Validation
-
-Data Annotations work for simple rules, but complex validation requires `IValidateOptions<T>`:
-
-### When to Use IValidateOptions
-
-| Scenario | Data Annotations | IValidateOptions |
-|----------|------------------|------------------|
-| Required field | ✅ | ✅ |
-| Range check | ✅ | ✅ |
-| Regex pattern | ✅ | ✅ |
-| Cross-property validation | ❌ | ✅ |
-| Conditional validation | ❌ | ✅ |
-| External service checks | ❌ | ✅ |
-| Custom error messages with context | Limited | ✅ |
-| Dependency injection in validator | ❌ | ✅ |
-
-### Implementing IValidateOptions
-
-```csharp
-using Microsoft.Extensions.Options;
-
-public class SmtpSettingsValidator : IValidateOptions<SmtpSettings>
-{
-    public ValidateOptionsResult Validate(string? name, SmtpSettings options)
-    {
-        var failures = new List<string>();
-
-        // Required field validation
-        if (string.IsNullOrWhiteSpace(options.Host))
-        {
-            failures.Add("Host is required");
-        }
-
-        // Range validation
-        if (options.Port is < 1 or > 65535)
-        {
-            failures.Add($"Port {options.Port} is invalid. Must be between 1 and 65535");
-        }
-
-        // Cross-property validation
-        if (!string.IsNullOrEmpty(options.Username) && string.IsNullOrEmpty(options.Password))
-        {
-            failures.Add("Password is required when Username is specified");
-        }
-
-        // Conditional validation
-        if (options.UseSsl && options.Port == 25)
-        {
-            failures.Add("Port 25 is typically not used with SSL. Consider port 465 or 587");
-        }
-
-        // Return result
-        return failures.Count > 0
-            ? ValidateOptionsResult.Fail(failures)
-            : ValidateOptionsResult.Success;
-    }
-}
-```
-
-### Register the Validator
-
-```csharp
-builder.Services.AddOptions<SmtpSettings>()
-    .BindConfiguration(SmtpSettings.SectionName)
-    .ValidateDataAnnotations()  // Run attribute validation first
-    .ValidateOnStart();
-
-// Register the custom validator
-builder.Services.AddSingleton<IValidateOptions<SmtpSettings>, SmtpSettingsValidator>();
-```
-
-**Order matters:** Data Annotations run first, then IValidateOptions validators. All failures are collected and reported together.
-
----
-
-## Pattern 4: Validators with Dependencies
-
-IValidateOptions validators are resolved from DI, so they can have dependencies:
-
-```csharp
-public class DatabaseSettingsValidator : IValidateOptions<DatabaseSettings>
-{
-    private readonly ILogger<DatabaseSettingsValidator> _logger;
-    private readonly IHostEnvironment _environment;
-
-    public DatabaseSettingsValidator(
-        ILogger<DatabaseSettingsValidator> logger,
-        IHostEnvironment environment)
-    {
-        _logger = logger;
-        _environment = environment;
-    }
-
-    public ValidateOptionsResult Validate(string? name, DatabaseSettings options)
-    {
-        var failures = new List<string>();
-
-        if (string.IsNullOrWhiteSpace(options.ConnectionString))
-        {
-            failures.Add("ConnectionString is required");
-        }
-
-        // Environment-specific validation
-        if (_environment.IsProduction())
-        {
-            if (options.ConnectionString?.Contains("localhost") == true)
-            {
-                failures.Add("Production cannot use localhost database");
-            }
-
-            if (!options.ConnectionString?.Contains("Encrypt=True") == true)
-            {
-                _logger.LogWarning("Production database connection should use encryption");
-            }
-        }
-
-        // Validate connection string format
-        if (!string.IsNullOrEmpty(options.ConnectionString))
-        {
-            try
-            {
-                var builder = new SqlConnectionStringBuilder(options.ConnectionString);
-                if (string.IsNullOrEmpty(builder.DataSource))
-                {
-                    failures.Add("ConnectionString must specify a Data Source");
-                }
-            }
-            catch (Exception ex)
-            {
-                failures.Add($"ConnectionString is malformed: {ex.Message}");
-            }
-        }
-
-        return failures.Count > 0
-            ? ValidateOptionsResult.Fail(failures)
-            : ValidateOptionsResult.Success;
-    }
-}
-```
-
----
-
-## Pattern 5: Named Options
-
-When you have multiple instances of the same settings type (e.g., multiple database connections):
-
-```csharp
-// appsettings.json
-{
-  "Databases": {
-    "Primary": {
-      "ConnectionString": "Server=primary;..."
-    },
-    "Replica": {
-      "ConnectionString": "Server=replica;..."
-    }
-  }
-}
-
-// Registration
-builder.Services.AddOptions<DatabaseSettings>("Primary")
-    .BindConfiguration("Databases:Primary")
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-
-builder.Services.AddOptions<DatabaseSettings>("Replica")
-    .BindConfiguration("Databases:Replica")
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-
-// Consumption
-public class DataService
-{
-    private readonly DatabaseSettings _primary;
-    private readonly DatabaseSettings _replica;
-
-    public DataService(IOptionsSnapshot<DatabaseSettings> options)
-    {
-        _primary = options.Get("Primary");
-        _replica = options.Get("Replica");
-    }
-}
-```
-
-### Named Options Validator
-
-```csharp
-public class DatabaseSettingsValidator : IValidateOptions<DatabaseSettings>
-{
-    public ValidateOptionsResult Validate(string? name, DatabaseSettings options)
-    {
-        var failures = new List<string>();
-        var prefix = string.IsNullOrEmpty(name) ? "" : $"[{name}] ";
-
-        if (string.IsNullOrWhiteSpace(options.ConnectionString))
-        {
-            failures.Add($"{prefix}ConnectionString is required");
-        }
-
-        // Name-specific validation
-        if (name == "Primary" && options.ReadOnly)
-        {
-            failures.Add("Primary database cannot be read-only");
-        }
-
-        return failures.Count > 0
-            ? ValidateOptionsResult.Fail(failures)
-            : ValidateOptionsResult.Success;
-    }
-}
-```
-
----
-
-## Pattern 6: Options Lifetime
-
-Understanding the three options interfaces:
-
-| Interface | Lifetime | Reloads on Change | Use Case |
-|-----------|----------|-------------------|----------|
-| `IOptions<T>` | Singleton | No | Static config, read once |
-| `IOptionsSnapshot<T>` | Scoped | Yes (per request) | Web apps needing fresh config |
-| `IOptionsMonitor<T>` | Singleton | Yes (with callback) | Background services, real-time updates |
-
-### IOptionsMonitor for Background Services
-
-```csharp
-public class BackgroundWorker : BackgroundService
-{
-    private readonly IOptionsMonitor<WorkerSettings> _optionsMonitor;
-    private WorkerSettings _currentSettings;
-
-    public BackgroundWorker(IOptionsMonitor<WorkerSettings> optionsMonitor)
-    {
-        _optionsMonitor = optionsMonitor;
-        _currentSettings = optionsMonitor.CurrentValue;
-
-        // Subscribe to configuration changes
-        _optionsMonitor.OnChange(settings =>
-        {
-            _currentSettings = settings;
-            _logger.LogInformation("Worker settings updated: Interval={Interval}",
-                settings.PollingInterval);
-        });
-    }
-
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-    {
-        while (!stoppingToken.IsCancellationRequested)
-        {
-            await DoWorkAsync();
-            await Task.Delay(_currentSettings.PollingInterval, stoppingToken);
-        }
-    }
-}
-```
-
----
-
-## Pattern 7: Post-Configuration
-
-Modify options after binding but before validation:
-
-```csharp
-builder.Services.AddOptions<ApiSettings>()
-    .BindConfiguration("Api")
-    .PostConfigure(options =>
-    {
-        // Ensure BaseUrl ends with /
-        if (!string.IsNullOrEmpty(options.BaseUrl) && !options.BaseUrl.EndsWith('/'))
-        {
-            options.BaseUrl += '/';
-        }
-
-        // Set defaults based on environment
-        options.Timeout ??= TimeSpan.FromSeconds(30);
-    })
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-```
-
-### PostConfigure with Dependencies
-
-```csharp
-builder.Services.AddOptions<ApiSettings>()
-    .BindConfiguration("Api")
-    .PostConfigure<IHostEnvironment>((options, env) =>
-    {
-        if (env.IsDevelopment())
-        {
-            options.Timeout = TimeSpan.FromMinutes(5); // Longer timeout for debugging
-        }
+### Step 5: Conditional Prompts Based on Version Choice
+
+**If user chose NOT to use latest versions, ask about test framework and state management.**
+
+```javascript
+// Only ask these if user chose stable versions (not latest)
+if (userConfig.use_latest_versions === false || userConfig.use_latest_versions === 'no') {
+  
+  // Prompt for test framework if not set
+  if (!userConfig.test_framework) {
+    console.log('\n🧪 Testing framework:');
+    userConfig.test_framework = await promptUser('test_framework', {
+      choices: ['jest', 'vitest'],
+      default: 'jest',
+      message: 'Which testing framework do you want to use?'
     });
-```
+    console.log(`✓ Will use ${userConfig.test_framework}\n`);
+  }
 
----
-
-## Pattern 8: Complete Example - Production Settings Class
-
-```csharp
-using System.ComponentModel.DataAnnotations;
-using Microsoft.Extensions.Options;
-
-public class AkkaSettings
-{
-    public const string SectionName = "AkkaSettings";
-
-    [Required]
-    public string ActorSystemName { get; set; } = "MySystem";
-
-    public AkkaExecutionMode ExecutionMode { get; set; } = AkkaExecutionMode.LocalTest;
-
-    public bool LogConfigOnStart { get; set; } = false;
-
-    public RemoteOptions RemoteOptions { get; set; } = new();
-
-    public ClusterOptions ClusterOptions { get; set; } = new();
-
-    public ClusterBootstrapOptions ClusterBootstrapOptions { get; set; } = new();
-}
-
-public enum AkkaExecutionMode
-{
-    LocalTest,   // No remoting, no clustering
-    Clustered    // Full cluster with sharding, distributed pub/sub
-}
-
-public class AkkaSettingsValidator : IValidateOptions<AkkaSettings>
-{
-    private readonly IHostEnvironment _environment;
-
-    public AkkaSettingsValidator(IHostEnvironment environment)
-    {
-        _environment = environment;
-    }
-
-    public ValidateOptionsResult Validate(string? name, AkkaSettings options)
-    {
-        var failures = new List<string>();
-
-        // Basic validation
-        if (string.IsNullOrWhiteSpace(options.ActorSystemName))
-        {
-            failures.Add("ActorSystemName is required");
-        }
-
-        // Mode-specific validation
-        if (options.ExecutionMode == AkkaExecutionMode.Clustered)
-        {
-            ValidateClusteredMode(options, failures);
-        }
-
-        // Environment-specific validation
-        if (_environment.IsProduction() && options.ExecutionMode == AkkaExecutionMode.LocalTest)
-        {
-            failures.Add("LocalTest execution mode is not allowed in production");
-        }
-
-        return failures.Count > 0
-            ? ValidateOptionsResult.Fail(failures)
-            : ValidateOptionsResult.Success;
-    }
-
-    private void ValidateClusteredMode(AkkaSettings options, List<string> failures)
-    {
-        if (string.IsNullOrEmpty(options.RemoteOptions.PublicHostName))
-        {
-            failures.Add("RemoteOptions.PublicHostName is required in Clustered mode");
-        }
-
-        if (options.RemoteOptions.Port is null or < 0)
-        {
-            failures.Add("RemoteOptions.Port must be >= 0 in Clustered mode");
-        }
-
-        if (options.ClusterBootstrapOptions.Enabled)
-        {
-            ValidateClusterBootstrap(options.ClusterBootstrapOptions, failures);
-        }
-        else if (options.ClusterOptions.SeedNodes?.Length == 0)
-        {
-            failures.Add("Either ClusterBootstrap must be enabled or SeedNodes must be specified");
-        }
-    }
-
-    private void ValidateClusterBootstrap(ClusterBootstrapOptions options, List<string> failures)
-    {
-        if (string.IsNullOrEmpty(options.ServiceName))
-        {
-            failures.Add("ClusterBootstrapOptions.ServiceName is required");
-        }
-
-        if (options.RequiredContactPointsNr <= 0)
-        {
-            failures.Add("ClusterBootstrapOptions.RequiredContactPointsNr must be > 0");
-        }
-
-        switch (options.DiscoveryMethod)
-        {
-            case DiscoveryMethod.Config:
-                if (options.ConfigServiceEndpoints?.Length == 0)
-                {
-                    failures.Add("ConfigServiceEndpoints required for Config discovery");
-                }
-                break;
-
-            case DiscoveryMethod.AzureTableStorage:
-                if (options.AzureDiscoveryOptions == null)
-                {
-                    failures.Add("AzureDiscoveryOptions required for Azure discovery");
-                }
-                break;
-        }
-    }
-}
-
-// Registration
-builder.Services.AddOptions<AkkaSettings>()
-    .BindConfiguration(AkkaSettings.SectionName)
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-
-builder.Services.AddSingleton<IValidateOptions<AkkaSettings>, AkkaSettingsValidator>();
-```
-
----
-
-## Anti-Patterns to Avoid
-
-### 1. Manual Configuration Access
-
-```csharp
-// BAD: Bypasses validation, hard to test
-public class MyService
-{
-    public MyService(IConfiguration configuration)
-    {
-        var host = configuration["Smtp:Host"]; // No validation!
-    }
-}
-
-// GOOD: Strongly-typed, validated
-public class MyService
-{
-    public MyService(IOptions<SmtpSettings> options)
-    {
-        var host = options.Value.Host; // Validated at startup
-    }
+  // Prompt for state management if not set
+  if (!userConfig.state_management) {
+    console.log('\n📊 State management:');
+    userConfig.state_management = await promptUser('state_management', {
+      choices: ['vuex', 'pinia'],
+      default: 'vuex',
+      message: 'Which state management library do you want to use?'
+    });
+    console.log(`✓ Will use ${userConfig.state_management}\n`);
+  }
+  
+} else {
+  // User chose latest versions - use recommended defaults
+  console.log('\n✓ Using latest versions with recommended tools:');
+  userConfig.test_framework = 'vitest';  // Latest recommendation
+  userConfig.state_management = 'pinia';  // Latest recommendation
+  console.log('  • Testing: Vitest (latest)');
+  console.log('  • State Management: Pinia (latest)\n');
 }
 ```
 
-### 2. Validation in Constructor
+### Step 6: Prompt for Optional GitHub Token
 
-```csharp
-// BAD: Validation happens at runtime, not startup
-public class MyService
-{
-    public MyService(IOptions<Settings> options)
-    {
-        if (string.IsNullOrEmpty(options.Value.Required))
-            throw new ArgumentException("Required is missing"); // Too late!
-    }
-}
+**Only ask for GitHub token if user wants component library.**
 
-// GOOD: Validation at startup
-builder.Services.AddOptions<Settings>()
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-```
+```javascript
+// First, ask if they want a component library
+let needsComponentLibrary = false;
 
-### 3. Forgetting ValidateOnStart
-
-```csharp
-// BAD: Validation only runs when first accessed
-builder.Services.AddOptions<Settings>()
-    .ValidateDataAnnotations(); // Missing ValidateOnStart!
-
-// GOOD: Fails immediately if invalid
-builder.Services.AddOptions<Settings>()
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
-```
-
-### 4. Throwing in IValidateOptions
-
-```csharp
-// BAD: Throws exception, breaks validation chain
-public ValidateOptionsResult Validate(string? name, Settings options)
-{
-    if (options.Value < 0)
-        throw new ArgumentException("Value cannot be negative"); // Wrong!
-
-    return ValidateOptionsResult.Success;
-}
-
-// GOOD: Return failure result
-public ValidateOptionsResult Validate(string? name, Settings options)
-{
-    if (options.Value < 0)
-        return ValidateOptionsResult.Fail("Value cannot be negative");
-
-    return ValidateOptionsResult.Success;
+if (userConfig.include_component_library === undefined) {
+  console.log('\n📦 Component library:');
+  needsComponentLibrary = await promptUser('include_component_library', {
+    type: 'confirm',
+    message: 'Do you want to include a component library?',
+    default: false,
+    hint: '(@RoyalAholdDelhaize/pdl-spectrum-component-library-web)'
+  });
+  userConfig.include_component_library = needsComponentLibrary;
+  console.log(`✓ ${needsComponentLibrary ? 'Will include component library' : 'No component library'}\n`);
 }
 ```
 
----
+### Step 7: Derive Auto-Calculated Values
+```javascript
+// Derive main_component_name from application_name
+// Example: "omni-inventory-manager-web" → "OmniInventoryManagerWeb"
+userConfig.main_component_name = userConfig.application_name
+  .split('-')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join('');
 
-## Testing Configuration Validators
+// application_id and service_name same as application_name
+userConfig.application_id = userConfig.application_name;
+userConfig.service_name = userConfig.application_name;
 
-```csharp
-public class SmtpSettingsValidatorTests
-{
-    private readonly SmtpSettingsValidator _validator = new();
+// Determine if standalone or micro-frontend
+userConfig.is_standalone = userConfig.application_type === 'standalone';
+userConfig.is_microfrontend = userConfig.application_type === 'micro-frontend';
 
-    [Fact]
-    public void Validate_WithValidSettings_ReturnsSuccess()
-    {
-        var settings = new SmtpSettings
-        {
-            Host = "smtp.example.com",
-            Port = 587,
-            Username = "user@example.com",
-            Password = "secret"
-        };
+// Map application_type to vite_build_format
+userConfig.vite_build_format = userConfig.is_microfrontend ? 'system' : 'es';
+```
 
-        var result = _validator.Validate(null, settings);
+### Step 7: Display Configuration Summary
+```javascript
+console.log('\n' + '═'.repeat(60));
+console.log('  CONFIGURATION SUMMARY');
+console.log('═'.repeat(60));
+console.log(`Application:       ${userConfig.application_name}`);
+console.log(`Scope:             ${userConfig.project_scope}`);
+console.log(`Type:              ${userConfig.application_type}`);
+console.log(`Router Base:       ${userConfig.router_base_path}`);
+console.log(`API Base:          ${userConfig.api_base_path}`);
+console.log(`Port:              ${userConfig.default_port}`);
+console.log(`Test Framework:    ${userConfig.test_framework}`);
+console.log(`State Management:  ${userConfig.state_management}`);
+console.log(`Component Library: ${userConfig.component_library || 'None'}`);
+console.log('═'.repeat(60) + '\n');
+```
 
-        result.Succeeded.Should().BeTrue();
+### Step 8: Offer to Save Configuration (Optional)
+
+```javascript
+// Only offer to save if user provided parameters via prompts
+if (!configExists || missingFields.length > 0) {
+  const shouldSave = await promptUser('saveConfig', {
+    message: 'Save this configuration to config.json for future use?',
+    type: 'confirm',
+    default: true
+  });
+  
+  if (shouldSave) {
+    // Prepare config object (exclude sensitive data)
+    const configToSave = {
+      application_name: userConfig.application_name,
+      project_scope: userConfig.project_scope,
+      router_base_path: userConfig.router_base_path,
+      api_base_path: userConfig.api_base_path,
+      default_port: userConfig.default_port,
+      application_type: userConfig.application_type,
+      test_framework: userConfig.test_framework,
+      state_management: userConfig.state_management,
+      node_version: userConfig.node_version,
+      vue_version: userConfig.vue_version,
+      vite_version: userConfig.vite_version,
+      typescript_version: userConfig.typescript_version,
+      enable_single_spa: userConfig.enable_single_spa,
+      enable_datadog: userConfig.enable_datadog,
+      component_library: userConfig.component_library,
+      component_library_version: userConfig.component_library_version
+    };
+    
+    // Write to config.json
+    fs.writeFileSync(
+      path.join(process.cwd(), 'config.json'),
+      JSON.stringify(configToSave, null, 2) + '\n'
+    );
+    
+    console.log('✓ Configuration saved to config.json');
+    console.log('⚠️  Note: GitHub token (if provided) was NOT saved for security');
+    console.log('   You can manually add it to config.json if needed (it will be gitignored)\n');
+    
+    // Add config.json to .gitignore if not already there
+    const gitignorePath = path.join(process.cwd(), '.gitignore');
+    if (fs.existsSync(gitignorePath)) {
+      const gitignoreContent = fs.readFileSync(gitignorePath, 'utf-8');
+      if (!gitignoreContent.includes('config.json')) {
+        fs.appendFileSync(gitignorePath, '\nconfig.json\n');
+        console.log('✓ Added config.json to .gitignore\n');
+      }
     }
-
-    [Fact]
-    public void Validate_WithMissingHost_ReturnsFail()
-    {
-        var settings = new SmtpSettings { Host = "" };
-
-        var result = _validator.Validate(null, settings);
-
-        result.Succeeded.Should().BeFalse();
-        result.FailureMessage.Should().Contain("Host is required");
-    }
-
-    [Fact]
-    public void Validate_WithUsernameButNoPassword_ReturnsFail()
-    {
-        var settings = new SmtpSettings
-        {
-            Host = "smtp.example.com",
-            Username = "user@example.com",
-            Password = null  // Missing!
-        };
-
-        var result = _validator.Validate(null, settings);
-
-        result.Succeeded.Should().BeFalse();
-        result.FailureMessage.Should().Contain("Password is required");
-    }
+  }
 }
 ```
 
----
+## Output
+- `userConfig` object with all configuration values
+- Validation results
+- Summary display to user
+- Optional: `config.json` file saved in project root (if user confirms)
 
-## Summary
+## Validation Rules
 
-| Principle | Implementation |
-|-----------|----------------|
-| Fail fast | `.ValidateOnStart()` |
-| Strongly-typed | Bind to POCO classes |
-| Simple validation | Data Annotations |
-| Complex validation | `IValidateOptions<T>` |
-| Cross-property rules | `IValidateOptions<T>` |
-| Environment-aware | Inject `IHostEnvironment` |
-| Testable | Validators are plain classes |
+### Format Validation
+- **application_name**: Must be kebab-case (e.g., `my-app-web`)
+- **project_scope**: Must start with `@` (e.g., `@myorg`)
+- **router_base_path**: Must start with `/` (e.g., `/my-app`)
+- **api_base_path**: Must start with `/` (e.g., `/api`)
+- **default_port**: Must be integer 1024-65535
+- **application_type**: Must be `"standalone"` or `"micro-frontend"`
+- **test_framework**: Must be `"jest"` or `"vitest"`
+- **state_management**: Must be `"vuex"` or `"pinia"`
+
+### Business Logic Validation
+See `conditional-generation` skill for application type specific validations.
+
+## Configuration Methods
+
+### Method 1: Interactive Terminal Prompts (Default)
+Run the agent and answer the prompts interactively.
+
+**IMPORTANT**: Questions are asked **ONE AT A TIME** in a conversational flow:
+- Agent asks question 1, waits for answer
+- Agent confirms answer, asks question 2, waits for answer
+- Agent confirms answer, asks question 3, and so on...
+- Progress indicator shown (e.g., "Question 3/6")
+
+**Example Interactive Flow**:
+```
+Agent: 📝 Question 1/7
+       What is the name of your application? (in kebab-case)
+User:  my-inventory-app-web
+Agent: ✓ Got it: my-inventory-app-web
+
+Agent: 📝 Question 2/7
+       What is your NPM scope/organization? (e.g., @my-org)
+User:  @my-company
+Agent: ✓ Got it: @my-company
+
+Agent: 📝 Question 3/7
+       What base path should the router use?
+User:  /my-inventory-app
+Agent: ✓ Got it: /my-inventory-app
+
+... continues through question 7 ...
+
+Agent: 📝 Question 7/7
+       Do you want to use the latest package versions from npm?
+User:  yes
+Agent: ✓ Got it: yes
+
+       ✓ Using latest versions with recommended tools:
+         • Testing: Vitest (latest)
+         • State Management: Pinia (latest)
+
+Agent: 📦 Component library:
+       Do you want to include a component library?
+User:  no
+Agent: ✓ No component library
+       ℹ  Skipping GitHub token (no component library needed)
+
+... and so on
+```
+
+### Method 2: Configuration File (config.json)
+Create a `config.json` file in the project root. The agent will read values and skip prompting.
+
+### Method 3: Hybrid Approach
+Provide some values in `config.json` and the agent will only prompt for missing required values (ONE AT A TIME).
+
+## Related Skills
+- **conditional-generation**: Determines which files to generate based on config
+- **component-library**: Handles component library installation based on config
+- **package-json**: Uses config to generate package.json
+
+## Files Referenced
+
+### config.json (project root)
+User's configuration file (optional). If exists, values are loaded from here.
+
+All configuration fields, validation rules, and defaults are documented in `examples.md`.

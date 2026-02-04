@@ -1,140 +1,442 @@
 ---
 name: fly-io
-description: Deploy and manage globally distributed apps on Fly.io
-category: devops
+description: Deploys applications globally on Fly.io edge infrastructure with Firecracker VMs, multi-region deployment, and usage-based pricing. Use when deploying to multiple regions, running containers at the edge, or needing fast cold starts.
 ---
 
-# Fly.io Skill
+# Fly.io
 
-## Overview
-Enables Claude to access the Fly.io dashboard to view and manage globally distributed applications, check machine status, monitor metrics, and view billing across Fly.io infrastructure.
+Global edge deployment platform running applications in Firecracker micro-VMs close to users.
 
-## Quick Install
-
-```bash
-curl -sSL https://canifi.com/skills/fly-io/install.sh | bash
-```
-
-Or manually:
-```bash
-cp -r skills/fly-io ~/.canifi/skills/
-```
-
-## Setup
-
-Configure via [canifi-env](https://canifi.com/setup/scripts):
+## Quick Start
 
 ```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
+# Install flyctl
+curl -L https://fly.io/install.sh | sh
 
-canifi-env set FLY_EMAIL "your-email@example.com"
+# Or on macOS
+brew install flyctl
+
+# Login
+fly auth login
+
+# Launch app (creates fly.toml)
+fly launch
+
+# Deploy
+fly deploy
 ```
 
-## Privacy & Authentication
+## Project Setup
 
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
+### fly.toml
 
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
+```toml
+app = "my-app"
+primary_region = "ord"
 
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 250
+    soft_limit = 200
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+```
+
+### Basic Dockerfile
+
+```dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+RUN npm run build
+
+EXPOSE 3000
+
+CMD ["node", "dist/index.js"]
+```
+
+## Deployment
+
+### Deploy from Git
+
 ```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
+# First deploy creates app
+fly launch
+
+# Subsequent deploys
+fly deploy
+
+# Deploy specific Dockerfile
+fly deploy --dockerfile Dockerfile.prod
+
+# Deploy with build args
+fly deploy --build-arg API_KEY=$API_KEY
 ```
 
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
+### Deploy Strategies
 
-## Capabilities
-- View app deployments
-- Check machine status
-- Monitor app metrics
-- View volumes and storage
-- Check certificates and domains
-- View billing and usage
-
-## Usage Examples
-
-### Example 1: Check Apps
-```
-User: "How are my Fly.io apps?"
-Claude: I'll check your Fly.io dashboard.
-- Opens fly.io/dashboard via Playwright MCP
-- Logs into account
-- Apps:
-  - my-api: 3 machines, Running (iad, lhr, sin)
-  - my-frontend: 2 machines, Running (iad, lhr)
-  - redis-cache: 1 machine, Running (iad)
-- All apps healthy
-- Global latency: <50ms avg
+```toml
+[deploy]
+  strategy = "rolling"  # default
+  # strategy = "immediate"
+  # strategy = "canary"
+  # strategy = "bluegreen"
 ```
 
-### Example 2: Check Machines
-```
-User: "What's the status of my Fly machines?"
-Claude: I'll check machine status.
-- Views Machines section
-- my-api machines:
-  - iad-1: shared-cpu-1x, 256MB, Running
-  - lhr-1: shared-cpu-1x, 256MB, Running
-  - sin-1: shared-cpu-1x, 256MB, Running
-- CPU: 12% avg across regions
-- Memory: 180MB / 256MB avg
-- All health checks passing
-```
+## Regions
 
-### Example 3: View Billing
-```
-User: "What's my Fly.io bill?"
-Claude: I'll check your usage.
-- Views Billing section
-- Current month: $23.45
-- Breakdown:
-  - Machines (compute): $18.00
-  - Volumes (storage): $3.00
-  - Bandwidth: $2.45
-- Free tier credits applied
-- Estimated monthly: $28
+### Multi-Region Deployment
+
+```bash
+# Add regions
+fly regions add ams lhr syd
+
+# List regions
+fly regions list
+
+# Remove region
+fly regions remove syd
 ```
 
-## Authentication Flow
-1. Navigate to fly.io/dashboard via Playwright MCP
-2. Enter email address
-3. Enter password
-4. Handle 2FA if enabled
-5. Maintain session for dashboard access
+### Region Configuration
 
-## Error Handling
-- Login Failed: Retry credentials
-- 2FA Required: Complete verification
-- App Issue: Check logs
-- Session Expired: Re-authenticate
-- Machine Down: Check region status
-- Deploy Failed: Check build logs
+```toml
+app = "my-app"
+primary_region = "ord"
 
-## Self-Improvement Instructions
-After each interaction:
-- Track app patterns
-- Note regional performance
-- Log billing trends
-- Document UI changes
+# Scale to multiple regions
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1
 
-Suggest updates when:
-- Fly.io updates dashboard
-- New features added
-- Pricing changes
-- Regions expand
+  [vm.processes]
+    web = 2  # 2 machines per region
+```
 
-## Notes
-- Edge computing platform
-- Global by default
-- Docker-based deploys
-- Persistent volumes
-- Built-in load balancing
-- WireGuard networking
-- Great for latency-sensitive apps
+### Available Regions
+
+| Code | Location |
+|------|----------|
+| `ord` | Chicago |
+| `iad` | Virginia |
+| `lax` | Los Angeles |
+| `ams` | Amsterdam |
+| `lhr` | London |
+| `fra` | Frankfurt |
+| `syd` | Sydney |
+| `nrt` | Tokyo |
+| `sin` | Singapore |
+
+## Secrets & Environment
+
+### Secrets (Encrypted)
+
+```bash
+# Set secrets
+fly secrets set DATABASE_URL=postgres://... API_KEY=secret
+
+# List secrets
+fly secrets list
+
+# Unset secret
+fly secrets unset API_KEY
+```
+
+### Environment Variables
+
+```toml
+# fly.toml
+[env]
+  NODE_ENV = "production"
+  LOG_LEVEL = "info"
+```
+
+### Per-Region Environment
+
+```toml
+[[env]]
+  NODE_ENV = "production"
+
+  [[env.region]]
+    region = "ord"
+    CDN_URL = "https://us-cdn.example.com"
+
+  [[env.region]]
+    region = "ams"
+    CDN_URL = "https://eu-cdn.example.com"
+```
+
+## Scaling
+
+### Machine Scaling
+
+```bash
+# Scale up
+fly scale count 3
+
+# Scale per region
+fly scale count 2 --region ord
+fly scale count 1 --region ams
+
+# Scale VM size
+fly scale vm shared-cpu-1x
+fly scale vm dedicated-cpu-1x
+fly scale memory 512
+```
+
+### Auto-scaling
+
+```toml
+[http_service]
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  max_machines_running = 10
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 100
+    hard_limit = 250
+```
+
+## Databases
+
+### Postgres
+
+```bash
+# Create Postgres cluster
+fly postgres create
+
+# Attach to app
+fly postgres attach my-postgres-db
+
+# Connect
+fly postgres connect -a my-postgres-db
+
+# Proxy to local
+fly proxy 5432 -a my-postgres-db
+```
+
+### Redis
+
+```bash
+# Create Redis
+fly redis create
+
+# Get connection string
+fly redis status my-redis
+```
+
+### LiteFS (SQLite)
+
+```bash
+# Create LiteFS cluster
+fly apps create my-app-litefs
+
+# Configure in fly.toml
+[mounts]
+  source = "litefs"
+  destination = "/var/lib/litefs"
+```
+
+## Volumes (Persistent Storage)
+
+```bash
+# Create volume
+fly volumes create mydata --size 1 --region ord
+
+# List volumes
+fly volumes list
+
+# Destroy volume
+fly volumes destroy vol_xxx
+```
+
+```toml
+# fly.toml
+[mounts]
+  source = "mydata"
+  destination = "/data"
+```
+
+## Networking
+
+### Custom Domains
+
+```bash
+# Add domain
+fly certs add example.com
+
+# Check certificate status
+fly certs show example.com
+```
+
+### Private Networking
+
+```toml
+# Internal services communicate via .internal DNS
+# api.internal:3000
+```
+
+### Static IPs
+
+```bash
+# Allocate IPv4 (paid)
+fly ips allocate-v4
+
+# List IPs
+fly ips list
+```
+
+## Health Checks
+
+```toml
+[http_service]
+  internal_port = 3000
+
+  [[http_service.checks]]
+    grace_period = "5s"
+    interval = "10s"
+    timeout = "2s"
+    path = "/health"
+    method = "GET"
+    protocol = "http"
+```
+
+## Processes
+
+### Multiple Processes
+
+```toml
+[processes]
+  web = "node dist/server.js"
+  worker = "node dist/worker.js"
+
+[[http_service]]
+  processes = ["web"]
+  internal_port = 3000
+
+[[services]]
+  processes = ["worker"]
+  internal_port = 0
+```
+
+### Background Workers
+
+```toml
+[processes]
+  worker = "node dist/worker.js"
+
+[[services]]
+  processes = ["worker"]
+  internal_port = 0
+  auto_stop_machines = false
+```
+
+## Node.js Configuration
+
+### Optimized Dockerfile
+
+```dockerfile
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+RUN npm prune --production
+
+FROM node:20-alpine
+
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./
+
+ENV NODE_ENV=production
+USER node
+
+CMD ["node", "dist/index.js"]
+```
+
+### Next.js
+
+```toml
+app = "my-nextjs-app"
+primary_region = "ord"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
+```
+
+## CLI Commands
+
+```bash
+# App management
+fly apps create my-app
+fly apps list
+fly apps destroy my-app
+
+# Deployment
+fly deploy
+fly deploy --strategy immediate
+fly status
+
+# Logs
+fly logs
+fly logs -a my-app
+
+# SSH
+fly ssh console
+fly ssh console -C "node -v"
+
+# Monitoring
+fly status
+fly dashboard
+
+# Scaling
+fly scale show
+fly scale count 3
+fly scale memory 512
+
+# Regions
+fly regions list
+fly regions add ord ams
+
+# Secrets
+fly secrets set KEY=value
+fly secrets list
+```
+
+See [references/configuration.md](references/configuration.md) for complete fly.toml options.

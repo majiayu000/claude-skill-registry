@@ -1,11 +1,7 @@
 {
   "name": "index",
-  "description": "Manage and query the documentation dependency index. Use this to identify which documents need to be updated when code changes.",
-  "repo": "julwrites/agent-harness",
-  "category": "documents",
-  "tags": [
-    "index"
-  ],
-  "stars": 0,
-  "source": "local"
+  "repo": "nadavyigal/Running-coach-",
+  "path": ".codex/skills/_index/SKILL.md",
+  "source": "github.com/nadavyigal/Running-coach-",
+  "downloaded_at": "2026-02-04T04:12:41.460743Z"
 }

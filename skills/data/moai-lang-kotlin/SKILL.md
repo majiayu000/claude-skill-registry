@@ -1,509 +1,145 @@
 ---
-name: moai-lang-kotlin
-version: 4.0.0
-updated: '2025-11-19'
-status: stable
-stability: stable
-description: Kotlin 2.0 Multiplatform Enterprise Development with KMP, Coroutines,
-allowed-tools:
-- Read
-- Bash
-- WebSearch
-- WebFetch
+name: "moai-lang-kotlin"
+description: "Kotlin 2.0+ development specialist covering Ktor, coroutines, Compose Multiplatform, and Kotlin-idiomatic patterns. Use when building Kotlin server apps, Android apps, or multiplatform projects."
+version: 1.1.0
+category: "language"
+modularized: false
+user-invocable: false
+tags: ['kotlin', 'ktor', 'coroutines', 'compose', 'android', 'multiplatform']
+context7-libraries: "/ktorio/ktor, /jetbrains/compose-multiplatform, /jetbrains/exposed"
+related-skills: "moai-lang-java, moai-lang-swift"
+updated: 2026-01-11
+status: "active"
 ---
 
+## Quick Reference (30 seconds)
 
+Kotlin 2.0+ Expert - K2 compiler, coroutines, Ktor, Compose Multiplatform with Context7 integration.
 
-# Lang Kotlin Skill - Enterprise 
+Auto-Triggers: Kotlin files (`.kt`, `.kts`), Gradle Kotlin DSL (`build.gradle.kts`, `settings.gradle.kts`)
 
-## Skill Overview
+Core Capabilities:
 
-**Kotlin 2.0** Multiplatform enterprise development with advanced async patterns, KMP architecture, and Compose Multiplatform UI. This skill provides patterns for mobile, backend, and cross-platform development with full Context7 MCP integration for real-time documentation access.
-
-### Core Capabilities
-
-- ✅ Kotlin 2.0 Multiplatform (KMP) enterprise architecture
-- ✅ Advanced coroutines and structured concurrency patterns
-- ✅ Compose Multiplatform UI development (Android, iOS, Web)
-- ✅ Enterprise testing strategies with Kotest and MockK
-- ✅ Context7 MCP integration for latest documentation
-- ✅ Performance optimization and memory management
-- ✅ Modern architecture patterns (MVI, Clean Architecture)
-- ✅ Security best practices for production systems
+- Kotlin 2.0: K2 compiler, coroutines, Flow, sealed classes, value classes
+- Ktor 3.0: Async HTTP server/client, WebSocket, JWT authentication
+- Exposed 0.55: Kotlin SQL framework with coroutines support
+- Spring Boot (Kotlin): Kotlin-idiomatic Spring with WebFlux
+- Compose Multiplatform: Desktop, iOS, Web, Android UI
+- Testing: JUnit 5, MockK, Kotest, Turbine for Flow testing
 
 ---
 
-## Quick Reference
+## Implementation Guide (5 minutes)
 
-### When to Use This Skill
+### Kotlin 2.0 Features
 
-**Automatic activation**:
-- Kotlin/KMP development discussions
-- Multiplatform project architecture and design
-- Mobile development with shared business logic
-- Async programming and coroutine patterns
-- Compose Multiplatform UI development
+Coroutines and Flow: Use coroutineScope with async for parallel operations. Create deferred values with async, then call await on each to get results. Combine results into data classes. For reactive streams, create flow blocks with emit calls inside while loops. Use delay for intervals and flowOn to specify dispatcher.
 
-**Manual invocation**:
-- Design multiplatform architecture
-- Implement advanced async patterns
-- Optimize performance and memory usage
-- Review enterprise Kotlin code
+Sealed Classes and Value Classes: Define sealed interface with generic type parameter. Create data class implementations for success and data object for stateless cases like Loading. Use @JvmInline annotation with value class wrapping a primitive. Add init blocks with require for validation.
 
----
+### Ktor 3.0 Server
 
-## Technology Stack (2025-11-13)
+Application Setup: Call embeddedServer with Netty, port, and host parameters. Inside the lambda, call configuration functions for Koin, security, routing, and content negotiation. Call start with wait equals true.
 
-| Component | Version | Purpose | Status |
-|-----------|---------|---------|--------|
-| **Kotlin** | 2.0.20 | Core language | Current |
-| **Coroutines** | 1.8.0 | Async programming | Current |
-| **Compose Multiplatform** | 1.6.10 | UI framework | Current |
-| **Serialization** | 1.7.1 | JSON/data serialization | Current |
-| **Ktor** | 2.3.12 | HTTP client/server | Current |
-| **Android Gradle Plugin** | 8.5.0 | Android build | Current |
+For Koin configuration, install Koin plugin and define modules with single declarations for singletons. For security, install Authentication plugin and configure JWT with realm, verifier, and validate callback. For content negotiation, install ContentNegotiation with json configuration.
+
+Routing with Authentication: Define routing function on Application. Inside routing block, use route for path prefixes. Create unauthenticated endpoints with post and call.receive for request body. Use authenticate block with verifier name for protected routes. Inside route blocks, define get endpoints with call.parameters for path/query params. Use call.respond with status code and response body.
+
+### Exposed SQL Framework
+
+Table and Entity: Define object extending LongIdTable with table name. Declare columns with varchar, enumerationByName, and timestamp functions. Use uniqueIndex() and defaultExpression for defaults.
+
+Create entity class extending LongEntity with companion object extending LongEntityClass. Declare properties with by syntax using table column references. Create toModel function to map entity to domain model.
+
+Repository with Coroutines: Create repository implementation taking Database parameter. Implement suspend functions wrapping Exposed operations in dbQuery helper. Use findById for single entity lookup. Use Entity.new for inserts. Define private dbQuery function using newSuspendedTransaction with IO dispatcher.
+
+### Spring Boot with Kotlin
+
+WebFlux Controller: Annotate class with @RestController and @RequestMapping. Create suspend functions for endpoints with @GetMapping and @PostMapping. Return Flow for collections using map to convert entities. Return ResponseEntity with status codes. Use @Valid for request validation.
 
 ---
 
-## Core Language Features
+## Advanced Patterns
 
-### 1. Null Safety & Type System
+### Compose Multiplatform
 
-Kotlin's null safety is a game-changer for enterprise development:
+Shared UI Component: Create @Composable function taking ViewModel and callback parameters. Collect uiState as state with collectAsState. Use when expression on sealed state to show different composables for Loading, Success, and Error.
 
-```kotlin
-// Smart null handling
-val name: String? = "John"
-val length = name?.length ?: 0  // Safe navigation + Elvis operator
+For list items, create Card composables with Modifier.fillMaxWidth and clickable. Use Row with padding, AsyncImage for avatars with CircleShape clip, and Column for text content with MaterialTheme.typography.
 
-// Type-safe IDs with inline classes
-@JvmInline
-value class UserId(val value: String)
+### Testing with MockK
 
-// Sealed hierarchies for domain modeling
-sealed class Result<T> {
-    data class Success<T>(val data: T) : Result<T>()
-    data class Error(val exception: Throwable) : Result<Nothing>()
-}
-```
+Create test class with mockk for dependencies. Initialize service with mock in declaration. Use @Test with runTest for coroutine tests. Use coEvery with coAnswers for async mocking with delay. Use assertThat for assertions. For Flow testing, use toList to collect emissions and assert on size and content.
 
-**Key Benefits**:
-- Eliminates `NullPointerException` at compile time
-- Zero runtime overhead with inline classes
-- Type-safe domain models
+### Gradle Build Configuration
 
-### 2. Coroutines - Structured Concurrency
-
-Enterprise async patterns with built-in safety:
-
-```kotlin
-// Structured concurrency scope
-coroutineScope {
-    val result1 = async { fetchData("API1") }
-    val result2 = async { fetchData("API2") }
-    awaitAll(result1, result2)
-} // All coroutines cancelled if scope exits
-
-// Context switching
-withContext(Dispatchers.IO) {
-    val data = blockingIoCall()  // Safe switching
-}
-
-// Error isolation with supervisor scope
-supervisorScope {
-    launch { riskyOperation1() }  // Failure doesn't affect others
-    launch { riskyOperation2() }
-}
-```
-
-**Key Benefits**:
-- Automatic cancellation and resource cleanup
-- Prevents memory leaks and zombie coroutines
-- Context-aware execution
-
-### 3. Extension Functions & DSLs
-
-Powerful language extension without inheritance:
-
-```kotlin
-// Domain-specific languages (DSLs)
-fun html(block: HtmlBuilder.() -> Unit): String {
-    val builder = HtmlBuilder()
-    builder.block()
-    return builder.build()
-}
-
-// Usage
-val page = html {
-    h1("Welcome")
-    p("This is a paragraph")
-}
-
-// See examples.md for complete DSL patterns
-```
+Use plugins block with kotlin("jvm") and kotlin("plugin.serialization") with version strings. Add id for ktor.plugin. Configure kotlin block with jvmToolchain. In dependencies block, add ktor server modules, kotlinx coroutines, exposed modules, and postgresql driver. Add test dependencies for mockk, coroutines-test, and turbine.
 
 ---
 
-## Multiplatform Architecture
+## Context7 Integration
 
-### Project Structure
+Library mappings for latest documentation:
 
-```
-kmp-enterprise-app/
-├── shared/
-│   ├── src/
-│   │   ├── commonMain/kotlin/
-│   │   │   ├── domain/        # Business logic
-│   │   │   ├── data/          # Data layer
-│   │   │   └── presentation/  # State management
-│   │   ├── androidMain/kotlin/
-│   │   ├── iosMain/kotlin/
-│   │   └── commonTest/kotlin/
-├── androidApp/
-├── iosApp/
-└── webApp/
-```
+- `/ktorio/ktor` - Ktor 3.0 server/client documentation
+- `/jetbrains/exposed` - Exposed SQL framework
+- `/JetBrains/kotlin` - Kotlin 2.0 language reference
+- `/Kotlin/kotlinx.coroutines` - Coroutines library
+- `/jetbrains/compose-multiplatform` - Compose Multiplatform
+- `/arrow-kt/arrow` - Arrow functional programming
 
-### expect/actual Pattern
-
-```kotlin
-// commonMain: Define interface
-expect class PlatformDatabase {
-    suspend fun saveData(data: String): Result<Unit>
-}
-
-// androidMain: Android implementation
-actual class PlatformDatabase {
-    actual suspend fun saveData(data: String) = try {
-        room.insert(data)
-        Result.success(Unit)
-    } catch (e: Exception) {
-        Result.failure(e)
-    }
-}
-
-// iosMain: iOS implementation
-actual class PlatformDatabase {
-    actual suspend fun saveData(data: String) = try {
-        coreData.save(data)
-        Result.success(Unit)
-    } catch (e: Exception) {
-        Result.failure(e)
-    }
-}
-```
-
-**Key Pattern**:
-- Share business logic in `commonMain`
-- Isolate platform specifics in platform modules
-- Compile-time platform selection
+Usage: Call mcp__context7__get_library_docs with context7CompatibleLibraryID, topic string for specific areas, and tokens parameter for response size.
 
 ---
 
-## Advanced Async Patterns
+## When to Use Kotlin
 
-### Flow - Reactive Streams
+Use Kotlin When:
 
-```kotlin
-// Create cold flow (lazy)
-fun getUsersFlow(): Flow<User> = flow {
-    while (true) {
-        val users = repository.fetchUsers()
-        emit(users)
-        delay(5000)  // Refresh every 5 seconds
-    }
-}
+- Developing Android applications (official language)
+- Building modern server applications with Ktor
+- Preferring concise, expressive syntax
+- Building reactive services with coroutines and Flow
+- Creating multiplatform applications (iOS, Desktop, Web)
+- Full Java interoperability required
 
-// Compose flows
-getUsersFlow()
-    .map { it.copy(name = it.name.uppercase()) }
-    .filter { it.isActive }
-    .distinctUntilChanged()
-    .collect { updateUI(it) }
-```
+Consider Alternatives When:
 
-### StateFlow - Mutable State
-
-```kotlin
-class CounterViewModel {
-    private val _count = MutableStateFlow(0)
-    val count: StateFlow<Int> = _count.asStateFlow()
-
-    fun increment() { _count.value++ }
-    fun decrement() { _count.value-- }
-}
-
-// Observe state changes
-viewModel.count.collect { count ->
-    updateUI("Count: $count")
-}
-```
-
----
-
-## Compose Multiplatform UI
-
-### Basic Components
-
-```kotlin
-@Composable
-fun UserListScreen(users: List<User>) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        Text("Users", style = MaterialTheme.typography.headlineLarge)
-
-        LazyColumn {
-            items(users) { user ->
-                UserCard(user)
-            }
-        }
-    }
-}
-
-@Composable
-fun UserCard(user: User) {
-    Card(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(user.name, style = MaterialTheme.typography.titleMedium)
-            Text(user.email, color = Color.Gray)
-        }
-    }
-}
-```
-
-**Key Concepts**:
-- Declarative UI
-- Reusable components
-- State management integration
-
----
-
-## Enterprise Patterns
-
-### Dependency Injection with Koin
-
-```kotlin
-val appModule = module {
-    single { HttpClient() }
-    single { UserRepository(get()) }
-    viewModel { UserListViewModel(get()) }
-}
-
-// Usage
-val userService: UserService = get()  // Injected automatically
-```
-
-### Error Handling
-
-```kotlin
-// Result wrapper for safe operations
-suspend fun fetchData(): Result<String> = try {
-    Result.success(apiCall())
-} catch (e: Exception) {
-    Result.failure(e)
-}
-
-// Chain operations safely
-fetchData()
-    .onSuccess { data -> updateUI(data) }
-    .onFailure { error -> showError(error) }
-```
-
-### Testing
-
-```kotlin
-@Test
-fun testAsync() = runTest {
-    val result = someAsyncFunction()
-    assertEquals("expected", result)
-}
-
-@Test
-fun testWithMock() {
-    val repo = mockk<Repository>()
-    coEvery { repo.fetch("1") } returns "data"
-    // Verify behavior
-    coVerify { repo.fetch("1") }
-}
-```
-
----
-
-## Context7 MCP Integration
-
-This skill integrates with Context7 for real-time access to official documentation:
-
-### Available Resources
-
-1. **Kotlin Language**: `/kotlin/kotlin`
-2. **Coroutines**: `/kotlin/kotlinx.coroutines`
-3. **KMP**: `/kotlin/kotlin.multiplatform`
-4. **Compose**: `/jetbrains/compose-multiplatform`
-5. **Ktor**: `/ktor/ktor`
-6. **Serialization**: `/kotlin/kotlinx.serialization`
-
-### Usage Example
-
-```kotlin
-// Get latest coroutine patterns
-val docs = mcp__context7__get-library-docs(
-    context7CompatibleLibraryID = "/kotlin/kotlinx.coroutines"
-)
-```
-
----
-
-## Performance Optimization
-
-### Memory Efficiency
-
-1. **Use Sequence for lazy evaluation**:
-   ```kotlin
-   (1..1_000_000).asSequence()
-       .filter { it % 2 == 0 }
-       .map { it * 2 }
-       .toList()  // Only processes what's needed
-   ```
-
-2. **Inline classes for zero-overhead**:
-   ```kotlin
-   @JvmInline
-   value class UserId(val value: String)  // No allocation at runtime
-   ```
-
-3. **Primitive arrays instead of boxed**:
-   ```kotlin
-   val intArray = IntArray(1000)  // More efficient than Array<Int>
-   ```
-
-### Execution Speed
-
-1. **Tail recursion**:
-   ```kotlin
-   tailrec fun factorial(n: Int, acc: Int = 1): Int =
-       if (n <= 1) acc else factorial(n - 1, n * acc)
-   ```
-
-2. **Coroutine pooling** (automatic with structured concurrency)
-
----
-
-## Best Practices
-
-### 1. Always Use Structured Concurrency
-
-```kotlin
-// GOOD
-coroutineScope {
-    val result = async { fetchData() }
-}
-
-// AVOID
-GlobalScope.launch { fetchData() }  // Never use
-```
-
-### 2. Null Safety Over Exceptions
-
-```kotlin
-// GOOD
-val user = repository.findUser(id)
-    ?.let { updateUI(it) }
-    ?: showNotFound()
-
-// AVOID
-val user = repository.findUser(id)!!  // Unsafe
-```
-
-### 3. Resource Management
-
-```kotlin
-// GOOD
-File("data.txt").bufferedReader().use { reader ->
-    reader.readLines()
-}  // Auto-closes
-
-// GOOD
-try {
-    // Use resource
-} finally {
-    resource.close()
-}
-```
-
----
-
-## Security Considerations
-
-### Input Validation
-
-```kotlin
-data class SecureUserInput(val email: String) {
-    init {
-        require(email.contains("@")) { "Invalid email" }
-        require(email.length <= 254) { "Email too long" }
-    }
-}
-```
-
-### Secure Storage
-
-```kotlin
-expect class SecureStorage {
-    suspend fun store(key: String, value: String)
-    suspend fun retrieve(key: String): String?
-}
-```
-
-### Network Security
-
-```kotlin
-// Certificate pinning
-val client = HttpClient {
-    install(Auth) {
-        bearer {
-            loadTokens { getBearerTokens() }
-        }
-    }
-}
-```
-
----
-
-## Testing Strategy
-
-| Category | Target | Tools |
-|----------|--------|-------|
-| **Unit Tests** | 80% | Kotest, MockK, runTest |
-| **Integration Tests** | 15% | Kotest, testcontainers |
-| **UI Tests** | 5% | Compose Test |
+- Legacy Java codebase requiring minimal changes
+- Big data pipelines (prefer Scala with Spark)
 
 ---
 
 ## Works Well With
 
-- `moai-foundation-trust` (TRUST 5 quality gates)
-- `moai-foundation-security` (Enterprise security)
-- `moai-foundation-testing` (Testing strategies)
-- `moai-cc-mcp-integration` (MCP integration)
-- `moai-essentials-debug` (Debugging)
+- `moai-lang-java` - Java interoperability and Spring Boot patterns
+- `moai-domain-backend` - REST API, GraphQL, microservices architecture
+- `moai-domain-database` - JPA, Exposed, R2DBC patterns
+- `moai-quality-testing` - JUnit 5, MockK, TestContainers integration
+- `moai-infra-docker` - JVM container optimization
 
 ---
 
-## For Complete Information
+## Troubleshooting
 
-- **Working Examples**: See `examples.md` (29 examples covering all patterns)
-- **CLI Reference**: See `reference.md` (installation, commands, troubleshooting)
-- **Official Docs**: https://kotlinlang.org
-- **Coroutines Guide**: https://kotlinlang.org/docs/coroutines-overview.html
+K2 Compiler: Add kotlin.experimental.tryK2=true to gradle.properties. Clear .gradle directory for full rebuild.
 
----
+Coroutines: Avoid runBlocking in suspend contexts. Use Dispatchers.IO for blocking operations.
 
-## Changelog
+Ktor: Ensure ContentNegotiation is installed. Check JWT verifier configuration. Verify routing hierarchy.
 
-- ** .0** (2025-11-13): Refactored to Progressive Disclosure with comprehensive examples.md and reference.md
-- **v3.0.0** (2025-03-15): Added KMP and multiplatform patterns
-- **v2.0.0** (2025-01-10): Basic Kotlin patterns and best practices
-- **v1.0.0** (2024-12-01): Initial release
+Exposed: Ensure all DB operations run within transaction context. Be aware of lazy entity loading outside transactions.
 
 ---
 
-_Last updated: 2025-11-18_
+## Advanced Documentation
+
+For comprehensive reference materials:
+
+- [reference.md](reference.md) - Complete ecosystem, Context7 mappings, testing patterns, performance
+- [examples.md](examples.md) - Production-ready code examples, Ktor, Compose, Android patterns
+
+---
+
+Last Updated: 2026-01-11
+Status: Production Ready (v1.1.0)

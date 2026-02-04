@@ -1,9 +1,7 @@
 {
   "name": "add-unit-tests",
-  "description": "Write failing unit tests for feature requirements (TDD style)",
-  "repo": "thoreinstein/opencode-config",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "inclusionAI/AReaL",
+  "path": ".claude/skills/add-unit-tests/SKILL.md",
+  "source": "github.com/inclusionAI/AReaL",
+  "downloaded_at": "2026-02-04T04:10:53.756207Z"
 }

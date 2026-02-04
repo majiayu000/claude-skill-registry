@@ -1,9 +1,7 @@
 {
   "name": "ansible-proxmox",
-  "description": "This skill should be used when automating Proxmox VE with Ansible, creating VMs or templates, managing Proxmox clusters, using community.proxmox collection, or deciding between native modules and CLI ",
   "repo": "basher83/lunar-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-proxmox/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:30.026990Z"
 }

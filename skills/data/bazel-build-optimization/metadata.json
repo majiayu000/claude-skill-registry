@@ -1,7 +1,7 @@
 {
   "name": "bazel-build-optimization",
-  "repo": "ccf/claude-code-ccf-marketplace",
-  "path": "plugins/developer-essentials/skills/bazel-build-optimization/SKILL.md",
-  "source": "github.com/ccf/claude-code-ccf-marketplace",
-  "downloaded_at": "2026-02-02T05:11:56.808751Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/bazel-build-optimization/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:33.397602Z"
 }

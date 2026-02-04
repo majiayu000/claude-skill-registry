@@ -97,7 +97,7 @@ STATE_FILE=".claude/bot-reviews/PR-{N}.md"
 | (no file) | `phases/gate-0-init.md` |
 | `initialized` | `phases/gate-1-collect.md` |
 | `collected` | `phases/gate-2-validate.md` |
-| `validated` | `phases/gate-3-fix.md` |
+| `validated` | Check `next_gate` field: if `5` → `phases/gate-5-reply.md`, else `phases/gate-3-fix.md` |
 | `fixes_planned` | `phases/gate-3-fix.md` |
 | `fixes_applied` | `phases/gate-3-fix.md` (run checks) |
 | `checks_passed` | `phases/gate-4-commit.md` |
@@ -121,11 +121,20 @@ Each phase file contains:
 SCRIPTS="${CLAUDE_PLUGIN_ROOT}/skills/pr-patrol/scripts"
 
 # Core scripts
-"$SCRIPTS/fetch_pr_comments.sh" owner repo pr    # Parallel API fetch
-"$SCRIPTS/detect_thread_states.sh"               # State detection
-"$SCRIPTS/check_new_comments.sh" owner repo pr   # New since push
-"$SCRIPTS/check_reply_status.sh" owner repo pr   # Reply tracking
-"$SCRIPTS/update_state.sh" file field value      # State updates
+"$SCRIPTS/fetch_pr_comments.sh" owner repo pr              # Parallel API fetch + normalize
+cat normalized.json | "$SCRIPTS/detect_thread_states.sh"   # State detection (reads stdin)
+"$SCRIPTS/check_new_comments.sh" owner repo pr [since]     # New since push
+"$SCRIPTS/check_reply_status.sh" owner repo pr             # Reply tracking
+"$SCRIPTS/update_state.sh" file field value                # State updates
+"$SCRIPTS/update_billboard.sh" file status gate action     # Billboard + frontmatter update
+"$SCRIPTS/build_greptile_summary.sh" file cycle            # Greptile summary comment
+"$SCRIPTS/parse_coderabbit_embedded.sh" [file]             # Extract embedded comments (stdin or file)
+
+# jq libraries (used by scripts above, not called directly)
+# bot-detection.jq        — shared bot detection functions
+# normalize_comments.jq   — transform raw API → normalized structure
+# severity_detection.jq   — add severity to comments
+# detect_states.jq        — thread state detection (NEW/PENDING/RESOLVED/REJECTED)
 ```
 
 ---
@@ -146,6 +155,8 @@ SKILL_ROOT="${CLAUDE_PLUGIN_ROOT}/skills/pr-patrol"
 | `phases/gate-{N}.md` | Phase-specific instructions | Based on status |
 | `bot-formats.md` | Bot-specific protocols | **MUST READ before Gate 5** |
 | `templates.md` | Reply message templates | Gate 5 (replies) |
+| `examples/sample-*.md` | State file examples at each stage | When unsure about state file format |
+| `examples/sample-*.json` | Script output shapes | When working with script output |
 
 ---
 
@@ -159,7 +170,7 @@ SKILL_ROOT="${CLAUDE_PLUGIN_ROOT}/skills/pr-patrol"
 6. **Typecheck/lint are MANDATORY** - Block on failure
 7. **ALWAYS use --paginate** - Default GitHub API returns only 30 comments
 8. **Fetch BOTH endpoints** - Review comments (`/pulls/{pr}/comments`) AND issue comments (`/issues/{pr}/comments`)
-9. **Extract embedded CodeRabbit comments** - Use `parse_coderabbit_embedded.sh` for nitpicks, duplicates, outside-diff
+9. **Extract embedded CodeRabbit comments** - Use `"$SCRIPTS/parse_coderabbit_embedded.sh"` for nitpicks, duplicates, outside-diff
 10. **Issue vs PR review comments** - Different reply methods! Issue comments need @mention (no threading)
 11. **Reaction BEFORE reply** - For Greptile/Codex/Sentry, add reaction first, then reply
 12. **Short reply format** - "Fixed in commit {sha}: {description}" NOT verbose essays
@@ -170,33 +181,4 @@ SKILL_ROOT="${CLAUDE_PLUGIN_ROOT}/skills/pr-patrol"
 
 ## jq Escaping Warning
 
-**CRITICAL: Shell escaping corrupts jq operators.** This affects:
-- Direct `jq` commands
-- `gh api --jq` flag
-- Any inline jq in bash
-
-### Forbidden Patterns
-
-```bash
-# ❌ WRONG - "!=" gets escaped to "\!=" → "unexpected token" error
-jq '[.[] | select(.field != null)]'
-gh api ... --jq '[.[] | select(.in_reply_to_id != null)]'
-
-# ❌ WRONG - Same issue with "not null"
-jq 'select(.x != "value")'
-```
-
-### Safe Alternatives
-
-```bash
-# ✅ CORRECT - Use truthy check (implicit null filter)
-jq '[.[] | select(.field)]'
-
-# ✅ CORRECT - Use "| not" for negation
-jq '[.[] | select(.bot == "Copilot" | not)]'
-
-# ✅ CORRECT - Use external .jq file for complex queries
-jq -f "$SCRIPT_DIR/filter.jq"
-```
-
-**Rule:** For any jq with `!=` or complex logic, use the scripts in `scripts/` instead of inline jq.
+**Shell escaping corrupts jq `!=` operators.** For any jq with `!=` or complex logic, use the `.jq` files in `scripts/` instead of inline jq. For negation, use `| not` (e.g., `select(.bot == "Copilot" | not)`).

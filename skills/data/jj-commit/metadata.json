@@ -1,9 +1,7 @@
 {
   "name": "jj-commit",
-  "description": "Generate conventional commit messages for jj by analyzing diffs, running tests first, and handling immutable commits",
-  "repo": "ahkohd/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "jbott/nix-config",
+  "path": "home-manager/programs/claude-code/skills/jj:commit/SKILL.md",
+  "source": "github.com/jbott/nix-config",
+  "downloaded_at": "2026-02-04T01:17:44.989550Z"
 }

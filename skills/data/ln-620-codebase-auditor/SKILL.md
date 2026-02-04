@@ -117,6 +117,19 @@ Coordinates 9 specialized audit workers to perform comprehensive codebase qualit
 
 ## Phase 4: Delegate to Workers
 
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
+**Prompt template:**
+```
+Task(description: "Audit via ln-62X",
+     prompt: "Execute ln-62X-{worker}-auditor. Read skill from ln-62X-{worker}-auditor/SKILL.md. Context: {contextStore}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
+
 ### Phase 4a: Global Workers (PARALLEL)
 
 **Global workers** scan entire codebase (not domain-aware):
@@ -134,7 +147,9 @@ Coordinates 9 specialized audit workers to perform comprehensive codebase qualit
 **Invocation (7 workers in PARALLEL):**
 ```javascript
 FOR EACH worker IN [ln-621, ln-622, ln-625, ln-626, ln-627, ln-628, ln-629]:
-  Skill(skill=worker, args=JSON.stringify(contextStore))
+  Task(description: "Audit via " + worker,
+       prompt: "Execute " + worker + ". Read skill. Context: " + JSON.stringify(contextStore),
+       subagent_type: "general-purpose")
 ```
 
 ### Phase 4b: Domain-Aware Workers (PARALLEL per domain)

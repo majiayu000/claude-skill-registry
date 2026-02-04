@@ -1,9 +1,7 @@
 {
   "name": "rfc-generator",
-  "description": "Generates Request for Comments documents for technical proposals including problem statement, solution design, alternatives, risks, and rollout plans. Use for \"RFC\", \"technical proposals\", \"design doc",
-  "repo": "patricio0312rev/skillset",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/rfc-generator/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:20.066054Z"
 }

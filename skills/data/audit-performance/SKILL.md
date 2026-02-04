@@ -1,9 +1,135 @@
 ---
 name: audit-performance
 description: Run a single-session performance audit on the codebase
+supports_parallel: true
+fallback_available: true
+estimated_time_parallel: 20 min
+estimated_time_sequential: 50 min
 ---
 
 # Single-Session Performance Audit
+
+## Execution Mode Selection
+
+| Condition                                 | Mode       | Time    |
+| ----------------------------------------- | ---------- | ------- |
+| Task tool available + no context pressure | Parallel   | ~20 min |
+| Task tool unavailable                     | Sequential | ~50 min |
+| Context running low (<20% remaining)      | Sequential | ~50 min |
+| User requests sequential                  | Sequential | ~50 min |
+
+---
+
+## Section A: Parallel Architecture (2 Agents)
+
+**When to use:** Task tool available, sufficient context budget
+
+### Agent 1: bundle-and-rendering
+
+**Focus Areas:**
+
+- Bundle Size & Loading (large deps, code splitting, dynamic imports)
+- Rendering Performance (re-renders, memoization, virtualization)
+- Core Web Vitals (LCP, INP, CLS optimization)
+
+**Files:**
+
+- `app/**/*.tsx` (pages, layouts)
+- `components/**/*.tsx`
+- `package.json` (dependencies)
+- `next.config.mjs`
+
+### Agent 2: data-and-memory
+
+**Focus Areas:**
+
+- Data Fetching & Caching (query optimization, caching strategy)
+- Memory Management (effect cleanup, subscription leaks)
+- Offline Support (offline state, sync strategy)
+
+**Files:**
+
+- `lib/**/*.ts` (services, utilities)
+- `hooks/**/*.ts` (custom hooks)
+- Components with `useEffect`, `onSnapshot`
+- Service worker, cache configurations
+
+### Parallel Execution Command
+
+```markdown
+Invoke both agents in a SINGLE Task message:
+
+Task 1: bundle-and-rendering agent - audit bundle size, rendering, Core Web
+Vitals Task 2: data-and-memory agent - audit data fetching, memory, offline
+support
+```
+
+### Coordination Rules
+
+1. Each agent writes findings to separate JSONL section
+2. Bundle findings include estimated KB savings
+3. Memory findings include leak detection results
+4. Both agents note cross-cutting concerns
+
+---
+
+## Pre-Audit: Episodic Memory Search (Session #128)
+
+Before running performance audit, search for context from past sessions:
+
+```javascript
+// Search for past performance audit findings
+mcp__plugin_episodic -
+  memory_episodic -
+  memory__search({
+    query: ["performance audit", "bundle size", "rendering"],
+    limit: 5,
+  });
+
+// Search for specific optimization work done before
+mcp__plugin_episodic -
+  memory_episodic -
+  memory__search({
+    query: ["Core Web Vitals", "LCP", "memory leak"],
+    limit: 5,
+  });
+```
+
+**Why this matters:**
+
+- Compare against previous performance baselines
+- Identify recurring bottlenecks (may need architectural fixes)
+- Track optimization progress over time
+- Prevent re-flagging already-addressed issues
+
+---
+
+## Section B: Sequential Fallback (Single Agent)
+
+**When to use:** Task tool unavailable, context limits, or user preference
+
+**Execution Order:**
+
+1. AI Performance Patterns (high-impact AI-generated issues) - 10 min
+2. Bundle & Loading - 15 min
+3. Data Fetching - 10 min
+4. Remaining categories - 15 min
+
+**Total:** ~50 min (vs ~20 min parallel)
+
+### Checkpoint Format
+
+```json
+{
+  "started_at": "ISO timestamp",
+  "categories_completed": ["Bundle", "Rendering"],
+  "current_category": "DataFetch",
+  "findings_count": 12,
+  "last_file_written": "stage-2-findings.jsonl"
+}
+```
+
+---
 
 ## Pre-Audit Validation
 
@@ -76,6 +202,16 @@ If outdated, note discrepancies but proceed with current values.
    - Offline-first data patterns (queue writes, batch sync)
    - Service worker caching strategy
    - Offline testability (can app function without network?)
+
+7. AI Performance Patterns (AI-Codebase Specific - NEW 2026-02-02):
+   - Naive Data Fetching: AI defaults to fetch-all then filter client-side (S1)
+   - Missing Pagination: AI often forgets pagination for lists (S2)
+   - Redundant Re-Renders: AI-generated components without memo/useMemo (S2)
+   - Duplicate API Calls: Same data fetched in multiple places (S2)
+   - Sync Where Async Needed: AI sometimes uses sync file ops in Node.js (S2)
+   - Over-Fetching: Fetching entire documents when only fields needed (S2)
+   - Missing Loading States: No suspense boundaries or loading indicators (S2)
+   - Unbounded Queries: Firestore queries without limit() (S1)
 
 **For each category:**
 
@@ -210,36 +346,58 @@ Document dual-pass result in finding: `"verified": "DUAL_PASS_CONFIRMED"` or
 
 Create file: `docs/audits/single-session/performance/audit-[YYYY-MM-DD].jsonl`
 
-Each line (UPDATED SCHEMA with confidence and verification):
+**CRITICAL - Use JSONL_SCHEMA_STANDARD.md format:**
 
 ```json
 {
-  "id": "PERF-001",
-  "category": "Bundle|Rendering|DataFetch|Memory|WebVitals|Offline",
+  "category": "performance",
+  "title": "Short specific title",
+  "fingerprint": "performance::path/to/file.ts::identifier",
   "severity": "S0|S1|S2|S3",
   "effort": "E0|E1|E2|E3",
-  "confidence": "HIGH|MEDIUM|LOW",
-  "verified": "DUAL_PASS_CONFIRMED|TOOL_VALIDATED|MANUAL_ONLY",
-  "file": "path/to/file.ts",
-  "line": 123,
-  "title": "Short description",
-  "description": "Detailed issue",
-  "affected_metric": "LCP|INP|CLS|bundle|render|memory",
-  "estimated_improvement": "X%",
-  "recommendation": "How to fix",
+  "confidence": 90,
+  "files": ["path/to/file.ts:123"],
+  "why_it_matters": "1-3 sentences explaining performance impact",
+  "suggested_fix": "Concrete optimization direction",
+  "acceptance_tests": ["Array of verification steps"],
   "evidence": ["code snippet", "build output", "profiling data"],
-  "cross_ref": "build|lighthouse|profiler|MANUAL_ONLY"
+  "performance_details": {
+    "affected_metric": "LCP|INP|CLS|bundle|render|memory",
+    "current_metric": "current value",
+    "expected_improvement": "estimated improvement"
+  }
 }
 ```
 
-**⚠️ REQUIRED FIELDS (for deduplication/cross-reference):**
+**For S0/S1 findings, ALSO include verification_steps:**
 
-- `file` - REQUIRED: Full path from repo root (e.g.,
-  `components/notebook/pages/today-page.tsx`)
-- `line` - REQUIRED: Specific line number where issue occurs (use line 1 if
-  file-wide)
-- These fields enable the aggregator to match findings against existing ROADMAP
-  items
+```json
+{
+  "verification_steps": {
+    "first_pass": {
+      "method": "grep|tool_output|file_read|code_search",
+      "evidence_collected": ["initial evidence"]
+    },
+    "second_pass": {
+      "method": "contextual_review|exploitation_test|manual_verification",
+      "confirmed": true,
+      "notes": "Confirmation notes"
+    },
+    "tool_confirmation": {
+      "tool": "lighthouse|typescript|webpack|NONE",
+      "reference": "Tool output or NONE justification"
+    }
+  }
+}
+```
+
+**⚠️ REQUIRED FIELDS (per JSONL_SCHEMA_STANDARD.md):**
+
+- `category` - MUST be `performance` (normalized)
+- `fingerprint` - Format: `<category>::<primary_file>::<identifier>`
+- `files` - Array with file paths (include line as `file.ts:123`)
+- `confidence` - Number 0-100 (not string)
+- `acceptance_tests` - Non-empty array of verification steps
 
 **3. Markdown Report (save to file):**
 
@@ -336,3 +494,24 @@ node scripts/add-false-positive.js \
   --reason "Explanation of why this is not a performance issue" \
   --source "AI_REVIEW_LEARNINGS_LOG.md#review-XXX"
 ```
+
+---
+
+## Documentation References
+
+Before running this audit, review:
+
+### TDMS Integration (Required)
+
+- [PROCEDURE.md](docs/technical-debt/PROCEDURE.md) - Full TDMS workflow
+- [MASTER_DEBT.jsonl](docs/technical-debt/MASTER_DEBT.jsonl) - Canonical debt
+  store
+- Intake command:
+  `node scripts/debt/intake-audit.js <output.jsonl> --source "audit-performance-<date>"`
+
+### Documentation Standards (Required)
+
+- [JSONL_SCHEMA_STANDARD.md](docs/templates/JSONL_SCHEMA_STANDARD.md) - Output
+  format requirements and TDMS field mapping
+- [DOCUMENTATION_STANDARDS.md](docs/DOCUMENTATION_STANDARDS.md) - 5-tier doc
+  hierarchy

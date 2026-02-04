@@ -1,7 +1,7 @@
 {
   "name": "find-hypertable-candidates",
-  "repo": "HelixDevelopment/HelixAgent",
-  "path": "skills/postgres-mcp/find-hypertable-candidates/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:43.380618Z"
+  "repo": "timescale/pg-aiguide",
+  "path": "skills/find-hypertable-candidates/SKILL.md",
+  "source": "github.com/timescale/pg-aiguide",
+  "downloaded_at": "2026-02-04T05:24:06.028748Z"
 }

@@ -27,25 +27,7 @@ Import UI screenshots and convert them to the **uxscii standard** by orchestrati
 Import a screenshot of a UI design and automatically generate uxscii components and screens by **orchestrating specialized agents**:
 
 1. **Vision Coordinator Agent** - Spawns 3 parallel vision agents (layout + components + properties)
-2. **Component Generator Agents** - Generate component files in parallel (atomic + composite)
-3. **Screen Scaffolder Skill** - Delegates to fluxwing-screen-scaffolder for screen composition
-
-**⚠️ ORCHESTRATION RULES:**
-
-**YOU CAN (as orchestrator):**
-- ✅ Spawn vision analysis agents
-- ✅ Spawn component generator agents
-- ✅ Invoke fluxwing-screen-scaffolder skill
-- ✅ Read screenshots
-- ✅ Validate vision data
-
-**YOU CANNOT (worker mode - forbidden):**
-- ⚠️ Create screen files yourself using Write/Edit tools
-- ⚠️ Generate .uxm, .md, or .rendered.md files for screens
-- ⚠️ "Help" the scaffolder by pre-creating screen files
-- ⚠️ Use TodoWrite to work through screen creation tasks yourself
-
-**For screen composition:** ALWAYS delegate to fluxwing-screen-scaffolder skill. It will spawn composer agents that create all screen files (.uxm, .md, .rendered.md).
+2. **Component Generator Agents** - Generate files in parallel (atomic + composite + screen)
 
 ## Workflow
 
@@ -242,50 +224,43 @@ Follow uxscii standard strictly."
 
 **Remember**: ALL Task calls must be in a SINGLE message for parallel execution!
 
-### Phase 5: Delegate Screen Composition to Scaffolder
+### Phase 5: Generate Screen Files
 
-**CRITICAL**: YOU ARE AN ORCHESTRATOR - delegate screen creation to the screen-scaffolder skill!
+After all components are created, generate the screen files directly (screen generation is fast, no need for agent):
 
-**⚠️ DO NOT create screen files yourself using Write/Edit tools!**
-
-After all components are created, use the fluxwing-screen-scaffolder to compose screens:
-
-**Single Screen Import:**
 ```typescript
-// Invoke screen-scaffolder skill
-Skill({ command: "fluxwing-skills:fluxwing-screen-scaffolder" })
+const screenData = visionData.screen;
+const screenId = visionData.composition.screenComponents[0];
 
-// The scaffolder will:
-// 1. See all components already exist (you just created them)
-// 2. Skip component creation (Step 3)
-// 3. Spawn ONE composer agent (Step 4)
-// 4. Composer creates .uxm + .md + .rendered.md
+// Create screen .uxm
+const screenUxm = {
+  "id": screenId,
+  "type": "container",
+  "version": "1.0.0",
+  "metadata": {
+    "name": screenData.name,
+    "description": screenData.description,
+    "created": new Date().toISOString(),
+    "modified": new Date().toISOString(),
+    "tags": ["screen", screenData.type, "imported"],
+    "category": "layout"
+  },
+  "props": {
+    "title": screenData.name,
+    "layout": screenData.layout,
+    "components": visionData.composition.atomicComponents.concat(
+      visionData.composition.compositeComponents
+    )
+  },
+  "ascii": {
+    "templateFile": `${screenId}.md`,
+    "width": 80,
+    "height": 50
+  }
+};
+
+// Create screen .md and .rendered.md files
 ```
-
-**Multiple Screenshots Import (N > 1):**
-```typescript
-// After analyzing ALL screenshots and creating ALL components
-// Invoke screen-scaffolder skill ONCE
-Skill({ command: "fluxwing-skills:fluxwing-screen-scaffolder" })
-
-// Tell it about the screens:
-// "I've imported N screenshots and created X components.
-//  Please compose these N screens: [list screen names and component lists]"
-
-// The scaffolder will:
-// 1. Detect multi-screen scenario (N > 1)
-// 2. Confirm with user
-// 3. Skip component creation (all exist)
-// 4. Spawn N composer agents in parallel (one per screen)
-// 5. Each composer creates 3 files (.uxm, .md, .rendered.md)
-// Result: 3N files created by scaffolder agents
-```
-
-**What you provide to scaffolder:**
-- Screen name and type (from vision analysis)
-- Component list (what components the screen needs)
-- Layout structure (from vision data)
-- Screenshot path (for .rendered.md generation)
 
 ### Phase 6: Report Results
 

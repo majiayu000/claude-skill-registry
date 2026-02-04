@@ -1,6 +1,11 @@
 ---
 name: "QE Iterative Loop"
 description: "Quality Engineering iteration loops for autonomous test improvement, coverage achievement, and quality gate compliance. Use when tests need to pass, coverage targets must be met, quality gates require compliance, or flaky tests need stabilization. Integrates with AQE v3 fleet agents for coordinated quality iteration."
+trust_tier: 2
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+
 ---
 
 # QE Iterative Loop
@@ -129,14 +134,14 @@ Output <promise>QUALITY_GATES_PASSED</promise> when all pass."
 
 ### Commands
 ```bash
-# Check coverage status
-npx @claude-flow/cli@latest memory retrieve --key "coverage-status"
+# Check coverage status (via AQE MCP)
+mcp__agentic-qe__memory_retrieve --key "coverage-status" --namespace "coverage"
 
-# Store coverage achievement pattern
-npx @claude-flow/cli@latest memory store \
+# Store coverage achievement pattern (via AQE MCP)
+mcp__agentic-qe__memory_store \
   --key "coverage-pattern-auth" \
   --value '{"approach": "mock external deps", "improvement": "12%"}' \
-  --namespace coverage-patterns
+  --namespace "coverage-patterns"
 ```
 ```
 
@@ -266,10 +271,10 @@ Task("Validate API contracts", "Check consumer-provider alignment", "qe-contract
 ### Spawning QE Iteration Agents
 
 ```bash
-# Initialize swarm for QE iteration
-npx @claude-flow/cli@latest swarm init --topology hierarchical --max-agents 8
+# Initialize AQE fleet for QE iteration
+mcp__agentic-qe__fleet_init --topology "hierarchical" --maxAgents 8
 
-# Spawn specialized QE iterators
+# Spawn specialized QE iterators using Task tool
 Task("Fix failing tests", "Iterate until all tests pass", "qe-tdd-green", {run_in_background: true})
 Task("Improve coverage", "Iterate until 80% coverage", "qe-coverage-analyzer", {run_in_background: true})
 Task("Fix security issues", "Iterate until security scan passes", "qe-security-scanner", {run_in_background: true})
@@ -279,22 +284,19 @@ Task("Stabilize flaky tests", "Iterate until tests stable", "qe-flaky-hunter", {
 ### Memory-Enhanced QE Iteration
 
 ```bash
-# Store iteration patterns for learning
-npx @claude-flow/cli@latest memory store \
+# Store iteration patterns for learning (via AQE MCP)
+mcp__agentic-qe__memory_store \
   --key "qe-iteration-test-fix" \
   --value '{"approach": "mock external deps", "success_rate": 0.85}' \
-  --namespace qe-patterns
+  --namespace "qe-patterns"
 
-# Search for relevant QE patterns
-npx @claude-flow/cli@latest memory search \
-  --query "test fix iteration patterns" \
-  --namespace qe-patterns
+# Search for relevant QE patterns (via AQE MCP)
+mcp__agentic-qe__memory_query \
+  --pattern "test-fix-*" \
+  --namespace "qe-patterns"
 
-# Record successful iteration completion
-npx @claude-flow/cli@latest hooks post-task \
-  --taskId "test-fix-iteration" \
-  --success true \
-  --quality 0.95
+# Record successful iteration completion (via AQE task tracking)
+mcp__agentic-qe__task_status --taskId "test-fix-iteration"
 ```
 
 ### QE-Specific Agent Routing
@@ -434,7 +436,7 @@ When ALL phases complete -> <promise>DEPLOYMENT_READY</promise>
 
 - [AQE v3 Documentation](../../v3/README.md) - Full v3 reference
 - [Ralph Wiggum Technique](https://ghuntley.com/ralph/) - Original methodology
-- [Claude Flow CLI](https://github.com/ruvnet/claude-flow) - CLI documentation
+- [Agentic QE MCP Tools](https://github.com/proffesor-for-testing/agentic-qe) - MCP tool reference
 
 ---
 

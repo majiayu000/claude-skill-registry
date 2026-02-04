@@ -1,7 +1,7 @@
 {
   "name": "docs-sync",
-  "repo": "lancenunes/codex-skills",
-  "path": "docs-sync/SKILL.md",
-  "source": "github.com/lancenunes/codex-skills",
-  "downloaded_at": "2026-02-02T03:51:02.439274Z"
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/docs-sync/SKILL.md",
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "downloaded_at": "2026-02-04T05:05:19.449229Z"
 }

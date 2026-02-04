@@ -1,378 +1,248 @@
 ---
-name: create-resume-document
-description: 이력서(2-3페이지) 작성이 필요할 때
+name: resume
+description: Resume a paused or backlog increment
+argument-hint: [increment-id]
 ---
 
-# 이력서 작성
+# Resume Increment Command
 
-> **작성 원칙 및 STAR+I 가이드**: `/writing-guide` 참조
-
----
-
-## 이력서 vs 경력기술서
-
-| 구분 | 이력서 (이 스킬) | 경력기술서 |
-|------|-----------------|-----------|
-| **분량** | 2-3페이지 | 5페이지 이상 |
-| **목적** | 빠른 스크리닝 | 상세 역량 검증 |
-| **내용** | 핵심 성과 요약 | STAR+I 상세 + 기술적 깊이 |
-| **스킬** | `/create-resume-document` | `/write-career` |
+**Usage**: `/sw:resume <increment-id>`
 
 ---
 
-## 작성 유형
+## Purpose
 
-### 1. 기본 이력서
+Resume a paused or backlog increment when:
+- **From Backlog**: Ready to start planned work
+- **From Paused**: Blocker resolved (API keys arrived, approval granted)
+- **From Paused**: Ready to continue after deprioritization
+- **From Paused**: Prerequisite completed (can now proceed)
 
-일반적인 2-3페이지 이력서 작성
+---
+
+## Behavior
+
+1. **Normalize increment ID**:
+   - If ID contains dash (e.g., "0153-feature-name"), extract numeric portion before first dash → "0153"
+   - Convert to 4-digit format (e.g., "1" → "0001", "153" → "0153")
+   - Both formats work: `/sw:resume 0153` or `/sw:resume 0153-feature-name`
+2. **Validates** increment exists and is "paused" or "backlog"
+3. **Calculates** pause/backlog duration (days, hours)
+4. **Updates** metadata.json:
+   - `status`: "paused" or "backlog" → "active"
+   - Clears `pausedReason` and `pausedAt` (if paused)
+   - Clears `backlogReason` and `backlogAt` (if backlog)
+   - Updates `lastActivity` timestamp
+4. **Displays** context (duration, last activity)
+5. **Suggests** next actions (`/sw:do` to continue/start work)
+
+---
+
+## Examples
+
+### Resume from backlog
+```bash
+/sw:resume 0032
+
+✅ Increment 0032 activated from backlog
+📦 Was in backlog for: 5 days
+💡 Reason: Low priority, focus on 0031 first
+📋 Start work with: /sw:do
+```
+
+### Resume paused work after a few days
+```bash
+/sw:resume 0006
+
+✅ Increment 0006 resumed
+⏱️  Was paused for: 3 days, 4 hours
+💡 Last activity: Created translation pipeline
+📋 Continue with: /sw:do
+```
+
+### Resume paused work after a few hours
+```bash
+/sw:resume 0007
+
+✅ Increment 0007 resumed
+⏱️  Was paused for: 2 hours
+📋 Continue with: /sw:do
+```
+
+---
+
+## Edge Cases
+
+### Already Active
+```bash
+/sw:resume 0006
+
+⚠️  Increment 0006 is already active
+   No action needed. Continue with: /sw:do
+```
+
+### Cannot Resume Completed
+```bash
+/sw:resume 0005
+
+❌ Cannot resume increment 0005
+   Status: completed
+   Increment is already complete
+```
+
+### Resume Abandoned (Confirmation Required)
+```bash
+/sw:resume 0008
+
+⚠️  Increment 0008 is abandoned
+   Reason: Requirements changed
+
+   Are you sure you want to resume? [y/N]: y
+
+✅ Increment 0008 resumed
+⚠️  Note: Was abandoned 5 days ago
+💡 Review spec.md to ensure still relevant
+📋 Continue with: /sw:do
+```
+
+### Increment Not Found
+```bash
+/sw:resume 9999
+
+❌ Increment not found: 9999
+💡 Check paused increments: /sw:status --paused
+```
+
+---
+
+## Implementation
+
+This command uses the MetadataManager to update increment status:
+
+```typescript
+import { MetadataManager, IncrementStatus } from '../src/core/increment/metadata-manager';
+
+// Read current metadata
+const metadata = MetadataManager.read(incrementId);
+
+// Validate can resume
+if (metadata.status === IncrementStatus.COMPLETED) {
+  throw new Error('Cannot resume completed increment');
+}
+
+// Calculate duration based on status
+let duration;
+if (metadata.status === IncrementStatus.PAUSED && metadata.pausedAt) {
+  duration = calculateDuration(metadata.pausedAt, new Date());
+  console.log(`Was paused for: ${duration}`);
+} else if (metadata.status === IncrementStatus.BACKLOG && metadata.backlogAt) {
+  duration = calculateDuration(metadata.backlogAt, new Date());
+  console.log(`Was in backlog for: ${duration}`);
+}
+
+// Update status to active
+MetadataManager.updateStatus(incrementId, IncrementStatus.ACTIVE);
+
+// Display context
+console.log(`Last activity: ${getLastActivity(incrementId)}`);
+```
+
+---
+
+## Status Flow
+
+```
+backlog ──resume──> active (start work)
+   │
+paused ──resume──> active (continue work)
+   │
+abandoned ──resume──> active (with confirmation)
+```
+
+---
+
+## Related Commands
+
+- `/sw:pause <id>` - Pause active increment
+- `/sw:backlog <id>` - Move increment to backlog
+- `/sw:status` - Show all increment statuses
+- `/sw:status --paused` - Show only paused increments
+- `/sw:status --backlog` - Show only backlog increments
+- `/sw:do` - Continue/start work after resuming
+
+---
+
+## Best Practices
+
+✅ **Review spec.md first** - Especially after long pauses
+
+✅ **Check for changes** - Dependencies, requirements may have changed
+
+✅ **Update estimates** - If scope changed during pause
+
+✅ **Communicate** - Let team know you're resuming (if collaborative)
+
+❌ **Don't blindly resume** - Re-validate context first
+
+❌ **Don't resume abandoned without review** - Understand why it was abandoned
+
+---
+
+## Automatic Suggestions
+
+When you run `/sw:status`, stale paused/backlog increments trigger suggestions:
 
 ```bash
-# 템플릿 위치
-templates/resume/default.html
-templates/export/pdf/resume-2page.html
-```
+/sw:status
 
-### 2. JD 맞춤형 이력서
+🗂️  Backlog (2):
+  📦 0032-feature-a [feature]
+     In backlog: 5 days
+     Reason: Low priority
+     💡 Ready to start? → /sw:resume 0032
 
-JD(채용공고) 또는 기업 유형에 맞춘 이력서 생성
+⏸️  Paused (2):
+  🔄 0006-stripe [feature]
+     Paused: 3 days ago
+     Reason: Waiting for API keys
+     💡 Check if API keys arrived → /sw:resume 0006
 
-**입력**: JD URL/텍스트, 기업 유형, 도메인
-
-**출력**: `docs/career/formats/by-jd/{company}_{date}.md`
-
-#### JD Pain Point 분석 (Problem-Solution Fit)
-
-> 단순 키워드 매칭이 아닌 **회사가 겪고 있는 기술적 통증** 추론
-
-```markdown
-**JD 분석 단계**:
-1. JD에서 '대용량 트래픽', 'MSA 전환', '글로벌 확장' 등 Pain Point 키워드 추출
-2. 해당 경험을 Professional Summary와 Key Projects 최상단으로 재배치
-3. 기술 스택보다 "문제 해결 경험" 매칭 우선
-```
-
-**기업 유형별 강조점**:
-
-| 유형 | 1순위 | 2순위 | 톤 |
-|------|-------|-------|-----|
-| **스타트업** | 자동화/생산성 | 빠른 실행력 | 능동적, 도전적 |
-| **대기업** | 대규모 처리 | 안정성/품질 | 체계적, 신뢰감 |
-| **핀테크** | 데이터 정합성 | 성능 최적화 | 정밀함, 책임감 |
-| **커머스** | 도메인 경험 | 매출 성과 | 비즈니스 중심 |
-
-### 3. 이력서 + 경력기술서 세트
-
-채용 지원 시 두 문서를 함께 생성
-
----
-
-## Professional Summary 작성
-
-> **상세 명세서**: `docs/career/PROFESSIONAL_SUMMARY_SPEC.md` 참조
-> **작성 가이드**: `/writing-guide` 섹션 11 참조
-
-### 이력서 형식 (경력기술서와 차별화)
-
-```markdown
-**[헤드라인: 비즈니스/성과 중심]**
-
-[1문단: 연차/직무 + 도메인 경험 + 핵심 강점 + 현재 성과]
-
-### 핵심 성과
-| 성과 | 문제 → 해결 → 결과 |
-|------|-------------------|
-| **검색 성능 10배** | RDB 복합 조건 타임아웃 → Elasticsearch 도입 → 10초+ → 1초 이내 |
-```
-
-**핵심 포인트**:
-- 헤드라인: 경력기술서와 다른 관점 (비즈니스 문제 해결 강조)
-- 본문: 1문단으로 간결하게 역량 요약
-- 성과: 테이블 형식으로 숫자 강조 (문제 → 해결 → 결과)
-
----
-
-## 분량 기준
-
-| 상황 | 권장 분량 | 비고 |
-|------|----------|------|
-| **대기업/공채** | 1페이지 | 경력기술서 별도 제출 |
-| **스타트업/수시** | 2페이지 | 프로젝트 요약 포함 |
-| **이력서만 제출** | 2-3페이지 | 경력기술서 대체 |
-
----
-
-## Layout 유연성
-
-### 8년차 이상/리드급 레이아웃 옵션
-
-```
-기본 순서: Summary → Core Competencies → Technical Skills → Work Experience
-리드급 순서: Summary → Work Experience → Key Projects → Technical Skills (하단)
-```
-
-> 경력이 화려한 시니어는 Technical Skills를 하단으로 내리고
-> Work Experience 비중을 높이는 것이 유리
-
----
-
-## Core Competencies 규칙
-
-```markdown
-**기본**: 6개 노출
-**나머지 2개**:
-  → JD 매칭 시 조건부 노출
-  → 또는 Project Evidence로 간접 증명
+  🔄 0007-refactor [refactor]
+     Paused: 10 days ago
+     Reason: Deprioritized
+     ⚠️  STALE! Consider resuming or abandoning
 ```
 
 ---
 
-## Key Metrics 성격 태그
+## Context Recovery
 
-> 숫자가 아니라 **임팩트 종류**가 기억되게
-
-| 태그 | 예시 |
-|------|------|
-| `[Revenue]` | +10% 매출 |
-| `[Scale]` | 200만 데이터 |
-| `[Ops]` | Zero Ops |
-| `[Speed]` | 10x 성능 |
-| `[Cost]` | 80% 비용 절감 |
-
----
-
-## 이력서 구조
-
-### 페이지 1: 핵심 정보
-
-```
-┌─────────────────────────────────────────┐
-│ Header: 이름, 직함, 연락처                │
-├─────────────────────────────────────────┤
-│ Key Metrics: 핵심 성과 4개 (숫자 강조)     │
-│ [Zero Ops] [200만] [100x] [+10%]        │
-├─────────────────────────────────────────┤
-│ Professional Summary (4-5줄)             │
-│ → PROFESSIONAL_SUMMARY_SPEC.md 참조      │
-├─────────────────────────────────────────┤
-│ Core Competencies (6개)                  │
-├─────────────────────────────────────────┤
-│ Technical Skills (카테고리별)             │
-└─────────────────────────────────────────┘
-```
-
-### 페이지 2-3: 경력 & 프로젝트
-
-```
-┌─────────────────────────────────────────┐
-│ Work Experience                          │
-│ ├── 회사 1: 핵심 성과 4-5줄              │
-│ ├── 회사 2: 핵심 성과 2-3줄              │
-│ └── 회사 3: 핵심 성과 2줄                │
-├─────────────────────────────────────────┤
-│ Key Projects (카드 형식)                  │
-├─────────────────────────────────────────┤
-│ Education & Certification               │
-└─────────────────────────────────────────┘
-```
-
----
-
-## 이력서용 간결 포맷
-
-> 경력기술서 STAR+I를 이력서용으로 압축한 형태
-
-```markdown
-### 가격 자동 조정 시스템 (2024.03 - 2024.06)
-
-> 외부 가격 데이터 수집 자동화로 운영 업무 80% 감소, 매출 10% 증가
-
-- **문제**: 수작업 모니터링으로 주 40시간 소모, API 호출 제한으로 실시간 대응 불가
-- **해결**: 최저가 상품 선별 + 룰 엔진 기반 자동 조정 시스템 설계
-  - 호출량 80% 절감, 가격 대응 시간 2시간→10분
-- **기술**: Java 17, Spring Boot, Redis, AWS Lambda
-```
-
-**포인트**:
-- 한 줄 요약에 **정량 성과 2개** 포함
-- 문제-해결 구조로 **3-4줄** 이내
-- 기술 스택은 **한 줄**로 요약
-
----
-
-## 이력서 작성 원칙
-
-> 상세 원칙은 `/writing-guide` 참조
-
-### 1. 숫자로 말하기
-
-```
-❌ "성능 개선함"
-✅ "검색 성능 10배 개선 (10초+→1초 이내)"
-
-❌ "자동화 시스템 구축"
-✅ "운영 수동 업무 40%→0% (Zero Ops)"
-```
-
-### 2. 핵심만 남기기
-
-- 한 성과는 **1-2줄** 이내
-- 경력 설명은 **3-5개 bullet** 이내
-- 프로젝트 카드는 **3-4줄** 설명
-
-### 3. 최신 경력 우선
-
-```
-회사 1 (현재): 5개 성과 상세
-회사 2 (직전): 3개 성과
-회사 3 (이전): 2개 성과 간략
-```
-
----
-
-## 이력서에 포함/제외할 내용
-
-| 포함 | 제외 |
-|------|------|
-| 핵심 성과 (숫자 필수) | 프로젝트 상세 STAR+I |
-| 기술 스택 요약 | 기술 선택 이유 |
-| 최근 3개 회사 경력 | 트러블슈팅 상세 |
-| 대표 프로젝트 3-4개 | 아키텍처 다이어그램 |
-| 학력/자격증/수상 | 코드 스니펫 |
-
----
-
-## 실행 단계
-
-### Step 1: 유형 선택
-
-```
-"이력서 작성해줘" → 기본 이력서
-"토스 JD에 맞춰 이력서" → JD 맞춤형
-"이력서랑 경력기술서 세트" → 세트 생성
-```
-
-### Step 2: 원본 데이터 확인
+After resuming, the command shows helpful context:
 
 ```bash
-cat docs/career/my_career_data.md
-```
+/sw:resume 0006
 
-### Step 3: 이력서 작성
+✅ Increment 0006 resumed
 
-1. 원본 데이터에서 핵심 성과 추출
-2. 시니어 톤으로 문장 다듬기 (`/writing-guide` 참조)
-3. 숫자 강조 (뱃지/볼드 처리)
-4. 페이지 분량 조절 (2-3페이지)
+📊 Status before pause:
+   - Progress: 30% (6/20 tasks done)
+   - Last completed: T-005 (Create translation pipeline)
+   - Paused reason: Waiting for Stripe API keys
 
-### Step 4: 내보내기
+💡 Next steps:
+   1. Review spec.md (requirements may have changed)
+   2. Check dependencies (are API keys available?)
+   3. Continue with: /sw:do
 
-```bash
-/export
-```
-
----
-
-## 체크리스트
-
-### 내용 검토
-
-> 시니어 톤, 파레토 기준은 `/writing-guide` 참조
-
-- [ ] 핵심 성과 숫자 포함
-- [ ] 시니어 톤 사용 ("담당" → "달성/개선")
-- [ ] 최신 경력 강조
-- [ ] 불필요한 내용 제거
-- [ ] 2-3페이지 분량 준수
-
-### JD 맞춤형 (해당 시)
-
-- [ ] JD 키워드 추출 완료
-- [ ] 관련 프로젝트 우선 배치
-- [ ] 기술 스택 JD 매칭
-- [ ] 기업 유형별 톤 적용
-
-### 세트 생성 (해당 시)
-
-- [ ] 두 문서 연락처/학력 일치
-- [ ] 성과 수치 일치
-- [ ] 기술 스택 표기 일치
-
----
-
-## 이력서-경력기술서 중복 방지
-
-> 두 문서를 함께 제출할 경우, 이력서는 "요약"이 아닌 **"다른 관점"** 제공
-
-### 중복 허용/금지 항목
-
-| 항목 | 이력서 | 경력기술서 | 중복 허용 |
-|------|--------|-----------|----------|
-| Professional Summary | 1문단 서술 + 성과 테이블 | 2문단 서술 (기술 철학) | 표현 차별화 필수 |
-| 프로젝트 | 1줄 성과만 | STAR+I 전체 | ❌ 금지 |
-| 기술 선택 이유 | 제외 | 상세 포함 | ❌ 금지 |
-| 아키텍처/트러블슈팅 | 제외 | 상세 포함 | ❌ 금지 |
-| 기술 스택 | 카테고리별 요약 | 프로젝트별 상세 | ✅ 허용 |
-
-### KEY PROJECTS 압축 공식
-
-```
-경력기술서 (15-20줄) → 이력서 (3-4줄)
-
-| 경력기술서 | 이력서 |
-|-----------|--------|
-| STAR+I 전체 | 문제 1줄 + 해결 1줄 + 성과 1줄 |
-| 기술 선택 이유 | 기술 스택만 나열 |
-| 트러블슈팅 상세 | 제외 |
-```
-
-### 자가 검증
-
-- [ ] 경력기술서에서 "새로운 정보"가 있는가?
-- [ ] 이력서만 읽어도 "만나보고 싶다"는 생각이 드는가?
-- [ ] 동일한 문장이 두 문서에 없는가?
-
----
-
-## 데이터 정합성 (SSOT)
-
-> **상세 가이드**: `/writing-guide` 섹션 18 참조
-
-```
-모든 수치와 성과는 my_career_data.md를 원본으로 사용
-임의 변경/추정 금지, 변경 시 /update-resume 실행 필수
+📋 Quick commands:
+   /sw:do           # Resume work
+   /sw:progress     # See detailed progress
+   /sw:validate     # Check increment health
 ```
 
 ---
 
-## 관련 스킬
-
-- `/writing-guide`: STAR+I 작성 원칙, 시니어 톤, 파레토 기준, SSOT, 업데이트 원칙
-- `/write-career`: 경력기술서 작성 (5페이지+)
-- `/write-portfolio`: 포트폴리오 작성 (10-15페이지, 기술 백서)
-- `/export`: PDF/PPT 내보내기
-
----
-
-## 세트 생성 (이력서 + 경력기술서 + 포트폴리오)
-
-> 채용 지원 시 세 문서를 함께 생성
-
-### 세트 생성 워크플로우
-
-```
-Step 1: 이력서 작성 (/create-resume-document)
-    ↓
-Step 2: 경력기술서 작성 (/write-career)
-    ↓
-Step 3: 포트폴리오 작성 (/write-portfolio)
-    ↓
-Step 4: PDF 내보내기 (/export)
-```
-
-### 세트 정합성 체크리스트
-
-- [ ] 세 문서 연락처/학력 일치
-- [ ] 성과 수치 일치 (SSOT 기반)
-- [ ] 기술 스택 표기 일치
-- [ ] 프로젝트 기간 일치
-- [ ] 역할 표기 일치
+**Command**: `/sw:resume`
+**Plugin**: specweave (core)
+**Version**: v0.7.0
+**Part of**: Increment 0007 - Smart Status Management

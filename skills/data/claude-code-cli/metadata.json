@@ -1,9 +1,7 @@
 {
   "name": "claude-code-cli",
-  "description": "Build and run AI agents using Claude Code CLI. Use when developing autonomous agents, multi-agent systems, CI/CD automation, or scripting Claude for programmatic tasks. Covers authentication, headless",
-  "repo": "filipexyz/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "yu-iskw/coding-agent-skills",
+  "path": "skills/claude-code-cli/SKILL.md",
+  "source": "github.com/yu-iskw/coding-agent-skills",
+  "downloaded_at": "2026-02-04T03:21:28.244051Z"
 }

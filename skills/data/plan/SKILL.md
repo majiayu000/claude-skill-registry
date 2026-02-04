@@ -1,171 +1,220 @@
 ---
 name: plan
-description: >
-  Create implementation plans with TDD approach.
-  Use to structure work before coding, ensuring test coverage from the start.
+description: Generate plan.md and tasks.md for PLANNING increment using Architect Agent
 ---
 
-# Writing Implementation Plans
+# /sw:plan - Generate Implementation Plan
 
-## Overview
+**⚠️ FOR EXISTING INCREMENTS ONLY - NOT for creating new increments!**
 
-Create comprehensive implementation plans assuming the engineer has zero context.
-Document everything: which files to touch, complete code snippets, how to test.
-Break work into bite-sized tasks. DRY. YAGNI. TDD. Frequent commits.
+**When to use `/sw:plan`:**
+- You already have `spec.md` created
+- Increment status is PLANNING or ACTIVE
+- You need to generate/regenerate `plan.md` and `tasks.md`
 
-**Core principle:** Each task is 2-5 minutes of work. Test first, implement second.
-
-**Announce at start:** "I'm using the plan skill to create the implementation plan."
-
-**Save plans to:** `docs/plans/YYYY-MM-DD-<feature-name>.md`
-
-## Bite-Sized Task Granularity
-
-**Each step is ONE action (2-5 minutes):**
-
-```
-Task N: Add validation function
-
-Step 1: Write the failing test
-Step 2: Run it to verify it fails
-Step 3: Implement minimal code to pass
-Step 4: Run tests to verify they pass
-Step 5: Commit
-```
-
-**NOT acceptable:**
-- "Implement validation with tests" (too vague)
-- "Add function and write tests" (multiple actions)
-
-## Plan Document Structure
-
-**Every plan MUST start with this header:**
-
-```markdown
-# [Feature Name] Implementation Plan
-
-> **For Claude:** Use kodo:execute skill to implement this plan task-by-task.
-
-**Goal:** [One sentence describing what this builds]
-
-**Architecture:** [2-3 sentences about approach]
-
-**Tech Stack:** [Key technologies/libraries]
-
-**GitHub Issue:** [Link if exists, or "Create with `kodo track issue`"]
+**When NOT to use `/sw:plan`:**
+- Creating a brand new increment from scratch → Use `/sw:increment` instead
+- No `spec.md` exists yet → Use `/sw:increment` instead
 
 ---
+
+Generate `plan.md` and `tasks.md` for an increment using Architect Agent and test-aware-planner.
+
+## Usage
+
+```bash
+/sw:plan                      # Auto-detect PLANNING increment
+/sw:plan 0039                 # Explicit increment ID
+/sw:plan --force              # Overwrite existing plan/tasks
+/sw:plan 0039 --verbose       # Verbose output
 ```
 
-## Task Structure Template
+## What It Does
 
-```markdown
-### Task N: [Component Name]
+1. **Auto-detect increment** (if not specified):
+   - Prefers PLANNING status
+   - Falls back to single ACTIVE increment
 
-**Files:**
-- Create: `exact/path/to/file.rs`
-- Modify: `exact/path/to/existing.rs:123-145`
-- Test: `tests/exact/path/to/test.rs`
+2. **Validate pre-conditions**:
+   - spec.md exists and is not empty
+   - Increment is not COMPLETED/ABANDONED
+   - plan.md/tasks.md don't exist (unless --force)
 
-**Step 1: Write the failing test**
+   **Error Handling:**
+   ```typescript
+   import { ERROR_MESSAGES, formatError } from './src/utils/error-formatter.js';
 
-```rust
-#[test]
-fn test_specific_behavior() {
-    let result = function(input);
-    assert_eq!(result, expected);
+   // If spec.md not found
+   if (!specExists) {
+     formatError(ERROR_MESSAGES.SPEC_NOT_FOUND(incrementId));
+     return;
+   }
+
+   // If increment not found
+   if (!incrementExists) {
+     formatError(ERROR_MESSAGES.INCREMENT_NOT_FOUND(incrementId));
+     return;
+   }
+
+   // If user tries to use /sw:plan for NEW increments
+   if (userIsCreatingNew) {
+     formatError(ERROR_MESSAGES.WRONG_COMMAND_FOR_NEW_INCREMENT());
+     return;
+   }
+   ```
+
+3. **Generate plan.md** (via Architect Agent):
+   - Technical approach
+   - Architecture design
+   - Dependencies
+   - Risk assessment
+
+4. **Generate tasks.md** (via test-aware-planner):
+   - Checkable task list
+   - Embedded test plans (BDD format)
+   - Coverage targets
+
+5. **Update metadata**:
+   - PLANNING → ACTIVE transition (tasks.md now exists)
+   - Update lastUpdated timestamp
+
+## Options
+
+- `--force`: Overwrite existing plan.md/tasks.md
+- `--preserve-task-status`: Keep existing task completion status (requires --force)
+- `--verbose`: Show detailed execution information
+
+## Examples
+
+**Auto-detect and plan**:
+```bash
+/sw:plan
+# ✅ Auto-detected increment: 0039-ultra-smart-next-command
+# ✅ Generated plan.md (2.5K)
+# ✅ Generated tasks.md (4.2K, 15 tasks)
+# ✅ Transitioned PLANNING → ACTIVE
+```
+
+**Force regenerate**:
+```bash
+/sw:plan 0039 --force
+# ⚠️  Overwriting existing plan.md
+# ⚠️  Overwriting existing tasks.md
+# ✅ Generated plan.md (2.8K)
+# ✅ Generated tasks.md (5.1K, 18 tasks)
+```
+
+**Multiple PLANNING increments**:
+```bash
+/sw:plan
+# ❌ Multiple increments in PLANNING status found:
+#    - 0040-feature-a
+#    - 0041-feature-b
+# Please specify: /sw:plan 0040
+```
+
+## Self-Awareness Check
+
+**🎯 OPTIONAL**: Detect if planning for SpecWeave framework increment.
+
+Before generating plan.md, check repository context:
+
+```typescript
+import { detectSpecWeaveRepository } from './src/utils/repository-detector.js';
+
+const repoInfo = detectSpecWeaveRepository(process.cwd());
+
+if (repoInfo.isSpecWeaveRepo) {
+  console.log('ℹ️  Planning for SpecWeave framework increment');
+  console.log('');
+  console.log('   💡 Framework Planning Considerations:');
+  console.log('      • Design for backward compatibility');
+  console.log('      • Consider impact on existing user projects');
+  console.log('      • Plan for migration guides if breaking');
+  console.log('      • Document new patterns in CLAUDE.md');
+  console.log('      • Add ADR for significant architectural changes');
+  console.log('');
 }
 ```
 
-**Step 2: Run test to verify it fails**
+**Why This Helps**:
+Planning for framework features requires different considerations than user apps:
+- Backward compatibility is critical
+- Changes affect ALL SpecWeave users
+- Architecture decisions need ADRs
+- Workflow changes need CLAUDE.md updates
 
-Run: `cargo test test_specific_behavior`
-Expected: FAIL with "cannot find function `function`"
+---
 
-**Step 3: Write minimal implementation**
+## Workflow Integration
 
-```rust
-pub fn function(input: Input) -> Output {
-    // Minimal implementation
-    expected
-}
-```
-
-**Step 4: Run test to verify it passes**
-
-Run: `cargo test test_specific_behavior`
-Expected: PASS
-
-**Step 5: Commit**
-
+**Typical workflow**:
 ```bash
-git add src/path/file.rs tests/path/test.rs
-git commit -m "feat: add specific feature"
+# 1. Create increment (generates spec.md)
+/sw:increment "Add user authentication"
+# Status: BACKLOG → PLANNING (spec.md created)
+
+# 2. Edit spec.md (add requirements, ACs)
+# ... edit spec.md ...
+
+# 3. Generate plan and tasks
+/sw:plan
+# Status: PLANNING → ACTIVE (tasks.md created)
+
+# 4. Execute tasks
+/sw:do
 ```
-```
 
-## What Plans Must Include
+## Error Handling
 
-**For every task:**
-- Exact file paths (not "in the tests folder")
-- Complete code snippets (not "add validation logic")
-- Exact commands with expected output
-- Clear success criteria
-
-**For the overall plan:**
-- Dependency order between tasks
-- Which tasks can run in parallel
-- Estimated complexity flags for risky areas
-
-## Integration with Kodo
-
-**Before writing the plan:**
+**spec.md not found**:
 ```bash
-kodo query "similar features"     # Check existing patterns
-kodo query "testing patterns"     # Check test conventions
+❌ spec.md not found in increment '0039-ultra-smart-next-command'
+💡 Create spec.md first using `/sw:increment` or manually
 ```
 
-**After writing the plan:**
+**plan.md already exists**:
 ```bash
-kodo track issue "Implement <feature>"  # Create GitHub issue
-kodo track link #123                     # Link to existing issue
+❌ plan.md already exists in increment '0039'
+💡 Use --force to overwrite existing plan.md
 ```
 
-## Execution Handoff
+**Increment closed**:
+```bash
+❌ Cannot generate plan for COMPLETED increment
+💡 Reopen increment with `/sw:reopen` first
+```
 
-After saving the plan, offer execution choice:
+## Architecture
 
-**"Plan saved to `docs/plans/<filename>.md`. Two execution options:**
+**Components**:
+- `IncrementDetector`: Auto-detect or validate increment
+- `PlanValidator`: Validate pre-conditions
+- `ArchitectAgentInvoker`: Generate plan.md via Architect Agent
+- `TaskGeneratorInvoker`: Generate tasks.md via test-aware-planner
+- `PlanCommandOrchestrator`: Coordinate execution pipeline
 
-1. **Continue in this session** - Execute tasks one-by-one with checkpoints
-2. **Parallel session** - Open new session with `kodo:execute` skill
+**State transitions**:
+- PLANNING → ACTIVE (when tasks.md created)
+- ACTIVE → ACTIVE (regenerate plan/tasks)
+- BACKLOG → (no change - spec.md already exists)
 
-**Which approach?"**
+## Related Commands
 
-**If continuing:**
-- Use `kodo:execute` skill
-- Stay in this session
-- Execute in batches with review checkpoints
+- `/sw:increment` - Create new increment (generates spec.md)
+- `/sw:do` - Execute tasks from tasks.md
+- `/sw:validate` - Validate increment structure
+- `/sw:sync-docs` - Sync spec changes to living docs
 
-**If parallel session:**
-- Guide user to open new Claude session
-- Point to plan file location
-- New session uses `kodo:execute` skill
+## Notes
 
-## Key Principles
+- **Auto-transition**: Creating tasks.md automatically transitions PLANNING → ACTIVE
+- **Force mode**: Use with caution - overwrites existing work
+- **Preserve status**: Use `--preserve-task-status` to keep completion checkmarks when regenerating
+- **Architect Agent**: Requires ~10-30 seconds for plan generation
+- **Test coverage**: tasks.md includes embedded test plans for each task
 
-- **Exact file paths** - No ambiguity about where code goes
-- **Complete code** - Copy-paste ready, not "add appropriate logic"
-- **Test-first always** - Every task starts with failing test
-- **Frequent commits** - One commit per task minimum
-- **YAGNI ruthlessly** - Remove anything not strictly needed
+---
 
-## Red Flags
-
-**You're doing it wrong if:**
-- Tasks take more than 5 minutes
-- Steps say "implement" without showing exact code
-- File paths are relative or vague
-- Tests come after implementation
-- Plan has no commit checkpoints
-- Skipping `kodo query` to check existing patterns
+**Part of**: Increment 0039 (Ultra-Smart Next Command)
+**Status**: Phase 1 - Foundation (US-007)

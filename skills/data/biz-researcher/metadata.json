@@ -1,12 +1,7 @@
 {
   "name": "biz-researcher",
-  "description": "事業仮説を支える一次/二次情報を整理し、意思決定に足る「根拠」「不確実性」「次の調査」を可視化する。でたらめな引用や推測の断言を避け、出典の実在を重視する。",
   "repo": "mae616/ai-template",
-  "category": "development",
-  "tags": [
-    "biz",
-    "researcher"
-  ],
-  "stars": 8,
-  "source": "SkillsMP Synced Skills"
+  "path": ".claude/skills/biz-researcher/SKILL.md",
+  "source": "github.com/mae616/ai-template",
+  "downloaded_at": "2026-02-04T02:17:56.307175Z"
 }

@@ -1,122 +1,167 @@
 ---
 name: figma
-description: Design and prototype interfaces in Figma - create, edit, and manage design files, components, and collaborate on design projects
-category: design
+description: Figmaからデザインデータを取得し、React Nativeコンポーネントやデザイントークンに変換する。「Figmaからデザインを取って」「Figmaのカラーを抽出して」「Figmaのコンポーネントをコードにして」などのリクエストで使用する。
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, WebFetch
+argument-hint: [FigmaファイルURL または操作内容]
 ---
 
-# Figma Skill
+# Figma デザイン取得・変換スキル
 
-## Overview
-Enables Claude to interact with Figma for UI/UX design work, including creating and managing design files, viewing designs, exporting assets, and managing team collaboration.
+Figma からデザインデータを取得し、React Native のコードやデザイントークンに変換する。
 
-## Quick Install
+## 連携方法
 
-```bash
-curl -sSL https://canifi.com/skills/figma/install.sh | bash
-```
+### 方法 1: Figma REST API
 
-Or manually:
-```bash
-cp -r skills/figma ~/.canifi/skills/
-```
+Figma Personal Access Token を使って REST API 経由でデザインデータを取得する。
 
-## Setup
+**必要な環境変数:**
+- `FIGMA_ACCESS_TOKEN` — Figma の Personal Access Token（Settings → Account → Personal access tokens で発行）
 
-Configure via [canifi-env](https://canifi.com/setup/scripts):
+**API エンドポイント:**
 
 ```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
+# ファイル全体の情報を取得
+curl -H "X-Figma-Token: $FIGMA_ACCESS_TOKEN" \
+  "https://api.figma.com/v1/files/{file_key}"
 
-canifi-env set FIGMA_EMAIL "your-email@example.com"
-canifi-env set FIGMA_PASSWORD "your-password"
+# 特定ノードの情報を取得
+curl -H "X-Figma-Token: $FIGMA_ACCESS_TOKEN" \
+  "https://api.figma.com/v1/files/{file_key}/nodes?ids={node_id}"
+
+# 画像をエクスポート
+curl -H "X-Figma-Token: $FIGMA_ACCESS_TOKEN" \
+  "https://api.figma.com/v1/images/{file_key}?ids={node_id}&format=png&scale=2"
+
+# コンポーネント一覧を取得
+curl -H "X-Figma-Token: $FIGMA_ACCESS_TOKEN" \
+  "https://api.figma.com/v1/files/{file_key}/components"
+
+# スタイル一覧を取得
+curl -H "X-Figma-Token: $FIGMA_ACCESS_TOKEN" \
+  "https://api.figma.com/v1/files/{file_key}/styles"
+
+# ローカル変数（デザイントークン）を取得
+curl -H "X-Figma-Token: $FIGMA_ACCESS_TOKEN" \
+  "https://api.figma.com/v1/files/{file_key}/variables/local"
 ```
 
-## Privacy & Authentication
+**Figma URL からのキー抽出:**
+- ファイル URL: `https://www.figma.com/design/{file_key}/{file_name}` → `{file_key}` を取得
+- ノード URL: `?node-id={node_id}` クエリパラメータから取得（`-` を `:` に変換）
 
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
+### 方法 2: Figma MCP Server
 
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
+Claude の MCP 設定に Figma MCP Server が追加されている場合、MCP ツール経由で直接 Figma にアクセスする。
 
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
-```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
+MCP が利用可能な場合は API より MCP を優先して使う。
+
+## 操作モード
+
+### モード A: デザイントークン抽出
+
+Figma のスタイルや変数からデザイントークン（カラー、タイポグラフィ、スペーシング）を抽出し、TypeScript の定数ファイルに変換する。
+
+**出力先:** `src/constants/`
+
+**カラートークンの例:**
+```typescript
+// src/constants/colors.ts
+export const Colors = {
+  primary: '#6366F1',
+  primaryLight: '#A5B4FC',
+  primaryDark: '#4338CA',
+  secondary: '#EC4899',
+  background: '#FFFFFF',
+  surface: '#F9FAFB',
+  text: '#111827',
+  textSecondary: '#6B7280',
+  border: '#E5E7EB',
+  error: '#EF4444',
+  success: '#22C55E',
+  warning: '#F59E0B',
+} as const;
+
+export type ColorKey = keyof typeof Colors;
 ```
 
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
+**タイポグラフィトークンの例:**
+```typescript
+// src/constants/typography.ts
+import { TextStyle } from 'react-native';
 
-## Capabilities
-- View and navigate design files, frames, and pages
-- Export assets in various formats (PNG, SVG, PDF, JPG)
-- Access and manage team libraries and components
-- Review design comments and feedback
-- Check file version history and restore previous versions
-- Manage file sharing and permissions
-
-## Usage Examples
-
-### Example 1: Export Design Assets
-```
-User: "Export all icons from my Figma design file as SVGs"
-Claude: I'll navigate to your Figma file and export the icons.
-1. Opening Figma via Playwright MCP
-2. Navigating to the specified file
-3. Selecting icon frames
-4. Exporting as SVG format
-5. Downloading to your specified location
+export const Typography: Record<string, TextStyle> = {
+  h1: { fontSize: 32, fontWeight: '700', lineHeight: 40 },
+  h2: { fontSize: 24, fontWeight: '700', lineHeight: 32 },
+  h3: { fontSize: 20, fontWeight: '600', lineHeight: 28 },
+  body: { fontSize: 16, fontWeight: '400', lineHeight: 24 },
+  bodySmall: { fontSize: 14, fontWeight: '400', lineHeight: 20 },
+  caption: { fontSize: 12, fontWeight: '400', lineHeight: 16 },
+} as const;
 ```
 
-### Example 2: View Design Feedback
+**スペーシングトークンの例:**
+```typescript
+// src/constants/spacing.ts
+export const Spacing = {
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 48,
+} as const;
+
+export const BorderRadius = {
+  sm: 4,
+  md: 8,
+  lg: 16,
+  full: 9999,
+} as const;
 ```
-User: "Show me all comments on my homepage design"
-Claude: I'll pull up the comments on your homepage design.
-1. Opening the design file in Figma
-2. Navigating to the homepage frame
-3. Displaying all comments with author and timestamp
-4. Summarizing feedback themes
-```
 
-### Example 3: Check Design Versions
-```
-User: "What changes were made to the login screen this week?"
-Claude: I'll review the version history for the login screen.
-1. Accessing file version history
-2. Filtering changes from this week
-3. Comparing versions to identify modifications
-4. Summarizing key design changes
-```
+### モード B: コンポーネント変換
 
-## Authentication Flow
-1. Navigate to figma.com via Playwright MCP
-2. Enter email credentials
-3. Handle password entry
-4. Complete 2FA if required (via iMessage notification)
-5. Maintain session cookies for subsequent requests
+Figma のフレームやコンポーネントを React Native コンポーネントコードに変換する。
 
-## Error Handling
-- **Login Failed**: Retry authentication up to 3 times, then notify via iMessage
-- **Session Expired**: Re-authenticate automatically using stored credentials
-- **Rate Limited**: Implement exponential backoff (1s, 2s, 4s, 8s)
-- **2FA Required**: Send code request notification via iMessage, wait for user input
-- **File Not Found**: Prompt user to verify file URL or name
-- **Permission Denied**: Notify user of access restrictions
+**手順:**
 
-## Self-Improvement Instructions
-When encountering new Figma UI patterns or workflows:
-1. Document the specific interaction pattern
-2. Note any selectors or navigation paths that changed
-3. Suggest updates to this skill file via PR or Notion log
-4. Track success/failure rates for common operations
+1. Figma API / MCP でノードのデザインデータ（レイアウト、色、フォント、サイズ等）を取得する
+2. Figma の Auto Layout を React Native の `flexDirection`, `gap`, `padding` にマッピングする
+3. デザイントークンが `src/constants/` に存在すればそれを参照する
+4. `src/components/` にコンポーネントファイルを生成する
 
-## Notes
-- Figma files can be large; allow adequate loading time
-- Some features require paid Figma plans
-- Plugin interactions are limited via browser automation
-- Real-time collaboration features may show other users' cursors
-- FigJam boards use different UI patterns than design files
+**Figma → React Native マッピング:**
+
+| Figma プロパティ | React Native スタイル |
+|---|---|
+| Auto Layout (horizontal) | `flexDirection: 'row'` |
+| Auto Layout (vertical) | `flexDirection: 'column'` |
+| Spacing between items | `gap: number` |
+| Padding | `padding`, `paddingHorizontal`, `paddingVertical` |
+| Fill container | `flex: 1` |
+| Fixed size | `width` / `height` |
+| Corner radius | `borderRadius` |
+| Fill (solid color) | `backgroundColor` |
+| Stroke | `borderWidth`, `borderColor` |
+| Drop shadow | `shadowColor`, `shadowOffset`, `shadowOpacity`, `shadowRadius`, `elevation` |
+| Text properties | `fontSize`, `fontWeight`, `lineHeight`, `color`, `textAlign` |
+| Opacity | `opacity` |
+
+## 手順（共通）
+
+1. ユーザーから Figma URL またはファイルキーを受け取る
+2. URL から `file_key` と `node_id` を抽出する
+3. 環境変数 `FIGMA_ACCESS_TOKEN` の存在を確認する（なければ設定方法を案内する）
+4. MCP が利用可能か確認し、可能なら MCP を使う
+5. 指定されたモード（トークン抽出 / コンポーネント変換）を実行する
+6. 生成したファイルの内容をユーザーに報告する
+
+## ルール
+
+- Figma の色は RGBA → HEX に変換する（Figma API は 0〜1 の float で返す）
+- フォントファミリーは Expo で利用可能なものに置き換える（`expo-font` で読み込み前提）
+- `px` 値はそのまま React Native の数値として使う（React Native は dp ベース）
+- 画像アセットは `assets/` ディレクトリにエクスポートする
+- 既存のデザイントークンファイルがあれば上書きではなくマージする
+- `FIGMA_ACCESS_TOKEN` をコードやログに直接記載しない

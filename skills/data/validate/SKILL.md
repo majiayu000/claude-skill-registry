@@ -1,194 +1,151 @@
 ---
-name: Validate Training Materials
-description: Run comprehensive validation and review checks including heading numbering, TODO/FIXME comments, Nextflow script conventions, orphaned files, admonition syntax, lesson structure, formatting, content accuracy, and teaching effectiveness. Use when validating, reviewing, or checking training materials quality, lesson quality, or before committing changes.
+name: validate
+description: Verify implementation against acceptance criteria and run tests
+argument-hint: <task ID or artifact path>
+user-invocable: true
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash
+context: fork
+agent: validator
 ---
 
-# Validate Training Materials
+# /validate - Implementation Validation
 
-Run comprehensive validation checks on training materials. Execute from repository root.
+Verify that implementation meets acceptance criteria and passes tests.
 
-See [../shared/repo-conventions.md](../shared/repo-conventions.md) for directory mapping and file conventions.
+## Purpose
 
-## Skill Dependencies (MANDATORY)
+Ensure quality by:
+- Running test suites
+- Checking acceptance criteria
+- Validating artifact schemas
+- Reporting findings
 
-This skill MUST invoke other skills during validation. **Do not skip these.**
+## Inputs
 
-| Task | Skill | When |
-|------|-------|------|
-| Check code block highlights | `/check-highlights` | Always |
-| Check inline code formatting | `/check-inline-code` | Always |
+- `$ARGUMENTS`: Task ID or artifact path to validate
+- BACKLOG for acceptance criteria: `docs/development/BACKLOG.md`
+- PRD for requirements: `docs/architecture/PRD.md`
+- `${PROJECT_NAME}`: Current project context
 
-## Scope
+## Outputs
 
-Ask user to specify what to validate if not clear:
-- Specific side quest (e.g., "debugging")
-- Specific module (e.g., "hello_nextflow")
-- Entire repository (only if explicitly requested)
+Validation report stored in Serena memory (transient).
 
-## Determining Scope
+## Workflow
 
-Based on the user's request, determine the scope:
+### 1. Identify Target
+Parse `$ARGUMENTS`:
+- Task ID → Load task details and AC from BACKLOG
+- File path → Validate specific artifact
+- No args → Validate most recent implementation
 
-1. **Specific side quest** (e.g., "debugging"):
+### 2. Load Acceptance Criteria
+From task details or PRD:
+- List all criteria to check
+- Note any dependencies
 
-   - Documentation file: `docs/side_quests/{name}.md`
-   - Example scripts: `side-quests/{name}/**/*.nf`
-   - Solution files: `side-quests/solutions/{name}/**/*.nf`
-
-2. **Specific module** (e.g., "hello_nextflow"):
-
-   - Documentation files: `docs/{module}/**/*.md`
-   - Example scripts: `{module}/**/*.nf` or `hello-nextflow/**/*.nf`
-   - Solution files: `{module}/solutions/**/*.nf`
-
-3. **Entire repository** (only if explicitly requested):
-   - All files: `docs/**/*.md`, `**/*.nf`
-
-## Tasks to Perform
-
-Perform the following checks **only on files within the determined scope**:
-
-1. **Check Heading Numbering**
-
-   - Run: `uv run .github/check_headings.py [scoped-path]/**/*.md`
-   - Report any heading numbering issues found
-   - If errors exist, ask if user wants to auto-fix with `--fix` flag
-
-2. **Find TODO/FIXME Comments**
-
-   - Search markdown files in scope
-   - Search Nextflow scripts in scope
-   - Categorize by priority (high, medium, low)
-   - Report files with most TODOs
-
-3. **Check Nextflow Script Conventions**
-
-   - Find .nf files in scope
-   - Verify they start with `#!/usr/bin/env nextflow`
-   - Check for DSL2 syntax
-   - Report any that don't follow conventions
-
-4. **Find Orphaned Files**
-
-   - Check if main documentation file is referenced in mkdocs.yml
-   - Look for solution files without corresponding exercise documentation
-   - Report any orphaned files within scope
-
-5. **Verify Admonition Syntax**
-
-   - Search for common admonition formatting errors in scoped files
-   - Check for proper indentation (4 spaces)
-   - Report any malformed admonitions
-
-6. **Check Code Block Highlights**
-
-   ```
-   >>> STOP. INVOKE /check-highlights on the scoped files NOW.
-
-   Record results before continuing.
-   ```
-
-7. **Check Inline Code Formatting**
-
-   ```
-   >>> STOP. INVOKE /check-inline-code on the scoped files NOW.
-
-   Record results before continuing.
-   ```
-
-8. **Check Writing Style**
-
-   - Search for LLM-style patterns that should be avoided:
-     - `Let's` or `let's` at start of sentences
-     - `Remember when` or `Remember that` callbacks
-     - `Don't worry` reassurances
-     - `worth mentioning` or `important to note` padding
-     - Exclamation marks used for emphasis (not in code/output)
-   - Check for em-dash elaborations (space-hyphen-space followed by lowercase) that could be periods
-   - Flag any issues found for manual review
-
-9. **Deep Lesson Review** (when reviewing a specific lesson file)
-
-   If the user asks to review a specific lesson, perform this comprehensive checklist:
-
-   a. **Structure Check**:
-
-   - [ ] Proper heading numbering with trailing periods
-   - [ ] Heading levels match numbering depth (## for 1., ### for 1.1.)
-   - [ ] Each major section has "### Takeaway"
-   - [ ] Each major section has "### What's next?"
-   - [ ] Logical flow from simple to complex
-   - [ ] Clear learning objectives stated or implied
-
-   b. **Formatting Check**:
-
-   - [ ] Code blocks have proper titles, line numbers, and highlighting
-   - [ ] Console output properly formatted with `console title="Output"`
-   - [ ] File paths use proper markdown formatting
-   - [ ] Before/After comparisons use tabbed blocks
-   - [ ] Admonitions properly formatted and indented
-   - [ ] Each sentence on new line (for clean diffs)
-
-   c. **Content Check**:
-
-   - [ ] Technical accuracy of Nextflow code
-   - [ ] Commands are correct and runnable
-   - [ ] Parameter syntax correct (-- for pipeline, - for Nextflow)
-   - [ ] Examples progress logically
-   - [ ] Common pitfalls addressed
-   - [ ] Edge cases explained
-
-   d. **Teaching Effectiveness**:
-
-   - [ ] Clear explanations for beginners
-   - [ ] Concepts introduced before use
-   - [ ] Examples are relevant and motivating
-   - [ ] Exercises appropriate for skill level
-   - [ ] Solutions available for exercises
-   - [ ] Good use of tips and warnings
-
-   e. **Cross-References**:
-
-   - [ ] Links to related lessons work
-   - [ ] References to files/scripts are correct
-   - [ ] External links are valid
-   - [ ] Prerequisites clearly stated
-
-   f. **Examples & Code**:
-
-   - [ ] All Nextflow examples are syntactically correct
-   - [ ] Variable names are clear and consistent
-   - [ ] Comments explain non-obvious code
-   - [ ] Examples can be run as shown
-   - [ ] Output examples match what code produces
-
-   g. **Writing Style** (see CLAUDE.md for full guidelines):
-
-   - [ ] No LLM-style interjections ("Let's", "Remember when...?", "Don't worry")
-   - [ ] No exclamation-based emphasis ("Much faster!", "So powerful!")
-   - [ ] Em-dash elaborations replaced with periods or semicolons
-   - [ ] List explanations use colons, not hyphens
-   - [ ] Single clear explanation per concept (not multiple phrasings)
-   - [ ] Professional, direct tone throughout
-
-## Output Format
-
-Structure your report with these sections:
-
+### 3. Run Tests
+Execute appropriate test commands:
+```bash
+# Common patterns
+npm test
+pytest
+make test
+go test ./...
 ```
-# Validation Report
 
-## Heading Numbering
-## TODO/FIXME Comments (count by priority, list top files)
-## Nextflow Scripts (conventions check)
-## Orphaned Files
-## Admonitions
-## Code Block Highlights (from /check-highlights)
-## Inline Code Formatting (from /check-inline-code)
-## Writing Style
+Capture results: passed, failed, skipped.
+
+### 4. Verify Acceptance Criteria
+For each criterion:
+- Can it be verified automatically?
+- If yes, run verification
+- If no, check manually via code inspection
+
+### 5. Check Quality
+Run quality checks if available:
+```bash
+# Linting
+npm run lint
+ruff check .
+
+# Type checking
+tsc --noEmit
+mypy .
+
+# Format check
+prettier --check .
+ruff format --check .
+```
+
+### 6. Validate Artifacts
+If artifacts were produced:
+- Check schema compliance
+- Verify required fields
+- Validate references
+
+### 7. Report Findings
+Create validation report:
+
+```yaml
+---
+date: YYYY-MM-DD
+task: [Task ID]
+target: [What was validated]
+status: pass | fail | partial
+---
+
 ## Summary
+[Overall status and key findings]
+
+## Test Results
+| Suite | Passed | Failed | Skipped |
+|-------|--------|--------|---------|
+| [Name] | X | Y | Z |
+
+## Acceptance Criteria
+| ID | Criterion | Status | Evidence |
+|----|-----------|--------|----------|
+| AC1 | [Description] | Pass/Fail | [How verified] |
+
+## Quality Checks
+- [ ] Linting: [status]
+- [ ] Type check: [status]
+- [ ] Format: [status]
+
+## Issues Found
+1. [Issue description]
+   - Severity: Low/Medium/High
+   - Location: [file:line]
+
+## Recommendation
+[Pass/Fix issues/Block deployment]
 ```
 
-For deep lesson reviews, add sections for: Structure, Formatting, Content Accuracy, Teaching Effectiveness, Cross-References, Examples & Code, Writing Style, Overall Assessment, Positive Aspects.
+## Validation Levels
 
-**Important**: Always provide actionable next steps for any issues found. If no issues found, give clear confirmation.
+### Quick Validation
+- Run tests
+- Check critical AC only
+- Fast feedback
+
+### Full Validation
+- All tests
+- All AC
+- Quality checks
+- Artifact validation
+
+### Pre-Deploy Validation
+- Full validation
+- Security checks
+- Performance baseline
+- Integration tests
+
+## Policy References
+
+**Should-read** from `~/.claude/policy/RULES.md`:
+- Failure Investigation - Root cause analysis, never skip tests or validation

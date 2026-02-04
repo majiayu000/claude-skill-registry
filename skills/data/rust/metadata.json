@@ -1,7 +1,9 @@
 {
   "name": "rust",
-  "repo": "pproenca/dot-skills",
-  "path": "skills/.curated/rust/SKILL.md",
-  "source": "github.com/pproenca/dot-skills",
-  "downloaded_at": "2026-02-02T04:40:36.333062Z"
+  "description": "Rust development patterns, project setup, CLI/TUI applications, error handling, and system integration",
+  "repo": "lawless-m/Earwig",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig"
 }

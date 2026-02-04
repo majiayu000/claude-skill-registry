@@ -1,49 +1,78 @@
 ---
 name: create-plugin
-description: "Add a new datasource plugin to ethpandaops/mcp. Triggers on: add plugin, new plugin, create plugin, add datasource."
+description: Create an empty Claude plugin with basic structure and files.
+license: MIT
+compatibility: Requires bun package manager and ClaudeKit monorepo structure
+allowed-tools: Read, Grep, Glob, Write, Edit, WebFetch(domain:docs.claude.com)
 ---
 
-# Create New Plugin
+# Create Claude Plugin
 
-Add a datasource plugin following the existing patterns.
+## When to Use This Skill
 
-## Files to Create
+Use this skill when:
+- Creating a new Claude Code plugin from scratch
+- Setting up the standard plugin directory structure
+- Adding a new plugin to the ClaudeKit marketplace
+
+**Trigger phrases:**
+- "create a new plugin"
+- "scaffold a plugin for X"
+- "add a plugin called X"
+
+## Instruction
+
+1. Use the `Glob` tool to check if plugin is existing
+2. Use Ask Question Tool to confirm overwriting if plugin already exists
+3. Create a new directory for the plugin
+4. Create a minimal plugin structure for plugin
+5. Update the plugin metadata file with basic information
+6. Update root README.md to include the new plugin
+7. Update `.claude-plugin/marketplace.json` to include the new plugin
+8. Update release please config to include the new plugin
+
+## Plugin Structure
 
 ```
-plugins/{name}/
-├── config.go        # Config struct + Validate() + ApplyDefaults()
-├── plugin.go        # Implements plugin.Plugin interface
-├── examples.go      # Embeds examples.yaml
-├── examples.yaml    # Query examples
-└── python/{name}.py # Sandbox module (connects via proxy)
+|- .claude-plugin/
+    |- plugin.json
+|- commands/ # Omit if no commands
+    |- example.md
+|- agents/ # Omit if no agents
+    |- example-agent.md
+|- skills/ # Omit if no skills
+    |- example-skill/
+        |- SKILL.md
+|- hooks/ # Omit if no hooks
+    |- hooks.json
+|- src/ # Omit if no hook script is needed
+    |- example.ts
+|- dist/ # Auto-generated, omit
+    |- example.js
+|- README.md
+|- rolldown.config.js # Omit if no src
+|- package.json # Omit if no src
+|- tsconfig.json # Omit if no src
 ```
 
-Plus:
-- `pkg/proxy/handlers/{name}.go` - Reverse proxy handler
+The minimal `plugin.json` is
 
-## Templates
+```json
+{
+    "name": "plugin-name",
+    "version": "0.1.0",
+    "description": "A brief description of the plugin",
+    "author": {
+        "name": "Author Name"
+    }
+}
+```
 
-Copy from `plugins/prometheus/` for a simple plugin, or `plugins/clickhouse/` for one with schema discovery.
+## Reference
 
-## Registration Steps
+For detailed information on creating Claude plugins, refer to following documentation:
 
-1. **builder.go** - Import and add `reg.Add({name}plugin.New())`
-2. **builder.go** - Add case to `buildProxy()` type switch
-3. **pkg/proxy/proxy.go** - Add field to `Options` struct
-4. **pkg/proxy/proxy.go** - Register handler in `Start()`
-5. **sandbox/ethpandaops/ethpandaops/__init__.py** - Add to lazy imports
-6. Copy Python module to `sandbox/ethpandaops/ethpandaops/`
-
-## Key Rules
-
-- **Credentials NEVER go to sandbox** - use `SandboxEnv()` for metadata only
-- **ProxyConfig()** returns credentials for the proxy handler
-- Python module reads `ETHPANDAOPS_{NAME}_DATASOURCES` env var (JSON, no creds)
-- Python module calls proxy at `/{name}/{instance}/...`
-
-## Checklist
-
-- [ ] Implements all `plugin.Plugin` methods (see `pkg/plugin/plugin.go`)
-- [ ] Proxy handler follows pattern in `pkg/proxy/handlers/prometheus.go`
-- [ ] `make lint && make test` pass
-- [ ] `make docker-sandbox` builds
+- [Claude Plugin Reference](https://docs.claude.com/en/docs/claude-code/plugins-reference)
+- [Claude Hook Reference](https://docs.claude.com/en/docs/claude-code/hooks)
+- [Claude Agent](https://docs.claude.com/en/docs/claude-code/sub-agents)
+- [Claude Agent Skill](https://docs.claude.com/en/docs/claude-code/skills)

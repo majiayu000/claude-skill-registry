@@ -1,13 +1,7 @@
 {
   "name": "calculate-priority-score",
-  "description": "Calculate priority score for bugs, issues, or tasks based on severity, impact, and likelihood. Use for bug prioritization, task ordering, or risk assessment.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "productivity",
-  "tags": [
-    "calculate",
-    "priority",
-    "score"
-  ],
-  "stars": 27,
-  "source": "SkillsMP Synced Skills"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/calculate-priority-score/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:14.095016Z"
 }

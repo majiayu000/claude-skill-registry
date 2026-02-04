@@ -1,7 +1,7 @@
 {
   "name": "council",
-  "repo": "davidgasquez/dotfiles",
-  "path": "agents/disabled-skills/council/SKILL.md",
-  "source": "github.com/davidgasquez/dotfiles",
-  "downloaded_at": "2026-02-02T01:57:29.839701Z"
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.3/.claude/skills/Council/SKILL.md",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "downloaded_at": "2026-02-04T05:12:53.129360Z"
 }

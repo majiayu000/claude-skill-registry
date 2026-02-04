@@ -1,289 +1,136 @@
 ---
 name: todo
-user_invocable: true
-description: |
-  Manage and track all TODOs from code comments and todo files. Provides quick reports
-  of open tasks, scans for untracked TODOs, and integrates with GitHub Issues.
-  Triggered by "/todo", "show todos", "list todos", or "todo status".
+description: Manage project TODO tasks (show, add, complete)
+allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion]
 ---
+# TODO Manager
 
-# Todo Management Skill
+Manage project-level TODO tasks stored in `.bluera/bluera-base/TODO.txt`.
 
-This skill consolidates all TODOs from two sources:
-1. **Code comments** - `TODO:` and `CLAUDE:` markers in src/, tests/, docs/
-2. **Todo files** - Files with "todo" in the filename
+## Context
 
-## Quick Start - Run Scan Script First
+!`echo "TODO file: ${CLAUDE_PROJECT_DIR:-.}/.bluera/bluera-base/TODO.txt"`
+!`test -f "${CLAUDE_PROJECT_DIR:-.}/.bluera/bluera-base/TODO.txt" && echo "Status: exists" || echo "Status: not created yet"`
 
-**ALWAYS run this script first to save tokens:**
+## Usage
 
 ```bash
-python .claude/skills/todo/todo_scan.py
+/bluera-base:todo [show|add|complete]
 ```
 
-This outputs a complete report showing:
-- Tracked vs untracked code TODOs
-- Todo files and their status
-- GitHub Issues with `todo` label
+- **show** (default): Display current TODO list
+- **add**: Interview user and add a new task
+- **complete**: Mark a task as complete
 
-## Quick Report (Default Action)
+## File Location
 
-When user runs `/todo`, provide a quick summary:
+`<project root>/.bluera/bluera-base/TODO.txt`
 
-1. Run the scan script
-2. Query GitHub Issues: `gh issue list --label todo --state open --json number,title,labels`
-3. Present combined report
+This file is NOT gitignored by default - it's meant to be committed and shared with the team.
 
-**Output format:**
+## Workflow
 
-```
-=== TODO Quick Report ===
+### Mode: show (default)
 
-Open Issues: X (Y high, Z medium, W low)
-In Progress: N
-Untracked in code: M
+1. Read and display the TODO file contents
+2. If file doesn't exist, show a message suggesting `/bluera-base:todo add`
 
-| #   | Pri  | Category | Title                    | Status      |
-|-----|------|----------|--------------------------|-------------|
-| #45 | HIGH | bug      | GUI Animation Bug        | in-progress |
-| #32 | MED  | arch     | Circular imports         | analyzed    |
-...
+### Mode: add
 
-Untracked Code TODOs: M
-  src/file.py:123 - TODO: description
-  ...
+Interview the user to gather task details:
 
-Run `/todo scan` for full scan
-Run `/todo track` to create issues for untracked items
-```
+1. **Task name** (required): Short, descriptive name
+2. **Description** (required): What needs to be done
+3. **Requirements** (required): Acceptance criteria / definition of done
+4. **Notes** (optional): Additional context or considerations
+5. **References** (optional): Related files, issues, PRs, docs
+6. **Resources** (optional): External links, examples, tutorials
+7. **Outcomes** (required): Expected results when complete
 
-## Commands
+After gathering details, append the task to the TODO file:
 
-### `/todo help`
-Show quick reference of available commands:
-
-```
-/todo              Quick report (open issues, priorities, in-progress)
-/todo scan         Full codebase scan for TODOs
-/todo sync         Find inconsistencies between code and GitHub
-/todo search       Search issues by keyword or label
-/todo track        Create GitHub Issues for untracked TODOs
-/todo analyze #id  Analyze TODO and update its GitHub Issue
-/todo start #id    Mark issue as in-progress
-/todo done #id     Close the issue
-/todo reject #id   Close with wontfix label
+```markdown
+[ ] <task name>
+description: <description>
+requirements: <requirements>
+notes: <notes>
+references: <references>
+resources: <resources>
+outcomes: <outcomes>
+learnings: (to be filled on completion)
 ```
 
-### `/todo` or `/todo report`
-Quick report from script output and GitHub Issues.
+### Mode: complete
 
-### `/todo scan`
-Full scan with detailed output:
-```bash
-python .claude/skills/todo/todo_scan.py
+1. Show numbered list of incomplete tasks
+2. Ask user which task to complete
+3. Ask for learnings from the task
+4. Move task to COMPLETED TASKS section with:
+   - Change `[ ]` to `[x]`
+   - Fill in the `learnings:` field
+   - Add completion date
+
+## File Format
+
+```markdown
+# bluera-base TODOs
+
+## IMPORTANT
+
+* for any/all work, ensure we're fully utilizing all best practices and optimizations per project conventions and documentation
+* write proper tests as applicable
+* utilize TDD for bug-fixes
+* maintain documentation as relevant (README.md, docs/*, CLAUDE.md, **/CLAUDE.md, etc.)
+* move tasks to "## COMPLETED TASKS" once complete
+
+## TODO TASKS
+
+[ ] Example task
+description: What needs to be done
+requirements: Definition of done
+notes: Additional context (OPTIONAL)
+references: Related files, issues (OPTIONAL)
+resources: External links (OPTIONAL)
+outcomes: Expected results
+learnings: (filled on completion)
+
+## COMPLETED TASKS
+
+[x] Completed example
+description: What was done
+requirements: What was required
+outcomes: What was achieved
+learnings: What was learned
+completed: 2025-01-17
 ```
 
-### `/todo sync`
-Find inconsistencies between code/files and GitHub Issues:
-```bash
-python .claude/skills/todo/todo_scan.py --sync
+## Implementation Notes
+
+1. Create the `.bluera/bluera-base/` directory if it doesn't exist
+2. Create the TODO.txt file with the header template if it doesn't exist
+3. Parse the file to identify tasks by the `[ ]` or `[x]` prefix
+4. Preserve all formatting and content when editing
+
+## Template for New File
+
+When creating a new TODO.txt, use this template:
+
+```markdown
+# bluera-base TODOs
+
+## IMPORTANT
+
+* for any/all work, ensure we're fully utilizing all best practices and optimizations per project conventions and documentation
+* write proper tests as applicable
+* utilize TDD for bug-fixes
+* maintain documentation as relevant (README.md, docs/*, CLAUDE.md, **/CLAUDE.md, etc.)
+* move tasks to "## COMPLETED TASKS" once complete
+
+## TODO TASKS
+
+(no tasks yet - use `/bluera-base:todo add` to create one)
+
+## COMPLETED TASKS
+
+(none yet)
 ```
-
-**Checks performed:**
-
-**Code TODOs:**
-1. **Missing in GitHub** - Code TODO has `[#X]` but issue doesn't exist or lacks `todo` label
-2. **Missing in Code** - GitHub Issue with `todo:code` label has no matching code TODO
-3. **Stale TODOs** - Code TODO references a CLOSED issue (should be removed)
-
-**File Entries:**
-4. **Missing in GitHub** - File entry references issue that doesn't exist or lacks `todo` label
-5. **Missing in File** - GitHub Issue with `todo:file` label has no matching file entry
-6. **Stale Entries** - File entry references a CLOSED issue (should be removed)
-7. **Status Mismatch** - File says `in-progress` but GitHub lacks label, or vice versa
-
-**Output format:**
-```
-=== SYNC REPORT ===
-
-Code: Missing in GitHub (1):
-  src/file.py:42 - [#999] issue does not exist
-
-Code: Stale TODOs (1):
-  src/old.py:20 - [#30] issue is CLOSED - remove this TODO
-
-File: Status Mismatch (2):
-  todo/todo_open.md:5 - [#16] file says 'investigating' but GitHub has 'in-progress' label
-  todo/todo_open.md:15 - [#23] file says 'in-progress' but GitHub lacks label
-
-Synced: 13 code TODOs, 25 file entries
-```
-
-**Interactive Resolution:**
-
-When inconsistencies are found, ask the user how to resolve each one:
-
-1. **Status Mismatch** - Ask: "Update file to match GitHub, or update GitHub to match file?"
-   - Option A: Update file entry status to match GitHub label
-   - Option B: Add/remove `in-progress` label on GitHub to match file
-   - Option C: Skip (do nothing)
-
-2. **Stale TODOs/Entries** - Ask: "Issue is closed. Remove the TODO/entry?"
-   - Option A: Remove the code comment or file entry
-   - Option B: Skip (keep it)
-
-3. **Missing in GitHub** - Ask: "Create GitHub Issue for this TODO?"
-   - Option A: Create issue with `todo` label
-   - Option B: Skip
-
-4. **Missing in Code/File** - Ask: "GitHub Issue has label but no local reference. What to do?"
-   - Option A: Remove the `todo:code` or `todo:file` label from GitHub
-   - Option B: Skip (leave as is)
-
-**Example interaction:**
-```
-Found 1 inconsistency:
-
-[1] Status Mismatch: todo/todo_open.md:5
-    Issue #16: file says 'investigating' but GitHub has 'in-progress' label
-
-    How to resolve?
-    A) Update file to 'in-progress'
-    B) Remove 'in-progress' label from GitHub
-    C) Skip
-```
-
-### `/todo search [query] [--label <label>]`
-Search GitHub Issues by keyword and/or label filter.
-
-**Usage:**
-```bash
-/todo search animation          # Search for "animation" in title/body
-/todo search --label bug        # Filter by label
-/todo search gui --label high   # Combined: keyword + label
-/todo search --label in-progress  # Find all in-progress issues
-```
-
-**Implementation:**
-```bash
-# Keyword search (searches title and body)
-gh issue list --label todo --search "animation" --state open --json number,title,labels,state
-
-# Label filter (can use partial match)
-gh issue list --label todo --label "priority:high" --state open --json number,title,labels,state
-
-# Combined
-gh issue list --label todo --label bug --search "animation" --state open --json number,title,labels,state
-
-# Include closed issues
-gh issue list --label todo --search "animation" --state all --json number,title,labels,state
-```
-
-**Output format:**
-```
-=== Search Results: "animation" ===
-
-| #   | State  | Labels                  | Title                    |
-|-----|--------|-------------------------|--------------------------|
-| #45 | open   | bug, priority:high      | GUI Animation Bug        |
-| #12 | closed | enhancement             | Animation speed control  |
-
-Found 2 issues. Use `/todo start #id`, `/todo done #id`, or `/todo analyze #id` to operate on results.
-```
-
-**Common label filters:**
-- `--label bug` - Bug issues
-- `--label enhancement` - Feature requests
-- `--label priority:high` / `priority:medium` / `priority:low` - By priority
-- `--label in-progress` - Currently being worked on
-- `--label analyzed` - Already analyzed by Claude
-- `--label todo:code` - From code comments
-- `--label todo:file` - From todo files
-
-**Options:**
-- `--all` - Include closed issues (default: open only)
-- `--limit N` - Limit results (default: 30)
-
-### `/todo track`
-For each untracked code TODO:
-1. Assign next available ID (check existing TC# numbers)
-2. Create GitHub Issue with `todo` and `todo:code` labels
-3. Update code comment with issue number: `# TODO [#123]: text`
-
-### `/todo analyze [#id]`
-Read the code context around a TODO, update the GitHub Issue description with analysis, and add `analyzed` label.
-
-### `/todo start #id`
-Add `in-progress` label to the GitHub Issue.
-
-### `/todo done #id`
-Close the GitHub Issue. Optionally remove or update the code comment.
-
-### `/todo reject #id [reason]`
-Add `wontfix` label and close the issue with reason.
-
-## ID Schema
-
-### Code Comments
-Format: `# TODO [ID]: description`
-
-Examples:
-- `# TODO [TC1]: Move single step mode into operator`
-- `# TODO [#45]: Fix animation bug`
-- `# CLAUDE [#123]: Review this logic`
-
-### GitHub Labels
-
-| Label | Purpose |
-|-------|---------|
-| `todo` | All tracked TODOs |
-| `todo:code` | From code comments |
-| `todo:file` | From todo files |
-| `analyzed` | Claude has reviewed and understands |
-| `in-progress` | Currently being worked on |
-| `priority:high` | High priority |
-| `priority:medium` | Medium priority |
-| `priority:low` | Low priority |
-
-## Status Flow
-
-```
-new → analyzed → in_progress → completed
-                     │
-                     └──────────▶ rejected (wontfix)
-```
-
-## Todo Files
-
-Files with "todo" in filename are tracked:
-- Should be moved to `todo/` folder
-- Files with "new entries" section need processing
-- Each entry should become a GitHub Issue
-
-### Processing New Entries
-
-1. Find files with `has_new_entries: true` in scan output
-2. Read the new entries section
-3. Create GitHub Issues for each entry
-4. Update file to mark entries as processed
-
-## Token-Saving Strategy
-
-1. **Always run Python script first** - It does the file scanning
-2. **Use --json flag** for programmatic parsing: `python .claude/skills/todo/todo_scan.py --json`
-3. **Only read specific files** when analyzing individual TODOs
-4. **Cache GitHub queries** - The script already queries once
-
-## Migration Notes
-
-Existing tracked items use these ID formats:
-- `TC1-TC6` - Code TODOs
-- `B#, G#, A#, Q#, S#, D#` - Categorized tasks in todo_open.md
-
-These will be migrated to GitHub Issues when `/todo track` is run.
-
-## Important
-
-- **NEVER create issues without user approval** - Show what will be created first
-- **Ask before modifying code** - Confirm before updating TODO comments with IDs
-- **Preserve existing IDs** - Don't reassign TC1-TC6 to new numbers

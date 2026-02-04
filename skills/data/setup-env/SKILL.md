@@ -1,324 +1,152 @@
 ---
-name: setup-env
-description: >-
-  Configure environment variables for the mobile app.
-  Use when setting up .env files, API keys, or environment-specific
-  configuration.
-  Invoked by: "env", "environment variables", ".env", "configuration", "api keys".
+description: Environment setup and validation - verify all required environment variables and API connections
+handoffs:
+  - label: Configure Missing Variables
+    agent: backend-engineer
+    prompt: Help configure the missing environment variables
+    send: false
 ---
 
-# Environment Variables Configuration SOP
+## User Input
 
-**Version**: 1.0.0
-**Last Updated**: 2026-01-11
-**Status**: Active
-
-> **Note**: This is a template. Replace placeholders like `{PROJECT_NAME}`, `{BUNDLE_ID}`, `{APP_SLUG}`, and `{BASE_URL}` with your actual project values.
-
----
-
-## Overview
-
-### Purpose
-This SOP guides developers through configuring environment variables for the mobile app. Proper environment configuration is essential for connecting to APIs, enabling features, and managing different deployment environments.
-
-### When to Use
-**ALWAYS**: Initial project setup, switching between dev/prod environments, configuring API keys, setting up Firebase credentials
-**SKIP**: Only running tests (defaults work), making code changes that don't affect configuration
-
----
-
-## Process Workflow
-
-### Flow Diagram
-```
-[Quick Setup] --> [Configure Variables] --> [Firebase Credentials] --> [Verify]
+```text
+$ARGUMENTS
 ```
 
-### Phase Summary
-| Phase | Objective | Deliverable |
-|-------|-----------|-------------|
-| 1. Quick Setup | Create .env from template | `.env` file exists |
-| 2. Configure | Set required variables | Variables populated |
-| 3. Firebase | Configure push notifications | Credential files in place |
-| 4. Verify | Confirm configuration works | `task env-check` passes |
+Options: `check` (validate only), `create` (create .env from example), empty (validate and report)
 
----
+## Task
 
-## Quick Start
+Validate environment setup for the keto meal plan project and test all external API connections.
 
-### Option 1: Pull from EAS (Recommended)
+### Steps
+
+1. **Parse Arguments**:
+   - Empty or `check`: Validate all environment variables and connections
+   - `create`: Create `.env` files from `.env.example` templates
+
+2. **Check Required Environment Variables**:
+
+   **Backend (.env)**:
+   ```bash
+   cd backend
+
+   # Required variables
+   ENV
+   DATABASE_URL
+   REDIS_URL
+   OPENAI_API_KEY
+   GEMINI_API_KEY
+   PADDLE_API_KEY
+   PADDLE_WEBHOOK_SECRET
+   BLOB_READ_WRITE_TOKEN
+   RESEND_API_KEY
+   RESEND_FROM_EMAIL
+   SENTRY_DSN
+   JWT_SECRET
+   APP_URL
+   ```
+
+   **Frontend (.env.local)**:
+   ```bash
+   cd frontend
+
+   # Required variables
+   NEXT_PUBLIC_API_URL
+   NEXT_PUBLIC_PADDLE_VENDOR_ID
+   NEXT_PUBLIC_PADDLE_ENVIRONMENT
+   NEXT_PUBLIC_ENABLE_MID_QUIZ_AUTH
+   ```
+
+3. **Validate Each Variable**:
+   - Check if variable exists
+   - Check if value is not empty
+   - Check format (URLs, keys, etc.)
+
+4. **Test API Connections** (if `check` or empty):
+
+   **Database (Neon DB)**:
+   ```bash
+   cd backend
+   python -c "from src.lib.database import engine; engine.connect(); print('✅ Database connection successful')"
+   ```
+
+   **Redis**:
+   ```bash
+   python -c "from src.lib.redis_client import redis_client; redis_client.ping(); print('✅ Redis connection successful')"
+   ```
+
+   **OpenAI API**:
+   ```bash
+   python -c "import openai; openai.api_key='${OPENAI_API_KEY}'; openai.models.list(); print('✅ OpenAI API key valid')"
+   ```
+
+   **Vercel Blob**:
+   ```bash
+   # Test blob upload
+   curl -X PUT "https://blob.vercel-storage.com/test.txt" \
+     -H "authorization: Bearer ${BLOB_READ_WRITE_TOKEN}" \
+     -H "x-content-type: text/plain" \
+     -d "test" | grep -q "url" && echo "✅ Vercel Blob token valid"
+   ```
+
+   **Resend**:
+   ```bash
+   curl -X GET "https://api.resend.com/domains" \
+     -H "Authorization: Bearer ${RESEND_API_KEY}" | grep -q "object" && echo "✅ Resend API key valid"
+   ```
+
+5. **Generate Report**:
+   ```
+   ✅ Environment Setup Report
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Backend Environment Variables:
+   ✅ ENV: development
+   ✅ DATABASE_URL: postgresql+asyncpg://...
+   ✅ REDIS_URL: redis://localhost:6379/0
+   ❌ OPENAI_API_KEY: Not set
+   ✅ GEMINI_API_KEY: AIza...
+   ...
+
+   Frontend Environment Variables:
+   ✅ NEXT_PUBLIC_API_URL: http://localhost:8000/v1
+   ❌ NEXT_PUBLIC_PADDLE_VENDOR_ID: Not set
+   ...
+
+   API Connection Tests:
+   ✅ Database (Neon DB): Connected
+   ✅ Redis: Connected
+   ❌ OpenAI API: Failed (invalid key)
+   ✅ Vercel Blob: Connected
+   ✅ Resend: Connected
+
+   Missing Variables: 2
+   Failed Connections: 1
+   ```
+
+6. **Recommendations**:
+   - List missing variables with instructions to set them
+   - Suggest running `/setup-env create` to create `.env` files
+   - Provide links to service signup pages (Paddle, Vercel Blob, Resend, etc.)
+
+## Example Usage
 
 ```bash
-# Development environment
-task setup-dev
-# Runs: ./scripts/pull-expo-env.sh development
-
-# Production environment
-task setup-prod
-# Runs: ./scripts/pull-expo-env.sh production
+/setup-env               # Validate all environment variables and connections
+/setup-env check         # Same as above
+/setup-env create        # Create .env files from .env.example templates
 ```
 
-**Note**: Requires EAS CLI login:
-```bash
-npx eas login
-```
+## Exit Criteria
 
-### Option 2: Manual Setup
+- All required environment variables checked
+- API connections tested (if not in create mode)
+- Report generated with clear status
+- Instructions provided for missing setup
 
-```bash
-# Copy template to .env
-cp .env.example .env
+## Notes
 
-# Edit with your values
-nano .env
-```
-
----
-
-## Environment Files
-
-| File | Purpose | Git Status |
-|------|---------|------------|
-| `.env.example` | Template with defaults | Committed |
-| `.env` | Actual values | Gitignored |
-
-### How It Works
-
-The `Taskfile.yml` loads environment files in order:
-
-```yaml
-dotenv:
-  - .env.example  # Loaded first (defaults)
-  - .env          # Loaded second (overrides)
-```
-
-This means:
-1. `.env.example` provides default values
-2. `.env` overrides with actual/secret values
-3. First file wins for any variable
-
----
-
-## Variable Categories
-
-### Build Configuration
-
-```bash
-# Environment: dev | prod
-ENVIRONMENT=dev
-
-# Build target: 0 = device, 1 = simulator
-SIMULATOR=1
-```
-
-### App Configuration
-
-```bash
-EXPO_PUBLIC_APP_SLUG={APP_SLUG}
-EXPO_PUBLIC_PROJECT_ID=<expo-project-id>
-EXPO_PUBLIC_BASE_URL={BASE_URL}
-EXPO_PUBLIC_INSTALLATION_URL={BASE_URL}/
-EXPO_PUBLIC_MINIMUM_API_VERSION=1.0.0
-```
-
-### Firebase / Google Services
-
-```bash
-# Paths to credential files (set automatically)
-EXPO_PUBLIC_IOS_GOOGLE_SERVICES_FILE=
-EXPO_PUBLIC_ANDROID_GOOGLE_SERVICES_FILE=
-
-# For EAS cloud builds (secrets)
-GOOGLE_SERVICES_JSON=
-GOOGLE_SERVICE_INFO_PLIST=
-```
-
-### Sentry Error Tracking
-
-```bash
-EXPO_PUBLIC_SENTRY_DSN=https://...@sentry.io/...
-EXPO_PUBLIC_SENTRY_ORG_NAME=your-org
-EXPO_PUBLIC_SENTRY_PROJECT_NAME=your-project
-SENTRY_AUTH_TOKEN=<token>
-SENTRY_DISABLE_AUTO_UPLOAD=true
-```
-
-### Development Tools
-
-```bash
-# Enable Storybook component gallery
-EXPO_STORYBOOK_ENABLED=false
-```
-
----
-
-## Firebase Credentials Setup
-
-### Directory Structure
-
-```
-credentials/
-|-- android/
-|   |-- google-services.json          # Production
-|   |-- google-services-dev.json      # Development
-|-- ios/
-    |-- GoogleService-Info.plist      # Production
-    |-- GoogleService-Info-dev.plist  # Development
-```
-
-### Automatic Setup (Placeholders)
-
-```bash
-task setup-firebase
-```
-
-Placeholders allow the app to build and run, but **push notifications won't work**.
-
-### Real Firebase Credentials
-
-To enable push notifications:
-
-1. Go to [Firebase Console](https://console.firebase.google.com)
-2. Create or select your project
-3. Add apps for each platform:
-
-**Android:**
-- Package name: `{BUNDLE_ID}.dev` (dev) or `{BUNDLE_ID}` (prod)
-- Download `google-services.json`
-- Place in `credentials/android/`
-
-**iOS:**
-- Bundle ID: `{BUNDLE_ID}.dev` (dev) or `{BUNDLE_ID}` (prod)
-- Download `GoogleService-Info.plist`
-- Place in `credentials/ios/`
-
-### EAS Cloud Builds
-
-For EAS cloud builds, Firebase credentials are injected from EAS Secrets automatically. No manual credential files needed for CI/CD.
-
----
-
-## Environment in app.config.ts
-
-The `app.config.ts` reads environment variables at build time:
-
-```typescript
-// Determines dev vs prod configuration
-const isProd = process.env.ENVIRONMENT === 'prod';
-
-// Controls iOS code signing
-const isSimulator = process.env.SIMULATOR === '1';
-```
-
-Key behaviors:
-- `ENVIRONMENT=prod` - Production bundle ID, icons, URLs
-- `ENVIRONMENT=dev` - Development bundle ID, icons, URLs
-- `SIMULATOR=1` - Skips iOS entitlements requiring code signing
-- `SIMULATOR=0` - Includes full entitlements for device builds
-
----
-
-## Adding New Variables
-
-### Step 1: Add to Template
-
-Add to `.env.example` with a default or empty value:
-
-```bash
-# Description of variable
-NEW_VARIABLE=default_value
-```
-
-### Step 2: Add to EAS (if secret)
-
-If it's a secret, add to EAS Secrets in the dashboard.
-
-### Step 3: Use in Code
-
-If needed in app code, prefix with `EXPO_PUBLIC_`:
-
-```bash
-EXPO_PUBLIC_NEW_FEATURE_FLAG=true
-```
-
-Access in code:
-
-```typescript
-const flag = process.env.EXPO_PUBLIC_NEW_FEATURE_FLAG;
-```
-
----
-
-## Quick Reference
-
-### Common Commands
-```bash
-# Pull dev environment from EAS
-task setup-dev
-
-# Pull prod environment from EAS
-task setup-prod
-
-# Verify environment
-task env-check
-
-# Setup Firebase placeholders
-task setup-firebase
-
-# EAS login
-npx eas login
-
-# Verify EAS account
-npx eas whoami
-```
-
-### Variable Access Rules
-| Prefix | Available At | Example |
-|--------|--------------|---------|
-| `EXPO_PUBLIC_*` | Runtime (app code) | `EXPO_PUBLIC_BASE_URL` |
-| No prefix | Build time only | `ENVIRONMENT` |
-
----
-
-## Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| Variables not loading | Ensure `.env` exists in project root |
-| Variables empty in app | Check for `EXPO_PUBLIC_` prefix |
-| Changes not reflected | Restart dev server after changing |
-| EAS pull fails | Run `npx eas login` and verify with `npx eas whoami` |
-| Firebase not working | Check credential files exist in `credentials/` |
-| Wrong environment used | Verify `ENVIRONMENT` variable value |
-
-### Debugging Commands
-
-```bash
-# Check all environment variables loaded
-task env-check
-
-# Verify specific variable
-echo $EXPO_PUBLIC_BASE_URL
-
-# List credential files
-ls -la credentials/android/
-ls -la credentials/ios/
-```
-
----
-
-## Related Skills
-
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| `/setup-dev` | Full development environment setup | Initial project setup |
-| `/setup-ios` | iOS-specific configuration | iOS development |
-| `/setup-android` | Android-specific configuration | Android development |
-| `/deploy` | Deployment and EAS configuration | Building for stores |
-
-> **Note**: Skill paths (`/skill-name`) work after deployment. In the template repo, skills are in domain folders.
-
----
-
-**End of SOP**
+- **Sensitive Data**: Never log full API keys or secrets
+- **Local Development**: Use `.env.local` for frontend (not committed to git)
+- **Production**: All variables must be set in Vercel dashboard

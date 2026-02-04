@@ -1,12 +1,69 @@
 ---
 name: deepwork_jobs.implement
-description: "Generates step instruction files and syncs slash commands from the job.yml specification. Use after job spec review passes."user-invocable: false---
+description: "Generates step instruction files and syncs slash commands from the job.yml specification. Use after job spec review passes."
+user-invocable: false
+hooks:
+  Stop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **Directory Structure**: Is `.deepwork/jobs/[job_name]/` created correctly?
+            2. **Complete Instructions**: Are ALL step instruction files complete (not stubs or placeholders)?
+            3. **Specific & Actionable**: Are instructions tailored to each step's purpose, not generic?
+            4. **Output Examples**: Does each instruction file show what good output looks like?
+            5. **Quality Criteria**: Does each instruction file define quality criteria for its outputs?
+            6. **Ask Structured Questions**: Do step instructions that gather user input explicitly use the phrase "ask structured questions"?
+            7. **Sync Complete**: Has `deepwork sync` been run successfully?
+            8. **Commands Available**: Are the slash-commands generated in `.claude/commands/`?
+            9. **Rules Considered**: Has the agent thought about whether rules would benefit this job? If relevant rules were identified, did they explain them and offer to run `/deepwork_rules.define`? Not every job needs rules - only suggest when genuinely helpful.
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+  SubagentStop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **Directory Structure**: Is `.deepwork/jobs/[job_name]/` created correctly?
+            2. **Complete Instructions**: Are ALL step instruction files complete (not stubs or placeholders)?
+            3. **Specific & Actionable**: Are instructions tailored to each step's purpose, not generic?
+            4. **Output Examples**: Does each instruction file show what good output looks like?
+            5. **Quality Criteria**: Does each instruction file define quality criteria for its outputs?
+            6. **Ask Structured Questions**: Do step instructions that gather user input explicitly use the phrase "ask structured questions"?
+            7. **Sync Complete**: Has `deepwork sync` been run successfully?
+            8. **Commands Available**: Are the slash-commands generated in `.claude/commands/`?
+            9. **Rules Considered**: Has the agent thought about whether rules would benefit this job? If relevant rules were identified, did they explain them and offer to run `/deepwork_rules.define`? Not every job needs rules - only suggest when genuinely helpful.
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+---
 
 # deepwork_jobs.implement
 
-**Step 3/3** in **new_job** workflow
-
-> Create a new DeepWork job from scratch through definition, review, and implementation
+**Step 3/4** in **deepwork_jobs** workflow
 
 > Creates and manages multi-step AI workflows. Use when defining, implementing, or improving DeepWork jobs.
 
@@ -264,11 +321,11 @@ Before marking this step complete, ensure:
 Core commands for managing DeepWork jobs. These commands help you define new multi-step
 workflows and learn from running them.
 
-The `new_job` workflow guides you through defining and implementing a new job by
+The `define` command guides you through an interactive process to create a new job by
 asking structured questions about your workflow, understanding each step's inputs and outputs,
-reviewing the specification, and generating all necessary files.
+and generating all necessary files.
 
-The `learn` skill reflects on conversations where DeepWork jobs were run, identifies
+The `learn` command reflects on conversations where DeepWork jobs were run, identifies
 confusion or inefficiencies, and improves job instructions. It also captures bespoke
 learnings specific to the current run into AGENTS.md files in the working folder.
 
@@ -300,9 +357,7 @@ Use branch format: `deepwork/deepwork_jobs-[instance]-YYYYMMDD`
 
 ## Quality Validation
 
-**Before completing this step, you MUST have your work reviewed against the quality criteria below.**
-
-Use a sub-agent (Haiku model) to review your work against these criteria:
+Stop hooks will automatically validate your work. The loop continues until all criteria pass.
 
 **Criteria (all must be satisfied)**:
 1. **Directory Structure**: Is `.deepwork/jobs/[job_name]/` created correctly?
@@ -314,18 +369,15 @@ Use a sub-agent (Haiku model) to review your work against these criteria:
 7. **Sync Complete**: Has `deepwork sync` been run successfully?
 8. **Commands Available**: Are the slash-commands generated in `.claude/commands/`?
 9. **Rules Considered**: Has the agent thought about whether rules would benefit this job? If relevant rules were identified, did they explain them and offer to run `/deepwork_rules.define`? Not every job needs rules - only suggest when genuinely helpful.
-**Review Process**:
-1. Once you believe your work is complete, spawn a sub-agent using Haiku to review your work against the quality criteria above
-2. The sub-agent should examine your outputs and verify each criterion is met
-3. If the sub-agent identifies valid issues, fix them
-4. Have the sub-agent review again until all valid feedback has been addressed
-5. Only mark the step complete when the sub-agent confirms all criteria are satisfied
+
+
+**To complete**: Include `<promise>✓ Quality Criteria Met</promise>` in your final response only after verifying ALL criteria are satisfied.
 
 ## On Completion
 
 1. Verify outputs are created
-2. Inform user: "new_job step 3/3 complete, outputs: steps/"
-3. **new_job workflow complete**: All steps finished. Consider creating a PR to merge the work branch.
+2. Inform user: "Step 3/4 complete, outputs: steps/"
+3. **Continue workflow**: Use Skill tool to invoke `/deepwork_jobs.learn`
 
 ---
 

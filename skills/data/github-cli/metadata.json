@@ -1,7 +1,7 @@
 {
   "name": "github-cli",
-  "repo": "aaronbassett/claude-bell",
+  "repo": "oriolrius/nifi-cluster",
   "path": ".claude/skills/github-cli/SKILL.md",
-  "source": "github.com/aaronbassett/claude-bell",
-  "downloaded_at": "2026-02-02T04:17:04.672927Z"
+  "source": "github.com/oriolrius/nifi-cluster",
+  "downloaded_at": "2026-02-04T03:05:37.745869Z"
 }

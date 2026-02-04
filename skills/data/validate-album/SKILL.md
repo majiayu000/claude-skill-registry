@@ -12,7 +12,7 @@ allowed-tools:
 
 ## Your Task
 
-**Input**: $ARGUMENTS (album name, e.g., `shell-no`)
+**Input**: $ARGUMENTS (album name, e.g., `sample-album`)
 
 Validate that an album has all required files in the correct locations, catching path issues and missing content before they become problems.
 
@@ -187,7 +187,7 @@ ISSUES TO FIX:
 
 ```
 ═══════════════════════════════════════════════════════════
-ALBUM VALIDATION: shell-no
+ALBUM VALIDATION: sample-album
 ═══════════════════════════════════════════════════════════
 
 CONFIG
@@ -199,7 +199,7 @@ CONFIG
 
 ALBUM STRUCTURE
 ───────────────
-[PASS] Album directory: ~/bitwize-music/artists/bitwize/albums/electronic/shell-no/
+[PASS] Album directory: ~/bitwize-music/artists/bitwize/albums/electronic/sample-album/
 [PASS] README.md exists
 [PASS] tracks/ directory exists
 [PASS] 5 track files found
@@ -207,9 +207,9 @@ ALBUM STRUCTURE
 AUDIO FILES
 ───────────
 [FAIL] Audio directory in wrong location
-       → Expected: ~/bitwize-music/audio/bitwize/shell-no/
-       → Found at: ~/bitwize-music/audio/shell-no/
-       → Fix: mv ~/bitwize-music/audio/shell-no/ ~/bitwize-music/audio/bitwize/shell-no/
+       → Expected: ~/bitwize-music/audio/bitwize/sample-album/
+       → Found at: ~/bitwize-music/audio/sample-album/
+       → Fix: mv ~/bitwize-music/audio/sample-album/ ~/bitwize-music/audio/bitwize/sample-album/
 
 ALBUM ART
 ─────────
@@ -227,7 +227,7 @@ SUMMARY: 8 passed, 1 failed, 1 warning, 1 skipped
 
 ISSUES TO FIX:
 1. Move audio folder to include artist:
-   mv ~/bitwize-music/audio/shell-no/ ~/bitwize-music/audio/bitwize/shell-no/
+   mv ~/bitwize-music/audio/sample-album/ ~/bitwize-music/audio/bitwize/sample-album/
 ```
 
 ---

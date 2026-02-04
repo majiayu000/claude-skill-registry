@@ -1,10 +1,6 @@
 ---
 name: review-gate
 description: HARD GATE before PR creation - verifies review artifact exists in issue comments, all findings addressed or tracked, blocks PR creation if requirements not met
-allowed-tools:
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Review Gate
@@ -176,7 +172,7 @@ Required Action:
 3. Address all findings or create tracking issues
 4. Retry PR creation
 
-Hint: Use the code-reviewer subagent to perform review.
+Hint: Run `codex-subagent code-reviewer` to perform the review.
 ```
 
 ### Unaddressed Findings
@@ -205,7 +201,7 @@ Files detected:
 - src/middleware/authenticate.ts
 
 Required Action:
-1. Invoke security-reviewer subagent
+1. Run `codex-subagent security-reviewer`
 2. Update review artifact with "Security-Sensitive: YES"
 3. Document security review findings
 4. Retry PR creation

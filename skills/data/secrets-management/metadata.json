@@ -1,7 +1,7 @@
 {
   "name": "secrets-management",
-  "repo": "a5c-ai/babysitter",
-  "path": "plugins/babysitter/skills/babysit/process/specializations/devops-sre-platform/skills/secrets-management/SKILL.md",
-  "source": "github.com/a5c-ai/babysitter",
-  "downloaded_at": "2026-02-02T04:47:47.749589Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/secrets-management/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:24.897304Z"
 }

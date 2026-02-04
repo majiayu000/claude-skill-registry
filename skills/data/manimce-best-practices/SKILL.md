@@ -127,8 +127,9 @@ class MyScene(Scene):
 1. **Version confusion** - Ensure you're using `manim` (Community), not `manimgl` (3b1b version)
 2. **Check imports** - `from manim import *` is ManimCE; `from manimlib import *` is ManimGL
 3. **Outdated tutorials** - Video tutorials may be outdated; prefer official documentation
-4. **manimpango issues** - If text rendering fails, check manimpango installation requirements
+4. **manimpango issues** - If text rendering fails, check manimpango installation requirements. **Required System Libs**: `libpango1.0-dev`, `libcairo2-dev`, `libffi-dev`, `ffmpeg`.
 5. **PATH issues (Windows)** - If `manim` command not found, use `python -m manim` or check PATH
+6. **Directory Context** - Always `cd` into the directory containing your `.py` script before rendering to ensure media paths are resolved correctly relative to the project root.
 
 ### Installation
 
@@ -138,6 +139,9 @@ pip install manim
 
 # Check installation
 manim checkhealth
+
+# Required OS Packages (Linux)
+# sudo apt-get install libpango1.0-dev libcairo2-dev libffi-dev ffmpeg
 ```
 
 ### Useful Commands

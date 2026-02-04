@@ -5,7 +5,21 @@ description: How the devbox automatically updates llm-agents (claude-code) via G
 
 # Automated Updates
 
-The devbox automatically keeps `llm-agents` (which provides claude-code) up to date via a GitHub Actions + systemd timer pipeline.
+The devbox automatically keeps `llm-agents` packages up to date via a GitHub Actions + systemd timer pipeline.
+
+## What Gets Updated
+
+The pipeline updates the `llm-agents` input in `flake.lock`, which provides:
+
+- **claude-code**: Official Claude Code CLI
+- **ccusage**: Usage analytics and statusline
+- **beads**: Distributed issue tracker
+- **opencode**: OpenCode CLI (alternative AI coding tool)
+- **ccusage-opencode**: Usage tracking for OpenCode
+
+All packages use Numtide's binary cache for fast updates.
+
+**Note**: The oh-my-opencode *plugin* is NOT managed by this pipeline. It's an npm package installed per-machine via `npx oh-my-opencode install`. See the `setting-up-oh-my-opencode` skill for configuration details.
 
 ## How It Works
 

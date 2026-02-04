@@ -1,48 +1,20 @@
 ---
 name: course-difficulty-concern
-description: |
-  Customer expresses concern about course difficulty level or prerequisite knowledge needed.
-sample_size: 77
-validation:
-  required_phrases:
-    - "let me know if"
-  forbidden_patterns: []
-metrics:
-  sample_size: 77
-  avg_thread_length: 2.62
-  top_phrases:
-    - phrase: "let me know if"
-      count: 10
-      percent: 13
-    - phrase: "me know if you"
-      count: 8
-      percent: 10.4
-    - phrase: "know if you have"
-      count: 8
-      percent: 10.4
-    - phrase: "if you have any"
-      count: 8
-      percent: 10.4
-    - phrase: "thanks for reaching out"
-      count: 8
-      percent: 10.4
-    - phrase: "thanks for the feedback"
-      count: 5
-      percent: 6.5
-    - phrase: "feedback and giving the"
-      count: 5
-      percent: 6.5
-    - phrase: "and giving the course"
-      count: 5
-      percent: 6.5
-    - phrase: "giving the course a"
-      count: 5
-      percent: 6.5
-    - phrase: "the course a go"
-      count: 5
-      percent: 6.5
+description: Advise on course difficulty and prerequisites. Use when a customer is unsure about the level or required knowledge.
+metadata:
+  trigger_phrases:
+      - "advise course"
+      - "course difficulty"
+      - "difficulty prerequisites"
+  related_skills: ["learning-path-guidance", "certificate-request", "pricing-inquiry", "continuing-education-credits", "lesson-content-question"]
+  sample_size: "77"
+  validation: |
+    required_phrases:
+      - "let me know if"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 77\navg_thread_length: 2.62\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 10\n    percent: 13\n  - phrase: \"me know if you\"\n    count: 8\n    percent: 10.4\n  - phrase: \"know if you have\"\n    count: 8\n    percent: 10.4\n  - phrase: \"if you have any\"\n    count: 8\n    percent: 10.4\n  - phrase: \"thanks for reaching out\"\n    count: 8\n    percent: 10.4\n  - phrase: \"thanks for the feedback\"\n    count: 5\n    percent: 6.5\n  - phrase: \"feedback and giving the\"\n    count: 5\n    percent: 6.5\n  - phrase: \"and giving the course\"\n    count: 5\n    percent: 6.5\n  - phrase: \"giving the course a\"\n    count: 5\n    percent: 6.5\n  - phrase: \"the course a go\"\n    count: 5\n    percent: 6.5"
 ---
-
 # Course Difficulty or Prerequisites
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

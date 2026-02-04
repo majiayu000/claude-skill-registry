@@ -1,6 +1,7 @@
 ---
 name: agentica-spawn
 description: Spawn Agentica multi-agent patterns
+user-invocable: false
 ---
 
 # Agentica Spawn Skill

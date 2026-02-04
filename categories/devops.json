@@ -1,7 +1,7 @@
 {
   "category": "devops",
-  "count": 3161,
-  "updated_at": "2026-02-02T05:16:12.756821Z",
+  "count": 3145,
+  "updated_at": "2026-02-04T05:27:36.245438Z",
   "skills": [
     {
       "name": "create-pr-n8n-io-n8n",
@@ -6334,20 +6334,6 @@
       "source": "local"
     },
     {
-      "name": "news",
-      "description": "Reports on the newest news on a specific topic. Use when the user is asking about news, recent events or advancements",
-      "repo": "MykalMachon/llm-config",
-      "path": "data/news",
-      "branch": "main",
-      "category": "devops",
-      "tags": [
-        "news"
-      ],
-      "stars": 3,
-      "install": "MykalMachon/llm-config",
-      "source": "local"
-    },
-    {
       "name": "paper-validator",
       "description": "This skill should be used when conducting comprehensive reviews of research papers for top-tier computer science conferences. Use for identifying weaknesses, unclear statements, missing evidence, and ",
       "repo": "minhuw/claude-writer",
@@ -11761,18 +11747,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "ansible-error-handling",
-      "description": "This skill should be used when implementing error handling in Ansible, using block/rescue/always patterns, creating retry logic with until/retries, handling expected failures gracefully, or providing ",
-      "repo": "basher83/lunar-claude",
-      "path": "data/ansible-error-handling",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "ansible-host-limiter",
       "description": "Ensures ansible and ansible-playbook commands always include the -l (limit) flag to target only ndelucca-server and prevent accidental execution on raspberry-printer or other hosts. Activate this skil",
       "repo": "ndelucca/environment",
@@ -11814,18 +11788,6 @@
       "tags": [],
       "stars": 0,
       "install": "basher83/lunar-claude/plugins/infrastructure/ansible-workflows/skills/ansible-idempotency",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "ansible-idempotency",
-      "description": "This skill should be used when writing idempotent Ansible tasks, using command or shell modules, implementing changed_when and failed_when directives, creating check-before-create patterns, or trouble",
-      "repo": "basher83/lunar-claude",
-      "path": "data/ansible-idempotency",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -11901,18 +11863,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "ansible-proxmox",
-      "description": "This skill should be used when automating Proxmox VE with Ansible, creating VMs or templates, managing Proxmox clusters, using community.proxmox collection, or deciding between native modules and CLI ",
-      "repo": "basher83/lunar-claude",
-      "path": "data/ansible-proxmox",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "ansible-secrets",
       "description": "This skill should be used when working with secrets in Ansible playbooks, integrating Infisical vault, using no_log directive, retrieving credentials securely, or implementing fallback patterns for se",
       "repo": "basher83/lunar-claude",
@@ -11922,18 +11872,6 @@
       "tags": [],
       "stars": 0,
       "install": "basher83/lunar-claude/plugins/infrastructure/ansible-workflows/skills/ansible-secrets",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "ansible-secrets",
-      "description": "This skill should be used when working with secrets in Ansible playbooks, integrating Infisical vault, using no_log directive, retrieving credentials securely, or implementing fallback patterns for se",
-      "repo": "basher83/lunar-claude",
-      "path": "data/ansible-secrets",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -12249,18 +12187,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/02-devops-advanced/argocd-app-deployer",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "argocd-app-deployer",
-      "description": "Argocd App Deployer - Auto-activating skill for DevOps Advanced.Triggers on: argocd app deployer, argocd app deployerPart of the DevOps Advanced skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/argocd-app-deployer",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -16021,18 +15947,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "cloudflare-deploy",
-      "description": "Deploy the resume app to Cloudflare Pages using the documented build and wrangler steps. Use when deploying, troubleshooting deploys, or updating Pages-related CI configuration.",
-      "repo": "salieri/resume",
-      "path": "data/cloudflare-deploy",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "salieri/resume",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "cloudflare-deployment",
       "description": "Deploy and manage Cloudflare Workers, Pages, KV, R2, and D1 using wrangler CLI or MCP server. Use when working with Cloudflare services, serverless functions, or edge deployments.",
       "repo": "AutumnsGrove/GroveEngine",
@@ -17326,18 +17240,6 @@
       "tags": [],
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/ai-engineering/cost-latency-optimizer",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "cost-latency-optimizer",
-      "description": "Reduces LLM costs and improves response times through caching, model selection, batching, and prompt optimization. Provides cost breakdowns, latency hotspots, and configuration recommendations. Use fo",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/cost-latency-optimizer",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -20837,18 +20739,6 @@
       "tags": [],
       "stars": 0,
       "install": "obeone/claude-skills/dockerfile-best-practices/dockerfile-best-practices",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "dockerfile-best-practices",
-      "description": "Create and optimize Dockerfiles with BuildKit, multi-stage builds, advanced caching, and security. Use when: (1) Creating new Dockerfile, (2) Optimizing existing Dockerfile, (3) Reducing image size, (",
-      "repo": "obeone/claude-skills",
-      "path": "data/dockerfile-best-practices",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "obeone/claude-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -24962,22 +24852,6 @@
       ],
       "stars": 0,
       "install": "gurupak/todo-evolution/.claude/skills/helm-chart-generator",
-      "source": "local"
-    },
-    {
-      "name": "helm-chart-generator",
-      "description": "Generate production-ready Helm charts for Kubernetes apps. Use when: (1) Deploying applications to Kubernetes, (2) Containerizing apps for Minikube/K8s, (3) Creating reusable deployment packages, (4) ",
-      "repo": "gurupak/todo-evolution",
-      "path": "data/helm-chart-generator",
-      "branch": "main",
-      "category": "devops",
-      "tags": [
-        "helm",
-        "chart",
-        "generator"
-      ],
-      "stars": 0,
-      "install": "gurupak/todo-evolution",
       "source": "local"
     },
     {
@@ -30134,18 +30008,6 @@
       "tags": [],
       "stars": 0,
       "install": "Karlito8888/new-ggv-gps/.claude/skills/netlify-deploy",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "netlify-deploy",
-      "description": "Déploiement et gestion du site MyGGV GPS sur Netlify. Utiliser pour déployer, vérifier le statut, gérer les variables d'environnement et les configurations de projet.",
-      "repo": "Karlito8888/new-ggv-gps",
-      "path": "data/netlify-deploy",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "Karlito8888/new-ggv-gps",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -35502,18 +35364,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "scalability-playbook",
-      "description": "Identifies performance bottlenecks and provides ordered scaling strategies with triggers, phased plans, and cost implications. Use for \"scalability planning\", \"performance bottlenecks\", \"capacity plan",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/scalability-playbook",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "scene-writing",
       "description": "Write fiction scenes following Stephen King principles and the McDonald opening rule. Use when drafting new scenes, editing existing prose, or writing chapters. Triggers include \"write scene\", \"draft ",
       "repo": "keberle/fiction-kit-rebound-specialist",
@@ -35741,18 +35591,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/13-aws-skills/security-group-generator",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "security-group-generator",
-      "description": "Security Group Generator - Auto-activating skill for AWS Skills.Triggers on: security group generator, security group generatorPart of the AWS Skills skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/security-group-generator",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -37208,18 +37046,6 @@
       "tags": [],
       "stars": 0,
       "install": "Euda1mon1a/Autonomous-Assignment-Program-Manager/.claude/skills/startupO-lite",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "startupo-lite",
-      "description": "RAG-first ORCHESTRATOR startup. Minimal context (~500 tokens), queries RAG on-demand. Token-efficient alternative to startupO.",
-      "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-      "path": "data/startupo-lite",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -39038,18 +38864,6 @@
       "tags": [],
       "stars": 0,
       "install": "jeremylongshore/claude-code-plugins-plus-skills/planned-skills/generated/08-ml-deployment/triton-inference-config",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "triton-inference-config",
-      "description": "Triton Inference Config - Auto-activating skill for ML Deployment.Triggers on: triton inference config, triton inference configPart of the ML Deployment skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/triton-inference-config",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -41483,18 +41297,6 @@
       "tags": [],
       "stars": 0,
       "install": "kylesnowschwartz/dotfiles/claude/skills/yq",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "yq",
-      "description": "This skill should be used when the user asks to \"get a field from docker-compose\", \"extract value from yaml\", \"what services are in this compose file\", \"get the image from kubernetes manifest\", \"pull ",
-      "repo": "kylesnowschwartz/dotfiles",
-      "path": "data/yq",
-      "branch": "main",
-      "category": "devops",
-      "tags": [],
-      "stars": 0,
-      "install": "kylesnowschwartz/dotfiles",
       "source": "SkillsMP + GitHub Raw"
     },
     {

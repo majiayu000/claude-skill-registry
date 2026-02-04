@@ -22,6 +22,7 @@ Parse semantic version strings and validate semver compliance.
 Accept version string in various formats.
 
 **Expected Input**:
+
 - `versionString`: String (e.g., "v0.7.0", "0.7.0", "version: 0.7.0", "Ver. 1.2.3-beta.1")
 
 ### Step 2: Extract Version Pattern
@@ -29,6 +30,7 @@ Accept version string in various formats.
 Use regex to extract semver pattern.
 
 **Patterns to Match**:
+
 - `X.Y.Z`: Basic semver
 - `vX.Y.Z`: With 'v' prefix
 - `X.Y.Z-prerelease`: With prerelease tag
@@ -36,6 +38,7 @@ Use regex to extract semver pattern.
 - Full semver: `X.Y.Z-prerelease+build`
 
 **Regex**:
+
 ```
 (\d+)\.(\d+)\.(\d+)(?:-([a-zA-Z0-9.-]+))?(?:\+([a-zA-Z0-9.-]+))?
 ```
@@ -45,6 +48,7 @@ Use regex to extract semver pattern.
 Extract major, minor, patch, and optional components.
 
 **Components**:
+
 - `major`: First number
 - `minor`: Second number
 - `patch`: Third number
@@ -56,6 +60,7 @@ Extract major, minor, patch, and optional components.
 Check if version follows semantic versioning 2.0.0 spec.
 
 **Validation Rules**:
+
 - Major, minor, patch must be non-negative integers
 - Prerelease and build must match allowed characters
 - No leading zeros in numeric identifiers (except 0 itself)
@@ -65,6 +70,7 @@ Check if version follows semantic versioning 2.0.0 spec.
 Return structured version object.
 
 **Expected Output**:
+
 ```json
 {
   "major": 0,
@@ -90,11 +96,13 @@ Return structured version object.
 ### Example 1: Basic Version
 
 **Input**:
+
 ```
 versionString: "0.7.0"
 ```
 
 **Output**:
+
 ```json
 {
   "major": 0,
@@ -112,11 +120,13 @@ versionString: "0.7.0"
 ### Example 2: Version with Prefix
 
 **Input**:
+
 ```
 versionString: "v1.2.3"
 ```
 
 **Output**:
+
 ```json
 {
   "major": 1,
@@ -134,11 +144,13 @@ versionString: "v1.2.3"
 ### Example 3: Prerelease Version
 
 **Input**:
+
 ```
 versionString: "2.0.0-beta.1"
 ```
 
 **Output**:
+
 ```json
 {
   "major": 2,
@@ -156,11 +168,13 @@ versionString: "2.0.0-beta.1"
 ### Example 4: Full Semver with Build
 
 **Input**:
+
 ```
 versionString: "1.0.0-alpha.1+001"
 ```
 
 **Output**:
+
 ```json
 {
   "major": 1,
@@ -178,11 +192,13 @@ versionString: "1.0.0-alpha.1+001"
 ### Example 5: Extract from Text
 
 **Input**:
+
 ```
 versionString: "Version: 0.8.0 released on 2025-10-17"
 ```
 
 **Output**:
+
 ```json
 {
   "major": 0,
@@ -200,11 +216,13 @@ versionString: "Version: 0.8.0 released on 2025-10-17"
 ### Example 6: Invalid Version
 
 **Input**:
+
 ```
 versionString: "1.2.a"
 ```
 
 **Output**:
+
 ```json
 {
   "valid": false,

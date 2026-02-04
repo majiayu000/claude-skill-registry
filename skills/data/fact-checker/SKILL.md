@@ -1,283 +1,475 @@
 ---
 name: fact-checker
-description: Verifies factual claims in documents using web search and official sources, then proposes corrections with user confirmation. Use when the user asks to fact-check, verify information, validate claims, check accuracy, or update outdated information in documents. Supports AI model specs, technical documentation, statistics, and general factual statements.
+description: Protocolo Anti-Alucinacao. Valida TODAS as afirmacoes antes de responder. Usa MCPs, busca no codebase e verifica dados no MongoDB. NUNCA assume, SEMPRE verifica. Use quando precisar de respostas 100% factuais ou para validar informacoes criticas.
+allowed-tools: Read, Grep, Glob, Bash, mcp__mongo__find_documents, mcp__mongo__list_collections, mcp__mongo__get_collection_schema, mcp__perplexity__perplexity_ask, mcp__perplexity__perplexity_search, mcp__context7__resolve-library-id, mcp__context7__query-docs
 ---
 
-# Fact Checker
+# Fact Checker Skill - Protocolo Anti-Alucinacao
 
-Verify factual claims in documents and propose corrections backed by authoritative sources.
+## Missao
+Eliminar alucinacoes garantindo que TODA afirmacao seja verificada em fonte primaria antes de ser apresentada ao usuario.
 
-## When to use
+---
 
-Trigger when users request:
-- "Fact-check this document"
-- "Verify these AI model specifications"
-- "Check if this information is still accurate"
-- "Update outdated data in this file"
-- "Validate the claims in this section"
+## REGRA DE OURO: VERIFICAR ANTES DE AFIRMAR
 
-## Workflow
+### NUNCA FACA:
+- Assumir que um arquivo existe sem verificar
+- Afirmar estrutura de dados sem consultar schema
+- Citar numeros/estatisticas sem fonte
+- Dizer "provavelmente" ou "deve ser"
+- Inventar nomes de funcoes, variaveis ou arquivos
+- Extrapolar comportamento sem evidencia no codigo
 
-Copy this checklist to track progress:
+### SEMPRE FACA:
+- Verificar existencia de arquivos com `Glob` ou `ls`
+- Ler o arquivo ANTES de comentar sobre seu conteudo
+- Consultar MongoDB para dados reais
+- Usar Grep para localizar funcoes/variaveis
+- Citar linha exata do codigo fonte
+- Dizer "nao encontrei" quando nao encontrar
 
+---
+
+## PROTOCOLO DE VERIFICACAO (V.E.R.I.F.Y)
+
+### V - Validate Existence (Validar Existencia)
+Antes de mencionar qualquer arquivo, verificar se existe:
+
+```bash
+# ERRADO: Assumir que arquivo existe
+"O arquivo controllers/pagamentoController.js..."
+
+# CERTO: Verificar primeiro
+ls -la controllers/ | grep -i pagamento
+# Se nao encontrar:
+find . -name "*pagamento*" -type f
 ```
-Fact-checking Progress:
-- [ ] Step 1: Identify factual claims
-- [ ] Step 2: Search authoritative sources
-- [ ] Step 3: Compare claims against sources
-- [ ] Step 4: Generate correction report
-- [ ] Step 5: Apply corrections with user approval
+
+### E - Extract Real Data (Extrair Dados Reais)
+Nunca inventar dados. Sempre consultar fonte:
+
+```bash
+# Para dados do MongoDB:
+mcp__mongo__find_documents({
+  collection: "times",
+  query: '{"temporada": 2026}',
+  limit: 5
+})
+
+# Para estrutura de collections:
+mcp__mongo__get_collection_schema({
+  collection: "extratofinanceirocaches",
+  sampleSize: 3
+})
 ```
 
-### Step 1: Identify factual claims
+### R - Read Before Responding (Ler Antes de Responder)
+NUNCA comentar sobre codigo sem ler:
 
-Scan the document for verifiable statements:
+```bash
+# ERRADO: "A funcao calcularSaldo provavelmente faz X..."
 
-**Target claim types:**
-- Technical specifications (context windows, pricing, features)
-- Version numbers and release dates
-- Statistical data and metrics
-- API capabilities and limitations
-- Benchmark scores and performance data
+# CERTO: Ler primeiro
+cat controllers/extratoFinanceiroCacheController.js | grep -A 20 "calcularSaldo"
+# Entao comentar com base no codigo real
+```
 
-**Skip subjective content:**
-- Opinions and recommendations
-- Explanatory prose
-- Tutorial instructions
-- Architectural discussions
+### I - Investigate Dependencies (Investigar Dependencias)
+Mapear conexoes reais entre arquivos:
 
-### Step 2: Search authoritative sources
+```bash
+# Quem usa esta funcao?
+grep -rn "calcularSaldo" . --include="*.js"
 
-For each claim, search official sources:
+# Quais arquivos importam este modulo?
+grep -rn "require.*extratoFinanceiroCache" . --include="*.js"
+```
 
-**AI models:**
-- Official announcement pages (anthropic.com/news, openai.com/index, blog.google)
-- API documentation (platform.claude.com/docs, platform.openai.com/docs)
-- Developer guides and release notes
+### F - Find External Sources (Buscar Fontes Externas)
+Para informacoes fora do codebase:
 
-**Technical libraries:**
-- Official documentation sites
-- GitHub repositories (releases, README)
-- Package registries (npm, PyPI, crates.io)
+```javascript
+// API/Framework documentation:
+mcp__context7__query_docs({
+  libraryId: "/expressjs/express",
+  query: "middleware error handling"
+})
 
-**General claims:**
-- Academic papers and research
-- Government statistics
-- Industry standards bodies
+// Informacoes nao-documentadas (API Cartola):
+mcp__perplexity__perplexity_ask({
+  messages: [{
+    role: "user",
+    content: "Quais endpoints da API Cartola FC retornam dados de mercado?"
+  }]
+})
+```
 
-**Search strategy:**
-- Use model names + specification (e.g., "Claude Opus 4.5 context window")
-- Include current year for recent information
-- Verify from multiple sources when possible
-
-### Step 3: Compare claims against sources
-
-Create a comparison table:
-
-| Claim in Document | Source Information | Status | Authoritative Source |
-|-------------------|-------------------|--------|---------------------|
-| Claude 3.5 Sonnet: 200K tokens | Claude Sonnet 4.5: 200K tokens | ❌ Outdated model name | platform.claude.com/docs |
-| GPT-4o: 128K tokens | GPT-5.2: 400K tokens | ❌ Incorrect version & spec | openai.com/index/gpt-5-2 |
-
-**Status codes:**
-- ✅ Accurate - claim matches sources
-- ❌ Incorrect - claim contradicts sources
-- ⚠️ Outdated - claim was true but superseded
-- ❓ Unverifiable - no authoritative source found
-
-### Step 4: Generate correction report
-
-Present findings in structured format:
+### Y - Yield Uncertainty (Admitir Incerteza)
+Quando nao encontrar evidencia:
 
 ```markdown
-## Fact-Check Report
+# ERRADO:
+"A funcao X faz Y" (sem evidencia)
 
-### Summary
-- Total claims checked: X
-- Accurate: Y
-- Issues found: Z
-
-### Issues Requiring Correction
-
-#### Issue 1: Outdated AI Model Reference
-**Location:** Line 77-80 in docs/file.md
-**Current claim:** "Claude 3.5 Sonnet: 200K tokens"
-**Correction:** "Claude Sonnet 4.5: 200K tokens"
-**Source:** https://platform.claude.com/docs/en/build-with-claude/context-windows
-**Rationale:** Claude 3.5 Sonnet has been superseded by Claude Sonnet 4.5 (released Sept 2025)
-
-#### Issue 2: Incorrect Context Window
-**Location:** Line 79 in docs/file.md
-**Current claim:** "GPT-4o: 128K tokens"
-**Correction:** "GPT-5.2: 400K tokens"
-**Source:** https://openai.com/index/introducing-gpt-5-2/
-**Rationale:** 128K was output limit; context window is 400K. Model also updated to GPT-5.2
+# CERTO:
+"Nao encontrei a funcao X no codebase. Verifiquei em:
+- controllers/ (0 resultados)
+- services/ (0 resultados)
+- routes/ (0 resultados)
+Pode estar em outro local ou nao existir."
 ```
 
-### Step 5: Apply corrections with user approval
+---
 
-**Before making changes:**
+## NIVEIS DE CONFIANCA
 
-1. Show the correction report to the user
-2. Wait for explicit approval: "Should I apply these corrections?"
-3. Only proceed after confirmation
+### ALTA CONFIANCA (Afirmar)
+Usar quando:
+- Leu o arquivo e viu o codigo
+- Consultou MongoDB e obteve dados
+- Verificou com MCP e tem fonte
 
-**When applying corrections:**
-
-```python
-# Use Edit tool to update document
-# Example:
-Edit(
-    file_path="docs/03-写作规范/AI辅助写书方法论.md",
-    old_string="- Claude 3.5 Sonnet: 200K tokens（约 15 万汉字）",
-    new_string="- Claude Sonnet 4.5: 200K tokens（约 15 万汉字）"
-)
-```
-
-**After corrections:**
-
-1. Verify all edits were applied successfully
-2. Note the correction summary (e.g., "Updated 4 claims in section 2.1")
-3. Remind user to commit changes
-
-## Search best practices
-
-### Query construction
-
-**Good queries** (specific, current):
-- "Claude Opus 4.5 context window 2026"
-- "GPT-5.2 official release announcement"
-- "Gemini 3 Pro token limit specifications"
-
-**Poor queries** (vague, generic):
-- "Claude context"
-- "AI models"
-- "Latest version"
-
-### Source evaluation
-
-**Prefer official sources:**
-1. Product official pages (highest authority)
-2. API documentation
-3. Official blog announcements
-4. GitHub releases (for open source)
-
-**Use with caution:**
-- Third-party aggregators (llm-stats.com, etc.) - verify against official sources
-- Blog posts and articles - cross-reference claims
-- Social media - only for announcements, verify elsewhere
-
-**Avoid:**
-- Outdated documentation
-- Unofficial wikis without citations
-- Speculation and rumors
-
-### Handling ambiguity
-
-When sources conflict:
-
-1. Prioritize most recent official documentation
-2. Note the discrepancy in the report
-3. Present both sources to the user
-4. Recommend contacting vendor if critical
-
-When no source found:
-
-1. Mark as ❓ Unverifiable
-2. Suggest alternative phrasing: "According to [Source] as of [Date]..."
-3. Recommend adding qualification: "approximately", "reported as"
-
-## Special considerations
-
-### Time-sensitive information
-
-Always include temporal context:
-
-**Good corrections:**
-- "截至 2026 年 1 月" (As of January 2026)
-- "Claude Sonnet 4.5 (released September 2025)"
-
-**Poor corrections:**
-- "Latest version" (becomes outdated)
-- "Current model" (ambiguous timeframe)
-
-### Numerical precision
-
-Match precision to source:
-
-**Source says:** "approximately 1 million tokens"
-**Write:** "1M tokens (approximately)"
-
-**Source says:** "200,000 token context window"
-**Write:** "200K tokens" (exact)
-
-### Citation format
-
-Include citations in corrections:
-
+Formato:
 ```markdown
-> **注**：具体上下文窗口以模型官方文档为准，本书写作时使用 Claude Sonnet 4.5 为主要工具。
+A funcao `calcularSaldo` em `controllers/extratoFinanceiroCacheController.js:142`
+retorna o saldo calculado como Number.
+[Fonte: leitura direta do arquivo]
 ```
 
-Link to sources when possible.
+### MEDIA CONFIANCA (Indicar)
+Usar quando:
+- Encontrou referencia mas nao o codigo completo
+- MCP retornou informacao parcial
+- Grep encontrou mas contexto incerto
 
-## Examples
+Formato:
+```markdown
+Encontrei referencias a `calcularSaldo` em 3 arquivos:
+- controllers/extratoFinanceiroCacheController.js:142
+- services/financeiro.js:89
+- public/js/fluxo-financeiro/core.js:201
+Preciso ler os arquivos para confirmar comportamento.
+```
 
-### Example 1: Technical specification update
+### BAIXA CONFIANCA (Ressalvar)
+Usar quando:
+- Nao encontrou no codebase
+- MCP nao retornou resultado
+- Baseado em inferencia
 
-**User request:** "Fact-check the AI model context windows in section 2.1"
+Formato:
+```markdown
+NAO ENCONTREI esta funcao no codebase atual.
+Busquei em: controllers/, services/, routes/, models/
+Possibilidades:
+1. Nome diferente do esperado
+2. Funcao ainda nao implementada
+3. Removida em refatoracao recente
+```
 
-**Process:**
-1. Identify claims: Claude 3.5 Sonnet (200K), GPT-4o (128K), Gemini 1.5 Pro (2M)
-2. Search official docs for current models
-3. Find: Claude Sonnet 4.5, GPT-5.2, Gemini 3 Pro
-4. Generate report showing discrepancies
-5. Apply corrections after approval
+---
 
-### Example 2: Statistical data verification
+## CHECKLIST DE VALIDACAO
 
-**User request:** "Verify the benchmark scores in chapter 5"
+Antes de responder, verificar:
 
-**Process:**
-1. Extract numerical claims
-2. Search for official benchmark publications
-3. Compare reported vs. source values
-4. Flag any discrepancies with source links
-5. Update with verified figures
+### Para Afirmacoes sobre Codigo
+- [ ] Li o arquivo que menciono?
+- [ ] Citei linha exata?
+- [ ] Verifiquei se funcao existe?
+- [ ] Confirmei nome correto (case-sensitive)?
 
-### Example 3: Version number validation
+### Para Afirmacoes sobre Dados
+- [ ] Consultei MongoDB?
+- [ ] Dados sao da temporada correta?
+- [ ] Verifiquei collection certa?
+- [ ] Filtrei por liga_id (multi-tenant)?
 
-**User request:** "Check if these library versions are still current"
+### Para Afirmacoes sobre APIs/Libs
+- [ ] Usei Context7 para docs oficiais?
+- [ ] Versao da lib esta correta?
+- [ ] Exemplo e compativel com Node.js?
 
-**Process:**
-1. List all version numbers mentioned
-2. Check package registries (npm, PyPI, etc.)
-3. Identify outdated versions
-4. Suggest updates with changelog references
-5. Update after user confirms
+### Para Afirmacoes sobre Regras de Negocio
+- [ ] Encontrei no CLAUDE.md?
+- [ ] Verificou modelo LigaRules?
+- [ ] Consultou documentacao do sistema?
 
-## Quality checklist
+---
 
-Before completing fact-check:
+## SCRIPTS DE VERIFICACAO RAPIDA
 
-- [ ] All factual claims identified and categorized
-- [ ] Each claim verified against official sources
-- [ ] Sources are authoritative and current
-- [ ] Correction report is clear and actionable
-- [ ] Temporal context included where relevant
-- [ ] User approval obtained before changes
-- [ ] All edits verified successful
-- [ ] Summary provided to user
+### Verificar Existencia de Arquivo
+```bash
+# Por nome exato
+ls -la [path/arquivo.js] 2>/dev/null || echo "ARQUIVO NAO EXISTE"
 
-## Limitations
+# Por padrao
+find . -name "*[palavra-chave]*" -type f 2>/dev/null
+```
 
-**This skill cannot:**
-- Verify subjective opinions or judgments
-- Access paywalled or restricted sources
-- Determine "truth" in disputed claims
-- Predict future specifications or features
+### Verificar Funcao Existe
+```bash
+# Grep com contexto
+grep -rn "function [nomeFuncao]\|[nomeFuncao]\s*=\s*function\|[nomeFuncao]\s*=\s*async" --include="*.js"
+```
 
-**For such cases:**
-- Note the limitation in the report
-- Suggest qualification language
-- Recommend user research or expert consultation
+### Verificar Dados no MongoDB
+```javascript
+// Listar collections
+mcp__mongo__list_collections()
+
+// Buscar documentos
+mcp__mongo__find_documents({
+  collection: "times",
+  query: '{"nome_time": {"$regex": "Flamengo", "$options": "i"}}',
+  limit: 5
+})
+
+// Ver schema
+mcp__mongo__get_collection_schema({ collection: "rodadas", sampleSize: 3 })
+```
+
+### Verificar Documentacao Externa
+```javascript
+// Docs oficiais (Context7)
+mcp__context7__resolve_library_id({ query: "mongoose findOneAndUpdate", libraryName: "mongoose" })
+mcp__context7__query_docs({ libraryId: "/mongoose/mongoose", query: "findOneAndUpdate options" })
+
+// Info nao-documentada (Perplexity)
+mcp__perplexity__perplexity_search({ query: "API Cartola FC endpoints 2026", max_results: 5 })
+```
+
+---
+
+## TRATAMENTO DE ERROS
+
+### Quando Arquivo Nao Existe
+```markdown
+VERIFICACAO: Arquivo `controllers/pagamentoController.js`
+RESULTADO: NAO ENCONTRADO
+
+Busca realizada:
+1. `ls controllers/` - Nao listado
+2. `find . -name "*pagamento*"` - 0 resultados
+3. `grep -r "pagamento" controllers/` - 0 resultados
+
+CONCLUSAO: Este arquivo NAO existe no codebase atual.
+Arquivos de controllers existentes: [listar os reais]
+```
+
+### Quando Funcao Nao Existe
+```markdown
+VERIFICACAO: Funcao `processarPagamento`
+RESULTADO: NAO ENCONTRADA
+
+Busca realizada:
+1. `grep -rn "processarPagamento" .` - 0 resultados
+2. `grep -rn "processar.*pagamento" .` - 0 resultados
+
+CONCLUSAO: Esta funcao NAO existe.
+Funcoes similares encontradas:
+- `registrarAcertoFinanceiro` em controllers/acertoFinanceiroController.js:45
+- `calcularSaldo` em controllers/extratoFinanceiroCacheController.js:142
+```
+
+### Quando Dados Nao Existem
+```markdown
+VERIFICACAO: Collection `pagamentos`
+RESULTADO: NAO ENCONTRADA
+
+Collections existentes no banco:
+- times
+- rodadas
+- extratofinanceirocaches
+- fluxofinanceirocampos
+- acertofinanceiros
+- ligarules
+
+CONCLUSAO: Collection `pagamentos` NAO existe.
+Dados financeiros estao em: acertofinanceiros, fluxofinanceirocampos
+```
+
+---
+
+## FORMATO DE RESPOSTA VERIFICADA
+
+### Estrutura Padrao
+```markdown
+## [Topico/Pergunta]
+
+### Verificacao Realizada
+- [ ] Arquivo X lido: `path/arquivo.js`
+- [ ] Collection Y consultada: `collection_name`
+- [ ] MCP Z usado: Context7/Perplexity
+
+### Resposta Verificada
+[Resposta baseada APENAS em evidencias encontradas]
+
+### Fontes
+1. `path/arquivo.js:linha` - [o que encontrou]
+2. MongoDB collection `X` - [dados relevantes]
+3. MCP Context7 - [documentacao citada]
+
+### Incertezas Remanescentes
+- [Se houver algo que nao conseguiu verificar]
+```
+
+---
+
+## ANTI-PATTERNS (O QUE NAO FAZER)
+
+### 1. Resposta Inventada
+```markdown
+# ERRADO
+"O sistema usa a funcao `processarCompra()` para gerenciar transacoes..."
+(Sem ter verificado se essa funcao existe)
+
+# CERTO
+Primeiro: grep -rn "processarCompra" . --include="*.js"
+Se nao encontrar: "Nao encontrei funcao `processarCompra`. Funcoes de transacao encontradas: [listar as reais]"
+```
+
+### 2. Estrutura de Dados Inventada
+```markdown
+# ERRADO
+"O documento de participante tem campos: nome, email, saldo..."
+(Sem consultar schema real)
+
+# CERTO
+Primeiro: mcp__mongo__get_collection_schema({ collection: "times", sampleSize: 3 })
+Entao: "O schema real inclui: id, nome_time, nome_cartoleiro, ativo, temporada..."
+```
+
+### 3. Numero/Estatistica Inventada
+```markdown
+# ERRADO
+"O sistema tem aproximadamente 50 participantes..."
+(Sem consultar banco)
+
+# CERTO
+Primeiro: mcp__mongo__find_documents({ collection: "times", query: '{"temporada": 2026}', limit: 100 })
+Entao: "Encontrei X participantes na temporada 2026."
+```
+
+### 4. Path de Arquivo Inventado
+```markdown
+# ERRADO
+"Edite o arquivo src/controllers/userController.js..."
+(Sem verificar estrutura real)
+
+# CERTO
+Primeiro: ls -la controllers/ && find . -name "*user*" -type f
+Entao: Citar path REAL encontrado ou informar que nao existe
+```
+
+---
+
+## QUANDO ATIVAR ESTE PROTOCOLO
+
+### Uso Automatico (Sempre Ativo)
+- Afirmacoes sobre codigo existente
+- Mencao a arquivos especificos
+- Citacao de funcoes/variaveis
+- Dados numericos/estatisticas
+
+### Uso Explicito (Usuario Solicita)
+- `/fact-checker [afirmacao]` - Verificar afirmacao especifica
+- "Verifique se..." - Validar informacao
+- "Confirme que..." - Checar existencia
+- "E verdade que..." - Fact-check
+
+---
+
+## METRICAS DE QUALIDADE
+
+### Taxa de Verificacao
+- META: 100% das afirmacoes sobre codigo verificadas
+- META: 100% dos dados do banco consultados antes de citar
+- META: 0% de "provavelmente", "deve ser", "acho que"
+
+### Indicadores de Alucinacao
+Se encontrar estes padroes na resposta, PARAR e verificar:
+- "provavelmente"
+- "deve existir"
+- "imagino que"
+- "normalmente"
+- "geralmente"
+- "pelo que sei"
+- Path que nao foi verificado
+- Nome de funcao que nao foi buscado
+
+---
+
+## INTEGRACAO COM OUTRAS SKILLS
+
+### Com `/pesquisa`
+Fact-checker valida PRD gerado, confirmando que arquivos listados existem.
+
+### Com `/spec`
+Fact-checker verifica se funcoes/modulos citados no SPEC sao reais.
+
+### Com `/code`
+Fact-checker valida que imports e dependencias existem antes de implementar.
+
+### Com `/audit-financa`
+Fact-checker confirma dados financeiros consultando MongoDB diretamente.
+
+---
+
+## EXEMPLO COMPLETO
+
+### Pergunta do Usuario
+"Como funciona o calculo de saldo no sistema?"
+
+### Processo de Verificacao
+```
+1. BUSCAR funcoes de saldo:
+   grep -rn "saldo\|calcular" controllers/ services/ --include="*.js"
+
+2. LER arquivo encontrado:
+   cat controllers/extratoFinanceiroCacheController.js
+
+3. CONSULTAR dados reais:
+   mcp__mongo__get_collection_schema({ collection: "extratofinanceirocaches" })
+
+4. VERIFICAR documentacao:
+   cat CLAUDE.md | grep -A 20 "Fluxo Financeiro"
+```
+
+### Resposta Verificada
+```markdown
+## Calculo de Saldo no Sistema
+
+### Verificacao Realizada
+- [x] Arquivo lido: `controllers/extratoFinanceiroCacheController.js`
+- [x] Collection consultada: `extratofinanceirocaches`
+- [x] CLAUDE.md verificado
+
+### Resposta Verificada
+O saldo e calculado em `controllers/extratoFinanceiroCacheController.js:142-180`.
+A funcao `calcularSaldoFinal()` soma:
+1. `ganho_rodada` de cada rodada (collection `rodadas`)
+2. Campos manuais (collection `fluxofinanceirocampos`)
+3. Acertos financeiros (collection `acertofinanceiros`)
+
+**IMPORTANTE:** O saldo NUNCA e persistido, sempre calculado em tempo real.
+[Fonte: CLAUDE.md secao "Financial Calculation Pattern"]
+
+### Fontes
+1. `controllers/extratoFinanceiroCacheController.js:142` - funcao calcularSaldoFinal
+2. `CLAUDE.md:1870-1878` - padrao de calculo financeiro
+3. MongoDB schema `extratofinanceirocaches` - campos time_id, temporada, ganho_rodada
+
+### Incertezas Remanescentes
+- Nenhuma. Todas as afirmacoes verificadas no codigo.
+```
+
+---
+
+**STATUS:** FACT-CHECKER PROTOCOL - ZERO HALLUCINATION MODE
+
+**Versao:** 1.0
+
+**Principio:** "Se nao verificou, nao afirme."

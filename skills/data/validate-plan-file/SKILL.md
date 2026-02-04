@@ -22,6 +22,7 @@ Validate orchestrator plan files to ensure they conform to the expected schema b
 Use Read tool to load the plan file.
 
 **Expected Input**:
+
 - `file_path`: Path to plan file (e.g., `.bug-detection-plan.json`, `.security-scan-plan.json`)
 
 **Tools Used**: Read
@@ -31,6 +32,7 @@ Use Read tool to load the plan file.
 Map file name pattern to appropriate JSON schema.
 
 **Schema Mapping**:
+
 - `.bug-*-plan.json` → `.claude/schemas/bug-plan.schema.json`
 - `.security-*-plan.json` → `.claude/schemas/security-plan.schema.json`
 - `.dead-code-*-plan.json` → `.claude/schemas/dead-code-plan.schema.json`
@@ -38,6 +40,7 @@ Map file name pattern to appropriate JSON schema.
 - `.version-*-plan.json` → base schema (version update workflow)
 
 **New Naming Convention** (standardized):
+
 - Bug workflow: `.bug-detection-plan.json`, `.bug-fixing-plan.json`, `.bug-verification-plan.json`
 - Security workflow: `.security-scan-plan.json`, `.security-remediation-plan.json`, `.security-verification-plan.json`
 - Dead code workflow: `.dead-code-detection-plan.json`, `.dead-code-cleanup-plan.json`, `.dead-code-verification-plan.json`
@@ -54,6 +57,7 @@ Use Read tool to load the appropriate schema file from `.claude/schemas/`.
 Validate the plan file content against the loaded JSON schema.
 
 **Base Schema Validation** (all plan files):
+
 - `workflow`: String (required, e.g., "bug-management", "security-audit")
 - `phase`: String (required, e.g., "detection", "fixing", "verification")
 - `phaseNumber`: Integer (optional, for sequencing)
@@ -66,24 +70,28 @@ Validate the plan file content against the loaded JSON schema.
 **Domain-Specific Validation**:
 
 **Bug Plans**:
+
 - `config.priority`: "critical"|"high"|"medium"|"low"|"all" (required)
 - `config.categories`: Array of bug types (optional)
 - `config.maxBugsPerRun`: Integer (optional, default 50)
 - `config.verifyOnly`: Boolean (optional, default false)
 
 **Security Plans**:
+
 - `config.severity`: "critical"|"high"|"medium"|"low"|"all" (required)
 - `config.categories`: Array of vulnerability types (optional)
 - `config.maxVulnsPerRun`: Integer (optional, default 25)
 - `config.skipSupabaseRLS`: Boolean (optional, default false)
 
 **Dead Code Plans**:
+
 - `config.type`: "critical"|"high"|"medium"|"low"|"all" (required)
 - `config.categories`: Array of dead code types (optional)
 - `config.maxItemsPerRun`: Integer (optional, default 100)
 - `config.safeMode`: Boolean (optional, default true)
 
 **Dependency Plans**:
+
 - `config.category`: "security"|"unused"|"outdated"|"all" (required)
 - `config.severity`: "critical"|"high"|"medium"|"low"|"all" (optional)
 - `config.maxUpdatesPerRun`: Integer (optional, default 10)
@@ -94,6 +102,7 @@ Validate the plan file content against the loaded JSON schema.
 Return detailed validation result with errors/warnings.
 
 **Expected Output**:
+
 ```json
 {
   "valid": true,
@@ -121,11 +130,13 @@ Return detailed validation result with errors/warnings.
 ### Example 1: Valid Bug Detection Plan
 
 **Input**:
+
 ```
 file_path: .bug-detection-plan.json
 ```
 
 **Content**:
+
 ```json
 {
   "workflow": "bug-management",
@@ -151,6 +162,7 @@ file_path: .bug-detection-plan.json
 ```
 
 **Output**:
+
 ```json
 {
   "valid": true,
@@ -165,11 +177,13 @@ file_path: .bug-detection-plan.json
 ### Example 2: Missing Required Field
 
 **Input**:
+
 ```
 file_path: .security-scan-plan.json
 ```
 
 **Content**:
+
 ```json
 {
   "workflow": "security-audit",
@@ -184,6 +198,7 @@ file_path: .security-scan-plan.json
 ```
 
 **Output**:
+
 ```json
 {
   "valid": false,
@@ -201,11 +216,13 @@ file_path: .security-scan-plan.json
 ### Example 3: Invalid Enum Value
 
 **Input**:
+
 ```
 file_path: .dependency-audit-plan.json
 ```
 
 **Content**:
+
 ```json
 {
   "workflow": "dependency-management",
@@ -222,6 +239,7 @@ file_path: .dependency-audit-plan.json
 ```
 
 **Output**:
+
 ```json
 {
   "valid": false,
@@ -238,11 +256,13 @@ file_path: .dependency-audit-plan.json
 ### Example 4: Workflow/Phase Mismatch
 
 **Input**:
+
 ```
 file_path: .bug-fixing-plan.json
 ```
 
 **Content**:
+
 ```json
 {
   "workflow": "security-audit",
@@ -257,6 +277,7 @@ file_path: .bug-fixing-plan.json
 ```
 
 **Output**:
+
 ```json
 {
   "valid": false,
@@ -265,9 +286,7 @@ file_path: .bug-fixing-plan.json
     "Schema mismatch: file pattern suggests 'bug-plan' schema but workflow field is 'security-audit'",
     "Invalid enum value at /phase: 'fixing' not in allowed values ['detection', 'fixing', 'verification'] for bug-plan"
   ],
-  "warnings": [
-    "Consider renaming file to match workflow: .security-remediation-plan.json"
-  ],
+  "warnings": ["Consider renaming file to match workflow: .security-remediation-plan.json"],
   "schema": "bug-plan",
   "schemaPath": ".claude/schemas/bug-plan.schema.json"
 }
@@ -289,6 +308,7 @@ file_path: .bug-fixing-plan.json
 ## Supporting Files
 
 Located in `.claude/schemas/`:
+
 - `base-plan.schema.json`: Base schema for all plan files
 - `bug-plan.schema.json`: Bug management workflow schema
 - `security-plan.schema.json`: Security audit workflow schema
@@ -313,6 +333,7 @@ All orchestrators should use this Skill after creating plan files:
 ## Notes
 
 **JSON Schema Validation**: This Skill performs full JSON Schema Draft-07 validation including:
+
 - Type checking (string, number, boolean, array, object)
 - Required properties
 - Enum constraints
@@ -321,6 +342,7 @@ All orchestrators should use this Skill after creating plan files:
 - Array item validation
 
 **File Naming Convention**: Plan files must follow pattern `.{domain}-{phase}-plan.json` where:
+
 - `{domain}`: bug|security|dead-code|dependency
 - `{phase}`: detection|fixing|verification (bugs), scan|remediation|verification (security), etc.
 

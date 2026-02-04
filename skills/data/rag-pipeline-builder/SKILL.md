@@ -1,141 +1,244 @@
 ---
 name: rag-pipeline-builder
-description: Complete RAG (Retrieval-Augmented Generation) pipeline implementation with document ingestion, vector storage, semantic search, and response generation. Supports FastAPI backends with OpenAI and Qdrant. LangChain-free architecture.
-category: backend
-version: 2.0.0
+description: Designs retrieval-augmented generation pipelines for document-based AI assistants. Includes chunking strategies, metadata schemas, retrieval algorithms, reranking, and evaluation plans. Use when building "RAG systems", "document search", "semantic search", or "knowledge bases".
 ---
 
-# RAG Pipeline Builder Skill
+# RAG Pipeline Builder
 
-## Purpose
+Design end-to-end RAG pipelines for accurate document retrieval and generation.
 
-Quickly scaffold and implement production-ready RAG systems with a **pure, lightweight stack** (No LangChain):
-- Intelligent document chunking (Recursive + Markdown aware)
-- Vector embeddings generation (OpenAI SDK)
-- Vector storage and retrieval (Qdrant Client)
-- Context-aware response generation
-- Streaming API endpoints (FastAPI)
+## Pipeline Architecture
 
-## When to Use This Skill
+```
+Documents → Chunking → Embedding → Vector Store → Retrieval → Reranking → Generation
+```
 
-Use this skill when:
-- Building high-performance RAG systems without framework overhead.
-- Needing full control over the ingestion and retrieval logic.
-- Implementing semantic search for technical documentation.
+## Chunking Strategy
 
-## Core Capabilities
-
-### 1. Lightweight Document Chunking
-
-Uses a custom `RecursiveTextSplitter` implementation that mimics LangChain's logic but without the dependency bloat.
-
-**Strategy:**
-1.  **Protect Code Blocks:** Regex replacement ensures code blocks aren't split in the middle.
-2.  **Recursive Splitting:** Splits by paragraphs (`\n\n`), then lines (`\n`), then sentences (`. `) to respect document structure.
-3.  **Token Counting:** Uses `tiktoken` for accurate sizing compatible with OpenAI models.
-
-**Implementation Template:**
 ```python
-# See scripts/chunking_example.py for complete implementation
+# Semantic chunking (recommended)
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-class IntelligentChunker:
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000,        # Characters per chunk
+    chunk_overlap=200,      # Overlap between chunks
+    separators=["\n\n", "\n", ". ", " ", ""],
+    length_function=len,
+)
+
+chunks = splitter.split_text(document.text)
+
+# Add metadata to each chunk
+for i, chunk in enumerate(chunks):
+    chunks[i] = {
+        "text": chunk,
+        "metadata": {
+            "source": document.filename,
+            "page": calculate_page(i),
+            "chunk_id": f"{document.id}_chunk_{i}",
+        }
+    }
+```
+
+## Metadata Schema
+
+```typescript
+interface ChunkMetadata {
+  // Source information
+  document_id: string;
+  source: string;
+  url?: string;
+
+  // Location
+  page?: number;
+  section?: string;
+  chunk_index: number;
+
+  // Content classification
+  content_type: "text" | "code" | "table" | "list";
+  language?: string;
+
+  // Timestamps
+  created_at: Date;
+  updated_at: Date;
+
+  // Retrieval optimization
+  keywords: string[];
+  summary?: string;
+  importance_score?: number;
+}
+```
+
+## Vector Store Setup
+
+```python
+# Pinecone example
+import pinecone
+from langchain.vectorstores import Pinecone
+from langchain.embeddings import OpenAIEmbeddings
+
+pinecone.init(api_key="...", environment="...")
+
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+
+vectorstore = Pinecone.from_documents(
+    documents=chunks,
+    embedding=embeddings,
+    index_name="knowledge-base",
+    namespace="production",
+)
+```
+
+## Retrieval Strategies
+
+```python
+# Hybrid search (dense + sparse)
+def hybrid_retrieval(query: str, k: int = 5):
+    # Dense retrieval (semantic)
+    dense_results = vectorstore.similarity_search(query, k=k*2)
+
+    # Sparse retrieval (keyword - BM25)
+    sparse_results = bm25_search(query, k=k*2)
+
+    # Combine and rerank
+    combined = reciprocal_rank_fusion(dense_results, sparse_results)
+
+    return combined[:k]
+
+# Metadata filtering
+results = vectorstore.similarity_search(
+    query,
+    k=5,
+    filter={
+        "content_type": "code",
+        "language": "python",
+    }
+)
+```
+
+## Reranking
+
+```python
+from sentence_transformers import CrossEncoder
+
+reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+
+def rerank_results(query: str, results: List[Document], top_k: int = 3):
+    # Score each result against query
+    pairs = [(query, doc.page_content) for doc in results]
+    scores = reranker.predict(pairs)
+
+    # Sort by score
+    scored_results = list(zip(results, scores))
+    scored_results.sort(key=lambda x: x[1], reverse=True)
+
+    return [doc for doc, score in scored_results[:top_k]]
+```
+
+## Query Enhancement
+
+```python
+# Query expansion
+def expand_query(query: str) -> str:
+    expansion_prompt = f"""
+    Generate 3 alternative phrasings of this query:
+    "{query}"
+
+    Return as JSON array of strings.
     """
-    Markdown-aware chunking that preserves structure (LangChain-free)
-    """
-    def __init__(self, chunk_size=1000, overlap=200):
-        # ... (uses standalone RecursiveTextSplitter)
+    alternatives = llm(expansion_prompt)
+    return [query] + alternatives
+
+# Multi-query retrieval
+def multi_query_retrieval(query: str, k: int = 5):
+    queries = expand_query(query)
+    all_results = []
+
+    for q in queries:
+        results = vectorstore.similarity_search(q, k=k)
+        all_results.extend(results)
+
+    # Deduplicate and rerank
+    unique_results = deduplicate(all_results)
+    return rerank_results(query, unique_results, k)
 ```
 
-### 2. Embedding Generation (OpenAI SDK)
-
-Direct usage of `AsyncOpenAI` client for maximum control and performance.
+## Evaluation Plan
 
 ```python
-from openai import AsyncOpenAI
+# Define golden dataset
+golden_dataset = [
+    {
+        "query": "How do I authenticate users?",
+        "expected_docs": ["auth_guide.md", "user_management.md"],
+        "relevant_chunks": ["chunk_123", "chunk_456"],
+    },
+]
 
-class EmbeddingGenerator:
-    def __init__(self, api_key: str):
-        self.client = AsyncOpenAI(api_key=api_key)
+# Metrics
+def evaluate_retrieval(dataset):
+    results = {
+        "precision": [],
+        "recall": [],
+        "mrr": [],  # Mean Reciprocal Rank
+        "ndcg": []  # Normalized Discounted Cumulative Gain
+    }
 
-    async def embed_batch(self, texts: list[str]) -> list[list[float]]:
-        # Direct API call with batching logic
-        response = await self.client.embeddings.create(
-            model="text-embedding-3-small",
-            input=batch,
-        )
-        return [item.embedding for item in response.data]
+    for item in dataset:
+        retrieved = retrieval_fn(item["query"])
+        retrieved_ids = [doc.metadata["chunk_id"] for doc in retrieved]
+
+        # Calculate metrics
+        relevant = set(item["relevant_chunks"])
+        retrieved_set = set(retrieved_ids)
+
+        precision = len(relevant & retrieved_set) / len(retrieved_set)
+        recall = len(relevant & retrieved_set) / len(relevant)
+
+        results["precision"].append(precision)
+        results["recall"].append(recall)
+
+    return {k: sum(v)/len(v) for k, v in results.items()}
 ```
 
-### 3. Qdrant Integration (Native Client)
-
-Direct integration with `qdrant-client` for vector operations.
+## Context Window Management
 
 ```python
-from qdrant_client import QdrantClient
+def fit_context_window(chunks: List[Document], max_tokens: int = 4000):
+    """Select chunks that fit in context window"""
+    total_tokens = 0
+    selected_chunks = []
 
-class QdrantManager:
-    def upsert_documents(self, documents: list[dict]):
-        # Batch upsert logic
-        self.client.upsert(
-            collection_name=self.collection_name,
-            points=points,
-        )
+    for chunk in chunks:
+        chunk_tokens = count_tokens(chunk.page_content)
+        if total_tokens + chunk_tokens <= max_tokens:
+            selected_chunks.append(chunk)
+            total_tokens += chunk_tokens
+        else:
+            break
+
+    return selected_chunks
 ```
 
-### 4. FastAPI Streaming Endpoints
+## Best Practices
 
-Native FastAPI streaming response handling.
+1. **Chunk size**: 500-1000 chars for general text
+2. **Overlap**: 10-20% overlap between chunks
+3. **Metadata**: Rich metadata for filtering
+4. **Hybrid search**: Combine semantic + keyword
+5. **Reranking**: Cross-encoder for final ranking
+6. **Evaluation**: Golden dataset with metrics
+7. **Context management**: Don't exceed model limits
 
-```python
-from fastapi.responses import StreamingResponse
+## Output Checklist
 
-@app.post("/api/v1/chat")
-async def chat_endpoint(request: ChatRequest):
-    # ... retrieval logic ...
-    
-    return StreamingResponse(generate(), media_type="text/plain")
-```
-
-## Usage Instructions
-
-### 1. Install Lightweight Dependencies
-
-```bash
-pip install -r templates/requirements.txt
-```
-
-*(Note: `langchain` is NOT required)*
-
-### 2. Ingest Documents
-
-```bash
-# Ingest markdown files using the pure-python ingestor
-python scripts/ingest_documents.py docs/ --openai-key $OPENAI_API_KEY
-```
-
-### 3. Start API Server
-
-```bash
-uvicorn templates.fastapi-endpoint-template:app --reload
-```
-
-## Performance Benefits
-
-Removing LangChain provides:
-- **Faster Startup:** Reduced import overhead.
-- **Smaller Docker Image:** Significantly fewer dependencies.
-- **Easier Debugging:** No complex abstraction layers or "Chains" to trace through.
-- **Stable API:** You own the logic, immune to framework breaking changes.
-
-## Output Format
-
-When this skill is invoked, provide:
-1.  **Complete Pipeline Code** (LangChain-free)
-2.  **Configuration File** (.env.example)
-3.  **Ingestion Script** (scripts/ingest_documents.py)
-4.  **FastAPI Endpoints** (api/routes/chat.py)
-5.  **Testing Script** (scripts/test_rag.py)
-
-## Time Savings
-
-**With this skill:** ~45 minutes to generate a highly optimized, custom RAG pipeline without framework lock-in.
+- [ ] Chunking strategy defined
+- [ ] Metadata schema documented
+- [ ] Vector store configured
+- [ ] Retrieval algorithm implemented
+- [ ] Reranking pipeline added
+- [ ] Query enhancement (optional)
+- [ ] Context window management
+- [ ] Evaluation dataset created
+- [ ] Metrics implementation
+- [ ] Performance baseline established

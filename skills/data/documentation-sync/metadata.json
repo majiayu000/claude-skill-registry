@@ -1,7 +1,7 @@
 {
   "name": "documentation-sync",
-  "repo": "jayhjenkins/ProductOSv0.2",
-  "path": ".claude/skills/quality-gates/documentation-sync/SKILL.md",
-  "source": "github.com/jayhjenkins/ProductOSv0.2",
-  "downloaded_at": "2026-02-02T05:06:31.234017Z"
+  "repo": "VilnaCRM-Org/user-service",
+  "path": ".claude/skills/documentation-sync/SKILL.md",
+  "source": "github.com/VilnaCRM-Org/user-service",
+  "downloaded_at": "2026-02-04T04:40:24.091239Z"
 }

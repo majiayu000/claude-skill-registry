@@ -1,401 +1,244 @@
 ---
 name: campaign-manager
-description: Эксперт по созданию и управлению Facebook кампаниями. Используй для создания структуры Campaign→AdSet→Ad, настройки таргетинга и масштабирования.
+description: >
+  Goal-oriented binder design campaign planning and health assessment.
+  Use this skill when: (1) Planning a complete binder design campaign,
+  (2) Converting high-level goals into runnable pipelines,
+  (3) Assessing campaign health and pass rates,
+  (4) Diagnosing why designs are failing QC,
+  (5) Estimating time, cost, and expected yields,
+  (6) Selecting between design tools for a specific target.
+
+  This skill orchestrates the other protein design tools.
+  For individual tool parameters, use the specific tool skills.
+license: MIT
+category: orchestration
+tags: [planning, campaign, coordination]
 ---
 
 # Campaign Manager
 
-Ты - эксперт по созданию и управлению рекламными кампаниями в Facebook/Instagram.
+## Goal-oriented design
 
----
+### From goal to pipeline
 
-## Твои задачи
+When user says: "I need 10 good binders for EGFR"
 
-1. **Создание кампаний** - полная структура Campaign → AdSet → Ad
-2. **Настройка таргетинга** - аудитории, интересы, демография, гео
-3. **Управление бюджетами** - CBO vs ABO, распределение
-4. **Масштабирование** - дублирование успешных структур
-5. **Структурные изменения** - реорганизация кампаний
-
----
-
-## Структура Facebook Ads
-
+**Campaign Planning:**
 ```
-Account
-└── Campaign (цель, бюджет CBO)
-    └── AdSet (аудитория, бюджет ABO, schedule)
-        └── Ad (креатив, текст)
-```
-
-### Правила именования
-
-```
-Campaign: {Направление}_{Objective}_{Date}
-AdSet: {Audience}_{Age}_{Geo}_{Placement}
-Ad: {Creative}_{Version}
-```
-
-**Примеры:**
-- `Кухня_LEADS_2025-01`
-- `Lookalike_3pct_25-45_KZ_Feed`
-- `Carousel_Kitchen_v2`
-
----
-
-## Создание кампании
-
-### Шаг 1: Подготовка
-
-1. Прочитай бриф аккаунта → цели, бюджет, аудитория
-2. Определи objective (ODAX)
-3. Спланируй структуру
-
-### Шаг 2: Выбор Objective
-
-| Цель бизнеса | ODAX Objective | Оптимизация |
-|--------------|----------------|-------------|
-| Узнаваемость | OUTCOME_AWARENESS | Reach |
-| Трафик на сайт | OUTCOME_TRAFFIC | Link Clicks |
-| Лиды (формы, WhatsApp) | OUTCOME_LEADS | Leads |
-| Продажи | OUTCOME_SALES | Purchases |
-| Установки приложения | OUTCOME_APP_PROMOTION | App Installs |
-
-### Шаг 3: Создание через MCP
-
-```python
-# 1. Создать кампанию
-campaign = create_campaign(
-    account_id="act_XXX",
-    name="Кухня_LEADS_2025-01",
-    objective="OUTCOME_LEADS",
-    status="PAUSED",  # Всегда создаём в паузе!
-    daily_budget=5000,  # $50 в центах (если CBO)
-    # ИЛИ
-    use_adset_level_budgets=True  # Для ABO
-)
-
-# 2. Создать adset
-adset = create_adset(
-    account_id="act_XXX",
-    campaign_id=campaign["id"],
-    name="Interests_25-45_KZ",
-    optimization_goal="LEAD_GENERATION",
-    billing_event="IMPRESSIONS",
-    daily_budget=2000,  # $20 в центах (если ABO)
-    targeting={
-        "age_min": 25,
-        "age_max": 45,
-        "genders": [2],  # 1=male, 2=female
-        "geo_locations": {
-            "countries": ["KZ"]
-        },
-        "flexible_spec": [{
-            "interests": [{"id": "XXX", "name": "Cooking"}]
-        }]
-    },
-    destination_type="ON_AD",  # Для лид-форм
-    status="PAUSED"
-)
-
-# 3. Загрузить изображение
-image = upload_ad_image(
-    account_id="act_XXX",
-    image_url="https://example.com/image.jpg"
-)
-
-# 4. Создать креатив
-creative = create_ad_creative(
-    account_id="act_XXX",
-    image_hash=image["hash"],
-    name="Kitchen_Carousel_v1",
-    page_id="PAGE_ID",
-    message="Текст объявления",
-    headline="Заголовок",
-    description="Описание",
-    call_to_action_type="LEARN_MORE",
-    link_url="https://example.com"
-)
-
-# 5. Создать объявление
-ad = create_ad(
-    account_id="act_XXX",
-    name="Kitchen_Carousel_v1",
-    adset_id=adset["id"],
-    creative_id=creative["id"],
-    status="PAUSED"
-)
-```
-
-### Шаг 4: Активация
-
-После проверки:
-```python
-resume_adset(adset_id=adset["id"])
-# Или активировать всю кампанию:
-resume_campaign(campaign_id=campaign["id"])
+Goal: 10 high-quality binders for EGFR
+├── Achievable: Yes (standard target)
+├── Recommended pipeline: rfdiffusion → proteinmpnn → colabfold → protein-qc
+├── Estimated designs needed: 500 backbones (to get ~50 passing QC)
+├── Estimated time: 8-12 hours total
+├── Estimated cost: ~$60 (Modal GPU compute)
+└── Expected yield:
+    ├── After backbone (500): 500 structures
+    ├── After sequence (×8): 4,000 sequences
+    ├── After validation: 4,000 predictions
+    ├── After QC (~10-15%): 400-600 candidates
+    └── After clustering: 10-20 diverse final designs
 ```
 
 ---
 
-## Таргетинг
+## Complete pipeline generator
 
-### Поиск интересов
+### Standard miniprotein binder campaign
 
-```python
-# Поиск по ключевому слову
-interests = search_interests(query="cooking", limit=25)
+```bash
+# Step 1: Fetch and prepare target (5 min)
+curl -o target.pdb "https://files.rcsb.org/download/{PDB_ID}.pdb"
+# Trim to binding region if needed
 
-# Результат: список с id, name, audience_size
+# Step 2: Generate backbones (2-3h, ~$15)
+modal run modal_rfdiffusion.py \
+  --pdb target.pdb \
+  --contigs "A1-150/0 70-100" \
+  --hotspot "A45,A67,A89" \
+  --num-designs 500
+
+# Checkpoint: ls output/*.pdb | wc -l  # Should be 500
+
+# Step 3: Design sequences (1-2h, ~$10)
+for f in output/*.pdb; do
+  modal run modal_proteinmpnn.py \
+    --pdb-path "$f" \
+    --num-seq-per-target 8 \
+    --sampling-temp 0.1
+done
+
+# Checkpoint: grep -c "^>" output/seqs/*.fa  # Should be ~4000
+
+# Step 4: Quick ESM2 filter (30 min, ~$5, optional)
+modal run modal_esm.py --fasta output/all_seqs.fa --mode pll
+# Filter sequences with PLL < 0.0
+
+# Step 5: Structure validation (3-4h, ~$35)
+modal run modal_colabfold.py \
+  --input-faa output/filtered_seqs.fa \
+  --out-dir predictions/
+
+# Checkpoint: find predictions -name "*rank_001.pdb" | wc -l
+
+# Step 6: Filter and rank (protein-qc skill)
+# Apply thresholds: pLDDT > 0.85, ipTM > 0.5, scRMSD < 2.0
+# Compute composite score
+# Cluster at 70% identity, select top from each cluster
 ```
 
-### Структура targeting
+**Total estimated time**: 8-12 hours
+**Total estimated cost**: ~$60-70
+
+---
+
+## Campaign size recommendations
+
+| Goal | Backbones | Sequences/BB | Total Seq | Expected Passing |
+|------|-----------|--------------|-----------|------------------|
+| 5 binders | 200 | 8 | 1,600 | 160-240 |
+| 10 binders | 500 | 8 | 4,000 | 400-600 |
+| 20 binders | 1,000 | 8 | 8,000 | 800-1,200 |
+| 50 binders | 2,500 | 8 | 20,000 | 2,000-3,000 |
+
+**Rule of thumb**: Generate 50x more designs than you need (10-15% pass rate × clustering).
+
+---
+
+## Tool selection guide
+
+### When to use each tool
+
+| Scenario | Recommended Tool | Reason |
+|----------|------------------|--------|
+| Standard miniprotein | RFdiffusion + ProteinMPNN | High diversity, proven |
+| Need higher success rate | BindCraft | Integrated design loop |
+| All-atom precision needed | BoltzGen | Side-chain aware |
+| Difficult target | ColabDesign | AF2 gradient optimization |
+| Need fast iteration | ESMFold + ESM2 | Quick screening |
+
+### Target difficulty assessment
+
+| Indicator | Easy Target | Difficult Target |
+|-----------|-------------|------------------|
+| Surface type | Concave pocket | Flat or convex |
+| Conservation | High | Low |
+| Known binders | Yes | No |
+| Flexibility | Rigid | Flexible |
+| Expected pass rate | 15-20% | 5-10% |
+
+---
+
+## Campaign health assessment
+
+### Quick metrics check
 
 ```python
-targeting = {
-    # Демография
-    "age_min": 25,
-    "age_max": 45,
-    "genders": [1, 2],  # 1=M, 2=F
+import pandas as pd
 
-    # Гео
-    "geo_locations": {
-        "countries": ["KZ", "RU"],
-        "cities": [{"key": "123456"}],
-        "regions": [{"key": "789"}]
-    },
+def assess_campaign(csv_path):
+    df = pd.read_csv(csv_path)
 
-    # Интересы (OR внутри группы)
-    "flexible_spec": [
-        {
-            "interests": [
-                {"id": "123", "name": "Cooking"},
-                {"id": "456", "name": "Home decor"}
-            ]
-        }
-    ],
+    # Calculate pass rates
+    plddt_pass = (df['pLDDT'] > 0.85).mean()
+    iptm_pass = (df['ipTM'] > 0.50).mean()
+    scrmsd_pass = (df['scRMSD'] < 2.0).mean()
+    all_pass = ((df['pLDDT'] > 0.85) & (df['ipTM'] > 0.5) & (df['scRMSD'] < 2.0)).mean()
 
-    # Exclusions
-    "exclusions": {
-        "interests": [{"id": "789", "name": "Competitor"}]
-    },
+    # Determine health
+    if all_pass > 0.15:
+        health = "EXCELLENT"
+    elif all_pass > 0.10:
+        health = "GOOD"
+    elif all_pass > 0.05:
+        health = "MARGINAL"
+    else:
+        health = "POOR"
 
-    # Advantage+ (автоматический таргетинг)
-    "targeting_automation": {
-        "advantage_audience": 1
+    # Identify top issue
+    issues = []
+    if plddt_pass < 0.20:
+        issues.append("Low pLDDT - backbone or sequence issue")
+    if iptm_pass < 0.20:
+        issues.append("Low ipTM - hotspot or interface issue")
+    if scrmsd_pass < 0.50:
+        issues.append("High scRMSD - sequence doesn't specify backbone")
+
+    return {
+        "health": health,
+        "overall_pass_rate": all_pass,
+        "plddt_pass_rate": plddt_pass,
+        "iptm_pass_rate": iptm_pass,
+        "scrmsd_pass_rate": scrmsd_pass,
+        "top_issues": issues
     }
-}
 ```
 
-### Поиск локаций
+### Interpreting results
 
-```python
-# Поиск городов
-locations = search_geo_locations(
-    query="Almaty",
-    location_types=["city"]
-)
+| Health | Pass Rate | Action |
+|--------|-----------|--------|
+| EXCELLENT | > 15% | Proceed to selection |
+| GOOD | 10-15% | Proceed, normal yield |
+| MARGINAL | 5-10% | Review failure tree |
+| POOR | < 5% | Diagnose and restart |
 
-# Результат: key для использования в targeting
+---
+
+## Cost estimation
+
+### Per-tool costs (Modal)
+
+| Tool | GPU | $/hour | Typical Job | Cost |
+|------|-----|--------|-------------|------|
+| RFdiffusion | A10G | ~$1.20 | 500 designs/2h | ~$2.50 |
+| ProteinMPNN | T4 | ~$0.60 | 4000 seq/1.5h | ~$1.00 |
+| ESM2 (PLL) | A10G | ~$1.20 | 4000 seq/30min | ~$0.60 |
+| ColabFold | A100 | ~$4.50 | 4000 preds/4h | ~$18.00 |
+| Chai | A100 | ~$4.50 | 500 preds/1h | ~$4.50 |
+
+### Campaign cost estimates
+
+| Campaign Size | Total Cost | Notes |
+|---------------|------------|-------|
+| Small (100 bb) | ~$15 | Quick exploration |
+| Standard (500 bb) | ~$60 | Most campaigns |
+| Large (1000 bb) | ~$120 | Comprehensive |
+| XL (5000 bb) | ~$600 | Very thorough |
+
+---
+
+## Pipeline variants
+
+### High-throughput (maximize diversity)
+
+```bash
+# More backbones, fewer sequences each
+modal run modal_rfdiffusion.py --num-designs 2000
+modal run modal_proteinmpnn.py --num-seq-per-target 4 --sampling-temp 0.2
 ```
 
-### Оценка аудитории
+### High-quality (maximize per-design quality)
 
-```python
-estimate = estimate_audience_size(
-    account_id="act_XXX",
-    targeting={
-        "age_min": 25,
-        "age_max": 45,
-        "geo_locations": {"countries": ["KZ"]},
-        "flexible_spec": [{"interests": [{"id": "123"}]}]
-    }
-)
+```bash
+# Fewer backbones, more sequences each, lower temperature
+modal run modal_rfdiffusion.py --num-designs 200
+modal run modal_proteinmpnn.py --num-seq-per-target 32 --sampling-temp 0.1
+```
 
-# Результат: estimated_audience_size
+### Quick exploration (fast iteration)
+
+```bash
+# Small batch, ESMFold instead of ColabFold
+modal run modal_rfdiffusion.py --num-designs 50
+modal run modal_proteinmpnn.py --num-seq-per-target 8
+modal run modal_esmfold.py --fasta all_seqs.fa  # Faster than ColabFold
 ```
 
 ---
 
-## Lookalike Audiences
+## See also
 
-### Создание
-
-```python
-# 1. Получить список seed аудиторий
-audiences = get_custom_audiences(account_id="act_XXX")
-
-# 2. Создать lookalike
-lookalike = create_lookalike_audience(
-    account_id="act_XXX",
-    seed_audience_id="SEED_ID",
-    country="KZ",
-    ratio=0.03  # 3%
-)
-```
-
-### Рекомендации по ratio
-
-| Ratio | Размер | Когда использовать |
-|-------|--------|-------------------|
-| 1% | Самые похожие | Лучшая конверсия |
-| 3% | Баланс | Стандартный выбор |
-| 5% | Широкий охват | Масштабирование |
-| 10% | Максимум | Awareness кампании |
-
----
-
-## Бюджеты
-
-### CBO vs ABO
-
-| Тип | Когда использовать |
-|-----|-------------------|
-| **CBO** | 3+ adsets, похожая эффективность |
-| **ABO** | Тестирование, контроль, разные цели |
-
-### Создание с CBO
-
-```python
-create_campaign(
-    account_id="act_XXX",
-    name="Campaign_CBO",
-    objective="OUTCOME_LEADS",
-    daily_budget=10000,  # $100 на кампанию
-    campaign_budget_optimization=True
-)
-```
-
-### Создание с ABO
-
-```python
-create_campaign(
-    account_id="act_XXX",
-    name="Campaign_ABO",
-    objective="OUTCOME_LEADS",
-    use_adset_level_budgets=True  # Бюджеты на adset уровне
-)
-
-create_adset(
-    ...
-    daily_budget=2000  # $20 на adset
-)
-```
-
----
-
-## Масштабирование
-
-### Вертикальное (бюджет)
-
-```python
-# Текущий бюджет $20, увеличиваем на 25%
-update_adset(
-    adset_id="XXX",
-    daily_budget=2500  # $25
-)
-```
-
-### Горизонтальное (дублирование)
-
-1. Найти успешный adset
-2. Создать копию с другой аудиторией
-3. Тестировать на малом бюджете
-
-```python
-# Копия с другим таргетингом
-create_adset(
-    account_id="act_XXX",
-    campaign_id="CAMPAIGN_ID",
-    name="Lookalike_5pct_25-45_KZ",
-    ...  # Те же настройки
-    targeting={
-        # Другая аудитория
-    },
-    daily_budget=2000  # Тестовый бюджет
-)
-```
-
----
-
-## Форматы креативов
-
-### Single Image
-
-```python
-create_ad_creative(
-    account_id="act_XXX",
-    image_hash="HASH",
-    name="Single_Image_v1",
-    page_id="PAGE_ID",
-    message="Текст",
-    headline="Заголовок",
-    link_url="https://..."
-)
-```
-
-### Carousel
-
-```python
-create_website_carousel(
-    account_id="act_XXX",
-    cards=[
-        {"image_hash": "HASH1", "text": "Product 1", "link": "url1"},
-        {"image_hash": "HASH2", "text": "Product 2", "link": "url2"},
-        {"image_hash": "HASH3", "text": "Product 3", "link": "url3"}
-    ],
-    page_id="PAGE_ID",
-    message="Check out our products!",
-    site_url="https://example.com",
-    call_to_action="LEARN_MORE"
-)
-```
-
-### Video
-
-```python
-# 1. Загрузить видео
-video = upload_video(
-    account_id="act_XXX",
-    file_path="/path/to/video.mp4"
-)
-
-# 2. Дождаться обработки
-status = get_video_status(video_id=video["id"])
-# Ждать пока status.video_status == "ready"
-
-# 3. Использовать в креативе
-# (через стандартный create_ad_creative с video)
-```
-
----
-
-## Чек-лист создания кампании
-
-### Перед созданием
-- [ ] Прочитан бриф аккаунта
-- [ ] Выбран правильный objective
-- [ ] Определена структура (CBO/ABO)
-- [ ] Подготовлены креативы
-- [ ] Определена аудитория
-
-### При создании
-- [ ] Создаём в статусе PAUSED
-- [ ] Проверяем размер аудитории (100K-2M)
-- [ ] Устанавливаем правильный бюджет
-- [ ] Используем правильное именование
-
-### После создания
-- [ ] Проверяем структуру
-- [ ] Показываем пользователю
-- [ ] Активируем после подтверждения
-
----
-
-## Важные правила
-
-1. **Всегда создавай в PAUSED** - активируй только после проверки
-2. **Не создавай после 18:00** - по часовому поясу аккаунта
-3. **Минимальный бюджет** - $3 на adset, лучше $10-20
-4. **Проверяй аудиторию** - не слишком узкая (> 100K)
-5. **Именуй понятно** - чтобы было ясно что внутри
+- Tool-specific parameters: `rfdiffusion`, `proteinmpnn`, `colabfold`, `chai`, `boltz`
+- QC thresholds and filtering: `protein-qc`
+- Tool selection guidance: `binder-design`

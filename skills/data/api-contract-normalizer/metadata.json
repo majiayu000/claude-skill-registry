@@ -1,9 +1,7 @@
 {
   "name": "api-contract-normalizer",
-  "description": "Unifies API response patterns across endpoints including pagination format, error structure, status codes, response envelopes, and versioning strategy. Provides contract documentation, shared TypeScri",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/api-contract-normalizer/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:33.220453Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "install-skills",
-  "repo": "codacy-open-source-projects-scans/clickhouse",
+  "repo": "ClickHouse/ClickHouse",
   "path": ".claude/skills/install-skills/SKILL.md",
-  "source": "github.com/codacy-open-source-projects-scans/clickhouse",
-  "downloaded_at": "2026-02-02T04:57:16.155797Z"
+  "source": "github.com/ClickHouse/ClickHouse",
+  "downloaded_at": "2026-02-04T01:42:30.518592Z"
 }

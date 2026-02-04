@@ -1,13 +1,7 @@
 {
   "name": "parse-error-logs",
-  "description": "Parse build errors, test failures, type-check output, and validation logs into structured data. Use when processing npm/pnpm output, TypeScript errors, Jest failures, or any validation command results",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "testing",
-  "tags": [
-    "parse",
-    "error",
-    "logs"
-  ],
-  "stars": 27,
-  "source": "local"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/parse-error-logs/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:10.565673Z"
 }

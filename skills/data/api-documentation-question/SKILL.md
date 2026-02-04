@@ -1,48 +1,20 @@
 ---
 name: api-documentation-question
-description: |
-  Customer asks questions about API usage, code implementation, or technical documentation.
-sample_size: 33
-validation:
-  required_phrases:
-    - "insights can help others"
-  forbidden_patterns: []
-metrics:
-  sample_size: 33
-  avg_thread_length: 2.48
-  top_phrases:
-    - phrase: "insights can help others"
-      count: 13
-      percent: 39.4
-    - phrase: "can help others too"
-      count: 13
-      percent: 39.4
-    - phrase: "plus your questions and"
-      count: 12
-      percent: 36.4
-    - phrase: "your questions and insights"
-      count: 12
-      percent: 36.4
-    - phrase: "questions and insights can"
-      count: 12
-      percent: 36.4
-    - phrase: "and insights can help"
-      count: 12
-      percent: 36.4
-    - phrase: "help others too i"
-      count: 9
-      percent: 27.3
-    - phrase: "others too i hope"
-      count: 9
-      percent: 27.3
-    - phrase: "too i hope this"
-      count: 9
-      percent: 27.3
-    - phrase: "i hope this helps"
-      count: 9
-      percent: 27.3
+description: Answer API and technical documentation questions. Use when a customer asks about API usage, code implementation, or integration details.
+metadata:
+  trigger_phrases:
+      - "answer api"
+      - "api technical"
+      - "technical documentation"
+  related_skills: ["lesson-content-question", "pricing-inquiry", "workshop-technical-setup", "certificate-request", "installment-payment-option"]
+  sample_size: "33"
+  validation: |
+    required_phrases:
+      - "insights can help others"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 33\navg_thread_length: 2.48\ntop_phrases:\n  - phrase: \"insights can help others\"\n    count: 13\n    percent: 39.4\n  - phrase: \"can help others too\"\n    count: 13\n    percent: 39.4\n  - phrase: \"plus your questions and\"\n    count: 12\n    percent: 36.4\n  - phrase: \"your questions and insights\"\n    count: 12\n    percent: 36.4\n  - phrase: \"questions and insights can\"\n    count: 12\n    percent: 36.4\n  - phrase: \"and insights can help\"\n    count: 12\n    percent: 36.4\n  - phrase: \"help others too i\"\n    count: 9\n    percent: 27.3\n  - phrase: \"others too i hope\"\n    count: 9\n    percent: 27.3\n  - phrase: \"too i hope this\"\n    count: 9\n    percent: 27.3\n  - phrase: \"i hope this helps\"\n    count: 9\n    percent: 27.3"
 ---
-
 # API or Technical Documentation Question
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

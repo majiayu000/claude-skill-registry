@@ -9,13 +9,13 @@ Retrieve the current session context from Mira including user preferences, recen
 
 ## Instructions
 
-1. Use the `mcp__mira__get_session_recap` tool
+1. Use the `mcp__mira__session` tool with `action="recap"`
 2. Present the recap in a clear, organized format:
    - **Preferences**: User coding style, tool preferences
    - **Recent Context**: What was worked on recently
    - **Active Goals**: In-progress goals with milestones
 3. Highlight any blocked or high-priority items
-4. If no recap is available, suggest using `remember` to store context
+4. If no recap is available, suggest using `memory(action="remember")` to store context
 
 ## When to Use
 

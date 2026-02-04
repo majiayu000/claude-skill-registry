@@ -1,17 +1,24 @@
 ---
 name: git-sync
-description: Sync with remote repository using pull --rebase. Use when you need to update your local branch with remote changes.
-disable-model-invocation: true
-allowed-tools: Bash(git:*)
+description: Automatically syncs local workspace changes to the remote GitHub repository. Use after significant changes or periodically.
+tags: [git, sync, backup, version-control]
 ---
 
-# Git Sync
+# Git Sync Skill
 
-Sync local branch with remote using rebase.
+Automatically syncs local workspace changes to the remote GitHub repository.
+Designed to be called by PCEC cycles or after significant changes.
 
-1. Fetch the latest changes from the remote repository.
-   - Command: `git fetch origin`
+## Tools
 
-2. Pull and rebase the current branch on top of the remote branch.
-   - Command: `git pull origin HEAD --rebase`
-   - If there are conflicts, resolve them, then `git rebase --continue`.
+### git_sync
+Commit and push changes.
+
+- **message** (optional): Commit message. Defaults to "Auto-sync: Routine evolution update".
+
+## Safety
+- Uses `.gitignore` and `pre-commit` hooks (ADL-compliant) to prevent secret leakage.
+- Checks if there are changes before committing.
+
+## Implementation
+Wrapper around `git add . && git commit && git push`.

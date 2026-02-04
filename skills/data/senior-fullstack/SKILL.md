@@ -15,13 +15,13 @@ This skill provides three core capabilities through automated scripts:
 
 ```bash
 # Script 1: Fullstack Scaffolder
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/fullstack_scaffolder.py [options]
+python scripts/fullstack_scaffolder.py [options]
 
 # Script 2: Project Scaffolder
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/project_scaffolder.py [options]
+python scripts/project_scaffolder.py [options]
 
 # Script 3: Code Quality Analyzer
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/code_quality_analyzer.py [options]
+python scripts/code_quality_analyzer.py [options]
 ```
 
 ## Core Capabilities
@@ -38,7 +38,7 @@ Automated tool for fullstack scaffolder tasks.
 
 **Usage:**
 ```bash
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/fullstack_scaffolder.py <project-path> [options]
+python scripts/fullstack_scaffolder.py <project-path> [options]
 ```
 
 ### 2. Project Scaffolder
@@ -53,7 +53,7 @@ Comprehensive analysis and optimization tool.
 
 **Usage:**
 ```bash
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/project_scaffolder.py <target-path> [--verbose]
+python scripts/project_scaffolder.py <target-path> [--verbose]
 ```
 
 ### 3. Code Quality Analyzer
@@ -68,7 +68,7 @@ Advanced tooling for specialized tasks.
 
 **Usage:**
 ```bash
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/code_quality_analyzer.py [arguments] [options]
+python scripts/code_quality_analyzer.py [arguments] [options]
 ```
 
 ## Reference Documentation
@@ -130,7 +130,7 @@ cp .env.example .env
 
 ```bash
 # Use the analyzer script
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/project_scaffolder.py .
+python scripts/project_scaffolder.py .
 
 # Review recommendations
 # Apply fixes
@@ -179,8 +179,8 @@ npm run test
 npm run lint
 
 # Analysis
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/project_scaffolder.py .
-python3 ~/.{TOOL}/skills/senior-fullstack/scripts/code_quality_analyzer.py --analyze
+python scripts/project_scaffolder.py .
+python scripts/code_quality_analyzer.py --analyze
 
 # Deployment
 docker build -t app:latest .

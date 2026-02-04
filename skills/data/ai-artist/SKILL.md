@@ -1,113 +1,75 @@
 ---
 name: ai-artist
-description: "Generate images via Nano Banana with 129 curated prompts. 3 modes: search (best match), creative (remix), wild (experimental). Actions: generate for banners, portraits, infographics, products. Styles: Ukiyo-e, Bento grid, cyberpunk, cinematic, vintage patent."
-version: 3.0.0
+description: Write and optimize prompts for AI-generated outcomes across text and image models. Use when crafting prompts for LLMs (Claude, GPT, Gemini), image generators (Midjourney, DALL-E, Stable Diffusion, Imagen, Flux), or video generators (Veo, Runway). Covers prompt structure, style keywords, negative prompts, chain-of-thought, few-shot examples, iterative refinement, and domain-specific patterns for marketing, code, and creative writing.
+version: 1.0.0
 license: MIT
 ---
 
-# AI Artist - Nano Banana Image Generation
+# AI Artist - Prompt Engineering
 
-Generate images using 129 curated prompts from awesome-nano-banana-pro-prompts collection.
+Craft effective prompts for AI text and image generation models.
 
-## Quick Start
+## Core Principles
 
-```bash
-python3 scripts/generate.py "<concept>" -o <output.png> [--mode MODE]
+1. **Clarity** - Be specific, avoid ambiguity
+2. **Context** - Set scene, role, constraints upfront
+3. **Structure** - Use consistent formatting (markdown, XML tags, delimiters)
+4. **Iteration** - Refine based on outputs, A/B test variations
+
+## Quick Patterns
+
+### LLM Prompts (Claude/GPT/Gemini)
+
+```
+[Role] You are a {expert type} specializing in {domain}.
+[Context] {Background information and constraints}
+[Task] {Specific action to perform}
+[Format] {Output structure - JSON, markdown, list, etc.}
+[Examples] {1-3 few-shot examples if needed}
 ```
 
-### Generation Modes
+### Image Generation (Midjourney/DALL-E/Stable Diffusion)
 
-| Mode | Description |
-|------|-------------|
-| `search` | Find best matching prompt from 129 curated prompts (default) |
-| `creative` | Remix elements from top 3 matching prompts |
-| `wild` | Out-of-the-box creative interpretation (random style transform) |
-| `all` | Generate all 3 variations |
-
-### Examples
-
-```bash
-# Default search mode
-python3 scripts/generate.py "tech conference banner" -o banner.png -ar 16:9
-
-# Creative remix (combines multiple prompts)
-python3 scripts/generate.py "AI workshop" -o workshop.png --mode creative
-
-# Wild/experimental (random artistic transformation)
-python3 scripts/generate.py "product showcase" -o product.png --mode wild
-
-# Generate all 3 variations at once
-python3 scripts/generate.py "futuristic city" -o city.png --mode all -v
+```
+[Subject] {main subject with details}
+[Style] {artistic style, medium, artist reference}
+[Composition] {framing, angle, lighting}
+[Quality] {resolution modifiers, rendering quality}
+[Negative] {what to avoid - only if supported}
 ```
 
-### Options
-
-| Flag | Description |
-|------|-------------|
-| `-o, --output` | Output path (required) |
-| `-m, --mode` | search, creative, wild, or all |
-| `-ar, --aspect-ratio` | 1:1, 16:9, 9:16, etc. |
-| `--model` | flash (fast) or pro (quality/4K) |
-| `-v, --verbose` | Show matched prompts and details |
-| `--dry-run` | Show prompt without generating |
-
----
-
-## Prompt Database
-
-**129 curated prompts** extracted from awesome-nano-banana-pro-prompts:
-
-```bash
-# Search prompts
-python3 scripts/search.py "<query>" --domain awesome
-
-# View all prompts
-cat data/awesome-prompts.csv
-```
-
-### Categories include:
-- **Profile/Avatar**: Thought-leader headshots, mirror selfies
-- **Infographics**: Bento grid, chalkboard, ingredient labels
-- **Social Media**: Quote cards, banners, thumbnails
-- **Product**: Commercial shots, e-commerce, Apple-style
-- **Artistic**: Ukiyo-e, patent documents, vaporwave, cyberpunk
-- **Character**: Anime, chibi, comic storyboards
-
----
-
-## Wild Mode Transformations
-
-The `wild` mode randomly applies one of these artistic transformations:
-
-- Japanese Ukiyo-e woodblock print
-- Premium liquid glass Bento grid infographic
-- Vintage 1800s patent document
-- Surreal dreamscape with volumetric god rays
-- Cyberpunk neon aesthetic with holograms
-- Hand-drawn chalkboard explanation
-- Isometric 3D diorama
-- Cinematic movie poster
-- Vaporwave aesthetic with glitch effects
-- Apple-style product showcase
-
----
+**Example**: `Portrait of a cyberpunk hacker, neon lighting, cinematic composition, detailed face, 8k, artstation quality --ar 16:9 --style raw`
 
 ## References
 
-| Topic | File |
-|-------|------|
-| All Prompts | `data/awesome-prompts.csv` |
-| Nano Banana Guide | `references/nano-banana.md` |
-| Image Prompting | `references/image-prompting.md` |
-| Source | `references/awesome-nano-banana-pro-prompts.md` |
+Load for detailed guidance:
 
----
+| Topic | File | Description |
+|-------|------|-------------|
+| LLM | `references/llm-prompting.md` | System prompts, few-shot, CoT, output formatting |
+| Image | `references/image-prompting.md` | Style keywords, model syntax, negative prompts |
+| Nano Banana | `references/nano-banana.md` | Gemini image prompting, narrative style, multi-image input |
+| Advanced | `references/advanced-techniques.md` | Meta-prompting, chaining, A/B testing |
+| Domain Index | `references/domain-patterns.md` | Universal pattern, links to domain files |
+| Marketing | `references/domain-marketing.md` | Headlines, product copy, emails, ads |
+| Code | `references/domain-code.md` | Functions, review, refactoring, debugging |
+| Writing | `references/domain-writing.md` | Stories, characters, dialogue, editing |
+| Data | `references/domain-data.md` | Extraction, analysis, comparison |
 
-## Scripts
+## Model-Specific Tips
 
-| Script | Purpose |
-|--------|---------|
-| `generate.py` | Main image generation with 3 modes |
-| `search.py` | Search prompts database |
-| `extract_prompts.py` | Extract prompts from markdown |
-| `core.py` | BM25 search engine |
+| Model | Key Syntax |
+|-------|------------|
+| Midjourney | `--ar`, `--style`, `--chaos`, `--weird`, `--v 6.1` |
+| DALL-E 3 | Natural language, no parameters, HD quality option |
+| Stable Diffusion | Weighted tokens `(word:1.2)`, LoRA, negative prompt |
+| Flux | Natural prompts, style mixing, `--guidance` |
+| Imagen/Veo | Descriptive text, aspect ratio, style references |
+
+## Anti-Patterns
+
+- Vague instructions ("make it better")
+- Conflicting constraints
+- Missing context for domain tasks
+- Over-prompting with redundant details
+- Ignoring model-specific strengths/limits

@@ -1,6 +1,6 @@
 ---
 name: tldr-overview
-description: Generate high-level codebase overview
+description: Get a token-efficient overview of any project using the TLDR stack
 ---
 
 # TLDR Project Overview

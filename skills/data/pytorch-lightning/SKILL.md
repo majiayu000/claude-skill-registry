@@ -1,168 +1,65 @@
 ---
 name: pytorch-lightning
-description: "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure Trainers for multi-GPU/TPU, implement data pipelines, callbacks, logging (W&B, TensorBoard), distributed training (DDP, FSDP, DeepSpeed), for scalable neural network training."
+description: High-level training framework for PyTorch that abstracts boilerplate while maintaining flexibility. Includes the Trainer, LightningModule, and support for multi-GPU scaling and reproducibility. (lightning, pytorch-lightning, lightningmodule, trainer, callback, ddp, fast_dev_run, seed_everything)
 ---
-
-# PyTorch Lightning
 
 ## Overview
 
-PyTorch Lightning is a deep learning framework that organizes PyTorch code to eliminate boilerplate while maintaining full flexibility. Automate training workflows, multi-device orchestration, and implement best practices for neural network training and scaling across multiple GPUs/TPUs.
+PyTorch Lightning is a lightweight wrapper for PyTorch that decouples the research code from the engineering code. It automates 40+ engineering details like epoch loops, optimization, and hardware acceleration, while allowing researchers to retain full control over the model logic.
 
-## When to Use This Skill
+## When to Use
 
-This skill should be used when:
-- Building, training, or deploying neural networks using PyTorch Lightning
-- Organizing PyTorch code into LightningModules
-- Configuring Trainers for multi-GPU/TPU training
-- Implementing data pipelines with LightningDataModules
-- Working with callbacks, logging, and distributed training strategies (DDP, FSDP, DeepSpeed)
-- Structuring deep learning projects professionally
+Use Lightning when you want to scale models to multi-GPU or multi-node environments without changing training code, or when you want to eliminate boilerplate for logging, checkpointing, and reproducibility.
 
-## Core Capabilities
+## Decision Tree
 
-### 1. LightningModule - Model Definition
+1. Are you testing code logic on a small subset?
+   - YES: Use `Trainer(fast_dev_run=True)`.
+2. Do you need to scale to multiple GPUs?
+   - YES: Set `accelerator='gpu'` and `devices=N` in the Trainer.
+3. Do you have logic that is non-essential to the model (e.g., special logging)?
+   - YES: Implement it as a `Callback`.
 
-Organize PyTorch models into six logical sections:
+## Workflows
 
-1. **Initialization** - `__init__()` and `setup()`
-2. **Training Loop** - `training_step(batch, batch_idx)`
-3. **Validation Loop** - `validation_step(batch, batch_idx)`
-4. **Test Loop** - `test_step(batch, batch_idx)`
-5. **Prediction** - `predict_step(batch, batch_idx)`
-6. **Optimizer Configuration** - `configure_optimizers()`
+1. **Transitioning from Raw PyTorch to Lightning**
+   1. Define a class inheriting from `L.LightningModule`.
+   2. Move model architecture into `__init__` and logic into `training_step`.
+   3. Implement `configure_optimizers` to return the optimizer and optional scheduler.
+   4. Instantiate an `L.Trainer` and pass the model and DataLoader to `trainer.fit()`.
 
-**Quick template reference:** See `scripts/template_lightning_module.py` for a complete boilerplate.
+2. **Multi-GPU Training Scaling**
+   1. Initialize the Trainer with `accelerator='gpu'` and `devices=N`.
+   2. Set `strategy='ddp'` or `'deepspeed_stage_2'` for multi-node/large-scale runs.
+   3. Optionally enable 16-bit precision using `precision='16-mixed'`.
+   4. Run the script without code changes to standard logic.
 
-**Detailed documentation:** Read `references/lightning_module.md` for comprehensive method documentation, hooks, properties, and best practices.
+3. **Ensuring Training Reproducibility**
+   1. Call `seed_everything(seed, workers=True)` at the start of the script.
+   2. Initialize the Trainer with `deterministic=True`.
+   3. Avoid data-dependent logic in transforms that isn't handled by the derived seeds.
 
-### 2. Trainer - Training Automation
+## Non-Obvious Insights
 
-The Trainer automates the training loop, device management, gradient operations, and callbacks. Key features:
+- **Overhead Analysis**: The 'barebones' mode in the Trainer is specifically for overhead analysis and disables almost all logging and checkpointing for speed.
+- **Callback State Management**: Custom callbacks must implement a `state_key` property if multiple instances of the same callback type are used in a single Trainer.
+- **Superior Debugging**: The `fast_dev_run` flag is superior to limiting batches manually because it avoids all side effects like checkpointing or logging that might clutter the workspace during debugging.
 
-- Multi-GPU/TPU support with strategy selection (DDP, FSDP, DeepSpeed)
-- Automatic mixed precision training
-- Gradient accumulation and clipping
-- Checkpointing and early stopping
-- Progress bars and logging
+## Evidence
 
-**Quick setup reference:** See `scripts/quick_trainer_setup.py` for common Trainer configurations.
+- "The Lightning Trainer automates 40+ tricks including: Epoch and batch iteration, optimizer.step(), loss.backward(), optimizer.zero_grad() calls." (https://lightning.ai/docs/pytorch/stable/starter/introduction.html)
+- "By setting workers=True in seed_everything(), Lightning derives unique seeds across all dataloader workers." (https://lightning.ai/docs/pytorch/stable/common/trainer.html)
 
-**Detailed documentation:** Read `references/trainer.md` for all parameters, methods, and configuration options.
+## Scripts
 
-### 3. LightningDataModule - Data Pipeline Organization
+- `scripts/pytorch-lightning_tool.py`: Template for a LightningModule and Trainer setup.
+- `scripts/pytorch-lightning_tool.js`: Script to trigger Lightning training with CLI arguments.
 
-Encapsulate all data processing steps in a reusable class:
+## Dependencies
 
-1. `prepare_data()` - Download and process data (single-process)
-2. `setup()` - Create datasets and apply transforms (per-GPU)
-3. `train_dataloader()` - Return training DataLoader
-4. `val_dataloader()` - Return validation DataLoader
-5. `test_dataloader()` - Return test DataLoader
+- lightning
+- torch
 
-**Quick template reference:** See `scripts/template_datamodule.py` for a complete boilerplate.
+## References
 
-**Detailed documentation:** Read `references/data_module.md` for method details and usage patterns.
-
-### 4. Callbacks - Extensible Training Logic
-
-Add custom functionality at specific training hooks without modifying your LightningModule. Built-in callbacks include:
-
-- **ModelCheckpoint** - Save best/latest models
-- **EarlyStopping** - Stop when metrics plateau
-- **LearningRateMonitor** - Track LR scheduler changes
-- **BatchSizeFinder** - Auto-determine optimal batch size
-
-**Detailed documentation:** Read `references/callbacks.md` for built-in callbacks and custom callback creation.
-
-### 5. Logging - Experiment Tracking
-
-Integrate with multiple logging platforms:
-
-- TensorBoard (default)
-- Weights & Biases (WandbLogger)
-- MLflow (MLFlowLogger)
-- Neptune (NeptuneLogger)
-- Comet (CometLogger)
-- CSV (CSVLogger)
-
-Log metrics using `self.log("metric_name", value)` in any LightningModule method.
-
-**Detailed documentation:** Read `references/logging.md` for logger setup and configuration.
-
-### 6. Distributed Training - Scale to Multiple Devices
-
-Choose the right strategy based on model size:
-
-- **DDP** - For models <500M parameters (ResNet, smaller transformers)
-- **FSDP** - For models 500M+ parameters (large transformers, recommended for Lightning users)
-- **DeepSpeed** - For cutting-edge features and fine-grained control
-
-Configure with: `Trainer(strategy="ddp", accelerator="gpu", devices=4)`
-
-**Detailed documentation:** Read `references/distributed_training.md` for strategy comparison and configuration.
-
-### 7. Best Practices
-
-- Device agnostic code - Use `self.device` instead of `.cuda()`
-- Hyperparameter saving - Use `self.save_hyperparameters()` in `__init__()`
-- Metric logging - Use `self.log()` for automatic aggregation across devices
-- Reproducibility - Use `seed_everything()` and `Trainer(deterministic=True)`
-- Debugging - Use `Trainer(fast_dev_run=True)` to test with 1 batch
-
-**Detailed documentation:** Read `references/best_practices.md` for common patterns and pitfalls.
-
-## Quick Workflow
-
-1. **Define model:**
-   ```python
-   class MyModel(L.LightningModule):
-       def __init__(self):
-           super().__init__()
-           self.save_hyperparameters()
-           self.model = YourNetwork()
-
-       def training_step(self, batch, batch_idx):
-           x, y = batch
-           loss = F.cross_entropy(self.model(x), y)
-           self.log("train_loss", loss)
-           return loss
-
-       def configure_optimizers(self):
-           return torch.optim.Adam(self.parameters())
-   ```
-
-2. **Prepare data:**
-   ```python
-   # Option 1: Direct DataLoaders
-   train_loader = DataLoader(train_dataset, batch_size=32)
-
-   # Option 2: LightningDataModule (recommended for reusability)
-   dm = MyDataModule(batch_size=32)
-   ```
-
-3. **Train:**
-   ```python
-   trainer = L.Trainer(max_epochs=10, accelerator="gpu", devices=2)
-   trainer.fit(model, train_loader)  # or trainer.fit(model, datamodule=dm)
-   ```
-
-## Resources
-
-### scripts/
-Executable Python templates for common PyTorch Lightning patterns:
-
-- `template_lightning_module.py` - Complete LightningModule boilerplate
-- `template_datamodule.py` - Complete LightningDataModule boilerplate
-- `quick_trainer_setup.py` - Common Trainer configuration examples
-
-### references/
-Detailed documentation for each PyTorch Lightning component:
-
-- `lightning_module.md` - Comprehensive LightningModule guide (methods, hooks, properties)
-- `trainer.md` - Trainer configuration and parameters
-- `data_module.md` - LightningDataModule patterns and methods
-- `callbacks.md` - Built-in and custom callbacks
-- `logging.md` - Logger integrations and usage
-- `distributed_training.md` - DDP, FSDP, DeepSpeed comparison and setup
-- `best_practices.md` - Common patterns, tips, and pitfalls
+- [PyTorch Lightning Reference](references/README.md)

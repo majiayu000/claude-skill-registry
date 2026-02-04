@@ -1,9 +1,7 @@
 {
   "name": "deepwork-jobs",
-  "description": "Creates and manages multi-step AI workflows. Use when defining, implementing, or improving DeepWork jobs.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
+  "repo": "ncrmro/deepwork-permanent-portfolio",
+  "path": ".claude/skills/deepwork_jobs/SKILL.md",
+  "source": "github.com/ncrmro/deepwork-permanent-portfolio",
+  "downloaded_at": "2026-02-04T04:19:28.992360Z"
 }

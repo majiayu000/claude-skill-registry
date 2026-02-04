@@ -23,7 +23,6 @@ Build efficient, scalable monorepos that enable code sharing, consistent tooling
 ### 1. Why Monorepos?
 
 **Advantages:**
-
 - Shared code and dependencies
 - Atomic commits across projects
 - Consistent tooling and standards
@@ -32,7 +31,6 @@ Build efficient, scalable monorepos that enable code sharing, consistent tooling
 - Better code visibility
 
 **Challenges:**
-
 - Build performance at scale
 - CI/CD complexity
 - Access control
@@ -41,13 +39,11 @@ Build efficient, scalable monorepos that enable code sharing, consistent tooling
 ### 2. Monorepo Tools
 
 **Package Managers:**
-
 - pnpm workspaces (recommended)
 - npm workspaces
 - Yarn workspaces
 
 **Build Systems:**
-
 - Turborepo (recommended for most)
 - Nx (feature-rich, complex)
 - Lerna (older, maintenance mode)
@@ -109,7 +105,10 @@ cd my-monorepo
 {
   "name": "my-monorepo",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -371,7 +370,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error',
     'react/react-in-jsx-scope': 'off',
   },
-}
+};
 
 // apps/web/.eslintrc.js
 module.exports = {
@@ -379,7 +378,7 @@ module.exports = {
   rules: {
     // App-specific rules
   },
-}
+};
 ```
 
 ## Code Sharing Patterns
@@ -424,20 +423,20 @@ export function App() {
 ```typescript
 // packages/utils/src/string.ts
 export function capitalize(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1)
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 export function truncate(str: string, length: number): string {
-  return str.length > length ? str.slice(0, length) + '...' : str
+  return str.length > length ? str.slice(0, length) + '...' : str;
 }
 
 // packages/utils/src/index.ts
-export * from './string'
-export * from './array'
-export * from './date'
+export * from './string';
+export * from './array';
+export * from './date';
 
 // Usage in apps
-import { capitalize, truncate } from '@repo/utils'
+import { capitalize, truncate } from '@repo/utils';
 ```
 
 ### Pattern 3: Shared Types
@@ -445,20 +444,20 @@ import { capitalize, truncate } from '@repo/utils'
 ```typescript
 // packages/types/src/user.ts
 export interface User {
-  id: string
-  email: string
-  name: string
-  role: 'admin' | 'user'
+  id: string;
+  email: string;
+  name: string;
+  role: 'admin' | 'user';
 }
 
 export interface CreateUserInput {
-  email: string
-  name: string
-  password: string
+  email: string;
+  name: string;
+  password: string;
 }
 
 // Used in both frontend and backend
-import type { User, CreateUserInput } from '@repo/types'
+import type { User, CreateUserInput } from '@repo/types';
 ```
 
 ## Build Optimization
@@ -526,7 +525,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0 # For Nx affected commands
+          fetch-depth: 0  # For Nx affected commands
 
       - uses: pnpm/action-setup@v2
         with:

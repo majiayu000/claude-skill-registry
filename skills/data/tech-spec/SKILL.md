@@ -1,84 +1,89 @@
 ---
-name: tech-spec
-description: Tech spec knowledge base. Full workflow from requirement analysis, code research to spec output. Triggers: tech spec, feature design, requirement analysis.
-allowed-tools: Read, Grep, Glob, Write, Bash(git:*)
+name: delivery.tech_spec
+phase: delivery
+roles:
+  - Engineering Lead
+  - Feature Team Engineer
+description: Produce an implementation-ready technical specification with architecture, sequencing, and validation details.
+variables:
+  required:
+    - name: feature
+      description: Feature or capability to be implemented.
+    - name: objectives
+      description: Desired business or customer outcomes for the work.
+  optional:
+    - name: constraints
+      description: Technical, compliance, or timeline constraints.
+    - name: integrations
+      description: External systems or services impacted.
+outputs:
+  - Technical design overview with diagrams and data flow descriptions.
+  - Implementation plan with milestones and task breakdown.
+  - Validation strategy including testing, monitoring, and rollout considerations.
 ---
 
-# Tech Spec Skill
+# Purpose
+Accelerate engineering planning by generating a comprehensive spec template aligned with the squad's delivery standards.
 
-## Trigger
+# Pre-run Checklist
+- ✅ Confirm definition artifacts (story map, spikes) are finalized.
+- ✅ Align on target release milestone and success metrics.
+- ✅ Gather existing system diagrams or API documentation.
 
-- Keywords: tech spec, technical specification, spec review, review spec, requirement analysis, feature design
-
-## When NOT to Use
-
-- Creating request documents (use /create-request)
-- Code implementation (use feature-dev)
-- Architecture consulting (use /codex-architect)
-
-## Commands
-
-| Command         | Purpose              | When                    |
-| --------------- | -------------------- | ----------------------- |
-| `/tech-spec`    | Produce tech spec    | Starting from scratch   |
-| `/deep-analyze` | Deepen spec + roadmap | After initial concept   |
-| `/review-spec`  | Review tech spec     | Spec confirmation       |
-
-## Workflow
-
-```mermaid
-sequenceDiagram
-    participant A as Analyst
-    participant C as Codebase
-    participant D as Document
-
-    A->>A: 1. Requirement clarification
-    A->>C: 2. Code research
-    C-->>A: Related modules
-    A->>A: 3. Solution design
-    A->>A: 4. Risk assessment
-    A->>A: 5. Work breakdown
-    A->>D: 6. Output document
+# Invocation Guidance
+```bash
+codex skills run delivery.tech_spec \
+  --vars "feature={{feature}}" \
+         "objectives={{objectives}}" \
+         "constraints={{constraints}}" \
+         "integrations={{integrations}}"
 ```
 
-## Spec Structure
+# Recommended Input Attachments
+- Architecture or sequence diagrams.
+- API contracts or schema definitions.
+- Relevant RFCs or ADRs.
 
-1. Requirement summary (problem + goals + scope)
-2. Existing code analysis
-3. Technical solution (architecture + data model + API + core logic)
-4. Risks and dependencies
-5. Work breakdown
-6. Testing strategy
-7. Open questions
+# Claude Workflow Outline
+1. Summarize feature objectives, constraints, and integration points.
+2. Describe the target architecture, including components, data flows, and failure handling.
+3. Outline implementation phases with tasks, owners, and dependencies.
+4. Define validation strategy: testing, monitoring, observability, and rollout plan.
+5. Provide documentation and review checklist.
 
-## Verification
-
-- Solution covers all requirement points
-- Architecture diagrams use Mermaid
-- Risks have mitigation strategies
-- Work can be broken into trackable items
-
-## References
-
-- `references/template.md` - Spec template + review dimensions
-
-## File Location
-
+# Output Template
 ```
-docs/features/{feature}/
-├── tech-spec.md      # Technical spec
-├── requests/         # Request documents
-└── README.md         # Feature description
+# Technical Specification — {{feature}}
+
+## 1. Summary & Objectives
+- Objectives:
+- Success Metrics:
+- Constraints:
+
+## 2. Architecture Overview
+- Component Diagram Description
+- Data Flow:
+- Failure Modes & Mitigations:
+
+## 3. Implementation Plan
+| Milestone | Tasks | Owner | Dependencies | Target Date |
+| --- | --- | --- | --- | --- |
+
+## 4. Validation Strategy
+- Testing:
+- Monitoring & Alerts:
+- Rollout Plan:
+
+## 5. Open Questions & Risks
+- Item — Owner — Due Date
+
+## 6. Review Checklist
+- [ ] Design review scheduled
+- [ ] Security review required?
+- [ ] Documentation updates planned
 ```
 
-## Examples
-
-```
-Input: /tech-spec "Implement user asset snapshot feature"
-Action: Requirement clarification -> Code research -> Solution design -> Output document
-```
-
-```
-Input: /review-spec docs/features/xxx/tech-spec.md
-Action: Read -> Research -> Review -> Output report + Gate
-```
+# Follow-up Actions
+- Schedule a design review with relevant stakeholders.
+- Break down milestone tasks into backlog tickets.
+- Keep the spec updated as implementation progresses.

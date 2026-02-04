@@ -1,6 +1,13 @@
 ---
 name: breakthrough
 description: Creative problem-solving techniques when stuck. Use when progress has stalled, solutions feel forced, or conventional approaches have failed. Triggers on "stuck", "blocked", "can't figure out", "hitting a wall".
+model: opus
+allowed-tools: Read
+hooks:
+  Stop:
+    - hooks:
+        - type: prompt
+          prompt: "If this breakthrough session found a solution or creative approach, return {\"ok\": false, \"reason\": \"Consider running /hope:learn to capture what unblocked you.\"}. If no breakthrough achieved, return {\"ok\": true}."
 ---
 
 # breakthrough

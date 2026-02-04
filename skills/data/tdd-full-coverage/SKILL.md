@@ -1,14 +1,6 @@
 ---
 name: tdd-full-coverage
 description: Use when implementing features or fixes - test-driven development with RED-GREEN-REFACTOR cycle and full code coverage requirement
-allowed-tools:
-  - Bash
-  - Read
-  - Edit
-  - Write
-  - Grep
-  - Glob
-model: opus
 ---
 
 # TDD Full Coverage

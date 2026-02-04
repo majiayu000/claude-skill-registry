@@ -74,13 +74,13 @@ interface SlowQuery {
 async function detectSlowQueries(thresholdMs: number = 100) {
   // Enable slow query logging (PostgreSQL)
   await prisma.$executeRaw`
-    ALTER DATABASE mydb 
+    ALTER DATABASE mydb
     SET log_min_duration_statement = ${thresholdMs};
   `;
 
   // Query pg_stat_statements for slow queries
   const slowQueries = await prisma.$queryRaw<SlowQuery[]>`
-    SELECT 
+    SELECT
       query,
       calls,
       total_exec_time / 1000 as total_time_ms,
@@ -112,7 +112,7 @@ async function detectSlowQueries(thresholdMs: number = 100) {
 ```typescript
 async function monitorConnectionPool() {
   const stats = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       sum(numbackends) as total_connections,
       sum(CASE WHEN state = 'active' THEN 1 ELSE 0 END) as active,
       sum(CASE WHEN state = 'idle' THEN 1 ELSE 0 END) as idle,
@@ -152,7 +152,7 @@ async function monitorConnectionPool() {
 async function monitorResources() {
   // CPU Usage
   const cpuStats = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       (sum(total_exec_time) / (extract(epoch from (now() - stats_reset)) * 1000 * 100)) as cpu_percent
     FROM pg_stat_statements, pg_stat_database
     WHERE datname = current_database()
@@ -160,7 +160,7 @@ async function monitorResources() {
 
   // Memory Usage
   const memStats = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       pg_size_pretty(pg_database_size(current_database())) as db_size,
       pg_size_pretty(sum(pg_relation_size(schemaname||'.'||tablename))) as tables_size
     FROM pg_tables
@@ -169,7 +169,7 @@ async function monitorResources() {
 
   // Cache Hit Rate
   const cacheStats = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) * 100 as cache_hit_rate
     FROM pg_statio_user_tables
   `;
@@ -196,7 +196,7 @@ async function monitorResources() {
 async function analyzeIndexUsage() {
   // Find unused indexes
   const unusedIndexes = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       schemaname,
       tablename,
       indexname,
@@ -214,7 +214,7 @@ async function analyzeIndexUsage() {
 
   // Find missing indexes (sequential scans on large tables)
   const missingIndexes = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       schemaname,
       tablename,
       seq_scan,
@@ -332,7 +332,7 @@ async function generatePerformanceReport() {
 
   // Query rates
   const queryStats = await prisma.$queryRaw<any[]>`
-    SELECT 
+    SELECT
       sum(xact_commit + xact_rollback) as transactions,
       sum(tup_returned) as rows_read,
       sum(tup_inserted) as rows_inserted,

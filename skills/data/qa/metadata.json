@@ -1,9 +1,7 @@
 {
   "name": "qa",
-  "description": "Generate QA steps for Jira tickets in German/English technical writing style",
-  "repo": "cheapmon/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "local"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/qa/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:40:52.700840Z"
 }

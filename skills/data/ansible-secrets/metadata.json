@@ -1,9 +1,7 @@
 {
   "name": "ansible-secrets",
-  "description": "This skill should be used when working with secrets in Ansible playbooks, integrating Infisical vault, using no_log directive, retrieving credentials securely, or implementing fallback patterns for se",
   "repo": "basher83/lunar-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-secrets/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:29.190502Z"
 }

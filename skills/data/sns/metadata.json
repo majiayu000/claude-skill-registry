@@ -1,7 +1,7 @@
 {
   "name": "sns",
-  "repo": "itsmostafa/aws-agent-skills",
-  "path": "skills/sns/SKILL.md",
-  "source": "github.com/itsmostafa/aws-agent-skills",
-  "downloaded_at": "2026-02-02T01:34:16.964700Z"
+  "repo": "northseadl/skillwisp",
+  "path": "skills/@itsmostafa/sns/SKILL.md",
+  "source": "github.com/northseadl/skillwisp",
+  "downloaded_at": "2026-02-04T02:56:07.096368Z"
 }

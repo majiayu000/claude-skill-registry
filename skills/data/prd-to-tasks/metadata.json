@@ -1,7 +1,9 @@
 {
   "name": "prd-to-tasks",
-  "repo": "Smith-Happens/xlightsfpptester",
-  "path": "skills/prd-to-tasks/SKILL.md",
-  "source": "github.com/Smith-Happens/xlightsfpptester",
-  "downloaded_at": "2026-02-02T03:17:33.885400Z"
+  "description": "Generates production-grade TaskMaster tasks.json from Product Requirements Documents (PRD).\nActivates via codeword [ACTIVATE:PRD_TO_TASKS_V1] injected by hooks when PRD is detected.\nAlways generates i",
+  "repo": "turbobeest/squawk",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/turbobeest/squawk"
 }

@@ -1,304 +1,259 @@
 ---
 name: mcp-development
-description: MCP server development patterns including bundling, npx distribution, versioning, and collective learning. Use when building new MCP servers or improving existing ones for distribution.
+description: MCPサーバー開発を支援します。プロトコル準拠、Pydanticスキーマ設計、Playwright統合のベストプラクティスを提供します。
+allowed-tools: Read Edit Write Glob Grep Bash
 ---
 
-# MCP Development Skill
+# MCP Development スキル
 
-**Principle**: #34 (Occam's Razor Implementation) — applies to distribution complexity too
+このスキルは、**Constitution Article 3: MCP Protocol Compliance** を支援し、MCPサーバー開発のベストプラクティスを提供します。
 
-**Source**: Agent-kernel MCP v2.1.0 development (2026-01-29). Patterns emerged from bundling implementation.
+## 起動条件
 
----
+以下の状況で起動します：
 
-## When to Use This Skill
+1. **MCPツール実装時**: 新しいMCPツールを追加する際
+2. **スキーマ設計時**: 入出力スキーマを定義する際
+3. **Playwright統合時**: ブラウザ自動化を実装する際
+4. **セッション管理実装時**: 認証状態を管理する際
+5. **エラーハンドリング設計時**: MCPエラーレスポンスを設計する際
 
-Use the mcp-development skill when:
-- Building a new MCP server for distribution
-- Packaging an existing MCP for npm
-- Setting up auto-update distribution via npx
-- Adding resource bundling (principles, skills, etc.)
-- Planning collective learning / telemetry
+## MCPプロトコル要件
 
-**DO NOT use this skill for:**
-- Configuring projects to USE MCP servers (use [mcp-integration](../mcp-integration/SKILL.md))
-- MCP protocol internals (use MCP SDK docs)
+### ツール定義
 
----
+MCPツールは以下の構造を持つ必要があります：
 
-## Companion Skill
+```python
+from mcp.types import Tool, TextContent
+from pydantic import BaseModel, Field
 
-| Skill | Audience | Focus |
-|-------|----------|-------|
-| **mcp-integration** | MCP Users | Configuring projects to adopt MCP tools |
-| **mcp-development** | MCP Developers | Building, bundling, distributing MCP servers |
+class CreateDraftInput(BaseModel):
+    """下書き作成の入力パラメータ"""
+    title: str = Field(..., description="記事のタイトル")
+    body: str = Field(..., description="記事の本文（Markdown形式）")
+    tags: list[str] | None = Field(None, description="記事のタグ一覧")
 
----
-
-## Pattern D1: Resource Bundling
-
-**Problem**: MCP servers often need accompanying resources (prompts, schemas, configs). Without bundling, users must manually set up paths or the MCP fails at runtime.
-
-**Solution**: Bundle resources INTO the npm package.
-
-### Package Structure
-
-```
-@scope/mcp-name/
-├── build/              # Compiled TypeScript
-│   └── index.js
-├── resources/          # Bundled resources
-│   ├── principles/
-│   ├── commands/
-│   ├── skills/
-│   └── ...
-├── bin/                # CLI entry point
-│   └── cli.js
-├── scripts/
-│   └── bundle-resources.js
-└── package.json
+# ツール定義
+create_draft_tool = Tool(
+    name="create_draft",
+    description="note.comに記事の下書きを作成します",
+    inputSchema=CreateDraftInput.model_json_schema(),
+)
 ```
 
-### Build Script
+### Pydanticモデル設計
 
-```javascript
-// scripts/bundle-resources.js
-import { cpSync, mkdirSync, rmSync, existsSync } from 'fs';
-import { join, dirname } from 'path';
+**必須ルール**:
 
-const SOURCE_DIR = '/path/to/source/.claude';
-const RESOURCES_DIR = './resources';
+1. **すべての入力パラメータはPydanticモデルで検証**
+2. **Fieldに説明を必ず付与**
+3. **型アノテーションを明確に指定**
 
-// Clean and recreate
-if (existsSync(RESOURCES_DIR)) rmSync(RESOURCES_DIR, { recursive: true });
-mkdirSync(RESOURCES_DIR, { recursive: true });
+```python
+from pydantic import BaseModel, Field, field_validator
 
-// Bundle directories
-const BUNDLE = ['principles', 'commands', 'skills', 'kernel'];
-for (const dir of BUNDLE) {
-  cpSync(join(SOURCE_DIR, dir), join(RESOURCES_DIR, dir), { recursive: true });
-}
+class ArticleContent(BaseModel):
+    """記事コンテンツのスキーマ"""
+    title: str = Field(..., min_length=1, max_length=200, description="記事タイトル")
+    body: str = Field(..., min_length=1, description="記事本文")
+    status: str = Field("draft", pattern="^(draft|published)$", description="記事状態")
+
+    @field_validator("title")
+    @classmethod
+    def title_not_empty(cls, v: str) -> str:
+        if not v.strip():
+            raise ValueError("タイトルは空にできません")
+        return v.strip()
 ```
 
-### package.json Scripts
+### エラーレスポンス
 
-```json
-{
-  "scripts": {
-    "build": "tsc",
-    "bundle": "node scripts/bundle-resources.js",
-    "prepublish": "npm run build && npm run bundle"
-  },
-  "files": ["build", "resources", "bin"]
-}
+MCPエラーは適切な形式で返す必要があります：
+
+```python
+from mcp.types import TextContent, ErrorData
+from mcp.shared.exceptions import McpError
+
+class NoteApiError(McpError):
+    """note.com API関連のエラー"""
+    pass
+
+class AuthenticationError(NoteApiError):
+    """認証エラー"""
+    def __init__(self, message: str = "認証が必要です"):
+        super().__init__(ErrorData(code=-32001, message=message))
+
+class SessionExpiredError(NoteApiError):
+    """セッション期限切れエラー"""
+    def __init__(self):
+        super().__init__(ErrorData(
+            code=-32002,
+            message="セッションの有効期限が切れました。再ログインしてください。"
+        ))
 ```
 
-### Runtime Resolution
+## Playwright統合
 
-```typescript
-// In MCP server index.ts
-const PACKAGE_ROOT = path.resolve(__dirname, '..');
-const BUNDLED_RESOURCES = path.join(PACKAGE_ROOT, 'resources');
-const PROJECT_RESOURCES = path.join(process.env.CLAUDE_PROJECT_DIR || process.cwd(), '.claude');
+### ブラウザライフサイクル管理
 
-function resolveResource(type: string): string {
-  // Project-specific overrides bundled
-  const projectPath = path.join(PROJECT_RESOURCES, type);
-  if (existsSync(projectPath)) return PROJECT_RESOURCES;
+```python
+from playwright.async_api import async_playwright, Browser, Page
+from contextlib import asynccontextmanager
 
-  // Fall back to bundled
-  if (existsSync(BUNDLED_RESOURCES)) return BUNDLED_RESOURCES;
+class BrowserManager:
+    """ブラウザインスタンスのライフサイクル管理"""
 
-  // Legacy fallback
-  return PROJECT_RESOURCES;
-}
+    def __init__(self) -> None:
+        self._browser: Browser | None = None
+        self._page: Page | None = None
+
+    async def get_page(self) -> Page:
+        """既存のページを再利用、なければ新規作成"""
+        if self._page is not None and not self._page.is_closed():
+            return self._page
+
+        if self._browser is None:
+            playwright = await async_playwright().start()
+            self._browser = await playwright.chromium.launch(headless=False)
+
+        self._page = await self._browser.new_page()
+        return self._page
+
+    async def close(self) -> None:
+        """リソースのクリーンアップ"""
+        if self._page:
+            await self._page.close()
+        if self._browser:
+            await self._browser.close()
 ```
 
-**Key insight**: Users can override bundled resources by creating project-specific files, but the MCP works out-of-box with bundled defaults.
+### 作業ウィンドウの再利用
 
----
+```python
+async def show_preview(self, article_id: str) -> None:
+    """プレビューを表示（既存ウィンドウを再利用）"""
+    page = await self.browser_manager.get_page()
 
-## Pattern D2: npx Distribution (Auto-Latest)
+    # 既にプレビューページにいる場合はリロード
+    current_url = page.url
+    preview_url = f"https://note.com/api/v1/text_notes/{article_id}/preview"
 
-**Problem**: MCP users want the latest version without manual `npm update`. MCP developers want instant distribution of improvements.
-
-**Solution**: Use `npx -y @scope/package@latest` in `.mcp.json`.
-
-### User Configuration
-
-```json
-{
-  "mcpServers": {
-    "my-mcp": {
-      "command": "npx",
-      "args": ["-y", "@scope/mcp-name@latest"]
-    }
-  }
-}
+    if current_url == preview_url:
+        await page.reload()
+    else:
+        await page.goto(preview_url)
 ```
 
-### Version Behavior
+## セッション管理
 
-| Configuration | Behavior |
-|---------------|----------|
-| `npx @scope/pkg` | Uses cached version if available |
-| `npx @scope/pkg@latest` | **Always checks npm for latest** |
-| `npx @scope/pkg@2.1.0` | Pinned to specific version |
+### セキュアなセッション保存
 
-### CLI Entry Point
+OSのキーチェーン/資格情報マネージャーを使用：
 
-```javascript
-#!/usr/bin/env node
-// bin/cli.js
-import { spawn } from 'child_process';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+```python
+import keyring
+from dataclasses import dataclass
+from datetime import datetime
+import json
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const serverPath = join(__dirname, '..', 'build', 'index.js');
+SERVICE_NAME = "note-mcp"
 
-// Handle --help, --info, --version
-if (process.argv.includes('--help')) {
-  console.log('Usage: npx @scope/mcp-name [options]');
-  process.exit(0);
-}
+@dataclass
+class Session:
+    """セッション情報"""
+    cookies: dict[str, str]
+    user_id: str
+    expires_at: datetime
 
-// Default: run MCP server
-spawn('node', [serverPath], { stdio: 'inherit' });
+    def is_valid(self) -> bool:
+        """セッションが有効かチェック"""
+        return datetime.now() < self.expires_at
+
+def save_session(session: Session) -> None:
+    """セッションをセキュアに保存"""
+    keyring.set_password(
+        SERVICE_NAME,
+        "session",
+        json.dumps({
+            "cookies": session.cookies,
+            "user_id": session.user_id,
+            "expires_at": session.expires_at.isoformat(),
+        })
+    )
+
+def load_session() -> Session | None:
+    """保存されたセッションを読み込み"""
+    data = keyring.get_password(SERVICE_NAME, "session")
+    if data is None:
+        return None
+
+    parsed = json.loads(data)
+    session = Session(
+        cookies=parsed["cookies"],
+        user_id=parsed["user_id"],
+        expires_at=datetime.fromisoformat(parsed["expires_at"]),
+    )
+
+    if not session.is_valid():
+        keyring.delete_password(SERVICE_NAME, "session")
+        return None
+
+    return session
 ```
 
-### package.json Configuration
+### セッション期限切れ処理
 
-```json
-{
-  "name": "@scope/mcp-name",
-  "bin": {
-    "mcp-name": "./bin/cli.js"
-  }
-}
+```python
+async def execute_with_session(self, operation: Callable) -> Any:
+    """セッションを確認して操作を実行"""
+    session = load_session()
+
+    if session is None:
+        raise AuthenticationError("ログインが必要です")
+
+    if not session.is_valid():
+        raise SessionExpiredError()
+
+    try:
+        return await operation()
+    except SessionExpiredError:
+        # セッションをクリアして再認証を促す
+        keyring.delete_password(SERVICE_NAME, "session")
+        raise
 ```
 
-**Key insight**: The `-y` flag auto-confirms install, and `@latest` forces npm registry check on every invocation.
+## 実装チェックリスト
 
-**Trade-off**: Slightly slower startup (~1-2s npm check) but always current.
+### MCPツール作成時
 
----
+- [ ] Pydanticモデルで入力を定義
+- [ ] Fieldに説明を付与
+- [ ] ツール定義にdescriptionを記載
+- [ ] 適切なエラーレスポンスを実装
 
-## Pattern D3: Semantic Versioning for MCP
+### Playwright統合時
 
-**Problem**: How to version MCP servers when they have both code AND bundled resources?
+- [ ] ブラウザライフサイクルを管理
+- [ ] 作業ウィンドウを再利用
+- [ ] クリーンアップ処理を実装
+- [ ] エラー時のリカバリを考慮
 
-**Solution**: Version represents the **combined capability**.
+### セッション管理時
 
-### Version Components
+- [ ] OSのセキュアストレージを使用
+- [ ] 有効期限チェックを実装
+- [ ] 期限切れ時のエラーメッセージを明確に
+- [ ] 再認証フローを提供
 
-| Change | Version Bump | Example |
-|--------|--------------|---------|
-| New MCP tool | MINOR | 2.0.0 → 2.1.0 |
-| Tool behavior change | MINOR | 2.1.0 → 2.2.0 |
-| Bundled resource update | PATCH | 2.1.0 → 2.1.1 |
-| Breaking tool schema change | MAJOR | 2.1.0 → 3.0.0 |
-| Bug fix (code or resources) | PATCH | 2.1.1 → 2.1.2 |
+## 参考リソース
 
-### CHANGELOG Pattern
+- MCP Protocol仕様: https://modelcontextprotocol.io/
+- Pydantic v2ドキュメント: https://docs.pydantic.dev/
+- Playwright Pythonドキュメント: https://playwright.dev/python/
 
-```markdown
-## [2.1.0] - 2026-01-29
+## 注意事項
 
-### Added
-- Resource bundling: 11 principles, 59 commands, 31 skills
-- npx distribution support via bin/cli.js
-- --info flag to show bundled resources
-
-### Changed
-- Path resolution now checks bundled resources as fallback
-```
-
----
-
-## Pattern D4: Collective Learning Hooks (Future)
-
-**Vision**: MCP servers collect opt-in telemetry to improve bundled resources for all users.
-
-### Telemetry Points
-
-| Event | Data Collected | Insight |
-|-------|----------------|---------|
-| Tool invocation | Tool name, timestamp | Which tools are popular |
-| Gradient evaluation | Components, outcome | What patterns lead to success |
-| Resource load | Resource type, name | Which resources are used |
-| Error occurrence | Tool name, error type | What fails frequently |
-
-### Privacy Principles
-
-1. **Opt-in only**: Never collect without explicit consent
-2. **Aggregate only**: No personally identifiable data
-3. **Transparent**: Users can see what's collected
-4. **Beneficial**: Data directly improves the product
-
-### Feedback Loop
-
-```
-Users → Telemetry → Aggregate Analysis → Improved Bundle → New Version → Users
-```
-
-**Status**: Future work. See Linear issue for collective learning implementation.
-
----
-
-## Anti-Patterns
-
-### A1: Coupling to Source Repo
-
-MCP server requires files from the source repository at runtime.
-
-**Fix**: Bundle everything needed into the npm package.
-
-### A2: Hardcoded Paths
-
-MCP assumes specific file paths that only work on developer's machine.
-
-**Fix**: Use `__dirname` relative paths and environment variable overrides.
-
-### A3: Missing bin Entry
-
-Package has no CLI entry point, can't be invoked via npx.
-
-**Fix**: Add `bin` field to package.json with a proper shebang script.
-
-### A4: @latest Without -y
-
-Using `npx @scope/pkg@latest` without `-y` causes interactive prompts.
-
-**Fix**: Always use `npx -y @scope/pkg@latest` in MCP configs.
-
-### A5: No Version Logging
-
-MCP server doesn't log its version on startup, making debugging hard.
-
-**Fix**: Log version in server initialization: `console.error("MCP v2.1.0 running")`
-
----
-
-## Checklist: Publishing MCP to npm
-
-```
-□ TypeScript compiled (npm run build)
-□ Resources bundled (npm run bundle)
-□ bin/cli.js has shebang (#!/usr/bin/env node)
-□ package.json has correct "files" array
-□ package.json has "bin" entry
-□ Version bumped appropriately
-□ CHANGELOG updated
-□ README has npx usage example
-□ Tested locally with `npx .` in package dir
-□ npm publish --access public
-```
-
----
-
-## See Also
-
-- [mcp-integration](../mcp-integration/SKILL.md) — For MCP users (adoption)
-- Principle #34: Occam's Razor — Minimal complexity in distribution too
-- MCP SDK Documentation — Protocol internals
+- note.comの非公式APIを使用するため、仕様変更で動作しなくなる可能性あり
+- レート制限を遵守（目安: 10リクエスト/分）
+- 自己責任・無保証での公開を前提

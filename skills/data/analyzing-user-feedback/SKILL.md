@@ -1,123 +1,76 @@
 ---
-name: "analyzing-user-feedback"
-description: "Analyze user/customer feedback and produce a User Feedback Analysis Pack (source inventory, normalized feedback table, taxonomy/codebook, themes + evidence, recommendations, and feedback loop). Use for voice of customer, feature request analysis, support ticket synthesis, churn reason synthesis, and survey open-ends."
+name: analyzing-user-feedback
+description: Help users synthesize and act on customer feedback. Use when someone is analyzing NPS responses, processing support tickets, reviewing user research, synthesizing feedback from multiple channels, or trying to identify patterns in customer input.
 ---
 
 # Analyzing User Feedback
 
-## Scope
+Help the user extract actionable insights from customer feedback using techniques from 56 product leaders.
 
-**Covers**
-- Aggregating and normalizing feedback from multiple channels (support, sales, research, reviews, surveys, usage signals)
-- Turning raw feedback into **themes with evidence** and **actionable recommendations**
-- Identifying **friction / reasons users won’t use the product** (not just validation)
-- Producing a repeatable **feedback loop** (cadence, owners, and handoffs)
+## How to Help
 
-**When to use**
-- “Synthesize our user feedback into themes and actions.”
-- “Analyze support tickets / feature requests for the top issues.”
-- “Create a voice-of-customer report for <area> in the last <time window>.”
-- “Summarize churn reasons / cancellation feedback.”
-- “Cluster survey open-ends into insights and recommendations.”
+When the user asks for help analyzing feedback:
 
-**When NOT to use**
-- You need to collect new feedback first (use `conducting-user-interviews` / `designing-surveys`)
-- You need backlog prioritization as the primary output (use `prioritizing-roadmap`)
-- You need a PRD/spec for a chosen solution (use `writing-prds` / `writing-specs-designs`)
-- You only need to respond to individual tickets (support workflow, not synthesis)
+1. **Understand their sources** - Ask where feedback is coming from (NPS, support, sales, social, interviews)
+2. **Help identify patterns** - Assist in clustering feedback into themes and prioritizing by frequency and impact
+3. **Challenge surface-level interpretations** - Push them to find root causes, not just stated complaints
+4. **Connect to action** - Help translate insights into product decisions
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product area / workflow to analyze (or “all product”)
-- Time window + volume expectations (e.g., “last 90 days”, “~2k tickets”)
-- Feedback sources available (tickets, interviews, sales notes, reviews, surveys, community, logs)
-- The decision this analysis should inform (roadmap theme, launch readiness, onboarding fixes, messaging, quality)
-- Any segmentation that matters (ICP, persona, plan tier, lifecycle stage)
-- Constraints: privacy/PII rules, internal-only vs shareable, deadline/time box
+### Feedback is a river, not a lake
+Shaun Clowes: "Really smart product managers are constantly swimming in a feedback river. Set up streams of user interview data, NPS, and competitor info to wash over you daily." Make feedback consumption continuous, not episodic.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If data access is limited, proceed using a **small representative sample** and label confidence/limitations.
-- Do not request secrets. If feedback contains PII, ask for **redacted excerpts** or aggregated fields only.
+### Users lie (unintentionally)
+Bret Taylor: "Taking what a customer says in a focus group is rarely correct. Practice intellectual honesty to distinguish surface-level complaints from root causes." When users say "price," they often mean "value."
 
-## Outputs (deliverables)
+### Cluster, don't segment
+Bob Moesta: "Instead of segmenting by demographics, we cluster by behavioral pathways. It's not one reason why people do things—it's sets of reasons." Look for the 'hire and fire' criteria for different user clusters.
 
-Produce a **User Feedback Analysis Pack** in Markdown (in-chat; or as files if requested):
+### Every support ticket is a product failure
+Geoff Charles: "We literally have 'every support ticket is a failure of our product' posted on all channels. Share every negative review with the relevant PM and designer monthly."
 
-1) **Context snapshot** (scope, decision, time window, segments, constraints)
-2) **Source inventory + sampling plan** (what’s included/excluded; why)
-3) **Taxonomy + codebook** (tags, definitions, and coding rules)
-4) **Normalized feedback table** (tagged items; links/IDs if available; no PII)
-5) **Themes & evidence report** (top themes, representative quotes, frequency/severity, confidence)
-6) **Recommendations** (actions, owners/time horizon if known, expected impact, open research questions)
-7) **Feedback loop plan** (cadence, stakeholders, how engineering participates, how insights are stored)
-8) **Risks / Open questions / Next steps** (always included)
+### The silent signals matter
+Ramesh Johari: "There's a lot of information in ratings that are NOT left. The absence of a rating is often a strong signal of a mediocre experience users are too polite to report."
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Filter the 80% noise
+Jen Abel: "80% of feedback is noise based on legacy habits, 20% is gold that guides the future product. It's the founder's job to interpret what's 'the old way' versus real market needs."
 
-## Workflow (8 steps)
+### Aggregate across all channels
+Brian Balfour: "AI can analyze existing feedback AND identify knowledge gaps—what customers are NOT saying. Aggregate feedback from all sources into a centralized repository."
 
-### 1) Intake + decision framing
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm the decision, scope, time window, audience, and constraints. Define what “good” looks like.
-- **Outputs:** Context snapshot.
-- **Checks:** A stakeholder can answer: “What decision will this analysis change?”
+### Talk to churned users
+Uri Levine: "The most critical insights come from users who dropped out of the funnel, not those who succeeded. Interview users who churned to find the 'why' behind the failure."
 
-### 2) Inventory sources + define the sampling plan
-- **Inputs:** List of sources + access constraints.
-- **Actions:** Create a source inventory, decide inclusions/exclusions, and pick a sample strategy (random, stratified, top-volume buckets).
-- **Outputs:** Source inventory + sampling plan.
-- **Checks:** Sampling plan covers the highest-volume and highest-risk segments (or explicitly explains why not).
+### Prioritize future users over vocal minorities
+Tamar Yehoshua: "Don't over-index on people unhappy with your changes. Design for the bigger number of people who will use it tomorrow, not the vocal few complaining today."
 
-### 3) First-pass read-through (open coding)
-- **Inputs:** Sampled feedback items.
-- **Actions:** Read/annotate items manually to surface what’s “wrong” and why users struggle or churn. Write raw notes before building categories.
-- **Outputs:** Initial codes/notes + candidate themes list.
-- **Checks:** Notes capture **rejection reasons** and **friction**, not just feature ideas.
+### Make insights stick
+Yuhki Yamashata: "The goal is 'memification'—synthesize insights so they're catchy enough for execs to cite in meetings. Use real-world metaphors to explain complex concepts."
 
-### 4) Build the taxonomy + codebook
-- **Inputs:** Initial codes; product context.
-- **Actions:** Define a tagging schema (topic, lifecycle stage, severity, user segment, root cause, sentiment). Write clear tag definitions and rules.
-- **Outputs:** Taxonomy + codebook.
-- **Checks:** Two people could tag the same item similarly using the codebook.
+## Questions to Help Users
 
-### 5) Normalize and tag the feedback table
-- **Inputs:** Raw items; taxonomy/codebook.
-- **Actions:** Create a normalized table, tag each item, and capture evidence fields (source, date, segment, verbatim excerpt, link/ID).
-- **Outputs:** Normalized feedback table (tagged).
-- **Checks:** No PII; every row has at least 1 primary theme tag + a severity/impact signal.
+- "Where is your feedback coming from? Are you missing any channels?"
+- "Have you talked to churned users, or only happy customers?"
+- "What's the pattern behind these complaints—what's the root cause?"
+- "Are these requests from early adopters or from users stuck in old habits?"
+- "How will you act on this insight?"
 
-### 6) Synthesize themes + quantify carefully
-- **Inputs:** Tagged table.
-- **Actions:** Summarize top themes, quantify frequency by segment/source, identify severity and “why it happens”, and call out unknowns/bias.
-- **Outputs:** Themes & evidence report with confidence levels.
-- **Checks:** Each theme includes representative evidence (quotes/examples) and is not purely speculative.
+## Common Mistakes to Flag
 
-### 7) Translate into actions + learning plan
-- **Inputs:** Themes report; constraints.
-- **Actions:** Convert themes into actions (bugs, UX fixes, comms, product bets) and open questions (what to research next). Tie each action to evidence and expected impact.
-- **Outputs:** Recommendations + learning plan.
-- **Checks:** Recommendations are concrete enough to execute next sprint/quarter (clear owner/time horizon if known).
+- **Taking feedback literally** - Users say they want X but often need Y
+- **Only listening to vocal users** - Silent majority may have different needs
+- **Ignoring non-users** - People who didn't convert have critical insights
+- **Feedback hoarding** - Insights trapped in silos don't help anyone
+- **Hindsight bias** - Don't dismiss research findings as "obvious" after the fact
 
-### 8) Share out + establish the feedback loop + quality gate
-- **Inputs:** Draft pack.
-- **Actions:** Propose the share-out format (doc + review). Define cadence, owners, and storage (where insights live). Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add Risks/Open questions/Next steps.
-- **Outputs:** Final User Feedback Analysis Pack.
-- **Checks:** Pack is shareable as-is; limitations are explicit; follow-up actions are scheduled.
+## Deep Dive
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+For all 64 insights from 56 guests, see `references/guest-insights.md`
 
-## Examples
+## Related Skills
 
-**Example 1 (support tickets):** “Analyze the last 60 days of onboarding-related tickets. Output a User Feedback Analysis Pack and top 10 recommended fixes.”  
-Expected: source inventory + sampling, taxonomy, tagged table, themes with quotes, and ranked actions.
-
-**Example 2 (survey + reviews):** “Synthesize survey open-ends and app store reviews for our new pricing change. What are the biggest friction points and why?”  
-Expected: themes split by source/segment, severity signals, and recommendations (incl. messaging/UX changes).
-
-**Boundary example:** “Read all our feedback and tell us what to build next.”  
-Response: ask for scope/time window/decision + a sample dataset; otherwise produce a sampling plan + a minimal first-pass synthesis with explicit limitations.
-
+- Conducting User Interviews
+- Measuring Product-Market Fit
+- Prioritizing Roadmap
+- Setting OKRs & Goals

@@ -1,16 +1,6 @@
 ---
 name: documentation-audit
 description: Use when documentation drift is detected. Comprehensively audits codebase and creates/updates Swagger, features docs, and general documentation to achieve full sync.
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - Edit
-  - Write
-  - Task
-  - mcp__github__*
-model: opus
 ---
 
 # Documentation Audit

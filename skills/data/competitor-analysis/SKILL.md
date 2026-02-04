@@ -1,469 +1,356 @@
 ---
 name: competitor-analysis
-description: Analyzes competitor SEO and GEO strategies including their ranking keywords, content approaches, backlink profiles, and AI citation patterns. Reveals opportunities to outperform competition.
+description: Analyze competitive landscape to identify strengths, weaknesses, opportunities, and threats. Inform product strategy and positioning based on market insights.
 ---
 
 # Competitor Analysis
 
-This skill provides comprehensive analysis of competitor SEO and GEO strategies, revealing what's working in your market and identifying opportunities to outperform the competition.
+## Overview
 
-## When to Use This Skill
+Systematic competitor analysis reveals market positioning, identifies competitive advantages, and informs strategic product decisions.
 
-- Entering a new market or niche
-- Planning content strategy based on competitor success
-- Understanding why competitors rank higher
-- Finding backlink and partnership opportunities
-- Identifying content gaps competitors are missing
-- Analyzing competitor AI citation strategies
-- Benchmarking your SEO performance
+## When to Use
 
-## What This Skill Does
-
-1. **Keyword Analysis**: Identifies keywords competitors rank for
-2. **Content Audit**: Analyzes competitor content strategies and formats
-3. **Backlink Profiling**: Reviews competitor link-building approaches
-4. **Technical Assessment**: Evaluates competitor site health
-5. **GEO Analysis**: Identifies how competitors appear in AI responses
-6. **Gap Identification**: Finds opportunities competitors miss
-7. **Strategy Extraction**: Reveals actionable insights from competitor success
-
-## How to Use
-
-### Basic Competitor Analysis
-
-```
-Analyze SEO strategy for [competitor URL]
-```
-
-```
-Compare my site [URL] against [competitor 1], [competitor 2], [competitor 3]
-```
-
-### Specific Analysis
-
-```
-What content is driving the most traffic for [competitor]?
-```
-
-```
-Analyze why [competitor] ranks #1 for [keyword]
-```
-
-### GEO-Focused Analysis
-
-```
-How is [competitor] getting cited in AI responses? What can I learn?
-```
+- Product strategy development
+- Market entry planning
+- Pricing strategy
+- Feature prioritization
+- Market positioning
+- Threat assessment
+- Investment decisions
 
 ## Instructions
 
-When a user requests competitor analysis:
+### 1. **Competitor Identification**
 
-1. **Identify Competitors**
+```python
+# Identify and categorize competitors
 
-   If not specified, help identify competitors:
-   
-   ```markdown
-   ### Competitor Identification Framework
-   
-   **Direct Competitors** (same product/service)
-   - Search "[your main keyword]" and note top 5 organic results
-   - Check who's advertising for your keywords
-   - Ask: Who do customers compare you to?
-   
-   **Indirect Competitors** (different solution, same problem)
-   - Search problem-focused keywords
-   - Look at alternative solutions
-   
-   **Content Competitors** (compete for same keywords)
-   - May not sell same product
-   - Rank for your target keywords
-   - Include media sites, blogs, aggregators
-   ```
+class CompetitorAnalysis:
+    COMPETITOR_TYPES = {
+        'Direct': 'Same market, same features',
+        'Indirect': 'Different approach, same problem',
+        'Adjacent': 'Related market, potential crossover',
+        'Emerging': 'New entrants, potential disruptors'
+    }
 
-2. **Gather Competitor Data**
+    def identify_competitors(self, market_segment):
+        """Find all competitors"""
+        return {
+            'direct_competitors': [
+                {'name': 'Competitor A', 'market_share': '25%', 'founded': 2015},
+                {'name': 'Competitor B', 'market_share': '18%', 'founded': 2012}
+            ],
+            'indirect_competitors': [
+                {'name': 'Different Approach A', 'method': 'AI-powered'}
+            ],
+            'emerging_threats': [
+                {'name': 'Startup X', 'funding': '$10M Series A', 'differentiator': 'Mobile-first'}
+            ]
+        }
 
-   For each competitor, collect:
-   
-   ```markdown
-   ## Competitor Profile: [Name]
-   
-   **Basic Info**
-   - URL: [website]
-   - Domain Age: [years]
-   - Estimated Traffic: [monthly visits]
-   - Domain Authority/Rating: [score]
-   
-   **Business Model**
-   - Type: [SaaS/E-commerce/Content/etc.]
-   - Target Audience: [description]
-   - Key Offerings: [products/services]
-   ```
+    def analyze_competitor(self, competitor):
+        """Deep dive into competitor"""
+        return {
+            'name': competitor.name,
+            'founded': competitor.founded,
+            'headquarters': competitor.headquarters,
+            'funding': competitor.total_funding,
+            'employees': competitor.employee_count,
+            'market_share': competitor.market_share,
+            'target_market': competitor.segments,
+            'strengths': self.identify_strengths(competitor),
+            'weaknesses': self.identify_weaknesses(competitor),
+            'recent_moves': self.track_recent_moves(competitor)
+        }
 
-3. **Analyze Keyword Rankings**
+    def identify_strengths(self, competitor):
+        return {
+            'product': ['Feature completeness', 'UI/UX quality', 'Performance'],
+            'market': ['Brand recognition', 'Market share', 'Distribution'],
+            'financial': ['Funding', 'Revenue', 'Profitability'],
+            'team': ['Leadership', 'Engineering', 'Domain expertise']
+        }
 
-   ```markdown
-   ### Keyword Analysis: [Competitor]
-   
-   **Total Keywords Ranking**: [X]
-   **Keywords in Top 10**: [X]
-   **Keywords in Top 3**: [X]
-   
-   #### Top Performing Keywords
-   
-   | Keyword | Position | Volume | Traffic Est. | Page |
-   |---------|----------|--------|--------------|------|
-   | [kw 1] | [pos] | [vol] | [traffic] | [url] |
-   | [kw 2] | [pos] | [vol] | [traffic] | [url] |
-   
-   #### Keyword Distribution by Intent
-   
-   - Informational: [X]% ([keywords])
-   - Commercial: [X]% ([keywords])  
-   - Transactional: [X]% ([keywords])
-   - Navigational: [X]% ([keywords])
-   
-   #### Keyword Gaps (They rank, you don't)
-   
-   | Keyword | Their Position | Volume | Opportunity |
-   |---------|----------------|--------|-------------|
-   | [kw 1] | [pos] | [vol] | [analysis] |
-   ```
-
-4. **Audit Content Strategy**
-
-   ```markdown
-   ### Content Analysis: [Competitor]
-   
-   **Content Volume**
-   - Total Pages: [X]
-   - Blog Posts: [X]
-   - Landing Pages: [X]
-   - Resource Pages: [X]
-   
-   **Content Performance**
-   
-   #### Top Performing Content
-   
-   | Title | URL | Est. Traffic | Keywords | Backlinks |
-   |-------|-----|--------------|----------|-----------|
-   | [title 1] | [url] | [traffic] | [X] | [X] |
-   
-   **Content Patterns**
-   
-   - Average word count: [X] words
-   - Publishing frequency: [X] posts/month
-   - Content formats used:
-     - Blog posts: [X]%
-     - Guides/tutorials: [X]%
-     - Case studies: [X]%
-     - Tools/calculators: [X]%
-     - Videos: [X]%
-   
-   **Content Themes**
-   
-   | Theme | # Articles | Combined Traffic |
-   |-------|------------|------------------|
-   | [theme 1] | [X] | [traffic] |
-   | [theme 2] | [X] | [traffic] |
-   
-   **What Makes Their Content Successful**
-   
-   1. [Success factor 1 with example]
-   2. [Success factor 2 with example]
-   3. [Success factor 3 with example]
-   ```
-
-5. **Analyze Backlink Profile**
-
-   ```markdown
-   ### Backlink Analysis: [Competitor]
-   
-   **Overview**
-   - Total Backlinks: [X]
-   - Referring Domains: [X]
-   - Domain Rating: [X]
-   
-   **Link Quality Distribution**
-   - High Authority (DR 70+): [X]%
-   - Medium Authority (DR 30-69): [X]%
-   - Low Authority (DR <30): [X]%
-   
-   **Top Linking Domains**
-   
-   | Domain | DR | Link Type | Target Page |
-   |--------|-----|-----------|-------------|
-   | [domain 1] | [DR] | [type] | [page] |
-   
-   **Link Acquisition Patterns**
-   
-   - Guest posts: [X]%
-   - Editorial/organic: [X]%
-   - Resource pages: [X]%
-   - Directories: [X]%
-   - Other: [X]%
-   
-   **Linkable Assets (Content attracting links)**
-   
-   | Asset | Type | Backlinks | Why It Works |
-   |-------|------|-----------|--------------|
-   | [asset 1] | [type] | [X] | [reason] |
-   ```
-
-6. **Technical SEO Assessment**
-
-   ```markdown
-   ### Technical Analysis: [Competitor]
-   
-   **Site Performance**
-   - Core Web Vitals: [Pass/Fail]
-   - LCP: [X]s
-   - FID: [X]ms
-   - CLS: [X]
-   - Mobile-friendly: [Yes/No]
-   
-   **Site Structure**
-   - Site architecture depth: [X] levels
-   - Internal linking quality: [Rating]
-   - URL structure: [Clean/Messy]
-   - Sitemap present: [Yes/No]
-   
-   **Technical Strengths**
-   1. [Strength 1]
-   2. [Strength 2]
-   
-   **Technical Weaknesses**
-   1. [Weakness 1]
-   2. [Weakness 2]
-   ```
-
-7. **GEO/AI Citation Analysis**
-
-   ```markdown
-   ### GEO Analysis: [Competitor]
-   
-   **AI Visibility Assessment**
-   
-   Test competitor content in AI systems for relevant queries:
-   
-   | Query | AI Mentions Competitor? | What's Cited | Why |
-   |-------|------------------------|--------------|-----|
-   | [query 1] | Yes/No | [content] | [reason] |
-   | [query 2] | Yes/No | [content] | [reason] |
-   
-   **GEO Strategies Observed**
-   
-   1. **Clear Definitions**
-      - Example: [quote from their content]
-      - Effectiveness: [rating]
-   
-   2. **Quotable Statistics**
-      - Example: [quote from their content]
-      - Effectiveness: [rating]
-   
-   3. **Q&A Format Content**
-      - Examples found: [X] pages
-      - Topics covered: [list]
-   
-   4. **Authority Signals**
-      - Expert authorship: [Yes/No]
-      - Citations to sources: [Yes/No]
-      - Original research: [Yes/No]
-   
-   **GEO Opportunities They're Missing**
-   
-   | Topic | Why Missing | Your Opportunity |
-   |-------|-------------|------------------|
-   | [topic 1] | [reason] | [action] |
-   ```
-
-8. **Synthesize Competitive Intelligence**
-
-   ```markdown
-   # Competitive Analysis Report
-   
-   **Analysis Date**: [Date]
-   **Competitors Analyzed**: [List]
-   **Your Site**: [URL]
-   
-   ## Executive Summary
-   
-   [2-3 paragraph overview of key findings and recommendations]
-   
-   ## Competitive Landscape
-   
-   | Metric | You | Competitor 1 | Competitor 2 | Competitor 3 |
-   |--------|-----|--------------|--------------|--------------|
-   | Domain Authority | [X] | [X] | [X] | [X] |
-   | Organic Traffic | [X] | [X] | [X] | [X] |
-   | Keywords Top 10 | [X] | [X] | [X] | [X] |
-   | Backlinks | [X] | [X] | [X] | [X] |
-   | Content Pages | [X] | [X] | [X] | [X] |
-   
-   ## Competitor Strengths to Learn From
-   
-   ### [Competitor 1]
-   - **Strength**: [description]
-   - **Why It Works**: [analysis]
-   - **How to Apply**: [action item]
-   
-   [Repeat for each competitor]
-   
-   ## Competitor Weaknesses to Exploit
-   
-   ### Gap 1: [Description]
-   - Who's weak: [competitors]
-   - Opportunity size: [estimate]
-   - Recommended action: [specific steps]
-   
-   [Repeat for each gap]
-   
-   ## Keyword Opportunities
-   
-   ### Keywords to Target (Competitor overlap)
-   | Keyword | Volume | Avg Position | Best Strategy |
-   |---------|--------|--------------|---------------|
-   | [kw] | [vol] | [pos] | [strategy] |
-   
-   ### Untapped Keywords (No competitor coverage)
-   | Keyword | Volume | Difficulty | Opportunity |
-   |---------|--------|------------|-------------|
-   | [kw] | [vol] | [diff] | [description] |
-   
-   ## Content Strategy Recommendations
-   
-   Based on competitor analysis:
-   
-   1. **Create**: [Content type] about [topic] because [reason]
-   2. **Improve**: [Existing content] to match/exceed [competitor content]
-   3. **Promote**: [Content] to sites like [competitor's link sources]
-   
-   ## Action Plan
-   
-   ### Immediate (This Week)
-   1. [Action item]
-   2. [Action item]
-   
-   ### Short-term (This Month)
-   1. [Action item]
-   2. [Action item]
-   
-   ### Long-term (This Quarter)
-   1. [Action item]
-   2. [Action item]
-   ```
-
-## Example
-
-**User**: "Analyze why HubSpot ranks so well for marketing-related keywords"
-
-**Output**:
-
-```markdown
-# Competitive Analysis: HubSpot
-
-## SEO Strategy Overview
-
-HubSpot dominates marketing keywords through a combination of:
-1. **Massive content moat** - 10,000+ blog posts
-2. **Free tools as linkbait** - Website grader, email signature generator
-3. **Educational brand** - Academy, certifications, courses
-4. **Topic cluster model** - Pioneered the pillar/cluster approach
-
-## What Makes Them Successful
-
-### Content Strategy
-
-**Publishing Volume**: 50-100 posts/month
-**Average Word Count**: 2,500+ words
-**Content Types**:
-- In-depth guides (35%)
-- How-to tutorials (25%)
-- Templates & examples (20%)
-- Data/research (10%)
-- Tools & calculators (10%)
-
-**Top Performing Content Pattern**:
-1. Ultimate guides on broad topics
-2. Free templates with email gate
-3. Statistics roundup posts
-4. Definition posts ("What is [term]")
-
-### GEO Success Factors
-
-HubSpot appears in AI responses frequently because:
-
-1. **Clear definitions** at the start of every post
-   > "Inbound marketing is a business methodology that attracts customers by creating valuable content and experiences tailored to them."
-
-2. **Quotable statistics**
-   > "Companies that blog get 55% more website visitors"
-
-3. **Comprehensive coverage** - AI trusts their authority
-
-### Linkable Assets
-
-| Asset | Backlinks | Why It Works |
-|-------|-----------|--------------|
-| Website Grader | 45,000+ | Free, instant value |
-| Marketing Statistics | 12,000+ | Quotable reference |
-| Blog Ideas Generator | 8,500+ | Solves real problem |
-
-## Weaknesses to Exploit
-
-1. **Content becoming dated** - Many posts 3+ years old
-2. **Generic advice** - Lacks industry-specific depth
-3. **Enterprise focus** - Underserves solopreneurs
-4. **Slow innovation** - Same formats for years
-
-## Your Opportunities
-
-1. Create more specific, niche content they can't cover
-2. Target long-tail keywords they ignore
-3. Build interactive tools in emerging areas
-4. Add original research they don't have
-5. Focus on GEO-optimized definitions in your niche
+    def identify_weaknesses(self, competitor):
+        return {
+            'product': ['Missing features', 'Legacy architecture', 'Poor mobile experience'],
+            'market': ['Regional limitations', 'High prices', 'Poor support'],
+            'financial': ['Burn rate', 'Funding challenges', 'Profitability risk'],
+            'team': ['Key departures', 'Talent gaps', 'Execution issues']
+        }
 ```
 
-## Advanced Analysis Types
+### 2. **Competitive Matrix**
 
-### Content Gap Analysis
+```yaml
+Competitive Analysis Matrix:
 
+Market: Project Management Tools
+Analysis Date: January 2025
+
+---
+
+## Feature Comparison
+
+Feature / Competitor | Our Product | Competitor A | Competitor B | Competitor C
+---|---|---|---|---
+Gantt Charts | Yes | Yes | No | Yes
+Time Tracking | Yes | Limited | Yes | No
+Mobile Apps | iOS + Android | iOS only | iOS + Android | Web only
+API Available | Yes | Limited | Yes | No
+Integrations | 50+ | 20+ | 80+ | 10+
+Price (per user) | $8 | $10 | $6 | $15
+Storage | Unlimited | 5GB | 50GB | Unlimited
+Team Size Limit | None | 100 | 50 | 500
+On-Premise | Yes | No | Yes | No
+
+Score (out of 10):
+  Our Product: 8.5
+  Competitor A: 7.0
+  Competitor B: 7.5
+  Competitor C: 6.5
+
+---
+
+## Positioning Matrix
+
+Performance/Capability (Y-axis) vs Price (X-axis)
+
+Quadrant I (High Performance, High Price):
+  - Competitor A: Premium positioning, enterprise focus
+
+Quadrant II (High Performance, Low Price):
+  - Our Product: Value leader
+  - Competitor B: Budget competitor
+
+Quadrant III (Low Performance, Low Price):
+  - Competitor C: Basic features only
+
+Quadrant IV (Low Performance, High Price):
+  - (Empty - weak positioning)
+
+---
+
+## Customer Satisfaction Comparison
+
+Metric | Our Product | Competitor A | Competitor B | Industry Avg
+---|---|---|---|---
+NPS (Net Promoter Score) | 48 | 42 | 35 | 40
+CSAT (Satisfaction) | 4.2/5 | 3.8/5 | 4.0/5 | 3.9/5
+Retention Rate | 92% | 85% | 78% | 80%
+Support Response Time | 2 hours | 4 hours | 8 hours | 6 hours
+Feature Adoption Rate | 65% | 45% | 50% | 52%
+
+---
+
+## Pricing Analysis
+
+Our Pricing:
+  Starter: $8/user/month (small teams)
+  Professional: $12/user/month (growing teams)
+  Enterprise: Custom pricing
+
+Competitor Pricing:
+  Competitor A: $10/user/month flat
+  Competitor B: $6-$15/user/month (based on features)
+  Competitor C: $15/user/month (premium positioning)
+
+---
+
+## Market Share & Growth
+
+Market Size: $8.5B globally
+
+Market Share (2024):
+  Competitor A: 18% ($1.53B)
+  Competitor B: 12% ($1.02B)
+  Our Product: 8% ($0.68B)
+  Competitor C: 5% ($0.43B)
+  Others: 57% ($4.84B)
+
+Growth Rate (YoY):
+  Our Product: 35%
+  Competitor A: 12%
+  Competitor B: 25%
+  Competitor C: 8%
+  Market Average: 18%
+
+Our Trajectory: Growing faster than competitors
 ```
-Show me content [competitor] has that I don't, sorted by traffic potential
+
+### 3. **SWOT Analysis**
+
+```javascript
+// Comprehensive SWOT assessment
+
+class SWOTAnalysis {
+  createSWOT(company) {
+    return {
+      strengths: [
+        'Superior mobile experience',
+        'Fastest implementation (2 weeks)',
+        'Best customer support (2-hour response)',
+        'Advanced AI-powered automation',
+        ' 95% customer retention',
+        'Strong engineering team'
+      ],
+      weaknesses: [
+        'Limited enterprise features',
+        'Lower brand recognition vs competitors',
+        'Smaller professional services team',
+        'Limited on-premise deployment',
+        'Fewer integrations than top competitor',
+        'Smaller customer base (less network effects)'
+      ],
+      opportunities: [
+        'Enterprise market (less penetrated)',
+        'International expansion (5x market)',
+        'AI/automation features (growing demand)',
+        'Vertical-specific solutions',
+        'API marketplace for partners',
+        'SMB market consolidation'
+      ],
+      threats: [
+        'Competitor A aggressively selling',
+        'Free alternatives gaining traction',
+        'Tech giants entering market (Google, Microsoft)',
+        'Economic slowdown (budget cuts)',
+        'Talent retention (headhunting)',
+        'AI commoditization'
+      ]
+    };
+  }
+
+  strategyRecommendations(swot) {
+    return {
+      leverage_strengths: [
+        'Market mobile-first advantage in campaigns',
+        'Highlight superior support in sales',
+        'Emphasize quick deployment (faster ROI)'
+      ],
+      address_weaknesses: [
+        'Develop enterprise features roadmap',
+        'Increase marketing/brand investment',
+        'Expand partnerships for integrations'
+      ],
+      capitalize_opportunities: [
+        'Launch enterprise edition (higher ACV)',
+        'Plan international expansion roadmap',
+        'Build AI feature suite aggressively'
+      ],
+      mitigate_threats: [
+        'Strengthen customer lock-in (switching costs)',
+        'Build ecosystem of partners',
+        'Focus on customer success/retention',
+        'Invest in differentiation'
+      ]
+    };
+  }
+}
 ```
 
-### Link Intersection
+### 4. **Competitive Insights Report**
 
+```yaml
+Competitive Intelligence Report
+
+Prepared For: Executive Team, Product Team
+Date: January 2025
+
+---
+
+## Executive Summary
+
+Market Status: Moderately competitive with emerging threats
+Opportunity: Underserved enterprise segment
+Recommendation: Invest in enterprise features and global expansion
+
+---
+
+## Key Competitive Moves
+
+This Quarter:
+  - Competitor A: Released AI copilot feature
+    Our Response: Advanced in AI roadmap priority
+
+  - Competitor B: Launched free tier
+    Our Response: Strengthen free tier features and conversion funnel
+
+  - Competitor C: Acquired integration company
+    Our Response: Expand API marketplace strategy
+
+---
+
+## Market Trends
+
+1. AI/Automation: All competitors investing heavily
+   Impact: Must innovate or lose relevance
+   Timeline: Next 12 months critical
+
+2. Vertical Solutions: Moving to industry-specific products
+   Impact: Opportunity to capture niche markets
+   Timeline: 6-month window to launch
+
+3. Pricing Pressure: Race to lower entry price
+   Impact: Need to emphasize value/ROI over price
+   Timeline: Ongoing
+
+4. Consolidation: Market consolidation beginning
+   Impact: Opportunity for acquisition or IPO
+   Timeline: 18-24 months
+
+---
+
+## Recommended Actions
+
+High Priority (Next 30 days):
+  1. Launch AI feature beta (response to Competitor A)
+  2. Analyze free tier conversion (response to Competitor B)
+  3. Identify vertical market targets
+
+Medium Priority (Next 90 days):
+  1. Develop enterprise edition
+  2. Build integration marketplace
+  3. Plan international expansion
+
+Long-term (6-12 months):
+  1. Position for acquisition or IPO
+  2. Build ecosystem and partnerships
+  3. Establish market leadership in chosen vertical
 ```
-Find sites linking to [competitor 1] AND [competitor 2] but not me
-```
 
-### SERP Feature Analysis
+## Best Practices
 
-```
-What SERP features do competitors win? (Featured snippets, PAA, etc.)
-```
+### ✅ DO
+- Analyze current and emerging competitors
+- Monitor competitor activities regularly
+- Understand customer perception of competition
+- Use competitive insights to inform strategy
+- Focus on differentiation, not just comparison
+- Include market trends in analysis
+- Update competitive analysis quarterly
+- Share insights across organization
+- Use data to back up claims
+- Consider indirect competitors too
 
-### Historical Tracking
+### ❌ DON'T
+- Obsess over competitor pricing
+- Copy competitor features blindly
+- Ignore emerging threats
+- Use only marketing materials for analysis
+- Focus only on feature comparison
+- Neglect customer feedback on competition
+- Make analysis too complex
+- Hide uncomfortable truths
+- Change strategy based on every competitor move
+- Ignore your competitive advantages
 
-```
-How has [competitor]'s SEO strategy evolved over the past year?
-```
+## Competitive Analysis Tips
 
-## Tips for Success
-
-1. **Analyze 3-5 competitors** for comprehensive view
-2. **Include indirect competitors** - they often have innovative approaches
-3. **Look beyond rankings** - analyze content quality, user experience
-4. **Study their failures** - avoid their mistakes
-5. **Monitor regularly** - competitor strategies evolve
-6. **Focus on actionable insights** - what can you actually implement?
-
-## Related Skills
-
-- [keyword-research](../keyword-research/) - Research keywords competitors rank for
-- [content-gap-analysis](../content-gap-analysis/) - Find content opportunities
-- [backlink-analyzer](../../monitor/backlink-analyzer/) - Deep-dive into backlinks
-- [serp-analysis](../serp-analysis/) - Understand search result composition
-
+- Use public data sources (websites, job postings, funding)
+- Talk to customers about competitors
+- Follow competitor social media and blogs
+- Set up competitor monitoring alerts
+- Review customer reviews (G2, Capterra, etc.)
+- Attend industry conferences

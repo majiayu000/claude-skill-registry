@@ -1,6 +1,6 @@
 ---
 name: seo-audit
-description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," or "SEO health check." For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.
+description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," or "SEO health check."
 ---
 
 # SEO Audit
@@ -24,7 +24,6 @@ Before auditing, understand:
 3. **Scope**
    - Full site audit or specific pages?
    - Technical + on-page, or one focus area?
-   - Access to Search Console / analytics?
 
 ---
 
@@ -52,41 +51,23 @@ Before auditing, understand:
 - Exists and accessible
 - Submitted to Search Console
 - Contains only canonical, indexable URLs
-- Updated regularly
-- Proper formatting
 
 **Site Architecture**
-- Important pages within 3 clicks of homepage
+- Important pages within 3 clicks
 - Logical hierarchy
 - Internal linking structure
-- No orphan pages
-
-**Crawl Budget Issues** (for large sites)
-- Parameterized URLs under control
-- Faceted navigation handled properly
-- Infinite scroll with pagination fallback
-- Session IDs not in URLs
 
 ### Indexation
 
 **Index Status**
 - site:domain.com check
 - Search Console coverage report
-- Compare indexed vs. expected
 
-**Indexation Issues**
+**Common Issues**
 - Noindex tags on important pages
 - Canonicals pointing wrong direction
 - Redirect chains/loops
-- Soft 404s
-- Duplicate content without canonicals
-
-**Canonicalization**
-- All pages have canonical tags
-- Self-referencing canonicals on unique pages
-- HTTP → HTTPS canonicals
-- www vs. non-www consistency
-- Trailing slash consistency
+- Duplicate content
 
 ### Site Speed & Core Web Vitals
 
@@ -95,45 +76,18 @@ Before auditing, understand:
 - INP (Interaction to Next Paint): < 200ms
 - CLS (Cumulative Layout Shift): < 0.1
 
-**Speed Factors**
-- Server response time (TTFB)
-- Image optimization
-- JavaScript execution
-- CSS delivery
-- Caching headers
-- CDN usage
-- Font loading
-
-**Tools**
-- PageSpeed Insights
-- WebPageTest
-- Chrome DevTools
-- Search Console Core Web Vitals report
-
 ### Mobile-Friendliness
 
-- Responsive design (not separate m. site)
+- Responsive design
 - Tap target sizes
 - Viewport configured
-- No horizontal scroll
 - Same content as desktop
-- Mobile-first indexing readiness
 
 ### Security & HTTPS
 
 - HTTPS across entire site
 - Valid SSL certificate
 - No mixed content
-- HTTP → HTTPS redirects
-- HSTS header (bonus)
-
-### URL Structure
-
-- Readable, descriptive URLs
-- Keywords in URLs where natural
-- Consistent structure
-- No unnecessary parameters
-- Lowercase and hyphen-separated
 
 ---
 
@@ -144,16 +98,8 @@ Before auditing, understand:
 **Check for:**
 - Unique titles for each page
 - Primary keyword near beginning
-- 50-60 characters (visible in SERP)
+- 50-60 characters
 - Compelling and click-worthy
-- Brand name placement (end, usually)
-
-**Common issues:**
-- Duplicate titles
-- Too long (truncated)
-- Too short (wasted opportunity)
-- Keyword stuffing
-- Missing entirely
 
 ### Meta Descriptions
 
@@ -162,13 +108,6 @@ Before auditing, understand:
 - 150-160 characters
 - Includes primary keyword
 - Clear value proposition
-- Call to action
-
-**Common issues:**
-- Duplicate descriptions
-- Auto-generated garbage
-- Too long/short
-- No compelling reason to click
 
 ### Heading Structure
 
@@ -176,143 +115,26 @@ Before auditing, understand:
 - One H1 per page
 - H1 contains primary keyword
 - Logical hierarchy (H1 → H2 → H3)
-- Headings describe content
-- Not just for styling
-
-**Common issues:**
-- Multiple H1s
-- Skip levels (H1 → H3)
-- Headings used for styling only
-- No H1 on page
 
 ### Content Optimization
 
-**Primary Page Content**
 - Keyword in first 100 words
 - Related keywords naturally used
-- Sufficient depth/length for topic
+- Sufficient depth for topic
 - Answers search intent
-- Better than competitors
-
-**Thin Content Issues**
-- Pages with little unique content
-- Tag/category pages with no value
-- Doorway pages
-- Duplicate or near-duplicate content
 
 ### Image Optimization
 
-**Check for:**
 - Descriptive file names
 - Alt text on all images
-- Alt text describes image
 - Compressed file sizes
 - Modern formats (WebP)
-- Lazy loading implemented
-- Responsive images
 
 ### Internal Linking
 
-**Check for:**
 - Important pages well-linked
 - Descriptive anchor text
-- Logical link relationships
 - No broken internal links
-- Reasonable link count per page
-
-**Common issues:**
-- Orphan pages (no internal links)
-- Over-optimized anchor text
-- Important pages buried
-- Excessive footer/sidebar links
-
-### Keyword Targeting
-
-**Per Page**
-- Clear primary keyword target
-- Title, H1, URL aligned
-- Content satisfies search intent
-- Not competing with other pages (cannibalization)
-
-**Site-Wide**
-- Keyword mapping document
-- No major gaps in coverage
-- No keyword cannibalization
-- Logical topical clusters
-
----
-
-## Content Quality Assessment
-
-### E-E-A-T Signals
-
-**Experience**
-- First-hand experience demonstrated
-- Original insights/data
-- Real examples and case studies
-
-**Expertise**
-- Author credentials visible
-- Accurate, detailed information
-- Properly sourced claims
-
-**Authoritativeness**
-- Recognized in the space
-- Cited by others
-- Industry credentials
-
-**Trustworthiness**
-- Accurate information
-- Transparent about business
-- Contact information available
-- Privacy policy, terms
-- Secure site (HTTPS)
-
-### Content Depth
-
-- Comprehensive coverage of topic
-- Answers follow-up questions
-- Better than top-ranking competitors
-- Updated and current
-
-### User Engagement Signals
-
-- Time on page
-- Bounce rate in context
-- Pages per session
-- Return visits
-
----
-
-## Common Issues by Site Type
-
-### SaaS/Product Sites
-- Product pages lack content depth
-- Blog not integrated with product pages
-- Missing comparison/alternative pages
-- Feature pages thin on content
-- No glossary/educational content
-
-### E-commerce
-- Thin category pages
-- Duplicate product descriptions
-- Missing product schema
-- Faceted navigation creating duplicates
-- Out-of-stock pages mishandled
-
-### Content/Blog Sites
-- Outdated content not refreshed
-- Keyword cannibalization
-- No topical clustering
-- Poor internal linking
-- Missing author pages
-
-### Local Business
-- Inconsistent NAP
-- Missing local schema
-- No Google Business Profile optimization
-- Missing location pages
-- No local content
 
 ---
 
@@ -328,57 +150,22 @@ Before auditing, understand:
 **Technical SEO Findings**
 For each issue:
 - **Issue**: What's wrong
-- **Impact**: SEO impact (High/Medium/Low)
+- **Impact**: High/Medium/Low
 - **Evidence**: How you found it
 - **Fix**: Specific recommendation
-- **Priority**: 1-5 or High/Medium/Low
 
 **On-Page SEO Findings**
-Same format as above
-
-**Content Findings**
-Same format as above
+Same format
 
 **Prioritized Action Plan**
-1. Critical fixes (blocking indexation/ranking)
+1. Critical fixes
 2. High-impact improvements
-3. Quick wins (easy, immediate benefit)
+3. Quick wins
 4. Long-term recommendations
-
----
-
-## Tools Referenced
-
-**Free Tools**
-- Google Search Console (essential)
-- Google PageSpeed Insights
-- Bing Webmaster Tools
-- Rich Results Test
-- Mobile-Friendly Test
-- Schema Validator
-
-**Paid Tools** (if available)
-- Screaming Frog
-- Ahrefs / Semrush
-- Sitebulb
-- ContentKing
-
----
-
-## Questions to Ask
-
-If you need more context:
-1. What pages/keywords matter most?
-2. Do you have Search Console access?
-3. Any recent changes or migrations?
-4. Who are your top organic competitors?
-5. What's your current organic traffic baseline?
 
 ---
 
 ## Related Skills
 
-- **programmatic-seo**: For building SEO pages at scale
-- **schema-markup**: For implementing structured data
-- **page-cro**: For optimizing pages for conversion (not just ranking)
+- **lp-optimizer**: For optimizing pages for conversion
 - **analytics-tracking**: For measuring SEO performance

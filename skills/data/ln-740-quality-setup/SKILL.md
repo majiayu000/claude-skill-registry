@@ -119,17 +119,7 @@ ln-740 (this)
               - pytest (Python)
 ```
 
-**Worker Invocation:**
-```
-Skill tool: ln-741-linter-configurator
-Args: detected stack, existing config decisions
-
-Skill tool: ln-742-precommit-setup
-Args: detected stack, lint commands from ln-741
-
-Skill tool: ln-743-test-infrastructure
-Args: detected stack, project structure
-```
+Pass detected stack and existing configs to workers via direct Skill tool invocation.
 
 ---
 

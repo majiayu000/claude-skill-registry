@@ -1,12 +1,7 @@
 {
   "name": "triage-issue",
-  "description": "Intelligently triage bug reports and error messages by searching for duplicates in Jira and offering to create new issues or add comments to existing ones. When Claude needs to: (1) Triage a bug repor",
-  "repo": "atlassian/atlassian-mcp-server",
-  "category": "development",
-  "tags": [
-    "triage",
-    "issue"
-  ],
-  "stars": 152,
-  "source": "SkillsMP Synced Skills"
+  "repo": "mysticaltech/terraform-hcloud-kube-hetzner",
+  "path": ".claude/skills/triage-issue/SKILL.md",
+  "source": "github.com/mysticaltech/terraform-hcloud-kube-hetzner",
+  "downloaded_at": "2026-02-04T02:21:04.542517Z"
 }

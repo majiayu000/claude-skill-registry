@@ -1,311 +1,455 @@
 ---
-name: apex
-description: Systematic implementation using APEX methodology (Analyze-Plan-Execute-eXamine) with parallel agents, self-validation, and optional adversarial review. Use when implementing features, fixing bugs, or making code changes that benefit from structured workflow.
-argument-hint: "[-a] [-x] [-s] [-t] [-b] [-pr] [-i] [-r <task-id>] <task description>"
+name: APEX Methodology
+description: |
+  Systematic development workflow: Analyze → Plan → Execute → eLicit → eXamine.
+  Use for ANY development task: features, bug fixes, refactoring, hotfixes.
+  Triggers: "implement", "create", "build", "fix", "add feature", "refactor", "develop".
+  Auto-detects project type (Laravel, Next.js, React, Swift) and loads framework-specific references.
+  Enforces: files <100 lines, interfaces separated, SOLID principles, expert self-review, sniper validation.
+  Modes: --auto (default), --manual, --skip-elicit
+argument-hint: "[task-description]"
+user-invocable: false
+hooks:
+  PostToolUse:
+    - matcher: Edit
+      hooks:
+        - type: command
+          command: |
+            echo '{"decision":"block","reason":"APEX RULE: File modified via Edit. You MUST immediately launch sniper agent to validate this change before proceeding."}'
+    - matcher: Write
+      hooks:
+        - type: command
+          command: |
+            echo '{"decision":"block","reason":"APEX RULE: File created via Write. You MUST immediately launch sniper agent to validate this change before proceeding."}'
 ---
 
-<objective>
-Execute systematic implementation workflows using the APEX methodology. This skill uses progressive step loading to minimize context usage and supports saving outputs for review and resumption.
-</objective>
+**Current Task:** $ARGUMENTS
 
-<quick_start>
-**Basic usage:**
+# APEX Methodology Skill
 
-```bash
-/apex add authentication middleware
-```
+**Analyze → Plan → Execute → eLicit → eXamine**
 
-**Recommended workflow (autonomous with save):**
+Complete development workflow for features, fixes, and refactoring.
 
-```bash
-/apex -a -s implement user registration
-```
+---
 
-**With adversarial review:**
+## Step 0: Initialize Tracking (MANDATORY FIRST ACTION)
+
+**BEFORE anything else**, run this command to initialize APEX tracking:
 
 ```bash
-/apex -a -x -s fix login bug
+mkdir -p .claude/apex/docs && cat > .claude/apex/task.json << 'INITEOF'
+{
+  "current_task": "1",
+  "created_at": "'"$(date -u +"%Y-%m-%dT%H:%M:%SZ")"'",
+  "tasks": {
+    "1": {
+      "status": "in_progress",
+      "started_at": "'"$(date -u +"%Y-%m-%dT%H:%M:%SZ")"'",
+      "doc_consulted": {}
+    }
+  }
+}
+INITEOF
+echo "✅ APEX tracking initialized in $(pwd)/.claude/apex/"
 ```
 
-**Flags:**
+This creates:
+- `.claude/apex/task.json` - Tracks documentation consultation status
+- `.claude/apex/docs/` - Stores consulted documentation summaries
 
-- `-a` (auto): Skip confirmations
-- `-s` (save): Save outputs to `.claude/output/apex/`
-- `-x` (examine): Include adversarial code review
-- `-t` (test): Create and run tests
-- `-pr` (pull-request): Create PR at end
+**The PreToolUse hooks will BLOCK Write/Edit until documentation is consulted.**
 
-See `<parameters>` for complete flag list.
-</quick_start>
+---
 
-<parameters>
+## Workflow Overview
 
-<flags>
-**Enable flags (turn ON):**
-| Short | Long | Description |
-|-------|------|-------------|
-| `-a` | `--auto` | Autonomous mode: skip confirmations, auto-approve plans |
-| `-x` | `--examine` | Auto-examine mode: proceed to adversarial review |
-| `-s` | `--save` | Save mode: output each step to `.claude/output/apex/` |
-| `-t` | `--test` | Test mode: include test creation and runner steps |
-| `-e` | `--economy` | Economy mode: no subagents, save tokens (for limited plans) |
-| `-r` | `--resume` | Resume mode: continue from a previous task |
-| `-b` | `--branch` | Branch mode: verify not on main, create branch if needed |
-| `-pr` | `--pull-request` | PR mode: create pull request at end (enables -b) |
-| `-i` | `--interactive` | Interactive mode: configure flags via AskUserQuestion |
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                     APEX WORKFLOW                               │
+├─────────────────────────────────────────────────────────────────┤
+│  00-init-branch     → Create feature branch                     │
+│  01-analyze-code    → Understand codebase (A)                   │
+│  02-features-plan   → Plan implementation (P)                   │
+│  03-execution       → Write code (E)                            │
+│  03.5-elicit        → Expert self-review (L) ← NEW              │
+│  04-validation      → Verify quality (X)                        │
+│  05-review          → Self-review                               │
+│  06-fix-issue       → Handle issues                             │
+│  07-add-test        → Write tests                               │
+│  08-check-test      → Run tests                                 │
+│  09-create-pr       → Create Pull Request                       │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-**Disable flags (turn OFF):**
-| Short | Long | Description |
-|-------|------|-------------|
-| `-A` | `--no-auto` | Disable auto mode |
-| `-X` | `--no-examine` | Disable examine mode |
-| `-S` | `--no-save` | Disable save mode |
-| `-T` | `--no-test` | Disable test mode |
-| `-E` | `--no-economy` | Disable economy mode |
-| `-B` | `--no-branch` | Disable branch mode |
-| `-PR` | `--no-pull-request` | Disable PR mode |
-</flags>
+---
 
-<examples>
+## Phase References
+
+| Phase | File | Purpose |
+| --- | --- | --- |
+| **00** | `references/00-init-branch.md` | Create feature branch |
+| **01** | `references/01-analyze-code.md` | Explore + Research (APEX A) |
+| **02** | `references/02-features-plan.md` | TodoWrite planning (APEX P) |
+| **03** | `references/03-execution.md` | Implementation (APEX E) |
+| **03.5** | `references/03.5-elicit.md` | Expert self-review (APEX L) ← NEW |
+| **04** | `references/04-validation.md` | sniper validation (APEX X) |
+| **05** | `references/05-review.md` | Self-review checklist |
+| **06** | `references/06-fix-issue.md` | Fix validation/review issues |
+| **07** | `references/07-add-test.md` | Write unit/integration tests |
+| **08** | `references/08-check-test.md` | Run and verify tests |
+| **09** | `references/09-create-pr.md` | Create and merge PR |
+
+---
+
+## Quick Start
+
+### Standard Feature Flow
+
+```text
+1. 00-init-branch     → git checkout -b feature/xxx
+2. 01-analyze-code    → explore-codebase + research-expert
+3. 02-features-plan   → TodoWrite task breakdown
+4. 03-execution       → Implement (files <100 lines)
+5. 03.5-elicit        → Expert self-review (75 techniques) ← NEW
+6. 04-validation      → sniper agent
+7. 07-add-test        → Write tests
+8. 08-check-test      → Run tests
+9. 05-review          → Self-review
+10. 09-create-pr      → gh pr create
+```
+
+### Bug Fix Flow
+
+```text
+1. 00-init-branch     → git checkout -b fix/xxx
+2. 01-analyze-code    → Understand bug context
+3. 07-add-test        → Write failing test FIRST
+4. 03-execution       → Fix the bug
+5. 08-check-test      → Verify test passes
+6. 04-validation      → sniper agent
+7. 09-create-pr       → gh pr create
+```
+
+### Hotfix Flow
+
+```text
+1. 00-init-branch     → git checkout -b hotfix/xxx
+2. 03-execution       → Minimal fix only
+3. 04-validation      → sniper agent
+4. 08-check-test      → Run tests
+5. 09-create-pr       → Urgent merge
+```
+
+---
+
+## Core Rules
+
+### File Size (ABSOLUTE)
+
+```text
+🚨 STOP at 90 lines → Split immediately
+❌ NEVER exceed 100 lines
+📊 Target: 50-80 lines per file
+```
+
+### Interface Location
+
+```text
+✅ src/interfaces/     (global)
+✅ src/types/          (type definitions)
+✅ Contracts/          (PHP/Laravel)
+❌ NEVER in component files
+```
+
+### Agent Usage
+
+```text
+01-analyze:  explore-codebase + research-expert (PARALLEL)
+04-validate: sniper (MANDATORY after ANY change)
+```
+
+---
+
+## APEX Phases Explained
+
+### A - Analyze
+
+```text
+ALWAYS run 2 agents in parallel:
+
+1. explore-codebase
+   → Map project structure
+   → Find existing patterns
+   → Identify change locations
+
+2. research-expert
+   → Verify official documentation
+   → Confirm API methods
+   → Check best practices
+```
+
+### P - Plan
+
+```text
+ALWAYS use TodoWrite:
+
+1. Break down into tasks
+2. Each task <100 lines
+3. Plan file splits FIRST
+4. Map dependencies
+```
+
+### E - Execute
+
+```text
+FOLLOW plan strictly:
+
+1. Create interfaces FIRST
+2. Monitor file sizes
+3. Write JSDoc/comments
+4. Atomic commits
+```
+
+### X - eXamine
+
+```text
+ALWAYS run sniper:
+
+6-phase validation:
+1. explore-codebase
+2. research-expert
+3. grep usages
+4. run linters
+5. apply fixes
+6. ZERO errors
+```
+
+---
+
+## Branching Strategy
+
+### Branch Naming
+
+```text
+feature/ISSUE-123-short-description
+fix/ISSUE-456-bug-name
+hotfix/ISSUE-789-urgent-fix
+refactor/ISSUE-321-cleanup
+docs/ISSUE-654-readme
+test/ISSUE-987-coverage
+```
+
+### Best Practices (2025)
+
+```text
+✅ Short-lived branches (1-3 days)
+✅ Small, focused changes
+✅ Sync frequently with main
+✅ Squash and merge
+```
+
+---
+
+## Commit Convention
+
+### Format
+
+```text
+<type>(<scope>): <description>
+
+Types: feat, fix, refactor, docs, test, chore
+Scope: component/feature name
+Description: imperative mood, <50 chars
+```
+
+### Examples
+
 ```bash
-# Basic usage
-/apex add auth middleware
-
-# Autonomous mode (no confirmations)
-
-/apex -a add auth middleware
-
-# Save outputs for review
-
-/apex -s add auth middleware
-
-# With adversarial review
-
-/apex -x add auth middleware
-
-# Full autonomous with examine and save
-
-/apex -a -x -s add auth middleware
-
-# Include test creation and runner
-
-/apex -t add auth middleware
-
-# Resume a previous task
-
-/apex -r 01-auth-middleware
-/apex -r 01 # Partial match supported
-
-# Combined flags
-
-/apex -a -x -s -t add auth middleware
-
-# Branch mode (ensure not on main, create branch if needed)
-
-/apex -b add auth middleware
-
-# Create PR at end (automatically enables -b)
-
-/apex -pr add auth middleware
-/apex -a -pr add auth middleware # Auto + PR mode
-
-# Interactive mode (configure flags via menu)
-
-/apex -i add auth middleware
-
-# Economy mode (save tokens, no subagents)
-
-/apex -e add auth middleware
-/apex -a -e add auth middleware # Auto + economy
-
-# Disable flags (override defaults)
-
-/apex -A add auth middleware # Disable auto (if default is true)
-/apex -S -T add auth middleware # Disable save and test
-/apex --no-auto add auth middleware
-
-```
-</examples>
-
-<parsing_rules>
-**Flag parsing:**
-
-1. Defaults loaded from `steps/step-00-init.md` `<defaults>` section
-2. Command-line flags override defaults (enable with lowercase `-x`, disable with uppercase `-X`)
-3. Flags removed from input, remainder becomes `{task_description}`
-4. Task ID generated as `NN-kebab-case-description`
-
-For detailed parsing algorithm, see `steps/step-00-init.md`.
-</parsing_rules>
-
-</parameters>
-
-<output_structure>
-**When `{save_mode}` = true:**
-
-All outputs saved to PROJECT directory (where Claude Code is running):
+feat(auth): add JWT authentication
+fix(cart): resolve quantity validation
+refactor(api): extract fetch utilities
+test(auth): add login component tests
 ```
 
-.claude/output/apex/{task-id}/
-├── 00-context.md # Params, user request, timestamp
-├── 01-analyze.md # Analysis findings
-├── 02-plan.md # Implementation plan
-├── 03-execute.md # Execution log
-├── 04-validate.md # Validation results
-├── 05-examine.md # Review findings (if -x)
-├── 06-resolve.md # Resolution log (if -x)
-├── 07-tests.md # Test analysis and creation (if --test)
-├── 08-run-tests.md # Test runner log (if --test)
-└── 09-finish.md # Workflow finish and PR creation (if --pull-request)
+---
 
-````
+## Validation Requirements
 
-**00-context.md structure:**
-```markdown
-# APEX Task: {task_id}
+### Before PR
 
-**Created:** {timestamp}
-**Task:** {task_description}
+```text
+□ sniper passes (ZERO errors)
+□ All tests pass
+□ Build succeeds
+□ Self-review complete
+□ No console.logs
+□ No TODO unaddressed
+```
 
-## Flags
-- Auto mode: {auto_mode}
-- Examine mode: {examine_mode}
-- Save mode: {save_mode}
-- Test mode: {test_mode}
+### Code Quality
 
-## User Request
-{original user input}
+```text
+□ Files <100 lines
+□ Interfaces in correct location
+□ JSDoc on all exports
+□ No any types
+□ Error handling complete
+```
 
-## Acceptance Criteria
-- [ ] AC1: {inferred criterion}
-- [ ] AC2: {inferred criterion}
-````
+---
 
-</output_structure>
+## PR Guidelines
 
-<resume_workflow>
-**Resume mode (`-r {task-id}`):**
+### Title Format
 
-When provided, step-00 will:
+```text
+feat(auth): add social login with Google
+fix(cart): resolve quantity update bug
+refactor(api): extract fetch utilities
+```
 
-1. Locate the task folder in `.claude/output/apex/`
-2. Restore state from `00-context.md`
-3. Find the last completed step
-4. Continue from the next step
+### Description Must Include
 
-Supports partial matching (e.g., `-r 01` finds `01-add-auth-middleware`).
+```text
+□ Summary (1-3 bullets)
+□ Changes (added/modified/removed)
+□ Related issues (Closes #xxx)
+□ Test plan (checkboxes)
+□ Screenshots (if UI changes)
+```
 
-For implementation details, see `steps/step-00-init.md`.
-</resume_workflow>
+---
 
-<workflow>
-**Standard flow:**
-1. Parse flags and task description
-2. If `-r`: Execute resume workflow
-3. If `-s`: Create output folder and 00-context.md
-4. Load step-01-analyze.md → gather context
-5. Load step-02-plan.md → create strategy
-6. Load step-03-execute.md → implement
-7. Load step-04-validate.md → verify
-8. If `--test`: Load step-07-tests.md → analyze and create tests
-9. If `--test`: Load step-08-run-tests.md → run until green
-10. If `-x` or user requests: Load step-05-examine.md → adversarial review
-11. If findings: Load step-06-resolve.md → fix findings
-12. If `-pr`: Load step-09-finish.md → create pull request
-</workflow>
+## Flow Diagram
 
-<state_variables>
-**Persist throughout all steps:**
+```text
+                    START
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 00-init-branch│
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 01-analyze    │ ← explore + research
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 02-plan       │ ← TodoWrite
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 03-execute    │ ← Write code
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 04-validate   │ ← sniper
+              └───────┬───────┘
+                      │
+              ┌───────┴───────┐
+              │               │
+              ▼               ▼
+        ┌──────────┐   ┌──────────┐
+        │ 06-fix   │   │ 07-test  │
+        └────┬─────┘   └────┬─────┘
+             │              │
+             └──────┬───────┘
+                    │
+                    ▼
+              ┌───────────────┐
+              │ 08-check-test │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 05-review     │
+              └───────┬───────┘
+                      │
+                      ▼
+              ┌───────────────┐
+              │ 09-create-pr  │
+              └───────┬───────┘
+                      │
+                      ▼
+                    DONE
+```
 
-| Variable                | Type    | Description                                                  |
-| ----------------------- | ------- | ------------------------------------------------------------ |
-| `{task_description}`    | string  | What to implement (flags removed)                            |
-| `{feature_name}`        | string  | Kebab-case name without number (e.g., `add-auth-middleware`) |
-| `{task_id}`             | string  | Full identifier with number (e.g., `01-add-auth-middleware`) |
-| `{acceptance_criteria}` | list    | Success criteria (inferred or explicit)                      |
-| `{auto_mode}`           | boolean | Skip confirmations, use recommended options                  |
-| `{examine_mode}`        | boolean | Auto-proceed to adversarial review                           |
-| `{save_mode}`           | boolean | Save outputs to .claude/output/apex/                         |
-| `{test_mode}`           | boolean | Include test steps (07-08)                                   |
-| `{economy_mode}`        | boolean | No subagents, direct tool usage only                         |
-| `{branch_mode}`         | boolean | Verify not on main, create branch if needed                  |
-| `{pr_mode}`             | boolean | Create pull request at end                                   |
-| `{interactive_mode}`    | boolean | Configure flags interactively                                |
-| `{resume_task}`         | string  | Task ID to resume (if -r provided)                           |
-| `{output_dir}`          | string  | Full path to output directory                                |
-| `{branch_name}`         | string  | Created branch name (if branch_mode)                         |
+---
 
-</state_variables>
+## NEVER
 
-<entry_point>
+```text
+❌ Skip explore-codebase or research-expert
+❌ Assume API syntax without verification
+❌ Create files >100 lines
+❌ Put interfaces in component files
+❌ Skip sniper after changes
+❌ Merge without tests
+❌ Large PRs (>400 lines)
+```
 
-**FIRST ACTION:** Load `steps/step-00-init.md`
+---
 
-Step 00 handles:
+## Reference Files
 
-- Flag parsing (-a, -x, -s, -r, --test)
-- Resume mode detection and task lookup
-- Output folder creation (if save_mode)
-- 00-context.md creation (if save_mode)
-- State variable initialization
+All detailed guides in `references/` directory:
 
-After initialization, step-00 loads step-01-analyze.md.
+```text
+references/
+├── 00-init-branch.md     # Branch creation
+├── 01-analyze-code.md    # Code analysis
+├── 02-features-plan.md   # Planning
+├── 03-execution.md       # Implementation
+├── 04-validation.md      # Validation
+├── 05-review.md          # Self-review
+├── 06-fix-issue.md       # Issue fixes
+├── 07-add-test.md        # Test writing
+├── 08-check-test.md      # Test running
+└── 09-create-pr.md       # PR creation
+```
 
-</entry_point>
+---
 
-<step_files>
-**Progressive loading - only load current step:**
+## Language-Specific References
 
-| Step | File                         | Purpose                                              |
-| ---- | ---------------------------- | ---------------------------------------------------- |
-| 00   | `steps/step-00-init.md`      | Parse flags, create output folder, initialize state  |
-| 01   | `steps/step-01-analyze.md`   | Pure context gathering (what exists, not what to do) |
-| 02   | `steps/step-02-plan.md`      | File-by-file implementation strategy                 |
-| 03   | `steps/step-03-execute.md`   | Todo-driven implementation                           |
-| 04   | `steps/step-04-validate.md`  | Self-check and validation                            |
-| 05   | `steps/step-05-examine.md`   | Adversarial code review (optional)                   |
-| 06   | `steps/step-06-resolve.md`   | Finding resolution (optional)                        |
-| 07   | `steps/step-07-tests.md`     | Test analysis and creation (if --test)               |
-| 08   | `steps/step-08-run-tests.md` | Test runner loop until green (if --test)             |
-| 09   | `steps/step-09-finish.md`    | Create pull request (if --pull-request)              |
+Framework-specific APEX methodology guides:
 
-</step_files>
+| Framework | Directory | Tools |
+| --- | --- | --- |
+| **Laravel** | `references/laravel/` | Pest, Larastan, Pint |
+| **Next.js** | `references/nextjs/` | Vitest, Playwright, ESLint |
+| **React** | `references/react/` | Vitest, Testing Library, Biome |
+| **Swift** | `references/swift/` | XCTest, SwiftLint, swift-format |
 
-<execution_rules>
+### Auto-Detection
 
-- **Load one step at a time** - Only load the current step file
-- **ULTRA THINK** before major decisions
-- **Persist state variables** across all steps
-- **Follow next_step directive** at end of each step
-- **Save outputs** if `{save_mode}` = true (append to step file)
-- **Use parallel agents** for independent exploration tasks
-  </execution_rules>
+```text
+Project Type        → References Used
+─────────────────────────────────────
+composer.json       → references/laravel/
+next.config.*       → references/nextjs/
+vite.config.*       → references/react/
+Package.swift       → references/swift/
+Default             → references/ (generic)
+```
 
-<save_output_pattern>
-**When `{save_mode}` = true:**
+### Structure (Each Framework)
 
-Step-00 runs `scripts/setup-templates.sh` to initialize all output files from `templates/` directory.
-
-**Each step then:**
-
-1. Run `scripts/update-progress.sh {task_id} {step_num} {step_name} "in_progress"`
-2. Append findings/outputs to the pre-created step file
-3. Run `scripts/update-progress.sh {task_id} {step_num} {step_name} "complete"`
-
-**Template system benefits:**
-
-- Reduces token usage by ~75% (1,350 tokens saved per workflow)
-- Templates in `templates/` directory (not inline in steps)
-- Scripts handle progress tracking automatically
-- See `templates/README.md` for details
-
-</save_output_pattern>
-
-<success_criteria>
-
-- Each step loaded progressively
-- All validation checks passing
-- Outputs saved if `{save_mode}` enabled
-- Tests passing if `{test_mode}` enabled
-- Clear completion summary provided
-  </success_criteria>
+```text
+references/[framework]/
+├── 00-init-branch.md     # Framework-specific branching
+├── 01-analyze-code.md    # Framework exploration tools
+├── 02-features-plan.md   # Planning patterns
+├── 03-execution.md       # SOLID implementation
+├── 04-validation.md      # Linters and formatters
+├── 05-review.md          # Framework checklist
+├── 06-fix-issue.md       # Common fixes
+├── 07-add-test.md        # Testing patterns
+├── 08-check-test.md      # Test commands
+└── 09-create-pr.md       # PR template
+```

@@ -1,123 +1,70 @@
 ---
-name: "scoping-cutting"
-description: "Right-size scope to ship within a fixed timebox (appetite). Produces a Scoping & Cutting Pack: appetite, minimum lovable slice, cut list, validation plan, and a scope-creep guardrail plan. Use for MVP/descoping/scope creep."
+name: scoping-cutting
+description: Help users scope projects and cut features effectively. Use when someone is defining an MVP, dealing with scope creep, trying to ship faster, or needs to make tradeoffs about what to build.
 ---
 
 # Scoping & Cutting
 
-## Scope
+Help the user scope projects and cut features effectively using frameworks from 15 product leaders.
 
-**Covers**
-- Converting a fuzzy initiative into a **ship-able slice** that fits a fixed time budget (“appetite”)
-- Creating a **cut list** (what to drop/defer) with explicit trade-offs and rationale
-- Defining an MVP as a **hypothesis test** (what you’re validating, not just “smaller”)
-- Choosing a **Minimum Lovable Slice** (viable *and* emotionally resonant) instead of a “barely works” release
-- Using **Wizard-of-Oz / concierge** approaches to validate value before building full automation
-- Preventing scope creep via explicit **non-goals + change control**
+## How to Help
 
-**When to use**
-- “Cut scope / descope this feature so we can ship by <date>.”
-- “Define an MVP for this initiative (what hypothesis are we testing?).”
-- “We have 2–6 weeks; what can we ship that still matters?”
-- “Scope creep is killing us; define what’s in/out and how changes happen.”
-- “We need a minimum lovable version, not a compromised mess.”
+When the user asks for help with scoping:
 
-**When NOT to use**
-- You don’t yet know what problem you’re solving (use `problem-definition`)
-- You’re choosing between many competing initiatives (use `prioritizing-roadmap`)
-- You need a decision-ready PRD with requirements (use `writing-prds`) or a build-ready design/tech spec (use `writing-specs-designs`)
-- You’re setting long-term product strategy or vision (use `defining-product-vision`)
+1. **Understand the hypothesis** - Ask what they're trying to learn or validate
+2. **Identify the appetite** - Determine how much time/resources they're willing to invest
+3. **Find the essential core** - Help them identify what must be present for the first version
+4. **Design for learning** - Ensure the scope enables fast feedback, not just fast shipping
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- The initiative/feature and the **decision** (ship vs defer vs stop) + target date or time budget
-- Target user/segment + the **core user journey** you want to improve
-- Success metric(s) + 2–5 guardrails (trust, quality, cost, latency, support load)
-- Constraints and non-negotiables (legal/privacy, platform, dependencies, team size)
-- Candidate scope items (bullets are fine) + known unknowns
+### Use appetite, not estimates
+Ryan Singer: "We're going to go the other way around and we're going to say, what is the maximum amount of time we're willing to go before we actually finish something?" Set a fixed time budget (appetite) and design a version of the solution that fits within it. Vary scope, not deadlines.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with explicit assumptions and list **Open questions** that would change the cut decisions.
+### MVP is a validation tool
+Eric Ries: "MVP is simply for whatever the hypothesis is that we're trying to test, what is the most efficient way to get the validation we need about whether a hypothesis is true or not?" An MVP is not a low-quality product - it's the most efficient way to test a specific hypothesis.
 
-## Outputs (deliverables)
+### Cut the list in half, then half again
+Eric Ries: "Write out the list of features that are necessary in your MVP. Cut it in half and cut it in half again and build that." Founders consistently overestimate what's "minimum." Aggressive cutting is required to reach a true baseline.
 
-Produce a **Scoping & Cutting Pack** in Markdown (in-chat; or as files if the user requests):
+### Fixed time, small teams
+Jason Fried: "Our appetite for any individual feature is no more than six weeks... So we have to figure out the simplest, most effective version of that to get that done within six weeks and get it done by two people." Constraints force creative solutions. Limit team size to maintain focus.
 
-1) **Context snapshot** (decision, date/appetite, stakeholders/DRI, constraints)
-2) **Outcome + hypothesis** (what must be true; what you’ll validate)
-3) **Appetite + success bar** (time budget, “done means…”, guardrails)
-4) **Minimum Lovable Slice spec** (core flow, must-haves, non-goals)
-5) **Cut list** (cut/defer/keep with rationale + impact on risks)
-6) **Validation plan** (Wizard-of-Oz/concierge/prototype as needed) + success criteria
-7) **Delivery plan** (milestones within appetite + scope-change rules)
-8) **Risks / Open questions / Next steps** (always included)
+### Build the scooter, not the axle
+Eeke de Milliano: "If you're trying to build the minimum viable product for a car, don't build just the wheels and the axle, build the scooter first." An MVP should be a functional, end-to-end version of a smaller value proposition, not an incomplete piece of a larger one.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Use Wizard of Oz testing
+Crystal W: "It's really this Wizard of Oz experience. We don't have to build anything. I coordinated with a bunch of interns and we were able to validate some of the value prop." Validate value propositions manually before investing in engineering. Use humans to simulate automated features.
 
-## Workflow (8 steps)
+### Kill projects that don't finish in time
+Jason Fried: "If there's any work that's left over that's still on the left side of the hill, meaning we're still pushing it up, we don't know how we're going to do it and we're at our time limit, it almost certainly dies." Let projects die if they aren't completed within their allotted time to prevent never-ending work.
 
-### 1) Intake + decision framing
-- **Inputs:** User request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify the decision, date/appetite, DRI, constraints, and what “shipping” means (where it lands, who uses it).
-- **Outputs:** Context snapshot.
-- **Checks:** You can state: “We are deciding to ship <slice> by <date> with <team> under <constraints>.”
+### Build the option to pivot into the process
+Paige Costello: "We added into our product process a notion that we might pivot or cut from stuff that we put on our roadmap because it felt like once it was on the roadmap, it had to be done." Formalize the ability to cut or pivot from roadmap items to avoid the sunk cost fallacy.
 
-### 2) Define the outcome and hypothesis (MVP = test)
-- **Inputs:** Context snapshot; current evidence/risks.
-- **Actions:** Write the outcome in user terms; define the key hypothesis (or 2–3). Choose success metric(s) + guardrails.
-- **Outputs:** Outcome + hypothesis section; metrics/guardrails.
-- **Checks:** You can answer: “What will we learn/validate by shipping this slice?”
+## Questions to Help Users
 
-### 3) Set appetite (time as a budget) + non-negotiables
-- **Inputs:** Target date/timebox; constraints; team capacity.
-- **Actions:** Set a hard time budget (e.g., 2/4/6 weeks). List non-negotiables (policy, privacy, reliability, design constraints).
-- **Outputs:** Appetite + constraints section.
-- **Checks:** Appetite is explicit and agreed; scope is the variable, not the deadline.
+- "What's the single hypothesis you're trying to validate with this version?"
+- "What's the maximum time you're willing to invest before shipping something?"
+- "What would you cut if you had to ship in half the time?"
+- "Is there a way to test this manually before building automation?"
+- "If this feature doesn't ship in time, will you kill it or extend?"
+- "What's the smallest thing that still delivers complete value?"
 
-### 4) Design the Minimum Lovable Slice (MLS)
-- **Inputs:** Outcome + constraints; candidate scope items.
-- **Actions:** Define the smallest end-to-end flow that delivers the core value and feels coherent. Add 1–2 “lovability” elements that increase trust/clarity (not random polish).
-- **Outputs:** MLS spec (core flow, must-haves, non-goals, assumptions).
-- **Checks:** The slice is end-to-end (not a partial subsystem) and a user could describe why it’s valuable.
+## Common Mistakes to Flag
 
-### 5) Build a cut list with explicit trade-offs
-- **Inputs:** MLS spec + candidate scope items.
-- **Actions:** Create a table of items to **keep / cut / defer**, with rationale tied to outcome, risk, and appetite. Convert “nice-to-haves” into “later” with a clear trigger for revisiting.
-- **Outputs:** Cut list table + short decision rationale.
-- **Checks:** Every removed item has a reason; non-goals are as clear as goals.
+- **Estimating instead of time-boxing** - Asking "how long will this take?" instead of "what can we do in X weeks?"
+- **Building the axle** - Shipping incomplete parts of a larger feature instead of complete smaller features
+- **Never killing projects** - Extending deadlines instead of cutting scope or canceling
+- **Over-engineering the MVP** - Building too much before testing the core hypothesis
+- **Ignoring the Wizard of Oz** - Always defaulting to building when manual validation would be faster
 
-### 6) Add a validation plan (Wizard-of-Oz / concierge where helpful)
-- **Inputs:** Riskiest assumptions; cut list.
-- **Actions:** Choose the fastest validation method to de-risk the top unknown(s) (manual ops, scripted demo, prototype). Define what data/feedback counts as “validated”.
-- **Outputs:** Validation plan (method, audience, script, success criteria, timeline).
-- **Checks:** The plan can run without building the full system; success criteria are defined before running it.
+## Deep Dive
 
-### 7) Delivery plan + scope-change guardrails
-- **Inputs:** MLS spec; validation plan; appetite.
-- **Actions:** Break the work into milestones that fit the appetite. Define scope-change rules (how requests are evaluated; what gets traded off; who decides).
-- **Outputs:** Delivery plan + scope-change policy.
-- **Checks:** New scope can only enter by removing or shrinking something else (“trade, don’t add”).
+For all 19 insights from 15 guests, see `references/guest-insights.md`
 
-### 8) Quality gate + finalize
-- **Inputs:** Full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Ensure **Risks / Open questions / Next steps** are present with owners.
-- **Outputs:** Final Scoping & Cutting Pack.
-- **Checks:** A stakeholder can approve the slice async and the team can execute without re-litigating scope.
+## Related Skills
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (B2B SaaS):** “Cut scope for ‘bulk CSV import’ so we can ship a useful version in 4 weeks; include a Wizard-of-Oz validation plan.”  
-Expected: an appetite-based MLS, a cut/defer table, and a validation plan that tests value before building every edge case.
-
-**Example 2 (Consumer):** “Define a minimum lovable first version of ‘saved searches’ for mobile within a 2-week appetite.”  
-Expected: a coherent end-to-end slice, explicit non-goals, and a scope-change policy to prevent creep.
-
-**Boundary example:** “Decide what our Q2 roadmap should be across 12 initiatives.”  
-Response: use `prioritizing-roadmap` first; then apply this skill to right-size the chosen initiative.
+- prioritizing-roadmap
+- planning-under-uncertainty
+- problem-definition

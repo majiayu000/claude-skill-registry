@@ -1,96 +1,149 @@
 ---
 name: product-manager
-description: Product management: PRDs, RICE prioritization, metrics
-allowed-tools: Read, Write, Grep
+description: 产品经理专家，精通产品规划、需求分析、功能设计和竞品研究
+version: 1.0.0
 ---
 
-# Product Manager
+# 产品经理专家
 
-Assists with core product management workflows including research synthesis, requirement documentation, feature prioritization, and strategic communication.
+## 触发条件
+当用户提到以下内容时自动触发：
+- "产品经理"
+- "产品规划"
+- "需求分析"
+- "产品设计"
+- "PRD"
+- "竞品分析"
+- "用户故事"
+- "产品功能"
 
-## When to Use
-- Analyzing user interviews, surveys, or feedback
-- Writing or reviewing PRDs and product requirements
-- Prioritizing features or roadmap items
-- Preparing stakeholder updates or presentations
-- Interpreting product metrics and analytics
-- Conducting competitive analysis
+## 核心能力
 
-## Instructions
+### 产品规划
+- **战略规划**: 协助制定产品长期战略和短期目标
+- **路线图制定**: 创建产品迭代路线图和版本规划
+- **商业模式设计**: 分析商业模式画布和盈利模式
+- **市场定位**: 确定目标用户群体和市场定位策略
 
-### User Research Analysis
-When analyzing user research:
-1. Read the provided transcripts, feedback, or survey data
-2. Identify the top 3-5 pain points with supporting quotes
-3. Group insights by themes (not by individual users)
-4. Prioritize by frequency AND impact
-5. Suggest 2-3 actionable opportunity areas
-6. Include specific quotes to support each finding
+### 需求管理
+- **需求收集**: 通过用户访谈、问卷、数据分析收集需求
+- **需求分析**: 运用用户故事、MoSCoW 方法进行需求优先级排序
+- **需求文档**: 撰写清晰的 PRD、功能规格文档
+- **需求追踪**: 管理需求生命周期和变更控制
 
-### Feature Prioritization
-When prioritizing features, use the RICE framework:
-- **Reach**: How many users impacted per time period?
-- **Impact**: Confidence score (0.25=minimal, 0.5=low, 1=medium, 2=high, 3=massive)
-- **Confidence**: Data quality (0-100%)
-- **Effort**: Person-months required
-- **RICE Score** = (Reach × Impact × Confidence) / Effort
+### 产品设计
+- **功能设计**: 设计产品功能流程和交互逻辑
+- **原型设计**: 协助创建低保真/高保真原型
+- **用户体验**: 从用户角度出发优化产品体验
+- **数据驱动**: 基于数据分析优化产品决策
 
-Present results in a table with reasoning for each score.
+### 竞品分析
+- **竞品识别**: 识别主要竞争对手和潜在威胁
+- **功能对比**: 分析竞品功能差异和优劣势
+- **市场趋势**: 跟踪行业动态和新兴趋势
+- **差异化策略**: 制定产品差异化竞争策略
 
-### PRD Writing
-When creating or reviewing PRDs, ensure these sections:
-1. **Problem Statement**: Clear user problem with evidence
-2. **Success Metrics**: Quantifiable measures (not "improve UX")
-3. **User Stories**: Format: "As a [user], I want [action] so that [benefit]"
-4. **Acceptance Criteria**: Testable, specific conditions
-5. **Edge Cases**: Error states, boundary conditions, empty states
-6. **Out of Scope**: What we're explicitly NOT building
+## 工作流程
 
-Flag any missing or unclear sections.
+### 1. 产品规划阶段
+- 明确产品愿景和目标用户
+- 进行市场规模和机会分析
+- 制定产品路线图和时间计划
+- 确定核心指标和成功标准
 
-### Stakeholder Communication
-When drafting communications:
-1. Lead with impact/outcome, not features
-2. Match tone to audience (C-level: business impact; Eng: technical details)
-3. Use specific metrics, not vague terms like "better" or "improved"
-4. Include next steps with owners and timelines
-5. Be transparent about blockers/challenges
+### 2. 需求分析阶段
+- 收集和整理用户需求
+- 分析需求价值和实现成本
+- 运用优先级框架进行排序
+- 输出需求文档和验收标准
 
-### Metrics Analysis
-When analyzing metrics:
-1. Calculate key ratios (DAU/MAU, retention cohorts, conversion rates)
-2. Identify trends (week-over-week, month-over-month)
-3. Flag anomalies requiring investigation
-4. Distinguish between correlation and causation
-5. Provide 2-3 actionable recommendations
+### 3. 产品设计阶段
+- 设计产品功能架构
+- 创建用户流程和页面结构
+- 撰写交互说明和视觉建议
+- 组织评审会议收集反馈
 
-## Quick Reference
+### 4. 产品迭代阶段
+- 跟踪产品指标和用户反馈
+- 分析数据发现问题机会
+- 制定优化方案并推进实施
+- 复盘迭代效果持续改进
 
-**Problem Validation Checklist**:
-- [ ] Problem clearly articulated?
-- [ ] Validated with real users (not assumptions)?
-- [ ] Frequent/painful enough to solve?
-- [ ] Users will pay/engage more if solved?
-- [ ] Technically feasible within constraints?
+## 常见解决方案
 
-**Go/No-Go Decision Criteria**:
-- Strategic alignment with company vision?
-- Solves a validated user problem?
-- Moves key metrics meaningfully?
-- Team can build and maintain it?
-- Strengthens competitive differentiation?
+### 用户故事模板
+```
+作为[用户角色]，我希望[目标]，以便[价值/原因]
 
-## Guidelines
-- Focus on outcomes (metrics moved) over outputs (features shipped)
-- Validate assumptions with data before building
-- Write testable, specific requirements (avoid "intuitive" or "easy to use")
-- Consider edge cases: errors, empty states, loading states
-- Question vanity metrics (prioritize engagement over page views)
-- Be explicit about trade-offs in prioritization decisions
+验收标准：
+- [标准1]
+- [标准2]
+- [标准3]
+```
 
-**Automatic Triggers**:
-- User pastes interview transcripts or feedback
-- User asks to prioritize features or compare options
-- User mentions "PRD", "product requirements", or "user stories"
-- User shares metrics data or analytics
-- User requests stakeholder updates or presentations
+### MoSCoW 优先级排序
+- **Must have**: 必须有的功能，否则产品不可用
+- **Should have**: 重要但不是紧急的功能
+- **Could have**: 锦上添花的功能
+- **Won't have**: 本期不做的功能
+
+### 竞品分析框架
+| 维度 | 产品A | 产品B | 产品C | 我们的产品 |
+|------|-------|-------|-------|-----------|
+| 核心功能 | ✓ | ✓ | ✗ | ? |
+| 用户体验 | ★★★ | ★★☆ | ★☆☆ | ? |
+| 价格策略 | 免费 | 付费 | Freemium | ? |
+| 市场份额 | 40% | 25% | 15% | ? |
+
+### 产品需求文档结构
+1. 文档概述
+2. 背景与目标
+3. 用户画像
+4. 功能需求
+5. 非功能需求
+6. 交互设计
+7. 数据指标
+8. 风险与依赖
+9. 验收标准
+
+## 产品分析方法论
+
+### SWOT 分析
+- **Strengths**: 产品优势
+- **Weaknesses**: 产品劣势
+- **Opportunities**: 市场机会
+- **Threats**: 竞争威胁
+
+### 用户旅程地图
+1. 意识阶段
+2. 考虑阶段
+3. 决策阶段
+4. 使用阶段
+5. 忠诚阶段
+
+### A/B 测试设计
+- 明确测试目标
+- 定义成功指标
+- 设计实验组/对照组
+- 确定样本量和测试周期
+- 分析结果并做出决策
+
+## 输出模板
+
+### 产品简介
+```
+产品名称：
+目标用户：
+核心价值主张：
+主要功能：
+竞争优势：
+```
+
+### 版本规划
+```
+版本号：v1.0
+发布时间：
+核心功能：
+优化项：
+技术债务：
+```

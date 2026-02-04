@@ -1,123 +1,77 @@
 ---
-name: "managing-timelines"
-description: "Turn a deadline, launch date, or delivery target into an executable Timeline Management Pack (deadline type + commitments, phase plan, milestone tracker, RAG cadence, scope/change control, stakeholder comms). Use for timeline/deadline/schedule/milestones."
+name: managing-timelines
+description: Help users set and hit realistic deadlines. Use when someone is planning project timelines, struggling to hit deadlines, dealing with timeline pressure from stakeholders, or trying to improve estimation accuracy.
 ---
 
 # Managing Timelines
 
-## Scope
+Help the user set and hit realistic project timelines using approaches from 13 product leaders.
 
-**Covers**
-- Turning a deadline or target date into a clear **commitment model** (commit vs forecast vs target)
-- Building a phase-based plan (Discovery → Solutioning → Build → Launch) with **decision gates**
-- Creating a milestone tracker with simple **RAG** (red/amber/green) status and escalation triggers
-- Protecting the team when a deadline is real (treat it like **P0**, reduce distractions, control scope)
-- Setting a governance + comms cadence so stakeholders get **early risk signals**, not surprises
-- Handling “fast demo, slow production” cadence (especially for AI/ML features) via explicit outer-loop work
+## How to Help
 
-**When to use**
-- “We need to ship by <date>. Create a timeline/milestone plan and status cadence.”
-- “We have a launch date; convert this into phases, milestones, and a comms plan.”
-- “Stakeholders keep asking for dates; define what we can actually commit to and when.”
-- “The project feels off-track; set up RAG status + weekly exec review and escalation.”
-- “We can demo quickly, but production will take longer—help set expectations and plan the outer loop.”
+When the user asks for help with timelines:
 
-**When NOT to use**
-- You haven’t defined the problem/outcome yet (use `problem-definition`)
-- You need to pick which initiatives matter most (use `prioritizing-roadmap`)
-- You primarily need to cut scope to fit an appetite/timebox (use `scoping-cutting`)
-- You need a decision-ready PRD or build-ready spec/design doc (use `writing-prds` / `writing-specs-designs`)
+1. **Understand the context** - Ask about the nature of the deadline (external commitment, internal target, manufactured milestone), the stage of the work, and what's driving the timeline pressure
+2. **Diagnose the problem** - Determine if this is an estimation issue, a scoping issue, a distraction issue, or unrealistic stakeholder expectations
+3. **Apply the right framework** - Help them use phase-based commitments, hill charts, or early shipping strategies depending on their situation
+4. **Build healthy habits** - Guide them toward sustainable timeline practices rather than one-time fixes
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- The deliverable and success bar (“done means…”) + key users/stakeholders
-- The date type: **fixed deadline** (external) vs **target** (internal) vs **window** (e.g., “late March”)
-- Constraints and non-negotiables (quality, compliance, privacy/security, platform, budget)
-- Team shape + capacity assumptions (who’s building; availability; parallel work)
-- Known dependencies and risks (other teams, vendors, data availability, approvals)
+### Treat real deadlines as P0 - nothing else matters
+Nan Yu: "The only way to make deadlines real is to take them so seriously that they are basically like a P0 problem, and everything else has to not matter in comparison." Don't have too many deadlines. Reserve them for critical external events and protect the team from all other distractions once set.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with explicit assumptions and list **Open questions** that could change the date or scope.
+### Commit to phases, not distant delivery dates
+Annie Pearl: "We've moved to committing to dates that are within our control. We can commit to a discovery effort... versus making a commitment around a project six months out when we haven't done enough discovery." Break work into Discovery, Solutioning, Build, and Launch. Only provide engineering delivery dates once solutioning is complete.
 
-## Outputs (deliverables)
+### Ship early, iterate with remaining time
+Nan Yu: "We do almost no estimating. What we do is ship as early as we can. If by 10% of the time you have a working thing, you can spend the rest deciding whether to iterate or polish." Focus on getting to a "yes or no" shippable state quickly rather than front-loading estimation.
 
-Produce a **Timeline Management Pack** in Markdown (in-chat; or as files if the user requests):
+### Use hill charts to track uncertainty
+Jason Fried: "A project's more like a hill. The left side means you're still figuring it out. Once work gets to the top, it's downhill from there - pure execution." Visualize work as a hill where left side is discovery and right side is execution. Items stuck on the uphill side are high-risk for missing deadlines.
 
-1) **Deadline & commitment model** (what’s fixed, what’s variable; commit vs forecast vs target language)
-2) **Phase plan** (Discovery/Solutioning/Build/Launch) with outputs + decision gates + next commitment date
-3) **Milestone tracker** (owners, dependencies, dates, confidence, RAG) + RAG definitions
-4) **Governance cadence** (weekly review agenda, escalation triggers, decision log)
-5) **Scope & change-control plan** (cut list, non-goals, “trade don’t add” rule, freeze points)
-6) **Stakeholder comms pack** (weekly update template + escalation note)
-7) **Risks / Open questions / Next steps** (always included)
+### Manufacture deadlines to create momentum
+Laura Modi: "Your job is not just to keep people going on momentum. Your job is to make momentum. Sometimes that has to be manufactured." Set arbitrary deadlines and launch dates to force progress. Use milestones to prevent over-perfecting.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Challenge hidden padding in estimates
+Dylan Field: "If timelines are maybe not well reasoned through from first principles and there's padding that has been well intentionally added, you have to understand the assumptions of how long things will actually take." Ask "why" to uncover hidden constraints or unnecessary padding. Work through assumptions from first principles.
 
-## Workflow (8 steps)
+### Account for the planning fallacy
+Nir Eyal: "Tasks take people three times longer to finish than they estimate. When you work on something for five minutes and then get an email and a notification, you never actually track how long it took." Measure productivity by whether you did what you said you would without distraction. Use time-boxing to create feedback loops on actual duration.
 
-### 1) Intake + deadline classification
-- **Inputs:** User request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Identify the deadline type (fixed vs target vs window), the “why now”, and what variable can move (scope, resources, quality, or date).
-- **Outputs:** Deadline classification + constraints snapshot.
-- **Checks:** You can state: “The date is <fixed/target/window> because <reason>. The variable we will trade is <scope/resources/etc>.”
+### Don't ask for extensions
+Seth Godin: "The professional doesn't ask for an extension because the professional understands that things you didn't expect are going to happen." Treat deadlines and budgets as hard constraints. Build buffers into plans to handle the unexpected without extensions.
 
-### 2) Define the commitment model (“commit vs forecast vs target”)
-- **Inputs:** Deadline classification; current knowledge of scope/unknowns.
-- **Actions:** Define what you will **commit** to now (usually a phase output), what you will **forecast**, and what remains a **target**. Set confidence levels and language rules for stakeholders.
-- **Outputs:** Commitment model section + communication rules.
-- **Checks:** Stakeholders can tell which dates are promises vs estimates.
+### Review weekly with RAG status
+Brian Chesky: "I had a head program manager that would score all projects green, yellow, or red. I'd review the work every week and if something wasn't happening, I'd stop the meeting and ask 'Why isn't this happening?'" Elevate program management. Use simple RAG status and weekly reviews to identify and unblock issues early.
 
-### 3) Build a phase plan with decision gates
-- **Inputs:** Deliverable; known unknowns; constraints.
-- **Actions:** Break the work into Discovery → Solutioning → Build → Launch. Define the output of each phase and the decision gate (what must be true to move forward). Only commit to dates that are within control (near-term).
-- **Outputs:** Phase plan with dates, outputs, and gates; “next commitment date” (when you’ll re-forecast).
-- **Checks:** Every phase ends with a tangible artifact and a go/no-go decision.
+### Expect AI timelines to be uneven
+Aparna Chennapragada: "Time to first demo is much shorter, but time to full deployment is going to take longer. There's an uneven cadence." Plan for a shortened inner loop for prototyping but allocate significant time for the outer loop of scaling. Manage expectations about the gap between demo and shippable product.
 
-### 4) Create the milestone tracker (+ “demo vs production” outer loop when relevant)
-- **Inputs:** Phase plan; dependencies; team capacity.
-- **Actions:** Translate phases into milestones with owners, dependencies, dates, confidence, and RAG. If AI/ML is involved, separate “first demo” from “production-ready” and explicitly add evaluation, data, safety, and reliability work.
-- **Outputs:** Milestone tracker table + RAG definitions.
-- **Checks:** Milestones are outcome-based (deliverables), not just activities; critical dependencies are explicit.
+## Questions to Help Users
 
-### 5) Set governance: RAG + weekly reviews + escalation
-- **Inputs:** Milestone tracker; stakeholder map.
-- **Actions:** Define update cadence (weekly by default), who reviews, and escalation triggers (what turns yellow/red). Use a simple RAG system and a short weekly review agenda to unblock work.
-- **Outputs:** Governance cadence + weekly review agenda + escalation triggers.
-- **Checks:** A “red” status produces a concrete ask/decision, not just a warning.
+- "Is this an external commitment or an internal target? What happens if you miss it?"
+- "What phase is the work in - discovery, solutioning, or build?"
+- "Have you shipped a 'working version' yet, or is the team still figuring things out?"
+- "Where is the padding in this estimate? What assumptions are baked in?"
+- "How much of your time is actually going to focused work vs. meetings and distractions?"
+- "Are there too many 'P0 deadlines' competing for attention?"
 
-### 6) Protect the deadline: scope control + distraction shield
-- **Inputs:** Deadline type; milestone risks; incoming requests.
-- **Actions:** If the deadline is real, treat it like P0: define what gets deprioritized, reduce WIP, and implement change control (“trade, don’t add”). Create a cut list and freeze points (e.g., scope freeze, QA freeze).
-- **Outputs:** Scope/change-control plan + cut list + freeze points.
-- **Checks:** New scope cannot enter without an explicit trade-off and decision owner approval.
+## Common Mistakes to Flag
 
-### 7) Stakeholder comms + expectation management
-- **Inputs:** Commitment model; tracker; risks.
-- **Actions:** Write a weekly update template and an escalation note. Pre-wire stakeholders about uncertainty (especially the demo→production gap). Ensure comms use correct language (commit/forecast/target) and highlight asks/decisions.
-- **Outputs:** Comms pack (templates + initial draft update).
-- **Checks:** Updates include “what changed since last week” and “what decision is needed by when”.
+- **Committing to dates before discovery is done** - You can't estimate what you haven't scoped. Commit to phases, not distant delivery dates
+- **Too many high-priority deadlines** - If everything is P0, nothing is. Reserve real deadlines for critical external events
+- **Front-loading estimation instead of shipping early** - Get to a working version fast and use remaining time to iterate
+- **Ignoring the planning fallacy** - Tasks take 3x longer than estimated due to distractions. Time-box and measure actual focused work
+- **Asking for extensions** - Professionals account for the unexpected. Build buffers rather than extending timelines
 
-### 8) Quality gate + finalize
-- **Inputs:** Full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Ensure **Risks / Open questions / Next steps** exist with owners and dates.
-- **Outputs:** Final Timeline Management Pack.
-- **Checks:** A stakeholder can approve the plan async and the team can execute without re-litigating dates every week.
+## Deep Dive
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+For all 14 insights from 13 guests, see `references/guest-insights.md`
 
-## Examples
+## Related Skills
 
-**Example 1 (fixed external date):** “We’re launching at an industry event on May 15. Create a milestone plan, RAG cadence, and a comms template for Sales/Marketing/Execs.”  
-Expected: a fixed-deadline plan that treats the date as P0, with change control and clear escalation triggers.
-
-**Example 2 (AI uneven cadence):** “We can demo an AI support agent in 2 weeks, but production will be risky. Build a plan that separates first demo vs production-ready and sets expectations.”  
-Expected: milestones that include evaluation, safety/reliability, and rollout steps; explicit commit vs forecast language.
-
-**Boundary example:** “Decide what we should build this quarter and set dates for everything.”  
-Response: use `prioritizing-roadmap` first; then apply this skill to the chosen initiative(s).
-
+- Scoping and Cutting
+- Prioritizing Roadmap
+- Running Effective Meetings
+- Planning Under Uncertainty

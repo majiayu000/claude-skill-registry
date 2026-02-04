@@ -1,165 +1,440 @@
 ---
 name: reconcile
-description: Audit a project against current plugin conventions and offer to update structure.
-argument-hint: "[--apply] [--report]"
-disable-model-invocation: true
+description: Reconcile increment ID collisions after multi-developer merge. Renumbers conflicting increments based on modification dates.
 ---
 
-Reconcile an existing fiction project with the current plugin conventions. This audits your project structure, identifies gaps or outdated patterns, and offers to scaffold missing sections.
+# Reconcile Increment IDs
 
-Use this when:
-- You've updated the fiction plugin and want to adopt new conventions
-- You've been working on a project and want to ensure it follows best practices
-- You're inheriting a project and want to understand what's missing
+**Post-merge command for multi-developer workflows.** When multiple developers create increments with the same ID on different branches, run this after merging to resolve collisions by renumbering.
 
-## What to Do
+## Philosophy
 
-### 1. Find Project Root
+**Renumber, don't delete.** Unlike `/sw:fix-duplicates` which removes duplicates, this command:
+- Keeps ALL increments intact
+- Renumbers the "later" ones (by modification date) to next available IDs
+- Updates all references (metadata, living docs, external sync)
+- Creates audit trail of what was renamed
 
-Same as `/load` — look for README.md, chapters/, characters/ directories.
+## When to Use
 
-### 2. Audit Structure
+Run after merging branches that may have created increments with same IDs:
 
-Check for expected directories and files:
+```bash
+git checkout main
+git merge feature-branch-a
+git merge feature-branch-b
+/sw:reconcile           # Fix any ID collisions
+git add . && git commit -m "reconcile: fix increment ID collisions"
+```
 
-**Required:**
-- [ ] `README.md` — Project overview
-- [ ] `chapters/` — Chapter files
+## Usage
 
-**Recommended:**
-- [ ] `characters/` — Character documents
-- [ ] `world/` — World/setting documents
-- [ ] `craft/tone.md` — Voice guidance
-- [ ] `themes.md` — Thematic content
+```bash
+# Detect and fix all ID collisions (interactive)
+/sw:reconcile
 
-**Build & Cover:**
-- [ ] `builds/` — EPUB build outputs (date-organized)
-- [ ] `covers/` — Cover artwork iterations
-- [ ] `critiques/` — Critique outputs (date-organized)
-- [ ] `synopses/` — Synopsis outputs (date-organized)
-- [ ] `epub.css` — EPUB styling (if building)
+# Preview what would change (dry-run)
+/sw:reconcile --dry-run
 
-### 3. Audit File Content
+# Auto-fix without confirmation
+/sw:reconcile --force
 
-For each existing file, check for expected sections:
+# Check specific increment number
+/sw:reconcile 0001
+```
 
-**README.md should have:**
-- [ ] `## Anchored` — Immutable constraints (new convention)
-- [ ] `## Key Decisions` — Tracked decisions
-- [ ] `## Status` — Project status
-- [ ] `## Chapters` — Chapter list
+## Options
 
-**Character files should have:**
-- [ ] Want vs. Need
-- [ ] Lie / Ghost / Flaw (for major characters)
-- [ ] Voice notes
+- `<increment-number>`: Optional. Check only collisions for specific number (e.g., "0001")
+- `--dry-run`: Show what would change without making modifications
+- `--force`: Skip confirmation prompts (for CI/scripts)
+- `--by-commit`: Use git commit date instead of file modification date for ordering
 
-**For series projects, also check:**
-- [ ] `series-architecture.md` with `## Anchored` section
-- [ ] Book-level anchors that reference series anchors
+## How It Works
 
-### 4. Generate Report
+### Step 1: Detection
 
-Output a reconciliation report:
+Scans ALL increment directories for ID collisions:
+- `.specweave/increments/NNNN-*` (active)
+- `.specweave/increments/_archive/NNNN-*`
+- `.specweave/increments/_abandoned/NNNN-*`
+- `.specweave/increments/_paused/NNNN-*`
+
+**Collision detection**:
+- Same base number (e.g., two `0001E-*` folders)
+- OR same number with different E-suffix (e.g., `0001-*` and `0001E-*`)
+
+### Step 2: Chronological Ordering
+
+Uses file modification dates to determine which increment came first:
+
+```
+0001E-auth-feature/      modified: 2026-01-15 10:00
+0001E-payment-feature/   modified: 2026-01-20 14:30  ← LATER (renumber)
+```
+
+**Date sources (priority order)**:
+1. `metadata.json` → `created` field
+2. `spec.md` file modification time
+3. Directory modification time
+4. Git first commit date (if `--by-commit`)
+
+### Step 3: Renumbering
+
+The "later" increment gets renumbered to next available ID:
+
+```
+BEFORE:
+  0001E-auth-feature/        (Jan 15)
+  0001E-payment-feature/     (Jan 20)
+
+AFTER:
+  0001E-auth-feature/        (kept as 0001E)
+  0002E-payment-feature/     (renumbered to 0002E)
+```
+
+### Step 4: Reference Updates
+
+Updates ALL references to the renumbered increment:
+
+**Local Files:**
+1. **metadata.json** - Updates `id` field, adds `reconcileHistory` entry
+2. **spec.md frontmatter** - Updates `increment:` field
+3. **Living docs** - Renames `FS-XXX` folders in `.specweave/docs/internal/specs/`
+   - Updates `FEATURE.md` frontmatter and content
+   - Updates all `us-*.md` user story files
+
+**External Tools (automatically updated via API):**
+4. **GitHub**:
+   - Milestone titles containing old feature ID
+   - Issue titles with `[FS-XXX]` prefix
+   - Uses `gh` CLI for updates
+5. **JIRA**:
+   - Epic/story summary (title) containing old feature ID
+   - Uses JIRA REST API v3
+6. **ADO**:
+   - Feature/user story `System.Title` field
+   - Uses ADO REST API
+
+### Step 5: Audit Report
+
+Creates `reports/RECONCILE-{timestamp}.md` documenting:
+- Original ID → New ID mapping
+- Which references were updated
+- Modification dates used for ordering
+
+## Examples
+
+### Example 1: Two External Imports Collision
+
+Two developers imported issues from JIRA, both got 0001E:
+
+```bash
+/sw:reconcile
+```
+
+**Output**:
+```
+🔄 Scanning for ID collisions...
+
+Found 1 collision:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Collision: Base ID 0001E (2 increments)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Increments (ordered by modification date):
+  1. 0001E-auth-feature           (2026-01-15) → KEEP
+  2. 0001E-payment-feature        (2026-01-20) → RENUMBER to 0002E
+
+Proceeding with reconciliation...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Summary
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Collisions found: 1
+Increments renumbered: 1
+References updated: 7
+
+📦 Operations performed:
+
+  ✓ 0001E-payment-feature → 0002E-payment-feature
+    Feature: FS-001E → FS-002E
+    Updated:
+      ✓ metadata: Renamed folder
+      ✓ metadata: Updated id field in metadata.json
+      ✓ spec: Updated increment field in spec.md
+      ✓ living-docs: Renamed FS-001E → FS-002E
+      ✓ github: Updated issue #45 title: FS-001E → FS-002E
+      ✓ jira: Updated PROJ-123 summary: FS-001E → FS-002E
+      ✓ ado: Updated work item #789 title: FS-001E → FS-002E
+
+📝 Report saved to: .specweave/increments/reports/RECONCILE-20260201-120000.md
+
+💡 Next steps:
+  1. Review the changes
+  2. git add . && git commit -m "reconcile: fix ID collisions"
+  3. Run /sw-github:sync or /sw-jira:sync to update external tools
+```
+
+### Example 2: Dry-Run Preview
+
+```bash
+/sw:reconcile --dry-run
+```
+
+**Output**:
+```
+[DRY RUN] Scanning for ID collisions...
+
+Found 2 collisions:
+
+Collision 1: Base ID 0001E
+  [DRY RUN] Would keep: 0001E-auth-feature (2026-01-15)
+  [DRY RUN] Would renumber: 0001E-payment-feature → 0002E-payment-feature
+
+Collision 2: Base ID 0005
+  [DRY RUN] Would keep: 0005-user-profile (2026-01-10)
+  [DRY RUN] Would renumber: 0005-dashboard → 0006-dashboard
+
+Summary:
+  Would renumber: 2 increments
+  Would update: 8 references
+
+Run without --dry-run to apply changes.
+```
+
+### Example 3: Three-Way Collision
+
+Three developers created 0001E increments:
+
+```bash
+/sw:reconcile
+```
+
+**Output**:
+```
+Collision: Base ID 0001E (3 increments)
+
+Increments (ordered by modification date):
+  1. 0001E-auth-feature      (2026-01-10) → KEEP as 0001E
+  2. 0001E-payment-feature   (2026-01-15) → RENUMBER to 0002E
+  3. 0001E-user-profile      (2026-01-20) → RENUMBER to 0003E
+
+Proceed? [y/N]: y
+
+✓ Kept 0001E-auth-feature as 0001E
+✓ Renamed 0001E-payment-feature → 0002E-payment-feature
+✓ Renamed 0001E-user-profile → 0003E-user-profile
+```
+
+### Example 4: Archive Collision
+
+Collision between active and archived increment:
+
+```bash
+/sw:reconcile
+```
+
+**Output**:
+```
+Collision: Base ID 0042 (2 increments)
+
+Increments:
+  1. _archive/0042-old-feature    (2026-01-05, archived) → KEEP as 0042
+  2. 0042-new-feature             (2026-01-25, active)   → RENUMBER to 0043
+
+Note: Archived increment keeps original ID (earlier date)
+```
+
+## Reference Update Details
+
+### metadata.json
+
+```json
+// BEFORE
+{ "id": "0001E-payment-feature", ... }
+
+// AFTER
+{ "id": "0002E-payment-feature", ... }
+```
+
+### spec.md Frontmatter
+
+```yaml
+# BEFORE
+---
+increment: 0001E-payment-feature
+title: "Payment Feature"
+---
+
+# AFTER
+---
+increment: 0002E-payment-feature
+title: "Payment Feature"
+---
+```
+
+### Living Docs
+
+```
+# BEFORE
+.specweave/docs/internal/specs/backend/FS-001E/
+
+# AFTER
+.specweave/docs/internal/specs/backend/FS-002E/
+```
+
+### External Sync (GitHub)
+
+If GitHub milestone exists:
+- Old: Milestone "FS-001E: Payment Feature"
+- New: Milestone "FS-002E: Payment Feature"
+
+Note: GitHub issue numbers don't change (milestone renamed, not recreated)
+
+## Error Handling
+
+### No Collisions Found
+
+```
+Scanning for ID collisions...
+
+✓ No collisions found!
+
+All increment IDs are unique across all folders.
+```
+
+### Renumbering Fails
+
+```
+Error renumbering 0001E-payment-feature:
+  Failed to rename directory
+  Reason: Permission denied
+
+Recommendation:
+  1. Check folder permissions
+  2. Close any programs using these files
+  3. Retry
+```
+
+### External Sync Reference Update Fails
+
+```
+Warning: Could not update GitHub milestone
+  Milestone "FS-001E" not found on remote
+
+The increment was renumbered locally.
+Run /sw-github:sync to recreate the milestone.
+```
+
+## Reconcile Report Format
+
+**File**: `reports/RECONCILE-{timestamp}.md`
 
 ```markdown
-## Reconciliation Report: [Project Name]
+# Increment ID Reconciliation Report
 
-### Structure Status
-- README.md exists
-- chapters/ directory (X chapters)
-- characters/ directory (X characters)
-- craft/tone.md — missing
-- themes.md exists
-- builds/ — missing (create with `/fiction:build`)
-- covers/ — missing (create for cover artwork)
-- critiques/ — missing (create with `/fiction:critique`)
-- synopses/ — missing (create with `/fiction:synopsis`)
+**Date**: 2026-02-01 12:00:00 UTC
+**Command**: /sw:reconcile
+**Trigger**: Post-merge ID collision resolution
 
-### Content Audit
+## Collisions Detected
 
-**README.md**
-- Missing `## Anchored` section (new convention)
-- Has `## Key Decisions`
-- Has `## Status`
+### Collision 1: Base ID 0001E
 
-**Character: [Name]**
-- Has Want/Need
-- Missing Voice notes
+| Original Path | Modified Date | Action |
+|---------------|---------------|--------|
+| 0001E-auth-feature | 2026-01-15 | KEPT |
+| 0001E-payment-feature | 2026-01-20 | RENUMBERED → 0002E |
 
-[...continue for each file...]
+## Renaming Operations
 
-### Recommendations
+| Original ID | New ID | Folder Path |
+|-------------|--------|-------------|
+| 0001E-payment-feature | 0002E-payment-feature | .specweave/increments/ |
 
-1. **High priority:** Add `## Anchored` section to README.md
-2. **Medium priority:** Create craft/tone.md for voice consistency
-3. **Low priority:** Add Voice notes to character files
+## Reference Updates
 
-### Would you like me to:
-- [ ] Add missing sections to existing files (safe — adds, doesn't replace)
-- [ ] Scaffold missing files from templates
-- [ ] Both
+### 0002E-payment-feature (formerly 0001E)
+
+- [x] metadata.json: id field updated
+- [x] spec.md: frontmatter updated
+- [x] Living docs: FS-001E → FS-002E renamed
+- [ ] GitHub milestone: Not found (needs manual sync)
+- [x] JIRA epic: Updated PROJ-123 custom field
+
+## Summary
+
+- Collisions resolved: 1
+- Increments renumbered: 1
+- Living docs renamed: 1
+- External refs updated: 1
+- Manual action needed: 1 (GitHub milestone)
 ```
 
-### 5. Update progress.md
+## Implementation
 
-After auditing, update (or create) `progress.md` with:
+The reconcile command should:
 
-```markdown
-## Last Reconcile
+1. **Scan all increment folders** using `IncrementNumberManager.getAllIncrementNumbers()`
 
-**Date:** [Today's date]
-**Plugin version:** [Current version if known]
-**Issues found:** [Count]
-**Issues resolved:** [Count of auto-fixed items]
+2. **Group by base number** (strip E suffix for comparison):
+   ```typescript
+   const groups = groupBy(increments, inc => inc.baseNumber);
+   const collisions = groups.filter(g => g.length > 1);
+   ```
+
+3. **Order by modification date**:
+   ```typescript
+   collision.sort((a, b) =>
+     new Date(a.modifiedDate).getTime() - new Date(b.modifiedDate).getTime()
+   );
+   ```
+
+4. **Renumber later increments**:
+   ```typescript
+   for (let i = 1; i < collision.length; i++) {
+     const newNumber = IncrementNumberManager.getNextIncrementNumber(root);
+     await renameIncrement(collision[i], newNumber);
+   }
+   ```
+
+5. **Update references**:
+   ```typescript
+   await updateMetadataId(increment, newId);
+   await updateSpecFrontmatter(increment, newId);
+   await renameLivingDocsFolder(oldFeatureId, newFeatureId);
+   await updateExternalSyncRefs(increment, newId);
+   ```
+
+## Related Commands
+
+- `/sw:fix-duplicates` - Remove actual duplicates (same increment in multiple locations)
+- `/sw:status` - View all increments
+- `/sw:sync-specs` - Sync living docs after reconciliation
+- `/sw-github:sync` - Update GitHub references after reconciliation
+
+## Best Practices
+
+1. **Always run after multi-branch merge** - Make it a habit
+2. **Use dry-run first** - Preview changes before applying
+3. **Commit the reconciliation** - The renumbering should be a separate commit
+4. **Sync external tools** - Run `/sw-github:sync` or `/sw-jira:sync` after reconcile
+
+```bash
+# Recommended post-merge workflow
+git merge feature-branch
+/sw:reconcile --dry-run    # Preview
+/sw:reconcile              # Apply
+git add . && git commit -m "reconcile: fix ID collisions after merge"
+/sw-github:sync            # Update external tools
 ```
 
-Also update:
-- Structure Audit checklist based on what exists
-- Any chapter review entries if chapters were audited
-- Notes section with summary of what was done
+## Safety Notes
 
-### 6. Apply Changes (If Requested)
-
-If user approves:
-- Add missing sections to existing files (append, don't overwrite)
-- Create missing files from templates
-- Update progress.md with resolved issues
-- Report what was changed
-
-**Important:** Never overwrite existing content. Only add missing sections.
-
-## Arguments
-
-```
-/fiction:reconcile              # Reconcile project in current directory
-/fiction:reconcile --apply      # Auto-apply safe changes without prompting
-/fiction:reconcile --report     # Report only, don't offer changes
-```
-
-If arguments provided: $ARGUMENTS
-
-## What This Checks
-
-### New Conventions (v2+)
-- `## Anchored` sections for immutable constraints
-- Distinction between anchored and key decisions
-- Cross-references between review tools
-
-### Core Structure
-- All expected directories exist
-- Character files have complete information
-- World files exist for settings mentioned in chapters
-- Tone guide exists if project has specific voice
-
-### Consistency
-- Characters mentioned in chapters have character files
-- Locations mentioned in chapters have world files
-- Chapter numbering is sequential
-
-## Notes
-
-- Non-destructive by default — reports first, then asks
-- Respects existing content — only adds, never replaces
-- Works with both standalone and series projects
-- Run periodically as the plugin evolves
+- **Non-destructive**: All increments are preserved, only renumbered
+- **Reversible**: Git history preserves original state
+- **Audit trail**: Reports document all changes
+- **External sync safe**: Updates references, doesn't delete external issues

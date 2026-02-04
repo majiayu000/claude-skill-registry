@@ -1,139 +1,475 @@
 ---
 name: discord
-description: Enables Claude to manage Discord servers, send messages, moderate communities, and handle voice channel operations
-version: 1.0.0
-author: Canifi
-category: communication
+description: Use when you need to control Discord from Espada via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage threads/pins/search, create/edit/delete channels and categories, fetch permissions or member/role/channel info, or handle moderation actions in Discord DMs or channels.
+metadata: {"espada":{"emoji":"🎮","requires":{"config":["channels.discord"]}}}
 ---
 
-# Discord Skill
+# Discord Actions
 
 ## Overview
-Automates Discord interactions including messaging, server management, moderation, and community engagement through the Discord web application.
 
-## Quick Install
+Use `discord` to manage messages, reactions, threads, polls, and moderation. You can disable groups via `discord.actions.*` (defaults to enabled, except roles/moderation). The tool uses the bot token configured for Espada.
 
-```bash
-curl -sSL https://canifi.com/skills/discord/install.sh | bash
+## Inputs to collect
+
+- For reactions: `channelId`, `messageId`, and an `emoji`.
+- For fetchMessage: `guildId`, `channelId`, `messageId`, or a `messageLink` like `https://discord.com/channels/<guildId>/<channelId>/<messageId>`.
+- For stickers/polls/sendMessage: a `to` target (`channel:<id>` or `user:<id>`). Optional `content` text.
+- Polls also need a `question` plus 2–10 `answers`.
+- For media: `mediaUrl` with `file:///path` for local files or `https://...` for remote.
+- For emoji uploads: `guildId`, `name`, `mediaUrl`, optional `roleIds` (limit 256KB, PNG/JPG/GIF).
+- For sticker uploads: `guildId`, `name`, `description`, `tags`, `mediaUrl` (limit 512KB, PNG/APNG/Lottie JSON).
+
+Message context lines include `discord message id` and `channel` fields you can reuse directly.
+
+**Note:** `sendMessage` uses `to: "channel:<id>"` format, not `channelId`. Other actions like `react`, `readMessages`, `editMessage` use `channelId` directly.
+**Note:** `fetchMessage` accepts message IDs or full links like `https://discord.com/channels/<guildId>/<channelId>/<messageId>`.
+
+## Actions
+
+### React to a message
+
+```json
+{
+  "action": "react",
+  "channelId": "123",
+  "messageId": "456",
+  "emoji": "✅"
+}
 ```
 
-Or manually:
-```bash
-cp -r skills/discord ~/.canifi/skills/
+### List reactions + users
+
+```json
+{
+  "action": "reactions",
+  "channelId": "123",
+  "messageId": "456",
+  "limit": 100
+}
 ```
 
-## Setup
+### Send a sticker
 
-Configure via [canifi-env](https://canifi.com/setup/scripts):
-
-```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
-
-canifi-env set DISCORD_EMAIL "your-email@example.com"
-canifi-env set DISCORD_PASSWORD "your-password"
+```json
+{
+  "action": "sticker",
+  "to": "channel:123",
+  "stickerIds": ["9876543210"],
+  "content": "Nice work!"
+}
 ```
 
-## Privacy & Authentication
+- Up to 3 sticker IDs per message.
+- `to` can be `user:<id>` for DMs.
 
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
+### Upload a custom emoji
 
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
-
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
-```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
+```json
+{
+  "action": "emojiUpload",
+  "guildId": "999",
+  "name": "party_blob",
+  "mediaUrl": "file:///tmp/party.png",
+  "roleIds": ["222"]
+}
 ```
 
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
+- Emoji images must be PNG/JPG/GIF and <= 256KB.
+- `roleIds` is optional; omit to make the emoji available to everyone.
 
-## Capabilities
-- Send direct messages and server messages
-- Create and manage servers, channels, and categories
-- Moderate users (kick, ban, timeout, roles)
-- Search messages and users across servers
-- Manage server settings and permissions
-- React to messages and add emoji reactions
-- Create and manage events
-- Handle friend requests and relationships
+### Upload a sticker
 
-## Usage Examples
-
-### Example 1: Send a Direct Message
-```
-User: "Send a Discord DM to GameMaster asking about tonight's session"
-Claude: I'll send that DM on Discord.
-- Navigate to Discord web app
-- Open DM with GameMaster
-- Type and send: "Hey, are we still on for tonight's session?"
-- Confirm message delivered
+```json
+{
+  "action": "stickerUpload",
+  "guildId": "999",
+  "name": "espada_wave",
+  "description": "Espada waving hello",
+  "tags": "👋",
+  "mediaUrl": "file:///tmp/wave.png"
+}
 ```
 
-### Example 2: Post in a Server Channel
-```
-User: "Announce in the #announcements channel that the event is starting"
-Claude: I'll post the announcement.
-- Navigate to specified server
-- Open #announcements channel
-- Compose and send announcement message
-- Confirm post successful
-```
+- Stickers require `name`, `description`, and `tags`.
+- Uploads must be PNG/APNG/Lottie JSON and <= 512KB.
 
-### Example 3: Moderate a User
-```
-User: "Give user ToxicPlayer a 1 hour timeout in the gaming server"
-Claude: I'll apply the timeout.
-- Navigate to the gaming server
-- Find user ToxicPlayer
-- Apply 1 hour timeout via moderation menu
-- Confirm timeout applied
+### Create a poll
+
+```json
+{
+  "action": "poll",
+  "to": "channel:123",
+  "question": "Lunch?",
+  "answers": ["Pizza", "Sushi", "Salad"],
+  "allowMultiselect": false,
+  "durationHours": 24,
+  "content": "Vote now"
+}
 ```
 
-### Example 4: Create an Event
+- `durationHours` defaults to 24; max 32 days (768 hours).
+
+### Check bot permissions for a channel
+
+```json
+{
+  "action": "permissions",
+  "channelId": "123"
+}
 ```
-User: "Create a Discord event for Friday at 8pm called 'Game Night'"
-Claude: I'll create the event.
-- Navigate to server events
-- Create new event "Game Night"
-- Set date/time for Friday 8pm
-- Confirm event created and shareable
+
+## Ideas to try
+
+- React with ✅/⚠️ to mark status updates.
+- Post a quick poll for release decisions or meeting times.
+- Send celebratory stickers after successful deploys.
+- Upload new emojis/stickers for release moments.
+- Run weekly “priority check” polls in team channels.
+- DM stickers as acknowledgements when a user’s request is completed.
+
+## Action gating
+
+Use `discord.actions.*` to disable action groups:
+- `reactions` (react + reactions list + emojiList)
+- `stickers`, `polls`, `permissions`, `messages`, `threads`, `pins`, `search`
+- `emojiUploads`, `stickerUploads`
+- `memberInfo`, `roleInfo`, `channelInfo`, `voiceStatus`, `events`
+- `roles` (role add/remove, default `false`)
+- `channels` (channel/category create/edit/delete/move, default `false`)
+- `moderation` (timeout/kick/ban, default `false`)
+### Read recent messages
+
+```json
+{
+  "action": "readMessages",
+  "channelId": "123",
+  "limit": 20
+}
 ```
 
-## Authentication Flow
-1. Navigate to discord.com/app via Playwright MCP
-2. Enter email and password from canifi-env
-3. Handle CAPTCHA if presented (notify user)
-4. Complete 2FA via authenticator (notify user via iMessage)
-5. Verify login successful by checking for servers list
-6. Maintain session for subsequent operations
+### Fetch a single message
 
-## Error Handling
-- **Login Failed**: Clear cookies, retry 3x, then iMessage notification
-- **Session Expired**: Re-authenticate with stored credentials
-- **Rate Limited**: Wait for rate limit to clear (typically 5-60 seconds)
-- **2FA Required**: iMessage notification for authenticator code
-- **CAPTCHA Detected**: Notify user to complete manually
-- **Server Not Found**: List available servers for user selection
-- **Permission Denied**: Notify user of missing permissions
-- **User Not Found**: Search server members and suggest matches
+```json
+{
+  "action": "fetchMessage",
+  "guildId": "999",
+  "channelId": "123",
+  "messageId": "456"
+}
+```
 
-## Self-Improvement Instructions
-When encountering new Discord features or UI changes:
-1. Document updated selectors and interaction patterns
-2. Add new capabilities to the list
-3. Log successful moderation workflows
-4. Suggest SKILL.md updates for new features
+```json
+{
+  "action": "fetchMessage",
+  "messageLink": "https://discord.com/channels/999/123/456"
+}
+```
 
-## Notes
-- Discord uses dynamic content loading; wait for elements properly
-- Voice channels cannot be fully automated (audio limitations)
-- Some servers require phone verification
-- Nitro features may not be available on free accounts
-- Bot detection may trigger additional verification
-- Server boosts affect available features
+### Send/edit/delete a message
+
+```json
+{
+  "action": "sendMessage",
+  "to": "channel:123",
+  "content": "Hello from Espada"
+}
+```
+
+**With media attachment:**
+
+```json
+{
+  "action": "sendMessage",
+  "to": "channel:123",
+  "content": "Check out this audio!",
+  "mediaUrl": "file:///tmp/audio.mp3"
+}
+```
+
+- `to` uses format `channel:<id>` or `user:<id>` for DMs (not `channelId`!)
+- `mediaUrl` supports local files (`file:///path/to/file`) and remote URLs (`https://...`)
+- Optional `replyTo` with a message ID to reply to a specific message
+
+```json
+{
+  "action": "editMessage",
+  "channelId": "123",
+  "messageId": "456",
+  "content": "Fixed typo"
+}
+```
+
+```json
+{
+  "action": "deleteMessage",
+  "channelId": "123",
+  "messageId": "456"
+}
+```
+
+### Threads
+
+```json
+{
+  "action": "threadCreate",
+  "channelId": "123",
+  "name": "Bug triage",
+  "messageId": "456"
+}
+```
+
+```json
+{
+  "action": "threadList",
+  "guildId": "999"
+}
+```
+
+```json
+{
+  "action": "threadReply",
+  "channelId": "777",
+  "content": "Replying in thread"
+}
+```
+
+### Pins
+
+```json
+{
+  "action": "pinMessage",
+  "channelId": "123",
+  "messageId": "456"
+}
+```
+
+```json
+{
+  "action": "listPins",
+  "channelId": "123"
+}
+```
+
+### Search messages
+
+```json
+{
+  "action": "searchMessages",
+  "guildId": "999",
+  "content": "release notes",
+  "channelIds": ["123", "456"],
+  "limit": 10
+}
+```
+
+### Member + role info
+
+```json
+{
+  "action": "memberInfo",
+  "guildId": "999",
+  "userId": "111"
+}
+```
+
+```json
+{
+  "action": "roleInfo",
+  "guildId": "999"
+}
+```
+
+### List available custom emojis
+
+```json
+{
+  "action": "emojiList",
+  "guildId": "999"
+}
+```
+
+### Role changes (disabled by default)
+
+```json
+{
+  "action": "roleAdd",
+  "guildId": "999",
+  "userId": "111",
+  "roleId": "222"
+}
+```
+
+### Channel info
+
+```json
+{
+  "action": "channelInfo",
+  "channelId": "123"
+}
+```
+
+```json
+{
+  "action": "channelList",
+  "guildId": "999"
+}
+```
+
+### Channel management (disabled by default)
+
+Create, edit, delete, and move channels and categories. Enable via `discord.actions.channels: true`.
+
+**Create a text channel:**
+
+```json
+{
+  "action": "channelCreate",
+  "guildId": "999",
+  "name": "general-chat",
+  "type": 0,
+  "parentId": "888",
+  "topic": "General discussion"
+}
+```
+
+- `type`: Discord channel type integer (0 = text, 2 = voice, 4 = category; other values supported)
+- `parentId`: category ID to nest under (optional)
+- `topic`, `position`, `nsfw`: optional
+
+**Create a category:**
+
+```json
+{
+  "action": "categoryCreate",
+  "guildId": "999",
+  "name": "Projects"
+}
+```
+
+**Edit a channel:**
+
+```json
+{
+  "action": "channelEdit",
+  "channelId": "123",
+  "name": "new-name",
+  "topic": "Updated topic"
+}
+```
+
+- Supports `name`, `topic`, `position`, `parentId` (null to remove from category), `nsfw`, `rateLimitPerUser`
+
+**Move a channel:**
+
+```json
+{
+  "action": "channelMove",
+  "guildId": "999",
+  "channelId": "123",
+  "parentId": "888",
+  "position": 2
+}
+```
+
+- `parentId`: target category (null to move to top level)
+
+**Delete a channel:**
+
+```json
+{
+  "action": "channelDelete",
+  "channelId": "123"
+}
+```
+
+**Edit/delete a category:**
+
+```json
+{
+  "action": "categoryEdit",
+  "categoryId": "888",
+  "name": "Renamed Category"
+}
+```
+
+```json
+{
+  "action": "categoryDelete",
+  "categoryId": "888"
+}
+```
+
+### Voice status
+
+```json
+{
+  "action": "voiceStatus",
+  "guildId": "999",
+  "userId": "111"
+}
+```
+
+### Scheduled events
+
+```json
+{
+  "action": "eventList",
+  "guildId": "999"
+}
+```
+
+### Moderation (disabled by default)
+
+```json
+{
+  "action": "timeout",
+  "guildId": "999",
+  "userId": "111",
+  "durationMinutes": 10
+}
+```
+
+## Discord Writing Style Guide
+
+**Keep it conversational!** Discord is a chat platform, not documentation.
+
+### Do
+- Short, punchy messages (1-3 sentences ideal)
+- Multiple quick replies > one wall of text
+- Use emoji for tone/emphasis 🦞
+- Lowercase casual style is fine
+- Break up info into digestible chunks
+- Match the energy of the conversation
+
+### Don't
+- No markdown tables (Discord renders them as ugly raw `| text |`)
+- No `## Headers` for casual chat (use **bold** or CAPS for emphasis)
+- Avoid multi-paragraph essays
+- Don't over-explain simple things
+- Skip the "I'd be happy to help!" fluff
+
+### Formatting that works
+- **bold** for emphasis
+- `code` for technical terms
+- Lists for multiple items
+- > quotes for referencing
+- Wrap multiple links in `<>` to suppress embeds
+
+### Example transformations
+
+❌ Bad:
+```
+I'd be happy to help with that! Here's a comprehensive overview of the versioning strategies available:
+
+## Semantic Versioning
+Semver uses MAJOR.MINOR.PATCH format where...
+
+## Calendar Versioning
+CalVer uses date-based versions like...
+```
+
+✅ Good:
+```
+versioning options: semver (1.2.3), calver (2026.01.04), or yolo (`latest` forever). what fits your release cadence?
+```

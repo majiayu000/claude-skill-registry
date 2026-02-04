@@ -1,9 +1,6 @@
 ---
 name: deferred-finding
 description: Use when a review finding cannot be fixed in current PR - creates properly documented tracking issue with full context, linked to parent, following full issue-driven-development process
-allowed-tools:
-  - mcp__github__*
-model: opus
 ---
 
 # Deferred Finding

@@ -1,6 +1,8 @@
 ---
 name: intent
 description: Turn rough ideas into iron-clad work orders through 6-step clarification protocol before building. Use when request is vague like "add a button", "make it better", "fix the thing". Produces spec score and workflow shape.
+model: sonnet
+allowed-tools: Read, Bash
 ---
 
 # Intent Translator
@@ -217,6 +219,18 @@ Generate code / copy / analysis only after **YES–GO**.
 ### 8 Reset
 
 If user types **RESET**, forget everything and restart at Step 0.
+
+---
+
+## Boundary
+
+**Goal is user graduation, not permanent reliance.**
+
+- After 3+ intent sessions, offer: "Want the spec checklist to run yourself?"
+- Teach the 5-dimension rubric, don't own it
+- If user says "I know what I want" → proceed without clarification loop
+
+Intent exists to sharpen thinking, not to gatekeep building. User can always override with "proceed anyway."
 
 ---
 

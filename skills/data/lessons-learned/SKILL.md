@@ -65,6 +65,19 @@ Before presenting prompts, extract candidate lessons from completed build summar
 
 This reduces friction and ensures discoveries documented during building are not lost.
 
+## Memory Enrichment
+
+If the `shipyard:memory` skill is available and memory is enabled:
+
+1. Search memory for the milestone's date range and project path.
+2. Use Haiku to extract insights about:
+   - Debugging struggles and resolutions
+   - Rejected approaches and why they failed
+   - Key decisions and their rationale
+3. Add memory-derived insights to candidates (marked separately from summary-derived).
+
+Memory captures implicit knowledge from conversation context that may not appear in formal SUMMARY.md files.
+
 ## CLAUDE.md Integration
 
 After the user approves lessons, optionally append a summary to the project's `CLAUDE.md`:

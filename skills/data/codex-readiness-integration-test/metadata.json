@@ -1,0 +1,7 @@
+{
+  "name": "codex-readiness-integration-test",
+  "repo": "openai/skills",
+  "path": "skills/.experimental/codex-readiness-integration-test/SKILL.md",
+  "source": "github.com/openai/skills",
+  "downloaded_at": "2026-02-04T03:04:49.493640Z"
+}

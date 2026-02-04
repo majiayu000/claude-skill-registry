@@ -1,9 +1,7 @@
 {
   "name": "multi-agent-composition",
-  "description": "This skill should be used when the user asks to \"choose between skill and agent\", \"compose multi-agent system\", \"orchestrate agents\", \"manage agent context\", \"design component architecture\", \"should I",
   "repo": "basher83/lunar-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/meta/meta-claude/skills/multi-agent-composition/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:30.308280Z"
 }

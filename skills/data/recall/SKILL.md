@@ -1,6 +1,7 @@
 ---
 name: recall
-description: Query memory system for relevant learnings from past sessions
+description: Query the memory system for relevant learnings from past sessions
+user-invocable: false
 ---
 
 # Recall - Semantic Memory Retrieval
@@ -32,7 +33,7 @@ Query the memory system for relevant learnings from past sessions.
 When this skill is invoked, run:
 
 ```bash
-cd $CLAUDE_PROJECT_DIR/opc && PYTHONPATH=. uv run python scripts/recall_learnings.py --query "<ARGS>" --k 5
+cd $CLAUDE_OPC_DIR && PYTHONPATH=. uv run python scripts/core/recall_learnings.py --query "<ARGS>" --k 5
 ```
 
 Where `<ARGS>` is the query provided by the user.

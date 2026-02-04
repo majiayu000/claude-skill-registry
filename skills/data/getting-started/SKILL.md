@@ -307,7 +307,7 @@ Here's what I can create from your Granola history:
 
 ### User Chooses Processing Strategy
 
-Use AskQuestion tool:
+Use AskUserQuestion tool. If AskUserQuestion is not available, prompt in CLI with the same numbered options and capture the selection:
 ```json
 {
   "questions": [{
@@ -415,7 +415,7 @@ def map_strategy_to_ranges(strategy: str, extent: dict) -> dict:
         }
     elif strategy == "skip":
         return None
-    # For "custom", ranges come from separate AskQuestion responses
+    # For "custom", ranges come from separate AskUserQuestion responses (or CLI fallback)
 ```
 
 **Show confirmation before processing:**
@@ -613,7 +613,7 @@ Here's what I can create from your Granola history:
 • Or skip - I can work with just Granola
 ```
 
-Use the same AskQuestion and processing logic as Flow A.
+Use the same AskUserQuestion and processing logic as Flow A (or CLI fallback).
 
 ---
 
@@ -1054,7 +1054,7 @@ else:
     # Check if there's more data beyond 6 months
     if extent['has_more_data']:
         # Ask if they want to fetch more
-        response = AskQuestion({
+        response = AskUserQuestion({
             "questions": [{
                 "id": "fetch_more",
                 "prompt": f"I found {extent['meetings_count']} meetings going back {extent['days_back']} days. There appears to be more data beyond that. Want me to check how much more?",

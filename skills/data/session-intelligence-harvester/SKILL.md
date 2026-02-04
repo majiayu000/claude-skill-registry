@@ -77,10 +77,7 @@ Use this routing table. Route learnings to the component where they will be disc
 | Agent convergence pattern | Agent file | Convergence Patterns | Pattern + why + correction | During agent execution |
 | Agent self-monitoring | Agent file | Self-Monitoring Checklist | New checklist item | Before agent finalizes output |
 | Canonical source lookup | Multiple agents | Analysis Questions | Cross-reference check | During planning phase |
-| Authoring skill | New skill | `.claude/skills/authoring/` | New SKILL.md (content creation) | When user invokes skill |
-| Engineering skill | New skill | `.claude/skills/engineering/` | New SKILL.md (platform/tooling) | When user invokes skill |
-| Authoring agent | New agent | `.claude/agents/authoring/` | New agent.md (content) | During content work |
-| Engineering agent | New agent | `.claude/agents/engineering/` | New agent.md (platform) | During engineering work |
+| Reusable workflow | New skill | .claude/skills/ | New SKILL.md | When user invokes skill |
 | Orchestration check | Command file | Phase 0 or relevant phase | New validation step | During workflow execution |
 | Format specification | Canonical source chapter | Lesson content | Authoritative format | When teaching that pattern |
 
@@ -286,7 +283,7 @@ CLASSIFICATION:
 3. session-intelligence-harvester: Updated routing table with domain paths
 4. Moved all skills to authoring/ or engineering/
 5. Moved all agents to authoring/ or engineering/
-
+6. Generals Skills are at .claude/skills/
 ### Example 2: Missing Validation (Single File)
 
 **Session**: Discovered lessons weren't checking chapter-index.md for prerequisites
@@ -304,6 +301,39 @@ CLASSIFICATION:
 
 **Updates Applied**:
 1. CLAUDE.md: Added Step 1 to read chapter-index.md with specific extraction requirements
+
+### Example 3: Hallucinated Facts (Chapter 2 Incident)
+
+**Session**: Wrote 6 lessons with unverified statistics, dates, and adoption numbers
+
+**Analysis**:
+```
+CORRECTIONS MADE:
+- Wrong: "50-75% time savings" for goose
+- Correct: "75% of engineers save 8-10+ hours/week" (verified via Block announcement)
+
+- Wrong: Conflated Agent Skills timeline (said single date)
+- Correct: Oct 16, 2025 = Claude Code launch; Dec 18, 2025 = open standard release
+
+- Wrong: Generic agent support lists
+- Correct: Verified lists from official AAIF announcement
+
+- Root cause: Trusted plausible-sounding data from memory instead of web verification
+
+PATTERNS IDENTIFIED:
+- Statistics, dates, and quotes MUST be web-verified before publication
+- Existing factual-verifier agent was available but not used
+- 50% of session time was spent fixing hallucinated facts
+
+CLASSIFICATION:
+- Critical failure mode → CLAUDE.md Failure Prevention + new section
+- Process gap → Missing mandatory fact-check step
+```
+
+**Updates Applied**:
+1. CLAUDE.md: Added "Content Fact-Checking (MANDATORY)" section
+2. CLAUDE.md: Added failure mode example to Failure Prevention list
+3. Documented factual-verifier agent invocation pattern
 
 ## Self-Monitoring
 

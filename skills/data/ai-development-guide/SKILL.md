@@ -1,28 +1,29 @@
 ---
 name: ai-development-guide
-description: "Detects code smells, anti-patterns, and debugging issues. Use when: fixing bugs, reviewing code quality, or refactoring."
+description: Technical decision criteria, anti-pattern detection, debugging techniques, and quality check workflow. Use when making technical decisions, detecting code smells, or performing quality assurance.
 ---
 
-# AI Developer Guide
+# AI Developer Guide - Technical Decision Criteria and Anti-pattern Collection
 
 ## Technical Anti-patterns (Red Flag Patterns)
 
 Immediately stop and reconsider design when detecting the following patterns:
 
 ### Code Quality Anti-patterns
-1. **Writing similar code 3 or more times**
-2. **Multiple responsibilities mixed in a single file**
-3. **Defining same content in multiple files**
-4. **Making changes without checking dependencies**
-5. **Disabling code with comments**
-6. **Error suppression**
+1. **Writing similar code 3 or more times** - Violates Rule of Three
+2. **Multiple responsibilities mixed in a single file** - Violates Single Responsibility Principle (SRP)
+3. **Defining same content in multiple files** - Violates DRY principle
+4. **Making changes without checking dependencies** - Potential for unexpected impacts
+5. **Disabling code with comments** - Should use version control
+6. **Error suppression** - Hiding problems creates technical debt
+7. **Bypassing safety mechanisms (type systems, validation, contracts)** - Circumventing language's correctness guarantees
 
 ### Design Anti-patterns
-- **"Make it work for now" thinking**
-- **Patchwork implementation**
-- **Optimistic implementation of uncertain technology**
-- **Symptomatic fixes**
-- **Unplanned large-scale changes**
+- **"Make it work for now" thinking** - Accumulation of technical debt
+- **Patchwork implementation** - Unplanned additions to existing code
+- **Optimistic implementation of uncertain technology** - Designing unknown elements assuming "it'll probably work"
+- **Symptomatic fixes** - Surface-level fixes that don't solve root causes
+- **Unplanned large-scale changes** - Lack of incremental approach
 
 ## Fail-Fast Fallback Design Principles
 
@@ -32,7 +33,8 @@ Prioritize primary code reliability over fallback implementations. In distribute
 ### Implementation Guidelines
 
 #### Default Approach
-- **Explicit failure over silent defaults**: Errors must be visible and traceable, not masked by automatic default values
+- **Prohibit unconditional fallbacks**: Do not automatically return default values on errors
+- **Make failures explicit**: Errors should be visible and traceable
 - **Preserve error context**: Include original error information when re-throwing
 
 #### When Fallbacks Are Acceptable
@@ -54,10 +56,10 @@ Prioritize primary code reliability over fallback implementations. In distribute
 ### Error Masking Detection
 
 **Review Triggers** (require design review):
-- Writing 3rd error handling block in the same feature
-- Multiple error handling structures in single function
+- Writing 3rd error handler in the same feature
+- Multiple error handling blocks in single function/method
 - Nested error handling structures
-- Error handlers that return default values without propagating
+- Error handlers that return default values without logging
 
 **Before Implementing Any Fallback**:
 1. Verify Design Doc explicitly defines this fallback
@@ -65,33 +67,26 @@ Prioritize primary code reliability over fallback implementations. In distribute
 3. Ensure error is logged with full context
 4. Add monitoring/alerting for fallback activation
 
-### Implementation Patterns
+### Implementation Pattern
 
-Note: Use your language's standard error handling mechanism (exceptions, Result types, error values, etc.)
+**Core principle**: Make errors explicit with full context. Never hide errors with silent fallbacks.
 
 ```
 ❌ AVOID: Silent fallback that hides errors
-    [handle error]:
-        return DEFAULT_USER  // Error is hidden, debugging becomes difficult
+    <handle error>:
+        return DEFAULT_VALUE  // Error hidden, debugging impossible
 
 ✅ PREFERRED: Explicit failure with context
-    [handle error]:
-        logError('Failed to fetch user data', userId, error)
-        propagate ServiceError('User data unavailable', error)
-
-✅ ACCEPTABLE: Documented fallback with monitoring (when justified in Design Doc)
-    [handle error]:
-        // Fallback defined in Design Doc section 3.2.1
-        logWarning('Primary data source failed, using cache', error)
-        incrementMetric('data.fallback.cache_used')
-
-        cachedData = fetchFromCache()
-        if not cachedData:
-            propagate ServiceError('Both primary and cache failed', error)
-        return cachedData
+    <handle error>:
+        log_error('Operation failed', context, error)
+        <propagate error>  // Re-throw exception, return Error, return error tuple
 ```
 
+**Adaptation**: Use language-appropriate error handling (exceptions, Result types, error tuples, etc.)
+
 ## Rule of Three - Criteria for Code Duplication
+
+How to handle duplicate code based on Martin Fowler's "Refactoring":
 
 | Duplication Count | Action | Reason |
 |-------------------|--------|--------|
@@ -114,18 +109,18 @@ Note: Use your language's standard error handling mechanism (exceptions, Result 
 - Simple helpers in test code
 
 ### Implementation Example
-```
-// ❌ Bad: Immediate commonalization on 1st duplication
-function validateUserEmail(email) { /* ... */ }
-function validateContactEmail(email) { /* ... */ }
-// → Premature abstraction
 
-// ✅ Good: Commonalize on 3rd occurrence
-// 1st time: inline implementation
-// 2nd time: Copy but consider future
-// 3rd time: Extract to common validator
-function validateEmail(email, context) { /* ... */ }
 ```
+// ❌ Immediate commonalization on 1st duplication
+validateUserEmail(email) { /* ... */ }
+validateContactEmail(email) { /* ... */ }
+
+// ✅ Commonalize on 3rd occurrence with context parameter
+validateEmail(email, context) { /* ... */ }
+// context: 'user' | 'contact' | 'admin'
+```
+
+**Adaptation**: Use appropriate abstraction for your codebase (functions, classes, modules, configuration)
 
 ## Common Failure Patterns and Avoidance Methods
 
@@ -134,7 +129,12 @@ function validateEmail(email, context) { /* ... */ }
 **Cause**: Surface-level fixes without understanding root cause
 **Avoidance**: Identify root cause with 5 Whys before fixing
 
-### Pattern 2: Implementation Without Sufficient Testing
+### Pattern 2: Circumventing Correctness Guarantees
+**Symptom**: Bypassing safety mechanisms (type systems, validation, contracts)
+**Cause**: Impulse to avoid correctness errors
+**Avoidance**: Use language-appropriate safety mechanisms (static checking, runtime validation, contracts, assertions)
+
+### Pattern 3: Implementation Without Sufficient Testing
 **Symptom**: Many bugs after implementation
 **Cause**: Ignoring Red-Green-Refactor process
 **Avoidance**: Always start with failing tests
@@ -164,20 +164,18 @@ function validateEmail(email, context) { /* ... */ }
 ## Debugging Techniques
 
 ### 1. Error Analysis Procedure
-```bash
-# How to read stack traces
 1. Read error message (first line) accurately
 2. Focus on first and last of stack trace
 3. Identify first line where your code appears
-```
 
 ### 2. 5 Whys - Root Cause Analysis
 ```
-Symptom: Application crash on startup
-Why1: Configuration loading failed → Why2: Config file format changed
-Why3: Dependency update → Why4: Library breaking change
-Why5: Unconstrained dependency version specification
-Root cause: Inappropriate version management strategy
+Example:
+Symptom: Build error
+Why1: Contract definitions don't match → Why2: Interface was updated
+Why3: Dependency change → Why4: Package update impact
+Why5: Major version upgrade with breaking changes
+Root cause: Inappropriate version specification in dependency manifest
 ```
 
 ### 3. Minimal Reproduction Code
@@ -188,13 +186,62 @@ To isolate problems, attempt reproduction with minimal code:
 
 ### 4. Debug Log Output
 ```
-// Track problems with structured logs
-log('DEBUG:', {
-  context: 'user-creation',
-  input: { email, name },
+Pattern: Structured logging with context
+{
+  context: 'operation-name',
+  input: { relevant, input, data },
   state: currentState,
-  timestamp: currentTimestamp()
-})
+  timestamp: current_time_ISO8601
+}
+
+Key elements:
+- Operation context (what is being executed)
+- Input data (what was received)
+- Current state (relevant state variables)
+- Timestamp (for correlation)
+```
+
+## Quality Check Workflow
+
+Universal quality assurance phases applicable to all languages:
+
+### Phase 1: Static Analysis
+1. **Code Style Checking**: Verify adherence to style guidelines
+2. **Code Formatting**: Ensure consistent formatting
+3. **Unused Code Detection**: Identify dead code and unused imports/variables
+4. **Static Type Checking**: Verify type correctness (for statically typed languages)
+5. **Static Analysis**: Detect potential bugs, security issues, code smells
+
+### Phase 2: Build Verification
+1. **Compilation/Build**: Verify code builds successfully (for compiled languages)
+2. **Dependency Resolution**: Ensure all dependencies are available and compatible
+3. **Resource Validation**: Check configuration files, assets are valid
+
+### Phase 3: Testing
+1. **Unit Tests**: Run all unit tests
+2. **Integration Tests**: Run integration tests
+3. **Test Coverage**: Measure and verify coverage meets standards
+4. **E2E Tests**: Run end-to-end tests
+
+### Phase 4: Final Quality Gate
+All checks must pass before proceeding:
+- Zero static analysis errors
+- Build succeeds
+- All tests pass
+- Coverage meets threshold
+
+### Quality Check Pattern (Language-Agnostic)
+```
+Workflow:
+1. Format check → 2. Lint/Style → 3. Static analysis →
+4. Build/Compile → 5. Unit tests → 6. Coverage check →
+7. Integration tests → 8. Final gate
+
+Auto-fix capabilities (when available):
+- Format auto-fix
+- Lint auto-fix
+- Dependency/import organization
+- Simple code smell corrections
 ```
 
 ## Situations Requiring Technical Decisions
@@ -208,6 +255,11 @@ log('DEBUG:', {
 - Prioritize readability unless clear bottleneck exists
 - Measure before optimizing (don't guess, measure)
 - Document reason with comments when optimizing
+
+### Granularity of Contracts and Interfaces
+- Overly detailed contracts reduce maintainability
+- Design interfaces that appropriately express domain
+- Use abstraction mechanisms to reduce duplication
 
 ## Continuous Improvement Mindset
 
@@ -257,8 +309,6 @@ Complete these stages sequentially before any implementation:
 ```
 
 **Critical**: Do not implement until all 3 stages are documented
-
-**Relationship to Pattern 5**: This process provides the structured methodology to avoid "Insufficient Existing Code Investigation"
 
 ### Unused Code Deletion
 

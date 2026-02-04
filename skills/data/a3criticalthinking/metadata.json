@@ -1,8 +1,8 @@
 {
   "name": "a3criticalthinking",
-  "description": "Toyota-style A3 problem solving with embedded priority hierarchy: Safety First, then Customer Value, then Shareholder Value.\nStructured thinking framework for manufacturing decisions, root cause analy",
+  "description": "- \"Create an A3 for [problem]\"",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

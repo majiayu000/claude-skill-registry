@@ -1,119 +1,71 @@
 ---
-name: "building-sales-team"
-description: "Build an early sales team and operating cadence (readiness gate, hiring plan, role scorecards, interview loop, onboarding/ramp). Use for first AE/SDR hires, seed→Series A sales team build, and product-led sales pilot. Category: Sales & GTM."
+name: building-sales-team
+description: Help users build and scale their sales organization. Use when someone is hiring their first salespeople, deciding when to bring on sales leadership, structuring sales compensation, or transitioning from founder-led sales.
 ---
 
 # Building Sales Team
 
-## Scope
+Help the user build and scale a high-performing sales organization using frameworks from 14 product leaders who have built sales teams from zero to scale.
 
-**Covers**
-- Deciding **when** to hire sales vs continue founder-led selling
-- Designing the **first sales team** (pilot AE/SDR/hybrid) and hiring sequence
-- Hiring for **repeatability** (avoid “one heroic rep” dependency)
-- Setting a minimal **operating cadence** (ramp plan, metrics, coaching loop)
-- Technical / product-heavy selling: “sales that can pass for PMs”
+## How to Help
 
-**When to use**
-- “We’re ready to hire our first AE / SDR—help me design the plan.”
-- “Should we hire sales now or wait until the motion is repeatable?”
-- “Create role scorecards + an interview loop for early sales hires.”
-- “We’re starting product-led sales—how do we run a small pilot team?”
-- “Build an onboarding + 30/60/90 ramp plan for the first reps.”
+When the user asks for help with building a sales team:
 
-**When NOT to use**
-- You need to get first customers / validate ICP from scratch (use `founder-sales` first)
-- You’re scaling a mature sales org (territories, forecasting, multi-layer management)
-- You need legal/HR advice, compensation plan legal review, or employment compliance guidance
-- You want generic hiring advice without a defined sales motion and measurable readiness gates
+1. **Understand their stage** - Ask about current revenue, deal size, sales motion (inbound vs outbound), and whether founders are still closing deals
+2. **Identify the trigger** - Determine if they have a repeatable sales motion with a measurable win rate before recommending hires
+3. **Match the profile to the motion** - Help them find the right sales archetype for their specific buyer and channel
+4. **Structure for validation** - Guide them on hiring in pairs, compensation structures, and when to add management
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Company stage (pre-seed/seed/Series A+) and current GTM motion (PLG, outbound, enterprise, inbound)
-- Current funnel baseline: last ~50–100 “at-bats” if available (first meetings → closed-won), win rate, typical ACV, cycle length
-- ICP + product complexity (how technical is the sell; who must be convinced)
-- Current resources: founder time, CS/support involvement, marketing demand, budget/headcount constraints
-- Timeline + success definition (e.g., “2 reps ramped to $X pipeline/month in 90 days”)
+### Prove repeatability before hiring
+Pete Kazanjy: "You can reliably, at a pretty okay win rate, so maybe 15% or 20% or 25%, turn first meetings into eventual customers." Wait until founders achieve a statistically significant win rate (50-100 at-bats) before hiring salespeople.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If data is missing, proceed with explicit assumptions and deliver **two options**: (A) “Hire now (pilot)” vs (B) “Wait + founder-led milestones to hit first”.
+### Always hire in pairs
+Jason Lemkin: "You need to hire one rep and you've got to hire two because otherwise, there's no A-B test. You have to A-B test humans." Hiring two reps simultaneously creates a baseline for performance and validates that your process works regardless of individual talent.
 
-## Outputs (deliverables)
+### Delay sales hires until Series A
+Jen Abel: "Seed is all about experimentation and proving out that experiment, and then obviously series A is about exploiting that learning." The founder must close deals personally to learn the market before delegating.
 
-Produce a **Sales Team Build Pack** in Markdown (in-chat; or as files if requested):
+### Match profiles to your motion
+Annie Pearl: "In those early days, it's more inbound in nature, and so the type of sales reps you might need are not necessarily going to be outbound, heavy hunting sales reps." Hire "grower" profiles for PLG/inbound, "hunter" profiles for outbound.
 
-1) **Context snapshot** (stage, motion, ICP, constraints, targets)
-2) **Readiness gate** (hire-now vs wait) with measurable criteria
-3) **Team design + hiring sequence** (who to hire first/second; when; why)
-4) **Role scorecards** (AE/SDR/hybrid) + evaluation criteria (incl. product depth bar)
-5) **Interview loop + practical exercises** + scoring sheet
-6) **Onboarding + 30/60/90 ramp plan** + coaching/metrics cadence
-7) **Risks / Open questions / Next steps** (always included)
+### Look for founder-like sellers
+Jen Abel: "I always say you need people that can cosplay a founder, which is selling the vision, getting through walls to get the deal done." Early sales hires should be product-obsessed "pirates and romantics" who can adapt deal structures.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Sales hires must pass the PM test
+Jeanne Grosser: "If you are an account executive in my org and I put you in front of 10 engineers at our company, it should take them 10 minutes to figure out you aren't a product manager." In technical companies, sales must have deep product knowledge.
 
-## Workflow (7 steps)
+### Don't hire a VP too early
+Jason Lemkin: "You need two sales reps hitting quota closing deals before you're ready to hire a manager for them. Almost all VPs of sales, their job is to take you from rep three to 300."
 
-### 1) Intake + stage gating (should we hire now?)
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md); any funnel history.
-- **Actions:** Identify the GTM motion and whether the founder has achieved a repeatable baseline. Look for: (a) organic demand/hand-raisers (if PLG), and/or (b) a repeatable win rate from first meeting → close (target range often ~15–25% over ~50–100 at-bats). Decide: **Hire now** vs **Wait**.
-- **Outputs:** Context snapshot + readiness gate decision + assumptions/unknowns.
-- **Checks:** The decision is tied to measurable evidence (or clearly labeled assumptions).
+### Pilot PLS separately from quota pressure
+Elena Verna: "Attach to yourself a pilot AE, so account executive, or an SDR and see how that works... not under pressure of top-down quota relief." Experiment with product-led sales outside the traditional sales engine.
 
-### 2) Define the “repeatable motion” you’re hiring into
-- **Inputs:** ICP, use case, pricing/packaging, current discovery/demo flow.
-- **Actions:** Write a 1-page “sales motion spec”: qualification, first meeting agenda, demo/pilot criteria, pricing guardrails, common objections, and what counts as an “at-bat”. Clarify founder vs rep responsibilities for the next 60–90 days.
-- **Outputs:** Sales motion spec + handoff boundaries.
-- **Checks:** A new rep could run the next 10 deals with this spec without inventing the process.
+## Questions to Help Users
 
-### 3) Choose the initial team topology (pilot-first) + sequence hires
-- **Inputs:** Motion spec; readiness decision; budget; pipeline sources.
-- **Actions:** Select the simplest starting shape:
-  - PLG/hand-raisers: attach yourself to a **pilot AE and/or SDR** and run it as a learning pod (not quota theater).
-  - Outbound: consider an SDR+AE sequence (or a hybrid rep) depending on deal complexity.
-  - In very early stages: use **founder/CS/support** to close a subset of deals until the motion is proven.
-  Build a hiring sequence that enables A/B testing: if feasible, **hire two reps** close together to avoid “one data point” dependence.
-- **Outputs:** Team design + hiring plan table (roles, timing, success criteria, risks).
-- **Checks:** The plan creates comparability (two reps or comparable cohorts) and protects learning time.
+- "What's your current win rate from first meeting to closed deal?"
+- "Are you selling to arms-length prospects or mostly warm intros?"
+- "What's your average deal size and sales cycle length?"
+- "Is your motion primarily inbound or outbound?"
+- "Do you have two reps hitting quota consistently?"
+- "Who is your target buyer persona - department head or C-level?"
 
-### 4) Write role scorecards (hire for product depth + learning ability)
-- **Inputs:** Motion spec; team design; customer/technical context.
-- **Actions:** Draft scorecards for each role (AE/SDR/hybrid). For technical products, set a “PM-like” bar: reps should demonstrate product intuition, curiosity, and the ability to earn engineer trust. Translate insights into “must-have signals” + “red flags”.
-- **Outputs:** Role scorecards + evaluation rubric.
-- **Checks:** Scorecards are specific enough that two interviewers would rate candidates similarly.
+## Common Mistakes to Flag
 
-### 5) Build an interview loop with practical tests
-- **Inputs:** Scorecards; [references/TEMPLATES.md](references/TEMPLATES.md) (interview kit).
-- **Actions:** Define stages, interviewers, and exercises (e.g., mock discovery, objection handling, written follow-up email, product deep-dive, “explain to 10 engineers” test). Add structured scoring and a debrief protocol to reduce gut-feel hiring.
-- **Outputs:** Interview plan + question bank + score sheet.
-- **Checks:** Every interview maps to a scorecard signal; pass/fail criteria are explicit.
+- **Hiring sales before founder-led repeatability** - If the founder can't close deals consistently, salespeople won't either
+- **Hiring a VP of Sales first** - Start with two pioneer AEs, not a manager who hasn't sold in years
+- **Mismatching sales profile to motion** - Oracle reps selling to CIOs won't work if you're selling to RevOps managers
+- **Single-point-of-failure hiring** - One rep succeeding could be luck; two reps validates the process
+- **Ignoring the 50% failure rate** - Half of early sales hires don't work out, so plan accordingly
 
-### 6) Create onboarding + ramp plan (and a simple management system)
-- **Inputs:** Motion spec; expected pipeline sources; enablement assets (or create minimal ones).
-- **Actions:** Build a 30/60/90 plan: training, shadowing, call reviews, pipeline targets, activity guardrails, and demo/pilot readiness. Define weekly cadence (pipeline review, call coaching, experiment review). Preserve the “A/B test humans” approach by tracking rep-to-rep differences and diagnosing process vs person.
-- **Outputs:** Onboarding plan + ramp targets + coaching cadence + metrics list.
-- **Checks:** Ramp targets are measurable; coaching loop is scheduled; “definition of done” exists for each phase.
+## Deep Dive
 
-### 7) Quality gate + finalize
-- **Inputs:** Draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps** and identify what would change the hire/wait decision.
-- **Outputs:** Final Sales Team Build Pack.
-- **Checks:** A stakeholder can approve the plan and start hiring this week (or confidently defer with clear milestones).
+For all 22 insights from 14 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (first AE hires):**  
-“Use `building-sales-team`. We’re seed-stage B2B SaaS. Founder has closed 12 customers; last 60 first meetings → 14 closed-won (~23%). ACV $12k. We want to hire our first AEs. Output: a Sales Team Build Pack with readiness gate, hire-two plan, role scorecards, and interview loop.”
-
-**Example 2 (PLG → PLS pilot):**  
-“Use `building-sales-team`. We have steady inbound hand-raisers from our product. We want a pilot AE/SDR pod to close mid-market upgrades. Output: team topology, hiring sequence, and a 30/60/90 ramp with coaching cadence.”
-
-**Boundary example:**  
-“We have no repeatable sales motion or ICP yet—hire a VP Sales to ‘figure it out’.”  
-Response: recommend founder-led discovery/validation first (use `founder-sales`), define readiness milestones, and return to this skill once a motion can be written down and measured.
+- Founder Sales
+- Enterprise Sales
+- Partnership & BD
+- Product-Led Sales Strategy

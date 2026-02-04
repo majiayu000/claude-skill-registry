@@ -1,7 +1,7 @@
 {
   "name": "clay-observability",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/saas-packs/clay-pack/skills/clay-observability/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:26:57.760458Z"
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/clay-pack/clay-observability/SKILL.md",
+  "source": "github.com/vasic-digital/SuperAgent",
+  "downloaded_at": "2026-02-04T03:29:33.197867Z"
 }

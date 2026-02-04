@@ -1,11 +1,7 @@
 {
   "name": "resume-manager",
-  "repo": "agent-trust-protocol/atp-core",
-  "category": "data",
-  "description": "This skill should be used whenever users need help with resume creation, updating professional profiles, tracking career experiences, managing projects portfolio, or generating tailored resumes for jo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:34.385746Z",
-  "dir_name": "resume-manager",
-  "github_path": ".claude/skills/resume-manager",
-  "github_branch": "main"
+  "repo": "nguyendinhquocx/code-ai",
+  "path": "skills/resume-manager/SKILL.md",
+  "source": "github.com/nguyendinhquocx/code-ai",
+  "downloaded_at": "2026-02-04T04:00:38.812613Z"
 }

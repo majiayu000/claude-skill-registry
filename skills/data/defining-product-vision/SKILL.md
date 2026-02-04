@@ -1,125 +1,71 @@
 ---
-name: "defining-product-vision"
-description: "Define or refresh a product vision and produce a shareable Product Vision Pack (vision statement, narrative, pillars, strategic choices, rollout). Use for product vision, vision statement, product direction, long-term product strategy."
+name: defining-product-vision
+description: Help users create compelling product visions. Use when someone is writing a vision statement, defining a long-term product direction, aligning teams on the future state, or distinguishing vision from strategy.
 ---
 
 # Defining Product Vision
 
-## Scope
+Help the user create compelling product visions using frameworks from 101 product leaders who have defined visions at companies from Notion to Airbnb to the New York Times.
 
-**Covers**
-- Defining or refreshing a product vision (5–10 year future state)
-- Writing a vision statement + short vision narrative (concrete, not a tagline)
-- Translating vision into pillars and strategic choices (what we will/won’t do)
-- Packaging a “Product Vision Pack” leaders and teams can use as a decision tie-breaker
+## How to Help
 
-**When to use**
-- “We need a real product vision (not a slogan).”
-- “Leadership isn’t aligned on where the product is going.”
-- “Write a vision statement + one-pager for the next 5–10 years.”
-- “Bridge our mission to strategy and planning.”
-- “We have a big technology vision—what’s the user-friendly product form factor?”
+When the user asks for help with product vision:
 
-**When NOT to use**
-- You only need a marketing tagline or positioning copy (do marketing/copywriting instead).
-- You need a detailed product strategy doc, roadmap, or OKRs *after* vision is already aligned (use those downstream skills).
-- You don’t have even a rough target customer/problem hypothesis (do discovery/research first).
-- You’re choosing metrics/measurement before agreeing on the future state (do vision first, then North Star metrics).
+1. **Clarify the scope** - Determine if they need a vision (long-term aspiration), strategy (how to win), or roadmap (what to build)
+2. **Focus on the user's future** - Help them describe the world 5-10 years out, not the product features
+3. **Test for specificity** - Push back on vague taglines that don't change behavior
+4. **Make it visual** - Encourage prototypes and concrete artifacts over abstract documents
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product (what it is today) + target customer segment(s)
-- The potent user problem / job-to-be-done the vision is grounded in
-- Time horizon (default: 5–10 years)
-- Mission / higher-level purpose (or executive intent)
-- Constraints (what must remain true: trust, safety, margin, compliance, etc.)
-- Stakeholders who must align (roles/names)
+### Vision is not a tagline
+Melissa Perri: "I once asked all the executive team at a healthcare company, what's the vision for this company? And they said, to be the backbone of healthcare. And I said, what does that mean? And they couldn't elaborate." A vision must be a concrete description of what the company will manifest in 5-10 years.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with clearly labeled assumptions and provide 2–3 vision options.
+### Four criteria for strong vision
+Ebi Atawodi: "It has to be lofty, it has to be realistic, it has to be devoid of any tech or limitations of today, and it has to be grounded in a very clear and potent problem." Balance aspiration with attainability while ignoring current technical constraints.
 
-## Outputs (deliverables)
+### Hide radical vision in familiar utility
+Ivan Zhao (Notion): "Our realization is actually let's hide our vision, which is everybody can create their software, in the form factor that people do care. So what kind of tool do people use every day? Productivity software." Package a radical long-term vision inside a familiar, high-utility form factor.
 
-Produce a **Product Vision Pack** in Markdown (in-chat; or as files if requested):
+### Vision describes the user's world, not your product
+Ben Williams: "The vision is the nirvana state that you aim to enable for your users and customers in five to 10 years... It should not mention your company, your product, or anything solution related at all." Prefix vision statements with 'In the future...' to maintain long-term focus.
 
-1) **Context snapshot** (bullets)
-2) **Problem anchor** (target customer + potent user problem)
-3) **Vision statement** (1 sentence)
-4) **Vision narrative** (concrete 5–10 year future state; tech-agnostic; aspirational but attainable)
-5) **Vision pillars** (3–5) + optional experience principles
-6) **Strategy bridge** (3–5 explicit choices + non-goals + “near-term wedge/form factor”)
-7) **Rollout & alignment plan** (workshop + comms + cadence)
-8) **Risks / Open questions / Next steps** (always included)
+### Move from 'what' to 'why'
+Chip Conley: "Ultimately, we came up with the idea that we were in the belong anywhere business. Airbnb was not in home sharing, we were in belonging anywhere." A powerful vision moves beyond the functional 'what' to the emotional 'why.'
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Use visual artifacts
+Cam Adams (Canva): "We need mock-ups. We need prototypes. You need to get that idea out of your head and present it in a visual form that helps you talk about and communicate about it." Communicate vision through tangible prototypes, not just abstract documents.
 
-## Workflow (8 steps)
+### Vision guides decentralized decisions
+Ami Vora: "If we all agree that the feeling of something should be, I'm sitting in Dolores Park with my friends on a sunny Saturday, then people will just naturally build something that feels more consistent." Use emotional metaphors to create a shared understanding that guides decisions without micromanagement.
 
-### 1) Intake + constraints
-- **Inputs:** User context; use [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm product, target customer, horizon, mission, constraints, stakeholders, and why-now.
-- **Outputs:** 8–12 bullet **Context snapshot**.
-- **Checks:** You can restate “who we serve + what problem we solve” in 1–2 sentences.
+### Strategy forces choice
+Chandra Janakiraman: "Product strategy sits between the mission and vision and the plan... It forces choice to deploy scarce resources to generate maximum impact." Strategy is the connective tissue between the aspirational vision and the tactical roadmap.
 
-### 2) Define the problem anchor (potent user problem)
-- **Inputs:** Context snapshot.
-- **Actions:** Write the target customer + problem as a crisp, user-centered statement; identify what “success” means for them.
-- **Outputs:** **Problem anchor** section (template in [references/TEMPLATES.md](references/TEMPLATES.md)).
-- **Checks:** Problem is specific, important, and not framed as “our feature idea”.
+## Questions to Help Users
 
-### 3) Draft 2–3 future states (vision options)
-- **Inputs:** Problem anchor + horizon.
-- **Actions:** Generate 2–3 distinct future-state options that are:
-  - Lofty **and** realistic
-  - Tech-agnostic (not limited by today’s implementation)
-  - Grounded in the user problem
-- **Outputs:** 2–3 **Vision options** (short narratives).
-- **Checks:** Each option passes the 4-point vision test in [references/CHECKLISTS.md](references/CHECKLISTS.md).
+- "If you can't elaborate on your vision in specific terms, is it actually a vision or just a tagline?"
+- "What does the world look like in 5-10 years if you succeed?"
+- "What user problem is so potent that it makes you 'batshit crazy' that it still exists?"
+- "Can someone on your team make a good decision using only your vision as a guide?"
+- "What would your product look like if you didn't have today's technical constraints?"
+- "What's the emotional state you want users to feel?"
 
-### 4) Write the vision statement + narrative (not a tagline)
-- **Inputs:** Chosen vision option.
-- **Actions:** Draft a 1-sentence vision statement and a short narrative (5–10 year future). Run the “what does that mean?” elaboration test.
-- **Outputs:** **Vision statement** + **Vision narrative**.
-- **Checks:** A stakeholder can ask “what does that mean?” and you can answer concretely (future customers, value difference, what’s changed).
+## Common Mistakes to Flag
 
-### 5) Define pillars + principles (make it decision-useful)
-- **Inputs:** Vision narrative.
-- **Actions:** Create 3–5 pillars that imply product choices; add experience principles that help users act on the core value.
-- **Outputs:** **Vision pillars** (+ optional experience principles).
-- **Checks:** Each pillar can be translated into “we will invest in X / say no to Y”.
+- **Vague taglines** - "Be the backbone of healthcare" without specific elaboration
+- **Feature lists as vision** - Describing what you'll build, not what user's lives will be like
+- **Mentioning the product** - Vision should describe the user's world, not the solution
+- **Ignoring current constraints** - Good vision transcends today's technology limitations
+- **No behavioral change** - If the vision doesn't change team priorities, it's not useful
 
-### 6) Build the strategy bridge (choices + non-goals + wedge)
-- **Inputs:** Vision pillars + constraints.
-- **Actions:** Translate the vision into 3–5 strategic choices and explicit non-goals. Propose a near-term wedge/form factor that delivers immediate utility while progressing the long-term vision.
-- **Outputs:** **Strategy bridge** section.
-- **Checks:** Strategy forces choice (scarce resources); includes at least 3 non-goals; names a plausible wedge.
+## Deep Dive
 
-### 7) Align stakeholders + iterate
-- **Inputs:** Draft pack.
-- **Actions:** Create a lightweight review plan (who, how, cadence). Anticipate objections and add an FAQ if needed.
-- **Outputs:** **Rollout & alignment plan**.
-- **Checks:** Key stakeholders can paraphrase the vision and disagree on specifics (not on meanings).
+For all 143 insights from 101 guests, see `references/guest-insights.md`
 
-### 8) Quality gate + finalize pack
-- **Inputs:** All drafts.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**.
-- **Outputs:** Final **Product Vision Pack**.
-- **Checks:** Pack is shareable as-is; choices, non-goals, and caveats are explicit.
+## Related Skills
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (B2B SaaS):** “Define a product vision for a workflow automation platform for IT teams.”  
-Expected: a Product Vision Pack with a concrete future state, pillars, and a strategy bridge (choices + non-goals + wedge).
-
-**Example 2 (Consumer):** “Refresh product vision for a personal finance app expanding into a full ‘financial operating system’.”  
-Expected: a vision that is lofty but attainable, tech-agnostic, grounded in a potent user problem, and packaged in a familiar form factor.
-
-**Boundary example:** “Write a tagline for our website.”  
-Response: clarify this skill produces product vision artifacts (not marketing copy). Offer to first produce a vision pack, then hand off a distilled tagline/positioning to a marketing/copy skill.
-
+- Writing North Star Metrics
+- Prioritizing Roadmap
+- Setting OKRs & Goals
+- Competitive Analysis

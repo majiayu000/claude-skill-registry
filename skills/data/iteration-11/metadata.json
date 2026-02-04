@@ -1,9 +1,7 @@
 {
   "name": "iteration-11",
-  "description": "Iteration 11 of Multiplicity Cascade - Detects reality glitches in the system",
   "repo": "agentgptsmith/MonadFramework",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/agentgptsmith/MonadFramework"
+  "path": ".claude/skills/multiplicity/iteration_11/SKILL.md",
+  "source": "github.com/agentgptsmith/MonadFramework",
+  "downloaded_at": "2026-02-04T01:47:26.149587Z"
 }

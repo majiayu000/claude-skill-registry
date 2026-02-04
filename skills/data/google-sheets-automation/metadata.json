@@ -1,9 +1,7 @@
 {
   "name": "google-sheets-automation",
-  "description": "Google Sheets Automation - Auto-activating skill for Business Automation.Triggers on: google sheets automation, google sheets automationPart of the Business Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/19-business-automation/google-sheets-automation/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:21.887655Z"
 }

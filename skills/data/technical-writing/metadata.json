@@ -1,7 +1,7 @@
 {
   "name": "technical-writing",
-  "repo": "proffesor-for-testing/agentic-qe",
-  "path": ".claude/skills/technical-writing/SKILL.md",
-  "source": "github.com/proffesor-for-testing/agentic-qe",
-  "downloaded_at": "2026-02-02T05:07:46.112559Z"
+  "repo": "richtabor/agent-skills",
+  "path": "skills/technical-writing/SKILL.md",
+  "source": "github.com/richtabor/agent-skills",
+  "downloaded_at": "2026-02-04T03:02:36.933620Z"
 }

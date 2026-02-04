@@ -1,7 +1,7 @@
 {
   "name": "deal-review",
-  "repo": "gtmagents/gtm-agents",
-  "path": "plugins/sales-pipeline/skills/deal-review/SKILL.md",
-  "source": "github.com/gtmagents/gtm-agents",
-  "downloaded_at": "2026-02-02T02:59:14.934658Z"
+  "repo": "davekilleen/Dex",
+  "path": ".claude/skills/_available/sales/deal-review/SKILL.md",
+  "source": "github.com/davekilleen/Dex",
+  "downloaded_at": "2026-02-04T05:04:05.594402Z"
 }

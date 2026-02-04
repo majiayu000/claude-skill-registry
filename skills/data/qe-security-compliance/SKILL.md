@@ -1,6 +1,12 @@
 ---
 name: "QE Security Compliance"
 description: "Security auditing, vulnerability scanning, and compliance validation for OWASP, SOC2, GDPR, and other standards."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-security-compliance.yaml
+
 ---
 
 # QE Security Compliance

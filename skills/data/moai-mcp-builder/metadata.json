@@ -1,7 +1,7 @@
 {
   "name": "moai-mcp-builder",
-  "repo": "dolsoon/my-awesome-project",
-  "path": ".claude/skills/moai-mcp-builder/SKILL.md",
-  "source": "github.com/dolsoon/my-awesome-project",
-  "downloaded_at": "2026-02-02T04:00:46.821952Z"
+  "repo": "AJBcoding/claude-skill-eval",
+  "path": "skills/moai-mcp-builder/SKILL.md",
+  "source": "github.com/AJBcoding/claude-skill-eval",
+  "downloaded_at": "2026-02-04T03:28:18.128538Z"
 }

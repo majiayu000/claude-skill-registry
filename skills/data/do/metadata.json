@@ -1,9 +1,7 @@
 {
   "name": "do",
-  "description": "Manifest executor. Iterates through Deliverables satisfying Acceptance Criteria, then verifies all ACs and Global Invariants pass. Use when you have a manifest from /define.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/do/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:40:50.770958Z"
 }

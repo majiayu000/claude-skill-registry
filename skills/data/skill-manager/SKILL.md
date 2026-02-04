@@ -1,430 +1,95 @@
 ---
-name: skill-manager
-description: Native Python-based skill management for enabling/disabling skills, configuring permissions, and managing settings.local.json
-version: 1.0.0
-author: Generic Claude Code Framework
-tags: [skill-management, permissions, configuration, settings, productivity, native-script]
-auto-activate: false
+name: skill_manager
+description: "**核心技能中心**。负责管理所有技能（安装、搜索、创造、修改、管理、删除）。"
+triggers:
+- 搜索技能
+- 修改技能
+- 安装技能
+- 删除技能
+- 列出技能
+- 创建技能
 ---
 
-# Skill Manager
+# Skill Manager (技能中心)
 
-**Native Python-based skill management for Claude Code - Zero token overhead!**
+你是一个负责管理 X-Bot 技能系统的核心助手。你的职责是帮助用户扩展 Bot 的能力边界。
 
-## 🎯 Purpose
+## 核心能力
 
-This skill provides a **native Python script** that handles skill discovery, enabling/disabling, and permission management WITHOUT requiring LLM parsing. This saves 90% tokens compared to LLM-based skill management.
+1.  **列出技能 (Action: list)**: 查看当前已安装的所有技能包 (Builtin + Learned).
+2.  **搜索技能 (Action: search)**: 搜索本地可用技能。
+3.  **安装技能 (Action: install)**: 从指定 URL 或仓库安装新技能。
+4.  **删除技能 (Action: delete)**: 卸载并删除指定名称的技能。
+5.  **创建技能 (Action: create)**: 根据需求描述，使用 AI 自动编写新技能。
+6.  **修改技能 (Action: modify)**: 修改现有技能的代码逻辑或修复 Bug。
 
-**Token Savings:**
-- LLM-based approach: ~800-1000 tokens (reading 6+ skill files)
-- This skill: ~50-100 tokens (single script execution)
-- **Savings: 750-900 tokens per operation (90%)**
+## 执行指令 (SOP)
 
-## 🔧 **BASH COMMAND ATTRIBUTION PATTERN**
+当用户请求管理技能时，请分析其意图并提取以下参数调用内置脚本：
 
-**CRITICAL: Before executing EACH python/bash command, MUST output:**
-```
-🔧 [skill-manager] Running: <command>
-```
+### 参数说明
 
-**Examples:**
-```
-🔧 [skill-manager] Running: python .claude/skills/skill-manager/scripts/skill-manager.py discover
-🔧 [skill-manager] Running: python .claude/skills/skill-manager/scripts/skill-manager.py enable cli-modern-tools
-🔧 [skill-manager] Running: python .claude/skills/skill-manager/scripts/skill-manager.py toggle-feature cli-modern-tools eza
-🔧 [skill-manager] Running: bash .claude/skills/colored-output/color.sh success "" "Configuration updated"
-```
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| `action` | string | 是 | 操作类型: `list`, `search`, `install`, `delete`, `create`, `modify`, `config` |
+| `skill_name` | string | 条件 | 目标技能名称 (create, delete, modify, config 时必填) |
+| `query` | string | 条件 | 搜索关键词 (search 时必填) |
+| `repo_url` | string | 条件 | 仓库地址 (install 时必填，格式 `owner/repo` 或 `https://...`) |
+| `instruction` | string | 条件 | 给 AI 的具体指令 (create, modify 时必填，例如 "实现一个查天气的技能") |
+| `key` | string | 条件 | 配置项键名 (config 时必填) |
+| `value` | string | 条件 | 配置项新值 (config 时必填) |
 
-**Why:** This pattern helps users identify which skill is executing which command, improving transparency and debugging.
+### 意图映射示例
+- 用户输入: "我有哪些技能？" / "查看已安装插件"
+- 提取参数:
+  ```json
+  { "action": "list" }
+  ```
 
----
+**2. 搜索技能**
+- 用户输入: "搜索一下有没有查汇率的技能"
+- 提取参数:
+  ```json
+  { "action": "search", "query": "currency exchange" }
+  ```
 
-## 📋 Available Commands
+**3. 安装技能**
+- 用户输入: "安装 glwlg/xbot-skills"
+- 提取参数:
+  ```json
+  { "action": "install", "repo_url": "glwlg/xbot-skills" }
+  ```
 
-### Discover & List Skills
-
-```bash
-# Discover all skills (formatted output)
-python .claude/skills/skill-manager/scripts/skill-manager.py discover
-
-# List all skills
-python .claude/skills/skill-manager/scripts/skill-manager.py list
-
-# List only enabled skills
-python .claude/skills/skill-manager/scripts/skill-manager.py list --filter enabled
-
-# List only disabled skills
-python .claude/skills/skill-manager/scripts/skill-manager.py list --filter disabled
-
-# Output as JSON (for Claude to parse)
-python .claude/skills/skill-manager/scripts/skill-manager.py json
-```
-
-### Enable/Disable Skills
-
-```bash
-# Enable a skill
-python .claude/skills/skill-manager/scripts/skill-manager.py enable colored-output
-
-# Disable a skill
-python .claude/skills/skill-manager/scripts/skill-manager.py disable time-helper
-```
-
-### View Skill Details
-
-```bash
-# Show detailed info about a skill
-python .claude/skills/skill-manager/scripts/skill-manager.py status changelog-manager
-```
-
-### Export Configuration
-
-```bash
-# Export current configuration as JSON
-python .claude/skills/skill-manager/scripts/skill-manager.py export
-```
-
----
-
-## 🎨 VISUAL OUTPUT FORMATTING
-
-**Use colored-output skill for headers and results only (2 calls max):**
-
-```bash
-# START: Header only
-bash .claude/skills/colored-output/color.sh skill-header "skill-manager" "Managing skills..."
-
-# MIDDLE: Run Python script (produces formatted output)
-python .claude/skills/skill-manager/scripts/skill-manager.py list
-
-# END: Result only (if needed)
-bash .claude/skills/colored-output/color.sh success "" "Configuration updated!"
-```
-
----
-
-## 🚀 Usage Workflow
-
-### When User Invokes: `/cs-skill-management`
-
-**Step 1: Run discovery script**
-
-```bash
-python .claude/skills/skill-manager/scripts/skill-manager.py json
-```
-
-**Output (JSON):**
-```json
-[
+**4. 创建技能**
+- 用户输入: "帮我写一个技能，可以查询 BTC 价格"
+- 提取参数:
+  ```json
   {
-    "skill_name": "changelog-manager",
-    "name": "changelog-manager",
-    "description": "Update project changelog...",
-    "version": "2.8.0",
-    "author": "Claude Code",
-    "tags": ["changelog", "versioning"],
-    "auto_activate": true,
-    "enabled": true,
-    "permissions": [
-      "Skill(changelog-manager)",
-      "Bash(python scripts/generate_docs.py:*)"
-    ]
-  },
-  ...
-]
-```
+    "action": "create",
+    "skill_name": "crypto_price",
+    "instruction": "创建一个查询 BTC 价格的技能，使用 CoinGecko API"
+  }
+  ```
+
+**5. 修改技能**
+- 用户输入: "修改 weather 技能，增加显示湿度"
+- 提取参数:
+  ```json
+  {
+    "action": "modify",
+    "skill_name": "weather",
+    "instruction": "增加显示湿度的功能"
+  }
+  ```
+
+**6. 删除技能**
+- 用户输入: "删除 test 技能"
+- 提取参数:
+  ```json
+  { "action": "delete", "skill_name": "test" }
+  ```
+
+## 注意事项
+
+- **优先搜索**: 在创建新技能前，优先搜索已有的技能。
 
-**Step 2: Parse JSON and present interactive menu**
-
-Claude receives the JSON, parses it instantly (no file reads needed!), and displays:
-
-```
-⚙️  Skill Management - Interactive Mode
-========================================
-
-Available Skills: 7 total
-├─ Enabled: 4 skills
-├─ Not Configured: 3 skills
-└─ Categories: Release, CLI, Documentation, Time, Output, Development
-
-1. View All Skills (7)
-2. View Enabled Skills (4)
-3. View Not Configured Skills (3)
-4. Browse by Category
-5. Search for Skill
-
-🔧 Quick Actions:
-6. Enable a Skill
-7. Disable a Skill
-8. Configure Skill Permissions
-9. View Skill Details
-
-Enter choice (1-9) or 'q' to quit:
-```
-
-**Step 3: Execute user choice**
-
-If user chooses "6. Enable a Skill":
-
-```bash
-# User selects: colored-output
-python .claude/skills/skill-manager/scripts/skill-manager.py enable colored-output
-```
-
-**Output:**
-```
-✅ Enabled: colored-output
-```
-
-Settings.local.json is automatically updated!
-
----
-
-## 🔧 Quick Actions (Argument-Based)
-
-Users can also call the slash command with arguments for instant actions:
-
-```bash
-# Quick enable
-/cs-skill-management enable colored-output
-
-# Quick disable
-/cs-skill-management disable time-helper
-
-# Quick status
-/cs-skill-management status changelog-manager
-
-# Quick list
-/cs-skill-management list enabled
-```
-
-**Implementation:**
-
-```bash
-# Claude detects arguments and calls:
-python .claude/skills/skill-manager/scripts/skill-manager.py enable colored-output
-```
-
----
-
-## 📊 Script Capabilities
-
-### Discovery
-- Scans `.claude/skills/` directory
-- Parses YAML frontmatter from skill.md files
-- Extracts: name, description, version, author, tags, auto-activate
-- Checks enabled status from settings.local.json
-- Identifies all permissions related to each skill
-
-### Enable/Disable
-- Adds/removes `Skill(skill-name)` from settings.local.json
-- Identifies and removes related permissions (e.g., Bash permissions)
-- Validates JSON before saving
-- Provides clear success/error messages
-
-### Status & Details
-- Shows comprehensive skill information
-- Lists all permissions
-- Shows enabled/disabled status
-- Displays tags, version, author
-
-### Export
-- Exports full configuration as JSON
-- Can be used for backup/restore workflows
-- Portable configuration format
-
----
-
-## 🎯 Integration with /cs-skill-management Command
-
-The slash command `.claude/commands/cs-skill-management.md` should be updated to:
-
-```markdown
-**When user invokes `/cs-skill-management [args]`:**
-
-1. **Parse arguments** (if any)
-2. **Run Python script** with appropriate action
-3. **Display results** to user
-4. **Handle interactive menu** (if no arguments)
-
-**Examples:**
-
-- `/cs-skill-management` → Interactive menu
-- `/cs-skill-management enable colored-output` → Quick enable
-- `/cs-skill-management list enabled` → Quick list
-```
-
----
-
-## ⚡ Token Efficiency
-
-**Before (LLM-based):**
-1. Read 7 skill.md files (30 lines each) = ~600 tokens
-2. Read settings.local.json = ~50 tokens
-3. Parse and format = ~150 tokens
-4. **Total: ~800 tokens**
-
-**After (Script-based):**
-1. Run Python script = ~30 tokens
-2. Parse JSON output = ~20 tokens
-3. **Total: ~50 tokens**
-
-**Savings: 750 tokens (94% reduction)**
-
----
-
-## 🛠️ Implementation Notes
-
-### Auto-Detection of Project Root
-The script automatically finds the project root by searching for `.claude/` directory:
-
-```python
-current = Path.cwd()
-while current != current.parent:
-    if (current / '.claude').exists():
-        self.project_root = current
-        break
-    current = current.parent
-```
-
-### Cross-Platform Compatibility
-- Uses `pathlib.Path` for Windows/Mac/Linux compatibility
-- Pure Python (no external dependencies)
-- Works with Python 3.6+
-
-### Error Handling
-- Validates JSON before saving
-- Handles missing files gracefully
-- Provides clear error messages
-- Safe fallbacks for parsing errors
-
-### YAML Parsing
-Simple frontmatter parser (no external deps):
-- Extracts YAML between `---` markers
-- Parses key: value pairs
-- Handles arrays in tags field
-- Falls back to defaults on errors
-
----
-
-## 📝 Customization Points
-
-### Adding New Actions
-To add new script actions, modify `skill-manager.py`:
-
-```python
-# Add to argument choices
-parser.add_argument('action',
-                   choices=['discover', 'list', 'enable', 'disable',
-                            'status', 'export', 'json', 'YOUR_ACTION'],
-                   help='Action to perform')
-
-# Add handler in main()
-elif args.action == 'YOUR_ACTION':
-    manager.your_custom_method()
-```
-
-### Custom Filtering
-Add custom skill filters:
-
-```python
-def list_skills(self, filter_type: str = 'all') -> None:
-    skills = self.discover_skills()
-
-    if filter_type == 'by-tag':
-        # Custom tag-based filtering
-        skills = [s for s in skills if 'your-tag' in s['tags']]
-```
-
----
-
-## 🔍 Example Output
-
-### Discover Command
-
-```
-$ python .claude/skills/skill-manager/scripts/skill-manager.py discover
-
-📋 Skills (7 total)
-
-✅ changelog-manager (v2.8.0)
-   Update project changelog with uncommitted changes
-   Permissions: 4 configured
-
-✅ cli-modern-tools (v1.0.0)
-   Auto-suggest modern CLI tool alternatives
-   Permissions: 1 configured
-
-⬜ colored-output (v1.0.0)
-   Centralized colored output formatter
-   Permissions: 0 configured
-
-...
-```
-
-### Status Command
-
-```
-$ python .claude/skills/skill-manager/scripts/skill-manager.py status changelog-manager
-
-📊 Skill Details: changelog-manager
-============================================================
-
-Basic Info:
-  Name: changelog-manager
-  Version: 2.8.0
-  Description: Update project changelog with uncommitted changes
-  Author: Claude Code
-
-Status:
-  ✅ Enabled
-  Auto-activate: Yes
-
-Permissions (4):
-  ✅ Skill(changelog-manager)
-  ✅ Bash(python scripts/generate_docs.py:*)
-  ✅ Bash(git tag:*)
-  ✅ Bash(git commit:*)
-
-Tags:
-  changelog, versioning, git, release-management
-```
-
----
-
-## 📦 File Structure
-
-```
-.claude/skills/skill-manager/
-├── skill.md                    # This file (skill instructions)
-├── scripts/
-│   └── skill-manager.py        # Native Python script
-└── README.md                   # User documentation (optional)
-```
-
----
-
-## 🚀 Future Enhancements
-
-Potential additions:
-1. **Interactive TUI** - Use `rich` or `textual` for terminal UI
-2. **Skill Templates** - Generate new skills from templates
-3. **Dependency Management** - Track skill dependencies
-4. **Backup/Restore** - Automatic backup before changes
-5. **Import Config** - Import exported configurations
-6. **Batch Operations** - Enable/disable multiple skills at once
-7. **Search** - Full-text search across skill descriptions
-
----
-
-## Version History
-
-### v1.0.0
-- Initial release
-- Native Python implementation
-- Skill discovery and parsing
-- Enable/disable functionality
-- Status and details display
-- JSON export
-- Cross-platform support
-- Zero external dependencies

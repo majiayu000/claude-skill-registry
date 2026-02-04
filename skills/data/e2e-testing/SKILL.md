@@ -1,231 +1,237 @@
 ---
 name: e2e-testing
-description: chrome-devtools MCPサーバーを使ったE2Eテストの実施・デバッグを行う。「E2Eテストを実施」「画面をテスト」「ユーザーフローを確認」「ブラウザで動作確認」「画面の表示を検証」などの依頼時に使用。ログインフロー、フォーム送信、ページ遷移などのユーザー操作をインタラクティブにテストする。
+description: End-to-end testing expert for Playwright, Cypress, visual regression (Percy, Chromatic), and UI testing. Use for E2E tests, browser automation, visual diffs, or debugging flaky tests.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep
+model: opus
+context: fork
 ---
 
-# E2E Testing Skill
+# E2E Testing Expert - Playwright, Visual Regression, UI Testing
 
-chrome-devtools MCPサーバーを使用したE2Eテストの実施を支援する。
+## Core Expertise
 
-## 概要
+- **Playwright/Cypress** for browser automation
+- **Visual regression** with Percy, Chromatic, BackstopJS
+- **UI testing** with Testing Library patterns
+- **Accessibility testing** with axe-core
+- **Mobile emulation** and device testing
 
-このスキルはchrome-devtools MCPサーバーを使い、実際のブラウザを操作してE2Eテストを実施する。Playwrightなどのテストフレームワークではなく、MCPツールを直接使用してインタラクティブにテストを行う。
+## Playwright Fundamentals
 
-## 前提条件
+### Test Structure
 
-- 開発サーバーが起動していること（`pnpm dev`）
-- chrome-devtools MCPサーバーが有効であること
-- Chromeブラウザが利用可能であること
+```typescript
+import { test, expect } from '@playwright/test';
 
-## テスト実施ワークフロー
+test.describe('Authentication', () => {
+  test('should login successfully', async ({ page }) => {
+    await page.goto('/login');
+    await page.getByLabel('Email').fill('user@example.com');
+    await page.getByLabel('Password').fill('password123');
+    await page.getByRole('button', { name: 'Login' }).click();
 
-### 1. 開発サーバー起動確認
-
-```bash
-# サーバーが起動しているか確認、なければ起動
-pnpm dev
+    await expect(page).toHaveURL('/dashboard');
+    await expect(page.getByText('Welcome')).toBeVisible();
+  });
+});
 ```
 
-### 2. ブラウザツールの有効化
+### Page Object Model
 
-テスト開始前に必要なツールカテゴリを有効化:
+```typescript
+// pages/LoginPage.ts
+export class LoginPage {
+  constructor(private page: Page) {}
 
-- `activate_browser_navigation_tools` - ページ作成・遷移
-- `activate_snapshot_and_screenshot_tools` - スクリーンショット・スナップショット
-- `activate_form_interaction_tools` - フォーム入力・キー操作
-- `activate_element_interaction_tools` - ドラッグ・ホバー
+  readonly emailInput = this.page.getByLabel('Email');
+  readonly passwordInput = this.page.getByLabel('Password');
+  readonly loginButton = this.page.getByRole('button', { name: 'Login' });
 
-### 3. テスト実施フロー
-
-```
-1. ページを開く/遷移する
-2. スナップショットで要素のuidを取得
-3. 要素を操作（クリック、入力など）
-4. 結果を検証（テキスト確認、スクリーンショット）
-5. 次のステップへ
-```
-
-## 主要MCPツール
-
-### ナビゲーション系（activate_browser_navigation_tools）
-
-| ツール | 用途 |
-|--------|------|
-| ページ作成 | 新しいブラウザページを開く |
-| URL遷移 | 指定URLへ移動 |
-| ページ一覧 | 開いているページを確認 |
-| ページ選択 | 操作対象ページを切り替え |
-
-### スナップショット系（activate_snapshot_and_screenshot_tools）
-
-| ツール | 用途 |
-|--------|------|
-| `mcp_chrome-devtoo_take_screenshot` | スクリーンショット撮影 |
-| テキストスナップショット | ページ構造とuid取得（操作に必須） |
-
-### 操作系
-
-| ツール | 用途 |
-|--------|------|
-| `mcp_chrome-devtoo_click` | 要素をクリック |
-| `mcp_chrome-devtoo_fill` | テキスト入力・セレクト選択 |
-| `mcp_chrome-devtoo_wait_for` | テキスト出現まで待機 |
-| `mcp_chrome-devtoo_evaluate_script` | JavaScript実行 |
-
-### その他
-
-| ツール | 用途 |
-|--------|------|
-| `mcp_chrome-devtoo_emulate` | ネットワーク・位置情報エミュレート |
-| `mcp_chrome-devtoo_resize_page` | 画面サイズ変更（レスポンシブ確認） |
-| `mcp_chrome-devtoo_handle_dialog` | ダイアログ処理 |
-| `mcp_chrome-devtoo_upload_file` | ファイルアップロード |
-
-## テストパターン
-
-### パターン1: ページ表示確認
-
-```
-1. activate_browser_navigation_tools でナビゲーションツール有効化
-2. ページを http://localhost:3000/[path] に遷移
-3. activate_snapshot_and_screenshot_tools でスナップショットツール有効化
-4. テキストスナップショットで内容確認
-5. 期待する要素・テキストが存在するか検証
-6. 必要に応じてスクリーンショット撮影
-```
-
-### パターン2: フォーム入力・送信
-
-```
-1. 対象ページに遷移
-2. テキストスナップショットでフォーム要素のuidを取得
-3. mcp_chrome-devtoo_fill で各フィールドに値を入力
-   - uid: スナップショットから取得した要素ID
-   - value: 入力する値
-4. mcp_chrome-devtoo_click で送信ボタンをクリック
-5. mcp_chrome-devtoo_wait_for で結果表示を待機
-6. 結果を検証
-```
-
-### パターン3: 認証フロー
-
-```
-1. /login ページに遷移
-2. スナップショットでメール/パスワード入力欄のuidを取得
-3. mcp_chrome-devtoo_fill でメールアドレス入力
-4. mcp_chrome-devtoo_fill でパスワード入力
-5. mcp_chrome-devtoo_click でログインボタンクリック
-6. mcp_chrome-devtoo_wait_for でダッシュボード表示を待機
-7. URL・表示内容を検証
-```
-
-### パターン4: ナビゲーション検証
-
-```
-1. 起点ページに遷移
-2. スナップショットでリンク要素のuidを取得
-3. mcp_chrome-devtoo_click でリンクをクリック
-4. 遷移先URLを確認
-5. スナップショットで遷移先の内容を検証
-```
-
-### パターン5: レスポンシブ確認
-
-```
-1. mcp_chrome-devtoo_resize_page でサイズ変更
-   - モバイル: width=375, height=667
-   - タブレット: width=768, height=1024
-   - デスクトップ: width=1280, height=800
-2. スクリーンショットで表示確認
-3. レイアウト崩れがないか検証
-```
-
-## 検証方法
-
-### テキスト検証
-
-```
-1. テキストスナップショットを取得
-2. 期待するテキストが含まれているか確認
-3. または mcp_chrome-devtoo_wait_for で特定テキストの出現を待機
-```
-
-### 視覚的検証
-
-```
-1. mcp_chrome-devtoo_take_screenshot でスクリーンショット取得
-2. 表示を目視確認
-3. 必要に応じてファイルに保存（filePath指定）
-```
-
-### JavaScript実行による検証
-
-```javascript
-// mcp_chrome-devtoo_evaluate_script で実行
-() => {
-  return {
-    title: document.title,
-    url: window.location.href,
-    elementExists: !!document.querySelector('[data-testid="target"]'),
-    inputValue: document.querySelector('input[name="email"]')?.value
-  };
+  async login(email: string, password: string) {
+    await this.emailInput.fill(email);
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
+  }
 }
 ```
 
-## このプロジェクトの主要テスト対象
+### Fixtures
 
-| 機能 | パス | 主要シナリオ |
-|------|------|-------------|
-| ログイン | `/login` | メール認証、エラー表示 |
-| 診断フロー | `/dashboard/diagnosis` | 6ステップ入力、送信 |
-| 検索 | `/dashboard/search` | キーワード検索、結果表示 |
-| 比較 | `/dashboard/compare` | 製品選択、比較表示 |
-| 提案書 | `/dashboard/proposal` | 生成、エクスポート |
+```typescript
+import { test as base } from '@playwright/test';
+import { LoginPage } from './pages/LoginPage';
 
-## よくある問題と対処
+export const test = base.extend<{ loginPage: LoginPage }>({
+  loginPage: async ({ page }, use) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
+    await use(loginPage);
+  },
+});
+```
 
-| 症状 | 原因 | 対処 |
-|------|------|------|
-| 要素が見つからない | uidが古い | スナップショット再取得 |
-| クリックが効かない | 要素が非表示/覆われている | スクロール or 待機 |
-| 入力できない | 要素タイプ不正 | fillではなくevaluate_script使用 |
-| タイムアウト | 処理遅延 | wait_for で明示的に待機 |
-| ダイアログで停止 | 未処理のalert/confirm | handle_dialog で処理 |
+## Visual Regression
 
-## テスト実施チェックリスト
+### Playwright Screenshots
 
-- [ ] 開発サーバーが起動しているか
-- [ ] 必要なツールカテゴリを有効化したか
-- [ ] 操作前にスナップショットでuidを取得したか
-- [ ] 非同期処理後はwait_forで待機したか
-- [ ] エラーケースもテストしたか
-- [ ] スクリーンショットで結果を記録したか
+```typescript
+test('homepage matches baseline', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveScreenshot('homepage.png', {
+    fullPage: true,
+    animations: 'disabled',
+  });
+});
 
-## このプロジェクトの主要テスト対象
+// Responsive screenshots
+await page.setViewportSize({ width: 1920, height: 1080 });
+await expect(page).toHaveScreenshot('desktop.png');
 
-| 機能 | パス | 主要シナリオ |
-|------|------|-------------|
-| ログイン | `/login` | メール認証、エラー表示 |
-| 診断フロー | `/dashboard/diagnosis` | 6ステップ入力、送信 |
-| 検索 | `/dashboard/search` | キーワード検索、結果表示 |
-| 比較 | `/dashboard/compare` | 製品選択、比較表示 |
-| 提案書 | `/dashboard/proposal` | 生成、エクスポート |
+await page.setViewportSize({ width: 375, height: 667 });
+await expect(page).toHaveScreenshot('mobile.png');
+```
 
-## よくある問題と対処
+### Percy Integration
 
-| 症状 | 原因 | 対処 |
-|------|------|------|
-| 要素が見つからない | uidが古い | スナップショット再取得 |
-| クリックが効かない | 要素が非表示/覆われている | スクロール or 待機 |
-| 入力できない | 要素タイプ不正 | fillではなくevaluate_script使用 |
-| タイムアウト | 処理遅延 | wait_for で明示的に待機 |
-| ダイアログで停止 | 未処理のalert/confirm | handle_dialog で処理 |
+```typescript
+import { percySnapshot } from '@percy/playwright';
 
-## テスト実施チェックリスト
+test('visual diff with Percy', async ({ page }) => {
+  await page.goto('/dashboard');
+  await percySnapshot(page, 'Dashboard');
+});
+```
 
-- [ ] 開発サーバーが起動しているか
-- [ ] 必要なツールカテゴリを有効化したか
-- [ ] 操作前にスナップショットでuidを取得したか
-- [ ] 非同期処理後はwait_forで待機したか
-- [ ] エラーケースもテストしたか
-- [ ] スクリーンショットで結果を記録したか
+### Chromatic (Storybook)
+
+```json
+// package.json
+{
+  "scripts": {
+    "chromatic": "chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+  }
+}
+```
+
+## Accessibility Testing
+
+```typescript
+import AxeBuilder from '@axe-core/playwright';
+
+test('accessibility audit', async ({ page }) => {
+  await page.goto('/');
+
+  const results = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa'])
+    .analyze();
+
+  expect(results.violations).toEqual([]);
+});
+
+// Keyboard navigation
+test('keyboard navigation', async ({ page }) => {
+  await page.goto('/form');
+  await page.keyboard.press('Tab');
+  await expect(page.getByLabel('Email')).toBeFocused();
+});
+```
+
+## Mobile Testing
+
+```typescript
+import { devices } from '@playwright/test';
+
+test.use(devices['iPhone 13 Pro']);
+
+test('mobile navigation', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible();
+});
+```
+
+## Network Mocking
+
+```typescript
+test('mock API response', async ({ page }) => {
+  await page.route('/api/users', async (route) => {
+    await route.fulfill({
+      status: 200,
+      body: JSON.stringify([{ id: 1, name: 'John' }]),
+    });
+  });
+
+  await page.goto('/users');
+  await expect(page.getByText('John')).toBeVisible();
+});
+```
+
+## Debugging Flaky Tests
+
+```typescript
+// Proper waiting (NOT setTimeout)
+await page.waitForLoadState('networkidle');
+await page.waitForSelector('.content', { state: 'visible' });
+
+// Retry configuration
+export default defineConfig({
+  retries: process.env.CI ? 2 : 0,
+  use: {
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+});
+```
+
+## CI/CD Configuration
+
+```yaml
+# .github/workflows/e2e.yml
+name: E2E Tests
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+```
+
+## Best Practices
+
+1. **Use stable locators** (roles, labels, test IDs)
+2. **Page Object Model** for maintainability
+3. **Wait for conditions**, not timeouts
+4. **Isolate test data** per test
+5. **Mock external APIs** to reduce flakiness
+6. **Disable animations** for visual tests
+7. **Run parallel** in CI for speed
+8. **Save traces/screenshots** on failure
+
+## Test Organization
+
+```
+e2e/
+├── fixtures/
+│   └── auth.fixture.ts
+├── pages/
+│   ├── LoginPage.ts
+│   └── DashboardPage.ts
+├── tests/
+│   ├── auth.spec.ts
+│   └── dashboard.spec.ts
+└── playwright.config.ts
+```
+
+## Related Skills
+
+- `qa-engineer` - Overall test strategy
+- `unit-testing` - Unit and integration tests

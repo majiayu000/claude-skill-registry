@@ -1,73 +1,27 @@
 ---
 name: haproxy
-description: "Configure HAProxy for load balancing, reverse proxying, and high availability. Set up health checks, SSL termination, rate limiting, and traffic management. Use for load balancing and proxy configurations."
+description: HAProxy load balancer configuration and management. Set up TCP/HTTP load balancing, SSL termination, health checks, ACLs, and high availability. Use when working with HAProxy, load balancing, reverse proxy, TCP proxying, or high-traffic applications.
 ---
 
-# HAProxy Skill
+# HAProxy Load Balancer Skill
 
-Complete guide for HAProxy - the reliable, high-performance TCP/HTTP load balancer.
+Configure and manage HAProxy for high-performance load balancing, SSL termination, and reverse proxying.
 
-## Quick Reference
+## Triggers
 
-### Configuration Sections
-| Section | Purpose |
-|---------|---------|
-| **global** | Process-wide settings |
-| **defaults** | Default settings for all sections |
-| **frontend** | Client-facing listeners |
-| **backend** | Server pools |
-| **listen** | Combined frontend/backend |
+Use this skill when you see:
+- haproxy, ha proxy, load balancer
+- tcp proxy, http proxy, reverse proxy
+- ssl termination, health check
+- backend server, frontend, acl
 
-### Key Files
-```
-/etc/haproxy/haproxy.cfg    # Main config
-/var/log/haproxy.log        # Logs
-/var/run/haproxy/admin.sock # Admin socket
-```
+## Instructions
 
----
+### Basic Configuration Structure
 
-## 1. Installation
-
-### Ubuntu/Debian
 ```bash
-sudo apt update
-sudo apt install haproxy
+# /etc/haproxy/haproxy.cfg
 
-# Enable and start
-sudo systemctl enable haproxy
-sudo systemctl start haproxy
-```
-
-### CentOS/RHEL
-```bash
-sudo dnf install haproxy
-sudo systemctl enable haproxy
-sudo systemctl start haproxy
-```
-
-### Docker
-```yaml
-services:
-  haproxy:
-    image: haproxy:latest
-    container_name: haproxy
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-      - "8404:8404"
-    volumes:
-      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
-      - ./certs:/etc/ssl/certs:ro
-```
-
----
-
-## 2. Basic Configuration
-
-### Minimal haproxy.cfg
-```cfg
 global
     log /dev/log local0
     log /dev/log local1 notice
@@ -84,9 +38,9 @@ defaults
     mode    http
     option  httplog
     option  dontlognull
-    timeout connect 5s
-    timeout client  50s
-    timeout server  50s
+    timeout connect 5000
+    timeout client  50000
+    timeout server  50000
     errorfile 400 /etc/haproxy/errors/400.http
     errorfile 403 /etc/haproxy/errors/403.http
     errorfile 408 /etc/haproxy/errors/408.http
@@ -94,459 +48,258 @@ defaults
     errorfile 502 /etc/haproxy/errors/502.http
     errorfile 503 /etc/haproxy/errors/503.http
     errorfile 504 /etc/haproxy/errors/504.http
+```
 
+### HTTP Load Balancing
+
+```bash
 frontend http_front
     bind *:80
     default_backend http_back
+    option forwardfor
 
-backend http_back
-    balance roundrobin
-    server server1 192.168.1.10:80 check
-    server server2 192.168.1.11:80 check
-```
-
----
-
-## 3. Load Balancing Algorithms
-
-### Round Robin (Default)
-```cfg
-backend http_back
-    balance roundrobin
-    server server1 192.168.1.10:80 check
-    server server2 192.168.1.11:80 check
-```
-
-### Least Connections
-```cfg
-backend http_back
-    balance leastconn
-    server server1 192.168.1.10:80 check
-    server server2 192.168.1.11:80 check
-```
-
-### Source IP Hash (Sticky)
-```cfg
-backend http_back
-    balance source
-    hash-type consistent
-    server server1 192.168.1.10:80 check
-    server server2 192.168.1.11:80 check
-```
-
-### Weighted Round Robin
-```cfg
-backend http_back
-    balance roundrobin
-    server server1 192.168.1.10:80 weight 3 check
-    server server2 192.168.1.11:80 weight 1 check
-```
-
-### URI Hash
-```cfg
-backend http_back
-    balance uri
-    hash-type consistent
-    server server1 192.168.1.10:80 check
-    server server2 192.168.1.11:80 check
-```
-
----
-
-## 4. Health Checks
-
-### HTTP Health Check
-```cfg
 backend http_back
     balance roundrobin
     option httpchk GET /health
     http-check expect status 200
-    server server1 192.168.1.10:80 check inter 5s fall 3 rise 2
-    server server2 192.168.1.11:80 check inter 5s fall 3 rise 2
+    server web1 192.168.1.10:8080 check
+    server web2 192.168.1.11:8080 check
+    server web3 192.168.1.12:8080 check backup
 ```
 
-### TCP Health Check
-```cfg
-backend tcp_back
-    mode tcp
-    balance roundrobin
-    option tcp-check
-    server server1 192.168.1.10:3306 check inter 5s
-    server server2 192.168.1.11:3306 check inter 5s
-```
+### HTTPS with SSL Termination
 
-### Health Check Options
-```cfg
-# inter: check interval
-# fall: failures before marking down
-# rise: successes before marking up
-# slowstart: gradual traffic increase after recovery
-
-server server1 192.168.1.10:80 check inter 3s fall 3 rise 2 slowstart 60s
-```
-
----
-
-## 5. SSL/TLS Termination
-
-### HTTPS Frontend
-```cfg
-frontend https_front
-    bind *:443 ssl crt /etc/ssl/certs/combined.pem
-    mode http
-    default_backend http_back
-```
-
-### Combined Certificate (PEM)
 ```bash
-# Combine certificate and key
-cat certificate.crt ca-bundle.crt private.key > combined.pem
-chmod 600 combined.pem
-```
-
-### SSL with Redirect
-```cfg
-frontend http_front
+frontend https_front
+    bind *:443 ssl crt /etc/haproxy/certs/combined.pem
     bind *:80
-    mode http
     redirect scheme https code 301 if !{ ssl_fc }
+    default_backend https_back
 
-frontend https_front
-    bind *:443 ssl crt /etc/ssl/certs/combined.pem
-    mode http
-    default_backend http_back
+    # HSTS header
+    http-response set-header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+backend https_back
+    balance leastconn
+    option httpchk GET /health
+    server web1 192.168.1.10:8080 check
+    server web2 192.168.1.11:8080 check
 ```
 
-### SSL Passthrough
-```cfg
-frontend tcp_front
-    bind *:443
-    mode tcp
-    default_backend tcp_back
+### TCP Load Balancing
 
-backend tcp_back
-    mode tcp
-    server server1 192.168.1.10:443 check
-```
-
-### Multiple Certificates (SNI)
-```cfg
-frontend https_front
-    bind *:443 ssl crt /etc/ssl/certs/
-    # All .pem files in directory are loaded
-    # HAProxy selects based on SNI
-```
-
----
-
-## 6. ACLs and Routing
-
-### Host-Based Routing
-```cfg
-frontend http_front
-    bind *:80
-    acl is_api hdr(host) -i api.example.com
-    acl is_web hdr(host) -i www.example.com
-
-    use_backend api_back if is_api
-    use_backend web_back if is_web
-    default_backend web_back
-```
-
-### Path-Based Routing
-```cfg
-frontend http_front
-    bind *:80
-    acl is_api path_beg /api
-    acl is_static path_beg /static
-
-    use_backend api_back if is_api
-    use_backend static_back if is_static
-    default_backend web_back
-```
-
-### Method-Based Routing
-```cfg
-frontend http_front
-    bind *:80
-    acl is_post method POST
-    acl is_get method GET
-
-    use_backend write_back if is_post
-    use_backend read_back if is_get
-```
-
-### IP-Based ACL
-```cfg
-frontend http_front
-    bind *:80
-    acl is_internal src 192.168.0.0/16 10.0.0.0/8
-
-    use_backend internal_back if is_internal
-    default_backend public_back
-```
-
----
-
-## 7. Session Persistence
-
-### Cookie-Based
-```cfg
-backend http_back
-    balance roundrobin
-    cookie SERVERID insert indirect nocache
-    server server1 192.168.1.10:80 check cookie s1
-    server server2 192.168.1.11:80 check cookie s2
-```
-
-### Stick Tables
-```cfg
-backend http_back
-    balance roundrobin
-    stick-table type ip size 200k expire 30m
-    stick on src
-    server server1 192.168.1.10:80 check
-    server server2 192.168.1.11:80 check
-```
-
-### Application Cookie
-```cfg
-backend http_back
-    balance roundrobin
-    cookie JSESSIONID prefix nocache
-    server server1 192.168.1.10:80 check cookie s1
-    server server2 192.168.1.11:80 check cookie s2
-```
-
----
-
-## 8. Rate Limiting
-
-### Connection Rate Limiting
-```cfg
-frontend http_front
-    bind *:80
-    stick-table type ip size 100k expire 30s store conn_cur,conn_rate(3s)
-
-    # Deny if more than 20 connections per 3 seconds
-    acl too_fast src_conn_rate gt 20
-    tcp-request connection reject if too_fast
-```
-
-### Request Rate Limiting
-```cfg
-frontend http_front
-    bind *:80
-    stick-table type ip size 100k expire 30s store http_req_rate(10s)
-
-    # Tarpit (slow down) if more than 100 requests per 10 seconds
-    acl too_many_requests src_http_req_rate gt 100
-    http-request tarpit if too_many_requests
-```
-
-### Per-URL Rate Limiting
-```cfg
-frontend http_front
-    bind *:80
-    stick-table type string len 128 size 100k expire 30s store http_req_rate(10s)
-
-    # Track by URL path
-    http-request track-sc0 path
-    acl api_abuse sc0_http_req_rate gt 50
-    http-request deny if api_abuse { path_beg /api }
-```
-
----
-
-## 9. Stats and Monitoring
-
-### Stats Page
-```cfg
-listen stats
-    bind *:8404
-    mode http
-    stats enable
-    stats uri /stats
-    stats refresh 30s
-    stats admin if LOCALHOST
-    stats auth admin:password
-```
-
-### Prometheus Metrics
-```cfg
-frontend stats
-    bind *:8405
-    mode http
-    http-request use-service prometheus-exporter if { path /metrics }
-    stats enable
-    stats uri /stats
-```
-
-### Runtime API
-```cfg
-global
-    stats socket /var/run/haproxy/admin.sock mode 660 level admin
-
-# Usage
-echo "show stat" | socat stdio /var/run/haproxy/admin.sock
-echo "show servers state" | socat stdio /var/run/haproxy/admin.sock
-echo "disable server http_back/server1" | socat stdio /var/run/haproxy/admin.sock
-```
-
----
-
-## 10. High Availability
-
-### Keepalived Integration
-```cfg
-# /etc/keepalived/keepalived.conf
-vrrp_script chk_haproxy {
-    script "killall -0 haproxy"
-    interval 2
-    weight 2
-}
-
-vrrp_instance VI_1 {
-    state MASTER
-    interface eth0
-    virtual_router_id 51
-    priority 101
-    advert_int 1
-
-    virtual_ipaddress {
-        192.168.1.100
-    }
-
-    track_script {
-        chk_haproxy
-    }
-}
-```
-
-### Graceful Reload
 ```bash
-# Check config
-haproxy -c -f /etc/haproxy/haproxy.cfg
-
-# Graceful reload
-systemctl reload haproxy
-
-# Or manual
-haproxy -f /etc/haproxy/haproxy.cfg -sf $(cat /var/run/haproxy.pid)
-```
-
----
-
-## 11. TCP Load Balancing
-
-### Database (MySQL)
-```cfg
-listen mysql
+frontend tcp_front
     bind *:3306
     mode tcp
-    balance leastconn
-    option mysql-check user haproxy
-    server mysql1 192.168.1.10:3306 check
-    server mysql2 192.168.1.11:3306 check backup
-```
+    default_backend mysql_back
 
-### Redis
-```cfg
-listen redis
-    bind *:6379
-    mode tcp
-    balance first
-    option tcp-check
-    tcp-check send PING\r\n
-    tcp-check expect string +PONG
-    server redis1 192.168.1.10:6379 check inter 1s
-    server redis2 192.168.1.11:6379 check inter 1s
-```
-
-### SMTP
-```cfg
-listen smtp
-    bind *:25
+backend mysql_back
     mode tcp
     balance roundrobin
-    server smtp1 192.168.1.10:25 check
-    server smtp2 192.168.1.11:25 check
+    option mysql-check user haproxy
+    server db1 192.168.1.20:3306 check
+    server db2 192.168.1.21:3306 check backup
 ```
 
----
+### ACL-Based Routing
 
-## 12. Troubleshooting
-
-### Common Issues
-
-**Connection refused:**
 ```bash
-# Check HAProxy is running
-systemctl status haproxy
+frontend http_front
+    bind *:80
 
-# Check ports
-ss -tlnp | grep haproxy
+    # Define ACLs
+    acl is_api path_beg /api
+    acl is_static path_beg /static
+    acl is_admin path_beg /admin
+    acl host_app hdr(host) -i app.example.com
+    acl host_api hdr(host) -i api.example.com
 
-# Check backend servers
-curl -v http://192.168.1.10:80/
+    # Route based on ACLs
+    use_backend api_back if is_api
+    use_backend api_back if host_api
+    use_backend static_back if is_static
+    use_backend admin_back if is_admin
+    default_backend app_back
+
+backend api_back
+    balance roundrobin
+    server api1 192.168.1.30:8080 check
+    server api2 192.168.1.31:8080 check
+
+backend static_back
+    balance roundrobin
+    server static1 192.168.1.40:80 check
+
+backend admin_back
+    balance roundrobin
+    server admin1 192.168.1.50:8080 check
+
+backend app_back
+    balance roundrobin
+    server app1 192.168.1.10:8080 check
+    server app2 192.168.1.11:8080 check
 ```
 
-**503 Service Unavailable:**
+### Health Checks
+
 ```bash
-# Check backend health
-echo "show servers state" | socat stdio /var/run/haproxy/admin.sock
+backend http_back
+    # HTTP health check
+    option httpchk GET /health HTTP/1.1\r\nHost:\ localhost
+    http-check expect status 200
 
-# View stats page
-# http://haproxy-ip:8404/stats
+    # Advanced health check
+    http-check send meth GET uri /health ver HTTP/1.1 hdr Host localhost
+    http-check expect status 200
+
+    server web1 192.168.1.10:8080 check inter 3000 fall 3 rise 2
+    server web2 192.168.1.11:8080 check inter 3000 fall 3 rise 2
+
+backend tcp_back
+    mode tcp
+    option tcp-check
+    tcp-check connect
+    tcp-check send PING\r\n
+    tcp-check expect string +PONG
+    server redis1 192.168.1.60:6379 check
 ```
 
-**Configuration errors:**
+### Rate Limiting
+
 ```bash
-# Validate config
-haproxy -c -f /etc/haproxy/haproxy.cfg
+frontend http_front
+    bind *:80
 
-# View logs
-journalctl -u haproxy -f
-tail -f /var/log/haproxy.log
+    # Define rate limit table
+    stick-table type ip size 100k expire 30s store http_req_rate(10s)
+
+    # Track requests per IP
+    http-request track-sc0 src
+
+    # Deny if rate exceeds 100 requests per 10 seconds
+    http-request deny deny_status 429 if { sc_http_req_rate(0) gt 100 }
+
+    default_backend http_back
 ```
 
-### Debug Mode
-```cfg
+### Session Persistence (Sticky Sessions)
+
+```bash
+backend app_back
+    balance roundrobin
+    cookie SERVERID insert indirect nocache
+
+    server web1 192.168.1.10:8080 check cookie web1
+    server web2 192.168.1.11:8080 check cookie web2
+```
+
+### Stats Dashboard
+
+```bash
+listen stats
+    bind *:8404
+    stats enable
+    stats uri /stats
+    stats refresh 10s
+    stats auth admin:password
+    stats admin if LOCALHOST
+```
+
+### Logging Configuration
+
+```bash
 global
-    log stdout format raw local0 debug
+    log 127.0.0.1:514 local0 info
+    log 127.0.0.1:514 local1 notice
 
 defaults
     log global
     option httplog
+    option dontlognull
+
+    # Custom log format
+    log-format "%ci:%cp [%tr] %ft %b/%s %TR/%Tw/%Tc/%Tr/%Ta %ST %B %CC %CS %tsc %ac/%fc/%bc/%sc/%rc %sq/%bq %hr %hs %{+Q}r"
 ```
 
-### Useful Commands
+### Docker Compose Example
+
+```yaml
+version: '3.8'
+
+services:
+  haproxy:
+    image: haproxy:2.8
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8404:8404"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+      - ./certs:/etc/haproxy/certs:ro
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  web1:
+    image: nginx:alpine
+    networks:
+      - app-network
+
+  web2:
+    image: nginx:alpine
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+```
+
+### Common Commands
+
 ```bash
-# Show stat summary
-echo "show stat" | socat stdio /var/run/haproxy/admin.sock | cut -d, -f1,2,18
+# Check configuration
+haproxy -c -f /etc/haproxy/haproxy.cfg
 
-# Show errors
-echo "show errors" | socat stdio /var/run/haproxy/admin.sock
+# Reload configuration (graceful)
+sudo systemctl reload haproxy
 
-# Enable/disable server
-echo "disable server http_back/server1" | socat stdio /var/run/haproxy/admin.sock
-echo "enable server http_back/server1" | socat stdio /var/run/haproxy/admin.sock
+# View stats via socket
+echo "show stat" | sudo socat stdio /run/haproxy/admin.sock
 
-# Set server weight
-echo "set server http_back/server1 weight 50" | socat stdio /var/run/haproxy/admin.sock
+# Disable server
+echo "disable server http_back/web1" | sudo socat stdio /run/haproxy/admin.sock
+
+# Enable server
+echo "enable server http_back/web1" | sudo socat stdio /run/haproxy/admin.sock
+
+# View server status
+echo "show servers state" | sudo socat stdio /run/haproxy/admin.sock
 ```
-
----
 
 ## Best Practices
 
-1. **Always validate config** before reload: `haproxy -c -f config`
-2. **Use health checks** on all backends
-3. **Enable logging** for debugging and monitoring
-4. **Set appropriate timeouts** - not too short, not too long
-5. **Use ACLs** for complex routing logic
-6. **Monitor with stats page** or Prometheus
-7. **Use keepalived** for HAProxy high availability
-8. **Secure stats page** with authentication and IP restrictions
-9. **Use stick tables** for rate limiting and abuse prevention
-10. **Regular config backups** before changes
+1. **Health Checks**: Always configure health checks for backends
+2. **Timeouts**: Set appropriate timeouts for your application
+3. **SSL**: Use strong ciphers and enable HSTS
+4. **Logging**: Enable detailed logging for troubleshooting
+5. **Stats**: Enable stats page for monitoring (protect with auth)
+6. **Backup Servers**: Configure backup servers for failover
+
+## Common Workflows
+
+### Set Up Load Balancer
+1. Install HAProxy: `apt install haproxy`
+2. Configure frontend and backend
+3. Set up health checks
+4. Test configuration: `haproxy -c -f /etc/haproxy/haproxy.cfg`
+5. Start service: `systemctl start haproxy`
+6. Monitor via stats page
+
+### Add SSL Termination
+1. Obtain SSL certificate
+2. Combine cert and key: `cat cert.pem key.pem > combined.pem`
+3. Configure HTTPS frontend with SSL binding
+4. Add HTTP to HTTPS redirect
+5. Reload configuration

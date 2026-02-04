@@ -1,321 +1,356 @@
 ---
-name: requirements-specification
-version: "2.0.0"
-description: Master requirements gathering, user story writing, acceptance criteria definition, and scope management. Transform insights into clear, actionable specifications.
-sasmp_version: "1.3.0"
-bonded_agent: 03-requirements-definition
-bond_type: PRIMARY_BOND
-parameters:
-  - name: feature_context
-    type: string
-    required: true
-  - name: output_format
-    type: string
-    enum: [user_stories, prd, bdd, use_cases]
-retry_logic:
-  max_attempts: 3
-  backoff: exponential
-logging:
-  level: info
-  hooks: [start, complete, error]
+name: requirements
+description: 要件定義エージェント。機能要件、ユースケース、ユーザーストーリー、受入基準を定義。キーワード: 要件定義, requirements, ユースケース, use case, ユーザーストーリー, user story, PRD.
 ---
 
-# Requirements & Specification Skill
+# 要件定義エージェント
 
-Transform customer insights into clear, detailed specifications that engineering can build from. Master user story writing, define acceptance criteria, and manage scope ruthlessly.
+## 役割
+プロジェクトの要件定義を担当し、開発チームが実装可能な形式で要件をドキュメント化します。
 
-## User Story Writing (INVEST Format)
-
-### INVEST Principles
-
-**I** - Independent (minimal dependencies)
-**N** - Negotiable (details can be discussed)
-**V** - Valuable (delivers customer value)
-**E** - Estimable (team can estimate effort)
-**S** - Small (can complete in 1-2 sprints)
-**T** - Testable (clear success criteria)
-
-### User Story Template
+## 要件定義書構成
 
 ```
-As a [user role]
-I want [action/capability]
-So that [benefit/outcome]
-
-Acceptance Criteria:
-Given [context]
-When [user action]
-Then [expected result]
+docs/requirements/
+├── PRD.md                       # プロダクト要件定義書
+├── functional/
+│   ├── overview.md              # 機能要件概要
+│   ├── FR-001-auth.md           # 認証機能要件
+│   ├── FR-002-user.md           # ユーザー管理要件
+│   └── ...
+├── non-functional/
+│   └── NFR.md                   # 非機能要件
+├── use-cases/
+│   ├── UC-001-login.md          # ログインユースケース
+│   └── ...
+└── user-stories/
+    ├── US-001-registration.md   # ユーザー登録ストーリー
+    └── ...
 ```
 
-### Good vs Bad Examples
+## PRD（プロダクト要件定義書）テンプレート
 
-**Bad Story:**
-```
-As a user
-I want a better dashboard
-So that I can see my data
-```
-Problem: Too vague, not testable, too large
+```markdown
+# プロダクト要件定義書 (PRD)
 
-**Good Story:**
-```
-As a project manager
-I want to see all tasks assigned to me in the last 24 hours
-So that I can track what happened while I was offline
-
-Acceptance Criteria:
-Given I'm logged in
-When I view the Home dashboard
-Then I see a "Recent Tasks" section
-And it shows tasks assigned to me from last 24 hours
-And tasks are sorted by assignment time (newest first)
-And clicking a task opens the task detail page
-```
-
-## Acceptance Criteria (BDD Format)
-
-### Scenario Template
-
-```
-Scenario: [Specific user action]
-Given [initial context/state]
-When [user performs action]
-Then [expected result]
-And [additional verification]
-```
-
-### Example: Password Reset Feature
-
-```
-Scenario: User resets password with valid email
-Given I'm on the login page
-And I'm not logged in
-When I click "Forgot Password?"
-And enter my email address
-And click "Send Reset Email"
-Then I see message "Check your email for reset link"
-And a password reset email is sent to that address
-And the email contains a valid reset link
-
-Scenario: User uses expired reset link
-Given I received a password reset email
-And the reset link is more than 24 hours old
-When I click the reset link
-Then I see "Link has expired"
-And I'm offered to request a new reset link
-
-Scenario: Password doesn't meet requirements
-Given I'm on password reset page
-When I enter password "123"
-Then I see error "Password must be 8+ characters"
-And the form doesn't submit
-```
-
-## Requirements Document Structure
-
-### Executive Summary (1 page)
-- Overview of feature/product
-- Business goal/context
-- Key benefits
-- Timeline
-- Success metrics
-
-### Requirements Overview (5-10 pages)
-
-**Functional Requirements**
-- What the system must do
-- Features and capabilities
-- User interactions
-- Data handling
-
-**Non-Functional Requirements**
-- Performance (response time < 2s)
-- Scalability (support 10K concurrent users)
-- Security (encrypt PII)
-- Availability (99.9% uptime)
-- Accessibility (WCAG AA compliance)
-
-**Business Requirements**
-- Why we're building this
-- Business metrics
-- Customer need
-- Competitive advantage
-
-**Constraints**
-- Technical constraints
-- Budget constraints
-- Timeline constraints
-- Resource constraints
-
-### User Stories & Epics (20-50 pages)
-
-Structure:
-- **Epic:** Large initiative grouping related stories
-- **User Stories:** Individual features (10-20 stories per epic)
-- **Tasks:** Engineering breakdown (if needed)
-
-**Each Story Includes:**
-- Story ID and title
-- As a... I want... so that...
-- Acceptance criteria (3-8 scenarios)
-- Story points estimate
-- Dependencies
-- Design reference (wireframe/mockup)
-- Note/clarifications
-
-### Use Cases & Flows (10-20 pages)
-
-**Use Case Template:**
-```
-Use Case: [Use Case Name]
-Primary Actor: [User role]
-Precondition: [State before action]
-
-Main Flow:
-1. User does X
-2. System responds with Y
-3. User does Z
-4. System returns result
-
-Alternative Flows:
-3a. If data invalid
-    - System shows error
-    - User corrects and resubmits
-```
-
-### Data Models (10 pages)
-
-**Entity Relationship Diagram**
-- Entities (User, Post, Comment)
-- Relationships (User creates Posts)
-- Attributes (Post title, content, creation_date)
-- Primary keys, foreign keys
-
-### UI/Wireframes (Attached)
-- User interface mockups
-- User flows and navigation
-- Key interactions
-
-## Scope Management
-
-### MVP vs Nice-to-Have
-
-**MoSCoW Method:**
-
-**MUST Have** (Non-negotiable)
-- Core functionality
-- Without these: product won't work
-- Must launch with these
-- Example: User login, basic content view
-
-**SHOULD Have** (Important but not critical)
-- Enhance user experience
-- Value add
-- If time allows
-- Example: Advanced search, saved preferences
-
-**COULD Have** (Nice-to-have)
-- Polish features
-- Low priority
-- Do if extra time/budget
-- Example: Dark mode, animations
-
-**WON'T Have** (Explicitly out of scope)
-- Clear for future
-- Helps say "no" to stakeholders
-- Plan for later version
-- Example: Mobile app (launching web first)
-
-### Scope Creep Prevention
-
-**Red Flags:**
-- "Can we just add...?"
-- "This would be better if..."
-- "What about also including..."
-- "One more thing..."
-
-**Responses:**
-- "That's a great idea. Let's add it to the roadmap for Q2."
-- "That would add 3 weeks. What would you deprioritize?"
-- "That's outside current scope. Document for next phase."
-
-### Change Management
-
-**Change Request Process:**
-1. Document the change
-2. Assess impact (time, complexity)
-3. Present trade-offs
-4. Get stakeholder decision
-5. Update requirements document
-6. Communicate to team
-
-## Common Pitfalls
-
-### Too Vague
-❌ "Improve performance"
-✅ "Reduce page load time from 4s to under 2s"
-
-### No Success Criteria
-❌ "Build dashboard"
-✅ "Build dashboard showing active users in last 24h with 95% accuracy"
-
-### Missing Context
-❌ "Fix the bug"
-✅ "When searching with special characters, results show error. Fix to handle special chars."
-
-### Over-Specifying
-❌ "Use Redux with saga middleware for state management"
-✅ "State changes must be traceable and debuggable"
-
-### Ambiguous Acceptance Criteria
-❌ "System should be fast"
-✅ "API response time < 200ms for 95th percentile"
-
-## Requirements Review Checklist
-
-- ✓ Each requirement is testable
-- ✓ No requirement specifies implementation
-- ✓ Dependencies identified and documented
-- ✓ Acceptance criteria clear and complete
-- ✓ Engineering has estimated effort
-- ✓ Design mockups provided
-- ✓ Data models documented
-- ✓ Edge cases considered
-- ✓ Scope clearly defined (MVP vs future)
-- ✓ Success metrics identified
-- ✓ Timeline realistic
-- ✓ Reviewed by engineering lead
-- ✓ Reviewed by design lead
-- ✓ Stakeholder aligned
-
-## Troubleshooting
-
-### Yaygın Hatalar & Çözümler
-
-| Hata | Olası Sebep | Çözüm |
-|------|-------------|-------|
-| Story çok büyük | Epic olarak yazıldı | Story breakdown |
-| AC belirsiz | Vague criteria | Given/When/Then format |
-| Scope creep | Change mgmt yok | Change request process |
-| Missing edge cases | Happy path focus | Edge case workshop |
-
-### Debug Checklist
-
-```
-[ ] Her story INVEST criteria geçiyor mu?
-[ ] Acceptance criteria testable mı?
-[ ] Non-functional requirements tanımlı mı?
-[ ] Dependencies documented mı?
-[ ] Engineering review yapıldı mı?
-```
-
-### Recovery Procedures
-
-1. **Ambiguous Requirements** → Clarification meeting
-2. **Scope Creep** → Trade-off matrix
-3. **Missing Feasibility** → Engineering spike
+## ドキュメント情報
+| 項目 | 内容 |
+|------|------|
+| プロダクト名 | [プロダクト名] |
+| バージョン | 1.0 |
+| 作成日 | YYYY-MM-DD |
+| ステータス | Draft / Review / Approved |
 
 ---
 
-**Write clear requirements and avoid 90% of project problems!**
+## 1. エグゼクティブサマリー
+
+### 1.1 背景
+[プロダクトが必要とされる背景・課題]
+
+### 1.2 目的
+[プロダクトが解決する問題と達成したい目標]
+
+### 1.3 成功指標 (KPI)
+| 指標 | 目標値 | 測定方法 |
+|------|--------|---------|
+| [指標1] | [目標] | [方法] |
+| [指標2] | [目標] | [方法] |
+
+---
+
+## 2. ターゲットユーザー
+
+### 2.1 ペルソナ
+#### ペルソナ1: [名前]
+- **属性**: [年齢、職業、技術レベル]
+- **ゴール**: [達成したいこと]
+- **ペイン**: [現在の課題]
+- **利用シーン**: [どのような場面で使うか]
+
+### 2.2 ユーザーセグメント
+| セグメント | 説明 | 優先度 |
+|-----------|------|--------|
+| [セグメント1] | [説明] | 高 |
+| [セグメント2] | [説明] | 中 |
+
+---
+
+## 3. スコープ
+
+### 3.1 対象範囲（In Scope）
+- [機能1]
+- [機能2]
+- [機能3]
+
+### 3.2 対象外（Out of Scope）
+- [対象外機能1]
+- [対象外機能2]
+
+### 3.3 前提条件
+- [前提条件1]
+- [前提条件2]
+
+### 3.4 制約条件
+- [制約1]
+- [制約2]
+
+---
+
+## 4. 機能要件
+
+### 4.1 機能一覧
+| ID | 機能名 | 説明 | 優先度 | ステータス |
+|----|--------|------|--------|-----------|
+| FR-001 | ユーザー認証 | ログイン・ログアウト機能 | Must | 未着手 |
+| FR-002 | ユーザー管理 | プロフィール編集機能 | Should | 未着手 |
+| FR-003 | [機能名] | [説明] | Could | 未着手 |
+
+### 4.2 優先度定義
+- **Must**: リリースに必須
+- **Should**: 重要だが必須ではない
+- **Could**: あれば良い
+- **Won't**: 今回は対象外
+
+---
+
+## 5. 非機能要件
+
+### 5.1 性能要件
+| 項目 | 要件 |
+|------|------|
+| レスポンスタイム | 95%ile < 200ms |
+| スループット | 1000 req/sec |
+| 同時接続数 | 10,000 |
+
+### 5.2 可用性要件
+| 項目 | 要件 |
+|------|------|
+| 稼働率 | 99.9% |
+| 計画停止 | 月1回、深夜2時間以内 |
+
+### 5.3 セキュリティ要件
+- 認証: JWT Bearer Token
+- 通信: TLS 1.3
+- データ保護: 個人情報は暗号化
+
+### 5.4 その他
+- 対応ブラウザ: Chrome, Firefox, Safari, Edge（最新2バージョン）
+- 対応デバイス: デスクトップ、タブレット、スマートフォン
+
+---
+
+## 6. リリース計画
+
+### 6.1 マイルストーン
+| フェーズ | 内容 | 目標日 |
+|---------|------|--------|
+| MVP | 基本機能 | YYYY-MM-DD |
+| v1.0 | 全機能 | YYYY-MM-DD |
+| v1.1 | 改善 | YYYY-MM-DD |
+
+### 6.2 MVP機能
+- FR-001: ユーザー認証
+- FR-002: 基本機能A
+- FR-003: 基本機能B
+
+---
+
+## 7. 用語集
+| 用語 | 定義 |
+|------|------|
+| [用語1] | [定義] |
+| [用語2] | [定義] |
+```
+
+## 機能要件テンプレート
+
+```markdown
+# FR-001: ユーザー認証
+
+## 基本情報
+| 項目 | 内容 |
+|------|------|
+| 要件ID | FR-001 |
+| 要件名 | ユーザー認証 |
+| 優先度 | Must |
+| ステータス | Draft |
+| 関連UC | UC-001, UC-002 |
+
+## 概要
+ユーザーがシステムにログイン・ログアウトできる機能
+
+## 詳細要件
+
+### FR-001-1: ログイン
+- メールアドレスとパスワードでログインできる
+- ソーシャルログイン（Google, GitHub）に対応する
+- ログイン失敗時は適切なエラーメッセージを表示する
+- 5回連続失敗でアカウントをロックする
+
+### FR-001-2: ログアウト
+- ログアウトボタンでセッションを終了できる
+- 全デバイスからログアウトできる
+
+### FR-001-3: パスワードリセット
+- メールアドレスでパスワードリセットを要求できる
+- リセットリンクは24時間有効
+
+## 受入基準
+- [ ] 正しい認証情報でログインできる
+- [ ] 不正な認証情報でログインが拒否される
+- [ ] ログアウト後にセッションが無効化される
+- [ ] パスワードリセットメールが送信される
+
+## 画面・API
+- 関連画面: ログイン画面、パスワードリセット画面
+- 関連API: POST /api/auth/login, POST /api/auth/logout
+```
+
+## ユースケーステンプレート
+
+```markdown
+# UC-001: ユーザーログイン
+
+## 基本情報
+| 項目 | 内容 |
+|------|------|
+| ユースケースID | UC-001 |
+| ユースケース名 | ユーザーログイン |
+| アクター | 登録済みユーザー |
+| 関連要件 | FR-001 |
+
+## 概要
+ユーザーがシステムにログインする
+
+## 事前条件
+- ユーザーアカウントが存在する
+- ユーザーはログアウト状態
+
+## 事後条件
+- ユーザーはログイン状態
+- セッションが開始される
+
+## 基本フロー
+1. ユーザーがログイン画面にアクセスする
+2. システムがログインフォームを表示する
+3. ユーザーがメールアドレスを入力する
+4. ユーザーがパスワードを入力する
+5. ユーザーがログインボタンをクリックする
+6. システムが認証情報を検証する
+7. システムがセッションを作成する
+8. システムがダッシュボードにリダイレクトする
+
+## 代替フロー
+### 6a. 認証失敗
+1. システムがエラーメッセージを表示する
+2. ユーザーは再度入力できる
+
+### 6b. アカウントロック
+1. システムがロックメッセージを表示する
+2. ユーザーはパスワードリセットを案内される
+
+## 例外フロー
+### E1. システムエラー
+1. システムがエラーページを表示する
+2. ユーザーはサポートに問い合わせる
+
+## ユースケース図
+
+```
+┌─────────────────────────────────────┐
+│           システム                  │
+│  ┌─────────────────────────────┐   │
+│  │                             │   │
+│  │   (ログイン)                │   │
+│  │       │                     │   │
+│  │       │ <<include>>         │   │
+│  │       ▼                     │   │
+│  │   (認証処理)                │   │
+│  │                             │   │
+│  └─────────────────────────────┘   │
+└─────────────────────────────────────┘
+        ▲
+        │
+    ┌───┴───┐
+    │ユーザー│
+    └───────┘
+```
+```
+
+## ユーザーストーリーテンプレート
+
+```markdown
+# US-001: 新規ユーザー登録
+
+## ストーリー
+**As a** 新規ユーザー
+**I want to** アカウントを作成したい
+**So that** サービスを利用できるようになる
+
+## 受入基準 (Acceptance Criteria)
+
+### AC-1: 基本登録
+**Given** ユーザーが登録画面にいる
+**When** 有効なメールアドレスとパスワードを入力して登録ボタンを押す
+**Then** アカウントが作成され、確認メールが送信される
+
+### AC-2: バリデーション
+**Given** ユーザーが登録画面にいる
+**When** 無効なメールアドレスを入力する
+**Then** エラーメッセージが表示される
+
+### AC-3: 重複チェック
+**Given** ユーザーが登録画面にいる
+**When** 既存のメールアドレスを入力する
+**Then** 「このメールアドレスは既に登録されています」と表示される
+
+## 詳細
+| 項目 | 内容 |
+|------|------|
+| ストーリーポイント | 5 |
+| 優先度 | Must |
+| スプリント | Sprint 1 |
+| 担当 | - |
+
+## タスク
+- [ ] 登録フォームUI作成
+- [ ] バリデーション実装
+- [ ] API実装
+- [ ] メール送信機能
+- [ ] 単体テスト
+- [ ] E2Eテスト
+
+## 備考
+- パスワードは8文字以上、英数字記号混在必須
+- メール確認は24時間以内に完了が必要
+```
+
+## 要件トレーサビリティマトリクス
+
+```markdown
+# 要件トレーサビリティマトリクス
+
+| 要件ID | ユースケース | ユーザーストーリー | 画面 | API | テストケース |
+|--------|-------------|-------------------|------|-----|-------------|
+| FR-001 | UC-001 | US-001, US-002 | SCR-001 | AUTH-001 | TC-001 |
+| FR-002 | UC-002 | US-003 | SCR-002 | USER-001 | TC-002 |
+```
+
+## 出力形式
+
+要件定義時の成果物：
+
+1. **PRD**: `docs/requirements/PRD.md`
+2. **機能要件**: `docs/requirements/functional/FR-XXX-*.md`
+3. **非機能要件**: `docs/requirements/non-functional/NFR.md`
+4. **ユースケース**: `docs/requirements/use-cases/UC-XXX-*.md`
+5. **ユーザーストーリー**: `docs/requirements/user-stories/US-XXX-*.md`
+6. **トレーサビリティ**: `docs/requirements/traceability.md`
+
+## 関連スキル
+
+- 画面仕様書エージェント: 要件に基づいて画面設計
+- 基本設計書エージェント: 要件に基づいてアーキテクチャ設計
+- API仕様書エージェント: 要件に基づいてAPI設計
+- E2Eテストエージェント: 受入基準に基づいてテスト作成

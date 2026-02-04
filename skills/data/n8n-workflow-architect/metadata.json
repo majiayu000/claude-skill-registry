@@ -1,7 +1,7 @@
 {
   "name": "n8n-workflow-architect",
-  "repo": "Brmbobo/Lead-Gen",
+  "repo": "promptadvisers/n8n-powerhouse",
   "path": ".claude/skills/n8n-workflow-architect/SKILL.md",
-  "source": "github.com/Brmbobo/Lead-Gen",
-  "downloaded_at": "2026-02-02T04:16:19.891251Z"
+  "source": "github.com/promptadvisers/n8n-powerhouse",
+  "downloaded_at": "2026-02-04T04:38:56.720960Z"
 }

@@ -104,6 +104,34 @@ EARS形式の要件ドキュメントが存在する場合は参照してくだ�
 
 要件ドキュメントを参照することで、プロジェクトの要求事項を正確に理解し、traceabilityを確保できます。
 
+---
+
+## Workflow Engine Integration (v2.1.0)
+
+**Software Developer** は **Stage 4: Implementation** を担当します。
+
+### ワークフロー連携
+
+```bash
+# 実装開始時（Stage 4へ遷移）
+musubi-workflow next implementation
+
+# 実装完了時（Stage 5へ遷移）
+musubi-workflow next review
+```
+
+### 実装完了チェックリスト
+
+実装ステージを完了する前に確認：
+
+- [ ] 機能実装完了
+- [ ] ユニットテスト作成完了
+- [ ] コードがlint/formatに準拠
+- [ ] 設計ドキュメントとの整合性確認
+- [ ] トレーサビリティID付与
+
+---
+
 ## 3. Documentation Language Policy
 
 **CRITICAL: 英語版と日本語版の両方を必ず作成**
@@ -303,6 +331,7 @@ src/
 **CRITICAL: コンテキスト長オーバーフロー防止**
 
 **出力方式の原則:**
+
 - ✅ 1ファイルずつ順番に生成・保存
 - ✅ 各ファイル生成後に進捗を報告
 - ✅ 大きなファイル(>300行)は複数に分割

@@ -1,184 +1,314 @@
 ---
 name: prototype
-description: "Objects clone from prototypes, not instances from classes"
-license: MIT
-tier: 0
-allowed-tools: []
-related: [skill, room, container, character, card, simulation, constructionism, return-stack, debugging]
-tags: [moollm, inheritance, self, javascript, clone, deoptimization]
-protocol: PROTOTYPE
-credits:
-  - "David Ungar — Self language creator"
-  - "Randall Smith — Self language co-creator"
-  - "Brendan Eich — JavaScript (Self-influenced)"
+description: "Validate technical feasibility with minimum code before full implementation. Prove ONE atomic question ('Can I X?') through 6-phase workflow: SCOPE, CONTEXT, MINIMUM, EXECUTE, VERIFY, CAPTURE. Use when facing technical uncertainty, unsure if something is possible, or need proof before planning. Triggers on: prototype, POC, prove this works, spike, demo this, can I do X, is it possible, feasibility check. Produce prototype log in docs/prototypes/ with YES/NO/PARTIAL verdict and chain to whiteboarding."
 ---
 
-# PROTOTYPE
+# Skill: prototype
 
-> **"Objects all the way down."**
-
-The philosophy of prototype-based inheritance: no classes, just concrete examples that you clone and modify.
+**Prove it works. Minimum code. Maximum learning.**
 
 ---
 
-## The Problem with Classes
+## Master Checklist - Execute In Order
 
-Classical inheritance says:
-1. Define an abstract blueprint (class)
-2. Instantiate it to create objects
-3. Objects are "instances of" classes
+**YOU MUST complete each checkbox before proceeding to the next phase.**
 
-But this creates problems:
-- **Abstraction gap**: Classes describe things that don't exist
-- **Rigidity**: Class hierarchies are hard to change
-- **Ceremony**: Lots of boilerplate to create simple things
+### Phase 1: SCOPE
+- [ ] **1.1** Ask user: "What ONE thing are you trying to prove?"
+- [ ] **1.2** Narrow until atomic (starts with "Can I...")
+- [ ] **1.3** State the scope: "SCOPE: [single question]"
 
----
+### Phase 2: CONTEXT
+- [ ] **2.1** Check current branch: `git branch --show-current`
+- [ ] **2.2** If on main/master → Create branch: `git checkout -b prototype/<scope-slug>`
+- [ ] **2.3** Run `Skill(code-foundations:aposd-reviewing-module-design)` to survey existing code
+- [ ] **2.4** State: "CONTEXT: [environment summary]"
 
-## The Prototype Solution
+### Phase 3: MINIMUM
+- [ ] **3.1** Run `Skill(code-foundations:cc-pseudocode-programming)` - write 3-5 lines of pseudocode
+- [ ] **3.2** Verify pseudocode is ONLY happy path (no error handling)
+- [ ] **3.3** Verify code will be <50 lines (if not, re-scope)
+- [ ] **3.4** State: "MINIMUM PATH: [pseudocode]"
 
-Prototype-based inheritance says:
-1. Create a concrete example (prototype)
-2. Clone it to make new objects
-3. Modify the clone as needed
-4. Clones delegate to prototypes for missing slots
+### Phase 4: EXECUTE
+- [ ] **4.1** Write code from pseudocode
+- [ ] **4.2** Add header comment: `// PROTOTYPE: [scope] // NOT PRODUCTION`
+- [ ] **4.3** Run the code
+- [ ] **4.4** State: "RESULT: [what happened]"
 
-**Everything is concrete. Everything exists.**
+### Phase 5: VERIFY
+- [ ] **5.1** Answer: YES / NO / PARTIAL
+- [ ] **5.2** If PARTIAL → identify what specifically worked/didn't
 
----
-
-## How Self Works
-
-### Slots
-
-Objects are collections of **slots**:
-
-```
-cat: (|
-  name <- "Terpie".
-  color <- "orange".
-  meow = (| | "Meow!" |).
-  parent* = catPrototype.
-|)
-```
-
-- `name`, `color` — data slots
-- `meow` — method slot
-- `parent*` — parent slot (for delegation)
-
-### Delegation
-
-When you send a message to an object:
-1. Look in the object's own slots
-2. If not found, look in parent's slots
-3. Continue up the chain
-4. First match wins
-
-### Cloning
-
-To create a new cat:
-```
-newCat := cat clone.
-newCat name: "Stroopwafel".
-newCat color: "tabby".
-```
-
-The new cat:
-- Has its own `name` and `color` slots
-- Delegates `meow` to the prototype
-- Can add new slots anytime
+### Phase 6: CAPTURE
+- [ ] **6.1** Create `docs/prototypes/` if needed
+- [ ] **6.2** Write prototype log to `docs/prototypes/YYYY-MM-DD-<scope>.md`
+- [ ] **6.3** Commit: `git add . && git commit -m "prototype: [scope] - [YES/NO/PARTIAL]"`
 
 ---
 
-## MOOLLM Implementation
+## Phase 1: SCOPE (One Question Only)
 
-MOOLLM implements prototype inheritance via the **Delegation Object Protocol (DOP)**:
+**YOU MUST get a single atomic question before any code.**
 
-### PROTOTYPES.yml
+### Step 1.1 - Ask the Question
 
-```yaml
-# In an instance directory
-prototypes:
-  - path: "skills/room"
-  - path: "skills/adventure"
-  
-resolution:
-  strategy: "first-match-wins"
-```
+Ask user: **"What ONE thing are you trying to prove?"**
 
-### File Resolution
+### Step 1.2 - Narrow Until Atomic
 
-1. Check local directory
-2. Check each prototype in order
-3. First match wins
-4. State never inherits (always local)
+| Scope | Problem | Fix |
+|-------|---------|-----|
+| "Can I build a notification system?" | Too broad | "Can I show ONE notification?" |
+| "Can I integrate with the backend?" | Too vague | "Can I call ONE endpoint?" |
+| "Can I make it work?" | Undefined | "Can I [specific thing]?" |
 
-### Example: A Room Instance
+**Keep asking:** "What's the FIRST thing that needs to work?"
+
+### Step 1.3 - State the Scope
 
 ```
-examples/adventure-4/pub/
-├── ROOM.yml           # Local override (shadows prototype)
-├── PROTOTYPES.yml     # Points to skills/room
-├── state/             # Local-only state
-│   └── visitors.yml
-└── (missing files delegate to skills/room/)
+SCOPE: Can I [specific atomic thing]?
+```
+
+**GATE:** Do not proceed until scope is ONE atomic question.
+
+---
+
+## Phase 2: CONTEXT (Environment Check)
+
+**YOU MUST check branch and survey existing code.**
+
+### Step 2.1 - Branch Check
+
+```bash
+git branch --show-current
+```
+
+### Step 2.2 - Create Prototype Branch
+
+**If on main/master, YOU MUST create a branch:**
+
+```bash
+git checkout -b prototype/<scope-slug>
+```
+
+**GATE:** Do not write code on main/master.
+
+### Step 2.3 - Survey Existing Code (MANDATORY)
+
+**Run this skill:**
+```
+Skill(code-foundations:aposd-reviewing-module-design)
+```
+
+Answer these questions:
+- What modules/APIs exist that might help?
+- What patterns does this codebase use?
+- What's the simplest integration point?
+
+### Step 2.4 - State Context
+
+```
+CONTEXT: [repo/scratch], [available APIs], [constraints]
 ```
 
 ---
 
-## Why Prototypes for LLMs?
+## Phase 3: MINIMUM (Shortest Path)
 
-LLMs don't compute inheritance algorithms. They navigate files.
+**YOU MUST write pseudocode before any real code.**
 
-Prototype-based inheritance is **LLM-friendly** because:
-- **Explicit**: You can see the prototype chain
-- **Navigable**: Just follow file paths
-- **Concrete**: No abstract classes to imagine
-- **Forgettable**: Each lookup is independent
+### Step 3.1 - Write Pseudocode (MANDATORY)
 
----
+**Run this skill:**
+```
+Skill(code-foundations:cc-pseudocode-programming)
+```
 
-## The Wisdom of Self
+Write 3-5 lines of pseudocode:
+- Happy path ONLY
+- NO error handling
+- NO edge cases
+- NO validation
 
-> *"The best message is no message."*
+### Step 3.2 - Verify Happy Path Only
 
-Self taught us that simplicity wins:
-- One mechanism (slots) instead of many
-- Objects are just dictionaries
-- Methods are just slots that happen to be code
-- Inheritance is just delegation
+Check your pseudocode:
+- [ ] No try/catch or error handling?
+- [ ] No input validation?
+- [ ] No edge case handling?
+- [ ] Hardcoded values where possible?
 
-MOOLLM applies this: directories are objects, files are slots, resolution is delegation.
+**If any are checked NO → Remove them. This is POC.**
 
----
+### Step 3.3 - Verify Size
 
-## Historical Context
+**If pseudocode suggests >50 lines of code → STOP and re-scope.**
 
-| Year | Event |
-|------|-------|
-| 1986 | Ungar & Smith begin Self at Xerox PARC |
-| 1987 | Self paper published |
-| 1991 | Self 2.0 with compilation |
-| 1995 | JavaScript created (heavily Self-influenced) |
-| 2024 | MOOLLM applies Self to LLM filesystems |
+### Step 3.4 - State Minimum Path
 
----
+```
+MINIMUM PATH:
+1. [pseudocode line 1]
+2. [pseudocode line 2]
+3. [pseudocode line 3]
+```
 
-## See Also
-
-- **[../skill/delegation-object-protocol.md](../skill/delegation-object-protocol.md)** — The DOP specification
-- **[../skill/skill-instantiation-protocol.md](../skill/skill-instantiation-protocol.md)** — How skills become instances
-- **[../constructionism/](../constructionism/)** — Learning by building
-- **[../character/](../character/)** — Characters as prototype instances
+**GATE:** Do not write code until pseudocode is approved.
 
 ---
 
-## Further Reading
+## Phase 4: EXECUTE (Surgical Code)
 
-- Ungar, D. & Smith, R. (1987). *Self: The Power of Simplicity*
-- Ungar, D. (1995). *Organizing Programs Without Classes*
-- [selflanguage.org](http://selflanguage.org/)
+**YOU MUST translate pseudocode to code with prototype header.**
+
+### Step 4.1 - Write Code From Pseudocode
+
+Translate each pseudocode line to real code. **Add nothing extra.**
+
+### Step 4.2 - Add Prototype Header (MANDATORY)
+
+Every prototype file MUST start with:
+
+```javascript
+// PROTOTYPE: [scope question]
+// NOT PRODUCTION: No error handling, hardcoded values
+// DATE: YYYY-MM-DD
+```
+
+### Step 4.3 - Run the Code
+
+Execute and observe what happens.
+
+### Step 4.4 - State Result
+
+```
+RESULT: [exactly what happened when code ran]
+```
 
 ---
 
-*"Self is a network, not a node."*
+## Phase 5: VERIFY (Binary Answer)
+
+**YOU MUST give a definitive answer.**
+
+### Step 5.1 - Answer YES / NO / PARTIAL
+
+| Answer | Meaning | Next Action |
+|--------|---------|-------------|
+| **YES** | It works as expected | Proceed to CAPTURE |
+| **NO** | Blocked, doesn't work | Document blocker in CAPTURE |
+| **PARTIAL** | Some parts work | Identify what specifically, then CAPTURE |
+
+### Step 5.2 - If PARTIAL, Specify
+
+```
+PARTIAL:
+- WORKS: [what succeeded]
+- BLOCKED: [what failed]
+- UNCLEAR: [what needs more investigation]
+```
+
+---
+
+## Phase 6: CAPTURE (Document for Production)
+
+**YOU MUST document learnings. Undocumented prototypes are wasted.**
+
+### Step 6.1 - Create Directory
+
+```bash
+mkdir -p docs/prototypes
+```
+
+### Step 6.2 - Write Prototype Log (MANDATORY)
+
+**Create `docs/prototypes/YYYY-MM-DD-<scope-slug>.md`:**
+
+```markdown
+# Prototype: [Scope Question]
+
+**Date:** YYYY-MM-DD
+**Branch:** prototype/<scope-slug>
+**Result:** YES / NO / PARTIAL
+
+## What We Proved
+
+[1-2 sentences]
+
+## Minimum Working Code
+
+```[language]
+[the code that worked]
+```
+
+## Key Learnings
+
+- [learning 1]
+- [learning 2]
+
+## Production Considerations
+
+- [ ] Error handling needed for: [list]
+- [ ] Edge cases: [list]
+- [ ] Estimated complexity: simple / medium / complex
+
+## Next Steps
+
+- [ ] Proceed to `/code-foundations:whiteboarding` with these learnings
+- [ ] OR: More prototyping needed for [specific question]
+- [ ] OR: Blocked by [blocker], need [alternative]
+```
+
+### Step 6.3 - Commit
+
+```bash
+git add .
+git commit -m "prototype: [scope] - [YES/NO/PARTIAL]"
+```
+
+---
+
+## Crisis Invariants - NEVER SKIP
+
+| Check | Why Non-Negotiable |
+|-------|-------------------|
+| **Atomic scope first** | Multiple goals = nothing proven |
+| **Branch before code** | POC on main = pollution |
+| **Pseudocode before code** | No pseudocode = scope creep |
+| **<50 lines** | More = not a prototype |
+| **Prototype log written** | Undocumented = forgotten |
+
+---
+
+## Anti-Rationalization Table
+
+| Rationalization | Reality |
+|-----------------|---------|
+| "I already know what to build" | Then pseudocode takes 30 seconds. Do it. |
+| "Pseudocode is overkill for POC" | Pseudocode PREVENTS scope creep. Do it. |
+| "I'll document after" | You won't. Write the log now. |
+| "This is throwaway, skip the branch" | Prototypes on main = pollution. Branch. |
+| "Let me add error handling quick" | That's production work. Happy path only. |
+| "It mostly works" | PARTIAL is not YES. Be precise. |
+| "I'll remember what I learned" | You won't. Write it down. |
+
+---
+
+## Skill Dependencies
+
+This skill REQUIRES invoking:
+
+1. **`Skill(code-foundations:aposd-reviewing-module-design)`** - Phase 2.3 (survey existing code)
+2. **`Skill(code-foundations:cc-pseudocode-programming)`** - Phase 3.1 (write pseudocode)
+
+These are NOT optional. They are mandatory steps in the checklist.
+
+---
+
+## Chaining
+
+- **RECEIVES FROM:** User question, feature idea, technical uncertainty
+- **CHAINS TO:** `/code-foundations:whiteboarding` (with prototype learnings)
+- **SKILLS INVOKED:** aposd-reviewing-module-design, cc-pseudocode-programming

@@ -1,25 +1,21 @@
 ---
-name: moai-platform-supabase
-description: >
-  Supabase specialist covering PostgreSQL 16, pgvector, RLS, real-time subscriptions,
-  and Edge Functions. Use when building full-stack apps with Supabase backend.
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Grep Glob mcp__context7__resolve-library-id mcp__context7__get-library-docs
+name: "moai-platform-supabase"
+description: "Supabase specialist covering PostgreSQL 16, pgvector, RLS, real-time subscriptions, and Edge Functions. Use when building full-stack apps with Supabase backend."
+version: 2.1.0
+category: "platform"
+modularized: true
 user-invocable: false
-metadata:
-  version: "2.1.0"
-  category: "platform"
-  status: "active"
-  updated: "2026-01-11"
-  modularized: "true"
-  tags: "supabase, postgresql, pgvector, realtime, rls, edge-functions"
-  context7-libraries: "/supabase/supabase"
-  related-skills: "moai-platform-neon, moai-lang-typescript"
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["supabase", "postgresql", "pgvector", "real-time", "rls", "row level security", "edge functions"]
+tags: ['supabase', 'postgresql', 'pgvector', 'realtime', 'rls', 'edge-functions']
+context7-libraries: ['/supabase/supabase']
+related-skills: ['moai-platform-neon', 'moai-lang-typescript']
+updated: 2026-01-11
+status: "active"
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 # moai-platform-supabase: Supabase Platform Specialist
@@ -118,7 +114,7 @@ Migration: Use Supabase CLI with supabase migration new and supabase db push com
 - moai-lang-typescript for TypeScript patterns for Supabase client
 - moai-domain-backend for backend architecture integration
 - moai-foundation-quality for security and RLS best practices
-- moai-workflow-testing for DDD testing with Supabase (characterization tests for legacy, specification tests for new features)
+- moai-workflow-testing for test-driven development with Supabase
 
 ---
 

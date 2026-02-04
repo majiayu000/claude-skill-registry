@@ -1,10 +1,9 @@
 {
   "name": "gtd",
   "description": "Autonomous task execution from GTD.md items. Use when processing GTD tasks, call prep, outreach, or podcast preparation.",
-  "category": "data",
   "repo": "Gerstep/cybos",
-  "path": ".claude/skills/GTD/SKILL.md",
-  "stars": 24,
-  "source": "github.com/Gerstep/cybos",
-  "downloaded_at": "2026-01-24T16:15:34.582468Z"
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gerstep/cybos"
 }

@@ -1,7 +1,9 @@
 {
   "name": "browse",
-  "repo": "openclaw/skills",
-  "path": "skills/pkiv/browse/SKILL.md",
-  "source": "github.com/openclaw/skills",
-  "downloaded_at": "2026-02-02T02:48:57.583741Z"
+  "description": "Discover trending topics and content ideas from social feeds for post creation. Use when scanning Twitter timeline or finding content inspiration.",
+  "repo": "Gerstep/cybos",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gerstep/cybos"
 }

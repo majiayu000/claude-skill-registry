@@ -1,268 +1,151 @@
 ---
-name: design-patterns
-description: Reference library of proven UI design patterns, component templates, and sector-specific conventions for high-quality design generation.
+name: golang-design-patterns
+description: Go design patterns and refactoring skill. Use when refactoring complex code, reducing technical debt, or applying design patterns. Detects code smells and suggests pattern-based solutions.
+license: MIT
+metadata:
+  author: saifoelloh
+  version: "2.0.0"
+  parent_skill: golang-best-practices
+  sources:
+    - "Refactoring (Martin Fowler)"
+    - "Design Patterns (Gang of Four)"
+    - "Refactoring.Guru"
+  last_updated: "2026-01-22"
 ---
 
-# Design Patterns Reference
+# Golang Design Patterns & Refactoring
 
-This skill provides a curated library of proven design patterns that generate high-quality, non-vibe-coded UI.
+Expert-level code refactoring and design pattern application for Go. Detects code smells, suggests refactoring strategies, and applies proven design patterns to improve maintainability.
 
-## Layout Patterns
+## When to Apply
 
-### Hero Sections
+Use this skill when:
+- Refactoring complex or legacy code
+- Reducing technical debt
+- Extracting reusable patterns
+- Simplifying large functions (God Objects)
+- Improving code maintainability
+- Applying Gang of Four patterns to Go
 
-**Pattern 1: Split Hero**
-Best for: SaaS, product landing pages
-```
-┌─────────────────────────────────────────────┐
-│  [Content]              [Media]             │
-│  Headline               Image/Video/        │
-│  Subhead                Illustration        │
-│  CTA Buttons                                │
-└─────────────────────────────────────────────┘
-```
+## Rule Categories by Priority
 
-**Pattern 2: Centered Hero**
-Best for: Announcements, events, minimal designs
-```
-┌─────────────────────────────────────────────┐
-│              [Eyebrow Badge]                │
-│                 Headline                    │
-│                 Subhead                     │
-│           [CTA]    [Secondary]              │
-│              [Social Proof]                 │
-└─────────────────────────────────────────────┘
-```
+| Priority | Count | Focus |
+|----------|-------|-------|
+| High | 2 | Critical refactoring needs |
+| Medium | 11 | Code quality improvements |
 
-**Pattern 3: Product Showcase**
-Best for: E-commerce, physical products
-```
-┌─────────────────────────────────────────────┐
-│  [Product Image - Large, High Quality]      │
-│  ─────────────────────────────────────────  │
-│  Product Name          Price                │
-│  Brief Description     [Add to Cart]        │
-│  [Feature Icons]                            │
-└─────────────────────────────────────────────┘
-```
+## Rules Covered (13 total)
 
-### Navigation Patterns
+### High-Impact Patterns (2)
 
-**Top Navigation (Desktop)**
-```
-┌─────────────────────────────────────────────┐
-│ [Logo]  Nav Items...        [CTA] [Account] │
-└─────────────────────────────────────────────┘
-```
+- `high-god-object` - Extract logic from 300+ line functions
+- `high-extract-method` - Name complex code blocks with descriptive methods
 
-**Sidebar Navigation (Dashboard)**
-```
-┌─────────────────────────────────────────────┐
-│ [Logo]           │  Page Content            │
-│ ───────────────  │                          │
-│ Nav Item 1       │                          │
-│ Nav Item 2       │                          │
-│ Nav Item 3       │                          │
-│                  │                          │
-│ [Collapsed User] │                          │
-└─────────────────────────────────────────────┘
+### Medium Improvements (11)
+
+- `medium-primitive-obsession` - Replace primitives with value objects
+- `medium-long-parameter-list` - Use parameter objects for >5 params
+- `medium-data-clumps` - Extract repeated parameter groups
+- `medium-feature-envy` - Move logic closer to data
+- `medium-magic-constants` - Replace magic numbers with named constants
+- `medium-builder-pattern` - Fluent API for complex construction
+- `medium-factory-constructor` - Validated object creation
+- `medium-introduce-parameter-object` - Group related parameters
+- `medium-switch-to-strategy` - Replace type switches with interfaces
+- `medium-middleware-decorator` - Decorator pattern for http.Handler
+- `medium-law-of-demeter` - Reduce coupling, avoid message chains
+
+## Common Refactoring Patterns
+
+### God Object → Extracted Methods
+```go
+// ❌ 500 line function
+func (u *Usecase) Process() { ... }
+
+// ✅ Extracted methods
+func (u *Usecase) Process() {
+    u.validate()
+    u.transform()
+    u.persist()
+}
 ```
 
-### Card Patterns
+### Primitive Obsession → Value Object
+```go
+// ❌ Primitive types
+func CreateUser(email string) { ... }
 
-**Content Card**
-```
-┌─────────────────┐
-│ [Image]         │
-│ Category        │
-│ Title           │
-│ Description...  │
-│ [Meta] [Action] │
-└─────────────────┘
+// ✅ Value object
+type Email struct { value string }
+func CreateUser(email Email) { ... }
 ```
 
-**Feature Card**
-```
-┌─────────────────┐
-│ [Icon]          │
-│ Feature Name    │
-│ Description     │
-│ that explains   │
-│ the benefit.    │
-└─────────────────┘
+### Type Switch → Strategy Pattern
+```go
+// ❌ Type switch
+switch v := val.(type) { ... }
+
+// ✅ Strategy pattern
+type Processor interface { Process() }
 ```
 
-**Pricing Card**
+## Trigger Phrases
+
+This skill activates when you say:
+- "Refactor this code"
+- "Reduce complexity"
+- "Extract methods from large function"
+- "Apply design patterns"
+- "Improve maintainability"
+- "Simplify this usecase"
+- "Find code smells"
+
+## How to Use
+
+### For Code Refactoring
+
+1. Identify code smells (God Objects, long parameter lists, etc.)
+2. Apply appropriate refactoring pattern
+3. Verify tests still pass
+4. Check for improved readability
+
+### For Pattern Application
+
+1. Identify appropriate pattern for use case
+2. Apply pattern incrementally
+3. Ensure pattern improves, not complicates code
+
+## Output Format
+
 ```
-┌─────────────────┐
-│ Plan Name       │
-│ $XX/mo          │
-│ Description     │
-│ ─────────────── │
-│ ✓ Feature 1     │
-│ ✓ Feature 2     │
-│ ✓ Feature 3     │
-│ [CTA Button]    │
-└─────────────────┘
-```
+## High Priority Refactoring: X
 
-## Component Patterns
-
-### Buttons
-
-**Primary Button**
-- Background: Primary color
-- Text: White/contrast color
-- Padding: 12px 24px (or 16px 32px for large)
-- Border-radius: 6px (or 8px)
-- Font-weight: 500 or 600
-- Hover: Darken 10%
-
-**Secondary Button**
-- Background: Transparent
-- Border: 1px solid primary or gray
-- Text: Primary color or gray-700
-- Same padding and radius as primary
-
-**Ghost Button**
-- Background: Transparent
-- No border
-- Text: Primary color
-- Underline or subtle hover effect
-
-### Forms
-
-**Input Field**
-```html
-<div class="form-group">
-  <label for="input">Label</label>
-  <input type="text" id="input" placeholder="Placeholder">
-  <span class="hint">Helper text</span>
-</div>
+### [Rule Name] (Line Y)
+**Code Smell**: God Object / Long Parameter List / Primitive Obsession
+**Impact**: Hard to maintain / Test / Understand
+**Refactoring**: Extract Method / Introduce Parameter Object / Create Value Object
+**Example**:
+```go
+// Refactored code
 ```
 
-**Styling:**
-- Border: 1px solid gray-300
-- Border-radius: 6px
-- Padding: 10px 14px
-- Focus: Border primary color + ring
-- Error: Border red + red text
+## Related Skills
 
-### Feedback
+- [golang-clean-architecture](../clean-architecture/SKILL.md) - For usecase complexity patterns
+- [golang-idiomatic-go](../idiomatic-go/SKILL.md) - For interface design
 
-**Toast Notification**
-```
-┌────────────────────────────┐
-│ [Icon] Message text   [X]  │
-└────────────────────────────┘
-```
-Position: Top-right or bottom-center
-Duration: 3-5 seconds
+## Philosophy
 
-**Alert Banner**
-```
-┌──────────────────────────────────────────┐
-│ [Icon] Alert message with more details.  │
-│        [Action Link]                 [X] │
-└──────────────────────────────────────────┘
-```
+Based on Martin Fowler's Refactoring:
 
-## Sector-Specific Patterns
+- **Code smells indicate problems** - Detect and address systematically
+- **Refactor incrementally** - Small, safe steps
+- **Patterns are solutions** - Apply when appropriate, not dogmatically
+- **Maintainability matters** - Code is read more than written
 
-### Fintech
+## Notes
 
-**Trust Indicators:**
-- Security badges (SOC2, bank-level encryption)
-- Regulatory compliance logos
-- Trust pilot/review scores
-- "Protected by..." messaging
-
-**Data Display:**
-- Clean data tables with sorting
-- Clear number formatting (currency, percentages)
-- Status indicators (green/yellow/red)
-- Trend indicators (arrows, sparklines)
-
-**Color Guidance:**
-- Primary: Blues, teals
-- Success: Greens (money positive)
-- Warning: Amber (caution)
-- Avoid: Aggressive reds except for losses
-
-### Healthcare
-
-**Accessibility Priority:**
-- WCAG AAA contrast where possible
-- Large touch targets (48px minimum)
-- Clear, readable fonts (18px+ body)
-- High-contrast mode option
-
-**Information Hierarchy:**
-- Critical info: Prominent placement
-- Warnings: Clear visual distinction
-- Patient data: Clear labeling
-- Actions: Confirmation for destructive
-
-**Color Guidance:**
-- Calming: Soft blues, greens
-- Clinical: Clean whites
-- Avoid: Harsh, aggressive colors
-
-### E-commerce
-
-**Product Display:**
-- High-quality images (multiple angles)
-- Clear pricing (original + sale)
-- Stock status
-- Quick add to cart
-
-**Trust & Conversion:**
-- Reviews and ratings
-- Free shipping threshold
-- Return policy highlight
-- Secure checkout badges
-
-**Urgency (use sparingly):**
-- Low stock indicators
-- Sale countdown
-- Limited time offers
-
-### SaaS
-
-**Onboarding:**
-- Progressive disclosure
-- Progress indicators
-- Skip options
-- Contextual help
-
-**Dashboard:**
-- Key metrics prominent
-- Clear navigation
-- Quick actions
-- Recent activity
-
-**Pricing Page:**
-- Clear comparison
-- Recommended plan highlight
-- Feature differentiation
-- FAQ section
-
-## Anti-Patterns (Avoid These)
-
-### Layout Anti-Patterns
-- ❌ Walls of text without visual breaks
-- ❌ Too many competing focal points
-- ❌ Inconsistent alignment
-- ❌ Cramped spacing
-
-### Component Anti-Patterns
-- ❌ Mystery meat navigation (icons without labels)
-- ❌ Infinite scroll without way back
-- ❌ Carousel as primary content
-- ❌ Pop-ups on page load
-
-### Visual Anti-Patterns
-- ❌ Generic purple-blue gradients
-- ❌ Floating decorative blobs
-- ❌ Stock photos of business handshakes
-- ❌ Default framework colors unchanged
+- Focus on common Go refactoring patterns
+- All patterns adapted for Go idioms
+- Emphasizes readability and maintainability
+- Includes Gang of Four patterns applicable to Go

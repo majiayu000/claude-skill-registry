@@ -1,7 +1,7 @@
 {
   "name": "invalid-skill",
-  "repo": "martinemde/skillet",
-  "path": "testdata/invalid-skill/SKILL.md",
-  "source": "github.com/martinemde/skillet",
-  "downloaded_at": "2026-02-02T04:58:02.258847Z"
+  "repo": "intent-solutions-io/create-agent-skill-md",
+  "path": "examples/invalid-skill/SKILL.md",
+  "source": "github.com/intent-solutions-io/create-agent-skill-md",
+  "downloaded_at": "2026-02-04T03:25:45.756779Z"
 }

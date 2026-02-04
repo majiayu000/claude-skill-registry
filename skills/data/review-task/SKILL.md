@@ -1,313 +1,272 @@
 ---
 name: review-task
-description: Orchestrate comprehensive quality assessment by executing 5 specialized quality skills in sequence and synthesizing results into a unified quality gate decision. This skill should be used when performing final review of completed implementation.
-acceptance:
-  - all_assessments_completed: "All 5 quality skills executed successfully (risk-profile, test-design, trace-requirements, nfr-assess, quality-gate)"
-  - gate_decision_made: "Quality gate decision generated (PASS/CONCERNS/FAIL/WAIVED) with overall quality score"
-  - reports_generated: "Assessment reports created in .claude/quality/ (assessments/*.md, gates/*.yaml, gates/*.md)"
-  - task_updated: "Task file Quality Review section updated with summary and report links"
-inputs:
-  task_file:
-    type: string
-    required: true
-    description: "Path to task file in .claude/tasks/{task-id}.md format"
-  execution_mode:
-    type: enum
-    values: ["full", "individual", "resume"]
-    default: "full"
-    description: "Execution mode: full (all 5 skills), individual (selected skills), resume (continue partial review)"
-  selected_skills:
-    type: array
-    required: false
-    description: "For individual mode: which skills to execute (risk-profile, test-design, trace-requirements, nfr-assess, quality-gate)"
-outputs:
-  gate_decision:
-    type: object
-    description: "Quality gate decision with status, score, blockers, action items"
-  assessment_reports:
-    type: object
-    description: "File paths to all generated assessment reports"
-  review_summary:
-    type: string
-    description: "Human-readable summary of quality review results"
-telemetry:
-  emit: "skill.review-task.completed"
-  track:
-    - task_id
-    - execution_mode
-    - duration_ms
-    - skills_executed
-    - gate_decision
-    - overall_score
+description: Tech lead review of task implementation. Use when user says "zkontroluj task", "review task", "zhodnot implementaci", or runs /review-task.
+allowed-tools: Bash, Read, Glob, Grep, WebSearch, WebFetch, Task, AskUserQuestion
 ---
 
-# Quality Review Orchestrator
+# Review Task (Tech Lead Mode)
 
-Orchestrate comprehensive quality assessment by executing 5 specialized quality skills in sequence and synthesizing results into a unified quality gate decision.
+Perform a thorough tech lead review of task implementation - analyze code quality, verify against specs, check best practices from official documentation.
 
-## Purpose
-
-This skill coordinates execution of 5 specialized quality skills to provide comprehensive quality assessment:
-
-1. **risk-profile** → Assess implementation risks using P×I methodology
-2. **test-design** → Design comprehensive test strategy with P0/P1/P2 priorities
-3. **trace-requirements** → Map AC → Implementation → Tests with gap analysis
-4. **nfr-assess** → Assess non-functional requirements (security, performance, reliability, etc.)
-5. **quality-gate** → Synthesize all assessments into final gate decision
-
-## When to Use This Skill
-
-**This skill should be used when:** Comprehensive quality review of completed task (status "Review"), preparing for merge/deploy decision
-
-**Individual assessments:** Invoke specific skills directly (risk-profile, test-design, trace-requirements, nfr-assess, quality-gate)
-
-**This skill should NOT be used when:** Task in progress, reviewing drafts, quick spot checks
-
-## Architecture
+## Usage
 
 ```
-Quality Review Orchestration Flow:
-
-Step 0: Configuration & Verification
-  ↓
-Step 1: risk-profile → .claude/quality/assessments/{task-id}-risk-{date}.md
-  ↓
-Step 2: test-design → .claude/quality/assessments/{task-id}-test-design-{date}.md
-  ↓
-Step 3: trace-requirements → .claude/quality/assessments/{task-id}-trace-{date}.md
-  ↓
-Step 4: nfr-assess → .claude/quality/assessments/{task-id}-nfr-{date}.md
-  ↓
-Step 5: quality-gate → .claude/quality/gates/{task-id}-gate-{date}.{yaml,md}
-  ↓
-Step 6: Update Task File
-  ↓
-Step 7: Present Summary
+/review-task              # Deep review with comprehensive web research (default)
+/review-task 02           # Review specific task
+/review-task --quick      # Quick review - skip web research
 ```
 
-Each skill builds on previous results. Execution order is critical.
+## Current State
 
-## File Modification Permissions
+Current branch:
+!git branch --show-current
 
-**AUTHORIZED:** Read task/implementation files, execute quality skills, generate reports, update task "Quality Review" section only
+Recent commits on this branch:
+!git log --oneline -10
 
-**NOT AUTHORIZED:** Modify task Objective/AC/Context/Tasks/Implementation, modify code, change status to "Done", bypass skills
+Changed files vs main:
+!git diff --name-only main...HEAD 2>/dev/null || git diff --name-only HEAD~5
 
-## Sequential Orchestration Execution
+## Process
 
-### Step 0: Configuration and Verification
+### Step 1: Identify Task to Review
 
-**Purpose:** Load configuration, verify task readiness, determine execution mode.
+**Auto-detection order:**
+1. If on feature branch `phase-XX/task-YY-*` → use that task
+2. If argument provided → use specified task number
+3. Find task with `🔵 in_progress` status in current phase
 
-**Actions:**
-1. Load configuration from `.claude/config.yaml`
-2. Verify task file exists, status is "Review", implementation complete
-3. Determine execution mode (Full/Individual/Resume)
-4. Check existing assessments (for resume mode)
+**Locate task file:**
+```bash
+# Find current phase from branch or recent work
+PHASE_DIR=$(ls -d specification/phase-*/ | tail -1)
+TASK_FILE=$(ls "$PHASE_DIR/tasks/task-${TASK_NUM}"*.md 2>/dev/null | head -1)
+```
 
-**Halt if:** Config missing, task not ready, status not "Review"
+### Step 2: Gather Context
 
-**See:** `references/execution-modes-guide.md` for detailed flow and `references/templates.md` for configuration format
+Read these files in parallel:
+1. **Task specification** - the task .md file (scope, requirements)
+2. **Phase specification** - the phase.md file (objectives, related specs)
+3. **Related high-level specs** - linked specification documents
+4. **Implementation files** - all files changed for this task
 
----
+**Find changed files:**
+```bash
+# Files changed in this task's commits
+git diff --name-only main...HEAD
 
-### Step 1: Execute Risk Profile Skill
+# Or if on main, find by commit messages with task prefix [XX-YY]
+git log --oneline --name-only --grep="\[${PHASE}-${TASK}\]" main | grep -v "^\w"
+```
 
-**Purpose:** Assess implementation risks using P×I (Probability × Impact) methodology.
+### Step 3: Analyze Implementation
 
-**Actions:**
+For each changed/created file, evaluate:
 
-1. Invoke risk-profile.md skill:
-   ```
-   Executing: .claude/skills/quality/risk-profile.md
-   Task: {task-id}
-   ```
+#### Code Quality Checklist
+- [ ] **SOLID principles** - Single responsibility, proper abstractions
+- [ ] **Clean Architecture** - Correct layer placement (Domain → Application → Infrastructure → API)
+- [ ] **DDD patterns** - Proper use of entities, value objects, aggregates, domain events
+- [ ] **Error handling** - Appropriate exceptions, validation, edge cases
+- [ ] **Naming conventions** - Clear, consistent, following project standards
+- [ ] **Code duplication** - No unnecessary repetition, proper abstractions
+- [ ] **Dependency injection** - Correct service registration and lifetimes
 
-2. Skill executes 7-step risk assessment process:
-   - Identify risk areas (10-20 risks)
-   - Score risks (P×I, scale 1-9)
-   - Develop mitigation strategies
-   - Prioritize test scenarios
-   - Generate risk profile report
+#### .NET Specific Checks
+- [ ] **Async/await** - Proper async patterns, no blocking calls
+- [ ] **Nullable reference types** - Proper null handling
+- [ ] **IDisposable** - Resources properly disposed
+- [ ] **EF Core** - Efficient queries, no N+1 problems
+- [ ] **Configuration** - Proper use of IOptions, no hardcoded values
 
-3. Capture results: risk count, critical/high risks, mitigation coverage, report path
+### Step 4: Verify Against Specifications
 
-**Error Handling:** If skill fails, ask user to fix and re-run, or skip and continue (impacts gate confidence).
+Compare implementation with task scope:
+1. Are all scope items implemented?
+2. Does implementation match the design in related specs?
+3. Are there any deviations that need justification?
 
-**See:** `references/templates.md` for output format and captured data structure
+### Step 5: Web Research (Best Practices)
 
----
+Use `WebSearch` and `WebFetch` to verify implementation against official docs and best practices.
 
-### Step 2: Execute Test Design Skill
+**Key research areas based on technologies used:**
 
-**Purpose:** Design comprehensive test strategy with P0/P1/P2 priorities and mock strategies.
+| Technology | What to verify |
+|------------|----------------|
+| YARP | Official configuration patterns, middleware order |
+| MassTransit | Consumer patterns, retry policies, outbox |
+| EF Core | Query patterns, migrations, concurrency |
+| .NET Aspire | Service defaults, health checks, telemetry |
+| gRPC | Proto best practices, error handling |
+| Rate Limiting | .NET 8+ built-in patterns |
 
-**Actions:**
+**Search queries to use:**
+- `{technology} best practices site:learn.microsoft.com`
+- `{technology} official documentation`
+- `{pattern} .NET implementation guide`
 
-1. Invoke test-design.md skill:
-   ```
-   Executing: .claude/skills/quality/test-design.md
-   Task: {task-id}
-   Risk Profile: {risk-file} (for risk-informed test prioritization)
-   ```
+**IMPORTANT:** Always cite sources when recommending changes based on web research.
 
-2. Skill executes 7-step test design process:
-   - Analyze test requirements per AC
-   - Design test scenarios (Given-When-Then)
-   - Develop mock strategies
-   - Plan CI/CD integration
-   - Generate test design document
+### Step 6: Generate Review Report
 
-3. Capture results: total tests, P0/P1/P2 counts, test levels, report path
+Structure the output as follows:
 
-**See:** `references/templates.md` for output format
+```markdown
+# Task Review: [Task Name]
 
----
-
-### Step 3: Execute Requirements Traceability Skill
-
-**Purpose:** Map acceptance criteria → implementation → tests with gap analysis.
-
-**Actions:**
-
-1. Invoke trace-requirements.md skill:
-   ```
-   Executing: .claude/skills/quality/trace-requirements.md
-   Task: {task-id}
-   Risk Profile: {risk-file}
-   Test Design: {test-file}
-   ```
-
-2. Skill executes 7-step traceability process:
-   - Build forward traceability (AC → Implementation)
-   - Build backward traceability (Tests → AC)
-   - Identify coverage gaps
-   - Create traceability matrix
-   - Generate recommendations
-
-3. Capture results: traceability score, implementation/test coverage, gaps, report path
-
-**Error Handling:** Traceability is CRITICAL for quality gate. Must fix and re-run if fails.
-
-**See:** `references/templates.md` for output format
-
----
-
-### Step 4: Execute NFR Assessment Skill
-
-**Purpose:** Assess non-functional requirements across 6 categories.
-
-**Actions:**
-
-1. Invoke nfr-assess.md skill:
-   ```
-   Executing: .claude/skills/quality/nfr-assess.md
-   Task: {task-id}
-   Risk Profile: {risk-file}
-   Traceability: {trace-file}
-   Test Design: {test-file}
-   ```
-
-2. Skill executes 8-step NFR assessment:
-   - Security assessment (validation, auth, encryption, vulnerabilities)
-   - Performance assessment (response time, queries, caching)
-   - Reliability assessment (error handling, logging, monitoring)
-   - Maintainability assessment (code quality, docs, coverage)
-   - Scalability assessment (stateless, indexing, async processing)
-   - Usability assessment (API design, error messages, docs)
-
-3. Capture results: overall NFR score, category scores (security/performance/reliability/maintainability/scalability/usability), critical gaps, report path
-
-**See:** `references/templates.md` for output format
-
----
-
-### Step 5: Execute Quality Gate Skill
-
-**Purpose:** Synthesize all assessments and make final PASS/CONCERNS/FAIL/WAIVED decision.
-
-**Actions:**
-
-1. Invoke quality-gate.md skill:
-   ```
-   Executing: .claude/skills/quality/quality-gate.md
-   Task: {task-id}
-   Risk Profile: {risk-file}
-   Test Design: {test-file}
-   Traceability: {trace-file}
-   NFR Assessment: {nfr-file}
-   ```
-
-2. Skill executes 8-step gate synthesis:
-   - Synthesize risk management dimension
-   - Synthesize test coverage dimension
-   - Synthesize traceability dimension
-   - Synthesize NFR dimension
-   - Synthesize implementation quality dimension
-   - Synthesize compliance dimension
-   - Calculate overall quality score
-   - Make gate decision (PASS/CONCERNS/FAIL/WAIVED)
-
-3. Capture results: gate decision (PASS/CONCERNS/FAIL/WAIVED), overall score, can proceed status, blockers, action items, report paths (YAML + MD)
-
-**Error Handling:** Gate decision is CRITICAL. Must fix and re-run if fails.
-
-**See:** `references/templates.md` for output format
-
----
-
-### Step 6: Update Task File with Quality Review Summary
-
-**Purpose:** Update task file Quality Review section with synthesized summary.
-
-**Actions:**
-1. Generate quality review summary from gate decision
-2. Update task file Quality Review section (preserve all other sections)
-
-**See:** `references/templates.md` for task file update template
-
----
-
-### Step 7: Present Unified Quality Review Summary
-
-**Purpose:** Present comprehensive summary synthesizing all 5 skill results with gate decision, dimension scores, findings, action items, and next steps.
-
-**Actions:**
-- Display gate decision and overall score
-- Show quality dimension scores (risk, test, trace, NFR, implementation, compliance)
-- List critical findings and action items (P0/P1)
-- Present generated report links
-- Collect user decision (accept/review/address/waive/rerun)
-
-**See:** `references/templates.md` for complete summary template and user decision handling
-
----
-
-## Execution Complete
-
-Quality review orchestration complete when:
-
-- [x] All 5 skills executed successfully (or skipped intentionally)
-- [x] Quality gate decision made
-- [x] Gate reports generated (YAML + Markdown)
-- [x] Task file Quality Review section updated
-- [x] Unified summary presented to user
-- [x] User decision collected and actioned
-
-## Best Practices
-
-1. **Run full review when possible** - Most comprehensive assessment
-2. **Use individual skills during development** - Faster feedback loops
-3. **Re-run specific skills when data changes** - Don't redo entire review
-4. **Always start with gate report** - Best overview, links to all details
-5. **Track action items in issue system** - Don't lose follow-up work
-6. **Document waivers properly** - Include justification, timeline, owner
-7. **Automate in CI/CD** - Use gate YAML for automated checks
-
-## References
-
-- `references/execution-modes-guide.md` - Execution flow for full/individual/resume modes
-- `references/error-handling-guide.md` - Error scenarios, graceful degradation, fallback strategies
-- `references/orchestration-guide.md` - Skill coordination and sequencing details
-- `references/synthesis-summary-guide.md` - Summary generation and presentation
-- `references/templates.md` - Output templates, task file updates, user decision handling
+## Summary
+[1-2 sentence overall assessment]
+
+## Specification Compliance
+| Scope Item | Status | Notes |
+|------------|--------|-------|
+| Item 1 | ✅/⚠️/❌ | ... |
+
+## Strengths 💪
+- [What was done well]
+- [Good patterns used]
+- [Proper architecture decisions]
+
+## Issues Found 🔍
+
+### Critical (must fix)
+- [ ] **[Issue title]** in `file:line`
+  - Problem: ...
+  - Suggestion: ...
+  - Reference: [link to docs]
+
+### Improvements (should fix)
+- [ ] **[Issue title]** in `file:line`
+  - Problem: ...
+  - Suggestion: ...
+
+### Nitpicks (optional)
+- [ ] ...
+
+## Best Practices Verification
+| Area | Status | Source |
+|------|--------|--------|
+| [Pattern] | ✅/⚠️ | [MS Docs link] |
+
+## Recommendations
+1. [Prioritized action items]
+2. ...
+
+## Questions for Developer
+- [Clarifying questions if any]
+```
+
+## Arguments
+
+- `$ARGUMENTS` - Task number or flags
+  - `02` - specific task number
+  - `--quick` - skip web research, just code review
+  - `--trace <correlation-id>` - aggregate logs across services by CorrelationId
+
+## Review Depth Levels
+
+| Flag | Code Analysis | Spec Check | Web Research |
+|------|---------------|------------|--------------|
+| (default) | Full | Yes | Comprehensive |
+| `--quick` | Full | Yes | Skip |
+
+## Log Trace Mode (--trace)
+
+When debugging issues during review, use the `--trace` flag to aggregate logs across all services by CorrelationId.
+
+**Usage:**
+```bash
+/review-task --trace 228617a4-175a-4384-a8e2-ade916a78c3f
+```
+
+**What it does:**
+1. Searches all service log files (gateway, order, product, notification, analytics)
+2. Finds all entries matching the CorrelationId
+3. Sorts entries chronologically across services
+4. Displays a unified trace of the request flow
+
+**Log format (Serilog):**
+```
+[{Timestamp:HH:mm:ss} {Level:u3}] [{CorrelationId}] {Message:lj}
+```
+
+Example output:
+```
+[08:54:42 INF] [228617a4-...] Proxying to http://localhost/api/orders
+[08:54:42 INF] [228617a4-...] Creating order for customer...
+[08:54:42 INF] [228617a4-...] Reserving stock via gRPC...
+[08:54:43 ERR] [228617a4-...] gRPC error in ReserveStock
+```
+
+**Tool script:**
+```bash
+./tools/e2e-test/trace-correlation.sh <correlation-id> [--all-logs] [--json]
+```
+
+Options:
+- `--all-logs` - Search all log files, not just latest per service
+- `--json` - Output as JSON for programmatic use
+
+## Output Example
+
+```
+# Task Review: YARP Configuration
+
+## Summary
+Solid implementation of YARP reverse proxy with good route configuration.
+Minor improvements needed in error handling and health check integration.
+
+## Specification Compliance
+| Scope Item | Status | Notes |
+|------------|--------|-------|
+| Configure YARP routes | ✅ | All routes properly defined |
+| Add health checks | ⚠️ | Missing destination health checks |
+| Load from config | ✅ | Using appsettings.json correctly |
+
+## Strengths 💪
+- Clean separation of route configurations
+- Proper use of typed configuration binding
+- Good middleware ordering
+
+## Issues Found 🔍
+
+### Critical (must fix)
+None
+
+### Improvements (should fix)
+- [ ] **Missing destination health checks** in `Program.cs:45`
+  - Problem: YARP health probing not configured
+  - Suggestion: Add `.LoadFromConfig().AddHealthChecks()`
+  - Reference: https://learn.microsoft.com/aspnet/core/host-and-deploy/health-checks
+
+### Nitpicks (optional)
+- [ ] Consider extracting route names to constants
+
+## Best Practices Verification
+| Area | Status | Source |
+|------|--------|--------|
+| YARP config | ✅ | MS Docs - YARP Configuration |
+| Middleware order | ✅ | ASP.NET Core fundamentals |
+
+## Recommendations
+1. Add health checks for backend services
+2. Consider adding request/response logging middleware
+```
+
+## Integration
+
+This skill works with the task workflow:
+1. `/start-task XX` - begin working
+2. `/commit` - commit changes
+3. **`/review-task` - get tech lead feedback before finishing**
+4. `/finish-task` - complete after addressing review
+
+## Safety Rules
+
+1. NEVER modify any files - this is a read-only review
+2. ALWAYS cite sources for recommendations from web research
+3. ALWAYS be constructive - balance criticism with praise
+4. ALWAYS prioritize issues (critical vs nice-to-have)
+5. If unsure about a pattern, research it before flagging as issue

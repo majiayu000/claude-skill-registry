@@ -1,6 +1,9 @@
 ---
 name: nextjs-devtools
-description: Next.js development tooling via MCP. Inspect routes, components, build info, and debug Next.js apps. Use when working on Next.js applications, debugging routing, or inspecting app structure. NOT for general React or non-Next.js projects.
+description: |
+  Next.js development tooling via MCP. Inspect routes, components, build info, and debug Next.js apps.
+  Use when working on Next.js applications, debugging routing, or inspecting app structure.
+  NOT for general React or non-Next.js projects.
 ---
 
 # Next.js DevTools

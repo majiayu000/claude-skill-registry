@@ -32,6 +32,7 @@ Call `search_skills` with:
 - `tag`: Filter by tag slug
 
 Present results showing:
+
 - Title and description
 - Author name
 - File list (SKILL.md, reference docs, scripts)
@@ -45,6 +46,7 @@ Call `get_skill` with:
 - `id`: The skill ID
 
 Returns the skill metadata and all file contents:
+
 - SKILL.md (main instructions)
 - Reference documentation
 - Helper scripts
@@ -63,6 +65,7 @@ When the user asks to install a skill:
 ## Skill Structure
 
 Skills contain:
+
 - **SKILL.md** (required) - Main instructions with frontmatter
 - **Reference docs** - Additional documentation files
 - **Scripts** - Helper scripts (Python, shell, etc.)

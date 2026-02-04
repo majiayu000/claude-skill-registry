@@ -1,6 +1,6 @@
 ---
 name: ln-100-documents-pipeline
-description: Top orchestrator for complete doc system. Delegates to ln-110 coordinator (project docs via 5 L3 workers) + ln-120-150 workers. Phase 4: global cleanup. Idempotent.
+description: "Top orchestrator for complete doc system. Delegates to ln-110 coordinator (project docs via 5 L3 workers) + ln-120-150 workers. Phase 4: global cleanup. Idempotent."
 ---
 
 # Documentation Pipeline (Orchestrator)

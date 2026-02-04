@@ -1,7 +1,7 @@
 {
   "name": "sentry-code-review",
-  "repo": "troykelly/claude-skills",
+  "repo": "troykelly/codex-skills",
   "path": "external/skills/sentry-code-review/SKILL.md",
-  "source": "github.com/troykelly/claude-skills",
-  "downloaded_at": "2026-02-02T05:04:58.144692Z"
+  "source": "github.com/troykelly/codex-skills",
+  "downloaded_at": "2026-02-04T04:41:42.191464Z"
 }

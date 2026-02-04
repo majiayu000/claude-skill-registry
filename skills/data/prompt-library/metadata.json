@@ -1,7 +1,7 @@
 {
   "name": "prompt-library",
-  "repo": "claudiodearaujo/Sistema-de-narra-o-de-livro",
-  "path": ".agent/skills/prompt-library/SKILL.md",
-  "source": "github.com/claudiodearaujo/Sistema-de-narra-o-de-livro",
-  "downloaded_at": "2026-02-02T04:45:36.636568Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/prompt-library/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:47.679963Z"
 }

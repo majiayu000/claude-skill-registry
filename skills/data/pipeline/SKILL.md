@@ -1,87 +1,65 @@
 ---
 name: pipeline
-description: Run dlt pipelines and Temporal workflows for SignalRoom. Use when syncing data sources, triggering workflows, checking pipeline status, or debugging data ingestion issues.
+description: Manage the content pipeline and idea backlog. Use when checking pipeline status, evaluating pillar distribution, reviewing idea statuses, or planning content calendar. Includes idea template, pillar definitions, and frontmatter schemas.
 ---
 
-# Pipeline Operations
+# Pipeline Skill
 
-## Available Sources
+Manage the content pipeline from idea to publication.
 
-| Source | Description | Schedule |
-|--------|-------------|----------|
-| `everflow` | Affiliate conversions/revenue | Hourly 7am-11pm ET |
-| `redtrack` | Ad spend tracking | Hourly 7am-11pm ET |
-| `s3_exports` | CSV files from S3 (Sticky.io) | Daily 6am ET |
-| `posthog` | PostHog analytics | Stubbed |
-| `mautic` | Mautic contacts/campaigns | Stubbed |
-| `google_sheets` | Google Sheets data | Stubbed |
+## When to Use
 
-**API Reference**: See `docs/API_REFERENCE.md` for live docs, auth, and request/response examples.
+- Checking overall pipeline status (`/pipeline` command)
+- Reviewing idea backlog and priorities
+- Ensuring pillar distribution is on target
+- Planning which ideas to draft next
+- Creating new ideas with proper structure
 
-## Run Pipeline Directly (Local Testing)
+## Quick Reference
 
+**Idea statuses:** `idea` → `drafting` → `ready_for_projection` → `published` → `archived`
+
+**Pillar targets:**
+- Technology Strategy: 30%
+- Leadership & Management: 25%
+- Execution & Delivery: 20%
+- Founder Lessons: 15%
+- Market & AI Trends: 10%
+
+## Context Files
+
+- `context/pillars.md` - Content pillar definitions and targets
+- `context/frontmatter.md` - Frontmatter schemas for all file types
+- `context/workflow.md` - Status flow and weekly rhythm
+- `context/memory.md` - MCP Memory usage for author profile and voice queries
+
+## Templates
+
+- `templates/idea.md` - Idea file template with full frontmatter
+
+## Commands
+
+### /pipeline
+
+Run the pipeline status script to see the current state of all content.
+
+**Usage:**
 ```bash
-# Activate environment
-source .venv/bin/activate
-
-# Run a specific source
-python scripts/run_pipeline.py everflow
-python scripts/run_pipeline.py redtrack
-python scripts/run_pipeline.py s3_exports
-
-# Dry run (see what would happen)
-python scripts/run_pipeline.py everflow --dry-run
+npm run pipeline
 ```
 
-## Trigger via Temporal (Production)
+**Output includes:**
 
-```bash
-# Trigger and return immediately
-python scripts/trigger_workflow.py everflow
+1. **Pipeline Status** - Counts of ideas by status (idea, drafting, ready_for_projection, published, archived) plus totals for drafts, posts, LinkedIn posts, and newsletter issues.
 
-# Trigger and wait for completion
-python scripts/trigger_workflow.py everflow -w
+2. **Pillar Distribution** - Active ideas by pillar with percentage vs target:
+   - ✓ = On target (within 10%)
+   - ⚠ = Under target (needs more ideas)
+   - ▲ = Over target (pause new ideas)
 
-# Trigger with notification on success
-python scripts/trigger_workflow.py everflow -w --notify
-```
+3. **Stale Items** - Ideas in "drafting" status for 30+ days (based on YYYY-MM in the id)
 
-## Check Pipeline Status
-
-```bash
-# View worker logs (local)
-make logs-worker
-
-# View Fly.io logs (production)
-fly logs
-
-# Temporal Cloud UI
-# https://cloud.temporal.io/namespaces/signalroom-713.nzg5u/workflows
-```
-
-## Active Schedules
-
-View in Temporal Cloud UI or:
-
-```bash
-python scripts/setup_schedules.py --list
-```
-
-Current schedules:
-- `hourly-sync-everflow-redtrack` - Hourly 7am-11pm ET
-- `daily-sync-s3` - Daily 6am ET
-
-## Troubleshooting
-
-**"Unknown source" error:**
-Source not registered in `src/signalroom/pipelines/runner.py`
-
-**Credentials error:**
-Check `.env` has correct API keys
-
-**Database connection failed:**
-- Verify Supabase pooler settings (port 6543)
-- User must be `postgres.{project_ref}`
-
-**Activity timeout:**
-Pipeline took >30 min. Filter resources or increase timeout.
+4. **Suggested Next Actions**:
+   - Ideas ready for drafting (have pillar and target_audience)
+   - Pillars needing more ideas (>10% under target)
+   - Drafts to review for publishing

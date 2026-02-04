@@ -1,11 +1,11 @@
 ---
 name: week-plan
-description: Set weekly priorities and plan the week ahead
+description: Set weekly priorities and plan the week ahead with intelligent suggestions based on goals, calendar shape, and task effort.
 ---
 
 ## Purpose
 
-Set priorities and plan the week ahead. Can be run on Monday morning to plan the current week, or Friday evening to plan next week.
+Set priorities and plan the week ahead. Now with **intelligent priority suggestions** based on quarterly goals, calendar capacity, and task effort classification.
 
 ## Usage
 
@@ -26,275 +26,182 @@ Set priorities and plan the week ahead. Can be run on Monday morning to plan the
 
 ## Step 0: Demo Mode Check
 
-Before anything else, check if demo mode is active:
-
-1. Read `System/user-profile.yaml`
-2. Check `demo_mode` value
-3. **If `demo_mode: true`:**
-   - Use demo paths: `System/Demo/00-Inbox/`, `System/Demo/Active/`, etc.
-   - Skip calendar/task integrations (use sample data)
-4. **If `demo_mode: false`:** Proceed normally
+Check `System/user-profile.yaml` for `demo_mode`. If true, use demo paths.
 
 ---
 
 ## Step 1: Determine Target Week
 
-**If no parameter or "current":**
-- If today is Mon-Thu → Plan current week
-- If today is Fri-Sun → Offer choice: "Plan current week or next week?"
-
-**If parameter is "next":**
-- Plan next Monday's week
-
-Calculate:
-- `target_week_start` (Monday of target week)
-- `target_week_end` (Sunday of target week)
+Calculate target week (current or next) based on day of week and user parameter.
 
 ---
 
-## Step 2: Context Gathering
+## Step 2: Context Gathering (ENHANCED)
 
-Gather context to inform planning:
+Gather comprehensive context to inform **intelligent priority suggestions**.
 
-### From Last Week's Review
+### 2.1 Last Week's Review
 
 Check for `00-Inbox/Weekly_Synthesis_[last-monday].md`:
-
-**If exists, extract:**
 - "Next Week" section → Suggested priorities
 - "Carried Over" section → Unfinished tasks
 - "Blocked Items" → Things that need resolution
 - "Learnings" → Insights to apply
 
-**If missing:**
-- Note that no review exists
-- Suggest running `/week-review` for last week
-
-### From 03-Tasks/Tasks.md
+### 2.2 Quarterly Goals Status
 
 ```
-Use: list_tasks (if Work MCP enabled)
+Use: get_quarterly_goals()
+Use: get_goal_status(goal_id) for each goal
 ```
 
-Extract:
-- P0 and P1 tasks
-- Overdue items
-- Tasks without dates that need scheduling
-- Blocked tasks
+For each goal, get:
+- Current progress (concrete: "2 of 5 milestones complete")
+- Linked priorities count
+- Weeks since last activity
+- Stall warnings
 
-### From Calendar (if enabled)
+**Identify goals needing attention:**
+- Goals with no linked priorities (orphaned)
+- Goals with no activity in 2+ weeks (stalled)
+- Goals behind expected pace
+
+### 2.3 Open Tasks and Projects
 
 ```
-Use: calendar_get_events_with_attendees for target week
+Use: list_tasks(include_done=False)
 ```
 
-Extract:
-- All meetings for the week
-- Key meetings that need prep
-- Back-to-back days
-- Free time blocks
+Get all open tasks and:
+- Classify by effort (deep_work / medium / quick)
+- Group by pillar alignment
+- Identify P0/P1 items
+- Find tasks that could advance stalled goals
 
-### From Current Week Priorities
+### 2.4 Calendar Shape Analysis (NEW)
 
-Read `02-Week_Priorities/Week_Priorities.md`:
-- Last week's Top 3
-- What was completed vs carried over
-- End of week review notes (if filled in)
+```
+Use: analyze_calendar_capacity(days_ahead=7, events=[...from calendar MCP...])
+```
 
-### From Pillars
+Understand the **shape of the week**:
 
-Read `System/pillars.yaml`:
-- Strategic pillars
-- Check recent balance (from last few weeks)
-- Identify neglected areas
+| Day | Type | Largest Block | Best For |
+|-----|------|---------------|----------|
+| Mon | Stacked (7 meetings) | 45 min | Quick tasks only |
+| Tue | Moderate (4 meetings) | 90 min | Medium tasks |
+| Wed | **Open** (2 meetings) | **3 hours** | **Deep work day** ✨ |
+| Thu | Stacked (6 meetings) | 30 min | Quick tasks only |
+| Fri | Moderate (3 meetings) | 2 hours | Medium tasks, wrap-up |
 
-### From Quarterly Goals (if enabled)
+**Week capacity summary:**
+- Deep work opportunities: {{count}} days with 2+ hour blocks
+- Total deep work hours available: ~{{X}} hours
+- Stacked days to avoid scheduling deep work: {{list}}
 
-Read `System/user-profile.yaml` to check if `quarterly_planning.enabled: true`:
+### 2.5 Task-to-Time Matching (NEW)
 
-**If quarterly planning is enabled:**
-- Use `get_quarterly_goals()` MCP tool to fetch goals
-- Use `get_goal_status(goal_id)` for each goal to check:
-  - Progress percentage
-  - Linked priorities count
-  - Stall warnings (no activity in >2 weeks)
-- Identify which goals need attention this week
+```
+Use: classify_task_effort(title) for key tasks
+Use: suggest_task_scheduling(include_all_tasks=True, calendar_events=[...])
+```
 
-**If quarterly planning is disabled:**
-- Skip this section entirely
+Get intelligent matching:
+- Which tasks need deep work time?
+- Which can fit in gaps?
+- Are there enough slots for all deep work?
+
+**Capacity check:**
+
+> "You have 5 deep work tasks totaling ~12 hours.
+> You have 2 open days with ~6 hours of deep work capacity.
+> 
+> ⚠️ **Capacity gap:** Consider deferring 2 deep work items or protecting more time."
+
+### 2.6 Commitments and Follow-ups
+
+```
+Use: get_commitments_due(date_range="this_week")
+```
+
+Surface things you've committed to that are due this week.
 
 ---
 
-## Step 3: Interactive Planning
+## Step 3: Intelligent Priority Suggestions (NEW)
 
-Present context and guide user through planning:
+**Don't just ask "What are your Top 3?" — Suggest priorities based on analysis.**
 
-### Review Last Week (if available)
+### 3.1 Generate Suggestions
 
-> "Last week's Top 3 were:
-> 1. [Priority 1] — ✅ Done
-> 2. [Priority 2] — 🔄 In progress
-> 3. [Priority 3] — ❌ Didn't get to it
->
-> What carried over that's still important?"
+Based on the gathered context, generate 4-5 suggested priorities:
 
-Wait for user input, extract carried-over items.
+**Goal-driven suggestions:**
+- "Goal X has no activity in 3 weeks. Suggested priority: {{specific work that advances it}}"
+- "Goal Y is at 2 of 5 milestones with 6 weeks left. Suggested priority: Complete milestone 3"
 
-### Present Quarterly Context (if enabled)
+**Commitment-driven suggestions:**
+- "You committed to {{X}} with {{person}} — due this week"
 
-**If quarterly planning is enabled:**
+**Carried-over suggestions:**
+- "{{Priority}} carried over from last week — still important?"
 
-Use `get_quarterly_goals()` and `get_goal_status(goal_id)` to build context:
+**Calendar-aware suggestions:**
+- "You have a deep work day Wednesday — good time for {{specific deep work task}}"
+- "Friday is light — good for {{wrap-up task}}"
 
-> "**Your Q1 2026 goals:**
-> 1. [Goal 1] — [Pillar] — Progress: [X%] [🟢/🟡/🔴] — [N] priorities linked
-> 2. [Goal 2] — [Pillar] — Progress: [Y%] [🟢/🟡/🔴] — [N] priorities linked
-> 3. [Goal 3] — [Pillar] — Progress: [Z%] [🟢/🟡/🔴] — ⚠️ No activity (stalled)
+### 3.2 Present Suggestions
+
+> "Based on your goals, tasks, and calendar shape, here's what I suggest for this week:
 > 
-> **Goals needing attention:**
-> - Goal 3 has no linked priorities yet
+> **Suggested priorities:**
 > 
-> Which of these quarterly goals are you pushing forward this week?"
-
-Wait for user to identify 1-2 quarterly goals this week advances.
-
-**If quarterly planning is disabled:**
-- Skip this section
-
-### Skills Gap Check (if Career system enabled)
-
-**If `05-Areas/Career/` exists:**
-
-Use Career MCP `skills_gap_analysis` tool:
-- Call with `lookback_days: 90` (check last 3 months)
-- Call with `stale_threshold_days: 42` (6 weeks)
-
-**If gaps or stale skills found, surface warning:**
-
-> "⚠️ **Career development note:**
+> 1. **Complete pricing proposal** — Goal 1 (Launch v2.0) needs this to hit milestone 3. You have deep work time Wednesday.
 > 
-> You haven't worked on these skills recently:
-> - **[Stale Skill 1]**: No activity in [X] days — Required for [target level]
-> - **[Gap Skill 1]**: Not being developed — Required for [target level]
+> 2. **Customer interview batch** — Goal 2 (Improve NPS) has no activity in 3 weeks. You could do 2-3 calls on Tue/Thu between meetings.
 > 
-> Consider adding a priority this week that develops one of these."
-
-**If no gaps:** Skip this section.
-
----
-
-### Review Upcoming Week
-
-> "Looking at next week (Mon [Date] - Fri [Date]):
+> 3. **Follow up on Acme contract** — Committed to Sarah by Friday. Meeting Thursday, prep needed.
 > 
-> **Key meetings:**
-> - Mon: [Meeting 1], [Meeting 2]
-> - Wed: [Meeting 3]
-> - Thu: [Meeting 4]
+> 4. **Review team roadmap** — Carried over from last week. Still a priority?
 > 
-> **Open tasks:**
-> - P0: [Count] must-do items
-> - P1: [Count] important items
+> **Calendar fit:**
+> - Priority 1 → Wednesday (3-hour block)
+> - Priority 2 → Tue/Thu (between meetings)
+> - Priority 3 → Friday (follow-up after Thursday meeting)
 > 
-> Any of these meetings need special prep or follow-up?"
+> **Does this feel right?** Adjust as needed."
 
-Wait for user input.
+### 3.3 Interactive Refinement
 
-### Define Top 3
+Wait for user to confirm, adjust, or provide different priorities. For each priority confirmed:
 
-> "What are the 3 most important outcomes for this week?
-> 
-> These should be specific results, not just activities. For example:
-> - ✅ 'Ship v2.0 to production'
-> - ❌ 'Work on v2.0'
-> 
-> What's your Top 3?"
-
-Wait for user to provide 3 priorities. For each priority collected, use `create_weekly_priority` MCP tool:
-
-```bash
-create_weekly_priority(
-  title: "[Priority title]",
-  pillar: "[pillar_id]",
-  quarterly_goal_id: "[Q1-2026-goal-X]" or "operational",
-  success_criteria: "[What success looks like]",
-  week_date: "[YYYY-MM-DD Monday]"
+```
+Use: create_weekly_priority(
+  title="...",
+  pillar="...",
+  quarterly_goal_id="..." or "operational",
+  success_criteria="...",
+  week_date="YYYY-MM-DD"
 )
 ```
 
-For each, ask:
-- Which pillar does this align with?
-- **If quarterly planning enabled:** Which quarterly goal does this advance? (provide goal_id, or mark as "operational")
-- What's the success criteria?
+---
 
-### Map Tasks to Priorities
+## Step 4: Skills Gap Check (if Career system enabled)
 
-> "Here are your open P0/P1 tasks:
-> - [ ] [Task 1]
-> - [ ] [Task 2]
-> - [ ] [Task 3]
-> 
-> Which of these support your Top 3? Any that should be rescheduled or de-prioritized?"
-
-Wait for user input, organize tasks by priority level.
-
-### Pillar Balance Check
-
-> "This week's focus:
-> - [Pillar 1]: [Count] tasks, [X] meetings
-> - [Pillar 2]: [Count] tasks, [Y] meetings
-> - [Pillar 3]: [Count] tasks, [Z] meetings
-> 
-> Does this feel balanced? Any pillar getting neglected?"
-
-Note any imbalances.
+If `05-Areas/Career/` exists, check for stale skills that could be developed this week.
 
 ---
 
-## Step 3.5: PKM Improvement Check (Optional)
+## Step 5: PKM Improvement Check (Optional)
 
-Check if there are high-priority improvement ideas worth tackling this week.
-
-### Check Dex Backlog
-
-Read `System/Dex_Backlog.md` if it exists:
-- Extract ideas with score >= 85 (High Priority)
-- Count total high-priority ideas
-
-### Present Opportunities
-
-**If 1-2 high-priority ideas exist:**
-
-> "💡 **PKM Improvement Opportunity**
-> 
-> You have [count] high-priority idea(s) that could improve your workflow:
-> 
-> 1. [[idea-XXX]] [Title] (Score: [score])
->    - [Why now: brief reasoning]
->    - Effort: [Quick win / 1-2 hours / Half day]
-> 
-> Want to tackle one this week? Or run `/dex-backlog` to see full rankings."
-
-Wait for user response:
-- If yes → Note as part of week priorities
-- If no → Continue with planning
-- If "show me" → Run `/dex-backlog` and return to planning after
-
-**If 3+ high-priority ideas:**
-
-> "💡 **Dex System Note:** You have [count] high-priority improvement ideas waiting.
-> 
-> Consider running `/dex-backlog` to review and prioritize them.
-> Or block time this week to tackle 1-2 quick wins."
-
-**If no high-priority ideas or Dex_Backlog.md doesn't exist:**
-- Skip this section silently
+Check `System/Dex_Backlog.md` for high-priority improvement ideas worth tackling this week.
 
 ---
 
-## Step 4: Generate Week Priorities
+## Step 6: Generate Week Priorities File
 
-Archive old `02-Week_Priorities/Week_Priorities.md` to `07-Archives/Plans/YYYY-Wxx.md` (with last week's week number).
+Archive old file to `07-Archives/Plans/YYYY-Wxx.md`.
 
 Create updated `02-Week_Priorities/Week_Priorities.md`:
 
@@ -305,42 +212,69 @@ Create updated `02-Week_Priorities/Week_Priorities.md`:
 
 ---
 
-## 🎯 Quarterly Context *(if quarterly planning enabled)*
+## 📊 Week Shape
 
-**Q1 2026 Goals:**
-1. [Goal 1] — [Pillar] — Progress: [X%] [🟢/🟡/🔴]
-2. [Goal 2] — [Pillar] — Progress: [Y%] [🟢/🟡/🔴]
-3. [Goal 3] — [Pillar] — Progress: [Z%] [🟢/🟡/🔴]
+| Day | Type | Deep Work? | Notes |
+|-----|------|------------|-------|
+| Mon | Stacked | ❌ | 7 meetings |
+| Tue | Moderate | ⚠️ | 90 min block PM |
+| Wed | **Open** | ✅ | **Deep work day** (3h morning) |
+| Thu | Stacked | ❌ | 6 meetings |
+| Fri | Moderate | ⚠️ | 2h block |
 
-**This week advances:** Goals #[X], #[Y]
+**Deep work capacity:** ~5 hours this week
+**Best day for focus:** Wednesday
+
+---
+
+## 🎯 Quarterly Goals Context
+
+| Goal | Progress | Status |
+|------|----------|--------|
+| Launch Product v2.0 | 3 of 5 milestones | On track |
+| Improve Customer NPS | 1 of 4 milestones | ⚠️ Stalled (3 weeks) |
+| Build Team Capacity | 2 of 3 milestones | On track |
+
+**This week advances:** Goals #1 and #2
 
 ---
 
 ## 🎯 Top 3 This Week
 
-The most important outcomes for this week. Everything else is secondary.
-
-1. [Priority 1] — **[Pillar]**
+1. **[Priority 1]** — **[Pillar]** ^week-YYYY-WXX-p1
    - Success criteria: [What done looks like]
-   - Quarterly goal: [Q1 Goal #X] *(if applicable)*
+   - Quarterly goal: [Q1 Goal #X]
+   - **Scheduled:** [Day/time block]
+   - Effort: [deep_work / medium / quick]
    
-2. [Priority 2] — **[Pillar]**
+2. **[Priority 2]** — **[Pillar]** ^week-YYYY-WXX-p2
    - Success criteria: [What done looks like]
-   - Quarterly goal: [Q1 Goal #X] *(if applicable)*
+   - Quarterly goal: [Q1 Goal #X]
+   - **Scheduled:** [Day/time block]
+   - Effort: [deep_work / medium / quick]
    
-3. [Priority 3] — **[Pillar]**
+3. **[Priority 3]** — **[Pillar]** ^week-YYYY-WXX-p3
    - Success criteria: [What done looks like]
-   - Quarterly goal: [Q1 Goal #X] *(if applicable)*
+   - Quarterly goal: [Q1 Goal #X] or Operational
+   - **Scheduled:** [Day/time block]
+   - Effort: [deep_work / medium / quick]
 
 ---
 
-## 📋 Tasks
+## ⚡ Commitments Due This Week
+
+- [ ] [Commitment] — to [person] — due [day]
+- [ ] [Commitment] — from [meeting] — due [day]
+
+---
+
+## 📋 Tasks by Priority
 
 ### Must Complete (P0)
-- [ ] [Task] — Supports: [Which Top 3 priority]
+- [ ] [Task] — Supports: Priority #X — **[Day]**
 
 ### Should Complete (P1)
-- [ ] [Task] — Supports: [Which Top 3 priority]
+- [ ] [Task] — Supports: Priority #X — **[Day]**
 
 ### If Time Permits (P2)
 - [ ] [Task]
@@ -349,39 +283,26 @@ The most important outcomes for this week. Everything else is secondary.
 
 ## 📅 Key Meetings
 
-| Day | Time | Meeting | Prep Needed |
-|-----|------|---------|-------------|
-| Mon | [Time] | [Meeting] | [Prep status or link] |
-| Tue | [Time] | [Meeting] | [Prep status or link] |
-| Wed | [Time] | [Meeting] | [Prep status or link] |
-| Thu | [Time] | [Meeting] | [Prep status or link] |
-| Fri | [Time] | [Meeting] | [Prep status or link] |
+| Day | Time | Meeting | Prep Needed | Related Priority |
+|-----|------|---------|-------------|------------------|
+| Mon | [Time] | [Meeting] | [Prep] | Priority #X |
+| Tue | [Time] | [Meeting] | [Prep] | — |
 
 ---
 
-## 📊 Pillar Check
+## 📊 Pillar Balance
 
-How does this week's work align to your strategic pillars?
-
-| Pillar | Tasks/Focus | Balance |
-|--------|-------------|---------|
-| [Pillar 1] | [Brief description] | [🟩 Good / 🟨 Light / 🟥 Neglected] |
-| [Pillar 2] | [Brief description] | [🟩 Good / 🟨 Light / 🟥 Neglected] |
-| [Pillar 3] | [Brief description] | [🟩 Good / 🟨 Light / 🟥 Neglected] |
+| Pillar | This Week | Balance |
+|--------|-----------|---------|
+| [Pillar 1] | [Brief description] | 🟩 Good |
+| [Pillar 2] | [Brief description] | 🟨 Light |
+| [Pillar 3] | [Brief description] | 🟥 Neglected |
 
 ---
 
 ## 🔄 Carried Over
 
-Tasks from last week that still need attention:
-
 - [ ] [Task from last week] — [Why it carried over]
-
----
-
-## 📝 Notes
-
-[Any additional context about the week]
 
 ---
 
@@ -409,74 +330,39 @@ Tasks from last week that still need attention:
 
 ---
 
-## Step 5: Track Usage (Silent)
+## Step 7: Track Usage (Silent)
 
-After generating the week priorities file, silently update usage tracking:
-
-1. Read `System/usage_log.md`
-2. Update: `- [ ] Weekly planning (/week-plan)` → `- [x] Weekly planning (/week-plan)`
-3. No announcement to user
+Update `System/usage_log.md`.
 
 ---
 
-## Step 6: Summary
+## Step 8: Summary
 
 After generating the file, provide a summary:
 
-> "Week planned and saved to `02-Week_Priorities/Week_Priorities.md`
+> "Week planned! Saved to `02-Week_Priorities/Week_Priorities.md`
 > 
 > **Your Top 3 this week:**
-> 1. [Priority 1]
-> 2. [Priority 2]
-> 3. [Priority 3]
+> 1. [Priority 1] — Scheduled for [Day]
+> 2. [Priority 2] — Scheduled for [Day]
+> 3. [Priority 3] — Scheduled for [Day]
 > 
-> **Pillar balance:** [Note any imbalances]
+> **Week shape:** 2 stacked days, 1 deep work day (Wednesday)
 > 
-> **Key meetings:** [Count] this week, [X] need prep
+> **Goals advancing:** #1 and #2
+> 
+> **Heads up:** 
+> - [Capacity warning if applicable]
+> - [Stalled goal reminder]
 > 
 > Ready to run `/daily-plan` for Monday?"
 
-If it's Monday and user says yes, flow directly into `/daily-plan`.
-
 ---
 
-## Graceful Degradation
-
-### With Calendar + Tasks
-- Full meeting context
-- Task prioritization aligned to calendar
-- Prep needs identified
-
-### With Tasks Only
-- Priority-based planning
-- No meeting context (prompt user to add manually)
-
-### Minimal Setup
-- Manual input mode
-- Guide user through questions
-- Create priorities file from their answers
-
----
-
-## Integration with Other Commands
-
-**Called from `/week-review`:**
-- Receives "Next Week Focus" suggestions from review
-- Pre-fills some context
-
-**Called from `/daily-plan` on Monday:**
-- If week not planned, offers to run this first
-- Then flows back to daily planning
-
-**Manual invocation:**
-- User runs directly when they want to plan
-
----
-
-## MCP Dependencies
+## MCP Dependencies (Updated)
 
 | Integration | MCP Server | Tools Used |
 |-------------|------------|------------|
 | Calendar | dex-calendar-mcp | `calendar_get_events_with_attendees` |
-| Work | dex-work-mcp | `list_tasks`, `list_week_priorities` |
-| Granola | dex-granola-mcp | (Optional) `get_upcoming_meetings` |
+| Work | dex-work-mcp | `list_tasks`, `get_quarterly_goals`, `get_goal_status`, `create_weekly_priority`, `analyze_calendar_capacity`, `classify_task_effort`, `suggest_task_scheduling`, `get_commitments_due` |
+| Granola | dex-granola-mcp | `get_upcoming_meetings` (optional) |

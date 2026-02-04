@@ -1,119 +1,146 @@
 ---
 name: triage
-description: >
-  Create bead(s) from a user prompt. Investigates relevance, checks for duplicates,
-  and may split complex requests into multiple focused beads. Use when given a
-  feature request, bug report, or task description that should be tracked.
-allowed-tools: "Read,Bash(bd:*),Grep,Glob,Task"
-version: "1.0.0"
-author: "flurdy"
+description: Triage and prioritize Linear backlog. Analyzes issues for staleness, blockers, and suggests priorities based on dependencies and capacity.
 ---
 
-# Triage - Smart Bead Creation from Prompts
+# Triage Skill - Backlog Analysis
 
-Analyze user requests and create appropriate beads with intelligent investigation.
+You are an expert at analyzing and prioritizing software backlogs.
 
 ## When to Use
 
-- User describes a feature, bug, or task to track
-- Raw idea needs analysis before becoming actionable work
-- Need to check if work is already tracked or duplicated
-- Complex request might need to be split into multiple beads
+Use this skill when:
+- The backlog needs cleanup
+- Prioritization decisions need to be made
+- Looking for stale or blocked issues
 
-## Usage
+## Process
 
-```
-/triage <description of feature, bug, or task>
-```
-
-## What This Skill Does
-
-1. **Investigate Relevance**
-   - Search codebase to understand if request is feasible
-   - Check if the feature/fix location is obvious
-   - Identify any related existing code
-
-2. **Check for Duplicates**
-   - Run `bd list --status=open` to see existing work
-   - Search bead titles and descriptions for similar items
-   - Flag potential duplicates or related beads
-
-3. **Analyze Complexity**
-   - Determine if single bead or multiple beads needed
-   - Identify natural task boundaries
-   - Consider dependencies between potential beads
-
-4. **Create Beads**
-   - Create focused, actionable beads
-   - Set appropriate type (task/bug/feature)
-   - Set reasonable priority (P2 default, adjust based on context)
-   - Add dependencies if creating multiple related beads
-
-5. **Report Summary**
-   - List newly created beads
-   - Show current open beads count
-   - Highlight any duplicates or related work found
-
-## Examples
-
+### CRITICAL: Setup First
+**Ensure team context is set:**
 ```bash
-# Simple feature request
-/triage Add dark mode toggle to settings page
-
-# Bug report
-/triage Users seeing 500 error when saving profile with emoji in name
-
-# Complex request (may split)
-/triage Implement user authentication with OAuth, session management, and password reset
+linear init  # If .linear.yaml doesn't exist
 ```
+
+1. **Fetch the Backlog**
+   ```bash
+   # Get all backlog issues (returns ALL issues, not just assigned)
+   linear issues list --state Backlog --format full --limit 100
+   ```
+
+2. **Analyze Dependencies**
+   ```bash
+   linear deps --team ENG
+   ```
+
+3. **Filter by Priority**
+   ```bash
+   # High priority backlog items
+   linear issues list --state Backlog --priority 1 --format full
+
+   # Urgent only (P1)
+   linear issues list --state Backlog --priority 1 --format full
+
+   # Customer issues
+   linear issues list --labels customer --format full
+
+   # Bugs in backlog
+   linear issues list --state Backlog --labels bug --format full
+   ```
+
+4. **Identify Issues**
+   Look for:
+   - **Stale issues**: No updates in 30+ days
+   - **Blocked issues**: Dependencies not resolved
+   - **Priority mismatches**: High priority but blocked
+   - **Orphaned issues**: No assignee, no activity
+
+5. **Generate Recommendations**
+
+## Analysis Framework
+
+### Staleness Check
+- Last updated > 30 days ago = Stale
+- Last updated > 60 days ago = Very stale (consider closing)
+- No activity + no assignee = Orphaned
+
+### Dependency Health
+- Blocked by completed issues = Unblock
+- Circular dependencies = Flag for resolution
+- Long blocking chains = Risk
+
+### Priority Assessment
+- P1/P2 but blocked = Escalate blocker
+- P3/P4 with no activity = Consider closing
+- No priority set = Needs triage
 
 ## Output Format
 
-After triage, provide:
+```
+BACKLOG TRIAGE: Team ENG
+════════════════════════════════════════
 
-1. **Investigation Summary**: What was checked, relevance assessment
-2. **Duplicate Check**: Any similar existing beads found
-3. **Created Beads**: List of new beads with IDs
-4. **Open Beads Summary**: Quick stats on current workload
+URGENT ATTENTION (3)
+────────────────────────────────────────
+ENG-101 [Stale 45d] Login bug - P1 but no activity
+ENG-102 [Blocked] Payment flow - blocked by ENG-99
+ENG-103 [Orphaned] API refactor - no owner
 
-## Implementation
+RECOMMENDED ACTIONS
+────────────────────────────────────────
+1. Unblock ENG-102: Complete ENG-99 or remove dependency
+2. Assign ENG-103: Needs owner or close if abandoned
+3. Update ENG-101: Stale P1 needs attention
 
-When invoked:
+HEALTH SUMMARY
+────────────────────────────────────────
+Total issues: 45
+Blocked: 8 (17%)
+Stale: 12 (26%)
+Healthy: 25 (55%)
+```
 
-1. Parse the user's description to understand intent (feature/bug/task)
+## Commands Used
 
-2. Quick codebase investigation:
-   ```bash
-   # Search for related code/files
-   # Check if area of code exists
-   ```
+```bash
+# FIRST: Ensure team context is set
+linear init  # If .linear.yaml doesn't exist
 
-3. Check for duplicates:
-   ```bash
-   bd list --status=open
-   bd search "<keywords from description>"
-   ```
+# Get backlog issues (returns ALL issues, not just assigned)
+linear issues list --state Backlog --format full --limit 100
 
-4. Decide on bead structure:
-   - Single focused task → one bead
-   - Multi-part work → multiple beads with dependencies
-   - Vague request → ask clarifying questions first
+# Filter by priority
+linear issues list --state Backlog --priority 1 --format full  # Urgent
+linear issues list --state Backlog --priority 2 --format full  # High
 
-5. Create bead(s):
-   ```bash
-   bd create --title="..." --type=feature|bug|task --priority=2 --description="..."
-   ```
+# Filter by labels
+linear issues list --labels customer --format full
+linear issues list --labels bug --format full
+linear issues list --state Backlog --labels "customer,bug" --format full
 
-6. If multiple beads, set dependencies:
-   ```bash
-   bd dep add <dependent> <dependency>
-   ```
+# Combine filters
+linear issues list --state Backlog --priority 1 --labels customer --format full
 
-7. Report results with summary of open beads
+# Check dependencies
+linear deps --team ENG
 
-## Priority Guidelines
+# Update priority
+linear issues update ENG-123 --priority 2
 
-- **P0-P1**: Critical/urgent (user explicitly says urgent, or blocking issue)
-- **P2**: Default for most work (standard feature/task)
-- **P3**: Lower priority (nice-to-have, minor improvements)
-- **P4**: Backlog (future work, ideas to consider)
+# Add a comment about triage
+linear issues comment ENG-123 --body "Triaged: Needs unblocking before sprint"
+```
+
+## Key Learnings
+
+- **`linear issues list` returns ALL issues** (not just assigned to you)
+- Use `--format full` for structured output
+- Combine filters: `--state Backlog --labels customer`
+- Priority values: 0=none, 1=urgent, 2=high, 3=normal, 4=low
+
+## Best Practices
+
+1. **Regular cadence** - Triage weekly or bi-weekly
+2. **Be decisive** - Close issues that won't be done
+3. **Document reasoning** - Add comments explaining priority changes
+4. **Involve stakeholders** - Flag issues needing product input

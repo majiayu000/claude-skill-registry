@@ -1,368 +1,269 @@
 ---
-name: moai-workflow-testing
-description: AI-powered enterprise web application testing orchestrator with Context7 integration, intelligent test generation, visual regression testing, cross-browser coordination, and automated QA workflows for modern web applications
-version: 2.0.0
-modularized: false
-scripts_enabled: true
-last_updated: 2025-11-30
-compliance_score: 66
-auto_trigger_keywords:
-  - testing
-  - workflow
-scripts:
-  - name: with_server.py
-    purpose: Start one or more servers, wait for them to be ready, run a command, then clean up.
-    type: python
-    command: uv run .claude/skills/moai-workflow-testing/scripts/with_server.py
-    zero_context: false
-    version: 1.0.0
-    last_updated: 2025-11-30
-color: red
+name: "moai-workflow-testing"
+description: "Comprehensive development workflow specialist combining TDD, debugging, performance optimization, code review, PR review, and quality assurance into unified development workflows"
+version: 2.3.0
+category: "workflow"
+modularized: true
+user-invocable: false
+context: fork
+agent: expert-testing
+tags: ['workflow', 'testing', 'debugging', 'performance', 'quality', 'tdd', 'review', 'pr-review']
+updated: 2026-01-11
+status: "active"
+author: "MoAI-ADK Team"
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
-## Quick Reference (30 seconds)
+# Development Workflow Specialist
 
-# Web Application Testing with Playwright
+## Quick Reference
 
-## 🚀 Two Approaches
+Unified Development Workflow provides comprehensive development lifecycle management combining TDD, AI-powered debugging, performance optimization, automated code review, and quality assurance into integrated workflows.
 
-### **Level 1: Basic Playwright Testing** (when you don't need AI)
+Core Capabilities:
 
-To test local web applications, write native Python Playwright scripts.
+- Test-Driven Development: RED-GREEN-REFACTOR cycle with best practice patterns
+- AI-Powered Debugging: Intelligent error analysis and solution recommendations
+- Performance Optimization: Profiling and bottleneck detection guidance
+- Automated Code Review: TRUST 5 validation framework for quality analysis
+- PR Code Review: Multi-agent pattern with Haiku eligibility check and Sonnet parallel review
+- Quality Assurance: Comprehensive testing and CI/CD integration patterns
+- Workflow Orchestration: End-to-end development process guidance
 
-**Helper Scripts Available**:
-- `scripts/with_server.py` - Manages server lifecycle (supports multiple servers)
+Workflow Progression: Debug stage leads to Refactor stage, which leads to Optimize stage, then Review stage, followed by Test stage, and finally Profile stage. Each stage benefits from AI-powered analysis and recommendations.
 
-**Always run scripts with `--help` first** to see usage. **DO NOT read the source until you try running the script first.** These scripts can be very large and thus pollute your context window. They exist to be called directly as black-box scripts.
+When to Use:
 
-### **Level 2: AI-Enhanced Testing** (AI-Enhanced methodology below)
+- Complete development lifecycle management
+- Enterprise-grade quality assurance implementation
+- Multi-language development projects
+- Performance-critical applications
+- Technical debt reduction initiatives
+- Automated testing and CI/CD integration
+- Pull request code review automation
 
 ---
-
-## 🧠 AI-Enhanced Testing Methodology (AI-TEST Framework)
-
-### **A** - **AI Test Pattern Recognition**
-```python
-class AITestPatternRecognizer:
-    """AI-powered test pattern detection and classification."""
-    
-    async def analyze_webapp_with_context7(self, webapp_url: str, context: dict) -> TestAnalysis:
-        """Analyze webapp using Context7 documentation and AI pattern matching."""
-        
-        # Get latest testing patterns from Context7
-        playwright_docs = await self.context7.get_library_docs(
-            context7_library_id="/microsoft/playwright",
-            topic="AI testing patterns automated test generation visual regression 2025",
-            tokens=5000
-        )
-        
-        # AI pattern classification
-        app_type = self.classify_application_type(webapp_url, context)
-        test_patterns = self.match_known_test_patterns(app_type, context)
-        
-        # Context7-enhanced analysis
-        context7_insights = self.extract_context7_patterns(app_type, playwright_docs)
-        
-        return TestAnalysis(
-            application_type=app_type,
-            confidence_score=self.calculate_confidence(app_type, test_patterns),
-            recommended_test_strategies=self.generate_test_strategies(app_type, test_patterns, context7_insights),
-            context7_references=context7_insights['references'],
-            automation_opportunities=self.identify_automation_opportunities(app_type, test_patterns)
-        )
-```
-
-
 
 ## Implementation Guide
 
-## 📋 Basic Level: Decision Tree (Without AI)
+### Core Concepts
 
-### Choose Your Approach
+Unified Development Philosophy:
 
-```
-User task → Is it static HTML?
-    ├─ Yes → Read HTML file directly to identify selectors
-    │         ├─ Success → Write Playwright script using selectors
-    │         └─ Fails/Incomplete → Treat as dynamic (below)
-    │
-    └─ No (dynamic webapp) → Is the server already running?
-        ├─ No → Run: python scripts/with_server.py --help
-        │        Then use the helper + write simplified Playwright script
-        │
-        └─ Yes → Reconnaissance-then-action:
-            1. Navigate and wait for networkidle
-            2. Take screenshot or inspect DOM
-            3. Identify selectors from rendered state
-            4. Execute actions with discovered selectors
-```
+- Integrates all aspects of development into cohesive workflow
+- AI-powered assistance for complex decision-making
+- Industry best practices integration for optimal patterns
+- Continuous feedback loops between workflow stages
+- Automated quality gates and validation
 
-### Example: Using with_server.py
+Workflow Components:
 
-**Single server:**
-```bash
-python scripts/with_server.py --server "npm run dev" --port 5173 -- python your_automation.py
-```
+Component 1 - AI-Powered Debugging: The debugging component provides intelligent error classification and solution recommendations. When an error occurs, the system analyzes the error type, stack trace, and surrounding context to identify root causes and suggest appropriate fixes. The debugger references current best practices and common error resolution patterns.
 
-**Multiple servers (backend + frontend):**
-```bash
-python scripts/with_server.py \
-  --server "cd backend && python server.py" --port 3000 \
-  --server "cd frontend && npm run dev" --port 5173 \
-  -- python your_automation.py
-```
+Component 2 - Smart Refactoring: The refactoring component performs technical debt analysis and identifies safe automated transformation opportunities. It evaluates code complexity, duplication, and maintainability metrics to recommend specific refactoring actions with risk assessments.
 
-### Automation Script Template
+Component 3 - Performance Optimization: The performance component provides real-time monitoring guidance and bottleneck detection. It helps identify CPU-intensive operations, memory leaks, and I/O bottlenecks, then recommends specific optimization strategies based on the identified issues.
 
-```python
-from playwright.sync_api import sync_playwright
+Component 4 - TDD Cycle Management: The TDD component guides the RED-GREEN-REFACTOR cycle with enhanced test generation. It helps write failing tests first, implement minimal code to pass, then refactor while maintaining test coverage.
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
-    page = browser.new_page()
-    page.goto('http://localhost:5173')
-    page.wait_for_load_state('networkidle')  # CRITICAL: Wait for JS
-    # ... your automation logic
-    browser.close()
-```
+Component 5 - Automated Code Review: The code review component applies TRUST 5 framework validation with AI-powered quality analysis. It evaluates code against five trust dimensions and provides actionable improvement recommendations.
 
-### Reconnaissance-Then-Action Pattern
+### TRUST 5 Framework
 
-1. **Inspect rendered DOM**:
-   ```python
-   page.screenshot(path='/tmp/inspect.png', full_page=True)
-   content = page.content()
-   page.locator('button').all()
-   ```
+The TRUST 5 framework is a conceptual quality assessment model with five dimensions. This framework provides guidance for evaluating code quality, not an implemented module.
 
-2. **Identify selectors** from inspection results
+Dimension 1 - Testability: Evaluate whether the code can be effectively tested. Consider whether functions are pure and deterministic, whether dependencies are injectable, and whether the code is modular enough for unit testing. Scoring ranges from low testability requiring significant refactoring to high testability with excellent test coverage support.
 
-3. **Execute actions** using discovered selectors
+Dimension 2 - Readability: Assess how easily the code can be understood by others. Consider whether variable and function names are descriptive, whether the code structure is logical, and whether complex operations are documented. Scoring evaluates naming conventions, code organization, and documentation quality.
 
-### ✅ Basic Level Best Practices
+Dimension 3 - Understandability: Evaluate the conceptual clarity of the implementation. Consider whether the business logic is clearly expressed, whether abstractions are appropriate, and whether a new developer can understand the code quickly. This goes beyond surface readability to assess architectural clarity.
 
-- **Use scripts as black boxes** - Call `with_server.py` directly, don't read source
-- Use `sync_playwright()` for synchronous scripts
-- Always close the browser when done
-- Use descriptive selectors: `text=`, `role=`, CSS selectors, or IDs
-- **Always wait for `networkidle` on dynamic apps** before inspection
-- Add appropriate waits: `page.wait_for_selector()` or `page.wait_for_timeout()`
+Dimension 4 - Security: Assess security posture and vulnerability exposure. Consider whether inputs are validated, whether secrets are properly managed, and whether common vulnerability patterns are avoided including injection, XSS, and CSRF. Scoring evaluates adherence to security best practices.
+
+Dimension 5 - Transparency: Evaluate operational visibility and debuggability. Consider whether error handling is comprehensive, whether logs are meaningful and structured, and whether issues can be traced through the system. Scoring assesses observability and troubleshooting capabilities.
+
+Overall TRUST Score Calculation: The overall TRUST score combines all five dimensions using weighted averaging. Critical issues in any dimension can override the average, ensuring security or testability problems are not masked by high scores elsewhere. A passing score typically requires minimum thresholds in each dimension plus an acceptable weighted average.
+
+### Basic Workflow Implementation
+
+Debugging Workflow Process:
+
+- Step 1: Capture the error with full context including stack trace, environment, and recent code changes
+- Step 2: Classify the error type as syntax, runtime, logic, integration, or performance
+- Step 3: Analyze the error pattern against known issue databases and best practices
+- Step 4: Generate solution candidates ranked by likelihood of success
+- Step 5: Apply the recommended fix and verify resolution
+- Step 6: Document the issue and solution for future reference
+
+Refactoring Workflow Process:
+
+- Step 1: Analyze the target codebase for code smells and technical debt indicators
+- Step 2: Calculate complexity metrics including cyclomatic complexity and coupling
+- Step 3: Identify refactoring opportunities with associated risk levels
+- Step 4: Generate a refactoring plan with prioritized actions
+- Step 5: Apply refactoring transformations in safe increments
+- Step 6: Verify behavior preservation through test execution
+
+Performance Optimization Process:
+
+- Step 1: Configure profiling for target metrics including CPU, memory, I/O, and network
+- Step 2: Execute profiling runs under representative load conditions
+- Step 3: Analyze profiling results to identify bottlenecks
+- Step 4: Generate optimization recommendations with expected impact estimates
+- Step 5: Apply optimizations in isolation to measure individual effects
+- Step 6: Validate overall performance improvement
+
+TDD Cycle Process:
+
+- RED Phase: Write a failing test that defines the desired behavior. The test should clearly express what the code should do, not how it should do it. Run the test to confirm it fails for the expected reason.
+- GREEN Phase: Write the minimum code necessary to make the test pass. Avoid over-engineering or premature optimization. Focus solely on satisfying the test requirements.
+- REFACTOR Phase: Improve the code structure while keeping all tests passing. Apply design patterns, extract common functionality, and improve naming. Run tests after each refactoring step.
+
+Code Review Process:
+
+- Step 1: Scan the codebase to identify files requiring review
+- Step 2: Apply TRUST 5 framework analysis to each file
+- Step 3: Identify critical issues requiring immediate attention
+- Step 4: Calculate per-file and aggregate quality scores
+- Step 5: Generate actionable recommendations with priority rankings
+- Step 6: Create a summary report with improvement roadmap
+
+PR Code Review Process:
+
+- Step 1: Eligibility Check using Haiku agent to filter PRs, skipping closed, draft, already reviewed, and trivial changes
+- Step 2: Gather Context by finding CLAUDE.md files in modified directories and summarizing PR changes
+- Step 3: Parallel Review Agents using five Sonnet agents for independent analysis covering CLAUDE.md compliance, obvious bugs, git blame context, previous comments, and code comment compliance
+- Step 4: Confidence Scoring from 0 to 100 for each detected issue where 0 indicates false positive, 25 indicates somewhat confident, 50 indicates moderately confident, 75 indicates highly confident, and 100 indicates absolutely certain
+- Step 5: Filter and Report by removing issues below 80 confidence threshold and posting via gh CLI
+
+### Common Use Cases
+
+Enterprise Development Workflow: For enterprise applications, the workflow integrates quality gates at each stage. Before deployment, the code must pass minimum TRUST score thresholds, have zero critical issues identified, and meet required test coverage percentages. The quality gates configuration specifies minimum trust scores (typically 0.85), maximum allowed critical issues (typically zero), and required coverage levels (typically 80 percent).
+
+Performance-Critical Applications: For performance-sensitive systems, the workflow emphasizes profiling and optimization stages. Performance thresholds define maximum acceptable response times, memory usage limits, and minimum throughput requirements. The workflow provides percentage improvement tracking and specific optimization recommendations.
 
 ---
 
-## 🚀 Revolutionary AI Testing Capabilities
+## Advanced Features
 
-### **AI-Powered Test Generation with Context7**
-- 🧠 **Intelligent Test Pattern Recognition** with ML-based classification
-- 🎯 **AI-Enhanced Test Generation** using Context7 latest documentation
-- 🔍 **Visual Regression Testing** with AI-powered diff analysis
-- ⚡ **Real-Time Cross-Browser Coordination** across Chrome, Firefox, Safari
-- 🤖 **Automated QA Workflows** with Context7 best practices
-- 📊 **Performance Test Integration** with AI profiling
-- 🔮 **Predictive Test Maintenance** using ML pattern analysis
+### Workflow Integration Patterns
 
-### **Context7 Integration Features**
-- **Live Documentation Fetching**: Get latest Playwright patterns from `/microsoft/playwright`
-- **AI Pattern Matching**: Match test scenarios against Context7 knowledge base
-- **Best Practice Integration**: Apply latest testing techniques from official docs
-- **Version-Aware Testing**: Context7 provides version-specific patterns
-- **Community Knowledge Integration**: Leverage collective testing wisdom
+Continuous Integration Integration: The workflow integrates with CI/CD pipelines through a multi-stage validation process.
 
+Stage 1 - Code Quality Validation: Run the code review component and verify results meet quality standards. If the quality check fails, the pipeline terminates with a quality failure report.
 
-## 🎯 When to Use
+Stage 2 - Testing Validation: Execute the full test suite including unit, integration, and end-to-end tests. If any tests fail, the pipeline terminates with a test failure report.
 
-**Basic Level Triggers** (without AI):
-- Simple browser automation for static HTML
-- Testing with already-running servers
-- Quick UI interactions (click, type, wait)
-- Selector discovery and validation
-- Context budget constraints (avoid AI overhead)
+Stage 3 - Performance Validation: Run performance tests and compare results against defined thresholds. If performance standards are not met, the pipeline terminates with a performance failure report.
 
-**AI Automatic Triggers**:
-- Web application deployment verification
-- UI/UX regression detection requirements
-- Cross-browser compatibility testing
-- Performance degradation detection
-- Complex user workflow automation
-- API integration testing scenarios
+Stage 4 - Security Validation: Execute security analysis including static analysis and dependency scanning. If critical vulnerabilities are found, the pipeline terminates with a security failure report.
 
-**Manual AI Invocation**:
-- "Generate comprehensive tests for this webapp"
-- "Create visual regression tests with AI"
-- "Automate cross-browser testing workflows"
-- "Generate performance tests with Context7"
-- "Create intelligent QA test suites"
+Upon passing all stages, the pipeline generates a success report and proceeds to deployment.
 
+### Quality Gate Configuration
 
-## 🤖 Context7-Enhanced Testing Patterns
+Quality gates define the criteria that must be met at each workflow stage. Gates can be configured with different strictness levels.
 
-### AI-Enhanced Visual Regression Testing
-```python
-class AIVisualRegressionTester:
-    """AI-powered visual regression testing with Context7 pattern matching."""
-    
-    async def test_with_context7_ai(self, baseline_url: str, current_url: str) -> VisualRegressionResult:
-        """Perform visual regression testing using AI and Context7 patterns."""
-        
-        # Get Context7 visual testing patterns
-        context7_patterns = await self.context7.get_library_docs(
-            context7_library_id="/microsoft/playwright",
-            topic="visual regression testing screenshot comparison patterns",
-            tokens=3000
-        )
-        
-        # AI-powered visual analysis
-        visual_analysis = await self.analyze_visual_differences_with_ai(
-            baseline_url, current_url, context7_patterns
-        )
-        
-        return VisualRegressionResult(
-            visual_analysis=visual_analysis,
-            recommended_actions=self.generate_regression_fixes(visual_analysis)
-        )
-```
+Strict Mode: All quality dimensions must meet or exceed thresholds. Any critical issue blocks progression. Full test coverage requirements apply.
 
+Standard Mode: Average quality score must meet threshold. Critical issues block progression, but warnings are allowed. Standard coverage requirements apply.
 
-## 🎯 AI Testing Best Practices
+Lenient Mode: Only critical blocking issues prevent progression. Quality scores generate warnings but do not block. Reduced coverage requirements apply.
 
-### ✅ **DO** - AI-Enhanced Testing
-- Use Context7 integration for latest testing patterns
-- Apply AI pattern recognition for comprehensive test coverage
-- Leverage visual regression testing with AI analysis
-- Use AI-coordinated cross-browser testing with Context7 workflows
-- Apply Context7-validated testing solutions
+Gate configuration includes threshold values for each TRUST dimension, maximum allowed issues by severity, required test coverage levels, and performance benchmark targets.
 
-### ❌ **DON'T** - Common AI Testing Mistakes
-- Ignore Context7 best practices and testing patterns
-- Apply AI-generated tests without validation
-- Skip AI confidence threshold checks for test reliability
+### Multi-Language Support
 
+The workflow supports development across multiple programming languages with language-specific adaptations.
 
-## 🤖 Context7 Integration Examples
+Python Projects: Integration with pytest for testing, pylint and flake8 for static analysis, bandit for security scanning, and cProfile or memory_profiler for performance analysis.
 
-### Context7-Enhanced AI Testing
-```python
-class Context7AITester:
-    def __init__(self):
-        self.context7_client = Context7Client()
-        self.ai_engine = AIEngine()
-    
-    async def test_with_context7_ai(self, webapp_url: str) -> Context7AITestResult:
-        # Get latest testing patterns from Context7
-        playwright_patterns = await self.context7_client.get_library_docs(
-            context7_library_id="/microsoft/playwright",
-            topic="AI testing patterns automated test generation visual regression 2025",
-            tokens=5000
-        )
-        
-        # AI-enhanced test generation
-        ai_tests = self.ai_engine.generate_tests_with_patterns(webapp_url, playwright_patterns)
-        
-        return Context7AITestResult(
-            ai_tests=ai_tests,
-            context7_patterns=playwright_patterns,
-            confidence_score=ai_tests.confidence
-        )
-```
+JavaScript and TypeScript Projects: Integration with Jest or Vitest for testing, ESLint for static analysis, npm audit for security scanning, and Chrome DevTools or lighthouse for performance analysis.
 
+Go Projects: Integration with go test for testing, golint and staticcheck for static analysis, gosec for security scanning, and pprof for performance analysis.
 
-## 🔗 Enterprise Integration
+Rust Projects: Integration with cargo test for testing, clippy for static analysis, cargo audit for security scanning, and flamegraph for performance analysis.
 
-### CI/CD Pipeline Integration
-```yaml
-# AI testing integration in CI/CD
-ai_testing_stage:
-  - name: AI Test Generation
-    uses: moai-workflow-testing
-    with:
-      context7_integration: true
-      ai_pattern_recognition: true
-      visual_regression: true
-      cross_browser_testing: true
-      
-  - name: Context7 Validation
-    uses: moai-context7-integration
-    with:
-      validate_tests: true
-      apply_best_practices: true
-```
+### PR Code Review Multi-Agent Pattern
 
+The PR Code Review process uses a multi-agent architecture following the official Claude Code plugin pattern.
 
-## 📊 Success Metrics & KPIs
+Eligibility Check Agent using Haiku: The Haiku agent performs lightweight filtering to avoid unnecessary reviews. It checks the PR state and metadata to determine if review is warranted. Skip conditions include closed PRs, draft PRs, PRs already reviewed by bot, trivial changes like typo fixes, and automated dependency updates.
 
-### AI Testing Effectiveness
-- **Test Coverage**: 95% coverage with AI-enhanced test generation
-- **Bug Detection Accuracy**: 90% accuracy with AI pattern recognition
-- **Visual Regression**: 85% success rate for AI-detected UI issues
-- **Cross-Browser Compatibility**: 80% faster compatibility testing
+Context Gathering: Before launching review agents, the system gathers relevant context by finding CLAUDE.md files in directories containing modified code to understand project-specific coding standards. It also generates a concise summary of PR changes including files modified, lines added or removed, and overall impact assessment.
 
+Parallel Review Agents using five Sonnet instances: Five Sonnet agents run in parallel, each focusing on a specific review dimension. Agent 1 audits CLAUDE.md compliance checking for violations of documented coding standards and conventions. Agent 2 scans for obvious bugs including logic errors, null reference risks, and resource leaks. Agent 3 provides git blame and history context to identify recent changes and potential patterns. Agent 4 checks previous PR comments for recurring issues and unresolved feedback. Agent 5 validates code comment compliance ensuring comments are accurate and helpful.
 
-## Alfred 에이전트와의 완벽한 연동
+Confidence Scoring System: Each detected issue receives a confidence score from 0 to 100. A score of 0 indicates a false positive with no confidence. A score of 25 means somewhat confident but might be real. A score of 50 indicates moderately confident that the issue is real but minor. A score of 75 means highly confident that the issue is very likely real. A score of 100 indicates absolutely certain that the issue is definitely real.
 
-### 4-Step 워크플로우 통합
-- **Step 1**: 사용자 요청 분석 및 AI 테스트 전략 수립
-- **Step 2**: Context7 기반 AI 테스트 생성 및 최적화
-- **Step 3**: 자동화된 테스트 실행 및 결과 분석
-- **Step 4**: 품질 보증 및 개선 제안 생성
+Filter and Report Stage: Issues below the 80 confidence threshold are filtered out to reduce noise. Remaining issues are formatted and posted to the PR using the GitHub CLI. The output format follows a standardized markdown structure with issue count, numbered list of issues with descriptions, and direct links to code with specific commit SHA and line range.
 
-### 다른 에이전트들과의 협업
-- `moai-essentials-debug`: 테스트 실패 시 AI 디버깅 연동
-- `moai-essentials-perf`: 성능 테스트 통합
-- `moai-essentials-review`: 코드 리뷰와 테스트 커버리지 연동
-- `moai-foundation-trust`: 품질 보증 및 TRUST 5 원칙 적용
+Example PR Review Output: The review output begins with a Code review header, followed by the count of found issues. Each issue is numbered and includes a description of the problem with reference to the relevant CLAUDE.md rule, followed by a link to the specific file, line range, and commit SHA in the pull request.
 
-
-## 한국어 지원 및 UX 최적화
-
-### Perfect Gentleman 스타일 통합
-- 사용자 인터페이스 한국어 완벽 지원
-- `.moai/config/config.json` conversation_language 자동 적용
-- AI 테스트 결과 한국어 상세 리포트
-- 개발자 친화적인 한국어 가이드 및 예제
-
-
-**End of AI-Powered Enterprise Web Application Testing Skill **  
-*Enhanced with Context7 MCP integration and revolutionary AI capabilities*
-
+---
 
 ## Works Well With
 
-- `moai-essentials-debug` (AI-powered debugging integration)
-- `moai-essentials-perf` (AI performance testing optimization)
-- `moai-essentials-refactor` (AI test code refactoring)
-- `moai-essentials-review` (AI test code review)
-- `moai-foundation-trust` (AI quality assurance)
-- `moai-context7-integration` (latest Playwright patterns and best practices)
-- Context7 MCP (latest testing patterns and documentation)
+- moai-domain-backend: Backend development workflows and API testing patterns
+- moai-domain-frontend: Frontend development workflows and UI testing strategies
+- moai-foundation-core: Core SPEC system and workflow management integration
+- moai-platform-supabase: Supabase-specific testing patterns and database testing
+- moai-platform-vercel: Vercel deployment testing and edge function validation
+- moai-platform-firebase-auth: Firebase authentication testing patterns
+- moai-workflow-project: Project management and documentation workflows
 
+---
 
-## Advanced Patterns
+## Technology Stack Reference
 
-## 🎯 Advanced Examples
+The workflow leverages industry-standard tools for each capability area.
 
-### AI-Powered E2E Testing
-```python
-async def test_e2e_with_ai_context7():
-    """Test complete user journey using Context7 patterns."""
-    
-    # Get Context7 E2E testing patterns
-    workflow = await context7.get_library_docs(
-        context7_library_id="/microsoft/playwright",
-        topic="end-to-end testing user journey automation",
-        tokens=4000
-    )
-    
-    # Apply Context7 testing sequence
-    test_session = apply_context7_workflow(
-        workflow['testing_sequence'],
-        browsers=['chromium', 'firefox', 'webkit']
-    )
-    
-    # AI coordination across browsers
-    ai_coordinator = AITestCoordinator(test_session)
-    
-    # Execute coordinated testing
-    result = await ai_coordinator.coordinate_cross_browser_testing()
-    
-    return result
-```
+Analysis Libraries: cProfile provides Python profiling and performance analysis. memory_profiler enables memory usage analysis and optimization. psutil supports system resource monitoring. line_profiler offers line-by-line performance profiling.
+
+Static Analysis Tools: pylint performs comprehensive code analysis and quality checks. flake8 enforces style guide compliance and error detection. bandit scans for security vulnerabilities. mypy validates static types.
+
+Testing Frameworks: pytest provides advanced testing with fixtures and plugins. unittest offers standard library testing capabilities. coverage measures code coverage and identifies untested paths.
+
+---
+
+## Integration Patterns
+
+### GitHub Actions Integration
+
+The workflow integrates with GitHub Actions through a multi-step job configuration.
+
+Job Configuration Steps:
+
+- Step 1: Check out the repository using actions/checkout
+- Step 2: Set up the Python environment using actions/setup-python with the target Python version
+- Step 3: Install project dependencies including testing and analysis tools
+- Step 4: Execute the quality validation workflow with strict quality gates
+- Step 5: Run the test suite with coverage reporting
+- Step 6: Perform performance benchmarking against baseline metrics
+- Step 7: Execute security scanning and vulnerability detection
+- Step 8: Upload workflow results as job artifacts for review
+
+The job can be configured to run on push and pull request events, with matrix testing across multiple Python versions if needed.
+
+### Docker Integration
+
+For containerized environments, the workflow executes within Docker containers.
+
+Container Configuration: Base the image on a Python slim variant for minimal size. Install project dependencies from requirements file. Copy project source code into the container. Configure entrypoint to execute the complete workflow sequence. Mount volumes for result output if persistent storage is needed.
+
+The containerized workflow ensures consistent execution environments across development, testing, and production systems.
+
+---
+
+Status: Production Ready
+Last Updated: 2026-01-11
+Maintained by: MoAI-ADK Development Workflow Team
+Version: 2.3.0 (CLAUDE.md Documentation Standards Compliance)

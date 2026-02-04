@@ -1,25 +1,31 @@
 ---
 name: ci-monitoring
-description: Use after creating PR - monitor CI pipeline, resolve failures, address review feedback, and merge when all gates pass
-allowed-tools:
-  - Bash
-  - Read
-  - Edit
-  - Grep
-  - Glob
-  - mcp__github__*
-model: opus
+description: Use after creating PR - monitor CI pipeline, resolve failures cyclically until green or issue is identified as unresolvable
 ---
 
 # CI Monitoring
 
-Monitor CI pipeline, resolve failures, address review feedback, and merge when ready.
+## Overview
 
-**Core principle:** CI failures AND unresolved review feedback are blockers.
+Monitor CI pipeline and resolve failures until green.
 
-**Announce:** "I'm monitoring CI and review feedback, and will resolve any issues before merging."
+**CRITICAL: CI is validation, not discovery.**
 
-## The Loop
+> **If CI finds a bug you didn't find locally, your local testing was insufficient.**
+>
+> Before blaming CI, ask yourself:
+> 1. Did you run all tests locally?
+> 2. Did you test against local services (postgres, redis)?
+> 3. Did you run the same checks CI runs?
+> 4. Did you run integration tests, not just unit tests with mocks?
+>
+> CI should only fail for: environment differences, flaky tests, or infrastructure issues—never for bugs you could have caught locally.
+
+**Core principle:** CI failures are blockers. But they should never be surprises.
+
+**Announce at start:** "I'm monitoring CI and will resolve any failures."
+
+## The CI Loop
 
 ```
 PR Created
@@ -29,118 +35,346 @@ PR Created
 │ Wait for CI │
 └──────┬──────┘
        │
-   ┌───┴───┐
-   │       │
- Green   Red ──► Fix → Push → Loop back
-   │
-   ▼
-┌──────────────────────┐
-│ Unresolved Reviews?  │
-└──────────┬───────────┘
-       ┌───┴───┐
-       │       │
-     None    Yes ──► For each: Evaluate → Fix/Pushback → Reply → Resolve → Push → Loop back
-       │
        ▼
 ┌─────────────┐
-│ MERGE PR    │
-└─────────────┘
+│ CI Status?  │
+└──────┬──────┘
+       │
+   ┌───┴───┐
+   │       │
+ Green   Red/Failed
+   │       │
+   ▼       ▼
+┌─────────┐  ┌─────────────┐
+│ MERGE   │  │ Diagnose    │
+│ THE PR  │  │ failure     │
+└────┬────┘  └──────┬──────┘
+     │              │
+     ▼              ▼
+┌─────────┐  ┌─────────────┐
+│ Continue│  │ Fixable?    │
+│ to next │  └──────┬──────┘
+│ issue   │         │
+└─────────┘    ┌────┴────┐
+               │         │
+              Yes        No
+               │         │
+               ▼         ▼
+          ┌─────────┐  ┌─────────────┐
+          │ Fix and │  │ Document as │
+          │ push    │  │ unresolvable│
+          └────┬────┘  └─────────────┘
+               │
+               └────► Back to "Wait for CI"
 ```
 
-## Gate: Green CI + No Unresolved Reviews = Merge
+## CRITICAL: Green CI = Merge Immediately
 
-When both conditions met, merge immediately:
+**When CI passes, you MUST merge the PR and continue working.**
+
+Do NOT:
+- Stop and report "CI is green, ready for review"
+- Wait for user confirmation
+- Summarize and ask what to do next
+
+DO:
+- Merge the PR immediately: `gh pr merge [PR_NUMBER] --squash --delete-branch`
+- Mark the linked issue as Done
+- Continue to the next issue in scope
 
 ```bash
+# When CI passes
 gh pr merge [PR_NUMBER] --squash --delete-branch
+
+# Update linked issue status
 gh issue edit [ISSUE_NUMBER] --remove-label "status:in-review" --add-label "status:done"
+
+# Continue to next issue (do not stop)
 ```
 
-Do NOT stop to report or ask. Continue to next issue.
+**The only exception:** PRs with `do-not-merge` label require explicit user action.
 
-**Exception:** PRs with `do-not-merge` label.
+## Checking CI Status
 
-## Checking CI
+### Using GitHub CLI
 
 ```bash
+# Check all CI checks
 gh pr checks [PR_NUMBER]
+
+# Watch CI in real-time
+gh pr checks [PR_NUMBER] --watch
+
+# Get detailed status
+gh pr view [PR_NUMBER] --json statusCheckRollup
+```
+
+### Expected Output
+
+```
+All checks were successful
+0 failing, 0 pending, 5 passing
+
+CHECKS
+✓  build          1m23s
+✓  lint           45s
+✓  test           3m12s
+✓  typecheck      1m05s
+✓  security-scan  2m30s
+```
+
+## Handling Failures
+
+### Step 1: Identify the Failure
+
+```bash
+# Get failed check details
+gh pr checks [PR_NUMBER]
+
+# View workflow run logs
+gh run view [RUN_ID] --log-failed
+```
+
+### Step 2: Diagnose the Cause
+
+Common failure types:
+
+| Type | Symptoms | Cause |
+|------|----------|-------|
+| Test failure | `FAIL` in test output | Code bug or test bug |
+| Build failure | Compilation errors | Type errors, syntax errors |
+| Lint failure | Style violations | Formatting, conventions |
+| Typecheck failure | Type errors | Missing types, wrong types |
+| Timeout | Job exceeded time limit | Performance issue or stuck test |
+| Flaky test | Passes locally, fails CI | Race condition, environment difference |
+
+### Step 3: Fix the Issue
+
+#### Test Failures
+
+```bash
+# Reproduce locally
+pnpm test
+
+# Run specific failing test
+pnpm test --grep "test name"
+
+# Fix the code or test
+# Commit and push
+```
+
+#### Build Failures
+
+```bash
+# Reproduce locally
+pnpm build
+
+# Fix compilation errors
+# Commit and push
+```
+
+#### Lint Failures
+
+```bash
+# Check lint errors
+pnpm lint
+
+# Auto-fix what's possible
+pnpm lint:fix
+
+# Manually fix remaining
+# Commit and push
+```
+
+#### Type Failures
+
+```bash
+# Check type errors
+pnpm typecheck
+
+# Fix type issues
+# Commit and push
+```
+
+### Step 4: Push Fix and Wait
+
+```bash
+# Commit fix
+git add .
+git commit -m "fix(ci): Resolve test failure in user validation"
+
+# Push
+git push
+
+# Wait for CI again
 gh pr checks [PR_NUMBER] --watch
 ```
 
-## Handling CI Failures
+### Step 5: Repeat Until Green
 
-1. Identify: `gh run view [RUN_ID] --log-failed`
-2. Reproduce locally
-3. Fix and push
-4. Wait for CI, repeat if needed
+Loop through diagnose → fix → push → wait until all checks pass.
 
-**Detailed patterns:** See [reference/ci-failures.md](reference/ci-failures.md)
+## Flaky Tests
 
-## Handling Review Feedback
+### Identifying Flakiness
 
-After CI green, check for unresolved threads:
-
-```bash
-gh api graphql -f query='
-query($owner: String!, $repo: String!, $pr: Int!) {
-  repository(owner: $owner, name: $repo) {
-    pullRequest(number: $pr) {
-      reviewThreads(first: 100) {
-        nodes { id isResolved isOutdated comments(first: 1) { nodes { body author { login } path } } }
-      }
-    }
-  }
-}' -f owner="[OWNER]" -f repo="[REPO]" -F pr=[PR_NUMBER]
+```
+Test passes locally
+Test fails in CI
+Test passes on retry in CI
 ```
 
-For each unresolved thread (`isResolved: false`):
+### Handling Flakiness
 
-| Step | Action |
-|------|--------|
-| 1 | Read and understand feedback |
-| 2 | Verify: technically valid for this codebase? |
-| 3 | Fix, defer (with issue), or push back with reasoning |
-| 4 | Reply in thread: `gh api repos/.../pulls/.../comments/[ID]/replies -f body="..."` |
-| 5 | Resolve: `gh api graphql -f query='mutation { resolveReviewThread(...) }'` |
-| 6 | Push fixes, loop back to CI |
+1. **Don't just retry** - Find the root cause
+2. **Check for race conditions** - Timing-dependent code
+3. **Check for environment differences** - Paths, env vars, services
+4. **Check for state pollution** - Tests affecting each other
 
-**Detailed commands:** See [reference/review-feedback.md](reference/review-feedback.md)
+```typescript
+// Common flaky pattern: timing dependency
+// BAD
+await saveData();
+await delay(100);  // Hoping 100ms is enough
+const result = await loadData();
 
-### Security Feedback
-
-Security flags from automated reviewers (Codex, CodeRabbit, etc.) should be treated seriously and verified against the codebase.
-
-## Best Practices
-
-**Run locally first.** CI validates, doesn't discover.
-
-```bash
-pnpm lint && pnpm typecheck && pnpm test && pnpm build
+// GOOD: Wait for condition
+await saveData();
+await waitFor(() => dataExists());
+const result = await loadData();
 ```
 
-If CI finds bugs you didn't find locally, your local testing was insufficient.
+## Unresolvable Failures
+
+Sometimes failures can't be fixed in the current PR:
+
+### Legitimate Unresolvable Cases
+
+| Case | Example |
+|------|---------|
+| CI infrastructure issue | Service down, rate limited |
+| Pre-existing flaky test | Not introduced by this PR |
+| Upstream dependency issue | External API changed |
+| Requires manual intervention | Needs secrets, permissions |
+
+### Process for Unresolvable
+
+1. **Document the issue**
+
+```bash
+gh pr comment [PR_NUMBER] --body "## CI Issue
+
+The \`security-scan\` check is failing due to a known issue with the scanner service (see #999).
+
+This is not related to changes in this PR. The scan passes when run locally.
+
+Requesting bypass approval from @maintainer."
+```
+
+2. **Create issue if new**
+
+```bash
+gh issue create \
+  --title "CI: Security scanner service timeout" \
+  --body "The security scanner is timing out in CI..."
+```
+
+3. **Request bypass if appropriate**
+
+Some teams allow merging with known infrastructure failures.
+
+4. **Do NOT merge with real failures**
+
+If the failure is from your code, it must be fixed.
+
+## CI Best Practices
+
+### Run Locally First (MANDATORY)
+
+**CI is the last resort, not the first check.**
+
+Before pushing, run EVERYTHING CI will run:
+
+```bash
+# Run the same checks CI will run
+pnpm lint
+pnpm typecheck
+pnpm test              # Unit tests
+pnpm test:integration  # Integration tests against real services
+pnpm build
+
+# If you have database changes
+docker-compose up -d postgres
+pnpm migrate
+```
+
+**If your project has docker-compose services:**
+- Start them before testing: `docker-compose up -d`
+- Run integration tests against real services
+- Verify migrations apply to real database
+- Don't rely on mocks alone
+
+**Skill:** `local-service-testing`
+
+### Commit Incrementally
+
+Don't push 10 commits at once. Push smaller changes:
+
+```bash
+# Small fix, push, verify
+git push
+
+# Wait for CI
+gh pr checks --watch
+
+# Then next change
+```
+
+### Monitor Actively
+
+Don't "push and forget":
+
+```bash
+# Watch CI after each push
+gh pr checks [PR_NUMBER] --watch
+```
 
 ## Checklist
 
-CI:
-- [ ] All checks green
-- [ ] Failures fixed (if any)
+For each CI run:
 
-Review feedback:
-- [ ] All threads resolved
-- [ ] Each: evaluated → fixed/pushback → replied → resolved
+- [ ] Waited for CI to complete
+- [ ] All checks examined
+- [ ] Failures diagnosed (if any)
+- [ ] Fixes implemented (if needed)
+- [ ] Re-pushed and re-checked (if fixed)
+- [ ] All green
 
-Merge:
-- [ ] `gh pr merge --squash --delete-branch`
-- [ ] Issue marked Done
-- [ ] Continue to next issue
+When CI is green:
+
+- [ ] **PR merged immediately** (`gh pr merge --squash --delete-branch`)
+- [ ] Linked issue marked Done
+- [ ] **Continued to next issue** (do NOT stop and report)
+
+For unresolvable issues:
+
+- [ ] Root cause identified
+- [ ] Not caused by PR changes
+- [ ] Documented in PR comment
+- [ ] Issue created if new problem
+- [ ] Bypass approval requested if appropriate
 
 ## Integration
 
-Called by: `issue-driven-development`, `autonomous-orchestration`
+This skill is called by:
+- `issue-driven-development` - Step 13
+- `autonomous-orchestration` - Main loop and bootstrap
 
-Follows: `pr-creation`
+This skill follows:
+- `pr-creation` - PR exists
 
-Uses: `receiving-code-review` (principles for evaluating feedback)
+This skill completes:
+- The PR lifecycle - merge is the final step, not "verification-before-merge"
 
-Completes: PR lifecycle
+This skill may trigger:
+- `error-recovery` - If CI reveals deeper issues

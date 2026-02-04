@@ -1,6 +1,10 @@
 ---
 name: building-chat-widgets
-description: Build interactive AI chat widgets with buttons, forms, and bidirectional actions. Use when creating agentic UIs with clickable widgets, entity tagging (@mentions), composer tools, or server-handled widget actions. Covers full widget lifecycle. NOT when building simple text-only chat without interactive elements.
+description: |
+  Build interactive AI chat widgets with buttons, forms, and bidirectional actions.
+  Use when creating agentic UIs with clickable widgets, entity tagging (@mentions),
+  composer tools, or server-handled widget actions. Covers full widget lifecycle.
+  NOT when building simple text-only chat without interactive elements.
 ---
 
 # Building Chat Widgets

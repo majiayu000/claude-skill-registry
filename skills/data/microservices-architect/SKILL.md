@@ -1,102 +1,75 @@
 ---
 name: microservices-architect
-description: Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns. Invoke for service boundaries, DDD, saga patterns, event sourcing, service mesh, distributed tracing.
-triggers:
-  - microservices
-  - service mesh
-  - distributed systems
-  - service boundaries
-  - domain-driven design
-  - event sourcing
-  - CQRS
-  - saga pattern
-  - Kubernetes microservices
-  - Istio
-  - distributed tracing
-role: architect
-scope: system-design
-output-format: architecture
+category: architecture-design
+description: Design and scaffold microservices with service mesh, API gateway, and resilience patterns.
 ---
 
 # Microservices Architect
 
-Senior distributed systems architect specializing in cloud-native microservices architectures, resilience patterns, and operational excellence.
+## Purpose
+- Design and scaffold microservices with service mesh, API gateway, and resilience patterns.
 
-## Role Definition
+## Preconditions
+- Access to system context (repos, infra, environments)
+- Confirmed requirements and constraints
+- Required approvals for security, compliance, or governance
 
-You are a senior microservices architect with 15+ years of experience designing distributed systems. You specialize in service decomposition, domain-driven design, resilience patterns, service mesh technologies, and cloud-native architectures. You design systems that scale, self-heal, and enable autonomous teams.
+## Inputs
+- Problem statement and scope
+- Current architecture or system constraints
+- Non-functional requirements (performance, security, compliance)
+- Target stack and environment
 
-## When to Use This Skill
+## Outputs
+- Design or implementation plan
+- Required artifacts (diagrams, configs, specs, checklists)
+- Validation steps and acceptance criteria
 
-- Decomposing monoliths into microservices
-- Defining service boundaries and bounded contexts
-- Designing inter-service communication patterns
-- Implementing resilience patterns (circuit breakers, retries, bulkheads)
-- Setting up service mesh (Istio, Linkerd)
-- Designing event-driven architectures
-- Implementing distributed transactions (Saga, CQRS)
-- Establishing observability (tracing, metrics, logging)
+## Detailed Step-by-Step Procedures
+1. Clarify scope, constraints, and success metrics.
+2. Review current system state, dependencies, and integration points.
+3. Select patterns, tools, and architecture options that match constraints.
+4. Produce primary artifacts (docs/specs/configs/code stubs).
+5. Validate against requirements and known risks.
+6. Provide rollout and rollback guidance.
 
-## Core Workflow
+## Decision Trees and Conditional Logic
+- If compliance or regulatory scope applies -> add required controls and audit steps.
+- If latency budget is strict -> choose low-latency storage and caching.
+- Else -> prefer cost-optimized storage and tiering.
+- If data consistency is critical -> prefer transactional boundaries and strong consistency.
+- Else -> evaluate eventual consistency or async processing.
 
-1. **Domain Analysis** - Apply DDD to identify bounded contexts and service boundaries
-2. **Communication Design** - Choose sync/async patterns, protocols (REST, gRPC, events)
-3. **Data Strategy** - Database per service, event sourcing, eventual consistency
-4. **Resilience** - Circuit breakers, retries, timeouts, bulkheads, fallbacks
-5. **Observability** - Distributed tracing, correlation IDs, centralized logging
-6. **Deployment** - Container orchestration, service mesh, progressive delivery
+## Error Handling and Edge Cases
+- Partial failures across dependencies -> isolate blast radius and retry with backoff.
+- Data corruption or loss risk -> enable backups and verify restore path.
+- Limited access to systems -> document gaps and request access early.
+- Legacy dependencies with limited change tolerance -> use adapters and phased rollout.
 
-## Reference Guide
+## Tool Requirements and Dependencies
+- CLI and SDK tooling for the target stack
+- Credentials or access tokens for required environments
+- Diagramming or spec tooling when producing docs
 
-Load detailed guidance based on context:
+## Stack Profiles
+- Use Profile A, B, or C from `skills/STACK_PROFILES.md`.
+- Note selected profile in outputs for traceability.
 
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Service Boundaries | `references/decomposition.md` | Monolith decomposition, bounded contexts, DDD |
-| Communication | `references/communication.md` | REST vs gRPC, async messaging, event-driven |
-| Resilience Patterns | `references/patterns.md` | Circuit breakers, saga, bulkhead, retry strategies |
-| Data Management | `references/data.md` | Database per service, event sourcing, CQRS |
-| Observability | `references/observability.md` | Distributed tracing, correlation IDs, metrics |
+## Validation
+- Requirements coverage check
+- Security and compliance review
+- Performance and reliability review
+- Peer or stakeholder sign-off
 
-## Constraints
+## Rollback Procedures
+- Revert config or deployment to last known good state.
+- Roll back database migrations if applicable.
+- Verify service health, data integrity, and error rates after rollback.
 
-### MUST DO
-- Apply domain-driven design for service boundaries
-- Use database per service pattern
-- Implement circuit breakers for external calls
-- Add correlation IDs to all requests
-- Use async communication for cross-aggregate operations
-- Design for failure and graceful degradation
-- Implement health checks and readiness probes
-- Use API versioning strategies
+## Success Metrics
+- Measurable outcomes (latency, error rate, uptime, cost)
+- Acceptance thresholds defined with stakeholders
 
-### MUST NOT DO
-- Create distributed monoliths
-- Share databases between services
-- Use synchronous calls for long-running operations
-- Skip distributed tracing implementation
-- Ignore network latency and partial failures
-- Create chatty service interfaces
-- Store shared state without proper patterns
-- Deploy without observability
-
-## Output Templates
-
-When designing microservices architecture, provide:
-1. Service boundary diagram with bounded contexts
-2. Communication patterns (sync/async, protocols)
-3. Data ownership and consistency model
-4. Resilience patterns for each integration point
-5. Deployment and infrastructure requirements
-
-## Knowledge Reference
-
-Domain-driven design, bounded contexts, event storming, REST/gRPC, message queues (Kafka, RabbitMQ), service mesh (Istio, Linkerd), Kubernetes, circuit breakers, saga patterns, event sourcing, CQRS, distributed tracing (Jaeger, Zipkin), API gateways, eventual consistency, CAP theorem
-
-## Related Skills
-
-- **DevOps Engineer** - Container orchestration and CI/CD pipelines
-- **Kubernetes Specialist** - Advanced K8s patterns and operators
-- **GraphQL Architect** - Federation for distributed schemas
-- **Architecture Designer** - High-level system design
-- **Monitoring Expert** - Observability implementation
+## Example Workflows and Use Cases
+- Minimal: apply the skill to a small service or single module.
+- Production: apply the skill to a multi-service or multi-tenant system.

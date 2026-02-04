@@ -1,86 +1,100 @@
 ---
 name: beads
-description: Activate beads (bd) issue tracking for persistent task memory across sessions. Use when work spans multiple sessions, has complex dependencies, or needs to survive compaction. For simple single-session linear tasks, use TodoWrite instead.
-allowed-tools: [Bash, Read]
+description: >
+  Git-backed issue tracker for multi-session work with dependencies and persistent
+  memory across conversation compaction. Use when work spans sessions, has blockers,
+  or needs context recovery after compaction.
+allowed-tools: "Read,Bash(bd:*)"
+version: "0.43.0"
+author: "Steve Yegge <https://github.com/steveyegge>"
+license: "MIT"
 ---
 
-# Beads Issue Tracking
+# Beads - Persistent Task Memory for AI Agents
 
-Git-backed issue tracker for persistent memory across sessions. JSONL is source of truth (committed to git), SQLite is local cache (gitignored).
+Graph-based issue tracker that survives conversation compaction. Provides persistent memory for multi-session work with complex dependencies.
 
-## Session Activation
+## bd vs TodoWrite
 
-At session start, check for ready work:
-
-```bash
-bd ready --json
-```
-
-Report to user: number of ready items, top priorities, any blockers worth noting.
-
-## When to Use bd vs TodoWrite
-
-| Use bd when | Use TodoWrite when |
-|-------------|-------------------|
+| bd (persistent) | TodoWrite (ephemeral) |
+|-----------------|----------------------|
 | Multi-session work | Single-session tasks |
-| Complex dependencies | Linear step-by-step |
-| Need to survive compaction | Immediate context only |
-| Resume after weeks away | Simple checklist |
+| Complex dependencies | Linear execution |
+| Survives compaction | Conversation-scoped |
+| Git-backed, team sync | Local to session |
 
-**Rule of thumb**: If resuming after 2 weeks would be hard without bd, use bd.
+**Decision test**: "Will I need this context in 2 weeks?" → YES = bd
 
-## Quick Command Reference
+**When to use bd**:
+- Work spans multiple sessions or days
+- Tasks have dependencies or blockers
+- Need to survive conversation compaction
+- Exploratory/research work with fuzzy boundaries
+- Collaboration with team (git sync)
+
+**When to use TodoWrite**:
+- Single-session linear tasks
+- Simple checklist for immediate work
+- All context is in current conversation
+- Will complete within current session
+
+## Prerequisites
 
 ```bash
-# Check work
-bd ready                    # What's unblocked
-bd blocked                  # What's stuck
-bd show bd-a1b2             # Full issue details
-
-# Create (write for handoff - future Claude has no conversation context!)
-bd create "Specific actionable title" -d "Full context: what, why, where" -p 2
-bd q "Quick capture"        # Returns only ID
-
-# Update as you work
-bd update bd-a1b2 --status in_progress
-bd update bd-a1b2 --notes "DONE: X. NEXT: Y. BLOCKER: Z"
-bd update bd-a1b2 --design "Decided approach A because..."
-
-# Close when done
-bd close bd-a1b2 --reason "Completed: summary of what was done"
-
-# Sync (usually automatic via daemon)
-bd sync                     # Full cycle: export→commit→pull→push
+bd --version  # Requires v0.34.0+
 ```
 
-**IDs use hash format** like `bd-a1b2`, not sequential numbers.
+- **bd CLI** installed and in PATH
+- **Git repository** (bd requires git for sync)
+- **Initialization**: `bd init` run once (humans do this, not agents)
 
-## Write for Handoff
+## CLI Reference
 
-Every bead must be understandable by a future Claude with:
-- No access to this conversation
-- Only the bead's title, description, notes, design fields
-- General codebase knowledge from exploration
+**Run `bd prime`** for AI-optimized workflow context (auto-loaded by hooks).
+**Run `bd <command> --help`** for specific command usage.
 
-**Anti-patterns**:
-- "As discussed above..." (no "above" after compaction)
-- Vague titles only making sense in context
-- Assuming file paths or function names are remembered
-- `in_progress` status without notes on current state
+Essential commands: `bd ready`, `bd create`, `bd show`, `bd update`, `bd close`, `bd sync`
 
-## Session End Checklist
+## Session Protocol
 
-Before ending or if context is long:
-- [ ] All `in_progress` items have current notes
-- [ ] Discovered work captured as new issues
-- [ ] Blockers documented in issue notes
-- [ ] Run `bd sync` if daemon not running
+1. `bd ready` — Find unblocked work
+2. `bd show <id>` — Get full context
+3. `bd update <id> --status in_progress` — Start work
+4. Add notes as you work (critical for compaction survival)
+5. `bd close <id> --reason "..."` — Complete task
+6. `bd sync` — Persist to git (always run at session end)
 
-## Reference Files
+## Advanced Features
 
-| Topic | File |
-|-------|------|
-| bd vs TodoWrite decision criteria | [references/BOUNDARIES.md](references/BOUNDARIES.md) |
-| Complete CLI with all flags | [references/CLI_REFERENCE.md](references/CLI_REFERENCE.md) |
-| Dependency types and patterns | [references/DEPENDENCIES.md](references/DEPENDENCIES.md) |
-| Workflow walkthroughs | [references/WORKFLOWS.md](references/WORKFLOWS.md) |
+| Feature | CLI | Resource |
+|---------|-----|----------|
+| Molecules (templates) | `bd mol --help` | [MOLECULES.md](resources/MOLECULES.md) |
+| Chemistry (pour/wisp) | `bd pour`, `bd wisp` | [CHEMISTRY_PATTERNS.md](resources/CHEMISTRY_PATTERNS.md) |
+| Agent beads | `bd agent --help` | [AGENTS.md](resources/AGENTS.md) |
+| Async gates | `bd gate --help` | [ASYNC_GATES.md](resources/ASYNC_GATES.md) |
+| Worktrees | `bd worktree --help` | [WORKTREES.md](resources/WORKTREES.md) |
+
+## Resources
+
+| Resource | Content |
+|----------|---------|
+| [BOUNDARIES.md](resources/BOUNDARIES.md) | bd vs TodoWrite detailed comparison |
+| [CLI_REFERENCE.md](resources/CLI_REFERENCE.md) | Complete command syntax |
+| [DEPENDENCIES.md](resources/DEPENDENCIES.md) | Dependency system deep dive |
+| [INTEGRATION_PATTERNS.md](resources/INTEGRATION_PATTERNS.md) | TodoWrite and tool integration |
+| [ISSUE_CREATION.md](resources/ISSUE_CREATION.md) | When and how to create issues |
+| [MOLECULES.md](resources/MOLECULES.md) | Proto definitions, component labels |
+| [PATTERNS.md](resources/PATTERNS.md) | Common usage patterns |
+| [RESUMABILITY.md](resources/RESUMABILITY.md) | Compaction survival guide |
+| [STATIC_DATA.md](resources/STATIC_DATA.md) | Database schema reference |
+| [TROUBLESHOOTING.md](resources/TROUBLESHOOTING.md) | Error handling and fixes |
+| [WORKFLOWS.md](resources/WORKFLOWS.md) | Step-by-step workflow patterns |
+| [AGENTS.md](resources/AGENTS.md) | Agent bead tracking (v0.40+) |
+| [ASYNC_GATES.md](resources/ASYNC_GATES.md) | Human-in-the-loop gates |
+| [CHEMISTRY_PATTERNS.md](resources/CHEMISTRY_PATTERNS.md) | Mol vs Wisp decision tree |
+| [WORKTREES.md](resources/WORKTREES.md) | Parallel development patterns |
+
+## Full Documentation
+
+- **bd prime**: AI-optimized workflow context
+- **GitHub**: [github.com/steveyegge/beads](https://github.com/steveyegge/beads)

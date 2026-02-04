@@ -1,6 +1,6 @@
 ---
 name: ln-640-pattern-evolution-auditor
-description: Audits architectural patterns against best practices (MCP Ref, Context7, WebSearch). Maintains patterns catalog, calculates 4 scores, creates refactor Stories via ln-220. Use when user asks to: (1) Check architecture health, (2) Audit patterns before refactoring, (3) Find undocumented patterns in codebase.
+description: "Audits architectural patterns against best practices (MCP Ref, Context7, WebSearch). Maintains patterns catalog, calculates 4 scores, creates refactor Stories via ln-220. Use when user asks to: (1) Check architecture health, (2) Audit patterns before refactoring, (3) Find undocumented patterns in codebase."
 ---
 
 # Pattern Evolution Auditor
@@ -24,6 +24,27 @@ L2 Coordinator that analyzes implemented architectural patterns against current 
 | **Completeness** | All components, error handling, tests, docs | 70% |
 | **Quality** | Readability, maintainability, no smells, SOLID, no duplication | 70% |
 | **Implementation** | Code exists, production use, integrated, monitored | 70% |
+
+## Worker Invocation
+
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
+| Worker | Purpose | Phase |
+|--------|---------|-------|
+| ln-641-pattern-analyzer | Calculate 4 scores per pattern | Phase 4 |
+| ln-642-layer-boundary-auditor | Detect layer violations | Phase 3 |
+| ln-220-story-coordinator | Create refactor Stories | Phase 6 |
+
+**Prompt template:**
+```
+Task(description: "[Audit/Create] via ln-6XX",
+     prompt: "Execute {skill-name}. Read skill from {skill-name}/SKILL.md. Pattern: {pattern}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
 
 ## Workflow
 
@@ -75,6 +96,10 @@ FOR EACH pattern IN catalog:
   Task(ln-641-pattern-analyzer)
     Input: pattern, locations, adr_reference, bestPractices
     Output: scores{}, issues[], gaps{}
+
+  **Task tool result contract:**
+  - ln-641 returns: `{scores: {compliance, completeness, quality, implementation}, issues: [], gaps: {}}`
+  - ln-642 returns: `{violations: [{severity, location, code, suggestion}], coverage: {layer: %}}`
 
   # Merge layer violations from Phase 3
   pattern.issues += layer_violations.filter(v => v.pattern == pattern)

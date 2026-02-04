@@ -1,204 +1,80 @@
 ---
-name: doc
-description: 'This skill should be used when the user asks to "generate documentation", "validate docs", "check doc coverage", "find missing docs", "create code-map", "sync documentation", "update docs", or needs guidance on documentation generation and validation for any repository type. Triggers: doc, documentation, code-map, doc coverage, validate docs.'
+name: "doc"
+description: "Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus the bundled `scripts/render_docx.py` for visual checks."
 ---
 
-# Doc Skill
 
-**YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
+# DOCX Skill
 
-Generate and validate documentation for any project.
+## When to use
+- Read or review DOCX content where layout matters (tables, diagrams, pagination).
+- Create or edit DOCX files with professional formatting.
+- Validate visual layout before delivery.
 
-## Execution Steps
+## Workflow
+1. Prefer visual review (layout, tables, diagrams).
+   - If `soffice` and `pdftoppm` are available, convert DOCX -> PDF -> PNGs.
+   - Or use `scripts/render_docx.py` (requires `pdf2image` and Poppler).
+   - If these tools are missing, install them or ask the user to review rendered pages locally.
+2. Use `python-docx` for edits and structured creation (headings, styles, tables, lists).
+3. After each meaningful change, re-render and inspect the pages.
+4. If visual review is not possible, extract text with `python-docx` as a fallback and call out layout risk.
+5. Keep intermediate outputs organized and clean up after final approval.
 
-Given `/doc [command] [target]`:
+## Temp and output conventions
+- Use `tmp/docs/` for intermediate files; delete when done.
+- Write final artifacts under `output/doc/` when working in this repo.
+- Keep filenames stable and descriptive.
 
-### Step 1: Detect Project Type
+## Dependencies (install if missing)
+Prefer `uv` for dependency management.
 
-```bash
-# Check for indicators
-ls package.json pyproject.toml go.mod Cargo.toml 2>/dev/null
+Python packages:
+```
+uv pip install python-docx pdf2image
+```
+If `uv` is unavailable:
+```
+python3 -m pip install python-docx pdf2image
+```
+System tools (for rendering):
+```
+# macOS (Homebrew)
+brew install libreoffice poppler
 
-# Check for existing docs
-ls -d docs/ doc/ documentation/ 2>/dev/null
+# Ubuntu/Debian
+sudo apt-get install -y libreoffice poppler-utils
 ```
 
-Classify as:
-- **CODING**: Has source code, needs API docs
-- **INFORMATIONAL**: Primarily documentation (wiki, knowledge base)
-- **OPS**: Infrastructure, deployment, runbooks
+If installation isn't possible in this environment, tell the user which dependency is missing and how to install it locally.
 
-### Step 2: Execute Command
+## Environment
+No required environment variables.
 
-**discover** - Find undocumented features:
-```bash
-# Find public functions without docstrings (Python)
-grep -r "^def " --include="*.py" | grep -v '"""' | head -20
-
-# Find exported functions without comments (Go)
-grep -r "^func [A-Z]" --include="*.go" | head -20
+## Rendering commands
+DOCX -> PDF:
+```
+soffice -env:UserInstallation=file:///tmp/lo_profile_$$ --headless --convert-to pdf --outdir $OUTDIR $INPUT_DOCX
 ```
 
-**coverage** - Check documentation coverage:
-```bash
-# Count documented vs undocumented
-TOTAL=$(grep -r "^def \|^func \|^class " --include="*.py" --include="*.go" | wc -l)
-DOCUMENTED=$(grep -r '"""' --include="*.py" | wc -l)
-echo "Coverage: $DOCUMENTED / $TOTAL"
+PDF -> PNGs:
+```
+pdftoppm -png $OUTDIR/$BASENAME.pdf $OUTDIR/$BASENAME
 ```
 
-**gen [feature]** - Generate documentation:
-1. Read the code for the feature
-2. Understand what it does
-3. Generate appropriate documentation
-4. Write to docs/ directory
-
-**all** - Update all documentation:
-1. Run discover to find gaps
-2. Generate docs for each undocumented feature
-3. Validate existing docs are current
-
-### Step 3: Generate Documentation
-
-When generating docs, include:
-
-**For Functions/Methods:**
-```markdown
-## function_name
-
-**Purpose:** What it does
-
-**Parameters:**
-- `param1` (type): Description
-- `param2` (type): Description
-
-**Returns:** What it returns
-
-**Example:**
-```python
-result = function_name(arg1, arg2)
+Bundled helper:
+```
+python3 scripts/render_docx.py /path/to/file.docx --output_dir /tmp/docx_pages
 ```
 
-**Notes:** Any important caveats
-```
+## Quality expectations
+- Deliver a client-ready document: consistent typography, spacing, margins, and clear hierarchy.
+- Avoid formatting defects: clipped/overlapping text, broken tables, unreadable characters, or default-template styling.
+- Charts, tables, and visuals must be legible in rendered pages with correct alignment.
+- Use ASCII hyphens only. Avoid U+2011 (non-breaking hyphen) and other Unicode dashes.
+- Citations and references must be human-readable; never leave tool tokens or placeholder strings.
 
-**For Classes:**
-```markdown
-## ClassName
-
-**Purpose:** What this class represents
-
-**Attributes:**
-- `attr1`: Description
-- `attr2`: Description
-
-**Methods:**
-- `method1()`: What it does
-- `method2()`: What it does
-
-**Usage:**
-```python
-obj = ClassName()
-obj.method1()
-```
-```
-
-### Step 4: Create Code-Map (if requested)
-
-**Write to:** `docs/code-map/`
-
-```markdown
-# Code Map: <Project>
-
-## Overview
-<High-level architecture>
-
-## Directory Structure
-```
-src/
-├── module1/     # Purpose
-├── module2/     # Purpose
-└── utils/       # Shared utilities
-```
-
-## Key Components
-
-### Module 1
-- **Purpose:** What it does
-- **Entry point:** `main.py`
-- **Key files:** `handler.py`, `models.py`
-
-### Module 2
-...
-
-## Data Flow
-<How data moves through the system>
-
-## Dependencies
-<External dependencies and why>
-```
-
-### Step 5: Validate Documentation
-
-Check for:
-- Out-of-date docs (code changed, docs didn't)
-- Missing sections (no examples, no parameters)
-- Broken links
-- Inconsistent formatting
-
-### Step 6: Write Report
-
-**Write to:** `.agents/doc/YYYY-MM-DD-<target>.md`
-
-```markdown
-# Documentation Report: <Target>
-
-**Date:** YYYY-MM-DD
-**Project Type:** <CODING/INFORMATIONAL/OPS>
-
-## Coverage
-- Total documentable items: <count>
-- Documented: <count>
-- Coverage: <percentage>%
-
-## Generated
-- <list of docs generated>
-
-## Gaps Found
-- <undocumented item 1>
-- <undocumented item 2>
-
-## Validation Issues
-- <issue 1>
-- <issue 2>
-
-## Next Steps
-- [ ] Document remaining gaps
-- [ ] Fix validation issues
-```
-
-### Step 7: Report to User
-
-Tell the user:
-1. Documentation coverage percentage
-2. Docs generated/updated
-3. Gaps remaining
-4. Location of report
-
-## Key Rules
-
-- **Detect project type first** - approach varies
-- **Generate meaningful docs** - not just stubs
-- **Include examples** - always show usage
-- **Validate existing** - docs can go stale
-- **Write the report** - track coverage over time
-
-## Commands Summary
-
-| Command | Action |
-|---------|--------|
-| `discover` | Find undocumented features |
-| `coverage` | Check documentation coverage |
-| `gen [feature]` | Generate docs for specific feature |
-| `all` | Update all documentation |
-| `validate` | Check docs match code |
+## Final checks
+- Re-render and inspect every page at 100% zoom before final delivery.
+- Fix any spacing, alignment, or pagination issues and repeat the render loop.
+- Confirm there are no leftovers (temp files, duplicate renders) unless the user asks to keep them.

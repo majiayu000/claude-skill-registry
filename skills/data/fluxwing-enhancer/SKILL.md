@@ -17,14 +17,9 @@ Progressively enhance uxscii components from sketch to production quality.
 - `{SKILL_ROOT}/../fluxwing-component-creator/templates/state-additions/` - State templates
 - `{SKILL_ROOT}/docs/` - Enhancement documentation
 
-**LOAD for copy-on-update logic:**
-- `{SKILL_ROOT}/../shared/docs/copy-versioning.md` - Versioning pattern for fidelity enhancements
-
 **WRITE to:**
-- `./fluxwing/components/` - New versioned components (copy-on-update: {id}-v{N+1})
+- `./fluxwing/components/` - Updated component files (in place)
 - `./fluxwing/screens/` - Updated screen .rendered.md (if applicable)
-
-**IMPORTANT**: Enhancer creates NEW versions instead of overwriting originals. Each fidelity enhancement creates a new `-v{N}` copy.
 
 ## Fidelity Levels
 
@@ -134,37 +129,20 @@ Ask user or use defaults:
 Task({
   subagent_type: "general-purpose",
   model: "sonnet", // Quality matters for enhancement
-  description: "Enhance ${componentId} to ${targetFidelity} (copy)",
-  prompt: `Enhance uxscii component from ${currentFidelity} to ${targetFidelity} using copy-on-update pattern.
+  description: "Enhance ${componentId} to ${targetFidelity}",
+  prompt: `Enhance uxscii component from ${currentFidelity} to ${targetFidelity}.
 
 Component: ${componentId}
 Current fidelity: ${currentFidelity}
 Target fidelity: ${targetFidelity}
 
-COPY-ON-UPDATE MODE:
-- Read existing component
-- Find highest version (check ${componentId}-v2, -v3, etc.)
-- Create NEW versioned copy: ${componentId}-v{N+1}
-- DO NOT overwrite original
-- Preserve metadata.created, update metadata.modified
-
 Your task:
 1. Read ./fluxwing/components/${componentId}.uxm
 2. Read ./fluxwing/components/${componentId}.md (if exists)
-3. Load copy-versioning docs: {SKILL_ROOT}/../shared/docs/copy-versioning.md
-4. Find highest version of ${componentId} (original is v1)
-5. Calculate next version number: v{N+1}
-6. Load enhancement patterns: {SKILL_ROOT}/docs/enhancement-patterns.md
-7. Load state templates: {SKILL_ROOT}/../fluxwing-component-creator/templates/state-additions/
+3. Load enhancement patterns: {SKILL_ROOT}/docs/enhancement-patterns.md
+4. Load state templates: {SKILL_ROOT}/../fluxwing-component-creator/templates/state-additions/
 
-8. Create versioned copy with enhancements:
-
-   **Update version metadata:**
-   - id: "${componentId}-v{N+1}" (add -v{N+1} suffix)
-   - version: Increment minor (e.g., 1.0.0 → 1.1.0)
-   - metadata.created: PRESERVE from source
-   - metadata.modified: SET to current timestamp
-   - metadata.fidelity: UPDATE to "${targetFidelity}"
+5. Enhance based on target fidelity:
 
    ${targetFidelity === 'basic' ? `
    For "basic" fidelity:
@@ -200,23 +178,17 @@ Your task:
    - Update fidelity field to "production"
    ` : ''}
 
-9. Save NEW versioned files:
-   - ./fluxwing/components/${componentId}-v{N+1}.uxm
-   - ./fluxwing/components/${componentId}-v{N+1}.md
-   - DO NOT overwrite original ${componentId}.uxm
-
-10. Verify JSON is valid
-11. Return enhancement summary with version info
+6. Save updated files (overwrite existing)
+7. Verify JSON is valid
+8. Return enhancement summary
 
 Target time: ${targetTime[targetFidelity]} seconds
 
 Return format:
-"Enhanced ${componentId} → ${componentId}-v{N+1}: ${currentFidelity} → ${targetFidelity}
-- Version: {old version} → {new version}
+"Enhanced ${componentId}: ${currentFidelity} → ${targetFidelity}
 - Added X states
 - Improved metadata
-- Polished ASCII
-- Original preserved at ${componentId}.uxm"
+- Polished ASCII"
 `
 })
 ```

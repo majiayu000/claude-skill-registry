@@ -1,9 +1,7 @@
 {
   "name": "kubernetes-configmap-handler",
-  "description": "Kubernetes Configmap Handler - Auto-activating skill for DevOps Advanced.Triggers on: kubernetes configmap handler, kubernetes configmap handlerPart of the DevOps Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/02-devops-advanced/kubernetes-configmap-handler/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:23.730676Z"
 }

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires llm CLI with llm-perplexity plugin and Perplexity API key
 metadata:
   author: Pietro Di Bello
-  version: "1.0.0"
+  version: "1.2.0"
 allowed-tools: Bash(llm:*)
 ---
 
@@ -21,48 +21,18 @@ llm -m sonar 'your question here'
 
 ## Model Selection
 
-Choose the appropriate model based on query complexity:
-
 | Model | Use Case | Context | Web Search |
 |-------|----------|---------|------------|
-| `sonar` | Quick lookups, general questions | 128k | ✓ |
-| `sonar-pro` | Thorough answers, detailed research (flagship) | 200k | ✓ |
+| `sonar` | Quick lookups, general questions (default) | 128k | ✓ |
+| `sonar-pro` | Thorough answers, detailed research | 200k | ✓ |
 | `sonar-deep-research` | Complex multi-faceted research | 128k | ✓ |
 | `sonar-reasoning` | Step-by-step reasoning questions | 128k | ✓ |
-| `sonar-reasoning-pro` | Advanced reasoning with more detail | 128k | ✓ |
-| `r1-1776` | Specialized model without web search | 128k | ✗ |
+| `sonar-reasoning-pro` | Advanced reasoning with detail | 128k | ✓ |
+| `r1-1776` | Reasoning without web search | 128k | ✗ |
 
-**Default choice**: `sonar` for most queries.
+**Start with `sonar`** for most queries. Upgrade to other models when you need comprehensive coverage (`sonar-pro`), complex synthesis (`sonar-deep-research`), or logical reasoning (`sonar-reasoning`/`sonar-reasoning-pro`).
 
-**Use `sonar-pro`** when:
-- Query requires comprehensive coverage
-- Need detailed explanations
-- Research involves multiple aspects
-- Largest context window needed (200k)
-
-**Use `sonar-deep-research`** when:
-- Topic is complex and multi-faceted
-- Need synthesis across many sources
-- Research question has no simple answer
-
-**Use `sonar-reasoning`** when:
-- Question requires logical deduction
-- Need step-by-step problem solving
-- Math or algorithmic reasoning involved
-
-**Use `sonar-reasoning-pro`** when:
-- Advanced reasoning with more comprehensive analysis needed
-- Complex multi-step logical problems
-- Need most thorough step-by-step explanations
-- Reasoning task benefits from deeper exploration
-
-**Use `r1-1776`** when:
-- Need specialized reasoning without web search
-- Pure analytical or logical tasks
-- Information is already known, just need reasoning applied
-- Want to avoid web search overhead
-
-**Note**: Most models include real-time web search. Only `r1-1776` omits web search for pure reasoning tasks.
+For detailed selection criteria, decision flowcharts, and examples, see [references/model-selection-guide.md](references/model-selection-guide.md).
 
 ## When to Use
 
@@ -111,6 +81,16 @@ Do NOT use for:
 
 This skill complements, not replaces, standard web tools (WebFetch, WebSearch). Choose based on whether you want Perplexity's specific capabilities (reasoning models, synthesis, alternative perspective).
 
+## Query Best Practices
+
+Craft effective queries for better results:
+- Be specific and detailed rather than vague
+- Include time constraints for current information
+- Specify output format when helpful
+- Use domain-appropriate terminology
+
+For comprehensive query strategies and examples, see [references/query-strategies.md](references/query-strategies.md).
+
 ## Usage Examples
 
 ### Current Knowledge: Documentation Lookup
@@ -155,15 +135,13 @@ llm -m sonar-reasoning-pro 'design a scalable job queue system that handles both
 
 ## Using as a Subagent
 
-This skill can be invoked directly within the conversation or spawned as a subagent for focused research:
+This skill can be invoked directly or spawned as a subagent for complex research tasks.
 
-**Direct invocation**: Use the Bash tool to run `llm` commands inline when the query is straightforward and the result can be immediately incorporated.
+**Use direct invocation** for straightforward queries where results can be immediately incorporated.
 
-**Subagent invocation**: Spawn a subagent when:
-- Research requires multiple iterations or follow-up queries
-- You want the subagent to synthesize findings before reporting back
-- The reasoning task is complex enough to benefit from dedicated focus
-- You want to continue other work while research happens in parallel
+**Use subagent invocation** when research requires multiple iterations, synthesis of findings, or can happen while you work on other tasks.
+
+For detailed patterns and examples, see [references/subagent-patterns.md](references/subagent-patterns.md).
 
 ## Context Marker
 

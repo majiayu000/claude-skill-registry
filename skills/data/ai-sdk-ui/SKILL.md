@@ -1,403 +1,557 @@
 ---
 name: ai-sdk-ui
 description: |
-  Expert guidance for building chat UIs with AI SDK React hooks.
-  Use when: (1) Building chatbots with useChat hook,
-  (2) Implementing tool UIs with server/client execution,
-  (3) Handling message persistence and stream resumption,
-  (4) Creating generative UI with React components,
-  (5) Integrating with Next.js/Node/Fastify/Nest backends,
-  (6) Using useObject for streaming structured data.
-  Triggers: useChat, useObject, useCompletion, chat UI, chatbot, generative UI, message persistence, @ai-sdk/react, UIMessage, tool parts, streaming UI, toUIMessageStreamResponse.
+  Build React chat interfaces with Vercel AI SDK v6. Covers useChat/useCompletion/useObject hooks, message parts structure, tool approval workflows, and 18 UI error solutions. Prevents documented issues with React Strict Mode, concurrent requests, stale closures, and tool approval edge cases.
+
+  Use when: implementing AI chat UIs, migrating v5→v6, troubleshooting "useChat failed to parse stream", "stale body values", "React maximum update depth", "Cannot read properties of undefined (reading 'state')", or tool approval workflow errors.
+user-invocable: true
 ---
 
-# AI SDK UI - Chat & Generative UI Framework
+# AI SDK UI - Frontend React Hooks
 
-AI SDK UI provides framework-agnostic hooks for building interactive chat, completion, and assistant applications with real-time streaming and state management.
+Frontend React hooks for AI-powered user interfaces with Vercel AI SDK v6.
 
-## Quick Start: Basic Chat
+**Version**: AI SDK v6.0.42 (Stable)
+**Framework**: React 18+/19, Next.js 14+/15+
+**Last Updated**: 2026-01-20
 
-### Client (React)
+---
 
-```tsx
-'use client';
-import { useChat } from '@ai-sdk/react';
-import { DefaultChatTransport } from 'ai';
-import { useState } from 'react';
+## AI SDK v6 Stable (January 2026)
 
-export default function Chat() {
-  const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: '/api/chat' }),
-  });
-  const [input, setInput] = useState('');
+**Status:** Stable Release
+**Latest:** ai@6.0.42, @ai-sdk/react@3.0.44, @ai-sdk/openai@3.0.7
+**Migration:** Minimal breaking changes from v5 → v6
 
-  return (
-    <>
-      {messages.map(message => (
-        <div key={message.id}>
-          {message.role === 'user' ? 'User: ' : 'AI: '}
-          {message.parts.map((part, index) =>
-            part.type === 'text' ? <span key={index}>{part.text}</span> : null
-          )}
-        </div>
-      ))}
+### New UI Features in v6
 
-      <form onSubmit={e => {
-        e.preventDefault();
-        if (input.trim()) {
-          sendMessage({ text: input });
-          setInput('');
-        }
-      }}>
-        <input
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          disabled={status !== 'ready'}
-        />
-        <button type="submit" disabled={status !== 'ready'}>
-          Submit
-        </button>
-      </form>
-    </>
-  );
-}
-```
-
-### Server (Next.js App Router)
-
-```ts
-import { convertToModelMessages, streamText, UIMessage } from 'ai';
-import { openai } from '@ai-sdk/openai';
-
-export const maxDuration = 30;
-
-export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json();
-
-  const result = streamText({
-    model: openai('gpt-4o'),
-    system: 'You are a helpful assistant.',
-    messages: await convertToModelMessages(messages), // v6: now async
-  });
-
-  return result.toUIMessageStreamResponse();
-}
-```
-
-## Hook Selection Guide
-
-| Hook | Use Case | Stream Type | Best For |
-|------|----------|-------------|----------|
-| `useChat` | Multi-turn conversations | Messages with parts (text, tools, files) | Chatbots, assistants, tool-calling UIs |
-| `useObject` | Structured data streaming | Typed objects with Zod schema | Forms, dashboards, real-time data |
-| `useCompletion` | Single-turn text generation | Plain text | Autocomplete, simple generation |
-
-**Decision tree:**
-- Need conversation history + tools? → `useChat`
-- Need typed/structured streaming data? → `useObject`
-- Need simple text completion? → `useCompletion`
-
-## Core Patterns
-
-### 1. Status Management
+**1. Message Parts Structure (Breaking Change)**
+In v6, message content is now accessed via `.parts` array instead of `.content`:
 
 ```tsx
-const { status, stop } = useChat();
+// ❌ v5 (OLD)
+{messages.map(m => (
+  <div key={m.id}>{m.content}</div>
+))}
 
-// status values: 'submitted' | 'streaming' | 'ready' | 'error'
-
-{(status === 'submitted' || status === 'streaming') && (
-  <div>
-    {status === 'submitted' && <Spinner />}
-    <button onClick={() => stop()}>Stop</button>
-  </div>
-)}
-```
-
-### 2. Error Handling
-
-```tsx
-const { error, reload } = useChat();
-
-{error && (
-  <>
-    <div>An error occurred.</div>
-    <button onClick={() => reload()}>Retry</button>
-  </>
-)}
-```
-
-**Server-side error messages:**
-
-```ts
-return result.toUIMessageStreamResponse({
-  onError: error => {
-    if (error instanceof Error) return error.message;
-    return 'Unknown error';
-  },
-});
-```
-
-### 3. Message Modification
-
-```tsx
-const { messages, setMessages } = useChat();
-
-const handleDelete = (id: string) => {
-  setMessages(messages.filter(m => m.id !== id));
-};
-
-const handleEdit = (id: string, newText: string) => {
-  setMessages(messages.map(m =>
-    m.id === id
-      ? { ...m, parts: [{ type: 'text', text: newText }] }
-      : m
-  ));
-};
-```
-
-### 4. File Attachments
-
-```tsx
-const [files, setFiles] = useState<FileList | undefined>();
-
-<form onSubmit={e => {
-  e.preventDefault();
-  sendMessage({ text: input, files });
-  setFiles(undefined);
-}}>
-  <input
-    type="file"
-    onChange={e => setFiles(e.target.files ?? undefined)}
-    multiple
-  />
-</form>
-```
-
-### 5. Custom Request Options
-
-```tsx
-// Per-request customization (recommended)
-sendMessage(
-  { text: input },
-  {
-    headers: { Authorization: 'Bearer token' },
-    body: { temperature: 0.7, user_id: '123' },
-    metadata: { sessionId: 'abc' },
-  }
-);
-
-// Hook-level configuration
-const { sendMessage } = useChat({
-  transport: new DefaultChatTransport({
-    api: '/api/chat',
-    headers: () => ({ Authorization: `Bearer ${getToken()}` }),
-    body: { systemContext: 'expert' },
-  }),
-});
-```
-
-### 6. Message Metadata
-
-```ts
-// Server: Attach metadata
-return result.toUIMessageStreamResponse({
-  messageMetadata: ({ part }) => {
-    if (part.type === 'start') {
-      return { createdAt: Date.now(), model: 'gpt-4o' };
-    }
-    if (part.type === 'finish') {
-      return { totalTokens: part.totalUsage.totalTokens };
-    }
-  },
-});
-```
-
-```tsx
-// Client: Access metadata
+// ✅ v6 (NEW)
 {messages.map(m => (
   <div key={m.id}>
-    {m.metadata?.createdAt && new Date(m.metadata.createdAt).toLocaleString()}
-    {m.parts.map(part => part.type === 'text' ? part.text : null)}
-    {m.metadata?.totalTokens && <span>{m.metadata.totalTokens} tokens</span>}
+    {m.parts.map((part, i) => {
+      if (part.type === 'text') return <span key={i}>{part.text}</span>;
+      if (part.type === 'tool-invocation') return <ToolCall key={i} tool={part} />;
+      if (part.type === 'file') return <FilePreview key={i} file={part} />;
+      return null;
+    })}
   </div>
 ))}
 ```
 
-### 7. Regenerate & Stop
+**Part Types:**
+- `text` - Text content with `.text` property
+- `tool-invocation` - Tool calls with `.toolName`, `.args`, `.result`
+- `file` - File attachments with `.mimeType`, `.data`
+- `reasoning` - Model reasoning (when available)
+- `source` - Source citations
+
+**3. Agent Integration**
+Type-safe messaging with agents using `InferAgentUIMessage<typeof agent>`:
 
 ```tsx
-const { regenerate, stop, status } = useChat();
+import { useChat } from '@ai-sdk/react';
+import type { InferAgentUIMessage } from 'ai';
+import { myAgent } from './agent';
 
-<>
-  <button onClick={stop} disabled={status !== 'streaming'}>
-    Stop
-  </button>
-  <button onClick={regenerate} disabled={!(status === 'ready' || status === 'error')}>
-    Regenerate
-  </button>
-</>
+export default function AgentChat() {
+  const { messages, sendMessage } = useChat<InferAgentUIMessage<typeof myAgent>>({
+    api: '/api/chat',
+  });
+  // messages are now type-checked against agent schema
+}
 ```
 
-## Message Parts Type Reference
+**4. Tool Approval Workflows (Human-in-the-Loop)**
+Request user confirmation before executing tools:
 
-Messages use a `parts` array instead of `content` for flexible multi-modal rendering:
+```tsx
+import { useChat } from '@ai-sdk/react';
+import { useState } from 'react';
 
-```ts
-type MessagePart =
-  | { type: 'text'; text: string }
-  | { type: 'file'; filename: string; mediaType: string; url: string }
-  | { type: 'tool-invocation'; toolName: string; input: unknown; result?: unknown }
-  | { type: 'tool-result'; toolName: string; result: unknown }
-  | { type: 'reasoning'; text: string }  // DeepSeek R1, Claude 3.7 Sonnet
-  | { type: 'source-url'; id: string; url: string; title?: string }  // Perplexity, Google
-  | { type: 'source-document'; id: string; title?: string };
+export default function ChatWithApproval() {
+  const { messages, sendMessage, addToolApprovalResponse } = useChat({
+    api: '/api/chat',
+  });
 
-// Render pattern
-{message.parts.map((part, index) => {
-  switch (part.type) {
-    case 'text':
-      return <span key={index}>{part.text}</span>;
-    case 'file':
-      return part.mediaType.startsWith('image/')
-        ? <img key={index} src={part.url} alt={part.filename} />
-        : null;
-    case 'reasoning':
-      return <pre key={index}>{part.text}</pre>;
-    case 'source-url':
-      return <a key={index} href={part.url}>{part.title ?? 'Source'}</a>;
-    case 'tool-invocation':
-      return <ToolUI key={index} tool={part} />;
-    default:
-      return null;
+  const handleApprove = (toolCallId: string) => {
+    addToolApprovalResponse({
+      toolCallId,
+      approved: true,  // or false to deny
+    });
+  };
+
+  return (
+    <div>
+      {messages.map(message => (
+        <div key={message.id}>
+          {message.toolInvocations?.map(tool => (
+            tool.state === 'awaiting-approval' && (
+              <div key={tool.toolCallId}>
+                <p>Approve tool call: {tool.toolName}?</p>
+                <button onClick={() => handleApprove(tool.toolCallId)}>
+                  Approve
+                </button>
+                <button onClick={() => addToolApprovalResponse({
+                  toolCallId: tool.toolCallId,
+                  approved: false
+                })}>
+                  Deny
+                </button>
+              </div>
+            )
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+**5. Auto-Submit Capability**
+Automatically continue conversation after handling approvals:
+
+```tsx
+import { useChat, lastAssistantMessageIsCompleteWithApprovalResponses } from '@ai-sdk/react';
+
+export default function AutoSubmitChat() {
+  const { messages, sendMessage } = useChat({
+    api: '/api/chat',
+    sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithApprovalResponses,
+    // Automatically resubmit after all approval responses provided
+  });
+}
+```
+
+**6. Structured Output in Chat**
+Generate structured data alongside tool calling (previously only available in `useObject`):
+
+```tsx
+import { useChat } from '@ai-sdk/react';
+import { z } from 'zod';
+
+const schema = z.object({
+  summary: z.string(),
+  sentiment: z.enum(['positive', 'neutral', 'negative']),
+});
+
+export default function StructuredChat() {
+  const { messages, sendMessage } = useChat({
+    api: '/api/chat',
+    // Server can now stream structured output with chat messages
+  });
+}
+```
+
+---
+
+## useChat Hook - v4 → v5 Breaking Changes
+
+**CRITICAL: useChat no longer manages input state in v5!**
+
+**v4 (OLD - DON'T USE):**
+```tsx
+const { messages, input, handleInputChange, handleSubmit, append } = useChat();
+
+<form onSubmit={handleSubmit}>
+  <input value={input} onChange={handleInputChange} />
+</form>
+```
+
+**v5 (NEW - CORRECT):**
+```tsx
+const { messages, sendMessage } = useChat();
+const [input, setInput] = useState('');
+
+<form onSubmit={(e) => {
+  e.preventDefault();
+  sendMessage({ content: input });
+  setInput('');
+}}>
+  <input value={input} onChange={(e) => setInput(e.target.value)} />
+</form>
+```
+
+**Summary of v5 Changes:**
+1. **Input management removed**: `input`, `handleInputChange`, `handleSubmit` no longer exist
+2. **`append()` → `sendMessage()`**: New method for sending messages
+3. **`onResponse` removed**: Use `onFinish` instead
+4. **`initialMessages` → controlled mode**: Use `messages` prop for full control
+5. **`maxSteps` removed**: Handle on server-side only
+
+See `references/use-chat-migration.md` for complete migration guide.
+
+---
+
+## useAssistant Hook (Deprecated)
+
+> **⚠️ Deprecation Notice**: `useAssistant` is deprecated as of AI SDK v5. OpenAI Assistants API v2
+> will sunset on August 26, 2026. For new projects, use `useChat` with custom backend logic instead.
+> See the **openai-assistants** skill for migration guidance.
+
+Interact with OpenAI-compatible assistant APIs with automatic UI state management.
+
+**Import:**
+```tsx
+import { useAssistant } from '@ai-sdk/react';
+```
+
+**Basic Usage:**
+```tsx
+'use client';
+import { useAssistant } from '@ai-sdk/react';
+import { useState, FormEvent } from 'react';
+
+export default function AssistantChat() {
+  const { messages, sendMessage, isLoading, error } = useAssistant({
+    api: '/api/assistant',
+  });
+  const [input, setInput] = useState('');
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    sendMessage({ content: input });
+    setInput('');
+  };
+
+  return (
+    <div>
+      {messages.map(m => (
+        <div key={m.id}>
+          <strong>{m.role}:</strong> {m.content}
+        </div>
+      ))}
+      <form onSubmit={handleSubmit}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          disabled={isLoading}
+        />
+      </form>
+      {error && <div>{error.message}</div>}
+    </div>
+  );
+}
+```
+
+**Use Cases:**
+- Building OpenAI Assistant-powered UIs
+- Managing assistant threads and runs
+- Streaming assistant responses with UI state management
+- File search and code interpreter integrations
+
+See official docs for complete API reference: https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-assistant
+
+---
+
+## Top UI Errors & Solutions
+
+See `references/top-ui-errors.md` for complete documentation. Quick reference:
+
+### 1. useChat Failed to Parse Stream
+
+**Error**: `SyntaxError: Unexpected token in JSON at position X`
+
+**Cause**: API route not returning proper stream format.
+
+**Solution**:
+```typescript
+// ✅ CORRECT
+return result.toDataStreamResponse();
+
+// ❌ WRONG
+return new Response(result.textStream);
+```
+
+### 2. useChat No Response
+
+**Cause**: API route not streaming correctly.
+
+**Solution**:
+```typescript
+// App Router - use toDataStreamResponse()
+export async function POST(req: Request) {
+  const result = streamText({ /* ... */ });
+  return result.toDataStreamResponse(); // ✅
+}
+
+// Pages Router - use pipeDataStreamToResponse()
+export default async function handler(req, res) {
+  const result = streamText({ /* ... */ });
+  return result.pipeDataStreamToResponse(res); // ✅
+}
+```
+
+### 3. Streaming Not Working When Deployed
+
+**Cause**: Deployment platform buffering responses.
+
+**Solution**: Vercel auto-detects streaming. Other platforms may need configuration.
+
+### 4. Stale Body Values with useChat
+
+**Cause**: `body` option captured at first render only.
+
+**Solution**:
+```typescript
+// ❌ WRONG - body captured once
+const { userId } = useUser();
+const { messages } = useChat({
+  body: { userId },  // Stale!
+});
+
+// ✅ CORRECT - use controlled mode
+const { userId } = useUser();
+const { messages, sendMessage } = useChat();
+
+sendMessage({
+  content: input,
+  data: { userId },  // Fresh on each send
+});
+```
+
+### 5. React Maximum Update Depth
+
+**Cause**: Infinite loop in useEffect.
+
+**Solution**:
+```typescript
+// ❌ WRONG
+useEffect(() => {
+  saveMessages(messages);
+}, [messages, saveMessages]); // saveMessages triggers re-render!
+
+// ✅ CORRECT
+useEffect(() => {
+  saveMessages(messages);
+}, [messages]); // Only depend on messages
+```
+
+See `references/top-ui-errors.md` for 13 more common errors (18 total documented).
+
+---
+
+## Streaming Best Practices
+
+### Performance
+
+**Always use streaming for better UX:**
+```tsx
+// ✅ GOOD - Streaming (shows tokens as they arrive)
+const { messages } = useChat({ api: '/api/chat' });
+
+// ❌ BAD - Non-streaming (user waits for full response)
+const response = await fetch('/api/chat', { method: 'POST' });
+```
+
+### UX Patterns
+
+**Show loading states:**
+```tsx
+{isLoading && <div>AI is typing...</div>}
+```
+
+**Provide stop button:**
+```tsx
+{isLoading && <button onClick={stop}>Stop</button>}
+```
+
+**Auto-scroll to latest message:**
+```tsx
+useEffect(() => {
+  messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+}, [messages]);
+```
+
+**Disable input while loading:**
+```tsx
+<input disabled={isLoading} />
+```
+
+See `references/streaming-patterns.md` for comprehensive best practices.
+
+---
+
+## React Strict Mode Considerations
+
+React Strict Mode intentionally double-invokes effects to catch bugs. When using `useChat` or `useCompletion` in effects (auto-resume, initial messages), guard against double execution to prevent duplicate API calls and token waste.
+
+**Problem:**
+```tsx
+'use client';
+import { useChat } from '@ai-sdk/react';
+import { useEffect } from 'react';
+
+export default function Chat() {
+  const { messages, sendMessage, resumeStream } = useChat({
+    api: '/api/chat',
+    resume: true,
+  });
+
+  useEffect(() => {
+    // ❌ Triggers twice in strict mode → two concurrent streams
+    sendMessage({ content: 'Hello' });
+    // or
+    resumeStream();
+  }, []);
+}
+```
+
+**Solution:**
+```tsx
+// ✅ Use ref to track execution
+import { useRef } from 'react';
+
+const hasSentRef = useRef(false);
+
+useEffect(() => {
+  if (hasSentRef.current) return;
+  hasSentRef.current = true;
+
+  sendMessage({ content: 'Hello' });
+}, []);
+
+// For resumeStream specifically:
+const hasResumedRef = useRef(false);
+
+useEffect(() => {
+  if (!autoResume || hasResumedRef.current || status === 'streaming') return;
+  hasResumedRef.current = true;
+  resumeStream();
+}, [autoResume, resumeStream, status]);
+```
+
+**Why It Happens:** React Strict Mode double-invokes effects to surface side effects. The SDK doesn't guard against concurrent requests, so both invocations create separate streams that fight for state updates.
+
+**Impact:** Duplicate messages, doubled token usage, race conditions causing TypeError: "Cannot read properties of undefined (reading 'state')".
+
+**Source:** [GitHub Issue #7891](https://github.com/vercel/ai/issues/7891), [Issue #6166](https://github.com/vercel/ai/issues/6166)
+
+---
+
+## When to Use This Skill
+
+### Use ai-sdk-ui When:
+- Building React chat interfaces
+- Implementing AI completions in UI
+- Streaming AI responses to frontend
+- Building Next.js AI applications
+- Handling chat message state
+- Displaying tool calls in UI
+- Managing file attachments with AI
+- Migrating from v4 to v5 (UI hooks)
+- Encountering useChat/useCompletion errors
+
+### Don't Use When:
+- Need backend AI functionality → Use **ai-sdk-core** instead
+- Building non-React frontends (Svelte, Vue) → Check official docs
+- Need Generative UI / RSC → See https://ai-sdk.dev/docs/ai-sdk-rsc
+- Building native apps → Different SDK required
+
+### Related Skills:
+- **ai-sdk-core** - Backend text generation, structured output, tools, agents
+- Compose both for full-stack AI applications
+
+---
+
+## Package Versions
+
+**Stable (v6 - Recommended):**
+```json
+{
+  "dependencies": {
+    "ai": "^6.0.8",
+    "@ai-sdk/react": "^3.0.6",
+    "@ai-sdk/openai": "^3.0.2",
+    "react": "^18.3.0",
+    "zod": "^3.24.2"
   }
-})}
+}
 ```
 
-## Framework Support
-
-| Framework | Package | Hooks |
-|-----------|---------|-------|
-| React | `@ai-sdk/react` | `useChat`, `useCompletion`, `useObject` |
-| Vue.js | `@ai-sdk/vue` | `useChat`, `useCompletion`, `useObject` |
-| Svelte | `@ai-sdk/svelte` | `Chat`, `Completion`, `StructuredObject` |
-| Angular | `@ai-sdk/angular` | `Chat`, `Completion`, `StructuredObject` |
-| SolidJS | `ai-sdk-solid` (community) | `useChat`, `useCompletion`, `useObject` |
-
-## AI Elements (shadcn/ui Components)
-
-Pre-built UI components for chat interfaces: https://ai-sdk.dev/elements
-
-Includes: Message bubbles, input fields, tool UIs, and more.
-
-## Reference Navigation
-
-| Reference | Topics |
-|-----------|--------|
-| **[usechat-fundamentals.md](./usechat-fundamentals.md)** | Hook API, transport config, status lifecycle, message state |
-| **[tool-integration.md](./tool-integration.md)** | Tool calling, client/server execution, tool approval, type inference |
-| **[generative-ui.md](./generative-ui.md)** | React components in streams, dynamic UIs, RSC integration |
-| **[persistence.md](./persistence.md)** | Message storage, resume streams, optimistic updates, sync patterns |
-| **[hooks-reference.md](./hooks-reference.md)** | Complete API for useChat/useObject/useCompletion, options reference |
-| **[backend.md](./backend.md)** | Next.js/Node/Fastify/Nest routes, convertToModelMessages, toUIMessageStreamResponse |
-| **[production.md](./production.md)** | Error boundaries, retry strategies, throttling, security best practices |
-| **[migration.md](./migration.md)** | v6 migration guide, breaking changes, codemod usage |
-
-## Event Callbacks
-
-```tsx
-const { messages } = useChat({
-  onFinish: ({ message, messages, isAbort, isDisconnect, isError }) => {
-    // Log completion, update analytics, trigger side effects
-    if (!isError) logMessage(message);
-  },
-  onError: error => {
-    // Custom error handling, fallback UI
-    Sentry.captureException(error);
-  },
-  onData: data => {
-    // Process data parts, validate responses
-    // Throw error to abort processing
-  },
-});
+**Legacy (v5):**
+```json
+{
+  "dependencies": {
+    "ai": "^5.0.99",
+    "@ai-sdk/react": "^1.0.0",
+    "@ai-sdk/openai": "^2.0.68"
+  }
+}
 ```
 
-## Advanced: Custom Transport
+**Version Notes:**
+- AI SDK v6.0.6 (stable, Jan 2026) - recommended for new projects
+- AI SDK v5.x (legacy) - still supported but not receiving new features
+- React 18.3+ / React 19 supported
+- Next.js 14+/15+ recommended
+- Zod 3.24.2+ for schema validation
 
-```tsx
-const { sendMessage } = useChat({
-  transport: new DefaultChatTransport({
-    prepareSendMessagesRequest: ({ id, messages, trigger, messageId }) => {
-      if (trigger === 'submit-user-message') {
-        return {
-          body: {
-            id,
-            message: messages[messages.length - 1],
-            messageId,
-          },
-        };
-      }
-      // Handle regenerate, custom triggers
-    },
-  }),
-});
-```
+---
 
-## Type Inference for Tools
+## Links to Official Documentation
 
-```tsx
-import { InferUITools, InferAgentUIMessage, ToolSet, UIMessage } from 'ai';
+**Core UI Hooks:**
+- AI SDK UI Overview: https://ai-sdk.dev/docs/ai-sdk-ui/overview
+- useChat: https://ai-sdk.dev/docs/ai-sdk-ui/chatbot
+- useCompletion: https://ai-sdk.dev/docs/ai-sdk-ui/completion
+- useObject: https://ai-sdk.dev/docs/ai-sdk-ui/object-generation
 
-const tools = {
-  weather: {
-    description: 'Get weather',
-    inputSchema: z.object({ location: z.string() }),
-    execute: async ({ location }) => `Sunny in ${location}`,
-  },
-} satisfies ToolSet;
+**Advanced Topics (Link Only):**
+- Generative UI (RSC): https://ai-sdk.dev/docs/ai-sdk-rsc/overview
+- Stream Protocols: https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocols
+- Message Metadata: https://ai-sdk.dev/docs/ai-sdk-ui/message-metadata
 
-type MyUITools = InferUITools<typeof tools>;
-type MyUIMessage = UIMessage<never, never, MyUITools>;
-// Or for agent messages:
-// type MyAgentUIMessage = InferAgentUIMessage<typeof myAgent>;
+**Next.js Integration:**
+- Next.js App Router: https://ai-sdk.dev/docs/getting-started/nextjs-app-router
+- Next.js Pages Router: https://ai-sdk.dev/docs/getting-started/nextjs-pages-router
 
-const { messages } = useChat<MyUIMessage>();
-```
+**Migration & Troubleshooting:**
+- v4→v5 Migration: https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0
+- Troubleshooting: https://ai-sdk.dev/docs/troubleshooting
+- Common Issues: https://ai-sdk.dev/docs/troubleshooting/common-issues
 
-## Reasoning & Sources
+**Vercel Deployment:**
+- Vercel Functions: https://vercel.com/docs/functions
+- Streaming on Vercel: https://vercel.com/docs/functions/streaming
 
-```ts
-// Enable reasoning (DeepSeek R1, Claude 3.7 Sonnet)
-return result.toUIMessageStreamResponse({ sendReasoning: true });
+---
 
-// Enable sources (Perplexity, Google)
-return result.toUIMessageStreamResponse({ sendSources: true });
-```
+## Templates
 
-```tsx
-// Render reasoning and sources
-{message.parts.map(part => {
-  if (part.type === 'reasoning') return <pre>{part.text}</pre>;
-  if (part.type === 'source-url') return <a href={part.url}>{part.title}</a>;
-})}
-```
+This skill includes the following templates in `templates/`:
 
-## Performance: Throttle Updates
+1. **use-chat-basic.tsx** - Basic chat with manual input (v5 pattern)
+2. **use-chat-tools.tsx** - Chat with tool calling UI rendering
+3. **use-chat-attachments.tsx** - File attachments support
+4. **use-completion-basic.tsx** - Basic text completion
+5. **use-object-streaming.tsx** - Streaming structured data
+6. **nextjs-chat-app-router.tsx** - Next.js App Router complete example
+7. **nextjs-chat-pages-router.tsx** - Next.js Pages Router complete example
+8. **nextjs-api-route.ts** - API route for both App and Pages Router
+9. **message-persistence.tsx** - Save/load chat history
+10. **custom-message-renderer.tsx** - Custom message components with markdown
+11. **package.json** - Dependencies template
 
-```tsx
-const { messages } = useChat({
-  experimental_throttle: 50, // React only: throttle to 50ms
-});
-```
+## Reference Documents
 
-## Plain Text Streams
+See `references/` for:
 
-```tsx
-import { TextStreamChatTransport } from 'ai';
+- **use-chat-migration.md** - Complete v4→v5 migration guide
+- **streaming-patterns.md** - UI streaming best practices
+- **top-ui-errors.md** - 18 common UI errors with solutions
+- **nextjs-integration.md** - Next.js setup patterns
+- **links-to-official-docs.md** - Organized links to official docs
 
-const { messages } = useChat({
-  transport: new TextStreamChatTransport({ api: '/api/chat' }),
-});
-```
+---
 
-**Note:** Tools, usage, and finish reasons unavailable with `TextStreamChatTransport`.
+**Production Tested**: WordPress Auditor (https://wordpress-auditor.webfonts.workers.dev)
+**Last verified**: 2026-01-20 | **Skill version**: 3.1.0 | **Changes**: Updated to AI SDK v6.0.42 (+19 patches). Added React Strict Mode section. Expanded Issue #7 (stale body) with 3 workarounds. Added 6 new issues: TypeError with resume+onFinish (#13), concurrent sendMessage state corruption (#14), tool approval callback edge case (#15), ZodError on early stop (#16), convertToModelMessages tool approval bug (#17), undefined id infinite loop (#18). Error count: 12→18.

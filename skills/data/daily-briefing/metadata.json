@@ -1,15 +1,7 @@
 {
   "name": "daily-briefing",
-  "description": "Generate a comprehensive daily briefing combining calendar events, email inbox status, and reminders. Use when the user asks to plan their day, get a morning briefing, or wants an overview of their sc",
-  "repo": "ronnycoding/my-personal-assistant",
-  "category": "data",
-  "tags": [
-    "daily",
-    "briefing"
-  ],
-  "stars": 2,
-  "source": "SkillsMP Synced Skills",
-  "dir_name": "daily-briefing",
-  "github_path": ".claude/skills/daily-briefing",
-  "github_branch": "main"
+  "repo": "vamseeachanta/workspace-hub",
+  "path": ".claude/skills/business/sales/daily-briefing/SKILL.md",
+  "source": "github.com/vamseeachanta/workspace-hub",
+  "downloaded_at": "2026-02-04T01:38:14.624439Z"
 }

@@ -1,13 +1,7 @@
 {
   "name": "generate-report-header",
-  "description": "Create standardized report headers with metadata for all agent-generated reports. Use when generating bug reports, security audits, dependency reports, or any worker output requiring consistent format",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "security",
-  "tags": [
-    "generate",
-    "report",
-    "header"
-  ],
-  "stars": 27,
-  "source": "local"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/generate-report-header/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:12.308448Z"
 }

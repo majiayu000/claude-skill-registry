@@ -1,140 +1,274 @@
 ---
-name: skill-create
-description: Create new Claude Code skills following project patterns and best practices. Use when building new skills, extracting reusable capabilities, or converting commands to skills.
+user-invocable: true
+description: "[スキル作成] 新しいスキルを壁打ち→テンプレ生成→登録確認まで"
 ---
 
-# Skill Creation
+# [スキル作成] 新しいスキルを壁打ち→テンプレ生成→登録確認まで
 
-Create well-structured skills using progressive disclosure and project conventions.
+## 入力: $ARGUMENTS
+- スキルの目的や名前（任意）
+- 省略時: 壁打ちから開始
 
-> **Reference:** [best-practices.md](best-practices.md) for comprehensive guidance, [reference.md](reference.md) for project patterns and frontmatter specs.
+例:
+    DBマイグレーション専用のスキルを作りたい
+    react-query の判断軸が欲しい
+    /deploy コマンドを追加したい
 
 ---
 
-## Workflow
+## 🎯 目的
+- 新しいスキルを**壁打ち→テンプレ生成→登録確認**まで一気通貫でサポート
+- 判断軸（role/tech）と手順系（user-invocable）の違いを明確にして設計
+- 既存スキルとの重複を避け、適切な粒度で作成
 
-### Step 1: Understand Use Cases
+---
 
-Gather concrete examples of how the skill will be used:
+## 共通前提（参照）
+- 口調・出力規約は `CLAUDE.md` に従う。
+- 既存スキル一覧は `.claude/skills/` を参照。
+- スキル命名規則は `doc/guide/commands_catalog.md` を参照。
 
-- What tasks will it handle?
-- What would users say to trigger it?
-- What variations exist?
+---
 
-Skip this step only when usage patterns are already clearly understood.
+## フェーズ1: 壁打ち（要件整理）
 
-### Step 2: Plan Contents
+### 質問リスト（順に確認）
 
-Analyze each use case to identify reusable resources:
+#### Q1. スキルの種類は？
+| 種類 | 説明 | 例 |
+|------|------|----|
+| **判断軸（role）** | 役職・専門観点。AIが状況に応じて自動適用 | `developer-specialist`, `ui-designer` |
+| **判断軸（tech）** | 技術スタック固有の知識。rdd.mdの技術スタックで自動適用 | `react`, `svelte`, `tailwind` |
+| **手順系** | `/command` で明示的に呼び出す。フロー型の作業手順 | `/task-run`, `/bug-fix`, `/design-mock` |
 
-| Resource Type | When to Use | Example |
-|---------------|-------------|---------|
-| `scripts/` | Same code rewritten repeatedly | `rotate_pdf.py` |
-| `references/` | Domain knowledge Claude needs | `schema.md`, `api.md` |
-| `assets/` | Files used in output | `template.html`, `logo.png` |
-| `templates/` | Document structure patterns | `report.md` |
-
-### Step 3: Choose Frontmatter
-
-**Required fields:**
-
-```yaml
-name: skill-name          # Lowercase, hyphens, max 64 chars
-description: |            # Max 1024 chars
-  [What it does]. Use when [context].
-```
-
-**Optional fields:**
-
-| Field | Purpose | Example |
-|-------|---------|---------|
-| `context` | Run in forked sub-agent | `context: fork` |
-| `agent` | Specify agent type | `agent: haiku` |
-| `user-invocable` | Hide from slash menu | `user-invocable: false` |
-| `allowed-tools` | Restrict available tools | See reference.md |
-| `hooks` | Lifecycle hooks (PreToolUse, PostToolUse, Stop) | See reference.md |
-
-**Naming pattern:** `<namespace>[-<subnamespace>]-<action>`
-- `code-debug`, `spec-create`, `git-worktree-use`
-
-**Description format:** Third person, what + when.
-- "Generate GitHub issue drafts from spec directories. Use when converting specs to GitHub issues."
-
-### Step 4: Create Structure
+#### Q2. 既存スキルとの関係は？
+- **重複**: 既存スキルでカバーできないか？
+- **拡張**: 既存スキルに追加すべきか？
+- **新規**: 完全に新しい観点・手順か？
 
 ```bash
+# 既存スキル一覧を確認
+ls -la .claude/skills/
+```
+
+#### Q3. スキルのスコープは？
+- **いつ使う？**: どんな状況で適用/呼び出すか
+- **何をする？**: 主な責務（1〜3文で）
+- **何をしない？**: 明示的なスコープ外
+
+#### Q4. 命名は？
+- **判断軸**: `{観点}` または `{技術名}` （例: `security-expert`, `react`）
+- **手順系**: `{カテゴリ}-{動詞}` （例: `task-run`, `bug-fix`, `design-mock`）
+
+---
+
+## フェーズ2: テンプレ生成
+
+### 判断軸（role/tech）テンプレート
+
+```markdown
+---
+category: role  # または tech
+description: "{1行説明}"
+---
+
+# {スキル名}
+
+## いつ適用する？
+<!-- rdd.mdの技術スタック、または状況に応じて -->
+
+## 判断軸（このスキルが守る観点）
+
+### {観点1}
+- {具体的な基準}
+- {具体的な基準}
+
+### {観点2}
+- {具体的な基準}
+- {具体的な基準}
+
+## やること / やらないこと
+
+| やること | やらないこと |
+|----------|--------------|
+| {責務} | {スコープ外} |
+
+## 参考リソース
+- {公式ドキュメント等}
+```
+
+### 手順系（user-invocable）テンプレート
+
+```markdown
+---
+user-invocable: true
+description: "[カテゴリ] {1行説明}"
+---
+
+# [カテゴリ] {タイトル}
+
+## 入力: $ARGUMENTS
+- {引数の説明}
+
+例:
+    {使用例1}
+    {使用例2}
+
+---
+
+## 🎯 目的
+- {目的1}
+- {目的2}
+
+---
+
+## 共通前提（参照）
+- 口調・出力規約は `CLAUDE.md` に従う。
+- `doc/input/rdd.md` を読み、該当する `.claude/skills/*` を適用。
+- 詳細運用は `doc/guide/ai_guidelines.md` を参照。
+
+---
+
+## 実行手順
+
+### 1. {ステップ1}
+{詳細}
+
+### 2. {ステップ2}
+{詳細}
+
+### 3. {ステップ3}
+{詳細}
+
+---
+
+## 出力
+- {成果物1}
+- {成果物2}
+
+---
+
+## 品質チェックリスト
+- [ ] {チェック項目1}
+- [ ] {チェック項目2}
+
+---
+
+## 自己評価
+- **成功自信度**: (1-10)
+- **一言理由**: {短く理由を記載}
+```
+
+---
+
+## フェーズ3: ファイル生成
+
+壁打ちとテンプレ確認が完了したら、以下を実行:
+
+```bash
+# ディレクトリ作成
 mkdir -p .claude/skills/{skill-name}
-```
 
-**Standard structure:**
-
-```
-.claude/skills/{skill-name}/
-├── SKILL.md              # Main instructions (<500 lines)
-├── templates/            # Document templates (.md)
-├── scripts/              # Executable code (.sh, .py)
-└── references/           # Extended documentation
-```
-
-### Step 5: Implement & Test
-
-**Write SKILL.md:**
-- Keep under 200 lines (500 max)
-- Progressive disclosure: SKILL.md → references/
-- Include concrete examples, no emojis
-- Reference authoritative docs (don't duplicate)
-
-**Test with real tasks:**
-1. Does the description trigger correctly?
-2. Can Claude find bundled resources?
-3. Does the workflow complete successfully?
-
----
-
-## Degrees of Freedom
-
-Match specificity to task fragility:
-
-**High freedom** - Multiple approaches valid, context-dependent:
-```markdown
-## Code review
-1. Analyze structure and organization
-2. Check for bugs and edge cases
-3. Suggest improvements
-```
-
-**Low freedom** - Operations fragile, consistency critical:
-```markdown
-## Database migration
-Run exactly: `python scripts/migrate.py --verify --backup`
-Do not modify flags.
+# SKILL.md 作成（テンプレを元に生成）
+# → Writeツールで出力
 ```
 
 ---
 
-## Skill Types
+## フェーズ4: 登録確認
 
-| Type | Characteristics | Examples |
-|------|-----------------|----------|
-| **Operational** | Multi-step workflow, state changes, document templates | `spec-create`, `spec-archive` |
-| **Generation** | Transform input → structured output, format templates | `spec-issues-create` |
-| **Guidance** | Imperative instructions, code patterns | `code-implement`, `code-debug` |
+### 4.1 ファイル構造チェック
+```bash
+# 必須ファイルが存在するか
+ls -la .claude/skills/{skill-name}/SKILL.md
+```
+
+### 4.2 YAML frontmatter チェック
+```bash
+# frontmatterが正しいか確認
+head -10 .claude/skills/{skill-name}/SKILL.md
+```
+
+**判断軸の場合:**
+```yaml
+---
+category: role  # または tech
+description: "{説明}"
+---
+```
+
+**手順系の場合:**
+```yaml
+---
+user-invocable: true
+description: "[カテゴリ] {説明}"
+---
+```
+
+### 4.3 認識確認
+```bash
+# Claude Codeでスキル一覧を確認
+# /help または skill 一覧で表示されるか
+```
+
+### 4.4 カタログ更新（必要に応じて）
+- 判断軸 → `doc/guide/skills_catalog.md` に追記
+- 手順系 → `doc/guide/commands_catalog.md` に追記
 
 ---
 
-## Success Criteria
+## 参考: 既存スキルの構造
 
-- Name follows `<namespace>[-<subnamespace>]-<action>`
-- Description is third person with what + when
-- SKILL.md under 200 lines (500 max)
-- Workflow steps numbered and actionable
-- Templates extracted to separate files
-- References point to authoritative sources
-- No emojis (text markers only)
+### 判断軸（role）の例: developer-specialist
+```
+.claude/skills/developer-specialist/SKILL.md
+├── category: role
+├── いつ適用する？
+├── 判断軸（観点）
+└── やること / やらないこと
+```
+
+### 判断軸（tech）の例: react
+```
+.claude/skills/react/SKILL.md
+├── category: tech
+├── いつ適用する？（rdd.mdの技術スタック）
+├── フレームワーク固有の判断軸
+└── パフォーマンス/設計の基準
+```
+
+### 手順系の例: task-run
+```
+.claude/skills/task-run/SKILL.md
+├── user-invocable: true
+├── 入力（$ARGUMENTS）
+├── 目的
+├── 実行手順（1, 2, 3...）
+├── 出力
+└── 品質チェックリスト
+```
 
 ---
 
-## Reference
+## 壁打ち開始
 
-- [best-practices.md](best-practices.md) - Core principles, patterns, checklist
-- [reference.md](reference.md) - Project patterns, frontmatter specs, anti-patterns
+入力がある場合は、上記の質問リストに沿って整理を開始する。
+入力がない場合は、以下を質問:
+
+```
+📝 新しいスキルを作成します
+
+まず教えてください:
+1. どんな目的のスキル？（1〜2文で）
+2. 判断軸（観点/技術）？ それとも手順系（/command）？
+3. 既存のスキルで似たものはある？
+```
+
+---
+
+## 品質チェックリスト
+- [ ] 既存スキルとの重複がない
+- [ ] 命名規則に従っている（role/tech または カテゴリ-動詞）
+- [ ] YAML frontmatter が正しい
+- [ ] スコープ（やること/やらないこと）が明確
+- [ ] カタログに追記済み（必要に応じて）

@@ -1,9 +1,7 @@
 {
   "name": "ansible-error-handling",
-  "description": "This skill should be used when implementing error handling in Ansible, using block/rescue/always patterns, creating retry logic with until/retries, handling expected failures gracefully, or providing ",
   "repo": "basher83/lunar-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-error-handling/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:29.476629Z"
 }

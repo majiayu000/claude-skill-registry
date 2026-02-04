@@ -1,6 +1,9 @@
 ---
 name: solid-swift
 description: SOLID principles for Swift 6 and SwiftUI (iOS 26+). Apple recommended patterns, @Observable, actors, Preview-driven development.
+user-invocable: true
+references: references/solid-patterns.md, references/anti-patterns.md
+related-skills: swift-core, swiftui-core, ios, macos, ipados, watchos, visionos, tvos
 ---
 
 # SOLID Swift - Apple Best Practices 2025
@@ -254,8 +257,9 @@ Key naming: `module.screen.element`
 ### Liquid Glass Design
 
 ```swift
-.glassBackgroundEffect()
-.liquidGlass()
+.glassEffect(.regular)              // Default
+.glassEffect(.prominent)            // Stronger
+.glassEffect(.regular, in: .capsule) // Custom shape
 ```
 
 ### SwiftUI Performance

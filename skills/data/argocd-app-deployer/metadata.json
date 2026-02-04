@@ -1,9 +1,7 @@
 {
   "name": "argocd-app-deployer",
-  "description": "Argocd App Deployer - Auto-activating skill for DevOps Advanced.Triggers on: argocd app deployer, argocd app deployerPart of the DevOps Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/02-devops-advanced/argocd-app-deployer/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:31.187192Z"
 }

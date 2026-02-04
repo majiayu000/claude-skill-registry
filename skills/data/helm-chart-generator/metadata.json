@@ -1,13 +1,7 @@
 {
   "name": "helm-chart-generator",
-  "description": "Generate production-ready Helm charts for Kubernetes apps. Use when: (1) Deploying applications to Kubernetes, (2) Containerizing apps for Minikube/K8s, (3) Creating reusable deployment packages, (4) ",
-  "repo": "gurupak/todo-evolution",
-  "category": "devops",
-  "tags": [
-    "helm",
-    "chart",
-    "generator"
-  ],
-  "stars": 0,
-  "source": "local"
+  "repo": "obeone/claude-skills",
+  "path": "skills/helm-chart-generator/helm-chart-generator/SKILL.md",
+  "source": "github.com/obeone/claude-skills",
+  "downloaded_at": "2026-02-04T04:19:44.251662Z"
 }

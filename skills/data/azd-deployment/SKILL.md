@@ -1,4 +1,3 @@
-```skill
 ---
 name: azd-deployment
 description: Deploy containerized applications to Azure Container Apps using Azure Developer CLI (azd). Use when setting up azd projects, writing azure.yaml configuration, creating Bicep infrastructure for Container Apps, configuring remote builds with ACR, implementing idempotent deployments, managing environment variables across local/.azure/Bicep, or troubleshooting azd up failures. Triggers on requests for azd configuration, Container Apps deployment, multi-service deployments, and infrastructure-as-code with Bicep.
@@ -44,7 +43,7 @@ project/
 ### Minimal Configuration
 
 ```yaml
-name: my-project
+name: azd-deployment
 services:
   backend:
     project: ./src/backend
@@ -58,7 +57,7 @@ services:
 ### Full Configuration with Hooks
 
 ```yaml
-name: my-project
+name: azd-deployment
 metadata:
   template: my-project@1.0.0
 
@@ -295,4 +294,3 @@ az containerapp logs show -n <app> -g <rg> --follow  # Stream logs
 3. **Use `azd env set` for secrets** - Not main.parameters.json defaults
 4. **Service tags (`azd-service-name`)** - Required for azd to find Container Apps
 5. **`|| true` in hooks** - Prevent RBAC "already exists" errors from failing deploy
-```

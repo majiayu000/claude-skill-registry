@@ -1,7 +1,7 @@
 {
   "name": "skill-manager",
-  "repo": "Interstellar-code/claud-skills",
-  "path": "generic-claude-framework/skills/skill-manager/skill.md",
-  "source": "github.com/Interstellar-code/claud-skills",
-  "downloaded_at": "2026-02-02T03:59:34.367905Z"
+  "repo": "glwlg/X-bot",
+  "path": "skills/builtin/skill_manager/SKILL.md",
+  "source": "github.com/glwlg/X-bot",
+  "downloaded_at": "2026-02-04T02:00:25.789863Z"
 }

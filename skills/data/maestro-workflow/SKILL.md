@@ -1,398 +1,232 @@
 ---
 name: maestro-workflow
-description: Maestro 기반 모바일 테스트 자동화 워크플로우를 시작합니다. planner -> grouper -> generator -> executor -> healer 순서로 Agent 기반 테스트를 자동 실행합니다. "/maestro-workflow", "마에스트로 워크플로우", "Maestro 테스트" 등의 명령으로 활성화됩니다.
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task, TodoWrite, AskUserQuestion
+description: >
+  Multi-LLM orchestration implementing the 5-stage coding workflow:
+  Example Analysis → Hypothesis → Implementation → Debug Loop → Recursive Improvement.
+
+  Based on "Towards a Science of Scaling Agent Systems" (Kim et al., 2025):
+  - Centralized Consult architecture (Claude orchestrates, others advise)
+  - Measured coordination (avoid MAS overhead in tool-heavy stages)
+  - Tests-first selection (Poetiq pattern, not voting)
+
+  Use when: Debugging complex issues, analyzing unfamiliar code, refactoring,
+  or any task that benefits from diverse LLM perspectives with verification.
 ---
 
-# Maestro 테스트 워크플로우
+# Maestro Workflow: Multi-LLM Orchestration with Measured Coordination
 
-Claude + Maestro로 Agent 기반 모바일 테스트 자동화를 수행하는 워크플로우입니다.
+## Core Philosophy (Paper-Based)
 
-## 활성화 방법
+This workflow implements findings from "Towards a Science of Scaling Agent Systems":
 
-- `/maestro-workflow`
-- `마에스트로 워크플로우`
-- `Maestro 테스트`
-- `마에스트로로 [기능] 테스트`
+### 1. Tool-Coordination Trade-off
+- **Paper finding**: Tool-heavy tasks suffer from multi-agent coordination overhead
+- **Our rule**: Only Claude Code (orchestrator) runs tools (edit files, run tests)
+- **Sub-agents** (Codex/Gemini) provide TEXT ADVICE ONLY
 
-### 예시
+### 2. Capability Saturation (~45% threshold)
+- **Paper finding**: When single-agent baseline exceeds ~45%, MAS returns diminish
+- **Our rule**: If you're confident about the solution, SKIP ensemble generation
+- **Ask yourself**: "Am I stuck, or do I just want confirmation?"
 
-```
-사용자: /maestro-workflow 로그인 기능 테스트
-사용자: 마에스트로로 거래 추가 기능 테스트해줘
-사용자: Maestro 테스트 전체 앱
-```
+### 3. Error Amplification Prevention
+- **Paper finding**: Independent agents amplify errors 17.2x without verification
+- **Our rule**: ALWAYS verify with tests before accepting any candidate
+- **Use `maestro_select_best` with `tests_first` mode (not voting!)**
 
----
+## Available Tools
 
-## 워크플로우 개요
+| Tool | Purpose | When to Use |
+|------|---------|-------------|
+| `maestro_consult` | Single model consultation | Analysis, code review, specific questions |
+| `maestro_ensemble_generate` | Multiple candidates | Hypothesis generation, solution exploration |
+| `maestro_select_best` | Pick best candidate | After ensemble, with test/lint results |
+| `maestro_pack_context` | Smart context packing | Before any consultation |
+| `maestro_run_stage` | Execute workflow stage | Structured 5-stage execution |
+| `maestro_workflow_state` | Check progress | Monitor budget, see history |
+| `maestro_get_metrics` | Paper-aligned metrics | Performance analysis |
 
-```
-[요청 접수]
-    |
-    v
-[Phase 1: 시나리오 계획] ── maestro-planner-agent
-    |  - 앱 기능 분석
-    |  - 테스트 시나리오 YAML 출력
-    |
-    v
-[Phase 2: 그룹화] ── maestro-grouper-agent
-    |  - 병렬/순차 실행 그룹 분류
-    |  - 실행 순서 결정
-    |
-    v
-[Phase 3: Flow 생성] ── maestro-generator-agent
-    |  - Maestro YAML 파일 생성
-    |  - flows/ 디렉토리에 저장
-    |
-    v
-[Phase 4: 실행] ── scripts/run-maestro.sh
-    |  - 그룹별 병렬/순차 실행
-    |  - 결과 수집
-    |
-    v
-[Phase 5: 복구 Loop] ── maestro-healer-agent
-    |  +──[테스트 실패]──> healer 호출
-    |  |                    - 실패 분석
-    |  |                    - flow 수정
-    |  +<─────────────────[재실행]
-    |
-    v (모든 테스트 통과)
-[Phase 6: 완료 보고]
-    - 결과 요약
-    - 보고서 생성
-```
+## The 5-Stage Workflow
 
----
+### Stage 1: Example Analysis (analyze)
+**Goal**: Freeze facts before guessing.
 
-## Phase 1: 시나리오 계획
+**Process**:
+1. Gather context with file reads, `grep`, `ls`
+2. Optionally use `maestro_consult(provider="gemini")` for large file summarization
+3. Document observations, repro steps, affected modules
 
-### 1.1 maestro-planner-agent 호출
-
-```
-Task(
-  subagent_type: "maestro-planner-agent",
-  prompt: """
-  다음 기능에 대한 Maestro 테스트 시나리오를 계획해주세요:
-
-  기능: [테스트 대상 기능]
-  앱 정보:
-  - 패키지: com.household.shared.shared_household_account
-  - 아키텍처: Clean Architecture + Feature-first
-
-  lib/features/ 디렉토리를 분석하여 시나리오를 도출하세요.
-  반드시 YAML 형식으로만 출력하세요.
-  """
-)
-```
-
-### 1.2 출력 예시
-
-```yaml
-scenarios:
-  - id: login_success
-    description: 정상 로그인
-    entry_state: logged_out
-    screen: Login
-    mutation: true
-    shared_state: true
-    priority: critical
-    steps:
-      - 로그인 화면 진입
-      - 이메일 입력
-      - 비밀번호 입력
-      - 로그인 버튼 탭
-      - 홈 화면 확인
-```
-
----
-
-## Phase 2: 그룹화
-
-### 2.1 maestro-grouper-agent 호출
-
-```
-Task(
-  subagent_type: "maestro-grouper-agent",
-  prompt: """
-  다음 테스트 시나리오를 병렬 실행 그룹으로 분류해주세요:
-
-  [Phase 1 출력 YAML]
-
-  반드시 YAML 형식으로만 출력하세요.
-  """
-)
-```
-
-### 2.2 출력 예시
-
-```yaml
-groups:
-  - group_id: auth
-    execution: sequential
-    test_ids: [login_success, logout]
-    reason: 인증 상태 공유로 순차 실행
-    order: 1
-
-  - group_id: read_only
-    execution: parallel
-    test_ids: [category_list, statistics_view]
-    reason: 읽기 전용으로 병렬 실행 가능
-    order: 2
-```
-
----
-
-## Phase 3: Flow 생성
-
-### 3.1 maestro-generator-agent 호출
-
-```
-Task(
-  subagent_type: "maestro-generator-agent",
-  prompt: """
-  다음 시나리오를 Maestro YAML flow 파일로 생성해주세요:
-
-  시나리오:
-  [Phase 1 출력 YAML]
-
-  그룹 정보:
-  [Phase 2 출력 YAML]
-
-  앱 패키지: com.household.shared.shared_household_account
-
-  flows/ 디렉토리에 파일을 생성하세요.
-  """
-)
-```
-
-### 3.2 생성되는 파일 구조
-
-```
-flows/
-├── auth/
-│   ├── login_success.yaml
-│   └── logout.yaml
-├── transaction/
-│   └── add_expense.yaml
-└── common/
-    └── setup.yaml
-```
-
----
-
-## Phase 4: 실행
-
-### 4.1 Maestro CLI 실행
-
-Claude가 직접 실행합니다:
-
-```bash
-# 순차 그룹 실행
-maestro test flows/auth/login_success.yaml
-maestro test flows/auth/logout.yaml
-
-# 병렬 그룹 실행
-maestro test flows/transaction/ &
-maestro test flows/category/ &
-wait
-```
-
-### 4.2 실행 스크립트
-
-```bash
-# scripts/run-maestro.sh 실행
-./scripts/run-maestro.sh
-```
-
----
-
-## Phase 5: 복구 Loop
-
-### 5.1 실패 감지
-
-실행 결과에서 실패한 테스트 확인:
-
-```bash
-# 로그에서 실패 추출
-grep -l "FAILED" .maestro/logs/*.log
-```
-
-### 5.2 maestro-healer-agent 호출
-
-```
-Task(
-  subagent_type: "maestro-healer-agent",
-  prompt: """
-  다음 실패한 Maestro 테스트를 수정해주세요:
-
-  실패한 flow: flows/auth/login_success.yaml
-
-  실패 로그:
-  ```
-  [실패 로그 내용]
-  ```
-
-  테스트 목적은 변경하지 마세요.
-  selector 변경이나 대기 시간 추가로 해결하세요.
-  """
-)
-```
-
-### 5.3 재시도 제한
-
-- 동일 테스트 최대 3회 재시도
-- 초과 시 수동 검토 요청
-
----
-
-## Phase 6: 완료 보고
-
-### 6.1 결과 요약
-
-```yaml
-# .maestro/reports/summary.yaml
-execution:
-  date: 2026-01-05
-  total_tests: 10
-  passed: 8
-  failed: 1
-  healed: 1
-
-groups:
-  - group_id: auth
-    tests: 2
-    passed: 2
-
-  - group_id: transaction
-    tests: 3
-    passed: 2
-    healed: 1
-
-failures:
-  - test_id: share_invite
-    attempts: 3
-    status: manual_review
-```
-
-### 6.2 보고서 저장
-
-```
-.maestro/
-├── flows/          # 생성된 flow 파일
-├── logs/           # 실행 로그
-├── screenshots/    # 스크린샷
-└── reports/        # 결과 보고서
-    └── summary.yaml
-```
-
----
-
-## Agent 역할 정리
-
-| Agent | 역할 | 출력 |
-|-------|------|------|
-| maestro-planner-agent | 테스트 시나리오 계획 | scenarios YAML |
-| maestro-grouper-agent | 병렬/순차 그룹화 | groups YAML |
-| maestro-generator-agent | Maestro flow 생성 | .yaml 파일들 |
-| maestro-healer-agent | 실패 테스트 복구 | 수정된 flow |
-
----
-
-## 디렉토리 구조
-
-```
-project/
-├── .claude/
-│   ├── agents/
-│   │   ├── maestro-planner-agent.md
-│   │   ├── maestro-grouper-agent.md
-│   │   ├── maestro-generator-agent.md
-│   │   └── maestro-healer-agent.md
-│   └── skills/
-│       └── maestro-workflow/
-│           └── SKILL.md
-├── flows/                    # Maestro flow 파일
-│   ├── auth/
-│   ├── transaction/
-│   └── common/
-├── scripts/
-│   ├── run-maestro.sh       # 실행 스크립트
-│   └── heal-maestro.sh      # 복구 스크립트
-└── .maestro/
-    ├── logs/
-    ├── screenshots/
-    └── reports/
-```
-
----
-
-## 환경 설정
-
-### Maestro 설치
-
-```bash
-# macOS
-brew install maestro
-
-# 또는 curl
-curl -Ls "https://get.maestro.mobile.dev" | bash
-```
-
-### 환경변수 (.env)
-
-```env
-TEST_EMAIL=test@example.com
-TEST_PASSWORD=TestPassword123!
-MAESTRO_DRIVER_STARTUP_TIMEOUT=120000
-```
-
----
-
-## 자동 승인 설정
-
-워크플로우 원활한 실행을 위한 settings.local.json 권한:
-
+**Output** (JSON):
 ```json
 {
-  "permissions": {
-    "allow": [
-      "Bash(maestro:*)",
-      "Bash(./scripts/run-maestro.sh:*)",
-      "Bash(./scripts/heal-maestro.sh:*)"
-    ]
-  }
+  "observations": ["Test fails with IndexError on line 42"],
+  "repro_steps": ["Run pytest test_auth.py::test_login"],
+  "affected_modules": ["src/auth.py", "src/db.py"],
+  "invariants": ["Must not break existing login flow"]
 }
 ```
 
----
-
-## 사용 예시
-
-### 전체 앱 테스트
-
-```
-사용자: /maestro-workflow 전체 앱 테스트
-```
-
-### 특정 기능 테스트
-
-```
-사용자: /maestro-workflow 로그인 기능만 테스트
-```
-
-### 특정 그룹만 재실행
-
-```
-사용자: auth 그룹 테스트만 다시 실행해줘
-```
+**Coordination Policy**: Low overhead allowed (2 consults max)
 
 ---
 
-## 주의사항
+### Stage 2: Hypothesis Formulation (hypothesize)
+**Goal**: Generate competing explanations with testable predictions.
 
-1. **Maestro 설치 필수**: `maestro` CLI가 PATH에 있어야 함
-2. **에뮬레이터 실행 필요**: Android/iOS 에뮬레이터가 실행 중이어야 함
-3. **YOLO 모드 권장**: `--dangerously-skip-permissions`로 실행 시 끊김 없이 진행
-4. **테스트 격리**: 각 테스트는 `clearState`로 시작하여 격리
-5. **병렬 실행 주의**: shared_state 테스트는 반드시 순차 실행
+**Process**:
+1. Use `maestro_ensemble_generate(task="Top 3 root causes...", providers=["codex", "gemini"])`
+2. Each hypothesis must have a VERIFICATION TEST
+3. Use `maestro_select_best` to pick most testable hypothesis
+
+**Output** (JSON):
+```json
+{
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "Off-by-one error in array indexing",
+      "verification_test": "Add edge case test with empty array",
+      "confidence": 0.7
+    }
+  ],
+  "selected": "H1",
+  "test_command": "pytest test_auth.py::test_empty_users -v"
+}
+```
+
+**Coordination Policy**: Ensemble ENCOURAGED (best stage for MAS)
+
+---
+
+### Stage 3: Code Implementation (implement)
+**Goal**: Apply minimal, testable changes.
+
+**Process**:
+1. Claude Code (orchestrator) edits the file directly
+2. Optionally consult `maestro_consult(provider="codex")` for diff suggestions
+3. Run tests IMMEDIATELY after edit
+
+**Key Rules**:
+- NO parallel implementations (creates conflicts)
+- ONE change at a time
+- Test after EVERY change
+
+**Coordination Policy**: Single agent PREFERRED (tool-heavy = bad for MAS)
+
+---
+
+### Stage 4: Iterative Debugging (debug)
+**Goal**: Fix without divergence.
+
+**Process**:
+1. Analyze the NEW error (what changed?)
+2. Update hypothesis confidence
+3. Make SINGLE smallest change
+4. Test again
+
+**WARNING**: Paper shows sequential debugging DEGRADES with multi-agent!
+
+**Coordination Policy**:
+- Single agent ONLY for first 2 iterations
+- Consult external ONLY if stuck for 3+ iterations
+- Feed error logs into context
+
+**Iteration Limit**: 5 (escalate if exceeded)
+
+---
+
+### Stage 5: Recursive Improvement (improve)
+**Goal**: Refactor and stabilize after tests pass.
+
+**Process**:
+1. Review for code quality (but don't over-engineer!)
+2. Identify edge cases
+3. Add regression tests
+4. Optional: `maestro_consult(provider="claude")` for safety review
+
+**Entry Condition**: ALL TESTS MUST PASS
+
+**Coordination Policy**: Ensemble OK for review/suggestions
+
+---
+
+## Example Usage Patterns
+
+### Pattern 1: Bug Investigation
+```
+User: "The login test is failing, can you debug it?"
+
+1. [ANALYZE] Read test file, error logs
+   maestro_pack_context(files=["tests/test_auth.py"], errors=[error_log], stage="analyze")
+
+2. [HYPOTHESIZE] Generate root cause theories
+   maestro_ensemble_generate(task="Top 3 causes for IndexError in auth...", providers=["codex", "gemini"])
+
+3. [SELECT] Pick most testable hypothesis
+   maestro_select_best(candidates=..., mode="tests_first", test_results=[...])
+
+4. [IMPLEMENT] Fix (Claude edits directly)
+   Edit file, run pytest
+
+5. [DEBUG] If test still fails, iterate
+   Single agent mode, minimal changes
+
+6. [IMPROVE] After tests pass
+   Add edge case tests, review for safety
+```
+
+### Pattern 2: Code Review with Diverse Perspectives
+```
+User: "Review this PR for security issues"
+
+1. maestro_pack_context(files=[changed_files], stage="analyze")
+
+2. maestro_ensemble_generate(
+     task="Security review: identify vulnerabilities in...",
+     providers=["codex", "gemini", "claude"]
+   )
+
+3. maestro_select_best(candidates=..., mode="llm_judge", criteria=["security", "severity"])
+```
+
+### Pattern 3: Checking Metrics Mid-Workflow
+```
+User: "How much coordination overhead have we used?"
+
+maestro_workflow_state()
+# Returns: consults used, budget remaining, efficiency score
+```
+
+## Coordination Budget
+
+**Per Workflow Limits** (configurable):
+- Max consults per stage: 2
+- Max total consults: 6
+- Capability threshold: 45%
+
+**When to SKIP ensemble**:
+- You're confident in the solution
+- It's a tool-heavy stage (implement, debug)
+- Budget is exhausted
+
+## Error Handling
+
+If a sub-agent fails:
+1. Check `stderr` in the response
+2. Try a different provider
+3. Fall back to single-agent mode
+4. Document the failure in tracing
+
+## Metrics (Paper-Aligned)
+
+After any workflow, check:
+```
+maestro_get_metrics()
+```
+
+Key metrics:
+- **Coordination Overhead (O%)**: Extra calls vs single-agent
+- **Efficiency Score (Ec)**: Success / overhead ratio
+- **Test Coverage Rate**: Selections that had test signals
+
+Target: O% < 300%, Ec > 0.4, Test Coverage > 80%

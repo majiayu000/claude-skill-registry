@@ -109,15 +109,16 @@ Detect operating mode at startup:
 
 ### Phase 4: Auto-Fix
 
-**Execute fixes for ALL 17 criteria on the spot.**
+**Execute fixes for ALL 19 criteria on the spot.**
 
-- Execution order (6 groups):
-  1. **Structural (#1-#4)** — Story/Tasks template compliance
+- Execution order (7 groups):
+  1. **Structural (#1-#4)** — Story/Tasks template compliance + AC completeness/specificity
   2. **Standards (#5)** — RFC/OWASP compliance FIRST (before YAGNI/KISS!)
   3. **Solution (#6)** — Library versions
-  4. **Workflow (#7-#13)** — Test strategy, docs integration, size, cleanup, YAGNI, KISS, task order
+  4. **Workflow (#7-#13)** — Test strategy, docs integration, size, cleanup, YAGNI, KISS, task order, Database Creation
   5. **Quality (#14-#15)** — Documentation complete, hardcoded values
-  6. **Traceability (#16-#17)** — Story-Task alignment, AC coverage (LAST, after all fixes)
+  6. **Dependencies (#18-#19)** — Story/Task independence (no forward dependencies)
+  7. **Traceability (#16-#17)** — Story-Task alignment, AC coverage quality (LAST, after all fixes)
 - Use Auto-Fix Actions table below as authoritative checklist
 - Zero out penalty points as fixes applied
 - Test Strategy section must exist but remain empty (testing handled separately)
@@ -183,7 +184,14 @@ Detect operating mode at startup:
 | 16 | Story-Task Alignment | Tasks implement Story statement | MEDIUM (3) | Add TODO to misaligned Tasks; warn user |
 | 17 | AC-Task Coverage | Each AC has implementing Task | MEDIUM (3) | Add TODO for uncovered ACs; suggest missing Tasks |
 
-**Maximum Penalty:** 50 points
+### Dependencies (#18-#19)
+
+| # | Criterion | What it checks | Penalty | Auto-fix actions |
+|---|-----------|----------------|---------|------------------|
+| 18 | Story Dependencies | No forward Story dependencies | CRITICAL (10) | Flag forward dependencies; suggest reorder |
+| 19 | Task Dependencies | No forward Task dependencies | MEDIUM (3) | Flag forward dependencies; reorder Tasks |
+
+**Maximum Penalty:** 60 points
 
 ## Final Assessment Model
 
@@ -330,17 +338,18 @@ Before marking any criterion as complete, provide concrete evidence (doc path, M
 - **Templates (centralized):** `shared/templates/story_template.md`, `shared/templates/task_template_implementation.md`
 - **Local copies:** `docs/templates/` (in target project)
 - **Validation Checklists (Progressive Disclosure):**
-  - `references/verification_checklist_template.md` (overview of 6 categories)
+  - `references/verification_checklist_template.md` (overview of 7 categories)
   - `references/structural_validation.md` (criteria #1-#4)
   - `references/standards_validation.md` (criterion #5)
   - `references/solution_validation.md` (criterion #6)
   - `references/workflow_validation.md` (criteria #7-#13)
   - `references/quality_validation.md` (criteria #14-#15)
+  - `references/dependency_validation.md` (criteria #18-#19)
   - `references/traceability_validation.md` (criteria #16-#17)
   - `references/domain_patterns.md` (pattern registry for ln-002 delegation)
   - `references/penalty_points.md` (penalty system details)
 - **Linear integration:** `../shared/templates/linear_integration.md`
 
 ---
-**Version:** 6.0.0 (Added GO/NO-GO verdict, Readiness Score, Anti-Hallucination verification based on BMAD validate-next-story methodology)
-**Last Updated:** 2026-01-29
+**Version:** 7.0.0 (BREAKING: Added 2 new criteria #18-#19 for Story/Task dependencies per BMAD Method. Expanded criterion #4 with AC completeness/specificity, #9 with Database Creation Principle, #13 with forward dependency checks, #17 with STRONG/WEAK/MISSING coverage quality. Total 19 criteria, max 60 penalty points.)
+**Last Updated:** 2026-02-03

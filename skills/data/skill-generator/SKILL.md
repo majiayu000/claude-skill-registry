@@ -1,465 +1,169 @@
 ---
 name: skill-generator
-description: Meta-skill for creating new Claude Code skills with configurable execution modes. Supports sequential (fixed order) and autonomous (stateless) phase patterns. Use for skill scaffolding, skill creation, or building new workflows. Triggers on "create skill", "new skill", "skill generator".
-allowed-tools: Task, AskUserQuestion, Read, Bash, Glob, Grep, Write
+description: Generate new skills with standardized structure and frontmatter. Triggers: SG, new skill, 新增 skill, 建立技能, create skill, 新技能, 產生技能, generate skill, 技能模板, skill template, add skill, 加技能, make skill.
+category: meta
+version: 1.0.0
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
+allowed-tools:
+  - read_file
+  - create_file
+  - list_dir
 ---
 
-# Skill Generator
+# Skill 生成器
 
-Meta-skill for creating new Claude Code skills with configurable execution modes.
+## 描述
 
-## Architecture Overview
+自動生成符合標準的 SKILL.md 和資料夾結構。
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Skill Generator                               │
-│                                                                  │
-│  Input: User Request (skill name, purpose, mode)                │
-│                         ↓                                        │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │  Phase 0-5: Sequential Pipeline                          │    │
-│  │  ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐             │    │
-│  │  │ P0 │→│ P1 │→│ P2 │→│ P3 │→│ P4 │→│ P5 │             │    │
-│  │  │Spec│ │Req │ │Dir │ │Gen │ │Spec│ │Val │             │    │
-│  │  └────┘ └────┘ └────┘ └─┬──┘ └────┘ └────┘             │    │
-│  │                         │                                │    │
-│  │                    ┌────┴────┐                           │    │
-│  │                    ↓         ↓                           │    │
-│  │              Sequential  Autonomous                      │    │
-│  │              (phases/)   (actions/)                      │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                         ↓                                        │
-│  Output: .claude/skills/{skill-name}/ (complete package)        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+## 觸發條件
 
-## Execution Modes
+- 「新增 skill」「建立技能」「create skill」「SG」
 
-### Mode 1: Sequential (Fixed Order)
+## 標準格式規範
 
-Traditional linear execution model, phases execute in numeric prefix order.
+### YAML Frontmatter（必要）
 
-```
-Phase 01 -> Phase 02 -> Phase 03 -> ... -> Phase N
+```yaml
+---
+name: skill-name          # kebab-case 必須（小寫 + 連字號）
+description: 描述         # 包含 WHAT + WHEN + Triggers
+category: core            # core/workflow/meta/integration
+version: 1.0.0            # SemVer
+compatibility:            # 支援的平台（可選）
+  - claude-code
+  - github-copilot
+  - vscode
+allowed-tools:            # 可使用的工具（可選）
+  - read_file
+  - write_file
+orchestrates:             # 組合的其他 skills（workflow 用）
+  - skill-a
+  - skill-b
+---
 ```
 
-**Use Cases**:
-- Pipeline tasks (collect -> analyze -> generate)
-- Strong dependencies between phases
-- Fixed output structure
+### 命名規則
 
-**Examples**: `software-manual`, `copyright-docs`
+| 規則 | 正確 ✅ | 錯誤 ❌ |
+|------|---------|---------|
+| kebab-case | `code-reviewer` | `codeReviewer`, `CodeReviewer` |
+| 小寫 | `git-precommit` | `Git-Precommit` |
+| 有意義 | `test-generator` | `tg`, `testgen` |
+| 無底線 | `memory-bank` | `memory_bank` |
 
-### Mode 2: Autonomous (Stateless Auto-Select)
-
-Intelligent routing model, dynamically selects execution path based on context.
+### 資料夾結構
 
 ```
----------------------------------------------------
-                Orchestrator Agent
-   (Read state -> Select Phase -> Execute -> Update)
----------------------------------------------------
-                |
-    ---------+----------+----------
-    |        |          |
-  Phase A   Phase B    Phase C
-  (standalone)  (standalone)  (standalone)
+.claude/skills/
+└── skill-name/
+    ├── SKILL.md           # 主要技能定義（必要）
+    ├── references/        # 詳細參考文檔（可選）
+    │   ├── examples.md
+    │   └── api.md
+    ├── templates/         # 範本檔案（可選）
+    │   └── template.py
+    └── scripts/           # 輔助腳本（可選）
+        └── helper.ps1
 ```
 
-**Use Cases**:
-- Interactive tasks (chat, Q&A)
-- No strong dependencies between phases
-- Dynamic user intent response required
+## 生成流程
 
-**Examples**: `issue-manage`, `workflow-debug`
+### Step 1: 收集資訊
 
-## Key Design Principles
+```
+❓ Skill 名稱：[輸入名稱，會自動轉 kebab-case]
+❓ 描述：[一句話描述 + 觸發詞]
+❓ 類別：[core/workflow/meta/integration]
+❓ 需要額外資料夾嗎？[references/templates/scripts]
+```
 
-1. **Mode Awareness**: Automatically recommend execution mode based on task characteristics
-2. **Skeleton Generation**: Generate complete directory structure and file skeletons
-3. **Standards Compliance**: Strictly follow `_shared/SKILL-DESIGN-SPEC.md`
-4. **Extensibility**: Generated Skills are easy to extend and modify
+### Step 2: 驗證
 
+- ✅ 名稱是 kebab-case
+- ✅ 名稱不重複
+- ✅ 描述包含觸發詞
+- ✅ 類別有效
+
+### Step 3: 生成
+
+```
+📁 建立 .claude/skills/{name}/
+📄 建立 .claude/skills/{name}/SKILL.md
+📁 建立子資料夾（如需要）
+📝 更新 AGENTS.md skills 清單
+```
+
+## 使用範例
+
+```
+「新增 skill: api-tester」
+「SG 建立 docker 管理技能」
+「create skill for database migrations」
+```
+
+## 輸出範本
+
+當你說「新增 skill: example-skill」，我會生成：
+
+```markdown
+---
+name: example-skill
+description: [描述]. Triggers: [觸發詞列表].
+category: core
+version: 1.0.0
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
 ---
 
-## Required Prerequisites
+# [Skill 名稱]
 
-IMPORTANT: Before any generation operation, read the following specification documents. Generating without understanding these standards will result in non-conforming output.
+## 描述
 
-### Core Specifications (Mandatory Read)
+[詳細描述]
 
-| Document | Purpose | Priority |
-|----------|---------|----------|
-| [../_shared/SKILL-DESIGN-SPEC.md](../_shared/SKILL-DESIGN-SPEC.md) | Universal design spec - defines structure, naming, quality standards for all Skills | **P0 - Critical** |
-| [specs/reference-docs-spec.md](specs/reference-docs-spec.md) | Reference document generation spec - ensures generated Skills have proper phase-based Reference Documents with usage timing guidance | **P0 - Critical** |
+## 觸發條件
 
-### Template Files (Read Before Generation)
+- 「[觸發詞 1]」「[觸發詞 2]」
 
-| Document | Purpose |
-|----------|---------|
-| [templates/skill-md.md](templates/skill-md.md) | SKILL.md entry file template |
-| [templates/sequential-phase.md](templates/sequential-phase.md) | Sequential Phase template |
-| [templates/autonomous-orchestrator.md](templates/autonomous-orchestrator.md) | Autonomous Orchestrator template |
-| [templates/autonomous-action.md](templates/autonomous-action.md) | Autonomous Action template |
-| [templates/code-analysis-action.md](templates/code-analysis-action.md) | Code Analysis Action template |
-| [templates/llm-action.md](templates/llm-action.md) | LLM Action template |
-| [templates/script-template.md](templates/script-template.md) | Unified Script Template (Bash + Python) |
+## 執行流程
 
-### Specification Documents (Read as Needed)
+[流程圖或步驟]
 
-| Document | Purpose |
-|----------|---------|
-| [specs/execution-modes.md](specs/execution-modes.md) | Execution Modes Specification |
-| [specs/skill-requirements.md](specs/skill-requirements.md) | Skill Requirements Specification |
-| [specs/cli-integration.md](specs/cli-integration.md) | CLI Integration Specification |
-| [specs/scripting-integration.md](specs/scripting-integration.md) | Script Integration Specification |
+## 參數
 
-### Phase Execution Guides (Reference During Execution)
+| 參數 | 說明 | 預設 |
+|------|------|------|
+| `--option` | 說明 | false |
 
-| Document | Purpose |
-|----------|---------|
-| [phases/01-requirements-discovery.md](phases/01-requirements-discovery.md) | Collect Skill Requirements |
-| [phases/02-structure-generation.md](phases/02-structure-generation.md) | Generate Directory Structure |
-| [phases/03-phase-generation.md](phases/03-phase-generation.md) | Generate Phase Files |
-| [phases/04-specs-templates.md](phases/04-specs-templates.md) | Generate Specs and Templates |
-| [phases/05-validation.md](phases/05-validation.md) | Validation and Documentation |
-
----
-
-## Execution Flow
+## 使用範例
 
 ```
-Input Parsing:
-   └─ Convert user request to structured format (skill-name/purpose/mode)
-
-Phase 0: Specification Study (MANDATORY - Must complete before proceeding)
-   - Read specification documents
-   - Load: ../_shared/SKILL-DESIGN-SPEC.md
-   - Load: All templates/*.md files
-   - Understand: Structure rules, naming conventions, quality standards
-   - Output: Internalized requirements (in-memory, no file output)
-   - Validation: MUST complete before Phase 1
-
-Phase 1: Requirements Discovery
-   - Gather skill requirements via user interaction
-   - Tool: AskUserQuestion
-   - Collect: Skill name, purpose, execution mode
-   - Collect: Phase/Action definition
-   - Collect: Tool dependencies, output format
-   - Process: Generate configuration object
-   - Output: skill-config.json
-   - Contains: skill_name, execution_mode, phases/actions, allowed_tools
-
-Phase 2: Structure Generation
-   - Create directory structure and entry file
-   - Input: skill-config.json (from Phase 1)
-   - Tool: Bash
-   - Execute: mkdir -p .claude/skills/{skill-name}/{phases,specs,templates,scripts}
-   - Tool: Write
-   - Generate: SKILL.md (entry point with architecture diagram)
-   - Output: Complete directory structure
-
-Phase 3: Phase/Action Generation
-   - Decision (execution_mode check):
-   - IF execution_mode === "sequential": Generate Sequential Phases
-   - Read template: templates/sequential-phase.md
-   - Loop: For each phase in config.sequential_config.phases
-   - Generate: phases/{phase-id}.md
-   - Link: Previous phase output -> Current phase input
-   - Write: phases/_orchestrator.md
-   - Write: workflow.json
-   - Output: phases/01-{name}.md, phases/02-{name}.md, ...
-
-   - ELSE IF execution_mode === "autonomous": Generate Orchestrator + Actions
-   - Read template: templates/autonomous-orchestrator.md
-   - Write: phases/state-schema.md
-   - Write: phases/orchestrator.md
-   - Write: specs/action-catalog.md
-   - Loop: For each action in config.autonomous_config.actions
-   - Read template: templates/autonomous-action.md
-   - Generate: phases/actions/{action-id}.md
-   - Output: phases/orchestrator.md, phases/actions/*.md
-
-Phase 4: Specs & Templates
-   - Generate domain specifications and templates
-   - Input: skill-config.json (domain context)
-   - Reference: [specs/reference-docs-spec.md](specs/reference-docs-spec.md) for document organization
-   - Tool: Write
-   - Generate: specs/{domain}-requirements.md
-   - Generate: specs/quality-standards.md
-   - Generate: templates/agent-base.md (if needed)
-   - Output: Domain-specific documentation
-
-Phase 5: Validation & Documentation
-   - Verify completeness and generate usage guide
-   - Input: All generated files from previous phases
-   - Tool: Glob + Read
-   - Check: Required files exist and contain proper structure
-   - Tool: Write
-   - Generate: README.md (usage instructions)
-   - Generate: validation-report.json (completeness check)
-   - Output: Final documentation
+[範例 1]
+[範例 2]
 ```
 
-**Execution Protocol**:
-
-```javascript
-// Phase 0: Read specifications (in-memory)
-Read('.claude/skills/_shared/SKILL-DESIGN-SPEC.md');
-Read('.claude/skills/skill-generator/templates/*.md'); // All templates
-
-// Phase 1: Gather requirements
-const answers = AskUserQuestion({
-  questions: [
-    { question: "Skill name?", header: "Name", options: [...] },
-    { question: "Execution mode?", header: "Mode", options: ["Sequential", "Autonomous"] }
-  ]
-});
-
-const config = generateConfig(answers);
-const workDir = `.workflow/.scratchpad/skill-gen-${timestamp}`;
-Write(`${workDir}/skill-config.json`, JSON.stringify(config));
-
-// Phase 2: Create structure
-const skillDir = `.claude/skills/${config.skill_name}`;
-Bash(`mkdir -p "${skillDir}/phases" "${skillDir}/specs" "${skillDir}/templates"`);
-Write(`${skillDir}/SKILL.md`, generateSkillEntry(config));
-
-// Phase 3: Generate phases (mode-dependent)
-if (config.execution_mode === 'sequential') {
-  Write(`${skillDir}/phases/_orchestrator.md`, generateOrchestrator(config));
-  Write(`${skillDir}/workflow.json`, generateWorkflowDef(config));
-  config.sequential_config.phases.forEach(phase => {
-    Write(`${skillDir}/phases/${phase.id}.md`, generatePhase(phase, config));
-  });
-} else {
-  Write(`${skillDir}/phases/orchestrator.md`, generateAutonomousOrchestrator(config));
-  Write(`${skillDir}/phases/state-schema.md`, generateStateSchema(config));
-  config.autonomous_config.actions.forEach(action => {
-    Write(`${skillDir}/phases/actions/${action.id}.md`, generateAction(action, config));
-  });
-}
-
-// Phase 4: Generate specs
-Write(`${skillDir}/specs/${config.skill_name}-requirements.md`, generateRequirements(config));
-Write(`${skillDir}/specs/quality-standards.md`, generateQualityStandards(config));
-
-
-// Phase 5: Validate & Document
-const validation = validateStructure(skillDir);
-Write(`${skillDir}/validation-report.json`, JSON.stringify(validation));
-Write(`${skillDir}/README.md`, generateReadme(config, validation));
-```
-
----
-
-
-## Reference Documents by Phase
-
-IMPORTANT: This section demonstrates how skill-generator organizes its own reference documentation. This is the pattern that all generated Skills should emulate. See [specs/reference-docs-spec.md](specs/reference-docs-spec.md) for details.
-
-### Phase 0: Specification Study (Mandatory Prerequisites)
-
-Specification documents that must be read before any generation operation
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [../_shared/SKILL-DESIGN-SPEC.md](../_shared/SKILL-DESIGN-SPEC.md) | Universal Skill design specification | Understand Skill structure and naming conventions - **REQUIRED** |
-| [specs/reference-docs-spec.md](specs/reference-docs-spec.md) | Reference document generation specification | Ensure Reference Documents have proper phase-based organization - **REQUIRED** |
-
-### Phase 1: Requirements Discovery
-
-Collect Skill requirements and configuration
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/01-requirements-discovery.md](phases/01-requirements-discovery.md) | Phase 1 execution guide | Understand how to collect user requirements and generate configuration |
-| [specs/skill-requirements.md](specs/skill-requirements.md) | Skill requirements specification | Understand what information a Skill should contain |
-
-### Phase 2: Structure Generation
-
-Generate directory structure and entry file
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/02-structure-generation.md](phases/02-structure-generation.md) | Phase 2 execution guide | Understand how to generate directory structure |
-| [templates/skill-md.md](templates/skill-md.md) | SKILL.md template | Learn how to generate the entry file |
-
-### Phase 3: Phase/Action Generation
-
-Generate specific phase or action files based on execution mode
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/03-phase-generation.md](phases/03-phase-generation.md) | Phase 3 execution guide | Understand Sequential vs Autonomous generation logic |
-| [templates/sequential-phase.md](templates/sequential-phase.md) | Sequential Phase template | Generate phase files for Sequential mode |
-| [templates/autonomous-orchestrator.md](templates/autonomous-orchestrator.md) | Orchestrator template | Generate orchestrator for Autonomous mode |
-| [templates/autonomous-action.md](templates/autonomous-action.md) | Action template | Generate action files for Autonomous mode |
-
-### Phase 4: Specs & Templates
-
-Generate domain-specific specifications and templates
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/04-specs-templates.md](phases/04-specs-templates.md) | Phase 4 execution guide | Understand how to generate domain-specific documentation |
-| [specs/reference-docs-spec.md](specs/reference-docs-spec.md) | Reference document specification | IMPORTANT: Follow this spec when generating Specs |
-
-### Phase 5: Validation & Documentation
-
-Verify results and generate final documentation
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/05-validation.md](phases/05-validation.md) | Phase 5 execution guide | Understand how to verify generated Skill completeness |
-
-### Debugging & Troubleshooting
-
-Reference documents when encountering issues
-
-| Issue | Solution Document |
-|-------|------------------|
-| Generated Skill missing Reference Documents | [specs/reference-docs-spec.md](specs/reference-docs-spec.md) - verify phase-based organization is followed |
-| Reference document organization unclear | [specs/reference-docs-spec.md](specs/reference-docs-spec.md) - Core Principles section |
-| Generated documentation does not meet quality standards | [../_shared/SKILL-DESIGN-SPEC.md](../_shared/SKILL-DESIGN-SPEC.md) |
-
-### Reference & Background
-
-Documents for deep learning and design decisions
-
-| Document | Purpose | Notes |
-|----------|---------|-------|
-| [specs/execution-modes.md](specs/execution-modes.md) | Detailed execution modes specification | Comparison and use cases for Sequential vs Autonomous |
-| [specs/cli-integration.md](specs/cli-integration.md) | CLI integration specification | How generated Skills integrate with CLI |
-| [specs/scripting-integration.md](specs/scripting-integration.md) | Script integration specification | How to use scripts in Phases |
-| [templates/script-template.md](templates/script-template.md) | Script template | Unified Bash + Python template |
-
----
-
-## Output Structure
-
-### Sequential Mode
+## 輸出格式
 
 ```
-.claude/skills/{skill-name}/
-├── SKILL.md                        # Entry file
-├── phases/
-│   ├── _orchestrator.md            # Declarative orchestrator
-│   ├── workflow.json               # Workflow definition
-│   ├── 01-{step-one}.md           # Phase 1
-│   ├── 02-{step-two}.md           # Phase 2
-│   └── 03-{step-three}.md         # Phase 3
-├── specs/
-│   ├── {skill-name}-requirements.md
-│   └── quality-standards.md
-├── templates/
-│   └── agent-base.md
-├── scripts/
-└── README.md
+[預期輸出格式]
+```
 ```
 
-### Autonomous Mode
+## Token 預算指南
 
-```
-.claude/skills/{skill-name}/
-├── SKILL.md                        # Entry file
-├── phases/
-│   ├── orchestrator.md             # Orchestrator (state-driven)
-│   ├── state-schema.md             # State schema definition
-│   └── actions/
-│       ├── action-init.md
-│       ├── action-create.md
-│       └── action-list.md
-├── specs/
-│   ├── {skill-name}-requirements.md
-│   ├── action-catalog.md
-│   └── quality-standards.md
-├── templates/
-│   ├── orchestrator-base.md
-│   └── action-base.md
-├── scripts/
-└── README.md
-```
+| 項目 | 建議 | 上限 |
+|------|------|------|
+| SKILL.md 總行數 | < 300 行 | 500 行 |
+| SKILL.md Token | < 3000 | 5000 |
+| 單個區塊 | < 50 行 | 100 行 |
 
----
-
-## Reference Documents by Phase
-
-IMPORTANT: This section demonstrates how skill-generator organizes its own reference documentation. This is the pattern that all generated Skills should emulate. See [specs/reference-docs-spec.md](specs/reference-docs-spec.md) for details.
-
-### Phase 0: Specification Study (Mandatory Prerequisites)
-
-Specification documents that must be read before any generation operation
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [../_shared/SKILL-DESIGN-SPEC.md](../_shared/SKILL-DESIGN-SPEC.md) | Universal Skill design specification | Understand Skill structure and naming conventions - **REQUIRED** |
-| [specs/reference-docs-spec.md](specs/reference-docs-spec.md) | Reference document generation specification | Ensure Reference Documents have proper phase-based organization - **REQUIRED** |
-
-### Phase 1: Requirements Discovery
-
-Collect Skill requirements and configuration
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/01-requirements-discovery.md](phases/01-requirements-discovery.md) | Phase 1 execution guide | Understand how to collect user requirements and generate configuration |
-| [specs/skill-requirements.md](specs/skill-requirements.md) | Skill requirements specification | Understand what information a Skill should contain |
-
-### Phase 2: Structure Generation
-
-Generate directory structure and entry file
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/02-structure-generation.md](phases/02-structure-generation.md) | Phase 2 execution guide | Understand how to generate directory structure |
-| [templates/skill-md.md](templates/skill-md.md) | SKILL.md template | Learn how to generate the entry file |
-
-### Phase 3: Phase/Action Generation
-
-Generate specific phase or action files based on execution mode
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/03-phase-generation.md](phases/03-phase-generation.md) | Phase 3 execution guide | Understand Sequential vs Autonomous generation logic |
-| [templates/sequential-phase.md](templates/sequential-phase.md) | Sequential Phase template | Generate phase files for Sequential mode |
-| [templates/autonomous-orchestrator.md](templates/autonomous-orchestrator.md) | Orchestrator template | Generate orchestrator for Autonomous mode |
-| [templates/autonomous-action.md](templates/autonomous-action.md) | Action template | Generate action files for Autonomous mode |
-
-### Phase 4: Specs & Templates
-
-Generate domain-specific specifications and templates
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/04-specs-templates.md](phases/04-specs-templates.md) | Phase 4 execution guide | Understand how to generate domain-specific documentation |
-| [specs/reference-docs-spec.md](specs/reference-docs-spec.md) | Reference document specification | IMPORTANT: Follow this spec when generating Specs |
-
-### Phase 5: Validation & Documentation
-
-Verify results and generate final documentation
-
-| Document | Purpose | When to Use |
-|----------|---------|-------------|
-| [phases/05-validation.md](phases/05-validation.md) | Phase 5 execution guide | Understand how to verify generated Skill completeness |
-
-### Debugging & Troubleshooting
-
-Reference documents when encountering issues
-
-| Issue | Solution Document |
-|-------|------------------|
-| Generated Skill missing Reference Documents | [specs/reference-docs-spec.md](specs/reference-docs-spec.md) - verify phase-based organization is followed |
-| Reference document organization unclear | [specs/reference-docs-spec.md](specs/reference-docs-spec.md) - Core Principles section |
-| Generated documentation does not meet quality standards | [../_shared/SKILL-DESIGN-SPEC.md](../_shared/SKILL-DESIGN-SPEC.md) |
-
-### Reference & Background
-
-Documents for deep learning and design decisions
-
-| Document | Purpose | Notes |
-|----------|---------|-------|
-| [specs/execution-modes.md](specs/execution-modes.md) | Detailed execution modes specification | Comparison and use cases for Sequential vs Autonomous |
-| [specs/cli-integration.md](specs/cli-integration.md) | CLI integration specification | How generated Skills integrate with CLI |
-| [specs/scripting-integration.md](specs/scripting-integration.md) | Script integration specification | How to use scripts in Phases |
-| [templates/script-template.md](templates/script-template.md) | Script template | Unified Bash + Python template |
+如果內容過長：
+1. 拆分到 `references/` 子資料夾
+2. 使用連結引用
+3. 精簡主要邏輯

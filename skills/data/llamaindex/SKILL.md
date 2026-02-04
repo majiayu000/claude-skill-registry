@@ -1,569 +1,598 @@
 ---
 name: llamaindex
-description: Data framework for building LLM applications with RAG. Specializes in document ingestion (300+ connectors), indexing, and querying. Features vector indices, query engines, agents, and multi-modal support. Use for document Q&A, chatbots, knowledge retrieval, or building RAG pipelines. Best for data-centric LLM applications.
-version: 1.0.0
-author: Orchestra Research
-license: MIT
-tags: [Agents, LlamaIndex, RAG, Document Ingestion, Vector Indices, Query Engines, Knowledge Retrieval, Data Framework, Multimodal, Private Data, Connectors]
-dependencies: [llama-index, openai, anthropic]
+description: "Build LLM applications with LlamaIndex. Create indexes, query engines, and data connectors. Use for RAG applications, document search, and knowledge base systems."
 ---
 
-# LlamaIndex - Data Framework for LLM Applications
+# LlamaIndex Skill
 
-The leading framework for connecting LLMs with your data.
+Complete guide for LlamaIndex - data framework for LLM applications.
 
-## When to use LlamaIndex
+## Triggers
 
-**Use LlamaIndex when:**
-- Building RAG (retrieval-augmented generation) applications
-- Need document question-answering over private data
-- Ingesting data from multiple sources (300+ connectors)
-- Creating knowledge bases for LLMs
-- Building chatbots with enterprise data
-- Need structured data extraction from documents
+Use this skill when:
+- Building RAG applications or document QA systems
+- Creating search indexes over documents
+- Working with LlamaIndex query engines or retrievers
+- Implementing knowledge base systems
+- Loading and processing documents for LLM applications
+- Keywords: llamaindex, llama_index, index, query engine, retriever, RAG, document loader
 
-**Metrics**:
-- **45,100+ GitHub stars**
-- **23,000+ repositories** use LlamaIndex
-- **300+ data connectors** (LlamaHub)
-- **1,715+ contributors**
-- **v0.14.7** (stable)
+## Quick Reference
 
-**Use alternatives instead**:
-- **LangChain**: More general-purpose, better for agents
-- **Haystack**: Production search pipelines
-- **txtai**: Lightweight semantic search
-- **Chroma**: Just need vector storage
+### Core Components
+| Component | Description |
+|-----------|-------------|
+| **Documents** | Data containers |
+| **Nodes** | Document chunks |
+| **Indices** | Searchable structures |
+| **Query Engines** | Question answering |
+| **Agents** | Autonomous reasoning |
+| **Tools** | Agent capabilities |
 
-## Quick start
+---
 
-### Installation
+## 1. Installation
 
 ```bash
-# Starter package (recommended)
+# Core
 pip install llama-index
 
-# Or minimal core + specific integrations
-pip install llama-index-core
+# With all integrations
+pip install llama-index[all]
+
+# Specific integrations
 pip install llama-index-llms-openai
 pip install llama-index-embeddings-openai
+pip install llama-index-vector-stores-chroma
+pip install llama-index-readers-file
 ```
 
-### 5-line RAG example
+---
 
+## 2. Basic Setup
+
+### Initialize
+```python
+from llama_index.core import Settings
+from llama_index.llms.openai import OpenAI
+from llama_index.embeddings.openai import OpenAIEmbedding
+
+# Configure defaults
+Settings.llm = OpenAI(model="gpt-4o", temperature=0.1)
+Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
+Settings.chunk_size = 1024
+Settings.chunk_overlap = 200
+```
+
+### Quick Start
 ```python
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 
 # Load documents
-documents = SimpleDirectoryReader("data").load_data()
+documents = SimpleDirectoryReader("./data").load_data()
 
 # Create index
 index = VectorStoreIndex.from_documents(documents)
 
 # Query
 query_engine = index.as_query_engine()
-response = query_engine.query("What did the author do growing up?")
+response = query_engine.query("What is the main topic?")
 print(response)
 ```
 
-## Core concepts
+---
 
-### 1. Data connectors - Load documents
+## 3. Document Loading
 
+### File Readers
 ```python
-from llama_index.core import SimpleDirectoryReader, Document
-from llama_index.readers.web import SimpleWebPageReader
-from llama_index.readers.github import GithubRepositoryReader
+from llama_index.core import SimpleDirectoryReader
 
-# Directory of files
-documents = SimpleDirectoryReader("./data").load_data()
+# Load from directory
+documents = SimpleDirectoryReader(
+    input_dir="./data",
+    recursive=True,
+    required_exts=[".pdf", ".md", ".txt"]
+).load_data()
 
-# Web pages
-reader = SimpleWebPageReader()
-documents = reader.load_data(["https://example.com"])
-
-# GitHub repository
-reader = GithubRepositoryReader(owner="user", repo="repo")
-documents = reader.load_data(branch="main")
-
-# Manual document creation
-doc = Document(
-    text="This is the document content",
-    metadata={"source": "manual", "date": "2025-01-01"}
-)
+# Load specific files
+documents = SimpleDirectoryReader(
+    input_files=["./doc1.pdf", "./doc2.txt"]
+).load_data()
 ```
 
-### 2. Indices - Structure data
-
+### Specialized Readers
 ```python
-from llama_index.core import VectorStoreIndex, ListIndex, TreeIndex
+from llama_index.readers.file import PDFReader, DocxReader
+from llama_index.readers.web import SimpleWebPageReader
 
-# Vector index (most common - semantic search)
-vector_index = VectorStoreIndex.from_documents(documents)
+# PDF
+pdf_reader = PDFReader()
+documents = pdf_reader.load_data(file="document.pdf")
 
-# List index (sequential scan)
-list_index = ListIndex.from_documents(documents)
+# Web pages
+web_reader = SimpleWebPageReader()
+documents = web_reader.load_data(urls=["https://example.com"])
 
-# Tree index (hierarchical summary)
-tree_index = TreeIndex.from_documents(documents)
+# Database (requires llama-index-readers-database)
+from llama_index.readers.database import DatabaseReader
+reader = DatabaseReader(uri="postgresql://...")
+documents = reader.load_data(query="SELECT * FROM articles")
+```
 
-# Save index
+### Create Documents Manually
+```python
+from llama_index.core import Document
+
+documents = [
+    Document(
+        text="Content here",
+        metadata={"source": "manual", "category": "tech"}
+    ),
+    Document(
+        text="More content",
+        metadata={"source": "manual", "category": "science"}
+    )
+]
+```
+
+---
+
+## 4. Indices
+
+### Vector Store Index
+```python
+from llama_index.core import VectorStoreIndex
+
+# Create from documents
+index = VectorStoreIndex.from_documents(documents)
+
+# Save to disk
 index.storage_context.persist(persist_dir="./storage")
 
-# Load index
-from llama_index.core import load_index_from_storage, StorageContext
+# Load from disk
+from llama_index.core import StorageContext, load_index_from_storage
+
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
 index = load_index_from_storage(storage_context)
 ```
 
-### 3. Query engines - Ask questions
-
-```python
-# Basic query
-query_engine = index.as_query_engine()
-response = query_engine.query("What is the main topic?")
-print(response)
-
-# Streaming response
-query_engine = index.as_query_engine(streaming=True)
-response = query_engine.query("Explain quantum computing")
-for text in response.response_gen:
-    print(text, end="", flush=True)
-
-# Custom configuration
-query_engine = index.as_query_engine(
-    similarity_top_k=3,          # Return top 3 chunks
-    response_mode="compact",     # Or "tree_summarize", "simple_summarize"
-    verbose=True
-)
-```
-
-### 4. Retrievers - Find relevant chunks
-
-```python
-# Vector retriever
-retriever = index.as_retriever(similarity_top_k=5)
-nodes = retriever.retrieve("machine learning")
-
-# With filtering
-retriever = index.as_retriever(
-    similarity_top_k=3,
-    filters={"metadata.category": "tutorial"}
-)
-
-# Custom retriever
-from llama_index.core.retrievers import BaseRetriever
-
-class CustomRetriever(BaseRetriever):
-    def _retrieve(self, query_bundle):
-        # Your custom retrieval logic
-        return nodes
-```
-
-## Agents with tools
-
-### Basic agent
-
-```python
-from llama_index.core.agent import FunctionAgent
-from llama_index.llms.openai import OpenAI
-
-# Define tools
-def multiply(a: int, b: int) -> int:
-    """Multiply two numbers."""
-    return a * b
-
-def add(a: int, b: int) -> int:
-    """Add two numbers."""
-    return a + b
-
-# Create agent
-llm = OpenAI(model="gpt-4o")
-agent = FunctionAgent.from_tools(
-    tools=[multiply, add],
-    llm=llm,
-    verbose=True
-)
-
-# Use agent
-response = agent.chat("What is 25 * 17 + 142?")
-print(response)
-```
-
-### RAG agent (document search + tools)
-
-```python
-from llama_index.core.tools import QueryEngineTool
-
-# Create index as before
-index = VectorStoreIndex.from_documents(documents)
-
-# Wrap query engine as tool
-query_tool = QueryEngineTool.from_defaults(
-    query_engine=index.as_query_engine(),
-    name="python_docs",
-    description="Useful for answering questions about Python programming"
-)
-
-# Agent with document search + calculator
-agent = FunctionAgent.from_tools(
-    tools=[query_tool, multiply, add],
-    llm=llm
-)
-
-# Agent decides when to search docs vs calculate
-response = agent.chat("According to the docs, what is Python used for?")
-```
-
-## Advanced RAG patterns
-
-### Chat engine (conversational)
-
-```python
-from llama_index.core.chat_engine import CondensePlusContextChatEngine
-
-# Chat with memory
-chat_engine = index.as_chat_engine(
-    chat_mode="condense_plus_context",  # Or "context", "react"
-    verbose=True
-)
-
-# Multi-turn conversation
-response1 = chat_engine.chat("What is Python?")
-response2 = chat_engine.chat("Can you give examples?")  # Remembers context
-response3 = chat_engine.chat("What about web frameworks?")
-```
-
-### Metadata filtering
-
-```python
-from llama_index.core.vector_stores import MetadataFilters, ExactMatchFilter
-
-# Filter by metadata
-filters = MetadataFilters(
-    filters=[
-        ExactMatchFilter(key="category", value="tutorial"),
-        ExactMatchFilter(key="difficulty", value="beginner")
-    ]
-)
-
-retriever = index.as_retriever(
-    similarity_top_k=3,
-    filters=filters
-)
-
-query_engine = index.as_query_engine(filters=filters)
-```
-
-### Structured output
-
-```python
-from pydantic import BaseModel
-from llama_index.core.output_parsers import PydanticOutputParser
-
-class Summary(BaseModel):
-    title: str
-    main_points: list[str]
-    conclusion: str
-
-# Get structured response
-output_parser = PydanticOutputParser(output_cls=Summary)
-query_engine = index.as_query_engine(output_parser=output_parser)
-
-response = query_engine.query("Summarize the document")
-summary = response  # Pydantic model
-print(summary.title, summary.main_points)
-```
-
-## Data ingestion patterns
-
-### Multiple file types
-
-```python
-# Load all supported formats
-documents = SimpleDirectoryReader(
-    "./data",
-    recursive=True,
-    required_exts=[".pdf", ".docx", ".txt", ".md"]
-).load_data()
-```
-
-### Web scraping
-
-```python
-from llama_index.readers.web import BeautifulSoupWebReader
-
-reader = BeautifulSoupWebReader()
-documents = reader.load_data(urls=[
-    "https://docs.python.org/3/tutorial/",
-    "https://docs.python.org/3/library/"
-])
-```
-
-### Database
-
-```python
-from llama_index.readers.database import DatabaseReader
-
-reader = DatabaseReader(
-    sql_database_uri="postgresql://user:pass@localhost/db"
-)
-documents = reader.load_data(query="SELECT * FROM articles")
-```
-
-### API endpoints
-
-```python
-from llama_index.readers.json import JSONReader
-
-reader = JSONReader()
-documents = reader.load_data("https://api.example.com/data.json")
-```
-
-## Vector store integrations
-
-### Chroma (local)
-
+### With External Vector Store
 ```python
 from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.core import StorageContext
 import chromadb
 
-# Initialize Chroma
-db = chromadb.PersistentClient(path="./chroma_db")
-collection = db.get_or_create_collection("my_collection")
+# Create Chroma client
+chroma_client = chromadb.PersistentClient(path="./chroma_db")
+collection = chroma_client.get_or_create_collection("my_collection")
 
 # Create vector store
 vector_store = ChromaVectorStore(chroma_collection=collection)
-
-# Use in index
-from llama_index.core import StorageContext
-storage_context = StorageContext.from_defaults(vector_store=vector_store)
-index = VectorStoreIndex.from_documents(documents, storage_context=storage_context)
-```
-
-### Pinecone (cloud)
-
-```python
-from llama_index.vector_stores.pinecone import PineconeVectorStore
-import pinecone
-
-# Initialize Pinecone
-pinecone.init(api_key="your-key", environment="us-west1-gcp")
-pinecone_index = pinecone.Index("my-index")
-
-# Create vector store
-vector_store = PineconeVectorStore(pinecone_index=pinecone_index)
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
-index = VectorStoreIndex.from_documents(documents, storage_context=storage_context)
+# Create index
+index = VectorStoreIndex.from_documents(
+    documents,
+    storage_context=storage_context
+)
 ```
 
-### FAISS (fast)
-
+### Summary Index
 ```python
-from llama_index.vector_stores.faiss import FaissVectorStore
-import faiss
+from llama_index.core import SummaryIndex
 
-# Create FAISS index
-d = 1536  # Dimension of embeddings
-faiss_index = faiss.IndexFlatL2(d)
-
-vector_store = FaissVectorStore(faiss_index=faiss_index)
-storage_context = StorageContext.from_defaults(vector_store=vector_store)
-
-index = VectorStoreIndex.from_documents(documents, storage_context=storage_context)
+# Good for summarization tasks
+index = SummaryIndex.from_documents(documents)
+query_engine = index.as_query_engine(response_mode="tree_summarize")
+response = query_engine.query("Summarize all documents")
 ```
 
-## Customization
-
-### Custom LLM
-
+### Keyword Table Index
 ```python
-from llama_index.llms.anthropic import Anthropic
-from llama_index.core import Settings
+from llama_index.core import KeywordTableIndex
 
-# Set global LLM
-Settings.llm = Anthropic(model="claude-sonnet-4-5-20250929")
-
-# Now all queries use Anthropic
-query_engine = index.as_query_engine()
+# Good for keyword-based retrieval
+index = KeywordTableIndex.from_documents(documents)
 ```
 
-### Custom embeddings
+---
 
+## 5. Query Engines
+
+### Basic Query Engine
 ```python
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-
-# Use HuggingFace embeddings
-Settings.embed_model = HuggingFaceEmbedding(
-    model_name="sentence-transformers/all-mpnet-base-v2"
+query_engine = index.as_query_engine(
+    similarity_top_k=5,
+    response_mode="compact"
 )
 
-index = VectorStoreIndex.from_documents(documents)
+response = query_engine.query("What is machine learning?")
+print(response)
+print(response.source_nodes)  # Retrieved documents
 ```
 
-### Custom prompt templates
-
+### Response Modes
 ```python
-from llama_index.core import PromptTemplate
+# Refine - iterate through nodes refining answer
+query_engine = index.as_query_engine(response_mode="refine")
 
-qa_prompt = PromptTemplate(
-    "Context: {context_str}\n"
-    "Question: {query_str}\n"
-    "Answer the question based only on the context. "
-    "If the answer is not in the context, say 'I don't know'.\n"
-    "Answer: "
+# Compact - stuff nodes into single prompt
+query_engine = index.as_query_engine(response_mode="compact")
+
+# Tree summarize - hierarchical summarization
+query_engine = index.as_query_engine(response_mode="tree_summarize")
+
+# Simple summarize - concatenate and summarize
+query_engine = index.as_query_engine(response_mode="simple_summarize")
+
+# No text - return nodes only
+query_engine = index.as_query_engine(response_mode="no_text")
+```
+
+### Streaming
+```python
+query_engine = index.as_query_engine(streaming=True)
+
+response = query_engine.query("Explain RAG")
+for text in response.response_gen:
+    print(text, end="", flush=True)
+```
+
+### Chat Engine
+```python
+chat_engine = index.as_chat_engine(chat_mode="condense_question")
+
+# Conversation with memory
+response = chat_engine.chat("What is LlamaIndex?")
+print(response)
+
+response = chat_engine.chat("How does it compare to LangChain?")
+print(response)
+
+# Reset memory
+chat_engine.reset()
+```
+
+---
+
+## 6. Retrievers
+
+### Basic Retriever
+```python
+from llama_index.core.retrievers import VectorIndexRetriever
+
+retriever = VectorIndexRetriever(
+    index=index,
+    similarity_top_k=10
 )
 
-query_engine = index.as_query_engine(text_qa_template=qa_prompt)
+nodes = retriever.retrieve("machine learning")
+for node in nodes:
+    print(f"Score: {node.score}, Text: {node.text[:100]}...")
 ```
 
-## Multi-modal RAG
-
-### Image + text
-
+### Hybrid Retriever
 ```python
-from llama_index.core import SimpleDirectoryReader
-from llama_index.multi_modal_llms.openai import OpenAIMultiModal
+from llama_index.core.retrievers import BM25Retriever
+from llama_index.core.retrievers import QueryFusionRetriever
 
-# Load images and documents
-documents = SimpleDirectoryReader(
-    "./data",
-    required_exts=[".jpg", ".png", ".pdf"]
-).load_data()
+# BM25 (keyword-based)
+bm25_retriever = BM25Retriever.from_defaults(
+    docstore=index.docstore,
+    similarity_top_k=5
+)
 
-# Multi-modal index
-index = VectorStoreIndex.from_documents(documents)
+# Vector retriever
+vector_retriever = index.as_retriever(similarity_top_k=5)
 
-# Query with multi-modal LLM
-multi_modal_llm = OpenAIMultiModal(model="gpt-4o")
-query_engine = index.as_query_engine(llm=multi_modal_llm)
+# Combine
+hybrid_retriever = QueryFusionRetriever(
+    retrievers=[bm25_retriever, vector_retriever],
+    similarity_top_k=5,
+    num_queries=1
+)
 
-response = query_engine.query("What is in the diagram on page 3?")
+nodes = hybrid_retriever.retrieve("query")
 ```
 
-## Evaluation
-
-### Response quality
-
+### Auto-Merging Retriever
 ```python
-from llama_index.core.evaluation import RelevancyEvaluator, FaithfulnessEvaluator
+from llama_index.core.node_parser import HierarchicalNodeParser
+from llama_index.core.retrievers import AutoMergingRetriever
 
-# Evaluate relevance
+# Create hierarchical nodes
+node_parser = HierarchicalNodeParser.from_defaults(
+    chunk_sizes=[2048, 512, 128]
+)
+nodes = node_parser.get_nodes_from_documents(documents)
+
+# Build index with leaf nodes
+leaf_nodes = [n for n in nodes if n.node_type == "leaf"]
+index = VectorStoreIndex(leaf_nodes)
+
+# Retriever that auto-merges to parent nodes
+retriever = AutoMergingRetriever(
+    index.as_retriever(similarity_top_k=6),
+    storage_context=index.storage_context
+)
+```
+
+---
+
+## 7. Node Parsing
+
+### Text Splitters
+```python
+from llama_index.core.node_parser import (
+    SentenceSplitter,
+    TokenTextSplitter,
+    SemanticSplitterNodeParser
+)
+
+# Sentence splitter (default)
+splitter = SentenceSplitter(
+    chunk_size=1024,
+    chunk_overlap=200
+)
+nodes = splitter.get_nodes_from_documents(documents)
+
+# Token-based
+splitter = TokenTextSplitter(
+    chunk_size=1024,
+    chunk_overlap=200
+)
+
+# Semantic (groups by meaning)
+from llama_index.embeddings.openai import OpenAIEmbedding
+splitter = SemanticSplitterNodeParser(
+    embed_model=OpenAIEmbedding(),
+    breakpoint_percentile_threshold=95
+)
+```
+
+### Metadata Extraction
+```python
+from llama_index.core.extractors import (
+    TitleExtractor,
+    SummaryExtractor,
+    QuestionsAnsweredExtractor,
+    KeywordsExtractor
+)
+from llama_index.core.ingestion import IngestionPipeline
+
+pipeline = IngestionPipeline(
+    transformations=[
+        SentenceSplitter(chunk_size=512),
+        TitleExtractor(),
+        SummaryExtractor(summaries=["self"]),
+        KeywordsExtractor(keywords=5)
+    ]
+)
+
+nodes = pipeline.run(documents=documents)
+```
+
+---
+
+## 8. Agents
+
+### Basic Agent
+```python
+from llama_index.core.agent import ReActAgent
+from llama_index.core.tools import QueryEngineTool
+
+# Create tool from query engine
+query_engine_tool = QueryEngineTool.from_defaults(
+    query_engine=query_engine,
+    name="knowledge_base",
+    description="Useful for answering questions about the documents"
+)
+
+# Create agent
+agent = ReActAgent.from_tools(
+    tools=[query_engine_tool],
+    llm=Settings.llm,
+    verbose=True
+)
+
+response = agent.chat("What are the main topics covered?")
+```
+
+### Custom Tools
+```python
+from llama_index.core.tools import FunctionTool
+
+def multiply(a: int, b: int) -> int:
+    """Multiply two integers."""
+    return a * b
+
+def search_web(query: str) -> str:
+    """Search the web for information."""
+    # Implementation
+    return f"Search results for: {query}"
+
+multiply_tool = FunctionTool.from_defaults(fn=multiply)
+search_tool = FunctionTool.from_defaults(fn=search_web)
+
+agent = ReActAgent.from_tools(
+    tools=[multiply_tool, search_tool, query_engine_tool],
+    verbose=True
+)
+```
+
+### Multi-Document Agent
+```python
+from llama_index.core.tools import QueryEngineTool
+
+# Create tools for each document collection
+tools = []
+for name, index in document_indices.items():
+    tool = QueryEngineTool.from_defaults(
+        query_engine=index.as_query_engine(),
+        name=f"{name}_tool",
+        description=f"Query the {name} documents"
+    )
+    tools.append(tool)
+
+agent = ReActAgent.from_tools(tools, verbose=True)
+```
+
+---
+
+## 9. Evaluation
+
+### Response Evaluation
+```python
+from llama_index.core.evaluation import (
+    FaithfulnessEvaluator,
+    RelevancyEvaluator,
+    CorrectnessEvaluator
+)
+
+# Faithfulness - is response grounded in context?
+faithfulness = FaithfulnessEvaluator()
+result = faithfulness.evaluate_response(response=response)
+print(f"Faithfulness: {result.passing}")
+
+# Relevancy - is response relevant to query?
 relevancy = RelevancyEvaluator()
-result = relevancy.evaluate_response(
-    query="What is Python?",
-    response=response
-)
+result = relevancy.evaluate_response(query="query", response=response)
 print(f"Relevancy: {result.passing}")
 
-# Evaluate faithfulness (no hallucination)
-faithfulness = FaithfulnessEvaluator()
-result = faithfulness.evaluate_response(
-    query="What is Python?",
-    response=response
+# Correctness - compare to reference
+correctness = CorrectnessEvaluator()
+result = correctness.evaluate(
+    query="What is X?",
+    response="X is Y",
+    reference="X is Y and Z"
 )
-print(f"Faithfulness: {result.passing}")
 ```
 
-## Best practices
-
-1. **Use vector indices for most cases** - Best performance
-2. **Save indices to disk** - Avoid re-indexing
-3. **Chunk documents properly** - 512-1024 tokens optimal
-4. **Add metadata** - Enables filtering and tracking
-5. **Use streaming** - Better UX for long responses
-6. **Enable verbose during dev** - See retrieval process
-7. **Evaluate responses** - Check relevance and faithfulness
-8. **Use chat engine for conversations** - Built-in memory
-9. **Persist storage** - Don't lose your index
-10. **Monitor costs** - Track embedding and LLM usage
-
-## Common patterns
-
-### Document Q&A system
-
+### Retrieval Evaluation
 ```python
-# Complete RAG pipeline
-documents = SimpleDirectoryReader("docs").load_data()
-index = VectorStoreIndex.from_documents(documents)
-index.storage_context.persist(persist_dir="./storage")
+from llama_index.core.evaluation import RetrieverEvaluator
 
-# Query
-query_engine = index.as_query_engine(
-    similarity_top_k=3,
-    response_mode="compact",
-    verbose=True
+# Create evaluation dataset
+eval_questions = ["Question 1?", "Question 2?"]
+eval_answers = ["Answer 1", "Answer 2"]
+
+evaluator = RetrieverEvaluator.from_metric_names(
+    ["mrr", "hit_rate"],
+    retriever=retriever
 )
-response = query_engine.query("What is the main topic?")
-print(response)
-print(f"Sources: {[node.metadata['file_name'] for node in response.source_nodes]}")
+
+results = []
+for q, a in zip(eval_questions, eval_answers):
+    result = evaluator.evaluate(query=q, expected_ids=[...])
+    results.append(result)
 ```
 
-### Chatbot with memory
+---
 
+## 10. Callbacks and Observability
+
+### Basic Callbacks
 ```python
-# Conversational interface
-chat_engine = index.as_chat_engine(
-    chat_mode="condense_plus_context",
-    verbose=True
-)
+from llama_index.core.callbacks import CallbackManager, LlamaDebugHandler
 
-# Multi-turn chat
-while True:
-    user_input = input("You: ")
-    if user_input.lower() == "quit":
-        break
-    response = chat_engine.chat(user_input)
-    print(f"Bot: {response}")
+# Debug handler
+llama_debug = LlamaDebugHandler(print_trace_on_end=True)
+callback_manager = CallbackManager([llama_debug])
+
+Settings.callback_manager = callback_manager
+
+# Now all operations are traced
+response = query_engine.query("What is RAG?")
+
+# View trace
+print(llama_debug.get_event_pairs())
 ```
 
-## Performance benchmarks
+### Custom Callback
+```python
+from llama_index.core.callbacks.base import BaseCallbackHandler
+from llama_index.core.callbacks import CBEventType
 
-| Operation | Latency | Notes |
-|-----------|---------|-------|
-| Index 100 docs | ~10-30s | One-time, can persist |
-| Query (vector) | ~0.5-2s | Retrieval + LLM |
-| Streaming query | ~0.5s first token | Better UX |
-| Agent with tools | ~3-8s | Multiple tool calls |
+class MyCallback(BaseCallbackHandler):
+    def on_event_start(self, event_type, payload, **kwargs):
+        print(f"Start: {event_type}")
 
-## LlamaIndex vs LangChain
+    def on_event_end(self, event_type, payload, **kwargs):
+        print(f"End: {event_type}")
 
-| Feature | LlamaIndex | LangChain |
-|---------|------------|-----------|
-| **Best for** | RAG, document Q&A | Agents, general LLM apps |
-| **Data connectors** | 300+ (LlamaHub) | 100+ |
-| **RAG focus** | Core feature | One of many |
-| **Learning curve** | Easier for RAG | Steeper |
-| **Customization** | High | Very high |
-| **Documentation** | Excellent | Good |
+callback_manager = CallbackManager([MyCallback()])
+```
 
-**Use LlamaIndex when:**
-- Your primary use case is RAG
-- Need many data connectors
-- Want simpler API for document Q&A
-- Building knowledge retrieval system
+---
 
-**Use LangChain when:**
-- Building complex agents
-- Need more general-purpose tools
-- Want more flexibility
-- Complex multi-step workflows
+## 11. Common Patterns
 
-## References
+### Multi-Index Query
+```python
+from llama_index.core.query_engine import SubQuestionQueryEngine
+from llama_index.core.tools import QueryEngineTool
 
-- **[Query Engines Guide](references/query_engines.md)** - Query modes, customization, streaming
-- **[Agents Guide](references/agents.md)** - Tool creation, RAG agents, multi-step reasoning
-- **[Data Connectors Guide](references/data_connectors.md)** - 300+ connectors, custom loaders
+# Multiple indices
+tools = [
+    QueryEngineTool.from_defaults(
+        query_engine=index1.as_query_engine(),
+        name="index1",
+        description="Contains information about topic 1"
+    ),
+    QueryEngineTool.from_defaults(
+        query_engine=index2.as_query_engine(),
+        name="index2",
+        description="Contains information about topic 2"
+    )
+]
 
-## Resources
+# Sub-question engine decomposes complex queries
+query_engine = SubQuestionQueryEngine.from_defaults(
+    query_engine_tools=tools
+)
 
-- **GitHub**: https://github.com/run-llama/llama_index ⭐ 45,100+
-- **Docs**: https://developers.llamaindex.ai/python/framework/
-- **LlamaHub**: https://llamahub.ai (data connectors)
-- **LlamaCloud**: https://cloud.llamaindex.ai (enterprise)
-- **Discord**: https://discord.gg/dGcwcsnxhU
-- **Version**: 0.14.7+
-- **License**: MIT
+response = query_engine.query("Compare topic 1 and topic 2")
+```
 
+### Citation Engine
+```python
+from llama_index.core.query_engine import CitationQueryEngine
 
+citation_engine = CitationQueryEngine.from_args(
+    index,
+    similarity_top_k=5,
+    citation_chunk_size=512
+)
+
+response = citation_engine.query("What is machine learning?")
+# Response includes citations: [1], [2], etc.
+print(response.source_nodes)  # Cited sources
+```
+
+### Router Query Engine
+```python
+from llama_index.core.query_engine import RouterQueryEngine
+from llama_index.core.selectors import LLMSingleSelector
+
+# Route queries to appropriate index
+query_engine = RouterQueryEngine(
+    selector=LLMSingleSelector.from_defaults(),
+    query_engine_tools=tools
+)
+```
+
+---
+
+## Best Practices
+
+1. **Chunk wisely** - Balance size and context
+2. **Add metadata** - Improve retrieval
+3. **Evaluate** - Measure RAG quality
+4. **Use streaming** - Better UX
+5. **Persist indices** - Avoid recomputation
+6. **Hybrid retrieval** - Combine methods
+7. **Tune top_k** - Balance recall/precision
+8. **Custom prompts** - Domain-specific
+9. **Monitor costs** - Track LLM usage
+10. **Version indices** - Track data changes

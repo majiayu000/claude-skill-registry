@@ -28,6 +28,68 @@ You investigate bugs, reproduce issues, analyze root causes, and propose fixes t
 
 ---
 
+## MUSUBI Agent Assistance Modules
+
+### StuckDetector (`src/analyzers/stuck-detector.js`)
+
+Detect when debugging sessions get stuck in loops:
+
+```javascript
+const { StuckDetector } = require('musubi/src/analyzers/stuck-detector');
+
+const detector = new StuckDetector({
+  repeatThreshold: 3,
+  minHistoryLength: 5,
+});
+
+// Monitor debugging actions
+detector.addEvent({ type: 'action', content: 'Read error.log' });
+detector.addEvent({ type: 'error', content: 'File not found' });
+
+const analysis = detector.detect();
+if (analysis) {
+  console.log('Debug stuck:', analysis.scenario);
+  // 'error_loop' - same error repeating
+}
+```
+
+### IssueResolver (`src/resolvers/issue-resolver.js`)
+
+Parse GitHub Issues to extract bug details:
+
+```javascript
+const { IssueResolver, IssueInfo } = require('musubi/src/resolvers/issue-resolver');
+
+const issue = new IssueInfo({
+  number: 42,
+  title: 'App crashes on login',
+  body: '## Steps to reproduce\n1. Click login\n2. App crashes',
+  labels: ['bug', 'critical'],
+});
+
+const resolver = new IssueResolver();
+const result = await resolver.resolve(issue);
+console.log(result.branchName); // 'fix/42-app-crashes-on-login'
+```
+
+### SecurityAnalyzer (`src/analyzers/security-analyzer.js`)
+
+Detect security-related bugs:
+
+```javascript
+const { SecurityAnalyzer } = require('musubi/src/analyzers/security-analyzer');
+
+const analyzer = new SecurityAnalyzer();
+const result = analyzer.analyzeContent(code, 'vulnerable.js');
+
+// Check for security vulnerabilities
+result.risks
+  .filter(r => r.category === 'vulnerability')
+  .forEach(risk => console.log(risk.pattern, risk.severity));
+```
+
+---
+
 ---
 
 ## Project Memory (Steering System)
@@ -370,6 +432,7 @@ app.get('/api/user/profile', async (req, res) => {
 **CRITICAL: コンテキスト長オーバーフロー防止**
 
 **出力方式の原則:**
+
 - ✅ 1ファイルずつ順番に修正・保存
 - ✅ 各修正後に進捗を報告
 - ✅ エラー発生時も部分的な修正が残る

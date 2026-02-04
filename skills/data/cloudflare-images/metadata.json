@@ -1,7 +1,7 @@
 {
   "name": "cloudflare-images",
-  "repo": "itechmeat/llm-code",
+  "repo": "jezweb/claude-skills",
   "path": "skills/cloudflare-images/SKILL.md",
-  "source": "github.com/itechmeat/llm-code",
-  "downloaded_at": "2026-02-02T04:37:08.978386Z"
+  "source": "github.com/jezweb/claude-skills",
+  "downloaded_at": "2026-02-04T04:32:06.580508Z"
 }

@@ -1,9 +1,7 @@
 {
   "name": "gpui-patterns",
-  "description": "Common GPUI patterns including component composition, state management strategies, event handling, and action dispatching. Use when user needs guidance on GPUI patterns, component design, or state man",
-  "repo": "geoffjay/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "johnlindquist/script-kit-next",
+  "path": ".claude/skills/gpui-patterns/SKILL.md",
+  "source": "github.com/johnlindquist/script-kit-next",
+  "downloaded_at": "2026-02-04T03:27:56.661952Z"
 }

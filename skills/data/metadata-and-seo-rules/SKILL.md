@@ -6,7 +6,7 @@ model: sonnet
 invoked_by: both
 user_invocable: true
 tools: [Read, Write, Edit, Grep, Glob]
-globs: **/*.md
+globs: '**/*.md'
 best_practices:
   - Follow the guidelines consistently
   - Apply rules during code review

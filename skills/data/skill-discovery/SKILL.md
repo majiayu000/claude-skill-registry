@@ -1,110 +1,111 @@
 ---
 name: skill-discovery
-description: Use when user asks about available skills or when searching for relevant expertise - scans .claude/skills/ and lists skills by category with descriptions
-allowed-tools: Read, Glob, Grep
+description: How agents discover and use skills. Use to understand skill invocation protocol.
+version: 1.0
+model: haiku
+invoked_by: agent
+user_invocable: false
+tools: [Read, Glob, Grep]
+best_practices:
+  - Check for relevant skills BEFORE any response
+  - Process skills first (brainstorming, debugging)
+  - Personal skills override framework skills
+error_handling: graceful
+streaming: supported
 ---
 
-# Skill Discovery
+<EXTREMELY-IMPORTANT>
+If you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.
 
-## Purpose
+IF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHOICE. YOU MUST USE IT.
 
-Help users and Claude discover available skills organized by category, understand when to use them, and identify gaps where new skills should be created.
+This is not negotiable. This is not optional. You cannot rationalize your way out of this.
+</EXTREMELY-IMPORTANT>
 
-## When to Use This Skill
+## How to Access Skills
 
-Activate automatically when:
-- User asks "What skills are available?"
-- User requests "List all skills"
-- You need to find a skill for a specific task
-- You're identifying whether a relevant skill exists
-- You're planning workflow improvements
+**In Claude Code:** Use the `Skill` tool or read skill files directly. When you invoke a skill, its content is loaded and presented to you - follow it directly.
 
-## Discovery Process
+**In other environments:** Check your platform's documentation for how skills are loaded.
 
-### 1. Scan Skill Directories
+# Using Framework Skills
 
-Use Glob to find all skills:
-```
-.claude/skills/meta/*/SKILL.md
-.claude/skills/quality-gates/*/SKILL.md
-.claude/skills/context-assembly/*/SKILL.md
-.claude/skills/workflows/*/SKILL.md
-```
+## The Rule
 
-### 2. Extract Metadata
+**Invoke relevant or requested skills BEFORE any response or action.** Even a 1% chance a skill might apply means that you should invoke the skill to check. If an invoked skill turns out to be wrong for the situation, you don't need to use it.
 
-For each SKILL.md file:
-- Read the YAML frontmatter
-- Extract `name` and `description`
-- Note the category (from directory path)
+```dot
+digraph skill_flow {
+    "User message received" [shape=doublecircle];
+    "Might any skill apply?" [shape=diamond];
+    "Invoke Skill tool" [shape=box];
+    "Announce: 'Using [skill] to [purpose]'" [shape=box];
+    "Has checklist?" [shape=diamond];
+    "Create TodoWrite todo per item" [shape=box];
+    "Follow skill exactly" [shape=box];
+    "Respond (including clarifications)" [shape=doublecircle];
 
-### 3. Organize by Category
-
-Group skills into four categories:
-
-**Meta Skills** - System improvement and skill management
-**Quality Gates** - Validation and compliance checks
-**Context Assembly** - Reusable context gathering patterns
-**Workflows** - Complete multi-stage processes
-
-### 4. Present Results
-
-Format output as:
-
-```markdown
-## Available Skills
-
-### Meta Skills
-- **skill-name**: Description of what it does and when to use it
-- **another-skill**: Description...
-
-### Quality Gates
-- **citation-compliance**: Description...
-- **epic-validation**: Description...
-
-### Context Assembly
-- **meeting-synthesis**: Description...
-- **research-gathering**: Description...
-
-### Workflows
-- **content-pipeline**: Description...
-- **product-planning**: Description...
+    "User message received" -> "Might any skill apply?";
+    "Might any skill apply?" -> "Invoke Skill tool" [label="yes, even 1%"];
+    "Might any skill apply?" -> "Respond (including clarifications)" [label="definitely not"];
+    "Invoke Skill tool" -> "Announce: 'Using [skill] to [purpose]'";
+    "Announce: 'Using [skill] to [purpose]'" -> "Has checklist?";
+    "Has checklist?" -> "Create TodoWrite todo per item" [label="yes"];
+    "Has checklist?" -> "Follow skill exactly" [label="no"];
+    "Create TodoWrite todo per item" -> "Follow skill exactly";
+}
 ```
 
-## Search by Keyword
+## Red Flags
 
-When user provides a keyword (e.g., "citation", "epic", "content"):
-1. Use Grep to search descriptions: `grep -i "keyword" .claude/skills/**/*.md`
-2. Return matching skills with full descriptions
-3. Suggest related skills
+These thoughts mean STOP - you're rationalizing:
 
-## Gap Identification
+| Thought                             | Reality                                                |
+| ----------------------------------- | ------------------------------------------------------ |
+| "This is just a simple question"    | Questions are tasks. Check for skills.                 |
+| "I need more context first"         | Skill check comes BEFORE clarifying questions.         |
+| "Let me explore the codebase first" | Skills tell you HOW to explore. Check first.           |
+| "I can check git/files quickly"     | Files lack conversation context. Check for skills.     |
+| "Let me gather information first"   | Skills tell you HOW to gather information.             |
+| "This doesn't need a formal skill"  | If a skill exists, use it.                             |
+| "I remember this skill"             | Skills evolve. Read current version.                   |
+| "This doesn't count as a task"      | Action = task. Check for skills.                       |
+| "The skill is overkill"             | Simple things become complex. Use it.                  |
+| "I'll just do this one thing first" | Check BEFORE doing anything.                           |
+| "This feels productive"             | Undisciplined action wastes time. Skills prevent this. |
+| "I know what that means"            | Knowing the concept != using the skill. Invoke it.     |
 
-When no relevant skill exists for a task:
-1. Clearly state: "No existing skill found for [task description]"
-2. Suggest: "This may be a good candidate for a new skill"
-3. Recommend: "Use the `create-skill` meta-skill to generate one"
+## Skill Priority
 
-## Quick Reference Table
+When multiple skills could apply, use this order:
 
-| Category | Purpose | Example Skills |
-|----------|---------|----------------|
-| Meta | System improvement | using-skills, skill-discovery, create-skill |
-| Quality Gates | Validation checks | citation-compliance, epic-validation |
-| Context Assembly | Reusable context | meeting-synthesis, research-gathering |
-| Workflows | End-to-end processes | content-pipeline, product-planning |
+1. **Process skills first** (brainstorming, debugging) - these determine HOW to approach the task
+2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution
 
-## Success Criteria
+"Let's build X" -> brainstorming first, then implementation skills.
+"Fix this bug" -> debugging first, then domain-specific skills.
 
-- User can see all available skills in one view
-- Skills are organized logically by category
-- Descriptions clearly indicate when to use each skill
-- User can search by keyword to find relevant skills
-- Gaps are identified proactively
+## Skill Types
 
-## Common Mistakes
+**Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.
 
-- Listing skills without descriptions (not helpful)
-- Failing to organize by category (creates confusion)
-- Not suggesting skill creation when gaps exist
-- Searching only skill names instead of full descriptions
+**Flexible** (patterns): Adapt principles to context.
+
+The skill itself tells you which.
+
+## User Instructions
+
+Instructions say WHAT, not HOW. "Add X" or "Fix Y" doesn't mean skip workflows.
+
+## Memory Protocol (MANDATORY)
+
+**Before starting:**
+Read `.claude/context/memory/learnings.md`
+
+**After completing:**
+
+- New pattern -> `.claude/context/memory/learnings.md`
+- Issue found -> `.claude/context/memory/issues.md`
+- Decision made -> `.claude/context/memory/decisions.md`
+
+> ASSUME INTERRUPTION: If it's not in memory, it didn't happen.

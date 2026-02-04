@@ -1,9 +1,7 @@
 {
   "name": "typeorm-entity-generator",
-  "description": "Typeorm Entity Generator - Auto-activating skill for Backend Development.Triggers on: typeorm entity generator, typeorm entity generatorPart of the Backend Development skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/06-backend-dev/typeorm-entity-generator/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:35.100783Z"
 }

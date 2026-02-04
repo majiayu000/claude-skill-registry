@@ -1,7 +1,7 @@
 {
   "name": "llm-integration",
-  "repo": "NovaAI-innovation/Infinite-Agency",
-  "path": ".qwen/skills/llm-integration/SKILL.md",
-  "source": "github.com/NovaAI-innovation/Infinite-Agency",
-  "downloaded_at": "2026-02-02T02:58:00.650145Z"
+  "repo": "liauw-media/CodeAssist",
+  "path": "skills/ai/llm-integration/SKILL.md",
+  "source": "github.com/liauw-media/CodeAssist",
+  "downloaded_at": "2026-02-04T04:38:59.645499Z"
 }

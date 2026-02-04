@@ -1,11 +1,7 @@
 {
   "name": "klingai-video-extension",
   "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "data",
-  "description": "Extend video duration using Kling AI continuation features. Use when creating longer videosfrom shorter clips or building seamless sequences. Trigger with phrases like 'klingai extend video','kling ai",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:10.038955Z",
-  "dir_name": "klingai-video-extension",
-  "github_path": "plugins/saas-packs/klingai-pack/skills/klingai-video-extension",
-  "github_branch": "main"
+  "path": "plugins/saas-packs/klingai-pack/skills/klingai-video-extension/SKILL.md",
+  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills",
+  "downloaded_at": "2026-02-04T02:19:13.264949Z"
 }

@@ -1,632 +1,523 @@
 ---
 name: create-subagent
-description: Guide for creating specialized Claude Code subagents with proper YAML frontmatter, focused descriptions, system prompts, and tool configurations. Use when the user wants to create a new subagent, custom agent, specialized AI assistant, or mentions creating/designing/building agents or subagents.
+description: This skill should be used when creating custom subagents for Claude Code, configuring specialized AI assistants, or when the user asks about agent creation, agent configuration, or delegating tasks to subagents. Covers both file-based agents and Task tool invocation.
 ---
 
-# Create Subagent Guide
+# Create Subagent
 
-This skill helps you create specialized Claude Code subagents following official best practices and standards. Subagents are specialized AI assistants with focused expertise areas, separate context windows, and custom tool access.
+This skill provides comprehensive guidance for creating and configuring subagents in Claude Code.
 
-## Quick Start
+## Understanding Subagents
 
-When creating a new subagent, follow this workflow:
+Subagents are specialized AI assistants that Claude Code can delegate tasks to. Each subagent:
 
-1. **Understand the purpose** - What specific task/domain should this subagent handle?
-2. **Choose location** - Project-level (.claude/agents/) or user-level (~/.claude/agents/)?
-3. **Select model** - Haiku for quick tasks, Sonnet for complex work, Opus for advanced reasoning
-4. **Define tool access** - Restrict tools for security or leave unrestricted for flexibility
-5. **Write system prompt** - Detailed instructions defining expertise and behavior
-6. **Test invocation** - Verify automatic delegation and explicit invocation work
+- Operates in its own context window (preserving main conversation context)
+- Has a specific purpose and expertise area
+- Can be configured with specific tools and permissions
+- Includes a custom system prompt guiding its behavior
 
-## File Format
+### When to Create Subagents
 
-Every subagent is a Markdown file with YAML frontmatter:
+**Create a subagent when:**
+
+- Tasks require specialized expertise that benefits from focused instructions
+- Context preservation is important (subagents don't pollute main context)
+- The same specialized workflow is needed repeatedly
+- Different tool permissions are needed for different tasks
+- Parallel execution of independent tasks is desired
+
+**Choose skills instead when:**
+
+- The capability extends Claude's knowledge without needing separate context
+- No specialized agent persona is needed
+- Tool restrictions are sufficient without full agent isolation
+
+**Choose slash commands when:**
+
+- Users need explicit control over when to invoke functionality
+- The workflow should be user-initiated, not model-initiated
+
+## Two Approaches to Subagents
+
+### Approach 1: File-Based Agents
+
+Persistent subagent definitions stored as Markdown files.
+
+**Locations (in priority order):**
+
+| Location | Scope | Priority |
+|----------|-------|----------|
+| `.claude/agents/` | Current project | Highest |
+| `~/.claude/agents/` | All projects | Lower |
+
+**File Format:**
 
 ```markdown
 ---
-name: your-subagent-name
-description: When and why this subagent should be invoked
-model: sonnet  # Optional: sonnet, opus, haiku, or inherit
-tools: Read, Write, Bash, Grep  # Optional: comma-separated list
+name: agent-name
+description: Description of when this agent should be used
+tools: Read, Write, Bash, Glob, Grep  # Optional - omit to inherit all
+model: sonnet  # Optional - sonnet, opus, haiku, or inherit
+permissionMode: default  # Optional - see permission modes below
+skills: skill1, skill2  # Optional - skills to auto-load
 ---
 
-Your subagent's detailed system prompt goes here...
+Your agent's system prompt goes here. This defines the agent's
+role, capabilities, approach, and constraints.
+
+Include:
+- Role definition and expertise areas
+- Step-by-step workflow for common tasks
+- Constraints and rules to follow
+- Output format expectations
+- Examples of good behavior
 ```
 
-### Configuration Fields
+### Approach 2: Task Tool Invocation
 
-**Required:**
-- `name`: Unique identifier (lowercase letters, numbers, hyphens only)
-- `description`: Natural language explanation of purpose and when to use
+Dynamic subagent dispatch using the Task tool for on-demand agents.
 
-**Optional:**
-- `model`: Choose `haiku` (fast/cheap), `sonnet` (balanced), `opus` (advanced), or `inherit` (use main model)
-- `tools`: Comma-separated tool list; omit to inherit all tools from main thread
+```
+Task(
+  subagent_type: "general-purpose",
+  model: "opus",
+  prompt: <the agent's instructions and task>
+)
+```
 
-## File Locations
+**Built-in subagent_type options:**
 
-**Project-level** (`.claude/agents/`):
-- Highest priority (overrides user-level if name conflicts)
-- Project-specific scope
-- Shared with team via version control
-- Best for team-wide specialized agents
+| Type | Model | Tools | Purpose |
+|------|-------|-------|---------|
+| `general-purpose` | Configurable | All | Complex research, multi-step operations |
+| `plan` | Sonnet | Read, Glob, Grep, Bash | Codebase research before planning |
+| `explore` | Haiku | Read-only | Fast, lightweight searching |
 
-**User-level** (`~/.claude/agents/`):
-- Available across all projects
-- Personal agents for your workflow
-- Not shared via git
-- Best for personal productivity agents
+## Configuration Reference
 
-**Plugin-level**:
-- Bundled with plugins
-- Automatically available when plugin installed
-- Best for distributing agents to wider audience
+### Required Fields
 
-## Description Best Practices
+| Field | Description |
+|-------|-------------|
+| `name` | Unique identifier (lowercase letters, numbers, hyphens only, max 64 chars) |
+| `description` | When the agent should be used (include "PROACTIVELY" for auto-invocation) |
 
-Write descriptions that help Claude autonomously decide when to delegate:
+### Optional Fields
 
-**EXCELLENT - Specific with "use PROACTIVELY":**
+| Field | Options | Description |
+|-------|---------|-------------|
+| `tools` | Comma-separated list | Specific tools to allow. Omit to inherit all. |
+| `model` | `sonnet`, `opus`, `haiku`, `inherit` | Model to use. Default: inherit from session. |
+| `permissionMode` | See below | How permissions are handled |
+| `skills` | Comma-separated list | Skills to auto-load when agent starts |
+
+### Permission Modes
+
+| Mode | Behavior |
+|------|----------|
+| `default` | Normal permission prompting |
+| `acceptEdits` | Auto-accept file edits |
+| `bypassPermissions` | Skip all permission prompts |
+| `plan` | Planning mode (research only) |
+| `ignore` | Ignore this agent |
+
+### Available Tools
+
+**File Operations:** `Read`, `Write`, `Edit`, `Glob`, `Grep`
+**Execution:** `Bash`, `BashOutput`
+**Web:** `WebFetch`, `WebSearch`
+**Specialized:** `Task`, `NotebookEdit`, `TodoWrite`, `Skill`
+
+## Creating a Subagent
+
+### Step 1: Define the Purpose
+
+Answer these questions:
+
+1. What specialized task does this agent handle?
+2. What expertise or personality should it have?
+3. What tools does it need (or shouldn't have)?
+4. Should it be invoked automatically or explicitly?
+
+### Step 2: Choose the Approach
+
+**Use file-based agents when:**
+- The agent will be reused across sessions
+- Team sharing via version control is desired
+- Configuration should persist
+
+**Use Task tool when:**
+- One-off or dynamic agent dispatch is needed
+- Agents are spawned as part of a workflow
+- Parallel agent execution is required
+
+### Step 3: Write the System Prompt
+
+Structure the agent's prompt with these sections:
+
+```markdown
+<role>
+Define who this agent is and what it excels at.
+</role>
+
+<constraints>
+<hard-rules>
+- ALWAYS do X
+- NEVER do Y
+</hard-rules>
+<preferences>
+- Prefer A over B
+- Prefer C over D
+</preferences>
+</constraints>
+
+<workflow>
+## How to Approach Tasks
+
+1. **Phase 1**: Description
+2. **Phase 2**: Description
+3. **Phase 3**: Description
+</workflow>
+
+<examples>
+Good patterns and anti-patterns.
+</examples>
+```
+
+### Step 4: Configure Tools and Permissions
+
+**Restrictive (read-only analysis):**
 ```yaml
-description: Elite code review expert specializing in modern AI-powered code analysis, security vulnerabilities, performance optimization, and production reliability. Masters static analysis tools, security scanning, and configuration review with 2024/2025 best practices. Use PROACTIVELY for code quality assurance.
+tools: Read, Glob, Grep
 ```
 
-**GOOD - Clear purpose and trigger terms:**
+**Standard development:**
 ```yaml
-description: Expert data scientist for advanced analytics, machine learning, and statistical modeling. Handles complex data analysis, predictive modeling, and business intelligence. Use PROACTIVELY for data analysis tasks, ML modeling, statistical analysis, and data-driven insights.
+tools: Read, Write, Edit, Bash, Glob, Grep
 ```
 
-**BAD - Too vague:**
+**Full access (omit tools field):**
 ```yaml
-description: Helps with code
+# tools field omitted - inherits all tools
 ```
 
-**Key principles:**
-- Include "Use PROACTIVELY" or "MUST BE USED" for automatic delegation
-- Specify exact expertise areas and domains
-- Mention specific file types, frameworks, or technologies
-- Describe both WHAT it does and WHEN to use it
-- Be specific enough to distinguish from similar agents
+### Step 5: Test and Iterate
 
-## Model Selection Guide
+1. Invoke the agent with a representative task
+2. Observe where it struggles or deviates
+3. Update the system prompt with clarifications
+4. Add examples of correct behavior
+5. Repeat until reliable
 
-Choose the right model for your subagent's complexity:
+## Agent Templates
 
-**Haiku** - Fast, cost-effective (use for):
-- Quick, straightforward tasks
-- Simple file operations
-- Basic code formatting
-- Running tests and reporting results
-- Simple search and retrieval tasks
-
-**Sonnet** (default) - Balanced performance (use for):
-- Complex analysis and reasoning
-- Code review and refactoring
-- Architecture decisions
-- Multi-step workflows
-- Most production subagents
-
-**Opus** - Maximum capability (use for):
-- Advanced reasoning and planning
-- Complex system design
-- Multi-agent orchestration
-- Critical security analysis
-- Novel problem solving
-
-**Inherit** - Match main model:
-- When consistency is important
-- For experimental agents
-- When model choice is user-dependent
-
-## Tool Restrictions
-
-Control which tools the subagent can access:
-
-**Unrestricted (omit `tools` field):**
-```yaml
----
-name: full-access-agent
-description: Agent with access to all tools
-model: sonnet
----
-```
-Inherits all tools including MCP server tools.
-
-**Restricted (specify tools):**
-```yaml
----
-name: read-only-analyzer
-description: Security-focused read-only code analyzer
-model: sonnet
-tools: Read, Grep, Glob
----
-```
-
-**Common tool combinations:**
-
-*Read-only analysis:*
-```yaml
-tools: Read, Grep, Glob
-```
-
-*Code modification:*
-```yaml
-tools: Read, Write, Edit, Grep, Glob
-```
-
-*Development workflow:*
-```yaml
-tools: Read, Write, Edit, Bash, Grep, Glob
-```
-
-*Full capabilities with restrictions:*
-```yaml
-tools: Read, Write, Edit, Bash, Grep, Glob, Task, WebFetch
-```
-
-Available tools include:
-- Read, Write, Edit, NotebookEdit
-- Bash, BashOutput, KillShell
-- Grep, Glob
-- Task (for sub-agents)
-- WebFetch, WebSearch
-- TodoWrite
-- AskUserQuestion
-- Skill, SlashCommand
-
-## System Prompt Structure
-
-A well-structured system prompt includes:
-
-### 1. Core Identity
-```markdown
-You are an elite [role] specializing in [domains].
-```
-
-### 2. Expert Purpose
-```markdown
-## Expert Purpose
-[2-3 sentences describing the subagent's focus and value proposition]
-```
-
-### 3. Capabilities
-```markdown
-## Capabilities
-
-### Category 1
-- Specific capability with context
-- Another capability with details
-- Implementation approach
-
-### Category 2
-- Domain-specific expertise
-- Tool and framework knowledge
-- Best practices mastery
-```
-
-### 4. Behavioral Traits
-```markdown
-## Behavioral Traits
-- How the subagent approaches problems
-- Communication style and tone
-- Prioritization and decision-making approach
-- Quality standards and principles
-```
-
-### 5. Knowledge Base
-```markdown
-## Knowledge Base
-- Specific technologies and frameworks
-- Industry standards and best practices
-- Tools and platforms expertise
-- Compliance and regulatory knowledge
-```
-
-### 6. Response Approach
-```markdown
-## Response Approach
-1. **Step 1** - What to do first
-2. **Step 2** - Next action with context
-3. **Step 3** - How to proceed
-...
-10. **Final step** - Completion criteria
-```
-
-### 7. Example Interactions
-```markdown
-## Example Interactions
-- "User request example 1"
-- "User request example 2"
-- "Complex scenario example"
-```
-
-## Invocation Methods
-
-### Automatic Delegation (Preferred)
-Claude Code automatically delegates when:
-- Task matches subagent description
-- Description includes "Use PROACTIVELY" or "MUST BE USED"
-- Context suggests specialized expertise needed
-
-No user action required - happens transparently.
-
-### Explicit Invocation
-Users can directly request:
-- "Use the code-reviewer subagent to analyze my changes"
-- "Have the database-optimizer agent check this query"
-- "Ask the security-auditor to review this authentication code"
-
-## Complete Example: Test Runner Subagent
+### Code Reviewer Agent
 
 ```markdown
 ---
-name: test-runner
-description: Specialized test execution and failure analysis agent. Runs test suites, analyzes failures, provides fix suggestions, and validates corrections. Use PROACTIVELY when user mentions running tests, fixing test failures, or test debugging.
-model: haiku
-tools: Read, Bash, Grep, Glob, Edit
+name: code-reviewer
+description: Expert code review specialist. Use PROACTIVELY after any code changes. Reviews for quality, security, and maintainability.
+tools: Read, Glob, Grep, Bash
+model: inherit
 ---
 
-You are a specialized test execution and debugging expert focused on running tests and analyzing failures efficiently.
+<role>
+You are a senior code reviewer ensuring high standards of code quality and security.
+</role>
 
-## Expert Purpose
-Execute test suites across multiple frameworks, analyze failure patterns, provide actionable fix suggestions, and validate corrections. Optimized for speed and accuracy in test-driven development workflows.
+<workflow>
+## Review Process
 
-## Capabilities
+1. **Gather Context**: Run git diff, understand the changes
+2. **Analyze Each File**: Check for issues systematically
+3. **Prioritize Findings**: Critical > High > Medium > Low
+4. **Provide Actionable Feedback**: Specific fixes, not vague suggestions
 
-### Test Execution
-- Run unit, integration, and end-to-end tests
-- Execute framework-specific test commands (Jest, pytest, RSpec, etc.)
-- Parallel test execution for faster results
-- Selective test running by file, suite, or pattern
-- Watch mode and continuous testing support
+## Review Checklist
 
-### Failure Analysis
-- Parse test output for error messages and stack traces
-- Identify root causes from assertion failures
-- Detect flaky tests and timing issues
-- Analyze code coverage gaps
-- Correlate failures with recent code changes
+- [ ] Code clarity and readability
+- [ ] Proper error handling
+- [ ] Security vulnerabilities
+- [ ] Test coverage
+- [ ] Performance considerations
+- [ ] Consistency with existing patterns
+</workflow>
 
-### Fix Suggestions
-- Provide specific code fixes for failing assertions
-- Suggest test data corrections
-- Recommend mock/stub improvements
-- Identify missing test setup or teardown
-- Propose test isolation improvements
-
-### Validation
-- Re-run tests after fixes applied
-- Verify all related tests still pass
-- Check for regression in other test suites
-- Validate code coverage maintained or improved
-
-## Behavioral Traits
-- Executes tests immediately without asking for confirmation
-- Provides concise, actionable failure summaries
-- Focuses on fastest path to green tests
-- Prioritizes critical failures over warnings
-- Reports progress clearly during long test runs
-
-## Knowledge Base
-- JavaScript: Jest, Mocha, Vitest, Cypress, Playwright
-- Python: pytest, unittest, nose2, Robot Framework
-- Ruby: RSpec, Minitest, Cucumber
-- Java: JUnit, TestNG, Spock
-- Go: testing package, Ginkgo, Testify
-- .NET: xUnit, NUnit, MSTest
-- Test output parsing for all major frameworks
-
-## Response Approach
-1. **Identify test framework** from project files
-2. **Execute test command** appropriate for framework
-3. **Capture and parse output** for failures
-4. **Analyze failure patterns** and root causes
-5. **Suggest specific fixes** with code examples
-6. **Apply fixes** if user confirms
-7. **Re-run tests** to validate corrections
-8. **Report results** with clear pass/fail summary
-
-## Example Interactions
-- "Run the tests"
-- "Fix the failing authentication tests"
-- "Why is the user service test failing?"
-- "Run only the database integration tests"
-- "Check test coverage for the payment module"
+<output-format>
+Organize feedback by priority:
+1. **Critical**: Must fix before merge
+2. **High**: Should fix
+3. **Medium**: Consider improving
+4. **Low**: Nice to have
+</output-format>
 ```
 
-## Complete Example: Database Optimizer Subagent
+### Debugger Agent
 
 ```markdown
 ---
-name: database-optimizer
-description: Expert database optimization specialist for query performance tuning, index analysis, and scalable architecture. Handles complex query analysis, N+1 resolution, partitioning strategies, and cloud database optimization. Use PROACTIVELY for database optimization, performance issues, or scalability challenges.
-model: sonnet
-tools: Read, Bash, Grep, Glob, Write, Edit
+name: debugger
+description: Debugging specialist for errors and unexpected behavior. Use PROACTIVELY when encountering failures, test errors, or bugs.
+tools: Read, Edit, Bash, Glob, Grep
 ---
 
-You are an expert database optimizer specializing in modern performance tuning, query optimization, and scalable architectures.
+<role>
+You are an expert debugger specializing in root cause analysis.
+</role>
 
-## Expert Purpose
-Master database performance tuning focused on query optimization, indexing strategies, connection pooling, and cloud-native database patterns. Combines deep SQL expertise with modern cloud database services (RDS, Cloud SQL, Aurora) and production scaling techniques.
+<workflow>
+## Debugging Protocol
 
-## Capabilities
+1. **Capture**: Get error message, stack trace, reproduction steps
+2. **Hypothesize**: Form theories about root cause
+3. **Investigate**: Add logging, trace execution, check state
+4. **Isolate**: Find the exact failure point
+5. **Fix**: Apply minimal, targeted fix
+6. **Verify**: Confirm fix works, no regressions
 
-### Query Optimization
-- Execution plan analysis and optimization
-- Complex join optimization and query rewriting
-- Subquery to JOIN conversion for performance
-- CTE and window function optimization
-- Full-text search performance tuning
-- Query parameterization for plan cache efficiency
-- Aggregation pipeline optimization (MongoDB, etc.)
+## Three-Strike Rule
 
-### Indexing Strategies
-- Index design for read-heavy workloads
-- Composite index optimization
-- Covering index implementation
-- Partial and filtered index strategies
-- Index maintenance and fragmentation analysis
-- B-tree vs. hash vs. GiST index selection
-- Index-only scan optimization
+- Strike 1: Targeted fix based on evidence
+- Strike 2: Step back, reassess assumptions
+- Strike 3: STOP - question the approach entirely
+</workflow>
 
-### N+1 Problem Resolution
-- ORM query analysis (Hibernate, Entity Framework, ActiveRecord)
-- Eager loading vs. lazy loading optimization
-- Batch loading implementation
-- DataLoader pattern for GraphQL
-- Query batching and prefetching
-- Association preloading strategies
-
-### Connection Management
-- Connection pooling configuration
-- Pool size optimization for workload
-- Connection timeout and retry strategies
-- Read replica routing and load balancing
-- Prepared statement caching
-- Transaction isolation level optimization
-
-### Performance Monitoring
-- Slow query log analysis
-- Query performance metrics collection
-- Database profiling and tracing
-- Wait event analysis
-- Lock contention identification
-- Resource utilization monitoring
-
-## Behavioral Traits
-- Analyzes query patterns before suggesting changes
-- Provides specific, measurable performance improvements
-- Considers both read and write workload impacts
-- Balances optimization complexity with maintenance burden
-- Tests optimizations with realistic data volumes
-- Documents performance baselines and improvements
-- Prioritizes production stability over micro-optimizations
-
-## Knowledge Base
-- PostgreSQL, MySQL, SQL Server, Oracle advanced features
-- MongoDB, Cassandra, DynamoDB NoSQL patterns
-- AWS RDS, Aurora, Cloud SQL, Azure SQL optimization
-- Query execution plan interpretation
-- Database statistics and cost models
-- ACID properties and isolation levels
-- Sharding and partitioning strategies
-- Replication and consistency models
-
-## Response Approach
-1. **Analyze current performance** using EXPLAIN or profiling
-2. **Identify bottlenecks** in query execution plans
-3. **Evaluate indexing strategy** for access patterns
-4. **Review schema design** for normalization issues
-5. **Check connection pooling** configuration
-6. **Propose optimizations** with expected impact
-7. **Test changes** in development environment
-8. **Measure improvements** with before/after metrics
-9. **Document changes** and reasoning
-10. **Monitor production** impact after deployment
-
-## Example Interactions
-- "Optimize this slow PostgreSQL query"
-- "Analyze why our dashboard queries are taking 10+ seconds"
-- "Fix N+1 queries in our GraphQL API"
-- "Review our database indexing strategy"
-- "Why is our connection pool exhausted?"
-- "Optimize this MongoDB aggregation pipeline"
-- "Design sharding strategy for 100M records"
+<constraints>
+- NEVER fix symptoms without understanding root cause
+- ALWAYS reproduce before fixing
+- ALWAYS verify fix works
+</constraints>
 ```
 
-## Creation Checklist
+### Research Agent
 
-Before finalizing your subagent:
+```markdown
+---
+name: researcher
+description: Deep research agent for complex questions requiring multi-source investigation. Use for architectural analysis, refactoring plans, or documentation questions.
+tools: Read, Glob, Grep, WebSearch, WebFetch
+model: opus
+---
 
-- [ ] YAML frontmatter is valid (opening/closing `---`)
-- [ ] Name uses only lowercase, numbers, and hyphens
-- [ ] Description includes "Use PROACTIVELY" for automatic delegation
-- [ ] Description mentions specific technologies/domains
-- [ ] Model choice is appropriate for complexity (haiku/sonnet/opus)
-- [ ] Tool restrictions match security/scope requirements
-- [ ] System prompt has clear identity statement
-- [ ] Capabilities are organized by category
-- [ ] Behavioral traits define approach and style
-- [ ] Knowledge base lists specific technologies
-- [ ] Response approach has numbered steps
-- [ ] Example interactions show realistic use cases
-- [ ] File is saved in correct location (.claude/agents/ or ~/.claude/agents/)
+<role>
+You are a research specialist who finds comprehensive answers through thorough investigation.
+</role>
 
-## Testing Your Subagent
+<workflow>
+## Research Process
 
-After creating a subagent:
+### Phase 1: Plan Investigation
+- Identify what needs to be researched
+- Map out search strategies
+- List relevant code areas
 
-1. **Restart Claude Code** - Changes require restart to load
-2. **Check agent list** - Use `/agents` command to verify it appears
-3. **Test automatic delegation** - Use trigger terms from description
-4. **Test explicit invocation** - Request the agent by name
-5. **Verify tool access** - Ensure restricted tools work as expected
-6. **Monitor performance** - Check if model choice is appropriate
+### Phase 2: Deep Exploration
+- Search codebase thoroughly
+- Read relevant files completely
+- Use web search for external docs
+- Trace dependencies
 
-## CLI Testing (Advanced)
+### Phase 3: Synthesize
+- Cross-reference findings
+- Identify patterns and gaps
+- Form coherent understanding
 
-Test subagents dynamically without file creation:
+### Phase 4: Report
+- Direct answer with evidence
+- File paths and line numbers
+- Confidence level and caveats
+- Recommended next steps
+</workflow>
+
+<principles>
+- Go deep, not shallow
+- Cite specific evidence
+- Connect dots across sources
+- Acknowledge uncertainty
+</principles>
+```
+
+## Parallel Agent Patterns
+
+### Pattern: Parallel Execution
+
+Dispatch multiple agents simultaneously for independent tasks:
+
+```
+Task(
+  subagent_type: "general-purpose",
+  model: "sonnet",
+  prompt: "Task 1: Review authentication module..."
+)
+
+Task(
+  subagent_type: "general-purpose",
+  model: "sonnet",
+  prompt: "Task 2: Review authorization module..."
+)
+
+Task(
+  subagent_type: "general-purpose",
+  model: "sonnet",
+  prompt: "Task 3: Review session handling..."
+)
+```
+
+### Pattern: Divergent Exploration (Delphi)
+
+Launch multiple agents with identical prompts for diverse perspectives:
+
+```
+# Same prompt to all agents - divergent exploration emerges naturally
+identical_prompt = "Investigate why API latency increased..."
+
+Task(subagent_type: "general-purpose", model: "opus", prompt: identical_prompt)
+Task(subagent_type: "general-purpose", model: "opus", prompt: identical_prompt)
+Task(subagent_type: "general-purpose", model: "opus", prompt: identical_prompt)
+```
+
+Each agent explores independently, potentially discovering different clues.
+
+### Pattern: Synthesis After Parallel Work
+
+After parallel agents complete:
+
+```
+Task(
+  subagent_type: "general-purpose",
+  model: "opus",
+  prompt: "Read all reports in .reviews/ and synthesize findings..."
+)
+```
+
+## Resumable Agents
+
+Agents can be resumed to continue previous work:
+
+```
+# Initial dispatch
+Task(...) -> returns agentId: "abc123"
+
+# Resume later
+"Resume agent abc123 and continue analyzing the authorization module"
+```
+
+**Use cases:**
+- Long-running research across sessions
+- Iterative refinement with maintained context
+- Multi-step workflows with breaks
+
+## Best Practices
+
+### Prompt Engineering
+
+1. **Be specific about the role**: Define expertise and personality clearly
+2. **Include constraints**: Hard rules prevent unwanted behavior
+3. **Provide workflow**: Step-by-step process guides execution
+4. **Add examples**: Show good and bad patterns
+5. **Define output format**: Structure expectations
+
+### Tool Selection
+
+1. **Principle of least privilege**: Only grant needed tools
+2. **Read-only for analysis**: Use `Read, Glob, Grep` for review agents
+3. **Full access rarely needed**: Most agents don't need all tools
+4. **Bash is powerful but risky**: Consider if really needed
+
+### Description Writing
+
+**For automatic invocation**, include trigger phrases:
+- "Use PROACTIVELY when..."
+- "MUST BE USED for..."
+- "Automatically invoke for..."
+
+**For explicit invocation**, be descriptive:
+- "Use when user asks to..."
+- "Invoke for..."
+
+### Common Anti-Patterns
+
+| Anti-Pattern | Better Approach |
+|--------------|-----------------|
+| Vague descriptions | Specific trigger conditions |
+| Overly long prompts | Progressive disclosure via skills |
+| All tools for every agent | Minimal necessary tools |
+| Generic "helper" agents | Focused, specialized agents |
+| No constraints | Clear hard rules and preferences |
+
+## CLI-Based Agents
+
+Define agents dynamically via command line:
 
 ```bash
 claude --agents '{
-  "test-agent": {
-    "description": "Test agent for validation",
-    "prompt": "You are a test validation expert...",
-    "tools": ["Read", "Grep"],
+  "quick-review": {
+    "description": "Fast code review. Use proactively after changes.",
+    "prompt": "You are a quick code reviewer. Focus on obvious issues only.",
+    "tools": ["Read", "Grep", "Glob"],
     "model": "haiku"
   }
 }'
 ```
 
-Useful for:
-- Quick prototyping before file creation
-- Session-specific agents
-- A/B testing different configurations
-- Automation scripts
+CLI agents have lower priority than file-based project agents but higher than user-level agents.
 
-## Common Issues
+## Integration with Skills
 
-**Subagent not activating:**
-- Description too generic - add specific trigger terms
-- Missing "Use PROACTIVELY" phrase
-- Wrong file location - check .claude/agents/ or ~/.claude/agents/
-- Invalid YAML syntax - verify frontmatter format
-- Name conflict - project-level overrides user-level
+Agents can auto-load skills:
 
-**Tool access denied:**
-- Tools not listed in `tools` field
-- Typo in tool name (case-sensitive)
-- Remove `tools` field to inherit all tools
-
-**Performance issues:**
-- Model too powerful (use haiku for simple tasks)
-- Model too weak (upgrade to sonnet/opus for complex work)
-- Context too large - restrict tool access or narrow scope
-
-## Multi-Agent Orchestration
-
-Chain multiple subagents for complex workflows:
-
-**Sequential processing:**
-```
-backend-architect → frontend-developer → test-automator → security-auditor
-```
-
-**Parallel execution:**
-```
-performance-engineer + database-optimizer → Merged analysis
-```
-
-**Validation pipeline:**
-```
-payment-integration → security-auditor → Validated implementation
-```
-
-The main Claude Code agent orchestrates delegation automatically based on task requirements.
-
-## Version Control Best Practices
-
-**For project subagents (.claude/agents/):**
-```bash
-# Add to version control
-git add .claude/agents/your-agent.md
-git commit -m "Add specialized agent for X"
-git push
-```
-
-Team members automatically get access on pull.
-
-**For user subagents (~/.claude/agents/):**
-- Do NOT commit to version control
-- Share manually if needed
-- Consider converting to project-level if team needs access
-
-## Model Distribution Strategy
-
-Optimize costs and performance:
-
-**Haiku agents (fast/cheap):**
-- test-runner
-- code-formatter
-- file-organizer
-- simple-validator
-
-**Sonnet agents (balanced):**
-- code-reviewer
-- database-optimizer
-- api-documenter
-- backend-architect
-- frontend-developer
-
-**Opus agents (advanced):**
-- system-architect
-- security-auditor (critical systems)
-- ai-engineer (complex ML)
-- incident-responder (production crises)
-
-## Example: Creating a Documentation Agent
-
-When user says: "Create an agent that writes API documentation"
-
-1. **Clarify requirements:**
-   - What format? (OpenAPI, Markdown, JSDoc?)
-   - What tools needed? (Read code, generate docs, write files?)
-   - Model tier? (Sonnet for quality documentation)
-
-2. **Choose location:**
-   - Project-level if team will use it
-   - User-level if personal workflow
-
-3. **Design configuration:**
 ```yaml
-name: api-documenter
-description: Master API documentation specialist for OpenAPI, interactive docs, and developer portals. Creates optimized meta titles, descriptions, and comprehensive documentation. Use PROACTIVELY for API documentation or developer portal creation.
-model: sonnet
-tools: Read, Write, Edit, Grep, Glob, Bash
+---
+name: data-analyst
+description: Data analysis specialist
+skills: query-builder, visualization
+---
 ```
 
-4. **Write detailed system prompt:**
-   - Capabilities: OpenAPI 3.1, Swagger, AsyncAPI, GraphQL schemas
-   - Behavioral traits: Clear, concise, developer-focused
-   - Response approach: Analyze code → Generate docs → Validate → Format
+The specified skills are loaded when the agent starts, giving it access to that specialized knowledge.
 
-5. **Create the file:**
+## Troubleshooting
+
+### Agent Not Being Invoked
+
+1. Check description includes clear trigger conditions
+2. Add "PROACTIVELY" if automatic invocation is desired
+3. Verify file is in correct location with correct frontmatter
+4. Check for name conflicts with higher-priority agents
+
+### Agent Using Wrong Tools
+
+1. Verify tools field syntax (comma-separated, no brackets)
+2. Check tool names are exactly correct (case-sensitive)
+3. If tools should inherit, omit the field entirely
+
+### Agent Behaving Incorrectly
+
+1. Add more specific constraints
+2. Include examples of correct behavior
+3. Add "NEVER" rules for unwanted behaviors
+4. Consider if the prompt is too long (move details to skills)
+
+## Quick Reference
+
+**Create project agent:**
 ```bash
-# Project-level
-.claude/agents/api-documenter.md
-
-# Or user-level
-~/.claude/agents/api-documenter.md
+mkdir -p .claude/agents
+# Create .claude/agents/my-agent.md with frontmatter
 ```
 
-6. **Test it:**
-   - "Document this REST API"
-   - "Generate OpenAPI spec from this code"
-   - Verify it activates automatically
+**Create user agent:**
+```bash
+mkdir -p ~/.claude/agents
+# Create ~/.claude/agents/my-agent.md with frontmatter
+```
 
-## Key Principles
+**Dispatch via Task:**
+```
+Task(subagent_type: "general-purpose", model: "opus", prompt: "...")
+```
 
-1. **Single responsibility** - One subagent, one focused purpose
-2. **Specific descriptions** - Include "Use PROACTIVELY" and trigger terms
-3. **Right-sized models** - Haiku for simple, Sonnet for most, Opus for complex
-4. **Minimal tool access** - Only grant necessary tools for security
-5. **Clear system prompts** - Detailed instructions with examples
-6. **Test thoroughly** - Verify automatic and explicit invocation
-7. **Version control** - Share project-level agents with team
-8. **Monitor performance** - Adjust model/tools based on usage
-
-## Workflow Summary
-
-When user asks to create a subagent:
-
-1. **Clarify purpose** - What specific task? What expertise needed?
-2. **Choose location** - Project (.claude/agents/) or user (~/.claude/agents/)?
-3. **Select model** - Haiku/Sonnet/Opus based on complexity
-4. **Define tools** - Unrestricted or specific tool list?
-5. **Write description** - Include "Use PROACTIVELY" and trigger terms
-6. **Create system prompt** - Identity, capabilities, behavior, approach, examples
-7. **Save file** - Correct location with .md extension
-8. **Guide testing** - How to verify it works
-9. **Document usage** - Example invocations and expected behavior
-
-Remember: Subagents have separate context windows and can be automatically delegated by Claude Code based on task requirements. Make descriptions specific and include "Use PROACTIVELY" for seamless automation.
+**View/manage agents:**
+```
+/agents
+```

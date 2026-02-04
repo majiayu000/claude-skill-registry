@@ -1,7 +1,7 @@
 {
   "name": "ml-engineer",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/ml-engineer/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:24.611996Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/ml-engineer/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:39.679433Z"
 }

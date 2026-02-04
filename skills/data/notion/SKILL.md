@@ -2,11 +2,7 @@
 name: notion
 description: Notion API for creating and managing pages, databases, and blocks.
 homepage: https://developers.notion.com
-metadata:
-  {
-    "openclaw":
-      { "emoji": "📝", "requires": { "env": ["NOTION_API_KEY"] }, "primaryEnv": "NOTION_API_KEY" },
-  }
+metadata: {"espada":{"emoji":"📝","requires":{"env":["NOTION_API_KEY"]},"primaryEnv":"NOTION_API_KEY"}}
 ---
 
 # notion
@@ -18,18 +14,15 @@ Use the Notion API to create/read/update pages, data sources (databases), and bl
 1. Create an integration at https://notion.so/my-integrations
 2. Copy the API key (starts with `ntn_` or `secret_`)
 3. Store it:
-
 ```bash
 mkdir -p ~/.config/notion
 echo "ntn_your_key_here" > ~/.config/notion/api_key
 ```
-
 4. Share target pages/databases with your integration (click "..." → "Connect to" → your integration name)
 
 ## API Basics
 
 All requests need:
-
 ```bash
 NOTION_KEY=$(cat ~/.config/notion/api_key)
 curl -X GET "https://api.notion.com/v1/..." \
@@ -43,7 +36,6 @@ curl -X GET "https://api.notion.com/v1/..." \
 ## Common Operations
 
 **Search for pages and data sources:**
-
 ```bash
 curl -X POST "https://api.notion.com/v1/search" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -53,7 +45,6 @@ curl -X POST "https://api.notion.com/v1/search" \
 ```
 
 **Get page:**
-
 ```bash
 curl "https://api.notion.com/v1/pages/{page_id}" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -61,7 +52,6 @@ curl "https://api.notion.com/v1/pages/{page_id}" \
 ```
 
 **Get page content (blocks):**
-
 ```bash
 curl "https://api.notion.com/v1/blocks/{page_id}/children" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -69,7 +59,6 @@ curl "https://api.notion.com/v1/blocks/{page_id}/children" \
 ```
 
 **Create page in a data source:**
-
 ```bash
 curl -X POST "https://api.notion.com/v1/pages" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -85,7 +74,6 @@ curl -X POST "https://api.notion.com/v1/pages" \
 ```
 
 **Query a data source (database):**
-
 ```bash
 curl -X POST "https://api.notion.com/v1/data_sources/{data_source_id}/query" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -98,7 +86,6 @@ curl -X POST "https://api.notion.com/v1/data_sources/{data_source_id}/query" \
 ```
 
 **Create a data source (database):**
-
 ```bash
 curl -X POST "https://api.notion.com/v1/data_sources" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -116,7 +103,6 @@ curl -X POST "https://api.notion.com/v1/data_sources" \
 ```
 
 **Update page properties:**
-
 ```bash
 curl -X PATCH "https://api.notion.com/v1/pages/{page_id}" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -126,7 +112,6 @@ curl -X PATCH "https://api.notion.com/v1/pages/{page_id}" \
 ```
 
 **Add blocks to page:**
-
 ```bash
 curl -X PATCH "https://api.notion.com/v1/blocks/{page_id}/children" \
   -H "Authorization: Bearer $NOTION_KEY" \
@@ -142,7 +127,6 @@ curl -X PATCH "https://api.notion.com/v1/blocks/{page_id}/children" \
 ## Property Types
 
 Common property formats for database items:
-
 - **Title:** `{"title": [{"text": {"content": "..."}}]}`
 - **Rich text:** `{"rich_text": [{"text": {"content": "..."}}]}`
 - **Select:** `{"select": {"name": "Option"}}`

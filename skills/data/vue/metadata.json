@@ -1,7 +1,7 @@
 {
   "name": "vue",
-  "repo": "onmax/claude-config",
-  "path": "skills/vue/SKILL.md",
-  "source": "github.com/onmax/claude-config",
-  "downloaded_at": "2026-02-02T04:29:10.108476Z"
+  "repo": "hyunolike/info-docs",
+  "path": "vue/vuex-skill.md",
+  "source": "github.com/hyunolike/info-docs",
+  "downloaded_at": "2026-02-04T05:07:26.763514Z"
 }

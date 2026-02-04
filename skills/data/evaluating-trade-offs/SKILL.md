@@ -1,115 +1,83 @@
 ---
-name: "evaluating-trade-offs"
-description: "Evaluate trade-offs and produce a Trade-off Evaluation Pack (trade-off brief, options+criteria matrix, all-in cost/opportunity cost table, impact ranges, recommendation, stop/continue triggers). Use for tradeoff/trade-off, pros and cons, cost-benefit, opportunity cost, build vs buy, ship fast vs ship better, continue vs stop (sunk costs). Category: Leadership."
+name: evaluating-trade-offs
+description: Help users make better decisions between competing options. Use when someone is weighing pros and cons, comparing alternatives, struggling with a difficult choice, deciding between speed and quality, or asking "should we do X or Y?"
 ---
 
 # Evaluating Trade-offs
 
-## Scope
+Help the user make clearer decisions between competing options using frameworks and mental models from 40 product leaders.
 
-**Covers**
-- Turning an ambiguous “pros/cons” debate into a decision-ready **trade-off evaluation**
-- Comparing options using **all-in cost** (not just dollars) and explicit **opportunity cost**
-- Using **order-of-magnitude estimates** (ranges + confidence) instead of false precision
-- Stress-testing decisions with **thought experiments** (pre-mortems, reversibility, “worse first” dips)
-- Avoiding sunk-cost traps with a clean **stop/continue** decision rule
+## How to Help
 
-**When to use**
-- “Help me evaluate this trade-off and recommend a path.”
-- “Create a pros/cons that actually leads to a decision.”
-- “Compare options with cost/impact ranges and key assumptions.”
-- “We’re debating speed vs quality—what’s the right trade and how do we manage the dip?”
-- “Should we keep investing in this project, or stop? (Sunk cost question.)”
+When the user asks for help evaluating trade-offs:
 
-**When NOT to use**
-- You need to clarify what problem you’re solving (use `problem-definition`).
-- You need a full cross-functional decision process (use `running-decision-processes`).
-- You’re prioritizing across many initiatives (use `prioritizing-roadmap`).
-- You’re cutting scope to hit a date/timebox (use `scoping-cutting`).
-- The decision is personal/legal/HR/financial advice (escalate to qualified humans).
+1. **Understand the decision context** - Ask what they're optimizing for (short-term vs. long-term, growth vs. quality, speed vs. thoroughness) and what makes this decision difficult
+2. **Identify the real constraints** - Help distinguish between actual constraints and assumed ones. Ask "What would you do if [constraint] weren't an issue?"
+3. **Surface hidden costs** - Help quantify the full cost of each option, including maintenance burden, opportunity cost, and second-order effects
+4. **Apply the right framework** - Use weighted criteria matrices for complex multi-factor decisions, or simple "would I start this today?" tests for continuation decisions
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- The trade-off / decision statement (one sentence) and a decision date (or “by EOW”)
-- 2–4 options you’re choosing between (include “do nothing” if plausible)
-- Constraints + non-negotiables (budget, headcount, policy, deadlines, customer commitments)
-- What “good” means (success metrics + guardrails) and the time horizon you care about
-- What you already know (evidence) + biggest unknowns (assumptions that drive the choice)
+### Optimize for order-of-magnitude, not precision
+Alex Komoroske: "It doesn't really matter if it's 1,000 or 1,001, who cares? It's orders of magnitude larger than the alternative, and so it is better." Don't waste effort on false precision in uncertain environments - focus on whether one option is dramatically better, not marginally better.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If inputs are unavailable, proceed with explicit assumptions and label unknowns that would change the recommendation.
+### Apply the "would I start this today?" test
+Annie Duke: "If you wouldn't start this today, then that means that everything that you're putting into this going forward is the actual waste." When evaluating whether to continue a project, ignore sunk costs entirely. The only relevant question is whether you'd begin this effort with today's knowledge.
 
-## Outputs (deliverables)
+### Think more, ship better
+Anuj Rathi: "Most experiments should be thought experiments. They should not even be tried out because they're obviously going to fail." Don't default to "let's just try it" - rigorous upfront thinking eliminates weak ideas before they consume engineering resources.
 
-Produce a **Trade-off Evaluation Pack** in Markdown (in-chat; or as files if requested) in this order:
-1) **Trade-off brief** (decision, why now, options, constraints, horizon, stakeholders)
-2) **Options + criteria matrix** (criteria + weights/guardrails; option notes)
-3) **All-in cost + opportunity cost table** (money, people/time, eng effort, complexity, displacement)
-4) **Impact ranges (order-of-magnitude)** (upside/downside ranges, confidence, key assumptions)
-5) **Worse-first + mitigation plan** (expected dip, leading indicators, mitigations, comms)
-6) **Recommendation + stop/continue triggers** (decision, rationale, review date, kill/continue criteria)
-7) **Risks / Open questions / Next steps** (always included)
+### Accept "worse first" for long-term gains
+Graham Weaver: "Everything you want is on the other side of worse first." Meaningful change requires accepting short-term decline. Ask what your 5-year future self would want, not what makes tomorrow easier.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Create decision tenets to eliminate recurring debates
+Bob Baxley: "Tenets are really decision-making tools... you sort of make a rule for yourself." Identify debates your team has repeatedly and create a tenet to decide the direction once. Good tenets are specific enough that someone could reasonably argue the opposite.
 
-## Workflow (7 steps)
+### Quantify countervailing metrics
+Ronny Kohavi: "Here's the money that we generate from the emails. Here's the money that we're losing on long-term value. What's the trade-off?" Assign dollar values to negative user actions (unsubscribes, churn) to make objective trade-offs against short-term gains.
 
-### 1) Frame the trade-off (make it decidable)
-- **Inputs:** User request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Write the decision in one sentence (“We are choosing X vs Y by DATE to achieve GOAL”). List constraints/non-negotiables. Confirm the decision owner and who must live with the outcome.
-- **Outputs:** Trade-off brief (decision, why now, constraints, stakeholders).
-- **Checks:** You can answer: “What exactly are we deciding, by when, and for what outcome?”
+### Use a weighted criteria matrix
+Nicole Forsgren: "Identify the criteria that are most important to you... give everything a score, and just multiply it out." Create a decision-making spreadsheet with options as rows and weighted criteria as columns. The process often reveals the answer before the math is finished.
 
-### 2) Define what you’re optimizing (criteria + horizon)
-- **Inputs:** Goals, metrics, guardrails; time horizon.
-- **Actions:** Pick 4–8 criteria (include at least one *guardrail* like trust/reliability/cost). Decide weights only if it changes the decision. Explicitly name what you’re *not* optimizing for.
-- **Outputs:** Options + criteria matrix (criteria definitions + weights/guardrails).
-- **Checks:** Criteria reflect real trade-offs (not “everything is important”); horizon is explicit (e.g., 90 days vs 2 years).
+### Present clear "either/or" choices to leadership
+Geoff Charles: "Be very clear with the tradeoffs... present those tradeoffs back to your leadership team. Here's what we're doing and here's what we're not doing." Communicate what the team is NOT doing as clearly as what they are doing. Present a "menu" of options to force a decision.
 
-### 3) Build the all-in cost + opportunity cost view
-- **Inputs:** Team capacity, budget, dependencies, timelines.
-- **Actions:** Estimate **all-in cost** (cash, headcount time, eng effort, maintenance, coordination). List the **opportunity cost**: what won’t be done if you choose each option.
-- **Outputs:** All-in cost + opportunity cost table.
-- **Checks:** Costs include “hidden” items (maintenance/on-call, tooling, cross-team coordination, switching costs).
+### Separate "can" from "should"
+John Cutler: "Some people are just locked into the can. They're uber pragmatic... others ask 'What should we do here?'" Don't let feasibility constraints dominate strategic thinking. Explicitly ask what you should do if technical debt weren't an issue.
 
-### 4) Estimate impact with ranges (avoid false precision)
-- **Inputs:** Any baseline numbers; evidence; assumptions.
-- **Actions:** For each option, estimate upside/downside as **ranges** and note confidence. Prefer **order-of-magnitude** comparisons (10× vs 1.1×). Identify the 2–3 assumptions that drive the model.
-- **Outputs:** Impact ranges table (range, confidence, key assumptions).
-- **Checks:** No fake decimals; uncertainty is explicit; the decision is driven by a few key drivers you can name.
+### Diagnose with data, treat with design
+Julie Zhuo: "Data is not a tool that's going to tell you what you should build... but it can tell you if you have a problem." Use data to identify problems and gaps, but rely on design and intuition to invent solutions.
 
-### 5) Run “thought experiments” (think more, build less)
-- **Inputs:** Options, assumptions, risks.
-- **Actions:** Do a pre-mortem for the top 1–2 options (“It failed—why?”). Identify the cheapest evidence to de-risk the biggest assumption (data pull, customer calls, small prototype, timeboxed spike). Decide if this should be a **thought experiment only** (no build) vs a real experiment.
-- **Outputs:** Assumption list + minimal validation plan (if needed).
-- **Checks:** Proposed tests are the smallest that could change your mind; you’re not shipping an “obvious loser” experiment.
+### Beware the cost of analysis itself
+Stewart Butterfield: "The cost of doing the analysis was this much. So it's guaranteed to be a loser." Evaluate whether the person-hours spent analyzing a decision exceed the maximum possible upside of the improvement.
 
-### 6) Account for “worse first” + sunk costs
-- **Inputs:** Expected short-term impacts; current investment/sunk costs.
-- **Actions:** Name any “worse-first” dip (short-term pain) and plan mitigations/leading indicators. Apply a sunk-cost reset: “If we weren’t already doing this, would we start today?” Define stop/continue triggers and a review date.
-- **Outputs:** Worse-first plan + stop/continue triggers.
-- **Checks:** The plan anticipates the dip; continuation logic ignores sunk costs and focuses on future ROI and strategic fit.
+### Identify who loses
+Ramesh Johari: "Many of the changes that are most consequential create winners and losers." When launching a feature, explicitly identify who will lose and decide if the winners provide more net value to the ecosystem.
 
-### 7) Recommend, commit, and quality-gate
-- **Inputs:** All artifacts above.
-- **Actions:** Write the recommendation with rationale and explicit trade-offs (what you will stop doing). Add risks, open questions, and next steps with owners/dates. Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md).
-- **Outputs:** Final Trade-off Evaluation Pack.
-- **Checks:** A stakeholder can read this async and make (or support) the decision without re-litigating the debate.
+## Questions to Help Users
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+- "What are you optimizing for - today, this quarter, or this year?"
+- "If you weren't already committed to this, would you start it today?"
+- "What's the full 'all-in' cost of each option, including maintenance and opportunity cost?"
+- "Is this decision reversible or a one-way door?"
+- "Who loses if you choose option A? Is that trade-off acceptable?"
+- "What would your 5-year future self wish you had done?"
 
-## Examples
+## Common Mistakes to Flag
 
-**Example 1 (resource allocation):** “Should we invest in SEO or paid acquisition for the next 2 quarters? Build a trade-off pack with all-in cost, ROI speed, and assumptions.”  
-Expected: all-in cost vs alternatives, order-of-magnitude impact ranges, and a clear recommendation + review date.
+- **False precision** - Spending excessive time distinguishing between options that are only marginally different when the real question is order-of-magnitude
+- **Sunk cost fallacy** - Continuing a failing path because of what's already been invested rather than evaluating future value
+- **Analysis paralysis** - When the cost of deciding exceeds the value difference between options
+- **Ignoring second-order effects** - Not accounting for maintenance burden, feature creep, or organizational complexity that comes after launch
+- **Defaulting to your skillset** - As Bret Taylor notes, "If you're a great engineer, the answer to almost every problem is engineering... you probably should question it"
 
-**Example 2 (speed vs quality):** “We can ship v1 next week with rough edges or delay 3 weeks to ship ‘noteworthy’. Evaluate the trade-off and propose a worse-first mitigation plan if we ship now.”  
-Expected: explicit criteria/guardrails (trust/support load), dip plan, and stop/continue triggers if metrics degrade.
+## Deep Dive
 
-**Boundary example:** “Help me decide if I should leave my job.”  
-Response: this skill is for organizational/product leadership trade-offs; suggest a personal decision framework or coach instead.
+For all 42 insights from 40 guests, see `references/guest-insights.md`
+
+## Related Skills
+
+- Prioritizing Roadmap
+- Running Decision Processes
+- Scoping and Cutting
+- Managing Tech Debt

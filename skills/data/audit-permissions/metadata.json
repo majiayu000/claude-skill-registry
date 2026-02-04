@@ -1,0 +1,7 @@
+{
+  "name": "audit-permissions",
+  "repo": "malob/nix-config",
+  "path": "configs/claude/plugins/cc-maintenance/skills/audit-permissions/SKILL.md",
+  "source": "github.com/malob/nix-config",
+  "downloaded_at": "2026-02-04T04:02:33.043627Z"
+}

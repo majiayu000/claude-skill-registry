@@ -1,29 +1,43 @@
 ---
-name: search
-description: Search codebase semantically by concept or functionality. Use when looking for code related to a topic, feature, or pattern rather than exact text matches.
+name: NestJS Search & CQRS
+description: Elasticsearch integration and Sync patterns.
+metadata:
+  labels: [nestjs, search, elasticsearch, cqrs]
+  triggers:
+    files: ['**/*.service.ts', '**/search/**']
+    keywords: [Elasticsearch, CQRS, Synchronization]
 ---
 
-# Semantic Code Search
+# Search Engine & Full-Text
 
-Search the codebase using Mira's semantic search to find code by meaning, not just text.
+## **Priority: P1 (OPERATIONAL)**
 
-**Query:** $ARGUMENTS
+Full-text search implementation with Elasticsearch and database patterns.
 
-## Instructions
+- **Pattern**: **CQRS (Command Query Responsibility Segregation)**.
+  - **Write**: To Primary Database (Postgres/MySQL). Source of Truth.
+  - **Read (Complex)**: To Search Engine (Elasticsearch, OpenSearch, MeiliSearch). Optimized for filtering, fuzzy search, and aggregation.
 
-1. Use the `mcp__mira__search_code` tool with the query provided above
-2. Set an appropriate limit (default: 10 results)
-3. Present results clearly with:
-   - File path and line numbers
-   - Relevance score
-   - Code snippet preview
-4. Group related results if they're from the same module
-5. Suggest follow-up searches if results seem incomplete
+## Synchronization (The Hard Part)
 
-## Example Usage
+- **Dual Write (Anti-Pattern)**: `await db.save(); await es.index();`.
+  - _Why_: Partial failures leave data inconsistent. Slows down HTTP response.
+- **Event-Driven (Recommended)**:
+  1. Service writes to DB.
+  2. Service emits `EntityUpdated`.
+  3. Event Handler (Async) pushes to Queue (BullMQ).
+  4. Worker indexes document to Search Engine with retries.
+- **CDC (Golden Standard)**: Change Data Capture (Debezium). Connects directly to DB transaction log. No app conceptual overhead, but higher ops complexity.
 
-```
-/mira:search authentication middleware
-/mira:search error handling patterns
-/mira:search database connection pooling
-```
+## Organization
+
+- **Module**: Encapsulate the client in a `SearchModule`.
+- **Abstraction**: Create generic `SearchService<T>` helpers.
+  - `indexDocument(id, body)`
+  - `search(query, filters)`
+- **Mapping**: Use `class-transformer` to map Entities to "Search Documents". Search docs should be flatter than Relational entities constraints.
+
+## Testing
+
+- **E2E**: Do not mock the search engine in critical E2E flows.
+- **Docker**: Spin up `elasticsearch:8` container in the test harness to verify indexing works.

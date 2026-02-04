@@ -1,166 +1,146 @@
 ---
 name: better-auth-best-practices
-description: Skill for integrating Better Auth - the comprehensive TypeScript authentication framework.
+description: "集成 Better Auth（TypeScript 鉴权框架）时使用。支持邮箱密码、OAuth、魔法链接、Passkey 等，通过插件扩展。编写或配置 Better Auth 时触发。"
+license: MIT
 ---
 
-# Better Auth Integration Guide
+# Better Auth 集成指南
 
-**Always consult [better-auth.com/docs](https://better-auth.com/docs) for code examples and latest API.**
+**代码示例与最新 API 请查阅 [better-auth.com/docs](https://better-auth.com/docs)。**
 
-Better Auth is a TypeScript-first, framework-agnostic auth framework supporting email/password, OAuth, magic links, passkeys, and more via plugins.
-
----
-
-## Quick Reference
-
-### Environment Variables
-- `BETTER_AUTH_SECRET` - Encryption secret (min 32 chars). Generate: `openssl rand -base64 32`
-- `BETTER_AUTH_URL` - Base URL (e.g., `https://example.com`)
-
-Only define `baseURL`/`secret` in config if env vars are NOT set.
-
-### File Location
-CLI looks for `auth.ts` in: `./`, `./lib`, `./utils`, or under `./src`. Use `--config` for custom path.
-
-### CLI Commands
-- `npx @better-auth/cli@latest migrate` - Apply schema (built-in adapter)
-- `npx @better-auth/cli@latest generate` - Generate schema for Prisma/Drizzle
-- `npx @better-auth/cli mcp --cursor` - Add MCP to AI tools
-
-**Re-run after adding/changing plugins.**
+Better Auth 是 TypeScript 优先、框架无关的鉴权框架，通过插件支持邮箱/密码、OAuth、魔法链接、Passkey 等。
 
 ---
 
-## Core Config Options
+## 速查
 
-| Option | Notes |
-|--------|-------|
-| `appName` | Optional display name |
-| `baseURL` | Only if `BETTER_AUTH_URL` not set |
-| `basePath` | Default `/api/auth`. Set `/` for root. |
-| `secret` | Only if `BETTER_AUTH_SECRET` not set |
-| `database` | Required for most features. See adapters docs. |
-| `secondaryStorage` | Redis/KV for sessions & rate limits |
-| `emailAndPassword` | `{ enabled: true }` to activate |
+### 环境变量
+- `BETTER_AUTH_SECRET`：加密密钥（至少 32 字符）。生成：`openssl rand -base64 32`
+- `BETTER_AUTH_URL`：根 URL（如 `https://example.com`）
+
+仅当未设置环境变量时，在配置中定义 `baseURL` / `secret`。
+
+### 配置文件位置
+CLI 在 `./`、`./lib`、`./utils` 或 `./src` 下查找 `auth.ts`。自定义路径用 `--config`。
+
+### CLI 命令
+- `npx @better-auth/cli@latest migrate` — 应用 schema（内置 adapter）
+- `npx @better-auth/cli@latest generate` — 为 Prisma/Drizzle 生成 schema
+- `npx @better-auth/cli mcp --cursor` — 为 AI 工具添加 MCP
+
+**新增或修改插件后需重新执行。**
+
+---
+
+## 核心配置项
+
+| 选项 | 说明 |
+|------|------|
+| `appName` | 可选显示名称 |
+| `baseURL` | 仅当未设置 `BETTER_AUTH_URL` 时 |
+| `basePath` | 默认 `/api/auth`，设为 `/` 可放在根路径 |
+| `secret` | 仅当未设置 `BETTER_AUTH_SECRET` 时 |
+| `database` | 多数功能必需，见 adapter 文档 |
+| `secondaryStorage` | Redis/KV，用于 session 与限流 |
+| `emailAndPassword` | `{ enabled: true }` 启用 |
 | `socialProviders` | `{ google: { clientId, clientSecret }, ... }` |
-| `plugins` | Array of plugins |
-| `trustedOrigins` | CSRF whitelist |
+| `plugins` | 插件数组 |
+| `trustedOrigins` | CSRF 白名单 |
 
 ---
 
-## Database
+## 数据库
 
-**Direct connections:** Pass `pg.Pool`, `mysql2` pool, `better-sqlite3`, or `bun:sqlite` instance.
+**直连**：传入 `pg.Pool`、`mysql2` 池、`better-sqlite3` 或 `bun:sqlite` 实例。
 
-**ORM adapters:** Import from `better-auth/adapters/drizzle`, `better-auth/adapters/prisma`, `better-auth/adapters/mongodb`.
+**ORM adapter**：从 `better-auth/adapters/drizzle`、`better-auth/adapters/prisma`、`better-auth/adapters/mongodb` 等导入。
 
-**Critical:** Better Auth uses adapter model names, NOT underlying table names. If Prisma model is `User` mapping to table `users`, use `modelName: "user"` (Prisma reference), not `"users"`.
-
----
-
-## Session Management
-
-**Storage priority:**
-1. If `secondaryStorage` defined → sessions go there (not DB)
-2. Set `session.storeSessionInDatabase: true` to also persist to DB
-3. No database + `cookieCache` → fully stateless mode
-
-**Cookie cache strategies:**
-- `compact` (default) - Base64url + HMAC. Smallest.
-- `jwt` - Standard JWT. Readable but signed.
-- `jwe` - Encrypted. Maximum security.
-
-**Key options:** `session.expiresIn` (default 7 days), `session.updateAge` (refresh interval), `session.cookieCache.maxAge`, `session.cookieCache.version` (change to invalidate all sessions).
+**注意**：Better Auth 使用 adapter 的 model 名，而非表名。若 Prisma model 为 `User` 对应表 `users`，用 `modelName: "user"`（Prisma 引用），而非 `"users"`。
 
 ---
 
-## User & Account Config
+## Session 管理
 
-**User:** `user.modelName`, `user.fields` (column mapping), `user.additionalFields`, `user.changeEmail.enabled` (disabled by default), `user.deleteUser.enabled` (disabled by default).
+**存储优先级**：  
+1. 若配置了 `secondaryStorage` → session 存此处（不存 DB）  
+2. 设 `session.storeSessionInDatabase: true` 可同时持久化到 DB  
+3. 无 DB + `cookieCache` → 纯无状态模式  
 
-**Account:** `account.modelName`, `account.accountLinking.enabled`, `account.storeAccountCookie` (for stateless OAuth).
-
-**Required for registration:** `email` and `name` fields.
-
----
-
-## Email Flows
-
-- `emailVerification.sendVerificationEmail` - Must be defined for verification to work
-- `emailVerification.sendOnSignUp` / `sendOnSignIn` - Auto-send triggers
-- `emailAndPassword.sendResetPassword` - Password reset email handler
+**Cookie 缓存策略**：`compact`（默认）、`jwt`、`jwe`。  
+**关键选项**：`session.expiresIn`、`session.updateAge`、`session.cookieCache.maxAge`、`session.cookieCache.version`（变更可令所有 session 失效）。
 
 ---
 
-## Security
+## 用户与 Account 配置
 
-**In `advanced`:**
-- `useSecureCookies` - Force HTTPS cookies
-- `disableCSRFCheck` - ⚠️ Security risk
-- `disableOriginCheck` - ⚠️ Security risk  
-- `crossSubDomainCookies.enabled` - Share cookies across subdomains
-- `ipAddress.ipAddressHeaders` - Custom IP headers for proxies
-- `database.generateId` - Custom ID generation or `"serial"`/`"uuid"`/`false`
+**User**：`user.modelName`、`user.fields`、`user.additionalFields`、`user.changeEmail.enabled`、`user.deleteUser.enabled`。  
+**Account**：`account.modelName`、`account.accountLinking.enabled`、`account.storeAccountCookie`。  
+**注册必需字段**：`email` 与 `name`。
 
-**Rate limiting:** `rateLimit.enabled`, `rateLimit.window`, `rateLimit.max`, `rateLimit.storage` ("memory" | "database" | "secondary-storage").
+---
+
+## 邮件流程
+
+- `emailVerification.sendVerificationEmail` — 验证邮件发送，必须定义
+- `emailVerification.sendOnSignUp` / `sendOnSignIn` — 自动发送时机
+- `emailAndPassword.sendResetPassword` — 重置密码邮件
+
+---
+
+## 安全
+
+**`advanced` 中**：`useSecureCookies`、`disableCSRFCheck`（有风险）、`disableOriginCheck`（有风险）、`crossSubDomainCookies.enabled`、`ipAddress.ipAddressHeaders`、`database.generateId` 等。  
+**限流**：`rateLimit.enabled`、`rateLimit.window`、`rateLimit.max`、`rateLimit.storage`。
 
 ---
 
 ## Hooks
 
-**Endpoint hooks:** `hooks.before` / `hooks.after` - Array of `{ matcher, handler }`. Use `createAuthMiddleware`. Access `ctx.path`, `ctx.context.returned` (after), `ctx.context.session`.
-
-**Database hooks:** `databaseHooks.user.create.before/after`, same for `session`, `account`. Useful for adding default values or post-creation actions.
-
-**Hook context (`ctx.context`):** `session`, `secret`, `authCookies`, `password.hash()`/`verify()`, `adapter`, `internalAdapter`, `generateId()`, `tables`, `baseURL`.
+**端点**：`hooks.before` / `hooks.after`，`{ matcher, handler }` 数组，可用 `createAuthMiddleware`。  
+**数据库**：`databaseHooks.user.create.before/after` 等，用于默认值或创建后逻辑。  
+**Hook 上下文**：`session`、`secret`、`adapter`、`generateId()`、`baseURL` 等。
 
 ---
 
-## Plugins
+## 插件
 
-**Import from dedicated paths for tree-shaking:**
-```
-import { twoFactor } from "better-auth/plugins/two-factor"
-```
-NOT `from "better-auth/plugins"`.
+**按路径导入以支持 tree-shaking**：  
+`import { twoFactor } from "better-auth/plugins/two-factor"`  
+勿从 `"better-auth/plugins"` 整体导入。
 
-**Popular plugins:** `twoFactor`, `organization`, `passkey`, `magicLink`, `emailOtp`, `username`, `phoneNumber`, `admin`, `apiKey`, `bearer`, `jwt`, `multiSession`, `sso`, `oauthProvider`, `oidcProvider`, `openAPI`, `genericOAuth`.
-
-Client plugins go in `createAuthClient({ plugins: [...] })`.
+**常用插件**：`twoFactor`、`organization`、`passkey`、`magicLink`、`emailOtp`、`username`、`admin`、`apiKey`、`bearer`、`jwt`、`multiSession`、`sso`、`openAPI` 等。  
+客户端插件放在 `createAuthClient({ plugins: [...] })`。
 
 ---
 
-## Client
+## 客户端
 
-Import from: `better-auth/client` (vanilla), `better-auth/react`, `better-auth/vue`, `better-auth/svelte`, `better-auth/solid`.
-
-Key methods: `signUp.email()`, `signIn.email()`, `signIn.social()`, `signOut()`, `useSession()`, `getSession()`, `revokeSession()`, `revokeSessions()`.
-
----
-
-## Type Safety
-
-Infer types: `typeof auth.$Infer.Session`, `typeof auth.$Infer.Session.user`.
-
-For separate client/server projects: `createAuthClient<typeof auth>()`.
+从 `better-auth/client`、`better-auth/react`、`better-auth/vue` 等导入。  
+常用方法：`signUp.email()`、`signIn.email()`、`signIn.social()`、`signOut()`、`useSession()`、`getSession()`、`revokeSession()` 等。
 
 ---
 
-## Common Gotchas
+## 类型安全
 
-1. **Model vs table name** - Config uses ORM model name, not DB table name
-2. **Plugin schema** - Re-run CLI after adding plugins
-3. **Secondary storage** - Sessions go there by default, not DB
-4. **Cookie cache** - Custom session fields NOT cached, always re-fetched
-5. **Stateless mode** - No DB = session in cookie only, logout on cache expiry
-6. **Change email flow** - Sends to current email first, then new email
+推断类型：`typeof auth.$Infer.Session`、`typeof auth.$Infer.Session.user`。  
+前后端分离项目：`createAuthClient()`。
 
 ---
 
-## Resources
+## 常见坑
 
-- [Docs](https://better-auth.com/docs)
-- [Options Reference](https://better-auth.com/docs/reference/options)
+1. **Model 与表名** — 配置用 ORM model 名，不是表名  
+2. **插件 schema** — 增删插件后重跑 CLI  
+3. **Secondary storage** — 默认 session 存此处而非 DB  
+4. **Cookie cache** — 自定义 session 字段不缓存，每次重新拉取  
+5. **无状态模式** — 无 DB 时 session 仅存 cookie，缓存过期即登出  
+6. **改邮箱流程** — 先发当前邮箱，再发新邮箱  
+
+---
+
+## 资源
+
+- [文档](https://better-auth.com/docs)
+- [配置参考](https://better-auth.com/docs/reference/options)
 - [LLMs.txt](https://better-auth.com/llms.txt)
 - [GitHub](https://github.com/better-auth/better-auth)
-- [Init Options Source](https://github.com/better-auth/better-auth/blob/main/packages/core/src/types/init-options.ts)

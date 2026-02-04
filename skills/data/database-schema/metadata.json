@@ -1,7 +1,7 @@
 {
   "name": "database-schema",
-  "repo": "artofrawr/claude-control",
-  "path": "skills/database-schema/SKILL.md",
-  "source": "github.com/artofrawr/claude-control",
-  "downloaded_at": "2026-02-02T04:29:47.305383Z"
+  "repo": "JasonPaff/head-shakers",
+  "path": ".claude/skills/database-schema/SKILL.md",
+  "source": "github.com/JasonPaff/head-shakers",
+  "downloaded_at": "2026-02-04T04:11:54.363081Z"
 }

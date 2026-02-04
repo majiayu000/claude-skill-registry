@@ -1,12 +1,10 @@
 ---
 name: sentry-setup-tracing
 description: Setup Sentry Tracing (Performance Monitoring) in any project. Use this when asked to add performance monitoring, enable tracing, track transactions/spans, or instrument application performance. Supports JavaScript, TypeScript, Python, Ruby, React, Next.js, and Node.js.
-allowed-tools: Read, Edit, Write, Bash, Grep, Glob, AskUserQuestion
 ---
 
 # SOURCE: getsentry/sentry-for-claude
 # PATH: skills/sentry-setup-tracing/SKILL.md
-# DO NOT EDIT: This file is synced from external source
 
 
 # Setup Sentry Tracing

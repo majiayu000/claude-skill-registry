@@ -1,7 +1,7 @@
 {
   "name": "performance",
-  "repo": "ZhiruiFeng/LocalAgentCrew",
-  "path": ".claude/skills/performance/SKILL.md",
-  "source": "github.com/ZhiruiFeng/LocalAgentCrew",
-  "downloaded_at": "2026-02-02T04:18:16.521059Z"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/performance/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:41:01.968222Z"
 }

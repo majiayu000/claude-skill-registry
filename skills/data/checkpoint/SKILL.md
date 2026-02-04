@@ -1,35 +1,72 @@
 ---
-name: gsd:workflow:checkpoint
-description: Workflow for managing checkpoints
-version: 1.0.0
-triggers: [checkpoint, approval point]
-tools: [Bash, Glob, Grep, Write]
+name: checkpoint
+description: Save context state - auto-triggered every 5 tasks
+allowed-tools: Read, Write, TaskList, Grep
+model: sonnet
+user-invocable: false
 ---
 
-# GSD Checkpoint Workflow
+# Context Checkpoint
 
-Workflow for creating and managing checkpoints.
+Save critical context before `/clear`. Enables 50-70% token savings.
 
-## When to Use
+## When to Checkpoint
 
-- Between waves
-- Phase boundaries
-- User interaction points
+- **Every 3 tasks** (aggressive - preserves tokens)
+- Before switching feature areas
+- After resolving complex bugs
+- When response feels slow (context bloat sign)
 
-## Phases
+## Checkpoint Format
 
-1. Create checkpoint
-2. Document progress
-3. Request approval
-4. Continue or complete
+Write to `.claude/checkpoint.md`:
 
-## Entry Points
+```markdown
+# Checkpoint: [TIMESTAMP]
 
-- `gsd:create-checkpoint` - Create new checkpoint
-- `gsd:update-checkpoint` - Update checkpoint
-- `gsd:complete-checkpoint` - Complete checkpoint
-- `gsd:continue-phase` - Continue from checkpoint
+## Sprint Status
+[Sprint X: N/M complete]
 
-## Success Criteria
+## Completed This Session
+- [Task]: [what was done]
 
-Checkpoint approved and phase continues.
+## Key Learnings
+- [Bug pattern]: [resolution]
+
+## Next Priority
+[Next task ID and title]
+
+## Files Modified
+- [file paths]
+```
+
+## After Saving
+
+Tell user:
+```
+💾 Checkpoint saved.
+
+Run /compact now to reclaim ~40% tokens (keeps context summary).
+Use /clear only at major transitions (reclaims ~70% but wipes context).
+```
+
+## Auto-Restore
+
+After `/clear`, read `.claude/checkpoint.md` and continue.
+
+## What to Preserve
+
+| Keep | Skip |
+|------|------|
+| Task progress | File contents |
+| Learnings | Error traces |
+| Next priority | Tool call logs |
+
+## Token Savings
+
+| Command | Savings | Use When |
+|---------|---------|----------|
+| `/compact` | ~40% | Default after checkpoint |
+| `/clear` | ~70% | Major transitions, sprint end |
+
+**Rule:** /compact after every checkpoint. /clear at major transitions.

@@ -1,12 +1,75 @@
 ---
 name: deepwork_jobs.define
-description: "Creates a job.yml specification by gathering workflow requirements through structured questions. Use when starting a new multi-step workflow."user-invocable: false---
+description: "Creates a job.yml specification by gathering workflow requirements through structured questions. Use when starting a new multi-step workflow."
+user-invocable: false
+hooks:
+  Stop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **User Understanding**: Did the agent fully understand the user's workflow by asking structured questions?
+            2. **Structured Questions Used**: Did the agent ask structured questions (using the AskUserQuestion tool) to gather user input?
+            3. **Document Detection**: For document-oriented workflows, did the agent detect patterns and offer doc spec creation?
+            4. **doc spec Created (if applicable)**: If a doc spec was needed, was it created in `.deepwork/doc_specs/[doc_spec_name].md` with proper quality criteria?
+            5. **doc spec References**: Are document outputs properly linked to their doc specs using `{file, doc_spec}` format?
+            6. **Valid Against doc spec**: Does the job.yml conform to the job.yml doc spec quality criteria (valid identifier, semantic version, concise summary, rich description, complete steps, valid dependencies)?
+            7. **Clear Inputs/Outputs**: Does every step have clearly defined inputs and outputs?
+            8. **Logical Dependencies**: Do step dependencies make sense and avoid circular references?
+            9. **Concise Summary**: Is the summary under 200 characters and descriptive?
+            10. **Rich Description**: Does the description provide enough context for future refinement?
+            11. **Valid Schema**: Does the job.yml follow the required schema (name, version, summary, steps)?
+            12. **File Created**: Has the job.yml file been created in `.deepwork/jobs/[job_name]/job.yml`?
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+  SubagentStop:
+    - hooks:
+        - type: prompt
+          prompt: |
+            You must evaluate whether Claude has met all the below quality criteria for the request.
+
+            ## Quality Criteria
+
+            1. **User Understanding**: Did the agent fully understand the user's workflow by asking structured questions?
+            2. **Structured Questions Used**: Did the agent ask structured questions (using the AskUserQuestion tool) to gather user input?
+            3. **Document Detection**: For document-oriented workflows, did the agent detect patterns and offer doc spec creation?
+            4. **doc spec Created (if applicable)**: If a doc spec was needed, was it created in `.deepwork/doc_specs/[doc_spec_name].md` with proper quality criteria?
+            5. **doc spec References**: Are document outputs properly linked to their doc specs using `{file, doc_spec}` format?
+            6. **Valid Against doc spec**: Does the job.yml conform to the job.yml doc spec quality criteria (valid identifier, semantic version, concise summary, rich description, complete steps, valid dependencies)?
+            7. **Clear Inputs/Outputs**: Does every step have clearly defined inputs and outputs?
+            8. **Logical Dependencies**: Do step dependencies make sense and avoid circular references?
+            9. **Concise Summary**: Is the summary under 200 characters and descriptive?
+            10. **Rich Description**: Does the description provide enough context for future refinement?
+            11. **Valid Schema**: Does the job.yml follow the required schema (name, version, summary, steps)?
+            12. **File Created**: Has the job.yml file been created in `.deepwork/jobs/[job_name]/job.yml`?
+
+            ## Instructions
+
+            Review the conversation and determine if ALL quality criteria above have been satisfied.
+            Look for evidence that each criterion has been addressed.
+
+            If the agent has included `<promise>✓ Quality Criteria Met</promise>` in their response OR
+            all criteria appear to be met, respond with: {"ok": true}
+
+            If criteria are NOT met AND the promise tag is missing, respond with:
+            {"ok": false, "reason": "**AGENT: TAKE ACTION** - [which criteria failed and why]"}
+---
 
 # deepwork_jobs.define
 
-**Step 1/3** in **new_job** workflow
-
-> Create a new DeepWork job from scratch through definition, review, and implementation
+**Step 1/4** in **deepwork_jobs** workflow
 
 > Creates and manages multi-step AI workflows. Use when defining, implementing, or improving DeepWork jobs.
 
@@ -419,11 +482,11 @@ After creating the file:
 Core commands for managing DeepWork jobs. These commands help you define new multi-step
 workflows and learn from running them.
 
-The `new_job` workflow guides you through defining and implementing a new job by
+The `define` command guides you through an interactive process to create a new job by
 asking structured questions about your workflow, understanding each step's inputs and outputs,
-reviewing the specification, and generating all necessary files.
+and generating all necessary files.
 
-The `learn` skill reflects on conversations where DeepWork jobs were run, identifies
+The `learn` command reflects on conversations where DeepWork jobs were run, identifies
 confusion or inefficiencies, and improves job instructions. It also captures bespoke
 learnings specific to the current run into AGENTS.md files in the working folder.
 
@@ -638,9 +701,7 @@ Use branch format: `deepwork/deepwork_jobs-[instance]-YYYYMMDD`
 
 ## Quality Validation
 
-**Before completing this step, you MUST have your work reviewed against the quality criteria below.**
-
-Use a sub-agent (Haiku model) to review your work against these criteria:
+Stop hooks will automatically validate your work. The loop continues until all criteria pass.
 
 **Criteria (all must be satisfied)**:
 1. **User Understanding**: Did the agent fully understand the user's workflow by asking structured questions?
@@ -655,17 +716,14 @@ Use a sub-agent (Haiku model) to review your work against these criteria:
 10. **Rich Description**: Does the description provide enough context for future refinement?
 11. **Valid Schema**: Does the job.yml follow the required schema (name, version, summary, steps)?
 12. **File Created**: Has the job.yml file been created in `.deepwork/jobs/[job_name]/job.yml`?
-**Review Process**:
-1. Once you believe your work is complete, spawn a sub-agent using Haiku to review your work against the quality criteria above
-2. The sub-agent should examine your outputs and verify each criterion is met
-3. If the sub-agent identifies valid issues, fix them
-4. Have the sub-agent review again until all valid feedback has been addressed
-5. Only mark the step complete when the sub-agent confirms all criteria are satisfied
+
+
+**To complete**: Include `<promise>✓ Quality Criteria Met</promise>` in your final response only after verifying ALL criteria are satisfied.
 
 ## On Completion
 
 1. Verify outputs are created
-2. Inform user: "new_job step 1/3 complete, outputs: job.yml"
+2. Inform user: "Step 1/4 complete, outputs: job.yml"
 3. **Continue workflow**: Use Skill tool to invoke `/deepwork_jobs.review_job_spec`
 
 ---

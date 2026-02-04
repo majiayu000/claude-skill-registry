@@ -1,358 +1,533 @@
 ---
 name: semantic-release
-description: Automate versioning with Node.js semantic-release v25+. TRIGGERS - npm run release, version bump, changelog, conventional commits, release automation.
-allowed-tools: Read, Bash, Glob, Grep, Edit, Write
+description: Automate versioning and releases with semantic versioning based on commit messages. Generate changelogs, publish packages, create GitHub releases. Use for automated releases, changelog generation, or npm publishing. Triggers on semantic-release, automated versioning, changelog, release automation.
 ---
 
-# semantic-release
+# Semantic Release
 
-## Overview
+Fully automated version management and package publishing.
 
-Automate semantic versioning and release management using **semantic-release v25+ (Node.js)** following 2025 best practices. Works with **all languages** (JavaScript, TypeScript, Python, Rust, Go, C++, etc.) via the `@semantic-release/exec` plugin. Create shareable configurations for multi-repository setups, initialize individual projects with automated releases, and configure GitHub Actions workflows with OIDC trusted publishing.
+## Quick Reference
 
-**Important**: This skill uses semantic-release (Node.js) exclusively, NOT python-semantic-release, even for Python projects. Rationale: 23.5x larger community, 100x+ adoption, better future-proofing.
+| Commit Type | Version Bump | Example |
+|-------------|--------------|---------|
+| `fix:` | Patch (1.0.x) | Bug fixes |
+| `feat:` | Minor (1.x.0) | New features |
+| `BREAKING CHANGE:` | Major (x.0.0) | Breaking changes |
+| `docs:`, `chore:` | No release | Documentation, maintenance |
 
-## When to Use This Skill
+## 1. Setup
 
-Invoke when:
-
-- Setting up local releases for a new project (any language)
-- Creating shareable semantic-release configuration for organization-wide use
-- Migrating existing projects to 2025 semantic-release patterns
-- Troubleshooting semantic-release setup or version bumps
-- Setting up Python projects (use Node.js semantic-release, NOT python-semantic-release)
-- Configuring GitHub Actions (optional backup, not recommended as primary due to speed)
-- Rust workspaces using release-plz (see [Rust reference](./references/rust.md))
-
-## Why Node.js semantic-release
-
-**22,900 GitHub stars** - Large, active community
-**1.9M weekly downloads** - Proven adoption
-**126,000 projects using it** - Battle-tested at scale
-**35+ official plugins** - Rich ecosystem
-**Multi-language support** - Works with any language via `@semantic-release/exec`
-
-**Do NOT use python-semantic-release.** It has a 23.5x smaller community (975 vs 22,900 stars), ~100x less adoption, and is not affiliated with the semantic-release organization.
-
----
-
-## Release Workflow Philosophy: Local-First
-
-**Default approach: Run releases locally, not via GitHub Actions.**
-
-### Why Local Releases
-
-**Primary argument: GitHub Actions is slow**
-
-- ⏱️ GitHub Actions: 2-5 minute wait for release to complete
-- ⚡ Local release: Instant feedback and file updates
-- 🔄 Immediate workflow continuity - no waiting for CI/CD
-
-**Additional benefits:**
-
-- ✅ **Instant local file sync** - `package.json`, `CHANGELOG.md`, tags updated immediately
-- ✅ **No pull required** - Continue working without `git pull` after release
-- ✅ **Dry-run testing** - `npm run release:dry` to preview changes before release
-- ✅ **Offline capable** - Can release without CI/CD dependency
-- ✅ **Faster iteration** - Debug release issues immediately, not through CI logs
-
-### GitHub Actions: Optional Backup Only
-
-GitHub Actions workflows are provided as **optional automation**, not the primary method:
-
-- Use for team consistency if required
-- Backup if local environment unavailable
-- **Not recommended as primary workflow due to speed**
-
-### Authentication Setup
+### Installation
 
 ```bash
-gh auth login
-# Browser authentication once
-# Credentials stored in keyring
-# All future releases: zero manual intervention
+# npm
+npm install -D semantic-release @semantic-release/changelog @semantic-release/git
+
+# With plugins
+npm install -D semantic-release \
+  @semantic-release/commit-analyzer \
+  @semantic-release/release-notes-generator \
+  @semantic-release/changelog \
+  @semantic-release/npm \
+  @semantic-release/github \
+  @semantic-release/git
 ```
 
-**This is the minimum manual intervention possible** for local semantic-release with GitHub plugin functionality.
+### Basic Configuration (.releaserc.json)
 
-### Multi-Account Authentication via mise [env]
-
-For multi-account GitHub setups, use mise `[env]` to set per-directory GH_TOKEN:
-
-```toml
-# ~/your-project/.mise.toml
-[env]
-GH_TOKEN = "{{ read_file(path=env.HOME ~ '/.claude/.secrets/gh-token-accountname') | trim }}"
-GITHUB_TOKEN = "{{ read_file(path=env.HOME ~ '/.claude/.secrets/gh-token-accountname') | trim }}"
+```json
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/npm",
+    "@semantic-release/github",
+    "@semantic-release/git"
+  ]
+}
 ```
 
-This overrides gh CLI's global authentication, ensuring semantic-release uses the correct account for each directory.
+## 2. Configuration Options
 
-See the [`mise-configuration` skill](../mise-configuration/SKILL.md#github-token-multi-account-patterns) for complete setup.
+### Branch Configuration
 
-### mise Task Detection
-
-When `.mise.toml` has release tasks, prefer `mise run` over `npm run`:
-
-| Priority | Condition                            | Command                    |
-| -------- | ------------------------------------ | -------------------------- |
-| **1**    | `.mise.toml` has `[tasks.release:*]` | `mise run release:version` |
-| **2**    | `package.json` has `scripts.release` | `npm run release`          |
-| **3**    | Global semantic-release              | `semantic-release --no-ci` |
-
-See [Python Guide](./references/python.md#mise-4-phase-workflow) for complete mise workflow example.
-
-### GitHub Actions Policy
-
-**CRITICAL: No testing or linting in GitHub Actions.** See CLAUDE.md for full policy.
-
-| Forbidden                      | Allowed                |
-| ------------------------------ | ---------------------- |
-| pytest, npm test, cargo test   | semantic-release       |
-| ruff, eslint, clippy, prettier | CodeQL, npm audit      |
-| mypy                           | Deployment, Dependabot |
-
----
-
-## Separation of Concerns (4-Level Architecture)
-
-semantic-release configuration follows a hierarchical, composable pattern:
-
-**Level 1: Skill** - `${CLAUDE_PLUGIN_ROOT}/skills/semantic-release/` (Generic templates, system-wide tool)
-**Level 2: User Config** - `~/semantic-release-config/` (`@username/semantic-release-config`)
-**Level 3: Organization Config** - npm registry (`@company/semantic-release-config`)
-**Level 4: Project Config** - `.releaserc.yml` in project root
-
-### Configuration Precedence
-
-```
-Level 4 (Project) → overrides → Level 3 (Org) → overrides → Level 2 (User) → overrides → Defaults
+```json
+{
+  "branches": [
+    "main",
+    { "name": "beta", "prerelease": true },
+    { "name": "alpha", "prerelease": true },
+    { "name": "next", "prerelease": true },
+    { "name": "develop", "prerelease": "dev" },
+    "+([0-9])?(.{+([0-9]),x}).x"
+  ]
+}
 ```
 
----
+### Full Configuration (.releaserc.json)
 
-## Conventional Commits Format
+```json
+{
+  "branches": ["main", { "name": "beta", "prerelease": true }],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" },
+          { "type": "perf", "release": "patch" },
+          { "type": "revert", "release": "patch" },
+          { "type": "docs", "scope": "README", "release": "patch" },
+          { "breaking": true, "release": "major" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            { "type": "feat", "section": "Features" },
+            { "type": "fix", "section": "Bug Fixes" },
+            { "type": "perf", "section": "Performance" },
+            { "type": "revert", "section": "Reverts" },
+            { "type": "docs", "section": "Documentation", "hidden": false },
+            { "type": "chore", "section": "Miscellaneous", "hidden": true }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# Changelog"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          { "path": "dist/**/*.js", "label": "Distribution" },
+          { "path": "dist/**/*.d.ts", "label": "Type Definitions" }
+        ],
+        "successComment": false,
+        "releasedLabels": ["released"]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["CHANGELOG.md", "package.json", "package-lock.json"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
+```
 
-semantic-release analyzes commit messages to determine version bumps:
+## 3. Commit Message Format
+
+### Conventional Commits
 
 ```
-<type>(<scope>): <subject>
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
 ```
-
-### Version Bump Rules (Default)
-
-- `feat:` → MINOR version bump (0.1.0 → 0.2.0)
-- `fix:` → PATCH version bump (0.1.0 → 0.1.1)
-- `BREAKING CHANGE:` or `feat!:` → MAJOR version bump (0.1.0 → 1.0.0)
-- `docs:`, `chore:`, `style:`, `refactor:`, `perf:`, `test:` → No version bump (by default)
-
-### Release Notes Visibility (Important)
-
-**Warning**: The `@semantic-release/release-notes-generator` (Angular preset) only includes these types in release notes:
-
-- `feat:` → **Features** section
-- `fix:` → **Bug Fixes** section
-- `perf:` → **Performance Improvements** section
-
-Other types (`docs:`, `chore:`, `refactor:`, etc.) trigger releases when configured but **do NOT appear in release notes**.
-
-**Recommendation**: For documentation changes that should be visible in release notes, use:
-
-```
-fix(docs): description of documentation improvement
-```
-
-This ensures the commit appears in the "Bug Fixes" section while still being semantically accurate (fixing documentation gaps is a fix).
-
-### Marketplace Plugin Configuration (Always Bump)
-
-For Claude Code marketplace plugins, **every change requires a version bump** for users to receive updates.
-
-**Option A: Shareable Config (if published)**
-
-```yaml
-# .releaserc.yml
-extends: "@terryli/semantic-release-config/marketplace"
-```
-
-**Option B: Inline Configuration**
-
-```yaml
-# .releaserc.yml
-plugins:
-  - - "@semantic-release/commit-analyzer"
-    - releaseRules:
-        # Marketplace plugins require version bump for ANY change
-        - { type: "docs", release: "patch" }
-        - { type: "chore", release: "patch" }
-        - { type: "style", release: "patch" }
-        - { type: "refactor", release: "patch" }
-        - { type: "test", release: "patch" }
-        - { type: "build", release: "patch" }
-        - { type: "ci", release: "patch" }
-```
-
-**Result after configuration:**
-
-| Commit Type                                                        | Release Type       |
-| ------------------------------------------------------------------ | ------------------ |
-| `feat:`                                                            | minor (default)    |
-| `fix:`, `perf:`, `revert:`                                         | patch (default)    |
-| `docs:`, `chore:`, `style:`, `refactor:`, `test:`, `build:`, `ci:` | patch (configured) |
-
-**Why marketplace plugins need this**: Plugin updates are distributed via version tags. Without a version bump, users running `/plugin update` see no changes even if content was modified.
-
-### MANDATORY: Every Release Must Increment Version
-
-**Pre-release validation**: Before running semantic-release, verify releasable commits exist since last tag. A release without version increment is invalid.
-
-**Autonomous check sequence**:
-
-1. List commits since last tag: compare HEAD against latest version tag
-2. Identify commit types: scan for `feat:`, `fix:`, or `BREAKING CHANGE:` prefixes
-3. If NO releasable commits found → **STOP** - do not proceed with release
-4. Inform user: "No version-bumping commits since last release. Use `feat:` or `fix:` prefix for releasable changes."
-
-**Commit type selection guidance**:
-
-- Use `fix:` for any change that improves existing behavior (bug fixes, enhancements, documentation corrections that affect usage)
-- Use `feat:` for new capabilities or significant additions
-- Reserve `chore:`, `docs:`, `refactor:` for changes that truly don't warrant a release
-
-**Why this matters**: A release without version increment creates confusion - users cannot distinguish between releases, package managers may cache old versions, and changelog entries become meaningless.
-
-### MAJOR Version Breaking Change Confirmation
-
-**Trigger**: `BREAKING CHANGE:` footer or `feat!:` / `fix!:` prefix in commits.
-
-When MAJOR is detected, this skill runs a **3-phase confirmation workflow**:
-
-1. **Detection**: Scan commits for breaking change markers
-2. **Analysis**: Spawn 3 parallel subagents (User Impact, API Compat, Migration)
-3. **Confirmation**: AskUserQuestion with proceed/downgrade/abort options
-
-See [MAJOR Confirmation Workflow](./references/major-confirmation.md) for complete details including subagent prompts, decision tree, and example output.
 
 ### Examples
 
-**Feature (MINOR)**:
+```bash
+# Patch release (1.0.0 -> 1.0.1)
+git commit -m "fix: resolve login button alignment"
 
+# Minor release (1.0.0 -> 1.1.0)
+git commit -m "feat: add dark mode support"
+
+# Major release (1.0.0 -> 2.0.0)
+git commit -m "feat!: redesign API endpoints
+
+BREAKING CHANGE: All API endpoints now use /v2/ prefix"
+
+# With scope
+git commit -m "feat(auth): implement OAuth2 login"
+
+# With body and footer
+git commit -m "fix(api): handle rate limiting errors
+
+Added retry logic with exponential backoff.
+
+Fixes #123
+Reviewed-by: Jane Doe"
 ```
-feat: add BigQuery data source support
-```
 
-**Bug Fix (PATCH)**:
+### Types Reference
 
-```
-fix: correct timestamp parsing for UTC offsets
-```
+| Type | Description | Release |
+|------|-------------|---------|
+| `feat` | New feature | Minor |
+| `fix` | Bug fix | Patch |
+| `docs` | Documentation | None* |
+| `style` | Formatting | None |
+| `refactor` | Code change (no feature/fix) | None |
+| `perf` | Performance improvement | Patch |
+| `test` | Adding tests | None |
+| `chore` | Maintenance | None |
+| `ci` | CI configuration | None |
+| `build` | Build system | None |
+| `revert` | Revert commit | Patch |
 
-**Breaking Change (MAJOR)**:
+## 4. GitHub Actions Integration
 
-```
-feat!: change API to require authentication
-
-BREAKING CHANGE: All API calls now require API key in Authorization header.
-```
-
----
-
-## Documentation Linking
-
-Auto-include doc changes in release notes. Add to `.releaserc.yml`:
+### Basic Workflow
 
 ```yaml
-- - "@semantic-release/exec"
-  - generateNotesCmd: "node plugins/itp/skills/semantic-release/scripts/generate-doc-notes.mjs ${lastRelease.gitTag}"
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
 ```
 
-Detects: ADRs, Design Specs, Skills, Plugin READMEs. See [Doc Release Linking](./references/doc-release-linking.md).
+### With Build Step
 
-> **Note**: The `@semantic-release/exec` plugin uses Lodash templates (`${var}`). This conflicts with bash default syntax (`${VAR:-default}`). See [Troubleshooting: Lodash Template Conflicts](./references/troubleshooting.md#semantic-releaseexec-lodash-template-conflicts).
+```yaml
+name: Release
 
----
+on:
+  push:
+    branches: [main]
 
-## Quick Start
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-### Prerequisites
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-| Check                   | Command                       | Fix                                                                                       |
-| ----------------------- | ----------------------------- | ----------------------------------------------------------------------------------------- |
-| gh CLI authenticated    | `gh auth status`              | `gh auth login`                                                                           |
-| GH_TOKEN for directory  | `gh api user --jq '.login'`   | See [Authentication](./references/authentication.md)                                      |
-| Git remote is HTTPS     | `git remote get-url origin`   | `git-ssh-to-https`                                                                        |
-| semantic-release global | `command -v semantic-release` | See [Troubleshooting](./references/troubleshooting.md#macos-gatekeeper-blocks-node-files) |
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
 
-### Initialize Project
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+```
+
+### Multi-Package (Monorepo)
+
+```yaml
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [core, cli, utils]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - name: Release ${{ matrix.package }}
+        working-directory: packages/${{ matrix.package }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+```
+
+## 5. Plugin Configuration
+
+### Commit Analyzer
+
+```json
+[
+  "@semantic-release/commit-analyzer",
+  {
+    "preset": "conventionalcommits",
+    "releaseRules": [
+      { "type": "feat", "release": "minor" },
+      { "type": "fix", "release": "patch" },
+      { "type": "perf", "release": "patch" },
+      { "type": "revert", "release": "patch" },
+      { "type": "docs", "release": false },
+      { "type": "style", "release": false },
+      { "type": "refactor", "release": false },
+      { "type": "test", "release": false },
+      { "type": "chore", "release": false },
+      { "scope": "no-release", "release": false }
+    ],
+    "parserOpts": {
+      "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+    }
+  }
+]
+```
+
+### Changelog Generator
+
+```json
+[
+  "@semantic-release/changelog",
+  {
+    "changelogFile": "CHANGELOG.md",
+    "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file."
+  }
+]
+```
+
+### npm Plugin
+
+```json
+[
+  "@semantic-release/npm",
+  {
+    "npmPublish": true,
+    "tarballDir": "dist",
+    "pkgRoot": "."
+  }
+]
+```
+
+### GitHub Plugin
+
+```json
+[
+  "@semantic-release/github",
+  {
+    "assets": [
+      { "path": "dist/*.tgz", "label": "npm package" },
+      { "path": "dist/*.zip", "label": "Distribution (zip)" }
+    ],
+    "successComment": "This ${issue.pull_request ? 'PR' : 'issue'} is included in version ${nextRelease.version}",
+    "failComment": "The release from branch ${branch.name} failed",
+    "releasedLabels": ["released", "v${nextRelease.version}"],
+    "addReleases": "bottom"
+  }
+]
+```
+
+### Git Plugin
+
+```json
+[
+  "@semantic-release/git",
+  {
+    "assets": [
+      "CHANGELOG.md",
+      "package.json",
+      "package-lock.json",
+      "docs/**/*"
+    ],
+    "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+  }
+]
+```
+
+## 6. Dry Run and Debugging
 
 ```bash
-./scripts/init-project.mjs --project   # Initialize current project
-./scripts/init-project.mjs --user      # Create user-level shareable config
-./scripts/init-project.mjs --help      # See all options
+# Dry run (no actual release)
+npx semantic-release --dry-run
+
+# With debug output
+DEBUG=semantic-release:* npx semantic-release
+
+# Specific branch
+npx semantic-release --branches beta
+
+# Skip CI commit
+npx semantic-release --ci false
 ```
 
-### Run Release
+## 7. Monorepo Support
 
-| Priority | Condition                      | Commands                                             |
-| -------- | ------------------------------ | ---------------------------------------------------- |
-| **1**    | `.mise.toml` has release tasks | `mise run release:version` / `mise run release:full` |
-| **2**    | `package.json` has scripts     | `npm run release:dry` (preview) / `npm run release`  |
-| **3**    | Global CLI                     | `semantic-release --no-ci`                           |
+### Using semantic-release-monorepo
 
-See [Local Release Workflow](./references/local-release-workflow.md) for the complete 4-phase process.
-
-### Python Projects
-
-semantic-release handles versioning. For PyPI publishing, see [`pypi-doppler` skill](../pypi-doppler/SKILL.md).
-
-**Version pattern** (importlib.metadata - never hardcode):
-
-```python
-from importlib.metadata import PackageNotFoundError, version
-try:
-    __version__ = version("your-package-name")
-except PackageNotFoundError:
-    __version__ = "0.0.0+dev"
+```bash
+npm install -D semantic-release-monorepo
 ```
 
-See [Python Projects Guide](./references/python.md) for complete setup including Rust+Python hybrids.
+```json
+// packages/core/.releaserc.json
+{
+  "extends": "semantic-release-monorepo",
+  "branches": ["main"],
+  "tagFormat": "core-v${version}",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/npm",
+    "@semantic-release/github"
+  ]
+}
+```
 
-### GitHub Actions (Optional)
+## 8. Private npm Registry
 
-Not recommended as primary (2-5 minute delay). Repository Settings → Actions → Workflow permissions → Enable "Read and write permissions".
+```json
+{
+  "plugins": [
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true
+      }
+    ]
+  ]
+}
+```
 
----
+```bash
+# .npmrc
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+@myorg:registry=https://npm.pkg.github.com
+```
 
-## Reference Documentation
+## 9. Complete Example
 
-| Category      | Reference                                                        | Description                                              |
-| ------------- | ---------------------------------------------------------------- | -------------------------------------------------------- |
-| **Setup**     | [Authentication](./references/authentication.md)                 | HTTPS-first setup, multi-account patterns                |
-| **Workflow**  | [Local Release Workflow](./references/local-release-workflow.md) | 4-phase process (PREFLIGHT → RELEASE → POSTFLIGHT)       |
-| **Languages** | [Python Projects](./references/python.md)                        | Python + Rust+Python hybrid patterns                     |
-|               | [Rust Projects](./references/rust.md)                            | release-plz, cargo-rdme README SSoT                      |
-| **Config**    | [Version Alignment](./references/version-alignment.md)           | Git tags as SSoT, manifest patterns                      |
-|               | [Monorepo Support](./references/monorepo-support.md)             | Polyglot monorepo with Pants + mise, pnpm/npm workspaces |
-| **Advanced**  | [MAJOR Confirmation](./references/major-confirmation.md)         | Breaking change analysis workflow                        |
-|               | [Doc Release Linking](./references/doc-release-linking.md)       | Auto-link ADRs/specs in release notes                    |
-| **Help**      | [Troubleshooting](./references/troubleshooting.md)               | All common issues consolidated                           |
-|               | [Evolution Log](./references/evolution-log.md)                   | Skill change history                                     |
+```json
+{
+  "branches": [
+    "main",
+    { "name": "beta", "prerelease": true },
+    { "name": "alpha", "prerelease": true }
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" },
+          { "type": "perf", "release": "patch" },
+          { "type": "revert", "release": "patch" },
+          { "type": "docs", "scope": "README", "release": "patch" },
+          { "breaking": true, "release": "major" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            { "type": "feat", "section": "Features", "hidden": false },
+            { "type": "fix", "section": "Bug Fixes", "hidden": false },
+            { "type": "perf", "section": "Performance", "hidden": false },
+            { "type": "revert", "section": "Reverts", "hidden": false },
+            { "type": "docs", "section": "Documentation", "hidden": false },
+            { "type": "style", "section": "Styles", "hidden": true },
+            { "type": "chore", "section": "Miscellaneous", "hidden": true },
+            { "type": "refactor", "section": "Code Refactoring", "hidden": true },
+            { "type": "test", "section": "Tests", "hidden": true },
+            { "type": "build", "section": "Build System", "hidden": true },
+            { "type": "ci", "section": "CI/CD", "hidden": true }
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    "@semantic-release/npm",
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          { "path": "dist/**/*.js", "label": "Distribution" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["CHANGELOG.md", "package.json"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}
+```
 
-**Cross-skill references**:
+## Best Practices
 
-- [`mise-tasks` skill: polyglot-affected](../mise-tasks/references/polyglot-affected.md) - Complete Pants + mise integration guide
-- [`mise-tasks` skill: bootstrap-monorepo](../mise-tasks/references/bootstrap-monorepo.md) - Autonomous polyglot monorepo setup
-- [`pypi-doppler` skill](../pypi-doppler/SKILL.md) - Local PyPI publishing with Doppler
-
----
-
-## Post-Change Checklist
-
-After modifying THIS skill (semantic-release):
-
-1. [ ] SKILL.md and references remain aligned
-2. [ ] New references documented in Reference Documentation table
-3. [ ] All referenced files in references/ exist
-4. [ ] Append changes to [evolution-log.md](./references/evolution-log.md)
-5. [ ] Validate with `bun scripts/validate-plugins.mjs`
-6. [ ] Run `npm run release:dry` to verify no regressions
+1. **Enforce commit format** - Use commitlint with husky
+2. **Protect main branch** - Require PRs and CI pass
+3. **Use conventional commits** - Consistent commit messages
+4. **Generate changelogs** - Document all changes
+5. **Pin plugin versions** - Reproducible releases
+6. **Dry run first** - Test before real release
+7. **Token security** - Use GitHub secrets
+8. **Skip CI on release commits** - Prevent loops
+9. **Semantic versioning** - Follow semver strictly
+10. **Branch strategy** - Use prerelease branches

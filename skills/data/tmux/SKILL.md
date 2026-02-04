@@ -1,21 +1,20 @@
 ---
 name: tmux
 description: Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.
-metadata:
-  { "openclaw": { "emoji": "🧵", "os": ["darwin", "linux"], "requires": { "bins": ["tmux"] } } }
+metadata: {"espada":{"emoji":"🧵","os":["darwin","linux"],"requires":{"bins":["tmux"]}}}
 ---
 
-# tmux Skill (OpenClaw)
+# tmux Skill (Espada)
 
 Use tmux only when you need an interactive TTY. Prefer exec background mode for long-running, non-interactive tasks.
 
 ## Quickstart (isolated socket, exec tool)
 
 ```bash
-SOCKET_DIR="${OPENCLAW_TMUX_SOCKET_DIR:-${CLAWDBOT_TMUX_SOCKET_DIR:-${TMPDIR:-/tmp}/openclaw-tmux-sockets}}"
+SOCKET_DIR="${ESPADA_TMUX_SOCKET_DIR:-${TMPDIR:-/tmp}/espada-tmux-sockets}"
 mkdir -p "$SOCKET_DIR"
-SOCKET="$SOCKET_DIR/openclaw.sock"
-SESSION=openclaw-python
+SOCKET="$SOCKET_DIR/espada.sock"
+SESSION=espada-python
 
 tmux -S "$SOCKET" new -d -s "$SESSION" -n shell
 tmux -S "$SOCKET" send-keys -t "$SESSION":0.0 -- 'PYTHON_BASIC_REPL=1 python3 -q' Enter
@@ -32,8 +31,8 @@ To monitor:
 
 ## Socket convention
 
-- Use `OPENCLAW_TMUX_SOCKET_DIR` (legacy `CLAWDBOT_TMUX_SOCKET_DIR` also supported).
-- Default socket path: `"$OPENCLAW_TMUX_SOCKET_DIR/openclaw.sock"`.
+- Use `ESPADA_TMUX_SOCKET_DIR` (default `${TMPDIR:-/tmp}/espada-tmux-sockets`).
+- Default socket path: `"$ESPADA_TMUX_SOCKET_DIR/espada.sock"`.
 
 ## Targeting panes and naming
 
@@ -44,7 +43,7 @@ To monitor:
 ## Finding sessions
 
 - List sessions on your socket: `{baseDir}/scripts/find-sessions.sh -S "$SOCKET"`.
-- Scan all sockets: `{baseDir}/scripts/find-sessions.sh --all` (uses `OPENCLAW_TMUX_SOCKET_DIR`).
+- Scan all sockets: `{baseDir}/scripts/find-sessions.sh --all` (uses `ESPADA_TMUX_SOCKET_DIR`).
 
 ## Sending input safely
 
@@ -96,7 +95,6 @@ tmux -S "$SOCKET" capture-pane -p -t agent-1 -S -500
 ```
 
 **Tips:**
-
 - Use separate git worktrees for parallel fixes (no branch conflicts)
 - `pnpm install` first before running codex in fresh clones
 - Check for shell prompt (`❯` or `$`) to detect completion

@@ -1,11 +1,13 @@
 ---
 name: managing-dotfiles
-description: Use this skill when working with dotfiles managed by yadm. This includes pulling remote changes, committing and pushing dotfile changes, modifying configuration files (shell, editor, terminal, git, etc.), viewing tracked files, resolving merge conflicts, and maintaining the dotfiles repository.
+description: Use this skill when working with personal dotfiles managed by yadm. This includes pulling remote changes, committing and pushing dotfile changes, modifying configuration files (shell, editor, terminal, git, etc.), viewing tracked files, resolving merge conflicts, and maintaining the dotfiles repository. For work dotfiles, use the managing-work-dotfiles skill instead.
 ---
 
-# Managing Dotfiles with Yadm
+# Managing Personal Dotfiles with Yadm
 
-This skill helps manage dotfiles using [yadm](https://yadm.io/) (Yet Another Dotfiles Manager).
+This skill manages **personal** dotfiles using [yadm](https://yadm.io/) (Yet Another Dotfiles Manager).
+
+> **Note**: For work-specific dotfiles (Spotify GHE), use the `managing-work-dotfiles` skill with `yadm-work` commands.
 
 ## Repository Info
 

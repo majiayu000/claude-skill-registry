@@ -1,7 +1,7 @@
 {
   "name": "issue-creator",
-  "repo": "ngxtm/devkit",
-  "path": "skills/issue-creator/SKILL.md",
-  "source": "github.com/ngxtm/devkit",
-  "downloaded_at": "2026-02-02T03:11:04.628159Z"
+  "repo": "pcortes/swarm-attack",
+  "path": "swarm_attack/default_skills/issue-creator/SKILL.md",
+  "source": "github.com/pcortes/swarm-attack",
+  "downloaded_at": "2026-02-04T01:22:39.407077Z"
 }

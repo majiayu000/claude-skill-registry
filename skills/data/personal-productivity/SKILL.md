@@ -1,115 +1,58 @@
 ---
-name: "personal-productivity"
-description: "Build a Personal Productivity System Pack (weekly timebox plan, capture+to-do system, daily/weekly review rituals, and a 7-day rollout). Use for timeboxing, calendar blocking, and staying on top of high-volume leadership work. Category: Career."
+name: personal-productivity
+description: Help users manage their time and tasks more effectively. Use when someone is overwhelmed with work, struggling with focus, trying to balance multiple responsibilities, or asking how to get more done.
 ---
 
 # Personal Productivity
 
-## Scope
+Help the user manage their time and tasks more effectively using techniques from 2 product leaders.
 
-**Covers**
-- Designing a **weekly timebox plan** for a high-meeting-load job (meeting windows, focus blocks, admin buffers)
-- Building a **write-it-down capture system** so tasks don’t live in your head (inbox → lists → reviews)
-- Creating **daily + weekly review rituals** that keep you current without constant re-planning
-- Producing a practical **7-day rollout plan** (small changes you can implement immediately)
+## How to Help
 
-**When to use**
-- “Help me timebox my week so I can handle meetings + deep work.”
-- “I keep forgetting tasks. Build me a write-it-down system and a review routine.”
-- “I’m juggling a demanding job plus side commitments (advising/board/etc.). Make it sustainable.”
-- “Create a personal productivity system I can follow next week.”
+When the user asks for help with personal productivity:
 
-**When NOT to use**
-- You need medical/mental-health advice (including ADHD treatment), or you are in crisis. Seek professional help.
-- You want a team-wide process (meeting policy, org operating system). Use a team/ops skill instead.
-- You need a project plan, milestones, or delivery management. Use `managing-timelines`.
-- You primarily need to reduce burnout/energy drain (not just time). Use `energy-management`.
+1. **Understand their situation** - Ask what's overwhelming them, how they currently manage their time, and what outcomes they're trying to achieve
+2. **Identify the bottleneck** - Determine if the issue is prioritization, focus, energy management, or too many commitments
+3. **Apply practical techniques** - Help them implement time-boxing, task capture systems, or scheduling strategies
+4. **Build sustainable habits** - Focus on systems that can be maintained, not heroic sprints
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Your role + primary responsibilities (and whether you manage people)
-- Your constraints/non-negotiables (time zones, caregiving, travel, on-call, deadlines)
-- A representative week (calendar text dump, recurring meetings list, or narrative)
-- Your current task system (or “none”) + tools you’re willing to use (any calendar + any to-do list works)
-- What “better” means in 2–4 weeks (e.g., fewer dropped tasks, more deep-work blocks, lower weekend spillover)
+### Time-box ruthlessly to handle multiple roles
+Gokul Rajaram: "It's really time boxing and knowing. I also do two hours each on both Saturday and Sunday so that I can do four meetings each." When managing a full-time job alongside board seats, investing, or other commitments, assign specific time blocks to specific activities. Protect those blocks.
 
-**Missing-info strategy**
-- Ask **3–5 questions at a time** from [references/INTAKE.md](references/INTAKE.md).
-- If the calendar is unavailable, proceed with a **default-week draft** using explicit assumptions and ask the user to correct it.
-- Do not request secrets, credentials, or sensitive personal/medical details.
+### Write everything down to free your mind
+Maya Prohovnik: "I write everything down because I remember things best when they're written down and then I obsessively put things on my to-do list." Capture tasks and thoughts externally to reduce cognitive load. Your brain is for processing, not storage. An externalized system creates mental clarity.
 
-## Outputs (deliverables)
+### Your calendar is your strategy made visible
+What you spend time on reflects your real priorities, not your stated ones. Audit your calendar to see if your time allocation matches what you say matters. Block time for the most important work first.
 
-Produce a **Personal Productivity System Pack** (Markdown in chat; or as files if requested) in this order:
+### Energy management matters as much as time management
+Not all hours are equal. Schedule your most cognitively demanding work during your peak energy hours. Use low-energy times for administrative tasks, meetings, or email.
 
-1) **Context Snapshot** (goal, constraints, assumptions, success definition)
-2) **Commitment & Workload Inventory** (fixed commitments + “floating” responsibilities)
-3) **Weekly Timebox Plan** (meeting windows, focus blocks, admin buffers, protected time, weekend spillover rule)
-4) **Capture + To-Do System Spec** (inbox, lists, processing, prioritization, timeboxing method)
-5) **Daily Plan + Shutdown Ritual** (how you start the day; how you close loops)
-6) **Weekly Review Ritual** (calendar + task review; reset rules)
-7) **7-Day Rollout Plan** (setup steps + first-week experiments)
-8) **Risks / Open questions / Next steps** (always included)
+## Questions to Help Users
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+- "Walk me through a typical day - where does your time actually go?"
+- "What's the most important thing you should be doing that's not getting enough time?"
+- "Do you have a system for capturing tasks and ideas, or do you try to remember everything?"
+- "When are your peak energy hours? What do you schedule during that time?"
+- "What commitments are you holding onto that you should let go of?"
 
-## Workflow (7 steps)
+## Common Mistakes to Flag
 
-### 1) Intake + success definition + boundaries
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm scope (personal productivity for career execution). Define “better” in 2–4 weeks and 1–2 measurable signals (e.g., dropped tasks/week, deep-work blocks/week). Confirm boundaries (not medical/therapy; not a team policy rewrite).
-- **Outputs:** Context Snapshot (draft) + assumptions/unknowns list.
-- **Checks:** Success definition is specific enough to evaluate after 2 weeks.
+- **No external capture system** - Trying to remember everything creates anxiety and drops things. Write it down
+- **Not protecting focused time** - If your calendar is wall-to-wall meetings, you have no time for actual work. Block it
+- **Treating all hours equally** - Your 9am brain and your 4pm brain have different capabilities. Schedule accordingly
+- **Saying yes to everything** - Every yes is a no to something else. Be intentional about commitments
+- **Optimizing tactics without fixing strategy** - Being more efficient at the wrong things doesn't help. Prioritize first
 
-### 2) Build a commitment & workload inventory
-- **Inputs:** calendar/recur meetings; responsibilities; side commitments.
-- **Actions:** List fixed commitments (meetings, deadlines, recurring obligations) and floating workload (projects, people mgmt, admin). Identify 3–5 “high-leverage” responsibilities and the biggest sources of fragmentation.
-- **Outputs:** Commitment & Workload Inventory (table) + top constraints.
-- **Checks:** Inventory separates **fixed** vs **flexible** time and includes side commitments (if any).
+## Deep Dive
 
-### 3) Design the weekly timebox plan (default week)
-- **Inputs:** inventory; energy preferences; constraints.
-- **Actions:** Draft a default week: meeting windows, focus blocks, admin buffers, and protected personal time. Add explicit rules: meeting batching, buffer time, weekend spillover (if needed), and what gets timeboxed first.
-- **Outputs:** Weekly Timebox Plan (calendar-like block plan) + 5–8 rules.
-- **Checks:** At least 3 focus blocks/week exist; meeting time has limits or windows; buffers are real blocks (not wishes).
+For all 2 insights from 2 guests, see `references/guest-insights.md`
 
-### 4) Specify the capture + to-do system (“write it down”)
-- **Inputs:** current tools; task volume; common failure modes (dropped tasks, unclear next actions).
-- **Actions:** Define: capture inbox, processing ritual, list taxonomy, and a prioritization rule. Ensure every task becomes either: (a) timeboxed on calendar, (b) next action on a list, (c) delegated, or (d) deleted.
-- **Outputs:** Capture + To-Do System Spec + “rules of the system”.
-- **Checks:** The system has a single trusted inbox and a daily processing rule that takes ≤15 minutes.
+## Related Skills
 
-### 5) Add daily plan + shutdown ritual
-- **Inputs:** timebox plan; task system.
-- **Actions:** Create a daily routine: morning “top outcomes” + quick timeboxing; end-of-day shutdown (clear inbox, update next actions, plan first block tomorrow).
-- **Outputs:** Daily Plan + Shutdown Ritual (copy/paste checklist).
-- **Checks:** Ritual is small enough to actually do; includes handling of new tasks during the day (capture rule).
-
-### 6) Add weekly review ritual (reset + recalibration)
-- **Inputs:** default week; backlog lists; upcoming commitments.
-- **Actions:** Create a weekly review to: reconcile calendar ↔ tasks, reset priorities, and re-timebox next week. Include a “kill list” (stop/defer) to prevent backlog bloat.
-- **Outputs:** Weekly Review Ritual + weekly reset checklist.
-- **Checks:** Review includes both (1) looking forward (next 2 weeks) and (2) backlog cleanup.
-
-### 7) Quality gate + finalize rollout plan
-- **Inputs:** full draft pack.
-- **Actions:** Produce a 7-day rollout plan (setup + first experiments). Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Include **Risks / Open questions / Next steps**.
-- **Outputs:** Final Personal Productivity System Pack.
-- **Checks:** Next 7 days have specific actions scheduled; risks and unknowns are explicit.
-
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (timeboxing + side commitments):** “I’m a product leader with wall-to-wall meetings and I advise a startup. Use `personal-productivity` to create a Personal Productivity System Pack with a default week timebox plan and a task capture system.”  
-Expected: weekly timebox plan with meeting windows + focus blocks, capture/to-do spec, daily/weekly reviews, 7-day rollout.
-
-**Example 2 (dropped tasks):** “I keep forgetting small but important follow-ups. Build me a write-it-down system and a daily shutdown routine.”  
-Expected: capture system with inbox → processing → lists, a 10–15 minute daily shutdown checklist, and success metrics.
-
-**Boundary example (medical):** “Diagnose my ADHD and tell me what productivity meds to take.”  
-Response: out of scope for medical advice; recommend professional help. Offer a neutral capture/timeboxing system and ask for work constraints only.
+- Managing Timelines
+- Energy Management
+- Running Effective Meetings
+- Managing Up

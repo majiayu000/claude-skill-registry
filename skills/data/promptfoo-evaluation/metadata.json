@@ -1,12 +1,7 @@
 {
   "name": "promptfoo-evaluation",
-  "description": "Configures and runs LLM evaluation using Promptfoo framework. Use when setting up prompt testing, creating evaluation configs (promptfooconfig.yaml), writing Python custom assertions, implementing llm",
-  "repo": "daymade/claude-code-skills",
-  "category": "testing",
-  "tags": [
-    "promptfoo",
-    "evaluation"
-  ],
-  "stars": 110,
-  "source": "SkillsMP Synced Skills"
+  "repo": "nguyendinhquocx/code-ai",
+  "path": "skills/promptfoo-evaluation/SKILL.md",
+  "source": "github.com/nguyendinhquocx/code-ai",
+  "downloaded_at": "2026-02-04T04:00:39.767323Z"
 }

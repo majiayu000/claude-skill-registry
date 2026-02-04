@@ -11,6 +11,9 @@ last_optimized: 2025-12-02
 dependencies: []
 quick_reference_card: true
 tags: [exploratory, sbtm, rst, heuristics, test-tours, session-based]
+trust_tier: 0
+validation:
+
 ---
 
 # Advanced Exploratory Testing

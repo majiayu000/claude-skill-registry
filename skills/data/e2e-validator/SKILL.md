@@ -5,12 +5,12 @@ prerequisites:
   - Integration tests passing
 outputs:
   - E2E test results
-  - .signals/phase5-complete.json
+  - .signals/phase10-complete.json
   - Go/No-Go decision
 description: |
   Validates end-to-end user workflows and system behavior.
   Activates via codeword [ACTIVATE:E2E_VALIDATOR_V1] injected by hooks
-  when entering Phase 5 E2E testing.
+  when entering Phase 10 E2E testing.
   
   Activation trigger: [ACTIVATE:E2E_VALIDATOR_V1]
 ---
@@ -31,12 +31,12 @@ This occurs when:
 
 ## Worktree Isolation Requirements
 
-**CRITICAL**: This skill MUST operate in a dedicated worktree `phase-5-task-1`:
+**CRITICAL**: This skill MUST operate in a dedicated worktree `phase-10-task-1`:
 
 ```bash
 # Before skill activation:
 ./lib/worktree-manager.sh create 5 1
-cd ./worktrees/phase-5-task-1
+cd ./worktrees/phase-10-task-1
 
 # Validate isolation:
 ./hooks/worktree-enforcer.sh enforce
@@ -54,7 +54,7 @@ cd ./worktrees/phase-5-task-1
 
 ## What This Skill Does
 
-Automates Phase 10: End-to-end & production validation in isolated worktree
+Automates Phase 5: End-to-end & production validation in isolated worktree
 
 - **E2E workflow testing** (Task 25) in isolated environment
 - **Production readiness scoring** (Task 26) with clean assessment
@@ -97,125 +97,6 @@ Stage 5: Generate Report & Signal
 - ✅ Chrome, Firefox, Safari
 - ✅ iOS & Android viewports
 
-## Visual Validation (PRD Section 8.3)
-
-For components with spatial/fusion operations, visual validation is required per PRD Template v2.0 Section 8.3.
-
-### When Visual Tests Are Required
-
-1. PRD Section 8.3 contains visualization definitions
-2. Component category is "Spatial Processing" or "Fusion"
-3. FRs reference visual validation in acceptance criteria
-
-### Visual Test Structure
-
-Test files follow convention `tests/visual/viz_[feature].py`:
-```
-tests/visual/
-├── viz_[feature]_accuracy.py    # Numerical accuracy validation
-├── viz_[feature]_performance.py # Performance target validation
-├── viz_[feature]_coverage.py    # Spatial coverage validation
-└── output/
-    ├── [feature]_accuracy.png
-    └── visual-test-results.json
-```
-
-### Visual Test Template
-
-Generate visual tests using this pattern:
-
-```python
-#!/usr/bin/env python3
-"""
-Visual validation for FR-XXX-X.X
-Generated from PRD Section 8.3
-"""
-import matplotlib.pyplot as plt
-import numpy as np
-from pathlib import Path
-
-def visualize_[feature]():
-    """
-    Validates [requirement description]
-    Returns: bool - True if validation passes
-    """
-    # 1. Generate test data
-    test_inputs = np.linspace(0, 10, 100)
-    expected_outputs = [...]  # From requirement spec
-    actual_outputs = [...]    # From component under test
-
-    # 2. Compute errors
-    errors = np.abs(actual_outputs - expected_outputs)
-    max_error = np.max(errors)
-    threshold = 0.1  # From PRD requirement
-
-    # 3. Create visualization
-    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-
-    # Plot 1: Results comparison
-    axes[0].plot(test_inputs, expected_outputs, 'b-', label='Expected')
-    axes[0].plot(test_inputs, actual_outputs, 'r--', label='Actual')
-    axes[0].legend()
-    axes[0].set_title('[Feature]: Results Comparison')
-
-    # Plot 2: Error distribution with threshold
-    axes[1].hist(errors, bins=50, alpha=0.7)
-    axes[1].axvline(x=threshold, color='r', linestyle='--',
-                    label=f'Requirement: {threshold}')
-    axes[1].legend()
-    axes[1].set_title('Error Distribution vs Requirement')
-
-    # 4. Save output
-    output_dir = Path(__file__).parent / "output"
-    output_dir.mkdir(exist_ok=True)
-    plt.savefig(output_dir / "[feature]_validation.png", dpi=150)
-
-    # 5. Determine pass/fail
-    passed = np.all(errors < threshold)
-
-    if passed:
-        print(f"✅ PASS: All errors below threshold ({threshold})")
-    else:
-        print(f"❌ FAIL: Max error {max_error:.6f} exceeds threshold")
-
-    return passed
-
-if __name__ == "__main__":
-    import sys
-    passed = visualize_[feature]()
-    sys.exit(0 if passed else 1)
-```
-
-### Visual Test Pass/Fail Criteria
-
-| Failure Type | FR Priority | Action |
-|--------------|-------------|--------|
-| Accuracy violation | SHALL | **BLOCK** deployment |
-| Accuracy violation | SHOULD | WARN |
-| Performance threshold | SHALL | **BLOCK** deployment |
-| Performance threshold | SHOULD | WARN |
-| Spatial coverage gap | SHALL | **BLOCK** deployment |
-| Infrastructure error | Any | **BLOCK** deployment |
-
-### Visual Test Output
-
-Generate `tests/visual/output/visual-test-results.json`:
-```json
-{
-  "timestamp": "ISO8601",
-  "tests_run": 3,
-  "tests_passed": 2,
-  "tests_failed": 1,
-  "results": [
-    {
-      "test": "viz_accuracy.py",
-      "passed": true,
-      "output_image": "accuracy_validation.png"
-    }
-  ]
-}
-```
-
 ## Production Readiness Gates
 
 | Category | Weight | Gates |
@@ -240,7 +121,7 @@ Generate `tests/visual/output/visual-test-results.json`:
 
 ```json
 {
-  "phase": 10,
+  "phase": 5,
   "status": "success",
   "summary": {
     "e2e_workflows": N,
@@ -248,7 +129,7 @@ Generate `tests/visual/output/visual-test-results.json`:
     "production_score": 92,
     "decision": "GO"
   },
-  "next_phase": 11,
+  "next_phase": 6,
   "trigger_next": true
 }
 ```
@@ -261,19 +142,19 @@ tests/e2e/
 └── ...
 
 .taskmaster/
-├── PHASE10_COMPLETION_REPORT.md
+├── PHASE5_COMPLETION_REPORT.md
 └── .signals/phase10-complete.json
 ```
 
 ## CRITICAL: Automatic Phase Transition
 
-**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 11.**
+**DO NOT ASK THE USER FOR PERMISSION TO PROCEED TO PHASE 6.**
 
 When Phase 10 is complete (E2E tests passing, production readiness score ≥90%), you MUST:
 
 1. Output the completion signal:
    ```
-   ✅ PHASE 10 COMPLETE
+   ✅ PHASE 5 COMPLETE
    [SIGNAL:PHASE10_COMPLETE]
    ```
 
@@ -289,5 +170,5 @@ When Phase 10 is complete (E2E tests passing, production readiness score ≥90%)
 ## See Also
 
 - Pipeline Orchestrator (triggers this)
-- Integration Validator (Phase 9, provides input)
+- Integration Validator (Phase 4, provides input)
 - Deployment Orchestrator (Phase 11, triggered by signal)

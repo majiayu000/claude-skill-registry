@@ -1,7 +1,7 @@
 {
   "name": "files",
-  "repo": "park-kyungchan/palantir",
-  "path": "docs/files/SKILL.md",
-  "source": "github.com/park-kyungchan/palantir",
-  "downloaded_at": "2026-02-02T03:03:34.727750Z"
+  "repo": "tech-leads-club/agent-skills",
+  "path": "tools/skill-plugin/src/generators/skill/files/SKILL.md.template",
+  "source": "github.com/tech-leads-club/agent-skills",
+  "downloaded_at": "2026-02-04T01:33:38.219221Z"
 }

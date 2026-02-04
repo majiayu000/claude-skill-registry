@@ -1,297 +1,95 @@
 ---
 name: create-skill
-description: Use when creating new skills or improving existing ones - enforces test-driven skill development with RED-GREEN-REFACTOR methodology and Claude Search Optimization
+description: Create a custom skill that's protected from Dex updates. Automatically appends -custom to ensure your skill is never overwritten.
 ---
 
-# Create Skill
+# Create Custom Skill
 
-## The Core Principle
+Create your own skill that's protected from Dex updates.
 
-**Writing skills IS Test-Driven Development applied to process documentation.**
+## How It Works
 
-Skills follow the RED-GREEN-REFACTOR cycle:
-1. **RED**: Create a failing test scenario (expected behavior that doesn't work yet)
-2. **GREEN**: Write the skill that makes the test pass
-3. **REFACTOR**: Optimize for clarity and token efficiency
+When you create a skill with this command, Dex automatically:
+1. Appends `-custom` to the folder name (so it's never overwritten by updates)
+2. Creates the proper SKILL.md structure
+3. Sets up optional folders for scripts, references, and assets
 
-## The Iron Law
+## Process
 
-**NO SKILL WITHOUT A FAILING TEST FIRST**
+### Step 1: Get Skill Details
 
-This applies to:
-- New skills ✓
-- Skill edits ✓
-- "Simple additions" ✓
-- Documentation updates ✓
+Ask the user:
 
-No exceptions. No rationalizations. Test first, always.
+```
+What should this skill do?
 
-## SKILL.md Format Requirements
+Give me:
+1. A short name (e.g., "meeting-notes", "weekly-report")
+2. What it should help you with (1-2 sentences)
+```
 
-### Required YAML Frontmatter
+### Step 2: Create the Skill
 
-Every SKILL.md must begin with exactly two required fields:
+**Skill folder:** `.claude/skills/{name}-custom/`
 
-```yaml
+The `-custom` suffix is automatic - don't let the user add it themselves.
+
+**Create SKILL.md:**
+
+```markdown
 ---
-name: skill-name-with-hyphens
-description: Use when [triggering conditions] - [what it does in third person]
+name: {name}-custom
+description: {user's description}
 ---
+
+# {Title Case Name}
+
+{User's description expanded into a helpful intro}
+
+## Process
+
+### Step 1: [First Step]
+
+[Instructions for what to do]
+
+### Step 2: [Second Step]
+
+[Instructions for what to do]
+
+## Notes
+
+- This is a custom skill, protected from Dex updates
+- Edit `.claude/skills/{name}-custom/SKILL.md` to modify
 ```
 
-**Name Requirements:**
-- Lowercase alphanumeric + hyphens only
-- No spaces, underscores, or special characters
-- Max 64 characters
-- Must match directory name exactly
+### Step 3: Confirm
 
-**Description Requirements:**
-- **Critical for discovery** - Claude uses this to auto-activate skills
-- Start with "Use when..." to highlight triggers
-- Include specific symptoms and situations
-- Third-person perspective
-- Max 200 characters (ideally under 500 for complex skills)
-- Avoid technology-specific language unless skill requires it
-- Front-load most distinctive triggering conditions
-
-**Optional Field:**
-```yaml
-allowed-tools: Read, Write, Grep, Glob, Bash
 ```
-Restricts which tools Claude can use during skill execution.
+✅ Created skill: /{{name}}-custom
 
-### Required Content Sections
+Your skill is ready to use. Run /{name}-custom to try it.
 
-#### 1. Purpose (Essential)
-- What is this skill?
-- Core principle in 1-2 sentences
-- Establishes fundamental concept
+**Protected from updates:** The -custom suffix means Dex updates
+will never overwrite this skill. It's yours to customize.
 
-#### 2. When to Use This Skill (Essential)
-- Bullet list with symptoms and use cases
-- Triggering conditions
-- **When NOT to use** section (critical for preventing misapplication)
-- Small inline flowchart if decision is non-obvious
-
-#### 3. Workflow Steps / Implementation (Essential)
-- Step-by-step procedure
-- Specific file paths and operations
-- Error handling guidance
-- Inline code for simple patterns
-- Links to supporting files for heavy reference material
-
-#### 4. Quality Gates (If Applicable)
-- Mandatory validation steps
-- Related quality-gate skills to invoke
-- Success criteria
-- Iron laws (non-negotiable requirements)
-- **Required**: Use the `documentation-sync` quality gate before considering skill complete
-
-#### 5. Common Mistakes (Essential)
-- What goes wrong
-- How to fix it
-- Red flags and warning signs
-- Anti-rationalization blocks
-
-#### 6. Success Criteria (Essential)
-- How to verify successful execution
-- Expected outputs and artifacts
-- Validation checkpoints
-
-#### 7. Related Skills (Optional)
-- Dependencies (mark with asterisks: `**skill-name**`)
-- Complementary skills
-- Integration points
-
-#### 8. Real-World Impact (Optional)
-- Concrete results and metrics
-- Before/after comparisons
-
-## Token Efficiency Guidelines
-
-**Length Targets:**
-- Getting-started workflows: <150 words
-- Frequently-loaded skills: <200 words
-- Other skills: <500 words
-
-**Optimization Techniques:**
-- One excellent example beats many mediocre ones
-- Choose most relevant programming language for examples
-- Use tables for quick reference
-- Inline code only; external files for heavy references
-
-## Claude Search Optimization (CSO)
-
-### Description Best Practices
-
-**Good Description Pattern:**
-```yaml
-description: Use when [specific symptom/situation] - [enforces specific behavior/methodology] to [outcome]
+**To edit:** Modify .claude/skills/{name}-custom/SKILL.md
 ```
 
-**Examples:**
+## Examples
 
-❌ **Bad**: "Helps with debugging"
-✓ **Good**: "Use when tests fail or bugs reproduce inconsistently - enforces 4-phase root cause investigation before attempting fixes"
+**User:** "I want a skill for preparing board updates"
 
-❌ **Bad**: "Content creation helper"
-✓ **Good**: "Use when drafting marketing content requiring source integrity - enforces citation compliance with inline links and verbatim quotes"
+**Result:**
+- Folder: `.claude/skills/board-update-custom/`
+- Invoke with: `/board-update-custom`
+- Protected from all Dex updates
 
-❌ **Bad**: "Meeting processing tool"
-✓ **Good**: "Use when extracting product signals from meeting transcripts - systematically identifies asks, problems, quotes across time windows"
+**User:** "Create a skill called weekly-standup-custom"
 
-### Triggering Conditions
+**Response:** "I'll create that as `weekly-standup-custom` - you don't need to add '-custom' yourself, I do that automatically. Want me to proceed with just 'weekly-standup'?"
 
-Include concrete symptoms that Claude will recognize:
-- "tests fail"
-- "bugs reproduce inconsistently"
-- "drafting content"
-- "creating epics"
-- "processing meeting transcripts"
-- "verifying citations"
+## Tips
 
-## Testing Framework
-
-### Test-First Workflow
-
-**1. Define Expected Behavior**
-Create a scenario where you want the skill to activate and enforce specific behavior.
-
-**2. Create Failing Test**
-Document what currently happens (incorrect behavior).
-
-**3. Write the Skill**
-Implement the skill to make the test pass.
-
-**4. Validate**
-Run the scenario and verify the skill activates correctly.
-
-**5. Pressure Test**
-Add psychological pressure to ensure enforcement:
-- Time constraints
-- Sunk cost bias scenarios
-- Authority framing
-- Commitment mechanisms
-
-### Skill Type-Specific Testing
-
-**Discipline-Enforcing Skills** (e.g., citation-compliance, epic-validation):
-- Test compliance under time pressure
-- Use persuasion principles (urgency, authority, scarcity)
-- Verify skill blocks rationalization attempts
-- Confirm iron laws are enforced
-
-**Technique Skills** (e.g., meeting-synthesis, source-normalization):
-- Test application to new scenarios
-- Verify correct procedure execution
-- Check integration with other skills
-
-**Workflow Skills** (e.g., content-pipeline, product-planning):
-- Test end-to-end execution
-- Verify checkpoints and quality gates
-- Confirm state management and resumption
-
-## Cross-Referencing Rules
-
-**Use Skill Names Explicitly:**
-✓ "Use the `citation-compliance` skill"
-✓ "Invoke `meeting-synthesis` before proceeding"
-
-**Mark Required Dependencies:**
-✓ "**Required**: Use the `epic-validation` skill"
-
-**Avoid @ Syntax:**
-❌ "@citation-compliance" (force-loads file, pollutes context)
-
-## Flowchart Guidelines
-
-**Only include flowcharts for:**
-- Non-obvious decisions
-- Process loops
-- "A vs B" choice points
-
-**Never use flowcharts for:**
-- Reference information
-- Code examples
-- Linear instruction sequences
-
-## Quality Standards
-
-### Validation Checklist
-
-Before considering a skill complete:
-
-- [ ] YAML frontmatter has exactly `name` and `description`
-- [ ] Description optimized for CSO (starts with "Use when...")
-- [ ] All required sections present
-- [ ] Token count within guidelines for skill type
-- [ ] Test scenario created and passed
-- [ ] Pressure testing completed (for discipline skills)
-- [ ] Cross-references use skill names (not @ syntax)
-- [ ] Common mistakes section includes anti-rationalization blocks
-- [ ] Iron laws clearly stated (if applicable)
-- [ ] Success criteria are verifiable
-- [ ] Documentation-sync quality gate passed (all 6 files updated)
-
-## Skill Categories
-
-Choose the appropriate category:
-
-**Meta** (`.claude/skills/meta/`):
-- System improvement
-- Skill management
-- Self-adaptation capabilities
-
-**Quality Gates** (`.claude/skills/quality-gates/`):
-- Validation and compliance checks
-- Atomic, reusable verification
-- Pass/fail criteria
-
-**Context Assembly** (`.claude/skills/context-assembly/`):
-- Reusable context gathering patterns
-- Data synthesis and normalization
-- Evidence collection
-
-**Workflows** (`.claude/skills/workflows/`):
-- Complete multi-stage processes
-- Orchestrate multiple sub-skills
-- State management and checkpoints
-
-## Iron Laws for Skill Creation
-
-1. **NO SKILL WITHOUT A FAILING TEST FIRST** - Universal, no exceptions
-2. **DESCRIPTIONS MUST BE CSO-OPTIMIZED** - Auto-discovery depends on this
-3. **TOKEN EFFICIENCY IS MANDATORY** - Respect length guidelines
-4. **ONE EXCELLENT EXAMPLE > MANY MEDIOCRE** - Quality over quantity
-5. **IRON LAWS MUST BE CLEARLY STATED** - No ambiguity in enforcement
-6. **NO SKILL COMPLETE WITHOUT DOCUMENTATION SYNC** - All 6 files must be updated
-
-## Success Criteria
-
-You've created a skill correctly when:
-- Test scenario was written first (RED phase)
-- Skill makes the test pass (GREEN phase)
-- Token count is optimized (REFACTOR phase)
-- Description triggers automatic activation
-- Common mistakes include anti-rationalization blocks
-- Related skills are properly referenced
-- Quality gates are enforced without compromise
-- Documentation sync validated (all 6 files consistent)
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Writing skill before test | Delete skill, write test first |
-| Generic description | Add specific symptoms and triggers |
-| Too many examples | Keep one excellent example |
-| Using @ syntax for cross-refs | Use skill names explicitly |
-| Missing iron laws | Add non-negotiable requirements |
-| Forgetting pressure testing | Add psychological pressure scenarios |
-| Skipping documentation updates | Use documentation-sync quality gate (all 6 files) |
-
-## Related Skills
-
-- **using-skills**: Establishes mandatory skill usage protocol
-- **skill-discovery**: Helps find existing skills before creating new ones
-- **documentation-sync**: Required quality gate for maintaining documentation consistency
+- Keep skill names short and descriptive
+- Use hyphens, not spaces or underscores
+- The skill can reference other files in its folder (scripts/, references/, assets/)

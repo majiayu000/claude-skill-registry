@@ -1,13 +1,6 @@
 ---
 name: pre-work-research
 description: Use before starting implementation - research repository documentation, codebase patterns, and external resources to inform the approach
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - WebFetch
-  - WebSearch
-model: opus
 ---
 
 # Pre-Work Research

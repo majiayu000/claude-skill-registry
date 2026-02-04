@@ -1,7 +1,7 @@
 {
   "name": "test-engineer",
-  "repo": "nahisaho/CodeGraphMCPServer",
-  "path": ".claude/skills/test-engineer/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:08.585533Z"
+  "repo": "nahisaho/MUSUBI",
+  "path": "src/templates/agents/claude-code/skills/test-engineer/SKILL.md",
+  "source": "github.com/nahisaho/MUSUBI",
+  "downloaded_at": "2026-02-04T04:06:14.558432Z"
 }

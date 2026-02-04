@@ -1,121 +1,77 @@
 ---
-name: "writing-north-star-metrics"
-description: "Define or refresh a product North Star metric + driver tree and produce a shareable North Star Metric Pack (narrative, metric spec, inputs, guardrails, rollout)."
+name: writing-north-star-metrics
+description: Help users define their North Star metric. Use when someone is choosing their primary success metric, trying to align the team around a key measure, struggling with metric proliferation, or setting up their measurement strategy.
 ---
 
 # Writing North Star Metrics
 
-## Scope
+Help the user define their North Star metric using frameworks and insights from 27 product leaders.
 
-**Covers**
-- Defining or refreshing a product/company North Star and North Star Metric
-- Translating a qualitative value model into measurable, decision-useful metrics
-- Creating a simple driver tree: leading input/proxy metrics + guardrails
-- Producing a “North Star Metric Pack” teams can use as a decision tie-breaker
+## How to Help
 
-**When to use**
-- “We need one metric that defines success.”
-- “Teams are optimizing different KPIs.”
-- “We’re setting quarterly OKRs and need leading indicators.”
-- “We’re launching a new strategy and need a metric that aligns decisions.”
+When the user asks for help with North Star metrics:
 
-**When NOT to use**
-- You only need OKRs for an already-agreed North Star
-- You need a full analytics taxonomy/event tracking plan from scratch
-- Stakeholders haven’t aligned on the customer value model / mission at all (do product vision/strategy first)
-- You’re choosing a single experiment metric for a one-off test
+1. **Understand the value** - Ask what specific value the product delivers to users (not revenue or internal activity)
+2. **Test for simplicity** - Ensure the metric can be understood and discussed by anyone in the company
+3. **Check for actionability** - Confirm teams can actually influence this metric through their work
+4. **Add guardrails** - Help them identify countervailing metrics that prevent gaming
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product/company + primary customer segment
-- The “value moment” (what the customer gets when things go well)
-- Business model + strategic goal (growth, activation, retention, margin, trust, etc.)
-- Time horizon (next quarter vs next year)
-- Measurement constraints (what you can measure today; data latency; known gaps)
+### Measure value delivered, not captured
+Itamar Gilad: "The North Star metric measures how much value we create for the market. WhatsApp measured messages sent because every message is incremental value. Airbnb used nights booked." Select a metric that tracks core utility provided to the customer, not business extraction.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If still missing, proceed with clearly labeled assumptions and provide 2–3 options.
+### Avoid lagging indicators
+Jess Lachs: "Retention is a terrible thing to goal on. It's almost impossible to drive in a meaningful way in a short term. Find a short-term metric you can measure that drives a long-term output." Identify proxy metrics that are sensitive to experimentation and correlate with long-term goals.
 
-## Outputs (deliverables)
+### Simple beats sophisticated
+Jess Lachs: "If people understand it, if they have an intuition around it, if it's something people can talk about across the company, it's going to be a much better metric than your made up composite score that nobody understands." Avoid composite metrics with complex coefficients.
 
-Produce a **North Star Metric Pack** in Markdown (in-chat; or as files if the user requests):
+### Measure from the customer's perspective
+Jeff Weinstein: "What was the value we're trying to produce for the customer, and can we measure it from their perspective? We suggested 'companies with zero support tickets.'" Define metrics based on the absence of friction or the presence of success moments.
 
-1) **North Star Narrative** (value model, tie-breaker, scope)
-2) **Candidate metrics** (3–5) + **selection rationale** (evaluation table)
-3) **Chosen North Star Metric spec** (definition, formula, window, segmentation, owner, data source)
-4) **Driver tree** (leading input/proxy metrics + guardrails)
-5) **Validation & rollout plan** (instrumentation checks, dashboard cadence, decision rules)
-6) **Risks / Open questions / Next steps** (always included)
+### A high-level mission simplifies decisions
+Hari Srinivasan: "Everything at LinkedIn is a very connected ecosystem, but decisions aren't difficult because we're all here to help people connect to economic opportunity." A clear company-wide mission serves as the ultimate tie-breaker for product decisions.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Name metrics evocatively
+Jeff Weinstein: "Picking metric titles that make you feel something. 'Companies with zero support' - the brevity and customer mindset built into the chart name can become currency inside the company." Use simple, evocative names instead of technical database field names.
 
-## Workflow (8 steps)
+### Codify definitions precisely
+Manik Gupta: "Everyone will talk about the same metric but have different nuances. What is a daily active user? Pick a definition, instrument it, codify it. No confusion." Metrics only drive alignment when backed by precise definitions and accurate instrumentation.
 
-### 1) Intake + constraints
-- **Inputs:** User context; use [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm product, customer, value moment, horizon, constraints, stakeholders.
-- **Outputs:** 5–10 bullet “Context snapshot”.
-- **Checks:** You can explain the customer value in one sentence.
+### Select a hard activation metric
+Lauryn Isford: "An activation rate that falls in a lower percentage range, maybe 5-15%, is better than a high percentage because it means there's likely much higher correlation with long-term retention." High-bar activation metrics that few users reach are often more valuable.
 
-### 2) Define the qualitative North Star (before numbers)
-- **Inputs:** Context snapshot.
-- **Actions:** Write a North Star statement and value model from the customer’s perspective.
-- **Outputs:** Draft **North Star Narrative** (template in [references/TEMPLATES.md](references/TEMPLATES.md)).
-- **Checks:** Narrative can act as a decision tie-breaker (“if we do X, does it move the North Star?”).
+### Revisit periodically
+Lauryn Isford: "A North Star metric should be a measure of what you plan to do. Revisit North Star metrics every 6-12 months to ensure they still align with business goals." Be willing to shift metrics if the strategy requires it.
 
-### 3) Generate 3–5 candidate North Star metrics (customer POV)
-- **Inputs:** North Star Narrative + value moment.
-- **Actions:** Propose metrics that measure delivered customer value (not internal activity). Include at least one “friction/absence of pain” option when relevant.
-- **Outputs:** Candidate list with definitions.
-- **Checks:** Each candidate is measurable, understandable, and not trivially gameable.
+### Avoid revenue as North Star
+Sean Ellis: "I think monthly purchases is great because it maps to value people are getting. Units of value from the customer perspective is more important than overall revenue." Revenue should be a product of doing things right, not the day-to-day guiding metric.
 
-### 4) Stress-test and pick the North Star metric
-- **Inputs:** Candidate metrics.
-- **Actions:** Evaluate with [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md). Explicitly test:
-  - Leading vs lagging (avoid “retention as the only goal”; pair lagging outcomes with controllable inputs)
-  - Controllability within a quarter (proxy/input metrics you can move)
-  - Ecosystem impact (what breaks if you optimize this?)
-- **Outputs:** Selection table + chosen metric + why others lost.
-- **Checks:** A cross-functional leader could agree/disagree based on definitions and evidence.
+## Questions to Help Users
 
-### 5) Write the metric spec (make it unambiguous)
-- **Inputs:** Chosen metric.
-- **Actions:** Define formula, unit, window, inclusion rules, segmentation, owner, source, latency, and example calculation.
-- **Outputs:** **North Star Metric Spec**.
-- **Checks:** Two analysts would compute the same number.
+- "What specific moment represents a user getting value from your product?"
+- "Could a non-technical person in your company understand and discuss this metric?"
+- "Can teams actually influence this metric through their work in a quarter?"
+- "What would happen if you gamed this metric - what would break?"
+- "Does this metric measure value delivered to users or value extracted from them?"
+- "Is this a leading indicator or a lagging one that's hard to move?"
 
-### 6) Build the driver tree (inputs + guardrails)
-- **Inputs:** Metric spec + product levers.
-- **Actions:** Decompose into 3–7 drivers; identify leading input/proxy metrics you can move in weeks/months; add guardrails to prevent gaming/harm.
-- **Outputs:** Driver tree table + guardrails list.
-- **Checks:** Every driver has at least 1 realistic lever (initiative/experiment) and 1 measurement.
+## Common Mistakes to Flag
 
-### 7) Define validation + rollout
-- **Inputs:** Driver tree + constraints.
-- **Actions:** Plan validation (sanity checks, correlation to outcomes) and operationalization (dashboards, cadence, owners, decision rules).
-- **Outputs:** **Validation & Rollout Plan**.
-- **Checks:** Plan includes “who does what, when” and works with current instrumentation.
+- **Revenue as North Star** - Revenue is an outcome; focus on the customer value that drives it
+- **Complex composite metrics** - If you can't explain it simply, teams can't rally around it
+- **Lagging indicators like retention** - Find the leading metrics that predict retention
+- **Gaming vulnerability** - Add countervailing metrics to prevent optimization that hurts users
+- **Undefined terms** - 'Active user' means nothing until you codify exactly what counts
 
-### 8) Quality gate + finalize pack
-- **Inputs:** All drafts.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add Risks/Open questions/Next steps.
-- **Outputs:** Final **North Star Metric Pack**.
-- **Checks:** Pack is shareable as-is; key decisions and caveats are explicit.
+## Deep Dive
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+For all 35 insights from 27 guests, see `references/guest-insights.md`
 
-## Examples
+## Related Skills
 
-**Example 1 (B2B SaaS):** “Define a North Star metric for a team collaboration tool.”  
-Expected: a pack that chooses a customer-value metric (e.g., weekly active teams completing the core value moment), plus a driver tree (activation → collaboration depth) and guardrails.
-
-**Example 2 (Marketplace):** “Refresh North Star metric for a local services marketplace.”  
-Expected: a pack that measures delivered value (e.g., successful jobs completed with quality), plus input metrics for supply/demand balance and quality guardrails.
-
-**Boundary example:** “Our North Star should be retention.”  
-Response: keep retention as an outcome/validation metric, and propose controllable input/proxy metrics (time-to-first-value, weekly value moments, repeat value delivery) as the operating focus.
-
+- Setting OKRs & Goals
+- Defining Product Vision
+- Prioritizing Roadmap
+- Designing Growth Loops

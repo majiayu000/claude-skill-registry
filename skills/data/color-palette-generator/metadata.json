@@ -1,7 +1,7 @@
 {
   "name": "color-palette-generator",
-  "repo": "eddiebe147/claude-settings",
-  "path": "skills/color-palette-generator/SKILL.md",
-  "source": "github.com/eddiebe147/claude-settings",
-  "downloaded_at": "2026-02-01T02:42:09.806029Z"
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/ux-ui-design/skills/color-palette-generator/SKILL.md",
+  "source": "github.com/a5c-ai/babysitter",
+  "downloaded_at": "2026-02-04T02:37:09.636498Z"
 }

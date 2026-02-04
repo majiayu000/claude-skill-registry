@@ -1,119 +1,71 @@
 ---
-name: "enterprise-sales"
-description: "Create an Enterprise Deal Execution Pack (buying committee map + champion enablement, “no decision” prevention plan + mutual action plan, procurement/security packet, and POC-as-business-case plan + ROI model). Use for enterprise sales, procurement, security reviews, and enterprise pilots/POCs. Category: Sales & GTM."
+name: enterprise-sales
+description: Help users navigate enterprise sales. Use when someone is closing large deals, managing complex buying committees, handling procurement, or converting PLG users to enterprise contracts.
 ---
 
 # Enterprise Sales
 
-## Scope
+Help the user navigate enterprise sales using frameworks from 9 product leaders who have closed large enterprise deals at companies from Stripe to Superhuman.
 
-**Covers**
-- Running a single enterprise deal (mid-market → enterprise) from qualification to signature
-- Mapping the buying committee and empowering a champion
-- Preventing “no decision” outcomes (status quo / ghosting) with decision enablement + MAP
-- Procurement + contracting workflows (forms, vendor onboarding, preferred-vendor objections)
-- Security reviews + security questionnaires (packaging answers, coordinating stakeholders)
-- POCs/pilots framed as a business case + ROI model (not just technical fit)
-- Product-led sales escalation (self-serve usage → enterprise expansion narrative)
+## How to Help
 
-**When to use**
-- “Build a mutual action plan for an enterprise deal.”
-- “My deal is stuck in procurement/security—help me run it.”
-- “We need a champion kit for IT/legal/economic buyer.”
-- “They want a POC—help me scope it and build the ROI case.”
-- “We have usage but can’t convert to enterprise—build an escalation story.”
+When the user asks for help with enterprise sales:
 
-**When NOT to use**
-- You’re still validating ICP / first customers (use `founder-sales`)
-- This is a transactional SMB sale without buying committee / procurement / security
-- You need legal advice or final contract language (coordinate with counsel)
-- You’re building a full sales org / forecasting system (use `building-sales-team`)
+1. **Identify the stage** - Determine if they're prospecting, in discovery, navigating procurement, or closing
+2. **Map the buying committee** - Help them identify the champion, economic buyer, and other stakeholders
+3. **Address indecision** - Focus on overcoming customer fear of messing up, not just building FOMO
+4. **Navigate procurement** - Guide them through the administrative and compliance requirements
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product + value: what it does, for whom, and the measurable outcome
-- Account: company, segment, current state (existing tools/workflows), urgency/trigger
-- Deal context: target package/ACV range, desired timeline, stage, and what “closed-won” means
-- Stakeholders known so far: champion candidate, economic buyer, IT/security, legal/procurement, users
-- Current friction: what is blocking progress (no decision risk, procurement, security, POC request, etc.)
-- Constraints: what you can offer (pilot scope, services, security docs), internal resourcing, red lines
+### 40-60% of deals die to indecision
+Matt Dixon: "Our analysis showed that anywhere between 40 and 60% of the average salesperson's qualified pipelines will be ultimately marked as closed loss, no decision." Most deals are lost not to competitors, but to customer inertia and fear.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with explicit assumptions and label unknowns in **Assumptions & unknowns**, plus a short **Validation plan**.
+### Identify and arm the champion
+April Dunford: "Typically we have between five and seven people involved in what we call making the decision. By far the most important persona is what we call the champion - this person's job is to get consensus and champion the deal across everybody." Arm them with materials for IT, Legal, and the Economic Buyer.
 
-## Outputs (deliverables)
+### FOMU beats FOMO
+Matt Dixon: "The omission bias is the fact that people don't want to be blamed for making decisions that lead to a loss. People are okay with missing out. They are not okay with messing up and being blamed." Address Fear of Messing Up, not just Fear of Missing Out.
 
-Produce an **Enterprise Deal Execution Pack** in Markdown (in-chat; or as files if requested):
+### Make procurement's job easy
+Jen Abel: "When you get to procurement, you're going to have to do all the work. Make their job easy. Give me the forms that you need to fill out. I'll fill them out for you." Proactively handle the administrative burden to avoid being sidelined.
 
-1) **Deal snapshot** (account, use case, stage, timeline, success definition)
-2) **Buying committee map + champion plan** (roles, incentives, concerns, next actions)
-3) **Champion enablement kit** (internal pitch + stakeholder one-pagers + objection answers)
-4) **Decision enablement plan** (reduce “no decision”: do-nothing cost + decision guide + MAP)
-5) **POC/pilot plan + ROI business case** (30-day plan; success metrics; ROI model; decision criteria)
-6) **Procurement + security packet plan** (forms tracker, required docs, owners, timelines)
-7) **Close + implementation handoff** (commercials, signature plan, kickoff + first value milestones)
-8) **Risks / Open questions / Next steps** (always included)
+### POCs are for business cases, not demos
+Madhavan Ramanujam: "The POC should be framed as the entire goal of the POC is to create a business case, period, full stop. It is not to demonstrate product functionality." Treat POCs as collaborative exercises to build ROI models.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### PLG to enterprise is an escalator
+Elena Verna: "Product-led sales converts the usage that you've generated via self-serve into a sales opportunity and it attaches a salesperson to close a much larger contract." Identify the escalator from individual use case to enterprise-level solution.
 
-## Workflow (7 steps)
+### Under-promise, over-deliver
+Matt Dixon: "What great salespeople do is they know that while they'll stand by those claims, they try to under-promise and over-deliver. Build your business case around a 5X improvement, then let's set up to over-deliver against that." Build cases around conservative, 100% achievable numbers.
 
-### 1) Intake + enterprise qualification (what “enterprise” means here)
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm deal type (buying committee, procurement/security, ACV, timeline). Capture the core use case and desired business outcome. Identify the #1 stall risk (no decision vs procurement vs security vs POC).
-- **Outputs:** Deal snapshot + assumptions/unknowns + validation plan.
-- **Checks:** There is a clear outcome, buyer, and timeline (even if assumed).
+### Use the JOLT method
+Matt Dixon outlines four steps to overcome indecision: Judge the level of indecision, Offer a firm recommendation, Limit exploration by building trust, Take risk off the table by de-risking the deal.
 
-### 2) Map the buying committee + pick the champion
-- **Inputs:** Account org context; known stakeholders.
-- **Actions:** Build a buying-committee map (5–7 common roles) and identify a champion (the person who can drive internal consensus). Define each stakeholder’s goals, risks, and required evidence.
-- **Outputs:** Buying committee map + champion plan (what the champion needs next).
-- **Checks:** A single “primary champion” is named (or a plan to find one within 1–2 calls).
+## Questions to Help Users
 
-### 3) Arm the champion (enable internal selling)
-- **Inputs:** Use case, value narrative, stakeholder concerns.
-- **Actions:** Produce a champion enablement kit: internal pitch memo, stakeholder one-pagers (IT/security, procurement, legal, economic buyer), and objection/FAQ answers. Include proof artifacts (case studies, security docs list, ROI assumptions).
-- **Outputs:** Champion enablement kit.
-- **Checks:** The champion can forward/share these materials without editing (copy/paste ready).
+- "Who is the champion inside the account and what do they need to succeed?"
+- "What would cause this deal to die to 'no decision'?"
+- "What's the buyer's biggest fear about messing up?"
+- "Have you identified the final signatory and what they care about?"
+- "Are you building the business case collaboratively or presenting it?"
+- "What can you do to de-risk this decision for the buyer?"
 
-### 4) Beat “no decision” with decision enablement + MAP
-- **Inputs:** Current stage; risks; target decision date.
-- **Actions:** Make “do nothing” concrete (cost, risk, missed goals). Define the decision to be made, options, and decision criteria. Build a Mutual Action Plan (MAP) with dates, owners, and required outputs (incl. procurement/security milestones).
-- **Outputs:** Decision enablement plan + MAP.
-- **Checks:** MAP includes a decision meeting date and explicit buyer commitments (not just seller tasks).
+## Common Mistakes to Flag
 
-### 5) Design the POC/pilot as a business case (not a feature test)
-- **Inputs:** POC request; success criteria; data available; integration constraints.
-- **Actions:** Reframe the POC as a 30-day pilot to co-create a business case/ROI model. Define measurable success metrics, required data, responsibilities, and decision criteria. If appropriate, propose a **paid** pilot/POC as a seriousness filter.
-- **Outputs:** POC/pilot plan + ROI model + decision criteria.
-- **Checks:** The pilot produces a decision-ready business case, not just “it works.”
+- **Relying on FOMO alone** - Dialing up urgency without addressing the fear of being blamed for failure
+- **Ignoring the champion** - Selling to the economic buyer directly instead of arming an internal advocate
+- **Passive procurement** - Waiting for buyers to navigate internal processes instead of doing it for them
+- **Demo-focused POCs** - Treating proof of concepts as technical tests instead of business case exercises
+- **Best-case projections** - Building business cases around optimistic numbers that set up for disappointment
 
-### 6) Run procurement + security like a project (do the paperwork)
-- **Inputs:** Procurement process; security requirements; contract constraints.
-- **Actions:** Create a tracker for forms, security questionnaires, and vendor onboarding steps. Offer to pre-fill buyer forms to reduce their load. Prepare a minimal security packet checklist and coordinate internal SMEs. Consider contract structuring options (e.g., separate services vs software agreements) where appropriate—without giving legal advice.
-- **Outputs:** Procurement/security tracker + packet checklist + comms plan.
-- **Checks:** Owners and dates exist for every procurement/security task; blockers are explicit.
+## Deep Dive
 
-### 7) Quality gate + finalize (close-to-implementation)
-- **Inputs:** Draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add a signature plan (who signs, when) and an implementation handoff (kickoff, first value milestone). Always include **Risks / Open questions / Next steps**.
-- **Outputs:** Final Enterprise Deal Execution Pack.
-- **Checks:** Next steps are executable this week; assumptions are explicit; “no decision” risk is actively managed.
+For all 25 insights from 9 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (procurement + security stall):**  
-“Use `enterprise-sales`. We’re selling a workflow automation tool to a 5k-employee fintech. We have a champion in Ops, but procurement sent vendor onboarding forms and security wants a questionnaire + SOC 2. Output: an Enterprise Deal Execution Pack with a MAP, procurement/security tracker, and champion enablement one-pagers.”
-
-**Example 2 (POC request, ROI focus):**  
-“Use `enterprise-sales`. A healthcare enterprise wants a POC. ACV target $120k. They’re asking for a technical test, but we want to make it a business-case pilot. Output: a 30-day pilot plan with success metrics, ROI model, and a decision-ready business case.”
-
-**Boundary example:**  
-“Just write a generic enterprise sales script that closes anyone.”  
-Response: explain this skill is deal-specific and evidence-driven; request account context + stakeholders and produce a tailored MAP, champion kit, and pilot/business-case plan instead.
+- Founder Sales
+- Building Sales Team
+- Partnership & BD
+- Product-Led Sales Strategy

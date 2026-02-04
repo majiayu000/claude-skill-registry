@@ -1,7 +1,7 @@
 {
   "name": "memory-forensics",
-  "repo": "wshobson/agents",
-  "path": "plugins/reverse-engineering/skills/memory-forensics/SKILL.md",
-  "source": "github.com/wshobson/agents",
-  "downloaded_at": "2026-02-02T04:38:43.415571Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/memory-forensics/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:21.136407Z"
 }

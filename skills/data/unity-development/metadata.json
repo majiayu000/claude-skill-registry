@@ -1,9 +1,7 @@
 {
   "name": "unity-development",
-  "description": "Comprehensive guide for Unity development. Provides architecture patterns, MCP tool selection, and composite task workflows. Parent skill always referenced for Unity-related tasks. See child skills fo",
-  "repo": "akiojin/unity-mcp-server",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "a5c-ai/babysitter",
+  "path": "plugins/babysitter/skills/babysit/process/specializations/game-development/skills/unity-development/SKILL.md",
+  "source": "github.com/a5c-ai/babysitter",
+  "downloaded_at": "2026-02-04T02:37:07.221025Z"
 }

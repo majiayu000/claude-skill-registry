@@ -1,111 +1,70 @@
 ---
-name: "conducting-interviews"
-description: "Run structured, behavioral hiring interviews and produce an Interview Execution Pack (plan, questions, scorecard, debrief). Use for interview process, interview questions, interview loop, screening, behavioral interview, structured interview. Category: Hiring & Teams."
+name: conducting-interviews
+description: Help users conduct effective hiring interviews. Use when someone is designing an interview loop, crafting interview questions, evaluating candidates in real-time, or building a structured interview process.
 ---
 
-# Conducting Interviews (Structured, Behavioral)
+# Conducting Interviews
 
-## Scope
+Help the user conduct effective hiring interviews using frameworks from 75 product leaders who have interviewed thousands of candidates at top companies.
 
-**Covers**
-- Preparing and running structured interviews (screen + loop) with consistent criteria
-- Behavioral interviewing mapped to competencies/values
-- Getting to “substance over polish” (avoiding “confident but shallow” signal)
-- Capturing evidence, scoring consistently, and writing a debrief-ready summary
+## How to Help
 
-**When to use**
-- “Help me conduct interviews for a <role>.”
-- “Create an interview script / interview question set / scorecard for <role>.”
-- “Design an interview loop and structured rubric for <role>.”
-- “Improve interviewer consistency and reduce bias.”
+When the user asks for help with conducting interviews:
 
-**When NOT to use**
-- You need to define the role outcomes or write the job description (use `writing-job-descriptions` first)
-- You need legal/HR compliance guidance or to adjudicate complex employment risk (this skill is not legal advice)
-- You need compensation/offer strategy or negotiation coaching
+1. **Understand the role** - Ask what position they're hiring for and what competencies matter most
+2. **Design the structure** - Help create a consistent, behavioral-based interview process
+3. **Craft the questions** - Suggest questions that reveal actual capability, not rehearsed answers
+4. **Evaluate effectively** - Guide them on separating signal from noise and avoiding common biases
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Role + level + function (e.g., “Senior PM”, “Engineering Manager”)
-- Interview stage(s) to design/run (screen, hiring manager, panel, etc.) + duration(s)
-- Evaluation criteria: 4–8 competencies/values to measure (or your existing rubric)
-- Company/team context candidates should know (mission, what’s hard, why now)
-- Candidate materials (resume/portfolio) + any areas to probe
+### Use behavioral-based interviewing
+Bill Carr: "We created a set of objective criteria that would be used and an interview methodology that would be used in every interview, which was the objective criteria would be our leadership principles, and the methodology would be behavioral based interviewing." Ask for specific past examples, not hypotheticals.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If criteria aren’t provided, propose a default criteria set and clearly label it as an assumption.
+### Look past polished delivery
+Jackie Bavaro: "Some people sounded really good because they'd say, 'Well, I'll tell you three things. Number one, number two, number three.' And then when I paid attention to my notes, I'd be like, 'Wait, their three ideas weren't actually good ideas.'" Evaluate substance over structure.
 
-## Outputs (deliverables)
+### Drill six levels deep
+Joe Hudson (on Elon's approach): "You ask them six levels down. You improved sales. How did you do that, exactly? Well, we improved the pipeline. How'd you do that, exactly?" True expertise is revealed by drilling into the technical and process-oriented 'how'.
 
-Produce an **Interview Execution Pack** in Markdown (in-chat; or as files if requested):
+### Ask how they prepared
+Austin Hay: "I like to ask people how they prepared for the interview. You're really asking how does the person think? How did they plan? How did they take things seriously or not?" Preparation style reveals planning depth and systems thinking.
 
-1) **Interview plan** (stage purpose, criteria, agenda, timeboxes)
-2) **Question map** (questions → competency/value → what good looks like → follow-up probes)
-3) **Interviewer script** (opening, transitions, probes, close)
-4) **Notes + scorecard** (rating anchors + evidence capture)
-5) **Debrief summary template** (evidence-based strengths/concerns + hire/no-hire signal + follow-ups)
-6) **Risks / Open questions / Next steps** (always included)
+### End with 'anything else?'
+Christopher Lochhead: "At the very end you say, 'Hey, Susan, before we wrap, is there anything else?' And often, the most important thing for that person to communicate comes out then." The formal structure ending unlocks authenticity.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Test failure and learning
+Annie Pearl: "Talk me through your biggest product flop. What happened and what did you do about it?... The rawer the answer in terms of how bad it was and why, the better." Look for brutal honesty and genuine learning.
 
-## Workflow (7 steps)
+### Simulate working together
+Noam Lovinsky: "I generally like interview questions that allow us to kind of do some work together... getting into the details and really watching each other exercise our craft is really important." Collaborative exercises reveal true capability.
 
-### 1) Intake + define the stage
-- **Inputs:** user request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm role, stage(s), duration, and who else interviews. Identify must-measure criteria and any “must not” red flags.
-- **Outputs:** Interview brief + assumptions/unknowns list.
-- **Checks:** You can state the stage goal in one sentence (e.g., “screen for X; sell Y; decide Z”).
+### Use the PEARL framework
+Jackie Bavaro: "Problem, Epiphany, Action, Result and Learning. What's the problem that you thought was worth solving? What's your epiphany? What's the insight that you had?" This structure ensures candidates demonstrate unique insight, not just activity.
 
-### 2) Lock evaluation criteria (don’t improvise later)
-- **Inputs:** competencies/values; role context.
-- **Actions:** Choose 4–8 criteria; define 1–2 “strong” and “weak” anchors per criterion. Ensure each criterion is observable via evidence.
-- **Outputs:** Criteria table with anchors.
-- **Checks:** Every criterion has a definition + evidence hints; no criterion is “vibe”.
+## Questions to Help Users
 
-### 3) Build the question map (behavioral first)
-- **Inputs:** criteria table.
-- **Actions:** Write 1–2 primary questions per criterion (behavioral: “tell me about a time…”). Add probes that force specifics (role, constraints, trade-offs, results, what you’d do differently). Add two global questions: “How did you prepare?” and “Why here?”
-- **Outputs:** Question map table.
-- **Checks:** Each question maps to exactly one primary criterion; no double-barreled questions.
+- "What competencies are most critical for this specific role?"
+- "Are you testing for skills that can be rehearsed or genuine capability?"
+- "How will you distinguish between confident delivery and quality thinking?"
+- "What signals true ownership versus 'we' statements that hide contribution?"
+- "How are you calibrating across multiple interviewers?"
 
-### 4) Write the interviewer script (runbook)
-- **Inputs:** question map; timeboxes.
-- **Actions:** Assemble an interview flow: opening (set context + structure), question sequence, note-taking reminders, and a consistent close: “Is there anything else you want to make sure we covered?”
-- **Outputs:** Interviewer script with timestamps.
-- **Checks:** Script fits in time; includes “sell” moments appropriate to stage; includes candidate questions time.
+## Common Mistakes to Flag
 
-### 5) Prepare for “substance over polish”
-- **Inputs:** question map; candidate materials.
-- **Actions:** Add “substance checks” for polished communicators (ask for concrete examples, counterfactuals, and specific decisions). Add “structure help” for less polished candidates (rephrase, clarify what’s being asked) without leading.
-- **Outputs:** Substance-vs-delivery guardrails embedded in the script.
-- **Checks:** The plan reduces false positives from confident delivery and false negatives from imperfect structure.
+- **Performative interviews** - Rewarding rehearsed STAR responses over actual capability
+- **Not probing deeply enough** - Accepting surface answers without drilling into specifics
+- **High-volume fatigue** - Scheduling back-to-back interviews that degrade judgment
+- **Hypothetical questions** - Testing what candidates say they would do instead of what they have done
+- **Skipping the 'failure' question** - Missing the chance to test self-awareness and growth mindset
 
-### 6) Score using evidence (immediately after)
-- **Inputs:** notes; scorecard template.
-- **Actions:** Fill the scorecard with evidence snippets before discussing with others. Rate each criterion with anchors. Write a 5–8 sentence evidence-based summary and list follow-up questions.
-- **Outputs:** Completed notes + scorecard + summary.
-- **Checks:** Every rating has supporting evidence; the overall recommendation is consistent with criterion ratings.
+## Deep Dive
 
-### 7) Debrief + quality gate + finalize pack
-- **Inputs:** completed scorecard; debrief template.
-- **Actions:** Produce the debrief-ready packet; run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Include Risks/Open questions/Next steps.
-- **Outputs:** Final Interview Execution Pack.
-- **Checks:** Clear recommendation + uncertainty; fair process; next steps defined (additional interview, reference check, work sample, etc.).
+For all 91 insights from 75 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (Screen):** “Create a 30-minute phone screen for a Senior Product Manager. I want to evaluate product sense, execution, and collaboration. Output the Interview Execution Pack with a question map and scorecard.”  
-Expected: timeboxed script, behavioral questions, clear anchors, and a scorecard that captures evidence.
-
-**Example 2 (Loop):** “Design a structured interview loop for a Staff Engineer, including a hiring manager interview and a cross-functional panel. Map questions to our values and include a debrief template.”  
-Expected: stage goals, consistent criteria across interviewers, and artifacts that make debriefs evidence-based.
-
-**Boundary example:** “Just tell me if this candidate is good; I don’t have criteria or notes.”  
-Response: require criteria + evidence; propose default criteria and ask the user to paste notes or run a structured interview first.
+- Writing Job Descriptions
+- Evaluating Candidates
+- Onboarding New Hires
+- Building Team Culture

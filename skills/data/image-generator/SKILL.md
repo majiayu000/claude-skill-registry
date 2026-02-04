@@ -1,198 +1,176 @@
 ---
 name: image-generator
-description: Generate professional visuals using Gemini via browser automation with 6-gate quality control. Use when creating chapter illustrations, diagrams, or teaching visuals. NOT for stock photos or decorative images.
+description: Generate branded images using Google Gemini's image generation API. Supports multiple formats (LinkedIn headers, Medium headers, square concepts, vertical explainers). Reads brand guidelines from the project's BRAND.md file for consistent visual identity.
+allowed-tools: Bash, Read, Write, Grep
 ---
+
+<!--
+  Original source: Sandhya Simhan's blog repo
+  Generalized for claude-code-quickstart SDK
+-->
 
 # Image Generator
 
-Generate professional teaching visuals using Gemini 3 with multi-turn reasoning partnership.
+Generates professional branded images using Google Gemini's image generation API. Automatically reads brand guidelines from the target project to ensure visual consistency.
 
-## Quick Start
+## How It Works
 
+1. **Brand Discovery**: Looks for brand guidelines in the project (see Brand Configuration below)
+2. **Format Selection**: User chooses image format (LinkedIn, Medium, Square, Vertical)
+3. **Prompt Crafting**: Combines user request + brand guidelines + format specs
+4. **Generation**: Calls Gemini API to generate the image
+5. **Output**: Saves to configured output directory
+
+## Brand Configuration
+
+The skill looks for brand guidelines in this order:
+1. `BRAND.md` in project root
+2. `.claude/BRAND.md`
+3. `docs/BRAND.md`
+
+If no brand file exists, the skill will prompt you to create one (see BRAND_TEMPLATE.md).
+
+### Minimal BRAND.md Example
+
+```markdown
+# Brand Guidelines
+
+## Colors
+- **Primary:** #0078AA (Teal)
+- **Background:** #F4F1EB (Off-white)
+- **Accent:** #F69F22 (Yellow)
+
+## Style
+- Modern minimalist
+- Hand-drawn/illustrated feel
+- Generous whitespace
+
+## Tone
+- Professional but friendly
+- Approachable, not corporate
+```
+
+## Image Formats
+
+| Format | Dimensions | Aspect Ratio | Best For |
+|--------|------------|--------------|----------|
+| LinkedIn | 1200×630 | 16:9 | Social sharing, OG tags, blog headers |
+| Medium | 1200×400 | 3:1 | Substack/Medium headers, newsletters |
+| Square | 1080×1080 | 1:1 | Instagram, Twitter, concept cards |
+| Vertical | 1080×1920 | 9:16 | Stories, mobile-first, Pinterest |
+
+See [IMAGE_FORMATS.md](./IMAGE_FORMATS.md) for detailed layout tips.
+
+## Instructions
+
+When the user requests an image:
+
+### 1. Find Brand Guidelines
+```
+Read BRAND.md (or alternative locations) to understand:
+- Color palette (primary, accent, neutral colors)
+- Visual style (minimalist, illustrated, corporate, etc.)
+- Emotional tone (friendly, professional, playful, etc.)
+- Design elements to include/avoid
+```
+
+If no brand file exists, ask if they want to create one or proceed with defaults.
+
+### 2. Determine Format & Output
+- Ask which format they need (or default to LinkedIn 1200×630)
+- Determine output directory:
+  - Default: `assets/images/` or `_assets/images/`
+  - Use existing image directory if one exists
+  - Or ask user preference
+
+### 3. Gather Requirements
+- Blog post topic/title
+- Key themes or concepts to visualize
+- Specific elements to include
+- Level of detail (high-level concept vs detailed)
+
+### 4. Craft Brand-Aligned Prompt
+
+Build a detailed prompt that includes:
+- **Exact dimensions** for the chosen format
+- **Background color** from brand guidelines
+- **Primary and accent colors** from brand palette
+- **Visual style** from brand guidelines
+- **Composition** appropriate for the format
+- **Emotional tone** matching brand voice
+
+**Prompt Template:**
+```
+Create a [style] image ([dimensions]) for [topic].
+
+Background: Use [background color] as the background.
+
+Visual style: [brand style description]. Use [primary color] as the
+primary anchor color with subtle accents of [accent colors]. Include
+[design elements from brand].
+
+Composition: [format-specific layout guidance].
+
+Mood: [brand emotional tone]. [Additional mood guidance].
+```
+
+### 5. Generate Image
+
+Run the generator script:
 ```bash
-# 1. Start browser (via browsing-with-playwright skill)
-bash .claude/skills/browsing-with-playwright/scripts/start-server.sh
-
-# 2. Navigate to Gemini
-# Use browser_navigate to https://gemini.google.com/
-
-# 3. Generate image from creative brief
-# Paste creative brief → Wait 30-35s → Verify 6 gates → Download
+python [skill-path]/generate_image.py \
+  --prompt "your detailed prompt" \
+  --output "filename.png" \
+  --output-dir "assets/images" \
+  --image-type linkedin
 ```
 
-## Core Principles
+### 6. Provide Output
+- Show the generated image path
+- Provide markdown snippet: `![Alt text](path/to/image.png)`
+- Offer to regenerate with adjustments
+- Offer additional formats if needed
 
-1. **Reasoning over prediction** - Creative briefs (Story/Intent/Metaphor) activate reasoning; pixel specs don't
-2. **Multi-turn partnership** - Teach Gemini your standards through principle-based feedback
-3. **6-gate quality** - Explicit pass/fail before download
-4. **Autonomous batch** - No permission-asking between visuals
+## Setup Requirements
 
-## Input: Creative Brief Format
+### 1. Google Gemini API Key
+```bash
+export GEMINI_API_KEY="your-api-key-here"
+```
+Get a key at: https://aistudio.google.com/apikey
 
-Receive from visual-asset-workflow:
-
-```markdown
-## The Story
-
-[Narrative about what's visualized]
-
-## Emotional Intent
-
-[What it should FEEL like]
-
-## Visual Metaphor
-
-[Universal concept for instant comprehension]
-
-## Subject / Composition / Action / Location / Style
-
-[Gemini 3 prompt structure]
-
-## Color Semantics
-
-Blue (#2563eb) = Authority | Green (#10b981) = Execution
-
-## Typography Hierarchy
-
-Largest: Key insight | Medium: Supporting | Smallest: Context
+### 2. Python Dependencies
+```bash
+pip install google-genai pillow
 ```
 
-**Do NOT convert to pixel specs** - use as-is to activate reasoning.
+### 3. Output Directory
+The skill will create the output directory if it doesn't exist.
 
-## Workflow (Per Visual)
+## Tips for Great Images
 
-| Step | Action                                                     | Tool              |
-| ---- | ---------------------------------------------------------- | ----------------- |
-| 1    | Navigate to gemini.google.com                              | browser_navigate  |
-| 2    | Select "🍌 Create Image"                                   | browser_click     |
-| 3    | Paste creative brief                                       | browser_type      |
-| 4    | Wait 30-35 seconds                                         | browser_wait_for  |
-| 5    | Verify 6 gates (below)                                     | Visual inspection |
-| 6    | If fail: Iterate with feedback (max 3)                     | browser_type      |
-| 7    | If pass: Download full size                                | browser_click     |
-| 8    | Copy to `apps/learn-app/static/img/part-{N}/chapter-{NN}/` | Bash              |
-| 9    | Embed in lesson immediately                                | Edit              |
-| 10   | NEW CHAT for next visual                                   | browser_navigate  |
+**Format-Specific:**
+- **LinkedIn**: Horizontal flow, leave left/right third for text
+- **Medium**: Wide cinematic feel, text at top/bottom
+- **Square**: Centered, icon-like clarity, standalone
+- **Vertical**: Top-to-bottom flow, can show progression
 
-## Quality Gates (ALL Must Pass)
+**General:**
+- Clarity over complexity
+- Generous whitespace
+- Intentional color use (don't use all accent colors at once)
+- Match the brand's visual metaphor style
 
-| Gate          | Criterion                                  | Fail Action |
-| ------------- | ------------------------------------------ | ----------- |
-| 1. Spelling   | 99% accuracy (Y-Combinator, Kubernetes)    | Iterate     |
-| 2. Layout     | Proportions match prompt (2×2 not 3×1)     | Iterate     |
-| 3. Color      | Brand colors match (#2563eb not #002050)   | Iterate     |
-| 4. Typography | Largest = key concept (not decoration)     | Iterate     |
-| 5. Teaching   | <5 sec concept grasp at target proficiency | Iterate     |
-| 6. Uniqueness | Not duplicate of existing chapter image    | New chat    |
+## Example Session
 
-**Decision**: ALL pass → Download | ANY fail → Iterate (max 3 tries)
+**User**: "Generate a header for my post about API design patterns"
 
-## Iteration: Principle-Based Feedback
-
-When gate fails, provide teaching feedback:
-
-```
-Gate 4 FAILED: Typography hierarchy incorrect
-
-The largest text is "$100K" (supporting detail) but should be "$3T"
-(key insight students must grasp).
-
-Increase '$3T' to dominant size. Reduce '$100K' to supporting size.
-Information importance drives sizing.
-```
-
-## Batch Mode
-
-When invoked with "generate all visuals":
-
-```
-For EACH visual in list:
-  A. NEW CHAT (context isolation)
-  B. Generate (paste brief)
-  C. Verify 6 gates
-  D. Iterate if needed (max 3)
-  E. Download when pass
-  F. Embed in lesson
-  G. Log "✅ N/M"
-  H. NEXT (no stopping)
-```
-
-**Never ask**: "Continue?" "Pause here?" "Review?"
-
-**Report at END only**:
-
-```
-BATCH COMPLETE
-✅ Generated: 16/18
-⚠️ Deferred: 2 (quality issues)
-Location: apps/learn-app/static/img/part-{N}/
-```
-
-## Proficiency Limits
-
-| Level | Max Elements | Grasp Time |
-| ----- | ------------ | ---------- |
-| A2    | 5-7          | <5 sec     |
-| B1    | 7-10         | <10 sec    |
-| C2    | No limit     | N/A        |
-
-## Token Conservation (Batch Mode)
-
-For >8 visuals, condense briefs:
-
-**Original** (250 tokens):
-
-```
-"Top Layer shows Coordinator at center top with label 'Orchestrator'
-featuring conductor icon, with role 'Strategic oversight'..."
-```
-
-**Condensed** (80 tokens):
-
-```
-"Top Layer - Coordinator: Center top, 'Orchestrator' (conductor),
-Role: 'Strategic oversight', Gold (#fbbf24), Large hexagon."
-```
-
-Keep: Story, Intent, Metaphor, Colors, Reasoning
-Condense: Long examples → Short labels
-
-## Anti-Patterns
-
-| Don't                               | Why                          |
-| ----------------------------------- | ---------------------------- |
-| Accept first output without 6 gates | Quality standard violation   |
-| Ask permission between batch items  | Breaks autonomous agency     |
-| Convert briefs to pixel specs       | Defeats reasoning activation |
-| Skip embedding step                 | Creates orphan images        |
-| Reuse same chat for next visual     | Context contamination        |
-
-## Session Interruption
-
-If session ends mid-batch, create checkpoint:
-
-```markdown
-# Checkpoint: Part {N}
-
-Status: INTERRUPTED at 8/18
-
-## Completed:
-
-- ✅ Image 1: filename (embedded lesson-01.md)
-- ✅ Image 2: filename (embedded lesson-02.md)
-
-## Remaining:
-
-- ⏳ Image 8: filename
-```
-
-On continuation: Read checkpoint → Resume → Update incrementally
-
-## Success Indicators
-
-- ✅ All 6 gates verified before download
-- ✅ Batch completion without permission-asking
-- ✅ Principle-based iteration feedback
-- ✅ Images organized by part/chapter
-- ✅ Immediate embedding (no orphans)
-- ✅ >85% production-ready rate
+**Skill**:
+1. Reads BRAND.md → finds teal primary, illustrated style
+2. Asks: "Which format? LinkedIn (default), Medium, Square, or Vertical?"
+3. User: "LinkedIn"
+4. Asks: "Key visual metaphor? (e.g., building blocks, pipelines, contracts)"
+5. User: "Building blocks connecting"
+6. Crafts prompt with brand colors + dimensions + metaphor
+7. Generates image → saves to `assets/images/api-design-linkedin.png`
+8. Returns: `![API Design Patterns](assets/images/api-design-linkedin.png)`

@@ -1,500 +1,265 @@
 ---
 name: qa-workflow
-description: 'QA validation and fix loop workflow. Use when implementation is complete and needs quality assurance before sign-off.'
-version: 1.0.0
-model: sonnet
-invoked_by: both
-user_invocable: true
-tools: [Read, Write, Edit, Bash, Glob, Grep]
-best_practices:
-  - Be thorough - you are the last line of defense
-  - Be specific with file paths and line numbers
-  - Fix what QA found, don't add features
-error_handling: graceful
-streaming: supported
-source: auto-claude
+description: |
+  기획서를 분석하여 화면별 테스트 케이스(TC)를 생성하고,
+  엑셀 파일로 내보낸 후 브라우저 자동화 테스트를 수행하는 워크플로우입니다.
+
+  트리거:
+  - TC 생성, 테스트 케이스 작성, QA 시트 만들어줘
+  - 기획서 보고 테스트해줘, 자동화 테스트
+  - qa workflow, test case generation, e2e test
+license: MIT
+metadata:
+  author: ai-toolkit
+  version: "1.0.0"
 ---
 
-# QA Workflow Skill
+# QA Workflow - 기획서 기반 테스트 자동화
 
-## Overview
+기획서에서 테스트 케이스를 추출하고 브라우저 테스트까지 수행하는 4단계 워크플로우입니다.
 
-Comprehensive quality assurance workflow that validates implementation completeness and correctness, then iterates through fix cycles until approval. You are the last line of defense before shipping.
+## 핵심 원칙
 
-**Core principle:** You are the last line of defense. If you approve, the feature ships. Be thorough.
+1. **Source of Truth**: 기획서의 화면/기능이 TC의 기준
+2. **Traceability**: 모든 TC는 원본 화면과 매핑
+3. **Executable**: 생성된 TC는 바로 실행 가능한 형태
 
-## When to Use
+---
 
-**Always:**
-
-- After implementation is marked complete
-- Before merging or deploying changes
-- When validating acceptance criteria
-
-**Exceptions:**
-
-- Documentation-only changes (may use minimal validation)
-- Trivial fixes with skip_validation flag
-
-## The Iron Law
+## 워크플로우 개요
 
 ```
-NO SIGN-OFF WITHOUT VERIFICATION OF ALL ACCEPTANCE CRITERIA
+Step 1: Extract      → 기획서에서 화면/기능 추출
+Step 2: TC Generate  → 화면별 테스트 케이스 생성
+Step 3: Excel Export → TC를 엑셀 파일로 내보내기
+Step 4: Browser Test → 엑셀 기준으로 E2E 테스트 수행
 ```
 
-Every acceptance criterion must be verified before approval.
+---
 
-## Part 1: QA Review
+## Step 1: Extract (기획서 분석)
 
-### Phase 0: Load Context
+기획서(이미지, 텍스트, 링크)에서 다음 정보를 추출합니다.
 
-```bash
-# Read the spec (your source of truth for requirements)
-cat .claude/context/specs/[task-name]-spec.md
+**추출 항목:**
+- 화면 목록 및 URL 패턴
+- 각 화면의 주요 기능
+- 사용자 인터랙션 (클릭, 입력, 스크롤 등)
+- 화면 간 전환 흐름
+- 입력 필드와 유효성 검증 규칙
 
-# Read any previous QA reports
-cat .claude/context/reports/qa-report.md 2>/dev/null || echo "No previous report"
+**사용자에게 요청:**
+```
+QA 워크플로우를 시작합니다.
+분석할 기획서를 공유해주세요. (이미지, 텍스트, 링크 모두 가능)
 
-# See what files were changed
-git diff main...HEAD --name-status
-
-# Read QA acceptance criteria from spec
-grep -A 100 "## QA Acceptance" spec.md
+추가로 다음 정보가 있으면 알려주세요:
+- 테스트할 서비스 URL (있는 경우)
+- 테스트 계정 정보 (있는 경우)
 ```
 
-### Phase 1: Verify All Work Completed
+---
 
-```bash
-# Check git log for implementation commits
-git log --oneline main..HEAD
+## Step 2: TC Generate (테스트 케이스 생성)
 
-# Verify expected files were modified
-git diff main...HEAD --name-only
-```
+각 화면별로 테스트 케이스를 생성합니다.
 
-**STOP if implementation is not complete.** QA runs after implementation.
+### TC 분류 체계
 
-### Phase 2: Start Test Environment
+| 우선순위 | 설명 | 예시 |
+|---------|------|------|
+| P0 - Critical | 핵심 비즈니스 플로우 | 로그인, 결제, 회원가입 |
+| P1 - High | 주요 기능 | 검색, 필터링, 상세보기 |
+| P2 - Medium | 보조 기능 | 정렬, 공유, 찜하기 |
+| P3 - Low | 엣지 케이스 | 빈 상태, 에러 처리 |
 
-```bash
-# Start services as needed
-npm run dev  # or appropriate command
-
-# Verify services are running
-curl http://localhost:3000/health 2>/dev/null || echo "Service not responding"
-```
-
-Wait for all services to be healthy before proceeding.
-
-### Phase 3: Run Automated Tests
-
-#### Unit Tests
-
-Run all unit tests for affected areas:
-
-```bash
-# Run test suite
-npm test
-# or
-pytest
-# or
-go test ./...
-```
-
-**Document results:**
-
-```
-UNIT TESTS:
-- [area-name]: PASS/FAIL (X/Y tests)
-```
-
-#### Integration Tests
-
-Run integration tests if applicable:
-
-```bash
-# Run integration test suite
-npm run test:integration
-```
-
-**Document results:**
-
-```
-INTEGRATION TESTS:
-- [test-name]: PASS/FAIL
-```
-
-#### End-to-End Tests
-
-If E2E tests exist:
-
-```bash
-# Run E2E test suite
-npm run test:e2e
-```
-
-**Document results:**
-
-```
-E2E TESTS:
-- [flow-name]: PASS/FAIL
-```
-
-### Phase 4: Manual Verification
-
-For each acceptance criterion in the spec:
-
-1. **Navigate** to the relevant area
-2. **Verify** the criterion is met
-3. **Check** for console errors
-4. **Test** edge cases
-5. **Document** findings
-
-```
-MANUAL VERIFICATION:
-- [Criterion 1]: PASS/FAIL
-  - Evidence: [what you observed]
-- [Criterion 2]: PASS/FAIL
-  - Evidence: [what you observed]
-```
-
-### Phase 5: Code Review
-
-#### Security Review
-
-Check for common vulnerabilities:
-
-```bash
-# Look for security issues
-grep -r "eval(" --include="*.js" --include="*.ts" . 2>/dev/null
-grep -r "innerHTML" --include="*.js" --include="*.ts" . 2>/dev/null
-grep -r "dangerouslySetInnerHTML" --include="*.tsx" --include="*.jsx" . 2>/dev/null
-
-# Check for hardcoded secrets
-grep -rE "(password|secret|api_key|token)\s*=\s*['\"][^'\"]+['\"]" . 2>/dev/null
-```
-
-#### Pattern Compliance
-
-Verify code follows established patterns:
-
-```bash
-# Compare new code to existing patterns
-# Read pattern files, compare structure
-```
-
-**Document findings:**
-
-```
-CODE REVIEW:
-- Security issues: [list or "None"]
-- Pattern violations: [list or "None"]
-- Code quality: PASS/FAIL
-```
-
-### Phase 6: Regression Check
-
-Run full test suite to catch regressions:
-
-```bash
-# Run ALL tests, not just new ones
-npm test -- --coverage
-```
-
-Verify key existing functionality still works.
-
-```
-REGRESSION CHECK:
-- Full test suite: PASS/FAIL (X/Y tests)
-- Existing features verified: [list]
-- Regressions found: [list or "None"]
-```
-
-### Phase 7: Generate QA Report
+### TC 템플릿
 
 ```markdown
-# QA Validation Report
+### TC-[화면코드]-[번호]: [테스트 제목]
 
-**Task**: [task-name]
-**Date**: [timestamp]
+**우선순위**: P0/P1/P2/P3
+**화면**: [화면명]
+**원본 참조**: [기획서 페이지/위치]
 
-## Summary
+**사전 조건**:
+- [필요한 상태/데이터]
 
-| Category            | Status    | Details     |
-| ------------------- | --------- | ----------- |
-| Unit Tests          | PASS/FAIL | X/Y passing |
-| Integration Tests   | PASS/FAIL | X/Y passing |
-| E2E Tests           | PASS/FAIL | X/Y passing |
-| Manual Verification | PASS/FAIL | [summary]   |
-| Security Review     | PASS/FAIL | [summary]   |
-| Pattern Compliance  | PASS/FAIL | [summary]   |
-| Regression Check    | PASS/FAIL | [summary]   |
+**테스트 단계**:
+1. [행동] → [예상 결과]
+2. [행동] → [예상 결과]
 
-## Issues Found
+**기대 결과**:
+- [검증할 내용]
 
-### Critical (Blocks Sign-off)
-
-1. [Issue description] - [File/Location]
-
-### Major (Should Fix)
-
-1. [Issue description] - [File/Location]
-
-### Minor (Nice to Fix)
-
-1. [Issue description] - [File/Location]
-
-## Verdict
-
-**SIGN-OFF**: [APPROVED / REJECTED]
-
-**Reason**: [Explanation]
-
-**Next Steps**:
-
-- [If approved: Ready for merge]
-- [If rejected: List of fixes needed]
+**테스트 데이터**:
+| 필드 | 값 | 비고 |
+|------|-----|------|
+| [입력필드] | [값] | [설명] |
 ```
 
-Save report to `.claude/context/reports/qa-report.md`
+### 화면별 필수 TC
 
-### Phase 8: Decision
+**모든 화면 공통:**
+- 화면 진입 확인
+- 필수 요소 표시 확인
+- 반응형 동작 (모바일/태블릿/PC)
 
-#### If APPROVED
+**폼 화면:**
+- 정상 입력 후 제출
+- 필수 필드 누락
+- 유효성 검증 실패
+- 중복 제출 방지
 
-```
-=== QA VALIDATION COMPLETE ===
-
-Status: APPROVED
-
-All acceptance criteria verified:
-- Unit tests: PASS
-- Integration tests: PASS
-- Manual verification: PASS
-- Security review: PASS
-- Regression check: PASS
-
-The implementation is production-ready.
-Ready for merge.
-```
-
-#### If REJECTED
-
-Create fix request and proceed to Part 2.
+**목록 화면:**
+- 데이터 로딩
+- 빈 상태 표시
+- 페이지네이션/무한스크롤
+- 필터/정렬
 
 ---
 
-## Part 2: QA Fix Loop
+## Step 3: Excel Export (엑셀 내보내기)
 
-### Phase 0: Load Fix Request
+TC를 엑셀 파일로 내보냅니다.
 
-```bash
-# Read the QA report with issues
-cat .claude/context/reports/qa-report.md
+### 엑셀 시트 구조
 
-# Identify issues to fix
-grep -A 50 "## Issues Found" .claude/context/reports/qa-report.md
-```
+**Sheet 1: TC 목록 (Summary)**
 
-Extract from report:
+| 열 | 내용 |
+|----|------|
+| A | TC ID |
+| B | 화면 |
+| C | 테스트 제목 |
+| D | 우선순위 |
+| E | 사전조건 |
+| F | 테스트 단계 |
+| G | 기대 결과 |
+| H | 상태 (Pass/Fail/Skip) |
+| I | 실행 일시 |
+| J | 비고 |
 
-- Exact issues to fix
-- File locations
-- Required fixes
-- Verification criteria
+**Sheet 2: 화면별 커버리지**
 
-### Phase 1: Parse Fix Requirements
+| 열 | 내용 |
+|----|------|
+| A | 화면명 |
+| B | 총 TC 수 |
+| C | P0 | D | P1 | E | P2 | F | P3 |
+| G | Pass | H | Fail | I | Skip |
 
-Create a checklist from the QA report:
+### 엑셀 생성 스크립트
 
-```
-FIXES REQUIRED:
-1. [Issue Title]
-   - Location: [file:line]
-   - Problem: [description]
-   - Fix: [what to do]
-   - Verify: [how to check]
-
-2. [Issue Title]
-   ...
-```
-
-You must address EVERY issue.
-
-### Phase 2: Fix Issues One by One
-
-For each issue:
-
-1. **Read** the problem area
-2. **Understand** what's wrong
-3. **Implement** the fix
-4. **Verify** the fix locally
-
-**Follow these rules:**
-
-- Make the MINIMAL change needed
-- Don't refactor surrounding code
-- Don't add features
-- Match existing patterns
-- Test after each fix
-
-### Phase 3: Run Tests
-
-After all fixes are applied:
-
-```bash
-# Run the full test suite
-npm test
-
-# Run specific tests that were failing
-[failed test commands from QA report]
-```
-
-**All tests must pass before proceeding.**
-
-### Phase 4: Self-Verification
-
-Before requesting re-review, verify each fix:
+Python(openpyxl) 또는 Node.js(xlsx)로 생성합니다.
 
 ```
-SELF-VERIFICATION:
-[ ] Issue 1: [title] - FIXED
-    - Verified by: [how you verified]
-[ ] Issue 2: [title] - FIXED
-    - Verified by: [how you verified]
-...
-
-ALL ISSUES ADDRESSED: YES/NO
-```
-
-If any issue is not fixed, go back to Phase 2.
-
-### Phase 5: Commit Fixes
-
-```bash
-# Add fixed files
-git add [fixed-files]
-
-# Commit with descriptive message
-git commit -m "fix: Address QA issues
-
-Fixes:
-- [Issue 1 title]
-- [Issue 2 title]
-
-Verified:
-- All tests pass
-- Issues verified locally"
-```
-
-### Phase 6: Signal for Re-Review
-
-```
-=== QA FIXES COMPLETE ===
-
-Issues fixed: [N]
-
-1. [Issue 1] - FIXED
-   Commit: [hash]
-
-2. [Issue 2] - FIXED
-   Commit: [hash]
-
-All tests passing.
-Ready for QA re-validation.
+생성된 엑셀 파일 경로를 안내합니다:
+📁 [프로젝트경로]/qa-output/tc-[프로젝트명]-[날짜].xlsx
 ```
 
 ---
 
-## QA Loop Behavior
+## Step 4: Browser Test (Chrome MCP로 테스트)
 
-The QA → Fix → QA loop continues until:
+Chrome MCP를 사용하여 실제 브라우저에서 TC를 수행합니다.
 
-1. **All critical issues resolved**
-2. **All tests pass**
-3. **No regressions**
-4. **QA approves**
+### 테스트 실행 흐름
 
-Maximum iterations: 5
+```
+1. 엑셀 파일의 TC 목록 확인
+2. Chrome MCP로 브라우저 제어
+3. TC 단계별로 액션 수행 및 검증
+4. 결과 기록 (Pass/Fail + 스크린샷)
+```
 
-If max iterations reached without approval:
+### Chrome MCP 활용
 
-- Escalate to human review
-- Document all remaining issues
-- Save detailed report
+**페이지 이동:**
+```
+[URL]로 이동해줘
+```
 
-## Severity Guidelines
+**요소 클릭:**
+```
+"로그인" 버튼을 클릭해줘
+```
 
-**CRITICAL** - Blocks sign-off:
+**텍스트 입력:**
+```
+이메일 입력란에 "test@example.com"을 입력해줘
+```
 
-- Failing tests
-- Security vulnerabilities
-- Missing required functionality
-- Data corruption risks
+**검증:**
+```
+"환영합니다" 텍스트가 화면에 표시되는지 확인해줘
+```
 
-**MAJOR** - Should fix:
+**스크린샷:**
+```
+현재 화면을 스크린샷으로 저장해줘
+```
 
-- Missing edge case handling
-- Performance issues
-- UX problems
-- Pattern violations
+### TC 실행 프로세스
 
-**MINOR** - Nice to fix:
+각 TC에 대해 다음을 수행합니다:
 
-- Style inconsistencies
-- Documentation gaps
-- Minor optimizations
+1. **사전 조건 확인**: 필요한 상태/데이터 준비
+2. **단계별 실행**: TC의 테스트 단계를 순서대로 수행
+3. **결과 검증**: 기대 결과와 실제 결과 비교
+4. **결과 기록**: Pass/Fail 판정 및 스크린샷 저장
 
-## Verification Checklist
+### 실행 요청 형식
 
-Before approving:
+```
+TC-[ID]를 실행해줘
 
-- [ ] All unit tests pass
-- [ ] All integration tests pass
-- [ ] All E2E tests pass (if applicable)
-- [ ] Manual verification of acceptance criteria
-- [ ] Security review complete
-- [ ] Pattern compliance verified
-- [ ] No regressions found
-- [ ] QA report generated
+또는
 
-## Common Mistakes
+P0 우선순위 TC를 모두 실행해줘
 
-### Approving Too Quickly
+또는
 
-**Why it's wrong:** Shipping bugs to users.
+[화면명] 관련 TC를 실행해줘
+```
 
-**Do this instead:** Check EVERYTHING in the acceptance criteria.
+---
 
-### Vague Issue Reports
+## 결과 보고
 
-**Why it's wrong:** Developer can't fix what they don't understand.
+테스트 완료 후 다음 형식으로 결과를 보고합니다:
 
-**Do this instead:** Exact file paths, line numbers, reproducible steps.
+```markdown
+## QA 테스트 결과 요약
 
-### Fixing Too Much
+**실행 일시**: YYYY-MM-DD HH:mm
+**대상 서비스**: [URL]
+**총 TC 수**: XX개
 
-**Why it's wrong:** Introducing new bugs while fixing old ones.
+### 결과 현황
 
-**Do this instead:** Minimal changes. Fix only what QA found.
+| 상태 | 개수 | 비율 |
+|------|------|------|
+| Pass | XX | XX% |
+| Fail | XX | XX% |
+| Skip | XX | XX% |
 
-## Integration with Other Skills
+### 실패 TC 목록
 
-This skill works well with:
+| TC ID | 화면 | 제목 | 실패 사유 |
+|-------|------|------|----------|
+| [ID] | [화면] | [제목] | [스크린샷/에러] |
 
-- **complexity-assessment**: Determines validation depth
-- **tdd**: Use TDD to write tests for fixes
-- **debugging**: Use when investigating test failures
+### 첨부 파일
+- 📊 TC 엑셀: [경로]
+- 📸 스크린샷: [경로]
+```
 
-## Memory Protocol
+---
 
-**Before starting:**
-Read `.claude/context/memory/learnings.md`
+## 상세 가이드
 
-**After completing:**
-
-- New pattern -> `.claude/context/memory/learnings.md`
-- Issue found -> `.claude/context/memory/issues.md`
-- Decision made -> `.claude/context/memory/decisions.md`
-
-> ASSUME INTERRUPTION: If it's not in memory, it didn't happen.
+| 주제 | 참조 |
+|------|------|
+| TC 설계 패턴 | [references/tc-patterns.md](references/tc-patterns.md) |
+| 엑셀 생성 스크립트 | [scripts/generate-excel.ts](scripts/generate-excel.ts) |

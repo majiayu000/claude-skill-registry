@@ -40,6 +40,12 @@ last_updated: 2026-01-28
 html_output: true
 enforcement_level: strict
 tags: [qcsd, ideation, htsm, quality-criteria, risk-storming, testability, swarm, parallel, ddd]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qcsd-ideation-swarm.yaml
+
 ---
 
 # QCSD Ideation Swarm v7.0

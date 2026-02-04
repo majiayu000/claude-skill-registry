@@ -1,267 +1,294 @@
 ---
 name: image-processing
-description: >
-  Implement image processing for PhotoVault using Sharp and streaming patterns.
-  Use when working with photo uploads, thumbnail generation, EXIF handling,
-  ZIP extraction, or optimizing images for web. Includes memory management
-  for serverless and PhotoVault storage structure.
+description: Image decoding, encoding, and manipulation using the `image` crate
 ---
 
-# ⚠️ MANDATORY WORKFLOW - DO NOT SKIP
+# image-processing
 
-**When this skill activates, you MUST follow the expert workflow before writing any code:**
+The `image` crate provides native Rust implementations for image encoding/decoding. In script-kit-gpui, it's used for PNG encoding/decoding for app icons and clipboard images.
 
-1. **Spawn Domain Expert** using the Task tool with this prompt:
-   ```
-   Read the expert prompt at: C:\Users\natha\Stone-Fence-Brain\VENTURES\PhotoVault\claude\experts\image-processing-expert.md
+**Crate version**: `0.25` with features `["png"]` only (no default features for minimal binary size)
 
-   Then research the codebase and write an implementation plan to: docs/claude/plans/image-[task-name]-plan.md
+## Key Types
 
-   Task: [describe the user's request]
-   ```
-
-2. **Spawn QA Critic** after expert returns, using Task tool:
-   ```
-   Read the QA critic prompt at: C:\Users\natha\Stone-Fence-Brain\VENTURES\PhotoVault\claude\experts\qa-critic-expert.md
-
-   Review the plan at: docs/claude/plans/image-[task-name]-plan.md
-   Write critique to: docs/claude/plans/image-[task-name]-critique.md
-   ```
-
-3. **Present BOTH plan and critique to user** - wait for approval before implementing
-
-**DO NOT read files and start coding. DO NOT rationalize that "this is simple." Follow the workflow.**
-
----
-
-# Image Processing Integration
-
-## Core Principles
-
-### Never Load Large Files Into Memory
-
-Use streams for anything over a few MB. Serverless functions have memory limits.
-
-```typescript
-// ❌ BAD: Loads entire file into memory
-const buffer = await readFile(largeFile)
-const result = await sharp(buffer).resize(1920).toBuffer()
-
-// ✅ GOOD: Stream processing
-import { pipeline } from 'stream/promises'
-
-await pipeline(
-  createReadStream(inputPath),
-  sharp().resize(1920).jpeg({ quality: 85 }),
-  createWriteStream(outputPath)
-)
+### DynamicImage
+Enum over supported buffer formats with automatic format conversion:
+```rust
+let img = image::load_from_memory(png_data)?;        // -> DynamicImage
+let rgba = img.to_rgba8();                           // -> RgbaImage (ImageBuffer<Rgba<u8>>)
+let (width, height) = img.dimensions();              // GenericImageView trait
 ```
 
-### Generate Multiple Sizes Upfront
+### RgbaImage (ImageBuffer<Rgba<u8>, Vec<u8>>)
+Fixed-format buffer for RGBA pixels:
+```rust
+// Create from raw bytes (must be exactly width * height * 4 bytes)
+let buffer = image::RgbaImage::from_raw(width, height, rgba_bytes)
+    .expect("Invalid dimensions or byte count");
 
-Don't resize on-demand - generate all needed sizes at upload time.
+// Create new empty
+let mut img = image::RgbaImage::new(width, height);
+```
 
-```typescript
-const SIZES = {
-  thumbnail: { width: 300, height: 300 },   // Grid view
-  preview: { width: 800, height: 800 },     // Quick preview
-  display: { width: 1920, height: 1920 },   // Full screen
-  original: null,                           // Keep original
+### Frame
+Animation frame wrapper used by GPUI's RenderImage:
+```rust
+let frame = image::Frame::new(rgba_image);
+let render_image = RenderImage::new(smallvec![frame]);
+```
+
+### Pixel Types
+```rust
+image::Rgba([255, 0, 0, 255])  // Red pixel
+image::Rgb([255, 255, 255])    // White pixel (no alpha)
+image::Luma([128])             // Grayscale
+```
+
+## Usage in script-kit-gpui
+
+### PNG Decoding for App Icons (`list_item.rs`)
+```rust
+pub fn decode_png_to_render_image(png_data: &[u8]) -> Result<Arc<RenderImage>, image::ImageError> {
+    use image::GenericImageView;
+    
+    let img = image::load_from_memory(png_data)?;
+    let mut rgba = img.to_rgba8();
+    let (width, height) = img.dimensions();
+    
+    // IMPORTANT: GPUI/Metal expects BGRA format
+    // Must swap R and B channels when creating RenderImage directly
+    for pixel in rgba.chunks_exact_mut(4) {
+        pixel.swap(0, 2); // RGBA -> BGRA
+    }
+    
+    let buffer = image::RgbaImage::from_raw(width, height, rgba.into_raw())
+        .expect("Failed to create image buffer");
+    let frame = image::Frame::new(buffer);
+    
+    Ok(Arc::new(RenderImage::new(SmallVec::from_elem(frame, 1))))
 }
 ```
 
-### Always Auto-Orient
+### PNG Encoding for Screenshots (`platform.rs`)
+```rust
+use image::codecs::png::PngEncoder;
+use image::ImageEncoder;
 
-EXIF orientation metadata can make photos display rotated.
-
-```typescript
-sharp(buffer)
-  .rotate()  // Auto-rotate based on EXIF
-  .resize(1920, 1920, { fit: 'inside' })
-  .jpeg({ quality: 85 })
+let mut png_data = Vec::new();
+let encoder = PngEncoder::new(&mut png_data);
+encoder.write_image(
+    &final_image,           // &[u8] or ImageBuffer
+    width, 
+    height, 
+    image::ExtendedColorType::Rgba8
+)?;
 ```
 
-## Anti-Patterns
+### Clipboard Image Handling (`clipboard_history/image.rs`)
+```rust
+// Encode clipboard to PNG
+let rgba_image = image::RgbaImage::from_raw(
+    image.width as u32,
+    image.height as u32,
+    image.bytes.to_vec(),
+).context("Failed to create RGBA image")?;
 
-**Loading entire ZIP into memory**
-```typescript
-// WRONG: ZIP could be 2GB
-const zipBuffer = await readFile(zipPath)
-const zip = new AdmZip(zipBuffer)
+let mut png_data = Vec::new();
+rgba_image.write_to(&mut Cursor::new(&mut png_data), image::ImageFormat::Png)?;
 
-// RIGHT: Stream extraction
-import unzipper from 'unzipper'
-const directory = await unzipper.Open.file(zipPath)
-for (const entry of directory.files) {
-  // Process one at a time
+// Decode PNG to clipboard format
+let img = image::load_from_memory_with_format(&png_bytes, image::ImageFormat::Png)?;
+let rgba = img.to_rgba8();
+```
+
+### Image Resizing for Screenshots
+```rust
+let resized = image::imageops::resize(
+    &image,
+    new_width,
+    new_height,
+    image::imageops::FilterType::Lanczos3,  // High-quality downscaling
+);
+```
+
+## Loading Images
+
+### From File
+```rust
+let img = image::open("path/to/image.png")?;  // Auto-detects format
+```
+
+### From Bytes (Most Common in script-kit-gpui)
+```rust
+// Auto-detect format
+let img = image::load_from_memory(bytes)?;
+
+// Explicit format (faster, no guessing)
+let img = image::load_from_memory_with_format(bytes, image::ImageFormat::Png)?;
+```
+
+### Dimensions Only (No Full Decode)
+```rust
+let cursor = std::io::Cursor::new(&png_bytes);
+let reader = image::ImageReader::with_format(cursor, image::ImageFormat::Png);
+let (width, height) = reader.into_dimensions()?;  // Fast header-only parse
+```
+
+## Pixel Access
+
+### Reading Pixels
+```rust
+use image::GenericImageView;
+
+let pixel = img.get_pixel(x, y);  // Returns Rgba<u8> or similar
+let (r, g, b, a) = (pixel[0], pixel[1], pixel[2], pixel[3]);
+```
+
+### Writing Pixels
+```rust
+use image::GenericImage;
+
+img.put_pixel(x, y, image::Rgba([255, 0, 0, 255]));
+```
+
+### Iterating All Pixels
+```rust
+// Immutable iteration
+for (x, y, pixel) in img.pixels() {
+    // pixel is Rgba<u8>
+}
+
+// Direct buffer access (fastest)
+for pixel in rgba.chunks_exact_mut(4) {
+    pixel.swap(0, 2);  // Swap R and B
 }
 ```
 
-**Processing all photos in parallel**
-```typescript
-// WRONG: Memory explosion with 100 photos
-await Promise.all(photos.map(p => processPhoto(p)))
+## Format Support
 
-// RIGHT: Limit concurrency
-import pLimit from 'p-limit'
-const limit = pLimit(3)
-await Promise.all(photos.map(p => limit(() => processPhoto(p))))
+Features enabled in script-kit-gpui: **`png` only**
+
+```toml
+image = { version = "0.25", default-features = false, features = ["png"] }
 ```
 
-**Not cleaning up temp files**
-```typescript
-// WRONG: Temp files accumulate
-const tempPath = `/tmp/${uuid()}.jpg`
-await writeFile(tempPath, buffer)
-await processImage(tempPath)
+Available formats (require feature flags):
+- `png` - PNG decoding/encoding
+- `jpeg` - JPEG decoding/encoding  
+- `gif` - GIF decoding/encoding
+- `webp` - WebP decoding/encoding
+- `bmp`, `ico`, `tiff`, etc.
 
-// RIGHT: Always cleanup
-try {
-  await writeFile(tempPath, buffer)
-  await processImage(tempPath)
-} finally {
-  await unlink(tempPath).catch(() => {})
+Default features include many formats - disable for smaller binaries.
+
+## Memory Considerations
+
+### Large Image Safety
+```rust
+// RgbaImage::from_raw returns None if dimensions don't match byte count
+let buffer = image::RgbaImage::from_raw(width, height, bytes)
+    .context("Dimension mismatch")?;
+
+// Validate dimensions before allocation
+let expected_bytes = (width as usize) * (height as usize) * 4;
+if bytes.len() != expected_bytes {
+    return Err(anyhow!("Invalid byte count"));
 }
 ```
 
-**Over-compressing images**
-```typescript
-// WRONG: Quality 50 looks terrible
-sharp(buffer).jpeg({ quality: 50 })
+### Avoiding Copies with SmallVec
+```rust
+// BAD: SmallVec::from_elem clones the frame buffer
+let render_image = RenderImage::new(SmallVec::from_elem(frame, 1));
 
-// RIGHT: Balance quality and size
-sharp(buffer).jpeg({ quality: 85, progressive: true })
+// GOOD: Use smallvec! macro - no clone
+use smallvec::smallvec;
+let render_image = RenderImage::new(smallvec![frame]);
 ```
 
-**Enlarging small images**
-```typescript
-// WRONG: 800px enlarged to 1920px looks bad
-sharp(buffer).resize(1920, 1920)
-
-// RIGHT: Prevent enlargement
-sharp(buffer).resize(1920, 1920, {
-  fit: 'inside',
-  withoutEnlargement: true
-})
-```
-
-## Photo Processing Pipeline
-
-```typescript
-// src/lib/image/processor.ts
-import sharp from 'sharp'
-import pLimit from 'p-limit'
-
-export async function processPhoto(inputBuffer: Buffer, filename: string) {
-  const image = sharp(inputBuffer)
-  const metadata = await image.metadata()
-  const oriented = sharp(inputBuffer).rotate()
-
-  const [original, thumbnail, display] = await Promise.all([
-    oriented.clone()
-      .jpeg({ quality: 92, progressive: true })
-      .toBuffer(),
-    oriented.clone()
-      .resize(300, 300, { fit: 'inside', withoutEnlargement: true })
-      .jpeg({ quality: 80, progressive: true })
-      .toBuffer(),
-    oriented.clone()
-      .resize(1920, 1920, { fit: 'inside', withoutEnlargement: true })
-      .jpeg({ quality: 85, progressive: true })
-      .toBuffer(),
-  ])
-
-  return {
-    filename,
-    original,
-    thumbnail,
-    display,
-    metadata: {
-      width: metadata.width!,
-      height: metadata.height!,
-      format: metadata.format!,
-      size: inputBuffer.length,
-    },
-  }
+### Decode Once, Cache Forever
+```rust
+// WRONG: Decoding during render (called 60fps!)
+fn render(&mut self, cx: &mut ViewContext<Self>) {
+    let img = decode_png_to_render_image(&self.png_data);  // Slow!
 }
 
-// Process batch with concurrency limit
-export async function processPhotoBatch(photos: Array<{ buffer: Buffer; filename: string }>) {
-  const limit = pLimit(3)  // Max 3 concurrent
-  return Promise.all(photos.map(photo =>
-    limit(() => processPhoto(photo.buffer, photo.filename))
-  ))
+// RIGHT: Decode once, store Arc<RenderImage>
+fn new(png_data: &[u8]) -> Self {
+    Self {
+        cached_image: decode_png_to_render_image(png_data).ok(),
+    }
 }
 ```
 
-## ZIP Extraction with Streaming
+## Anti-patterns
 
-```typescript
-// src/lib/image/zip-extractor.ts
-import unzipper from 'unzipper'
-import path from 'path'
+### Forgetting BGRA Conversion for Metal/GPUI
+```rust
+// WRONG: Assumes RGBA works
+let frame = image::Frame::new(rgba_image);
+let render_image = RenderImage::new(smallvec![frame]);  // Colors wrong!
 
-const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.heic']
-
-export async function extractPhotosFromZip(zipPath: string) {
-  const directory = await unzipper.Open.file(zipPath)
-  const photos: Array<{ filename: string; buffer: Buffer }> = []
-
-  for (const entry of directory.files) {
-    if (entry.type === 'Directory') continue
-    if (entry.path.includes('__MACOSX')) continue
-    if (entry.path.startsWith('.')) continue
-
-    const ext = path.extname(entry.path).toLowerCase()
-    if (!IMAGE_EXTENSIONS.includes(ext)) continue
-
-    const buffer = await entry.buffer()
-    photos.push({ filename: path.basename(entry.path), buffer })
-  }
-
-  return photos
+// RIGHT: Convert RGBA -> BGRA for Metal
+for pixel in rgba.chunks_exact_mut(4) {
+    pixel.swap(0, 2);
 }
 ```
 
-## PhotoVault Configuration
+### Not Validating Byte Length
+```rust
+// WRONG: Panics on invalid input
+let img = image::RgbaImage::from_raw(w, h, bytes).unwrap();
 
-### Storage Structure
-
-```
-gallery-photos/
-├── {gallery_id}/
-│   ├── originals/      # Full quality, for download
-│   ├── thumbnails/     # 300px, for grid
-│   └── full/           # 1920px, for display
+// RIGHT: Handle gracefully
+let img = image::RgbaImage::from_raw(w, h, bytes)
+    .context("Invalid dimensions or corrupt data")?;
 ```
 
-### Size Guidelines
+### Loading Same Image Multiple Times
+```rust
+// WRONG: Decodes same icon for every list item
+for item in items {
+    let icon = decode_png(&item.icon_path);  // N decodes!
+}
 
-| Version | Max Size | Quality | Use Case |
-|---------|----------|---------|----------|
-| Original | Unchanged | 92% | Download |
-| Display | 1920px | 85% | Full screen view |
-| Thumbnail | 300px | 80% | Grid/gallery |
-
-### Dependencies
-
-```bash
-npm install sharp p-limit unzipper exif-reader blurhash
+// RIGHT: Cache decoded images by path/hash
+let icon_cache: HashMap<String, Arc<RenderImage>> = HashMap::new();
 ```
 
-### Serverless Limits (Vercel)
+### Using Default Features
+```rust
+# WRONG: Pulls in all decoders, huge binary
+image = "0.25"
 
-- Memory: 1024MB default, up to 3008MB
-- Timeout: 10s (Hobby), 60s (Pro)
-- Payload: 4.5MB
+# RIGHT: Only what you need
+image = { version = "0.25", default-features = false, features = ["png"] }
+```
 
-For large uploads, use the desktop app with chunked uploads.
+## Error Handling
 
-## Debugging Checklist
+All decode operations return `Result<_, image::ImageError>`:
+```rust
+use image::ImageError;
 
-1. Are large files being streamed, not loaded into memory?
-2. Is concurrency limited with pLimit?
-3. Is .rotate() called to fix EXIF orientation?
-4. Are progressive JPEGs being generated?
-5. Is withoutEnlargement preventing upscaling?
-6. Are temp files cleaned up in finally blocks?
+match image::load_from_memory(bytes) {
+    Ok(img) => // success
+    Err(ImageError::Decoding(_)) => // corrupt/invalid format
+    Err(ImageError::IoError(_)) => // read failure
+    Err(ImageError::Limits(_)) => // image too large
+    Err(e) => // other error
+}
+```
+
+## Quick Reference
+
+| Operation | Code |
+|-----------|------|
+| Load PNG from bytes | `image::load_from_memory_with_format(bytes, ImageFormat::Png)?` |
+| Convert to RGBA | `img.to_rgba8()` |
+| Get dimensions | `img.dimensions()` or `(img.width(), img.height())` |
+| Create from raw | `RgbaImage::from_raw(w, h, bytes)?` |
+| Encode to PNG | `img.write_to(&mut cursor, ImageFormat::Png)?` |
+| Resize | `imageops::resize(&img, w, h, FilterType::Lanczos3)` |
+| Create Frame | `Frame::new(rgba_image)` |
+| Dimensions only | `ImageReader::with_format(cursor, fmt).into_dimensions()?` |

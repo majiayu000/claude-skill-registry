@@ -1,163 +1,84 @@
 ---
 name: trello
-description: Enables Claude to create, manage, and organize boards, lists, and cards in Trello via Playwright MCP
-category: productivity
+description: Manage Trello boards, lists, and cards via the Trello REST API.
+homepage: https://developer.atlassian.com/cloud/trello/rest/
+metadata: {"espada":{"emoji":"📋","requires":{"bins":["jq"],"env":["TRELLO_API_KEY","TRELLO_TOKEN"]}}}
 ---
 
 # Trello Skill
 
-## Overview
-Claude can manage your Trello boards to organize projects with visual Kanban boards, lists, and cards. Create workflows, track progress, and collaborate with team members.
-
-## Quick Install
-
-```bash
-curl -sSL https://canifi.com/skills/trello/install.sh | bash
-```
-
-Or manually:
-```bash
-cp -r skills/trello ~/.canifi/skills/
-```
+Manage Trello boards, lists, and cards directly from Espada.
 
 ## Setup
 
-Configure via [canifi-env](https://canifi.com/setup/scripts):
+1. Get your API key: https://trello.com/app-key
+2. Generate a token (click "Token" link on that page)
+3. Set environment variables:
+   ```bash
+   export TRELLO_API_KEY="your-api-key"
+   export TRELLO_TOKEN="your-token"
+   ```
 
+## Usage
+
+All commands use curl to hit the Trello REST API.
+
+### List boards
 ```bash
-# First, ensure canifi-env is installed:
-# curl -sSL https://canifi.com/install.sh | bash
-
-canifi-env set TRELLO_EMAIL "your-email@example.com"
+curl -s "https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" | jq '.[] | {name, id}'
 ```
 
-## Privacy & Authentication
-
-**Your credentials, your choice.** Canifi LifeOS respects your privacy.
-
-### Option 1: Manual Browser Login (Recommended)
-If you prefer not to share credentials with Claude Code:
-1. Complete the [Browser Automation Setup](/setup/automation) using CDP mode
-2. Login to the service manually in the Playwright-controlled Chrome window
-3. Claude will use your authenticated session without ever seeing your password
-
-### Option 2: Environment Variables
-If you're comfortable sharing credentials, you can store them locally:
+### List lists in a board
 ```bash
-canifi-env set SERVICE_EMAIL "your-email"
-canifi-env set SERVICE_PASSWORD "your-password"
+curl -s "https://api.trello.com/1/boards/{boardId}/lists?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" | jq '.[] | {name, id}'
 ```
 
-**Note**: Credentials stored in canifi-env are only accessible locally on your machine and are never transmitted.
-
-## Capabilities
-- Create and manage boards
-- Add and organize lists
-- Create and edit cards
-- Move cards between lists
-- Add labels and due dates
-- Assign members to cards
-- Create checklists
-- Attach files and links
-- Add comments
-- Set card covers
-- Use Power-Ups
-- Archive and delete cards
-
-## Usage Examples
-
-### Example 1: Create Card
-```
-User: "Add a card 'Review designs' to the In Progress list"
-Claude: Opens board, navigates to In Progress list, creates card.
-        Confirms: "Card 'Review designs' added to In Progress"
+### List cards in a list
+```bash
+curl -s "https://api.trello.com/1/lists/{listId}/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" | jq '.[] | {name, id, desc}'
 ```
 
-### Example 2: View Board
-```
-User: "What's on the project board?"
-Claude: Opens board, reads all lists and cards.
-        Reports: "Board has 4 lists: Backlog (12 cards),
-        In Progress (3 cards), Review (2 cards), Done (8 cards)"
-```
-
-### Example 3: Move Card
-```
-User: "Move the 'API integration' card to Done"
-Claude: Finds card, drags to Done list.
-        Confirms: "Moved 'API integration' to Done"
+### Create a card
+```bash
+curl -s -X POST "https://api.trello.com/1/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "idList={listId}" \
+  -d "name=Card Title" \
+  -d "desc=Card description"
 ```
 
-### Example 4: Add Checklist
-```
-User: "Add a deployment checklist to the release card"
-Claude: Opens card, adds checklist with items.
-        Confirms: "Added checklist with 5 items"
-```
-
-## Authentication Flow
-1. Claude navigates to trello.com via Playwright MCP
-2. Enters TRELLO_EMAIL for authentication
-3. Handles 2FA if required (notifies user via iMessage)
-4. Maintains session for board operations
-
-## Selectors Reference
-```javascript
-// Board list
-'.boards-page-board-section'
-
-// List on board
-'.list-wrapper'
-
-// List title
-'.list-header-name'
-
-// Card in list
-'.list-card'
-
-// Add card button
-'.open-card-composer'
-
-// Card title input
-'.list-card-composer-textarea'
-
-// Add card submit
-'.confirm'
-
-// Card detail
-'.card-detail-window'
-
-// Checklist
-'.checklist'
-
-// Labels
-'.card-label'
-
-// Due date
-'.due-date-badge'
+### Move a card to another list
+```bash
+curl -s -X PUT "https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "idList={newListId}"
 ```
 
-## Error Handling
-- **Login Failed**: Retry 3 times, notify user via iMessage
-- **Session Expired**: Re-authenticate automatically
-- **Board Not Found**: List available boards, ask user
-- **Card Create Failed**: Retry, verify list exists
-- **Move Failed**: Refresh board, retry
-- **Permission Denied**: Notify user of access issue
+### Add a comment to a card
+```bash
+curl -s -X POST "https://api.trello.com/1/cards/{cardId}/actions/comments?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "text=Your comment here"
+```
 
-## Self-Improvement Instructions
-When you learn a better way to accomplish a task with Trello:
-1. Document the improvement in your response
-2. Suggest updating this skill file with the new approach
-3. Include specific board organization patterns
-4. Note useful Power-Ups
+### Archive a card
+```bash
+curl -s -X PUT "https://api.trello.com/1/cards/{cardId}?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" \
+  -d "closed=true"
+```
 
 ## Notes
-- Boards can be personal or team-owned
-- Power-Ups extend functionality
-- Butler for automation rules
-- Labels for categorization
-- Due dates with reminders
-- Voting for prioritization
-- Board templates available
-- Integrates with many apps
+
+- Board/List/Card IDs can be found in the Trello URL or via the list commands
+- The API key and token provide full access to your Trello account - keep them secret!
+- Rate limits: 300 requests per 10 seconds per API key; 100 requests per 10 seconds per token; `/1/members` endpoints are limited to 100 requests per 900 seconds
+
+## Examples
+
+```bash
+# Get all boards
+curl -s "https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN&fields=name,id" | jq
+
+# Find a specific board by name
+curl -s "https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" | jq '.[] | select(.name | contains("Work"))'
+
+# Get all cards on a board
+curl -s "https://api.trello.com/1/boards/{boardId}/cards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN" | jq '.[] | {name, list: .idList}'
+```

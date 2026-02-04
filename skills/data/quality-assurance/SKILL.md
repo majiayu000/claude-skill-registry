@@ -29,6 +29,89 @@ You ensure that products meet requirements and maintain high quality by formulat
 
 ---
 
+## MUSUBI Quality Modules
+
+### CriticSystem (`src/validators/critic-system.js`)
+
+Automated SDD stage quality evaluation:
+
+```javascript
+const { CriticSystem, CriticResult } = require('musubi/src/validators/critic-system');
+
+const critic = new CriticSystem();
+
+// Evaluate requirements quality
+const reqResult = await critic.evaluate('requirements', {
+  projectRoot: process.cwd(),
+  content: reqDocument,
+});
+
+console.log(reqResult.score); // 0.85
+console.log(reqResult.grade); // 'B'
+console.log(reqResult.success); // true (score >= 0.5)
+console.log(reqResult.feedback); // Improvement suggestions
+
+// Evaluate all stages
+const allResults = await critic.evaluateAll({
+  projectRoot: process.cwd(),
+});
+
+// Generate markdown report
+const report = critic.generateReport(allResults);
+```
+
+### Quality Gate Criteria
+
+| Stage          | Minimum Score | Key Checks                             |
+| -------------- | ------------- | -------------------------------------- |
+| Requirements   | 0.5           | EARS format, completeness, testability |
+| Design         | 0.5           | C4 diagrams, ADR presence              |
+| Implementation | 0.5           | Test coverage, code quality, docs      |
+
+### MemoryCondenser (`src/managers/memory-condenser.js`)
+
+Manage session quality over long QA reviews:
+
+```javascript
+const { MemoryCondenser, MemoryEvent } = require('musubi/src/managers/memory-condenser');
+
+const condenser = MemoryCondenser.create('recent', {
+  maxEvents: 100,
+  keepRecent: 30,
+});
+
+// Condense long QA session history
+const events = qaSessionEvents.map(
+  e =>
+    new MemoryEvent({
+      type: e.type,
+      content: e.content,
+      important: e.type === 'defect_found',
+    })
+);
+
+const condensed = await condenser.condense(events);
+```
+
+### AgentMemoryManager (`src/managers/agent-memory.js`)
+
+Persist QA learnings for future sessions:
+
+```javascript
+const { AgentMemoryManager, LearningCategory } = require('musubi/src/managers/agent-memory');
+
+const manager = new AgentMemoryManager({ autoSave: true });
+await manager.initialize();
+
+// Extract QA patterns from session
+const learnings = manager.extractLearnings(qaEvents);
+
+// Filter by category
+const errorPatterns = manager.getLearningsByCategory(LearningCategory.ERROR_SOLUTION);
+```
+
+---
+
 ---
 
 ## Project Memory (Steering System)
@@ -522,6 +605,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 **CRITICAL: コンテキスト長オーバーフロー防止**
 
 **出力方式の原則:**
+
 - ✅ 1ドキュメントずつ順番に生成・保存
 - ✅ 各生成後に進捗を報告
 - ✅ 大きなレポート(>300行)はセクションごとに分割
@@ -614,6 +698,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 🧪 **テスト実行レポート**
 
 ## 実行サマリー（Week 3 - 機能テスト）
+
 - **実行期間**: 2025-01-15 ~ 2025-01-19
 - **計画テストケース数**: 200
 - **実行済みテストケース数**: 150 (75%)
@@ -629,15 +714,15 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 ### テストスイート別実行状況
 
 | テストスイート | 計画 | 実行済み | 合格 | 不合格 | 合格率 |
-|-------------|-----|---------|-----|-------|-------|
-| ログイン/認証 | 15 | 15 | 13 | 2 | 87% |
-| 商品検索 | 20 | 20 | 18 | 2 | 90% |
-| カート操作 | 18 | 18 | 16 | 2 | 89% |
-| 決済フロー | 25 | 25 | 20 | 5 | 80% |
-| ユーザー管理 | 12 | 12 | 11 | 1 | 92% |
-| レビュー投稿 | 10 | 10 | 9 | 1 | 90% |
-| API統合テスト | 60 | 50 | 48 | 2 | 96% |
-| E2Eテスト | 20 | 0 | 0 | 0 | - |
+| -------------- | ---- | -------- | ---- | ------ | ------ |
+| ログイン/認証  | 15   | 15       | 13   | 2      | 87%    |
+| 商品検索       | 20   | 20       | 18   | 2      | 90%    |
+| カート操作     | 18   | 18       | 16   | 2      | 89%    |
+| 決済フロー     | 25   | 25       | 20   | 5      | 80%    |
+| ユーザー管理   | 12   | 12       | 11   | 1      | 92%    |
+| レビュー投稿   | 10   | 10       | 9    | 1      | 90%    |
+| API統合テスト  | 60   | 50       | 48   | 2      | 96%    |
+| E2Eテスト      | 20   | 0        | 0    | 0      | -      |
 
 ---
 
@@ -646,6 +731,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 ### 🔴 Critical欠陥 (2件)
 
 #### BUG-001: 決済処理で二重課金が発生
+
 - **重要度**: Critical
 - **優先度**: P0
 - **再現手順**:
@@ -662,6 +748,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 - **目標修正日**: 2025-01-20
 
 #### BUG-002: ログイン後にセッションがすぐに切れる
+
 - **重要度**: Critical
 - **優先度**: P0
 - **再現手順**:
@@ -680,14 +767,19 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 ### 🟠 High欠陥 (5件)
 
 #### BUG-003: 商品検索で特殊文字を含むとエラー
+
 #### BUG-004: カート内の商品数が100を超えるとUIが崩れる
+
 #### BUG-005: 決済確認メールが送信されない（一部のメールアドレス）
+
 #### BUG-006: 商品画像が読み込まれない（Safari）
+
 #### BUG-007: レビュー投稿で500文字を超えると送信できない（エラーメッセージなし）
 
 ---
 
 ### 🟡 Medium欠陥 (6件)
+
 ### 🔵 Low欠陥 (2件)
 
 ---
@@ -695,6 +787,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 ## 品質メトリクス
 
 ### テストカバレッジ
+
 \`\`\`
 コードカバレッジ: 87.5% ✅ (目標: 85%)
 ├── Frontend: 85.2%
@@ -704,6 +797,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 \`\`\`
 
 ### 欠陥密度
+
 \`\`\`
 総欠陥数: 15
 総コード行数: 12,000行
@@ -715,6 +809,7 @@ QA対象のプロジェクトについて基本情報を収集します。**1問
 \`\`\`
 
 ### 欠陥除去効率 (DRE)
+
 \`\`\`
 テストで発見された欠陥: 15
 本番で発見された欠陥: 0 (まだリリース前)
@@ -723,6 +818,7 @@ DRE = 15 / 15 = 100% ✅
 \`\`\`
 
 ### テスト実行効率
+
 \`\`\`
 計画テストケース: 200
 実行済み: 150
@@ -763,11 +859,13 @@ DRE = 15 / 15 = 100% ✅
 ---
 
 次のステップに進みますか？
+
 1. 欠陥の詳細確認
 2. 非機能テストの実施
 3. リリース判定会議の準備
 
 👤 ユーザー: [回答待ち]
+
 ```
 
 ### Phase 5: QA完了とフォローアップ
@@ -775,11 +873,13 @@ DRE = 15 / 15 = 100% ✅
 QA活動完了を報告し、継続的な品質改善を提案します。
 
 ```
+
 🎉 **QA活動完了！**
 
 ## 📊 最終QAレポート
 
 ### プロジェクトサマリー
+
 - **プロジェクト**: ECサイトリニューアル
 - **QA期間**: 2025-01-15 ~ 2025-01-31 (6週間)
 - **テストケース総数**: 200
@@ -795,26 +895,31 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 ### 品質ゲートチェック
 
 #### 機能要件 ✅
+
 - P0要件: 100% 実装・テスト完了
 - P1要件: 100% 実装・テスト完了
 - P2要件: 80% 実装・テスト完了（残りは次スプリント）
 
 #### 欠陥 ✅
+
 - Critical欠陥: 0件 ✅
 - High欠陥: 0件 ✅
 - Medium欠陥: 4件（すべて修正計画あり、リリースブロッカーではない）
 - Low欠陥: 2件
 
 #### テストカバレッジ ✅
+
 - コードカバレッジ: 87.5% (目標: 85%) ✅
 - 要件カバレッジ: 100% (P0), 100% (P1) ✅
 
 #### 非機能要件 ✅
+
 - パフォーマンス: すべてのシナリオで目標値達成 ✅
 - セキュリティ: Critical/High脆弱性なし ✅
 - アクセシビリティ: WCAG 2.1 AA準拠 ✅
 
 #### ドキュメント ✅
+
 - ユーザーマニュアル: 完成 ✅
 - APIドキュメント: 更新済み ✅
 - リリースノート: 作成済み ✅
@@ -823,20 +928,21 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 
 ## 📈 品質メトリクス最終値
 
-| メトリクス | 目標値 | 実績値 | 評価 |
-|----------|--------|-------|------|
-| テストカバレッジ | 85% | 87.5% | ✅ 超過達成 |
-| 要件カバレッジ (P0) | 100% | 100% | ✅ 達成 |
-| Critical欠陥 | 0 | 0 | ✅ 達成 |
-| High欠陥 | ≤3 | 0 | ✅ 超過達成 |
-| 欠陥密度 | <5/KLOC | 1.25/KLOC | ✅ 良好 |
-| ページ読み込み時間 | <2秒 | 1.2秒 | ✅ 超過達成 |
+| メトリクス          | 目標値  | 実績値    | 評価        |
+| ------------------- | ------- | --------- | ----------- |
+| テストカバレッジ    | 85%     | 87.5%     | ✅ 超過達成 |
+| 要件カバレッジ (P0) | 100%    | 100%      | ✅ 達成     |
+| Critical欠陥        | 0       | 0         | ✅ 達成     |
+| High欠陥            | ≤3      | 0         | ✅ 超過達成 |
+| 欠陥密度            | <5/KLOC | 1.25/KLOC | ✅ 良好     |
+| ページ読み込み時間  | <2秒    | 1.2秒     | ✅ 超過達成 |
 
 ---
 
 ## 📝 改善提案
 
 ### 短期的改善（次スプリント）
+
 1. **自動テストの拡充**:
    - E2Eテストの自動化率を現在の60%から90%に向上
    - ビジュアルリグレッションテストの導入
@@ -850,6 +956,7 @@ QA活動完了を報告し、継続的な品質改善を提案します。
    - Low欠陥2件の修正（優先度低）
 
 ### 中長期的改善（次四半期）
+
 1. **シフトレフトテスティング**:
    - 要件定義フェーズからQAの関与
    - テスト駆動開発（TDD）の推進
@@ -867,6 +974,7 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 ## 📂 成果物
 
 ### QAドキュメント
+
 1. ✅ qa/strategy/qa-strategy-v1.0.md - QA戦略書
 2. ✅ qa/test-plans/master-test-plan.md - マスターテスト計画
 3. ✅ qa/test-cases/test-cases-suite.xlsx - テストケース一覧
@@ -880,6 +988,7 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 ## 🚀 リリース推奨事項
 
 ### リリース可能 ✅
+
 以下の条件で本番リリースを推奨します:
 
 1. **段階的ロールアウト**:
@@ -901,6 +1010,7 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 追加のテストや確認事項があれば教えてください。
 
 👤 ユーザー: [回答待ち]
+
 ```
 
 ---
@@ -908,10 +1018,12 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 ### Phase 4.5: Steering更新 (Project Memory Update)
 
 ```
+
 🔄 プロジェクトメモリ（Steering）を更新します。
 
 このエージェントの成果物をsteeringファイルに反映し、他のエージェントが
 最新のプロジェクトコンテキストを参照できるようにします。
+
 ```
 
 **更新対象ファイル:**
@@ -936,18 +1048,20 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 4. 英語版と日本語版の両方を更新
 
 ```
+
 🤖 Steering更新中...
 
 📖 既存のsteering/tech.mdを読み込んでいます...
 📝 QAプロセスと品質基準情報を抽出しています...
 
-✍️  steering/tech.mdを更新しています...
-✍️  steering/tech.ja.mdを更新しています...
+✍️ steering/tech.mdを更新しています...
+✍️ steering/tech.ja.mdを更新しています...
 
 ✅ Steering更新完了
 
 プロジェクトメモリが更新されました。
-```
+
+````
 
 **更新例:**
 
@@ -955,7 +1069,7 @@ QA活動完了を報告し、継続的な品質改善を提案します。
 ## QA Strategy and Testing Standards
 
 ### Test Pyramid
-```
+````
 
           /\
          /E2E\        10% - Critical user flows

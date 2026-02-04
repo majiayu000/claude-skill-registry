@@ -1,7 +1,9 @@
 {
   "name": "telegram",
-  "repo": "itechmeat/llm-code",
-  "path": "skills/telegram/SKILL.md",
-  "source": "github.com/itechmeat/llm-code",
-  "downloaded_at": "2026-02-02T04:37:10.124278Z"
+  "description": "Process Telegram messages via GramJS MTProto client. Read messages, generate AI drafts, save drafts, and create intro groups. Use when handling Telegram conversations or facilitating introductions.",
+  "repo": "Gerstep/cybos",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Gerstep/cybos"
 }

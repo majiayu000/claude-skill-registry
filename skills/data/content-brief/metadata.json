@@ -1,7 +1,7 @@
 {
   "name": "content-brief",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/marketing-pro-workflow/.claude/skills/content-brief/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:23.478657Z"
+  "repo": "involvex/involvex-claude-marketplace",
+  "path": "plugins/seo/skills/content-brief/SKILL.md",
+  "source": "github.com/involvex/involvex-claude-marketplace",
+  "downloaded_at": "2026-02-04T03:11:44.358650Z"
 }

@@ -1,19 +1,6 @@
 ---
 name: autonomous-operation
 description: Use when starting any work session - establishes autonomous operation mode, overriding token limits and time pressure to work until goal is achieved
-allowed-tools:
-  - Bash
-  - Read
-  - Edit
-  - Write
-  - Grep
-  - Glob
-  - Task
-  - TaskOutput
-  - mcp__github__*
-  - mcp__git__*
-  - mcp__memory__*
-model: opus
 ---
 
 # Autonomous Operation

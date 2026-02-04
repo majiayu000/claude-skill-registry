@@ -1,106 +1,230 @@
 ---
 name: knowledge
-description: 'Query knowledge artifacts across all locations. Triggers: "find learnings", "search patterns", "query knowledge", "what do we know about", "where is the plan".'
+description: Extracts knowledge from Amp threads and updates project docs. Use when asked to document recent work, sync docs after an epic, summarize what changed, or update AGENTS.md from thread history.
 ---
 
-# Knowledge Skill
+# Knowledge Extraction & Documentation Sync
 
-**YOU MUST EXECUTE THIS WORKFLOW. Do not just describe it.**
+Extracts knowledge from Amp threads and synchronizes project documentation.
 
-Find and retrieve knowledge from past work.
+## Pipeline
 
-## Execution Steps
+```
+REQUEST → THREADS → TOPICS → CODE → DOCS
+```
 
-Given `/knowledge <query>`:
+| Phase        | Action                     | Tools                  |
+| ------------ | -------------------------- | ---------------------- |
+| 1. Discover  | Find threads by query/time | `find_thread`          |
+| 2. Extract   | Parallel topic extraction  | `Task` + `read_thread` |
+| 3. Verify    | Ground topics in code      | `gkg`, `finder`        |
+| 4. Map       | Find target docs           | `Read`, `Grep`         |
+| 5. Reconcile | Compare all sources        | `Oracle`               |
+| 6. Apply     | Surgical updates           | Built-in tools         |
 
-### Step 1: Search with ao CLI (if available)
+## Phase 1: Discover Threads
+
+Start from user request:
 
 ```bash
-ao forge search "<query>" --limit 10 2>/dev/null
+# "Document last 2 weeks"
+find_thread after:2w
+
+# "Summarize auth work"
+find_thread "authentication"
+
+# "What touched the SDK?"
+find_thread file:packages/sdk
+
+# Combined
+find_thread "refactor" after:1w file:packages/api
 ```
 
-If results found, read the relevant files.
+## Phase 2: Extract Topics
 
-### Step 2: Search .agents/ Directory
+Spawn parallel `Task` agents (2-3 threads each):
+
+```
+Task prompt:
+"Read threads [T-xxx, T-yyy] using read_thread.
+Goal: 'Extract topics, decisions, changes'
+
+Return JSON:
+{
+  'topics': [{
+    'name': 'topic name',
+    'threads': ['T-xxx'],
+    'summary': '1-2 sentences',
+    'decisions': ['...'],
+    'patterns': ['...'],
+    'changes': ['...']
+  }]
+}"
+```
+
+Collect outputs → Oracle synthesizes:
+
+```
+Oracle: "Cluster these extractions. Deduplicate.
+Latest thread wins conflicts. Output unified topic list."
+```
+
+See `reference/extraction-prompts.md` for full templates.
+
+## Phase 3: Verify Against Code
+
+For each topic, verify claims:
+
+```
+Topic: "Added retry logic to API client"
+
+1. finder "retry logic API client"
+   → finds src/api/client.ts
+
+2. gkg__search_codebase_definitions "retry"
+   → RetryPolicy class at L45
+
+3. gkg__get_references "RetryPolicy"
+   → 12 usages across 4 files
+
+→ Confirmed: topic matches code
+```
+
+| Claim Type        | Verification                                |
+| ----------------- | ------------------------------------------- |
+| "Added X"         | `mcp__gkg__search_codebase_definitions "X"` |
+| "Refactored Y"    | `finder "Y"` → `mcp__gkg__get_references`   |
+| "Changed pattern" | `semantic_search` or `grep_search`          |
+| "Updated config"  | `mcp__gkg__repo_map` on config paths        |
+
+## Phase 4: Map to Docs
+
+Discover existing documentation:
 
 ```bash
-# Search learnings
-grep -r "<query>" .agents/learnings/ 2>/dev/null | head -10
+# Structure
+gkg__repo_map on docs/, .claude/skills/, */AGENTS.md
 
-# Search patterns
-grep -r "<query>" .agents/patterns/ 2>/dev/null | head -10
-
-# Search research
-grep -r "<query>" .agents/research/ 2>/dev/null | head -10
-
-# Search retros
-grep -r "<query>" .agents/retros/ 2>/dev/null | head -10
+# Find existing mentions
+Grep "topic keyword" docs/
+Grep "RetryPolicy" AGENTS.md
 ```
 
-### Step 3: Search Plans
-
-```bash
-# Local plans
-grep -r "<query>" .agents/plans/ 2>/dev/null | head -10
-
-# Global plans
-grep -r "<query>" ~/.claude/plans/ 2>/dev/null | head -10
-```
-
-### Step 4: Use Semantic Search (if MCP available)
+Read target files before updating:
 
 ```
-Tool: mcp__smart-connections-work__lookup
-Parameters:
-  query: "<query>"
-  limit: 10
+Read docs/ARCHITECTURE.md
+→ Note structure, sections, voice
+→ Identify insertion point
 ```
 
-### Step 5: Read Relevant Files
+See `reference/doc-mapping.md` for target file conventions.
 
-For each match found, use the Read tool to get full content.
+## Phase 5: Reconcile
 
-### Step 6: Synthesize Results
+Oracle compares three sources:
 
-Combine findings into a coherent response:
-- What do we know about this topic?
-- What learnings are relevant?
-- What patterns apply?
-- What past decisions were made?
-
-### Step 7: Report to User
-
-Present the knowledge found:
-1. Summary of findings
-2. Key learnings (with IDs)
-3. Relevant patterns
-4. Links to source files
-5. Confidence level (how much we know)
-
-## Knowledge Locations
-
-| Type | Location | Format |
-|------|----------|--------|
-| Learnings | `.agents/learnings/` | Markdown |
-| Patterns | `.agents/patterns/` | Markdown |
-| Research | `.agents/research/` | Markdown |
-| Retros | `.agents/retros/` | Markdown |
-| Plans | `.agents/plans/` | Markdown |
-| Global Plans | `~/.claude/plans/` | Markdown |
-
-## Key Rules
-
-- **Search multiple locations** - knowledge may be scattered
-- **Use ao CLI first** - semantic search is better
-- **Fall back to grep** - if ao not available
-- **Read full files** - don't just report matches
-- **Synthesize** - combine findings into useful answer
-
-## Example Queries
-
-```bash
-/knowledge authentication    # Find auth-related learnings
-/knowledge "rate limiting"   # Find rate limit patterns
-/knowledge kubernetes        # Find K8s knowledge
-/knowledge "what do we know about caching"
 ```
+Oracle prompt:
+"Compare:
+1. TOPICS: [extracted]
+2. CODE: [verified state]
+3. DOCS: [current content]
+
+Output:
+- GAPS: topics not in docs
+- STALE: docs ≠ code
+- UPDATES: [{file, section, change, rationale}]"
+```
+
+## Phase 6: Apply Updates
+
+**Text updates**:
+
+```
+Read target → edit_file with precise changes
+Preserve structure and voice
+```
+
+**Architecture diagrams**:
+
+```
+mermaid with citations:
+{
+  "code": "flowchart LR\n  A[Client] --> B[RetryPolicy]",
+  "citations": {
+    "Client": "file:///src/api/client.ts#L10",
+    "RetryPolicy": "file:///src/api/retry.ts#L45"
+  }
+}
+```
+
+**Parallel updates**: Multiple unrelated files → spawn Task per file.
+
+## Concrete Example
+
+User: "Document the auth refactor from last week"
+
+```
+1. find_thread "auth" after:7d
+   → [T-abc, T-def, T-ghi]
+
+2. Task agents extract (parallel):
+   Agent A: T-abc → {topics: [{name: "JWT migration"}]}
+   Agent B: T-def, T-ghi → {topics: [{name: "session cleanup"}]}
+
+3. Oracle clusters:
+   → "Auth Refactor" with sub-topics
+
+4. Verify:
+   mcp__gkg__search_codebase_definitions "JWTService"
+   → confirmed at packages/auth/jwt.ts
+
+5. Map docs:
+   Grep "authentication" AGENTS.md
+   → Section exists at line 45
+
+6. Oracle reconciles:
+   → Gap: JWT migration not documented
+   → Update: AGENTS.md auth section
+
+7. Apply:
+   edit_file AGENTS.md add JWT details
+   mermaid auth flow diagram
+```
+
+## Tool Quick Reference
+
+| Goal                | Tool                                                   |
+| ------------------- | ------------------------------------------------------ |
+| Find threads        | `find_thread query\|after:Xd\|file:path`   |
+| Read thread         | `read_thread` with focused goal            |
+| Parallel extraction | `Task` (spawn multiple)                    |
+| Find definitions    | `mcp__gkg__search_codebase_definitions`    |
+| Find references     | `mcp__gkg__get_references`                 |
+| Semantic search     | Built-in semantic/grep search tools        |
+| Area overview       | `mcp__gkg__repo_map`                       |
+| Synthesis           | `Oracle`                                   |
+| Read doc            | `Read`                                     |
+| Search docs         | `Grep`                                     |
+| Diagram             | `mermaid` with citations                   |
+
+## Quality Checklist
+
+```
+- [ ] Topics verified against code (GKG)
+- [ ] Existing docs read before updating
+- [ ] Changes surgical, not wholesale
+- [ ] Mermaid diagrams have citations
+- [ ] Terminology matches existing docs
+```
+
+## Troubleshooting
+
+**Thread not found**: Try topic keywords, widen date range
+
+**Too many threads**: Add `file:` filter, narrow dates
+
+**Topic ≠ code**: Code is truth; note as "planned" or "historical"
+
+**Doc structure unclear**: Read first, match existing patterns

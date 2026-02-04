@@ -1,7 +1,7 @@
 {
   "name": "cognito",
-  "repo": "itsmostafa/aws-agent-skills",
-  "path": "skills/cognito/SKILL.md",
-  "source": "github.com/itsmostafa/aws-agent-skills",
-  "downloaded_at": "2026-02-02T01:34:18.273189Z"
+  "repo": "northseadl/skillwisp",
+  "path": "skills/@itsmostafa/cognito/SKILL.md",
+  "source": "github.com/northseadl/skillwisp",
+  "downloaded_at": "2026-02-04T02:56:08.513253Z"
 }

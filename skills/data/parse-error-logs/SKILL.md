@@ -24,6 +24,7 @@ Parse error and validation output from various tools into structured, actionable
 Accept raw command output as input.
 
 **Expected Input**:
+
 - `output`: String (raw stdout/stderr from command)
 - `type`: String (typescript|jest|npm|build|generic)
 
@@ -32,12 +33,14 @@ Accept raw command output as input.
 Detect error patterns based on type.
 
 **TypeScript Patterns**:
+
 ```
 error TS2322: Type 'string' is not assignable to type 'number'.
 src/file.ts(10,5): error TS2322
 ```
 
 **Jest Patterns**:
+
 ```
 FAIL src/test.spec.ts
 ● Test Suite › test name
@@ -46,6 +49,7 @@ FAIL src/test.spec.ts
 ```
 
 **npm/pnpm Patterns**:
+
 ```
 ERR! code ENOENT
 ERR! syscall open
@@ -53,6 +57,7 @@ ERR! path /path/to/file
 ```
 
 **Build Patterns**:
+
 ```
 ERROR in ./src/file.ts
 Module not found: Error: Can't resolve 'module'
@@ -63,6 +68,7 @@ Module not found: Error: Can't resolve 'module'
 Parse each error into structured format.
 
 **For Each Error Extract**:
+
 - `file`: File path (if available)
 - `line`: Line number (if available)
 - `column`: Column number (if available)
@@ -76,6 +82,7 @@ Parse each error into structured format.
 Group errors by type and count occurrences.
 
 **Categories**:
+
 - Type errors
 - Test failures
 - Dependency issues
@@ -88,6 +95,7 @@ Group errors by type and count occurrences.
 Return complete error analysis.
 
 **Expected Output**:
+
 ```json
 {
   "success": false,
@@ -134,6 +142,7 @@ Return complete error analysis.
 ### Example 1: TypeScript Errors
 
 **Input**:
+
 ```json
 {
   "output": "src/app.ts(10,5): error TS2322: Type 'string' is not assignable to type 'number'.\nsrc/utils.ts(25,12): error TS2304: Cannot find name 'undefined'.",
@@ -142,6 +151,7 @@ Return complete error analysis.
 ```
 
 **Output**:
+
 ```json
 {
   "success": false,
@@ -177,6 +187,7 @@ Return complete error analysis.
 ### Example 2: Jest Test Failures
 
 **Input**:
+
 ```json
 {
   "output": "FAIL src/utils.test.ts\n  ● Math › addition\n    expect(received).toBe(expected)\n    Expected: 5\n    Received: 3\n      at Object.<anonymous> (src/utils.test.ts:10:15)",
@@ -185,6 +196,7 @@ Return complete error analysis.
 ```
 
 **Output**:
+
 ```json
 {
   "success": false,
@@ -212,6 +224,7 @@ Return complete error analysis.
 ### Example 3: Successful Build
 
 **Input**:
+
 ```json
 {
   "output": "✓ Built successfully\nCompleted in 2.3s",
@@ -220,6 +233,7 @@ Return complete error analysis.
 ```
 
 **Output**:
+
 ```json
 {
   "success": true,
@@ -234,6 +248,7 @@ Return complete error analysis.
 ### Example 4: Mixed Errors and Warnings
 
 **Input**:
+
 ```json
 {
   "output": "Warning: React Hook useEffect has a missing dependency\nerror TS2339: Property 'foo' does not exist on type 'Bar'",
@@ -242,6 +257,7 @@ Return complete error analysis.
 ```
 
 **Output**:
+
 ```json
 {
   "success": false,

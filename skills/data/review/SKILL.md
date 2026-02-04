@@ -1,162 +1,242 @@
 ---
 name: review
-description: >
-  Code review with confidence-based filtering.
-  Use to review code for bugs, security issues, and quality problems.
-  Only reports issues with high confidence to reduce noise.
+description: End of day review with learning capture. Integrates with evening journaling if enabled.
 ---
 
-# Code Review with Confidence Filtering
+Conduct an end-of-day review to capture progress and set up tomorrow.
 
-## Overview
+## Tone Calibration
 
-Review code thoroughly but only report issues you're confident about.
-Filter out noise - stylistic preferences and uncertain concerns don't belong in reviews.
-Focus on bugs, security issues, and clear violations.
+Before executing this command, read `System/user-profile.yaml` → `communication` section and adapt:
 
-**Core principle:** Only report issues with >= 80% confidence.
+**Career Level Adaptations:**
+- **Junior:** Encouraging reflection, celebrate learning moments, normalize struggles
+- **Mid:** Focus on impact achieved, challenge to think strategically
+- **Senior/Leadership:** Push on organizational impact, team development, strategic thinking
+- **C-Suite:** High-level outcomes, strategic decisions, organizational influence
 
-**Announce at start:** "I'm using the review skill to review this code."
+**Directness:**
+- **Very direct:** Quick wins/learnings capture, minimal prompting
+- **Balanced:** Standard reflection questions (default)
+- **Supportive:** More detailed prompts, encourage reflection
 
-## When to Request Review
+**Detail Level:**
+- **Concise:** Brief capture, top highlights
+- **Balanced:** Standard review format
+- **Comprehensive:** Deep reflection, patterns, insights
 
-**Mandatory:**
-- After completing a feature
-- Before merging to main
-- After fixing complex bugs
+See CLAUDE.md → "Communication Adaptation" for full guidelines.
 
-**Optional but valuable:**
-- When stuck (fresh perspective helps)
-- Before major refactoring
-- After implementing unfamiliar patterns
+---
 
-## The Review Process
+## Step 0: File Discovery
 
-### Step 1: Gather Context
+**Find files modified TODAY:**
 
-**Get the diff:**
 ```bash
-BASE_SHA=$(git merge-base HEAD main)  # or specific commit
-HEAD_SHA=$(git rev-parse HEAD)
-git diff $BASE_SHA..$HEAD_SHA
+# Get today's date and find files modified today
+TODAY=$(date +%Y-%m-%d)
+find . -type f -name "*.md" -newermt "$TODAY 00:00:00" ! -newermt "$TODAY 23:59:59" 2>/dev/null | grep -v "node_modules" | xargs ls -lt 2>/dev/null
 ```
 
-**Check existing patterns:**
-```bash
-kodo query "code style"      # Project conventions
-kodo query "error handling"  # Error patterns used
-```
+**Critical rules:**
+1. **No truncation** — Do NOT use `head` limits on file discovery
+2. **Today only** — Use date-based filtering, NOT `-mtime 0` (which captures 24-hour rolling window)
+3. **Verify with user** — After listing files, ASK: "These are the files I found modified today. What did you actually work on?"
+4. **Don't infer** — File timestamps tell you what changed, not what matters. Wait for user confirmation.
 
-### Step 2: Review for Issues
+## Step 1: Gather Context
 
-**Priority categories:**
+### Completed Tasks Today
+Check `03-Tasks/Tasks.md` for tasks completed today using completion timestamps:
+- Look for `✅ YYYY-MM-DD` matching today's date
+- These show what you actually finished (not just what you worked on)
+- Example: `- [x] **Review pricing proposal** ^task-20260127-003 ✅ 2026-01-28 09:15`
 
-| Priority | Confidence | Action | Examples |
-|----------|------------|--------|----------|
-| Critical | >= 90% | Must fix before merge | Security holes, data loss, crashes |
-| Important | >= 80% | Should fix | Logic bugs, missing error handling |
-| Minor | >= 80% | Nice to fix | Performance, readability |
+### Weekly Priorities
+Read `00-Inbox/Weekly_Plans.md` for:
+- This week's strategic focus
+- Commitments and deadlines
+- Key people involved
 
-**DO report (>= 80% confidence):**
-- Clear bugs with specific line numbers
-- Obvious security issues
-- Missing error handling that will cause failures
-- Logic errors you can prove with example input
+### Recent Meetings
+Check `00-Inbox/Meetings/` for any meeting notes from today.
 
-**DO NOT report (< 80% confidence):**
-- Stylistic preferences ("I would have done X")
-- Uncertain concerns ("This might cause issues")
-- Opinions without evidence
-- Things that "feel wrong" but you can't explain why
+## Step 2: User Verification
 
-### Step 3: Document Findings
+**Present findings to user:**
+> "Based on file timestamps, these notes were modified today: [list]
+> 
+> What did you actually work on today that should be captured in the review?"
 
-**Report format:**
+Wait for user response before proceeding.
+
+## Step 3: Progress Assessment
+
+With user-verified information:
+- What was accomplished?
+- What progress was made against weekly priorities?
+- What got stuck or blocked?
+- What unexpected discoveries emerged?
+
+## Step 4: Auto-Extract Session Learnings
+
+**Scan today's conversation for learnings:**
+
+Before asking the user anything, reflect on today's session and automatically extract:
+
+1. **Mistakes or corrections**
+   - Did the user have to correct any assumptions?
+   - Did something not work as expected?
+   - Were there misunderstandings to document?
+
+2. **Preferences mentioned**
+   - Did the user express how they like to work?
+   - Were tool preferences or workflow patterns mentioned?
+   - Any communication style notes?
+
+3. **Documentation gaps**
+   - Did you have to explain something that should be documented?
+   - Were there questions about how the system works?
+   - Missing templates or unclear processes?
+
+4. **Workflow inefficiencies**
+   - Did any task take longer than it should?
+   - Were there repetitive manual steps?
+   - Opportunities for automation?
+
+**For each learning identified, write to `00-Inbox/Session_Learnings/YYYY-MM-DD.md`:**
 
 ```markdown
-## Code Review: [Feature/PR Name]
+## HH:MM - [Short title]
 
-**Commits reviewed:** `BASE_SHA..HEAD_SHA`
-**Files changed:** X files, +Y/-Z lines
+**What happened:** [Specific situation from today's session]
+**Why it matters:** [Impact on workflows/system]
+**Suggested fix:** [Specific action with file paths if applicable]
+**Status:** pending
 
-### Strengths
-- [What's done well - acknowledge good work]
-
-### Issues
-
-#### Critical: [Title] (Confidence: XX%)
-**File:** `path/to/file.rs:42`
-**Problem:** [Specific description]
-**Evidence:** [Why you're confident this is wrong]
-**Fix:**
-```rust
-// Suggested fix
+---
 ```
 
-#### Important: [Title] (Confidence: XX%)
-...
+**Then ask the user:** "I captured [N] learnings from today's session. Anything else you'd like to add?"
 
-### Assessment
-[ ] APPROVE - Ready to merge
-[ ] REQUEST CHANGES - Fix critical/important issues first
+**This ensures learnings persist for:**
+- Weekly synthesis (`/week`)
+- System improvement reviews (`/dex-whats-new`)
+- Future reference
+
+## Step 4b: Additional Insights
+
+- Key realizations or connections from user input
+- Questions that arose
+
+## Step 5: Tomorrow's Setup
+
+- Top 3 priorities (aligned with weekly focus)
+- Open loops to close
+- Questions to explore
+
+## Step 6: Track Usage (Silent)
+
+After creating the daily review, silently update usage tracking:
+
+1. Read `System/usage_log.md`
+2. Update: `- [ ] Daily review (/review)` → `- [x] Daily review (/review)`
+3. No announcement to user
+
+---
+
+## Step 7: Evening Journal (If Enabled)
+
+Check if evening journaling is enabled:
+
+1. Read `System/user-profile.yaml`
+2. Check `journaling.evening` value
+3. **If `journaling.evening: true`:**
+   - Check if today's evening journal exists in `00-Inbox/Journals/YYYY/MM-Month/Evening/YYYY-MM-DD-evening.md`
+   - **If missing:**
+     - After creating the daily review, prompt: "Want to close the day with an evening reflection? (3 minutes)"
+     - If yes: Guide through evening journal (see `/journal` command)
+     - Pull in morning journal intention if it exists for reflection
+   - **If exists:** Note completion, skip prompt
+4. **If `journaling.evening: false`:** Skip journal prompt
+
+## Output Format
+
+Create daily note at `00-Inbox/Daily_Reviews/Daily_Review_[YYYY-MM-DD].md`:
+
+```markdown
+---
+
+---
+
+## Demo Mode Check
+
+Before executing, check if demo mode is active:
+
+1. Read `System/user-profile.yaml` and check `demo_mode`
+2. **If `demo_mode: true`:**
+   - Display: "Demo Mode Active — Using sample data"
+   - Use `System/Demo/` paths instead of root paths
+   - Write any output to `System/Demo/` subdirectories
+3. **If `demo_mode: false`:** Use normal vault paths
+
+date: [YYYY-MM-DD]
+type: daily-review
+---
+
+# Daily Review — [Day], [Month] [DD], [YYYY]
+
+## Accomplished
+
+- ✓ [Completed item 1]
+- ✓ [Completed item 2]
+
+## Progress Made
+
+| Area | Movement |
+|------|----------|
+| **[Area 1]** | [What moved forward] |
+| **[Area 2]** | [What moved forward] |
+
+## Weekly Priorities Progress
+
+> Reference: 00-Inbox/Weekly_Plans.md
+
+- **[Priority 1]:** [Status/progress]
+- **[Priority 2]:** [Status/progress]
+
+## Insights
+
+- [Key realization or connection]
+- [Important learning]
+
+## Blocked/Stuck
+
+| Item | Blocker | Status |
+|------|---------|--------|
+| [Item] | [What's blocking] | [Status] |
+
+## Discovered Questions
+
+1. [New question that emerged]
+2. [Thing to research]
+
+## Tomorrow's Focus
+
+1. [Priority 1 — tied to weekly focus]
+2. [Priority 2]
+3. [Priority 3]
+
+## Open Loops
+
+- [ ] [Thing to remember]
+- [ ] [Person to follow up with]
+- [ ] **Awaiting:** [What you're waiting on from others]
 ```
 
-### Step 4: Handle Feedback
+## Important Reminders
 
-**If reviewer feedback is disputed:**
-- Push back with technical reasoning
-- Show code or tests that prove it works
-- Ask for clarification on vague feedback
-
-**If you're the reviewer and author disagrees:**
-- Listen to their reasoning
-- Verify your concern is valid (>= 80% confidence)
-- Accept that you might be wrong
-
-## Integration with Kodo
-
-**Capture review insights:**
-```bash
-kodo reflect --signal "Found common bug pattern: missing null check in X"
-kodo reflect --signal "Project uses Y pattern for error handling"
-```
-
-**Check if similar issues were caught before:**
-```bash
-kodo query "review bugs"     # Past review findings
-kodo query "common mistakes" # Known pitfalls
-```
-
-## Confidence Calibration
-
-**90%+ confidence means:**
-- You can explain exactly why it's wrong
-- You can show an input that triggers the bug
-- The issue violates documented requirements
-
-**80%+ confidence means:**
-- You're fairly certain but can't prove it
-- The code contradicts established patterns
-- The behavior is clearly unintended
-
-**< 80% means:**
-- Don't report it
-- Or preface with "Question:" not "Issue:"
-
-## Key Principles
-
-- **High confidence only** - Filter noise, report signal
-- **Be specific** - Line numbers, exact problems, concrete fixes
-- **Acknowledge strengths** - Reviews aren't just criticism
-- **Push back respectfully** - If reviewer is wrong, say so with evidence
-- **Learn from reviews** - Capture patterns with `kodo reflect`
-
-## Red Flags
-
-**You're doing it wrong if:**
-- Reporting "I would have done it differently"
-- No line numbers or specific locations
-- Confidence below 80% on reported issues
-- Only criticism, no acknowledgment of strengths
-- Accepting invalid feedback without pushback
-- Not capturing insights for future sessions
+- **Verify, don't infer** — Always confirm with user what they worked on
+- **Weekly alignment** — Connect daily progress to weekly priorities
+- **Day of week** — Use system date metadata, verify before writing

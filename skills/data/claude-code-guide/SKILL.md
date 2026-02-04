@@ -1,68 +1,66 @@
 ---
-name: Claude Code Guide
-description: Master guide for using Claude Code effectively. Includes configuration templates, prompting strategies "Thinking" keywords, debugging techniques, and best practices for interacting with the agent.
+name: claude-code-guide
+description: "Claude Code 拡張機能（サブエージェント、プラグイン、スキル）の作成・設定方法。トリガー: 拡張機能, agent作成, skill作成, plugin作成, CLI自動承認, headless, エージェント, プラグイン, スキル"
+user-invocable: true
+allowed-tools: Read
+model: haiku
 ---
 
-# Claude Code Guide
+# Claude Code 拡張機能ガイド
 
-## Purpose
+Claude Code の拡張機能を作成・設定するためのリファレンス。
 
-To provide a comprehensive reference for configuring and using Claude Code (the agentic coding tool) to its full potential. This skill synthesizes best practices, configuration templates, and advanced usage patterns.
+## 概要
 
-## Configuration (`CLAUDE.md`)
+| 拡張機能 | 用途 | 詳細 |
+|---------|------|------|
+| サブエージェント | 特定タスクを委譲するカスタムエージェント | sub-agents.md |
+| プラグイン | 複数プロジェクト間で共有する拡張パッケージ | plugins.md |
+| スキル | 自動選択・実行される条件付き処理 | skills.md |
+| CLI自動承認 | CI/CD向け非対話モード | cli-automation.md |
 
-When starting a new project, create a `CLAUDE.md` file in the root directory to guide the agent.
+## クイックリファレンス
 
-### Template (General)
+### ファイル配置
 
-```markdown
-# Project Guidelines
+```
+~/.claude/                    # ユーザーレベル（全プロジェクト）
+├── agents/agent-name.md
+├── skills/skill-name/SKILL.md
+└── plugins/...
 
-## Commands
-
-- Run app: `npm run dev`
-- Test: `npm test`
-- Build: `npm run build`
-
-## Code Style
-
-- Use TypeScript for all new code.
-- Functional components with Hooks for React.
-- Tailwind CSS for styling.
-- Early returns for error handling.
-
-## Workflow
-
-- Read `README.md` first to understand project context.
-- Before editing, read the file content.
-- After editing, run tests to verify.
+.claude/                      # プロジェクトレベル（version control推奨）
+├── agents/agent-name.md
+└── skills/skill-name/SKILL.md
 ```
 
-## Advanced Features
+### 組み込みサブエージェント
 
-### Thinking Keywords
+- `Explore`: 読み取り専用、コードベース探索用
+- `Plan`: 計画立案用
+- `general-purpose`: 複雑なマルチステップタスク
 
-Use these keywords in your prompts to trigger deeper reasoning from the agent:
+## 詳細ドキュメント
 
-- "Think step-by-step"
-- "Analyze the root cause"
-- "Plan before executing"
-- "Verify your assumptions"
+各拡張機能の詳細は以下を参照:
 
-### Debugging
+- `sub-agents.md` - サブエージェントの作成方法
+- `plugins.md` - プラグインの構造と設定
+- `skills.md` - スキルの定義とメタデータ
+- `cli-automation.md` - CLI自動承認とヘッドレスモード
 
-If the agent is stuck or behaving unexpectedly:
+## 公式ドキュメント
 
-1. **Clear Context**: Start a new session or ask the agent to "forget previous instructions" if confused.
-2. **Explicit Instructions**: Be extremely specific about paths, filenames, and desired outcomes.
-3. **Logs**: Ask the agent to "check the logs" or "run the command with verbose output".
+- [Sub-agents](https://code.claude.com/docs/ja/sub-agents)
+- [Plugins](https://code.claude.com/docs/ja/plugins)
+- [Skills](https://code.claude.com/docs/ja/skills)
+- [Headless/CLI](https://code.claude.com/docs/ja/headless)
+- [CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) - **最新機能の調査時は必ず確認**
 
-## Best Practices
+## 調査時の注意
 
-1. **Small Contexts**: Don't dump the entire codebase into the context. Use `grep` or `find` to locate relevant files first.
-2. **Iterative Development**: Ask for small changes, verify, then proceed.
-3. **Feedback Loop**: If the agent makes a mistake, correct it immediately and ask it to "add a lesson" to its memory (if supported) or `CLAUDE.md`.
+Claude Code の機能や設定について調査する際は、必ず以下を確認すること:
 
-## Reference
-
-Based on [Claude Code Guide by zebbern](https://github.com/zebbern/claude-code-guide).
+1. **CHANGELOG.md** - 最新バージョンで追加・変更された機能を把握
+2. **公式ドキュメント** - 上記リンク先で詳細仕様を確認
+3. **既存設定との整合性** - このリポジトリの設定と矛盾がないか確認

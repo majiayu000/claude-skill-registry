@@ -11,6 +11,12 @@ last_optimized: 2025-12-02
 dependencies: []
 quick_reference_card: true
 tags: [localization, i18n, l10n, translation, rtl, unicode, locale]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/localization-testing.yaml
+
 ---
 
 # Localization & Internationalization Testing

@@ -1,96 +1,147 @@
 ---
 name: archive-ticket
-description: Complete commit workflow - format, archive, update changelog, and commit in one operation.
-allowed-tools: Bash
-user-invocable: false
+description: Archive completed tickets by moving them to .archived/
 ---
 
 # Archive Ticket
 
-Complete commit workflow after user approves implementation.
+## Purpose
 
-## When to Use
+This skill provides instructions for archiving tickets when their derived phases complete. Archiving moves a ticket from `.ushabti/tickets/` to `.ushabti/tickets/.archived/`, making it invisible to agents.
 
-Use this skill after user approves implementation. The script handles formatting, archiving, changelog, and commit.
+## When to Archive
 
-**IMPORTANT**: Always use the script. Never manually move tickets or create changelogs.
+Archive a ticket when:
 
-**Note**: Archiving requires being on a named branch (not detached HEAD). The script will exit with an error if not on a branch.
+1. A phase was derived from the ticket (phase.md contains `ticket: TNNNN` metadata)
+2. The phase has been reviewed and approved by Overseer
+3. Overseer is declaring the phase complete (status: complete)
 
-## Instructions
+Archival is part of Overseer's phase completion workflow.
 
-Run the bundled script with ticket path, commit message, repo URL, and optional description:
+## Archive Procedure
+
+### Step 1: Identify the Ticket
+
+When completing a phase:
+
+1. Read the phase.md file
+2. Look for a `ticket` metadata field
+3. Extract the ticket ID (e.g., `ticket: T0042` means ticket ID is T0042)
+
+If no `ticket` field exists, skip archival (the phase was not derived from a ticket).
+
+### Step 2: Locate the Ticket File
+
+The ticket file is in `.ushabti/tickets/` with a filename matching `TNNNN-*.yaml`
+
+For ticket ID T0042, the filename might be `T0042-improve-error-messages.yaml`
+
+Use glob pattern to find the exact filename:
+```bash
+ls .ushabti/tickets/T0042-*.yaml
+```
+
+### Step 3: Ensure Archive Directory Exists
+
+Ensure the archive directory exists by running:
 
 ```bash
-bash .claude/skills/archive-ticket/sh/archive.sh <ticket-path> <commit-message> <repo-url> [description] [files...]
+mkdir -p .ushabti/tickets/.archived
 ```
 
-Example:
+This is idempotent and handles cases where the directory was not created during bootstrap.
+
+### Step 4: Move to Archive
+
+Move the ticket file from `.ushabti/tickets/` to `.ushabti/tickets/.archived/`
 
 ```bash
-bash .claude/skills/archive-ticket/sh/archive.sh \
-  .workaholic/tickets/todo/20260115-feature.md \
-  "Add new feature" \
-  https://github.com/org/repo \
-  "Enables users to authenticate with session-based login, addressing the need for secure access control." \
-  src/foo.ts src/bar.ts
+mv .ushabti/tickets/T0042-improve-error-messages.yaml .ushabti/tickets/.archived/
 ```
 
-## Commit Message Rules
+The filename remains unchanged, only the location changes.
 
-- **NO prefixes** - Do not use `[feat]`, `[fix]`, `feat:`, `fix:`, etc.
-- Start with a present-tense verb (Add, Update, Fix, Remove, Refactor)
-- Keep the title concise (50 characters or less)
-- Focus on **WHAT** changed in the title
+### Step 5: Verify
 
-### Examples
+Confirm the ticket file:
+- No longer exists in `.ushabti/tickets/`
+- Now exists in `.ushabti/tickets/.archived/`
 
-```
-Add JSDoc comments to gateway exports
-Update traceparent format with W3C spec
-Fix session decryption to handle invalid tokens
-Remove unused RegisterTool type after consolidation
-```
+### Step 6: Log the Action
 
-## Description Rules
-
-The optional description parameter captures the **WHY** behind the change:
-
-- 1-2 sentences explaining the motivation or problem being solved
-- Extract from the ticket's Overview section
-- Appears as a second line in CHANGELOG entries
-- Used by `/report` to generate comprehensive PR descriptions
-
-### Example
-
-```
-"Enables users to authenticate with session-based login, addressing the need for secure access control."
-```
-
-## File Locations
-
-The script manages two separate locations:
-
-- **Tickets** are archived to `.workaholic/tickets/archive/<branch>/`
-- **Changelogs** are written to `.workaholic/changelogs/<branch>.md`
-
-This separation keeps change requests (tickets) distinct from change summaries (changelogs).
-
-## CHANGELOG Format
-
-Entries are automatically categorized based on commit verb and include optional descriptions:
-
-### Categorization
-
-- **Added**: Add, Create, Implement, Introduce
-- **Changed**: Update, Fix, Refactor (default)
-- **Removed**: Remove, Delete
-
-### Entry Format
+In review.md, document the archival:
 
 ```markdown
-- Commit title ([hash](url)) - [ticket](file.md)
-  Description explaining why this change was made.
+## Completion Actions
+
+- Archived ticket T0042 (improve-error-messages) as phase is complete
 ```
 
-The description line is optional but recommended for generating comprehensive PR summaries.
+## Filesystem Operations
+
+### Command Template
+
+```bash
+# Ensure archive directory exists
+mkdir -p .ushabti/tickets/.archived
+
+# Find the ticket file
+TICKET_FILE=$(ls .ushabti/tickets/TNNNN-*.yaml)
+
+# Move to archive
+mv "$TICKET_FILE" .ushabti/tickets/.archived/
+
+# Verify
+ls .ushabti/tickets/.archived/TNNNN-*.yaml
+```
+
+Replace `TNNNN` with the actual ticket ID from phase.md.
+
+## Example: Complete Archival Workflow
+
+Phase file (`.ushabti/phases/0012-ticketing-system/phase.md`) contains:
+
+```markdown
+# Phase 0012: Ticketing System
+
+ticket: T0008
+
+## Intent
+...
+```
+
+Overseer completes the phase and archives the ticket:
+
+```bash
+# Ensure archive directory exists
+mkdir -p .ushabti/tickets/.archived
+
+# Find ticket T0008
+TICKET_FILE=$(ls .ushabti/tickets/T0008-*.yaml)
+echo "Found: $TICKET_FILE"
+# Output: .ushabti/tickets/T0008-add-ticketing-system.yaml
+
+# Move to archive
+mv .ushabti/tickets/T0008-add-ticketing-system.yaml .ushabti/tickets/.archived/
+
+# Verify
+ls .ushabti/tickets/.archived/T0008-*.yaml
+# Output: .ushabti/tickets/.archived/T0008-add-ticketing-system.yaml
+```
+
+Overseer logs in review.md:
+
+```markdown
+## Completion Actions
+
+- Archived ticket T0008 (add-ticketing-system) as phase is complete
+```
+
+## Notes
+
+- Only Overseer archives tickets, as part of phase completion
+- Archived tickets are invisible to agents (agents only read `.ushabti/tickets/`, not `.archived/`)
+- If a ticket file is missing, log the issue but don't fail the phase completion
+- Archival is a one-way operation; archived tickets are not meant to be restored
+- The ticket ID and filename do not change, only the directory location

@@ -1,39 +1,62 @@
 ---
 name: vibe-coding
-description: LLM-readable code standards. Functions ≤50 lines, files ≤200 lines, nesting ≤3 levels. SRP, DRY, KISS, Early Return.
+description: Help users build software using AI coding tools. Use when someone is using AI to generate code, building prototypes without deep technical skills, or exploring how non-engineers can create functional software through natural language.
 ---
 
-# SKILL: Vibe Coding (Code Quality Standards)
+# Vibe Coding
 
-> **Purpose**: Enforce LLM-readable code standards for maintainable code
-> **Target**: Coder Agent during Green/Refactor phases
+Help the user build software using AI tools and natural language, using frameworks and insights from 3 product leaders.
 
-## Quick Reference
+## How to Help
 
-| Target | Limit | Action |
-|--------|-------|--------|
-| **Function** | ≤50 lines | Split functions |
-| **File** | ≤200 lines | Extract modules |
-| **Nesting** | ≤3 levels | Early return |
+When the user asks for help with vibe coding:
 
-## Principles
+1. **Understand the goal** - Ask what they're trying to build and who it's for (prototype, internal tool, production app)
+2. **Guide the approach** - Help them break down the problem into smaller pieces for iterative AI prompts
+3. **Set expectations** - Discuss what vibe coding is good for (prototypes, MVPs) versus when professional engineering is needed
+4. **Coach on iteration** - Help them understand how to refine output through follow-up prompts
 
-- **SRP**: One function = one responsibility
-- **DRY**: No duplicate code blocks, extract common logic
-- **KISS**: Simplest solution that works, avoid over-engineering
-- **Early Return**: Return early to reduce nesting, keep happy path at top
-- **Self-Documenting Code**: Names reveal intent, no unnecessary comments (see REFERENCE.md)
-- **Single Abstraction Level**: Functions operate at one conceptual level (see REFERENCE.md)
-- **Principle of Least Surprise**: Predictable behavior, no hidden side effects (see REFERENCE.md)
+## Core Principles
 
-## AI Rules
+### Vibe coding is a new skill
+Elena Verna: "I vibe code myself so I would put that as even as a skill on my resume now." This is a distinct, transformative skill for non-technical roles - PMs, marketers, designers - to build functional software using natural language.
 
-**Enforce during ALL code generation**:
-- Functions ≤50 lines, Files ≤200 lines, Nesting ≤3 levels
-- SRP, DRY, KISS, Early Return pattern
+### Replace Figma with prototypes
+Kevin Weil: "Instead of showing stuff in Figma, we should be showing prototypes that people are vibe coding over the course of 30 minutes to illustrate proofs of concept." Functional code prototypes can be built in the time it takes to create static mockups.
 
-## Further Reading
+### Build tools to build tools
+Alexander Embiricos: "They'll vibe code an animation editor and then they use the animation editor to build the animation." Non-engineers can now build functional software and custom tools without deep technical mastery.
 
-**Internal**: @.claude/skills/vibe-coding/REFERENCE.md - SOLID principles, refactoring patterns | @.claude/skills/tdd/SKILL.md - Red-Green-Refactor
+### Go beyond prompt engineering
+Vibe coding is not just writing prompts - it's iteratively building functional software through conversation with AI. It requires understanding how to break problems down, test outputs, and refine through follow-up.
 
-**External**: [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) | [Refactoring](https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesney-Signature/dp/0201485672)
+### Know the limits
+Vibe-coded software is great for prototypes, internal tools, and MVPs. Production-grade systems with complex requirements still need professional engineering review.
+
+## Questions to Help Users
+
+- "What are you trying to build, and who will use it?"
+- "Is this a throwaway prototype or something that needs to scale?"
+- "Can you break this down into smaller pieces to build incrementally?"
+- "What's the simplest version that would let you test your hypothesis?"
+- "Have you tried describing what's not working and asking the AI to fix it?"
+- "Do you need this to be production-grade, or is it okay if it's rough?"
+
+## Common Mistakes to Flag
+
+- **Trying to build everything at once** - Break complex projects into smaller, iterative builds
+- **Not testing the output** - Always run and test what the AI generates; don't assume it works
+- **Expecting production quality** - Vibe-coded apps are great for validation but may need engineering for production
+- **Unclear specifications** - The clearer your description of what you want, the better the output
+- **Giving up after one try** - Vibe coding is iterative; refine through follow-up prompts
+
+## Deep Dive
+
+For all 3 insights from 3 guests, see `references/guest-insights.md`
+
+## Related Skills
+
+- Writing PRDs
+- Usability Testing
+- Building with LLMs
+- Shipping Products

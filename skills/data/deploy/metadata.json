@@ -1,7 +1,7 @@
 {
   "name": "deploy",
-  "repo": "mmbianco78/signalroom",
-  "path": ".claude/skills/deploy/SKILL.md",
-  "source": "github.com/mmbianco78/signalroom",
-  "downloaded_at": "2026-02-02T05:00:21.840734Z"
+  "repo": "djnsty23/claude-auto-dev",
+  "path": "skills/deploy/SKILL.md",
+  "source": "github.com/djnsty23/claude-auto-dev",
+  "downloaded_at": "2026-02-04T04:47:34.320085Z"
 }

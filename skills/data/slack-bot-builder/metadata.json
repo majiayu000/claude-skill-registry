@@ -1,7 +1,7 @@
 {
   "name": "slack-bot-builder",
-  "repo": "yunaamelia/vps-rdp-workstation",
-  "path": ".agent/skills/slack-bot-builder/SKILL.md",
-  "source": "github.com/yunaamelia/vps-rdp-workstation",
-  "downloaded_at": "2026-02-01T04:34:28.909885Z"
+  "repo": "cgyudistira/code-agents",
+  "path": "skills/slack-bot-builder/SKILL.md",
+  "source": "github.com/cgyudistira/code-agents",
+  "downloaded_at": "2026-02-04T02:54:40.633473Z"
 }

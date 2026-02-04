@@ -1,57 +1,29 @@
 ---
 name: workshop-cancellation-notice
-description: |
-  Notification that a scheduled workshop or session has been cancelled.
-sample_size: 1
-validation:
-  required_phrases:
-    - "hi oscar the workshop"
-  forbidden_patterns: []
-metrics:
-  sample_size: 1
-  avg_thread_length: 19
-  top_phrases:
-    - phrase: "hi oscar the workshop"
-      count: 1
-      percent: 100
-    - phrase: "oscar the workshop recording"
-      count: 1
-      percent: 100
-    - phrase: "the workshop recording should"
-      count: 1
-      percent: 100
-    - phrase: "workshop recording should be"
-      count: 1
-      percent: 100
-    - phrase: "recording should be available"
-      count: 1
-      percent: 100
-    - phrase: "should be available next"
-      count: 1
-      percent: 100
-    - phrase: "be available next week"
-      count: 1
-      percent: 100
-    - phrase: "available next week we"
-      count: 1
-      percent: 100
-    - phrase: "next week we will"
-      count: 1
-      percent: 100
-    - phrase: "week we will email"
-      count: 1
-      percent: 100
+description: Notify about workshop cancellations. Use when a scheduled workshop or session is canceled or rescheduled.
+metadata:
+  trigger_phrases:
+      - "notify about"
+      - "about workshop"
+      - "workshop cancellations"
+  related_skills: ["workshop-attendance-confirmation", "subscription-renewal-issue", "workshop-technical-setup"]
+  sample_size: "1"
+  validation: |
+    required_phrases:
+      - "hi oscar the workshop"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 1\navg_thread_length: 19\ntop_phrases:\n  - phrase: \"hi oscar the workshop\"\n    count: 1\n    percent: 100\n  - phrase: \"oscar the workshop recording\"\n    count: 1\n    percent: 100\n  - phrase: \"the workshop recording should\"\n    count: 1\n    percent: 100\n  - phrase: \"workshop recording should be\"\n    count: 1\n    percent: 100\n  - phrase: \"recording should be available\"\n    count: 1\n    percent: 100\n  - phrase: \"should be available next\"\n    count: 1\n    percent: 100\n  - phrase: \"be available next week\"\n    count: 1\n    percent: 100\n  - phrase: \"available next week we\"\n    count: 1\n    percent: 100\n  - phrase: \"next week we will\"\n    count: 1\n    percent: 100\n  - phrase: \"week we will email\"\n    count: 1\n    percent: 100"
 ---
-
 # Workshop Cancellation Notice
 
 ## Response Patterns (from samples)
 
 Common openings:
-- "Hi Oscar,"
+- "Hi there,"
 
 Common core lines:
-- "Hi Oscar,"
+- "Hi there,"
 - "The workshop recording should be available next week, we will email you ASAP."
 - "Thanks for your support,"
 
@@ -73,7 +45,7 @@ Common closings:
 
 ## Tone Guidance (observed)
 
-- Openings trend toward: "Hi Oscar,"
+- Openings trend toward: "Hi there,"
 - Closings often include: "Taylor"
 
 ## What NOT To Do
@@ -87,3 +59,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

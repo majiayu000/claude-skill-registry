@@ -1,7 +1,7 @@
 {
   "name": "cloudflare-workflows",
-  "repo": "itechmeat/llm-code",
-  "path": "skills/cloudflare-workflows/SKILL.md",
-  "source": "github.com/itechmeat/llm-code",
-  "downloaded_at": "2026-02-02T04:37:09.218400Z"
+  "repo": "secondsky/claude-skills",
+  "path": "plugins/cloudflare-workflows/skills/cloudflare-workflows/SKILL.md",
+  "source": "github.com/secondsky/claude-skills",
+  "downloaded_at": "2026-02-04T03:47:27.992577Z"
 }

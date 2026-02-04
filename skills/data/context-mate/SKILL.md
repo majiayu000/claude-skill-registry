@@ -1,12 +1,13 @@
 ---
 name: context-mate
 description: |
-  Entry point to the Context Mate toolkit - skills, agents, and commands that work with Claude Code's
+  Entry point to the Context Mate toolkit - skills, agents, and slash commands that work with Claude Code's
   natural flow. Project lifecycle (/explore-idea → /plan-project → /wrap-session), session handoff
   across context windows, developer agents for specialized tasks, and quality auditing.
 
   Use when: starting new projects, understanding the toolkit, needing workflow guidance.
   "It's all about the context, maaate!"
+user-invocable: true
 ---
 
 # Context Mate
@@ -86,10 +87,11 @@ This isn't "The Correct Way To Do Things" - these tools exist because context wi
 
 ## Quick Reference
 
-### Commands (type these)
+### Slash Commands (type these)
 
 | Command | What it does |
 |---------|--------------|
+| `/context-mate` | **Analyze project, recommend tools** |
 | `/explore-idea` | Start with a vague idea |
 | `/plan-project` | Plan a new project |
 | `/plan-feature` | Plan a specific feature |
@@ -97,7 +99,8 @@ This isn't "The Correct Way To Do Things" - these tools exist because context wi
 | `/continue-session` | Resume from last session |
 | `/docs-init` | Create project docs |
 | `/docs-update` | Update docs after changes |
-| `/reflect` | Review what you've done |
+| `/brief` | Preserve context before clearing |
+| `/reflect` | Capture learnings → rules, skills, memory |
 | `/release` | Prepare for deployment |
 
 ### Agents (Claude uses these automatically)
@@ -361,4 +364,16 @@ These tools don't fight that - they work with it:
 
 Use what helps. Ignore what doesn't.
 
-*It's all about the context, maaate.*
+This is the **knifey-spooney school of project management**:
+
+| Traditional PM | Context Mate |
+|----------------|--------------|
+| "Follow the methodology" | "She'll be right" |
+| "Update the Gantt chart" | `/wrap-session` |
+| "Consult the RACI matrix" | "Oi Claude, what next?" |
+
+No ceremonies. No standups with your AI. No burndown charts.
+
+If Homer Simpson can't figure it out in 30 seconds, it's too complicated.
+
+*It's all about the context, maaate.* 🥄

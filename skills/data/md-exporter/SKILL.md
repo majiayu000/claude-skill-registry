@@ -50,7 +50,7 @@ disable: false
         📝 Markdown slides
       </div>
       <div>
-      in <a href="https://github.com/MartinPacker/md2pptx/blob/master/docs/user-guide.md#creating-slides"> md2pptx </a> style
+      in <a href="https://pandoc.org/MANUAL.html#slide-shows">Pandoc style </a>
       </div>
     </td>
     <td>🎯 PowerPoint (.pptx)</td>
@@ -232,7 +232,7 @@ scripts/md-exporter md_to_xlsx /path/input.md /path/output.xlsx
 
 ### md_to_pptx - Convert Markdown to PPTX
 
-Converts Markdown text to PPTX format using md2pptx.
+Converts Markdown text to PPTX format using pandoc.
 
 **Usage:**
 ```bash
@@ -454,4 +454,3 @@ scripts/md-exporter md_to_linked_image /path/input.md /path/output.zip --compres
 - All scripts only support file paths as input
 - For scripts that generate multiple files (e.g., multiple tables, multiple code blocks), the output filename will be automatically numbered
 - Use the `--strip-wrapper` option to remove code block wrappers (```) from the input Markdown
-- For PPTX conversion, ensure the `md2pptx` directory is available in the `tools/md_to_pptx/` directory

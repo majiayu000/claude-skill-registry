@@ -1,7 +1,7 @@
 {
   "name": "kano-agent-backlog-skill",
-  "repo": "dorgonman/kano-agent-backlog-skill",
-  "path": "SKILL.md",
-  "source": "github.com/dorgonman/kano-agent-backlog-skill",
-  "downloaded_at": "2026-02-02T02:50:14.618540Z"
+  "repo": "dorgonman/kano-agent-backlog-skill-demo",
+  "path": ".claude/skills/kano-agent-backlog-skill/SKILL.md",
+  "source": "github.com/dorgonman/kano-agent-backlog-skill-demo",
+  "downloaded_at": "2026-02-04T04:50:17.982726Z"
 }

@@ -14,25 +14,25 @@ allowed-tools:
 
 ## When to Use
 
-| Trigger | Action |
-|---------|--------|
-| API design decision | Check decision tree (REST/GraphQL/tRPC) |
-| TypeScript error | Apply type patterns |
-| Data analysis needed | Use Python workflow |
-| Code optimization | Follow LEVER principles |
-| Backend architecture | Apply Three-Pass process |
+| Trigger              | Action                                  |
+| -------------------- | --------------------------------------- |
+| API design decision  | Check decision tree (REST/GraphQL/tRPC) |
+| TypeScript error     | Apply type patterns                     |
+| Data analysis needed | Use Python workflow                     |
+| Code optimization    | Follow LEVER principles                 |
+| Backend architecture | Apply Three-Pass process                |
 
 ---
 
 ## Content Map
 
-| Reference | Purpose |
-|-----------|---------|
-| [API Patterns](references/api-patterns.md) | REST vs GraphQL vs tRPC, auth, versioning |
-| [TypeScript Patterns](references/typescript-patterns.md) | Type gymnastics, build optimization |
-| [Data Analysis](references/data-analysis.md) | Python scripts, statistical methods |
-| [Code Principles](references/code-principles.md) | LEVER, Three-Pass, anti-patterns |
-| [Database Design](references/database-design.md) | Schema, indexing, query optimization |
+| Reference                                                | Purpose                                   |
+| -------------------------------------------------------- | ----------------------------------------- |
+| [API Patterns](references/api-patterns.md)               | REST vs GraphQL vs tRPC, auth, versioning |
+| [TypeScript Patterns](references/typescript-patterns.md) | Type gymnastics, build optimization       |
+| [Data Analysis](references/data-analysis.md)             | Python scripts, statistical methods       |
+| [Code Principles](references/code-principles.md)         | LEVER, Three-Pass, anti-patterns          |
+| [Database Design](references/database-design.md)         | Schema, indexing, query optimization      |
 
 ---
 
@@ -53,13 +53,13 @@ Before coding, ask:
 
 ### Scoring: Extend vs Create
 
-| Factor | Points |
-|--------|--------|
-| Reuse data structure | +3 |
-| Reuse indexes/queries | +3 |
-| Reuse >70% code | +5 |
-| Circular dependencies | -5 |
-| Distinct domain | -3 |
+| Factor                | Points |
+| --------------------- | ------ |
+| Reuse data structure  | +3     |
+| Reuse indexes/queries | +3     |
+| Reuse >70% code       | +5     |
+| Circular dependencies | -5     |
+| Distinct domain       | -3     |
 
 **Score > 5**: Extend existing code.
 
@@ -67,11 +67,11 @@ Before coding, ask:
 
 ## Three-Pass Implementation
 
-| Pass | Activity | Code |
-|------|----------|------|
-| 1. Discovery | Find related code, document patterns | None |
-| 2. Design | Write interfaces, plan data flow | Minimal |
-| 3. Implementation | Execute with max reuse | Essential only |
+| Pass              | Activity                             | Code           |
+| ----------------- | ------------------------------------ | -------------- |
+| 1. Discovery      | Find related code, document patterns | None           |
+| 2. Design         | Write interfaces, plan data flow     | Minimal        |
+| 3. Implementation | Execute with max reuse               | Essential only |
 
 ---
 
@@ -176,11 +176,11 @@ plt.savefig("analysis.png", dpi=300)
 
 ### Statistical Tests
 
-| Question | Test |
-|----------|------|
-| Difference between groups | t-test, ANOVA |
+| Question                  | Test                    |
+| ------------------------- | ----------------------- |
+| Difference between groups | t-test, ANOVA           |
 | Relationship between vars | Correlation, regression |
-| Distribution comparison | Chi-square, KS-test |
+| Distribution comparison   | Chi-square, KS-test     |
 
 ---
 
@@ -222,19 +222,20 @@ export const getUserStatus = query({
 
 ## Anti-Patterns
 
-| Pattern | Why Bad | Fix |
-|---------|---------|-----|
-| UI-Driven DB | Schema matches components | Store logically |
-| "Just one more table" | Join complexity | Extend existing |
-| Parallel APIs | Duplication | Add flags to main |
-| Manual state sync | Race conditions | Use useQuery |
-| Sequential DB writes | Slow | Use Promise.all |
+| Pattern               | Why Bad                   | Fix               |
+| --------------------- | ------------------------- | ----------------- |
+| UI-Driven DB          | Schema matches components | Store logically   |
+| "Just one more table" | Join complexity           | Extend existing   |
+| Parallel APIs         | Duplication               | Add flags to main |
+| Manual state sync     | Race conditions           | Use useQuery      |
+| Sequential DB writes  | Slow                      | Use Promise.all   |
 
 ---
 
 ## Review Checklist
 
 ### Architecture
+
 - [ ] Extended existing tables/queries?
 - [ ] Followed Three-Pass approach?
 - [ ] No manual state sync (useEffect)?
@@ -242,11 +243,13 @@ export const getUserStatus = query({
 - [ ] New code < 50% of fresh implementation?
 
 ### API
+
 - [ ] Consistent response format?
 - [ ] Proper status codes?
 - [ ] Rate limiting considered?
 
 ### TypeScript
+
 - [ ] No `any` (use `unknown`)?
 - [ ] Explicit return types on exports?
 - [ ] Const assertions where applicable?

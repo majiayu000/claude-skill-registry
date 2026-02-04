@@ -1,123 +1,83 @@
 ---
-name: "giving-presentations"
-description: "Plan and deliver persuasive, confident presentations and produce a Presentation Pack (brief, narrative, slide outline, Q&A bank, pre-brief plan, rehearsal plan, delivery checklist). Use for presentation, deck, keynote, all-hands, exec review, demo talk track. Category: Communication."
+name: giving-presentations
+description: Help users create and deliver compelling presentations. Use when someone is preparing a talk, building a slide deck, dealing with presentation anxiety, practicing for a keynote, or asking how to be more engaging when presenting.
 ---
 
 # Giving Presentations
 
-## Scope
+Help the user create and deliver compelling presentations using techniques from 19 product leaders.
 
-**Covers**
-- Turning a goal + audience into a clear **talk objective** and **ask**
-- Building a persuasive narrative using **contrast** (“what is” vs “what could be”)
-- Producing a slide/talk-track plan that is easy to deliver under time pressure
-- De-risking high-stakes talks via **role-play**, **Q&A prep**, and **pre-briefs**
-- Rehearsing for confidence (including **visualization** + record/review)
-- Delivery mechanics for in-person and Zoom (presence, pauses, looking up to think)
+## How to Help
 
-**When to use**
-- “Create an outline and talk track for my all-hands update.”
-- “Help me turn this doc into a 10-minute exec presentation with a clear ask.”
-- “I need a deck structure for a keynote / conference talk.”
-- “Prep me for Q&A and objections for a high-stakes review.”
-- “Build a rehearsal plan so I can deliver confidently.”
+When the user asks for help with presentations:
 
-**When NOT to use**
-- You only need **visual/brand design polish** (use a design system or a designer; this skill focuses on narrative + delivery)
-- You need a long-form decision doc (write a memo/PRD first; then convert it to a talk)
-- You need deep stakeholder alignment on strategy from scratch (do alignment work first; this skill assumes a direction/ask)
-- You’re presenting on regulated/high-risk topics (medical/legal/financial advice) without expert review
+1. **Understand the context** - Ask about the audience, the stakes, the format (keynote, board meeting, all-hands), and how much time they have
+2. **Start with narrative, not slides** - Help them identify the one thing they want the audience to remember before touching slide software
+3. **Structure for engagement** - Guide them to use contrast, story, and state changes to maintain attention
+4. **Prepare for delivery** - Coach on rehearsal techniques, managing nerves, and physical presence
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Presentation type + setting (all-hands, keynote, exec review, customer demo; in-person vs Zoom)
-- Audience (roles/seniority) + what they care about
-- Desired outcome (inform / align / decide / persuade) and the **ask** (decision, approval, next step)
-- Time limit and Q&A format (minutes; live Q&A vs async)
-- Core content (bullets, doc, notes, or an existing deck) + any must-include points
-- Constraints (deadline, level of polish, sensitive details to avoid)
+### Start with the arrow, then build the bow
+Tristan de Montebello: "Stop focusing as much on what you want to say and focus more on what you want your audience to remember. We call it the bow and arrow technique because you can only remember one thing out of a talk... The one thing is your arrow." Define a single sentence that represents the only thing you want remembered. Select anecdotes and data (the bow) that provide the tension to launch that arrow.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If details are missing, proceed with explicit assumptions and label unknowns.
+### Use "what is vs. what could be" contrast
+Nancy Duarte: "This motion of traversing between what is, what could be, what is, what could be... makes people leave their current state and long for this future state." Structure your narrative to alternate between the current flawed reality and the ideal future. End with "new bliss" - the world with your idea adopted.
 
-## Outputs (deliverables)
+### Make the title the takeaway
+Andy Raskin: "Replace 'The Team' with 'Our team is veterans of whatever industry.' Every single slide it's a takeaway, not a label." Slide titles should be descriptive conclusions, not generic category labels. The audience should understand the point without reading the body.
 
-Produce a **Presentation Pack** in Markdown (in-chat; or as files if requested):
+### The audience is the hero, you are the mentor
+Nancy Duarte: "In myths and movies, the mentor comes alongside the hero. The presenter should come alongside the audience and help them get unstuck or bring a magical tool." Treat the audience as the protagonist on a journey. Your job is to give them tools, not show off your expertise.
 
-1) **Presentation brief** (goal, audience, ask, constraints)
-2) **Narrative outline** (core message + “what is vs what could be” contrast)
-3) **Slide-by-slide outline + talk track** (each slide: takeaway, key points, evidence, speaker notes)
-4) **Q&A / objection bank** (top questions + crisp responses)
-5) **Stakeholder pre-brief plan** (who to pre-meet, what to align, how to de-risk)
-6) **Rehearsal + delivery plan** (visualization, record/review, timing, logistics, Zoom/in-person cues)
-7) **Risks / Open questions / Next steps** (always)
+### Schedule state changes every 3-5 slides
+Wes Kao: "Every three to five slides, put in a state change. We want to turn audience engagement from an art into a science." Insert interactive elements at regular intervals. Ask the audience to guess a data point before revealing it to increase engagement.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### De-risk with pre-meetings and role-play
+Casey Winters: "You want to de-risk that meeting not make it a big success or fail moment... have pre-meetings with key individuals so they're less surprised." Role-play the presentation by impersonating specific stakeholders and their likely objections. Surface concerns before the formal review.
 
-## Workflow (8 steps)
+### Look up when thinking, not down
+Tristan de Montebello: "If you're looking down on Zoom, it looks like you're looking at your phone. If instead you think up, you actually look thoughtful by default." Direct your gaze upward when gathering thoughts. Place a "Think Up" post-it note on your monitor as a reminder.
 
-### 1) Intake: lock the objective, ask, and constraints
-- **Inputs:** user context + [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify audience, outcome, and the single most important ask. Confirm time limit and what is in/out of scope.
-- **Outputs:** Presentation brief (draft) + assumptions/unknowns list.
-- **Checks:** You can answer in one sentence: “After this talk, the audience will _____.”
+### Reframe anxiety as excitement
+Matt Abrahams: "When you feel those symptoms of anxiety, say 'This is exciting. I get to share my point of view.' By seeing it as more positive, it causes us to relax." Anxiety and excitement share the same physiological response. Labeling the arousal as excitement improves performance.
 
-### 2) Build the narrative spine using contrast
-- **Inputs:** brief + source content (doc/bullets/deck).
-- **Actions:** Define the “what is” current reality and the “what could be” future. Choose 2–4 supporting points and the call-to-action.
-- **Outputs:** Narrative outline (contrast table + story beats).
-- **Checks:** The contrast is concrete (not vague) and matches what the audience values.
+### Use the 1:2 breathing ratio
+Matt Abrahams: "Your exhale should be twice as long as your inhale. Take a three count in, take a six count out." The physiological relaxation response is triggered during the exhale. Use a double-inhale to fully expand lungs before the long exhale.
 
-### 3) Map the narrative to a slide/story structure
-- **Inputs:** narrative outline + time limit.
-- **Actions:** Select a structure (e.g., Context → Tension → Proposal → Proof → Ask). Create a slide list with 1 takeaway per slide and a rough time budget.
-- **Outputs:** Slide-by-slide outline (titles + takeaways + time plan).
-- **Checks:** The talk fits time with buffer; no slide has multiple competing takeaways.
+### Stay in character from start to finish
+Tristan de Montebello: "Don't share your insecurities. Stay in character from beginning all the way through past the ending. Audiences rarely notice internal nervousness unless you leak it." Do not apologize for minor verbal slips or admit to being nervous. Use the internal cue "stay in it" to maintain composure.
 
-### 4) Draft talk track and evidence (make it sayable)
-- **Inputs:** slide outline + evidence sources.
-- **Actions:** Write speaker notes (bullet talk track), add proof (metrics, examples, demos), and trim anything “nice to know.”
-- **Outputs:** Slide outline with speaker notes + evidence plan.
-- **Checks:** Each slide can be spoken without reading; jargon is translated for the audience.
+### Master the material so you don't need notes
+Jeffrey Pfeffer: "I never appeared before Congress with notes. I wanted them to believe, which was true, that I was in complete control and mastery of the material." Presenting without notes signals authority. Master your material so thoroughly that you can maintain eye contact throughout.
 
-### 5) Prepare for Q&A: role-play objections
-- **Inputs:** draft pack + stakeholder context.
-- **Actions:** Generate a Q&A / objection bank. Role-play the hardest audience member(s) and refine responses. Identify unanswered questions.
-- **Outputs:** Q&A bank + “unknowns to resolve” list.
-- **Checks:** Top 10 likely questions have concise answers and a fallback (“I’ll follow up by DATE”).
+### Use the Accordion Method to internalize, not memorize
+Tristan de Montebello: "Practice your talk with strict time constraints, starting at 3 minutes and working down to 30 seconds. Once you reach the essence, expand it back up." This helps you internalize key pillars rather than memorizing a word-for-word script, which can lead to catastrophic failure if you lose your place.
 
-### 6) De-risk with stakeholder pre-briefs (no surprises)
-- **Inputs:** draft pack + stakeholder map.
-- **Actions:** Plan and run pre-meetings with key decision-makers/influencers. Capture objections early and update the narrative/ask.
-- **Outputs:** Pre-brief plan + change log (what changed and why).
-- **Checks:** No major stakeholder is seeing the core ask for the first time in the live meeting.
+## Questions to Help Users
 
-### 7) Rehearse for confidence (visualize + record + iterate)
-- **Inputs:** near-final outline/talk track.
-- **Actions:** Do a mental dress rehearsal (visualization), then a timed run. Record yourself, review, and iterate. Add delivery cues (pause, look up to think, avoid reading).
-- **Outputs:** Rehearsal plan + timing notes + delivery cues.
-- **Checks:** You can deliver within time twice in a row without major stumbles.
+- "What's the one thing you want the audience to remember after your presentation?"
+- "Who is your audience and what do they care about?"
+- "What's the contrast between 'what is' and 'what could be' in your story?"
+- "Have you rehearsed this talk out loud? How many times?"
+- "What are the most likely objections or questions you'll get?"
+- "Where in your deck do you have state changes or interactive moments?"
 
-### 8) Finalize and run the quality gate
-- **Inputs:** final draft pack + logistics.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Confirm logistics (room/Zoom, backups). Produce the final pack.
-- **Outputs:** Final Presentation Pack + Risks/Open questions/Next steps.
-- **Checks:** A teammate can read the brief + slide outline and correctly predict the ask and flow.
+## Common Mistakes to Flag
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+- **Starting with slides instead of narrative** - Open a notes app first, not PowerPoint. Define your story points before designing visuals
+- **Generic slide titles** - "The Problem" tells the audience nothing. "Our customers waste 4 hours per week on manual data entry" tells them everything
+- **No state changes** - A 30-slide monologue will lose the audience. Build in interaction every 3-5 slides
+- **Over-rehearsing word-for-word** - This can cause catastrophic failure if you lose your place. Internalize key pillars instead of memorizing scripts
+- **Leaking insecurity** - Saying "I'm nervous" or "I don't know if this makes sense" breaks character and signals uncertainty
 
-## Examples
+## Deep Dive
 
-**Example 1 (all-hands update):** “Create a 7-minute all-hands presentation: what we shipped this quarter, what’s next, and what help we need from other teams.”  
-Expected: brief, narrative contrast (current vs next), slide outline + talk track, Q&A, rehearsal + delivery plan.
+For all 40 insights from 19 guests, see `references/guest-insights.md`
 
-**Example 2 (exec review with decision):** “I need a 12-minute exec review proposing a new onboarding flow. The ask is approval to run a 4-week experiment. Prep me for objections.”  
-Expected: clear ask, proof points, objection bank, pre-brief plan for key execs, and a rehearsal plan.
+## Related Skills
 
-**Boundary example:** “Make my slides prettier.”  
-Response: clarify whether the problem is narrative/structure vs visual design; if it’s purely aesthetics, recommend design-system alignment or a designer and do not invent business content.
+- Written Communication
+- Stakeholder Alignment
+- Running Effective Meetings
+- Fundraising

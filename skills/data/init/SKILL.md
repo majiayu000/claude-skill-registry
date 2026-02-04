@@ -1,45 +1,182 @@
 ---
 name: init
-description: Initialize your job search project. Imports your resume(s), creates the Resume Corpus, and sets up directory structure.
-argument-hint: [resume-file-path]
+description: Initialize a project with bluera-base conventions
+allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, AskUserQuestion]
 ---
 
-# Init Workflow
+# Init
 
-**Load and execute:** `workflows/init/workflow.md`
+Set up a project with bluera-base conventions. Orchestrates existing commands.
 
-Read the entire workflow file and execute it step by step. This workflow:
+## Context
 
-1. Introduces both agents (Max and Scout)
-2. Obtains privacy agreement before processing personal data
-3. Sets up directory structure (profile/, applications/, research/)
-4. Imports resume(s) and creates the structured Resume Corpus
-5. **Analyzes PDF resume layout** to create a matching template for PDF generation (Step 4b)
-6. Optionally imports writing samples for voice matching
-7. **Generates a Voice Profile** from writing samples to capture tone, style, and signature elements (Step 5a)
-8. Suggests running scoping-interview next
+!`ls package.json pyproject.toml Cargo.toml go.mod pom.xml build.gradle Gemfile composer.json mix.exs 2>/dev/null | head -3 || echo "No project files detected"`
 
-**PDF Template Analysis (Step 4b):**
-When a PDF resume is imported, this workflow analyzes its visual structure and creates `profile/resume_template.yaml`. This template captures:
-- Layout (single/two-column, margins, page size)
-- Header styling (name position, contact layout)
-- Section ordering and formatting
-- Typography (fonts, sizes, colors)
-- Experience bullet styles and date positioning
+## Current State Detection
 
-The template ensures tailored resumes maintain the same look and feel as your original. If no PDF tools are installed, the template is still saved for later use.
+Check what's already set up:
 
-**Voice Profile Generation (Step 5a):**
-When writing samples are imported, this workflow analyzes them to create `profile/voice_profile.json`. This profile captures:
-- Tone (formality, confidence, energy)
-- Sentence structure patterns and vocabulary
-- Voice preferences (active/passive, first/third person)
-- Rhetorical patterns (argument structure, evidence style)
-- Signature phrases and distinctive elements
-- Generation guidance (dos, don'ts, example sentences)
+```bash
+# Config
+[ -f .bluera/bluera-base/config.json ] && echo "config: YES" || echo "config: NO"
 
-The voice profile ensures cover letters and other generated content match your authentic writing style.
+# Rules
+ls .claude/rules/*.md 2>/dev/null | wc -l | xargs -I{} echo "rules: {} files"
 
-Follow all steps exactly as written. Wait for user input where the workflow specifies interaction points.
+# CLAUDE.md
+[ -f CLAUDE.md ] && (grep -q "@bluera-base" CLAUDE.md && echo "CLAUDE.md: YES (has @include)" || echo "CLAUDE.md: YES (no @include)") || echo "CLAUDE.md: NO"
+```
 
-$ARGUMENTS
+Show status table:
+
+| Component | Status |
+|-----------|--------|
+| Config (.bluera/bluera-base/) | ✓ / ✗ |
+| Rules (.claude/rules/) | ✓ / ✗ (N files) |
+| CLAUDE.md | ✓ / ✗ / needs @include |
+
+## Workflow
+
+### If `--quick` argument
+
+Skip interview, apply quick setup:
+
+1. Config init (if missing)
+2. Install rules (if missing)
+3. CLAUDE.md with @include (if missing or needs update)
+
+### If `--full` argument
+
+Skip interview, apply full setup:
+
+1. All of quick setup
+2. Delegate to `/bluera-base:harden-repo`
+3. Ask about feature enablement
+
+### Otherwise: Interview
+
+Use AskUserQuestion:
+
+```yaml
+question: "What would you like to set up?"
+header: "Init"
+options:
+  - label: "Quick setup (Recommended)"
+    description: "Config + rules + CLAUDE.md"
+  - label: "Full setup"
+    description: "Quick setup + harden repo (linting, formatting, hooks)"
+  - label: "Customize"
+    description: "Choose individual components"
+multiSelect: false
+```
+
+If "Customize" selected:
+
+```yaml
+question: "Select components to set up"
+header: "Components"
+options:
+  - label: "Initialize config"
+    description: "Create .bluera/bluera-base/ config structure"
+  - label: "Install rules"
+    description: "Copy rule templates to .claude/rules/"
+  - label: "CLAUDE.md"
+    description: "Create/update with @bluera-base include"
+  - label: "Harden repo"
+    description: "Linting, formatting, hooks, coverage"
+multiSelect: true
+```
+
+### Execute Selected Components
+
+For each selected component:
+
+#### 1. Config Init
+
+If config not initialized:
+
+1. Create `.bluera/bluera-base/` directory
+2. Write default `config.json`
+3. Update `.gitignore` with bluera patterns
+
+See `/bluera-base:config init` for full workflow.
+
+#### 2. Install Rules
+
+If rules not installed:
+
+1. Create `.claude/rules/` directory
+2. Copy core rules: `00-base.md`, `anti-patterns.md`, `git.md`
+3. Ask about optional rules
+
+See `/bluera-base:install-rules` for full workflow.
+
+#### 3. CLAUDE.md
+
+If CLAUDE.md missing or needs @include:
+
+1. If missing: create with @include header
+2. If exists without @include: add @include at top
+3. Audit structure
+
+See `/bluera-base:claude-code-md` for full workflow.
+
+#### 4. Harden Repo (if selected)
+
+Delegate entirely to `/bluera-base:harden-repo` which has its own interview for:
+
+- Language detection
+- Linter/formatter selection
+- Hook setup
+- Coverage configuration
+
+### Feature Enablement
+
+After setup, offer to enable features using 3 grouped questions.
+
+**Source of truth:** See `<repo root>/skills/config/SKILL.md` for the canonical feature list, descriptions, config paths, and dependencies.
+
+**Feature groups:**
+
+| Group | Features |
+|-------|----------|
+| Learning | `auto-learn`, `deep-learn` |
+| Workflow | `auto-commit`, `auto-push`, `notifications` |
+| Quality | `dry-check`, `dry-auto`, `strict-typing`, `standards-review` |
+
+For each group, use AskUserQuestion with multiSelect=true. Pull feature labels and descriptions from the config skill's feature table.
+
+**Dependency handling:** When enabling dependent features, auto-enable parent:
+
+- `auto-push` → also enable `auto-commit`
+- `dry-auto` → also enable `dry-check`
+
+For each selected feature, update config using the config path from `<repo root>/skills/config/SKILL.md`.
+
+### Report
+
+Show summary:
+
+```text
+## Setup Complete
+
+| Component | Status |
+|-----------|--------|
+| Config | ✓ Created |
+| Rules | ✓ 3 files installed |
+| CLAUDE.md | ✓ Updated with @include |
+| Harden repo | ✓ ESLint, Prettier, husky |
+| Features | ✓ strict-typing enabled |
+
+Next steps:
+- Review .claude/rules/ and customize if needed
+- Run /bluera-base:config show to see all settings
+- Run /bluera-base:help for available commands
+```
+
+## Constraints
+
+- **Idempotent**: Running init multiple times should be safe
+- **Non-destructive**: Never overwrite existing files without asking
+- **Delegate**: Use existing command workflows, don't reimplement
+- **Skip existing**: Don't re-run setup for components already configured

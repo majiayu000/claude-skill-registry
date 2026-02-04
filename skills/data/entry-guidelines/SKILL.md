@@ -46,6 +46,19 @@ The `build_flat.py` step is critical - without it, new entries won't appear on t
 
 **IMPORTANT**: Always check if an entry already exists before creating a new one.
 
+### Duplicate Definition
+
+**A word is a duplicate ONLY if BOTH the headword AND reading match exactly.**
+
+- **Homophones** (same reading, different headword) are **NOT duplicates** and should have separate entries
+  - Example: 線香 (せんこう) and 先行 (せんこう) are different words
+  - Example: 橋/箸/端 (all はし) are different words
+- **Homographs** (same headword, different reading) are **NOT duplicates** and should have separate entries
+  - Example: 行く (いく) and 行く (ゆく) are different readings
+  - Example: 明日 (あした) and 明日 (あす) are different readings
+
+### Duplicate Check Process
+
 1. **Run the duplicate check script**:
    ```bash
    python3 build/check_duplicate.py "食べる" "たべる"
@@ -53,6 +66,7 @@ The `build_flat.py` step is critical - without it, new entries won't appear on t
 
    - If it says "OK: ... is not in the dictionary or candidates" → Safe to create entry
    - If it says "DUPLICATE: ..." → SKIP this word, do NOT create a duplicate
+   - **Informational notes** about homophones/homographs do NOT block entry creation
 
 2. **Batch checking** (optional, to plan which candidates to work on):
    ```bash

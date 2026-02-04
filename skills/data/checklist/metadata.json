@@ -1,7 +1,7 @@
 {
   "name": "checklist",
-  "repo": "ArvorCo/Relentless",
-  "path": ".claude/skills/checklist/SKILL.md",
-  "source": "github.com/ArvorCo/Relentless",
-  "downloaded_at": "2026-02-02T03:37:52.479648Z"
+  "repo": "blueraai/bluera-base",
+  "path": "skills/checklist/SKILL.md",
+  "source": "github.com/blueraai/bluera-base",
+  "downloaded_at": "2026-02-04T04:17:42.301608Z"
 }

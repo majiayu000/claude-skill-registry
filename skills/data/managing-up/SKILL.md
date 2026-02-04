@@ -1,123 +1,83 @@
 ---
-name: "managing-up"
-description: "Manage up effectively and produce a Managing Up Operating System Pack (manager profile, comms cadence, weekly updates, escalation/ask plan, expectation & boundary script, and exec-ready decision/tradeoff memo). Use for managing up, managing your boss, working with your manager, exec communication, stakeholder updates, and escalation. Category: Leadership."
+name: managing-up
+description: Help users work effectively with their manager and executives. Use when someone is struggling with their manager relationship, needs to influence leadership, wants to get better at executive communication, or is trying to build trust with their boss.
 ---
 
 # Managing Up
 
-## Scope
+Help the user work effectively with their manager and executives using strategies from 35 product leaders.
 
-**Covers**
-- Building a proactive **partnership** with your manager (vs waiting to be managed)
-- Setting a clear **upward communication system** (async updates, 1:1 structure, decision memos)
-- **Leveraging leaders** to remove blockers and accelerate decisions (clear asks + escalation triggers)
-- Communicating **trade-offs and context** so leadership can make good calls
-- Creating a “seat at the table” path: showing **business-level perspective** before you’re invited
-- Setting **boundaries** when leadership pace/expectations are misaligned (without being adversarial)
+## How to Help
 
-**When to use**
-- “Help me manage up with my boss—set a cadence and a weekly update template.”
-- “My exec stakeholders feel out of touch—help me communicate context and trade-offs better.”
-- “I need a clean escalation plan and how to ask my leader for help without sounding needy.”
-- “I want more influence / a seat at the table—create a plan and artifacts.”
+When the user asks for help managing up:
 
-**When NOT to use**
-- You need HR/legal guidance (harassment, discrimination, retaliation, threats, investigations) — follow your company process and involve HR/legal.
-- You’re negotiating compensation/title or a formal performance process — use your company process; this skill can help with communication artifacts but not with policy/legal strategy.
-- You have a personal safety or mental-health crisis — seek professional help and follow company policy.
+1. **Understand the relationship** - Ask about their manager's style, what they care about, and where the friction or challenge is
+2. **Diagnose the gap** - Determine if this is a communication issue, alignment issue, trust issue, or visibility issue
+3. **Apply the right approach** - Help them choose between proactive updates, reframing conversations, building trust through wins, or direct feedback conversations
+4. **Build sustainable habits** - Guide them toward ongoing practices rather than one-time fixes
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Your role, scope, and current priorities (what you own; what “good” looks like in the next 4–8 weeks)
-- Who you’re managing up to (manager level; decision power; relationship stage: new/stable/strained)
-- Current friction (2–5 concrete examples) and desired outcome (clarity, autonomy, speed, influence, boundaries)
-- Communication environment (remote/hybrid, time zones, tools, meeting cadence)
-- Constraints (sensitive topics, confidentiality/PII rules, upcoming deadlines)
+### Your manager is a resource to leverage, not an obstacle
+Boz: "The advice I give more frequently than any other is for people to more directly leverage their leaders." Your primary job is to achieve results. Your manager has tools and authority to clear paths. Ask for help to bulldoze blockers rather than trying to solve everything yourself.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If details are missing, proceed with a **default managing-up operating system** and clearly label assumptions.
-- Do not request secrets (passwords/tokens) or sensitive personal data; use anonymized summaries.
+### Proactively communicate before they have to ask
+Casey Winters: "People just way under communicate upward. Then they complain that executives are out of touch when they aren't telling executives what they need to know." Send weekly "state of" emails with priorities, blockers, and thoughts. Frame updates as "no response required" to keep leaders informed without creating burden.
 
-## Outputs (deliverables)
+### Understand two levels up
+Fareed Mosavat: "You should understand your boss's priorities and your boss's boss's priorities. Eventually, that means you have to know what the board is thinking." Build a mental model of how your work creates leverage in the larger system. Tailor communication to address senior leadership's specific concerns.
 
-Produce a **Managing Up Operating System Pack** in Markdown (in-chat; or as files if requested):
+### Bring recommendations, not just problems
+Wes Kao: "When you ask 'Hey manager, what should we do?' you're putting a lot of cognitive load on them. Instead say 'Hey manager, here's what I think we should do.'" Present a point of view even if it's just an initial hunch. Provide insights and takeaways, not just raw data.
 
-1) **Context snapshot** (role, goals, constraints, assumptions)
-2) **Manager profile** (“How my manager works” + what they optimize for)
-3) **Upward communication cadence** (1:1 structure + async update rhythm)
-4) **Weekly update template** (exec-ready; “no response required” default)
-5) **Decision/trade-off memo template** (for major decisions / escalations)
-6) **Escalation + ask plan** (leader leverage map, escalation triggers, ask ladder)
-7) **Working agreement + boundary script** (how to reset expectations respectfully)
-8) **Influence / seat-at-the-table plan** (pre-wiring, strategic contribution loop)
-9) **Risks / Open questions / Next steps** (always included)
+### Use structured update formats
+Boz: "We used HPM - Highlight, People, Me. Every manager at Facebook would send this to their manager." Use consistent formats. Ask your manager: "How do you like to get information about me?" Consider weekly emails with priorities, blockers, and general thoughts.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Position yourself as an ally who reduces burden
+Ethan Evans: "Management can be a lonely job. Having an ally is a huge weight off people's shoulders." Recognize managers are overwhelmed. Move from asking "How can I help?" to suggesting specific solutions. Keep them in the loop by proactively fixing problems before they ask.
 
-## Workflow (8 steps)
+### Start with Chapter 1 when talking to execs
+Casey Winters: "You have to start with chapter one, which is what part of the company strategy are you working on? What metrics are you trying to improve? What assumptions are you making?" Find the last point that's obvious to the audience and build from there. Don't dive into "Chapter 6" details without the strategic context.
 
-### 1) Intake + objective + boundaries
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify the outcome (autonomy, clarity, influence, speed, boundaries) and define what “better” means in 4–8 weeks. Identify constraints (HR/legal/PII). Choose pack scope (full pack vs subset).
-- **Outputs:** Context snapshot + assumptions/unknowns list.
-- **Checks:** Goal is measurable enough to evaluate after 4 weeks.
+### Use concrete artifacts, not abstract ideas
+Dylan Field: "The more concrete an artifact is or the more you can debate something, the better. I ask for examples a lot." Present designs and docs rather than abstract ideas. If you lack data for a follow-up question, pause to find the answer rather than guessing.
 
-### 2) Build a manager profile (what they optimize for)
-- **Inputs:** org context, manager level, prior interactions.
-- **Actions:** Draft “How my manager works”: success metrics, incentives/pressures, decision style, risk tolerance, communication preferences, and common failure modes.
-- **Outputs:** Manager profile (draft) + validation questions to confirm in 1:1.
-- **Checks:** Profile includes at least 3 actionable implications (what to do differently).
+### Run experiments to challenge strong opinions
+Itamar Gilad: "If you run a secret experiment and come back with data, either they get extremely mad at you... or more commonly, they're pleasantly surprised." Use evidence to flip a leader's perspective rather than engaging in a battle of opinions.
 
-### 3) Design the comms operating system (what goes where)
-- **Inputs:** current cadences, meeting load, tools.
-- **Actions:** Define channels: async weekly update, 1:1 agenda, decision memos for big calls, and escalation path for urgent issues. Decide what does **not** belong in 1:1s (pure status, unless required).
-- **Outputs:** Cadence plan + “what goes where” map.
-- **Checks:** System reduces surprises and reduces “drive-by” requests.
+### Understand the spirit, then offer better options
+Jiaona Zhang: "It's understanding the spirit of what they're trying to achieve. Being able to go back with 'I understand the spirit, but here's a better way to achieve it.'" Align on the underlying goal first. Present automated or scalable alternatives rather than just saying no.
 
-### 4) Write the weekly update + exec-ready narrative
-- **Inputs:** priorities, milestones, risks, dependencies.
-- **Actions:** Create a weekly update that is skimmable: TL;DR, progress vs plan, decisions needed, risks, explicit trade-offs, and clear asks. Default to “no reply required unless…”.
-- **Outputs:** Weekly update template + example filled-in update (anonymized).
-- **Checks:** A leader can understand status and decision needs in ≤ 60 seconds.
+### Use the U-curve for founder involvement
+Noah Weiss: "High involvement at the start for strategy and at the end for quality, with autonomy in the middle." Involve founders early for strategic buy-in on goals. Bring them back at the end to ensure the product meets quality standards.
 
-### 5) Create an escalation + ask plan (use leaders as resources)
-- **Inputs:** blockers, dependencies, stakeholders.
-- **Actions:** Define escalation triggers, pre-wire plan, and an “ask ladder” (from lightweight FYI → unblock → sponsor → decision). Translate blockers into specific leader actions.
-- **Outputs:** Escalation triggers + ask ladder + leverage map.
-- **Checks:** Each “ask” is actionable and time-bounded, not a vague request for help.
+### Say what you'll do, say you're doing it, say you did it
+Peter Deng: "Say you're going to do the thing, say that you're doing the thing, and then say that you did it." This repetitive communication ensures alignment and provides opportunities for course correction.
 
-### 6) Align expectations + set boundaries (respectfully)
-- **Inputs:** mismatches (pace, scope, availability), examples.
-- **Actions:** Draft a working agreement and boundary script: clarify expectations, propose alternatives, and secure explicit agreement. Prepare “pushback” language for unreasonable requests (times, scope, urgency).
-- **Outputs:** Working agreement + scripts (short, copy/paste).
-- **Checks:** Boundaries are framed as protecting outcomes (quality, speed, sustainability), not personal preferences.
+## Questions to Help Users
 
-### 7) Build influence: seat-at-the-table loop
-- **Inputs:** strategy calendar, decisions, adjacent teams.
-- **Actions:** Create a plan to contribute at the business level: pre-reads, crisp POVs, trade-off framing, and consistent pre-briefs. Identify 1–2 high-leverage forums and how to earn invitation.
-- **Outputs:** Influence plan (30 days) + artifacts to share (POV note, decision memo).
-- **Checks:** Plan includes at least one recurring “strategic contribution” touchpoint per week.
+- "What does your manager care most about right now? What's keeping them up at night?"
+- "How does your manager prefer to receive information - email, Slack, meetings?"
+- "Do they know what you're working on this week without having to ask?"
+- "When you bring problems to them, are you also bringing recommendations?"
+- "What does success look like for your team from your manager's perspective?"
+- "Have you asked your manager directly how they'd like you to communicate?"
 
-### 8) Quality gate + 4-week pilot + iteration plan
-- **Inputs:** full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**. Propose a 4-week pilot and a retro prompt set.
-- **Outputs:** Final Managing Up Operating System Pack.
-- **Checks:** Pack is immediately usable; next interactions are scheduled (cadence + checkpoints).
+## Common Mistakes to Flag
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+- **Under-communicating** - If your manager has to ask what's going on, you're not communicating enough. Proactive updates build trust
+- **Bringing problems without recommendations** - This puts cognitive load on your manager. Always come with a point of view
+- **Starting with details, not strategy** - Executives need context. Start with "Chapter 1" (strategy) before "Chapter 6" (details)
+- **Trying to solve everything alone** - Your manager has tools and authority you don't. Leverage them to clear blockers
+- **Waiting to be managed** - The most senior people got there by being great at managing up. It's a proactive skill, not resentment
 
-## Examples
+## Deep Dive
 
-**Example 1 (new relationship):** “I started a new PM role. Help me manage up with my manager: create a manager profile template, a weekly update format, and a 4-week pilot cadence.”  
-Expected: manager profile + cadence + weekly update template + pilot plan + risks/open questions/next steps.
+For all 50 insights from 35 guests, see `references/guest-insights.md`
 
-**Example 2 (exec misalignment):** “Our exec team keeps changing priorities and feels out of touch. Create an exec-ready weekly update and a trade-off memo template so I can escalate issues early and frame decisions.”  
-Expected: weekly update + decision/trade-off memo + escalation triggers + comms map.
+## Related Skills
 
-**Boundary example:** “My manager is retaliating against me and I need to document it.”  
-Response: recommend HR/legal/company process; offer to create a factual incident timeline template and a neutral summary, but do not provide legal advice.
+- Running Effective 1:1s
+- Having Difficult Conversations
+- Stakeholder Alignment
+- Written Communication

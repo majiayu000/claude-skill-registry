@@ -1,91 +1,54 @@
 ---
-name: web-browser
-description: "Allows to interact with web pages by performing actions such as clicking buttons, filling out forms, and navigating links. It works by remote controlling Google Chrome or Chromium browsers using the Chrome DevTools Protocol (CDP). When Claude needs to browse the web, it can use this skill to do so."
-license: Stolen from Mario
+name: web_browser
+description: "**网页浏览器**。用于访问 URL 获取内容，或生成网页摘要。"
+triggers:
+- 访问
+- browse
+- 打开网页
+- 查看网页
+- 网页
+- 阅读
+- read
+- summarize
 ---
 
-# Web Browser Skill
+# Web Browser (浏览器)
 
-Minimal CDP tools for collaborative site exploration.
+你是一个可以访问互联网的浏览器代理。
 
-## Start Chrome
+## 核心能力
 
-```bash
-./scripts/start.js              # Fresh profile
-./scripts/start.js --profile    # Copy your profile (cookies, logins)
-```
+1.  **访问网页 (Action: visit)**: 获取网页的原始文本内容 (HTML 已转换为 Markdown)。
+2.  **生成摘要 (Action: summarize)**: 智能提取网页核心内容并生成摘要。
 
-Start Chrome on `:9222` with remote debugging.
+## 执行指令 (SOP)
 
-## Navigate
+当用户请求访问链接时，请提取以下参数调用内置脚本：
 
-```bash
-./scripts/nav.js https://example.com
-./scripts/nav.js https://example.com --new
-```
+### 参数说明
 
-Navigate current tab or open new tab.
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| `action` | string | 否 | 操作类型: `visit` (默认), `summarize` |
+| `url` | string | 是 | 目标网页 URL (如果用户没提供 http 前缀，请保留原样，脚本会自动补全) |
 
-## Evaluate JavaScript
+### 意图映射示例
 
-```bash
-./scripts/eval.js 'document.title'
-./scripts/eval.js 'document.querySelectorAll("a").length'
-./scripts/eval.js 'JSON.stringify(Array.from(document.querySelectorAll("a")).map(a => ({ text: a.textContent.trim(), href: a.href })).filter(link => !link.href.startsWith("https://")))'
-```
+**1. 阅读网页**
+- 用户输入: "看看这个网页写了什么: example.com"
+- 提取参数:
+  ```json
+  { "action": "visit", "url": "example.com" }
+  ```
 
-Execute JavaScript in active tab (async context).  Be careful with string escaping, best to use single quotes.
+**2. 总结网页**
+- 用户输入: "总结这篇文章的核心观点 https://..."
+- 提取参数:
+  ```json
+  { "action": "summarize", "url": "https://..." }
+  ```
 
-## Screenshot
+## 注意事项
 
-```bash
-./scripts/screenshot.js
-```
-
-Screenshot current viewport, returns temp file path
-
-## Pick Elements
-
-```bash
-./scripts/pick.js "Click the submit button"
-```
-
-Interactive element picker. Click to select, Cmd/Ctrl+Click for multi-select, Enter to finish.
-
-## Dismiss Cookie Dialogs
-
-```bash
-./scripts/dismiss-cookies.js          # Accept cookies
-./scripts/dismiss-cookies.js --reject # Reject cookies (where possible)
-```
-
-Automatically dismisses EU cookie consent dialogs.
-
-Run after navigating to a page:
-```bash
-./scripts/nav.js https://example.com && ./scripts/dismiss-cookies.js
-```
-
-## Background Logging (Console + Errors + Network)
-
-Automatically started by `start.js` and writes JSONL logs to:
-
-```
-~/.cache/agent-web/logs/YYYY-MM-DD/<targetId>.jsonl
-```
-
-Manually start:
-```bash
-./scripts/watch.js
-```
-
-Tail latest log:
-```bash
-./scripts/logs-tail.js           # dump current log and exit
-./scripts/logs-tail.js --follow  # keep following
-```
-
-Summarize network responses:
-```bash
-./scripts/net-summary.js
-```
+- **内容截断**: 为了防止 Token 溢出，返回的网页内容可能会被截断。
+- **动态渲染**: 目前可能不支持极度依赖 JS 的 SPA 页面（除非使用 Playwright MCP，但此技能为轻量级实现）。

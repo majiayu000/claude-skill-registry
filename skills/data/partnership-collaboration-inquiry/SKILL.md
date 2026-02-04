@@ -1,48 +1,20 @@
 ---
 name: partnership-collaboration-inquiry
-description: |
-  Third parties inquire about partnerships, sponsorships, or promotional opportunities.
-sample_size: 485
-validation:
-  required_phrases:
-    - "support any questions related"
-  forbidden_patterns: []
-metrics:
-  sample_size: 485
-  avg_thread_length: 3.06
-  top_phrases:
-    - phrase: "support any questions related"
-      count: 177
-      percent: 36.5
-    - phrase: "any questions related to"
-      count: 177
-      percent: 36.5
-    - phrase: "we support any questions"
-      count: 162
-      percent: 33.4
-    - phrase: "questions related to the"
-      count: 152
-      percent: 31.3
-    - phrase: "related to the course"
-      count: 152
-      percent: 31.3
-    - phrase: "to the course and"
-      count: 152
-      percent: 31.3
-    - phrase: "the course and platform"
-      count: 151
-      percent: 31.1
-    - phrase: "course and platform functionality"
-      count: 151
-      percent: 31.1
-    - phrase: "https bsky app profile"
-      count: 151
-      percent: 31.1
-    - phrase: "and platform functionality but"
-      count: 150
-      percent: 30.9
+description: Handle partnership and collaboration inquiries. Use when a third party asks about partnerships, promotions, or collaborations.
+metadata:
+  trigger_phrases:
+      - "handle partnership"
+      - "partnership collaboration"
+      - "collaboration inquiries"
+  related_skills: ["event-sponsorship-request", "media-press-outreach", "discount-code-request", "api-documentation-question", "student-discount-request"]
+  sample_size: "485"
+  validation: |
+    required_phrases:
+      - "support any questions related"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 485\navg_thread_length: 3.06\ntop_phrases:\n  - phrase: \"support any questions related\"\n    count: 177\n    percent: 36.5\n  - phrase: \"any questions related to\"\n    count: 177\n    percent: 36.5\n  - phrase: \"we support any questions\"\n    count: 162\n    percent: 33.4\n  - phrase: \"questions related to the\"\n    count: 152\n    percent: 31.3\n  - phrase: \"related to the course\"\n    count: 152\n    percent: 31.3\n  - phrase: \"to the course and\"\n    count: 152\n    percent: 31.3\n  - phrase: \"the course and platform\"\n    count: 151\n    percent: 31.1\n  - phrase: \"course and platform functionality\"\n    count: 151\n    percent: 31.1\n  - phrase: \"https bsky app profile\"\n    count: 151\n    percent: 31.1\n  - phrase: \"and platform functionality but\"\n    count: 150\n    percent: 30.9"
 ---
-
 # Partnership and Collaboration Inquiry
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

@@ -2,7 +2,7 @@
   "name": "powerplatform",
   "description": "Generate Power Automate flows from natural language. Reads connector schemas from work repo, outputs deployable solution files. USE WHEN user says 'create flow', 'power automate', 'automate workflow',",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

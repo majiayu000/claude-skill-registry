@@ -1,162 +1,274 @@
 ---
-name: Helm Chart Generator
-description: Generate production-ready Helm charts for Kubernetes apps. Use when: (1) Deploying applications to Kubernetes, (2) Containerizing apps for Minikube/K8s, (3) Creating reusable deployment packages, (4) Needing parameterized K8s manifests, (5) Scaffolding new chart structures. Includes security contexts, resource limits, RBAC, NetworkPolicies, and multi-environment support (dev/prod). Provides templates for frontend, backend, and MCP server components.
+name: helm-chart-generator
+description: "Generate complete Helm charts using the bjw-s-labs common library (app-template). Use when: (1) Creating a new Helm chart for Kubernetes applications, (2) Converting Docker Compose to Helm charts, (3) Setting up controllers with sidecars/init containers, (4) Configuring services, ingress, persistence, or networking, (5) Creating charts with multiple controllers or complex setups. Generates Chart.yaml, values.yaml, templates/common.yaml, and templates/NOTES.txt following bjw-s patterns."
+license: MIT
+compatibility: "Claude Code, Claude.ai"
+allowed-tools: "Read Grep Glob Bash Write Edit"
+metadata:
+  version: "1.0.1"
+  category: development
+  tags:
+    - helm
+    - kubernetes
+    - k8s
+    - charts
+    - bjw-s
+    - app-template
+    - devops
+    - infrastructure
+  triggers:
+    - "create helm chart"
+    - "generate helm chart"
+    - "kubernetes deployment"
+    - "bjw-s chart"
+    - "app-template"
+    - "convert to helm"
+  surfaces:
+    - claude-code
+    - claude-ai
+  author:
+    name: obeone
+    url: https://github.com/obeone
 ---
 
-## Overview
+# Helm Chart Generator (bjw-s Common Library)
 
-This skill generates properly structured Helm charts following best practices. It creates charts with security contexts, resource limits, and multi-environment support.
+Generate production-ready Helm charts using the bjw-s-labs common library (app-template v4+).
 
-## Quick Start
+## Quick Start Workflow
 
-Use the generation script to scaffold a new chart:
+1. **Understand the application**
+   - Ask about the container image, ports, environment variables
+   - Identify if sidecars/init containers are needed
+   - Determine storage requirements (config, data, logs)
+   - Check if ingress/networking is required
 
-```bash
-# Generate a chart for a specific component type
-python scripts/generate_chart.py --name <app-name> --type <frontend|backend|mcp> --namespace <namespace>
+2. **Generate base structure**
+   - Use templates from `assets/templates/`
+   - Start with Chart.yaml and basic values.yaml
+   - Add templates/common.yaml (minimal, just includes library)
+   - Create templates/NOTES.txt for post-install instructions
 
-# Example: Generate a frontend chart
-python scripts/generate_chart.py --name todo-frontend --type frontend --namespace todo-app
+3. **Build values.yaml progressively**
+   - Controllers and containers (main app + sidecars if needed)
+   - Services (one per controller or port)
+   - Ingress if web-accessible
+   - Persistence for stateful data
+   - Secrets/ConfigMaps if needed
+
+4. **Validate and refine**
+   - Use `scripts/validate_chart.py` to check structure
+   - Review against `references/best-practices.md`
+   - Test with `helm template` and `helm lint`
+
+## Core Structure
+
+Every chart consists of:
+
+```text
+my-app/
+├── Chart.yaml           # Chart metadata and dependencies
+├── values.yaml          # Configuration values
+└── templates/
+    ├── common.yaml      # Includes the bjw-s library
+    └── NOTES.txt        # Post-install instructions
 ```
 
-Or copy from base templates in `assets/` and customize.
-
-## Chart Structure
-
-```
-charts/todo-app/
-├── Chart.yaml
-├── values.yaml
-├── values-dev.yaml
-├── values-prod.yaml
-├── templates/
-│   ├── _helpers.tpl
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── ingress.yaml
-│   ├── configmap.yaml
-│   ├── secret.yaml
-│   ├── serviceaccount.yaml
-│   ├── role.yaml
-│   ├── rolebinding.yaml
-│   ├── networkpolicy.yaml
-│   └── pdb.yaml
-└── charts/           # Subcharts
-```
-
-## Chart.yaml Template
+### Chart.yaml Template
 
 ```yaml
 apiVersion: v2
-name: <chart-name>
-description: <description>
+name: <app-name>
+description: <brief description>
 type: application
-version: 0.1.0
-appVersion: "1.0.0"
+version: 1.0.0
+appVersion: "<app version>"
+dependencies:
+  - name: common
+    repository: https://bjw-s-labs.github.io/helm-charts
+    version: 4.6.0  # Latest stable version
 ```
 
-## Values.yaml Structure
-
-Every component MUST have:
+### templates/common.yaml (Always the same)
 
 ```yaml
-<component>:
-  enabled: true
-  replicaCount: 2
-  
-  image:
-    repository: <name>
-    tag: "1.0.0"          # Never "latest"
-    pullPolicy: IfNotPresent
-  
-  service:
-    type: ClusterIP
-    port: <port>
-  
-  resources:
-    requests:
-      cpu: 100m
-      memory: 128Mi
-    limits:
-      cpu: 500m
-      memory: 256Mi
-  
-  securityContext:
-    runAsNonRoot: true
-    runAsUser: 1000
-    allowPrivilegeEscalation: false
+{{- include "bjw-s.common.loader.all" . }}
 ```
 
-## Security Templates
+### templates/NOTES.txt
 
-Always include these templates:
+Provide useful post-install information:
 
-1. **serviceaccount.yaml** - Dedicated SA per app
-2. **role.yaml** - Namespace-scoped, minimal permissions
-3. **rolebinding.yaml** - Bind role to SA
-4. **networkpolicy.yaml** - Default deny + explicit allows
+- How to access the application
+- Default credentials if any
+- Next steps for configuration
 
-## Environment-Specific Values
+## values.yaml Structure
 
-**values-dev.yaml (Minikube):**
+Follow this order for clarity:
+
 ```yaml
-frontend:
-  replicaCount: 1
-  image:
-    pullPolicy: Never    # Local images
+# 1. Default Pod options (optional)
+defaultPodOptions:
+  securityContext: {}
+  annotations: {}
+
+# 2. Controllers (required)
+controllers:
+  main:  # or custom name
+    containers:
+      main:  # or custom name
+        image: {}
+        env: {}
+        probes: {}
+
+# 3. Service (required if exposing)
+service:
+  main:
+    controller: main
+    ports: {}
+
+# 4. Ingress (optional)
+ingress:
+  main:
+    className: ""
+    hosts: []
+
+# 5. Persistence (optional)
+persistence:
+  config:
+    type: persistentVolumeClaim
+    # or: emptyDir, configMap, secret, nfs, hostPath
+
+# 6. ConfigMaps/Secrets (optional)
+configMaps: {}
+secrets: {}
 ```
 
-**values-prod.yaml:**
+## Common Patterns
+
+### Single Container Application
+
 ```yaml
-frontend:
-  replicaCount: 3
-  image:
-    pullPolicy: Always
-  autoscaling:
-    enabled: true
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: nginx
+          tag: alpine
+          pullPolicy: IfNotPresent
+
+service:
+  main:
+    controller: main
+    ports:
+      http:
+        port: 80
+
+persistence:
+  config:
+    type: persistentVolumeClaim
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    globalMounts:
+      - path: /config
 ```
 
-## Validation Commands
+### Application with Sidecar
 
-Always run before deployment:
+```yaml
+controllers:
+  main:
+    containers:
+      main:
+        image:
+          repository: myapp
+          tag: latest
+      
+      sidecar:
+        dependsOn: main
+        image:
+          repository: sidecar-image
+          tag: latest
+```
+
+See `references/patterns.md` for more examples:
+
+- Multi-controller setups
+- Init containers
+- VPN sidecars (gluetun)
+- Code-server sidecars
+- Shared volumes between containers
+
+## Best Practices
+
+**Always:**
+
+- Use specific image tags, never `:latest`
+- Set resource limits and requests
+- Configure health checks (liveness, readiness, startup)
+- Use non-root security contexts when possible
+- Reference services by identifier, not name
+
+**Naming:**
+
+- Controllers: Use descriptive names (not just "main")
+- Containers: Use descriptive names (not just "main")
+- Services: Match controller name or purpose
+
+**Security:**
+
+- Set `automountServiceAccountToken: false` unless needed
+- Configure proper `securityContext`
+- Use secrets for sensitive data
+
+**Persistence:**
+
+- Use `globalMounts` for simple cases
+- Use `advancedMounts` for complex multi-container scenarios
+- Specify `existingClaim` for pre-created PVCs
+
+See `references/best-practices.md` for comprehensive guidelines.
+
+## Key Differences from v3.x
+
+If migrating from app-template v3:
+
+1. **No default objects**: Must explicitly name all controllers, services, etc.
+2. **Service references**: Use `identifier` instead of `name`
+3. **Resource naming**: New consistent naming scheme
+4. **ServiceAccount syntax**: Changed from single `default` to multiple named accounts
+
+See chart upgrade documentation for full migration guide.
+
+## Validation
+
+After generating a chart:
 
 ```bash
-helm lint ./charts/todo-app
-helm template ./charts/todo-app -f values-dev.yaml
-helm install todo-app ./charts/todo-app --dry-run --debug
+# Validate structure
+python scripts/validate_chart.py /path/to/chart
+
+# Helm validation
+cd /path/to/chart
+helm lint .
+helm template . --debug
+
+# Dry-run installation
+helm install --dry-run --debug my-release .
 ```
 
-## Minikube Local Images
+## Common Issues
 
-```bash
-eval $(minikube docker-env)
-docker build -t todo-frontend:1.0.0 ./frontend
-# Set imagePullPolicy: Never in values
-```
+**Services not found**: Use `identifier` not `name` in ingress paths
+**Mounts not working**: Check `globalMounts` vs `advancedMounts` usage
+**Names too long**: Use `nameOverride` or `fullnameOverride` in global settings
+**Controller not starting**: Check `dependsOn` order for init/sidecar containers
 
-## Helm Commands
+## References
 
-```bash
-# Install
-helm install todo-app ./charts/todo-app -f values-dev.yaml -n todo
-
-# Upgrade
-helm upgrade todo-app ./charts/todo-app -f values-dev.yaml -n todo
-
-# Rollback
-helm rollback todo-app 1 -n todo
-```
-
-## Checklist
-
-```
-[ ] Chart.yaml has apiVersion: v2
-[ ] values.yaml complete
-[ ] _helpers.tpl has name/label functions
-[ ] SecurityContext in deployments
-[ ] ServiceAccount created
-[ ] NetworkPolicy enabled
-[ ] All containers have resource limits
-[ ] helm lint passes
-[ ] helm template renders
-```
+- `references/patterns.md` - Common deployment patterns
+- `references/best-practices.md` - Kubernetes/Helm best practices
+- `references/values-schema.md` - Complete values.yaml reference
+- `assets/templates/` - Base templates for quick start

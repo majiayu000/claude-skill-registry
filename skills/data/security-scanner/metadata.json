@@ -1,7 +1,7 @@
 {
   "name": "security-scanner",
-  "repo": "Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
-  "path": "plugins/dapr/skills/security-scanner/SKILL.md",
-  "source": "github.com/Sahib-Sawhney-WH/sahibs-claude-plugin-marketplace",
-  "downloaded_at": "2026-02-02T03:35:32.622531Z"
+  "repo": "HouseGarofalo/claude-code-base",
+  "path": ".claude/skills/security-scanner/SKILL.md",
+  "source": "github.com/HouseGarofalo/claude-code-base",
+  "downloaded_at": "2026-02-04T02:55:19.259188Z"
 }

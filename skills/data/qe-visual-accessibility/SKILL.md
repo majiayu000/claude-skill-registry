@@ -1,6 +1,12 @@
 ---
 name: "QE Visual Accessibility"
 description: "Visual regression testing, responsive design validation, and WCAG accessibility compliance testing."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-visual-accessibility.yaml
+
 ---
 
 # QE Visual Accessibility

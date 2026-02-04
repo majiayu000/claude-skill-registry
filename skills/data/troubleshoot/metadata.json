@@ -1,7 +1,7 @@
 {
   "name": "troubleshoot",
-  "repo": "mmbianco78/signalroom",
-  "path": ".claude/skills/troubleshoot/SKILL.md",
-  "source": "github.com/mmbianco78/signalroom",
-  "downloaded_at": "2026-02-02T05:00:22.667295Z"
+  "repo": "leanbusqts/agent47",
+  "path": "templates/skills/troubleshoot/SKILL.md",
+  "source": "github.com/leanbusqts/agent47",
+  "downloaded_at": "2026-02-04T04:29:58.874755Z"
 }

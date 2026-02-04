@@ -1,6 +1,10 @@
 ---
 name: building-chat-interfaces
-description: Build AI chat interfaces with custom backends, authentication, and context injection. Use when integrating chat UI with AI agents, adding auth, or injecting user/page context. Covers ChatKitServer, useChatKit, and MCP auth patterns.
+description: |
+  Build AI chat interfaces with custom backends, authentication, and context injection.
+  Use when integrating chat UI with AI agents, adding auth to chat, injecting user/page context,
+  or implementing httpOnly cookie proxies. Covers ChatKitServer, useChatKit, and MCP auth patterns.
+  NOT when building simple chatbots without persistence or custom agent integration.
 ---
 
 # Building Chat Interfaces

@@ -1,15 +1,16 @@
 ---
 name: prime
-description: Prime yourself on a codebase by listing files and reading the README.
-disable-model-invocation: true
-allowed-tools: Bash(git *), Read
+description: This skill should be used when the user asks to "prime the project", "load context", "get oriented", "what is this project", or wants to understand the codebase structure before starting work.
 ---
 
 # Prime
-Execute the following sections to understand the codebase then summarize your understanding.
 
-## Run
-git ls-files
+Load project context by reading core documentation and listing the file structure.
 
-## Read
-README.md
+## Workflow
+
+1. Read `README.md` for project overview
+2. Run `git ls-files` to see the file structure
+3. Note key directories and entry points
+
+No summary needed - context is now loaded for subsequent work.

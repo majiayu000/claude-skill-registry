@@ -1,43 +1,67 @@
 ---
 name: commit
-description: "Use when user says 'commit', 'save changes', 'wrap up', 'done with changes', or wants to create a git commit. Analyzes staged/unstaged changes and generates conventional commit messages based on project history."
-disable-model-invocation: true
-allowed-tools: Bash, Read, AskUserQuestion
+description: This skill should be used when the user requests "commit", "git commit", "create commit", or wants to commit staged/unstaged changes following conventional commits format
+user-invocable: true
+allowed-tools: ["Bash(git:*)", "Read", "Write", "Glob", "AskUserQuestion", "Skill"]
+argument-hint: "[no arguments needed]"
+model: haiku
+version: 0.2.0
 ---
 
-# /commit
+## Background Knowledge
 
-This skill analyzes code changes and generates a high-quality commit message that follows the project's existing style.
+**Format**: `<type>[scope]: <description>` + mandatory body + optional footers
 
-## Pre-fetched Context
+- **Title**: ALL LOWERCASE, <50 chars, imperative mood, no period. Add `!` for breaking changes
+- **Types**: `feat`, `fix`, `docs`, `refactor`, `perf`, `test`, `chore`, `build`, `ci`, `style`
+- **Body** (REQUIRED): Bullet summary (`- ` prefix, imperative verbs) + explanation paragraph. ≤72 chars/line
+- **Footer**: `Co-Authored-By` REQUIRED; optional `Closes #123`, `BREAKING CHANGE: ...`
 
-- **Recent commits:** !`git log --oneline -15 2>/dev/null || echo "No git history"`
-- **Current branch:** !`git branch --show-current 2>/dev/null`
-- **Staged changes:** !`git diff --staged --stat 2>/dev/null | head -30`
-- **Unstaged changes:** !`git diff --stat 2>/dev/null | head -20`
-- **File status:** !`git status -s 2>/dev/null | head -20`
+See `references/format-rules.md` for complete specification and examples.
 
-## Actions
+## Phase 1: Configuration Verification
 
-1. **Step 1: Analyze Context**
-   - Review the pre-fetched git information above.
-   - If there are no changes (both staged and unstaged empty), inform the user and stop.
+**Goal**: Load project-specific git configuration and valid scopes.
 
-2. **Step 2: Handle Unstaged Changes**
-   - If there are only unstaged changes, ask the user if they want to stage files first.
-   - Use `AskUserQuestion` to present options: stage all, stage specific files, or cancel.
+**Actions**:
+1. **FIRST**: Read `.claude/git.local.md` to load project configuration
+2. If file not found, **load `git:config-git` skill** using the Skill tool to create it
+3. Extract valid scopes from `scopes:` list in YAML frontmatter
+4. Store these scopes for validation in Phase 3 and Phase 5
 
-3. **Step 3: Analyze Changes**
-   - Read the actual diff content for staged changes: `git diff --staged`
-   - Understand what was changed and why.
+## Phase 2: Safety Validation
 
-4. **Step 4: Generate Commit Message**
-   - Based on the project's historical commit style (from pre-fetched context), generate a message that:
-     - Follows the project's format (conventional commits, emoji usage, etc.)
-     - Accurately and concisely describes the changes
-     - Explains the "why" behind the change, not just the "what"
+**Goal**: Perform safety checks before committing.
 
-5. **Step 5: Propose and Commit**
-   - Use `AskUserQuestion` to present the generated message.
-   - Options: use as-is, edit, or cancel.
-   - If confirmed, run `git commit -m "<message>"`.
+**Actions**:
+1. Detect sensitive files (credentials, secrets, .env files)
+2. Warn about large files (>1MB) and large commits (>500 lines)
+3. Use `AskUserQuestion` tool for confirmation if issues found
+
+## Phase 3: Change Analysis
+
+**Goal**: Identify logical units of work and infer commit scopes.
+
+**Actions**:
+1. Run `git diff --cached` and `git diff` to get code differences (MUST NOT traverse files directly)
+2. Analyze diff to identify coherent logical units
+3. Infer scope(s) from file paths and changes using the valid scopes loaded in Phase 1
+4. If inferred scope not in the valid scopes list, **load `git:config-git` skill** using the Skill tool to update configuration
+
+## Phase 4: AI Code Quality Check
+
+**Goal**: Remove AI-generated slop before committing.
+
+**Actions**:
+1. Run `git diff main...HEAD` to compare against main branch
+2. Remove AI patterns: extra comments, unnecessary defensive checks, `any` casts, inconsistent style
+3. Ensure changes follow project's established patterns
+
+## Phase 5: Commit Creation
+
+**Goal**: Create atomic commits following Conventional Commits format.
+
+**Actions** (repeat for each logical unit):
+1. Draft commit message per `references/format-rules.md`
+2. Validate: title <50 chars lowercase imperative; body has bullets + explanation paragraph; footer has `Co-Authored-By`
+3. Stage relevant files and create commit

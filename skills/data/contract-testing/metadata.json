@@ -1,7 +1,7 @@
 {
   "name": "contract-testing",
-  "repo": "proffesor-for-testing/agentic-qe",
+  "repo": "proffesor-for-testing/sentinel-api-testing",
   "path": ".claude/skills/contract-testing/SKILL.md",
-  "source": "github.com/proffesor-for-testing/agentic-qe",
-  "downloaded_at": "2026-02-02T05:07:57.827087Z"
+  "source": "github.com/proffesor-for-testing/sentinel-api-testing",
+  "downloaded_at": "2026-02-04T02:39:38.253630Z"
 }

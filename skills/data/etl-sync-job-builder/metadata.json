@@ -1,9 +1,7 @@
 {
   "name": "etl-sync-job-builder",
-  "description": "Designs reliable ETL and data synchronization jobs with incremental updates, idempotency guarantees, watermark tracking, error handling, and retry logic. Use for \"ETL jobs\", \"data sync\", \"incremental ",
-  "repo": "patricio0312rev/skillset",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/etl-sync-job-builder/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:25.433281Z"
 }

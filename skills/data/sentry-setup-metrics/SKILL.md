@@ -1,12 +1,10 @@
 ---
 name: sentry-setup-metrics
 description: Setup Sentry Metrics in any project. Use this when asked to add Sentry metrics, track custom metrics, setup counters/gauges/distributions, or instrument application performance metrics. Supports JavaScript, TypeScript, Python, React, Next.js, and Node.js.
-allowed-tools: Read, Edit, Write, Bash, Grep, Glob, AskUserQuestion
 ---
 
 # SOURCE: getsentry/sentry-for-claude
 # PATH: skills/sentry-setup-metrics/SKILL.md
-# DO NOT EDIT: This file is synced from external source
 
 
 # Setup Sentry Metrics

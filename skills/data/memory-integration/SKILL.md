@@ -1,9 +1,6 @@
 ---
 name: memory-integration
 description: Use to maintain context across sessions - integrates episodic-memory for conversation recall and mcp__memory knowledge graph for persistent facts
-allowed-tools:
-  - mcp__memory__*
-model: opus
 ---
 
 # Memory Integration

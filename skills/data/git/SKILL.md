@@ -1,224 +1,85 @@
 ---
 name: git
-description: Git workflow and commit standards for SignalRoom. Use when committing changes, creating PRs, or managing branches. Ensures consistent commit messages and safe git operations.
+description: |
+  Unified git workflow for branch-first development: status/diff review, security-first commits,
+  worktrees, and PR creation/review via gh.
+  Auto-activates on: "commit", "push", "branch", "worktree", "pr", "pull request", "merge", "rebase", "git".
+license: MIT
+compatibility: Requires git. PR workflows may use GitHub + gh CLI (optional). Worktree workflows create local directories under WORKTREES_DIR.
+metadata:
+  version: "1.0"
 ---
 
-# Git Workflow
+# Git
 
-## Branch Strategy
+Clear, repeatable git workflow with a bias toward safety.
 
-```
-main (production)
-  │
-  └── feature/* or fix/* (development)
-```
+## Router
 
-- `main` is production, always deployable
-- Feature branches for development
-- Merge to main via PR or direct push (small changes)
+Use the smallest workflow that matches the user intent.
 
-## Commit Message Format
+| User says | Load reference | Do |
+|---|---|---|
+| status / what changed (no "worktree" prefix) | `references/read-only.md` | read-only inspection |
+| help / usage / man | `references/cli-help.md` | show CLI help safely |
+| commit / stage | `references/commit-workflow.md` | stage + commit safely |
+| branch / switch | `references/branch-workflow.md` | branch operations |
+| worktree create/remove/list | `references/worktree-workflow.md` | worktree operations |
+| worktree cleanup / normalize / consolidate | `references/worktree-maintenance.md` | auto-clean + consolidate worktrees |
+| worktree summary / worktree status / show worktrees | `references/worktree-summary.md` | proactive analysis: PR status, change classification, safe-to-delete verdicts |
+| tag / version | `references/tag-workflow.md` | create/list/inspect tags |
+| pr / pull request | `references/pr-workflow.md` | create/update PR via gh |
+| pr review / fix pr comments / threads | `references/pr-review-workflow.md` | review + respond + fix |
+| merge / rebase / reset / revert | `references/advanced-workflows.md` | advanced/recovery (confirm first) |
 
-```
-<type>: <short summary>
+## Config (Edit Here)
 
-<optional body with details>
+Worktree working directories (the folders you `cd` into) live outside `.git/`.
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+Set this once and use it everywhere:
 
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
-```
-
-### Types
-
-| Type | Use For |
-|------|---------|
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `docs` | Documentation only |
-| `refactor` | Code change that doesn't fix bug or add feature |
-| `test` | Adding or updating tests |
-| `chore` | Maintenance, dependencies, config |
-
-### Examples
-
-```
-feat: Add Redtrack daily spend source
-
-fix: Correct Supabase pooler port to 6543
-
-docs: Update ROADMAP with Phase 4 completion
-
-refactor: Extract retry policy to temporal/config.py
-
-chore: Update dlt to 0.4.0
+```text
+WORKTREES_DIR=./.worktrees
+WORKTREE_PATH=$WORKTREES_DIR/<topic>
 ```
 
-## Safe Git Commands
+If you want a different location (e.g. `../.worktrees` or `~/worktrees/<repo>`), update `WORKTREES_DIR` above and follow the same shape in `references/worktree-workflow.md`.
 
-### Before Committing
+## Resilience Rules (Worktrees)
+
+- If multiple worktree root folders are detected (example: both `./.worktrees/` and `../repo-feature-x/` exist), do not delete anything by default.
+- Prefer consolidating into `WORKTREES_DIR` using `git worktree move` (when possible) or a remove+re-add plan.
+- If stale metadata exists, propose a cleanup plan: `git worktree prune` + remove/quarantine orphan directories (with confirmation).
+
+## Global Safety Rules (Never Violate)
+
+- Never force push to main/master.
+- Never commit secrets (env files, keys, credentials).
+- Never rewrite history that is already pushed unless explicitly requested.
+- Always show what will change before an irreversible action.
+
+## Confirmation Policy
+
+Read-only commands are always OK.
+
+Everything that changes state/history/remote requires explicit user confirmation:
+- `git add`, `git commit`, `git push`
+- `git merge`, `git rebase`, `git reset`, `git revert`
+- `git worktree add`, `git worktree remove`
+- `git tag` (create/delete)
+- `git branch -d/-D`
+
+## Quick Start
 
 ```bash
-# See what changed
+# Read-only
 git status
 git diff
 
-# Stage specific files
-git add path/to/file.py
+# Commit
+git diff --cached
+git commit -m "feat(scope): why"
 
-# Stage all changes
-git add -A
+# Worktrees
+git worktree list
 ```
-
-### Committing
-
-```bash
-# Commit with message
-git commit -m "feat: Add new source"
-
-# Commit with multi-line message (use heredoc)
-git commit -m "$(cat <<'EOF'
-feat: Add Redtrack source
-
-- Implements daily_spend resource
-- Uses merge disposition with date+source_id key
-- Adds to pipeline runner registry
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
-EOF
-)"
-```
-
-### Pushing
-
-```bash
-# Push to origin
-git push origin main
-
-# Push new branch
-git push -u origin feature/my-feature
-```
-
-## Dangerous Commands (Avoid)
-
-| Command | Risk | Alternative |
-|---------|------|-------------|
-| `git push --force` | Destroys remote history | `git push` (fix conflicts first) |
-| `git reset --hard` | Loses uncommitted work | `git stash` then `git reset` |
-| `git rebase -i` | Rewrites history | Only on unpushed commits |
-| `git commit --amend` | Rewrites last commit | Only if not pushed |
-
-## Pull Request Template
-
-```markdown
-## Summary
-- Brief description of changes
-
-## Changes
-- Specific change 1
-- Specific change 2
-
-## Test Plan
-- [ ] Tested locally with `python scripts/run_pipeline.py`
-- [ ] Verified no type errors with `make typecheck`
-- [ ] Ran `make ci` successfully
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-```
-
-## Pre-Commit Checklist
-
-Before any commit:
-
-```bash
-# 1. Check what you're committing
-git diff --staged
-
-# 2. Run linter
-make lint
-
-# 3. Run type checker
-make typecheck
-
-# 4. Run tests (if applicable)
-make test
-```
-
-## Common Scenarios
-
-### Undo Last Commit (Not Pushed)
-
-```bash
-# Keep changes, undo commit
-git reset --soft HEAD~1
-
-# Discard changes entirely
-git reset --hard HEAD~1
-```
-
-### Discard Local Changes
-
-```bash
-# Discard changes to specific file
-git checkout -- path/to/file.py
-
-# Discard all local changes
-git checkout -- .
-```
-
-### See What Changed Recently
-
-```bash
-# Recent commits
-git log --oneline -10
-
-# Changes in last commit
-git show --stat
-
-# Diff between commits
-git diff abc123..def456
-```
-
-### Stash Work in Progress
-
-```bash
-# Save current changes
-git stash
-
-# List stashes
-git stash list
-
-# Restore stashed changes
-git stash pop
-```
-
-## Files to Never Commit
-
-Already in `.gitignore`:
-- `.env` — secrets
-- `*.pem`, `*.key` — certificates
-- `.dlt/secrets.toml` — dlt credentials
-- `credentials.json` — service accounts
-
-If accidentally staged:
-```bash
-git reset HEAD path/to/secret/file
-```
-
-## Commit Hygiene
-
-### Good Commits
-
-- One logical change per commit
-- Descriptive message explaining WHY
-- Tests pass before commit
-- No debug code or print statements
-
-### Bad Commits
-
-- "WIP" or "fix" with no context
-- Multiple unrelated changes
-- Broken tests
-- Secrets or credentials

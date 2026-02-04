@@ -1,158 +1,212 @@
 ---
 name: openapi-swagger
-description: Expert skill for OpenAPI/Swagger specification analysis, validation, and documentation generation. Parse and validate specs, detect breaking changes, generate code samples, and lint for best practices.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep
-backlog-id: SK-001
-metadata:
-  author: babysitter-sdk
-  version: "1.0.0"
+description: Design, document, and generate APIs using OpenAPI/Swagger specifications. Create interactive API documentation, generate client SDKs, validate schemas, and build mock servers. Use when designing REST APIs, creating API documentation, generating client libraries, or validating API contracts. Triggers on openapi, swagger, api spec, api documentation, sdk generation, api design, redoc, prism mock.
 ---
 
-# OpenAPI/Swagger Skill
+# OpenAPI/Swagger API Development
 
-Expert skill for OpenAPI/Swagger specification analysis and documentation generation.
+Expert guidance for API design, documentation, and SDK generation.
 
-## Capabilities
+## Triggers
 
-- Parse and validate OpenAPI 3.x and Swagger 2.0 specifications
-- Generate API documentation from specs (ReDoc, Swagger UI)
-- Detect breaking changes between API versions
-- Validate request/response examples against schemas
-- Generate code samples in multiple languages
-- Lint OpenAPI specs for best practices (Spectral rules)
-- Convert between OpenAPI formats (YAML/JSON, version migration)
+Use this skill when:
+- Writing OpenAPI/Swagger specifications
+- Creating interactive API documentation
+- Generating client SDKs from API specs
+- Validating API schemas
+- Building mock servers for development
+- API contract testing and design-first development
+- Keywords: openapi, swagger, api spec, api documentation, sdk generation, redoc, prism, spectral
 
-## Usage
+## When to Use This Skill
 
-Invoke this skill when you need to:
-- Validate and lint OpenAPI specifications
-- Generate API reference documentation
-- Detect breaking changes between API versions
-- Create code samples from API specs
-- Migrate between OpenAPI versions
+- Designing REST API specifications
+- Creating interactive API documentation
+- Generating client SDKs
+- Validating API schemas
+- Building mock servers for development
+- API contract testing
 
-## Inputs
+---
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| specPath | string | Yes | Path to OpenAPI/Swagger spec file |
-| action | string | Yes | validate, lint, generate-docs, diff, generate-samples |
-| outputDir | string | No | Output directory for generated content |
-| targetVersion | string | No | Target OpenAPI version for migration |
-| languages | array | No | Languages for code sample generation |
-| rulesets | array | No | Spectral ruleset files to apply |
+## OpenAPI Specification Basics
 
-### Input Example
-
-```json
-{
-  "specPath": "./api/openapi.yaml",
-  "action": "lint",
-  "rulesets": [".spectral.yaml"],
-  "outputDir": "docs/api"
-}
-```
-
-## Output Structure
-
-### Validation Output
-
-```json
-{
-  "valid": true,
-  "errors": [],
-  "warnings": [
-    {
-      "path": "paths./users.get.responses.200",
-      "message": "Response should have a description",
-      "severity": "warning"
-    }
-  ],
-  "info": {
-    "title": "My API",
-    "version": "1.0.0",
-    "openApiVersion": "3.1.0"
-  }
-}
-```
-
-### Breaking Changes Output
-
-```json
-{
-  "breaking": [
-    {
-      "type": "removed-endpoint",
-      "path": "DELETE /users/{id}",
-      "description": "Endpoint removed in new version"
-    },
-    {
-      "type": "changed-type",
-      "path": "POST /users.requestBody.email",
-      "from": "string",
-      "to": "object"
-    }
-  ],
-  "nonBreaking": [
-    {
-      "type": "added-endpoint",
-      "path": "GET /users/{id}/profile"
-    }
-  ]
-}
-```
-
-## OpenAPI Specification Patterns
-
-### OpenAPI 3.1 Template
+### Minimal OpenAPI 3.0 Spec
 
 ```yaml
-openapi: 3.1.0
+# api.yaml
+openapi: 3.0.3
 info:
   title: My API
-  description: API description with **Markdown** support
+  description: API description
   version: 1.0.0
   contact:
     name: API Support
     email: support@example.com
   license:
     name: MIT
-    identifier: MIT
+    url: https://opensource.org/licenses/MIT
 
 servers:
   - url: https://api.example.com/v1
     description: Production
   - url: https://staging-api.example.com/v1
     description: Staging
-
-tags:
-  - name: users
-    description: User management operations
+  - url: http://localhost:3000/v1
+    description: Development
 
 paths:
-  /users:
+  /health:
     get:
-      operationId: listUsers
-      summary: List all users
-      description: Returns a paginated list of users
-      tags:
-        - users
-      parameters:
-        - $ref: '#/components/parameters/PageParam'
-        - $ref: '#/components/parameters/LimitParam'
+      summary: Health check
+      operationId: healthCheck
       responses:
         '200':
-          description: Successful response
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserList'
-              examples:
-                success:
-                  $ref: '#/components/examples/UserListExample'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+```
 
+---
+
+## Path Operations
+
+### CRUD Operations
+
+```yaml
+paths:
+  /users:
+    get:
+      summary: List users
+      operationId: listUsers
+      tags:
+        - Users
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: asc
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+
+    post:
+      summary: Create user
+      operationId: createUser
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+
+  /users/{userId}:
+    parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+
+    get:
+      summary: Get user by ID
+      operationId: getUser
+      tags:
+        - Users
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    put:
+      summary: Update user
+      operationId: updateUser
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+    delete:
+      summary: Delete user
+      operationId: deleteUser
+      tags:
+        - Users
+      responses:
+        '204':
+          description: User deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+```
+
+---
+
+## Components (Schemas)
+
+### Data Models
+
+```yaml
 components:
   schemas:
     User:
@@ -160,208 +214,501 @@ components:
       required:
         - id
         - email
+        - createdAt
       properties:
         id:
           type: string
           format: uuid
-          description: Unique identifier
+          readOnly: true
         email:
           type: string
           format: email
-          description: User email address
         name:
           type: string
-          description: Display name
+          minLength: 1
+          maxLength: 100
+        role:
+          type: string
+          enum: [admin, user, guest]
+          default: user
+        isActive:
+          type: boolean
+          default: true
         createdAt:
           type: string
           format: date-time
+          readOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
 
-    UserList:
+    CreateUserRequest:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        password:
+          type: string
+          format: password
+          minLength: 8
+          writeOnly: true
+
+    UpdateUserRequest:
       type: object
       properties:
-        data:
+        name:
+          type: string
+        role:
+          type: string
+          enum: [admin, user, guest]
+
+    Pagination:
+      type: object
+      properties:
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
+        hasMore:
+          type: boolean
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
           type: array
           items:
-            $ref: '#/components/schemas/User'
-        pagination:
-          $ref: '#/components/schemas/Pagination'
+            type: object
+            properties:
+              field:
+                type: string
+              message:
+                type: string
+```
 
-  parameters:
-    PageParam:
-      name: page
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        default: 1
+### Reusable Responses
 
-    LimitParam:
-      name: limit
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-        default: 20
-
+```yaml
+components:
   responses:
-    Unauthorized:
-      description: Authentication required
+    BadRequest:
+      description: Bad request
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+          example:
+            code: BAD_REQUEST
+            message: Invalid request parameters
 
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: UNAUTHORIZED
+            message: Authentication required
+
+    Forbidden:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: FORBIDDEN
+            message: Insufficient permissions
+
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: NOT_FOUND
+            message: Resource not found
+
+    Conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: CONFLICT
+            message: Resource already exists
+
+    InternalError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            code: INTERNAL_ERROR
+            message: An unexpected error occurred
+```
+
+---
+
+## Security Schemes
+
+```yaml
+components:
   securitySchemes:
-    bearerAuth:
+    BearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
 
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.example.com/authorize
+          tokenUrl: https://auth.example.com/token
+          scopes:
+            read:users: Read user information
+            write:users: Modify user information
+            admin: Full administrative access
+
+    BasicAuth:
+      type: http
+      scheme: basic
+
+# Apply globally
 security:
-  - bearerAuth: []
+  - BearerAuth: []
+
+# Or per-operation
+paths:
+  /public:
+    get:
+      security: []  # No auth required
+  /admin:
+    get:
+      security:
+        - BearerAuth: []
+        - OAuth2: [admin]
 ```
 
-## Spectral Configuration
+---
 
-### .spectral.yaml
+## Advanced Features
+
+### File Uploads
 
 ```yaml
-extends:
-  - spectral:oas
+paths:
+  /upload:
+    post:
+      summary: Upload file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                description:
+                  type: string
+      responses:
+        '200':
+          description: File uploaded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fileId:
+                    type: string
+                  url:
+                    type: string
+                    format: uri
+```
 
+### Webhooks (OpenAPI 3.1)
+
+```yaml
+webhooks:
+  userCreated:
+    post:
+      summary: User created webhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event:
+                  type: string
+                  const: user.created
+                data:
+                  $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Webhook processed
+```
+
+### Polymorphism
+
+```yaml
+components:
+  schemas:
+    Pet:
+      oneOf:
+        - $ref: '#/components/schemas/Dog'
+        - $ref: '#/components/schemas/Cat'
+      discriminator:
+        propertyName: petType
+        mapping:
+          dog: '#/components/schemas/Dog'
+          cat: '#/components/schemas/Cat'
+
+    Dog:
+      type: object
+      properties:
+        petType:
+          type: string
+        breed:
+          type: string
+        barkVolume:
+          type: integer
+
+    Cat:
+      type: object
+      properties:
+        petType:
+          type: string
+        breed:
+          type: string
+        meowPitch:
+          type: integer
+```
+
+---
+
+## Tools & CLI Commands
+
+### Swagger CLI
+
+```bash
+# Install
+npm install -g @apidevtools/swagger-cli
+
+# Validate spec
+swagger-cli validate api.yaml
+
+# Bundle multiple files
+swagger-cli bundle api.yaml -o bundled.yaml
+
+# Convert to JSON
+swagger-cli bundle api.yaml -o api.json -t json
+```
+
+### OpenAPI Generator
+
+```bash
+# Install
+npm install -g @openapitools/openapi-generator-cli
+
+# Generate TypeScript client
+openapi-generator-cli generate \
+  -i api.yaml \
+  -g typescript-axios \
+  -o ./generated/client
+
+# Generate Python client
+openapi-generator-cli generate \
+  -i api.yaml \
+  -g python \
+  -o ./generated/python-client
+
+# Generate server stub (Node.js Express)
+openapi-generator-cli generate \
+  -i api.yaml \
+  -g nodejs-express-server \
+  -o ./generated/server
+
+# List available generators
+openapi-generator-cli list
+
+# Common generators:
+# typescript-axios, typescript-fetch, python, java, go, csharp
+# nodejs-express-server, python-flask, spring, go-server
+```
+
+### Spectral (Linting)
+
+```bash
+# Install
+npm install -g @stoplight/spectral-cli
+
+# Lint spec
+spectral lint api.yaml
+
+# Custom ruleset (.spectral.yaml)
+extends: spectral:oas
 rules:
-  # Require descriptions
-  operation-description: warn
   operation-operationId: error
-
-  # Naming conventions
-  operation-operationId-valid-in-url: true
-  path-params: error
-
-  # Security
-  operation-security-defined: error
-
-  # Custom rules
-  path-must-have-tag:
-    description: Every path must have at least one tag
-    given: $.paths[*][*]
-    severity: warn
-    then:
-      field: tags
-      function: length
-      functionOptions:
-        min: 1
-
-  require-example:
-    description: Responses should have examples
-    given: $.paths[*][*].responses[*].content[*]
-    severity: info
-    then:
-      field: examples
-      function: truthy
+  operation-tags: error
+  info-contact: warn
 ```
 
-## Code Sample Generation
+### Prism (Mock Server)
 
-### Generated Samples
+```bash
+# Install
+npm install -g @stoplight/prism-cli
 
-```javascript
-// JavaScript (fetch)
-const response = await fetch('https://api.example.com/v1/users', {
-  method: 'GET',
-  headers: {
-    'Authorization': 'Bearer YOUR_TOKEN',
-    'Content-Type': 'application/json'
-  }
-});
-const data = await response.json();
+# Start mock server
+prism mock api.yaml
+
+# With dynamic responses
+prism mock api.yaml --dynamic
+
+# Proxy mode (validate against real server)
+prism proxy api.yaml https://api.example.com
 ```
 
-```python
-# Python (requests)
-import requests
+---
 
-response = requests.get(
-    'https://api.example.com/v1/users',
-    headers={
-        'Authorization': 'Bearer YOUR_TOKEN',
-        'Content-Type': 'application/json'
-    }
-)
-data = response.json()
+## Swagger UI / Redoc
+
+### Docker Swagger UI
+
+```yaml
+# docker-compose.yml
+services:
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "8080:8080"
+    environment:
+      - SWAGGER_JSON=/api/openapi.yaml
+    volumes:
+      - ./api.yaml:/api/openapi.yaml
+```
+
+### Redoc
+
+```html
+<!-- Static HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Documentation</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+  <style>body { margin: 0; padding: 0; }</style>
+</head>
+<body>
+  <redoc spec-url='./api.yaml'></redoc>
+  <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+</body>
+</html>
 ```
 
 ```bash
-# cURL
-curl -X GET 'https://api.example.com/v1/users' \
-  -H 'Authorization: Bearer YOUR_TOKEN' \
-  -H 'Content-Type: application/json'
+# CLI
+npm install -g @redocly/cli
+redocly build-docs api.yaml -o docs.html
+redocly preview-docs api.yaml
 ```
 
-## Workflow
+---
 
-1. **Parse specification** - Load and parse OpenAPI/Swagger file
-2. **Validate syntax** - Check for schema compliance
-3. **Lint for best practices** - Apply Spectral rules
-4. **Generate documentation** - Create ReDoc/Swagger UI output
-5. **Generate samples** - Create code examples
-6. **Report findings** - Output validation results
+## Code Generation Examples
 
-## Dependencies
+### TypeScript Types
 
-```json
-{
-  "devDependencies": {
-    "@stoplight/spectral-cli": "^6.11.0",
-    "swagger-cli": "^4.0.0",
-    "@redocly/cli": "^1.0.0",
-    "openapi-generator-cli": "^2.7.0",
-    "oasdiff": "^1.0.0"
-  }
+```typescript
+// Generated from OpenAPI spec
+export interface User {
+  id: string;
+  email: string;
+  name?: string;
+  role: 'admin' | 'user' | 'guest';
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreateUserRequest {
+  email: string;
+  name?: string;
+  password: string;
+}
+
+export interface ApiResponse<T> {
+  data: T;
+  pagination?: Pagination;
 }
 ```
 
-## CLI Commands
+### API Client Usage
 
-```bash
-# Validate spec
-npx @redocly/cli lint openapi.yaml
+```typescript
+import { UsersApi, Configuration } from './generated/client';
 
-# Spectral linting
-npx spectral lint openapi.yaml
+const config = new Configuration({
+  basePath: 'https://api.example.com/v1',
+  accessToken: 'your-jwt-token'
+});
 
-# Generate ReDoc documentation
-npx @redocly/cli build-docs openapi.yaml -o docs/index.html
+const usersApi = new UsersApi(config);
 
-# Detect breaking changes
-oasdiff breaking old-api.yaml new-api.yaml
+// List users
+const users = await usersApi.listUsers({ limit: 10 });
 
-# Generate code samples
-npx openapi-generator-cli generate -i openapi.yaml -g typescript-fetch -o ./sdk
+// Create user
+const newUser = await usersApi.createUser({
+  createUserRequest: {
+    email: 'user@example.com',
+    name: 'John Doe',
+    password: 'securepassword'
+  }
+});
+
+// Get user
+const user = await usersApi.getUser({ userId: 'uuid-here' });
 ```
 
-## Best Practices Applied
+---
 
-- Use $ref for reusable components
-- Include examples for all schemas
-- Document all error responses
-- Use semantic versioning
-- Include operationId for all operations
-- Tag all endpoints
-- Provide server URLs for all environments
+## Best Practices
 
-## References
-
-- OpenAPI Specification: https://spec.openapis.org/oas/latest.html
-- Spectral: https://stoplight.io/open-source/spectral
-- ReDoc: https://redocly.com/redoc
-- Swagger UI: https://swagger.io/tools/swagger-ui/
-- OpenAPI Generator: https://openapi-generator.tech/
-
-## Target Processes
-
-- api-doc-generation.js
-- api-reference-docs.js
-- sdk-doc-generation.js
-- docs-testing.js
+1. **Use semantic versioning** for API versions
+2. **Define reusable components** (schemas, responses, parameters)
+3. **Include examples** for all schemas and responses
+4. **Use operationId** for code generation
+5. **Tag operations** for logical grouping
+6. **Document all error responses**
+7. **Use $ref** to avoid duplication
+8. **Validate specs** before publishing
+9. **Version control** your API specs
+10. **Generate SDKs** for consistent client implementations

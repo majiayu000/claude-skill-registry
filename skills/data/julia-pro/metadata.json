@@ -1,7 +1,7 @@
 {
   "name": "julia-pro",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/julia-pro/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:13.901404Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/julia-pro/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:36.617878Z"
 }

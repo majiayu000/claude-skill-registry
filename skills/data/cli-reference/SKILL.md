@@ -86,7 +86,7 @@ claude --agents '{
 | `description` | Yes | When to invoke this agent |
 | `prompt` | Yes | System prompt for behavior |
 | `tools` | No | Allowed tools (inherits all if omitted) |
-| `model` | No | `sonnet`, `opus`, or `haiku` |
+| `model` | No | `sonnet`, `haiku`, or `claude-opus-4-5-20251101` |
 
 ### Key Insight
 When Lead uses Task tool, it auto-spawns from these definitions. No manual spawn needed.

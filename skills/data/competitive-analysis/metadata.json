@@ -1,7 +1,7 @@
 {
   "name": "competitive-analysis",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/product-manager-workflow/.claude/skills/competitive-analysis/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:30.294417Z"
+  "repo": "RefoundAI/lenny-skills",
+  "path": "skills/competitive-analysis/SKILL.md",
+  "source": "github.com/RefoundAI/lenny-skills",
+  "downloaded_at": "2026-02-04T03:57:47.175347Z"
 }

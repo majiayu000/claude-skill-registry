@@ -1,13 +1,13 @@
 ---
 name: code-maturity-assessor
-description: Systematic code maturity assessment using Trail of Bits' 9-category framework. Analyzes codebase for arithmetic safety, auditing practices, access controls, complexity, decentralization, documentation, MEV risks, low-level code, and testing. Produces professional scorecard with evidence-based ratings and actionable recommendations.
+description: Systematic code maturity assessment using Trail of Bits' 9-category framework. Analyzes codebase for arithmetic safety, auditing practices, access controls, complexity, decentralization, documentation, MEV risks, low-level code, and testing. Produces professional scorecard with evidence-based ratings and actionable recommendations. (project, gitignored)
 ---
 
 # Code Maturity Assessor
 
 ## Purpose
 
-Systematically assesses codebase maturity using Trail of Bits' 9-category framework. Provides evidence-based ratings and actionable recommendations.
+I will systematically assess this codebase's maturity using Trail of Bits' 9-category framework by analyzing the code and evaluating it against established criteria. I'll provide evidence-based ratings and actionable recommendations.
 
 **Framework**: Building Secure Contracts - Code Maturity Evaluation v0.1.0
 
@@ -16,7 +16,7 @@ Systematically assesses codebase maturity using Trail of Bits' 9-category framew
 ## How This Works
 
 ### Phase 1: Discovery
-Explores the codebase to understand:
+I'll explore the codebase to understand:
 - Project structure and platform
 - Contract/module files
 - Test coverage
@@ -31,7 +31,7 @@ For each of 9 categories, I'll:
 - **Determine rating** based on criteria
 
 ### Phase 3: Report
-Generates:
+I'll generate:
 - Executive summary
 - Maturity scorecard (ratings for all 9 categories)
 - Detailed analysis with evidence

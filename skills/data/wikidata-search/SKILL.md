@@ -1,15 +1,30 @@
 ---
 name: wikidata-search
-description: Search for items and properties on Wikidata and retrieve external identifiers. Use when an agent needs to (1) search for Wikidata items by label or alias, (2) get entity details including labels, descriptions, aliases, (3) retrieve external identifiers (authority control IDs) for an entity, (4) look up properties or claims for items. Triggers on queries mentioning Wikidata, Q-IDs, P-IDs, authority control, external identifiers, or structured knowledge base lookups.
+description: Search for items and properties on Wikidata and retrieve entity details, claims, and external identifiers. Supports both keyword search (Wikidata Action API) and semantic/hybrid search (Wikidata Vector Database), plus direct entity retrieval (Special:EntityData) and structured querying (WDQS SPARQL).
 ---
 
 # Wikidata Search Skill
 
 Search and retrieve data from Wikidata, the free knowledge base.
 
-## API Endpoint
+## Choosing An Access Method
+
+Use the method that matches the task to reduce load and improve accuracy:
+
+- Keyword search by label/alias/description: Action API `wbsearchentities`
+- Semantic exploration / fuzzy concept search: Wikidata Vector Database (hybrid vector + keyword via RRF)
+- Fetch a known entity's current JSON quickly: Special:EntityData
+- Complex graph relations / reporting: Wikidata Query Service (WDQS) SPARQL
+
+## API Endpoints
 
 Base URL: `https://www.wikidata.org/w/api.php`
+
+Entity JSON (often faster for current state): `https://www.wikidata.org/wiki/Special:EntityData/{ID}.json`
+
+SPARQL endpoint: `https://query.wikidata.org/sparql`
+
+Vector DB API: `https://wd-vectordb.wmcloud.org`
 
 ## Core Functions
 
@@ -56,6 +71,48 @@ Retrieve claims for specific entity/property.
 curl 'https://www.wikidata.org/w/api.php?action=wbgetclaims&entity=Q42&property=P31&format=json'
 ```
 
+### 4. Semantic / Hybrid Search (Wikidata Vector Database)
+
+When you don't know the exact label, or want "things like this" discovery, use the Vector DB.
+
+Item search:
+```bash
+curl 'https://wd-vectordb.wmcloud.org/item/query/?query=QUERY&lang=all&K=20'
+```
+
+Property search:
+```bash
+curl 'https://wd-vectordb.wmcloud.org/property/query/?query=QUERY&lang=all&K=20&exclude_external_ids=false'
+```
+
+Optional parameters:
+- `lang`: language code, or `all` for cross-language
+- `K`: number of results
+- `instanceof`: comma-separated QIDs to filter items by "instance of"
+- `rerank`: `true|false` (slower)
+
+Response fields:
+- `QID` / `PID`
+- `similarity_score`
+- `rrf_score`
+- `source`
+
+### 5. Direct Entity JSON (Special:EntityData)
+
+```bash
+curl 'https://www.wikidata.org/wiki/Special:EntityData/Q42.json?flavor=simple'
+```
+
+`flavor`:
+- `simple`: truthy statements + sitelinks/version
+- `full`: full data
+
+### 6. Structured Queries (WDQS SPARQL)
+
+```bash
+curl -G 'https://query.wikidata.org/sparql' --data-urlencode 'query=SELECT * WHERE { wd:Q42 ?p ?o } LIMIT 5' -H 'Accept: application/sparql-results+json'
+```
+
 ## Extracting External Identifiers
 
 External identifiers are stored as claims with datatype `external-id`. Common identifier properties:
@@ -96,9 +153,15 @@ results = wd.search("Albert Einstein", language="en", limit=5)
 # Get entity with identifiers
 entity = wd.get_entity("Q937", props=["labels", "descriptions", "claims"])
 
-# Get external identifiers only
+# Get external identifiers only (all values by default)
 identifiers = wd.get_identifiers("Q937")
-# Returns: {'P214': '75121530', 'P227': '118529579', ...}
+# Returns: {'P214': ['75121530', ...], 'P227': '118529579', ...}
+
+# Semantic search (Vector DB)
+candidates = wd.vector_search_items("a famous science fiction writer", lang="en", k=5)
+
+# SPARQL
+raw = wd.execute_sparql("SELECT * WHERE { wd:Q42 ?p ?o } LIMIT 5")
 ```
 
 ## Response Handling
@@ -139,8 +202,9 @@ identifiers = wd.get_identifiers("Q937")
 
 ## Best Practices
 
-1. **Rate limiting**: Add 500ms-1s delay between requests
-2. **Batch requests**: Use pipe-separated IDs (max 50 per request)
-3. **Set User-Agent**: Include contact info in headers
-4. **Filter props**: Request only needed properties to reduce payload
-5. **Handle missing data**: Not all entities have all properties
+1. **Choose the right access method**: search vs vector search vs entity fetch vs SPARQL
+2. **Rate limiting**: add 500ms-1s delay between requests
+3. **Batch requests**: use pipe-separated IDs (max 50 per `wbgetentities` call)
+4. **Set User-Agent**: include contact info in headers
+5. **Handle 429**: respect `Retry-After` and back off
+6. **Action API etiquette**: use `maxlag` and request only needed `props`

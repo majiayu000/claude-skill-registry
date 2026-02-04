@@ -1,206 +1,452 @@
 ---
 name: mcp-manager
-description: Conversational interface for managing MCP (Model Context Protocol) server configurations in Claude Code
-type: skill
-activationStrategy: lazy-aggressive
-activationKeywords:
-  - MCP
-  - Model Context Protocol
-  - MCP server
-  - MCP configuration
-  - configure MCP
-  - manage MCP
-  - enable MCP
-  - disable MCP
-  - add MCP
-  - remove MCP
-  - list MCPs
-  - show MCP
-  - validate MCP
-  - export MCP
-  - import MCP
-activationContextWindow: 3
-persistenceThreshold: 20
+description: MCP 服务器智能管理助手。自动检测 MCP 可用性、智能开关、功能问答，提供人性化的 MCP 管理体验。
 ---
 
-# MCP Manager Skill
+# MCP 管理助手
 
-## Overview
+智能管理 MCP (Model Context Protocol) 服务器，提供自动检测、智能开关和功能问答。
 
-Natural language interface to MCP Manager CLI tool for managing Model Context Protocol server configurations. Users interact conversationally: "enable the filesystem MCP", "add a database server", "show me all my MCPs".
+## 功能特性
 
-## Activation
+### 1. **自动健康检测**
+- 定期测试所有 MCP 服务器可用性
+- 检测连接状态、响应时间、功能可用性
+- 不可用时触发自动提醒
 
-Activates on MCP keywords within 3-message window or explicit invocation: `/mcp-manager`
+### 2. **智能开关管理**
+- 根据使用频率自动关闭闲置 MCP
+- 需要时自动启动对应 MCP
+- 保存开关历史，支持手动控制
 
-## Commands
+### 3. **人性化功能问答**
+- 自然语言询问 MCP 功能
+- 告诉你每个 MCP 能做什么、不能做什么
+- 推荐最适合的 MCP 组合
 
-### 1. List MCPs
+## 使用方法
 
-Display all configured MCP servers with status.
-
-- "List all my MCPs" / "Show me my MCP servers"
-- CLI: `python3 -m mcp-manager.cli list`
-
-### 2. Enable MCP
-
-Activate a disabled MCP server.
-
-- "Enable the filesystem MCP" / "Turn on puppeteer"
-- CLI: `python3 -m mcp-manager.cli enable <server-name>`
-
-### 3. Disable MCP
-
-Deactivate an MCP server without removing it. Requires confirmation.
-
-- "Disable the puppeteer MCP" / "Turn off github"
-- CLI: `python3 -m mcp-manager.cli disable <server-name>`
-
-### 4. Add MCP
-
-Add new MCP server interactively (collects name, command, args, env vars).
-
-- "Add a new MCP server" / "Configure a database MCP"
-- CLI: `python3 -m mcp-manager.cli add <name> <command> [args...] --env KEY=VALUE`
-
-### 5. Remove MCP
-
-Delete MCP server configuration completely. Requires confirmation with warning.
-
-- "Remove the puppeteer MCP" / "Delete the old-server"
-- CLI: `python3 -m mcp-manager.cli remove <server-name>`
-
-### 6. Show MCP
-
-Display detailed information for specific MCP server.
-
-- "Show me the filesystem MCP" / "Details for github server"
-- CLI: `python3 -m mcp-manager.cli show <server-name>`
-
-### 7. Validate MCPs
-
-Check all MCP configurations for errors.
-
-- "Validate my MCP configuration" / "Check for MCP errors"
-- CLI: `python3 -m mcp-manager.cli validate`
-
-### 8. Export MCPs
-
-Export configurations to JSON file for backup.
-
-- "Export my MCP configuration" / "Back up my MCPs"
-- CLI: `python3 -m mcp-manager.cli export [output-file]`
-
-### 9. Import MCPs
-
-Import configurations from JSON file.
-
-- "Import MCPs from backup.json" / "Restore my MCPs"
-- CLI: `python3 -m mcp-manager.cli import <input-file> [--merge]`
-
-## Usage Examples
-
-### Example 1: List and Enable
-
-**User:** "List all my MCPs"
-
-[Executes: `cd .claude/scenarios && python3 -m mcp-manager.cli list`]
-
-**Response:**
-"You have 3 MCP servers configured:
-✓ filesystem (enabled) - Local filesystem access
-✓ github (enabled) - GitHub API integration
-✗ puppeteer (disabled) - Browser automation"
-
-**Follow-up:** "Turn on puppeteer"
-
-[Executes: `python3 -m mcp-manager.cli enable puppeteer`]
-
-"✓ Successfully enabled 'puppeteer' MCP server."
-
-### Example 2: Add New Server
-
-**User:** "Add a new MCP for database access"
-
-**Interactive Collection:**
-
-1. Name: "postgres-local"
-2. Command: "node /opt/mcp-servers/postgres/index.js"
-3. Args: "--port 5432 --host localhost"
-4. Env: "DATABASE_URL=postgresql://localhost:5432/mydb"
-
-[Executes: `python3 -m mcp-manager.cli add postgres-local "node /opt/mcp-servers/postgres/index.js" --port 5432 --host localhost --env "DATABASE_URL=postgresql://localhost:5432/mydb"`]
-
-"✓ Successfully added 'postgres-local' MCP server.
-Server is currently disabled. Enable with: 'enable postgres-local'"
-
-### Example 3: Remove Server
-
-**User:** "Remove the puppeteer MCP"
-
-**Confirmation:**
-"⚠️ WARNING: You're about to remove 'puppeteer' MCP server. This will delete the configuration completely. This action cannot be undone. Are you sure? (yes/no)"
-
-[User confirms: "yes"]
-
-[Executes: `python3 -m mcp-manager.cli remove puppeteer`]
-
-"✓ Successfully removed 'puppeteer' MCP server."
-
-## Tool Invocation
-
-All commands execute from `.claude/scenarios/` directory:
+### 健康检测
 
 ```bash
-cd .claude/scenarios && python3 -m mcp-manager.cli <command> [args]
+# 检查所有 MCP 状态
+mcp health check
+
+# 检查特定 MCP
+mcp health check github
+
+# 持续监控（每分钟检查一次）
+mcp health monitor
 ```
 
-**Key Commands:**
+### 开关管理
 
-- `list` - List all MCPs
-- `enable <name>` - Enable server
-- `disable <name>` - Disable server
-- `add <name> <cmd> [args...] --env KEY=VAL` - Add server
-- `remove <name>` - Remove server
-- `show <name>` - Show details
-- `validate` - Validate all configurations
-- `export [file]` - Export to JSON
-- `import <file> [--merge]` - Import from JSON
+```bash
+# 列出所有 MCP 及状态
+mcp list
 
-**Output Handling:**
+# 启用 MCP
+mcp enable github
 
-- Success: Exit code 0, stdout with ✓ prefix
-- Error: Non-zero exit code, stderr with ❌ prefix
-- Redact sensitive info (tokens, passwords) in responses
+# 禁用 MCP
+mcp disable chrome-devtools
 
-## Error Handling
+# 自动优化（关闭闲置 MCP）
+mcp optimize
 
-**Common Errors:**
+# 查看使用统计
+mcp stats
+```
 
-1. **CLI Not Found**: Offer installation instructions (see README)
-2. **Server Not Found**: List available servers, suggest alternatives
-3. **Server Already Exists**: Suggest show/remove/rename
-4. **Permission Denied**: Check file/directory permissions
-5. **Malformed settings.json**: Validate JSON, offer backup restore
-6. **Invalid Command**: Show common command patterns
+### 功能问答
 
-For detailed error scenarios and troubleshooting, see `.claude/scenarios/mcp-manager/README.md`
+```
+# 自然语言询问
+"GitHub MCP 能做什么？"
+"哪个 MCP 可以处理浏览器操作？"
+"帮我总结一下所有 MCP 的功能"
+"Chrome DevTools MCP 的局限性是什么？"
+```
 
-## Best Practices
+## MCP 功能库
 
-- Always confirm destructive operations (disable, remove)
-- Validate server names before executing
-- Redact sensitive information in responses
-- Provide clear error messages with actionable next steps
-- Show current state before and after changes
+### chrome-devtools
+**能做什么：**
+- 🌐 自动化浏览器操作（点击、输入、导航）
+- 📸 截图和快照
+- 🔍 网络请求监控
+- 🐛 控制台日志查看
+- ⚡ 性能分析
 
-## See Also
+**不能做什么：**
+- ❌ 需要 API key 的外部服务调用
+- ❌ 代码执行（仅 JavaScript 评估）
+- ❌ 文件系统访问
 
-- Full documentation: `.claude/scenarios/mcp-manager/README.md`
-- Tool creation guide: `.claude/scenarios/mcp-manager/HOW_TO_CREATE_YOUR_OWN.md`
-- MCP Protocol: https://modelcontextprotocol.io/
-- Claude Code Settings: `.claude/settings.json`
+**适用场景：** 网页测试、数据抓取、UI 自动化
 
 ---
 
-**Version:** 1.0.0 | **Updated:** 2025-11-24 | **Maintainer:** amplihack team
+### github
+**能做什么：**
+- 📂 搜索仓库和代码
+- 🔍 查看 Issue 和 PR
+- 📊 获取仓库统计信息
+- 🌿 分支和标签管理
+- 👥 用户和仓库信息查询
+
+**不能做什么：**
+- ❌ 修改代码（只读操作）
+- ❌ 创建/删除仓库
+- ❌ 管理 Issues（需要额外权限）
+
+**适用场景：** 代码搜索、仓库分析、协作信息查询
+
+---
+
+### context7
+**能做什么：**
+- 🧠 长期记忆存储
+- 💾 保存和检索上下文
+- 🔗 跨会话信息共享
+- 📚 知识库管理
+
+**不能做什么：**
+- ❌ 实时数据处理
+- ❌ 复杂数值计算
+- ❌ 图像/视频处理
+
+**适用场景：** 长期记忆、上下文保持、知识管理
+
+---
+
+### filesystem
+**能做什么：**
+- 📁 读取和写入文件
+- 🔍 搜索文件内容
+- 📋 列出目录结构
+- 📝 创建和删除文件
+
+**不能做什么：**
+- ❌ 执行系统命令
+- ❌ 访问受限目录
+- ❌ 修改系统配置
+
+**适用场景：** 文件操作、代码生成、文档处理
+
+---
+
+### browser
+**能做什么：**
+- 🌐 导航到网页
+- 📸 页面截图
+- 🔍 查看页面内容
+- 🖱️ 基本点击操作
+
+**不能做什么：**
+- ❌ 复杂表单填写
+- ❌ 多标签页管理
+- ❌ JavaScript 执行
+
+**适用场景：** 简单网页访问、内容抓取
+
+---
+
+## 智能建议系统
+
+### 场景：网页自动化
+**推荐 MCP：** `chrome-devtools`
+
+```bash
+# 自动启用
+mcp enable chrome-devtools
+
+# 其他关闭以节省资源
+mcp disable context7
+```
+
+### 场景：代码搜索和分析
+**推荐 MCP：** `github`
+
+```bash
+mcp enable github
+mcp disable chrome-devtools
+```
+
+### 场景：长期记忆
+**推荐 MCP：** `context7`
+
+```bash
+mcp enable context7
+```
+
+### 场景：文件操作
+**推荐 MCP：** `filesystem`
+
+```bash
+mcp enable filesystem
+```
+
+---
+
+## 健康检测机制
+
+### 检测指标
+- **连接状态**：MCP 进程是否运行
+- **响应时间**：调用响应延迟
+- **功能测试**：执行简单操作测试
+- **错误率**：近期失败次数
+
+### 检测频率
+- 实时检测：每次使用前检查
+- 定期检测：每小时一次
+- 深度检测：每天一次（完整功能测试）
+
+### 失败提醒
+检测到 MCP 不可用时：
+```
+⚠️ MCP Alert: github
+
+状态: 不可用
+错误: Connection timeout
+建议: 1. 检查网络连接 2. 验证 API token 3. 重启 MCP
+
+[自动禁用] github 已自动禁用
+```
+
+---
+
+## 自动优化策略
+
+### 闲置检测
+- 30分钟未使用 → 标记为候选关闭
+- 1小时未使用 → 自动关闭（除非手动启用）
+- 持续使用 → 保持启用
+
+### 资源占用优先级
+**高优先级（始终保持启用）：**
+- filesystem（文件操作）
+- 当前项目必需的 MCP
+
+**低优先级（可自动关闭）：**
+- chrome-devtools（资源占用高）
+- context7（可选功能）
+
+### 智能预测
+根据用户历史行为预测需求：
+```
+用户经常：上午代码搜索 + 下午网页自动化
+
+预测：
+- 09:00-12:00: 启用 github
+- 14:00-18:00: 启用 chrome-devtools
+- 其他时间: 两者都关闭
+```
+
+---
+
+## 使用示例
+
+### 示例 1：自动健康监控
+
+```bash
+# 启动监控服务
+mcp health monitor
+
+# 输出示例：
+🔍 MCP Health Monitor
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ chrome-devtools: OK (45ms)
+✅ github: OK (120ms)
+✅ context7: OK (89ms)
+
+[Last check: 2026-01-31 17:50:00]
+[Next check: 2026-01-31 17:51:00]
+```
+
+### 示例 2：功能问答
+
+```
+用户: "chrome-devtools 能做什么？"
+
+助手: 🎯 Chrome DevTools MCP 功能概览
+
+✅ 强项：
+  • 网页自动化 - 点击、输入、导航
+  • 截图和快照 - 可视化页面状态
+  • 网络监控 - 查看请求和响应
+  • 性能分析 - 页面加载性能
+
+⚠️ 局限：
+  • 需要 Chrome 浏览器运行
+  • 无法访问受限网站
+  • JavaScript 评估受限
+
+💡 适用场景：
+  • 网页测试自动化
+  • 数据抓取
+  • UI 交互测试
+
+需要我帮你启用它吗？
+```
+
+### 示例 3：智能优化
+
+```bash
+mcp optimize
+
+# 输出：
+📊 MCP 使用分析
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+活跃 MCP (3个):
+  • github - 使用: 15次/小时 ✅ 保持启用
+  • filesystem - 使用: 8次/小时 ✅ 保持启用
+  • chrome-devtools - 使用: 0次 (闲置30分钟)
+
+闲置 MCP (2个):
+  • context7 - 未使用2小时
+  • browser - 未使用4小时
+
+🔧 优化建议:
+  关闭 chrome-devtools (节省 ~200MB 内存)
+  关闭 context7 (节省 ~50MB 内存)
+
+[应用优化] y/N? y
+✅ 已优化，节省 ~250MB 内存
+```
+
+---
+
+## 配置文件
+
+### ~/.mcp-manager/config.json
+
+```json
+{
+  "healthCheck": {
+    "interval": 3600,
+    "timeout": 10,
+    "retryCount": 3
+  },
+  "autoOptimize": {
+    "enabled": true,
+    "idleTimeout": 3600,
+    "saveHistory": true
+  },
+  "notifications": {
+    "enabled": true,
+    "channels": ["whatsapp", "console"],
+    "urgency": "high"
+  },
+  "preferences": {
+    "alwaysKeep": ["filesystem"],
+    "autoClose": ["chrome-devtools", "context7"]
+  }
+}
+```
+
+---
+
+## 命令参考
+
+| 命令 | 说明 |
+|------|------|
+| `mcp list` | 列出所有 MCP |
+| `mcp status [name]` | 查看 MCP 状态 |
+| `mcp enable <name>` | 启用 MCP |
+| `mcp disable <name>` | 禁用 MCP |
+| `mcp health check` | 健康检查 |
+| `mcp health monitor` | 持续监控 |
+| `mcp optimize` | 自动优化 |
+| `mcp stats` | 使用统计 |
+| `mcp help <name>` | MCP 功能说明 |
+
+---
+
+## 最佳实践
+
+### 1. 按需启用
+只在需要时启用资源密集型 MCP（如 chrome-devtools）
+
+### 2. 定期优化
+每天运行 `mcp optimize` 清理闲置 MCP
+
+### 3. 监控健康
+启动 `mcp health monitor` 持续监控
+
+### 4. 功能先行
+不确定需求时，先询问"哪个 MCP 能做 X？"
+
+### 5. 保留必需
+设置 `alwaysKeep` 配置，确保核心 MCP 始终可用
+
+---
+
+## 故障排查
+
+### MCP 无法启动
+```bash
+# 查看详细日志
+mcp status github --verbose
+
+# 检查配置
+cat ~/.claude.json | grep -A 10 github
+
+# 测试连接
+mcp health check github --debug
+```
+
+### 资源占用过高
+```bash
+# 查看占用
+mcp stats
+
+# 优化
+mcp optimize --aggressive
+
+# 手动关闭
+mcp disable chrome-devtools
+```
+
+### 频繁掉线
+```bash
+# 检查健康检测
+mcp health check --full
+
+# 调整超时设置
+# 编辑 config.json，增加 timeout 值
+
+# 启用自动重连
+mcp config set autoReconnect true
+```
+
+---
+
+## 开发计划
+
+### v1.0 (当前)
+- ✅ 基础健康检测
+- ✅ 手动开关管理
+- ✅ 功能问答
+
+### v1.1 (计划中)
+- ⏳ 自动开关
+- ⏳ 智能预测
+- ⏳ 使用统计
+
+### v2.0 (未来)
+- ⏳ MCP 性能优化建议
+- ⏳ 自动依赖解决
+- ⏳ MCP 更新管理
+
+---
+
+## 贡献
+
+欢迎提交 Issue 和 PR！
+
+---
+
+让 MCP 管理变得简单智能 🚀

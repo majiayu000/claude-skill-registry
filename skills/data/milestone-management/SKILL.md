@@ -1,10 +1,6 @@
 ---
 name: milestone-management
 description: Use for time-based grouping of issues into delivery phases. Creates, updates, and tracks milestones, associates issues and epics, monitors progress toward milestone completion.
-allowed-tools:
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # Milestone Management

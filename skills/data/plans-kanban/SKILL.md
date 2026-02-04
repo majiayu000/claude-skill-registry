@@ -16,7 +16,7 @@ Plans dashboard server with progress tracking and timeline visualization.
 ck init  # Runs install.sh which handles all skills
 
 # Option 2: Manual installation
-cd .opencode/skills/plans-kanban
+cd .claude/skills/plans-kanban
 npm install
 ```
 
@@ -36,23 +36,23 @@ Visual dashboard for viewing plan directories with:
 
 ```bash
 # View plans dashboard
-node .opencode/skills/plans-kanban/scripts/server.cjs \
+node .claude/skills/plans-kanban/scripts/server.cjs \
   --dir ./plans \
   --open
 
 # Remote access (all interfaces)
-node .opencode/skills/plans-kanban/scripts/server.cjs \
+node .claude/skills/plans-kanban/scripts/server.cjs \
   --dir ./plans \
   --host 0.0.0.0 \
   --open
 
 # Background mode
-node .opencode/skills/plans-kanban/scripts/server.cjs \
+node .claude/skills/plans-kanban/scripts/server.cjs \
   --dir ./plans \
   --background
 
 # Stop all running servers
-node .opencode/skills/plans-kanban/scripts/server.cjs --stop
+node .claude/skills/plans-kanban/scripts/server.cjs --stop
 ```
 
 ## Slash Command

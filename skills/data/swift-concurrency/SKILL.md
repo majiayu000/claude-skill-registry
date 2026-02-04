@@ -1,6 +1,6 @@
 ---
 name: swift-concurrency
-description: 'Expert guidance on Swift Concurrency best practices, patterns, and implementation. Use when developers mention: (1) Swift Concurrency, async/await, actors, or tasks, (2) "use Swift Concurrency" or "modern concurrency patterns", (3) migrating to Swift 6, (4) data races or thread safety issues, (5) refactoring closures to async/await, (6) @MainActor, Sendable, or actor isolation, (7) concurrent code architecture or performance optimization.'
+description: 'Expert guidance on Swift Concurrency best practices, patterns, and implementation. Use when developers mention: (1) Swift Concurrency, async/await, actors, or tasks, (2) "use Swift Concurrency" or "modern concurrency patterns", (3) migrating to Swift 6, (4) data races or thread safety issues, (5) refactoring closures to async/await, (6) @MainActor, Sendable, or actor isolation, (7) concurrent code architecture or performance optimization, (8) concurrency-related linter warnings (SwiftLint or similar; e.g. async_without_await, Sendable/actor isolation/MainActor lint).'
 ---
 # Swift Concurrency
 
@@ -18,7 +18,18 @@ This skill provides expert guidance on Swift Concurrency, covering modern async/
    - a documented safety invariant
    - a follow-up ticket to remove or migrate it
 6. For migration work, optimize for minimal blast radius (small, reviewable changes) and add verification steps.
-7. Course references are for deeper learning only. Use them sparingly and only when they clearly help answer the developer’s question.
+7. Course references are for deeper learning only. Use them sparingly and only when they clearly help answer the developer's question.
+
+## Recommended Tools for Analysis
+
+When analyzing Swift projects for concurrency issues:
+
+1. **Project Settings Discovery**
+   - Use `Read` on `Package.swift` for SwiftPM settings (tools version, strict concurrency flags, upcoming features)
+   - Use `Grep` for `SWIFT_STRICT_CONCURRENCY` or `SWIFT_DEFAULT_ACTOR_ISOLATION` in `.pbxproj` files
+   - Use `Grep` for `SWIFT_UPCOMING_FEATURE_` to find enabled upcoming features
+
+
 
 ## Project Settings Intake (Evaluate Before Advising)
 
@@ -76,6 +87,10 @@ When a developer needs concurrency guidance, follow this decision tree:
 
 ## Triage-First Playbook (Common Errors -> Next Best Move)
 
+- SwiftLint concurrency-related warnings
+  - Use `references/linting.md` for rule intent and preferred fixes; avoid dummy awaits as “fixes”.
+- SwiftLint `async_without_await` warning
+  - Remove `async` if not required; if required by protocol/override/@concurrent, prefer narrow suppression over adding fake awaits. See `references/linting.md`.
 - "Sending value of non-Sendable type ... risks causing data races"
   - First: identify where the value crosses an isolation boundary
   - Then: use `references/sendable.md` and `references/threading.md` (especially Swift 6.2 behavior changes)
@@ -197,6 +212,7 @@ Load these files as needed for specific topics:
 - **`memory-management.md`** - Retain cycles in tasks, memory safety patterns
 - **`actors.md`** - Actor isolation, @MainActor, global actors, reentrancy, custom executors, Mutex
 - **`sendable.md`** - Sendable conformance, value/reference types, @unchecked, region isolation
+- **`linting.md`** - Concurrency-focused lint rules and SwiftLint `async_without_await`
 - **`async-sequences.md`** - AsyncSequence, AsyncStream, when to use vs regular async methods
 - **`core-data.md`** - NSManagedObject sendability, custom executors, isolation conflicts
 - **`performance.md`** - Profiling with Instruments, reducing suspension points, execution strategies

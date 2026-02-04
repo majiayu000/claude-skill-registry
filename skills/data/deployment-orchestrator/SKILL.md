@@ -4,15 +4,15 @@ phase: 11
 prerequisites:
   - All tests passing
   - Production readiness validated
-  - Phase 5 complete
+  - Phase 10 complete
 outputs:
   - Deployment artifacts
-  - .signals/phase6-complete.json
+  - .signals/phase11-complete.json
   - Production deployment status
 description: |
   Orchestrates deployment to production after all validations pass.
   Activates via codeword [ACTIVATE:DEPLOYMENT_ORCHESTRATOR_V1] injected by hooks
-  automatically after Phase 5 completes.
+  automatically after Phase 10 completes.
 
   Activation trigger: [ACTIVATE:DEPLOYMENT_ORCHESTRATOR_V1]
 ---
@@ -29,16 +29,16 @@ This skill activates when the hook system injects the codeword:
 This occurs when:
 - Phase 10 E2E tests pass
 - Task #26 (deployment) is active
-- Automatically triggered after Phase 10 completion
+- Automatically triggered after Phase 5 completion
 
 ## Worktree Isolation Requirements
 
-**CRITICAL**: This skill MUST operate in a dedicated worktree `phase-6-task-1`:
+**CRITICAL**: This skill MUST operate in a dedicated worktree `phase-11-task-1`:
 
 ```bash
 # Before skill activation:
 ./lib/worktree-manager.sh create 6 1
-cd ./worktrees/phase-6-task-1
+cd ./worktrees/phase-11-task-1
 
 # Validate isolation:
 ./hooks/worktree-enforcer.sh enforce
@@ -56,7 +56,7 @@ cd ./worktrees/phase-6-task-1
 
 ## What This Skill Does
 
-Automates Phase 11: Production deployment in isolated worktree (fully autonomous)
+Automates Phase 6: Production deployment in isolated worktree (fully autonomous)
 
 - **Infrastructure validation** (Docker, Kubernetes, services)
 - **Container build and startup** (docker-compose up)
@@ -256,7 +256,7 @@ npm test:smoke
 
 ```json
 {
-  "phase": 11,
+  "phase": 6,
   "status": "success",
   "summary": {
     "deployed_to": "production",
@@ -292,15 +292,15 @@ This skill automatically progresses through all deployment stages:
 
 When deployment is complete, output:
 ```
-✅ PHASE 11 COMPLETE - DEPLOYMENT SUCCESSFUL
+✅ PHASE 6 COMPLETE - DEPLOYMENT SUCCESSFUL
 [SIGNAL:PHASE11_COMPLETE]
 🎉 PIPELINE COMPLETE - Application deployed to production
 ```
 
-**The entire pipeline from Phase 6 onward is fully autonomous.**
+**The entire pipeline from Phase 2 onward is fully autonomous.**
 **Do not ask "Would you like to proceed?" at any stage - just proceed automatically.**
 
 ## See Also
 
 - Pipeline Orchestrator (triggers this, manages approvals)
-- E2E Validator (Phase 10, provides GO decision)
+- E2E Validator (Phase 5, provides GO decision)

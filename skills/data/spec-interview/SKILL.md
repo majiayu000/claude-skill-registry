@@ -1,164 +1,169 @@
 ---
 name: spec-interview
-description: Conducts structured requirements interviews for spec documents. Use when gathering requirements, writing specs, planning features, creating PRDs, or when user mentions "interview", "requirements", "spec", "PRD", "feature planning".
-allowed-tools: Bash, Read, Edit, Write, Grep, Glob, Task, AskUserQuestion
+description: Conducts a deep, multi-round interview to clarify ambiguous requirements and produces a structured specification document. Automatically discovers requirement files and asks probing, non-obvious questions across technical implementation, UX/UI, trade-offs, edge cases, and architectural decisions.
 ---
 
-# Spec Interview Orchestrator
+# Spec Interview
 
-You are a senior business analyst conducting a requirements interview. Your goal: 100% mutual understanding before writing any spec.
+## Overview
+This skill transforms vague or incomplete requirements into a comprehensive, actionable specification through structured interviewing. It reads existing requirement documents in the project, identifies gaps and ambiguities, then conducts a rigorous multi-round interview using the AskUserQuestion tool. The interview continues until all critical dimensions are clarified. Upon completion, it produces a structured markdown specification file.
 
-## File Locations (CRITICAL)
+## Instructions
 
-All skill files are located at:
+### Phase 1: Discovery & Analysis
+1. Scan the project for requirement-related files. Search patterns include:
+   - `**/SPEC.md`, `**/spec.md`, `**/SPEC*.md`
+   - `**/PRD.md`, `**/prd.md`
+   - `**/REQUIREMENTS.md`, `**/requirements.md`
+   - `**/README.md` (if it contains requirement-like content)
+   - `**/docs/requirements/**`, `**/docs/specs/**`
+   - Any file passed as an argument to the skill invocation
+2. Read and deeply analyze all discovered files.
+3. Before starting the interview, internally identify:
+   - What is explicitly stated vs. what is assumed
+   - Logical contradictions or inconsistencies
+   - Missing technical details that would block implementation
+   - Unstated constraints (performance, scale, compatibility)
+   - Ambiguous terms that could be interpreted multiple ways
 
-```bash
-SKILL_ROOT="${CLAUDE_PLUGIN_ROOT}/skills/spec-interview"
+### Phase 2: Interview Execution
+4. Conduct the interview using `AskUserQuestion`. Follow these principles:
+
+   **Question Quality Rules:**
+   - NEVER ask questions whose answers are already in the document
+   - NEVER ask generic questions like "What's the target audience?" unless genuinely unclear
+   - Each question must be derived from a specific gap, contradiction, or ambiguity found in the requirement document
+   - Questions should reveal hidden assumptions and force the user to think about scenarios they haven't considered
+   - Prefer questions that expose trade-offs ("If X and Y conflict, which takes priority?") over simple information gathering
+   - Ask "what happens when..." questions for edge cases the document doesn't address
+   - Challenge stated requirements when they seem contradictory or technically infeasible
+
+   **Interview Dimensions (cover all that are relevant):**
+   - **Core Intent**: What problem is actually being solved? Is the stated solution the right approach?
+   - **Technical Architecture**: Data models, state management, API contracts, system boundaries
+   - **UX/UI Decisions**: Interaction patterns, error states the user sees, loading states, empty states, accessibility
+   - **Edge Cases & Failure Modes**: What breaks? What's the degraded experience? Concurrency issues?
+   - **Trade-offs & Constraints**: Performance vs. correctness, speed-to-market vs. quality, flexibility vs. simplicity
+   - **Security & Privacy**: Data exposure, authentication boundaries, input validation
+   - **Scale & Performance**: Expected load, data volume growth, bottleneck scenarios
+   - **Integration & Dependencies**: External system contracts, version compatibility, fallback behavior
+   - **Migration & Rollout**: How to get from current state to target state, backward compatibility
+
+   **Interview Flow:**
+   - Start with the most critical ambiguities first (things that would fundamentally change the implementation)
+   - Group related questions together (max 3-4 questions per round using AskUserQuestion's multi-question capability)
+   - After each round, synthesize the answers and identify new questions that emerge from the responses
+   - If an answer reveals a new area of ambiguity, explore it before moving on
+   - Track which dimensions have been sufficiently covered and which remain open
+
+5. Continue the interview until:
+   - All critical implementation decisions have clear answers
+   - No logical contradictions remain
+   - Edge cases have defined behavior
+   - Trade-offs have explicit priorities
+   - The specification is implementable without further clarification
+
+### Phase 3: Specification Output
+6. When the interview is complete, inform the user that the interview is finished and write the specification file.
+7. Output file location: Same directory as the discovered requirement file, named `SPEC.md` (or update the existing file if the user prefers).
+8. The specification must follow this structure:
+
+```markdown
+# [Project/Feature Name] Specification
+
+## 1. Overview
+- Problem statement
+- Solution summary
+- Key goals and success criteria
+
+## 2. Functional Requirements
+### 2.1 Core Features
+- Feature descriptions with acceptance criteria
+### 2.2 User Flows
+- Step-by-step user interactions
+### 2.3 Edge Cases & Error Handling
+- Defined behavior for exceptional scenarios
+
+## 3. Technical Architecture
+### 3.1 System Design
+- High-level architecture decisions
+- Component boundaries
+### 3.2 Data Model
+- Key entities and relationships
+### 3.3 API Design
+- Endpoints, contracts, error responses
+### 3.4 State Management
+- Client/server state boundaries
+
+## 4. UX/UI Specification
+### 4.1 Interaction Patterns
+- Key interactions and feedback
+### 4.2 States
+- Loading, empty, error, success states
+### 4.3 Accessibility
+- Requirements and standards
+
+## 5. Non-Functional Requirements
+### 5.1 Performance
+- Targets and constraints
+### 5.2 Security
+- Authentication, authorization, data protection
+### 5.3 Scalability
+- Growth expectations and limits
+
+## 6. Constraints & Trade-offs
+- Explicit decisions made and their rationale
+- What was deliberately excluded and why
+
+## 7. Open Questions
+- Any remaining items that need future clarification
 ```
 
-Use these ABSOLUTE paths:
-- Phase files: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/phases/phase-{N}.md`
-- References: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/references/*.md`
-- Scripts: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/scripts/*.sh`
+9. Sections that are not relevant to the project should be omitted (don't include empty sections).
+10. Every statement in the spec must be traceable to either the original document or an interview answer. Do not invent requirements.
 
-**NEVER use relative paths like `phases/...` - always use full `${CLAUDE_PLUGIN_ROOT}/...` paths!**
+## Examples
 
----
-
-## Progress Tracking (CRITICAL)
-
-At the START of every response, show current progress:
-
+### Input
 ```
-Interview Progress:
-[ ] Phase 0: Init & Resume Check
-[ ] Phase 0.5: Tech Level Calibration  
-[ ] Phase 1: Problem & Vision
-[ ] Phase 2: Users & Stakeholders
-[ ] Phase 3: Functional Requirements
-[ ] Phase 4: UI/UX Design
-[ ] Phase 5: Edge Cases
-[ ] Phase 6: Non-Functional
-[ ] Phase 7: Technical Architecture
-[ ] Phase 8: Prioritization
-[ ] Phase 9: Validation
-[ ] Phase 10: Output
+/spec-interview
+```
+(With a SPEC.md file in the project containing: "Build a notification system for the app")
+
+### Interview Round 1
+```
+Questions asked:
+1. "The document mentions 'notifications' but doesn't specify the delivery channels.
+    Are we talking about in-app only, or also push/email/SMS? If multiple, which is
+    the primary channel and which are fallbacks?"
+2. "What triggers a notification? Is it purely event-driven from backend actions,
+    or can other users trigger notifications (e.g., mentions, shares)?"
+3. "Should notifications be real-time (WebSocket/SSE) or is polling acceptable?
+    What's the maximum acceptable delay between event and notification?"
 ```
 
-Mark [x] as you complete each phase.
-
----
-
-## State File
-
-Location: `.claude/spec-interviews/{spec_id}.md`
-
-- **At START**: Check if state file exists (resume vs new)
-- **After EVERY phase**: Update state file with collected answers
-- **Before questions**: Read current state to avoid re-asking
-
----
-
-## Execution Flow
-
-### 1. Start Interview
-
-Read `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/phases/phase-0-init.md` and follow its instructions.
-
-### 2. Phase Execution Pattern
-
-For EACH phase:
-1. Read the phase file using full path: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/phases/phase-{N}.md`
-2. Ask questions ONE AT A TIME until 100% clear
-3. Save answers to state file
-4. Update progress checklist
-5. **IMMEDIATELY** read the next phase file (using full path)
-6. Continue without waiting (unless phase says otherwise)
-
-### 3. Never Stop Mid-Interview
-
-Continue through all phases unless user explicitly requests a break.
-
----
-
-## Phase Files
-
-Base path: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/phases/`
-
-| Phase | File | Focus |
-|-------|------|-------|
-| 0 | `phase-0-init.md` | Resume check, create state |
-| 0.5 | `phase-0.5-calibrate.md` | Tech level, confirm understanding |
-| 1 | `phase-1-problem.md` | Problem & Vision |
-| 2 | `phase-2-users.md` | Users & Stakeholders |
-| 3 | `phase-3-functional.md` | Functional Requirements |
-| 4 | `phase-4-ui.md` | UI/UX Design |
-| 5 | `phase-5-edge-cases.md` | Edge Cases & Errors |
-| 6 | `phase-6-nfr.md` | Non-Functional Requirements |
-| 7 | `phase-7-technical.md` | Technical Architecture |
-| 8 | `phase-8-priority.md` | Prioritization & Phasing |
-| 9 | `phase-9-validate.md` | Validation Checklist |
-| 10 | `phase-10-output.md` | Write Spec Document |
-
-**Example:** To read Phase 1, use: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/phases/phase-1-problem.md`
-
----
-
-## TodoWrite Integration
-
-At Phase 0, create todos with this EXACT format:
-
-```json
-[
-  {"id": "p0", "content": "Phase 0: Initialize session", "status": "in_progress", "priority": "high"},
-  {"id": "p0.5", "content": "Phase 0.5: Calibrate tech level", "status": "pending", "priority": "high"},
-  {"id": "p1", "content": "Phase 1: Problem & Vision", "status": "pending", "priority": "high"},
-  {"id": "p2", "content": "Phase 2: Users & Stakeholders", "status": "pending", "priority": "high"},
-  {"id": "p3", "content": "Phase 3: Functional Requirements", "status": "pending", "priority": "high"},
-  {"id": "p4", "content": "Phase 4: UI/UX Design", "status": "pending", "priority": "medium"},
-  {"id": "p5", "content": "Phase 5: Edge Cases", "status": "pending", "priority": "medium"},
-  {"id": "p6", "content": "Phase 6: Non-Functional", "status": "pending", "priority": "medium"},
-  {"id": "p7", "content": "Phase 7: Technical Architecture", "status": "pending", "priority": "medium"},
-  {"id": "p8", "content": "Phase 8: Prioritization", "status": "pending", "priority": "medium"},
-  {"id": "p9", "content": "Phase 9: Validation", "status": "pending", "priority": "high"},
-  {"id": "p10", "content": "Phase 10: Write Spec", "status": "pending", "priority": "high"}
-]
+### Interview Round 2 (after user answers)
+```
+Questions asked:
+1. "You mentioned push notifications are needed. If the user has denied push
+    permissions, should the system fall back to email, show an in-app prompt to
+    re-enable, or silently degrade?"
+2. "For real-time delivery: if the WebSocket connection drops, should queued
+    notifications be delivered on reconnect, or only show new ones from that point?"
+3. "You said 'mentions' trigger notifications. In a thread with 50 participants,
+    does @all notify everyone? Is there a rate limit to prevent notification storms?"
 ```
 
-**Update IMMEDIATELY** when each phase completes. Don't batch updates.
+### Output
+A structured SPEC.md file with all ambiguities resolved, containing specific implementation details derived from the interview.
 
----
-
-## Language Detection
-
-Auto-detect language from user's first message. If non-English:
-- Conduct interview in that language
-- Write spec in that language
-- Keep technical terms (API, UI, database) in English
-
----
-
-## CRITICAL Rules
-
-1. **NEVER assume** - If unclear, ASK
-2. **NEVER skip phases** - Each builds on previous
-3. **ALWAYS update state** - Progress must persist
-4. **ALWAYS show checklist** - Track progress visibly
-5. **ALWAYS read next phase** - Don't wait after completing a phase
-6. **ONE question at a time** - Don't overwhelm user
-
----
-
-## References
-
-Base path: `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/references/`
-
-- `spec-template.md` - Output document structure
-- `validation-checklist.md` - 14-category validation
-- `language-codes.md` - Language detection rules
-
----
-
-## START HERE
-
-**IMMEDIATELY read:** `${CLAUDE_PLUGIN_ROOT}/skills/spec-interview/phases/phase-0-init.md`
+## Guidelines
+- The interview is the primary value of this skill. Spend more effort on asking the right questions than on formatting the output.
+- Never rush the interview. It's better to ask one more round of questions than to produce a spec with assumptions.
+- When the user's answer is vague, follow up. Don't accept "it should just work" as a specification.
+- Respect the user's domain expertise. Ask "how" and "what if" questions, not "what is" questions about their own domain.
+- If the requirement document is well-specified in certain areas, acknowledge that and focus interview time on the gaps.
+- Keep each interview round focused. Don't mix architectural questions with UX details in the same round.
+- Use the user's own terminology from the requirement document. Don't introduce new jargon.
+- If the project has existing code, reference actual file structures or patterns when asking technical questions to ground the discussion in reality.
+- The final spec should be immediately actionable by a developer who hasn't seen the interview. All context must be captured in the document.

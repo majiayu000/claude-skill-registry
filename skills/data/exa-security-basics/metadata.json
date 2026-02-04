@@ -1,7 +1,7 @@
 {
   "name": "exa-security-basics",
-  "repo": "Brmbobo/Web2podcast",
-  "path": ".claude/agents/enterprise-frontend-design/agents/saas-packs/exa-pack/skills/exa-security-basics/SKILL.md",
-  "source": "github.com/Brmbobo/Web2podcast",
-  "downloaded_at": "2026-02-02T04:27:01.315422Z"
+  "repo": "vasic-digital/SuperAgent",
+  "path": "skills/plugins/saas-packs/exa-pack/exa-security-basics/SKILL.md",
+  "source": "github.com/vasic-digital/SuperAgent",
+  "downloaded_at": "2026-02-04T03:29:34.467586Z"
 }

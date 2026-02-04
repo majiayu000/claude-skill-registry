@@ -1,7 +1,7 @@
 {
   "name": "arxiv",
-  "repo": "grahama1970/agent-skills",
-  "path": "skills/arxiv/SKILL.md",
-  "source": "github.com/grahama1970/agent-skills",
-  "downloaded_at": "2026-02-02T01:19:53.414364Z"
+  "repo": "ecto/dotfiles",
+  "path": ".claude/skills/arxiv/SKILL.md",
+  "source": "github.com/ecto/dotfiles",
+  "downloaded_at": "2026-02-04T02:23:27.480068Z"
 }

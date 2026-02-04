@@ -1,7 +1,7 @@
 {
   "name": "ci",
-  "repo": "Chachamaru127/claude-code-harness",
-  "path": "opencode/skills/ci/SKILL.md",
-  "source": "github.com/Chachamaru127/claude-code-harness",
-  "downloaded_at": "2026-02-01T03:39:21.411024Z"
+  "repo": "PabloLION/bmad-plugin",
+  "path": "plugins/bmad/skills/ci/SKILL.md",
+  "source": "github.com/PabloLION/bmad-plugin",
+  "downloaded_at": "2026-02-04T03:30:53.374379Z"
 }

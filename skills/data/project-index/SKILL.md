@@ -1,4 +1,4 @@
----
+﻿---
 name: project-index
 description: Generate and maintain a project structure index for fast AI navigation. Creates docs/structure.md with an AI-friendly map + tree. Use when starting a new project, after major changes, or when docs/structure.md is stale.
 ---
@@ -12,7 +12,7 @@ Generate an AI-friendly `docs/structure.md` so agents can understand project lay
 - First time: project has no `docs/structure.md`
 - After major changes: added/removed modules, moved folders, renamed domains/features
 - When `docs/structure.md` looks stale or misleading
-- On demand: user says “update structure”, “refresh index”, “scan project”
+- On demand: user says "update structure", "refresh index", "scan project"
 
 ## Output
 
@@ -23,12 +23,12 @@ Generate an AI-friendly `docs/structure.md` so agents can understand project lay
 
 ### Python (recommended default)
 ```bash
-python .claude/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
+python .opencode/skills/project-index/scripts/scan_structure.py . 4 > docs/structure.md
 ```
 
 ### Node.js
 ```bash
-node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
+node .opencode/skills/project-index/scripts/scan-structure.js . 4 > docs/structure.md
 ```
 
 ### Flags
@@ -36,7 +36,7 @@ node .claude/skills/project-index/scripts/scan-structure.js . 4 > docs/structure
 - `json`: output JSON instead of Markdown
 - `--no-gitignore`: ignore `.gitignore` rules and scan everything (not recommended)
 
-## Script Behavior (What “optimized” means)
+## Script Behavior (What "optimized" means)
 
 - Respects `.gitignore` patterns by default (simplified matching)
 - Has built-in ignores for common noise:
@@ -95,3 +95,4 @@ repo/
 
 - Agents should **read `docs/structure.md` first** for large/broad tasks, then use `rg` for precise lookup.
 - A stale `docs/structure.md` is worse than none; refresh it after restructures.
+

@@ -1,7 +1,7 @@
 {
   "name": "run-tests",
-  "repo": "benzwick/SlicerMouseMaster",
-  "path": ".claude/skills/run-tests/SKILL.md",
-  "source": "github.com/benzwick/SlicerMouseMaster",
-  "downloaded_at": "2026-02-02T04:17:58.351584Z"
+  "repo": "sjtw/tarkov-build-optimiser",
+  "path": ".cursor/skills/run-tests/SKILL.md",
+  "source": "github.com/sjtw/tarkov-build-optimiser",
+  "downloaded_at": "2026-02-04T03:19:13.331857Z"
 }

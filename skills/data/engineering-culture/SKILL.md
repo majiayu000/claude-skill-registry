@@ -1,117 +1,70 @@
 ---
-name: "engineering-culture"
-description: "Build or refresh engineering culture and produce an Engineering Culture Operating System Pack (capability map, culture code, org↔architecture alignment, clock-speed/DevEx backlog, workflow contract, rollout + measurement). Use for engineering culture, DevOps capabilities, DevEx, clock speed, Conway's Law, and engineering principles. Category: Engineering."
+name: engineering-culture
+description: Help users build strong engineering culture. Use when someone is improving developer experience, fostering technical excellence, designing engineering practices, or scaling an engineering organization.
 ---
 
 # Engineering Culture
 
-## Scope
+Help the user build strong engineering culture using frameworks from 19 product leaders who have built high-performing engineering organizations.
 
-**Covers**
-- Diagnosing the current engineering culture *and* delivery system (technical, architectural, cultural, and management capabilities)
-- Defining a clear **engineering culture code** (principles → behaviors → decision rules → anti-patterns)
-- Aligning org structure with architecture (Conway’s Law) and reducing cross-team friction
-- Increasing **clock speed** (safe shipping + experimentation throughput) and improving DevEx
-- Creating a practical cross-functional workflow contract (how engineering + PM/Design/Marketing collaborate in the same toolchain)
-- Making AI-assisted development safe and effective (humans as “architects”: spec, review, and oversight)
+## How to Help
 
-**When to use**
-- “Help me improve engineering culture / DevEx and make it concrete.”
-- “Our delivery is slow—build a plan to increase shipping speed without breaking things.”
-- “Our org structure fights our architecture—analyze Conway’s Law and propose changes.”
-- “We want tighter processes and faster experimentation (higher clock speed).”
-- “Non-engineering functions struggle to work with engineering—define a shared workflow contract.”
-- “We’re adopting AI coding tools/agents—set norms so engineers shift toward higher-level design and review.”
+When the user asks for help with engineering culture:
 
-**When NOT to use**
-- You need to respond to an active incident or outage (use incident response/runbooks)
-- You need HR/legal policy, investigations, or employee relations handling (involve HR/legal)
-- You only need to implement a specific technical improvement (e.g., “set up CI”) without culture/org/process work
-- You need a full company strategy/roadmap prioritization across many bets (use `prioritizing-roadmap`)
+1. **Diagnose the current state** - Understand their team size, practices, and pain points
+2. **Identify the bottleneck** - Determine if the issue is DevEx, org structure, talent, or process
+3. **Design for the right outcomes** - Focus on speed, stability, and developer satisfaction
+4. **Balance structure with autonomy** - Help calibrate how much process is needed
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Org context: product(s), stage, engineering size, team topology, on-call model
-- Current symptoms + 2–5 examples (e.g., slow delivery, flaky deploys, low ownership, poor collaboration, high toil)
-- Current delivery system snapshot (release cadence, CI/CD maturity, test strategy, environments)
-- Architecture constraints (e.g., monolith vs services; coupling hotspots; ownership boundaries)
-- Cross-functional workflow reality (where work is tracked, how decisions are made, how releases happen)
-- Desired outcomes (what should be *more true* in 4–12 weeks?) + timeline constraints
+### DevOps is capabilities, not tools
+Nicole Forsgren: "DevOps is not a toolchain you buy. Marketing teams labeled toolchains DevOps because they wanted your money. DevOps is a set of capabilities - technical capabilities, architectural capabilities, cultural capabilities, and lean management practices." Focus on integrated capabilities, not just implementing specific tools.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time), then proceed with explicit assumptions.
-- If metrics are missing, use best-effort ranges and label confidence; list instrumentation gaps.
-- Do not request secrets, credentials, or proprietary identifiers; use redacted summaries.
+### Conway's Law is powerful
+Dhanji R. Prasanna: "Conway's Law can be really, really powerful. You ship your org structure. What you're organized as in terms of teams and collaborating groups matters a lot to what you build." Organizational structure directly dictates architecture and product quality.
 
-## Outputs (deliverables)
+### Engineers are becoming architects
+Scott Wu: "We've thought about Devin as really allowing engineers to go from bricklayer to architect. A lot of it is just getting to the point where you can do the high-level directing and specify things exactly how you want." The future of engineering involves shifting humans from manual coding to architectural oversight.
 
-Produce an **Engineering Culture Operating System Pack** in Markdown (in-chat; or as files if requested):
+### DevEx is the foundation
+Nicole Forsgren: "Developer Experience is what it's like to build software, day to day. The friction they face, the workflows they have to go through. It's important because when DevEx is poor, everything else just isn't going to help." Flow state, cognitive load, and feedback loops are the three pillars.
 
-1) **Culture + capability snapshot** (what’s true today; evidence; capability gaps)
-2) **Engineering culture code (v1)** (3–7 principles with behaviors, do/don’t, decision rules, anti-patterns)
-3) **Org ↔ architecture alignment brief** (Conway’s Law analysis + proposed operating model changes)
-4) **Clock speed + DevEx improvement backlog** (prioritized initiatives with owners, sequencing, metrics)
-5) **Cross-functional workflow contract** (GitHub/issue/PR/release norms; how non-engineers contribute; AI norms)
-6) **Rollout + measurement plan** (30/60/90, rituals, metrics + guardrails, feedback loops)
-7) **Risks / Open questions / Next steps** (always included)
+### Optimize for clock speed
+Albert Cheng: "The product experience of Duolingo actually changes multiple times per day for each user. They care a lot about the clock speed of the company." High-performance engineering culture is built around extreme experimentation frequency.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Require all functions to touch code
+Brandon Chu: "All project management was just in GitHub, just commenting on PRs, and even marketers in order to upload a blog post, you'd have to commit and deploy it." Build technical culture by requiring all functions to engage directly with engineering tools.
 
-## Workflow (7 steps)
+### High talent density reduces process need
+Michael Truell: "We've been able to get away with not a ton of process yet on the engineering front by hiring people who are really excellent, level-headed, people who are less focused on external validation, more focused on building something really great." Hire for disposition to reduce organizational overhead.
 
-### 1) Intake + boundary setting
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm scope (team vs org), decision owner(s), timeline, and constraints. Identify any HR/legal or active-incident concerns and route appropriately. Confirm which deliverables to produce.
-- **Outputs:** Context snapshot + assumptions/unknowns list.
-- **Checks:** Scope boundaries are explicit; success definition is stated in observable terms.
+### Pair programming is underutilized
+Farhan Thawar: "Pair programming is the most underutilized management tool in engineering, bar none. The throughput limiter is not hands-on keyboard. It's where is the good elegant solution?" Use pairing for knowledge transfer and finding elegant solutions.
 
-### 2) Diagnose the current culture as a delivery system (capability map)
-- **Inputs:** Symptoms/examples; current process/tooling; architecture context.
-- **Actions:** Build a capability map across **technical**, **architectural**, **cultural**, and **management** capabilities. Capture evidence and gaps (not platitudes). Distinguish stated culture vs lived culture.
-- **Outputs:** Culture + capability snapshot (draft).
-- **Checks:** Each claimed problem has at least one piece of evidence (example, metric, observed behavior) or is labeled “needs data”.
+## Questions to Help Users
 
-### 3) Define the target culture (culture code v1)
-- **Inputs:** Snapshot; constraints; what already works.
-- **Actions:** Pick 2–4 priority shifts, then write a culture code: 3–7 principles with behaviors, do/don’t, decision rules, and anti-patterns. Prefer rules that increase autonomy while reducing ambiguity.
-- **Outputs:** Engineering culture code (v1).
-- **Checks:** Every principle includes a concrete “how we work” example and at least one measurable/observable signal.
+- "What's the biggest friction point in your developers' daily workflow?"
+- "How does your org structure map to your product architecture?"
+- "How much time do engineers spend in flow state vs in meetings?"
+- "What's your team's 'clock speed' - how often can you ship and test changes?"
+- "Do non-engineering roles understand the deployment workflow?"
 
-### 4) Align org structure with architecture (Conway’s Law)
-- **Inputs:** Current team topology; architecture coupling/ownership hotspots; dependency pain.
-- **Actions:** Map org → architecture fit. Propose changes: team boundaries, ownership, interfaces, and standardization (e.g., leveling definitions, incident policies, review expectations) where misalignment causes friction.
-- **Outputs:** Org ↔ architecture alignment brief.
-- **Checks:** Proposed changes include migration/transition steps and explicit trade-offs (what gets worse).
+## Common Mistakes to Flag
 
-### 5) Increase clock speed (safe shipping + experimentation throughput)
-- **Inputs:** Current shipping/experiment cadence; pipeline constraints; quality constraints.
-- **Actions:** Define “clock speed” targets and bottlenecks. Propose initiatives that raise throughput safely (small batches, CI reliability, test strategy, progressive delivery, observability). Convert into a prioritized backlog.
-- **Outputs:** Clock speed + DevEx improvement backlog (draft).
-- **Checks:** Each initiative has an owner, an effort range, a dependency note, and a metric/leading indicator.
+- **Buying tools instead of building capabilities** - Expecting a DevOps toolchain to fix cultural problems
+- **Ignoring Conway's Law** - Org structure that doesn't match desired product architecture
+- **Neglecting DevEx** - Poor developer experience undermines all other investments
+- **Over-processing high-talent teams** - Adding unnecessary bureaucracy to excellent teams
+- **Code quality over customer value** - Prioritizing perfect architecture over solving user problems
 
-### 6) Create the workflow contract (including AI norms)
-- **Inputs:** Collaboration pain points; tool constraints; roles.
-- **Actions:** Specify how work flows from idea → issue → PR → deploy → learn. Define cross-functional participation (where PM/Design/Marketing contribute) and working agreements (review SLAs, merge/deploy policy, experiment ownership). Add AI-assisted development norms: where agents help, human review requirements, and safe data handling.
-- **Outputs:** Cross-functional workflow contract.
-- **Checks:** The contract reduces common failure modes (stalled PRs, unclear ownership, “drive-by” requests) and is teachable to new hires.
+## Deep Dive
 
-### 7) Rollout + measurement + quality gate
-- **Inputs:** Draft pack.
-- **Actions:** Create a 30/60/90 rollout plan with rituals/cadence and training. Define metrics and guardrails (e.g., DORA + quality + DevEx). Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Finalize **Risks / Open questions / Next steps**.
-- **Outputs:** Final Engineering Culture Operating System Pack.
-- **Checks:** The first 1–2 actions can start this week; measurement is feasible; risks/trade-offs are explicit.
+For all 23 insights from 19 guests, see `references/guest-insights.md`
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Related Skills
 
-## Examples
-
-**Example 1 (slow delivery + DevEx):** “Use `engineering-culture`. Context: B2B SaaS, 35 engineers, monolith + a few services, weekly releases, rising incidents. Goal: increase shipping speed without quality regressions. Output: an Engineering Culture Operating System Pack with a clock-speed backlog and a workflow contract.”
-
-**Example 2 (Conway misalignment):** “We have 6 teams but architecture ownership is unclear and everything depends on platform. Analyze Conway’s Law issues and propose a new operating model + standardization (leveling, code ownership, on-call) plus a rollout plan.”
-
-**Boundary example:** “Write a generic essay about what engineering culture is.”  
-Response: explain this skill produces a concrete operating system pack; ask for context/symptoms/timeline or provide the intake checklist and an example template from [references/TEMPLATES.md](references/TEMPLATES.md).
+- Technical Roadmaps
+- Managing Tech Debt
+- Platform & Infrastructure
+- Design Engineering

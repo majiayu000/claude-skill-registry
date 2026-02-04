@@ -216,13 +216,14 @@ Pattern: `{entry_id}_ex{N}`
 
 ## Common Issues to Avoid
 
-1. **Missing furigana**: `お金が余った` instead of `お{金|かね}が{余|あま}った`
-2. **Overly literal translations**: "As for me, I eat sushi" instead of "I eat sushi"
-3. **Wrong sense_numbers**: Example linked to wrong definition
-4. **Unnatural constructions**: Grammatically correct but rarely used patterns
-5. **Vocabulary tier violations**: Using general-tier words in basic-tier examples 1-2
-6. **Insufficient examples**: Not meeting minimum counts per sense
-7. **No length progression**: All examples being similar length
+1. **Adding inline links**: Do NOT add inline word links (⟦...⟧) when creating or revising examples. Links are added in a separate polishing step via `prompts/polish_add_inline_links.md`.
+2. **Missing furigana**: `お金が余った` instead of `お{金|かね}が{余|あま}った`
+3. **Overly literal translations**: "As for me, I eat sushi" instead of "I eat sushi"
+4. **Wrong sense_numbers**: Example linked to wrong definition
+5. **Unnatural constructions**: Grammatically correct but rarely used patterns
+6. **Vocabulary tier violations**: Using general-tier words in basic-tier examples 1-2
+7. **Insufficient examples**: Not meeting minimum counts per sense
+8. **No length progression**: All examples being similar length
 
 ---
 

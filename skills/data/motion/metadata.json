@@ -1,7 +1,7 @@
 {
   "name": "motion",
-  "repo": "onmax/claude-config",
-  "path": "skills/motion/SKILL.md",
-  "source": "github.com/onmax/claude-config",
-  "downloaded_at": "2026-02-02T04:29:10.950528Z"
+  "repo": "stephanofer/finance-trackerv2",
+  "path": ".opencode/skill/motion/SKILL.md",
+  "source": "github.com/stephanofer/finance-trackerv2",
+  "downloaded_at": "2026-02-04T04:53:50.162666Z"
 }

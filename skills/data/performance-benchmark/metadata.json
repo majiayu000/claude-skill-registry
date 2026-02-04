@@ -1,7 +1,7 @@
 {
   "name": "performance-benchmark",
-  "repo": "chaserbreitenbach/claude-skills-and-agents",
-  "path": "skills/testing/performance-benchmark/SKILL.md",
-  "source": "github.com/chaserbreitenbach/claude-skills-and-agents",
-  "downloaded_at": "2026-02-02T03:33:46.396335Z"
+  "repo": "kzahedi/YARS",
+  "path": ".claude/skills/performance-benchmark/SKILL.md",
+  "source": "github.com/kzahedi/YARS",
+  "downloaded_at": "2026-02-04T04:12:38.133321Z"
 }

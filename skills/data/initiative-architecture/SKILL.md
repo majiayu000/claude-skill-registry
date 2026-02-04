@@ -1,15 +1,6 @@
 ---
 name: initiative-architecture
 description: Use for MASSIVE work requests requiring multi-epic planning. Creates research spikes, documents all unknowns and decisions, builds resumable architecture documents, and structures work into epics and milestones.
-allowed-tools:
-  - Read
-  - Write
-  - Grep
-  - Glob
-  - WebFetch
-  - WebSearch
-  - mcp__github__*
-model: opus
 ---
 
 # Initiative Architecture

@@ -538,14 +538,22 @@ Orient v0.2.0 uses SQLite instead of PostgreSQL, which simplifies deployment sig
 SqliteError: attempt to write a readonly database
 ```
 
-**Cause**: The database file isn't writable by the nodejs user (UID 1001).
+**Cause**: The database file or WAL files aren't writable by the nodejs user (UID 1001).
 
-**Fix**:
+**CRITICAL**: SQLite uses Write-Ahead Logging (WAL) which creates `.db-shm` and `.db-wal` files. ALL THREE files must be owned by UID 1001:
 
 ```bash
-ssh opc@152.70.172.33 "sudo chown 1001:1001 ~/orient/data/orient.db ~/orient/data/"
-sudo docker restart orienter-dashboard
+# Check current ownership
+ssh opc@152.70.172.33 "ls -la ~/orient/data/orient.db*"
+
+# Fix ALL SQLite files (main db + WAL files)
+ssh opc@152.70.172.33 "sudo chown 1001:1001 ~/orient/data/orient.db* ~/orient/data/"
+
+# Restart dashboard
+ssh opc@152.70.172.33 "cd ~/orient/docker && sudo docker compose --env-file ../.env -f docker-compose.v2.yml -f docker-compose.prod.yml -f docker-compose.r2.yml restart dashboard"
 ```
+
+**Why this happens**: Manual database access (e.g., using `sqlite3` via alpine container) creates WAL files owned by root or opc, making the database read-only for the container.
 
 **No such table error**:
 

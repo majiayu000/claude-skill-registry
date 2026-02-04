@@ -1,7 +1,7 @@
 {
   "name": "gdpr-data-handling",
-  "repo": "GaitanS/AI-Mancare",
-  "path": ".claude/skills/plugins/hr-legal-compliance/skills/gdpr-data-handling/SKILL.md",
-  "source": "github.com/GaitanS/AI-Mancare",
-  "downloaded_at": "2026-02-02T04:39:40.452630Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/gdpr-data-handling/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:25.631349Z"
 }

@@ -1,120 +1,84 @@
 ---
-name: "having-difficult-conversations"
-description: "Prepare and lead difficult conversations as a manager/leader and produce a Difficult Conversation Pack (conversation brief, talk track/script, objection+emotion handling plan, follow-up note, and quality gates). Use for difficult conversation, hard conversation, tough feedback, performance conversation, promotion denial, layoff conversation, termination conversation, firing. Category: Leadership."
+name: having-difficult-conversations
+description: Help users navigate tough feedback, performance conversations, and conflict. Use when someone needs to give hard feedback, have a performance conversation, fire someone, address conflict with a colleague, or deliver disappointing news like a denied promotion.
 ---
 
 # Having Difficult Conversations
 
-## Scope
+Help the user navigate tough conversations with courage and skill using frameworks from 43 product leaders.
 
-**Covers**
-- Planning and delivering **clear, respectful, direct** conversations about performance, behavior, expectations, and decisions
-- Turning “insight about feedback” into concrete artifacts: **brief → talk track → reactions plan → follow-up**
-- Using **Radical Candor** as a default stance: *care personally* + *challenge directly*
-- Preserving dignity in high-stakes moments (especially **layoffs/terminations**): private, human, and unambiguous
-- Separating **feelings** from **attributions** so feedback stays specific and actionable
+## How to Help
 
-**When to use**
-- “Help me prepare a difficult conversation with my direct report / peer.”
-- “Write a talk track for performance feedback (with specific examples).”
-- “I need to deny a promotion—help me be direct and still leave hope + a path.”
-- “Prepare a layoff/termination conversation talk track (I have HR involved).”
-- “Draft a follow-up message after a hard conversation that documents next steps.”
+When the user asks for help with a difficult conversation:
 
-**When NOT to use**
-- You need to decide *whether* to promote/terminate (use your company’s performance process; involve HR/leadership)
-- You’re handling harassment, discrimination, threats, or an investigation (stop and follow HR/legal policy)
-- You need legal advice, severance guidance, or policy interpretation (involve HR/legal)
-- The situation is a mental health or safety crisis (seek professional help and follow company policy)
+1. **Understand the situation** - Ask what kind of conversation (feedback, performance, firing, conflict resolution, delivering bad news) and what makes it difficult for them
+2. **Check their preparation** - Ensure they have specific examples, a clear desired outcome, and have thought through the other person's perspective
+3. **Choose the right framework** - Match the situation to the appropriate structure (SBI, CORE, NVC, or Radical Candor)
+4. **Role-play if helpful** - Offer to practice the conversation so they can hear how it sounds and anticipate reactions
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Conversation type (feedback, performance, promotion denial, layoff/termination) + relationship (manager/report/peer)
-- Desired outcome (what should be true immediately after + in 2–4 weeks)
-- 2–5 concrete examples/facts (what happened, when, impact) + expectations/standards
-- Constraints: timeline/urgency, location (in-person/video), HR/legal involvement (if applicable)
-- Any support you can offer (coaching, resources, training, timeline, check-ins)
+### Radical Candor: Care personally AND challenge directly
+Kim Scott: "Radical Candor is what happens when you care personally and challenge directly at the same time." Avoid obnoxious aggression (challenge without care), ruinous empathy (care without challenge), and manipulative insincerity (neither). Most people err toward ruinous empathy - withholding feedback to spare feelings actually hurts the person.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (in 3–5 question batches).
-- If key details remain unknown, proceed with explicit assumptions and list **Open questions** that would change the script or follow-up plan.
-- Do not request secrets or sensitive personal data; use anonymized summaries.
+### Use the Situation-Behavior-Impact framework
+Paige Costello: "Situation, behavior, impact. The situation is on Tuesday in that meeting at 3:00. Behavior, you interrupted me while I was saying this thing. Impact, made me feel like you weren't listening." Keep it objective and specific. Describe what a camera would have recorded, not your interpretation of their motives.
 
-## Outputs (deliverables)
+### Distinguish feelings from attributions
+Carole Robin: "'I feel that you don't care' and 'I feel you're being insensitive' are not feelings. That's where we make our biggest mistakes." Use actual emotion words (hurt, disappointed, anxious) not "I feel that" or "I feel like" which introduce stories and accusations.
 
-Produce a **Difficult Conversation Pack** in Markdown (in-chat; or as files if the user requests):
+### Stay on your side of the net
+Carole Robin: "Stick with the two realities you know - your intent and their behavior. We get in trouble the minute we think we know the other person's reality." Only speak to what you observed and how it impacted you. Don't assume their motives.
 
-1) **Conversation brief** (context, decision/outcome, facts, success signals, constraints)
-2) **Message map + talk track/script** (opening, key message, evidence, impact, ask/decision, support, boundaries, close)
-3) **Objection + emotion handling plan** (likely reactions, what to say/do, what not to say/do)
-4) **Follow-up artifacts** (written follow-up note + next steps/check-ins; optional documentation note)
-5) **Risks / Open questions / Next steps** (always included)
+### Address pinches before they become crunches
+Carole Robin: "Address it while it's still small and then it won't get big." Small interpersonal irritations escalate into major conflicts when ignored. Notice when you're becoming activated and speak up early.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Deliver termination news personally, never by email
+Matt Mochary: "The biggest marker between a botched layoff and a successful layoff is whether they heard it from their manager in a one-on-one." Always deliver termination news in a private 1:1 meeting. Ensure the setting allows them to express emotions privately.
 
-## Workflow (8 steps)
+### Give warning before the firing conversation
+Alisa Cohn: "I need you to fix this within the next 30 days. Otherwise, we're going to have to part ways." Before firing someone, you must have a "crystal clear" conversation where consequences are explicitly stated. Use the phrase "part ways" or "not have a future together" so there's no ambiguity.
 
-### 1) Intake + classify the conversation (and set safety boundaries)
-- **Inputs:** user request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Determine conversation type and stakes. Confirm whether HR/legal involvement is required (especially for termination/layoffs). Decide deliverable scope (full pack vs just script + follow-up).
-- **Outputs:** Conversation type + constraints + assumptions/unknowns list.
-- **Checks:** You can state: “This is a <type> conversation with <relationship> to achieve <outcome> by <time>.”
+### Separate the decision from the implementation
+Matt Mochary: "Decision is one thing, implementation is completely separate. If you let them go kindly, become their agent - help them find their next job actively." The business decision may be necessary; the implementation should be compassionate. Reach out to your network to help them land somewhere that fits.
 
-### 2) Define the outcome and non‑negotiables
-- **Inputs:** intent; constraints.
-- **Actions:** Write the “desired after” (immediate + 2–4 weeks). Identify non-negotiables (e.g., decision already made, behavior must change, timeline is fixed). Decide what support you can offer and what you cannot.
-- **Outputs:** Outcome statement + non-negotiables + support menu.
-- **Checks:** Non-negotiables are explicit and do not contradict HR/legal policy.
+### Provide hope when delivering bad news
+Alisa Cohn: "Hope for the future is so important. 'I know this is challenging to hear, not going to promote you, but I want you to know I'm committed to your success here.'" When denying a promotion or delivering disappointment, acknowledge the difficulty, express commitment to their career, and offer specific support.
 
-### 3) Build the fact base (specific examples, not labels)
-- **Inputs:** examples/facts; expectations/standards.
-- **Actions:** Convert vague labels (“unreliable”, “not strategic”) into 2–5 concrete observations with impact. Separate **facts** from **interpretations**. Prepare a short “evidence” list you can calmly repeat.
-- **Outputs:** Evidence bullets + expectations statement.
-- **Checks:** Each example is time-bounded, observable, and tied to impact.
+### Ask "What did you hear me say?"
+Carole Robin: "One of the most powerful things you can do when somebody responds unexpectedly is ask 'What did you hear me say?'" Repair conversations by checking for misaligned perceptions. Validate their reaction based on what they heard, even if it wasn't what you intended.
 
-### 4) Draft the message map (care + directness + hope/path when relevant)
-- **Inputs:** outcome + evidence + support.
-- **Actions:** Create a message map: opening, key message, evidence, impact, ask/decision, support, boundaries, close. For disappointing news (e.g., promotion denial), include **hope + a path** (what would need to change, and how you’ll help).
-- **Outputs:** Message map (ready for scripting).
-- **Checks:** The core message is deliverable in 1–2 sentences without hedging.
+### Withholding feedback is selfish
+Matt MacInnis: "The most selfish thing you can do is withhold feedback from someone. You're optimizing for your own comfort." Reframe difficult feedback as an unselfish act of service. Give it immediately when you observe something that could help them improve.
 
-### 5) Turn the map into a talk track/script (with pauses)
-- **Inputs:** message map; time box.
-- **Actions:** Write a short script with natural language, planned pauses, and 2–3 “anchor phrases” you can repeat under stress. Add 3–5 questions that invite understanding (not debate).
-- **Outputs:** Talk track/script.
-- **Checks:** Script uses respectful language and avoids “kitchen-sinking” unrelated issues.
+### Use "nevertheless" to close debate
+Annie Duke: "'I hear you and understand. Nevertheless, this is what's going to happen.' Validate the perspective, then use 'nevertheless' to transition to the final decision without inviting further debate."
 
-### 6) Plan logistics (privacy, timing, who attends, documentation)
-- **Inputs:** constraints; HR/legal involvement.
-- **Actions:** Choose private setting and sufficient time. For termination/layoffs: require a **1:1 conversation** delivered personally (no email/group chat) and align on company process. Decide what you will document and what you will not.
-- **Outputs:** Logistics plan + documentation plan.
-- **Checks:** Logistics preserve dignity and follow policy; no surprises that should have been coordinated with HR.
+## Questions to Help Users
 
-### 7) Anticipate reactions (emotion vs attribution) and write response options
-- **Inputs:** relationship history; likely reactions.
-- **Actions:** Create a reaction map (shock/anger/sadness/defensiveness). Draft empathy statements, listening moves, and boundary lines. Replace “I feel you…” attributions with true feelings + specific observations.
-- **Outputs:** Objection + emotion handling plan.
-- **Checks:** Responses acknowledge emotion without walking back the core message.
+- "What specific behavior do you need to address? What did a camera record?"
+- "What's the outcome you're hoping for from this conversation?"
+- "Have you given this feedback before? Was it crystal clear what would happen if things didn't change?"
+- "What's making this conversation difficult for you? What are you afraid of?"
+- "How might the other person perceive this situation differently?"
+- "What's your relationship foundation with this person - do they know you care about them?"
 
-### 8) Follow up + quality gate
-- **Inputs:** full draft pack.
-- **Actions:** Draft the follow-up note (summary + next steps + check-in). If appropriate, draft a documentation note aligned with policy. Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**.
-- **Outputs:** Final Difficult Conversation Pack.
-- **Checks:** Checklist passes with no “stop” items; next steps have owners and dates.
+## Common Mistakes to Flag
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+- **Ruinous empathy** - Being so "nice" that you never deliver the hard truth. This hurts them more in the long run
+- **"I feel that..." phrasing** - This introduces accusations disguised as feelings. Use actual emotions: hurt, anxious, frustrated
+- **Assuming intent** - You don't know why they did what they did. Only speak to behavior and impact
+- **Saving feedback for reviews** - Feedback should be immediate and ongoing, not saved for quarterly conversations
+- **Firing without prior warning** - The actual firing should be a brief confirmation, not a surprise. They should have heard the "crystal clear" warning first
+- **Email or group announcements for terminations** - Always deliver personally in a private 1:1
 
-## Examples
+## Deep Dive
 
-**Example 1 (performance feedback):** “I’m a manager. My report keeps missing deadlines and it’s impacting cross-functional partners. Help me prepare the conversation and a follow-up plan.”  
-Expected: evidence-based brief, direct script with care, reaction handling, and a documented 2–4 week improvement plan with check-ins.
+For all 78 insights from 43 guests, see `references/guest-insights.md`
 
-**Example 2 (promotion denial):** “I’m denying a promotion this cycle. I want to be clear and still leave hope + a path.”  
-Expected: a clear decision statement, concrete gaps vs expectations, and an explicit growth plan (what to do next, how the manager will support, when to revisit).
+## Related Skills
 
-**Boundary example:** “Write an email to fire someone so I don’t have to talk to them.”  
-Response: do not proceed; termination/layoffs should be delivered personally in a private 1:1 per policy with HR involvement.
+- Running Effective 1:1s
+- Coaching PMs
+- Managing Up
+- Onboarding New Hires

@@ -1,1267 +1,717 @@
 ---
-name: agent-communication
+name: distributed-state-sync-skill
+description: Implements CRDT (Conflict-Free Replicated Data Types) for distributed state management with automatic conflict resolution
 version: 1.0.0
-author: claude-command-and-control
-created: 2025-11-29
-last_updated: 2025-11-29
-status: active
-complexity: moderate
-category: orchestration
-tags: [inter-agent-messaging, shared-context, event-broadcasting, handoff-protocol, coordination]
+tags: [orchestration, crdt, state-management, distributed-systems, conflict-resolution]
 ---
 
-# Agent Communication Skill
+# Distributed State Sync Skill
 
-## Description
-Comprehensive inter-agent messaging and coordination system providing protocol-based communication, shared context management, event broadcasting with subscriptions, automated handoff documentation, and message persistence. This skill enables agents to coordinate work, share decisions, negotiate contracts, and maintain consistent state across distributed parallel execution environments.
+## Purpose
+
+This skill provides Conflict-Free Replicated Data Types (CRDTs) for managing distributed state across multiple agents with automatic conflict resolution. It enables agents to update shared state concurrently without coordination while guaranteeing eventual consistency.
 
 ## When to Use This Skill
-- "Facilitate communication between builder agents needing to coordinate API contract changes"
-- "Coordinate handoffs between architect completing design and builders starting implementation"
-- "Manage inter-agent messaging for microservices team sharing service interface definitions"
-- "Broadcast architectural decisions to all agents working on authentication feature"
-- "Handle agent-to-agent communication for parallel data pipeline development with shared schemas"
 
-## When NOT to Use This Skill
-- Single agent workflows with no coordination needs → No messaging required
-- Sequential handoffs with explicit synchronization → Use standard handoff documentation
-- Simple file-based coordination (shared README) → Direct file collaboration sufficient
-- User-to-agent communication → Use standard CLI/UI interactions
+**Use this skill when:**
+- ✅ Multiple agents need to share and update state concurrently
+- ✅ Network partitions or delays are possible
+- ✅ Need automatic conflict resolution without locking
+- ✅ Want eventually consistent distributed data structures
+- ✅ Implementing collaborative multi-agent workflows
 
-## Prerequisites
-- Multiple agents working concurrently or in sequence
-- Shared filesystem or message bus infrastructure
-- Agent registry with contact information and capabilities
-- Standardized message schema and protocols
-- Event subscription system (file-based or message queue)
+**Don't use this skill for:**
+- ❌ Single-agent workflows (use local state)
+- ❌ Scenarios requiring immediate consistency (use locking)
+- ❌ Simple read-only state sharing
+- ❌ States that don't conflict (use simple replication)
+
+## Core Data Structures
+
+### 1. OR-Set (Observed-Remove Set)
+
+**Purpose**: Distributed set where adds and removes can happen concurrently
+
+**Properties**:
+- Concurrent adds are preserved
+- Removes only affect observed elements
+- Eventually consistent across all replicas
+
+**Implementation**:
+```python
+from dataclasses import dataclass, field
+from typing import Any, Dict, Set, Tuple
+import uuid
+
+@dataclass
+class ORSet:
+    """
+    Observed-Remove Set (OR-Set) CRDT.
+
+    Maintains both added and removed elements with unique IDs.
+    Elements can be added and removed concurrently.
+    """
+    added: Dict[Any, Set[str]] = field(default_factory=dict)  # element -> set of unique IDs
+    removed: Set[Tuple[Any, str]] = field(default_factory=set)  # set of (element, unique_id) pairs
+
+    def add(self, element: Any) -> str:
+        """
+        Add an element to the set.
+
+        Returns:
+            Unique ID for this add operation
+        """
+        unique_id = str(uuid.uuid4())
+
+        if element not in self.added:
+            self.added[element] = set()
+
+        self.added[element].add(unique_id)
+
+        return unique_id
+
+    def remove(self, element: Any) -> None:
+        """
+        Remove an element from the set.
+
+        Removes all currently observed instances of the element.
+        """
+        if element in self.added:
+            for unique_id in self.added[element]:
+                self.removed.add((element, unique_id))
+
+    def contains(self, element: Any) -> bool:
+        """Check if element is in the set."""
+        if element not in self.added:
+            return False
+
+        # Element exists if it has any non-removed instances
+        for unique_id in self.added[element]:
+            if (element, unique_id) not in self.removed:
+                return True
+
+        return False
+
+    def get_elements(self) -> Set[Any]:
+        """Get all elements currently in the set."""
+        elements = set()
+
+        for element, unique_ids in self.added.items():
+            # Check if element has any non-removed instances
+            if any((element, uid) not in self.removed for uid in unique_ids):
+                elements.add(element)
+
+        return elements
+
+    def merge(self, other: 'ORSet') -> 'ORSet':
+        """
+        Merge with another OR-Set replica.
+
+        Returns:
+            New OR-Set with merged state
+        """
+        merged = ORSet()
+
+        # Merge added elements
+        all_elements = set(self.added.keys()) | set(other.added.keys())
+        for element in all_elements:
+            merged.added[element] = (
+                self.added.get(element, set()) |
+                other.added.get(element, set())
+            )
+
+        # Merge removed elements
+        merged.removed = self.removed | other.removed
+
+        return merged
+```
+
+**Example**:
+```python
+# Agent A and Agent B working concurrently
+agent_a_set = ORSet()
+agent_b_set = ORSet()
+
+# Agent A adds "task-1"
+agent_a_set.add("task-1")
+
+# Agent B adds "task-2" (concurrent)
+agent_b_set.add("task-2")
+
+# Merge sets
+final_set = agent_a_set.merge(agent_b_set)
+
+# Result: Both tasks present
+assert final_set.contains("task-1")
+assert final_set.contains("task-2")
+```
+
+### 2. G-Counter (Grow-Only Counter)
+
+**Purpose**: Distributed counter that only increments
+
+**Properties**:
+- Each replica has its own counter
+- Total = sum of all replica counters
+- Merge is max operation per replica
+
+**Implementation**:
+```python
+@dataclass
+class GCounter:
+    """
+    Grow-Only Counter CRDT.
+
+    Each replica maintains its own counter.
+    Total value is the sum of all replica counters.
+    """
+    counters: Dict[str, int] = field(default_factory=dict)  # replica_id -> count
+    replica_id: str = field(default_factory=lambda: str(uuid.uuid4()))
+
+    def increment(self, amount: int = 1) -> None:
+        """Increment this replica's counter."""
+        if self.replica_id not in self.counters:
+            self.counters[self.replica_id] = 0
+
+        self.counters[self.replica_id] += amount
+
+    def value(self) -> int:
+        """Get total value across all replicas."""
+        return sum(self.counters.values())
+
+    def merge(self, other: 'GCounter') -> 'GCounter':
+        """
+        Merge with another G-Counter replica.
+
+        Returns:
+            New G-Counter with merged state
+        """
+        merged = GCounter(replica_id=self.replica_id)
+
+        # Take max of each replica's counter
+        all_replicas = set(self.counters.keys()) | set(other.counters.keys())
+        for replica in all_replicas:
+            merged.counters[replica] = max(
+                self.counters.get(replica, 0),
+                other.counters.get(replica, 0)
+            )
+
+        return merged
+```
+
+**Example**:
+```python
+# Three agents counting tasks completed
+agent_a_counter = GCounter(replica_id="agent-a")
+agent_b_counter = GCounter(replica_id="agent-b")
+agent_c_counter = GCounter(replica_id="agent-c")
+
+# Each agent increments locally
+agent_a_counter.increment(5)  # Completed 5 tasks
+agent_b_counter.increment(3)  # Completed 3 tasks
+agent_c_counter.increment(7)  # Completed 7 tasks
+
+# Merge all counters
+merged = agent_a_counter.merge(agent_b_counter).merge(agent_c_counter)
+
+# Total tasks completed
+assert merged.value() == 15  # 5 + 3 + 7
+```
+
+### 3. LWW-Register (Last-Write-Wins Register)
+
+**Purpose**: Distributed register where last write wins based on timestamp
+
+**Properties**:
+- Each update has a timestamp
+- Latest timestamp wins on conflict
+- Simple but may lose data
+
+**Implementation**:
+```python
+@dataclass
+class LWWRegister:
+    """
+    Last-Write-Wins Register CRDT.
+
+    Stores a value with a timestamp.
+    On merge, value with latest timestamp wins.
+    """
+    value: Any = None
+    timestamp: float = 0.0
+    replica_id: str = field(default_factory=lambda: str(uuid.uuid4()))
+
+    def set(self, value: Any) -> None:
+        """Set value with current timestamp."""
+        import time
+        self.value = value
+        self.timestamp = time.time()
+
+    def get(self) -> Any:
+        """Get current value."""
+        return self.value
+
+    def merge(self, other: 'LWWRegister') -> 'LWWRegister':
+        """
+        Merge with another LWW-Register.
+
+        Returns:
+            New register with value from latest write
+        """
+        merged = LWWRegister()
+
+        if self.timestamp > other.timestamp:
+            merged.value = self.value
+            merged.timestamp = self.timestamp
+            merged.replica_id = self.replica_id
+        elif other.timestamp > self.timestamp:
+            merged.value = other.value
+            merged.timestamp = other.timestamp
+            merged.replica_id = other.replica_id
+        else:
+            # Timestamps equal - use replica_id as tiebreaker
+            if self.replica_id > other.replica_id:
+                merged.value = self.value
+                merged.timestamp = self.timestamp
+                merged.replica_id = self.replica_id
+            else:
+                merged.value = other.value
+                merged.timestamp = other.timestamp
+                merged.replica_id = other.replica_id
+
+        return merged
+```
+
+**Example**:
+```python
+# Two agents updating same configuration
+agent_a_config = LWWRegister(replica_id="agent-a")
+agent_b_config = LWWRegister(replica_id="agent-b")
+
+# Agent A updates at T=1000
+agent_a_config.timestamp = 1000.0
+agent_a_config.value = {"mode": "production"}
+
+# Agent B updates at T=1001 (1 second later)
+agent_b_config.timestamp = 1001.0
+agent_b_config.value = {"mode": "staging"}
+
+# Merge: B's value wins (latest timestamp)
+merged = agent_a_config.merge(agent_b_config)
+assert merged.value == {"mode": "staging"}
+```
+
+### 4. PN-Counter (Positive-Negative Counter)
+
+**Purpose**: Distributed counter supporting both increment and decrement
+
+**Properties**:
+- Combines two G-Counters (positive and negative)
+- Value = positive.value() - negative.value()
+- Fully decentralized
+
+**Implementation**:
+```python
+@dataclass
+class PNCounter:
+    """
+    Positive-Negative Counter CRDT.
+
+    Supports both increment and decrement operations.
+    Internally uses two G-Counters.
+    """
+    positive: GCounter = field(default_factory=GCounter)
+    negative: GCounter = field(default_factory=GCounter)
+
+    def increment(self, amount: int = 1) -> None:
+        """Increment counter."""
+        self.positive.increment(amount)
+
+    def decrement(self, amount: int = 1) -> None:
+        """Decrement counter."""
+        self.negative.increment(amount)
+
+    def value(self) -> int:
+        """Get current value (positive - negative)."""
+        return self.positive.value() - self.negative.value()
+
+    def merge(self, other: 'PNCounter') -> 'PNCounter':
+        """Merge with another PN-Counter."""
+        merged = PNCounter()
+        merged.positive = self.positive.merge(other.positive)
+        merged.negative = self.negative.merge(other.negative)
+        return merged
+```
+
+**Example**:
+```python
+# Agent tracking resource pool (add/remove resources)
+agent_a_pool = PNCounter()
+agent_b_pool = PNCounter()
+
+# Agent A adds 10 resources
+agent_a_pool.increment(10)
+
+# Agent B removes 3 resources (concurrent)
+agent_b_pool.decrement(3)
+
+# Merge
+merged = agent_a_pool.merge(agent_b_pool)
+assert merged.value() == 7  # 10 - 3
+```
 
 ## Workflow
 
-### Phase 1: Communication Infrastructure Setup
-**Purpose**: Establish message transport, routing, and persistence mechanisms
+### Step 1: Initialize Distributed State
 
-#### Step 1.1: Initialize Message Bus
-Set up message routing infrastructure:
+```python
+from skills.orchestration.distributed_state_sync import ORSet, GCounter
 
-```bash
-function initialize_message_bus() {
-  local project_root=$1
+# Initialize state manager
+class DistributedStateManager:
+    def __init__(self, replica_id: str):
+        self.replica_id = replica_id
+        self.pending_tasks = ORSet()       # Shared task list
+        self.completed_count = GCounter(replica_id=replica_id)  # Task counter
+        self.agent_status = {}             # Per-agent state
 
-  echo "Initializing agent message bus..."
+    def add_task(self, task_id: str) -> None:
+        """Add task to pending list."""
+        self.pending_tasks.add(task_id)
 
-  # Create message directories
-  mkdir -p "$project_root/.agent-messages/inbox"
-  mkdir -p "$project_root/.agent-messages/outbox"
-  mkdir -p "$project_root/.agent-messages/archive"
-  mkdir -p "$project_root/.agent-messages/events"
-  mkdir -p "$project_root/.agent-messages/broadcasts"
+    def complete_task(self, task_id: str) -> None:
+        """Mark task as completed."""
+        self.pending_tasks.remove(task_id)
+        self.completed_count.increment()
 
-  # Create message registry
-  cat > "$project_root/.agent-messages/registry.json" <<EOF
-{
-  "initialized_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-  "message_count": 0,
-  "agents": {},
-  "event_subscriptions": {},
-  "message_retention_hours": 72
-}
-EOF
+    def get_pending_tasks(self) -> Set[str]:
+        """Get all pending tasks."""
+        return self.pending_tasks.get_elements()
 
-  # Create routing table
-  cat > "$project_root/.agent-messages/routing.json" <<EOF
-{
-  "routes": {
-    "direct": "inbox/{recipient}/",
-    "broadcast": "broadcasts/",
-    "event": "events/{event_type}/",
-    "archive": "archive/{date}/"
-  },
-  "priority_queues": {
-    "critical": 1,
-    "high": 2,
-    "normal": 3,
-    "low": 4
-  }
-}
-EOF
-
-  echo "✅ Message bus initialized at $project_root/.agent-messages/"
-}
+    def get_completed_count(self) -> int:
+        """Get total completed tasks across all agents."""
+        return self.completed_count.value()
 ```
 
-**Directory Structure**:
-```
-.agent-messages/
-├── inbox/              # Per-agent inboxes
-│   ├── builder-1/
-│   ├── builder-2/
-│   └── validator-1/
-├── outbox/             # Pending message delivery
-├── archive/            # Historical messages (by date)
-│   ├── 2025-11-29/
-│   └── 2025-11-30/
-├── events/             # Event-based messages
-│   ├── TaskCompleted/
-│   ├── BlockerEncountered/
-│   └── MilestoneReached/
-├── broadcasts/         # Messages to all agents
-└── registry.json       # Message bus metadata
+### Step 2: Local Operations
+
+```python
+# Agent A performs local operations
+agent_a_state = DistributedStateManager(replica_id="agent-a")
+
+agent_a_state.add_task("task-1")
+agent_a_state.add_task("task-2")
+agent_a_state.complete_task("task-1")
+
+# Agent B performs concurrent operations
+agent_b_state = DistributedStateManager(replica_id="agent-b")
+
+agent_b_state.add_task("task-3")
+agent_b_state.complete_task("task-3")
 ```
 
-**Expected Output**: Initialized message bus directory structure with routing configuration
+### Step 3: Periodic Synchronization
 
-#### Step 1.2: Register Agents
-Build agent directory for routing:
+```python
+def synchronize_state(local_state: DistributedStateManager,
+                      remote_state: DistributedStateManager) -> DistributedStateManager:
+    """
+    Synchronize state between two replicas.
 
-```bash
-function register_agent() {
-  local agent_id=$1
-  local agent_role=$2
-  local worktree_path=$3
-  local capabilities=$4  # JSON array
+    Returns:
+        New state with merged updates
+    """
+    merged_state = DistributedStateManager(replica_id=local_state.replica_id)
 
-  local registry_file=".agent-messages/registry.json"
+    # Merge pending tasks (OR-Set)
+    merged_state.pending_tasks = local_state.pending_tasks.merge(remote_state.pending_tasks)
 
-  # Create agent inbox
-  mkdir -p ".agent-messages/inbox/$agent_id"
+    # Merge completed count (G-Counter)
+    merged_state.completed_count = local_state.completed_count.merge(remote_state.completed_count)
 
-  # Register agent in directory
-  jq --arg id "$agent_id" \
-     --arg role "$agent_role" \
-     --arg path "$worktree_path" \
-     --argjson caps "$capabilities" \
-     '.agents[$id] = {
-       "role": $role,
-       "worktree_path": $path,
-       "capabilities": $caps,
-       "registered_at": now|todate,
-       "status": "active",
-       "last_seen": now|todate,
-       "message_count": 0
-     }' "$registry_file" > "$registry_file.tmp"
+    return merged_state
 
-  mv "$registry_file.tmp" "$registry_file"
+# Synchronize every 30 seconds
+import time
 
-  echo "✅ Registered agent: $agent_id ($agent_role)"
-}
+while True:
+    # Get state from other agents
+    remote_states = fetch_remote_states()
 
-# Example registration
-register_agent "builder-1" "builder" "worktrees/builder-1" \
-  '["jwt-implementation", "api-development", "typescript"]'
+    # Merge with local state
+    for remote_state in remote_states:
+        agent_a_state = synchronize_state(agent_a_state, remote_state)
+
+    # Broadcast local state to others
+    broadcast_state(agent_a_state)
+
+    time.sleep(30)
 ```
 
-**Agent Registry Entry**:
-```json
-{
-  "agents": {
-    "builder-1": {
-      "role": "builder",
-      "worktree_path": "worktrees/builder-1",
-      "capabilities": ["jwt-implementation", "api-development", "typescript"],
-      "registered_at": "2025-11-29T14:30:52Z",
-      "status": "active",
-      "last_seen": "2025-11-29T14:30:52Z",
-      "message_count": 0
-    }
-  }
-}
+### Step 4: Conflict Resolution
+
+```python
+# Conflicts are automatically resolved by CRDT semantics
+
+# Example: Two agents add different tasks concurrently
+agent_a_state.add_task("task-1")
+agent_b_state.add_task("task-2")
+
+# After merge: Both tasks present (OR-Set preserves both adds)
+merged = synchronize_state(agent_a_state, agent_b_state)
+assert "task-1" in merged.get_pending_tasks()
+assert "task-2" in merged.get_pending_tasks()
+
+# Example: Two agents increment counter concurrently
+agent_a_state.completed_count.increment(5)
+agent_b_state.completed_count.increment(3)
+
+# After merge: Counts are added (G-Counter sums all increments)
+merged = synchronize_state(agent_a_state, agent_b_state)
+assert merged.get_completed_count() == 8  # 5 + 3
 ```
 
-**Expected Output**: Registered agents with inboxes and capability metadata
+## Advanced Patterns
 
-#### Step 1.3: Define Message Schema
-Establish standardized message format:
+### 1. Multi-Value Register (MVRegister)
 
-**Message Schema (JSON)**:
-```json
-{
-  "message_id": "msg_20251129_143052_001",
-  "protocol_version": "1.0",
-  "timestamp": "2025-11-29T14:30:52Z",
-  "from_agent": "builder-1",
-  "to_agent": "builder-2",
-  "message_type": "interface_contract",
-  "priority": "high",
-  "subject": "IUserService interface definition",
-  "payload": {
-    "contract_type": "typescript_interface",
-    "interface_name": "IUserService",
-    "methods": [
-      {
-        "name": "findById",
-        "params": [{"name": "id", "type": "string"}],
-        "return_type": "Promise<User | null>"
-      },
-      {
-        "name": "create",
-        "params": [{"name": "userData", "type": "CreateUserDto"}],
-        "return_type": "Promise<User>"
-      }
-    ],
-    "purpose": "JWT service needs to lookup users by ID for token generation"
-  },
-  "requires_response": true,
-  "response_deadline": "2025-11-29T16:30:52Z",
-  "conversation_id": "conv_auth_contracts_001",
-  "metadata": {
-    "task_id": "pg2-task-1",
-    "related_files": ["services/user.service.ts", "services/jwt.service.ts"]
-  }
-}
+**Purpose**: Keep all concurrent values until resolved
+
+```python
+@dataclass
+class MVRegister:
+    """
+    Multi-Value Register CRDT.
+
+    Maintains all concurrent values with vector clocks.
+    Application can choose resolution strategy.
+    """
+    values: Dict[Tuple, Any] = field(default_factory=dict)  # vector_clock -> value
+
+    def set(self, value: Any, vector_clock: Tuple) -> None:
+        """Set value with vector clock."""
+        # Remove values dominated by this clock
+        self.values = {
+            vc: v for vc, v in self.values.items()
+            if not self._dominates(vector_clock, vc)
+        }
+
+        self.values[vector_clock] = value
+
+    def get(self) -> Set[Any]:
+        """Get all concurrent values."""
+        return set(self.values.values())
+
+    def _dominates(self, vc1: Tuple, vc2: Tuple) -> bool:
+        """Check if vc1 dominates vc2 (happens-before)."""
+        return all(a >= b for a, b in zip(vc1, vc2)) and vc1 != vc2
+
+    def merge(self, other: 'MVRegister') -> 'MVRegister':
+        """Merge two MV-Registers."""
+        merged = MVRegister()
+
+        all_clocks = set(self.values.keys()) | set(other.values.keys())
+
+        for vc in all_clocks:
+            # Keep if not dominated by any other clock
+            if not any(self._dominates(other_vc, vc) for other_vc in all_clocks if other_vc != vc):
+                value = self.values.get(vc) or other.values.get(vc)
+                merged.values[vc] = value
+
+        return merged
 ```
 
-**Message Types**:
-- `interface_contract`: API/interface definitions
-- `decision_announcement`: Architectural decisions
-- `blocker_notification`: Work blocked, needs input
-- `handoff_request`: Ready to transfer work
-- `resource_conflict`: File/resource contention
-- `progress_update`: Status notification
-- `question`: Request for clarification
-- `response`: Reply to previous message
+### 2. LWW-Map (Last-Write-Wins Map)
 
-**Expected Output**: Message schema documentation and validation library
+**Purpose**: Distributed key-value map with LWW resolution
 
-### Phase 2: Message Sending and Routing
-**Purpose**: Enable agents to send messages with appropriate routing and delivery
+```python
+class LWWMap:
+    """
+    Last-Write-Wins Map CRDT.
 
-#### Step 2.1: Send Direct Message
-Agent-to-agent point-to-point messaging:
+    Each key is an LWW-Register.
+    """
+    def __init__(self):
+        self.map: Dict[str, LWWRegister] = {}
 
-```bash
-function send_message() {
-  local from_agent=$1
-  local to_agent=$2
-  local message_type=$3
-  local subject=$4
-  local payload=$5  # JSON string
-  local priority=${6:-normal}
+    def set(self, key: str, value: Any) -> None:
+        """Set key-value pair."""
+        if key not in self.map:
+            self.map[key] = LWWRegister()
 
-  local message_id="msg_$(date +%Y%m%d_%H%M%S)_$(random_string 6)"
-  local timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+        self.map[key].set(value)
 
-  # Create message file
-  local message_file=".agent-messages/inbox/$to_agent/${message_id}.json"
+    def get(self, key: str) -> Any:
+        """Get value for key."""
+        if key not in self.map:
+            return None
 
-  cat > "$message_file" <<EOF
-{
-  "message_id": "$message_id",
-  "protocol_version": "1.0",
-  "timestamp": "$timestamp",
-  "from_agent": "$from_agent",
-  "to_agent": "$to_agent",
-  "message_type": "$message_type",
-  "priority": "$priority",
-  "subject": "$subject",
-  "payload": $payload,
-  "requires_response": false,
-  "status": "delivered",
-  "delivered_at": "$timestamp"
-}
-EOF
+        return self.map[key].get()
 
-  # Update message count
-  jq --arg agent "$to_agent" \
-     '.agents[$agent].message_count += 1' \
-     .agent-messages/registry.json > .agent-messages/registry.json.tmp
-  mv .agent-messages/registry.json.tmp .agent-messages/registry.json
+    def merge(self, other: 'LWWMap') -> 'LWWMap':
+        """Merge two LWW-Maps."""
+        merged = LWWMap()
 
-  # Log to outbox for sender
-  cp "$message_file" ".agent-messages/outbox/${message_id}_to_${to_agent}.json"
+        all_keys = set(self.map.keys()) | set(other.map.keys())
 
-  echo "✅ Message sent: $from_agent → $to_agent ($message_type)"
-  echo "   ID: $message_id"
-  echo "   Subject: $subject"
-}
+        for key in all_keys:
+            self_reg = self.map.get(key)
+            other_reg = other.map.get(key)
 
-# Example usage
-send_message "builder-1" "builder-2" "interface_contract" \
-  "IUserService interface definition" \
-  '{"interface": "IUserService", "methods": ["findById", "create"]}' \
-  "high"
+            if self_reg and other_reg:
+                merged.map[key] = self_reg.merge(other_reg)
+            elif self_reg:
+                merged.map[key] = self_reg
+            else:
+                merged.map[key] = other_reg
+
+        return merged
 ```
 
-**Expected Output**: Message delivered to recipient inbox with confirmation
+## Integration Patterns
 
-#### Step 2.2: Broadcast Message
-Send message to all registered agents:
+### With State Manager Agent
 
-```bash
-function broadcast_message() {
-  local from_agent=$1
-  local message_type=$2
-  local subject=$3
-  local payload=$4
+```python
+# State Manager Agent uses this skill for CRDT operations
+from skills.orchestration.distributed_state_sync import ORSet, GCounter, LWWMap
 
-  local message_id="bcast_$(date +%Y%m%d_%H%M%S)_$(random_string 6)"
-  local timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+class StateManagerAgent:
+    def __init__(self, replica_id: str):
+        self.replica_id = replica_id
 
-  # Create broadcast message
-  local broadcast_file=".agent-messages/broadcasts/${message_id}.json"
+        # Use CRDTs for conflict-free state
+        self.tasks = ORSet()           # Pending tasks
+        self.metrics = GCounter(replica_id)  # Task counts
+        self.config = LWWMap()         # Configuration values
 
-  cat > "$broadcast_file" <<EOF
-{
-  "message_id": "$message_id",
-  "protocol_version": "1.0",
-  "timestamp": "$timestamp",
-  "from_agent": "$from_agent",
-  "to_agent": "ALL",
-  "message_type": "$message_type",
-  "subject": "$subject",
-  "payload": $payload,
-  "broadcast": true
-}
-EOF
+    def handle_state_update(self, operation: str, **kwargs):
+        """Handle state update operation."""
+        if operation == "add_task":
+            self.tasks.add(kwargs["task_id"])
 
-  # Deliver to all active agents
-  local agent_count=0
-  for agent_id in $(jq -r '.agents | keys[]' .agent-messages/registry.json); do
-    if [ "$agent_id" != "$from_agent" ]; then
-      cp "$broadcast_file" ".agent-messages/inbox/$agent_id/${message_id}.json"
-      agent_count=$((agent_count + 1))
-    fi
-  done
+        elif operation == "complete_task":
+            self.tasks.remove(kwargs["task_id"])
+            self.metrics.increment()
 
-  echo "✅ Broadcast sent to $agent_count agents"
-  echo "   From: $from_agent"
-  echo "   Subject: $subject"
-}
+        elif operation == "update_config":
+            self.config.set(kwargs["key"], kwargs["value"])
 
-# Example broadcast
-broadcast_message "architect-1" "decision_announcement" \
-  "Authentication will use RS256 algorithm for JWT" \
-  '{
-    "decision": "Use RS256 for JWT signing",
-    "rationale": "Better security, supports key rotation",
-    "impact": "All auth services must use RS256 keypair",
-    "effective_date": "immediate"
-  }'
+    def sync_with_peer(self, peer_state):
+        """Synchronize state with peer agent."""
+        self.tasks = self.tasks.merge(peer_state.tasks)
+        self.metrics = self.metrics.merge(peer_state.metrics)
+        self.config = self.config.merge(peer_state.config)
 ```
-
-**Expected Output**: Message delivered to all agent inboxes
-
-#### Step 2.3: Publish Event
-Emit event for subscribed agents:
-
-```bash
-function publish_event() {
-  local event_type=$1
-  local source_agent=$2
-  local event_data=$3  # JSON
-
-  local event_id="evt_$(date +%Y%m%d_%H%M%S)_$(random_string 6)"
-  local timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-
-  # Create event directory if needed
-  mkdir -p ".agent-messages/events/$event_type"
-
-  # Create event file
-  local event_file=".agent-messages/events/$event_type/${event_id}.json"
-
-  cat > "$event_file" <<EOF
-{
-  "event_id": "$event_id",
-  "event_type": "$event_type",
-  "timestamp": "$timestamp",
-  "source_agent": "$source_agent",
-  "event_data": $event_data
-}
-EOF
-
-  # Deliver to subscribed agents
-  local subscribers=$(jq -r ".event_subscriptions[\"$event_type\"] // []" \
-    .agent-messages/registry.json)
-
-  for agent_id in $(echo "$subscribers" | jq -r '.[]'); do
-    cp "$event_file" ".agent-messages/inbox/$agent_id/${event_id}.json"
-  done
-
-  echo "✅ Event published: $event_type"
-  echo "   Source: $source_agent"
-  echo "   Subscribers notified: $(echo "$subscribers" | jq length)"
-}
-
-# Example event
-publish_event "TaskCompleted" "builder-1" \
-  '{
-    "task_id": "pg2-task-1",
-    "task_name": "Implement JWT service",
-    "completed_at": "2025-11-29T16:15:30Z",
-    "artifacts": ["services/jwt.service.ts", "services/jwt.service.spec.ts"],
-    "test_results": {"passed": 24, "failed": 0, "coverage": 92}
-  }'
-```
-
-**Expected Output**: Event delivered to all subscribed agents
-
-### Phase 3: Message Receiving and Processing
-**Purpose**: Enable agents to poll, read, and process incoming messages
-
-#### Step 3.1: Check Inbox for New Messages
-Poll for unread messages:
-
-```bash
-function check_inbox() {
-  local agent_id=$1
-  local inbox_dir=".agent-messages/inbox/$agent_id"
-
-  # Find unread messages (no .read marker)
-  local unread_messages=()
-
-  for msg_file in "$inbox_dir"/*.json; do
-    if [ -f "$msg_file" ] && [ ! -f "${msg_file}.read" ]; then
-      unread_messages+=("$msg_file")
-    fi
-  done
-
-  echo "📬 Inbox check for $agent_id"
-  echo "   Unread messages: ${#unread_messages[@]}"
-
-  # Display message summary
-  for msg_file in "${unread_messages[@]}"; do
-    local from=$(jq -r '.from_agent' "$msg_file")
-    local type=$(jq -r '.message_type' "$msg_file")
-    local subject=$(jq -r '.subject' "$msg_file")
-    local priority=$(jq -r '.priority' "$msg_file")
-
-    echo "   [$priority] $from: $subject ($type)"
-  done
-
-  # Return unread message files
-  printf '%s\n' "${unread_messages[@]}"
-}
-```
-
-**Expected Output**: List of unread messages with metadata
-
-#### Step 3.2: Read and Process Message
-Retrieve and handle specific message:
-
-```bash
-function read_message() {
-  local agent_id=$1
-  local message_file=$2
-
-  echo "Reading message: $(basename "$message_file")"
-
-  # Parse message
-  local from_agent=$(jq -r '.from_agent' "$message_file")
-  local message_type=$(jq -r '.message_type' "$message_file")
-  local subject=$(jq -r '.subject' "$message_file")
-  local payload=$(jq -r '.payload' "$message_file")
-  local requires_response=$(jq -r '.requires_response' "$message_file")
-
-  echo "From: $from_agent"
-  echo "Type: $message_type"
-  echo "Subject: $subject"
-  echo ""
-  echo "Payload:"
-  echo "$payload" | jq .
-
-  # Process based on message type
-  case "$message_type" in
-    interface_contract)
-      process_interface_contract "$agent_id" "$message_file"
-      ;;
-    decision_announcement)
-      process_decision "$agent_id" "$message_file"
-      ;;
-    blocker_notification)
-      process_blocker "$agent_id" "$message_file"
-      ;;
-    handoff_request)
-      process_handoff "$agent_id" "$message_file"
-      ;;
-    question)
-      process_question "$agent_id" "$message_file"
-      ;;
-    *)
-      echo "⚠️  Unknown message type: $message_type"
-      ;;
-  esac
-
-  # Mark as read
-  touch "${message_file}.read"
-  echo "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "${message_file}.read"
-
-  # Send acknowledgment if required
-  if [ "$requires_response" == "true" ]; then
-    send_acknowledgment "$agent_id" "$from_agent" "$message_file"
-  fi
-}
-```
-
-**Expected Output**: Processed message with appropriate action taken
-
-#### Step 3.3: Respond to Message
-Send reply to received message:
-
-```bash
-function respond_to_message() {
-  local agent_id=$1
-  local original_message_file=$2
-  local response_payload=$3  # JSON
-
-  local original_id=$(jq -r '.message_id' "$original_message_file")
-  local original_from=$(jq -r '.from_agent' "$original_message_file")
-  local conversation_id=$(jq -r '.conversation_id // empty' "$original_message_file")
-
-  # If no conversation ID, create one
-  if [ -z "$conversation_id" ]; then
-    conversation_id="conv_$(date +%Y%m%d_%H%M%S)"
-  fi
-
-  local response_id="resp_$(date +%Y%m%d_%H%M%S)_$(random_string 6)"
-  local timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-
-  # Create response message
-  local response_file=".agent-messages/inbox/$original_from/${response_id}.json"
-
-  cat > "$response_file" <<EOF
-{
-  "message_id": "$response_id",
-  "protocol_version": "1.0",
-  "timestamp": "$timestamp",
-  "from_agent": "$agent_id",
-  "to_agent": "$original_from",
-  "message_type": "response",
-  "subject": "Re: $(jq -r '.subject' "$original_message_file")",
-  "payload": $response_payload,
-  "in_reply_to": "$original_id",
-  "conversation_id": "$conversation_id",
-  "status": "delivered"
-}
-EOF
-
-  echo "✅ Response sent to $original_from"
-  echo "   Conversation: $conversation_id"
-}
-
-# Example response
-respond_to_message "builder-2" "$message_file" \
-  '{
-    "status": "accepted",
-    "interface_approved": true,
-    "implementation_notes": "Will implement IUserService with these methods",
-    "estimated_completion": "2025-11-29T18:00:00Z"
-  }'
-```
-
-**Expected Output**: Response message delivered to original sender
-
-### Phase 4: Shared Context Management
-**Purpose**: Maintain synchronized state and shared knowledge across agents
-
-#### Step 4.1: Create Shared Context Document
-Establish shared knowledge base:
-
-```bash
-function initialize_shared_context() {
-  local context_name=$1
-  local initial_content=$2
-
-  mkdir -p ".agent-messages/shared-context"
-
-  local context_file=".agent-messages/shared-context/${context_name}.md"
-
-  cat > "$context_file" <<EOF
-# Shared Context: $context_name
-
-**Created**: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-**Last Updated**: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-**Contributors**: []
-
----
-
-$initial_content
-
----
-
-## Update History
-- $(date -u +%Y-%m-%dT%H:%M:%S)Z: Initial creation
-EOF
-
-  # Create lock file for concurrent access control
-  cat > "$context_file.lock" <<EOF
-{
-  "locked": false,
-  "locked_by": null,
-  "locked_at": null
-}
-EOF
-
-  echo "✅ Created shared context: $context_name"
-}
-
-# Example: Create API contracts context
-initialize_shared_context "api-contracts" \
-  "# API Contract Definitions
-
-## Authentication Endpoints
-
-### POST /auth/login
-**Status**: Defined by architect-1
-**Implemented by**: builder-1 (in progress)
-
-### POST /auth/register
-**Status**: Pending definition
-"
-```
-
-**Shared Context Types**:
-- **API Contracts**: Interface definitions, endpoint specs
-- **Architecture Decisions**: Design choices with rationale
-- **Data Models**: Database schemas, entity relationships
-- **Configuration Standards**: Naming conventions, standards
-- **Integration Points**: Service boundaries, dependencies
-
-**Expected Output**: Initialized shared context document with version control
-
-#### Step 4.2: Update Shared Context
-Concurrent-safe context updates:
-
-```bash
-function update_shared_context() {
-  local context_name=$1
-  local agent_id=$2
-  local update_content=$3
-
-  local context_file=".agent-messages/shared-context/${context_name}.md"
-  local lock_file="${context_file}.lock"
-
-  # Acquire lock
-  local max_wait=30  # seconds
-  local waited=0
-
-  while [ $waited -lt $max_wait ]; do
-    local is_locked=$(jq -r '.locked' "$lock_file")
-
-    if [ "$is_locked" == "false" ]; then
-      # Acquire lock
-      jq --arg agent "$agent_id" \
-         '.locked = true | .locked_by = $agent | .locked_at = now|todate' \
-         "$lock_file" > "${lock_file}.tmp"
-      mv "${lock_file}.tmp" "$lock_file"
-      break
-    fi
-
-    sleep 1
-    waited=$((waited + 1))
-  done
-
-  if [ $waited -eq $max_wait ]; then
-    echo "❌ Failed to acquire lock on $context_name after ${max_wait}s"
-    return 1
-  fi
-
-  # Update context
-  {
-    cat "$context_file"
-    echo ""
-    echo "## Update: $(date -u +%Y-%m-%dT%H:%M:%S)Z by $agent_id"
-    echo "$update_content"
-  } > "${context_file}.tmp"
-
-  mv "${context_file}.tmp" "$context_file"
-
-  # Update metadata
-  sed -i.bak "s/Last Updated:.*/Last Updated: $(date -u +%Y-%m-%dT%H:%M:%SZ)/" "$context_file"
-
-  # Release lock
-  jq '.locked = false | .locked_by = null | .locked_at = null' \
-     "$lock_file" > "${lock_file}.tmp"
-  mv "${lock_file}.tmp" "$lock_file"
-
-  echo "✅ Updated shared context: $context_name"
-
-  # Broadcast update notification
-  broadcast_message "$agent_id" "context_updated" \
-    "Shared context '$context_name' updated" \
-    "{\"context\": \"$context_name\", \"updated_by\": \"$agent_id\"}"
-}
-
-# Example update
-update_shared_context "api-contracts" "builder-1" \
-  "### POST /auth/login
-**Implementation complete**
-- JWT token returned in response
-- Refresh token stored in httpOnly cookie
-- 2FA support included
-"
-```
-
-**Expected Output**: Updated shared context with change notification broadcast
-
-### Phase 5: Handoff Documentation
-**Purpose**: Formalize work transitions between agents with complete context
-
-#### Step 5.1: Create Handoff Package
-Bundle all artifacts and context for receiving agent:
-
-```bash
-function create_handoff_package() {
-  local from_agent=$1
-  local to_agent=$2
-  local task_description=$3
-  local artifacts=$4  # JSON array of file paths
-  local context=$5    # Additional context text
-
-  local handoff_id="handoff_$(date +%Y%m%d_%H%M%S)"
-  local handoff_dir=".agent-messages/handoffs/$handoff_id"
-
-  mkdir -p "$handoff_dir/artifacts"
-
-  # Create handoff document
-  cat > "$handoff_dir/HANDOFF.md" <<EOF
-# Handoff: $from_agent → $to_agent
-
-**Handoff ID**: $handoff_id
-**Created**: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-**From**: $from_agent
-**To**: $to_agent
-
-## Task Description
-$task_description
-
-## Work Completed
-[Summary of completed work]
-
-## Artifacts Transferred
-$(echo "$artifacts" | jq -r '.[] | "- " + .')
-
-## Context and Background
-$context
-
-## Next Steps for Receiving Agent
-1. Review artifacts in \`$handoff_dir/artifacts/\`
-2. Read shared context documents
-3. Run tests to verify functionality
-4. Continue implementation from this point
-
-## Known Issues / Blockers
-[Any issues or blockers to be aware of]
-
-## Questions / Clarifications
-[Areas needing clarification]
-
-## Acceptance Criteria
-- [ ] All tests passing
-- [ ] Code reviewed and understood
-- [ ] Integration points verified
-- [ ] Ready to continue implementation
-EOF
-
-  # Copy artifacts
-  for artifact in $(echo "$artifacts" | jq -r '.[]'); do
-    cp "$artifact" "$handoff_dir/artifacts/"
-  done
-
-  # Create metadata
-  cat > "$handoff_dir/metadata.json" <<EOF
-{
-  "handoff_id": "$handoff_id",
-  "from_agent": "$from_agent",
-  "to_agent": "$to_agent",
-  "created_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-  "status": "pending_acceptance",
-  "artifacts": $artifacts
-}
-EOF
-
-  # Send handoff notification
-  send_message "$from_agent" "$to_agent" "handoff_request" \
-    "Handoff ready: $task_description" \
-    "{\"handoff_id\": \"$handoff_id\", \"handoff_dir\": \"$handoff_dir\"}" \
-    "high"
-
-  echo "✅ Handoff package created: $handoff_id"
-  echo "   From: $from_agent → $to_agent"
-  echo "   Artifacts: $(echo "$artifacts" | jq length)"
-}
-
-# Example handoff
-create_handoff_package "architect-1" "builder-1" \
-  "Implement JWT service based on design" \
-  '["docs/jwt-design.md", "interfaces/IJwtService.ts", "schemas/token-schema.json"]' \
-  "JWT service design is complete. Using RS256 algorithm. See shared context for API contracts."
-```
-
-**Handoff Package Contents**:
-- **HANDOFF.md**: Complete handoff documentation
-- **artifacts/**: All relevant files and documents
-- **metadata.json**: Structured handoff metadata
-- **context-links.md**: References to shared context docs
-- **acceptance-checklist.md**: Criteria for accepting handoff
-
-**Expected Output**: Complete handoff package with notification sent
-
-#### Step 5.2: Accept Handoff
-Receiving agent accepts and acknowledges handoff:
-
-```bash
-function accept_handoff() {
-  local agent_id=$1
-  local handoff_id=$2
-  local acceptance_notes=$3
-
-  local handoff_dir=".agent-messages/handoffs/$handoff_id"
-  local metadata_file="$handoff_dir/metadata.json"
-
-  # Update handoff status
-  jq --arg agent "$agent_id" \
-     --arg notes "$acceptance_notes" \
-     '.status = "accepted" |
-      .accepted_by = $agent |
-      .accepted_at = now|todate |
-      .acceptance_notes = $notes' \
-     "$metadata_file" > "${metadata_file}.tmp"
-  mv "${metadata_file}.tmp" "$metadata_file"
-
-  # Append to handoff document
-  cat >> "$handoff_dir/HANDOFF.md" <<EOF
-
----
-
-## Handoff Accepted
-
-**Accepted by**: $agent_id
-**Accepted at**: $(date -u +%Y-%m-%dT%H:%M:%SZ)
-
-### Acceptance Notes
-$acceptance_notes
-
-### Acceptance Checklist
-- [x] All tests passing
-- [x] Code reviewed and understood
-- [x] Integration points verified
-- [x] Ready to continue implementation
-EOF
-
-  # Notify original agent
-  local from_agent=$(jq -r '.from_agent' "$metadata_file")
-  send_message "$agent_id" "$from_agent" "handoff_accepted" \
-    "Handoff $handoff_id accepted" \
-    "{\"handoff_id\": \"$handoff_id\", \"notes\": \"$acceptance_notes\"}"
-
-  echo "✅ Handoff accepted: $handoff_id"
-}
-
-# Example acceptance
-accept_handoff "builder-1" "handoff_20251129_143052" \
-  "Design reviewed. All acceptance criteria met. Starting implementation."
-```
-
-**Expected Output**: Updated handoff status with acceptance confirmation
 
 ## Examples
 
-### Example 1: Interface Contract Negotiation
-**Context**: Two builder agents need to coordinate API interface changes
+### Example 1: Collaborative Task List
 
-**Execution Flow:**
+```python
+# Three agents managing shared task list
+agent_a = ORSet()
+agent_b = ORSet()
+agent_c = ORSet()
 
-```bash
-# Builder-1 proposes interface
-send_message "builder-1" "builder-2" "interface_contract" \
-  "Proposed IUserService interface" \
-  '{
-    "interface": "IUserService",
-    "methods": [
-      {"name": "findById", "params": ["id: string"], "returns": "Promise<User>"},
-      {"name": "create", "params": ["data: CreateUserDto"], "returns": "Promise<User>"}
-    ]
-  }' "high"
+# Agent A adds tasks
+agent_a.add("implement-auth")
+agent_a.add("write-tests")
 
-# Builder-2 receives and reviews
-check_inbox "builder-2"
-# Output: 1 unread message from builder-1
+# Agent B adds task concurrently
+agent_b.add("update-docs")
 
-read_message "builder-2" ".agent-messages/inbox/builder-2/msg_20251129_143052_abc123.json"
+# Agent C removes task (also concurrent)
+agent_c.add("implement-auth")  # Observed this task
+agent_c.remove("implement-auth")  # Then removed it
 
-# Builder-2 proposes modification
-respond_to_message "builder-2" "$message_file" \
-  '{
-    "status": "modification_requested",
-    "changes": [
-      {
-        "method": "findById",
-        "change": "Return type should be Promise<User | null> to handle not found"
-      }
-    ],
-    "rationale": "Avoids throwing exceptions for normal control flow"
-  }'
+# Merge all replicas
+merged = agent_a.merge(agent_b).merge(agent_c)
 
-# Builder-1 accepts modification
-respond_to_message "builder-1" "$response_file" \
-  '{
-    "status": "accepted",
-    "updated_interface": {
-      "interface": "IUserService",
-      "methods": [
-        {"name": "findById", "params": ["id: string"], "returns": "Promise<User | null>"},
-        {"name": "create", "params": ["data: CreateUserDto"], "returns": "Promise<User>"}
-      ]
-    }
-  }'
-
-# Update shared context with agreed interface
-update_shared_context "api-contracts" "builder-1" \
-  "### IUserService Interface (AGREED)
-\`\`\`typescript
-interface IUserService {
-  findById(id: string): Promise<User | null>;
-  create(data: CreateUserDto): Promise<User>;
-}
-\`\`\`
-**Agreed by**: builder-1, builder-2
-**Date**: 2025-11-29
-"
+# Result: OR-Set semantics preserve correct state
+assert not merged.contains("implement-auth")  # Correctly removed
+assert merged.contains("write-tests")         # Preserved from A
+assert merged.contains("update-docs")         # Preserved from B
 ```
 
-**Expected Output:**
-```
-Conversation Summary:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+### Example 2: Distributed Metrics
 
-Conversation ID: conv_auth_contracts_001
-Participants: builder-1, builder-2
-Messages: 3
-Duration: 8 minutes
-Status: ✅ RESOLVED
+```python
+# Agents tracking workflow progress
+orchestrator = GCounter(replica_id="orchestrator")
+agent_1 = GCounter(replica_id="agent-1")
+agent_2 = GCounter(replica_id="agent-2")
 
-Outcome:
-- IUserService interface defined
-- Method signature modified (findById returns nullable)
-- Agreement documented in shared context
-- Both agents ready to implement
-```
+# Each agent completes tasks
+agent_1.increment(5)  # Completed 5 tasks
+agent_2.increment(7)  # Completed 7 tasks
 
-**Rationale**: Demonstrates collaborative contract negotiation with proposal, feedback, and agreement
+# Orchestrator tracks overall progress
+orchestrator.increment(2)  # Completed 2 coordination tasks
 
-### Example 2: Architectural Decision Broadcast
-**Context**: Architect makes decision affecting all agents
-
-**Execution Flow:**
-
-```bash
-# Architect broadcasts decision
-broadcast_message "architect-1" "decision_announcement" \
-  "JWT Algorithm Decision: RS256" \
-  '{
-    "decision_id": "DEC-001",
-    "decision": "Use RS256 algorithm for JWT signing",
-    "rationale": [
-      "Better security than HS256",
-      "Supports key rotation",
-      "Industry best practice for production systems"
-    ],
-    "impact": {
-      "affected_components": ["jwt-service", "auth-middleware", "token-validator"],
-      "breaking_change": false,
-      "action_required": "All JWT implementations must use RS256 keypair"
-    },
-    "effective_date": "immediate",
-    "references": [
-      "https://tools.ietf.org/html/rfc7519",
-      "docs/security/jwt-best-practices.md"
-    ]
-  }'
-
-# All agents receive and acknowledge
-for agent in builder-1 builder-2 validator-1; do
-  # Agents check inbox
-  unread=$(check_inbox "$agent")
-
-  # Agents read decision
-  read_message "$agent" "$unread"
-
-  # Agents acknowledge
-  send_message "$agent" "architect-1" "acknowledgment" \
-    "Acknowledged decision DEC-001" \
-    '{"decision_id": "DEC-001", "will_comply": true}'
-done
-
-# Update shared context
-update_shared_context "architecture-decisions" "architect-1" \
-  "## DEC-001: JWT Algorithm Selection
-
-**Decision**: Use RS256 algorithm for JWT signing
-**Date**: 2025-11-29
-**Status**: APPROVED
-
-**Rationale**:
-- Better security than HS256
-- Supports key rotation
-- Industry best practice
-
-**Impact**: All JWT services must use RS256 keypair
-**Acknowledgments**: builder-1 ✅, builder-2 ✅, validator-1 ✅
-"
+# Merge for total count
+total = orchestrator.merge(agent_1).merge(agent_2)
+assert total.value() == 14  # 2 + 5 + 7
 ```
 
-**Expected Output:**
-```
-Broadcast Report:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## Best Practices
 
-Decision: DEC-001 (JWT Algorithm: RS256)
-Broadcast at: 2025-11-29T14:30:52Z
-Recipients: 3 agents
+1. **Choose Right CRDT for Use Case**
+   ```python
+   # For sets: Use OR-Set (preserves concurrent adds)
+   pending_tasks = ORSet()
 
-Acknowledgments:
-✅ builder-1 (received: 14:31, acknowledged: 14:32)
-✅ builder-2 (received: 14:31, acknowledged: 14:33)
-✅ validator-1 (received: 14:31, acknowledged: 14:35)
+   # For counters: Use G-Counter (increment only) or PN-Counter (inc/dec)
+   task_count = GCounter()
 
-Status: Fully acknowledged (3/3)
-Shared context updated: architecture-decisions.md
-```
+   # For single values: Use LWW-Register (simple) or MV-Register (complex)
+   current_config = LWWRegister()
+   ```
 
-**Rationale**: Shows broadcast pattern for architectural decisions with acknowledgment tracking
+2. **Synchronize Periodically**
+   ```python
+   # Every 30-60 seconds is usually sufficient
+   sync_interval = 30  # seconds
 
-### Example 3: Blocker Escalation and Resolution
-**Context**: Agent encounters blocker needing orchestrator intervention
+   # More frequent for high-concurrency scenarios
+   if high_concurrency:
+       sync_interval = 10
+   ```
 
-**Execution Flow:**
+3. **Handle Network Partitions**
+   ```python
+   try:
+       remote_state = fetch_state_from_peer()
+       merged = local_state.merge(remote_state)
+   except NetworkError:
+       # Continue with local operations
+       # State will eventually sync when partition heals
+       log("Network partition - continuing with local state")
+   ```
 
-```bash
-# Builder-1 hits blocker
-publish_event "BlockerEncountered" "builder-1" \
-  '{
-    "task_id": "pg2-task-1",
-    "blocker_type": "missing_dependency",
-    "description": "Cannot implement JWT refresh without User model",
-    "blocked_since": "2025-11-29T15:30:00Z",
-    "dependency": {
-      "required_artifact": "User model with refreshToken field",
-      "responsible_agent": "builder-2",
-      "estimated_impact": "2 hours blocked"
-    }
-  }'
+4. **Monitor State Size**
+   ```python
+   # CRDTs can grow unbounded (especially OR-Set tombstones)
+   if len(or_set.removed) > 1000:
+       # Garbage collect old tombstones
+       or_set.gc_tombstones(older_than=7*24*3600)  # 7 days
+   ```
 
-# Orchestrator receives event (subscribed to BlockerEncountered)
-# Checks builder-2 status
-builder_2_status=$(jq -r '.status' "worktrees/builder-2/status/agent-status.json")
+## Related Skills
 
-# Orchestrator facilitates communication
-send_message "orchestrator" "builder-2" "priority_request" \
-  "Builder-1 blocked waiting for User model" \
-  '{
-    "urgency": "high",
-    "blocked_agent": "builder-1",
-    "required_artifact": "User model with refreshToken field",
-    "current_eta": "unknown",
-    "requested_eta": "within 30 minutes"
-  }'
+- `state-manager-skill`: Uses CRDTs for distributed state
+- `observability-tracker-skill`: Tracks CRDT synchronization metrics
 
-# Builder-2 responds with ETA
-respond_to_message "builder-2" "$message_file" \
-  '{
-    "status": "acknowledged",
-    "current_progress": "User model 75% complete",
-    "eta": "2025-11-29T16:15:00Z",
-    "partial_delivery": "Can provide interface definition immediately"
-  }'
+## References
 
-# Builder-2 sends partial interface to unblock builder-1
-send_message "builder-2" "builder-1" "interface_contract" \
-  "Partial User interface (full implementation coming soon)" \
-  '{
-    "interface": "User",
-    "fields": ["id", "email", "refreshToken"],
-    "note": "Full implementation ETA 16:15, use this interface now"
-  }'
+- [CRDT Wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+- Document 15, Section 4: State Management Patterns
+- Command: `/state-coordinator`
 
-# Builder-1 unblocked
-publish_event "BlockerResolved" "builder-1" \
-  '{
-    "task_id": "pg2-task-1",
-    "blocker_type": "missing_dependency",
-    "resolution": "Partial interface received from builder-2",
-    "blocked_duration": "25 minutes",
-    "resolved_at": "2025-11-29T15:55:00Z"
-  }'
-```
+---
 
-**Expected Output:**
-```
-Blocker Resolution Report:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Blocker ID: blocker_pg2_task1_001
-Reported by: builder-1
-Blocker type: missing_dependency
-
-Timeline:
-15:30:00 - Blocker encountered
-15:32:15 - Orchestrator notified
-15:33:42 - builder-2 contacted
-15:35:18 - builder-2 acknowledged
-15:54:32 - Partial interface delivered
-15:55:05 - Blocker resolved
-
-Resolution time: 25 minutes
-Impact: Minimal (partial unblocking achieved)
-Status: ✅ RESOLVED
-```
-
-**Rationale**: Demonstrates blocker escalation, orchestrator mediation, and partial unblocking strategy
-
-## Quality Standards
-
-### Output Requirements
-- All messages must conform to defined JSON schema with required fields
-- Message delivery must be confirmed with status tracking
-- Broadcast messages must reach all registered agents
-- Shared context updates must be atomic (locked during update)
-- Handoff packages must include complete artifacts and acceptance criteria
-
-### Performance Requirements
-- Message delivery latency: ≤1 second for direct messages
-- Inbox polling frequency: Every 30 seconds during active work
-- Shared context lock acquisition: ≤30 seconds wait time
-- Broadcast delivery: ≤5 seconds to all agents
-- Event processing: ≤2 seconds from publish to subscriber delivery
-
-### Integration Requirements
-- Integrates with parallel-executor-skill for agent coordination
-- Uses worktree-manager-skill worktree paths for routing
-- Reports communication metrics to orchestrator dashboards
-- Supports MULTI_AGENT_PLAN.md handoff protocols
-
-## Common Pitfalls
-
-### Pitfall 1: Message Loss from Unreliable Delivery
-**Issue**: Messages sent but never received by agent
-**Why it happens**: File system errors, permissions issues, process crashes
-**Solution**:
-- Implement message acknowledgment requirement
-- Retry unacknowledged messages after timeout
-- Log all sent messages to audit trail
-- Implement dead letter queue for failed deliveries
-
-### Pitfall 2: Race Conditions in Shared Context Updates
-**Issue**: Concurrent updates overwriting each other
-**Why it happens**: Multiple agents updating context simultaneously without locking
-**Solution**:
-- Always acquire lock before updating shared context
-- Implement timeout for lock acquisition
-- Use optimistic locking with version numbers
-- Consider event sourcing for append-only updates
-
-### Pitfall 3: Conversation Fragmentation
-**Issue**: Related messages not grouped, hard to follow conversation
-**Why it happens**: Missing conversation_id tracking
-**Solution**:
-- Always use conversation_id for related messages
-- Link responses to original message with in_reply_to
-- Implement conversation view in message reader
-- Provide conversation summary tools
-
-### Pitfall 4: Broadcast Spam
-**Issue**: Too many broadcast messages, agents overwhelmed
-**Why it happens**: Every minor update broadcast to all agents
-**Solution**:
-- Reserve broadcasts for critical decisions only
-- Use event subscriptions for opt-in notifications
-- Implement message priority and filtering
-- Batch related updates into single broadcast
-
-### Pitfall 5: Stale Shared Context
-**Issue**: Agents reading outdated shared context
-**Why it happens**: Context updated but agents don't refresh
-**Solution**:
-- Broadcast context_updated event when context changes
-- Agents should re-read context when event received
-- Display last_updated timestamp prominently
-- Implement cache invalidation in context readers
-
-## Integration with Command & Control
-
-### Related Agents
-- **Orchestrator Agent**: Subscribes to all events, mediates conflicts, facilitates communication
-- **Worker Agents**: Send/receive messages, update shared context, participate in handoffs
-
-### Related Commands
-- `/handoff`: Uses agent-communication for handoff documentation
-- `/start-session`: Initializes message bus for session
-- `/close-session`: Archives message history
-
-### Related Skills
-- **parallel-executor-skill**: Uses messaging for agent coordination (dependency)
-- **multi-agent-planner-skill**: Defines communication protocols in plan
-- **worktree-manager-skill**: Provides agent locations for routing
-
-### MCP Dependencies
-- **Filesystem MCP**: Message file creation, inbox polling
-- **Process MCP**: Background message polling processes
-
-### Orchestration Notes
-- **Invoked by**: parallel-executor-skill (enable coordination), orchestrator agent
-- **Invokes**: None (leaf skill)
-- **Used throughout**: All multi-agent workflows
-
-## Troubleshooting
-
-### Issue: Messages Not Being Delivered
-**Symptoms**: Agent sends message but recipient never receives
-**Diagnosis**:
-```bash
-# Check if message file created
-ls -la .agent-messages/inbox/recipient-agent/
-
-# Check message file permissions
-ls -l .agent-messages/inbox/recipient-agent/*.json
-
-# Check registry
-jq '.agents["recipient-agent"]' .agent-messages/registry.json
-```
-**Solution**:
-1. Verify recipient agent registered
-2. Check file permissions (should be readable)
-3. Verify inbox directory exists
-4. Check message file format (must be valid JSON)
-
-### Issue: Shared Context Lock Timeout
-**Symptoms**: Cannot acquire lock on shared context after 30 seconds
-**Diagnosis**:
-```bash
-# Check lock status
-jq . .agent-messages/shared-context/api-contracts.md.lock
-
-# Check who holds lock
-jq -r '.locked_by' .agent-messages/shared-context/api-contracts.md.lock
-```
-**Solution**:
-```bash
-# If locked by crashed agent, manually release
-jq '.locked = false | .locked_by = null | .locked_at = null' \
-  .agent-messages/shared-context/api-contracts.md.lock > temp.json
-mv temp.json .agent-messages/shared-context/api-contracts.md.lock
-```
-
-### Issue: Event Subscriptions Not Working
-**Symptoms**: Agent subscribed to event but not receiving notifications
-**Diagnosis**:
-```bash
-# Check subscriptions
-jq '.event_subscriptions' .agent-messages/registry.json
-
-# Check event directory
-ls -la .agent-messages/events/TaskCompleted/
-```
-**Solution**:
-1. Verify agent subscribed to correct event type
-2. Check event publishing actually creates files
-3. Verify event delivery copies to agent inbox
-4. Re-subscribe agent to event
-
-## Version History
-- 1.0.0 (2025-11-29): Initial release
-  - Inter-agent messaging with multiple protocols
-  - Shared context management with locking
-  - Event broadcasting and subscriptions
-  - Handoff documentation automation
-  - Message persistence and archival
-  - Conversation threading and tracking
-  - Integration with orchestration ecosystem
+**Version**: 1.0.0
+**Status**: Production Ready
+**Complexity**: High (advanced distributed systems concepts)
+**Token Cost**: Low (local operations, periodic sync)

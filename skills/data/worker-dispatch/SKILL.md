@@ -1,354 +1,412 @@
 ---
 name: worker-dispatch
-description: Use to spawn isolated worker processes for autonomous issue work. Uses Task tool with run_in_background for parallel execution and TaskOutput for monitoring. Pre-extracts context to minimize worker token usage.
-allowed-tools:
-  - Bash
-  - Read
-  - Task
-  - TaskOutput
-  - mcp__github__*
-  - mcp__memory__*
-model: opus
+description: Use to spawn isolated worker processes for autonomous issue work. Creates git worktrees, constructs worker prompts, and handles worker lifecycle.
 ---
 
 # Worker Dispatch
 
 ## Overview
 
-Spawns and manages worker Claude agents using the **Task tool with `run_in_background: true`**. Workers run as parallel background agents monitored via **TaskOutput**.
+Spawns and manages worker Codex processes in isolated git worktrees. Workers are disposable - if they fail, spawn another.
 
 **Core principle:** Workers are isolated, scoped, and expendable. State lives in GitHub, not in workers.
 
-**Key optimization:** Pre-extract issue context BEFORE spawning. Workers receive focused context, not raw issues.
+**Announce at start:** "I'm using worker-dispatch to spawn a worker for issue #[N]."
 
-## Worktree Isolation (MANDATORY)
+## State Management
 
-**CRITICAL:** Every worker MUST have its own git worktree. Workers NEVER operate in the main repository.
+**CRITICAL:** Worker state is stored in GitHub. NO local state files for tracking.
+
+| State | Location | Purpose |
+|-------|----------|---------|
+| Worker assignment | Issue comment | Who is working on what |
+| Worker status | Project Board | In Progress, Done, etc. |
+| Process logs | Local (ephemeral) | Debugging only |
+| Process PIDs | Local (ephemeral) | Process management only |
+
+Local files (logs, PIDs) are ephemeral - they exist only for the current orchestration session. All persistent state is in GitHub.
+
+## Worker Architecture
 
 ```
-Main Repository (./)           ← Orchestrator only
+Main Repository (./)
+│
+└── Worktrees (parallel directories)
     │
-    └── Worktrees (isolated)
-        ├── ../project-worker-123/    ← Worker for #123
-        ├── ../project-worker-124/    ← Worker for #124
-        └── ../project-worker-125/    ← Worker for #125
+    ├── ../project-worker-123/    ← Worker for issue #123
+    │   └── (full repo copy on feature/123-* branch)
+    │
+    ├── ../project-worker-124/    ← Worker for issue #124
+    │   └── (full repo copy on feature/124-* branch)
+    │
+    └── ../project-worker-125/    ← Worker for issue #125
+        └── (full repo copy on feature/125-* branch)
 ```
 
-**Orchestrator responsibility:** Create worktree BEFORE spawning worker.
-**Worker responsibility:** Verify isolation BEFORE any work (see `worker-protocol`).
+## Spawning a Worker
 
-This prevents file clobbering between parallel workers.
-
-## Worker Types
-
-| Type | Subagent | Purpose | When to Use |
-|------|----------|---------|-------------|
-| Implementation | `general-purpose` | Full feature work | Standard issue work |
-| Research | `Explore` | Read-only investigation | Pre-implementation analysis, debugging |
-| PR Resolution | `general-purpose` | Fix CI, merge PRs | Existing PR cleanup |
-
-## Pre-Extraction (CRITICAL)
-
-**Extract issue context BEFORE spawning.** Workers should not spend tokens re-reading issues.
+### Step 1: Create Worktree
 
 ```bash
-extract_issue_context() {
-  local issue=$1
-
-  # Single API call to get everything
-  ISSUE_JSON=$(gh issue view "$issue" --json title,body,labels,comments,assignees)
-
-  TITLE=$(echo "$ISSUE_JSON" | jq -r '.title')
-  BODY=$(echo "$ISSUE_JSON" | jq -r '.body')
-  LABELS=$(echo "$ISSUE_JSON" | jq -r '[.labels[].name] | join(", ")')
-
-  # Extract acceptance criteria if present
-  ACCEPTANCE=$(echo "$BODY" | sed -n '/## Acceptance Criteria/,/^## /p' | head -20)
-  [ -z "$ACCEPTANCE" ] && ACCEPTANCE=$(echo "$BODY" | sed -n '/- \[/p' | head -10)
-
-  # Get latest handover if exists
-  HANDOVER=$(echo "$ISSUE_JSON" | jq -r '
-    [.comments[] | select(.body | contains("<!-- HANDOVER:START -->"))] | last | .body // ""
-  ')
-
-  # Get recent progress comments
-  PROGRESS=$(echo "$ISSUE_JSON" | jq -r '
-    [.comments[-3:][].body] | join("\n---\n")
-  ' | head -50)
-}
-```
-
-## Spawning Implementation Workers
-
-### Step 1: Extract Context & Create Worktree
-
-```bash
-spawn_implementation_worker() {
-  local issue=$1
-  local attempt=${2:-1}
-
-  # Pre-extract context
-  extract_issue_context "$issue"
+spawn_worker() {
+  issue=$1
+  context_file=$2  # Optional: handover context
 
   worker_id="worker-$(date +%s)-$issue"
-  issue_slug=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | cut -c1-40)
-  branch="feature/$issue-$issue_slug"
+
+  issue_title=$(gh issue view "$issue" --json title --jq '.title' | \
+    tr '[:upper:]' '[:lower:]' | \
+    sed 's/[^a-z0-9]/-/g' | \
+    cut -c1-40)
+
+  branch="feature/$issue-$issue_title"
   worktree_path="../$(basename $PWD)-worker-$issue"
 
-  # Create worktree
   git fetch origin main
   git branch "$branch" origin/main 2>/dev/null || true
   git worktree add "$worktree_path" "$branch"
+
+  echo "Created worktree: $worktree_path on branch $branch"
 }
 ```
 
-### Step 2: Register in GitHub
+### Step 2: Register Worker in GitHub
+
+Post worker assignment to the issue as a structured comment:
 
 ```bash
 register_worker() {
-  local issue=$1 worker_id=$2 worktree=$3
+  worker_id=$1
+  issue=$2
+  worktree=$3
 
+  # Post assignment comment with structured marker
   gh issue comment "$issue" --body "<!-- WORKER:ASSIGNED -->
-{\"worker_id\": \"$worker_id\", \"assigned_at\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}
+\`\`\`json
+{
+  \"assigned\": true,
+  \"worker_id\": \"$worker_id\",
+  \"assigned_at\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",
+  \"worktree\": \"$worktree\"
+}
+\`\`\`
 <!-- /WORKER:ASSIGNED -->
 
-**Worker Assigned:** \`$worker_id\` at $(date -u +%H:%M:%S)Z"
+**Worker Assigned**
+- **Worker ID:** \`$worker_id\`
+- **Started:** $(date -u +%Y-%m-%dT%H:%M:%SZ)
+- **Worktree:** \`$worktree\`
 
+---
+*Orchestrator: $ORCHESTRATION_ID*"
+
+  # Update project board status
   update_project_status "$issue" "In Progress"
 }
 ```
 
-### Step 3: Construct Focused Prompt
-
-**~50 lines with pre-extracted context:**
+### Step 3: Construct Worker Prompt
 
 ```bash
 construct_worker_prompt() {
-  local issue=$1 worker_id=$2 attempt=$3
-  # Uses pre-extracted: TITLE, ACCEPTANCE, HANDOVER, PROGRESS
+  issue=$1
+  worker_id=$2
+  context_file=$3
+  attempt=$4
+  research_context=$5
 
   cat <<PROMPT
-Worker $worker_id | Issue #$issue | Attempt $attempt
+You are a worker agent. Your ONLY task is to complete GitHub issue #$issue.
 
-## Task
-$TITLE
+## Worker Identity
+- **Worker ID:** $worker_id
+- **Issue:** #$issue
+- **Attempt:** $attempt
+- **Orchestration:** $ORCHESTRATION_ID
 
-## Requirements
-$ACCEPTANCE
+## Your Mission
+Complete issue #$issue by following the issue-driven-development workflow:
+1. Read and understand the issue completely
+2. Create/verify you're on the correct branch
+3. Implement the solution with TDD
+4. Run all tests
+5. Create a PR when complete
+6. Update issue with progress comments throughout
 
 ## Constraints
-- Work ONLY on issue #$issue
-- TDD: write tests first
-- All tests must pass before PR
-- Complete code review before PR (post artifact to issue)
-- Max 100 turns - handover at 90+
+- Work ONLY on issue #$issue - no other issues
+- Do NOT modify unrelated code
+- Do NOT start other work
+- Follow all project skills (strict-typing, ipv6-first, etc.)
+- Maximum 100 turns - if approaching limit, prepare handover
 
 ## Exit Conditions
-Return JSON when done:
-\`\`\`json
-{"status": "COMPLETED|BLOCKED|HANDOVER", "pr": null, "summary": "..."}
-\`\`\`
+Exit when ANY of these occur:
+1. **PR Created** - Your work is complete
+2. **Blocked** - You cannot proceed without external input
+3. **Turns Exhausted** - Approaching 100 turns, handover needed
+4. **Failed** - Tests fail after good-faith effort (triggers research)
 
-| Status | Meaning |
-|--------|---------|
-| COMPLETED | PR created, tests pass |
-| BLOCKED | Cannot proceed without external input |
-| HANDOVER | Turn limit approaching, context posted |
+## Progress Reporting
+Update the issue with comments as you work.
 
-## Progress Protocol
-Post brief updates to issue. On handover, post full context with <!-- HANDOVER:START --> markers.
+## On Completion
+Post completion comment to the issue.
 
-$([ -n "$HANDOVER" ] && echo "## Previous Handover
-$HANDOVER")
+## On Handover Needed
+Post handover context to the issue comment (NOT local file).
 
-$([ -n "$PROGRESS" ] && echo "## Recent Activity
-$PROGRESS")
+$(if [ -n "$context_file" ] && [ -f "$context_file" ]; then
+  echo "## Context from Previous Worker"
+  cat "$context_file"
+fi)
 
-Begin implementation now.
+$(if [ -n "$research_context" ]; then
+  echo "## Research Context (Previous Failures)"
+  echo "$research_context"
+fi)
+
+## Begin
+Start by reading issue #$issue to understand the requirements.
 PROMPT
 }
 ```
 
-### Step 4: Spawn Worker
-
-```markdown
-Task(
-  description: "Issue #[ISSUE] worker",
-  prompt: [FOCUSED_PROMPT],
-  subagent_type: "general-purpose",
-  run_in_background: true
-)
-```
-
-**Returns:** `task_id` for monitoring.
-
-## Spawning Research Workers
-
-Use `Explore` subagent for read-only investigation before implementation:
+### Step 4: Spawn Process
 
 ```bash
-construct_research_prompt() {
-  local issue=$1 question=$2
+spawn_worker_process() {
+  issue=$1
+  worker_id=$2
+  worktree_path=$3
+  prompt=$4
 
-  cat <<PROMPT
-Research for issue #$issue: $TITLE
+  # Create local ephemeral directories
+  mkdir -p ".codex/logs" ".codex/pids"
+  log_file=".codex/logs/$worker_id.log"
+  pid_file=".codex/pids/$worker_id.pid"
 
-## Question
-$question
+  (
+    cd "$worktree_path"
+    codex exec --dangerously-bypass-approvals-and-sandbox --json -C "$worktree_path" "$prompt" 2>&1
+  ) > "$log_file" &
 
-## Scope
-Investigate codebase to answer the question. Return structured findings.
+  worker_pid=$!
+  echo "$worker_pid" > "$pid_file"
 
-## Output Format
-\`\`\`json
-{
-  "findings": ["key finding 1", "key finding 2"],
-  "relevant_files": ["path/to/file.ts"],
-  "patterns": ["existing pattern to follow"],
-  "concerns": ["potential issue to address"],
-  "recommendation": "summary recommendation"
-}
-\`\`\`
-
-Do NOT modify any files. Research only.
-PROMPT
+  echo "Spawned worker $worker_id (PID: $worker_pid) for issue #$issue"
 }
 ```
 
-```markdown
-Task(
-  description: "Research for #[ISSUE]",
-  prompt: [RESEARCH_PROMPT],
-  subagent_type: "Explore",
-  run_in_background: true
-)
-```
-
-**Use cases:**
-- Pre-implementation: "What patterns exist for similar features?"
-- Debugging: "Where is this error originating?"
-- Impact analysis: "What will this change affect?"
-
-## Parallel Dispatch
-
-Spawn multiple workers in ONE message for concurrent execution:
-
-```markdown
-## Dispatching 3 Workers
-
-1. Extract context for each issue (sequential)
-2. Invoke all Task tools in SAME message (parallel):
-
-Task(description: "Issue #123 worker", prompt: [...], subagent_type: "general-purpose", run_in_background: true)
-Task(description: "Issue #124 worker", prompt: [...], subagent_type: "general-purpose", run_in_background: true)
-Task(description: "Issue #125 worker", prompt: [...], subagent_type: "general-purpose", run_in_background: true)
-
-3. Store all returned task_ids
-```
-
-## Monitoring Workers
-
-```markdown
-TaskOutput(task_id: "[ID]", block: false, timeout: 1000)
-```
-
-| Result | Meaning | Action |
-|--------|---------|--------|
-| "Task is still running..." | Worker active | Continue monitoring |
-| JSON with status | Worker complete | Parse result, update GitHub |
-| Error | Worker failed | Check GitHub for context |
-
-**Parse completion:**
-```bash
-RESULT=$(echo "$OUTPUT" | grep -oP '\{.*\}' | jq -r '.status')
-PR=$(echo "$OUTPUT" | grep -oP '\{.*\}' | jq -r '.pr // empty')
-```
-
-## PR Workers
-
-Resolve existing PRs (CI failures, missing reviews, merge):
+### Complete Spawn Function
 
 ```bash
-construct_pr_worker_prompt() {
-  local pr=$1 worker_id=$2
+spawn_worker() {
+  issue=$1
+  context_file=${2:-""}
+  attempt=${3:-1}
+  research_context=${4:-""}
 
-  cat <<PROMPT
-PR Worker $worker_id | PR #$pr
+  worker_id="worker-$(date +%s)-$issue"
+  worktree_path=$(create_worktree "$issue" "$worker_id")
+  prompt=$(construct_worker_prompt "$issue" "$worker_id" "$context_file" "$attempt" "$research_context")
 
-## Mission
-1. Check CI: \`gh pr checks $pr\`
-2. If failing: investigate, fix, push
-3. Verify review artifact exists on linked issue
-4. If mergeable: \`gh pr merge $pr --squash --delete-branch\`
+  # Register in GitHub BEFORE spawning
+  register_worker "$worker_id" "$issue" "$worktree_path"
 
-## Output
-\`\`\`json
-{"status": "MERGED|BLOCKED|HANDOVER", "summary": "..."}
-\`\`\`
+  # Spawn process
+  spawn_worker_process "$issue" "$worker_id" "$worktree_path" "$prompt"
 
-## Constraints
-- Only fix CI-related issues
-- Push to existing branch only
-- Check for do-not-merge label
+  log_activity "worker_spawned" "$worker_id" "$issue"
+}
+```
 
-Begin with: \`gh pr checks $pr\`
-PROMPT
+## Tool Scoping
+
+### Standard Worker (Full Implementation)
+
+```bash
+--allowedTools "Bash,Read,Edit,Write,Grep,Glob,mcp__git__*,mcp__github__*,mcp__memory__*,WebFetch,WebSearch"
+```
+
+### Research Worker (Read-Only)
+
+```bash
+--allowedTools "Read,Grep,Glob,WebFetch,WebSearch,mcp__memory__*,mcp__github__get_issue,mcp__github__get_pull_request"
+```
+
+### Review Worker (No Edits)
+
+```bash
+--allowedTools "Read,Grep,Glob,Bash(pnpm test:*),Bash(pnpm lint:*)"
+```
+
+## Checking Worker Status
+
+Check both GitHub and local PID:
+
+```bash
+check_worker_status() {
+  worker_id=$1
+  issue=$2
+
+  pid_file=".codex/pids/$worker_id.pid"
+
+  if [ ! -f "$pid_file" ]; then
+    echo "unknown"
+    return
+  fi
+
+  pid=$(cat "$pid_file")
+
+  if ! kill -0 "$pid" 2>/dev/null; then
+    # Process exited - check GitHub for status
+    pr_exists=$(gh pr list --head "feature/$issue-*" --json number --jq 'length')
+
+    if [ "$pr_exists" -gt 0 ]; then
+      echo "completed"
+    else
+      # Check issue comments for status
+      log_file=".codex/logs/$worker_id.log"
+      if [ -f "$log_file" ]; then
+        if grep -q 'handover' "$log_file"; then
+          echo "handover_needed"
+        elif grep -q 'blocked' "$log_file"; then
+          echo "blocked"
+        else
+          echo "failed"
+        fi
+      else
+        echo "unknown"
+      fi
+    fi
+  else
+    echo "running"
+  fi
 }
 ```
 
 ## Worker Cleanup
 
-On completion (detected via TaskOutput):
-
 ```bash
 cleanup_worker() {
-  local issue=$1 task_id=$2 result=$3
+  worker_id=$1
+  issue=$2
+  keep_worktree=${3:-false}
 
+  worktree="../$(basename $PWD)-worker-$issue"
+
+  # Remove worktree (unless keeping for inspection)
+  if [ "$keep_worktree" = "false" ] && [ -d "$worktree" ]; then
+    git worktree remove "$worktree" --force 2>/dev/null || true
+    git worktree prune
+  fi
+
+  # Clean up local ephemeral files
+  rm -f ".codex/pids/$worker_id.pid"
+
+  # Post cleanup comment to issue
   gh issue comment "$issue" --body "<!-- WORKER:ASSIGNED -->
+\`\`\`json
 {\"assigned\": false, \"cleared_at\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}
+\`\`\`
 <!-- /WORKER:ASSIGNED -->
 
-**Worker Complete:** $result"
+**Worker Cleaned Up**
+- **Worker ID:** \`$worker_id\`
+- **Cleared:** $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-  case "$result" in
-    COMPLETED) update_project_status "$issue" "In Review" ;;
-    BLOCKED)   update_project_status "$issue" "Blocked" ;;
-    HANDOVER)  ;; # Keep In Progress, spawn replacement
-  esac
+---
+*Orchestrator: $ORCHESTRATION_ID*"
+
+  log_activity "worker_cleaned" "$worker_id" "$issue"
 }
 ```
 
-## Replacement Workers
+## Replacement Worker (After Handover)
 
-When worker returns HANDOVER:
+```bash
+spawn_replacement_worker() {
+  old_worker_id=$1
+  issue=$2
+  worktree=$3
 
-1. Handover context is in issue comments (already posted by worker)
-2. Extract via: `extract_issue_context` (includes HANDOVER variable)
-3. Spawn replacement with attempt+1
-4. New worker receives full context automatically
+  # Get handover context from issue comments
+  handover_context=$(gh api "/repos/$OWNER/$REPO/issues/$issue/comments" \
+    --jq '[.[] | select(.body | contains("<!-- HANDOVER:START -->"))] | last | .body' 2>/dev/null || echo "")
+
+  # Cleanup old worker but KEEP worktree
+  cleanup_worker "$old_worker_id" "$issue" true
+
+  # Spawn replacement with handover context
+  new_worker_id="worker-$(date +%s)-$issue"
+  attempt=$(($(get_attempt_count "$issue") + 1))
+
+  prompt=$(construct_worker_prompt "$issue" "$new_worker_id" "" "$attempt" "$handover_context")
+  register_worker "$new_worker_id" "$issue" "$worktree"
+  spawn_worker_process "$issue" "$new_worker_id" "$worktree" "$prompt"
+
+  log_activity "worker_replacement" "$new_worker_id" "$issue" "$old_worker_id"
+}
+```
+
+## Parallel Dispatch
+
+```bash
+dispatch_available_slots() {
+  max_workers=5
+
+  # Count current workers from project board (In Progress status)
+  current=$(gh project item-list "$GITHUB_PROJECT_NUM" --owner "$GH_PROJECT_OWNER" \
+    --format json | jq '[.items[] | select(.status.name == "In Progress")] | length')
+
+  available=$((max_workers - current))
+
+  if [ "$available" -le 0 ]; then
+    echo "No worker slots available ($current/$max_workers active)"
+    return
+  fi
+
+  echo "Dispatching up to $available workers..."
+
+  for i in $(seq 1 $available); do
+    next_issue=$(get_next_pending_issue)
+
+    if [ -z "$next_issue" ]; then
+      echo "No more pending issues"
+      break
+    fi
+
+    spawn_worker "$next_issue"
+  done
+}
+```
 
 ## Checklist
 
-**Before spawning:**
-- [ ] Issue context pre-extracted
-- [ ] Worktree created on feature branch
-- [ ] Worker registered in GitHub
-- [ ] Project board status: In Progress
+When spawning a worker:
 
-**Prompt includes:**
-- [ ] Pre-extracted title and acceptance criteria
-- [ ] JSON output format requirement
-- [ ] Previous handover (if any)
-- [ ] Recent progress comments
+- [ ] Worktree created successfully
+- [ ] Branch created/checked out
+- [ ] Worker registered in GitHub (issue comment)
+- [ ] Project board status updated to In Progress
+- [ ] Worker prompt constructed with all context
+- [ ] Appropriate tool scoping applied
+- [ ] Process spawned in background
+- [ ] Activity logged
 
-**On completion:**
-- [ ] JSON result parsed
-- [ ] GitHub state updated
-- [ ] Project board status updated
-- [ ] Task_id removed from active list
+When cleaning up:
+
+- [ ] Worker process terminated (or already exited)
+- [ ] Worktree removed (unless keeping for inspection)
+- [ ] Cleanup comment posted to issue
+- [ ] Activity logged
 
 ## Integration
 
-**Used by:** `autonomous-orchestration`, `claude-autonomous --pr`
+This skill is used by:
+- `autonomous-orchestration` - Main orchestration loop
 
-**Uses:** `worker-protocol` (behavior contract), `worker-handover` (context format), `ci-monitoring` (PR workers)
+This skill uses:
+- `worker-protocol` - Behavior injected into prompts
+- `worker-handover` - Handover context format

@@ -1,47 +1,29 @@
 ---
-name: code-documentation
-description: TSDoc standards for TypeScript/JavaScript code. Automatically invoked when writing, reviewing, or editing any TSDoc comments, code documentation, or API documentation. (project)
-license: ISC
-compatibility: Requires bun
+description: Validate skill directories against AgentSkills spec
+allowed-tools: Bash, mcp__agent-skills-spec__*
 ---
 
-# Code Documentation Skill
+# Validate Skills
 
-## Purpose
+Validate skill directories against the AgentSkills specification.
 
-This skill provides TSDoc format templates, type documentation guidelines, and maintenance workflows. Use this when:
-- Writing or editing TSDoc comments for any function, type, or module
-- Reviewing documentation quality
-- Creating comprehensive API documentation
-- Documenting complex type structures
-- Cleaning up non-compliant comments (performance notes, timestamps, inline explanations)
-- Synchronizing out-of-sync TSDoc with code changes
-- Removing orphaned documentation for deleted code
+**Paths to validate:** $ARGUMENTS (default: `.claude/skills/`)
 
-**Key Standard**: No `@example` sections - tests and stories serve as living examples.
+## Instructions
 
-## Quick Reference
+### Step 1: Run Validation
 
-- **Creating TSDoc**: See [workflow.md](references/workflow.md) for the generation workflow
-- **Maintaining TSDoc**: See [maintenance.md](references/maintenance.md) for cleanup and sync guidelines
+Execute the development-skills CLI command:
+```bash
+bunx @plaited/development-skills validate-skill $ARGUMENTS
+```
 
-This skill contains detailed templates for:
-- Public API Functions
-- Internal Module Documentation
-- Public and Internal Types
-- Helper Functions
-- Behavioral Programming Functions
-- Special Annotations (Security, Performance, Deprecated)
-- Type Documentation (Complex Objects, Unions, Functions, Utilities, Branded Types, etc.)
+If no arguments provided, defaults to `.claude/skills/`.
 
-## Navigation
+### Step 2: Report Results
 
-- [workflow.md](references/workflow.md) - TSDoc generation workflow (4 phases)
-- [maintenance.md](references/maintenance.md) - Comment policy, sync tasks, orphaned doc handling
-- [public-api-templates.md](references/public-api-templates.md) - Templates for public-facing APIs
-- [internal-templates.md](references/internal-templates.md) - Templates for internal code and modules
-- [type-documentation.md](references/type-documentation.md) - Comprehensive type documentation templates
+Show the CLI output to the user. If there are errors, use the `agent-skills-spec` MCP server to get the latest specification and explain how to fix them.
 
-## Related Skills
+### Step 3: Query Spec (if needed)
 
-- **typescript-lsp**: Use for type verification and discovery during documentation workflow. Essential for Phase 1 (type analysis) and Phase 2 (usage discovery) of the TSDoc generation process. Run `lsp-hover` to verify signatures, `lsp-references` to find usages, and `lsp-symbols` to understand file structure.
+For clarification on validation rules, query the `agent-skills-spec` MCP server for the current specification.

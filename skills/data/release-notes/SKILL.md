@@ -1,46 +1,82 @@
 ---
-name: release-notes
-description: Draft release notes and changelog entries from git history or merged PRs between two refs (tags/SHAs/branches), including breaking changes, migrations, and upgrade steps. Use when the user asks for release notes, changelog updates, or a GitHub Release draft.
+name: delivery.release_notes
+phase: delivery
+roles:
+  - Product Manager
+  - Product Marketing
+description: Generate structured release notes tailored to the specified audience and highlighting value, rollout, and risks.
+variables:
+  required:
+    - name: version
+      description: Release version or identifier.
+    - name: highlights
+      description: Key features or changes included in the release.
+    - name: audience
+      description: Target audience such as customers, internal teams, or executives.
+  optional:
+    - name: rollout_plan
+      description: Summary of rollout phases or flags.
+    - name: risks
+      description: Notable risks or watchpoints to communicate.
+outputs:
+  - Release summary and value statement.
+  - Detailed change list grouped by theme.
+  - Rollout, support, and risk communication sections.
 ---
 
-# Release notes
+# Purpose
+Ensure release communications are consistent, customer-centric, and aligned with operational readiness plans.
 
-## Goal
-Produce accurate, scannable release notes (Markdown) for a specific release range.
+# Pre-run Checklist
+- ✅ Confirm feature list with engineering and QA.
+- ✅ Gather customer-facing messaging from product marketing.
+- ✅ Align with support and success teams on rollout logistics.
 
-## Inputs to ask for (if missing)
-- Release version + date (or "unreleased").
-- Range to summarize: `from_ref..to_ref` (tags/SHAs/branches). If unknown, ask: "last release tag?" and "target branch/tag?"
-- Target audience: end users, developers, internal ops, or all.
-- What to include/exclude: internal refactors, dependency bumps, infra-only changes.
+# Invocation Guidance
+```bash
+codex skills run delivery.release_notes \
+  --vars "version={{version}}" \
+         "highlights={{highlights}}" \
+         "audience={{audience}}" \
+         "rollout_plan={{rollout_plan}}" \
+         "risks={{risks}}"
+```
 
-## Workflow (checklist)
-1) Determine the release range
-   - Prefer tags: pick the previous tag and the new tag/HEAD.
-   - If no tags: use the last release branch point or a date-based window.
-   - Commands to gather candidates:
-     - `git tag --sort=-creatordate | Select-Object -First 20`
-     - `git log --first-parent --oneline <from_ref>..<to_ref>`
-     - If GitHub CLI is available: list merged PRs for the range and use titles for grouping.
-2) Collect and categorize changes
-   - Start from merge commits (first-parent) to avoid noise.
-   - Categorize into: Highlights, Breaking changes, Features, Fixes, Performance, Security, Deprecations, Docs, Dependencies, Infra/ops.
-   - Flag anything requiring action: config changes, env vars, DB migrations, API contract changes.
-3) Identify breaking changes and upgrade steps
-   - Look for: renamed/removed endpoints, changed request/response fields, changed config keys, Java/Kotlin/Node version bumps, DB schema changes.
-   - Add explicit "Upgrade" and "Rollback" notes when impact is non-trivial.
-4) Write release notes using the template
-   - Use short bullets, active voice, and user-facing wording.
-   - Prefer "what changed" + "why it matters" over implementation details.
-   - Include PR/issue references only if they are stable in your repo hosting.
-   - Use `references/release-notes-template.md` to keep structure consistent.
-5) Sanity check for omissions and accuracy
-   - Diff the range: `git diff --stat <from_ref>..<to_ref>`
-   - Scan for config/migrations: `rg -n \"ENV|config|migration|Flyway|Liquibase\" -S`
-   - Ensure breaking changes are called out and have upgrade steps.
+# Recommended Input Attachments
+- Changelog or issue tracker export.
+- Screenshots or GIFs of key features.
+- Support playbooks or macros.
 
-## Deliverable
-Provide:
-- Release notes Markdown (ready to paste into a GitHub Release / changelog).
-- A short "Risk/notes" section listing any required migrations, config changes, or rollback concerns.
+# Claude Workflow Outline
+1. Summarize release context and audience needs.
+2. Craft a value-oriented summary explaining why the release matters.
+3. List changes grouped by theme, including links or callouts for visuals.
+4. Outline rollout plan, support readiness, and success metrics.
+5. Highlight risks, mitigations, and action items for partner teams.
 
+# Output Template
+```
+# Release Notes — {{version}}
+
+## Summary
+...
+
+## What's New
+- Theme:
+  - Change:
+
+## Rollout & Enablement
+- Rollout Plan:
+- Success Metrics:
+- Support Readiness:
+
+## Risks & Watchpoints
+- Risk:
+- Mitigation:
+- Owner:
+```
+
+# Follow-up Actions
+- Share notes in the release communication channels and status pages.
+- Update customer documentation or knowledge base articles.
+- Collect feedback post-launch and iterate on messaging.

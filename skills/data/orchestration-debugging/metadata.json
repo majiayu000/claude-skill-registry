@@ -1,9 +1,7 @@
 {
   "name": "orchestration-debugging",
-  "description": "Troubleshoot agent & tool failures in scheduling orchestration. Use when MCP tools fail, agent communication breaks, constraint engines error, or database operations timeout. Provides systematic incid",
   "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager"
+  "path": ".claude/skills/ORCHESTRATION_DEBUGGING/SKILL.md",
+  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager",
+  "downloaded_at": "2026-02-04T03:57:23.544651Z"
 }

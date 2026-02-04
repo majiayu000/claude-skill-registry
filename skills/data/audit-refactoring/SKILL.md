@@ -7,6 +7,37 @@ description: Run a single-session refactoring audit on the codebase
 
 ## Pre-Audit Validation
 
+**Step 0: Episodic Memory Search (Session #128)**
+
+Before running refactoring audit, search for context from past sessions:
+
+```javascript
+// Search for past refactoring audit findings
+mcp__plugin_episodic -
+  memory_episodic -
+  memory__search({
+    query: ["refactoring audit", "god object", "complexity"],
+    limit: 5,
+  });
+
+// Search for specific tech debt discussions
+mcp__plugin_episodic -
+  memory_episodic -
+  memory__search({
+    query: ["cognitive complexity", "duplicate code", "circular"],
+    limit: 5,
+  });
+```
+
+**Why this matters:**
+
+- Compare against previous refactoring targets
+- Identify recurring complexity hotspots (may need architectural fix)
+- Track which files were flagged before and why
+- Prevent re-flagging intentional design decisions
+
+---
+
 **Step 1: Check Thresholds**
 
 Run `npm run review:check` and report results.
@@ -218,36 +249,60 @@ Document dual-pass result in finding: `"verified": "DUAL_PASS_CONFIRMED"` or
 
 Create file: `docs/audits/single-session/refactoring/audit-[YYYY-MM-DD].jsonl`
 
-Each line (UPDATED SCHEMA with confidence and verification):
+**CRITICAL - Use JSONL_SCHEMA_STANDARD.md format:**
 
 ```json
 {
-  "id": "REF-001",
-  "category": "GodObject|Duplication|Complexity|Architecture|TechDebt",
+  "category": "refactoring",
+  "title": "Short specific title",
+  "fingerprint": "refactoring::path/to/file.ts::identifier",
   "severity": "S0|S1|S2|S3",
   "effort": "E0|E1|E2|E3",
-  "confidence": "HIGH|MEDIUM|LOW",
-  "verified": "DUAL_PASS_CONFIRMED|TOOL_VALIDATED|MANUAL_ONLY",
-  "file": "path/to/file.ts",
-  "line": 123,
-  "title": "Short description",
-  "description": "Detailed issue",
-  "metrics": { "lines": 450, "functions": 25, "complexity": 45 },
-  "recommendation": "How to refactor",
-  "batch_fixable": true,
+  "confidence": 90,
+  "files": ["path/to/file.ts:123"],
+  "why_it_matters": "1-3 sentences explaining refactoring need",
+  "suggested_fix": "Concrete refactoring direction",
+  "acceptance_tests": ["Array of verification steps"],
   "evidence": ["code structure info", "wc -l output", "deps:circular output"],
-  "cross_ref": "sonarqube|deps_circular|deps_unused|MANUAL_ONLY"
+  "symbols": ["ClassName", "functionName"],
+  "duplication_cluster": {
+    "is_cluster": true,
+    "cluster_summary": "Pattern description",
+    "instances": [{ "file": "path1.ts", "symbol": "name" }]
+  }
 }
 ```
 
-**⚠️ REQUIRED FIELDS (for deduplication/cross-reference):**
+**For S0/S1 findings, ALSO include verification_steps:**
 
-- `file` - REQUIRED: Full path from repo root (e.g.,
-  `components/admin/users-tab.tsx`)
-- `line` - REQUIRED: Specific line number where issue occurs (use line 1 if
-  file-wide)
-- These fields enable the aggregator to match findings against existing ROADMAP
-  items
+```json
+{
+  "verification_steps": {
+    "first_pass": {
+      "method": "grep|tool_output|file_read|code_search",
+      "evidence_collected": ["initial evidence"]
+    },
+    "second_pass": {
+      "method": "contextual_review|exploitation_test|manual_verification",
+      "confirmed": true,
+      "notes": "Confirmation notes"
+    },
+    "tool_confirmation": {
+      "tool": "sonarcloud|typescript|patterns_check|NONE",
+      "reference": "Tool output or NONE justification"
+    }
+  }
+}
+```
+
+**⚠️ REQUIRED FIELDS (per JSONL_SCHEMA_STANDARD.md):**
+
+- `category` - MUST be `refactoring` (normalized from
+  GodObject/Duplication/etc.)
+- `fingerprint` - Format: `<category>::<primary_file>::<identifier>`
+- `files` - Array with file paths (include line as `file.ts:123`)
+- `confidence` - Number 0-100 (not string)
+- `acceptance_tests` - Non-empty array of verification steps
 
 **3. Markdown Report (save to file):**
 
@@ -346,3 +401,25 @@ node scripts/add-false-positive.js \
   --reason "Explanation of why this is intentional complexity" \
   --source "AI_REVIEW_LEARNINGS_LOG.md#review-XXX"
 ```
+
+---
+
+## Documentation References
+
+Before running this audit, review:
+
+### TDMS Integration (Required)
+
+- [PROCEDURE.md](docs/technical-debt/PROCEDURE.md) - Full TDMS workflow
+- [MASTER_DEBT.jsonl](docs/technical-debt/MASTER_DEBT.jsonl) - Canonical debt
+  store
+- Intake command:
+  `node scripts/debt/intake-audit.js <output.jsonl> --source "audit-refactoring-<date>"`
+
+### Documentation Standards (Required)
+
+- [JSONL_SCHEMA_STANDARD.md](docs/templates/JSONL_SCHEMA_STANDARD.md) - Output
+  format requirements and TDMS field mapping
+- [DOCUMENTATION_STANDARDS.md](docs/DOCUMENTATION_STANDARDS.md) - 5-tier doc
+  hierarchy
+- [CODE_PATTERNS.md](docs/agent_docs/CODE_PATTERNS.md) - Anti-patterns to check

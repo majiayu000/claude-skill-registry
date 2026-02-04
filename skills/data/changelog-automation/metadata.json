@@ -1,7 +1,7 @@
 {
   "name": "changelog-automation",
-  "repo": "ccf/claude-code-ccf-marketplace",
-  "path": "plugins/documentation/skills/changelog-automation/SKILL.md",
-  "source": "github.com/ccf/claude-code-ccf-marketplace",
-  "downloaded_at": "2026-02-02T05:11:52.383892Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/changelog-automation/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:28.163353Z"
 }

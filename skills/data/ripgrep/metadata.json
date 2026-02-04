@@ -1,7 +1,7 @@
 {
   "name": "ripgrep",
   "repo": "Ven0m0/claude-config",
-  "path": "claude/skills/ripgrep/SKILL.md",
+  "path": "claude/skills/context-efficient-tools/ripgrep/SKILL.md",
   "source": "github.com/Ven0m0/claude-config",
-  "downloaded_at": "2026-02-02T04:09:57.896366Z"
+  "downloaded_at": "2026-02-04T04:37:53.668059Z"
 }

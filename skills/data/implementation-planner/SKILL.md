@@ -1,381 +1,483 @@
 ---
 name: implementation-planner
-description: Create structured implementation plans from validated requirements. Use when requirements are clear and you need to break down implementation into actionable steps with testing approach.
+description: Crée un plan d'implémentation détaillé basé sur les requirements et l'analyse du code. Utiliser après l'étape Explain, quand on a besoin de structurer le travail de développement, ou avant de commencer à coder.
+model: opus
+context: fork
+agent: Plan
+allowed-tools:
+  - Read
+  - Grep
+  - Glob
+  - Task
+  - TaskCreate
+  - TaskUpdate
+  - TaskList
+argument-hint: <prd-or-issue-reference>
+user-invocable: true
+knowledge:
+  core:
+    - ../../knowledge/workflows/domain-complexity.csv
+    - ../../knowledge/testing/test-levels-framework.md
+  advanced:
+    - ../../knowledge/testing/test-priorities-matrix.md
+    - ../../knowledge/testing/risk-based-testing.md
+  debugging:
+    - ../../knowledge/testing/test-healing-patterns.md
 ---
 
 # Implementation Planner
 
-## Instructions
+## 📥 Contexte à charger
 
-### When to Invoke This Skill
-- After requirements are validated and clear
-- Before starting implementation work
-- User asks for implementation plan
-- Complex feature requiring structured approach
-- Need to communicate approach to stakeholders
+**Au démarrage, rassembler les inputs pour créer le plan.**
 
-### Planning Principles
+| Contexte | Pattern/Action | Priorité |
+|----------|----------------|----------|
+| PRD actif | `Glob: docs/planning/prd/*.md` | Optionnel |
+| Architecture | `Glob: docs/planning/architecture/*.md` | Optionnel |
+| Stories liées | `Glob: docs/stories/*/STORY-*.md` | Optionnel |
+| Analyse codebase | `Glob: docs/planning/codebase-analysis-*.md` → `Read` (50 lignes) | Recommandé |
 
-1. **Top-Down Decomposition** - Break complex tasks into smaller steps
-2. **Dependency Ordering** - Plan steps in logical sequence
-3. **Risk Identification** - Flag potential issues early
-4. **Testing Strategy** - Define how to verify each step
-5. **Rollback Plan** - Consider how to undo if needed
+### Instructions de chargement
+1. Utiliser `Glob` pour lister les documents de planning existants
+2. Charger l'analyse codebase si disponible (output de codebase-explainer)
+3. Vérifier les requirements (de github-issue-reader)
+4. **STOP si analyse manquante** → utiliser `codebase-explainer` d'abord
 
-### Standard Workflow
+---
 
-#### 1. Understand the Goal
+## Activation
 
-From validated requirements, extract:
-- **Primary objective**: The main thing being accomplished
-- **Success criteria**: How to know it's done
-- **Constraints**: Technical or business limitations
-- **Scope boundaries**: What's included/excluded
+> **Avant de créer un plan :**
+> 1. Vérifier que l'analyse du code existe (output de codebase-explainer)
+> 2. Avoir les requirements clairs (output de github-issue-reader)
+> 3. Connaître les contraintes (temps, budget, tech)
+> 4. **STOP si analyse manquante** → Utiliser `codebase-explainer` d'abord
 
-#### 2. Analyze Current State
+---
 
-Investigate existing codebase:
-- **Related files**: What code exists in this area?
-- **Architecture patterns**: How is similar functionality implemented?
-- **Dependencies**: What does this interact with?
-- **Tests**: What test coverage exists?
+## Rôle & Principes
 
-Use these tools:
-- `Grep` - Search for related code
-- `Glob` - Find relevant files
-- `Read` - Understand existing implementation
+**Rôle** : Tech Lead qui transforme une analyse en plan d'action clair, séquencé et réaliste.
 
-#### 3. Identify Components to Modify
+**Principes** :
+- **Atomic steps** - Chaque étape est indépendante et vérifiable
+- **Fail fast** - Commencer par les parties risquées pour détecter les blocages tôt
+- **Test-first thinking** - Prévoir les tests AVANT le code (même si ATDD pas actif)
+- **Conservative estimates** - Préférer surestimer que sous-estimer
+- **Dependency awareness** - Séquencer selon les dépendances réelles
 
-List specific files and components:
-- **Backend changes**: API endpoints, business logic, data models
-- **Frontend changes**: UI components, state management
-- **Database changes**: Schema, migrations
-- **Configuration changes**: Settings, environment variables
-- **Documentation changes**: README, API docs
+**Règles** :
+- ⛔ Ne JAMAIS planifier sans analyse préalable du code
+- ⛔ Ne JAMAIS faire d'étapes > 30 minutes (trop gros = découper)
+- ⛔ Ne JAMAIS ignorer les risques identifiés
+- ✅ Toujours inclure validation lint/types après chaque étape code
+- ✅ Toujours prévoir les tests (unitaires + intégration si besoin)
+- ✅ Toujours lister les risques avec mitigations
 
-#### 4. Create Step-by-Step Plan
+---
 
-Break down into discrete steps:
+## Process
 
-**Format:**
+### 1. Synthèse des inputs
+
+**Collecter et vérifier :**
 ```
-## Implementation Plan
-
-### Step 1: <Component/Area>
-**Files to modify:**
-- `path/to/file.py` - <what changes>
-- `path/to/other.js` - <what changes>
-
-**Changes:**
-- <Specific change 1>
-- <Specific change 2>
-
-**Testing:**
-- <How to test this step>
-
-### Step 2: <Next Component/Area>
-...
+- [ ] Requirements (de github-issue-reader)
+- [ ] Architecture (de codebase-explainer)
+- [ ] Patterns à respecter
+- [ ] Fichiers à modifier
+- [ ] Risques identifiés
 ```
 
-**Guidelines:**
-- Each step should be independently testable
-- Order steps by dependency (do foundation first)
-- Estimate complexity: Simple/Moderate/Complex
-- Flag risks or unknowns
+**Questions de clarification :**
+- Scope clairement défini ?
+- Dépendances externes bloquantes ?
+- Contraintes de temps ?
+- Mode ATDD (tests first) demandé ?
 
-#### 5. Define Testing Approach
+---
 
-For each type of change:
+### 2. Création des Tasks (OBLIGATOIRE si 2+ étapes)
 
-**Backend Changes:**
-- Unit tests for business logic
-- Integration tests for API endpoints
-- Manual testing with test server (`--port 8001`)
+**Règle de déclenchement :**
 
-**Frontend Changes:**
-- Visual verification in browser
-- User interaction testing
-- Cross-browser if significant UI change
+| Nombre d'étapes | Action |
+|-----------------|--------|
+| 1 étape | Pas de Task (spinner natif suffit) |
+| 2+ étapes | `TaskCreate` pour chaque étape |
 
-**Data Changes:**
-- Test migration up and down
-- Verify data integrity
-- Test with production-like data
+**Pourquoi utiliser les Tasks :**
+- Visualiser la progression en temps réel
+- Reprendre en cas d'interruption (timeout, crash)
+- Coordonner le travail multi-sessions
+- Documenter le travail effectué
 
-#### 6. Identify Risks and Considerations
+**Format TaskCreate :**
 
-**Common Risks:**
-- Breaking changes to existing functionality
-- Performance impact
-- Security implications
-- Backward compatibility
-- Data migration issues
-
-**Document:**
-- What could go wrong?
-- How to mitigate?
-- Rollback strategy if needed?
-
-### Plan Templates
-
-#### Feature Addition Template
-```
-## Implementation Plan: <Feature Name>
-
-### Overview
-<1-2 sentence summary of what's being added>
-
-### Architecture Decision
-<Key design choice and rationale>
-
-### Step 1: Data Layer
-**Files:**
-- `src/models.py` - Add new model
-- `src/storage.py` - Add persistence methods
-
-**Changes:**
-- Define data structure
-- Add CRUD operations
-- Add validation
-
-**Testing:**
-- Unit tests for model
-- Test storage operations
-
-### Step 2: Business Logic
-**Files:**
-- `src/manager.py` - Add business logic
-
-**Changes:**
-- Implement core functionality
-- Handle edge cases
-- Add error handling
-
-**Testing:**
-- Unit tests for logic
-- Integration tests
-
-### Step 3: API Layer
-**Files:**
-- `src/web_server.py` - Add endpoints
-
-**Changes:**
-- Add REST endpoints
-- Add input validation
-- Add error responses
-
-**Testing:**
-- Test with curl/Postman
-- Verify error cases
-
-### Step 4: Frontend
-**Files:**
-- `frontend/src/components/...` - Add UI
-
-**Changes:**
-- Create component
-- Wire up API calls
-- Add user feedback
-
-**Testing:**
-- Manual browser testing
-- Test all user flows
-
-### Risks
-- <Potential issue 1>
-- <Potential issue 2>
-
-### Rollback Plan
-<How to undo if needed>
+```typescript
+// Pour chaque étape du plan :
+TaskCreate({
+  subject: "Étape N: [Titre court impératif]",
+  description: `
+    **Objectif:** [Ce que cette étape accomplit]
+    **Fichiers:** [Liste des fichiers à modifier]
+    **Validation:** [Commandes de vérification]
+    **Dépendances:** [Étapes préalables]
+  `,
+  activeForm: "[Action]ing [objet]..."  // Ex: "Creating user types..."
+})
 ```
 
-#### Bug Fix Template
-```
-## Implementation Plan: Fix <Bug Description>
+**Exemple concret :**
 
-### Root Cause
-<What's causing the bug>
+```typescript
+TaskCreate({
+  subject: "Étape 1: Créer les types User",
+  description: `
+    **Objectif:** Définir les interfaces TypeScript pour User
+    **Fichiers:** src/types/user.ts (Create)
+    **Validation:** npm run typecheck
+    **Dépendances:** Aucune
+  `,
+  activeForm: "Creating User types..."
+})
 
-### Impact Analysis
-<What's affected by this bug>
-
-### Fix Approach
-<How to fix it>
-
-### Step 1: Add Test to Reproduce
-**Files:**
-- `src/tests/test_<area>.py` - Add failing test
-
-**Changes:**
-- Create test case that reproduces bug
-- Verify test fails with current code
-
-### Step 2: Implement Fix
-**Files:**
-- `src/<area>.py` - Apply fix
-
-**Changes:**
-- <Specific code change>
-
-**Testing:**
-- Run test - should now pass
-- Manual verification
-
-### Step 3: Add Regression Tests
-**Files:**
-- Add edge case tests
-
-**Changes:**
-- Test boundary conditions
-- Test related scenarios
-
-### Verification
-- All existing tests still pass
-- New tests pass
-- Manual testing confirms fix
+TaskCreate({
+  subject: "Étape 2: Implémenter UserService",
+  description: `
+    **Objectif:** Service CRUD pour les utilisateurs
+    **Fichiers:** src/services/user.service.ts (Create)
+    **Validation:** npm run lint && npm run typecheck
+    **Dépendances:** Étape 1
+  `,
+  activeForm: "Implementing UserService..."
+})
 ```
 
-#### Refactor Template
-```
-## Implementation Plan: Refactor <Component>
+**Configurer les dépendances entre Tasks :**
 
-### Goal
-<Why refactoring - what improves>
-
-### Current Structure
-<How it works now>
-
-### Proposed Structure
-<How it will work>
-
-### Step 1: Add Tests for Current Behavior
-**Files:**
-- `src/tests/...` - Add comprehensive tests
-
-**Changes:**
-- Test all current behavior
-- Ensure 100% coverage of what's being refactored
-
-**Why:** Safety net - tests lock in current behavior
-
-### Step 2: Extract <Component>
-**Files:**
-- `src/<new_file>.py` - Create new module
-
-**Changes:**
-- Extract functionality
-- Keep interface same
-- No behavior change
-
-**Testing:**
-- All existing tests still pass
-
-### Step 3: Refactor Internals
-**Files:**
-- `src/<new_file>.py` - Improve internals
-
-**Changes:**
-- Clean up implementation
-- Still same interface
-
-**Testing:**
-- All tests still pass
-
-### Step 4: Update Callers (if needed)
-**Files:**
-- Files that use refactored code
-
-**Changes:**
-- Update imports
-- Update calls if interface changed
-
-### Verification
-- All tests pass
-- No behavior changes
-- Code is cleaner/more maintainable
+```typescript
+// Après création, lier les dépendances
+TaskUpdate({
+  taskId: "2",
+  addBlockedBy: ["1"]  // Étape 2 bloquée par Étape 1
+})
 ```
 
-## Examples
+**⚠️ IMPORTANT :** Créer TOUTES les Tasks AVANT de commencer l'implémentation. Cela permet à l'utilisateur de voir le plan complet et de valider.
 
-### Example 1: New feature plan
+---
+
+### 4. Décomposition
+
+**Stratégie de découpage :**
+
+| Granularité | Durée max | Exemple |
+|-------------|-----------|---------|
+| **Micro** | 15 min | Créer un type, ajouter un import |
+| **Small** | 30 min | Implémenter une fonction |
+| **Medium** | 1h | Créer un composant complet |
+
+**Principes de séquençage :**
+
+1. **Foundation first** - Types, interfaces, contrats
+2. **Core logic** - Business logic sans UI
+3. **Integration** - Connexion des modules
+4. **UI/Presentation** - Si applicable
+5. **Tests** - Unitaires puis intégration
+6. **Review** - 3 passes obligatoires
+
+**Pattern de découpage :**
 ```
-Context: Add user profile page with avatar upload
-
-Plan:
-1. Backend - Add avatar storage endpoint
-   - Files: web_server.py, storage.py
-   - Accept file upload, validate size/type
-   - Store in data/avatars/
-   - Test: curl upload test
-
-2. Backend - Add profile retrieval endpoint
-   - Files: web_server.py
-   - Return user data + avatar URL
-   - Test: API response format
-
-3. Frontend - Create ProfilePage component
-   - Files: frontend/src/components/ProfilePage.vue
-   - Display user info, avatar
-   - Add upload button
-   - Test: Manual browser testing
-
-4. Frontend - Wire up upload
-   - Handle file selection
-   - Call API
-   - Show upload progress
-   - Update avatar on success
-   - Test: Full upload flow
-```
-
-### Example 2: Bug fix plan
-```
-Context: Fix null pointer when login with empty email
-
-Plan:
-1. Add failing test
-   - Files: test_auth.py
-   - Test login with empty email
-   - Verify it currently fails with null pointer
-
-2. Add validation
-   - Files: web_server.py (login endpoint)
-   - Check email is not empty before processing
-   - Return 400 error if empty
-   - Test: Run test - should pass now
-
-3. Add frontend validation
-   - Files: frontend/src/components/LoginForm.vue
-   - Disable submit if email empty
-   - Show validation message
-   - Test: Try to submit with empty email
+Feature X
+├── Étape 1: Types/Interfaces (foundation)
+├── Étape 2: Service/Logic (core)
+├── Étape 3: Controller/Handler (integration)
+├── Étape 4: Tests unitaires
+├── Étape 5: Tests intégration
+└── Étape 6: Review (×3)
 ```
 
-### Example 3: Complex feature plan
+---
+
+### 5. Estimation de complexité
+
+**Matrice de complexité :**
+
+| Facteur | Simple (S) | Medium (M) | Large (L) |
+|---------|------------|------------|-----------|
+| **Fichiers** | 1-2 | 3-5 | 6+ |
+| **Dépendances** | 0-1 | 2-3 | 4+ |
+| **Tests requis** | Unit only | + Integration | + E2E |
+| **Risque** | Low | Medium | High |
+
+**Estimation par étape :**
+- **S** = 15-30 min
+- **M** = 30-60 min
+- **L** = Découper en S/M
+
+---
+
+### 6. Identification des risques
+
+**Catégories de risques :**
+
+| Type | Indicateurs | Mitigation |
+|------|-------------|------------|
+| **Technique** | Nouvelle lib, API inconnue | Spike/POC d'abord |
+| **Intégration** | Multi-modules, side effects | Tests d'intégration early |
+| **Performance** | Grosses données, loops | Benchmark, profiling |
+| **Sécurité** | Auth, données sensibles | Review sécurité |
+
+**Format risque :**
+```markdown
+### Risque: [Nom]
+**Impact:** High/Medium/Low
+**Probabilité:** High/Medium/Low
+**Mitigation:** [Action spécifique]
+**Plan B:** [Si mitigation échoue]
 ```
-Context: Add real-time session collaboration (multiple users in one session)
 
-Plan - HIGH LEVEL:
-1. Design phase (not implementation yet)
-   - Research: How to handle concurrent edits?
-   - Research: Conflict resolution strategy?
-   - Research: WebSocket message format?
-   - Decision: Document chosen approach
+---
 
-2. Data model phase
-   - Add session membership concept
-   - Add presence tracking
-   - Add edit locking or OT/CRDT
+### 7. Critères de validation
 
-3. Backend phase
-   - WebSocket broadcast to session members
-   - Handle join/leave
-   - Conflict resolution
+**Pour chaque étape, définir :**
+- Comment vérifier que c'est fait ?
+- Quel test prouve le bon fonctionnement ?
+- Quelles commandes exécuter ?
 
-4. Frontend phase
-   - Show active users
-   - Merge incoming edits
-   - Show who's typing
-
-Note: This is MVP roadmap. Each phase needs detailed plan when ready.
+**Checklist standard :**
+```bash
+# Après chaque étape code
+npm run lint        # 0 errors
+npm run typecheck   # 0 errors
+npm run test        # Pass
 ```
+
+**⏸️ STOP** - Présenter le plan pour validation
+
+---
+
+## Output Template
+
+```markdown
+## Plan d'Implémentation: [Feature Name]
+
+### 📋 Résumé
+
+**Issue:** #[NUM] - [Titre]
+**Complexité globale:** S/M/L
+**Estimation totale:** [X]h
+**Mode:** Standard | ATDD (tests first)
+**Tasks créées:** [X] (IDs: #1, #2, ...)
+
+### ✅ Checklist rapide
+
+- [ ] Étape 1: [Nom court]
+- [ ] Étape 2: [Nom court]
+- [ ] Étape 3: [Nom court]
+- [ ] Tests unitaires
+- [ ] Tests intégration
+- [ ] Review #1 (Correctness)
+- [ ] Review #2 (Readability)
+- [ ] Review #3 (Performance)
+
+---
+
+### 📝 Détail des étapes
+
+#### Étape 1: [Titre descriptif]
+
+**Objectif:** [Ce que cette étape accomplit]
+
+**Fichiers:**
+- `path/to/file.ts` - [Action: Create/Modify/Delete]
+
+**Actions:**
+1. [Action spécifique 1]
+2. [Action spécifique 2]
+3. [Action spécifique 3]
+
+**Validation:**
+```bash
+npm run lint && npm run typecheck
+```
+
+**Tests à écrire:**
+- [ ] `should [comportement attendu]`
+
+**Complexité:** S/M
+**Dépendances:** Aucune | Étape X
+
+---
+
+#### Étape 2: [Titre descriptif]
+
+**Objectif:** [Ce que cette étape accomplit]
+
+**Fichiers:**
+- `path/to/file.ts` - [Action]
+
+**Actions:**
+1. [Action spécifique]
+
+**Validation:**
+```bash
+npm run lint && npm run typecheck && npm test
+```
+
+**Complexité:** S/M
+**Dépendances:** Étape 1
+
+---
+
+#### Étape N: Tests
+
+**Tests unitaires:**
+- [ ] `[fonction].test.ts` - [X] cas de test
+
+**Tests intégration:**
+- [ ] `[feature].integration.test.ts` - [X] scénarios
+
+**Couverture attendue:** [X]%
+
+---
+
+#### Étape Finale: Review (×3)
+
+**Pass 1 - Correctness:**
+- [ ] Le code fait ce qui est demandé
+- [ ] Edge cases gérés
+- [ ] Pas de bugs évidents
+
+**Pass 2 - Readability:**
+- [ ] Nommage clair
+- [ ] Structure logique
+- [ ] Commentaires si complexe
+
+**Pass 3 - Performance:**
+- [ ] Pas de N+1 queries
+- [ ] Pas de re-renders inutiles
+- [ ] Complexité algorithmique OK
+
+---
+
+### ⚠️ Risques et Mitigations
+
+| Risque | Impact | Probabilité | Mitigation |
+|--------|--------|-------------|------------|
+| [Risque 1] | High | Medium | [Action] |
+| [Risque 2] | Medium | Low | [Action] |
+
+### ❓ Questions ouvertes
+
+1. [Question technique ou fonctionnelle]
+   → *Proposition: [suggestion]*
+
+### 📊 Timeline estimée
+
+| Étape | Durée | Cumulé |
+|-------|-------|--------|
+| Étape 1 | 30m | 30m |
+| Étape 2 | 45m | 1h15 |
+| Tests | 1h | 2h15 |
+| Review | 30m | 2h45 |
+| **Total** | - | **~3h** |
+```
+
+---
+
+## Checklist de validation du plan
+
+```markdown
+### Validation Plan
+
+**Complétude:**
+- [ ] Tous les requirements couverts
+- [ ] Tests prévus pour chaque fonctionnalité
+- [ ] 3 passes de review incluses
+
+**Qualité:**
+- [ ] Étapes atomiques (< 30 min)
+- [ ] Dépendances clairement séquencées
+- [ ] Risques identifiés avec mitigations
+
+**Réalisme:**
+- [ ] Estimations conservatives
+- [ ] Buffer pour imprévus
+- [ ] Pas d'étape "magique"
+
+**Prêt pour implémentation ?** ✅/❌
+```
+
+**⏸️ STOP** - Attendre validation explicite avant implémentation.
+
+---
+
+## Output Validation
+
+Avant de proposer la transition, valider :
+
+```markdown
+### ✅ Checklist Output Implementation Plan
+
+| Critère | Status |
+|---------|--------|
+| Tous requirements couverts par des étapes | ✅/❌ |
+| Étapes atomiques (< 30 min chacune) | ✅/❌ |
+| Dépendances entre étapes séquencées | ✅/❌ |
+| Tests prévus pour chaque fonctionnalité | ✅/❌ |
+| Risques identifiés avec mitigations | ✅/❌ |
+| 3 passes de review incluses | ✅/❌ |
+| Estimations réalistes | ✅/❌ |
+| Commandes de validation définies | ✅/❌ |
+| **Tasks créées (si 2+ étapes)** | ✅/❌/N/A |
+
+**Score : X/9** → Si < 7, compléter avant transition
+```
+
+---
+
+## Auto-Chain
+
+Après validation du plan, proposer automatiquement :
+
+```markdown
+## 🔗 Prochaine étape
+
+✅ Plan d'implémentation validé.
+
+**Résumé :**
+- Étapes : [X]
+- Complexité : [S/M/L]
+- Estimation totale : [X]h
+- Mode : [Standard/ATDD]
+- **Tasks créées : [X]** (utiliser `TaskList` pour voir la progression)
+
+**Recommandation :**
+
+[Si Mode ATDD]
+→ 🧪 **Lancer `/test-runner` ?** (écrire les tests d'abord - RED)
+
+[Si Mode Standard]
+→ 💻 **Lancer `/code-implementer` ?** (commencer l'implémentation)
+
+Les Tasks seront mises à jour automatiquement pendant l'implémentation.
+
+---
+
+**[Y] Oui, commencer** | **[N] Non, ajuster le plan** | **[A] Mode ATDD** | **[S] Mode Standard**
+```
+
+**⏸️ STOP** - Attendre confirmation avant auto-lancement
+
+---
+
+## Transitions
+
+- **Vers code-implementer** : "Plan validé, on commence l'implémentation ?"
+- **Vers codebase-explainer** : "Besoin d'analyser une partie du code plus en détail ?"
+- **Vers test-runner (ATDD)** : "Mode ATDD actif, on écrit les tests d'abord ?"
+- **Retour utilisateur** : "Des ajustements nécessaires au plan ?"

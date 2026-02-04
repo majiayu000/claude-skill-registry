@@ -1,84 +1,120 @@
 ---
-name: get-code-context-exa
-description: Code context using Exa. Finds real snippets and docs from GitHub, StackOverflow, and technical docs.
-triggers:
-  - code search
-  - code snippet
-  - api syntax
-  - library docs
-  - stackoverflow
-  - github example
-  - fix my code
-  - exa-code
-requires_mcp: exa
-context: fork
+name: code-search
+description: Token-efficient codebase exploration using MCP-first approach. Locates functions, classes, patterns, and traces dependencies with 80-90% token savings. Use when searching code, finding implementations, or tracing call chains.
 ---
 
-# Code Context (Exa)
+# Code Search
 
-## Tool Restriction (Critical)
-
-ONLY use `get_code_context_exa`. Do NOT use other Exa tools.
-
-## Token Isolation (Critical)
-
-Never run Exa in main context. Always spawn Task agents:
-- Agent calls `get_code_context_exa`
-- Agent extracts the minimum viable snippet(s) + constraints
-- Agent deduplicates near-identical results (mirrors, forks, repeated StackOverflow answers) before presenting
-- Agent returns copyable snippets + brief explanation
-- Main context stays clean regardless of search volume
+Explores codebases efficiently using MCP tools before falling back to file reads.
 
 ## When to Use
 
-Use this tool for ANY programming-related request:
-- API usage and syntax
-- SDK/library examples
-- config and setup patterns
-- framework "how to" questions
-- debugging when you need authoritative snippets
+- Finding functions, classes, or patterns
+- Understanding feature implementation
+- Tracing dependencies and call chains
+- Architecture boundary verification
+- Gathering context for documentation
 
-## Inputs (Supported)
+## MCP Workflow
 
-`get_code_context_exa` supports:
-- `query` (string, required)
-- `tokensNum` (number, optional; default ~5000; typical range 1000–50000)
-
-## Query Writing Patterns (High Signal)
-
-To reduce irrelevant results and cross-language noise:
-- Always include the **programming language** in the query.
-  - Example: use **"Go generics"** instead of just **"generics"**.
-- When applicable, also include **framework + version** (e.g., "Next.js 14", "React 19", "Python 3.12").
-- Include exact identifiers (function/class names, config keys, error messages) when you have them.
-
-## Dynamic Tuning
-
-Token strategy:
-- Focused snippet needed → tokensNum 1000–3000
-- Most tasks → tokensNum 5000
-- Complex integration → tokensNum 10000–20000
-- Only go larger when necessary (avoid dumping large context)
-
-## Output Format (Recommended)
-
-Return:
-1) Best minimal working snippet(s) (keep it copy/paste friendly)
-2) Notes on version / constraints / gotchas
-3) Sources (URLs if present in returned context)
-
-Before presenting:
-- Deduplicate similar results and keep only the best representative snippet per approach.
-
-## MCP Configuration
-
-```json
-{
-  "servers": {
-    "exa": {
-      "type": "http",
-      "url": "https://mcp.exa.ai/mcp?tools=get_code_context_exa"
-    }
-  }
-}
 ```
+# 1. Check past context
+claude-mem.search(query="<keyword>", project="<project>")
+
+# 2. Get file overview
+serena.get_symbols_overview(relative_path="target/directory")
+
+# 3. Find symbol (signature only first)
+serena.find_symbol(name_path="ClassName", depth=1, include_body=False)
+
+# 4. Get body only when needed
+serena.find_symbol(name_path="ClassName/method", include_body=True)
+
+# 5. Trace dependencies
+serena.find_referencing_symbols(name_path="ClassName/method")
+
+# 6. Framework patterns
+context7.get-library-docs("<framework>", topic="<topic>")
+```
+
+## Search Patterns
+
+### By Name
+```
+serena.find_symbol("*Service", include_kinds=[5])      # Classes
+serena.find_symbol("UserService/create", include_body=True)  # Method
+```
+
+### By Pattern (TOKEN CRITICAL - Always Scope!)
+
+```python
+# WRONG - Will return 20k+ tokens:
+serena.search_for_pattern("@Cacheable|@cached")
+
+# CORRECT - Scoped and limited:
+serena.search_for_pattern(
+    substring_pattern="@Cacheable",
+    relative_path="module-core-domain/",
+    context_lines_after=1,
+    max_answer_chars=3000
+)
+```
+
+### Dependencies
+```
+serena.find_referencing_symbols("UserService/create")  # Who calls this?
+```
+
+### Architecture
+```
+serena.search_for_pattern("import.*infra", relative_path="src/domain/")
+```
+
+### For Documentation
+```
+# Public APIs (classes, methods)
+serena.get_symbols_overview(depth=1)                    # Module structure
+serena.find_symbol("*Service", depth=1, include_body=False)  # Signatures
+
+# Find existing docs
+serena.find_file(file_mask="*.md", relative_path=".")
+serena.find_file(file_mask="README*", relative_path=".")
+```
+
+## Output Format
+
+```markdown
+## Search: [Target]
+
+| File | Symbol | Line | Type |
+|------|--------|------|------|
+| path/file | Class.method | 45 | function |
+
+### Key Code
+[Relevant snippet - max 20 lines]
+
+### Dependencies
+- Calls: [list]
+- Called By: [list]
+```
+
+## Symbol Kinds
+
+| Kind | Number | Description |
+|------|--------|-------------|
+| Class | 5 | Class definition |
+| Method | 6 | Class method |
+| Function | 12 | Standalone function |
+| Interface | 11 | Interface |
+
+## Efficiency Rules
+
+**Do:**
+- Start with `get_symbols_overview` before reading files
+- Use `include_body=False` first
+- Limit searches with `relative_path`
+
+**Avoid:**
+- Reading entire files before symbol search
+- Fetching bodies for signature checks
+- Broad searches without scope restriction

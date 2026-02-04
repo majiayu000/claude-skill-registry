@@ -39,13 +39,13 @@ workspace/
 
 ### 2. Library Types
 
-| Type            | Purpose                          | Example             |
-| --------------- | -------------------------------- | ------------------- |
-| **feature**     | Smart components, business logic | `feature-auth`      |
-| **ui**          | Presentational components        | `ui-buttons`        |
-| **data-access** | API calls, state management      | `data-access-users` |
-| **util**        | Pure functions, helpers          | `util-formatting`   |
-| **shell**       | App bootstrapping                | `shell-web`         |
+| Type | Purpose | Example |
+|------|---------|---------|
+| **feature** | Smart components, business logic | `feature-auth` |
+| **ui** | Presentational components | `ui-buttons` |
+| **data-access** | API calls, state management | `data-access-users` |
+| **util** | Pure functions, helpers | `util-formatting` |
+| **shell** | App bootstrapping | `shell-web` |
 
 ## Templates
 
@@ -62,7 +62,13 @@ workspace/
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e", "build-storybook"],
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ],
         "parallel": 3
       }
     }
@@ -95,7 +101,10 @@ workspace/
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": ["{workspaceRoot}/babel.config.json", "{workspaceRoot}/tsconfig.base.json"]
+    "sharedGlobals": [
+      "{workspaceRoot}/babel.config.json",
+      "{workspaceRoot}/tsconfig.base.json"
+    ]
   },
   "generators": {
     "@nx/react": {
@@ -208,11 +217,20 @@ workspace/
             "depConstraints": [
               {
                 "sourceTag": "type:app",
-                "onlyDependOnLibsWithTags": ["type:feature", "type:ui", "type:data-access", "type:util"]
+                "onlyDependOnLibsWithTags": [
+                  "type:feature",
+                  "type:ui",
+                  "type:data-access",
+                  "type:util"
+                ]
               },
               {
                 "sourceTag": "type:feature",
-                "onlyDependOnLibsWithTags": ["type:ui", "type:data-access", "type:util"]
+                "onlyDependOnLibsWithTags": [
+                  "type:ui",
+                  "type:data-access",
+                  "type:util"
+                ]
               },
               {
                 "sourceTag": "type:ui",
@@ -251,18 +269,30 @@ workspace/
 
 ```typescript
 // tools/generators/feature-lib/index.ts
-import { Tree, formatFiles, generateFiles, joinPathFragments, names, readProjectConfiguration } from '@nx/devkit'
-import { libraryGenerator } from '@nx/react'
+import {
+  Tree,
+  formatFiles,
+  generateFiles,
+  joinPathFragments,
+  names,
+  readProjectConfiguration,
+} from '@nx/devkit';
+import { libraryGenerator } from '@nx/react';
 
 interface FeatureLibraryGeneratorSchema {
-  name: string
-  scope: string
-  directory?: string
+  name: string;
+  scope: string;
+  directory?: string;
 }
 
-export default async function featureLibraryGenerator(tree: Tree, options: FeatureLibraryGeneratorSchema) {
-  const { name, scope, directory } = options
-  const projectDirectory = directory ? `${directory}/${name}` : `libs/${scope}/feature-${name}`
+export default async function featureLibraryGenerator(
+  tree: Tree,
+  options: FeatureLibraryGeneratorSchema
+) {
+  const { name, scope, directory } = options;
+  const projectDirectory = directory
+    ? `${directory}/${name}`
+    : `libs/${scope}/feature-${name}`;
 
   // Generate base library
   await libraryGenerator(tree, {
@@ -274,19 +304,24 @@ export default async function featureLibraryGenerator(tree: Tree, options: Featu
     skipFormat: true,
     unitTestRunner: 'jest',
     linter: 'eslint',
-  })
+  });
 
   // Add custom files
-  const projectConfig = readProjectConfiguration(tree, `${scope}-feature-${name}`)
-  const projectNames = names(name)
+  const projectConfig = readProjectConfiguration(tree, `${scope}-feature-${name}`);
+  const projectNames = names(name);
 
-  generateFiles(tree, joinPathFragments(__dirname, 'files'), projectConfig.sourceRoot, {
-    ...projectNames,
-    scope,
-    tmpl: '',
-  })
+  generateFiles(
+    tree,
+    joinPathFragments(__dirname, 'files'),
+    projectConfig.sourceRoot,
+    {
+      ...projectNames,
+      scope,
+      tmpl: '',
+    }
+  );
 
-  await formatFiles(tree)
+  await formatFiles(tree);
 }
 ```
 
@@ -398,7 +433,6 @@ nx migrate --run-migrations
 ## Best Practices
 
 ### Do's
-
 - **Use tags consistently** - Enforce with module boundaries
 - **Enable caching early** - Significant CI savings
 - **Keep libs focused** - Single responsibility
@@ -406,7 +440,6 @@ nx migrate --run-migrations
 - **Document boundaries** - Help new developers
 
 ### Don'ts
-
 - **Don't create circular deps** - Graph should be acyclic
 - **Don't skip affected** - Test only what changed
 - **Don't ignore boundaries** - Tech debt accumulates

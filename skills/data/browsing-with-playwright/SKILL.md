@@ -1,6 +1,10 @@
 ---
 name: browsing-with-playwright
-description: Browser automation using Playwright MCP. Navigate websites, fill forms, click elements, take screenshots, and extract data. Use for web browsing, form submission, web scraping, or UI testing. NOT for static content (use curl/wget).
+description: |
+  Browser automation using Playwright MCP. Navigate websites, fill forms, click elements,
+  take screenshots, and extract data. Use when tasks require web browsing, form submission,
+  web scraping, UI testing, or any browser interaction. NOT when only fetching static
+  content (use curl/wget instead).
 ---
 
 # Browser Automation

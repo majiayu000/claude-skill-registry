@@ -1,6 +1,13 @@
 ---
 name: senior-architect
-description: Comprehensive software architecture skill for designing scalable, maintainable systems using ReactJS, NextJS, NodeJS, Express, React Native, Swift, Kotlin, Flutter, Postgres, GraphQL, Go, Python. Includes architecture diagram generation, system design patterns, tech stack decision frameworks, and dependency analysis. Use when designing system architecture, making technical decisions, creating architecture diagrams, evaluating trade-offs, or defining integration patterns.
+description:
+  Comprehensive software architecture skill for designing scalable, maintainable
+  systems using ReactJS, NextJS, NodeJS, Express, React Native, Swift, Kotlin,
+  Flutter, Postgres, GraphQL, Go, Python. Includes architecture diagram
+  generation, system design patterns, tech stack decision frameworks, and
+  dependency analysis. Use when designing system architecture, making technical
+  decisions, creating architecture diagrams, evaluating trade-offs, or defining
+  integration patterns.
 ---
 
 # Senior Architect
@@ -31,12 +38,14 @@ python scripts/dependency_analyzer.py [options]
 Automated tool for architecture diagram generator tasks.
 
 **Features:**
+
 - Automated scaffolding
 - Best practices built-in
 - Configurable templates
 - Quality checks
 
 **Usage:**
+
 ```bash
 python scripts/architecture_diagram_generator.py <project-path> [options]
 ```
@@ -46,12 +55,14 @@ python scripts/architecture_diagram_generator.py <project-path> [options]
 Comprehensive analysis and optimization tool.
 
 **Features:**
+
 - Deep analysis
 - Performance metrics
 - Recommendations
 - Automated fixes
 
 **Usage:**
+
 ```bash
 python scripts/project_architect.py <target-path> [--verbose]
 ```
@@ -61,12 +72,14 @@ python scripts/project_architect.py <target-path> [--verbose]
 Advanced tooling for specialized tasks.
 
 **Features:**
+
 - Expert-level automation
 - Custom configurations
 - Integration ready
 - Production-grade output
 
 **Usage:**
+
 ```bash
 python scripts/dependency_analyzer.py [arguments] [options]
 ```
@@ -105,12 +118,10 @@ Technical reference guide in `references/tech_decision_guide.md`:
 
 ## Tech Stack
 
-**Languages:** TypeScript, JavaScript, Python, Go, Swift, Kotlin
-**Frontend:** React, Next.js, React Native, Flutter
-**Backend:** Node.js, Express, GraphQL, REST APIs
-**Database:** PostgreSQL, Prisma, NeonDB, Supabase
-**DevOps:** Docker, Kubernetes, Terraform, GitHub Actions, CircleCI
-**Cloud:** AWS, GCP, Azure
+**Languages:** TypeScript, JavaScript, Python, Go, Swift, Kotlin **Frontend:**
+React, Next.js, React Native, Flutter **Backend:** Node.js, Express, GraphQL,
+REST APIs **Database:** PostgreSQL, Prisma, NeonDB, Supabase **DevOps:** Docker,
+Kubernetes, Terraform, GitHub Actions, CircleCI **Cloud:** AWS, GCP, Azure
 
 ## Development Workflow
 
@@ -139,6 +150,7 @@ python scripts/project_architect.py .
 ### 3. Implement Best Practices
 
 Follow the patterns and practices documented in:
+
 - `references/architecture_patterns.md`
 - `references/system_design_workflows.md`
 - `references/tech_decision_guide.md`
@@ -146,24 +158,28 @@ Follow the patterns and practices documented in:
 ## Best Practices Summary
 
 ### Code Quality
+
 - Follow established patterns
 - Write comprehensive tests
 - Document decisions
 - Review regularly
 
 ### Performance
+
 - Measure before optimizing
 - Use appropriate caching
 - Optimize critical paths
 - Monitor in production
 
 ### Security
+
 - Validate all inputs
 - Use parameterized queries
 - Implement proper authentication
 - Keep dependencies updated
 
 ### Maintainability
+
 - Write clear code
 - Use consistent naming
 - Add helpful comments
@@ -192,7 +208,8 @@ kubectl apply -f k8s/
 
 ### Common Issues
 
-Check the comprehensive troubleshooting section in `references/tech_decision_guide.md`.
+Check the comprehensive troubleshooting section in
+`references/tech_decision_guide.md`.
 
 ### Getting Help
 

@@ -1,8 +1,8 @@
 {
   "name": "toolcrib",
-  "description": "Tool inventory management for MNMUK machine shop.\nTracks tooling, inserts, consumables with reorder points and usage.\nUSE WHEN user asks 'tool inventory', 'what inserts', 'reorder', 'tool crib',\n'do w",
+  "description": "Tool inventory management for MNMUK machine shop. Tracks tooling, inserts, consumables with reorder points and usage. USE WHEN user asks 'tool inventory', 'what inserts', 'reorder', 'tool crib', 'do w",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

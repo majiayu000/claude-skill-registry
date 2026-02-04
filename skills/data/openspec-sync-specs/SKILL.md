@@ -1,82 +1,82 @@
 ---
 name: openspec-sync-specs
-description: 将变更中的增量规范同步到主规范。当用户想要使用增量规范中的更改更新主规范，而不归档该变更时使用。
+description: Sync delta specs from a change to main specs. Use when the user wants to update main specs with changes from a delta spec, without archiving the change.
 license: MIT
 compatibility: Requires openspec CLI.
 metadata:
   author: openspec
   version: "1.0"
-  generatedBy: "1.0.2"
+  generatedBy: "1.0.0"
 ---
 
-将变更中的增量规范同步到主规范。
+Sync delta specs from a change to main specs.
 
-这是一个 **Agent 驱动** 的操作 - 你将读取增量规范并直接编辑主规范以应用更改。这允许智能合并（例如，添加场景而不复制整个需求）。
+This is an **agent-driven** operation - you will read delta specs and directly edit main specs to apply the changes. This allows intelligent merging (e.g., adding a scenario without copying the entire requirement).
 
-**输入**：可选指定变更名称。如果省略，检查是否可以从对话上下文中推断。如果模糊或不明确，你**必须**提示获取可用变更。
+**Input**: Optionally specify a change name. If omitted, check if it can be inferred from conversation context. If vague or ambiguous you MUST prompt for available changes.
 
-**步骤**
+**Steps**
 
-1. **如果没有提供变更名称，提示选择**
+1. **If no change name provided, prompt for selection**
 
-   运行 `openspec-cn list --json` 获取可用变更。使用 **AskUserQuestion tool** 让用户选择。
+   Run `openspec list --json` to get available changes. Use the **AskUserQuestion tool** to let the user select.
 
-   显示具有增量规范（在 `specs/` 目录下）的变更。
+   Show changes that have delta specs (under `specs/` directory).
 
-   **重要提示**：不要猜测或自动选择变更。始终让用户选择。
+   **IMPORTANT**: Do NOT guess or auto-select a change. Always let the user choose.
 
-2. **查找增量规范**
+2. **Find delta specs**
 
-   在 `openspec/changes/<name>/specs/*/spec.md` 中查找增量规范文件。
+   Look for delta spec files in `openspec/changes/<name>/specs/*/spec.md`.
 
-   每个增量规范文件包含如下部分：
-   - `## ADDED Requirements` - 要添加的新需求
-   - `## MODIFIED Requirements` - 对现有需求的更改
-   - `## REMOVED Requirements` - 要移除的需求
-   - `## RENAMED Requirements` - 要重命名的需求（FROM:/TO: 格式）
+   Each delta spec file contains sections like:
+   - `## ADDED Requirements` - New requirements to add
+   - `## MODIFIED Requirements` - Changes to existing requirements
+   - `## REMOVED Requirements` - Requirements to remove
+   - `## RENAMED Requirements` - Requirements to rename (FROM:/TO: format)
 
-   如果没有找到增量规范，通知用户并停止。
+   If no delta specs found, inform user and stop.
 
-3. **对于每个增量规范，将更改应用到主规范**
+3. **For each delta spec, apply changes to main specs**
 
-   对于在 `openspec/changes/<name>/specs/<capability>/spec.md` 处具有增量规范的每个 capability：
+   For each capability with a delta spec at `openspec/changes/<name>/specs/<capability>/spec.md`:
 
-   a. **阅读增量规范** 以了解预期的更改
+   a. **Read the delta spec** to understand the intended changes
 
-   b. **阅读主规范** 于 `openspec/specs/<capability>/spec.md`（可能尚不存在）
+   b. **Read the main spec** at `openspec/specs/<capability>/spec.md` (may not exist yet)
 
-   c. **智能地应用更改**：
+   c. **Apply changes intelligently**:
 
       **ADDED Requirements:**
-      - 如果需求在主规范中不存在 → 添加它
-      - 如果需求已存在 → 更新它以匹配（视为隐式 MODIFIED）
+      - If requirement doesn't exist in main spec → add it
+      - If requirement already exists → update it to match (treat as implicit MODIFIED)
 
       **MODIFIED Requirements:**
-      - 在主规范中找到该需求
-      - 应用更改 - 这可能是：
-        - 添加新场景（不需要复制现有场景）
-        - 修改现有场景
-        - 更改需求描述
-      - 保留增量中未提及的场景/内容
+      - Find the requirement in main spec
+      - Apply the changes - this can be:
+        - Adding new scenarios (don't need to copy existing ones)
+        - Modifying existing scenarios
+        - Changing the requirement description
+      - Preserve scenarios/content not mentioned in the delta
 
       **REMOVED Requirements:**
-      - 从主规范中移除整个需求块
+      - Remove the entire requirement block from main spec
 
       **RENAMED Requirements:**
-      - 找到 FROM 需求，重命名为 TO
+      - Find the FROM requirement, rename to TO
 
-   d. **创建新主规范** 如果 capability 尚不存在：
-      - 创建 `openspec/specs/<capability>/spec.md`
-      - 添加 Purpose 部分（可以简短，标记为 TBD）
-      - 添加 Requirements 部分以及 ADDED 需求
+   d. **Create new main spec** if capability doesn't exist yet:
+      - Create `openspec/specs/<capability>/spec.md`
+      - Add Purpose section (can be brief, mark as TBD)
+      - Add Requirements section with the ADDED requirements
 
-4. **显示摘要**
+4. **Show summary**
 
-   应用所有更改后，总结：
-   - 哪些 capability 已更新
-   - 做了什么更改（需求添加/修改/移除/重命名）
+   After applying all changes, summarize:
+   - Which capabilities were updated
+   - What changes were made (requirements added/modified/removed/renamed)
 
-**增量规范格式参考**
+**Delta Spec Format Reference**
 
 ```markdown
 ## ADDED Requirements
@@ -105,34 +105,34 @@ The system SHALL do something new.
 - TO: `### Requirement: New Name`
 ```
 
-**关键原则：智能合并**
+**Key Principle: Intelligent Merging**
 
-与程序化合并不同，你可以应用 **部分更新**：
-- 要添加场景，只需将该场景包含在 MODIFIED 下 - 不要复制现有场景
-- 增量代表 *意图*，而不是整体替换
-- 使用你的判断力合理地合并更改
+Unlike programmatic merging, you can apply **partial updates**:
+- To add a scenario, just include that scenario under MODIFIED - don't copy existing scenarios
+- The delta represents *intent*, not a wholesale replacement
+- Use your judgment to merge changes sensibly
 
-**成功时的输出**
+**Output On Success**
 
 ```
-## 规范已同步：<change-name>
+## Specs Synced: <change-name>
 
-已更新主规范：
+Updated main specs:
 
-**<capability-1>**：
-- 添加需求："New Feature"
-- 修改需求："Existing Feature"（添加了 1 个场景）
+**<capability-1>**:
+- Added requirement: "New Feature"
+- Modified requirement: "Existing Feature" (added 1 scenario)
 
-**<capability-2>**：
-- 创建了新规范文件
-- 添加需求："Another Feature"
+**<capability-2>**:
+- Created new spec file
+- Added requirement: "Another Feature"
 
-主规范现已更新。变更保持活动状态 - 在实现完成后归档。
+Main specs are now updated. The change remains active - archive when implementation is complete.
 ```
 
-**护栏**
-- 在进行更改之前阅读增量规范和主规范
-- 保留增量中未提及的现有内容
-- 如果不清楚，询问澄清
-- 在进行时显示你正在更改的内容
-- 操作应该是幂等的 - 运行两次应给出相同的结果
+**Guardrails**
+- Read both delta and main specs before making changes
+- Preserve existing content not mentioned in delta
+- If something is unclear, ask for clarification
+- Show what you're changing as you go
+- The operation should be idempotent - running twice should give same result

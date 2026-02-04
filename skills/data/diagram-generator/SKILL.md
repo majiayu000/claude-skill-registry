@@ -1,284 +1,233 @@
 ---
-name: diagram-generator
-description: Generates architecture, database, and system diagrams using Mermaid syntax. Creates visual representations of system architecture, database schemas, component relationships, and data flows.
-version: 1.0
-model: sonnet
-invoked_by: both
-user_invocable: true
-tools: [Read, Write, Glob, Grep]
-best_practices:
-  - Use Mermaid syntax for diagrams
-  - Extract structure from code and documentation
-  - Create clear, readable diagrams
-  - Include relationships and dependencies
-  - Generate both high-level and detailed views
-error_handling: graceful
-streaming: supported
-templates: [architecture-diagram, database-diagram, component-diagram, sequence-diagram]
+name: ai-drawio
+description: Generate draw.io diagrams from natural language and render in browser
+triggers:
+  - draw
+  - diagram
+  - flowchart
+  - architecture
+  - mindmap
+  - 画图
+  - 流程图
+  - 架构图
 ---
 
-**References (archive):** [SCAFFOLD_SKILLS_ARCHIVE_MAP.md](../../docs/SCAFFOLD_SKILLS_ARCHIVE_MAP.md) — Mermaid/output patterns from claude-flow code-intelligence, everything-claude-code architect.
+# AI Draw.io Diagram Generator
 
-<identity>
-Diagram Generator Skill - Generates architecture, database, and system diagrams using Mermaid syntax to visualize system structure, relationships, and flows.
-</identity>
+You are a diagram creation assistant specializing in draw.io XML generation. You help users create visual diagrams through precise XML specifications and render them in a browser.
 
-<capabilities>
-- Creating architecture diagrams
-- Documenting database schemas
-- Visualizing component relationships
-- Documenting data flows
-- Creating sequence diagrams
-- Generating system overviews
-</capabilities>
+## Workflow
 
-## Processing Limits (Memory Safeguard)
+1. **Understand Request**: Analyze what diagram the user wants
+2. **Generate XML**: Create valid draw.io XML following the format rules
+3. **Save HTML**: Write an HTML file with embedded diagram
+4. **Open Browser**: Use browser automation to render the diagram
 
-Diagram generator can analyze large codebases. To prevent memory exhaustion:
+## XML Generation Rules
 
-- **File chunk limit: 1000 files per diagram (HARD LIMIT)**
-- Each file: ~1-5 KB analysis overhead
-- 1000 files × 2 KB = ~2 MB per diagram
-- Keeps diagram generation memory-efficient
+### Basic Structure
 
-**Why the limit?**
+Generate ONLY `mxCell` elements. Do NOT include wrapper tags like `<mxGraphModel>`, `<root>`, or `<diagram>`.
 
-- Analyzing 5000+ files → 10+ MB memory → context explosion
-- Diagrams for 5000+ files → impossible to visualize
-- Visual limit: ~100-200 nodes per diagram (human readable)
-
-**Recommend:**
-
-- 1000 files: OK, generates ~100-150 component nodes
-- 2000 files: Consider splitting into 2 diagrams
-- 5000+ files: MUST split into 5+ diagrams by module/subsystem
-
-<instructions>
-<execution_process>
-
-### Step 1: Identify Diagram Type
-
-Determine what type of diagram is needed:
-
-- **Architecture Diagram**: System structure and components
-- **Database Diagram**: Schema and relationships
-- **Component Diagram**: Component interactions
-- **Sequence Diagram**: Process flows
-- **Flowchart**: Decision flows
-
-### Step 2: Extract Structure
-
-Analyze code and documentation (Use Parallel Read/Grep/Glob):
-
-- Read architecture documents
-- Analyze component structure
-- Extract database schema
-- Identify relationships
-- Understand data flows
-
-### Chunking Large Codebases
-
-If codebase has >1000 files:
-
-**Option 1: Split by subsystem**
-
-```javascript
-// Generate diagram for each major subsystem
-generateDiagram({ files: 'src/auth/**', title: 'Authentication Module' });
-generateDiagram({ files: 'src/api/**', title: 'API Module' });
-generateDiagram({ files: 'src/ui/**', title: 'UI Module' });
+```xml
+<mxCell id="2" value="Start" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+  <mxGeometry x="100" y="100" width="120" height="60" as="geometry"/>
+</mxCell>
 ```
 
-**Option 2: Split by layer**
+### ID Rules
+- IDs must be unique sequential integers starting from "2"
+- ID "0" and "1" are reserved for the diagram root
+- All elements must have `parent="1"`
 
-```javascript
-generateDiagram({ files: 'src/models/**', title: 'Data Models' });
-generateDiagram({ files: 'src/services/**', title: 'Business Logic' });
-generateDiagram({ files: 'src/controllers/**', title: 'API Controllers' });
+### Layout Constraints
+- **Canvas size**: 0-800px width, 0-600px height
+- Keep all elements within single viewport to avoid page breaks
+- Use proper spacing (minimum 20px between elements)
+
+### Common Styles
+
+**Rectangle (Process)**:
+```
+rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;
 ```
 
-**Option 3: Generate overview first, then details**
-
-```javascript
-// 1. High-level architecture (10-20 files)
-generateDiagram({ files: ["src/index.ts", "src/app.ts", ...], title: "Architecture" });
-// 2. Detailed subsystems (500-1000 files each)
-generateDiagram({ files: "src/auth/**", title: "Authentication Details" });
+**Diamond (Decision)**:
+```
+rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;
 ```
 
-### Step 3: Generate Mermaid Diagram
-
-Create diagram using Mermaid syntax:
-
-- Use appropriate diagram type
-- Define nodes and relationships
-- Add labels and descriptions
-- Include styling if needed
-
-### Step 4: Embed in Documentation
-
-Embed diagram in markdown:
-
-- Use mermaid code blocks
-- Add diagram description
-- Reference in documentation
-
-### Timeout Management
-
-- Default timeout: 30 seconds per diagram
-- 1000 files analysis: ~20 seconds (OK)
-- 2000 files analysis: ~40 seconds (EXCEEDS TIMEOUT)
-- If approaching timeout: Reduce file count or increase timeout
-
-**Pattern for large codebases:**
-
-- Split into 6-8 focused diagrams
-- Each <1000 files, <30 seconds
-- Total analysis time: 3-4 minutes
-
-</execution_process>
-
-<integration>
-**Integration with Architect Agent**:
-- Generates architecture diagrams
-- Documents system structure
-- Visualizes component relationships
-
-**Integration with Database Architect Agent**:
-
-- Generates database schema diagrams
-- Documents table relationships
-- Visualizes data models
-
-**Integration with Technical Writer Agent**:
-
-- Embeds diagrams in documentation
-- Creates visual documentation
-- Enhances documentation clarity
-  </integration>
-
-<best_practices>
-
-1. **Use Mermaid**: Standard syntax for compatibility
-2. **Keep Clear**: Simple, readable diagrams
-3. **Show Relationships**: Include all important connections
-4. **Add Labels**: Clear node and edge labels
-5. **Update Regularly**: Keep diagrams current with code
-   </best_practices>
-   </instructions>
-
-<examples>
-<code_example>
-**Architecture Diagram**
-
-```mermaid
-graph TB
-    Client[Client Application]
-    API[API Gateway]
-    Auth[Auth Service]
-    User[User Service]
-    DB[(Database)]
-
-    Client --> API
-    API --> Auth
-    API --> User
-    User --> DB
-    Auth --> DB
+**Ellipse (Start/End)**:
+```
+ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;
 ```
 
-</code_example>
-
-<code_example>
-**Database Schema Diagram**
-
-```mermaid
-erDiagram
-    USERS ||--o{ ORDERS : places
-    USERS {
-        uuid id PK
-        string email
-        string name
-    }
-    ORDERS ||--|{ ORDER_ITEMS : contains
-    ORDERS {
-        uuid id PK
-        uuid user_id FK
-        date created_at
-    }
-    ORDER_ITEMS {
-        uuid id PK
-        uuid order_id FK
-        uuid product_id FK
-        int quantity
-    }
+**Arrow (Connector)**:
+```
+edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;
 ```
 
-</code_example>
+### Color Palette
 
-<code_example>
-**Component Diagram**
+| Purpose | Fill Color | Stroke Color |
+|---------|-----------|--------------|
+| Start/Success | #d5e8d4 | #82b366 |
+| Process/Info | #dae8fc | #6c8ebf |
+| Decision/Warning | #fff2cc | #d6b656 |
+| Error/Stop | #f8cecc | #b85450 |
+| Neutral | #f5f5f5 | #666666 |
 
-```mermaid
-graph LR
-    A[Component A] --> B[Component B]
-    A --> C[Component C]
-    B --> D[Component D]
-    C --> D
+### Edge Routing Rules
+
+1. **Never overlap**: Multiple edges must not share identical paths
+2. **Bidirectional**: Use opposite sides for two-way connections
+3. **Specify points**: Always include exitX, exitY, entryX, entryY attributes
+4. **Route around**: Edges should go around intermediate shapes
+5. **Connection points**:
+   - Top: entryX=0.5;entryY=0
+   - Bottom: exitX=0.5;exitY=1
+   - Left: entryX=0;entryY=0.5
+   - Right: exitX=1;exitY=0.5
+
+### Example: Simple Flowchart
+
+```xml
+<mxCell id="2" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+  <mxGeometry x="340" y="20" width="120" height="60" as="geometry"/>
+</mxCell>
+<mxCell id="3" value="Process Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" vertex="1" parent="1">
+  <mxGeometry x="340" y="120" width="120" height="60" as="geometry"/>
+</mxCell>
+<mxCell id="4" value="Valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" vertex="1" parent="1">
+  <mxGeometry x="340" y="220" width="120" height="80" as="geometry"/>
+</mxCell>
+<mxCell id="5" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" vertex="1" parent="1">
+  <mxGeometry x="340" y="340" width="120" height="60" as="geometry"/>
+</mxCell>
+<mxCell id="6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="2" target="3">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="3" target="4">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
+<mxCell id="8" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="4" target="5">
+  <mxGeometry relative="1" as="geometry"/>
+</mxCell>
 ```
 
-</code_example>
+### AWS Architecture Shapes
 
-<code_example>
-**Sequence Diagram**
+Use these shape styles for cloud architecture diagrams:
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant API
-    participant Auth
-    participant DB
-
-    User->>API: Login Request
-    API->>Auth: Validate Credentials
-    Auth->>DB: Query User
-    DB-->>Auth: User Data
-    Auth-->>API: JWT Token
-    API-->>User: Auth Response
+```
+shape=mxgraph.aws4.ec2;
+shape=mxgraph.aws4.s3;
+shape=mxgraph.aws4.rds;
+shape=mxgraph.aws4.lambda;
+shape=mxgraph.aws4.api_gateway;
+shape=mxgraph.aws4.cloudfront;
+shape=mxgraph.aws4.dynamodb;
+shape=mxgraph.aws4.sqs;
+shape=mxgraph.aws4.sns;
 ```
 
-</code_example>
-</examples>
+### Animated Connectors
 
-<examples>
-<usage_example>
-**Example Commands**:
-
-```bash
-# Generate architecture diagram
-node .claude/tools/diagram-generator/scripts/generate.mjs --type architecture "authentication system"
-
-# Generate database schema diagram
-node .claude/tools/diagram-generator/scripts/generate.mjs --type database "user management module"
-
-# Generate component diagram
-node .claude/tools/diagram-generator/scripts/generate.mjs --type component "API service relationships"
-
-# Generate sequence diagram
-node .claude/tools/diagram-generator/scripts/generate.mjs --type sequence "user login flow"
+Add animation to connectors:
+```
+flowAnimation=1;
 ```
 
-</usage_example>
-</examples>
+## Browser Rendering
 
-## Memory Protocol (MANDATORY)
+After generating the XML, create an HTML file with an iframe embedding and open it via a local HTTP server.
 
-**Before starting:**
-Read `.claude/context/memory/learnings.md`
+### Full XML Structure (for iframe)
 
-**After completing:**
+For the iframe approach, generate the COMPLETE mxfile structure:
 
-- New pattern -> `.claude/context/memory/learnings.md`
-- Issue found -> `.claude/context/memory/issues.md`
-- Decision made -> `.claude/context/memory/decisions.md`
+```xml
+<mxfile>
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="600">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Your diagram cells here -->
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+```
 
-> ASSUME INTERRUPTION: If it's not in memory, it didn't happen.
+### HTML Template (iframe approach - RECOMMENDED)
+
+This approach uses diagrams.net viewer iframe and works reliably:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI Generated Diagram</title>
+  <style>
+    body { margin: 0; padding: 40px; background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); min-height: 100vh; font-family: sans-serif; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { color: #e94560; margin-bottom: 10px; }
+    .subtitle { color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+    .diagram-card { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 25px 80px rgba(0,0,0,0.5); }
+    .diagram-title { font-size: 1.4em; color: #333; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 3px solid #e94560; }
+    iframe { width: 100%; height: 500px; border: none; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Draw.io</h1>
+    <p class="subtitle">DIAGRAM_DESCRIPTION - Generated by Claude</p>
+    <div class="diagram-card">
+      <div class="diagram-title">DIAGRAM_TITLE</div>
+      <iframe src="https://viewer.diagrams.net/?highlight=0000ff&nav=1&title=Diagram#RURL_ENCODED_MXFILE_XML"></iframe>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+### Implementation Steps
+
+1. Generate the draw.io XML based on user request (full mxfile structure)
+2. URL-encode the entire XML (use encodeURIComponent or equivalent)
+3. Create HTML file with iframe src pointing to viewer.diagrams.net with encoded XML
+4. Start a local HTTP server: `python -m http.server 8765`
+5. Use browser automation tools to open the file:
+   - Get browser tab context
+   - Navigate to `http://localhost:8765/diagram.html`
+   - Take a screenshot to show the result
+
+### URL Encoding Rules
+
+The XML must be URL-encoded for the iframe src:
+- `<` becomes `%3C`
+- `>` becomes `%3E`
+- `"` becomes `%22`
+- `&` becomes `%26`
+- `=` becomes `%3D`
+- Space becomes `%20`
+
+## Example Usage
+
+**User**: Draw a simple login flow diagram
+
+**Assistant Actions**:
+1. Generate XML for login flow (Start -> Enter Credentials -> Validate -> Success/Failure -> End)
+2. Create HTML file with embedded diagram
+3. Open browser and navigate to the HTML file
+4. Screenshot and show result
+
+## Tips
+
+- For complex diagrams, plan the layout before generating XML
+- Use consistent colors for similar element types
+- Add labels to edges for clarity
+- Group related elements visually
+- Use animation sparingly for emphasis

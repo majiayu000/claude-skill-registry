@@ -1,102 +1,96 @@
 ---
 name: task-management
-description: Helps organize tasks, create action plans, manage schedules, and track progress
-triggers:
-  - organize tasks
-  - create plan
-  - schedule
-  - prioritize
-  - track progress
-  - todo list
+description: "Simple task management using a shared TASKS.md file for tracking commitments and action items."
+version: 1.0.0
+category: productivity
+last_updated: 2026-02-03
+source: https://github.com/anthropics/knowledge-work-plugins
+related_skills:
+  - memory-management
 ---
 
-# Task Management Skill
+# Task Management
 
-You are the **Task Management Agent** specialized in planning and organization.
+Tasks are tracked in a simple `TASKS.md` file that both you and the user can edit.
 
-## Capabilities
-- Task planning and breakdown
-- Priority setting
-- Schedule management
-- Progress tracking
-- Action plan creation
-- Goal setting and milestone definition
+## File Location
 
-## When to Activate
-Activate this skill when the user requests:
-- "Organize these tasks"
-- "Create a plan for X"
-- "Schedule my work"
-- "Prioritize this list"
-- "Track progress on Y"
+**Always use `TASKS.md` in the current working directory.**
 
-## Process
+- If it exists, read/write to it
+- If it doesn't exist, create it with the template below
 
-1. **Clarify Objectives**: Understand goals and desired outcomes
-2. **Break Down Tasks**: Decompose complex projects into steps
-3. **Prioritize**: Identify critical path items and dependencies
-4. **Schedule**: Suggest realistic timeframes
-5. **Track**: Help monitor progress and identify blockers
+## Dashboard Setup (First Run)
 
-## Task Planning Framework
+A visual dashboard is available for managing tasks and memory. **On first interaction with tasks:**
 
-### Task Breakdown
-- Create clear, actionable task lists
-- Define completion criteria
-- Identify dependencies between tasks
-- Suggest parallel vs sequential execution
+1. Check if `dashboard.html` exists in the current working directory
+2. If not, copy it from `${CLAUDE_PLUGIN_ROOT}/skills/dashboard.html` to the current working directory
+3. Inform the user: "I've added the dashboard. Run `/productivity:start` to set up the full system."
 
-### Prioritization Methods
-- Eisenhower Matrix (urgent/important)
-- Effort vs Impact analysis
-- Quick wins identification
-- Critical path analysis
-- Deadline-based ordering
+The task board:
+- Reads and writes to the same `TASKS.md` file
+- Auto-saves changes
+- Watches for external changes (syncs when you edit via CLI)
+- Supports drag-and-drop reordering of tasks and sections
 
-### Scheduling Principles
-- Time blocks for deep work
-- Balance different task types
-- Buffer time for unexpected work
-- Regular review points
-- Realistic time estimates
+## Format & Template
 
-### Progress Tracking
-- Define measurable milestones
-- Suggest tracking mechanisms
-- Identify early warning signs
-- Recommend adjustment strategies
+When creating a new TASKS.md, use this exact template (without example tasks):
 
-## Output Format
+```markdown
+# Tasks
 
-Provide task management guidance with:
+## Active
 
-### Task List
-Clear tasks with priorities
+## Waiting On
 
-### Milestones
-Key checkpoints
+## Someday
 
-### Dependencies
-Prerequisites and blockers
+## Done
+```
 
-### Success Criteria
-How to know when done
+Task format:
+- `- [ ] **Task title** - context, for whom, due date`
+- Sub-bullets for additional details
+- Completed: `- [x] ~~Task~~ (date)`
 
-### Tracking Method
-How to monitor progress
+## How to Interact
 
-### Next Steps
-Immediate action items
+**When user asks "what's on my plate" / "my tasks":**
+- Read TASKS.md
+- Summarize Active and Waiting On sections
+- Highlight anything overdue or urgent
 
-## Markdown Formatting
-- Use `[ ]` checkboxes for actionable items
-- Numbered lists for sequential steps
-- Bullet points for parallel tasks
-- Tables for schedules or comparisons
-- Priority indicators (P1, P2, P3)
+**When user says "add a task" / "remind me to":**
+- Add to Active section with `- [ ] **Task**` format
+- Include context if provided (who it's for, due date)
 
-## Priority Levels
-- **P1 (Critical)**: Must do immediately
-- **P2 (High)**: Important, do soon
-- **P3 (Medium)**: Should do when possible
-- **P4 (Low)**: Nice to have
+**When user says "done with X" / "finished X":**
+- Find the task
+- Change `[ ]` to `[x]`
+- Add strikethrough: `~~task~~`
+- Add completion date
+- Move to Done section
+
+**When user asks "what am I waiting on":**
+- Read the Waiting On section
+- Note how long each item has been waiting
+
+## Conventions
+
+- **Bold** the task title for scannability
+- Include "for [person]" when it's a commitment to someone
+- Include "due [date]" for deadlines
+- Include "since [date]" for waiting items
+- Sub-bullets for additional context
+- Keep Done section for ~1 week, then clear old items
+
+## Extracting Tasks
+
+When summarizing meetings or conversations, offer to add extracted tasks:
+- Commitments the user made ("I'll send that over")
+- Action items assigned to them
+- Follow-ups mentioned
+
+Ask before adding - don't auto-add without confirmation.

@@ -1,339 +1,155 @@
 ---
 name: building-chatgpt-apps
-description: Guides creation of ChatGPT Apps with interactive widgets using the Apps SDK and MCP servers. Use when building ChatGPT custom apps with visual UI components, embedded widgets, or rich interactive experiences. Covers widget architecture, MCP server setup with FastMCP, response metadata, and Developer Mode configuration. NOT when building standard MCP servers without widgets (use building-mcp-servers skill instead).
+description: |
+  Guides creation of ChatGPT Apps with interactive widgets using OpenAI Apps SDK and MCP servers.
+  Use when building ChatGPT custom apps with visual UI components, embedded widgets, or rich
+  interactive experiences. Covers widget architecture, MCP server setup with FastMCP, response
+  metadata, and Developer Mode configuration. NOT when building standard MCP servers without
+  widgets (use building-mcp-servers skill instead).
 ---
 
-# Apps SDK Development Guide
+# ChatGPT Apps SDK Development Guide
 
 ## Overview
 
-Create ChatGPT Apps with interactive widgets that render rich UI inside ChatGPT conversations. The Apps SDK combines MCP servers (providing tools) with embedded HTML widgets that communicate via the `window.openai` API.
+Create ChatGPT Apps with interactive widgets that render rich UI inside ChatGPT conversations. Apps combine MCP servers (providing tools) with embedded HTML widgets that communicate via the `window.openai` API.
 
-**Official Documentation**: https://developers.openai.com/apps-sdk/
-**Examples Repository**: https://github.com/openai/openai-apps-sdk-examples
+---
 
-## Three-Layer Architecture
+## window.openai API Reference
+
+Widgets communicate with ChatGPT through these APIs:
+
+### sendFollowUpMessage (Recommended for Actions)
+
+Send a follow-up prompt to ChatGPT on behalf of the user:
+
+```javascript
+// Trigger a follow-up conversation
+if (window.openai?.sendFollowUpMessage) {
+  await window.openai.sendFollowUpMessage({
+    prompt: 'Summarize this chapter for me'
+  });
+}
+```
+
+**Use for**: Action buttons that suggest next steps (summarize, explain, etc.)
+
+### toolOutput
+
+Send structured data back from widget interactions:
+
+```javascript
+// Send data back to ChatGPT
+if (window.openai?.toolOutput) {
+  window.openai.toolOutput({
+    action: 'chapter_selected',
+    chapter: 1,
+    title: 'Introduction'
+  });
+}
+```
+
+**Use for**: Selections, form submissions, user choices that feed into tool responses.
+
+### callTool
+
+Call another MCP tool from within a widget:
+
+```javascript
+// Call a tool directly
+if (window.openai?.callTool) {
+  await window.openai.callTool({
+    name: 'read-chapter',
+    arguments: { chapter: 2 }
+  });
+}
+```
+
+**Use for**: Navigation between content, chaining tool calls.
+
+---
+
+## Critical: Button Interactivity Limitations
+
+**Important Discovery**: Widget buttons may render as **static UI elements** rather than interactive JavaScript buttons. ChatGPT renders widgets in a sandboxed iframe where some click handlers don't fire reliably.
+
+### What Works
+- `sendFollowUpMessage` - Reliably triggers follow-up prompts
+- Simple onclick handlers for `toolOutput` calls
+- CSS hover effects and visual feedback
+
+### What May Not Work
+- Complex interactive JavaScript (selection APIs, etc.)
+- Multiple chained tool calls from buttons
+- `window.getSelection()` for text selection features
+
+### Recommended Pattern: Suggestion Buttons
+
+Instead of complex interactions, use simple buttons that suggest prompts:
+
+```html
+<div class="action-buttons">
+  <button class="btn btn-primary" id="summarizeBtn">
+    📝 Summarize Chapter
+  </button>
+  <button class="btn btn-primary" id="explainBtn">
+    💡 Explain Key Concepts
+  </button>
+</div>
+
+<script>
+document.getElementById('summarizeBtn')?.addEventListener('click', async () => {
+  if (window.openai?.sendFollowUpMessage) {
+    await window.openai.sendFollowUpMessage({
+      prompt: 'Summarize this chapter for me'
+    });
+  }
+});
+
+document.getElementById('explainBtn')?.addEventListener('click', async () => {
+  if (window.openai?.sendFollowUpMessage) {
+    await window.openai.sendFollowUpMessage({
+      prompt: 'Explain the key concepts from this chapter'
+    });
+  }
+});
+</script>
+```
+
+---
+
+## Architecture Summary
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        ChatGPT UI                                │
 │  ┌─────────────────────────────────────────────────────────────┐│
 │  │                    Widget (iframe)                          ││
-│  │   React/Vanilla JS + CSS                                    ││
-│  │   window.openai.* APIs for host communication               ││
+│  │   HTML + CSS + JS                                          ││
+│  │   Calls: window.openai.toolOutput({action: "...", ...})    ││
 │  └─────────────────────────────────────────────────────────────┘│
 │                              │                                   │
 │                              ▼                                   │
 │                     ChatGPT Backend                              │
 │                              │                                   │
 │                              ▼                                   │
-│              MCP Server (HTTP/SSE)                               │
-│              - Tools: exposed actions                            │
+│              MCP Server (FastMCP + HTTP)                         │
+│              - Tools: open-book, read-chapter, etc.              │
 │              - Resources: widget HTML (text/html+skybridge)      │
-│              - Response: structuredContent + _meta               │
+│              - Response includes: _meta["openai.com/widget"]     │
 └─────────────────────────────────────────────────────────────────┘
-```
-
-**Flow**: User prompt → Model invokes tool → Server returns structured data → Widget renders → Model narrates result
-
----
-
-## window.openai API Reference
-
-Complete API surface for widget-host communication:
-
-### State & Data Access
-
-| Property | Purpose | Example |
-|----------|---------|---------|
-| `toolInput` | Arguments passed when tool was invoked | `window.openai.toolInput` |
-| `toolOutput` | Structured content from server response | `window.openai.toolOutput` |
-| `toolResponseMetadata` | Server `_meta` hidden from model | `window.openai.toolResponseMetadata` |
-| `widgetState` | Persisted UI state snapshot | `window.openai.widgetState` |
-
-### Runtime Actions
-
-| Method | Purpose | Example |
-|--------|---------|---------|
-| `callTool(name, args)` | Invoke another MCP tool | `await window.openai.callTool("refresh_data", {city})` |
-| `sendFollowUpMessage({prompt})` | Insert conversational message | `await window.openai.sendFollowUpMessage({prompt: "Summarize"})` |
-| `setWidgetState(state)` | Persist state synchronously | `window.openai.setWidgetState({favorites: []})` |
-| `uploadFile(file)` | Upload user file (PNG/JPEG/WebP) | `const {fileId} = await window.openai.uploadFile(file)` |
-| `getFileDownloadUrl({fileId})` | Get temporary download URL | `const {downloadUrl} = await window.openai.getFileDownloadUrl({fileId})` |
-
-### Layout Control
-
-| Method | Purpose |
-|--------|---------|
-| `requestDisplayMode({mode})` | Request layout: `"inline"`, `"pip"`, `"fullscreen"` |
-| `requestModal(...)` | Spawn ChatGPT-owned modal |
-| `notifyIntrinsicHeight(...)` | Report dynamic height to avoid clipping |
-| `openExternal({href})` | Open vetted external link |
-| `requestClose()` | Close widget from UI |
-
-### Context Properties (Read-Only)
-
-```javascript
-window.openai.theme        // "light" | "dark"
-window.openai.displayMode  // "inline" | "pip" | "fullscreen"
-window.openai.maxHeight    // container height in px
-window.openai.safeArea     // viewport constraints
-window.openai.userAgent    // browser identifier
-window.openai.locale       // "en-US", "es-ES", etc.
-```
-
-### Code Examples
-
-**sendFollowUpMessage (Best for Action Buttons)**:
-```javascript
-async function suggestAction(prompt) {
-  if (window.openai?.sendFollowUpMessage) {
-    await window.openai.sendFollowUpMessage({ prompt });
-  }
-}
-// Usage: suggestAction('Summarize this chapter');
-```
-
-**callTool (For Tool Chaining)**:
-```javascript
-async function refreshData(city) {
-  if (window.openai?.callTool) {
-    const result = await window.openai.callTool("refresh_list", { city });
-    // result contains fresh structuredContent
-  }
-}
-```
-
-**Note**: `callTool` requires tool metadata `"openai/widgetAccessible": true`.
-
----
-
-## Tool Definition with Metadata
-
-Tools require proper metadata to enable widget rendering:
-
-### TypeScript/Node.js Pattern
-
-```typescript
-server.registerTool(
-  "kanban-board",
-  {
-    title: "Show Kanban Board",
-    inputSchema: { workspace: z.string() },
-    annotations: {
-      readOnlyHint: true,      // Skip confirmation for read operations
-      destructiveHint: false,  // Set true for delete/modify actions
-      openWorldHint: false     // Set true if publishing externally
-    },
-    _meta: {
-      "openai/outputTemplate": "ui://widget/kanban.html",  // Required
-      "openai/widgetAccessible": true,  // Enable callTool from widget
-      "openai/visibility": "public",    // "private" hides from model
-      "openai/toolInvocation/invoking": "Loading board…",
-      "openai/toolInvocation/invoked": "Board ready."
-    }
-  },
-  async ({ workspace }) => {
-    const tasks = await db.fetchTasks(workspace);
-    return {
-      // Data for model narration (keep concise)
-      structuredContent: {
-        columns: ["todo", "in-progress", "done"].map(status => ({
-          id: status,
-          tasks: tasks.filter(t => t.status === status)
-        }))
-      },
-      // Optional markdown for model
-      content: [{ type: "text", text: "Here's your board." }],
-      // Large/sensitive data for widget only (model never sees)
-      _meta: {
-        tasksById: Object.fromEntries(tasks.map(t => [t.id, t])),
-        lastSyncedAt: new Date().toISOString()
-      }
-    };
-  }
-);
-```
-
-### Python/FastMCP Pattern
-
-```python
-from mcp.server.fastmcp import FastMCP
-import mcp.types as types
-
-mcp = FastMCP("My App")
-
-@mcp.tool(
-    annotations={
-        "title": "Show Dashboard",
-        "readOnlyHint": True,
-        "openWorldHint": False,
-    },
-    _meta={
-        "openai/outputTemplate": "ui://widget/dashboard.html",
-        "openai/widgetAccessible": True,
-    },
-)
-def show_dashboard(user_id: str) -> types.CallToolResult:
-    data = fetch_user_data(user_id)
-    return types.CallToolResult(
-        content=[types.TextContent(type="text", text="Dashboard loaded.")],
-        structuredContent={"summary": data.summary},
-        _meta={"fullData": data.dict(), "timestamp": datetime.now().isoformat()}
-    )
-```
-
-### Tool Metadata Reference
-
-| Key | Type | Purpose |
-|-----|------|---------|
-| `openai/outputTemplate` | string (URI) | **Required**. Resource URI for widget HTML |
-| `openai/widgetAccessible` | boolean | Enable `window.openai.callTool` from widget |
-| `openai/visibility` | `"public"` or `"private"` | Hide tool from model but keep widget-callable |
-| `openai/toolInvocation/invoking` | string (≤64 chars) | Status text while executing |
-| `openai/toolInvocation/invoked` | string (≤64 chars) | Status text when complete |
-| `openai/fileParams` | string[] | Input fields accepting file objects |
-
-### Response Payload Structure
-
-| Field | Visibility | Purpose |
-|-------|------------|---------|
-| `structuredContent` | Model + Widget | Concise JSON for model narration |
-| `content` | Model + Widget | Optional markdown/plaintext |
-| `_meta` | Widget Only | Sensitive/large data hidden from model |
-
-## Widget Resource Registration
-
-Resources define widget HTML with proper MIME type:
-
-### TypeScript Pattern
-
-```typescript
-server.registerResource(
-  "kanban-widget",
-  "ui://widget/kanban.html",
-  {},
-  async () => ({
-    contents: [{
-      uri: "ui://widget/kanban.html",
-      mimeType: "text/html+skybridge",  // Required for widget rendering
-      text: WIDGET_HTML,
-      _meta: {
-        "openai/widgetPrefersBorder": true,
-        "openai/widgetDomain": "https://chatgpt.com",
-        "openai/widgetCSP": {
-          connect_domains: ["https://api.example.com"],
-          resource_domains: ["https://*.oaistatic.com"],
-          frame_domains: []
-        }
-      }
-    }]
-  })
-);
-```
-
-### Python Pattern
-
-```python
-@mcp.resource(
-    uri="ui://widget/{widget_name}.html",
-    name="Widget Resource",
-    mime_type="text/html+skybridge"
-)
-def widget_resource(widget_name: str) -> str:
-    return WIDGETS[widget_name]["html"]
-```
-
-### Widget Resource Metadata
-
-| Key | Purpose |
-|-----|---------|
-| `openai/widgetPrefersBorder` | Visual border preference |
-| `openai/widgetDomain` | Dedicated origin for API allowlisting |
-| `openai/widgetCSP` | Security boundaries (connect, resource, frame domains) |
-| `openai/widgetDescription` | Summary shown when widget loads |
-
----
-
-## React Hooks for Widgets
-
-Official patterns for React-based widgets:
-
-### useOpenAiGlobal (Reactive State Subscription)
-
-```typescript
-import { useSyncExternalStore } from "react";
-
-export function useOpenAiGlobal<K extends keyof OpenAiGlobals>(
-  key: K
-): OpenAiGlobals[K] {
-  return useSyncExternalStore(
-    (onChange) => {
-      const handle = (e: CustomEvent) => {
-        if (e.detail.globals[key] !== undefined) onChange();
-      };
-      window.addEventListener("SET_GLOBALS", handle, { passive: true });
-      return () => window.removeEventListener("SET_GLOBALS", handle);
-    },
-    () => window.openai?.[key]
-  );
-}
-```
-
-### useWidgetState (Persistent Component State)
-
-```typescript
-export function useWidgetState<T>(defaultState?: T | (() => T)) {
-  const widgetStateFromWindow = useOpenAiGlobal("widgetState") as T;
-
-  const [state, _setState] = useState<T | null>(() =>
-    widgetStateFromWindow ?? (typeof defaultState === "function"
-      ? defaultState()
-      : defaultState ?? null)
-  );
-
-  useEffect(() => {
-    _setState(widgetStateFromWindow);
-  }, [widgetStateFromWindow]);
-
-  const setState = useCallback((newState: T | ((prev: T) => T)) => {
-    _setState((prev) => {
-      const next = typeof newState === "function" ? newState(prev) : newState;
-      window.openai?.setWidgetState(next);
-      return next;
-    });
-  }, []);
-
-  return [state, setState] as const;
-}
-```
-
-### Helper Hooks
-
-```typescript
-export function useToolInput() {
-  return useOpenAiGlobal("toolInput");
-}
-
-export function useToolOutput() {
-  return useOpenAiGlobal("toolOutput");
-}
-
-export function useToolResponseMetadata() {
-  return useOpenAiGlobal("toolResponseMetadata");
-}
 ```
 
 ---
 
 ## Quick Start
 
-1. **Create MCP server** with tools and widget resources
-2. **Define widget HTML** with `window.openai` communication
-3. **Set tool metadata** with `openai/outputTemplate` pointing to widget
-4. **Return structured responses** with `structuredContent` + `_meta`
-5. **Expose via ngrok** for ChatGPT access
-6. **Register in ChatGPT** Developer Mode settings
+1. **Create MCP server** with FastMCP and widget resources
+2. **Define widget HTML** that uses `window.openai.toolOutput`
+3. **Add response metadata** with `_meta["openai.com/widget"]`
+4. **Expose via ngrok** for ChatGPT access
+5. **Register in ChatGPT** Developer Mode settings
 
 ---
 
@@ -621,101 +437,67 @@ ngrok http 8001
 
 ---
 
-## OAuth 2.1 Authentication
-
-For apps requiring user authentication:
-
-### Protected Resource Metadata
-
-Host at `/.well-known/oauth-protected-resource`:
-
-```json
-{
-  "resource": "https://your-mcp.example.com",
-  "authorization_servers": ["https://auth.yourcompany.com"],
-  "scopes_supported": ["files:read", "files:write"]
-}
-```
-
-### Tool Security Schemes
-
-```typescript
-securitySchemes: [
-  { type: "noauth" },  // Public access
-  { type: "oauth2", scopes: ["docs.read"] }  // Authenticated access
-]
-```
-
-### Token Validation
-
-Servers must:
-- Validate signature/issuer via authorization server's JWKS
-- Reject expired tokens (`exp`/`nbf` claims)
-- Confirm audience matches (`aud` claim)
-- Return `401` with `WWW-Authenticate` header on failure
-
-### Error Response (Triggers Auth UI)
-
-```json
-{
-  "_meta": {
-    "mcp/www_authenticate": [
-      "Bearer resource_metadata=\"https://.../.well-known/oauth-protected-resource\", error=\"insufficient_scope\""
-    ]
-  },
-  "isError": true
-}
-```
-
----
-
 ## Common Issues and Solutions
 
-| Issue | Cause | Solution |
-|-------|-------|----------|
-| Widget shows "Loading..." | HTML not delivered correctly | Check `_meta` with `openai/outputTemplate`, verify MIME type |
-| Widget not updating | Aggressive caching | Delete app, restart ngrok with new URL, create new app |
-| JavaScript errors | `window.openai` unavailable | Always use optional chaining: `window.openai?.methodName` |
-| Tool not in @mentions | MCP server disconnected | Verify ngrok URL, check server logs for `ListToolsRequest` |
-| `callTool` not working | Widget access disabled | Add `"openai/widgetAccessible": true` to tool metadata |
+### Widget Shows "Loading..." Forever
+
+**Cause**: Widget HTML not being delivered correctly.
+
+**Solution**:
+1. Check server logs for `CallToolRequest` processing
+2. Verify `_meta["openai.com/widget"]` in response
+3. Ensure MIME type is `text/html+skybridge`
+
+### Cached Widget Not Updating
+
+**Cause**: ChatGPT caches widgets aggressively.
+
+**Solution**:
+1. Delete the app in Settings > Apps
+2. Kill server and ngrok
+3. Start fresh ngrok tunnel (new URL)
+4. Create new app with new URL
+5. Test in new conversation
+
+### Widget JavaScript Errors
+
+**Cause**: `window.openai` not available.
+
+**Solution**: Always check before calling:
+```javascript
+if (window.openai && window.openai.toolOutput) {
+  window.openai.toolOutput({...});
+}
+```
+
+### Tool Not Showing in @mentions
+
+**Cause**: MCP server not connected or tools not registered.
+
+**Solution**:
+1. Check server is running and accessible via ngrok URL
+2. Verify ngrok tunnel is active: `curl https://your-url.ngrok-free.app/mcp`
+3. Check server logs for `ListToolsRequest`
 
 ---
 
-## Decision Logic
+## Verification
 
-| Situation | Pattern |
-|-----------|---------|
-| Simple display widget | Vanilla HTML + CSS + JS |
-| Complex interactive UI | React + hooks (useWidgetState) |
-| Multi-tool workflow | `callTool` from widget with `widgetAccessible: true` |
-| User suggestions | `sendFollowUpMessage` (most reliable) |
-| Persistent UI state | `setWidgetState` + `widgetState` |
-| Large data payloads | Send via `_meta` (hidden from model) |
-| User authentication | OAuth 2.1 with security schemes |
-| Display mode changes | `requestDisplayMode` (inline/pip/fullscreen) |
+Run: `python3 scripts/verify.py`
 
----
+Expected: `✓ building-chatgpt-apps skill ready`
 
-## Safety
+## If Verification Fails
 
-### NEVER
-- Embed API keys, tokens, or secrets in `structuredContent`, `content`, or `_meta`
-- Rely on `userAgent` or `locale` hints for authorization decisions
-- Expose destructive operations without user intent verification
-
-### ALWAYS
-- Validate tokens server-side (ChatGPT assumes tokens are untrusted)
-- Use environment variables for secrets
-- Design handlers as idempotent (model may retry)
-- Check `window.openai` existence before calling methods
+1. Run diagnostic: Check references/ folder exists
+2. Check: All reference files present
+3. **Stop and report** if still failing
 
 ---
 
 ## References
 
-- [Official Docs](https://developers.openai.com/apps-sdk/)
-- [Examples Repo](https://github.com/openai/openai-apps-sdk-examples)
-- [Complete Template](references/complete_template.md) - Ready-to-use server + widget
-- [Widget Patterns](references/widget_patterns.md) - HTML/CSS/JS examples
+- [Complete Template](references/complete_template.md) - Ready-to-use server + widget template
+- [Widget Patterns](references/widget_patterns.md) - HTML/CSS/JS widget examples
 - [Response Structure](references/response_structure.md) - Metadata format details
 - [Debugging Guide](references/debugging.md) - Troubleshooting common issues

@@ -46,12 +46,12 @@ pnpm analyze-component <path> --json
 
 ### Complexity Score Interpretation
 
-| Score | Level | Action |
-|-------|-------|--------|
-| 0-25 | 🟢 Simple | Ready for testing |
-| 26-50 | 🟡 Medium | Consider minor refactoring |
-| 51-75 | 🟠 Complex | **Refactor before testing** |
-| 76-100 | 🔴 Very Complex | **Must refactor** |
+| Score  | Level           | Action                      |
+| ------ | --------------- | --------------------------- |
+| 0-25   | 🟢 Simple       | Ready for testing           |
+| 26-50  | 🟡 Medium       | Consider minor refactoring  |
+| 51-75  | 🟠 Complex      | **Refactor before testing** |
+| 76-100 | 🔴 Very Complex | **Must refactor**           |
 
 ## Core Refactoring Patterns
 
@@ -67,9 +67,9 @@ const Configuration: FC = () => {
   const [modelConfig, setModelConfig] = useState<ModelConfig>(...)
   const [datasetConfigs, setDatasetConfigs] = useState<DatasetConfigs>(...)
   const [completionParams, setCompletionParams] = useState<FormValue>({})
-  
+
   // 50+ lines of state management logic...
-  
+
   return <div>...</div>
 }
 
@@ -78,9 +78,9 @@ const Configuration: FC = () => {
 export const useModelConfig = (appId: string) => {
   const [modelConfig, setModelConfig] = useState<ModelConfig>(...)
   const [completionParams, setCompletionParams] = useState<FormValue>({})
-  
+
   // Related state management logic here
-  
+
   return { modelConfig, setModelConfig, completionParams, setCompletionParams }
 }
 
@@ -92,6 +92,7 @@ const Configuration: FC = () => {
 ```
 
 **Dify Examples**:
+
 - `web/app/components/app/configuration/hooks/use-advanced-prompt-config.ts`
 - `web/app/components/app/configuration/debug/hooks.tsx`
 - `web/app/components/workflow/hooks/use-workflow.ts`
@@ -123,7 +124,7 @@ const AppInfo = () => {
 
 const AppInfo = () => {
   const { showModal, setShowModal } = useAppInfoModals()
-  
+
   return (
     <div>
       <AppHeader appDetail={appDetail} />
@@ -135,6 +136,7 @@ const AppInfo = () => {
 ```
 
 **Dify Examples**:
+
 - `web/app/components/app/configuration/` directory structure
 - `web/app/components/workflow/nodes/` per-node organization
 
@@ -177,7 +179,7 @@ const TEMPLATE_MAP = {
 const Template = useMemo(() => {
   const modeTemplates = TEMPLATE_MAP[appDetail?.mode]
   if (!modeTemplates) return null
-  
+
   const TemplateComponent = modeTemplates[locale] || modeTemplates.default
   return <TemplateComponent appDetail={appDetail} />
 }, [appDetail, locale])
@@ -192,50 +194,52 @@ const Template = useMemo(() => {
 ```typescript
 // ❌ Before: API logic in component
 const MCPServiceCard = () => {
-  const [basicAppConfig, setBasicAppConfig] = useState({})
-  
+  const [basicAppConfig, setBasicAppConfig] = useState({});
+
   useEffect(() => {
     if (isBasicApp && appId) {
       (async () => {
-        const res = await fetchAppDetail({ url: '/apps', id: appId })
-        setBasicAppConfig(res?.model_config || {})
-      })()
+        const res = await fetchAppDetail({ url: "/apps", id: appId });
+        setBasicAppConfig(res?.model_config || {});
+      })();
     }
-  }, [appId, isBasicApp])
-  
+  }, [appId, isBasicApp]);
+
   // More API-related logic...
-}
+};
 
 // ✅ After: Extract to data hook using React Query
 // use-app-config.ts
-import { useQuery } from '@tanstack/react-query'
-import { get } from '@/service/base'
+import { useQuery } from "@tanstack/react-query";
+import { get } from "@/service/base";
 
-const NAME_SPACE = 'appConfig'
+const NAME_SPACE = "appConfig";
 
 export const useAppConfig = (appId: string, isBasicApp: boolean) => {
   return useQuery({
     enabled: isBasicApp && !!appId,
-    queryKey: [NAME_SPACE, 'detail', appId],
+    queryKey: [NAME_SPACE, "detail", appId],
     queryFn: () => get<AppDetailResponse>(`/apps/${appId}`),
-    select: data => data?.model_config || {},
-  })
-}
+    select: (data) => data?.model_config || {},
+  });
+};
 
 // Component becomes cleaner
 const MCPServiceCard = () => {
-  const { data: config, isLoading } = useAppConfig(appId, isBasicApp)
+  const { data: config, isLoading } = useAppConfig(appId, isBasicApp);
   // UI only
-}
+};
 ```
 
 **React Query Best Practices in Dify**:
+
 - Define `NAME_SPACE` for query key organization
 - Use `enabled` option for conditional fetching
 - Use `select` for data transformation
 - Export invalidation hooks: `useInvalidXxx`
 
 **Dify Examples**:
+
 - `web/service/use-workflow.ts`
 - `web/service/use-common.ts`
 - `web/service/knowledge/use-dataset.ts`
@@ -250,30 +254,30 @@ const MCPServiceCard = () => {
 ```typescript
 // ❌ Before: Multiple modal states in component
 const AppInfo = () => {
-  const [showEditModal, setShowEditModal] = useState(false)
-  const [showDuplicateModal, setShowDuplicateModal] = useState(false)
-  const [showConfirmDelete, setShowConfirmDelete] = useState(false)
-  const [showSwitchModal, setShowSwitchModal] = useState(false)
-  const [showImportDSLModal, setShowImportDSLModal] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showDuplicateModal, setShowDuplicateModal] = useState(false);
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false);
+  const [showSwitchModal, setShowSwitchModal] = useState(false);
+  const [showImportDSLModal, setShowImportDSLModal] = useState(false);
   // 5+ more modal states...
-}
+};
 
 // ✅ After: Extract to modal management hook
-type ModalType = 'edit' | 'duplicate' | 'delete' | 'switch' | 'import' | null
+type ModalType = "edit" | "duplicate" | "delete" | "switch" | "import" | null;
 
 const useAppInfoModals = () => {
-  const [activeModal, setActiveModal] = useState<ModalType>(null)
-  
-  const openModal = useCallback((type: ModalType) => setActiveModal(type), [])
-  const closeModal = useCallback(() => setActiveModal(null), [])
-  
+  const [activeModal, setActiveModal] = useState<ModalType>(null);
+
+  const openModal = useCallback((type: ModalType) => setActiveModal(type), []);
+  const closeModal = useCallback(() => setActiveModal(null), []);
+
   return {
     activeModal,
     openModal,
     closeModal,
     isOpen: (type: ModalType) => activeModal === type,
-  }
-}
+  };
+};
 ```
 
 ### Pattern 6: Extract Form Logic
@@ -291,7 +295,7 @@ const ConfigForm = () => {
     defaultValues: { name: '', description: '' },
     onSubmit: handleSubmit,
   })
-  
+
   return <form.Provider>...</form.Provider>
 }
 ```
@@ -328,6 +332,7 @@ return <ConfigContext.Provider value={value}>...</ConfigContext.Provider>
 **When**: Refactoring workflow node components (`web/app/components/workflow/nodes/`).
 
 **Conventions**:
+
 - Keep node logic in `use-interactions.ts`
 - Extract panel UI to separate files
 - Use `_base` components for common patterns
@@ -346,6 +351,7 @@ nodes/<node-type>/
 **When**: Refactoring app configuration components.
 
 **Conventions**:
+
 - Separate config sections into subdirectories
 - Use existing patterns from `web/app/components/app/configuration/`
 - Keep feature toggles in dedicated components
@@ -355,6 +361,7 @@ nodes/<node-type>/
 **When**: Refactoring tool-related components (`web/app/components/tools/`).
 
 **Conventions**:
+
 - Follow existing modal patterns
 - Use service hooks from `web/service/use-tools.ts`
 - Keep provider-specific logic isolated
@@ -368,6 +375,7 @@ pnpm refactor-component <path>
 ```
 
 This command will:
+
 - Analyze component complexity and features
 - Identify specific refactoring actions needed
 - Generate a prompt for AI assistant (auto-copied to clipboard on macOS)
@@ -380,6 +388,7 @@ pnpm analyze-component <path> --json
 ```
 
 Identify:
+
 - Total complexity score
 - Max function complexity
 - Line count
@@ -389,13 +398,13 @@ Identify:
 
 Create a refactoring plan based on detected features:
 
-| Detected Feature | Refactoring Action |
-|------------------|-------------------|
-| `hasState: true` + `hasEffects: true` | Extract custom hook |
-| `hasAPI: true` | Extract data/service hook |
-| `hasEvents: true` (many) | Extract event handlers |
-| `lineCount > 300` | Split into sub-components |
-| `maxComplexity > 50` | Simplify conditional logic |
+| Detected Feature                      | Refactoring Action         |
+| ------------------------------------- | -------------------------- |
+| `hasState: true` + `hasEffects: true` | Extract custom hook        |
+| `hasAPI: true`                        | Extract data/service hook  |
+| `hasEvents: true` (many)              | Extract event handlers     |
+| `lineCount > 300`                     | Split into sub-components  |
+| `maxComplexity > 50`                  | Simplify conditional logic |
 
 ### Step 4: Execute Incrementally
 
@@ -442,17 +451,17 @@ pnpm analyze-component <path> --json
 
 ```typescript
 // ❌ Too many tiny hooks
-const useButtonText = () => useState('Click')
-const useButtonDisabled = () => useState(false)
-const useButtonLoading = () => useState(false)
+const useButtonText = () => useState("Click");
+const useButtonDisabled = () => useState(false);
+const useButtonLoading = () => useState(false);
 
 // ✅ Cohesive hook with related state
 const useButtonState = () => {
-  const [text, setText] = useState('Click')
-  const [disabled, setDisabled] = useState(false)
-  const [loading, setLoading] = useState(false)
-  return { text, setText, disabled, setDisabled, loading, setLoading }
-}
+  const [text, setText] = useState("Click");
+  const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
+  return { text, setText, disabled, setDisabled, loading, setLoading };
+};
 ```
 
 ### ❌ Breaking Existing Patterns
@@ -480,4 +489,4 @@ const useButtonState = () => {
 ### Related Skills
 
 - `frontend-testing` - For testing refactored components
-- `web/docs/test.md` - Testing specification
+- `web/testing/testing.md` - Testing specification

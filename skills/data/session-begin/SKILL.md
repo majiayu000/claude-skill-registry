@@ -94,6 +94,45 @@ git log --oneline -5
 
 ---
 
+## 0c. Episodic Memory Search (RECOMMENDED)
+
+Search past conversations for relevant context using episodic memory. This helps
+recover decisions, solutions, and patterns from previous sessions.
+
+**Use `mcp__plugin_episodic-memory_episodic-memory__search` with these
+queries:**
+
+```javascript
+// Search for context on current work
+search({ query: ["current branch/feature name", "decisions"] });
+
+// Search for past errors if debugging
+search({ query: "error message or pattern" });
+
+// Search for established patterns
+search({ query: ["component/module name", "patterns"] });
+```
+
+**When to search:**
+
+| Situation             | Query Example                               |
+| --------------------- | ------------------------------------------- |
+| Starting feature work | `["feature-name", "decisions", "approach"]` |
+| Debugging an error    | `"TypeError: Cannot read property"`         |
+| Code review prep      | `["module-name", "review", "patterns"]`     |
+| Resuming paused work  | `["branch-name", "context", "next steps"]`  |
+
+**Tips:**
+
+- Single string = semantic search (fuzzy, meaning-based)
+- Array of 2-5 terms = AND search (all terms must match)
+- Use `limit: 5` for focused results, `limit: 20` for broader search
+- Current conversation is NOT indexed yet (only previous sessions)
+
+**Summarize findings** for the user if relevant context is found.
+
+---
+
 ## 1. Context Loading (MANDATORY)
 
 - [ ] Read [SESSION_CONTEXT.md](../../SESSION_CONTEXT.md) - Current status,

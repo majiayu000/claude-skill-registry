@@ -1,9 +1,7 @@
 {
   "name": "threat-model-generator",
-  "description": "Creates comprehensive threat models using STRIDE methodology with asset identification, threat enumeration, mitigation strategies, and residual risk assessment. Use for \"threat modeling\", \"security an",
-  "repo": "patricio0312rev/skillset",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/threat-model-generator/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:28.959772Z"
 }

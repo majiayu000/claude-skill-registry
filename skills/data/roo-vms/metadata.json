@@ -1,9 +1,9 @@
 {
   "name": "roo-vms",
   "description": "Alpine and Debian QEMU VMs for protocol testing, fuzzing, and network experiments",
-  "repo": "lawless-m/Gwen",
-  "category": "other",
+  "repo": "lawless-m/Earwig",
+  "category": "data",
   "tags": [],
   "stars": 0,
-  "source": "github.com/lawless-m/Gwen"
+  "source": "github.com/lawless-m/Earwig"
 }

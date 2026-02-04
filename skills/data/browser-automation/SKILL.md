@@ -1,147 +1,70 @@
 ---
 name: browser-automation
-description: Browser automation via HTTP server. Supports multiple concurrent sessions for multi-user testing, saved flows, and profile-based auth persistence.
+description: "Browser automation powers web testing, scraping, and AI agent interactions. The difference between a flaky script and a reliable system comes down to understanding selectors, waiting strategies, and anti-detection patterns.  This skill covers Playwright (recommended) and Puppeteer, with patterns for testing, scraping, and agentic browser control. Key insight: Playwright won the framework war. Unless you need Puppeteer's stealth ecosystem or are Chrome-only, Playwright is the better choice in 202"
+source: vibeship-spawner-skills (Apache 2.0)
 ---
 
-# Browser Automation Skill
+# Browser Automation
 
-Explore pages interactively, build reusable flows, and test multi-user scenarios.
+You are a browser automation expert who has debugged thousands of flaky tests
+and built scrapers that run for years without breaking. You've seen the
+evolution from Selenium to Puppeteer to Playwright and understand exactly
+when each tool shines.
 
-## Quick Start
+Your core insight: Most automation failures come from three sources - bad
+selectors, missing waits, and detection systems. You teach people to think
+like the browser, use the right selectors, and let Playwright's auto-wait
+do its job.
 
-```bash
-# Start server
-node .claude/skills/browser-automation/server.mjs &
+For scraping, yo
 
-# Check available profiles
-curl http://localhost:9222/profiles
+## Capabilities
 
-# Create a session
-curl -X POST http://localhost:9222/sessions \
-  -d '{"name": "test", "url": "http://localhost:3000", "profile": "member"}'
+- browser-automation
+- playwright
+- puppeteer
+- headless-browsers
+- web-scraping
+- browser-testing
+- e2e-testing
+- ui-automation
+- selenium-alternatives
 
-# Inspect the page
-curl http://localhost:9222/inspect
+## Patterns
 
-# Execute code
-curl -X POST http://localhost:9222/chunk \
-  -d '{"label": "Click button", "code": "await page.click(\"button.submit\");"}'
+### Test Isolation Pattern
 
-# Shutdown
-curl -X POST http://localhost:9222/exit
-```
+Each test runs in complete isolation with fresh state
 
-## Endpoints
+### User-Facing Locator Pattern
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/profiles` | GET | List auth profiles with descriptions |
-| `/sessions` | GET | List active sessions |
-| `/sessions` | POST | Create session `{ name, url, profile?, headless? }` |
-| `/sessions/:name` | DELETE | Close session |
-| `/flows` | GET | List saved flows |
-| `/flows/:name/run` | POST | Run flow `{ profile?, startUrl?, headless? }` |
-| `/status` | GET | Session status |
-| `/inspect` | GET | Page state + screenshot. Add `?fullPage=true` for full-page screenshot |
-| `/chunk` | POST | Execute code `{ label, code }` |
-| `/navigate` | POST | Navigate `{ url, fullPage? }`. Set `fullPage: true` for full-page screenshot |
-| `/save-auth` | POST | Save auth `{ profile, description }` |
-| `/review` | GET | Review recorded chunks |
-| `/exit` | POST | Shutdown server |
+Select elements the way users see them
 
-Use `?session=name` when multiple sessions are active.
+### Auto-Wait Pattern
 
-## Multi-User Testing
+Let Playwright wait automatically, never add manual waits
 
-```bash
-# Create two sessions with different profiles
-curl -X POST http://localhost:9222/sessions \
-  -d '{"name": "creator", "url": "http://localhost:3000", "profile": "creator"}'
-curl -X POST http://localhost:9222/sessions \
-  -d '{"name": "viewer", "url": "http://localhost:3000", "profile": "member"}'
+## Anti-Patterns
 
-# Creator does something
-curl -X POST "http://localhost:9222/chunk?session=creator" \
-  -d '{"label": "Publish", "code": "await page.click(\"button.publish\");"}'
+### ❌ Arbitrary Timeouts
 
-# Viewer sees it
-curl -X POST "http://localhost:9222/navigate?session=viewer" \
-  -d '{"url": "http://localhost:3000/models"}'
-```
+### ❌ CSS/XPath First
 
-## Profiles
+### ❌ Single Browser Context for Everything
 
-```bash
-# List profiles
-curl http://localhost:9222/profiles
+## ⚠️ Sharp Edges
 
-# Create new profile (description required)
-curl -X POST http://localhost:9222/save-auth \
-  -d '{"profile": "moderator", "description": "User with mod permissions"}'
+| Issue | Severity | Solution |
+|-------|----------|----------|
+| Issue | critical | # REMOVE all waitForTimeout calls |
+| Issue | high | # Use user-facing locators instead: |
+| Issue | high | # Use stealth plugins: |
+| Issue | high | # Each test must be fully isolated: |
+| Issue | medium | # Enable traces for failures: |
+| Issue | medium | # Set consistent viewport: |
+| Issue | high | # Add delays between requests: |
+| Issue | medium | # Wait for popup BEFORE triggering it: |
 
-# Refresh existing profile
-curl -X POST http://localhost:9222/save-auth \
-  -d '{"profile": "moderator"}'
-```
+## Related Skills
 
-| Profile | Description |
-|---------|-------------|
-| `moderator` | Mod permissions for content review |
-| `creator` | Established user with published content |
-| `member` | Standard logged-in user |
-| `new-user` | Fresh account for onboarding flows |
-
-## Flows
-
-Saved flows are reusable Playwright scripts.
-
-```bash
-# List flows
-curl http://localhost:9222/flows
-
-# Run a flow
-curl -X POST http://localhost:9222/flows/my-flow/run \
-  -d '{"profile": "member"}'
-
-# Run with custom start URL
-curl -X POST http://localhost:9222/flows/my-flow/run \
-  -d '{"profile": "member", "startUrl": "http://localhost:3000"}'
-```
-
-Flows are stored in `.browser/flows/*.js`.
-
-## Playwright Code
-
-Chunks execute with `page` available:
-
-```javascript
-await page.click('button.submit');
-await page.fill('input[name="email"]', 'test@example.com');
-await page.waitForSelector('h1');
-await page.goto('https://example.com');
-const title = await page.textContent('h1');
-```
-
-## Mockup Comparison
-
-Open local HTML mockups with `file://` URLs, then compare to live pages:
-
-```bash
-# 1. Open mockup and take full-page screenshot
-curl -X POST http://localhost:9222/sessions \
-  -d '{"name": "compare", "url": "file:///C:/path/to/mockup.html"}'
-curl "http://localhost:9222/inspect?session=compare&fullPage=true"
-
-# 2. Navigate to live page and screenshot
-curl -X POST "http://localhost:9222/navigate?session=compare" \
-  -d '{"url": "http://localhost:3000/page", "fullPage": true}'
-
-# 3. Compare screenshots in session folder
-```
-
-## File Locations
-
-- **Flows**: `.browser/flows/*.js`
-- **Profile metadata**: `.browser/profiles/profiles.meta.json`
-- **Auth state**: `.browser/profiles/*.json` (gitignored)
-- **Screenshots**: `.browser/sessions/{id}/screenshots/`
+Works well with: `agent-tool-builder`, `workflow-automation`, `computer-use-agents`, `test-architect`

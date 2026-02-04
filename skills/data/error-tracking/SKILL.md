@@ -1,375 +1,313 @@
 ---
 name: error-tracking
-description: Add Sentry v8 error tracking and performance monitoring to your project services. Use this skill when adding error handling, creating new controllers, instrumenting cron jobs, or tracking database performance. ALL ERRORS MUST BE CAPTURED TO SENTRY - no exceptions.
+description: Implement error tracking with Sentry for automatic exception monitoring, release tracking, and performance issues. Use when setting up error monitoring, tracking bugs in production, or analyzing application stability.
 ---
 
-# your project Sentry Integration Skill
+# Error Tracking
 
-## Purpose
-This skill enforces comprehensive Sentry error tracking and performance monitoring across all your project services following Sentry v8 patterns.
+## Overview
 
-## When to Use This Skill
-- Adding error handling to any code
-- Creating new controllers or routes
-- Instrumenting cron jobs
-- Tracking database performance
-- Adding performance spans
-- Handling workflow errors
+Set up comprehensive error tracking with Sentry to automatically capture, report, and analyze exceptions, performance issues, and application stability.
 
-## 🚨 CRITICAL RULE
+## When to Use
 
-**ALL ERRORS MUST BE CAPTURED TO SENTRY** - No exceptions. Never use console.error alone.
+- Production error monitoring
+- Automatic exception capture
+- Release tracking
+- Performance issue detection
+- User impact analysis
 
-## Current Status
+## Instructions
 
-### Form Service ✅ Complete
-- Sentry v8 fully integrated
-- All workflow errors tracked
-- SystemActionQueueProcessor instrumented
-- Test endpoints available
+### 1. **Sentry Setup**
 
-### Email Service 🟡 In Progress
-- Phase 1-2 complete (6/22 tasks)
-- 189 ErrorLogger.log() calls remaining
-
-## Sentry Integration Patterns
-
-### 1. Controller Error Handling
-
-```typescript
-// ✅ CORRECT - Use BaseController
-import { BaseController } from '../controllers/BaseController';
-
-export class MyController extends BaseController {
-    async myMethod() {
-        try {
-            // ... your code
-        } catch (error) {
-            this.handleError(error, 'myMethod'); // Automatically sends to Sentry
-        }
-    }
-}
+```bash
+npm install -g @sentry/cli
+npm install @sentry/node @sentry/tracing
+sentry init -d
 ```
 
-### 2. Route Error Handling (Without BaseController)
+### 2. **Node.js Sentry Integration**
 
-```typescript
-import * as Sentry from '@sentry/node';
+```javascript
+// sentry.js
+const Sentry = require("@sentry/node");
+const Tracing = require("@sentry/tracing");
 
-router.get('/route', async (req, res) => {
-    try {
-        // ... your code
-    } catch (error) {
-        Sentry.captureException(error, {
-            tags: { route: '/route', method: 'GET' },
-            extra: { userId: req.user?.id }
-        });
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
-```
-
-### 3. Workflow Error Handling
-
-```typescript
-import { WorkflowSentryHelper } from '../workflow/utils/sentryHelper';
-
-// ✅ CORRECT - Use WorkflowSentryHelper
-WorkflowSentryHelper.captureWorkflowError(error, {
-    workflowCode: 'DHS_CLOSEOUT',
-    instanceId: 123,
-    stepId: 456,
-    userId: 'user-123',
-    operation: 'stepCompletion',
-    metadata: { additionalInfo: 'value' }
-});
-```
-
-### 4. Cron Jobs (MANDATORY Pattern)
-
-```typescript
-#!/usr/bin/env node
-// FIRST LINE after shebang - CRITICAL!
-import '../instrument';
-import * as Sentry from '@sentry/node';
-
-async function main() {
-    return await Sentry.startSpan({
-        name: 'cron.job-name',
-        op: 'cron',
-        attributes: {
-            'cron.job': 'job-name',
-            'cron.startTime': new Date().toISOString(),
-        }
-    }, async () => {
-        try {
-            // Your cron job logic
-        } catch (error) {
-            Sentry.captureException(error, {
-                tags: {
-                    'cron.job': 'job-name',
-                    'error.type': 'execution_error'
-                }
-            });
-            console.error('[Job] Error:', error);
-            process.exit(1);
-        }
-    });
-}
-
-main()
-    .then(() => {
-        console.log('[Job] Completed successfully');
-        process.exit(0);
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  environment: process.env.NODE_ENV || 'development',
+  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
+  release: process.env.APP_VERSION || '1.0.0',
+  integrations: [
+    new Sentry.Integrations.Http({ tracing: true }),
+    new Tracing.Integrations.Express({
+      app: true,
+      request: true,
+      transaction: true
     })
-    .catch((error) => {
-        console.error('[Job] Fatal error:', error);
-        process.exit(1);
-    });
-```
-
-### 5. Database Performance Monitoring
-
-```typescript
-import { DatabasePerformanceMonitor } from '../utils/databasePerformance';
-
-// ✅ CORRECT - Wrap database operations
-const result = await DatabasePerformanceMonitor.withPerformanceTracking(
-    'findMany',
-    'UserProfile',
-    async () => {
-        return await PrismaService.main.userProfile.findMany({
-            take: 5,
-        });
-    }
-);
-```
-
-### 6. Async Operations with Spans
-
-```typescript
-import * as Sentry from '@sentry/node';
-
-const result = await Sentry.startSpan({
-    name: 'operation.name',
-    op: 'operation.type',
-    attributes: {
-        'custom.attribute': 'value'
-    }
-}, async () => {
-    // Your async operation
-    return await someAsyncOperation();
+  ],
+  ignoreErrors: [
+    'Network request failed',
+    'TimeoutError'
+  ]
 });
+
+module.exports = Sentry;
 ```
 
-## Error Levels
+### 3. **Express Middleware Integration**
 
-Use appropriate severity levels:
+```javascript
+// app.js
+const express = require('express');
+const Sentry = require('./sentry');
 
-- **fatal**: System is unusable (database down, critical service failure)
-- **error**: Operation failed, needs immediate attention
-- **warning**: Recoverable issues, degraded performance
-- **info**: Informational messages, successful operations
-- **debug**: Detailed debugging information (dev only)
+const app = express();
 
-## Required Context
-
-```typescript
-import * as Sentry from '@sentry/node';
-
-Sentry.withScope((scope) => {
-    // ALWAYS include these if available
-    scope.setUser({ id: userId });
-    scope.setTag('service', 'form'); // or 'email', 'users', etc.
-    scope.setTag('environment', process.env.NODE_ENV);
-
-    // Add operation-specific context
-    scope.setContext('operation', {
-        type: 'workflow.start',
-        workflowCode: 'DHS_CLOSEOUT',
-        entityId: 123
-    });
-
-    Sentry.captureException(error);
-});
-```
-
-## Service-Specific Integration
-
-### Form Service
-
-**Location**: `./blog-api/src/instrument.ts`
-
-```typescript
-import * as Sentry from '@sentry/node';
-import { nodeProfilingIntegration } from '@sentry/profiling-node';
-
-Sentry.init({
-    dsn: process.env.SENTRY_DSN,
-    environment: process.env.NODE_ENV || 'development',
-    integrations: [
-        nodeProfilingIntegration(),
-    ],
-    tracesSampleRate: 0.1,
-    profilesSampleRate: 0.1,
-});
-```
-
-**Key Helpers**:
-- `WorkflowSentryHelper` - Workflow-specific errors
-- `DatabasePerformanceMonitor` - DB query tracking
-- `BaseController` - Controller error handling
-
-### Email Service
-
-**Location**: `./notifications/src/instrument.ts`
-
-```typescript
-import * as Sentry from '@sentry/node';
-import { nodeProfilingIntegration } from '@sentry/profiling-node';
-
-Sentry.init({
-    dsn: process.env.SENTRY_DSN,
-    environment: process.env.NODE_ENV || 'development',
-    integrations: [
-        nodeProfilingIntegration(),
-    ],
-    tracesSampleRate: 0.1,
-    profilesSampleRate: 0.1,
-});
-```
-
-**Key Helpers**:
-- `EmailSentryHelper` - Email-specific errors
-- `BaseController` - Controller error handling
-
-## Configuration (config.ini)
-
-```ini
-[sentry]
-dsn = your-sentry-dsn
-environment = development
-tracesSampleRate = 0.1
-profilesSampleRate = 0.1
-
-[databaseMonitoring]
-enableDbTracing = true
-slowQueryThreshold = 100
-logDbQueries = false
-dbErrorCapture = true
-enableN1Detection = true
-```
-
-## Testing Sentry Integration
-
-### Form Service Test Endpoints
-
-```bash
-# Test basic error capture
-curl http://localhost:3002/blog-api/api/sentry/test-error
-
-# Test workflow error
-curl http://localhost:3002/blog-api/api/sentry/test-workflow-error
-
-# Test database performance
-curl http://localhost:3002/blog-api/api/sentry/test-database-performance
-
-# Test error boundary
-curl http://localhost:3002/blog-api/api/sentry/test-error-boundary
-```
-
-### Email Service Test Endpoints
-
-```bash
-# Test basic error capture
-curl http://localhost:3003/notifications/api/sentry/test-error
-
-# Test email-specific error
-curl http://localhost:3003/notifications/api/sentry/test-email-error
-
-# Test performance tracking
-curl http://localhost:3003/notifications/api/sentry/test-performance
-```
-
-## Performance Monitoring
-
-### Requirements
-
-1. **All API endpoints** must have transaction tracking
-2. **Database queries > 100ms** are automatically flagged
-3. **N+1 queries** are detected and reported
-4. **Cron jobs** must track execution time
-
-### Transaction Tracking
-
-```typescript
-import * as Sentry from '@sentry/node';
-
-// Automatic transaction tracking for Express routes
 app.use(Sentry.Handlers.requestHandler());
 app.use(Sentry.Handlers.tracingHandler());
 
-// Manual transaction for custom operations
-const transaction = Sentry.startTransaction({
-    op: 'operation.type',
-    name: 'Operation Name',
+app.get('/api/users/:id', (req, res) => {
+  const transaction = Sentry.startTransaction({
+    name: 'get_user',
+    op: 'http.server'
+  });
+
+  try {
+    const userId = req.params.id;
+
+    Sentry.captureMessage('Fetching user', {
+      level: 'info',
+      tags: { userId: userId }
+    });
+
+    const user = db.query(`SELECT * FROM users WHERE id = ${userId}`);
+
+    if (!user) {
+      Sentry.captureException(new Error('User not found'), {
+        level: 'warning',
+        contexts: { request: { userId } }
+      });
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    transaction.setTag('user.id', user.id);
+    res.json(user);
+  } catch (error) {
+    Sentry.captureException(error, {
+      level: 'error',
+      tags: { endpoint: 'get_user', userId: req.params.id }
+    });
+    res.status(500).json({ error: 'Internal server error' });
+  } finally {
+    transaction.finish();
+  }
 });
 
-try {
-    // Your operation
-} finally {
-    transaction.finish();
-}
+app.use(Sentry.Handlers.errorHandler());
+
+app.listen(3000);
 ```
 
-## Common Mistakes to Avoid
+### 4. **Python Sentry Integration**
 
-❌ **NEVER** use console.error without Sentry
-❌ **NEVER** swallow errors silently
-❌ **NEVER** expose sensitive data in error context
-❌ **NEVER** use generic error messages without context
-❌ **NEVER** skip error handling in async operations
-❌ **NEVER** forget to import instrument.ts as first line in cron jobs
+```python
+# sentry_config.py
+import sentry_sdk
+from sentry_sdk.integrations.flask import FlaskIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
+import logging
+import os
 
-## Implementation Checklist
+sentry_logging = LoggingIntegration(
+    level=logging.INFO,
+    event_level=logging.ERROR
+)
 
-When adding Sentry to new code:
+sentry_sdk.init(
+    dsn=os.environ.get('SENTRY_DSN'),
+    integrations=[FlaskIntegration(), sentry_logging],
+    environment=os.environ.get('ENVIRONMENT', 'development'),
+    release=os.environ.get('APP_VERSION', '1.0.0'),
+    traces_sample_rate=0.1 if os.environ.get('ENVIRONMENT') == 'production' else 1.0,
+    attach_stacktrace=True
+)
 
-- [ ] Imported Sentry or appropriate helper
-- [ ] All try/catch blocks capture to Sentry
-- [ ] Added meaningful context to errors
-- [ ] Used appropriate error level
-- [ ] No sensitive data in error messages
-- [ ] Added performance tracking for slow operations
-- [ ] Tested error handling paths
-- [ ] For cron jobs: instrument.ts imported first
+# Flask integration
+from flask import Flask
+import sentry_sdk
 
-## Key Files
+app = Flask(__name__)
 
-### Form Service
-- `/blog-api/src/instrument.ts` - Sentry initialization
-- `/blog-api/src/workflow/utils/sentryHelper.ts` - Workflow errors
-- `/blog-api/src/utils/databasePerformance.ts` - DB monitoring
-- `/blog-api/src/controllers/BaseController.ts` - Controller base
+@app.route('/api/orders/<order_id>')
+def get_order(order_id):
+    try:
+        sentry_sdk.set_user({'id': request.user.id})
+        sentry_sdk.capture_message(f'Fetching order {order_id}', level='info')
 
-### Email Service
-- `/notifications/src/instrument.ts` - Sentry initialization
-- `/notifications/src/utils/EmailSentryHelper.ts` - Email errors
-- `/notifications/src/controllers/BaseController.ts` - Controller base
+        order = db.query(f'SELECT * FROM orders WHERE id = {order_id}')
 
-### Configuration
-- `/blog-api/config.ini` - Form service config
-- `/notifications/config.ini` - Email service config
-- `/sentry.ini` - Shared Sentry config
+        if not order:
+            sentry_sdk.capture_exception(ValueError('Order not found'))
+            return {'error': 'Order not found'}, 404
 
-## Documentation
+        return {'order': order}
 
-- Full implementation: `/dev/active/email-sentry-integration/`
-- Form service docs: `/blog-api/docs/sentry-integration.md`
-- Email service docs: `/notifications/docs/sentry-integration.md`
+    except Exception as e:
+        sentry_sdk.capture_exception(e, {
+            'tags': { 'endpoint': 'get_order', 'order_id': order_id }
+        })
+        return {'error': 'Internal server error'}, 500
+```
 
-## Related Skills
+### 5. **Source Maps and Release Management**
 
-- Use **database-verification** before database operations
-- Use **workflow-builder** for workflow error context
-- Use **database-scripts** for database error handling
+```javascript
+// webpack.config.js
+const SentryCliPlugin = require('@sentry/webpack-plugin');
+
+module.exports = {
+  plugins: [
+    new SentryCliPlugin({
+      include: './dist',
+      urlPrefix: 'https://example.com/',
+      release: process.env.APP_VERSION || '1.0.0',
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      authToken: process.env.SENTRY_AUTH_TOKEN
+    })
+  ]
+};
+```
+
+### 6. **CI/CD Release Creation**
+
+```bash
+#!/bin/bash
+VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g')
+
+# Create release
+sentry-cli releases -o my-org -p my-project create $VERSION
+
+# Upload source maps
+sentry-cli releases -o my-org -p my-project files $VERSION upload-sourcemaps ./dist
+
+# Finalize release
+sentry-cli releases -o my-org -p my-project finalize $VERSION
+
+# Deploy
+sentry-cli releases -o my-org -p my-project deploys $VERSION new -e production
+```
+
+### 7. **Custom Error Context**
+
+```javascript
+// custom-error-context.js
+const Sentry = require('@sentry/node');
+
+Sentry.configureScope(scope => {
+  scope.setUser({
+    id: userId,
+    email: userEmail,
+    subscription: 'pro'
+  });
+
+  scope.setTag('feature_flag', 'new-ui');
+  scope.setTag('database', 'postgres-v12');
+
+  scope.setContext('character', {
+    name: 'Mighty Fighter',
+    level: 19
+  });
+
+  scope.addBreadcrumb({
+    category: 'ui.click',
+    message: 'User clicked signup button',
+    level: 'info'
+  });
+
+  scope.addBreadcrumb({
+    category: 'database',
+    message: 'Query executed',
+    level: 'debug',
+    data: {
+      query: 'SELECT * FROM users',
+      duration: 125
+    }
+  });
+});
+
+// Before sending
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  beforeSend(event, hint) {
+    if (event.request) {
+      delete event.request.cookies;
+      delete event.request.headers['authorization'];
+    }
+    return event;
+  }
+});
+```
+
+### 8. **Performance Monitoring**
+
+```javascript
+// performance.js
+const Sentry = require('@sentry/node');
+
+const transaction = Sentry.startTransaction({
+  name: 'process_order',
+  op: 'task',
+  data: { orderId: '12345' }
+});
+
+const dbSpan = transaction.startChild({
+  op: 'db',
+  description: 'Save order to database'
+});
+saveOrderToDb(order);
+dbSpan.finish();
+
+const paymentSpan = transaction.startChild({
+  op: 'http.client',
+  description: 'Process payment'
+});
+processPayment(order);
+paymentSpan.finish();
+
+transaction.setStatus('ok');
+transaction.finish();
+```
+
+## Best Practices
+
+### ✅ DO
+- Set up source maps for production
+- Configure appropriate sample rates
+- Track releases and deployments
+- Filter sensitive information
+- Add meaningful context to errors
+- Use breadcrumbs for debugging
+- Set user information
+- Review error patterns regularly
+
+### ❌ DON'T
+- Send 100% of errors in production
+- Include passwords in context
+- Ignore configuration for environment
+- Skip source map uploads
+- Log personally identifiable information
+- Use without proper filtering
+- Disable tracking in production
+
+## Key Commands
+
+```bash
+sentry-cli releases create $VERSION
+sentry-cli releases files upload-sourcemaps $VERSION ./dist
+sentry-cli releases deploys $VERSION new -e production
+sentry-cli releases finalize $VERSION
+sentry-cli releases info $VERSION
+```

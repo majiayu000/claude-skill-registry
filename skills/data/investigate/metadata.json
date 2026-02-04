@@ -1,7 +1,7 @@
 {
   "name": "investigate",
-  "repo": "TokenRollAI/cc-plugin",
-  "path": "skills/investigate/SKILL.md",
-  "source": "github.com/TokenRollAI/cc-plugin",
-  "downloaded_at": "2026-02-02T05:02:15.901016Z"
+  "repo": "google/mcp-security",
+  "path": "extensions/google-secops/skills/investigate/SKILL.md",
+  "source": "github.com/google/mcp-security",
+  "downloaded_at": "2026-02-04T02:50:43.812703Z"
 }

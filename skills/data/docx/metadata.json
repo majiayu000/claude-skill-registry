@@ -1,7 +1,7 @@
 {
   "name": "docx",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/content-creator-workflow/.claude/skills/docx/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:21.778292Z"
+  "repo": "shajith003/awesome-claude-skills",
+  "path": "document-skills/docx/SKILL.md",
+  "source": "github.com/shajith003/awesome-claude-skills",
+  "downloaded_at": "2026-02-04T05:21:36.990570Z"
 }

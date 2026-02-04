@@ -1,180 +1,91 @@
 ---
 name: product-planning
-description: Use when transforming meeting transcripts into roadmap PRDs - synthesizes signals, clusters themes, validates PRDs, and generates PRD proposals with evidence
+description: |
+  Product Owner / Business Analyst toolkit for product planning tasks.
+  Use when the user wants to:
+  - Write or refine user stories, epics, or acceptance criteria
+  - Create or review PRDs (Product Requirement Documents)
+  - Prioritize backlog items (RICE scoring, MoSCoW, etc.)
+  - Plan sprints or releases
+  - Create or update product roadmaps
+  - Conduct competitive analysis or user research
+  - Write release notes or stakeholder updates
+
+  MANDATORY TRIGGERS: user story, epic, PRD, backlog, sprint planning, roadmap, acceptance criteria, product requirements, prioritize, story points, PO, BA, product owner, business analyst
 ---
 
-# Product Planning
+# Product Planning Skill
 
-## Purpose
+Help with Product Owner and Business Analyst tasks using the product planning artifacts in this project.
 
-Transform meeting signals into actionable PRDs:
-- Synthesize product signals from meeting transcripts
-- Cluster semantically into PRD themes
-- Validate PRD quality (6-point rubric)
-- Generate PRD proposals and update roadmap
+## Context Files
 
-## When to Use
+Before responding to product planning requests, read the relevant context files in `product-planning/`:
 
-Activate when:
-- User invokes `/project:meetings-to-backlog`
-- Automated processing via scheduled runs
-- Regular PRD intake cycles
+| File | When to Read |
+|------|--------------|
+| `PRODUCT_VISION.md` | Always read first - provides product context |
+| `personas/PERSONAS.md` | When writing user stories or considering user needs |
+| `backlog/BACKLOG.md` | When prioritizing, planning sprints, or checking existing work |
+| `roadmap/ROADMAP.md` | When discussing timelines or release planning |
 
-## Workflow Steps
+## Templates
 
-### 1. Determine Time Window
+Use templates from `product-planning/templates/` when creating new artifacts:
 
-**Invoke:** (internal logic, not separate skill)
+- `USER_STORY_TEMPLATE.md` - For new user stories
+- `EPIC_TEMPLATE.md` - For new epics
+- `PRD_TEMPLATE.md` - For product requirement documents
+- `SPRINT_PLANNING_TEMPLATE.md` - For sprint planning
 
-**Inputs:**
-- `days`: Explicit lookback (e.g., 7, 14, 30)
-- `last_run`: From `datasets/product/.meetings-to-backlog-state.json`
-- Default: 3 days
+## Common Tasks
 
-**Calculate cutoff_date:**
-```
-If days provided: cutoff_date = current_date - days
-Else if last_run exists: cutoff_date = last_run timestamp
-Else: cutoff_date = current_date - 3 days
-```
+### Writing User Stories
 
-### 2. Synthesize Meeting Signals
+1. Read `PRODUCT_VISION.md` and `personas/PERSONAS.md`
+2. Use the user story format: "As a [persona], I want [goal], so that [benefit]"
+3. Include 3-5 acceptance criteria in Given/When/Then format
+4. Reference which persona benefits most
+5. Suggest story points (1, 2, 3, 5, 8, 13)
 
-**Invoke:** `meeting-synthesis` skill
+### Prioritizing Backlog
 
-**Inputs:**
-- Time window (cutoff_date)
-- include_customers (optional filter)
-- include_internal_functions (optional filter)
-- min_mentions, min_sources (thresholds)
-- exclude_types (default: "bugs,housekeeping")
+1. Read `backlog/BACKLOG.md` to see current items
+2. Apply RICE scoring:
+   - **R**each: How many users impacted?
+   - **I**mpact: How much value? (3=massive, 2=high, 1=medium, 0.5=low)
+   - **C**onfidence: How certain? (100%, 80%, 50%)
+   - **E**ffort: Person-weeks of work
+3. Score = (Reach × Impact × Confidence) / Effort
+4. Provide reasoning for priority order
 
-**Outputs:**
-- Clustered signals (themes with evidence)
-- Signal metrics (mentions, accounts, recency, diversity)
-- Verbatim quotes for PRD proposals
+### Sprint Planning
 
-### 3. Filter to PRD-Level Candidates
+1. Review backlog and identify ready items
+2. Consider team capacity (story points)
+3. Identify dependencies between items
+4. Create a cohesive sprint goal
+5. Balance feature work with tech debt
 
-**Apply PRD scope rubric** (see `prd-validation` skill):
+### Creating PRDs
 
-**Keep candidates that:**
-- Are outcome-oriented (clear customer problem and desired outcome)
-- Are quarterly-scoped (roughly one quarter of work)
-- Have clear boundaries (in/out scope)
-- Are measurable (success criteria definable)
-- Are evidence-backed (customer signals)
+1. Read product vision for alignment
+2. Use `PRD_TEMPLATE.md` structure
+3. Include measurable success metrics
+4. Document edge cases and error handling
+5. List dependencies and risks
 
-**Drop candidates that:**
-- Are too small (single ticket level)
-- Are too large (initiative spanning multiple quarters)
-- Lack evidence (no customer mentions)
+## Best Practices
 
-### 4. Draft PRD Proposals
+- Always reference personas by name (e.g., "Casual Carl", "Serious Sarah")
+- Use INVEST criteria for stories: Independent, Negotiable, Valuable, Estimable, Small, Testable
+- Keep acceptance criteria specific and testable
+- Consider offline/PWA requirements for this app
+- Reference accessibility requirements
 
-**Use template:** `datasets/product/templates/prd-template.md`
+## Updating Artifacts
 
-**For each qualified cluster:**
-
-Fill in what's known from signals:
-- Project name from cluster theme
-- Description from signal summary
-- Background from meeting context
-- Objectives from customer quotes
-- Use cases from feature requests
-- Initial requirements from signals
-
-**Mark unknown sections as TBD** - don't fabricate information.
-
-**Set initial status:** 🚧 Drafting
-
-### 5. Validate Each PRD
-
-**Invoke:** `prd-validation` skill
-
-**For each PRD proposal:**
-- Apply 6-point rubric
-- Drafting PRDs may have warnings (missing DACE, timeline, etc.)
-- Note required additions for Actionable status
-- If fundamentally incomplete: flag for interactive completion
-
-### 6. Deduplicate Against Existing Backlog
-
-**Check datasets/product/backlog.md:**
-- Fuzzy match PRD titles
-- If similar PRD exists:
-  - Option A: Merge (update existing with new evidence)
-  - Option B: Supersede (mark old PRD "superseded by" new)
-
-### 7. Output PRD Proposals
-
-**Write to datasets/product/backlog.md (prepend):**
-```markdown
-# PRD Intake — YYYY-MM-DD
-
-## PRD 1: {Title}
-**Status:** 🚧 Drafting
-{PRD proposal summary}
-
----
-
-## PRD 2: {Title}
-**Status:** 🚧 Drafting
-{PRD proposal summary}
-
----
-
-{Previous backlog content...}
-```
-
-**Write individual PRD files:**
-`datasets/product/prds/{YYYY}/PRD_{slug}.md`
-
-Slug generation: lowercase, hyphens, remove special chars
-
-### 8. Update State Tracking
-
-**Write to datasets/product/.meetings-to-backlog-state.json:**
-```json
-{
-  "last_run": "2025-10-21T14:30:00Z",
-  "version": "1.0"
-}
-```
-
-## Success Criteria
-
-Product planning complete when:
-- All meetings in time window synthesized
-- Signals clustered into PRD themes
-- PRD validation applied (flags issues, doesn't fabricate)
-- PRD proposals written to backlog.md
-- Individual PRD files created in prds/{YYYY}/
-- State file updated with current timestamp
-
-## PRD Statuses
-
-| Status | Meaning |
-|--------|---------|
-| 🚧 Drafting | Initial creation, known to be incomplete |
-| 🏃 Actionable | Eng has agreed there's enough to start work |
-| 🔒 Closed | Represents what was finally delivered |
-| ❗ Abandoned | Project cancelled or superseded |
-
-## No Fabrication Policy
-
-When creating PRDs from meeting signals:
-- Only include information that's evidenced in meetings
-- Mark unknown sections as TBD
-- Don't invent timelines, metrics, or team assignments
-- Flag PRDs that need interactive completion
-
-## Related Skills
-
-**Invoked:**
-- `meeting-synthesis`: Extract signals from transcripts
-- `prd-validation`: Validate PRD quality
-
-**Related:**
-- `roadmap-updating`: Uses PRD proposals for roadmap
-- `prd-creation`: Standalone PRD creation with interactive session
+When creating new stories, epics, or other artifacts:
+1. Add them to the appropriate file in `product-planning/`
+2. Update `backlog/BACKLOG.md` with new items
+3. Maintain consistent ID numbering (US-XXX, E-XXX)

@@ -11,6 +11,12 @@ last_optimized: 2025-12-02
 dependencies: []
 quick_reference_card: true
 tags: [metrics, dora, quality-gates, dashboards, kpis, measurement]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/quality-metrics.yaml
+
 ---
 
 # Quality Metrics

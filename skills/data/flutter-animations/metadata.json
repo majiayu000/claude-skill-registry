@@ -1,9 +1,7 @@
 {
   "name": "flutter-animations",
-  "description": "Master Flutter animations including implicit, explicit, hero, and physics-based animations. Create smooth, performant UI transitions and custom animated widgets.",
-  "repo": "spjoshis/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "MADTeacher/mad-agents-skills",
+  "path": "flutter-animations/SKILL.md",
+  "source": "github.com/MADTeacher/mad-agents-skills",
+  "downloaded_at": "2026-02-04T03:07:57.644632Z"
 }

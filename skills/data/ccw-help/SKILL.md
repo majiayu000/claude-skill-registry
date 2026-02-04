@@ -11,8 +11,8 @@ CCW 命令帮助系统，提供命令搜索、推荐、文档查看功能。
 
 ## Trigger Conditions
 
-- 关键词: "ccw-help", "ccw-issue", "帮助", "命令", "怎么用", "ccw 怎么用", "工作流"
-- 场景: 询问命令用法、搜索命令、请求下一步建议、询问任务应该用哪个工作流
+- 关键词: "ccw-help", "ccw-issue", "帮助", "命令", "怎么用"
+- 场景: 询问命令用法、搜索命令、请求下一步建议
 
 ## Operation Modes
 
@@ -50,35 +50,7 @@ CCW 命令帮助系统，提供命令搜索、推荐、文档查看功能。
 1. Query `essential_commands` array
 2. Guide appropriate workflow entry point
 
-### Mode 5: CCW Command Orchestration
-
-**Triggers**: "ccw ", "自动工作流", "自动选择工作流", "帮我规划"
-
-**Process**:
-1. Analyze user intent (task type, complexity, clarity)
-2. Auto-select workflow level (1-4 or Issue)
-3. Build command chain based on workflow
-4. Get user confirmation
-5. Execute chain with TODO tracking
-
-**Supported Workflows**:
-- **Level 1** (Lite-Lite-Lite): Ultra-simple quick tasks
-- **Level 2** (Rapid/Hotfix): Bug fixes, simple features, documentation
-- **Level 2.5** (Rapid-to-Issue): Bridge from quick planning to issue workflow
-- **Level 3** (Coupled): Complex features with planning, execution, review, tests
-- **Level 3 Variants**:
-  - TDD workflows (test-first development)
-  - Test-fix workflows (debug failing tests)
-  - Review workflows (code review and fixes)
-  - UI design workflows
-- **Level 4** (Full): Exploratory tasks with brainstorming
-- **With-File Workflows**: Documented exploration with multi-CLI collaboration
-  - `brainstorm-with-file`: Multi-perspective ideation
-  - `debug-with-file`: Hypothesis-driven debugging
-  - `analyze-with-file`: Collaborative analysis
-- **Issue Workflow**: Batch issue discovery, planning, queueing, execution
-
-### Mode 6: Issue Reporting
+### Mode 5: Issue Reporting
 
 **Triggers**: "ccw-issue", "报告 bug"
 
@@ -112,60 +84,28 @@ Single source of truth: **[command.json](command.json)**
 ## Slash Commands
 
 ```bash
-/ccw "task description"          # Auto-select workflow and execute
-/ccw-help                        # General help entry
-/ccw-help search <keyword>       # Search commands
-/ccw-help next <command>         # Get next step suggestions
-/ccw-issue                       # Issue reporting
-```
-
-### CCW Command Examples
-
-```bash
-/ccw "Add user authentication"          # → auto-select level 2-3
-/ccw "Fix memory leak in WebSocket"     # → auto-select bugfix workflow
-/ccw "Implement with TDD"               # → detect TDD, use tdd-plan → execute → tdd-verify
-/ccw "头脑风暴: 用户通知系统"          # → detect brainstorm, use brainstorm-with-file
-/ccw "深度调试: 系统随机崩溃"          # → detect debug-file, use debug-with-file
-/ccw "协作分析: 认证架构设计"          # → detect analyze-file, use analyze-with-file
+/ccw-help                    # 通用帮助入口
+/ccw-help search <keyword>   # 搜索命令
+/ccw-help next <command>     # 获取下一步建议
+/ccw-issue                   # 问题报告
 ```
 
 ## Maintenance
 
-### Update Mechanism
-
-CCW-Help skill supports manual updates through user confirmation dialog.
-
-#### How to Update
-
-**Option 1: When executing the skill, user will be prompted:**
-
-```
-Would you like to update CCW-Help command index?
-- Yes: Run auto-update and regenerate command.json
-- No: Use current index
-```
-
-**Option 2: Manual update**
+### Update Index
 
 ```bash
 cd D:/Claude_dms3/.claude/skills/ccw-help
-python scripts/auto-update.py
+python scripts/analyze_commands.py
 ```
 
-This runs `analyze_commands.py` to scan commands/ and agents/ directories and regenerate `command.json`.
-
-#### Update Scripts
-
-- **`auto-update.py`**: Simple wrapper that runs analyze_commands.py
-- **`analyze_commands.py`**: Scans directories and generates command index
+脚本功能：扫描 commands/ 和 agents/ 目录，生成统一的 command.json
 
 ## Statistics
 
-- **Commands**: 50+
+- **Commands**: 88+
 - **Agents**: 16
-- **Workflows**: 6 main levels + 3 with-file variants
-- **Essential**: 10 core commands
+- **Essential**: 10 核心命令
 
 ## Core Principle
 

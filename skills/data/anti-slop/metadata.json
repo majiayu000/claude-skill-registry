@@ -1,12 +1,7 @@
 {
   "name": "anti-slop",
-  "description": "Comprehensive toolkit for detecting and eliminating \"AI slop\" - generic, low-quality AI-generated patterns in natural language, code, and design. Use when reviewing or improving content quality, preve",
-  "repo": "rand/cc-polymath",
-  "category": "development",
-  "tags": [
-    "anti",
-    "slop"
-  ],
-  "stars": 33,
-  "source": "SkillsMP Synced Skills"
+  "repo": "emraher/eerskills",
+  "path": "r/anti-slop/SKILL.md",
+  "source": "github.com/emraher/eerskills",
+  "downloaded_at": "2026-02-04T02:58:25.679925Z"
 }

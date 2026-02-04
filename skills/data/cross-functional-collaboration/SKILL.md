@@ -1,111 +1,73 @@
 ---
-name: "cross-functional-collaboration"
-description: "Lead cross-functional collaboration by producing a Cross-Functional Collaboration Pack (mission charter, stakeholder/incentives map, roles & expectations contract, operating cadence, decision log, conflict + credit norms). Use for cross-functional collaboration, working with engineering, working with design, reducing execution friction."
+name: cross-functional-collaboration
+description: Help users work effectively across functions. Use when someone is navigating PM-engineering relationships, resolving cross-team conflicts, building product trios, or improving handoffs between design, engineering, and product.
 ---
 
 # Cross-functional Collaboration
 
-## Scope
+Help the user work effectively across functions using frameworks from 57 product leaders who have built high-performing cross-functional teams at companies from Linear to Airbnb.
 
-**Covers**
-- Leading a cross-functional initiative (Product/Engineering/Design/Data/Marketing/Ops/etc.)
-- Turning “we’re misaligned” into explicit **goals, roles, decisions, and operating cadence**
-- Reducing rework and conflict via **shared artifacts** (docs/prototypes) and clear decision rights
-- Building trust through **conflict norms** and **credit/recognition** practices
+## How to Help
 
-**When to use**
-- “We keep thrashing between PM/Eng/Design—set up a better way of working.”
-- “Create a collaboration charter: roles, responsibilities, decision-making, and cadence.”
-- “We need to work better with Engineering/Design/Data on <initiative>.”
-- “Our cross-functional project is slow due to unclear ownership and decisions.”
+When the user asks for help with cross-functional collaboration:
 
-**When NOT to use**
-- You need to define the underlying product problem first (use `problem-definition`).
-- You need a full decision process for a single high-stakes decision (use `running-decision-processes`).
-- The issue is primarily a performance or accountability problem with an individual (use `having-difficult-conversations`).
-- You only need a timeline/milestone plan (use `managing-timelines`).
+1. **Diagnose the friction** - Identify whether the issue is role clarity, communication patterns, or structural
+2. **Clarify expectations** - Help define what each function expects from the others
+3. **Design the right structure** - Recommend team composition and meeting rhythms
+4. **Build relationships** - Emphasize the human elements that make collaboration work
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Initiative summary: what it is, why now, desired outcomes, and timeframe
-- Functions/teams involved + key stakeholders (including any required subject matter experts)
-- Current symptoms: where collaboration is breaking down (examples help)
-- Constraints: deadlines, non-negotiables, policies/compliance, customer commitments
+### Share credit generously
+Camille Fournier: "Engineers sometimes think that they don't get the credit for their work because the PM takes all the glory. So making every effort to be credit sharing and inclusive of the engineering team." Let engineers present their own work to executives and customers.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers aren’t available, proceed with explicit assumptions and label unknowns.
+### Use 'Yes, and' thinking
+Adam Grenier: "If you approach it with that 'Yes, and,' it's often still true. Both of these things can be true at once. You could have a different goal than I have." Validate different team goals simultaneously rather than creating false dichotomies.
 
-## Outputs (deliverables)
+### Write expectations for each other
+Nikita Miller: "Have PM, Design, Engineering, and Data leaders write down expectations for their counterparts. Create a 'contract' between roles to clarify shared responsibilities." Revisit these definitions every 3-6 months.
 
-Produce a **Cross-Functional Collaboration Pack** (Markdown in-chat, or files if requested) in this order:
-1) **Mission Charter** (goals, success metrics, scope, constraints, timeline)
-2) **Stakeholder & Incentives Map** (owners, approvers, incentives/risks, comms needs)
-3) **Roles & Expectations Contract** (responsibilities, expectations matrix, decision rights, escalation triggers)
-4) **Operating Cadence & Communication Plan** (meetings, async updates, doc hub, comms to stakeholders)
-5) **Decision Log (initial) + Decision Protocol** (what decisions are needed, who decides, how captured)
-6) **Collaboration Norms** (conflict protocol + credit/recognition plan)
-7) **Risks / Open questions / Next steps** (always included)
+### Include engineers in discovery
+Christine Itwaru: "Early on, we started bringing in engineers to customer meetings more and more. When we started doing it, the response from the engineering team was great." Direct customer exposure builds technical empathy.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Don't play telephone
+Camille Fournier: "If you put yourself in this in-between position and you're playing telephone between stakeholders and engineers, that is very annoying and it's a waste of time for everyone." Connect stakeholders directly to engineers when technical depth is needed.
 
-## Workflow (7 steps)
+### Work directly with engineers daily
+Marty Cagan: "If you're not working every day with a set of engineers on solving problems, you are not a product manager." Remove intermediaries like 'product owners' who act as mediators.
 
-### 1) Define the mission (and the collaboration mode)
-- **Inputs:** Initiative summary; timeline; constraints.
-- **Actions:** Clarify the mission, success metrics, and what “done” means. Name the collaboration mode (project/sprint vs ongoing interface) and the stakes (why this matters now).
-- **Outputs:** Mission Charter (draft).
-- **Checks:** A cross-functional partner can restate the mission, success metric(s), and constraints without you in the room.
+### Build real relationships
+Ebi Atawodi: "Do you know your engineering manager's birthday? Do you know their work anniversary? Do you know why they're doing the job they're doing?" Strong partnerships are built on personal human connection.
 
-### 2) Map the full cross-functional system (people + incentives)
-- **Inputs:** Org context; teams/functions; known stakeholders.
-- **Actions:** Identify owners, approvers, contributors, and informed stakeholders. Capture incentives, concerns, and “hidden constraints.” Ensure required subject matter experts are included.
-- **Outputs:** Stakeholder & Incentives Map + “missing seats” list.
-- **Checks:** No surprise approvers; every team that must execute or sign off is represented.
+### Code is the common language
+Amjad Masad: "The common language that everyone shares is code. What if the language becomes actually working prototypes and working applications?" Use functional prototypes rather than static mocks to reduce handoff friction.
 
-### 3) Make expectations explicit (write the contract)
-- **Inputs:** Stakeholder map; friction examples.
-- **Actions:** Run an expectations exercise (each function writes expectations of the others). Convert to a clear responsibilities map, decision rights, escalation triggers, and review cadence.
-- **Outputs:** Roles & Expectations Contract (v1).
-- **Checks:** Each function can answer: “What do I own? What do I expect of others? What decisions can I make?”
+### Embrace the 'product trio'
+Teresa Torres: "The trio is the product manager, the designer, and the software engineer. If you've never worked in a well-functioning trio, this breaks people's brains." Resolve disagreements by seeking more data or better options, not by pulling rank.
 
-### 4) Establish a shared language via artifacts (prototype-first when helpful)
-- **Inputs:** Initiative stage; ambiguity areas; tooling constraints.
-- **Actions:** Choose the minimum set of shared artifacts (e.g., charter, spec/PRD, prototype, metrics definitions). Add an early “prototype or working slice” milestone when it reduces ambiguity.
-- **Outputs:** Artifact plan + first prototype milestone (or “working slice” plan).
-- **Checks:** At least one artifact concretely reduces ambiguity (fewer interpretation disputes).
+## Questions to Help Users
 
-### 5) Design the operating cadence (meetings, async, and decision logging)
-- **Inputs:** Timeline; time zones; team size; existing rituals.
-- **Actions:** Define the cadence, update format, doc hub, and channels. Install a decision log and a lightweight decision protocol (who decides, how disagreements resolve, where decisions live).
-- **Outputs:** Operating Cadence & Communication Plan + Decision Log (seeded with first decisions).
-- **Checks:** Cadence is sustainable and oriented to **outcomes, decisions, and risks** (not “status theater”).
+- "What does each function expect from the others - have you written it down?"
+- "Are engineers involved in customer discovery or just receiving specs?"
+- "When there's a conflict, who is the tiebreaker and how quickly do they act?"
+- "Do you know the personal career goals of your engineering and design partners?"
+- "Are you acting as a translator or connecting stakeholders directly to engineers?"
 
-### 6) Set norms for conflict and credit (trust mechanics)
-- **Inputs:** Known tensions; cultural context; prior failure modes.
-- **Actions:** Define a conflict protocol (including a “Yes, and” approach to reconcile valid competing goals). Define credit/recognition practices (who presents, how you share credit, how you recognize partner work).
-- **Outputs:** Collaboration Norms (Conflict Protocol + Credit/Recognition Plan).
-- **Checks:** Norms are specific enough to follow in a real disagreement and in exec/customer updates.
+## Common Mistakes to Flag
 
-### 7) Quality gate + launch (and monitoring plan)
-- **Inputs:** Draft pack.
-- **Actions:** Run the checklist and rubric. Finalize the pack. Propose the first 1–2 “health checks” to update roles/cadence based on reality.
-- **Outputs:** Final Pack + rubric score + Risks/Open questions/Next steps.
-- **Checks:** If rubric score is low, do one more intake round (max 5 questions) and revise.
+- **Credit hoarding** - PMs taking glory for work engineers built
+- **Playing telephone** - Acting as an unnecessary intermediary between stakeholders and engineers
+- **Excluding engineers from ideation** - Treating them as resources rather than creative partners
+- **Unclear role boundaries** - Not defining who owns what leads to everything falling on the PM
+- **Ignoring the human element** - Strong collaboration requires knowing your partners as people
 
-## Quality gate (required)
-- Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md) before finalizing.
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Deep Dive
 
-## Examples
+For all 72 insights from 57 guests, see `references/guest-insights.md`
 
-**Example 1:** “I’m leading a cross-functional onboarding revamp across Product/Eng/Design/Data. Create a Collaboration Pack with roles, cadence, and a decision log.”  
-Expected: mission charter, stakeholder map, expectations contract, operating cadence, decision protocol/log, conflict + credit norms.
+## Related Skills
 
-**Example 2:** “I’m an Engineering Manager partnering with PM+Design on a platform migration. Our decisions are slow and we keep re-litigating scope—create a Collaboration Pack.”  
-Expected: decision rights/escalation triggers, seeded decision log, prototype/working-slice plan, and a lightweight cadence.
-
-**Boundary example:** “Help me convince another team to do what I want.”  
-Response: this skill aligns on shared goals/constraints and decision rights; if you need a one-way persuasion narrative or exec escalation, clarify the decision and use `running-decision-processes` or `managing-up`.
-
+- Running Effective 1:1s
+- Having Difficult Conversations
+- Delegating Work
+- Managing Up

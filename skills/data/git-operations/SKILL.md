@@ -1,261 +1,184 @@
 ---
 name: git-operations
-description: Git command procedures for branch management, commits, and worktrees.
+description: Use when pushing, pulling, or merging changes. Handles retries, conflicts, and error recovery.
 ---
 
-# Git Operations Skill
+# SKILL: Git Operations
 
-Git command procedures for branch management, commits, and worktrees.
-
-## When Used
-
-| Agent     | Phase       |
-| --------- | ----------- |
-| git-agent | All actions |
-
-## CLI Tools
-
-All operations use native git and GitHub CLI (`gh`):
-
-```bash
-# Verify gh CLI is authenticated
-gh auth status
-
-# If not authenticated, run:
-gh auth login
-```
-
-**Note:** The github MCP server has been replaced with `gh` CLI commands. See pr-operations skill for PR-related commands.
-
-## Procedures
-
-### 1. Status
-
-Show current git state:
-
-```bash
-git status
-git log --oneline -5
-git branch -vv
-```
-
-**Output:** Current branch, uncommitted changes, recent commits.
+> **Purpose**: Safe push/pull/merge operations with retry logic and error handling
+> **Target**: All git operations
 
 ---
 
-### 2. Branch Create
+## Quick Start
 
-Create and switch to a new branch:
+### When to Use This Skill
+- Pushing changes to remote
+- Pulling latest changes
+- Merging branches
+- Resolving merge conflicts
 
+### Quick Reference
 ```bash
-git checkout -b <type>/<name>
-```
+# Push with retry (3 attempts, 2s delay)
+git_push_with_retry() {
+  local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"
+  for attempt in {1..3}; do
+    git push origin "$branch" 2>&1 && return 0
+    echo "Retry $attempt/3..." && sleep 2
+  done
+  return 1
+}
 
-**Branch Types:**
-
-| Prefix      | Use For           | Example                  |
-| ----------- | ----------------- | ------------------------ |
-| `feature/`  | New features      | `feature/prompt-manager` |
-| `fix/`      | Bug fixes         | `fix/auth-timeout`       |
-| `refactor/` | Code improvements | `refactor/api-cleanup`   |
-| `docs/`     | Documentation     | `docs/api-reference`     |
-
-**Validation:**
-
-- Never create branch from dirty working directory
-- Always branch from up-to-date main
-
-```bash
-git fetch origin
-git checkout main
-git pull origin main
-git checkout -b <type>/<name>
+# Pull with fast-forward only
+git pull --ff-only || echo "Manual merge required"
 ```
 
 ---
 
-### 3. Branch Switch
+## Core Operations
 
-Switch to an existing branch:
+### Push with Retry
+
+**Purpose**: Handle transient network failures with exponential backoff (3 attempts, 2s/4s/8s delay)
 
 ```bash
-git checkout <branch>
+git_push_with_retry() {
+  local remote="${1:-origin}"
+  local branch="${2:-$(git rev-parse --abbrev-ref HEAD)}"
+  local max_attempts=3
+  local wait_times=(2 4 8)  # Exponential backoff
+
+  echo "🔄 Pushing to $remote/$branch..."
+
+  for attempt in $(seq 1 $max_attempts); do
+    # Attempt push
+    if git push "$remote" "$branch" 2>&1; then
+      echo "✓ Push successful"
+      return 0
+    fi
+
+    local exit_code=$?
+    local error_output="$(git push "$remote" "$branch" 2>&1 || true)"
+
+    # Classify error
+    if echo "$error_output" | grep -qiE "non-fast-forward|rejected|protected"; then
+      echo "❌ Push rejected (non-fast-forward or protected branch)"
+      echo "   Run: git pull --rebase && git push"
+      return 1
+    elif echo "$error_output" | grep -qiE "authentication|permission|credentials"; then
+      echo "❌ Authentication error"
+      echo "   Check git credentials: git config --list | grep credential"
+      return 1
+    fi
+
+    # Retry for network/transient errors
+    if [ $attempt -lt $max_attempts ]; then
+      local wait_time=${wait_times[$((attempt-1))]}
+      echo "⚠️  Push failed (attempt $attempt/$max_attempts), retrying in ${wait_time}s..."
+      sleep "$wait_time"
+    else
+      echo "❌ Push failed after $max_attempts attempts"
+      return 1
+    fi
+  done
+
+  return 1
+}
 ```
 
-**With uncommitted changes:**
+**Error Classification**:
+- **Non-retryable** (return 1): non-fast-forward, rejected, protected branch, authentication
+- **Retryable** (continue loop): network errors, connection timeout, transient failures
+- **No remote** (handled by caller): Remote doesn't exist
+
+**Retry Strategy**:
+- Max attempts: 3
+- Wait times: 2s, 4s, 8s (exponential backoff)
+- Exit on non-retryable errors immediately
+
+### Pull with Safety Checks
+
+**Purpose**: Avoid destructive merges, ensure clean working tree
 
 ```bash
-# Option 1: Stash changes
-git stash
-git checkout <branch>
+git_pull_safe() {
+  # Check for uncommitted changes
+  git diff-index --quiet HEAD -- || { echo "Uncommitted changes" >&2; return 1; }
 
-# Option 2: Commit first
-git add <files>
-git commit -m "wip: save progress"
-git checkout <branch>
+  # Fast-forward only
+  git pull --ff-only || { echo "Manual merge required" >&2; return 1; }
+}
+```
+
+### Merge with Verification
+
+**Purpose**: Safe branch merging with conflict detection
+
+```bash
+git_merge_safe() {
+  local source="$1"
+  local target="${2:-$(git rev-parse --abbrev-ref HEAD)}"
+
+  git checkout "$target" || return 1
+  if git merge "$source" --no-ff --no-edit; then
+    echo "✓ Merged $source into $target"
+  else
+    echo "⚠️  Conflicts in:" && git diff --name-only --diff-filter=U
+    echo "Resolve, then: git add <files> && git commit"
+    return 1
+  fi
+}
 ```
 
 ---
 
-### 4. Sync with Main
+## Error Handling & Recovery
 
-Update current branch with latest main:
+### Common Errors
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| `Failed to connect` | Network issue | Retry with `git_push_with_retry` |
+| `rejected (non-fast-forward)` | Remote has new commits | Pull first, then push |
+| `conflict` | Branches diverged | Manual merge required |
+| `uncommitted changes` | Dirty working tree | Commit or stash first |
+
+### Conflict Resolution
 
 ```bash
-git fetch origin
-git rebase origin/main
+# After merge conflict
+git status  # List conflicted files
+vim conflicted-file.ts  # Resolve markers
+git add conflicted-file.ts
+git commit
+
+# Abort operations
+git merge --abort  # Abort merge
+git rebase --abort  # Abort rebase
+git reset --hard HEAD  # Reset to safe state
 ```
 
-**On conflict:**
+### Error Recovery Pattern
 
 ```bash
-# Fix conflicts in files
-git add <resolved-files>
-git rebase --continue
-```
-
-**If rebase is problematic:**
-
-```bash
-git rebase --abort
-git merge origin/main
+git_operation_with_fallback() {
+  eval "$1" && return 0
+  case "$(git status 2>&1)" in
+    *connection*) return 2 ;;  # Retryable
+    *conflict*) return 3 ;;    # Needs intervention
+    *) return 1 ;;             # Fatal
+  esac
+}
 ```
 
 ---
 
-### 5. Commit
+## Related Skills
 
-Create a conventional commit:
-
-```bash
-# Stage specific files (never use -A or .)
-git add <file1> <file2>
-
-# Commit with message
-git commit -m "<type>: <description>
-
-<optional body>
-
-Co-Authored-By: Claude <noreply@anthropic.com>"
-```
-
-**Commit Types:**
-
-| Type       | Use For                                 |
-| ---------- | --------------------------------------- |
-| `feat`     | New feature                             |
-| `fix`      | Bug fix                                 |
-| `refactor` | Code change that neither fixes nor adds |
-| `docs`     | Documentation only                      |
-| `test`     | Adding or updating tests                |
-| `chore`    | Maintenance, dependencies               |
-
-**Pre-commit checks:**
-
-```bash
-pnpm lint && pnpm typecheck
-```
+- **using-git-worktrees**: Parallel development in isolated workspaces
+- **git-master**: Comprehensive git workflow mastery
 
 ---
 
-### 6. Worktree Add
-
-Create a new worktree for parallel development:
-
-```bash
-# Create worktree with new branch
-git worktree add ../<repo>--<feature> -b feature/<feature>
-
-# Create worktree from existing branch
-git worktree add ../<repo>--<feature> feature/<feature>
-```
-
-**Example:**
-
-```bash
-git worktree add ../react-basecamp--prompt-manager -b feature/prompt-manager
-```
-
-**Directory structure:**
-
-```
-~/basecamp/
-├── react-basecamp/                  # Main worktree (main branch)
-├── react-basecamp--prompt-manager/  # Worktree for feature
-└── react-basecamp--other-feature/   # Another worktree
-```
-
----
-
-### 7. Worktree Remove
-
-Remove a worktree when done:
-
-```bash
-git worktree remove ../<repo>--<feature>
-```
-
-**If worktree has uncommitted changes:**
-
-```bash
-# Force remove (discards changes)
-git worktree remove --force ../<repo>--<feature>
-
-# Or commit/stash changes first
-cd ../<repo>--<feature>
-git stash
-cd ../<repo>
-git worktree remove ../<repo>--<feature>
-```
-
----
-
-### 8. Worktree List
-
-Show all worktrees:
-
-```bash
-git worktree list
-```
-
----
-
-### 9. Cleanup
-
-Delete merged branches:
-
-```bash
-# Delete local merged branches
-git branch --merged main | grep -v "main" | xargs -r git branch -d
-
-# Prune remote-tracking branches
-git fetch --prune
-```
-
-## Error Handling
-
-| Error             | How to Handle                            |
-| ----------------- | ---------------------------------------- |
-| Merge conflict    | Resolve manually, then continue          |
-| Dirty working dir | Stash or commit before switching         |
-| Branch exists     | Check if intentional, use different name |
-| Worktree locked   | Remove lock file or use --force          |
-
-## Output
-
-Return operation result:
-
-```markdown
-## Git Operation: <action>
-
-**Status:** SUCCESS / FAILED
-
-**Details:**
-
-- <operation-specific details>
-
-**Current State:**
-
-- Branch: `feature/prompt-manager`
-- Uncommitted: 0 files
-```
+**Version**: claude-pilot 4.2.0

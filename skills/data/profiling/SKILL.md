@@ -1,430 +1,254 @@
 ---
-name: profiling-optimization
-description: Profile application performance, identify bottlenecks, and optimize hot paths using CPU profiling, flame graphs, and benchmarking. Use when investigating performance issues or optimizing critical code paths.
+name: profiling
+description: 性能分析
+version: 1.0.0
+author: terminal-skills
+tags: [performance, profiling, perf, flamegraph, strace, cpu]
 ---
 
-# Profiling & Optimization
+# 性能分析
 
-## Overview
+## 概述
+CPU/内存分析、火焰图、追踪技能。
 
-Profile code execution to identify performance bottlenecks and optimize critical paths using data-driven approaches.
+## perf 工具
 
-## When to Use
+### 基础命令
+```bash
+# 安装
+apt install linux-tools-common linux-tools-$(uname -r)
 
-- Performance optimization
-- Identifying CPU bottlenecks
-- Optimizing hot paths
-- Investigating slow requests
-- Reducing latency
-- Improving throughput
+# CPU 采样
+perf record -g -p PID
+perf record -g -a -- sleep 30
 
-## Implementation Examples
+# 查看报告
+perf report
+perf report --stdio
 
-### 1. **Node.js Profiling**
+# 实时统计
+perf top
+perf top -p PID
 
-```typescript
-import { performance, PerformanceObserver } from 'perf_hooks';
-
-class Profiler {
-  private marks = new Map<string, number>();
-
-  mark(name: string): void {
-    this.marks.set(name, performance.now());
-  }
-
-  measure(name: string, startMark: string): number {
-    const start = this.marks.get(startMark);
-    if (!start) throw new Error(`Mark ${startMark} not found`);
-
-    const duration = performance.now() - start;
-    console.log(`${name}: ${duration.toFixed(2)}ms`);
-
-    return duration;
-  }
-
-  async profile<T>(name: string, fn: () => Promise<T>): Promise<T> {
-    const start = performance.now();
-
-    try {
-      return await fn();
-    } finally {
-      const duration = performance.now() - start;
-      console.log(`${name}: ${duration.toFixed(2)}ms`);
-    }
-  }
-}
-
-// Usage
-const profiler = new Profiler();
-
-app.get('/api/users', async (req, res) => {
-  profiler.mark('request-start');
-
-  const users = await profiler.profile('fetch-users', async () => {
-    return await db.query('SELECT * FROM users');
-  });
-
-  profiler.measure('total-request-time', 'request-start');
-
-  res.json(users);
-});
+# 统计事件
+perf stat command
+perf stat -p PID sleep 10
 ```
 
-### 2. **Chrome DevTools CPU Profile**
+### 常用事件
+```bash
+# CPU 周期
+perf record -e cycles -p PID
 
-```typescript
-import inspector from 'inspector';
-import fs from 'fs';
+# 缓存未命中
+perf record -e cache-misses -p PID
 
-class CPUProfiler {
-  private session: inspector.Session | null = null;
+# 上下文切换
+perf record -e context-switches -p PID
 
-  start(): void {
-    this.session = new inspector.Session();
-    this.session.connect();
-
-    this.session.post('Profiler.enable');
-    this.session.post('Profiler.start');
-
-    console.log('CPU profiling started');
-  }
-
-  async stop(outputFile: string): Promise<void> {
-    if (!this.session) return;
-
-    this.session.post('Profiler.stop', (err, { profile }) => {
-      if (err) {
-        console.error('Profiling error:', err);
-        return;
-      }
-
-      fs.writeFileSync(outputFile, JSON.stringify(profile));
-      console.log(`Profile saved to ${outputFile}`);
-
-      this.session!.disconnect();
-      this.session = null;
-    });
-  }
-}
-
-// Usage
-const cpuProfiler = new CPUProfiler();
-
-// Start profiling
-cpuProfiler.start();
-
-// Run code to profile
-await runExpensiveOperation();
-
-// Stop and save
-await cpuProfiler.stop('./profile.cpuprofile');
+# 列出可用事件
+perf list
 ```
 
-### 3. **Python cProfile**
+### 火焰图
+```bash
+# 采集数据
+perf record -F 99 -g -p PID -- sleep 30
 
-```python
-import cProfile
-import pstats
-from pstats import SortKey
-import io
+# 生成火焰图
+perf script | stackcollapse-perf.pl | flamegraph.pl > flamegraph.svg
 
-class Profiler:
-    def __init__(self):
-        self.profiler = cProfile.Profile()
-
-    def __enter__(self):
-        self.profiler.enable()
-        return self
-
-    def __exit__(self, *args):
-        self.profiler.disable()
-
-    def print_stats(self, sort_by: str = 'cumulative'):
-        """Print profiling statistics."""
-        s = io.StringIO()
-        ps = pstats.Stats(self.profiler, stream=s)
-
-        if sort_by == 'time':
-            ps.sort_stats(SortKey.TIME)
-        elif sort_by == 'cumulative':
-            ps.sort_stats(SortKey.CUMULATIVE)
-        elif sort_by == 'calls':
-            ps.sort_stats(SortKey.CALLS)
-
-        ps.print_stats(20)  # Top 20
-        print(s.getvalue())
-
-    def save_stats(self, filename: str):
-        """Save profiling data."""
-        self.profiler.dump_stats(filename)
-
-# Usage
-with Profiler() as prof:
-    # Code to profile
-    result = expensive_function()
-
-prof.print_stats('cumulative')
-prof.save_stats('profile.prof')
+# 或使用 FlameGraph 工具
+git clone https://github.com/brendangregg/FlameGraph
+perf script | ./FlameGraph/stackcollapse-perf.pl | ./FlameGraph/flamegraph.pl > out.svg
 ```
 
-### 4. **Benchmarking**
+## strace 追踪
 
-```typescript
-class Benchmark {
-  async run(
-    name: string,
-    fn: () => Promise<any>,
-    iterations: number = 1000
-  ): Promise<void> {
-    console.log(`\nBenchmarking: ${name}`);
+### 基础用法
+```bash
+# 追踪进程
+strace -p PID
 
-    const times: number[] = [];
+# 追踪命令
+strace command
 
-    // Warmup
-    for (let i = 0; i < 10; i++) {
-      await fn();
-    }
+# 统计系统调用
+strace -c command
+strace -c -p PID
 
-    // Actual benchmark
-    for (let i = 0; i < iterations; i++) {
-      const start = performance.now();
-      await fn();
-      times.push(performance.now() - start);
-    }
-
-    // Statistics
-    const sorted = times.sort((a, b) => a - b);
-    const min = sorted[0];
-    const max = sorted[sorted.length - 1];
-    const avg = times.reduce((a, b) => a + b, 0) / times.length;
-    const p50 = sorted[Math.floor(sorted.length * 0.5)];
-    const p95 = sorted[Math.floor(sorted.length * 0.95)];
-    const p99 = sorted[Math.floor(sorted.length * 0.99)];
-
-    console.log(`  Iterations: ${iterations}`);
-    console.log(`  Min: ${min.toFixed(2)}ms`);
-    console.log(`  Max: ${max.toFixed(2)}ms`);
-    console.log(`  Avg: ${avg.toFixed(2)}ms`);
-    console.log(`  P50: ${p50.toFixed(2)}ms`);
-    console.log(`  P95: ${p95.toFixed(2)}ms`);
-    console.log(`  P99: ${p99.toFixed(2)}ms`);
-  }
-
-  async compare(
-    implementations: Array<{ name: string; fn: () => Promise<any> }>,
-    iterations: number = 1000
-  ): Promise<void> {
-    for (const impl of implementations) {
-      await this.run(impl.name, impl.fn, iterations);
-    }
-  }
-}
-
-// Usage
-const bench = new Benchmark();
-
-await bench.compare([
-  {
-    name: 'Array.filter + map',
-    fn: async () => {
-      const arr = Array.from({ length: 1000 }, (_, i) => i);
-      return arr.filter(x => x % 2 === 0).map(x => x * 2);
-    }
-  },
-  {
-    name: 'Single loop',
-    fn: async () => {
-      const arr = Array.from({ length: 1000 }, (_, i) => i);
-      const result = [];
-      for (const x of arr) {
-        if (x % 2 === 0) {
-          result.push(x * 2);
-        }
-      }
-      return result;
-    }
-  }
-]);
+# 追踪特定调用
+strace -e open,read,write command
+strace -e trace=network command
+strace -e trace=file command
 ```
 
-### 5. **Database Query Profiling**
+### 高级选项
+```bash
+# 显示时间戳
+strace -t command
+strace -tt command      # 微秒
 
-```typescript
-import { Pool } from 'pg';
+# 显示耗时
+strace -T command
 
-class QueryProfiler {
-  constructor(private pool: Pool) {}
+# 跟踪子进程
+strace -f command
 
-  async profileQuery(query: string, params: any[] = []): Promise<{
-    result: any;
-    planningTime: number;
-    executionTime: number;
-    plan: any;
-  }> {
-    // Enable timing
-    await this.pool.query('SET track_io_timing = ON');
-
-    // Get query plan
-    const explainResult = await this.pool.query(
-      `EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) ${query}`,
-      params
-    );
-
-    const plan = explainResult.rows[0]['QUERY PLAN'][0];
-
-    // Execute actual query
-    const start = performance.now();
-    const result = await this.pool.query(query, params);
-    const duration = performance.now() - start;
-
-    return {
-      result: result.rows,
-      planningTime: plan['Planning Time'],
-      executionTime: plan['Execution Time'],
-      plan
-    };
-  }
-
-  formatPlan(plan: any): string {
-    let output = 'Query Plan:\n';
-    output += `Planning Time: ${plan['Planning Time']}ms\n`;
-    output += `Execution Time: ${plan['Execution Time']}ms\n\n`;
-
-    const formatNode = (node: any, indent: number = 0) => {
-      const prefix = '  '.repeat(indent);
-      output += `${prefix}${node['Node Type']}\n`;
-      output += `${prefix}  Cost: ${node['Total Cost']}\n`;
-      output += `${prefix}  Rows: ${node['Actual Rows']}\n`;
-      output += `${prefix}  Time: ${node['Actual Total Time']}ms\n`;
-
-      if (node.Plans) {
-        node.Plans.forEach((child: any) => formatNode(child, indent + 1));
-      }
-    };
-
-    formatNode(plan.Plan);
-    return output;
-  }
-}
-
-// Usage
-const profiler = new QueryProfiler(pool);
-
-const { result, planningTime, executionTime, plan } = await profiler.profileQuery(
-  'SELECT * FROM users WHERE age > $1',
-  [25]
-);
-
-console.log(profiler.formatPlan(plan));
+# 输出到文件
+strace -o trace.log command
 ```
 
-### 6. **Flame Graph Generation**
+## ltrace 库调用
 
 ```bash
-# Generate flame graph using 0x
-npx 0x -o flamegraph.html node server.js
+# 追踪库调用
+ltrace command
+ltrace -p PID
 
-# Or using clinic.js
-npx clinic doctor --on-port 'autocannon localhost:3000' -- node server.js
-npx clinic flame --on-port 'autocannon localhost:3000' -- node server.js
+# 统计
+ltrace -c command
+
+# 特定库
+ltrace -l libc.so.6 command
 ```
 
-## Optimization Techniques
+## 内存分析
 
-### 1. **Caching**
+### valgrind
+```bash
+# 内存泄漏检测
+valgrind --leak-check=full ./program
 
-```typescript
-class LRUCache<K, V> {
-  private cache = new Map<K, V>();
-  private maxSize: number;
+# 内存错误
+valgrind --tool=memcheck ./program
 
-  constructor(maxSize: number = 100) {
-    this.maxSize = maxSize;
-  }
+# 缓存分析
+valgrind --tool=cachegrind ./program
 
-  get(key: K): V | undefined {
-    if (!this.cache.has(key)) return undefined;
-
-    // Move to end (most recently used)
-    const value = this.cache.get(key)!;
-    this.cache.delete(key);
-    this.cache.set(key, value);
-
-    return value;
-  }
-
-  set(key: K, value: V): void {
-    // Remove if exists
-    if (this.cache.has(key)) {
-      this.cache.delete(key);
-    }
-
-    // Add to end
-    this.cache.set(key, value);
-
-    // Evict oldest if over capacity
-    if (this.cache.size > this.maxSize) {
-      const oldest = this.cache.keys().next().value;
-      this.cache.delete(oldest);
-    }
-  }
-}
+# 调用图
+valgrind --tool=callgrind ./program
+kcachegrind callgrind.out.*
 ```
 
-### 2. **Lazy Loading**
+### pmap
+```bash
+# 查看进程内存映射
+pmap PID
+pmap -x PID
 
-```typescript
-class LazyValue<T> {
-  private value?: T;
-  private loaded = false;
-
-  constructor(private loader: () => T) {}
-
-  get(): T {
-    if (!this.loaded) {
-      this.value = this.loader();
-      this.loaded = true;
-    }
-    return this.value!;
-  }
-}
-
-// Usage
-const expensive = new LazyValue(() => {
-  console.log('Computing expensive value...');
-  return computeExpensiveValue();
-});
-
-// Only computed when first accessed
-const value = expensive.get();
+# 详细信息
+pmap -XX PID
 ```
 
-## Best Practices
+### smem
+```bash
+# 内存使用统计
+smem
+smem -u          # 按用户
+smem -p          # 按进程
+smem -k          # 人类可读
+```
 
-### ✅ DO
-- Profile before optimizing
-- Focus on hot paths
-- Measure impact of changes
-- Use production-like data
-- Consider memory vs speed tradeoffs
-- Document optimization rationale
+## 系统分析
 
-### ❌ DON'T
-- Optimize without profiling
-- Ignore readability for minor gains
-- Skip benchmarking
-- Optimize cold paths
-- Make changes without measurement
+### vmstat
+```bash
+# 每秒刷新
+vmstat 1
 
-## Tools
+# 输出说明
+# r: 运行队列
+# b: 阻塞进程
+# si/so: 交换
+# bi/bo: 块 IO
+# us/sy/id/wa: CPU 使用
+```
 
-- **Node.js**: 0x, clinic.js, node --prof
-- **Python**: cProfile, py-spy, memory_profiler
-- **Visualization**: Flame graphs, Chrome DevTools
-- **Database**: EXPLAIN ANALYZE, pg_stat_statements
+### iostat
+```bash
+# 磁盘统计
+iostat -x 1
 
-## Resources
+# 输出说明
+# %util: 设备利用率
+# await: 平均等待时间
+# r/s, w/s: 读写 IOPS
+```
 
-- [0x Flame Graph Profiler](https://github.com/davidmarkclements/0x)
-- [Chrome DevTools Profiling](https://developer.chrome.com/docs/devtools/performance/)
-- [Python cProfile](https://docs.python.org/3/library/profile.html)
+### pidstat
+```bash
+# CPU 使用
+pidstat -u 1
+
+# 内存使用
+pidstat -r 1
+
+# IO 使用
+pidstat -d 1
+
+# 特定进程
+pidstat -p PID 1
+```
+
+## 常见场景
+
+### 场景 1：CPU 热点分析
+```bash
+#!/bin/bash
+PID=$1
+
+# 采集 30 秒
+perf record -F 99 -g -p $PID -- sleep 30
+
+# 生成报告
+perf report --stdio > cpu_report.txt
+
+# 生成火焰图
+perf script | stackcollapse-perf.pl | flamegraph.pl > cpu_flame.svg
+```
+
+### 场景 2：IO 延迟分析
+```bash
+#!/bin/bash
+# 使用 biolatency (bcc-tools)
+biolatency 10 1
+
+# 或使用 iostat
+iostat -x 1 10
+```
+
+### 场景 3：系统调用分析
+```bash
+#!/bin/bash
+PID=$1
+
+# 统计系统调用
+strace -c -p $PID -o syscall_stat.txt &
+sleep 60
+kill %1
+
+cat syscall_stat.txt
+```
+
+## 工具对比
+
+| 工具 | 用途 | 开销 |
+|------|------|------|
+| perf | CPU 分析 | 低 |
+| strace | 系统调用 | 高 |
+| valgrind | 内存分析 | 很高 |
+| pidstat | 进程统计 | 低 |
+
+## 故障排查
+
+```bash
+# perf 权限问题
+echo 0 > /proc/sys/kernel/perf_event_paranoid
+
+# 符号缺失
+apt install linux-tools-$(uname -r)-dbgsym
+
+# strace 附加失败
+echo 0 > /proc/sys/kernel/yama/ptrace_scope
+```

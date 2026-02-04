@@ -1,765 +1,267 @@
 ---
 name: ralph
-description: Create and run Ralph loops for structured AI-driven development. Triggered by "create a ralph loop for X" or "ralph plan for X". Uses interview to clarify requirements, expert review via Ralph wrappers, creates phased task plans, and executes in YOLO mode.
+description: "Convert PRDs to prd.json format for the Ralph autonomous agent system. Use when you have an existing PRD and need to convert it to Ralph's JSON format. Triggers on: convert this prd, turn this into ralph format, create prd.json from this, ralph json."
 ---
 
-# Ralph Loop Skill
+# Ralph PRD Converter
 
-Create bulletproof development plans that execute reliably in YOLO mode.
-
-## Trigger Phrases
-
-- "create a ralph loop for..."
-- "ralph plan for..."
-- "make a ralph loop and start with an interview"
-- "yolo this feature..."
-
-## The Bulletproof Process
-
-```
-1. RESEARCH      - Understand the codebase
-       ↓
-2. INTERVIEW     - Gather requirements from user
-       ↓
-3. DESIGN        - Create architecture document
-       ↓
-4. EXPERT REVIEW - ralph review design (wrapper)
-       ↓
-5. ORACLE        - (if complex) Deep architecture review
-       ↓
-6. CREATE PLAN   - Write atomic, complete tasks
-       ↓
-7. PLAN REVIEW   - ralph review plan (wrapper)
-       ↓
-8. FINALIZE      - User approval
-       ↓
-9. EXECUTE       - ralph yolo
-       ↓
-10. POST-REVIEW  - ralph review post (wrapper)
-```
+Converts existing PRDs to the prd.json format that Ralph uses for autonomous execution.
 
 ---
 
-## Phase 1: RESEARCH (Required)
+## The Job
 
-**Before creating ANY interview, understand the codebase.**
-
-Start with a canonical template:
-```bash
-ralph scaffold research
-```
-
-### What to Research
-
-1. **Find existing patterns** - How does similar functionality work?
-2. **Identify files to modify** - What will change?
-3. **Understand the architecture** - Where does this fit?
-4. **Note naming conventions** - Match existing style
-
-### Research Commands
-
-```bash
-# Find relevant files
-rg -l "keyword" --type swift
-find . -name "*.swift" -path "*/Views/*" | head -20
-
-# Understand existing patterns  
-rg -A5 "struct.*View.*:" --type swift | head -50
-
-# Check file structure
-tree -L 3 path/to/relevant/code/
-
-# Read key files
-cat path/to/existing/similar/feature.swift | head -100
-```
-
-### Research Output
-
-Document findings:
-```markdown
-## Research Findings
-
-**Existing patterns:**
-- Views are in Features/*/Views/
-- State is in Features/*/State/
-- Uses @Observable pattern
-
-**Files that will change:**
-- MainSplitView.swift (add new component)
-- SomeState.swift (add new property)
-
-**Files to create:**
-- NewFeatureView.swift
-- NewFeatureState.swift
-
-**Naming conventions:**
-- Views: SomethingView.swift
-- State: SomethingState.swift
-```
-
-Complete Phase 1 by running:
-```bash
-ralph advance phase1
-```
+Take a PRD (markdown file or text) and convert it to `prd.json` in your ralph directory.
 
 ---
 
-## Phase 2: INTERVIEW (Required)
-
-**Use the interview tool to gather requirements. Never guess.**
-
-Start with a canonical template:
-```bash
-ralph scaffold interview
-```
-
-### Interview Question Categories
-
-Every interview MUST cover:
-
-1. **Scope** - What exactly are we building?
-2. **Location** - Where does it appear/integrate?
-3. **Behavior** - How does it work?
-4. **Edge Cases** - What could go wrong?
-5. **Acceptance** - How do we know it's done?
-
-### Interview Template
+## Output Format
 
 ```json
 {
-  "title": "Ralph Plan: [Feature Name]",
-  "description": "I've researched the codebase. Help me understand the requirements.\n\n**What I found:**\n[Brief research summary]",
-  "questions": [
+  "project": "[Project Name]",
+  "branchName": "ralph/[feature-name-kebab-case]",
+  "description": "[Feature description from PRD title/intro]",
+  "userStories": [
     {
-      "id": "scope",
-      "type": "single",
-      "question": "What exactly should this feature do?",
-      "options": ["Option A (describe)", "Option B (describe)", "Both", "Something else (explain below)"],
-      "context": "Based on my research, [context]"
-    },
-    {
-      "id": "scope_details",
-      "type": "text",
-      "question": "Any additional scope details?",
-      "required": false
-    },
-    {
-      "id": "location",
-      "type": "single",
-      "question": "Where should [feature] appear?",
-      "options": ["Location A", "Location B", "New location"],
-      "context": "Currently, similar features are in [location]"
-    },
-    {
-      "id": "behavior_primary",
-      "type": "single",
-      "question": "When [trigger], what should happen?",
-      "options": ["Behavior A", "Behavior B", "Configurable"]
-    },
-    {
-      "id": "behavior_secondary",
-      "type": "single",
-      "question": "[Follow-up behavior question]?",
-      "options": ["Option A", "Option B", "Option C"]
-    },
-    {
-      "id": "edge_cases",
-      "type": "multi",
-      "question": "Which edge cases should I handle?",
-      "options": ["Error state", "Empty state", "Loading state", "Offline mode", "Other (specify)"]
-    },
-    {
-      "id": "edge_case_details",
-      "type": "text",
-      "question": "Any specific edge case handling?",
-      "required": false
-    },
-    {
-      "id": "acceptance",
-      "type": "text",
-      "question": "How will you verify this works correctly?",
-      "context": "Describe what you'll test or look for"
-    },
-    {
-      "id": "constraints",
-      "type": "text",
-      "question": "Any constraints or requirements I should know?",
-      "required": false
+      "id": "US-001",
+      "title": "[Story title]",
+      "description": "As a [user], I want [feature] so that [benefit]",
+      "acceptanceCriteria": [
+        "Criterion 1",
+        "Criterion 2",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
     }
   ]
 }
 ```
 
-Complete Phase 2 by running:
-```bash
-ralph advance phase2
-```
+---
+
+## Story Size: The Number One Rule
+
+**Each story must be completable in ONE Ralph iteration (one context window).**
+
+Ralph spawns a fresh Amp instance per iteration with no memory of previous work. If a story is too big, the LLM runs out of context before finishing and produces broken code.
+
+### Right-sized stories:
+- Add a database column and migration
+- Add a UI component to an existing page
+- Update a server action with new logic
+- Add a filter dropdown to a list
+
+### Too big (split these):
+- "Build the entire dashboard" - Split into: schema, queries, UI components, filters
+- "Add authentication" - Split into: schema, middleware, login UI, session handling
+- "Refactor the API" - Split into one story per endpoint or pattern
+
+**Rule of thumb:** If you cannot describe the change in 2-3 sentences, it is too big.
 
 ---
 
-## Phase 3: DESIGN (Required)
+## Story Ordering: Dependencies First
 
-**After interview, design the solution before writing tasks.**
+Stories execute in priority order. Earlier stories must not depend on later ones.
 
-Start with a canonical template:
-```bash
-ralph scaffold design
+**Correct order:**
+1. Schema/database changes (migrations)
+2. Server actions / backend logic
+3. UI components that use the backend
+4. Dashboard/summary views that aggregate data
+
+**Wrong order:**
+1. UI component (depends on schema that does not exist yet)
+2. Schema change
+
+---
+
+## Acceptance Criteria: Must Be Verifiable
+
+Each criterion must be something Ralph can CHECK, not something vague.
+
+### Good criteria (verifiable):
+- "Add `status` column to tasks table with default 'pending'"
+- "Filter dropdown has options: All, Active, Completed"
+- "Clicking delete shows confirmation dialog"
+- "Typecheck passes"
+- "Tests pass"
+
+### Bad criteria (vague):
+- "Works correctly"
+- "User can do X easily"
+- "Good UX"
+- "Handles edge cases"
+
+### Always include as final criterion:
+```
+"Typecheck passes"
 ```
 
-### Design Document Template
+For stories with testable logic, also include:
+```
+"Tests pass"
+```
 
+### For stories that change UI, also include:
+```
+"Verify in browser using dev-browser skill"
+```
+
+Frontend stories are NOT complete until visually verified. Ralph will use the dev-browser skill to navigate to the page, interact with the UI, and confirm changes work.
+
+---
+
+## Conversion Rules
+
+1. **Each user story becomes one JSON entry**
+2. **IDs**: Sequential (US-001, US-002, etc.)
+3. **Priority**: Based on dependency order, then document order
+4. **All stories**: `passes: false` and empty `notes`
+5. **branchName**: Derive from feature name, kebab-case, prefixed with `ralph/`
+6. **Always add**: "Typecheck passes" to every story's acceptance criteria
+
+---
+
+## Splitting Large PRDs
+
+If a PRD has big features, split them:
+
+**Original:**
+> "Add user notification system"
+
+**Split into:**
+1. US-001: Add notifications table to database
+2. US-002: Create notification service for sending notifications
+3. US-003: Add notification bell icon to header
+4. US-004: Create notification dropdown panel
+5. US-005: Add mark-as-read functionality
+6. US-006: Add notification preferences page
+
+Each is one focused change that can be completed and verified independently.
+
+---
+
+## Example
+
+**Input PRD:**
 ```markdown
-## Design: [Feature Name]
+# Task Status Feature
 
-### Interview Summary
-- Scope: [answer]
-- Location: [answer]  
-- Behavior: [answer]
-- Edge cases: [answer]
-- Acceptance: [answer]
+Add ability to mark tasks with different statuses.
 
-### Architecture
-
-**New files to create:**
-| File | Purpose |
-|------|---------|
-| NewView.swift | Main UI component |
-| NewState.swift | State management |
-
-**Files to modify:**
-| File | Changes |
-|------|---------|
-| MainSplitView.swift | Add NewView to layout |
-| AppState.swift | Add newState property |
-
-**Integration points:**
-- NewView will be added to MainSplitView in the detail area
-- NewState will be owned by AppState
-- NewView observes NewState via @Environment
-
-### UI Mockup (if applicable)
-```
-┌─────────────────────────────────────┐
-│  [Existing UI]                      │
-├─────────────────────────────────────┤
-│  [New Feature Here]                 │
-│  - Element A                        │
-│  - Element B                        │
-└─────────────────────────────────────┘
+## Requirements
+- Toggle between pending/in-progress/done on task list
+- Filter list by status
+- Show status badge on each task
+- Persist status in database
 ```
 
-### Verification Checklist
-- [ ] Feature appears in correct location
-- [ ] Primary behavior works
-- [ ] Edge cases handled
-- [ ] User acceptance criteria met
-```
-
-Complete Phase 3 by running:
-```bash
-ralph advance phase3
-```
-
----
-
-## Phase 4: EXPERT REVIEW (Required)
-
-**Use Ralph wrapper commands (never call rp-cli directly).**
-
-### Run Design Review
-
-```bash
-ralph review design
-```
-
-Ralph selects context automatically from `design.md`.
-
-Optional one-shot finalize:
-```bash
-ralph review design --final
-```
-
-Do not summarize review results until `ralph review design --final` succeeds or `ralph show-proof phase4` renders the verified output.
-
-### Process Review Feedback (re-review loop)
-
-1. Run review on the current draft
-2. Apply feedback to `design.md`
-3. **Run `ralph review design` again** after edits
-4. Complete Phase 4 with:
-   ```bash
-   ralph advance phase4
-   ```
-
-If major issues are found, return to Phase 3.
-
----
-
-## Phase 5: ORACLE (Required Unless Waived)
-
-**Phase 5 is required unless a TTY-confirmed waiver is granted.** Use these guidelines to decide whether a waiver is appropriate:
-
-### When Oracle Is Definitely Required
-
-- Multiple subsystems involved
-- New architectural patterns needed
-- Cross-cutting concerns (auth, sync, caching)
-- Integration with external services
-- Performance-critical paths
-
-If none apply and you want to skip, request a waiver:
-```bash
-ralph waive phase5 --reason "..."
-```
-
-### Run Oracle Review
-
-```bash
-ralph oracle
-```
-
-Ralph bundles the README/spec/implementation and runs APR in robot mode. Do not call APR/Oracle directly.
-
-Optional one-shot finalize:
-```bash
-ralph oracle --final
-```
-
-Do not summarize Oracle results until `ralph oracle --final` succeeds or `ralph show-proof phase5` renders the verified output.
-
-### Process Oracle Response
-
-- Update design with Oracle recommendations
-- Document key decisions and rationale
-- If significant changes, re-run Phase 4 review
-
-**Re-review loop:** If you change `design.md` after Oracle output, you must re-run `ralph oracle` before advancing. For a one-shot finalize:
-
-```bash
-ralph oracle --final
-```
-
-Complete Phase 5 by running:
-```bash
-ralph advance phase5
-```
-
----
-
-## Phase 6: CREATE PLAN (Critical)
-
-**Write tasks that are atomic, complete, and verifiable.**
-
-Start with a canonical template:
-```bash
-ralph scaffold plan
-```
-
-### Task Anatomy
-
-Every task MUST have:
-
-1. **WHAT** - The specific change to make
-2. **WHERE** - The exact file(s) to modify
-3. **HOW** - Brief implementation approach (if not obvious)
-4. **VERIFY** - How to confirm it worked
-
-### Task Sizing (Critical)
-
-**All tasks should be similar size** - the LLM struggles with inconsistent sizing.
-
-| Task Size | Time Estimate | Example |
-|-----------|---------------|---------|
-| Too small | < 2 min | "Add import statement" |
-| ✅ Right | 5-15 min | "Create SyncConsolePanel view with basic layout" |
-| Too large | > 30 min | "Implement entire sync feature with all UI" |
-
-**Why this matters:** Large tasks get "swallowed up" - the LLM runs out of context window before finishing, producing incomplete or buggy code. If a task would take a human > 30 minutes, split it.
-
-### Task Writing Rules
-
-#### Rule 1: Atomic = One Concern
-
-❌ BAD: "Add sync panel with drag handle and animations"
-✅ GOOD: Three separate tasks
-
-#### Rule 2: Consistent Size
-
-❌ BAD: Mix of tiny ("add import") and huge ("implement feature") tasks
-✅ GOOD: All tasks take roughly 5-15 minutes of LLM work
-
-#### Rule 3: Complete = Create + Integrate
-
-❌ BAD: "Create SyncConsolePanel view"
-✅ GOOD: "Create SyncConsolePanel view in SharedUI/Common/ AND replace SyncProgressView with it in MainSplitView.swift"
-
-#### Rule 4: Specific Files Named
-
-❌ BAD: "Add the button to the toolbar"
-✅ GOOD: "Add refresh button to toolbar in MediaOrganizationView.swift toolbarContent"
-
-#### Rule 5: Verification Included
-
-❌ BAD: "Add drag handle"
-✅ GOOD: "Add drag handle to panel. VERIFY: Dragging handle resizes panel height"
-
-### Plan Structure
-
-```markdown
-# Plan: [Feature Name]
-
-## Context
-[What we're building and why]
-
-## Interview Responses ([date])
-- Scope: [answer]
-- Location: [answer]
-- Behavior: [answer]
-
-## Design Review Notes
-[Key feedback from ralph review design]
-[Oracle recommendations if applicable]
-
-## Tasks
-
-### Phase 1: Foundation
-- [ ] 1.1 [Task with WHAT, WHERE, VERIFY]
-- [ ] 1.2 [Task with WHAT, WHERE, VERIFY]
-
-### Phase 2: Core Implementation  
-- [ ] 2.1 [Task with WHAT, WHERE, VERIFY]
-- [ ] 2.2 [Task with WHAT, WHERE, VERIFY]
-
-### Phase 3: Integration
-- [ ] 3.1 [Task with WHAT, WHERE, VERIFY]
-
-### Phase 4: Verification
-- [ ] 4.1 VERIFY: [Acceptance criteria 1]
-- [ ] 4.2 VERIFY: [Acceptance criteria 2]
-
-## Success Criteria
-- [ ] [Criterion 1 from interview]
-- [ ] [Criterion 2 from interview]
-
-## Files Changed
-| File | Action |
-|------|--------|
-| path/to/new.swift | CREATE |
-| path/to/existing.swift | MODIFY |
-```
-
-Complete Phase 6 by running:
-```bash
-ralph advance phase6
-```
-
----
-
-## Phase 7: PLAN REVIEW (Required)
-
-**Use Ralph wrapper commands (never call rp-cli directly).**
-
-### Run Plan Review
-
-```bash
-ralph review plan
-```
-
-Ralph selects context automatically from `plan.md`.
-
-Optional one-shot finalize:
-```bash
-ralph review plan --final
-```
-
-Do not summarize review results until `ralph review plan --final` succeeds or `ralph show-proof phase7` renders the verified output.
-
-### Process Review Feedback (re-review loop)
-
-1. Run review on the current plan
-2. Apply feedback to `plan.md`
-3. **Run `ralph review plan` again** after edits
-4. Complete Phase 7 with:
-   ```bash
-   ralph advance phase7
-   ```
-
----
-
-## Phase 8: FINALIZE (Required)
-
-**Get user approval before execution.**
-
-### Finalization Checklist
-
-Before presenting to user, verify:
-
-- [ ] Every "create" task has a corresponding "integrate" task
-- [ ] Every task names specific files
-- [ ] Every task has a VERIFY step
-- [ ] Phase 4 has explicit verification tasks
-- [ ] Success criteria match interview answers
-- [ ] Files Changed table is complete
-- [ ] Design review feedback incorporated
-- [ ] Plan review feedback incorporated
-
-### Present to User
-
-```markdown
-## Plan Ready: [Feature Name]
-
-**Summary:**
-- [N] tasks across [M] phases
-- [X] files to create, [Y] files to modify
-
-**Reviews completed:**
-- ✅ Design review (`ralph review design`)
-- ✅ Plan review (`ralph review plan`)
-- [✅ Oracle review (`ralph oracle`, if applicable)]
-
-**Key decisions:**
-- [Decision 1 from interview/reviews]
-- [Decision 2 from interview/reviews]
-
-**How to proceed:**
-1. **Review full plan** - See all tasks
-2. **Edit plan** - Make changes before running
-3. **Launch YOLO** - Execute all tasks automatically
-4. **Interactive mode** - Work task by task
-
-Ready to launch?
-```
-
-Complete Phase 8 by running:
-```bash
-ralph advance phase8
-```
-
----
-
-## Phase 9: EXECUTE
-
-### Launch YOLO Mode
-
-```bash
-cd /path/to/project
-ralph yolo
-# Type 'yolo' to confirm
-# Runs all tasks non-interactively
-# Auto-commits each task
-# Post-review runs automatically at end
-```
-
-Agent/CI contexts:
-```bash
-RALPH_YOLO_AUTO=1 ralph yolo
-```
-
-Note: Auto-YOLO requires a signed policy receipt (run `ralph allow-auto-yolo --reason "..."` in a TTY).
-
-### Monitor Execution
-
-- Watch for build failures
-- Note any tasks that seem to struggle
-- Be ready to intervene if needed
-
-### On Failure
-
-```bash
-ralph status    # See where we stopped
-ralph gates     # See exactly what's blocking
-ralph ensure-reviews  # Run missing review wrappers
-ralph next      # Fix the issue interactively
-ralph yolo      # Continue from current task
-```
-
-Complete Phase 9 by running:
-```bash
-ralph advance phase9
-```
-
----
-
-## Phase 10: POST-REVIEW (Required)
-
-**After YOLO completes, review the changes.**
-
-### Automatic Post-Review
-
-Ralph runs the post-review wrapper after YOLO completes. If it doesn't run automatically:
-
-```bash
-ralph review post
-```
-
-Optional one-shot finalize:
-```bash
-ralph review post --final
-```
-
-Do not summarize post-review results until `ralph review post --final` succeeds or `ralph show-proof phase10` renders the verified output.
-
-### Manual Verification
-
-For UI changes, verify visually:
-```bash
-gj run ms  # Or appropriate run command
-# Check that feature works as expected
-```
-
-### Post-Implementation Review (Optional)
-
-For complex changes, run an additional post-review via Ralph:
-
-```bash
-ralph review post
-```
-
-Complete Phase 10 by running:
-```bash
-ralph advance phase10
-```
-
----
-
-## Anti-Patterns (DO NOT DO)
-
-| Anti-Pattern | Why It Fails |
-|--------------|--------------|
-| Skipping research | Questions are vague, plan is wrong |
-| Skipping interview | Assumptions lead to rework |
-| Skipping design review | Architecture issues caught too late |
-| Skipping plan review | Missing tasks, broken YOLO |
-| "Create X" without integration | Component built but never used |
-| No file paths in tasks | Agent guesses wrong location |
-| No verification tasks | Feature broken but marked done |
-| Huge tasks | Too much scope, partial completion |
-| Inconsistent task sizes | Large tasks "swallowed up", small tasks waste iterations |
-| No success criteria | No way to know if done |
-| Skipping post-review | Bugs ship to production |
-| Direct tool calls | Bypasses Ralph receipts; gates won't pass |
-| Not appending to progress.txt | Lost learnings, repeated mistakes |
-
----
-
-## Ralph Wrapper Quick Reference
-
-```bash
-ralph review design    # Phase 4
-ralph oracle           # Phase 5 (if required)
-ralph review plan      # Phase 7
-ralph review post      # Phase 10
-ralph ensure-reviews   # Run missing review wrappers
-ralph advance <phase>  # Complete a phase (required)
-ralph yolo --auto      # Execute with auto-review compliance
-```
-
----
-
-## Example: Complete Flow
-
-**User:** "Create a ralph loop for Xcode-style bottom console panel"
-
-### 1. Research
-```bash
-rg -l "SyncProgress" --type swift
-# Found: SyncProgressView.swift (current implementation)
-# Found: MainSplitView.swift (where it's used)
-
-cat "SharedUI/Common/SyncProgressView.swift" | head -50
-# Current: floating card overlay
-
-cat "Features/MediaOrganization/Views/MainSplitView.swift" | grep -A10 "SyncProgress"
-# Integration point identified
-```
-
-### 2. Interview
+**Output prd.json:**
 ```json
 {
-  "title": "Ralph Plan: Xcode-style Console Panel",
-  "description": "Currently using floating card. You want Xcode-style bottom panel.",
-  "questions": [
-    {"id": "style", "question": "Confirm: Bottom slide-up panel like Xcode console?"},
-    {"id": "resize", "question": "Should panel be resizable via drag?"},
-    {"id": "collapse", "question": "Should panel collapse to header-only?"},
-    {"id": "shortcut", "question": "Keyboard shortcut? (suggest ⌘⇧C)"},
-    {"id": "acceptance", "question": "How will you verify it works?"}
+  "project": "TaskApp",
+  "branchName": "ralph/task-status",
+  "description": "Task Status Feature - Track task progress with status indicators",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add status field to tasks table",
+      "description": "As a developer, I need to store task status in the database.",
+      "acceptanceCriteria": [
+        "Add status column: 'pending' | 'in_progress' | 'done' (default 'pending')",
+        "Generate and run migration successfully",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Display status badge on task cards",
+      "description": "As a user, I want to see task status at a glance.",
+      "acceptanceCriteria": [
+        "Each task card shows colored status badge",
+        "Badge colors: gray=pending, blue=in_progress, green=done",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Add status toggle to task list rows",
+      "description": "As a user, I want to change task status directly from the list.",
+      "acceptanceCriteria": [
+        "Each row has status dropdown or toggle",
+        "Changing status saves immediately",
+        "UI updates without page refresh",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Filter tasks by status",
+      "description": "As a user, I want to filter the list to see only certain statuses.",
+      "acceptanceCriteria": [
+        "Filter dropdown: All | Pending | In Progress | Done",
+        "Filter persists in URL params",
+        "Typecheck passes",
+        "Verify in browser using dev-browser skill"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    }
   ]
 }
 ```
 
-### 3. Design
-```markdown
-## Design: Xcode-style Console Panel
+---
 
-### Architecture
-- CREATE: SyncConsolePanel.swift (new component)
-- MODIFY: MainSplitView.swift (replace SyncProgressView)
-- MODIFY: AppState.swift (add showSyncConsole toggle)
+## Archiving Previous Runs
 
-### Integration
-- SyncConsolePanel replaces SyncProgressView in StatusFooter
-- Same callbacks (onCancel, onPause, etc.)
-- AppState.showSyncConsole controls visibility
-```
+**Before writing a new prd.json, check if there is an existing one from a different feature:**
 
-### 4. Expert Review (Ralph)
-```bash
-ralph review design
-```
+1. Read the current `prd.json` if it exists
+2. Check if `branchName` differs from the new feature's branch name
+3. If different AND `progress.txt` has content beyond the header:
+   - Create archive folder: `archive/YYYY-MM-DD-feature-name/`
+   - Copy current `prd.json` and `progress.txt` to archive
+   - Reset `progress.txt` with fresh header
 
-### 5. Create Plan
-```markdown
-## Tasks
-
-### Phase 1: Create Component
-- [ ] 1.1 Create SyncConsolePanel.swift in SharedUI/Common/
-      VERIFY: File compiles, preview renders
-
-### Phase 2: Integration  
-- [ ] 2.1 Replace SyncProgressView with SyncConsolePanel in MainSplitView.swift StatusFooter
-      VERIFY: New panel appears at bottom when sync starts
-
-### Phase 3: Features
-- [ ] 3.1 Add drag handle for resizing
-      VERIFY: Dragging changes panel height
-- [ ] 3.2 Add collapse/expand toggle
-      VERIFY: Panel collapses to header only
-
-### Phase 4: Verification
-- [ ] 4.1 VERIFY: Panel slides up from bottom (not floating)
-- [ ] 4.2 VERIFY: ⌘⇧C toggles visibility
-- [ ] 4.3 VERIFY: Drag handle resizes panel
-```
-
-### 6. Plan Review (Ralph)
-```bash
-ralph review plan
-```
-
-### 7. Finalize & Execute
-```bash
-ralph yolo
-# All tasks execute
-# Codex review runs automatically
-```
-
-### 8. Post-Review
-```bash
-# Verify visually
-gj run ms
-# Check panel appears at bottom, drag works, etc.
-```
+**The ralph.sh script handles this automatically** when you run it, but if you are manually updating prd.json between runs, archive first.
 
 ---
 
-## Key Principles
+## Checklist Before Saving
 
-1. **Research first** - Understand before asking
-2. **Interview always** - Never assume requirements  
-3. **Design before tasks** - Architecture drives implementation
-4. **Review twice** - Design review + Plan review via Ralph wrappers
-5. **Atomic + Complete** - One thing, fully integrated
-6. **Verify everything** - Build passing ≠ feature working
-7. **Post-review always** - Ralph post-review + manual verification
-8. **Anti-bloat** - Add only what closes a real failure mode; remove redundant layers
+Before writing prd.json, verify:
+
+- [ ] **Previous run archived** (if prd.json exists with different branchName, archive it first!)
+- [ ] **ALL stories have `passes: false`** (CRITICAL - never copy old pass status!)
+- [ ] Each story is completable in one iteration (small enough)
+- [ ] Stories are ordered by dependency (schema to backend to UI)
+- [ ] Every story has "Typecheck passes" as criterion
+- [ ] UI stories have "Verify in browser" as criterion
+- [ ] Acceptance criteria are verifiable (not vague)
+- [ ] No story depends on a later story
+
+## CRITICAL: Always Reset passes to false
+
+When creating a new prd.json, **ALWAYS** set `passes: false` for every story. Never:
+- Copy pass status from an old prd.json
+- Leave stories marked as `passes: true`
+- Assume previous work carries over
+
+Each new prd.json is a fresh start. The Ralph loop will mark stories as `passes: true` only after successfully implementing them.

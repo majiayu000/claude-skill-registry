@@ -1,192 +1,216 @@
 ---
-name: bio-atac-seq-atac-peak-calling
-description: Call accessible chromatin regions from ATAC-seq data using MACS3 with ATAC-specific parameters. Use when identifying open chromatin regions from aligned ATAC-seq BAM files, different from ChIP-seq peak calling.
+name: bio-chipseq-peak-calling
+description: ChIP-seq peak calling using MACS3 (or MACS2). Call narrow peaks for transcription factors or broad peaks for histone modifications. Supports input control, fragment size modeling, and various output formats including narrowPeak and broadPeak BED files. Use when calling peaks from ChIP-seq alignments.
 tool_type: cli
 primary_tool: macs3
 ---
 
-# ATAC-seq Peak Calling
+# Peak Calling with MACS3
 
-## Basic MACS3 for ATAC-seq
+MACS3 is the actively developed successor to MACS2. Commands are identical except the binary name. MACS2 is in maintenance mode.
+
+## Basic Peak Calling
 
 ```bash
-# Standard ATAC-seq peak calling
+# Call peaks with input control (recommended)
+macs3 callpeak -t chip.bam -c input.bam -f BAM -g hs -n sample --outdir peaks/
+
+# For MACS2 (legacy), replace 'macs3' with 'macs2' - syntax is identical
+```
+
+## Without Input Control
+
+```bash
+# Not recommended, but possible
+macs3 callpeak -t chip.bam -f BAM -g hs -n sample --outdir peaks/
+```
+
+## Narrow Peaks (TF, H3K4me3, H3K27ac)
+
+```bash
 macs3 callpeak \
-    -t sample.bam \
-    -f BAMPE \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
+    -g hs \                        # hs=human, mm=mouse, ce=worm, dm=fly
+    -n sample_narrow \
+    --outdir peaks/ \
+    -q 0.05                        # q-value threshold
+```
+
+## Broad Peaks (H3K36me3, H3K27me3, H3K9me3)
+
+```bash
+macs3 callpeak \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
+    -g hs \
+    -n sample_broad \
+    --outdir peaks/ \
+    --broad \                      # Broad peak mode
+    --broad-cutoff 0.1             # Broad peak q-value
+```
+
+## Paired-End Data
+
+```bash
+# MACS3 uses BAMPE format for paired-end
+macs3 callpeak \
+    -t chip.bam \
+    -c input.bam \
+    -f BAMPE \                     # Paired-end BAM
+    -g hs \
+    -n sample_pe \
+    --outdir peaks/
+```
+
+## Multiple Replicates
+
+```bash
+# Pool replicates (MACS3 handles internally)
+macs3 callpeak \
+    -t rep1.bam rep2.bam rep3.bam \
+    -c input.bam \
+    -f BAM \
+    -g hs \
+    -n pooled \
+    --outdir peaks/
+```
+
+## Custom Genome Size
+
+```bash
+# For non-model organisms or custom genomes
+macs3 callpeak \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
+    -g 2.7e9 \                     # Effective genome size in bp
+    -n sample \
+    --outdir peaks/
+```
+
+## Common Genome Sizes
+
+| Genome | Flag | Effective Size |
+|--------|------|----------------|
+| Human | hs | 2.7e9 |
+| Mouse | mm | 1.87e9 |
+| C. elegans | ce | 9e7 |
+| D. melanogaster | dm | 1.2e8 |
+
+## Fixed Fragment Size
+
+```bash
+# If modeling fails or for ATAC-seq
+macs3 callpeak \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
+    -g hs \
+    --nomodel \                    # Skip model building
+    --extsize 200 \                # Fixed extension size
+    -n sample \
+    --outdir peaks/
+```
+
+## Generate Signal Tracks
+
+```bash
+# Generate bedGraph and bigWig files
+macs3 callpeak \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
     -g hs \
     -n sample \
     --outdir peaks/ \
-    -q 0.05 \
-    --nomodel \
-    --shift -75 \
-    --extsize 150 \
-    --keep-dup all \
-    -B
+    -B \                           # Generate bedGraph
+    --SPMR                         # Signal per million reads
+
+# Convert to bigWig (requires UCSC tools)
+sort -k1,1 -k2,2n peaks/sample_treat_pileup.bdg > peaks/sample.sorted.bdg
+bedGraphToBigWig peaks/sample.sorted.bdg chrom.sizes peaks/sample.bw
 ```
 
-## Key ATAC-seq Parameters
+## Local Lambda for Broad Marks
 
 ```bash
-# Explained parameters
+# Recommended for very broad marks
 macs3 callpeak \
-    -t sample.bam \        # Treatment BAM
-    -f BAMPE \             # Paired-end BAM (uses fragment size)
-    -g hs \                # Genome size: hs (human), mm (mouse)
-    -n sample \            # Output name prefix
-    --nomodel \            # Don't build shifting model
-    --shift -75 \          # Shift reads to center on Tn5 cut site
-    --extsize 150 \        # Extend reads to this size
-    --keep-dup all \       # Keep duplicates (ATAC has natural duplicates)
-    -B \                   # Generate bedGraph for visualization
-    --call-summits         # Call peak summits
-```
-
-## Why These Parameters?
-
-| Parameter | Reason |
-|-----------|--------|
-| --nomodel | ATAC doesn't have control, can't build model |
-| --shift -75 | Centers on Tn5 insertion site |
-| --extsize 150 | Smooths signal around cut sites |
-| --keep-dup all | Tn5 creates duplicate cuts at accessible sites |
-| -f BAMPE | Uses actual fragment size from paired-end |
-
-## Paired-End vs Single-End
-
-```bash
-# Paired-end (recommended for ATAC)
-macs3 callpeak -f BAMPE -t sample.bam ...
-
-# Single-end (less common)
-macs3 callpeak -f BAM -t sample.bam \
-    --nomodel --shift -75 --extsize 150 ...
-```
-
-## Call Peaks on NFR Only
-
-```bash
-# First, filter to nucleosome-free reads (<100bp fragments)
-samtools view -h sample.bam | \
-    awk 'substr($0,1,1)=="@" || ($9>0 && $9<100) || ($9<0 && $9>-100)' | \
-    samtools view -b > nfr.bam
-
-# Call peaks on NFR
-macs3 callpeak \
-    -t nfr.bam \
-    -f BAMPE \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
     -g hs \
-    -n sample_nfr \
-    --nomodel \
-    --shift -37 \
-    --extsize 75 \
-    --keep-dup all \
-    -q 0.01
-```
-
-## Broad Peaks (Optional)
-
-```bash
-# For broader accessible regions
-macs3 callpeak \
-    -t sample.bam \
-    -f BAMPE \
-    -g hs \
-    -n sample_broad \
-    --nomodel \
-    --shift -75 \
-    --extsize 150 \
     --broad \
-    --broad-cutoff 0.1
+    --nolambda \                   # Use local lambda only
+    -n sample \
+    --outdir peaks/
 ```
 
-## Batch Processing
+## Cutoff Analysis
 
 ```bash
-#!/bin/bash
-GENOME=hs  # hs for human, mm for mouse
-OUTDIR=peaks
-
-mkdir -p $OUTDIR
-
-for bam in *.bam; do
-    sample=$(basename $bam .bam)
-    echo "Processing $sample..."
-
-    macs3 callpeak \
-        -t $bam \
-        -f BAMPE \
-        -g $GENOME \
-        -n $sample \
-        --outdir $OUTDIR \
-        --nomodel \
-        --shift -75 \
-        --extsize 150 \
-        --keep-dup all \
-        -q 0.05 \
-        -B \
-        --call-summits
-done
+# Test different q-value cutoffs
+macs3 callpeak \
+    -t chip.bam \
+    -c input.bam \
+    -f BAM \
+    -g hs \
+    --cutoff-analysis \            # Generate cutoff analysis file
+    -n sample \
+    --outdir peaks/
 ```
 
 ## Output Files
 
 | File | Description |
 |------|-------------|
-| _peaks.narrowPeak | Peak locations (BED-like) |
-| _summits.bed | Peak summit positions |
-| _peaks.xls | Peak statistics (Excel format) |
-| _treat_pileup.bdg | Signal track (bedGraph) |
-| _control_lambda.bdg | Background (if control provided) |
+| *_peaks.narrowPeak | Peak coordinates (BED6+4) |
+| *_peaks.broadPeak | Broad peak coordinates |
+| *_summits.bed | Peak summit positions |
+| *_model.r | R script for model visualization |
+| *_treat_pileup.bdg | Treatment signal (with -B) |
+| *_control_lambda.bdg | Control signal (with -B) |
 
 ## narrowPeak Format
 
 ```
-chr1  100  500  peak1  500  .  10.5  50.2  45.1  200
+chr1  100  200  peak_1  100  .  5.2  10.5  8.3  50
 ```
+Columns: chr, start, end, name, score, strand, signalValue, pValue, qValue, peak
 
-Columns: chrom, start, end, name, score, strand, signalValue, pValue, qValue, summit_offset
-
-## Convert to BigWig
+## Filter Peaks
 
 ```bash
-# Sort bedGraph
-sort -k1,1 -k2,2n sample_treat_pileup.bdg > sample.sorted.bdg
+# Filter by q-value
+awk '$9 > 2' peaks.narrowPeak > peaks.filtered.narrowPeak  # -log10(q) > 2 means q < 0.01
 
-# Convert to BigWig
-bedGraphToBigWig sample.sorted.bdg chrom.sizes sample.bw
+# Sort by signal strength
+sort -k7,7nr peaks.narrowPeak > peaks.sorted.narrowPeak
 ```
 
-## Merge Replicates
+## Key Parameters
 
-```bash
-# Pool BAMs before peak calling (recommended for final peaks)
-samtools merge -@ 8 merged.bam rep1.bam rep2.bam rep3.bam
-
-# Call peaks on merged
-macs3 callpeak -t merged.bam -f BAMPE -g hs -n merged ...
-```
-
-## IDR for Replicate Consistency
-
-```bash
-# Call peaks on each replicate
-macs3 callpeak -t rep1.bam -f BAMPE -g hs -n rep1 ...
-macs3 callpeak -t rep2.bam -f BAMPE -g hs -n rep2 ...
-
-# Run IDR
-idr --samples rep1_peaks.narrowPeak rep2_peaks.narrowPeak \
-    --input-file-type narrowPeak \
-    --output-file idr_peaks.txt \
-    --plot
-
-# Filter by IDR threshold
-awk '$5 >= 540' idr_peaks.txt > reproducible_peaks.bed
-```
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| -t | required | Treatment BAM file(s) |
+| -c | none | Control BAM file(s) |
+| -f | AUTO | Format (BAM, BAMPE, BED) |
+| -g | hs | Genome size |
+| -n | NA | Output prefix |
+| -q | 0.05 | Q-value cutoff |
+| -p | none | P-value cutoff (overrides -q) |
+| --broad | false | Broad peak calling |
+| --nomodel | false | Skip model building |
+| --extsize | 200 | Extension size (with --nomodel) |
+| -B | false | Generate bedGraph |
+| --SPMR | false | Signal per million reads |
 
 ## Related Skills
 
-- read-alignment/bowtie2-alignment - Align ATAC-seq reads
-- atac-seq/atac-qc - Quality control
-- chip-seq/peak-calling - ChIP-seq comparison
-- genome-intervals/bed-file-basics - Work with peak files
+- peak-annotation - Annotate peaks to genes
+- differential-binding - Compare peaks between conditions
+- alignment-files - Prepare BAM files
+- chipseq-visualization - Visualize peaks

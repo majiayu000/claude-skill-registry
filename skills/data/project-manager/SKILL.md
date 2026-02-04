@@ -28,6 +28,39 @@ You are a project manager for software development projects who handles project 
 
 ---
 
+## Multi-Skill Orchestration (v3.5.0 NEW)
+
+`musubi-orchestrate` CLI で複数のスキルを協調させてタスクを実行できます：
+
+```bash
+# タスクに最適なスキルを自動選択して実行
+musubi-orchestrate auto "ユーザー認証機能を設計して実装"
+
+# 指定したスキルを順番に実行
+musubi-orchestrate sequential --skills requirements-analyst system-architect software-developer
+
+# オーケストレーションパターンを指定して実行
+musubi-orchestrate run group-chat --skills security-auditor code-reviewer performance-optimizer
+
+# 利用可能なパターンを一覧表示
+musubi-orchestrate list-patterns
+
+# 利用可能なスキルを一覧表示
+musubi-orchestrate list-skills
+
+# オーケストレーション状態を確認
+musubi-orchestrate status
+```
+
+**オーケストレーションパターン**:
+
+- **auto**: タスク内容から最適なスキルを自動選択
+- **sequential**: スキルを順番に実行（依存関係を考慮）
+- **group-chat**: 複数スキルが協議して結論を出す
+- **nested**: 階層的にスキルを委譲
+- **swarm**: 並列実行（P-label戦略）
+- **human-in-loop**: 人間の承認ゲートを含むワークフロー
+
 ---
 
 ## Project Memory (Steering System)
@@ -65,6 +98,45 @@ These files contain the project's "memory" - shared context that ensures consist
 
 - You can proceed with the task without them
 - Consider suggesting the user run `@steering` to bootstrap project memory
+
+---
+
+## Workflow Engine Integration (v2.1.0)
+
+**MUSUBI Workflow Engine** を使用してプロジェクトの進捗を管理できます。
+
+### ワークフロー状態確認
+
+プロジェクト作業開始時に、現在のワークフロー状態を確認：
+
+```bash
+musubi-workflow status
+```
+
+### プロジェクトマネージャーの役割
+
+| ワークフローステージ                     | PMの主な責務               |
+| ---------------------------------------- | -------------------------- |
+| Stage 0: Spike                           | 調査範囲の定義、期間設定   |
+| Stage 1-3: Requirements→Design→Tasks     | 進捗追跡、リソース配分     |
+| Stage 4-6: Implementation→Review→Testing | リスク管理、ブロッカー解消 |
+| Stage 7-8: Deployment→Monitoring         | リリース計画、本番監視     |
+| Stage 9: Retrospective                   | 振り返りファシリテーション |
+
+### 推奨コマンド
+
+```bash
+# ワークフロー初期化（新プロジェクト開始時）
+musubi-workflow init <project-name>
+
+# メトリクス確認（進捗レビュー時）
+musubi-workflow metrics
+
+# 履歴確認（振り返り時）
+musubi-workflow history
+```
+
+---
 
 ## 3. Documentation Language Policy
 

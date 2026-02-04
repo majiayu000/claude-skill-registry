@@ -1,459 +1,291 @@
 ---
 name: package-management
-description: Manage NuGet packages using Central Package Management (CPM) and dotnet CLI commands. Never edit XML directly - use dotnet add/remove/list commands. Use shared version variables for related packages.
-invocable: false
+description: Package conflict identification and Pixi-first dependency management
+icon: 📦
+category: development
+tools:
+  - pixi
+  - pnpm
+  - cargo
+  - npm
+  - yarn
 ---
 
-# NuGet Package Management
+# Package Management Skills
 
-## When to Use This Skill
+## Overview
 
-Use this skill when:
-- Adding, removing, or updating NuGet packages
-- Setting up Central Package Management (CPM) for a solution
-- Managing package versions across multiple projects
-- Troubleshooting package conflicts or restore issues
+This skill provides expertise in managing packages through Pixi as the central package manager, converting legacy npm/cargo commands to Pixi-wrapped equivalents, and resolving package conflicts.
 
----
+## Pixi-First Philosophy
 
-## Golden Rule: Never Edit XML Directly
+Pixi is the **primary package manager** for this repository. It manages:
 
-**Always use `dotnet` CLI commands to manage packages.** Never manually edit `.csproj` or `Directory.Packages.props` files.
+- **Python packages** via conda-forge and PyPI
+- **Node.js packages** via pnpm (pnpm is a conda-forge package that Pixi installs and manages; pnpm then handles Node.js package installation)
+- **System tools** via conda-forge (cmake, ninja, etc.)
+- **Rust toolchain** is provided by Nix; Pixi wraps cargo commands to ensure consistent environment variables and paths
 
-```bash
-# DO: Use CLI commands
-dotnet add package Newtonsoft.Json
-dotnet remove package Newtonsoft.Json
-dotnet list package --outdated
+### Why Pixi?
 
-# DON'T: Edit XML directly
-# <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-```
+1. **Reproducibility** - Lock files ensure identical environments
+2. **Cross-platform** - Works on Linux, macOS, and Windows
+3. **Environment isolation** - Multiple environments for different use cases
+4. **Conda ecosystem** - Access to conda-forge packages
+5. **Task runner** - Define and run project tasks
 
-**Why:**
-- CLI validates package exists and resolves correct version
-- Handles transitive dependencies correctly
-- Updates lock files if present
-- Avoids typos and malformed XML
-- Works correctly with CPM
+## Command Conversion Reference
 
----
+### npm → pixi pnpm
 
-## Central Package Management (CPM)
-
-CPM centralizes all package versions in one file, eliminating version conflicts across projects.
-
-### Enable CPM
-
-Create `Directory.Packages.props` in solution root:
-
-```xml
-<Project>
-  <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageVersion Include="Serilog" Version="4.0.0" />
-    <PackageVersion Include="xunit" Version="2.9.2" />
-  </ItemGroup>
-</Project>
-```
-
-### Project Files with CPM
-
-Projects reference packages **without versions**:
-
-```xml
-<!-- src/MyApp/MyApp.csproj -->
-<Project Sdk="Microsoft.NET.Sdk">
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" />
-    <PackageReference Include="Serilog" />
-  </ItemGroup>
-</Project>
-```
-
-### Adding Packages with CPM
+npm commands should be converted to use pnpm through Pixi:
 
 ```bash
-# Adds to Directory.Packages.props AND project file
-dotnet add package Serilog.Sinks.Console
+# Package installation
+npm install              → pixi run pnpm install
+npm ci                   → pixi run pnpm install --frozen-lockfile
+npm install <pkg>        → pixi run pnpm add <pkg>
+npm install -D <pkg>     → pixi run pnpm add -D <pkg>
+npm install -g <pkg>     → pixi run pnpm add -g <pkg>
+npm uninstall <pkg>      → pixi run pnpm remove <pkg>
 
-# Result in Directory.Packages.props:
-# <PackageVersion Include="Serilog.Sinks.Console" Version="6.0.0" />
+# Scripts
+npm run <script>         → pixi run pnpm run <script>
+npm test                 → pixi run pnpm test
+npm start                → pixi run pnpm start
+npm run build            → pixi run pnpm run build
 
-# Result in project file:
-# <PackageReference Include="Serilog.Sinks.Console" />
+# Package execution
+npx <pkg>                → pixi run pnpm dlx <pkg>
+npx create-react-app     → pixi run pnpm dlx create-react-app
+
+# Information
+npm list                 → pixi run pnpm list
+npm outdated             → pixi run pnpm outdated
+npm audit                → pixi run pnpm audit
 ```
 
----
+### yarn → pixi pnpm
 
-## Shared Version Variables
-
-Group related packages with shared version variables:
-
-```xml
-<Project>
-  <PropertyGroup>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-  </PropertyGroup>
-
-  <!-- Shared version variables -->
-  <PropertyGroup Label="SharedVersions">
-    <AkkaVersion>1.5.59</AkkaVersion>
-    <AkkaHostingVersion>1.5.59</AkkaHostingVersion>
-    <AspireVersion>9.0.0</AspireVersion>
-    <OpenTelemetryVersion>1.11.0</OpenTelemetryVersion>
-    <XunitVersion>2.9.2</XunitVersion>
-  </PropertyGroup>
-
-  <!-- Akka.NET packages - all use same version -->
-  <ItemGroup Label="Akka.NET">
-    <PackageVersion Include="Akka" Version="$(AkkaVersion)" />
-    <PackageVersion Include="Akka.Cluster" Version="$(AkkaVersion)" />
-    <PackageVersion Include="Akka.Cluster.Sharding" Version="$(AkkaVersion)" />
-    <PackageVersion Include="Akka.Cluster.Tools" Version="$(AkkaVersion)" />
-    <PackageVersion Include="Akka.Persistence" Version="$(AkkaVersion)" />
-    <PackageVersion Include="Akka.Streams" Version="$(AkkaVersion)" />
-    <PackageVersion Include="Akka.Hosting" Version="$(AkkaHostingVersion)" />
-    <PackageVersion Include="Akka.Cluster.Hosting" Version="$(AkkaHostingVersion)" />
-  </ItemGroup>
-
-  <!-- Aspire packages -->
-  <ItemGroup Label="Aspire">
-    <PackageVersion Include="Aspire.Hosting" Version="$(AspireVersion)" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)" />
-    <PackageVersion Include="Aspire.Hosting.PostgreSQL" Version="$(AspireVersion)" />
-    <PackageVersion Include="Aspire.Hosting.Testing" Version="$(AspireVersion)" />
-  </ItemGroup>
-
-  <!-- OpenTelemetry packages -->
-  <ItemGroup Label="OpenTelemetry">
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="$(OpenTelemetryVersion)" />
-    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="$(OpenTelemetryVersion)" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryVersion)" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryVersion)" />
-  </ItemGroup>
-
-  <!-- Testing -->
-  <ItemGroup Label="Testing">
-    <PackageVersion Include="xunit" Version="$(XunitVersion)" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="$(XunitVersion)" />
-    <PackageVersion Include="FluentAssertions" Version="6.12.0" />
-    <PackageVersion Include="Verify.Xunit" Version="26.0.0" />
-  </ItemGroup>
-</Project>
-```
-
-**Benefits:**
-- Update all Akka packages by changing one variable
-- Clear organization with labeled ItemGroups
-- Prevents version mismatches in related packages
-
----
-
-## When NOT to Use CPM
-
-Central Package Management isn't always the right choice:
-
-### Legacy Projects
-
-Migrating an existing large solution to CPM can introduce issues:
-- Existing version conflicts become visible all at once
-- Some packages may have intentional version differences
-- Migration requires touching many files simultaneously
-
-**Recommendation**: For legacy projects, migrate incrementally or stick with per-project versioning if it's working.
-
-### Version Ranges
-
-CPM requires exact versions - it doesn't support version ranges:
-
-```xml
-<!-- NOT supported with CPM -->
-<PackageVersion Include="Newtonsoft.Json" Version="[13.0,14.0)" />
-
-<!-- Must use exact version -->
-<PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
-```
-
-If you need version ranges (rare, but some library scenarios require it), CPM won't work.
-
-### Older .NET Versions
-
-CPM requires:
-- **.NET SDK 6.0.300+** or later
-- **NuGet 6.2+** or later
-- **Visual Studio 2022 17.2+** or later
-
-If you're targeting older SDK versions or have team members on older tooling, CPM may cause build failures.
-
-### Multi-Repo Solutions
-
-If your solution spans multiple repositories that are built independently, CPM's single `Directory.Packages.props` won't help - each repo needs its own.
-
----
-
-## CLI Command Reference
-
-### Adding Packages
+yarn commands are also converted to pnpm through Pixi:
 
 ```bash
-# Add latest stable version
-dotnet add package Serilog
-
-# Add specific version
-dotnet add package Serilog --version 4.0.0
-
-# Add prerelease
-dotnet add package Serilog --prerelease
-
-# Add to specific project
-dotnet add src/MyApp/MyApp.csproj package Serilog
+yarn install             → pixi run pnpm install
+yarn add <pkg>           → pixi run pnpm add <pkg>
+yarn add -D <pkg>        → pixi run pnpm add -D <pkg>
+yarn remove <pkg>        → pixi run pnpm remove <pkg>
+yarn run <script>        → pixi run pnpm run <script>
+yarn dlx <pkg>           → pixi run pnpm dlx <pkg>
 ```
 
-### Removing Packages
+### cargo → pixi cargo
+
+Cargo commands should be wrapped with Pixi:
 
 ```bash
-# Remove from current project
-dotnet remove package Serilog
+# Build
+cargo build              → pixi run cargo build
+cargo build --release    → pixi run cargo build --release
+cargo build --target x   → pixi run cargo build --target x
 
-# Remove from specific project
-dotnet remove src/MyApp/MyApp.csproj package Serilog
+# Test
+cargo test               → pixi run cargo test
+cargo test --lib         → pixi run cargo test --lib
+cargo test -- --nocapture → pixi run cargo test -- --nocapture
+
+# Run
+cargo run                → pixi run cargo run
+cargo run -- <args>      → pixi run cargo run -- <args>
+cargo run --release      → pixi run cargo run --release
+
+# Dependencies
+cargo add <crate>        → pixi run cargo add <crate>
+cargo remove <crate>     → pixi run cargo remove <crate>
+cargo update             → pixi run cargo update
+
+# Analysis
+cargo tree               → pixi run cargo tree
+cargo check              → pixi run cargo check
+cargo clippy             → pixi run cargo clippy
+cargo fmt                → pixi run cargo fmt
+
+# Documentation
+cargo doc                → pixi run cargo doc
+cargo doc --open         → pixi run cargo doc --open
 ```
 
-### Listing Packages
+## Environment Selection
+
+Different tasks require different Pixi environments:
 
 ```bash
-# List all packages in solution
-dotnet list package
+# Frontend/JavaScript development
+pixi run -e js pnpm install
+pixi run -e js pnpm run dev
+pixi run -e js pnpm run build
 
-# Show outdated packages
-dotnet list package --outdated
+# Python development (default environment)
+pixi run python script.py
+pixi run pytest tests/
 
-# Include transitive dependencies
-dotnet list package --include-transitive
+# CUDA/GPU workloads
+pixi run -e cuda python train.py
+pixi run -e cuda python -c "import torch; print(torch.cuda.is_available())"
 
-# Show vulnerable packages
-dotnet list package --vulnerable
+# ROS2 robotics (default environment includes ROS)
+pixi run ros2 --help
+pixi run colcon build
 
-# Show deprecated packages
-dotnet list package --deprecated
+# AIOS Agent development
+pixi run -e aios python -m cerebrum run agents/aios/my-agent
+
+# LLMOps evaluation
+pixi run -e llmops mlflow ui
+pixi run -e llmops python -c "import trulens"
+
+# Documentation
+pixi run -e docs mkdocs serve
+pixi run -e docs mkdocs build
 ```
 
-### Updating Packages
+## Conflict Detection
+
+### Common Conflict Patterns
+
+1. **Version Coupling** - PyTorch/torchvision/torchaudio must match
+   ```
+   # PyTorch 2.5.x requires:
+   torchvision 0.20.x
+   torchaudio 2.5.x
+   ```
+
+2. **Python Version Constraints**
+   - AIOS requires Python 3.10-3.11 (Python 3.12+ removed `pkgutil.ImpImporter` and other importlib APIs that AIOS depends on)
+   - Most other environments use Python 3.11.x
+
+3. **CUDA Version Mismatches**
+   - System CUDA vs PyTorch CUDA version must be compatible
+   - Check with: `pixi run -e cuda python -c "import torch; print(torch.version.cuda)"`
+
+4. **Channel Conflicts**
+   - robostack-humble and pytorch channels have incompatible expectations
+   - Use separate solve-groups in pixi.toml
+
+### Conflict Resolution Commands
 
 ```bash
-# With CPM: Edit the version in Directory.Packages.props
-# Then restore to apply
-dotnet restore
+# Check for conflicts in Pixi
+pixi list                    # List all packages
+pixi outdated                # Show outdated packages
+pixi run pnpm list           # List Node.js packages
+pixi run cargo tree          # Show Rust dependency tree
 
-# Without CPM: Remove and add with new version
-dotnet remove package Serilog
-dotnet add package Serilog --version 4.1.0
+# Update lock files
+pixi update                  # Update Pixi lock
+pixi run pnpm update         # Update pnpm lock
+pixi run cargo update        # Update Cargo lock
 
-# Or use dotnet-outdated tool (recommended)
-dotnet tool install --global dotnet-outdated-tool
-dotnet outdated --upgrade
+# Verify environments
+pixi run pytest              # Test Python
+pixi run -e js pnpm test     # Test Node.js
+pixi run cargo test          # Test Rust
 ```
 
-### Restore and Clean
+## Pixi Task Definitions
 
-```bash
-# Restore packages
-dotnet restore
+Define reusable tasks in `pixi.toml`:
 
-# Clear local cache (troubleshooting)
-dotnet nuget locals all --clear
+```toml
+[tasks]
+# Frontend tasks
+frontend-install = "pnpm -C frontend install"
+frontend-dev = "pnpm -C frontend dev"
+frontend-build = "pnpm -C frontend build"
+frontend-check = "pnpm -C frontend check"
+frontend-format = "pnpm -C frontend format"
 
-# Force restore (ignore cache)
-dotnet restore --force
+# Rust tasks (if needed)
+rust-build = { cmd = "cargo build", cwd = "rust" }
+rust-test = { cmd = "cargo test", cwd = "rust" }
+rust-release = { cmd = "cargo build --release", cwd = "rust" }
+
+# Python tasks
+python-test = "pytest test/ -v"
+python-lint = "ruff check ."
+python-format = "ruff format ."
 ```
 
----
+## Best Practices
 
-## Package Sources
+### Do
 
-### List Sources
+- ✅ Always use `pixi run` to execute commands
+- ✅ Use the appropriate environment (`-e <env>`) for each task
+- ✅ Define reusable tasks in `pixi.toml`
+- ✅ Keep lock files in sync (`pixi.lock`, `pnpm-lock.yaml`)
+- ✅ Use pnpm instead of npm for Node.js packages
+- ✅ Check for conflicts before major dependency updates
 
-```bash
-dotnet nuget list source
-```
+### Don't
 
-### Add Private Feed
-
-```bash
-# Add authenticated feed
-dotnet nuget add source https://pkgs.dev.azure.com/myorg/_packaging/myfeed/nuget/v3/index.json \
-  --name MyFeed \
-  --username az \
-  --password $PAT \
-  --store-password-in-clear-text
-```
-
-### NuGet.config
-
-For solution-specific sources, create `NuGet.config`:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <packageSources>
-    <clear />
-    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-    <add key="MyPrivateFeed" value="https://pkgs.dev.azure.com/myorg/_packaging/myfeed/nuget/v3/index.json" />
-  </packageSources>
-  <packageSourceCredentials>
-    <MyPrivateFeed>
-      <add key="Username" value="az" />
-      <add key="ClearTextPassword" value="%NUGET_PAT%" />
-    </MyPrivateFeed>
-  </packageSourceCredentials>
-</configuration>
-```
-
----
-
-## Common Patterns
-
-### Development-Only Packages
-
-```xml
-<!-- Directory.Packages.props -->
-<PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-
-<!-- Project file - mark as development dependency -->
-<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
-```
-
-### Conditional Packages
-
-```xml
-<!-- Only include in Debug builds -->
-<ItemGroup Condition="'$(Configuration)' == 'Debug'">
-  <PackageReference Include="JetBrains.Annotations" />
-</ItemGroup>
-
-<!-- Platform-specific -->
-<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
-  <PackageReference Include="System.Text.Json" />
-</ItemGroup>
-```
-
-### Version Override (Escape Hatch)
-
-When you must override CPM for one project (rare):
-
-```xml
-<!-- Project file - use sparingly! -->
-<PackageReference Include="Newtonsoft.Json" VersionOverride="12.0.3" />
-```
-
-**Warning**: This is detected by Slopwatch (see `dotnet/slopwatch` skill) as potential slop.
-
----
+- ❌ Use bare `npm`, `yarn`, or `cargo` commands
+- ❌ Install Node.js packages globally with npm
+- ❌ Mix Python environments (use `-e <env>`)
+- ❌ Commit `package-lock.json` (use `pnpm-lock.yaml`)
+- ❌ Ignore version coupling requirements
 
 ## Troubleshooting
 
-### Version Conflicts
+### "Command not found" in Pixi
 
 ```bash
-# See full dependency tree
-dotnet list package --include-transitive
-
-# Find what's pulling in a specific package
-dotnet list package --include-transitive | grep -i "PackageName"
+# Ensure you're in a Pixi environment
+pixi shell                   # Enter shell
+# Or use pixi run explicitly
+pixi run <command>
 ```
 
-### Restore Failures
+### Node.js package issues
 
 ```bash
-# Clear all caches
-dotnet nuget locals all --clear
-
-# Restore with detailed logging
-dotnet restore --verbosity detailed
-
-# Check for locked packages
-cat packages.lock.json
+# Clear pnpm cache and reinstall
+rm -rf node_modules pnpm-lock.yaml
+pixi run pnpm install
 ```
 
-### Lock Files
+### Cargo/Rust issues
 
-For reproducible builds, use package lock files:
+```bash
+# The Rust toolchain comes from Nix (flake.nix devShell)
+# When in a Nix shell, pixi run cargo commands use the Nix-provided toolchain
+# This ensures consistent environment variables and paths
 
-```xml
-<!-- Directory.Build.props -->
-<PropertyGroup>
-  <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-</PropertyGroup>
+# Option 1: Use pixi run directly (if cargo is in PATH from Nix)
+pixi run cargo build
+
+# Option 2: Enter Nix shell first for complex builds
+nix develop
+# Then in the shell:
+cargo build  # Uses Nix-provided cargo with Pixi environment vars
 ```
 
-Then commit `packages.lock.json` files.
+### Environment conflicts
 
----
-
-## Anti-Patterns
-
-### Don't: Edit XML Directly
-
-```xml
-<!-- BAD: Manual XML editing -->
-<PackageReference Include="Typo.Package" Version="1.0.0" />
-<!-- Package might not exist! CLI would catch this. -->
+```bash
+# Use a specific environment to isolate conflicts
+pixi run -e cuda python script.py      # For CUDA
+pixi run -e aios python script.py      # For AIOS
+pixi run -e default python script.py   # For ROS2
 ```
 
-### Don't: Inline Versions with CPM
+## Related Skills
 
-```xml
-<!-- BAD: Bypasses CPM -->
-<PackageReference Include="Serilog" Version="4.0.0" />
+- [Nix Environment](../nix-environment/SKILL.md) - Nix flakes and system packages
+- [DevOps](../devops/SKILL.md) - CI/CD pipeline configuration
+- [Rust Tooling](../rust-tooling/SKILL.md) - Rust development patterns
 
-<!-- GOOD: Version comes from Directory.Packages.props -->
-<PackageReference Include="Serilog" />
-```
+## Related Documentation
 
-### Don't: Mix Version Management
-
-```xml
-<!-- BAD: Some versions in CPM, some inline -->
-<PackageReference Include="Serilog" />  <!-- From CPM -->
-<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />  <!-- Inline -->
-```
-
-### Don't: Forget Shared Variables
-
-```xml
-<!-- BAD: Related packages with different versions -->
-<PackageVersion Include="Akka" Version="1.5.59" />
-<PackageVersion Include="Akka.Cluster" Version="1.5.58" />  <!-- Mismatch! -->
-
-<!-- GOOD: Use shared variable -->
-<PackageVersion Include="Akka" Version="$(AkkaVersion)" />
-<PackageVersion Include="Akka.Cluster" Version="$(AkkaVersion)" />
-```
-
----
-
-## Quick Reference
-
-| Task | Command |
-|------|---------|
-| Add package | `dotnet add package <name>` |
-| Add specific version | `dotnet add package <name> --version <ver>` |
-| Remove package | `dotnet remove package <name>` |
-| List packages | `dotnet list package` |
-| Show outdated | `dotnet list package --outdated` |
-| Show vulnerable | `dotnet list package --vulnerable` |
-| Restore | `dotnet restore` |
-| Clear cache | `dotnet nuget locals all --clear` |
-
----
-
-## Resources
-
-- **Central Package Management**: https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management
-- **dotnet CLI Reference**: https://learn.microsoft.com/en-us/dotnet/core/tools/
-- **NuGet.config Reference**: https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file
+- [docs/CONFLICTS.md](../../docs/CONFLICTS.md) - Known conflict patterns
+- [docs/PYTHON-ENVIRONMENTS.md](../../docs/PYTHON-ENVIRONMENTS.md) - Python environment details
+- [pixi.toml](../../pixi.toml) - Pixi configuration

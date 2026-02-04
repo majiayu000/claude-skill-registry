@@ -1,199 +1,211 @@
 ---
-skill_id: cfn-backlog-management
-name: CFN Backlog Management
-version: 1.0.0
-category: coordination
-tags: [backlog, documentation, sprint-planning, technical-debt]
-dependencies: []
+name: backlog
+description: Move an increment to backlog (planned but not ready to start)
+argument-hint: [increment-id] --reason="reason"
 ---
 
-# CFN Backlog Management Skill
+# Backlog Increment Command
+
+**Usage**: `/sw:backlog <increment-id> --reason="<reason>"`
+
+---
 
 ## Purpose
-Systematically capture and track backlogged items during CFN sprints to prevent work from being forgotten. Provides centralized documentation of deferred tasks with context, rationale, and proposed solutions.
 
-## Problem Solved
-During CFN Loop execution, agents frequently identify improvements, optimizations, or edge cases that should be addressed but are out of scope for the current sprint. Without systematic capture, these items are lost in chat history or forgotten entirely.
+Move an increment to backlog when:
+- **Planned** but not ready to start yet
+- **Low priority** compared to other work
+- **Waiting** for decisions or approvals before starting
+- **Multiple ideas** you want to plan without violating WIP limits
 
-## When to Use
-- **During CFN sprints** when identifying work that should be deferred
-- **After consensus** when validators identify future improvements
-- **During retrospectives** when documenting technical debt
-- **Architecture reviews** when noting long-term refactoring needs
-
-## Interface
-
-### Primary Script: `add-backlog-item.sh`
-
-**Required Parameters:**
-- `--item`: Brief description of backlogged work (1-2 sentences)
-- `--why`: Rationale for deferring (why not now?)
-- `--solution`: Proposed implementation approach
-
-**Optional Parameters:**
-- `--sprint`: Sprint identifier (default: auto-detected from context)
-- `--priority`: P0-P3 (default: P2)
-- `--tags`: Comma-separated tags (e.g., "optimization,redis,testing")
-- `--category`: Feature/Bug/Technical-Debt/Optimization (default: Technical-Debt)
-
-**Usage:**
-```bash
-./.claude/skills/cfn-backlog-management/add-backlog-item.sh \
-  --sprint "Sprint 10" \
-  --item "Implement Redis connection pooling for multi-agent coordination" \
-  --why "Current single-connection model causes bottlenecks with 10+ agents, but Sprint 10 scope limited to 3-agent validation" \
-  --solution "Use ioredis library with configurable pool size (min: 5, max: 20). Add pool metrics to monitoring dashboard" \
-  --priority "P2" \
-  --tags "optimization,redis,performance" \
-  --category "Optimization"
-```
-
-### Output Location
-All backlog items are appended to: `readme/BACKLOG.md`
-
-## Backlog File Structure
-
-```markdown
-# Claude Flow Novice - Backlog
-
-Last Updated: 2025-10-31
-
-## Active Items
-
-### P0 - Critical
-[Items requiring immediate attention in next sprint]
-
-### P1 - High Priority
-[Items to address within 2-3 sprints]
-
-### P2 - Medium Priority
-[Items to address when capacity allows]
-
-### P3 - Low Priority / Nice-to-Have
-[Items for future consideration]
-
-## Completed Items
-[Moved here when implemented, with resolution sprint noted]
+**Key Difference**:
+- **Backlog** = Never started, planned for future (does NOT count towards WIP)
+- **Paused** = Started but blocked (does NOT count towards WIP)
 
 ---
 
-## Item Template
+## Behavior
 
-**[PRIORITY] - [Item Title]**
-- **Sprint Backlogged**: Sprint X
-- **Category**: Feature/Bug/Technical-Debt/Optimization
-- **Description**: What needs to be done
-- **Rationale**: Why it was deferred
-- **Proposed Solution**: How to implement
-- **Tags**: `tag1`, `tag2`, `tag3`
-- **Status**: Backlogged | In Progress | Completed
-- **Date Added**: YYYY-MM-DD
-```
+1. **Validates** increment exists and is "active"
+2. **Prompts** for reason if not provided via --reason flag
+3. **Updates** metadata.json:
+   - `status`: "active" → "backlog"
+   - `backlogReason`: User-provided reason
+   - `backlogAt`: Current timestamp
+4. **Displays** confirmation message
+5. **Suggests** next actions (`/sw:resume` to start work)
 
-## Validation Rules
+---
 
-The skill enforces:
-1. **All required fields present** (item, why, solution)
-2. **Item description clarity** (≥10 characters, ≤500 characters)
-3. **Rationale specificity** (must explain deferral reason, not just "out of scope")
-4. **Solution actionability** (must include concrete implementation approach)
-5. **No duplicates** (checks existing BACKLOG.md for similar items)
+## Examples
 
-## Integration with CFN Loops
-
-### Loop 2 Validators
-When validators identify improvements outside current scope:
+### Move to backlog with reason
 ```bash
-# In validator agent
-./.claude/skills/cfn-backlog-management/add-backlog-item.sh \
-  --item "Add integration tests for Redis failure scenarios" \
-  --why "Current sprint validates happy path only; failure testing requires additional test infrastructure" \
-  --solution "Create test-redis-failures.sh with Docker-based Redis crash simulation" \
-  --tags "testing,redis,edge-cases"
+/sw:backlog 0032 --reason="Low priority, focus on 0031 first"
+
+✅ Increment 0032 moved to backlog
+📝 Reason: Low priority, focus on 0031 first
+🗂️  No longer counts toward WIP limits
+💡 Start work with: /sw:resume 0032
 ```
 
-### Product Owner Decision
-When Product Owner defers work for future sprint:
+### Move to backlog without reason (prompts)
 ```bash
-# In product-owner agent
-./.claude/skills/cfn-backlog-management/add-backlog-item.sh \
-  --item "Migrate coordination from Redis to etcd for production scale" \
-  --why "Redis sufficient for current 10-agent limit; etcd needed for 100+ agent deployments" \
-  --solution "Abstract coordination layer behind interface, implement etcd adapter" \
-  --priority "P3" \
-  --category "Technical-Debt"
+/sw:backlog 0032
+
+❓ Why are you moving this to backlog?
+   1. Low priority
+   2. Waiting for decisions/approvals
+   3. Multiple planned ideas
+   4. Other (type reason)
+
+> 1
+
+✅ Increment 0032 moved to backlog
+📝 Reason: Low priority
+💡 Start work with: /sw:resume 0032
 ```
 
-### Coordinator Context
-Coordinators can query backlog for related items before spawning agents:
+---
+
+## Edge Cases
+
+### Already in Backlog
 ```bash
-# Check if backlog contains relevant context
-grep -i "redis pooling" readme/BACKLOG.md
-# Use results to inform agent context injection
+/sw:backlog 0032 --reason="Different reason"
+
+⚠️  Increment 0032 is already in backlog
+   Previous reason: Low priority
+   New reason: Different reason
+
+Update reason? [Y/n]: y
+
+✅ Reason updated
+📝 New reason: Different reason
 ```
 
-## Query Interface
-
-**Search by tag:**
+### Cannot Backlog Completed
 ```bash
-grep -A 10 "Tags:.*redis" readme/BACKLOG.md
+/sw:backlog 0005
+
+❌ Cannot move increment 0005 to backlog
+   Status: completed
+   Completed increments cannot be moved to backlog
 ```
 
-**Filter by priority:**
+### Cannot Backlog Paused
 ```bash
-sed -n '/^### P1/,/^### P2/p' readme/BACKLOG.md
+/sw:backlog 0008
+
+❌ Cannot move increment 0008 to backlog
+   Status: paused
+   Paused work should be resumed or abandoned, not moved to backlog
+   Resume it: /sw:resume 0008
 ```
 
-**List all optimization items:**
+### Increment Not Found
 ```bash
-grep -B 2 "Category: Optimization" readme/BACKLOG.md
+/sw:backlog 9999
+
+❌ Increment not found: 9999
+💡 Check available increments: /sw:status
 ```
 
-## Maintenance
+---
 
-**Weekly Review**: Product Owner reviews P0-P1 items for sprint planning
-**Monthly Cleanup**: Archive completed items, reassess P3 priorities
-**Quarterly Audit**: Remove stale items (>6 months old, no activity)
+## Implementation
+
+This command uses the MetadataManager to update increment status:
+
+```typescript
+import { MetadataManager, IncrementStatus } from '../src/core/increment/metadata-manager';
+
+// Read current metadata
+const metadata = MetadataManager.read(incrementId);
+
+// Validate can move to backlog
+if (metadata.status !== IncrementStatus.ACTIVE) {
+  throw new Error(`Cannot move increment with status: ${metadata.status}`);
+}
+
+// Update status
+MetadataManager.updateStatus(incrementId, IncrementStatus.BACKLOG, reason);
+```
+
+---
+
+## Status Flow
+
+```
+active ──backlog──> backlog
+   │
+   └──resume──> active
+```
+
+---
+
+## Related Commands
+
+- `/sw:resume <id>` - Move from backlog to active (start work)
+- `/sw:pause <id>` - Pause active work (different from backlog)
+- `/sw:status` - Show all increment statuses including backlog
+- `/sw:abandon <id>` - Abandon increment (permanent)
+
+---
 
 ## Best Practices
 
-1. **Be specific**: "Add caching" → "Implement Redis LRU cache for agent context with 1h TTL"
-2. **Explain constraints**: "Not enough time" → "Requires 8h estimation work; current sprint has 2h budget"
-3. **Provide actionable solutions**: "Fix later" → "Refactor using Strategy pattern from planning/PATTERNS.md"
-4. **Tag appropriately**: Enables filtering and sprint planning
-5. **Update status**: Move to "Completed" when resolved, note resolution sprint
+✅ **Use backlog for planning** - Plan multiple increments without violating WIP
 
-## Anti-Patterns
+✅ **Prioritize backlog regularly** - Review and reorder based on value
 
-❌ **Vague items**: "Improve performance" (What component? How much improvement?)
-❌ **No rationale**: "Backlog this" (Why defer? What's the blocker?)
-❌ **Solution-less**: "Fix Redis issues" (What's the approach? What research is needed?)
-❌ **Duplicate entries**: Check BACKLOG.md before adding
-❌ **Scope creep**: Backlog is for deferred work, not scope expansion
+✅ **Clear reasons** - Helps with prioritization decisions
 
-## Example Backlog Item
+✅ **Start when ready** - Use `/sw:resume` to move from backlog to active
 
-```markdown
-**[P1] - Implement Adaptive Validator Scaling**
-- **Sprint Backlogged**: Sprint 9 - CFN v3 Implementation
-- **Category**: Optimization
-- **Description**: Dynamically adjust number of Loop 2 validators (2-5) based on task complexity. Currently fixed at 3-4 validators regardless of task size.
-- **Rationale**: Sprint 9 focused on dual-mode architecture validation. Adaptive scaling requires task complexity classifier (NLP or heuristic-based), estimated 12h implementation vs 4h sprint budget.
-- **Proposed Solution**: Create task-classifier skill that analyzes task description (file count, domain keywords, integration points) and returns complexity score (0.0-1.0). Map score to validator count: <0.3 → 2 validators, 0.3-0.7 → 3-4 validators, >0.7 → 5 validators. Reference: CFN_LOOP_TASK_MODE.md section on adaptive validator scaling.
-- **Tags**: `optimization`, `cfn-loop`, `validation`, `adaptive-scaling`
-- **Status**: Backlogged
-- **Date Added**: 2025-10-31
+❌ **Don't confuse with paused** - Backlog = never started, Paused = started but blocked
+
+❌ **Don't let backlog grow unbounded** - Review and abandon obsolete items
+
+---
+
+## Backlog vs Paused
+
+| Aspect | Backlog | Paused |
+|--------|---------|--------|
+| **Definition** | Planned but not started | Started but blocked |
+| **WIP Count** | NO | NO |
+| **Use Case** | Low priority, future work | Blocked, deprioritized |
+| **Resume** | Start from beginning | Continue where left off |
+
+---
+
+## Warning: Large Backlog
+
+If your backlog grows too large (10+ increments), `/sw:status` will warn:
+
+```bash
+/sw:status
+
+🗂️  Backlog (12):
+  📦 0032-feature-a [feature] - Low priority
+  📦 0033-feature-b [feature] - Waiting for decisions
+  📦 0034-feature-c [feature] - Multiple planned ideas
+  ... (9 more)
+
+⚠️  Large backlog! Consider:
+   - Abandoning obsolete items
+   - Consolidating similar features
+   - Reviewing priorities
+
+💡 Actions:
+   /sw:resume <id>  # Start work on highest priority
+   /sw:abandon <id> # Remove obsolete items
 ```
 
-## Success Metrics
+---
 
-- **Backlog utilization**: ≥30% of backlog items addressed within 3 sprints
-- **Item clarity**: 0 items missing required fields
-- **Discovery rate**: ≥50% of technical debt captured vs lost in chat
-- **Sprint planning efficiency**: Backlog queries reduce planning time by 20%
-
-## References
-
-- **STRAT-025**: Explicit Deliverable Tracking (adaptive context)
-- **CFN Loop Documentation**: `.claude/commands/CFN_LOOP_TASK_MODE.md`
-- **Sprint Execution**: CLAUDE.md Section 6 - Sprint Context Injection
+**Command**: `/sw:backlog`
+**Plugin**: specweave (core)
+**Version**: v0.19.0
+**Part of**: Backlog Support Feature

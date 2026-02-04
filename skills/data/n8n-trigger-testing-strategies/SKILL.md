@@ -11,6 +11,12 @@ last_optimized: 2025-12-15
 dependencies: []
 quick_reference_card: true
 tags: [n8n, triggers, webhook, schedule, cron, polling, testing]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/n8n-trigger-testing-strategies.yaml
+
 ---
 
 # n8n Trigger Testing Strategies

@@ -1,232 +1,170 @@
 ---
 name: skill-maker
-description: Generate new Claude Code skills with proper structure and standards. Use when the user requests skill creation, wants to generate a new skill, or mentions creating custom Claude Code functionality. Activated by phrases like "create a skill", "generate a skill", "make a new skill", or "build a skill for".
+description: |
+  Create new Claude Code skills following project conventions. Use when: (1) creating
+  a new skill from scratch, (2) converting learnings into reusable skills, (3) validating
+  existing skills against quality standards. Provides templates, frontmatter specification,
+  and quality checklist.
+category: development
+user-invocable: true
 ---
 
 # Skill Maker
 
-## Purpose
+Create and validate Claude Code skills following best practices.
 
-This skill generates properly structured Claude Code skills following official documentation standards. It ensures all generated skills conform to required conventions, including YAML frontmatter syntax, directory organization, naming conventions, and quality standards.
+## Quick Start
 
-## Instructions
+**Create a new skill:**
+1. Choose a template: `simple`, `with-references`, or `full`
+2. Create directory: `skills/<skill-name>/`
+3. Write SKILL.md following the template
+4. Run validation: `skills validate <skill-name>`
 
-When invoked, execute the following systematic procedure:
+## Templates
 
-### 1. Requirements Gathering Phase
+| Template | Structure | Use Case |
+|----------|-----------|----------|
+| simple | SKILL.md only | Single-file guidance, quick tips |
+| with-references | + references/ | Multi-section documentation |
+| full | + docs/, templates/, provenance | Comprehensive skills with examples |
 
-Before generating any skill, collect the following essential information through structured inquiry:
+See [templates/](templates/) for complete templates.
 
-**Required Information**:
-- **Primary Function**: What is the core capability or task the skill shall perform?
-- **Activation Triggers**: What keywords, file types, or contexts should invoke this skill?
-- **Tool Requirements**: Which Claude Code tools are necessary? (Read, Write, Edit, Bash, Grep, Glob, WebFetch, Task, etc.)
-- **External Dependencies**: Does the skill require external packages, libraries, or system utilities?
-- **Scope Boundaries**: What is explicitly out-of-scope for this skill?
+## Frontmatter Specification
 
-**Clarifying Questions to Ask When Information is Insufficient**:
+Required fields:
+```yaml
+---
+name: skill-name          # kebab-case, unique identifier
+description: |            # Multi-line recommended
+  What the skill does. Use when: (1) condition, (2) condition.
+  Specific symptoms, error messages, or file types it handles.
+---
+```
 
-If the user provides a vague or incomplete request, employ targeted questioning:
+Optional fields:
+```yaml
+category: testing|development|documentation|refactoring|security|performance
+user-invocable: true      # Can be called via /skill-name
+disable-model-invocation: false  # Prevent automatic loading
+allowed-tools: Read,Write # Comma-separated tool names
+context: fork|inline      # How skill is invoked
+agent: agent-name         # Specific agent to use
+```
 
-1. **Functional Clarity**:
-   - "What specific problem or task shall this skill address?"
-   - "What inputs will the skill receive, and what outputs should it produce?"
-   - "Are there existing workflows or examples that illustrate the desired functionality?"
+See [references/frontmatter-spec.md](references/frontmatter-spec.md) for details.
 
-2. **Activation Context**:
-   - "What phrases or keywords should trigger this skill's activation?"
-   - "Are there specific file types or extensions associated with this skill?"
-   - "In what project contexts would this skill be most useful?"
+## Description Quality
 
-3. **Tool Restrictions**:
-   - "Should this skill have unrestricted tool access, or require limitations?"
-   - "Are there security considerations requiring tool restrictions?"
-   - "Does the skill need to modify files, or is read-only access sufficient?"
+Good descriptions enable semantic matching. Include:
 
-4. **Dependencies and Prerequisites**:
-   - "Does this functionality require external libraries or system commands?"
-   - "Are there platform-specific considerations (Windows, macOS, Linux)?"
-   - "What should occur if dependencies are not installed?"
+1. **What it does** (1 sentence)
+2. **Trigger conditions** (Use when:, Helps with:)
+3. **Specific context** (error messages, file types, frameworks)
 
-5. **Scope Refinement**:
-   - "Should this skill handle error cases, or focus on the primary workflow?"
-   - "Are there edge cases or variations that require explicit handling?"
-   - "Would this skill benefit from additional reference documentation or examples?"
+### Good Example
+```yaml
+description: |
+  Fix "ENOENT: no such file or directory" errors in npm monorepos.
+  Use when: (1) npm run fails with ENOENT, (2) paths work in root
+  but not packages, (3) symlinks cause resolution failures.
+  Covers Lerna, Turborepo, and npm workspaces.
+```
 
-### 2. Skill Design Phase
+### Bad Example
+```yaml
+description: A skill that helps with npm problems.
+```
 
-Based on gathered requirements, formulate the skill architecture:
+See [references/description-guide.md](references/description-guide.md).
 
-**Name Generation**:
-- Convert functional description to kebab-case format
-- Ensure maximum 64-character length
-- Use descriptive, domain-relevant terminology
-- Examples: `pdf-processor`, `code-reviewer`, `api-client-generator`
+## Quality Checklist
 
-**Description Engineering**:
-- Maximum 1024 characters
-- Include explicit functional capabilities
-- Specify clear activation triggers with domain terminology
-- Reference file types, tool categories, or operational contexts
-- Follow pattern: "[What it does]. Use when [activation scenarios]."
+Before finalizing a skill, verify:
 
-**Tool Selection**:
-- Identify minimum required tool set for functionality
-- Apply `allowed-tools` restriction if security or scope dictates
-- Omit `allowed-tools` field for unrestricted access
+- [ ] Name is kebab-case and descriptive
+- [ ] Description > 50 characters
+- [ ] Description includes trigger conditions
+- [ ] Category is valid (if specified)
+- [ ] Referenced files exist (references/, docs/)
+- [ ] No slop patterns (placeholder content)
+- [ ] Content is actionable and specific
+- [ ] Tested with `skills validate`
 
-**File Structure Planning**:
-- `SKILL.md`: Always required (primary skill definition)
-- `reference.md`: Optional (for advanced usage, detailed API documentation)
-- `examples.md`: Optional (for comprehensive usage examples)
-- `scripts/`: Optional (for helper utilities or automation scripts)
-- `templates/`: Optional (for reusable file templates or scaffolding)
+See [references/quality-checklist.md](references/quality-checklist.md).
 
-### 3. Skill Generation Phase
+## Validation
 
-Create the skill files systematically:
+Run validation on your skill:
 
-**Step 3.1**: Create skill directory structure
 ```bash
-mkdir -p .claude/skills/[skill-name]
+# Validate specific skill
+skills validate <skill-name>
+
+# Validate all skills in project
+skills validate
+
+# JSON output
+skills validate --json
 ```
 
-**Step 3.2**: Generate SKILL.md with valid YAML frontmatter
+Validation checks:
+- Frontmatter format and required fields
+- Description quality (length, trigger conditions)
+- Category validity
+- Slop pattern detection
+- Reference file existence
 
-Ensure strict adherence to syntax:
-- Opening delimiter `---` on line 1
-- Closing delimiter `---` before markdown content
-- Valid YAML formatting (spaces only, no tabs)
-- Properly quoted strings containing special characters
+## Slop Detection
 
-**Step 3.3**: Compose instructional content
+The validator detects common slop patterns:
 
-Instructions section shall employ:
-- Numbered procedural steps for sequential operations
-- Code examples with explicit syntax
-- Expected input/output specifications
-- Error handling guidance where relevant
-- Clear, unambiguous language suitable for model execution
+| Pattern | Example | Action |
+|---------|---------|--------|
+| test-skill-* | `test-skill-1234567890` | Delete |
+| Placeholder content | "NEW content with improvements!" | Rewrite |
+| Generic names | "# Test Skill" | Rename |
+| Lorem ipsum | Any placeholder text | Remove |
 
-**Step 3.4**: Generate supporting files (if applicable)
+## Skill Chaining
 
-Create `reference.md`, `examples.md`, or utility scripts as determined during design phase.
+This skill works with:
 
-### 4. Validation Phase
+- **claudeception**: Extract learnings → create skill with skill-maker
+- **tdd**: Write tests first when adding CLI validation features
+- **dogfood-skills**: Use `skills validate` after creating skills
 
-Verify generated artifacts against quality standards:
+## Creating Your First Skill
 
-**Syntax Validation**:
-- YAML frontmatter parseable without errors
-- Name field conforms to naming conventions
-- Description within character limits
-- File paths use forward slashes exclusively
+1. **Identify the knowledge**: What non-obvious solution did you discover?
+2. **Check existing skills**: Is there already a skill for this?
+3. **Choose template**: Start with `simple` unless you need references
+4. **Write SKILL.md**: Follow frontmatter spec and description guidelines
+5. **Validate**: Run `skills validate <name>`
+6. **Test**: Use the skill in a real scenario
 
-**Functionality Validation**:
-- Instructions provide clear procedural guidance
-- Examples demonstrate realistic usage scenarios
-- Tool selections appropriate for stated functionality
-- Dependencies explicitly documented
+## Directory Structure
 
-**Quality Validation**:
-- Description includes both functional and trigger specifications
-- Scope appropriately focused (singular capability)
-- Instructions maintain pedagogical clarity
-- Supporting files referenced correctly
+**All skills live in the root `skills/` directory** (canonical location):
 
-### 5. Delivery Phase
-
-Present the generated skill to the user with the following information:
-
-**Confirmation Message Template**:
 ```
-Skill "[skill-name]" has been successfully generated at:
-.claude/skills/[skill-name]/
-
-**Generated Files**:
-- SKILL.md (primary skill definition)
-[List additional files if created]
-
-**Activation**: This skill will activate when [describe trigger conditions].
-
-**Next Steps**:
-1. Review the generated SKILL.md for accuracy
-2. Test activation by formulating queries matching the description triggers
-3. Modify instructions if refinements are necessary
-4. Add supporting files (reference.md, examples.md) if desired
-
-**Verification Command**:
-cat .claude/skills/[skill-name]/SKILL.md
+skills/<skill-name>/
+├── SKILL.md              # Required: Main skill file
+├── references/           # Optional: Supporting documentation
+│   ├── guide.md
+│   └── examples.md
+├── templates/            # Optional: Code/config templates
+├── scripts/              # Optional: Helper scripts
+└── .provenance.json      # Optional: Source tracking
 ```
 
-## Quality Standards Enforcement
+The `.claude/skills/` symlink makes skills available to Claude Code. Never create skills directly in `packages/skills/skills/` (generated at build time).
 
-All generated skills shall conform to the following non-negotiable requirements:
+## Tips
 
-1. **Valid YAML Syntax**: Frontmatter must parse without errors
-2. **Naming Compliance**: Kebab-case, descriptive, ≤64 characters
-3. **Description Specificity**: Must include functional capabilities AND activation triggers
-4. **Instructional Clarity**: Procedural steps sufficiently detailed for autonomous execution
-5. **File Path Conventions**: Forward slashes exclusively
-6. **Dependency Documentation**: External requirements explicitly stated
-7. **Focused Scope**: Singular, well-defined capability per skill
-
-## Error Handling
-
-If skill generation encounters issues:
-
-1. **Insufficient Information**: Return to Requirements Gathering Phase with targeted questions
-2. **Naming Conflicts**: Check for existing skill with same name; propose alternative
-3. **Validation Failures**: Report specific issues (YAML syntax errors, description deficiencies)
-4. **Tool Uncertainty**: Request clarification on required capabilities
-
-## Meta-Considerations
-
-This skill-maker itself serves as an exemplar of proper skill construction:
-- Focused singular purpose (skill generation)
-- Comprehensive description with activation triggers
-- Systematic procedural instructions
-- Quality validation requirements
-- Clear user communication protocols
-
-## Examples
-
-### Example 1: User Provides Complete Specification
-
-**User Request**: "Create a skill for processing CSV files - reading, analyzing, and transforming tabular data. Should activate on CSV-related queries."
-
-**Skill-Maker Response**:
-- Directly proceed to generation (sufficient information provided)
-- Generate skill named `csv-processor`
-- Include Read, Bash tools
-- Document pandas/csv module dependencies
-
-### Example 2: User Provides Vague Specification
-
-**User Request**: "Make a skill for documentation."
-
-**Skill-Maker Response**:
-- Ask: "What type of documentation should this skill handle? (API docs, README files, code comments, markdown files, etc.)"
-- Ask: "What operations should it perform? (generate, validate, transform, extract, etc.)"
-- Ask: "What file formats are relevant? (.md, .rst, .html, .pdf, etc.)"
-- Await user clarification before proceeding to generation
-
-### Example 3: Security-Sensitive Skill
-
-**User Request**: "Create a skill for analyzing log files without modifying them."
-
-**Skill-Maker Response**:
-- Generate with `allowed-tools: Read, Grep, Bash` restriction
-- Explicitly document read-only constraint in instructions
-- Include validation step preventing write operations
-
-## References
-
-This skill implements standards derived from official Claude Code documentation:
-- [Agent Skills Documentation](https://code.claude.com/docs/en/skills.md)
-
-For advanced customization of generated skills, consult the official documentation for:
-- Complex tool restriction patterns
-- Plugin-based skill distribution
-- Multi-file skill architectures
-- Integration with MCP servers
+- Start simple, add complexity only when needed
+- Keep SKILL.md focused on actionable guidance
+- Use references/ for detailed documentation
+- Include concrete examples, not just theory
+- Update skills when you learn more

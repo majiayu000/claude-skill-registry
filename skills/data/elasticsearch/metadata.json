@@ -1,7 +1,9 @@
 {
   "name": "elasticsearch",
-  "repo": "jyasuu/cheat-sheet",
-  "path": "skills/elasticsearch/SKILL.md",
-  "source": "github.com/jyasuu/cheat-sheet",
-  "downloaded_at": "2026-02-02T03:19:49.814241Z"
+  "description": "Elasticsearch 5.2 operations using HTTP API - searching, indexing, bulk operations, scroll API, and alias management",
+  "repo": "lawless-m/Earwig",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/lawless-m/Earwig"
 }

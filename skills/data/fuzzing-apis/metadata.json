@@ -1,7 +1,7 @@
 {
   "name": "fuzzing-apis",
-  "repo": "HelixDevelopment/HelixAgent",
+  "repo": "vasic-digital/SuperAgent",
   "path": "skills/plugins/testing/api-fuzzer/fuzzing-apis/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:43.246087Z"
+  "source": "github.com/vasic-digital/SuperAgent",
+  "downloaded_at": "2026-02-04T03:29:26.835051Z"
 }

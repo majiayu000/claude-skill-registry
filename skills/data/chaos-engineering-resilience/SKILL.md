@@ -11,6 +11,11 @@ last_optimized: 2025-12-02
 dependencies: []
 quick_reference_card: true
 tags: [chaos, resilience, fault-injection, distributed-systems, recovery, netflix]
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/chaos-engineering-resilience.yaml
 ---
 
 # Chaos Engineering & Resilience Testing

@@ -107,3 +107,26 @@ When you detect a high-value pattern while writing tests, **offer PBT as an opti
 - Ignoring type hints (well-typed = easier to test)
 - Overwhelming user with candidates (limit to top 5-10)
 - Being pushy after user declines
+
+## Skill Chaining
+
+### Chains From
+
+| Source | When |
+|--------|------|
+| unit-test-workflow | Pure functions, roundtrip patterns detected |
+| suggest-tests | Serialization patterns identified |
+
+### Terminal Chain
+
+After PBT tests complete: **repo-hygiene** (clean temporary test files)
+
+### Testing Pipeline Position
+
+property-based-testing is step 4 in the testing pipeline:
+
+```
+tdd → suggest-tests → unit-test-workflow → property-based-testing → repo-hygiene
+                                                    ↑
+                                               (you are here)
+```

@@ -1,38 +1,31 @@
 ---
-name: styling
-description: CSS and Tailwind styling guidelines. Use when writing styles, creating UI components, reviewing CSS/Tailwind code, or deciding on wrapper element structure.
+name: Next.js Styling & UI Performance
+description: Zero-runtime CSS strategies (Tailwind) and RSC compatibility.
+metadata:
+  labels: [nextjs, styling, tailwind, css]
+  triggers:
+    files: ['**/*.css', 'tailwind.config.ts', '**/components/ui/*.tsx']
+    keywords: [tailwind, css modules, styled-components, clsx, cn]
 ---
 
-# Styling Guidelines
+# Styling & UI Performance
 
-## Minimize Wrapper Elements
+## **Priority: P1 (HIGH)**
 
-Avoid creating unnecessary wrapper divs. If classes can be applied directly to an existing semantic element with the same outcome, prefer that approach.
+Prioritize **Zero-Runtime** CSS for Server Components.
 
-### Good (Direct Application)
+## Library Selection
 
-```svelte
-<main class="flex-1 mx-auto max-w-7xl">
-	{@render children()}
-</main>
-```
+| Library                    | Verdict            | Reason                                             |
+| :------------------------- | :----------------- | :------------------------------------------------- |
+| **Tailwind / shadcn**      | **Preferred (P1)** | Zero-runtime, RSC compatible. Best for App Router. |
+| **CSS Modules**            | **Recommended**    | Scoped, zero-runtime.                              |
+| **MUI / Chakra (Runtime)** | **Avoid**          | Forces `use client` widely. Degrades performance.  |
 
-### Avoid (Unnecessary Wrapper)
+## Patterns
 
-```svelte
-<main class="flex-1">
-	<div class="mx-auto max-w-7xl">
-		{@render children()}
-	</div>
-</main>
-```
-
-This principle applies to all elements where the styling doesn't conflict with the element's semantic purpose or create layout issues.
-
-## Tailwind Best Practices
-
-- Use the `cn()` utility from `$lib/utils` for combining classes conditionally
-- Prefer utility classes over custom CSS
-- Use `tailwind-variants` for component variant systems
-- Follow the `background`/`foreground` convention for colors
-- Leverage CSS variables for theme consistency
+1. **Dynamic Classes**: Use `clsx` + `tailwind-merge` (`cn` utility).
+   - _Reference_: [Dynamic Classes & Button Example](references/implementation.md)
+2. **Font Optimization**: Use `next/font` to prevent Cumulative Layout Shift (CLS).
+   - _Reference_: [Font Setup](references/implementation.md)
+3. **CLS Prevention**: Always specify `width`/`height` on images.

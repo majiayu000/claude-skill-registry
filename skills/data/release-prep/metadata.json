@@ -1,7 +1,7 @@
 {
   "name": "release-prep",
-  "repo": "dataroadinc/rhusky",
-  "path": ".claude/skills/release-prep/SKILL.md",
-  "source": "github.com/dataroadinc/rhusky",
-  "downloaded_at": "2026-02-02T04:40:21.330929Z"
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/release-prep/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-04T05:07:08.105558Z"
 }

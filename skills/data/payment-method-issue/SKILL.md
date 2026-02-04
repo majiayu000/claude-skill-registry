@@ -1,48 +1,20 @@
 ---
 name: payment-method-issue
-description: |
-  Customer has issues with specific payment methods like credit cards, Apple Pay, or regional payment restrictions.
-sample_size: 317
-validation:
-  required_phrases:
-    - "let me know if"
-  forbidden_patterns: []
-metrics:
-  sample_size: 317
-  avg_thread_length: 3.34
-  top_phrases:
-    - phrase: "let me know if"
-      count: 45
-      percent: 14.2
-    - phrase: "me know if you"
-      count: 42
-      percent: 13.2
-    - phrase: "thanks for reaching out"
-      count: 41
-      percent: 12.9
-    - phrase: "know if you have"
-      count: 36
-      percent: 11.4
-    - phrase: "if you have any"
-      count: 35
-      percent: 11
-    - phrase: "payment via credit card"
-      count: 30
-      percent: 9.5
-    - phrase: "i apologize for the"
-      count: 29
-      percent: 9.1
-    - phrase: "only accept payment via"
-      count: 27
-      percent: 8.5
-    - phrase: "accept payment via credit"
-      count: 27
-      percent: 8.5
-    - phrase: "to purchase the course"
-      count: 25
-      percent: 7.9
+description: Resolve payment method problems. Use when a customer has trouble paying with a card, Apple Pay, or a regional payment option.
+metadata:
+  trigger_phrases:
+      - "resolve payment"
+      - "payment method"
+      - "method problems"
+  related_skills: ["invoice-billing-statement"]
+  sample_size: "317"
+  validation: |
+    required_phrases:
+      - "let me know if"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 317\navg_thread_length: 3.34\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 45\n    percent: 14.2\n  - phrase: \"me know if you\"\n    count: 42\n    percent: 13.2\n  - phrase: \"thanks for reaching out\"\n    count: 41\n    percent: 12.9\n  - phrase: \"know if you have\"\n    count: 36\n    percent: 11.4\n  - phrase: \"if you have any\"\n    count: 35\n    percent: 11\n  - phrase: \"payment via credit card\"\n    count: 30\n    percent: 9.5\n  - phrase: \"i apologize for the\"\n    count: 29\n    percent: 9.1\n  - phrase: \"only accept payment via\"\n    count: 27\n    percent: 8.5\n  - phrase: \"accept payment via credit\"\n    count: 27\n    percent: 8.5\n  - phrase: \"to purchase the course\"\n    count: 25\n    percent: 7.9"
 ---
-
 # Payment Method Problem
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

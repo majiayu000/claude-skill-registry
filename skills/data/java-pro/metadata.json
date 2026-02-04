@@ -1,7 +1,7 @@
 {
   "name": "java-pro",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/java-pro/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:13.004644Z"
+  "repo": "ledger101/apt",
+  "path": ".agent/skills/skills/java-pro/SKILL.md",
+  "source": "github.com/ledger101/apt",
+  "downloaded_at": "2026-02-04T05:16:35.461443Z"
 }

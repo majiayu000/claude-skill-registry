@@ -1,172 +1,165 @@
 ---
 name: rust-learner
-description: "Use when asking about Rust versions or crate info. Keywords: latest version, what's new, changelog, Rust 1.x, Rust release, stable, nightly, crate info, crates.io, lib.rs, docs.rs, API documentation, crate features, dependencies, which crate, what version, Rust edition, edition 2021, edition 2024, cargo add, cargo update, 最新版本, 版本号, 稳定版, 最新, 哪个版本, crate 信息, 文档, 依赖, Rust 版本, 新特性, 有什么特性"
-allowed-tools: ["Task", "Read", "Glob"]
+description: "Rust 学习与生态追踪专家。处理新版本特性、crate 更新、最佳实践演进、RFC、每周新闻等问题。触发词：latest version, what's new, Rust 版本, 新特性, update, upgrade, rfc, 每周新闻, 学习, 教程"
+globs: ["**/*.toml", "**/Cargo.lock"]
 ---
 
-# Rust Learner
+# Rust 学习与生态追踪
 
-> **Version:** 2.0.0 | **Last Updated:** 2025-01-22
+## 核心问题
 
-You are an expert at fetching Rust and crate information. Help users by:
-- **Version queries**: Get latest Rust/crate versions via background agents
-- **API documentation**: Fetch docs from docs.rs
-- **Changelog**: Get Rust version features from releases.rs
+**如何跟上 Rust 的发展节奏？**
 
-**Primary skill for fetching Rust/crate information. All agents run in background.**
+Rust 每 6 周发布一个新版本，生态系统活跃。保持更新但不盲目追新。
 
-## CRITICAL: How to Launch Agents
+---
 
-**All agents MUST be launched via Task tool with these parameters:**
+## 版本更新策略
 
-```
-Task(
-  subagent_type: "general-purpose",
-  run_in_background: true,
-  prompt: <read from ../../agents/*.md file>
-)
-```
+### 稳定版更新
 
-**Workflow:**
-1. Read the agent prompt file: `../../agents/<agent-name>.md` (relative to this skill)
-2. Launch Task with `run_in_background: true`
-3. Continue with other work or wait for completion
-4. Read results when agent completes
+```bash
+# 检查当前版本
+rustc --version
 
-## Agent Routing Table
+# 更新 Rust
+rustup update stable
 
-| Query Type | Agent File | Source |
-|------------|------------|--------|
-| Rust version features | `../../agents/rust-changelog.md` | releases.rs |
-| Crate info/version | `../../agents/crate-researcher.md` | lib.rs, crates.io |
-| **Std library docs** (Send, Sync, Arc, etc.) | `../../agents/std-docs-researcher.md` | doc.rust-lang.org |
-| Third-party crate docs (tokio, serde, etc.) | `../../agents/docs-researcher.md` | docs.rs |
-| Clippy lints | `../../agents/clippy-researcher.md` | rust-clippy docs |
-| **Rust news/daily report** | `../../agents/rust-daily-reporter.md` | Reddit, TWIR, blogs |
-
-### Choosing docs-researcher vs std-docs-researcher
-
-| Query Pattern | Use Agent |
-|---------------|-----------|
-| `std::*`, `Send`, `Sync`, `Arc`, `Rc`, `Box`, `Vec`, `String` | `std-docs-researcher` |
-| `tokio::*`, `serde::*`, any third-party crate | `docs-researcher` |
-
-## Tool Chain
-
-All agents use this tool chain (in order):
-
-1. **actionbook MCP** (first - get pre-computed selectors)
-   - `mcp__actionbook__search_actions("site_name")` → get action ID
-   - `mcp__actionbook__get_action_by_id(id)` → get URL + selectors
-
-2. **agent-browser CLI** (PRIMARY execution tool)
-   ```bash
-   agent-browser open <url>
-   agent-browser get text <selector_from_actionbook>
-   agent-browser close
-   ```
-
-3. **WebFetch** (LAST RESORT only if agent-browser unavailable)
-
-### Fallback Principle (CRITICAL)
-
-```
-actionbook → agent-browser → WebFetch (only if agent-browser unavailable)
+# 查看更新内容
+rustup changelog stable
 ```
 
-**DO NOT:**
-- Skip agent-browser because it's slower
-- Use WebFetch as primary when agent-browser is available
-- Block on WebFetch without trying agent-browser first
+### 何时升级
 
-## Example: Crate Version Query
+| 场景 | 建议 |
+|-----|------|
+| 新项目 | 用最新稳定版 |
+| 生产项目 | 跟随 6 周周期更新 |
+| 库项目 | 考虑 MSRV 策略 |
 
-```
-User: "tokio latest version"
+### MSRV (Minimum Supported Rust Version)
 
-Claude:
-1. Read ../../agents/crate-researcher.md
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch crate info for 'tokio'. Use actionbook MCP to get lib.rs selectors, then agent-browser to fetch. Return: name, version, description, features."
-   )
-3. Wait for agent or continue with other work
-4. Summarize results to user
+```toml
+[package]
+rust-version = "1.70"  # 声明最低支持版本
+
+[dependencies]
+# 对 MSRV 敏感的依赖要谨慎
+serde = { version = "1.0", default-features = false }
 ```
 
-## Example: Third-Party Crate Documentation
+---
+
+## 新特性学习路径
+
+### 2024 Edition 重要特性
+
+| 特性 | 稳定版本 | 实用度 |
+|-----|---------|-------|
+| `gen blocks` | nightly | ⭐ 实验性 |
+| `async drop` | nightly | ⭐ 实验性 |
+| `inline const` | 1.79+ | ⭐⭐ 生产可用 |
+| `never type` 改进 | 1.82+ | ⭐⭐⭐ 常用 |
+
+### 新手到进阶路线
 
 ```
-User: "tokio::spawn documentation"
-
-Claude:
-1. Read ../../agents/docs-researcher.md
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch API docs for tokio::spawn from docs.rs. Use agent-browser first. Return: signature, description, examples."
-   )
-3. Wait for agent
-4. Summarize API to user
+基础 → 所有权、生命周期、借用检查
+    ↓
+中级 → 特征对象、泛型、闭包
+    ↓
+并发 → async/await、线程、通道
+    ↓
+高级 → unsafe、FFI、性能优化
+    ↓
+专家 → 宏、类型系统、设计模式
 ```
 
-## Example: Std Library Documentation
+---
 
+## 追踪信息源
+
+### 官方渠道
+
+| 渠道 | 内容 | 频率 |
+|-----|------|-----|
+| [This Week in Rust](https://this-week-in-rust.org/) | 周报、RFC、博客 | 每周 |
+| [Rust Blog](https://blog.rust-lang.org/) | 重大发布、深度文章 | 不定期 |
+| [Rust RFCs](https://github.com/rust-lang/rfcs) | 设计讨论 | 持续 |
+| [Release Notes](https://github.com/rust-lang/rust/blob/master/RELEASES.md) | 版本变更 | 每 6 周 |
+
+### 社区资源
+
+| 资源 | 内容 |
+|-----|------|
+| [docs.rs](https://docs.rs/) | 文档搜索 |
+| [crates.io](https://crates.io/) | 包搜索 |
+| [lib.rs](https://lib.rs/) | 找替代 crate |
+| [Rust Analyzer](https://rust-analyzer.github.io/) | IDE 插件 |
+
+---
+
+## 依赖更新管理
+
+### 常规更新
+
+```bash
+# 检查可更新依赖
+cargo outdated
+
+# 更新次要版本
+cargo update
+
+# 强制更新所有
+cargo update -Z direct-minimal-versions
 ```
-User: "Send trait documentation"
 
-Claude:
-1. Read ../../agents/std-docs-researcher.md  (NOT docs-researcher!)
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch std::marker::Send trait docs from doc.rust-lang.org. Use agent-browser first. Return: description, implementors, examples."
-   )
-3. Wait for agent
-4. Summarize trait to user
+### 安全审计
+
+```bash
+# 检查已知漏洞
+cargo audit
+
+# 检查依赖许可证
+cargo deny check licenses
 ```
 
-## Example: Rust Changelog Query
+---
 
-```
-User: "What's new in Rust 1.85?"
+## 我的更新策略
 
-Claude:
-1. Read ../../agents/rust-changelog.md
-2. Task(
-     subagent_type: "general-purpose",
-     run_in_background: true,
-     prompt: "Fetch Rust 1.85 changelog from releases.rs. Use actionbook MCP for selectors, agent-browser to fetch. Return: language features, library changes, stabilized APIs."
-   )
-3. Wait for agent
-4. Summarize features to user
-```
+### 每季度一次
 
-## Deprecated Patterns
+- [ ] 升级到最新 stable
+- [ ] 运行 `cargo outdated`
+- [ ] 运行 `cargo audit`
+- [ ] 检查依赖的 breaking changes
+- [ ] 评估新特性是否值得采用
 
-| Deprecated | Use Instead | Reason |
-|------------|-------------|--------|
-| WebSearch for crate info | Task + crate-researcher | Structured data |
-| Direct WebFetch | Task + actionbook | Pre-computed selectors |
-| Foreground agent execution | `run_in_background: true` | Non-blocking |
-| Guessing version numbers | Always use agents | Prevents misinformation |
+### 每年一次
 
-## Error Handling
+- [ ] 考虑 edition 升级
+- [ ] 重构使用旧模式代码
+- [ ] 评估 MSRV 策略
+- [ ] 更新开发工具链
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| actionbook unavailable | MCP not configured | Fall back to WebFetch |
-| agent-browser not found | CLI not installed | Fall back to WebFetch |
-| Agent timeout | Site slow/down | Retry or inform user |
-| Empty results | Selector mismatch | Report and use WebFetch fallback |
+---
 
-## Proactive Triggering
+## 学习资源推荐
 
-This skill triggers AUTOMATICALLY when:
-- Any Rust crate name mentioned (tokio, serde, axum, sqlx, etc.)
-- Questions about "latest", "new", "version", "changelog"
-- API documentation requests
-- Dependency/feature questions
+### 入门
 
-**DO NOT use WebSearch for Rust crate info. Launch background agents instead.**
+- [The Rust Programming Language](https://doc.rust-lang.org/book/) - 官方书
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/) - 示例驱动
+
+### 进阶
+
+- [The Rust Reference](https://doc.rust-lang.org/reference/) - 语言参考
+- [Rust Nomicon](https://doc.rust-lang.org/nomicon/) - unsafe 指南
+- [Effective Rust](https://www.lurklurk.org/effective-rust/) - 最佳实践
+
+### 实战
+
+- [Exercism Rust Track](https://exercism.org/tracks/rust) - 练习题
+- [Rust by Practice](https://practice.rs/) - 实践题目
+

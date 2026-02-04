@@ -1,7 +1,7 @@
 {
   "name": "social-media",
-  "repo": "nicepkg/ai-workflow",
-  "path": "workflows/content-creator-workflow/.claude/skills/social-media/SKILL.md",
-  "source": "github.com/nicepkg/ai-workflow",
-  "downloaded_at": "2026-02-02T05:10:24.643702Z"
+  "repo": "frankxai/agentic-creator-os",
+  "path": "skills/social-media/SKILL.md",
+  "source": "github.com/frankxai/agentic-creator-os",
+  "downloaded_at": "2026-02-04T05:07:52.379537Z"
 }

@@ -1,204 +1,467 @@
 ---
-name: TanStack Router
-description: File-based routing, loaders, and navigation patterns in LivestockAI
+name: tanstack-router
+description: TanStack Router file-based routing patterns including route creation, navigation, loaders, type-safe routing, and lazy loading. Use when creating routes, implementing navigation, or working with TanStack Router.
 ---
 
-# TanStack Router
+# TanStack Router Patterns
 
-LivestockAI uses [TanStack Router](https://tanstack.com/router) for type-safe, file-based routing with SSR support.
+## Purpose
 
-## Route Structure
+File-based routing with TanStack Router, emphasizing type-safe navigation, route loaders, and lazy loading.
 
-Routes are in `app/routes/`:
+## When to Use This Skill
 
-```
-app/routes/
-├── __root.tsx           # Root layout
-├── index.tsx            # Public landing (/)
-├── _auth.tsx            # Auth layout wrapper
-└── _auth/               # Protected routes
-    ├── dashboard.tsx    # /dashboard
-    ├── batches/
-    │   ├── index.tsx    # /batches
-    │   └── $batchId.tsx # /batches/:batchId
-    ├── farms/
-    │   ├── index.tsx    # /farms
-    │   └── $farmId.tsx  # /farms/:farmId
-    └── settings.tsx     # /settings
-```
+- Creating new routes
+- Implementing navigation
+- Using route loaders for data
+- Type-safe routing with parameters
+- Lazy loading routes
 
-## Route Definition Pattern
+---
 
-**Use loaders for data fetching**, not `useEffect`:
+## Quick Start
+
+### Basic Route
 
 ```typescript
-import { createFileRoute } from '@tanstack/react-router'
-import { getBatchesForFarmFn } from '~/features/batches/server'
-import { BatchesSkeleton } from '~/components/batches/batches-skeleton'
+// routes/posts/index.tsx
+import { createFileRoute } from '@tanstack/react-router';
+import { postsApi } from '~/features/posts/api/postsApi';
 
-export const Route = createFileRoute('/_auth/batches/')({
-  // 1. Validate search params
-  validateSearch: (search) => ({
-    farmId: search.farmId as string | undefined,
-    page: Number(search.page) || 1,
-    status: search.status as string | undefined,
-  }),
-
-  // 2. Define loader dependencies
-  loaderDeps: ({ search }) => ({
-    farmId: search.farmId,
-    page: search.page,
-    status: search.status,
-  }),
-
-  // 3. Loader - fetches data on server
-  loader: async ({ deps }) => {
-    return getBatchesForFarmFn({ data: deps })
+export const Route = createFileRoute('/posts')({
+  loader: async () => {
+    const posts = await postsApi.getAll();
+    return { posts };
   },
+  component: PostsPage,
+});
 
-  // 4. Loading state
-  pendingComponent: BatchesSkeleton,
-
-  // 5. Error state
-  errorComponent: ({ error }) => (
-    <div className="p-4 text-red-600">
-      Error: {error.message}
-    </div>
-  ),
-
-  // 6. Main component
-  component: BatchesPage,
-})
-
-function BatchesPage() {
-  // Access loader data with full type safety
-  const { paginatedBatches, summary } = Route.useLoaderData()
+function PostsPage() {
+  const { posts } = Route.useLoaderData();
 
   return (
     <div>
-      <h1>Batches</h1>
-      {/* Render data */}
+      <h1>Posts</h1>
+      {posts.map(post => (
+        <PostCard key={post.id} post={post} />
+      ))}
     </div>
-  )
+  );
 }
 ```
 
-## Anti-Pattern: useEffect for Data
+---
 
-```typescript
-// ❌ WRONG - Don't do this
-function BatchesPage() {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
+## File-Based Routing
 
-  useEffect(() => {
-    getBatchesForFarmFn({ data: {} }).then(setData)
-  }, [])
+### Directory Structure
 
-  if (loading) return <div>Loading...</div>
-  return <div>{/* render */}</div>
-}
+```
+routes/
+├── __root.tsx          # Root route
+├── index.tsx           # /
+├── about.tsx           # /about
+├── posts/
+│   ├── index.tsx       # /posts
+│   └── $postId.tsx     # /posts/:postId
+└── users/
+    ├── index.tsx       # /users
+    └── $userId/
+        ├── index.tsx   # /users/:userId
+        └── posts.tsx   # /users/:userId/posts
 ```
 
-## Dynamic Routes
+### Route Mapping
 
-Use `$paramName` for dynamic segments:
+```
+File Path                        → URL Path
+routes/index.tsx                 → /
+routes/about.tsx                 → /about
+routes/posts/index.tsx           → /posts
+routes/posts/$postId.tsx         → /posts/:postId
+routes/users/$userId/index.tsx   → /users/:userId
+routes/users/$userId/posts.tsx   → /users/:userId/posts
+```
+
+---
+
+## Route Parameters
+
+### Dynamic Routes
 
 ```typescript
-// app/routes/_auth/batches/$batchId.tsx
-export const Route = createFileRoute('/_auth/batches/$batchId')({
+// routes/posts/$postId.tsx
+import { createFileRoute } from '@tanstack/react-router';
+import { postsApi } from '~/features/posts/api/postsApi';
+
+export const Route = createFileRoute('/posts/$postId')({
   loader: async ({ params }) => {
-    return getBatchDetailsFn({ data: { batchId: params.batchId } })
+    const post = await postsApi.get(params.postId);
+    return { post };
   },
-  component: BatchDetailPage,
-})
+  component: PostDetails,
+});
 
-function BatchDetailPage() {
-  const { batch, stats } = Route.useLoaderData()
-  const { batchId } = Route.useParams()
-  // ...
+function PostDetails() {
+  const { post } = Route.useLoaderData();
+  const { postId } = Route.useParams();
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
+    </div>
+  );
 }
 ```
+
+### Multiple Parameters
+
+```typescript
+// routes/users/$userId/posts/$postId.tsx
+export const Route = createFileRoute('/users/$userId/posts/$postId')({
+  loader: async ({ params }) => {
+    const { userId, postId } = params;
+    const post = await postsApi.getByUserAndId(userId, postId);
+    return { post };
+  },
+  component: UserPostDetails,
+});
+```
+
+---
+
+## Route Loaders
+
+### Basic Loader
+
+```typescript
+export const Route = createFileRoute('/posts')({
+  loader: async () => {
+    const posts = await postsApi.getAll();
+    return { posts };
+  },
+  component: PostsPage,
+});
+```
+
+### Loader with Dependencies
+
+```typescript
+export const Route = createFileRoute('/users/$userId/posts')({
+  loader: async ({ params, context }) => {
+    const [user, posts] = await Promise.all([
+      userApi.get(params.userId),
+      postsApi.getByUser(params.userId),
+    ]);
+    return { user, posts };
+  },
+  component: UserPosts,
+});
+```
+
+### Loader Error Handling
+
+```typescript
+export const Route = createFileRoute('/posts/$postId')({
+  loader: async ({ params }) => {
+    try {
+      const post = await postsApi.get(params.postId);
+      return { post, error: null };
+    } catch (error) {
+      return { post: null, error: 'Post not found' };
+    }
+  },
+  component: PostDetails,
+});
+
+function PostDetails() {
+  const { post, error } = Route.useLoaderData();
+
+  if (error) return <Error message={error} />;
+  return <div>{post.title}</div>;
+}
+```
+
+---
 
 ## Navigation
 
 ```typescript
-import { Link, useNavigate } from '@tanstack/react-router'
+import { Link, useNavigate } from '@tanstack/react-router';
 
-// Declarative navigation
-<Link to="/batches/$batchId" params={{ batchId: '123' }}>
-  View Batch
-</Link>
+// Link component
+<Link to="/posts/$postId" params={{ postId: '123' }}>View Post</Link>
 
 // Programmatic navigation
-const navigate = useNavigate()
-navigate({ to: '/batches', search: { status: 'active' } })
+const navigate = useNavigate();
+navigate({ to: '/posts', search: { filter: 'published' } });
 ```
+
+---
+
+## Lazy Loading
+
+### Lazy Route Component
+
+```typescript
+// routes/posts/index.tsx
+import { createFileRoute } from '@tanstack/react-router';
+import { lazy } from 'react';
+
+const PostsPage = lazy(() => import('~/features/posts/PostsPage'));
+
+export const Route = createFileRoute('/posts')({
+  component: PostsPage,
+});
+```
+
+### Lazy Loader
+
+```typescript
+export const Route = createFileRoute('/posts')({
+  loader: async () => {
+    // Dynamically import heavy module only when route loads
+    const { processData } = await import('~/lib/heavyModule');
+    const posts = await postsApi.getAll();
+    const processed = processData(posts);
+    return { posts: processed };
+  },
+  component: PostsPage,
+});
+```
+
+---
 
 ## Search Params
 
-```typescript
-// Reading search params
-const { farmId, status } = Route.useSearch()
-
-// Updating search params
-<Link
-  to="."
-  search={(prev) => ({ ...prev, status: 'active' })}
->
-  Active Only
-</Link>
-```
-
-## Skeleton Components
-
-Create skeleton components for `pendingComponent`:
+### Type-Safe Search Params
 
 ```typescript
-// app/components/batches/batches-skeleton.tsx
-import { Skeleton } from '~/components/ui/skeleton'
+import { z } from 'zod';
 
-export function BatchesSkeleton() {
+const postsSearchSchema = z.object({
+  filter: z.enum(['all', 'published', 'draft']).default('all'),
+  sort: z.enum(['date', 'title']).default('date'),
+  page: z.number().default(1),
+});
+
+export const Route = createFileRoute('/posts')({
+  validateSearch: postsSearchSchema,
+  loader: async ({ search }) => {
+    const posts = await postsApi.getAll(search);
+    return { posts };
+  },
+  component: PostsPage,
+});
+
+function PostsPage() {
+  const { posts } = Route.useLoaderData();
+  const search = Route.useSearch();
+
   return (
-    <div className="space-y-4">
-      <div className="grid gap-4 md:grid-cols-4">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <Skeleton key={i} className="h-32 w-full" />
-        ))}
-      </div>
-      <Skeleton className="h-64 w-full" />
+    <div>
+      <p>Filter: {search.filter}</p>
+      <p>Sort: {search.sort}</p>
+      <p>Page: {search.page}</p>
     </div>
-  )
+  );
 }
 ```
 
-## Auth Layout
-
-The `_auth.tsx` layout wraps protected routes:
+### Updating Search Params
 
 ```typescript
-// app/routes/_auth.tsx
-export const Route = createFileRoute('/_auth')({
-  beforeLoad: async () => {
-    const session = await getSession()
-    if (!session) {
-      throw redirect({ to: '/login' })
+import { useNavigate } from '@tanstack/react-router';
+
+function FilterButtons() {
+  const navigate = useNavigate();
+  const search = Route.useSearch();
+
+  const setFilter = (filter: string) => {
+    navigate({
+      to: '.',
+      search: (prev) => ({ ...prev, filter }),
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={() => setFilter('all')}>All</button>
+      <button onClick={() => setFilter('published')}>Published</button>
+      <button onClick={() => setFilter('draft')}>Draft</button>
+    </div>
+  );
+}
+```
+
+---
+
+## Layouts
+
+### Root Layout
+
+```typescript
+// routes/__root.tsx
+import { createRootRoute, Outlet } from '@tanstack/react-router';
+
+export const Route = createRootRoute({
+  component: RootLayout,
+});
+
+function RootLayout() {
+  return (
+    <div>
+      <Header />
+      <main>
+        <Outlet />  {/* Child routes render here */}
+      </main>
+      <Footer />
+    </div>
+  );
+}
+```
+
+### Nested Layouts
+
+```typescript
+// routes/dashboard.tsx
+export const Route = createFileRoute('/dashboard')({
+  component: DashboardLayout,
+});
+
+function DashboardLayout() {
+  return (
+    <div className="dashboard">
+      <Sidebar />
+      <div className="content">
+        <Outlet />  {/* Dashboard child routes */}
+      </div>
+    </div>
+  );
+}
+
+// routes/dashboard/index.tsx
+export const Route = createFileRoute('/dashboard')({
+  component: DashboardHome,
+});
+
+// routes/dashboard/analytics.tsx
+export const Route = createFileRoute('/dashboard/analytics')({
+  component: Analytics,
+});
+```
+
+---
+
+## Route Guards
+
+### Authentication Guard
+
+```typescript
+export const Route = createFileRoute('/admin')({
+  beforeLoad: async ({ context }) => {
+    if (!context.auth.isAuthenticated) {
+      throw redirect({
+        to: '/login',
+        search: { redirect: '/admin' },
+      });
     }
   },
-  component: AuthLayout,
-})
+  component: AdminPage,
+});
+```
 
-function AuthLayout() {
-  return (
-    <AppShell>
-      <Outlet />
-    </AppShell>
-  )
+### Permission Guard
+
+```typescript
+export const Route = createFileRoute('/admin/users')({
+  beforeLoad: async ({ context }) => {
+    if (!context.auth.hasPermission('users:manage')) {
+      throw redirect({ to: '/unauthorized' });
+    }
+  },
+  component: UsersPage,
+});
+```
+
+---
+
+## Breadcrumbs
+
+### Route Breadcrumbs
+
+```typescript
+export const Route = createFileRoute('/posts/$postId')({
+  loader: async ({ params }) => {
+    const post = await postsApi.get(params.postId);
+    return { post };
+  },
+  meta: ({ loaderData }) => [
+    { title: 'Home', path: '/' },
+    { title: 'Posts', path: '/posts' },
+    { title: loaderData.post.title, path: `/posts/${loaderData.post.id}` },
+  ],
+  component: PostDetails,
+});
+```
+
+---
+
+## Best Practices
+
+### 1. Use Loaders for Data
+
+```typescript
+// ✅ Good: Loader fetches data
+export const Route = createFileRoute('/posts')({
+  loader: async () => {
+    const posts = await postsApi.getAll();
+    return { posts };
+  },
+  component: PostsPage,
+});
+
+// ❌ Avoid: Fetching in component
+function PostsPage() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    postsApi.getAll().then(setPosts);
+  }, []);
+
+  return <div>...</div>;
 }
 ```
 
-## Related Skills
+### 2. Lazy Load Heavy Routes
 
-- `tanstack-start` - Server functions
-- `tanstack-query` - Client-side mutations
-- `rugged-utility` - UI patterns for loading states
+```typescript
+// ✅ Good: Lazy load admin panel
+const AdminPanel = lazy(() => import('~/features/admin/AdminPanel'));
+
+export const Route = createFileRoute('/admin')({
+  component: AdminPanel,
+});
+```
+
+### 3. Type-Safe Navigation
+
+```typescript
+// ✅ Good: Type-safe Link
+<Link to="/posts/$postId" params={{ postId: post.id }}>
+  View Post
+</Link>
+
+// ❌ Avoid: String concatenation
+<a href={`/posts/${post.id}`}>View Post</a>
+```
+
+---
+
+## Additional Resources
+
+For more patterns, see:
+- [routing-guide.md](resources/routing-guide.md) - Advanced routing
+- [navigation-patterns.md](resources/navigation-patterns.md) - Navigation strategies
+- [route-loaders.md](resources/route-loaders.md) - Complex loaders

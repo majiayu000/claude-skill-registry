@@ -1,123 +1,109 @@
 ---
 name: brainstorm
-description: >
-  Turn ideas into fully formed designs through collaborative questioning.
-  Use before any creative work to explore user intent, requirements, and design.
+description: Scan codebase, propose improvements AND features autonomously
+aliases: ["what next", "whatnext", "what-next"]
+allowed-tools: Bash, Read, Grep, Glob, Task, TaskCreate, TaskUpdate, TaskList, Write, Edit
+model: opus
+user-invocable: true
 ---
 
-# Brainstorming Ideas Into Designs
+# Brainstorm
 
-## Overview
+**Philosophy:** User doesn't know what to focus on. YOU scan, analyze, propose, and create stories - without asking.
 
-Transform vague ideas into concrete, implementable designs through structured dialogue.
-Ask questions one at a time, present designs in digestible sections, and validate
-incrementally before committing to implementation.
+## Usage
 
-**Core principle:** One question at a time. Never overwhelm with multiple questions.
+| Command | Behavior |
+|---------|----------|
+| `brainstorm` | Full: quality scan + feature ideas |
+| `brainstorm auth` | Targeted: ideas for auth specifically |
+| `brainstorm features` | Skip quality scan, only feature ideas |
 
-**Announce at start:** "I'm using the brainstorm skill to explore this idea."
+## Phase 1: Quality Scan (Parallel)
 
-## When to Use
+Launch 4 scans simultaneously using Task tool with `run_in_background: true`:
 
-- Starting a new feature or project
-- Exploring design alternatives
-- Clarifying requirements before implementation
-- Breaking down complex problems
-- Any creative work that modifies behavior
+```typescript
+Task({ subagent_type: "Explore", model: "haiku", run_in_background: true,
+  prompt: "Find TODOs/FIXMEs in [PROJECT_PATH]. Report: count, file:line, content." })
 
-## The Process
+Task({ subagent_type: "Explore", model: "haiku", run_in_background: true,
+  prompt: "Find console.log statements in [PROJECT_PATH] (skip test files). Report: count, files." })
 
-### Phase 1: Understanding the Idea
+Task({ subagent_type: "Explore", model: "haiku", run_in_background: true,
+  prompt: "Find hardcoded colors (text-white, bg-black, #hex, rgb) in [PROJECT_PATH]. Report: count, files." })
 
-**Before asking questions:**
-1. Run `kodo query "<topic>"` to check existing patterns and context
-2. Check project state (files, docs, recent commits)
-3. Review any related learnings from past sessions
-
-**Asking questions:**
-- **One question per message** - If topic needs more exploration, break into multiple questions
-- **Prefer multiple choice** when possible - easier to answer than open-ended
-- Focus on: purpose, constraints, success criteria, edge cases
-- If user gives vague answer, follow up to clarify
-
-**Question types (prefer in this order):**
-1. Multiple choice: "Which approach: A, B, or C?"
-2. Yes/No confirmation: "Should it also handle X?"
-3. Open-ended only when necessary: "What happens when...?"
-
-### Phase 2: Exploring Approaches
-
-When requirements are clear:
-1. **Propose 2-3 approaches** with clear trade-offs
-2. Lead with your recommendation and explain why
-3. Present options conversationally, not as bullet lists
-4. Wait for user to choose before proceeding
-
-**Format:**
-```
-I'd recommend approach A because [reasoning].
-
-Alternatively:
-- Approach B would [trade-off]
-- Approach C would [trade-off]
-
-Which direction feels right?
+Task({ subagent_type: "Explore", model: "haiku", run_in_background: true,
+  prompt: "Find large files (>300 lines) and 'any' type usage in [PROJECT_PATH]. Report: file, lines, issues." })
 ```
 
-### Phase 3: Presenting the Design
+## Phase 2: Feature Ideation (Autonomous)
 
-**Once approach is chosen:**
-1. Present in sections of **200-300 words**
-2. After each section ask: "Does this look right so far?"
-3. Cover: architecture, components, data flow, error handling, testing
-4. Be ready to revise if something doesn't fit
+After scans complete, read project context:
+- `CLAUDE.md` - goals, roadmap, known issues
+- `README.md` - what the app does
+- `package.json` - name, description, dependencies
 
-**Sections to cover:**
-- High-level architecture
-- Key components and their responsibilities
-- Data flow and state management
-- Error handling strategy
-- Testing approach
-- Edge cases
+Then analyze and propose 3-8 features:
+- **Missing features** - what similar apps have that this doesn't
+- **UX improvements** - based on component structure found
+- **Integration opportunities** - based on installed packages
+- **Performance wins** - based on patterns observed
 
-### Phase 4: Documentation
+**Be specific:** "Add Cmd+K search modal" not "Improve UX"
 
-**After design is validated:**
-1. Write to `docs/plans/YYYY-MM-DD-<topic>-design.md`
-2. Commit the design document
-3. **Auto-extract learnings from the design doc:**
-   ```bash
-   kodo extract docs/plans/YYYY-MM-DD-<topic>-design.md
-   ```
-   This will:
-   - Parse the design doc for learnings (rules, decisions, tech choices, workflows)
-   - Add them to `.kodo/learnings/` with HIGH confidence (user-created design)
-   - Create a context entry in `.kodo/context-tree/`
-4. Capture any additional key decisions: `kodo reflect --signal "Decided to use X because Y"`
+## Phase 3: Present Everything
 
-## Handoff to Implementation
+```
+Brainstorm Complete
+═══════════════════
+Scanned 247 files in 45 seconds.
 
-After saving the design, offer:
+Quality Issues
+┌──────────────────┬───────┬──────────────────┐
+│ Category         │ Count │ Status           │
+├──────────────────┼───────┼──────────────────┤
+│ TODOs/FIXMEs     │ 0     │ ✅ Clean         │
+│ console.log      │ 12    │ ⚠️ In 4 files    │
+│ Hardcoded colors │ 6     │ ⚠️ In shadcn/ui  │
+│ Large files      │ 3     │ ⚠️ >500 lines    │
+└──────────────────┴───────┴──────────────────┘
 
-**"Design saved to `docs/plans/<filename>.md`. Ready to create implementation plan?"**
+Feature Ideas
+┌───┬─────────────────────────────────┬────────┐
+│ # │ Idea                            │ Effort │
+├───┼─────────────────────────────────┼────────┤
+│ 1 │ Add keyboard shortcuts (Cmd+K) │ Medium │
+│ 2 │ Offline mode (PWA ready)        │ High   │
+│ 3 │ Export to PDF                   │ Low    │
+└───┴─────────────────────────────────┴────────┘
 
-If yes:
-- Use `kodo:plan` skill to create detailed implementation plan
-- Link to GitHub issue if exists: `kodo track link #123`
+Create stories?
+- "quality" → cleanup tasks only
+- "features" → feature tasks only
+- "all" → everything
+```
 
-## Key Principles
+## Targeted Mode
 
-- **One question at a time** - Never multiple questions in same message
-- **Multiple choice preferred** - When possible, offer options
-- **YAGNI ruthlessly** - Remove unnecessary features from designs
-- **Incremental validation** - Present in sections, validate each
-- **Be flexible** - Go back and clarify when something doesn't fit
+When user says `brainstorm X`:
+- Skip quality scan entirely
+- Read files related to X topic
+- Propose 3-5 specific ideas for X
+- Immediately create stories
 
-## Red Flags
+## Rules
 
-**You're doing it wrong if:**
-- Asking 3+ questions at once
-- Presenting full design without checkpoints
-- Skipping existing context check (`kodo query`)
-- Not offering multiple approaches
-- Moving to implementation without documenting design
+- **Never ask "what do you want?"** - analyze and propose
+- **Don't over-generate** - 3-8 feature ideas max
+- **Be specific** - concrete features, not vague improvements
+- **Note effort** - Low/Medium/High for each
+- **Skip shadcn/ui colors** - note them but don't prioritize (library defaults)
+- **Auto-create for top recommendation** - then offer more
+
+## Token Cost
+
+- 4 parallel Haiku scans: ~20K tokens
+- Context reads: ~5K tokens
+- Time: 30-60 seconds
+- Much cheaper than reading entire codebase

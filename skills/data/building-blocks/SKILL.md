@@ -79,27 +79,6 @@ Review the implementation patterns in similar blocks to inform your approach.
 
 ### 3. Create or Modify Block Structure
 
-**⚠️ CRITICAL: Verify Working Directory First**
-
-Before creating or modifying any files, you MUST verify you're in the project root:
-
-```bash
-pwd
-# Should output: /Users/tomcranstoun/Documents/GitHub/allaboutV2
-```
-
-If you're in a subdirectory (e.g., `/blocks/hero`), navigate to project root:
-```bash
-cd /Users/tomcranstoun/Documents/GitHub/allaboutV2
-```
-
-Verify project root markers exist:
-```bash
-ls -la | grep -E "(\.claude|blocks|package\.json|CLAUDE\.md)"
-```
-
-All four should exist. If not, you're in the wrong directory!
-
 **For new blocks:**
 
 1. Create directory: `blocks/{block-name}/`

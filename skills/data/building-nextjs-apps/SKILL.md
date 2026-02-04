@@ -1,6 +1,10 @@
 ---
 name: building-nextjs-apps
-description: Build Next.js 16 applications with correct patterns and distinctive design. Use when creating pages, layouts, dynamic routes, upgrading from Next.js 15, or implementing proxy.ts. Covers breaking changes (async params/searchParams, Turbopack, cacheComponents) and frontend aesthetics. NOT when building non-React or backend-only applications.
+description: |
+  Build Next.js 16 applications with correct patterns and distinctive design. Use when creating
+  pages, layouts, dynamic routes, upgrading from Next.js 15, or implementing proxy.ts. Covers
+  breaking changes (async params/searchParams, Turbopack, cacheComponents) and frontend aesthetics.
+  NOT when building non-React or backend-only applications.
 ---
 
 # Next.js 16 Applications

@@ -1,161 +1,185 @@
 ---
 name: writing-style
-description: Writing guidelines for clear, economical prose. Reference this skill when creating or enhancing note content.
-allowed-tools:
+description: Core writing standards for all Skill Stack content. Invoke automatically for any writing task. Combines anti-AI patterns, voice principles, and prose style.
+priority: root
+always_invoke: true
 ---
 
-# Writing Style Guidelines
+# Writing Style
 
-Based on "Economical Writing" by Deirdre N. McCloskey. Apply these principles when writing summaries, insights, and note content.
-
-## The 10 Rules
-
-### 1. Be Clear
-Clarity is speed directed at the point. Bad writing makes slow reading. When explaining complex topics, give your reader every help possible.
-
-### 2. Use Active Verbs
-Not "Active verbs should be used" (passive, cowardly). Rather: "Use active verbs" (direct, clear). Verbs make English—pick active, accurate, lively ones.
-
-### 3. Avoid Boilerplate
-Never start with filler like "This note will explore..." or "In this summary, we will...". Cut the throat-clearing and get to the point.
-
-### 4. One Point Per Paragraph
-Each paragraph should be a complete discussion of one topic. Don't scatter ideas across paragraphs or cram multiple ideas into one.
-
-### 5. Make Writing Cohere
-Writing should hang together from phrases to entire documents. Use transitions and logical flow so the reader can follow without backtracking.
-
-### 6. Avoid Elegant Variation
-Don't swap synonyms to seem sophisticated. If you mean "book", say "book" every time—not "tome", "volume", "work", "publication". Clarity trumps elegance.
-
-### 7. Watch Punctuation
-- Colon (:) means "to be specific"
-- Semicolon (;) means "likewise" or "also"
-- Use commas after introductory phrases
-
-### 8. End Sentences with the Point
-The end of a sentence is the emphatic location. Rearrange so the main point lands last. "The emphatic location is the end of the sentence" → "The end is the place of emphasis."
-
-### 9. Replace Vague Pronouns
-Avoid "this", "that", "these", "those" when they're unclear. Often plain "the" works better, or name the thing explicitly. "This led to that, which caused these problems" → name what led, what it led to, what problems.
-
-### 10. Write the Way You Speak
-Use everyday words. A strength, not a weakness. "Utilize" → "use". "Commence" → "start". "Facilitate" → "help". Don't dress up plain ideas in fancy words.
-
-## Quick Checklist
-
-When reviewing generated content:
-- [ ] No filler phrases ("In this note, we will...")
-- [ ] Active voice throughout
-- [ ] Each paragraph has one clear point
-- [ ] Sentences end with emphasis
-- [ ] No vague "this/that" pronouns without clear referents
-- [ ] Everyday words over jargon
-- [ ] Consistent terminology (no elegant variation)
+**This skill governs all written output.** Load it automatically for any content creation.
 
 ---
 
-## Alexander Opalic's Voice Profile
+## Prose Style
 
-Based on analysis of 22+ blog posts from alexop.dev. Apply these patterns when drafting blog content.
+**Voice**: Sweeney's meets Joan Didion meets Pirate Wires. Literary but not hesitating. Dry like a good wine, not dry like a real estate magazine.
 
-### Opening Patterns
-- Start with a problem or personal observation, not a definition
-- Hook with a relatable developer pain point
-- Use first-person to establish context ("I once worked on...", "After [event], I started thinking...")
+**Reading level**: 10th grade. Clear, direct.
 
-### Explanation Style
-- **Problem-first**: State what's broken before offering solutions
-- **Scaffold complexity**: Simple concept → real implementation → edge cases
-- **Use concrete evidence**: Real benchmarks, specific file paths, actual code
-- **Analogies**: Ground abstract concepts in familiar experiences
+**Sentence rhythm**: Vary length deliberately. Short for punch. Longer for flow and explanation. Fragments for emphasis.
 
-### Signature Phrases & Patterns
+**Headers**: Use sparingly. Let prose breathe. Section breaks (---) over excessive H2s.
 
-**Opening hooks:**
-- "Here's the thing: [unexpected insight]"
-- "I once worked on a project that [scenario]..."
-- "After [event], I started thinking about..."
-- "[Task] gets old fast."
-- "I think we all love [technology]. One problem..."
-- "Challenge accepted!"
+**Tone**: Confident without preaching. Opinionated without hectoring. A little wry.
 
-**Transitional phrases:**
-- "Let me show you how..."
-- "The key insight is..."
-- "In my experience..."
-- "I want to be honest with you:"
-- "So I built [solution] that does it for me."
+---
 
-**Honest acknowledgments:**
-- "I learned this the hard way"
-- "far from perfect"
-- "not a replacement for [alternative]"
-- "adds complexity—not always the right choice"
+## Banned Patterns
 
-**Emphasis patterns:**
-- "This is especially true for..."
-- "The real power comes from..."
-- "Notice how [observation]"
+### The Correlative Construction
 
-### Example Openings (from actual posts)
+The most common AI tell. Kill on sight.
 
-**Personal anecdote:**
-> "I once worked on a project that wanted to build an e-commerce website with Nuxt. We started simple, but six months in, our flat components folder had 50+ files."
+| Pattern | Example |
+|---------|---------|
+| "X isn't just Y—it's Z" | "This isn't just a tool—it's a revolution" |
+| "It doesn't just X—it Y" | "It doesn't just understand—it absorbs" |
+| "Not just X, but Y" | "Not just faster, but smarter" |
+| "X aren't just Y—they're Z" | "Skills aren't just prompts—they're workflows" |
 
-**Observation hook:**
-> "After OpenAI released its impressive new image model, I started thinking about what creativity really means."
+**Fix**: State the stronger claim directly. Cut the weak setup.
 
-**Pain point:**
-> "Manual testing gets old fast. You change something, you check it manually, you ship it, and then production breaks anyway."
+- ❌ "It doesn't just understand the description—it absorbs the rhythm."
+- ✅ "It absorbs the rhythm."
 
-**Challenge framing:**
-> "Here's the thing: I don't write much code myself anymore. AI tools handle the implementation. My job? Review, refine, and ensure quality."
+### Forbidden Openers
 
-**Problem statement:**
-> "I think we all love Nuxt. One problem with using Nuxt for AI: the codebase is huge and Claude doesn't know all the latest patterns."
+These scream AI:
 
-### Visual Communication
-- Mermaid diagrams for processes/architecture
-- ❌/✅ markers for anti-patterns vs. best practices
-- 💡 for tips, ⚠️ for warnings
-- Comparison tables for trade-off analysis
-- File tree visualizations for structure
+- "In today's fast-paced world..."
+- "In the ever-evolving landscape of..."
+- "Gone are the days when..."
+- "Let that sink in"
+- "Here's the thing..."
+- "Let's dive in" / "Let's explore"
+- "Without further ado"
+- "The [X] that changed everything"
 
-### Section Templates
-- "The Problem" → "The Solution" → "Implementation" → "Gotchas"
-- "When to use X" / "When NOT to use X"
-- "Best Practices" with numbered guidelines
-- "Further Reading" with related posts
+### Forbidden Words
 
-### Example Conclusions (from actual posts)
+| Kill | Replace With |
+|------|--------------|
+| delve, dive into | explore, examine, look at |
+| comprehensive, robust | thorough, complete |
+| utilize | use |
+| leverage (as verb) | use, apply |
+| crucial, vital, essential | important, key |
+| unlock, unleash, supercharge | enable, improve |
+| game-changer, revolutionary | significant, notable |
+| landscape, navigate | environment, work through |
+| tapestry, multifaceted, myriad | varied, many, diverse |
+| foster, facilitate, enhance | support, help, improve |
+| realm, paradigm, synergy | area, approach, combination |
+| embark, journey (for processes) | start, begin, process |
 
-**Honest assessment:**
-> "Nuxt Layers add complexity. They're not always the right choice. But when your project grows, they provide the boundaries you'll wish you had from the start."
+### Forbidden Phrases
 
-**Actionable invitation:**
-> "I'd love to hear how you're using this pattern. Drop me a message or check out the repository."
+- "It's important to note that..."
+- "When it comes to..."
+- "In order to..." → just "to"
+- "Whether you're a... or a..."
+- "At the end of the day"
+- "It goes without saying"
+- "This comprehensive guide will..."
+- "Are you looking for..." (fake questions)
+- "Look no further"
+- "The best part? ..."
 
-**Key insight summary:**
-> "The real power comes from separating what from how—keeping your store logic testable while handling the messy API details elsewhere."
+### Structure Patterns to Avoid
 
-**Empowerment:**
-> "Understanding how reactivity works under the hood gives you the power to debug performance issues and optimize where it matters."
+| Pattern | Problem | Fix |
+|---------|---------|-----|
+| **Triple everything** | AI loves threes | Vary: use 2, 4, 5 items |
+| **Perfect parallelism** | Every bullet same structure | Mix it up |
+| **Hedge stack** | "While X, it's important to consider Y, but also Z" | Commit to a position |
+| **Fake objectivity** | "Some experts say... others believe..." | Take a stance |
+| **Summary sandwich** | Intro summarizes, body covers, conclusion summarizes again | Add new value in conclusion |
+| **Empty transitions** | "Now that we've covered X, let's move on to Y" | Cut or make meaningful |
 
-### Technical Explanation Examples
+---
 
-**Analogy before concept:**
-> "Think of each layer as a mini Nuxt application. Your project root acts as the orchestrator."
+## Human Markers
 
-**Progressive complexity:**
-> "Let's start simple. A Pinia plugin is a function that extends store functionality. Here's the minimal version... Now let's add the real logic..."
+Add these to sound like a person wrote it:
 
-**Honest trade-off:**
-> "I recommend starting simple and graduating to complex patterns only when you feel the pain of the simpler approach. Don't over-engineer."
+### Specificity
+Use real names, numbers, places. Not "many people" but "twelve developers at a Tuesday standup."
 
-### Tone Guidelines
-- Be honest about limitations and trade-offs
-- Acknowledge alternative approaches exist
-- Use everyday words - "use" not "utilize"
-- End with actionable next steps
-- Never be prescriptive without acknowledging alternatives
+### Opinion
+State your take. Don't hedge everything. "Honestly, most voice matching tools overcomplicate this."
+
+### Limitation
+Admit what you don't know or what won't work. "This approach fails for highly technical content."
+
+### Rhythm Variation
+- One-word paragraphs. Really.
+- Sentences under 5 words for punch.
+- Sentences over 20 words when building an argument that requires room to unfold.
+- Fragments. For emphasis.
+- Start with "And" or "But" when natural.
+- Parenthetical asides (the kind you'd say to a friend).
+
+### The Read-Aloud Test
+If you stumble reading it aloud, readers will too. If it sounds like a textbook, rewrite it.
+
+---
+
+## SEO Description Guidelines
+
+For the `description` field in frontmatter:
+
+- **Length**: 150-160 characters
+- **Structure**: [What it's about] + [Key insight or benefit] + [What you get]
+- **Keywords**: Include primary keyword naturally
+- **Voice**: Still punchy and specific, not generic SEO slop
+
+**Example**:
+```
+"How I learned to capture any writer's voice—from Joan Didion to fitness influencers—using examples instead of descriptions. A wizard for building reusable voice skills."
+```
+
+Not:
+```
+"Learn about voice matching techniques. This comprehensive guide covers everything you need to know about AI voice matching."
+```
+
+---
+
+## The Test
+
+Before publishing, ask:
+
+- [ ] Would I be embarrassed to read this aloud to a colleague?
+- [ ] Does any sentence sound like ChatGPT wrote it?
+- [ ] Are there correlative constructions hiding?
+- [ ] Did I take at least one opinion?
+- [ ] Is there at least one specific number or name?
+- [ ] Do sentence lengths actually vary?
+- [ ] Would a smart friend find this interesting or would they skim?
+
+---
+
+## Examples: Before/After
+
+### Correlative Construction
+
+**Before**: "Voice matching isn't just about mimicking words—it's about capturing the rhythm and sensibility behind them."
+
+**After**: "Voice matching captures rhythm and sensibility, not just words."
+
+### AI Opener
+
+**Before**: "In the ever-evolving world of AI-assisted writing, finding your authentic voice has never been more crucial."
+
+**After**: "AI makes everything sound the same. Here's how to make it sound like you."
+
+### Hedge Stack
+
+**Before**: "While there are many approaches to consider, it's important to note that different techniques may work better depending on your specific situation."
+
+**After**: "Start with examples. Everything else is secondary."
+
+---
+
+*This skill loads automatically for all writing tasks. No exceptions.*

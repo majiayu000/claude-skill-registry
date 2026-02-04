@@ -1,117 +1,83 @@
 ---
-name: "written-communication"
-description: "Draft and edit high-signal written artifacts and produce a Written Communication Pack (brief, outline, draft email/memo/doc, canonical doc option, quality gate). Use for writing, written communication, memo, email, doc, async update, rewrite for clarity. Category: Communication."
+name: written-communication
+description: Help users communicate more effectively in writing. Use when someone is drafting memos, emails, strategy docs, announcements, or any written communication that needs to be clear, concise, and persuasive.
 ---
 
 # Written Communication
 
-## Scope
+Help the user communicate more effectively in writing using frameworks and insights from 38 product leaders.
 
-**Covers**
-- Turning messy notes into a clear **email, memo, doc, or async update**
-- Making the **“how”** explicit (what happens next, by whom, by when)
-- Editing for **clarity at scale** (scanability, definitions, single source of truth)
-- Creating/maintaining a **canonical doc** for an ongoing project
+## How to Help
 
-**When to use**
-- “Draft an email to stakeholders explaining a change and what I need from them.”
-- “Turn these bullets into a 1-page memo with a recommendation and next steps.”
-- “Rewrite this doc to be clearer, shorter, and more actionable.”
-- “Create a canonical doc as the source of truth for this project.”
+When the user asks for help with written communication:
 
-**When NOT to use**
-- You need **marketing/brand copy** (landing pages, ads) more than internal/executive clarity.
-- You need a full product spec/PRD from scratch (use `writing-prds` or `writing-specs-designs`).
-- You’re writing **legal/HR/regulated** communications without expert review.
-- The real issue is alignment via facilitation (you may need a meeting/offsite plan, not a rewrite).
+1. **Clarify the purpose** - Ask what action or outcome they want from readers
+2. **Apply the pyramid principle** - Guide them to lead with the conclusion, not build up to it
+3. **Cut ruthlessly** - Help them eliminate unnecessary context and get to the point faster
+4. **Test for simplicity** - Ensure someone unfamiliar with the topic could understand the core message
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Artifact type + channel (email / memo / doc / status update; where it will live)
-- Audience (roles/seniority) + what they care about
-- Goal + ask (inform/align/decide; what you want the reader to do, by when)
-- Key context (facts, constraints, timeline, links) + what must be avoided (sensitivities)
-- Source material (notes, existing draft, Slack threads, etc.)
+### Focus on the how, not the what
+Wes Kao: "Most writers spend too much time on the what and the why and not enough time on how. Most readers already agree with the general premise of what you're saying." Minimize context and justification; focus on specific steps, nuances, and examples.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time), then proceed.
-- If critical info remains missing, make explicit assumptions and offer 2–3 options (structure/tone/ask).
+### Writing clarifies thinking
+Julie Zhuo: "I approach my writing as letters to myself. This is the framework, this is the advice I need to give myself. It was hugely helpful for clarifying my train of thought." Use writing as a tool to organize scattered thoughts and force clarity.
 
-## Outputs (deliverables)
+### Writing is clarity at scale
+Kevin Yien: "Writing is clarity at scale. A key component to a PM's job is creating clarity both internally and externally." Write in the voice of the customer to demonstrate deep understanding.
 
-Produce a **Written Communication Pack** in Markdown (in-chat; or as files if requested):
+### Every project needs one canonical doc
+Naomi Gleit: "There needs to be one canonical doc. Everyone should know exactly where it is. It links to all other docs." Create a single source of truth for every project.
 
-1) **Message brief** (audience, goal, ask, constraints)
-2) **Outline** (TL;DR + key points + “how/next steps”)
-3) **Draft artifact** (email/memo/doc/status update) in final-ready format
-4) **Canonical doc skeleton** (optional; when the project needs a single source of truth)
-5) **Risks / Open questions / Next steps** (always)
+### Communication is the job
+Boz: "Communication is the job. Leadership is exclusively done through the creation of artifacts or verbalizations that affect other humans." Take extreme ownership of whether your message was successfully received.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Start right before the bear attack
+Wes Kao: "Don't start talking about going to REI to buy a Patagonia jacket. Start right before your friend left a Clif Bar out and you almost got mauled by a bear." Cut preamble and start at the point of highest tension or relevance.
 
-## Workflow (8 steps)
+### Conclusion first, always
+Wes Kao: "In business, start with your conclusion, then here's why. Not here's all my thinking, here's all my data points, and then my conclusion at the end." Place the recommendation at the very top.
 
-### 1) Intake + choose the lightest artifact
-- **Inputs:** user request + [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify the channel and pick the smallest artifact that works (email vs memo vs doc vs status update vs canonical doc).
-- **Outputs:** Message brief (draft) + artifact selection.
-- **Checks:** You can answer: “Who is this for, and what should they do after reading?”
+### Write what you repeat
+Deb Liu: "Write what you repeat. If you say something more than once, write it down. Then the next time someone asks, you can just hand them." Document recurring advice to scale your influence.
 
-### 2) Lock the reader outcome + ask (one sentence)
-- **Inputs:** brief.
-- **Actions:** Write one sentence: “After reading, the audience will ____.” Make the ask explicit (decision/options, approval, feedback, or FYI) and include a deadline if relevant.
-- **Outputs:** Outcome/ask line + decision/feedback request.
-- **Checks:** The ask is unambiguous and doesn’t require a meeting to interpret.
+### Concision is density, not brevity
+Wes Kao: "Being concise is not about absolute word count, it's about economy of words. You can have a 300 word memo that's meandering and a thousand word memo that is tight and concise." Focus on insight density, not just making things shorter.
 
-### 3) Convert “what/why” into “how” (actionable next steps)
-- **Inputs:** source material + outcome/ask.
-- **Actions:** Identify the 3–7 concrete steps, responsibilities, and dependencies. If proposing a change, include what changes, what stays the same, and what happens next.
-- **Outputs:** “How / Next steps” bullets (owner + date where possible).
-- **Checks:** A reader could execute without asking “so what do you want me to do?”
+### Repeat across modalities
+Boz: "I will give an all-hands and then write a post with the content of the all-hands, because different people respond differently to these modalities." Use multiple channels and formats to ensure messages are absorbed.
 
-### 4) Structure for skim (clarity at scale)
-- **Inputs:** brief + next steps.
-- **Actions:** Create a TL;DR, then headings in the order readers scan: Ask → Context → Details → Next steps. Use bullets, short paragraphs, and explicit labels.
-- **Outputs:** Outline with headings.
-- **Checks:** A skim-reader can capture the point in < 60 seconds.
+### Use numbered lists for reference
+Naomi Gleit: "I never use bulleted lists because you can never refer to a bullet. I always use numbered lists because you can say 'as referenced in number two.'" Enable precise referencing during discussions.
 
-### 5) Draft the artifact (write to be forwarded)
-- **Inputs:** outline + templates.
-- **Actions:** Draft in plain language; avoid jargon; put key numbers and decisions in writing. If this is ongoing work, link to (or create) the canonical doc.
-- **Outputs:** Draft email/memo/doc/status update.
-- **Checks:** The draft is safe to forward; it stands alone without verbal context.
+### Full sentences expose gaps in logic
+Wes Kao: "I dislike when people overuse bullets and sentence fragments when they should use complete sentences that show the connected tissue between ideas." Turn bullet fragments into full sentences to test if the idea is fully thought out.
 
-### 6) “Letter to yourself” clarity pass (then rewrite for the audience)
-- **Inputs:** draft.
-- **Actions:** If the content is fuzzy, write a quick internal version (“what am I actually saying?”), then rewrite in the audience’s language and incentives.
-- **Outputs:** Clarified rewrite with cleaner logic.
-- **Checks:** The message has a single through-line; no contradictions or buried ledes.
+## Questions to Help Users
 
-### 7) Canonical doc check (single source of truth)
-- **Inputs:** draft + project context.
-- **Actions:** If readers will keep asking “where is the latest?”, create/update a canonical doc (links, owners, last updated, decisions, next update cadence).
-- **Outputs:** Canonical doc skeleton or link section.
-- **Checks:** There is one obvious place to find the current state and decisions.
+- "What do you want the reader to do after reading this?"
+- "What is your conclusion - can you state it in one sentence at the top?"
+- "Are your first two paragraphs actually necessary, or are they preamble?"
+- "Could someone unfamiliar with this topic understand the core point?"
+- "Is this something you've explained multiple times that should be documented?"
+- "Have you read this out loud to check if it sounds like natural conversation?"
 
-### 8) Quality gate + finalize
-- **Inputs:** full pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add Risks/Open questions/Next steps.
-- **Outputs:** Final Written Communication Pack.
-- **Checks:** Clarity, actionability, and ownership meet the bar (≥ 3 on each rubric dimension).
+## Common Mistakes to Flag
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+- **Building up to the conclusion** - Business writing should lead with the answer, not build suspense
+- **Too much context** - Cut the backstory; start at the point of relevance
+- **Bullet fragments hiding weak logic** - Full sentences force clearer thinking
+- **Single-channel communication** - Important messages need multiple modalities
+- **Assuming one communication is enough** - Messages need repetition across formats
 
-## Examples
+## Deep Dive
 
-**Example 1 (stakeholder email):** “Draft an email to exec stakeholders: the launch is slipping 2 weeks; we need approval to cut scope and a decision by Friday.”  
-Expected: TL;DR + explicit ask/options + what changes + next steps with owners.
+For all 61 insights from 38 guests, see `references/guest-insights.md`
 
-**Example 2 (project memo + canonical doc):** “Turn these notes into a 1-page memo that aligns the team on the new onboarding approach, and create a canonical doc outline for ongoing updates.”  
-Expected: memo with recommendation + tradeoffs + next steps, plus a source-of-truth doc skeleton.
+## Related Skills
 
-**Boundary example:** “Write a legal/HR disciplinary notice.”  
-Response: decline to fabricate legal/HR guidance; request expert review; offer to help with neutral structure, tone, and clarity if the user provides approved language.
+- Stakeholder Alignment
+- Giving Presentations
+- Running Effective Meetings
+- Writing PRDs

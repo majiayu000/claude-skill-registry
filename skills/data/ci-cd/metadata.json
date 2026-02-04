@@ -1,7 +1,7 @@
 {
   "name": "ci-cd",
-  "repo": "bullish0x/paas-ai-stack",
-  "path": "skills/ci-cd/SKILL.md",
-  "source": "github.com/bullish0x/paas-ai-stack",
-  "downloaded_at": "2026-02-02T01:05:24.150437Z"
+  "repo": "chaterm/terminal-skills",
+  "path": "devops/ci-cd/SKILL.md",
+  "source": "github.com/chaterm/terminal-skills",
+  "downloaded_at": "2026-02-04T02:24:41.763651Z"
 }

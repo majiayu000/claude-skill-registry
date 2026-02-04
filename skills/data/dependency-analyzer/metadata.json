@@ -1,7 +1,7 @@
 {
   "name": "dependency-analyzer",
-  "repo": "oimiragieo/agent-studio",
+  "repo": "ntaksh42/agents",
   "path": ".claude/skills/dependency-analyzer/SKILL.md",
-  "source": "github.com/oimiragieo/agent-studio",
-  "downloaded_at": "2026-02-02T04:36:39.025769Z"
+  "source": "github.com/ntaksh42/agents",
+  "downloaded_at": "2026-02-04T04:07:21.286878Z"
 }

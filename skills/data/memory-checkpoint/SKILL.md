@@ -1,6 +1,21 @@
 ---
 name: memory-checkpoint
-description: Externalize detailed memory to Memory Bank before conversation summarization to prevent context loss. Triggers: CP, checkpoint, save, 存檔, 記一下, 保存, sync memory, dump, 先記著, 等一下, 要離開, 暫停, pause, 儲存進度, 怕忘記.
+description: Externalize detailed memory to Memory Bank before conversation summarization to prevent context loss. Triggers: CP, checkpoint, save, 存檔, 記一下, 保存, sync memory, dump, 先記著, 備份, backup, snapshot, 快照, 記錄, 等等, 先停, pause, 離開前, before leaving, 收工.
+version: 2.1.0
+category: memory
+compatibility:
+  - claude-code
+  - github-copilot
+  - vscode
+  - codex-cli
+dependencies:
+  - memory-updater
+allowed-tools:
+  - read_file
+  - write_file
+  - replace_string_in_file
+  - memory
+  - get_changed_files
 ---
 
 # Memory Checkpoint 技能 (記憶檢查點)

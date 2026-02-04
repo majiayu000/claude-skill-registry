@@ -1,9 +1,8 @@
 ---
 name: context-management
-version: 3.0.0
+version: 2.0.0
 description: |
   Proactive context window management via token monitoring, intelligent extraction, and selective rehydration.
-  Features predictive budget monitoring, context health indicators, and priority-based retention.
   Use when approaching token limits or needing to preserve essential context.
   Complements /transcripts and PreCompact hook with proactive optimization.
 ---
@@ -14,13 +13,6 @@ description: |
 
 This skill enables proactive management of Claude Code's context window through intelligent token monitoring, context extraction, and selective rehydration. Instead of reactive recovery after compaction, this skill helps users preserve essential context before hitting limits and restore it efficiently when needed.
 
-**Version 3.0 Enhancements:**
-
-- **Predictive Budget Monitoring**: Estimate when capacity thresholds will be reached
-- **Context Health Indicators**: Visual indicators for statusline integration
-- **Priority-Based Retention**: Keep requirements and decisions, archive verbose logs
-- **Burn Rate Tracking**: Monitor token consumption velocity for early warnings
-
 ## When to Use This Skill
 
 - **Token monitoring**: Check current usage and get recommendations
@@ -30,8 +22,6 @@ This skill enables proactive management of Claude Code's context window through 
 - **Complex tasks**: Keep requirements and progress accessible
 - **Context switching**: Save state when pausing work
 - **Team handoffs**: Package context for others to continue
-- **Predictive planning**: Get early warnings before capacity is reached
-- **Session health**: Monitor context health for sustained productivity
 
 ## Quick Start
 
@@ -155,7 +145,7 @@ print(f"Saved to: {snapshot.file_path}")
 **Returns:**
 
 - `ContextSnapshot` object with metadata
-- Snapshot saved to `~/.amplihack/.claude/runtime/context-snapshots/`
+- Snapshot saved to `.claude/runtime/context-snapshots/`
 
 ### Action: `rehydrate`
 
@@ -196,163 +186,6 @@ for snapshot in snapshots:
 
 - List of snapshot metadata dicts
 - Includes: id, name, timestamp, size, token_count
-
-## Proactive Features (v3.0)
-
-### Predictive Budget Monitoring
-
-Instead of just checking current usage, predict when thresholds will be reached:
-
-```python
-# The system tracks token burn rate over time
-# When checking status, you get predictive insights
-
-status = check_context_status(current_tokens=500000)
-
-# Status includes predictions (when automation is running):
-# - Estimated tool uses until 70% threshold
-# - Time estimate based on current burn rate
-# - Early warning before you hit capacity
-
-# Example output interpretation:
-# "At current rate, you'll hit 70% in ~15 tool uses"
-# "Consider creating a checkpoint before your next major operation"
-```
-
-**How Prediction Works:**
-
-The automation tracks:
-
-1. Token count at each check interval
-2. Number of tool uses between checks
-3. Average tokens consumed per tool use
-4. Time elapsed between checks
-
-From this data, it estimates:
-
-- Tools remaining until threshold
-- Approximate time until threshold
-- Whether current task will complete before limit
-
-### Context Health Indicators
-
-Visual indicators for session health, suitable for statusline integration:
-
-| Indicator        | Meaning  | Usage % | Recommended Action   |
-| ---------------- | -------- | ------- | -------------------- |
-| `[CTX:OK]`       | Healthy  | 0-30%   | Continue normally    |
-| `[CTX:WATCH]`    | Monitor  | 30-50%  | Plan checkpoint      |
-| `[CTX:WARN]`     | Warning  | 50-70%  | Create snapshot soon |
-| `[CTX:CRITICAL]` | Critical | 70%+    | Snapshot immediately |
-
-**Statusline Integration Example:**
-
-```bash
-# In your statusline script, check context health:
-# The automation state file contains health status
-
-# Example statusline addition:
-if [ -f ".claude/runtime/context-automation-state.json" ]; then
-    LAST_PCT=$(jq -r '.last_percentage // 0' .claude/runtime/context-automation-state.json)
-    if [ "$LAST_PCT" -lt 30 ]; then
-        echo "[CTX:OK]"
-    elif [ "$LAST_PCT" -lt 50 ]; then
-        echo "[CTX:WATCH]"
-    elif [ "$LAST_PCT" -lt 70 ]; then
-        echo "[CTX:WARN]"
-    else
-        echo "[CTX:CRITICAL]"
-    fi
-fi
-```
-
-### Priority-Based Context Retention
-
-When creating snapshots, the system prioritizes content by importance:
-
-**High Priority (Always Retained):**
-
-- Original user requirements (first user message)
-- Key architectural decisions
-- Current implementation state
-- Open items and blockers
-
-**Medium Priority (Retained in Standard+):**
-
-- Tool usage history
-- Decision rationales
-- Questions and clarifications
-
-**Low Priority (Only in Comprehensive):**
-
-- Verbose output logs
-- Intermediate steps
-- Debugging information
-
-**Usage Pattern:**
-
-```python
-# Create snapshot with priority awareness
-snapshot = create_context_snapshot(
-    conversation_data=messages,
-    name='feature-checkpoint'
-)
-
-# Essential level (~200 tokens): Only high priority content
-# Standard level (~800 tokens): High + medium priority
-# Comprehensive level (~1250 tokens): Everything
-
-# Start minimal, upgrade as needed:
-context = rehydrate_from_snapshot(snapshot_id, level='essential')
-```
-
-### Burn Rate Tracking
-
-Monitor how fast you're consuming context:
-
-```python
-# The automation tracks consumption velocity
-# Adaptive checking frequency based on burn rate:
-
-# Low burn rate (< 1K tokens/tool): Check every 50 tools
-# Medium burn rate (1-5K tokens/tool): Check every 10 tools
-# High burn rate (> 5K tokens/tool): Check every 3 tools
-# Critical zone (70%+): Check every tool
-
-# This means:
-# - Normal development: Minimal overhead (checks rarely)
-# - Large file operations: Increased monitoring
-# - Approaching limits: Continuous monitoring
-```
-
-**Burn Rate Thresholds:**
-
-| Burn Rate   | Risk Level | Monitoring Frequency |
-| ----------- | ---------- | -------------------- |
-| < 1K/tool   | Low        | Every 50 tools       |
-| 1-5K/tool   | Medium     | Every 10 tools       |
-| > 5K/tool   | High       | Every 3 tools        |
-| Any at 70%+ | Critical   | Every tool           |
-
-### Auto-Summarization Triggers
-
-The system automatically creates snapshots before limits are hit:
-
-```python
-# Automatic snapshot triggers (already implemented):
-# - 30% usage: First checkpoint created
-# - 40% usage: Second checkpoint created
-# - 50% usage: Third checkpoint created (for 1M models)
-
-# For smaller context windows (< 800K):
-# - 55% usage: First checkpoint
-# - 70% usage: Second checkpoint
-# - 85% usage: Urgent checkpoint
-
-# After compaction detected (30% token drop):
-# - Automatically rehydrates from most recent snapshot
-# - Uses smart level selection based on previous usage
-```
 
 ## Proactive Usage Workflow
 
@@ -459,8 +292,8 @@ context = rehydrate_from_snapshot(
 
 ### Storage Locations
 
-- **Snapshots**: `~/.amplihack/.claude/runtime/context-snapshots/` (JSON)
-- **Transcripts**: `~/.amplihack/.claude/runtime/logs/<session_id>/CONVERSATION_TRANSCRIPT.md`
+- **Snapshots**: `.claude/runtime/context-snapshots/` (JSON)
+- **Transcripts**: `.claude/runtime/logs/<session_id>/CONVERSATION_TRANSCRIPT.md`
 - **No conflicts**: Different directories, different purposes
 
 ## Automatic Management
@@ -478,9 +311,9 @@ This happens transparently without user intervention.
 
 All context management functionality is provided by:
 
-- **Tool**: `~/.amplihack/.claude/tools/amplihack/context_manager.py`
-- **Hook Integration**: `~/.amplihack/.claude/tools/amplihack/context_automation_hook.py`
-- **Hook System**: `~/.amplihack/.claude/tools/amplihack/hooks/tool_registry.py`
+- **Tool**: `.claude/tools/amplihack/context_manager.py`
+- **Hook Integration**: `.claude/tools/amplihack/context_automation_hook.py`
+- **Hook System**: `.claude/tools/amplihack/hooks/tool_registry.py`
 
 See tool documentation for complete API reference and implementation details.
 
@@ -563,10 +396,10 @@ snapshot = create_context_snapshot(
 
 ## Resources
 
-- **Tool**: `~/.amplihack/.claude/tools/amplihack/context_manager.py`
-- **Hook**: `~/.amplihack/.claude/tools/amplihack/context_automation_hook.py`
-- **Philosophy**: `~/.amplihack/.claude/context/PHILOSOPHY.md`
-- **Patterns**: `~/.amplihack/.claude/context/PATTERNS.md`
+- **Tool**: `.claude/tools/amplihack/context_manager.py`
+- **Hook**: `.claude/tools/amplihack/context_automation_hook.py`
+- **Philosophy**: `.claude/context/PHILOSOPHY.md`
+- **Patterns**: `.claude/context/PATTERNS.md`
 
 ## Remember
 

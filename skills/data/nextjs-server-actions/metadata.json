@@ -1,7 +1,7 @@
 {
   "name": "nextjs-server-actions",
-  "repo": "CoderMariusz/MonoPilot",
-  "path": ".claude/skills/nextjs-server-actions/SKILL.md",
-  "source": "github.com/CoderMariusz/MonoPilot",
-  "downloaded_at": "2026-02-02T02:41:55.268841Z"
+  "repo": "JosiahSiegel/claude-plugin-marketplace",
+  "path": "plugins/nextjs-master/skills/nextjs-server-actions/SKILL.md",
+  "source": "github.com/JosiahSiegel/claude-plugin-marketplace",
+  "downloaded_at": "2026-02-04T03:37:46.614059Z"
 }

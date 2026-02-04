@@ -40,7 +40,7 @@ Todo files follow this naming pattern:
 
 ## File Structure
 
-Each todo is a markdown file with YAML frontmatter and structured sections. Use the template at `assets/todo-template.md` as a starting point when creating new todos.
+Each todo is a markdown file with YAML frontmatter and structured sections. Use the template at [todo-template.md](./assets/todo-template.md) as a starting point when creating new todos.
 
 **Required sections:**
 - **Problem Statement** - What is broken, missing, or needs improvement?
@@ -184,7 +184,7 @@ Work logs serve as:
 
 | Trigger | Flow | Tool |
 |---------|------|------|
-| Code review | `/review` → Findings → `/triage` → Todos | Review agent + skill |
+| Code review | `/workflows:review` → Findings → `/triage` → Todos | Review agent + skill |
 | PR comments | `/resolve_pr_parallel` → Individual fixes → Todos | gh CLI + skill |
 | Code TODOs | `/resolve_todo_parallel` → Fixes + Complex todos | Agent + skill |
 | Planning | Brainstorm → Create todo → Work → Complete | Skill |

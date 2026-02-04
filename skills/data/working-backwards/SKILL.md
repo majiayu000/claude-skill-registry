@@ -1,123 +1,71 @@
 ---
-name: "working-backwards"
-description: "Create an Amazon-style PR/FAQ (future press release + FAQ) plus a backcasting launch plan to align on customer value, scope, and GTM readiness. Use for working backwards, PRFAQ / PR-FAQ, future press release, backcasting, launch plan."
+name: working-backwards
+description: Help users apply the working backwards methodology. Use when someone is defining a new product, writing a PR/FAQ, planning from a future state, or trying to clarify a product's value proposition before building.
 ---
 
-# Working Backwards (PR/FAQ + Backcasting)
+# Working Backwards
 
-## Scope
+Help the user apply the working backwards methodology using frameworks and insights from 12 product leaders.
 
-**Covers**
-- Turning a product idea into a customer-centric **future press release + FAQ (PR/FAQ)**
-- Creating 2–3 divergent PR options to avoid solution lock-in
-- Backcasting a launch: a concrete **GTM + operational “machinery” plan** from target date back to today
-- Surfacing stakeholders, dependencies, constraints, and risks early
+## How to Help
 
-**When to use**
-- “Write a PR/FAQ for…”
-- “Working backwards from the customer…”
-- “Create a future press release / press release from the future”
-- “Backcast a launch plan / working backwards timeline”
-- “We need alignment on what we’re building before writing a PRD”
+When the user asks for help with working backwards:
 
-**When NOT to use**
-- You don’t yet understand the problem and need discovery framing (use `problem-definition`)
-- You already have narrative alignment and need detailed requirements (use `writing-prds`)
-- You need a build-ready engineering/design spec (use `writing-specs-designs`)
-- You’re prioritizing among many initiatives (use `prioritizing-roadmap`)
-- You only need marketing copy for an already-built product (this skill is for product decision-making)
+1. **Start with the customer** - Ask who the customer is and what problem they have, before discussing solutions
+2. **Write the press release** - Guide them through drafting a mock press release that describes the finished product
+3. **Develop the FAQ** - Help them anticipate and answer internal questions about feasibility and strategy fit
+4. **Test the three criteria** - Evaluate if the idea is big enough, strategically appropriate, and has a viable plan
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product/context + target customer/user segment
-- Problem statement (or symptoms) + why now
-- Candidate solution idea(s) (can be vague; options are welcome)
-- Constraints: timeline/launch target, platform, policy/legal, dependencies
-- Success metrics (1–3) + guardrails (2–5)
+### Start with the customer problem
+Ian McAllister: "Working backwards is all about the problem and starting there. Teams that do it wrong don't work backwards - they have something they want to build." Avoid retrofitting a problem to a pre-existing solution. Start with the problem paragraph before defining the solution.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers remain missing, proceed with clearly labeled assumptions and provide 2–3 options (PR variants, scope, rollout).
+### Trust that results follow value
+Bill Carr: "Jeff would say, we took it as an article of faith. If we served customers well, things like revenue and share price would follow." Work backward from the ideal customer solution and trust that business metrics will follow.
 
-## Outputs (deliverables)
+### Use backcasting to escape the present
+Christopher Lochhead: "Standing in that future, five years out, looking back to the present, what did we do to make this different future happen? That's how you unshackle yourself from the past." Envision a radical future and work backward without being constrained by current limitations.
 
-Produce a **Working Backwards Pack** in Markdown (in-chat; or as files if the user requests):
+### The PR/FAQ forces clarity
+Bill Carr: "We're going to start by writing a press release describing the feature in a way that speaks to the customer. The idea better jump off the page as something a customer will really need." Write a problem paragraph, a solution paragraph, a customer quote, and a leadership quote before building anything.
 
-1) **Context snapshot**
-2) **PR options:** 2–3 divergent future press releases (1 page each)
-3) **Selected PR:** refined future press release
-4) **FAQ:** customer + internal (business/ops/technical/legal) FAQs
-5) **Backcasting plan:** milestones to launch (owners, dates, dependencies)
-6) **Stakeholder + “machinery” plan:** approvals, comms, rollout, support readiness
-7) **Success metrics + guardrails** (+ instrumentation notes)
-8) **Risks / Open questions / Next steps** (always included)
+### Evaluate three things
+Ian McAllister: "One, is it a big idea? Two, is it something we should be doing? Three, is there a legitimate plan to succeed?" A successful product proposal must pass all three tests. The FAQ proves whether a legitimate plan exists.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Define the ideal state first
+Melanie Perkins: "Column B is work from this dream reality and work backwards from how to achieve that." Imagine the 'castle on the hill' - the mythical perfect experience - first, then build rungs on a ladder from today to that vision.
 
-## Workflow (8 steps)
+### Align the entire machinery
+Anuj Rathi: "You're working backwards from an entire machinery at a particular day that is working. What will be the machinery we would have created so that this product is successful?" Working backwards includes GTM strategy, organizational alignment, and stakeholder buy-in, not just the product itself.
 
-### 1) Intake + decision framing
-- **Inputs:** user request; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Clarify the decision (invest vs not, choose approach), audience, and target launch date/timebox. Capture constraints + stakeholders.
-- **Outputs:** Context snapshot.
-- **Checks:** You can state the decision and time horizon in one sentence.
+### Define the theoretical ideal
+Nilan Peiris: "What is the theoretical minimum cost for moving money? What is the theoretical maximum speed? Not just make it instant, make it cheap, but what actually is the lowest it could possibly be?" Define the best possible outcome and work backward from that, not from incremental improvements.
 
-### 2) Write the problem paragraph (before any solution)
-- **Inputs:** customer segment + evidence; why now.
-- **Actions:** Draft “Problem today” in customer language. List top pains and current alternatives/workarounds.
-- **Outputs:** Problem paragraph + alternatives bullets.
-- **Checks:** Describes pain without specifying implementation; avoids “we want to build X” framing.
+## Questions to Help Users
 
-### 3) Draft 2–3 divergent future press releases (options)
-- **Inputs:** problem paragraph; constraints.
-- **Actions:** Create Option A/B/C PRs with different solution shapes. Keep them 1 page each.
-- **Outputs:** 2–3 PR drafts.
-- **Checks:** Options are meaningfully different; each promises clear customer value; no internal jargon.
+- "Who is the customer, and what is their problem - in their words?"
+- "If you wrote a press release for this product today, what would the headline be?"
+- "What would a customer quote say about how this changed their life?"
+- "Is this idea big enough to matter? Is your company the right one to build it?"
+- "What's the FAQ that addresses the elephant in the room?"
+- "What does the theoretical ideal state look like, not just an improvement?"
 
-### 4) Select the best option and refine to a single PR
-- **Inputs:** PR options; decision criteria; stakeholder feedback (if available).
-- **Actions:** Pick a winner (or hybrid) and refine the PR for clarity, boundaries, and a concrete “how it works”.
-- **Outputs:** Selected PR.
-- **Checks:** A stakeholder can restate the benefit and “why now” in one sentence; “who it’s for / not for” is explicit.
+## Common Mistakes to Flag
 
-### 5) Write the FAQ (customer + internal)
-- **Inputs:** selected PR; constraints; dependencies.
-- **Actions:** Draft FAQs in sections: customer, business, technical/ops, legal/compliance. Include out-of-scope, risks, and measurement.
-- **Outputs:** FAQ section.
-- **Checks:** Top objections are answered; open questions are explicitly labeled; no “we’ll figure it out later” hand-waving.
+- **Starting with the solution** - The most common failure is having a solution and retrofitting a problem to it
+- **Vague customer benefit** - The press release must jump off the page with clear customer value
+- **Skipping the FAQ** - Internal questions about feasibility and strategy are crucial for honest evaluation
+- **Incremental thinking** - Work backward from the ideal, not from small improvements to the status quo
+- **Only product focus** - Working backwards should include GTM, organizational alignment, and stakeholder management
 
-### 6) Backcast: build the launch and “machinery” plan
-- **Inputs:** target launch tier/date; FAQ dependencies.
-- **Actions:** Create a milestone plan working backward (design, eng, data, legal, docs, support, comms). Define launch tiers and rollback.
-- **Outputs:** Backcasting plan + launch tiers/rollback plan.
-- **Checks:** Each milestone has an owner + success criteria; major dependencies have a plan.
+## Deep Dive
 
-### 7) Stress-test: pre-mortem + metrics + guardrails
-- **Inputs:** PR/FAQ + backcasting plan.
-- **Actions:** Run a pre-mortem. List failure modes (trust/safety/quality/cost). Define success metrics + guardrails + instrumentation needs.
-- **Outputs:** Risks + metrics/guardrails + validation notes.
-- **Checks:** Each major risk has a mitigation/monitor; metrics are computable and owned.
+For all 15 insights from 12 guests, see `references/guest-insights.md`
 
-### 8) Quality gate + finalize pack
-- **Inputs:** full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Ensure final section includes risks/open questions/next steps.
-- **Outputs:** Final Working Backwards Pack.
-- **Checks:** Pack is decision-ready and shareable async (no meeting required).
+## Related Skills
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (B2B SaaS):** “Write a PR/FAQ and backcasting plan for ‘Role-based dashboards’ for enterprise admins, with a beta in 8 weeks.”  
-Expected: 2–3 PR options, selected PR/FAQ, and a milestone plan covering security review, instrumentation, docs/support.
-
-**Example 2 (Consumer):** “Work backwards for ‘Saved routes’ in a navigation app; propose two alternative product concepts and pick one.”  
-Expected: divergent PRs that surface trade-offs, clear metrics (repeat usage, retention), and guardrails (privacy, battery, safety).
-
-**Boundary example:** “Write a PR/FAQ for ‘use AI’ (no user problem).”  
-Response: ask intake questions, redirect to `problem-definition` if needed, and do not pretend to have customer clarity.
-
+- Defining Product Vision
+- Writing PRDs
+- Startup Ideation
+- Setting OKRs & Goals

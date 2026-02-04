@@ -1,7 +1,7 @@
 {
   "name": "create-agent-skills",
-  "repo": "saxjax/saxjaxTuner",
-  "path": ".claude/skills/create-agent-skills/SKILL.md",
-  "source": "github.com/saxjax/saxjaxTuner",
-  "downloaded_at": "2026-02-02T04:34:23.236248Z"
+  "repo": "davekilleen/Dex",
+  "path": ".claude/plugins/compound-engineering/skills/create-agent-skills/SKILL.md",
+  "source": "github.com/davekilleen/Dex",
+  "downloaded_at": "2026-02-04T05:04:12.064285Z"
 }

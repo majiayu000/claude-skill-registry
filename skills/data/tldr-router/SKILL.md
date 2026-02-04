@@ -1,6 +1,6 @@
 ---
 name: tldr-router
-description: Route to appropriate tldr analysis depth based on query
+description: Maps questions to the optimal tldr command. Use this to pick the right layer
 ---
 
 # TLDR Smart Router

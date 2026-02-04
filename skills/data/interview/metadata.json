@@ -1,7 +1,7 @@
 {
   "name": "interview",
-  "repo": "carmandale/agent-config",
-  "path": "skills/tools/interview/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:39.073576Z"
+  "repo": "emirrtopaloglu/claude-code-virtuoso",
+  "path": ".claude/skills/interview/SKILL.md",
+  "source": "github.com/emirrtopaloglu/claude-code-virtuoso",
+  "downloaded_at": "2026-02-04T04:39:41.740824Z"
 }

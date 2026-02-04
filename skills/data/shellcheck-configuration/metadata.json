@@ -1,7 +1,7 @@
 {
   "name": "shellcheck-configuration",
-  "repo": "GaitanS/AI-Mancare",
-  "path": ".claude/skills/plugins/shell-scripting/skills/shellcheck-configuration/SKILL.md",
-  "source": "github.com/GaitanS/AI-Mancare",
-  "downloaded_at": "2026-02-02T04:39:42.124796Z"
+  "repo": "pelan05/vscode_agents_folder",
+  "path": "skills/shellcheck-configuration/SKILL.md",
+  "source": "github.com/pelan05/vscode_agents_folder",
+  "downloaded_at": "2026-02-04T05:20:22.200853Z"
 }

@@ -1,9 +1,9 @@
 ---
 name: browserless
-description: "Browserless cloud browser automation service. Run headless Chrome at scale for scraping, screenshots, and PDF generation. Use for cloud browser automation, scalable scraping, or headless Chrome as a service."
+description: Browserless cloud browser automation service. Run headless Chrome at scale for scraping, screenshots, and PDF generation. Use for cloud browser automation, scalable scraping, or headless Chrome as a service. Triggers on browserless, headless chrome, browser service, cloud scraping, screenshot api, pdf generation, chrome as a service.
 ---
 
-# Browserless Skill
+# Browserless Cloud Browser Automation
 
 Complete guide for Browserless - headless Chrome as a service.
 
@@ -11,14 +11,14 @@ Complete guide for Browserless - headless Chrome as a service.
 
 ### Key Features
 
-| Feature         | Description                     |
-| --------------- | ------------------------------- |
-| **REST API**    | HTTP endpoints                  |
-| **WebSocket**   | Puppeteer/Playwright connection |
-| **Screenshots** | Page captures                   |
-| **PDF**         | Document generation             |
-| **Scraping**    | Data extraction                 |
-| **Functions**   | Custom scripts                  |
+| Feature | Description |
+|---------|-------------|
+| **REST API** | HTTP endpoints for screenshots, PDFs, scraping |
+| **WebSocket** | Puppeteer/Playwright connection |
+| **Screenshots** | Page captures at scale |
+| **PDF** | Document generation |
+| **Scraping** | Data extraction |
+| **Functions** | Custom script execution |
 
 ### Endpoints
 
@@ -30,9 +30,7 @@ Complete guide for Browserless - headless Chrome as a service.
 /function - Run custom code
 ```
 
----
-
-## 1. Setup
+## Setup
 
 ### Self-Hosted (Docker)
 
@@ -76,9 +74,7 @@ Get API token
 Use: wss://chrome.browserless.io?token=YOUR_TOKEN
 ```
 
----
-
-## 2. REST API
+## REST API
 
 ### Screenshots
 
@@ -129,16 +125,6 @@ curl -X POST "http://localhost:3000/pdf?token=your-token" \
   -o document.pdf
 ```
 
-### Get Content
-
-```bash
-# Get HTML
-curl -X POST "http://localhost:3000/content?token=your-token" \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://example.com"}' \
-  -o page.html
-```
-
 ### Scrape Data
 
 ```bash
@@ -154,9 +140,7 @@ curl -X POST "http://localhost:3000/scrape?token=your-token" \
   }'
 ```
 
----
-
-## 3. JavaScript Integration
+## JavaScript Integration
 
 ### Using Puppeteer
 
@@ -170,7 +154,6 @@ const puppeteer = require("puppeteer");
 
   const page = await browser.newPage();
   await page.goto("https://example.com");
-
   const title = await page.title();
   console.log("Title:", title);
 
@@ -185,7 +168,7 @@ const { chromium } = require("playwright");
 
 (async () => {
   const browser = await chromium.connectOverCDP(
-    "ws://localhost:3000?token=your-token",
+    "ws://localhost:3000?token=your-token"
   );
 
   const context = await browser.newContext();
@@ -212,24 +195,9 @@ async function takeScreenshot(url) {
         url,
         options: { fullPage: true },
       }),
-    },
+    }
   );
-
-  const buffer = await response.arrayBuffer();
-  return Buffer.from(buffer);
-}
-
-async function generatePDF(url) {
-  const response = await fetch("http://localhost:3000/pdf?token=your-token", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      url,
-      options: { format: "A4", printBackground: true },
-    }),
-  });
-
-  return await response.arrayBuffer();
+  return Buffer.from(await response.arrayBuffer());
 }
 
 async function scrapeData(url, elements) {
@@ -239,38 +207,13 @@ async function scrapeData(url, elements) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url, elements }),
-    },
+    }
   );
-
   return await response.json();
 }
 ```
 
----
-
-## 4. Python Integration
-
-### Using Pyppeteer
-
-```python
-import asyncio
-from pyppeteer import connect
-
-async def main():
-    browser = await connect(
-        browserWSEndpoint='ws://localhost:3000?token=your-token'
-    )
-
-    page = await browser.newPage()
-    await page.goto('https://example.com')
-
-    title = await page.title()
-    print(f'Title: {title}')
-
-    await browser.close()
-
-asyncio.run(main())
-```
+## Python Integration
 
 ### Using Playwright
 
@@ -283,13 +226,10 @@ async def main():
         browser = await p.chromium.connect_over_cdp(
             'ws://localhost:3000?token=your-token'
         )
-
         page = await browser.new_page()
         await page.goto('https://example.com')
-
         title = await page.title()
         print(f'Title: {title}')
-
         await browser.close()
 
 asyncio.run(main())
@@ -311,28 +251,11 @@ def screenshot(url, options=None):
     )
     return response.content
 
-def pdf(url, options=None):
-    response = requests.post(
-        'http://localhost:3000/pdf',
-        params={'token': 'your-token'},
-        json={
-            'url': url,
-            'options': options or {
-                'format': 'A4',
-                'printBackground': True
-            }
-        }
-    )
-    return response.content
-
 def scrape(url, elements):
     response = requests.post(
         'http://localhost:3000/scrape',
         params={'token': 'your-token'},
-        json={
-            'url': url,
-            'elements': elements
-        }
+        json={'url': url, 'elements': elements}
     )
     return response.json()
 
@@ -340,17 +263,9 @@ def scrape(url, elements):
 screenshot_data = screenshot('https://example.com')
 with open('screenshot.png', 'wb') as f:
     f.write(screenshot_data)
-
-data = scrape('https://example.com', [
-    {'selector': 'h1', 'name': 'title'},
-    {'selector': '.price', 'name': 'price'}
-])
-print(data)
 ```
 
----
-
-## 5. Function API
+## Function API
 
 ### Custom Functions
 
@@ -360,8 +275,6 @@ print(data)
   "code": `
     export default async ({ page }) => {
       await page.goto('https://example.com');
-
-      // Custom logic
       await page.waitForSelector('.loaded');
 
       const data = await page.evaluate(() => {
@@ -381,36 +294,7 @@ print(data)
 }
 ```
 
-### With Context
-
-```javascript
-{
-  "code": `
-    export default async ({ page, context }) => {
-      const { url, searchTerm } = context;
-
-      await page.goto(url);
-      await page.type('#search', searchTerm);
-      await page.click('#submit');
-      await page.waitForNavigation();
-
-      const results = await page.$$eval('.result', els =>
-        els.map(el => el.textContent)
-      );
-
-      return { data: results, type: 'application/json' };
-    }
-  `,
-  "context": {
-    "url": "https://example.com",
-    "searchTerm": "puppeteer"
-  }
-}
-```
-
----
-
-## 6. Advanced Options
+## Advanced Options
 
 ### Viewport and Device
 
@@ -423,8 +307,7 @@ print(data)
     "deviceScaleFactor": 2,
     "isMobile": true,
     "hasTouch": true
-  },
-  "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)"
+  }
 }
 ```
 
@@ -459,54 +342,7 @@ print(data)
 }
 ```
 
-### JavaScript Injection
-
-```json
-{
-  "url": "https://example.com",
-  "addScriptTag": [
-    { "content": "window.injected = true;" },
-    { "url": "https://cdn.example.com/script.js" }
-  ],
-  "addStyleTag": [{ "content": "body { background: red; }" }]
-}
-```
-
----
-
-## 7. Proxy Support
-
-### Using Proxy
-
-```json
-{
-  "url": "https://example.com",
-  "launch": {
-    "args": ["--proxy-server=http://proxy.example.com:8080"]
-  }
-}
-```
-
-### Authenticated Proxy
-
-```javascript
-const browser = await puppeteer.connect({
-  browserWSEndpoint: "ws://localhost:3000?token=your-token",
-});
-
-const page = await browser.newPage();
-
-await page.authenticate({
-  username: "proxy-user",
-  password: "proxy-pass",
-});
-
-await page.goto("https://example.com");
-```
-
----
-
-## 8. Docker Configuration
+## Docker Configuration
 
 ### Full Configuration
 
@@ -517,47 +353,20 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # Authentication
       - TOKEN=your-secure-token
-
-      # Concurrency
       - CONCURRENT=10
       - QUEUED=50
-
-      # Timeouts
       - TIMEOUT=60000
       - CONNECTION_TIMEOUT=30000
-
-      # Resources
       - MAX_PAYLOAD_SIZE=10mb
-      - MAX_CPU_PERCENT=99
-      - MAX_MEMORY_PERCENT=99
-
-      # Features
       - ENABLE_CORS=true
-      - ENABLE_API_GET=true
       - HEALTH_CHECK=true
-      - DEBUG=browserless*
-
-      # Function limits
-      - FUNCTION_ENABLE_INCOGNITO_MODE=true
-      - FUNCTION_EXTERNALS=["lodash","moment"]
-
-      # Proxy
-      - DEFAULT_LAUNCH_ARGS=["--proxy-server=http://proxy:8080"]
-
-    volumes:
-      - ./downloads:/downloads
-      - ./tmp:/tmp
-
     restart: unless-stopped
-
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/"]
       interval: 30s
       timeout: 10s
       retries: 3
-
     deploy:
       resources:
         limits:
@@ -565,142 +374,18 @@ services:
           memory: 4G
 ```
 
----
-
-## 9. Monitoring
-
-### Health Check
+## Monitoring
 
 ```bash
+# Health check
 curl http://localhost:3000/
-# Returns: {"status": "ok", ...}
 
+# Queue stats
 curl http://localhost:3000/stats
-# Returns queue and session stats
-```
 
-### Metrics Endpoint
-
-```bash
+# Prometheus metrics
 curl http://localhost:3000/metrics
-# Prometheus-compatible metrics
 ```
-
-### Debugging
-
-```bash
-# Enable debug logging
-docker run -e "DEBUG=browserless*" ghcr.io/browserless/chromium
-
-# View live sessions
-curl http://localhost:3000/sessions
-```
-
----
-
-## 10. Common Patterns
-
-### Batch Processing
-
-```javascript
-const urls = ["https://example1.com", "https://example2.com"];
-
-async function batchScreenshots(urls) {
-  const results = await Promise.all(
-    urls.map(async (url) => {
-      const response = await fetch(
-        "http://localhost:3000/screenshot?token=your-token",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url, options: { fullPage: true } }),
-        },
-      );
-      return { url, screenshot: await response.arrayBuffer() };
-    }),
-  );
-  return results;
-}
-```
-
-### Retry Logic
-
-```javascript
-async function withRetry(fn, maxRetries = 3) {
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      return await fn();
-    } catch (error) {
-      if (i === maxRetries - 1) throw error;
-      await new Promise((r) => setTimeout(r, 1000 * (i + 1)));
-    }
-  }
-}
-
-const screenshot = await withRetry(() => takeScreenshot("https://example.com"));
-```
-
-### Queue Management
-
-```javascript
-const pLimit = require('p-limit');
-
-const limit = pLimit(5); // Max 5 concurrent
-
-const urls = [...]; // Many URLs
-
-const results = await Promise.all(
-  urls.map(url =>
-    limit(() => takeScreenshot(url))
-  )
-);
-```
-
----
-
-## 11. Troubleshooting
-
-### Common Issues
-
-**Connection timeout:**
-
-```javascript
-// Increase connection timeout
-const browser = await puppeteer.connect({
-  browserWSEndpoint: "ws://localhost:3000?token=your-token",
-  timeout: 60000,
-});
-```
-
-**Memory issues:**
-
-```yaml
-# Docker resource limits
-deploy:
-  resources:
-    limits:
-      memory: 8G
-```
-
-**Queue full:**
-
-```bash
-# Increase queue size
-docker run -e "QUEUED=100" ghcr.io/browserless/chromium
-```
-
-**Session leak:**
-
-```javascript
-// Always close browser
-try {
-  // ... operations
-} finally {
-  await browser.close();
-}
-```
-
----
 
 ## Best Practices
 
@@ -709,8 +394,17 @@ try {
 3. **Limit concurrency** - Based on resources
 4. **Close sessions** - Prevent memory leaks
 5. **Use health checks** - Monitor availability
-6. **Queue management** - Handle bursts
+6. **Queue management** - Handle request bursts
 7. **Retry logic** - Handle transient failures
-8. **Resource limits** - Docker constraints
-9. **Use functions** - Complex workflows
+8. **Resource limits** - Set Docker constraints
+9. **Use functions** - For complex workflows
 10. **Monitor metrics** - Track performance
+
+## When to Use This Skill
+
+- Cloud-based browser automation
+- Scalable screenshot services
+- PDF generation at scale
+- Web scraping infrastructure
+- Headless Chrome as a service
+- Parallel browser operations

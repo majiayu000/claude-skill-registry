@@ -1,7 +1,7 @@
 {
   "name": "ml-pipeline-workflow",
-  "repo": "GaitanS/AI-Mancare",
-  "path": ".claude/skills/plugins/machine-learning-ops/skills/ml-pipeline-workflow/SKILL.md",
-  "source": "github.com/GaitanS/AI-Mancare",
-  "downloaded_at": "2026-02-02T04:39:43.538856Z"
+  "repo": "apassuello/multimodal_insight_engine",
+  "path": ".claude/skills/ml-pipeline-workflow/SKILL.md",
+  "source": "github.com/apassuello/multimodal_insight_engine",
+  "downloaded_at": "2026-02-04T05:06:13.915344Z"
 }

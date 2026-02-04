@@ -1,9 +1,7 @@
 {
   "name": "curriculum-plagiarism-detection",
-  "description": "Detects plagiarism and validates content originality for educational materials.",
   "repo": "pauljbernard/content",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/pauljbernard/content"
+  "path": ".claude/skills/curriculum.plagiarism-detection/SKILL.md",
+  "source": "github.com/pauljbernard/content",
+  "downloaded_at": "2026-02-04T04:12:32.356443Z"
 }

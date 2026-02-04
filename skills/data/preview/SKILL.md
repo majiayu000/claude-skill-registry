@@ -1,393 +1,133 @@
 ---
 name: preview
-description: Display execution plan preview before running commands, allowing user confirmation or modification.
+description: Documentation view expert for Docusaurus integration. Launches interactive server for SpecWeave living documentation with hot reload, auto-generated sidebar, and Mermaid diagrams. Works in ANY SpecWeave project with auto-setup. Supports both internal (port 3015) and public (port 3016) docs. Activates for preview docs, view documentation, Docusaurus server, docs UI, documentation website, local docs server, hot reload docs, static site build.
 ---
 
-# Preview Skill
+# Documentation View Skill
 
-Display execution plan preview before running commands, allowing user confirmation or modification.
+Expert in launching and managing Docusaurus documentation server for SpecWeave projects.
 
-## Mode Check
+## What I Do
 
-**CRITICAL:** Check mode before displaying preview.
+I help you view your SpecWeave living documentation with Docusaurus:
 
-```typescript
-if (mode === "basic") {
-  // Skip preview entirely
-  // Execute command immediately
-  return;
-}
-// Continue with preview display
-```
+### Key Features
+- **Zero-config setup** - Works in any SpecWeave project automatically
+- **Internal & Public docs** - Internal on port 3015, public on port 3016
+- **Cached installation** - Docusaurus cached in `.specweave/cache/docs-site/` (gitignored)
+- **Hot reload** - Edit markdown, see changes instantly
+- **Mermaid diagrams** - Architecture diagrams render beautifully
+- **Auto sidebar** - Generated from folder structure
+- **Bypasses private registries** - Uses public npm to avoid Azure DevOps/corporate issues
 
-## When Used
+## How It Works
 
-| Command      | Preview Content                             |
-| ------------ | ------------------------------------------- |
-| `/start`     | Worktree path, branch name, next steps      |
-| `/plan`      | Mode (define/reconcile), phases, sub-agents |
-| `/implement` | Spec reference, stages, agents, TDD phases  |
-| `/ship`      | Commit, PR, CI, CodeRabbit stages           |
+1. **First run (~30 seconds)**:
+   - Creates Docusaurus in `.specweave/cache/docs-site/` (internal) or `.specweave/cache/docs-site-public/` (public)
+   - Installs dependencies from public npm registry
+   - Configures to read from `.specweave/docs/internal/` or `.specweave/docs/public/`
 
-**NOT used by:** `/guide` (informational), `/mode` (immediate switch)
+2. **Subsequent runs (instant)**:
+   - Uses cached installation
+   - Starts server immediately
 
-## Preview Data Structure
+## Available Commands
 
-```typescript
-interface ExecutionPreview {
-  // Command context
-  command: string; // Original command (e.g., "/implement login form")
-  detected: string; // What was detected (e.g., "Frontend component")
-  scope: string; // Scope description (e.g., "Login form UI")
-
-  // Routing info
-  route: {
-    type: "agent" | "workflow";
-    name: string; // Agent or workflow name
-    reason: string; // Why this route was chosen
-  };
-
-  // Execution plan
-  stages: Stage[];
-
-  // Metadata
-  tools: string[]; // MCP servers/CLI tools that will be used
-  flags?: string[]; // Any flags that modify behavior
-}
-
-interface Stage {
-  number: number;
-  name: string; // e.g., "RESEARCH", "BUILD", "VERIFY"
-  agent?: string; // Agent handling this stage
-  subAgents: SubAgentPlan[];
-  status: "pending" | "conditional"; // conditional = depends on prior stage
-}
-
-interface SubAgentPlan {
-  name: string; // e.g., "ui-researcher"
-  model: "Opus" | "Sonnet" | "Haiku";
-  tasks: string[]; // Planned tasks
-  parallel?: boolean; // True if runs in parallel with siblings
-}
-```
-
----
-
-## Display Formats
-
-### /start Preview
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│  /start user-authentication                                     │
-├─────────────────────────────────────────────────────────────────┤
-│  Creating new workspace for: user-authentication                │
-│                                                                 │
-│  ACTIONS                                                        │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ 1. CREATE WORKTREE                                          ││
-│  │    Path: ../project-user-authentication                     ││
-│  │    Branch: feature/user-authentication                      ││
-│  │                                                             ││
-│  │ 2. NEXT STEPS                                               ││
-│  │    → Restart session in new worktree                        ││
-│  │    → Run /plan to begin designing                           ││
-│  └─────────────────────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### /plan Preview (Define Mode)
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│  /plan user-authentication                                      │
-├─────────────────────────────────────────────────────────────────┤
-│  Mode: Define                                                   │
-│  Feature: User authentication with email/password               │
-│                                                                 │
-│  PHASES                                                         │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ 1. RESEARCH         domain-researcher      Opus             ││
-│  │    □ Search existing auth patterns                          ││
-│  │    □ Check for conflicts                                    ││
-│  │    □ Identify integration points                            ││
-│  ├─────────────────────────────────────────────────────────────┤│
-│  │ 2. WRITE            domain-writer          Sonnet           ││
-│  │    □ Create requirements.md (EARS format)                   ││
-│  │    □ Create design.md (architecture)                        ││
-│  │    □ Create tasks.md (phased work items)                    ││
-│  ├─────────────────────────────────────────────────────────────┤│
-│  │ 3. VALIDATE         quality-validator      Haiku            ││
-│  │    □ Verify EARS compliance                                 ││
-│  │    □ Check acceptance criteria                              ││
-│  └─────────────────────────────────────────────────────────────┘│
-│                                                                 │
-│  Output: specs/user-authentication/                             │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### /plan Preview (Reconcile Mode)
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│  /plan (reconcile PR #42)                                       │
-├─────────────────────────────────────────────────────────────────┤
-│  Mode: Reconcile                                                │
-│  PR: #42 - Add user authentication                              │
-│  CodeRabbit comments: 3                                         │
-│                                                                 │
-│  ISSUES TO ADDRESS                                              │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ 1. [Security] Use bcrypt, not SHA256                        ││
-│  │ 2. [Performance] Add index on email column                  ││
-│  │ 3. [Style] Use early returns in validatePassword()          ││
-│  └─────────────────────────────────────────────────────────────┘│
-│                                                                 │
-│  PHASES                                                         │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ 1. ANALYZE          domain-researcher      Opus             ││
-│  │    □ Review each CodeRabbit comment                         ││
-│  │    □ Identify affected files                                ││
-│  │    □ Assess fix complexity                                  ││
-│  ├─────────────────────────────────────────────────────────────┤│
-│  │ 2. PLAN             domain-writer          Sonnet           ││
-│  │    □ Create fix plan with tasks                             ││
-│  │    □ Prioritize by severity                                 ││
-│  └─────────────────────────────────────────────────────────────┘│
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### /implement Preview
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│  /implement user-authentication                                 │
-├─────────────────────────────────────────────────────────────────┤
-│  Spec: specs/user-authentication/ (approved)                    │
-│  Tasks: 12 across 4 phases                                      │
-│  TDD: Enabled (red → green → refactor)                          │
-│                                                                 │
-│  STAGE 1: DATABASE SCHEMA                                       │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ Agent: code-agent                                           ││
-│  │                                                             ││
-│  │ 1. RESEARCH         code-researcher        Opus             ││
-│  │    □ Find existing DB patterns                              ││
-│  │ 2. TDD-RED          code-writer            Sonnet           ││
-│  │    □ Write failing tests                                    ││
-│  │ 3. TDD-GREEN        code-writer            Sonnet           ││
-│  │    □ Implement to pass tests                                ││
-│  │ 4. VALIDATE         code-validator         Haiku            ││
-│  │    □ Verify tests pass                                      ││
-│  └─────────────────────────────────────────────────────────────┘│
-│                                                                 │
-│  STAGE 2: AUTH API                                              │
-│  └─ [Same pattern with code-agent]                              │
-│                                                                 │
-│  STAGE 3: UI COMPONENTS                                         │
-│  └─ [Same pattern with ui-agent]                                │
-│                                                                 │
-│  STAGE 4: FINAL VERIFICATION                                    │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ Agent: check-agent (parallel)              Haiku            ││
-│  │    ⊕ build-checker                                          ││
-│  │    ⊕ type-checker                                           ││
-│  │    ⊕ lint-checker                                           ││
-│  │    ⊕ test-runner                                            ││
-│  │    ⊕ security-scanner                                       ││
-│  └─────────────────────────────────────────────────────────────┘│
-│                                                                 │
-│  Tools: cclsp, context7, next-devtools                          │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### /ship Preview
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│  /ship                                                          │
-├─────────────────────────────────────────────────────────────────┤
-│  Feature: user-authentication                                   │
-│  Branch: feature/user-authentication                            │
-│  Changes: 8 files, +342 -12                                     │
-│                                                                 │
-│  STAGES                                                         │
-│  ┌─────────────────────────────────────────────────────────────┐│
-│  │ 1. COMMIT                                                   ││
-│  │    Agent: git-agent                                         ││
-│  │    ├─ change-analyzer (Sonnet) - Generate message           ││
-│  │    └─ git-executor (Haiku) - Create commit                  ││
-│  ├─────────────────────────────────────────────────────────────┤│
-│  │ 2. CREATE PR                                                ││
-│  │    Agent: git-agent                                         ││
-│  │    ├─ pr-analyzer (Sonnet) - Generate description           ││
-│  │    └─ git-executor (Haiku) - Create PR via gh CLI           ││
-│  ├─────────────────────────────────────────────────────────────┤│
-│  │ 3. WAIT FOR CI                                              ││
-│  │    □ Monitor GitHub Actions                                 ││
-│  │    □ Report pass/fail                                       ││
-│  ├─────────────────────────────────────────────────────────────┤│
-│  │ 4. WAIT FOR CODERABBIT                                      ││
-│  │    □ Monitor CodeRabbit review                              ││
-│  │    □ Report comments or approval                            ││
-│  └─────────────────────────────────────────────────────────────┘│
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## User Confirmation
-
-After rendering the preview box, use AskUserQuestion tool to confirm execution:
-
-```typescript
-// 1. Call AskUserQuestion tool
-AskUserQuestion({
-  questions: [
-    {
-      question: `Execute /${command}?`,
-      header: "Run",
-      options: [
-        { label: "Run", description: "Execute the plan as shown" },
-        { label: "Cancel", description: "Abort without executing" },
-      ],
-      multiSelect: false,
-    },
-  ],
-});
-
-// 2. Check user's response before proceeding
-// If user selected "Cancel", STOP execution immediately.
-// Only proceed with command execution if user selected "Run".
-```
-
----
-
-## Automation Flag
-
-### Skip Preview with --yes
-
+### View Internal Documentation (Default)
 ```bash
-/implement --yes    # Execute immediately without preview
-/ship --yes         # Ship without confirmation
-/start auth --yes   # Create worktree without preview
+/sw-docs:view
 ```
 
-When `--yes` flag is present:
+**What it does:**
+1. Checks if `.specweave/docs/internal/` exists
+2. Runs pre-flight validation (auto-fixes common issues)
+3. Sets up Docusaurus in cache (if first run)
+4. Starts dev server on **http://localhost:3015**
+5. Enables hot reload
 
-1. Skip preview display
-2. Use default options
-3. Execute immediately
-4. Still show progress during execution
-
-### When to Use --yes
-
-| Scenario             | Recommended |
-| -------------------- | ----------- |
-| CI/CD automation     | Yes         |
-| Scripted workflows   | Yes         |
-| Repetitive tasks     | Yes         |
-| New/unfamiliar tasks | No          |
-| Complex features     | No          |
-| Production changes   | No          |
-
----
-
-## Preview Generation
-
-### Algorithm
-
-```typescript
-async function generatePreview(
-  command: string,
-  args: string
-): Promise<ExecutionPreview> {
-  // 1. Parse command
-  const { type, target, flags } = parseCommand(command, args);
-
-  // 2. Route command
-  const routing = await route(type, target);
-
-  // 3. Build preview based on route type
-  if (routing.type === "agent") {
-    return buildAgentPreview(routing.agent, target);
-  } else {
-    return buildWorkflowPreview(routing.workflow, target);
-  }
-}
-
-function buildAgentPreview(agent: Agent, target: string): ExecutionPreview {
-  return {
-    command: `/${agent.command} ${target}`,
-    detected: agent.detectType(target),
-    scope: target,
-    route: {
-      type: "agent",
-      name: agent.name,
-      reason: agent.routingReason,
-    },
-    stages: agent.phases.map((phase) => ({
-      number: phase.order,
-      name: phase.name,
-      agent: agent.name,
-      subAgents: [
-        {
-          name: phase.subAgent,
-          model: phase.model,
-          tasks: phase.defaultTasks,
-        },
-      ],
-      status: "pending",
-    })),
-    tools: agent.tools,
-  };
-}
+### View Public Documentation
+```bash
+/sw-docs:view --public
 ```
 
----
+**What it does:**
+1. Checks if `.specweave/docs/public/` exists
+2. Runs pre-flight validation (auto-fixes common issues)
+3. Sets up Docusaurus in cache (if first run)
+4. Starts dev server on **http://localhost:3016**
+5. Enables hot reload
 
-## Error Handling
-
-| Scenario                | Handling                                   |
-| ----------------------- | ------------------------------------------ |
-| Routing fails           | Show error, suggest alternatives           |
-| Spec not found          | Show warning, proceed with keyword routing |
-| Invalid edit input      | Show validation error, re-prompt           |
-| User cancels            | Exit gracefully, no execution              |
-| Preview generation fail | Fall back to simple text description       |
-
----
-
-## Output
-
-### Preview Accepted
-
-```markdown
-## Preview: ACCEPTED
-
-Executing plan as shown...
-(Switches to progress display)
+### Build Static Site
+```bash
+/sw-docs:build
 ```
 
-### Preview Edited
+**What it does:**
+1. Builds production-ready static site
+2. Outputs to `.specweave/cache/docs-site/build/`
+3. Ready for deployment to any static host
 
-```markdown
-## Preview: MODIFIED
+## When to Use This Skill
 
-Changes:
+### Activate for:
+- "View my documentation"
+- "Preview my docs"
+- "Show me my docs in a browser"
+- "Launch Docusaurus"
+- "View my living documentation"
+- "Start docs server"
+- "I want to see my internal docs"
+- "View public docs"
 
-- Scope: "login form" → "login form with 2FA"
-- Skipped: research phase
+### Workflow
 
-Executing modified plan...
+```
+User: "I want to preview my docs"
+You: "I'll launch the documentation view server."
+     [Run: /sw-docs:view]
 ```
 
-### Preview Cancelled
-
-```markdown
-## Preview: CANCELLED
-
-No changes made.
 ```
+User: "Show me my public documentation"
+You: "I'll launch the public documentation server."
+     [Run: /sw-docs:view --public]
+```
+
+## Port Reference
+
+| Docs Type | Port | Path |
+|-----------|------|------|
+| Internal (default) | 3015 | `.specweave/docs/internal/` |
+| Public | 3016 | `.specweave/docs/public/` |
+
+## Troubleshooting
+
+### Port 3015 or 3016 already in use
+```bash
+# For internal docs
+lsof -i :3015 && kill -9 $(lsof -t -i :3015)
+
+# For public docs
+lsof -i :3016 && kill -9 $(lsof -t -i :3016)
+```
+
+### Reinstall from scratch
+```bash
+# For internal docs
+rm -rf .specweave/cache/docs-site
+# Then run /sw-docs:view again
+
+# For public docs
+rm -rf .specweave/cache/docs-site-public
+# Then run /sw-docs:view --public again
+```
+
+### npm registry issues
+The setup explicitly uses `--registry=https://registry.npmjs.org` to bypass private/corporate registry configurations.
+
+## See Also
+
+- `/sw-docs:build` - Build static site for deployment
+- `/sw-docs:organize` - Organize large folders with themed indexes
+- `/sw-docs:health` - Documentation health report
+- `/sw-docs:validate` - Validate documentation before viewing

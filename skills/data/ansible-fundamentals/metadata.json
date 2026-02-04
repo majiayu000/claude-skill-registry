@@ -1,9 +1,7 @@
 {
   "name": "ansible-fundamentals",
-  "description": "This skill should be used when writing Ansible playbooks, creating Ansible tasks, running ansible-playbook commands, selecting Ansible modules, or working with Ansible collections. Provides golden rul",
   "repo": "basher83/lunar-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-fundamentals/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:30.447770Z"
 }

@@ -1,9 +1,7 @@
 {
   "name": "spec-architect",
-  "description": "Coordinate multi-agent software development from requirements through verified implementation using spec-driven workflows. Use when planning features, creating technical specifications, implementing c",
-  "repo": "codethread/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "adriangmrraa/MultiAgents-Platform-ROI",
+  "path": ".agent/skills/Spec_Architect/SKILL.md",
+  "source": "github.com/adriangmrraa/MultiAgents-Platform-ROI",
+  "downloaded_at": "2026-02-04T01:34:43.865992Z"
 }

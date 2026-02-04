@@ -1,7 +1,7 @@
 {
   "name": "pr-reviewer",
-  "repo": "proflead/codex-skills-library",
-  "path": "skills/planning/pr-reviewer/SKILL.md",
-  "source": "github.com/proflead/codex-skills-library",
-  "downloaded_at": "2026-02-02T03:56:41.635925Z"
+  "repo": "SpillwaveSolutions/code_agent_context_hooks",
+  "path": ".opencode/skill/pr-reviewer/SKILL.md",
+  "source": "github.com/SpillwaveSolutions/code_agent_context_hooks",
+  "downloaded_at": "2026-02-04T05:05:49.537696Z"
 }

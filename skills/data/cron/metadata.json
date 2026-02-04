@@ -1,7 +1,7 @@
 {
   "name": "cron",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/data/cron/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:15.009183Z"
+  "repo": "iOfficeAI/AionUi",
+  "path": "skills/_builtin/cron/SKILL.md",
+  "source": "github.com/iOfficeAI/AionUi",
+  "downloaded_at": "2026-02-04T04:13:07.516435Z"
 }

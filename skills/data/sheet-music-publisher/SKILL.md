@@ -663,14 +663,14 @@ Output:       {audio_root}/{artist}/{album}/sheet-music/
 
 ```bash
 # By album name (reads config)
-python3 tools/sheet-music/transcribe.py shell-no
+python3 tools/sheet-music/transcribe.py sample-album
 
 # By path (direct)
 python3 tools/sheet-music/transcribe.py /path/to/album/folder/
 
 # Options
-python3 tools/sheet-music/transcribe.py shell-no --pdf-only
-python3 tools/sheet-music/transcribe.py shell-no --dry-run
+python3 tools/sheet-music/transcribe.py sample-album --pdf-only
+python3 tools/sheet-music/transcribe.py sample-album --dry-run
 ```
 
 ### fix_titles.py
@@ -689,7 +689,7 @@ python3 tools/sheet-music/fix_titles.py {audio_root}/{artist}/{album}/sheet-musi
 # Full songbook with all options
 python3 tools/sheet-music/create_songbook.py \
   {audio_root}/{artist}/{album}/sheet-music/ \
-  --title "Shell No Songbook" \
+  --title "Sample Album Songbook" \
   --artist "bitwize" \
   --cover {audio_root}/{artist}/{album}/album.png \
   --website "bitwizemusic.com" \

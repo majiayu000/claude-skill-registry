@@ -1,9 +1,7 @@
 {
   "name": "dockerfile-best-practices",
-  "description": "Create and optimize Dockerfiles with BuildKit, multi-stage builds, advanced caching, and security. Use when: (1) Creating new Dockerfile, (2) Optimizing existing Dockerfile, (3) Reducing image size, (",
   "repo": "obeone/claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "skills/dockerfile-best-practices/SKILL.md",
+  "source": "github.com/obeone/claude-skills",
+  "downloaded_at": "2026-02-04T04:19:44.103371Z"
 }

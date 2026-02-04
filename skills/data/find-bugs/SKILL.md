@@ -1,15 +1,26 @@
 ---
 name: find-bugs
-description: Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch.
+description: "Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or audit code on the current branch."
+source: "https://github.com/getsentry/skills/tree/main/plugins/sentry-skills/skills/find-bugs"
+risk: safe
 ---
 
 # Find Bugs
 
 Review changes on this branch for bugs, security vulnerabilities, and code quality issues.
 
+## When to Use This Skill
+
+Use this skill when:
+- Asked to review changes
+- Finding bugs in code
+- Performing security reviews
+- Auditing code on the current branch
+- Reviewing pull request changes
+
 ## Phase 1: Complete Input Gathering
 
-1. Get the FULL diff: `git diff master...HEAD`
+1. Get the FULL diff: `git diff $(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name')...HEAD`
 2. If output is truncated, read each changed file individually until you have seen every changed line
 3. List all files modified in this branch before proceeding
 

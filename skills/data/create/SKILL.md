@@ -1,269 +1,202 @@
 ---
-description: Interactive skill creation wizard that guides users through creating new skills with validation checkpoints
-argument-hint: [skill-name]
-skills: skill-manager
+name: create
+description: Create plugin components (commands, skills, hooks, agents, prompts) interactively
+allowed-tools: [Read, Write, Edit, Glob, Grep, AskUserQuestion, Bash, Task]
 ---
 
-# create-skill
+# Create Plugin Component
 
-Interactive wizard for creating new agent skills. This command follows the skill-manager workflow to guide users through creating effective, well-structured skills with all necessary components (SKILL.md, scripts, references, and assets).
+Scaffold plugin components through iterative interviews. Works with any Claude Code plugin.
 
-## Arguments
+## Expert Consultation
 
-- `name` (string, required): Name of the skill to create
-  - Validation: Must match pattern: ^[a-z][a-z0-9-]*$
-  - Example: pdf-editor, big-query, frontend-app-builder
+**Always consult the `claude-code-guide` agent** when:
 
-## Workflow
+- Designing hook logic (exit codes, matchers, event types)
+- Choosing between component types (skill vs agent vs hook)
+- Validating generated content against best practices
+- User asks questions about Claude Code features
 
-This command follows a structured creation flow with validation at each step:
+```yaml
+task:
+  subagent_type: claude-code-guide
+  prompt: |
+    User is creating a <component_type> named <name>.
 
-### Phase 1: Initialization and Validation
-1. Validate skill name format (lowercase-with-hyphens)
-2. Check if skill already exists in `.claude/skills/` or `~/.claude/skills/`
-3. If exists, ask user whether to overwrite or choose different name
-4. **Validation checkpoint:** Confirm skill name and proceed
+    Validate this design against Claude Code best practices:
+    - <design details>
 
-### Phase 2: Understanding the Skill
-This phase follows skill-manager Step 1: Understanding the Skill with Concrete Examples
-
-5. Ask: "What functionality should this skill support?"
-6. Ask: "Can you give concrete examples of how this skill will be used?"
-7. Ask: "What would a user say that should trigger this skill?"
-8. Summarize understanding of skill purpose and use cases
-9. **Validation checkpoint:** Confirm understanding is correct
-
-### Phase 3: Planning Reusable Content
-This phase follows skill-manager Step 2: Planning the Reusable Skill Contents
-
-10. Analyze examples to identify needed resources:
-    - **Scripts**: Reusable automation code (e.g., rotate-pdf.sh)
-    - **References**: Documentation, schemas, specifications (e.g., schema.md)
-    - **Assets**: Templates, boilerplate files, sample data (e.g., hello-world/)
-11. Present recommended skill structure based on analysis
-12. Ask user if additional scripts/references/assets should be included
-13. **Validation checkpoint:** Approve skill structure plan
-
-### Phase 4: Creating Skill Description
-Critical step for proper skill activation
-
-14. Generate initial description following these rules:
-    - Start with "Use when..."
-    - Focus on triggering conditions only (NOT workflow)
-    - Include concrete symptoms and situations
-    - Use keywords for searchability
-    - Technology-agnostic unless skill is tech-specific
-15. Present generated description for review
-16. **Validation checkpoint:** Approve description text
-
-### Phase 5: Determining Save Location
-17. Ask whether to save as project-local or global skill:
-    - Project-local: `.claude/skills/[skill-name]/`
-    - Global: `~/.claude/skills/[skill-name]/`
-18. Create directory structure at chosen location
-19. **Validation checkpoint:** Confirm save location
-
-### Phase 6: Generating Skill Files
-This phase follows skill-manager Step 3 & 4: Initializing and Editing the Skill
-
-20. Create SKILL.md with:
-    - YAML front matter (name, description, metadata)
-    - "When to Activate This Skill" section
-    - "When NOT to Use This Skill" section
-    - "How to Use" section with workflow steps
-    - "Examples" section with concrete use cases
-    - "Important Notes" section
-21. Create subdirectories as needed:
-    - `scripts/` (if scripts identified in Phase 3)
-    - `references/` (if references identified in Phase 3)
-    - `assets/` (if assets identified in Phase 3)
-22. For each subdirectory, create placeholder README.md explaining purpose
-23. Save all files to chosen location
-
-### Phase 7: Completion and Next Steps
-24. Display success message with skill location
-25. Show statistics (files created, directories, size)
-26. Offer to:
-    - Add example scripts immediately
-    - Add reference documentation immediately
-    - Test the skill with a sample query
-    - Create related command that uses this skill
-
-## Statistics Reporting
-
-Output includes:
-- Skill name and location (project-local vs global)
-- Files created (SKILL.md, README files, etc.)
-- Directories created (scripts/, references/, assets/)
-- Description length and keyword count
-- Validation checkpoints passed
-- Total creation time
-
-Example:
-```
-Created skill: pdf-editor
-Location: ~/.claude/skills/pdf-editor/ (global)
-
-Skill structure:
-- SKILL.md (1.2 KB)
-- scripts/ (1 file: rotate-pdf.sh)
-- references/ (1 file: README.md)
-- Description: 45 words, 8 keywords
-
-Validation checkpoints: 5/5 passed
-Created in 3m 15s
+    Flag any anti-patterns or suggest improvements.
 ```
 
-Example with assets:
-```
-Created skill: frontend-app-builder
-Location: .claude/skills/frontend-app-builder/ (project)
+## Context
 
-Skill structure:
-- SKILL.md (2.1 KB)
-- assets/hello-world/ (12 files)
-- references/ (2 files: README.md, best-practices.md)
-- Description: 38 words, 6 keywords
+!`ls .claude-plugin/plugin.json 2>/dev/null && echo "Plugin detected" || echo "No plugin detected - will create in current directory"`
 
-Validation checkpoints: 5/5 passed
-Created in 5m 42s
-```
+## Plugin Root Detection
 
-## Examples
+Detect the target plugin directory:
 
-```bash
-# Interactive mode - guided through all steps
-create:skill pdf-editor
+1. If `$CLAUDE_PLUGIN_ROOT` set, use it
+2. If `.claude-plugin/plugin.json` exists, use current directory
+3. Otherwise, ask user for target path or create new plugin structure
 
-# Create a domain-specific skill
-create:skill big-query
+## Phase 1: Component Type
 
-# Create a workflow skill
-create:skill test-driven-development
+Parse argument if provided (`/create command`, `/create skill`, etc.).
 
-# Create a file processing skill
-create:skill image-optimizer
-```
+If no argument or argument not recognized:
 
-## Validation Checkpoints
-
-This command implements 5 validation checkpoints:
-
-1. **Skill Name Validation**: User confirms skill name and handles conflicts
-2. **Purpose Understanding**: User confirms skill purpose is correctly understood
-3. **Structure Approval**: User approves planned scripts/references/assets
-4. **Description Validation**: User approves generated description text
-5. **Location Confirmation**: User confirms save location (project vs global)
-
-At each checkpoint, user can:
-- Approve and continue
-- Request modifications
-- Go back to previous step
-- Cancel skill creation
-
-## Interactive Question Flow
-
-The command asks structured questions throughout the process:
-
-### Purpose Questions (Phase 2)
-- "What functionality should this skill support?"
-- "Can you give concrete examples of how this skill will be used?"
-- "What would a user say that should trigger this skill?"
-
-### Structure Questions (Phase 3)
-- "Based on your examples, I recommend including [list]. Does this look correct?"
-- "Should any additional scripts be included?"
-- "Should any additional references be included?"
-- "Should any additional assets be included?"
-
-### Description Review (Phase 4)
-- "Here's the generated description: [description]. Does this accurately describe when to use this skill?"
-- "Are there additional keywords or triggers to include?"
-
-### Location Questions (Phase 5)
-- "Should this skill be saved as project-local (.claude/skills/) or global (~/.claude/skills/)?"
-
-## Best Practices
-
-This command enforces best practices:
-
-**Skill Naming:**
-- Validates lowercase-with-hyphens format
-- Rejects generic names (process, handle, helper)
-- Suggests improvements for unclear names
-
-**Description Quality:**
-- Enforces "Use when..." format
-- Prevents workflow summarization in description
-- Validates keyword coverage for searchability
-- Ensures concrete triggering conditions included
-
-**Structure Planning:**
-- Recommends scripts for repeated code patterns
-- Recommends references for schemas and documentation
-- Recommends assets for boilerplate and templates
-- Warns against over-structuring simple skills
-
-**Documentation Completeness:**
-- Requires "When to Activate" section
-- Requires "When NOT to Use" section
-- Requires concrete examples
-- Validates workflow clarity
-
-## Error Handling
-
-The command handles common errors:
-
-**Invalid Skill Name:**
-```
-Error: Skill name "PDFEditor" invalid
-- Must be lowercase with hyphens
-- Example: pdf-editor
+```yaml
+question: "What type of component do you want to create?"
+header: "Component"
+options:
+  - label: "Command"
+    description: "Slash command entry point (/plugin:name)"
+  - label: "Skill"
+    description: "Reusable workflow or knowledge"
+  - label: "Hook"
+    description: "Event-driven automation script"
+  - label: "Agent"
+    description: "Autonomous subagent definition"
+  - label: "Prompt"
+    description: "MCP prompt template with arguments"
+multiSelect: false
 ```
 
-**Skill Already Exists:**
+## Phase 2: Type-Specific Interview
+
+Based on component type, follow the detailed reference:
+
+| Type | Reference |
+|------|-----------|
+| Command | [references/command-creation.md](references/command-creation.md) |
+| Skill | [references/skill-creation.md](references/skill-creation.md) |
+| Hook | [references/hook-creation.md](references/hook-creation.md) |
+| Agent | [references/agent-creation.md](references/agent-creation.md) |
+| Prompt | [references/prompt-creation.md](references/prompt-creation.md) |
+
+## Phase 2.5: Entity Scan
+
+Before finalizing, scan all existing Claude entities for conflicts and integration opportunities.
+
+### Checklist
+
+- [ ] **Naming conflicts**: Check all entity locations for the chosen name
+- [ ] **Related components**: Find similar functionality for cross-referencing
+- [ ] **Hook opportunities**: Identify potential integrations
+- [ ] **Expert consultation**: If conflicts or complex integrations found
+
+### Check for Naming Conflicts
+
+Use Glob to check for existing entities with the same name:
+
+1. `Glob("commands/<name>.md")` - Existing command
+2. `Glob("skills/<name>/SKILL.md")` - Existing skill
+3. `Glob("hooks/<name>.sh")` - Existing hook script
+4. `Glob("agents/<name>.md")` - Existing agent
+5. `Glob("prompts/<name>.md")` - Existing prompt
+
+Also check `hooks/hooks.json` for hook registrations using the same name pattern.
+
+### Find Related Components
+
+Use Grep to find related functionality by keywords from the new component's name/description:
+
+1. `Grep(pattern: "<keywords>", path: "commands/")` - Related commands
+2. `Grep(pattern: "<keywords>", path: "skills/")` - Related skills
+3. `Grep(pattern: "<keywords>", path: "hooks/")` - Related hooks
+4. `Grep(pattern: "<keywords>", path: "agents/")` - Related agents
+
+### Integration Analysis
+
+Based on component type being created:
+
+**If creating command/skill:**
+
+- Check if existing hooks could enhance it (e.g., PostToolUse notifications)
+- Identify commands that should reference this in their docs
+
+**If creating hook:**
+
+- Identify commands/skills it should integrate with
+- Check for related hooks that might conflict
+
+**If conflicts or complex integrations found:**
+
+- Consult claude-code-guide for naming conventions and resolution
+
+### Output
+
+Report findings to user before Phase 3 confirmation:
+
+```text
+## Entity Scan Results
+
+✓ No naming conflicts (or ⚠ Conflicts: <list>)
+
+**Related Components** (if any):
+- commands/foo.md - Similar functionality [REVIEW]
+- hooks/bar.sh - Could trigger after this command [CONSIDER]
+
+**Integration Suggestions**:
+- Reference this from related-command.md
+- Consider PostToolUse hook for notifications
 ```
-Warning: Skill "pdf-editor" already exists in ~/.claude/skills/
-Options:
-1. Overwrite existing skill
-2. Choose a different name
-3. Cancel
+
+## Phase 3: Expert Review & Confirmation
+
+**For hooks**: Before showing preview, consult claude-code-guide to validate:
+
+- Exit code usage (0=allow, 2=block)
+- Defensive stdin pattern
+- stop_hook_active check for Stop hooks
+- Proper use of ${CLAUDE_PLUGIN_ROOT}
+
+Before writing files, show preview:
+
+```text
+## Component Preview
+
+**Type**: <type>
+**Name**: <name>
+**Files to create**:
+- <file 1>
+- <file 2>
+
+### Content Preview
+
+<show generated content>
+
+Proceed with creation?
 ```
 
-**Missing Required Information:**
+```yaml
+question: "Create this component?"
+header: "Confirm"
+options:
+  - label: "Yes, create it"
+    description: "Write files and complete setup"
+  - label: "Edit first"
+    description: "Make changes before creating"
+  - label: "Cancel"
+    description: "Don't create anything"
+multiSelect: false
 ```
-Error: Cannot generate skill description
-- Missing: concrete usage examples
-- Please provide examples of how this skill would be used
-```
 
-**Invalid Save Location:**
-```
-Error: Cannot create directory ~/.claude/skills/pdf-editor/
-- Directory ~/.claude/ does not exist
-- Create global skills directory first: mkdir -p ~/.claude/skills/
-```
+## Phase 4: Write Files
 
-## Integration with skill-manager Skill
+1. Create necessary directories
+2. Write component files
+3. For hooks: update hooks.json
+4. For command hooks: make script executable
 
-This command is built on the skill-manager skill and follows its workflow:
+## Constraints
 
-1. **Phase 2** implements skill-manager Step 1: Understanding with Concrete Examples
-2. **Phase 3** implements skill-manager Step 2: Planning Reusable Contents
-3. **Phase 6** implements skill-manager Steps 3 & 4: Initializing and Editing
-
-The key enhancement is the interactive, checkpoint-based flow that ensures:
-- No missing information
-- User approval at critical decision points
-- Consistent skill quality
-- Proper description format (triggers only, no workflow)
-- Appropriate resource planning (scripts/references/assets)
-
-## Notes
-
-- Skills are saved as directories with SKILL.md as the main file
-- YAML front matter in SKILL.md includes: name, description, metadata (author, version)
-- Directory structure follows AgentSkills.io specification
-- Description field is CRITICAL for skill activation - follows strict format
-- Skills can be tested immediately after creation
-- Use skill-manager skill directly for more complex skill creation scenarios
+- **Consult claude-code-guide**: For hooks and complex components, spawn the expert agent to validate design
+- **Detect plugin root**: Use `$CLAUDE_PLUGIN_ROOT` or `.claude-plugin/plugin.json`
+- **Safe file creation**: Never overwrite without asking
+- **Valid names**: Enforce kebab-case for all names
+- **Executable hooks**: `chmod +x` for shell scripts
+- **hooks.json merge**: Preserve existing hooks when adding new ones
+- **Best practices**: Use defensive stdin pattern, proper exit codes, ${CLAUDE_PLUGIN_ROOT} paths

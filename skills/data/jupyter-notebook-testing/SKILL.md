@@ -46,29 +46,6 @@ Test EDS blocks rapidly with Jupyter notebooks using **browser execution**:
 
 ## Quick Start
 
-### 0. Verify Working Directory
-
-**⚠️ CRITICAL: Before creating or modifying notebook files:**
-
-Verify you're in the project root:
-
-```bash
-pwd
-# Should output: /Users/tomcranstoun/Documents/GitHub/allaboutV2
-```
-
-If in a subdirectory, navigate to project root:
-```bash
-cd /Users/tomcranstoun/Documents/GitHub/allaboutV2
-```
-
-Verify project markers:
-```bash
-ls -la | grep -E "(\.claude|blocks|package\.json|CLAUDE\.md)"
-```
-
-All four must exist. If not, you're in the wrong directory!
-
 ### 1. Create or Open Notebook
 
 **Option A: Copy existing template**
@@ -305,54 +282,3 @@ Use this skill whenever you need to rapidly test, debug, or document EDS blocks 
 **Skill Status**: ✅ Complete - Browser-only execution
 **Line Count**: < 500 lines
 **Progressive Disclosure**: Detailed content in reference files
-
-## Best Practices
-
-### Proper Newline Formatting in Notebook Cells
-
-**CRITICAL**: Every line in a Jupyter notebook cell's source array must end with `\n` (newline character) except the last line. This ensures proper rendering and navigation in VSCode outline.
-
-**Why it matters for testing notebooks:**
-- VSCode outline shows test structure for easy navigation
-- Test scenarios organized by headings need proper outline hierarchy
-- Developers navigate between tests via outline sidebar
-- Without newlines, test sections don't appear in outline structure
-
-**Problem:**
-```python
-# ❌ WRONG - Breaks outline navigation
-"source": [
-  "### Test: Accordion Expand/Collapse**Setup**Code---### Test: Error Handling..."
-]
-```
-
-**Solution:**
-```python
-# ✅ CORRECT - Clear test structure in outline
-"source": [
-  "### Test: Accordion Expand/Collapse\n",
-  "\n",
-  "**Setup**\n",
-  "\n",
-  "Code\n",
-  "\n",
-  "---\n",
-  "\n",
-  "### Test: Error Handling\n"
-]
-```
-
-**For testing notebooks:**
-- Use `##` for block categories (Accordion Tests, Hero Tests)
-- Use `###` for individual test cases
-- Proper newlines enable quick navigation between test scenarios
-- Developers can jump to specific tests via outline
-- Essential for notebooks with many test cases
-
-**Key rules:**
-1. Every line ends with `\n` except the last line
-2. Test headings need newlines before and after
-3. Horizontal rules (test separators): `"---\n"` + `"\n"`
-4. Blank lines between test sections
-
-**See:** `LEARNINGS.md` for complete details and examples.

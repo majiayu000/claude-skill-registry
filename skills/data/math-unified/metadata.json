@@ -1,7 +1,7 @@
 {
   "name": "math-unified",
-  "repo": "carmandale/agent-config",
-  "path": "skills/cc3/math-unified/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:40.467990Z"
+  "repo": "parcadei/Continuous-Claude-v3",
+  "path": ".claude/skills/math-unified/SKILL.md",
+  "source": "github.com/parcadei/Continuous-Claude-v3",
+  "downloaded_at": "2026-02-04T04:19:55.166721Z"
 }

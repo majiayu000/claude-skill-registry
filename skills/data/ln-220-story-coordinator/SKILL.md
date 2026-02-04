@@ -157,6 +157,21 @@ Each Story = ONE vertical slice of user capability (end-to-end: UI → API → S
 
 **Rule:** 1 Story = 1 user capability = 3-5 AC = 6-20 hours = 10-28 tests
 
+**Database Creation Principle (Incremental Schema Evolution):**
+
+Each Story creates ONLY the tables it needs (not all tables upfront).
+
+**✅ GOOD (Incremental):**
+- ✅ "User registration" → Creates Users table
+- ✅ "Product search" → Creates Products table
+- ✅ "Order checkout" → Creates Orders, Payments tables
+
+**❌ BAD (Big-Bang):**
+- ❌ "Setup database" → Creates all 50 tables (no user value, violates vertical slicing)
+- ❌ "Database schema" → Creates Users, Products, Orders, Payments upfront
+
+**Rationale:** Big-bang database setup violates incremental delivery. Each Story should deliver user value, not technical infrastructure.
+
 **Build IDEAL Plan (Automated):**
 
 1. **Analyze Epic Scope:** Review features in Epic Scope In, identify user capabilities
@@ -187,11 +202,36 @@ Each Story = ONE vertical slice of user capability (end-to-end: UI → API → S
    - Each Story: Test Strategy section exists but is **empty** (tests planned later by ln-510-test-planner)
    - Each Story: Technical Notes (architecture, integrations, **Standards Research from Phase 2**, guide links)
 
+5. **AC Quality Validation (CRITICAL - delegates to workers):**
+
+Workers (ln-221, ln-222) must validate AC quality:
+
+**Completeness Check (3 scenario types required):**
+- ✅ **Happy Path** (1-2 AC): main success scenarios
+- ✅ **Error Handling** (1-2 AC): invalid inputs, auth failures, system errors
+- ✅ **Edge Cases** (1 AC): boundary conditions, special states, race conditions
+
+**Example:**
+❌ BAD: "User can login" (only happy path)
+✅ GOOD:
+  - AC1: Valid credentials → login success (happy path)
+  - AC2: Invalid password → 401 error (error handling)
+  - AC3: Account locked → 403 error (edge case)
+
+**Specificity Check (measurable outcomes required):**
+- ✅ HTTP status codes (200, 401, 403, 404)
+- ✅ Measurable performance (<200ms, 99% uptime)
+- ✅ Exact error messages ("Invalid credentials")
+
+**Example:**
+❌ BAD: "Login should be fast" (vague)
+✅ GOOD: "Then receive token <200ms" (measurable)
+
 **INVEST Checklist:**
 
 | Criterion | Check | ✅ GOOD | ❌ BAD |
 |-----------|-------|---------|--------|
-| **Independent** | Can develop/deploy without blocking others | "Request OAuth token" (independent) | "Validate token" depends on "Request token" (merge or ensure API contract) |
+| **Independent** | Can develop/deploy without blocking others + NO forward dependencies | "Request OAuth token" (Story N uses only N-1) | "Validate token depends on Story N+2 refresh flow" (forward dependency!) |
 | **Negotiable** | AC focus on WHAT, not HOW | "User gets valid token" (what) | "Use authlib 1.3.0, store in Redis" (how) |
 | **Valuable** | Clear business value | "User refreshes expired token to maintain session" | "Add token_refresh table" (no user value) |
 | **Estimable** | Can estimate 6-20h | Clear scope, known patterns, researched standards | "Implement authentication" (too vague) |
@@ -347,6 +387,8 @@ Mark each as in_progress when starting, completed when done.
 
 ---
 
+---
+
 ## Integration with Ecosystem
 
 **Calls:**
@@ -464,5 +506,5 @@ Mark each as in_progress when starting, completed when done.
 
 ---
 
-**Version:** 4.0.0 (BREAKING: Decomposed to Orchestrator-Worker pattern. Phase 4a/4b removed, replaced with Phase 5a/5b delegation to ln-221-story-creator/ln-222-story-replanner. Orchestrator loads metadata only, workers load full descriptions for token efficiency. Progressive Loading now handled by ln-222-story-replanner, not orchestrator. Story execution logic moved to workers, orchestrator focuses on context assembly, standards research, planning, mode determination, delegation.)
-**Last Updated:** 2025-11-20
+**Version:** 5.0.0 (BREAKING: Added AC Quality Validation in Phase 3 (completeness: happy path + errors + edge cases; specificity: HTTP codes + timing). Updated INVEST Independent criterion with forward dependency check. Added Database Creation Principle to Story Grouping Guidelines per BMAD Method best practices.)
+**Last Updated:** 2026-02-03

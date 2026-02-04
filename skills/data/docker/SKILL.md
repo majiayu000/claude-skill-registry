@@ -10,6 +10,7 @@ This skill provides comprehensive guidance for working with Docker, covering con
 ## When to Use This Skill
 
 Use this skill when:
+
 - Containerizing applications for any language or framework
 - Creating or optimizing Dockerfiles and Docker Compose configurations
 - Setting up development environments with Docker
@@ -23,6 +24,7 @@ Use this skill when:
 ## Core Docker Concepts
 
 ### Containers
+
 - **Lightweight, isolated processes** that bundle applications with all dependencies
 - Provide filesystem isolation via union filesystems and namespace technology
 - **Ephemeral by default** - changes are lost when container stops (unless persisted to volumes)
@@ -30,6 +32,7 @@ Use this skill when:
 - Multiple identical containers can run from same immutable image without conflicts
 
 ### Images
+
 - **Blueprint/template for containers** - read-only filesystems + configuration
 - Composed of **layered filesystem** (immutable, reusable layers)
 - Built from Dockerfile instructions or committed from running containers
@@ -37,12 +40,14 @@ Use this skill when:
 - **Image naming**: `REGISTRY/NAMESPACE/REPOSITORY:TAG` (e.g., `docker.io/library/nginx:latest`)
 
 ### Volumes & Storage
+
 - **Volumes**: Docker-managed persistent storage that survives container deletion
 - **Bind mounts**: Direct mapping of host filesystem paths into containers
 - **tmpfs mounts**: In-memory storage for temporary data
 - Enable data sharing between containers and persist beyond container lifecycle
 
 ### Networks
+
 - **Default bridge network** connects containers on same host
 - **Custom networks** allow explicit container communication with DNS resolution
 - **Host network** removes network isolation for performance
@@ -319,7 +324,7 @@ docker network rm my-network
 ### Basic Compose File Structure
 
 ```yaml
-version: '3.8'
+version: "3.8"
 
 services:
   web:
@@ -333,7 +338,7 @@ services:
       - db
       - redis
     volumes:
-      - ./src:/app/src      # Development: live code reload
+      - ./src:/app/src # Development: live code reload
     networks:
       - app-network
     restart: unless-stopped
@@ -415,6 +420,7 @@ docker compose config
 ### Development vs Production Compose
 
 **compose.yml** (base configuration):
+
 ```yaml
 services:
   web:
@@ -426,11 +432,12 @@ services:
 ```
 
 **compose.override.yml** (development overrides, loaded automatically):
+
 ```yaml
 services:
   web:
     volumes:
-      - ./src:/app/src      # Live code reload
+      - ./src:/app/src # Live code reload
     environment:
       - NODE_ENV=development
       - DEBUG=true
@@ -438,6 +445,7 @@ services:
 ```
 
 **compose.prod.yml** (production overrides):
+
 ```yaml
 services:
   web:
@@ -449,11 +457,12 @@ services:
       replicas: 3
       resources:
         limits:
-          cpus: '0.5'
+          cpus: "0.5"
           memory: 512M
 ```
 
 **Usage**:
+
 ```bash
 # Development (uses compose.yml + compose.override.yml automatically)
 docker compose up
@@ -560,12 +569,14 @@ CMD ["nginx", "-g", "daemon off;"]
 ### Health Checks
 
 **In Dockerfile**:
+
 ```dockerfile
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
   CMD curl -f http://localhost:3000/health || exit 1
 ```
 
 **In Compose**:
+
 ```yaml
 services:
   web:
@@ -585,10 +596,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.5'
+          cpus: "0.5"
           memory: 512M
         reservations:
-          cpus: '0.25'
+          cpus: "0.25"
           memory: 256M
 ```
 
@@ -597,7 +608,7 @@ services:
 ```yaml
 services:
   web:
-    restart: unless-stopped    # Restart unless manually stopped
+    restart: unless-stopped # Restart unless manually stopped
     # Other options: "no", "always", "on-failure"
 ```
 
@@ -616,6 +627,7 @@ services:
 ### Environment Variables & Secrets
 
 **Using .env file**:
+
 ```bash
 # .env
 DATABASE_URL=postgresql://user:pass@db:5432/app
@@ -630,6 +642,7 @@ services:
 ```
 
 **Using Docker secrets** (Swarm):
+
 ```yaml
 services:
   web:
@@ -665,7 +678,7 @@ name: Docker Build and Push
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -875,6 +888,7 @@ docker build --no-cache -t myapp .
 ### Common Issues
 
 **Container exits immediately**:
+
 ```bash
 # Check logs
 docker logs myapp
@@ -887,6 +901,7 @@ docker run -it --entrypoint /bin/sh myapp
 ```
 
 **Cannot connect to container**:
+
 ```bash
 # Check port mapping
 docker ps
@@ -901,6 +916,7 @@ docker exec myapp netstat -tulpn
 ```
 
 **Out of disk space**:
+
 ```bash
 # Check disk usage
 docker system df
@@ -912,6 +928,7 @@ docker image prune -a
 ```
 
 **Build cache issues**:
+
 ```bash
 # Force rebuild without cache
 docker build --no-cache -t myapp .
@@ -969,31 +986,31 @@ docker context use default
 
 ### Most Common Commands
 
-| Task | Command |
-|------|---------|
-| Build image | `docker build -t myapp:1.0 .` |
-| Run container | `docker run -d -p 8080:3000 myapp:1.0` |
-| View logs | `docker logs -f myapp` |
-| Shell into container | `docker exec -it myapp /bin/sh` |
-| Stop container | `docker stop myapp` |
-| Remove container | `docker rm myapp` |
-| Start Compose | `docker compose up -d` |
-| Stop Compose | `docker compose down` |
-| View Compose logs | `docker compose logs -f` |
-| Clean up all | `docker system prune -a` |
+| Task                 | Command                                |
+| -------------------- | -------------------------------------- |
+| Build image          | `docker build -t myapp:1.0 .`          |
+| Run container        | `docker run -d -p 8080:3000 myapp:1.0` |
+| View logs            | `docker logs -f myapp`                 |
+| Shell into container | `docker exec -it myapp /bin/sh`        |
+| Stop container       | `docker stop myapp`                    |
+| Remove container     | `docker rm myapp`                      |
+| Start Compose        | `docker compose up -d`                 |
+| Stop Compose         | `docker compose down`                  |
+| View Compose logs    | `docker compose logs -f`               |
+| Clean up all         | `docker system prune -a`               |
 
 ### Recommended Base Images
 
-| Language/Framework | Recommended Base |
-|-------------------|------------------|
-| Node.js | `node:20-alpine` |
-| Python | `python:3.11-slim` |
-| Java | `eclipse-temurin:21-jre-alpine` |
-| Go | `scratch` (for compiled binary) |
-| .NET | `mcr.microsoft.com/dotnet/aspnet:8.0-alpine` |
-| PHP | `php:8.2-fpm-alpine` |
-| Ruby | `ruby:3.2-alpine` |
-| Static sites | `nginx:alpine` |
+| Language/Framework | Recommended Base                             |
+| ------------------ | -------------------------------------------- |
+| Node.js            | `node:20-alpine`                             |
+| Python             | `python:3.11-slim`                           |
+| Java               | `eclipse-temurin:21-jre-alpine`              |
+| Go                 | `scratch` (for compiled binary)              |
+| .NET               | `mcr.microsoft.com/dotnet/aspnet:8.0-alpine` |
+| PHP                | `php:8.2-fpm-alpine`                         |
+| Ruby               | `ruby:3.2-alpine`                            |
+| Static sites       | `nginx:alpine`                               |
 
 ## Additional Resources
 
@@ -1007,6 +1024,7 @@ docker context use default
 ## Summary
 
 Docker containerization provides:
+
 - **Consistency** across development, testing, and production
 - **Isolation** for applications and dependencies
 - **Portability** across different environments

@@ -1,406 +1,117 @@
 ---
 name: context-engineering
-description: Context engineering and prompt patterns for AI agents
-allowed-tools: Read, Grep, Write, Edit, Bash, WebSearch
+description: Principles for designing context-efficient AI agents and tools. Use when designing LLM tools, agents, MCP servers, or multi-agent systems.
 ---
 
-# SKILL.md - Context Engineering & AI Agent Skills
+# Context Engineering
 
-> **核心理念**: 2025年不再是"Prompt Engineering"，而是**"Context Engineering"** —— 设计动态系统，为AI模型提供最相关的上下文信息。
+Principles for maximizing LLM effectiveness by treating context as a finite resource.
 
----
+## Core Principle
 
-## Table of Contents
+Find the smallest possible set of high-signal tokens that maximize the likelihood of your desired outcome.
 
-1. [Core Principles](#core-principles)
-2. [Context Engineering Patterns](#context-engineering-patterns)
-3. [High-Frequency Scenarios](#high-frequency-scenarios)
-4. [Best Practice Templates](#best-practice-templates)
-5. [Anti-Patterns](#anti-patterns)
-6. [Quality Checklist](#quality-checklist)
+## The Context Budget
 
----
+LLMs have an "attention budget" that depletes with each token. Context rot causes recall accuracy to decrease as token count grows. Every design decision should optimize for signal density.
 
-## Core Principles
+## Quick Reference
 
-### Design Philosophy
+| Challenge | Strategy | Reference |
+| --------- | -------- | --------- |
+| Too many tools | Curate minimal viable set | [Tool](references/tool.md) |
+| Ambiguous tool selection | Self-contained, unambiguous tools | [Tool](references/tool.md) |
+| Context pollution over time | Compaction and summarization | [Agent](references/agent.md) |
+| Long-horizon tasks | External memory and note-taking | [Agent](references/agent.md) |
+| Exceeding single context limits | Sub-agent architectures | [Multi-Agent](references/multi-agent.md) |
+| MCP server bloat | Token-efficient responses | [MCP](references/mcp.md) |
+| Measuring effectiveness | End-state evaluation | [Evaluation](references/evaluation.md) |
 
-| Principle | Description | Example |
-|-----------|-------------|---------|
-| **简洁优雅** | Minimal code for maximum function | 3 similar lines > premature abstraction |
-| **高效纯粹** | Single responsibility per component | Database tables: minimal & maintainable |
-| **失败安全** | Edge cases first, not afterthought | Validate before processing |
-| **显式记录** | Formulas and results must be traceable | KPI calculations: formula + amount recorded |
+## Single vs Multi-Agent
 
-### Context Engineering Three Laws
+Multi-agent adds ~15x token overhead. Use single agent unless:
 
-1. **稳定前缀定律**: System prompts remain stable, avoid frequent modifications
-2. **追加式定律**: Recorded data is append-only, never modified
-3. **缓存标记定律**: Explicit cache boundaries to avoid redundant computation
+| Factor | Single Agent | Multi-Agent |
+| ------ | ------------ | ----------- |
+| Parallelization | Sequential steps | Independent subtasks |
+| Context size | Fits in window | Exceeds single context |
+| Tool complexity | Focused toolset | Many specialized tools |
+| Dependencies | Steps depend on each other | Work can be isolated |
 
----
+Default to single agent. Add agents only when parallelization or context limits demand it.
 
-## Context Engineering Patterns
+## Decision Checklists
 
-### Pattern 1: Structured Task Decomposition
+### Before Adding to Context
 
-```markdown
-# Task: [Concise Title]
+- Is this the minimum information needed?
+- Can an agent discover this just-in-time instead?
+- Does this justify its token cost?
 
-## Context
-- Project: [Project Name]
-- Current State: [Description]
-- Goal: [Clear Objective]
+### Tool Design
 
-## Constraints
-- Must: [Hard requirements]
-- Must Not: [Explicit prohibitions]
-- Optimize: [Concise, elegant, efficient, pure]
+- Can a human definitively say which tool to use?
+- Does each tool have a distinct, non-overlapping purpose?
+- Are responses token-efficient with high signal?
+- Do error messages guide toward solutions?
 
-## Acceptance Criteria
-- [ ] [Testable criterion 1]
-- [ ] [Testable criterion 2]
-```
+### Agent Design
 
-### Pattern 2: Business Logic Review
+- Does the system prompt strike the right altitude?
+- Are there mechanisms for compaction when context grows?
+- Is external memory used for long-horizon tracking?
+- Are canonical examples provided instead of exhaustive rules?
 
-```markdown
-# Business Logic Review: [System Name]
+### Multi-Agent
 
-## Core Rules
-1. [Rule 1 - Dynamically adjustable]
-2. [Rule 2 - Calculation method]
-3. [Rule 3 - Traceability requirements]
+- Is the task parallelizable enough to justify coordination overhead?
+- Do sub-agents return condensed summaries (not raw results)?
+- Is there clear separation of concerns between agents?
 
-## Review Focus
-- Correctness: Business logic compliant with specifications
-- Completeness: All scenarios covered
-- Traceability: Calculation process recorded
-- Maintainability: Code is clean and clear
+## Key Techniques
 
-## Optimization Suggestions
-- [If any] Clearly implementable improvements
-```
+### Just-in-Time Retrieval
 
-### Pattern 3: Data Integration MVP
+Keep lightweight identifiers (paths, queries, links). Load data dynamically at runtime rather than pre-loading everything upfront.
 
-```markdown
-# MVP Data Integration: [Module Name]
+### Progressive Disclosure
 
-## Database Design Principles
-- Table Count: As few as possible (simple & maintainable)
-- Fields: Explicit naming, avoid abbreviations
-- Relations: Foreign keys when necessary, avoid over-normalization
+Let agents discover context through exploration. File sizes suggest complexity; naming hints at purpose. Each interaction yields context for the next decision.
 
-## Integration Steps
-1. Build independent MVP modules
-2. Identify shared data
-3. Minimize table integration
-4. Automate calculation logic
+### Compaction
 
-## Testing & Validation
-- [ ] Data integrity
-- [ ] Calculation accuracy
-- [ ] Edge case handling
-```
+Summarize conversations nearing limits. Preserve architectural decisions and critical details; discard redundant tool outputs and verbose messages.
 
----
-
-## High-Frequency Scenarios
-
-### Scenario 1: Code Review
-
-```markdown
-Use code-reviewer skill to check code modifications:
-
-1. **Business Logic**: Correct and complete
-2. **Security**: No vulnerabilities (OWASP Top 10)
-3. **Performance**: Obvious optimization opportunities
-4. **Maintainability**: Code is concise and elegant
-
-**Key**: Ignore trivial details, focus on clearly implementable improvements.
-Implementation: Concise, elegant, efficient, pure
-```
-
-### Scenario 2: Financial System Review
+### Structured Note-Taking
 
-```markdown
-# Financial System Audit Focus
+Persist notes to external memory (to-do lists, NOTES.md). Pull back into context when needed. Tracks progress without exhausting working context.
 
-## Business Logic Validation
-- [ ] Amount calculation formulas correct
-- [ ] Debit-credit balance verification
-- [ ] Tax/fee rates dynamically configurable
-- [ ] Multi-currency support (if needed)
+### Sub-Agent Distribution
 
-## Data Integrity
-- [ ] Transaction logs never lost
-- [ ] Balance changes traceable
-- [ ] Audit logs complete
-- [ ] Abnormal transactions marked
+Delegate focused tasks to specialized agents with clean context windows. Each sub-agent explores extensively but returns only condensed summaries (1000-2000 tokens).
 
-## Database Design
-- Minimal table count (simple & maintainable)
-- Necessary indexes established
-- Foreign key constraints properly set
-```
+## The Golden Rule
 
-### Scenario 3: KPI System Review
-
-```markdown
-# KPI System Three Key Points
-
-## 1. Dynamic Bonus Ratio
-- Monthly bonus ratios configurable
-- Historical configurations preserved
-- Effective time clearly defined
+Do the simplest thing that works. Start minimal, add complexity only based on observed failure modes.
 
-## 2. Excess Calculation Method
-- Salesperson excess = Monthly high option fee
-- Calculation formula explicitly recorded
-- Results verifiable
+## References
 
-## 3. Traceable Design
-- Recorded data never modified
-- Calculation formulas explicitly defined
-- Result amounts traceable
-```
-
-### Scenario 4: Frontend Testing
-
-```markdown
-# Minimal Viable Testing Plan
-
-## Pre-Test Preparation
-1. Confirm backend APIs working
-2. Prepare test dataset
-3. Clear browser cache
-
-## Test Steps
-1. **Functional Test**: [Specific steps]
-   - Expected: [Clear expectation]
-   - Actual: [Record actual]
-   - Pass: ✓ / ✗
-
-2. **Boundary Test**: [Extreme values]
-   - Expected: [Clear expectation]
+- [Tool](references/tool.md) - Building self-contained, token-efficient tools
+- [Agent](references/agent.md) - Single agent context management
+- [Multi-Agent](references/multi-agent.md) - Coordinating multiple agents
+- [MCP](references/mcp.md) - Model Context Protocol best practices
+- [Evaluation](references/evaluation.md) - Measuring context engineering effectiveness
 
-## Issue Debugging
-If not as expected:
-1. Check console errors
-2. Check network requests
-3. Check backend logs
-4. Gradually narrow scope
-```
+## Examples
 
-### Scenario 5: Document Conversion
+Complete examples from Claude Code:
 
-```markdown
-# PDF → Markdown Conversion Requirements
+### Tool Descriptions
+- [Bash](examples/tool-bash-example.md) - Boundaries, when NOT to use, good/bad examples
+- [Edit](examples/tool-edit-example.md) - Prerequisites, error guidance, concise design
+- [Grep](examples/tool-grep-example.md) - Exclusivity, parameter examples, output modes
 
-## Information Completeness
-- [ ] Text content (including tables)
-- [ ] Images and charts
-- [ ] Format hierarchy (headings, lists)
-- [ ] Page/chapter references
-
-## Readability Optimization
-- Standard Markdown syntax
-- Tables converted to Markdown
-- Code blocks with syntax highlighting
-- Add table of contents with anchors
-
-## Output Format
-- Standard CommonMark syntax
-- UTF-8 encoding
-- Filename: [original_name].md
-```
-
----
-
-## Best Practice Templates
-
-### Template A: Deep Analysis Mode
-
-When encountering unfamiliar code or problems:
-
-```markdown
-# Deep Analysis: [Topic]
-
-## Step 1: Understand Current State
-- [ ] Read relevant code files
-- [ ] Search docs and best practices
-- [ ] Review similar implementations
-
-## Step 2: Locate Problem
-- [ ] Narrow problem scope
-- [ ] Confirm reproduction steps
-- [ ] Collect error information
-
-## Step 3: Design Solution
-- [ ] List possible approaches
-- [ ] Evaluate pros/cons
-- [ ] Select best approach
-
-## Step 4: Verify Results
-- [ ] Unit tests
-- [ ] Integration tests
-- [ ] Regression tests
-```
-
-### Template B: User Friendliness Review
-
-```markdown
-# UI/UX Consistency Review
-
-## Consistency Check
-- [ ] Terminology unified (same concept = same wording)
-- [ ] Interaction patterns consistent (save/cancel/delete positions)
-- [ ] Visual styles consistent (colors/fonts/spacing)
-- [ ] Feedback mechanisms consistent (success/error messages)
-
-## User Friendliness
-- [ ] Minimize operation steps
-- [ ] Error messages clear and specific
-- [ ] Loading states have feedback
-- [ ] Key information highlighted
-
-## Accessibility
-- [ ] Keyboard navigation support
-- [ ] Focus management reasonable
-- [ ] Contrast meets standards
-```
-
-### Template C: Progress Sync Template
-
-```markdown
-# Progress Update: [Feature/Module]
-
-## Completed
-- ✅ [Specific completed tasks]
-
-## In Progress
-- 🔄 [Current task] (Progress: X%)
-
-## Issues
-- ⚠️ [Issue description]
-- Impact: [Impact scope]
-- Solution: [Planned solution]
-
-## Next Steps
-- 📋 [Planned tasks]
-```
-
----
-
-## Anti-Patterns
-
-### Patterns to Avoid
-
-| Anti-Pattern | Problem | Correct Approach |
-|--------------|---------|------------------|
-| Over-abstraction | Creating utilities for 3 uses | Copy-paste, abstract when >3 |
-| Premature optimization | Planning for hypothetical needs | YAGNI principle, add when needed |
-| Silent failures | Errors swallowed silently | Explicit handling or propagate up |
-| Magic numbers | Hard-coded constants | Extract to named constants |
-| Nesting hell | 5-layer if nesting | Early returns, guard clauses |
-
-### Common Traps
-
-1. **Over-commenting**: Code should be self-documenting; comments explain "why" not "what"
-2. **Ignoring edges**: Only handling happy path, exceptions unhandled
-3. **Database over-design**: Too many tables, complex relationships hard to maintain
-4. **Insufficient testing**: Only normal flow tested, edges uncovered
-5. **Poor communication**: Not asking when stuck, blindly trying
-
----
-
-## Quality Checklist
-
-### Code Quality
-
-- [ ] Business logic correct and complete
-- [ ] No security vulnerabilities (injection, XSS, etc.)
-- [ ] Error handling comprehensive
-- [ ] Code concise and readable
-- [ ] Naming clear and accurate
-- [ ] No code duplication
-
-### Data Integrity
-
-- [ ] Calculation formulas explicitly recorded
-- [ ] Results traceable and verifiable
-- [ ] Historical data never modified
-- [ ] Abnormal data marked
-- [ ] Transaction consistency guaranteed
-
-### User Experience
-
-- [ ] Workflow concise
-- [ ] Error messages clear
-- [ ] Loading state feedback
-- [ ] Interface style consistent
-- [ ] Key information prominent
-
----
-
-## Sources
-
-### Context Engineering
-- [Effective Context Engineering for AI Agents - Anthropic](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
-- [Context Engineering for AI Agents: Lessons from Building Manus](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)
-- [Context Engineering in LLM-Based Agents](https://jtanruan.medium.com/context-engineering-in-llm-based-agents-d670d6b439bc)
-
-### Prompt Engineering
-- [10 Best Practices for Building Reliable AI Agents in 2025](https://www.uipath.com/blog/ai/agent-builder-best-practices)
-- [Prompt Engineering Guide](https://www.promptingguide.ai/)
-- [OpenAI Prompt Engineering Documentation](https://platform.openai.com/docs/guides/prompt-engineering)
-
-### Code Review Automation
-- [AI Code Review Implementation Best Practices - Graphite](https://graphite.com/guides/ai-code-review-implementation-best-practices)
-- [AI Code Review with Claude Skills Guide](https://medium.com/@r0r1/ai-code-review-with-claude-skills-from-diy-to-team-ready-636966cb8e36)
-
-### MVP & Data Integration
-- [7 Key Steps for MVP Development in Banking and Finance](https://medium.com/@KMSSolutions/7-key-steps-for-effective-mvp-development-in-banking-and-finance-ebc12434628a)
-- [System Integration Best Practices](https://cadabra.studio/blog/system-integration-guide)
-
----
-
-## Appendix: Quick Commands
-
-### Claude Code Skills
-
-```bash
-# Code review
-/code-reviewer
-
-# Debug assistant
-/debugging-assistant
-
-# Git analysis
-/git-analyzer
-
-# Product management
-/product-manager
-
-# UI/UX principles
-/ui-ux-principles
-
-# Context engineering (this skill)
-/context-engineering
-
-# Commit code
-/commit [message]
-
-# Add rule
-/add-rule
-
-# Analyze document
-/analyze-doc
-```
-
----
-
-**Version**: 1.0.0
-**Updated**: 2025-01-01
-**Maintainer**: Veld Team
+### Agent Prompts
+- [Explore](examples/agent-explore-example.md) - Role definition, constraints, strengths
+- [Plan](examples/agent-plan-example.md) - Process steps, output format, boundaries
+- [Summarization](examples/agent-summarization-example.md) - Compaction structure, what to preserve

@@ -1,7 +1,7 @@
 {
   "name": "neon",
-  "repo": "Andrejones92/canifi-life-os",
-  "path": "skills/neon/SKILL.md",
-  "source": "github.com/Andrejones92/canifi-life-os",
-  "downloaded_at": "2026-02-02T05:09:51.979318Z"
+  "repo": "enuno/claude-command-and-control",
+  "path": "skills-templates/neon/SKILL.md",
+  "source": "github.com/enuno/claude-command-and-control",
+  "downloaded_at": "2026-02-04T03:33:26.825076Z"
 }

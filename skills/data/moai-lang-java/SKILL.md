@@ -1,30 +1,15 @@
 ---
-name: moai-lang-java
-description: >
-  Java 21 LTS development specialist covering Spring Boot 3.3, virtual threads, pattern matching, and enterprise patterns. Use when building enterprise applications, microservices, or Spring projects.
-license: Apache-2.0
-compatibility: Designed for Claude Code
+name: "moai-lang-java"
+description: "Java 21 LTS development specialist covering Spring Boot 3.3, virtual threads, pattern matching, and enterprise patterns. Use when building enterprise applications, microservices, or Spring projects."
+version: 1.1.0
+category: "language"
+modularized: false
 user-invocable: false
-metadata:
-  version: "1.1.0"
-  category: "language"
-  status: "active"
-  updated: "2026-01-11"
-  modularized: "false"
-  tags: "java, spring-boot, jpa, hibernate, virtual-threads, enterprise"
-  context7-libraries: "/spring-projects/spring-boot, /spring-projects/spring-framework, /spring-projects/spring-security"
-  related-skills: "moai-lang-kotlin, moai-domain-backend"
-
-# MoAI Extension: Progressive Disclosure
-progressive_disclosure:
-  enabled: true
-  level1_tokens: 100
-  level2_tokens: 5000
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["Java", "Spring Boot", "Spring Framework", "JPA", "Hibernate", "Maven", "Gradle", ".java", "pom.xml", "build.gradle", "virtual thread"]
-  languages: ["java"]
+tags: ['java', 'spring-boot', 'jpa', 'hibernate', 'virtual-threads', 'enterprise']
+context7-libraries: ['/spring-projects/spring-boot', '/spring-projects/spring-framework', '/spring-projects/spring-security']
+related-skills: ['moai-lang-kotlin', 'moai-domain-backend']
+updated: 2026-01-11
+status: "active"
 ---
 
 ## Quick Reference (30 seconds)

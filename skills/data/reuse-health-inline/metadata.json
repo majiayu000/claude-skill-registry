@@ -1,13 +1,7 @@
 {
   "name": "reuse-health-inline",
-  "description": "Inline orchestration workflow for code duplication detection and consolidation. Provides step-by-step phases for reuse-hunter detection, priority-based consolidation with reuse-fixer, and verification",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "development",
-  "tags": [
-    "reuse",
-    "health",
-    "inline"
-  ],
-  "stars": 27,
-  "source": "local"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/reuse-health-inline/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:14.677830Z"
 }

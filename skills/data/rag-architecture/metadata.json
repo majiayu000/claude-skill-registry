@@ -1,7 +1,7 @@
 {
   "name": "rag-architecture",
-  "repo": "melodic-software/claude-code-plugins",
-  "path": "plugins/systems-design/skills/rag-architecture/SKILL.md",
-  "source": "github.com/melodic-software/claude-code-plugins",
-  "downloaded_at": "2026-02-02T02:53:36.496486Z"
+  "repo": "liauw-media/CodeAssist",
+  "path": "skills/ai/rag-architecture/SKILL.md",
+  "source": "github.com/liauw-media/CodeAssist",
+  "downloaded_at": "2026-02-04T04:39:00.269411Z"
 }

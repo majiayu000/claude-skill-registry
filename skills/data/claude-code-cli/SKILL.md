@@ -1,181 +1,65 @@
 ---
 name: claude-code-cli
-description: Build and run AI agents using Claude Code CLI. Use when developing autonomous agents, multi-agent systems, CI/CD automation, or scripting Claude for programmatic tasks. Covers authentication, headless mode (-p), JSON output parsing, tool restrictions, subagents, and orchestration patterns.
-license: MIT
-allowed-tools:
-  - Bash
-  - Read
-  - Write
-  - Edit
+description: Executes tasks using the Claude Code CLI (`claude`). Automatically determines the safest permission mode (plan, acceptEdits, or bypassPermissions) based on the task type.
 ---
 
-# Claude Code Agent Development
+# executing-claude
 
-Build autonomous agents using Claude Code CLI. Language-agnostic patterns for agent orchestration and programmatic integration.
+## Purpose
 
-## Quick Reference
+Use this skill to perform coding, research, or automation tasks using the `claude` CLI. It maps requests to Claude's native permission modes to balance automation with security.
 
-| Task | Command |
-|------|---------|
-| Basic agent | `claude -p "prompt"` |
-| JSON output | `claude -p --output-format json "prompt"` |
-| Streaming | `claude -p --output-format stream-json "prompt"` |
-| Autonomous | `claude -p --dangerously-skip-permissions "prompt"` |
-| Budget limit | `claude -p --max-budget-usd 5 "prompt"` |
-| Restrict tools | `claude -p --tools "Read,Edit" "prompt"` |
-| Structured output | `claude -p --output-format json --json-schema '{...}' "prompt"` |
+## Permission Tiers
 
-## Authentication
+| Tier  | Claude Mode         | Capability                                   | Approval Required   | Typical Tasks                             |
+| :---- | :------------------ | :------------------------------------------- | :------------------ | :---------------------------------------- |
+| **0** | `plan`              | Read-only access, analysis, research.        | **No**              | Code review, audits, web research.        |
+| **1** | `acceptEdits`       | Auto-approves file edits; prompts for shell. | **Yes**             | Refactoring, documentation, lint fixes.   |
+| **2** | `bypassPermissions` | Auto-approves ALL tools (edits + shell).     | **Yes (High Risk)** | CI/CD, complex builds, automated testing. |
 
-### API Key
+## Implementation Workflow
 
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-```
+### 1. Analyze & Classify
 
-### OAuth Token (Pro/Team Subscription)
+Analyze the user's intent to determine the required permission tier.
 
-```bash
-claude setup-token  # Interactive setup
-export CLAUDE_CODE_OAUTH_TOKEN="your-token"
-```
+- **Tier 0 (Plan)**: Does the task only involve reading code or searching for information?
+- **Tier 1 (Accept Edits)**: Does the task involve modifying files but no command execution?
+- **Tier 2 (Bypass Permissions)**: Does the task require running tests, build scripts, or managing dependencies autonomously?
 
-## Running Agents
+### 2. Approval Protocol
 
-### Headless Mode (`-p`)
+If the task maps to **Tier 1** or **Tier 2**, you **MUST** obtain user approval before executing the `claude` command.
 
-```bash
-# Basic prompt
-claude -p "Implement a REST API"
+Use the `AskQuestion` tool to confirm:
 
-# Piped input
-echo "Fix the bug" | claude -p
+> "I've detected that this task requires [Accept Edits/Bypass Permissions] permissions to [modify files/run shell commands]. OK to proceed?"
 
-# Full autonomy (sandboxed environments only)
-claude -p --dangerously-skip-permissions "Build the feature"
-```
+### 3. Execution
 
-### Output Formats
-
-| Format | Flag | Use Case |
-|--------|------|----------|
-| `text` | default | Simple scripts |
-| `json` | `--output-format json` | Programmatic parsing |
-| `stream-json` | `--output-format stream-json` | Real-time UI |
-
-**For detailed parsing examples**: See [references/response-parsing.md](references/response-parsing.md)
-
-### Structured Output
+Execute `claude` using the mode determined by the tier.
 
 ```bash
-echo "What is 2+2?" | claude -p --output-format json \
-  --json-schema '{"type":"object","properties":{"answer":{"type":"number"}},"required":["answer"]}'
+# Tier 0 (Plan)
+claude -p "<prompt>" --permission-mode plan
+
+# Tier 1 (Accept Edits)
+claude -p "<prompt>" --permission-mode acceptEdits
+
+# Tier 2 (Bypass Permissions)
+claude -p "<prompt>" --permission-mode bypassPermissions
 ```
 
-Result: `{"type": "result", "structured_output": {"answer": 4}, ...}`
+**Security Rules:**
 
-## Tool Restrictions
+- **NEVER** use `--permission-mode bypassPermissions` without explicit confirmation of the risks.
+- **ALWAYS** use the most restrictive mode possible (prefer `plan`).
+- If you are unsure, default to `plan` and escalate only if `claude` reports it cannot complete the task.
 
-```bash
-# Read-only agent
-claude -p --tools "Read,Glob,Grep" "Analyze code"
+## Configuration
 
-# Specific bash commands only
-claude -p --allowed-tools "Bash(npm:*) Bash(git:*)" "Build project"
+This skill leverages native `claude` CLI flags to enforce the permission tiers. No additional configuration files are required.
 
-# Deny dangerous operations
-claude -p --disallowed-tools "Bash(rm:*)" "Clean up"
-```
+## Examples
 
-**For project configuration**: See [references/configuration.md](references/configuration.md)
-
-## Multi-Agent Patterns
-
-### Sequential Pipeline
-
-```bash
-analysis=$(claude -p --output-format json "Analyze codebase")
-claude -p "Implement based on: $analysis"
-```
-
-### Parallel Agents
-
-```bash
-claude -p "Review auth/" > auth.txt &
-claude -p "Review api/" > api.txt &
-wait
-claude -p "Summarize: $(cat *.txt)"
-```
-
-### Specialist Agents
-
-```bash
-claude --agents '{"security": {"prompt": "You are a security expert"}}' \
-  --agent security -p "Review auth"
-```
-
-**For complete orchestration patterns**: See [references/orchestration.md](references/orchestration.md)
-
-## Session Management
-
-```bash
-# Persistent session
-claude --session-id "task-123" -p "Start feature"
-claude --session-id "task-123" -c -p "Continue"
-
-# Stateless
-claude -p --no-session-persistence "One-off task"
-```
-
-## Project Configuration
-
-### `.claude/settings.json`
-
-```json
-{
-  "permissions": {
-    "allow": ["Bash(npm:*)", "Edit", "Read"],
-    "deny": ["Bash(rm -rf:*)"]
-  }
-}
-```
-
-### `CLAUDE.md`
-
-Project instructions auto-loaded by Claude.
-
-**For CI/CD and MCP**: See [references/configuration.md](references/configuration.md)
-
-## Parsing JSON Output
-
-### Quick jq Examples
-
-```bash
-# Get result
-claude -p --output-format json "prompt" | jq -r '.[-1].result'
-
-# Check success
-claude -p --output-format json "prompt" | jq '.[-1].is_error'
-
-# Get cost
-claude -p --output-format json "prompt" | jq '.[-1].total_cost_usd'
-```
-
-### Message Types
-
-| Type | Description |
-|------|-------------|
-| `system` | Init with tools, model, session |
-| `assistant` | Claude's response |
-| `user` | Tool results |
-| `result` | Final status and cost |
-
-**For complete parsing guide**: See [references/response-parsing.md](references/response-parsing.md)
-
-## Best Practices
-
-1. **Budget limits**: Always `--max-budget-usd` for autonomous agents
-2. **Tool restrictions**: Minimal toolset with `--tools`
-3. **Structured output**: `--json-schema` for reliable parsing
-4. **Sandboxing**: `--dangerously-skip-permissions` only in isolated environments
-5. **Error handling**: Check `is_error` and exit codes
+Refer to [references/usage-examples.md](./references/usage-examples.md) for concrete scenarios.

@@ -1,443 +1,382 @@
 ---
 name: api-builder
-description: Generate complete FastAPI backend scaffolds from OpenAPI 3.x specifications. Automatically creates SQLAlchemy models, Pydantic schemas, FastAPI routers, CRUD operations, database migrations, pytest tests, and Next.js TypeScript clients. Use when user provides an OpenAPI/OpenSpec file (.yaml/.json) or pastes spec content, and wants to generate API code. Triggers on phrases like "generate API from spec", "build backend from OpenAPI", "create FastAPI from this spec", "implement these endpoints", or when user shares OpenAPI specification files. Supports Python 3.12+, FastAPI, SQLite, SQLAlchemy, Alembic, pytest, and Next.js App Router.
+description: Comprehensive API design and development workflow that orchestrates API architecture, endpoint design, documentation generation, and integration patterns. Handles everything from RESTful API creation and GraphQL schema design to API gateway setup and version management.
+license: Apache 2.0
+tools: []
 ---
 
-# API Builder
+# API Builder - Complete API Development Workflow
 
-从 OpenAPI 3.x 规范自动生成完整的 FastAPI 后端脚手架，包括数据库模型、API 路由、测试和 Next.js client。
+## Overview
 
-## 工作流程
+This skill provides end-to-end API development services by orchestrating API architects, integration specialists, and documentation experts. It transforms API requirements into production-ready APIs with comprehensive design, documentation, testing, and integration capabilities.
 
-### 阶段 1：验证输入
+**Key Capabilities:**
+- 🏗️ **Multi-Protocol API Design** - RESTful APIs, GraphQL, gRPC, and WebSocket implementations
+- 📚 **Comprehensive Documentation** - Auto-generated API docs, interactive testing, and developer guides
+- 🔧 **Integration Architecture** - API gateways, middleware, and third-party service integration
+- 📊 **API Analytics & Monitoring** - Usage tracking, performance monitoring, and error analysis
+- 🛡️ **API Security & Governance** - Authentication, rate limiting, and API lifecycle management
 
-1. **获取 OpenAPI Spec**
-   - 询问用户提供 OpenAPI spec：
-     - 文件路径（.yaml 或 .json）
-     - 粘贴 spec 内容（保存为临时文件）
-     - URL（如果可访问，先下载）
+## When to Use This Skill
 
-2. **验证 Spec 格式**
-   - 运行 `scripts/validate_spec.py`：
-     ```bash
-     python3 ${CLAUDE_PLUGIN_ROOT}/scripts/validate_spec.py <spec-file>
-     ```
-   - 检查 exit code：0=成功，1=失败
+**Perfect for:**
+- RESTful API design and implementation
+- GraphQL schema development and resolver implementation
+- API gateway setup and middleware configuration
+- API documentation generation and developer portal creation
+- API integration patterns and third-party service connections
+- API versioning and lifecycle management
 
-   **如果验证失败**：停止并告知用户具体错误，询问是否修正
+**Triggers:**
+- "Design and implement a REST API for [application]"
+- "Create a GraphQL API with [features]"
+- "Set up an API gateway with [middleware]"
+- "Generate comprehensive API documentation"
+- "Implement API integration with [service]"
 
-3. **选择生成范围**
-   - 运行 `scripts/parse_openapi.py` 查看可用 endpoints：
-     ```bash
-     python3 ${CLAUDE_PLUGIN_ROOT}/scripts/parse_openapi.py <spec-file>
-     ```
-   - 询问用户：
-     - 生成全部 endpoints？
-     - 只生成特定的endpoints？（让用户选择，使用 `--resources` 参数）
+## API Development Expert Panel
 
-### 阶段 2：检测现有项目结构
+### **API Architect** (API Design & Architecture)
+- **Focus**: API design patterns, protocol selection, architectural decisions
+- **Techniques**: RESTful design, GraphQL schema design, API composition
+- **Considerations**: Scalability, maintainability, developer experience, performance
 
-1. **检查是否为现有项目**
-   - 查找 `app/` 或 `src/` 目录
-   - 检查 `pyproject.toml`
-   - 检查是否已有 `database.py`、`routers/`、`models/` 等
+### **Integration Specialist** (API Integration & Middleware)
+- **Focus**: API gateways, middleware, third-party integrations
+- **Techniques**: API composition, service mesh, event-driven architecture
+- **Considerations**: Latency, reliability, security, monitoring
 
-2. **确定集成策略**
-   - **如果是现有项目**：
-     - 复用现有的 `database.py`
-     - 检查文件冲突（如 `app/routers/users.py` 已存在）
-     - 询问用户如何处理冲突：覆盖/合并/重命名/跳过
-   - **如果是新项目**：
-     - 从 `assets/fastapi-template/` 复制基础结构
-     - 创建完整的项目脚手架
+### **Documentation Expert** (API Documentation & Developer Experience)
+- **Focus**: API documentation, developer portals, interactive testing
+- **Techniques**: OpenAPI/Swagger, GraphQL docs, API testing frameworks
+- **Considerations**: Developer experience, documentation accuracy, discoverability
 
-### 阶段 3：生成后端代码
+### **API Security Specialist** (API Security & Governance)
+- **Focus**: API security, authentication, authorization, governance
+- **Techniques**: OAuth 2.0, API keys, rate limiting, threat protection
+- **Considerations**: Security by design, compliance, usability
 
-**使用 CLI 脚本（推荐）**：
+### **Performance Engineer** (API Optimization & Monitoring)
+- **Focus**: API performance, caching, monitoring, analytics
+- **Techniques**: Response optimization, caching strategies, load balancing
+- **Considerations**: Response times, throughput, resource utilization
 
-运行完整的生成流程：
+## API Development Workflow
+
+### Phase 1: API Requirements Analysis & Design Planning
+**Use when**: Starting API development or API modernization
+
+**Tools Used:**
 ```bash
-cd ${CLAUDE_PLUGIN_ROOT}/scripts
-python3 cli.py \
-  --spec <spec-file> \
-  --output <output-dir> \
-  [--resources users,posts]  # 可选：只生成特定资源
+/sc:analyze api-requirements
+API Architect: API design requirements and constraints
+Integration Specialist: integration points and dependencies
+Documentation Expert: documentation requirements and developer needs
 ```
 
-**生成内容**：
-- `models/` - SQLAlchemy 数据库模型
-- `schemas/` - Pydantic API schemas
-- `routers/` - FastAPI 路由
-- `__init__.py` - 包初始化文件
-- `parsed.json` - 解析后的 spec 数据
+**Activities:**
+- Analyze business requirements and translate to API specifications
+- Identify API protocols and architectural patterns
+- Define API contracts and data models
+- Plan integration points and external dependencies
+- Establish API governance and versioning strategy
 
-**关键点**：
-- 脚本自动处理类型映射（参考 `references/type-mapping.md`）
-- 使用 Jinja2 模板（`assets/templates/`）生成代码
-- 生成的代码包含 TODO comments 标记业务逻辑部分
-- 添加时间戳字段（created_at, updated_at）
-- Email 字段自动添加 unique 和 index
+### Phase 2: API Architecture & Protocol Design
+**Use when**: Designing the API structure and choosing protocols
 
-**手动步骤执行（高级）**：
-
-如果需要更细粒度控制，可分步执行：
-
+**Tools Used:**
 ```bash
-cd ${CLAUDE_PLUGIN_ROOT}/scripts
-
-# 1. 解析 spec
-python3 parse_openapi.py <spec-file> --output parsed.json
-
-# 2. 生成代码
-python3 generate_code.py \
-  --parsed-data parsed.json \
-  --output-dir <output-dir> \
-  --templates-dir ${CLAUDE_PLUGIN_ROOT}/assets/templates
+/sc:design --type api restful-architecture
+/sc:design --type graphql schema
+API Architect: comprehensive API design and protocol selection
+Integration Specialist: integration architecture and patterns
 ```
 
-**参考文档**：
-- `references/type-mapping.md` - 类型映射规则
-- `references/fastapi-patterns.md` - FastAPI 最佳实践
+**Activities:**
+- Design API architecture and protocol selection (REST/GraphQL/gRPC)
+- Create API specifications and data contracts
+- Design endpoint structures and resource relationships
+- Plan API composition and orchestration patterns
+- Define error handling and response formats
 
-#### 3.5 更新 Main.py
+### Phase 3: API Implementation & Development
+**Use when**: Writing the actual API code and business logic
 
-如果不存在 `app/main.py`，创建它：
-- 从 `assets/fastapi-template/app/main.py` 复制基础结构
-- 注册所有生成的 routers
-- 配置 CORS 中间件
-- 添加根路由
-
-如果已存在，询问用户是否添加新的 router 注册代码。
-
-#### 3.6 配置和运行数据库迁移（可选）
-
-**使用 CLI（推荐）**：
-
+**Tools Used:**
 ```bash
-# 自动配置并运行迁移
-cd ${CLAUDE_PLUGIN_ROOT}/scripts
-python3 cli.py \
-  --spec <spec-file> \
-  --output <output-dir> \
-  --setup-alembic \
-  --run-migrations
+/sc:implement api-endpoints
+API Architect: API implementation patterns and best practices
+Integration Specialist: middleware and integration implementation
+API Security Specialist: security controls and authentication
 ```
 
-**手动执行**：
+**Activities:**
+- Implement API endpoints and business logic
+- Create middleware for authentication, validation, and error handling
+- Implement data validation and serialization
+- Create API versioning and backward compatibility
+- Write unit and integration tests for API endpoints
 
-如果用户想手动控制：
+### Phase 4: API Documentation & Developer Experience
+**Use when**: Creating comprehensive API documentation and developer resources
+
+**Tools Used:**
 ```bash
-# 1. 配置 Alembic
-cd ${CLAUDE_PLUGIN_ROOT}/scripts
-python3 cli.py --spec <spec-file> --output <output-dir> --setup-alembic
-
-# 2. 进入项目目录手动运行迁移
-cd <output-dir>
-alembic revision --autogenerate -m "Initial tables"
-alembic upgrade head
+/sc:implement api-documentation
+Documentation Expert: API docs and developer portal creation
+API Architect: API specification validation and examples
+Integration Specialist: integration guides and SDKs
 ```
 
-**生成内容**：
-- `alembic.ini` - Alembic 配置文件
-- `alembic/env.py` - 迁移环境配置
-- `alembic/versions/` - 迁移文件目录
-- `alembic/script.py.mako` - 迁移模板
+**Activities:**
+- Generate OpenAPI/Swagger specifications
+- Create interactive API documentation and testing interfaces
+- Develop SDKs and client libraries
+- Write integration guides and code examples
+- Create developer portal and onboarding materials
 
-**何时使用迁移**：
-- 全新项目：使用 `--setup-alembic --run-migrations` 立即创建数据库
-- 已有项目更新schema：手动运行 `alembic revision --autogenerate`
-- 生产环境：先测试迁移，再手动应用
+### Phase 5: API Gateway & Integration Setup
+**Use when**: Setting up API gateway, middleware, and integrations
 
-### 阶段 4：生成测试
-
-#### 4.1 更新 conftest.py
-
-- 检查 `tests/conftest.py` 是否存在
-- 如果不存在，从 `assets/fastapi-template/tests/conftest.py` 复制
-- 为每个资源添加 fixtures：
-  - `sample_{resource}_data`
-  - `create_sample_{resource}`
-- 使用 `assets/templates/conftest_fixture.py.j2` 模板
-
-#### 4.2 生成 API 集成测试
-
-- 使用 `assets/templates/test_api.py.j2` 模板
-- 生成到 `tests/test_api/test_{resource}_api.py`
-- 包含测试：
-  - CRUD 操作（create, get, update, delete）
-  - 错误处理（404, 400, 422）
-  - 分页、验证
-
-**参考**：`references/testing-patterns.md`
-
-#### 4.3 生成 CRUD 单元测试
-
-- 使用 `assets/templates/test_crud.py.j2` 模板
-- 生成到 `tests/test_crud/test_{resource}_crud.py`
-
-### 阶段 5：生成 Next.js Client（可选）
-
-询问用户是否需要生成 Next.js TypeScript client。
-
-如果需要：
-
-**使用 CLI（推荐）**：
-
+**Tools Used:**
 ```bash
-cd ${CLAUDE_PLUGIN_ROOT}/scripts
-python3 cli.py \
-  --spec <spec-file> \
-  --output <backend-output-dir> \
-  --generate-client \
-  [--client-output <frontend-path>/api-client.ts]
+/sc:implement api-gateway
+Integration Specialist: API gateway configuration and middleware
+API Security Specialist: security policies and access control
+Performance Engineer: caching, rate limiting, and optimization
 ```
 
-**单独生成Client**：
+**Activities:**
+- Configure API gateway with routing and policies
+- Implement middleware for authentication, rate limiting, and logging
+- Set up API composition and orchestration
+- Configure caching and performance optimization
+- Implement API monitoring and analytics
 
+### Phase 6: API Testing & Quality Assurance
+**Use when**: Ensuring API reliability, performance, and security
+
+**Tools Used:**
 ```bash
-cd ${CLAUDE_PLUGIN_ROOT}/scripts
-python3 generate_client.py \
-  --parsed-data parsed.json \
-  --output <client-output-file>
+/sc:test api-comprehensive
+Performance Engineer: load testing and performance validation
+API Security Specialist: security testing and vulnerability assessment
+Documentation Expert: documentation accuracy and usability testing
 ```
 
-**生成内容**：
-- TypeScript接口定义（从OpenAPI schemas）
-- API调用方法（从OpenAPI paths）
-- ApiClient类（包含错误处理）
-- 便捷的函数导出
+**Activities:**
+- Implement comprehensive API test suites (unit, integration, E2E)
+- Conduct load testing and performance benchmarking
+- Perform security testing and vulnerability assessment
+- Validate API contracts and documentation accuracy
+- Test error scenarios and recovery mechanisms
 
-**参考**：`references/type-mapping.md` 的 TypeScript 映射
+## Integration Patterns
 
-**生成的client使用示例**：
-```typescript
-// Next.js App Router
-import { apiClient } from '@/lib/api/api-client'
+### **SuperClaude Command Integration**
 
-export default async function Page() {
-  const users = await apiClient.list_users()
-  return <div>{users.map(u => <div>{u.name}</div>)}</div>
-}
+| Command | Use Case | Output |
+|---------|---------|--------|
+| `/sc:design --type api` | API design | Complete API architecture |
+| `/sc:implement restful` | REST API | Production-ready REST endpoints |
+| `/sc:implement graphql` | GraphQL API | GraphQL schema and resolvers |
+| `/sc:implement gateway` | API gateway | Configured API gateway |
+| `/sc:test api` | API testing | Comprehensive test suite |
+
+### **API Protocol Integration**
+
+| Protocol | Role | Capabilities |
+|----------|------|------------|
+| **RESTful** | Standard API | HTTP-based REST API with proper semantics |
+| **GraphQL** | Flexible API | Flexible query language and type system |
+| **gRPC** | High-performance API | Binary protocol for high-performance scenarios |
+| **WebSocket** | Real-time API | Real-time bidirectional communication |
+
+### **MCP Server Integration**
+
+| Server | Expertise | Use Case |
+|--------|----------|---------|
+| **Sequential** | API reasoning | Complex API design and problem-solving |
+| **Web Search** | API patterns | Latest API design trends and best practices |
+| **Firecrawl** | API testing | External API integration and testing |
+
+## Usage Examples
+
+### Example 1: Complete REST API Development
+```
+User: "Create a complete REST API for an e-commerce platform with user management, products, and orders"
+
+Workflow:
+1. Phase 1: Analyze e-commerce API requirements and design constraints
+2. Phase 2: Design RESTful API architecture with proper resource modeling
+3. Phase 3: Implement API endpoints with authentication and validation
+4. Phase 4: Generate comprehensive API documentation and developer portal
+5. Phase 5: Set up API gateway with rate limiting and monitoring
+6. Phase 6: Test API performance, security, and documentation accuracy
+
+Output: Production-ready e-commerce API with complete documentation and monitoring
 ```
 
-### 阶段 6：验证和测试
-
-1. **安装依赖**：
-   ```bash
-   uv add fastapi sqlalchemy alembic pydantic[email] python-multipart
-   uv add --dev pytest pytest-cov httpx
-   ```
-
-2. **运行类型检查**：
-   ```bash
-   mypy app/
-   ```
-   如果有错误，修复后重新检查。
-
-3. **运行迁移**：
-   ```bash
-   alembic upgrade head
-   ```
-
-4. **运行测试**：
-   ```bash
-   pytest tests/ -v
-   ```
-   **目标**：所有测试通过
-
-5. **手动验证**：
-   - 启动服务器：`uvicorn app.main:app --reload`
-   - 访问 API 文档：http://localhost:8000/docs
-   - 测试几个 endpoints
-
-### 阶段 7：完成
-
-1. **生成总结文档**：
-   - 列出所有生成的文件
-   - 标记需要用户补充的 TODO 项
-   - 提供下一步指南
-
-2. **TODO 清单**：
-   - [ ] 实现业务逻辑（routers 中的 TODO comments）
-   - [ ] 添加认证/授权
-   - [ ] 配置环境变量（`.env` 文件）
-   - [ ] 补充关系字段（如果有）
-   - [ ] 添加自定义验证逻辑
-
-## 类型映射
-
-详细的 OpenAPI 到 Python/TypeScript 类型映射见：**[references/type-mapping.md](references/type-mapping.md)**
-
-快速参考：
-- `string` → `str` / `string`
-- `integer` → `int` / `number`
-- `string(email)` → `EmailStr` / `string`
-- `string(date-time)` → `datetime` / `string`
-- `array` → `List[T]` / `Array<T>`
-- `enum` → `Enum` / `enum` 或 `union type`
-
-## 项目结构
-
-生成的项目结构（模块化）：
-
+### Example 2: GraphQL API Implementation
 ```
-project/
-├── app/
-│   ├── main.py              # FastAPI 应用入口
-│   ├── database.py          # 数据库配置
-│   ├── models/              # SQLAlchemy 模型
-│   │   ├── __init__.py
-│   │   └── {resource}.py
-│   ├── schemas/             # Pydantic schemas
-│   │   ├── __init__.py
-│   │   └── {resource}.py
-│   ├── routers/             # API 路由
-│   │   ├── __init__.py
-│   │   └── {resource}.py
-│   └── crud/                # CRUD 操作
-│       ├── __init__.py
-│       ├── base.py
-│       └── {resource}.py
-├── alembic/                 # 数据库迁移
-│   ├── versions/
-│   └── env.py
-├── tests/                   # 测试
-│   ├── conftest.py
-│   ├── test_api/
-│   └── test_crud/
-├── .env.example             # 环境变量示例
-├── alembic.ini              # Alembic 配置
-└── pyproject.toml           # 项目配置
+User: "Implement a GraphQL API for a social media platform with real-time features"
+
+Workflow:
+1. Phase 1: Analyze GraphQL requirements and schema design needs
+2. Phase 2: Design GraphQL schema with types, queries, and mutations
+3. Phase 3: Implement resolvers with proper data fetching and caching
+4. Phase 4: Create GraphQL documentation with schema explorer
+5. Phase 5: Set up GraphQL gateway with subscriptions and real-time features
+6. Phase 6: Test GraphQL queries, mutations, and subscription performance
+
+Output: Feature-rich GraphQL API with real-time capabilities and comprehensive documentation
 ```
 
-详见：**[references/project-structure.md](references/project-structure.md)**
+### Example 3: API Gateway and Integration
+```
+User: "Set up an API gateway to integrate multiple microservices with proper security and monitoring"
 
-## 最佳实践
+Workflow:
+1. Phase 1: Analyze integration requirements and service dependencies
+2. Phase 2: Design API gateway architecture with routing and policies
+3. Phase 3: Implement gateway with authentication, rate limiting, and logging
+4. Phase 4: Configure service discovery and load balancing
+5. Phase 5: Set up monitoring, analytics, and alerting
+6. Phase 6: Test gateway performance, security, and failover mechanisms
 
-详细的 FastAPI 最佳实践见：**[references/fastapi-patterns.md](references/fastapi-patterns.md)**
-
-关键模式：
-- 使用依赖注入（`Depends(get_db)`）
-- CRUD 基类继承模式
-- 统一错误处理
-- 响应模型验证
-- 分页和查询参数
-
-## 测试模式
-
-详细的测试模式见：**[references/testing-patterns.md](references/testing-patterns.md)**
-
-测试结构：
-- `conftest.py` - 共享 fixtures（DB session, test client）
-- `test_api/` - API 集成测试
-- `test_crud/` - CRUD 单元测试
-
-运行测试：
-```bash
-pytest tests/ -v --cov=app
+Output: Enterprise-grade API gateway with comprehensive security and monitoring
 ```
 
-## 错误处理
+## Quality Assurance Mechanisms
 
-### 无效的 OpenAPI Spec
-**症状**：YAML 解析错误、缺少必需字段
+### **Multi-Layer API Validation**
+- **Design Validation**: API architecture and contract validation
+- **Implementation Testing**: Comprehensive endpoint and integration testing
+- **Documentation Accuracy**: Documentation validation and developer feedback
+- **Performance Testing**: Load testing and performance benchmarking
 
-**处理**：
-1. 停止生成
-2. 显示具体错误信息
-3. 询问用户是否修正或提供新 spec
+### **Automated Quality Checks**
+- **Contract Testing**: Automated API contract validation and compliance
+- **Security Testing**: Automated vulnerability scanning and security assessment
+- **Performance Monitoring**: Real-time performance tracking and alerting
+- **Documentation Testing**: Automated documentation accuracy and completeness checks
 
-### 文件冲突
-**症状**：要生成的文件已存在
+### **Continuous API Improvement**
+- **Usage Analytics**: API usage tracking and optimization recommendations
+- **Developer Feedback**: Developer experience monitoring and improvement
+- **Performance Optimization**: Continuous performance monitoring and optimization
+- **Security Monitoring**: Ongoing security assessment and threat protection
 
-**处理**：
-1. 列出冲突文件
-2. 询问用户：覆盖/合并/重命名/跳过
-3. 按用户选择执行
+## Output Deliverables
 
-### 类型映射失败
-**症状**：OpenAPI 类型无法映射到 Python
+### Primary Deliverable: Complete API System
+```
+api-system/
+├── endpoints/
+│   ├── controllers/              # API endpoint implementations
+│   ├── middleware/               # Authentication, validation, error handling
+│   ├── routes/                   # API routing and endpoint definitions
+│   └── validators/               # Request/response validation
+├── schemas/
+│   ├── openapi/                  # OpenAPI/Swagger specifications
+│   ├── graphql/                  # GraphQL schemas and resolvers
+│   ├── models/                   # Data models and DTOs
+│   └── contracts/                # API contracts and interfaces
+├── documentation/
+│   ├── api-docs/                 # Interactive API documentation
+│   ├── developer-portal/          # Developer portal and guides
+│   ├── examples/                 # Code examples and tutorials
+│   └── sdks/                     # Client libraries and SDKs
+├── gateway/
+│   ├── config/                   # API gateway configuration
+│   ├── policies/                 # Gateway policies and rules
+│   ├── middleware/               # Custom gateway middleware
+│   └── monitoring/               # Gateway monitoring and analytics
+├── tests/
+│   ├── unit/                     # Unit tests for API endpoints
+│   ├── integration/              # Integration tests for API interactions
+│   ├── contract/                 # API contract tests
+│   └── performance/              # Load and performance tests
+└── config/
+    ├── development/              # Development environment configuration
+    ├── staging/                  # Staging environment configuration
+    └── production/               # Production environment configuration
+```
 
-**处理**：
-1. 使用默认类型（`Any`）
-2. 添加 TODO comment
-3. 提醒用户检查
+### Supporting Artifacts
+- **API Specifications**: Complete OpenAPI/Swagger and GraphQL schemas
+- **Documentation Portal**: Interactive API documentation and developer guides
+- **SDKs and Clients**: Client libraries for multiple programming languages
+- **Integration Guides**: Step-by-step integration instructions and examples
+- **Performance Reports**: API performance benchmarks and optimization recommendations
 
-### 测试失败
-**症状**：pytest 报错
+## Advanced Features
 
-**处理**：
-1. 分析错误信息
-2. 修复代码
-3. 重新运行测试
-4. 如果 3 次尝试失败，询问用户
+### **Intelligent API Design**
+- AI-powered API design recommendations and optimization
+- Automatic API contract generation and validation
+- Intelligent endpoint grouping and organization
+- Automated API versioning and migration strategies
 
-## 技术栈
+### **Advanced API Gateway**
+- Service mesh integration with advanced routing
+- AI-driven API composition and orchestration
+- Dynamic policy enforcement and adaptation
+- Real-time API analytics and optimization
 
-- **Python**: 3.12+
-- **Framework**: FastAPI
-- **Database**: SQLite (via SQLAlchemy)
-- **ORM**: SQLAlchemy
-- **Migration**: Alembic
-- **Validation**: Pydantic
-- **Testing**: pytest, httpx
-- **Package Manager**: uv
-- **Frontend** (可选): Next.js (App Router) + TypeScript
+### **Developer Experience Enhancement**
+- Interactive API testing and exploration
+- Automated SDK generation for multiple languages
+- Real-time collaboration and API design tools
+- Comprehensive onboarding and learning resources
 
-## 示例使用场景
+### **API Analytics and Intelligence**
+- Advanced usage analytics and insights
+- Performance prediction and optimization
+- Anomaly detection and alerting
+- Business intelligence integration
 
-### 场景 1：从头创建新项目
+## Troubleshooting
 
-**用户**："我有一个 petstore.yaml OpenAPI spec，帮我生成完整的 FastAPI 后端"
+### Common API Development Challenges
+- **Design Issues**: Use proper API design patterns and architectural principles
+- **Integration Problems**: Implement clear contracts and proper error handling
+- **Performance Bottlenecks**: Optimize queries, implement caching, and use proper indexing
+- **Documentation Gaps**: Use automated documentation generation and regular updates
 
-**执行**：
-1. 读取 petstore.yaml
-2. 验证格式
-3. 询问是否生成全部 endpoints
-4. 创建项目结构（从 assets/fastapi-template/）
-5. 生成所有代码（models, schemas, routers, crud, tests）
-6. 生成迁移
-7. 运行测试验证
-8. 提供总结和 TODO 清单
+### API Gateway and Integration Issues
+- **Routing Problems**: Use proper gateway configuration and service discovery
+- **Security Issues**: Implement comprehensive authentication and authorization
+- **Performance Issues**: Optimize gateway configuration and implement proper caching
+- **Monitoring Gaps**: Implement comprehensive logging, monitoring, and alerting
 
-### 场景 2：集成到现有项目
+## Best Practices
 
-**用户**："根据这个 spec（粘贴内容）生成 API，集成到现有项目"
+### **For API Design**
+- Follow RESTful principles or GraphQL best practices
+- Design for scalability and maintainability
+- Use proper HTTP status codes and error handling
+- Implement proper versioning and backward compatibility
 
-**执行**：
-1. 解析粘贴的 spec
-2. 检测现有项目结构
-3. 询问选择哪些 endpoints
-4. 检查文件冲突
-5. 生成新代码（避免覆盖已有文件）
-6. 更新 main.py 注册新 routers
-7. 更新测试
-8. 运行测试验证
+### **For API Implementation**
+- Use proper authentication and authorization mechanisms
+- Implement comprehensive input validation and sanitization
+- Use proper error handling and logging
+- Write comprehensive tests and documentation
 
-### 场景 3：只生成部分 endpoints
+### **For API Documentation**
+- Use OpenAPI/Swagger for REST APIs
+- Create interactive documentation with examples
+- Provide clear integration guides and SDKs
+- Keep documentation updated and accurate
 
-**用户**："从 spec 里只生成 /users 和 /posts 相关的 API"
+### **For API Gateway Configuration**
+- Implement proper security policies and rate limiting
+- Use comprehensive logging and monitoring
+- Configure proper load balancing and failover
+- Implement caching and optimization strategies
 
-**执行**：
-1. 验证 spec
-2. 显示所有可用 endpoints
-3. 用户选择 /users 和 /posts
-4. 只为这两个资源生成代码
-5. 测试验证
+---
 
-## 注意事项
-
-1. **认证/授权**：生成的代码**不包含**认证实现，只有 TODO 占位符
-2. **业务逻辑**：CRUD 操作是脚手架，需要用户补充业务逻辑
-3. **关系**：复杂的数据库关系需要用户手动调整
-4. **环境变量**：记得配置 `.env` 文件
-5. **生产部署**：生成的代码用于开发，生产环境需额外配置（如 Gunicorn、HTTPS、CORS 限制）
-
-## 资源文件
-
-- **references/type-mapping.md** - OpenAPI 到 Python/TypeScript 类型映射
-- **references/project-structure.md** - 推荐的项目结构
-- **references/fastapi-patterns.md** - FastAPI 最佳实践模式
-- **references/testing-patterns.md** - 测试模式和最佳实践
-- **assets/fastapi-template/** - FastAPI 项目基础模板
-- **assets/templates/** - Jinja2 代码生成模板
+This API builder skill transforms the complex process of API development into a guided, expert-supported workflow that ensures well-designed, well-documented, and production-ready APIs with comprehensive integration and monitoring capabilities.

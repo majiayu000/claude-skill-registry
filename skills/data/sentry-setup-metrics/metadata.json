@@ -1,7 +1,7 @@
 {
   "name": "sentry-setup-metrics",
-  "repo": "troykelly/claude-skills",
+  "repo": "troykelly/codex-skills",
   "path": "external/skills/sentry-setup-metrics/SKILL.md",
-  "source": "github.com/troykelly/claude-skills",
-  "downloaded_at": "2026-02-02T05:04:58.400829Z"
+  "source": "github.com/troykelly/codex-skills",
+  "downloaded_at": "2026-02-04T04:41:42.606330Z"
 }

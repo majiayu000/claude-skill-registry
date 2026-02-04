@@ -1,6 +1,6 @@
 ---
 name: tldr-deep
-description: Deep dive analysis of specific code areas
+description: Full 5-layer analysis of a specific function. Use when debugging or deeply understanding code.
 ---
 
 # TLDR Deep Analysis

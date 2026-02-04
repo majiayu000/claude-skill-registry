@@ -1,9 +1,7 @@
 {
   "name": "python-code-quality",
-  "description": "Python code quality tooling with ruff and pyright. Use when setting up linting, formatting, type checking, configuring ruff or pyright, or establishing code quality standards.",
   "repo": "basher83/lunar-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/devops/python-tools/skills/python-code-quality/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:28.506203Z"
 }

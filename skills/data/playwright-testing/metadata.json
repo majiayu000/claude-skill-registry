@@ -1,7 +1,7 @@
 {
   "name": "playwright-testing",
-  "repo": "artofrawr/claude-control",
-  "path": "skills/playwright-testing/SKILL.md",
-  "source": "github.com/artofrawr/claude-control",
-  "downloaded_at": "2026-02-02T04:29:48.672822Z"
+  "repo": "fcakyon/claude-codex-settings",
+  "path": "plugins/playwright-tools/skills/playwright-testing/SKILL.md",
+  "source": "github.com/fcakyon/claude-codex-settings",
+  "downloaded_at": "2026-02-04T04:41:56.378538Z"
 }

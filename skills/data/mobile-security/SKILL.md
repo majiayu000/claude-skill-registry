@@ -1,309 +1,60 @@
 ---
-name: mobile-security
-description: Guide for mobile game security on Android and iOS platforms. Use this skill when working with Android/iOS reverse engineering, mobile game hacking, APK analysis, root/jailbreak detection bypass, or mobile anti-cheat systems.
+name: Mobile Security Testing Skill
+description: Android and iOS application security testing
+allowed-tools:
+  - Bash
+  - Read
+  - Write
+  - Edit
+  - Glob
+  - Grep
 ---
 
-# Mobile Game Security
+# Mobile Security Testing Skill
 
 ## Overview
 
-This skill covers mobile security resources from the awesome-game-security collection, focusing on Android and iOS game security research, reverse engineering, and protection bypass techniques.
+This skill provides Android and iOS application security testing capabilities using dynamic instrumentation and analysis tools.
 
-## Android Security
+## Capabilities
 
-### APK Analysis
+- Execute Frida scripts for hooking
+- Analyze APK/IPA files
+- Bypass SSL pinning
+- Extract app data and credentials
+- Perform dynamic instrumentation
+- Support Objection framework
+- Run MobSF analysis
+- Generate mobile security reports
 
-#### Tools
-- **apktool**: Decompile/recompile APKs
-- **jadx**: DEX to Java decompiler
-- **APKiD**: Identify packers/protectors
-- **Frida**: Dynamic instrumentation
-- **APKLab**: VS Code integration
+## Target Processes
 
-#### Workflow
-```bash
-# Decompile APK
-apktool d game.apk
+- mobile-app-security-research.js
+- bug-bounty-workflow.js
+- red-team-operations.js
 
-# Analyze DEX files
-jadx -d output game.apk
+## Dependencies
 
-# Identify protection
-apkid game.apk
-```
+- Frida (frida-tools)
+- Objection framework
+- MobSF (Mobile Security Framework)
+- adb (Android Debug Bridge)
+- idevice tools (iOS)
+- apktool, jadx (Android)
 
-### Native Library Analysis
+## Usage Context
 
-#### IL2CPP Games (Unity)
-```
-1. Extract libil2cpp.so from APK
-2. Use IL2CPP Dumper to generate headers
-3. Analyze with IDA/Ghidra
-4. Hook using Frida or native hooks
-```
+This skill is essential for:
+- Mobile application penetration testing
+- App store security assessment
+- Mobile malware analysis
+- API security testing from mobile apps
+- SSL/TLS inspection
 
-#### Native Games
-```
-1. Identify target libraries (.so files)
-2. Analyze with reverse engineering tools
-3. Pattern scan for functions
-4. Apply hooks/patches
-```
+## Integration Notes
 
-### Memory Manipulation
-
-#### Tools
-- **GameGuardian**: Memory editor
-- **Cheat Engine (ceserver)**: Remote debugging
-- **Custom memory tools**: Direct /proc/pid/mem access
-
-#### Access Methods
-```c
-// Via /proc filesystem
-int fd = open("/proc/pid/mem", O_RDWR);
-pread64(fd, buffer, size, address);
-pwrite64(fd, buffer, size, address);
-```
-
-### Hooking Frameworks
-
-#### Frida
-```javascript
-// Basic function hook
-Interceptor.attach(Module.findExportByName("libgame.so", "function_name"), {
-    onEnter: function(args) {
-        console.log("Called with: " + args[0]);
-    },
-    onLeave: function(retval) {
-        retval.replace(0);
-    }
-});
-```
-
-#### Native Hooks
-- **Substrate**: Inline hooking framework
-- **And64InlineHook**: ARM64 inline hooks
-- **xHook**: PLT hook library
-- **Dobby**: Multi-platform hook framework
-
-### Root Detection Bypass
-
-#### Common Checks
-```
-- /system/bin/su existence
-- /system/xbin/su existence  
-- Build.TAGS contains "test-keys"
-- ro.build.selinux property
-- Magisk files/folders
-- Package manager checks
-```
-
-#### Bypass Methods
-- **Magisk Hide**: Built-in root hiding
-- **LSPosed/EdXposed**: Xposed framework hooks
-- **Frida scripts**: Hook detection functions
-- **APK patching**: Remove detection code
-
-### Zygisk Modules
-
-```cpp
-// Zygisk module structure
-class Module : public zygisk::ModuleBase {
-    void onLoad(zygisk::Api *api, JNIEnv *env) override {
-        this->api = api;
-        this->env = env;
-    }
-    
-    void preAppSpecialize(zygisk::AppSpecializeArgs *args) override {
-        // Before app loads
-    }
-    
-    void postAppSpecialize(const zygisk::AppSpecializeArgs *args) override {
-        // After app loads - inject here
-    }
-};
-```
-
-### Android Protections
-
-#### Common Protectors
-- **Tencent ACE**: Chinese market protection
-- **AppSealing**: Commercial protection
-- **DexGuard/ProGuard**: Obfuscation
-- **Arxan**: Enterprise protection
-
-## iOS Security
-
-### Analysis Tools
-- **Hopper**: Disassembler
-- **IDA Pro**: Industry standard
-- **class-dump**: Objective-C header extraction
-- **Frida**: Dynamic instrumentation
-- **Clutch/dumpdecrypted**: App decryption
-
-### Jailbreak Tools
-- **H5GG**: iOS cheat engine
-- **Flex**: Runtime patching
-- **Cycript**: Runtime manipulation
-- **ceserver-ios**: Cheat Engine for iOS
-
-### Hooking (Jailbroken)
-```objc
-// Using Logos (Theos)
-%hook TargetClass
-- (int)targetMethod:(int)arg {
-    int result = %orig;
-    return result * 2;  // Modify return
-}
-%end
-```
-
-### Non-Jailbreak Techniques
-- **Sideloading**: Modified IPAs
-- **Enterprise certificates**: Custom signing
-- **AltStore**: Self-signing tool
-
-## Unity Mobile Games
-
-### IL2CPP Analysis
-```
-1. Locate libil2cpp.so (Android) or UnityFramework (iOS)
-2. Find global-metadata.dat
-3. Run IL2CPPDumper
-4. Generate SDK/headers
-5. Hook target functions
-```
-
-### Mono Analysis
-```
-1. Extract managed DLLs
-2. Decompile with dnSpy/ILSpy
-3. Modify and repackage
-4. Or hook at runtime
-```
-
-### Common Targets
-```
-- Currency/coins values
-- Player stats (health, damage)
-- Inventory manipulation
-- Premium unlocks
-- Ad removal
-```
-
-## Unreal Mobile Games
-
-### Analysis Approach
-```
-1. Identify UE version
-2. Dump SDK using appropriate tool
-3. Locate GObjects, GNames
-4. Find target functionality
-5. Apply memory patches or hooks
-```
-
-## Overlay Rendering (Android)
-
-### Surface-Based
-```cpp
-// Native surface overlay
-ANativeWindow* window = ANativeWindow_fromSurface(env, surface);
-// Render using OpenGL ES or Vulkan
-```
-
-### ImGui Integration
-- Zygisk + ImGui modules
-- Surface hijacking
-- Direct framebuffer access
-
-## Network Analysis
-
-### Tools
-- **mitmproxy**: MITM proxy
-- **Charles Proxy**: Traffic analysis
-- **Frida SSL bypass**: Certificate pinning bypass
-
-### Certificate Pinning Bypass
-```javascript
-// Frida universal SSL bypass
-Java.perform(function() {
-    var TrustManager = Java.registerClass({
-        implements: [X509TrustManager],
-        methods: {
-            checkClientTrusted: function() {},
-            checkServerTrusted: function() {},
-            getAcceptedIssuers: function() { return []; }
-        }
-    });
-    // Install custom TrustManager
-});
-```
-
-## Anti-Cheat on Mobile
-
-### Common Systems
-- **Tencent ACE**: Chinese games
-- **NetEase Protection**: NetEase games
-- **Custom solutions**: Per-game implementations
-
-### Detection Methods
-```
-- Root/jailbreak detection
-- Frida detection
-- Emulator detection
-- Integrity checks
-- Debugger detection
-- Hook detection
-```
-
-### Bypass Strategies
-```
-1. Static analysis of detection code
-2. Hook detection functions
-3. Hide injection footprint
-4. Timing attack consideration
-5. Clean environment emulation
-```
-
-## Emulator Considerations
-
-### Android Emulators
-- **LDPlayer**: Gaming focused
-- **BlueStacks**: Popular emulator
-- **NoxPlayer**: Game optimization
-- **MEmu**: Android gaming
-
-### Emulator Detection
-```
-- Build.FINGERPRINT checks
-- Hardware sensor verification
-- File system characteristics
-- Performance timing
-```
-
-## Resource Organization
-
-The README contains:
-- Android hooking frameworks
-- iOS jailbreak tools
-- Memory manipulation utilities
-- Root/jailbreak bypass tools
-- Mobile anti-cheat research
-- Emulator resources
-
----
-
-## Data Source
-
-**Important**: This skill provides conceptual guidance and overview information. For detailed information including:
-- Specific GitHub repository links
-- Complete project lists with descriptions
-- Up-to-date tools and resources
-- Code examples and implementations
-
-**Please fetch the complete data from the main repository:**
-```
-https://raw.githubusercontent.com/gmh5225/awesome-game-security/refs/heads/main/README.md
-```
-
-The main README contains thousands of curated links organized by category. When users ask for specific tools, projects, or implementations, retrieve and reference the appropriate sections from this source.
+- Supports both rooted and non-rooted testing
+- Can automate common bypass techniques
+- Integrates with CI/CD for mobile security
+- Supports emulator and real device testing
+- Can extract and analyze app binaries

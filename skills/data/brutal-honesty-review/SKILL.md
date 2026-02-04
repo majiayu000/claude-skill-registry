@@ -11,6 +11,11 @@ last_optimized: 2025-12-03
 dependencies: []
 quick_reference_card: true
 tags: [code-review, honesty, critical-thinking, technical-criticism, quality]
+trust_tier: 2
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+
 ---
 
 # Brutal Honesty Review

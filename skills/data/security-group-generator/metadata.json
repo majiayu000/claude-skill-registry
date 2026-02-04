@@ -1,9 +1,7 @@
 {
   "name": "security-group-generator",
-  "description": "Security Group Generator - Auto-activating skill for AWS Skills.Triggers on: security group generator, security group generatorPart of the AWS Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/skills/13-aws-skills/security-group-generator/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:30.937282Z"
 }

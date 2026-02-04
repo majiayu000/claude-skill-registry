@@ -59,7 +59,7 @@ To visualize and manage the feature dependency graph, use the CLI:
 
 ```bash
 mx graph render            # Terminal visualization
-mx graph push --store dev  # Push graph to store
+mx push --store dev        # Push graph to store
 ```
 
 ## CLI

@@ -38,7 +38,14 @@ description: L3 Worker. Reviews task implementation for quality, code standards,
    - Naming: consistent conventions; descriptive names; no single-letter variables (except loops).
    - Docs updated where required.
    - Tests updated/run: for impl/refactor ensure affected tests adjusted; for test tasks verify risk-based limits and priority (≤15) per planner template.
-4) **Side-Effect Bug Detection (MANDATORY):**
+4) **AC Validation (MANDATORY for implementation tasks):**
+   Load parent Story AC and verify implementation against 4 criteria (see `references/ac_validation_checklist.md`):
+   - **AC Completeness:** All AC scenarios covered (happy path + errors + edge cases).
+   - **AC Specificity:** Exact requirements met (HTTP codes 200/401/403, timing <200ms, exact messages).
+   - **Task Dependencies:** Task N uses ONLY Tasks 1 to N-1 (no forward dependencies on N+1, N+2).
+   - **Database Creation:** Task creates ONLY tables in Story scope (no big-bang schema).
+   If ANY criterion fails → To Rework with specific guidance from checklist.
+5) **Side-Effect Bug Detection (MANDATORY):**
    While reviewing affected code, actively scan for bugs/issues NOT related to current task:
    - Pre-existing bugs in touched files
    - Broken patterns in adjacent code
@@ -54,11 +61,11 @@ description: L3 Worker. Reviews task implementation for quality, code standards,
    - Priority: based on severity (security=1 Urgent, logic=2 High, style=4 Low)
    - **Do NOT defer** — create task immediately, reviewer catches what executor missed
 
-5) **Decision (for current task only):**
+6) **Decision (for current task only):**
    - If only nits: apply minor fixes and set Done.
    - If issues remain: set To Rework with comment explaining why (best-practice ref) and how to fix.
    - Side-effect bugs do NOT block current task's Done status (they are separate tasks).
-6) **Update:** Set task status in Linear; update kanban: if Done → **remove task from kanban** (Done section tracks Stories only, not individual Tasks); if To Rework → move task to To Rework section; add review comment with findings/actions. If side-effect bugs created, mention them in comment.
+7) **Update:** Set task status in Linear; update kanban: if Done → **remove task from kanban** (Done section tracks Stories only, not individual Tasks); if To Rework → move task to To Rework section; add review comment with findings/actions. If side-effect bugs created, mention them in comment.
 
 ## Critical Rules
 - One task reviewed at a time; side-effect bugs become separate tasks.
@@ -79,8 +86,9 @@ description: L3 Worker. Reviews task implementation for quality, code standards,
 - Linear status updated; kanban updated (if Done → task removed from kanban; if To Rework → task moved to To Rework section); review comment posted (including list of any side-effect bug tasks created).
 
 ## Reference Files
+- AC Validation Checklist: `references/ac_validation_checklist.md` (criteria #4, #9, #17, #19 from ln-310)
 - Kanban format: `docs/tasks/kanban_board.md`
 
 ---
-**Version:** 3.0.0
-**Last Updated:** 2025-12-23
+**Version:** 4.0.0 (BREAKING: Added AC Validation step 4 with 4 criteria from ln-310 - AC completeness/specificity, Task dependencies, Database Creation Principle. Closes validation-execution gap per BMAD Method best practices.)
+**Last Updated:** 2026-02-03

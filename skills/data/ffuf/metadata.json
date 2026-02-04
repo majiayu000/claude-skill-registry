@@ -1,7 +1,9 @@
 {
   "name": "ffuf",
-  "repo": "rafaelcalleja/claude-market-place",
-  "path": "plugins/personal-ai-infrastructure/skills/ffuf/SKILL.md",
-  "source": "github.com/rafaelcalleja/claude-market-place",
-  "downloaded_at": "2026-01-27T01:01:24.106825Z"
+  "description": "Expert guidance for ffuf web fuzzing during penetration testing, including authenticated fuzzing with raw requests, auto-calibration, and result analysis",
+  "repo": "blackpwnguin/Personal-AI",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/blackpwnguin/Personal-AI"
 }

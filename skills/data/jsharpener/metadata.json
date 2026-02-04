@@ -1,9 +1,9 @@
 {
   "name": "jsharpener",
   "description": "JavaScript/TypeScript static analysis tool for call graphs, unused code detection (tree shaking), dependency analysis, and circular dependency detection",
-  "repo": "lawless-m/claude-skills",
-  "category": "development",
+  "repo": "lawless-m/Earwig",
+  "category": "data",
   "tags": [],
   "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "source": "github.com/lawless-m/Earwig"
 }

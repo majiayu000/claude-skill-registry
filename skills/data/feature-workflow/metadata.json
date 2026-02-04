@@ -1,12 +1,7 @@
 {
   "name": "feature-workflow",
-  "description": "Orchestrate complete or partial feature implementation workflow with configurable phases. This skill should be used to run the full workflow (specification → research → plan → implement → test → fix) ",
-  "repo": "LaizyIO/WorkflowSkills",
-  "category": "testing",
-  "tags": [
-    "feature",
-    "workflow"
-  ],
-  "stars": 0,
-  "source": "local"
+  "repo": "khw1031/ai-library",
+  "path": "skills/feature-workflow/SKILL.md",
+  "source": "github.com/khw1031/ai-library",
+  "downloaded_at": "2026-02-04T02:46:50.753319Z"
 }

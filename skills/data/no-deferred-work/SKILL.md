@@ -1,8 +1,6 @@
 ---
 name: no-deferred-work
 description: Use during all development - no TODOs, no FIXMEs, no "we'll add this later"; do it now or get explicit deferral permission
-allowed-tools: []
-model: opus
 ---
 
 # No Deferred Work

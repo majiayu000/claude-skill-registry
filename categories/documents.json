@@ -1,7 +1,7 @@
 {
   "category": "documents",
-  "count": 2729,
-  "updated_at": "2026-02-02T05:16:13.279856Z",
+  "count": 2721,
+  "updated_at": "2026-02-04T05:27:36.752838Z",
   "skills": [
     {
       "name": "docs-review",
@@ -3801,21 +3801,6 @@
       "source": "SkillsMP Synced Skills"
     },
     {
-      "name": "architecture-expert",
-      "description": "アーキテクチャ設計（境界/依存/データフロー/非機能/運用）を、制約とトレードオフで言語化し、ADR-liteで合意形成しながら段階的に形にする。doc/rdd.md にアーキテクチャ/非機能/運用の要求がある、または設計判断（分割/責務/インタフェース/データ整合/観測性/スケール）相談で使う。",
-      "repo": "mae616/ai-template",
-      "path": "data/architecture-expert",
-      "branch": "main",
-      "category": "documents",
-      "tags": [
-        "architecture",
-        "expert"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
       "name": "browserless",
       "description": "Headless browser as a service for screenshots, PDFs, scraping, and automation",
       "repo": "vm0-ai/vm0-skills",
@@ -6809,21 +6794,6 @@
       ],
       "stars": 2,
       "install": "robertbagge/claude-starter/.claude/skills/markdown-writer",
-      "source": "local"
-    },
-    {
-      "name": "markdown-writer",
-      "description": "Write markdown content to file paths using the MCP markdown-writer server. Use when you need to save generated markdown content to a file, especially in contexts where (1) The Write tool is unavailabl",
-      "repo": "robertbagge/claude-starter",
-      "path": "data/markdown-writer",
-      "branch": "main",
-      "category": "documents",
-      "tags": [
-        "markdown",
-        "writer"
-      ],
-      "stars": 2,
-      "install": "robertbagge/claude-starter",
       "source": "local"
     },
     {
@@ -17894,18 +17864,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "documents",
-      "description": "Generate PDF and Word documents programmatically. Use for invoices, reports, contracts, or data exports.",
-      "repo": "cerico/macfair",
-      "path": "data/documents",
-      "branch": "main",
-      "category": "documents",
-      "tags": [],
-      "stars": 0,
-      "install": "cerico/macfair",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "documents-docx",
       "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (",
       "repo": "malhashemi/dotfiles",
@@ -22277,20 +22235,6 @@
       ],
       "stars": 0,
       "install": "julwrites/agent-harness/.claude/skills/index",
-      "source": "local"
-    },
-    {
-      "name": "index",
-      "description": "Manage and query the documentation dependency index. Use this to identify which documents need to be updated when code changes.",
-      "repo": "julwrites/agent-harness",
-      "path": "data/index",
-      "branch": "main",
-      "category": "documents",
-      "tags": [
-        "index"
-      ],
-      "stars": 0,
-      "install": "julwrites/agent-harness",
       "source": "local"
     },
     {
@@ -28221,18 +28165,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "postmortem-writer",
-      "description": "Creates comprehensive post-incident documents with timeline, root cause analysis, contributing factors, action items, and ownership. Follows SRE best practices for blameless postmortems. Use for \"post",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/postmortem-writer",
-      "branch": "main",
-      "category": "documents",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "postmortem-writing",
       "description": "Document root cause analysis for team learning. Blameless, actionable, preventive.",
       "repo": "timequity/vibe-coder",
@@ -30365,18 +30297,6 @@
       "tags": [],
       "stars": 0,
       "install": "patricio0312rev/skillset/templates/architecture/rfc-generator",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "rfc-generator",
-      "description": "Generates Request for Comments documents for technical proposals including problem statement, solution design, alternatives, risks, and rollout plans. Use for \"RFC\", \"technical proposals\", \"design doc",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/rfc-generator",
-      "branch": "main",
-      "category": "documents",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -32598,18 +32518,6 @@
       "source": "SkillsMP + GitHub Raw"
     },
     {
-      "name": "svg",
-      "description": "Create precise, production-ready SVG graphics for technical and business contexts (diagrams, P&IDs, HMI/SCADA widgets, process flow visuals, PowerPoint/Office illustrations, UI icons, annotations). Us",
-      "repo": "tazomatalax/context-engineering",
-      "path": "data/svg",
-      "branch": "main",
-      "category": "documents",
-      "tags": [],
-      "stars": 0,
-      "install": "tazomatalax/context-engineering",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
       "name": "swagger",
       "description": "Configure Swagger/OpenAPI documentation for affolterNET.Web.Api. Use when setting up API documentation, customizing Swagger UI, or configuring OpenAPI metadata.",
       "repo": "Mcafee123/affolterNET.Web",
@@ -34651,18 +34559,6 @@
       "tags": [],
       "stars": 0,
       "install": "dobachi/AI_Instruction_Kits/templates/claude-skills/ja/verify-content",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "verify-content",
-      "description": "Integrated skill for fact-checking and reference verification. Covers claim identification, source verification, and reference management. Use for document review, article proofreading, report verific",
-      "repo": "dobachi/AI_Instruction_Kits",
-      "path": "data/verify-content",
-      "branch": "main",
-      "category": "documents",
-      "tags": [],
-      "stars": 0,
-      "install": "dobachi/AI_Instruction_Kits",
       "source": "SkillsMP + GitHub Raw"
     },
     {

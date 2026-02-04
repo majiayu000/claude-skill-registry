@@ -1,7 +1,7 @@
 {
   "name": "project-manager",
-  "repo": "nahisaho/CodeGraphMCPServer",
-  "path": ".claude/skills/project-manager/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:06.176549Z"
+  "repo": "nahisaho/MUSUBI",
+  "path": "src/templates/agents/claude-code/skills/project-manager/SKILL.md",
+  "source": "github.com/nahisaho/MUSUBI",
+  "downloaded_at": "2026-02-04T04:06:12.319961Z"
 }

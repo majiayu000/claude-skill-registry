@@ -1,41 +1,28 @@
 ---
 name: web-automation
-description: Web automation and scraping using Playwright, Puppeteer, Selenium, Scrapy, and n8n workflows. Create browser automation scripts, web scrapers, and workflow automations. Use when automating browser interactions, scraping websites, building crawlers, or creating no-code automations.
+description: Web automation and scraping using Playwright, Puppeteer, Selenium, Scrapy, and n8n workflows. Create browser automation scripts, web scrapers, and workflow automations. Use when automating browser interactions, scraping websites, building crawlers, or creating no-code automations. Triggers on web scraping, browser automation, selenium, puppeteer, scrapy, crawler, n8n workflow.
 ---
 
 # Web Automation
 
-Comprehensive web automation skill covering browser automation, web scraping, and workflow automation tools.
-
-## Sub-Skills Reference
-
-This skill encompasses multiple specialized tools:
-
-| Tool            | Purpose               | Best For                    |
-| --------------- | --------------------- | --------------------------- |
-| **Playwright**  | Browser automation    | E2E testing, scraping SPA   |
-| **Puppeteer**   | Chrome automation     | PDF generation, screenshots |
-| **Selenium**    | Cross-browser testing | Legacy browser support      |
-| **Scrapy**      | Python web scraping   | Large-scale crawling        |
-| **Browserless** | Headless browser API  | Serverless automation       |
-| **n8n**         | Workflow automation   | No-code integrations        |
+Comprehensive web automation covering browser automation, web scraping, and workflow automation tools.
 
 ## Quick Decision Guide
 
 ```
 Need browser automation?
-├── Modern testing/scraping → Playwright (recommended)
-├── Chrome-only, PDF/screenshots → Puppeteer
-├── Legacy/cross-browser → Selenium
-└── Serverless/API-based → Browserless
++-- Modern testing/scraping --> Playwright (recommended)
++-- Chrome-only, PDF/screenshots --> Puppeteer
++-- Legacy/cross-browser --> Selenium
++-- Serverless/API-based --> Browserless
 
 Need data scraping?
-├── Large-scale crawling → Scrapy
-├── Dynamic content (JS) → Playwright
-└── Simple HTML → BeautifulSoup
++-- Large-scale crawling --> Scrapy
++-- Dynamic content (JS) --> Playwright
++-- Simple HTML --> BeautifulSoup
 
 Need workflow automation?
-└── Visual workflows → n8n
++-- Visual workflows --> n8n
 ```
 
 ## Playwright (Recommended)
@@ -59,14 +46,11 @@ async function scrape() {
   const page = await browser.newPage();
 
   await page.goto("https://example.com");
-
-  // Wait for content
   await page.waitForSelector(".content");
 
-  // Extract data
   const title = await page.textContent("h1");
   const links = await page.$$eval("a", (els) =>
-    els.map((el) => ({ text: el.textContent, href: el.href })),
+    els.map((el) => ({ text: el.textContent, href: el.href }))
   );
 
   await browser.close();
@@ -168,7 +152,7 @@ const userAgents = [
 ];
 
 await page.setUserAgent(
-  userAgents[Math.floor(Math.random() * userAgents.length)],
+  userAgents[Math.floor(Math.random() * userAgents.length)]
 );
 ```
 
@@ -202,8 +186,12 @@ try {
 - Creating workflow automations
 - Monitoring website changes
 
-## Related Skills
+## Tool Comparison
 
-- [playwright-mcp](../playwright-mcp/SKILL.md) - MCP integration for Playwright
-- [browserless](./browserless/SKILL.md) - Headless browser API
-- [puppeteer](./puppeteer/SKILL.md) - Chrome automation details
+| Tool | Strengths | Best For |
+|------|-----------|----------|
+| Playwright | Cross-browser, modern API | E2E testing, SPA scraping |
+| Puppeteer | Chrome-focused, mature | PDF generation, screenshots |
+| Selenium | Wide browser support | Legacy systems, cross-browser |
+| Scrapy | High performance, Python | Large-scale crawling |
+| Browserless | Serverless, scalable | Cloud automation |

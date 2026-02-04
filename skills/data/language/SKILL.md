@@ -1,52 +1,64 @@
 ---
-name: Dart Language Patterns
-description: Modern Dart standards (3.x+) including null safety and patterns.
+name: JavaScript Language Patterns
+description: Modern JavaScript (ES2022+) patterns for clean, maintainable code.
 metadata:
-  labels: [dart, language, idioms]
+  labels: [javascript, language, es6, modern-js]
   triggers:
-    files: ['**/*.dart']
-    keywords: [sealed, record, switch, pattern, extension, final, late, async, await]
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs']
+    keywords:
+      [const, let, arrow, async, await, promise, destructuring, spread, class]
 ---
 
-# Dart Language Patterns
+# JavaScript Language Patterns
 
 ## **Priority: P0 (CRITICAL)**
 
-Modern Dart standards for safety, performance, and readability.
-
 ## Implementation Guidelines
 
-- **Null Safety**: Avoid `!`. Use `?.`, `??`, or short-circuiting. Use `late` only if necessary.
-- **Immutability**: Use `final` for all variables. Use `@freezed` for data classes.
-- **Pattern Matching (3.x)**: Use `switch (value)` with patterns and destructuring.
-- **Records**: Use Records (e.g., `(String, int)`) for returning multiple values.
-- **Sealed Classes**: Use `sealed class` for exhaustive state handling in domain logic.
-- **Extensions**: Use `extension` to add utility methods to third-party types.
-- **Wildcards (3.7+)**: Use `_` for unused variables in declarations and patterns.
-- **Tear-offs**: Prefer using tear-offs (e.g., `list.forEach(print)`) over anonymous lambdas (e.g., `list.forEach((e) => print(e))`).
-- **Asynchrony**: Prefer `async/await` over raw `Future.then`. Use `unawaited` for fire-and-forget logic if necessary.
-- **Collections**: Use `collection-if`, `collection-for`, and spread operators `...`.
+- **Variables**: `const` default. `let` if needed. No `var`.
+- **Functions**: Arrows for callbacks. Declarations for top-level.
+- **Async**: `async/await` + `try/catch`.
+- **Objects**: Destructuring, Spread `...`, Optional Chain `?.`, Nullish `??`.
+- **Strings**: Template literals `${}`.
+- **Arrays**: `map`, `filter`, `reduce`. No loops.
+- **Modules**: ESM `import`/`export`. Export only what is necessary.
+- **Classes**: Use `#private` fields for true privacy.
 
 ## Anti-Patterns
 
-- **No ! Operator**: Do not use the bang operator `!` unless you can prove the value is non-null via `if` or `assert`.
-- **No var for members**: Do not use `var` for class members; use `final` or explicit types.
-- **No logic in constructors**: Do not perform complex calculations or async work inside constructors.
+- **No `var`**: Block scope only.
+- **No `==`**: Strict `===`.
+- **No `new Object()`**: Use literals `{}`.
+- **No Callbacks**: Promisify everything.
+- **No Mutation**: Immutability first.
 
 ## Code
 
-```dart
-// Sealed class and Switch expression
-sealed class Result {}
-class Success extends Result { final String data; Success(this.data); }
-class Failure extends Result {}
+```javascript
+// Modern Syntax
+const [x, ...rest] = items;
+const name = user?.profile?.name ?? 'Guest';
 
-String message(Result r) => switch (r) {
-  Success(data: var d) => "Got $d",
-  Failure() => "Error",
-};
+// Async + Error Handling
+async function getUser(id) {
+  const res = await fetch(`/api/${id}`);
+  return res.json(); // Errors propagate
+}
+
+// Private Fields
+class Service {
+  #key;
+  constructor(k) {
+    this.#key = k;
+  }
+}
 ```
+
+## Reference & Examples
+
+For advanced patterns and functional programming:
+See [references/REFERENCE.md](references/REFERENCE.md).
 
 ## Related Topics
 
-feature-based-clean-architecture | tooling
+best-practices | tooling

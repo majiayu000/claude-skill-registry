@@ -1,531 +1,759 @@
 ---
 name: frontend-component
-description: Create React/Vue component with TypeScript, tests, and styles. Auto-invoke when user says "create component", "add component", "new component", or "build component".
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash
-version: 1.0.0
+description: Generate React components for IntelliFill following patterns (forwardRef, CVA variants, Radix UI, TailwindCSS). Use when creating UI components, forms, or pages.
 ---
 
-# Frontend Component Generator
+# Frontend Component Development Skill
 
-Generate production-ready React/Vue components with TypeScript, tests, and styles following modern best practices.
+This skill provides comprehensive guidance for creating React components in the IntelliFill frontend (`quikadmin-web/`).
 
-## When to Invoke
+## Table of Contents
 
-Auto-invoke when user mentions:
-- "Create a component"
-- "Add a component"
-- "New component"
-- "Build a component"
-- "Generate component for [feature]"
+1. [Component Architecture](#component-architecture)
+2. [UI Component Pattern](#ui-component-pattern)
+3. [CVA Variants](#cva-variants)
+4. [Form Components](#form-components)
+5. [Page Components](#page-components)
+6. [Radix UI Integration](#radix-ui-integration)
+7. [Styling with TailwindCSS](#styling-with-tailwindcss)
+8. [Testing Components](#testing-components)
 
-## What This Does
+## Component Architecture
 
-1. Generates component file with TypeScript and props interface
-2. Creates test file with React Testing Library
-3. Generates CSS module for styling
-4. Creates barrel export (index.ts)
-5. Validates naming conventions
-6. Follows project patterns
+IntelliFill follows a clear component organization:
 
-## Execution Steps
-
-### Step 1: Gather Component Requirements
-
-**Ask user for component details**:
 ```
-Component name: [PascalCase name, e.g., UserProfile]
-Component type:
-  - simple (basic functional component)
-  - with-hooks (useState, useEffect, etc.)
-  - container (data fetching component)
-
-Styling approach:
-  - css-modules (default)
-  - styled-components
-  - tailwind
-
-Props needed: [Optional: describe expected props]
-```
-
-**Validate component name**:
-- Use predefined function: `functions/name_validator.py`
-- Ensure PascalCase format
-- No reserved words
-- Descriptive and specific
-
-### Step 1.5: Confirm Component Design (ToM Checkpoint) [EXECUTE]
-
-**IMPORTANT**: This step MUST be executed for complex components.
-
-**Before generating files, confirm interpretation with user**.
-
-**Display verification**:
-```
-I understood you want:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Component: {NAME}
-Type: {TYPE} (inferred because: {REASON})
-Location: src/components/{NAME}/
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Detected patterns from your codebase:
-- Styling: {CSS_APPROACH} (found {EVIDENCE})
-- Testing: {TEST_LIBRARY} (found in package.json)
-- Similar component: {EXISTING_COMPONENT} at {PATH}
-
-Props I'll generate:
-{PROPS_PREVIEW}
-
-Proceed with generation? [Y/n]
+quikadmin-web/src/
+├── components/
+│   ├── ui/                    # Base UI components (shadcn-style)
+│   │   ├── button.tsx
+│   │   ├── input.tsx
+│   │   ├── dialog.tsx
+│   │   └── ...
+│   ├── forms/                 # Form-specific components
+│   │   ├── LoginForm.tsx
+│   │   ├── RegistrationForm.tsx
+│   │   └── ...
+│   ├── layout/                # Layout components
+│   │   ├── Header.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── ...
+│   └── [domain]/              # Feature-specific components
+│       ├── DocumentCard.tsx
+│       ├── TemplateList.tsx
+│       └── ...
+└── pages/                     # Page-level components
+    ├── Dashboard.tsx
+    ├── Documents.tsx
+    └── ...
 ```
 
-**Skip verification if** (HIGH-STAKES ONLY mode):
-- Simple presentational component (no hooks, no data fetching)
-- User explicitly said "quick", "just do it", or "skip confirmation"
-- Component name and type are unambiguous
-- No complex props structure
+## UI Component Pattern
 
-**Always verify if**:
-- Container component with data fetching
-- Complex props interface (5+ props)
-- Hooks component with side effects
-- Component name similar to existing component
-- User is new to codebase (no profile history)
+IntelliFill uses the shadcn/ui pattern for base components.
 
-### Step 2: Generate Props Interface
+### Base Component Template
 
-**Based on component type and requirements**:
+```tsx
+// quikadmin-web/src/components/ui/button.tsx
+import * as React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
 
-Use predefined function: `functions/props_interface_generator.py`
+const buttonVariants = cva(
+  'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  {
+    variants: {
+      variant: {
+        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
+        destructive:
+          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+        outline:
+          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        secondary:
+          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
+        link: 'text-primary underline-offset-4 hover:underline',
+      },
+      size: {
+        default: 'h-10 px-4 py-2',
+        sm: 'h-9 rounded-md px-3',
+        lg: 'h-11 rounded-md px-8',
+        icon: 'h-10 w-10',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  }
+);
 
-```python
-# Generates TypeScript interface based on component requirements
-python3 functions/props_interface_generator.py \
-  --name "UserProfile" \
-  --props "userId:string,onUpdate:function,isActive:boolean"
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button';
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  }
+);
+Button.displayName = 'Button';
+
+export { Button, buttonVariants };
 ```
 
-**Output**:
+### Input Component
+
+```tsx
+// quikadmin-web/src/components/ui/input.tsx
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: string;
+  label?: string;
+}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, error, label, id, ...props }, ref) => {
+    const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+
+    return (
+      <div className="flex flex-col gap-1">
+        {label && (
+          <label
+            htmlFor={inputId}
+            className="text-sm font-medium text-gray-700"
+          >
+            {label}
+          </label>
+        )}
+        <input
+          id={inputId}
+          type={type}
+          className={cn(
+            'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+            error && 'border-red-500 focus-visible:ring-red-500',
+            className
+          )}
+          ref={ref}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${inputId}-error` : undefined}
+          {...props}
+        />
+        {error && (
+          <p id={`${inputId}-error`} className="text-sm text-red-500">
+            {error}
+          </p>
+        )}
+      </div>
+    );
+  }
+);
+Input.displayName = 'Input';
+
+export { Input };
+```
+
+## CVA Variants
+
+IntelliFill uses class-variance-authority (CVA) for variant management.
+
+### CVA Pattern
+
+```tsx
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+
+const cardVariants = cva(
+  // Base styles (always applied)
+  'rounded-lg border bg-card text-card-foreground shadow-sm',
+  {
+    variants: {
+      // Variant definitions
+      variant: {
+        default: 'border-gray-200',
+        elevated: 'border-gray-300 shadow-md',
+        outlined: 'border-2 border-primary',
+      },
+      size: {
+        sm: 'p-4',
+        md: 'p-6',
+        lg: 'p-8',
+      },
+      interactive: {
+        true: 'cursor-pointer hover:shadow-lg transition-shadow',
+        false: '',
+      },
+    },
+    // Compound variants (combinations)
+    compoundVariants: [
+      {
+        variant: 'elevated',
+        interactive: true,
+        class: 'hover:shadow-xl',
+      },
+    ],
+    // Default values
+    defaultVariants: {
+      variant: 'default',
+      size: 'md',
+      interactive: false,
+    },
+  }
+);
+
+interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> {}
+
+export function Card({ className, variant, size, interactive, ...props }: CardProps) {
+  return (
+    <div
+      className={cn(cardVariants({ variant, size, interactive }), className)}
+      {...props}
+    />
+  );
+}
+```
+
+### Using CVA in Components
+
+```tsx
+// Document card with variants
+const documentCardVariants = cva(
+  'flex flex-col gap-4 rounded-lg border p-4',
+  {
+    variants: {
+      status: {
+        pending: 'border-yellow-500 bg-yellow-50',
+        processing: 'border-blue-500 bg-blue-50',
+        completed: 'border-green-500 bg-green-50',
+        failed: 'border-red-500 bg-red-50',
+      },
+      selected: {
+        true: 'ring-2 ring-primary ring-offset-2',
+        false: '',
+      },
+    },
+    defaultVariants: {
+      status: 'pending',
+      selected: false,
+    },
+  }
+);
+
+interface DocumentCardProps extends VariantProps<typeof documentCardVariants> {
+  document: Document;
+  onClick?: () => void;
+}
+
+export function DocumentCard({ document, status, selected, onClick }: DocumentCardProps) {
+  return (
+    <div
+      className={cn(documentCardVariants({ status, selected }))}
+      onClick={onClick}
+    >
+      <h3>{document.name}</h3>
+      <p>{document.description}</p>
+    </div>
+  );
+}
+```
+
+## Form Components
+
+IntelliFill forms use controlled components with validation.
+
+### Form Pattern with React Hook Form
+
+```tsx
+// quikadmin-web/src/components/forms/DocumentUploadForm.tsx
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useDocumentStore } from '@/stores/documentStore';
+import { toast } from 'sonner';
+
+const formSchema = z.object({
+  name: z.string().min(1, 'Name is required').max(255),
+  description: z.string().max(1000).optional(),
+  file: z.instanceof(File).refine((file) => file.size <= 10 * 1024 * 1024, {
+    message: 'File must be less than 10MB',
+  }),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
+export function DocumentUploadForm({ onSuccess }: { onSuccess?: () => void }) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const { uploadDocument } = useDocumentStore();
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      await uploadDocument({
+        name: data.name,
+        description: data.description,
+        file: data.file,
+      });
+
+      toast.success('Document uploaded successfully');
+      reset();
+      onSuccess?.();
+    } catch (error) {
+      toast.error('Failed to upload document');
+      console.error(error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <Input
+        label="Document Name"
+        {...register('name')}
+        error={errors.name?.message}
+        placeholder="Enter document name"
+      />
+
+      <Input
+        label="Description"
+        {...register('description')}
+        error={errors.description?.message}
+        placeholder="Optional description"
+      />
+
+      <div>
+        <label className="text-sm font-medium text-gray-700">File</label>
+        <input
+          type="file"
+          {...register('file')}
+          accept=".pdf,.png,.jpg,.jpeg"
+          className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+        />
+        {errors.file && (
+          <p className="mt-1 text-sm text-red-500">{errors.file.message}</p>
+        )}
+      </div>
+
+      <Button type="submit" disabled={isSubmitting} className="w-full">
+        {isSubmitting ? 'Uploading...' : 'Upload Document'}
+      </Button>
+    </form>
+  );
+}
+```
+
+### Form with Custom Validation
+
+```tsx
+import { useState } from 'react';
+
+export function LoginForm() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+
+    if (!formData.password) {
+      newErrors.password = 'Password is required';
+    } else if (formData.password.length < 8) {
+      newErrors.password = 'Password must be at least 8 characters';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    setIsLoading(true);
+    try {
+      // Your login logic
+      await login(formData);
+    } catch (error) {
+      setErrors({ submit: 'Login failed. Please try again.' });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <Input
+        label="Email"
+        type="email"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        error={errors.email}
+      />
+
+      <Input
+        label="Password"
+        type="password"
+        value={formData.password}
+        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+        error={errors.password}
+      />
+
+      {errors.submit && <p className="text-sm text-red-500">{errors.submit}</p>}
+
+      <Button type="submit" disabled={isLoading} className="w-full">
+        {isLoading ? 'Signing in...' : 'Sign In'}
+      </Button>
+    </form>
+  );
+}
+```
+
+## Page Components
+
+Page components are route-level components that compose smaller components.
+
+### Page Template
+
+```tsx
+// quikadmin-web/src/pages/Documents.tsx
+import { useEffect } from 'react';
+import { useDocumentStore } from '@/stores/documentStore';
+import { DocumentCard } from '@/components/documents/DocumentCard';
+import { DocumentUploadForm } from '@/components/forms/DocumentUploadForm';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Loader2 } from 'lucide-react';
+
+export function DocumentsPage() {
+  const { documents, loading, error, fetchDocuments } = useDocumentStore();
+  const [uploadOpen, setUploadOpen] = useState(false);
+
+  useEffect(() => {
+    fetchDocuments();
+  }, [fetchDocuments]);
+
+  if (loading) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <p className="text-red-500">{error}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="container mx-auto py-8">
+      {/* Header */}
+      <div className="mb-8 flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Documents</h1>
+        <Dialog open={uploadOpen} onOpenChange={setUploadOpen}>
+          <DialogTrigger asChild>
+            <Button>Upload Document</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DocumentUploadForm onSuccess={() => setUploadOpen(false)} />
+          </DialogContent>
+        </Dialog>
+      </div>
+
+      {/* Document Grid */}
+      {documents.length === 0 ? (
+        <div className="text-center py-12">
+          <p className="text-gray-500">No documents yet. Upload your first one!</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {documents.map((doc) => (
+            <DocumentCard key={doc.id} document={doc} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+## Radix UI Integration
+
+IntelliFill uses Radix UI primitives for accessible components.
+
+### Dialog Component
+
+```tsx
+// quikadmin-web/src/components/ui/dialog.tsx
+import * as React from 'react';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { X } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+const Dialog = DialogPrimitive.Root;
+const DialogTrigger = DialogPrimitive.Trigger;
+const DialogPortal = DialogPrimitive.Portal;
+
+const DialogOverlay = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Overlay
+    ref={ref}
+    className={cn(
+      'fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+      className
+    )}
+    {...props}
+  />
+));
+DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
+
+const DialogContent = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogPrimitive.Content
+      ref={ref}
+      className={cn(
+        'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg',
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+        <X className="h-4 w-4" />
+        <span className="sr-only">Close</span>
+      </DialogPrimitive.Close>
+    </DialogPrimitive.Content>
+  </DialogPortal>
+));
+DialogContent.displayName = DialogPrimitive.Content.displayName;
+
+export { Dialog, DialogTrigger, DialogContent };
+```
+
+### Dropdown Menu
+
+```tsx
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { MoreVertical } from 'lucide-react';
+
+export function DocumentActions({ document }) {
+  return (
+    <DropdownMenuPrimitive.Root>
+      <DropdownMenuPrimitive.Trigger asChild>
+        <button className="rounded p-2 hover:bg-gray-100">
+          <MoreVertical className="h-4 w-4" />
+        </button>
+      </DropdownMenuPrimitive.Trigger>
+
+      <DropdownMenuPrimitive.Portal>
+        <DropdownMenuPrimitive.Content
+          className="min-w-[220px] rounded-md border bg-white p-1 shadow-md"
+          sideOffset={5}
+        >
+          <DropdownMenuPrimitive.Item
+            className="cursor-pointer rounded px-3 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+            onSelect={() => handleEdit(document)}
+          >
+            Edit
+          </DropdownMenuPrimitive.Item>
+          <DropdownMenuPrimitive.Item
+            className="cursor-pointer rounded px-3 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+            onSelect={() => handleDownload(document)}
+          >
+            Download
+          </DropdownMenuPrimitive.Item>
+          <DropdownMenuPrimitive.Separator className="my-1 h-px bg-gray-200" />
+          <DropdownMenuPrimitive.Item
+            className="cursor-pointer rounded px-3 py-2 text-sm text-red-500 hover:bg-red-50 focus:bg-red-50 focus:outline-none"
+            onSelect={() => handleDelete(document)}
+          >
+            Delete
+          </DropdownMenuPrimitive.Item>
+        </DropdownMenuPrimitive.Content>
+      </DropdownMenuPrimitive.Portal>
+    </DropdownMenuPrimitive.Root>
+  );
+}
+```
+
+## Styling with TailwindCSS
+
+IntelliFill uses TailwindCSS 4.0 with custom design tokens.
+
+### Design Tokens
+
 ```typescript
-interface UserProfileProps {
-  userId: string;
-  onUpdate?: () => void;
-  isActive?: boolean;
-  children?: React.ReactNode;
-  className?: string;
-}
+// quikadmin-web/tailwind.config.js
+export default {
+  theme: {
+    extend: {
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+      },
+    },
+  },
+};
 ```
 
-### Step 3: Generate Component File
+### cn() Utility
 
-**Use appropriate template based on type**:
-
-**Simple component**:
-```
-Use template: templates/component-simple-template.tsx
-```
-
-**Component with hooks**:
-```
-Use template: templates/component-with-hooks-template.tsx
-```
-
-**Container component**:
-```
-Use template: templates/component-container-template.tsx
-```
-
-**Use predefined function**: `functions/component_generator.py`
-
-```bash
-python3 functions/component_generator.py \
-  --name "UserProfile" \
-  --type "simple" \
-  --props-interface "UserProfileProps" \
-  --template "templates/component-simple-template.tsx" \
-  --output "src/components/UserProfile/UserProfile.tsx"
-```
-
-**Template substitutions**:
-- `${COMPONENT_NAME}` → Component name (PascalCase)
-- `${PROPS_INTERFACE}` → Generated props interface
-- `${STYLE_IMPORT}` → CSS module import
-- `${DESCRIPTION}` → Brief component description
-
-### Step 4: Generate Test File
-
-**Use predefined function**: `functions/test_generator.py`
-
-```bash
-python3 functions/test_generator.py \
-  --component-name "UserProfile" \
-  --component-path "src/components/UserProfile/UserProfile.tsx" \
-  --template "templates/test-template.test.tsx" \
-  --output "src/components/UserProfile/UserProfile.test.tsx"
-```
-
-**Test template includes**:
-- Basic rendering test
-- Props validation test
-- Event handler tests (if applicable)
-- Accessibility tests
-
-**Template substitutions**:
-- `${COMPONENT_NAME}` → Component name
-- `${IMPORT_PATH}` → Relative import path
-- `${TEST_CASES}` → Generated test cases based on props
-
-### Step 5: Generate Style File
-
-**Use predefined function**: `functions/style_generator.py`
-
-```bash
-python3 functions/style_generator.py \
-  --name "UserProfile" \
-  --approach "css-modules" \
-  --template "templates/style-template.module.css" \
-  --output "src/components/UserProfile/UserProfile.module.css"
-```
-
-**CSS Modules template**:
-```css
-.container {
-  /* Component wrapper styles */
-}
-
-.title {
-  /* Title styles */
-}
-
-/* Add more classes as needed */
-```
-
-**Styled Components alternative**:
 ```typescript
-// Generated if --approach "styled-components"
-import styled from 'styled-components';
+// quikadmin-web/src/lib/utils.ts
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-export const Container = styled.div`
-  /* Component wrapper styles */
-`;
-
-export const Title = styled.h2`
-  /* Title styles */
-`;
-```
-
-### Step 6: Generate Barrel Export
-
-**Create index.ts for clean imports**:
-
-```bash
-Write(
-  file_path: "src/components/UserProfile/index.ts",
-  content: "export { UserProfile } from './UserProfile';\nexport type { UserProfileProps } from './UserProfile';\n"
-)
-```
-
-**Allows usage**:
-```typescript
-import { UserProfile } from '@/components/UserProfile';
-```
-
-### Step 7: Show Component Summary
-
-**Display generated files and usage**:
-
-```
-✅ Component Created: UserProfile
-
-Structure:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 src/components/UserProfile/
-   ├── UserProfile.tsx         (Component)
-   ├── UserProfile.test.tsx    (Tests)
-   ├── UserProfile.module.css  (Styles)
-   └── index.ts                (Exports)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Props Interface:
-interface UserProfileProps {
-  userId: string;
-  onUpdate?: () => void;
-  isActive?: boolean;
+/**
+ * Merge class names with Tailwind CSS conflict resolution
+ */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
-
-Usage:
-import { UserProfile } from '@/components/UserProfile';
-
-<UserProfile
-  userId="123"
-  onUpdate={() => console.log('Updated')}
-  isActive={true}
-/>
-
-Next Steps:
-1. Customize component implementation
-2. Run tests: npm test UserProfile
-3. Import and use in your feature
 ```
 
----
+### Responsive Patterns
 
-## Predefined Functions
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  {/* Mobile: 1 col, Tablet: 2 cols, Desktop: 3 cols */}
+</div>
 
-### 1. name_validator.py
+<div className="flex flex-col lg:flex-row gap-4">
+  {/* Mobile: vertical, Desktop: horizontal */}
+</div>
 
-Validates component naming conventions.
-
-**Usage**:
-```bash
-python3 functions/name_validator.py --name "UserProfile"
+<button className="w-full sm:w-auto">
+  {/* Full width on mobile, auto on larger screens */}
+</button>
 ```
 
-**Checks**:
-- PascalCase format
-- Not a reserved word (e.g., Component, Element, etc.)
-- Descriptive (length > 2 chars)
-- No special characters
+## Testing Components
 
-**Returns**: Valid name or error message
+### Vitest Component Test
 
----
+```tsx
+// quikadmin-web/src/components/__tests__/DocumentCard.test.tsx
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { DocumentCard } from '../documents/DocumentCard';
 
-### 2. props_interface_generator.py
+describe('DocumentCard', () => {
+  const mockDocument = {
+    id: '1',
+    name: 'Test Document',
+    description: 'Test description',
+    status: 'completed',
+  };
 
-Generates TypeScript props interface from user input.
+  it('renders document information', () => {
+    render(<DocumentCard document={mockDocument} />);
 
-**Usage**:
-```bash
-python3 functions/props_interface_generator.py \
-  --name "UserProfile" \
-  --props "userId:string,onUpdate:function,isActive:boolean"
+    expect(screen.getByText('Test Document')).toBeInTheDocument();
+    expect(screen.getByText('Test description')).toBeInTheDocument();
+  });
+
+  it('calls onClick when clicked', () => {
+    const onClick = vi.fn();
+    render(<DocumentCard document={mockDocument} onClick={onClick} />);
+
+    fireEvent.click(screen.getByText('Test Document'));
+    expect(onClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('applies correct status variant', () => {
+    const { container } = render(
+      <DocumentCard document={mockDocument} status="completed" />
+    );
+
+    const card = container.firstChild;
+    expect(card).toHaveClass('border-green-500');
+  });
+});
 ```
-
-**Supported types**:
-- `string`, `number`, `boolean`
-- `function` (becomes `() => void`)
-- `array` (becomes `any[]`)
-- `object` (becomes `Record<string, any>`)
-- `react-node` (becomes `React.ReactNode`)
-
-**Returns**: TypeScript interface string
-
----
-
-### 3. component_generator.py
-
-Generates component file from template with substitutions.
-
-**Usage**:
-```bash
-python3 functions/component_generator.py \
-  --name "UserProfile" \
-  --type "simple" \
-  --props-interface "UserProfileProps" \
-  --template "templates/component-simple-template.tsx" \
-  --output "src/components/UserProfile/UserProfile.tsx"
-```
-
-**Parameters**:
-- `--name`: Component name (PascalCase)
-- `--type`: Component type (simple/with-hooks/container)
-- `--props-interface`: Props interface name
-- `--template`: Template file path
-- `--output`: Output file path
-
-**Returns**: Generated component code
-
----
-
-### 4. test_generator.py
-
-Generates test file with React Testing Library.
-
-**Usage**:
-```bash
-python3 functions/test_generator.py \
-  --component-name "UserProfile" \
-  --component-path "src/components/UserProfile/UserProfile.tsx" \
-  --template "templates/test-template.test.tsx" \
-  --output "src/components/UserProfile/UserProfile.test.tsx"
-```
-
-**Generates tests for**:
-- Component rendering
-- Props validation
-- Event handlers
-- Accessibility attributes
-
-**Returns**: Generated test code
-
----
-
-### 5. style_generator.py
-
-Generates style file (CSS Modules or Styled Components).
-
-**Usage**:
-```bash
-python3 functions/style_generator.py \
-  --name "UserProfile" \
-  --approach "css-modules" \
-  --template "templates/style-template.module.css" \
-  --output "src/components/UserProfile/UserProfile.module.css"
-```
-
-**Supported approaches**:
-- `css-modules` (default)
-- `styled-components`
-- `tailwind` (generates className utilities)
-
-**Returns**: Generated style code
-
----
-
-## Templates
-
-### component-simple-template.tsx
-
-Basic functional component template.
-
-**Placeholders**:
-- `${COMPONENT_NAME}` - Component name
-- `${PROPS_INTERFACE}` - Props interface definition
-- `${STYLE_IMPORT}` - CSS import statement
-- `${DESCRIPTION}` - Component description
-
-### component-with-hooks-template.tsx
-
-Component template with useState, useEffect examples.
-
-**Additional placeholders**:
-- `${HOOKS}` - Hook declarations
-- `${HANDLERS}` - Event handler functions
-
-### component-container-template.tsx
-
-Container component template with data fetching.
-
-**Additional placeholders**:
-- `${API_IMPORT}` - API function import
-- `${DATA_TYPE}` - Data type definition
-- `${FETCH_LOGIC}` - Data fetching implementation
-
-### test-template.test.tsx
-
-React Testing Library test template.
-
-**Placeholders**:
-- `${COMPONENT_NAME}` - Component name
-- `${IMPORT_PATH}` - Import path
-- `${TEST_CASES}` - Generated test cases
-
-### style-template.module.css
-
-CSS Modules template.
-
-**Placeholders**:
-- `${COMPONENT_NAME_KEBAB}` - Component name in kebab-case
-- `${BASE_STYLES}` - Base container styles
-
----
-
-## Examples
-
-See `examples/` directory for reference implementations:
-
-1. **Button.tsx** - Simple component with variants
-2. **SearchBar.tsx** - Component with hooks (useState, useEffect)
-3. **UserProfile.tsx** - Container component with data fetching
-
-Each example includes:
-- Component implementation
-- Test file
-- Style file
-- Usage documentation
-
----
 
 ## Best Practices
 
-### Component Design
-- Keep components **small and focused** (single responsibility)
-- **Compose** complex UIs from simple components
-- **Lift state up** only when necessary
-- Use **descriptive names** (UserProfile, not UP)
+1. **Use forwardRef for UI components** - Enables ref forwarding and composition
+2. **Type all props** - Use TypeScript interfaces for all component props
+3. **Use CVA for variants** - Consistent variant management
+4. **Accessibility first** - Use Radix UI primitives and ARIA attributes
+5. **Responsive by default** - Design for mobile first
+6. **Use cn() utility** - Merge class names safely
+7. **Error boundaries** - Wrap components in error boundaries
+8. **Loading states** - Always show loading indicators
+9. **Empty states** - Handle empty data gracefully
+10. **Test interactivity** - Test user interactions and edge cases
 
-### TypeScript
-- **Define prop interfaces** explicitly
-- **Avoid `any`** type (use `unknown` if needed)
-- **Export types** for consumers
-- **Use strict mode**
+## References
 
-### Testing
-- **Test user behavior**, not implementation
-- **Query by role/text**, not test IDs
-- **Test accessible attributes**
-- **Mock external dependencies**
-
-### Styling
-- **CSS Modules** for scoped styles
-- **BEM or descriptive class names**
-- **Mobile-first** responsive design
-- **Use CSS custom properties** for theming
-
-### Accessibility
-- **Semantic HTML** (button, nav, main, etc.)
-- **ARIA labels** when needed
-- **Keyboard navigation** support
-- **Focus management** in modals/dropdowns
-
----
-
-## Troubleshooting
-
-### Component Not Rendering
-
-**Problem**: Generated component throws errors
-
-**Solutions**:
-1. Check TypeScript compilation errors
-2. Verify all imports are correct
-3. Check props interface matches usage
-4. Validate JSX syntax
-
-### Tests Failing
-
-**Problem**: Generated tests don't pass
-
-**Solutions**:
-1. Ensure React Testing Library is installed
-2. Check test queries match component output
-3. Verify mocks are set up correctly
-4. Run tests with `--verbose` flag
-
-### Styles Not Applying
-
-**Problem**: CSS modules not loading
-
-**Solutions**:
-1. Check CSS module import syntax
-2. Verify webpack/vite config supports CSS modules
-3. Check className is applied to element
-4. Inspect browser devtools for loaded styles
-
----
-
-## Success Criteria
-
-**This skill succeeds when**:
-- [ ] Component file generated with valid TypeScript
-- [ ] Test file created with passing tests
-- [ ] Style file generated with scoped styles
-- [ ] Barrel export allows clean imports
-- [ ] Props interface matches requirements
-- [ ] Code follows React best practices
-- [ ] Accessibility attributes included
-
----
-
-**Auto-invoke this skill when creating React components to ensure consistency and save time** ⚛️
+- [React Documentation](https://react.dev/)
+- [Radix UI](https://www.radix-ui.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [CVA Documentation](https://cva.style/docs)
+- [React Hook Form](https://react-hook-form.com/)
+- [Vitest](https://vitest.dev/)

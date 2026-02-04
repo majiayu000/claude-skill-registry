@@ -1,12 +1,6 @@
 ---
 name: conflict-resolution
 description: Use when encountering merge conflicts - handle conflicts cleanly, verify resolution, and maintain code integrity
-allowed-tools:
-  - Bash
-  - Read
-  - Edit
-  - mcp__git__*
-model: opus
 ---
 
 # Conflict Resolution

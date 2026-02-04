@@ -1,7 +1,7 @@
 {
   "name": "python-performance-optimization",
-  "repo": "GaoZimeng0425/nemo-cli",
-  "path": ".claude/skills/python-performance-optimization/SKILL.md",
-  "source": "github.com/GaoZimeng0425/nemo-cli",
-  "downloaded_at": "2026-02-02T03:50:34.522261Z"
+  "repo": "NickCrew/claude-cortex",
+  "path": "skills/python-performance-optimization/SKILL.md",
+  "source": "github.com/NickCrew/claude-cortex",
+  "downloaded_at": "2026-02-04T05:07:21.289656Z"
 }

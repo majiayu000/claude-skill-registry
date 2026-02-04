@@ -1,58 +1,345 @@
 ---
-name: spec
-description: Create or update flutter_real_estate/docs/SPECIFICATION.md for the Flutter Real Estate app, including functional/non-functional requirements, UI/UX, data model, and technical constraints for a real-estate management application.
+name: Spec
+description: Fase 2 - Specification Protocol. Le PRD.md, aplica S.D.A completo (mapeia TODAS dependencias), define mudancas cirurgicas linha por linha e gera Spec.md. Preserva logica existente, mudancas minimas focadas.
 ---
 
-# Specification Authoring (Flutter Real Estate)
+# FASE 2: SPECIFICATION (SURGICAL PLANNING)
 
-## Goal
-Write a clear, complete SPECIFICATION.md for a real-estate management app. Use Japanese. Replace outdated or unrelated content.
+## Objetivo
+Transformar PRD em especificacao tecnica precisa com mudancas cirurgicas linha por linha.
 
-## Workflow
-1. Open `flutter_real_estate/docs/SPECIFICATION.md`.
-2. Rewrite it to match a real-estate management app (not music/audio).
-3. Keep the section structure and tables, but adapt all content to real estate.
-4. Include concrete feature lists, data model entities, and platform/tech constraints.
-5. Update "作成日/最終更新/バージョン" with today’s date and a semantic version.
+---
 
-## Content Requirements (must include)
-### 1. 概要
-- アプリケーション名: Flutter Real Estate
-- 目的: 物件・建物・入居者・契約・支払い・メンテナンスを管理
-- 対象プラットフォーム: Android (API レベル範囲)
+## INPUT OBRIGATORIO
 
-### 2. 機能要件
-Use tables with `機能ID / 機能名 / 説明 / 優先度`.
-Include at minimum:
-- 不動産種別（例: マンション/戸建/オフィスなど）
-- 建物一覧・建物詳細
-- 物件（部屋/区画）一覧・詳細
-- 入居者管理（入居者情報、連絡先、入退去）
-- 契約管理（契約期間、賃料、更新、解約）
-- 支払い管理（請求、入金、滞納）
-- メンテナンス・修繕履歴
-- ドキュメント/写真の添付
+### Carregar PRD
+```bash
+# Localizar PRD gerado na Fase 1
+ls -la .claude/docs/PRD-*.md
 
-### 3. 非機能要件
-Performance, data persistence, security. Use realistic values for local DB usage.
+# Ler PRD completo
+cat .claude/docs/PRD-[nome-tarefa].md
+```
 
-### 4. UI/UX 要件
-画面構成（一覧/詳細/編集/検索/フィルタ）と主要画面要素。
+---
 
-### 5. データモデル
-Provide Dart model sketches for core entities:
-`PropertyType`, `Building`, `Unit`, `Tenant`, `LeaseContract`, `Payment`, `Maintenance`, `Attachment`.
+## PROTOCOLO S.D.A COMPLETO
 
-### 6. 技術仕様
-Flutter/Dart versions, state management, storage (SQLite), architecture patterns.
+### FASE 1: SOLICITACAO (Arquivos Originais)
 
-### 7. 制約事項
-Offline-first, Android-only (if applicable), local storage only, etc.
+#### 1.1 Solicitar Todos os Arquivos do PRD
+```bash
+# Para cada arquivo listado no PRD, solicitar COMPLETO
+# (Nunca trabalhar com snippets)
 
-### 8. 将来拡張予定
-例: クラウド同期、通知、CSV エクスポート、権限ロール。
+# Exemplo do PRD:
+# "Arquivos a modificar: controllers/extratoController.js"
 
-## Style
-- Keep headings and numbering.
-- Keep tables consistent.
-- Use concise bullet points.
+cat controllers/extratoController.js  # VER TUDO
+```
+
+#### 1.2 Analisar Linha por Linha
+- Identificar funcoes principais
+- Mapear variaveis usadas
+- Entender fluxo de dados
+- Detectar dependencias internas
+
+### FASE 2: MAPEAMENTO DE DEPENDENCIAS
+
+#### 2.1 Links Diretos (HTML)
+```bash
+grep -r "href=.*[nome-arquivo]" . --include="*.html"
+```
+
+#### 2.2 JavaScript Imports
+```bash
+grep -r "require.*[nome-arquivo]\|import.*[nome-arquivo]" . --include="*.js"
+```
+
+#### 2.3 IDs e Classes CSS
+```bash
+grep -r "#[id-elemento]" . --include="*.js" --include="*.css"
+grep -r "\.[classe]" . --include="*.js" --include="*.css"
+```
+
+#### 2.4 Formularios e Rotas
+```bash
+grep -r "fetch.*[endpoint]\|action=.*[endpoint]" public/
+```
+
+### FASE 3: VERIFICACAO CRUZADA
+
+#### 3.1 Solicitar Arquivos Dependentes
+```bash
+# Para cada dependencia encontrada, solicitar arquivo
+cat [arquivo-que-importa].js
+cat [arquivo-com-link].html
+```
+
+#### 3.2 Documentar Impactos
+- **Arquivo A** usa funcao X -> Precisa atualizar importacao
+- **Arquivo B** tem link para Y -> Precisa ajustar href
+
+### FASE 4: IMPLEMENTACAO SEGURA
+
+#### 4.1 Propor Alteracoes Minimas
+```javascript
+// ERRADO: Reescrever funcao inteira
+async function calcularSaldo() {
+  // ... 50 linhas de codigo novo
+}
+
+// CORRETO: Mudanca cirurgica
+async function calcularSaldo() {
+  // ... [codigo existente preservado]
+
+  // [LINHA 45] ADICIONAR:
+  const saldoAcertos = await calcularSaldoAcertos(participanteId);
+
+  // ... [restante do codigo preservado]
+  return saldoTotal + saldoAcertos; // [LINHA 78] MODIFICAR
+}
+```
+
+---
+
+## GERAR SPEC.MD
+
+### Estrutura Obrigatoria
+```markdown
+# SPEC - [Nome da Funcionalidade]
+
+**Data:** [data atual]
+**Baseado em:** PRD-[nome].md
+**Status:** Especificacao Tecnica
+
+---
+
+## Resumo da Implementacao
+[1 paragrafo: O que sera feito tecnicamente]
+
+---
+
+## Arquivos a Modificar (Ordem de Execucao)
+
+### 1. [Arquivo Principal] - Mudanca Primaria
+
+**Path:** `[caminho completo]`
+**Tipo:** Modificacao | Criacao | Delecao
+**Impacto:** Alto | Medio | Baixo
+**Dependentes:** [Arquivo X, Y, Z]
+
+#### Mudancas Cirurgicas:
+
+**Linha [num]: ADICIONAR**
+```javascript
+[codigo a adicionar]
+```
+**Motivo:** [Explicacao]
+
+**Linha [num]: MODIFICAR**
+```javascript
+// ANTES:
+[codigo antigo]
+
+// DEPOIS:
+[codigo novo]
+```
+**Motivo:** [Explicacao]
+
+---
+
+### 2. [Arquivo Dependente] - Ajuste de Integracao
+
+**Path:** `[caminho completo]`
+**Tipo:** Modificacao
+**Impacto:** Baixo
+
+#### Mudancas Cirurgicas:
+
+**Linha [num]: ATUALIZAR IMPORTACAO**
+```javascript
+// ANTES:
+import { funcaoAntiga } from './modulo';
+
+// DEPOIS:
+import { funcaoAntiga, funcaoNova } from './modulo';
+```
+
+---
+
+## Mapa de Dependencias
+
+```
+Arquivo Principal (controllers/extratoController.js)
+    |-> routes/extrato-routes.js [MODIFICAR linha 23]
+    |-> public/js/extrato/core.js [MODIFICAR linha 45]
+    |-> public/participante/fronts/extrato.html [ADICIONAR botao]
+```
+
+---
+
+## Validacoes de Seguranca
+
+### Multi-Tenant
+- [ ] Todas queries incluem `liga_id`
+- [ ] Verificado isolamento entre ligas
+
+**Queries Afetadas:**
+```javascript
+// [Arquivo] - Linha [num]
+Model.find({
+  liga_id: ligaId,  // VALIDADO
+  // ...
+});
+```
+
+### Autenticacao
+- [ ] Rotas protegidas com middleware
+- [ ] Verificacao de permissoes
+
+**Middlewares Aplicados:**
+```javascript
+router.post('/endpoint',
+  verificarAdmin,        // Protecao
+  validarLigaId,         // Multi-tenant
+  controller.acao
+);
+```
+
+---
+
+## Casos de Teste
+
+### Teste 1: [Cenario Positivo]
+**Setup:** [Condicao inicial]
+**Acao:** [Passo a passo]
+**Resultado Esperado:** [O que deve acontecer]
+
+### Teste 2: [Cenario Negativo]
+**Setup:** [Condicao inicial]
+**Acao:** [Passo a passo com erro]
+**Resultado Esperado:** [Tratamento de erro]
+
+---
+
+## Rollback Plan
+
+### Em Caso de Falha
+**Passos de Reversao:**
+1. Reverter commit: `git revert [hash]`
+2. Restaurar banco (se aplicavel)
+3. Limpar cache
+
+---
+
+## Checklist de Validacao
+
+### Antes de Implementar
+- [ ] Todos os arquivos dependentes identificados
+- [ ] Mudancas cirurgicas definidas linha por linha
+- [ ] Impactos mapeados
+- [ ] Testes planejados
+- [ ] Rollback documentado
+
+---
+
+## Ordem de Execucao (Critico)
+
+1. **Backend primeiro:**
+   - Models (schema)
+   - Controllers (logica)
+   - Routes (endpoints)
+
+2. **Frontend depois:**
+   - JS (logica cliente)
+   - HTML (UI)
+   - CSS (estilos)
+
+3. **Testes:**
+   - Unitarios (se existirem)
+   - Integracao
+   - E2E (manual)
+
+---
+
+## Proximo Passo
+
+**Comando para Fase 3:**
+```
+LIMPAR CONTEXTO e executar:
+/code .claude/docs/SPEC-[nome].md
+```
+
+---
+
+**Gerado por:** Spec Protocol v1.0
+```
+
+### Onde Salvar
+```bash
+path=".claude/docs/SPEC-[nome-tarefa-kebab-case].md"
+```
+
+---
+
+## Checklist S.D.A (Verificacao Final)
+
+### Arquivos Solicitados
+- [ ] Arquivo original completo (nao snippet)
+- [ ] Todos os dependentes identificados
+- [ ] Arquivos relacionados analisados
+
+### Dependencias Mapeadas
+- [ ] JavaScript imports verificados
+- [ ] Links HTML checados
+- [ ] IDs e classes CSS validados
+- [ ] Formularios e rotas mapeados
+
+### Mudancas Documentadas
+- [ ] Linha por linha especificada
+- [ ] Codigo antes/depois claramente definido
+- [ ] Motivo de cada mudanca explicado
+- [ ] Impacto documentado
+
+### Seguranca e Validacoes
+- [ ] Multi-tenant validado (liga_id)
+- [ ] Autenticacao verificada
+- [ ] Rollback plan documentado
+- [ ] Testes planejados
+
+---
+
+## Anti-Patterns (NAO FAZER)
+
+### Modificar Sem Ver Original
+```
+ERRADO: "Vou adicionar linha 45 sem ver o arquivo"
+
+CORRETO: cat [arquivo].js primeiro
+         Analisar contexto da linha 45
+         Garantir que mudanca nao quebra logica adjacente
+```
+
+### Ignorar Dependencias
+```
+ERRADO: "Modifico apenas o controller, o resto se resolve"
+
+CORRETO: Mapear TODOS os arquivos que usam o controller
+         Ajustar rotas, frontend, testes
+         Verificar importacoes
+```
+
+### Reescrever Tudo
+```
+ERRADO: function novaFuncao() { /* 100 linhas novas */ }
+
+CORRETO: Preservar funcao existente
+         Adicionar apenas 2-3 linhas necessarias
+         Manter compatibilidade
+```
+
+---
+
+**STATUS:** SPEC PROTOCOL - SURGICAL & PRECISE
+**Versao:** 1.0 (High Senior Edition)

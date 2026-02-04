@@ -1,7 +1,7 @@
 {
   "name": "prompting",
-  "repo": "rafaelcalleja/claude-market-place",
-  "path": "plugins/personal-ai-infrastructure/skills/prompting/SKILL.md",
-  "source": "github.com/rafaelcalleja/claude-market-place",
-  "downloaded_at": "2026-01-27T01:01:24.468834Z"
+  "repo": "danielmiessler/Personal_AI_Infrastructure",
+  "path": "Releases/v2.5/.claude/skills/Prompting/SKILL.md",
+  "source": "github.com/danielmiessler/Personal_AI_Infrastructure",
+  "downloaded_at": "2026-02-04T05:12:57.041437Z"
 }

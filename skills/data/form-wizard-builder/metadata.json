@@ -1,9 +1,7 @@
 {
   "name": "form-wizard-builder",
-  "description": "Builds multi-step forms with validation schemas (Zod/Yup), step components, shared state management, progress indicators, review steps, and error handling. Use when creating \"multi-step forms\", \"wizar",
-  "repo": "patricio0312rev/skillset",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "repo": "monkey1sai/openai-cli",
+  "path": ".claude/skills/form-wizard-builder/SKILL.md",
+  "source": "github.com/monkey1sai/openai-cli",
+  "downloaded_at": "2026-02-04T01:06:23.484553Z"
 }

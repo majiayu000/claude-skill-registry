@@ -1,7 +1,7 @@
 {
   "category": "development",
-  "count": 18239,
-  "updated_at": "2026-02-02T05:16:12.518065Z",
+  "count": 18174,
+  "updated_at": "2026-02-04T05:27:36.011783Z",
   "skills": [
     {
       "name": "fix-facebook-react",
@@ -6274,21 +6274,6 @@
       "name": "triage-issue",
       "description": "Intelligently triage bug reports and error messages by searching for duplicates in Jira and offering to create new issues or add comments to existing ones. When Claude needs to: (1) Triage a bug repor",
       "repo": "atlassian/atlassian-mcp-server",
-      "path": "data/triage-issue",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "triage",
-        "issue"
-      ],
-      "stars": 152,
-      "install": "atlassian/atlassian-mcp-server",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "triage-issue",
-      "description": "Intelligently triage bug reports and error messages by searching for duplicates in Jira and offering to create new issues or add comments to existing ones. When Claude needs to: (1) Triage a bug repor",
-      "repo": "atlassian/atlassian-mcp-server",
       "path": "skills/triage-issue",
       "branch": "main",
       "category": "development",
@@ -7064,22 +7049,6 @@
       ],
       "stars": 110,
       "install": "daymade/claude-code-skills/mermaid-tools",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "repomix-safe-mixer",
-      "description": "Safely package codebases with repomix by automatically detecting and removing hardcoded credentials before packing. Use when packaging code for distribution, creating reference packages, or when the u",
-      "repo": "daymade/claude-code-skills",
-      "path": "data/repomix-safe-mixer",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "repomix",
-        "safe",
-        "mixer"
-      ],
-      "stars": 110,
-      "install": "daymade/claude-code-skills",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -10371,21 +10340,6 @@
       "stars": 64,
       "install": "K1rL3s/aliceio",
       "source": "github.com/K1rL3s/aliceio"
-    },
-    {
-      "name": "commit-msg",
-      "description": "Commit the staged changes to git with meaningful messages.",
-      "repo": "Synthesys-Lab/assassyn",
-      "path": "data/commit-msg",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "commit",
-        "msg"
-      ],
-      "stars": 62,
-      "install": "Synthesys-Lab/assassyn",
-      "source": "SkillsMP Synced Skills"
     },
     {
       "name": "commit-msg",
@@ -16651,21 +16605,6 @@
       "name": "anti-slop",
       "description": "Comprehensive toolkit for detecting and eliminating \"AI slop\" - generic, low-quality AI-generated patterns in natural language, code, and design. Use when reviewing or improving content quality, preve",
       "repo": "rand/cc-polymath",
-      "path": "data/anti-slop",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "anti",
-        "slop"
-      ],
-      "stars": 33,
-      "install": "rand/cc-polymath",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "anti-slop",
-      "description": "Comprehensive toolkit for detecting and eliminating \"AI slop\" - generic, low-quality AI-generated patterns in natural language, code, and design. Use when reviewing or improving content quality, preve",
-      "repo": "rand/cc-polymath",
       "path": "skills/anti-slop",
       "branch": "main",
       "category": "development",
@@ -17444,21 +17383,6 @@
       ],
       "stars": 33,
       "install": "rand/cc-polymath/skills/discover-wasm",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "discover-zig",
-      "description": "Automatically discover Zig programming skills when working with Zig. Activates for zig development tasks.",
-      "repo": "rand/cc-polymath",
-      "path": "data/discover-zig",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "discover",
-        "zig"
-      ],
-      "stars": 33,
-      "install": "rand/cc-polymath",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -18564,22 +18488,6 @@
       "name": "cleanup-health-inline",
       "description": "Inline orchestration workflow for dead code detection and removal. Provides step-by-step phases for dead-code-hunter detection, priority-based cleanup with dead-code-remover, and verification cycles.",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/cleanup-health-inline",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "cleanup",
-        "health",
-        "inline"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "cleanup-health-inline",
-      "description": "Inline orchestration workflow for dead code detection and removal. Provides step-by-step phases for dead-code-hunter detection, priority-based cleanup with dead-code-remover, and verification cycles.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/cleanup-health-inline",
       "branch": "main",
       "category": "development",
@@ -18596,21 +18504,6 @@
       "name": "extract-version",
       "description": "Parse and validate semantic version strings from various formats. Use for extracting versions from text, validating semver compliance, or comparing version numbers.",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/extract-version",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "extract",
-        "version"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "extract-version",
-      "description": "Parse and validate semantic version strings from various formats. Use for extracting versions from text, validating semver compliance, or comparing version numbers.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/extract-version",
       "branch": "main",
       "category": "development",
@@ -18620,22 +18513,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/extract-version",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "format-commit-message",
-      "description": "Generate standardized conventional commit messages with Claude Code attribution. Use when creating automated commits, release commits, or any git commit requiring consistent formatting.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/format-commit-message",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "format",
-        "commit",
-        "message"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -18670,22 +18547,6 @@
       "name": "reuse-health-inline",
       "description": "Inline orchestration workflow for code duplication detection and consolidation. Provides step-by-step phases for reuse-hunter detection, priority-based consolidation with reuse-fixer, and verification",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/reuse-health-inline",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "reuse",
-        "health",
-        "inline"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "local"
-    },
-    {
-      "name": "reuse-health-inline",
-      "description": "Inline orchestration workflow for code duplication detection and consolidation. Provides step-by-step phases for reuse-hunter detection, priority-based consolidation with reuse-fixer, and verification",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/reuse-health-inline",
       "branch": "main",
       "category": "development",
@@ -18702,21 +18563,6 @@
       "name": "rollback-changes",
       "description": "Automatically rollback changes from failed workflow phases using changes log files. Use when workflows fail and need to restore previous state, including file restoration, artifact cleanup, and comman",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/rollback-changes",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "rollback",
-        "changes"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "local"
-    },
-    {
-      "name": "rollback-changes",
-      "description": "Automatically rollback changes from failed workflow phases using changes log files. Use when workflows fail and need to restore previous state, including file restoration, artifact cleanup, and comman",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/rollback-changes",
       "branch": "main",
       "category": "development",
@@ -18726,22 +18572,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/rollback-changes",
-      "source": "local"
-    },
-    {
-      "name": "run-quality-gate",
-      "description": "Execute quality gate validation with configurable blocking behavior. Use when running type-check, build, tests, lint, or custom validation commands in orchestrators or workers to enforce quality stand",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/run-quality-gate",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "run",
-        "quality",
-        "gate"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
       "source": "local"
     },
     {
@@ -18764,21 +18594,6 @@
       "name": "setup-knip",
       "description": "Install and configure Knip for dead code detection. Use before running dead-code-hunter or dependency-auditor to ensure Knip is available. Handles installation, configuration creation, and validation.",
       "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/setup-knip",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "setup",
-        "knip"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
-      "source": "local"
-    },
-    {
-      "name": "setup-knip",
-      "description": "Install and configure Knip for dead code detection. Use before running dead-code-hunter or dependency-auditor to ensure Knip is available. Handles installation, configuration creation, and validation.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
       "path": ".claude/skills/setup-knip",
       "branch": "main",
       "category": "development",
@@ -18788,22 +18603,6 @@
       ],
       "stars": 27,
       "install": "maslennikov-ig/claude-code-orchestrator-kit/.claude/skills/setup-knip",
-      "source": "local"
-    },
-    {
-      "name": "validate-report-file",
-      "description": "Validate that worker-generated reports have all required sections and proper formatting. Use in quality gates, for report completeness checking, or when debugging missing report sections.",
-      "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-      "path": "data/validate-report-file",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "validate",
-        "report",
-        "file"
-      ],
-      "stars": 27,
-      "install": "maslennikov-ig/claude-code-orchestrator-kit",
       "source": "local"
     },
     {
@@ -30734,21 +30533,6 @@
       "name": "biz-researcher",
       "description": "事業仮説を支える一次/二次情報を整理し、意思決定に足る「根拠」「不確実性」「次の調査」を可視化する。でたらめな引用や推測の断言を避け、出典の実在を重視する。",
       "repo": "mae616/ai-template",
-      "path": "data/biz-researcher",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "biz",
-        "researcher"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "biz-researcher",
-      "description": "事業仮説を支える一次/二次情報を整理し、意思決定に足る「根拠」「不確実性」「次の調査」を可視化する。でたらめな引用や推測の断言を避け、出典の実在を重視する。",
-      "repo": "mae616/ai-template",
       "path": ".claude/skills/biz-researcher",
       "branch": "main",
       "category": "development",
@@ -31019,21 +30803,6 @@
       "name": "creative-coder",
       "description": "体験品質（動き/触感/視線誘導）を「実装可能な制約」に落とし、アクセシビリティとパフォーマンスを犠牲にせずに表現を実現する。UIの表現・アニメーション・インタラクション設計/実装の相談で使う。",
       "repo": "mae616/ai-template",
-      "path": "data/creative-coder",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "creative",
-        "coder"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "creative-coder",
-      "description": "体験品質（動き/触感/視線誘導）を「実装可能な制約」に落とし、アクセシビリティとパフォーマンスを犠牲にせずに表現を実現する。UIの表現・アニメーション・インタラクション設計/実装の相談で使う。",
-      "repo": "mae616/ai-template",
       "path": ".claude/skills/creative-coder",
       "branch": "main",
       "category": "development",
@@ -31144,21 +30913,6 @@
       ],
       "stars": 8,
       "install": "ratacat/claude-skills/skills/design-patterns",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "developer-specialist",
-      "description": "設計と実装を「最小で正確」に進め、TDD（RED→GREEN→REFACTOR）と差分思考で品質と速度を両立する。設計の溶け込み（責務不明/重複/暫定対応）を防ぎ、レビュー可能な変更へ落とし込むときに使う。",
-      "repo": "mae616/ai-template",
-      "path": "data/developer-specialist",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "developer",
-        "specialist"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template",
       "source": "SkillsMP Synced Skills"
     },
     {
@@ -31581,21 +31335,6 @@
       ],
       "stars": 8,
       "install": "pastjean/dotfiles/.claude/skills/prompt-generator",
-      "source": "local"
-    },
-    {
-      "name": "proposition-reviewer",
-      "description": "価値提案（誰に/何のために/なぜ勝てる）をレビューし、曖昧さ・矛盾・証拠不足を洗い出して、メッセージとMVPを磨くために使う。",
-      "repo": "mae616/ai-template",
-      "path": "data/proposition-reviewer",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "proposition",
-        "reviewer"
-      ],
-      "stars": 8,
-      "install": "mae616/ai-template",
       "source": "local"
     },
     {
@@ -42561,20 +42300,6 @@
       "name": "reminder",
       "description": "当用户提到需要记住的未来任务、约会或事件时创建提醒和日历事件。在诸如\"提醒我\"、\"设置提醒\"、\"我有个会\"、\"别忘了\"或任何提及未来基于时间的任务时触发。",
       "repo": "LostAbaddon/ReminderSkill",
-      "path": "data/reminder",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "reminder"
-      ],
-      "stars": 3,
-      "install": "LostAbaddon/ReminderSkill",
-      "source": "local"
-    },
-    {
-      "name": "reminder",
-      "description": "当用户提到需要记住的未来任务、约会或事件时创建提醒和日历事件。在诸如\"提醒我\"、\"设置提醒\"、\"我有个会\"、\"别忘了\"或任何提及未来基于时间的任务时触发。",
-      "repo": "LostAbaddon/ReminderSkill",
       "path": "skills/reminder",
       "branch": "main",
       "category": "development",
@@ -48879,21 +48604,6 @@
       ],
       "stars": 2,
       "install": "Euda1mon1a/Autonomous-Assignment-Program-Manager/.claude/skills/search-party",
-      "source": "local"
-    },
-    {
-      "name": "searxng-search",
-      "description": "Enhanced web and package repository search using local SearXNG instance",
-      "repo": "YPares/agent-skills",
-      "path": "data/searxng-search",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "searxng",
-        "search"
-      ],
-      "stars": 2,
-      "install": "YPares/agent-skills",
       "source": "local"
     },
     {
@@ -63264,21 +62974,6 @@
       "name": "quality-report",
       "description": "\"Génère un rapport complet de qualité du code incluant les vérifications TypeScript, Biome (lint/format), les tests et la couverture de code. Utilise ce skill quand l'utilisateur demande un rapport de",
       "repo": "sebc-dev/website",
-      "path": "data/quality-report",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "quality",
-        "report"
-      ],
-      "stars": 1,
-      "install": "sebc-dev/website",
-      "source": "local"
-    },
-    {
-      "name": "quality-report",
-      "description": "\"Génère un rapport complet de qualité du code incluant les vérifications TypeScript, Biome (lint/format), les tests et la couverture de code. Utilise ce skill quand l'utilisateur demande un rapport de",
-      "repo": "sebc-dev/website",
       "path": ".claude/skills/quality-report",
       "branch": "main",
       "category": "development",
@@ -67756,21 +67451,6 @@
       "name": "vue-typescript",
       "description": "Master Vue TypeScript - Type-safe Components, Generics, Type Inference, Advanced Patterns",
       "repo": "pluginagentmarketplace/custom-plugin-vue",
-      "path": "data/vue-typescript",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "vue",
-        "typescript"
-      ],
-      "stars": 1,
-      "install": "pluginagentmarketplace/custom-plugin-vue",
-      "source": "local"
-    },
-    {
-      "name": "vue-typescript",
-      "description": "Master Vue TypeScript - Type-safe Components, Generics, Type Inference, Advanced Patterns",
-      "repo": "pluginagentmarketplace/custom-plugin-vue",
       "path": "skills/vue-typescript",
       "branch": "main",
       "category": "development",
@@ -68616,18 +68296,6 @@
       "name": "a2ui",
       "description": "Generate A2UI 0.8 protocol compliant UI code. Use when building agent-driven interfaces, generating JSONL messages for surfaceUpdate/dataModelUpdate/beginRendering, creating forms, lists, cards, or an",
       "repo": "kobe4cn/a2ui_skills",
-      "path": "data/a2ui",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "kobe4cn/a2ui_skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "a2ui",
-      "description": "Generate A2UI 0.8 protocol compliant UI code. Use when building agent-driven interfaces, generating JSONL messages for surfaceUpdate/dataModelUpdate/beginRendering, creating forms, lists, cards, or an",
-      "repo": "kobe4cn/a2ui_skills",
       "path": "development/a2ui",
       "branch": "main",
       "category": "development",
@@ -68814,18 +68482,6 @@
       "tags": [],
       "stars": 0,
       "install": "melodic-software/claude-code-plugins/plugins/test-strategy/skills/acceptance-criteria-authoring",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "accessibility-audit-runner",
-      "description": "Accessibility Audit Runner - Auto-activating skill for Frontend Development.Triggers on: accessibility audit runner, accessibility audit runnerPart of the Frontend Development skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/accessibility-audit-runner",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -74934,18 +74590,6 @@
       "name": "api-contract-normalizer",
       "description": "Unifies API response patterns across endpoints including pagination format, error structure, status codes, response envelopes, and versioning strategy. Provides contract documentation, shared TypeScri",
       "repo": "patricio0312rev/skillset",
-      "path": "data/api-contract-normalizer",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "api-contract-normalizer",
-      "description": "Unifies API response patterns across endpoints including pagination format, error structure, status codes, response envelopes, and versioning strategy. Provides contract documentation, shared TypeScri",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/backend/api-contract-normalizer",
       "branch": "main",
       "category": "development",
@@ -75064,18 +74708,6 @@
       "stars": 0,
       "install": "unknown/api-documenter",
       "source": "github.com/alirezarezvani/claude-code-tresor"
-    },
-    {
-      "name": "api-endpoint-generator",
-      "description": "Generates CRUD REST API endpoints with request validation, TypeScript types, consistent response formats, error handling, and documentation. Includes route handlers, validation schemas (Zod/Joi), type",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/api-endpoint-generator",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
     },
     {
       "name": "api-endpoint-generator",
@@ -79707,21 +79339,6 @@
       "name": "azure-cli",
       "description": "When users share links (such as visualstudio.com or dev.azure.com) and/or mention Azure DevOps, use the Azure DevOps CLI to interact with work items, pull requests (PRs), repositories, and more.",
       "repo": "scaryrawr/skillz",
-      "path": "data/azure-cli",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "azure",
-        "cli"
-      ],
-      "stars": 0,
-      "install": "scaryrawr/skillz",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "azure-cli",
-      "description": "When users share links (such as visualstudio.com or dev.azure.com) and/or mention Azure DevOps, use the Azure DevOps CLI to interact with work items, pull requests (PRs), repositories, and more.",
-      "repo": "scaryrawr/skillz",
       "path": "azure-cli",
       "branch": "main",
       "category": "development",
@@ -84228,18 +83845,6 @@
       "name": "browserbridge",
       "description": "Real-time browser debugging and interaction via WebSocket bridge server on localhost:3141",
       "repo": "lawless-m/claude-skills",
-      "path": "data/browserbridge",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "lawless-m/claude-skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "browserbridge",
-      "description": "Real-time browser debugging and interaction via WebSocket bridge server on localhost:3141",
-      "repo": "lawless-m/claude-skills",
       "path": ".claude/skills/BrowserBridge",
       "branch": "main",
       "category": "development",
@@ -86525,18 +86130,6 @@
       "tags": [],
       "stars": 0,
       "install": "j0KZ/mcp-agents/starter-kit/template/.claude/skills/caching-optimizer",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "caching-strategist",
-      "description": "Defines caching strategies with cache keys, TTL values, invalidation triggers, consistency patterns, and correctness checklist. Provides code examples for Redis, CDN, and application-level caching. Us",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/caching-strategist",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -90351,18 +89944,6 @@
       "name": "claude-code-cli",
       "description": "Build and run AI agents using Claude Code CLI. Use when developing autonomous agents, multi-agent systems, CI/CD automation, or scripting Claude for programmatic tasks. Covers authentication, headless",
       "repo": "filipexyz/plugins",
-      "path": "data/claude-code-cli",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "filipexyz/plugins",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "claude-code-cli",
-      "description": "Build and run AI agents using Claude Code CLI. Use when developing autonomous agents, multi-agent systems, CI/CD automation, or scripting Claude for programmatic tasks. Covers authentication, headless",
-      "repo": "filipexyz/plugins",
       "path": "plugins/claude-code-cli/skills/claude-code-cli",
       "branch": "main",
       "category": "development",
@@ -93923,18 +93504,6 @@
       "tags": [],
       "stars": 0,
       "install": "GiantCroissant-Lunar/lunar-snake-hub/.agent/skills/code-format",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "code-formatter-installer",
-      "description": "Installs and configures Prettier, ESLint, EditorConfig, and other code quality tools to enforce consistent code style across the team. Generates config files, npm scripts, editor settings recommendati",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/code-formatter-installer",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -105506,18 +105075,6 @@
       "name": "creating-proposals",
       "description": "クライアント向け提案資料の作成を支援します。コンサル流のノウハウに基づき、意思決定を促す資料構成・原稿を作成します。提案書、企画書、営業資料が必要なときに使用してください。",
       "repo": "sekka/dotfiles",
-      "path": "data/creating-proposals",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "sekka/dotfiles",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "creating-proposals",
-      "description": "クライアント向け提案資料の作成を支援します。コンサル流のノウハウに基づき、意思決定を促す資料構成・原稿を作成します。提案書、企画書、営業資料が必要なときに使用してください。",
-      "repo": "sekka/dotfiles",
       "path": "home/.claude/skills/creating-proposals",
       "branch": "main",
       "category": "development",
@@ -112401,18 +111958,6 @@
       "tags": [],
       "stars": 0,
       "install": "BerryKuipers/claude-code-toolkit",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "dev-onboarding-builder",
-      "description": "Creates comprehensive developer onboarding documentation and materials including step-by-step setup guides, first-task assignments, expected time per step, common troubleshooting, team introductions, ",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/dev-onboarding-builder",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -128761,20 +128306,6 @@
       "name": "foundry",
       "description": "Ethereum development with foundry (forge, cast, anvil)",
       "repo": "jacobhjkim/gachi-amm",
-      "path": "data/foundry",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "foundry"
-      ],
-      "stars": 0,
-      "install": "jacobhjkim/gachi-amm",
-      "source": "SkillsMP Synced Skills"
-    },
-    {
-      "name": "foundry",
-      "description": "Ethereum development with foundry (forge, cast, anvil)",
-      "repo": "jacobhjkim/gachi-amm",
       "path": ".claude/skills/foundry",
       "branch": "main",
       "category": "development",
@@ -134246,18 +133777,6 @@
       "tags": [],
       "stars": 0,
       "install": "Lordjiggy/claude-code-marketplace/skills/automation/git-hooks-manager",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "git-hygiene-enforcer",
-      "description": "Establishes git workflow guardrails including conventional commits, commit message hooks, branch naming conventions, PR templates, and code review processes. Provides hook configurations, workflow tem",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/git-hygiene-enforcer",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -149031,18 +148550,6 @@
       "name": "jj-commit",
       "description": "Generate conventional commit messages for jj by analyzing diffs, running tests first, and handling immutable commits",
       "repo": "ahkohd/dotfiles",
-      "path": "data/jj-commit",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "ahkohd/dotfiles",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "jj-commit",
-      "description": "Generate conventional commit messages for jj by analyzing diffs, running tests first, and handling immutable commits",
-      "repo": "ahkohd/dotfiles",
       "path": "claude/.claude/skills/jj-commit",
       "branch": "main",
       "category": "development",
@@ -149445,18 +148952,6 @@
       "tags": [],
       "stars": 0,
       "install": "metabench/copilot-dl-news/docs/agi/skills/jsgui3-ssr-activation-data-bridge",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "jsharpener",
-      "description": "JavaScript/TypeScript static analysis tool for call graphs, unused code detection (tree shaking), dependency analysis, and circular dependency detection",
-      "repo": "lawless-m/claude-skills",
-      "path": "data/jsharpener",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "lawless-m/claude-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -151142,18 +150637,6 @@
       "name": "klingai-job-monitoring",
       "description": "Monitor and track Kling AI video generation jobs. Use when managing multiple generations orbuilding job dashboards. Trigger with phrases like 'klingai job status', 'track klingai jobs','kling ai monit",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/klingai-job-monitoring",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "klingai-job-monitoring",
-      "description": "Monitor and track Kling AI video generation jobs. Use when managing multiple generations orbuilding job dashboards. Trigger with phrases like 'klingai job status', 'track klingai jobs','kling ai monit",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
       "path": "plugins/saas-packs/klingai-pack/skills/klingai-job-monitoring",
       "branch": "main",
       "category": "development",
@@ -151931,18 +151414,6 @@
       "stars": 0,
       "install": "usadamasa/kubectl-localmesh/.claude/skills/kubectl-localmesh-operations",
       "source": "local"
-    },
-    {
-      "name": "kubernetes-configmap-handler",
-      "description": "Kubernetes Configmap Handler - Auto-activating skill for DevOps Advanced.Triggers on: kubernetes configmap handler, kubernetes configmap handlerPart of the DevOps Advanced skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/kubernetes-configmap-handler",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
-      "source": "SkillsMP + GitHub Raw"
     },
     {
       "name": "kubernetes-configmap-handler",
@@ -156603,18 +156074,6 @@
       "name": "llm-debugger",
       "description": "Diagnoses LLM output failures including hallucinations, constraint violations, format errors, and reasoning issues. Provides root cause classification, prompt fixes, tool improvements, and new test ca",
       "repo": "patricio0312rev/skillset",
-      "path": "data/llm-debugger",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "llm-debugger",
-      "description": "Diagnoses LLM output failures including hallucinations, constraint violations, format errors, and reasoning issues. Provides root cause classification, prompt fixes, tool improvements, and new test ca",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/ai-engineering/llm-debugger",
       "branch": "main",
       "category": "development",
@@ -157133,18 +156592,6 @@
       "tags": [],
       "stars": 0,
       "install": "nandemo-ya/kecs",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "localstorage-patterns",
-      "description": "Comprehensive guide to localStorage patterns for the Plataforma B2B de treinamento técnico corporativo educational platform. This skill covers schema design, error handling strategies, quota managemen",
-      "repo": "joaopelegrino/app-controle",
-      "path": "data/localstorage-patterns",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "joaopelegrino/app-controle",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -159319,21 +158766,6 @@
       "stars": 0,
       "install": "unknown/manim",
       "source": "github.com/davila7/claude-code-templates"
-    },
-    {
-      "name": "manim-skill",
-      "description": "Render Manim scenes to still frames and review them to diagnose animation/layout issues. Use when debugging scenes, verifying visual correctness, or inspecting frame-by-frame output.",
-      "repo": "DominikPeters/manim-skill",
-      "path": "data/manim-skill",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "manim",
-        "skill"
-      ],
-      "stars": 0,
-      "install": "DominikPeters/manim-skill",
-      "source": "local"
     },
     {
       "name": "manim-skill",
@@ -164827,18 +164259,6 @@
       "name": "modal-drawer-system",
       "description": "Implements accessible modals and drawers with focus trap, ESC to close, scroll lock, portal rendering, and ARIA attributes. Includes sample implementations for common use cases like edit forms, confir",
       "repo": "patricio0312rev/skillset",
-      "path": "data/modal-drawer-system",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "modal-drawer-system",
-      "description": "Implements accessible modals and drawers with focus trap, ESC to close, scroll lock, portal rendering, and ARIA attributes. Includes sample implementations for common use cases like edit forms, confir",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/frontend/modal-drawer-system",
       "branch": "main",
       "category": "development",
@@ -165703,18 +165123,6 @@
       "stars": 0,
       "install": "Ketomihine/my_skills/monocle3-truly-complete",
       "source": "local"
-    },
-    {
-      "name": "monorepo-ci-optimizer",
-      "description": "Optimizes CI pipelines for monorepos by detecting affected packages/apps and running only necessary builds and tests. Includes Turborepo/Nx strategies, caching, and parallel execution. Use for \"monore",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/monorepo-ci-optimizer",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
     },
     {
       "name": "monorepo-ci-optimizer",
@@ -169798,21 +169206,6 @@
       "name": "nodejs-expert",
       "description": "Expert Node.js and TypeScript development assistant. Use when writing, reviewing, or debugging Node.js code, TypeScript projects, async programming, streams, performance optimization, or npm packages.",
       "repo": "fabriciofs/mcp-sql-server",
-      "path": "data/nodejs-expert",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "nodejs",
-        "expert"
-      ],
-      "stars": 0,
-      "install": "fabriciofs/mcp-sql-server",
-      "source": "local"
-    },
-    {
-      "name": "nodejs-expert",
-      "description": "Expert Node.js and TypeScript development assistant. Use when writing, reviewing, or debugging Node.js code, TypeScript projects, async programming, streams, performance optimization, or npm packages.",
-      "repo": "fabriciofs/mcp-sql-server",
       "path": ".claude/skills/nodejs-expert",
       "branch": "main",
       "category": "development",
@@ -172503,18 +171896,6 @@
       "name": "open-graph-creator",
       "description": "Open Graph Creator - Auto-activating skill for Frontend Development.Triggers on: open graph creator, open graph creatorPart of the Frontend Development skill category.",
       "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/open-graph-creator",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "open-graph-creator",
-      "description": "Open Graph Creator - Auto-activating skill for Frontend Development.Triggers on: open graph creator, open graph creatorPart of the Frontend Development skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
       "path": "planned-skills/generated/05-frontend-dev/open-graph-creator",
       "branch": "main",
       "category": "development",
@@ -174339,18 +173720,6 @@
       "tags": [],
       "stars": 0,
       "install": "tdimino/bg3se-macos/tools/skills/osgrep-reference",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "osint",
-      "description": "Gathers intelligence from public sources. Use when searching for usernames, geolocating images, investigating social media, analyzing domains, or solving information gathering challenges.",
-      "repo": "kiwamizamurai/cctf",
-      "path": "data/osint",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "kiwamizamurai/cctf",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -186235,18 +185604,6 @@
       "name": "prompt-template-builder",
       "description": "Creates reusable prompt templates with strict output contracts, style rules, few-shot examples, and do/don't guidelines. Provides system/user prompt files, variable placeholders, output formatting ins",
       "repo": "patricio0312rev/skillset",
-      "path": "data/prompt-template-builder",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "prompt-template-builder",
-      "description": "Creates reusable prompt templates with strict output contracts, style rules, few-shot examples, and do/don't guidelines. Provides system/user prompt files, variable placeholders, output formatting ins",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/ai-engineering/prompt-template-builder",
       "branch": "main",
       "category": "development",
@@ -188258,18 +187615,6 @@
       "name": "python-code-quality",
       "description": "Python code quality tooling with ruff and pyright. Use when setting up linting, formatting, type checking, configuring ruff or pyright, or establishing code quality standards.",
       "repo": "basher83/lunar-claude",
-      "path": "data/python-code-quality",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "python-code-quality",
-      "description": "Python code quality tooling with ruff and pyright. Use when setting up linting, formatting, type checking, configuring ruff or pyright, or establishing code quality standards.",
-      "repo": "basher83/lunar-claude",
       "path": "plugins/devops/python-tools/skills/python-code-quality",
       "branch": "main",
       "category": "development",
@@ -189131,18 +188476,6 @@
       "name": "python-uv-scripts",
       "description": "Python single-file script development using uv and PEP 723 inline metadata. Prevents invalid patterns like [tool.uv.metadata]. Use when creating standalone Python utilities, converting scripts to uv f",
       "repo": "basher83/lunar-claude",
-      "path": "data/python-uv-scripts",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "basher83/lunar-claude",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "python-uv-scripts",
-      "description": "Python single-file script development using uv and PEP 723 inline metadata. Prevents invalid patterns like [tool.uv.metadata]. Use when creating standalone Python utilities, converting scripts to uv f",
-      "repo": "basher83/lunar-claude",
       "path": "plugins/devops/python-tools/skills/python-uv-scripts",
       "branch": "main",
       "category": "development",
@@ -189383,18 +188716,6 @@
       "stars": 0,
       "install": "Anudorannador/python-executor/docs/pyx",
       "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "qa",
-      "description": "Generate QA steps for Jira tickets in German/English technical writing style",
-      "repo": "cheapmon/dotfiles",
-      "path": "data/qa",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "cheapmon/dotfiles",
-      "source": "local"
     },
     {
       "name": "qa",
@@ -189836,18 +189157,6 @@
       "tags": [],
       "stars": 0,
       "install": "orakitine/claude-code-lab",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "quality-gates-enforcer",
-      "description": "Enforces minimum quality thresholds in CI including code coverage, linting, type checking, and security scanning. Provides required checks, PR rules, and automated enforcement. Use for \"quality gates\"",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/quality-gates-enforcer",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -190771,22 +190080,6 @@
       "name": "rag-pipeline-builder",
       "description": "Complete RAG (Retrieval-Augmented Generation) pipeline implementation with document ingestion, vector storage, semantic search, and response generation. Supports FastAPI backends with OpenAI and Qdran",
       "repo": "MrOwaisAbdullah/ai-humanoid-robotics",
-      "path": "data/rag-pipeline-builder",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "rag",
-        "pipeline",
-        "builder"
-      ],
-      "stars": 0,
-      "install": "MrOwaisAbdullah/ai-humanoid-robotics",
-      "source": "local"
-    },
-    {
-      "name": "rag-pipeline-builder",
-      "description": "Complete RAG (Retrieval-Augmented Generation) pipeline implementation with document ingestion, vector storage, semantic search, and response generation. Supports FastAPI backends with OpenAI and Qdran",
-      "repo": "MrOwaisAbdullah/ai-humanoid-robotics",
       "path": ".claude/skills/rag-pipeline-builder",
       "branch": "main",
       "category": "development",
@@ -191680,18 +190973,6 @@
       "stars": 0,
       "install": "johnlindquist/claude/skills/raycast-extension",
       "source": "local"
-    },
-    {
-      "name": "rbac-permissions-builder",
-      "description": "Implements role-based access control with permission matrix, route guards, policy functions, and UI permission hints. Provides middleware/guards, helper utilities, test suggestions, and permission che",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/rbac-permissions-builder",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
     },
     {
       "name": "rbac-permissions-builder",
@@ -200476,18 +199757,6 @@
       "name": "run-simulation",
       "description": "Run and analyze one or multiple PDE simulations.",
       "repo": "FloWsnr/PLM-data",
-      "path": "data/run-simulation",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "FloWsnr/PLM-data",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "run-simulation",
-      "description": "Run and analyze one or multiple PDE simulations.",
-      "repo": "FloWsnr/PLM-data",
       "path": ".claude/skills/run-simulation",
       "branch": "main",
       "category": "development",
@@ -205353,18 +204622,6 @@
       "name": "semantic-release",
       "description": "Automate versioning with Node.js semantic-release v25+. TRIGGERS - npm run release, version bump, changelog, conventional commits, release automation.",
       "repo": "terrylica/cc-skills",
-      "path": "data/semantic-release",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "terrylica/cc-skills",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "semantic-release",
-      "description": "Automate versioning with Node.js semantic-release v25+. TRIGGERS - npm run release, version bump, changelog, conventional commits, release automation.",
-      "repo": "terrylica/cc-skills",
       "path": "plugins/itp/skills/semantic-release",
       "branch": "main",
       "category": "development",
@@ -206690,18 +205947,6 @@
       "tags": [],
       "stars": 0,
       "install": "bbrewington/software-data-and-ai-tools/claude-skills/service-design",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "service-layer-extractor",
-      "description": "Refactors route handlers into service layer with clean boundaries, dependency injection, testability, and separation of concerns. Provides service interfaces, folder structure, testing strategy, and m",
-      "repo": "patricio0312rev/skillset",
-      "path": "data/service-layer-extractor",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -213610,18 +212855,6 @@
       "tags": [],
       "stars": 0,
       "install": "Consiliency/treesitter-chunker",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "spec-architect",
-      "description": "Coordinate multi-agent software development from requirements through verified implementation using spec-driven workflows. Use when planning features, creating technical specifications, implementing c",
-      "repo": "codethread/claude-code-plugins",
-      "path": "data/spec-architect",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "codethread/claude-code-plugins",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -221921,21 +221154,6 @@
       "name": "tdd-refactor",
       "description": "Execute the REFACTOR phase of TDD by improving code structure while keeping all tests green. Removes duplication, improves naming, and enhances code quality without changing behavior.",
       "repo": "SwiftyJunnos/Claude-Code-with-TDD",
-      "path": "data/tdd-refactor",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "tdd",
-        "refactor"
-      ],
-      "stars": 0,
-      "install": "SwiftyJunnos/Claude-Code-with-TDD",
-      "source": "local"
-    },
-    {
-      "name": "tdd-refactor",
-      "description": "Execute the REFACTOR phase of TDD by improving code structure while keeping all tests green. Removes duplication, improves naming, and enhances code quality without changing behavior.",
-      "repo": "SwiftyJunnos/Claude-Code-with-TDD",
       "path": ".claude/skills/tdd-refactor",
       "branch": "main",
       "category": "development",
@@ -222305,18 +221523,6 @@
       "name": "tech-debt-prioritizer",
       "description": "Scores and prioritizes technical debt by impact, risk, and effort. Provides ranked backlog with ROI analysis and quarterly paydown recommendations. Use for \"tech debt\", \"technical debt management\", \"c",
       "repo": "patricio0312rev/skillset",
-      "path": "data/tech-debt-prioritizer",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "patricio0312rev/skillset",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "tech-debt-prioritizer",
-      "description": "Scores and prioritizes technical debt by impact, risk, and effort. Provides ranked backlog with ROI analysis and quarterly paydown recommendations. Use for \"tech debt\", \"technical debt management\", \"c",
-      "repo": "patricio0312rev/skillset",
       "path": "templates/architecture/tech-debt-prioritizer",
       "branch": "main",
       "category": "development",
@@ -222457,18 +221663,6 @@
       "tags": [],
       "stars": 0,
       "install": "ljchg12-hue/windows-dotfiles/skills/research/tech-scout",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "tech-spike",
-      "description": "技術検証（Tech Spike）ワークフロー。ライブラリ選定やアーキテクチャ判断の前に最小限の実験コードで技術的妥当性を検証。使用タイミング:(1) 複数の技術選択肢がある場合（ライブラリA vs B）(2) 新しいライブラリ・技術の学習コストが高い場合(3) パフォーマンス・互換性の懸念がある場合(4) 既存システムとの統合リスクがある場合(5) 「技術検証」「ライブラリ調査」「スパイク」リクエ",
-      "repo": "hyt-sasaki/ai-knowledge-promoter",
-      "path": "data/tech-spike",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "hyt-sasaki/ai-knowledge-promoter",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -223472,22 +222666,6 @@
       "tags": [],
       "stars": 0,
       "install": "unknown/terraform-kubernetes",
-      "source": "local"
-    },
-    {
-      "name": "terraform-module-builder",
-      "description": "Generate Terraform configuration files for infrastructure as code including AWS, GCP, and Azure resources with modules and best practices. Triggers on \"create Terraform config\", \"generate terraform fo",
-      "repo": "ehtbanton/ClaudeSkillsRepo",
-      "path": "data/terraform-module-builder",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "terraform",
-        "module",
-        "builder"
-      ],
-      "stars": 0,
-      "install": "ehtbanton/ClaudeSkillsRepo",
       "source": "local"
     },
     {
@@ -226633,18 +225811,6 @@
       "name": "traffic-analysis",
       "description": "Analyze network traffic patterns, identify top applications and bandwidth usage, and optimize traffic management. Perform DPI-based traffic classification.",
       "repo": "surrealwolf/unifi-network-mcp",
-      "path": "data/traffic-analysis",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "surrealwolf/unifi-network-mcp",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "traffic-analysis",
-      "description": "Analyze network traffic patterns, identify top applications and bandwidth usage, and optimize traffic management. Perform DPI-based traffic classification.",
-      "repo": "surrealwolf/unifi-network-mcp",
       "path": ".github/skills/traffic-analysis",
       "branch": "main",
       "category": "development",
@@ -228553,18 +227719,6 @@
       "tags": [],
       "stars": 0,
       "install": "IndenScale/Typedown",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "typeorm-entity-generator",
-      "description": "Typeorm Entity Generator - Auto-activating skill for Backend Development.Triggers on: typeorm entity generator, typeorm entity generatorPart of the Backend Development skill category.",
-      "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-      "path": "data/typeorm-entity-generator",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "jeremylongshore/claude-code-plugins-plus-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {
@@ -234669,22 +233823,6 @@
       "name": "vue-component-generator",
       "description": "Generate Vue 3 components with Composition API TypeScript and scoped styles. Triggers on \"create vue component\", \"generate vue file\", \"vue 3 component\", \".vue component\".",
       "repo": "ehtbanton/ClaudeSkillsRepo",
-      "path": "data/vue-component-generator",
-      "branch": "main",
-      "category": "development",
-      "tags": [
-        "vue",
-        "component",
-        "generator"
-      ],
-      "stars": 0,
-      "install": "ehtbanton/ClaudeSkillsRepo",
-      "source": "local"
-    },
-    {
-      "name": "vue-component-generator",
-      "description": "Generate Vue 3 components with Composition API TypeScript and scoped styles. Triggers on \"create vue component\", \"generate vue file\", \"vue 3 component\", \".vue component\".",
-      "repo": "ehtbanton/ClaudeSkillsRepo",
       "path": "vue-component-generator",
       "branch": "main",
       "category": "development",
@@ -236503,18 +235641,6 @@
       "tags": [],
       "stars": 0,
       "install": "Lofp34/whisper-lolo/whisper-lolo-roadmap",
-      "source": "SkillsMP + GitHub Raw"
-    },
-    {
-      "name": "whisper-transcription",
-      "description": "Audio transcription using local whisper.cpp server with CUDA acceleration. HTTP API for speech-to-text conversion.",
-      "repo": "lawless-m/claude-skills",
-      "path": "data/whisper-transcription",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 0,
-      "install": "lawless-m/claude-skills",
       "source": "SkillsMP + GitHub Raw"
     },
     {

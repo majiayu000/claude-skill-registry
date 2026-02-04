@@ -2,7 +2,7 @@
   "name": "mobileapp",
   "description": "PAI Mobile App - Unified mobile interface for Claude Code chat, file browsing, and Obsidian knowledge base access.\n\nA self-hosted web application accessible from iPhone/iPad via Tailscale.\n\n## Quick S",
   "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "other",
+  "category": "data",
   "tags": [],
   "stars": 0,
   "source": "github.com/robdtaylor/personal-ai-infrastructure"

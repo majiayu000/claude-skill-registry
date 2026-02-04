@@ -22,6 +22,7 @@ Validate agent-generated report files for completeness and proper structure.
 Use Read tool to load report file.
 
 **Expected Input**:
+
 - `file_path`: Path to report file (e.g., `bug-hunting-report.md`)
 
 **Tools Used**: Read
@@ -31,6 +32,7 @@ Use Read tool to load report file.
 Verify all required sections are present.
 
 **Required Sections**:
+
 1. **Header** with metadata:
    - Title (# Report Type Report: Version)
    - Generated timestamp
@@ -59,6 +61,7 @@ Verify all required sections are present.
 Check formatting and structure.
 
 **Format Rules**:
+
 - Title must be H1 (single #)
 - Section headers must be H2 (##)
 - Status must include emoji (✅/⚠️/❌)
@@ -70,6 +73,7 @@ Check formatting and structure.
 Verify status indicators are consistent.
 
 **Consistency Checks**:
+
 - Header status matches validation status
 - If status is "failed", validation should show failures
 - If status is "success", validation should show passes
@@ -79,6 +83,7 @@ Verify status indicators are consistent.
 Return detailed validation result.
 
 **Expected Output**:
+
 ```json
 {
   "valid": true,
@@ -107,11 +112,13 @@ Return detailed validation result.
 ### Example 1: Valid Report
 
 **Input**:
+
 ```
 file_path: bug-hunting-report.md
 ```
 
 **File Content**:
+
 ```markdown
 # Bug Hunting Report: 2025-10-17
 
@@ -127,6 +134,7 @@ Found 23 bugs across 147 files.
 ## Detailed Findings
 
 ### Critical (3)
+
 - Bug 1
 - Bug 2
 - Bug 3
@@ -145,6 +153,7 @@ Found 23 bugs across 147 files.
 ```
 
 **Output**:
+
 ```json
 {
   "valid": true,
@@ -164,11 +173,13 @@ Found 23 bugs across 147 files.
 ### Example 2: Missing Sections
 
 **Input**:
+
 ```
 file_path: incomplete-report.md
 ```
 
 **File Content**:
+
 ```markdown
 # Bug Report
 
@@ -176,6 +187,7 @@ Some bugs found.
 ```
 
 **Output**:
+
 ```json
 {
   "valid": false,
@@ -201,11 +213,13 @@ Some bugs found.
 ### Example 3: Inconsistent Status
 
 **Input**:
+
 ```
 file_path: inconsistent-report.md
 ```
 
 **File Content**:
+
 ```markdown
 # Bug Report: 2025-10-17
 
@@ -221,6 +235,7 @@ Failed to scan files.
 ```
 
 **Output**:
+
 ```json
 {
   "valid": false,
@@ -232,13 +247,8 @@ Failed to scan files.
     "validationResults": true,
     "nextSteps": false
   },
-  "warnings": [
-    "Status inconsistency: Header shows success (✅) but validation shows failed (❌)"
-  ],
-  "errors": [
-    "Missing section: Detailed Findings",
-    "Missing section: Next Steps"
-  ]
+  "warnings": ["Status inconsistency: Header shows success (✅) but validation shows failed (❌)"],
+  "errors": ["Missing section: Detailed Findings", "Missing section: Next Steps"]
 }
 ```
 

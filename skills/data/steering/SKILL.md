@@ -38,6 +38,37 @@ allowed-tools: [Read, Write, Bash, Glob, Grep]
 
 **Purpose**: Persistent knowledge across conversations, continuous learning, agent collaboration
 
+### Agent Memory CLI (v3.5.0 NEW)
+
+`musubi-remember` CLI でセッション間のメモリ管理ができます：
+
+```bash
+# セッションから学習を抽出
+musubi-remember extract
+
+# メモリをファイルにエクスポート
+musubi-remember export ./project-memory.json
+
+# 別プロジェクトからメモリをインポート
+musubi-remember import ./other-project-memory.json
+
+# コンテキストウィンドウに収めるためメモリを圧縮
+musubi-remember condense
+
+# 保存されたメモリを一覧表示
+musubi-remember list
+
+# セッションメモリをクリア
+musubi-remember clear
+```
+
+**ユースケース**:
+
+- セッション終了時の学習抽出・保存
+- チームメンバー間のナレッジ共有
+- プロジェクト間のベストプラクティス移植
+- 長時間セッションでのメモリ最適化
+
 ### 乖離検出と推奨事項
 
 - コードとsteeringドキュメントの不一致検出
@@ -307,6 +338,7 @@ Steering Agentです。
 #### Memory Management Operations
 
 **1. Read Memories (すべてのメモリ表示)**
+
 ```
 📝 **プロジェクトメモリ一覧**
 
@@ -434,6 +466,7 @@ Steering Agentです。
 #### Configuration Management Operations
 
 **1. Show Configuration**
+
 ```
 📋 **プロジェクト設定 (project.yml)**
 
@@ -451,6 +484,7 @@ SDD Stages: 8 stages
 ```
 
 **2. Validate Configuration**
+
 ```
 🔍 **整合性チェック**
 
@@ -460,6 +494,7 @@ SDD Stages: 8 stages
 ```
 
 **3. Update Configuration**
+
 ```
 【質問 1/2】何を更新？
 1) Version 2) Frameworks 3) Agent settings 4) Rules
@@ -583,6 +618,7 @@ steering/
 ### Memory Writing Guidelines
 
 **Good Memory Entry:**
+
 ```markdown
 ## [2025-11-22] Multi-Level Context Overflow Prevention
 
@@ -592,16 +628,19 @@ and user frustration. Single-level protection proved insufficient.
 
 **Decision:**
 Implemented two-level defense:
+
 - Level 1: File-by-file gradual output with [N/Total] progress
 - Level 2: Multi-part generation for files >300 lines
 
 **Rationale:**
+
 - Incremental saves prevent total loss
 - Progress indicators build user confidence
 - Large file splitting handles unlimited sizes
 - Layered protection is more robust
 
 **Impact:**
+
 - Zero context overflow errors since implementation
 - Applied to 23/25 agents
 - Supports unlimited project sizes
@@ -609,6 +648,7 @@ Implemented two-level defense:
 ```
 
 **Poor Memory Entry (Avoid):**
+
 ```markdown
 ## Fixed context overflow
 
@@ -619,6 +659,7 @@ Works now.
 ### When to Write Memories
 
 **Architecture Decisions:**
+
 - Major architectural choices
 - Technology selections
 - Design pattern adoptions
@@ -626,6 +667,7 @@ Works now.
 - System constraints
 
 **Development Workflow:**
+
 - New processes introduced
 - Build/deployment procedures
 - Testing strategies
@@ -633,6 +675,7 @@ Works now.
 - Automation added
 
 **Domain Knowledge:**
+
 - New business rules
 - Terminology definitions
 - System behaviors
@@ -640,12 +683,14 @@ Works now.
 - Core concepts
 
 **Suggested Commands:**
+
 - Frequently used CLI operations
 - Useful shortcuts
 - Troubleshooting commands
 - Maintenance tasks
 
 **Lessons Learned:**
+
 - Challenges overcome
 - Failed approaches (why they failed)
 - Successful strategies
@@ -655,15 +700,18 @@ Works now.
 ### Memory Maintenance
 
 **Weekly:**
+
 - Review recent entries for clarity
 - Add cross-references if needed
 
 **Monthly:**
+
 - Identify outdated entries
 - Archive superseded decisions
 - Consolidate related entries
 
 **Per Major Release:**
+
 - Update all memories with new patterns
 - Document breaking changes
 - Record migration lessons
@@ -704,6 +752,7 @@ steeringドキュメントを自動同期します。
 #### Auto-Sync実行フロー:
 
 **Step 1: 現在の設定読み込み**
+
 ```
 📋 現在のSteering設定
 
@@ -715,6 +764,7 @@ Directories: bin, src, steering, docs
 ```
 
 **Step 2: コードベース分析**
+
 ```
 🔍 コードベース分析中...
 
@@ -726,6 +776,7 @@ Directories: bin, src, steering, docs, tests
 ```
 
 **Step 3: 変更検出**
+
 ```
 🔎 変更検出結果
 
@@ -749,6 +800,7 @@ Directories: bin, src, steering, docs, tests
 ```
 
 **Step 4: ユーザー確認（インタラクティブモード）**
+
 ```
 【質問 2/2】これらの変更をsteeringに反映しますか？
 
@@ -762,6 +814,7 @@ Directories: bin, src, steering, docs, tests
 ```
 
 **Step 5: 変更適用**
+
 ```
 ✨ 変更を適用中...
 
@@ -791,16 +844,19 @@ Updated steering/memories/architecture_decisions.md
 #### Auto-Sync Options
 
 **自動同期モード (`--auto-approve`)**:
+
 - 変更を自動的に適用（確認なし）
 - CI/CDパイプラインでの使用に最適
 - 定期実行スクリプト向け
 
 **Dry runモード (`--dry-run`)**:
+
 - 変更を検出して表示のみ
 - 実際にファイルは変更しない
 - 変更内容の事前確認に使用
 
 **インタラクティブモード（デフォルト）**:
+
 - 変更を表示して確認を求める
 - ユーザーが承認後に適用
 - 手動実行時の標準モード

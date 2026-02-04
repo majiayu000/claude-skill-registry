@@ -1,111 +1,128 @@
 ---
 name: create-agent
-description: Create a new custom subagent for Task() delegation. Use when adding a reusable agent prompt, when the user asks to "add an agent", or when a complex workflow should be delegated to a specialized agent.
+description: >
+  Claude Code Agent를 생성합니다.
+  에이전트 생성, AGENT.md 작성, 새 에이전트 만들기 요청 시 활성화.
 ---
 
-# Creating a New Agent
+# Agent 생성
 
-## Official Documentation
+Claude Code Agent를 생성하는 가이드입니다.
 
-- **Primary**: https://code.claude.com/docs/en/sub-agents.md
-- **Best Practices**: https://code.claude.com/docs/en/best-practices.md (section: "Create custom subagents")
+## 필수 요소
 
-## File Location
+| 필드 | 설명 | 제약 |
+|------|------|------|
+| `name` | 에이전트 식별자 | 소문자/하이픈만 |
+| `description` | 역할 + 위임 조건 + "Use proactively" | Claude 위임 판단 기준 |
+| `tools` | 허용 도구 목록 | 필요한 도구만 명시 |
 
-Create `.claude/agents/<agent-name>.md`
+## description 작성 패턴
 
-## Agent File Format
+```yaml
+description: >
+  [역할/전문 영역]
+  [언제 위임할지 조건]
+  Use proactively when/after [트리거 조건].
+```
+
+**예시:**
+```yaml
+description: >
+  코드 리뷰 전문가. 품질, 보안, 유지보수성 검토.
+  코드 작성/수정 후 사전에 사용.
+  Use proactively after code changes.
+```
+
+## 생성 단계
+
+### 1단계: 디렉토리 생성
+
+```bash
+mkdir -p agents/{name}/references
+```
+
+### 2단계: AGENT.md 작성
 
 ```yaml
 ---
-name: agent-name                    # Required: lowercase-with-dashes
-description: What the agent does and when to delegate to it. Be specific about trigger conditions.
-# Optional fields below:
-tools: Read, Grep, Glob, Bash       # Comma-separated; inherits all if omitted
-disallowedTools: Edit, Write        # Explicitly deny tools
-model: sonnet                       # sonnet, opus, haiku, or inherit (default)
-permissionMode: default             # default, acceptEdits, dontAsk, bypassPermissions, plan
-skills: skill-a, skill-b            # Skills to preload into agent context
+name: agent-name
+description: >
+  역할과 전문 영역 설명.
+  언제 위임할지 조건 명시.
+  Use proactively when [조건].
+tools: Read, Grep, Glob, Bash
 ---
 
-You are a [role description].
+당신은 [역할] 전문가입니다.
 
-## Your Task
+## 호출 시 수행 단계
 
-When invoked:
-1. First step
-2. Second step
-3. Third step
+1. 단계 1
+2. 단계 2
+3. 단계 3
 
-## Guidelines
+## 출력 형식
 
-- Specific instruction
-- Another instruction
-
-## Output Format
-
-Describe expected output format.
+[결과물 형식 정의]
 ```
 
-## Built-in Subagent Types
+### 3단계: AGENTS.md 개요 작성 (선택)
 
-Before creating a custom agent, consider if a built-in type suffices:
+```markdown
+# Agent Name
 
-| Type | Purpose | Tools |
-|------|---------|-------|
-| `Explore` | Fast codebase search, file discovery | Read-only |
-| `Plan` | Architecture, implementation planning | Read-only |
-| `Bash` | Command execution | Bash only |
-| `general-purpose` | Complex multi-step tasks | All tools |
+> 에이전트 한 줄 설명
 
-## Design Principles
+## 용도
 
-**Focus**: One agent, one job. Don't create jack-of-all-trades agents.
+이 에이전트가 하는 일 설명.
 
-**Minimal Tools**: Grant only necessary tools. Read-only agents can't accidentally break things.
+## 상세
 
-**Clear Workflow**: Numbered steps help the agent stay on track.
-
-**Good Description**: Claude uses the description to decide when to delegate. Include:
-- What the agent specializes in
-- When to use it (trigger conditions)
-- "Use proactively when..." if appropriate
-
-## Example: Read-Only Reviewer
-
-```yaml
----
-name: lore-checker
-description: Verify lore consistency across campaign materials. Use when adding new lore, after writing session logs, or when the user asks to check for contradictions.
-tools: Read, Grep, Glob
-model: haiku
----
-
-You are a lore consistency checker for TTRPG campaigns.
-
-## Your Task
-
-1. Identify the new or modified lore element
-2. Search for related existing lore using Grep
-3. Read relevant files
-4. Report any contradictions or inconsistencies
-5. Suggest resolutions if conflicts found
-
-## Output Format
-
-**Checked**: [element being verified]
-**Related Files**: [list of files examined]
-**Status**: Consistent / Conflicts Found
-**Details**: [explanation]
+- [AGENT.md](AGENT.md) - 시스템 프롬프트
+- [참조 문서](references/detail.md)
 ```
 
-## Checklist
+## 선택 필드
 
-Before committing a new agent:
+| 필드 | 용도 | 예시 |
+|------|------|------|
+| `disallowedTools` | 거부 도구 | `Write, Edit` |
+| `model` | 모델 선택 | `haiku`, `sonnet`, `opus`, `inherit` |
+| `permissionMode` | 권한 모드 | `default`, `acceptEdits`, `dontAsk` |
+| `skills` | 스킬 주입 | `[api-conventions, error-handling]` |
+| `hooks` | 라이프사이클 훅 | `{PreToolUse: [...]}` |
 
-1. [ ] Name is lowercase-with-dashes
-2. [ ] Description explains what AND when to delegate
-3. [ ] Tools are minimal for the task
-4. [ ] Workflow steps are clear and numbered
-5. [ ] Output format is specified
-6. [ ] Tested via Task() delegation
+## 도구 제한 패턴
+
+| 패턴 | tools | disallowedTools |
+|------|-------|-----------------|
+| 읽기 전용 | `Read, Grep, Glob, Bash` | `Write, Edit` |
+| 수정 가능 | `Read, Edit, Write, Grep, Glob, Bash` | - |
+| 최소 권한 | `Read, Grep, Glob` | - |
+
+## 모델 선택 가이드
+
+| 모델 | 사용 시점 |
+|------|----------|
+| `haiku` | 빠른 탐색, 간단한 검색 |
+| `sonnet` | 분석, 리뷰, 균형 잡힌 작업 |
+| `opus` | 복잡한 추론, 아키텍처 결정 |
+| `inherit` | 메인 대화와 동일 (기본값) |
+
+## 체크리스트
+
+```
+□ name이 소문자/하이픈만 사용하는가?
+□ description이 역할 + 위임 조건을 명확히 설명하는가?
+□ description에 "Use proactively" 패턴이 있는가?
+□ 필요한 도구만 tools에 명시되었는가?
+□ 읽기 전용이면 disallowedTools에 Write, Edit이 있는가?
+□ 시스템 프롬프트가 역할과 단계를 명확히 정의하는가?
+```
+
+## 상세 가이드
+
+- [Frontmatter 스키마](references/schema.md)
+- [템플릿 모음](references/templates.md)

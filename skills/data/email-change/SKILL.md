@@ -1,52 +1,23 @@
 ---
 name: email-change
-description: |
-  Transfer license to different email. Triggers when customer wants to 
-  change email, move license, update account email, or mentions leaving job.
-sample_size: 2920
-validation:
-  required_phrases:
-    - "email"
-    - "let me know"
-  forbidden_patterns:
-    - "(?i)why"
-    - "(?i)reason"
-metrics:
-  sample_size: 2920
-  avg_thread_length: 2.93
-  top_phrases:
-    - phrase: "let me know if"
-      count: 2209
-      percent: 75.7
-    - phrase: "me know if you"
-      count: 2095
-      percent: 71.7
-    - phrase: "know if you have"
-      count: 1985
-      percent: 68.0
-    - phrase: "if you have any"
-      count: 1964
-      percent: 67.3
-    - phrase: "i ve transferred your"
-      count: 1765
-      percent: 60.4
-    - phrase: "ve transferred your license"
-      count: 1644
-      percent: 56.3
-    - phrase: "transferred your license to"
-      count: 1635
-      percent: 56.0
-    - phrase: "your license to email"
-      count: 1622
-      percent: 55.5
-    - phrase: "email let me know"
-      count: 1560
-      percent: 53.4
-    - phrase: "to email let me"
-      count: 1539
-      percent: 52.7
+description: Transfer licenses to a new email address. Use when a customer wants to change account email, move a license, or update access after a job change.
+metadata:
+  trigger_phrases:
+      - "transfer licenses"
+      - "licenses new"
+      - "new email"
+  related_skills: ["team-license-purchase", "login-link", "access-locked-out", "corporate-invoice", "invoice-billing-statement"]
+  sample_size: "2920"
+  validation: |
+    required_phrases:
+      - "email"
+      - "let me know"
+    forbidden_patterns:
+      - "(?i)why"
+      - "(?i)reason"
+    max_length: 500
+  metrics: "sample_size: 2920\navg_thread_length: 2.93\ntop_phrases:\n  - phrase: \"let me know if\"\n    count: 2209\n    percent: 75.7\n  - phrase: \"me know if you\"\n    count: 2095\n    percent: 71.7\n  - phrase: \"know if you have\"\n    count: 1985\n    percent: 68.0\n  - phrase: \"if you have any\"\n    count: 1964\n    percent: 67.3\n  - phrase: \"i ve transferred your\"\n    count: 1765\n    percent: 60.4\n  - phrase: \"ve transferred your license\"\n    count: 1644\n    percent: 56.3\n  - phrase: \"transferred your license to\"\n    count: 1635\n    percent: 56.0\n  - phrase: \"your license to email\"\n    count: 1622\n    percent: 55.5\n  - phrase: \"email let me know\"\n    count: 1560\n    percent: 53.4\n  - phrase: \"to email let me\"\n    count: 1539\n    percent: 52.7"
 ---
-
 # Email Address Change
 
 You're handling an email change request. This is our most common ticket.
@@ -108,3 +79,4 @@ Draft must:
 - [ ] Confirm the transfer happened (past tense)
 - [ ] Reference the new email address
 - [ ] Offer follow-up help
+- [ ] NOT explain HOW you transferred it

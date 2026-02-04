@@ -1,7 +1,7 @@
 {
   "name": "pr-review",
-  "repo": "sensei-hacker/inav-claude",
-  "path": ".claude/skills/pr-review/SKILL.md",
-  "source": "github.com/sensei-hacker/inav-claude",
-  "downloaded_at": "2026-02-02T04:58:19.358574Z"
+  "repo": "lailtonjunior/fiscalzen-project",
+  "path": ".context/skills/pr-review/SKILL.md",
+  "source": "github.com/lailtonjunior/fiscalzen-project",
+  "downloaded_at": "2026-02-04T04:53:39.221150Z"
 }

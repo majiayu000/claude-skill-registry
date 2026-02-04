@@ -1,100 +1,123 @@
 ---
 name: exa-search
-description: Use when searching for concepts, ideas, or similar content without exact keywords; when user asks "find similar to...", needs semantic discovery, research across perspectives, or explicitly mentions exa
+description: Use Exa for semantic/neural web search. Exa understands context and returns high-quality results. Use this skill when you need to search the web for documentation, research, or any information that requires understanding meaning rather than just keyword matching. NEVER substitute web_search for Exa - they serve completely different purposes.
+version: 1.0.0
 ---
+
 
 # Exa Semantic Search
 
-## Overview
+Exa provides neural/semantic search via MCP. Use it for high-quality web search that understands context.
 
-Exa.ai provides neural semantic search optimized for AI consumption. Use when **meaning matters more than keywords**.
+## When to Use Exa
 
-## Decision Flowchart
+- Searching for documentation or technical information
+- Research requiring semantic understanding
+- Finding information where exact keywords are unknown
+- Company research and LinkedIn searches
+- Deep research tasks
 
-```dot
-digraph exa_decision {
-    rankdir=TB;
-    node [shape=box];
+## When NOT to Use Exa
 
-    start [label="Need to search the web?" shape=diamond];
-    known_url [label="Do you have\na specific URL?" shape=diamond];
-    semantic [label="Is this semantic/conceptual?\n(meaning > keywords)" shape=diamond];
-    recent [label="Need very recent\nnews/events?" shape=diamond];
-    code [label="Is this a coding/\nAPI question?" shape=diamond];
+- Never use `web_search` as a substitute - it's basic keyword matching only
+- If Exa fails, troubleshoot Exa - don't fall back to `web_search`
 
-    webfetch [label="WebFetch" shape=box style=filled fillcolor=lightblue];
-    websearch [label="WebSearch" shape=box style=filled fillcolor=lightgreen];
-    exa_web [label="mcp__exa__web_search_exa" shape=box style=filled fillcolor=lightyellow];
-    exa_code [label="mcp__exa__get_code_context_exa" shape=box style=filled fillcolor=lightyellow];
+## Available Tools
 
-    start -> known_url [label="yes"];
-    start -> known_url [label="no" style=invis];
-    known_url -> webfetch [label="yes"];
-    known_url -> semantic [label="no"];
-    semantic -> code [label="yes"];
-    semantic -> recent [label="no"];
-    code -> exa_code [label="yes"];
-    code -> exa_web [label="no"];
-    recent -> websearch [label="yes"];
-    recent -> websearch [label="no"];
+The Exa MCP server provides these tools:
+
+- `web_search_exa` - Semantic web search
+- `crawling_exa` - Crawl and extract web content
+- `company_research_exa` - Research companies
+- `linkedin_search_exa` - Search LinkedIn profiles
+- `deep_researcher_start` - Start deep research task
+- `deep_researcher_check` - Check deep research status
+
+## Configuration
+
+Exa is configured as a remote HTTP MCP in `~/.mcp.json`:
+
+```json
+{
+  "exa": {
+    "type": "http",
+    "url": "https://mcp.exa.ai/mcp?tools=web_search_exa,crawling_exa,company_research_exa,linkedin_search_exa,deep_researcher_start,deep_researcher_check"
+  }
 }
 ```
 
-## Quick Reference
+## Usage Examples
 
-| Scenario | Tool | Why |
-|----------|------|-----|
-| "Find papers on emergent AI behavior" | `mcp__exa__web_search_exa` | Semantic discovery |
-| "Companies similar to Anthropic" | `mcp__exa__web_search_exa` | Similar content |
-| "How to use React hooks" | `mcp__exa__get_code_context_exa` | Coding context |
-| "Latest news on X" | `WebSearch` | Recency matters |
-| "Read this URL: [link]" | `WebFetch` | Known URL |
-| "error: module not found XYZ" | `WebSearch` | Exact keyword match |
-| "CVE-2024-12345" | `WebSearch` | Specific identifier |
+### Basic Search
+Use the Exa MCP tools directly when semantic search is needed.
 
-## Tool Usage
+### Deep Research
+1. Start with `deep_researcher_start` for complex topics
+2. Poll with `deep_researcher_check` until complete
+3. Get comprehensive, synthesized results
 
-### mcp__exa__web_search_exa
+## Critical Rules
+
+1. **NEVER replace Exa with web_search** - they are fundamentally different
+2. **NEVER use web_search in Task sub-agents** as a substitute for Exa
+3. If Exa fails, troubleshoot Exa - do not substitute
+
+
+
+## Scientific Skill Interleaving
+
+This skill connects to the K-Dense-AI/claude-scientific-skills ecosystem:
+
+### Graph Theory
+- **networkx** [○] via bicomodule
+  - Universal graph hub
+
+### Bibliography References
+
+- `algorithms`: 19 citations in bib.duckdb
+
+
+
+## SDF Interleaving
+
+This skill connects to **Software Design for Flexibility** (Hanson & Sussman, 2021):
+
+### Primary Chapter: 10. Adventure Game Example
+
+**Concepts**: autonomous agent, game, synthesis
+
+### GF(3) Balanced Triad
+
 ```
-query: "semantic query describing concepts"
-numResults: 8 (default, adjust as needed)
-type: "auto" | "fast" | "deep"
+exa-search (−) + SDF.Ch10 (+) + [balancer] (○) = 0
 ```
 
-### mcp__exa__get_code_context_exa
+**Skill Trit**: -1 (MINUS - verification)
+
+### Secondary Chapters
+
+- Ch4: Pattern Matching
+
+### Connection Pattern
+
+Adventure games synthesize techniques. This skill integrates multiple patterns.
+## Cat# Integration
+
+This skill maps to **Cat# = Comod(P)** as a bicomodule in the equipment structure:
+
 ```
-query: "React useState hook examples" | "Express middleware patterns"
-tokensNum: 5000 (default, 1000-50000 range)
+Trit: 0 (ERGODIC)
+Home: Prof
+Poly Op: ⊗
+Kan Role: Adj
+Color: #26D826
 ```
 
-## Integration Patterns
+### GF(3) Naturality
 
-**Discovery + Extraction:**
-1. Exa finds relevant sources semantically
-2. WebFetch extracts full content from best URLs
+The skill participates in triads satisfying:
+```
+(-1) + (0) + (+1) ≡ 0 (mod 3)
+```
 
-**Multi-perspective research:**
-1. Exa: "academic perspectives on X"
-2. Exa: "industry implementation of X"
-3. Exa: "critiques of X"
-4. Synthesize
-
-**Fallback:**
-1. Try Exa for semantic search
-2. If results poor, fall back to WebSearch with keywords
-
-## Anti-Patterns
-
-| Don't | Do Instead |
-|-------|------------|
-| `"python pandas filter dataframe"` | Use WebSearch (keyword query) |
-| Run 10 similar queries | Consolidate into 2-3 well-crafted queries |
-| `"what is React"` | Use knowledge or WebSearch |
-| `"breaking news today"` | Use WebSearch |
-
-## When Results Are Poor
-
-1. Switch search type: `auto` vs `fast` vs `deep`
-2. Rephrase: more semantic/descriptive
-3. Add domain filters via `allowed_domains`
-4. Fall back to WebSearch for keyword matching
+This ensures compositional coherence in the Cat# equipment structure.

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-02T05:16:15.287672Z",
+  "updated_at": "2026-02-04T05:27:39.046054Z",
   "categories": [
     {
       "name": ".github-skills",
@@ -534,14 +534,6 @@
       "count": 1
     },
     {
-      "name": "Architect",
-      "count": 1
-    },
-    {
-      "name": "Art",
-      "count": 1
-    },
-    {
       "name": "Authentication",
       "count": 1
     },
@@ -555,22 +547,6 @@
     },
     {
       "name": "Boofuzz-Fuzzer",
-      "count": 1
-    },
-    {
-      "name": "Brainstorming",
-      "count": 1
-    },
-    {
-      "name": "BrightData",
-      "count": 1
-    },
-    {
-      "name": "Browse",
-      "count": 1
-    },
-    {
-      "name": "Browser",
       "count": 1
     },
     {
@@ -590,19 +566,11 @@
       "count": 1
     },
     {
-      "name": "CORE",
-      "count": 1
-    },
-    {
       "name": "CSharpener",
       "count": 1
     },
     {
       "name": "Code_Feeder_Skill",
-      "count": 1
-    },
-    {
-      "name": "Content",
       "count": 1
     },
     {
@@ -622,14 +590,6 @@
       "count": 1
     },
     {
-      "name": "CreateSkill",
-      "count": 1
-    },
-    {
-      "name": "Createskill",
-      "count": 1
-    },
-    {
       "name": "CuttingParams",
       "count": 1
     },
@@ -639,10 +599,6 @@
     },
     {
       "name": "Dashbaord-skill",
-      "count": 1
-    },
-    {
-      "name": "Databases",
       "count": 1
     },
     {
@@ -658,19 +614,11 @@
       "count": 1
     },
     {
-      "name": "Elasticsearch",
-      "count": 1
-    },
-    {
       "name": "Epic",
       "count": 1
     },
     {
       "name": "FS-155",
-      "count": 1
-    },
-    {
-      "name": "Fabric",
       "count": 1
     },
     {
@@ -683,10 +631,6 @@
     },
     {
       "name": "GTD",
-      "count": 1
-    },
-    {
-      "name": "Go-to-Market-Planner",
       "count": 1
     },
     {
@@ -723,18 +667,6 @@
     },
     {
       "name": "KaiTodo",
-      "count": 1
-    },
-    {
-      "name": "LangChain",
-      "count": 1
-    },
-    {
-      "name": "LangGraph",
-      "count": 1
-    },
-    {
-      "name": "Logging",
       "count": 1
     },
     {
@@ -778,10 +710,6 @@
       "count": 1
     },
     {
-      "name": "Observability",
-      "count": 1
-    },
-    {
       "name": "PRD-to-Tasks",
       "count": 1
     },
@@ -814,15 +742,7 @@
       "count": 1
     },
     {
-      "name": "PostgreSQL",
-      "count": 1
-    },
-    {
       "name": "PowerPlatform",
-      "count": 1
-    },
-    {
-      "name": "Productivity",
       "count": 1
     },
     {
@@ -846,23 +766,11 @@
       "count": 1
     },
     {
-      "name": "Research",
-      "count": 1
-    },
-    {
       "name": "Reverse Proxy Deployment",
       "count": 1
     },
     {
       "name": "Roo-VMS",
-      "count": 1
-    },
-    {
-      "name": "Rust",
-      "count": 1
-    },
-    {
-      "name": "SCHEDULING",
       "count": 1
     },
     {
@@ -894,10 +802,6 @@
       "count": 1
     },
     {
-      "name": "SkillForge",
-      "count": 1
-    },
-    {
       "name": "SkillsMatrix",
       "count": 1
     },
@@ -907,10 +811,6 @@
     },
     {
       "name": "StoryExplanation",
-      "count": 1
-    },
-    {
-      "name": "Summarize",
       "count": 1
     },
     {
@@ -935,10 +835,6 @@
     },
     {
       "name": "TribalKnowledge",
-      "count": 1
-    },
-    {
-      "name": "Unifi",
       "count": 1
     },
     {
@@ -13939,7 +13835,7 @@
     },
     {
       "name": "data",
-      "count": 26637
+      "count": 28376
     },
     {
       "name": "data-access",
@@ -15211,7 +15107,7 @@
     },
     {
       "name": "design",
-      "count": 5540
+      "count": 5511
     },
     {
       "name": "design-and-build",
@@ -15855,7 +15751,7 @@
     },
     {
       "name": "development",
-      "count": 18239
+      "count": 18174
     },
     {
       "name": "development-code",
@@ -15907,7 +15803,7 @@
     },
     {
       "name": "devops",
-      "count": 3161
+      "count": 3145
     },
     {
       "name": "devops-agent",
@@ -16827,7 +16723,7 @@
     },
     {
       "name": "documents",
-      "count": 2729
+      "count": 2721
     },
     {
       "name": "docusaurus",
@@ -34543,7 +34439,7 @@
     },
     {
       "name": "other",
-      "count": 18486
+      "count": 18325
     },
     {
       "name": "other-entries",
@@ -37251,7 +37147,7 @@
     },
     {
       "name": "productivity",
-      "count": 1532
+      "count": 1524
     },
     {
       "name": "professeur_lycee",
@@ -43439,7 +43335,7 @@
     },
     {
       "name": "security",
-      "count": 756
+      "count": 747
     },
     {
       "name": "security-agent",
@@ -49475,7 +49371,7 @@
     },
     {
       "name": "testing",
-      "count": 4016
+      "count": 3994
     },
     {
       "name": "testing-agent",

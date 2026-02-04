@@ -1,12 +1,7 @@
 {
   "name": "render-template",
-  "description": "Render templates with variable substitution using {{variable}} or ${variable} syntax. Use for generating formatted output, reports, commit messages, or any text requiring variable interpolation.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "design",
-  "tags": [
-    "render",
-    "template"
-  ],
-  "stars": 27,
-  "source": "local"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/render-template/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:12.856553Z"
 }

@@ -1,6 +1,10 @@
 ---
 name: styling-with-shadcn
-description: Build beautiful, accessible UIs with shadcn/ui components in Next.js. Use when creating forms, dialogs, tables, sidebars, or any UI components. Covers installation, component patterns, react-hook-form + Zod validation, and dark mode setup. NOT when building non-React applications or using different component libraries.
+description: |
+  Build beautiful, accessible UIs with shadcn/ui components in Next.js. Use when creating
+  forms, dialogs, tables, sidebars, or any UI components. Covers installation, component
+  patterns, react-hook-form + Zod validation, and dark mode setup.
+  NOT when building non-React applications or using different component libraries.
 ---
 
 # shadcn/ui

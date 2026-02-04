@@ -1,24 +1,15 @@
 ---
 name: json-canvas
-category: document-processing
 description: Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions Canvas files in Obsidian.
 ---
 
-# JSON Canvas
+# JSON Canvas Skill
 
-This skill enables Claude Code to create and edit valid JSON Canvas files (`.canvas`) used in Obsidian and other applications.
+This skill enables skills-compatible agents to create and edit valid JSON Canvas files (`.canvas`) used in Obsidian and other applications.
 
 ## Overview
 
-JSON Canvas is an open file format for infinite canvas data. Canvas files use the `.canvas` extension and contain valid JSON following the JSON Canvas Spec 1.0.
-
-## When to Use This Skill
-
-- Creating or editing .canvas files in Obsidian
-- Building visual mind maps or flowcharts
-- Creating project boards or planning documents
-- Organizing notes visually with connections
-- Building diagrams with linked content
+JSON Canvas is an open file format for infinite canvas data. Canvas files use the `.canvas` extension and contain valid JSON following the [JSON Canvas Spec 1.0](https://jsoncanvas.org/spec/1.0/).
 
 ## File Structure
 
@@ -44,10 +35,13 @@ Nodes are objects placed on the canvas. There are four node types:
 
 ### Z-Index Ordering
 
-First node = bottom layer (displayed below others)
-Last node = top layer (displayed above others)
+Nodes are ordered by z-index in the array:
+- First node = bottom layer (displayed below others)
+- Last node = top layer (displayed above others)
 
 ### Generic Node Attributes
+
+All nodes share these attributes:
 
 | Attribute | Required | Type | Description |
 |-----------|----------|------|-------------|
@@ -65,37 +59,67 @@ Text nodes contain Markdown content.
 
 ```json
 {
-  "id": "text1",
+  "id": "6f0ad84f44ce9c17",
   "type": "text",
   "x": 0,
   "y": 0,
-  "width": 300,
-  "height": 150,
-  "text": "# Heading\n\nThis is **markdown** content."
+  "width": 400,
+  "height": 200,
+  "text": "# Hello World\n\nThis is **Markdown** content."
 }
 ```
 
+#### Newline Escaping (Common Pitfall)
+
+In JSON, newline characters inside strings **must** be represented as `\n`. Do **not** use the literal sequence `\\n` in a `.canvas` file—Obsidian will render it as the characters `\` and `n` instead of a line break.
+
+Examples:
+
+```json
+{ "type": "text", "text": "Line 1\nLine 2" }
+```
+
+```json
+{ "type": "text", "text": "Line 1\\nLine 2" }
+```
+
+| Attribute | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `text` | Yes | string | Plain text with Markdown syntax |
+
 ### File Nodes
 
-File nodes reference files or attachments (images, videos, PDFs, notes, etc.)
+File nodes reference files or attachments (images, videos, PDFs, notes, etc.).
+
+```json
+{
+  "id": "a1b2c3d4e5f67890",
+  "type": "file",
+  "x": 500,
+  "y": 0,
+  "width": 400,
+  "height": 300,
+  "file": "Attachments/diagram.png"
+}
+```
+
+```json
+{
+  "id": "b2c3d4e5f6789012",
+  "type": "file",
+  "x": 500,
+  "y": 400,
+  "width": 400,
+  "height": 300,
+  "file": "Notes/Project Overview.md",
+  "subpath": "#Implementation"
+}
+```
 
 | Attribute | Required | Type | Description |
 |-----------|----------|------|-------------|
 | `file` | Yes | string | Path to file within the system |
 | `subpath` | No | string | Link to heading or block (starts with `#`) |
-
-```json
-{
-  "id": "file1",
-  "type": "file",
-  "x": 350,
-  "y": 0,
-  "width": 400,
-  "height": 300,
-  "file": "Notes/My Note.md",
-  "subpath": "#Heading"
-}
-```
 
 ### Link Nodes
 
@@ -103,19 +127,50 @@ Link nodes display external URLs.
 
 ```json
 {
-  "id": "link1",
+  "id": "c3d4e5f678901234",
   "type": "link",
-  "x": 0,
-  "y": 200,
-  "width": 300,
-  "height": 150,
-  "url": "https://example.com"
+  "x": 1000,
+  "y": 0,
+  "width": 400,
+  "height": 200,
+  "url": "https://obsidian.md"
 }
 ```
+
+| Attribute | Required | Type | Description |
+|-----------|----------|------|-------------|
+| `url` | Yes | string | External URL |
 
 ### Group Nodes
 
 Group nodes are visual containers for organizing other nodes.
+
+```json
+{
+  "id": "d4e5f6789012345a",
+  "type": "group",
+  "x": -50,
+  "y": -50,
+  "width": 1000,
+  "height": 600,
+  "label": "Project Overview",
+  "color": "4"
+}
+```
+
+```json
+{
+  "id": "e5f67890123456ab",
+  "type": "group",
+  "x": 0,
+  "y": 700,
+  "width": 800,
+  "height": 500,
+  "label": "Resources",
+  "background": "Attachments/background.png",
+  "backgroundStyle": "cover"
+}
+```
 
 | Attribute | Required | Type | Description |
 |-----------|----------|------|-------------|
@@ -131,22 +186,31 @@ Group nodes are visual containers for organizing other nodes.
 | `ratio` | Maintains aspect ratio of background image |
 | `repeat` | Repeats image as pattern in both directions |
 
-```json
-{
-  "id": "group1",
-  "type": "group",
-  "x": -50,
-  "y": -50,
-  "width": 800,
-  "height": 500,
-  "label": "Project Ideas",
-  "color": "4"
-}
-```
-
 ## Edges
 
 Edges are lines connecting nodes.
+
+```json
+{
+  "id": "f67890123456789a",
+  "fromNode": "6f0ad84f44ce9c17",
+  "toNode": "a1b2c3d4e5f67890"
+}
+```
+
+```json
+{
+  "id": "0123456789abcdef",
+  "fromNode": "6f0ad84f44ce9c17",
+  "fromSide": "right",
+  "fromEnd": "none",
+  "toNode": "b2c3d4e5f6789012",
+  "toSide": "left",
+  "toEnd": "arrow",
+  "color": "1",
+  "label": "leads to"
+}
+```
 
 | Attribute | Required | Type | Default | Description |
 |-----------|----------|------|---------|-------------|
@@ -176,21 +240,9 @@ Edges are lines connecting nodes.
 | `none` | No endpoint shape |
 | `arrow` | Arrow endpoint |
 
-```json
-{
-  "id": "edge1",
-  "fromNode": "text1",
-  "fromSide": "right",
-  "toNode": "file1",
-  "toSide": "left",
-  "toEnd": "arrow",
-  "label": "references"
-}
-```
-
 ## Colors
 
-The `canvasColor` type supports both hex colors and preset options.
+The `canvasColor` type can be specified in two ways:
 
 ### Hex Colors
 
@@ -202,6 +254,12 @@ The `canvasColor` type supports both hex colors and preset options.
 
 ### Preset Colors
 
+```json
+{
+  "color": "1"
+}
+```
+
 | Preset | Color |
 |--------|-------|
 | `"1"` | Red |
@@ -211,7 +269,7 @@ The `canvasColor` type supports both hex colors and preset options.
 | `"5"` | Cyan |
 | `"6"` | Purple |
 
-Specific color values for presets are intentionally undefined, allowing applications to use their own brand colors.
+Note: Specific color values for presets are intentionally undefined, allowing applications to use their own brand colors.
 
 ## Complete Examples
 
@@ -221,49 +279,47 @@ Specific color values for presets are intentionally undefined, allowing applicat
 {
   "nodes": [
     {
-      "id": "idea1",
+      "id": "8a9b0c1d2e3f4a5b",
       "type": "text",
       "x": 0,
       "y": 0,
+      "width": 300,
+      "height": 150,
+      "text": "# Main Idea\n\nThis is the central concept."
+    },
+    {
+      "id": "1a2b3c4d5e6f7a8b",
+      "type": "text",
+      "x": 400,
+      "y": -100,
       "width": 250,
       "height": 100,
-      "text": "# Main Idea\n\nCore concept goes here"
+      "text": "## Supporting Point A\n\nDetails here."
     },
     {
-      "id": "idea2",
+      "id": "2b3c4d5e6f7a8b9c",
       "type": "text",
-      "x": 350,
-      "y": -50,
-      "width": 200,
-      "height": 80,
-      "text": "## Supporting Point 1\n\nDetails..."
-    },
-    {
-      "id": "idea3",
-      "type": "text",
-      "x": 350,
+      "x": 400,
       "y": 100,
-      "width": 200,
-      "height": 80,
-      "text": "## Supporting Point 2\n\nMore details..."
+      "width": 250,
+      "height": 100,
+      "text": "## Supporting Point B\n\nMore details."
     }
   ],
   "edges": [
     {
-      "id": "e1",
-      "fromNode": "idea1",
+      "id": "3c4d5e6f7a8b9c0d",
+      "fromNode": "8a9b0c1d2e3f4a5b",
       "fromSide": "right",
-      "toNode": "idea2",
-      "toSide": "left",
-      "toEnd": "arrow"
+      "toNode": "1a2b3c4d5e6f7a8b",
+      "toSide": "left"
     },
     {
-      "id": "e2",
-      "fromNode": "idea1",
+      "id": "4d5e6f7a8b9c0d1e",
+      "fromNode": "8a9b0c1d2e3f4a5b",
       "fromSide": "right",
-      "toNode": "idea3",
-      "toSide": "left",
-      "toEnd": "arrow"
+      "toNode": "2b3c4d5e6f7a8b9c",
+      "toSide": "left"
     }
   ]
 }
@@ -275,61 +331,62 @@ Specific color values for presets are intentionally undefined, allowing applicat
 {
   "nodes": [
     {
-      "id": "todo-group",
+      "id": "5e6f7a8b9c0d1e2f",
       "type": "group",
       "x": 0,
       "y": 0,
       "width": 300,
-      "height": 400,
+      "height": 500,
       "label": "To Do",
       "color": "1"
     },
     {
-      "id": "progress-group",
+      "id": "6f7a8b9c0d1e2f3a",
       "type": "group",
       "x": 350,
       "y": 0,
       "width": 300,
-      "height": 400,
+      "height": 500,
       "label": "In Progress",
       "color": "3"
     },
     {
-      "id": "done-group",
+      "id": "7a8b9c0d1e2f3a4b",
       "type": "group",
       "x": 700,
       "y": 0,
       "width": 300,
-      "height": 400,
+      "height": 500,
       "label": "Done",
       "color": "4"
     },
     {
-      "id": "task1",
+      "id": "8b9c0d1e2f3a4b5c",
       "type": "text",
       "x": 20,
       "y": 50,
       "width": 260,
       "height": 80,
-      "text": "## Task 1\n\nDescription of first task"
+      "text": "## Task 1\n\nImplement feature X"
     },
     {
-      "id": "task2",
+      "id": "9c0d1e2f3a4b5c6d",
       "type": "text",
       "x": 370,
       "y": 50,
       "width": 260,
       "height": 80,
-      "text": "## Task 2\n\nCurrently working on this"
+      "text": "## Task 2\n\nReview PR #123",
+      "color": "2"
     },
     {
-      "id": "task3",
+      "id": "0d1e2f3a4b5c6d7e",
       "type": "text",
       "x": 720,
       "y": 50,
       "width": 260,
       "height": 80,
-      "text": "## Task 3\n\n~~Completed task~~"
+      "text": "## Task 3\n\n~~Setup CI/CD~~"
     }
   ],
   "edges": []
@@ -342,78 +399,86 @@ Specific color values for presets are intentionally undefined, allowing applicat
 {
   "nodes": [
     {
-      "id": "central",
+      "id": "1e2f3a4b5c6d7e8f",
       "type": "text",
-      "x": 200,
+      "x": 300,
       "y": 200,
-      "width": 200,
-      "height": 100,
-      "text": "# Research Topic\n\nMain research question",
-      "color": "6"
+      "width": 400,
+      "height": 200,
+      "text": "# Research Topic\n\n## Key Questions\n\n- How does X affect Y?\n- What are the implications?",
+      "color": "5"
     },
     {
-      "id": "notes1",
+      "id": "2f3a4b5c6d7e8f9a",
       "type": "file",
       "x": 0,
       "y": 0,
-      "width": 180,
+      "width": 250,
       "height": 150,
-      "file": "Research/Literature Review.md"
+      "file": "Literature/Paper A.pdf"
     },
     {
-      "id": "notes2",
+      "id": "3a4b5c6d7e8f9a0b",
       "type": "file",
-      "x": 450,
-      "y": 0,
-      "width": 180,
+      "x": 0,
+      "y": 200,
+      "width": 250,
       "height": 150,
-      "file": "Research/Methodology.md"
+      "file": "Notes/Meeting Notes.md",
+      "subpath": "#Key Insights"
     },
     {
-      "id": "source1",
+      "id": "4b5c6d7e8f9a0b1c",
       "type": "link",
       "x": 0,
-      "y": 350,
-      "width": 180,
+      "y": 400,
+      "width": 250,
       "height": 100,
-      "url": "https://scholar.google.com"
+      "url": "https://example.com/research"
     },
     {
-      "id": "source2",
-      "type": "link",
-      "x": 450,
-      "y": 350,
-      "width": 180,
-      "height": 100,
-      "url": "https://arxiv.org"
+      "id": "5c6d7e8f9a0b1c2d",
+      "type": "file",
+      "x": 750,
+      "y": 150,
+      "width": 300,
+      "height": 250,
+      "file": "Attachments/diagram.png"
     }
   ],
   "edges": [
     {
-      "id": "e1",
-      "fromNode": "central",
-      "toNode": "notes1",
+      "id": "6d7e8f9a0b1c2d3e",
+      "fromNode": "2f3a4b5c6d7e8f9a",
+      "fromSide": "right",
+      "toNode": "1e2f3a4b5c6d7e8f",
+      "toSide": "left",
+      "label": "supports"
+    },
+    {
+      "id": "7e8f9a0b1c2d3e4f",
+      "fromNode": "3a4b5c6d7e8f9a0b",
+      "fromSide": "right",
+      "toNode": "1e2f3a4b5c6d7e8f",
+      "toSide": "left",
+      "label": "informs"
+    },
+    {
+      "id": "8f9a0b1c2d3e4f5a",
+      "fromNode": "4b5c6d7e8f9a0b1c",
+      "fromSide": "right",
+      "toNode": "1e2f3a4b5c6d7e8f",
+      "toSide": "left",
       "toEnd": "arrow",
-      "label": "literature"
+      "color": "6"
     },
     {
-      "id": "e2",
-      "fromNode": "central",
-      "toNode": "notes2",
-      "toEnd": "arrow",
-      "label": "methods"
-    },
-    {
-      "id": "e3",
-      "fromNode": "central",
-      "toNode": "source1",
-      "toEnd": "arrow"
-    },
-    {
-      "id": "e4",
-      "fromNode": "central",
-      "toNode": "source2",
-      "toEnd": "arrow"
+      "id": "9a0b1c2d3e4f5a6b",
+      "fromNode": "1e2f3a4b5c6d7e8f",
+      "fromSide": "right",
+      "toNode": "5c6d7e8f9a0b1c2d",
+      "toSide": "left",
+      "label": "visualized by"
     }
   ]
 }
@@ -425,9 +490,9 @@ Specific color values for presets are intentionally undefined, allowing applicat
 {
   "nodes": [
     {
-      "id": "start",
+      "id": "a0b1c2d3e4f5a6b7",
       "type": "text",
-      "x": 100,
+      "x": 200,
       "y": 0,
       "width": 150,
       "height": 60,
@@ -435,86 +500,102 @@ Specific color values for presets are intentionally undefined, allowing applicat
       "color": "4"
     },
     {
-      "id": "decision",
+      "id": "b1c2d3e4f5a6b7c8",
       "type": "text",
-      "x": 75,
-      "y": 120,
-      "width": 200,
+      "x": 200,
+      "y": 100,
+      "width": 150,
+      "height": 60,
+      "text": "Step 1:\nGather data"
+    },
+    {
+      "id": "c2d3e4f5a6b7c8d9",
+      "type": "text",
+      "x": 200,
+      "y": 200,
+      "width": 150,
       "height": 80,
-      "text": "## Decision\n\nIs condition true?",
+      "text": "**Decision**\n\nIs data valid?",
       "color": "3"
     },
     {
-      "id": "yes-path",
+      "id": "d3e4f5a6b7c8d9e0",
       "type": "text",
-      "x": -100,
-      "y": 280,
+      "x": 400,
+      "y": 200,
       "width": 150,
       "height": 60,
-      "text": "**Yes Path**\n\nDo action A"
+      "text": "Process data"
     },
     {
-      "id": "no-path",
+      "id": "e4f5a6b7c8d9e0f1",
       "type": "text",
-      "x": 300,
-      "y": 280,
+      "x": 0,
+      "y": 200,
       "width": 150,
       "height": 60,
-      "text": "**No Path**\n\nDo action B"
+      "text": "Request new data",
+      "color": "1"
     },
     {
-      "id": "end",
+      "id": "f5a6b7c8d9e0f1a2",
       "type": "text",
-      "x": 100,
-      "y": 420,
+      "x": 400,
+      "y": 320,
       "width": 150,
       "height": 60,
       "text": "**End**",
-      "color": "1"
+      "color": "4"
     }
   ],
   "edges": [
     {
-      "id": "e1",
-      "fromNode": "start",
+      "id": "a6b7c8d9e0f1a2b3",
+      "fromNode": "a0b1c2d3e4f5a6b7",
       "fromSide": "bottom",
-      "toNode": "decision",
-      "toSide": "top",
-      "toEnd": "arrow"
+      "toNode": "b1c2d3e4f5a6b7c8",
+      "toSide": "top"
     },
     {
-      "id": "e2",
-      "fromNode": "decision",
-      "fromSide": "left",
-      "toNode": "yes-path",
-      "toSide": "top",
-      "toEnd": "arrow",
-      "label": "Yes"
+      "id": "b7c8d9e0f1a2b3c4",
+      "fromNode": "b1c2d3e4f5a6b7c8",
+      "fromSide": "bottom",
+      "toNode": "c2d3e4f5a6b7c8d9",
+      "toSide": "top"
     },
     {
-      "id": "e3",
-      "fromNode": "decision",
+      "id": "c8d9e0f1a2b3c4d5",
+      "fromNode": "c2d3e4f5a6b7c8d9",
       "fromSide": "right",
-      "toNode": "no-path",
-      "toSide": "top",
-      "toEnd": "arrow",
-      "label": "No"
+      "toNode": "d3e4f5a6b7c8d9e0",
+      "toSide": "left",
+      "label": "Yes",
+      "color": "4"
     },
     {
-      "id": "e4",
-      "fromNode": "yes-path",
-      "fromSide": "bottom",
-      "toNode": "end",
+      "id": "d9e0f1a2b3c4d5e6",
+      "fromNode": "c2d3e4f5a6b7c8d9",
+      "fromSide": "left",
+      "toNode": "e4f5a6b7c8d9e0f1",
+      "toSide": "right",
+      "label": "No",
+      "color": "1"
+    },
+    {
+      "id": "e0f1a2b3c4d5e6f7",
+      "fromNode": "e4f5a6b7c8d9e0f1",
+      "fromSide": "top",
+      "fromEnd": "none",
+      "toNode": "b1c2d3e4f5a6b7c8",
       "toSide": "left",
       "toEnd": "arrow"
     },
     {
-      "id": "e5",
-      "fromNode": "no-path",
+      "id": "f1a2b3c4d5e6f7a8",
+      "fromNode": "d3e4f5a6b7c8d9e0",
       "fromSide": "bottom",
-      "toNode": "end",
-      "toSide": "right",
-      "toEnd": "arrow"
+      "toNode": "f5a6b7c8d9e0f1a2",
+      "toSide": "top"
     }
   ]
 }
@@ -522,9 +603,15 @@ Specific color values for presets are intentionally undefined, allowing applicat
 
 ## ID Generation
 
-Node and edge IDs must be unique strings. Obsidian generates 16-character hexadecimal IDs.
+Node and edge IDs must be unique strings. Obsidian generates 16-character hexadecimal IDs:
 
-Example format: `a1b2c3d4e5f67890`
+```json
+"id": "6f0ad84f44ce9c17"
+"id": "a3b2c1d0e9f8g7h6"
+"id": "1234567890abcdef"
+```
+
+This format is a 16-character lowercase hex string (64-bit random value).
 
 ## Layout Guidelines
 

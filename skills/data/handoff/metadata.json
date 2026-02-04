@@ -1,7 +1,7 @@
 {
   "name": "handoff",
-  "repo": "laris-co/nat-agents-core",
-  "path": "bundles/skills/handoff/SKILL.md",
-  "source": "github.com/laris-co/nat-agents-core",
-  "downloaded_at": "2026-02-02T04:46:44.435249Z"
+  "repo": "dbmcco/tmux-beads-loops",
+  "path": ".claude/skills/handoff/SKILL.md",
+  "source": "github.com/dbmcco/tmux-beads-loops",
+  "downloaded_at": "2026-02-04T05:17:44.879442Z"
 }

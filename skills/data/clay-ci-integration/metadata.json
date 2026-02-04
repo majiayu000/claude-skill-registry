@@ -1,9 +1,7 @@
 {
   "name": "clay-ci-integration",
-  "description": "Configure Clay CI/CD integration with GitHub Actions and testing.\nUse when setting up automated testing, configuring CI pipelines,\nor integrating Clay tests into your build process.\nTrigger with phras",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
+  "repo": "Brmbobo/Web2podcast",
+  "path": ".claude/agents/enterprise-frontend-design/agents/saas-packs/clay-pack/skills/clay-ci-integration/SKILL.md",
+  "source": "github.com/Brmbobo/Web2podcast",
+  "downloaded_at": "2026-02-04T02:18:43.096795Z"
 }

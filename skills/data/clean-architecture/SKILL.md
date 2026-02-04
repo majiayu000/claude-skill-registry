@@ -1,113 +1,205 @@
 ---
-name: clean-architecture
-description: Clean Architecture principles and best practices from Robert C. Martin's book. This skill should be used when designing software systems, reviewing code structure, or refactoring applications to achieve better separation of concerns. Triggers on tasks involving layers, boundaries, dependency direction, entities, use cases, or system architecture.
+name: golang-clean-architecture
+description: Clean Architecture audit for Go services. Use when reviewing layered architecture, dependency rules, or gRPC/usecase/repository patterns. Ensures proper separation of concerns and dependency inversion.
+license: MIT
+metadata:
+  author: saifoelloh
+  version: "2.0.0"
+  parent_skill: golang-best-practices
+  sources:
+    - "Clean Architecture (Robert C. Martin)"
+    - "Learning Go: An Idiomatic Approach (Jon Bodner)"
+  last_updated: "2026-01-22"
 ---
 
-# Clean Architecture Best Practices
+# Golang Clean Architecture
 
-Comprehensive guide to Clean Architecture principles for designing maintainable, testable software systems. Based on Robert C. Martin's "Clean Architecture: A Craftsman's Guide to Software Structure and Design." Contains 42 rules across 8 categories, prioritized by architectural impact.
+Audit Go services for Clean Architecture compliance. Ensures proper layering, dependency rules, and separation of concerns in gRPC → Usecase → Repository → Domain architectures.
 
 ## When to Apply
 
-Reference these guidelines when:
-- Designing new software systems or modules
-- Structuring dependencies between layers
-- Defining boundaries between business logic and infrastructure
-- Reviewing code for architectural violations
-- Refactoring coupled systems toward cleaner structure
+Use this skill when:
+- Auditing service architecture
+- Reviewing new features for layer violations
+- Refactoring toward Clean Architecture
+- Code review for dependency rules
+- Planning service structure
+- Migrating to layered architecture
+- Ensuring testability through dependency injection
 
-## Rule Categories by Priority
+## Architecture Layers
 
-| Priority | Category | Impact | Prefix |
-|----------|----------|--------|--------|
-| 1 | Dependency Direction | CRITICAL | `dep-` |
-| 2 | Entity Design | CRITICAL | `entity-` |
-| 3 | Use Case Isolation | HIGH | `usecase-` |
-| 4 | Component Cohesion | HIGH | `comp-` |
-| 5 | Boundary Definition | MEDIUM-HIGH | `bound-` |
-| 6 | Interface Adapters | MEDIUM | `adapt-` |
-| 7 | Framework Isolation | MEDIUM | `frame-` |
-| 8 | Testing Architecture | LOW-MEDIUM | `test-` |
+```
+┌─────────────────────────────────────┐
+│  Delivery (gRPC/HTTP/GraphQL)       │ ← Thin, no business logic
+├─────────────────────────────────────┤
+│  Usecase (Business Logic)           │ ← Orchestration
+├─────────────────────────────────────┤
+│  Repository (Data Access)           │ ← CRUD only
+├─────────────────────────────────────┤
+│  Domain (Entities/Interfaces)       │ ← Pure business logic
+└─────────────────────────────────────┘
+```
 
-## Quick Reference
+**Dependency Rule**: Dependencies point INWARD only (toward domain).
 
-### 1. Dependency Direction (CRITICAL)
+## Rules Covered (9 total)
 
-- [`dep-inward-only`](references/dep-inward-only.md) - Source dependencies point inward only
-- [`dep-interface-ownership`](references/dep-interface-ownership.md) - Interfaces belong to clients not implementers
-- [`dep-no-framework-imports`](references/dep-no-framework-imports.md) - Avoid framework imports in inner layers
-- [`dep-data-crossing-boundaries`](references/dep-data-crossing-boundaries.md) - Use simple data structures across boundaries
-- [`dep-acyclic-dependencies`](references/dep-acyclic-dependencies.md) - Eliminate cyclic dependencies between components
-- [`dep-stable-abstractions`](references/dep-stable-abstractions.md) - Depend on stable abstractions not volatile concretions
+### High-Impact Patterns (4)
 
-### 2. Entity Design (CRITICAL)
+- `high-business-logic-handler` - Keep delivery layer thin
+- `high-business-logic-repository` - No business logic in data layer
+- `high-constructor-creates-deps` - Inject dependencies, don't create
+- `high-transaction-in-repository` - Transactions belong in usecase
 
-- [`entity-pure-business-rules`](references/entity-pure-business-rules.md) - Entities contain only enterprise business rules
-- [`entity-no-persistence-awareness`](references/entity-no-persistence-awareness.md) - Entities must not know how they are persisted
-- [`entity-encapsulate-invariants`](references/entity-encapsulate-invariants.md) - Encapsulate business invariants within entities
-- [`entity-value-objects`](references/entity-value-objects.md) - Use value objects for domain concepts
-- [`entity-rich-not-anemic`](references/entity-rich-not-anemic.md) - Build rich domain models not anemic data structures
+### Architecture Rules (5)
 
-### 3. Use Case Isolation (HIGH)
+- `arch-domain-import-infra` - Domain must not import infrastructure
+- `arch-concrete-dependency` - Depend on interfaces, not concrete types
+- `arch-repository-business-logic` - Repositories do CRUD only
+- `arch-usecase-orchestration` - Usecases orchestrate, entities decide
+- `arch-interface-segregation` - Small, consumer-defined interfaces
 
-- [`usecase-single-responsibility`](references/usecase-single-responsibility.md) - Each use case has one reason to change
-- [`usecase-input-output-ports`](references/usecase-input-output-ports.md) - Define input and output ports for use cases
-- [`usecase-orchestrates-not-implements`](references/usecase-orchestrates-not-implements.md) - Use cases orchestrate entities not implement business rules
-- [`usecase-no-presentation-logic`](references/usecase-no-presentation-logic.md) - Use cases must not contain presentation logic
-- [`usecase-explicit-dependencies`](references/usecase-explicit-dependencies.md) - Declare all dependencies explicitly in constructor
-- [`usecase-transaction-boundary`](references/usecase-transaction-boundary.md) - Use case defines the transaction boundary
+## Common Violations
 
-### 4. Component Cohesion (HIGH)
+### ❌ Business Logic in Handler
 
-- [`comp-screaming-architecture`](references/comp-screaming-architecture.md) - Structure should scream the domain not the framework
-- [`comp-common-closure`](references/comp-common-closure.md) - Group classes that change together
-- [`comp-common-reuse`](references/comp-common-reuse.md) - Avoid forcing clients to depend on unused code
-- [`comp-reuse-release-equivalence`](references/comp-reuse-release-equivalence.md) - Release components as cohesive units
-- [`comp-stable-dependencies`](references/comp-stable-dependencies.md) - Depend in the direction of stability
+```go
+// gRPC handler doing calculations
+func (h *Handler) CreateOrder(ctx context.Context, req *pb.Request) (*pb.Response, error) {
+    total := req.Price * req.Quantity // BAD: calculation in handler
+    discount := total * 0.1           // BAD: business rules in delivery layer
+    
+    order := &domain.Order{
+        Total: total - discount,
+    }
+    return h.orderRepo.Save(ctx, order)
+}
+```
 
-### 5. Boundary Definition (MEDIUM-HIGH)
+### ✅ Business Logic in Usecase
 
-- [`bound-humble-object`](references/bound-humble-object.md) - Use humble objects at architectural boundaries
-- [`bound-partial-boundaries`](references/bound-partial-boundaries.md) - Use partial boundaries when full separation is premature
-- [`bound-boundary-cost-awareness`](references/bound-boundary-cost-awareness.md) - Weigh boundary cost against ignorance cost
-- [`bound-main-component`](references/bound-main-component.md) - Treat main as a plugin to the application
-- [`bound-defer-decisions`](references/bound-defer-decisions.md) - Defer framework and database decisions
-- [`bound-service-internal-architecture`](references/bound-service-internal-architecture.md) - Services must have internal clean architecture
+```go
+// Handler delegates to usecase
+func (h *Handler) CreateOrder(ctx context.Context, req *pb.Request) (*pb.Response, error) {
+    order, err := h.orderUsecase.Create(ctx, req.Price, req.Quantity)
+    if err != nil {
+        return nil, err
+    }
+    return &pb.Response{OrderId: order.ID}, nil
+}
 
-### 6. Interface Adapters (MEDIUM)
+// Usecase contains business logic
+func (u *OrderUsecase) Create(ctx context.Context, price, quantity int) (*domain.Order, error) {
+    total := price * quantity      // GOOD: calculation in usecase
+    discount := total * 0.1        // GOOD: business rules in usecase
+    
+    order := &domain.Order{
+        Total: total - discount,
+    }
+    return u.orderRepo.Save(ctx, order)
+}
+```
 
-- [`adapt-controller-thin`](references/adapt-controller-thin.md) - Keep controllers thin
-- [`adapt-presenter-formats`](references/adapt-presenter-formats.md) - Presenters format data for the view
-- [`adapt-gateway-abstraction`](references/adapt-gateway-abstraction.md) - Gateways hide external system details
-- [`adapt-mapper-translation`](references/adapt-mapper-translation.md) - Use mappers to translate between layers
-- [`adapt-anti-corruption-layer`](references/adapt-anti-corruption-layer.md) - Build anti-corruption layers for external systems
+### ❌ Repository with Business Logic
 
-### 7. Framework Isolation (MEDIUM)
+```go
+// Repository doing validation and business rules
+func (r *OrderRepo) Save(ctx context.Context, order *domain.Order) error {
+    if order.Total < 0 {                    // BAD: validation in repository
+        return errors.New("invalid total")
+    }
+    if order.Total > 1000000 {              // BAD: business rule in repository
+        order.Status = "needs_approval"     // BAD: state change in repository
+    }
+    return r.db.Create(order)
+}
+```
 
-- [`frame-domain-purity`](references/frame-domain-purity.md) - Domain layer has zero framework dependencies
-- [`frame-orm-in-infrastructure`](references/frame-orm-in-infrastructure.md) - Keep ORM usage in infrastructure layer
-- [`frame-web-in-infrastructure`](references/frame-web-in-infrastructure.md) - Web framework concerns stay in interface layer
-- [`frame-di-container-edge`](references/frame-di-container-edge.md) - Dependency injection containers live at the edge
-- [`frame-logging-abstraction`](references/frame-logging-abstraction.md) - Abstract logging behind domain interfaces
+### ✅ Repository Does CRUD Only
 
-### 8. Testing Architecture (LOW-MEDIUM)
+```go
+// Repository only handles data persistence
+func (r *OrderRepo) Save(ctx context.Context, order *domain.Order) error {
+    return r.db.Create(order) // GOOD: simple CRUD
+}
 
-- [`test-tests-are-architecture`](references/test-tests-are-architecture.md) - Tests are part of the system architecture
-- [`test-testable-design`](references/test-testable-design.md) - Design for testability from the start
-- [`test-layer-isolation`](references/test-layer-isolation.md) - Test each layer in isolation
-- [`test-boundary-verification`](references/test-boundary-verification.md) - Verify architectural boundaries with tests
+// Validation happens in usecase or domain entity
+func (u *OrderUsecase) Create(ctx context.Context, price, quantity int) (*domain.Order, error) {
+    order := domain.NewOrder(price, quantity) // Entity validates itself
+    if err := order.Validate(); err != nil {    // GOOD: validation in domain
+        return nil, err
+    }
+    if order.NeedsApproval() {                  // GOOD: business rule in domain
+        order.Status = "needs_approval"
+    }
+    return u.orderRepo.Save(ctx, order)
+}
+```
+
+## Trigger Phrases
+
+This skill activates when you say:
+- "Audit architecture"
+- "Check layer dependencies"
+- "Review Clean Architecture"
+- "Verify separation of concerns"
+- "Check dependency rules"
+- "Review usecase/repository pattern"
+- "Check for layer violations"
+- "Audit service structure"
 
 ## How to Use
 
-Read individual reference files for detailed explanations and code examples:
+### For Architecture Audit
 
-- [Section definitions](references/_sections.md) - Category structure and impact levels
-- [Rule template](assets/templates/_template.md) - Template for adding new rules
+1. Identify all layers in the codebase
+2. Check dependency directions (must point inward)
+3. Verify each layer's responsibilities
+4. Flag violations with specific rule references
 
-## Reference Files
+### For Code Review
 
-| File | Description |
-|------|-------------|
-| [references/_sections.md](references/_sections.md) | Category definitions and ordering |
-| [assets/templates/_template.md](assets/templates/_template.md) | Template for new rules |
-| [metadata.json](metadata.json) | Version and reference information |
+1. Identify which layer the code belongs to
+2. Check against layer-specific rules
+3. Verify dependencies are injected, not created
+4. Ensure interfaces are defined by consumers
+
+## Output Format
+
+```
+## Architecture Violations: X
+
+### [Rule Name] (File: path/to/file.go)
+**Layer**: Delivery / Usecase / Repository / Domain
+**Issue**: Brief description of violation
+**Impact**: Tight coupling / Untestable / Wrong responsibility
+**Fix**: Suggested correction
+**Example**:
+```go
+// Corrected code
+```
+
+## Related Skills
+
+- [golang-design-patterns](../design-patterns/SKILL.md) - For refactoring large usecases
+- [golang-idiomatic-go](../idiomatic-go/SKILL.md) - For interface design patterns
+- [golang-error-handling](../error-handling/SKILL.md) - For context propagation across layers
+
+## Philosophy
+
+Based on Uncle Bob's Clean Architecture:
+
+- **Independence** - Business rules don't depend on frameworks, UI, or databases
+- **Testability** - Business logic can be tested without external dependencies
+- **Flexibility** - Easy to swap implementations (e.g., change database)
+- **Maintainability** - Clear boundaries make changes localized
+
+**Key Principle**: The inner circles know nothing about the outer circles.
+
+## Notes
+
+- Rules enforce separation of concerns in Go services
+- Particularly focused on gRPC/usecase/repository pattern
+- Emphasizes dependency injection for testability
+- All examples follow Clean Architecture principles

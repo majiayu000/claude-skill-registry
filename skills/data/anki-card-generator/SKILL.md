@@ -1,181 +1,110 @@
 ---
 name: anki-card-generator
-description: 生成 Anki 闪卡，输出 simple-anki-sync 兼容格式。当用户说「生成 Anki 卡片」「做卡片」「帮我记忆」「做闪卡」「学习卡片」「背诵卡」「记忆这个」时触发。
+description: Generate and manage Anki flashcards in Markdown format. Trigger when user asks to create flashcards, add knowledge cards, make Anki cards, or requests cards for learning programming concepts, algorithms, or technical knowledge.
 ---
 
 # Anki Card Generator
 
-Generate high-quality Anki cards based on LessWrong best practices and simple-anki-sync format.
+Generate Anki cards as Markdown, sync to Anki via AnkiConnect.
 
-## Pre-Generation Clarification
+## Core Concept
 
-Before generating cards, clarify with user if unclear:
+- **一个 .md 文件 = 一张卡片**
+- **文件夹 = 牌组**
 
-1. **Scope**: "Which aspects to focus on?" (for broad topics)
-2. **Depth**: "Basic concepts only, or detailed Level 2/3 cards?"
-3. **Quantity**: "How many cards? (Recommend 5-10 for core concepts)"
-4. **Context**: "Any specific exam or application scenario?"
+## Directory Structure (示例)
 
-Proceed only after understanding requirements.
-
-## Output Format
-
-Use simple-anki-sync format:
-
-```markdown
-#anki/[domain]/[topic]
-
-| [Question] |
-| ---------- |
-| [Core answer]<br><br><small>💡 [Supplementary info]</small> |
+```
+project/
+├── cards/                        # 卡片源文件根目录（必需）
+│   ├── python/                   # → 牌组 "python"
+│   │   ├── walrus.md             # → 牌组 "python", 卡片 "walrus"
+│   │   ├── f-string.md           # → 牌组 "python", 卡片 "f-string"
+│   │   └── tools/                # → 牌组 "python/tools"
+│   │       ├── venv.md           # → 牌组 "python/tools", 卡片 "venv"
+│   │       └── pip.md            # → 牌组 "python/tools", 卡片 "pip"
+│   └── algorithms/
+│       └── sorting/
+│           ├── quicksort.md      # → 牌组 "algorithms/sorting"
+│           └── mergesort.md      # → 牌组 "algorithms/sorting"
+├── venv/                         # Python 虚拟环境（必需）
+└── .claude/skills/anki-card-generator/  # 本 skill（必需）
 ```
 
-### Format Options
+**映射规则**: `cards/<folder>/<file>.md` → 牌组 `<folder>`, 卡片来自文件
 
-**Option A (Recommended)**: HTML tags
-
-```markdown
-| 唐朝建立时间 |
-| ---------- |
-| 618年，李渊建立<br><br><small>💡 隋末农民起义后起兵</small> |
-```
-
-**Option B**: Separator
+## Card Format
 
 ```markdown
-| 唐朝建立时间 |
-| ---------- |
-| 618年，李渊建立 ——— 💡 隋末农民起义后起兵 |
+# 卡片正面（H1 标题）
+
+卡片背面内容
+支持代码块、表格、列表等
 ```
 
-**Option C**: Parentheses
+- H1 = 卡片正面（若无 H1，则用文件名）
+- H1 之后的内容 = 卡片背面
+- SourceID = `hash(文件相对路径)`
+
+## Content Best Practices
+
+- **Bullet points** - 结构清晰，易于记忆
+- **Tables** - 对比类知识一目了然
+- **Code blocks** - 指定语言以启用语法高亮
+- 💡 强调关键点或记忆技巧
+- ⚠️ 标注易错点或注意事项
+
+## Example Card
+
+文件: `cards/python/walrus.md`
 
 ```markdown
-| 唐朝建立时间 |
-| ---------- |
-| 618年，李渊建立（趣闻：其子李世民功劳最大） |
+# Python 海象运算符 `:=` 用法
+
+`(x := value)` 在表达式中赋值并返回值
+
+```python
+if (n := len(data)) > 10:
+    print(f"Too long: {n}")
 ```
 
-## Atomization Rules
-
-### Word Limits
-
-- **English**: Max 9 words, absolute limit 18 words
-- **Chinese**: Recommended 15-20 characters, absolute limit 30-35 characters
-- **Max items**: 3 bullet points per card
-
-### Core Principle
-
-If a card can be split into two shorter cards, split it.
-
-## Question Design
-
-### Standardized Templates
-
-- **Time**: "X 时间" (not "X发生于何时？")
-- **Definition**: "X 定义" (not "什么是X？")
-- **Person**: "who X" (not "谁做了X？")
-- **Pros/Cons**: "X 利弊" (not "X的优势是什么？")
-
-### Key Rules
-
-- Match real-world recall scenarios
-- Use plain, unremarkable wording
-- Avoid words in question that appear in answer
-- Keep all critical info in answer, not question
-
-## Answer Construction
-
-### Core Answer
-
-- Strictly follow word limits
-- Answer should be meaningful without the question
-- All key information in answer
-
-### Supplementary Info (Optional)
-
-Format: `<br><br><small>💡 content</small>`
-
-**Emoji Guide**:
-
-- 💡 Fun fact / trivia
-- 📝 Note / explanation
-- 🔗 Related concept
-- ⚡ Tip / key point
-- 📊 Data / statistics
-- 📅 Date / timeline
-
-Keep supplementary info to 10-20 characters.
-
-### Handle System
-
-Use `>` to reference related cards:
-
-```markdown
-| 牛顿贡献 |
-| ------- |
-| >运动定律 >万有引力 >微积分发展 |
+💡 Python 3.8+ 特性，避免重复计算
 ```
 
-## Detail Levels
+→ 牌组 `python`, 正面 "Python 海象运算符 `:=` 用法"
 
-- **Level 1**: Basic concept (core answer)
-- **Level 2**: Detailed info (supplementary section)
-- **Level 3**: Advanced details (create separate cards)
+## Sync
 
-## Tag Naming
+**前置条件**: Anki 运行中 + AnkiConnect 插件 (code: `2055492159`)
 
-Use English tags: `#anki/[domain]/[topic]`
+```bash
+# 1. 首次设置：创建 venv 并安装依赖
+python -m venv venv
+./venv/Scripts/pip.exe install requests
 
-Common domains: history, programming, language, science, mathematics, psychology, economics, philosophy, medicine, art
+# 2. 同步卡片到 Anki
+./venv/Scripts/python.exe .claude/skills/anki-card-generator/scripts/anki_sync.py
 
-## Quality Checklist
+# 3. 预览变更（不执行）
+./venv/Scripts/python.exe .claude/skills/anki-card-generator/scripts/anki_sync.py --dry-run
+```
 
-### Per Card
+**同步行为**:
+- 新文件 → 添加卡片
+- 文件内容变更 → 更新卡片
+- 文件删除 → 删除对应卡片（孤儿清理）
+- 文件移动/重命名 → 视为删除旧卡 + 添加新卡（SourceID 变化）
 
-- [ ] Core answer within word limit?
-- [ ] Correct supplementary format?
-- [ ] Can it be further split?
-- [ ] Question matches real recall scenario?
-- [ ] No memory shortcuts?
-- [ ] All key info in answer?
+## Project Validation
 
-### Card Set
+同步前检查项目结构是否规范：
 
-- [ ] Appropriate cross-references?
-- [ ] Proper detail levels?
-- [ ] No redundancy?
+**必须存在**:
+- `cards/` - 卡片源文件目录
+- `venv/` - Python 虚拟环境
+- `.claude/skills/anki-card-generator/` - 本 skill
 
-## Domain Examples
-
-See [references/examples.md](references/examples.md) for detailed examples:
-
-- History (ancient China)
-- Programming (Python)
-- Language learning (English)
-- Academic concepts (psychology)
-- Complex topics (quantum mechanics)
-- Error corrections
-- Advanced techniques (reversible cards, redundancy design)
-
-## Workflow
-
-1. **Receive input**: Knowledge points, wiki links, study materials
-2. **Clarify**: Ask questions if uncertain
-3. **Generate**: Follow atomization and best practices
-4. **Output**: simple-anki-sync markdown format
-
-**Core Philosophy**: Prioritize sustainability and real recall scenarios over comprehensive coverage. Focus on preventing cognitive and motivational barriers.
-
-## When NOT to Use
-
-❌ **不适合卡片化的内容：**
-
-- 需要视觉理解的（图表、流程图）
-- 超过 50 行的代码块
-- 高度情境依赖的知识
-
-✅ **替代方案：**
-
-- 视觉内容 → 配图索引卡片
-- 大代码块 → 代码 Snippet 库
+**Markdown 文件检查**:
+- 每个 .md 文件应有 H1 标题（否则用文件名作为正面）
+- H1 后必须有内容（不能为空卡片）
+- 代码块正确闭合

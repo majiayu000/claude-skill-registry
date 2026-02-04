@@ -1,7 +1,7 @@
 {
   "name": "pubmed-database",
-  "repo": "oimiragieo/agent-studio",
-  "path": ".claude/skills/scientific-skills/skills/pubmed-database/SKILL.md",
-  "source": "github.com/oimiragieo/agent-studio",
-  "downloaded_at": "2026-02-02T04:36:36.910080Z"
+  "repo": "ovachiever/droid-tings",
+  "path": "skills/pubmed-database/SKILL.md",
+  "source": "github.com/ovachiever/droid-tings",
+  "downloaded_at": "2026-02-04T03:29:07.532080Z"
 }

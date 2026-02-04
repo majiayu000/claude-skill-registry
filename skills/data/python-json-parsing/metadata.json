@@ -1,9 +1,7 @@
 {
   "name": "python-json-parsing",
-  "description": "Python JSON parsing best practices covering performance optimization (orjson/msgspec), handling large files (streaming/JSONL), security (injection prevention), and advanced querying (JSONPath/JMESPath",
   "repo": "basher83/lunar-claude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/devops/python-tools/skills/python-json-parsing/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:28.109308Z"
 }

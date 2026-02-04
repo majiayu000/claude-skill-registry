@@ -1,365 +1,563 @@
 ---
 name: openapi
-description: "OpenAPI Specification (OAS 3.x): document structure, paths, operations, schemas, parameters, security schemes, and validation."
-version: "3.2.0"
-release_date: "2025-09-19"
+description: Defines and generates OpenAPI 3.1 specifications with TypeScript type generation, validation, and documentation. Use when documenting APIs, generating client SDKs, or implementing contract-first API design.
 ---
 
-# OpenAPI Specification
+# OpenAPI
 
-This skill provides guidance for working with OpenAPI Specification (OAS) documents.
+OpenAPI Specification (OAS) is a standard for describing REST APIs. It enables documentation, code generation, and validation.
 
-**Current version:** OpenAPI 3.2.0 (September 2025)
+## Quick Start
 
-## Quick Navigation
-
-- Document structure: `references/document-structure.md`
-- Operations & paths: `references/operations.md`
-- Schemas & data types: `references/schemas.md`
-- Parameters & serialization: `references/parameters.md`
-- Security: `references/security.md`
-
-## When to Use
-
-- Creating a new OpenAPI specification document
-- Describing HTTP API endpoints
-- Defining request/response schemas
-- Configuring API security (OAuth2, API keys, JWT)
-- Validating an existing OpenAPI document
-- Generating client/server code from specs
-
-## Document Structure Overview
-
-An OpenAPI document MUST have either an OpenAPI Object or Schema Object at the root.
-
-### Required Fields
+### OpenAPI Document
 
 ```yaml
-openapi: 3.2.0 # REQUIRED: OAS version
-info: # REQUIRED: API metadata
+# openapi.yaml
+openapi: 3.1.0
+info:
   title: My API
   version: 1.0.0
-```
+  description: A sample API
 
-### Complete Structure
-
-```yaml
-openapi: 3.2.0
-info:
-  title: Example API
-  version: 1.0.0
-  description: API description (supports CommonMark)
-servers:
-  - url: https://api.example.com/v1
-paths:
-  /resources:
-    get:
-      summary: List resources
-      responses:
-        "200":
-          description: Success
-components:
-  schemas: {}
-  parameters: {}
-  responses: {}
-  securitySchemes: {}
-security:
-  - apiKey: []
-tags:
-  - name: resources
-    description: Resource operations
-```
-
-## Core Objects Reference
-
-### Info Object
-
-```yaml
-info:
-  title: Example API # REQUIRED
-  version: 1.0.0 # REQUIRED (API version, NOT OAS version)
-  summary: Short summary
-  description: Full description (CommonMark)
-  termsOfService: https://example.com/terms
-  contact:
-    name: API Support
-    url: https://example.com/support
-    email: support@example.com
-  license:
-    name: Apache 2.0
-    identifier: Apache-2.0 # OR url (mutually exclusive)
-```
-
-### Server Object
-
-```yaml
 servers:
   - url: https://api.example.com/v1
     description: Production
-  - url: https://{environment}.example.com:{port}/v1
-    description: Configurable
-    variables:
-      environment:
-        default: api
-        enum: [api, staging, dev]
-      port:
-        default: "443"
-```
+  - url: http://localhost:3000/v1
+    description: Development
 
-### Path Item Object
+paths:
+  /users:
+    get:
+      summary: List users
+      operationId: listUsers
+      tags: [Users]
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
 
-```yaml
-/users/{id}:
-  summary: User operations
-  parameters:
-    - $ref: "#/components/parameters/userId"
-  get:
-    operationId: getUser
-    responses:
-      "200":
-        description: User found
-  put:
-    operationId: updateUser
-    requestBody:
-      $ref: "#/components/requestBodies/UserUpdate"
-    responses:
-      "200":
-        description: User updated
-```
+    post:
+      summary: Create user
+      operationId: createUser
+      tags: [Users]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserInput'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
 
-### Operation Object
+  /users/{id}:
+    get:
+      summary: Get user by ID
+      operationId: getUser
+      tags: [Users]
+      parameters:
+        - $ref: '#/components/parameters/UserIdParam'
+      responses:
+        '200':
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          $ref: '#/components/responses/NotFound'
 
-```yaml
-get:
-  tags: [users]
-  summary: Get user by ID
-  description: Returns a single user
-  operationId: getUserById # MUST be unique across all operations
-  parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: string
-  responses:
-    "200":
-      description: Success
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/User"
-    "404":
-      description: Not found
-  security:
-    - bearerAuth: []
-  deprecated: false
-```
-
-## Schema Recipes
-
-### Basic Object
-
-```yaml
 components:
   schemas:
     User:
       type: object
-      required: [id, email]
+      required: [id, email, createdAt]
       properties:
         id:
           type: string
-          format: uuid
+          example: usr_abc123
         email:
           type: string
           format: email
         name:
           type: string
-        age:
-          type: integer
-          minimum: 0
-```
-
-### Composition with allOf
-
-```yaml
-ExtendedUser:
-  allOf:
-    - $ref: "#/components/schemas/User"
-    - type: object
-      properties:
-        role:
+        createdAt:
           type: string
-          enum: [admin, user, guest]
-```
+          format: date-time
 
-### Polymorphism with oneOf
+    CreateUserInput:
+      type: object
+      required: [email]
+      properties:
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
 
-```yaml
-Pet:
-  oneOf:
-    - $ref: "#/components/schemas/Cat"
-    - $ref: "#/components/schemas/Dog"
-  discriminator:
-    propertyName: petType
-    mapping:
-      cat: "#/components/schemas/Cat"
-      dog: "#/components/schemas/Dog"
-```
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
 
-### Nullable and Optional
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error:
+          type: string
+        message:
+          type: string
 
-```yaml
-# OAS 3.1+ uses JSON Schema type arrays
-properties:
-  nickname:
-    type: [string, "null"] # nullable
-```
+  parameters:
+    UserIdParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
 
-## Parameter Locations
+    PageParam:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
 
-| Location     | `in` value    | Notes                               |
-| ------------ | ------------- | ----------------------------------- |
-| Path         | `path`        | MUST be required: true              |
-| Query        | `query`       | Standard query parameters           |
-| Query string | `querystring` | Entire query string as single param |
-| Header       | `header`      | Case-insensitive names              |
-| Cookie       | `cookie`      | Cookie values                       |
+    LimitParam:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 100
 
-### Parameter Styles
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
-| Style      | `in`  | Type                   | Example (color=blue,black) |
-| ---------- | ----- | ---------------------- | -------------------------- |
-| simple     | path  | array                  | blue,black                 |
-| form       | query | primitive/array/object | color=blue,black           |
-| matrix     | path  | primitive/array/object | ;color=blue,black          |
-| label      | path  | primitive/array/object | .blue.black                |
-| deepObject | query | object                 | color[R]=100&color[G]=200  |
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
-## Security Schemes
-
-### API Key
-
-```yaml
-components:
   securitySchemes:
-    apiKey:
-      type: apiKey
-      in: header # header, query, or cookie
-      name: X-API-Key
-```
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 
-### Bearer Token (JWT)
-
-```yaml
-bearerAuth:
-  type: http
-  scheme: bearer
-  bearerFormat: JWT
-```
-
-### OAuth2
-
-```yaml
-oauth2:
-  type: oauth2
-  flows:
-    authorizationCode:
-      authorizationUrl: https://auth.example.com/authorize
-      tokenUrl: https://auth.example.com/token
-      scopes:
-        read:users: Read user data
-        write:users: Modify user data
-```
-
-### Apply Security
-
-```yaml
-# Global (all operations)
 security:
-  - bearerAuth: []
-
-# Per-operation
-paths:
-  /public:
-    get:
-      security: [] # Override: no auth required
-  /protected:
-    get:
-      security:
-        - oauth2: [read:users]
+  - BearerAuth: []
 ```
 
-## Reference Object
+## TypeScript Type Generation
 
-Use `$ref` to avoid duplication:
+### Using openapi-typescript
 
-```yaml
-# Reference within same document
-$ref: '#/components/schemas/User'
-
-# Reference to external file
-$ref: './schemas/user.yaml'
-$ref: './common.yaml#/components/schemas/Error'
+```bash
+npm install -D openapi-typescript
+npx openapi-typescript ./openapi.yaml -o ./types/api.d.ts
 ```
 
-## Components Object
+### Generated Types
 
-Reusable building blocks:
+```typescript
+// types/api.d.ts (generated)
+export interface paths {
+  "/users": {
+    get: operations["listUsers"];
+    post: operations["createUser"];
+  };
+  "/users/{id}": {
+    get: operations["getUser"];
+  };
+}
+
+export interface components {
+  schemas: {
+    User: {
+      id: string;
+      email: string;
+      name?: string;
+      createdAt: string;
+    };
+    CreateUserInput: {
+      email: string;
+      name?: string;
+    };
+  };
+}
+
+export interface operations {
+  listUsers: {
+    parameters: {
+      query?: {
+        page?: number;
+        limit?: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": {
+            data: components["schemas"]["User"][];
+            pagination: components["schemas"]["Pagination"];
+          };
+        };
+      };
+    };
+  };
+}
+```
+
+### Type-Safe Fetch Client
+
+```bash
+npm install openapi-fetch
+```
+
+```typescript
+import createClient from 'openapi-fetch'
+import type { paths } from './types/api'
+
+const client = createClient<paths>({
+  baseUrl: 'https://api.example.com/v1',
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+})
+
+// Fully typed request and response
+const { data, error } = await client.GET('/users', {
+  params: {
+    query: { page: 1, limit: 20 }
+  }
+})
+
+// data is typed as { data: User[], pagination: Pagination }
+
+const { data: user } = await client.POST('/users', {
+  body: {
+    email: 'user@example.com',
+    name: 'John'
+  }
+})
+
+// user is typed as User
+```
+
+## Schema Validation
+
+### Using Zod with OpenAPI
+
+```bash
+npm install zod @anatine/zod-openapi
+```
+
+```typescript
+import { z } from 'zod'
+import { extendZodWithOpenApi } from '@anatine/zod-openapi'
+
+extendZodWithOpenApi(z)
+
+const UserSchema = z.object({
+  id: z.string().openapi({ example: 'usr_abc123' }),
+  email: z.string().email(),
+  name: z.string().optional(),
+  createdAt: z.string().datetime()
+}).openapi('User')
+
+const CreateUserSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(1).max(100).optional()
+}).openapi('CreateUserInput')
+```
+
+### Generate OpenAPI from Zod
+
+```typescript
+import { generateOpenApi } from '@anatine/zod-openapi'
+
+const document = generateOpenApi({
+  info: {
+    title: 'My API',
+    version: '1.0.0'
+  },
+  paths: {
+    '/users': {
+      post: {
+        requestBody: {
+          content: {
+            'application/json': { schema: CreateUserSchema }
+          }
+        },
+        responses: {
+          201: {
+            content: {
+              'application/json': { schema: UserSchema }
+            }
+          }
+        }
+      }
+    }
+  }
+})
+```
+
+## Request Validation
+
+### Express Middleware
+
+```bash
+npm install express-openapi-validator
+```
+
+```typescript
+import express from 'express'
+import * as OpenApiValidator from 'express-openapi-validator'
+
+const app = express()
+
+app.use(express.json())
+
+app.use(
+  OpenApiValidator.middleware({
+    apiSpec: './openapi.yaml',
+    validateRequests: true,
+    validateResponses: true
+  })
+)
+
+// Routes are automatically validated against the spec
+app.post('/users', (req, res) => {
+  // req.body is validated against CreateUserInput schema
+  const user = createUser(req.body)
+  res.status(201).json(user)
+})
+
+// Error handler for validation errors
+app.use((err, req, res, next) => {
+  if (err.status === 400) {
+    return res.status(400).json({
+      error: 'VALIDATION_ERROR',
+      message: err.message,
+      details: err.errors
+    })
+  }
+  next(err)
+})
+```
+
+## Documentation UI
+
+### Swagger UI
+
+```bash
+npm install swagger-ui-express
+```
+
+```typescript
+import swaggerUi from 'swagger-ui-express'
+import YAML from 'yamljs'
+
+const openApiDocument = YAML.load('./openapi.yaml')
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument, {
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'My API Docs'
+}))
+```
+
+### Redoc
+
+```typescript
+import express from 'express'
+
+app.get('/docs', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>API Docs</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <style>body { margin: 0; padding: 0; }</style>
+      </head>
+      <body>
+        <redoc spec-url='/openapi.yaml'></redoc>
+        <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+      </body>
+    </html>
+  `)
+})
+
+app.get('/openapi.yaml', (req, res) => {
+  res.sendFile('./openapi.yaml', { root: __dirname })
+})
+```
+
+## Code Generation
+
+### Generate API Client
+
+```bash
+# Using openapi-generator
+npm install -g @openapitools/openapi-generator-cli
+
+openapi-generator-cli generate \
+  -i openapi.yaml \
+  -g typescript-fetch \
+  -o ./generated/client
+
+# Using openapi-typescript-codegen
+npm install -D openapi-typescript-codegen
+
+npx openapi-typescript-codegen \
+  --input ./openapi.yaml \
+  --output ./generated/client \
+  --client fetch
+```
+
+### Generate Server Stubs
+
+```bash
+openapi-generator-cli generate \
+  -i openapi.yaml \
+  -g typescript-express-server \
+  -o ./generated/server
+```
+
+## Advanced Patterns
+
+### Discriminated Unions
 
 ```yaml
 components:
-  schemas: # Data models
-  responses: # Reusable responses
-  parameters: # Reusable parameters
-  examples: # Reusable examples
-  requestBodies: # Reusable request bodies
-  headers: # Reusable headers
-  securitySchemes: # Security definitions
-  links: # Links between operations
-  callbacks: # Webhook definitions
-  pathItems: # Reusable path items
+  schemas:
+    Event:
+      oneOf:
+        - $ref: '#/components/schemas/UserCreatedEvent'
+        - $ref: '#/components/schemas/UserDeletedEvent'
+      discriminator:
+        propertyName: type
+        mapping:
+          user.created: '#/components/schemas/UserCreatedEvent'
+          user.deleted: '#/components/schemas/UserDeletedEvent'
+
+    UserCreatedEvent:
+      type: object
+      required: [type, user]
+      properties:
+        type:
+          type: string
+          enum: [user.created]
+        user:
+          $ref: '#/components/schemas/User'
+
+    UserDeletedEvent:
+      type: object
+      required: [type, userId]
+      properties:
+        type:
+          type: string
+          enum: [user.deleted]
+        userId:
+          type: string
 ```
 
-## Best Practices Checklist
+### Nullable Fields (3.1)
 
-- [ ] Include `operationId` for all operations (unique, programming-friendly)
-- [ ] Use `$ref` for reusable components
-- [ ] Add meaningful `description` fields (supports CommonMark)
-- [ ] Define all possible response codes
-- [ ] Include `examples` for complex schemas
-- [ ] Use `tags` to group related operations
-- [ ] Mark deprecated operations with `deprecated: true`
-- [ ] Use semantic versioning for `info.version`
+```yaml
+# OpenAPI 3.1 uses JSON Schema null type
+name:
+  type: ['string', 'null']
 
-## Critical Prohibitions
+# With oneOf
+name:
+  oneOf:
+    - type: string
+    - type: 'null'
+```
 
-- Do NOT omit `openapi` and `info` fields (they are REQUIRED)
-- Do NOT use duplicate `operationId` values
-- Do NOT mix `$ref` with sibling properties in Reference Objects
-- Do NOT use path parameters without `required: true`
-- Do NOT use implicit OAuth2 flow in new APIs (deprecated)
-- Do NOT forget security for protected endpoints
+### File Uploads
 
-## Validation
+```yaml
+/upload:
+  post:
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            type: object
+            properties:
+              file:
+                type: string
+                format: binary
+              description:
+                type: string
+```
 
-### File Naming
+### Webhooks (3.1)
 
-- Entry document: `openapi.json` or `openapi.yaml` (recommended)
-- Format: JSON or YAML (equivalent)
-- All field names are case-sensitive
+```yaml
+webhooks:
+  orderCreated:
+    post:
+      summary: Order created webhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderEvent'
+      responses:
+        '200':
+          description: Webhook processed
+```
 
-### Common Validation Errors
+## Best Practices
 
-| Error                      | Fix                                                   |
-| -------------------------- | ----------------------------------------------------- |
-| Missing required field     | Add `openapi`, `info.title`, `info.version`           |
-| Invalid operationId        | Use unique, valid identifier                          |
-| Path parameter not in path | Ensure `{param}` matches parameter name               |
-| Duplicate path template    | Remove conflicting `/users/{id}` vs `/users/{userId}` |
-| Invalid $ref               | Check URI syntax and target existence                 |
+1. **Use $ref** - Reuse schemas, parameters, responses
+2. **Version your API** - Include in path or server URL
+3. **Document errors** - Define all error responses
+4. **Add examples** - Include realistic example values
+5. **Use operationId** - Required for code generation
+6. **Validate requests and responses** - Catch bugs early
+7. **Keep spec in sync** - Generate from code or validate against it
+8. **Use tags** - Organize endpoints by domain
 
-## Links
+## References
 
-- Official spec: https://spec.openapis.org/oas/latest.html
-- Learning resources: https://learn.openapis.org/
-- JSON Schema (for schemas): https://json-schema.org/
+- [Schema Patterns](references/schema-patterns.md)
+- [Code Generation](references/code-generation.md)

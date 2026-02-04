@@ -1,48 +1,20 @@
 ---
 name: event-sponsorship-request
-description: |
-  Event organizers request sponsorship or support for hackathons and conferences.
-sample_size: 35
-validation:
-  required_phrases:
-    - "support any questions related"
-  forbidden_patterns: []
-metrics:
-  sample_size: 35
-  avg_thread_length: 3.8
-  top_phrases:
-    - phrase: "support any questions related"
-      count: 12
-      percent: 34.3
-    - phrase: "any questions related to"
-      count: 12
-      percent: 34.3
-    - phrase: "questions related to the"
-      count: 11
-      percent: 31.4
-    - phrase: "related to the course"
-      count: 11
-      percent: 31.4
-    - phrase: "to the course and"
-      count: 11
-      percent: 31.4
-    - phrase: "the course and platform"
-      count: 11
-      percent: 31.4
-    - phrase: "course and platform functionality"
-      count: 11
-      percent: 31.4
-    - phrase: "and platform functionality but"
-      count: 11
-      percent: 31.4
-    - phrase: "platform functionality but you"
-      count: 11
-      percent: 31.4
-    - phrase: "directly on x bluesky"
-      count: 11
-      percent: 31.4
+description: Handle event sponsorship inquiries. Use when organizers ask for sponsorship or support for conferences or hackathons.
+metadata:
+  trigger_phrases:
+      - "handle event"
+      - "event sponsorship"
+      - "sponsorship inquiries"
+  related_skills: ["partnership-collaboration-inquiry", "media-press-outreach", "nonprofit-government-discount", "workshop-attendance-confirmation", "corporate-invoice"]
+  sample_size: "35"
+  validation: |
+    required_phrases:
+      - "support any questions related"
+    forbidden_patterns: []
+    max_length: 500
+  metrics: "sample_size: 35\navg_thread_length: 3.8\ntop_phrases:\n  - phrase: \"support any questions related\"\n    count: 12\n    percent: 34.3\n  - phrase: \"any questions related to\"\n    count: 12\n    percent: 34.3\n  - phrase: \"questions related to the\"\n    count: 11\n    percent: 31.4\n  - phrase: \"related to the course\"\n    count: 11\n    percent: 31.4\n  - phrase: \"to the course and\"\n    count: 11\n    percent: 31.4\n  - phrase: \"the course and platform\"\n    count: 11\n    percent: 31.4\n  - phrase: \"course and platform functionality\"\n    count: 11\n    percent: 31.4\n  - phrase: \"and platform functionality but\"\n    count: 11\n    percent: 31.4\n  - phrase: \"platform functionality but you\"\n    count: 11\n    percent: 31.4\n  - phrase: \"directly on x bluesky\"\n    count: 11\n    percent: 31.4"
 ---
-
 # Event Sponsorship Request
 
 ## Response Patterns (from samples)
@@ -91,3 +63,4 @@ Common closings:
 Draft must:
 - [ ] Include at least one of the required phrases from the validation block
 - [ ] Stay consistent with the observed response patterns above
+- [ ] NOT introduce policy details that are not present in the verified response lines above.

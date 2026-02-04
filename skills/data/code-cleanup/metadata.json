@@ -1,7 +1,7 @@
 {
   "name": "code-cleanup",
-  "repo": "changoo89/claude-pilot",
-  "path": ".claude/skills/code-cleanup/SKILL.md",
-  "source": "github.com/changoo89/claude-pilot",
-  "downloaded_at": "2026-02-02T04:25:32.315499Z"
+  "repo": "gpaura/claude_plugins",
+  "path": "skills/code-cleanup/SKILL.md",
+  "source": "github.com/gpaura/claude_plugins",
+  "downloaded_at": "2026-02-04T05:13:47.567424Z"
 }

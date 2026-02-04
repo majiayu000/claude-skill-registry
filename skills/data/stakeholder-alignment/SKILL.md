@@ -1,119 +1,77 @@
 ---
-name: "stakeholder-alignment"
-description: "Align stakeholders and secure buy-in by producing a Stakeholder Alignment Pack (alignment brief, stakeholder map, exec decision principles, pre-brief plan, alignment meeting plan, decision summary + comms). Use for stakeholder alignment, buy-in, executive alignment, cross-functional alignment. Category: Communication."
+name: stakeholder-alignment
+description: Help users align stakeholders and get buy-in. Use when someone is struggling to get approval, facing resistance to their ideas, needs to influence without authority, or is preparing for an important executive presentation.
 ---
 
 # Stakeholder Alignment
 
-## Scope
+Help the user achieve stakeholder alignment using frameworks and insights from 88 product leaders.
 
-**Covers**
-- Getting to shared understanding on **goal, decision, and success criteria**
-- Mapping stakeholders (deciders/influencers/blockers) and tailoring messaging to what they care about
-- Turning “opinions” into **decision principles + evaluation criteria**
-- Running a **no-surprises** pre-brief loop to surface objections early
-- Facilitating an alignment/decision meeting and locking follow-through with clear comms
+## How to Help
 
-**When to use**
-- “Help me get exec buy-in for this roadmap change.”
-- “We keep leaving meetings ‘aligned’ and then un-aligning—fix the process.”
-- “Map stakeholders and create a plan to align them on a proposal.”
-- “I need cross-functional alignment (Eng/Design/Sales/Legal) before we commit.”
-- “Draft an alignment pre-read + meeting plan + follow-up comms.”
+When the user asks for help with stakeholder alignment:
 
-**When NOT to use**
-- You don’t yet have a clear problem to solve (use problem definition first).
-- You mainly need a decision framework/roles for a complex choice (use a decision-process skill; this skill assumes you can name the decision and stakeholders).
-- You only need a polished deck (use a presentation skill; this focuses on alignment mechanics and artifacts).
-- The request is interpersonal/HR/legal or requires specialist counsel.
+1. **Understand the situation** - Ask who the stakeholders are, what decision needs to be made, and where resistance is coming from
+2. **Identify motivations** - Help them understand what each stakeholder cares about and their definition of success
+3. **Structure the approach** - Guide them on pre-alignment, communication sequence, and how to present options
+4. **Prepare for objections** - Help anticipate the Most Obvious Objections (MOOs) and prepare responses
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Alignment goal: **inform / align / decide** (and by when)
-- The proposal (or decision) in one sentence + why now
-- Stakeholder list (or org context to infer it)
-- Constraints/non-negotiables (timeline, budget, policy, compliance, customer commitments)
-- Current state: what’s already been discussed, and where alignment breaks down
+### Understand how they think, not what they think
+Hilary Gridley: "What's more helpful than understanding what your CEO thinks is understanding how your CEO thinks." Analyze recurring themes in a leader's feedback to translate it into actionable principles rather than chasing specific opinions.
 
-**Missing-info strategy**
-- Ask 3–5 questions from [references/INTAKE.md](references/INTAKE.md) at a time.
-- If key info is unavailable, proceed with explicit assumptions and label unknowns.
+### Present options with a recommendation
+Matt LeMay: "Options and a recommendation is the magic formula. When you present a single option, people just start poking holes." Always present at least three options with clear trade-offs and a specific recommendation to encourage constructive discussion.
 
-## Outputs (deliverables)
+### Get pre-alignment on strategy
+Shreyas Doshi: "If you have a real product strategy that everybody is aligned with, a lot of the nonsense we do with annual planning goes away." Secure alignment on strategy before formal planning seasons to prevent endless friction.
 
-Produce a **Stakeholder Alignment Pack** (Markdown in-chat; or files if requested) in this order:
-1) **Alignment Brief (1-pager)** (goal, decision/ask, why now, user value, success criteria, constraints, tradeoffs)
-2) **Stakeholder Map + “How They Think” notes** (roles, incentives, likely objections, decision principles)
-3) **Alignment Plan** (pre-brief sequence, artifacts, timeline, and “no surprises” plan)
-4) **Alignment Pre-read + Meeting Plan** (agenda, vital questions, options/tradeoffs, decision capture)
-5) **Decision Summary + Comms Draft** (what we decided, why, what changes, owners, next steps)
-6) **Risks / Open questions / Next steps** (always)
+### Approach disagreements with curiosity
+Ami Vora: "She would respond, 'Fascinating, you have to tell me more why you think that.'" When you hear an idea you strongly disagree with, assume the other person has information you don't have yet.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Distinguish disagreement from misunderstanding
+Tomer Cohen: "Are you disagreeing or misunderstanding? If misunderstanding, let's spend the time. If disagreeing, let's stop wasting time arguing." Ask the other party to articulate your point of view in their own words to verify understanding.
 
-## Workflow (8 steps)
+### Trust is built through consistency
+Ian McAllister: "Trust is the currency of a product leader. Trust is built by repeatedly setting and meeting expectations." Tell the truth, launch what and when you said, and own mistakes immediately.
 
-### 1) Define the alignment target (what does “aligned” mean?)
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Classify the goal (**inform/align/decide**) and name the decision/commitment (or the output of alignment). Set a date and what “done” looks like.
-- **Outputs:** Alignment Brief sections: Goal, Decision/Ask, Deadline, Scope boundaries.
-- **Checks:** You can finish the sentence: “After alignment, stakeholders will commit to _____ by _____.“
+### Use concentric circles for communication
+Lulu Cheng Meservey: "Go out in concentric circles. Each circle assumes the inner circle knows better." Never skip a circle in the communication sequence (Team -> Stakeholders -> Leadership -> External).
 
-### 2) Map stakeholders and decision rights (who matters, and why)
-- **Inputs:** org context; prior meeting notes; known stakeholders.
-- **Actions:** Build a stakeholder map: decider(s), approvers, influencers, implementers, blockers, and “silent veto” risks. Identify who must not be surprised.
-- **Outputs:** Stakeholder Map (table) + “pre-brief required” list.
-- **Checks:** Every critical function affected (e.g., Eng, Design, Sales, Support, Legal/Compliance, Finance) is either included or explicitly out of scope.
+### Repeat messages relentlessly
+Zoelle Egner: "I repeated the same three talking points 5,000 times. You just have to get used to saying the same stuff." Act as 'repeater-in-chief' across multiple formats because people require multiple exposures to internalize a message.
 
-### 3) Decode “how they think” (principles, not just opinions)
-- **Inputs:** prior feedback; exec writings/talks; observed patterns.
-- **Actions:** Convert stakeholder feedback into 3–7 **decision principles** (e.g., “must feel like the future”, “minimize enterprise risk”). Note what evidence persuades them.
-- **Outputs:** “How They Think” notes (per key stakeholder) + principles list.
-- **Checks:** For each key stakeholder, you can explain: “In what world does their viewpoint make sense?”
+### Learn the business constraints
+Marty Cagan: "You have to know how it's marketed, how it's sold, how it monetizes. You have to convince stakeholders you understand what the issues are." Build trust by demonstrating deep understanding of legal, finance, sales, and compliance constraints.
 
-### 4) Anchor on user value + business constraints (cut through noise)
-- **Inputs:** proposal; user/customer context; constraints.
-- **Actions:** Draft the narrative spine: user value (the “vital question”), why now, and the unavoidable tradeoffs. Make constraints explicit (compliance, monetization, go-to-market, reliability).
-- **Outputs:** Alignment Brief sections: User value, Why now, Constraints, Tradeoffs.
-- **Checks:** A skeptical stakeholder can’t dismiss the proposal as “nice to have” without disputing a stated assumption.
+### Frame requests as trade-offs
+Wes Kao: "I can design this PDF for you. That means the page redesign will have to wait until later this week." When asked for new tasks, explicitly state what current work will be deprioritized rather than saying yes or no.
 
-### 5) Define evaluation criteria and “what good looks like”
-- **Inputs:** goals, constraints, stakeholder principles.
-- **Actions:** Create evaluation criteria (and weights if helpful). Set expectations that agreement may feel uncomfortable at first; focus stakeholders on criteria over gut feel.
-- **Outputs:** Criteria list (and optional criteria table) + “discomfort is normal” expectation-setting line for meetings.
-- **Checks:** Criteria are few (3–7), mutually meaningful (real tradeoffs), and tied to stakeholder principles.
+## Questions to Help Users
 
-### 6) Run the pre-brief loop (no surprises; watch reactions)
-- **Inputs:** draft pack; pre-brief list.
-- **Actions:** Meet key stakeholders 1:1 (or small groups). Observe what lands (and what causes “dead eyes”), capture objections, and update the pack. Keep a change log.
-- **Outputs:** Pre-brief notes + objections log + updated pack + change log.
-- **Checks:** No major stakeholder sees the core ask for the first time in the live meeting.
+- "What does success look like specifically for this stakeholder - what do they care about most?"
+- "Have you identified the 'gatekeepers' who need 1:1 alignment before the broader meeting?"
+- "What is the Most Obvious Objection you expect, and how will you address it?"
+- "Are there repeated disagreements that signal an unaligned strategy rather than a tactical issue?"
+- "How will you communicate this across different modalities (written, verbal, visual)?"
+- "What trade-offs are you asking them to accept, and have you been explicit about them?"
 
-### 7) Facilitate the alignment/decision meeting (commitments, not vibes)
-- **Inputs:** final pre-read; agenda; decision capture plan.
-- **Actions:** Open with the alignment target and vital question. Walk through options/tradeoffs against criteria. Confirm the decision and commitments (owner + due dates). Record dissent and follow-ups.
-- **Outputs:** Meeting notes + decision capture + action list.
-- **Checks:** Everyone leaves knowing: what we decided, why, what changes tomorrow, and who owns what.
+## Common Mistakes to Flag
 
-### 8) Communicate and lock alignment (prevent re-litigation)
-- **Inputs:** decision capture; action list; stakeholder map.
-- **Actions:** Send a crisp summary to all stakeholders (including those not in the room). Document rationale and tradeoffs. Set a review/checkpoint date.
-- **Outputs:** Decision Summary + Comms Draft + review checkpoint.
-- **Checks:** Follow-up comms contains: decision, rationale, tradeoffs, owners, dates, and what would trigger a revisit.
+- **Presenting a single option** - This invites criticism; always present multiple options with trade-offs
+- **Skipping pre-alignment** - Treating buy-in as a single high-stakes meeting rather than a collaborative journey
+- **Framing as pushback** - Thinking of disagreement as conflict rather than a constructive effort to align on business success
+- **Assuming one communication is enough** - Messages need to be repeated across multiple channels and formats
+- **Not understanding motivations** - Trying to align someone without knowing what they personally care about and fear
 
-## Quality gate (required)
-- Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Deep Dive
 
-## Examples
+For all 124 insights from 88 guests, see `references/guest-insights.md`
 
-**Example 1:** “We need exec alignment on a 6-week pause of Feature A to address reliability. Draft the alignment brief, stakeholder map, pre-brief plan, and the decision meeting plan.”  
-Expected: Alignment Brief, Stakeholder Map, pre-brief plan + notes template, meeting plan + comms draft.
+## Related Skills
 
-**Example 2:** “Sales and Legal are blocking a self-serve launch. Create a cross-functional alignment plan that surfaces constraints early and lands on a committed path.”  
-Expected: explicit constraints, evaluation criteria, no-surprises pre-brief loop, decision capture, and follow-up comms.
-
-**Boundary example:** “Make them agree with me; they’re irrational.”  
-Response: refuse to ‘win politics’; reframe to an evidence-based alignment process (principles, criteria, tradeoffs). If the user can’t name a decision/goal, do problem definition first.
+- Written Communication
+- Giving Presentations
+- Running Effective Meetings
+- Managing Up

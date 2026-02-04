@@ -1,10 +1,6 @@
 ---
 name: local-service-testing
 description: Use when code changes touch database, cache, queue, or other service-dependent components - enforces testing against real local services instead of mocks
-allowed-tools:
-  - Bash
-  - Read
-model: opus
 ---
 
 # Local Service Testing

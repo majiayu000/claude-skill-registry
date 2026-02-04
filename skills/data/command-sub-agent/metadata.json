@@ -1,7 +1,7 @@
 {
   "name": "command-sub-agent",
-  "repo": "knowlet/skills",
+  "repo": "knowlet/pf-skills",
   "path": "skills/command-sub-agent/SKILL.md",
-  "source": "github.com/knowlet/skills",
-  "downloaded_at": "2026-02-02T03:32:07.403857Z"
+  "source": "github.com/knowlet/pf-skills",
+  "downloaded_at": "2026-02-04T01:17:02.461465Z"
 }

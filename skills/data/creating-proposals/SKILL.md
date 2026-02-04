@@ -1,209 +1,317 @@
 ---
 name: creating-proposals
-description: クライアント向け提案資料の作成を支援します。コンサル流のノウハウに基づき、意思決定を促す資料構成・原稿を作成します。提案書、企画書、営業資料が必要なときに使用してください。
-disable-model-invocation: false
+description: Use this skill when creating proposals, engagement letters, statements of work (SOWs), contracts, or service agreements for clients. Generates professional PDF documents with Support Forge branding, pricing, payment terms, and signature blocks. Invoke for any client proposal, quote, or formal business agreement.
 ---
 
-# 提案資料作成
+# Proposal & Engagement Letter Generator
 
-クリエイティブ組織がクライアントに行う提案資料の作成を支援する。
-コンサル流の資料作成ノウハウに基づき、意思決定を促す資料を作成する。
+You create professional, persuasive proposals and engagement letters for Support Forge consulting engagements.
 
-## 出力形式
+## Document Types
 
-Marp（Markdown Presentation Ecosystem）形式で出力する。
+| Type | Use Case |
+|------|----------|
+| **Engagement Letter** | Formal agreement for consulting services |
+| **Statement of Work (SOW)** | Detailed project scope and deliverables |
+| **Proposal** | Sales document with options/recommendations |
+| **Quote** | Simple pricing for defined services |
+| **Contract Addendum** | Modifications to existing agreements |
 
-```markdown
----
-marp: true
-theme: default
-paginate: true
----
+## Support Forge Branding
 
-# タイトル
-
----
-
-## スライド見出し
-
-リード文（このスライドの結論）
-
-- ポイント1
-- ポイント2
-
-<!--
-スピーカーノート
--->
+### Company Info
+```
+SupportForge
+166 Wilson St, Haverhill, MA 01832
+contact@support-forge.com | {YOUR_PHONE}
 ```
 
----
+### Payment Details
+```
+ACH/Bank Transfer:
+Account Number: 8252968985
+Routing Number: 211370545
 
-## 提案資料の構成例
+Zelle/Venmo: {YOUR_EMAIL}
+```
 
-1. エグゼクティブサマリー
-2. 課題認識（クライアントの現状）
-3. 提案コンセプト
-4. ソリューション詳細
-5. 実績・事例
-6. 体制・スケジュール
-7. 見積・投資対効果
-8. Next Step
+### Brand Colors
+- Primary Purple: #6366f1
+- Navy: #1a365d
+- Dark Background: #050508
 
----
+## Engagement Letter Template
 
-## 基本原則
+### Structure
 
-### 精緻さより意思決定の材料
+```
+LETTER OF ENGAGEMENT
+====================
+SupportForge
+Haverhill, MA
+contact@support-forge.com | {YOUR_PHONE}
 
-- 精緻さを求められてるわけじゃない
-- **意思決定の材料を求められてると理解しろ**
-- 余計な解釈を含めるな
-- 論理的思考力（目的・ゴールに対して内容が合っているか）をちゃんと考えろ
+Date: [Date]
 
-### 読み手を常に意識する
+To:
+[Client Name]
+[Title]
+[Company]
+[Email]
 
-- 読み手が知る由もない単語が使われていないか確認
-- 「ついて」「関して」は安易に使うな
-- 「xxxについて」という表現は冗長になりがち
-- 「ただし」と「なお」を使い分ける
-  - **ただし**: 前の文節に対して釘を刺す時
-  - **なお**: 新規の話題や補足情報を付け足す時
-
-### フォーマット流用時の注意
-
-- 何を書いてあるか「意味を」ちゃんと理解し、心の中で言語化しろ
-- 同じ図を流用してる時は、図形のサイズなどが同じになっているか確認
+RE: [Project Title/Description]
 
 ---
 
-## リード文の書き方
+Dear [First Name],
 
-**リード文はスライドの核。ここで8割決まる。**
+[Opening - thank them, reference how you connected]
 
-### 必須ルール
+[This Letter of Engagement outlines the scope, deliverables,
+investment, and terms for our work together.]
 
-1. **スライドは必ずリード文から書け**
-2. **リード文だけで内容がわかるくらい具体的に書け**
-3. **コンテンツを変えたら必ずリード文を見返せ**
+SCOPE OF SERVICES
+-----------------
+[Describe what you'll do]
 
-### 禁止事項
+1. [Service Area 1]
+   • Deliverable
+   • Deliverable
+   • Deliverable
 
-- 「下記に示す」「以下の通り」的な文章を使うな
-- リード文の文字数は最初から気にするな（後から添削すればいい）
+2. [Service Area 2]
+   • Deliverable
+   • Deliverable
 
-### 例外
+[Continue as needed...]
 
-- サマリスライドなど、コンテンツを読んでもらいたいスライドでは「以下の通り」「整理しました」を使っていいこともある（あくまで最終手段として理解すること）
+DELIVERABLES
+------------
+Upon completion, you will have:
+• [Deliverable 1]
+• [Deliverable 2]
+• [Deliverable 3]
 
----
+TIMELINE
+--------
+[Timeline description]
 
-## デザイン・フォーマットルール
+INVESTMENT
+----------
+[Package Name] — $X,XXX.00
 
-### 色使い
+Includes:
+• [What's included]
+• [What's included]
+• [Support terms]
 
-| ルール | 理由 |
-|--------|------|
-| 黒は使うな。黒に近いグレー（#333）を使え | 視認性と柔らかさのバランス |
-| ○×は全部に色つけるな | 主張したいところだけ色つける |
-| グレーアウトする時はノイズとなる数値は消せ | 情報の優先度を明確に |
-
-### レイアウト
-
-- **ガイドからはみ出すな**
-- オブジェクトは配置機能を使って揃えろ
-- 一つのセルが分割されて印刷されていないか確認
-- 箇条書きに余計な行間・インデントが含まれていないことを確認
-
-### 表・グラフ
-
-- 積み上げ棒グラフは横にしろ
-- 表の列名の線はいれんな
-- 罫線はグレーにしろ
-- グラフや表の数値の合計と部分の数は合っているか確認
-- 表は基本番号を付与し、図示できるようにしておけ
-
-### フォント
-
-- **12pt以下は絶対に使うな**
-
-### その他
-
-- マルは使うな → チェックにしろ
-- キャプチャ貼る時はファイル名も追加しろ
+Payment Terms:
+• $X,XXX.00 due upon signing to initiate work
+  - OR -
+• 50% ($X,XXX) due upon signing
+• 50% ($X,XXX) due upon completion
 
 ---
 
-## 資料作成プロセス
+Payment Methods:
+ACH/Bank Transfer:
+  Account Number: 8252968985
+  Routing Number: 211370545
 
-### ツール選択
+Zelle/Venmo: {YOUR_EMAIL}
 
-| 状況 | 推奨ツール |
-|------|-----------|
-| 内部整理用の資料 | メモ帳で十分。変にpptとか使うな |
-| 客に出す資料 | ppt/Marp。必ずリード文入れろ |
-| リスト整理 | 必ず対応関係をメモすること |
+TERMS & CONDITIONS
+------------------
+1. Confidentiality: [Standard clause]
+2. Intellectual Property: [Standard clause]
+3. Client Responsibilities: [Standard clause]
+4. Limitation of Liability: [Standard clause]
+5. Termination: [Standard clause]
+6. Additional Work: [Standard clause]
 
-### 時間配分の原則
+ACCEPTANCE
+----------
+By signing below, both parties agree to the terms
+outlined in this Letter of Engagement.
 
-- **客に出す資料には時間をかけていい**
-- **客に出さない資料に時間をかけるな**
-- 逆にいうと時間かけるなら客に出すレベルの資料にしろ
+SupportForge
 
-### 作業環境
+_________________________________________________
+{YOUR_NAME}
+Principal Consultant
+Date: _____________
 
-- 作業はローカルでやれ。本編消えたらどーすんの
-- 仕掛かり中のスライドは第三者が見て今どういう状態かわかるようにしろ
-  - 手が回ってないから着手してないのか、意図的に残してるのか等
 
-### 手離れを意識
+[Client Company]
 
-- 手離れをよくすることを意識しろ
-- RV（レビュー）の際はアジェンダを箇条書きでいいから書いとけ
-
----
-
-## コミュニケーションルール
-
-### 確認の仕方
-
-| NG | OK |
-|----|-----|
-| 「わかりました」 | 「こういう理解で合ってますか？」と自分の言葉で確認 |
-| 「どうしたらいいですか？」 | ちゃんと仮説を持っていけ |
-
-### フィードバック
-
-- 一度言われたことを繰り返すな
-- 指摘をする時は修正案もセットで指摘すること
-- レビューって言葉を安易に使うな → **すり合わせ/認識合わせ**を使え
-
-### 資料指示への対応
-
-- 資料作成指示の中で言及されたことは、基本すべて資料に折り込むこと（理解してないと思われる）
-- もしオリジナリティを出したいならver2的な感じで持っていけ
+_________________________________________________
+[Client Name]
+[Client Title]
+Date: _____________
 
 ---
 
-## 最終チェックリスト
+Questions? Contact Perry at contact@support-forge.com or {YOUR_PHONE}
+```
 
-資料を送る前に以下を確認。**マネージャーが作ったからと言って完璧と思い込むな。**
+## Standard Terms & Conditions
 
-### 内容チェック
+### Confidentiality
+```
+SupportForge will maintain strict confidentiality of all [Client]
+proprietary information, credentials, and business data encountered
+during this engagement.
+```
 
-- [ ] 誤字脱字がないか
-- [ ] 章立ての順番が正しいか
-- [ ] ページ番号を逐一確認
-- [ ] ページ数の表記は合っているか
-- [ ] グラフや表の数値の合計と部分の数は合っているか
+### Intellectual Property
+```
+All configurations, documentation, and work product created during
+this engagement become the property of [Client] upon final payment.
+```
 
-### デザインチェック
+### Client Responsibilities
+```
+Client agrees to provide timely access to necessary accounts,
+credentials, and personnel required to complete the work. Delays
+caused by client availability may extend the timeline.
+```
 
-- [ ] ガイドからはみ出していないか
-- [ ] 同じ図を流用してる時は、図形のサイズなどが同じになっているか
-- [ ] 一つのセルが分割されて印刷されていないか
-- [ ] 箇条書きに余計な行間・インデントが含まれていないか
+### Limitation of Liability
+```
+SupportForge's liability is limited to the total fees paid under
+this agreement. SupportForge is not liable for any third-party
+service outages, API changes, or platform limitations outside our control.
+```
 
-### 最終確認
+### Termination
+```
+Either party may terminate this agreement with 7 days written notice.
+Client will be invoiced for work completed to date.
+```
 
-- [ ] 引いた目で見るために、**スライドショー/印刷した状態で最終チェック**
-- [ ] 最後にスライド全体を通しで見ろ
+### Additional Work
+```
+Any work beyond the defined scope will be quoted separately and
+requires written approval before proceeding.
+```
+
+## Pricing Packages
+
+### AI Enablement Packages
+
+**Referral Support Package — $1,500**
+- Claude Code environment setup
+- MCP server configuration (3-5 integrations)
+- Basic skills installation
+- Up to 6 hours hands-on work
+- 1 week email support
+- One 30-min follow-up session
+
+**Professional Setup — $3,500**
+- Everything in Referral Package
+- Custom skills development
+- AWS/GCP configuration
+- Up to 15 hours hands-on work
+- 2 weeks support
+- Two 30-min follow-up sessions
+
+**Enterprise Enablement — $7,500+**
+- Full environment buildout
+- Custom integrations
+- Team training sessions
+- Ongoing support options
+- Custom scoping required
+
+### Hourly Consulting
+- **Standard Rate**: $175/hour
+- **Retainer Rate**: $150/hour (10+ hours/month)
+
+### Website/Development
+- **Simple Site**: $2,500-5,000
+- **Complex Site**: $5,000-15,000
+- **Maintenance**: $500-1,500/month
+
+## PDF Generation
+
+Use Python with reportlab to generate professional PDFs:
+
+```python
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.lib.colors import HexColor
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable, PageBreak
+from reportlab.lib.enums import TA_CENTER
+from reportlab.lib import colors
+
+# Colors
+navy = HexColor('#1a365d')
+purple = HexColor('#6366f1')
+
+# Create document
+doc = SimpleDocTemplate(
+    output_path,
+    pagesize=letter,
+    rightMargin=0.75*inch,
+    leftMargin=0.75*inch,
+    topMargin=0.5*inch,
+    bottomMargin=0.5*inch
+)
+
+# Build styles and content...
+```
+
+See `./pdf-generation-template.py` for complete working example.
+
+## Workflow
+
+### Creating a New Proposal
+
+1. **Gather Information**
+   - Client name, title, company, email
+   - Project scope and requirements
+   - Timeline expectations
+   - Budget range (if known)
+
+2. **Determine Package/Pricing**
+   - Match services to appropriate package
+   - Consider referral discounts
+   - Calculate custom pricing if needed
+
+3. **Draft Document**
+   - Use appropriate template
+   - Customize scope and deliverables
+   - Set payment terms
+
+4. **Generate PDF**
+   - Run Python script with reportlab
+   - Review output for formatting
+   - Save to Downloads folder
+
+5. **Send to Client**
+   - Email with PDF attached
+   - Brief cover message
+   - Clear next steps
+
+## Quick Commands
+
+**"Create engagement letter for [client] at [company] for [service]"**
+→ Generate complete engagement letter
+
+**"Quote [service] at [price] for [client]"**
+→ Quick pricing document
+
+**"SOW for [project description]"**
+→ Detailed statement of work
+
+**"Add terms for [special condition]"**
+→ Custom terms and conditions
+
+## Tips
+
+- Always get client's proper title and company name
+- Match formality to relationship (referral = warmer tone)
+- Be specific about deliverables (avoid scope creep)
+- Include timeline with caveats about client availability
+- Payment terms should be clear and upfront
+- Always include signature blocks for both parties

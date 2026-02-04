@@ -1,369 +1,199 @@
 ---
 name: migration-patterns
-description: Database, framework, and API migration strategies and safe patterns. Reference this skill when planning migrations.
+description: Query Angular migration patterns and examples. Use when looking up patterns (table, form, dialog, layout, button, store) or asking questions about migration guidelines.
 ---
 
-# Migration Patterns Skill
-# Project Autopilot - Safe migration strategies
-# Copyright (c) 2026 Jeremy McSpadden <jeremy@fluxlabs.net>
+Query Angular migration patterns and examples. This skill loads the migration documentation and helps with pattern lookup and answering migration questions.
 
-Comprehensive patterns for safe, reliable migrations.
+## Arguments
 
----
+- `$ARGUMENTS` - Query keyword or question:
+  - `table` - Table migration patterns (CommonTableComponent)
+  - `form` - Form patterns (validators, NonNullableFormBuilder)
+  - `dialog` - Dialog patterns (config, loading, viewContainerRef)
+  - `layout` - Page layout (gl-page-content, content-wrapper)
+  - `button` - Button patterns (mat-flat-button, loading states)
+  - `ddd` - DDD architecture (domain/features/ui/shell)
+  - `api` - API type definitions
+  - `store` - SignalStore patterns
+  - `syntax` - Angular 20 syntax (@if, @for, inject, signal)
+  - `validator` - OneValidators usage
+  - `error` - Error handling patterns
+  - `pitfall` - Common pitfalls to avoid
+  - Or ask any question about migration
 
-## Migration Principles
+**Note:** For code review/linting, use `/migration-lint` instead.
 
-### The Migration Pyramid
+## Workflow
 
-```
-           ┌─────────┐
-          ╱           ╲
-         ╱   VERIFY    ╲
-        ╱               ╲
-       ├─────────────────┤
-      ╱                   ╲
-     ╱      EXECUTE        ╲
-    ╱                       ╲
-   ├─────────────────────────┤
-  ╱                           ╲
- ╱          PREPARE            ╲
-╱                               ╲
-└───────────────────────────────┘
-```
+### Step 1: Load Relevant Documentation
 
-1. **Prepare** (Foundation)
-   - Full backups
-   - Rollback procedures
-   - Impact analysis
+Based on the query, read the appropriate documentation files from `rules/`:
 
-2. **Execute** (Implementation)
-   - Incremental changes
-   - Continuous testing
-   - Monitoring
+| Query | Files to Read |
+|-------|---------------|
+| `table` | tables/basics.md, tables/columns.md, tables/advanced.md |
+| `form` | forms/validators.md, forms/patterns.md, ui/forms.md |
+| `dialog` | ui/dialogs.md |
+| `layout` | ui/page-layout.md |
+| `button` | ui/buttons.md |
+| `ddd` | ddd-architecture.md |
+| `api` | api-types.md |
+| `store` | state-management.md |
+| `syntax` | angular-syntax.md |
+| `validator` | forms/validators.md |
+| `error` | forms/error-handling.md |
+| `pitfall` | pitfalls/index.md |
 
-3. **Verify** (Validation)
-   - Integrity checks
-   - Performance benchmarks
-   - Functionality testing
+### Step 2: Process Query
 
----
+**For keyword queries (table, form, etc.):**
+- Summarize the key patterns and rules
+- Provide code examples
+- List common mistakes to avoid
 
-## Database Migration Patterns
+**For questions:**
+- Search through all migration docs
+- Provide specific answers with code examples
+- Reference the source document
 
-### Expand-Contract Pattern
+## Quick Reference
 
-Safe schema evolution in production.
-
-**Phase 1: Expand**
-```sql
--- Add new column (nullable)
-ALTER TABLE users ADD COLUMN email_verified BOOLEAN;
-
--- Add new index concurrently
-CREATE INDEX CONCURRENTLY idx_users_email ON users(email);
-```
-
-**Phase 2: Migrate Data**
-```sql
--- Backfill existing data
-UPDATE users SET email_verified = false WHERE email_verified IS NULL;
-```
-
-**Phase 3: Contract**
-```sql
--- Add constraint (after all code updated)
-ALTER TABLE users ALTER COLUMN email_verified SET NOT NULL;
-
--- Drop old column (after deprecation period)
-ALTER TABLE users DROP COLUMN legacy_field;
-```
-
-### Parallel Change Pattern
-
-Run old and new simultaneously.
+### Table Components (UI Layer)
 
 ```typescript
-// 1. Write to both
-async function updateUser(id: string, data: UserData) {
-  // Write to new schema
-  await newSchema.update(id, data);
-  // Write to old schema (for rollback)
-  await oldSchema.update(id, data);
-}
+// Required imports for custom column templates
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 
-// 2. Compare results
-async function getUser(id: string) {
-  const [oldResult, newResult] = await Promise.all([
-    oldSchema.get(id),
-    newSchema.get(id),
-  ]);
-
-  if (!deepEqual(oldResult, newResult)) {
-    logger.warn('Schema mismatch', { id, old: oldResult, new: newResult });
-  }
-
-  return newResult;
-}
-
-// 3. Switch reads to new
-// 4. Stop writing to old
-// 5. Remove old schema
+@Component({
+  imports: [
+    CommonTableComponent,
+    MatSortModule,   // Required for mat-sort-header
+    MatTableModule,  // Required for matColumnDef, *matCellDef
+  ]
+})
 ```
 
-### Zero-Downtime Migration
-
-```sql
--- Create new table
-CREATE TABLE users_v2 (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  email VARCHAR(255) NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Create trigger to sync writes
-CREATE OR REPLACE FUNCTION sync_users_v2()
-RETURNS TRIGGER AS $$
-BEGIN
-  INSERT INTO users_v2 (id, email, created_at)
-  VALUES (NEW.id, NEW.email, NEW.created_at)
-  ON CONFLICT (id) DO UPDATE SET
-    email = EXCLUDED.email;
-  RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER users_sync_trigger
-AFTER INSERT OR UPDATE ON users
-FOR EACH ROW EXECUTE FUNCTION sync_users_v2();
-
--- Backfill historical data
-INSERT INTO users_v2 (id, email, created_at)
-SELECT id, email, created_at FROM users
-ON CONFLICT DO NOTHING;
-
--- Switch application to new table
--- Remove trigger and old table
-```
-
----
-
-## Framework Migration Patterns
-
-### Strangler Fig Pattern
-
-Gradually replace legacy system.
+### Form Validation
 
 ```typescript
-// Facade that routes to old or new
-class AuthFacade {
-  async authenticate(credentials: Credentials): Promise<User> {
-    // Check if user should use new system
-    if (this.shouldUseNew(credentials)) {
-      return this.newAuth.authenticate(credentials);
-    }
-    return this.legacyAuth.authenticate(credentials);
-  }
+import { OneValidators } from '@one-ui/mxsecurity/shared/domain';
 
-  private shouldUseNew(credentials: Credentials): boolean {
-    // Gradual rollout based on email domain
-    const domain = credentials.email.split('@')[1];
-    return this.enabledDomains.includes(domain);
-  }
-}
-```
-
-### Branch by Abstraction
-
-Create abstraction, implement new, switch.
-
-```typescript
-// 1. Create interface
-interface PaymentProcessor {
-  charge(amount: number, source: string): Promise<ChargeResult>;
-  refund(chargeId: string): Promise<RefundResult>;
-}
-
-// 2. Implement for legacy
-class LegacyPaymentProcessor implements PaymentProcessor {
-  async charge(amount: number, source: string) {
-    return this.legacySDK.processPayment(amount, source);
-  }
-}
-
-// 3. Implement for new
-class NewPaymentProcessor implements PaymentProcessor {
-  async charge(amount: number, source: string) {
-    return this.newSDK.createCharge({ amount, source });
-  }
-}
-
-// 4. Use factory to switch
-class PaymentProcessorFactory {
-  create(): PaymentProcessor {
-    if (config.useNewPayments) {
-      return new NewPaymentProcessor();
-    }
-    return new LegacyPaymentProcessor();
-  }
-}
-```
-
-### Incremental TypeScript Migration
-
-```typescript
-// tsconfig.json - Start lenient
-{
-  "compilerOptions": {
-    "allowJs": true,
-    "checkJs": false,
-    "strict": false,
-    "noImplicitAny": false
-  }
-}
-
-// Phase 1: Rename .js to .ts (no changes)
-// Phase 2: Add types to new files
-// Phase 3: Enable noImplicitAny per-directory
-// Phase 4: Enable strict per-directory
-// Phase 5: Full strict mode
-```
-
----
-
-## API Migration Patterns
-
-### Versioned API
-
-```typescript
-// Version in URL
-app.get('/api/v1/users', v1UserController);
-app.get('/api/v2/users', v2UserController);
-
-// Version in header
-app.get('/api/users', (req, res, next) => {
-  const version = req.header('API-Version') || '1';
-  if (version === '2') {
-    return v2UserController(req, res, next);
-  }
-  return v1UserController(req, res, next);
+// Correct
+this.#fb.group({
+  name: ['', [OneValidators.required, OneValidators.maxLength(32)]],
+  ip: ['', [OneValidators.required, ipv4Validator]]
 });
 ```
 
-### Deprecation Pattern
+### Form Field Tooltip (mxLabelTooltip)
+
+**DO NOT use `mat-icon` with `matTooltip`**. Use `mxLabelTooltip` directive on `mat-label` instead.
+
+```html
+<!-- WRONG - Don't use mat-icon with info tooltip -->
+<div class="form-row">
+  <mat-form-field>
+    <mat-label>{{ t('field.label') }}</mat-label>
+    <mat-select formControlName="field">...</mat-select>
+  </mat-form-field>
+  <mat-icon class="info-icon" [matTooltip]="t('field.hint')">info</mat-icon>
+</div>
+
+<!-- CORRECT - Use mxLabelTooltip -->
+<mat-form-field>
+  <mat-label mxLabel [mxLabelTooltip]="t('field.hint')">
+    {{ t('field.label') }}
+  </mat-label>
+  <mat-select formControlName="field">...</mat-select>
+</mat-form-field>
+```
+
+**Required import:**
 
 ```typescript
-// Add deprecation warnings
-app.get('/api/v1/users', (req, res, next) => {
-  res.setHeader('Deprecation', 'true');
-  res.setHeader('Sunset', 'Sat, 31 Dec 2026 23:59:59 GMT');
-  res.setHeader('Link', '</api/v2/users>; rel="successor-version"');
+import { MxLabelDirective } from '@moxa/formoxa/mx-label';
 
-  // Log deprecation usage
-  logger.info('Deprecated API called', {
-    endpoint: '/api/v1/users',
-    client: req.headers['user-agent'],
-  });
+@Component({
+  imports: [MxLabelDirective]
+})
+```
 
-  return v1UserController(req, res, next);
+### Button Types
+
+```html
+<!-- Form submit button -->
+<button mat-flat-button color="primary" type="submit">Apply</button>
+
+<!-- Table toolbar button -->
+<button mat-stroked-button>Create</button>
+```
+
+### Page Layout
+
+```html
+<div *transloco="let t" class="gl-page-content">
+  <one-ui-breadcrumb />
+  <mx-page-title [title]="t('page.title')" />
+
+  <div class="content-wrapper">
+    <!-- content here -->
+  </div>
+</div>
+```
+
+### Card Container (IMPORTANT)
+
+**DO NOT use `<mat-card>`**. Always use `class="content-wrapper"` instead.
+
+```html
+<!-- WRONG - Don't use mat-card -->
+<mat-card>
+  <mat-card-header>...</mat-card-header>
+  <mat-card-content>...</mat-card-content>
+</mat-card>
+
+<!-- CORRECT - Use content-wrapper -->
+<div class="content-wrapper">
+  <!-- content here -->
+</div>
+
+<!-- If you need mat-card structure, add content-wrapper class -->
+<mat-card class="content-wrapper">
+  <mat-card-header>...</mat-card-header>
+  <mat-card-content>...</mat-card-content>
+</mat-card>
+```
+
+The `content-wrapper` class provides:
+- Consistent padding (16px)
+- Border radius (8px)
+- Surface background color
+- Gap between child elements (8px)
+
+### Dialog Config
+
+```typescript
+import { mediumDialogConfig } from '@one-ui/mxsecurity/shared/domain';
+
+this.#dialog.open(MyDialog, {
+  ...mediumDialogConfig,
+  data: dialogData,
+  viewContainerRef: this.#viewContainerRef  // Required if dialog uses store
 });
 ```
 
-### Consumer-Driven Contract
+## Output Format
 
-```typescript
-// Maintain contracts for consumers
-const consumerContracts = {
-  'mobile-app': {
-    endpoints: ['/api/users', '/api/orders'],
-    fields: ['id', 'name', 'email'],
-  },
-  'admin-dashboard': {
-    endpoints: ['/api/users', '/api/analytics'],
-    fields: ['id', 'name', 'email', 'role', 'lastLogin'],
-  },
-};
+### For keyword queries:
+Provide a concise summary with:
+1. Key rules (do's and don'ts)
+2. Code examples
+3. Common mistakes
 
-// Verify contracts before release
-function verifyContracts(newApi: OpenAPISpec): ContractResult[] {
-  return Object.entries(consumerContracts).map(([consumer, contract]) => ({
-    consumer,
-    result: validateContract(newApi, contract),
-  }));
-}
-```
-
----
-
-## Rollback Strategies
-
-### Instant Rollback (Feature Flags)
-
-```typescript
-// Disable feature instantly
-await featureFlags.set('new-checkout', false);
-// All traffic immediately uses old implementation
-```
-
-### Blue-Green Rollback
-
-```bash
-# Switch traffic back to blue
-kubectl patch service myapp -p '{"spec":{"selector":{"version":"blue"}}}'
-```
-
-### Database Rollback
-
-```sql
--- Point-in-time recovery
-pg_restore -d mydb --target-time="2026-01-29 14:30:00" backup.dump
-
--- Or restore from backup
-pg_restore -d mydb backup_before_migration.dump
-```
-
-### Git Rollback
-
-```bash
-# Revert specific commit
-git revert abc123
-
-# Revert merge commit
-git revert -m 1 merge_commit_hash
-
-# Reset to previous state (caution!)
-git reset --hard HEAD~1
-```
-
----
-
-## Migration Checklist
-
-### Before Migration
-
-- [ ] Impact analysis complete
-- [ ] All affected systems identified
-- [ ] Rollback plan documented
-- [ ] Rollback plan tested
-- [ ] Full backup taken
-- [ ] Backup verified
-- [ ] Team notified
-- [ ] Monitoring in place
-- [ ] Maintenance window scheduled (if needed)
-
-### During Migration
-
-- [ ] Execute steps in order
-- [ ] Verify each step before proceeding
-- [ ] Monitor error rates
-- [ ] Monitor performance
-- [ ] Be ready to rollback
-
-### After Migration
-
-- [ ] Full functionality test
-- [ ] Performance benchmarks
-- [ ] Data integrity checks
-- [ ] Remove deprecated code/data
-- [ ] Update documentation
-- [ ] Notify stakeholders
-- [ ] Post-mortem if issues occurred
+### For questions:
+Provide the answer with:
+1. Direct answer
+2. Code example
+3. Source reference (which doc file)

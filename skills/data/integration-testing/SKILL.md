@@ -1,884 +1,476 @@
 ---
-name: aspire-integration-testing
-description: Write integration tests using .NET Aspire's testing facilities with xUnit. Covers test fixtures, distributed application setup, endpoint discovery, and patterns for testing ASP.NET Core apps with real dependencies.
-invocable: false
+name: integration-testing
+description: Design and implement integration tests that verify component interactions, API endpoints, database operations, and external service communication. Use for integration test, API test, end-to-end component testing, and service layer validation.
 ---
 
-# Integration Testing with .NET Aspire + xUnit
-
-## When to Use This Skill
-
-Use this skill when:
-- Writing integration tests for .NET Aspire applications
-- Testing ASP.NET Core apps with real database connections
-- Verifying service-to-service communication in distributed applications
-- Testing with actual infrastructure (SQL Server, Redis, message queues) in containers
-- Combining Playwright UI tests with Aspire-orchestrated services
-- Testing microservices with proper service discovery and networking
-
-## Core Principles
-
-1. **Real Dependencies** - Use actual infrastructure (databases, caches) via Aspire, not mocks
-2. **Dynamic Port Binding** - Let Aspire assign ports dynamically (`127.0.0.1:0`) to avoid conflicts
-3. **Fixture Lifecycle** - Use `IAsyncLifetime` for proper test fixture setup and teardown
-4. **Endpoint Discovery** - Never hard-code URLs; discover endpoints from Aspire at runtime
-5. **Parallel Isolation** - Use xUnit collections to control test parallelization
-6. **Health Checks** - Always wait for services to be healthy before running tests
-
-## High-Level Testing Architecture
-
-```
-┌─────────────────┐                    ┌──────────────────────┐
-│ xUnit test file │──uses────────────►│  AspireFixture       │
-└─────────────────┘                    │  (IAsyncLifetime)    │
-                                       └──────────────────────┘
-                                               │
-                                               │ starts
-                                               ▼
-                                    ┌───────────────────────────┐
-                                    │  DistributedApplication   │
-                                    │  (from AppHost)           │
-                                    └───────────────────────────┘
-                                               │ exposes
-                                               ▼
-                                  ┌──────────────────────────────┐
-                                  │   Dynamic HTTP Endpoints     │
-                                  └──────────────────────────────┘
-                                               │ consumed by
-                                               ▼
-                                   ┌─────────────────────────┐
-                                   │  HttpClient / Playwright│
-                                   └─────────────────────────┘
-```
-
-## Required NuGet Packages
-
-```xml
-<ItemGroup>
-  <PackageReference Include="Aspire.Hosting.Testing" Version="$(AspireVersion)" />
-  <PackageReference Include="xunit" Version="*" />
-  <PackageReference Include="xunit.runner.visualstudio" Version="*" />
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="*" />
-</ItemGroup>
-```
-
-## CRITICAL: File Watcher Fix for Integration Tests
-
-When running many integration tests that each start an IHost, the default .NET host builder enables file watchers for configuration reload. This exhausts file descriptor limits on Linux.
-
-**Add this to your test project before any tests run:**
-
-```csharp
-// TestEnvironmentInitializer.cs
-using System.Runtime.CompilerServices;
-
-namespace YourApp.Tests;
-
-internal static class TestEnvironmentInitializer
-{
-    [ModuleInitializer]
-    internal static void Initialize()
-    {
-        // Disable config file watching in test hosts
-        // Prevents file descriptor exhaustion (inotify watch limit) on Linux
-        Environment.SetEnvironmentVariable("DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE", "false");
-    }
-}
-```
-
-**Why this matters:** `[ModuleInitializer]` runs before any test code executes, setting the environment variable globally for all IHost instances created during tests.
-
-## Pattern 1: Basic Aspire Test Fixture (Modern API)
-
-```csharp
-using Aspire.Hosting;
-using Aspire.Hosting.Testing;
-
-public sealed class AspireAppFixture : IAsyncLifetime
-{
-    private DistributedApplication? _app;
-
-    public DistributedApplication App => _app
-        ?? throw new InvalidOperationException("App not initialized");
-
-    public async Task InitializeAsync()
-    {
-        // Pass configuration overrides as command-line args (cleaner than Configuration dictionary)
-        var builder = await DistributedApplicationTestingBuilder
-            .CreateAsync<Projects.YourApp_AppHost>([
-                "YourApp:UseVolumes=false",           // No persistence - clean slate each test
-                "YourApp:Environment=IntegrationTest",
-                "YourApp:Replicas=1"                  // Single instance for tests
-            ]);
-
-        _app = await builder.BuildAsync();
-
-        // Phase 1: Start the application (container startup)
-        using var startupCts = new CancellationTokenSource(TimeSpan.FromMinutes(10));
-        await _app.StartAsync(startupCts.Token);
-
-        // Phase 2: Wait for services to become healthy (use built-in API)
-        using var healthCts = new CancellationTokenSource(TimeSpan.FromMinutes(5));
-        await _app.ResourceNotifications.WaitForResourceHealthyAsync("api", healthCts.Token);
-    }
-
-    public Uri GetEndpoint(string resourceName, string scheme = "https")
-    {
-        return _app?.GetEndpoint(resourceName, scheme)
-            ?? throw new InvalidOperationException($"Endpoint for '{resourceName}' not found");
-    }
-
-    public async Task DisposeAsync()
-    {
-        if (_app is not null)
-        {
-            await _app.DisposeAsync();
-        }
-    }
-}
-```
-
-## Pattern 2: Using the Fixture in Tests
-
-```csharp
-// Define a collection to share the fixture across multiple test classes
-[CollectionDefinition("Aspire collection")]
-public class AspireCollection : ICollectionFixture<AspireAppFixture> { }
-
-// Use the fixture in your test class
-[Collection("Aspire collection")]
-public class IntegrationTests
-{
-    private readonly AspireAppFixture _fixture;
-
-    public IntegrationTests(AspireAppFixture fixture)
-    {
-        _fixture = fixture;
-    }
-
-    [Fact]
-    public async Task Application_ShouldStart()
-    {
-        // Get the web application resource
-        var webApp = _fixture.App.GetResource("yourapp");
-
-        // Get the HTTP endpoint
-        var httpClient = _fixture.App.CreateHttpClient("yourapp");
-
-        // Make a request
-        var response = await httpClient.GetAsync("/");
-
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    }
-}
-```
-
-## Pattern 3: Endpoint Discovery
-
-```csharp
-public static class DistributedApplicationExtensions
-{
-    public static ResourceEndpoint GetEndpoint(
-        this DistributedApplication app,
-        string resourceName,
-        string? endpointName = null)
-    {
-        var resource = app.GetResource(resourceName);
-
-        if (resource is null)
-            throw new InvalidOperationException(
-                $"Resource '{resourceName}' not found");
-
-        var endpoint = endpointName is null
-            ? resource.GetEndpoints().FirstOrDefault()
-            : resource.GetEndpoint(endpointName);
-
-        if (endpoint is null)
-            throw new InvalidOperationException(
-                $"Endpoint '{endpointName}' not found on resource '{resourceName}'");
-
-        return endpoint;
-    }
-
-    public static string GetEndpointUrl(
-        this DistributedApplication app,
-        string resourceName,
-        string? endpointName = null)
-    {
-        var endpoint = app.GetEndpoint(resourceName, endpointName);
-        return endpoint.Url;
-    }
-}
-
-// Usage in tests
-[Fact]
-public async Task CanAccessWebApplication()
-{
-    var url = _fixture.App.GetEndpointUrl("yourapp");
-    var client = new HttpClient { BaseAddress = new Uri(url) };
-
-    var response = await client.GetAsync("/health");
-
-    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-}
-```
-
-## Pattern 4: Testing with Database Dependencies
-
-```csharp
-public class DatabaseIntegrationTests
-{
-    private readonly AspireAppFixture _fixture;
-
-    public DatabaseIntegrationTests(AspireAppFixture fixture)
-    {
-        _fixture = fixture;
-    }
-
-    [Fact]
-    public async Task Database_ShouldBeInitialized()
-    {
-        // Get connection string from Aspire
-        var dbResource = _fixture.App.GetResource("yourdb");
-        var connectionString = await dbResource
-            .GetConnectionStringAsync();
-
-        // Test database access
-        await using var connection = new SqlConnection(connectionString);
-        await connection.OpenAsync();
-
-        var result = await connection.QuerySingleAsync<int>(
-            "SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES");
-
-        Assert.True(result > 0, "Database should have tables");
-    }
-}
-```
-
-## Pattern 5: Combining with Playwright for UI Tests
-
-```csharp
-using Microsoft.Playwright;
-
-public sealed class AspirePlaywrightFixture : IAsyncLifetime
-{
-    private DistributedApplication? _app;
-    private IPlaywright? _playwright;
-    private IBrowser? _browser;
-
-    public DistributedApplication App => _app!;
-    public IBrowser Browser => _browser!;
-
-    public async Task InitializeAsync()
-    {
-        // Start Aspire application
-        var appHost = await DistributedApplicationTestingBuilder
-            .CreateAsync<Projects.YourApp_AppHost>();
-
-        _app = await appHost.BuildAsync();
-        await _app.StartAsync();
-
-        // Wait for app to be fully ready
-        await Task.Delay(2000); // Or use proper health check polling
-
-        // Start Playwright
-        _playwright = await Playwright.CreateAsync();
-        _browser = await _playwright.Chromium.LaunchAsync(new()
-        {
-            Headless = true
-        });
-    }
-
-    public async Task DisposeAsync()
-    {
-        if (_browser is not null)
-            await _browser.DisposeAsync();
-
-        _playwright?.Dispose();
-
-        if (_app is not null)
-            await _app.DisposeAsync();
-    }
-}
-
-[Collection("Aspire Playwright collection")]
-public class UIIntegrationTests
-{
-    private readonly AspirePlaywrightFixture _fixture;
-
-    public UIIntegrationTests(AspirePlaywrightFixture fixture)
-    {
-        _fixture = fixture;
-    }
-
-    [Fact]
-    public async Task HomePage_ShouldLoad()
-    {
-        var url = _fixture.App.GetEndpointUrl("yourapp");
-        var page = await _fixture.Browser.NewPageAsync();
-
-        await page.GotoAsync(url);
-
-        var title = await page.TitleAsync();
-        Assert.NotEmpty(title);
-    }
-}
-```
-
-## Pattern 6: Conditional Resource Configuration for Tests
-
-Design your AppHost to support different configurations for interactive development (F5/CLI) vs automated test fixtures. The pattern goes beyond just volumes - it covers execution modes, authentication, external services, and more.
-
-### Core Principle
-
-> **Default to production-like behavior in AppHost.** Tests explicitly override what they need to be different. This catches configuration gaps early (e.g., missing DI registrations that only surface in clustered mode).
-
-### Configuration Class in AppHost
-
-```csharp
-// In your AppHost project
-public class AppHostConfiguration
-{
-    // Infrastructure settings
-    public bool UseVolumes { get; set; } = true;  // Persist data in dev, clean slate in tests
-
-    // Execution mode settings (for Akka.NET or similar)
-    public string ExecutionMode { get; set; } = "Clustered";  // Full cluster in dev, LocalTest optional
-
-    // Feature toggles
-    public bool EnableTestAuth { get; set; } = false;  // /dev-login endpoint for tests
-    public bool UseFakeExternalServices { get; set; } = false;  // Fake Gmail, Stripe, etc.
-
-    // Scale settings
-    public int Replicas { get; set; } = 1;
-}
-```
-
-### AppHost Conditional Logic
-
-```csharp
-var builder = DistributedApplication.CreateBuilder(args);
-
-// Bind configuration from command-line args or appsettings
-var config = builder.Configuration.GetSection("App")
-    .Get<AppHostConfiguration>() ?? new AppHostConfiguration();
-
-// Database with conditional volume
-var postgres = builder.AddPostgres("postgres").WithPgAdmin();
-if (config.UseVolumes)
-{
-    postgres.WithDataVolume();
-}
-var db = postgres.AddDatabase("appdb");
-
-// Migrations
-var migrations = builder.AddProject<Projects.YourApp_Migrations>("migrations")
-    .WaitFor(db)
-    .WithReference(db);
-
-// API with environment-based configuration
-var api = builder.AddProject<Projects.YourApp_Api>("api")
-    .WaitForCompletion(migrations)
-    .WithReference(db)
-    .WithEnvironment("AkkaSettings__ExecutionMode", config.ExecutionMode)
-    .WithEnvironment("Testing__EnableTestAuth", config.EnableTestAuth.ToString())
-    .WithEnvironment("ExternalServices__UseFakes", config.UseFakeExternalServices.ToString());
-
-// Conditional replicas
-if (config.Replicas > 1)
-{
-    api.WithReplicas(config.Replicas);
-}
-
-builder.Build().Run();
-```
-
-### Test Fixture Overrides
-
-```csharp
-var builder = await DistributedApplicationTestingBuilder
-    .CreateAsync<Projects.YourApp_AppHost>([
-        "App:UseVolumes=false",           // Clean database each test
-        "App:ExecutionMode=LocalTest",    // Faster, no cluster overhead (optional)
-        "App:EnableTestAuth=true",        // Enable /dev-login endpoint
-        "App:UseFakeExternalServices=true" // No real OAuth, email, payments
-    ]);
-```
-
-### Common Conditional Settings
-
-| Setting | F5/Development | Test Fixture | Purpose |
-|---------|----------------|--------------|---------|
-| `UseVolumes` | `true` (persist data) | `false` (clean slate) | Database isolation |
-| `ExecutionMode` | `Clustered` (realistic) | `LocalTest` or `Clustered` | Actor system mode |
-| `EnableTestAuth` | `false` (use real OAuth) | `true` (/dev-login) | Bypass OAuth in tests |
-| `UseFakeServices` | `false` (real integrations) | `true` (no external calls) | External API isolation |
-| `Replicas` | `1` or more | `1` (simplicity) | Scale configuration |
-| `SeedData` | `false` | `true` | Pre-populate test data |
-
-### Test Authentication Pattern
-
-When `EnableTestAuth=true`, your API can expose a test-only authentication endpoint:
-
-```csharp
-// In API startup, conditionally add test auth
-if (builder.Configuration.GetValue<bool>("Testing:EnableTestAuth"))
-{
-    app.MapPost("/dev-login", async (DevLoginRequest request, IAuthService auth) =>
-    {
-        // Generate a real auth token for the specified user
-        var token = await auth.GenerateTokenAsync(request.UserId, request.Roles);
-        return Results.Ok(new { token });
+# Integration Testing
+
+## Overview
+
+Integration testing validates that different components, modules, or services work correctly together. Unlike unit tests that isolate single functions, integration tests verify the interactions between multiple parts of your system including databases, APIs, external services, and infrastructure.
+
+## When to Use
+
+- Testing API endpoints with real database connections
+- Verifying service-to-service communication
+- Validating data flow across multiple layers
+- Testing repository/DAO layer with actual databases
+- Checking authentication and authorization flows
+- Verifying message queue consumers and producers
+- Testing third-party service integrations
+
+## Instructions
+
+### 1. **API Integration Testing**
+
+#### Express/Node.js with Jest and Supertest
+```javascript
+// test/api/users.integration.test.js
+const request = require('supertest');
+const app = require('../../src/app');
+const { setupTestDB, teardownTestDB } = require('../helpers/db');
+
+describe('User API Integration Tests', () => {
+  beforeAll(async () => {
+    await setupTestDB();
+  });
+
+  afterAll(async () => {
+    await teardownTestDB();
+  });
+
+  beforeEach(async () => {
+    await clearUsers();
+  });
+
+  describe('POST /api/users', () => {
+    it('should create a new user with valid data', async () => {
+      const userData = {
+        email: 'test@example.com',
+        name: 'Test User',
+        password: 'SecurePass123!'
+      };
+
+      const response = await request(app)
+        .post('/api/users')
+        .send(userData)
+        .expect(201);
+
+      expect(response.body).toMatchObject({
+        id: expect.any(String),
+        email: userData.email,
+        name: userData.name
+      });
+      expect(response.body.password).toBeUndefined();
+
+      // Verify in database
+      const user = await User.findById(response.body.id);
+      expect(user).toBeTruthy();
+      expect(user.email).toBe(userData.email);
     });
-}
 
-// In tests
-public async Task<string> LoginAsTestUser(string userId, string[] roles)
-{
-    var response = await _httpClient.PostAsJsonAsync("/dev-login",
-        new { UserId = userId, Roles = roles });
-    var result = await response.Content.ReadFromJsonAsync<DevLoginResponse>();
-    return result!.Token;
-}
+    it('should reject duplicate email addresses', async () => {
+      const userData = { email: 'test@example.com', name: 'Test', password: 'pass' };
+
+      await request(app).post('/api/users').send(userData).expect(201);
+
+      const response = await request(app)
+        .post('/api/users')
+        .send(userData)
+        .expect(409);
+
+      expect(response.body.error).toMatch(/email.*exists/i);
+    });
+  });
+
+  describe('GET /api/users/:id', () => {
+    it('should retrieve user with associated orders', async () => {
+      const user = await createTestUser();
+      await createTestOrder({ userId: user.id, total: 99.99 });
+
+      const response = await request(app)
+        .get(`/api/users/${user.id}`)
+        .set('Authorization', `Bearer ${user.token}`)
+        .expect(200);
+
+      expect(response.body).toMatchObject({
+        id: user.id,
+        orders: expect.arrayContaining([
+          expect.objectContaining({ total: 99.99 })
+        ])
+      });
+    });
+  });
+});
 ```
 
-### Fake External Services Pattern
+#### FastAPI/Python with pytest
+```python
+# tests/integration/test_user_api.py
+import pytest
+from httpx import AsyncClient
+from sqlalchemy.ext.asyncio import AsyncSession
 
-```csharp
-// In your service registration
-public static IServiceCollection AddExternalServices(
-    this IServiceCollection services,
-    IConfiguration config)
-{
-    if (config.GetValue<bool>("ExternalServices:UseFakes"))
-    {
-        // Test fakes - no external calls
-        services.AddSingleton<IEmailSender, FakeEmailSender>();
-        services.AddSingleton<IPaymentProcessor, FakePaymentProcessor>();
-        services.AddSingleton<IOAuthProvider, FakeOAuthProvider>();
-    }
-    else
-    {
-        // Real implementations
-        services.AddSingleton<IEmailSender, SendGridEmailSender>();
-        services.AddSingleton<IPaymentProcessor, StripePaymentProcessor>();
-        services.AddSingleton<IOAuthProvider, Auth0Provider>();
-    }
+from app.main import app
+from app.models import User
+from tests.conftest import test_db
 
-    return services;
-}
-```
-
-### Why Default to Production-Like Behavior
-
-Starting with production-like defaults and overriding in tests catches issues that only appear under real conditions:
-
-- **DI registration gaps** - Services that are only registered in clustered mode
-- **Configuration errors** - Settings that are required in production but missing
-- **Integration issues** - Problems with real database connections, auth flows, etc.
-- **Performance characteristics** - Tests run closer to production behavior
-
-Tests explicitly opt-out of specific production behaviors rather than opting-in to a test mode that might miss real issues.
-
-## Pattern 7: Database Reset with Respawn
-
-For tests that modify data, use [Respawn](https://github.com/jbogard/Respawn) to reset between tests:
-
-```csharp
-using Respawn;
-
-public class AspireFixtureWithReset : IAsyncLifetime
-{
-    private DistributedApplication? _app;
-    private Respawner? _respawner;
-    private string? _connectionString;
-
-    public async Task InitializeAsync()
-    {
-        var builder = await DistributedApplicationTestingBuilder
-            .CreateAsync<Projects.YourApp_AppHost>([
-                "YourApp:UseVolumes=false"
-            ]);
-
-        _app = await builder.BuildAsync();
-        await _app.StartAsync();
-
-        // Wait for database and migrations
-        await _app.ResourceNotifications.WaitForResourceHealthyAsync("api");
-
-        // Get connection string and create respawner
-        var dbResource = _app.GetResource("appdb");
-        _connectionString = await dbResource.GetConnectionStringAsync();
-
-        _respawner = await Respawner.CreateAsync(_connectionString, new RespawnerOptions
-        {
-            TablesToIgnore = new[]
-            {
-                "__EFMigrationsHistory",
-                "schema_version",        // DbUp
-                "AspNetRoles"            // Seeded reference data
-            },
-            DbAdapter = DbAdapter.Postgres
-        });
-    }
-
-    /// <summary>
-    /// Reset database to clean state between tests.
-    /// </summary>
-    public async Task ResetDatabaseAsync()
-    {
-        if (_respawner is not null && _connectionString is not null)
-        {
-            await _respawner.ResetAsync(_connectionString);
-        }
-    }
-
-    public async Task DisposeAsync()
-    {
-        if (_app is not null)
-            await _app.DisposeAsync();
-    }
-}
-```
-```
-
-## Pattern 7: Waiting for Resource Readiness
-
-```csharp
-public static class ResourceExtensions
-{
-    public static async Task WaitForHealthyAsync(
-        this DistributedApplication app,
-        string resourceName,
-        TimeSpan? timeout = null)
-    {
-        timeout ??= TimeSpan.FromSeconds(30);
-        var cts = new CancellationTokenSource(timeout.Value);
-
-        var resource = app.GetResource(resourceName);
-
-        while (!cts.Token.IsCancellationRequested)
-        {
-            try
-            {
-                var httpClient = app.CreateHttpClient(resourceName);
-                var response = await httpClient.GetAsync(
-                    "/health",
-                    cts.Token);
-
-                if (response.IsSuccessStatusCode)
-                    return;
-            }
-            catch
-            {
-                // Resource not ready yet
-            }
-
-            await Task.Delay(500, cts.Token);
+@pytest.mark.asyncio
+class TestUserAPI:
+    async def test_create_user_integration(
+        self,
+        client: AsyncClient,
+        db: AsyncSession
+    ):
+        """Test user creation with database persistence."""
+        user_data = {
+            "email": "test@example.com",
+            "name": "Test User",
+            "password": "SecurePass123!"
         }
 
-        throw new TimeoutException(
-            $"Resource '{resourceName}' did not become healthy within {timeout}");
+        response = await client.post("/api/users", json=user_data)
+
+        assert response.status_code == 201
+        data = response.json()
+        assert data["email"] == user_data["email"]
+        assert "password" not in data
+
+        # Verify in database
+        result = await db.execute(
+            select(User).where(User.email == user_data["email"])
+        )
+        user = result.scalar_one()
+        assert user is not None
+        assert user.name == user_data["name"]
+
+    async def test_user_with_relationships(
+        self,
+        client: AsyncClient,
+        db: AsyncSession
+    ):
+        """Test retrieving user with related data."""
+        # Setup: Create user with orders
+        user = await create_test_user(db)
+        await create_test_order(db, user_id=user.id, total=99.99)
+
+        # Test: Fetch user with orders
+        response = await client.get(
+            f"/api/users/{user.id}",
+            headers={"Authorization": f"Bearer {user.token}"}
+        )
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["id"] == user.id
+        assert len(data["orders"]) == 1
+        assert data["orders"][0]["total"] == 99.99
+```
+
+### 2. **Database Integration Testing**
+
+#### Spring Boot with JUnit
+```java
+// src/test/java/com/example/integration/UserRepositoryIntegrationTest.java
+@SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@TestPropertySource(locations = "classpath:application-test.properties")
+class UserRepositoryIntegrationTest {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
+
+    @Autowired
+    private TestEntityManager entityManager;
+
+    @BeforeEach
+    void setUp() {
+        orderRepository.deleteAll();
+        userRepository.deleteAll();
+    }
+
+    @Test
+    @Transactional
+    void testSaveUserWithOrders() {
+        // Given
+        User user = new User();
+        user.setEmail("test@example.com");
+        user.setName("Test User");
+
+        Order order1 = new Order();
+        order1.setTotal(new BigDecimal("99.99"));
+        order1.setUser(user);
+
+        Order order2 = new Order();
+        order2.setTotal(new BigDecimal("49.99"));
+        order2.setUser(user);
+
+        user.setOrders(Arrays.asList(order1, order2));
+
+        // When
+        User savedUser = userRepository.save(user);
+        entityManager.flush();
+        entityManager.clear();
+
+        // Then
+        User foundUser = userRepository.findById(savedUser.getId())
+            .orElseThrow();
+
+        assertThat(foundUser.getEmail()).isEqualTo("test@example.com");
+        assertThat(foundUser.getOrders()).hasSize(2);
+        assertThat(foundUser.getOrders())
+            .extracting(Order::getTotal)
+            .containsExactlyInAnyOrder(
+                new BigDecimal("99.99"),
+                new BigDecimal("49.99")
+            );
+    }
+
+    @Test
+    void testCustomQueryWithJoins() {
+        // Given
+        User user = createTestUser("test@example.com");
+        createTestOrder(user, new BigDecimal("150.00"));
+
+        // When
+        List<User> highValueUsers = userRepository
+            .findUsersWithOrdersAbove(new BigDecimal("100.00"));
+
+        // Then
+        assertThat(highValueUsers).hasSize(1);
+        assertThat(highValueUsers.get(0).getEmail())
+            .isEqualTo("test@example.com");
     }
 }
-
-// Usage
-[Fact]
-public async Task ServicesShouldBeHealthy()
-{
-    await _fixture.App.WaitForHealthyAsync("yourapp");
-    await _fixture.App.WaitForHealthyAsync("youra pi");
-
-    // Now proceed with tests
-}
 ```
 
-## Pattern 8: Testing Service-to-Service Communication
+### 3. **External Service Integration**
 
-```csharp
-[Fact]
-public async Task WebApp_ShouldCallApi()
-{
-    var webClient = _fixture.App.CreateHttpClient("webapp");
-    var apiClient = _fixture.App.CreateHttpClient("api");
+#### Testing with Test Containers
+```javascript
+// test/integration/payment-service.test.js
+const { GenericContainer } = require('testcontainers');
+const PaymentService = require('../../src/services/payment');
 
-    // Verify API is accessible
-    var apiResponse = await apiClient.GetAsync("/api/data");
-    Assert.True(apiResponse.IsSuccessStatusCode);
+describe('Payment Service Integration', () => {
+  let container;
+  let paymentService;
 
-    // Verify WebApp calls API correctly
-    var webResponse = await webClient.GetAsync("/fetch-data");
-    Assert.True(webResponse.IsSuccessStatusCode);
+  beforeAll(async () => {
+    // Start PostgreSQL container
+    container = await new GenericContainer('postgres:14')
+      .withEnvironment({
+        POSTGRES_DB: 'test',
+        POSTGRES_USER: 'test',
+        POSTGRES_PASSWORD: 'test'
+      })
+      .withExposedPorts(5432)
+      .start();
 
-    var content = await webResponse.Content.ReadAsStringAsync();
-    Assert.NotEmpty(content);
-}
-```
+    const connectionString = `postgresql://test:test@${container.getHost()}:${container.getMappedPort(5432)}/test`;
+    paymentService = new PaymentService(connectionString);
+    await paymentService.initialize();
+  }, 60000);
 
-## Pattern 9: Testing with Message Queues
+  afterAll(async () => {
+    await paymentService.close();
+    await container.stop();
+  });
 
-```csharp
-[Fact]
-public async Task MessageQueue_ShouldProcessMessages()
-{
-    // Get RabbitMQ connection from Aspire
-    var rabbitMqResource = _fixture.App.GetResource("messaging");
-    var connectionString = await rabbitMqResource
-        .GetConnectionStringAsync();
-
-    var factory = new ConnectionFactory
-    {
-        Uri = new Uri(connectionString)
+  test('should process payment and update database', async () => {
+    const payment = {
+      orderId: 'order-123',
+      amount: 99.99,
+      currency: 'USD',
+      paymentMethod: 'credit_card'
     };
 
-    using var connection = await factory.CreateConnectionAsync();
-    using var channel = await connection.CreateChannelAsync();
+    const result = await paymentService.processPayment(payment);
 
-    // Publish a test message
-    await channel.QueueDeclareAsync("test-queue", durable: false);
-    await channel.BasicPublishAsync(
-        exchange: "",
-        routingKey: "test-queue",
-        body: Encoding.UTF8.GetBytes("test message"));
+    expect(result.status).toBe('completed');
+    expect(result.transactionId).toBeDefined();
 
-    // Wait for processing
-    await Task.Delay(1000);
-
-    // Verify message was processed
-    // (check database, file system, or other side effects)
-}
+    // Verify in database
+    const stored = await paymentService.getPayment(result.id);
+    expect(stored.orderId).toBe('order-123');
+    expect(stored.status).toBe('completed');
+  });
+});
 ```
 
-## Common Patterns Summary
+### 4. **Message Queue Integration**
 
-| Pattern | Use Case |
-|---------|----------|
-| Basic Fixture | Simple HTTP endpoint testing |
-| Endpoint Discovery | Avoid hard-coded URLs |
-| Database Testing | Verify data access layer |
-| Playwright Integration | Full UI testing with real backend |
-| Configuration Override | Test-specific settings |
-| Health Checks | Ensure services are ready |
-| Service Communication | Test distributed system interactions |
-| Message Queue Testing | Verify async messaging |
+```python
+# tests/integration/test_message_queue.py
+import pytest
+from unittest.mock import patch
+import json
 
-## Tricky / Non-Obvious Tips
+from app.queue import MessageQueue
+from app.workers import OrderProcessor
 
-| Problem | Solution |
-|---------|----------|
-| Tests timeout immediately | Call `await _app.StartAsync()` and wait for services to be healthy before running tests |
-| Port conflicts between tests | Use xUnit `CollectionDefinition` to share fixtures and avoid starting multiple instances |
-| Flaky tests due to timing | Implement proper health check polling instead of `Task.Delay()` |
-| Can't connect to SQL Server | Ensure connection string is retrieved dynamically via `GetConnectionStringAsync()` |
-| Parallel tests interfere | Use `[Collection]` attribute to run related tests sequentially |
-| Aspire dashboard conflicts | Only one Aspire dashboard can run at a time; tests will reuse the same dashboard instance |
+@pytest.mark.integration
+class TestMessageQueueIntegration:
+    @pytest.fixture
+    async def queue(self):
+        """Create test message queue."""
+        queue = MessageQueue(url=TEST_RABBITMQ_URL)
+        await queue.connect()
+        yield queue
+        await queue.close()
 
-## CI/CD Integration
+    async def test_publish_and_consume_message(self, queue):
+        """Test full message lifecycle."""
+        received_messages = []
 
-### GitHub Actions Example
+        async def message_handler(message):
+            received_messages.append(message)
 
-```yaml
-name: Integration Tests
+        # Subscribe to queue
+        await queue.subscribe('orders', message_handler)
 
-on:
-  push:
-    branches: [ main, dev ]
-  pull_request:
-    branches: [ main, dev ]
+        # Publish message
+        order_data = {
+            'order_id': '123',
+            'customer': 'test@example.com',
+            'total': 99.99
+        }
+        await queue.publish('orders', order_data)
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+        # Wait for message processing
+        await asyncio.sleep(0.5)
 
-    steps:
-    - uses: actions/checkout@v3
+        assert len(received_messages) == 1
+        assert received_messages[0]['order_id'] == '123'
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 9.0.x
+    async def test_order_processing_workflow(self, queue, db):
+        """Test complete order processing through queue."""
+        processor = OrderProcessor(queue, db)
+        await processor.start()
 
-    - name: Restore dependencies
-      run: dotnet restore
+        # Publish order
+        order = await create_test_order(db, status='pending')
+        await queue.publish('orders.new', {'order_id': order.id})
 
-    - name: Build
-      run: dotnet build --no-restore -c Release
+        # Wait for processing
+        await asyncio.sleep(1)
 
-    - name: Run integration tests
-      run: |
-        dotnet test tests/YourApp.IntegrationTests \
-          --no-build \
-          -c Release \
-          --logger trx \
-          --collect:"XPlat Code Coverage"
+        # Verify order was processed
+        await db.refresh(order)
+        assert order.status == 'processing'
+        assert order.processed_at is not None
+```
 
-    - name: Publish test results
-      uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: test-results
-        path: "**/TestResults/*.trx"
+## Testing Patterns
+
+### Test Data Management
+
+```python
+# conftest.py - Shared fixtures
+import pytest
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+
+@pytest.fixture(scope="session")
+async def engine():
+    """Create test database engine."""
+    engine = create_async_engine(TEST_DATABASE_URL)
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    yield engine
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+    await engine.dispose()
+
+@pytest.fixture
+async def db(engine):
+    """Create database session for each test."""
+    async with AsyncSession(engine) as session:
+        yield session
+        await session.rollback()
+
+@pytest.fixture
+async def client(db):
+    """Create test HTTP client."""
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        yield client
 ```
 
 ## Best Practices
 
-1. **Use `IAsyncLifetime`** - Ensures proper async initialization and cleanup
-2. **Share fixtures via collections** - Reduces test execution time by reusing app instances
-3. **Discover endpoints dynamically** - Never hard-code localhost:5000 or similar
-4. **Wait for health checks** - Don't assume services are immediately ready
-5. **Test with real dependencies** - Aspire makes it easy to use real SQL, Redis, etc.
-6. **Clean up resources** - Always implement `DisposeAsync` properly
-7. **Use meaningful test data** - Seed databases with realistic test data
-8. **Test failure scenarios** - Verify error handling and resilience
-9. **Keep tests isolated** - Each test should be independent and order-agnostic
-10. **Monitor test execution time** - If tests are slow, consider parallelization or optimization
+### ✅ DO
+- Use real databases in integration tests (in-memory or containers)
+- Test actual HTTP requests, not mocked responses
+- Verify database state after operations
+- Test transaction boundaries and rollbacks
+- Include authentication/authorization in tests
+- Test error scenarios and edge cases
+- Use test containers for isolated environments
+- Clean up data between tests
 
-## Advanced: Custom Resource Waiters
+### ❌ DON'T
+- Mock database connections in integration tests
+- Skip testing error paths
+- Leave test data in databases
+- Use production databases for testing
+- Ignore transaction management
+- Test only happy paths
+- Share state between tests
+- Hardcode URLs or credentials
 
-```csharp
-public static class ResourceWaiters
-{
-    public static async Task WaitForSqlServerAsync(
-        this DistributedApplication app,
-        string resourceName,
-        CancellationToken ct = default)
-    {
-        var resource = app.GetResource(resourceName);
-        var connectionString = await resource.GetConnectionStringAsync(ct);
+## Tools
 
-        var retryCount = 0;
-        const int maxRetries = 30;
+- **Node.js**: Supertest, Jest, Testcontainers
+- **Python**: pytest, httpx, pytest-asyncio, Testcontainers
+- **Java**: Spring Test, TestContainers, RestAssured
+- **Database**: Testcontainers, in-memory DBs (H2, SQLite)
+- **Mocking Services**: WireMock, MockServer, Localstack
 
-        while (retryCount < maxRetries)
-        {
-            try
-            {
-                await using var connection = new SqlConnection(connectionString);
-                await connection.OpenAsync(ct);
-                return; // Success!
-            }
-            catch (SqlException)
-            {
-                retryCount++;
-                await Task.Delay(1000, ct);
-            }
-        }
+## Common Patterns
 
-        throw new TimeoutException(
-            $"SQL Server resource '{resourceName}' did not become ready");
+```javascript
+// Test helper for database setup
+class TestDatabase {
+  static async setup() {
+    await db.migrate.latest();
+  }
+
+  static async teardown() {
+    await db.destroy();
+  }
+
+  static async clear() {
+    const tables = ['orders', 'users', 'products'];
+    for (const table of tables) {
+      await db(table).truncate();
     }
-
-    public static async Task WaitForRedisAsync(
-        this DistributedApplication app,
-        string resourceName,
-        CancellationToken ct = default)
-    {
-        var resource = app.GetResource(resourceName);
-        var connectionString = await resource.GetConnectionStringAsync(ct);
-
-        var retryCount = 0;
-        const int maxRetries = 30;
-
-        while (retryCount < maxRetries)
-        {
-            try
-            {
-                var redis = await ConnectionMultiplexer.ConnectAsync(
-                    connectionString);
-                await redis.GetDatabase().PingAsync();
-                return; // Success!
-            }
-            catch
-            {
-                retryCount++;
-                await Task.Delay(1000, ct);
-            }
-        }
-
-        throw new TimeoutException(
-            $"Redis resource '{resourceName}' did not become ready");
-    }
+  }
 }
 
-// Usage
-public async Task InitializeAsync()
-{
-    _app = await appHost.BuildAsync();
-    await _app.StartAsync();
+// Factory pattern for test data
+class TestDataFactory {
+  static async createUser(overrides = {}) {
+    const defaults = {
+      email: `user-${Date.now()}@test.com`,
+      name: 'Test User',
+      role: 'customer'
+    };
+    return await User.create({ ...defaults, ...overrides });
+  }
 
-    // Wait for dependencies to be ready
-    await _app.WaitForSqlServerAsync("yourdb");
-    await _app.WaitForRedisAsync("cache");
+  static async createOrder(userId, overrides = {}) {
+    const defaults = {
+      userId,
+      status: 'pending',
+      total: 99.99
+    };
+    return await Order.create({ ...defaults, ...overrides });
+  }
 }
 ```
 
-## Aspire CLI and MCP Integration
+## Examples
 
-Aspire 13.1+ includes MCP (Model Context Protocol) integration for AI coding assistants like Claude Code. This allows AI tools to query application state, view logs, and inspect traces.
-
-### Installing the Aspire CLI
-
-```bash
-# Install the Aspire CLI globally
-dotnet tool install -g aspire.cli
-
-# Or update existing installation
-dotnet tool update -g aspire.cli
-```
-
-### Initializing MCP for Claude Code
-
-```bash
-# Navigate to your Aspire project
-cd src/MyApp.AppHost
-
-# Initialize MCP configuration (auto-detects Claude Code)
-aspire mcp init
-```
-
-This creates the necessary configuration files for Claude Code to connect to your running Aspire application.
-
-### Running with MCP Enabled
-
-```bash
-# Run your Aspire app with MCP server
-aspire run
-
-# The CLI will output the MCP endpoint URL
-# Claude Code can then connect and query:
-# - Resource states and health status
-# - Real-time console logs
-# - Distributed traces
-# - Available Aspire integrations
-```
-
-### MCP Capabilities
-
-When connected, AI assistants can:
-- **Query resources** - Get resource states, endpoints, health status
-- **Debug with logs** - Access real-time console output from all services
-- **Investigate telemetry** - View structured logs and distributed traces
-- **Execute commands** - Run resource-specific commands
-- **Discover integrations** - List available Aspire hosting integrations (Redis, PostgreSQL, Azure services)
-
-### Benefits for Development
-
-- AI assistants can see your actual running application state
-- Debugging assistance uses real telemetry data
-- No need for manual log copying/pasting
-- AI can help correlate distributed trace spans
-
-For more details, see:
-- [Aspire MCP Configuration](https://aspire.dev/get-started/configure-mcp/)
-- [Aspire CLI Commands](https://aspire.dev/reference/cli/commands/aspire-mcp-init/)
-
----
-
-## Debugging Tips
-
-1. **Run Aspire Dashboard** - When tests fail, check the dashboard at `http://localhost:15888`
-2. **Use Aspire CLI with MCP** - Let AI assistants query real application state
-3. **Enable detailed logging** - Set `ASPIRE_ALLOW_UNSECURED_TRANSPORT=true` for more verbose output
-4. **Check container logs** - Use `docker logs` to inspect container output
-5. **Use breakpoints in fixtures** - Debug fixture initialization to catch startup issues
-6. **Verify resource names** - Ensure resource names match between AppHost and tests
+See also: test-data-generation, mocking-stubbing, continuous-testing skills for related testing patterns.

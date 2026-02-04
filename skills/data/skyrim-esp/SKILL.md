@@ -1,6 +1,6 @@
 ---
 name: skyrim-esp
-description: Create and modify Skyrim plugin files (.esp/.esl). Use when the user wants to create a mod, add weapons, armor, spells, perks, books, quests, NPCs, factions, globals, leveled lists, encounter zones, locations, outfits, or form lists to a plugin. Includes quest aliases, script property management, type inspection, and detailed analysis. Also use when the user wants to view existing records, create override patches, search for records across plugins, manage perk conditions, compare record versions, or detect load order conflicts. Eliminates need for xEdit for viewing and patching operations.
+description: Create and modify Skyrim plugin files (.esp/.esl). Use when the user wants to create a mod, add weapons, armor, spells, perks, books, quests, NPCs, NPC AI packages (36 types for complete behavior control), factions, globals, leveled lists, encounter zones, locations, outfits, or form lists to a plugin. Includes quest aliases, script property management, type inspection, and detailed analysis. Also use when the user wants to view existing records, create override patches, search for records across plugins, manage perk conditions, compare record versions, or detect load order conflicts. Eliminates need for xEdit and Creation Kit for NPC behavior setup.
 ---
 
 # Skyrim ESP Module
@@ -78,6 +78,42 @@ dotnet run --project src/SpookysAutomod.Cli -- esp add-global "<plugin>" "<edito
 ```bash
 dotnet run --project src/SpookysAutomod.Cli -- esp add-npc "<plugin>" "<editorId>" --name "Name" --level 20 --essential
 ```
+
+**NPC AI Packages** (complete behavior system - 36 types supported):
+```bash
+# Basic behaviors
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type sandbox --radius 500
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type travel --marker "DestRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type sleep --bed "BedRef" --start-hour 22 --duration 8
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type eat --furniture "ChairRef" --start-hour 12 --duration 2
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type follow --target "PlayerRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type guard --marker "GuardRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type patrol --marker "PatrolRef"
+
+# Activities & actions
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type useitemat --item-ref "ForgeRef"  # Crafting
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type sit --furniture "ChairRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type useidlemarker --marker "IdleRef"  # Sweeping, hammering
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type wander --marker "CenterRef" --radius 1000
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type wait --marker "WaitRef"
+
+# Combat & magic
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type flee --distance 1500
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type useweapon --weapon-ref "WeaponRef" --target "TargetRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type usemagic --spell-ref "SpellRef" --target "TargetRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type shout --shout-ref "ShoutRef"
+
+# Dialogue & social
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type forcegreet --target "PlayerRef"  # Quest interactions
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type greet --target "ActorRef"
+dotnet run --project src/SpookysAutomod.Cli -- esp add-package "<plugin>" "<editorId>" --type say --topic-ref "TopicRef"
+
+# Attach packages to NPCs (evaluated in order)
+dotnet run --project src/SpookysAutomod.Cli -- esp attach-package "<plugin>" --npc "NpcEditorId" --package "PackageEditorId"
+```
+**All 36 Types**: sandbox, travel, sleep, eat, follow, guard, patrol, useitemat, activate, sit, useidlemarker, wander, wait, relax, flee, ambush, useweapon, usemagic, castmagic, shout, dialogue, forcegreet, greet, say, accompany, escortto, followto, acquire, find, holdposition, keepaneyeon, lockdoors, unlockdoors, dismount, hover, orbit
+
+**FormKey Format**: Must be "FORMID:MODNAME" with exactly 6 hex digits (e.g., "000007:Skyrim.esm")
 
 **Factions** (for tracking and organization):
 ```bash

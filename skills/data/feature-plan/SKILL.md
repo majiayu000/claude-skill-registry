@@ -1,173 +1,153 @@
 ---
 name: feature-plan
-description: "[Skill] Create detailed implementation plans for features. Asks clarifying questions, suggests solutions, proposes architecture, and outputs a structured plan document. Use when user wants to plan a feature before coding."
-argument-hint: [feature description or requirements]
-allowed-tools: Read, Grep, Glob, Write, AskUserQuestion
+description: "Plan feature implementation with technical specifications and actionable steps for solo developers"
 ---
 
-Create a comprehensive implementation plan for $ARGUMENTS. This skill helps transform vague requirements into actionable, detailed plans before any code is written.
+# Feature Plan
 
-## Planning Process
+Create a detailed implementation plan for the following feature.
 
-### Phase 1: Understand & Clarify
+## Feature Description
 
-First, analyze the provided requirements and identify:
-- **Missing information**: What critical details are not specified?
-- **Ambiguous points**: What could be interpreted multiple ways?
-- **Assumptions**: What are you assuming that should be confirmed?
-- **Dependencies**: What existing systems/code does this interact with?
+$ARGUMENTS
 
-Use `AskUserQuestion` to clarify ALL unclear points before proceeding. Group related questions together. Examples:
-- "Should this feature be accessible to all users or specific roles?"
-- "What's the expected data volume/scale?"
-- "Are there existing patterns in the codebase to follow?"
-- "What's the error handling strategy?"
+## Planning Framework for Solo Developers
 
-**Do NOT proceed until you have enough clarity to propose solutions.**
+### 1. **Feature Breakdown**
 
-### Phase 2: Explore Codebase
+Analyze and break down into:
+- User stories
+- Technical requirements
+- Dependencies
+- Edge cases
+- Success criteria
 
-Before suggesting solutions, explore the existing codebase to understand:
-- Current architecture and patterns
-- Related existing implementations
-- Available utilities, hooks, and shared components
-- Database schema / API structure (if relevant)
-- Testing patterns in use
+### 2. **Technical Specification**
 
-### Phase 3: Suggest Solutions
+**Architecture**
+- Where does this fit in the codebase?
+- Which components/pages affected?
+- New vs modified files
+- Database schema changes
+- API endpoints needed
 
-Present 2-3 distinct approaches with trade-offs:
+**Technology Choices**
+- Libraries/packages needed
+- Why each choice?
+- Alternatives considered
+- Trade-offs
 
+**Data Flow**
 ```
-## Proposed Solutions
-
-### Option A: [Name]
-**Approach**: Brief description
-**Pros**: List benefits
-**Cons**: List drawbacks
-**Best for**: When this option is ideal
-
-### Option B: [Name]
-**Approach**: Brief description
-**Pros**: List benefits
-**Cons**: List drawbacks
-**Best for**: When this option is ideal
+User Action -> Frontend -> API -> Database -> Response
 ```
 
-Use `AskUserQuestion` to let the user pick their preferred approach. Include a recommendation if one option is clearly better for their context.
+### 3. **Implementation Steps**
 
-### Phase 4: Gather Resources
+Break into logical, sequential tasks:
 
-Ask the user for any helpful resources:
-- Documentation links
-- Design files / mockups
-- Example implementations to reference
-- API specifications
-- Related PRs or issues
+1. **Setup** - Dependencies, configuration
+2. **Database** - Schema, migrations, RLS policies
+3. **Backend** - API routes, validation, logic
+4. **Frontend** - Components, pages, forms
+5. **Integration** - Connect pieces
+6. **Testing** - Unit, integration, E2E
+7. **Polish** - Error handling, loading states, UX
 
-### Phase 5: Create Detailed Plan
+### 4. **Risk Assessment**
 
-After user confirms the approach, create the full plan document.
+Identify potential issues:
+- **Technical Risks** - Complexity, unknown territory
+- **Dependency Risks** - External APIs, third-party services
+- **Data Risks** - Migration, backward compatibility
+
+### 5. **Success Criteria**
+
+Define "done":
+- Feature works as specified
+- Tests pass
+- No console errors
+- Accessible
+- Responsive
+- Error handling
+- Loading states
+- Documentation updated
 
 ## Output Format
 
-Save the plan to `.plan/<index>--<plan-name>--<date>.md`
+### 1. **Feature Overview**
+- What problem does this solve?
+- Who is it for?
+- Key functionality
 
-**Naming rules:**
-- `<index>`: 3-digit sequential number (001, 002, etc.) - check existing files in `.plan/`
-- `<plan-name>`: kebab-case summary (e.g., `user-authentication-flow`, `product-gallery-redesign`)
-- `<date>`: Format `MM-DD-YYYY`
+### 2. **Technical Design**
+- Component structure
+- API endpoints
+- Database schema
+- State management
 
-**Document structure:**
+### 3. **Implementation Plan**
 
-```markdown
-# [Plan Title]
+**Phase 1: Foundation**
+- [ ] Task 1
+- [ ] Task 2
 
-> **Created**: [Date]
-> **Status**: Draft | Ready | In Progress | Completed
+**Phase 2: Core Feature**
+- [ ] Task 3
+- [ ] Task 4
 
----
+**Phase 3: Polish**
+- [ ] Task 5
+- [ ] Task 6
 
-## Original Prompt
+### 4. **File Changes**
 
-[Paste the exact user input/requirements here]
-
----
-
-## Summary
-
-[2-3 sentence overview of what this plan covers]
-
----
-
-## Requirements
-
-### Functional Requirements
-- [ ] FR1: Description
-- [ ] FR2: Description
-
-### Non-Functional Requirements
-- [ ] NFR1: Performance, security, accessibility, etc.
-
-### Out of Scope
-- Item 1 (explicitly excluded)
-
----
-
-## Technical Approach
-
-### Solution Overview
-[Describe the chosen approach in 1-2 paragraphs]
-
-### Architecture Diagram (if applicable)
-[ASCII diagram or description of component relationships]
-
----
-
-## Implementation Structure
-
-### Files to Create
-| File | Purpose |
-|------|---------|
-| `path/to/file.ts` | Description |
-
-### Files to Modify
-| File | Changes |
-|------|---------|
-| `path/to/existing.ts` | What changes |
-
-### Folder Structure
-```plaintext
-src/
-├── features/
-│   └── [feature-name]/
-│       ├── components/
-│       ├── hooks/
-│       ├── utils/
-│       ├── types.ts
-│       └── index.ts
+**New Files**
+```
+app/api/feature/route.ts
+components/FeatureComponent.tsx
+lib/feature-utils.ts
 ```
 
----
+**Modified Files**
+```
+app/page.tsx (add new section)
+lib/database.types.ts (add new types)
+```
 
-## Instructions
+### 5. **Dependencies**
 
-1. **Read the requirements** carefully from $ARGUMENTS
-2. **Ask clarifying questions** - do not skip this step
-3. **Explore the codebase** to understand existing patterns
-4. **Present solution options** with clear trade-offs
-5. **Let user choose** their preferred approach
-6. **Ask for resources** they want to reference
-7. **Generate the plan** with all sections
-8. **Save to `.plan/` folder** with proper naming
-9. **Keep it under 500 lines** - be concise, use tables, avoid verbose explanations
+**npm packages to install**
+```bash
+npm install package-name
+```
 
-## Important Notes
+**Environment variables**
+```bash
+FEATURE_API_KEY=xxx
+```
 
-- Always save the original prompt at the top of the document
-- Check `.plan/` folder for existing files to determine the next index
-- Create the `.plan/` folder if it doesn't exist
-- Focus on actionable items, not theoretical discussions
-- Include code structure and type definitions
-- Be specific about file paths relative to project root
-- The plan should be self-contained - anyone should understand it without extra context
+### 6. **Testing Strategy**
+
+- Unit tests for utilities
+- Integration tests for API
+- Component tests for UI
+- E2E test for full flow
+
+### 7. **Rollout Plan**
+
+- Feature flag if needed
+- Gradual rollout strategy
+- Rollback plan
+- Monitoring and metrics
+
+### 8. **Next Steps**
+
+1. Review plan
+2. Set up environment
+3. Start with Phase 1
+4. Test incrementally
+5. Deploy to staging
+6. Production deploy
+
+Provide a clear, actionable plan that a solo developer can follow step-by-step.

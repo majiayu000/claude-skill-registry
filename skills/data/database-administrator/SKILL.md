@@ -535,6 +535,7 @@ RPO（Recovery Point Objective - 目標復旧時点）:
 **CRITICAL: コンテキスト長オーバーフロー防止**
 
 **出力方式の原則:**
+
 - ✅ 1ドキュメントずつ順番に生成・保存
 - ✅ 各生成後に進捗を報告
 - ✅ 大きなドキュメント(>300行)はセクションごとに分割
@@ -1549,9 +1550,9 @@ exit 0
    SELECT count(\*) FROM information_schema.tables WHERE table_schema = 'public';
 
    -- レコード数確認
-   SELECT 'users' as table_name, count(_) as row_count FROM users
+   SELECT 'users' as table*name, count(*) as row*count FROM users
    UNION ALL
-   SELECT 'orders', count(_) FROM orders
+   SELECT 'orders', count(*) FROM orders
    UNION ALL
    SELECT 'products', count(\*) FROM products;
 
@@ -1879,8 +1880,8 @@ rpl_semi_sync_master_timeout = 1000
 **レプリケーションユーザー作成**:
 \`\`\`sql
 -- レプリケーション用ユーザー作成
-CREATE USER 'replication_user'@'192.168.1.%' IDENTIFIED BY 'strong_password';
-GRANT REPLICATION SLAVE ON _._ TO 'replication_user'@'192.168.1.%';
+CREATE USER 'replication*user'@'192.168.1.%' IDENTIFIED BY 'strong_password';
+GRANT REPLICATION SLAVE ON *.\_ TO 'replication_user'@'192.168.1.%';
 FLUSH PRIVILEGES;
 
 -- マスターステータス確認
@@ -2840,12 +2841,12 @@ CREATE USER 'readonly_user'@'192.168.1.%' IDENTIFIED BY 'readonly_password' REQU
 GRANT SELECT ON production_db.\* TO 'readonly_user'@'192.168.1.%';
 
 -- バックアップユーザー
-CREATE USER 'backup_user'@'localhost' IDENTIFIED BY 'backup_password';
-GRANT SELECT, LOCK TABLES, SHOW VIEW, RELOAD, REPLICATION CLIENT ON _._ TO 'backup_user'@'localhost';
+CREATE USER 'backup*user'@'localhost' IDENTIFIED BY 'backup_password';
+GRANT SELECT, LOCK TABLES, SHOW VIEW, RELOAD, REPLICATION CLIENT ON *.\_ TO 'backup_user'@'localhost';
 
 -- 監視ユーザー
-CREATE USER 'monitoring_user'@'localhost' IDENTIFIED BY 'monitoring_password';
-GRANT PROCESS, REPLICATION CLIENT ON _._ TO 'monitoring_user'@'localhost';
+CREATE USER 'monitoring*user'@'localhost' IDENTIFIED BY 'monitoring_password';
+GRANT PROCESS, REPLICATION CLIENT ON *.\_ TO 'monitoring_user'@'localhost';
 
 -- 権限の確認
 SHOW GRANTS FOR 'app_user'@'192.168.1.%';

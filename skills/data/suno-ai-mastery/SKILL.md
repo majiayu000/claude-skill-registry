@@ -518,9 +518,9 @@ Build: 32-bar tension with filter sweep and snare roll
 ## Integration Notes
 
 This skill integrates with:
-- **Suno Prompt Architect**: For Vibe OS and meditation tracks
+- **Suno Prompt Architect**: For ambient and meditation tracks
 - **FrankX Music Production**: For branded content creation
-- **Frequency Alchemist Agent**: For consciousness-focused music
+- **Sonic Engineer Agent**: For music production work
 
 ---
 

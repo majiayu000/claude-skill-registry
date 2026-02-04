@@ -1,76 +1,27 @@
 ---
 name: check
-description: Run build, lint, and type checking for the Kardashev Network project
-disable-model-invocation: true
-allowed-tools: Bash, Read
+description: Voer een volledige kwaliteitscheck uit op de Hugo site. Gebruik wanneer de gebruiker wil controleren of de site correct bouwt of geen broken links heeft.
 ---
 
-# Project Health Check
+Voer een volledige kwaliteitscheck uit op de Hugo site.
 
-Run all checks to verify project health.
+## Technische checks
 
-## Commands to Run
+1. Run: `just build`
+2. Run: `just check`
+3. Rapporteer eventuele problemen in begrijpelijke taal
 
-### 1. Type Checking
-```bash
-cd /Users/tyrelle/Desktop/KardashevNetwork && npx tsc --noEmit
-```
+## Optionele vervolgchecks
 
-### 2. Linting
-```bash
-cd /Users/tyrelle/Desktop/KardashevNetwork && npm run lint
-```
+Na de technische checks, vraag of de gebruiker ook wil:
+- **Content review**: `/content-review` - controleer content op spelling en leesbaarheid
+- **Toegankelijkheid**: `/a11y-review` - controleer templates op WCAG 2.1 compliance
+- **SEO**: `/seo-check` - controleer meta descriptions en heading structuur
 
-### 3. Build
-```bash
-cd /Users/tyrelle/Desktop/KardashevNetwork && npm run build
-```
+## Bij fouten
 
-## Run All Checks
+- Leg uit wat het probleem is
+- Geef suggesties voor hoe het opgelost kan worden
+- Bied aan om te helpen met de fix
 
-Execute all checks sequentially and report results:
-
-```bash
-cd /Users/tyrelle/Desktop/KardashevNetwork && npm run lint && npx tsc --noEmit && npm run build
-```
-
-## Expected Output
-
-### Success
-- Lint: No warnings or errors
-- TypeScript: No type errors
-- Build: "Compiled successfully" with route summary
-
-### Common Issues
-
-| Error | Solution |
-|-------|----------|
-| "Cannot find module" | Run `npm install` |
-| Type error in component | Check prop types match usage |
-| ESLint warning | Fix or add disable comment with justification |
-| Build fails | Check for syntax errors, missing imports |
-
-## Quick Fixes
-
-### Missing dependencies
-```bash
-npm install
-```
-
-### Clear build cache
-```bash
-rm -rf .next && npm run build
-```
-
-### Fix auto-fixable lint issues
-```bash
-npm run lint -- --fix
-```
-
-## Checklist
-
-- [ ] Run lint - no errors
-- [ ] Run type check - no errors
-- [ ] Run build - completes successfully
-- [ ] Report any issues found
-- [ ] Suggest fixes for any failures
+Dit is dezelfde check die ook automatisch draait via de pre-commit hook (Lefthook).

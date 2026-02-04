@@ -95,12 +95,25 @@ L2 Domain Coordinator that orchestrates security scanning and configuration for 
 
 ## Delegation Pattern
 
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
+
 | Worker | Parallel | Purpose |
 |--------|----------|---------|
 | ln-761-secret-scanner | Yes | Hardcoded secret detection |
 | ln-762-dependency-audit | Yes | Vulnerability scanning |
 
-**Pattern:** Both workers can execute in parallel, then aggregate results.
+**Prompt template:**
+```
+Task(description: "Security scan via ln-76X",
+     prompt: "Execute ln-76X-{worker}. Read skill from ln-76X-{worker}/SKILL.md. Project: {projectPath}",
+     subagent_type: "general-purpose")
+```
+
+**Pattern:** Both workers can execute in parallel via Task tool, then aggregate results.
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Any execution bypassing subagent context isolation
 
 ---
 

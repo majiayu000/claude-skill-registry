@@ -1,92 +1,207 @@
 ---
 name: polish
-description: This skill should be used when polishing academic research paper text for grammar, clarity, fluency, and natural phrasing. Specifically designed for non-native English speakers writing for top-tier computer science conferences.
+description: Remove AI slop, comments, and lint errors from the current branch.
+disable-model-invocation: true
 ---
 
-# Academic Text Polish
+# Polish Protocol
 
-Rewrite and refine research paper text to improve grammar, clarity, fluency, and academic style while preserving technical accuracy and LaTeX integrity.
+Remove AI slop and lint errors from the current branch.
+**Autonomous Mode: No confirmation required for cleanup tasks.**
 
-## When to Use This Skill
+# Can Be Used By Any Agent
 
-- Polishing research paper text for conference submissions
-- Improving grammar and sentence structure
-- Enhancing fluency and natural phrasing for non-native speakers
-- Refining technical writing for clarity and precision
-- Preparing text for top-tier CS conferences (OSDI, NSDI, SOSP, SIGCOMM)
+All technical agents can invoke this skill:
+- `@backend-architect`
+- `@frontend-architect`
+- `@mobile-architect`
+- `@qa-engineer`
 
-## Core Principles
+# Critical Rules
 
-Apply these principles in order of priority:
+1.  **ONLY remove slop:** No refactoring logic, only cleanup.
+2.  **ONLY fix lint/type errors:** Do not change style preferences.
+3.  **NEVER change logic:** If a "better" way exists, ignore it. Only fix broken things.
+4.  **NEVER touch unrelated code:** Only files in `git diff main...HEAD`.
 
-1. **Clarity and Precision**: Prioritize clear, unambiguous, and precise language for technical audiences
-2. **Fluency**: Ensure natural flow and smooth readability
-3. **Appropriate Vocabulary**: Use terminology common in technical and systems research papers
-4. **Logical Cohesion**: Assess and improve logical flow and argument structure
-5. **LaTeX Integrity**: Respect original LaTeX syntax - only modify textual content within commands/environments
+# Slop Reference (Delete these)
 
-## Writing Constraints
+- "Here is the logic" comments
+- "TODO: implement this" comments (unless legitimate)
+- `// ... existing code ...` markers
+- `as any` type bypasses (unless absolutely necessary)
+- Excessive `console.log` (unless for intentional logging)
+- Dead code / Unused imports
+- Commented-out code blocks
+- Empty functions with no implementation
 
-### Hyphen Usage
-- **Avoid hyphens for connecting independent clauses**
-- Bad: "The system is fast - it processes data quickly"
-- Good: "The system is fast, processing data quickly"
-- Exception: Compound adjectives (e.g., "state-of-the-art") are acceptable
+# Workflow
 
-### Voice Preference
-- **Prefer active voice** for directness and clarity
-- Preferred: "We implemented the prototype"
-- Avoid: "The prototype was implemented by us"
-- Use passive voice judiciously when the object is more important than the actor
+## Step 1: Check Git Status
 
-### Tense Guidelines
-- **Present tense** for the author's work: "We implement a prototype..."
-- **Past tense** for previous literature: "Smith et al. proposed..."
+```bash
+git status
+```
 
-### Acronym Handling
-- **Define on first use**: "Network Address Translation (NAT) is widely used. NAT helps..."
-- Use short form thereafter
+**Error Handling:**
+- If not a git repo: "❌ Not a git repository. Run `git init` first."
+- If no changes: "✅ No changes to polish. Branch is clean."
 
-### Conciseness
-- Eliminate redundancy without sacrificing clarity
-- Be cautious about adding details - conference papers have strict page limits
-- Remove unnecessary words and phrases
+## Step 2: Get Changed Files
 
-## Target Audience
+```bash
+git diff --name-only main...HEAD
+```
 
-Graduate students, professors, and researchers in computer science. Write naturally for this technical audience without oversimplification.
+**Error Handling:**
+- If `main` branch doesn't exist: Try `master` or `develop`
+- If command fails: Ask user for base branch name
 
-## Polishing Goals
+## Step 3: Identify File Types
 
-Rewrite the text to achieve:
+Group files by type:
+- **JavaScript/TypeScript:** `.js`, `.ts`, `.jsx`, `.tsx`
+- **Python:** `.py`
+- **Other:** (CSS, Markdown, etc.) - Skip or minimal cleanup
 
-1. **Correct grammatical errors** (subject-verb agreement, articles, prepositions, etc.)
-2. **Improve sentence structure** for clarity, conciseness, and flow
-3. **Ensure precise word choices** appropriate for academic systems research
-4. **Enhance readability and fluency** for natural reading
-5. **Maintain formal, objective, academic tone** throughout
-6. **Identify potential logical gaps** that might need substantiation
+## Step 4: Remove Slop
 
-## Output Requirements
+For each file:
+1. Read the file
+2. Identify slop patterns
+3. Remove/fix them
+4. Save the file
 
-### Revised Text
-Provide the polished version of the text
+**Process files in batches of 5** to avoid overwhelming the system.
 
-### Change Justification
-Explain each significant change with clear reasoning:
-- Example: "Replaced 'got bigger' with 'increased' for formality"
-- Example: "Restructured sentence for better subject-verb agreement"
-- Example: "Combined sentences to improve flow"
-- Example: "Changed to active voice for directness"
+## Step 5: Run Linter/Type Checker
 
-### Optional: No Changes Needed
-If the text is already well-written, state "No significant improvements needed" rather than making pedantic suggestions
+**JavaScript/TypeScript:**
+```bash
+# Get changed JS/TS files
+CHANGED_JS_FILES=$(git diff --name-only main...HEAD 2>/dev/null | grep -E '\.(js|ts|jsx|tsx)$' | tr '\n' ' ')
 
-## Important Guidelines
+if [ -n "$CHANGED_JS_FILES" ] && [ -f "package.json" ]; then
+  # Try ESLint
+  if npm list eslint >/dev/null 2>&1; then
+    npx eslint --fix $CHANGED_JS_FILES
+  fi
+  
+  # Try TypeScript
+  if [ -f "tsconfig.json" ]; then
+    npx tsc --noEmit
+  fi
+fi
+```
 
-- **Aim for conference acceptance, not perfection**
-- Provide no advice when no meaningful improvement can be made
-- Avoid pedantic or nit-picking changes
-- Focus on significant improvements that enhance clarity or correctness
-- Respect technical terminology and domain-specific phrasing
-- Preserve the author's intended meaning and argument structure
+**Python:**
+```bash
+# Get changed Python files
+CHANGED_PY_FILES=$(git diff --name-only main...HEAD 2>/dev/null | grep -E '\.py$' | tr '\n' ' ')
+
+if [ -n "$CHANGED_PY_FILES" ]; then
+  # Try Black (formatter)
+  if command -v black >/dev/null 2>&1; then
+    black $CHANGED_PY_FILES
+  fi
+
+  # Try Ruff (linter)
+  if command -v ruff >/dev/null 2>&1; then
+    ruff check --fix $CHANGED_PY_FILES
+  fi
+fi
+```
+
+**Error Handling:**
+- If linter not found: Skip and report
+- If linter fails: Show errors and ask if user wants to continue
+- If type errors exist: Report them (don't auto-fix)
+
+## Step 6: Run Prettier (if available)
+
+```bash
+# Get all changed files for formatting
+CHANGED_FILES=$(git diff --name-only main...HEAD 2>/dev/null | tr '\n' ' ')
+
+if [ -n "$CHANGED_FILES" ] && npm list prettier >/dev/null 2>&1; then
+  npx prettier --write $CHANGED_FILES
+fi
+```
+
+## Step 7: Summary Report
+
+**Success:**
+```
+✅ Polish Complete!
+
+📊 Summary:
+- Files processed: 12
+- Slop removed: 23 instances
+- Lint errors fixed: 7
+- Type errors: 0
+
+✨ Branch is clean and ready for review!
+
+➡️ Next Steps:
+1. Review changes: git diff
+2. Commit: git add . && git commit -m "Polish: Remove slop and fix lint"
+3. Ship it: /ship-it
+```
+
+**With Warnings:**
+```
+⚠️ Polish Complete (with warnings)
+
+📊 Summary:
+- Files processed: 12
+- Slop removed: 23 instances
+- Lint errors fixed: 7
+- Type errors: 3 remaining
+
+❌ Type Errors:
+1. src/utils.ts:45 - Type 'string | undefined' is not assignable to type 'string'
+2. src/api.ts:78 - Property 'id' does not exist on type 'User'
+3. src/components/Form.tsx:120 - 'onClick' is missing in type 'ButtonProps'
+
+➡️ Action Required:
+Fix type errors manually before committing.
+```
+
+# Error Handling Summary
+
+**Not a git repo:**
+- Error: "❌ Not a git repository. Initialize with: git init"
+- Exit
+
+**No changes detected:**
+- Info: "✅ No changes to polish. Branch is clean."
+- Exit
+
+**Base branch not found:**
+- Ask: "What's your base branch? (main/master/develop)"
+- Retry with user input
+
+**Linter/Formatter not installed:**
+- Warn: "⚠️ [Tool] not found. Skipping [action]."
+- Continue with remaining steps
+
+**Linter fails:**
+- Show errors
+- Ask: "Continue with remaining files? (Yes/No)"
+
+**File read/write errors:**
+- Log: "❌ Failed to process [file]: [error]"
+- Continue with next file
+
+**No slop found:**
+- Success: "✅ No slop detected. Code is clean!"
+- Still run linter/formatter
+
+# Success Criteria
+
+- [ ] All changed files scanned
+- [ ] AI slop removed
+- [ ] Lint errors fixed (or reported)
+- [ ] Code formatted consistently
+- [ ] Summary provided
+- [ ] User knows next steps

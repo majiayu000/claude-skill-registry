@@ -1,177 +1,602 @@
 ---
-name: verify-content
-description: 文章の事実確認と参照検証を行う統合スキル。主張の洗い出し、外部ソースでの検証、参考文献の整備までを一貫して実行。文書レビュー、記事校正、レポート確認、学術論文チェック時に使用。
+name: showroom:verify-content
+description: Run comprehensive quality verification on workshop or demo content using Red Hat standards and validation agents.
 ---
 
-# コンテンツ検証スキル
+---
+context: fork
+model: sonnet
+---
 
-文章の信頼性を確保するための統合ワークフローを提供します。
+# Content Verification Skill
 
-## ワークフロー概要
+Verify workshop or demo content against Red Hat quality standards, style guidelines, technical accuracy, and accessibility requirements.
+
+## Workflow Diagram
+
+![Workflow](workflow.svg)
+
+## What You'll Need Before Starting
+
+Have these ready before running this skill:
+
+**Required:**
+- 📁 **Path to content directory** - Where your workshop/demo modules are located
+  - Example: `content/modules/ROOT/pages/`
+- 📝 **Content type** - Know if it's a workshop (hands-on) or demo (presenter-led)
+
+**Helpful to have:**
+- ✅ **Completed modules** - Verification works best on finished content
+- 📋 **Specific concerns** - Any areas you want extra validation on?
+- 🎯 **Target audience** - Who will use this content? (Affects technical depth checks)
+
+**Access needed:**
+- ✅ Read permissions to the Showroom repository directory
+- ✅ Verification prompts available in:
+  - `.claude/prompts/` (repo-specific prompts), or
+  - `~/.claude/prompts/` (global prompts), or
+  - RHDP marketplace default prompts
+
+**What gets checked:**
+- Technical accuracy
+- Accessibility compliance (A11y standards)
+- Red Hat style guide compliance
+- Workshop structure (modules, navigation, learning objectives)
+- AsciiDoc formatting and syntax
+
+## When to Use
+
+**Use this skill when you want to**:
+- Verify workshop content before publishing
+- Check demo modules for quality and completeness
+- Validate technical accuracy and Red Hat style compliance
+- Review content for accessibility standards
+- Get actionable feedback on content improvements
+
+**Don't use this for**:
+- Creating new content → use `/create-lab` or `/create-demo`
+- Converting between formats → use `/blog-generate`
+
+## Workflow
+
+### Step 0: Detect and Select Verification Prompts (FIRST)
+
+**CRITICAL: Before running verification, detect which prompt sets are available and let user choose.**
+
+**Detection Priority:**
+1. **Current Git Repo**: `.claude/prompts/` in current repository (highest priority)
+2. **Global Home**: `~/.claude/prompts/` (user's global settings)
+
+**Prompt Detection Steps:**
+
+1. **Check current directory for git repo:**
+   ```bash
+   git rev-parse --show-toplevel 2>/dev/null
+   ```
+
+2. **If in git repo, check for local `.claude/prompts/`:**
+   ```bash
+   ls [repo-root]/.claude/prompts/*.txt 2>/dev/null
+   ```
+
+3. **Check global home directory:**
+   ```bash
+   ls ~/.claude/prompts/*.txt 2>/dev/null
+   ```
+
+**If multiple locations found, ask user:**
 
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│  Step 1     │    │  Step 2     │    │  Step 3     │
-│  洗い出し   │ → │  検証       │ → │  参照整備   │
-│  (scan)     │    │  (verify)   │    │  (reference)│
-└─────────────┘    └─────────────┘    └─────────────┘
+🔍 Found verification prompts in multiple locations:
+
+1. Current repo: /Users/psrivast/work/showroom-content/aap-selfserv-intro-showroom/.claude/prompts/
+   └─ Last updated: 13 Jan 16:01 (10 prompts)
+
+2. Global home: ~/.claude/prompts/
+   └─ Last updated: 13 Jan 14:47 (10 prompts)
+
+Which prompts should I use for verification?
+
+Options:
+1. Current repo (use repo-specific prompts) - Recommended if customized
+2. Global home (use your personal defaults)
+
+Your choice: [1/2]
 ```
 
-各ステップの詳細は以下のファイルを参照：
-- [scan.md](scan.md) - 検証対象箇所の洗い出し
-- [verify.md](verify.md) - 外部ソースでの事実確認
-- [reference.md](reference.md) - 参考文献リストと相互参照の整備
-
-## クイックスタート
-
-### 全体フローを実行する場合
+**If only one location found:**
 
 ```
-ユーザー: このドキュメントの内容を検証して
+✅ Using verification prompts from: ~/.claude/prompts/
+   Last updated: 13 Jan 14:47
+   Total prompts: 10
 ```
 
-### 特定ステップのみ実行する場合
+**If NO prompts found:**
 
 ```
-ユーザー: この記事で検証が必要な箇所を洗い出して
-ユーザー: この数値データをファクトチェックして
-ユーザー: 参考文献リストを整備して
+❌ ERROR: No verification prompts found in any location.
+
+Verification prompts should be in:
+- Current repo: .claude/prompts/ (if repo-specific)
+- Global home: ~/.claude/prompts/ (for all projects)
+
+Please ensure verification prompts are available in one of these locations.
 ```
 
-## Step 1: 洗い出し（scan）
+**After user selects, confirm and show which prompts will be used:**
 
-文章全体を分析し、検証が必要な箇所を特定します。
+```
+📋 Using prompts from: Current repo (.claude/prompts/)
 
-### チェック観点
+Will use these validation frameworks:
+✓ enhanced_verification_workshop.txt (43K, updated 16:01)
+✓ redhat_style_guide_validation.txt (5.1K, updated 16:01)
+✓ verify_workshop_structure.txt (14K, updated 16:01)
+✓ verify_technical_accuracy_workshop.txt (9.7K, updated 14:45)
+✓ verify_accessibility_compliance_workshop.txt (10K, updated 14:47)
+✓ verify_content_quality.txt (13K, updated 14:45)
 
-| カテゴリ | 対象例 |
-|----------|--------|
-| 事実の記述 | 歴史的事実、科学的事実、制度・法律 |
-| 定量的な文言 | 数値、統計、日時、順位 |
-| 断定的な表現 | 「必ず」「唯一の」「最大の」 |
-| 引用・参照 | 人物の発言、文献からの引用 |
-| 比較・評価 | 「より優れている」「一般的に」 |
+Continue with verification? [Yes/No]
+```
 
-### 出力形式
+---
+
+### Step 1: Identify Content Type
+
+**Q: What type of content are you verifying?**
+
+Options:
+1. Workshop module (hands-on lab content)
+2. Demo module (presenter-led demonstration)
+3. Multiple files (specify pattern)
+
+### Step 2: Locate Content
+
+**For single file**:
+- Provide file path (e.g., `content/modules/ROOT/pages/module-01-install-aap.adoc`)
+
+**For multiple files**:
+- Provide glob pattern (e.g., `content/modules/ROOT/pages/*.adoc`)
+- Or directory path (e.g., `content/modules/ROOT/pages/`)
+
+### Step 3: Run Verification Agents
+
+I'll run comprehensive verification using these validation frameworks:
+
+**For Workshop Content**:
+1. `enhanced_verification_workshop.txt` - Overall quality assessment
+2. `redhat_style_guide_validation.txt` - Red Hat style compliance
+3. `verify_workshop_structure.txt` - Workshop structure validation
+4. `verify_technical_accuracy_workshop.txt` - Technical accuracy
+5. `verify_accessibility_compliance_workshop.txt` - Accessibility standards
+6. `verify_content_quality.txt` - General content quality
+
+**For Demo Content**:
+1. `enhanced_verification_demo.txt` - Overall demo quality
+2. `redhat_style_guide_validation.txt` - Red Hat style compliance
+3. `verify_technical_accuracy_demo.txt` - Demo technical accuracy
+4. `verify_accessibility_compliance_demo.txt` - Accessibility standards
+5. `verify_content_quality.txt` - General content quality
+
+### Step 4: Present Results
+
+I'll provide results in this order:
+
+**1. Detailed Issue Sections FIRST** (top of output):
+- Specific file locations and line numbers
+- Before/after examples for each issue
+- Implementation steps showing exactly how to fix
+- Why each issue matters
+- Grouped by issue type with exact counts
+
+**2. Validation Summary Table LAST** (bottom of output):
+- Clean table with Issue, Priority, and Files columns
+- No time estimates or fix duration
+- Clear priority levels (Critical, High, Medium, Low)
+- Total issue counts
+
+**3. Strengths Section** (after summary table):
+- What your content does exceptionally well
+- Positive highlights to reinforce good practices
+- Recognition of quality work
+
+**CRITICAL OUTPUT RULES:**
+- Summary table comes LAST, not first
+- Detailed sections are at the TOP
+- **STOP IMMEDIATELY after strengths section**
+- **DO NOT add any additional summaries, assessments, or recaps**
+- **NO "Overall Assessment", NO "Quick Stats", NO "Top 3 Fixes"**
+- **NO text after strengths - that's the END of output**
+
+The output must end with the strengths section. Nothing comes after it.
+
+### Step 5: Offer Fixes (Optional)
+
+After showing results, I can:
+- Apply fixes automatically (with your approval)
+- Provide code snippets for manual fixes
+- Explain why each change improves quality
+
+## Example Usage
+
+### Example 1: Verify Single Workshop Module
+
+```
+User: /verify-content
+
+Skill: What type of content are you verifying?
+User: Workshop module
+
+Skill: File path?
+User: content/modules/ROOT/pages/module-01-install-aap.adoc
+
+[Runs all workshop verification agents]
+
+Skill:
+
+## 3 missing verification commands
+**Priority: Critical**
+**Affected Files:** module-01-install-aap.adoc
+
+### Details:
+
+1. **Line 45, module-01-install-aap.adoc**
+   - Current: Deployment step with no verification
+   - Required: Add `oc get pods -n ansible-automation-platform` with expected output
+   - Why: Learners can't verify deployment success
+   - Fix: Add verification command after deployment step showing expected "Running" status
+
+[... additional detailed sections for each issue ...]
+
+---
+
+## Validation Summary
+
+┌──────────────────────────────────┬──────────┬───────────┐
+│              Issue               │ Priority │   Files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ 3 missing verification commands  │ Critical │ 1 file    │
+├──────────────────────────────────┼──────────┼───────────┤
+│ 1 incorrect product name "OCP"   │ Critical │ 1 file    │
+├──────────────────────────────────┼──────────┼───────────┤
+│ 2 images missing alt text        │ Critical │ 1 file    │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Incomplete troubleshooting       │ High     │ 1 file    │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Missing learning outcomes        │ High     │ 1 file    │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Commands lack expected output    │ Medium   │ 1 file    │
+└──────────────────────────────────┴──────────┴───────────┘
+
+**Total Issues:** 11 (6 Critical, 3 High, 2 Medium)
+
+---
+
+✅ Strengths Worth Highlighting
+
+Your module excels in these areas:
+
+1. Clear Step-by-Step Instructions - Installation steps are well-structured and easy to follow
+2. Proper AsciiDoc Formatting - Code blocks and syntax highlighting are correctly implemented
+3. Strong Technical Content - Accurate AAP installation procedures for OpenShift
+
+[END OF VERIFICATION OUTPUT - NOTHING AFTER THIS]
+```
+
+### Example 2: Verify All Modules in Workshop
+
+```
+User: Verify all my workshop modules
+
+Skill: Content location?
+User: content/modules/ROOT/pages/
+
+[Scans and finds 3 modules + index/overview]
+
+Skill: Found 5 files:
+- index.adoc
+- 01-overview.adoc
+- 02-details.adoc
+- module-01-install-aap.adoc
+- module-02-configure-aap.adoc
+
+Verify all? [Yes/Select specific files]
+
+User: Yes
+
+[Runs verification on all files]
+
+Skill:
+
+## 5 title case headings found across all files
+**Priority: High**
+**Affected Files:** index.adoc, 01-overview.adoc, 02-details.adoc, module-01-install-aap.adoc, module-02-configure-aap.adoc
+
+### Details:
+
+1. **Line 12, index.adoc**
+   - Current: `= Introduction To Ansible Automation Platform`
+   - Required: `= Introduction to Ansible Automation Platform`
+   - Why: Red Hat style guide requires sentence case
+   - Fix: Lowercase "To"
+
+[... additional detailed sections for each issue ...]
+
+---
+
+## Validation Summary
+
+┌──────────────────────────────────┬──────────┬───────────┐
+│              Issue               │ Priority │   Files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Inconsistent heading styles      │ Critical │ All files │
+├──────────────────────────────────┼──────────┼───────────┤
+│ 4 images missing alt text        │ Critical │ 3 files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ 5 title case headings            │ High     │ All files │
+├──────────────────────────────────┼──────────┼───────────┤
+│ 3 missing Red Hat product names  │ High     │ 3 files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Incomplete verification commands │ Medium   │ 2 files   │
+└──────────────────────────────────┴──────────┴───────────┘
+
+**Total Issues:** 17 (6 Critical, 8 High, 3 Medium)
+**Files Affected:** 5 files
+
+---
+
+✅ Strengths Worth Highlighting
+
+Your workshop excels in these areas:
+
+1. Excellent Business Context - Outstanding scenario in overview addressing real organizational challenges
+2. Progressive Learning Flow - Well-structured progression from basic to advanced concepts
+3. Strong Technical Depth - Comprehensive AAP configuration coverage across modules
+4. Good Documentation Structure - Clear separation of overview, details, and hands-on modules
+
+[END OF VERIFICATION OUTPUT - NOTHING AFTER THIS]
+```
+
+## Verification Standards
+
+Every verification includes:
+
+**Red Hat Style Guide**:
+- ✓ Sentence case headlines
+- ✓ Official Red Hat product names
+- ✓ No prohibited terms (whitelist/blacklist, etc.)
+- ✓ Proper hyphenation and formatting
+- ✓ Serial comma usage
+
+**Technical Accuracy**:
+- ✓ Valid commands for current versions
+- ✓ Correct syntax and options
+- ✓ Working code examples
+- ✓ Accurate technical terminology
+
+**Workshop Quality** (for labs):
+- ✓ Clear learning objectives
+- ✓ Step-by-step instructions
+- ✓ Verification commands with expected outputs
+- ✓ Troubleshooting guidance
+- ✓ Progressive skill building
+
+**Demo Quality** (for demos):
+- ✓ Know/Show structure
+- ✓ Business value messaging
+- ✓ Presenter guidance
+- ✓ Visual cues for slides/diagrams
+- ✓ Quantified metrics and ROI
+
+**Accessibility**:
+- ✓ Alt text for all images
+- ✓ Proper heading hierarchy
+- ✓ Clear, inclusive language
+- ✓ Keyboard-accessible instructions
+
+**Content Quality**:
+- ✓ Complete prerequisites
+- ✓ Consistent formatting
+- ✓ Proper AsciiDoc syntax
+- ✓ References and citations
+- ✓ Professional tone
+
+## Output Format
+
+Results are presented in clear, actionable format with **detailed sections FIRST, summary table LAST**:
 
 ```markdown
-## 検証対象箇所
+## 3 duplicate References sections found
+**Priority: Critical**
+**Affected Files:** 03-module-01.adoc, 04-module-02.adoc, 05-conclusion.adoc
 
-### 優先度: 高
-| # | 該当箇所 | 種別 | 確認内容 |
-|---|----------|------|----------|
-| 1 | 「...」 | 数値 | 出典確認 |
+### Details:
+
+1. **Line 245, 03-module-01.adoc**
+   - Current: `== References` section in module
+   - Required: Remove - all references go in conclusion module only
+   - Why: Multiple References sections confuse readers
+   - Fix: Move references to conclusion module, delete from here
+
+2. **Line 189, 04-module-02.adoc**
+   - Current: `== References` section in module
+   - Required: Remove - consolidate in conclusion
+   - Why: Duplicate sections violate Red Hat doc standards
+   - Fix: Copy references to conclusion, delete from module
+
+[... additional detailed issue sections ...]
+
+---
+
+## Validation Summary
+
+┌──────────────────────────────────┬──────────┬───────────┐
+│              Issue               │ Priority │   Files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Duplicate References sections    │ Critical │ 3 files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Missing descriptive alt text     │ Critical │ 3 files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Title case headings              │ High     │ All files │
+├──────────────────────────────────┼──────────┼───────────┤
+│ Missing blank lines before lists │ High     │ 2 files   │
+├──────────────────────────────────┼──────────┼───────────┤
+│ "Powerful" usage                 │ High     │ 4 files   │
+└──────────────────────────────────┴──────────┴───────────┘
+
+**Total Issues:** 15 (5 Critical, 7 High, 3 Medium)
+**Files Affected:** 5 files
+
+---
+
+✅ Strengths Worth Highlighting
+
+Your workshop excels in these areas:
+
+1. Exceptional RBAC Implementation Guidance - Module 01 provides comprehensive step-by-step RBAC configuration that's production-ready
+2. Strong Business Context - Outstanding business scenario addressing real organizational challenges
+3. Excellent Verification Sections - Checkpoints with ✅ expected results and troubleshooting are exemplary
+4. Perfect External Link Formatting - ALL external links correctly use ^ caret (opens in new tab)
+5. Clear Persona-Based Learning - User persona approach effectively demonstrates RBAC in action
 ```
 
-詳細は [scan.md](scan.md) を参照。
+---
 
-## Step 2: 検証（verify）
+## Detailed Issue Breakdown
 
-特定された箇所について、外部ソースで事実確認を行います。
+### 1. Missing Verification Commands
+**File**: module-01-install-aap.adoc:145
+**Impact**: Learners can't verify success, leading to confusion
+**Priority**: Critical
 
-### 検証プロセス
-
-1. **情報源の特定**: ウェブ検索で候補を収集
-2. **実際のコンテンツ取得**: WebFetch または curl で確認
-3. **判定**: 一致性、正確性、文脈、最新性をチェック
-
-### 重要: AI検索結果を鵜呑みにしない
-
-```bash
-# WebFetchがブロックされる場合
-curl -s -L "https://example.com/page" | head -200
-
-# Wayback Machineで過去版を確認
-curl -s "https://archive.org/wayback/available?url=example.com/page"
+**Current**:
+```asciidoc
+. Deploy the AutomationController:
 ```
 
-### 判定基準
-
-| 判定 | 条件 |
-|------|------|
-| ✅ 正確 | 信頼性の高い情報源で確認、内容一致 |
-| ⚠️ 要修正 | おおむね正確だが細部に修正必要 |
-| ❌ 誤り | 事実と異なる、重大な誤解を招く |
-| ❓ 確認不可 | 信頼できる情報源が見つからない |
-
-詳細は [verify.md](verify.md) を参照。
-
-## Step 3: 参照整備（reference）
-
-検証完了後、プロジェクト仕様に従い参考文献を整備します。
-
-### 作業内容
-
-1. **プロジェクト仕様の確認**: 引用スタイル、配置場所
-2. **参考文献リストへの登録**: 確認できた情報源を追加
-3. **本文中への相互参照の追加**: 脚注/インライン/番号参照
-
-### 参照形式の例
-
-```markdown
-<!-- 脚注形式 -->
-日本の人口は約1億2000万人である[^1]。
-[^1]: 総務省統計局「人口推計」2024年
-
-<!-- インライン形式 -->
-日本の人口は約1億2000万人である（総務省統計局, 2024）。
+**Fixed**:
+```asciidoc
+. Deploy the AutomationController:
++
+[source,bash]
+----
+oc get automationcontroller -n ansible-automation-platform
+----
++
+Expected output:
+----
+NAME                  STATUS   AGE
+platform-controller   Running  5m
+----
 ```
 
-詳細は [reference.md](reference.md) を参照。
-
-## 既存の参照・引用の検証
-
-文章に既に参考文献がある場合は、以下も確認します：
-
-### チェック項目
-
-- [ ] リンクが生きているか（404エラーなし）
-- [ ] 引用内容が参照先と一致しているか
-- [ ] 引用が文脈に沿って使われているか
-- [ ] 参照先の情報が最新か
-
-### リンク切れ対応
-
-```bash
-# ステータスコード確認
-curl -s -o /dev/null -w "%{http_code}" "https://example.com/page"
-
-# Wayback Machineで代替URL取得
-curl -s "https://archive.org/wayback/available?url=example.com/page"
+**How to fix**:
+1. Add verification command after deployment step
+2. Include expected output
+3. Add success indicator
 ```
 
-## 使用例
+## Priority Levels
 
-```
-ユーザー: README.mdの内容を検証して参考文献を整備して
-```
+Issues are categorized by priority:
 
-```
-ユーザー: この論文の引用が正しいか確認して
-```
+- **Critical**: Must fix before publishing - impacts functionality, accessibility, or brand compliance
+- **High**: Should fix soon - affects quality and user experience significantly
+- **Medium**: Recommended fixes - improves overall quality
+- **Low**: Nice to have - polish and optimization
 
-```
-ユーザー: Issue #45 で洗い出された項目を検証して
-```
+## Integration with Other Skills
 
-## 出力レポート形式
+**After `/create-lab`**:
+- Run verification on generated module
+- Apply fixes before committing
+- Ensure quality standards met
 
-```markdown
-# コンテンツ検証レポート
+**After `/create-demo`**:
+- Verify Know/Show structure
+- Check business messaging
+- Validate presenter guidance
 
-## 対象ファイル
-- path/to/document.md
+**Before publishing**:
+- Final verification of all content
+- Batch check entire workshop
+- Generate quality report
 
-## 検証サマリー
-| 項目数 | ✅ 正確 | ⚠️ 要修正 | ❌ 誤り | ❓ 確認不可 |
-|--------|---------|-----------|---------|-------------|
-| 10     | 7       | 2         | 0       | 1           |
+## Tips for Best Results
 
-## 詳細結果
-[各項目の検証結果...]
+**Be specific about content type**:
+- Workshop modules use different standards than demos
+- Infrastructure files (nav.adoc, README.adoc) have different requirements
 
-## 参照整備状況
-- [ ] 参考文献リスト更新済み
-- [ ] 本文中相互参照追加済み
-- [ ] リンク動作確認済み
-```
+**Review before auto-fix**:
+- Understand why changes are recommended
+- Some fixes may need manual adjustment
+- Technical accuracy requires domain knowledge
+
+**Run verification regularly**:
+- After creating new modules
+- Before submitting PRs
+- After major content updates
+
+## Quality Standards
+
+Every verification run checks:
+- ✓ Red Hat brand compliance
+- ✓ Technical accuracy for current versions
+- ✓ Accessibility (WCAG 2.1 AA)
+- ✓ Learning effectiveness
+- ✓ Professional formatting
+- ✓ Complete documentation
+- ✓ Consistent style
+
+## Prompt Location Strategy
+
+**Why multiple prompt locations?**
+
+Different repositories may need customized verification rules:
+- **Global defaults** (`~/.claude/prompts/`): Your standard verification rules for all projects
+- **Repo-specific** (`.claude/prompts/` in git repo): Custom rules for specific projects
+
+**Recommended workflow:**
+
+1. **Most repos**: Use global defaults from `~/.claude/prompts/`
+   - Consistent verification across all your content
+   - Easy to update centrally
+
+2. **Special repos**: Add `.claude/prompts/` to repo if you need custom rules
+   - Example: Stricter image requirements for partner content
+   - Example: Relaxed rules for internal documentation
+   - Example: Additional industry-specific validation
+
+**How the skill detects prompts:**
+
+1. Checks current git repo for `.claude/prompts/*.txt`
+2. Checks global home `~/.claude/prompts/*.txt`
+3. Asks you which to use if multiple locations found
+4. Shows you which prompts will be used before running verification
+
+**When to customize prompts in repo:**
+- ✅ Partner content with additional requirements
+- ✅ Internal docs with relaxed standards
+- ✅ Testing new verification rules before global rollout
+- ❌ Don't customize just to bypass quality standards
+
+---
+
+## Files Used
+
+**Verification prompts** (in `.claude/prompts/`):
+- `enhanced_verification_workshop.txt`
+- `enhanced_verification_demo.txt`
+- `redhat_style_guide_validation.txt`
+- `verify_workshop_structure.txt`
+- `verify_technical_accuracy_workshop.txt`
+- `verify_technical_accuracy_demo.txt`
+- `verify_accessibility_compliance_workshop.txt`
+- `verify_accessibility_compliance_demo.txt`
+- `verify_content_quality.txt`
+
+**Reference examples**:
+- `content/modules/ROOT/pages/workshop/example/`
+- `content/modules/ROOT/pages/demo/`

@@ -1,80 +1,123 @@
 ---
 name: troubleshooting
-description: A robust troubleshooting framework. Use this skill anytime the user reports something isn't working, is buggy, or is throwing errors.
+description: Troubleshooting guide for The Fold - daemon issues, session corruption, file locations, and common problems. Use when ./fold isn't working, the daemon won't start, or you need to find system files.
+allowed-tools: Bash, Read, Grep, Glob
 ---
 
-# Troubleshooting
+# Troubleshooting The Fold
 
-This skill helps identify when you're applying a bandaid fix versus addressing root causes, and when to escalate to deeper investigation.
+## Quick Fixes
 
-## Core Principles
-
-### 1. Bandaid Detection
-
-Before implementing any fix, check if it's treating symptoms vs. root cause:
-
-**Red flags indicating bandaid fixes:**
-- Adding try/catch blocks that hide errors without understanding why they occur
-- Implementing timeouts or retries without investigating why failures happen
-- Duplicating logic to work around a broken component
-- Increasing resource limits without understanding why resources are exhausted
-- Caching to hide performance issues without addressing underlying inefficiency
-- Adding null checks without understanding why nulls appear
-- Hard-coding values that should be dynamic (IDs, paths, credentials, configuration values)
-
-**When you detect a bandaid:**
-"I could [quick fix], but that just masks the real issue: [root cause]. To fix properly, I need to [proper solution / missing information]. Should I implement the workaround for now or investigate the root cause?"
-
-### 2. Systemic Issue Detection
-
-Watch for signs that a bug indicates larger problems:
-
-**Indicators of systemic issues:**
-- Same type of error occurring in multiple places
-- Issue requires workarounds in multiple locations
-- Root cause points to architectural decisions
-- Fix would require changing fundamental assumptions
-- Similar issues have been "fixed" before with workarounds
-
-**When you detect systemic issues:**
-"This appears to be a symptom of a larger issue: [systemic problem]. The immediate fix is [X], but this suggests we should also consider [architectural change]."
-
-### 3. Escalation to Deep Investigation
-
-For most issues, attempt a straightforward fix. If any of these occur, **you MUST read `references/collaborative-workflow.md` and follow that process:**
-
-**Escalation triggers:**
-- Simple fix attempt fails or reveals complexity
-- Multiple possible root causes exist
-- Issue is more complex than it initially appeared
-- You're uncertain whether a solution is proper or a bandaid
-- Investigation requires information you don't have access to
-
-**When triggered, immediately use the view tool:**
+### Check daemon status
+```bash
+./fold --status
 ```
-view references/collaborative-workflow.md
+
+### Daemon won't start
+```bash
+./daemon.sh stop     # Clear stale state
+./daemon.sh cleanup  # Kill orphan workers
+./daemon.sh start    # Or just run ./fold - it auto-starts
 ```
-Then follow the detailed investigation process described in that file.
 
-## Quick Troubleshooting
+### Session state corruption
+```bash
+rm -rf .fold-repl/   # Nuclear option - clears all session state
+./fold "(help)"      # Auto-starts fresh daemon
+```
 
-For straightforward issues, proceed autonomously:
+### Tests hanging
+Check fuel consumption. Infinite loops exhaust fuel and return `out-of-fuel` error.
 
-1. **Identify the issue** - Read error messages, examine code, check logs
-2. **Verify it's not a bandaid** - Check against red flags above
-3. **Implement the fix** - Address the root cause
-4. **Verify** - Confirm the specific symptom is resolved
+```scheme
+;; In REPL, check fuel status
+(fuel)
+```
 
-If at any point this becomes unclear or the fix would be a bandaid, escalate to the collaborative workflow.
+## File Locations
 
-## Anti-Patterns
+### REPL Infrastructure
 
-**Assumption-driven debugging:**
-- Don't assume you understand the architecture
-- Don't guess at configuration or environment details
-- Don't implement solutions based on incomplete information
+| Path | Purpose |
+|------|---------|
+| `.fold-repl/ready` | Daemon ready file (presence indicates daemon is running) |
+| `.fold-repl/requests/<session>.ss` | Session request queue |
+| `.fold-repl/responses/<session>.txt` | Session response output |
+| `.fold-repl/daemon.log` | Daemon log (check for errors) |
+| `.fold-repl/discord-outbox/` | Discord bot message outbox |
 
-**Premature solutions:**
-- Don't propose fixes before understanding the root cause
-- Don't implement the first solution that comes to mind without evaluation
-- Don't skip verification that the fix actually addresses the root cause
+### Persistent State
+
+| Path | Purpose |
+|------|---------|
+| `.fold-sessions/` | Persistent session state (survives daemon restart) |
+| `.fold-users/` | User profile data |
+
+### Content-Addressed Store
+
+| Path | Purpose |
+|------|---------|
+| `.store/` | Content-addressed store root |
+| `.store/objects/` | CAS objects (blocks) |
+| `.store/heads/bbs/fold-*.head` | BBS issue heads (current hash per issue) |
+| `.store/heads/bbs/post-*.head` | BBS post heads (current hash per post) |
+
+### BBS Runtime
+
+| Path | Purpose |
+|------|---------|
+| `.bbs/` | BBS runtime data |
+| `.bbs/counter` | Next issue ID |
+| `.bbs/deps/` | Dependency tracking |
+| `.bbs/index/` | Search index cache |
+
+### Project Files
+
+| Path | Purpose |
+|------|---------|
+| `TAXONOMY.sexp` | Machine-readable project taxonomy |
+| `CLAUDE.md` | Agent instructions (this file) |
+| `docs/agent-operating-manual.md` | Agent procedures |
+
+## Common Issues
+
+### "Daemon not responding"
+
+1. Check if daemon is running: `./fold --status`
+2. Check daemon log: `cat .fold-repl/daemon.log`
+3. Kill and restart: `./daemon.sh stop && ./fold --status`
+
+### "Session not found"
+
+Sessions are ephemeral unless named with `-s`:
+```bash
+./fold -s mywork "(define x 10)"  # Creates named session
+./fold -s mywork "x"              # Uses same session
+```
+
+### "Module not found" during require
+
+1. Check you're in project root: `pwd` should be `/home/oso/the-fold`
+2. Verify module exists: `ls lattice/<module>/`
+3. Check for typos in module name
+
+### "Out of fuel" error
+
+The expression exceeded its fuel budget. Options:
+- Simplify the expression
+- Check for infinite recursion
+- Increase fuel budget (if safe)
+
+### "Hash mismatch" or CAS errors
+
+The CAS store may be corrupted. Options:
+1. Check `.store/` permissions
+2. Run integrity check: `./fold "(cas-verify)"`
+3. Rebuild from git: `rm -rf .store && ./fold "(cas-rebuild)"`
+
+### BBS shows stale data
+
+After reloading modules, refresh BBS state:
+```scheme
+(bbs-init!)  ; Refresh from disk
+```

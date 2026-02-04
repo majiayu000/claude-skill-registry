@@ -1,7 +1,7 @@
 {
   "name": "stable-baselines3",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/stable-baselines3/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:11.560985Z"
+  "repo": "sanand0/scientific-research",
+  "path": ".claude/skills/stable-baselines3/SKILL.md",
+  "source": "github.com/sanand0/scientific-research",
+  "downloaded_at": "2026-02-04T02:57:40.881510Z"
 }

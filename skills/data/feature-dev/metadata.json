@@ -1,7 +1,7 @@
 {
   "name": "feature-dev",
-  "repo": "sequenzia/claude-alchemy",
-  "path": "plugins/tools/skills/feature-dev/SKILL.md",
-  "source": "github.com/sequenzia/claude-alchemy",
-  "downloaded_at": "2026-02-02T04:02:25.516428Z"
+  "repo": "anton-abyzov/specweave",
+  "path": "plugins/specweave/skills/feature-dev/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:41:01.299403Z"
 }

@@ -1,6 +1,8 @@
 ---
 name: atlassian-mcp
 description: Use the Atlassian MCP Server to interact with JIRA from coding agents (Cursor, Claude Code). This skill documents how to use the official Atlassian MCP server for JIRA and Confluence operations. Enable this MCP server in your Cursor/Claude Code settings for JIRA access.
+requires:
+  - atlassian-oauth
 ---
 
 # Atlassian MCP Server for JIRA

@@ -1,7 +1,7 @@
 {
   "name": "plan-create",
-  "repo": "JordanGunn/nunchuck",
-  "path": "skills/plan/plan-create/SKILL.md",
-  "source": "github.com/JordanGunn/nunchuck",
-  "downloaded_at": "2026-02-02T03:13:32.601720Z"
+  "repo": "spencerbeggs/claude-design-coordinator",
+  "path": ".claude/skills/plan-create/SKILL.md",
+  "source": "github.com/spencerbeggs/claude-design-coordinator",
+  "downloaded_at": "2026-02-04T05:05:23.900236Z"
 }

@@ -1,7 +1,7 @@
 {
   "name": "supabase",
-  "repo": "paxtone-io/openkodo",
-  "path": "plugins/kodo-supabase/skills/supabase/SKILL.md",
-  "source": "github.com/paxtone-io/openkodo",
-  "downloaded_at": "2026-02-02T05:08:45.842103Z"
+  "repo": "djnsty23/claude-auto-dev",
+  "path": "skills/supabase/SKILL.md",
+  "source": "github.com/djnsty23/claude-auto-dev",
+  "downloaded_at": "2026-02-04T04:47:34.578433Z"
 }

@@ -1,176 +1,108 @@
 ---
 name: code-quality
-description: "Code quality improvement: review, refactoring, debugging. Phases: review feedback, systematic refactoring, root cause debugging, verification. Capabilities: SOLID/DRY compliance, code smell detection, complexity reduction, bug investigation, verification gates. Actions: review, refactor, debug, verify, validate code. Keywords: code review, refactor, debug, SOLID, DRY, code smell, bug fix, root cause, verification, technical debt, extract method, test failure, completion claim. Use when: reviewing code changes, improving code quality, fixing bugs, reducing technical debt, validating before merge/commit."
+description: 执行代码质量门禁检查（测试通过→覆盖率→Lint→GOAL追溯→可提交），验证单元测试覆盖率≥80%、集成测试通过率≥95%、代码规范零错误。当完成代码实现、准备提交代码、需要质量验证、进行提交前自检时使用。确保代码可合并。
+stage: EXECSPEC_FULFILL
+level_supported: [L1-STREAMLINED]
 ---
 
-# Code Quality
+# Code Quality Skill
 
-Systematic code improvement through review, refactoring, and debugging with verification gates.
-
-## Module Selection
-
-| Need | Module | Reference |
-|------|--------|-----------|
-| **Receive Feedback** | Review | `references/code-review-reception.md` |
-| **Request Review** | Review | `references/requesting-code-review.md` |
-| **Verify Before Claim** | Review | `references/verification-before-completion.md` |
-| **Reduce Complexity** | Refactoring | `references/oop-refactoring-catalog.md` |
-| **Functional Patterns** | Refactoring | `references/functional-refactoring-patterns.md` |
-| **Find Code Smells** | Refactoring | `references/code-smells-reference.md` |
-| **Test Strategies** | Refactoring | `references/testing-strategies.md` |
-| **Investigate Bugs** | Debugging | `references/systematic-debugging.md` |
-| **Trace Root Cause** | Debugging | `references/root-cause-tracing.md` |
-| **Add Validation** | Debugging | `references/defense-in-depth.md` |
-| **Verify Fix** | Debugging | `references/verification.md` |
+> **Scope**: EXECSPEC_FULFILL — Fulfill ExecSpec（落实 ExecSpec）
+>
+> **版本**: 0.1.0（占位）| **创建日期**: 2025-11-27
 
 ---
 
-## Core Principles
+## 概述
 
-**YAGNI, KISS, DRY** - Always honor these.
-
-**Be honest, be brutal, straight to the point, and be concise.**
-
-**Technical correctness over social comfort.** Verify before implementing. Ask before assuming. Evidence before claims.
-
----
-
-## Code Review
-
-### Receiving Feedback
-
-**Pattern:** READ → UNDERSTAND → VERIFY → EVALUATE → RESPOND → IMPLEMENT
-
-**Rules:**
-- ❌ No performative agreement ("You're right!", "Great point!")
-- ❌ No implementation before verification
-- ✅ Restate requirement, ask questions, push back with reasoning
-- ✅ YAGNI check: grep for usage before implementing suggestions
-
-**Sources:**
-- Human partner → Implement after understanding
-- External reviewer → Verify technically before implementing
-
-### Requesting Review
-
-**When:** After major features, before merge, after complex fixes
-
-**Process:**
-1. Get SHAs: `BASE_SHA=$(git rev-parse HEAD~1)`, `HEAD_SHA=$(git rev-parse HEAD)`
-2. Dispatch code-reviewer subagent with: WHAT, PLAN, SHAs, DESCRIPTION
-3. Fix Critical immediately, Important before proceeding, note Minor
-
-### Verification Gates
-
-**Iron Law:** NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE
-
-**Gate:** IDENTIFY → RUN → READ → VERIFY → THEN claim
-
-Skip any step = lying, not verifying.
-
----
-
-## Refactoring
-
-### Mindset
-
-Simplify relentlessly. Preserve behavior religiously. Measure everything.
-
-Every refactoring: small and safe, tested immediately, measurably better.
-
-### Protocol
-
-1. **Assessment** - Baseline metrics, identify smells, classify debt
-2. **Safety Net** - Verify test coverage, add characterization tests
-3. **Red-Green-Refactor** - Write failing test, minimal pass, improve design
-4. **Pattern Application** - SOLID, design patterns, functional transforms
-5. **Validation** - Measure improvements, verify behavior preserved
-
-### Code Smells (5 Categories)
-
-1. **Bloaters:** Long Method, Large Class, Long Parameter List
-2. **OO Abusers:** Switch Statements, Temporary Field
-3. **Change Preventers:** Divergent Change, Shotgun Surgery
-4. **Dispensables:** Duplicate Code, Dead Code, Lazy Class
-5. **Couplers:** Feature Envy, Inappropriate Intimacy
-
-### Quick Patterns
-
-**OOP:** Extract Method, Inline, Replace Temp with Query, Guard Clauses
-**Functional:** Map/Filter/Reduce, Pure Functions, Composition, Immutability
-
----
-
-## Debugging
-
-### Core Principle
-
-**NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST**
-
-Random fixes waste time and create new bugs.
-
-### The Four Techniques
-
-**1. Systematic Debugging** (`references/systematic-debugging.md`)
-- Phase 1: Root Cause Investigation
-- Phase 2: Pattern Analysis
-- Phase 3: Hypothesis Testing
-- Phase 4: Implementation
-
-**2. Root Cause Tracing** (`references/root-cause-tracing.md`)
-Trace backward through call stack to find original trigger.
-
-**3. Defense-in-Depth** (`references/defense-in-depth.md`)
-Validate at every layer: Entry → Business logic → Environment → Debug
-
-**4. Verification** (`references/verification.md`)
-Run command. Read output. Then claim result.
-
-### Quick Reference
+Code Quality 是代码提交前的质量门禁：
 
 ```
-Bug → systematic-debugging.md (Phase 1-4)
-  Error deep in stack? → root-cause-tracing.md
-  Found root cause? → defense-in-depth.md
-  About to claim success? → verification.md
+┌─────────────────────────────────────────────────────┐
+│              ✅ Code Quality Gates                  │
+├─────────────────────────────────────────────────────┤
+│  测试通过 → 覆盖率 → Lint → GOAL追溯 → 可提交     │
+│  (Tests)   (Coverage) (Style) (Trace)  (Commit)   │
+└─────────────────────────────────────────────────────┘
 ```
 
-### Red Flags
-
-Stop if thinking:
-- "Quick fix for now, investigate later"
-- "Just try changing X and see"
-- "It's probably X, let me fix that"
-- "Should work now" / "Seems fixed"
+**核心职责**：
+- 质量门禁检查（覆盖率、集成测试）
+- 代码规范验证（lint、format）
+- GOAL 追溯完整性
+- 提交前自检
 
 ---
 
-## References
+## L1-STREAMLINED
 
-### Code Review
-- `references/code-review-reception.md` - Response protocols
-- `references/requesting-code-review.md` - Request process
-- `references/verification-before-completion.md` - Verification gates
+### 质量门禁阈值
 
-### Refactoring
-- `references/oop-refactoring-catalog.md` - Martin Fowler's patterns
-- `references/functional-refactoring-patterns.md` - FP transformations
-- `references/code-smells-reference.md` - 23 smells, 5 categories
-- `references/testing-strategies.md` - Characterization tests, TDD
+| 指标 | L1 阈值 |
+|------|---------|
+| 单元测试覆盖率 | ≥ 80% |
+| 集成测试通过率 | ≥ 95% |
+| Lint 错误 | 0 |
+| GOAL 覆盖 | 100% |
 
-### Debugging
-- `references/systematic-debugging.md` - Four-phase framework
-- `references/root-cause-tracing.md` - Call stack analysis
-- `references/defense-in-depth.md` - Multi-layer validation
-- `references/verification.md` - Verification protocols
+### 检查清单
+
+- [ ] 所有测试通过（无红色）
+- [ ] 覆盖率达标（≥80%）
+- [ ] 无 lint 错误
+- [ ] GOAL 注释完整
+
+### 通过标准
+
+- 4 项全部通过（100%）
 
 ---
 
-## Bottom Line
+## >> 命令
 
-1. **Review:** Technical rigor over social performance
-2. **Refactor:** Small, safe, tested, measurable
-3. **Debug:** Root cause first, fix once
-4. **Always:** Evidence before claims
+```
+>>quality_gate_l1      # 执行质量门禁检查
+>>pre_commit_l1        # 提交前自检
+```
 
-Verify. Question. Then implement. Evidence. Then claim.
+---
+
+## Commit Message 规范
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+GOAL: GOAL-XXX-001
+```
+
+**Type 类型**：
+- `feat`: 新功能
+- `fix`: Bug 修复
+- `refactor`: 重构
+- `test`: 测试
+- `docs`: 文档
+
+**示例**：
+```
+feat(auth): 实现用户登录功能
+
+- 添加登录表单验证
+- 集成 JWT token 生成
+- 添加单元测试
+
+GOAL: GOAL-AUTH-001
+```
+
+---
+
+## 相关 Skills
+
+- **前置**: tdd-cycle（TDD 循环中）
+- **原则**: principle-solid, principle-dry
+- **后续**: progress-tracking（更新进度）
+
+---
+
+**TODO**: 待细化质量门禁脚本和自动化检查流程

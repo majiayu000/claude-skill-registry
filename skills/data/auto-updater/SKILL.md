@@ -1,149 +1,177 @@
 ---
 name: auto-updater
-description: "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of what changed."
-metadata: {"version":"1.0.0","clawdbot":{"emoji":"🔄","os":["darwin","linux"]}}
+description: Automatically apply improvements to skills and the ecosystem based on system-reviewer findings and best-practices-learner insights. Workflow for automated improvement identification, priority assessment, safe application, validation, and rollback capability. Use when applying systematic improvements, automating enhancement cycles, bulk updating multiple skills, or implementing ecosystem-wide improvements.
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
 ---
 
-# Auto-Updater Skill
+# Auto Updater
 
-Keep your Clawdbot and skills up to date automatically with daily update checks.
+## Overview
 
-## What It Does
+auto-updater automatically applies improvements to skills and ecosystem components based on identified patterns and learnings.
 
-This skill sets up a daily cron job that:
+**Purpose**: Automated application of validated improvements across ecosystem
 
-1. Updates Clawdbot itself (via `clawdbot doctor` or package manager)
-2. Updates all installed skills (via `clawdhub update --all`)
-3. Messages you with a summary of what was updated
+**The 5-Step Auto-Update Workflow**:
+1. **Identify Improvements** - Gather recommendations from reviews and learnings
+2. **Assess Safety** - Determine which can be safely automated
+3. **Apply Updates** - Implement improvements automatically
+4. **Validate Changes** - Ensure improvements effective, no regressions
+5. **Rollback if Needed** - Revert changes if validation fails
 
-## Setup
+**Safety**: Always validates before finalizing, can rollback
 
-### Quick Start
+## When to Use
 
-Ask Clawdbot to set up the auto-updater:
+- Applying systematic improvements across multiple skills
+- Implementing guideline updates ecosystem-wide
+- Automating common enhancement patterns
+- Bulk updates (e.g., add Quick Reference to all skills missing it)
+
+## Auto-Update Workflow
+
+### Step 1: Identify Improvements
+
+**Sources**:
+- system-reviewer recommendations
+- best-practices-learner documented patterns
+- review-multi common findings
+- Manual improvement requests
+
+**Output**: List of potential improvements
+
+**Time**: 15-30 minutes
+
+---
+
+### Step 2: Assess Safety
+
+**Safe to Automate**:
+- Structural additions (add Quick Reference section)
+- Content additions (add examples in standard locations)
+- Format standardization (consistent heading levels)
+- Documentation updates (README enhancements)
+
+**NOT Safe to Automate**:
+- Logic changes (requires understanding context)
+- Content rewrites (needs judgment)
+- Major refactoring (risk too high)
+- Custom implementations
+
+**Output**: Classified improvements (auto-safe vs manual-only)
+
+**Time**: 20-40 minutes
+
+---
+
+### Step 3: Apply Updates
+
+**Process**:
+1. Backup affected skills (git commit or copy)
+2. Apply improvement to each skill
+3. Log changes made
+4. Track success/failure per skill
+
+**Approach**: One skill at a time, validate each before moving to next
+
+**Time**: Varies by improvement and skill count
+
+---
+
+### Step 4: Validate Changes
+
+**For Each Updated Skill**:
+1. Run skill-validator (pass/fail)
+2. Run review-multi structure check (score maintained?)
+3. Visual inspection (looks correct?)
+4. Mark as validated or flagged for review
+
+**Output**: Validation results per skill
+
+**Time**: 10-15 minutes per skill
+
+---
+
+### Step 5: Rollback if Needed
+
+**If Validation Fails**:
+1. Identify which skill failed
+2. Restore from backup (git revert or copy back)
+3. Analyze why it failed
+4. Mark improvement as manual-only for that skill
+
+**Output**: Rolled back skill, failure analysis
+
+---
+
+## Example Auto-Update
 
 ```
-Set up daily auto-updates for yourself and all your skills.
+Auto-Update: Add Quick Reference to All Skills Missing It
+
+Step 1: Identify
+- Improvements: Add Quick Reference section
+- Target Skills: planning-architect, task-development, todo-management
+- Count: 3 skills to update
+
+Step 2: Assess Safety
+- ✅ Safe: Adding new section (doesn't modify existing content)
+- ✅ Safe: Standard format (use template)
+- ✅ Safe: Low risk (can validate easily)
+- Decision: Auto-update approved
+
+Step 3: Apply
+- Backup: Git commit all 3 skills
+- Apply to planning-architect: ✅ Success
+- Apply to task-development: ✅ Success
+- Apply to todo-management: ✅ Success
+- Changes: 3/3 skills updated
+
+Step 4: Validate
+- planning-architect: 5/5 structure (maintained)
+- task-development: 5/5 structure (maintained)
+- todo-management: 5/5 structure (maintained)
+- All validations: ✅ PASS
+
+Step 5: Rollback
+- Not needed (all validations passed)
+
+Result: ✅ 3 skills successfully auto-updated
+Time: 90 minutes (vs 3-4 hours manual)
+Impact: 100% Quick Reference coverage achieved
+Quality: All skills maintained 5/5 scores
 ```
 
-Or manually add the cron job:
+---
 
-```bash
-clawdbot cron add \
-  --name "Daily Auto-Update" \
-  --cron "0 4 * * *" \
-  --tz "America/Los_Angeles" \
-  --session isolated \
-  --wake now \
-  --deliver \
-  --message "Run daily auto-updates: check for Clawdbot updates and update all skills. Report what was updated."
-```
+## Quick Reference
 
-### Configuration Options
+### 5-Step Auto-Update Workflow
 
-| Option | Default | Description |
-|--------|---------|-------------|
-| Time | 4:00 AM | When to run updates (use `--cron` to change) |
-| Timezone | System default | Set with `--tz` |
-| Delivery | Main session | Where to send the update summary |
+| Step | Focus | Time | Safety |
+|------|-------|------|--------|
+| Identify | Gather improvements | 15-30m | N/A |
+| Assess Safety | Classify auto-safe | 20-40m | Critical |
+| Apply | Implement changes | Varies | Backup first |
+| Validate | Check quality maintained | 10-15m/skill | Essential |
+| Rollback | Revert if fails | 5m/skill | Safety net |
 
-## How Updates Work
+### Safe vs Unsafe Automation
 
-### Clawdbot Updates
+**Safe to Automate**:
+- Adding standard sections
+- Format standardization
+- Documentation additions
+- Structural improvements (following patterns)
 
-For **npm/pnpm/bun installs**:
-```bash
-npm update -g clawdbot@latest
-# or: pnpm update -g clawdbot@latest
-# or: bun update -g clawdbot@latest
-```
+**NOT Safe**:
+- Logic changes
+- Content rewrites
+- Major refactoring
+- Custom implementations
 
-For **source installs** (git checkout):
-```bash
-clawdbot update
-```
+**Rule**: If requires judgment or understanding → Manual only
 
-Always run `clawdbot doctor` after updating to apply migrations.
+---
 
-### Skill Updates
-
-```bash
-clawdhub update --all
-```
-
-This checks all installed skills against the registry and updates any with new versions available.
-
-## Update Summary Format
-
-After updates complete, you'll receive a message like:
-
-```
-🔄 Daily Auto-Update Complete
-
-**Clawdbot**: Updated to v2026.1.10 (was v2026.1.9)
-
-**Skills Updated (3)**:
-- prd: 2.0.3 → 2.0.4
-- browser: 1.2.0 → 1.2.1  
-- nano-banana-pro: 3.1.0 → 3.1.2
-
-**Skills Already Current (5)**:
-gemini, sag, things-mac, himalaya, peekaboo
-
-No issues encountered.
-```
-
-## Manual Commands
-
-Check for updates without applying:
-```bash
-clawdhub update --all --dry-run
-```
-
-View current skill versions:
-```bash
-clawdhub list
-```
-
-Check Clawdbot version:
-```bash
-clawdbot --version
-```
-
-## Troubleshooting
-
-### Updates Not Running
-
-1. Verify cron is enabled: check `cron.enabled` in config
-2. Confirm Gateway is running continuously
-3. Check cron job exists: `clawdbot cron list`
-
-### Update Failures
-
-If an update fails, the summary will include the error. Common fixes:
-
-- **Permission errors**: Ensure the Gateway user can write to skill directories
-- **Network errors**: Check internet connectivity
-- **Package conflicts**: Run `clawdbot doctor` to diagnose
-
-### Disabling Auto-Updates
-
-Remove the cron job:
-```bash
-clawdbot cron remove "Daily Auto-Update"
-```
-
-Or disable temporarily in config:
-```json
-{
-  "cron": {
-    "enabled": false
-  }
-}
-```
-
-## Resources
-
-- [Clawdbot Updating Guide](https://docs.clawd.bot/install/updating)
-- [ClawdHub CLI](https://docs.clawd.bot/tools/clawdhub)
-- [Cron Jobs](https://docs.clawd.bot/cron)
+**auto-updater enables safe, validated, automated improvement application across multiple skills simultaneously.**

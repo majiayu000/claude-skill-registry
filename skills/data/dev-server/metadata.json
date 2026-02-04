@@ -1,7 +1,7 @@
 {
   "name": "dev-server",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/dev-server/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:16.640952Z"
+  "repo": "NeverSight/skills_feed",
+  "path": "data/skills-md/civitai/civitai/dev-server/SKILL.md",
+  "source": "github.com/NeverSight/skills_feed",
+  "downloaded_at": "2026-02-04T02:33:07.112355Z"
 }

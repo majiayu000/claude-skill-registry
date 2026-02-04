@@ -1,13 +1,6 @@
 ---
 name: timescaledb
 description: MANDATORY when working with time-series data, hypertables, continuous aggregates, or compression - enforces TimescaleDB 2.24.0 best practices including lightning-fast recompression, UUIDv7 continuous aggregates, and Direct Compress
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # TimescaleDB 2.24.0 Time-Series Database

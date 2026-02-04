@@ -1,5 +1,5 @@
 ---
-name: performance-optimization
+name: arch-performance-optimization
 description: Use when analyzing and improving performance for database queries, API endpoints, or frontend rendering.
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash, Task
 ---

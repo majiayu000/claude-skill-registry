@@ -1,86 +1,79 @@
 ---
-name: macos-development
-description: Comprehensive macOS development guidance including Swift 6+, SwiftUI, SwiftData, architecture patterns, AppKit bridging, and macOS 26 Tahoe APIs. Use for macOS code review, best practices, UI review, or platform-specific features.
-allowed-tools: [Read, Glob, Grep, WebFetch]
+name: macos
+description: macOS platform-specific development with menu bar apps, window management, AppKit integration, and notarization. Use when building Mac apps, creating menu bar extras, or distributing outside App Store.
+versions:
+  macos: 26
+  xcode: 26
+user-invocable: false
+references: references/app-structure.md, references/build-tools.md, references/appkit-integration.md, references/notarization.md
+related-skills: swift-core, swiftui-core, mcp-tools, build-distribution
 ---
 
-# macOS Development Expert
+# macOS Platform
 
-Comprehensive guidance for macOS app development. This skill aggregates specialized modules for different aspects of macOS development.
+macOS-specific development with window management and distribution tools.
 
-## When This Skill Activates
+## Agent Workflow (MANDATORY)
 
-Use this skill when the user:
-- Asks about macOS development best practices
-- Wants code review for macOS/Swift projects
-- Needs help with SwiftUI, SwiftData, or AppKit
-- Is implementing macOS 26 (Tahoe) features
-- Wants UI/UX review against HIG
-- Needs architecture guidance for macOS apps
+Before ANY implementation, launch in parallel:
 
-## Available Modules
+1. **fuse-ai-pilot:explore-codebase** - Analyze existing macOS patterns
+2. **fuse-ai-pilot:research-expert** - Verify latest macOS 26 docs via Context7/Exa
+3. **mcp__XcodeBuildMCP__build_macos** - Build for macOS validation
 
-Read relevant module files based on the user's needs:
+After implementation, run **fuse-ai-pilot:sniper** for validation.
 
-### coding-best-practices/
-Swift 6+ code quality and modern idioms.
-- `swift-language.md` - Modern Swift patterns
-- `modern-concurrency.md` - async/await, actors, Sendable
-- `data-persistence.md` - SwiftData, UserDefaults, Keychain
-- `code-organization.md` - Project structure and modularity
-- `architecture-principles.md` - Clean architecture patterns
+---
 
-### architecture-patterns/
-Software design and architecture.
-- `solid-detailed.md` - SOLID principles with Swift examples
-- `design-patterns.md` - Common design patterns
-- `modular-design.md` - Modular architecture approaches
+## Overview
 
-### swiftdata-architecture/
-SwiftData deep dive.
-- `schema-design.md` - Model design and relationships
-- `query-patterns.md` - Efficient queries and predicates
-- `performance.md` - Optimization techniques
+### When to Use
 
-### macos-tahoe-apis/
-macOS 26 specific features.
-- `tahoe-features.md` - New macOS 26 capabilities
-- `apple-intelligence.md` - AI/ML integration
-- `mlx-framework.md` - On-device ML with MLX
-- `continuity.md` - Cross-device features
-- `xcode16.md` - Xcode 16 tools and features
+- Building Mac desktop applications
+- Creating menu bar apps (MenuBarExtra)
+- Multi-window applications
+- Keyboard shortcuts and menus
+- Notarization for distribution
+- AppKit integration
 
-### macos-capabilities/
-Platform integration.
-- `sandboxing.md` - App Sandbox and entitlements
-- System integration features
+### Why macOS Skill
 
-### appkit-swiftui-bridge/
-Hybrid development.
-- `nsviewrepresentable.md` - Wrapping AppKit views
-- State management between frameworks
+| Feature | Benefit |
+|---------|---------|
+| MenuBarExtra | Background utility apps |
+| Window management | Multi-window support |
+| Keyboard shortcuts | Power user productivity |
+| Notarization | Gatekeeper-safe distribution |
 
-### ui-review-tahoe/
-UI/UX review for macOS 26.
-- Liquid Glass design system
-- HIG compliance checking
-- Accessibility review
+---
 
-### app-planner/
-Project planning and analysis.
-- New app architecture planning
-- Existing app audits
+## MCP Tools Available
 
-## How to Use
+### Build Tools
+- `build_macos` - Build for macOS
+- `build_run_macos` - Build and launch
+- `test_macos` - Run macOS tests
+- `launch_mac_app` - Start built app
+- `stop_mac_app` - Terminate app
 
-1. Identify user's need from their question
-2. Read relevant module files from subdirectories
-3. Apply the guidance to their specific context
-4. Reference Apple documentation when needed
+---
 
-## Example Workflow
+## Reference Guide
 
-**User asks about SwiftData performance:**
-1. Read `swiftdata-architecture/performance.md`
-2. Read `swiftdata-architecture/query-patterns.md` if relevant
-3. Apply recommendations to their code
+| Need | Reference |
+|------|-----------|
+| MenuBarExtra, Settings, Windows | [app-structure.md](references/app-structure.md) |
+| XcodeBuildMCP macOS tools | [build-tools.md](references/build-tools.md) |
+| NSViewRepresentable, menus | [appkit-integration.md](references/appkit-integration.md) |
+| Code signing, notarization | [notarization.md](references/notarization.md) |
+
+---
+
+## Best Practices
+
+1. **Keyboard shortcuts** - Support power users
+2. **Menu bar integration** - For utility apps
+3. **Multiple windows** - Use WindowGroup/Window
+4. **Settings window** - Use Settings scene
+5. **Notarization** - Required for distribution
+6. **Sandbox** - Enable for App Store

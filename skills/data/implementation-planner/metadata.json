@@ -1,12 +1,7 @@
 {
   "name": "implementation-planner",
-  "description": "Create structured implementation plans from validated requirements. Use when requirements are clear and you need to break down implementation into actionable steps with testing approach.",
-  "repo": "EdanStarfire/claudecode_webui",
-  "category": "testing",
-  "tags": [
-    "implementation",
-    "planner"
-  ],
-  "stars": 2,
-  "source": "local"
+  "repo": "elsolal/Skillz-Claude",
+  "path": ".claude/skills/implementation-planner/SKILL.md",
+  "source": "github.com/elsolal/Skillz-Claude",
+  "downloaded_at": "2026-02-04T02:28:05.790462Z"
 }

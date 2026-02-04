@@ -1,7 +1,7 @@
 {
   "name": "docs-review",
-  "repo": "majiayu000/claude-skill-registry",
-  "path": "skills/docs-review/SKILL.md",
-  "source": "github.com/majiayu000/claude-skill-registry",
-  "downloaded_at": "2026-02-02T04:36:23.274294Z"
+  "repo": "GregBaron/metabase-mysandbox",
+  "path": ".claude/skills/docs-review/SKILL.md",
+  "source": "github.com/GregBaron/metabase-mysandbox",
+  "downloaded_at": "2026-02-04T05:09:15.498954Z"
 }

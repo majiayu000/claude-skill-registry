@@ -1,6 +1,12 @@
 ---
 name: "QE Code Intelligence"
 description: "Knowledge graph-based code understanding with semantic search and 80% token reduction through intelligent context retrieval."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-code-intelligence.yaml
+
 ---
 
 # QE Code Intelligence

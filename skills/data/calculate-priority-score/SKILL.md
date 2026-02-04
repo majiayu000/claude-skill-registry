@@ -21,6 +21,7 @@ Calculate numeric priority score and category for issues based on multiple facto
 Accept issue attributes as input.
 
 **Expected Input**:
+
 ```json
 {
   "severity": "critical|high|medium|low",
@@ -34,18 +35,21 @@ Accept issue attributes as input.
 Use scoring matrix to assign points.
 
 **Severity Scores**:
+
 - critical: 10
 - high: 7
 - medium: 5
 - low: 2
 
 **Impact Scores**:
+
 - breaking: 10
 - major: 7
 - minor: 3
 - none: 0
 
 **Likelihood Scores**:
+
 - certain: 10
 - likely: 7
 - possible: 5
@@ -64,6 +68,7 @@ Sum all factor scores.
 Map score to priority category.
 
 **Priority Categories**:
+
 - **P0 (Critical)**: 25-30
   - Label: "Critical - Immediate Action Required"
   - Action: Drop everything, fix now
@@ -89,6 +94,7 @@ Map score to priority category.
 Return complete priority assessment.
 
 **Expected Output**:
+
 ```json
 {
   "score": 27,
@@ -115,6 +121,7 @@ Return complete priority assessment.
 ### Example 1: Critical Bug
 
 **Input**:
+
 ```json
 {
   "severity": "critical",
@@ -124,6 +131,7 @@ Return complete priority assessment.
 ```
 
 **Output**:
+
 ```json
 {
   "score": 30,
@@ -141,6 +149,7 @@ Return complete priority assessment.
 ### Example 2: Medium Priority Issue
 
 **Input**:
+
 ```json
 {
   "severity": "medium",
@@ -150,6 +159,7 @@ Return complete priority assessment.
 ```
 
 **Output**:
+
 ```json
 {
   "score": 15,
@@ -167,6 +177,7 @@ Return complete priority assessment.
 ### Example 3: Low Priority Enhancement
 
 **Input**:
+
 ```json
 {
   "severity": "low",
@@ -176,6 +187,7 @@ Return complete priority assessment.
 ```
 
 **Output**:
+
 ```json
 {
   "score": 7,
@@ -193,6 +205,7 @@ Return complete priority assessment.
 ### Example 4: High-Impact but Unlikely
 
 **Input**:
+
 ```json
 {
   "severity": "high",
@@ -202,6 +215,7 @@ Return complete priority assessment.
 ```
 
 **Output**:
+
 ```json
 {
   "score": 19,

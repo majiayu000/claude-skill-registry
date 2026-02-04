@@ -1,48 +1,89 @@
 ---
 name: laravel-i18n
-description: Laravel localization - __(), trans_choice(), lang files, JSON translations, pluralization. Use when implementing translations in Laravel apps.
-user-invocable: false
+description: Laravel localization - __(), trans_choice(), lang files, JSON translations, pluralization, middleware, formatting. Use when implementing translations.
+versions:
+  laravel: "12.x"
+  php: "8.4"
+user-invocable: true
+references: references/localization.md, references/pluralization.md, references/blade-translations.md, references/middleware.md, references/formatting.md, references/packages.md, references/best-practices.md, references/templates/SetLocaleMiddleware.php.md, references/templates/lang-files.md, references/templates/LocaleServiceProvider.php.md, references/templates/LocaleRoutes.php.md
+related-skills: laravel-blade, laravel-api
 ---
 
 # Laravel Internationalization
 
-## Setup
+## Agent Workflow (MANDATORY)
 
-```bash
-php artisan lang:publish
-```
+Before ANY implementation, launch in parallel:
 
-Creates `lang/` directory with default language files.
+1. **fuse-ai-pilot:explore-codebase** - Check existing translation patterns
+2. **fuse-ai-pilot:research-expert** - Verify Laravel i18n best practices via Context7
+3. **mcp__context7__query-docs** - Check Laravel localization documentation
 
----
-
-## File Structure
-
-```text
-lang/
-├── en/
-│   ├── messages.php      # Short keys
-│   └── validation.php
-├── fr/
-│   ├── messages.php
-│   └── validation.php
-├── en.json               # Full text keys
-└── fr.json
-```
+After implementation, run **fuse-ai-pilot:sniper** for validation.
 
 ---
 
-## Configuration
+## Overview
 
-```php
-// config/app.php
-'locale' => env('APP_LOCALE', 'en'),
-'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+| Feature | PHP Files | JSON Files |
+|---------|-----------|------------|
+| Keys | Short (`messages.welcome`) | Full text |
+| Nesting | Supported | Flat only |
+| Best for | Structured translations | Large apps |
+
+---
+
+## Critical Rules
+
+1. **Never concatenate strings** - Use `:placeholder` replacements
+2. **Always handle zero** in pluralization
+3. **Group by feature** - `auth.login.title`, `auth.login.button`
+4. **Extract strings early** - No hardcoded text in views
+5. **Validate locales** - Use enum or whitelist
+
+---
+
+## Decision Guide
+
+```
+Translation task?
+├── Basic string → __('key')
+├── With variables → __('key', ['name' => $value])
+├── Pluralization → trans_choice('key', $count)
+├── In Blade → @lang('key') or {{ __('key') }}
+├── Locale detection → Middleware
+├── Format date/money → LocalizationService
+└── Package strings → trans('package::key')
 ```
 
 ---
 
-## Translation Helpers
+## Reference Guide
+
+### Concepts (WHY & Architecture)
+
+| Topic | Reference | When to Consult |
+|-------|-----------|-----------------|
+| **Setup** | [localization.md](references/localization.md) | Initial configuration |
+| **Pluralization** | [pluralization.md](references/pluralization.md) | Count-based translations |
+| **Blade** | [blade-translations.md](references/blade-translations.md) | View translations |
+| **Middleware** | [middleware.md](references/middleware.md) | Locale detection |
+| **Formatting** | [formatting.md](references/formatting.md) | Date/number/currency |
+| **Packages** | [packages.md](references/packages.md) | Vendor translations |
+| **Best Practices** | [best-practices.md](references/best-practices.md) | Large app organization |
+
+### Templates (Complete Code)
+
+| Template | When to Use |
+|----------|-------------|
+| [SetLocaleMiddleware.php.md](references/templates/SetLocaleMiddleware.php.md) | URL/session locale detection |
+| [lang-files.md](references/templates/lang-files.md) | Translation file examples |
+| [LocaleServiceProvider.php.md](references/templates/LocaleServiceProvider.php.md) | Centralized localization service |
+| [LocaleRoutes.php.md](references/templates/LocaleRoutes.php.md) | URL prefix locale routing |
+
+---
+
+## Quick Reference
 
 ```php
 // Basic translation
@@ -51,105 +92,27 @@ __('messages.welcome')
 // With replacement
 __('Hello :name', ['name' => 'John'])
 
-// JSON approach (full text as key)
-__('Welcome to our application')
+// Pluralization
+trans_choice('messages.items', $count)
 
-// Alias
-trans('messages.welcome')
-```
-
----
-
-## PHP Translation Files
-
-```php
-// lang/en/messages.php
-return [
-    'welcome' => 'Welcome to our application',
-    'hello' => 'Hello :name',
-    'goodbye' => 'Goodbye :name, see you :time',
-];
-```
-
----
-
-## JSON Translation Files
-
-```json
-// lang/fr.json
-{
-    "Welcome to our application": "Bienvenue sur notre application",
-    "Hello :name": "Bonjour :name"
-}
-```
-
----
-
-## Pluralization
-
-```php
-// lang/en/messages.php
-'apples' => '{0} No apples|{1} One apple|[2,*] :count apples',
-```
-
-```php
-trans_choice('messages.apples', 0);  // "No apples"
-trans_choice('messages.apples', 1);  // "One apple"
-trans_choice('messages.apples', 5);  // "5 apples"
-```
-
----
-
-## Runtime Locale
-
-```php
-use Illuminate\Support\Facades\App;
-
-// Set locale
+// Runtime locale
 App::setLocale('fr');
-
-// Get current locale
-$locale = App::currentLocale();
-
-// Check locale
-if (App::isLocale('fr')) {
-    // ...
-}
-```
-
----
-
-## Middleware Example
-
-```php
-// app/Http/Middleware/SetLocale.php
-public function handle(Request $request, Closure $next): Response
-{
-    $locale = $request->segment(1);
-
-    if (in_array($locale, ['en', 'fr', 'de'])) {
-        App::setLocale($locale);
-    }
-
-    return $next($request);
-}
-```
-
----
-
-## Blade Usage
-
-```blade
-{{ __('messages.welcome') }}
-@lang('messages.welcome')
-{{ trans_choice('messages.apples', 5) }}
+App::currentLocale();  // 'fr'
 ```
 
 ---
 
 ## Best Practices
 
-1. **Use JSON files** for large apps with many strings
-2. **PHP files** for structured, nested translations
-3. **Always use placeholders** `:name` not concatenation
-4. **Group by feature** in namespaces: `auth.login.title`
+### DO
+- Use `:placeholder` for dynamic values
+- Handle zero case in pluralization
+- Group keys by feature module
+- Use Locale enum for type safety
+- Set Carbon locale in middleware
+
+### DON'T
+- Concatenate translated strings
+- Hardcode text in views
+- Accept any locale without validation
+- Create DB-based translations (use files)

@@ -1,9 +1,7 @@
 {
   "name": "qa-lead",
-  "description": "QA Lead that creates test suites ONE FILE AT A TIME to prevent crashes. Handles test plans, test cases, testing strategies, quality gates. **CRITICAL CHUNKING RULE - Large test suites (15 files) done ",
   "repo": "anton-abyzov/specweave",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/anton-abyzov/specweave"
+  "path": "plugins/specweave/skills/qa-lead/SKILL.md",
+  "source": "github.com/anton-abyzov/specweave",
+  "downloaded_at": "2026-02-04T04:40:56.395195Z"
 }

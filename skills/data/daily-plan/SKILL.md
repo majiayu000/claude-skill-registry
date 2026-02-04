@@ -1,11 +1,11 @@
 ---
 name: daily-plan
-description: Generate context-aware daily plan with calendar, tasks, and priorities. Integrates with morning journaling if enabled.
+description: Generate context-aware daily plan with calendar, tasks, and priorities. Includes midweek awareness, meeting intelligence, commitment tracking, and smart scheduling suggestions.
 ---
 
 ## Purpose
 
-Generate your daily plan with full context awareness. Automatically gathers information from your calendar, tasks, meetings, and relationships to create a focused plan.
+Generate your daily plan with full context awareness. Automatically gathers information from your calendar, tasks, meetings, relationships, and weekly progress to create a focused plan with genuine situational awareness.
 
 ## Usage
 
@@ -17,25 +17,7 @@ Generate your daily plan with full context awareness. Automatically gathers info
 
 ## Tone Calibration
 
-Before executing this command, read `System/user-profile.yaml` → `communication` section and adapt:
-
-**Career Level Adaptations:**
-- **Junior:** More encouraging, explain "why" behind prioritization, suggest asking for help
-- **Mid:** Collaborative, focus on impact and ownership
-- **Senior/Leadership:** Strategic questions, challenge priorities, focus on delegation
-- **C-Suite:** High-level, strategic focus, organizational outcomes
-
-**Directness:**
-- **Very direct:** Brief bullets, action-focused, minimal context
-- **Balanced:** Context + action (default)
-- **Supportive:** More encouragement, explain reasoning
-
-**Detail Level:**
-- **Concise:** Brief summary, top 3 priorities
-- **Balanced:** Standard daily plan format
-- **Comprehensive:** Extended context, dependencies, risks
-
-See CLAUDE.md → "Communication Adaptation" for full guidelines.
+Before executing this command, read `System/user-profile.yaml` → `communication` section and adapt tone accordingly (see CLAUDE.md → "Communication Adaptation").
 
 ---
 
@@ -47,267 +29,193 @@ Before anything else, check if demo mode is active:
 2. Check `demo_mode` value
 3. **If `demo_mode: true`:**
    - Display banner: "Demo Mode Active — Using sample data from System/Demo/"
-   - Use these paths instead of normal paths:
-     - `System/Demo/03-Tasks/Tasks.md` instead of `03-Tasks/Tasks.md`
-     - `System/Demo/00-Inbox/` instead of `00-Inbox/`
-     - `System/Demo/05-Areas/People/` instead of `05-Areas/People/`
-     - `System/Demo/04-Projects/` instead of `04-Projects/`
-   - Skip calendar/Granola integrations (use demo meeting data)
-   - Write output to `System/Demo/07-Archives/Plans/`
+   - Use demo paths and skip live integrations
 4. **If `demo_mode: false`:** Proceed normally
 
 ---
 
-## Step 1: Check for Updates (Background)
+## Step 1: Background Checks (Silent)
 
-Silently check if Dex has updates available:
+Run these silently without user-facing output:
 
-1. Call update checker MCP: `check_for_updates(force=False)`
-   - This respects the 7-day interval
-   - Won't check if checked recently
-   - Won't block if network issues
-
-2. **If update available:**
-   - Store notification message for prepending to final output
-   - Format: "🎁 Dex v{version} is available. Run /dex-update to see what's new and update."
-   - Continue immediately (don't wait for user)
-
-3. **If no update or too recent:**
-   - Continue silently (don't mention)
-   - No user-facing output
-
-4. **If error (network, API limit):**
-   - Continue silently (don't mention)
-   - Will retry tomorrow
-
-**Note:** This runs in background. Don't announce "Checking for updates..." or wait for user input. Just proceed with daily planning.
+1. **Update check**: `check_for_updates(force=False)` - store notification if available
+2. **Self-learning checks**: Run changelog and learning review scripts if due
 
 ---
 
 ## Step 2: Morning Journal Check (If Enabled)
 
-Check if morning journaling is enabled:
-
-1. Read `System/user-profile.yaml`
-2. Check `journaling.morning` value
-3. **If `journaling.morning: true`:**
-   - Check if today's morning journal exists in `00-Inbox/Journals/YYYY/MM-Month/Morning/YYYY-MM-DD-morning.md`
-   - **If missing:**
-     - Prompt: "Let's start with a quick morning reflection first. It'll take 5 minutes and helps you plan with more intention."
-     - Guide through morning journal (see `/journal` command)
-     - After completion, continue to Step 2
-   - **If exists:** Continue to Step 2
-4. **If `journaling.morning: false`:** Skip to Step 2
+If `journaling.morning: true` in user-profile.yaml, check for today's morning journal and prompt if missing.
 
 ---
 
 ## Step 3: Monday Weekly Planning Gate
 
-If today is Monday, check if the week is planned:
-
-1. Check current day of week
-2. **If Monday:**
-   - Read `00-Inbox/Weekly_Plans.md`
-   - Check the `Week of:` date in frontmatter/header
-   - **If week is not current week:**
-     
-     Prompt user:
-     > "It's Monday and this week isn't planned yet.
-     > 
-     > Planning your week first helps ensure today's work aligns with what matters most. (Takes 5-10 min)
-     > 
-     > **[Plan the week first]** — Run `/week-plan` then come back to daily plan
-     > **[Skip to today]** — I'll plan the week later"
-     
-     - If user chooses "Plan the week first" → Run `/week-plan` → Then return to daily planning
-     - If user chooses "Skip to today" → Continue to Step 3, but note in output that week isn't planned
-     
-   - **If week is current week:** Continue to Step 3
-   
-3. **If not Monday:** Continue to Step 3
+If today is Monday and week isn't planned, offer to run `/week-plan` first.
 
 ---
 
 ## Step 4: Yesterday's Review Check (Soft Gate)
 
-Unlike a hard block, this is a gentle check:
-
-1. Calculate yesterday's date (skip weekends if not a work day)
-2. Look for `00-Inbox/Daily_Reviews/Daily_Review_YYYY-MM-DD.md`
-3. **If exists:** Extract context:
-   - Open Loops → Items that need attention today
-   - Tomorrow's Focus → Today's starting point
-   - Blocked items → Check if resolved
-4. **If missing:** Warn but continue:
-   > "I notice yesterday's review is missing. I can still plan today, but you might want to run `/review` later to capture what you accomplished."
-
-## Step 3.5: Level-Up Check (Smart Trigger)
-
-Check if it's time to surface `/dex-level-up`:
-
-1. Read `System/usage_log.md` to check `last_dex_level_up_prompt` date (stored at bottom of file)
-2. **If 7+ days since last prompt OR field doesn't exist:**
-   - Count unchecked features in usage log
-   - **If 3+ unchecked features exist:**
-     - Add this to the daily plan output (in a "Tips" or "System" section):
-       ```markdown
-       ---
-       
-       💡 **Tip:** You're using {{X}} of {{Y}} Dex features. Run `/dex-level-up` to see what you might be missing.
-       ```
-     - Update `last_dex_level_up_prompt: YYYY-MM-DD` in usage_log.md
-3. **Otherwise:** Skip this check
+Check for yesterday's review and extract context (open loops, tomorrow's focus, blocked items).
 
 ---
 
-## Step 3.6: Self-Learning Checks (Background)
+## Step 5: Context Gathering (ENHANCED)
 
-Run automated self-learning checks before gathering context. These are fast, throttled checks that keep Dex up-to-date.
+Gather context from all available sources. **This is where the magic happens.**
 
-**Execute silently in background:**
-
-1. **Changelog Check** (if 6+ hours since last check)
-   ```bash
-   node .scripts/check-anthropic-changelog.cjs 2>/dev/null &
-   ```
-   - Respects 6-hour minimum interval
-   - Writes alert file if updates found
-   - Non-blocking (runs in background)
-
-2. **Learning Review Check** (if not checked today)
-   ```bash
-   bash .scripts/learning-review-prompt.sh 2>/dev/null &
-   ```
-   - Counts pending learnings from past 7 days
-   - Creates alert if 5+ pending
-   - Updates `.last-learning-check` file with today's date
-
-**Note:** These checks also run at session start via hooks, but running here ensures they happen during daily planning even if hooks aren't configured. The interval throttling prevents duplicate work.
-
-**If alert files exist, they will be surfaced in Step 4 context.**
-
----
-
-## Step 5: Context Gathering
-
-Gather context from all available sources in parallel:
-
-### From Calendar (if enabled)
+### 5.1 Midweek Progress Check (NEW)
 
 ```
-Use: calendar_get_events_with_attendees for today
+Use: get_week_progress()
 ```
 
-Extract:
-- Today's meetings with times
-- Attendees (for People/ lookup)
-- Back-to-back meeting detection
-- Free time blocks
+This is critical for genuine situational awareness. Extract:
+- Day of week and days remaining
+- Weekly priority status (complete / in_progress / not_started)
+- Warnings for priorities with no activity
 
-### From Granola (if enabled)
+**Surface this prominently:**
 
-Check for recent meeting notes that might have action items.
+> "It's **Wednesday**. Here's where you are on this week's priorities:
+> 
+> 1. ✅ **Ship pricing page** — Complete (finished Monday)
+> 2. 🔄 **Review proposal** — In progress (2 of 5 tasks done)
+> 3. ⚠️ **Customer interviews** — Not started (no activity yet)
+> 
+> You have 2 days left this week. Priority 3 needs attention."
 
-### From 03-Tasks/Tasks.md
-
-```
-Use: list_tasks with status filter
-```
-
-Extract:
-- P0 items (must do)
-- P1 items (important)
-- Started but not completed
-- Overdue items
-
-### From Week Priorities
-
-Read `00-Inbox/Weekly_Plans.md`:
-- This week's Top 3
-- Key meetings
-- Pillar balance check
-
-### From Work Summary (Work MCP)
+### 5.2 Calendar Capacity Analysis (NEW)
 
 ```
-Use: get_work_summary()
+Use: analyze_calendar_capacity(days_ahead=1, events=[...from calendar MCP...])
 ```
 
-Extract:
-- Quarterly goals with progress (if quarterly planning enabled)
-- Weekly priorities with completion status
-- Tasks grouped by priority link
-- Warnings about stalled goals or orphaned work
+Understand the *shape* of today:
 
-This provides strategic context for the day: "Your tasks today contribute to Priority 2, which advances Goal 1"
+- **Day type**: stacked / moderate / open
+- **Meeting count and hours**
+- **Free blocks available**
+- **Recommendation**: What kind of work fits today
 
-### From People/
+**Surface this:**
 
-For each meeting attendee:
-- Look up `People/External/` or `People/Internal/`
-- Surface recent context, open items with them
+> "📅 **Today's shape:** Moderate (4 meetings, 3 hours total)
+> 
+> **Free blocks:**
+> - 8:00-9:30 AM (90 min) — Morning focus time
+> - 2:00-4:00 PM (120 min) — Afternoon block
+> 
+> **Recommendation:** Good for medium tasks and meeting prep. Deep work fits the 2-4pm block."
 
-### From Self-Learning Alerts
+### 5.3 Meeting Intelligence (NEW)
 
-Check for pending alerts created by background automation:
+For each meeting today:
 
-1. **Changelog Updates**: Read `System/changelog-updates-pending.md` if exists
-   - Extract: Latest version, update date
-   - Surface: "🆕 New Claude Code features available - run `/dex-whats-new`"
+```
+Use: get_meeting_context(meeting_title="...", attendees=[...])
+```
 
-2. **Learning Reviews**: Read `System/learning-review-pending.md` if exists
-   - Extract: Count of pending learnings
-   - Surface: "📚 {count} pending learnings from this week - run `/dex-whats-new --learnings`"
+Get genuine context, not just attendee names:
+- **Related project**: What project is this connected to?
+- **Project status**: What's outstanding? What's blocked?
+- **Outstanding tasks with attendees**: What do you owe them? What do they owe you?
+- **Prep suggestions**: What should you review before this meeting?
 
-**Include in daily plan output if present** - these are actionable items for improving your system.
+**Surface this with surprise and delight:**
+
+> "📍 **Meeting: Acme Quarterly Review** (2pm with Sarah Chen, Mike Ross)
+> 
+> **Related project:** Acme Implementation (Phase 2)
+> - Status: On track, but pricing section still in draft
+> - Outstanding: You owe Sarah the pricing proposal
+> 
+> **Prep suggestion:** Review proposal draft, prepare pricing options. Block 30 min before this meeting?"
+
+### 5.4 Commitment Tracking (NEW)
+
+```
+Use: get_commitments_due(date_range="today")
+```
+
+Surface things you said you'd do:
+
+> "⚡ **Commitments due today:**
+> 
+> - You told Mike you'd get back to him by Wednesday (from Monday 1:1)
+> - Follow up on competitive analysis (from Acme meeting)"
+
+### 5.5 Task Scheduling Suggestions (NEW)
+
+```
+Use: suggest_task_scheduling(include_all_tasks=False, calendar_events=[...])
+```
+
+Match tasks to available time based on effort classification:
+
+> "📋 **Scheduling suggestions:**
+> 
+> | Task | Effort | Suggested Time |
+> |------|--------|----------------|
+> | Write Q1 strategy doc | Deep work (2-3h) | Tomorrow (you have a 3h morning block) |
+> | Review Sarah's proposal | Medium (1h) | Today 2-3pm (before Acme meeting) |
+> | Reply to Mike | Quick (15min) | Between meetings |
+> 
+> ⚠️ **Heads up:** You have 2 deep work tasks but today's too fragmented. Consider protecting tomorrow morning."
+
+### 5.6 Standard Context Gathering
+
+Also gather:
+- **Calendar**: Today's meetings with times and attendees
+- **Tasks**: P0, P1, started-but-not-completed, overdue
+- **Week Priorities**: This week's Top 3
+- **Work Summary**: Quarterly goals context (if enabled)
+- **People**: Context for meeting attendees
+- **Self-Learning Alerts**: Changelog updates, pending learnings
 
 ---
 
 ## Step 6: Synthesis
 
-Combine all gathered context into recommendations:
+Combine all gathered context into actionable recommendations:
 
 ### Focus Recommendation
 
-Based on:
+Generate 3 recommended focus items based on:
 - P0 tasks (highest weight)
-- Yesterday's "Tomorrow Focus"
+- Weekly priority alignment (especially lagging priorities!)
 - Meeting prep needs
-- Week Priorities alignment
+- Commitments due
 
-Generate 3 recommended focus items.
+**The system should actively recommend, not just list:**
 
-### Meeting Prep
+> "Based on your week progress and today's shape, I recommend focusing on:
+> 
+> 1. **Prep for Acme meeting** — Priority 2 is lagging and this meeting is critical
+> 2. **Reply to Mike** — Commitment due today
+> 3. **Task X from Priority 1** — Keeps momentum on your shipped priority"
 
-For each meeting:
-- Who's attending (with People/ context)
-- Related tasks or projects
-- Suggested prep if none exists
+### Meeting Prep (Enhanced)
 
-### Heads Up
+For each meeting, show:
+- Who's attending + People/ context
+- Related project status
+- Outstanding tasks with attendees
+- Suggested prep time and what to prepare
+
+### Heads Up (Enhanced)
 
 Flag potential issues:
+- Weekly priorities with no activity (midweek warning)
+- Commitments due today
 - Back-to-back meetings
 - P0 items with no time blocked
-- People you owe follow-ups to
+- Deep work tasks with no suitable slot this week
 
 ---
 
 ## Step 7: Generate Daily Plan
-
-**Before displaying the plan:**
-
-If update notification was captured in Step 1, prepend it to the output:
-
-```
-🎁 Dex v{version} is available. Run /dex-whats-new for details.
-
----
-
-[Daily plan follows below]
-```
-
-**Then create the plan:**
 
 Create `07-Archives/Plans/YYYY-MM-DD.md`:
 
@@ -315,65 +223,51 @@ Create `07-Archives/Plans/YYYY-MM-DD.md`:
 ---
 date: YYYY-MM-DD
 type: daily-plan
-integrations_used: [calendar, tasks, people]
+integrations_used: [calendar, tasks, people, work-intelligence]
 ---
 
 # Daily Plan — {{Day}}, {{Month}} {{DD}}
 
 ## TL;DR
-- {{1-2 sentence summary}}
-- {{X}} meetings today
-- {{Key focus area}}
+- {{1-2 sentence summary including week progress}}
+- {{X}} meetings today, day is {{stacked/moderate/open}}
+- {{Key focus area based on week priorities}}
 
 ---
 
-## Strategic Context (if quarterly planning enabled)
+## 📊 Week Progress (Midweek Check)
 
-**This Week's Priority:** {{Priority 2}} — Ship beta version  
-**Advances Goal:** Q1-2026-goal-1 (Launch Product v2.0) — Currently at 55%
+**Day {{X}} of 5** — {{days_remaining}} days left this week
 
-**Today's Contribution:**
-- Your P0 tasks contribute to this week's priority
-- Completing them moves Goal 1 toward 60%
+| Priority | Status | Notes |
+|----------|--------|-------|
+| {{Priority 1}} | ✅ Complete | Finished {{day}} |
+| {{Priority 2}} | 🔄 In progress | {{X}} of {{Y}} tasks done |
+| {{Priority 3}} | ⚠️ Not started | Needs attention |
 
----
-
-## Career Development (if Career system enabled)
-
-**If `05-Areas/Career/` exists and today's work has career metadata:**
-
-> 💡 **Career Growth Today:**
-> 
-> Today's work develops these skills:
-> - **[Skill 1]** — From [Goal/Priority Title]
-> - **[Skill 2]** — From [Goal/Priority Title]
-> 
-> These map to your target role: [Target Role from Growth_Goals.md]
-
-**Optional: Show stale skills:**
-
-> ⚠️ **Skill to practice:** You haven't worked on "[Stale Skill]" in [X] days — required for [target level]
-
-**Tag reminder:**
-
-> **Tip:** Add `# Career: [skill]` to tasks that develop specific skills for evidence tracking.
+**This week's focus:** {{Recommendation based on lagging priorities}}
 
 ---
 
-## Carried From Yesterday
+## 📅 Today's Shape
 
-> From yesterday's review (if exists)
+**Day type:** {{stacked/moderate/open}} ({{X}} meetings, {{Y}} hours)
 
-### Open Loops
-- [ ] {{Items from yesterday's review}}
+**Free blocks:**
+- {{Time range}}: {{Size}} — {{Recommended use}}
 
-### Yesterday's Focus → Today's Starting Point
-1. {{Priority 1}}
-2. {{Priority 2}}
+**Best for:** {{Quick tasks only / Medium tasks / Deep work opportunity}}
 
 ---
 
-## Today's Focus
+## ⚡ Commitments Due Today
+
+- [ ] {{Commitment}} — from {{source}}
+- [ ] {{Commitment}} — from {{source}}
+
+---
+
+## 🎯 Today's Focus
 
 **If I only do three things today:**
 
@@ -381,69 +275,59 @@ integrations_used: [calendar, tasks, people]
 2. [ ] {{Focus item 2}} — {{Pillar}} *(supports Week Priority #Y)*
 3. [ ] {{Focus item 3}} — {{Pillar}}
 
-> 📍 **This week's priorities:** [Link to Week Priorities.md or brief reference]
+---
+
+## 📍 Meetings (with Context)
+
+### {{Time}} — {{Meeting Title}}
+
+**Attendees:** {{Names}}
+**Related project:** {{Project name}} ({{status}})
+**Outstanding with them:**
+- {{Task/commitment}}
+
+**Prep needed:** {{What to review/prepare}}
+**Suggested prep time:** {{Block X min before}}
 
 ---
 
-## Schedule
+### {{Time}} — {{Meeting Title}}
 
-| Time | Meeting/Block | Who | Prep |
-|------|---------------|-----|------|
-| {{Time}} | {{Meeting}} | {{Attendees}} | {{Prep link or "None needed"}} |
-| ... | ... | ... | ... |
-
-### Free Blocks
-- {{Time range}}: {{Suggested use}}
+[Repeat for each meeting]
 
 ---
 
-## Tasks by Priority
+## 📋 Task Scheduling
 
-### P0 - Must Do Today
-- [ ] {{Task}}
+| Task | Effort | Suggested Slot | Reason |
+|------|--------|----------------|--------|
+| {{Task}} | Deep work | {{Day/time}} | {{Reason}} |
+| {{Task}} | Medium | {{Day/time}} | {{Reason}} |
+| {{Task}} | Quick | Between meetings | Batch these |
 
-### P1 - Important
-- [ ] {{Task}}
-
-### P2 - If Time Allows
-- [ ] {{Task}}
-
----
-
-## People Context
-
-### Meeting with {{Name}}
-- Role: {{From People/ page}}
-- Last interaction: {{Date}}
-- Open items: {{Any pending tasks involving them}}
+{{If deep work capacity warning}}
+> ⚠️ You have {{X}} deep work tasks but only {{Y}} suitable slots this week. Consider protecting time or deferring.
 
 ---
 
-## Heads Up
+## ⚠️ Heads Up
 
-{{Flags and warnings}}
-
-- ⚠️ Back-to-back meetings from X to Y
-- ⏰ P0 item "{{task}}" has no time blocked
-- 📞 You owe {{Name}} a follow-up from {{Date}}
+- {{Warning about lagging weekly priority}}
+- {{Commitment due today}}
+- {{Back-to-back meetings}}
+- {{Other flags}}
 
 ---
 
 *Generated: {{timestamp}}*
-*Integrations: {{list}}*
+*Week progress: {{X}}/{{Y}} priorities on track*
 ```
 
 ---
 
 ## Step 8: Track Usage (Silent)
 
-After generating the daily plan, silently update usage tracking:
-
-1. Read `System/usage_log.md`
-2. Update these items:
-   - `- [ ] Daily planning (/daily-plan)` → `- [x] Daily planning (/daily-plan)`
-   - Update `First daily plan: YYYY-MM-DD` if not set
-3. No announcement to user
+Update `System/usage_log.md` to mark daily planning as used.
 
 ---
 
@@ -451,77 +335,24 @@ After generating the daily plan, silently update usage tracking:
 
 The plan works at multiple levels:
 
-### Full Context (Calendar + Granola + Tasks + People)
-- Complete schedule with attendee lookup
-- Meeting prep suggestions
-- Relationship context
+### Full Context (All MCPs available)
+- Complete week progress, meeting intelligence, scheduling suggestions
+- Maximum "surprise and delight"
 
-### Partial Context (Tasks + People only)
-- Focus recommendations from tasks
-- No schedule section
-- Still useful for prioritization
+### Partial Context (Work MCP only)
+- Week progress and task scheduling
+- No meeting context (prompt user to add manually)
 
-### Minimal Context (Tasks only)
-- Basic focus list
-- Task priorities
-- Prompt for manual schedule input
-
-### No Context (Nothing configured)
+### Minimal Context (No MCPs)
 - Interactive flow asking about priorities
-- Creates basic daily note
-- Encourages setting up integrations
+- Basic daily note
 
 ---
 
-## Evening Planning Variant
-
-`/daily-plan tomorrow`:
-
-1. Check for evening journal (if journaling enabled)
-2. Gather tomorrow's calendar
-3. Review unfinished tasks from today
-4. Generate tomorrow's draft plan
-5. Save as `07-Archives/Plans/YYYY-MM-DD-draft.md`
-
----
-
-## MCP Dependencies
+## MCP Dependencies (Updated)
 
 | Integration | MCP Server | Tools Used |
 |-------------|------------|------------|
 | Calendar | dex-calendar-mcp | `calendar_get_today`, `calendar_get_events_with_attendees` |
 | Granola | dex-granola-mcp | `get_recent_meetings` |
-| Work | dex-work-mcp | `list_tasks`, `list_week_priorities`, `suggest_focus` |
-
----
-
-## Setup Instructions
-
-### Calendar MCP Setup
-
-1. Ensure `core/mcp/calendar_server.py` exists
-2. Add to Claude Desktop config at `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "dex-calendar": {
-      "command": "python",
-      "args": ["/path/to/dex/core/mcp/calendar_server.py"],
-      "env": {
-        "VAULT_PATH": "/path/to/dex"
-      }
-    }
-  }
-}
-```
-
-3. Restart Claude Desktop
-4. Run `/daily-plan --setup` to configure
-
-### Granola MCP Setup
-
-1. Install Granola app (macOS only)
-2. Ensure `core/mcp/granola_server.py` exists
-3. Add to Claude Desktop config (same file, similar pattern)
-4. Granola will auto-detect from local cache at `~/Library/Application Support/Granola/cache-v3.json`
+| Work | dex-work-mcp | `list_tasks`, `get_week_progress`, `get_meeting_context`, `get_commitments_due`, `analyze_calendar_capacity`, `suggest_task_scheduling` |

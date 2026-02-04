@@ -1,641 +1,341 @@
 ---
 name: dashboard-design
-description: Use when creating recurring product health dashboards - structures metrics by lifecycle stages, ensures North Star anchoring, includes counter-metrics, and establishes review cadence
+description: Design effective dashboards with clear layouts, KPI displays, data grids, and real-time updates. Covers dashboard patterns, information hierarchy, responsive grids, widget design, and admin panel layouts. Use for building analytics dashboards, admin interfaces, and monitoring displays.
 ---
 
-# Dashboard Design Workflow
+# Dashboard Design
 
-## Purpose
+Create effective dashboards that present data clearly and enable quick decision-making.
 
-Design a structured set of metrics across the user lifecycle that gives a complete picture of product health, not just a single North Star. Creates recurring dashboards for team reviews, early problem detection, and strategic decision-making.
+## Instructions
 
-## When to Use This Workflow
+1. **Prioritize key metrics** - Most important KPIs should be immediately visible
+2. **Use consistent card layouts** - Establish a grid system and stick to it
+3. **Design for scanning** - Users should grasp status at a glance
+4. **Enable drill-down** - Summary to detail progression
+5. **Consider real-time needs** - Update frequencies and loading states
 
-Use this workflow when:
-- Standing up a new product team and need recurring dashboard
-- Existing dashboard feels incomplete or unfocused
-- Preparing for quarterly business reviews
-- Onboarding to a product and want to understand what "healthy" looks like
-- Establishing metrics for ongoing product monitoring
-- Need to rally team around clear success indicators
+## Dashboard Layout Patterns
 
-## Skills Sequence
+### KPI Cards
 
-This workflow orchestrates 4 core skills:
+```tsx
+interface KPICardProps {
+  title: string;
+  value: string | number;
+  change?: number;
+  changeLabel?: string;
+  icon?: React.ReactNode;
+}
 
-```
-1. North Star Alignment
-   ↓ (Anchor dashboard to company mission and business model)
-2. Funnel-Based Metric Mapping
-   ↓ (Ensure coverage across all lifecycle stages)
-3. Proxy Metric Selection
-   ↓ (Pick measurable indicators for each stage)
-4. Trade-off Evaluation
-   ↓ (Include counter-metrics to catch unintended effects)
-   
-OUTPUT: Dashboard structure by funnel, 5-10 metrics with definitions,
-        counter-metrics, review cadence, alert thresholds
-```
+function KPICard({ title, value, change, changeLabel, icon }: KPICardProps) {
+  const isPositive = change && change > 0;
+  const isNegative = change && change < 0;
 
-## Required Inputs
-
-Gather this information before starting:
-
-### Product Context
-- **Company/product mission statement**
-  - What's the overarching goal?
-- **Business model type**
-  - One of 5 categories (ads, freemium, SaaS, marketplace, e-commerce)
-- **Strategic priorities**
-  - Growth, retention, monetization, quality?
-
-### Product Lifecycle
-- **User lifecycle stages for this product**
-  - How do users progress through your product?
-  - What's the journey from awareness to retained power user?
-
-### Current State
-- **Existing metrics (if any)**
-  - What are you currently tracking?
-  - What gaps exist?
-- **Key stakeholder questions**
-  - What questions should dashboard answer?
-  - What decisions does it inform?
-
-### Operational Constraints
-- **Review cadence desired**
-  - Daily, weekly, monthly?
-  - Different cadences for different audiences?
-- **Alert capability**
-  - Can you set automated alerts?
-  - What thresholds trigger escalation?
-
-## Workflow Steps
-
-### Step 1: North Star Anchoring (15 minutes)
-
-**Use the `north-star-alignment` skill**
-
-Ground the dashboard in company-level goals:
-
-**Activities:**
-1. Identify business model and corresponding North Star metrics
-2. Articulate how this product serves company mission
-3. Define "healthy" for this product relative to North Star
-
-**Questions to answer:**
-- What company-level metrics does this product impact?
-- How does product health translate to company health?
-- What would "great" look like for this product?
-- What's the connection between product and company success?
-
-**Output:**
-
-```markdown
-## North Star Anchoring
-
-**Business Model:** [Type]
-
-**Company North Star Metrics:**
-- [Metric 1]: [Definition]
-- [Metric 2]: [Definition]
-
-**Product's North Star Connection:**
-- This product contributes to [Company North Star] by [mechanism]
-- "Healthy" product = [Description tied to North Star]
-
-**Mission Alignment:**
-- Product serves mission: [How]
-- Strategic priority: [Growth/Retention/Monetization/Quality]
+  return (
+    <div className="bg-white rounded-lg shadow p-6">
+      <div className="flex items-center justify-between">
+        <span className="text-sm font-medium text-gray-500">{title}</span>
+        {icon && <span className="text-gray-400">{icon}</span>}
+      </div>
+      <div className="mt-2">
+        <span className="text-3xl font-bold text-gray-900">{value}</span>
+      </div>
+      {change !== undefined && (
+        <div className="mt-2 flex items-center">
+          <span
+            className={`text-sm font-medium ${
+              isPositive ? 'text-green-600' : isNegative ? 'text-red-600' : 'text-gray-500'
+            }`}
+          >
+            {isPositive && '+'}
+            {change}%
+          </span>
+          {changeLabel && (
+            <span className="ml-2 text-sm text-gray-500">{changeLabel}</span>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
 ```
 
-### Step 2: Funnel Structure Mapping (20 minutes)
+### Dashboard Grid
 
-**Use the `funnel-metric-mapping` skill**
+```tsx
+function DashboardLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
+          <div className="flex items-center gap-4">
+            <DateRangePicker />
+            <RefreshButton />
+          </div>
+        </div>
+      </header>
 
-Decompose user journey into stages and identify metrics per stage:
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 py-6">
+        {/* KPI Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          <KPICard title="Total Revenue" value="$45,231" change={12.5} changeLabel="vs last month" />
+          <KPICard title="Orders" value="1,234" change={-2.3} changeLabel="vs last month" />
+          <KPICard title="Customers" value="5,678" change={8.1} changeLabel="vs last month" />
+          <KPICard title="Avg. Order" value="$36.70" change={4.2} changeLabel="vs last month" />
+        </div>
 
-**Activities:**
-1. Define lifecycle stages (typically 4-5 stages)
-2. List 1-3 key metrics per stage
-3. Identify transition conversion rates
-4. Map any flywheel dynamics
+        {/* Charts Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <ChartCard title="Revenue Over Time">
+            <RevenueChart />
+          </ChartCard>
+          <ChartCard title="Sales by Category">
+            <CategoryChart />
+          </ChartCard>
+        </div>
 
-**Funnel template:**
-
-```
-Reach → Activation → Engagement (Breadth) → Engagement (Depth) → Retention
-```
-
-**For each stage, ask:**
-- What defines success at this stage?
-- What volume metric matters?
-- What quality metric matters?
-- What's the conversion rate to next stage?
-
-**Output:**
-
-```markdown
-## Funnel Structure
-
-**Stage 1: Reach**
-- Definition: [When users become aware/access product]
-- Key Metrics:
-  1. [Metric]: [Definition + why it matters]
-  2. [Metric]: [Definition + why it matters]
-- Conversion to Activation: [%]
-
-**Stage 2: Activation**
-- Definition: [When users complete setup and reach first value]
-- Key Metrics:
-  1. [Metric]: [Definition + why it matters]
-  2. [Metric]: [Definition + why it matters]
-- Conversion to Engagement: [%]
-
-**Stage 3: Engagement (Breadth)**
-- Definition: [Regular product usage]
-- Key Metrics:
-  1. [Metric]: [Definition + why it matters]
-  2. [Metric]: [Definition + why it matters]
-
-**Stage 4: Engagement (Depth)**
-- Definition: [Value-creating actions]
-- Key Metrics:
-  1. [Metric]: [Definition + why it matters]
-  2. [Metric]: [Definition + why it matters]
-
-**Stage 5: Retention**
-- Definition: [Long-term repeat usage]
-- Key Metrics:
-  1. [Metric]: [Definition + why it matters]
-  2. [Metric]: [Definition + why it matters]
-
-**Flywheel Dynamics:**
-- [If applicable, describe virtuous cycles]
+        {/* Table Section */}
+        <div className="bg-white rounded-lg shadow">
+          <DataTable />
+        </div>
+      </main>
+    </div>
+  );
+}
 ```
 
-### Step 3: Proxy Metric Selection (20 minutes)
+### Chart Card Component
 
-**Use the `proxy-metric-selection` skill**
+```tsx
+interface ChartCardProps {
+  title: string;
+  subtitle?: string;
+  action?: React.ReactNode;
+  children: React.ReactNode;
+}
 
-For each funnel stage, define precise measurable indicators:
-
-**Activities:**
-1. For each metric, define mathematical formula (numerator/denominator)
-2. Create simplified alternatives where needed
-3. Validate each metric is actionable by the team
-4. Ensure leading indicators (not just lagging)
-
-**Criteria for dashboard metrics:**
-- **Actionable:** Team can directly influence
-- **Understandable:** Explainable in one sentence
-- **Measurable:** Clear data source
-- **Leading:** Provides early signal, not just hindsight
-
-**Output:**
-
-```markdown
-## Metric Definitions
-
-**Reach Metrics:**
-
-**1. [Metric Name]**
-- Formula: [Numerator] / [Denominator]
-- Data Source: [Where to measure]
-- Actionability: [How team influences]
-- Why it matters: [Connection to funnel stage goal]
-
-**2. [Metric Name]**
-[Same structure]
-
-**Activation Metrics:**
-[1-2 metrics with same detail]
-
-**Engagement (Breadth) Metrics:**
-[1-2 metrics with same detail]
-
-**Engagement (Depth) Metrics:**
-[1-2 metrics with same detail]
-
-**Retention Metrics:**
-[1-2 metrics with same detail]
+function ChartCard({ title, subtitle, action, children }: ChartCardProps) {
+  return (
+    <div className="bg-white rounded-lg shadow">
+      <div className="px-6 py-4 border-b border-gray-200">
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="text-lg font-medium text-gray-900">{title}</h3>
+            {subtitle && <p className="text-sm text-gray-500">{subtitle}</p>}
+          </div>
+          {action}
+        </div>
+      </div>
+      <div className="p-6">{children}</div>
+    </div>
+  );
+}
 ```
 
-### Step 4: Counter-Metric Identification (15 minutes)
+## Data Tables
 
-**Use the `tradeoff-evaluation` skill**
+### Sortable Data Table
 
-Identify metrics that could indicate unintended consequences:
+```tsx
+interface Column<T> {
+  key: keyof T;
+  header: string;
+  sortable?: boolean;
+  render?: (value: T[keyof T], row: T) => React.ReactNode;
+}
 
-**Activities:**
-1. For each primary metric, ask "what could go wrong?"
-2. Identify cannibalization risks
-3. Define acceptable ranges
-4. Plan monitoring approach
+function DataTable<T extends { id: string }>({
+  data,
+  columns,
+}: {
+  data: T[];
+  columns: Column<T>[];
+}) {
+  const [sortKey, setSortKey] = useState<keyof T | null>(null);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
-**Counter-metric categories:**
+  const sortedData = useMemo(() => {
+    if (!sortKey) return data;
+    return [...data].sort((a, b) => {
+      const aVal = a[sortKey];
+      const bVal = b[sortKey];
+      const modifier = sortOrder === 'asc' ? 1 : -1;
+      return aVal < bVal ? -1 * modifier : aVal > bVal ? 1 * modifier : 0;
+    });
+  }, [data, sortKey, sortOrder]);
 
-1. **Cannibalization Metrics**
-   - What other products/features might suffer?
-   - Example: New feature adoption hurting core feature usage
+  const handleSort = (key: keyof T) => {
+    if (sortKey === key) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortOrder('asc');
+    }
+  };
 
-2. **Quality Degradation Metrics**
-   - What quality indicators could decline?
-   - Example: Growth at expense of user satisfaction
-
-3. **Sustainability Metrics**
-   - What could indicate unsustainable growth?
-   - Example: High churn masked by high acquisition
-
-4. **Balance Metrics (for marketplaces)**
-   - Supply vs. demand balance
-   - Example: Too many drivers, not enough riders
-
-**Output:**
-
-```markdown
-## Counter-Metrics
-
-**For Primary Metric: [Name]**
-- Counter-metric 1: [Name]
-  - What it catches: [Unintended effect]
-  - Acceptable range: [Threshold]
-  - Alert if: [Condition]
-
-**For Primary Metric: [Name]**
-- Counter-metric 2: [Name]
-  - What it catches: [Unintended effect]
-  - Acceptable range: [Threshold]
-  - Alert if: [Condition]
-
-[2-3 counter-metrics total]
-
-**Cannibalization Watch:**
-- [Product/feature to monitor for impact]
-
-**Quality Indicators:**
-- [Metric to ensure quality maintained]
+  return (
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            {columns.map((col) => (
+              <th
+                key={String(col.key)}
+                onClick={() => col.sortable && handleSort(col.key)}
+                className={`px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ${
+                  col.sortable ? 'cursor-pointer hover:bg-gray-100' : ''
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  {col.header}
+                  {col.sortable && sortKey === col.key && (
+                    <span>{sortOrder === 'asc' ? '↑' : '↓'}</span>
+                  )}
+                </div>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {sortedData.map((row) => (
+            <tr key={row.id} className="hover:bg-gray-50">
+              {columns.map((col) => (
+                <td key={String(col.key)} className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  {col.render ? col.render(row[col.key], row) : String(row[col.key])}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 ```
 
-### Step 5: Dashboard Assembly and Review Cadence (15 minutes)
+## Real-Time Updates
 
-**Activities:**
-1. Prioritize metrics (not all are equal)
-2. Organize into dashboard sections
-3. Define review cadence
-4. Set alert thresholds
-5. Assign ownership
+### Auto-Refresh Hook
 
-**Dashboard structure:**
+```tsx
+function useAutoRefresh<T>(
+  fetcher: () => Promise<T>,
+  intervalMs: number = 30000
+) {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-```markdown
-# [Product Name] Health Dashboard
+  const refresh = useCallback(async () => {
+    try {
+      const result = await fetcher();
+      setData(result);
+      setLastUpdated(new Date());
+      setError(null);
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error('Fetch failed'));
+    } finally {
+      setLoading(false);
+    }
+  }, [fetcher]);
 
-## 🎯 North Star (Company-Level)
-[1-2 company metrics this product impacts]
+  useEffect(() => {
+    refresh();
+    const interval = setInterval(refresh, intervalMs);
+    return () => clearInterval(interval);
+  }, [refresh, intervalMs]);
 
-## 📊 Product North Star
-[1-2 top-line product metrics]
-
-## 🔄 Funnel Health
-
-### Reach
-- [Metric 1]: [Current value] [Trend ↑↓→]
-- [Metric 2]: [Current value] [Trend ↑↓→]
-
-### Activation
-- [Metric 1]: [Current value] [Trend ↑↓→]
-- Reach → Activation: [Conversion %]
-
-### Engagement (Breadth)
-- [Metric 1]: [Current value] [Trend ↑↓→]
-- Activation → Engagement: [Conversion %]
-
-### Engagement (Depth)
-- [Metric 1]: [Current value] [Trend ↑↓→]
-
-### Retention
-- [Metric 1]: [Current value] [Trend ↑↓→]
-- [Metric 2]: [Current value] [Trend ↑↓→]
-
-## ⚠️ Counter-Metrics & Health Checks
-- [Counter-metric 1]: [Current value] [Status: ✓ Healthy / ⚠️ Warning / 🚨 Alert]
-- [Counter-metric 2]: [Current value] [Status: ✓ Healthy / ⚠️ Warning / 🚨 Alert]
-
-## 📈 Key Insights (Updated Weekly)
-- [Insight 1]
-- [Insight 2]
-- [Action items]
+  return { data, loading, error, lastUpdated, refresh };
+}
 ```
 
-**Review cadence definition:**
+### Live Status Indicator
 
-```markdown
-## Dashboard Review Cadence
+```tsx
+function LiveIndicator({ lastUpdated }: { lastUpdated: Date | null }) {
+  const [, forceUpdate] = useState({});
 
-**Daily Review (5 minutes):**
-- Audience: Product team
-- Metrics: [2-3 most critical metrics]
-- Purpose: Early problem detection
-- Action threshold: [What triggers immediate investigation]
+  useEffect(() => {
+    const interval = setInterval(() => forceUpdate({}), 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-**Weekly Review (30 minutes):**
-- Audience: Product team + stakeholders
-- Metrics: Full dashboard
-- Purpose: Trend analysis, prioritization
-- Format: [Standup / Presentation / Async doc]
+  if (!lastUpdated) return null;
 
-**Monthly Deep-Dive (60 minutes):**
-- Audience: Product team + leadership
-- Metrics: Full dashboard + segmentation analysis
-- Purpose: Strategic review, goal setting
-- Format: [Meeting / Written review]
+  const seconds = Math.floor((Date.now() - lastUpdated.getTime()) / 1000);
 
-**Quarterly Business Review:**
-- Audience: Executives
-- Metrics: North Star + key highlights
-- Purpose: Alignment on strategy and resources
+  return (
+    <div className="flex items-center gap-2 text-sm text-gray-500">
+      <span className="relative flex h-2 w-2">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+      </span>
+      Updated {seconds < 60 ? `${seconds}s ago` : `${Math.floor(seconds / 60)}m ago`}
+    </div>
+  );
+}
 ```
 
-**Alert thresholds:**
+## Responsive Dashboard
 
-```markdown
-## Alert Configuration
+```tsx
+function ResponsiveDashboard() {
+  return (
+    <div className="space-y-6">
+      {/* KPIs - Stack on mobile, 4 columns on desktop */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <KPICard title="Revenue" value="$45K" />
+        <KPICard title="Orders" value="1,234" />
+        <KPICard title="Users" value="5,678" />
+        <KPICard title="Growth" value="+12%" />
+      </div>
 
-**Critical Alerts (Immediate attention):**
-- [Metric] drops below [threshold]: [Who to notify]
-- [Counter-metric] exceeds [threshold]: [Who to notify]
+      {/* Charts - Full width on mobile, side by side on desktop */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <ChartCard title="Revenue Trend">
+          <LineChart />
+        </ChartCard>
+        <ChartCard title="Distribution">
+          <PieChart />
+        </ChartCard>
+      </div>
 
-**Warning Alerts (Next-day review):**
-- [Metric] trends down for [X days]: [Who to notify]
-
-**Monitoring (Weekly review):**
-- [Metric ranges to track]
+      {/* Table - Horizontal scroll on mobile */}
+      <div className="bg-white rounded-lg shadow overflow-hidden">
+        <div className="overflow-x-auto">
+          <DataTable />
+        </div>
+      </div>
+    </div>
+  );
+}
 ```
 
-**Ownership:**
-
-```markdown
-## Metric Ownership
-
-| Metric | Owner | Data Source | Update Frequency |
-|--------|-------|-------------|------------------|
-| [Metric 1] | [Name/Team] | [Tool/Table] | Real-time |
-| [Metric 2] | [Name/Team] | [Tool/Table] | Daily |
-| [Metric 3] | [Name/Team] | [Tool/Table] | Weekly |
-```
-
-## Dashboard Design Principles
-
-### Principle 1: Comprehensive but Focused
-
-**Balance:**
-- Cover all lifecycle stages (comprehensive)
-- Limit to 5-10 metrics total (focused)
-- Prioritize metrics by impact and actionability
-
-**Avoid:**
-- Single-metric dashboards (miss problems elsewhere)
-- 20+ metric dashboards (overwhelming, unfocused)
-
-### Principle 2: Leading + Lagging Indicators
-
-**Leading indicators (early signals):**
-- Activation rate (predicts retention)
-- Engagement frequency (predicts habit formation)
-- NPS/satisfaction (predicts churn)
-
-**Lagging indicators (confirm outcomes):**
-- Retention rate (confirms product-market fit)
-- Revenue (confirms monetization)
-- Lifetime value (confirms unit economics)
-
-**Balance:** Include both for complete picture
-
-### Principle 3: Volume + Quality
-
-**Volume metrics (quantity):**
-- Total users
-- Total transactions
-- Total content created
-
-**Quality metrics (value):**
-- User satisfaction scores
-- Transaction value
-- Content engagement rate
-
-**Balance:** Prevent optimizing for wrong thing
-
-### Principle 4: Segment Where It Matters
-
-**Standard view:**
-- Aggregate metrics for whole product
-
-**Segmented views:**
-- By user type (power users, new users, paying users)
-- By geography (if relevant)
-- By cohort (when they joined)
-
-**When to segment:**
-- Behavior varies significantly by segment
-- Different strategies for different segments
-- Need to track specific initiatives
-
-## Common Mistakes
-
-| Mistake | Fix |
-|---------|-----|
-| Only measuring retention | Cover full funnel (reach through retention) |
-| Vanity metrics without action | Ensure each metric is actionable by team |
-| No counter-metrics | Add 2-3 to catch unintended effects |
-| Too many metrics (20+) | Prioritize to 5-10 most important |
-| No review cadence defined | Set daily/weekly/monthly schedule |
-| Metrics without owners | Assign ownership for each |
-| No alert thresholds | Define when to escalate |
-
-## Success Criteria
-
-Dashboard design succeeds when:
-- Anchored to company North Star explicitly
-- Covers all major lifecycle stages (4-5 stages)
-- 5-10 primary metrics with precise definitions
-- 2-3 counter-metrics included
-- Review cadence established (daily, weekly, monthly)
-- Alert thresholds defined
-- Ownership assigned for each metric
-- Stakeholders understand and accept dashboard
-- Dashboard answers key product questions
-- Team can explain why each metric matters
-
-## Real-World Example: Uber Driver Quality Dashboard
-
-### Step 1: North Star Anchoring (15 min)
-
-```
-Business Model: Two-sided marketplace
-Company North Star: Monthly Active Drivers + Monthly Active Riders
-Product (Driver Quality): Contributes to driver retention and rider satisfaction
-"Healthy" = High-quality drivers staying active long-term
-Strategic Priority: Quality + Retention (sustainable supply)
-```
-
-### Step 2: Funnel Structure (20 min)
-
-```
-Reach: All active drivers (baseline)
-  - Total active drivers (monthly)
-  
-Activation: Drivers engage with quality program
-  - % viewing quality dashboard (target: 80%)
-  - % reading quality tips (target: 50%)
-
-Engagement (Breadth): Drivers aware of ratings
-  - % checking ratings weekly (target: 60%)
-  
-Engagement (Depth): Drivers improve quality
-  - Tips received per active driver
-  - Rating improvement trend
-
-Retention: Drivers maintain high quality
-  - % drivers in 4.8+ bucket month-over-month
-  - Hours driven by quality tier
-```
-
-### Step 3: Proxy Metrics (20 min)
-
-```
-PRIMARY METRICS:
-
-1. Driver Quality Distribution
-   - Formula: Hours driven by rating bucket / Total hours
-   - X-axis: 4.5-4.74, 4.75-5.0, 5.0+ with tips
-   - Y-axis: Hours driven
-   - Goal: Maximize hours in 5.0+ bucket
-
-2. Quality Program Engagement
-   - Formula: Drivers viewing dashboard weekly / Total active drivers
-   - Target: 80%
-   - Leading indicator of quality awareness
-
-3. Tip Rate
-   - Formula: Drivers receiving ≥1 tip per week / Total active drivers
-   - Target: 40%
-   - Quality indicator beyond ratings
-
-4. Rating Stability
-   - Formula: Drivers maintaining/improving rating MoM / Total
-   - Target: 85%
-   - Retention proxy
-```
-
-### Step 4: Counter-Metrics (15 min)
-
-```
-COUNTER-METRICS:
-
-1. Driver Churn Rate
-   - What it catches: Quality standards too strict
-   - Current: 8%/month
-   - Acceptable: <10%
-   - Alert if: >12%
-
-2. Ride Acceptance Rate
-   - What it catches: Drivers becoming too picky
-   - Current: 92%
-   - Acceptable: >85%
-   - Alert if: <85%
-
-3. Surge Pricing Frequency
-   - What it catches: Insufficient supply
-   - Current: 15% of rides
-   - Acceptable: <20%
-   - Alert if: >25%
-```
-
-### Step 5: Dashboard Assembly (15 min)
-
-```
-# Uber Driver Quality Dashboard
-
-## 🎯 Company North Star
-- Monthly Active Drivers: 500K (↑ 2%)
-- Hours Driven (Total): 8M (↑ 3%)
-
-## 📊 Product North Star
-- Hours Driven in 4.8+ Bucket: 4.8M / 60% of total (↑ 5%) [GOAL: 65%]
-- Quality Program Engagement: 78% (↑ 3%)
-
-## 🔄 Funnel Health
-
-### Activation (Quality Program)
-- Dashboard Views: 78% of drivers (target: 80%)
-- Tips Read: 52% of drivers (target: 50%) ✓
-
-### Engagement (Quality Awareness)
-- Check Ratings Weekly: 58% (target: 60%)
-- Tips Received: 38% of drivers (target: 40%)
-
-### Retention (Quality Maintenance)
-- Rating Stability MoM: 84% (target: 85%)
-- Hours by Quality Tier:
-  - 4.5-4.74: 1.5M / 19% (↓ 2%) [Good]
-  - 4.75-5.0: 1.7M / 21% (→)
-  - 5.0+ tips: 4.8M / 60% (↑ 5%) [Great]
-
-## ⚠️ Counter-Metrics
-- Driver Churn: 9.2%/month ✓ (threshold: <10%)
-- Acceptance Rate: 90% ✓ (threshold: >85%)
-- Surge Frequency: 17% ✓ (threshold: <20%)
-
-## 📈 Key Insights (Week of Dec 1)
-- Strong progress toward 65% quality goal (on track for Q1)
-- Tip rate slightly below target; testing new prompts
-- Churn elevated but within acceptable range
-- Action: Launch tip prompt experiment next week
-
----
-
-## Review Cadence
-
-**Daily (5 min):** Churn rate, acceptance rate (critical alerts)
-**Weekly (30 min):** Full dashboard, trend review
-**Monthly (60 min):** Deep-dive, segmentation analysis
-**Quarterly:** Strategic review with leadership
-
-## Alert Configuration
-
-**Critical:**
-- Churn >12%: Alert product lead + ops
-- Acceptance <85%: Alert product lead + ops
-
-**Warning:**
-- Quality goal progress <2%/month: Weekly review
-- Counter-metric approaching threshold: Flag in review
-```
-
-**Time to complete: 90 minutes**
-
-## Related Skills
-
-This workflow orchestrates these skills:
-- **north-star-alignment** (Step 1)
-- **funnel-metric-mapping** (Step 2)
-- **proxy-metric-selection** (Step 3)
-- **tradeoff-evaluation** (Step 4)
-
-## Related Workflows
-
-- **metrics-definition**: Similar process but for one-time metric selection
-- **goal-setting**: Uses dashboard metrics to set OKR targets
-- **tradeoff-decision**: Uses dashboard to monitor trade-offs
-
-## Time Estimate
-
-**Total: 85-100 minutes**
-- Step 1 (North Star): 15 min
-- Step 2 (Funnel): 20 min
-- Step 3 (Proxy): 20 min
-- Step 4 (Counter-metrics): 15 min
-- Step 5 (Assembly): 15 min
-- Buffer: 10 min
-
+## Best Practices
+
+1. **Progressive disclosure** - Show summary first, details on demand
+2. **Consistent spacing** - Use a grid system (8px base)
+3. **Color coding** - Green for good, red for bad, yellow for warning
+4. **Empty states** - Handle zero data gracefully
+5. **Loading states** - Skeleton loaders for charts and tables
+6. **Error handling** - Show retry options on failure
+
+## When to Use
+
+- Analytics and reporting interfaces
+- Admin panels and back-office tools
+- Monitoring and operations dashboards
+- Business intelligence displays
+- Real-time data visualization
+
+## Notes
+
+- Test with real data volumes
+- Consider print layouts for reports
+- Optimize chart rendering for large datasets
+- Provide export functionality for data tables

@@ -1,31 +1,20 @@
 ---
-name: moai-workflow-worktree
-description: >
-  Git worktree management for parallel SPEC development with isolated
-  workspaces, automatic registration, and seamless MoAI-ADK integration
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Write Grep Glob mcp__context7__resolve-library-id mcp__context7__get-library-docs
+name: "moai-workflow-worktree"
+description: "Git worktree management for parallel SPEC development with isolated workspaces, automatic registration, and seamless MoAI-ADK integration"
+version: 1.1.0
+category: "workflow"
+modularized: true
 user-invocable: false
-metadata:
-  version: "1.1.0"
-  category: "workflow"
-  status: "active"
-  updated: "2026-01-08"
-  modularized: "true"
-  tags: "git, worktree, parallel, development, spec, isolation"
-
-# MoAI Extension: Progressive Disclosure
-progressive_disclosure:
-  enabled: true
-  level1_tokens: 100
-  level2_tokens: 5000
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["worktree", "git worktree", "parallel development", "isolated workspace", "multiple SPECs", "branch isolation", "feature branch"]
-  phases: ["plan", "run"]
-  agents: ["manager-git", "manager-spec", "manager-project"]
+tags: ['git', 'worktree', 'parallel', 'development', 'spec', 'isolation']
+updated: 2026-01-08
+status: "active"
+allowed-tools:
+  - Read
+  - Write
+  - Grep
+  - Glob
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 ---
 
 # MoAI Worktree Management
@@ -83,7 +72,7 @@ The registry file stores worktree metadata in JSON format. Each worktree entry c
 
 File Structure:
 
-The worktree system creates a dedicated directory structure inside the project's .moai directory. At the worktree root ({repo}/.moai/worktrees/{ProjectName}/), you will find the central registry JSON file and individual directories for each SPEC. Each SPEC directory contains a .git file for worktree metadata and a complete copy of all project files.
+The worktree system creates a dedicated directory structure. At the worktree root (typically ~/worktrees/ProjectName/), you will find the central registry JSON file and individual directories for each SPEC. Each SPEC directory contains a .git file for worktree metadata and a complete copy of all project files.
 
 Detailed Reference: Refer to Worktree Management Module at modules/worktree-management.md
 

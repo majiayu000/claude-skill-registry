@@ -1,13 +1,6 @@
 ---
 name: database-architecture
 description: MANDATORY when designing schemas, writing migrations, creating indexes, or making architectural database decisions - enforces PostgreSQL 18 best practices including AIO, UUIDv7, temporal constraints, and modern indexing strategies
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - mcp__github__*
-model: opus
 ---
 
 # PostgreSQL 18 Database Architecture

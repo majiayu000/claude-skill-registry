@@ -97,19 +97,27 @@ ln-510-test-planner (Orchestrator)
 
 ## Worker Invocation (MANDATORY)
 
-> **CRITICAL:** All delegations MUST use Skill tool. DO NOT execute research, manual tests, or test planning directly.
+> **CRITICAL:** All delegations use Task tool with `subagent_type: "general-purpose"` for context isolation.
 
-| Phase | Worker | Invocation |
-|-------|--------|------------|
-| 2 | ln-511-test-researcher | `Skill(skill: "ln-511-test-researcher")` |
-| 3 | ln-512-manual-tester | `Skill(skill: "ln-512-manual-tester")` |
-| 4 | ln-513-auto-test-planner | `Skill(skill: "ln-513-auto-test-planner")` |
+| Phase | Worker | Purpose |
+|-------|--------|---------|
+| 2 | ln-511-test-researcher | Research real-world problems |
+| 3 | ln-512-manual-tester | Manual AC testing via bash scripts |
+| 4 | ln-513-auto-test-planner | Plan E2E/Integration/Unit tests |
 
-**FORBIDDEN:**
-- Running web searches directly (delegate to ln-511)
-- Creating bash test scripts directly (delegate to ln-512)
-- Creating test tasks directly (delegate to ln-513)
-- Skipping any phase without justification
+**Prompt template:**
+```
+Task(description: "[Phase N] test planning via ln-51X",
+     prompt: "Execute ln-51X-{worker}. Read skill from ln-51X-{worker}/SKILL.md. Story: {storyId}",
+     subagent_type: "general-purpose")
+```
+
+**Anti-Patterns:**
+- ❌ Direct Skill tool invocation without Task wrapper
+- ❌ Running web searches directly (delegate to ln-511)
+- ❌ Creating bash test scripts directly (delegate to ln-512)
+- ❌ Creating test tasks directly (delegate to ln-513)
+- ❌ Skipping any phase without justification
 
 ## Critical Rules
 

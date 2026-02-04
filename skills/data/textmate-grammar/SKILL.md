@@ -1,25 +1,34 @@
 ---
 name: textmate-grammar
 # prettier-ignore
-description: Use when authoring TextMate grammars for syntax highlighting - covers scopes, patterns, and language injection
+description: Use when creating or editing TextMate grammar files for VS Code syntax highlighting - patterns, scopes, and language tokenization
 ---
 
-# TextMate Grammar Authoring
+# TextMate Grammar
 
 ## Quick Start
 
 ```json
 {
-  "scopeName": "source.lea",
-  "patterns": [
-    { "include": "#comments" },
-    { "include": "#keywords" },
-    { "include": "#strings" }
-  ],
+  "scopeName": "source.omg",
+  "patterns": [{ "include": "#main" }],
   "repository": {
-    "comments": {
-      "name": "comment.line.double-dash.lea",
-      "match": "--.*$"
+    "main": {
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#keywords" }
+      ]
+    },
+    "keywords": {
+      "match": "\\b(if|else|while|return)\\b",
+      "name": "keyword.control.omg"
+    },
+    "strings": {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.omg",
+      "patterns": [{ "include": "#escapes" }]
     }
   }
 }
@@ -27,114 +36,30 @@ description: Use when authoring TextMate grammars for syntax highlighting - cove
 
 ## Core Concepts
 
-### Scope Naming Convention
+- **scopeName**: Unique identifier like `source.js`, `text.html`
+- **patterns**: Array of rules applied in order
+- **repository**: Named rule groups for reuse via `#name`
+- **match**: Single-line regex pattern
+- **begin/end**: Multi-line patterns with nested content
 
-```
-comment.line          - Line comments
-comment.block         - Block comments
-keyword.control       - if, else, match, return
-keyword.operator      - +, -, *, /, />
-storage.type          - let, maybe, context
-entity.name.function  - Function names
-variable.other        - Variables
-string.quoted.double  - "strings"
-constant.numeric      - Numbers
-constant.language     - true, false
-```
+## Scope Naming Conventions
 
-### Pattern Types
+| Prefix | Usage |
+|--------|-------|
+| `keyword.control` | if, else, for, return |
+| `keyword.operator` | +, -, =, && |
+| `storage.type` | class, function, var |
+| `entity.name.function` | function names |
+| `entity.name.type` | type/class names |
+| `variable.parameter` | function parameters |
+| `string.quoted` | quoted strings |
+| `comment.line` | single-line comments |
+| `constant.numeric` | numbers |
+| `punctuation.definition` | brackets, braces |
 
-#### Match Pattern
+## Key Patterns
 
-```json
-{
-  "name": "keyword.control.lea",
-  "match": "\\b(if|else|match|return)\\b"
-}
-```
-
-#### Begin/End Pattern
-
-```json
-{
-  "name": "string.quoted.double.lea",
-  "begin": "\"",
-  "end": "\"",
-  "patterns": [
-    {
-      "name": "constant.character.escape.lea",
-      "match": "\\\\."
-    }
-  ]
-}
-```
-
-#### Captures
-
-```json
-{
-  "match": "\\b(let)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*=",
-  "captures": {
-    "1": { "name": "storage.type.lea" },
-    "2": { "name": "entity.name.function.lea" }
-  }
-}
-```
-
-## Lea-Specific Patterns
-
-### Pipe Operators
-
-```json
-{
-  "name": "keyword.operator.pipe.lea",
-  "match": "/>|/>>>|\\\\>|</"
-}
-```
-
-### Decorators
-
-```json
-{
-  "name": "entity.name.decorator.lea",
-  "match": "#[a-zA-Z_][a-zA-Z0-9_]*"
-}
-```
-
-### Type Annotations
-
-```json
-{
-  "match": "(::)\\s*([A-Z][a-zA-Z0-9]*)\\s*(:>)\\s*([A-Z][a-zA-Z0-9]*)",
-  "captures": {
-    "1": { "name": "keyword.operator.type.lea" },
-    "2": { "name": "entity.name.type.lea" },
-    "3": { "name": "keyword.operator.return-type.lea" },
-    "4": { "name": "entity.name.type.lea" }
-  }
-}
-```
-
-### Functions
-
-```json
-{
-  "begin": "\\(",
-  "end": "\\)\\s*(->)",
-  "endCaptures": {
-    "1": { "name": "storage.type.function.arrow.lea" }
-  },
-  "patterns": [
-    { "include": "#parameters" }
-  ]
-}
-```
-
-## Testing
-
-Use VSCode's "Developer: Inspect Editor Tokens and Scopes" command to verify tokenization.
-
-## Reference Files
-
-- [references/scopes.md](references/scopes.md) - Complete scope naming guide
-- [references/regex.md](references/regex.md) - Oniguruma regex reference
+- Use `captures` to assign scopes to regex groups: `"captures": { "1": { "name": "..." } }`
+- Use `contentName` for scope of content between begin/end
+- Escape backslashes in JSON: `\\b` for word boundary
+- Order matters: first matching pattern wins

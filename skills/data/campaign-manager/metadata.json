@@ -1,7 +1,7 @@
 {
   "name": "campaign-manager",
-  "repo": "dengineproblem/agents-monorepo",
-  "path": ".claude/skills/campaign-manager/SKILL.md",
-  "source": "github.com/dengineproblem/agents-monorepo",
-  "downloaded_at": "2026-02-02T02:27:59.654165Z"
+  "repo": "adaptyvbio/protein-design-skills",
+  "path": "skills/campaign-manager/SKILL.md",
+  "source": "github.com/adaptyvbio/protein-design-skills",
+  "downloaded_at": "2026-02-04T02:28:52.737885Z"
 }

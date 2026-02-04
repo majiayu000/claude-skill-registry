@@ -1,12 +1,7 @@
 {
   "name": "extract-version",
-  "description": "Parse and validate semantic version strings from various formats. Use for extracting versions from text, validating semver compliance, or comparing version numbers.",
-  "repo": "maslennikov-ig/claude-code-orchestrator-kit",
-  "category": "development",
-  "tags": [
-    "extract",
-    "version"
-  ],
-  "stars": 27,
-  "source": "SkillsMP Synced Skills"
+  "repo": "maslennikov-ig/BuhBot",
+  "path": ".claude/skills/extract-version/SKILL.md",
+  "source": "github.com/maslennikov-ig/BuhBot",
+  "downloaded_at": "2026-02-04T03:51:09.975964Z"
 }

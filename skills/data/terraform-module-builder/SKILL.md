@@ -1,679 +1,625 @@
 ---
 name: terraform-module-builder
-description: Generate Terraform configuration files for infrastructure as code including AWS, GCP, and Azure resources with modules and best practices. Triggers on "create Terraform config", "generate terraform for", "infrastructure as code", "IaC for AWS/GCP/Azure".
+description: Creates reusable Terraform modules with proper structure, variables, outputs, and state management for infrastructure as code. Use when users request "Terraform setup", "infrastructure as code", "IaC module", "cloud provisioning", or "Terraform module".
 ---
 
 # Terraform Module Builder
 
-Generate production-ready Terraform configurations for cloud infrastructure provisioning.
+Build reusable, production-ready Terraform modules for cloud infrastructure.
 
-## Output Requirements
+## Core Workflow
 
-**File Output:** `.tf` files (main.tf, variables.tf, outputs.tf, etc.)
-**Format:** HashiCorp Configuration Language (HCL)
-**Standards:** Terraform 1.5+
+1. **Define module structure**: Organize files properly
+2. **Declare variables**: Input parameters with validation
+3. **Create resources**: Infrastructure definitions
+4. **Configure outputs**: Export useful values
+5. **Setup state**: Remote backend configuration
+6. **Document**: README and examples
 
-## When Invoked
-
-Immediately generate complete Terraform configurations. Include variables, outputs, and proper resource naming.
-
-## File Structure
+## Module Structure
 
 ```
-terraform/
-├── main.tf           # Main resource definitions
-├── variables.tf      # Input variables
-├── outputs.tf        # Output values
-├── providers.tf      # Provider configurations
-├── versions.tf       # Version constraints
-├── locals.tf         # Local values
-├── data.tf           # Data sources
-└── terraform.tfvars  # Variable values (example)
+modules/
+└── vpc/
+    ├── main.tf           # Primary resources
+    ├── variables.tf      # Input variables
+    ├── outputs.tf        # Output values
+    ├── versions.tf       # Provider versions
+    ├── locals.tf         # Local values
+    ├── data.tf           # Data sources
+    ├── README.md         # Documentation
+    └── examples/
+        └── complete/
+            ├── main.tf
+            └── outputs.tf
 ```
 
-## Complete Templates
+## VPC Module Example
 
-### AWS ECS Fargate Service
+### Main Configuration
+
 ```hcl
-# versions.tf
+# modules/vpc/main.tf
+
+resource "aws_vpc" "main" {
+  cidr_block           = var.cidr_block
+  enable_dns_hostnames = var.enable_dns_hostnames
+  enable_dns_support   = var.enable_dns_support
+
+  tags = merge(
+    var.tags,
+    {
+      Name = var.name
+    }
+  )
+}
+
+resource "aws_internet_gateway" "main" {
+  count = var.create_igw ? 1 : 0
+
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-igw"
+    }
+  )
+}
+
+resource "aws_subnet" "public" {
+  count = length(var.public_subnets)
+
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.public_subnets[count.index]
+  availability_zone       = var.availability_zones[count.index]
+  map_public_ip_on_launch = true
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-public-${var.availability_zones[count.index]}"
+      Tier = "public"
+    }
+  )
+}
+
+resource "aws_subnet" "private" {
+  count = length(var.private_subnets)
+
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.private_subnets[count.index]
+  availability_zone = var.availability_zones[count.index]
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-private-${var.availability_zones[count.index]}"
+      Tier = "private"
+    }
+  )
+}
+
+resource "aws_eip" "nat" {
+  count = var.enable_nat_gateway ? (var.single_nat_gateway ? 1 : length(var.public_subnets)) : 0
+
+  domain = "vpc"
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-nat-${count.index + 1}"
+    }
+  )
+
+  depends_on = [aws_internet_gateway.main]
+}
+
+resource "aws_nat_gateway" "main" {
+  count = var.enable_nat_gateway ? (var.single_nat_gateway ? 1 : length(var.public_subnets)) : 0
+
+  allocation_id = aws_eip.nat[count.index].id
+  subnet_id     = aws_subnet.public[count.index].id
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-nat-${count.index + 1}"
+    }
+  )
+
+  depends_on = [aws_internet_gateway.main]
+}
+
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-public-rt"
+    }
+  )
+}
+
+resource "aws_route" "public_internet" {
+  count = var.create_igw ? 1 : 0
+
+  route_table_id         = aws_route_table.public.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.main[0].id
+}
+
+resource "aws_route_table_association" "public" {
+  count = length(var.public_subnets)
+
+  subnet_id      = aws_subnet.public[count.index].id
+  route_table_id = aws_route_table.public.id
+}
+
+resource "aws_route_table" "private" {
+  count = var.enable_nat_gateway ? (var.single_nat_gateway ? 1 : length(var.private_subnets)) : 0
+
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.name}-private-rt-${count.index + 1}"
+    }
+  )
+}
+
+resource "aws_route" "private_nat" {
+  count = var.enable_nat_gateway ? (var.single_nat_gateway ? 1 : length(var.private_subnets)) : 0
+
+  route_table_id         = aws_route_table.private[count.index].id
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = aws_nat_gateway.main[var.single_nat_gateway ? 0 : count.index].id
+}
+
+resource "aws_route_table_association" "private" {
+  count = length(var.private_subnets)
+
+  subnet_id      = aws_subnet.private[count.index].id
+  route_table_id = aws_route_table.private[var.single_nat_gateway ? 0 : count.index].id
+}
+```
+
+### Variables
+
+```hcl
+# modules/vpc/variables.tf
+
+variable "name" {
+  description = "Name prefix for all resources"
+  type        = string
+
+  validation {
+    condition     = length(var.name) <= 32
+    error_message = "Name must be 32 characters or less."
+  }
+}
+
+variable "cidr_block" {
+  description = "CIDR block for the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+
+  validation {
+    condition     = can(cidrhost(var.cidr_block, 0))
+    error_message = "Must be a valid CIDR block."
+  }
+}
+
+variable "availability_zones" {
+  description = "List of availability zones"
+  type        = list(string)
+}
+
+variable "public_subnets" {
+  description = "List of public subnet CIDR blocks"
+  type        = list(string)
+  default     = []
+
+  validation {
+    condition     = alltrue([for cidr in var.public_subnets : can(cidrhost(cidr, 0))])
+    error_message = "All public subnets must be valid CIDR blocks."
+  }
+}
+
+variable "private_subnets" {
+  description = "List of private subnet CIDR blocks"
+  type        = list(string)
+  default     = []
+}
+
+variable "enable_dns_hostnames" {
+  description = "Enable DNS hostnames in the VPC"
+  type        = bool
+  default     = true
+}
+
+variable "enable_dns_support" {
+  description = "Enable DNS support in the VPC"
+  type        = bool
+  default     = true
+}
+
+variable "create_igw" {
+  description = "Create Internet Gateway"
+  type        = bool
+  default     = true
+}
+
+variable "enable_nat_gateway" {
+  description = "Enable NAT Gateway for private subnets"
+  type        = bool
+  default     = true
+}
+
+variable "single_nat_gateway" {
+  description = "Use a single NAT Gateway (cost savings)"
+  type        = bool
+  default     = false
+}
+
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {}
+}
+```
+
+### Outputs
+
+```hcl
+# modules/vpc/outputs.tf
+
+output "vpc_id" {
+  description = "The ID of the VPC"
+  value       = aws_vpc.main.id
+}
+
+output "vpc_cidr_block" {
+  description = "The CIDR block of the VPC"
+  value       = aws_vpc.main.cidr_block
+}
+
+output "public_subnet_ids" {
+  description = "List of public subnet IDs"
+  value       = aws_subnet.public[*].id
+}
+
+output "private_subnet_ids" {
+  description = "List of private subnet IDs"
+  value       = aws_subnet.private[*].id
+}
+
+output "public_subnet_cidr_blocks" {
+  description = "List of public subnet CIDR blocks"
+  value       = aws_subnet.public[*].cidr_block
+}
+
+output "private_subnet_cidr_blocks" {
+  description = "List of private subnet CIDR blocks"
+  value       = aws_subnet.private[*].cidr_block
+}
+
+output "nat_gateway_ids" {
+  description = "List of NAT Gateway IDs"
+  value       = aws_nat_gateway.main[*].id
+}
+
+output "internet_gateway_id" {
+  description = "The ID of the Internet Gateway"
+  value       = try(aws_internet_gateway.main[0].id, null)
+}
+```
+
+### Versions
+
+```hcl
+# modules/vpc/versions.tf
+
 terraform {
-  required_version = ">= 1.5.0"
+  required_version = ">= 1.0"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.0"
+      version = ">= 5.0"
     }
   }
+}
+```
 
+## Remote State Configuration
+
+```hcl
+# backend.tf
+
+terraform {
   backend "s3" {
     bucket         = "my-terraform-state"
-    key            = "ecs/terraform.tfstate"
+    key            = "production/vpc/terraform.tfstate"
     region         = "us-east-1"
     encrypt        = true
     dynamodb_table = "terraform-locks"
   }
 }
 
-# providers.tf
+# State locking table
+resource "aws_dynamodb_table" "terraform_locks" {
+  name         = "terraform-locks"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "LockID"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
+}
+```
+
+## EKS Module Example
+
+```hcl
+# modules/eks/main.tf
+
+resource "aws_eks_cluster" "main" {
+  name     = var.cluster_name
+  version  = var.cluster_version
+  role_arn = aws_iam_role.cluster.arn
+
+  vpc_config {
+    subnet_ids              = var.subnet_ids
+    endpoint_private_access = var.endpoint_private_access
+    endpoint_public_access  = var.endpoint_public_access
+    security_group_ids      = [aws_security_group.cluster.id]
+  }
+
+  encryption_config {
+    provider {
+      key_arn = var.kms_key_arn
+    }
+    resources = ["secrets"]
+  }
+
+  enabled_cluster_log_types = var.enabled_log_types
+
+  depends_on = [
+    aws_iam_role_policy_attachment.cluster_policy,
+    aws_iam_role_policy_attachment.vpc_resource_controller,
+  ]
+
+  tags = var.tags
+}
+
+resource "aws_eks_node_group" "main" {
+  for_each = var.node_groups
+
+  cluster_name    = aws_eks_cluster.main.name
+  node_group_name = each.key
+  node_role_arn   = aws_iam_role.node.arn
+  subnet_ids      = var.subnet_ids
+
+  instance_types = each.value.instance_types
+  capacity_type  = each.value.capacity_type
+  disk_size      = each.value.disk_size
+
+  scaling_config {
+    desired_size = each.value.desired_size
+    max_size     = each.value.max_size
+    min_size     = each.value.min_size
+  }
+
+  update_config {
+    max_unavailable_percentage = 25
+  }
+
+  labels = each.value.labels
+
+  dynamic "taint" {
+    for_each = each.value.taints
+    content {
+      key    = taint.value.key
+      value  = taint.value.value
+      effect = taint.value.effect
+    }
+  }
+
+  tags = merge(var.tags, each.value.tags)
+
+  depends_on = [
+    aws_iam_role_policy_attachment.node_policy,
+    aws_iam_role_policy_attachment.cni_policy,
+    aws_iam_role_policy_attachment.ecr_policy,
+  ]
+
+  lifecycle {
+    ignore_changes = [scaling_config[0].desired_size]
+  }
+}
+
+# modules/eks/variables.tf
+
+variable "cluster_name" {
+  description = "Name of the EKS cluster"
+  type        = string
+}
+
+variable "cluster_version" {
+  description = "Kubernetes version"
+  type        = string
+  default     = "1.28"
+}
+
+variable "node_groups" {
+  description = "Map of node group configurations"
+  type = map(object({
+    instance_types = list(string)
+    capacity_type  = string
+    disk_size      = number
+    desired_size   = number
+    max_size       = number
+    min_size       = number
+    labels         = map(string)
+    taints = list(object({
+      key    = string
+      value  = string
+      effect = string
+    }))
+    tags = map(string)
+  }))
+}
+```
+
+## Environment Configuration
+
+```hcl
+# environments/production/main.tf
+
+terraform {
+  required_version = ">= 1.0"
+
+  backend "s3" {
+    bucket         = "company-terraform-state"
+    key            = "production/main.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "terraform-locks"
+  }
+}
+
 provider "aws" {
-  region = var.aws_region
+  region = var.region
 
   default_tags {
     tags = {
-      Environment = var.environment
+      Environment = "production"
+      ManagedBy   = "terraform"
       Project     = var.project_name
-      ManagedBy   = "Terraform"
     }
   }
 }
 
-# variables.tf
-variable "aws_region" {
-  description = "AWS region"
-  type        = string
-  default     = "us-east-1"
+module "vpc" {
+  source = "../../modules/vpc"
+
+  name               = "${var.project_name}-production"
+  cidr_block         = "10.0.0.0/16"
+  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  public_subnets     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  private_subnets    = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
+  enable_nat_gateway = true
+  single_nat_gateway = false
+
+  tags = var.tags
 }
 
-variable "environment" {
-  description = "Environment name"
-  type        = string
-  validation {
-    condition     = contains(["dev", "staging", "prod"], var.environment)
-    error_message = "Environment must be dev, staging, or prod."
+module "eks" {
+  source = "../../modules/eks"
+
+  cluster_name    = "${var.project_name}-production"
+  cluster_version = "1.28"
+  subnet_ids      = module.vpc.private_subnet_ids
+
+  node_groups = {
+    general = {
+      instance_types = ["m6i.xlarge"]
+      capacity_type  = "ON_DEMAND"
+      disk_size      = 100
+      desired_size   = 3
+      max_size       = 10
+      min_size       = 2
+      labels         = { workload = "general" }
+      taints         = []
+      tags           = {}
+    }
+    spot = {
+      instance_types = ["m6i.xlarge", "m5.xlarge"]
+      capacity_type  = "SPOT"
+      disk_size      = 50
+      desired_size   = 2
+      max_size       = 20
+      min_size       = 0
+      labels         = { workload = "batch" }
+      taints = [{
+        key    = "spot"
+        value  = "true"
+        effect = "NO_SCHEDULE"
+      }]
+      tags = {}
+    }
   }
-}
 
-variable "project_name" {
-  description = "Project name"
-  type        = string
+  tags = var.tags
 }
+```
 
-variable "app_name" {
-  description = "Application name"
-  type        = string
-}
+## Locals and Data Sources
 
-variable "container_image" {
-  description = "Docker image for the container"
-  type        = string
-}
+```hcl
+# modules/vpc/locals.tf
 
-variable "container_port" {
-  description = "Port the container listens on"
-  type        = number
-  default     = 8080
-}
-
-variable "cpu" {
-  description = "CPU units for the task"
-  type        = number
-  default     = 256
-}
-
-variable "memory" {
-  description = "Memory for the task in MB"
-  type        = number
-  default     = 512
-}
-
-variable "desired_count" {
-  description = "Desired number of tasks"
-  type        = number
-  default     = 2
-}
-
-variable "min_capacity" {
-  description = "Minimum number of tasks"
-  type        = number
-  default     = 1
-}
-
-variable "max_capacity" {
-  description = "Maximum number of tasks"
-  type        = number
-  default     = 10
-}
-
-# locals.tf
 locals {
-  name_prefix = "${var.project_name}-${var.environment}"
+  az_count = length(var.availability_zones)
 
-  common_tags = {
-    Application = var.app_name
-  }
+  subnet_bits = ceil(log(local.az_count * 2, 2))
+
+  public_subnet_cidrs = [
+    for i in range(local.az_count) :
+    cidrsubnet(var.cidr_block, local.subnet_bits, i)
+  ]
+
+  private_subnet_cidrs = [
+    for i in range(local.az_count) :
+    cidrsubnet(var.cidr_block, local.subnet_bits, i + local.az_count)
+  ]
+
+  common_tags = merge(
+    var.tags,
+    {
+      Module    = "vpc"
+      CreatedBy = "terraform"
+    }
+  )
 }
 
-# data.tf
+# modules/vpc/data.tf
+
+data "aws_region" "current" {}
+
 data "aws_availability_zones" "available" {
   state = "available"
 }
 
 data "aws_caller_identity" "current" {}
-
-# main.tf
-
-# VPC
-module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 5.0"
-
-  name = "${local.name_prefix}-vpc"
-  cidr = "10.0.0.0/16"
-
-  azs             = slice(data.aws_availability_zones.available.names, 0, 3)
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-
-  enable_nat_gateway     = true
-  single_nat_gateway     = var.environment != "prod"
-  enable_dns_hostnames   = true
-  enable_dns_support     = true
-
-  tags = local.common_tags
-}
-
-# ECS Cluster
-resource "aws_ecs_cluster" "main" {
-  name = "${local.name_prefix}-cluster"
-
-  setting {
-    name  = "containerInsights"
-    value = "enabled"
-  }
-
-  tags = local.common_tags
-}
-
-resource "aws_ecs_cluster_capacity_providers" "main" {
-  cluster_name = aws_ecs_cluster.main.name
-
-  capacity_providers = ["FARGATE", "FARGATE_SPOT"]
-
-  default_capacity_provider_strategy {
-    base              = 1
-    weight            = 100
-    capacity_provider = "FARGATE"
-  }
-}
-
-# Security Groups
-resource "aws_security_group" "alb" {
-  name        = "${local.name_prefix}-alb-sg"
-  description = "Security group for ALB"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    description = "HTTP"
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "HTTPS"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = merge(local.common_tags, {
-    Name = "${local.name_prefix}-alb-sg"
-  })
-}
-
-resource "aws_security_group" "ecs_tasks" {
-  name        = "${local.name_prefix}-ecs-tasks-sg"
-  description = "Security group for ECS tasks"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    description     = "Allow traffic from ALB"
-    from_port       = var.container_port
-    to_port         = var.container_port
-    protocol        = "tcp"
-    security_groups = [aws_security_group.alb.id]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = merge(local.common_tags, {
-    Name = "${local.name_prefix}-ecs-tasks-sg"
-  })
-}
-
-# Application Load Balancer
-resource "aws_lb" "main" {
-  name               = "${local.name_prefix}-alb"
-  internal           = false
-  load_balancer_type = "application"
-  security_groups    = [aws_security_group.alb.id]
-  subnets            = module.vpc.public_subnets
-
-  enable_deletion_protection = var.environment == "prod"
-
-  tags = local.common_tags
-}
-
-resource "aws_lb_target_group" "main" {
-  name        = "${local.name_prefix}-tg"
-  port        = var.container_port
-  protocol    = "HTTP"
-  vpc_id      = module.vpc.vpc_id
-  target_type = "ip"
-
-  health_check {
-    enabled             = true
-    healthy_threshold   = 2
-    unhealthy_threshold = 3
-    timeout             = 5
-    interval            = 30
-    path                = "/health"
-    matcher             = "200"
-  }
-
-  tags = local.common_tags
-}
-
-resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.main.arn
-  port              = 80
-  protocol          = "HTTP"
-
-  default_action {
-    type = "redirect"
-
-    redirect {
-      port        = "443"
-      protocol    = "HTTPS"
-      status_code = "HTTP_301"
-    }
-  }
-}
-
-# IAM Roles
-resource "aws_iam_role" "ecs_task_execution" {
-  name = "${local.name_prefix}-ecs-task-execution"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Principal = {
-          Service = "ecs-tasks.amazonaws.com"
-        }
-      }
-    ]
-  })
-
-  tags = local.common_tags
-}
-
-resource "aws_iam_role_policy_attachment" "ecs_task_execution" {
-  role       = aws_iam_role.ecs_task_execution.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
-}
-
-resource "aws_iam_role" "ecs_task" {
-  name = "${local.name_prefix}-ecs-task"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Principal = {
-          Service = "ecs-tasks.amazonaws.com"
-        }
-      }
-    ]
-  })
-
-  tags = local.common_tags
-}
-
-# CloudWatch Log Group
-resource "aws_cloudwatch_log_group" "main" {
-  name              = "/ecs/${local.name_prefix}"
-  retention_in_days = var.environment == "prod" ? 90 : 14
-
-  tags = local.common_tags
-}
-
-# ECS Task Definition
-resource "aws_ecs_task_definition" "main" {
-  family                   = "${local.name_prefix}-task"
-  network_mode             = "awsvpc"
-  requires_compatibilities = ["FARGATE"]
-  cpu                      = var.cpu
-  memory                   = var.memory
-  execution_role_arn       = aws_iam_role.ecs_task_execution.arn
-  task_role_arn            = aws_iam_role.ecs_task.arn
-
-  container_definitions = jsonencode([
-    {
-      name      = var.app_name
-      image     = var.container_image
-      essential = true
-
-      portMappings = [
-        {
-          containerPort = var.container_port
-          hostPort      = var.container_port
-          protocol      = "tcp"
-        }
-      ]
-
-      environment = [
-        {
-          name  = "NODE_ENV"
-          value = var.environment
-        },
-        {
-          name  = "PORT"
-          value = tostring(var.container_port)
-        }
-      ]
-
-      logConfiguration = {
-        logDriver = "awslogs"
-        options = {
-          "awslogs-group"         = aws_cloudwatch_log_group.main.name
-          "awslogs-region"        = var.aws_region
-          "awslogs-stream-prefix" = "ecs"
-        }
-      }
-
-      healthCheck = {
-        command     = ["CMD-SHELL", "wget -q -O /dev/null http://localhost:${var.container_port}/health || exit 1"]
-        interval    = 30
-        timeout     = 5
-        retries     = 3
-        startPeriod = 60
-      }
-    }
-  ])
-
-  tags = local.common_tags
-}
-
-# ECS Service
-resource "aws_ecs_service" "main" {
-  name                               = "${local.name_prefix}-service"
-  cluster                            = aws_ecs_cluster.main.id
-  task_definition                    = aws_ecs_task_definition.main.arn
-  desired_count                      = var.desired_count
-  deployment_minimum_healthy_percent = 100
-  deployment_maximum_percent         = 200
-  launch_type                        = "FARGATE"
-  scheduling_strategy                = "REPLICA"
-  platform_version                   = "LATEST"
-
-  network_configuration {
-    security_groups  = [aws_security_group.ecs_tasks.id]
-    subnets          = module.vpc.private_subnets
-    assign_public_ip = false
-  }
-
-  load_balancer {
-    target_group_arn = aws_lb_target_group.main.arn
-    container_name   = var.app_name
-    container_port   = var.container_port
-  }
-
-  deployment_circuit_breaker {
-    enable   = true
-    rollback = true
-  }
-
-  lifecycle {
-    ignore_changes = [desired_count]
-  }
-
-  tags = local.common_tags
-}
-
-# Auto Scaling
-resource "aws_appautoscaling_target" "ecs" {
-  max_capacity       = var.max_capacity
-  min_capacity       = var.min_capacity
-  resource_id        = "service/${aws_ecs_cluster.main.name}/${aws_ecs_service.main.name}"
-  scalable_dimension = "ecs:service:DesiredCount"
-  service_namespace  = "ecs"
-}
-
-resource "aws_appautoscaling_policy" "cpu" {
-  name               = "${local.name_prefix}-cpu-autoscaling"
-  policy_type        = "TargetTrackingScaling"
-  resource_id        = aws_appautoscaling_target.ecs.resource_id
-  scalable_dimension = aws_appautoscaling_target.ecs.scalable_dimension
-  service_namespace  = aws_appautoscaling_target.ecs.service_namespace
-
-  target_tracking_scaling_policy_configuration {
-    predefined_metric_specification {
-      predefined_metric_type = "ECSServiceAverageCPUUtilization"
-    }
-    target_value       = 70.0
-    scale_in_cooldown  = 300
-    scale_out_cooldown = 60
-  }
-}
-
-# outputs.tf
-output "vpc_id" {
-  description = "VPC ID"
-  value       = module.vpc.vpc_id
-}
-
-output "cluster_name" {
-  description = "ECS Cluster name"
-  value       = aws_ecs_cluster.main.name
-}
-
-output "service_name" {
-  description = "ECS Service name"
-  value       = aws_ecs_service.main.name
-}
-
-output "alb_dns_name" {
-  description = "ALB DNS name"
-  value       = aws_lb.main.dns_name
-}
-
-output "alb_zone_id" {
-  description = "ALB Zone ID"
-  value       = aws_lb.main.zone_id
-}
-
-output "log_group_name" {
-  description = "CloudWatch Log Group name"
-  value       = aws_cloudwatch_log_group.main.name
-}
-```
-
-### AWS S3 + CloudFront Static Site
-```hcl
-# main.tf - Static Website
-
-# S3 Bucket
-resource "aws_s3_bucket" "website" {
-  bucket = "${var.domain_name}-website"
-
-  tags = local.common_tags
-}
-
-resource "aws_s3_bucket_public_access_block" "website" {
-  bucket = aws_s3_bucket.website.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
-
-resource "aws_s3_bucket_versioning" "website" {
-  bucket = aws_s3_bucket.website.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
-# CloudFront Origin Access Control
-resource "aws_cloudfront_origin_access_control" "website" {
-  name                              = "${local.name_prefix}-oac"
-  description                       = "OAC for ${var.domain_name}"
-  origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
-}
-
-# CloudFront Distribution
-resource "aws_cloudfront_distribution" "website" {
-  enabled             = true
-  is_ipv6_enabled     = true
-  comment             = "Distribution for ${var.domain_name}"
-  default_root_object = "index.html"
-  price_class         = "PriceClass_100"
-  aliases             = [var.domain_name, "www.${var.domain_name}"]
-
-  origin {
-    domain_name              = aws_s3_bucket.website.bucket_regional_domain_name
-    origin_access_control_id = aws_cloudfront_origin_access_control.website.id
-    origin_id                = "S3-${aws_s3_bucket.website.id}"
-  }
-
-  default_cache_behavior {
-    allowed_methods  = ["GET", "HEAD", "OPTIONS"]
-    cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "S3-${aws_s3_bucket.website.id}"
-
-    forwarded_values {
-      query_string = false
-      cookies {
-        forward = "none"
-      }
-    }
-
-    viewer_protocol_policy = "redirect-to-https"
-    min_ttl                = 0
-    default_ttl            = 3600
-    max_ttl                = 86400
-    compress               = true
-  }
-
-  # SPA error handling
-  custom_error_response {
-    error_code         = 404
-    response_code      = 200
-    response_page_path = "/index.html"
-  }
-
-  custom_error_response {
-    error_code         = 403
-    response_code      = 200
-    response_page_path = "/index.html"
-  }
-
-  restrictions {
-    geo_restriction {
-      restriction_type = "none"
-    }
-  }
-
-  viewer_certificate {
-    acm_certificate_arn      = var.acm_certificate_arn
-    ssl_support_method       = "sni-only"
-    minimum_protocol_version = "TLSv1.2_2021"
-  }
-
-  tags = local.common_tags
-}
-
-# S3 Bucket Policy
-resource "aws_s3_bucket_policy" "website" {
-  bucket = aws_s3_bucket.website.id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "AllowCloudFrontServicePrincipal"
-        Effect = "Allow"
-        Principal = {
-          Service = "cloudfront.amazonaws.com"
-        }
-        Action   = "s3:GetObject"
-        Resource = "${aws_s3_bucket.website.arn}/*"
-        Condition = {
-          StringEquals = {
-            "AWS:SourceArn" = aws_cloudfront_distribution.website.arn
-          }
-        }
-      }
-    ]
-  })
-}
 ```
 
 ## Best Practices
 
-### Variable Validation
-```hcl
-variable "environment" {
-  type = string
-  validation {
-    condition     = contains(["dev", "staging", "prod"], var.environment)
-    error_message = "Environment must be dev, staging, or prod."
-  }
-}
-```
+1. **Version constraints**: Pin provider versions
+2. **Variable validation**: Add validation rules
+3. **Consistent naming**: Use name prefixes
+4. **Default tags**: Apply common tags
+5. **Remote state**: Use S3 + DynamoDB locking
+6. **Module composition**: Small, focused modules
+7. **Documentation**: README with examples
+8. **Output everything**: Useful values for consumers
 
-### Resource Naming
-```hcl
-locals {
-  name_prefix = "${var.project}-${var.environment}"
-}
+## Output Checklist
 
-resource "aws_s3_bucket" "example" {
-  bucket = "${local.name_prefix}-data"
-}
-```
+Every Terraform module should include:
 
-## Validation Checklist
-
-Before outputting, verify:
-- [ ] `required_version` constraint in versions.tf
-- [ ] Provider versions pinned
-- [ ] Variables have descriptions and types
-- [ ] Sensitive variables marked `sensitive = true`
-- [ ] Resources have tags
-- [ ] Outputs have descriptions
-- [ ] Security groups follow least privilege
-
-## Example Invocations
-
-**Prompt:** "Create Terraform config for AWS VPC with public/private subnets"
-**Output:** Complete Terraform with VPC, subnets, NAT, route tables.
-
-**Prompt:** "Generate Terraform for RDS PostgreSQL with read replicas"
-**Output:** Complete Terraform with RDS, parameter groups, security groups.
-
-**Prompt:** "Terraform module for Kubernetes cluster on GCP"
-**Output:** Complete Terraform with GKE cluster, node pools, networking.
+- [ ] Proper file structure (main, variables, outputs, versions)
+- [ ] Variable validation rules
+- [ ] Meaningful default values
+- [ ] Comprehensive outputs
+- [ ] Version constraints
+- [ ] Remote state configuration
+- [ ] Tags for all resources
+- [ ] README with examples
+- [ ] Locals for computed values
+- [ ] Data sources for dynamic values

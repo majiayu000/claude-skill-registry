@@ -5,7 +5,7 @@ description: "Creates file-change rules that enforce guidelines during AI sessio
 
 # deepwork_rules
 
-Creates file-change rules that enforce guidelines during AI sessions. Use when automating documentation sync or code review triggers.
+**Multi-step workflow**: Creates file-change rules that enforce guidelines during AI sessions. Use when automating documentation sync or code review triggers.
 
 > **CRITICAL**: Always invoke steps using the Skill tool. Never copy/paste step instructions directly.
 
@@ -34,20 +34,16 @@ Example use cases:
 - Auto-run `uv sync` when pyproject.toml changes (command action)
 
 
-## Standalone Skills
+## Available Steps
 
-These skills can be run independently at any time:
-
-- **define** - Creates a rule file that triggers when specified files change. Use when setting up documentation sync, code review requirements, or automated commands.
-  Command: `/deepwork_rules.define`
-
+1. **define** - Creates a rule file that triggers when specified files change. Use when setting up documentation sync, code review requirements, or automated commands.
 
 ## Execution Instructions
 
 ### Step 1: Analyze Intent
 
 Parse any text following `/deepwork_rules` to determine user intent:
-- "define" or related terms → run standalone skill `deepwork_rules.define`
+- "define" or related terms → start at `deepwork_rules.define`
 
 ### Step 2: Invoke Starting Step
 
@@ -59,11 +55,9 @@ Skill tool: deepwork_rules.define
 ### Step 3: Continue Workflow Automatically
 
 After each step completes:
-1. Check if there's a next step in the workflow sequence
+1. Check if there's a next step in the sequence
 2. Invoke the next step using the Skill tool
 3. Repeat until workflow is complete or user intervenes
-
-**Note**: Standalone skills do not auto-continue to other steps.
 
 ### Handling Ambiguous Intent
 
@@ -74,7 +68,7 @@ If user intent is unclear, use AskUserQuestion to clarify:
 ## Guardrails
 
 - Do NOT copy/paste step instructions directly; always use the Skill tool to invoke steps
-- Do NOT skip steps in a workflow unless the user explicitly requests it
+- Do NOT skip steps in the workflow unless the user explicitly requests it
 - Do NOT proceed to the next step if the current step's outputs are incomplete
 - Do NOT make assumptions about user intent; ask for clarification when ambiguous
 

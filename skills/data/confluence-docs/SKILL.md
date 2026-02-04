@@ -1,274 +1,507 @@
 ---
 name: confluence-docs
-description: Documentation templates for ADRs, runbooks, and architecture docs. Use when creating architectural decision records, operational runbooks, or technical documentation.
+description: Atlassian Confluence integration for enterprise documentation. Create and update pages via API, manage spaces and permissions, handle content migration, and sync between Markdown and Confluence.
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep
+backlog-id: SK-013
+metadata:
+  author: babysitter-sdk
+  version: "1.0.0"
 ---
 
-# Confluence Documentation Skill
+# Confluence Integration Skill
 
-## Purpose
+Atlassian Confluence integration for enterprise documentation.
 
-Provide standardized templates for creating technical documentation. These templates ensure consistent, high-quality documentation across the project.
+## Capabilities
 
-## When This Skill Applies
+- Page creation and updates via API
+- Space management and permissions
+- Macro and template management
+- Content migration (Markdown to Confluence)
+- Attachment handling
+- Label and metadata management
+- Confluence Cloud and Server support
+- Confluence-to-Markdown export
 
-- Creating Architecture Decision Records (ADRs)
-- Writing operational runbooks
-- Documenting system architecture
-- Creating technical specifications
-- Writing knowledge transfer (KT) documents
+## Usage
 
-## Existing ADRs (Reference)
+Invoke this skill when you need to:
+- Sync documentation to Confluence
+- Migrate content between formats
+- Manage Confluence spaces programmatically
+- Automate page updates from CI/CD
+- Export Confluence to Markdown
 
-| ADR     | Location                                                   | Topic                     |
-| ------- | ---------------------------------------------------------- | ------------------------- |
-| ADR-002 | `docs/adr/ADR-002-constants-unification.md`                | Constants organization    |
-| ADR-003 | `docs/adr/ADR-003-dependency-upgrade-typescript-fixes.md`  | Dependency upgrades       |
-| ADR-004 | `docs/adr/ADR-004-server-component-data-access-pattern.md` | Server component patterns |
-| ADR-005 | `docs/adr/ADR-005-ci-infrastructure-services.md`           | CI infrastructure         |
-| ADR-006 | `docs/adr/ADR-006-bonus-pdf-private-bucket-security.md`    | Security patterns         |
-| ADR-007 | `docs/adr/ADR-007-rendertrust-marketing-pages.md`          | Marketing architecture    |
+## Inputs
 
-## ADR Template (Architecture Decision Record)
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| action | string | Yes | create, update, migrate, export |
+| baseUrl | string | Yes | Confluence instance URL |
+| spaceKey | string | Yes | Target space key |
+| sourcePath | string | No | Source Markdown files |
+| pageId | string | No | Specific page ID for updates |
+| parentPageId | string | No | Parent page for hierarchy |
 
-```markdown
-# ADR-XXX: [Title]
+### Input Example
 
-## Status
+```json
+{
+  "action": "migrate",
+  "baseUrl": "https://company.atlassian.net/wiki",
+  "spaceKey": "DOCS",
+  "sourcePath": "./docs",
+  "parentPageId": "123456"
+}
+```
 
-[Proposed | Accepted | Deprecated | Superseded]
+## Configuration
 
-## Context
+### confluence.config.json
 
-What is the issue that we're seeing that motivates this decision?
+```json
+{
+  "baseUrl": "https://company.atlassian.net/wiki",
+  "auth": {
+    "type": "token",
+    "email": "${CONFLUENCE_EMAIL}",
+    "token": "${CONFLUENCE_TOKEN}"
+  },
+  "space": {
+    "key": "DOCS",
+    "name": "Documentation"
+  },
+  "migration": {
+    "preserveStructure": true,
+    "convertTables": true,
+    "uploadImages": true,
+    "macroMapping": {
+      "note": "info",
+      "warning": "warning",
+      "code": "code"
+    }
+  },
+  "sync": {
+    "dryRun": false,
+    "updateExisting": true,
+    "createMissing": true,
+    "archiveRemoved": false
+  }
+}
+```
 
-## Decision
+## API Integration
 
-What is the change that we're proposing and/or doing?
+### Confluence REST API Client
 
-## Consequences
+```javascript
+const ConfluenceClient = require('confluence-api');
 
-### Positive
+class ConfluenceManager {
+  constructor(config) {
+    this.client = new ConfluenceClient({
+      username: config.email,
+      password: config.token,
+      baseUrl: config.baseUrl
+    });
+  }
 
-- [Benefit 1]
-- [Benefit 2]
+  // Create a new page
+  async createPage(spaceKey, title, content, parentId = null) {
+    const page = {
+      type: 'page',
+      title,
+      space: { key: spaceKey },
+      body: {
+        storage: {
+          value: content,
+          representation: 'storage'
+        }
+      }
+    };
 
-### Negative
+    if (parentId) {
+      page.ancestors = [{ id: parentId }];
+    }
 
-- [Tradeoff 1]
-- [Tradeoff 2]
+    return await this.client.postContent(page);
+  }
 
-### Neutral
+  // Update existing page
+  async updatePage(pageId, title, content, version) {
+    const page = {
+      id: pageId,
+      type: 'page',
+      title,
+      version: { number: version + 1 },
+      body: {
+        storage: {
+          value: content,
+          representation: 'storage'
+        }
+      }
+    };
 
-- [Observation]
+    return await this.client.putContent(page);
+  }
 
-## Implementation Notes
+  // Get page by title
+  async getPageByTitle(spaceKey, title) {
+    const result = await this.client.getContentBySpaceKey(spaceKey, {
+      title,
+      expand: 'version,body.storage'
+    });
+    return result.results[0] || null;
+  }
 
-How should this decision be implemented?
+  // Upload attachment
+  async uploadAttachment(pageId, filePath, comment = '') {
+    const form = new FormData();
+    form.append('file', fs.createReadStream(filePath));
+    form.append('comment', comment);
 
-## Related Decisions
+    return await this.client.createAttachment(pageId, form);
+  }
 
-- ADR-XXX: [Related decision]
+  // Add labels
+  async addLabels(pageId, labels) {
+    const labelPayload = labels.map(name => ({
+      prefix: 'global',
+      name
+    }));
+
+    return await this.client.postLabels(pageId, labelPayload);
+  }
+}
+```
+
+## Markdown to Confluence Conversion
+
+### Converter
+
+```javascript
+const marked = require('marked');
+
+class MarkdownToConfluence {
+  constructor(options = {}) {
+    this.options = options;
+    this.attachments = [];
+  }
+
+  convert(markdown, metadata = {}) {
+    // Parse front matter
+    const { content, frontMatter } = this.parseFrontMatter(markdown);
+
+    // Convert markdown to HTML
+    let html = marked.parse(content);
+
+    // Convert to Confluence storage format
+    html = this.convertToStorageFormat(html);
+
+    // Handle macros
+    html = this.convertMacros(html);
+
+    // Handle code blocks
+    html = this.convertCodeBlocks(html);
+
+    // Handle images
+    html = this.convertImages(html);
+
+    // Handle tables
+    html = this.convertTables(html);
+
+    return {
+      title: frontMatter.title || metadata.title,
+      content: html,
+      labels: frontMatter.tags || [],
+      attachments: this.attachments
+    };
+  }
+
+  convertMacros(html) {
+    // Convert admonitions to Confluence macros
+    const macroMap = {
+      'note': 'info',
+      'warning': 'warning',
+      'tip': 'tip',
+      'danger': 'warning'
+    };
+
+    for (const [mdType, confType] of Object.entries(macroMap)) {
+      const regex = new RegExp(`<div class="${mdType}">([\\s\\S]*?)</div>`, 'g');
+      html = html.replace(regex, (match, content) => {
+        return `<ac:structured-macro ac:name="${confType}">
+          <ac:rich-text-body>${content}</ac:rich-text-body>
+        </ac:structured-macro>`;
+      });
+    }
+
+    return html;
+  }
+
+  convertCodeBlocks(html) {
+    // Convert code blocks to Confluence code macro
+    return html.replace(
+      /<pre><code class="language-(\w+)">([\s\S]*?)<\/code><\/pre>/g,
+      (match, language, code) => {
+        const decodedCode = this.decodeHtml(code);
+        return `<ac:structured-macro ac:name="code">
+          <ac:parameter ac:name="language">${language}</ac:parameter>
+          <ac:plain-text-body><![CDATA[${decodedCode}]]></ac:plain-text-body>
+        </ac:structured-macro>`;
+      }
+    );
+  }
+
+  convertImages(html) {
+    // Convert images to Confluence attachments
+    return html.replace(
+      /<img src="([^"]+)" alt="([^"]*)"[^>]*>/g,
+      (match, src, alt) => {
+        if (src.startsWith('http')) {
+          // External image
+          return `<ac:image><ri:url ri:value="${src}" /></ac:image>`;
+        } else {
+          // Local attachment
+          const filename = path.basename(src);
+          this.attachments.push({ src, filename });
+          return `<ac:image><ri:attachment ri:filename="${filename}" /></ac:image>`;
+        }
+      }
+    );
+  }
+
+  convertTables(html) {
+    // Confluence uses standard HTML tables but needs specific attributes
+    return html.replace(/<table>/g, '<table class="wrapped">');
+  }
+}
+```
+
+## Confluence to Markdown Export
+
+### Exporter
+
+```javascript
+class ConfluenceToMarkdown {
+  constructor(client) {
+    this.client = client;
+  }
+
+  async exportSpace(spaceKey, outputDir) {
+    const pages = await this.getAllPages(spaceKey);
+    const structure = this.buildHierarchy(pages);
+
+    for (const page of pages) {
+      const markdown = await this.exportPage(page);
+      const filePath = this.getFilePath(page, structure, outputDir);
+
+      await fs.mkdir(path.dirname(filePath), { recursive: true });
+      await fs.writeFile(filePath, markdown);
+    }
+
+    return { exported: pages.length };
+  }
+
+  async exportPage(page) {
+    const content = page.body.storage.value;
+
+    // Convert Confluence storage format to Markdown
+    let markdown = this.convertToMarkdown(content);
+
+    // Add front matter
+    const frontMatter = {
+      title: page.title,
+      confluence_id: page.id,
+      last_modified: page.version.when
+    };
+
+    return `---
+${yaml.stringify(frontMatter)}---
+
+${markdown}`;
+  }
+
+  convertToMarkdown(storage) {
+    let md = storage;
+
+    // Convert code macro
+    md = md.replace(
+      /<ac:structured-macro ac:name="code"[^>]*>[\s\S]*?<ac:parameter ac:name="language">(\w+)<\/ac:parameter>[\s\S]*?<ac:plain-text-body><!\[CDATA\[([\s\S]*?)\]\]><\/ac:plain-text-body>[\s\S]*?<\/ac:structured-macro>/g,
+      (match, lang, code) => `\`\`\`${lang}\n${code}\n\`\`\``
+    );
+
+    // Convert info macro
+    md = md.replace(
+      /<ac:structured-macro ac:name="(info|warning|tip)"[^>]*>[\s\S]*?<ac:rich-text-body>([\s\S]*?)<\/ac:rich-text-body>[\s\S]*?<\/ac:structured-macro>/g,
+      (match, type, content) => `> **${type.toUpperCase()}:** ${this.stripHtml(content)}`
+    );
+
+    // Convert headings, lists, etc.
+    md = this.convertHtmlToMarkdown(md);
+
+    return md;
+  }
+}
+```
+
+## Sync Workflow
+
+### Bidirectional Sync
+
+```javascript
+async function syncDocumentation(config) {
+  const confluence = new ConfluenceManager(config);
+  const converter = new MarkdownToConfluence(config.migration);
+
+  // Get local files
+  const localFiles = await glob('docs/**/*.md');
+
+  // Get Confluence pages
+  const pages = await confluence.getSpaceContent(config.space.key);
+
+  const results = {
+    created: [],
+    updated: [],
+    skipped: [],
+    errors: []
+  };
+
+  for (const file of localFiles) {
+    try {
+      const markdown = await fs.readFile(file, 'utf8');
+      const converted = converter.convert(markdown, { file });
+
+      // Check if page exists
+      const existing = await confluence.getPageByTitle(
+        config.space.key,
+        converted.title
+      );
+
+      if (existing) {
+        if (config.sync.updateExisting) {
+          await confluence.updatePage(
+            existing.id,
+            converted.title,
+            converted.content,
+            existing.version.number
+          );
+          results.updated.push(file);
+        } else {
+          results.skipped.push(file);
+        }
+      } else if (config.sync.createMissing) {
+        await confluence.createPage(
+          config.space.key,
+          converted.title,
+          converted.content,
+          config.parentPageId
+        );
+        results.created.push(file);
+      }
+
+      // Upload attachments
+      for (const attachment of converted.attachments) {
+        await confluence.uploadAttachment(
+          existing?.id || results.created[results.created.length - 1].id,
+          attachment.src
+        );
+      }
+    } catch (error) {
+      results.errors.push({ file, error: error.message });
+    }
+  }
+
+  return results;
+}
+```
+
+## Space Management
+
+### Create Space
+
+```javascript
+async function createDocumentationSpace(config) {
+  const client = new ConfluenceManager(config);
+
+  const space = await client.client.postSpace({
+    key: config.space.key,
+    name: config.space.name,
+    description: {
+      plain: { value: config.space.description, representation: 'plain' }
+    },
+    permissions: [
+      {
+        subjects: { group: { name: 'confluence-users' } },
+        operation: { key: 'read', target: 'space' }
+      }
+    ]
+  });
+
+  // Create home page
+  await client.createPage(
+    config.space.key,
+    'Home',
+    '<h1>Welcome to Documentation</h1>',
+    null
+  );
+
+  return space;
+}
+```
+
+## Workflow
+
+1. **Configure** - Set up Confluence credentials and space
+2. **Convert** - Transform Markdown to Confluence format
+3. **Sync** - Upload/update pages via API
+4. **Attachments** - Upload images and files
+5. **Labels** - Apply labels for organization
+6. **Verify** - Check page rendering
+
+## Dependencies
+
+```json
+{
+  "devDependencies": {
+    "confluence-api": "^1.4.0",
+    "marked": "^12.0.0",
+    "gray-matter": "^4.0.0",
+    "form-data": "^4.0.0"
+  }
+}
+```
+
+## CLI Commands
+
+```bash
+# Sync Markdown to Confluence
+node scripts/confluence-sync.js --config confluence.config.json
+
+# Export Confluence to Markdown
+node scripts/confluence-export.js --space DOCS --output ./exported
+
+# Create new space
+node scripts/confluence-space.js create --key NEWDOCS --name "New Documentation"
+```
+
+## Best Practices Applied
+
+- Use page templates for consistency
+- Organize with parent pages
+- Apply labels for discoverability
+- Keep source of truth in Git
+- Sync on merge to main branch
+- Handle attachments properly
 
 ## References
 
-- [Link to relevant documentation]
-```
-
-## Runbook Template
-
-```markdown
-# Runbook: [Operation Name]
-
-## Overview
-
-Brief description of what this runbook covers.
-
-## Prerequisites
-
-- [ ] Access to [system]
-- [ ] Required permissions
-- [ ] Tools installed
-
-## Procedure
-
-### Step 1: [Action Name]
-
-\`\`\`bash
-
-# Command to execute
-
-\`\`\`
-
-**Expected output**: Description of what you should see
-
-**If error**: What to do if something goes wrong
-
-### Step 2: [Action Name]
-
-...
-
-## Verification
-
-How to verify the operation was successful.
-
-## Rollback
-
-Steps to undo the operation if needed.
-
-## Troubleshooting
-
-### Issue: [Common problem]
-
-**Symptoms**: What you see
-**Cause**: Why it happens
-**Solution**: How to fix it
-
-## Contacts
-
-- Primary: [Name/Role]
-- Escalation: [Name/Role]
-
-## Revision History
-
-| Date       | Author | Changes         |
-| ---------- | ------ | --------------- |
-| YYYY-MM-DD | Name   | Initial version |
-```
-
-## Architecture Document Template
-
-```markdown
-# [System/Component] Architecture
-
-## Overview
-
-High-level description of the system/component.
-
-## Goals and Non-Goals
-
-### Goals
-
-- [What this system should do]
-
-### Non-Goals
-
-- [What this system should NOT do]
-
-## Architecture Diagram
-
-\`\`\`
-[ASCII diagram or link to diagram]
-\`\`\`
-
-## Components
-
-### Component 1: [Name]
-
-- **Purpose**: What it does
-- **Location**: Where it lives
-- **Dependencies**: What it needs
-
-### Component 2: [Name]
-
-...
-
-## Data Flow
-
-How data moves through the system.
-
-## Security Considerations
-
-- Authentication
-- Authorization (RLS)
-- Data protection
-
-## Performance Considerations
-
-- Caching strategy
-- Database optimization
-- API response times
-
-## Monitoring and Observability
-
-- Key metrics
-- Alerting thresholds
-- Log locations
-
-## Future Considerations
-
-What might change or be improved.
-
-## References
-
-- Related ADRs
-- External documentation
-```
-
-## Knowledge Transfer (KT) Document Template
-
-```markdown
-# KT: [Topic Name] - {TICKET_PREFIX}-XXX
-
-## Summary
-
-What was done and why it matters.
-
-## Context
-
-Background information needed to understand this work.
-
-## Key Decisions Made
-
-1. [Decision 1]: [Reasoning]
-2. [Decision 2]: [Reasoning]
-
-## Implementation Details
-
-### What Changed
-
-- File: `path/to/file.ts`
-  - Change description
-
-### How It Works
-
-Explanation of the implementation.
-
-## Gotchas and Lessons Learned
-
-Things that might trip up future developers.
-
-## Testing
-
-How to verify everything works.
-
-## Related Tickets
-
-- {TICKET_PREFIX}-XXX: [Related work]
-
-## Future Work
-
-What should be done next.
-```
-
-## Documentation Output Locations
-
-| Doc Type       | Location                             | Naming                                 |
-| -------------- | ------------------------------------ | -------------------------------------- |
-| ADRs           | `docs/adr/`                          | `ADR-XXX-{description}.md`             |
-| Runbooks       | `docs/runbooks/`                     | `{operation}-runbook.md`               |
-| Architecture   | `docs/architecture/`                 | `{system}-architecture.md`             |
-| KT Docs        | `docs/`                              | `KT-{TICKET_PREFIX}-XXX-{topic}.md`    |
-| Technical Docs | `docs/agent-outputs/technical-docs/` | `{TICKET_PREFIX}-XXX-{description}.md` |
-
-## Documentation Checklist
-
-Before publishing any documentation:
-
-- [ ] Clear, descriptive title
-- [ ] Proper heading hierarchy (H1 > H2 > H3)
-- [ ] Code blocks with language tags
-- [ ] Links to related documents
-- [ ] Author and date included
-- [ ] No sensitive data (secrets, passwords)
-- [ ] Spell-checked
-- [ ] Markdown lint passes
+- Confluence REST API: https://developer.atlassian.com/cloud/confluence/rest/
+- Storage Format: https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html
+- confluence-api npm: https://www.npmjs.com/package/confluence-api
+
+## Target Processes
+
+- knowledge-base-setup.js
+- docs-pr-workflow.js
+- content-strategy.js

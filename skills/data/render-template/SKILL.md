@@ -22,11 +22,13 @@ Render templates with variable substitution, supporting various syntax formats a
 Accept template string and variable data.
 
 **Expected Input**:
+
 - `template`: String (template with placeholders)
 - `variables`: Object (key-value pairs for substitution)
 - `syntax`: String (optional: mustache|shell|mixed, default: mustache)
 
 **Supported Syntax**:
+
 - **Mustache**: `{{variable}}`, `{{object.property}}`
 - **Shell**: `${variable}`, `${VARIABLE}`
 - **Mixed**: Supports both
@@ -36,6 +38,7 @@ Accept template string and variable data.
 Identify all placeholders in template.
 
 **Placeholder Patterns**:
+
 - `{{variable}}`: Simple variable
 - `{{object.property}}`: Nested property
 - `{{#if condition}}...{{/if}}`: Conditional (optional)
@@ -46,6 +49,7 @@ Identify all placeholders in template.
 Replace placeholders with values from variables object.
 
 **Resolution Rules**:
+
 - Direct match: `{{name}}` → `variables.name`
 - Nested property: `{{user.name}}` → `variables.user.name`
 - Missing variable: Replace with empty string or keep placeholder (configurable)
@@ -56,6 +60,7 @@ Replace placeholders with values from variables object.
 Support simple filters if specified.
 
 **Common Filters**:
+
 - `{{variable | uppercase}}`: Convert to uppercase
 - `{{variable | lowercase}}`: Convert to lowercase
 - `{{variable | capitalize}}`: Capitalize first letter
@@ -79,6 +84,7 @@ Return final rendered string.
 ### Example 1: Simple Variable Substitution
 
 **Input**:
+
 ```json
 {
   "template": "Hello {{name}}, your score is {{score}}!",
@@ -91,6 +97,7 @@ Return final rendered string.
 ```
 
 **Output**:
+
 ```
 Hello Alice, your score is 95!
 ```
@@ -98,6 +105,7 @@ Hello Alice, your score is 95!
 ### Example 2: Nested Properties
 
 **Input**:
+
 ```json
 {
   "template": "User: {{user.name}} ({{user.email}})\nRole: {{user.role}}",
@@ -112,6 +120,7 @@ Hello Alice, your score is 95!
 ```
 
 **Output**:
+
 ```
 User: Bob (bob@example.com)
 Role: admin
@@ -120,6 +129,7 @@ Role: admin
 ### Example 3: Shell Syntax
 
 **Input**:
+
 ```json
 {
   "template": "Version: ${VERSION}\nDate: ${RELEASE_DATE}",
@@ -132,6 +142,7 @@ Role: admin
 ```
 
 **Output**:
+
 ```
 Version: 0.8.0
 Date: 2025-10-17
@@ -140,6 +151,7 @@ Date: 2025-10-17
 ### Example 4: Commit Message Template
 
 **Input**:
+
 ```json
 {
   "template": "{{type}}({{scope}}): {{description}}\n\n{{body}}\n\n🤖 Generated with Claude Code\nCo-Authored-By: Claude <noreply@anthropic.com>",
@@ -153,6 +165,7 @@ Date: 2025-10-17
 ```
 
 **Output**:
+
 ```
 feat(auth): add OAuth2 support
 
@@ -166,6 +179,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ### Example 5: Missing Variables
 
 **Input**:
+
 ```json
 {
   "template": "Name: {{name}}\nAge: {{age}}\nCity: {{city}}",
@@ -176,6 +190,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
 **Output (with empty string replacement)**:
+
 ```
 Name: Alice
 Age:
@@ -183,6 +198,7 @@ City:
 ```
 
 **Output (with keep placeholder)**:
+
 ```
 Name: Alice
 Age: {{age}}
@@ -192,6 +208,7 @@ City: {{city}}
 ### Example 6: Report Header Template
 
 **Input**:
+
 ```json
 {
   "template": "# {{reportType}} Report: {{version}}\n\n**Generated**: {{timestamp}}\n**Status**: {{statusEmoji}} {{status}}\n**Version**: {{version}}",
@@ -206,6 +223,7 @@ City: {{city}}
 ```
 
 **Output**:
+
 ```markdown
 # Bug Hunting Report: 2025-10-17
 
@@ -232,12 +250,14 @@ None required - pure template rendering logic.
 ## Integration with Other Skills
 
 This Skill consolidates formatting logic used by:
+
 - **format-commit-message**: Use render-template for message formatting
 - **generate-report-header**: Use render-template for header generation
 - **format-todo-list**: Use render-template for activeForm generation
 - **generate-changelog**: Use render-template for section formatting
 
 **Example Integration**:
+
 ```
 Instead of: Hard-coded string formatting in each Skill
 Use: render-template Skill with predefined templates

@@ -1,7 +1,6 @@
 ---
 name: assessment-architect
 description: Generate certification exams for chapters or parts. Extracts concepts first, then generates scenario-based questions. Use "ch X" for chapter, "part X" for part.
-allowed-tools: Read, Grep, Glob, Bash(ls:*), Bash(wc:*), Bash(pandoc:*), Write, Edit, Task, TaskCreate, TaskUpdate, TaskList, TaskGet
 ---
 
 # Assessment Architect - Concept-First Certification Exams
@@ -83,16 +82,135 @@ After confirming scope, create a TaskList to track progress and coordinate subag
 
 ```
 TaskCreate: "Discover scope and confirm with user" → mark in_progress immediately
-TaskCreate: "Read lessons and write grounding notes" (blocked by task 1)
-TaskCreate: "Extract concept map from grounding notes" (blocked by task 2)
-TaskCreate: "Calculate question count and confirm with user" (blocked by task 3)
-TaskCreate: "Generate questions - Subagent A (Scenario + Transfer)" (blocked by task 4)
-TaskCreate: "Generate questions - Subagent B (Relationship + Evaluation)" (blocked by task 4)
-TaskCreate: "Validate all questions" (blocked by tasks 5, 6)
-TaskCreate: "Assemble exam and generate DOCX" (blocked by task 7)
+TaskCreate: "Explore curriculum context (Part/Chapter READMEs)" (blocked by task 1)  ← NEW
+TaskCreate: "Calculate chapter importance weights" (blocked by task 2)  ← NEW
+TaskCreate: "Read lessons and write grounding notes" (blocked by task 3)
+TaskCreate: "Extract concept map from grounding notes" (blocked by task 4)
+TaskCreate: "Calculate question distribution and confirm" (blocked by task 5)
+TaskCreate: "Generate questions - Subagent A (Scenario + Transfer)" (blocked by task 6)
+TaskCreate: "Generate questions - Subagent B (Relationship + Evaluation)" (blocked by task 6)
+TaskCreate: "Validate all questions" (blocked by tasks 7, 8)
+TaskCreate: "Assemble exam and generate DOCX" (blocked by task 9)
 ```
 
 Update each task status as work progresses. Subagents receive the TaskList ID so they can update their own task status upon completion.
+
+---
+
+## Phase 0: Curriculum Context Discovery (MANDATORY - NEW)
+
+**CRITICAL: This phase must complete BEFORE reading individual lessons.**
+
+The skill previously failed by calculating question distribution from lesson counts alone. A chapter with 12 "Markdown syntax" lessons shouldn't get equal weight to a chapter with 12 "Core Agent Architecture" lessons.
+
+### Step 1: Read Part README
+
+```bash
+# For part scope: read the part's README directly
+cat {PART_PATH}/README.md
+
+# For chapter scope: find and read the parent part's README
+PART_PATH=$(dirname {CHAPTER_PATH})
+cat ${PART_PATH}/README.md
+```
+
+**Extract from Part README:**
+- Book/Part learning objectives (the "What You'll Learn" section)
+- Chapter descriptions and their stated roles
+- The overall goal/thesis of this part
+
+### Step 2: Classify Each Chapter by Role
+
+For each chapter in scope, determine its role in the curriculum:
+
+```
+CHAPTER_ROLE classification:
+
+  "core-practical"  → Teaches the PRIMARY skills of this part
+                      Signals: "You'll master...", hands-on tool usage,
+                      the largest chapter, most learning objectives point here
+                      Weight: HIGH (30-40% of questions if single chapter dominates)
+
+  "core-conceptual" → Teaches foundational concepts that enable practical skills
+                      Signals: principles, frameworks, mental models,
+                      "understand WHY" language, synthesis chapters
+                      Weight: HIGH (20-30%)
+
+  "supporting"      → Provides necessary context or secondary skills
+                      Signals: "before you can...", setup, configuration,
+                      enabling skills, smaller learning objective footprint
+                      Weight: MEDIUM (10-20%)
+
+  "prerequisite"    → Teaches format/syntax/basics assumed by other chapters
+                      Signals: Markdown syntax, installation, environment setup,
+                      not mentioned in part learning objectives
+                      Weight: LOW (2-5% or exclude entirely)
+```
+
+### Step 3: Calculate Chapter Importance Weights
+
+**Formula: Weight by role AND learning objective coverage**
+
+```
+FOR each chapter:
+  role_weight = {
+    "core-practical": 35,
+    "core-conceptual": 25,
+    "supporting": 15,
+    "prerequisite": 3
+  }[chapter_role]
+
+  # Adjust by learning objective coverage
+  objectives_mentioning_chapter = count of Part learning objectives
+    that specifically reference this chapter's topics
+  objective_boost = objectives_mentioning_chapter * 5
+
+  raw_weight = role_weight + objective_boost
+
+NORMALIZE weights to sum to 100%
+
+OUTPUT: chapter_weights = { ch1: X%, ch2: Y%, ... }
+```
+
+### Step 4: Report and Confirm
+
+Present to user BEFORE reading lessons:
+
+```
+## Curriculum Analysis
+
+**Part Goal:** {thesis from README}
+
+| Chapter | Lessons | Role | Weight | Rationale |
+|---------|---------|------|--------|-----------|
+| Ch 3: General Agents | 52 | core-practical | 35% | Primary hands-on chapter |
+| Ch 6: Seven Principles | 20 | core-conceptual | 20% | Synthesis chapter |
+| Ch 4: Context Engineering | 22 | core-conceptual | 20% | Quality discipline |
+| Ch 1: Agent Factory | 22 | supporting | 15% | Foundational concepts |
+| Ch 5: SDD | 10 | supporting | 8% | Methodology |
+| Ch 2: Markdown | 12 | prerequisite | 2% | Format only |
+
+**Proposed question distribution (150 total):**
+- Ch 3: 52 questions
+- Ch 6: 30 questions
+- Ch 4: 30 questions
+- Ch 1: 23 questions
+- Ch 5: 12 questions
+- Ch 2: 3 questions
+
+Proceed with this weighting?
+```
+
+User can adjust weights before lesson reading begins.
+
+### Why This Matters
+
+| Without Phase 0 | With Phase 0 |
+|-----------------|--------------|
+| Ch 2 (Markdown) gets 12 lessons × 2 = 24 questions | Ch 2 gets 2% = 3 questions |
+| Lesson count drives distribution | Book goals drive distribution |
+| Supporting chapters over-weighted | Core chapters properly prioritized |
+| Prerequisite skills tested heavily | Prerequisites minimally tested |
 
 ---
 
@@ -194,11 +312,25 @@ Same concept. Same difficulty. The right version is just clearer because it has 
 
 ---
 
-## Dynamic Question Count (Importance-Weighted)
+## Dynamic Question Count (Two-Level Weighting)
 
-Question count is driven by concept importance, not flat per-lesson allocation.
+Question distribution uses TWO levels of weighting:
 
-**Step 1: During concept extraction (Phase 1), tag each lesson's weight:**
+1. **Chapter-level weights** (from Phase 0 curriculum analysis)
+2. **Lesson-level weights** (within each chapter)
+
+### Level 1: Chapter Weights (from Phase 0)
+
+Chapter weights are determined by curriculum analysis BEFORE reading lessons:
+- Role in book goals (core-practical, core-conceptual, supporting, prerequisite)
+- Learning objective coverage
+- User confirmation
+
+These weights determine what PERCENTAGE of total questions each chapter receives.
+
+### Level 2: Lesson Weights (within chapters)
+
+**During Phase 0.5 (reading lessons), tag each lesson:**
 
 ```
 LESSON_WEIGHT:
@@ -210,49 +342,91 @@ LESSON_WEIGHT:
                  Signals: motivational content, history, "what you'll learn", installation-only
 ```
 
-**Step 2: Calculate target count:**
+### Calculating Total Question Count
 
 ```
-weighted_sum = sum of (lesson_weight_max for each lesson)
-  where core=5, supporting=2, intro=1
-
-concept_base = ceil(concept_count * 0.8)
-
-base = max(concept_base, weighted_sum)   # Whichever is HIGHER
-
 tier_multiplier:
   T1 (Introductory) = 0.7
   T2 (Intermediate) = 1.0  [default]
   T3 (Advanced)     = 1.3
 
+total_lessons = sum of lessons across all chapters
+concept_count = total concepts extracted
+
+base = max(ceil(concept_count * 0.8), total_lessons * 1.5)
 raw = base * tier_multiplier
-result = clamp(round_to_nearest_5(raw), min=30, max=150)
+TOTAL = clamp(round_to_nearest_5(raw), min=30, max=150)
 ```
 
-**Step 3: Allocate questions proportionally:**
+### Allocating Questions to Chapters
 
-Distribute the total question count across lessons based on weight. Core lessons get the most questions. Intro lessons may get zero.
+**Apply Phase 0 chapter weights:**
 
-Examples:
-- 25 lessons (5 core, 15 supporting, 5 intro), 60 concepts (T2)
-  weighted_sum = 5*5 + 15*2 + 5*1 = 60, concept_base = 48
-  base = max(48, 60) = 60, result = 60
+```
+FOR each chapter:
+  chapter_questions = round(TOTAL * chapter_weight_percent)
 
-- 8 lessons (6 core, 2 supporting), 40 concepts (T2)
-  weighted_sum = 6*5 + 2*2 = 34, concept_base = 32
-  base = max(32, 34) = 34, result = 35
+VALIDATE: sum of chapter_questions == TOTAL (adjust rounding as needed)
+```
 
-- 38 lessons (10 core, 20 supporting, 8 intro), 90 concepts (T3)
-  weighted_sum = 10*5 + 20*2 + 8*1 = 98, concept_base = 72
-  base = max(72, 98) = 98, raw = 98*1.3 = 127, result = 125
+### Allocating Questions Within Chapters
 
-Present recommendation to user with the lesson weighting breakdown. User can override with any value 30-150.
+**Apply lesson weights within each chapter's allocation:**
+
+```
+FOR each chapter:
+  weighted_sum = sum of lesson weights (core=5, supporting=2, intro=1)
+
+  FOR each lesson in chapter:
+    lesson_proportion = lesson_weight / weighted_sum
+    lesson_questions = round(chapter_questions * lesson_proportion)
+```
+
+### Example: Part with 6 Chapters
+
+```
+Phase 0 determined chapter weights:
+  Ch 3: 35% (core-practical, 52 lessons)
+  Ch 4: 20% (core-conceptual, 22 lessons)
+  Ch 6: 20% (core-conceptual, 20 lessons)
+  Ch 1: 15% (supporting, 22 lessons)
+  Ch 5: 8%  (supporting, 10 lessons)
+  Ch 2: 2%  (prerequisite, 12 lessons)
+
+Total = 150 questions (T2)
+
+Chapter allocation:
+  Ch 3: 150 * 0.35 = 52 questions
+  Ch 4: 150 * 0.20 = 30 questions
+  Ch 6: 150 * 0.20 = 30 questions
+  Ch 1: 150 * 0.15 = 23 questions
+  Ch 5: 150 * 0.08 = 12 questions
+  Ch 2: 150 * 0.02 = 3 questions
+
+Within Ch 2 (3 questions for 12 lessons):
+  - 2 core lessons get 1 question each
+  - 10 intro/supporting lessons get 0-1 questions
+  - Total: 3 questions (matches chapter allocation)
+```
+
+Present recommendation to user with BOTH chapter-level AND lesson-level breakdown. User can override at either level.
 
 ---
 
-## 4-Phase Workflow
+## 5-Phase Workflow
+
+**Phase 0** → Curriculum Context Discovery (understand book goals)
+**Phase 0.5** → Read Lessons & Write Grounding Notes
+**Phase 1** → Concept Extraction
+**Phase 2** → Question Generation (2 parallel subagents)
+**Phase 3** → Validation
+**Phase 4** → Assembly & DOCX Output
+
+---
 
 ### Phase 0.5: Read Lessons, Classify Chapter & Write Grounding Notes (this agent)
+
+**Prerequisite: Phase 0 chapter weights must be confirmed before this phase.**
 
 Read ALL lessons in scope. As you read each one, APPEND observations to `assessments/{SLUG}-notes.md` (see Grounding Notes section above).
 
@@ -383,10 +557,19 @@ FAIL if question doesn't map to a concept in the concept map
 
 **Anti-gaming checks (FAIL conditions):**
 ```
-FAIL if correct answer is the longest option in >40% of questions
+# Length Bias (see references/bias-detection-guide.md)
+FAIL if correct answer is longest option in >40% of questions (length bias)
+FAIL if correct answer is shortest option in >40% of questions (length bias)
+
+# Position Bias
 FAIL if any letter is correct >30% or <20% of total
+FAIL if middle (B+C) > 55% of correct answers
+FAIL if outer (A+D) < 40% of correct answers
 FAIL if >3 consecutive questions have same correct letter
-FAIL if correct options average >3 words longer than distractors
+
+# Specificity Bias (see references/bias-detection-guide.md)
+WARN if correct answer specificity score > 30% higher than distractor average
+FLAG questions where correct option has examples/qualifiers that distractors lack
 ```
 
 **Distribution checks:**
@@ -489,10 +672,52 @@ A: {count} ({%}) | B: {count} ({%}) | C: {count} ({%}) | D: {count} ({%})
 Never use `A)` — pandoc interprets it as an ordered list marker and renders bullet points in DOCX.
 
 **Step 3: Convert to DOCX (two files)**
+
+**Option A: pandoc (simple)**
 ```bash
 pandoc assessments/{SLUG}-exam.md -o assessments/{SLUG}-Assessment-Final.docx --from=markdown --to=docx
 pandoc assessments/{SLUG}-answer-key.md -o assessments/{SLUG}-Answer-Key.docx --from=markdown --to=docx
 ```
+
+**Option B: Programmatic with docx-js (better formatting control)**
+
+When using the docx-js library for professional DOCX output:
+
+```javascript
+// CRITICAL: Paragraph alignment
+// Custom paragraph styles may NOT reliably apply alignment.
+// ALWAYS set alignment EXPLICITLY on each Paragraph.
+
+// ❌ WRONG - style-based alignment may be ignored:
+new Paragraph({
+  style: "Question",  // Even if Question style has LEFT alignment
+  children: [new TextRun({ text: question.stem })]
+})
+
+// ✅ CORRECT - explicit alignment on each paragraph:
+new Paragraph({
+  alignment: AlignmentType.LEFT,  // ALWAYS set this explicitly
+  spacing: { before: 200, after: 100 },
+  children: [
+    new TextRun({ text: `${qNum}. `, bold: true, size: 24, font: "Arial" }),
+    new TextRun({ text: question.stem, font: "Arial", size: 22 })
+  ]
+})
+
+// ✅ CORRECT - options with explicit alignment and indent:
+new Paragraph({
+  alignment: AlignmentType.LEFT,  // ALWAYS set this explicitly
+  indent: { left: 360 },
+  spacing: { after: 60 },
+  children: [new TextRun({ text: `${letter}) ${option}`, font: "Arial", size: 22 })]
+})
+```
+
+**Key docx-js rules:**
+1. Always set `alignment: AlignmentType.LEFT` explicitly on every question/answer paragraph
+2. Don't rely on custom paragraph styles for alignment
+3. Set `font: "Arial"` on every TextRun for consistent rendering
+4. Use `indent: { left: 360 }` for option indentation (not tabs or spaces)
 
 **Step 4: Post-conversion validation**
 - Verify both DOCX files exist and exam > 10KB
@@ -515,8 +740,13 @@ pandoc assessments/{SLUG}-answer-key.md -o assessments/{SLUG}-Answer-Key.docx --
 
 | Failure | Prevention | Detection |
 |---------|-----------|-----------|
+| **Curriculum context skipped** | **Phase 0 MANDATORY** | Part README not read before lesson reading |
+| **Prerequisite chapters over-weighted** | Chapter role classification | "prerequisite" chapters should get 2-5%, not equal weight |
+| **Lesson count = question count** | Two-level weighting (chapter + lesson) | Distribution ignores book learning objectives |
 | Memorization questions | Structural FAIL conditions | grep for "According to", "Lesson [0-9]" |
-| Longest-is-correct gaming | Anti-gaming FAIL: >40% longest correct | Word count comparison |
+| **Length bias (longest correct)** | Anti-gaming FAIL: >40% longest correct | Word count rank per question |
+| **Position bias (B/C clustering)** | Anti-gaming FAIL: middle >55% | Count B+C vs A+D distribution |
+| **Specificity bias** | WARN: correct >30% more specific | Score options with examples/qualifiers |
 | Answer bias (74% A) | Anti-gaming FAIL: any letter >30% | Count distribution per letter |
 | Fabricated concepts | Grounding notes required | Every concept must cite a notes entry |
 | Too few questions | Importance-weighted: core=3-5, supporting=1-2, intro=0-1 | Weighted sum drives minimum, not flat count |
@@ -539,7 +769,8 @@ For historical context on these failures, see the Jan 2026 postmortem in the ski
 | `references/question-types.md` | 4 type definitions with examples | Subagents (Phase 2) |
 | `references/concept-extraction-guide.md` | How to extract concepts vs facts | This agent (Phase 1) |
 | `references/subagent-template.md` | Prompt templates for 2 subagents | This agent (Phase 2 spawning) |
-| `references/validation-rules.md` | Complete validation pipeline | This agent (Phase 3) |
+| `references/validation-rules.md` | Anti-memorization + distribution checks | This agent (Phase 3) |
+| `references/bias-detection-guide.md` | Length/position/specificity bias detection | This agent (Phase 3) |
 | `references/bloom-taxonomy.md` | Cognitive level reference | Subagents (question design) |
 | `references/psychometric-standards.md` | DIF/DIS/DF metrics | This agent (Phase 3 validation) |
 | `references/distractor-generation-strategies.md` | Distractor design patterns | Subagents (option creation) |
@@ -552,6 +783,16 @@ For historical context on these failures, see the Jan 2026 postmortem in the ski
 Report at each phase transition:
 
 ```
+Phase 0 Complete (Curriculum Context):
+  - Part/Book goal: {thesis statement}
+  - Chapters in scope: {N}
+  - Chapter weights:
+    | Chapter | Role | Weight | Questions |
+    | Ch 3 | core-practical | 35% | 52 |
+    | Ch 6 | core-conceptual | 20% | 30 |
+    ...
+  - User confirmed: {yes/adjusted to X}
+
 Phase 0.5 Complete:
   - Chapter type: {practical-tool | conceptual | hybrid}
   - Domain keywords: {keywords}

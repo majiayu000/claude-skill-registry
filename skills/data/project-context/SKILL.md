@@ -1,35 +1,42 @@
 ---
 name: project-context
-description: Defines the overall project purpose, operating model, and roles for Hackathon II – Todo Spec-Driven Development. Always load for any project-related task.
+description: プロジェクト固有の技術スタック、アーキテクチャ、実装ルールを提供。プロジェクト構成確認時に使用。
 ---
 
-# Project Context – Hackathon II
+# プロジェクトコンテキスト
 
-## Project Overview
-This project is part of **Hackathon II: Todo Spec-Driven Development**.
+## 基本設定
 
-The objective is to evolve a Todo system through multiple phases using:
-- Spec-Driven Development (SDD)
-- AI-assisted implementation via Claude Code
-- Cloud-native and agent-based architecture
+### プロジェクトの性質
+- **プロジェクト形態**: Claude Code専用TypeScriptプロジェクトテンプレート
+- **利用範囲**: プロジェクトの要件に応じて設定可能
+- **実装方針**: LLM主導実装、品質重視、YAGNI原則徹底
 
-## Operating Model
-- All development is **spec-first**
-- Humans design and refine specifications
-- Claude generates implementations
-- No manual code writing is allowed
+### 技術スタック
+- **基盤技術**: TypeScript、Node.js
+- **テストフレームワーク**: Vitest
+- **品質管理**: Biome、TypeScript strict mode
 
-## Roles
-- Human: System Architect, Spec Author, Reviewer
-- Claude: Implementer, Analyzer, Validator
+## 実装原則
 
-## Core Principles
-- Determinism over improvisation
-- Clarity over speed
-- Reusable intelligence over one-off solutions
+### 実装方針の特徴
+- **LLM主導実装**: Claude Codeが主要な実装者として機能
+- **品質重視**: 速度より品質を優先する文化
+- **YAGNI原則**: 必要になるまで実装しない
+- **体系的な設計**: ADR/Design Doc/作業計画書による設計プロセス
 
-## Output Expectations
-- Structured Markdown
-- Clear steps and rationale
-- Phase-aligned outputs
-- No assumptions without specs
+## カスタマイズガイド
+
+新しいプロジェクトでこのテンプレートを使用する場合：
+
+1. **プロジェクト固有情報の追加**
+   - ターゲットユーザー特性
+   - ビジネス要件と制約
+   - 技術的制約事項
+
+2. **アーキテクチャの選択**
+   - アーキテクチャスキルから適切なパターンを選択
+
+3. **環境設定**
+   - プロジェクトに適した環境変数管理方法の実装
+   - プロジェクト固有の設定ファイル追加

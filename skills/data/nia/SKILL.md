@@ -123,11 +123,13 @@ Supports: `squad`, `dair-ai/emotion`, `https://huggingface.co/datasets/squad`
 - Pass specific repositories and/or data sources to search
 - Supports chat context (messages array)
 - Returns AI-generated response with sources
+- search_mode: `repositories` (repos only), `sources` (docs/papers/datasets only), `unified` (both)
 
 **search-universal.sh** - Searches all your indexed sources at once:
 - Hybrid vector + BM25 search
 - Cross-repo/cross-doc discovery
 - Good for "where is X defined across all my sources?"
+- Pass `true` as 3rd arg to include HuggingFace datasets (excluded by default)
 
 ### Package Search
 
@@ -170,6 +172,43 @@ Autonomous AI research agent with extended thinking and tool use.
 ./scripts/usage.sh                                   # Get API usage summary
 ```
 
+## Additional API Endpoints (no scripts yet)
+
+The following endpoints exist in the API but don't have wrapper scripts:
+
+### Categories
+- `GET/POST /categories` - List/create categories
+- `PATCH/DELETE /categories/{id}` - Update/delete category
+- `PATCH /data-sources/{id}/category` - Assign category to source
+
+### Context Sharing
+- `POST/GET /contexts` - Save/list conversation contexts
+- `GET /contexts/search` - Text search contexts
+- `GET /contexts/semantic-search` - Vector search contexts
+- `GET/PUT/DELETE /contexts/{id}` - Get/update/delete context
+
+### Dependencies
+- `POST /dependencies/analyze` - Analyze package manifest
+- `POST /dependencies/subscribe` - Subscribe to docs for all deps
+- `POST /dependencies/upload` - Upload manifest file
+
+### Advisor
+- `POST /advisor` - Context-aware code advisor
+
+### Local Folders (private user storage)
+- `POST/GET /local-folders` - Create/list local folders
+- `GET/DELETE /local-folders/{id}` - Get/delete folder
+- `GET /local-folders/{id}/tree|ls|read` - Browse files
+- `POST /local-folders/{id}/grep` - Search in folder
+- `POST /local-folders/{id}/classify` - AI classification
+- `POST /local-folders/from-database` - Import from SQLite
+
+### Unified Sources API (v2)
+- `GET/POST /sources` - List/create any source type
+- `GET/PATCH/DELETE /sources/{id}` - Manage source
+- `GET /sources/resolve` - Resolve name/URL to ID
+- `POST /search` - Unified search with mode discriminator
+
 ## API Reference
 
 - **Base URL**: `https://apigcp.trynia.ai/v2`
@@ -184,16 +223,19 @@ Autonomous AI research agent with extended thinking and tool use.
 | Documentation | POST /data-sources | `https://docs.example.com` |
 | Research Paper | POST /research-papers | `2312.00752`, arXiv URL |
 | HuggingFace Dataset | POST /huggingface-datasets | `squad`, `owner/dataset` |
+| Local Folder | POST /local-folders | UUID, display name (private, user-scoped) |
 
 ### Search Modes
 
 For `/search/query`:
-- `repositories` - Search GitHub repositories only (default)
+- `repositories` - Search GitHub repositories only
 - `sources` - Search data sources only (docs, papers, datasets)
+- `unified` - Search both repositories and data sources (default)
 
 Pass sources via:
 - `repositories` array: `[{"repository": "owner/repo"}]`
 - `data_sources` array: `["display-name", "uuid", "https://url"]`
+- `local_folders` array: `["folder-uuid", "My Notes"]`
 
 ### Endpoints Summary
 

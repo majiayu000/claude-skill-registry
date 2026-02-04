@@ -1,6 +1,6 @@
 ---
 name: obsidian-upgrade
-description: Upgrade Obsidian wikis to latest format. Handles structure migration (phases/tasks → workstreams/specs), comment format upgrades (adding emoji prefixes), and LWW source-of-truth model. Use when user mentions "upgrade wiki", "migrate wiki", "update wiki format", or has old-format comments.
+description: Upgrade Obsidian wikis to latest format. Handles structure migration (phases/tasks → features/specs), comment format upgrades (adding emoji prefixes), and Johnny Decimal feature organization. Use when user mentions "upgrade wiki", "migrate wiki", "update wiki format", or has old-format comments.
 ---
 
 # Obsidian Upgrade

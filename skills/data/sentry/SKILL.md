@@ -1,239 +1,509 @@
 ---
 name: sentry
-description: "Fetch and analyze Sentry issues, events, transactions, and logs. Helps agents debug errors, find root causes, and understand what happened at specific times."
+description: Monitors applications with Sentry including error tracking, performance monitoring, and alerting. Use when tracking errors, monitoring performance, setting up alerts, or debugging production issues.
 ---
 
-# Sentry Skill
+# Sentry
 
-Access Sentry data via the API for debugging and investigation. Uses auth token from `~/.sentryclirc`.
+Application monitoring platform for error tracking and performance monitoring.
 
-## Quick Reference
+## Quick Start
 
-| Task | Command |
-|------|---------|
-| Find errors on a date | `search-events.js --org X --start 2025-12-23T15:00:00 --level error` |
-| List open issues | `list-issues.js --org X --status unresolved` |
-| Get issue details | `fetch-issue.js <issue-id-or-url> --latest` |
-| Get event details | `fetch-event.js <event-id> --org X --project Y` |
-| Search logs | `search-logs.js --org X --project Y "level:error"` |
+**Install (Next.js):**
+```bash
+npx @sentry/wizard@latest -i nextjs
+```
 
-## Common Debugging Workflows
+**Manual install:**
+```bash
+npm install @sentry/nextjs
+```
 
-### "What went wrong at this time?"
+## Configuration
 
-Find events around a specific timestamp:
+### Environment Variables
 
 ```bash
-# Find all events in a 2-hour window
-./scripts/search-events.js --org myorg --project backend \
-  --start 2025-12-23T15:00:00 --end 2025-12-23T17:00:00
-
-# Filter to just errors
-./scripts/search-events.js --org myorg --start 2025-12-23T15:00:00 \
-  --level error
-
-# Find a specific transaction type
-./scripts/search-events.js --org myorg --start 2025-12-23T15:00:00 \
-  --transaction process-incoming-email
+# .env.local
+SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
+SENTRY_AUTH_TOKEN=sntrys_...
+SENTRY_ORG=your-org
+SENTRY_PROJECT=your-project
 ```
 
-### "What errors have occurred recently?"
+### Sentry Config
+
+```typescript
+// sentry.client.config.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  environment: process.env.NODE_ENV,
+
+  // Performance Monitoring
+  tracesSampleRate: 1.0, // 100% in dev, lower in prod
+
+  // Session Replay
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+
+  integrations: [
+    Sentry.replayIntegration({
+      maskAllText: true,
+      blockAllMedia: true,
+    }),
+  ],
+
+  // Release tracking
+  release: process.env.NEXT_PUBLIC_SENTRY_RELEASE,
+
+  // Ignore specific errors
+  ignoreErrors: [
+    'ResizeObserver loop limit exceeded',
+    'Non-Error promise rejection',
+  ],
+
+  // Filter breadcrumbs
+  beforeBreadcrumb(breadcrumb) {
+    if (breadcrumb.category === 'console') {
+      return null; // Don't capture console logs
+    }
+    return breadcrumb;
+  },
+});
+```
+
+### Server Config
+
+```typescript
+// sentry.server.config.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  environment: process.env.NODE_ENV,
+  tracesSampleRate: 1.0,
+
+  // Additional server-side options
+  profilesSampleRate: 1.0,
+});
+```
+
+### Edge Config
+
+```typescript
+// sentry.edge.config.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  tracesSampleRate: 1.0,
+});
+```
+
+### Next.js Config
+
+```typescript
+// next.config.js
+const { withSentryConfig } = require('@sentry/nextjs');
+
+const nextConfig = {
+  // Your Next.js config
+};
+
+module.exports = withSentryConfig(nextConfig, {
+  // Sentry webpack plugin options
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+
+  // Upload source maps
+  silent: true,
+  widenClientFileUpload: true,
+  hideSourceMaps: true,
+
+  // Disable Sentry during builds
+  disableLogger: true,
+});
+```
+
+## Error Tracking
+
+### Automatic Capture
+
+Sentry automatically captures:
+- Unhandled exceptions
+- Unhandled promise rejections
+- Console errors
+
+### Manual Capture
+
+```typescript
+import * as Sentry from '@sentry/nextjs';
+
+// Capture exception
+try {
+  riskyOperation();
+} catch (error) {
+  Sentry.captureException(error);
+}
+
+// Capture message
+Sentry.captureMessage('Something happened');
+
+// With severity
+Sentry.captureMessage('Warning message', 'warning');
+Sentry.captureMessage('Info message', 'info');
+```
+
+### Add Context
+
+```typescript
+// Set user context
+Sentry.setUser({
+  id: user.id,
+  email: user.email,
+  username: user.username,
+});
+
+// Clear user on logout
+Sentry.setUser(null);
+
+// Add tags
+Sentry.setTag('feature', 'checkout');
+Sentry.setTag('plan', 'premium');
+
+// Add extra data
+Sentry.setExtra('cart_items', cartItems);
+
+// Set context
+Sentry.setContext('order', {
+  orderId: order.id,
+  total: order.total,
+  items: order.items.length,
+});
+```
+
+### Scopes
+
+```typescript
+// Configure scope for specific capture
+Sentry.withScope((scope) => {
+  scope.setTag('section', 'payments');
+  scope.setLevel('error');
+  scope.setExtra('paymentData', paymentData);
+  Sentry.captureException(error);
+});
+```
+
+## Error Boundaries
+
+### React Error Boundary
+
+```tsx
+'use client';
+
+import * as Sentry from '@sentry/nextjs';
+import { Component, ReactNode } from 'react';
+
+interface Props {
+  children: ReactNode;
+  fallback: ReactNode;
+}
+
+interface State {
+  hasError: boolean;
+}
+
+export class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    Sentry.withScope((scope) => {
+      scope.setExtra('componentStack', errorInfo.componentStack);
+      Sentry.captureException(error);
+    });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+
+    return this.props.children;
+  }
+}
+```
+
+### Sentry Error Boundary
+
+```tsx
+import * as Sentry from '@sentry/nextjs';
+
+<Sentry.ErrorBoundary
+  fallback={<p>Something went wrong</p>}
+  showDialog
+>
+  <App />
+</Sentry.ErrorBoundary>
+```
+
+## API Routes
+
+### App Router
+
+```typescript
+// app/api/example/route.ts
+import * as Sentry from '@sentry/nextjs';
+import { NextResponse } from 'next/server';
+
+export async function POST(request: Request) {
+  try {
+    const data = await request.json();
+    // Process data
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    Sentry.captureException(error, {
+      extra: {
+        endpoint: '/api/example',
+        method: 'POST',
+      },
+    });
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+```
+
+### Wrap API Handler
+
+```typescript
+import { wrapApiHandlerWithSentry } from '@sentry/nextjs';
+
+async function handler(req: NextRequest) {
+  // Your API logic
+}
+
+export const POST = wrapApiHandlerWithSentry(handler, '/api/example');
+```
+
+## Performance Monitoring
+
+### Custom Transactions
+
+```typescript
+import * as Sentry from '@sentry/nextjs';
+
+async function processOrder(orderId: string) {
+  return Sentry.startSpan(
+    {
+      name: 'Process Order',
+      op: 'order.process',
+    },
+    async (span) => {
+      span.setAttribute('order_id', orderId);
+
+      // Nested span
+      await Sentry.startSpan(
+        {
+          name: 'Validate Order',
+          op: 'order.validate',
+        },
+        async () => {
+          await validateOrder(orderId);
+        }
+      );
+
+      // Another nested span
+      await Sentry.startSpan(
+        {
+          name: 'Charge Payment',
+          op: 'payment.charge',
+        },
+        async () => {
+          await chargePayment(orderId);
+        }
+      );
+
+      return { success: true };
+    }
+  );
+}
+```
+
+### Measure Performance
+
+```typescript
+// Measure async operation
+const result = await Sentry.startSpan(
+  { name: 'Database Query', op: 'db.query' },
+  async () => {
+    return await db.query.users.findMany();
+  }
+);
+```
+
+## Server Actions
+
+```typescript
+// app/actions.ts
+'use server';
+
+import * as Sentry from '@sentry/nextjs';
+
+export async function submitForm(formData: FormData) {
+  return Sentry.withServerActionInstrumentation(
+    'submitForm',
+    {},
+    async () => {
+      try {
+        // Process form
+        const result = await processForm(formData);
+        return { success: true, data: result };
+      } catch (error) {
+        Sentry.captureException(error);
+        return { success: false, error: 'Form submission failed' };
+      }
+    }
+  );
+}
+```
+
+## Session Replay
+
+```typescript
+// sentry.client.config.ts
+import * as Sentry from '@sentry/nextjs';
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+
+  integrations: [
+    Sentry.replayIntegration({
+      // Capture 10% of sessions
+      maskAllText: true,
+      blockAllMedia: true,
+    }),
+  ],
+
+  // Sample rates
+  replaysSessionSampleRate: 0.1, // 10% of sessions
+  replaysOnErrorSampleRate: 1.0, // 100% of sessions with errors
+});
+```
+
+## Source Maps
+
+### Upload During Build
+
+```typescript
+// next.config.js
+module.exports = withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+
+  // Hide source maps from client
+  hideSourceMaps: true,
+
+  // Automatically delete source maps after upload
+  deleteFilesAfterUpload: ['**/*.map'],
+});
+```
+
+### Manual Upload
 
 ```bash
-# List unresolved errors from last 24 hours
-./scripts/list-issues.js --org myorg --status unresolved --level error --period 24h
-
-# Find high-frequency issues
-./scripts/list-issues.js --org myorg --query "times_seen:>50" --sort freq
-
-# Issues affecting users
-./scripts/list-issues.js --org myorg --query "is:unresolved has:user" --sort user
+npx @sentry/cli sourcemaps upload ./dist \
+  --org your-org \
+  --project your-project \
+  --auth-token $SENTRY_AUTH_TOKEN
 ```
 
-### "Get details about a specific issue/event"
+## Alerts and Notifications
 
-```bash
-# Get issue with latest stack trace
-./scripts/fetch-issue.js 5765604106 --latest
-./scripts/fetch-issue.js https://sentry.io/organizations/myorg/issues/123/ --latest
-./scripts/fetch-issue.js MYPROJ-123 --org myorg --latest
+Configure in Sentry dashboard:
+- Error thresholds
+- Performance degradation
+- Crash-free rate drops
+- Slack/email notifications
 
-# Get specific event with all breadcrumbs
-./scripts/fetch-event.js abc123def456 --org myorg --project backend --breadcrumbs
+## Filtering Events
+
+```typescript
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+
+  beforeSend(event, hint) {
+    // Filter out known issues
+    if (event.exception?.values?.[0]?.type === 'NetworkError') {
+      return null; // Don't send
+    }
+
+    // Modify event
+    if (event.user) {
+      delete event.user.email; // Remove PII
+    }
+
+    return event;
+  },
+
+  beforeSendTransaction(transaction) {
+    // Filter transactions
+    if (transaction.transaction === '/health') {
+      return null;
+    }
+    return transaction;
+  },
+});
 ```
 
-### "Find events with a specific tag"
+## Release Tracking
 
-```bash
-# Find by custom tag (e.g., thread_id, user_id)
-./scripts/search-events.js --org myorg --tag thread_id:th_abc123
+```typescript
+// Set release in config
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  release: process.env.VERCEL_GIT_COMMIT_SHA,
+});
 
-# Find by user email
-./scripts/search-events.js --org myorg --query "user.email:*@example.com"
+// Or dynamically
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  release: `${process.env.npm_package_name}@${process.env.npm_package_version}`,
+});
 ```
 
----
+## Best Practices
 
-## Fetch Issue
+1. **Set sample rates appropriately** - 100% in dev, lower in prod
+2. **Add user context** - Helps identify affected users
+3. **Use tags for filtering** - Feature, environment, version
+4. **Configure alerts** - Get notified of new issues
+5. **Upload source maps** - Readable stack traces
 
-```bash
-./scripts/fetch-issue.js <issue-id-or-url> [options]
-```
+## Common Mistakes
 
-Get details about a specific issue (grouped error).
+| Mistake | Fix |
+|---------|-----|
+| Exposing DSN client-side | DSN is safe to expose |
+| 100% sample rate in prod | Use lower rates |
+| Missing source maps | Configure upload in build |
+| No user context | Set user on login |
+| Capturing too much | Filter with beforeSend |
 
-**Accepts:**
-- Issue ID: `5765604106`
-- Issue URL: `https://sentry.io/organizations/sentry/issues/5765604106/`
-- New URL format: `https://myorg.sentry.io/issues/5765604106/`
-- Short ID: `JAVASCRIPT-ABC` (requires `--org` flag)
+## Reference Files
 
-**Options:**
-- `--latest` - Include the latest event with full stack trace
-- `--org <org>` - Organization slug (for short IDs)
-- `--json` - Output raw JSON
-
-**Output includes:**
-- Title, culprit, status, level
-- First/last seen timestamps
-- Event count and user impact
-- Tags and environment info
-- With `--latest`: stack trace, request details, breadcrumbs, runtime context
-
----
-
-## Fetch Event
-
-```bash
-./scripts/fetch-event.js <event-id> --org <org> --project <project> [options]
-```
-
-Get full details of a specific event by its ID.
-
-**Options:**
-- `--org, -o <org>` - Organization slug (required)
-- `--project, -p <project>` - Project slug (required)
-- `--breadcrumbs, -b` - Show all breadcrumbs (default: last 30)
-- `--spans` - Show span tree for transactions
-- `--json` - Output raw JSON
-
-**Output includes:**
-- Timestamp, project, title, message
-- All tags
-- Context (runtime, browser, OS, trace info)
-- Request details
-- Exception with stack trace
-- Breadcrumbs
-- Spans (with `--spans`)
-
----
-
-## Search Events
-
-```bash
-./scripts/search-events.js [options]
-```
-
-Search for events (transactions, errors) using Sentry Discover.
-
-**Time Range Options:**
-- `--period, -t <period>` - Relative time (24h, 7d, 14d)
-- `--start <datetime>` - Start time (ISO 8601: 2025-12-23T15:00:00)
-- `--end <datetime>` - End time (ISO 8601)
-
-**Filter Options:**
-- `--org, -o <org>` - Organization slug (required)
-- `--project, -p <project>` - Project slug or ID
-- `--query, -q <query>` - Discover search query
-- `--transaction <name>` - Transaction name filter
-- `--tag <key:value>` - Tag filter (repeatable)
-- `--level <level>` - Level filter (error, warning, info)
-- `--limit, -n <n>` - Max results (default: 25, max: 100)
-- `--fields <fields>` - Comma-separated fields to include
-
-**Query Syntax:**
-```
-transaction:process-*     Wildcard transaction match
-level:error               Filter by level
-user.email:foo@bar.com    Filter by user
-environment:production    Filter by environment
-has:stack.filename        Has stack trace
-```
-
----
-
-## List Issues
-
-```bash
-./scripts/list-issues.js [options]
-```
-
-List and search issues (grouped errors) in a project.
-
-**Options:**
-- `--org, -o <org>` - Organization slug (required)
-- `--project, -p <project>` - Project slug (repeatable)
-- `--query, -q <query>` - Issue search query
-- `--status <status>` - unresolved, resolved, ignored
-- `--level <level>` - error, warning, info, fatal
-- `--period, -t <period>` - Time period (default: 14d)
-- `--limit, -n <n>` - Max results (default: 25)
-- `--sort <sort>` - date, new, priority, freq, user
-- `--json` - Output raw JSON
-
-**Query Syntax:**
-```
-is:unresolved             Status filter
-is:assigned               Has assignee
-assigned:me               Assigned to current user
-level:error               Level filter
-firstSeen:+7d             First seen > 7 days ago
-lastSeen:-24h             Last seen within 24h
-times_seen:>100           Event count filter
-has:user                  Has user context
-error.handled:0           Unhandled errors only
-```
-
----
-
-## Search Logs
-
-```bash
-./scripts/search-logs.js [query|url] [options]
-```
-
-Search for logs in Sentry's Logs Explorer.
-
-**Options:**
-- `--org, -o <org>` - Organization slug (required unless URL provided)
-- `--project, -p <project>` - Filter by project slug or ID
-- `--period, -t <period>` - Time period (default: 24h)
-- `--limit, -n <n>` - Max results (default: 100, max: 1000)
-- `--json` - Output raw JSON
-
-**Query Syntax:**
-```
-level:error              Filter by level (trace, debug, info, warn, error, fatal)
-message:*timeout*        Search message text with wildcards
-trace:abc123             Filter by trace ID
-project:my-project       Filter by project slug
-```
-
-**Accepts Sentry URLs:**
-```bash
-./scripts/search-logs.js "https://myorg.sentry.io/explore/logs/?project=123&statsPeriod=7d"
-```
-
----
-
-## Tips for Debugging
-
-1. **Start broad, then narrow down**: Use `search-events.js` with a time range first, then drill into specific events
-
-2. **Use breadcrumbs**: The `--breadcrumbs` flag on `fetch-event.js` shows the full history of what happened before an error
-
-3. **Look for patterns**: Use `list-issues.js --sort freq` to find frequently occurring problems
-
-4. **Check related events**: If you find one event, look for others with the same transaction name or trace ID
-
-5. **Tags are your friend**: Custom tags like `thread_id`, `user_id`, `request_id` help correlate events
+- [references/configuration.md](references/configuration.md) - Full config options
+- [references/performance.md](references/performance.md) - Performance monitoring
+- [references/integrations.md](references/integrations.md) - Third-party integrations

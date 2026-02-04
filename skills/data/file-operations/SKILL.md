@@ -1,84 +1,181 @@
 ---
 name: file-operations
-description: Analyze files and get detailed metadata including size, line counts, modification times, and content statistics. Use when users request file information, statistics, or analysis without modifying files.
+description: Linux file and directory operations
+version: 1.0.0
+author: terminal-skills
+tags: [linux, file, directory, find, permissions]
 ---
 
-# File Operations
+# File and Directory Operations
 
-Analyze files and retrieve metadata using Claude's native tools without modifying files.
+## Overview
+Linux file system operation skills, including file search, batch operations, permission management, etc.
 
-## When to Use
+## File Search
 
-- "analyze [file]"
-- "get file info for [file]"
-- "how many lines in [file]"
-- "compare [file1] and [file2]"
-- "file statistics"
-
-## Core Operations
-
-### File Size & Metadata
+### find Command
 ```bash
-stat -f "%z bytes, modified %Sm" [file_path]  # Single file
-ls -lh [directory]                             # Multiple files
-du -h [file_path]                              # Human-readable size
+# Search by name
+find /path -name "*.log"
+find /path -iname "*.LOG"           # Case insensitive
+
+# Search by type
+find /path -type f                  # Files
+find /path -type d                  # Directories
+find /path -type l                  # Symbolic links
+
+# Search by time
+find /path -mtime -7                # Modified within 7 days
+find /path -mtime +30               # Modified more than 30 days ago
+find /path -mmin -60                # Modified within 60 minutes
+
+# Search by size
+find /path -size +100M              # Larger than 100MB
+find /path -size -1k                # Smaller than 1KB
+
+# Combined conditions
+find /path -name "*.log" -mtime +7 -size +10M
 ```
 
-### Line Counts
+### locate Command
 ```bash
-wc -l [file_path]                              # Single file
-wc -l [file1] [file2]                          # Multiple files
-find [dir] -name "*.py" | xargs wc -l          # Directory total
+# Quick search (requires database update)
+locate filename
+updatedb                            # Update database
+
+# Case insensitive
+locate -i filename
 ```
 
-### Content Analysis
-Use **Read** to analyze structure, then count functions/classes/imports.
+## File Operations
 
-### Pattern Search
-```
-Grep(pattern="^def ", output_mode="count", path="src/")        # Count functions
-Grep(pattern="TODO|FIXME", output_mode="content", -n=true)    # Find TODOs
-Grep(pattern="^import ", output_mode="count")                 # Count imports
-```
-
-### Find Files
-```
-Glob(pattern="**/*.py")
-```
-
-## Workflow Examples
-
-### Comprehensive File Analysis
-1. Get size/mod time: `stat -f "%z bytes, modified %Sm" file.py`
-2. Count lines: `wc -l file.py`
-3. Read file: `Read(file_path="file.py")`
-4. Count functions: `Grep(pattern="^def ", output_mode="count")`
-5. Count classes: `Grep(pattern="^class ", output_mode="count")`
-
-### Compare File Sizes
-1. Find files: `Glob(pattern="src/**/*.py")`
-2. Get sizes: `ls -lh src/**/*.py`
-3. Total size: `du -sh src/*.py`
-
-### Code Quality Metrics
-1. Total lines: `find . -name "*.py" | xargs wc -l`
-2. Test files: `find . -name "test_*.py" | wc -l`
-3. TODOs: `Grep(pattern="TODO|FIXME|HACK", output_mode="count")`
-
-### Find Largest Files
+### Basic Operations
 ```bash
-find . -type f -not -path "./node_modules/*" -exec du -h {} + | sort -rh | head -20
+# Copy
+cp file1 file2
+cp -r dir1 dir2                     # Recursive copy directory
+cp -p file1 file2                   # Preserve attributes
+
+# Move/Rename
+mv file1 file2
+mv file1 /path/to/dest/
+
+# Delete
+rm file
+rm -rf dir                          # Recursive force delete
+rm -i file                          # Interactive confirmation
+
+# Create
+touch file                          # Create empty file
+mkdir -p dir1/dir2/dir3             # Recursive create directories
 ```
 
-## Best Practices
+### Batch Operations
+```bash
+# Batch rename
+rename 's/old/new/' *.txt
+for f in *.txt; do mv "$f" "${f%.txt}.md"; done
 
-- **Non-destructive**: Use Read/stat/wc, never modify
-- **Efficient**: Read small files fully, use Grep for large files
-- **Context-aware**: Compare to project averages, suggest optimizations
+# Batch delete
+find /path -name "*.tmp" -delete
+find /path -name "*.log" -mtime +30 -exec rm {} \;
 
-## Integration
+# Batch copy
+find /src -name "*.conf" -exec cp {} /dest/ \;
+```
 
-Works with:
-- **code-auditor**: Comprehensive analysis
-- **code-transfer**: After identifying large files
-- **codebase-documenter**: Understanding file purposes
+## File Content
+
+### View Files
+```bash
+cat file                            # Full content
+head -n 20 file                     # First 20 lines
+tail -n 20 file                     # Last 20 lines
+tail -f file                        # Real-time follow
+less file                           # Paginated view
+
+# Statistics
+wc -l file                          # Line count
+wc -w file                          # Word count
+wc -c file                          # Byte count
+```
+
+### File Comparison
+```bash
+diff file1 file2
+diff -u file1 file2                 # Unified format
+diff -r dir1 dir2                   # Compare directories
+
+# Side-by-side comparison
+sdiff file1 file2
+vimdiff file1 file2
+```
+
+## Permission Management
+
+### View Permissions
+```bash
+ls -la
+stat file
+```
+
+### Modify Permissions
+```bash
+# Numeric mode
+chmod 755 file                      # rwxr-xr-x
+chmod 644 file                      # rw-r--r--
+
+# Symbolic mode
+chmod u+x file                      # Add execute for user
+chmod g-w file                      # Remove write for group
+chmod o=r file                      # Set read-only for others
+chmod a+r file                      # Add read for all
+
+# Recursive modify
+chmod -R 755 dir
+```
+
+### Modify Owner
+```bash
+chown user file
+chown user:group file
+chown -R user:group dir             # Recursive modify
+```
+
+## Common Scenarios
+
+### Scenario 1: Clean Up Large Files
+```bash
+# Find files larger than 100MB
+find / -type f -size +100M -exec ls -lh {} \; 2>/dev/null
+
+# Find and sort by size
+du -ah /path | sort -rh | head -20
+```
+
+### Scenario 2: Find Recently Modified Files
+```bash
+# Files modified within 24 hours
+find /path -type f -mtime -1
+
+# Sort by modification time
+ls -lt /path | head -20
+```
+
+### Scenario 3: Batch Replace File Content
+```bash
+# Single file replacement
+sed -i 's/old/new/g' file
+
+# Batch replacement
+find /path -name "*.conf" -exec sed -i 's/old/new/g' {} \;
+```
+
+## Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| Permission denied | Use `sudo` or check file permissions |
+| Disk space full | `df -h`, `du -sh *` to find large files |
+| Special characters in filename | Use quotes or escape `rm "file name"` |
+| Slow deletion of many files | Use `rsync --delete` or `find -delete` |

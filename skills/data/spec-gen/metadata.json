@@ -1,7 +1,7 @@
 {
   "name": "spec-gen",
-  "repo": "turbobeest/squawk",
-  "path": ".claude/skills/spec-gen/SKILL.md",
-  "source": "github.com/turbobeest/squawk",
-  "downloaded_at": "2026-02-02T04:02:29.353140Z"
+  "repo": "turbobeest/cursor-dev-system",
+  "path": "skills/spec-gen/SKILL.md",
+  "source": "github.com/turbobeest/cursor-dev-system",
+  "downloaded_at": "2026-02-04T05:18:52.068613Z"
 }

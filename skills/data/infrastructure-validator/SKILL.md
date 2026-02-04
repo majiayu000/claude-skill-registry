@@ -5,13 +5,13 @@
 - activation_code: INFRASTRUCTURE_VALIDATOR_V1
 - version: 1.0.0
 - category: deployment
-- phase: 11
+- phase: 6
 
 ## Description
 Validates and starts infrastructure components including Docker containers, databases, and services.
 
 ## Activation Criteria
-- Triggered in Phase 11 (Deployment)
+- Triggered in Phase 6 (Deployment)
 - After tests pass
 - Before marking deployment complete
 

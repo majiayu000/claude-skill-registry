@@ -1,94 +1,191 @@
 ---
 name: run-tests
-description: Run the full test suite with linting, type checking, and code quality audit
-allowed-tools:
-  - Bash
-  - Grep
-context: auto
+description: Run the appropriate test suite based on what you're testing and whether you need database access
 ---
 
 # Run Tests Skill
 
-Run the full test suite with linting, type checking, and code quality audit.
+Use this skill when running or writing tests for this project.
 
-## When to Use
+---
 
-- After making code changes
-- Before committing
-- To verify code quality
-- When asked to "run tests" or "check the code"
+## Test Types
 
-## Quick Run
+This project uses filename and function name conventions for test categorization:
 
-Execute all checks in sequence:
+- **Unit tests**: Files without "Integration" in test function names. No external dependencies, fast.
+- **Integration tests**: `*_integration_test.go` files with "Integration" in function names. Requires database, slower.
+- **Benchmarks**: Standard Go benchmarks (`func Benchmark...`). See `internal/evaluator/evaluator_benchmark_test.go` for an example.
+
+## When to Use Each
+
+### Unit Tests (`task test:unit`)
+
+**Use when:**
+- Doing TDD or tight iteration loops
+- Testing pure functions or business logic
+- No database or network calls needed
+- Want fast feedback (runs in seconds)
+
+**Command:**
+```bash
+task test:unit
+```
+
+**What it runs:**
+```bash
+go test ./... -run "Test[^I]"
+```
+
+This runs all tests that don't have "Integration" in the name.
+
+**Example test files:**
+- `internal/helpers/maths_test.go`
+- `internal/candidate_tree/item_test.go`
+- `internal/evaluator/trader_constraints_test.go`
+
+### Integration Tests (`task test:integration`)
+
+**Use when:**
+- Testing database operations (models package)
+- Testing full workflows that span multiple components
+- Verifying migrations work correctly
+- Before merging to main
+
+**Commands:**
+```bash
+# Recommended for DevContainer (assuming database is running)
+task test:integration
+
+# Use if database needs to be started via Docker Compose
+task test:integration:docker
+```
+
+**What it does:**
+1. `test:integration`: Runs tests matching `.*Integration.*` pattern.
+2. `test:integration:docker`: Starts Docker services (PostgreSQL) via `compose:up`, then runs integration tests.
+
+**What it runs:**
+```bash
+go test ./... -run ".*Integration.*"
+```
+
+**Example test files:**
+- `internal/evaluator/find_best_build_integration_test.go`
+- `internal/db/db_test.go`
+
+**Requirements:**
+- Docker running
+- `.env` file configured
+- Database migrations applied
+
+### All Tests (`task test`)
+
+**Use when:**
+- Running CI/CD pipeline
+- Final verification before pushing
+- Want comprehensive coverage check
+
+**Command:**
+```bash
+task test
+```
+
+**What it runs:**
+```bash
+go test ./...
+```
+
+Runs everything: unit, integration, and any other tests.
+
+## Test Workflow Recommendations
+
+### During Active Development (TDD)
 
 ```bash
-# 1. Unit tests
-uv run pytest MouseMaster/Testing/Python/ -v --tb=short
-
-# 2. Linter
-uv run ruff check .
-
-# 3. Type checker
-uv run mypy MouseMaster/MouseMasterLib/
-
-# 4. Code quality audit
-grep -rn "except.*:" MouseMaster/ --include="*.py" -A1 | grep -B1 "pass$" || echo "No except:pass found"
+# Run unit tests repeatedly after changes
+task test:unit
 ```
 
-## Expected Results
+### Before Committing
 
-| Check | Expected |
-|-------|----------|
-| Unit tests | 67+ passed |
-| Ruff | 0 errors (or 1 import order) |
-| Mypy | 0 errors |
-| Audit | No except:pass patterns |
-
-## If Tests Fail
-
-1. Read the failing test output
-2. Identify which test failed and why
-3. Read the test file to understand what it checks
-4. Read the code being tested
-5. Fix the issue
-6. Re-run tests
-
-## If Lint Fails
-
-Auto-fix safe issues:
 ```bash
-uv run ruff check --fix .
+# Run unit tests (fast check)
+task test:unit
+
+# If touching database code, run integration tests
+task test:integration
 ```
 
-For other issues, review and fix manually.
+### Before Pushing/Merging
 
-## If Audit Finds Issues
+```bash
+# Run everything
+task test
 
-Follow `/fix-bad-practices` skill to correct:
-- `except: pass` → specific exception + logging
-- `except Exception` → specific exception types
-- Silent continuation → explicit error handling
-
-## Report Format
-
-After running, summarize:
-
-```
-## Test Results
-
-| Check | Status |
-|-------|--------|
-| Tests | ✓ 67 passed |
-| Lint | ✓ clean |
-| Types | ✓ clean |
-| Audit | ✓ no violations |
-
-Issues: None / [list issues]
+# Run linter too
+task lint
 ```
 
-## Related
+## Running Specific Tests
 
-- Agent: `.claude/agents/test-runner.md` - Full autonomous workflow
-- Skill: `/audit-code-quality` - Detailed audit patterns
-- Skill: `/fix-bad-practices` - Fix patterns
+### Single test function:
+```bash
+go test ./internal/evaluator -run TestFindBestBuild
+```
+
+### Single package:
+```bash
+go test ./internal/evaluator/...
+```
+
+### Verbose output:
+```bash
+go test -v ./...
+```
+
+### With coverage:
+```bash
+go test -cover ./...
+```
+
+## Writing New Tests
+
+When creating tests, follow the naming convention:
+
+```go
+// Unit test (no external dependencies)
+// File: internal/helpers/maths_unit_test.go
+func TestCalculateAverage(t *testing.T) {
+    // ...
+}
+
+// Integration test (uses database)
+// File: internal/models/weapons_integration_test.go
+func TestWeaponsIntegration(t *testing.T) {
+    // ...
+}
+```
+
+**Rules:**
+- Unit tests: `*_unit_test.go` files, no database/network
+- Integration tests: `*_integration_test.go` files, function name must include "Integration"
+- Use table-driven tests for multiple cases
+- Keep tests focused and independent
+
+## Troubleshooting
+
+**Integration tests fail with connection error:**
+- Ensure database is running.
+- Check `.env` has correct connection details.
+- In a devcontainer, the database is usually already running. Outside, you might need `task compose:up`.
+
+**Tests pass locally but fail in CI:**
+- Ensure you're not relying on local state or files
+- Check if tests have proper cleanup
+- Verify tests are idempotent (can run multiple times)
+
+**Tests are slow:**
+- Ensure unit tests aren't hitting the database
+- Check if you can mock external dependencies
+- Consider moving integration logic to integration test files

@@ -1,7 +1,7 @@
 {
   "name": "prompt-enhancer",
-  "repo": "catlog22/Claude-Code-Workflow",
-  "path": ".claude/skills/prompt-enhancer/SKILL.md",
-  "source": "github.com/catlog22/Claude-Code-Workflow",
-  "downloaded_at": "2026-02-02T05:01:37.335618Z"
+  "repo": "brixtonpham/claude-config",
+  "path": "skills/prompt-enhancer/SKILL.md",
+  "source": "github.com/brixtonpham/claude-config",
+  "downloaded_at": "2026-02-04T04:44:17.466476Z"
 }

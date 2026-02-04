@@ -1,7 +1,7 @@
 {
   "name": "constitution-enforcer",
-  "repo": "nahisaho/CodeGraphMCPServer",
-  "path": ".claude/skills/constitution-enforcer/SKILL.md",
-  "source": "github.com/nahisaho/CodeGraphMCPServer",
-  "downloaded_at": "2026-02-02T04:59:07.903608Z"
+  "repo": "nahisaho/MUSUBI",
+  "path": "src/templates/agents/claude-code/skills/constitution-enforcer/SKILL.md",
+  "source": "github.com/nahisaho/MUSUBI",
+  "downloaded_at": "2026-02-04T04:06:12.927866Z"
 }

@@ -1,64 +1,74 @@
 ---
-name: test-plan
-description: テスト計画書を作成する。テスト戦略、品質検証計画の策定時に使う。
-phase: planning
-pmbok-area: quality
+name: delivery.test_plan
+phase: delivery
+roles:
+  - QA Lead
+  - Test Engineer
+description: Generate a detailed test plan covering scenarios, environments, data, and reporting for the release.
+variables:
+  required:
+    - name: feature
+      description: Release or feature to validate.
+    - name: scope
+      description: Platforms, locales, or customer segments included.
+  optional:
+    - name: regression_focus
+      description: Critical regression areas that require emphasis.
+    - name: external_dependencies
+      description: Services or teams whose readiness impacts testing.
+outputs:
+  - Test scenario matrix with priority, type, and ownership.
+  - Environment, data, and tooling checklist.
+  - Reporting cadence and exit criteria.
 ---
 
-## 目的
+# Purpose
+Transform the high-level test strategy into an actionable plan that QA can execute throughout the delivery lifecycle.
 
-プロジェクト成果物の品質を検証するためのテスト戦略・方法・スケジュールを定義する。
+# Pre-run Checklist
+- ✅ Finalize scope, requirements, and acceptance criteria with product and engineering.
+- ✅ Align on test environment availability and cutover timelines.
+- ✅ Gather data requirements and staging credentials.
 
-## トリガー語
+# Invocation Guidance
+```bash
+codex run --skill delivery.test_plan \
+  --vars "feature={{feature}}" \
+         "scope={{scope}}" \
+         "regression_focus={{regression_focus}}" \
+         "external_dependencies={{external_dependencies}}"
+```
 
-- 「テスト計画を作成」
-- 「テスト戦略を策定」
-- 「QA計画を立てる」
+# Recommended Input Attachments
+- User stories with acceptance criteria.
+- Integration contracts or mock data samples.
+- Past regression suites or automation scripts.
 
----
+# Claude Workflow Outline
+1. Restate feature scope, critical flows, and constraints.
+2. Enumerate test scenarios covering functional, integration, and non-functional needs.
+3. Map scenarios to owners, environments, data sets, and automation status.
+4. Outline environment prep, tooling setup, and data seeding steps.
+5. Provide reporting cadence, defect triage plan, and exit criteria.
 
-## 入力で最初に聞くこと
+# Output Template
+```
+## Test Scenario Matrix
+| Scenario | Type | Priority | Owner | Environment | Data Needs | Automation | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
-| # | 質問 | 必須 |
-|---|------|------|
-| 1 | **プロジェクト名**は？ | ✓ |
-| 2 | **テスト対象**は？ | ✓ |
-| 3 | **テスト種別**は？（単体/結合/E2E/性能等） | - |
+## Environment & Data Checklist
+- Environment:
+- Access/Credentials:
+- Data Setup Tasks:
 
----
+## Reporting & Exit Criteria
+- Daily reporting cadence:
+- Defect SLA:
+- Exit Criteria:
+```
 
-## 手順
-
-### Step 1: テストスコープの定義
-
-### Step 2: テスト戦略の策定
-- テストレベル・種別の決定
-
-### Step 3: テスト環境・データの計画
-
-### Step 4: テストスケジュールの策定
-
-### Step 5: 保存
-- `workspace/{ProjectName}/docs/TestPlan.md`
-
----
-
-## 成果物
-
-| 成果物 | 保存先 |
-|--------|--------|
-| テスト計画書 | `workspace/{ProjectName}/docs/TestPlan.md` |
-
----
-
-## 検証（完了条件）
-
-- [ ] テストスコープが明確
-- [ ] 各テストレベルの戦略が記載されている
-- [ ] 合格基準が定義されている
-
----
-
-## 参照
-
-- Command: `.claude/commands/02_aipjm_02_planning_08_test_plan.md`
+# Follow-up Actions
+- Import scenarios into the test management tool.
+- Schedule daily stand-ups or async updates for the test window.
+- Coordinate with release management on exit criteria sign-off.

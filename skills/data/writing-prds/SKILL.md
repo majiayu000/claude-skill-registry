@@ -1,122 +1,74 @@
 ---
-name: "writing-prds"
-description: "Write a clear, decision-ready PRD (and optionally a PR/FAQ, AI eval spec, and prompt set) for cross-functional alignment."
+name: writing-prds
+description: Help users write effective PRDs. Use when someone is documenting product requirements, preparing specs for engineering, writing feature briefs, or defining what to build for their team.
 ---
 
 # Writing PRDs
 
-## Scope
+Help the user write effective product requirements documents using frameworks and insights from 11 product leaders.
 
-**Covers**
-- Turning a product idea into a **decision-ready PRD** with unambiguous scope, requirements, and success metrics
-- Optionally producing a **PR/FAQ** (press release + FAQ) to force customer-centric narrative first
-- For AI features: adding a **Prompt Set** + **Eval Spec** so “requirements” are testable and continuously checkable
+## How to Help
 
-**When to use**
-- “Write a PRD / product spec / requirements doc for this feature.”
-- “Turn these messy notes into a PRD we can align on.”
-- “Create a PR/FAQ and then a PRD.”
-- “This is an AI feature; I need evals + prompts to define behavior.”
+When the user asks for help with PRDs:
 
-**When NOT to use**
-- You’re still choosing *what strategy/market to pursue* (do product vision / strategy first)
-- You need discovery from scratch (research plan, problem validation) more than requirements
-- You need a detailed engineering design doc (APIs, schemas, low-level architecture)
-- You’re prioritizing among many initiatives (do roadmap prioritization first)
+1. **Start with the why** - Ask about the problem being solved and why it matters now, before features
+2. **Define success upfront** - Help them articulate how they'll know the feature succeeded
+3. **Choose the right format** - Discuss whether they need a traditional doc, a prototype, or executable evals
+4. **Keep it actionable** - Ensure the document leads to clear team action, not just documentation
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Product + target user/customer segment
-- Problem statement + why now (what changed, what’s broken, or what opportunity exists)
-- Goal(s) + non-goal(s) + key constraints (timeline, policy/legal, platform, dependencies)
-- Success metric(s) + 2–5 guardrails (quality, safety, cost, latency, trust)
+### Lead with problem and context
+Maggie Crowley: "The most important section is the first part - what is the background and context? What is the problem, why does it matter, and why does it matter now?" Center the team on the 'why' and the urgency before discussing solutions.
 
-**If it’s an AI feature (additionally)**
-- What the model/system should do vs must never do (policy + safety)
-- Concrete examples of desired and undesired outputs
-- How correctness will be evaluated (offline tests, human review, online metrics)
+### The PR/FAQ forces clarity
+Bill Carr: "Whenever we're devising a new product, we start by writing a press release describing it in a way that speaks to the customer. The idea better jump off the page." Use the PR to describe customer, problem, and solution in factual, data-rich language.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If answers are still missing, proceed with clearly labeled assumptions and provide 2–3 options (scope, metric, rollout).
+### Demos before memos in AI age
+Aparna Chennapragada: "If you're not prototyping and building to see what you want to build, you're doing it wrong. Prompt sets are the new PRDs." For AI features, include functional prototypes and prompt sets as core requirements.
 
-## Outputs (deliverables)
+### Evals as living PRDs
+Hamel Husain & Shreya Shankar: "This is the purest sense of what a product requirements document should be - this eval judge that's telling you exactly what it should be, and it's automatic and running constantly." Translate product requirements into executable evaluations for AI products.
 
-Produce a **PRD Pack** in Markdown (in-chat; or as files if the user requests):
+### Keep it lightweight for action
+Eric Simons: "We tend to keep them pretty light. I like to have the minimal amount of context that ensures everyone's on the same page and that key outcomes will be present when we get there." Focus on key outcomes rather than exhaustive details that developers ignore.
 
-1) **Context snapshot** (what decision we’re making, constraints, stakeholders)
-2) **Artifact selection** (PR/FAQ vs PRD vs AI add-ons)
-3) **PR/FAQ** (optional) — customer narrative + FAQs
-4) **PRD** — goals/non-goals, requirements (R1…Rn), UX flows, metrics, rollout
-5) **AI Prompt Set** (if AI) — versioned prompts + examples + guardrails
-6) **AI Eval Spec** (if AI) — acceptance tests + judge prompts + pass/fail criteria
-7) **Risks / Open questions / Next steps** (always included)
+### PRDs demonstrate craft
+Vikrama Dhiman: "Is your PRD quality good enough? Are you writing drafts that go to care teams, marketing teams? You must have impact through the artifacts you work on." High-quality PRDs demonstrate professional craft and create clarity at scale.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### AI can scaffold the basics
+Claire Vo: "I had used ChatGPT to come up with a very serviceable PRD spec for this very technical product." Use AI to scaffold basics like user stories and out-of-scope items, then focus on high-level strategy and narrative.
 
-## Workflow (8 steps)
+### Live PRDs reduce ambiguity
+Guillermo Rauch: "The product management team is now actually building the product. We've specced out in v0, think of it as a live PRD. The amount of detail - we're all saying 'just ship it.'" Interactive, animated prototypes reduce ambiguity and speed up approval.
 
-### 1) Decide the artifact set (don’t over-document)
-- **Inputs:** User request + constraints.
-- **Actions:** Choose: PR/FAQ only, PRD only, PR/FAQ → PRD, or PRD + AI add-ons (Prompt Set + Eval Spec).
-- **Outputs:** Artifact selection + rationale.
-- **Checks:** The artifacts match the decision being made and the audience.
+### Include the 'Why Now'
+Justify the timing of this investment against other opportunities. If you can't explain why this matters now versus later, the priority is questionable.
 
-### 2) Intake + clarify decision and success
-- **Inputs:** [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Ask up to 5 questions; confirm decision owner, timeline, constraints, and success metrics/guardrails.
-- **Outputs:** Context snapshot.
-- **Checks:** You can state “what we’re deciding” and “how we’ll measure success” in 1–2 sentences.
+## Questions to Help Users
 
-### 3) Write the customer narrative first (PR/FAQ or PRD narrative)
-- **Inputs:** Context snapshot.
-- **Actions:** Draft a customer-centric narrative (problem → solution → why now). If using PR/FAQ, draft the press release headline/summary and top FAQs.
-- **Outputs:** Narrative section (and PR/FAQ if selected).
-- **Checks:** A stakeholder can restate the customer benefit and urgency without jargon.
+- "What problem is this solving, and why does it matter now?"
+- "How will you know if this feature was successful - what metric moves?"
+- "Who is the customer, and what does their life look like after this ships?"
+- "What is explicitly out of scope to prevent scope creep?"
+- "Could you build a quick prototype instead of writing more documentation?"
+- "What are the key decisions that still need to be made?"
 
-### 4) Lock scope boundaries (goals, non-goals, out of scope)
-- **Inputs:** Narrative + constraints.
-- **Actions:** Define goals, non-goals, and explicit exclusions; call out dependencies and assumptions.
-- **Outputs:** Scope section(s) in the PRD.
-- **Checks:** “What we are NOT doing” is as clear as what we are doing.
+## Common Mistakes to Flag
 
-### 5) Convert scope into testable requirements (R1…Rn)
-- **Inputs:** Goals + user journeys.
-- **Actions:** Write numbered requirements with acceptance criteria, edge cases, and non-functional needs (privacy, latency, reliability). Mark “must/should/could”.
-- **Outputs:** Requirements table/list.
-- **Checks:** An engineer or QA can turn requirements into test cases without asking you to interpret intent.
+- **Starting with the solution** - The document should lead with the problem and context
+- **No success criteria** - Every PRD needs a clear definition of how you'll measure success
+- **Exhaustive detail** - Lightweight PRDs focused on outcomes are more likely to be read and used
+- **Static when prototypes work better** - For AI and UI work, live prototypes communicate more than prose
+- **Missing the 'Why Now'** - Without urgency justification, priorities will be questioned
 
-### 6) Define UX flows + instrumentation plan
-- **Inputs:** Requirements + current product surfaces/events.
-- **Actions:** Describe key user flows/states; specify success metrics, guardrails, and event/data needs (what to log, where, who owns).
-- **Outputs:** UX/flows section + metrics & instrumentation section.
-- **Checks:** Every goal has at least one measurable metric and a realistic data source.
+## Deep Dive
 
-### 7) If AI feature: ship prompts + evals as “living requirements”
-- **Inputs:** Requirements + examples.
-- **Actions:** Create a versioned Prompt Set and an Eval Spec (judge prompts + test set + pass thresholds). Include red-team/failure modes.
-- **Outputs:** Prompt Set + Eval Spec drafts.
-- **Checks:** The eval suite can fail when behavior regresses and pass when requirements are met.
+For all 14 insights from 11 guests, see `references/guest-insights.md`
 
-### 8) Quality gate + finalize for circulation
-- **Inputs:** Full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add Risks/Open questions/Next steps.
-- **Outputs:** Final PRD Pack (shareable as-is).
-- **Checks:** Decisions, owners, metrics, and open questions are explicit.
+## Related Skills
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
-
-## Examples
-
-**Example 1 (B2B SaaS feature):** “Write a PR/FAQ + PRD for ‘Saved views’ in our analytics dashboard for admins.”  
-Expected: PR/FAQ narrative, a scoped PRD with R1…Rn, metrics/guardrails, and a rollout plan.
-
-**Example 2 (AI feature):** “Write a PRD + Prompt Set + Eval Spec for an ‘AI email reply’ assistant with brand tone constraints.”  
-Expected: requirements that include safety/brand constraints, a prompt set with examples, and an eval spec with judge prompts + pass/fail thresholds.
-
-**Boundary example:** “Write a PRD for ‘make onboarding better’ (no product context).”  
-Response: ask the minimum intake questions; if context remains missing, produce 2–3 scoped options + assumptions and recommend discovery before committing to requirements.
-
+- Writing Specs & Designs
+- Working Backwards
+- Stakeholder Alignment
+- Shipping Products

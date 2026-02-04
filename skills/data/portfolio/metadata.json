@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "repo": "younwony/younwony.github.io",
-  "path": ".claude/skills/write/portfolio/SKILL.md",
-  "source": "github.com/younwony/younwony.github.io",
-  "downloaded_at": "2026-02-02T03:41:16.953038Z"
+  "repo": "marketcalls/openalgo-claude-plugin",
+  "path": "plugins/openalgo-python/skills/portfolio/SKILL.md",
+  "source": "github.com/marketcalls/openalgo-claude-plugin",
+  "downloaded_at": "2026-02-04T04:22:05.027349Z"
 }

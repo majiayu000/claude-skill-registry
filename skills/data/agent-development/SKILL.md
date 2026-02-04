@@ -4,11 +4,6 @@ description: This skill should be used when the user asks to "create an agent", 
 version: 0.1.0
 ---
 
-# SOURCE: anthropics/claude-plugins-official
-# PATH: plugins/plugin-dev/skills/agent-development/SKILL.md
-# DO NOT EDIT: This file is synced from external source
-
-
 # Agent Development for Claude Code Plugins
 
 ## Overview

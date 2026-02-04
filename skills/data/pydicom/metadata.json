@@ -1,7 +1,7 @@
 {
   "name": "pydicom",
-  "repo": "ricable/ultimate-ai-agent",
-  "path": "sources/ricable/claude-scientific-skills/scientific-skills/pydicom/SKILL.md",
-  "source": "github.com/ricable/ultimate-ai-agent",
-  "downloaded_at": "2026-02-02T04:13:03.881484Z"
+  "repo": "overtimepog/AgentTheo",
+  "path": ".claude/skills/scientific-skills/pydicom/SKILL.md",
+  "source": "github.com/overtimepog/AgentTheo",
+  "downloaded_at": "2026-02-04T04:05:53.073762Z"
 }

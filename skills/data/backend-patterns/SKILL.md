@@ -1,439 +1,587 @@
 ---
 name: backend-patterns
-description: Backend architecture patterns, API design, database optimization, and server-side best practices for Next.js API routes and tRPC.
+description: Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.
 ---
 
-# Backend Development Patterns
+# 後端開發模式
 
-Backend architecture patterns and best practices for Next.js and tRPC applications.
+用於可擴展伺服器端應用程式的後端架構模式和最佳實務。
 
-## When Used
+## API 設計模式
 
-| Agent      | Phase     |
-| ---------- | --------- |
-| code-agent | IMPLEMENT |
-
-## API Design Patterns
-
-### tRPC Router Structure
+### RESTful API 結構
 
 ```typescript
-// src/server/routers/workItem.ts
-import { z } from "zod";
-import { router, publicProcedure, protectedProcedure } from "../trpc";
-import { TRPCError } from "@trpc/server";
+// ✅ 基於資源的 URL
+GET    /api/markets                 # 列出資源
+GET    /api/markets/:id             # 取得單一資源
+POST   /api/markets                 # 建立資源
+PUT    /api/markets/:id             # 替換資源
+PATCH  /api/markets/:id             # 更新資源
+DELETE /api/markets/:id             # 刪除資源
 
-export const workItemRouter = router({
-  list: publicProcedure
-    .input(
-      z.object({
-        status: z.enum(["open", "in_progress", "done", "blocked"]).optional(),
-        limit: z.number().min(1).max(100).default(20),
-        cursor: z.string().optional(),
-      })
-    )
-    .query(async ({ input, ctx }) => {
-      const items = await ctx.db.workItem.findMany({
-        where: input.status ? { status: input.status } : undefined,
-        take: input.limit + 1,
-        cursor: input.cursor ? { id: input.cursor } : undefined,
-        orderBy: { createdAt: "desc" },
-      });
-
-      let nextCursor: string | undefined;
-      if (items.length > input.limit) {
-        const nextItem = items.pop();
-        nextCursor = nextItem?.id;
-      }
-
-      return { items, nextCursor };
-    }),
-
-  create: protectedProcedure
-    .input(
-      z.object({
-        title: z.string().min(1).max(200),
-        description: z.string().optional(),
-      })
-    )
-    .mutation(async ({ input, ctx }) => {
-      return ctx.db.workItem.create({
-        data: {
-          ...input,
-          userId: ctx.session.user.id,
-        },
-      });
-    }),
-
-  getById: publicProcedure
-    .input(z.object({ id: z.string() }))
-    .query(async ({ input, ctx }) => {
-      const item = await ctx.db.workItem.findUnique({
-        where: { id: input.id },
-      });
-
-      if (!item) {
-        throw new TRPCError({
-          code: "NOT_FOUND",
-          message: "Work item not found",
-        });
-      }
-
-      return item;
-    }),
-});
+// ✅ 用於過濾、排序、分頁的查詢參數
+GET /api/markets?status=active&sort=volume&limit=20&offset=0
 ```
 
-### Repository Pattern
+### Repository 模式
 
 ```typescript
-// src/lib/repositories/workItem.ts
-import { db } from "@/lib/db";
-import type { WorkItem, Prisma } from "@prisma/client";
-
-export const workItemRepository = {
-  findById: (id: string) => db.workItem.findUnique({ where: { id } }),
-
-  findMany: (filters?: Prisma.WorkItemWhereInput) =>
-    db.workItem.findMany({
-      where: filters,
-      orderBy: { createdAt: "desc" },
-    }),
-
-  create: (data: Prisma.WorkItemCreateInput) => db.workItem.create({ data }),
-
-  update: (id: string, data: Prisma.WorkItemUpdateInput) =>
-    db.workItem.update({ where: { id }, data }),
-
-  delete: (id: string) => db.workItem.delete({ where: { id } }),
-};
-```
-
-### Service Layer Pattern
-
-```typescript
-// src/lib/services/workItemService.ts
-import { workItemRepository } from "../repositories/workItem";
-import type { CreateWorkItemDto, UpdateWorkItemDto } from "../types";
-
-export const workItemService = {
-  async createWithValidation(data: CreateWorkItemDto, userId: string) {
-    // Business logic validation
-    if (data.dueDate && data.dueDate < new Date()) {
-      throw new Error("Due date cannot be in the past");
-    }
-
-    return workItemRepository.create({
-      ...data,
-      userId,
-      status: "open",
-    });
-  },
-
-  async updateStatus(id: string, status: string, userId: string) {
-    const item = await workItemRepository.findById(id);
-
-    if (!item) {
-      throw new Error("Work item not found");
-    }
-
-    if (item.userId !== userId) {
-      throw new Error("Not authorized");
-    }
-
-    return workItemRepository.update(id, { status });
-  },
-};
-```
-
-## Database Patterns (Prisma)
-
-### Query Optimization
-
-```typescript
-// Select only needed fields
-const items = await db.workItem.findMany({
-  select: {
-    id: true,
-    title: true,
-    status: true,
-    createdAt: true,
-  },
-  where: { status: "open" },
-  orderBy: { createdAt: "desc" },
-  take: 20,
-});
-
-// Include relations efficiently
-const itemsWithTasks = await db.workItem.findMany({
-  include: {
-    tasks: {
-      select: { id: true, title: true, completed: true },
-    },
-    user: {
-      select: { id: true, name: true },
-    },
-  },
-});
-```
-
-### N+1 Query Prevention
-
-```typescript
-// BAD: N+1 query problem
-const items = await db.workItem.findMany();
-for (const item of items) {
-  item.user = await db.user.findUnique({ where: { id: item.userId } });
+// 抽象資料存取邏輯
+interface MarketRepository {
+  findAll(filters?: MarketFilters): Promise<Market[]>
+  findById(id: string): Promise<Market | null>
+  create(data: CreateMarketDto): Promise<Market>
+  update(id: string, data: UpdateMarketDto): Promise<Market>
+  delete(id: string): Promise<void>
 }
 
-// GOOD: Include relation
-const items = await db.workItem.findMany({
-  include: { user: true },
-});
+class SupabaseMarketRepository implements MarketRepository {
+  async findAll(filters?: MarketFilters): Promise<Market[]> {
+    let query = supabase.from('markets').select('*')
 
-// GOOD: Batch fetch with findMany
-const items = await db.workItem.findMany();
-const userIds = [...new Set(items.map((i) => i.userId))];
-const users = await db.user.findMany({
-  where: { id: { in: userIds } },
-});
-const userMap = new Map(users.map((u) => [u.id, u]));
-items.forEach((item) => {
-  item.user = userMap.get(item.userId);
-});
-```
+    if (filters?.status) {
+      query = query.eq('status', filters.status)
+    }
 
-### Transactions
+    if (filters?.limit) {
+      query = query.limit(filters.limit)
+    }
 
-```typescript
-// Prisma transaction for atomicity
-const result = await db.$transaction(async (tx) => {
-  const workItem = await tx.workItem.create({
-    data: { title: "New Item", userId },
-  });
+    const { data, error } = await query
 
-  await tx.task.createMany({
-    data: tasks.map((task) => ({
-      ...task,
-      workItemId: workItem.id,
-    })),
-  });
-
-  return workItem;
-});
-```
-
-## Error Handling Patterns
-
-### Centralized Error Handler
-
-```typescript
-import { TRPCError } from "@trpc/server";
-import { ZodError } from "zod";
-
-export function handleError(error: unknown): TRPCError {
-  if (error instanceof TRPCError) {
-    return error;
+    if (error) throw new Error(error.message)
+    return data
   }
 
-  if (error instanceof ZodError) {
-    return new TRPCError({
-      code: "BAD_REQUEST",
-      message: "Validation failed",
-      cause: error,
-    });
-  }
-
-  // Log unexpected errors
-  console.error("Unexpected error:", error);
-
-  return new TRPCError({
-    code: "INTERNAL_SERVER_ERROR",
-    message: "An unexpected error occurred",
-  });
+  // 其他方法...
 }
 ```
 
-### Retry with Exponential Backoff
+### Service 層模式
+
+```typescript
+// 業務邏輯與資料存取分離
+class MarketService {
+  constructor(private marketRepo: MarketRepository) {}
+
+  async searchMarkets(query: string, limit: number = 10): Promise<Market[]> {
+    // 業務邏輯
+    const embedding = await generateEmbedding(query)
+    const results = await this.vectorSearch(embedding, limit)
+
+    // 取得完整資料
+    const markets = await this.marketRepo.findByIds(results.map(r => r.id))
+
+    // 依相似度排序
+    return markets.sort((a, b) => {
+      const scoreA = results.find(r => r.id === a.id)?.score || 0
+      const scoreB = results.find(r => r.id === b.id)?.score || 0
+      return scoreA - scoreB
+    })
+  }
+
+  private async vectorSearch(embedding: number[], limit: number) {
+    // 向量搜尋實作
+  }
+}
+```
+
+### Middleware 模式
+
+```typescript
+// 請求/回應處理流水線
+export function withAuth(handler: NextApiHandler): NextApiHandler {
+  return async (req, res) => {
+    const token = req.headers.authorization?.replace('Bearer ', '')
+
+    if (!token) {
+      return res.status(401).json({ error: 'Unauthorized' })
+    }
+
+    try {
+      const user = await verifyToken(token)
+      req.user = user
+      return handler(req, res)
+    } catch (error) {
+      return res.status(401).json({ error: 'Invalid token' })
+    }
+  }
+}
+
+// 使用方式
+export default withAuth(async (req, res) => {
+  // Handler 可存取 req.user
+})
+```
+
+## 資料庫模式
+
+### 查詢優化
+
+```typescript
+// ✅ 良好：只選擇需要的欄位
+const { data } = await supabase
+  .from('markets')
+  .select('id, name, status, volume')
+  .eq('status', 'active')
+  .order('volume', { ascending: false })
+  .limit(10)
+
+// ❌ 不良：選擇所有欄位
+const { data } = await supabase
+  .from('markets')
+  .select('*')
+```
+
+### N+1 查詢問題預防
+
+```typescript
+// ❌ 不良：N+1 查詢問題
+const markets = await getMarkets()
+for (const market of markets) {
+  market.creator = await getUser(market.creator_id)  // N 次查詢
+}
+
+// ✅ 良好：批次取得
+const markets = await getMarkets()
+const creatorIds = markets.map(m => m.creator_id)
+const creators = await getUsers(creatorIds)  // 1 次查詢
+const creatorMap = new Map(creators.map(c => [c.id, c]))
+
+markets.forEach(market => {
+  market.creator = creatorMap.get(market.creator_id)
+})
+```
+
+### Transaction 模式
+
+```typescript
+async function createMarketWithPosition(
+  marketData: CreateMarketDto,
+  positionData: CreatePositionDto
+) {
+  // 使用 Supabase transaction
+  const { data, error } = await supabase.rpc('create_market_with_position', {
+    market_data: marketData,
+    position_data: positionData
+  })
+
+  if (error) throw new Error('Transaction failed')
+  return data
+}
+
+// Supabase 中的 SQL 函式
+CREATE OR REPLACE FUNCTION create_market_with_position(
+  market_data jsonb,
+  position_data jsonb
+)
+RETURNS jsonb
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  -- 自動開始 transaction
+  INSERT INTO markets VALUES (market_data);
+  INSERT INTO positions VALUES (position_data);
+  RETURN jsonb_build_object('success', true);
+EXCEPTION
+  WHEN OTHERS THEN
+    -- 自動 rollback
+    RETURN jsonb_build_object('success', false, 'error', SQLERRM);
+END;
+$$;
+```
+
+## 快取策略
+
+### Redis 快取層
+
+```typescript
+class CachedMarketRepository implements MarketRepository {
+  constructor(
+    private baseRepo: MarketRepository,
+    private redis: RedisClient
+  ) {}
+
+  async findById(id: string): Promise<Market | null> {
+    // 先檢查快取
+    const cached = await this.redis.get(`market:${id}`)
+
+    if (cached) {
+      return JSON.parse(cached)
+    }
+
+    // 快取未命中 - 從資料庫取得
+    const market = await this.baseRepo.findById(id)
+
+    if (market) {
+      // 快取 5 分鐘
+      await this.redis.setex(`market:${id}`, 300, JSON.stringify(market))
+    }
+
+    return market
+  }
+
+  async invalidateCache(id: string): Promise<void> {
+    await this.redis.del(`market:${id}`)
+  }
+}
+```
+
+### Cache-Aside 模式
+
+```typescript
+async function getMarketWithCache(id: string): Promise<Market> {
+  const cacheKey = `market:${id}`
+
+  // 嘗試快取
+  const cached = await redis.get(cacheKey)
+  if (cached) return JSON.parse(cached)
+
+  // 快取未命中 - 從資料庫取得
+  const market = await db.markets.findUnique({ where: { id } })
+
+  if (!market) throw new Error('Market not found')
+
+  // 更新快取
+  await redis.setex(cacheKey, 300, JSON.stringify(market))
+
+  return market
+}
+```
+
+## 錯誤處理模式
+
+### 集中式錯誤處理器
+
+```typescript
+class ApiError extends Error {
+  constructor(
+    public statusCode: number,
+    public message: string,
+    public isOperational = true
+  ) {
+    super(message)
+    Object.setPrototypeOf(this, ApiError.prototype)
+  }
+}
+
+export function errorHandler(error: unknown, req: Request): Response {
+  if (error instanceof ApiError) {
+    return NextResponse.json({
+      success: false,
+      error: error.message
+    }, { status: error.statusCode })
+  }
+
+  if (error instanceof z.ZodError) {
+    return NextResponse.json({
+      success: false,
+      error: 'Validation failed',
+      details: error.errors
+    }, { status: 400 })
+  }
+
+  // 記錄非預期錯誤
+  console.error('Unexpected error:', error)
+
+  return NextResponse.json({
+    success: false,
+    error: 'Internal server error'
+  }, { status: 500 })
+}
+
+// 使用方式
+export async function GET(request: Request) {
+  try {
+    const data = await fetchData()
+    return NextResponse.json({ success: true, data })
+  } catch (error) {
+    return errorHandler(error, request)
+  }
+}
+```
+
+### 指數退避重試
 
 ```typescript
 async function fetchWithRetry<T>(
   fn: () => Promise<T>,
   maxRetries = 3
 ): Promise<T> {
-  let lastError: Error;
+  let lastError: Error
 
   for (let i = 0; i < maxRetries; i++) {
     try {
-      return await fn();
+      return await fn()
     } catch (error) {
-      lastError = error as Error;
+      lastError = error as Error
 
       if (i < maxRetries - 1) {
-        const delay = Math.pow(2, i) * 1000;
-        await new Promise((resolve) => setTimeout(resolve, delay));
+        // 指數退避：1s, 2s, 4s
+        const delay = Math.pow(2, i) * 1000
+        await new Promise(resolve => setTimeout(resolve, delay))
       }
     }
   }
 
-  throw lastError!;
+  throw lastError!
+}
+
+// 使用方式
+const data = await fetchWithRetry(() => fetchFromAPI())
+```
+
+## 認證與授權
+
+### JWT Token 驗證
+
+```typescript
+import jwt from 'jsonwebtoken'
+
+interface JWTPayload {
+  userId: string
+  email: string
+  role: 'admin' | 'user'
+}
+
+export function verifyToken(token: string): JWTPayload {
+  try {
+    const payload = jwt.verify(token, process.env.JWT_SECRET!) as JWTPayload
+    return payload
+  } catch (error) {
+    throw new ApiError(401, 'Invalid token')
+  }
+}
+
+export async function requireAuth(request: Request) {
+  const token = request.headers.get('authorization')?.replace('Bearer ', '')
+
+  if (!token) {
+    throw new ApiError(401, 'Missing authorization token')
+  }
+
+  return verifyToken(token)
+}
+
+// 在 API 路由中使用
+export async function GET(request: Request) {
+  const user = await requireAuth(request)
+
+  const data = await getDataForUser(user.userId)
+
+  return NextResponse.json({ success: true, data })
 }
 ```
 
-## Middleware Patterns
-
-### tRPC Middleware
+### 基於角色的存取控制
 
 ```typescript
-// Authentication middleware
-const isAuthed = t.middleware(({ ctx, next }) => {
-  if (!ctx.session || !ctx.session.user) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
-  }
-  return next({
-    ctx: {
-      session: { ...ctx.session, user: ctx.session.user },
-    },
-  });
-});
+type Permission = 'read' | 'write' | 'delete' | 'admin'
 
-export const protectedProcedure = t.procedure.use(isAuthed);
-
-// Logging middleware
-const logger = t.middleware(async ({ path, type, next }) => {
-  const start = Date.now();
-  const result = await next();
-  const duration = Date.now() - start;
-  console.log(`${type} ${path} - ${duration}ms`);
-  return result;
-});
-```
-
-## Rate Limiting
-
-```typescript
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
-
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(10, "10 s"),
-  analytics: true,
-});
-
-// In tRPC middleware
-const rateLimitMiddleware = t.middleware(async ({ ctx, next }) => {
-  const ip = ctx.req?.headers["x-forwarded-for"] || "anonymous";
-  const { success } = await ratelimit.limit(ip as string);
-
-  if (!success) {
-    throw new TRPCError({
-      code: "TOO_MANY_REQUESTS",
-      message: "Rate limit exceeded",
-    });
-  }
-
-  return next();
-});
-```
-
-## Background Jobs
-
-### Simple Queue Pattern
-
-```typescript
-interface Job<T> {
-  id: string;
-  data: T;
-  createdAt: Date;
+interface User {
+  id: string
+  role: 'admin' | 'moderator' | 'user'
 }
 
-class JobQueue<T> {
-  private queue: Job<T>[] = [];
-  private processing = false;
+const rolePermissions: Record<User['role'], Permission[]> = {
+  admin: ['read', 'write', 'delete', 'admin'],
+  moderator: ['read', 'write', 'delete'],
+  user: ['read', 'write']
+}
 
-  async add(data: T): Promise<string> {
-    const job: Job<T> = {
-      id: crypto.randomUUID(),
-      data,
-      createdAt: new Date(),
-    };
-    this.queue.push(job);
+export function hasPermission(user: User, permission: Permission): boolean {
+  return rolePermissions[user.role].includes(permission)
+}
 
-    if (!this.processing) {
-      this.process();
+export function requirePermission(permission: Permission) {
+  return (handler: (request: Request, user: User) => Promise<Response>) => {
+    return async (request: Request) => {
+      const user = await requireAuth(request)
+
+      if (!hasPermission(user, permission)) {
+        throw new ApiError(403, 'Insufficient permissions')
+      }
+
+      return handler(request, user)
+    }
+  }
+}
+
+// 使用方式 - HOF 包裝 handler
+export const DELETE = requirePermission('delete')(
+  async (request: Request, user: User) => {
+    // Handler 接收已驗證且具有已驗證權限的使用者
+    return new Response('Deleted', { status: 200 })
+  }
+)
+```
+
+## 速率限制
+
+### 簡單的記憶體速率限制器
+
+```typescript
+class RateLimiter {
+  private requests = new Map<string, number[]>()
+
+  async checkLimit(
+    identifier: string,
+    maxRequests: number,
+    windowMs: number
+  ): Promise<boolean> {
+    const now = Date.now()
+    const requests = this.requests.get(identifier) || []
+
+    // 移除視窗外的舊請求
+    const recentRequests = requests.filter(time => now - time < windowMs)
+
+    if (recentRequests.length >= maxRequests) {
+      return false  // 超過速率限制
     }
 
-    return job.id;
+    // 新增當前請求
+    recentRequests.push(now)
+    this.requests.set(identifier, recentRequests)
+
+    return true
+  }
+}
+
+const limiter = new RateLimiter()
+
+export async function GET(request: Request) {
+  const ip = request.headers.get('x-forwarded-for') || 'unknown'
+
+  const allowed = await limiter.checkLimit(ip, 100, 60000)  // 100 請求/分鐘
+
+  if (!allowed) {
+    return NextResponse.json({
+      error: 'Rate limit exceeded'
+    }, { status: 429 })
+  }
+
+  // 繼續處理請求
+}
+```
+
+## 背景任務與佇列
+
+### 簡單佇列模式
+
+```typescript
+class JobQueue<T> {
+  private queue: T[] = []
+  private processing = false
+
+  async add(job: T): Promise<void> {
+    this.queue.push(job)
+
+    if (!this.processing) {
+      this.process()
+    }
   }
 
   private async process(): Promise<void> {
-    this.processing = true;
+    this.processing = true
 
     while (this.queue.length > 0) {
-      const job = this.queue.shift()!;
+      const job = this.queue.shift()!
+
       try {
-        await this.execute(job);
+        await this.execute(job)
       } catch (error) {
-        console.error(`Job ${job.id} failed:`, error);
+        console.error('Job failed:', error)
       }
     }
 
-    this.processing = false;
+    this.processing = false
   }
 
-  protected async execute(job: Job<T>): Promise<void> {
-    // Override in subclass
+  private async execute(job: T): Promise<void> {
+    // 任務執行邏輯
   }
+}
+
+// 用於索引市場的使用範例
+interface IndexJob {
+  marketId: string
+}
+
+const indexQueue = new JobQueue<IndexJob>()
+
+export async function POST(request: Request) {
+  const { marketId } = await request.json()
+
+  // 加入佇列而非阻塞
+  await indexQueue.add({ marketId })
+
+  return NextResponse.json({ success: true, message: 'Job queued' })
 }
 ```
 
-## Logging
+## 日誌與監控
 
-### Structured Logging
+### 結構化日誌
 
 ```typescript
 interface LogContext {
-  userId?: string;
-  requestId?: string;
-  method?: string;
-  path?: string;
-  [key: string]: unknown;
+  userId?: string
+  requestId?: string
+  method?: string
+  path?: string
+  [key: string]: unknown
 }
 
-function log(
-  level: "info" | "warn" | "error",
-  message: string,
-  context?: LogContext
-) {
-  const entry = {
-    timestamp: new Date().toISOString(),
-    level,
-    message,
-    ...context,
-  };
+class Logger {
+  log(level: 'info' | 'warn' | 'error', message: string, context?: LogContext) {
+    const entry = {
+      timestamp: new Date().toISOString(),
+      level,
+      message,
+      ...context
+    }
 
-  if (level === "error") {
-    console.error(JSON.stringify(entry));
-  } else {
-    console.log(JSON.stringify(entry));
+    console.log(JSON.stringify(entry))
+  }
+
+  info(message: string, context?: LogContext) {
+    this.log('info', message, context)
+  }
+
+  warn(message: string, context?: LogContext) {
+    this.log('warn', message, context)
+  }
+
+  error(message: string, error: Error, context?: LogContext) {
+    this.log('error', message, {
+      ...context,
+      error: error.message,
+      stack: error.stack
+    })
   }
 }
 
-// Usage
-log("info", "Work item created", {
-  userId: ctx.session.user.id,
-  workItemId: item.id,
-});
+const logger = new Logger()
+
+// 使用方式
+export async function GET(request: Request) {
+  const requestId = crypto.randomUUID()
+
+  logger.info('Fetching markets', {
+    requestId,
+    method: 'GET',
+    path: '/api/markets'
+  })
+
+  try {
+    const markets = await fetchMarkets()
+    return NextResponse.json({ success: true, data: markets })
+  } catch (error) {
+    logger.error('Failed to fetch markets', error as Error, { requestId })
+    return NextResponse.json({ error: 'Internal error' }, { status: 500 })
+  }
+}
 ```
 
-## Best Practices
-
-1. **Use tRPC for type-safe APIs** - End-to-end type safety
-2. **Repository pattern** - Abstract data access
-3. **Service layer** - Business logic separation
-4. **Transactions** - Atomic operations
-5. **Proper error handling** - TRPCError with appropriate codes
-6. **Rate limiting** - Protect endpoints
-7. **Structured logging** - JSON format for parsing
-8. **N+1 prevention** - Include/batch queries
+**記住**：後端模式能實現可擴展、可維護的伺服器端應用程式。選擇符合你複雜度等級的模式。

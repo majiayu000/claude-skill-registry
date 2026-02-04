@@ -1,7 +1,7 @@
 {
   "name": "generate-acceptance-test",
-  "repo": "knowlet/skills",
+  "repo": "knowlet/pf-skills",
   "path": "skills/generate-acceptance-test/SKILL.md",
-  "source": "github.com/knowlet/skills",
-  "downloaded_at": "2026-02-02T03:32:07.754693Z"
+  "source": "github.com/knowlet/pf-skills",
+  "downloaded_at": "2026-02-04T01:17:03.011137Z"
 }

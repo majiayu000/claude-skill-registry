@@ -1,7 +1,7 @@
 {
   "name": "git-master",
-  "repo": "changoo89/claude-pilot",
-  "path": ".claude/skills/git-master/SKILL.md",
-  "source": "github.com/changoo89/claude-pilot",
-  "downloaded_at": "2026-02-02T04:25:31.926511Z"
+  "repo": "code-yeongyu/oh-my-opencode",
+  "path": "src/features/builtin-skills/git-master/SKILL.md",
+  "source": "github.com/code-yeongyu/oh-my-opencode",
+  "downloaded_at": "2026-02-04T05:12:31.058031Z"
 }

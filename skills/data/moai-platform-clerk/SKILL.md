@@ -1,25 +1,21 @@
 ---
-name: moai-platform-clerk
-description: >
-  Clerk modern authentication specialist covering WebAuthn, passkeys, passwordless,
-  and beautiful UI components. Use when implementing modern auth with great UX.
-license: Apache-2.0
-compatibility: Designed for Claude Code
-allowed-tools: Read Write Bash Grep Glob
+name: "moai-platform-clerk"
+description: "Clerk modern authentication specialist covering WebAuthn, passkeys, passwordless, and beautiful UI components. Use when implementing modern auth with great UX."
+version: 2.1.0
+category: "platform"
+modularized: true
 user-invocable: false
-metadata:
-  version: "2.1.0"
-  category: "platform"
-  status: "active"
-  updated: "2026-01-11"
-  modularized: "true"
-  tags: "clerk, webauthn, passkeys, passwordless, authentication"
-  context7-libraries: "/clerk/clerk-docs"
-  related-skills: "moai-platform-auth0, moai-lang-typescript"
-
-# MoAI Extension: Triggers
-triggers:
-  keywords: ["clerk", "webauthn", "passkeys", "passwordless", "modern auth", "biometric"]
+tags: ['clerk', 'webauthn', 'passkeys', 'passwordless', 'authentication']
+context7-libraries: "/clerk/clerk-docs"
+related-skills: "moai-platform-auth0, moai-lang-typescript"
+updated: 2026-01-11
+status: "active"
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+  - Grep
+  - Glob
 ---
 
 # Clerk Modern Authentication Specialist
@@ -72,7 +68,7 @@ The useAuth hook provides access to authentication state and tokens. Import useA
 
 ### useUser Hook
 
-The useUser hook provides access to user profile data. Import useUser from @clerk/nextjs in a client component. Destructure isSignedIn, user, and isLoaded from the hook. Access user properties including firstName, primaryEmailAdddess.emailAdddess, and imageUrl for profile display.
+The useUser hook provides access to user profile data. Import useUser from @clerk/nextjs in a client component. Destructure isSignedIn, user, and isLoaded from the hook. Access user properties including firstName, primaryEmailAddress.emailAddress, and imageUrl for profile display.
 
 ### SignIn and SignUp Pages
 

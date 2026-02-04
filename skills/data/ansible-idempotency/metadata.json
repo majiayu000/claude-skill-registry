@@ -1,9 +1,7 @@
 {
   "name": "ansible-idempotency",
-  "description": "This skill should be used when writing idempotent Ansible tasks, using command or shell modules, implementing changed_when and failed_when directives, creating check-before-create patterns, or trouble",
   "repo": "basher83/lunar-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
+  "path": "plugins/infrastructure/ansible-workflows/skills/ansible-idempotency/SKILL.md",
+  "source": "github.com/basher83/lunar-claude",
+  "downloaded_at": "2026-02-04T02:26:28.792919Z"
 }

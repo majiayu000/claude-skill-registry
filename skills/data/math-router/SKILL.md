@@ -1,6 +1,9 @@
 ---
 name: math-router
 description: Deterministic router for math cognitive stack - maps user intent to exact CLI commands
+triggers: ["math", "calculate", "compute", "solve", "integrate", "derivative", "plot", "convert", "prove"]
+priority: high
+user-invocable: false
 ---
 
 # Math Router

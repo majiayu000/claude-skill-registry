@@ -1,7 +1,9 @@
 {
   "name": "scheduling",
-  "repo": "andrueandersoncs/claude-skill-effect-ts",
-  "path": "skills/scheduling/SKILL.md",
-  "source": "github.com/andrueandersoncs/claude-skill-effect-ts",
-  "downloaded_at": "2026-02-02T04:48:59.019216Z"
+  "description": "Generate resident schedules respecting ACGME rules, institutional policies, and individual preferences. Orchestrates constraint propagation, optimization, and conflict resolution for medical residency",
+  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
+  "category": "data",
+  "tags": [],
+  "stars": 0,
+  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager"
 }

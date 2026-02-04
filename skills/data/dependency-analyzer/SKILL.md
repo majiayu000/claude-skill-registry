@@ -1,243 +1,161 @@
 ---
 name: dependency-analyzer
-description: Analyzes project dependencies, detects outdated packages, identifies breaking changes, and suggests safe update strategies. Helps maintain dependency health and security.
-version: 1.0
-model: sonnet
-invoked_by: both
-user_invocable: true
-tools: [Read, Write, Edit, Bash, Glob, Grep]
-best_practices:
-  - Analyze package.json/requirements.txt/go.mod
-  - Check for security vulnerabilities
-  - Identify breaking changes
-  - Suggest update strategies
-  - Validate compatibility
-error_handling: graceful
-streaming: supported
-templates: [dependency-report, update-plan, security-audit]
+description: Analyze project dependencies for vulnerabilities, updates, and optimization opportunities. Use when auditing dependencies or managing package versions.
 ---
 
 # Dependency Analyzer Skill
 
-<identity>
-Dependency Analyzer Skill - Analyzes project dependencies, detects outdated packages, identifies breaking changes, and suggests safe update strategies.
-</identity>
+プロジェクトの依存関係を分析するスキルです。
 
-<capabilities>
-- Analyzing dependency health
-- Planning dependency updates
-- Detecting security vulnerabilities
-- Identifying breaking changes
-- Validating compatibility
-</capabilities>
+## 概要
 
-<instructions>
-<execution_process>
+依存関係のバージョン、脆弱性、ライセンス、アップデート可否を分析します。
 
-### Step 1: Identify Dependency Files
+## 主な機能
 
-Locate dependency files:
+- **バージョン確認**: 最新版との比較
+- **脆弱性スキャン**: CVE検出
+- **ライセンス確認**: 互換性チェック
+- **依存関係ツリー**: 視覚化
+- **重複検出**: 同じパッケージの複数バージョン
+- **未使用検出**: 使われていない依存関係
 
-- `package.json` (Node.js)
-- `requirements.txt` (Python)
-- `go.mod` (Go)
-- `Cargo.toml` (Rust)
-- `pom.xml` (Java/Maven)
+## 分析例
 
-### Step 2: Analyze Dependencies
+### package.json分析
 
-Examine dependencies:
+```json
+{
+  "dependencies": {
+    "express": "4.17.1",      // ⚠️ 最新: 4.18.2
+    "lodash": "4.17.15",      // 🔴 CVE-2020-8203
+    "react": "18.2.0",        // ✅ 最新
+    "axios": "0.21.1"         // ⚠️ 最新: 1.6.0
+  }
+}
+```
 
-- Read dependency files
-- Check versions
-- Identify outdated packages
-- Note version constraints
-
-### Step 3: Semantic Versioning Analysis
-
-Analyze version numbers using semantic versioning (semver):
-
-1. **Parse version numbers**:
-   - Extract major.minor.patch from version strings
-   - Handle version ranges (^, ~, >=, etc.)
-   - Identify exact vs range versions
-
-2. **Detect major version bumps**:
-   - Compare current version with latest available
-   - Identify major version changes (e.g., 1.x.x -> 2.x.x)
-   - Flag major updates as potentially breaking
-
-3. **Check changelogs for breaking changes**:
-   - **For major version updates**: Trigger web search (Exa/WebFetch) to research breaking changes
-   - Look for "BREAKING CHANGE" markers in changelogs
-   - Check migration guides
-   - Review release notes for breaking changes
-   - Document specific breaking changes found
-
-4. **Semantic Versioning Rules**:
-   - **Major version (X.0.0)**: Breaking changes likely, requires code changes
-   - **Minor version (0.X.0)**: New features, backward compatible
-   - **Patch version (0.0.X)**: Bug fixes, backward compatible
-
-5. **Breaking Change Detection**:
-   - Parse changelog entries for breaking change indicators
-   - Identify deprecated APIs
-   - Check for removed features
-   - Document migration requirements
-   - Generate breaking change report
-
-### Step 4: Check for Updates
-
-Check available updates:
-
-- Query package registries
-- Compare current vs latest versions
-- Identify major/minor/patch updates
-- Apply semantic versioning analysis
-- Warn about breaking changes
-
-### Step 5: Security Audit
-
-Check for vulnerabilities:
-
-- Scan for known vulnerabilities
-- Check security advisories
-- Identify high-risk packages
-- Suggest security updates
-
-### Step 6: Generate Report
-
-Create dependency report:
-
-- List outdated packages
-- Identify breaking changes
-- Suggest update strategy
-- Provide migration guidance
-  </execution_process>
-
-<integration>
-**Integration with DevOps Agent**:
-- Manages dependency updates
-- Implements update strategies
-- Validates compatibility
-
-**Integration with Security Architect Agent**:
-
-- Reviews security vulnerabilities
-- Validates security updates
-- Ensures compliance
-  </integration>
-
-<best_practices>
-
-1. **Regular Analysis**: Analyze dependencies regularly
-2. **Security First**: Prioritize security updates
-3. **Test Updates**: Always test after updates
-4. **Gradual Updates**: Update incrementally
-5. **Document Changes**: Track update decisions
-   </best_practices>
-   </instructions>
-
-<examples>
-<formatting_example>
-**Dependency Health Report**
+**分析結果**:
 
 ```markdown
-# Dependency Health Report
+## 依存関係分析レポート
 
-## Summary
+### 🔴 Critical Issues (2)
 
-- Total Dependencies: 45
-- Outdated: 12
-- Vulnerable: 3
-- Up to Date: 30
+1. **lodash@4.17.15**
+   - CVE: CVE-2020-8203
+   - 重大度: High
+   - 推奨: 4.17.21以上にアップデート
+   - 影響: Prototype Pollution
 
-## Outdated Packages
+2. **axios@0.21.1**
+   - CVE: CVE-2021-3749
+   - 重大度: Medium
+   - 推奨: 1.6.0にアップデート
 
-- react: 18.0.0 -> 18.2.0 (minor update)
-- next: 13.4.0 -> 14.0.0 (major update - breaking changes)
-- typescript: 5.0.0 -> 5.3.0 (patch update)
+### ⚠️ 更新可能 (2)
 
-## Security Vulnerabilities
+- express: 4.17.1 → 4.18.2
+- axios: 0.21.1 → 1.6.0
 
-- lodash: 4.17.20 (CVE-2021-23337) - Update to 4.17.21
-- axios: 0.21.1 (CVE-2021-3749) - Update to 1.6.0
+### ライセンス確認
 
-## Update Recommendations
+| Package | Version | License | Compatible |
+|---------|---------|---------|------------|
+| express | 4.17.1 | MIT | ✅ |
+| lodash | 4.17.15 | MIT | ✅ |
+| react | 18.2.0 | MIT | ✅ |
 
-1. Update patch versions (safe)
-2. Review minor updates (low risk)
-3. Plan major updates (breaking changes)
-```
-
-</formatting_example>
-
-<formatting_example>
-**Update Plan**
-
-```markdown
-# Dependency Update Plan
-
-## Phase 1: Patch Updates (Safe)
-
-- Update lodash: 4.17.20 -> 4.17.21
-- Update typescript: 5.0.0 -> 5.3.0
-
-## Phase 2: Minor Updates (Low Risk)
-
-- Update react: 18.0.0 -> 18.2.0
-- Update @types/node: 20.0.0 -> 20.10.0
-
-## Phase 3: Major Updates (Breaking Changes)
-
-- Update next: 13.4.0 -> 14.0.0
-  - Breaking changes: [List]
-  - Migration steps: [Steps]
-  - Testing required: [Tests]
-```
-
-</formatting_example>
-</examples>
-
-<examples>
-<usage_example>
-**Example Commands**:
-
-```
-# Analyze dependencies
-Analyze dependencies for this project
-
-# Check for updates
-Check for dependency updates
-
-# Security audit
-Perform security audit of dependencies
-
-# Generate update plan
-Generate update plan for major version updates
-```
-
-</usage_example>
-</examples>
-
-## Rules
-
-- Always check for security vulnerabilities first
-- Research breaking changes before major updates
-- Test thoroughly after any dependency update
-
-## Memory Protocol (MANDATORY)
-
-**Before starting:**
+### 推奨アクション
 
 ```bash
-cat .claude/context/memory/learnings.md
+npm update lodash
+npm update axios
+npm update express
 ```
 
-**After completing:**
+### 依存関係ツリー
 
-- New pattern -> `.claude/context/memory/learnings.md`
-- Issue found -> `.claude/context/memory/issues.md`
-- Decision made -> `.claude/context/memory/decisions.md`
+```
+myapp
+├── express@4.17.1
+│   ├── body-parser@1.19.0
+│   └── cookie@0.4.0
+├── lodash@4.17.15 (⚠️ 脆弱性あり)
+├── react@18.2.0
+│   └── loose-envify@1.4.0
+└── axios@0.21.1 (⚠️ 更新必要)
+```
+```
 
-> ASSUME INTERRUPTION: Your context may reset. If it's not in memory, it didn't happen.
+## コマンド例
+
+### npm
+
+```bash
+# 脆弱性スキャン
+npm audit
+
+# 修正
+npm audit fix
+
+# 強制修正
+npm audit fix --force
+
+# 更新確認
+npm outdated
+
+# 依存関係ツリー
+npm list
+
+# 特定パッケージの依存
+npm list express
+```
+
+### yarn
+
+```bash
+# 脆弱性スキャン
+yarn audit
+
+# 更新確認
+yarn outdated
+
+# 依存関係ツリー
+yarn list
+
+# 重複検出
+yarn dedupe
+```
+
+### Python (pip)
+
+```bash
+# 更新確認
+pip list --outdated
+
+# 脆弱性スキャン
+pip-audit
+
+# 依存関係
+pipdeptree
+```
+
+## ライセンス互換性
+
+### MIT License
+- ✅ 商用利用可能
+- ✅ 改変可能
+- ✅ 配布可能
+
+### GPL License
+- ⚠️ コピーレフト
+- 派生物もGPL必須
+
+### Apache 2.0
+- ✅ 商用利用可能
+- ✅ 特許保護
+
+## バージョン情報
+
+- スキルバージョン: 1.0.0

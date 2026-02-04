@@ -1,6 +1,12 @@
 ---
 name: "QE Coverage Analysis"
 description: "O(log n) sublinear coverage gap detection with risk-weighted analysis and intelligent test prioritization."
+trust_tier: 3
+validation:
+  schema_path: schemas/output.json
+  validator_path: scripts/validate.sh
+  eval_path: evals/qe-coverage-analysis.yaml
+
 ---
 
 # QE Coverage Analysis

@@ -1,125 +1,80 @@
 ---
-name: "finding-mentors-sponsors"
-description: "Build a Mentor & Sponsor Plan Pack (mentor portfolio, sponsor strategy, target list, outreach scripts, meeting agenda, tracking + cadence). Use for finding a mentor, finding a sponsor, mentorship, sponsorship, career advisor, career coaching, networking outreach. Category: Career."
+name: finding-mentors-sponsors
+description: Help users build relationships with mentors and sponsors for career growth. Use when someone is looking for career guidance, wants to find a mentor, needs an advocate at work, is trying to build their professional network, or asking how to get advice from senior leaders.
 ---
 
 # Finding Mentors & Sponsors
 
-## Scope
+Help the user build meaningful mentor and sponsor relationships using approaches from 19 product leaders.
 
-**Covers**
-- Clarifying what you actually need: **mentor** (advice) vs **sponsor** (bets political capital)
-- Building a **portfolio** of mentors (not “one perfect oracle”)
-- Identifying and prioritizing potential mentors/sponsors (internal + external) with a **warm-path plan**
-- Writing outreach messages that are **honest, specific, and easy to say yes/no to**
-- Running high-signal first conversations (agenda, questions, close, follow-up)
-- Turning conversations into an **operating system** (cadence + value exchange + tracking)
-- Optional: evaluating and selecting a **career coach** (interview multiple; pick for fit)
+## How to Help
 
-**When to use**
-- “Help me find a mentor.”
-- “I need a sponsor / advocate at work.”
-- “Write outreach messages to reach out to potential mentors.”
-- “How do I ask for mentorship without being awkward?”
-- “I need a system to build relationships and get guidance for my career.”
+When the user asks for help finding mentors or sponsors:
 
-**When NOT to use**
-- You need therapy/mental-health support (use a licensed professional)
-- You’re in an HR/performance escalation (PIP/investigation) where advice could be sensitive — follow the formal process first
-- You only want a resume/LinkedIn rewrite (use a resume/job-search workflow)
-- You want spammy mass outreach or “growth hacking” people — this pack assumes respectful, relationship-based asks
+1. **Clarify the goal** - Ask whether they need advice (mentor), advocacy and opportunities (sponsor), or accountability (coach). These are different relationships with different approaches
+2. **Identify potential candidates** - Help them think about who is 2-3 years ahead on their desired path, who has solved their specific problem before, or who has organizational influence
+3. **Design the approach** - Guide them toward small, specific asks rather than formal "will you be my mentor" requests
+4. **Build the relationship** - Coach them on following up with results, offering reciprocal value, and maintaining the connection over time
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Your current role/level + domain (e.g., “PM in B2B SaaS, 5 years experience”)
-- The outcome you want in the next 3–6 months (promotion readiness, leadership growth, domain mastery, etc.)
-- 2–4 skill gaps or problems you want help with
-- Your constraints (time per week, confidentiality, internal vs external, comfort with outreach)
-- Your current network starting point (at least 5 names or communities, even if weak ties)
+### Sponsors matter more than mentors for career acceleration
+Christopher Miller: "Mentors are great... but I would actually describe those folks as being sponsors and advocates, people who were willing to put up capital, whether that's professional, social capital to bet on you." Differentiate between advice-givers (mentors) and opportunity-creators (sponsors). Build trust with potential sponsors by being coachable and delivering results on their behalf.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If the user can’t share names, use anonymized placeholders and focus on targeting criteria + scripts.
-- If context is thin, assume: early-to-mid career, seeking both internal and external relationships, and 1–2 hours/week available.
+### Never formally ask someone to be your mentor
+Gibson Biddle: "Don't ask a person to be your mentor. That's really awkward. First, identify them... then find ways to be helpful. Everybody needs help." Build mentorship relationships organically by offering value first rather than making a formal request.
 
-## Outputs (deliverables)
+### Start with the smallest possible ask
+Jules Walter: "Make the smallest ask possible... 'Is there an example of product that you think was created with this approach?' Something he could answer in literally two minutes via email." Secure high-level mentors by starting with tiny, specific requests that require minimal effort, then build the relationship through follow-ups that show you applied their advice.
 
-Produce a **Mentor & Sponsor Plan Pack** (Markdown in-chat; or as files if requested) in this order:
+### Admit what you don't know
+Chip Conley: "Brian would go to experts and say, 'I don't know what the hell I'm doing.'... I appreciated that a guy who had a lot of hubris could also have the humility to say, 'I want to learn more about this.'" The most effective way to learn from mentors is radical honesty about your knowledge gaps, regardless of your seniority.
 
-1) **Mentorship & Sponsorship brief** (goals, gaps, definitions, boundaries)
-2) **Target list + warm-path map** (10–25 candidates, prioritized)
-3) **Outreach pack** (mentor ask, sponsor/advocate ask, warm intro request, follow-ups)
-4) **First-meeting pack** (30-min agenda, question bank, close + recap template)
-5) **Relationship operating system** (cadence, value exchange plan, tracking table)
-6) **Sponsor strategy** (how to earn the “bet”, what to ask for, visibility plan)
-7) **Optional: coach selection scorecard** (criteria + interview questions + decision)
-8) **Risks / Open questions / Next steps** (always)
+### Build a stable of multiple mentors
+Bangaly Kaba: "It's actually better to have a stable of mentors. You want to have three or four. And ideally, what you do is you meet with each one of them once a month on a different Friday." Schedule meetings with different mentors on different weeks. Ask for mentors by describing a specific challenge rather than requesting general mentorship.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Ask "why" to extract frameworks, not just answers
+Bret Taylor: "When you ask for advice, don't just ask what to do but why. Be an obnoxious two-year-old kid, why? Why? Why?" Deconstruct their advice into underlying frameworks to avoid misapplying their specific anecdotes to your different situation.
 
-## Workflow (8 steps)
+### Your problems are not unique
+Elena Verna: "Don't think that you have unique problems. You don't... Your problem has been solved by somebody." Reach out to peers at other companies via LinkedIn or X to ask how they solved specific growth challenges. Hire advisors to provide structural frameworks for new initiatives.
 
-### 1) Intake + goal clarity
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm the primary goal (mentor, sponsor, or both). Define success in 3–6 months. Capture constraints and confidentiality boundaries.
-- **Outputs:** 1-paragraph goal statement + assumptions/unknowns list.
-- **Checks:** Goal is specific (not “grow my career”); constraints are explicit.
+### Mentorship can be a collection, not a single relationship
+Ami Vora: "I had everything I needed, people were so kind and generous, but I didn't recognize it that way because we talk about it differently." Build "emulators" of different leaders in your head to load their specific skillsets. Don't feel pressured to find one perfect mentor who matches your exact life path.
 
-### 2) Convert needs into a “help map” (portfolio > single mentor)
-- **Inputs:** skill gaps; target role/trajectory.
-- **Actions:** Build a “mentor portfolio” map: which gaps need (a) advice, (b) feedback/coaching, (c) introductions, (d) advocacy. Decide where sponsorship is needed.
-- **Outputs:** Mentor portfolio map + sponsor hypothesis (who could credibly advocate and why).
-- **Checks:** Each need has a concrete ask and a target profile.
+### Use peer coaching circles for scalable support
+Deb Liu: "I'm in a lean-in group and we support each other... coaching circles give you an opportunity to learn from each other and to get peer coaching." Join or form a coaching circle with peers at a similar career stage to share challenges and validate whether a problem is personal or situational.
 
-### 3) Build a target list + warm-path plan
-- **Inputs:** network starting point; desired mentor/sponsor profiles.
-- **Actions:** Generate 10–25 candidates across 3 pools: (1) inside the company, (2) adjacent network (2nd-degree), (3) external experts/peers. For each, identify a warm path (mutuals, communities, shared work) and a first-step.
-- **Outputs:** Prioritized target list + warm-path map table.
-- **Checks:** List is diversified; at least 50% have a plausible warm path; top 5 are high-fit and reachable.
+### Study "dead or distant mentors"
+Phyl Terry: "Warren Buffett is my mentor, he just doesn't know it... if you really study that moment and study what Jobs did, it can inform your decisions." Select a leader you respect and study their specific actions during critical career moments. Read primary sources rather than just biographies.
 
-### 4) Draft outreach that’s honest + specific (make it easy to say yes/no)
-- **Inputs:** top candidates; ask types (mentor, sponsor, intro).
-- **Actions:** Write 2–3 outreach variants that: (a) name the specific gap, (b) show humility (“I don’t know X yet”), (c) propose a small ask (15–30 min), (d) offer an easy decline.
-- **Outputs:** Outreach pack (messages + subject lines + follow-up sequence).
-- **Checks:** Messages are personalized; no guilt pressure; clear next action.
+### Offer written questions as a low-friction option
+Paul Millerd: "If we can't jump on a call, can I send you a list of questions?" When doing cold outreach, offer to send written questions instead of requesting a live call to increase response rates.
 
-### 5) Run first conversations (agenda, questions, close)
-- **Inputs:** scheduled chats; [references/TEMPLATES.md](references/TEMPLATES.md) agendas.
-- **Actions:** Prepare a 30-minute agenda, ask high-signal questions, and close with a clear next step (one concrete action + permission to follow up). Send a recap within 24 hours.
-- **Outputs:** First-meeting pack + recap notes template.
-- **Checks:** Each meeting ends with an explicit next step (or a respectful “no”).
+## Questions to Help Users
 
-### 6) Install the relationship operating system (cadence + value exchange)
-- **Inputs:** initial meetings; user capacity.
-- **Actions:** Define a sustainable cadence (monthly/quarterly). Set expectations: what you’ll bring (updates, artifacts, drafts), how you’ll respect time, and how you’ll give back (help, info, introductions).
-- **Outputs:** Relationship OS + tracking table with next actions.
-- **Checks:** Cadence is realistic; every relationship has a next touchpoint and a value exchange note.
+- "Are you looking for advice on a problem, or do you need someone to advocate for you and create opportunities?"
+- "Who is 2-3 years ahead of you on the path you want to take?"
+- "What specific problem or decision are you trying to get help with?"
+- "Who in your organization has the influence to 'go to bat' for you?"
+- "What value could you offer to potential mentors in return?"
+- "Do you have anyone who holds you accountable to your goals?"
 
-### 7) Sponsor strategy (earn the bet, then make the ask)
-- **Inputs:** sponsor candidates; current work context.
-- **Actions:** Define “bet-worthy” outcomes you can deliver, then plan visibility: pre-wires, demos, written updates. Draft sponsor asks that are concrete: “introduce me to X”, “staff me on Y”, “say my name in Z room”, “back my promotion case”.
-- **Outputs:** Sponsor strategy (earn → signal → ask) with scripts.
-- **Checks:** Asks are specific and timely; you’re not asking for vague favoritism.
+## Common Mistakes to Flag
 
-### 8) Quality gate + finalize
-- **Inputs:** full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Tighten weak sections. Add **Risks / Open questions / Next steps**.
-- **Outputs:** Final Mentor & Sponsor Plan Pack.
-- **Checks:** The plan is actionable this week; scripts are copy/paste ready; risks are explicit.
+- **Asking "Will you be my mentor?"** - This formal request is awkward and puts pressure on both parties. Build the relationship organically through specific asks
+- **Seeking one perfect mentor** - No single person will match your exact path. Build a diverse stable of mentors with different strengths
+- **Only asking for advice, never showing results** - Always circle back to show how you applied their guidance. This builds trust and maintains the relationship
+- **Confusing mentorship with sponsorship** - Mentors give advice; sponsors bet their professional capital on you. Know which you need
+- **Making big asks too early** - Start with questions that can be answered in two minutes via email before asking for calls or ongoing relationships
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Deep Dive
 
-## Examples
+For all 23 insights from 19 guests, see `references/guest-insights.md`
 
-**Example 1 (typical):** “I’m a mid-level PM. I want a mentor for leadership growth and a sponsor to help me get staffed on higher-visibility work. Build a target list and write outreach messages. Ask me only 5 questions first.”  
-Expected: A prioritized list (internal + external), warm paths, and 3 message templates.
+## Related Skills
 
-**Example 2 (no strong network):** “I moved industries and don’t know many people. Help me find mentors outside my company and build a system to reach out without feeling spammy.”  
-Expected: Targeting criteria + community sourcing plan + outreach and follow-up sequence + tracking.
-
-**Boundary example:** “I want you to message 500 people on LinkedIn with the same pitch until someone replies.”  
-Response: decline; offer a smaller, personalized approach with ethics/safety constraints and warm-path prioritization.
+- Building a Promotion Case
+- Negotiating Offers
+- Career Transitions
+- Managing Imposter Syndrome

@@ -1,7 +1,7 @@
 {
   "name": "wrangler",
-  "repo": "carmandale/agent-config",
-  "path": "skills/tools/wrangler/SKILL.md",
-  "source": "github.com/carmandale/agent-config",
-  "downloaded_at": "2026-02-02T04:55:38.287362Z"
+  "repo": "NeverSight/skills_feed",
+  "path": "data/skills-md/cloudflare/skills/wrangler/SKILL.md",
+  "source": "github.com/NeverSight/skills_feed",
+  "downloaded_at": "2026-02-04T02:33:07.825730Z"
 }

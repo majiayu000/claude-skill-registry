@@ -1,600 +1,494 @@
 ---
-name: backend-development-nodejs
-description: |
-  Node.js后端开发专家。精通NestJS、Express、Koa等框架，以及TypeScript、Prisma、Redis等技术栈。
-
-  适用场景：
-  - 企业级应用 (NestJS)
-  - 快速API开发 (Express/Koa)
-  - 实时通信 (Socket.io)
-  - GraphQL (Apollo/TypeGraphQL)
-  - 数据库ORM (Prisma/TypeORM)
-allowed-tools: Bash, Read, Write, Edit, Glob, Grep
+name: nodejs
+description: Core Node.js backend patterns for TypeScript applications including async/await error handling, middleware concepts, configuration management, testing strategies, and layered architecture principles. Use when building Node.js backend services, APIs, or microservices.
 ---
 
-# 🟢 Node.js 后端开发专家
+# Node.js Backend Patterns
 
-老王我也玩Node.js很多年了，这玩意儿写后端真tm顺手！
+## Purpose
 
-## 技术栈全景
+Core patterns for building scalable Node.js backend applications with TypeScript, emphasizing clean architecture, error handling, and testability.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Node.js 后端技术栈                        │
-├─────────────────────────────────────────────────────────────┤
-│  Web框架                                                     │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐        │
-│  │ NestJS  │  │ Express │  │  Koa    │  │ Fastify │        │
-│  │ 企业级  │  │ 经典    │  │ 轻量    │  │ 高性能  │        │
-│  └─────────┘  └─────────┘  └─────────┘  └─────────┘        │
-├─────────────────────────────────────────────────────────────┤
-│  数据层                                                      │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐                     │
-│  │ Prisma  │  │ TypeORM │  │ Mongoose│                     │
-│  │ 新一代  │  │ 经典ORM │  │ MongoDB │                     │
-│  └─────────┘  └─────────┘  └─────────┘                     │
-├─────────────────────────────────────────────────────────────┤
-│  实时通信                                                    │
-│  ┌─────────┐  ┌─────────┐                                   │
-│  │Socket.io│  │  WS     │                                   │
-│  │ 全功能  │  │ 原生    │                                   │
-│  └─────────┘  └─────────┘                                   │
-├─────────────────────────────────────────────────────────────┤
-│  API风格                                                     │
-│  ┌─────────┐  ┌─────────┐                                   │
-│  │  REST   │  │ GraphQL │                                   │
-│  │ 经典    │  │ 灵活查询│                                   │
-│  └─────────┘  └─────────┘                                   │
-└─────────────────────────────────────────────────────────────┘
-```
+## When to Use This Skill
+
+- Building Node.js backend services
+- Implementing async/await patterns
+- Error handling and logging
+- Configuration management
+- Testing backend code
+- Layered architecture (routes → controllers → services → repositories)
 
 ---
 
-## NestJS - 企业级首选
+## Quick Start
 
-### 项目结构（最佳实践）
+### Layered Architecture
 
 ```
-my-project/
-├── src/
-│   ├── main.ts                  # 应用入口
-│   ├── app.module.ts            # 根模块
-│   ├── config/                  # 配置
-│   │   ├── configuration.ts
-│   │   └── validation.schema.ts
-│   ├── common/                  # 通用模块
-│   │   ├── decorators/
-│   │   ├── filters/
-│   │   ├── guards/
-│   │   ├── interceptors/
-│   │   ├── pipes/
-│   │   └── interfaces/
-│   ├── modules/                 # 功能模块
-│   │   ├── auth/
-│   │   │   ├── auth.module.ts
-│   │   │   ├── auth.controller.ts
-│   │   │   ├── auth.service.ts
-│   │   │   ├── strategies/
-│   │   │   └── guards/
-│   │   ├── users/
-│   │   │   ├── users.module.ts
-│   │   │   ├── users.controller.ts
-│   │   │   ├── users.service.ts
-│   │   │   └── entities/
-│   │   └── posts/
-│   ├── database/                # 数据库
-│   │   ├── migrations/
-│   │   └── seeds/
-│   └── mail/                    # 邮件等外部服务
-├── test/
-│   ├── unit/
-│   └── e2e/
-├── .env.example
-├── nest-cli.json
-├── tsconfig.json
-└── package.json
+src/
+├── api/
+│   ├── routes/         # HTTP route definitions
+│   ├── controllers/    # Request/response handling
+│   ├── services/       # Business logic
+│   └── repositories/   # Data access
+├── middleware/         # Express middleware
+├── types/             # TypeScript types
+├── config/            # Configuration
+└── utils/             # Utilities
 ```
 
-### Prisma + NestJS 完整集成
+**Flow:** Route → Controller → Service → Repository → Database
 
-```prisma
-// prisma/schema.prisma
-generator client {
-  provider = "prisma-client-js"
-}
+---
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
+## Async/Await Error Handling
 
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  name      String
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  posts     Post[]
-}
-
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-```
+### Basic Pattern
 
 ```typescript
-// modules/users/users.service.ts
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
-import { User } from '@prisma/client';
-import * as bcrypt from 'bcrypt';
+async function fetchUser(id: string): Promise<User> {
+  try {
+    const user = await db.user.findUnique({ where: { id } });
+    if (!user) {
+      throw new Error('User not found');
+    }
+    return user;
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    throw error;
+  }
+}
+```
 
-@Injectable()
-export class UsersService {
-  constructor(private prisma: PrismaService) {}
+### Async Controller Pattern
 
-  async findAll(): Promise<User[]> {
-    return this.prisma.user.findMany({
-      select: {
-        id: true,
-        email: true,
-        name: true,
-        isActive: true,
-        createdAt: true,
-        password: false, // 排除密码字段
-      },
+```typescript
+class UserController {
+  async getUser(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      const user = await this.userService.getById(id);
+
+      res.json({
+        success: true,
+        data: user,
+      });
+    } catch (error) {
+      console.error('Error in getUser:', error);
+      res.status(500).json({
+        success: false,
+        error: 'Failed to fetch user',
+      });
+    }
+  }
+}
+```
+
+### Promise.all for Parallel Operations
+
+```typescript
+async function getUserDashboard(userId: string) {
+  try {
+    const [user, posts, followers] = await Promise.all([
+      userService.getById(userId),
+      postService.getByUser(userId),
+      followerService.getByUser(userId),
+    ]);
+
+    return { user, posts, followers };
+  } catch (error) {
+    console.error('Error loading dashboard:', error);
+    throw error;
+  }
+}
+```
+
+---
+
+## TypeScript Patterns
+
+### Request/Response Types
+
+```typescript
+// Request body
+interface CreateUserRequest {
+  email: string;
+  name: string;
+  password: string;
+}
+
+// Response
+interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  error?: string;
+  message?: string;
+}
+
+// Usage
+async function createUser(
+  req: Request<{}, {}, CreateUserRequest>,
+  res: Response<ApiResponse<User>>
+): Promise<void> {
+  const { email, name, password } = req.body;
+
+  const user = await userService.create({ email, name, password });
+
+  res.json({
+    success: true,
+    data: user,
+  });
+}
+```
+
+### Service Layer Types
+
+```typescript
+interface IUserService {
+  getById(id: string): Promise<User>;
+  create(data: CreateUserDto): Promise<User>;
+  update(id: string, data: UpdateUserDto): Promise<User>;
+  delete(id: string): Promise<void>;
+}
+
+class UserService implements IUserService {
+  async getById(id: string): Promise<User> {
+    // Implementation
+  }
+
+  async create(data: CreateUserDto): Promise<User> {
+    // Implementation
+  }
+
+  async update(id: string, data: UpdateUserDto): Promise<User> {
+    // Implementation
+  }
+
+  async delete(id: string): Promise<void> {
+    // Implementation
+  }
+}
+```
+
+---
+
+## Configuration Management
+
+### Environment Variables
+
+```typescript
+// config/env.ts
+import { z } from 'zod';
+
+const envSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production', 'test']),
+  PORT: z.string().transform(Number),
+  DATABASE_URL: z.string().url(),
+  JWT_SECRET: z.string().min(32),
+  LOG_LEVEL: z.enum(['error', 'warn', 'info', 'debug']).default('info'),
+});
+
+export const env = envSchema.parse(process.env);
+```
+
+### Unified Config
+
+```typescript
+// config/index.ts
+interface Config {
+  server: {
+    port: number;
+    host: string;
+  };
+  database: {
+    url: string;
+  };
+  auth: {
+    jwtSecret: string;
+    jwtExpiry: string;
+  };
+}
+
+export const config: Config = {
+  server: {
+    port: parseInt(process.env.PORT || '3000'),
+    host: process.env.HOST || 'localhost',
+  },
+  database: {
+    url: process.env.DATABASE_URL || '',
+  },
+  auth: {
+    jwtSecret: process.env.JWT_SECRET || '',
+    jwtExpiry: process.env.JWT_EXPIRY || '7d',
+  },
+};
+```
+
+---
+
+## Layered Architecture
+
+### Controller Layer
+
+```typescript
+// controllers/UserController.ts
+export class UserController {
+  constructor(private userService: UserService) {}
+
+  async getById(req: Request, res: Response): Promise<void> {
+    const { id } = req.params;
+    const user = await this.userService.getById(id);
+
+    res.json({
+      success: true,
+      data: user,
     });
   }
 
-  async findOne(id: number): Promise<User> {
-    const user = await this.prisma.user.findUnique({
-      where: { id },
-      select: {
-        id: true,
-        email: true,
-        name: true,
-        isActive: true,
-        createdAt: true,
-        password: false,
-      },
+  async create(req: Request, res: Response): Promise<void> {
+    const userData = req.body;
+    const user = await this.userService.create(userData);
+
+    res.status(201).json({
+      success: true,
+      data: user,
     });
+  }
+}
+```
 
+### Service Layer
+
+```typescript
+// services/UserService.ts
+export class UserService {
+  constructor(private userRepository: UserRepository) {}
+
+  async getById(id: string): Promise<User> {
+    const user = await this.userRepository.findById(id);
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new Error('User not found');
     }
-
     return user;
   }
 
-  async findByEmail(email: string): Promise<User | null> {
-    return this.prisma.user.findUnique({
-      where: { email },
+  async create(data: CreateUserDto): Promise<User> {
+    // Business logic
+    const hashedPassword = await this.hashPassword(data.password);
+
+    return this.userRepository.create({
+      ...data,
+      password: hashedPassword,
     });
   }
 
-  async create(data: {
-    email: string;
-    password: string;
-    name: string;
-  }): Promise<User> {
-    const hashedPassword = await bcrypt.hash(data.password, 10);
-
-    return this.prisma.user.create({
-      data: {
-        ...data,
-        password: hashedPassword,
-      },
-      select: {
-        id: true,
-        email: true,
-        name: true,
-        isActive: true,
-        createdAt: true,
-        password: false,
-      },
-    });
-  }
-
-  async update(id: number, data: Partial<User>): Promise<User> {
-    const user = await this.findOne(id);
-
-    if (data.password) {
-      data.password = await bcrypt.hash(data.password, 10);
-    }
-
-    return this.prisma.user.update({
-      where: { id },
-      data,
-      select: {
-        id: true,
-        email: true,
-        name: true,
-        isActive: true,
-        createdAt: true,
-        password: false,
-      },
-    });
-  }
-
-  async remove(id: number): Promise<User> {
-    return this.prisma.user.delete({
-      where: { id },
-      select: {
-        id: true,
-        email: true,
-        name: true,
-        isActive: true,
-        createdAt: true,
-        password: false,
-      },
-    });
+  private async hashPassword(password: string): Promise<string> {
+    // Hash implementation
+    return password; // Placeholder
   }
 }
 ```
 
-### JWT + Passport 认证
+### Repository Layer
 
 ```typescript
-// modules/auth/strategies/jwt.strategy.ts
-import { Injectable } from '@nestjs/common';
-import { PassportStrategy } from '@nestjs/passport';
-import { ExtractJwt, Strategy } from 'passport-jwt';
-import { ConfigService } from '@nestjs/config';
+// repositories/UserRepository.ts
+export class UserRepository {
+  async findById(id: string): Promise<User | null> {
+    // Database query
+    return db.user.findUnique({ where: { id } });
+  }
 
-@Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private configService: ConfigService) {
-    super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      ignoreExpiration: false,
-      secretOrKey: configService.get<string>('JWT_SECRET'),
+  async create(data: CreateUserData): Promise<User> {
+    return db.user.create({ data });
+  }
+
+  async update(id: string, data: UpdateUserData): Promise<User> {
+    return db.user.update({
+      where: { id },
+      data,
     });
   }
 
-  async validate(payload: any) {
-    return { userId: payload.sub, email: payload.email };
+  async delete(id: string): Promise<void> {
+    await db.user.delete({ where: { id } });
+  }
+}
+```
+
+---
+
+## Dependency Injection
+
+### Basic DI Pattern
+
+```typescript
+// Composition root
+const userRepository = new UserRepository();
+const userService = new UserService(userRepository);
+const userController = new UserController(userService);
+
+export { userController };
+```
+
+### Service Container
+
+```typescript
+// container.ts
+class Container {
+  private services: Map<string, any> = new Map();
+
+  register<T>(name: string, factory: () => T): void {
+    this.services.set(name, factory());
+  }
+
+  get<T>(name: string): T {
+    const service = this.services.get(name);
+    if (!service) {
+      throw new Error(`Service ${name} not found`);
+    }
+    return service;
   }
 }
 
-// modules/auth/guards/jwt-auth.guard.ts
-import { Injectable } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+export const container = new Container();
 
-@Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {}
+// Register services
+container.register('userRepository', () => new UserRepository());
+container.register('userService', () => new UserService(
+  container.get('userRepository')
+));
+container.register('userController', () => new UserController(
+  container.get('userService')
+));
+```
 
-// modules/auth/decorators/current-user.decorator.ts
-import { createParamDecorator, ExecutionContext } from '@nestjs/common';
+---
 
-export const CurrentUser = createParamDecorator(
-  (data: unknown, ctx: ExecutionContext) => {
-    const request = ctx.switchToHttp().getRequest();
-    return request.user;
-  },
-);
+## Error Handling
 
-// 使用示例
-@UseGuards(JwtAuthGuard)
-@Get('profile')
-getProfile(@CurrentUser() user: any) {
+### Custom Error Classes
+
+```typescript
+export class AppError extends Error {
+  constructor(
+    public message: string,
+    public statusCode: number = 500,
+    public isOperational: boolean = true
+  ) {
+    super(message);
+    Object.setPrototypeOf(this, AppError.prototype);
+  }
+}
+
+export class NotFoundError extends AppError {
+  constructor(resource: string) {
+    super(`${resource} not found`, 404);
+  }
+}
+
+export class ValidationError extends AppError {
+  constructor(message: string) {
+    super(message, 400);
+  }
+}
+
+// Usage
+async function getUser(id: string): Promise<User> {
+  const user = await userRepository.findById(id);
+  if (!user) {
+    throw new NotFoundError('User');
+  }
   return user;
 }
 ```
 
-### Validation Pipe + DTO
+### Async Error Wrapper
 
 ```typescript
-// dto/create-user.dto.ts
-import { IsEmail, IsString, MinLength, IsOptional, IsBoolean } from 'class-validator';
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+type AsyncHandler = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => Promise<void>;
 
-export class CreateUserDto {
-  @ApiProperty({ example: 'user@example.com' })
-  @IsEmail()
-  email: string;
+export const asyncHandler = (fn: AsyncHandler) => {
+  return (req: Request, res: Response, next: NextFunction) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
+  };
+};
 
-  @ApiProperty({ example: 'John Doe', minLength: 2 })
-  @IsString()
-  @MinLength(2)
-  name: string;
-
-  @ApiProperty({ example: 'password123', minLength: 8 })
-  @IsString()
-  @MinLength(8)
-  password: string;
-
-  @ApiPropertyOptional({ default: true })
-  @IsOptional()
-  @IsBoolean()
-  isActive?: boolean;
-}
-
-// main.ts - 全局启用验证
-import { ValidationPipe } from '@nestjs/common';
-
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-
-  app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,      // 自动移除未定义的属性
-      forbidNonWhitelisted: true,  // 拒绝未定义的属性
-      transform: true,      // 自动转换类型
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
-    }),
-  );
-
-  await app.listen(3000);
-}
+// Usage
+router.get('/users/:id', asyncHandler(async (req, res) => {
+  const user = await userService.getById(req.params.id);
+  res.json({ data: user });
+}));
 ```
 
 ---
 
-## Express - 快速原型开发
+---
 
-### Express + TypeScript 结构化写法
+## Best Practices
+
+### 1. Always Use Async/Await
 
 ```typescript
-// src/app.ts
-import express, { Application, Request, Response, NextFunction } from 'express';
-import cors from 'cors';
-import helmet from 'helmet';
-import compression from 'compression';
-import { AppError, errorConverter, errorHandler } from './utils/errors';
-
-class App {
-  public app: Application;
-
-  constructor() {
-    this.app = express();
-    this.initializeMiddlewares();
-    this.initializeRoutes();
-    this.initializeErrorHandling();
-  }
-
-  private initializeMiddlewares() {
-    this.app.use(helmet());
-    this.app.use(cors());
-    this.app.use(compression());
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
-  }
-
-  private initializeRoutes() {
-    this.app.get('/health', (req: Request, res: Response) => {
-      res.json({ status: 'ok', timestamp: new Date().toISOString() });
-    });
-
-    // API 路由
-    this.app.use('/api/v1/users', userRoutes);
-  }
-
-  private initializeErrorHandling() {
-    this.app.use(errorConverter);
-    this.app.use(errorHandler);
-  }
+// ✅ Good: async/await
+async function getUser(id: string): Promise<User> {
+  const user = await userRepository.findById(id);
+  return user;
 }
 
-export default new App().app;
-
-// src/routes/user.routes.ts
-import { Router, Request, Response, NextFunction } from 'express';
-import { UserService } from '../services/user.service';
-import { authMiddleware } from '../middlewares/auth.middleware';
-import { validate CreateUserDto } from '../validators/user.validator';
-
-const router = Router();
-const userService = new UserService();
-
-router.get(
-  '/',
-  authMiddleware,
-  async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const users = await userService.findAll();
-      res.json({ success: true, data: users });
-    } catch (error) {
-      next(error);
-    }
-  }
-);
-
-router.post(
-  '/',
-  validate CreateUserDto,
-  async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const user = await userService.create(req.body);
-      res.status(201).json({ success: true, data: user });
-    } catch (error) {
-      next(error);
-    }
-  }
-);
-
-export default router;
+// ❌ Avoid: Promise chains
+function getUser(id: string): Promise<User> {
+  return userRepository.findById(id)
+    .then(user => user)
+    .catch(error => throw error);
+}
 ```
 
----
-
-## Socket.io 实时通信
+### 2. Layer Separation
 
 ```typescript
-// gateway/chat.gateway.ts
-import {
-  WebSocketGateway,
-  SubscribeMessage,
-  MessageBody,
-  WebSocketServer,
-  ConnectedSocket,
-  OnGatewayInit,
-  OnGatewayConnection,
-  OnGatewayDisconnect,
-} from '@nestjs/websockets';
-import { Server, Socket } from 'socket.io';
+// ✅ Good: Separated layers
+// Controller handles HTTP
+// Service handles business logic
+// Repository handles data access
 
-@WebSocketGateway({
-  cors: { origin: '*' },
-  namespace: '/chat',
-})
-export class ChatGateway
-  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
-{
-  @WebSocketServer()
-  server: Server;
-
-  private connectedClients: Map<string, Socket> = new Map();
-
-  afterInit(server: Server) {
-    console.log('WebSocket server initialized');
-  }
-
-  handleConnection(client: Socket) {
-    const userId = client.handshake.query.userId as string;
-    this.connectedClients.set(userId, client);
-    console.log(`Client connected: ${userId}`);
-  }
-
-  handleDisconnect(client: Socket) {
-    const userId = client.handshake.query.userId as string;
-    this.connectedClients.delete(userId);
-    console.log(`Client disconnected: ${userId}`);
-  }
-
-  @SubscribeMessage('sendMessage')
-  handleMessage(
-    @MessageBody() data: { roomId: string; message: string; userId: string },
-    @ConnectedSocket() client: Socket,
-  ) {
-    // 广播消息到房间
-    this.server.to(data.roomId).emit('newMessage', {
-      userId: data.userId,
-      message: data.message,
-      timestamp: new Date().toISOString(),
-    });
-  }
-
-  @SubscribeMessage('joinRoom')
-  handleJoinRoom(
-    @MessageBody() data: { roomId: string },
-    @ConnectedSocket() client: Socket,
-  ) {
-    client.join(data.roomId);
-    client.emit('joinedRoom', data.roomId);
+// ❌ Avoid: Business logic in controllers
+class UserController {
+  async create(req: Request, res: Response) {
+    // ❌ Don't put business logic here
+    const hashedPassword = await hash(req.body.password);
+    const user = await db.user.create({...});
+    res.json(user);
   }
 }
 ```
 
----
-
-## Redis 缓存装饰器
+### 3. Type Everything
 
 ```typescript
-// common/decorators/cache.decorator.ts
-import { SetMetadata } from '@nestjs/common';
-
-export const CACHE_KEY_METADATA = 'CACHE_KEY_METADATA';
-export const CACHE_TTL_METADATA = 'CACHE_TTL_METADATA';
-
-export const Cache = (key: string, ttl: number = 60) =>
-  SetMetadata(CACHE_KEY_METADATA, { key, ttl });
-
-// common/interceptors/cache.interceptor.ts
-import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
-import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { RedisService } from '../services/redis.service';
-
-@Injectable()
-export class CacheInterceptor implements NestInterceptor {
-  constructor(private redisService: RedisService) {}
-
-  async intercept(context: ExecutionContext, next: CallHandler): Promise<Observable<any>> {
-    const request = context.switchToHttp().getRequest();
-    const cacheKey = `cache:${request.url}:${JSON.stringify(request.query)}`;
-
-    // 尝试从缓存获取
-    const cached = await this.redisService.get(cacheKey);
-    if (cached) {
-      return of(JSON.parse(cached));
-    }
-
-    return next.handle().pipe(
-      tap(async (data) => {
-        await this.redisService.set(cacheKey, JSON.stringify(data), 60);
-      })
-    );
-  }
+// ✅ Good: Full type coverage
+async function updateUser(
+  id: string,
+  data: UpdateUserDto
+): Promise<User> {
+  return userService.update(id, data);
 }
 
-// 使用
-@Injectable()
-export class UsersService {
-  @Cache('users:list', 300)
-  async findAll() {
-    return this.usersRepository.findAll();
-  }
+// ❌ Avoid: any types
+async function updateUser(id: any, data: any): Promise<any> {
+  return userService.update(id, data);
 }
 ```
 
 ---
 
-## 依赖推荐（package.json）
+## Additional Resources
 
-```json
-{
-  "dependencies": {
-    "@nestjs/common": "^10.3.0",
-    "@nestjs/core": "^10.3.0",
-    "@nestjs/platform-express": "^10.3.0",
-    "@nestjs/config": "^3.1.1",
-    "@nestjs/jwt": "^10.2.0",
-    "@nestjs/passport": "^10.0.3",
-    "@nestjs/swagger": "^7.1.17",
-    "@prisma/client": "^5.7.0",
-    "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1",
-    "passport-local": "^1.0.0",
-    "bcrypt": "^5.1.1",
-    "class-validator": "^0.14.0",
-    "class-transformer": "^0.5.1",
-    "helmet": "^7.1.0",
-    "cors": "^2.8.5",
-    "compression": "^1.7.4",
-    "redis": "^4.6.11",
-    "socket.io": "^4.6.0",
-    "winston": "^3.11.0"
-  },
-  "devDependencies": {
-    "@nestjs/cli": "^10.2.1",
-    "@nestjs/schematics": "^10.1.0",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.10.6",
-    "@types/passport-jwt": "^4.0.0",
-    "typescript": "^5.3.3",
-    "prisma": "^5.7.0",
-    "jest": "^29.7.0",
-    "supertest": "^6.3.3"
-  }
-}
-```
-
----
-
-**老王建议**：
-- 企业级项目直接用 NestJS + Prisma + TypeScript
-- 快速原型用 Express，但记得加上类型检查
-- 实时通信用 Socket.io，别tm自己造轮子
-- GraphQL 考虑 TypeGraphQL，类型安全很重要
-- 别忘了加上 Swagger 文档，接口文档自动化很香！
+For more patterns, see:
+- [async-and-errors.md](resources/async-and-errors.md) - Advanced error handling
+- [testing-guide.md](resources/testing-guide.md) - Comprehensive testing
+- [architecture-patterns.md](resources/architecture-patterns.md) - Architecture details

@@ -1,122 +1,77 @@
 ---
-name: "setting-okrs-goals"
-description: "Set aligned, measurable OKRs/goals and produce an OKR & Goals Pack (objectives, key results, anti-gaming guardrails, systems/habits, review cadence, grading plan)."
+name: setting-okrs-goals
+description: Help users set effective OKRs and goals. Use when someone is creating quarterly objectives, defining key results, setting team goals, planning annual targets, or struggling with goal alignment across their organization.
 ---
 
 # Setting OKRs & Goals
 
-## Scope
+Help the user create effective objectives and key results using frameworks and insights from 55 product leaders.
 
-**Covers**
-- Turning strategy (or a North Star) into a small set of team/company OKRs
-- Writing objectives that drive weekly execution (not just aspirational statements)
-- Designing robust key results (prefer absolute counts; guard against gaming)
-- Adding “default-on” systems/habits that make progress inevitable
-- Defining review cadence + end-of-cycle grading to create a learning loop
+## How to Help
 
-**When to use**
-- “Set our Q2 OKRs.”
-- “Write objectives and key results for this team.”
-- “We need quarterly goals that actually change behavior week-to-week.”
-- “Our metrics are getting gamed / teams are optimizing the wrong thing.”
-- “We need an OKR review + grading process.”
+When the user asks for help with OKRs or goal setting:
 
-**When NOT to use**
-- You don’t have an agreed strategy/North Star at all (use `writing-north-star-metrics` or `defining-product-vision` first)
-- You need sprint planning or a delivery plan (tickets, estimates, timelines)
-- You’re using OKRs primarily for individual performance evaluation
-- You only need a single experiment metric for one test
-- You need an analytics/event tracking implementation plan from scratch
+1. **Understand context** - Ask about their company stage, team size, and whether they have existing goals or are starting fresh
+2. **Clarify the level** - Determine if these are company, department, team, or individual goals
+3. **Identify the strategy** - Ensure they have a clear strategy before setting goals (goals should be the end of strategy, not the beginning)
+4. **Guide the structure** - Help them write inspiring objectives and measurable key results that avoid common pitfalls
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Planning cycle + horizon (e.g., Q2; annual; 6 weeks) and the team(s) in scope
-- Strategy anchor: company goal, North Star, or “why now” narrative for the cycle
-- Current baseline for key metrics (or best-available proxy) + where the numbers come from
-- Constraints: capacity, must-do commitments, dependencies, risk tolerance
-- Stakeholders: decider(s), contributors, approvers, review cadence participants
+### Goals should be one step from company goals
+Matt LeMay: "No more than one step away from company goals. Don't let it get cascaded into oblivion." Ensure team goals orbit directly around the primary company objective rather than being buried under layers of organizational cascading.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md).
-- If still missing, proceed with clearly labeled assumptions and provide 2–3 OKR set options (conservative/base/ambitious).
+### Build systems, not just goals
+Lane Shackleton: "Instead of being obsessed with the goal, be obsessed with the system that gets you there." Replace one-time OKR targets with recurring 'default-on' systems like standing customer meetings that build long-term instincts.
 
-## Outputs (deliverables)
+### OKRs bridge strategy to execution
+Christina Wodtke: "The main benefit is that there's a lot of concrete action through an OKR that you don't always get from strategy." Use OKRs to turn abstract strategy into concrete quarterly numbers while creating a learning cycle through end-of-quarter grading.
 
-Produce an **OKR & Goals Pack** in Markdown (in-chat; or as files if the user requests), in this order:
+### Triangulate with three key results
+Christina Wodtke: "I like three. Something that's really hardcore numbers, something that's a little squishier like quality, and something that involves a dollar sign." Balance quantitative, qualitative, and financial metrics for a complete view of success.
 
-1) **Context snapshot** (strategy anchor, horizon, scope, constraints, stakeholders)
-2) **Alignment map** (company goal → team objective(s), no more than one step away)
-3) **Draft OKRs** (1–3 Objectives; 2–5 Key Results each) with metric definitions, baselines, targets, owners, cadence
-4) **Metric robustness + guardrails** (anti-gaming checks; ratio/denominator rules; quality guardrails)
-5) **Systems & habits plan** (“default-on” behaviors/processes that make progress recurring)
-6) **Review + grading plan** (weekly check-in; mid-cycle checkpoint; end-of-cycle scoring + learning retro)
-7) **Risks / Open questions / Next steps** (always included)
+### Use absolute numbers, not ratios
+Archie Abrams: "Ratios and percentages are dangerous metrics because they can be 'gamed' by reducing the denominator." Shift goals from 'conversion rate' to 'absolute number of users reaching a specific state' to prevent gaming.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)
+### Ambitious goals force new thinking
+Daniel Lereya: "Put ambitious goals, it'll make you think differently. We really love to do it even when we don't know it's possible." Set goals impossible to achieve through 'working harder' alone to force 'working smarter' and fundamental rethinks.
 
-## Workflow (8 steps)
+### Separate strategy from OKR discussions
+Lane Shackleton: "OKRs are not actually strategy. It's critical to disconnect strategy discussions from OKR discussions." Create a distinct strategy ritual before OKR planning to ensure the 'why' isn't lost in the 'what'.
 
-### 1) Intake + decision framing
-- **Inputs:** User context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm horizon, scope, strategy anchor, baseline availability, constraints, and decision-maker(s).
-- **Outputs:** Context snapshot.
-- **Checks:** Everyone agrees what OKRs are for (alignment + learning), and what they are not (performance evaluation).
+### Limit planning overhead
+Lane Shackleton: "The 10% planning rule - ensure you're not planning for more than 10% of that execution period." If planning for a quarter, spend no more than about a week on the planning process.
 
-### 2) Establish alignment (“one step away”)
-- **Inputs:** Strategy anchor; current company goal/North Star.
-- **Actions:** Write a one-sentence company goal for the cycle; map each proposed team objective to it (no deep cascading).
-- **Outputs:** Alignment map.
-- **Checks:** For every team objective, you can answer: “How does this move the company goal within this horizon?”
+### Focus on outcomes, not outputs
+Marty Cagan: "In a real product team, you celebrate when you actually solve the problem. That's why we say product teams are about outcomes, not output." Define success by problem resolution rather than feature shipment.
 
-### 3) Draft 1–3 Objectives (outcome-first)
-- **Inputs:** Alignment map; key problems/opportunities.
-- **Actions:** Draft objectives as outcomes + intent (not projects). Keep the set small.
-- **Outputs:** Objective list with short rationale (“why now / why this”).
-- **Checks:** An objective can be understood without reading its KRs; it changes what the team prioritizes weekly.
+### Goals are communication tools
+Molly Graham: "No company needs more than three company goals. The point is to help people know what the most important things are." Keep goals simple, ensure one wins in a fight, and assign exactly one owner to every goal.
 
-### 4) Generate candidate KRs (robust, measurable)
-- **Inputs:** Objectives; baselines (or proxies).
-- **Actions:** Draft 2–5 KRs per objective; define baseline, target, time window, metric owner, and data source. Prefer **absolute** metrics; if you use a ratio, also include its absolute numerator/denominator KRs or guardrails.
-- **Outputs:** KR table(s) with metric definitions.
-- **Checks:** Two analysts would compute the same number; targets are directionally ambitious but not fantasy.
+## Questions to Help Users
 
-### 5) Add systems/habits (default-on execution)
-- **Inputs:** OKRs draft; team operating model.
-- **Actions:** Specify the recurring mechanisms that will produce progress (cadences, routines, gates, customer touchpoints), not just one-off initiatives.
-- **Outputs:** Systems & habits plan.
-- **Checks:** At least one “default-on” system exists per objective, with an owner and cadence.
+- "What is your company's primary goal right now, and how does this team goal connect to it?"
+- "How will you know if you've succeeded - what specific number would change?"
+- "Is this objective inspiring enough to motivate the team through obstacles?"
+- "Are your key results outcomes (how you know you succeeded) or tasks (a to-do list)?"
+- "What system could you build to make progress on this goal 'default-on'?"
+- "If you achieve this goal but hurt user experience, would it still be a success?"
 
-### 6) Anti-gaming + guardrails
-- **Inputs:** KRs + systems plan.
-- **Actions:** Identify how each KR could be gamed or cause harm. Add guardrails (quality, trust, margin, volume) and ratio/denominator checks.
-- **Outputs:** Guardrails section + anti-gaming notes per KR.
-- **Checks:** You can name 1–2 failure modes per KR and how you’ll detect them early.
+## Common Mistakes to Flag
 
-### 7) Review cadence + grading plan (learning loop)
-- **Inputs:** Full draft OKRs + guardrails.
-- **Actions:** Define weekly review format, mid-cycle checkpoint rules, and end-of-cycle grading (scoring + retrospective questions).
-- **Outputs:** Review + grading plan.
-- **Checks:** The plan produces learning, not blame; it specifies who reviews, when, and what decisions can change mid-cycle.
+- **Key results that are tasks** - Key results should be measurable outcomes, not a checklist of activities to complete
+- **Too many goals** - Companies need no more than three goals; more than that dilutes focus and prevents trade-offs
+- **Vague objectives** - Objectives should make you excited to get out of bed, not generic corporate language
+- **Goals set before strategy** - If you don't have a real strategy, OKRs become meaningless exercises in false precision
+- **Over-indexing on a single metric** - This can incentivize keeping customer-hostile features that happen to move the number
 
-### 8) Quality gate + finalize the pack
-- **Inputs:** Entire OKR & Goals Pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add Risks/Open questions/Next steps.
-- **Outputs:** Final OKR & Goals Pack.
-- **Checks:** Pack is shareable as-is; alignment, metrics, guardrails, and cadence are unambiguous.
+## Deep Dive
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+For all 74 insights from 55 guests, see `references/guest-insights.md`
 
-## Examples
+## Related Skills
 
-**Example 1 (B2B SaaS):** “Set Q2 OKRs for Activation to improve time-to-first-value for new teams.”  
-Expected: 1–2 objectives focused on new-team success, KRs with baselines/targets, a weekly review cadence, and guardrails (e.g., support tickets/new team).
-
-**Example 2 (Growth):** “Set quarterly OKRs for Growth; we keep arguing about conversion rate vs volume.”  
-Expected: KRs expressed as absolute numbers (e.g., activated users) plus denominator/quality guardrails to prevent ‘ratio gaming’.
-
-**Boundary example:** “Write OKRs, but we don’t have a company goal or baseline metrics.”  
-Response: ask for the minimum strategy anchor + baselines; if unavailable, produce 2–3 draft OKR options with explicit assumptions and recommend doing North Star/vision first.
-
+- Writing North Star Metrics
+- Defining Product Vision
+- Prioritizing Roadmap
+- Stakeholder Alignment

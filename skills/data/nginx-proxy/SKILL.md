@@ -1,101 +1,27 @@
 ---
 name: nginx-proxy
-description: Configure Nginx and Nginx Proxy Manager for reverse proxying, load balancing, SSL/TLS termination, caching, and web serving. Use when setting up web servers, reverse proxies, SSL certificates, or load balancers. Includes Nginx Proxy Manager GUI, Traefik alternative patterns, and security hardening. (project)
+description: Nginx reverse proxy configuration and optimization. Set up SSL termination, load balancing, caching, rate limiting, and security headers. Use when configuring Nginx as a reverse proxy, API gateway, or web server for production deployments.
 ---
 
-# Nginx Proxy Manager
+# Nginx Reverse Proxy Skill
 
-Expert guidance for Nginx web server and reverse proxy configuration.
+Configure Nginx as a high-performance reverse proxy with SSL, load balancing, and caching.
 
-## When to Use This Skill
+## Triggers
 
-- Setting up reverse proxy for web services
-- Configuring SSL/TLS certificates (Let's Encrypt)
-- Load balancing across multiple backends
-- Web server configuration
-- Caching and performance optimization
-- Security hardening
-- Nginx Proxy Manager (NPM) GUI setup
+Use this skill when you see:
+- nginx, nginx proxy, reverse proxy
+- ssl termination, load balancer
+- proxy pass, upstream, nginx config
+- rate limiting, caching, web server
 
-## Nginx Installation
-
-```bash
-# Debian/Ubuntu
-sudo apt update && sudo apt install nginx
-
-# CentOS/RHEL
-sudo yum install nginx
-
-# Docker
-docker run -d -p 80:80 -p 443:443 \
-  -v /etc/nginx:/etc/nginx:ro \
-  -v /var/log/nginx:/var/log/nginx \
-  nginx:alpine
-```
-
-## Basic Configuration
-
-### Main Config Structure
-
-```nginx
-# /etc/nginx/nginx.conf
-user www-data;
-worker_processes auto;
-pid /run/nginx.pid;
-
-events {
-    worker_connections 1024;
-    multi_accept on;
-}
-
-http {
-    # Basic settings
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
-    keepalive_timeout 65;
-    types_hash_max_size 2048;
-
-    # MIME types
-    include /etc/nginx/mime.types;
-    default_type application/octet-stream;
-
-    # Logging
-    access_log /var/log/nginx/access.log;
-    error_log /var/log/nginx/error.log;
-
-    # Gzip compression
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript;
-
-    # Include virtual hosts
-    include /etc/nginx/conf.d/*.conf;
-    include /etc/nginx/sites-enabled/*;
-}
-```
-
-### Simple Web Server
-
-```nginx
-# /etc/nginx/sites-available/mysite.conf
-server {
-    listen 80;
-    listen [::]:80;
-    server_name example.com www.example.com;
-    root /var/www/mysite;
-    index index.html index.htm;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
-
-## Reverse Proxy Configuration
+## Instructions
 
 ### Basic Reverse Proxy
 
 ```nginx
+# /etc/nginx/sites-available/app.conf
+
 server {
     listen 80;
     server_name app.example.com;
@@ -103,136 +29,73 @@ server {
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
     }
 }
 ```
 
-### WebSocket Support
+### HTTPS with SSL Termination
 
 ```nginx
 server {
     listen 80;
-    server_name ws.example.com;
-
-    location / {
-        proxy_pass http://localhost:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_read_timeout 86400;
-    }
+    server_name app.example.com;
+    return 301 https://$server_name$request_uri;
 }
-```
 
-### Multiple Backends (Path-Based)
-
-```nginx
-server {
-    listen 80;
-    server_name api.example.com;
-
-    location /api/v1 {
-        proxy_pass http://localhost:3001;
-        proxy_set_header Host $host;
-    }
-
-    location /api/v2 {
-        proxy_pass http://localhost:3002;
-        proxy_set_header Host $host;
-    }
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_set_header Host $host;
-    }
-}
-```
-
-## SSL/TLS Configuration
-
-### Let's Encrypt with Certbot
-
-```bash
-# Install Certbot
-sudo apt install certbot python3-certbot-nginx
-
-# Obtain certificate
-sudo certbot --nginx -d example.com -d www.example.com
-
-# Auto-renewal (usually set up automatically)
-sudo certbot renew --dry-run
-```
-
-### SSL Configuration
-
-```nginx
 server {
     listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-    server_name example.com;
+    server_name app.example.com;
 
-    # SSL certificates
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-
-    # SSL settings
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
-    ssl_prefer_server_ciphers off;
-    ssl_session_cache shared:SSL:10m;
+    # SSL Configuration
+    ssl_certificate /etc/letsencrypt/live/app.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/app.example.com/privkey.pem;
     ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_tickets off;
+
+    # Modern SSL configuration
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
 
     # HSTS
     add_header Strict-Transport-Security "max-age=63072000" always;
 
     location / {
         proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
-
-# HTTP to HTTPS redirect
-server {
-    listen 80;
-    server_name example.com;
-    return 301 https://$server_name$request_uri;
-}
 ```
 
-## Load Balancing
+### Load Balancing with Upstream
 
 ```nginx
 upstream backend {
-    # Round-robin (default)
-    server 192.168.1.10:3000;
-    server 192.168.1.11:3000;
-    server 192.168.1.12:3000;
-
-    # Weighted
-    server 192.168.1.10:3000 weight=3;
-    server 192.168.1.11:3000 weight=2;
-    server 192.168.1.12:3000 weight=1;
-
-    # Least connections
+    # Load balancing methods: round-robin (default), least_conn, ip_hash
     least_conn;
 
-    # IP hash (session persistence)
-    ip_hash;
+    server 192.168.1.10:8080 weight=3;
+    server 192.168.1.11:8080 weight=2;
+    server 192.168.1.12:8080 backup;
 
-    # Health checks
-    server 192.168.1.10:3000 max_fails=3 fail_timeout=30s;
+    # Health checks (Nginx Plus or OpenResty)
+    # health_check interval=10 fails=3 passes=2;
 
-    # Backup server
-    server 192.168.1.99:3000 backup;
+    keepalive 32;
 }
 
 server {
@@ -241,222 +104,249 @@ server {
 
     location / {
         proxy_pass http://backend;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
         proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 }
 ```
 
-## Caching
+### Caching Configuration
 
 ```nginx
-# Define cache zone
-proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m
-                 max_size=1g inactive=60m use_temp_path=off;
+# Define cache zone in http block
+proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=my_cache:10m max_size=1g inactive=60m use_temp_path=off;
 
 server {
     listen 80;
-    server_name example.com;
+    server_name app.example.com;
 
     location / {
+        proxy_pass http://localhost:3000;
         proxy_cache my_cache;
         proxy_cache_valid 200 302 10m;
         proxy_cache_valid 404 1m;
         proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
-        proxy_cache_revalidate on;
         proxy_cache_lock on;
 
-        # Cache key
-        proxy_cache_key $scheme$proxy_host$uri$is_args$args;
-
-        # Add cache status header
         add_header X-Cache-Status $upstream_cache_status;
-
-        proxy_pass http://localhost:3000;
     }
 
-    # Skip cache for certain paths
+    # Bypass cache for specific paths
     location /api {
-        proxy_cache off;
         proxy_pass http://localhost:3000;
+        proxy_cache_bypass 1;
+        proxy_no_cache 1;
     }
 }
 ```
 
-## Nginx Proxy Manager (Docker)
-
-```yaml
-# docker-compose.yml
-services:
-  npm:
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      - '80:80'
-      - '443:443'
-      - '81:81'  # Admin UI
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-    environment:
-      DISABLE_IPV6: 'true'
-```
-
-```bash
-# Start NPM
-docker-compose up -d
-
-# Access admin UI: http://localhost:81
-# Default login: admin@example.com / changeme
-```
-
-### NPM Features
-
-- GUI-based proxy host management
-- Automatic Let's Encrypt certificates
-- Access lists and authentication
-- Custom Nginx configurations
-- Redirection rules
-- 404 hosts
-- Streams (TCP/UDP proxying)
-
-## Security Hardening
+### Rate Limiting
 
 ```nginx
-# Security headers
-add_header X-Frame-Options "SAMEORIGIN" always;
-add_header X-Content-Type-Options "nosniff" always;
-add_header X-XSS-Protection "1; mode=block" always;
-add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-add_header Content-Security-Policy "default-src 'self';" always;
-
-# Hide Nginx version
-server_tokens off;
-
-# Limit request size
-client_max_body_size 10m;
-
-# Rate limiting
-limit_req_zone $binary_remote_addr zone=one:10m rate=10r/s;
+# Define rate limit zones in http block
+limit_req_zone $binary_remote_addr zone=api_limit:10m rate=10r/s;
+limit_req_zone $binary_remote_addr zone=login_limit:10m rate=1r/s;
+limit_conn_zone $binary_remote_addr zone=conn_limit:10m;
 
 server {
-    location /api {
-        limit_req zone=one burst=20 nodelay;
+    listen 80;
+    server_name app.example.com;
+
+    # General rate limit
+    location /api/ {
+        limit_req zone=api_limit burst=20 nodelay;
+        limit_conn conn_limit 10;
+        proxy_pass http://localhost:3000;
+    }
+
+    # Strict rate limit for login
+    location /api/login {
+        limit_req zone=login_limit burst=5 nodelay;
         proxy_pass http://localhost:3000;
     }
 }
+```
 
-# Block bad bots
-map $http_user_agent $bad_bot {
-    default 0;
-    ~*malicious 1;
-    ~*scanner 1;
+### Security Headers
+
+```nginx
+server {
+    listen 443 ssl http2;
+    server_name app.example.com;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+
+    # Hide Nginx version
+    server_tokens off;
+
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+}
+```
+
+### WebSocket Support
+
+```nginx
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
 }
 
 server {
-    if ($bad_bot) {
-        return 403;
+    listen 80;
+    server_name app.example.com;
+
+    location /ws {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header Host $host;
+        proxy_read_timeout 86400;
     }
 }
-
-# IP whitelist/blacklist
-allow 192.168.1.0/24;
-deny all;
 ```
 
-## Common Configurations
-
-### PHP-FPM
+### API Gateway Pattern
 
 ```nginx
 server {
     listen 80;
-    server_name php.example.com;
-    root /var/www/html;
-    index index.php index.html;
+    server_name api.example.com;
 
-    location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
+    # API versioning
+    location /v1/ {
+        proxy_pass http://api_v1_backend/;
+    }
+
+    location /v2/ {
+        proxy_pass http://api_v2_backend/;
+    }
+
+    # Service routing
+    location /users/ {
+        proxy_pass http://users_service/;
+    }
+
+    location /orders/ {
+        proxy_pass http://orders_service/;
+    }
+
+    location /payments/ {
+        proxy_pass http://payments_service/;
     }
 }
 ```
 
-### Static File Serving with Cache
+### Static Files with Caching
 
 ```nginx
-location ~* \.(jpg|jpeg|png|gif|ico|css|js)$ {
-    expires 30d;
-    add_header Cache-Control "public, immutable";
+server {
+    listen 80;
+    server_name app.example.com;
+
+    root /var/www/app;
+
+    # Static files with long cache
+    location /static/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    # Assets with cache busting
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ {
+        expires 1M;
+        add_header Cache-Control "public";
+    }
+
+    # Proxy dynamic requests
+    location / {
+        try_files $uri @backend;
+    }
+
+    location @backend {
+        proxy_pass http://localhost:3000;
+    }
 }
 ```
 
-### Basic Authentication
+### Docker Compose Example
 
-```bash
-# Create password file
-sudo apt install apache2-utils
-htpasswd -c /etc/nginx/.htpasswd user1
+```yaml
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./conf.d:/etc/nginx/conf.d:ro
+      - ./certs:/etc/nginx/certs:ro
+      - ./html:/usr/share/nginx/html:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+
+  app:
+    build: .
+    expose:
+      - "3000"
+    restart: unless-stopped
 ```
 
-```nginx
-location /admin {
-    auth_basic "Restricted Area";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-    proxy_pass http://localhost:3000;
-}
-```
-
-## Troubleshooting
+### Common Commands
 
 ```bash
 # Test configuration
-sudo nginx -t
+nginx -t
 
 # Reload configuration
-sudo nginx -s reload
-sudo systemctl reload nginx
+nginx -s reload
 
-# View logs
+# View access logs
 tail -f /var/log/nginx/access.log
+
+# View error logs
 tail -f /var/log/nginx/error.log
 
-# Debug upstream
-curl -I -H "Host: example.com" http://localhost
-
-# Check listening ports
-ss -tlnp | grep nginx
-
-# Real-time monitoring
-ngxtop
+# Check running processes
+ps aux | grep nginx
 ```
 
-## Performance Tuning
+## Best Practices
 
-```nginx
-# Worker processes (set to CPU cores)
-worker_processes auto;
+1. **SSL**: Use TLS 1.2+ with strong ciphers, enable HSTS
+2. **Security Headers**: Add security headers to all responses
+3. **Rate Limiting**: Protect against abuse and DDoS
+4. **Caching**: Cache static content and API responses where appropriate
+5. **Logging**: Configure detailed access and error logs
+6. **Keepalive**: Enable keepalive connections to upstream
 
-# Worker connections
-events {
-    worker_connections 4096;
-    use epoll;  # Linux
-    multi_accept on;
-}
+## Common Workflows
 
-# Buffer sizes
-proxy_buffer_size 128k;
-proxy_buffers 4 256k;
-proxy_busy_buffers_size 256k;
+### Set Up Reverse Proxy
+1. Install Nginx: `apt install nginx`
+2. Create site configuration in `/etc/nginx/sites-available/`
+3. Enable site: `ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled/`
+4. Test configuration: `nginx -t`
+5. Reload: `nginx -s reload`
 
-# Timeouts
-proxy_connect_timeout 60s;
-proxy_send_timeout 60s;
-proxy_read_timeout 60s;
-
-# Keepalive to upstream
-upstream backend {
-    server localhost:3000;
-    keepalive 32;
-}
-```
+### Add SSL with Let's Encrypt
+1. Install Certbot: `apt install certbot python3-certbot-nginx`
+2. Obtain certificate: `certbot --nginx -d app.example.com`
+3. Auto-renewal is configured automatically
+4. Test renewal: `certbot renew --dry-run`

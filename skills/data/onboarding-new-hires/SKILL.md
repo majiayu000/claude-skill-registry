@@ -1,124 +1,77 @@
 ---
-name: "onboarding-new-hires"
-description: "Design a high-signal onboarding experience and produce a New Hire Onboarding Pack (preboarding checklist, first-week plan, buddy/first-pair plan, listening tour kit, working agreement, 30/60/90 + 1y/2y success plan, 30-day state-of-the-union memo). Use for onboarding, first 90 days, new hire ramp, manager onboarding plan, and joining plans. Category: Hiring & Teams."
+name: onboarding-new-hires
+description: Help users onboard new team members effectively. Use when someone is planning onboarding for a new hire, starting a new job themselves, designing a first-90-days plan, or trying to ramp up new employees faster.
 ---
 
 # Onboarding New Hires
 
-## Scope
+Help the user onboard new team members effectively using approaches from 14 product leaders.
 
-**Covers**
-- Designing onboarding for a new hire’s first **day / week / 30–60–90 days**
-- Creating a **context pack** (team operating manual, mental models, decision history) to reduce “hidden curriculum”
-- Ensuring **belonging + social integration** (buddy + “first pair”, introductions, routines)
-- Running a structured **listening tour** and synthesizing what’s learned into a crisp summary
-- Aligning on a **working agreement** (relationship design: expectations, communication, escalation)
-- Producing a concrete **30/60/90 plan** plus **1-year / 2-year** trajectory expectations
+## How to Help
 
-**When to use**
-- “Create an onboarding plan for a new PM/engineer/leader joining my team.”
-- “Build a 30/60/90 plan and first-week schedule for this hire.”
-- “Design a listening tour + stakeholder map + synthesis template for a new leader.”
-- “Create a buddy/first-pair plan so they don’t feel alone on day one.”
-- “Write a working agreement / relationship design conversation guide for me and my new report.”
+When the user asks for help with onboarding:
 
-**When NOT to use**
-- You need to define the role outcomes or write the job description (use `writing-job-descriptions`)
-- You need to evaluate candidates or decide who to hire (use `conducting-interviews` and/or `evaluating-candidates`)
-- You need to run organization-wide culture change (this skill is for *per-hire* onboarding systems)
-- You need legal/HR compliance advice (this skill is not legal advice)
+1. **Understand the context** - Ask if they're onboarding someone or being onboarded, the seniority level, and whether it's a new role or backfill
+2. **Design the structure** - Help them create a 30-60-90 day plan with clear milestones and success criteria
+3. **Prioritize belonging and learning** - Ensure the plan includes social integration, not just tasks
+4. **Engineer early wins** - Identify opportunities for the new hire to demonstrate value quickly
 
-## Inputs
+## Core Principles
 
-**Minimum required**
-- Role + level + function (e.g., “Senior PM”, “Founding Designer”, “Eng Manager”)
-- Start date + location (remote/hybrid/in-office) + any time zone constraints
-- Manager + team context (mission, current priorities, what’s hard right now)
-- What “success” means at **30/60/90 days**, and at **1 year / 2 years** (even if rough)
-- Key stakeholders (internal + external) and any known sensitivities/politics to handle carefully
-- Constraints: urgency, confidentiality/PII, systems access constraints, onboarding time budget
+### Listen first, act later - diagnose before you treat
+Deb Liu: "The first 90 days are focused on listening and learning first, then doing. Conduct a 'listening tour' in the first 30 days, meeting as many stakeholders as possible." Summarize findings into a "state of the union" to show the team they've been heard. Align on vision in days 30-60, move to full execution by day 90.
 
-**Missing-info strategy**
-- Ask up to 5 questions from [references/INTAKE.md](references/INTAKE.md) (3–5 at a time).
-- If success metrics aren’t known, propose a **draft success definition** and label assumptions clearly.
-- Do not request secrets. If context is sensitive, ask for **redacted** or **high-level** summaries.
+### Define success at 90 days, 1 year, and 2 years
+Lauren Ipsen: "The 90-day plan is overused but necessary, and that's just the tip of the iceberg. What should this person be doing a year from now? Two years from now?" Define what "crushing it" looks like at each milestone before starting the search.
 
-## Outputs (deliverables)
+### Create immediate belonging through pairing
+Heidi Helfand: "Help them feel a sense of belonging by not having their first day be them sitting alone. Have someone be a 'first pair.'" Ensure new hires are not working alone on day one. Assign a buddy to work with them immediately. Encourage sharing personal stories to build connection.
 
-Produce a **New Hire Onboarding Pack** in Markdown (in-chat; or as files if requested):
+### Teach golden rituals by the first Friday
+Shishir Mehrotra: "Great companies have a very small list of golden rituals. Every employee knows them by their first Friday." Include core company rituals in the onboarding curriculum. These rituals should be named, known, and templated.
 
-1) **Onboarding brief** (role outcomes, success definition, constraints, risks)
-2) **Preboarding checklist** (docs, access, equipment, meetings, comms)
-3) **First-week plan** (day 1 + week 1 schedule; introductions; “first pair” plan)
-4) **Context pack outline** (team operating manual + mental models + “how decisions get made”)
-5) **Listening tour kit** (stakeholder map, schedule, question guide, synthesis table)
-6) **Working agreement** (relationship design conversation summary: working style + expectations)
-7) **30/60/90 + 1y/2y plan** (phased objectives, deliverables, check-ins, guardrails)
-8) **30-day state-of-the-union memo** (what I heard, themes, proposed focus, open questions)
-9) **Risks / Open questions / Next steps** (always included)
+### Engineer early wins for visibility
+Melissa Tan: "How do I help them secure early wins? I'll suggest 'You should do this presentation - it's a great way to get visibility early.'" Identify low-hanging fruit projects for new hires. Create opportunities for them to present to leadership in their first weeks.
 
-Templates: [references/TEMPLATES.md](references/TEMPLATES.md)  
-Expanded guidance: [references/WORKFLOW.md](references/WORKFLOW.md)
+### Document your philosophy publicly
+Brandon Chu: "People joining my team already knew how I thought because they'd Google me. It passively onboarded a lot of the PMs." Write about your management and product philosophy. New hires can ramp up before their first day.
 
-## Workflow (7 steps)
+### Have a "relationship design" conversation
+Kenneth Berger: "For maybe your first 10-20 employees, have a relationship design conversation when they're hired." Collaboratively figure out the best way to work together given specific roles and personalities. This prevents friction and "out of integrity" behavior later.
 
-### 1) Intake + role success definition (don’t skip)
-- **Inputs:** user context; [references/INTAKE.md](references/INTAKE.md).
-- **Actions:** Confirm role, seniority, start date, manager, and constraints. Draft success definitions for 30/60/90 + 1y/2y (or confirm existing ones). Identify onboarding risks (ambiguity, politics, skill gaps, time constraints).
-- **Outputs:** Onboarding brief (draft) + assumptions/unknowns list.
-- **Checks:** You can state “what great looks like” in 5–10 bullets across 30/60/90 + 1y/2y.
+### Don't overpromise during hiring
+Molly Graham: "Do not promise things you can't control. Be honest about the ambiguity and chaos of a scaling environment." Avoid promising stability, specific titles, or career paths you can't guarantee. Overpromises become "letter bombs" that demoralize high performers when they explode.
 
-### 2) Build the context pack (reduce hidden curriculum)
-- **Inputs:** existing docs (or none); org norms; key decisions.
-- **Actions:** Create a context pack outline the hire can read pre-day-1: team mission, current strategy, decision history, glossary, key metrics, meeting cadence, “how we work”, and the manager’s/product philosophy and mental models.
-- **Outputs:** Context pack outline + reading list + glossary seeds.
-- **Checks:** A new hire could answer: “What matters here? How are decisions made? Where do I find truth?”
+### Accelerate ownership with clear cadences
+Timothy Davis: "I want to try and make onboarding 30-45 days by giving them responsibility early. Here's everything we did, here's your responsibilities, go." Use an ops cadence spreadsheet to define task frequency. Assign campaign or project ownership within the first few weeks.
 
-### 3) Preboarding + day-1 belonging plan
-- **Inputs:** start logistics; access dependencies; people map.
-- **Actions:** Create a preboarding checklist (accounts, equipment, repo/docs access, calendar invites). Design day-1 + week-1 plan that maximizes belonging: assign a buddy and a “first pair”; schedule introductions; ensure meaningful collaborative work in week 1.
-- **Outputs:** Preboarding checklist + first-week plan + buddy/first-pair plan.
-- **Checks:** No “sit alone and read docs” first day; social integration is explicit and timeboxed.
+### Use AI for low-friction knowledge access
+Scott Wu: "New engineers can ask Devin questions about the codebase. It's nice to be able to ask without social pressure." AI tools can help new hires explore internal systems and ask "dumb questions" without feeling judged.
 
-### 4) Plan the 0–30 day listening tour (diagnose before treat)
-- **Inputs:** stakeholder list; context pack.
-- **Actions:** Build a stakeholder map and a listening tour schedule. Provide a question guide and note template. Emphasize learning: constraints, incentives, pain points, and “what good looks like” from others’ perspectives.
-- **Outputs:** Listening tour kit (stakeholder table, schedule, question guide, notes template).
-- **Checks:** The tour covers all critical interfaces; questions force specifics (examples, trade-offs, metrics).
+## Questions to Help Users
 
-### 5) Synthesize learnings → 30-day state-of-the-union
-- **Inputs:** listening notes; artifacts from week 1–4.
-- **Actions:** Synthesize themes, tensions, and opportunities. Write a crisp “state of the union” memo that reflects what was heard, acknowledges trade-offs, and proposes a focus area list (with open questions).
-- **Outputs:** 30-day state-of-the-union memo (draft).
-- **Checks:** Stakeholders feel “heard” and can point to what changed in understanding.
+- "What does success look like at 30, 60, and 90 days for this person?"
+- "Who is their 'first pair' or buddy on day one?"
+- "What are the company's golden rituals they need to know by their first Friday?"
+- "What early win can we engineer to give them visibility and credibility?"
+- "Have you documented your philosophy anywhere they can read before starting?"
+- "What did you promise them during hiring that you need to deliver on?"
 
-### 6) Relationship design + 30/60/90 + trajectory plan
-- **Inputs:** manager + hire expectations; constraints; learnings.
-- **Actions:** Run (or prepare) a relationship design conversation and document a working agreement. Finalize a phased plan:
-  - **Days 0–30:** learn + map + de-risk
-  - **Days 31–60:** align on direction + plan + early delivery
-  - **Days 61–90:** execute + systemize + handoffs
-  - Add **1-year / 2-year** expectations, check-in cadence, and guardrails (“what not to do yet”).
-- **Outputs:** Working agreement + 30/60/90 + 1y/2y plan.
-- **Checks:** Objectives are measurable; responsibilities and decision rights are explicit.
+## Common Mistakes to Flag
 
-### 7) Quality gate + finalize the pack
-- **Inputs:** full draft pack.
-- **Actions:** Run [references/CHECKLISTS.md](references/CHECKLISTS.md) and score with [references/RUBRIC.md](references/RUBRIC.md). Add **Risks / Open questions / Next steps**. If important inputs are missing, propose the smallest next action to resolve them (one meeting, one doc, one data pull).
-- **Outputs:** Final New Hire Onboarding Pack.
-- **Checks:** The plan is realistic for the hire’s seniority + context; it contains concrete calendars/docs, not just advice.
+- **No structured 90-day plan** - New hires need clear milestones. "Figure it out" is not onboarding
+- **Leaving them alone on day one** - Isolation kills belonging. Assign a pair from the start
+- **All tasks, no relationships** - Onboarding is social, not just functional. Prioritize introductions and connection
+- **Delayed ownership** - Don't wait months to give responsibility. Find ways to assign ownership in weeks
+- **Over-promising during hiring** - Be honest about chaos and ambiguity. Broken promises demoralize
 
-## Quality gate (required)
-- Use [references/CHECKLISTS.md](references/CHECKLISTS.md) and [references/RUBRIC.md](references/RUBRIC.md).
-- Always include: **Risks**, **Open questions**, **Next steps**.
+## Deep Dive
 
-## Examples
+For all 14 insights from 14 guests, see `references/guest-insights.md`
 
-**Example 1 (manager onboarding plan):** “We’re onboarding a Senior PM starting Feb 5. Create a full onboarding pack: preboarding, first-week plan, listening tour schedule, working agreement prompts, and a 30/60/90 + 1y/2y success plan. We’re remote across PST/EST.”  
-Expected: a complete pack with calendar-ready steps and role-specific success definitions.
+## Related Skills
 
-**Example 2 (new leader joining):** “A new Engineering Manager is joining a team with morale issues. Build a 0–30 listening tour kit and a 30-day state-of-the-union memo outline, plus a cautious 30/60/90 plan that prioritizes trust.”  
-Expected: stakeholder map + question guide, synthesis template, and guarded plan that avoids premature changes.
-
-**Boundary example:** “Write a generic onboarding checklist for all roles.”  
-Response: ask for role + context; propose a minimal universal skeleton and require role-specific tailoring before finalizing.
+- Writing Job Descriptions
+- Conducting Interviews
+- Building Team Culture
+- Running Effective 1:1s

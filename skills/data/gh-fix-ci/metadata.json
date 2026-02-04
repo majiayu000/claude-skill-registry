@@ -1,7 +1,7 @@
 {
   "name": "gh-fix-ci",
-  "repo": "HelixDevelopment/HelixAgent",
-  "path": "skills/codex/gh-fix-ci/SKILL.md",
-  "source": "github.com/HelixDevelopment/HelixAgent",
-  "downloaded_at": "2026-02-02T03:53:39.111349Z"
+  "repo": "cuba6112/skillfactory",
+  "path": ".claude/skills/gh-fix-ci/SKILL.md",
+  "source": "github.com/cuba6112/skillfactory",
+  "downloaded_at": "2026-02-04T05:05:05.405024Z"
 }

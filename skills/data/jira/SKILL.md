@@ -1,195 +1,275 @@
 ---
 name: jira
-description: Use when the user mentions Jira issues (e.g., "PROJ-123"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like "jira", "issue", "ticket", "sprint", "backlog", or issue key patterns.
+description: Use jira CLI for Jira operations including issue management, project queries, transitions, and JQL search
 ---
+# Jira CLI Skill
 
-# Jira
+You are a Jira specialist using the `jira` CLI tool. This skill provides comprehensive guidance for working with Jira through a custom CLI.
 
-Natural language interaction with Jira. Supports multiple backends.
+## Core Commands
 
-## Backend Detection
+### Authentication
 
-**Run this check first** to determine which backend to use:
+```bash
+# Check authentication status
+jira auth check
 
-```
-1. Check if jira CLI is available:
-   → Run: which jira
-   → If found: USE CLI BACKEND
-
-2. If no CLI, check for Atlassian MCP:
-   → Look for mcp__atlassian__* tools
-   → If available: USE MCP BACKEND
-
-3. If neither available:
-   → GUIDE USER TO SETUP
+# Login to Jira
+jira auth login
 ```
 
-| Backend | When to Use | Reference |
-|---------|-------------|-----------|
-| **CLI** | `jira` command available | `references/commands.md` |
-| **MCP** | Atlassian MCP tools available | `references/mcp.md` |
-| **None** | Neither available | Guide to install CLI |
+### Issue Management
 
----
+```bash
+# View issue details
+jira issue get ISSUE-123
 
-## Quick Reference (CLI)
+# Create new issue
+jira issue create --project PROJ --type Bug --summary "Issue summary" --description "Description"
 
-> Skip this section if using MCP backend.
+# Update issue
+jira issue update ISSUE-123 --summary "New summary"
 
-| Intent | Command |
-|--------|---------|
-| View issue | `jira issue view ISSUE-KEY` |
-| List my issues | `jira issue list -a$(jira me)` |
-| My in-progress | `jira issue list -a$(jira me) -s"In Progress"` |
-| Create issue | `jira issue create -tType -s"Summary" -b"Description"` |
-| Move/transition | `jira issue move ISSUE-KEY "State"` |
-| Assign to me | `jira issue assign ISSUE-KEY $(jira me)` |
-| Unassign | `jira issue assign ISSUE-KEY x` |
-| Add comment | `jira issue comment add ISSUE-KEY -b"Comment text"` |
-| Open in browser | `jira open ISSUE-KEY` |
-| Current sprint | `jira sprint list --state active` |
-| Who am I | `jira me` |
+# Add comment to issue
+jira comment add ISSUE-123 "Comment text"
 
----
-
-## Quick Reference (MCP)
-
-> Skip this section if using CLI backend.
-
-| Intent | MCP Tool |
-|--------|----------|
-| Search issues | `mcp__atlassian__searchJiraIssuesUsingJql` |
-| View issue | `mcp__atlassian__getJiraIssue` |
-| Create issue | `mcp__atlassian__createJiraIssue` |
-| Update issue | `mcp__atlassian__editJiraIssue` |
-| Get transitions | `mcp__atlassian__getTransitionsForJiraIssue` |
-| Transition | `mcp__atlassian__transitionJiraIssue` |
-| Add comment | `mcp__atlassian__addCommentToJiraIssue` |
-| User lookup | `mcp__atlassian__lookupJiraAccountId` |
-| List projects | `mcp__atlassian__getVisibleJiraProjects` |
-
-See `references/mcp.md` for full MCP patterns.
-
----
-
-## Triggers
-
-- "create a jira ticket"
-- "show me PROJ-123"
-- "list my tickets"
-- "move ticket to done"
-- "what's in the current sprint"
-
----
-
-## Issue Key Detection
-
-Issue keys follow the pattern: `[A-Z]+-[0-9]+` (e.g., PROJ-123, ABC-1).
-
-When a user mentions an issue key in conversation:
-- **CLI:** `jira issue view KEY` or `jira open KEY`
-- **MCP:** `mcp__atlassian__jira_get_issue` with the key
-
----
-
-## Workflow
-
-**Creating tickets:**
-1. Research context if user references code/tickets/PRs
-2. Draft ticket content
-3. Review with user
-4. Create using appropriate backend
-
-**Updating tickets:**
-1. Fetch issue details first
-2. Check status (careful with in-progress tickets)
-3. Show current vs proposed changes
-4. Get approval before updating
-5. Add comment explaining changes
-
----
-
-## Before Any Operation
-
-Ask yourself:
-
-1. **What's the current state?** — Always fetch the issue first. Don't assume status, assignee, or fields are what user thinks they are.
-
-2. **Who else is affected?** — Check watchers, linked issues, parent epics. A "simple edit" might notify 10 people.
-
-3. **Is this reversible?** — Transitions may have one-way gates. Some workflows require intermediate states. Description edits have no undo.
-
-4. **Do I have the right identifiers?** — Issue keys, transition IDs, account IDs. Display names don't work for assignment (MCP).
-
----
-
-## NEVER
-
-- **NEVER transition without fetching current status** — Workflows may require intermediate states. "To Do" → "Done" might fail silently if "In Progress" is required first.
-
-- **NEVER assign using display name (MCP)** — Only account IDs work. Always call `lookupJiraAccountId` first, or assignment silently fails.
-
-- **NEVER edit description without showing original** — Jira has no undo. User must see what they're replacing.
-
-- **NEVER use `--no-input` without all required fields (CLI)** — Fails silently with cryptic errors. Check project's required fields first.
-
-- **NEVER assume transition names are universal** — "Done", "Closed", "Complete" vary by project. Always get available transitions first.
-
-- **NEVER bulk-modify without explicit approval** — Each ticket change notifies watchers. 10 edits = 10 notification storms.
-
----
-
-## Safety
-
-- Always show the command/tool call before running it
-- Always get approval before modifying tickets
-- Preserve original information when editing
-- Verify updates after applying
-- Always surface authentication issues clearly so the user can resolve them
-
----
-
-## No Backend Available
-
-If neither CLI nor MCP is available, guide the user:
-
-```
-To use Jira, you need one of:
-
-1. **jira CLI** (recommended):
-   https://github.com/ankitpokhrel/jira-cli
-
-   Install: brew install ankitpokhrel/jira-cli/jira-cli
-   Setup:   jira init
-
-2. **Atlassian MCP**:
-   Configure in your MCP settings with Atlassian credentials.
+# List comments on issue
+jira comment list ISSUE-123
 ```
 
----
+### Issue Transitions
 
-## Deep Dive
+```bash
+# List available transitions for an issue
+jira transition list ISSUE-123
 
-**LOAD reference when:**
-- Creating issues with complex fields or multi-line content
-- Building JQL queries beyond simple filters
-- Troubleshooting errors or authentication issues
-- Working with transitions, linking, or sprints
+# Transition issue to new status
+jira transition ISSUE-123 "In Progress"
+```
 
-**Do NOT load reference for:**
-- Simple view/list operations (Quick Reference above is sufficient)
-- Basic status checks (`jira issue view KEY`)
-- Opening issues in browser
+### Searching with JQL
 
-| Task | Load Reference? |
-|------|-----------------|
-| View single issue | No |
-| List my tickets | No |
-| Create with description | **Yes** — CLI needs `/tmp` pattern |
-| Transition issue | **Yes** — need transition ID workflow |
-| JQL search | **Yes** — for complex queries |
-| Link issues | **Yes** — MCP limitation, need script |
+```bash
+# Search issues with JQL
+jira search "project = PROJ AND status = Open"
 
-References:
-- CLI patterns: `references/commands.md`
-- MCP patterns: `references/mcp.md`
+# Search with output format
+jira search "assignee = currentUser()" --format json
+
+# Search with field selection
+jira search "project = PROJ" --fields summary,status,assignee
+```
+
+### Project Operations
+
+```bash
+# List all projects
+jira project list
+
+# Get project details
+jira project get PROJ
+```
+
+### Watching and Assigning
+
+```bash
+# Watch an issue
+jira watch add ISSUE-123
+
+# Stop watching an issue
+jira watch remove ISSUE-123
+
+# Assign issue
+jira assign ISSUE-123 username
+
+# Assign to self
+jira assign ISSUE-123 me
+```
+
+## Common Workflows
+
+### Viewing Your Work
+
+```bash
+# View issues assigned to you
+jira search "assignee = currentUser() AND status != Done"
+
+# View issues you're watching
+jira search "watcher = currentUser()"
+
+# View recent activity
+jira search "updatedDate >= -7d AND assignee = currentUser()"
+```
+
+### Creating and Updating Issues
+
+```bash
+# Create a bug
+jira issue create --project PROJ --type Bug \
+  --summary "Login button not working" \
+  --description "Steps to reproduce..."
+
+# Update priority
+jira issue update ISSUE-123 --priority High
+
+# Add labels
+jira issue update ISSUE-123 --labels bug,frontend
+
+# Link issues
+jira link add ISSUE-123 ISSUE-456 "blocks"
+```
+
+### Moving Issues Through Workflow
+
+```bash
+# Start work on issue
+jira transition ISSUE-123 "In Progress"
+
+# Mark as done
+jira transition ISSUE-123 "Done"
+
+# Reopen issue
+jira transition ISSUE-123 "Reopen"
+```
+
+## JQL Reference
+
+### Common JQL Patterns
+
+```bash
+# Issues in specific project
+jira search "project = MYPROJ"
+
+# Open issues assigned to you
+jira search "assignee = currentUser() AND status in (Open, 'In Progress')"
+
+# High priority bugs
+jira search "type = Bug AND priority = High"
+
+# Recently updated issues
+jira search "updated >= -1w"
+
+# Issues created this sprint
+jira search "sprint in openSprints() AND created >= startOfWeek()"
+
+# Issues with specific label
+jira search "labels = urgent"
+
+# Issues in epic
+jira search "'Epic Link' = EPIC-123"
+```
+
+### JQL Field Reference
+
+- `project` - Project key or name
+- `status` - Issue status (Open, In Progress, Done, etc.)
+- `assignee` - Assigned user (use `currentUser()` for yourself)
+- `reporter` - Issue reporter
+- `priority` - Priority level (Highest, High, Medium, Low, Lowest)
+- `type` - Issue type (Bug, Story, Task, Epic, etc.)
+- `labels` - Issue labels
+- `created` - Creation date
+- `updated` - Last update date
+- `resolution` - Resolution status
+
+### JQL Functions
+
+- `currentUser()` - Current logged-in user
+- `startOfDay()`, `startOfWeek()`, `startOfMonth()` - Date functions
+- `now()` - Current timestamp
+- `openSprints()` - Currently active sprints
+- `closedSprints()` - Completed sprints
+
+## Output Formats
+
+```bash
+# JSON output (for scripting)
+jira search "project = PROJ" --format json
+
+# Table output (human-readable, default)
+jira search "project = PROJ" --format table
+
+# CSV output
+jira search "project = PROJ" --format csv
+```
+
+## Best Practices
+
+1. **Always authenticate first**: Run `jira auth check` before operations
+2. **Use JQL for complex queries**: More powerful than simple filters
+3. **Specify output format**: Use `--format json` for scripting
+4. **Include field selection**: Use `--fields` to limit returned data
+5. **Test transitions**: Use `jira transition list` before transitioning
+6. **Be specific with JQL**: Use quotes for multi-word values
+
+## Common Use Cases
+
+### Daily Standup Prep
+
+```bash
+# What you worked on yesterday
+jira search "assignee = currentUser() AND updated >= -1d"
+
+# What you're working on today
+jira search "assignee = currentUser() AND status = 'In Progress'"
+```
+
+### Bug Triage
+
+```bash
+# Unassigned bugs
+jira search "type = Bug AND assignee is EMPTY AND status = Open"
+
+# Critical bugs in project
+jira search "project = PROJ AND type = Bug AND priority in (Highest, High)"
+```
+
+### Sprint Planning
+
+```bash
+# Issues in backlog
+jira search "project = PROJ AND status = 'To Do' AND sprint is EMPTY"
+
+# Issues in current sprint
+jira search "project = PROJ AND sprint in openSprints()"
+
+# Completed this sprint
+jira search "project = PROJ AND sprint in openSprints() AND status = Done"
+```
+
+## Error Handling
+
+If you encounter authentication errors:
+```bash
+jira auth login
+```
+
+If JQL syntax errors occur:
+- Check for proper quoting of multi-word values
+- Verify field names are correct
+- Use `AND`, `OR`, `NOT` operators (uppercase)
+
+## Quick Reference
+
+```bash
+# View issue
+jira issue get ISSUE-123
+
+# Search
+jira search "JQL query here"
+
+# Create
+jira issue create --project PROJ --type TYPE --summary "text"
+
+# Update
+jira issue update ISSUE-123 --field value
+
+# Transition
+jira transition ISSUE-123 "Status Name"
+
+# Comment
+jira comment add ISSUE-123 "Comment text"
+
+# Assign
+jira assign ISSUE-123 username
+```

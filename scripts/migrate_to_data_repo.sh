@@ -59,7 +59,7 @@ __pycache__/
 EOF
 
 (cd "$dest_dir" && git init -q && git checkout -b main -q)
-(cd "$dest_dir" && git add -A && git commit -m "chore: initial skills archive import" -q)
+(cd "$dest_dir" && git add -A && git -c commit.gpgsign=false commit -m "chore: initial skills archive import" -q)
 
 echo ""
 echo "Done: $dest_dir"

@@ -30,7 +30,8 @@ def extract_frontmatter(content: str) -> dict:
             return {}
 
         frontmatter = content[3:end_idx].strip()
-        return yaml.safe_load(frontmatter) or {}
+        data = yaml.safe_load(frontmatter)
+        return data if isinstance(data, dict) else {}
     except Exception:
         return {}
 
@@ -103,27 +104,51 @@ def safe_write_registry(registry_path: Path, registry: dict) -> bool:
 
 
 def scan_skills(skills_dir: Path) -> list:
-    """Scan all skills and build index."""
-    skills = []
+    """
+    Scan archived skills and build index.
 
-    for skill_md in skills_dir.rglob("SKILL.md"):
-        rel_path = skill_md.relative_to(skills_dir)
-        parts = rel_path.parts
+    Supports mixed layouts seen in the archive:
+    - <root>/<skill>/SKILL.md
+    - <root>/data/<skill>/SKILL.md
+    - <root>/<category>/<skill>/SKILL.md
 
-        if len(parts) < 2:
+    We detect a "skill directory" by the presence of both SKILL.md and metadata.json
+    in the same folder, which avoids mis-parsing category folders.
+    """
+    skills: list[dict] = []
+
+    if not skills_dir.exists():
+        logger.warning(f"Skills directory not found: {skills_dir}")
+        return skills
+
+    for metadata_path in skills_dir.rglob("metadata.json"):
+        skill_dir = metadata_path.parent
+        skill_md = skill_dir / "SKILL.md"
+        if not skill_md.exists():
             continue
 
-        category = parts[0]
-        name = parts[1]
+        rel_dir = skill_dir.relative_to(skills_dir)
+        rel_parts = rel_dir.parts
 
-        # Skip if category is 'data' (flat structure)
-        if category == "data":
-            # In data/, structure is data/{name}/SKILL.md
-            pass
+        # Skip "category root" folders that also contain many sub-skill folders.
+        # Example: development/ has SKILL.md + metadata.json but also development/<skill>/...
+        try:
+            has_subskills = any((p / "SKILL.md").exists() for p in skill_dir.iterdir() if p.is_dir())
+        except Exception:
+            has_subskills = False
+        if has_subskills:
+            continue
 
-        # Read metadata.json if exists
-        metadata_path = skill_md.parent / "metadata.json"
         metadata = safe_load_metadata(metadata_path)
+
+        # Determine name
+        name = metadata.get("name") or (rel_parts[-1] if rel_parts else skill_dir.name)
+
+        # Determine category (prefer explicit metadata, then infer from path)
+        inferred_category = "other"
+        if len(rel_parts) >= 2:
+            inferred_category = rel_parts[0]
+        category = metadata.get("category") or inferred_category
 
         # Read SKILL.md for description
         try:
@@ -136,25 +161,28 @@ def scan_skills(skills_dir: Path) -> list:
             logger.warning(f"Error reading {skill_md}: {e}")
             description = ""
 
-        # Build install path
+        # Repo/path/branch normalization across different metadata formats
         repo = metadata.get("repo", "")
-        github_path = metadata.get("github_path", "")
-        github_branch = metadata.get("github_branch", "main")
+        github_path = (
+            metadata.get("github_path")
+            or metadata.get("path")
+            or ""
+        )
+        github_branch = (
+            metadata.get("github_branch")
+            or metadata.get("branch")
+            or "main"
+        )
 
-        if github_path and repo:
-            install = f"{repo}/{github_path}"
-        elif repo:
-            install = repo
-        else:
-            install = f"unknown/{name}"
+        install = f"{repo}/{github_path}" if (repo and github_path) else (repo or f"unknown/{name}")
 
         skill_entry = {
             "name": name,
             "description": description[:200] if description else f"Skill: {name}",
             "repo": repo,
-            "path": github_path or str(rel_path.parent),
+            "path": github_path,
             "branch": github_branch,
-            "category": metadata.get("category", category),
+            "category": category,
             "tags": metadata.get("tags", []),
             "stars": metadata.get("stars", 0),
             "install": install,

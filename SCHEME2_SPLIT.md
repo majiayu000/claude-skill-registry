@@ -19,13 +19,13 @@ Does **not** contain:
 ### 2) `registry-data` (new repo)
 
 Contains:
-- `skills/**` (the archived skill contents: `SKILL.md`, `metadata.json`, etc.)
+- archived skill contents (category folders like `data/`, `development/`, etc.)
 
 This is the repo you’ll browse on GitHub to view a skill.
 
 ## How sync works
 
-This repo’s GitHub Actions workflow checks out the data repo into `./skills/` (as a separate checkout), runs the crawler/downloader scripts to update it, commits/pushes to the data repo, then rebuilds `registry.json` here.
+This repo’s GitHub Actions workflow checks out the data repo into `./skills/` (as a separate checkout). That keeps paths stable (e.g. `./skills/data/<skill>/SKILL.md`) while the core repo stays small.
 
 You’ll need:
 - A GitHub repository variable: `REGISTRY_DATA_REPO` (e.g. `yourname/claude-skill-registry-data`)
@@ -42,4 +42,3 @@ bash scripts/migrate_to_data_repo.sh ../claude-skill-registry-data
 
 3) Push `../claude-skill-registry-data` to GitHub
 4) Set `REGISTRY_DATA_REPO` + `DATA_REPO_TOKEN` in this repo
-

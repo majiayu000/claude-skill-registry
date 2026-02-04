@@ -37,16 +37,18 @@ fi
 
 mkdir -p "$dest_dir"
 
-echo "Copying skills/ -> $dest_dir/skills (this may take a while)..."
-mkdir -p "$dest_dir/skills"
-(cd "$skills_dir" && tar -cf - .) | (cd "$dest_dir/skills" && tar -xf -)
+echo "Copying skills/* -> $dest_dir/* (this may take a while)..."
+# Data repo root should contain category folders (data/, development/, ...),
+# so the core repo can check it out into ./skills and keep paths stable:
+# ./skills/data/<skill>/SKILL.md
+(cd "$skills_dir" && tar -cf - .) | (cd "$dest_dir" && tar -xf -)
 
 cat > "$dest_dir/README.md" <<'EOF'
 # Claude Skill Registry (Data)
 
-This repo contains the archived `skills/**` working tree for the Claude Skills Registry.
+This repo contains the archived skill contents (category folders like `data/`, `development/`, etc.).
 
-- Browse skills under `skills/`
+- Browse skills under category folders (e.g. `data/<skill>/SKILL.md`)
 - The index + website live in the separate core repo.
 EOF
 
@@ -64,4 +66,3 @@ echo "Done: $dest_dir"
 echo "Next:"
 echo "- Add remote + push to GitHub"
 echo "- Set core repo vars: REGISTRY_DATA_REPO and secret: DATA_REPO_TOKEN"
-

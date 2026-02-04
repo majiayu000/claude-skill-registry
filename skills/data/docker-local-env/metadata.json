@@ -1,9 +1,0 @@
-{
-  "name": "docker-local-env",
-  "description": "Check and manage .env configuration for docker-local projects - conflict detection, unique IDs, isolation settings",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "python-pytest-patterns",
-  "description": "pytest testing patterns for Python. Triggers on: pytest, fixture, mark, parametrize, mock, conftest, test coverage, unit test, integration test, pytest.raises.",
-  "repo": "0xDarkMatter/claude-mods",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/0xDarkMatter/claude-mods"
-}

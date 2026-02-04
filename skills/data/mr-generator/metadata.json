@@ -1,9 +1,0 @@
-{
-  "name": "mr-generator",
-  "description": "Generates intelligent GitLab merge request descriptions from git commits with automatic categorization and Jira integration",
-  "repo": "alexismanuel/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

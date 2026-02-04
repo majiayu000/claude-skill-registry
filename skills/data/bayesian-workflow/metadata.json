@@ -1,9 +1,0 @@
-{
-  "name": "bayesian-workflow",
-  "description": "Orchestration workflow for Bayesian statistical analysis. Invoke when performing Bayesian modeling, statistical analysis with Stan, or building probabilistic models.",
-  "repo": "sunxd3/bayesian-statistician-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

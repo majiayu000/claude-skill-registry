@@ -1,9 +1,0 @@
-{
-  "name": "playwright-page-objects",
-  "description": "Playwright Page Object Model including page classes, fixtures, helpers, and test organization. Use when structuring Playwright E2E tests or organizing test code.",
-  "repo": "jovermier/cc-stack-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

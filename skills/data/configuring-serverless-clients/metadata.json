@@ -1,9 +1,0 @@
-{
-  "name": "configuring-serverless-clients",
-  "description": "Configure PrismaClient for serverless (Next.js, Lambda, Vercel) with connection_limit=1 and global singleton pattern.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "literature-review-k-dense-ai-claude-scientific-s",
-  "description": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:17.863787Z"
-}

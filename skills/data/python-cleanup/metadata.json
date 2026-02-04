@@ -1,9 +1,0 @@
-{
-  "name": "python-cleanup",
-  "description": "Perform comprehensive dead code and clean-up analysis in Python projects using static analysis, coverage, dependency checks, and security scanning. Use when asked to clean up code, find unused code, a",
-  "repo": "franklinbaldo/egregora",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

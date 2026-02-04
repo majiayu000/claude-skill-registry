@@ -1,9 +1,0 @@
-{
-  "name": "lightsheet-psf-deconvolution",
-  "description": "KINTSUGI deconvolution: True lightsheet PSF calculation to fix horizontal banding artifacts. Trigger: deconvolution artifacts, horizontal banding, PSF issues, fcyl, slitwidth, lightsheet, LsDeconv.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "datalab",
-  "description": "Convert documents (PDF, EPUB, PPTX, DOCX, XLSX, HTML, images) to Markdown using Datalab cloud API. Use when user wants to use Datalab API for document conversion, or prefers cloud-based processing ove",
-  "repo": "xdanger/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "firefox-debug",
-  "description": "Integrate Firefox Remote Debugging Protocol (RDP) for development workflows via mcporter.",
-  "repo": "zenobi-us/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

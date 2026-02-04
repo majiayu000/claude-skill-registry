@@ -1,9 +1,0 @@
-{
-  "name": "memory-profiler-setup",
-  "description": "Memory Profiler Setup - Auto-activating skill for Performance Testing.Triggers on: memory profiler setup, memory profiler setupPart of the Performance Testing skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "changelog-formatting",
-  "description": "Format changelog content according to Replit's changelog template structure. Use when converting raw changelog content into properly structured documentation with correct frontmatter, sections, and me",
-  "repo": "mattppal/shipping-szn",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

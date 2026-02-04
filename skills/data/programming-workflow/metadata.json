@@ -1,9 +1,0 @@
-{
-  "name": "programming-workflow",
-  "description": "编程工作流 - 统一的测试驱动开发(TDD)工作流程。包含准备、设计、测试实现、代码实现和审查五个阶段。",
-  "repo": "cuipengfei/prompts",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "find-sections",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find all sections across vault matching a heading pattern. Triggers on \"find sections\", \"notes with heading\", \"all X sections\", \"which notes have\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:00.255073Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "konveyor-rule-generator",
-  "description": "Generate Konveyor analyzer migration rules from migration guides using AI",
-  "repo": "tsanders-rh/analyzer-rule-generator",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

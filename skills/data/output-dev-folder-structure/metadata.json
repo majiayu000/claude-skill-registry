@@ -1,9 +1,0 @@
-{
-  "name": "output-dev-folder-structure",
-  "description": "Workflow folder structure conventions for Output SDK. Use when creating new workflows, organizing workflow files, or understanding the standard project layout.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

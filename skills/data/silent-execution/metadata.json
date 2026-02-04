@@ -1,9 +1,0 @@
-{
-  "name": "silent-execution",
-  "description": "Automatically wraps verbose commands (pytest, ruff, builds) with silent execution for context-efficient output. Use this proactively when running tests, linters, formatters, or build commands to minim",
-  "repo": "elliotsteene/claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

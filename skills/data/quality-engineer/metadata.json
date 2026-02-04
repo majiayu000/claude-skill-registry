@@ -1,9 +1,0 @@
-{
-  "name": "quality-engineer",
-  "description": "Expert in code quality, formatting, linting, and quality gates workflow. Use when user needs to setup quality tools, fix linting errors, configure Biome/Prettier, setup pre-commit hooks, or run qualit",
-  "repo": "marcioaltoe/claude-craftkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "docker-nestjs-dev-environment",
-  "repo": "edneyreis999/zord-project",
-  "category": "development",
-  "description": "Configure e otimize ambientes de desenvolvimento Docker para projetos NestJS com hot-reload, persist\u00eancia de dados, health checks e debugging eficiente.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:20.847597Z"
-}

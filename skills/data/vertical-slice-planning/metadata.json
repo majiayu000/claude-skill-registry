@@ -1,9 +1,0 @@
-{
-  "name": "vertical-slice-planning",
-  "description": "Use this skill when discussing feature breakdown, PR structure, implementation ordering, or how to decompose work. Guides thinking about vertical slices (end-to-end functionality) rather than horizont",
-  "repo": "jclfocused/claude-agents",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

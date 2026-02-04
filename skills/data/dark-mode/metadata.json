@@ -1,9 +1,0 @@
-{
-  "name": "dark-mode",
-  "description": "Implements theme switching with semantic tokens and prefers-color-scheme detection. Use when adding dark mode, light/dark themes, color scheme toggles, or converting hardcoded colors to theme-aware to",
-  "repo": "dylantarre/design-system-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

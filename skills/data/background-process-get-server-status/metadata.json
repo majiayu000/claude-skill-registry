@@ -1,9 +1,0 @@
-{
-  "name": "background-process-get-server-status",
-  "description": "To check if the Background Process Manager is running, get the server status and confirm it is available.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/X-School-Academy/ai-dev-swarm"
-}

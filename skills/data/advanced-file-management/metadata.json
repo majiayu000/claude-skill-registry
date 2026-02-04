@@ -1,9 +1,0 @@
-{
-  "name": "advanced-file-management",
-  "repo": "MassLab-SII/open-agent-skills",
-  "category": "data",
-  "description": "Advanced file management tools. Includes batch folder creation, batch file moving, file listing, and HTML author extraction.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.840380Z",
-  "dir_name": "advanced-file-management"
-}

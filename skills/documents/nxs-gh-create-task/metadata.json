@@ -1,8 +1,0 @@
-{
-  "name": "nxs-gh-create-task",
-  "repo": "sameera/nexus",
-  "category": "documents",
-  "description": "Create GitHub issues from TASK-???.md files. Use when you need to bulk-create GitHub issues from task markdown files with frontmatter containing title, label, parent, and project attributes. Automatic",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:56.568876Z"
-}

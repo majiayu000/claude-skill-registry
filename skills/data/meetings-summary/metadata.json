@@ -1,9 +1,0 @@
-{
-  "name": "meetings-summary",
-  "repo": "smorand/claude-config",
-  "category": "data",
-  "description": "Generate comprehensive summary of meeting. **Use this skill when the user requests to 'create meeting summary', 'summarize the meeting', 'generate meeting email'.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.262149Z",
-  "dir_name": "meetings-summary"
-}

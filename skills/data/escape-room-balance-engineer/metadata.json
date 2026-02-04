@@ -1,9 +1,0 @@
-{
-  "name": "escape-room-balance-engineer",
-  "description": "Balance escape room difficulty, timing, and hint systems to achieve 60-70% completion rate. Designs progressive difficulty curves, three-tier hint systems, stuck-point analysis, and playtest metrics. ",
-  "repo": "ledagame/persona-theater",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

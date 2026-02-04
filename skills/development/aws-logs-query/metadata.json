@@ -1,8 +1,0 @@
-{
-  "name": "aws-logs-query",
-  "repo": "cncorp/arsenal",
-  "category": "development",
-  "description": "Query AWS CloudWatch logs for staging and production environments. Use for debugging errors, investigating incidents, or monitoring application behavior. PRIMARY - aws logs tail \"/ecs/codel-staging\" -",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.045437Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "writing-git-commits",
-  "description": "Expert guide to writing semantic commit messages following the Conventional Commits specification. Master clear, machine-readable commits that communicate intent and drive automation.",
-  "repo": "zenobi-us/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

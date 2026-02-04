@@ -1,9 +1,0 @@
-{
-  "name": "forms-responses",
-  "description": "Google Forms の回答を取得する。「フォームの回答」「回答結果を見せて」「フォーム回答取得」「アンケート結果」「回答一覧」「フォームの結果」などで起動。`/shiiman-google:forms-responses` を実行して回答を取得する。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

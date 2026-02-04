@@ -1,9 +1,0 @@
-{
-  "name": "tailwind-shadcn-ui-setup",
-  "description": "This skill should be used when setting up, configuring, or initializing Tailwind CSS (v3 or v4) and shadcn/ui for Next.js 16 App Router projects. Configure dark mode, design tokens, base layout with h",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

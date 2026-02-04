@@ -1,9 +1,0 @@
-{
-  "name": "analysis-tshark",
-  "description": "Network protocol analyzer and packet capture tool for traffic analysis, security investigations, and forensic examination using Wireshark's command-line interface. Use when: (1) Analyzing network traf",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

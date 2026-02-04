@@ -1,8 +1,0 @@
-{
-  "name": "agents-md-authoring",
-  "repo": "echohello-dev/backstage",
-  "category": "testing",
-  "description": "Create and maintain AGENTS.md files following the open specification at agents.md. Use when setting up AI coding agent instructions for a project, updating project conventions for agents, or documenti",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:35.434729Z"
-}

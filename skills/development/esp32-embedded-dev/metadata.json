@@ -1,8 +1,0 @@
-{
-  "name": "esp32-embedded-dev",
-  "repo": "rghamilton3/dotfiles",
-  "category": "development",
-  "description": "Expert ESP32 development with ESP-IDF 5.3.x, covering FreeRTOS patterns, peripheral drivers, WiFi/BLE networking, power management, and hardware optimization. Use when developing ESP32 firmware, imple",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:53.738939Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-app-webf-go",
-  "description": "Run and debug a WebF app specifically in WebF Go (desktop/iOS/Android): load dev URLs, connect via devtools://, collect WEBF_NATIVE_LOG logs, clear WebF Go cache, and handle WebF Go limitations. Use w",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

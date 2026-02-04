@@ -1,8 +1,0 @@
-{
-  "name": "monte-carlo-scheduling",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "description": "Probabilistic project scheduling using Monte Carlo simulation, confidence intervals, risk-adjusted timelines, and throughput-based forecasting.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:03.905182Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "use-goodreads-export",
-  "repo": "stbenjam/claude-nine",
-  "category": "security",
-  "description": "Search and query Goodreads library from CSV export. Use when the user asks about books, TBR (to-be-read), reading lists, book searches, or mentions Goodreads. Also use for queries about book ratings, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:33.506648Z"
-}

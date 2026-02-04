@@ -1,7 +1,0 @@
-{
-  "name": "railway-deployment",
-  "description": "Manage Railway deployments - view logs, redeploy, restart, or remove deployments. Use for deployment lifecycle (remove, stop, redeploy, restart), deployment visibility (list, status, history), and tro",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.768659Z"
-}

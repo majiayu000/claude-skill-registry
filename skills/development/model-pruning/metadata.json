@@ -1,7 +1,0 @@
-{
-  "name": "model-pruning",
-  "description": "Reduce LLM size and accelerate inference using pruning techniques like Wanda and SparseGPT. Use when compressing models without retraining, achieving 50% sparsity with minimal accuracy loss, or enabli",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:19.793846Z"
-}

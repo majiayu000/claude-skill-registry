@@ -1,9 +1,0 @@
-{
-  "name": "using-type-guards",
-  "description": "Teaches how to write custom type guards with type predicates and use built-in type narrowing in TypeScript. Use when working with unknown types, union types, validating external data, or implementing ",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

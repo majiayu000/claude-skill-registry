@@ -1,8 +1,0 @@
-{
-  "name": "best-practices-checker",
-  "repo": "sovrium/sovrium",
-  "category": "design",
-  "description": "Validates code against framework-specific best practices documented in docs/infrastructure/. Checks Effect usage patterns, React 19 conventions, Drizzle ORM patterns, Hono RPC implementations, and oth",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:17.355977Z"
-}

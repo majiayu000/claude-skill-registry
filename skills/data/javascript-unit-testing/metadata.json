@@ -1,9 +1,0 @@
-{
-  "name": "javascript-unit-testing",
-  "description": "Writing high-quality unit tests for JavaScript and TypeScript using Jest. Covers test structure (AAA pattern, USE naming), breaking dependencies (stubs, mocks, dependency injection), testing async cod",
-  "repo": "el-feo/ai-context",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

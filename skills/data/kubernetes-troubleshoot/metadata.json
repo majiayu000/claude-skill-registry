@@ -1,9 +1,0 @@
-{
-  "name": "kubernetes-troubleshoot",
-  "description": "Troubleshoot and manage Kubernetes clusters, including resource inspection, debugging, pod logs, events, and cluster operations. Use when the user needs to diagnose issues, inspect workloads, analyze ",
-  "repo": "timbuchinger/loadout",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

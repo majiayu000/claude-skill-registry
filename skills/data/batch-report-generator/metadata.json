@@ -1,9 +1,0 @@
-{
-  "name": "batch-report-generator",
-  "description": "Generate GenuVerity fact-check reports from structured input (Gemini research output). Use /batch-report to process research into HTML reports. Optimized for token efficiency - expects pre-researched ",
-  "repo": "chrisklop/genuverity7",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

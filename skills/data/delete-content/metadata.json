@@ -1,9 +1,0 @@
-{
-  "name": "delete-content",
-  "description": "Delete files from knowledge base with directory governance. Use when user wants to remove or delete content. Reads RULE.md to check deletion permissions and handles dependencies.",
-  "repo": "eternnoir/claude-tool",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

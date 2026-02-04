@@ -1,8 +1,0 @@
-{
-  "name": "tsx-modular-component-pattern",
-  "repo": "TrueNine/claude-code-projects",
-  "category": "design",
-  "description": "Guide for outputting React/TSX components by prioritizing reusable sub-components, controlling length, and declaring them as const before the main component to ensure clear structure and maintainabili",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:16.549562Z"
-}

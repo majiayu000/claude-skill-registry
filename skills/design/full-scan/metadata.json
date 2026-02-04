@@ -1,8 +1,0 @@
-{
-  "name": "full-scan",
-  "repo": "Kiikurage/Claude-Code-Sample",
-  "category": "design",
-  "description": "Apply the same operation to all files matching a glob pattern. Use this skill whenever you need to process multiple files systematically, such as fixing guideline violations, unifying code style, or f",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:39.460461Z"
-}

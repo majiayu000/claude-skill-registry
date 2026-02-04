@@ -1,9 +1,0 @@
-{
-  "name": "ghe-status",
-  "description": "READ-ONLY quick overview of GitHub Elements workflow state. Shows active threads, phase distribution, and workflow health at a glance.USE THIS SKILL WHEN:- User asks \"what's the status\" or \"show me th",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

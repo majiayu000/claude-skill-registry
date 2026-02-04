@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-refactoring",
-  "repo": "fjacquet/finwiz",
-  "category": "development",
-  "description": "Patterns for refactoring large files and reorganizing code in FinWiz while maintaining backward compatibility and test integrity. Use when splitting large files, moving code between modules, or reorga",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:39.316893Z"
-}

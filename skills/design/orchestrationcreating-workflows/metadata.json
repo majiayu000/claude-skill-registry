@@ -1,8 +1,0 @@
-{
-  "name": "orchestrationcreating-workflows",
-  "repo": "mbruhler/claude-orchestration",
-  "category": "design",
-  "description": "Use when user says \"create workflow\", \"create a workflow\", \"design workflow\", \"orchestrate\", \"automate multiple steps\", \"coordinate agents\", \"multi-agent workflow\". Creates orchestration workflows fro",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:29.909399Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "gmacko-dev-issue-create",
-  "description": "Use when (1) creating GitHub issues from feature plans or bug reports, (2) documenting bugs found during development, (3) managing the project backlog. Creates well-structured GitHub issues with templ",
-  "repo": "gmackie/vercel-expo-app-template",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

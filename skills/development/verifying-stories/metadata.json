@@ -1,8 +1,0 @@
-{
-  "name": "verifying-stories",
-  "repo": "kecbigmt/cc-plugins",
-  "category": "development",
-  "description": "Guides developer verification before handoff. Use when completing implementation, preparing for acceptance testing, or self-reviewing work before commit or PR.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:55.336447Z"
-}

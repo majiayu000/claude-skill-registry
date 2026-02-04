@@ -1,8 +1,0 @@
-{
-  "name": "external-memory",
-  "repo": "k002bill2/LiveMetro",
-  "category": "productivity",
-  "description": "Context persistence system for long-running multi-agent tasks. Saves research plans, findings, and checkpoints to prevent context loss at token limits.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:23.033544Z"
-}

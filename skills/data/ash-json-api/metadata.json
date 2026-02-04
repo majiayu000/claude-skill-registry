@@ -1,9 +1,0 @@
-{
-  "name": "ash-json-api",
-  "description": "AshJsonApi guidelines for exposing Ash resources as JSON:API compliant REST endpoints. Use when adding JSON:API extensions to domains/resources, configuring routes, or implementing filtering, sorting,",
-  "repo": "forest/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

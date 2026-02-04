@@ -1,9 +1,0 @@
-{
-  "name": "using-the-use-hook",
-  "description": "React 19's use() API for reading Promises/Context conditionally. For async data fetching, Suspense, conditional context access, useContext migration.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

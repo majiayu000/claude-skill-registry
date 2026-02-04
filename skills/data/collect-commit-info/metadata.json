@@ -1,9 +1,0 @@
-{
-  "name": "collect-commit-info",
-  "description": "Analyze staged files, group by category, and generate conventional commit specs as JSON.",
-  "repo": "reedom/claude-code-commands",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "make",
-  "description": "Guide for writing idiomatic, maintainable Makefiles following modern best practices. Enforces safety headers (SHELL, .SHELLFLAGS, .DELETE_ON_ERROR), self-documenting help, .PHONY declarations, modular",
-  "repo": "mauromedda/agent-toolkit",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/mauromedda/agent-toolkit"
-}

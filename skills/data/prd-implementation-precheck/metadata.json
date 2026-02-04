@@ -1,9 +1,0 @@
-{
-  "name": "prd-implementation-precheck",
-  "description": "Implement PRDs/specs with a mandatory precheck review before coding. Use when a user asks to implement a PRD/feature spec/requirements doc or says \"implement PRD/spec\". Perform a preflight review, rai",
-  "repo": "Charon-Fan/agent-playbook",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Charon-Fan/agent-playbook"
-}

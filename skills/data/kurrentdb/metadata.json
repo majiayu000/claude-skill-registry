@@ -1,9 +1,0 @@
-{
-  "name": "kurrentdb",
-  "description": "Provides KurrentDB (EventStoreDB) client code for event sourcing and CQRS. Generates correct package names, connection strings, and API patterns for Python, Node.js, .NET, F#, Go, Java, Rust. Triggers",
-  "repo": "kurrent-io/coding-agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

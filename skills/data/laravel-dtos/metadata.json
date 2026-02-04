@@ -1,9 +1,0 @@
-{
-  "name": "laravel-dtos",
-  "description": "Data Transfer Objects using Spatie Laravel Data. Use when handling data transfer, API requests/responses, or when user mentions DTOs, data objects, Spatie Data, formatters, transformers, or structured",
-  "repo": "leeovery/claude-laravel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

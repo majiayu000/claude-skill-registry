@@ -1,9 +1,0 @@
-{
-  "name": "python-conventions",
-  "description": "Work on Python experiments in packages/python_viterbo. Use for layout conventions, stage entrypoints, lint/test commands, and asset/plot handling.",
-  "repo": "JoernStoehler/msc-viterbo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

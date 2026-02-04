@@ -1,8 +1,0 @@
-{
-  "name": "symfonycqrs-and-handlers",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "design",
-  "description": "Implement CQRS pattern in Symfony with separate Command and Query handlers using Messenger component",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.892096Z"
-}

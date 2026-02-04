@@ -1,7 +1,0 @@
-{
-  "name": "semgrep-rule-variant-creator",
-  "description": "Creates language variants of existing Semgrep rules. Use when porting a Semgrep rule to specified target languages. Takes an existing rule and target languages as input, produces independent rule+test",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:05.014318Z"
-}

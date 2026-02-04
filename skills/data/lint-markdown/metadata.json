@@ -1,9 +1,0 @@
-{
-  "name": "lint-markdown",
-  "description": "Execute markdown validation with taxonomy-based classification and custom rules. Use when validating markdown compliance with LLM-facing writing standards or when generating structured validation repo",
-  "repo": "CsHeng/dot-claude",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

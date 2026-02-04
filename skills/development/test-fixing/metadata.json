@@ -1,7 +1,0 @@
-{
-  "name": "test-fixing",
-  "description": "Run tests and systematically fix all failing tests using smart error grouping. Use when user asks to fix failing tests, mentions test failures, runs test suite and failures occur, or requests to make ",
-  "category": "development",
-  "source": "github.com/mhattingpete/claude-skills-marketplace",
-  "imported_at": "2026-01-24T14:54:24.163692Z"
-}

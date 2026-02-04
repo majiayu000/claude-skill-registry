@@ -1,8 +1,0 @@
-{
-  "name": "mcp-builder-rust",
-  "repo": "h315uk3/as_you",
-  "category": "development",
-  "description": "Guide for creating high-quality MCP (Model Context Protocol) servers in Rust using rmcp SDK. Use when building production-grade MCP servers with type safety, performance, and async support.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:50.205028Z"
-}

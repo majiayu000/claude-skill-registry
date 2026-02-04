@@ -1,9 +1,0 @@
-{
-  "name": "cursor-known-pitfalls",
-  "description": "Avoid common Cursor IDE pitfalls and mistakes. Triggers on \"cursor pitfalls\",\"cursor mistakes\", \"cursor gotchas\", \"cursor issues\", \"cursor problems\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

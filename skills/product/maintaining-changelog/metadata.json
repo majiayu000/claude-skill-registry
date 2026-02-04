@@ -1,8 +1,0 @@
-{
-  "name": "maintaining-changelog",
-  "repo": "srtab/daiv",
-  "category": "product",
-  "description": "Updates or creates CHANGELOG.md files for pull request changes. Use when users request changelog updates, or when adding entries for new features, fixes, or breaking changes.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:12.222713Z"
-}

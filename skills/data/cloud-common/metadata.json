@@ -1,9 +1,0 @@
-{
-  "name": "cloud-common",
-  "description": "Shared utilities for faber-cloud plugin - configuration loading, pattern resolution, auto-discovery",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

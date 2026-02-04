@@ -1,9 +1,0 @@
-{
-  "name": "triton-deploy",
-  "description": "NVIDIA Triton Inference Server 배포 및 관리. \"triton 서버\", \"triton 실행\", \"모델 서빙\", \"inference server\" 요청 시 활성화됩니다.",
-  "repo": "jiunbae/agent-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

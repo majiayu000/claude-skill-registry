@@ -1,7 +1,0 @@
-{
-  "name": "ask-questions-if-underspecified",
-  "description": "Clarify requirements before implementing. Use when serious doubts araise.",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.467290Z"
-}

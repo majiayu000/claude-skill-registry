@@ -1,8 +1,0 @@
-{
-  "name": "sbi-artifactizer",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Transform a skill into a Standard Binary Interface (SBI) artifact with deterministic PLAN/EXECUTE/VERIFY/COMMIT phases. Use when a skill must produce verifiable, committed execution artifacts with min",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.107216Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rename-global-variable-or-function",
-  "repo": "cdlewis/snowboardkids2-decomp",
-  "category": "development",
-  "description": "Renaming a global variable or function requires additional steps in decompilation projects or the build will fail. Use this skill when you want to rename a global variable or function.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:52.760557Z"
-}

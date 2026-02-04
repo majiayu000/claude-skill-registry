@@ -1,8 +1,0 @@
-{
-  "name": "reddit-thread-analyzer",
-  "repo": "OneWave-AI/claude-skills",
-  "category": "testing",
-  "description": "Analyze Reddit threads for sentiment, consensus opinions, top arguments, and discussion patterns. Use this when users want to understand Reddit community opinions, analyze discussions, or gather insig",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.587372Z"
-}

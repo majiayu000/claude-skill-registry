@@ -1,9 +1,0 @@
-{
-  "name": "ralph-prompt-builder",
-  "description": "Master orchestrator for generating Ralph Wiggum-compatible prompts. Analyzes task requirements and routes to appropriate generator (single-task, multi-task, project, or research). Use when you need to",
-  "repo": "adaptationio/Skrillz",
-  "category": "design",
-  "tags": [],
-  "stars": 1,
-  "source": "github.com/adaptationio/Skrillz"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "noop-architecture",
-  "repo": "HDeibler/noop",
-  "category": "data",
-  "description": "Guide for implementing code following the noop function-first, layered architecture. Use when writing handlers, services, database operations, or middleware. Automatically invoked when working on noop",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:38.956205Z",
-  "dir_name": "noop-architecture"
-}

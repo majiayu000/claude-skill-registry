@@ -1,9 +1,0 @@
-{
-  "name": "serr-structured-error-wrapper",
-  "description": "Serr allows us to enrich our Go application errors with location, etc, and bubble them up to the caller where we only have to log once",
-  "repo": "rohanthewiz/serr",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

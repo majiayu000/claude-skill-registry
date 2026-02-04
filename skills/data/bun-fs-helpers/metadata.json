@@ -1,9 +1,0 @@
-{
-  "name": "bun-fs-helpers",
-  "description": "Pure Bun-native filesystem utilities from @sidequest/core/fs. Use when you need command-injection-safe filesystem operations, prefer Bun over node:fs, or want token-efficient fs helpers. All functions",
-  "repo": "nathanvale/side-quest-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

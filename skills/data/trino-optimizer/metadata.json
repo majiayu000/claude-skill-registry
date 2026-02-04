@@ -1,9 +1,0 @@
-{
-  "name": "trino-optimizer",
-  "description": "TD Trino performance optimization including CTAS (5x faster), UDP bucketing for ID lookups, magic comments for join distribution, REGEXP_LIKE vs LIKE, and approx functions.",
-  "repo": "treasure-data/td-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

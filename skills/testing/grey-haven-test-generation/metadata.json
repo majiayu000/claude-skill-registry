@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-test-generation",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "testing",
-  "description": "Comprehensive test suite generation with unit tests, integration tests, edge cases, and error handling. Use when generating tests for existing code, improving coverage, or creating systematic test sui",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:14.232728Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "check-visual-test-status",
-  "repo": "vizzly-testing/cli",
-  "category": "testing",
-  "description": "Check the status of Vizzly visual regression tests. Use when the user asks about test status, test results, what's failing, how tests are doing, or wants a summary of visual tests. Works with both loc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:09.770430Z"
-}

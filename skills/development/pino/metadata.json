@@ -1,8 +1,0 @@
-{
-  "name": "pino",
-  "repo": "settlemint/agent-marketplace",
-  "category": "development",
-  "description": "Pino fast JSON logger for Node.js. Covers log levels, child loggers, transports, and redaction. Triggers on pino, logger, log.info, log.error.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:55.722607Z"
-}

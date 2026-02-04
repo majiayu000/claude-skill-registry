@@ -1,8 +1,0 @@
-{
-  "name": "hypershift-agent-provider",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "devops",
-  "description": "Use this skill when you need to deploy HyperShift clusters on bare metal, edge environments, or disconnected infrastructures using pre-provisioned agents",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.267473Z"
-}

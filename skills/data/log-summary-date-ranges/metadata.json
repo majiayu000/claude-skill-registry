@@ -1,9 +1,0 @@
-{
-  "name": "log-summary-date-ranges",
-  "description": "Guidance for analyzing log files and generating summary reports with counts aggregated across multiple date ranges and severity levels. This skill applies when tasks involve parsing log files by date,",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

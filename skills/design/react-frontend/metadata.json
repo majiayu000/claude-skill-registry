@@ -1,8 +1,0 @@
-{
-  "name": "react-frontend",
-  "repo": "williamzujkowski/standards",
-  "category": "design",
-  "description": "React frontend standards covering hooks (useState, useEffect, useContext, custom hooks), state management (Context API, Redux, Zustand), performance optimization (memoization, lazy loading, code split",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:33.649066Z"
-}

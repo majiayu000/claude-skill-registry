@@ -1,8 +1,0 @@
-{
-  "name": "pki-and-x509",
-  "repo": "oriolrius/pki-manager-web",
-  "category": "development",
-  "description": "Expert guidance for Public Key Infrastructure (PKI) and X.509 certificates including certificate structure, DN parsing, CSR generation, certificate signing, revocation (CRL/OCSP), key management, and ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:40.608001Z"
-}

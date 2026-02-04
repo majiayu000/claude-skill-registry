@@ -1,9 +1,0 @@
-{
-  "name": "dr-rule-builder",
-  "description": "Use this skill when the user needs help creating, testing, validating, or troubleshooting Detection & Response (D&R) rules in LimaCharlie.",
-  "repo": "tekgrunt/boot-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

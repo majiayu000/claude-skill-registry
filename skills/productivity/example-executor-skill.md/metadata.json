@@ -1,8 +1,0 @@
-{
-  "name": "example-executor-skill.md",
-  "repo": "zazu-22/ff_data_analytics",
-  "category": "productivity",
-  "description": "Execute Sprint 1 tasks for FASA optimization and trade analytics. This skill should be used when the user requests execution of any Sprint 1 task (Tasks 1.1 through 3.2), including cap space parsing, ",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:19:25.475180Z"
-}

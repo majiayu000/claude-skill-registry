@@ -1,8 +1,0 @@
-{
-  "name": "claude-delegation-rules",
-  "repo": "L-Sypniewski/claude-code-toolkit",
-  "category": "development",
-  "description": "Rules and patterns for Claude Code agent delegation, including when to delegate, how to hand off context, and how to coordinate between agents. Use when designing agent systems or delegation workflows",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:44.048801Z"
-}

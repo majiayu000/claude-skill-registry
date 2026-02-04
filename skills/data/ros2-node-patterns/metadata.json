@@ -1,9 +1,0 @@
-{
-  "name": "ros2-node-patterns",
-  "description": "Encodes ROS 2 best practices for node design, topic naming, publisher/subscriber patterns, and message handling. Used when creating ROS 2 code examples or architectural designs for robotics lessons.",
-  "repo": "DevHammad0/physical-ai-robotics-textbook",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

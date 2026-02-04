@@ -1,9 +1,0 @@
-{
-  "name": "core-development",
-  "description": "Work on the core package (types, validation, normalization, diff). Use when modifying DSL processing logic or data flow.",
-  "repo": "7nohe/figram",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

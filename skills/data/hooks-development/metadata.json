@@ -1,9 +1,0 @@
-{
-  "name": "hooks-development",
-  "description": "Claude Code hooks development guide covering all 10 hook events lifecycle, PostToolUse visibility patterns, PreToolUse guards, Stop hook schema, and debugging. Use when creating hooks, troubleshooting",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

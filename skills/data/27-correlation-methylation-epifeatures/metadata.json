@@ -1,9 +1,0 @@
-{
-  "name": "27-correlation-methylation-epifeatures",
-  "description": "This skill provides a complete pipeline for integrating CpG methylation data with chromatin features such as ATAC-seq signal, H3K27ac, H3K4me3, or other histone marks/TF signals.",
-  "repo": "BIsnake2001/ChromSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/BIsnake2001/ChromSkills"
-}

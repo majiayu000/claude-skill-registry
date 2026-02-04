@@ -1,9 +1,0 @@
-{
-  "name": "private-note-verify",
-  "description": "note.com記事の品質・安全性を検証。ファクトチェック、盗用リスク、炎上リスク、法的リスクを分析してレポートを生成する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

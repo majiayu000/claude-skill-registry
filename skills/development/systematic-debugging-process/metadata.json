@@ -1,8 +1,0 @@
-{
-  "name": "systematic-debugging-process",
-  "repo": "RomualdP/hoki",
-  "category": "development",
-  "description": "Processus de debugging syst\u00e9matique une fois la cause identifi\u00e9e. MANDATORY pour bug fixing. \u00c0 utiliser lors de correction de bugs, debugging, ou quand l'utilisateur demande de \"corriger\", \"debugger\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:57.191666Z"
-}

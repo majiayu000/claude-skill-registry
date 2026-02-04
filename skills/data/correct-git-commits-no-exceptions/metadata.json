@@ -1,9 +1,0 @@
-{
-  "name": "correct-git-commits-no-exceptions",
-  "description": "Enforce mature commit hygiene and documentation standards for long-lived projects. Trigger this skill automatically in ANY project before ANY commit creation, whether prompted by human, agent, or anot",
-  "repo": "ships/eden",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

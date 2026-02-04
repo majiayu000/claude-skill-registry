@@ -1,9 +1,0 @@
-{
-  "name": "github-attach-images",
-  "description": "Attach images to GitHub PRs and issues via a scratch repo",
-  "repo": "dwmkerr/claude-code-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

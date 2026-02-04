@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-upgrade-migration",
-  "description": "Migrate and upgrade OpenRouter SDK versions safely. Use when updating dependencies or migrating configurations. Trigger with phrases like 'openrouter upgrade', 'openrouter migration', 'update openrout",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

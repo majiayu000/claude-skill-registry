@@ -1,9 +1,0 @@
-{
-  "name": "firestore-service",
-  "description": "Guide for creating Firestore services with async operations, transactions, and proper error handling following this project's patterns.",
-  "repo": "janisto/fastapi-playground",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

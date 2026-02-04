@@ -1,9 +1,0 @@
-{
-  "name": "github-copilot-pr-review",
-  "description": "Review and apply GitHub Copilot suggestions on pull requests. Trigger when reviewing PRs with Copilot suggestions.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

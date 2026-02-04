@@ -1,8 +1,0 @@
-{
-  "name": "infra-nix",
-  "repo": "cuivienor/infra",
-  "category": "development",
-  "description": "Use when working with Nix in the infra monorepo - devShells, devbox NixOS container, and Home-Manager user config.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:46.437943Z"
-}

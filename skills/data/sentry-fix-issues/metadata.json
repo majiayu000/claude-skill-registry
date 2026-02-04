@@ -1,9 +1,0 @@
-{
-  "name": "sentry-fix-issues",
-  "description": "Find and fix issues from Sentry using MCP. Use when asked to fix Sentry errors, debug production issues, investigate exceptions, or resolve bugs reported in Sentry. Methodically analyzes stack traces,",
-  "repo": "getsentry/sentry-agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/getsentry/sentry-agent-skills"
-}

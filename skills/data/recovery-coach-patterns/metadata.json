@@ -1,9 +1,0 @@
-{
-  "name": "recovery-coach-patterns",
-  "description": "Follow Recovery Coach codebase patterns and conventions. Use when writing new code, components, API routes, or database queries. Activates for general development, code organization, styling, and arch",
-  "repo": "erichowens/some_claude_skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/erichowens/some_claude_skills"
-}

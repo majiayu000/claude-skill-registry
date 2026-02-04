@@ -1,9 +1,0 @@
-{
-  "name": "review-claude-md-adherence",
-  "description": "Verify code changes comply with CLAUDE.md instructions and project standards.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

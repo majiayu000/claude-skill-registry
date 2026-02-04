@@ -1,9 +1,0 @@
-{
-  "name": "tool-presets",
-  "description": "Standardized tool set definitions for Claude Code agents ensuring consistent tool access across similar agent types",
-  "repo": "89jobrien/steve",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

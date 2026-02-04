@@ -1,9 +1,0 @@
-{
-  "name": "options-analysis",
-  "description": "Use when making structured decisions between multiple options - creates weighted scoring spreadsheet with systematic evaluation across considerations grouped by area",
-  "repo": "ralphbean/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

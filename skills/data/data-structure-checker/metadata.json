@@ -1,9 +1,0 @@
-{
-  "name": "data-structure-checker",
-  "description": "This skill should be used when reading any tabular data file (Excel, CSV, Parquet, ODS). It automatically detects and fixes common data issues including multi-level headers, encoding problems, empty r",
-  "repo": "aws-samples/sample-deep-insight",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "api-mitmproxy",
-  "description": "Interactive HTTPS proxy for API security testing with traffic interception, modification, and replay capabilities. Supports HTTP/1, HTTP/2, HTTP/3, WebSockets, and TLS-protected protocols. Includes Py",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "code-review-rsmdt-the-startup",
-  "description": "Coordinate multi-agent code review with specialized perspectives. Use when conducting code reviews, analyzing PRs, evaluating staged changes, or reviewing specific files. Handles security, performance",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.163650Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "sarif-parsing",
-  "description": "Parse, analyze, and process SARIF (Static Analysis Results Interchange Format) files. Use when reading security scan results, aggregating findings from multiple tools, deduplicating alerts, extracting",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.773626Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "multi-agent-collaboration",
-  "description": "This skill should be used when designing agent coordination, implementing context handoffs, reducing context overhead, creating multi-agent workflows, optimizing agent communication, implementing prog",
-  "repo": "abossenbroek/abossenbroek-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

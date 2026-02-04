@@ -1,9 +1,0 @@
-{
-  "name": "inspecting-the-environment",
-  "description": "Fast environment briefing for agents and subagents. Use at session start to learn OS/shell, container/WSL/VM status, git repo + upstream + dirty state, Python venv status/locations, markdown folders t",
-  "repo": "aufrank/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/aufrank/agent-skills"
-}

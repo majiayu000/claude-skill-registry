@@ -1,9 +1,0 @@
-{
-  "name": "shellck",
-  "description": "Run shellcheck on shell scripts after editing scripts or when debugging shell errors. Use for linting scripts in a repo (especially scripts/), catching issues like set -u with unset vars, bad subshell",
-  "repo": "regenrek/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

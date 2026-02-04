@@ -1,9 +1,0 @@
-{
-  "name": "write-methods",
-  "description": "Generate or update the methods section based on actual scripts in the pipeline. Links code directly to reproducible documentation. Use when the user types /write_methods, after completing scripts, whe",
-  "repo": "braselog/researchAssistant",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

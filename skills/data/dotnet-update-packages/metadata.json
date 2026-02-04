@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-update-packages",
-  "description": "Use when user mentions updating NuGet packages, checking for outdated dependencies, upgrading .NET package versions, or asks about package updates in a .NET project.",
-  "repo": "Im5tu/claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

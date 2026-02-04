@@ -1,9 +1,0 @@
-{
-  "name": "mep",
-  "repo": "WillFDA/motivia",
-  "category": "data",
-  "description": "Mise en Production pour Motivia. Utilise ce skill quand l'utilisateur dit \"MEP\", \"mise en prod\", \"release\", \"prepare version\", \"changelog\", ou demande de préparer une nouvelle version. Gère le CHANGEL",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:34.571303Z",
-  "dir_name": "mep"
-}

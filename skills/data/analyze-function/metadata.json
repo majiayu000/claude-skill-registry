@@ -1,9 +1,0 @@
-{
-  "name": "analyze-function",
-  "description": "Deep line-by-line analysis of a function or method. Explains what each line does, why it's written that way, performance implications, edge cases, and design patterns. Use when user says \"analyze-func",
-  "repo": "kaushikgopal/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

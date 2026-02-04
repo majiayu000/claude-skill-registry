@@ -1,9 +1,0 @@
-{
-  "name": "axiom-ios-integration",
-  "description": "Use when integrating ANY iOS system feature - Siri, Shortcuts, Apple Intelligence, widgets, IAP, camera, photo library, photos picker, audio, axiom-haptics, axiom-localization, privacy. Covers App Int",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

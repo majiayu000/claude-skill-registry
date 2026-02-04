@@ -1,9 +1,0 @@
-{
-  "name": "worker-cleanup",
-  "description": "Remove completed or abandoned worker worktrees and their branches. Use to clean up after workers finish their tasks.",
-  "repo": "schmug/karkinos",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

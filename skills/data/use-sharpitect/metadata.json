@@ -1,9 +1,0 @@
-{
-  "name": "use-sharpitect",
-  "description": "Navigate and analyze C# codebases using Sharpitect's semantic tools. Use when searching for C# declarations, understanding inheritance, finding method callers/callees, or exploring code relationships ",
-  "repo": "nick-boey/Sharpitect",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

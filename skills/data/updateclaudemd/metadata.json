@@ -1,9 +1,0 @@
-{
-  "name": "updateclaudemd",
-  "description": "Use when user says \"update CLAUDE.md\", \"refresh the docs\", \"sync claude config\", \"optimize project instructions\", \"clean up CLAUDE.md\", or when documentation is stale, verbose, or out of sync with cod",
-  "repo": "gupsammy/Claude-setup",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gupsammy/Claude-setup"
-}

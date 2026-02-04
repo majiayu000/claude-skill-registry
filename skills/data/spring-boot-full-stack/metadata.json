@@ -1,9 +1,0 @@
-{
-  "name": "spring-boot-full-stack",
-  "repo": "mduongvandinh/skills-java-spring",
-  "category": "data",
-  "description": "Complete Java Spring Boot skill set for building enterprise applications.Includes modular architecture with optional components:- PostgreSQL database with JPA/Hibernate + Flyway migration- Redis cachi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:02.711564Z",
-  "dir_name": "spring-boot-full-stack"
-}

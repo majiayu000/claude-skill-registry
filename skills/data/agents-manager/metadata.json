@@ -1,9 +1,0 @@
-{
-  "name": "agents-manager",
-  "description": "Branch skill for building and improving agents. Use when creating new agents, adapting marketplace agents, validating agent structure, writing system prompts, or improving existing agents. Triggers: '",
-  "repo": "henmessi/plugin-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

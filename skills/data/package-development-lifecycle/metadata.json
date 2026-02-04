@@ -1,9 +1,0 @@
-{
-  "name": "package-development-lifecycle",
-  "description": "This skill should be used when the user asks about \"package development workflow\", \"release process\", \"beta testing\", \"package versioning\", \"CumulusCI\", \"CI/CD for packages\", or needs guidance on the ",
-  "repo": "dangt85/sf-package-architect",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "opsproxy-aware-fetcher",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "design",
-  "description": "Detect proxy requirements and route fetches through secure proxies with auth handling and offline fallbacks. Use when data retrieval must honor enterprise proxy rules or when direct access is blocked.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:27.325876Z"
-}

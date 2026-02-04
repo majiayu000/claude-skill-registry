@@ -1,8 +1,0 @@
-{
-  "name": "searching-code-with-sourcegraph",
-  "repo": "markus1189/nixos-config",
-  "category": "product",
-  "description": "Search code across repositories using Sourcegraph CLI. Invoke when researching codebases, finding implementation examples, analyzing code patterns, understanding how features work across projects, or ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:19.804531Z"
-}

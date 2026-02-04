@@ -1,9 +1,0 @@
-{
-  "name": "gha-sha-reference",
-  "description": "ユーザーがGitHub Actionsのタグ参照をSHA参照に変換するよう要求したときに発動してください。uses:フィールドのタグ参照を自動的にSHA参照（コミットハッシュ + コメント付きバージョン）に変換します。",
-  "repo": "syou6162/claude-code-commands",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

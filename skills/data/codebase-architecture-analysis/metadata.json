@@ -1,9 +1,0 @@
-{
-  "name": "codebase-architecture-analysis",
-  "description": "Analyze a GitHub codebase to create comprehensive architecture documentation including ASCII diagrams, component relationships, data flow, hosting infrastructure, and file structure assessment.",
-  "repo": "thomasgauvin/claude-agent-sdk-in-cloudflare-containers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

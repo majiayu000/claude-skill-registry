@@ -1,9 +1,0 @@
-{
-  "name": "foreman-spec",
-  "description": "Multi-role requirement analysis and task breakdown workflow using 4 specialized AI agents (PM, UX, Tech, QA). Each agent conducts web research before analysis to gather industry best practices, case s",
-  "repo": "mylukin/agent-foreman",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-type-safety",
-  "description": "最大の型カバレッジのためのTypeScript型安全パターンとベストプラクティス。 トリガー: 型安全, type safety, any, unknown, 型推論, 型ガード, type guard, discriminated union, 判別可能なUnion, strictNullChecks, 型定義, 型カバレッジ, TypeScript, 暗黙のany, implicit any,",
-  "repo": "thkt/claude-config",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

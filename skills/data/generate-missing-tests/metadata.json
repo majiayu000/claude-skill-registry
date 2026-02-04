@@ -1,9 +1,0 @@
-{
-  "name": "generate-missing-tests",
-  "description": "Homeostatic actuator auto-generating missing tests for requirements with low coverage. Creates unit tests, edge cases, and error cases for REQ-* without sufficient test coverage. Use when validate-tes",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "bots",
-  "description": "Use when building Towns Protocol bots - covers SDK initialization, slash commands, message handlers, reactions, interactive forms, blockchain operations, and deployment",
-  "repo": "towns-protocol/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "confluence-formatting",
-  "repo": "TribeAI/tribe-workshop-prudential",
-  "category": "documents",
-  "description": "This skill should be used when the user asks to \"generate Confluence documentation\", \"create wiki markup\", \"format for Confluence\", \"convert to Confluence format\", or when generating documentation tha",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:10.076119Z"
-}

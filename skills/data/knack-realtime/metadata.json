@@ -1,9 +1,0 @@
-{
-  "name": "knack-realtime",
-  "description": "Simulates live updates between Knack backend and Vercel dashboards. Enables near-real-time synchronization of HTI operational data without constant...",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

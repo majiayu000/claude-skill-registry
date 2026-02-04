@@ -1,8 +1,0 @@
-{
-  "name": "show-common-links",
-  "repo": "bencassie/flywheel",
-  "category": "testing",
-  "description": "Find notes that two specified notes both link to (common neighbors). Triggers on \"common references\", \"shared links\", \"what do X and Y both link to\", \"common neighbors\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:41.914574Z"
-}

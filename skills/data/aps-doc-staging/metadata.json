@@ -1,9 +1,0 @@
-{
-  "name": "aps-doc-staging",
-  "repo": "treasure-data/td-skills",
-  "category": "data",
-  "description": "Expert documentation generation for staging transformation layers. Auto-detects SQL engine (Presto/Trino vs Hive), documents transformation rules, PII handling, deduplication strategies, and data qual",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.781981Z",
-  "dir_name": "aps-doc-staging"
-}

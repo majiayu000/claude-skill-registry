@@ -1,9 +1,0 @@
-{
-  "name": "firestore-security-rules",
-  "repo": "tw-lin/ng-lin",
-  "category": "data",
-  "description": "Write and validate Firestore Security Rules following the project's multi-tenancy Blueprint pattern. Use this skill when implementing collection-level security, Blueprint membership validation, role-b",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:14.745325Z",
-  "dir_name": "firestore-security-rules"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "coupling-analysis",
-  "description": "OPTIONAL: Analyzes TaskMaster subtasks to determine if they are tightly coupled\n(share code/models) or loosely coupled (independent modules). This analysis provides\nRECOMMENDATIONS for implementation ",
-  "repo": "turbobeest/squawk",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/turbobeest/squawk"
-}

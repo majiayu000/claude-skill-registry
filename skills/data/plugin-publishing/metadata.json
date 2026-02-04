@@ -1,9 +1,0 @@
-{
-  "name": "plugin-publishing",
-  "description": "Use when the user wants to publish, share, or submit a Claude Code plugin to the marketplace",
-  "repo": "Lobbi-Docs/claude-2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

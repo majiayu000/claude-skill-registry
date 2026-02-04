@@ -1,9 +1,0 @@
-{
-  "name": "tandoor-recipe-conversion",
-  "description": "This skill should be used when the user asks to \"convert recipe to Tandoor\", \"parse recipe from image\", \"extract recipe from PDF\", \"Rezept konvertieren\", \"translate recipe to German\", mentions Tandoor",
-  "repo": "it-bens/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

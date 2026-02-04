@@ -1,9 +1,0 @@
-{
-  "name": "orchestrator-designer",
-  "description": "UI/UX Designer for Claude Orchestrator. Creates design specifications with design tokens (colors, fonts, spacing) and component specs. Use when asked to create design specifications or define design t",
-  "repo": "parallax-ai-llc/claude-orchestrator",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

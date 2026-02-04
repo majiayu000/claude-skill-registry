@@ -1,8 +1,0 @@
-{
-  "name": "vibe-coding-security-awareness-overview",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "development",
-  "description": "Understand the security risks inherent in AI-generated code and vibe coding. Use this skill when you need to understand why AI generates insecure code, statistics on vulnerabilities, real-world breach",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.733952Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "workspace-management",
-  "description": "Manage pnpm workspaces, add packages, configure dependencies, and organize monorepo structure. Use when adding new packages, restructuring workspace, or managing cross-package dependencies.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.288603Z"
-}

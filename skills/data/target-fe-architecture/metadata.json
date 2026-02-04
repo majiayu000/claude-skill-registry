@@ -1,9 +1,0 @@
-{
-  "name": "target-fe-architecture",
-  "description": "Target frontend architecture for Lingx. FSD 2.1 approach with custom hooks, component patterns, and data fetching. Use when implementing frontend features, reviewing code, or making architectural deci",
-  "repo": "VinniZP/lingx",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "my-environment",
-  "description": "ユーザーの開発環境情報を提供。環境セットアップ、パス問題、依存関係の質問時に使用。",
-  "repo": "memuringo/subagent_agentskills_skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

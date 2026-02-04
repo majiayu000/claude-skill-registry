@@ -1,9 +1,0 @@
-{
-  "name": "plugin-installation",
-  "description": "Use when the user wants to install, update, or set up a Claude Code plugin",
-  "repo": "Lobbi-Docs/claude-2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

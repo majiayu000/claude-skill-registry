@@ -1,9 +1,0 @@
-{
-  "name": "configure-mcp-server",
-  "description": "Configure un serveur MCP (Model Context Protocol) dans Cursor en ajoutant l'entrée appropriée dans le fichier mcp.json. Supporte les serveurs Supabase Edge Functions, n8n et les serveurs locaux via np",
-  "repo": "SomtechSolutionMAxime/somtech-pack",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

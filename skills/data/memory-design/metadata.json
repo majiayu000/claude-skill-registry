@@ -1,9 +1,0 @@
-{
-  "name": "memory-design",
-  "description": "Interpretive guidance for Claude Code memory management system. Helps choose between memory locations, organize modular rules, use path-specific rules, and avoid common pitfalls. Use when setting up C",
-  "repo": "racurry/neat-little-package",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

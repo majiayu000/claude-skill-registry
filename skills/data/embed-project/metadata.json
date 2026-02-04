@@ -1,9 +1,0 @@
-{
-  "name": "embed-project",
-  "description": "Embed project-local skills, agents, and commands for semantic search. Use after creating items manually or to update embeddings. Works with both keyword and semantic search modes.",
-  "repo": "jrc1883/popkit-claude",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tokio-patterns",
-  "description": "Common Tokio patterns and idioms for async programming. Use when implementing worker pools, request-response patterns, pub/sub, timeouts, retries, or graceful shutdown.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "deckrd-coder",
-  "description": "An agent that codes tasks in BDD-style. Automatically does not commit.",
-  "repo": "aglabo/deckrd",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

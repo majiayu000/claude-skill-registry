@@ -1,9 +1,0 @@
-{
-  "name": "create-from-template",
-  "description": "Create a new app or package from an existing template in the monorepo. Use when adding new apps or packages to the repository.",
-  "repo": "salieri/resume",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

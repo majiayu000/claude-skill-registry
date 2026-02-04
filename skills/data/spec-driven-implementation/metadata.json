@@ -1,9 +1,0 @@
-{
-  "name": "spec-driven-implementation",
-  "description": "Use when ready to implement designed features - breaks design into TDD tasks (Red-Green-Refactor), tracks progress with checkboxes in tasks.md, enforces strict testing discipline. Activates when user ",
-  "repo": "xbklairith/kisune",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

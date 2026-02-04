@@ -1,9 +1,0 @@
-{
-  "name": "oe-hil-and-billing-triage",
-  "description": "Debug common manager/HIL + billing/deposit regressions: tasks not appearing in the panel, approve/reject button failures, billing capture loops, and “deposit paid but workflow stuck”. Produces a targe",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shami-ah/OpenEvent-AI"
-}

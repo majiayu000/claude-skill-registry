@@ -1,9 +1,0 @@
-{
-  "name": "flow-plan-review",
-  "description": "Carmack-level plan review via rp-cli context builder + chat. Use when reviewing implementation plans, architecture docs, or design specs. Triggers on mentions of plan review, design review, or archite",
-  "repo": "gmickel/gmickel-claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

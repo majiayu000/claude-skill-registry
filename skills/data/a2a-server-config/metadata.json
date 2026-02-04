@@ -1,9 +1,0 @@
-{
-  "name": "a2a-server-config",
-  "description": "Agent-to-Agent (A2A) server configuration patterns for HTTP, STDIO, SSE, and WebSocket transports. Use when building A2A servers, configuring MCP transports, setting up server endpoints, or when user ",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

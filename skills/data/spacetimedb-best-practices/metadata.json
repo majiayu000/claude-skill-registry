@@ -1,9 +1,0 @@
-{
-  "name": "spacetimedb-best-practices",
-  "description": "SpacetimeDB development best practices for TypeScript server modules and client SDK. This skill should be used when writing, reviewing, or refactoring SpacetimeDB code to ensure optimal patterns for r",
-  "repo": "douglance/stdb-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/douglance/stdb-skills"
-}

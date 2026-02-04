@@ -1,7 +1,0 @@
-{
-  "name": "geniml",
-  "description": "This skill should be used when working with genomic interval data (BED files) for machine learning tasks. Use for training region embeddings (Region2Vec, BEDspace), single-cell ATAC-seq analysis (scEm",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:17.440525Z"
-}

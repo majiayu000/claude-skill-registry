@@ -1,8 +1,0 @@
-{
-  "name": "managing-project-rules",
-  "repo": "Emz1998/avaris-ai",
-  "category": "development",
-  "description": "Creates and updates modular project rules for Claude Code in .claude/rules/ directory. Use when creating, updating, or modifying rule files, organizing project guidelines, setting up code standards, o",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:26.531380Z"
-}

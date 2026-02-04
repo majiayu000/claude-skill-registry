@@ -1,9 +1,0 @@
-{
-  "name": "worldcrafter-test-generator",
-  "description": "Generate comprehensive tests following three-layer pyramid - unit (Vitest), integration (real database), E2E (Playwright). Use when user needs \"add tests\", \"improve coverage\", \"test [feature]\", \"write",
-  "repo": "hopeoverture/worldcrafter-v2",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

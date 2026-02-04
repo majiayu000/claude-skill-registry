@@ -1,9 +1,0 @@
-{
-  "name": "visibility-pattern-guardian",
-  "description": "Enforces visibility pattern for testability by detecting private methods that prevent unit testing (causes 20-40% coverage loss). References authoritative style guides rather than duplicating. Auto-re",
-  "repo": "matthew-bram/enterprise-confluent-test-probe",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

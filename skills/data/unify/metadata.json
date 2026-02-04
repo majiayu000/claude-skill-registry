@@ -1,9 +1,0 @@
-{
-  "name": "unify",
-  "description": "Validate spec-implementation-test alignment and convergence. Checks spec completeness, implementation conformance, test coverage, and contract consistency. Use after implementation and tests are compl",
-  "repo": "matthew-plusprogramming/monorepo",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/matthew-plusprogramming/monorepo"
-}

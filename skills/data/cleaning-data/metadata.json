@@ -1,9 +1,0 @@
-{
-  "name": "cleaning-data",
-  "description": "Systematic data quality remediation - detect duplicates/outliers/inconsistencies, design cleaning strategy, execute transformations, verify results (component skill for DataPeeker analysis sessions)",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

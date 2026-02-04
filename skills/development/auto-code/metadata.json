@@ -1,8 +1,0 @@
-{
-  "name": "auto-code",
-  "repo": "AhamSammich/auto-code",
-  "category": "development",
-  "description": "Run an autonomous coding agent that builds applications from specifications. Use when asked to \"build an app autonomously\", \"run autonomous agent\", or \"create application from spec\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:46.886027Z"
-}

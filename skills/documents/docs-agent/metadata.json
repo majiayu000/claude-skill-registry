@@ -1,8 +1,0 @@
-{
-  "name": "docs-agent",
-  "repo": "CleanExpo/Unite-Hub",
-  "category": "documents",
-  "description": "Maintains documentation files (README.md, .claude/claude.md, .claude/agent.md, API docs) for Unite-Hub. Ensures docs stay in sync with codebase changes. Uses Haiku model for cost-effective documentati",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:42.524802Z"
-}

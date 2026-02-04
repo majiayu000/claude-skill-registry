@@ -1,9 +1,0 @@
-{
-  "name": "otel-observability",
-  "description": "Implement OpenTelemetry-based observability for traces, metrics, and logs. Use for distributed tracing, Prometheus metrics, structured logging, and agent monitoring. Triggers on \"OpenTelemetry\", \"OTEL",
-  "repo": "raphaelmansuy/k8s-agent-stack",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

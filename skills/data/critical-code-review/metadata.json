@@ -1,9 +1,0 @@
-{
-  "name": "critical-code-review",
-  "description": "Perform critical code review with automated fix suggestions. Use when reviewing code changes, pull requests, specific files, or branch diffs. Triggers on requests like \"review this code\", \"critical re",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

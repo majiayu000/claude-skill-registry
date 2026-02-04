@@ -1,9 +1,0 @@
-{
-  "name": "validation-trigger",
-  "description": "Natural language wrapper for validation commands - automatically triggers /validate-and-fix when users request quality checks, linting, or auto-fixes",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

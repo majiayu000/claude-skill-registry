@@ -1,9 +1,0 @@
-{
-  "name": "canary-setup",
-  "description": "Interactive setup workflow for configuring the Magnet MCP server to use the canary environment (project-specific, magnet-app directory only). Use when user says \"canary setup\", \"use canary\", \"test on ",
-  "repo": "toolkit-ai/magnet-mcp-server",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

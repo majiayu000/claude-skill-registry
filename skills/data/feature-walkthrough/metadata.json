@@ -1,9 +1,0 @@
-{
-  "name": "feature-walkthrough",
-  "description": "Generate polished walkthrough videos from Playwright test suites. Runs thematically connected tests with video recording, creates title cards, slows footage for readability, and concatenates into a fi",
-  "repo": "bryonjacob/aug",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

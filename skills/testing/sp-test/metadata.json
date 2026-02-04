@@ -1,8 +1,0 @@
-{
-  "name": "sp-test",
-  "repo": "buckstrdr/claude-workflow-system",
-  "category": "testing",
-  "description": "Test skills with subagents before deployment to resist rationalization",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:22:06.481980Z"
-}

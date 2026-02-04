@@ -1,9 +1,0 @@
-{
-  "name": "instruction-creator",
-  "description": "Create and manage high-quality custom instruction files for GitHub Copilot. Use when you need to define new project-specific guidelines, workflows, or coding standards in the instructions/ directory.",
-  "repo": "arisng/github-copilot-fc",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "markdown-session-format",
-  "description": "Claude Codeセッションの標準的なMarkdownフォーマット規約。セッションログ、対話履歴、ツール実行結果を一貫した構造で記録する必要がある場合に使用。不正確な情報への注釈方法とnb標準のハッシュタグ形式も定義",
-  "repo": "mozumasu/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

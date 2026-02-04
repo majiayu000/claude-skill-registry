@@ -1,8 +1,0 @@
-{
-  "name": "testing-domain",
-  "repo": "YosrBennagra/3SC",
-  "category": "testing",
-  "description": "Write domain and unit tests for the widget host app. Use when testing entities, value objects, invariants, domain services, and application logic with deterministic fixtures.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.954119Z"
-}

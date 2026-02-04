@@ -1,8 +1,0 @@
-{
-  "name": "validate-training-materials",
-  "repo": "nextflow-io/training",
-  "category": "development",
-  "description": "Run comprehensive validation and review checks including heading numbering, TODO/FIXME comments, Nextflow script conventions, orphaned files, admonition syntax, lesson structure, formatting, content a",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:28.049550Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "gitignore-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Git ignore configuration patterns for MetaSaver monorepos. Includes 10 required pattern categories (dependencies, build outputs, environment files with security-critical .env and .npmrc exclusions, lo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.873770Z"
-}

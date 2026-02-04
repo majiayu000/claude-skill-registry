@@ -1,9 +1,0 @@
-{
-  "name": "new-post",
-  "description": "Create a new blog post. Use when user says \"new post\", \"新文章\", \"新增文章\", or wants to start writing a new article.",
-  "repo": "davidleitw/davidleitw.github.io",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

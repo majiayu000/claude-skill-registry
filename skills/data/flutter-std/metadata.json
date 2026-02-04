@@ -1,9 +1,0 @@
-{
-  "name": "flutter-std",
-  "description": "Build and debug Flutter/Dart apps with Riverpod (codegen), Freezed, and GoRouter. Use when implementing Flutter features, running apps, hot reload/restart, or debugging UI.",
-  "repo": "lollipopkit/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

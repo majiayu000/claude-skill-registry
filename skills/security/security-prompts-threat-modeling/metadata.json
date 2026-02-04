@@ -1,8 +1,0 @@
-{
-  "name": "security-prompts-threat-modeling",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "security",
-  "description": "Security analysis and threat modeling prompt templates for STRIDE analysis, code review, OWASP compliance, and vulnerability assessment. Use for security planning, pre-deployment reviews, and ongoing ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.689830Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "eld-record-memory-collector",
-  "description": "Collect and verify project information for pce-memory with multi-model validation using Codex CLI. Use when gathering project context, onboarding to a new codebase, or building a knowledge base. Trigg",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

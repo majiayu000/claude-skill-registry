@@ -1,9 +1,0 @@
-{
-  "name": "issue-writing",
-  "description": "Use this skill when writing, reviewing, or discussing issue descriptions, acceptance criteria, or task breakdowns. Ensures consistent, high-quality issue structure that any developer or AI can pick up",
-  "repo": "jclfocused/claude-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

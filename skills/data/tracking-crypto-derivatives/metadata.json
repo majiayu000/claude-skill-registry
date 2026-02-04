@@ -1,9 +1,0 @@
-{
-  "name": "tracking-crypto-derivatives",
-  "description": "Track futures, options, and perpetual swap positions with P&L calculations.Use when tracking futures and options positions.Trigger with phrases like \"track derivatives\", \"check futures positions\", or ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

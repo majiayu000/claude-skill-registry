@@ -1,9 +1,0 @@
-{
-  "name": "implement-type-annotations",
-  "description": "Add comprehensive type hints to Python/TypeScript code to improve IDE support, catch errors early, and enable better AI code understanding",
-  "repo": "ambient-code/agentready",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

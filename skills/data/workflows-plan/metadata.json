@@ -1,9 +1,0 @@
-{
-  "name": "workflows-plan",
-  "description": "This skill should be used when transforming feature descriptions, bug reports, or improvement ideas into well-structured project plans following project conventions and best practices.",
-  "repo": "nbbaier/compound-engineering-amp",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "spawning-agents-on-the-command-line",
-  "repo": "snits/claude-files",
-  "category": "testing",
-  "description": "Use when subagents need to delegate work but can't use Task tool, or when needing to test skills in isolated context - spawns Claude instances via CLI backgrounding with JSON responses",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:57.440141Z"
-}

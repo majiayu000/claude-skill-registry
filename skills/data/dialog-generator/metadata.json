@@ -1,9 +1,0 @@
-{
-  "name": "dialog-generator",
-  "description": "Generate modal and modeless dialog windows for Tkinter applications. Use when creating dialogs, popups, or secondary windows, when user mentions \"dialog\", \"popup\", \"modal\", or when working with files ",
-  "repo": "gizix/cc_projects",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

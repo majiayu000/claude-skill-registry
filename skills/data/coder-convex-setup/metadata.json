@@ -1,9 +1,0 @@
-{
-  "name": "coder-convex-setup",
-  "description": "Initial Convex workspace setup in Coder workspaces with self-hosted Convex deployment, authentication configuration, Docker setup, and environment variable generation",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

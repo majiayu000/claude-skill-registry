@@ -1,9 +1,0 @@
-{
-  "name": "continuity-checking",
-  "description": "Validate cross-episode continuity by scanning scenes for invented details, contradictions, and timeline violations. Use after scene creation/editing to detect continuity errors. Triggers include \"chec",
-  "repo": "keberle/fiction-kit-rebound-specialist",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

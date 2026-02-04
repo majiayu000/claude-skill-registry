@@ -1,9 +1,0 @@
-{
-  "name": "generating-new-skills",
-  "repo": "HR-AR/Project-Conductor",
-  "category": "data",
-  "description": "Meta-skill that creates other skills from detected patterns. Use when user repeatedly explains workflow (2+ times), says 'remember this', or you notice repetitive pattern.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:08.896724Z",
-  "dir_name": "generating-new-skills"
-}

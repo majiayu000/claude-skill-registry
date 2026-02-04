@@ -1,9 +1,0 @@
-{
-  "name": "following-plans",
-  "description": "Algorithmic decision tree for when to follow plan exactly vs when to report BLOCKED - prevents scope creep and unauthorized deviations",
-  "repo": "cipherstash/cipherpowers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

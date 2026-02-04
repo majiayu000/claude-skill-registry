@@ -1,7 +1,0 @@
-{
-  "name": "models-standards",
-  "description": "Define database models with clear naming, appropriate data types, constraints, relationships, and validation at multiple layers. Use this skill when creating or modifying database model files, ORM cla",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.618082Z"
-}

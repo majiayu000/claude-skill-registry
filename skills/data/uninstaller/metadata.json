@@ -1,9 +1,0 @@
-{
-  "name": "uninstaller",
-  "description": "指定したプラグインをアンインストールする。「プラグインを削除」「〇〇をアンインストール」「プラグインを消して」「〇〇を削除して」「プラグインを外して」「〇〇を取り除いて」「プラグインをアンインストール」などで起動。claude plugin uninstall コマンドを使用してアンインストール。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

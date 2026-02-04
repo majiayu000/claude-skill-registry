@@ -1,9 +1,0 @@
-{
-  "name": "gitlab-epic-creator",
-  "description": "Gitlab Epic Creator - Auto-activating skill for Enterprise Workflows.Triggers on: gitlab epic creator, gitlab epic creatorPart of the Enterprise Workflows skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

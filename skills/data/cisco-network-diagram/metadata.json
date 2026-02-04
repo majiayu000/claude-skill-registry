@@ -1,9 +1,0 @@
-{
-  "name": "cisco-network-diagram",
-  "description": "Generate Draw.io network topology diagrams from Cisco router and switch configurations. Use when asked to visualize network topology, create network diagrams, map network infrastructure, or generate v",
-  "repo": "neuro-synapse/network-topology-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

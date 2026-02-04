@@ -1,8 +1,0 @@
-{
-  "name": "dependencyaudit",
-  "repo": "chrislyons/carbon-acx",
-  "category": "devops",
-  "description": "Scan project for outdated or vulnerable dependencies, enforce dependency policies, check licenses, and generate upgrade recommendations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:28.224422Z"
-}

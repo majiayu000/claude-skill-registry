@@ -1,9 +1,0 @@
-{
-  "name": "webf-routing-setup",
-  "description": "Setup hybrid routing with native screen transitions in WebF - configure navigation using WebF routing instead of SPA routing. Use when setting up navigation, implementing multi-screen apps, or when re",
-  "repo": "openwebf/webf",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

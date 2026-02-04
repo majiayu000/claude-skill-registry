@@ -1,9 +1,0 @@
-{
-  "name": "using-lt-cli",
-  "description": "Expert for lenne.tech CLI (lt command). ALWAYS activate when user mentions \"lt\", \"lt CLI\", \"lenne.tech CLI\", fullstack workspace, local templates, or any lt command. Provides comprehensive reference f",
-  "repo": "lenneTech/claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

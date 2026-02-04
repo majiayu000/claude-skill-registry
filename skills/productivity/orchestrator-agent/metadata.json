@@ -1,8 +1,0 @@
-{
-  "name": "orchestrator-agent",
-  "repo": "CleanExpo/Unite-Hub",
-  "category": "productivity",
-  "description": "Master coordinator for Unite-Hub workflows. Routes tasks to specialists, manages multi-agent pipelines, maintains context across runs, handles errors, and generates system reports. The brain of the au",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:42.616819Z"
-}

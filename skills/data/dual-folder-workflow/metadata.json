@@ -1,9 +1,0 @@
-{
-  "name": "dual-folder-workflow",
-  "description": "Workflow for private repos + Colab training. Trigger when: (1) training on Colab with private repo, (2) separating dev from production, (3) avoiding untested code in production.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

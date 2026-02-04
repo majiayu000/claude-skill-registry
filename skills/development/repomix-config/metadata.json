@@ -1,8 +1,0 @@
-{
-  "name": "repomix-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Repomix AI-friendly codebase compression configuration (.repomix.config.json) template and validation logic. Achieves 70% token reduction through XML compression and repository-type-specific include p",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.884716Z"
-}

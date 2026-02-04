@@ -1,9 +1,0 @@
-{
-  "name": "exa-get-contents",
-  "repo": "benjaminjackson/exa-skills",
-  "category": "data",
-  "description": "Retrieve and extract content from URLs with AI-powered summarization and structured data extraction. Use for scraping web pages, extracting specific information, summarizing articles, or crawling webs",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:34.850446Z",
-  "dir_name": "exa-get-contents"
-}

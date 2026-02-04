@@ -1,9 +1,0 @@
-{
-  "name": "review-rules",
-  "description": "セッションの会話から恒久的な振る舞いルールを抽出し、AGENTS.md と突き合わせて追加すべきものを提示する。出力は rules と agents_md_patch の二部構成。",
-  "repo": "yurake/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "go-deduplication-patterns",
-  "repo": "dkoosis/cc-plugins",
-  "category": "development",
-  "description": "This skill should be used when the user asks about \"code duplication\", \"jscpd\", \"DRY principle\", \"duplicate code\", \"clone detection\", \"code consolidation\", or needs guidance on when and how to consoli",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:16.026853Z"
-}

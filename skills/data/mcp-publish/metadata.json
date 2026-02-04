@@ -1,9 +1,0 @@
-{
-  "name": "mcp-publish",
-  "description": "Guide for publishing MCP servers to NPM (TypeScript/Node.js) or UVX (Python). Use when preparing MCP servers for public distribution, validating package configuration, or walking through the npm publi",
-  "repo": "MCDxAI/minecraft-dev-mcp",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

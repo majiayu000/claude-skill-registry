@@ -1,9 +1,0 @@
-{
-  "name": "test-pattern-detector",
-  "description": "Delegates test pattern detection to a lightweight agent. Use when you need to understand existing test conventions without loading test files into context.",
-  "repo": "leonj1/external-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/leonj1/external-claude-skills"
-}

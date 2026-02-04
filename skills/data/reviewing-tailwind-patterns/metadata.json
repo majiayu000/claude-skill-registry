@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-tailwind-patterns",
-  "description": "Review Tailwind CSS v4 patterns for configuration, theming, and utility usage. Use when reviewing CSS files, Vite configs, or components using Tailwind.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

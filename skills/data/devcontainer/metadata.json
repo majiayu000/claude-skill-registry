@@ -1,9 +1,0 @@
-{
-  "name": "devcontainer",
-  "description": "Diagnose devcontainer configuration problems and guide development environment setup. This skill should be used when the user asks to 'set up devcontainer', 'fix container startup', 'configure VS Code",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

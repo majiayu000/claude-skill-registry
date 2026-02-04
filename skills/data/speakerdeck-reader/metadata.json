@@ -1,9 +1,0 @@
-{
-  "name": "speakerdeck-reader",
-  "description": "SpeakerDeck スライドの内容を取得・要約するスキル。URL が speakerdeck.com/{user}/{slug} 形式の場合に使用。PDF をダウンロードして Read ツールで読み取る。",
-  "repo": "yamadashy/ccreader",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

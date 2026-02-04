@@ -1,9 +1,0 @@
-{
-  "name": "data-access",
-  "description": "Implement data access for the .NET 8 WPF widget host app using EF Core or Dapper. Use when creating repositories, unit of work, migrations, DbContext configuration, and query patterns while keeping cl",
-  "repo": "YosrBennagra/3SC",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/YosrBennagra/3SC"
-}

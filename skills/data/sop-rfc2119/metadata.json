@@ -1,9 +1,0 @@
-{
-  "name": "sop-rfc2119",
-  "description": "Use when writing SOPs that require precise requirement levels using RFC 2119 constraint keywords (MUST, SHOULD, MAY). Covers proper usage of requirement keywords for deterministic agent behavior.",
-  "repo": "TheBushidoCollective/han",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

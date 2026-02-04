@@ -1,9 +1,0 @@
-{
-  "name": "kanban-sprint",
-  "description": "Kanban Sprint orchestrator. USE WHEN user says /kanban-sprint OR wants to run a full automated development cycle.",
-  "repo": "SimonBlancoE/kanban-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

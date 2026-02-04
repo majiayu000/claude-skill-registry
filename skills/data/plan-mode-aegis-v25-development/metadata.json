@@ -1,9 +1,0 @@
-{
-  "name": "plan-mode-aegis-v25-development",
-  "description": "AEGIS v2.5開発の包括的Planモード。数学データ収集、形式証明環境構築、GRPO訓練パイプライン、MCP/A2Aエージェント開発、進捗監視を実装。SO(8)四重推論再現のための完全開発ワークフロー。",
-  "repo": "zapabob/SO8T",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zapabob/SO8T"
-}

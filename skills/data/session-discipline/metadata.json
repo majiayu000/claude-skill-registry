@@ -1,9 +1,0 @@
-{
-  "name": "session-discipline",
-  "description": "Enforce session-first workflow (plan → implement → verify → document). Use whenever starting non-trivial work, debugging >15 minutes, or doing cross-cutting changes.",
-  "repo": "metabench/copilot-dl-news",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

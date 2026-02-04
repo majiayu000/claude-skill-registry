@@ -1,9 +1,0 @@
-{
-  "name": "glif-api-runner",
-  "description": "Run Glif workflows via API. Use when executing AI image/text generation workflows or integrating Glif into apps.",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

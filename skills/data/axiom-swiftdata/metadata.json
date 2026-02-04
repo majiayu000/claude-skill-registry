@@ -1,9 +1,0 @@
-{
-  "name": "axiom-swiftdata",
-  "description": "Use when working with SwiftData - @Model definitions, @Query in SwiftUI, @Relationship macros, ModelContext patterns, CloudKit integration, iOS 26+ features, and Swift 6 concurrency with @MainActor — ",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

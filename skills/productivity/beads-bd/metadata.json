@@ -1,8 +1,0 @@
-{
-  "name": "beads-bd",
-  "repo": "gjermundgaraba/dotfiles",
-  "category": "productivity",
-  "description": "Use this skill for ALL task, issue, and todo tracking when the project has a `.beads/` directory or uses `bd` commands. This skill MUST be used instead of TodoWrite for any project with beads initiali",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.551639Z"
-}

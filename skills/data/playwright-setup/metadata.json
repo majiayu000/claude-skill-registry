@@ -1,9 +1,0 @@
-{
-  "name": "playwright-setup",
-  "description": "Playwright E2E testing setup and configuration. Use when setting up end-to-end tests.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

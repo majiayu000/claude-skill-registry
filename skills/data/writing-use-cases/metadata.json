@@ -1,9 +1,0 @@
-{
-  "name": "writing-use-cases",
-  "description": "Create structured use case documentation with sequence diagrams for backend systems. Use when documenting API endpoints, service interactions, event flows, or system behaviors. Triggers on requests li",
-  "repo": "mixomat/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

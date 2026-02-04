@@ -1,8 +1,0 @@
-{
-  "name": "quarkus-panache-smells",
-  "repo": "emvnuel/SKILL.md",
-  "category": "development",
-  "description": "Detects and refactors ORM code smells in Quarkus Panache applications using the Repository pattern. Use when reviewing PanacheRepository code, diagnosing N+1 queries, data overfetching, or pagination ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:26.407569Z"
-}

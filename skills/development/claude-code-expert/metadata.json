@@ -1,7 +1,0 @@
-{
-  "name": "claude-code-expert",
-  "description": "Expert on Claude Code CLI, skills, commands, hooks, plugins, MCP, settings, and workflows. Triggers on claude code, cli, skill, command, hook, plugin, mcp, slash command, settings",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.729396Z"
-}

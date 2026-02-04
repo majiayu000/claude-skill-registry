@@ -1,9 +1,0 @@
-{
-  "name": "specimin-ui-accessibility",
-  "description": "Explicit accessibility enhancement and validation for generated UI code. Only invoke when user explicitly requests accessibility review, a11y enhancement, or WCAG compliance check.",
-  "repo": "timsvoice/specimin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

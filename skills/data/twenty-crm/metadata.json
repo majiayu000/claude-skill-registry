@@ -1,9 +1,0 @@
-{
-  "name": "twenty-crm",
-  "description": "Full access to Twenty CRM (People, Companies, Opportunities, Tasks, Notes) using curl and the Twenty REST API directly - no MCP server or additional dependencies required.",
-  "repo": "getzenai/claude-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "accessibility-auditing",
-  "description": "Guide for conducting comprehensive accessibility audits of code to identify WCAG compliance issues and barriers to inclusive design. This skill should be used when reviewing accessibility, ARIA implem",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "crawl-to-markdown",
-  "description": "Use when web.run fails to parse a webpage and you need raw Markdown via Crawl4AI.",
-  "repo": "andrewginns/skills-collection",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

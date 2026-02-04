@@ -1,9 +1,0 @@
-{
-  "name": "cloud-security-monitor",
-  "description": "Activate when users need help setting up cloud security monitoring for AWS, Azure, or GCP, including adapter configuration, detection rules, and threat response.",
-  "repo": "tekgrunt/boot-test",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

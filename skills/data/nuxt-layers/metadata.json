@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-layers",
-  "description": "Working with Nuxt layers (base, nuxt-ui, x-ui) that provide shared functionality. Use when understanding layer architecture, importing from layers, extending layer functionality, or creating new layer",
-  "repo": "leeovery/claude-nuxt",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

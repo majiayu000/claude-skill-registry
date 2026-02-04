@@ -1,9 +1,0 @@
-{
-  "name": "doppler-workflows",
-  "description": "Manages credentials and publishing workflows via Doppler. Use when publishing Python packages to PyPI, rotating AWS credentials, or managing secrets with Doppler.",
-  "repo": "terrylica/cc-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

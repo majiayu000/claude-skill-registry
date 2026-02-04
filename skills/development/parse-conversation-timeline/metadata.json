@@ -1,8 +1,0 @@
-{
-  "name": "parse-conversation-timeline",
-  "repo": "cowwoc/styler",
-  "category": "development",
-  "description": "Transform raw session logs into structured timeline JSON for protocol audit analysis",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:48.501058Z"
-}

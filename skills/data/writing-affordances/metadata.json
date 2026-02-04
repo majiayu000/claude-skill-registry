@@ -1,9 +1,0 @@
-{
-  "name": "writing-affordances",
-  "description": "Use when refactoring fat Rails models with repetitive prefixes like entropy_*, notification_*, or multi-association coordination. Extracts PORO wrappers that group operations around nouns/concepts.",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "api-documentation-discovery",
-  "repo": "technicalpickles/pickled-claude-plugins",
-  "category": "data",
-  "description": "Use when APIs fail repeatedly with version-related errors (method not found, wrong arguments, unknown flag) or when about to use library APIs with uncertain knowledge - guides finding current, accurat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:46.127204Z",
-  "dir_name": "api-documentation-discovery"
-}

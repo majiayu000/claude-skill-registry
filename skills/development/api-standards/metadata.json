@@ -1,7 +1,0 @@
-{
-  "name": "api-standards",
-  "description": "Design and implement RESTful API endpoints following REST principles with proper HTTP methods, status codes, and resource-based URLs. Use this skill when creating or modifying API endpoints, route han",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.686284Z"
-}

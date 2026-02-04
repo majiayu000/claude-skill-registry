@@ -1,9 +1,0 @@
-{
-  "name": "workflow-canvas",
-  "description": "Celery canvas patterns for workflow composition including chains, groups, chords, signatures, error handling, and nested workflows. Use when building complex task workflows, parallel execution pattern",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

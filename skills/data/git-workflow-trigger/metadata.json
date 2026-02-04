@@ -1,9 +1,0 @@
-{
-  "name": "git-workflow-trigger",
-  "description": "Natural language wrapper for git commands - automatically triggers /git:commit, /git:status, /git:push when users express git workflow intent",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

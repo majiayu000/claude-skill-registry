@@ -1,8 +1,0 @@
-{
-  "name": "vanilla-rails-testing",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "testing",
-  "description": "Use when writing Rails tests - enforces fixtures-only, integration-style controller tests, Current context setup, simple naming, and Minitest syntax",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.838819Z"
-}

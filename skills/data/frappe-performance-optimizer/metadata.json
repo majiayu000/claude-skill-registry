@@ -1,9 +1,0 @@
-{
-  "name": "frappe-performance-optimizer",
-  "description": "Generate optimized queries, caching, and indexes for Frappe performance. Use when optimizing slow queries, implementing caching, or improving performance.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

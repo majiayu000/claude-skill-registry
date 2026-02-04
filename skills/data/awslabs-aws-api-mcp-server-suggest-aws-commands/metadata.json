@@ -1,9 +1,0 @@
-{
-  "name": "awslabs-aws-api-mcp-server-suggest-aws-commands",
-  "description": "To get possible AWS CLI commands from a natural-language request, suggest candidate `aws ...` commands when the exact service, operation, or syntax is unclear; use before call-aws.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

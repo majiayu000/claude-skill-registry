@@ -1,9 +1,0 @@
-{
-  "name": "docker-compose-networking",
-  "description": "Use when configuring networks and service communication in Docker Compose including bridge networks, overlay networks, service discovery, and inter-service communication.",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "symfonyfunctional-tests",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "testing",
-  "description": "Write functional tests for Symfony controllers and HTTP endpoints using WebTestCase, BrowserKit, and test clients",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.125450Z"
-}

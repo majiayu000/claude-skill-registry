@@ -1,7 +1,0 @@
-{
-  "name": "opentrons-integration",
-  "description": "Official Opentrons Protocol API for OT-2 and Flex robots. Use when writing protocols specifically for Opentrons hardware with full access to Protocol API v2 features. Best for production Opentrons pro",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:17.608007Z"
-}

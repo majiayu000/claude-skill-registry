@@ -1,9 +1,0 @@
-{
-  "name": "pci-dss-compliance",
-  "description": "PCI DSS compliance planning for payment card handling including scope reduction, SAQ selection, and security controls",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

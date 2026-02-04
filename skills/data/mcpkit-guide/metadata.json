@@ -1,9 +1,0 @@
-{
-  "name": "mcpkit-guide",
-  "description": "Guide for using MCPKit Swift package to build MCP (Model Context Protocol) tool servers. Use when creating new MCP servers, defining tools, or integrating MCP into Swift projects.",
-  "repo": "Sunalamye/MCPKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

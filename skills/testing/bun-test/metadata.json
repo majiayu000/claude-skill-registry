@@ -1,8 +1,0 @@
-{
-  "name": "bun-test",
-  "repo": "interactive-inc/open-prompt",
-  "category": "testing",
-  "description": "Bun\u3092\u7528\u3044\u305f\u30c6\u30b9\u30c8\u3092\u4f5c\u6210\u30fb\u7de8\u96c6\u3057\u307e\u3059\u3002\u30c6\u30b9\u30c8\u3092\u4f5c\u6210\u3059\u308b\u969b\u3001\u30d5\u30a1\u30a4\u30eb\u300c*.test.ts\u300d\u3092\u7de8\u96c6\u3059\u308b\u969b\u306b\u547c\u3073\u51fa\u3057\u307e\u3059\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:07.932217Z"
-}

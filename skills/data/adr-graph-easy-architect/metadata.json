@@ -1,9 +1,0 @@
-{
-  "name": "adr-graph-easy-architect",
-  "description": "Create ASCII architecture diagrams for ADRs using graph-easy. Use when writing ADRs, adding diagrams to existing ADRs, or when user mentions \"ADR diagram\", \"architecture diagram\", \"ASCII diagram\". Zer",
-  "repo": "terrylica/cc-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

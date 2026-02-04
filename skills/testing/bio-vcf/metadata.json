@@ -1,8 +1,0 @@
-{
-  "name": "bio-vcf",
-  "repo": "dakesan/cc-dnawork-plugin",
-  "category": "testing",
-  "description": "This skill should be used when the user asks to analyze, filter, or inspect VCF/BCF variant files from WGS/WES sequencing. Triggers include requests to calculate variant statistics, filter variants by",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:48.166948Z"
-}

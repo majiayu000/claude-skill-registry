@@ -1,9 +1,0 @@
-{
-  "name": "git-add-commit",
-  "description": "git addとgit commitを自動化し、変更内容に基づいて適切なコミットメッセージを生成します。ユーザーがコミットを作成したい時、変更をコミットしたい時に使用します。",
-  "repo": "ss49919201/natto",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

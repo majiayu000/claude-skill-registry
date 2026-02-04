@@ -1,8 +1,0 @@
-{
-  "name": "gpia-bridge",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Bridge Codex requests to the local GPIA system. Use when the user invokes /GPIA, asks to hand off a task to the GPIA agent, or needs PASS protocol execution, capsule tracking, or GPIA-specific runs (q",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.488273Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "backlog-awareness",
-  "repo": "schuettc/claude-code-plugins",
-  "category": "product",
-  "description": "Check project backlog when discussing feature ideas or priorities. Use when user mentions adding features, asks what's planned, discusses priorities, or proposes new functionality. Silently reads back",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:22.140732Z"
-}

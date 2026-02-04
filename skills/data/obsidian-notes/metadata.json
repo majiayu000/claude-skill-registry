@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-notes",
-  "description": "Use when saving notes to Obsidian vault, creating documentation, capturing knowledge, or logging any information. This skill determines the correct PARA location and applies the appropriate template f",
-  "repo": "gajewsky/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

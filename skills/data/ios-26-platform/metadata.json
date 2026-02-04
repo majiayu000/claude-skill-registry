@@ -1,9 +1,0 @@
-{
-  "name": "ios-26-platform",
-  "description": "Use when implementing iOS 26 features (Liquid Glass, new SwiftUI APIs, WebView, Chart3D), deploying iOS 26+ apps, or supporting backward compatibility with iOS 17/18.",
-  "repo": "johnrogers/claude-swift-engineering",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

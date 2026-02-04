@@ -1,9 +1,0 @@
-{
-  "name": "code-flow-analysis",
-  "description": "Trace code execution path before implementing fixes. Forces understanding of fn(args, deps) flows, Result types, and workflow composition. Prevents guessing by requiring file:line references and execu",
-  "repo": "jagreehal/jagreehal-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "agent-sample-creating",
-  "repo": "tsubakimoto/github-copilot-agent-skills-playground",
-  "category": "development",
-  "description": "Guide for creating samples by GitHub Copilot. Use this when instructed to create samples.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:13.004388Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cert-manager-setup",
-  "description": "Cert Manager Setup - Auto-activating skill for DevOps Advanced.Triggers on: cert manager setup, cert manager setupPart of the DevOps Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

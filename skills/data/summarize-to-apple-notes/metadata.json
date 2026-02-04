@@ -1,9 +1,0 @@
-{
-  "name": "summarize-to-apple-notes",
-  "description": "Summarize conversation content and save to Apple Notes app using HTML format. Use when user asks to \"总结并保存到备忘录\", \"summarize and save to Notes\". Handles both summarization and saving in one step. Can s",
-  "repo": "cuiguojie/my-claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

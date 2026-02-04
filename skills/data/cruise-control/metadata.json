@@ -1,9 +1,0 @@
-{
-  "name": "cruise-control",
-  "description": "Automatic mode - shift through all 6 gears sequentially without stopping. Like cruise control or automatic transmission, this runs the entire StackShift workflow from analysis to implementation in one",
-  "repo": "jschulte/stackshift",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

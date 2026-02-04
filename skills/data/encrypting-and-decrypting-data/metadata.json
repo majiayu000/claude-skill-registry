@@ -1,9 +1,0 @@
-{
-  "name": "encrypting-and-decrypting-data",
-  "description": "Validate encryption implementations and cryptographic practices. Use when reviewing data security measures. Trigger with 'check encryption', 'validate crypto', or 'review security keys'.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

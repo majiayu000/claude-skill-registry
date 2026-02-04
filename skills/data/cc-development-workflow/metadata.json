@@ -1,9 +1,0 @@
-{
-  "name": "cc-development-workflow",
-  "description": "This skill should be used when starting any feature or bug fix, exploring unfamiliar code, making commits or PRs, or when unsure which agent or approach to use. Covers agent routing, git discipline, t",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

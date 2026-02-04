@@ -1,9 +1,0 @@
-{
-  "name": "prove-plus-comm",
-  "description": "Guidance for proving mathematical properties in Coq using induction, specifically addition commutativity and similar arithmetic lemmas. This skill should be used when working with Coq proof assistants",
-  "repo": "letta-ai/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/letta-ai/skills"
-}

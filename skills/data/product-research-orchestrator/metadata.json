@@ -1,9 +1,0 @@
-{
-  "name": "product-research-orchestrator",
-  "description": "Coordinates complete comparison of 2 products with parallel subagents and result aggregation. Use when user asks to 'compare X vs Y', 'compare two products', 'research products for comparison', mentio",
-  "repo": "lola69160/claude-product-comparison",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

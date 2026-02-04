@@ -1,9 +1,0 @@
-{
-  "name": "agent-factory",
-  "description": "Claude Code agent generation system that creates custom agents and sub-agents with enhanced YAML frontmatter, tool access patterns, and MCP integration support following proven production patterns",
-  "category": "development",
-  "tags": [],
-  "source": "github.com/claude-code-skill-factory",
-  "source_path": "generated-skills/agent-factory/SKILL.md",
-  "imported_at": "2026-01-24T08:31:00.068115Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "chrome-dev-protocol",
-  "description": "Lightweight Chromium DevTools automation via the bundled browser-tools.ts CLI (Puppeteer connect). Use when you need to launch a Chromium-based browser with a remote-debugging port, navigate pages, ru",
-  "repo": "douglascamata/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

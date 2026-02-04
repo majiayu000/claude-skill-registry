@@ -1,8 +1,0 @@
-{
-  "name": "github-issue-from-wip",
-  "repo": "leighmcculloch/dotfiles",
-  "category": "development",
-  "description": "Create a GitHub issue from work-in-progress by analyzing changes against the base branch",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.852404Z"
-}

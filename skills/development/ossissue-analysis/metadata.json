@@ -1,8 +1,0 @@
-{
-  "name": "ossissue-analysis",
-  "repo": "devkade/collaborator",
-  "category": "development",
-  "description": "Phase 2 of OSS contribution - Deep analysis combining issue requirements with codebase exploration. Extracts requirements, explores code structure, identifies exact code locations to fix, traces execu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:58.781836Z"
-}

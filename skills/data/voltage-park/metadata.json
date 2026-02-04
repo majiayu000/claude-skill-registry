@@ -1,9 +1,0 @@
-{
-  "name": "voltage-park",
-  "description": "Provision and manage Voltage Park H100 GPU instances. Use when the user needs to spin up H100s, SSH into VP instances, transfer files, or terminate cloud GPU instances.",
-  "repo": "Infatoshi/CLAUDE.md",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

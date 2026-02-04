@@ -1,9 +1,0 @@
-{
-  "name": "llm-doc-writer",
-  "description": "Write token-efficient documentation for LLM context. Use when creating CLAUDE.md, README, technical docs, agent instructions, or any documentation consumed by AI assistants.",
-  "repo": "Aceek/claude-config",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

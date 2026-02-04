@@ -1,9 +1,0 @@
-{
-  "name": "mypy",
-  "description": "mypy - Static type checker for Python with gradual typing, strict mode, Protocol support, and framework integration",
-  "repo": "bobmatnyc/terminator",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

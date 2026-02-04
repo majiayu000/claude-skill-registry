@@ -1,7 +1,0 @@
-{
-  "name": "torchdrug-davila7-claude-code-templates",
-  "description": "Graph-based drug discovery toolkit. Molecular property prediction (ADMET), protein modeling, knowledge graph reasoning, molecular generation, retrosynthesis, GNNs (GIN, GAT, SchNet), 40+ datasets, for",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.304944Z"
-}

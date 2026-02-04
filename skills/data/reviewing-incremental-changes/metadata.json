@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-incremental-changes",
-  "description": "Handles re-reviews after new commits. Use when a PR already has review comments or when responding to developer changes.",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

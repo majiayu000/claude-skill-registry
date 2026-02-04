@@ -1,8 +1,0 @@
-{
-  "name": "formily-migration-guide",
-  "repo": "whinc/my-claude-plugins",
-  "category": "design",
-  "description": "This skill should be used when the user asks to \"convert to formily\", \"formily migration\", \"migrate forms to formily\", \"convert react forms to formily\", \"formily vs other form libraries\", or \"replace ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:18.680906Z"
-}

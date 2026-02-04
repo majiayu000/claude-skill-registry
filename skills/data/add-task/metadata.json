@@ -1,9 +1,0 @@
-{
-  "name": "add-task",
-  "repo": "bencassie/flywheel",
-  "category": "data",
-  "description": "Add tasks to daily note log with due dates. Triggers when user mentions creating a task with a deadline like \"add a task to do X by Y\" where Y is a due date. Only fires when a due date is provided.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:56.555919Z",
-  "dir_name": "add-task"
-}

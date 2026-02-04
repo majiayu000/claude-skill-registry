@@ -1,9 +1,0 @@
-{
-  "name": "managing-frontend-knowledge",
-  "description": "フロントエンド技術のナレッジベース管理。URLや記事から技術情報を要約・蓄積し、CSS、JavaScript、パフォーマンス、アクセシビリティなどの質問に対してナレッジベースを参照して回答します。ナレッジ追加時、技術的な質問への回答時に使用してください。",
-  "repo": "sekka/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

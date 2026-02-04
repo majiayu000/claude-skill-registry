@@ -1,9 +1,0 @@
-{
-  "name": "release-publishing",
-  "description": "Release workflow with changesets, version bumping, changelog generation, and npm publishing. Use when preparing releases, managing versions, or publishing to npm.",
-  "repo": "pwarnock/liaison-toolkit",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

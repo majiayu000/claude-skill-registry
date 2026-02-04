@@ -1,9 +1,0 @@
-{
-  "name": "onboarding-writer",
-  "description": "Synthesize analyzed codebase information into a structured onboarding document. Creates onboarding_doc.md. Triggered by onboarding-start during document-writing phase.",
-  "repo": "OhadRubin/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

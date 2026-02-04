@@ -1,8 +1,0 @@
-{
-  "name": "top-100-web-vulnerabilities-reference",
-  "repo": "zebbern/claude-code-guide",
-  "category": "security",
-  "description": "This skill should be used when the user asks to \"identify web application vulnerabilities\", \"explain common security flaws\", \"understand vulnerability categories\", \"learn about injection attacks\", \"re",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:41.821503Z"
-}

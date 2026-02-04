@@ -1,9 +1,0 @@
-{
-  "name": "fleet-agent",
-  "description": "Context-aware development assistant for AgenticFleet with auto-learning and dual memory (NeonDB + ChromaDB). Handles development workflows with intelligent context management.",
-  "repo": "Qredence/agentic-fleet",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

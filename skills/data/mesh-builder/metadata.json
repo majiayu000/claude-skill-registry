@@ -1,9 +1,0 @@
-{
-  "name": "mesh-builder",
-  "description": "Comprehensive guide for building meshes in TX V4. Covers SDK-based worker architecture, agent design, prompt templates, message protocols, and HITL workflows. Use when creating new meshes, defining ag",
-  "repo": "eighteyes/tx",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

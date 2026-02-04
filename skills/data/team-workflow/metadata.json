@@ -1,9 +1,0 @@
-{
-  "name": "team-workflow",
-  "description": "Deterministic team development workflow for Claude Code. Enforces a mandatory sequence of phases (Setup → Brainstorm → Plan → Execute → Quality Check → Ship) with Linear integration, TDD requirements,",
-  "repo": "jeremyodell/team-workflow-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

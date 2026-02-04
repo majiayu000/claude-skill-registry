@@ -1,9 +1,0 @@
-{
-  "name": "debugging-workflow",
-  "description": "디버깅 실패 시 자동 트리거되는 체계적 문제 해결 워크플로우. DEBUGGING_STRATEGY.md 기반 Phase 0-3 디버깅 프로세스 자동화.",
-  "repo": "garimto81/claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

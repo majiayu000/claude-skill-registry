@@ -1,9 +1,0 @@
-{
-  "name": "event-driven",
-  "description": "Structure systems around asynchronous, event-based communication to decouple producers and consumers for improved scalability and resilience. Use when building loosely coupled systems with asynchronou",
-  "repo": "vuralserhat86/antigravity-agentic-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vuralserhat86/antigravity-agentic-skills"
-}

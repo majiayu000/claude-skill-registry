@@ -1,9 +1,0 @@
-{
-  "name": "new-go-endpoint",
-  "description": "This skill automates the API-first workflow for creating new Go API endpoints. It handles OpenAPI spec updates, code generation, SQLC query creation, handler implementation, and Redis caching patterns",
-  "repo": "adryanev/.dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

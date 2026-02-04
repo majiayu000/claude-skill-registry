@@ -1,9 +1,0 @@
-{
-  "name": "static-vuln-analysis",
-  "description": "Methodical approach to finding security vulnerabilities through source code review and static analysis",
-  "repo": "macaugh/super-rouge-hunter-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/macaugh/super-rouge-hunter-skills"
-}

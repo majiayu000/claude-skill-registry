@@ -1,9 +1,0 @@
-{
-  "name": "running-e2e-tests",
-  "description": "Execute end-to-end tests covering full user workflows across frontend and backend.Use when performing specialized testing.Trigger with phrases like \"run end-to-end tests\", \"test user flows\", or \"execu",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

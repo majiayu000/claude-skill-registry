@@ -1,9 +1,0 @@
-{
-  "name": "typescript-react-reviewer",
-  "description": "Expert code reviewer for TypeScript + React 19 applications. Use when reviewing React code, identifying anti-patterns, evaluating state management, or assessing code maintainability. Triggers: code re",
-  "repo": "dotneet/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

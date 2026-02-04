@@ -1,9 +1,0 @@
-{
-  "name": "message-summarizer",
-  "description": "Slack メッセージを要約用データとして取得する。「Slack要約」「メッセージ要約」「要約して」「まとめて」「会話の要約」「チャンネル要約」「最近の話を要約」などで起動。Pythonスクリプト `slack_message.py summarize` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

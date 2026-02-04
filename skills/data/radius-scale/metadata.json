@@ -1,9 +1,0 @@
-{
-  "name": "radius-scale",
-  "description": "Generates border-radius tokens from sharp to pill shapes. Use when creating corner rounding systems, button radius, card corners, or input styling. Outputs CSS, Tailwind, or JSON.",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

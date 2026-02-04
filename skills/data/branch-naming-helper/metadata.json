@@ -1,9 +1,0 @@
-{
-  "name": "branch-naming-helper",
-  "description": "Branch Naming Helper - Auto-activating skill for DevOps Basics.Triggers on: branch naming helper, branch naming helperPart of the DevOps Basics skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

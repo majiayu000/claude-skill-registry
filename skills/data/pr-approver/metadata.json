@@ -1,9 +1,0 @@
-{
-  "name": "pr-approver",
-  "description": "PR を承認（approve）する。「PR 承認」「PR を approve」「approve して」「PR を通す」「LGTM」「PR OK」「マージ許可」などで起動。レビュー後に承認コメントを投稿。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ansible-coder",
-  "description": "This skill guides writing Ansible playbooks for server configuration. Use when hardening servers, installing packages, or automating post-provisioning tasks that cloud-init cannot handle.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

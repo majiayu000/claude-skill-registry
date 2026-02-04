@@ -1,9 +1,0 @@
-{
-  "name": "rust-crate-source",
-  "description": "Clone and explore Rust crate source code. Use when user wants to read source code for a Rust crate, explore a crate's implementation, understand how a crate works, or needs context about a Rust librar",
-  "repo": "praveenperera/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

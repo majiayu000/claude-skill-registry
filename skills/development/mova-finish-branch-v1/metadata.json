@@ -1,8 +1,0 @@
-{
-  "name": "mova-finish-branch-v1",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Summarizes branch readiness versus a base branch and produces artifacts for PR prep.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:42.522651Z"
-}

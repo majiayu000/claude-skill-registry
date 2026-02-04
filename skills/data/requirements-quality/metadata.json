@@ -1,9 +1,0 @@
-{
-  "name": "requirements-quality",
-  "description": "Requirements quality assessment and improvement. Use when evaluating requirements against INVEST criteria, improving clarity, detecting ambiguity, or ensuring completeness. Provides quality checklists",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

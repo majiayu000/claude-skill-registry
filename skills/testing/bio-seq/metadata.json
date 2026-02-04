@@ -1,8 +1,0 @@
-{
-  "name": "bio-seq",
-  "repo": "dakesan/cc-dnawork-plugin",
-  "category": "testing",
-  "description": "Read/write FASTA, GenBank, FASTQ files. Sequence manipulation (complement, translate). Indexed random access via faidx. For NGS pipelines (SAM/BAM/VCF), use pysam. For BLAST, use gget or blat-integrat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:48.065844Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "git-in-containers",
-  "repo": "oaustegard/claude-skills",
-  "category": "development",
-  "description": "Git repository access in containerized AI chat environments. Use when user requests git clone, repo fetching, or GitHub operations in web/mobile AI chat sessions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:02.499242Z"
-}

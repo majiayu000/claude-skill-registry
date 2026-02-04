@@ -1,9 +1,0 @@
-{
-  "name": "workflow-challenger",
-  "description": "Critical review and gap analysis skill that can be invoked at any workflow stage. Use to challenge decisions, identify missing specifications, verify coherence, and surface unaddressed questions in CD",
-  "repo": "LaizyIO/WorkflowSkills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

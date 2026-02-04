@@ -1,9 +1,0 @@
-{
-  "name": "devops-plan",
-  "description": "Gather DevOps context for infrastructure planning. Detects IaC tools, providers, and recommends skills. Use when /majestic:plan detects infrastructure work.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

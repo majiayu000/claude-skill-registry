@@ -1,8 +1,0 @@
-{
-  "name": "local-ci-runner-act",
-  "repo": "IgorGanapolsky/trading",
-  "category": "devops",
-  "description": "Run GitHub Actions workflows locally using ACT in Docker before pushing to verify CI will pass",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.114277Z"
-}

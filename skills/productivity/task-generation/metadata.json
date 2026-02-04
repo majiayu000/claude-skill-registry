@@ -1,8 +1,0 @@
-{
-  "name": "task-generation",
-  "repo": "yangsi7/fine-tuning-exercise-generation",
-  "category": "productivity",
-  "description": "Generate user-story-organized task lists from implementation plans. Use when plan exists and user is ready for implementation, mentions \"create tasks\", \"break down work\", or asks \"what tasks are neede",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:19.542078Z"
-}

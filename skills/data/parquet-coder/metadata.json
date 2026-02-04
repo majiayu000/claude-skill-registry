@@ -1,9 +1,0 @@
-{
-  "name": "parquet-coder",
-  "description": "Columnar file patterns including partitioning, predicate pushdown, and schema evolution.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
-}

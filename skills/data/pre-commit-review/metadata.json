@@ -1,9 +1,0 @@
-{
-  "name": "pre-commit-review",
-  "description": "ADVISORY validation of code against design principles that linters cannot enforce. Use after linter passes and tests pass to validate design quality. Categorizes findings as Design Debt, Readability D",
-  "repo": "buzzdan/ai-coding-rules",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

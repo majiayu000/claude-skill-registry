@@ -1,8 +1,0 @@
-{
-  "name": "cicd-pipeline-management",
-  "repo": "hackur/web-standards-playground-showcase",
-  "category": "devops",
-  "description": "GitLab CI/CD pipeline optimization, Docker image building, caching strategies, and 3-stage deployment workflow",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:04.213674Z"
-}

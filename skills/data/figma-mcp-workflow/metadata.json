@@ -1,9 +1,0 @@
-{
-  "name": "figma-mcp-workflow",
-  "description": "Standardize Figma-to-code workflow using Figma MCP - always get_design_context first, then screenshot, use project tokens not hardcoded values, validate 1:1 parity",
-  "repo": "JewelsHovan/pain-plus-site",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

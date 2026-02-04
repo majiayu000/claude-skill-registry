@@ -1,9 +1,0 @@
-{
-  "name": "review-ios-test-results",
-  "description": "Analyzes iOS test results from xcodebuild test runs. Use immediately after running xcodebuild test, when tests fail, when the user asks to check test results/failures, or when investigating test issue",
-  "repo": "ddpi/PublicArticles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

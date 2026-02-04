@@ -1,9 +1,0 @@
-{
-  "name": "fiftyone-dataset-inference",
-  "description": "Create a FiftyOne dataset from a directory of media files (images, videos, point clouds), optionally import labels in common formats (COCO, YOLO, VOC), run model inference, and store predictions. Use ",
-  "repo": "AdonaiVera/fiftyone-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

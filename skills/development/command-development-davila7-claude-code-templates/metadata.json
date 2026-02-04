@@ -1,7 +1,0 @@
-{
-  "name": "command-development-davila7-claude-code-templates",
-  "description": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.068966Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "react-pwa",
-  "description": "Build Progressive Web Apps with React and Vite using vite-plugin-pwa. This skill covers the complete PWA lifecycle: manifest configuration, service worker strategies, offline support, installability, ",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

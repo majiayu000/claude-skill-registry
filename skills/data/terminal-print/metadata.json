@@ -1,9 +1,0 @@
-{
-  "name": "terminal-print",
-  "description": "Print iTerm2 terminal output to HP network printer. Strips ANSI escape codes, wraps in monospace code block, generates PDF via pandoc/xelatex, previews, and prints. Invoke on - print terminal, termina",
-  "repo": "terrylica/cc-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

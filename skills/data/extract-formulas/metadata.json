@@ -1,9 +1,0 @@
-{
-  "name": "extract-formulas",
-  "description": "Extract mathematical formulas (F-*) from requirements - calculations, algorithms, conversions. Enables autogeneration of calculation functions with tests. Use when requirements involve math, dates, pe",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "project-verifier",
-  "description": "テストやリンターを実行してプロジェクトの状態を検証します。コード変更後や、動作確認を求められた際に使用します。",
-  "repo": "fum1ple/agent-claude-invoice",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

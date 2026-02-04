@@ -1,9 +1,0 @@
-{
-  "name": "brain-dump-assistant",
-  "repo": "dparedesi/agent-global-skills",
-  "category": "data",
-  "description": "Manage a personal knowledge capture system. Use when the user wants to capture ideas, track todos, organize projects, review their brain dump, or mentions \"brain dump\", \"capture this\", \"add to my list",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:11.642690Z",
-  "dir_name": "brain-dump-assistant"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "results-interpreter",
-  "description": "Analyze CSV data files and interpret figures to generate the Results section. Fifth step of biomedical-science-writer workflow. Requires scope.md, data/ folder with CSVs, and figures/ folder with imag",
-  "repo": "sxg/biomedical-science-writer",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

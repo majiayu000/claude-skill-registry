@@ -1,9 +1,0 @@
-{
-  "name": "delegation-prompt-crafter",
-  "description": "Transform clarified user requests into structured delegation prompts optimized for specialist agents (cto-architect, strategic-cto-mentor, cv-ml-architect). Use after clarification is complete, before",
-  "repo": "alirezarezvani/claude-cto-team",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

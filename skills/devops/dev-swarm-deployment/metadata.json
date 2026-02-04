@@ -1,8 +1,0 @@
-{
-  "name": "dev-swarm-deployment",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "devops",
-  "description": "Deploy application to staging/production environments, setup CD pipelines, manage cloud infrastructure, and configure monitoring. Use when user asks to deploy application, setup production environment",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:11.562358Z"
-}

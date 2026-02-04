@@ -1,8 +1,0 @@
-{
-  "name": "morpho-solana-frontend",
-  "repo": "raunit-dev/morpho-on-solana",
-  "category": "design",
-  "description": "Build production-ready frontend for Morpho Blue lending protocol on Solana. Covers all 26 program instructions across supply/borrow, flash loans, liquidations, authorization, and admin features. Uses ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.685689Z"
-}

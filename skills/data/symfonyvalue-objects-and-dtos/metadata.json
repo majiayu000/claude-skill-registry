@@ -1,9 +1,0 @@
-{
-  "name": "symfonyvalue-objects-and-dtos",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "data",
-  "description": "Design Value Objects for domain concepts and DTOs for data transfer with proper immutability and validation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.777586Z",
-  "dir_name": "symfonyvalue-objects-and-dtos"
-}

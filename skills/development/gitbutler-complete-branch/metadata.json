@@ -1,8 +1,0 @@
-{
-  "name": "gitbutler-complete-branch",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Complete work on GitButler virtual branches and integrate to main through guided workflows with safety checks and cleanup. Use when finishing branches, merging to main, creating PRs, or when `--comple",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.851244Z"
-}

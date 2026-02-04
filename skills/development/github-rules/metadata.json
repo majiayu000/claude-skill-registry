@@ -1,8 +1,0 @@
-{
-  "name": "github-rules",
-  "repo": "leobrival/topographic-studio-plugins",
-  "category": "development",
-  "description": "Guide for configuring GitHub repository rules, branch protection, rulesets, CODEOWNERS, and security policies. Use when users need to set up branch protection rules, configure required reviews, enforc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:47.157287Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "sentry-alerts-issues",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when configuring Sentry alerts, managing issues, or setting up notifications. Covers alert rules, issue triage, and integrations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:08.619710Z"
-}

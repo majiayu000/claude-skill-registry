@@ -1,9 +1,0 @@
-{
-  "name": "fastapi-ml-endpoint",
-  "description": "Fastapi Ml Endpoint - Auto-activating skill for ML Deployment.Triggers on: fastapi ml endpoint, fastapi ml endpointPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

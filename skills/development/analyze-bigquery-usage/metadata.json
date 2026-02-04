@@ -1,8 +1,0 @@
-{
-  "name": "analyze-bigquery-usage",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "description": "Comprehensive analysis of BigQuery usage patterns, costs, and query performance",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:17.785547Z"
-}

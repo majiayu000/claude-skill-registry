@@ -1,9 +1,0 @@
-{
-  "name": "jira-read-ticket",
-  "description": "Use whenever a user mentions or references a Jira ticket and you want to pull out description, comments, or more.",
-  "repo": "bkircher/skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

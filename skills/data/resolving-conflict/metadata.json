@@ -1,9 +1,0 @@
-{
-  "name": "resolving-conflict",
-  "description": "協助解決 Git Rebase 或 Merge 過程中的衝突，提供系統化的衝突解決流程。",
-  "repo": "MilesChou/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

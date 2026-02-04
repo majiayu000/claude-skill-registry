@@ -1,9 +1,0 @@
-{
-  "name": "yarp-proxy",
-  "description": "Configure YARP reverse proxy for affolterNET.Web.Bff. Use when setting up API proxying, route configuration, or backend service integration.",
-  "repo": "Mcafee123/affolterNET.Web",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

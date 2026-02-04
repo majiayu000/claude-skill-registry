@@ -1,8 +1,0 @@
-{
-  "name": "validate-git-safety",
-  "repo": "cowwoc/styler",
-  "category": "development",
-  "description": "Validate git operations won't affect version branches or cause data loss",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:48.801387Z"
-}

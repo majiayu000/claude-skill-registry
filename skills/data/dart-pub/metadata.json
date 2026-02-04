@@ -1,9 +1,0 @@
-{
-  "name": "dart-pub",
-  "description": "To run Dart or Flutter pub commands like `pub get` or `pub add`, execute a pub command for the given roots.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

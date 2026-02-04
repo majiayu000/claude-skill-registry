@@ -1,9 +1,0 @@
-{
-  "name": "50-execute-gated-150",
-  "description": "[50] EXECUTE. Execute plans step-by-step with confirmation gates. Each step requires user approval before proceeding. Includes change management lifecycle (Pre-Change → During → Post-Change → Rollback",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/MykhailoDmytriakha/my-preacher-helper"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "homelab",
-  "repo": "vdemeester/home",
-  "category": "development",
-  "description": "NixOS homelab infrastructure management for the home repository. USE WHEN working with NixOS systems, home-manager configs, networking, services, or personal infrastructure.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.162747Z"
-}

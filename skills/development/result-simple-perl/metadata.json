@@ -1,8 +1,0 @@
-{
-  "name": "result-simple-perl",
-  "repo": "kfly8/claude-cpan-plugins",
-  "category": "development",
-  "description": "Use Result::Simple for tuple-based error handling in Perl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:38.812329Z"
-}

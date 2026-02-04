@@ -1,9 +1,0 @@
-{
-  "name": "dead-code-removal",
-  "description": "Detects and safely removes unused code (imports, functions, classes) across multiple languages. Use after refactoring, when removing features, or before production deployment. Includes safety checks a",
-  "repo": "89jobrien/steve",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

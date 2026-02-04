@@ -1,9 +1,0 @@
-{
-  "name": "knack-pagination",
-  "description": "Manages full data retrieval while respecting Knack's 1,000-record-per-page limit. Essential for HTI's 3,500+ laptop inventory and compliance report...",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

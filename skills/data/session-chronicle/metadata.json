@@ -1,9 +1,0 @@
-{
-  "name": "session-chronicle",
-  "description": "Excavate session logs for provenance tracking. TRIGGERS - who created, document finding, trace origin, session archaeology, provenance, ADR reference.",
-  "repo": "terrylica/cc-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

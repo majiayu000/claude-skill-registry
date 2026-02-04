@@ -1,8 +1,0 @@
-{
-  "name": "rag-skill",
-  "repo": "bilalmk/ai-native-book",
-  "category": "design",
-  "description": "Build and integrate production-ready RAG (Retrieval-Augmented Generation) chatbots into documentation sites using OpenAI, Qdrant Cloud, and Neon Postgres. Handles complete stack from backend API to fr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.853042Z"
-}

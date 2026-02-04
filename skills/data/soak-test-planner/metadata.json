@@ -1,9 +1,0 @@
-{
-  "name": "soak-test-planner",
-  "description": "Soak Test Planner - Auto-activating skill for Performance Testing.Triggers on: soak test planner, soak test plannerPart of the Performance Testing skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

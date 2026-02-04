@@ -1,8 +1,0 @@
-{
-  "name": "registry-update",
-  "repo": "epieczko/betty",
-  "category": "development",
-  "description": "Updates the Betty Framework Skill Registry when new skills are created or validated.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:27.959646Z"
-}

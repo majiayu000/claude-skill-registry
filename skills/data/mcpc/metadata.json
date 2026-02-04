@@ -1,9 +1,0 @@
-{
-  "name": "mcpc",
-  "description": "Use mcpc CLI to interact with MCP servers - call tools, read resources, get prompts. Use this when working with Model Context Protocol servers, calling MCP tools, or accessing MCP resources programmat",
-  "repo": "apify/mcp-cli",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

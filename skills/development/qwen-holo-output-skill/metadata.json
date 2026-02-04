@@ -1,8 +1,0 @@
-{
-  "name": "qwen-holo-output-skill",
-  "repo": "Foundup/Foundups-Agent",
-  "category": "development",
-  "description": "Coordinate Holo output formatting and telemetry so 0102, Qwen, and Gemma receive exactly what they need.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:31.366653Z"
-}

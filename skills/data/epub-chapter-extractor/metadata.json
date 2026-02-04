@@ -1,9 +1,0 @@
-{
-  "name": "epub-chapter-extractor",
-  "description": "Extract all chapters from an EPUB file into separate markdown files. Use when the user wants to split an EPUB into individual chapter files, extract EPUB chapters, or convert an ebook to separate mark",
-  "repo": "Abilityai/cornelius",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

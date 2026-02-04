@@ -1,9 +1,0 @@
-{
-  "name": "linear-security-basics",
-  "description": "Secure API key management and OAuth best practices for Linear.\nUse when setting up authentication securely, implementing OAuth flows,\nor hardening Linear integrations.\nTrigger with phrases like \"linea",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

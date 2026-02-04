@@ -1,9 +1,0 @@
-{
-  "name": "plugin-test",
-  "description": "Run comprehensive tests on plugin components using the modular test runner. Validates hooks, agents, skills, and plugin structure across all PopKit plugin packages.",
-  "repo": "jrc1883/popkit-claude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

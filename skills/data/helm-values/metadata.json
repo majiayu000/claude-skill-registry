@@ -1,9 +1,0 @@
-{
-  "name": "helm-values",
-  "description": "Use when managing Helm values files and configuration overrides for customizing Kubernetes deployments.",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

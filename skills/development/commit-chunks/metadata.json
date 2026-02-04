@@ -1,8 +1,0 @@
-{
-  "name": "commit-chunks",
-  "repo": "ameyalambat128/dotfiles",
-  "category": "development",
-  "description": "Review and commit changes in meaningful chunks. Use when the user has multiple uncommitted changes that should be organized into logical, atomic commits.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:54.203129Z"
-}

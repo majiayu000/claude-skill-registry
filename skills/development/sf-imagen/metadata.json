@@ -1,8 +1,0 @@
-{
-  "name": "sf-imagen",
-  "repo": "Jaganpro/sf-skills",
-  "category": "development",
-  "description": "AI-powered visual content generation for Salesforce development. Generates ERD diagrams, LWC mockups, architecture visuals using Nano Banana Pro. Also provides Gemini as a parallel sub-agent for code ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:11.087047Z"
-}

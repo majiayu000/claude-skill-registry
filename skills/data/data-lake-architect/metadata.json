@@ -1,9 +1,0 @@
-{
-  "name": "data-lake-architect",
-  "description": "Provides architectural guidance for data lake design including partitioning strategies, storage layout, schema design, and lakehouse patterns. Activates when users discuss data lake architecture, part",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

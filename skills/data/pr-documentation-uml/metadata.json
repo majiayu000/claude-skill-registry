@@ -1,9 +1,0 @@
-{
-  "name": "pr-documentation-uml",
-  "description": "Generate PR documentation with UML diagrams based on Git branch differences. Explains modification reasons, content, and implementation. Uses Mermaid to draw architecture, class, sequence diagrams wit",
-  "repo": "YoungY620/pr-summary-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

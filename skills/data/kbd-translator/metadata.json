@@ -1,9 +1,0 @@
-{
-  "name": "kbd-translator",
-  "description": "Expert in BIDIRECTIONAL Kabardian↔Russian translation using CORPUS-FIRST approach. Translates both Russian→Kabardian AND Kabardian→Russian. Learns from 292k real translation examples, then falls back ",
-  "repo": "panagoa/kbd_translate",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

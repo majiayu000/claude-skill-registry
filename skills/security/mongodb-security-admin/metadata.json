@@ -1,8 +1,0 @@
-{
-  "name": "mongodb-security-admin",
-  "repo": "pluginagentmarketplace/custom-plugin-mongodb",
-  "category": "security",
-  "description": "Master MongoDB security, authentication, authorization, encryption, and backup. Learn role-based access control, TLS/SSL, encryption, and disaster recovery. Use when securing deployments, managing use",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:36.834876Z"
-}

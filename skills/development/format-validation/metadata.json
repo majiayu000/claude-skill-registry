@@ -1,8 +1,0 @@
-{
-  "name": "format-validation",
-  "repo": "Kikolo3000/topsy_databaseprocessing-agent",
-  "category": "development",
-  "description": "Comprehensive validation of FTD analysis output files. Checks JSONL format, field completeness, score validity, and structural requirements for TALD scale evaluations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:39.677354Z"
-}

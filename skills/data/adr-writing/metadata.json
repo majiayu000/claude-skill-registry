@@ -1,9 +1,0 @@
-{
-  "name": "adr-writing",
-  "description": "Write Architectural Decision Records following MADR template. Applies Definition of Done criteria, marks gaps for later completion. Use when generating ADR documents from extracted decisions.",
-  "repo": "existential-birds/beagle",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

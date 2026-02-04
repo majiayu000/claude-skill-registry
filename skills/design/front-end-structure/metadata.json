@@ -1,8 +1,0 @@
-{
-  "name": "front-end-structure",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "design",
-  "description": "Build Vue 3 + Ionic front-end components following Orchestrator AI's strict architecture: stores hold state only, services handle API calls with transport types, components use services and read store",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:56.813723Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cursor-indexing-issues",
-  "description": "Troubleshoot Cursor codebase indexing problems. Triggers on \"cursor indexing\",\"cursor index\", \"cursor codebase\", \"@codebase not working\", \"cursor search broken\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

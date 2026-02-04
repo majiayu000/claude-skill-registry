@@ -1,9 +1,0 @@
-{
-  "name": "claude-context-manager",
-  "description": "Enables autonomous context management for codebases through claude.md files. Use when creating, maintaining, or synchronizing AI agent context. Provides tools and workflows for monitoring context heal",
-  "repo": "AnthemFlynn/ccmp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

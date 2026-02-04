@@ -1,8 +1,0 @@
-{
-  "name": "pr-review-common-patterns",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Common patterns in PR reviews including false positives, security vulnerabilities, N+1 queries, breaking changes, and edge cases. Use when analyzing code, verifying findings, or understanding typical ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.103107Z"
-}

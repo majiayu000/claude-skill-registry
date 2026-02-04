@@ -1,9 +1,0 @@
-{
-  "name": "project-overview-html",
-  "description": "Creates interactive HTML visualizations of project structure, dependencies, and statistics. Use when the user asks to visualize the project, create a project overview, or generate an HTML dashboard of",
-  "repo": "workromancer/my-claude-settings",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

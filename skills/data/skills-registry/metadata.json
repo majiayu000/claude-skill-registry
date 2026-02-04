@@ -1,9 +1,0 @@
-{
-  "name": "skills-registry",
-  "description": "Dynamic skill discovery and matching for any task context.Invoke when:- Starting any task to discover relevant skills- Need to find specialized skills for current context- Agent/command needs skill re",
-  "repo": "petbrains/mvp-builder",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

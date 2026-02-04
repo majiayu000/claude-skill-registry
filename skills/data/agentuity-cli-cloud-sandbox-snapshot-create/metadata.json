@@ -1,9 +1,0 @@
-{
-  "name": "agentuity-cli-cloud-sandbox-snapshot-create",
-  "description": "Create a snapshot from a sandbox. Requires authentication. Use for Agentuity cloud platform operations",
-  "repo": "agentuity/discord-help-agent",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

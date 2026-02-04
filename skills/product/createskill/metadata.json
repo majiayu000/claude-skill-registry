@@ -1,8 +1,0 @@
-{
-  "name": "createskill",
-  "repo": "vdemeester/home",
-  "category": "product",
-  "description": "Skill creation framework for creating, validating, updating, or canonicalizing skills. USE WHEN user wants to create a new skill, validate skill structure, update existing skill, or fix skill complian",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.012303Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "linear-task-selector",
-  "description": "Fetch tasks from Linear backlog and handle user selection. Saves selected task context for use in feature/bug/plan workflows. Reduces context usage by consolidating Linear API interactions.",
-  "repo": "timogilvie/claude-workflow",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "enforcing-type-safety",
-  "repo": "sumik5/dotfiles",
-  "category": "devops",
-  "description": "Enforces type safety in TypeScript/Python implementations. Any/any types strictly prohibited. Use when processing API responses, integrating external libraries, or implementing data validation. Suppor",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.397875Z"
-}

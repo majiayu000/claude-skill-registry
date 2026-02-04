@@ -1,9 +1,0 @@
-{
-  "name": "gpui-components",
-  "description": "Generates Rust code for GPUI desktop UI components following Zed editor patterns. Use when building desktop applications with gpui crate, creating themed UI components, implementing autocomplete/compl",
-  "repo": "terraphim/codex-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

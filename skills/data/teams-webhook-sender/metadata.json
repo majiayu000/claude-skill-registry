@@ -1,9 +1,0 @@
-{
-  "name": "teams-webhook-sender",
-  "description": "Teams Webhook Sender - Auto-activating skill for Business Automation.Triggers on: teams webhook sender, teams webhook senderPart of the Business Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

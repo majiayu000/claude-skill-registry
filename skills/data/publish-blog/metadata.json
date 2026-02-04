@@ -1,9 +1,0 @@
-{
-  "name": "publish-blog",
-  "description": "Commits and publishes the current blog post, monitors the GitHub Actions deployment, and verifies it's live at https://www.aaronheld.com/",
-  "repo": "aheld/aaronheld-blog",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

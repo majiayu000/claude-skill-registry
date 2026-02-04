@@ -1,8 +1,0 @@
-{
-  "name": "python-json",
-  "repo": "lawless-m/claude-skills",
-  "category": "development",
-  "description": "UTF-8 JSON file I/O utilities to avoid Windows encoding issues (CP-1252 vs UTF-8)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.717984Z"
-}

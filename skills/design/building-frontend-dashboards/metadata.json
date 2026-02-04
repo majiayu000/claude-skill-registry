@@ -1,8 +1,0 @@
-{
-  "name": "building-frontend-dashboards",
-  "repo": "amo-tech-ai/event-studio",
-  "category": "design",
-  "description": "Build responsive React dashboards with TypeScript, shadcn/ui, TanStack Query, and Supabase for event-studio. Use when user mentions dashboard, metrics, KPI cards, data tables, charts, analytics, admin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:54.514540Z"
-}

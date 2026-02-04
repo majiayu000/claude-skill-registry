@@ -1,9 +1,0 @@
-{
-  "name": "terraform-engineer-jeffallan-claude-skills",
-  "description": "Use when implementing infrastructure as code with Terraform across AWS, Azure, or GCP. Invoke for module development, state management, provider configuration, multi-environment workflows, infrastruct",
-  "repo": "Jeffallan/claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Jeffallan/claude-skills"
-}

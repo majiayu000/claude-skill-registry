@@ -1,8 +1,0 @@
-{
-  "name": "firebase-repository-pattern",
-  "repo": "tw-lin/ng-lin",
-  "category": "design",
-  "description": "Generate Firebase Repository classes following the project's three-layer architecture (UI \u2192 Service \u2192 Repository). Use this skill when creating data access layers for Firestore collections, implementi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:14.028159Z"
-}

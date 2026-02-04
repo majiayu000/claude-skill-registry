@@ -1,9 +1,0 @@
-{
-  "name": "detection-sigma",
-  "description": "Generic detection rule creation and management using Sigma, the universal SIEM rule format. Sigma provides vendor-agnostic detection logic for log analysis across multiple SIEM platforms. Use when: (1",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

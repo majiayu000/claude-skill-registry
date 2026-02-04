@@ -1,7 +1,0 @@
-{
-  "name": "claude-automation-recommender",
-  "repo": "mbarnes-code/multi-agent-vllm",
-  "path": "features/claude-plugins-official/plugins/claude-code-setup/skills/claude-automation-recommender/SKILL.md",
-  "source": "github.com/mbarnes-code/multi-agent-vllm",
-  "downloaded_at": "2026-01-29T06:15:35.099884Z"
-}

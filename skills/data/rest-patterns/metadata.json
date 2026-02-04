@@ -1,9 +1,0 @@
-{
-  "name": "rest-patterns",
-  "description": "Quick reference for RESTful API design patterns, HTTP semantics, caching, and rate limiting. Triggers on: rest api, http methods, status codes, api design, endpoint design, api versioning, rate limiti",
-  "repo": "0xDarkMatter/claude-mods",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

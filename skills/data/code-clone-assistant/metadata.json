@@ -1,9 +1,0 @@
-{
-  "name": "code-clone-assistant",
-  "description": "Detects and refactors code duplication using PMD CPD. Use when identifying code clones, addressing DRY violations, or refactoring duplicate code across repositories.",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

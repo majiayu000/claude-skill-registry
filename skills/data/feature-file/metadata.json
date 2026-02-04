@@ -1,9 +1,0 @@
-{
-  "name": "feature-file",
-  "description": "Manage features.yml for tracking requirements and progress; use proactively ONLY when features.yml already exists, or invoke manually to create one; complements TodoWrite for persistent project state.",
-  "repo": "Chemiseblanc/ai",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

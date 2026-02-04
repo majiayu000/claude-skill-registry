@@ -1,8 +1,0 @@
-{
-  "name": "project-advisor",
-  "repo": "tryinhard1080/ClaudeClodeCommander",
-  "category": "development",
-  "description": "Analyzes project requirements and recommends optimal Claude Code configuration with agents, MCP servers, and Skills for sustainable builds with minimal errors",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:16.515794Z"
-}

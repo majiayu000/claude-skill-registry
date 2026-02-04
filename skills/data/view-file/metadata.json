@@ -1,9 +1,0 @@
-{
-  "name": "view-file",
-  "description": "Fetch raw file content from GitHub URLs. Trigger when user shares a GitHub file link (https://github.com/user/repo/blob/main/file.go) and wants to view the source code. Avoids HTML/JS clutter from Web",
-  "repo": "robbyt/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

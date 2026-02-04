@@ -1,9 +1,0 @@
-{
-  "name": "temporal-cli",
-  "description": "Master Temporal CLI workflow management with smart query building, payload decoding, and history filtering using temporal, base64, and jq",
-  "repo": "eantyshev/temporal-cli-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

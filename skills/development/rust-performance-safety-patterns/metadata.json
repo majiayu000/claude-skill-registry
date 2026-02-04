@@ -1,8 +1,0 @@
-{
-  "name": "rust-performance-safety-patterns",
-  "repo": "pmcfadin/cqlite",
-  "category": "development",
-  "description": "Zero-copy deserialization, async I/O patterns, lifetime management, memory-efficient parsing, and safe handling of unsafe code for SSTable parsing. Use when working with performance optimization, memo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:40.371446Z"
-}

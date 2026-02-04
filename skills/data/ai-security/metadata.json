@@ -1,9 +1,0 @@
-{
-  "name": "ai-security",
-  "description": "Automatically applies when securing AI/LLM applications. Ensures prompt injection detection, PII redaction for AI contexts, output filtering, content moderation, and secure prompt handling.",
-  "repo": "ricardoroche/ricardos-claude-code",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ricardoroche/ricardos-claude-code"
-}

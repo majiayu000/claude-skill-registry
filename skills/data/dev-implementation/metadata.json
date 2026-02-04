@@ -1,9 +1,0 @@
-{
-  "name": "dev-implementation",
-  "description": "Gate 0 of the development cycle. Executes code implementation using the appropriatespecialized agent based on task content and project language. Handles TDD workflowwith RED-GREEN phases. Follows proj",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

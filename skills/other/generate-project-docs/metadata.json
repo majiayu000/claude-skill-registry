@@ -1,9 +1,0 @@
-{
-  "name": "generate-project-docs",
-  "repo": "sakamotchi/sql-query-build",
-  "path": ".claude/skills/generate-project-docs/skill.md",
-  "source": "github.com/sakamotchi/sql-query-build",
-  "downloaded_at": "2026-01-22T01:31:30.436085Z",
-  "dir_name": "generate-project-docs",
-  "category": "other"
-}

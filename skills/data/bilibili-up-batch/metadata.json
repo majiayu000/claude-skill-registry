@@ -1,9 +1,0 @@
-{
-  "name": "bilibili-up-batch",
-  "description": "批量下载 B 站 UP 最近 N 条视频到 imports，并用 video_pipeline 生成证据包（适合 worker panes 并行跑）。",
-  "repo": "haizhouyuan/codexreadpublic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

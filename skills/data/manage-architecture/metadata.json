@@ -1,9 +1,0 @@
-{
-  "name": "manage-architecture",
-  "description": "Create and maintain architecture documentation following Lucid Composite Architecture (LCA) principles.INVOKE THIS SKILL when user:- Asks an \"architect\" to review or analyze anything- Mentions \"archit",
-  "repo": "rayk/lucid-toolkit",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

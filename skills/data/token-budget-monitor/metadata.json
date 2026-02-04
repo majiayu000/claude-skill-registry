@@ -1,9 +1,0 @@
-{
-  "name": "token-budget-monitor",
-  "description": "Proactively monitors Claude conversation token usage and warns when approaching limits. Tracks usage patterns and predicts when limits will be reached based on current pace.",
-  "repo": "mapachekurt/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

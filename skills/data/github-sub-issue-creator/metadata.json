@@ -1,9 +1,0 @@
-{
-  "name": "github-sub-issue-creator",
-  "description": "Creates GitHub sub-issues and links them to parent issues using gh CLI and REST API. Use when creating child issues, breaking down large issues into smaller tasks, or establishing parent-child relatio",
-  "repo": "scizorman/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

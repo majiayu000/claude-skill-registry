@@ -1,9 +1,0 @@
-{
-  "name": "biome-setup",
-  "description": "Biome linter/formatter setup. Use when configuring Biome as an alternative to ESLint + Prettier.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

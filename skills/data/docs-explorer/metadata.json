@@ -1,9 +1,0 @@
-{
-  "name": "docs-explorer",
-  "description": "Explores internal documentation (brain repos, Notion) for context",
-  "repo": "violetio/violet-ai-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

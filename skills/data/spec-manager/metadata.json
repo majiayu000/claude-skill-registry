@@ -1,9 +1,0 @@
-{
-  "name": "spec-manager",
-  "description": "MANDATORY specification writing skill. ONLY way to create/update specs.Auto-invoke when:- Creating specs: New projects, features (\"I want to create XX\")- Updating specs: Feature additions, requirement",
-  "repo": "hiroshi75/ccplugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

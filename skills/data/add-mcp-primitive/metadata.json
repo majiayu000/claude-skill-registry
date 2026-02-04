@@ -1,9 +1,0 @@
-{
-  "name": "add-mcp-primitive",
-  "description": "Add new MCP primitives (Tool, Resource, Prompt). Use when asked to add a new tool, resource, or prompt to the MCP server.",
-  "repo": "masseater/scrapbox-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

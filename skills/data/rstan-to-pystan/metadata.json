@@ -1,9 +1,0 @@
-{
-  "name": "rstan-to-pystan",
-  "description": "Guidance for converting R-Stan (RStan) code to Python-Stan (PyStan). This skill applies when translating Stan models and inference code from R to Python, including API mapping between RStan and PyStan",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

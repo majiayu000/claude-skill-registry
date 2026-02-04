@@ -1,9 +1,0 @@
-{
-  "name": "run-client",
-  "description": "Start a single Gambit game client that connects to 127.0.0.1:1234. Use when the user wants to run a client, test client functionality, or manually connect to a server.",
-  "repo": "FWFsoft/gambit",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

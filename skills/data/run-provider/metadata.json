@@ -1,9 +1,0 @@
-{
-  "name": "run-provider",
-  "description": "Build and run the Nomos Terraform Remote State Provider. Use this when testing the provider, verifying functionality, or running the provider binary locally.",
-  "repo": "autonomous-bits/nomos-provider-terraform-remote-state",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

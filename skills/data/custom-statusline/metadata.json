@@ -1,9 +1,0 @@
-{
-  "name": "custom-statusline",
-  "description": "Set up custom Claude Code status line with Nerd Font icons, colors, git status, usage tracking, system info, and project context. NO EMOJIS - only Nerd Font icons and symbols. Use when configuring sta",
-  "repo": "zeulewan/zeul-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

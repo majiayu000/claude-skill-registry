@@ -1,7 +1,0 @@
-{
-  "name": "dependency-auditor",
-  "description": "Check dependencies for known vulnerabilities using npm audit, pip-audit, etc. Use when package.json or requirements.txt changes, or before deployments. Alerts on vulnerable dependencies. Triggers on d",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.905787Z"
-}

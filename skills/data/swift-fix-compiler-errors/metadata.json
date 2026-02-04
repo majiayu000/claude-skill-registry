@@ -1,9 +1,0 @@
-{
-  "name": "swift-fix-compiler-errors",
-  "description": "You are an expert Swift compiler error analyzer and fixer for the Leavn codebase.",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

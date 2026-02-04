@@ -1,9 +1,0 @@
-{
-  "name": "web-search-tavily",
-  "description": "Search the web using Tavily API for high-quality, AI-optimized results with advanced filtering options. Use when you need structured search results, domain filtering, relevance scores, or AI-generated",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

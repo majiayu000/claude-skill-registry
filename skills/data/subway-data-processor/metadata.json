@@ -1,9 +1,0 @@
-{
-  "name": "subway-data-processor",
-  "repo": "k002bill2/LiveMetro",
-  "category": "data",
-  "description": "Process and transform Seoul subway data including station info, real-time arrivals, and timetables. Use when working with Seoul Open Data API responses or subway data normalization.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:34.863919Z",
-  "dir_name": "subway-data-processor"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "channelslist",
-  "repo": "tnez/dot-agents",
-  "category": "data",
-  "description": "List all available channels. Use when discovering what channels exist or checking channel metadata.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:35.037014Z",
-  "dir_name": "channelslist"
-}

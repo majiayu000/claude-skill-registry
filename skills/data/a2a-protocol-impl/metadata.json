@@ -1,9 +1,0 @@
-{
-  "name": "a2a-protocol-impl",
-  "description": "Implement Agent-to-Agent (A2A) protocol for inter-agent communication. Use for agent discovery, agent cards, task delegation, and multi-agent orchestration. Triggers on \"A2A protocol\", \"agent-to-agent",
-  "repo": "raphaelmansuy/k8s-agent-stack",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

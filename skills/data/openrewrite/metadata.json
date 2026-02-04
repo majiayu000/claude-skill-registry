@@ -1,9 +1,0 @@
-{
-  "name": "openrewrite",
-  "description": "OpenRewrite recipe development and test maintenance. Use when writing OpenRewrite recipes, fixing test failures, or working with import ordering in recipe tests.",
-  "repo": "motlin/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

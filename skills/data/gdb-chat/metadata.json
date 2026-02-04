@@ -1,9 +1,0 @@
-{
-  "name": "gdb-chat",
-  "description": "Conversational GDB debugging for Breenix kernel. Use for interactive debugging sessions - set breakpoints, inspect registers, examine memory, step through code, investigate crashes.",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

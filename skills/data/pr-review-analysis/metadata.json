@@ -1,9 +1,0 @@
-{
-  "name": "pr-review-analysis",
-  "description": "Analyze pull request review comments, classify each comment (correct, uncertain, incorrect), and produce an ordered implementation plan. Use this for PR review triage, code review feedback analysis, a",
-  "repo": "findmydoc-platform/website",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

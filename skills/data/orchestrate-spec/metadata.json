@@ -1,9 +1,0 @@
-{
-  "name": "orchestrate-spec",
-  "description": "Auto-detects next pending Smart Orchestrator component, spawns 2-3 research agents, generates evidence-backed specs, validates, and offers optional implementation with automatic progress tracking.",
-  "repo": "usorama/rad-engineer-v2",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

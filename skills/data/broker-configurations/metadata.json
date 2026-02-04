@@ -1,9 +1,0 @@
-{
-  "name": "broker-configurations",
-  "description": "Message broker setup patterns (Redis, RabbitMQ, SQS) for Celery including connection strings, SSL configuration, high availability, and production best practices. Use when configuring message brokers,",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

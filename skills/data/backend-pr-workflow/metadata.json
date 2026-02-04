@@ -1,9 +1,0 @@
-{
-  "name": "backend-pr-workflow",
-  "description": "Pedantic Diversio backend dev workflow Skill that enforces ClickUp-linked branch/PR naming, PR hygiene, safe Django migrations, and downtime-safe schema changes for Django4Lyfe-style backends.",
-  "repo": "DiversioTeam/agent-skills-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

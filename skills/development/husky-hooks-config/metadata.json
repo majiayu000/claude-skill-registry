@@ -1,8 +1,0 @@
-{
-  "name": "husky-hooks-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "development",
-  "description": "Husky git hooks configuration with smart auto-detection for sensitive files, fail-fast execution, auto-fix workflows, and CI detection. Includes 5 required standards (smart .npmrc detection for multi-",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.055938Z"
-}

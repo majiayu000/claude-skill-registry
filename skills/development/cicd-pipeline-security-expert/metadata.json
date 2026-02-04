@@ -1,8 +1,0 @@
-{
-  "name": "cicd-pipeline-security-expert",
-  "repo": "martinholovsky/claude-skills-generator",
-  "category": "development",
-  "description": "Expert in CI/CD pipeline design with focus on secret management, code signing, artifact security, and supply chain protection for desktop application builds",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.067641Z"
-}

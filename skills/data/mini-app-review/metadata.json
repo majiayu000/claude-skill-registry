@@ -1,9 +1,0 @@
-{
-  "name": "mini-app-review",
-  "description": "デプロイ済みアプリの作成者レビューを実施する。「レビュー」「改善」「ブラッシュアップ」を依頼されたときに使用する。",
-  "repo": "matsuni-kk/mini-app-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/matsuni-kk/mini-app-agent"
-}

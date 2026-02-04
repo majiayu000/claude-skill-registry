@@ -1,9 +1,0 @@
-{
-  "name": "backtest-capital-accounting",
-  "description": "Critical fix for backtest capital accounting when equity curves are inflated or drawdown metrics are meaningless",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

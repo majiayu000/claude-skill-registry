@@ -1,9 +1,0 @@
-{
-  "name": "rename-attribute",
-  "description": "Renames a Terraform attribute safely without changing its schema or producing anunnecessary diff, while enabling users to use both the previous and subsequentattribute names for a deprecation period.",
-  "repo": "oxidecomputer/terraform-provider-oxide",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

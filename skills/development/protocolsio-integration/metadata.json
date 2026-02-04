@@ -1,7 +1,0 @@
-{
-  "name": "protocolsio-integration",
-  "description": "Integration with protocols.io API for managing scientific protocols. This skill should be used when working with protocols.io to search, create, update, or publish protocols; manage protocol steps and",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:17.462074Z"
-}

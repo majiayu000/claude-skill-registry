@@ -1,9 +1,0 @@
-{
-  "name": "smc-harness",
-  "description": "SMC trading agent skill for Alpha Harness backtesting. Provides ICT/SMC methodology,decision frameworks, and behavioral guidelines for autonomous trading in simulatedenvironments. USE WHEN agent wakes",
-  "repo": "AaronAbuUsama/alpha-arena",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

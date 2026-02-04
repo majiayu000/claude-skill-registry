@@ -1,8 +1,0 @@
-{
-  "name": "desktop-analysis",
-  "repo": "MassLab-SII/open-agent-skills",
-  "category": "development",
-  "description": "Desktop analysis and reporting tools. Includes music analysis with popularity scoring and file statistics (count files, folders, and calculate total size).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.862359Z"
-}

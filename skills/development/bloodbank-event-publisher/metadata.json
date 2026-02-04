@@ -1,8 +1,0 @@
-{
-  "name": "bloodbank-event-publisher",
-  "repo": "delorenj/bloodbank",
-  "category": "development",
-  "description": "Complete guide for creating, publishing, and consuming events in the DeLoNET home network's 33GOD agentic developer pipeline. Built on RabbitMQ with strict type safety via Pydantic, async Python (aio-",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:53.386260Z"
-}

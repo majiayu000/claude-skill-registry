@@ -1,8 +1,0 @@
-{
-  "name": "jj-changelog",
-  "repo": "hdemers/dotfiles",
-  "category": "product",
-  "description": "Proactively use to generate or update a CHANGELOG.md file from Jujutsu commit history. Use when you need to create release notes, document changes between tags, or update the project changelog. Emphas",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:52.467309Z"
-}

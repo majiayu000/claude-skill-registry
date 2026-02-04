@@ -1,9 +1,0 @@
-{
-  "name": "r2",
-  "description": "Manage Cloudflare R2 object storage buckets and objects using Wrangler CLI. Use when working with R2 buckets, uploading/downloading files, configuring custom domains, CORS, lifecycle policies, or mana",
-  "repo": "sapoepsilon/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

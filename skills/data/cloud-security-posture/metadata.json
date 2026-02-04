@@ -1,9 +1,0 @@
-{
-  "name": "cloud-security-posture",
-  "description": "Cloud Security Posture - Auto-activating skill for Security Advanced.Triggers on: cloud security posture, cloud security posturePart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

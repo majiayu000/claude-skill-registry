@@ -1,8 +1,0 @@
-{
-  "name": "authorization-security",
-  "repo": "williamzujkowski/standards",
-  "category": "security",
-  "description": "Authorization security standards covering RBAC, ABAC, policy enforcement, OAuth2 scopes, resource-based access control, and NIST 800-53 compliance (AC-3, AC-4, AC-6) for production systems",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:34.005950Z"
-}

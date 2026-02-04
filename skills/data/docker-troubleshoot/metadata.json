@@ -1,9 +1,0 @@
-{
-  "name": "docker-troubleshoot",
-  "description": "Diagnose container failures, networking issues, permissions, and port conflicts",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "delonauth-authentication-authorization",
-  "repo": "tw-lin/ng-lin",
-  "category": "security",
-  "description": "Implement authentication and authorization using @delon/auth. Use this skill when adding login/logout flows, JWT token management, role-based access control (RBAC), route guards, HTTP interceptors, an",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:13.821648Z"
-}

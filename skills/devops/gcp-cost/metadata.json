@@ -1,8 +1,0 @@
-{
-  "name": "gcp-cost",
-  "repo": "smorand/claude-config",
-  "category": "devops",
-  "description": "Expert in retrieving and analyzing GCP cost data from L'Or\u00e9al's BTDP infrastructure. **Use this skill whenever the user mentions \"GCP cost\", \"GCP costs\", \"cloud cost\", \"cloud spending\", \"billing\", \"GC",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.268388Z"
-}

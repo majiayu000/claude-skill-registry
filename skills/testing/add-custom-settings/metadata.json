@@ -1,8 +1,0 @@
-{
-  "name": "add-custom-settings",
-  "repo": "cbgbt/bottlerocket-forest",
-  "category": "testing",
-  "description": "Full workflow for adding custom settings: create model, wire to variant, test locally",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:28.098914Z"
-}

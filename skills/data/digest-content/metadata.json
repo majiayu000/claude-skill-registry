@@ -1,9 +1,0 @@
-{
-  "name": "digest-content",
-  "description": "对文章/转录/报告文本做结构化摘要，归档到主题档案（可选）并写入 U1 的长期记忆（mem0-memory）。",
-  "repo": "haizhouyuan/codexreadpublic",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

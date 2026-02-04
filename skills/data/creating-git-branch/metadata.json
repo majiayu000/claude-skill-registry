@@ -1,9 +1,0 @@
-{
-  "name": "creating-git-branch",
-  "description": "Git リポジトリの慣習に則って新しいブランチを作成します。ユーザーがブランチの作成を求めたときや、エージェントがブランチを作成するときに必ず使用してください。",
-  "repo": "p-chan/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

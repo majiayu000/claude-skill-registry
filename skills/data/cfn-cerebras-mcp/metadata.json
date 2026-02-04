@@ -1,9 +1,0 @@
-{
-  "name": "cfn-cerebras-mcp",
-  "description": "FAST code generation via mcp__cerebras-mcp__write tool using Z.ai glm-4.6. Use for rapid test generation, boilerplate creation, and bulk code tasks in main chat. Prompt must be SHORTER than output. Id",
-  "repo": "masharratt/claude-flow-novice",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/masharratt/claude-flow-novice"
-}

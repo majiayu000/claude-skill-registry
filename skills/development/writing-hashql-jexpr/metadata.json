@@ -1,7 +1,0 @@
-{
-  "name": "writing-hashql-jexpr",
-  "description": "HashQL J-Expr syntax for writing queries. Use when writing J-Expr code, using #literal/#struct/#list constructs, understanding function call syntax, or working with HashQL query files (.jsonc).",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.372598Z"
-}

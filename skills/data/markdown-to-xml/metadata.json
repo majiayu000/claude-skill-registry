@@ -1,9 +1,0 @@
-{
-  "name": "markdown-to-xml",
-  "description": "Convert markdown articles from Obsidian vault to XML format, preserving bold text, blockquotes, and header hierarchy based on hashtag count",
-  "repo": "sonomirco/agents-and-commands",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

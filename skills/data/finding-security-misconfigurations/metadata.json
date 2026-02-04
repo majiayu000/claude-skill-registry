@@ -1,9 +1,0 @@
-{
-  "name": "finding-security-misconfigurations",
-  "description": "Identify security misconfigurations in infrastructure-as-code, application settings, and system configurations.Use when you need to audit Terraform/CloudFormation templates, check application config f",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

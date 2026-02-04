@@ -1,9 +1,0 @@
-{
-  "name": "reasoningsystem-definition",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Draft and enforce system-level persona/rules for Ollama SYSTEM blocks. Use to translate role/constraints into Modelfile SYSTEM text.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:23.063061Z",
-  "dir_name": "reasoningsystem-definition"
-}

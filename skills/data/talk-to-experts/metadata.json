@@ -1,9 +1,0 @@
-{
-  "name": "talk-to-experts",
-  "description": "Consults a council of AI experts using multiple models in parallel. Activate when user says \"ask the experts\", \"consult the experts\", \"get expert opinions\", or requests multi-model expert opinions on ",
-  "repo": "michabbb/claude-code",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

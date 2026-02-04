@@ -1,9 +1,0 @@
-{
-  "name": "websockets",
-  "description": "Implement real-time bidirectional communication with Socket.io and ws library for chat, notifications, and live dashboards",
-  "repo": "pluginagentmarketplace/custom-plugin-nodejs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "implementing-from-task",
-  "description": "测试中, 用户明确指定执行 implementing-from-task 时候才执行, 其余情况一律不执行",
-  "repo": "taptap/claude-plugins-marketplace",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

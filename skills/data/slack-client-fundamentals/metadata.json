@@ -1,9 +1,0 @@
-{
-  "name": "slack-client-fundamentals",
-  "description": "Foundation skill for Slack Go SDK. Use when setting up a new Slack bot, initializing the API client, choosing between Web API vs Socket Mode vs Events API, implementing error handling patterns, or est",
-  "repo": "linehaul-ai/linehaulai-claude-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

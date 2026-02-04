@@ -1,8 +1,0 @@
-{
-  "name": "cqrs-command",
-  "repo": "duc01226/EasyPlatform",
-  "category": "development",
-  "description": "Use when creating or modifying a CQRS Command (Save, Create, Update, Delete) or command handler in .NET backend.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:48.586991Z"
-}

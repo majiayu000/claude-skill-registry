@@ -1,9 +1,0 @@
-{
-  "name": "documentation-research",
-  "description": "Enforces online documentation research before any technical implementation. Use when implementing features to ensure code follows current best practices by researching official documentation first.",
-  "repo": "jpoutrin/product-forge",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

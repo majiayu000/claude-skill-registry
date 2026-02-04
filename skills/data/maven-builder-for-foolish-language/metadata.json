@@ -1,9 +1,0 @@
-{
-  "name": "maven-builder-for-foolish-language",
-  "description": "Comprehensive Maven build strategies for mixed Java/Scala projects with parallel execution, intelligent test running, and targeted debugging workflows. Use this skill when user asks to build the proje",
-  "repo": "frcusaca/foolish",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

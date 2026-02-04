@@ -1,9 +1,0 @@
-{
-  "name": "risk-assessor",
-  "description": "Perform comprehensive risk assessments on OSCAL systems including threat modeling, vulnerability analysis, risk scoring, and POA&M generation. Use this skill to evaluate security posture and prioritiz",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

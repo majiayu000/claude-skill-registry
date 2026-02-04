@@ -1,9 +1,0 @@
-{
-  "name": "mlops",
-  "description": "MLOps engineering covering ML pipeline design, model versioning, experiment tracking, deployment strategies, drift detection, and monitoring for production ML systems with tools like MLflow, Kubeflow,",
-  "repo": "williamzujkowski/standards",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

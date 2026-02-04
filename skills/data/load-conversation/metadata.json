@@ -1,9 +1,0 @@
-{
-  "name": "load-conversation",
-  "description": "Load the full content of a previous Claude Code conversation into current context. Use when user asks to \"load conversation <uuid>\" or \"show me conversation <uuid>\" or references loading/viewing a pas",
-  "repo": "dhughes/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

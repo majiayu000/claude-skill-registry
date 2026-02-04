@@ -1,9 +1,0 @@
-{
-  "name": "throttling-apis",
-  "description": "Implement API throttling policies to protect backend services from overload.Use when controlling API request rates.Trigger with phrases like \"throttle API\", \"control request rate\", or \"add throttling\"",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "amcs-prompt-composer",
-  "repo": "miethe/MeatyMusic",
-  "category": "development",
-  "description": "Merge style, lyrics, and producer notes into render-ready composed prompt. Enforces character limits, resolves tag conflicts, normalizes living artist influences, and formats with clear section tags. ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:09.324769Z"
-}

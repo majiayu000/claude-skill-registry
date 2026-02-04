@@ -1,9 +1,0 @@
-{
-  "name": "react-frontend-spa",
-  "description": "ReactでSPAフロントエンドを実装・改修するためのガイド。バックエンド分離前提でNext.jsやサーバーサイド機能に依存せず、React Router中心のクライアント実装を行う時に使う。認証はAuthProviderとuseAuthカスタムフックで統一し、OpenAPIからorvalまたはopenapi-typescriptで型/クライアントを生成して利用する。ESLint+Prettier",
-  "repo": "Higashi-Masafumi/ai-coding-template",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

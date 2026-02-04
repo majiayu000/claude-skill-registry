@@ -1,9 +1,0 @@
-{
-  "name": "comparing-branches",
-  "description": "Use when user wants to compare two autonomy branches to see different approaches, metrics, and outcomes",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

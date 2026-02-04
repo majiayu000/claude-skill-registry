@@ -1,9 +1,0 @@
-{
-  "name": "white-labeling",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Tenant branding and customization patterns for SaaS applications. Covers custom domains, theming, email customization, and brand isolation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:10.365971Z",
-  "dir_name": "white-labeling"
-}

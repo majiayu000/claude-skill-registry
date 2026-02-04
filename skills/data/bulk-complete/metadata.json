@@ -1,9 +1,0 @@
-{
-  "name": "bulk-complete",
-  "description": "Bulk-complete tasks/steps in a project. Load when user says \"bulk complete [project]\", \"mark all done\", \"complete phase X\", or needs to finish project tasks efficiently. Works with both steps.md and t",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

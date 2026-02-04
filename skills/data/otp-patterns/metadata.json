@@ -1,9 +1,0 @@
-{
-  "name": "otp-patterns",
-  "description": "Implements OTP design patterns including GenServer, Supervisor, and Application behaviors.",
-  "repo": "layeddie/ai-rules",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

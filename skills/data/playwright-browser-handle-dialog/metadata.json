@@ -1,9 +1,0 @@
-{
-  "name": "playwright-browser-handle-dialog",
-  "description": "To accept or dismiss browser dialogs like alert/confirm/prompt, handle the dialog so automation can continue.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/X-School-Academy/ai-dev-swarm"
-}

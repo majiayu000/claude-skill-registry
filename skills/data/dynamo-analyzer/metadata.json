@@ -1,9 +1,0 @@
-{
-  "name": "dynamo-analyzer",
-  "description": "Analyze Dynamo (.dyn) graphs to extract workflow, Python/DesignScript code, Revit API patterns, and generate comprehensive reports for C# developers",
-  "repo": "sonomirco/agents-and-commands",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

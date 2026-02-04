@@ -1,9 +1,0 @@
-{
-  "name": "docker-kubernetes",
-  "description": "Dockerfile best practices, multi-stage builds, docker-compose patterns, and Kubernetes concepts",
-  "repo": "nategarelik/claude-code-config",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

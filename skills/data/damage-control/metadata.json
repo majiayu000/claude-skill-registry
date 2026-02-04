@@ -1,9 +1,0 @@
-{
-  "name": "damage-control",
-  "description": "Install, configure, and manage the Claude Code Damage Control security hooks system. Use when user mentions damage control, security hooks, protected paths, blocked commands, install security, or modi",
-  "repo": "disler/claude-code-damage-control",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

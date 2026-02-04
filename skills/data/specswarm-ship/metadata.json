@@ -1,9 +1,0 @@
-{
-  "name": "specswarm-ship",
-  "description": "Systematic quality validation, test verification, and safe merging workflow for deployment/release operations. ALWAYS asks for confirmation when user wants to ship, deploy, merge, release, or complete",
-  "repo": "MartyBonacci/specswarm",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

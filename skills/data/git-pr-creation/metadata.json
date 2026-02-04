@@ -1,9 +1,0 @@
-{
-  "name": "git-pr-creation",
-  "description": "Automatically creates comprehensive pull requests to the dev branch when user indicates their feature/fix is complete and ready for review. Use when user mentions creating PR, submitting for review, o",
-  "repo": "marcioaltoe/claude-craftkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "hcloud-cli",
-  "description": "Use when interacting with Hetzner Cloud via command line - managing servers, networks, volumes, load balancers, firewalls, DNS, or any cloud infrastructure operations with hcloud CLI",
-  "repo": "gaarutyunov/dev-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

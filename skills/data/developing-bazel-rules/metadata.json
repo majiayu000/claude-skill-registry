@@ -1,9 +1,0 @@
-{
-  "name": "developing-bazel-rules",
-  "description": "Use when creating custom Bazel rules, toolchains, providers, or aspects. Use when extending Bazel for new languages, build systems, or custom actions. Use when debugging Starlark rule implementations ",
-  "repo": "gaarutyunov/dev-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

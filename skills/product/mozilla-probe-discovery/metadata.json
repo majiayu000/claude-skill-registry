@@ -1,8 +1,0 @@
-{
-  "name": "mozilla-probe-discovery",
-  "repo": "akkomar/mozdata-claude-plugin",
-  "category": "product",
-  "description": "Find Mozilla telemetry probes and Glean metrics. Use when user asks about: Firefox metrics, Glean probes, telemetry data, accessibility probes, search metrics, or any Mozilla product instrumentation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:49.089953Z"
-}

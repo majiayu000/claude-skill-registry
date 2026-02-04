@@ -1,9 +1,0 @@
-{
-  "name": "controller-patterns",
-  "description": "ASP.NET Core controller patterns including thin controllers, routing, parameter binding, response types, and DTOs. Use when creating or reviewing API controllers.",
-  "repo": "Joshua-Palamuttam/claude-code-presentation",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

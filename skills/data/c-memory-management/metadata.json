@@ -1,9 +1,0 @@
-{
-  "name": "c-memory-management",
-  "description": "Use when managing memory in C programs with malloc/free, pointers, and avoiding common memory safety pitfalls.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

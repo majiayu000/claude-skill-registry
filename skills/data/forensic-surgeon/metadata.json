@@ -1,9 +1,0 @@
-{
-  "name": "forensic-surgeon",
-  "description": "Deep forensic debugging that never stops until root cause is found or visibility limit is proven. Use when user wants to understand exactly why something is broken, not work around it. Activates on \"w",
-  "repo": "agentydragon/ducktape",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

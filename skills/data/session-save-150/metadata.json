@@ -1,9 +1,0 @@
-{
-  "name": "session-save-150",
-  "description": "Save and restore session context between conversations. Use when ending a session to preserve progress, or starting a new session to restore context. Triggers on",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

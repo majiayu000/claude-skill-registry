@@ -1,8 +1,0 @@
-{
-  "name": "gcp-project-auditor",
-  "repo": "smorand/claude-config",
-  "category": "devops",
-  "description": "Expert in auditing GCP projects for security, compliance, and best practices. **Use this skill when the user asks to audit a GCP project, review GCP project security, scan GCP resources, or check GCP ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:28.985191Z"
-}

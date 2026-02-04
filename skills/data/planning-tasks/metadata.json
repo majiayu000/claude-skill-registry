@@ -1,9 +1,0 @@
-{
-  "name": "planning-tasks",
-  "description": "承認済みの設計書（DESIGN.md）からTDD準拠のTODO.mdを作成します。analyzing-requirementsスキルで設計が完了・承認された後に使用します。developingスキルで実装できる形式のタスクリストを生成します。",
-  "repo": "skanehira/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

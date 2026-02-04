@@ -1,9 +1,0 @@
-{
-  "name": "api-contract-sync-manager",
-  "description": "Validate OpenAPI, Swagger, and GraphQL schemas match backend implementation. Detect breaking changes, generate TypeScript clients, and ensure API documentation stays synchronized. Use when working wit",
-  "repo": "ananddtyagi/cc-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

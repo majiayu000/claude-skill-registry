@@ -1,8 +1,0 @@
-{
-  "name": "mova-code-exec-task-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Standardize how a single CLI command is executed in a repo: working dir, argv, timeout, env overrides \u2013 and capture exit code, logs, and a short human-readable summary.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:27.728094Z"
-}

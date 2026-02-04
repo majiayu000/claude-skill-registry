@@ -1,9 +1,0 @@
-{
-  "name": "update-job",
-  "description": "Edits standard job source files in src/ and runs deepwork install to sync changes. Use when updating job.yml or step instructions.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

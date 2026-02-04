@@ -1,9 +1,0 @@
-{
-  "name": "websocket-engineer-jeffallan-claude-skills",
-  "description": "Use when building real-time communication systems with WebSockets or Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis, presence tracking, room management.",
-  "repo": "Jeffallan/claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Jeffallan/claude-skills"
-}

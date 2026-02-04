@@ -1,9 +1,0 @@
-{
-  "name": "refactoring-executor",
-  "description": "Execute refactoring safely with test-first verification following best practices. Takes refactoring discovery reports as input and performs incremental refactoring with continuous validation. Ensures ",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "skill-making",
-  "description": "Creates and refines Claude agent skills following best practices. Use when creating new skills, improving existing ones, or learning about skill structure and conventions.",
-  "repo": "binarin/nixos-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

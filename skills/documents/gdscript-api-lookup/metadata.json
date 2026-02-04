@@ -1,8 +1,0 @@
-{
-  "name": "gdscript-api-lookup",
-  "repo": "minami110/claude-godot-tools",
-  "category": "documents",
-  "description": "Look up GDScript and Godot Engine documentation using Deepwiki and Context7.Use when you need to find implementation approaches, APIs, or code examples for Godot projects.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:10.202329Z"
-}

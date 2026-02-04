@@ -1,9 +1,0 @@
-{
-  "name": "infra-auditor",
-  "description": "Audit infrastructure status, health, and compliance without modifications - provides observability and drift detection",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

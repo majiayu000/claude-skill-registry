@@ -1,9 +1,0 @@
-{
-  "name": "lang-react",
-  "description": "Build React SPAs where components are declarative UI consuming external state (Zustand/XState/TanStack Query). Logic lives in stores, not components.",
-  "repo": "codethread/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

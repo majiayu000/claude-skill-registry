@@ -1,8 +1,0 @@
-{
-  "name": "rails-error-handling",
-  "repo": "nekorush14/dotfiles",
-  "category": "development",
-  "description": "Implement comprehensive error handling with specific rescue blocks, structured error responses, and proper logging. Use when handling exceptions, implementing error recovery, or building robust error ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.796019Z"
-}

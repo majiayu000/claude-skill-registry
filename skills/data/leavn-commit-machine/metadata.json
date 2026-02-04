@@ -1,9 +1,0 @@
-{
-  "name": "leavn-commit-machine",
-  "description": "Create clean, descriptive git commits for Leavn app following emoji prefix convention with comprehensive change summaries",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "comment-generator",
-  "description": "Generate code comments and docstrings. Use when user asks to \"add comments\", \"document this code\", \"explain with comments\", or \"add docstrings\".",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

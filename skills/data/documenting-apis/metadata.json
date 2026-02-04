@@ -1,9 +1,0 @@
-{
-  "name": "documenting-apis",
-  "description": "Generate API specification from codebase - endpoints, types, schemas. Triggers: API docs, endpoint documentation, API仕様, OpenAPI, Swagger, REST API.\n",
-  "repo": "thkt/claude-config",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/thkt/claude-config"
-}

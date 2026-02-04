@@ -1,7 +1,0 @@
-{
-  "name": "clinicaltrials-database",
-  "description": "Query ClinicalTrials.gov via API v2. Search trials by condition, drug, location, status, or phase. Retrieve trial details by NCT ID, export data, for clinical research and patient matching.",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.445993Z"
-}

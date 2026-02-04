@@ -1,9 +1,0 @@
-{
-  "name": "using-theme-variables",
-  "description": "Define and use theme variables with @theme directive, oklch() color format, semantic naming, and namespaced utilities. Use when customizing design tokens or creating design systems.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

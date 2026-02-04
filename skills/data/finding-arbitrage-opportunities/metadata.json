@@ -1,9 +1,0 @@
-{
-  "name": "finding-arbitrage-opportunities",
-  "description": "Detect profitable arbitrage opportunities across exchanges and DEXs in real-time.Use when discovering profitable arbitrage across exchanges.Trigger with phrases like \"find arbitrage\", \"scan for arb op",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

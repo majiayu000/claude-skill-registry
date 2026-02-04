@@ -1,9 +1,0 @@
-{
-  "name": "idempotency-patterns",
-  "description": "Use when designing idempotent APIs, handling retries safely, or preventing duplicate operations. Covers idempotency keys, at-most-once semantics, and duplicate prevention.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "frontend-e2e-user-journeys",
-  "repo": "samjhecht/wrangler",
-  "category": "testing",
-  "description": "Use when implementing critical user workflows that span multiple pages/components - tests complete journeys end-to-end using Page Object Model, user-centric selectors, and condition-based waiting; use",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:50.167435Z"
-}

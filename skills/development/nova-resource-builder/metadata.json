@@ -1,8 +1,0 @@
-{
-  "name": "nova-resource-builder",
-  "repo": "hackur/web-standards-playground-showcase",
-  "category": "development",
-  "description": "Create and modify Laravel Nova 5.x resources with PCR Card patterns (tab panels, Badge fields with closures, Select fields with constants). Triggers include \"nova resource\", \"nova badge\", \"nova tabs\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:04.112153Z"
-}

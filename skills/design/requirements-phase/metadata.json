@@ -1,8 +1,0 @@
-{
-  "name": "requirements-phase",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "design",
-  "description": "PRD creation with EA agent using AskUserQuestion for clarification, validation with reviewer, then BA extracts stories. NO HITL in this phase - continues to design-phase.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.509622Z"
-}

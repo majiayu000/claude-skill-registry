@@ -1,8 +1,0 @@
-{
-  "name": "adding-a-ticker",
-  "repo": "microbus-io/fabric",
-  "category": "devops",
-  "description": "Creates or modify a ticker of a microservice. Use when explicitly asked by the user to create or modify a ticker or a recurring operation for a microservice.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:32.073663Z"
-}

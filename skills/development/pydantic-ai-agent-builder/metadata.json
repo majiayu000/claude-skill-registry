@@ -1,8 +1,0 @@
-{
-  "name": "pydantic-ai-agent-builder",
-  "repo": "Krosebrook/source-of-truth-monorepo",
-  "category": "development",
-  "description": "Expert guidance for building AI agents with Pydantic AI framework. Use when creating multi-agent systems, AI orchestration workflows, or structured LLM applications with type safety and validation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.004367Z"
-}

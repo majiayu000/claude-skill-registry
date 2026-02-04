@@ -1,9 +1,0 @@
-{
-  "name": "agent-discovery",
-  "description": "Discovers all Claude Code agents in the system including built-in, plugin, project, and user-level agents. Use when you need to find which agents are available, understand the agent ecosystem, or prep",
-  "repo": "amirlehmam/actoris-project",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

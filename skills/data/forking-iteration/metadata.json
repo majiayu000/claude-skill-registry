@@ -1,9 +1,0 @@
-{
-  "name": "forking-iteration",
-  "description": "Use when user wants to create new autonomy branch from current commit or specific past iteration",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "claude-mcp-expert",
-  "description": "Model Context Protocol (MCP) expert for Claude Code. Install, configure, and troubleshoot MCP servers. Covers HTTP, SSE, and stdio transports, authentication, popular integrations (Sentry, GitHub, Jir",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.838470Z"
-}

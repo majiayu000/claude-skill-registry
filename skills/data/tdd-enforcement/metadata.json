@@ -1,9 +1,0 @@
-{
-  "name": "tdd-enforcement",
-  "description": "A workflow that enforces genuine test-driven development: tests first, behavior-focused, with strong edge-case coverage.",
-  "repo": "bostonaholic/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

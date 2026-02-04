@@ -1,8 +1,0 @@
-{
-  "name": "gitattributes-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Git attributes configuration for cross-platform line ending normalization and file handling. Includes 8 required pattern categories (global auto-detection, source code, shell scripts, Windows files, D",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.765561Z"
-}

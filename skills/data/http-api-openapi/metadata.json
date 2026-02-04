@@ -1,9 +1,0 @@
-{
-  "name": "http-api-openapi",
-  "description": "Keep HTTP handlers and OpenAPI (openapi.yaml) in sync. Use when adding/changing endpoints, request/response schemas, auth requirements, or error shapes.",
-  "repo": "matt-riley/mjrwtf",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

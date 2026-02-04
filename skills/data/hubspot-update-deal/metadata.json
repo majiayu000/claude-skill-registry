@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-update-deal",
-  "description": "Update an existing deal in HubSpot CRM. Load when user says 'update deal', 'edit deal', 'change deal stage', 'move deal', 'close deal'. Requires deal ID.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

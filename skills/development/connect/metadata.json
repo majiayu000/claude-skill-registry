@@ -1,7 +1,0 @@
-{
-  "name": "connect",
-  "description": "Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services.",
-  "category": "development",
-  "source": "github.com/ComposioHQ/awesome-claude-skills",
-  "imported_at": "2026-01-24T14:54:19.072027Z"
-}

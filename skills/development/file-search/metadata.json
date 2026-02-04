@@ -1,8 +1,0 @@
-{
-  "name": "file-search",
-  "repo": "massgen/MassGen",
-  "category": "development",
-  "description": "This skill should be used when agents need to search codebases for text patterns or structural code patterns. Provides fast search using ripgrep for text and ast-grep for syntax-aware code search.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:16.079753Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "clix-integration",
-  "repo": "clix-so/skills",
-  "category": "design",
-  "description": "Integrates Clix Mobile SDK into iOS, Android, Flutter, and React Native projects. Provides step-by-step guidance for installation, initialization, and verification. Use when the user asks to install, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:39.359726Z"
-}

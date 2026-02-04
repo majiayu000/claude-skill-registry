@@ -1,9 +1,0 @@
-{
-  "name": "deploying-machine-learning-models",
-  "description": "This skill enables AI assistant to deploy machine learning models to production environments. it automates the deployment workflow, implements best practices for serving models, optimizes performance,",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

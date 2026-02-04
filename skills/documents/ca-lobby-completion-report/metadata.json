@@ -1,8 +1,0 @@
-{
-  "name": "ca-lobby-completion-report",
-  "repo": "Ingramml/CA_lobby_prod_test",
-  "category": "documents",
-  "description": "Generate CA Lobby completion reports with all 12 required sections. Use when CA Lobby phase complete, user says \"phase complete\" or \"create completion report\". Ensures comprehensive documentation and ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:12.833977Z"
-}

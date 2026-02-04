@@ -1,9 +1,0 @@
-{
-  "name": "markdown-version-extractor",
-  "description": "Extracts 'version' or 'uuid' fields from YAML frontmatter using uv.",
-  "repo": "JasperHG90/persona",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

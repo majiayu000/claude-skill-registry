@@ -1,9 +1,0 @@
-{
-  "name": "incident-runbook-generator",
-  "description": "Creates step-by-step incident response runbooks for common outages with actions, owners, rollback procedures, and communication templates. Use for \"incident runbook\", \"outage response\", \"incident mana",
-  "repo": "patricio0312rev/skillset",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

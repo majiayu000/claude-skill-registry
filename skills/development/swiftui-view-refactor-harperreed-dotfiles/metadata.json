@@ -1,7 +1,0 @@
-{
-  "name": "swiftui-view-refactor-harperreed-dotfiles",
-  "description": "Refactor and review SwiftUI view files for consistent structure, dependency injection, and Observation usage. Use when asked to clean up a SwiftUI view’s layout/ordering, handle view models safely (no",
-  "category": "development",
-  "source": "github.com/harperreed/dotfiles",
-  "imported_at": "2026-01-24T14:53:55.827214Z"
-}

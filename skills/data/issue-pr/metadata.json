@@ -1,9 +1,0 @@
-{
-  "name": "issue-pr",
-  "description": "現在のブランチでPull Requestを作成し、CIステータスを確認。「/issue-pr」で使用",
-  "repo": "aoki-taquan/ruster",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

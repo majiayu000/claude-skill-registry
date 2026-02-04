@@ -1,9 +1,0 @@
-{
-  "name": "user-profiler",
-  "description": "Slack ユーザーのプロファイル情報を取得する。「ユーザー情報」「プロファイル見せて」「ユーザープロファイル」「〇〇さんの情報」「このユーザーは誰」「アカウント情報」「メンバー情報」などで起動。公式Slack MCPの `slack_get_user_profile` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

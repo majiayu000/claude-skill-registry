@@ -1,9 +1,0 @@
-{
-  "name": "engineering-nba-data",
-  "repo": "Emz1998/avaris-ai",
-  "category": "data",
-  "description": "Extracts, transforms, and analyzes NBA statistics using the nba_api Python library. Use when working with NBA player stats, team data, game logs, shot charts, league statistics, or any NBA-related dat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:26.480820Z",
-  "dir_name": "engineering-nba-data"
-}

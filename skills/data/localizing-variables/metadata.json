@@ -1,9 +1,0 @@
-{
-  "name": "localizing-variables",
-  "description": "Declare variables in smallest possible scope, initialize close to first use, minimize span and live time",
-  "repo": "barrydobson/dotfiles_extra",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "mova-skill-file-cleanup-snapshot-node-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Scans a filesystem target and produces ds.file_cleanup_snapshot_v1 (no deletions). Input: env.file_cleanup_snapshot_request_v1.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:48.715930Z"
-}

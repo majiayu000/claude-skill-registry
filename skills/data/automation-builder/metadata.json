@@ -1,9 +1,0 @@
-{
-  "name": "automation-builder",
-  "description": "Analyze codebases and generate Claude Code automation infrastructure including commands, scripts, and templates for systematic task execution. Use when the user wants to create reusable automation wor",
-  "repo": "ddunnock/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

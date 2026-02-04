@@ -1,9 +1,0 @@
-{
-  "name": "auth-security-validator",
-  "description": "Autonomous validation of authentication security. Checks password hashing, cookie configuration, CSRF protection, and session management for OWASP compliance.",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

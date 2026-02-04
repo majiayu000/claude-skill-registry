@@ -1,9 +1,0 @@
-{
-  "name": "pdf-parity-checker",
-  "description": "Verify visual and structural parity between XHTML chapters and POD PDF files. Use to ensure print edition matches digital EPUB layout.",
-  "repo": "miketui/Fm",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

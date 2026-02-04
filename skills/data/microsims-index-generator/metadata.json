@@ -1,9 +1,0 @@
-{
-  "name": "microsims-index-generator",
-  "description": "This skill generates a comprehensive index page for MicroSims in an intelligent textbook project. Use this skill when working with an MkDocs-based textbook that has MicroSims in a /docs/sims/ director",
-  "repo": "dmccreary/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

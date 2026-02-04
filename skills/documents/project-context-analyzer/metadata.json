@@ -1,8 +1,0 @@
-{
-  "name": "project-context-analyzer",
-  "repo": "orakitine/claude-code-lab",
-  "category": "documents",
-  "description": "Analyzes project structure, dependencies, and patterns to generate comprehensive context documentation. Uses parallel agent execution for faster analysis. Helps understand unfamiliar codebases quickly",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:26.874486Z"
-}

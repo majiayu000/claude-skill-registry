@@ -1,9 +1,0 @@
-{
-  "name": "dev-environment-bootstrapper",
-  "description": "Standardizes development environment setup across machines by generating tool version configs (Node, Python, Ruby), package manager configs (pnpm, Volta, asdf, mise), environment variable templates, a",
-  "repo": "patricio0312rev/skillset",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "transferring-files",
-  "repo": "trilwu/secskills",
-  "category": "design",
-  "description": "Transfer files between systems using HTTP, SMB, FTP, netcat, base64 encoding, and living-off-the-land techniques for both Linux and Windows. Use when moving tools or exfiltrating data.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:10.515706Z"
-}

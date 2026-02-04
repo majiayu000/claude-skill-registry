@@ -1,9 +1,0 @@
-{
-  "name": "tf-executor",
-  "description": "Terraform コマンドを実行する。「terraform plan」「terraform apply」「tf init」「tf plan」「tf apply」「terraform して」「tf 実行」「インフラ適用」「プラン確認」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

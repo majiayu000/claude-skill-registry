@@ -1,9 +1,0 @@
-{
-  "name": "playwright-browser-network-requests",
-  "description": "To inspect network activity since page load, list network requests to review API calls and resources.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/X-School-Academy/ai-dev-swarm"
-}

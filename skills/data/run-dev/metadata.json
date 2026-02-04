@@ -1,9 +1,0 @@
-{
-  "name": "run-dev",
-  "description": "Launch the PeakyPanes dev workflow by running scripts/dev-run in the current repo. Use when the user says \"run dev\" or asks to open a fresh Ghostty dev session that go installs, restarts the daemon, a",
-  "repo": "regenrek/peakypanes",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "spacing-scale",
-  "description": "Generates consistent spacing tokens using base values and ratios. Use when creating margin/padding systems, gap tokens, or layout spacing. Outputs CSS custom properties, Tailwind config, or JSON token",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

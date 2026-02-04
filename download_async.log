@@ -1,5 +1,0 @@
-2025-12-26 16:53:06,542 - INFO - Loading skills from skillsmp.json...
-2025-12-26 16:53:06,654 - INFO - Found 31469 skills to download with 100 concurrent connections
-2025-12-26 16:53:06,655 - INFO - Processing batch 1/63 (0-500)
-2025-12-26 16:53:58,467 - INFO - Progress: 500/31469 | Downloaded: 0 | Skipped: 199 | Failed: 301
-2025-12-26 16:53:58,467 - INFO - Processing batch 2/63 (500-1000)

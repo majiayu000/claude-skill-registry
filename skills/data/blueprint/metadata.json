@@ -1,9 +1,0 @@
-{
-  "name": "blueprint",
-  "description": "Provides unified CLI access for Blueprint framework - gate validation, document templates, FrontMatter schemas, worker handoffs, constitutions, and worker registry.",
-  "repo": "KwakYounHo/blueprint",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

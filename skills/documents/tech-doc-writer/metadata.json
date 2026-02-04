@@ -1,8 +1,0 @@
-{
-  "name": "tech-doc-writer",
-  "repo": "kevinslin/llm",
-  "category": "documents",
-  "description": "This skill should be used when writing or reviewing technical documentation such as READMEs, API documentation, quickstart guides, or any user-facing documentation. Apply editorial principles focused ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:29.376209Z"
-}

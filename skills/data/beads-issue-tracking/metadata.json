@@ -1,9 +1,0 @@
-{
-  "name": "beads-issue-tracking",
-  "description": "Track complex, multi-session work with dependency graphs using beads (beads) issue tracker. Use when work spans multiple sessions, has complex dependencies, or requires persistent context across compa",
-  "repo": "shaneholloman/beads",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

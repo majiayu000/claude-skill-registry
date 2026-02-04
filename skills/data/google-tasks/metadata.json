@@ -1,9 +1,0 @@
-{
-  "name": "google-tasks",
-  "description": "Manage Google Tasks and task lists. Load when user mentions 'google tasks', 'tasks', 'todo list', 'create task', 'complete task', or references task/todo management.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

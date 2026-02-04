@@ -1,9 +1,0 @@
-{
-  "name": "subagent-factory",
-  "description": "Create specialized Claude Code agents on-the-fly. Guides through agent definition file creation with proper frontmatter, effective prompts, and tool scoping. USE WHEN user says 'create agent', 'new su",
-  "repo": "AaronAbuUsama/alpha-arena",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

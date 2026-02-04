@@ -1,9 +1,0 @@
-{
-  "name": "config-management",
-  "description": "Validate config at startup, secrets in memory only. Never read config during requests, never store secrets in env vars. Use node-env-resolver for multi-source config.",
-  "repo": "jagreehal/jagreehal-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

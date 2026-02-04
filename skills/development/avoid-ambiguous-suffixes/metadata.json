@@ -1,8 +1,0 @@
-{
-  "name": "avoid-ambiguous-suffixes",
-  "repo": "j5ik2o/fraktor-rs",
-  "category": "development",
-  "description": "\u547d\u540d\u30fb\u8a2d\u8a08\u30ec\u30d3\u30e5\u30fc\u306b\u304a\u3044\u3066\u3001Manager / Util / Facade / Service / Runtime / Engine \u306a\u3069\u610f\u5473\u304c\u4e00\u610f\u306b\u5b9a\u307e\u3089\u306a\u3044\u30b5\u30d5\u30a3\u30c3\u30af\u30b9\u306e\u4f7f\u7528\u3092\u691c\u51fa\u3057\u3001\u8cac\u52d9\u30fb\u5883\u754c\u30fb\u5951\u7d04\u304c\u660e\u78ba\u306b\u4f1d\u308f\u308b\u547d\u540d\u3078\u5c0e\u304f\u305f\u3081\u306e\u30b9\u30ad\u30eb\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:51.902780Z"
-}

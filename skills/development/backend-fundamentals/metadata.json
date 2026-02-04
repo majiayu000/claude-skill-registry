@@ -1,8 +1,0 @@
-{
-  "name": "backend-fundamentals",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "development",
-  "description": "Auto-invoke when reviewing API routes, server logic, Express/Node.js code, or backend architecture. Enforces REST conventions, middleware patterns, and separation of concerns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:56.295434Z"
-}

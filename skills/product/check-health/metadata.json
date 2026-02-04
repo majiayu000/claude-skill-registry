@@ -1,8 +1,0 @@
-{
-  "name": "check-health",
-  "repo": "bencassie/flywheel",
-  "category": "product",
-  "description": "Comprehensive vault diagnostics and health report. Triggers when user mentions \"vault health\", \"health report\", \"vault diagnostics\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:43.908261Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "mcp-filesystem-browse",
-  "description": "Browse local workspace files via MCP filesystem tools (docker-fs).",
-  "repo": "eanzhao/aevatar-agent-framework",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ghe-thread-manager",
-  "description": "Use this skill when the user expresses ANY intent related to issue/thread management:- Switching issues: \"let's work on X\", \"switch to #Y\", \"go to the auth issue\"- Checking status: \"what are we workin",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

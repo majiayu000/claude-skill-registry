@@ -1,8 +1,0 @@
-{
-  "name": "herb-enterprise-context",
-  "repo": "nexi-lab/nexus",
-  "category": "documents",
-  "description": "Search enterprise context data (Slack, docs, meetings, PRs) from the HERB benchmark to answer questions about products, employees, customers, and organizational activities. Use when answering question",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:52.571951Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "session-guidance",
-  "description": "Configure Ralph loop guidance via AUQ flows - forbidden/encouraged items from constraint scan. TRIGGERS - session guidance, loop configuration, /ralph:start Step 1.6.",
-  "repo": "terrylica/cc-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "marketplace-builder",
-  "description": "Create and configure Claude Code marketplaces and plugins. Use when the user wants to create a marketplace, publish plugins, set up team plugin distribution, or configure marketplace.json or plugin.js",
-  "repo": "mike-coulbourn/claude-vibes",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

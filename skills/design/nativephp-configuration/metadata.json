@@ -1,8 +1,0 @@
-{
-  "name": "nativephp-configuration",
-  "repo": "NativePHP/ClaudePlugins",
-  "category": "design",
-  "description": "This skill should be used when the user asks about \"nativephp config\", \"nativephp.php\", \"nativephp permission\", \"enable camera permission\", \"NATIVEPHP_APP_ID\", \"environment variables\", \"app permission",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:16.912877Z"
-}

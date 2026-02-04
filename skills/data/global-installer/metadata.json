@@ -1,9 +1,0 @@
-{
-  "name": "global-installer",
-  "description": "Install global dependencies to the system. These are typically installing using `brew`",
-  "repo": "dwen3232/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

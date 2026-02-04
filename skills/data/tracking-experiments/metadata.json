@@ -1,9 +1,0 @@
-{
-  "name": "tracking-experiments",
-  "description": "A/Bテストと実験の設計・追跡を支援します。仮説検証、統計分析、メトリクス定義を提供します。データドリブンな意思決定、実験的機能の検証が必要な場合に使用してください。",
-  "repo": "sekka/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

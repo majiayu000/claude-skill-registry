@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-observability-engineering",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "devops",
-  "description": "Production-ready monitoring, logging, and tracing using Prometheus, Grafana, OpenTelemetry, DataDog, and Sentry. Use when setting up production monitoring, implementing SLOs, distributed tracing, or p",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:14.016037Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "aws-patterns",
-  "description": "AWS infrastructure patterns and best practices for Terraform. Provides VPC, IAM, S3, and security group scaffolds. Use when developing AWS infrastructure.",
-  "repo": "lgbarn/terraform-aws-eks",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

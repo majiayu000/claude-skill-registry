@@ -1,8 +1,0 @@
-{
-  "name": "markdown-adrs",
-  "repo": "madskilling/madskills",
-  "category": "documents",
-  "description": "Create and maintain MADR-format Architectural Decision Records in Markdown under `docs/decisions`. Use when the user wants to document important decisions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:55.662502Z"
-}

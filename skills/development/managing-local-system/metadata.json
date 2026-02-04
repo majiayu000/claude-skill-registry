@@ -1,8 +1,0 @@
-{
-  "name": "managing-local-system",
-  "repo": "binome-dev/humcp",
-  "category": "development",
-  "description": "Manages local filesystem operations, runs shell commands, and performs calculations. Use when working with local files, directories, executing shell commands, or doing mathematical calculations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:26.141255Z"
-}

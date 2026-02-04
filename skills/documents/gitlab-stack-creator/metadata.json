@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-stack-creator",
-  "repo": "rknall/claude-skills",
-  "category": "documents",
-  "description": "Create new GitLab stack projects from templates with proper directory structure, git configuration, validation hooks, and documentation. Use when initializing new Docker stack projects that follow Git",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:18.181582Z"
-}

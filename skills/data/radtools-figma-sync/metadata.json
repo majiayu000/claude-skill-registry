@@ -1,9 +1,0 @@
-{
-  "name": "radtools-figma-sync",
-  "description": "Set up or update RadTools design system from Figma. Use ONLY for initial design system import (colors, typography, spacing tokens) or when syncing design system updates from Figma. NOT for building pa",
-  "repo": "Radiants-DAO/radtools",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

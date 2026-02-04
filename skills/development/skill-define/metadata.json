@@ -1,8 +1,0 @@
-{
-  "name": "skill-define",
-  "repo": "epieczko/betty",
-  "category": "development",
-  "description": "Validate and register new Claude Code Skill manifests (.skill.yaml) to ensure structure, inputs/outputs, and dependencies are correct.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:28.089871Z"
-}

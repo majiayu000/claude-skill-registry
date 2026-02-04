@@ -1,8 +1,0 @@
-{
-  "name": "cleanup-github",
-  "repo": "spm1001/claude-config-public",
-  "category": "development",
-  "description": "Progressive audit and cleanup of GitHub accounts - stale forks, orphaned secrets, failing workflows, security configs. Audit-first with user approval before destructive actions. Triggers on 'clean up ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:32.433515Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "multi-agent-patterns",
-  "description": "Design multi-agent architectures for complex tasks. Use when single-agent context limits are exceeded, when tasks decompose naturally into subtasks, or when specializing agents improves quality.",
-  "category": "development",
-  "source": "github.com/NeoLabHQ/context-engineering-kit",
-  "imported_at": "2026-01-24T14:54:08.728280Z"
-}

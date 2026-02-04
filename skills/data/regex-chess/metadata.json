@@ -1,9 +1,0 @@
-{
-  "name": "regex-chess",
-  "description": "Guidance for generating legal chess moves using only regex pattern matching and substitution. This skill applies when implementing chess move generators constrained to regex-only solutions, FEN notati",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

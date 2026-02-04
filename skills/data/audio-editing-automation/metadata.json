@@ -1,9 +1,0 @@
-{
-  "name": "audio-editing-automation",
-  "description": "FFmpeg audio processing, batch editing, normalization, mixing, and automated audio production workflows. Use when processing audio at scale, automating editing tasks, or building audio pipelines.",
-  "repo": "onesmartguy/next-level-real-estate",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/onesmartguy/next-level-real-estate"
-}

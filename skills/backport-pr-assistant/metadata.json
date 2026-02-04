@@ -1,7 +1,0 @@
-{
-  "name": "backport-pr-assistant",
-  "repo": "cockroachdb/cockroach",
-  "path": ".claude/skills/backport-pr-assistant/SKILL.md",
-  "source": "github.com/cockroachdb/cockroach",
-  "downloaded_at": "2026-01-29T07:55:53.762467Z"
-}

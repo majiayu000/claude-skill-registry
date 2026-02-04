@@ -1,9 +1,0 @@
-{
-  "name": "ruby-metaprogramming",
-  "description": "Use when working with Ruby metaprogramming features including dynamic method definition, method_missing, class_eval, define_method, and reflection.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

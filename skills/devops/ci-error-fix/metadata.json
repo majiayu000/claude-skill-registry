@@ -1,8 +1,0 @@
-{
-  "name": "ci-error-fix",
-  "repo": "michael-freling/claude-code-tools",
-  "category": "devops",
-  "description": "Fixing CI errors systematically. Follows a structured workflow of understanding the error, checking if it exists on the main branch, reproducing locally, fixing, and verifying. Use when CI pipelines f",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:09.126529Z"
-}

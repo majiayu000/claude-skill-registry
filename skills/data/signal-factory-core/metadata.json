@@ -1,9 +1,0 @@
-{
-  "name": "signal-factory-core",
-  "description": "AI-powered Signal Factory Core for processing observability signals and maintaining the knowledge graph. Use when: (1) Developing Signal Engines (Freshness, Drift, Contract, DQ, Volume, Anomaly), (2) ",
-  "repo": "Kart-rc/dataobservability-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

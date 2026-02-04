@@ -1,9 +1,0 @@
-{
-  "name": "n8n-flow-builder",
-  "description": "Expert guidance for designing, building, and maintaining n8n workflows across dev/staging/prod environments on Railway with MCP integration. Handles flow authoring, node configuration, error handling,",
-  "repo": "mapachekurt/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

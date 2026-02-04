@@ -1,9 +1,0 @@
-{
-  "name": "cto-advisor",
-  "description": "Technical leadership guidance for engineering teams, architecture decisions, and technology strategy. Includes tech debt analyzer, team scaling calculator, engineering metrics frameworks, technology e",
-  "category": "c-level",
-  "tags": [],
-  "source": "github.com/claude-skills",
-  "source_path": "c-level-advisor/cto-advisor/SKILL.md",
-  "imported_at": "2026-01-24T08:30:59.343927Z"
-}

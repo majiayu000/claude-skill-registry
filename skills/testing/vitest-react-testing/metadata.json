@@ -1,8 +1,0 @@
-{
-  "name": "vitest-react-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write unit and component tests with Vitest, React Testing Library, and MSW. Use when writing unit tests, component tests, or mocking APIs following TDD workflow.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.689363Z"
-}

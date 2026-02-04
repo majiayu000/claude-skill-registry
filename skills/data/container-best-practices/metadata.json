@@ -1,9 +1,0 @@
-{
-  "name": "container-best-practices",
-  "description": "Expert guidance on dockerfile optimization, multi-stage builds, layer caching strategies, and base image selection. Activates when working with \"dockerfile\", \"docker-compose\", \"multi-stage\", \"containe",
-  "repo": "Lobbi-Docs/claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

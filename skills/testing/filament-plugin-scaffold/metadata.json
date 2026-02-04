@@ -1,8 +1,0 @@
-{
-  "name": "filament-plugin-scaffold",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "testing",
-  "description": "Scaffold Filament plugins with Plugin class, ServiceProvider, Resources, and Pest tests",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:16.722921Z"
-}

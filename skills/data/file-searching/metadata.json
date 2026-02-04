@@ -1,9 +1,0 @@
-{
-  "name": "file-searching",
-  "description": "Regex-based file search across repository contents using gh-grep extension. Use when searching code files for patterns, not issue content.",
-  "repo": "terrylica/claude-code-skills-github-issues",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

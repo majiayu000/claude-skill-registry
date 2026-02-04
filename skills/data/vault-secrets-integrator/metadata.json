@@ -1,9 +1,0 @@
-{
-  "name": "vault-secrets-integrator",
-  "description": "Vault Secrets Integrator - Auto-activating skill for DevOps Advanced.Triggers on: vault secrets integrator, vault secrets integratorPart of the DevOps Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

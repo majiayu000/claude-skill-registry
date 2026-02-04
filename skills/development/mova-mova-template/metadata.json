@@ -1,8 +1,0 @@
-{
-  "name": "mova-mova-template",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Minimal example skill that turns a natural-language procedure description into a structured list of steps. Serves as the reference pattern for other MOVA skills in this lab.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:02.560717Z"
-}

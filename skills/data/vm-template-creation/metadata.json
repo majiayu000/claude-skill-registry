@@ -1,9 +1,0 @@
-{
-  "name": "vm-template-creation",
-  "description": "Create, configure, and manage VM templates in Proxmox. Build reusable VM images for rapid deployment of standardized environments, including Kubernetes clusters and managed applications.",
-  "repo": "surrealwolf/proxmox-ve-mcp",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

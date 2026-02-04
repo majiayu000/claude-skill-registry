@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-terragrunt",
-  "repo": "martimramos/claude-forge",
-  "category": "devops",
-  "description": "Terragrunt wrapper for Terraform with DRY configurations. Enforces plan-before-apply workflow. Use when working with terragrunt.hcl files.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.750758Z"
-}

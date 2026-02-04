@@ -1,9 +1,0 @@
-{
-  "name": "broker-order-limitations",
-  "description": "Alpaca broker limitations: crypto shorts blocked (broker doesn't support), stock shorts allowed. Trigger when: (1) shorting gate blocks wrong assets, (2) SELL signals blocked, (3) order type confusion",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "quality-critic",
-  "description": "Adversarial validation for all stages. Detects fabrications, identifies analytical flaws, challenges assumptions, makes approval decisions. Seeks problems rather than confirming quality. Does NOT comp",
-  "repo": "ensingm2/AI-threat-modeling-rulesets",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

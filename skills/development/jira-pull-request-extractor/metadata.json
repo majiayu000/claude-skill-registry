@@ -1,8 +1,0 @@
-{
-  "name": "jira-pull-request-extractor",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "description": "Recursively extract GitHub Pull Request links from Jira issues",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.833942Z"
-}

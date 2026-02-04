@@ -1,8 +1,0 @@
-{
-  "name": "state-implementation",
-  "repo": "pluginagentmarketplace/custom-plugin-angular",
-  "category": "development",
-  "description": "Implement NgRx store with actions and reducers, build selectors, create effects for async operations, configure entity adapters, and integrate HTTP APIs with state management.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:11.155755Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "inbox-processing-example",
-  "repo": "Avery2/things3-mcp-tools",
-  "category": "productivity",
-  "description": "EXAMPLE - Workflow for processing large Things3 inboxes using LLM-driven confidence matching and intelligent automation. This is a genericized example - create your own version in inbox-processing/ fo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.839940Z"
-}

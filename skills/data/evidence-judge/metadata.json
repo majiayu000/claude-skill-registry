@@ -1,9 +1,0 @@
-{
-  "name": "evidence-judge",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Validate claims against sources and score confidence; use when asked to verify research output accuracy.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.446703Z",
-  "dir_name": "evidence-judge"
-}

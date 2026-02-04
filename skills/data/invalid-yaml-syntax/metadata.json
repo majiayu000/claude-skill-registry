@@ -1,7 +1,0 @@
-{
-  "name": "invalid-yaml-syntax",
-  "repo": "maxvaega/skillkit",
-  "path": "tests/fixtures/skills/invalid-yaml-syntax/SKILL.md",
-  "source": "github.com/maxvaega/skillkit",
-  "downloaded_at": "2026-02-04T03:09:47.755196Z"
-}

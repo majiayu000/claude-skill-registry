@@ -1,9 +1,0 @@
-{
-  "name": "dify-tool-developer",
-  "description": "Guide AI agents through Dify tool plugin development with mandatory documentation loading and direct CLI usage. Use when creating Dify tool plugins or extending Dify with custom tools.",
-  "repo": "skilzy-ai/official-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

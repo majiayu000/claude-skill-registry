@@ -1,9 +1,0 @@
-{
-  "name": "aoc-solution-review",
-  "description": "Reviews Advent of Code TypeScript solutions for code quality, TypeScript idioms, and performance. Use when asked to review a day's solution, critique AoC code, or get feedback on puzzle implementation",
-  "repo": "krwenholz/adventofcode-2025",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

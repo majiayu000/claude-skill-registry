@@ -1,9 +1,0 @@
-{
-  "name": "regulatory-templates",
-  "description": "3-gate regulatory template orchestrator - manages setup, Gate 1 (analysis),Gate 2 (validation), Gate 3 (generation) for BACEN/RFB compliance.",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "flow-error-zod-import",
-  "description": "Fix Zod schema import issues during Flow to Output SDK migration. Use when seeing \"incompatible schema\" errors, type errors at step boundaries, or when migrating files that import from 'zod' directly.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

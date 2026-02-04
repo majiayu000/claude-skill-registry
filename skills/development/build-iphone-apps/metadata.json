@@ -1,8 +1,0 @@
-{
-  "name": "build-iphone-apps",
-  "repo": "glittercowboy/taches-cc-resources",
-  "category": "development",
-  "description": "Build professional native iPhone apps in Swift with SwiftUI and UIKit. Full lifecycle - build, debug, test, optimize, ship. CLI-only, no Xcode. Targets iOS 26 with iOS 18 compatibility.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:14.738274Z"
-}

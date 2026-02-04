@@ -1,8 +1,0 @@
-{
-  "name": "schema-evolution",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "description": "Schema evolution patterns for backward and forward compatibility",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:01.364743Z"
-}

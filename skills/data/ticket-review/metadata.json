@@ -1,9 +1,0 @@
-{
-  "name": "ticket-review",
-  "description": "Reviews existing tickets for gaps, inconsistencies, and issues with severity classification.This skill should be used when reviewing a ticket document for quality, completeness, andimplementer readine",
-  "repo": "malhashemi/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

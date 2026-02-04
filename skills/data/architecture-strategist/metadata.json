@@ -1,9 +1,0 @@
-{
-  "name": "architecture-strategist",
-  "description": "Use this agent when analyzing code changes from an architectural perspective, evaluating system design decisions, or ensuring changes align with established architectural patterns. Triggers on request",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

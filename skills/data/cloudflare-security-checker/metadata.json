@@ -1,9 +1,0 @@
-{
-  "name": "cloudflare-security-checker",
-  "description": "Automatically validates Cloudflare Workers security patterns during development, ensuring proper secret management, CORS configuration, and input validation",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

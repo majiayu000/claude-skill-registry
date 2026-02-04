@@ -1,9 +1,0 @@
-{
-  "name": "history-analyzer",
-  "description": "Analyze git history for hotspots, coupling, and knowledge distribution. Use when user asks \"who knows this code\", \"what files change most\", \"hotspots\", \"bus factor\", \"knowledge silos\", or needs to und",
-  "repo": "lis186/SourceAtlas",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

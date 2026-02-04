@@ -1,9 +1,0 @@
-{
-  "name": "beads-bridge",
-  "description": "Use when tracking Beads epic status, syncing progress to GitHub/Shortcut, generating dependency diagrams, or monitoring multi-repo work. Bridges Beads issue tracking with project management tools.",
-  "repo": "wellmaintained/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "private-suno-analyze",
-  "description": "曲を設計視点で分析し、analysis/{slug}.mdに保存。曲の本質、構造、コード進行、アレンジメントを言語化する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

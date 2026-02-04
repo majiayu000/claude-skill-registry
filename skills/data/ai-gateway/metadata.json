@@ -1,9 +1,0 @@
-{
-  "name": "ai-gateway",
-  "description": "Build AI gateway services for routing and managing LLM requests. Use when implementing API proxies, rate limiting, or multi-provider AI services.",
-  "repo": "astoeffer/plugin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ops-compliance-runbook",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Execute compliance audit workflows with evidence trails and approvals; use when asked to verify SOC2, HIPAA, or GDPR controls.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:22.289484Z",
-  "dir_name": "ops-compliance-runbook"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "start-orchestrator",
-  "repo": "privateGithubUser/orchestrator-agent-with-adws",
-  "category": "design",
-  "description": "Starts the Orchestrator 3 Stream application (backend + frontend) in background mode. Use when the user asks to start orchestrator, launch orchestrator, run orchestrator, or open the orchestrator UI. ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:43.233188Z"
-}

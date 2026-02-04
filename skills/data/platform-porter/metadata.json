@@ -1,9 +1,0 @@
-{
-  "name": "platform-porter",
-  "description": "Port CClean-Killer features to Linux and Windows platforms. Use when asked to add Linux support, Windows support, cross-platform compatibility, port a feature, or implement platform-specific scripts.",
-  "repo": "brainbloodbarrier/CClean-Killer",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

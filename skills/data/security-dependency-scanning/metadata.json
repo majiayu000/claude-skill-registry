@@ -1,9 +1,0 @@
-{
-  "name": "security-dependency-scanning",
-  "description": "Guide for conducting comprehensive web dependency security scans to identify outdated libraries, CVEs, and security misconfigurations. Use when analyzing deployed websites for dependency vulnerabiliti",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

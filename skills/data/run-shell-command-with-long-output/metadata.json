@@ -1,9 +1,0 @@
-{
-  "name": "run-shell-command-with-long-output",
-  "description": "Run shell commands where long (many tokens) output is expected. Use when you need to",
-  "repo": "marcinjahn/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "bacchus",
-  "description": "Multi-agent coordination CLI for codebases. Use when orchestrating parallel agents, claiming tasks, detecting symbol conflicts, or notifying stakeholders of breaking changes. Invoke when user mentions",
-  "repo": "vu1n/bacchus",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

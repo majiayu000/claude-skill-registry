@@ -1,9 +1,0 @@
-{
-  "name": "section-detection",
-  "description": "Detect clinical note sections (HPI, ROS, Assessment, Plan) using regex patterns and LLM topic segmentation. Generates ToC with accurate byte offsets.",
-  "repo": "RooseveltAdvisors/ClinicalNoteAgent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

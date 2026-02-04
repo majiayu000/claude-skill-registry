@@ -1,9 +1,0 @@
-{
-  "name": "frappe-doctype-builder",
-  "description": "Build Frappe DocTypes with fields, permissions, and naming configurations. Use this skill when creating or modifying DocType structures.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "create-script",
-  "repo": "kedbin/chatterbox-skills",
-  "category": "marketing",
-  "description": "Transforms content into a voiceover-ready script optimized for Chatterbox TTS. Use when the user provides ANY content for voiceover - URLs, raw text, video scripts, notes, or asks to \"create a script\"",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:36.542264Z"
-}

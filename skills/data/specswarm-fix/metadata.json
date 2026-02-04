@@ -1,9 +1,0 @@
-{
-  "name": "specswarm-fix",
-  "description": "Systematic bugfix workflow with regression testing, auto-retry logic, and comprehensive validation. Auto-executes when user clearly wants to fix, debug, repair, resolve, broken, not working, doesn't w",
-  "repo": "MartyBonacci/specswarm",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "crm-rmx-sync-integration",
-  "description": "Create or update CRM to RMX syncing integrations. Use when adding a new synced entity, mapping, EF Core model/migration, or CrmSyncingInboxService logic for CRM to RMX (and optional RMX to CRM live sy",
-  "repo": "EdWrld/config.files",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/EdWrld/config.files"
-}

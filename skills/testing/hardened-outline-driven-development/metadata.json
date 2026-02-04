@@ -1,8 +1,0 @@
-{
-  "name": "hardened-outline-driven-development",
-  "repo": "OutlineDriven/odin-claude-plugin",
-  "category": "testing",
-  "description": "Automated validation orchestration across proof, spec, type, contract, and test artifacts with configurable precedence and gating. This skill provides both reference documentation AND execution capabi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:08.907666Z"
-}

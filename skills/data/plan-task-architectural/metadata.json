@@ -1,9 +1,0 @@
-{
-  "name": "plan-task-architectural",
-  "description": "Use when the user asks for a plan or the task is complex/ambiguous. Enforces AGENTS.md workflow and encourages loading other relevant skills.",
-  "repo": "CheekyCodexConjurer/quant-lab",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CheekyCodexConjurer/quant-lab"
-}

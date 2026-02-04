@@ -1,9 +1,0 @@
-{
-  "name": "vitest-test-creator",
-  "description": "Vitest Test Creator - Auto-activating skill for Test Automation.Triggers on: vitest test creator, vitest test creatorPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

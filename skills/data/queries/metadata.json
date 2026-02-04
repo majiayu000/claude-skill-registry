@@ -1,9 +1,0 @@
-{
-  "name": "queries",
-  "repo": "cliftonc/drizzle-cube-skills",
-  "category": "data",
-  "description": "Build and execute semantic queries with filters, time dimensions, aggregations, and ordering in drizzle-cube. Use when querying analytics data, filtering results, working with date ranges, aggregating",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:35.362616Z",
-  "dir_name": "queries"
-}

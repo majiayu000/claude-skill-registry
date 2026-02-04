@@ -1,9 +1,0 @@
-{
-  "name": "issue-lister",
-  "description": "オープン Issue の一覧を優先順位付きで表示する。「Issue 一覧」「Issue リスト」「オープン Issue」「Issue を見せて」「チケット一覧」「未解決 Issue」「Issue 確認」などで起動。優先度順にソートして表示。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

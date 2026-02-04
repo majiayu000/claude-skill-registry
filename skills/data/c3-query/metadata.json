@@ -1,9 +1,0 @@
-{
-  "name": "c3-query",
-  "description": "Use when project has .c3/ and user asks about architecture or code location.Triggers: \"explain\", \"where is\", \"look for\", \"how does\", \"what is\", \"find\", \"show me\", C3 IDs (c3-0, c3-1, adr-*).",
-  "repo": "lagz0ne/c3-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

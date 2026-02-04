@@ -1,9 +1,0 @@
-{
-  "name": "prow-job-extract-must-gather",
-  "description": "Extract and decompress must-gather archives from Prow CI job artifacts, generating an interactive HTML file browser with filters",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

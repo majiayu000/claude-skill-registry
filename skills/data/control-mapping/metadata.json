@@ -1,9 +1,0 @@
-{
-  "name": "control-mapping",
-  "description": "Maps NIST controls to FedRAMP requirements and documents. Use when helping with control implementation, compliance mapping, security baseline alignment, or understanding control requirements.",
-  "repo": "ethanolivertroy/fedramp-docs-mcp",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

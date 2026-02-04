@@ -1,9 +1,0 @@
-{
-  "name": "sentry-ci-integration",
-  "description": "Integrate Sentry with CI/CD pipelines.Use when setting up GitHub Actions, GitLab CI, or other CI systemswith Sentry releases and source maps.Trigger with phrases like \"sentry github actions\", \"sentry ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

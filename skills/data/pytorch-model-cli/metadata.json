@@ -1,9 +1,0 @@
-{
-  "name": "pytorch-model-cli",
-  "description": "Guidance for creating standalone CLI tools that perform neural network inference by extracting PyTorch model weights and reimplementing inference in C/C++. This skill applies when tasks involve conver",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

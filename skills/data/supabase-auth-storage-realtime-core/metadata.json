@@ -1,9 +1,0 @@
-{
-  "name": "supabase-auth-storage-realtime-core",
-  "description": "Execute Supabase secondary workflow: Auth + Storage + Realtime.Use when implementing secondary use case,or complementing primary workflow.Trigger with phrases like \"supabase auth storage realtime\",\"im",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

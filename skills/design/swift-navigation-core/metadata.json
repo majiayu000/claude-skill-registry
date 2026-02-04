@@ -1,8 +1,0 @@
-{
-  "name": "swift-navigation-core",
-  "repo": "nonameplum/agent-skills",
-  "category": "design",
-  "description": "Core navigation primitives for Swift: AlertState, ConfirmationDialogState, UIBinding, and observation tools",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:28.705429Z"
-}

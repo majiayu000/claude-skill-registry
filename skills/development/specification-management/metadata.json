@@ -1,7 +1,0 @@
-{
-  "name": "specification-management",
-  "description": "Initialize and manage specification directories with auto-incrementing IDs. Use when creating new specs, checking spec status, tracking user decisions, or managing the docs/specs/ directory structure.",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.212515Z"
-}

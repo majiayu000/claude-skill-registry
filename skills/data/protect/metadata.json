@@ -1,9 +1,0 @@
-{
-  "name": "protect",
-  "description": "Annotate passing code with protection levels (@protected/@immutable/@maintainable). Use when stabilizing working features to prevent regressions.",
-  "repo": "AEtherlight-ai/lumina",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

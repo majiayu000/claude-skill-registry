@@ -1,9 +1,0 @@
-{
-  "name": "critic",
-  "description": "Challenge assumptions and probe reasoning using adversarial thinking. Use when asked to find weaknesses, challenge a design, identify edge cases, or stress-test an approach. Triggers on: \"use critic m",
-  "repo": "mcouthon/agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

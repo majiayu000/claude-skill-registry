@@ -1,9 +1,0 @@
-{
-  "name": "go-api-gateway",
-  "description": "Build the AgentStack API Gateway in Go with Fiber/Chi. Use for creating REST API endpoints, HTTP handlers, middleware, request validation, and API routing. Triggers on \"build API\", \"create endpoint\", ",
-  "repo": "raphaelmansuy/k8s-agent-stack",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "checking-infrastructure-compliance",
-  "description": "Use when you need to work with compliance checking.This skill provides compliance monitoring and validation with comprehensive guidance and automation.Trigger with phrases like \"check compliance\", \"va",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

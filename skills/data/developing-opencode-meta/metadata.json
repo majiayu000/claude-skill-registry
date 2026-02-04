@@ -1,9 +1,0 @@
-{
-  "name": "developing-opencode-meta",
-  "description": "Build OpenCode plugins, agents, hooks, and tools. Use when creating, reviewing, or debugging OpenCode extensions. Covers plugin architecture, agent configuration, lifecycle hooks, custom tools, and di",
-  "repo": "mikekelly/opencode-promode",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

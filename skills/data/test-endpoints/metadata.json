@@ -1,9 +1,0 @@
-{
-  "name": "test-endpoints",
-  "description": "This skill automates API endpoint testing and documentation. It runs curl requests against specified endpoints, captures responses, validates against OpenAPI spec, and generates markdown documentation",
-  "repo": "adryanev/.dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

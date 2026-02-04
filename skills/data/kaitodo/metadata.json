@@ -1,9 +1,0 @@
-{
-  "name": "kaitodo",
-  "description": "Manage Kai's task queue - capture topics to work on when Claude usage is available.\n\nCommands:\n- /kai-todo add <topic> - Add a new task to the queue\n- /kai-todo list - Show all queued tasks\n- /kai-tod",
-  "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/robdtaylor/personal-ai-infrastructure"
-}

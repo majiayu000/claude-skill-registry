@@ -1,9 +1,0 @@
-{
-  "name": "student-database",
-  "repo": "MassLab-SII/open-agent-skills",
-  "category": "data",
-  "description": "Student database processing tools. Includes grade calculation, duplicate name detection, recommendation letter filtering, and TOEFL score filtering.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.840549Z",
-  "dir_name": "student-database"
-}

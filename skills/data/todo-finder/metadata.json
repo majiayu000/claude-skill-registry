@@ -1,9 +1,0 @@
-{
-  "name": "todo-finder",
-  "description": "Finds and organizes TODO, FIXME, HACK, and NOTE comments in codebase. Use when user asks to \"find TODOs\", \"show all FIXMEs\", \"list action items\", or \"what needs to be done\".",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

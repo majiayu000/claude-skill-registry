@@ -1,9 +1,0 @@
-{
-  "name": "local-eks-development",
-  "description": "Local Kubernetes development with EKS parity using Kind, LocalStack for AWS services, and local Keycloak for authentication testing",
-  "repo": "Lobbi-Docs/claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Lobbi-Docs/claude"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "arch-skill",
-  "description": "Formalize architecture planning into a single, iterative workflow and produce one canonical architecture document (no doc sprawl). Use for architectural changes, refactors, or new system design.",
-  "repo": "aelaguiz/arch_skill",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/aelaguiz/arch_skill"
-}

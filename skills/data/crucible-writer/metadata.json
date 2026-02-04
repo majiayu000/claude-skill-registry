@@ -1,9 +1,0 @@
-{
-  "name": "crucible-writer",
-  "description": "First-draft writing assistant for Crucible-planned novels. Use when author has completed planning (crucible-planner) and outlining (crucible-outliner) and wants to write the actual prose. Handles scen",
-  "repo": "forsonny/The-Crucible-Writing-System-For-Claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

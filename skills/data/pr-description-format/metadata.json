@@ -1,9 +1,0 @@
-{
-  "name": "pr-description-format",
-  "description": "Provides PR description format and workflow requirements for GitHub pull requests. Use this skill when creating PRs or using 'gh pr create'.",
-  "repo": "kokuyouwind/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

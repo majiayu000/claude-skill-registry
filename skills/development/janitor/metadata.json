@@ -1,8 +1,0 @@
-{
-  "name": "janitor",
-  "repo": "mcouthon/agents",
-  "category": "development",
-  "description": "Clean codebase by eliminating waste through deletion and simplification. Use when asked to remove dead code, clean up unused imports, delete debug statements, or simplify over-engineered code. Trigger",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:40.620969Z"
-}

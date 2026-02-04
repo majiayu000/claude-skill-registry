@@ -1,8 +1,0 @@
-{
-  "name": "github-pr-resolver",
-  "repo": "zenobi-us/dotfiles",
-  "category": "development",
-  "description": "Automate GitHub pull request review resolution by processing ALL review comments and fixing ALL failing CI checks. Use when: (1) A PR has review comments that need to be addressed and resolved, (2) CI",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:01.849024Z"
-}

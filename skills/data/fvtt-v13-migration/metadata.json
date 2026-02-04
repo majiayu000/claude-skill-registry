@@ -1,9 +1,0 @@
-{
-  "name": "fvtt-v13-migration",
-  "description": "This skill should be used when the user asks to \"migrate to V13\", \"upgrade to Foundry V13\", \"update module for V13\", \"fix V13 compatibility\", \"convert to ESM\", \"use DataModel\", or mentions V13-specifi",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

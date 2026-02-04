@@ -1,9 +1,0 @@
-{
-  "name": "inkjs-design",
-  "description": "Ink.js (React for CLI) design and implementation guide.Use when:(1) Creating or modifying Ink.js components(2) Implementing Ink-specific hooks (useInput, useApp, useFocus)(3) Handling emoji/icon width",
-  "repo": "akiojin/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

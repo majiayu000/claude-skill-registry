@@ -1,9 +1,0 @@
-{
-  "name": "fp-workflow",
-  "description": "This skill should be used when the user asks to \"start working on issue\", \"what should I work on\", \"pick up task\", \"continue work\", \"find next task\", \"hand off\", or \"end session\". Provides agent work ",
-  "repo": "fiberplane/claude-code-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

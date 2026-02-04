@@ -1,9 +1,0 @@
-{
-  "name": "web-tests",
-  "description": "Complete browser automation with Playwright. **ALWAYS use when user needs browser testing, E2E testing, screenshots, form testing, or responsive design validation.** Auto-detects dev servers, saves te",
-  "repo": "marcioaltoe/claude-craftkit",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

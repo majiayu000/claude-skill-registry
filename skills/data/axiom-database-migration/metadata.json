@@ -1,9 +1,0 @@
-{
-  "name": "axiom-database-migration",
-  "description": "Use when adding/modifying database columns, encountering \"FOREIGN KEY constraint failed\", \"no such column\", \"cannot add NOT NULL column\" errors, or creating schema migrations for SQLite/GRDB/SQLiteDat",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

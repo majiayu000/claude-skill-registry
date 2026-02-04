@@ -1,9 +1,0 @@
-{
-  "name": "reedomaskme",
-  "repo": "reedom/claude-code-commands",
-  "category": "data",
-  "description": "Interactive clarification mode for uncertain situations. Use only when user invokes with --askme flag.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:50.377377Z",
-  "dir_name": "reedomaskme"
-}

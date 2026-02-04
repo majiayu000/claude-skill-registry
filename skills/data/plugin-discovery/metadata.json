@@ -1,9 +1,0 @@
-{
-  "name": "plugin-discovery",
-  "description": "Use when the user wants to find, search, or browse Claude Code plugins for specific functionality or use cases",
-  "repo": "Lobbi-Docs/claude-2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

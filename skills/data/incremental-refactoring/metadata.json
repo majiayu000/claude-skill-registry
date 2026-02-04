@@ -1,9 +1,0 @@
-{
-  "name": "incremental-refactoring",
-  "description": "Use when IMPLEMENTING refactoring changes. Enforces metrics-driven protocol with before/after measurements. Triggers: \"implement refactor\", \"apply refactoring pattern\", \"clean up code smell\", \"extract",
-  "repo": "pvillega/claude-templates",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openspec-propose",
-  "description": "Use when adding features, changing behavior, or modifying architecture. Creates change proposal with specs and tasks. ALWAYS ask for approval before proceeding to implementation. Do NOT use for bug fi",
-  "repo": "discountedcookie/10x-mapmaster",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dev-design",
-  "description": "This skill should be used when the user asks to \"design the architecture\", \"propose approaches\", \"plan implementation\", or as Phase 4 of the /dev workflow. Proposes architecture approaches with trade-",
-  "repo": "edwinhu/workflows",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

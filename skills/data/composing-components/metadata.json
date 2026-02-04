@@ -1,9 +1,0 @@
-{
-  "name": "composing-components",
-  "description": "Teaches component composition patterns in React 19 including children prop, compound components, and render props. Use when designing component APIs, creating reusable components, or avoiding prop dri",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

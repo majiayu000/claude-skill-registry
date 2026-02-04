@@ -1,9 +1,0 @@
-{
-  "name": "fetch-github-issue-analysis",
-  "repo": "BerryKuipers/claude-code-toolkit",
-  "category": "data",
-  "description": "Fetch GitHub issue details with AI analysis comment from github-actions bot, extracting structured data for architecture planning in WescoBar workflows",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:14.943579Z",
-  "dir_name": "fetch-github-issue-analysis"
-}

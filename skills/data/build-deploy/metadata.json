@@ -1,9 +1,0 @@
-{
-  "name": "build-deploy",
-  "description": "Build llm-mux binary and run locally for development/debugging",
-  "repo": "nghyane/llm-mux",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

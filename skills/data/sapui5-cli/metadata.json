@@ -1,9 +1,0 @@
-{
-  "name": "sapui5-cli",
-  "description": "Manages SAPUI5/OpenUI5 projects using the UI5 Tooling CLI (@ui5/cli). Use when initializing UI5 projects, configuring ui5.yaml or ui5-workspace.yaml files, building UI5 applications or libraries, runn",
-  "repo": "secondsky/sap-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

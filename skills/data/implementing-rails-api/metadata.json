@@ -1,9 +1,0 @@
-{
-  "name": "implementing-rails-api",
-  "repo": "xtone/ai_development_tools",
-  "category": "data",
-  "description": "JSONで定義されたAPI仕様を元にRuby on RailsでAPIと管理画面を実装するスキル。全体のオーケストレーションを行い、各ステップの詳細ガイドラインに従って実装を進めます。",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:25.031040Z",
-  "dir_name": "implementing-rails-api"
-}

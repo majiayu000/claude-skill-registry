@@ -1,8 +1,0 @@
-{
-  "name": "orchestrator-git-standards",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "development",
-  "description": "Orchestrator AI-specific Git conventions and standards. Branch naming, commit workflow, repository organization. CRITICAL: Follow conventional branch names, use conventional commits, maintain clean gi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:57.245812Z"
-}

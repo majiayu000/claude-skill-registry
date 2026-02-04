@@ -1,8 +1,0 @@
-{
-  "name": "security-scanning-patterns",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "security",
-  "description": "Security vulnerability scanning, secret detection, dependency auditing, and OWASP best practices. Use when performing security audits, scanning for vulnerabilities, detecting exposed secrets, checking",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:27.251650Z"
-}

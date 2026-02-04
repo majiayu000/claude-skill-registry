@@ -1,9 +1,0 @@
-{
-  "name": "video-to-article",
-  "description": "Use this skill when the user wants to convert a lecture, presentation, or talk video into text formats (transcript, outline, or article). Trigger when user mentions processing video recordings, creati",
-  "repo": "lttr/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

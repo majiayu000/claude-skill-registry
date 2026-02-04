@@ -1,9 +1,0 @@
-{
-  "name": "frappe-state-machine-helper",
-  "description": "Generate state machine logic for Frappe DocTypes. Use when implementing complex status workflows, state transitions, or document lifecycle management.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

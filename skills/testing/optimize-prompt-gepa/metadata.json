@@ -1,8 +1,0 @@
-{
-  "name": "optimize-prompt-gepa",
-  "repo": "Nitzan94/claude-code-skills",
-  "category": "testing",
-  "description": "Optimizes prompts using full GEPA methodology (Genetic-Pareto Evolution). Use when user wants to improve a prompt's accuracy on test cases, mentions \"optimize prompt\", \"improve prompt\", or has example",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:36.488705Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "fetch-pr-review-comments",
-  "description": "MUST use this skill when user asks to check/review PR comments, address reviewer feedback, fix review issues, or respond to code review. Fetches unresolved review comments from GitHub PR for the curre",
-  "repo": "shogogg/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "action-mailer-coder",
-  "description": "Use when creating or refactoring Action Mailer emails. Applies Rails 7.1+ conventions, parameterized mailers, preview workflows, background delivery, and email design best practices.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

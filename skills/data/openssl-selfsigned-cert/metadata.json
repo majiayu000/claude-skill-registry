@@ -1,9 +1,0 @@
-{
-  "name": "openssl-selfsigned-cert",
-  "description": "Guides the creation of self-signed SSL/TLS certificates using OpenSSL, including key generation, certificate creation, combined PEM files, and verification scripts. This skill should be used when task",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "foo-bar",
-  "repo": "EffortlessMetrics/flow-studio",
-  "category": "testing",
-  "description": "Diagnose and repair selftest failures by running diagnostic commands and proposing fixes",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:22.895621Z"
-}

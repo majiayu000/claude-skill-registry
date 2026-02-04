@@ -1,9 +1,0 @@
-{
-  "name": "claude-sdk-integration-patterns",
-  "description": "Expert integration patterns for Claude API and TypeScript SDK covering Messages API, streaming responses, tool use, error handling, token optimization, and production-ready implementations for buildin",
-  "repo": "manutej/luxor-claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

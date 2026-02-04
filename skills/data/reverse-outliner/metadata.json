@@ -1,9 +1,0 @@
-{
-  "name": "reverse-outliner",
-  "description": "Reverse-engineer published books into structured scene-by-scene outlines for study. Use when analyzing craft, learning story structure from masters, or creating teaching materials from existing works.",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

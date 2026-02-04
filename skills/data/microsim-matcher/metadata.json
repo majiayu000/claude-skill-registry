@@ -1,9 +1,0 @@
-{
-  "name": "microsim-matcher",
-  "description": "This skill analyzes diagram, chart, or simulation specifications and returns a ranked list of the most suitable MicroSim generator skills to use. It compares the specification against capabilities of ",
-  "repo": "dmccreary/claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

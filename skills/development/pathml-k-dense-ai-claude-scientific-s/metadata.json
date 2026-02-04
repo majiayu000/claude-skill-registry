@@ -1,7 +1,0 @@
-{
-  "name": "pathml-k-dense-ai-claude-scientific-s",
-  "description": "Full-featured computational pathology toolkit. Use for advanced WSI analysis including multiplexed immunofluorescence (CODEX, Vectra), nucleus segmentation, tissue graph construction, and ML model tra",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.020790Z"
-}

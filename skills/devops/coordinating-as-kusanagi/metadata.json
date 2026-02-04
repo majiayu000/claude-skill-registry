@@ -1,8 +1,0 @@
-{
-  "name": "coordinating-as-kusanagi",
-  "repo": "sumik5/dotfiles",
-  "category": "devops",
-  "description": "Operates as Kusanagi Agent (Task Coordinator). Receives instructions from Aramaki and manages Tachikoma team. Analyzes task dependencies, creates execution schedules, and coordinates parallel/sequenti",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.262151Z"
-}

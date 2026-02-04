@@ -1,9 +1,0 @@
-{
-  "name": "code-consistency-validator",
-  "description": "Validates type consistency across Rust, TypeScript, PostgreSQL boundaries. Use when reviewing code, debugging type mismatches, or validating API contracts. Triggers on: check consistency, validate typ",
-  "repo": "BarisSozen/claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

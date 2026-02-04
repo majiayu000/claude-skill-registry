@@ -1,9 +1,0 @@
-{
-  "name": "rack-middleware",
-  "description": "Rack middleware development, configuration, and integration patterns. Use when working with middleware stacks or creating custom middleware.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

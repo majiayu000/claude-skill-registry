@@ -1,9 +1,0 @@
-{
-  "name": "triggering-ai-reflection",
-  "repo": "hkcm91/StickerNestV3",
-  "category": "data",
-  "description": "Triggering and managing AI reflection cycles in StickerNest. Use when the user wants to run AI evaluation, trigger reflection, check AI quality, improve AI prompts, analyze AI performance, or audit AI",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:06.913644Z",
-  "dir_name": "triggering-ai-reflection"
-}

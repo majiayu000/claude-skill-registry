@@ -1,7 +1,0 @@
-{
-  "name": "tmux-cli",
-  "description": "CLI utility to communicate with other CLI Agents or Scripts in other tmux panes; use it only when user asks you to communicate with other CLI Agents or Scripts in other tmux panes.",
-  "category": "development",
-  "source": "github.com/pchalasani/claude-code-tools",
-  "imported_at": "2026-01-24T14:54:18.742408Z"
-}

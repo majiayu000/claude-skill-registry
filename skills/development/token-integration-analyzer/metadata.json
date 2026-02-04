@@ -1,7 +1,0 @@
-{
-  "name": "token-integration-analyzer",
-  "description": "Comprehensive token integration and implementation analyzer based on Trail of Bits' token integration checklist. Analyzes token implementations for ERC20/ERC721 conformity, checks for 20+ weird token ",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:05.093862Z"
-}

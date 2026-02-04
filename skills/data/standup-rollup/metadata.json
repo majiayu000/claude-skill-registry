@@ -1,9 +1,0 @@
-{
-  "name": "standup-rollup",
-  "repo": "bencassie/flywheel",
-  "category": "data",
-  "description": "Aggregate daily standups into team summary with blockers analysis",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:48.935266Z",
-  "dir_name": "standup-rollup"
-}

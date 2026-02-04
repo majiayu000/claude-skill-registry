@@ -1,9 +1,0 @@
-{
-  "name": "x-cmd-network",
-  "description": "This skill provides comprehensive network administration and diagnostic tools through x-cmd CLI, including network scanning with Nmap, ARP table management, DNS configuration, routing table analysis, ",
-  "repo": "x-cmd/skill",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/x-cmd/skill"
-}

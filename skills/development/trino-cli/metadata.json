@@ -1,8 +1,0 @@
-{
-  "name": "trino-cli",
-  "repo": "treasure-data/td-skills",
-  "category": "development",
-  "description": "Trino CLI for TD interactive queries. Covers connection to regional endpoints, batch mode (--execute, --file), output formats (CSV, JSON, TSV), and session properties.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:24.213870Z"
-}

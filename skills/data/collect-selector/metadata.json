@@ -1,9 +1,0 @@
-{
-  "name": "collect-selector",
-  "description": "Use this skill to determine the correct data-testid selector for Playwright or end-to-end tests.",
-  "repo": "venturo-id/venturo-claude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

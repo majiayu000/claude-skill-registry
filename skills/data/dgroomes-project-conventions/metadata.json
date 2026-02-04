@@ -1,9 +1,0 @@
-{
-  "name": "dgroomes-project-conventions",
-  "description": "Conventions and style guidelines for dgroomes' personal projects. Use when upgrading, maintaining, or creating projects in dgroomes' repositories. Covers README style, Gradle configuration, version ca",
-  "repo": "dgroomes/my-software",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

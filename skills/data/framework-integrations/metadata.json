@@ -1,9 +1,0 @@
-{
-  "name": "framework-integrations",
-  "description": "Django, Flask, FastAPI integration patterns for Celery. Use when integrating Celery with Django, Flask, or FastAPI, setting up framework-specific configurations, handling application contexts, managin",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

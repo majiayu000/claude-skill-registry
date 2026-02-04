@@ -1,8 +1,0 @@
-{
-  "name": "error-resolution",
-  "repo": "screenfluent/aicodingforum",
-  "category": "development",
-  "description": "Systematic error diagnosis and resolution for test failures, build errors, and validation issues. Invoke when tests fail or pre-commit blocks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:10.169863Z"
-}

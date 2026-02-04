@@ -1,9 +1,0 @@
-{
-  "name": "query-expansion-strategy",
-  "description": "Query fan-out coverage for AI visibility. Covers semantic variation analysis and sub-question targeting.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
-}

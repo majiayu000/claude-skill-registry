@@ -1,9 +1,0 @@
-{
-  "name": "caching-strategy-optimizer",
-  "description": "Optimizes CI/CD pipeline speed by implementing effective caching for dependencies, Docker layers, build outputs, and test results. Provides before/after performance metrics and best practices. Use for",
-  "repo": "patricio0312rev/skillset",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

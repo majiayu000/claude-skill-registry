@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-performance-patterns",
-  "description": "Review React 19 performance patterns including memoization, re-renders, and bundle size. Use when reviewing performance or optimization.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

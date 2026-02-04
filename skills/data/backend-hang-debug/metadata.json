@@ -1,9 +1,0 @@
-{
-  "name": "backend-hang-debug",
-  "description": "Diagnose and fix FastAPI hangs caused by blocking ThreadPoolExecutor shutdown in the news stream route; includes py-spy capture and non-blocking executor pattern.",
-  "repo": "BenderFendor/Thesis",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

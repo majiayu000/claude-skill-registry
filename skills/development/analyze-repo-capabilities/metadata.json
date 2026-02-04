@@ -1,8 +1,0 @@
-{
-  "name": "analyze-repo-capabilities",
-  "repo": "CheekyCodexConjurer/quant-lab",
-  "category": "development",
-  "description": "Detect repo tooling and patterns, then record a dynamic manifest.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:24.921221Z"
-}

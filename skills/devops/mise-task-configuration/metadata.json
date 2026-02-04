@@ -1,8 +1,0 @@
-{
-  "name": "mise-task-configuration",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "description": "Use when defining and configuring Mise tasks in mise.toml. Covers task definitions, dependencies, file tasks, and parallel execution.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:05.929163Z"
-}

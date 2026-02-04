@@ -1,8 +1,0 @@
-{
-  "name": "rp2350-micropython",
-  "repo": "rghamilton3/dotfiles",
-  "category": "development",
-  "description": "Expert RP2350 development with MicroPython, covering Pimoroni Presto hardware, touchscreen interfaces, RGB lighting control, BLE server implementation, and display rendering. Use when developing for R",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:54.152195Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "blog-post-formatter",
-  "description": "Format blog content into properly structured markdown files for Next.js portfolio blog. Use when user wants to: (1) Format raw blog content into markdown with frontmatter, (2) Create new blog posts fr",
-  "repo": "santosrai/santosrai.github.io",
-  "category": "development",
-  "tags": [],
-  "stars": 1,
-  "source": "github.com/santosrai/santosrai.github.io"
-}

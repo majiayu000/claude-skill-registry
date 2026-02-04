@@ -1,9 +1,0 @@
-{
-  "name": "docker-local-doctor",
-  "description": "Run comprehensive health check on docker-local environment - diagnose configuration, services, and connectivity",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

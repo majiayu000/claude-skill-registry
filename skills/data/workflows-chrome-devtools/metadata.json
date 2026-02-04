@@ -1,9 +1,0 @@
-{
-  "name": "workflows-chrome-devtools",
-  "description": "Chrome DevTools orchestrator providing intelligent routing between CLI (bdg) and MCP (Code Mode) approaches. CLI prioritized for speed and token efficiency; MCP fallback for multi-tool integration sce",
-  "repo": "MichelKerkmeester/opencode-dev-environment",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

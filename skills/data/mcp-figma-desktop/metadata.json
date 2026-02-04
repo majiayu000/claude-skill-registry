@@ -1,9 +1,0 @@
-{
-  "name": "mcp-figma-desktop",
-  "description": "Extract UI code, design tokens, and screenshots from Figma designs via desktop app. Use when implementing designs, building component libraries, or documenting design systems.",
-  "repo": "ulasbilgen/mcp-skills-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

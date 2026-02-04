@@ -1,9 +1,0 @@
-{
-  "name": "fix-links",
-  "repo": "bencassie/flywheel",
-  "category": "data",
-  "description": "Find and repair broken wikilinks in vault. Triggers when user mentions \"fix links\", \"broken links\", \"repair vault\", \"fix broken links\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:51.205179Z",
-  "dir_name": "fix-links"
-}

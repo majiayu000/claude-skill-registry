@@ -1,9 +1,0 @@
-{
-  "name": "blz-source-management",
-  "description": "Teaches how to discover, validate, and add llms.txt documentation sources to the blz CLI. Use when adding documentation to blz, finding llms.txt or llms-full.txt files, validating sources, refreshing ",
-  "repo": "outfitter-dev/blz",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

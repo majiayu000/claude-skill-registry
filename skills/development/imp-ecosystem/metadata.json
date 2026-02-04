@@ -1,8 +1,0 @@
-{
-  "name": "imp-ecosystem",
-  "repo": "Alb-O/impire",
-  "category": "development",
-  "description": "Work with imp.lib and imp.gits for Nix flake development. Use when working with imp.lib directory imports, imp.gits multi-repo injection, .d fragment directories, flake-parts integration, or when the ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:49.356195Z"
-}

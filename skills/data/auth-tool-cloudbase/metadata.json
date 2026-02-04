@@ -1,9 +1,0 @@
-{
-  "name": "auth-tool-cloudbase",
-  "repo": "TencentCloudBase/CloudBase-MCP",
-  "category": "data",
-  "description": "Use CloudBase Auth tool to configure and manage authentication providers for web applications - enable/disable login methods (SMS, Email, WeChat Open Platform, Google, Anonymous, Username/password, OA",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:43.569712Z",
-  "dir_name": "auth-tool-cloudbase"
-}

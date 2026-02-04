@@ -1,9 +1,0 @@
-{
-  "name": "gemini-cli-execution",
-  "description": "Expert guide for executing the Google Gemini CLI in non-interactive and headless modes. Covers command syntax, piping input, output handling, and automation patterns. Use when running gemini commands,",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

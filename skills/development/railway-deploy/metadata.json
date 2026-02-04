@@ -1,7 +1,0 @@
-{
-  "name": "railway-deploy",
-  "description": "Deploy code to Railway using \"railway up\". Use when user wants to push code, says \"railway up\", \"deploy\", \"ship\", or \"push\". For initial setup or creating services, use railway-new skill. For Docker i",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.737094Z"
-}

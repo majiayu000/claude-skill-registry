@@ -1,9 +1,0 @@
-{
-  "name": "professional-pr-workflow",
-  "description": "Automatisiert Pull-Request-Erstellung mit Branch-Management, Code-Formatierung und Integration mit professional-commit-workflow. Unterstützt GitHub CLI, automatische PR-Beschreibungen und projektspezi",
-  "repo": "talent-factory/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "vscode-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "development",
-  "description": "VS Code workspace settings template and validation logic with file cleanup enforcement. Includes 8 required standards (Prettier as default formatter, format on save enabled, ESLint auto-fix, pnpm pack",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.120166Z"
-}

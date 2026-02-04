@@ -1,9 +1,0 @@
-{
-  "name": "shadcn-mcp",
-  "description": "Install and configure the shadcn MCP server for Codex. Use when a user asks to enable shadcn/ui MCP tools, set up the shadcn MCP server in Codex, or troubleshoot shadcn MCP startup.",
-  "repo": "midhunmonachan/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

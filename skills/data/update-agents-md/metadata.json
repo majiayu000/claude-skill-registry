@@ -1,9 +1,0 @@
-{
-  "name": "update-agents-md",
-  "description": "Update AGENTS.md with new rules to prevent AI misbehavior or add operational guidelines. Use when the user says \"update AGENTS.md\", \"add this rule\", \"change AI behavior\", or \"don't do X automatically\"",
-  "repo": "nozomi-koborinai/koborin-ai",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

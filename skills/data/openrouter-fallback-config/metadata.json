@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-fallback-config",
-  "description": "Configure model fallback chains for high availability. Use when building fault-tolerant LLM systems. Trigger with phrases like 'openrouter fallback', 'openrouter backup model', 'openrouter redundancy'",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

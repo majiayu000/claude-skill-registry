@@ -1,9 +1,0 @@
-{
-  "name": "bn-fit-modify",
-  "description": "Guide for Bayesian Network tasks involving structure learning, parameter fitting, intervention, and sampling. This skill should be used when working with pgmpy or similar libraries to recover DAG stru",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

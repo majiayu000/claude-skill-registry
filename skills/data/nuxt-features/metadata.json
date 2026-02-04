@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-features",
-  "description": "Feature module pattern organizing domain logic into queries, mutations, and actions. Use when implementing data fetching with filters, API mutations with loading states, business logic with UI feedbac",
-  "repo": "leeovery/claude-nuxt",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

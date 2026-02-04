@@ -1,9 +1,0 @@
-{
-  "name": "supabase-data-handling",
-  "description": "Implement Supabase PII handling, data retention, and GDPR/CCPA compliance patterns.Use when handling sensitive data, implementing data redaction, configuring retention policies,or ensuring compliance ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

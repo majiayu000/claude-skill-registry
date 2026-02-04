@@ -1,9 +1,0 @@
-{
-  "name": "fetch-pr-comments",
-  "description": "Fetch unresolved PR review comments and feedback on the current branch. Use when you need to address outstanding PR review items or see what feedback needs to be resolved. Optionally filter by a speci",
-  "repo": "hvent90/hv-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

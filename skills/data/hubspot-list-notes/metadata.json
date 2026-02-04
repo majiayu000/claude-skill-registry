@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-list-notes",
-  "description": "List note engagements from HubSpot CRM. Load when user says 'list notes', 'show notes', 'note history', 'hubspot notes'. Returns logged note records.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

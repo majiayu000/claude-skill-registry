@@ -1,8 +1,0 @@
-{
-  "name": "parallel-coordinator",
-  "repo": "k002bill2/LiveMetro",
-  "category": "design",
-  "description": "Coordinate parallel agent execution using ACE Framework for LiveMetro React Native development. Use when implementing features with 3+ independent subtasks (UI + API + Firebase + Tests).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:48.098670Z"
-}

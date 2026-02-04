@@ -1,9 +1,0 @@
-{
-  "name": "implement-plan-preflight",
-  "description": "Execute Preflight phase for /itp:go workflow - create ADR (MADR 4.0), design spec from global plan, verify checkpoint. Use when creating ADRs, design specs, or when /itp:go invokes Preflight phase. Tr",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

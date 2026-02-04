@@ -1,9 +1,0 @@
-{
-  "name": "sear",
-  "description": "Semantic search and RAG for documents. Use when user needs to index PDF/DOCX/text files, perform semantic search, extract relevant content from document corpuses, or build RAG applications. Supports m",
-  "repo": "Guard8-ai/SEAR",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "processing-parallel-tasks",
-  "description": "Implements parallel processing using Parallel, PLINQ, and ConcurrentCollections in .NET. Use when processing CPU-bound tasks in parallel or improving multi-core utilization.",
-  "repo": "christian289/dotnet-with-claudecode",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/christian289/dotnet-with-claudecode"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "banana",
-  "description": "Generate images using Google's Gemini image generation model with Deno. Use this skill when the user wants to create AI-generated images, perform image-to-image transformations, or generate visual con",
-  "repo": "ghostmind-dev/system",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

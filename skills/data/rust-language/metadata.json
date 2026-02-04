@@ -1,9 +1,0 @@
-{
-  "name": "rust-language",
-  "description": "Guide for writing Rust code covering ownership, borrowing, lifetimes, error handling, async programming, and Rust best practices",
-  "repo": "JohnnyVicious/copilot-cli-examples",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/JohnnyVicious/copilot-cli-examples"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "write-to-doc",
-  "description": "Automatically invoked when writing formal documentation (specs, ADRs, reviews, plans). Ensures consistent structure, appropriate detail level, and proper file location.",
-  "repo": "aandersland/feast",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

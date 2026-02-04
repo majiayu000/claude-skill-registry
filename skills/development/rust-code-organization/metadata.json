@@ -1,8 +1,0 @@
-{
-  "name": "rust-code-organization",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Structure Rust code using modules, traits, builders, and newtypes. Use when designing APIs, abstracting behavior, or preventing type confusion.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.624994Z"
-}

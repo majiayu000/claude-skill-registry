@@ -1,9 +1,0 @@
-{
-  "name": "github-pr-enhance",
-  "description": "Enhance an existing PR by analyzing the diff against the description and updating with examples, diagrams, and context",
-  "repo": "leighmcculloch/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

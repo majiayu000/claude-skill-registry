@@ -1,9 +1,0 @@
-{
-  "name": "security-report",
-  "description": "Generate security assessment reports in docx format with findings, risk ratings, and remediation recommendations.Use when: User asks for security audit report, vulnerability assessment document, penet",
-  "repo": "BytR-Ecosystems/ml-reference-guides",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "skills-repo-maintenance",
-  "description": "Add or update skills in a skills repository for Codex and/or Claude Code. Use when creating new skills, packaging .skill files for Codex, or converting a skill into a Claude Code plugin (marketplace.j",
-  "repo": "akiojin/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

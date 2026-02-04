@@ -1,9 +1,0 @@
-{
-  "name": "discord-sync",
-  "description": "Sync Discord messages to local storage. Use when user asks to sync, pull, fetch, or download Discord messages.",
-  "repo": "lycfyi/community-agent-plugin",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

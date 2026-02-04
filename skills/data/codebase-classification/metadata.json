@@ -1,9 +1,0 @@
-{
-  "name": "codebase-classification",
-  "description": "Classify codebases before modification to choose appropriate development approach",
-  "repo": "gptme/gptme",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

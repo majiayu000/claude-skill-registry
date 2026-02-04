@@ -1,9 +1,0 @@
-{
-  "name": "doc-learn",
-  "description": "ドキュメントの構造を学習し、template.mdを作成するスキル。「template.mdを作成して」「ドキュメント構造をテンプレート化して」などの指示で発動。研究開発提案書、申請書、報告書などの定型文書から構造を抽出し、再利用可能なテンプレートを生成する。",
-  "repo": "friend1ws/grant-writing-workflow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

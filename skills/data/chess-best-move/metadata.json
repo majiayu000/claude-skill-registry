@@ -1,9 +1,0 @@
-{
-  "name": "chess-best-move",
-  "description": "Guide for analyzing chess board images to find the best move(s). This skill should be used when tasks involve analyzing chess positions from images, detecting piece positions, identifying winning move",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

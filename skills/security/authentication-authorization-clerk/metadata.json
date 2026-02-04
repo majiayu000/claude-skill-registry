@@ -1,8 +1,0 @@
-{
-  "name": "authentication-authorization-clerk",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "security",
-  "description": "Implement secure authentication and authorization using Clerk. Use this skill when you need to authenticate users, protect routes, check permissions, implement subscription-based access control, or in",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.192164Z"
-}

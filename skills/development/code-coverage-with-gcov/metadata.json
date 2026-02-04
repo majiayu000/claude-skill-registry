@@ -1,8 +1,0 @@
-{
-  "name": "code-coverage-with-gcov",
-  "repo": "gadievron/raptor",
-  "category": "development",
-  "description": "Add gcov code coverage instrumentation to C/C++ projects",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:43.275882Z"
-}

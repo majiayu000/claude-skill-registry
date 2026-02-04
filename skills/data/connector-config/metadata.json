@@ -1,9 +1,0 @@
-{
-  "name": "connector-config",
-  "description": "Writes connector_config for segment/journey activations using `tdx connection schema <type>` to discover available fields. Use when configuring activations - always run schema command first to see con",
-  "repo": "treasure-data/td-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

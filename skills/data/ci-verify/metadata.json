@@ -1,9 +1,0 @@
-{
-  "name": "ci-verify",
-  "description": "Run and interpret pnpm lint, pnpm typecheck, pnpm build, and pnpm format in a Turborepo monorepo; diagnose CI-style failures; propose minimal diffs; and deliver a fix plan, files touched, and validati",
-  "repo": "valuecodes/turborepo-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

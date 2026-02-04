@@ -1,9 +1,0 @@
-{
-  "name": "sap-datasphere",
-  "description": "Comprehensive plugin for SAP Datasphere development with 3 specialized agents, 4 slash commands, and validation hooks. Use when building data warehouses on SAP BTP, creating analytic models, configuri",
-  "repo": "secondsky/sap-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

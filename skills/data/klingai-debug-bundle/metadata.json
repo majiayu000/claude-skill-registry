@@ -1,9 +1,0 @@
-{
-  "name": "klingai-debug-bundle",
-  "description": "Set up comprehensive logging and debugging for Kling AI. Use when investigating issues ormonitoring requests. Trigger with phrases like 'klingai debug', 'kling ai logging','trace klingai', 'monitor kl",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

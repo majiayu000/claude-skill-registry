@@ -1,9 +1,0 @@
-{
-  "name": "drf-serializer",
-  "description": "Generate Django REST Framework serializers with validation, nested relationships, and best practices. Use when creating or updating API serializers, especially for complex models with relationships.",
-  "repo": "gizix/cc_projects",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

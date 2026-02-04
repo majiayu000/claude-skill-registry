@@ -1,9 +1,0 @@
-{
-  "name": "writing-technical-writing",
-  "description": "Writes technical prose (READMEs, ADRs, code comments) in the project's established human voice. Use when creating or editing .md files, writing Swift doc comments, authoring ADRs, or reviewing technic",
-  "repo": "kylehughes/knapsack",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/kylehughes/knapsack"
-}

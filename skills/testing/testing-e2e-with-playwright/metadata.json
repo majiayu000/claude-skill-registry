@@ -1,8 +1,0 @@
-{
-  "name": "testing-e2e-with-playwright",
-  "repo": "amo-tech-ai/medellin-spark",
-  "category": "testing",
-  "description": "Run end-to-end browser tests using Playwright MCP. Use when testing web applications, validating user journeys, checking UI interactions, or when the user mentions E2E tests, browser automation, or Pl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:54.882670Z"
-}

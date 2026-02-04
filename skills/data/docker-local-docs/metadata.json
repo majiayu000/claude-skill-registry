@@ -1,9 +1,0 @@
-{
-  "name": "docker-local-docs",
-  "description": "Search docker-local documentation for commands, configuration, and troubleshooting guides",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

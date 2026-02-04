@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-models",
-  "description": "Domain model classes with automatic hydration, relations, and type casting. Use when creating models for API entities, defining relationships between models, casting properties to enums/dates, or crea",
-  "repo": "leeovery/claude-nuxt",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

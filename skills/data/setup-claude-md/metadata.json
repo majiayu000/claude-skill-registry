@@ -1,9 +1,0 @@
-{
-  "name": "setup-claude-md",
-  "description": "Create comprehensive CLAUDE.md files with tech stack, standard commands, repository structure, and boundaries to optimize repositories for AI-assisted development",
-  "repo": "ambient-code/agentready",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

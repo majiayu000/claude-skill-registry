@@ -1,9 +1,0 @@
-{
-  "name": "graphql-architect-jeffallan-claude-skills",
-  "description": "Use when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with DataLoader, query optimization, federation directives.",
-  "repo": "Jeffallan/claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Jeffallan/claude-skills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "badger-hardware",
-  "description": "Hardware integration for Badger 2350 including GPIO, I2C sensors, SPI devices, and electronic components. Use when connecting external hardware, working with sensors, controlling LEDs, reading buttons",
-  "repo": "johnlindquist/badger-2350-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

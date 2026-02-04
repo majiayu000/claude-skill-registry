@@ -1,9 +1,0 @@
-{
-  "name": "dart-get-active-location",
-  "description": "To get the current cursor location from the connected editor, retrieve the active location after connecting to the Dart Tooling Daemon.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "opencode-devcontainers",
-  "repo": "athal7/opencode-devcontainers",
-  "category": "development",
-  "description": "Concurrent branch development with devcontainers using clone-based isolation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:51.287941Z"
-}

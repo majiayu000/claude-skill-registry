@@ -1,9 +1,0 @@
-{
-  "name": "flow-conventions-folder-structure",
-  "description": "Validate and fix folder structure for Output SDK workflows. Use to ensure migrated workflows follow the correct structure conventions.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

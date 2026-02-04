@@ -1,9 +1,0 @@
-{
-  "name": "iron-butterfly",
-  "description": "Analyzes iron butterfly credit spreads with ATM short straddle and OTM long strangle protection. Requires numpy>=1.24.0, pandas>=2.0.0, matplotlib>=3.7.0, scipy>=1.10.0. Use when expecting stock to pi",
-  "repo": "keith-mvs/ordinis",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

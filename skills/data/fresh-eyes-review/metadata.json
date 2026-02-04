@@ -1,9 +1,0 @@
-{
-  "name": "fresh-eyes-review",
-  "description": "Use before git commit, before PR creation, before declaring done - mandatory final sanity check after tests pass; catches SQL injection, security vulnerabilities, edge cases, and business logic errors",
-  "repo": "2389-research/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

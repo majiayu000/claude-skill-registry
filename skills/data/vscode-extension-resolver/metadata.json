@@ -1,9 +1,0 @@
-{
-  "name": "vscode-extension-resolver",
-  "description": "Use this skill when VSCode extensions fail to build in nix configuration, when adding new VSCode extensions, or when debugging extension-related build errors. Handles systematic search across nixpkgs,",
-  "repo": "Shavakan/nix-flakes",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "skill-tester",
-  "description": "Test and validate agent skills against the Agent Skills Specification v1.0. Use before deploying skills to ensure spec compliance and catch structural issues.",
-  "repo": "tnez/dot-agents",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

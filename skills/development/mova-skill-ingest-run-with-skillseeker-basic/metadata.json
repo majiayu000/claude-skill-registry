@@ -1,8 +1,0 @@
-{
-  "name": "mova-skill-ingest-run-with-skillseeker-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Runs Skill Seeker for env.skill_ingest_run_request_v1 and returns ds.skill_ingest_run_result_v1.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:06.206101Z"
-}

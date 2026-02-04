@@ -1,9 +1,0 @@
-{
-  "name": "userdefaults-migrator",
-  "description": "Find UserDefaults.standard usage in Leavn, migrate to PreferencesStore/SwiftData, create entities, ensure single source of truth",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

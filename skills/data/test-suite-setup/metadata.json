@@ -1,9 +1,0 @@
-{
-  "name": "test-suite-setup",
-  "description": "Set up test validation commands for any project type. Use when configuring test runners, setting up validation commands for a new project, or enabling closed-loop agent workflows.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

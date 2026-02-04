@@ -1,8 +1,0 @@
-{
-  "name": "deno-typescript-lsp",
-  "repo": "jahanson/cc-plugins",
-  "category": "testing",
-  "description": "Use this skill when working with TypeScript/JavaScript files (.ts, .tsx, .js, .jsx, .mts, .cts, .mjs, .cjs) in Deno projects, or when the user asks about Deno-specific patterns, imports, configuration",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:24.571605Z"
-}

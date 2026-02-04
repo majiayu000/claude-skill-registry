@@ -1,8 +1,0 @@
-{
-  "name": "orchestrationnative-invoke",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "description": "Invoke external AI CLIs via native Task agents (Claude, Codex, Gemini, Cursor). Primary mode for multi-provider orchestration with fork-terminal fallback for auth.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:25.986520Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "show-backlinks",
-  "repo": "bencassie/flywheel",
-  "category": "product",
-  "description": "Show all backlinks and forward links for a note. Triggers when user mentions \"backlinks\", \"who links here\", \"links to\", \"connections\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:06.003487Z"
-}

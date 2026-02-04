@@ -1,9 +1,0 @@
-{
-  "name": "pubsub-topic-setup",
-  "description": "Pubsub Topic Setup - Auto-activating skill for GCP Skills.Triggers on: pubsub topic setup, pubsub topic setupPart of the GCP Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

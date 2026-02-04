@@ -1,9 +1,0 @@
-{
-  "name": "syncing-knowledge-garden",
-  "description": "Syncs the sb-knowledge-base Obsidian vault to the knowledge-garden Quartz site. Use after reorganizing content in Obsidian or when the vault has been updated and the Quartz site needs to match.",
-  "repo": "superbenefit/knowledge-base",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

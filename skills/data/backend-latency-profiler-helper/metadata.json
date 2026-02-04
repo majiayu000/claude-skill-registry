@@ -1,9 +1,0 @@
-{
-  "name": "backend-latency-profiler-helper",
-  "description": "Identifies API latency hotspots and bottlenecks with profiling tools, slow endpoint detection, suspected causes, and fix roadmap. Use for \"latency profiling\", \"performance bottlenecks\", \"slow APIs\", o",
-  "repo": "patricio0312rev/skillset",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

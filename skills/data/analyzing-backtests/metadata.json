@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-backtests",
-  "description": "Analyzes algorithmic trading backtest results from Jupyter notebooks and generates summary reports. Use when the user wants to analyze or summarize backtest notebooks.",
-  "repo": "PoorRican/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

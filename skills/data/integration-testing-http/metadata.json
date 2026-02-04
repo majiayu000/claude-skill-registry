@@ -1,9 +1,0 @@
-{
-  "name": "integration-testing-http",
-  "description": "Run and extend the end-to-end HTTP integration tests (SQLite in-memory) for mjr.wtf, covering auth, create/list/delete, redirects, and analytics. Use when changing handlers, middleware, or API contrac",
-  "repo": "matt-riley/mjrwtf",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "python-fastapi-dev",
-  "description": "Python FastAPI 开发规范和最佳实践指南。适用于现代Web应用开发，涵盖项目架构、编码规范、异步编程、测试、部署等全方位内容。",
-  "repo": "ChuDiRen/AI-agent-testing-platform",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ChuDiRen/AI-agent-testing-platform"
-}

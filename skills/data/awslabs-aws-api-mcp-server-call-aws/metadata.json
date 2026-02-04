@@ -1,9 +1,0 @@
-{
-  "name": "awslabs-aws-api-mcp-server-call-aws",
-  "description": "To run an exact AWS CLI command, execute a validated `aws ...` command for direct AWS operations when you already know the precise service and parameters; use instead of suggesting commands.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

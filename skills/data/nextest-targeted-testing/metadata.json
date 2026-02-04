@@ -1,9 +1,0 @@
-{
-  "name": "nextest-targeted-testing",
-  "description": "Use this to run the Rust suite quickly with `cargo nextest`, starting targeted and widening to full CI parity.",
-  "repo": "localtaskrepo/lotar",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

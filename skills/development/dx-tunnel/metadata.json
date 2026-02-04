@@ -1,8 +1,0 @@
-{
-  "name": "dx-tunnel",
-  "repo": "siteminder-au/claude-code-dx-plugin",
-  "category": "development",
-  "description": "use to open a tunnel to a remote host using the dx command",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:25.381642Z"
-}

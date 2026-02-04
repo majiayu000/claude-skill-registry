@@ -1,8 +1,0 @@
-{
-  "name": "ollama-local-models",
-  "repo": "Jony2176-cloud/n8n",
-  "category": "design",
-  "description": "Expert guidance for integrating Ollama local AI models with Python applications, including installation, configuration, model management, and production deployment",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:28.799953Z"
-}

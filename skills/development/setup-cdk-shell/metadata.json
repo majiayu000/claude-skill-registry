@@ -1,8 +1,0 @@
-{
-  "name": "setup-cdk-shell",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when setting up shell environment for Claude Code - installs zsh, Oh My Zsh, Powerlevel10k theme, MesloLGS NF fonts, Claude CLI completions, and productivity aliases",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.171472Z"
-}

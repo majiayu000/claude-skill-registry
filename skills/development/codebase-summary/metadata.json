@@ -1,7 +1,0 @@
-{
-  "name": "codebase-summary",
-  "description": "This sop analyzes a codebase and generates comprehensive documentation including structured metadata files that describe the system architecture, components, interfaces, and workflows. It can create t",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.103098Z"
-}

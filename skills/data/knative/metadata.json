@@ -1,9 +1,0 @@
-{
-  "name": "knative",
-  "description": "Knative serverless platform for Kubernetes. Use when deploying serverless workloads, configuring autoscaling (scale-to-zero), event-driven architectures, traffic management (blue-green, canary), Cloud",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

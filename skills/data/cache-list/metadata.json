@@ -1,9 +1,0 @@
-{
-  "name": "cache-list",
-  "description": "List cache entries with filtering, sorting, and freshness status.Delegates to fractary CLI for actual cache operations.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "jira-work-starter",
-  "description": "This skill should be used when the user wants to start working on a Jira ticket. Trigger when user says \"Let's work on [JIRA_URL]\" or similar phrases indicating intent to begin work on a specific Jira",
-  "repo": "juanibiapina/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

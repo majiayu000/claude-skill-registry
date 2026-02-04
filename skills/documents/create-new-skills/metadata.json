@@ -1,8 +1,0 @@
-{
-  "name": "create-new-skills",
-  "repo": "disler/claude-code-hooks-multi-agent-observability",
-  "category": "documents",
-  "description": "Creates new Agent Skills for Claude Code following best practices and documentation. Use when the user wants to create a new skill, extend Claude's capabilities, or package domain expertise into a reu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.792217Z"
-}

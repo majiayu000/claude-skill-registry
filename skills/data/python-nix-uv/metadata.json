@@ -1,9 +1,0 @@
-{
-  "name": "python-nix-uv",
-  "description": "Set up Python projects using nix/direnv with uv for environment management. Use when creating new Python projects, initializing Python environments, or when the user wants automatic Python virtual env",
-  "repo": "kazamatzuri/claude-settings",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

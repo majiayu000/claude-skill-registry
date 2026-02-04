@@ -1,7 +1,0 @@
-{
-  "name": "semgrep-rule-creator",
-  "description": "Create custom Semgrep rules for detecting bug patterns and security vulnerabilities. This skill should be used when the user explicitly asks to \"create a Semgrep rule\", \"write a Semgrep rule\", \"make a",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.546072Z"
-}

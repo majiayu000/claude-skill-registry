@@ -1,9 +1,0 @@
-{
-  "name": "ui-agent-patterns",
-  "description": "Patterns for delegating UI work to specialized agents. Covers synthesis-master vs specialized agents, multi-agent UI generation workflows, and orchestration strategies for complex UI tasks.",
-  "repo": "HermeticOrmus/LibreUIUX-Claude-Code",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

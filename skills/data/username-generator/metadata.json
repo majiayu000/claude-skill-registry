@@ -1,9 +1,0 @@
-{
-  "name": "username-generator",
-  "description": "Generate clever, witty, and original usernames based on user input keywords or theme. Scope: Outputs markdown bullet list of 20 usernames (unless specified), each ≤ 20 characters, using only alphanume",
-  "repo": "warpcode/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

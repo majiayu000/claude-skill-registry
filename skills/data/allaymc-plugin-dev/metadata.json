@@ -1,9 +1,0 @@
-{
-  "name": "allaymc-plugin-dev",
-  "description": "Build, update, and troubleshoot AllayMC plugins in Java or other JVM languages. Use when creating a new AllayMC plugin, migrating an existing plugin to a new Allay API version, wiring commands/events/",
-  "repo": "AllayMC/AllaySkill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

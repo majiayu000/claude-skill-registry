@@ -1,9 +1,0 @@
-{
-  "name": "kanban-architect",
-  "description": "Kanban Architect role. USE WHEN user says /kanban-architect OR wants to plan, assign, or monitor kanban tasks.",
-  "repo": "SimonBlancoE/kanban-mcp",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

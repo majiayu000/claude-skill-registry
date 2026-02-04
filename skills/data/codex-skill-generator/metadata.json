@@ -1,9 +1,0 @@
-{
-  "name": "codex-skill-generator",
-  "description": "Codex CLI用のスキル作成ガイド。YAML frontmatter、ディレクトリ構造、ベストプラクティスを解説。Use when creating new Codex skills, updating existing skills, or learning about Codex skill development.",
-  "repo": "nishiyuki0501-wanto/skills_template",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

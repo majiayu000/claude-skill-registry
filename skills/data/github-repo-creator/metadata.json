@@ -1,9 +1,0 @@
-{
-  "name": "github-repo-creator",
-  "description": "Creates GitHub repositories with proper setup. Use when the user wants to create a new GitHub repo, initialize a repository, or set up a new project on GitHub.",
-  "repo": "Omrigotlieb/github-repo-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "advanced-kubernetes",
-  "description": "Custom Resource Definitions (CRDs) extend Kubernetes API with custom object types. Operators are controllers that manage these custom resources using domain-specific logic.",
-  "repo": "williamzujkowski/standards",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

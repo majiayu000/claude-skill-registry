@@ -1,9 +1,0 @@
-{
-  "name": "dev-test-linux",
-  "description": "This skill should be used when the user asks to \"test Linux desktop apps\", \"automate GTK/Qt applications\", \"test with ydotool\", \"test with xdotool\", \"verify Linux UI interactions\", \"capture screenshot",
-  "repo": "edwinhu/workflows",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/edwinhu/workflows"
-}

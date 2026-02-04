@@ -1,9 +1,0 @@
-{
-  "name": "clickhouse-cloud-management",
-  "description": "This skill should be used when the user asks to \"create ClickHouse user\", \"manage ClickHouse permissions\", \"test ClickHouse connection\", \"troubleshoot ClickHouse Cloud\", or mentions ClickHouse Cloud c",
-  "repo": "terrylica/cc-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "understanding-ocsf",
-  "repo": "tenzir/claude-plugins",
-  "category": "security",
-  "description": "Understand the OCSF schema. Use when working with OCSF, looking up classes or objects, normalizing security events, or asking about the schema.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:18.811412Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "laravel-exceptions",
-  "description": "Custom exceptions with static factories and HTTP responses. Use when working with error handling, custom exceptions, or when user mentions exceptions, custom exception, error handling, HTTP exceptions",
-  "repo": "leeovery/claude-laravel",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

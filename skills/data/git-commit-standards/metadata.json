@@ -1,9 +1,0 @@
-{
-  "name": "git-commit-standards",
-  "description": "Use when creating git commits or pull requests. Enforces conventional commit format and atomic change principles. Verified on Git 2.30+",
-  "repo": "JackSmack1971/claude-code-learning-flywheel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

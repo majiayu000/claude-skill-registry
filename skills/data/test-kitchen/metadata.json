@@ -1,9 +1,0 @@
-{
-  "name": "test-kitchen",
-  "description": "Parallel implementation framework. Omakase-off triggers FIRST on build/create requests (wraps brainstorming). Cookoff triggers at design→implementation transition (wraps execution). Together they prov",
-  "repo": "2389-research/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

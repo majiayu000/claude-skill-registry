@@ -1,9 +1,0 @@
-{
-  "name": "standardizing-dev-workflow",
-  "description": "タスク実行をTaskfileで一元管理する標準開発フローを構築・監査。taskfile、aqua、lefthook、開発ワークフロー標準化、lint、format、git hooks、モノレポのセットアップや既存プロジェクトの監査時に使用。",
-  "repo": "blackjiro/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

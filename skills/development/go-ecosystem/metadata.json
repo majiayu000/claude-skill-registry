@@ -1,8 +1,0 @@
-{
-  "name": "go-ecosystem",
-  "repo": "takeokunn/nixos-configuration",
-  "category": "development",
-  "description": "This skill should be used when the user asks to \"write go\", \"golang\", \"go.mod\", \"go module\", \"go test\", \"go build\", or works with Go language development. Provides comprehensive Go ecosystem patterns ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:56.791841Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rust-s3-patterns",
-  "repo": "gar-ai/mallorn",
-  "category": "testing",
-  "description": "Implement S3 operations with rust-s3 including streaming downloads, multipart uploads, and batch operations. Use for cloud storage integration.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.448164Z"
-}

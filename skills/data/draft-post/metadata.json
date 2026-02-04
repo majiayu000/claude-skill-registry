@@ -1,9 +1,0 @@
-{
-  "name": "draft-post",
-  "description": "Guide the user through creating a blog post draft for Substack (200-500 words) and LinkedIn (100-300 words). Use when user wants to draft a post or share work.",
-  "repo": "sofer/.agents",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

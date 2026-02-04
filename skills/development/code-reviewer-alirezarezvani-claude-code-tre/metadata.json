@@ -1,7 +1,0 @@
-{
-  "name": "code-reviewer-alirezarezvani-claude-code-tre",
-  "description": "Automatic code quality and best practices analysis. Use proactively when files are modified, saved, or committed. Analyzes code style, patterns, potential bugs, and security basics. Triggers on file c",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.941102Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "exact-folder-name",
-  "repo": "possumworx/claude-autonomy-platform",
-  "category": "development",
-  "description": "Use when: you need to be sure a new skill will work as intended, confused about skill creation, unsure about naming conventions, need help with activation descriptions, want to avoid common mistakes",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:46.673338Z"
-}

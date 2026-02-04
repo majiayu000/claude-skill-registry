@@ -1,9 +1,0 @@
-{
-  "name": "docker-deploy",
-  "description": "Create Docker configurations and deployment workflows for Scrapy projects when containerizing spiders or deploying to production. Generates Dockerfiles, docker-compose setups, and orchestration config",
-  "repo": "gizix/cc_projects",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

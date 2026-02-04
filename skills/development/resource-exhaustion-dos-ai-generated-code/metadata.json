@@ -1,8 +1,0 @@
-{
-  "name": "resource-exhaustion-dos-ai-generated-code",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "development",
-  "description": "Understand resource exhaustion and denial of service vulnerabilities in AI code including unbounded loops, missing rate limits, and uncontrolled resource consumption. Use this skill when you need to l",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.574545Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "file-validation",
-  "description": "Strict detection and removal of unrelated files before PR creation",
-  "repo": "violetio/violet-ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

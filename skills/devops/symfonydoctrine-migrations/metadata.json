@@ -1,8 +1,0 @@
-{
-  "name": "symfonydoctrine-migrations",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "devops",
-  "description": "Create and manage Doctrine migrations for schema versioning; handle migration dependencies, rollbacks, and production deployment",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.076876Z"
-}

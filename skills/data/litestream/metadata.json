@@ -1,9 +1,0 @@
-{
-  "name": "litestream",
-  "description": "SQLite disaster recovery and streaming replication to cloud storage (S3, GCS, Azure, SFTP, NATS). Use this skill for configuring Litestream, deploying to cloud platforms, troubleshooting WAL replicati",
-  "repo": "benbjohnson/litestream-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 4,
-  "source": "github.com/benbjohnson/litestream-skills"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "refactoring-fast",
-  "repo": "alexei-led/claude-code-config",
-  "category": "development",
-  "description": "Fast batch refactoring via MorphLLM edit_file. Use for \"refactor across files\", \"batch rename\", \"update pattern everywhere\", large files (500+ lines), or 5+ edits in same file.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:53.755108Z"
-}

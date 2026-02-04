@@ -1,9 +1,0 @@
-{
-  "name": "plugins-scaffolding",
-  "description": "Guide for creating Claude Code plugins with proper structure, metadata, and components. This skill should be used when creating plugins, writing manifests, or setting up marketplaces.",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

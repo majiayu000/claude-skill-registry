@@ -1,9 +1,0 @@
-{
-  "name": "coreml",
-  "description": "Use when deploying custom ML models on-device, converting PyTorch models, compressing models, implementing LLM inference, or optimizing CoreML performance. Covers model conversion, compression, statef",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

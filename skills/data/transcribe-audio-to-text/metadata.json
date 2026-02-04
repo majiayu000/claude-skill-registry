@@ -1,9 +1,0 @@
-{
-  "name": "transcribe-audio-to-text",
-  "description": "Transcribe audio files to text using audinota cli",
-  "repo": "MacHu-GWU/sanhe-claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

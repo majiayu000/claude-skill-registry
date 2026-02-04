@@ -1,9 +1,0 @@
-{
-  "name": "faber-executor",
-  "description": "Executes FABER plans by spawning faber-manager agents. Simple and reliable.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

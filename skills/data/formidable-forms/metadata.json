@@ -1,9 +1,0 @@
-{
-  "name": "formidable-forms",
-  "description": "Manage Formidable Forms via REST API and WP-CLI. List forms, get form details and fields, retrieve entries. Use when working with Formidable Forms or Formidable Forms Pro WordPress plugin.",
-  "repo": "Mandorlo/wordpress-mcp",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

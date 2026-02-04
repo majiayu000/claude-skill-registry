@@ -1,8 +1,0 @@
-{
-  "name": "validate-localization-coverage",
-  "repo": "ericfitz/tmi-ux",
-  "category": "testing",
-  "description": "Generate a coverage report for all localization files using the project's check-i18n tool. Use when auditing translation completeness or identifying languages needing attention.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.569458Z"
-}

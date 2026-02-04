@@ -1,8 +1,0 @@
-{
-  "name": "rspec-job-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write RSpec tests for ActiveJob background jobs testing job execution, retry logic, and error handling. Use when testing background jobs, scheduled tasks, or asynchronous operations following TDD.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.687791Z"
-}

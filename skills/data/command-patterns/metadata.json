@@ -1,9 +1,0 @@
-{
-  "name": "command-patterns",
-  "description": "Advanced patterns for generating high-quality Claude Code commands. Used by /new-command.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

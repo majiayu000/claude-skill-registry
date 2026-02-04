@@ -1,8 +1,0 @@
-{
-  "name": "security-analysis",
-  "repo": "d4rkNinja/code-guardian",
-  "category": "security",
-  "description": "Master skill for comprehensive security analysis. Identifies technology stack and delegates to specialized security sub-skills for deep vulnerability assessment.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:16.280707Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "docker-compose-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "path": "plugins/metasaver-core/skills/config/build-tools/docker-compose-config/SKILL.md",
-  "source": "github.com/metasaver/metasaver-marketplace",
-  "downloaded_at": "2026-01-17T02:44:52.270026Z",
-  "dir_name": "docker-compose-config",
-  "category": "other"
-}

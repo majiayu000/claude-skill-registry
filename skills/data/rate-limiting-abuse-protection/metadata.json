@@ -1,9 +1,0 @@
-{
-  "name": "rate-limiting-abuse-protection",
-  "description": "Implements rate limiting and abuse prevention with per-route policies, IP/user-based limits, sliding windows, safe error responses, and observability. Use when adding \"rate limiting\", \"API protection\"",
-  "repo": "patricio0312rev/skillset",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

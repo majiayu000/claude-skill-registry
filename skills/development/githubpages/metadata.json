@@ -1,8 +1,0 @@
-{
-  "name": "githubpages",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "development",
-  "description": "Complete GitHub Pages deployment and management system. Static site hosting with Jekyll, custom domains, and GitHub Actions. USE WHEN user mentions 'github pages', 'deploy static site', 'host website ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:32.947359Z"
-}

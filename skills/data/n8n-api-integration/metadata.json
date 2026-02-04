@@ -1,9 +1,0 @@
-{
-  "name": "n8n-api-integration",
-  "description": "Programmatic n8n control - REST API, workflow management, executions, credentials, automation",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "task-wrapup",
-  "description": "Comprehensive work session wrap-up orchestrator that generates summaries, sends notifications across multiple channels (email, SMS, Slack), logs work time, and updates project documentation",
-  "repo": "arlenagreer/claude_configuration_docs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/arlenagreer/claude_configuration_docs"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "manual-tests",
-  "description": "Runs all manual hook/rule tests using sub-agents. Use when validating that DeepWork rules fire correctly.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

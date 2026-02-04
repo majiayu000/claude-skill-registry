@@ -1,7 +1,0 @@
-{
-  "name": "devcontainer-help",
-  "repo": "ManuelKugelmann/BitBot",
-  "path": "container/templates/bitbot-config/.claude/skills/devcontainer-help/SKILL.md",
-  "source": "github.com/ManuelKugelmann/BitBot",
-  "downloaded_at": "2026-02-04T03:23:56.627918Z"
-}

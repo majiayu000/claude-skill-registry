@@ -1,9 +1,0 @@
-{
-  "name": "copilot-customization",
-  "description": "GitHub Copilotカスタマイゼーションファイル（プロンプト、エージェント、インストラクション、スキル）の作成ガイド。.prompt.md、.agent.md、.instructions.md、SKILL.mdファイルをVS Codeのベストプラクティスに従って作成する際に使用してください。",
-  "repo": "SuperPyonchiX/VSCodeEnv",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

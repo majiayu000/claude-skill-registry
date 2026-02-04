@@ -1,9 +1,0 @@
-{
-  "name": "js-quality",
-  "description": "Interpretive guidance for JavaScript/TypeScript code quality using biome (modern) or eslint+prettier (traditional). Use when linting JS/TS files, configuring JS/TS tools, troubleshooting lint errors, ",
-  "repo": "racurry/neat-little-package",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

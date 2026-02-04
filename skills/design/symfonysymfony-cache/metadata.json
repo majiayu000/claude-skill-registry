@@ -1,8 +1,0 @@
-{
-  "name": "symfonysymfony-cache",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "design",
-  "description": "Implement caching with Symfony Cache component; configure pools, use cache tags for invalidation, and optimize performance",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.427763Z"
-}

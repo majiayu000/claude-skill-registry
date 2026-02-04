@@ -1,9 +1,0 @@
-{
-  "name": "software-debugging",
-  "description": "Find and fix bugs systematically. Use when encountering errors, test failures, or unexpected behavior. Hypothesis-driven debugging to locate root causes and implement minimal fixes.",
-  "repo": "bryonjacob/aug",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

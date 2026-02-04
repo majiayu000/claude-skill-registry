@@ -1,9 +1,0 @@
-{
-  "name": "integration-test-generator",
-  "description": "Integration Test Generator - Auto-activating skill for API Integration.Triggers on: integration test generator, integration test generatorPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

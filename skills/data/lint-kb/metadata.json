@@ -1,9 +1,0 @@
-{
-  "name": "lint-kb",
-  "description": "Validate and enforce KB documentation formats, completeness, and integrity.Checks recent docs (uncommitted or last N commits) against KB standards.CHECKS PERFORMED:1. FORMAT - Documents follow require",
-  "repo": "jayprimer/pmc-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

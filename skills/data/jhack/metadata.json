@@ -1,9 +1,0 @@
-{
-  "name": "jhack",
-  "description": "Expert assistant for Juju charm development using jhack utilities. Use when debugging charms, inspecting relations, syncing code, replaying events, testing scenarios, or performing rapid development i",
-  "repo": "tonyandrewmeyer/charming-with-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

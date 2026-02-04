@@ -1,9 +1,0 @@
-{
-  "name": "fof-qc-summarizer",
-  "description": "Aggregate-only summarizer for K18 QC artifacts; produces summary outputs and appends manifest rows when format is confirmed.",
-  "repo": "Tupatuko2023/Python-R-Scripts",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

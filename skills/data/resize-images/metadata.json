@@ -1,9 +1,0 @@
-{
-  "name": "resize-images",
-  "description": "Resizes images that are too large for the blog. Use when asked to resize images, optimize images, or make images smaller. Can resize to a specific width (e.g., \"resize to 300px\") or default to 1000px ",
-  "repo": "jsorge/jsorge.net",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

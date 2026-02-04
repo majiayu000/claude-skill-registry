@@ -1,9 +1,0 @@
-{
-  "name": "pr-triage",
-  "description": "Context-efficient PR comment triage. Evaluate, decide, act. Fix important issues, resolve the rest silently.",
-  "repo": "joelhooks/swarm-tools",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

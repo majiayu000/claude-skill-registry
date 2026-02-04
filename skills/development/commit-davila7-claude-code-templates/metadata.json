@@ -1,7 +1,0 @@
-{
-  "name": "commit-davila7-claude-code-templates",
-  "description": "Create commit messages following Sentry conventions. Use when committing code changes, writing commit messages, or formatting git history. Follows conventional commits with Sentry-specific issue refer",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.983202Z"
-}

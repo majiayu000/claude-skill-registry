@@ -1,7 +1,0 @@
-{
-  "name": "changelog-sgcarstrends-backend",
-  "description": "Generate and maintain CHANGELOG.md using semantic-release and conventional commits. Use when preparing releases, documenting changes, or reviewing version history.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:10.991062Z"
-}

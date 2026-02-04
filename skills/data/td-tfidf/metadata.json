@@ -1,9 +1,0 @@
-{
-  "name": "td-tfidf",
-  "description": "Term Frequency-Inverse Document Frequency for text analysis",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

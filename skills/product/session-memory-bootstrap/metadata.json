@@ -1,8 +1,0 @@
-{
-  "name": "session-memory-bootstrap",
-  "repo": "jgh0sh/memory-skill",
-  "category": "product",
-  "description": "Session start bootstrap. Use this skill at the beginning of EVERY new session, before answering anything else. Purpose: load persistent user memory from the repo-root memories.md file (create it if mi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:57.014774Z"
-}

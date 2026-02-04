@@ -1,9 +1,0 @@
-{
-  "name": "gpt2-codegolf",
-  "description": "Guidance for implementing minimal GPT-2 inference in constrained environments (code golf challenges). This skill should be used when implementing neural network inference from scratch, parsing binary ",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

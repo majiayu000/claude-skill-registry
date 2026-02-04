@@ -1,9 +1,0 @@
-{
-  "name": "createskill",
-  "description": "MANDATORY skill creation framework for ALL skill creation requests. USE WHEN user wants to create, validate, update, or canonicalize a skill, OR user mentions skill creation, skill development, new sk",
-  "repo": "blackpwnguin/Personal-AI",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/blackpwnguin/Personal-AI"
-}

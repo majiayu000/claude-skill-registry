@@ -1,9 +1,0 @@
-{
-  "name": "git-rebase-main",
-  "description": "Safely rebase the current feature branch on top of the latest origin/main. Use when preparing a branch for PR, UAT, or release.",
-  "repo": "oocx/tfplan2md-uat",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

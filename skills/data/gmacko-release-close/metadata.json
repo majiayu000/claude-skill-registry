@@ -1,9 +1,0 @@
-{
-  "name": "gmacko-release-close",
-  "description": "Use when (1) release is deployed and verified, (2) closing related issues and PRs, (3) creating GitHub release with changelog, (4) finalizing release documentation. Completes the release lifecycle.",
-  "repo": "gmackie/vercel-expo-app-template",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

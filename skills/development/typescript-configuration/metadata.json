@@ -1,8 +1,0 @@
-{
-  "name": "typescript-configuration",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "TypeScript configuration (tsconfig.json) for MetaSaver projects with no-barrel architecture support. Use when creating or auditing tsconfig.json files to ensure proper path aliases (baseUrl, paths wit",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:07.226841Z"
-}

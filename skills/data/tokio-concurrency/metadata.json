@@ -1,9 +1,0 @@
-{
-  "name": "tokio-concurrency",
-  "description": "Advanced concurrency patterns for Tokio including fan-out/fan-in, pipeline processing, rate limiting, and coordinated shutdown. Use when building high-concurrency async systems.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

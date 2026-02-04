@@ -1,9 +1,0 @@
-{
-  "name": "workers",
-  "description": "List all active Claude workers and their git worktrees. Shows branch status, commits, and suggests next actions. Use to see what workers are running.",
-  "repo": "schmug/karkinos",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

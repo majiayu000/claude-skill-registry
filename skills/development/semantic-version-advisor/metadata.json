@@ -1,8 +1,0 @@
-{
-  "name": "semantic-version-advisor",
-  "repo": "alienfast/claude",
-  "category": "development",
-  "description": "Advises on semantic version bumps and classifies version changes according to semver rules. Use when determining version numbers, analyzing dependency updates, or classifying version changes as MAJOR,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:51.684010Z"
-}

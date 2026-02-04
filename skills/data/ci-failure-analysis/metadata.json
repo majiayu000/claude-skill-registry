@@ -1,9 +1,0 @@
-{
-  "name": "ci-failure-analysis",
-  "description": "This skill should be used when analyzing failed GitHub Actions CI/CD runs for Breenix kernel development. Use for diagnosing test failures, parsing QEMU logs, identifying kernel panics or faults, unde",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "azd-aca-deploy",
-  "description": "Deploy to Azure Container Apps using azd (provision + deploy workflow)",
-  "repo": "naoki1213mj/my-template",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

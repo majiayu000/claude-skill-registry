@@ -1,8 +1,0 @@
-{
-  "name": "claude-code-service",
-  "repo": "astoreyai/claude-skills",
-  "category": "productivity",
-  "description": "Run Claude Code as a background service, web server, or API endpoint instead of CLI. Enable always-on Claude assistance, web UI access, API integrations, scheduled tasks, and automated workflows. Tran",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:04.280615Z"
-}

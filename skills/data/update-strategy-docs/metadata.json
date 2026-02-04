@@ -1,9 +1,0 @@
-{
-  "name": "update-strategy-docs",
-  "description": "Update Polymarket bot strategy documentation after code changes. Use after modifying gabagool.py, polymarket.py, or any strategy-related code to ensure STRATEGY_ARCHITECTURE.md and strategy-rules.md a",
-  "repo": "unarmedpuppy/polyjuiced",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

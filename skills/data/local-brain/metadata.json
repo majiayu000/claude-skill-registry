@@ -1,9 +1,0 @@
-{
-  "name": "local-brain",
-  "description": "Chat with local Ollama models that can explore your codebase using tools.",
-  "repo": "IsmaelMartinez/local-brain",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "implementation-review",
-  "repo": "Emz1998/avaris-ai",
-  "category": "productivity",
-  "description": "Automatically trigger review agents after task completion. Use when strategic-planner finishes planning tasks (calls plan-consultant) or when main agent completes coding tasks in /implement workflow (",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:26.523331Z"
-}

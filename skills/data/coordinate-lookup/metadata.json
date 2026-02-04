@@ -1,9 +1,0 @@
-{
-  "name": "coordinate-lookup",
-  "description": "This skill should be used when accurate GPS coordinates are needed for a location, when geocoding an address, or when coordinate lookup fails and manual intervention is required. Provides OpenStreetMa",
-  "repo": "oskar-dragon/claude-code",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

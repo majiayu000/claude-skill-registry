@@ -1,7 +1,0 @@
-{
-  "name": "fetch-unresolved-comments",
-  "repo": "mlflow/mlflow",
-  "path": ".claude/skills/fetch-unresolved-comments/SKILL.md",
-  "source": "github.com/mlflow/mlflow",
-  "downloaded_at": "2026-01-29T08:00:23.173135Z"
-}

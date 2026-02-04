@@ -1,9 +1,0 @@
-{
-  "name": "agentuity-cli-project-auth-generate",
-  "description": "Generate SQL schema for Agentuity Auth tables. Use for managing authentication credentials",
-  "repo": "agentuity/discord-help-agent",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

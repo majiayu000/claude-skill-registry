@@ -1,9 +1,0 @@
-{
-  "name": "type-checker-tests",
-  "description": "Add integration tests for type checker inference and checking functions",
-  "repo": "purefunctor/purescript-analyzer",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

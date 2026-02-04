@@ -1,8 +1,0 @@
-{
-  "name": "commanderjs-patterns",
-  "repo": "vanman2024/cli-builder",
-  "category": "development",
-  "description": "Commander.js CLI framework patterns including Command class, options, arguments, nested subcommands, and Option class usage. Use when building Node.js CLIs, implementing Commander.js commands, creatin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:26.442967Z"
-}

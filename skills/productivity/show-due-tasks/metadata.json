@@ -1,8 +1,0 @@
-{
-  "name": "show-due-tasks",
-  "repo": "bencassie/flywheel",
-  "category": "productivity",
-  "description": "Get tasks sorted by due date, focusing on upcoming deadlines. Triggers on \"due tasks\", \"upcoming deadlines\", \"what's due\", \"deadlines\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:44.451966Z"
-}

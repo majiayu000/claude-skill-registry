@@ -1,9 +1,0 @@
-{
-  "name": "prd-to-appspec",
-  "description": "Transform PRDs (Product Requirements Documents) into structured XML app specifications optimized for AI coding agents. Converts developer-focused docs with code examples into declarative agent-consuma",
-  "repo": "AaronAbuUsama/alpha-arena",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "swiftui-best-practices",
-  "description": "Audit and fix SwiftUI anti-patterns in Leavn - @State in wrong places, heavy View body computation, missing @MainActor, improper property wrappers",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

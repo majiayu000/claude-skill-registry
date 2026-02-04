@@ -1,9 +1,0 @@
-{
-  "name": "issue-orchestration",
-  "description": "Use when orchestrating a Jira issue through the full development lifecycle to Harness PR with branching, commits, and documentation",
-  "repo": "Lobbi-Docs/claude-2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

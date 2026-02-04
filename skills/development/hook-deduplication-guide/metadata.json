@@ -1,8 +1,0 @@
-{
-  "name": "hook-deduplication-guide",
-  "repo": "cskiro/claudex",
-  "category": "development",
-  "description": "Use PROACTIVELY when developing Claude Code hooks to implement content-based deduplication and prevent duplicate insight storage across sessions",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:45.050213Z"
-}

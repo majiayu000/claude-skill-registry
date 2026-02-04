@@ -1,8 +1,0 @@
-{
-  "name": "agentdb-performance-optimization",
-  "repo": "ruvnet/claude-flow",
-  "category": "development",
-  "description": "Optimize AgentDB performance with quantization (4-32x memory reduction), HNSW indexing (150x faster search), caching, and batch operations. Use when optimizing memory usage, improving search speed, or",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:39.834787Z"
-}

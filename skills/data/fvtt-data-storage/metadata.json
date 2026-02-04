@@ -1,9 +1,0 @@
-{
-  "name": "fvtt-data-storage",
-  "description": "This skill should be used when choosing between flags, settings, or files for data storage, implementing document flags, registering module settings, handling file uploads, or migrating data between s",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

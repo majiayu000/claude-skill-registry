@@ -1,9 +1,0 @@
-{
-  "name": "candidate-kb",
-  "description": "Manage candidate knowledge base. Use when ingesting CVs, adding profile information, or querying candidate details for resume/cover letter generation.",
-  "repo": "ewurch/bragger",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

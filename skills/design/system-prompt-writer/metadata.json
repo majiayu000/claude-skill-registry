@@ -1,8 +1,0 @@
-{
-  "name": "system-prompt-writer",
-  "repo": "aws-samples/aws-ai-ml-workshop-kr",
-  "category": "design",
-  "description": "This skill should be used when writing or improving system prompts for AI agents, providing expert guidance based on Anthropic's context engineering principles.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:25.576139Z"
-}

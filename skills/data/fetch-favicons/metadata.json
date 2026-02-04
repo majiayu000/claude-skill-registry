@@ -1,9 +1,0 @@
-{
-  "name": "fetch-favicons",
-  "repo": "kevintraver/dotfiles",
-  "category": "data",
-  "description": "Fetch favicons for any website using multiple fallback sources (Google, DuckDuckGo, direct). Use when needing website icons, favicons, site logos, or domain icons for any URL or domain.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:38.668671Z",
-  "dir_name": "fetch-favicons"
-}

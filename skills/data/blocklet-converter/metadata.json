@@ -1,9 +1,0 @@
-{
-  "name": "blocklet-converter",
-  "description": "Converts static web or Next.js projects into ArcBlock blocklets using provided DID. Analyzes project structure, generates configuration files, and validates setup. Requires blocklet DID as parameter.",
-  "repo": "ArcBlock/agent-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

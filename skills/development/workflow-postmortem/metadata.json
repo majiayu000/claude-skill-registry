@@ -1,8 +1,0 @@
-{
-  "name": "workflow-postmortem",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Dual-mode workflow issue logger. Use with mode=log to append mistakes during waves. Use with mode=summary at workflow end to review accumulated issues. Use when completing /build, /audit, or /ms workf",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.516754Z"
-}

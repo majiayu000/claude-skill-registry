@@ -1,9 +1,0 @@
-{
-  "name": "run-resource-design",
-  "description": "Guide for designing Run resources in OptAIC. Use when creating PipelineRun, ExperimentRun, BacktestRun, PortfolioOptimizationRun, TrainingRun, InferenceRun, or MonitoringRun. Covers execution tracking",
-  "repo": "colingwuyu/optaic-trading",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "crack-hashcat",
-  "description": "Advanced password recovery and hash cracking tool supporting multiple algorithms and attack modes. Use when: (1) Performing authorized password auditing and security assessments, (2) Recovering passwo",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

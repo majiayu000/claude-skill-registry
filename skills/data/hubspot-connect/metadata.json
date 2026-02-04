@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-connect",
-  "description": "Connect to HubSpot CRM for contact, company, deal, and engagement management. Load when user mentions 'hubspot', 'crm', 'contacts', 'companies', 'deals', 'list contacts', 'create contact', 'search dea",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

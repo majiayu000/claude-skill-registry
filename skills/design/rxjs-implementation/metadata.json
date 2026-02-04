@@ -1,8 +1,0 @@
-{
-  "name": "rxjs-implementation",
-  "repo": "pluginagentmarketplace/custom-plugin-angular",
-  "category": "design",
-  "description": "Implement RxJS observables, apply operators, fix memory leaks with unsubscribe patterns, handle errors, create subjects, and build reactive data pipelines in Angular applications.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:10.746759Z"
-}

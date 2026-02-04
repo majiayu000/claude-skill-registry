@@ -1,9 +1,0 @@
-{
-  "name": "portal",
-  "description": "Plutonium portals - web interfaces with authentication, entity scoping, and routes",
-  "repo": "radioactive-labs/plutonium-core",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/radioactive-labs/plutonium-core"
-}

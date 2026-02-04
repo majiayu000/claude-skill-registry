@@ -1,8 +1,0 @@
-{
-  "name": "atomic-commit",
-  "repo": "chanwit/tdg",
-  "category": "documents",
-  "description": "Atomic Commit helps create clean, atomic commits by analyzing changes, detecting mixed concerns, and ensuring each commit is a complete unit of work. Key words to detect are atomic, atomic commits, cl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:11.534128Z"
-}

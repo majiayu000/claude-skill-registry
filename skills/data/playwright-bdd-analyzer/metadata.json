@@ -1,9 +1,0 @@
-{
-  "name": "playwright-bdd-analyzer",
-  "description": "Playwright-BDD/Cucumberテストの品質分析スキル。以下の場合に使用:(1) .featureファイルのレビュー・品質チェック時(2) ステップ定義の再利用性分析時(3) シナリオ網羅性の確認時(4) E2Eテスト実行結果の分析時(5) テストの保守性評価時",
-  "repo": "tailwind8/portfolio-reserve",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

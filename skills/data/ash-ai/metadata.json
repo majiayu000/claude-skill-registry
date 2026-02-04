@@ -1,9 +1,0 @@
-{
-  "name": "ash-ai",
-  "description": "AshAi extension guidelines for integrating AI capabilities with Ash Framework. Use when implementing vectorization/embeddings, exposing Ash actions as LLM tools, creating prompt-backed actions, or set",
-  "repo": "forest/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-spec-to-implementation",
-  "description": "Transforms product or technical specifications into concrete implementation plans and task notes within Obsidian. Parses spec documents, extracts requirements, creates structured implementation plans ",
-  "repo": "astoreyai/claude-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

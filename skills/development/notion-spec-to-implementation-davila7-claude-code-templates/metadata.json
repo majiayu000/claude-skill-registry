@@ -1,7 +1,0 @@
-{
-  "name": "notion-spec-to-implementation-davila7-claude-code-templates",
-  "description": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:21.899208Z"
-}

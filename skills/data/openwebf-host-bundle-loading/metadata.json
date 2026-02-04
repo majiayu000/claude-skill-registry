@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-host-bundle-loading",
-  "description": "Choose and implement WebFBundle loading in a Flutter host (remote URL, assets, localhost dev, inline) and diagnose bundle load failures (bad URL, missing assets, network errors). Use when the user men",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

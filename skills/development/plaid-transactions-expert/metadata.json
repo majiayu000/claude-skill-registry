@@ -1,7 +1,0 @@
-{
-  "name": "plaid-transactions-expert",
-  "description": "Expert on Plaid Transactions product for retrieving banking transactions. Covers transaction sync, categorization, webhooks, recurring transactions, and historical data retrieval. Invoke when user men",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.994056Z"
-}

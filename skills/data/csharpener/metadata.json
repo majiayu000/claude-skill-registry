@@ -1,9 +1,0 @@
-{
-  "name": "csharpener",
-  "description": "C# static analysis tool for call graphs, unused code detection, impact analysis, HTML documentation generation, and Graphviz diagram export",
-  "repo": "lawless-m/Earwig",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/lawless-m/Earwig"
-}

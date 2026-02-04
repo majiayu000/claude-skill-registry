@@ -1,9 +1,0 @@
-{
-  "name": "pop-knowledge-lookup",
-  "description": "Queries cached external documentation and blog content for authoritative, up-to-date information. Sources include Claude Code docs, engineering blog, and configured knowledge bases with 24-hour TTL ca",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

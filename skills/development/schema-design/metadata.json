@@ -1,7 +1,0 @@
-{
-  "name": "schema-design",
-  "description": "Design or modify Drizzle ORM schemas with proper relationships, constraints, and indexes. Use when adding new tables, modifying existing schemas, or optimizing database structure.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.264002Z"
-}

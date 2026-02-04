@@ -1,9 +1,0 @@
-{
-  "name": "ai-maestro-code-graph-query",
-  "repo": "23blocks-OS/ai-maestro",
-  "category": "data",
-  "description": "PROACTIVELY query the code graph database to understand relationships and impact of changes. Use this skill WHEN READING any file to understand context, when searching for files, when exploring the co",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:45.070492Z",
-  "dir_name": "ai-maestro-code-graph-query"
-}

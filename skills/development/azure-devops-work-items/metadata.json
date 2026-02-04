@@ -1,8 +1,0 @@
-{
-  "name": "azure-devops-work-items",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "development",
-  "description": "Guide for creating Azure DevOps work items (Features, User Stories, Tasks). This skill should be used when working with ADO MCP tools to create work items with proper hierarchy and formatting.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:39.625319Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "log-file-use",
-  "description": "When a mode needs to read, create, or write (log progress) to a log file.",
-  "repo": "ScotterMonk/AgentAutoFlow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

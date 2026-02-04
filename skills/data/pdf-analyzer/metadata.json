@@ -1,9 +1,0 @@
-{
-  "name": "pdf-analyzer",
-  "description": "Extract text and images from PDF files, analyze diagrams and architecture charts, and convert visual diagrams to Mermaid format. Use when the user wants to read, analyze, or convert PDF documents, esp",
-  "repo": "russell-lubojacky/ask-houston-ai",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

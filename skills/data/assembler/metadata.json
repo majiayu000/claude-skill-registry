@@ -1,9 +1,0 @@
-{
-  "name": "assembler",
-  "description": "Combine all draft sections into final manuscript, apply formatting constraints, and generate reference list. Final step of biomedical-science-writer workflow. Requires academic reviewer approval and a",
-  "repo": "sxg/biomedical-science-writer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

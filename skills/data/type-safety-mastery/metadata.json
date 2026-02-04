@@ -1,9 +1,0 @@
-{
-  "name": "type-safety-mastery",
-  "description": "Master type safety patterns - fix type errors at source, never use type: ignore or any, prefer Pydantic models, use type stubs for external libraries",
-  "repo": "andyngdz/exogen_backend",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

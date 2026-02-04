@@ -1,9 +1,0 @@
-{
-  "name": "course-help",
-  "description": "Help and navigation for Claude Code Course.Use when: user asks about the course, lessons, or progress.Triggers: \"help\", \"course help\", \"what lessons\", \"my progress\".",
-  "repo": "timequity/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

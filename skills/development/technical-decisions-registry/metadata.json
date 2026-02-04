@@ -1,8 +1,0 @@
-{
-  "name": "technical-decisions-registry",
-  "repo": "alexisbeaulieu97/home",
-  "category": "development",
-  "description": "This skill provides access to a project's recorded technical decisions and architectural patterns. Use this skill to understand established patterns, validate proposals against decisions, and cite dec",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:50.965855Z"
-}

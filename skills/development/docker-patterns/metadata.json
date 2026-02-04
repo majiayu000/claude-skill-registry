@@ -1,8 +1,0 @@
-{
-  "name": "docker-patterns",
-  "repo": "mcgilly17/nix-configs",
-  "category": "development",
-  "description": "Multi-stage builds, security, optimization",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:30.989127Z"
-}

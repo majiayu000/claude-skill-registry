@@ -1,9 +1,0 @@
-{
-  "name": "cross-env-postgresql-extensions",
-  "description": "Activate when creating database migrations that enable or disable PostgreSQL extensions. Provides the DO block pattern for cross-environment compatibility between Nhost Cloud, CNPG (CloudNativePG), an",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "find-unlinked-mentions",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find places where an entity is mentioned but not wikilinked. Triggers on \"unlinked mentions\", \"where is X mentioned\", \"link X everywhere\", \"mentions of X\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:54.679936Z"
-}

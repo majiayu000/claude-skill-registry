@@ -1,9 +1,0 @@
-{
-  "name": "webp-images",
-  "description": "Implement images into page sections. Converts from /public/raw/[page]/ to WebP with responsive variants, replaces CDN placeholders with Next.js Image component. Use after midjourney-prompts skill. Tri",
-  "repo": "Manuelvillarvieites/energy-company",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

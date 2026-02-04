@@ -1,9 +1,0 @@
-{
-  "name": "webhook-receiver-hardener",
-  "description": "Secures webhook receivers with signature verification, retry handling, deduplication, idempotency keys, and error responses. Provides verification code, dedupe storage strategy, runbook for incidents.",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

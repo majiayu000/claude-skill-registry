@@ -1,9 +1,0 @@
-{
-  "name": "gh-repo-bootstrap",
-  "description": "Create a new GitHub repository with the gh CLI and bootstrap a local project in ~/projects with git init, README, remote setup, and initial push. Use when the user asks to create a repo (public/privat",
-  "repo": "regenrek/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

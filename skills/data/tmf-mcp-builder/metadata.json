@@ -1,9 +1,0 @@
-{
-  "name": "tmf-mcp-builder",
-  "description": "Build TM Forum (TMF) MCP servers from TMF OpenAPI specs (TMF6xx/7xx YAML). Use when you are given a TMF OpenAPI file and asked to (1) implement an MCP server exposing TMF operations as tools, (2) gene",
-  "repo": "oopsyz/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

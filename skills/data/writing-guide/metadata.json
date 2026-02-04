@@ -1,9 +1,0 @@
-{
-  "name": "writing-guide",
-  "description": "Use when creating or reviewing technical documentation. Provides guidelines for natural, readable Japanese writing without AI-generated artifacts. Triggers: (1) creating technical documents or READMEs",
-  "repo": "ryugen04/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

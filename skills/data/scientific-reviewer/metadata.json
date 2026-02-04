@@ -1,9 +1,0 @@
-{
-  "name": "scientific-reviewer",
-  "description": "Comprehensive scientific document review and analysis. Use when Claude needs to review scientific papers, reports, preprints, or other research documents for: (1) Identifying and evaluating claims and",
-  "repo": "jkitchin/skillz",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jkitchin/skillz"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "molibrary-ui-development",
-  "repo": "Euynac/MoLibrary",
-  "category": "design",
-  "description": "This skill should be used when the user asks to \"create UI component\", \"build Blazor page\", \"add MudBlazor component\", \"style MudBlazor\", \"fix CSS isolation\", \"use ::deep selector\", \"customize theme\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:24.775954Z"
-}

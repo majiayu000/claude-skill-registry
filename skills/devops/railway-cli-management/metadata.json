@@ -1,8 +1,0 @@
-{
-  "name": "railway-cli-management",
-  "repo": "CaptainCrouton89/.claude",
-  "category": "devops",
-  "description": "Deploy, manage services, view logs, and configure Railway infrastructure. Use when deploying to Railway, managing environment variables, viewing deployment logs, scaling services, or managing volumes.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:17.134122Z"
-}

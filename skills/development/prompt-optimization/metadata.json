@@ -1,7 +1,0 @@
-{
-  "name": "prompt-optimization",
-  "description": "Applies prompt repetition to improve accuracy for non-reasoning LLMs",
-  "category": "development",
-  "source": "github.com/asklokesh/claudeskill-loki-mode",
-  "imported_at": "2026-01-24T14:54:09.362988Z"
-}

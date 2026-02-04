@@ -1,9 +1,0 @@
-{
-  "name": "excalidraw-diagrams",
-  "description": "Generate architecture diagrams as .excalidraw files from codebase analysis. Use when the user asks to create architecture diagrams, system diagrams, visualize codebase structure, or generate excalidra",
-  "repo": "ebinnion/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ebinnion/dotfiles"
-}

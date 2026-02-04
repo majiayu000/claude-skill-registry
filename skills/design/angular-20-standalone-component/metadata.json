@@ -1,8 +1,0 @@
-{
-  "name": "angular-20-standalone-component",
-  "repo": "tw-lin/ng-lin",
-  "category": "design",
-  "description": "Create Angular 20 standalone components using modern patterns: Signals for state management, input()/output() functions (not decorators), @if/@for/@switch control flow (not *ngIf/*ngFor), inject() dep",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:13.773335Z"
-}

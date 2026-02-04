@@ -1,9 +1,0 @@
-{
-  "name": "investigation-creation",
-  "description": "Create investigations from security events, detections, or LCQL queries. Performs HOLISTIC investigations - not just process trees, but initial access hunting, org-wide scope assessment, lateral movem",
-  "repo": "refractionPOINT/lc-ai",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

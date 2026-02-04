@@ -1,8 +1,0 @@
-{
-  "name": "mongodb-indexing-optimization",
-  "repo": "pluginagentmarketplace/custom-plugin-mongodb",
-  "category": "design",
-  "description": "Master MongoDB indexing and query optimization. Learn index types, explain plans, performance tuning, and query analysis. Use when optimizing slow queries, analyzing performance, or designing indexes.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:36.786820Z"
-}

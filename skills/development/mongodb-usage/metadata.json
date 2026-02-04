@@ -1,7 +1,0 @@
-{
-  "name": "mongodb-usage",
-  "description": "This skill should be used when user asks to \"query MongoDB\", \"show database collections\", \"get collection schema\", \"list MongoDB databases\", \"search records in MongoDB\", or \"check database indexes\".",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.242332Z"
-}

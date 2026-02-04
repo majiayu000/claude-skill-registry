@@ -1,9 +1,0 @@
-{
-  "name": "maceff-todo-hygiene",
-  "description": "Use BEFORE significant TODO modifications (adding subtrees, marking complete, reorganizing, collapsing). Ensures policy compliance through extractive questions. Run proactively when planning TODO chan",
-  "repo": "cversek/MacEff",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

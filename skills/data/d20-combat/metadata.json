@@ -1,9 +1,0 @@
-{
-  "name": "d20-combat",
-  "description": "This skill should be used when the GM needs to handle combat situations, including starting combat, rolling initiative, resolving attack rolls, managing combat encounters, rolling damage, tracking hit",
-  "repo": "rjroy/adventure-engine-corvran",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

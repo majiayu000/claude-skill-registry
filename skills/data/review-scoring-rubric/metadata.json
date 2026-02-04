@@ -1,9 +1,0 @@
-{
-  "name": "review-scoring-rubric",
-  "description": "Provides the complete code review scoring rubric with 10 weighted categories, severity multipliers, and deduction calculations. Use when performing quantified code reviews, calculating quality scores,",
-  "repo": "mgd34msu/goodvibes-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

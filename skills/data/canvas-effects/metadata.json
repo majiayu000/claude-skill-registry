@@ -1,9 +1,0 @@
-{
-  "name": "canvas-effects",
-  "repo": "sreejithraman/shayna",
-  "category": "data",
-  "description": "Use when implementing Canvas-based visual effects like noise, grain, particles, or animated textures. Applies performance best practices for animation loops and pixel manipulation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:39.455577Z",
-  "dir_name": "canvas-effects"
-}

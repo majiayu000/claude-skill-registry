@@ -1,9 +1,0 @@
-{
-  "name": "spawnterminal",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "data",
-  "description": "Spawn a new terminal window to run CLI commands (ffmpeg, curl, python, etc.). Use for non-AI command execution.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.002632Z",
-  "dir_name": "spawnterminal"
-}

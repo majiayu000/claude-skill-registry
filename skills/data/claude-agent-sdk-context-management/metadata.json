@@ -1,9 +1,0 @@
-{
-  "name": "claude-agent-sdk-context-management",
-  "repo": "TheBushidoCollective/han",
-  "category": "data",
-  "description": "Use when managing agent context, memory, and conversation state in Claude AI agents using the Agent SDK.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.450743Z",
-  "dir_name": "claude-agent-sdk-context-management"
-}

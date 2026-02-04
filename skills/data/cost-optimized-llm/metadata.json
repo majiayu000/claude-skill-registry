@@ -1,9 +1,0 @@
-{
-  "name": "cost-optimized-llm",
-  "description": "Implement cost-optimized LLM routing with NO OpenAI. Use tiered model selection (DeepSeek, Haiku, Sonnet) to achieve 70-90% cost savings. Triggers on \"LLM costs\", \"model selection\", \"cost optimization",
-  "repo": "ScientiaCapital/scientia-superpowers",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "seo-a11y-analyzer",
-  "description": "Analyzes HTML/JSX/TSX files for SEO and accessibility issues including WCAG 2.1 AA compliance, color contrast (4.5:1), heading hierarchy, meta tags, image alt text, and ARIA attributes. Use when check",
-  "repo": "naporin0624/claude-web-audit-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/naporin0624/claude-web-audit-plugins"
-}

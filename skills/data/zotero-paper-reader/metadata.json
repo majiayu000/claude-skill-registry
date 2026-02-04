@@ -1,9 +1,0 @@
-{
-  "name": "zotero-paper-reader",
-  "description": "Read and analyze academic papers from Zotero library. Use when the user requests to read, access, or analyze a paper by title, author, or topic from their Zotero library. Automatically searches Zotero",
-  "repo": "FuZhiyu/ResearchProjectTemplate",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

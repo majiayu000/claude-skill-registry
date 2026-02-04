@@ -1,9 +1,0 @@
-{
-  "name": "devops-simplicity-checker",
-  "description": "Infrastructure simplicity scoring. Detects overengineering in Terraform/OpenTofu and Ansible configurations.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "codex-ask",
-  "description": "Ask OpenAI Codex questions about code to understand implementations, architecture, patterns, and debugging. Use when the user asks how code works, where something is implemented, what patterns are use",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

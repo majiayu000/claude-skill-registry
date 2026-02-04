@@ -1,9 +1,0 @@
-{
-  "name": "release-guide-info",
-  "description": "Generate Ops Update Guide from Git Diff. Produces internal Operations-facingupdate/migration guides based on git diff analysis. Supports STRICT_NO_TOUCH (default)and TEMP_CLONE_FOR_FRESH_REFS modes. I",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

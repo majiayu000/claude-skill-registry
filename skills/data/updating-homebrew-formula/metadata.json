@@ -1,9 +1,0 @@
-{
-  "name": "updating-homebrew-formula",
-  "description": "Use this skill when asked to update a Homebrew formula",
-  "repo": "timrogers/homebrew-tap",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

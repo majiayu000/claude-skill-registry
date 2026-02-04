@@ -1,9 +1,0 @@
-{
-  "name": "robot-update-package",
-  "description": "将孩子对话摘要/日志输入后处理为“机器人变更包（JSON）”，供人工审核后应用（不自动应用）。",
-  "repo": "haizhouyuan/codexreadpublic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

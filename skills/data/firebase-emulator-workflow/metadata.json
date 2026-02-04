@@ -1,9 +1,0 @@
-{
-  "name": "firebase-emulator-workflow",
-  "description": "Firebase Emulator Suiteの起動・停止・管理ワークフロー。「エミュレーター」「Firebase」「Firestore」「Auth」「ローカル開発」などのキーワードで自動適用。",
-  "repo": "no-problem-dev/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

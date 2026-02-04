@@ -1,9 +1,0 @@
-{
-  "name": "typescript-security-checker",
-  "description": "Next.js/TypeScriptプロジェクト向けセキュリティ診断スキル。OWASP準拠。以下の場合に使用:(1) PRレビュー時のセキュリティチェック(2) API Routes のセキュリティ検証(3) 認証・認可ロジックの確認(4) 依存パッケージの脆弱性確認(5) 環境変数・シークレット管理の確認",
-  "repo": "tailwind8/portfolio-reserve",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

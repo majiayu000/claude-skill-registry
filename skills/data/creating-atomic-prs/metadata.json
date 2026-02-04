@@ -1,9 +1,0 @@
-{
-  "name": "creating-atomic-prs",
-  "description": "このSkillは、mainブランチでの直接作業を防止し、小さく分割された「アトミック」なPRを作成するための包括的なワークフローを提供します。",
-  "repo": "camoneart/claude-code",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/camoneart/claude-code"
-}

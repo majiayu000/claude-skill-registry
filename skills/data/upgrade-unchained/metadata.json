@@ -1,9 +1,0 @@
-{
-  "name": "upgrade-unchained",
-  "description": "Guides upgrading Unchained Engine to a new major version. Use when the user wants to upgrade their Unchained project, mentions updating @unchainedshop packages, or asks about migration.",
-  "repo": "unchainedshop/unchained",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

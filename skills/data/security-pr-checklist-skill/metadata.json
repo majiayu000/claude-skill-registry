@@ -1,9 +1,0 @@
-{
-  "name": "security-pr-checklist-skill",
-  "description": "Creates repeatable security review checklist for PRs with required checks, common pitfalls, and automated gating. Use for \"security review\", \"PR checklist\", \"code review\", or \"security gates\".",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

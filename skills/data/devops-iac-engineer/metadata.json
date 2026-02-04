@@ -1,9 +1,0 @@
-{
-  "name": "devops-iac-engineer",
-  "description": "Implements infrastructure as code using Terraform, Kubernetes, and cloud platforms. Designs scalable architectures, CI/CD pipelines, and observability solutions. Provides security-first DevOps practic",
-  "repo": "davila7/claude-code-templates",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

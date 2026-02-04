@@ -1,9 +1,0 @@
-{
-  "name": "dialyzer-integration",
-  "description": "Use when integrating Dialyzer into development workflows and CI/CD pipelines for Erlang/Elixir projects.",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

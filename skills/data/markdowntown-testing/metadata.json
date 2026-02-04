@@ -1,9 +1,0 @@
-{
-  "name": "markdowntown-testing",
-  "description": "Use this when running or adding tests (compile/lint/unit/E2E), updating test utilities, or working with Playwright/visual testing in markdowntown.",
-  "repo": "joelklabo/markdowntown",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/joelklabo/markdowntown"
-}

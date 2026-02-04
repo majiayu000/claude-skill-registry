@@ -1,8 +1,0 @@
-{
-  "name": "nxs-gh-create-epic",
-  "repo": "sameera/nexus",
-  "category": "documents",
-  "description": "Create a GitHub issue from an Epic document. Use when the user wants to create a GitHub issue from an epic.md file, sync an epic to GitHub, or link an epic document to a GitHub issue. The skill extrac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:21.787354Z"
-}

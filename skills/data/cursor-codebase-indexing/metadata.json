@@ -1,9 +1,0 @@
-{
-  "name": "cursor-codebase-indexing",
-  "description": "Set up and optimize Cursor codebase indexing. Triggers on \"cursor index setup\",\"codebase indexing\", \"index codebase\", \"cursor semantic search\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

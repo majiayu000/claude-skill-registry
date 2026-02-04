@@ -1,9 +1,0 @@
-{
-  "name": "review-git-changes",
-  "description": "Analyzes and refactors code changes in the current git working tree (staged, unstaged, or recent commits). Ensures changes follow best practices, coding standards, and maintain code quality. Use when ",
-  "repo": "tangerine1202/cli-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

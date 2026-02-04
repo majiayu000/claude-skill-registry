@@ -1,9 +1,0 @@
-{
-  "name": "ts-morph-refactor",
-  "description": "Perform TypeScript refactoring using ts-morph AST manipulation. Use for renaming symbols, moving declarations, propagating interface changes, adding methods to implementations, renaming parameters, or",
-  "repo": "dafthunk-com/dafthunk",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

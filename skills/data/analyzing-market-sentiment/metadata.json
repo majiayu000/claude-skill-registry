@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-market-sentiment",
-  "description": "Analyze crypto market sentiment from social media, news, and on-chain metrics.Use when gauging market sentiment and social trends.Trigger with phrases like \"analyze sentiment\", \"check market mood\", or",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

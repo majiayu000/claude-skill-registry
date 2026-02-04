@@ -1,8 +1,0 @@
-{
-  "name": "rust-memory",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Minimize allocations and cloning using references, Cow, and smart pointers. Use when optimizing hot paths or memory-constrained code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.578832Z"
-}

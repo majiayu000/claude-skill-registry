@@ -1,9 +1,0 @@
-{
-  "name": "workers-multi-lang",
-  "description": "Multi-language Workers development with Rust, Python, and WebAssembly. Use when building Workers in languages other than JavaScript/TypeScript, or when integrating WASM modules for performance-critica",
-  "repo": "secondsky/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

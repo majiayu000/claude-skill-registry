@@ -1,9 +1,0 @@
-{
-  "name": "project-board",
-  "description": "GitHub Project 보드 이슈 연동 및 상태 관리. Use when (1) 이슈 생성 후 프로젝트 보드 연동, (2) 태스크 완료 후 상태 변경.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

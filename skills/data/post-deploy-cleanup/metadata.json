@@ -1,9 +1,0 @@
-{
-  "name": "post-deploy-cleanup",
-  "description": "デプロイ完了後に不要になったoutput/やFlow/の一時ファイルを削除する。「クリーンアップ」「デプロイ後削除」「output削除」を依頼されたときに使用する。",
-  "repo": "matsuni-kk/agent_template_public",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

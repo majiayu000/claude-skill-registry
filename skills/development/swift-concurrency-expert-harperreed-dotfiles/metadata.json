@@ -1,7 +1,0 @@
-{
-  "name": "swift-concurrency-expert-harperreed-dotfiles",
-  "description": "Swift Concurrency review and remediation for Swift 6.2+. Use when asked to review Swift Concurrency usage, improve concurrency compliance, or fix Swift concurrency compiler errors in a feature or file",
-  "category": "development",
-  "source": "github.com/harperreed/dotfiles",
-  "imported_at": "2026-01-24T14:53:55.726856Z"
-}

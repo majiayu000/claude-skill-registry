@@ -1,7 +1,0 @@
-{
-  "name": "zod-hashintel-hash",
-  "description": "Zod v4 TypeScript schema validation patterns and best practices. Use when writing or modifying Zod schemas, adding schema annotations/metadata, or validating data with Zod.",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.335252Z"
-}

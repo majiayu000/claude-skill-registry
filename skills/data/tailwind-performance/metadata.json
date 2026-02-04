@@ -1,9 +1,0 @@
-{
-  "name": "tailwind-performance",
-  "description": "Use when optimizing Tailwind CSS for production, reducing bundle size, and improving performance. Covers PurgeCSS, JIT mode, and build optimization.",
-  "repo": "TheBushidoCollective/han",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

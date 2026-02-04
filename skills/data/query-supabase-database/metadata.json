@@ -1,9 +1,0 @@
-{
-  "name": "query-supabase-database",
-  "repo": "bigandslow/cproj",
-  "category": "data",
-  "description": "Execute PostgreSQL queries against the Supabase database using psql with 1Password credential retrieval",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.614415Z",
-  "dir_name": "query-supabase-database"
-}

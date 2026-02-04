@@ -1,9 +1,0 @@
-{
-  "name": "container-management",
-  "description": "Create, manage, and optimize LXC containers in Proxmox. Control container lifecycle, manage resources, and coordinate container deployments across nodes.",
-  "repo": "surrealwolf/proxmox-ve-mcp",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

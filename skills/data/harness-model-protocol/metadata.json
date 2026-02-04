@@ -1,9 +1,0 @@
-{
-  "name": "harness-model-protocol",
-  "description": "Analyze the protocol layer between agent harness and LLM model. Use when (1) understanding message wire formats and API contracts, (2) examining tool call encoding/decoding mechanisms, (3) evaluating ",
-  "repo": "Dowwie/agent_framework_study",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

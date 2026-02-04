@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-enterprise-sso",
-  "description": "Configure enterprise SSO integration for Windsurf. Activate when users mention\"sso configuration\", \"single sign-on\", \"enterprise authentication\", \"saml setup\",or \"identity provider\". Handles enterpris",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "vibe-check",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "design",
-  "description": "Validate PRD quality and coherence before innovation phase using vibe-check MCP tool. Checks for requirement clarity, user story completeness, and identifies gaps. Returns coherent flag and issues lis",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.516601Z"
-}

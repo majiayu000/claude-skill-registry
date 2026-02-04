@@ -1,9 +1,0 @@
-{
-  "name": "auto-draft",
-  "description": "Generate planning documents (기획서) automatically from mockups/MVP sites and project artifacts. This skill orchestrates the entire document generation workflow including crawling, analysis, section gene",
-  "repo": "landfill/Draftify",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

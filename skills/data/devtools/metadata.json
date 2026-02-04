@@ -1,9 +1,0 @@
-{
-  "name": "devtools",
-  "description": "This skill helps launch and configure the Chrome DevTools MCP server, giving Claude visual access to a live browser for debugging and automation. Use when the user asks to set up browser debugging, la",
-  "repo": "henkisdabro/wookstar-claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

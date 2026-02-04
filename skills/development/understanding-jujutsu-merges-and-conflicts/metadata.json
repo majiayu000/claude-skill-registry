@@ -1,8 +1,0 @@
-{
-  "name": "understanding-jujutsu-merges-and-conflicts",
-  "repo": "edmundmiller/dotfiles",
-  "category": "development",
-  "description": "Understand how merge commits work in jj, why they appear empty, how to revert merges, and handle divergent changes. Use when working with merge commits, reverting merged changes, or encountering diver",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.203209Z"
-}

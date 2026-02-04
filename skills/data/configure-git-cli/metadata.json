@@ -1,9 +1,0 @@
-{
-  "name": "configure-git-cli",
-  "description": "Configure Git CLI with GitHub authentication using environment variables (GITHUB_EMAIL, GITHUB_NAME, GITHUB_PAT)",
-  "repo": "thomasgauvin/claude-agent-sdk-in-cloudflare-containers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

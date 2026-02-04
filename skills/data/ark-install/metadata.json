@@ -1,9 +1,0 @@
-{
-  "name": "ark-install",
-  "description": "Install Ark on a Kuberenetes Cluster",
-  "repo": "dwmkerr/claude-code-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "new-issue",
-  "description": "Create GitHub issues with duplicate detection and codebase analysis. Use when you discover a bug, improvement, or issue that wasn't in the original scope/spec during development. Triggers on phrases l",
-  "repo": "ainergiz/xfeed",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

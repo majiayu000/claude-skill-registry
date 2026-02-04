@@ -1,8 +1,0 @@
-{
-  "name": "ark-setup",
-  "repo": "dwmkerr/ark-claude-code-marketplace",
-  "category": "devops",
-  "description": "Set up and install the Ark platform from source. Use this skill when the user wants to install, deploy, or configure Ark in their local Kubernetes cluster.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.598438Z"
-}

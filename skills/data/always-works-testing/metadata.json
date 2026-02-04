@@ -1,9 +1,0 @@
-{
-  "name": "always-works-testing",
-  "description": "Default testing standard for all implementation work - ensures code actually works through mandatory execution validation before confirming to user. Applies automatically whenever writing, modifying, ",
-  "repo": "FlorinPopaCodes/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

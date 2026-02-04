@@ -1,9 +1,0 @@
-{
-  "name": "supabase-management",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "data",
-  "description": "Manage Supabase database using Orchestrator AI's storage-based sync system. Use when working with Supabase, database snapshots, migrations, agent exports, N8N workflow exports, backups, or storage scr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:57.245925Z",
-  "dir_name": "supabase-management"
-}

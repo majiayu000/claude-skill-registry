@@ -1,9 +1,0 @@
-{
-  "name": "skill-craft",
-  "description": "Claude Codeスキルの作成・レビュー。新規スキルの設計ガイド、既存スキルの品質チェック、ベストプラクティスに基づく改善提案を行う。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "quarkus-developer",
-  "description": "[Extends backend-developer] Quarkus specialist for cloud-native Java. Use for Quarkus apps, Panache ORM, native builds with GraalVM, RESTEasy Reactive, Dev Services. Invoke alongside backend-developer",
-  "repo": "olehsvyrydov/AI-development-team",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

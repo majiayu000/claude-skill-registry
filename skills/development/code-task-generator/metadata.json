@@ -1,7 +1,0 @@
-{
-  "name": "code-task-generator",
-  "description": "This sop generates structured code task files from rough descriptions, ideas, or PDD implementation plans. It automatically detects the input type and creates properly formatted code task files follow",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.182832Z"
-}

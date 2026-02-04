@@ -1,9 +1,0 @@
-{
-  "name": "xml-surgeon",
-  "description": "Targeted XML read/write edits with XPath, minimal formatting changes, and batch operations across many files. Use for any XML work where precise, surgical reads and changes are needed, including subtr",
-  "repo": "anntnzrb/agents",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/anntnzrb/agents"
-}

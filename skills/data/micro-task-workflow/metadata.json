@@ -1,9 +1,0 @@
-{
-  "name": "micro-task-workflow",
-  "description": "Micro-task development patterns with 50% context budget. Use for task decomposition, context management, escape hatch protocols, and orchestration patterns.",
-  "repo": "krazyuniks/guitar-tone-shootout",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/krazyuniks/guitar-tone-shootout"
-}

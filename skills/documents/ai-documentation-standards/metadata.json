@@ -1,8 +1,0 @@
-{
-  "name": "ai-documentation-standards",
-  "repo": "randalmurphal/claude-config",
-  "category": "documents",
-  "description": "Write AI-readable documentation following concise-over-comprehensive principle, hierarchical CLAUDE.md/AGENTS.md inheritance (100-200 line rule), structured formats (tables over prose), parallel valid",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:48.853801Z"
-}

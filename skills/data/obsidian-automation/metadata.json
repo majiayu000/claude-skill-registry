@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-automation",
-  "description": "This skill should be used when working on Obsidian plugins, testing plugin changes, verifying plugin UI, debugging plugin behaviour, or running automated tests against Obsidian. Also triggers on \"star",
-  "repo": "tavva/ben-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

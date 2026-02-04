@@ -1,9 +1,0 @@
-{
-  "name": "entity-resolution",
-  "description": "Identifies and merges duplicate entities in Knowledge Graph projects. Use after extraction to consolidate duplicate entities, or when users ask about potential duplicates. Supports automatic merging f",
-  "repo": "costiash/CognivAgent",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/costiash/CognivAgent"
-}

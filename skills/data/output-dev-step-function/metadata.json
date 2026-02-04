@@ -1,9 +1,0 @@
-{
-  "name": "output-dev-step-function",
-  "description": "Create step functions in steps.ts for Output SDK workflows. Use when implementing I/O operations, error handling, HTTP requests, or LLM calls.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

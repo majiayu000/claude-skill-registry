@@ -1,9 +1,0 @@
-{
-  "name": "php-composer-and-autoloading",
-  "repo": "TheBushidoCollective/han",
-  "category": "data",
-  "description": "Use when composer package management and PSR-4 autoloading including dependency management, autoload strategies, package creation, version constraints, and patterns for modern PHP project organization",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:06.917318Z",
-  "dir_name": "php-composer-and-autoloading"
-}

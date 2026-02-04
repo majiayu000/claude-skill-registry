@@ -1,9 +1,0 @@
-{
-  "name": "why-verify-risk",
-  "description": "学習目的で、あらゆる提案変更に WHY / VERIFY / RISK とロールバックを必ず付ける（コード・コマンド・AWS手順）。WHYは「選択肢→特徴→結論（最適案）」で統一する。",
-  "repo": "showdaiya/cr-tool",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

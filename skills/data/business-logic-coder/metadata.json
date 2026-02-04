@@ -1,9 +1,0 @@
-{
-  "name": "business-logic-coder",
-  "description": "Implement business logic with ActiveInteraction and AASM state machines. Use when creating typed operations, managing state transitions, or refactoring service objects. Triggers on interaction creatio",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "docker-wizard",
-  "description": "Generate optimized Dockerfiles and docker-compose.yml with best practices and multi-stage builds",
-  "repo": "Lordjiggy/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

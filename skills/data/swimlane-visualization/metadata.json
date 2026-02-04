@@ -1,9 +1,0 @@
-{
-  "name": "swimlane-visualization",
-  "description": "Design swimlane UI patterns for visualizing ADW execution. Use when building observability dashboards, monitoring agent workflows, or creating real-time status displays.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

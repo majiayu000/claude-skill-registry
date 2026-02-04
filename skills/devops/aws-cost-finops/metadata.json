@@ -1,8 +1,0 @@
-{
-  "name": "aws-cost-finops",
-  "repo": "ahmedasmar/devops-claude-skills",
-  "category": "devops",
-  "description": "AWS cost optimization and FinOps workflows. Use for finding unused resources, analyzing Reserved Instance opportunities, detecting cost anomalies, rightsizing instances, evaluating Spot instances, mig",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:46.493046Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pdf-to-markdown-converter",
-  "description": "Converts PDF files to Markdown format using PyMuPDF, extracting text content and embedded images. Fast and lightweight. Automatically fixes LaTeX umlauts (¨a → ä, etc.) and converts ß to ss (Swiss Ger",
-  "repo": "talent-factory/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

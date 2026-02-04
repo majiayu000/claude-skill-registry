@@ -1,9 +1,0 @@
-{
-  "name": "cold-start-optimizer",
-  "description": "Provides guidance on reducing Lambda cold start times through binary optimization, lazy initialization, and deployment strategies. Activates when users discuss cold starts or deployment configuration.",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

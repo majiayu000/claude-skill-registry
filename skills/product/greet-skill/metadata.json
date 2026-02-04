@@ -1,8 +1,0 @@
-{
-  "name": "greet-skill",
-  "repo": "sjnims/cc-plugin-eval",
-  "category": "product",
-  "description": "This skill should be used when the user says \"hello\", \"hi\", or \"greet me\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:22.858032Z"
-}

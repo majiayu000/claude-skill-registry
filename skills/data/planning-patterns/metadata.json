@@ -1,9 +1,0 @@
-{
-  "name": "planning-patterns",
-  "description": "DO NOT invoke directly - loaded by workflow agents via cc10x-router.Always loaded by: planner.Provides planning patterns: comprehensive plans with bite-sized TDD tasks, spec-based, DRY/YAGNI. Iron Law",
-  "repo": "romiluz13/cc10x",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

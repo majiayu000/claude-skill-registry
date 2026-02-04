@@ -1,8 +1,0 @@
-{
-  "name": "go-sentinel-errors",
-  "repo": "JamesPrial/claudefiles",
-  "category": "development",
-  "description": "Define package-level sentinel errors using errors.New",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.856904Z"
-}

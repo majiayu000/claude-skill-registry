@@ -1,9 +1,0 @@
-{
-  "name": "git-pr-core",
-  "description": "Skill interne fournissant les scripts communs pour la création de Pull Requests. Ne pas appeler directement - utilisé par git-pr et git-cd-pr.",
-  "repo": "atournayre/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

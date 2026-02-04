@@ -1,9 +1,0 @@
-{
-  "name": "git-branching-strategy",
-  "description": "This skill should be used when starting new feature work, mid-feature when wanting to add unrelated changes, when a branch has grown beyond 20 commits, or when unsure whether to create a new branch. C",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

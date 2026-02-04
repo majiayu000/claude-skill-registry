@@ -1,9 +1,0 @@
-{
-  "name": "jetbrains-coding",
-  "description": "Use when JetBrains MCP tools are available (mcp__jetbrains__*) - enforces IDE-native workflow with problem checking after file completion, and smart refactoring tools instead of grep/sed",
-  "repo": "maidevberlin/logikids",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

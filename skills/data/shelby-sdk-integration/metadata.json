@@ -1,9 +1,0 @@
-{
-  "name": "shelby-sdk-integration",
-  "description": "Use when integrating Shelby Protocol TypeScript SDK for Node.js or browser applications. Helps with setup, blob uploads, authentication with Aptos accounts, network configuration, and SDK implementati",
-  "repo": "zacharyr0th/next-starter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

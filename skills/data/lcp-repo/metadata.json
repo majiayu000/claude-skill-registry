@@ -1,9 +1,0 @@
-{
-  "name": "lcp-repo",
-  "description": "Repository orientation and which Codex skills to use for each area (go-lcpd, protocol spec, docs, openai-serve, ExecPlans).",
-  "repo": "YusukeShimizu/lightning-compute-protocol",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

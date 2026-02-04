@@ -1,9 +1,0 @@
-{
-  "name": "huggingface-model-trainer",
-  "repo": "frankxai/ai-architect",
-  "category": "data",
-  "description": "Train and fine-tune LLMs using HuggingFace TRL, Transformers, and cloud GPU infrastructure with SFT, DPO, GRPO methods",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:10.160829Z",
-  "dir_name": "huggingface-model-trainer"
-}

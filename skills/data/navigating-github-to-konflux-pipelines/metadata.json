@@ -1,9 +1,0 @@
-{
-  "name": "navigating-github-to-konflux-pipelines",
-  "description": "Use when GitHub PR or branch has failing checks and you need to find Konflux pipeline information (cluster, namespace, PipelineRun name). Teaches gh CLI commands to identify Konflux checks (filter out",
-  "repo": "konflux-ci/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

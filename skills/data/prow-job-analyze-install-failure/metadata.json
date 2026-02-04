@@ -1,9 +1,0 @@
-{
-  "name": "prow-job-analyze-install-failure",
-  "description": "Analyze OpenShift installation failures in Prow CI jobs by examining installer logs, log bundles, and sosreports. Use when CI job fails \"install should succeed\" tests at bootstrap, cluster creation or",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

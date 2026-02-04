@@ -1,9 +1,0 @@
-{
-  "name": "realtime-multiplayer",
-  "description": "Real-time multiplayer game networking with Socket.io. Use when implementing WebSocket connections, game state synchronization, room management, reconnection handling, or optimistic updates. Covers lat",
-  "repo": "fil512/upship",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

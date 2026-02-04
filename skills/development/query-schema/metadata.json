@@ -1,8 +1,0 @@
-{
-  "name": "query-schema",
-  "repo": "stallboy/claude-code-marketplace",
-  "category": "development",
-  "description": "Query game configuration table schemas and analyze table relationships using HTTP API and CFG syntax. This skill should be used when Claude needs to understand table structures for game development, q",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:33.137819Z"
-}

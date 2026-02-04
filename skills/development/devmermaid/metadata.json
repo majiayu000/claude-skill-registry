@@ -1,8 +1,0 @@
-{
-  "name": "devmermaid",
-  "repo": "kevinslin/llm",
-  "category": "development",
-  "description": "Generate Mermaid diagrams with proper syntax. Use when creating flowcharts, sequence diagrams, class diagrams, or any other Mermaid visualizations. Ensures correct label quoting to prevent parsing err",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:28.197023Z"
-}

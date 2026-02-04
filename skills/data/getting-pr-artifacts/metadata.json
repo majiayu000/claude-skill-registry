@@ -1,9 +1,0 @@
-{
-  "name": "getting-pr-artifacts",
-  "description": "Use when needing workflow artifacts from PR - runs in subagent to find jobs with artifacts, returns gh commands to download them without consuming context",
-  "repo": "karlmdavis/dotfiles",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

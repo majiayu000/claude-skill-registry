@@ -1,9 +1,0 @@
-{
-  "name": "linter-driven-development",
-  "description": "Orchestrates complete autopilot workflow: design → test → lint → refactor → review → commit.AUTO-INVOKES when user wants to implement code: \"implement\", \"ready\", \"execute\", \"continue\",\"do step X\", \"ne",
-  "repo": "buzzdan/ai-coding-rules",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

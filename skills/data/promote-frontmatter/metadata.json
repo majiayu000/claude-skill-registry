@@ -1,9 +1,0 @@
-{
-  "name": "promote-frontmatter",
-  "repo": "bencassie/flywheel",
-  "category": "data",
-  "description": "Extract prose patterns like \"Key: Value\" or \"Key: [[wikilink]]\" and promote them to YAML frontmatter. Triggers on \"promote to frontmatter\", \"extract frontmatter\", \"prose to yaml\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:36.025221Z",
-  "dir_name": "promote-frontmatter"
-}

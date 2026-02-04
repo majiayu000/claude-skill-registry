@@ -1,9 +1,0 @@
-{
-  "name": "linting",
-  "description": "This skill helps lint Python code using ruff. Use when the user asks to \"lint\", \"check code quality\", or \"fix style issues\".\n",
-  "repo": "robertpelloni/borg",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/robertpelloni/borg"
-}

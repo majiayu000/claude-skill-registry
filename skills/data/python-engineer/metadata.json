@@ -1,9 +1,0 @@
-{
-  "name": "python-engineer",
-  "description": "Writes, reviews, and refactors Python code following modern best practices. Specialises in Python 3.12+, uv for project management, type hints, polars over pandas, pydantic for validation, and pytest ",
-  "repo": "benswift/.dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

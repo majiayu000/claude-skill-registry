@@ -1,8 +1,0 @@
-{
-  "name": "externalizing-and-translating-text",
-  "repo": "microbus-io/fabric",
-  "category": "devops",
-  "description": "Externalizes user-facing text to a resource bundle where they can be easily translated. Use to externalize static strings that are shown to the end user.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:32.141503Z"
-}

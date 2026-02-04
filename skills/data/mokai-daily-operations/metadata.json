@@ -1,9 +1,0 @@
-{
-  "name": "mokai-daily-operations",
-  "repo": "harrysayers7/claudelife",
-  "category": "data",
-  "description": "Automatically manages MOKAI daily status when user mentions MOKAI tasks, progress, status updates, or asks what to work on. Scans diary notes, inbox tasks, updates tracker and dashboard. Use when user",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.778474Z",
-  "dir_name": "mokai-daily-operations"
-}

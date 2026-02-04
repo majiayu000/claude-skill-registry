@@ -1,8 +1,0 @@
-{
-  "name": "aps-doc-core",
-  "repo": "treasure-data/td-skills",
-  "category": "testing",
-  "description": "Core documentation generation patterns and framework for Treasure Data pipeline layers. Provides shared templates, quality validation, testing framework, and Confluence integration used by all layer-s",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.756785Z"
-}

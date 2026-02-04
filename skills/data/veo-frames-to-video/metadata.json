@@ -1,9 +1,0 @@
-{
-  "name": "veo-frames-to-video",
-  "description": "Generate video from first and last frame images using fal.ai Veo 3.1. Use when the user wants to create a video transition between two images, morph between scenes, or generate smooth video connecting",
-  "repo": "bluewaves-creations/bluewaves-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bluewaves-creations/bluewaves-skills"
-}

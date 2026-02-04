@@ -1,9 +1,0 @@
-{
-  "name": "setup-rls",
-  "description": "Configure Row Level Security policies for Supabase tables to control data access. Triggers when user mentions security, permissions, access control, or RLS policies.",
-  "repo": "rdimascio/supabase-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

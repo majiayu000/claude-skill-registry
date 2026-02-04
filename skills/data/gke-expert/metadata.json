@@ -1,9 +1,0 @@
-{
-  "name": "gke-expert",
-  "description": "Expert guidance for Google Kubernetes Engine (GKE) operations including cluster management, workload deployment, scaling, monitoring, troubleshooting, and optimization. Use when working with GKE clust",
-  "repo": "AdminTurnedDevOps/agentic-demo-repo",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

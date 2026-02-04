@@ -1,9 +1,0 @@
-{
-  "name": "ansible-inventory",
-  "description": "Use when managing hosts and groups in Ansible inventory for organizing infrastructure and applying configurations across environments.",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

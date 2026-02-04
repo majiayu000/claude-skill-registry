@@ -1,9 +1,0 @@
-{
-  "name": "table-config",
-  "description": "表字段配置规范。建表后配置 ts 文件时使用。",
-  "repo": "sail-sail/nest",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

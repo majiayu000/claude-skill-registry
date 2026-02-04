@@ -1,9 +1,0 @@
-{
-  "name": "generating-docker-compose-files",
-  "description": "Use when you need to work with Docker Compose.This skill provides Docker Compose file generation with comprehensive guidance and automation.Trigger with phrases like \"generate docker-compose\", \"create",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

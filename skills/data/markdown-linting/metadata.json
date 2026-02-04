@@ -1,9 +1,0 @@
-{
-  "name": "markdown-linting",
-  "description": "Comprehensive markdown linting guidance using markdownlint-cli2. Run, execute, check, and validate markdown files. Fix linting errors (MD0XX rules). Configure .markdownlint-cli2.jsonc (rules and ignor",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

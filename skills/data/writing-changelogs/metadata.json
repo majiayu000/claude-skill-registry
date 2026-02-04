@@ -1,9 +1,0 @@
-{
-  "name": "writing-changelogs",
-  "description": "Use when releasing a new version, updating CHANGELOG.md, or user asks to document changes - enforces Keep a Changelog format with proper categorization derived from conventional commits",
-  "repo": "stabilefrisur/metapyle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

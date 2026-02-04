@@ -1,9 +1,0 @@
-{
-  "name": "mcp-context-optimizer",
-  "description": "Optimize MCP tool context loading through progressive disclosure and hierarchical indexing. Use when working with large MCP tool sets (e.g., Miyabi's 172 tools) to prevent context window bloat. Trigge",
-  "repo": "ShunsukeHayashi/Miyabi",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

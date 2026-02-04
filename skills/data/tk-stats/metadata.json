@@ -1,9 +1,0 @@
-{
-  "name": "tk-stats",
-  "description": "Show project task statistics and progress. Use when user says /tk:stats or asks about progress, how many tasks, completion rate, or project status.",
-  "repo": "iheanyi/tasuku",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

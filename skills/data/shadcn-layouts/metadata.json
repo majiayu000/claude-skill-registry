@@ -1,9 +1,0 @@
-{
-  "name": "shadcn-layouts",
-  "description": "Generate correct shadcn/Tailwind layouts by applying CSS mental models. This skill should be used when the user asks to 'create a shadcn layout', 'fix layout issues', 'debug CSS height problems', 'mak",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

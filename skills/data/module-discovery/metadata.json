@@ -1,9 +1,0 @@
-{
-  "name": "module-discovery",
-  "description": "排查问题、修复 BUG、定位代码、查找模块、功能开发前，必须先读取此 SKILL 并使用模块索引定位目标，不可跳过",
-  "repo": "taptap/claude-plugins-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

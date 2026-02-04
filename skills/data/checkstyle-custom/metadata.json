@@ -1,9 +1,0 @@
-{
-  "name": "checkstyle-custom",
-  "description": "Use when developing custom Checkstyle checks, filters, and plugin integrations for project-specific Java code standards.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

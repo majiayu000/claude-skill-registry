@@ -1,9 +1,0 @@
-{
-  "name": "generate-appworld-code",
-  "description": "Generate Python code to solve AppWorld agent tasks using playbook bullet guidance. Use when the AppWorld executor needs executable Python code for tasks involving Spotify, Venmo, Gmail, Calendar, Cont",
-  "repo": "jmanhype/claude-code-plugin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "testing-workflows",
-  "description": "Run, debug, and structure tests for this Go project (unit + integration), including generation prerequisites. Use when changing domain logic, repositories, HTTP handlers, or migrations.",
-  "repo": "matt-riley/mjrwtf",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

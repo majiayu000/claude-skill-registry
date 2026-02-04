@@ -1,9 +1,0 @@
-{
-  "name": "text-writer",
-  "description": "技術研修テキスト教材を執筆。:::stepディレクティブ、学習目標、コードブロックルール（//addstart等）に準拠。テキスト教材、技術ドキュメント作成時に使用。",
-  "repo": "imagepit/text-lint-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "mova-dpp-passport-normalize-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Normalize a single DPP passport input into lab_battery_passport_extended_v1 (happy-path).",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:48.070520Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "td-arimaestimate",
-  "description": "ARIMA parameter estimation for seasonal and non-seasonal AR, MA, ARMA, and ARIMA models",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

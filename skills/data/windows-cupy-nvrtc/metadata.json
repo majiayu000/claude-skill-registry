@@ -1,9 +1,0 @@
-{
-  "name": "windows-cupy-nvrtc",
-  "description": "Fix CuPy NVRTC compilation errors on Windows. Trigger: NVRTC_ERROR_BUILTIN_OPERATION_FAILURE, nvrtc-builtins64 not found",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

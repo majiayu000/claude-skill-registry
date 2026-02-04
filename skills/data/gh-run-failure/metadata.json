@@ -1,9 +1,0 @@
-{
-  "name": "gh-run-failure",
-  "description": "Use to analyze failures in GitHub pipelines or jobs.",
-  "repo": "bkircher/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

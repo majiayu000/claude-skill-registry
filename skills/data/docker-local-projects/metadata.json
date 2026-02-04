@@ -1,9 +1,0 @@
-{
-  "name": "docker-local-projects",
-  "description": "Manage Laravel projects with docker-local - list, create, clone, and open projects",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

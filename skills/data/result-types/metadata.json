@@ -1,9 +1,0 @@
-{
-  "name": "result-types",
-  "description": "Never throw for expected failures. Use Result<T, E> types with explicit error handling and workflow composition.",
-  "repo": "jagreehal/jagreehal-claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

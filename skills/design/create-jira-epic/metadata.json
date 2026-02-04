@@ -1,8 +1,0 @@
-{
-  "name": "create-jira-epic",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "design",
-  "description": "Implementation guide for creating Jira epics with proper scope and parent linking",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.421124Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "coverage-70-tests",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "testing",
-  "description": "Ensure new (staged and unstaged) changes are covered by tests at >70% and the full test suite is green. Use when asked to validate coverage for recent changes, add tests for modified code, or verify n",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:32:04.238675Z"
-}

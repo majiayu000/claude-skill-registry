@@ -1,9 +1,0 @@
-{
-  "name": "extension-toolchain",
-  "description": "Apply modern browser extension toolchain patterns: WXT (default), Plasmo, CRXJS for Chrome/Firefox/Safari extensions. Use when building browser extensions, choosing extension frameworks, or discussing",
-  "repo": "phrazzld/claude-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

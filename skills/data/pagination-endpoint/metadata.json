@@ -1,9 +1,0 @@
-{
-  "name": "pagination-endpoint",
-  "description": "Guide for creating paginated list endpoints with cursor-based pagination and RFC 8288 Link headers following this project's conventions.",
-  "repo": "janisto/huma-playground",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

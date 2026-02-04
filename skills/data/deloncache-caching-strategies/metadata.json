@@ -1,9 +1,0 @@
-{
-  "name": "deloncache-caching-strategies",
-  "repo": "tw-lin/ng-lin",
-  "category": "data",
-  "description": "Implement caching strategies using @delon/cache. Use this skill when adding memory cache, LocalStorage cache, SessionStorage cache, or cache interceptors for HTTP requests. Supports TTL-based expirati",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:13.822153Z",
-  "dir_name": "deloncache-caching-strategies"
-}

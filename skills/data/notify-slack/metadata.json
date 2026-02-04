@@ -1,9 +1,0 @@
-{
-  "name": "notify-slack",
-  "description": "Slack 채널에 메시지 전송 (공통 Skill). Use when (1) 이슈/태스크 알림,(2) 릴리스 알림, (3) /SEMO:slack 커맨드, (4) 팀원 멘션 요청.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

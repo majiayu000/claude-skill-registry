@@ -1,9 +1,0 @@
-{
-  "name": "x-cmd-system",
-  "description": "This skill provides comprehensive system administration and monitoring tools through x-cmd CLI, including process management, macOS system utilities, network configuration, disk health monitoring, and",
-  "repo": "x-cmd/skill",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/x-cmd/skill"
-}

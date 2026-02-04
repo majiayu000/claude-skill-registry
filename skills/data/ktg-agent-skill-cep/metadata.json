@@ -1,9 +1,0 @@
-{
-  "name": "ktg-agent-skill-cep",
-  "description": "Context Extension Protocol v7.0. IMMEDIATELY outputs YAML carry-packet when triggered. Cross-model handoff with permanent expert council, S2A filtering, and Progressive Density Layering. Mandatory pac",
-  "repo": "ktg-one/ktg-agent-skill-cep",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ktg-one/ktg-agent-skill-cep"
-}

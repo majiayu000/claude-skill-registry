@@ -1,9 +1,0 @@
-{
-  "name": "paperless",
-  "description": "Search and manage documents in Paperless-ngx document management system. Use when the user asks about documents, invoices, receipts, tax forms, bills, or wants to search their document library.",
-  "repo": "MichaelVessia/nixos-config",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

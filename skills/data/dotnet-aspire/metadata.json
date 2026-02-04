@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-aspire",
-  "description": "Adds .NET Aspire cloud-native orchestration to existing .NET solutions. Analyzes solution structure to identify services (APIs, web apps, workers), creates AppHost and ServiceDefaults projects, config",
-  "repo": "aknagar/mfe-portal",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

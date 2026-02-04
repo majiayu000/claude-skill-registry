@@ -1,8 +1,0 @@
-{
-  "name": "pytest-mock-guide",
-  "repo": "bossjones/logging-lab",
-  "category": "testing",
-  "description": "Guide for using pytest-mock plugin to write tests with mocking. Use when writing pytest tests that need mocking, patching, spying, or stubbing. Covers mocker fixture usage, patch methods, spy/stub pat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:15.826051Z"
-}

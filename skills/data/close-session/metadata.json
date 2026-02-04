@@ -1,9 +1,0 @@
-{
-  "name": "close-session",
-  "description": "Load when user says \"done\", \"finish\", \"complete\", \"close\", \"wrap up\", \"end session\", or any system skill/project completes",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

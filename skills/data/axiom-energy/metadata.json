@@ -1,9 +1,0 @@
-{
-  "name": "axiom-energy",
-  "description": "Use when app drains battery, device gets hot, users report energy issues, or auditing power consumption - systematic Power Profiler diagnosis, subsystem identification (CPU/GPU/Network/Location/Displa",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

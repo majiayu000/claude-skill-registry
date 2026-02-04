@@ -1,7 +1,0 @@
-{
-  "name": "mermaid-diagrams",
-  "description": "Create and maintain architecture diagrams using Mermaid syntax for system architecture, workflows, database schemas, and sequence diagrams. Use when visualizing system components, data flows, or docum",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:10.932857Z"
-}

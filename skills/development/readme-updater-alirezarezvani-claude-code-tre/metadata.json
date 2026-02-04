@@ -1,7 +1,0 @@
-{
-  "name": "readme-updater-alirezarezvani-claude-code-tre",
-  "description": "Keep README files current with project changes. Use when project structure changes, features added, or setup instructions modified. Suggests README updates based on code changes. Triggers on significa",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.893785Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pytd",
-  "repo": "treasure-data/td-skills",
-  "category": "data",
-  "description": "Expert assistance for using pytd (Python SDK) to query and import data with Treasure Data. Use this skill when users need help with Python-based data analysis, querying Presto/Hive, importing pandas D",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.965001Z",
-  "dir_name": "pytd"
-}

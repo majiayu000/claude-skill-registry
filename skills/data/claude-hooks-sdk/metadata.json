@@ -1,9 +1,0 @@
-{
-  "name": "claude-hooks-sdk",
-  "description": "Expert guide for building Claude Code hooks using the claude-hooks-sdk npm package. Use when implementing TypeScript hooks with HookManager, Logger, transforms, context tracking, or troubleshooting SD",
-  "repo": "hgeldenhuys/claude-hooks-sdk",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

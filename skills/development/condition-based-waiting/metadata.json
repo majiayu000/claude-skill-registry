@@ -1,7 +1,0 @@
-{
-  "name": "condition-based-waiting",
-  "description": "Replace arbitrary timeouts with condition polling for reliable async tests",
-  "category": "development",
-  "source": "github.com/obra/superpowers-skills",
-  "imported_at": "2026-01-24T14:54:12.683947Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "publish-skill",
-  "description": "USE WHEN: user wants to publish, port, or share a skill to a marketplace repo.\nDO NOT USE WHEN: creating new skills, installing skills, or general questions.\n",
-  "repo": "mahidalhan/claude-hacks",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/mahidalhan/claude-hacks"
-}

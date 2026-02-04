@@ -1,9 +1,0 @@
-{
-  "name": "config-sync-overview",
-  "description": "Provide structured config-sync system and directory overview. Use when config-sync architecture guidance is required.",
-  "repo": "CsHeng/dot-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

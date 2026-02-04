@@ -1,8 +1,0 @@
-{
-  "name": "blueprint-multi-tenancy-integration",
-  "repo": "tw-lin/ng-lin",
-  "category": "testing",
-  "description": "Integrate the Blueprint multi-tenancy pattern into new features and modules. Use this skill when adding Blueprint-aware functionality, implementing BlueprintMember access control, handling Blueprint o",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:13.897610Z"
-}

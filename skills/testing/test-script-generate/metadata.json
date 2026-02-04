@@ -1,8 +1,0 @@
-{
-  "name": "test-script-generate",
-  "repo": "cmw-coder/coder-templates",
-  "category": "testing",
-  "description": "\u7f16\u5199\u7528\u4e8e\u65b0\u534e\u4e09\u6280\u672f\u6709\u9650\u516c\u53f8H3C\u7f51\u7edc\u8bbe\u5907\u81ea\u52a8\u5316\u6d4b\u8bd5\u811a\u672c\u3002\u652f\u6301\u5168\u5e93\u68c0\u7d22\u3001\u8fed\u4ee3\u4f18\u5316\u7b56\u7565\u4ee5\u53ca\u8fc7\u7a0b\u6587\u6863\u81ea\u52a8\u5f52\u6863\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:35.840304Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "argocd-image-updater",
-  "description": "Automate container image updates for Kubernetes workloads managed by Argo CD. USE WHEN configuring ArgoCD Image Updater, setting up automatic image updates, configuring update strategies (semver, dige",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

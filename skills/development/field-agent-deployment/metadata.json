@@ -1,8 +1,0 @@
-{
-  "name": "field-agent-deployment",
-  "repo": "treasure-data/td-skills",
-  "category": "development",
-  "description": "Best practices for developing, testing, and deploying production-ready Field Agents including R&D workflows, version control, testing strategies, and release management",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.832703Z"
-}

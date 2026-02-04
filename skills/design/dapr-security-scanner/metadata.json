@@ -1,8 +1,0 @@
-{
-  "name": "dapr-security-scanner",
-  "repo": "Sahib-Sawhney-WH/dapr-claude-plugin",
-  "category": "design",
-  "description": "Scans DAPR projects for security issues including plain-text secrets, missing ACLs, insecure configurations, and security best practice violations. Automatically triggers on component file modificatio",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:49.797062Z"
-}

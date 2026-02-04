@@ -1,9 +1,0 @@
-{
-  "name": "dependency-injection-setup",
-  "description": "Add new services to DIContainer, create protocol-based implementations, set up singletons or factories for Leavn app dependency injection",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

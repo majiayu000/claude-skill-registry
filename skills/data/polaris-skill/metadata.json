@@ -1,9 +1,0 @@
-{
-  "name": "polaris-skill",
-  "description": "ALWAYS USE when configuring Polaris catalog, managing namespaces, or setting up credentials in floe-platform. Use IMMEDIATELY when integrating DuckDB via dbt-duckdb plugin, configuring PyIceberg REST ",
-  "repo": "Obsidian-Owl/floe",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Obsidian-Owl/floe"
-}

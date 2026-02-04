@@ -1,9 +1,0 @@
-{
-  "name": "lightning-wallet",
-  "description": "Use when implementing a standalone Lightning wallet using Cashu mints - provides complete patterns for minting (receiving Lightning payments), melting (sending Lightning payments), mint management, tr",
-  "repo": "PerceptLabs/nostril",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

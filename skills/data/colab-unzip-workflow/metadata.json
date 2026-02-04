@@ -1,9 +1,0 @@
-{
-  "name": "colab-unzip-workflow",
-  "description": "Colab file paths after unzipping repo. Trigger when: (1) API key file not found, (2) file path errors in Colab, (3) configuring notebook paths, (4) 'yfinance fallback' despite keys existing.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

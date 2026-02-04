@@ -1,8 +1,0 @@
-{
-  "name": "sindarin-language",
-  "repo": "sevos/claude-code-marketplace",
-  "category": "design",
-  "description": "This skill should be used when the user asks to \"translate to Sindarin\", \"write in Elvish\", \"Sindarin grammar\", \"Elvish translation\", \"speak Sindarin\", \"Tolkien Elvish\", or mentions Sindarin language,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:21.460909Z"
-}

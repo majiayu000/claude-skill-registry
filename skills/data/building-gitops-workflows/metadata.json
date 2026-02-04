@@ -1,9 +1,0 @@
-{
-  "name": "building-gitops-workflows",
-  "description": "Use when constructing GitOps workflows using ArgoCD or Flux. Trigger with phrases like \"create GitOps workflow\", \"setup ArgoCD\", \"configure Flux\", or \"automate Kubernetes deployments\". Generates produ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

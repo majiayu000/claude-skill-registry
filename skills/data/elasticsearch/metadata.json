@@ -1,9 +1,0 @@
-{
-  "name": "elasticsearch",
-  "description": "Elasticsearch 5.2 operations using HTTP API - searching, indexing, bulk operations, scroll API, and alias management",
-  "repo": "lawless-m/Earwig",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/lawless-m/Earwig"
-}

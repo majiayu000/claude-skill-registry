@@ -1,8 +1,0 @@
-{
-  "name": "docker-log-debugger",
-  "repo": "cncorp/arsenal",
-  "category": "development",
-  "description": "Find and debug errors using Docker Compose logs. Use proactively when tests fail or services misbehave. PRIMARY - docker compose logs --since 15m | grep -iE -B 10 -A 10 \"error|fail|exception\"",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.120313Z"
-}

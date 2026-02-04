@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-rate-limits",
-  "description": "Handle OpenRouter rate limits with proper backoff strategies. Use when experiencing 429 errors or building high-throughput systems. Trigger with phrases like 'openrouter rate limit', 'openrouter 429',",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-known-pitfalls",
-  "description": "Avoid common OpenRouter mistakes and anti-patterns. Use when reviewing code or onboarding developers. Trigger with phrases like 'openrouter pitfalls', 'openrouter mistakes', 'openrouter gotchas', 'ope",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

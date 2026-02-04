@@ -1,7 +1,0 @@
-{
-  "name": "deployment-pipeline-design",
-  "description": "Pipeline design, deployment strategies (blue-green, canary, rolling), and CI/CD platform patterns. Use when designing pipelines, implementing deployments, configuring quality gates, or setting up auto",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.529712Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "crm-integration-skill",
-  "description": "CRM integration patterns for Close CRM, HubSpot, and Salesforce. Use when: Close CRM, HubSpot, Salesforce, CRM API, lead sync, deal sync, activity logging, CRM webhook, pipeline automation, contact en",
-  "repo": "ScientiaCapital/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ScientiaCapital/skills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-app-performance-js",
-  "description": "Measure and optimize WebF app performance from the JavaScript side (performance.mark/measure, bundle size, code splitting, debouncing, CSS transforms). Use when the user mentions performance.mark/meas",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

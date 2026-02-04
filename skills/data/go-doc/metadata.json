@@ -1,9 +1,0 @@
-{
-  "name": "go-doc",
-  "description": "This skill should be used when drafting or reviewing Go doc comments so they align with the official Go documentation style and pkgsite rendering rules.",
-  "repo": "zskulcsar/code-stats",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

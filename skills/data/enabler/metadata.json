@@ -1,9 +1,0 @@
-{
-  "name": "enabler",
-  "description": "指定したプラグインを有効化する。「プラグインを有効化」「〇〇をオンにして」「〇〇を有効にして」「プラグインを有効に」「〇〇を使えるようにして」「プラグインをオンに」「〇〇を有効化して」などで起動。claude plugin enable コマンドを使用して有効化。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

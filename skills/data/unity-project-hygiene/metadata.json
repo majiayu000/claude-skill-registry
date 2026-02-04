@@ -1,9 +1,0 @@
-{
-  "name": "unity-project-hygiene",
-  "description": "Keep Unity repos stable for CI/CD with proper gitignore, LFS, and project settings",
-  "repo": "BreakerOfStems/claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/BreakerOfStems/claude-skills"
-}

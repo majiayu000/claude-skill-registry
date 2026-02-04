@@ -1,9 +1,0 @@
-{
-  "name": "flow-convert-prompts-to-files",
-  "description": "Convert inline prompts and prompt arrays to .prompt files with YAML frontmatter. Use when migrating prompts from Flow SDK format to Output SDK prompt files.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

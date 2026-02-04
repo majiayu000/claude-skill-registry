@@ -1,8 +1,0 @@
-{
-  "name": "artifact-query",
-  "repo": "LerianStudio/ring",
-  "category": "design",
-  "description": "Search the Artifact Index for relevant historical context using semanticfull-text search. Returns handoffs, plans, and continuity ledgers rankedby relevance using BM25.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:32.055592Z"
-}

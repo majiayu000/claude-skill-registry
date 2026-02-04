@@ -1,9 +1,0 @@
-{
-  "name": "check-accessibility",
-  "description": "CareMatch 컴포넌트 접근성 검사. 50-70세 고령층을 위한 접근성 가이드라인 준수 여부를 체크합니다. 사용법 - \"접근성 검사해줘\", \"이 컴포넌트 접근성 확인\"",
-  "repo": "saintgo7/app-hospital-yoyang",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

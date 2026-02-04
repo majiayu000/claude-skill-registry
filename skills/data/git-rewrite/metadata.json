@@ -1,9 +1,0 @@
-{
-  "name": "git-rewrite",
-  "description": "Analyze and reorganize git branch history into logical, shippable commits. Automatically identifies patterns like RuboCop fixes, test iterations, and implementation evolution, then creates clean commi",
-  "repo": "patrick-motard/claude-plugins-public",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

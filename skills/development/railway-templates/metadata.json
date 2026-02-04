@@ -1,7 +1,0 @@
-{
-  "name": "railway-templates",
-  "description": "Search and deploy services from Railway's template marketplace. Use when user wants to add a service from a template, find templates for a specific use case, or deploy tools like Ghost, Strapi, n8n, M",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.781825Z"
-}

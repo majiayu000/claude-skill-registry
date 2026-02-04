@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-ci-job-configuration",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when defining GitLab CI jobs, configuring scripts, setting up environments, or managing job dependencies. Covers job structure and execution options.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:04.308678Z"
-}

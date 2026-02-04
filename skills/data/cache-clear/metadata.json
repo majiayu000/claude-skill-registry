@@ -1,9 +1,0 @@
-{
-  "name": "cache-clear",
-  "description": "Clear cache entries based on filters (all, expired, pattern).Delegates to fractary CLI for safe cache operations with dry-run support.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

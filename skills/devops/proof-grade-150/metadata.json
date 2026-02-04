@@ -1,8 +1,0 @@
-{
-  "name": "proof-grade-150",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "devops",
-  "description": "Ensure every critical claim has verifiable evidence with confidence levels. Each fact must have source + confidence percentage. If confidence <85%, enter Loop150 to find more sources. Use for critical",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:26.534509Z"
-}

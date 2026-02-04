@@ -1,9 +1,0 @@
-{
-  "name": "jwt-authentication",
-  "description": "Implement secure JWT (JSON Web Token) authentication in Node.js applications with access/refresh tokens and role-based access control",
-  "repo": "pluginagentmarketplace/custom-plugin-nodejs",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

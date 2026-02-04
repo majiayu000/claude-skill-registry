@@ -1,9 +1,0 @@
-{
-  "name": "playwright-browser-automation",
-  "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flo",
-  "repo": "ghealysr/nicole-assistant",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ghealysr/nicole-assistant"
-}

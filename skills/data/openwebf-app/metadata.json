@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-app",
-  "description": "DEPRECATED umbrella Skill (backward compatibility). Use only for cross-cutting orchestration across multiple WebF app tasks when a request spans several capabilities (dev loop + debugging + testing + ",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "audit-context-building",
-  "description": "Enables ultra-granular, line-by-line code analysis to build deep architectural context before vulnerability or bug finding.",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.534375Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-custom-prompts",
-  "description": "Create and manage custom prompt libraries for Cascade. Activate when users mention\"custom prompts\", \"prompt library\", \"prompt templates\", \"cascade prompts\",or \"prompt management\". Handles prompt libra",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

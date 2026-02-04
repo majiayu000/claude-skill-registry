@@ -1,9 +1,0 @@
-{
-  "name": "new-youtube-video-skill",
-  "description": "Creates a new YouTube video project with comprehensive research, competitor analysis, folder structure, and todo.md for progress tracking. Uses Playwright MCP to fetch vidIQ stats, analyze competitors",
-  "repo": "SGobet/AI-Powered-YouTube-Workflow-TO-SHARE-",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

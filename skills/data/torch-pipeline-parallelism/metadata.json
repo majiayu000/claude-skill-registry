@@ -1,9 +1,0 @@
-{
-  "name": "torch-pipeline-parallelism",
-  "description": "Guidance for implementing PyTorch pipeline parallelism for distributed model training. This skill should be used when tasks involve implementing pipeline parallelism, distributed training with model p",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "fork-terminal-skill",
-  "repo": "disler/fork-repository-skill",
-  "category": "product",
-  "description": "Fork a terminal session to a new terminal window. Use this when the user requests 'fork terminal' or 'create a new terminal' or 'new terminal: <command>' or 'fork session: <command>'.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:48.546706Z"
-}

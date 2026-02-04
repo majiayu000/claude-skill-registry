@@ -1,9 +1,0 @@
-{
-  "name": "dev-explore",
-  "description": "REQUIRED Phase 2 of /dev workflow after dev-brainstorm. This skill should be used when the user asks to 'explore the codebase', 'map architecture', 'find similar features', 'discover test infrastructu",
-  "repo": "edwinhu/workflows",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/edwinhu/workflows"
-}

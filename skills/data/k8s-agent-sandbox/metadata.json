@@ -1,9 +1,0 @@
-{
-  "name": "k8s-agent-sandbox",
-  "description": "Documentation for Kubernetes Agent Sandbox - a CRD-based system for managing isolated AI agent execution environments. Use for queries about Sandbox CRDs (Sandbox, SandboxTemplate, SandboxClaim, Sandb",
-  "repo": "khirotaka/cc-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

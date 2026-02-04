@@ -1,9 +1,0 @@
-{
-  "name": "proposal-execution",
-  "description": "Use when executing approved proposals. Researchers can execute ANY approved proposal (not just their own) to perform actions like memory cleanup, marking proposals ready for ticket/skill creation.",
-  "repo": "RoM4iK/tinker-public",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

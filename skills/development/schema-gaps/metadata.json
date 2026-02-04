@@ -1,8 +1,0 @@
-{
-  "name": "schema-gaps",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find notes missing expected fields based on inferred conventions. Triggers on \"incomplete notes\", \"missing fields\", \"find gaps\", \"schema gaps\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:06.956270Z"
-}

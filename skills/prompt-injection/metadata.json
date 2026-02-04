@@ -1,7 +1,0 @@
-{
-  "name": "prompt-injection",
-  "repo": "cisco-ai-defense/skill-scanner",
-  "path": "evals/test_skills/malicious/prompt-injection/SKILL.md",
-  "source": "github.com/cisco-ai-defense/skill-scanner",
-  "downloaded_at": "2026-01-29T08:17:00.325012Z"
-}

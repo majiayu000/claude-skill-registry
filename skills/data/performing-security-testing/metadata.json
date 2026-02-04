@@ -1,9 +1,0 @@
-{
-  "name": "performing-security-testing",
-  "description": "Automate security vulnerability testing covering OWASP Top 10, SQL injection, XSS, CSRF, and authentication issues.Use when performing security assessments, penetration tests, or vulnerability scans.T",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

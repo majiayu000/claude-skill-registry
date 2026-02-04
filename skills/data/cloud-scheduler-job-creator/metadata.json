@@ -1,9 +1,0 @@
-{
-  "name": "cloud-scheduler-job-creator",
-  "description": "Cloud Scheduler Job Creator - Auto-activating skill for GCP Skills.Triggers on: cloud scheduler job creator, cloud scheduler job creatorPart of the GCP Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

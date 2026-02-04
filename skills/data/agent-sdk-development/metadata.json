@@ -1,9 +1,0 @@
-{
-  "name": "agent-sdk-development",
-  "description": "Central authority for Claude Agent SDK (TypeScript and Python SDKs). Covers SDK installation, authentication (Anthropic key, Bedrock, Vertex), sessions and resumption, forking sessions, streaming vs s",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

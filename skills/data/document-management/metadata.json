@@ -1,9 +1,0 @@
-{
-  "name": "document-management",
-  "description": "Manage Kurt documents - list, query, retrieve content, delete, find duplicates. Use CLI commands, Python API, or direct SQL queries.",
-  "repo": "boringdata/kurt-demo",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

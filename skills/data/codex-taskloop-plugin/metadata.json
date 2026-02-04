@@ -1,9 +1,0 @@
-{
-  "name": "codex-taskloop-plugin",
-  "description": "Run in-session task loops via the codex-taskloop-plugin MCP server and stop hook.",
-  "repo": "canxin121/codex-taskloop-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

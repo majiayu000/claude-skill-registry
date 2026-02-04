@@ -1,8 +1,0 @@
-{
-  "name": "nyra-infra-consolidator",
-  "repo": "ellisapotheosis/Project-Nyra",
-  "category": "devops",
-  "description": "Consolidate MetaMCP/gateway/docker compose into a single, validated Windows stack (no WSL).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:25.235869Z"
-}

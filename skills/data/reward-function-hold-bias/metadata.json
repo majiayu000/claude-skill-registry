@@ -1,9 +1,0 @@
-{
-  "name": "reward-function-hold-bias",
-  "description": "Fix HOLD bias in RL reward function. Trigger when: (1) model learns to always HOLD, (2) trade rate is too low (<10%), (3) slippage penalty exceeds typical price moves.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

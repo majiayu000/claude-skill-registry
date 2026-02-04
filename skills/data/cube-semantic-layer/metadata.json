@@ -1,9 +1,0 @@
-{
-  "name": "cube-semantic-layer",
-  "repo": "Obsidian-Owl/floe-runtime",
-  "category": "data",
-  "description": "Research-driven Cube semantic layer development. Injects research steps for data modeling, dbt integration, metrics, dimensions, REST API, GraphQL API, and SQL API (Postgres wire protocol). Use when b",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:24.114952Z",
-  "dir_name": "cube-semantic-layer"
-}

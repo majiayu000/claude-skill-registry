@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-worklog",
-  "description": "Ensures project worklogs and documentation are written to an Obsidian vault with proper naming conventions",
-  "repo": "clempat/nix-config",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

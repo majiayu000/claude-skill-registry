@@ -1,8 +1,0 @@
-{
-  "name": "conscienceembedding-backend-selector",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Choose the best embedding backend (OpenVINO NPU \u2192 Ollama embeddings \u2192 sentence-transformers CPU) and fall back gracefully with logging. Use when embedding reliability matters.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:29.446715Z"
-}

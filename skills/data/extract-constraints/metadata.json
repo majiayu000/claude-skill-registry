@@ -1,9 +1,0 @@
-{
-  "name": "extract-constraints",
-  "description": "Extract technical constraints (C-*) from ecosystem E(t) - timeouts, API limits, compliance requirements, platform dependencies. Acknowledges given constraints, not design choices. Use to document ecos",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

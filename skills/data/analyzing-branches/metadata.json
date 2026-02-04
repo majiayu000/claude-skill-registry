@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-branches",
-  "description": "Use when analyzing another branch's iteration journals to extract findings, decisions, and insights from divergent work",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

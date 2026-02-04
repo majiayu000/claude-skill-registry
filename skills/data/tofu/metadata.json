@@ -1,9 +1,0 @@
-{
-  "name": "tofu",
-  "description": "OpenTofu infrastructure-as-code reference for HCL syntax, state management,\nmodule design, and provider configuration. Use when working with OpenTofu\nconfigurations (.tf files), running tofu commands,",
-  "repo": "poindexter12/waypoint",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/poindexter12/waypoint"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-commit-validator",
-  "description": "This skill should be used whenever creating git commits. It ensures commit messages follow conventional commit format, character limits, and prohibits AI attribution or branding.",
-  "repo": "TechDufus/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

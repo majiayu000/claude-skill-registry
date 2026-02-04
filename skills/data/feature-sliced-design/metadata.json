@@ -1,9 +1,0 @@
-{
-  "name": "feature-sliced-design",
-  "description": "This skill should be used when the user asks to \"implement FSD\", \"use Feature-Sliced Design\", \"organize architecture\", \"structure project folders\", \"set up FSD layers\", \"create feature slices\", \"refac",
-  "repo": "constellos/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

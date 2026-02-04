@@ -1,9 +1,0 @@
-{
-  "name": "iac-checkov",
-  "description": "Infrastructure as Code (IaC) security scanning using Checkov with 750+ built-in policies for Terraform, CloudFormation, Kubernetes, Dockerfile, and ARM templates. Use when: (1) Scanning IaC files for ",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

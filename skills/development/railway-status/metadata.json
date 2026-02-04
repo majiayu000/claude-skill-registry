@@ -1,7 +1,0 @@
-{
-  "name": "railway-status",
-  "description": "Check current Railway project status for this directory. Use when user asks \"railway status\", \"is it running\", \"what's deployed\", \"deployment status\", or about uptime. NOT for variables or configurati",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.744616Z"
-}

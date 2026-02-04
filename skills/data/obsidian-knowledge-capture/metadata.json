@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-knowledge-capture",
-  "description": "Transforms conversations and discussions into structured documentation notes in Obsidian. Captures insights, decisions, and knowledge from chat context, formats with appropriate templates and frontmat",
-  "repo": "astoreyai/claude-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "correcting-mistakes",
-  "description": "Self-corrects skill and command instructions after resolving errors. Use when Claude errors during skill/command execution and finds a solution, or when user indicates a mistake was made. Finds the re",
-  "repo": "Sawyer-Middeleer/dot-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

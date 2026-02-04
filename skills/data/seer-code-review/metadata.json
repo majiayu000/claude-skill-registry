@@ -1,9 +1,0 @@
-{
-  "name": "seer-code-review",
-  "description": "Analyze, validate, and fix issues identified by sentry bot in GitHub Pull Request reviews. Use this when asked to review or address sentry bot comments on PRs. Can review specific PRs by number or aut",
-  "repo": "codyde/sentry-claude-code-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

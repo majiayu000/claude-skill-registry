@@ -1,8 +1,0 @@
-{
-  "name": "adding-a-metric",
-  "repo": "microbus-io/fabric",
-  "category": "devops",
-  "description": "Creates or modify a metric of a microservice. Use when explicitly asked by the user to create or modify a custom metric for a microservice, or when it makes sense measure a certain operation taken by ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.738520Z"
-}

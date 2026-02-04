@@ -1,9 +1,0 @@
-{
-  "name": "hotwire-coder",
-  "description": "Use when implementing Hotwire features with Turbo Drive, Turbo Frames, and Turbo Streams. Applies Rails 8 conventions, morphing, broadcasts, lazy loading, and real-time update patterns.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

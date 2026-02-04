@@ -1,9 +1,0 @@
-{
-  "name": "using-rmplan",
-  "description": "Manages project plans with rmplan. Use when the user asks to \"generate plan 123\" (or any number), \"work on plan 123\", mentions \"rmplan\" explicitly, or when you are working on an rmplan task and need t",
-  "repo": "dimfeld/llmutils",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "nixpkgs",
-  "repo": "vdemeester/home",
-  "category": "development",
-  "description": "Contributing to NixOS/nixpkgs repository. USE WHEN in nixpkgs repository (git remote contains NixOS/nixpkgs OR path contains github.com/NixOS/nixpkgs), reviewing PRs, updating packages, or contributin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.187552Z"
-}

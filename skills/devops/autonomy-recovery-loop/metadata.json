@@ -1,8 +1,0 @@
-{
-  "name": "autonomy-recovery-loop",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Autonomous failure recovery and self-healing loop for tasks, benchmarks, or services. Use when a run fails, dependencies break, or the system must diagnose, remediate, and re-run safely under guardrai",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.688344Z"
-}

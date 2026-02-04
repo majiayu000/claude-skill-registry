@@ -1,9 +1,0 @@
-{
-  "name": "custom-hooks",
-  "description": "Implement custom React hooks for reusable logic including state management, side effects, and data fetching. Use when extracting component logic into reusable hooks.",
-  "repo": "gizix/cc_projects",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

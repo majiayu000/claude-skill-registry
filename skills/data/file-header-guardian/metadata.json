@@ -1,9 +1,0 @@
-{
-  "name": "file-header-guardian",
-  "description": "文件头三行契约注释。触发：create file、新建文件、编写代码。",
-  "repo": "Dimon94/cc-devflow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

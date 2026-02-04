@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-nitro-api",
-  "description": "Build type-safe Nuxt 3 applications with Nitro API patterns. Covers validation, fetch patterns, auth, SSR, composables, background tasks, and real-time features.",
-  "repo": "gallop-systems/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

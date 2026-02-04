@@ -1,8 +1,0 @@
-{
-  "name": "pod-scaffold-contract",
-  "repo": "aaronbassett/midnight-summit-hackathon-2025",
-  "category": "development",
-  "description": "This skill should be used when developers need to generate pod network smart contract boilerplate. It orchestrates the pod-templating MCP server to scaffold production-ready contracts (tokens, NFTs, v",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:42.166735Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "spawnagent",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "description": "Spawn an AI coding agent in a new terminal (Claude, Codex, Gemini, Cursor, OpenCode, Copilot). Defaults to Claude Code if unspecified.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.071932Z"
-}

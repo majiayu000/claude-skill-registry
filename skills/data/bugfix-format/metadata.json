@@ -1,9 +1,0 @@
-{
-  "name": "bugfix-format",
-  "description": "バグ修正ドキュメントのフォルダ構造と形式。/fixコマンドが参照する。",
-  "repo": "shin902/shi-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

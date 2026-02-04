@@ -1,9 +1,0 @@
-{
-  "name": "frontend-debugging",
-  "description": "Systematic 10-phase debugging procedure for SvelteKit 2 + Svelte 5 frontend issues. Use when components fail to render, routing breaks, runes throw errors, or Encore client calls fail.",
-  "repo": "nirukk52/ScreenGraph",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

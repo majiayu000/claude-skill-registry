@@ -1,9 +1,0 @@
-{
-  "name": "test-quality-analysis",
-  "description": "Detect test smells, overmocking, flaky tests, and coverage issues. Analyze test effectiveness, maintainability, and reliability. Use when reviewing tests or improving test quality.",
-  "repo": "secondsky/claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

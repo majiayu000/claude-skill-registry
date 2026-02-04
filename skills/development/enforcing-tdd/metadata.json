@@ -1,8 +1,0 @@
-{
-  "name": "enforcing-tdd",
-  "repo": "ArcadeAI/dexa",
-  "category": "development",
-  "description": "Use when implementing features, fixing bugs, or making code changes. Ensures scope is defined before coding, then enforces RED \u2192 GREEN \u2192 REFACTOR test discipline. Triggers: 'implement', 'add', 'build'",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:07.044698Z"
-}

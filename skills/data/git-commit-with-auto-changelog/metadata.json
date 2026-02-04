@@ -1,9 +1,0 @@
-{
-  "name": "git-commit-with-auto-changelog",
-  "description": "Automatically documents code changes in a searchable changelog when committing to git. Creates structured entries with what/why/issues. Use when user asks to commit changes to git.",
-  "repo": "justfinethanku/cc-changelog-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

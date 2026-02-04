@@ -1,9 +1,0 @@
-{
-  "name": "gitwhat",
-  "description": "Concise git workspace snapshot for the current directory. Use when asked to show current branch, cwd, repo root, whether the current directory is a worktree, local dirty status, or whether other workt",
-  "repo": "regenrek/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

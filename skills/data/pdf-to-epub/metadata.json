@@ -1,9 +1,0 @@
-{
-  "name": "pdf-to-epub",
-  "description": "Convert PDF books to EPUB format for e-readers. Use when user asks to convert PDF to EPUB, create an e-book from PDF, make PDF readable on Kindle/phone/tablet, or extract book content from PDF. Handle",
-  "repo": "koreyba/Claude-Skill-pdf-to-epub",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

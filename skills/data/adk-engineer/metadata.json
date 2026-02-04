@@ -1,9 +1,0 @@
-{
-  "name": "adk-engineer",
-  "description": "Software engineer specializing in creating production-ready ADK agents with best practices, code structure, testing, and deployment automation. Use when asked to \"build ADK agent\", \"create agent code\"",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

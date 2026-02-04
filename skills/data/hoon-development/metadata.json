@@ -1,9 +1,0 @@
-{
-  "name": "hoon-development",
-  "description": "Write and compile Hoon code following Nock conventions and NockApp patterns. Use when working with Hoon kernel code, modifying state structures, adding pokes/peeks, or debugging Hoon compilation.",
-  "repo": "mjohngreene/ZKvsAI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

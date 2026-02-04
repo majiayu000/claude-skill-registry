@@ -1,8 +1,0 @@
-{
-  "name": "btdp-groups-api",
-  "repo": "smorand/claude-config",
-  "category": "devops",
-  "description": "Expert in managing GCP Groups (Google Cloud Identity and Azure AD) via the Groups API. **Use this skill whenever the user mentions 'groups', 'group members', 'add to group', or 'remove from group'.** ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:28.663100Z"
-}

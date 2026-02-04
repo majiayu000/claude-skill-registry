@@ -1,9 +1,0 @@
-{
-  "name": "deployment-config",
-  "description": "Vercel deployment configuration and optimization for Next.js applications including vercel.json setup, environment variables, build optimization, edge functions, and deployment troubleshooting. Use wh",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

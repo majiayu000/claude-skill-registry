@@ -1,9 +1,0 @@
-{
-  "name": "codebase-context-extractor",
-  "description": "This skill provides a comprehensive context extraction system for large codebases. It intelligently analyzes code structure, dependencies, and relationships to extract relevant context for understandi",
-  "repo": "lofcz/LLMTornado",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

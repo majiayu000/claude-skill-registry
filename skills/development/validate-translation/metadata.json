@@ -1,8 +1,0 @@
-{
-  "name": "validate-translation",
-  "repo": "ericfitz/tmi-ux",
-  "category": "development",
-  "description": "Validate that a translation is acceptable by checking placeholder preservation, length, encoding, and common errors. Use when reviewing translations or validating i18n file updates.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.572876Z"
-}

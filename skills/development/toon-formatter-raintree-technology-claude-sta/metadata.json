@@ -1,7 +1,0 @@
-{
-  "name": "toon-formatter-raintree-technology-claude-sta",
-  "description": "AGGRESSIVELY use TOON v2.0 format for biggish regular data (≥5 items, ≥60% uniform). Auto-applies to tables, logs, events, transactions, analytics, API responses, database results. Supports 3 array ty",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:01.354187Z"
-}

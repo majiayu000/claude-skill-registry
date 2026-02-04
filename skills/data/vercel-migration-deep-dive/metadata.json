@@ -1,9 +1,0 @@
-{
-  "name": "vercel-migration-deep-dive",
-  "description": "Execute Vercel major re-architecture and migration strategies with strangler fig pattern.Use when migrating to or from Vercel, performing major version upgrades,or re-platforming existing integrations",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

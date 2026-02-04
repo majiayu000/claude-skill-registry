@@ -1,9 +1,0 @@
-{
-  "name": "code-porter",
-  "description": "代码搬运师技能：优先搬运优秀开源项目，禁止重复造轮子。Use when: 需要实现新功能、选择技术方案、评估是否自己实现。Triggers: \"实现\", \"开发\", \"创建\", \"构建\", \"写一个\", \"做一个\"",
-  "repo": "dseirz-rgb/worker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

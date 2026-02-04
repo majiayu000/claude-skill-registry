@@ -1,9 +1,0 @@
-{
-  "name": "leavn-language-ux-verify",
-  "description": "Systematically test language switching, localization, RTL support, and content rendering across all supported languages in the Leavn iOS app. Gener...",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "bmad-orchestrator",
-  "description": "Orchestrates BMAD workflows for structured AI-driven development. Use when initializing BMAD in projects, checking workflow status, or routing between 4 phases (Analysis, Planning, Solutioning, Implem",
-  "repo": "aj-geddes/claude-code-bmad-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "strict-typescript",
-  "description": "Enforce patterns with TypeScript beyond strict:true. Include noUncheckedIndexedAccess, erasableSyntaxOnly, ts-reset, and type-fest.",
-  "repo": "jagreehal/jagreehal-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

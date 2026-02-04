@@ -1,9 +1,0 @@
-{
-  "name": "split-pdf",
-  "description": "Split PDF files into separate single-page documents or extract specific page ranges. Use when you need to divide a PDF into multiple files, extract particular pages, or process PDF pages individually.",
-  "repo": "sheng-jie/Maf.AgentSkills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

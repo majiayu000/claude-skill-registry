@@ -1,9 +1,0 @@
-{
-  "name": "edge-performance-optimizer",
-  "description": "Automatically optimizes Cloudflare Workers performance during development, focusing on cold starts, bundle size, edge caching, and global latency",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

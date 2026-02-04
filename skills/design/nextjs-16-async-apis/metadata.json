@@ -1,8 +1,0 @@
-{
-  "name": "nextjs-16-async-apis",
-  "repo": "MuhammedSuhaib/LevelUpSpeckit-Plus",
-  "category": "design",
-  "description": "Guide for Next.js 16 fully async APIs. Covers cookies(), headers(), params, and searchParams patterns that must be awaited. Use when accessing server context in Server Components, Route Handlers, or P",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:59.799218Z"
-}

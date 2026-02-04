@@ -1,9 +1,0 @@
-{
-  "name": "streamlit-uv-development",
-  "description": "Use this skill when developing Streamlit applications with uv package manager. Covers project setup, running apps, testing (unit/e2e), and development workflows. Trigger when user mentions \"streamlit\"",
-  "repo": "bossjones/streamlit-replicate-boss",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

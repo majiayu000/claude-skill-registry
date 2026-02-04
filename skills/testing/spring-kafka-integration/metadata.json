@@ -1,8 +1,0 @@
-{
-  "name": "spring-kafka-integration",
-  "repo": "olehsvyrydov/AI-development-team",
-  "category": "testing",
-  "description": "[Extends backend-developer] Kafka specialist for Spring/Reactor. Use for Kafka producers/consumers, DLT, retry mechanisms, transactional outbox, event sourcing. Covers Spring Kafka 4.x and Reactor Kaf",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:16.063507Z"
-}

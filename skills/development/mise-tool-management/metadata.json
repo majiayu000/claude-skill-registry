@@ -1,8 +1,0 @@
-{
-  "name": "mise-tool-management",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when managing development tool versions with Mise. Covers installing tools, version pinning, and replacing language-specific version managers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:05.880511Z"
-}

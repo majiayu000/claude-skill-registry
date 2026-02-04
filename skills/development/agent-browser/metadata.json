@@ -1,7 +1,0 @@
-{
-  "name": "agent-browser",
-  "description": "Browser automation using Vercel's agent-browser CLI. Use when you need to interact with web pages, fill forms, take screenshots, or scrape data. Alternative to Playwright MCP - uses Bash commands with",
-  "category": "development",
-  "source": "github.com/EveryInc/compound-engineering-plugin",
-  "imported_at": "2026-01-24T14:54:11.864003Z"
-}

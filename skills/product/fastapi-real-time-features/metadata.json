@@ -1,8 +1,0 @@
-{
-  "name": "fastapi-real-time-features",
-  "repo": "Lobbi-Docs/claude",
-  "category": "product",
-  "description": "This skill should be used when the user asks to \"add WebSocket\", \"implement real-time\", \"create file upload\", \"add S3 upload\", \"send email\", \"implement notifications\", \"broadcast events\", or mentions ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:51.256076Z"
-}

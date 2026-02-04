@@ -1,8 +1,0 @@
-{
-  "name": "testing-data",
-  "repo": "YosrBennagra/3SC",
-  "category": "testing",
-  "description": "Build integration tests for data access in the widget host app. Use when setting up test databases, running EF Core migrations for tests, or validating repository behavior end-to-end.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.953756Z"
-}

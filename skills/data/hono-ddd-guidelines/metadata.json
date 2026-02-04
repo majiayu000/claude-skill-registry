@@ -1,9 +1,0 @@
-{
-  "name": "hono-ddd-guidelines",
-  "description": "DDDアーキテクチャでHonoのバックエンドを新規実装または既存コードベースをリファクタリングする際のガイド。レイヤー構成（domain/application/infrastructure/controller）、依存方向、責務境界、Hono公式ミドルウェア/プラグインの活用、Hono OpenAPIプラグイン（hono-openapi）とzod-openapiの必須採用、Drizzle ORM",
-  "repo": "Higashi-Masafumi/ai-coding-template",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

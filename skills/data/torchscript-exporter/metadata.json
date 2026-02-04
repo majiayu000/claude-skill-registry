@@ -1,9 +1,0 @@
-{
-  "name": "torchscript-exporter",
-  "description": "Torchscript Exporter - Auto-activating skill for ML Deployment.Triggers on: torchscript exporter, torchscript exporterPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

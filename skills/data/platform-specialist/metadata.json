@@ -1,9 +1,0 @@
-{
-  "name": "platform-specialist",
-  "description": "Platform-specific integration expert for LINE Mini App (LIFF), Expo (React Native), and Tauri (Desktop). Handles platform APIs, native features, and deployment. Called when app needs platform-specific",
-  "repo": "wasintoh/toh-framework",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

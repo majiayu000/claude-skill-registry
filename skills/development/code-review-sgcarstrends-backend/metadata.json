@@ -1,7 +1,0 @@
-{
-  "name": "code-review-sgcarstrends-backend",
-  "description": "Perform automated code reviews checking for security vulnerabilities, performance issues, and code quality. Use before creating PRs or when reviewing complex changes.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.275732Z"
-}

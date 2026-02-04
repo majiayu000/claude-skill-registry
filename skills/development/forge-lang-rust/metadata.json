@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-rust",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "Rust development standards including cargo test, clippy, and rustfmt. Use when working with Rust files, Cargo.toml, or Rust tests.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.320929Z"
-}

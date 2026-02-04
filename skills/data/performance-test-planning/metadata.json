@@ -1,9 +1,0 @@
-{
-  "name": "performance-test-planning",
-  "description": "Design performance test strategies including load profiles, capacity planning, SLA validation, and .NET performance testing with NBomber and k6.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

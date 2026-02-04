@@ -1,9 +1,0 @@
-{
-  "name": "workflow-event-emitter",
-  "description": "Emits structured workflow events for cross-project visibility and downstream consumption",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

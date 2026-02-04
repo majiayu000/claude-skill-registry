@@ -1,9 +1,0 @@
-{
-  "name": "sqlite-database-expert",
-  "repo": "martinholovsky/claude-skills-generator",
-  "category": "data",
-  "description": "Expert in SQLite embedded database development for Tauri/desktop applications with focus on SQL injection prevention, migrations, FTS search, and secure data handling",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.382015Z",
-  "dir_name": "sqlite-database-expert"
-}

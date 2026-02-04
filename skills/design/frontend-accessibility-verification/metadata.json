@@ -1,8 +1,0 @@
-{
-  "name": "frontend-accessibility-verification",
-  "repo": "samjhecht/wrangler",
-  "category": "design",
-  "description": "Use when implementing any UI - verifies accessibility compliance through automated testing (axe-core), keyboard navigation, screen reader verification, and Lighthouse audits; legally required and ensu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:50.147219Z"
-}

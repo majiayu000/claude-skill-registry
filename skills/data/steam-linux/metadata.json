@@ -1,9 +1,0 @@
-{
-  "name": "steam-linux",
-  "description": "This skill should be used when working with Steam on Linux - managing non-Steam game shortcuts, configuring Proton/Wine compatibility, parsing VDF files, or finding Steam paths and prefixes.",
-  "repo": "fx/cc",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

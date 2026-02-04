@@ -1,8 +1,0 @@
-{
-  "name": "nano-banana-blockrun",
-  "repo": "BlockRunAI/nano-banana-blockrun",
-  "category": "product",
-  "description": "Nano Banana by BlockRun - Generate images using Google's Nano Banana via x402 micropayments. Use when the user asks to generate, create, draw, or make images. Pay-per-request via USDC on Base, no API ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T07:47:10.141705Z"
-}

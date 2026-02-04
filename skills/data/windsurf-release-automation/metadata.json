@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-release-automation",
-  "description": "Automate release processes with semantic versioning. Activate when users mention\"release automation\", \"version bump\", \"changelog generation\", \"semantic release\",or \"publish release\". Handles release e",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

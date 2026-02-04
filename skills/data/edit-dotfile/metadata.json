@@ -1,9 +1,0 @@
-{
-  "name": "edit-dotfile",
-  "description": "dotfileの編集・修正を依頼されたとき、ホームディレクトリのファイルではなくchezmoiで管理されているファイルを優先的に確認・編集する。対象：~/.bashrc、~/.zshrc、~/.vimrc、~/.rsync-exclude、~/.config/**、~/.ssh/**、~/.claude/**など、ホームディレクトリの`.`で始まるファイル・フォルダ配下の全ファイル。",
-  "repo": "mczkzk/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

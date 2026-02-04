@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-linting-config",
-  "description": "Configure and enforce code quality with AI-assisted linting. Activate when users mention\"configure linting\", \"eslint setup\", \"code quality rules\", \"linting configuration\",or \"code standards\". Handles ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

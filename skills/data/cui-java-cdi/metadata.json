@@ -1,9 +1,0 @@
-{
-  "name": "cui-java-cdi",
-  "description": "CDI and Quarkus development standards for CUI projects, including CDI aspects, container configuration, testing, and native optimization",
-  "repo": "cuioss/cui-llm-rules",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

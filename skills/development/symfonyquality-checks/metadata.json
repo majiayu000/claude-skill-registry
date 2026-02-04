@@ -1,8 +1,0 @@
-{
-  "name": "symfonyquality-checks",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Run code quality tools including PHP-CS-Fixer for style, PHPStan for static analysis, and Psalm for type safety",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.206664Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "tailwind-config",
-  "description": "Update Tailwind CSS configuration, custom themes, and design tokens across packages. Use when adding new colors, spacing scales, or customizing the design system.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:10.951238Z"
-}

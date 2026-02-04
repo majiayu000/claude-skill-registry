@@ -1,9 +1,0 @@
-{
-  "name": "agent-automation-infrastructure",
-  "description": "Current state of CI/CD automation infrastructure, pre-built Docker images, and performance optimization strategies. Use when dealing with slow builds, container timeouts, yarn install issues, or when ",
-  "repo": "ynotradio/site",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

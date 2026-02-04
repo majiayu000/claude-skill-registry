@@ -1,9 +1,0 @@
-{
-  "name": "checkpointing-an-iteration",
-  "description": "Use when saving current iteration progress mid-conversation, before context compaction, or at interim pause points",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

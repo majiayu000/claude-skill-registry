@@ -1,9 +1,0 @@
-{
-  "name": "testing-hooks",
-  "description": "Teaches testing custom hooks in React 19 using renderHook from React Testing Library. Use when testing custom hooks or hook behavior.",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "refactor-nb",
-  "description": "Jupyter Notebook (.ipynb) 内の import 文やコードセルを一括置換・リファクタリングする",
-  "repo": "tatsuki-washimi/gwexpy",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tatsuki-washimi/gwexpy"
-}

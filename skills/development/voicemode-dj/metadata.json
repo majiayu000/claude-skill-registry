@@ -1,7 +1,0 @@
-{
-  "name": "voicemode-dj",
-  "description": "Background music control for VoiceMode voice sessions using mpv",
-  "category": "development",
-  "source": "github.com/mbailey/voicemode",
-  "imported_at": "2026-01-24T14:53:54.117442Z"
-}

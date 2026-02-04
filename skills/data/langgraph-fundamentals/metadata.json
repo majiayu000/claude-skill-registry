@@ -1,9 +1,0 @@
-{
-  "name": "langgraph-fundamentals",
-  "description": "Core concepts for building LangGraph applications. Use when creating StateGraph workflows, defining nodes and edges, managing state with TypedDict/Pydantic, or understanding basic graph structure. Cov",
-  "repo": "rozwer/cross2B-Pro",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

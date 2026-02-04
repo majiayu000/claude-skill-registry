@@ -1,9 +1,0 @@
-{
-  "name": "m365-agent-scaffolder",
-  "description": "Quickly scaffolds new Microsoft 365 Copilot declarative agent projects using ATK CLI. Collects basic project information and creates the initial project structure. Use only when creating a new empty M",
-  "repo": "sebastienlevert/m365-copilot-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

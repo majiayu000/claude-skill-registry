@@ -1,9 +1,0 @@
-{
-  "name": "creating-a-goal",
-  "description": "Use when setting up a new open-ended goal for autonomy tracking, before starting the first iteration",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

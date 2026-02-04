@@ -1,9 +1,0 @@
-{
-  "name": "searching-slack-history",
-  "description": "Use when needing to search Slack message history, find past conversations, or retrieve channel messages - provides Slack Web API patterns for search.messages and conversations.history endpoints using ",
-  "repo": "ralphbean/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

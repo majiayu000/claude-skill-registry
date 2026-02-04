@@ -1,9 +1,0 @@
-{
-  "name": "dev-checker",
-  "description": "Runs pre-commit checks and validates code quality. Use when preparing commits, running pre-deploy checks, or validating code before deployment.",
-  "repo": "amo-tech-ai/medellin-spark",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "creating-daiv-yml-config",
-  "repo": "srtab/daiv",
-  "category": "development",
-  "description": "Creates or updates .daiv.yml configuration file with sandbox settings (base_image and format_code commands) based on repository content. Use when users request DAIV configuration setup or sandbox conf",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:12.148507Z"
-}

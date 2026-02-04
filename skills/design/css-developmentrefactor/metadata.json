@@ -1,8 +1,0 @@
-{
-  "name": "css-developmentrefactor",
-  "repo": "2389-research/claude-plugins",
-  "category": "design",
-  "description": "Transform existing CSS (inline styles, utility classes in markup, scattered CSS) into semantic component patterns with dark mode support and tests",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:46.103666Z"
-}

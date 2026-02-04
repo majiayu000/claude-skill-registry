@@ -1,9 +1,0 @@
-{
-  "name": "fvtt-sockets",
-  "description": "This skill should be used when implementing multiplayer synchronization, using game.socket.emit/on, creating executeAsGM patterns for privileged operations, broadcasting events between clients, or avo",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

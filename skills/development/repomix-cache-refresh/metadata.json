@@ -1,8 +1,0 @@
-{
-  "name": "repomix-cache-refresh",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Post-workflow cache refresh for Repomix. Automatically refreshes compressed codebase representation after files are modified. Ensures next command has accurate context with 70% token savings. Invoke a",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:07.343739Z"
-}

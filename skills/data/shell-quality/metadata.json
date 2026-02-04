@@ -1,9 +1,0 @@
-{
-  "name": "shell-quality",
-  "description": "Interpretive guidance for shell script quality using shfmt and shellcheck. Use when linting shell files, configuring shell tools, troubleshooting shellcheck errors, or understanding formatting options",
-  "repo": "racurry/neat-little-package",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

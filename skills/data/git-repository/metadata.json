@@ -1,9 +1,0 @@
-{
-  "name": "git-repository",
-  "description": "Repository management strategies including branch strategies (Git Flow, GitHub Flow, trunk-based), monorepo patterns, submodules, and repository organization. Use when user needs guidance on repositor",
-  "repo": "geoffjay/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

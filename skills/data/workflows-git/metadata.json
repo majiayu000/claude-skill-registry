@@ -1,9 +1,0 @@
-{
-  "name": "workflows-git",
-  "description": "Git workflow orchestrator guiding developers through workspace setup, clean commits, and work completion across git-worktrees, git-commit, and git-finish skills",
-  "repo": "MichelKerkmeester/opencode-dev-environment",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

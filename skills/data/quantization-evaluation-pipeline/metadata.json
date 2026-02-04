@@ -1,9 +1,0 @@
-{
-  "name": "quantization-evaluation-pipeline",
-  "description": "Execute GGUF quantization with imatrix protection, perform statistical benchmark evaluation with error bars, generate academic-style methodology documentation, and create comprehensive scorecards. Use",
-  "repo": "zapabob/SO8T",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zapabob/SO8T"
-}

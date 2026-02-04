@@ -1,9 +1,0 @@
-{
-  "name": "linting-codebase",
-  "description": "Parallel lint fixing pattern - runs lint checks, groups issues into independentstreams, and dispatches AI agents to fix all issues until the codebase is clean.",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

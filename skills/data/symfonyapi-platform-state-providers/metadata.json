@@ -1,9 +1,0 @@
-{
-  "name": "symfonyapi-platform-state-providers",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "data",
-  "description": "Master API Platform State Providers and Processors to decouple data retrieval and persistence from entities, enabling clean architecture and custom data sources",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.576394Z",
-  "dir_name": "symfonyapi-platform-state-providers"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "e2e-playwright-testing",
-  "description": "Comprehensive end-to-end test creation, and management. You MUST activate this skill when the user mentions \"e2e\", \"end-to-end\", \"playwright\", or any work involving the `e2e/` folder.",
-  "repo": "mattermost/mattermost-plugin-agents",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

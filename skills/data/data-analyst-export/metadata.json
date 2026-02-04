@@ -1,9 +1,0 @@
-{
-  "name": "data-analyst-export",
-  "description": "Export query results to various formats (CSV, JSON, Excel, Markdown tables) with proper formatting and headers. Use when saving analysis results to files.This skill provides data export utilities for ",
-  "repo": "takemi-ohama/ai-agent-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

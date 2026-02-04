@@ -1,8 +1,0 @@
-{
-  "name": "unit-test-writing",
-  "repo": "boetro/dotclaude",
-  "category": "testing",
-  "description": "This skill should be used when the user asks to \"write tests\", \"add unit tests\", \"create test cases\", \"test this function\", \"add test coverage\", or discusses testing strategies and test implementation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:15.676088Z"
-}

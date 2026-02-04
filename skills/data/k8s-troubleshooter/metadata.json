@@ -1,9 +1,0 @@
-{
-  "name": "k8s-troubleshooter",
-  "description": "Systematic Kubernetes troubleshooting and incident response. Use when diagnosing pod failures, cluster issues, performance problems, networking issues, storage failures, or responding to production in",
-  "repo": "ahmedasmar/devops-claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

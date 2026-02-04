@@ -1,9 +1,0 @@
-{
-  "name": "scribe-mcp-usage",
-  "description": "Operate the local Scribe MCP for any ~/projects/* repo; use when registering the server, setting projects, drafting ARCH/PHASE/CHECKLIST via manage_docs, or logging work with append_entry/get_project ",
-  "repo": "CortaLabs/scribe_mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

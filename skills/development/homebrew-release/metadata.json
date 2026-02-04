@@ -1,8 +1,0 @@
-{
-  "name": "homebrew-release",
-  "repo": "mhismail3/dotfiles",
-  "category": "development",
-  "description": "Create a new version release for a Homebrew formula in the homebrew-tools tap. Handles git tagging, GitHub releases, SHA256 computation, and formula updates. Use when the user wants to publish a new v",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.909122Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "rts-log-analyzer",
-  "description": "Analyze OSS-Fuzz incremental build and JVM RTS (Regression Test Selection) test logs. Use when user mentions RTS logs, test failures, build failures, log analysis, or when working with *.log files fro",
-  "repo": "sslab-gatech/oss-crs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

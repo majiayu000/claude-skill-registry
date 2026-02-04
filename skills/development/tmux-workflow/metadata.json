@@ -1,8 +1,0 @@
-{
-  "name": "tmux-workflow",
-  "repo": "kunhuang12345/vedio-project",
-  "category": "development",
-  "description": "Portable tmux-based workflow to drive one or multiple long-running Codex CLI \u201cworkers\u201d from another process (e.g. Claude CLI) by (1) starting/reusing a tmux session running `codex`, (2) injecting prom",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:42.814934Z"
-}

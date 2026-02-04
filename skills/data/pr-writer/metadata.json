@@ -1,9 +1,0 @@
-{
-  "name": "pr-writer",
-  "description": "This skill should be used when the user asks to \"create a PR\", \"open a pull request\",\"write a PR description\", \"push and create PR\", or needs to generate a best-in-classpull request description based ",
-  "repo": "kwiggen/claude-code-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

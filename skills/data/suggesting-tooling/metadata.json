@@ -1,9 +1,0 @@
-{
-  "name": "suggesting-tooling",
-  "description": "Analyzes a codebase and suggests custom Claude Code skills and subagents to improvedevelopment workflow. Use when user wants tooling suggestions, automation ideas, orasks \"what skills would help this ",
-  "repo": "BrendanShields/spec-flow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

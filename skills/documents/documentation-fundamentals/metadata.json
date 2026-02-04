@@ -1,8 +1,0 @@
-{
-  "name": "documentation-fundamentals",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "documents",
-  "description": "Auto-invoke when reviewing README files, JSDoc comments, or inline documentation. Enforces \"WHY not WHAT\" principle.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:53.831128Z"
-}

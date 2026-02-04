@@ -1,8 +1,0 @@
-{
-  "name": "tenant-context-propagation",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "description": "Tenant context resolution and propagation patterns for multi-tenant applications. Covers middleware, headers, claims, and distributed tracing.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:10.471585Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "drafting-til",
-  "description": "Drafts a TIL blog post in the user's voice and creates it in Notion with Status=\"Claude Draft\". Contains voice guide for matching the user's writing style. Use when user approves a TIL topic and wants",
-  "repo": "ooloth/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

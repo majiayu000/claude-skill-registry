@@ -1,9 +1,0 @@
-{
-  "name": "fastapi-deployment-config",
-  "description": "Configure multi-platform deployment for FastAPI applications including Docker containerization, Railway, DigitalOcean App Platform, and AWS deployment. Use when deploying FastAPI apps, setting up prod",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

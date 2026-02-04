@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-dependency-management",
-  "description": "Analyze and update dependencies with vulnerability scanning. Activate when users mention\"update dependencies\", \"security audit\", \"npm audit\", \"vulnerability scan\",or \"dependency updates\". Handles depe",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

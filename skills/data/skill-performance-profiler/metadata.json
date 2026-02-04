@@ -1,9 +1,0 @@
-{
-  "name": "skill-performance-profiler",
-  "description": "Analyzes skill usage patterns across conversations to track token consumption, identify heavy vs. lightweight skills, measure invocation frequency, detect co-occurrence patterns, and suggest consolida",
-  "repo": "Exploration-labs/Nates-Substack-Skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "nockapp-api-design",
-  "description": "Design new API endpoints following the Hoon-Rust-HTTP pattern used in this NockApp. Use when adding endpoints, modifying SNARK structure, extending the API, or implementing new features.",
-  "repo": "mjohngreene/ZKvsAI",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

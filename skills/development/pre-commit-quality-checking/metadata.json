@@ -1,8 +1,0 @@
-{
-  "name": "pre-commit-quality-checking",
-  "repo": "lifegenieai/claude-skills",
-  "category": "development",
-  "description": "Runs mandatory quality checks before commits. Executes build, tests, and pattern validation from code-review-standards.md. Use when ready to commit code or when asked to verify code quality meets proj",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:59.353902Z"
-}

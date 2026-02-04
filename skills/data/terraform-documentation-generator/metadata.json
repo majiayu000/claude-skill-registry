@@ -1,9 +1,0 @@
-{
-  "name": "terraform-documentation-generator",
-  "description": "Generates documentation for Terraform modules using terraform-docs tool to auto-generate README files with input/output tables, usage examples, and requirements. This skill should be used when users n",
-  "repo": "armanzeroeight/fastagent-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

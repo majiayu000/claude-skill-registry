@@ -1,9 +1,0 @@
-{
-  "name": "handler-storage-s3",
-  "description": "AWS S3 storage handler for fractary-file plugin",
-  "repo": "fractary/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

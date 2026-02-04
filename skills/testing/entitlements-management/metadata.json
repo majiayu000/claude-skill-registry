@@ -1,8 +1,0 @@
-{
-  "name": "entitlements-management",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "description": "Use when implementing feature gating, quota enforcement, and plan-based access control. Covers entitlements vs feature flags, quota systems, and integration with subscription tiers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:09.527106Z"
-}

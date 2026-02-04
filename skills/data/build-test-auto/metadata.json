@@ -1,9 +1,0 @@
-{
-  "name": "build-test-auto",
-  "description": "Automatically builds and tests code changes. Use whenever code is modified, tests fail, before creating pull requests, or when verifying code quality.",
-  "repo": "takutakahashi/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

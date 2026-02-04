@@ -1,9 +1,0 @@
-{
-  "name": "zachman-analysis",
-  "description": "Apply Zachman Framework perspective analysis with honest limitations. Analyze architecture from specific row/column perspectives.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/melodic-software/claude-code-plugins"
-}

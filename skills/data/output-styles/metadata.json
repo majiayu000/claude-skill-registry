@@ -1,9 +1,0 @@
-{
-  "name": "output-styles",
-  "description": "Understanding output styles in Claude Code (deprecated feature). Use when user asks about customizing Claude's behavior, output styles, or explanatory/learning modes.",
-  "repo": "reggiechan74/claude-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/reggiechan74/claude-plugins"
-}

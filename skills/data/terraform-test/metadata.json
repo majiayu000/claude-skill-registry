@@ -1,9 +1,0 @@
-{
-  "name": "terraform-test",
-  "description": "Comprehensive guide for writing and running Terraform tests. Use when creating test files (.tftest.hcl), writing test scenarios with run blocks, validating infrastructure behavior with assertions, moc",
-  "repo": "panchal-ravi/ai-iac-consumer-template",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

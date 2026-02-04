@@ -1,9 +1,0 @@
-{
-  "name": "discord-init",
-  "description": "Initialize Discord configuration. Use when user wants to set up, configure, or connect their Discord account for the first time.",
-  "repo": "lycfyi/community-agent-plugin",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

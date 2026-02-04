@@ -1,8 +1,0 @@
-{
-  "name": "sentry-sdk-configuration",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when initializing Sentry in applications, configuring SDK options, or setting up integrations across different frameworks and platforms.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:08.654792Z"
-}

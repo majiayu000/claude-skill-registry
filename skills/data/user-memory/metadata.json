@@ -1,9 +1,0 @@
-{
-  "name": "user-memory",
-  "description": "Long-term user profile memory that persists across Claude Code sessions",
-  "repo": "cameronsjo/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

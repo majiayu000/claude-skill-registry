@@ -1,8 +1,0 @@
-{
-  "name": "rails-model-design",
-  "repo": "nekorush14/dotfiles",
-  "category": "development",
-  "description": "Design ActiveRecord models with proper validations, associations, scopes, and domain methods. Use when creating new models, refactoring model structure, or adding model-level business logic.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:02.541822Z"
-}

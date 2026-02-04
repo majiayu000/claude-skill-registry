@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-crewai",
-  "repo": "fjacquet/finwiz",
-  "category": "development",
-  "description": "CrewAI development standards for FinWiz including agent configuration, task setup, Flow patterns, and performance optimization. Use when working with CrewAI crews, agents, tasks, or Flows.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:39.229924Z"
-}

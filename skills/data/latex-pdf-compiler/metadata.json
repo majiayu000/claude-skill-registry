@@ -1,9 +1,0 @@
-{
-  "name": "latex-pdf-compiler",
-  "description": "Compiles LaTeX source code to PDF using pdflatex. Use this skill whenever the user asks to create and compile LaTeX documents, generate PDFs from LaTeX, or compile existing LaTeX code in artifacts.",
-  "repo": "robdmc/claude_skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

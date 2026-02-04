@@ -1,9 +1,0 @@
-{
-  "name": "rbs-files",
-  "description": "Write standalone .rbs signature files to describe Ruby code. Use when creating type definitions for gems, libraries, or existing codebases without modifying Ruby source.",
-  "repo": "stevegeek/claude-ruby-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

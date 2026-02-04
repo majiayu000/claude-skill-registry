@@ -1,8 +1,0 @@
-{
-  "name": "massgen-release-documenter",
-  "repo": "massgen/MassGen",
-  "category": "documents",
-  "description": "Guide for following MassGen's release documentation workflow. This skill should be used when preparing release documentation, updating changelogs, writing case studies, or maintaining project document",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:16.279975Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "firebase-developmentvalidate",
-  "repo": "2389-research/claude-plugins",
-  "category": "development",
-  "description": "Review Firebase code against security model and best practices. Validates firebase.json structure, firestore.rules patterns, functions architecture, authentication implementation, test coverage, and e",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:46.294473Z"
-}

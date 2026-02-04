@@ -1,8 +1,0 @@
-{
-  "name": "ca-lobby-vercel-deployment",
-  "repo": "Ingramml/CA_lobby_prod_test",
-  "category": "design",
-  "description": "Vercel deployment workflow for CA Lobby React app with Clerk auth and BigQuery backend. Use when deploying CA Lobby, troubleshooting Vercel, or user says \"deploy\". Ensures proper configuration and ver",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:12.641959Z"
-}

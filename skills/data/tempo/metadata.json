@@ -1,9 +1,0 @@
-{
-  "name": "tempo",
-  "description": "Guide for implementing Grafana Tempo - a high-scale distributed tracing backend for OpenTelemetry traces. Use when configuring Tempo deployments, setting up storage backends (S3, Azure Blob, GCS), wri",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

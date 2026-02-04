@@ -1,9 +1,0 @@
-{
-  "name": "handler-source-control-github",
-  "description": "GitHub source control handler centralizing Git CLI and GitHub API operations with protected branch safety",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

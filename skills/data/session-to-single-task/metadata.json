@@ -1,9 +1,0 @@
-{
-  "name": "session-to-single-task",
-  "description": "現在の会話から1つのタスク依頼プロンプトを自動生成し、GitHub Issue/Jira/Notionに即座に貼れる形式で出力する",
-  "repo": "a-hirota/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

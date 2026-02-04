@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-data-lineage",
-  "repo": "fjacquet/finwiz",
-  "category": "development",
-  "description": "Ensures complete traceability of financial calculations from raw data to final output. Use when implementing calculations, scoring systems, or any data transformations that need audit trails for regul",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:40.353009Z"
-}

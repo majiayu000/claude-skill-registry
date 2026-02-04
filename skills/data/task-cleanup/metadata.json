@@ -1,9 +1,0 @@
-{
-  "name": "task-cleanup",
-  "repo": "cowwoc/styler",
-  "category": "data",
-  "description": "Clean up task branches and worktrees after merge to main",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:48.659323Z",
-  "dir_name": "task-cleanup"
-}

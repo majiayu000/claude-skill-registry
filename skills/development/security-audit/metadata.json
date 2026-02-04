@@ -1,7 +1,0 @@
-{
-  "name": "security-audit",
-  "description": "Audit code for security vulnerabilities (SQL injection, XSS, OWASP Top 10). Use when adding authentication logic, handling user input, or before production deployments.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.405581Z"
-}

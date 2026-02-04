@@ -1,7 +1,0 @@
-{
-  "name": "aptos-move-prover",
-  "description": "Expert on Move Prover formal verification - specification language (MSL), preconditions, postconditions, invariants, aborts_if, ensures, requires, modifies, emits, global invariants, schema patterns, ",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:01.163187Z"
-}

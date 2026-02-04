@@ -1,8 +1,0 @@
-{
-  "name": "snd-fate-farming",
-  "repo": "vaoan/SND",
-  "category": "devops",
-  "description": "Use this skill when implementing FATE farming automation in SND macros. Covers FATE detection, targeting, level sync, participation, and farming patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:27.960943Z"
-}

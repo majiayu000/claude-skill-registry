@@ -1,9 +1,0 @@
-{
-  "name": "manage-principles",
-  "description": "Manage and update project Constitution. Use when (1) Constitution violation detected during implementation, (2) proposing new architectural principle, (3) templates need sync after Constitution update",
-  "repo": "semicolon-devteam/semo",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

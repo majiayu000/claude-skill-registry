@@ -1,9 +1,0 @@
-{
-  "name": "gemini-token-optimization",
-  "description": "Optimize token usage when delegating to Gemini CLI. Covers token caching, batch queries, model selection (Flash vs Pro), and cost tracking. Use when planning bulk Gemini operations.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "flow-impl-review",
-  "description": "John Carmack-level implementation review via rp-cli for current branch changes. Use when reviewing code changes, PRs, or implementations. Triggers on mentions of code review, implementation review, or",
-  "repo": "gmickel/gmickel-claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

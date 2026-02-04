@@ -1,8 +1,0 @@
-{
-  "name": "game-post-release-tasks",
-  "repo": "sunholo-data/stapledons_voyage",
-  "category": "product",
-  "description": "Run post-release tasks for Stapledons Voyage game versions. Sends AILANG feedback summary, updates documentation, and archives completed design docs. Use when user says \"post-release tasks\" or after c",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:36.300993Z"
-}

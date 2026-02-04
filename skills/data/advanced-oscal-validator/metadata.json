@@ -1,9 +1,0 @@
-{
-  "name": "advanced-oscal-validator",
-  "description": "Perform comprehensive OSCAL validation using community-inspired patterns including JSON schema validation, business rule validation, cross-reference checking, and best practices from IBM Trestle, osca",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

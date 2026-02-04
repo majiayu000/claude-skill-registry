@@ -1,8 +1,0 @@
-{
-  "name": "file-type-defaults",
-  "repo": "kevintraver/dotfiles",
-  "category": "devops",
-  "description": "Set default applications for file types on macOS using utiluti. Use when setting file type associations, changing default apps for extensions, or managing macOS file handlers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:38.800856Z"
-}

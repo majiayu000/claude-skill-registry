@@ -1,8 +1,0 @@
-{
-  "name": "microsoft-graph-api",
-  "repo": "BLTGV/agent-skills",
-  "category": "documents",
-  "description": "This skill should be used when the user asks to \"read my emails\", \"send an email\", \"compose email\", \"check my calendar\", \"get calendar events\", \"create a meeting\", \"schedule an event\", \"add calendar e",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:13.635666Z"
-}

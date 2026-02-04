@@ -1,9 +1,0 @@
-{
-  "name": "select",
-  "description": "Explicit-only: pick the next `bd ready` bead via risk-first heuristics; verify dependency/readiness, add missing deps, then mark in progress and comment.",
-  "repo": "tkersey/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

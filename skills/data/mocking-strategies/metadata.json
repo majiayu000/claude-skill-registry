@@ -1,9 +1,0 @@
-{
-  "name": "mocking-strategies",
-  "description": "Test mocking strategies with Vitest. Use when mocking dependencies in tests.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

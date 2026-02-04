@@ -1,9 +1,0 @@
-{
-  "name": "classifying-review-findings",
-  "description": "Classifies code review findings into severity categories (CRITICAL, IMPORTANT, DEBT, SUGGESTED, QUESTION) following Bitwarden standards. Use when determining severity levels, categorizing PR comments,",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

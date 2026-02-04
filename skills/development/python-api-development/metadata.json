@@ -1,8 +1,0 @@
-{
-  "name": "python-api-development",
-  "repo": "nekorush14/dotfiles",
-  "category": "development",
-  "description": "Implement REST APIs with FastAPI including endpoints, Pydantic models, validation, dependency injection, and error handling. Use when building API endpoints, request validation, or authentication.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.799593Z"
-}

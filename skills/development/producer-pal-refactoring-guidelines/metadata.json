@@ -1,8 +1,0 @@
-{
-  "name": "producer-pal-refactoring-guidelines",
-  "repo": "adamjmurray/producer-pal",
-  "category": "development",
-  "description": "Code refactoring principles for Producer Pal - when to extract functions, how to organize code, naming conventions, and complexity management",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:54.351916Z"
-}

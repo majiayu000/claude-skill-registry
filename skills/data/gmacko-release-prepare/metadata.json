@@ -1,9 +1,0 @@
-{
-  "name": "gmacko-release-prepare",
-  "description": "Use when (1) preparing a release for staging or production, (2) generating release notes and changelog, (3) verifying environment readiness before deployment. Prepares all artifacts needed for a relea",
-  "repo": "gmackie/vercel-expo-app-template",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "snowtower-user",
-  "description": "Helps end-users get Snowflake access and use the platform. Use when users ask about requesting access, generating RSA keys, connecting to Snowflake, or basic Snowflake usage. Triggers on mentions of a",
-  "repo": "Database-Tycoon/SnowTower",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

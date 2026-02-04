@@ -1,9 +1,0 @@
-{
-  "name": "red-phase",
-  "description": "Write failing tests before implementation (RED phase of TDD). Creates test file with test functions that fail because code doesn't exist yet. Use when starting TDD workflow or adding tests for new fun",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

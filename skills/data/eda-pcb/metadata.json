@@ -1,9 +1,0 @@
-{
-  "name": "eda-pcb",
-  "description": "PCB layout and routing. Component placement, trace routing, copper pours, design rule configuration, and layout optimization for manufacturability.",
-  "repo": "l3wi/claude-eda",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

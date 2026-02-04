@@ -1,9 +1,0 @@
-{
-  "name": "backend-agent",
-  "repo": "CleanExpo/Unite-Hub",
-  "category": "data",
-  "description": "Handles backend/API/database work for Unite-Hub. Implements Next.js API routes, Supabase database operations, RLS policies, authentication, and third-party integrations (Gmail, Stripe).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:42.412555Z",
-  "dir_name": "backend-agent"
-}

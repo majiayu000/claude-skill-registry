@@ -1,8 +1,0 @@
-{
-  "name": "testdrivendevelopment",
-  "repo": "vdemeester/home",
-  "category": "development",
-  "description": "Disciplined TDD workflow enforcing red-green-refactor cycle and the \"iron law\" of no production code without failing tests first. USE WHEN user wants to write tests first OR implement new feature with",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.390207Z"
-}

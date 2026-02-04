@@ -1,8 +1,0 @@
-{
-  "name": "skill-writing",
-  "repo": "isnbh0/shared",
-  "category": "development",
-  "description": "Creates effective Claude Code skills following best practices. Use when the user asks to create a skill, write a SKILL.md, or needs help authoring agent instructions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:14.170299Z"
-}

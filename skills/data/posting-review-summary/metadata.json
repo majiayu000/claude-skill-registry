@@ -1,9 +1,0 @@
-{
-  "name": "posting-review-summary",
-  "description": "Posts or updates the PR summary comment. Detects context (GitHub sticky comment, GitHub new comment, or local file) and routes output accordingly. Use after all findings are classified and inline comm",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

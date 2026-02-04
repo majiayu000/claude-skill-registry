@@ -1,9 +1,0 @@
-{
-  "name": "design-system-enforcement",
-  "description": "Mandatory design system guidelines for shadcn/ui with Tailwind v4. Enforces 4 font sizes, 2 weights, 8pt grid spacing, 60/30/10 color rule, OKLCH colors, and accessibility standards. Use when creating",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

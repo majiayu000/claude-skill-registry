@@ -1,9 +1,0 @@
-{
-  "name": "telnetshell",
-  "description": "Use telnet to interact with IoT device shells for pentesting operations including device enumeration, vulnerability discovery, credential testing, and post-exploitation. Use when the user needs to int",
-  "repo": "BrownFineSecurity/iothackbot",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

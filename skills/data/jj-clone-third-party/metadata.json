@@ -1,9 +1,0 @@
-{
-  "name": "jj-clone-third-party",
-  "description": "Clone external repositories into work/ directory for examination and source code research. Use when needing to understand third-party dependency implementations, debug upstream issues, or research API",
-  "repo": "thoughtpolice/a",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

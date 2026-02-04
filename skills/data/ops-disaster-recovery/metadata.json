@@ -1,9 +1,0 @@
-{
-  "name": "ops-disaster-recovery",
-  "description": "Structured workflow for disaster recovery planning, implementation, and testingincluding RTO/RPO definition, DR strategy selection, and failover procedures.",
-  "repo": "LerianStudio/ring",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

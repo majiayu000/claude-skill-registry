@@ -1,9 +1,0 @@
-{
-  "name": "badger-diagnostics",
-  "description": "System diagnostics, verification, and troubleshooting for Badger 2350. Use when checking firmware version, verifying installations, diagnosing hardware issues, troubleshooting errors, or performing sy",
-  "repo": "johnlindquist/badger-2350-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

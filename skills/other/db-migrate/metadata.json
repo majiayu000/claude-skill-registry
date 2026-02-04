@@ -1,9 +1,0 @@
-{
-  "name": "db-migrate",
-  "repo": "Pentatonic-Ltd/claude-config",
-  "path": ".claude/skills/db-migrate/SKILL.md",
-  "source": "github.com/Pentatonic-Ltd/claude-config",
-  "downloaded_at": "2026-01-14T03:21:25.135134Z",
-  "dir_name": "db-migrate",
-  "category": "other"
-}

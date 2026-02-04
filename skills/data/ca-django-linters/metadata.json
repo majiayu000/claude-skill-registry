@@ -1,9 +1,0 @@
-{
-  "name": "ca-django-linters",
-  "description": "ALWAYS use this skill proactively for Consumer Affairs Django repositories (located in ../ca/ directory) when ANY of these occur - (1) After writing or modifying ANY Python code files in CA repos (2) ",
-  "repo": "ramonsaraiva/yadm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

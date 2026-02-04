@@ -1,9 +1,0 @@
-{
-  "name": "component-usage-analytics",
-  "description": "Use this skill when users mention \"component usage\", \"where is this component used\", \"deprecate component\", \"migration impact\", \"component analytics\", or want to track and analyze component usage acro",
-  "repo": "flight505/storybook-assistant",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/flight505/storybook-assistant"
-}

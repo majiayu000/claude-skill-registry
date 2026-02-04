@@ -1,8 +1,0 @@
-{
-  "name": "symfonysymfony-scheduler",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "design",
-  "description": "Schedule recurring tasks with Symfony Scheduler component (7.1+); define schedules, triggers, and integrate with Messenger",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.483478Z"
-}

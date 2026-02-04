@@ -1,9 +1,0 @@
-{
-  "name": "page-diff",
-  "description": "Visual regression testing for web pages. Compares screenshots to detect UI changes, generates overlay images highlighting differences. Use after making frontend changes to verify visual correctness, c",
-  "repo": "j-r-beckett/SpeedReader",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

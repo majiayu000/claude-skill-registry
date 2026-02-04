@@ -1,9 +1,0 @@
-{
-  "name": "mz-configure-loki-logging",
-  "description": "Configure Grafana Loki logging using mazza-base library for Python/Flask applications with CA certificate (Mazza-specific). Use when setting up Loki logging for Mazza projects or configuring centraliz",
-  "repo": "jmazzahacks/byteforge-claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

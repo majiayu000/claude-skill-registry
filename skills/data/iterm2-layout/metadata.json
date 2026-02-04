@@ -1,9 +1,0 @@
-{
-  "name": "iterm2-layout",
-  "description": "Configure iTerm2 workspace layouts with TOML-based configuration. Use when user mentions iTerm2 layout, workspace tabs, layout.toml, AutoLaunch script, or configuring terminal workspaces.",
-  "repo": "terrylica/cc-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

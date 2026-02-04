@@ -1,9 +1,0 @@
-{
-  "name": "docker-compose-orchestration",
-  "description": "Container orchestration with Docker Compose for multi-container applications, networking, volumes, and production deployment",
-  "repo": "manutej/luxor-claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

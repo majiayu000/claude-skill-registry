@@ -1,8 +1,0 @@
-{
-  "name": "ark-testing",
-  "repo": "dwmkerr/ark-claude-code-marketplace",
-  "category": "testing",
-  "description": "Test the Ark Dashboard with Playwright and create PRs with screenshots. Use this skill when testing dashboard UI, taking screenshots for PRs, or validating dashboard changes.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.469753Z"
-}

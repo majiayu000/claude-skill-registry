@@ -1,9 +1,0 @@
-{
-  "name": "agent-browser-upstream",
-  "description": "Safely sync navigator's agent-browser fork with upstream vercel-labs/agent-browser, analyze changes, and generate integration documentation",
-  "repo": "outfitter-dev/navigator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/outfitter-dev/navigator"
-}

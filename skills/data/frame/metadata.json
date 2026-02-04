@@ -1,9 +1,0 @@
-{
-  "name": "frame",
-  "description": "FABER Phase 1 - Fetches work item, classifies work type, sets up environment, and initializes workflow context",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

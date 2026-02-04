@@ -1,9 +1,0 @@
-{
-  "name": "shfmt-formatting",
-  "description": "Use when formatting shell scripts with shfmt. Covers consistent formatting patterns, shell dialect support, common issues, and editor integration.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

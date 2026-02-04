@@ -1,9 +1,0 @@
-{
-  "name": "multiperiod",
-  "description": "Per-meal optimization for balanced meals. Use when user wants to control calories per meal, avoid huge snacks, balance breakfast/lunch/dinner, or needs per-meal protein targets. Triggers on \"per meal\"",
-  "repo": "ddarmon/llmn",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

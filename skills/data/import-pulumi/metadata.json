@@ -1,9 +1,0 @@
-{
-  "name": "import-pulumi",
-  "description": "Guide for importing existing Google Cloud resources into Pulumi state. Use when the user says \"import resource to Pulumi\", \"add existing GCP resource\", or needs to bring existing infrastructure under ",
-  "repo": "nozomi-koborinai/koborin-ai",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

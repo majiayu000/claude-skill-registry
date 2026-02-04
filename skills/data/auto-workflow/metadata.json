@@ -1,9 +1,0 @@
-{
-  "name": "auto-workflow",
-  "description": "자율 판단 + 자율 발견 워크플로우 (v2.0 - Ralph Wiggum 철학 통합). \"할 일 없음 → 종료\"가 아닌 \"할 일 없음 → 스스로 발견\". 5계층 우선순위, 9개 커맨드 자동 트리거, Context 예측 기반 관리.",
-  "repo": "garimto81/claude",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

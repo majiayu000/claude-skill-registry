@@ -1,9 +1,0 @@
-{
-  "name": "github-gist",
-  "description": "Create GitHub gists quickly from files, code snippets, or text content. Use when the user wants to share code via GitHub gists or export content to gist format.",
-  "repo": "kennyg/agent-skill-gist",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "opentofu-coder",
-  "description": "This skill guides writing Infrastructure as Code using OpenTofu (open-source Terraform fork). Use when creating .tf files, managing cloud infrastructure, configuring providers, or designing reusable m",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

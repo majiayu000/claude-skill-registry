@@ -1,8 +1,0 @@
-{
-  "name": "adding-a-web-handler-endpoint",
-  "repo": "microbus-io/fabric",
-  "category": "devops",
-  "description": "Creates or modify a web handler endpoint of a microservice. Use when explicitly asked by the user to create or modify a web handler endpoint of a microservice.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:32.120110Z"
-}

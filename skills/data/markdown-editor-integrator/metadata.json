@@ -1,9 +1,0 @@
-{
-  "name": "markdown-editor-integrator",
-  "description": "This skill should be used when installing and configuring markdown editor functionality using @uiw/react-md-editor. Applies when adding rich text editing, markdown support, WYSIWYG editors, content ed",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

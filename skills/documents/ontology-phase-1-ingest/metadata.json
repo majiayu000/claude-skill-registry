@@ -1,8 +1,0 @@
-{
-  "name": "ontology-phase-1-ingest",
-  "repo": "a4b-corporation/xTalent",
-  "category": "documents",
-  "description": "Phase 1 of Ontology Builder Pipeline. Ingests and catalogs all input materials from _input/ folder. Use when starting ontology building process or when processing new input documents for domain analys",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:41.332629Z"
-}

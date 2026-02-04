@@ -1,9 +1,0 @@
-{
-  "name": "churchtools-api",
-  "description": "Apply when making API calls to ChurchTools, using churchtoolsClient methods, handling API responses, or working with Tags API. Covers correct HTTP method names, parameter structure, and response handl",
-  "repo": "bwl21/bwl-flyer-generator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

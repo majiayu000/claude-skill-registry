@@ -1,9 +1,0 @@
-{
-  "name": "td-onehot-encoding",
-  "description": "Categorical variable encoding using TD_OneHotEncodingFit and Transform",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

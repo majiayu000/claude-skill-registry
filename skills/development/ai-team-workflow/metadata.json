@@ -1,8 +1,0 @@
-{
-  "name": "ai-team-workflow",
-  "repo": "kunhuang12345/vedio-project",
-  "category": "development",
-  "description": "Role-based multi-agent workflow built on tmux-workflow/twf. Use when you want to run a PM/Architect/Product/Dev/QA/Ops/Coordinator/Liaison \u201cAI team\u201d as multiple Codex tmux workers, keep a shared respo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:42.719480Z"
-}

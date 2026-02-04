@@ -1,9 +1,0 @@
-{
-  "name": "uimatch-compare",
-  "description": "Run a single-shot visual comparison between a Figma design node and an implementation URL (local app, Storybook iframe, or deployed page) using @uimatch/cli, then read the generated report to explain ",
-  "repo": "kosaki08/uimatch",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

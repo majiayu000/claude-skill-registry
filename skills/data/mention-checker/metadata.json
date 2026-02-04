@@ -1,9 +1,0 @@
-{
-  "name": "mention-checker",
-  "description": "Slack で自分へのメンションを確認する。「メンション確認」「Slackメンション」「自分へのメンション」「@mention を見せて」などで起動。Pythonスクリプト `slack_message.py mentions` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

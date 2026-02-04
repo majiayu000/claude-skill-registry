@@ -1,9 +1,0 @@
-{
-  "name": "neovim-debugging",
-  "description": "Debug Neovim/LazyVim configuration issues. Use when: user reports Neovim errors, keymaps not working, plugins failing, or config problems. Provides systematic diagnosis through hypothesis testing, not",
-  "repo": "BitYoungjae/marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "vkc-visa-assessment-engine",
-  "description": "Design and implement the Viet K-Connect visa assessment engine (DB-driven ruleset JSON schema + versioning + effective dates). No hardcoded rules in code. Use for building /api/visa/assess and admin r",
-  "repo": "LEE-SANG-BOK/VKC-2-",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

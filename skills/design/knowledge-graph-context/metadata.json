@@ -1,8 +1,0 @@
-{
-  "name": "knowledge-graph-context",
-  "repo": "FrancisVarga/coconut-claude-code-plugins",
-  "category": "design",
-  "description": "Project context from ChromaDB knowledge graph. Triggers on \"how does this project work\", \"architecture\", \"where is X\", \"why was Y chosen\", \"project structure\", \"component relationships\", \"design decis",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:37.984656Z"
-}

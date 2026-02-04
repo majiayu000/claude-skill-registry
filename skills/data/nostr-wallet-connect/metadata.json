@@ -1,9 +1,0 @@
-{
-  "name": "nostr-wallet-connect",
-  "description": "Use when implementing Nostr Wallet Connect (NIP-47) wallet service - provides complete patterns for generating NWC connection strings, publishing info events, listening for requests, processing wallet",
-  "repo": "PerceptLabs/nostril",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

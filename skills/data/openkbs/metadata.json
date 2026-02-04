@@ -1,9 +1,0 @@
-{
-  "name": "openkbs",
-  "description": "OpenKBS AI agent development framework. Use when creating, modifying, or deploying AI agents with backend handlers (onRequest, onResponse, actions.js), frontend components (contentRender.js), or elast",
-  "repo": "open-kbs/openkbs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

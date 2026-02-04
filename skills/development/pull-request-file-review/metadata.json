@@ -1,8 +1,0 @@
-{
-  "name": "pull-request-file-review",
-  "repo": "jack-michaud/faire",
-  "category": "development",
-  "description": "Identify and flag unnecessary test artifacts and temporary files in pull requests. Use when reviewing pull requests to ensure only production-relevant files are committed.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:52.020613Z"
-}

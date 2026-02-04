@@ -1,8 +1,0 @@
-{
-  "name": "check-folder-health",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Analyze vault organization by folder structure. Triggers on \"folder health\", \"folder analysis\", \"vault organization\", \"folder structure\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:52.717935Z"
-}

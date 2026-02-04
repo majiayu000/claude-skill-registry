@@ -1,9 +1,0 @@
-{
-  "name": "github-issue-writer",
-  "description": "Creates well-structured Github issues for the upkeep-io project following standardized templates and best practices. Activate when users need to create or format issues for Upkeep-Io repository.",
-  "repo": "daveharmswebdev/upkeep-io",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

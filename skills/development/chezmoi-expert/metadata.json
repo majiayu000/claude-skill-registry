@@ -1,8 +1,0 @@
-{
-  "name": "chezmoi-expert",
-  "repo": "malhashemi/dotfiles",
-  "category": "development",
-  "description": "Use chezmoi like an expert for managing dotfiles with advanced features including templates, secrets management, scripts, external dependencies, and multi-machine configurations. This skill should be ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:27.583831Z"
-}

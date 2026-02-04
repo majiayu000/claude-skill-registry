@@ -1,9 +1,0 @@
-{
-  "name": "unity-editor-operations",
-  "description": "Use this skill when operating Unity Editor. Supports creating/modifying GameObjects, transforms, materials, scenes, prefabs, lights, cameras, UI, and terrain via JSON commands. MUST invoke first to ge",
-  "repo": "manahiyo831/UNITY-SKILLS-PUBLIC",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

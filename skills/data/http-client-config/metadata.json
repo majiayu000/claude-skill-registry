@@ -1,9 +1,0 @@
-{
-  "name": "http-client-config",
-  "description": "Http Client Config - Auto-activating skill for API Integration.Triggers on: http client config, http client configPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

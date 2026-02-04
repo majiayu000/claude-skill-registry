@@ -1,9 +1,0 @@
-{
-  "name": "gencast",
-  "description": "Auto-invoke gencast to generate podcasts from documents when user mentions podcast, audio, or dialogue generation",
-  "repo": "cadrianmae/claude-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

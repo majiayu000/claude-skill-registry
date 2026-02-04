@@ -1,9 +1,0 @@
-{
-  "name": "atacseq-pipeline",
-  "description": "End-to-end ATAC-seq workflow from FASTQ files to differential accessibility and TF footprinting. Covers alignment, peak calling with MACS3, QC metrics, and optional TOBIAS footprinting.",
-  "repo": "GPTomics/bioSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GPTomics/bioSkills"
-}

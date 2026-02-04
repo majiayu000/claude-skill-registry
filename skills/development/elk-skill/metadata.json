@@ -1,8 +1,0 @@
-{
-  "name": "elk-skill",
-  "repo": "SeeKT/Active-Directory-Forge-Ticket-Agent-ELK",
-  "category": "development",
-  "description": "Elastic Stack \u3092\u7528\u3044\u305f Active Directory \u30ed\u30b0\u5206\u6790\u30fb\u8105\u5a01\u691c\u77e5\u652f\u63f4\u30b9\u30ad\u30eb\u3002Elasticsearch \u30af\u30a8\u30ea\u3001Logstash \u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u3001Kibana \u53ef\u8996\u5316\u3092\u901a\u3058\u3066\u3001Windows \u30a4\u30d9\u30f3\u30c8\u30ed\u30b0\u304a\u3088\u3073 Sysmon \u30ed\u30b0\u306e\u591a\u89d2\u7684\u306a\u8105\u5a01\u691c\u77e5\u3092\u5b9f\u73fe\u3057\u307e\u3059\u3002Active Directory \u653b\u6483\u691c\u77e5\u306b\u6700\u9069\u5316\u3002Elasticsearch \u30af\u30a8\u30ea\u8a2d\u8a08\u3001Windows/AD ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:39.465620Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "task-expert",
-  "description": "'Task as Code' management expert. Responsible for maintaining task files in the todos/ directory, ensuring continuous task IDs, clear statuses, and adherence to specifications.",
-  "repo": "IndenScale/Typedown",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

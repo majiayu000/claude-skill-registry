@@ -1,9 +1,0 @@
-{
-  "name": "monitor-workloads",
-  "description": "Monitor workload definitions, distribution, and TASM statistics using real-time resources to understand classification effectiveness and workload performance",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

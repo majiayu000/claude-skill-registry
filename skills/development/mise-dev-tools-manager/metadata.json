@@ -1,8 +1,0 @@
-{
-  "name": "mise-dev-tools-manager",
-  "repo": "scottatron/claude-skills",
-  "category": "development",
-  "description": "Manage dev tools, runtime versions, environment variables, and tasks with mise. Universal tool version manager supporting 1000+ tools with task runner and env management.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:09.942663Z"
-}

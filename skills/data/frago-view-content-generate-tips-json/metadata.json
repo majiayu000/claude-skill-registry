@@ -1,9 +1,0 @@
-{
-  "name": "frago-view-content-generate-tips-json",
-  "description": "JSON file content generation guide. Use this skill when you need to create JSON files that can be previewed via `frago view`. Covers formatted display and best practices.",
-  "repo": "tsaijamey/frago",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

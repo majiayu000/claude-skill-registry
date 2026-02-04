@@ -1,9 +1,0 @@
-{
-  "name": "helm-charts-audit",
-  "description": "Audits Helm charts for anti-patterns, security issues, and best practice violations. Use when asked to audit, review, or check Helm chart quality. Generates a comprehensive report under reports/YYYY-M",
-  "repo": "huseyindeniz/gitops-lab",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

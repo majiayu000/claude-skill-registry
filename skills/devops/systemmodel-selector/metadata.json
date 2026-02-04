@@ -1,8 +1,0 @@
-{
-  "name": "systemmodel-selector",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Select the correct Ollama base model (and adapters) based on task type, resource fit, and registry availability. Use to translate Modelfile FROM/ADAPTER decisions into agent behavior.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.263533Z"
-}

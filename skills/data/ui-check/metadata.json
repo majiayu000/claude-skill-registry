@@ -1,9 +1,0 @@
-{
-  "name": "ui-check",
-  "description": "Use Playwright MCP to check UI styles and usability. Automatically used for requests like \"check UI\", \"verify appearance\", \"take screenshot\".",
-  "repo": "YuheiNakasaka/cc-dev-kit",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

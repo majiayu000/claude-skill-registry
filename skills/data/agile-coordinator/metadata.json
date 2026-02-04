@@ -1,9 +1,0 @@
-{
-  "name": "agile-coordinator",
-  "description": "Orchestrate multiple worker agents to implement groomed tasks. Use when multiple ready tasks need implementation, when you want autonomous multi-task execution, or when coordinating batch development ",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

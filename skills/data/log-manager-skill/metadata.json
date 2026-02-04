@@ -1,9 +1,0 @@
-{
-  "name": "log-manager-skill",
-  "description": "Orchestrates single-log sequential workflows by coordinating operation skills for individual logs",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

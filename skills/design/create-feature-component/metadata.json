@@ -1,8 +1,0 @@
-{
-  "name": "create-feature-component",
-  "repo": "biggs3d/Tools",
-  "category": "design",
-  "description": "Create a complete feature with ViewModel, View, and tests following Phoenix MVVM patterns. Use when building new UI features, panels, or components that manage their own state. Generates ViewModel wit",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.666912Z"
-}

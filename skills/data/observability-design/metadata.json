@@ -1,9 +1,0 @@
-{
-  "name": "observability-design",
-  "description": "Monitoring strategies, distributed tracing, SLI/SLO design, and alerting patterns. Use when designing monitoring infrastructure, defining service level objectives, implementing distributed tracing, cr",
-  "repo": "rsmdt/the-startup",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

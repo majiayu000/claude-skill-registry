@@ -1,9 +1,0 @@
-{
-  "name": "activating-memories",
-  "description": "Loads project-specific memories at session start and triggers onboarding for new projects. Use when starting a new coding session or when the user says \"activate\" or asks about project context.",
-  "repo": "SteveBronder/skillrena",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

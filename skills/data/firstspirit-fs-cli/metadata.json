@@ -1,9 +1,0 @@
-{
-  "name": "firstspirit-fs-cli",
-  "description": "FirstSpirit CMS template development using fs-cli. Helps set up fs-cli environment, export templates from FirstSpirit server, modify templates with Claude Code, and import changes back to server. Use ",
-  "repo": "rawe/claude-dev-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

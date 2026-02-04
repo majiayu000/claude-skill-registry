@@ -1,9 +1,0 @@
-{
-  "name": "largest-eigenval",
-  "description": "Guidance for optimizing numerical linear algebra computations, particularly finding eigenvalues of small dense matrices faster than standard library implementations. This skill applies when the task i",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

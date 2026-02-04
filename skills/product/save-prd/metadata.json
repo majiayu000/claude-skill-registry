@@ -1,8 +1,0 @@
-{
-  "name": "save-prd",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "product",
-  "description": "Save PRD artifacts to project directory after approval. Creates docs/projects/{prefix}{NNN}-{name}/ with prd.md, user-stories/, execution-plan.md, innovations-selected.md, and architecture-notes.md. U",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.510219Z"
-}

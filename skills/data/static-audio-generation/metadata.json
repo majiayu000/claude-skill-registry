@@ -1,9 +1,0 @@
-{
-  "name": "static-audio-generation",
-  "description": "Generate and manage static audio files for Bob The Skull using ElevenLabs TTS. Use when creating greetings, startup messages, error responses, or test audio. Handles generation, naming, directory stru",
-  "repo": "want2bet/BobTheSkull5",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "config-helper",
-  "description": "Detects, validates, and migrates codex configuration formats (JSON → YAML).Provides deprecation warnings and migration guidance.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "container-grype",
-  "description": "Container vulnerability scanning and dependency risk assessment using Grype with CVSS severity ratings, EPSS exploit probability, and CISA KEV indicators. Use when: (1) Scanning container images and f",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

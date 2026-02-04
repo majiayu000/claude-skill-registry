@@ -1,8 +1,0 @@
-{
-  "name": "agent-prompting-delegation",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Best practices for writing effective Task tool prompts that produce clear, structured outputs from sub-agents. Covers context engineering, instruction clarity, output format specification, and paralle",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:48.855940Z"
-}

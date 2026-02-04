@@ -1,8 +1,0 @@
-{
-  "name": "self-service-onboarding",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "description": "SaaS onboarding patterns for user activation and time-to-value optimization. Covers signup flows, progressive disclosure, activation metrics, and onboarding UX.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:09.580148Z"
-}

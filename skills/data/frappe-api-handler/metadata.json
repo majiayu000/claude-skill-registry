@@ -1,9 +1,0 @@
-{
-  "name": "frappe-api-handler",
-  "description": "Create custom API endpoints and whitelisted methods for Frappe applications. Use when building REST APIs or custom endpoints.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

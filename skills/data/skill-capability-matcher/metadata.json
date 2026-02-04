@@ -1,9 +1,0 @@
-{
-  "name": "skill-capability-matcher",
-  "description": "This skill should be used when the user wants to find the right looplia skills for a task,match requirements to available capabilities, or determine which skills should handle eachworkflow step. Use w",
-  "repo": "memorysaver/looplia-core",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

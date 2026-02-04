@@ -1,9 +1,0 @@
-{
-  "name": "forge-analyzer",
-  "description": "Analyze vague user ideas and recommend architecture based on actual needs, not predefined categories. Front-end for clarifying ambiguous requests before routing to appropriate skillmaker tools.",
-  "repo": "chkim-su/forge-editor",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "task-tracker",
-  "description": "Automatically update sprint task status in JSON files and PROGRESS.md. Use when starting a sprint task (mark in-progress), completing a task (mark completed), or encountering blockers (mark blocked).",
-  "repo": "AlexBaum-ai/NEURM",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

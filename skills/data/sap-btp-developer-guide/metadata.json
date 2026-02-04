@@ -1,9 +1,0 @@
-{
-  "name": "sap-btp-developer-guide",
-  "description": "Develops business applications on SAP Business Technology Platform (BTP) using CAP (Node.js/Java) or ABAP Cloud. Use when: building cloud applications on SAP BTP, deploying to Cloud Foundry or Kyma ru",
-  "repo": "secondsky/sap-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

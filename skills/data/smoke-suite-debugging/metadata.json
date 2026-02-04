@@ -1,9 +1,0 @@
-{
-  "name": "smoke-suite-debugging",
-  "description": "Use this when smoke tests fail (binary/web assets, Playwright setup, server lifecycle, ports, env vars).",
-  "repo": "localtaskrepo/lotar",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

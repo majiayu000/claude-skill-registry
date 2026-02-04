@@ -1,9 +1,0 @@
-{
-  "name": "label-manager",
-  "description": "Add, remove, and list labels on issues via Fractary CLI",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

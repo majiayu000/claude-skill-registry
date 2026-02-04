@@ -1,9 +1,0 @@
-{
-  "name": "bug-reporter",
-  "description": "Capture bug context, generate reports, and optionally create GitHub issues or share patterns",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

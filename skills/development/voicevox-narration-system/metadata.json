@@ -1,8 +1,0 @@
-{
-  "name": "voicevox-narration-system",
-  "repo": "ShunsukeHayashi/Miyabi",
-  "category": "development",
-  "description": "Generate Yukkuri-style voice narration from Git commits using VOICEVOX Engine. Use when creating development progress audio guides, YouTube content, or team reports from Git history.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:32.738042Z"
-}

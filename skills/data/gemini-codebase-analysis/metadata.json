@@ -1,9 +1,0 @@
-{
-  "name": "gemini-codebase-analysis",
-  "description": "Analyze large codebases using Gemini CLI's massive context window. Use when analyzing entire codebases, comparing multiple large files, understanding project-wide patterns, verifying feature implement",
-  "repo": "JTCorrin/pocket-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

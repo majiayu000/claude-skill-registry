@@ -1,9 +1,0 @@
-{
-  "name": "supabase-sdk-patterns",
-  "description": "Apply production-ready Supabase SDK patterns for TypeScript and Python.Use when implementing Supabase integrations, refactoring SDK usage,or establishing team coding standards for Supabase.Trigger wit",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

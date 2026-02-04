@@ -1,9 +1,0 @@
-{
-  "name": "project-manager-backlog",
-  "description": "Manages project tasks using the backlog.md CLI tool. Creates, edits, and tracks tasks following proper format and guidelines, breaks down large tasks into atomic units, and maintains task management w",
-  "repo": "benswift/.dotfiles",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

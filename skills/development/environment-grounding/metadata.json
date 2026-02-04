@@ -1,8 +1,0 @@
-{
-  "name": "environment-grounding",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Ground reasoning via real system interactions; use when asked to validate actions with live tools or environments.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:27.876227Z"
-}

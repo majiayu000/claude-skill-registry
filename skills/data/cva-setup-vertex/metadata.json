@@ -1,9 +1,0 @@
-{
-  "name": "cva-setup-vertex",
-  "description": "Complete Vertex AI and Google Cloud Platform setup for Clojure agent development. Includes GCP project saas3-476116 credentials, security best practices (IAM, key rotation, LGPD), cost analysis, API e",
-  "repo": "joaopelegrino/hello-word-closure",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

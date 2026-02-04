@@ -1,9 +1,0 @@
-{
-  "name": "assume-cloudformation-role",
-  "description": "Assume AWS IAM role for CloudFormation operations and set temporary credentials as environment variables. Use when working with CloudFormation stacks or when authentication setup is needed before AWS ",
-  "repo": "Daisuke897/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

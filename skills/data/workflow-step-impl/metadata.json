@@ -1,9 +1,0 @@
-{
-  "name": "workflow-step-impl",
-  "description": "Temporal+LangGraph の工程（step）追加/修正の実装テンプレ。Activity 冪等性、output_path/output_digest、承認待ち、監査ログを含む。",
-  "repo": "rozwer/cross2B-Pro",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

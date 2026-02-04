@@ -1,9 +1,0 @@
-{
-  "name": "mocking-assistant",
-  "description": "Creates stable mocks for APIs, services, and UI components using MSW (Mock Service Worker), fixture conventions, and example patterns. Use for \"API mocking\", \"MSW\", \"test mocks\", or \"service mocking\".",
-  "repo": "patricio0312rev/skillset",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

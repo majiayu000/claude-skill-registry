@@ -1,9 +1,0 @@
-{
-  "name": "pop-next-action",
-  "description": "Context-aware recommendation engine that analyzes git status, TypeScript errors, GitHub issues, and technical debt to suggest prioritized next actions. Returns specific popkit commands with explanatio",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

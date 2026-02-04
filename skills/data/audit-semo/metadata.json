@@ -1,9 +1,0 @@
-{
-  "name": "audit-semo",
-  "description": "전체 SEMO 패키지 통합 품질 감사. Use when (1) 전체 패키지 품질 점검, (2) Agent/Skill/Command 표준 준수 검토, (3) 비효율적 구조 탐지, (4) 정기 감사 수행.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

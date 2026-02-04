@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-nextjs-16-patterns",
-  "description": "Review code for Next.js 16 compliance - security patterns, caching, breaking changes. Use when reviewing Next.js code, preparing for migration, or auditing for violations.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

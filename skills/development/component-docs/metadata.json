@@ -1,7 +1,0 @@
-{
-  "name": "component-docs",
-  "description": "Generate or update component documentation with usage examples, props tables, and Storybook stories. Use when documenting new components or improving existing component docs.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.348364Z"
-}

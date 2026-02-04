@@ -1,9 +1,0 @@
-{
-  "name": "umbraco-e2e-testing",
-  "description": "E2E testing for Umbraco backoffice extensions using Playwright and @umbraco/playwright-testhelpers",
-  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills"
-}

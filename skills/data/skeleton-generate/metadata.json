@@ -1,9 +1,0 @@
-{
-  "name": "skeleton-generate",
-  "description": "Skills版エージェント骨格（CLAUDE.md, .codex/skills/, .codex/等）を生成し、初期設定を完了する。「スケルトン生成」「エージェント生成」「骨格作成」を依頼されたときに使用する。",
-  "repo": "matsuni-kk/agent_template_public",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

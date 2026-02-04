@@ -1,8 +1,0 @@
-{
-  "name": "api-name-api",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Interact with the {{API_NAME}} API. Use when {{TRIGGER_CONTEXTS}}. Supports {{CAPABILITIES}}.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.084212Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "write-and-commit",
-  "repo": "cowwoc/styler",
-  "category": "development",
-  "description": "Create file and commit atomically (60-75% faster than step-by-step)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:49.045211Z"
-}

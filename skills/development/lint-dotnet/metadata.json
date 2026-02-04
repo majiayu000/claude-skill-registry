@@ -1,8 +1,0 @@
-{
-  "name": "lint-dotnet",
-  "repo": "ANcpLua/ancplua-claude-plugins",
-  "category": "development",
-  "description": "Run .NET architecture linter to check for MSBuild/CPM violations",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:30.778954Z"
-}

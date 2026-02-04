@@ -1,7 +1,0 @@
-{
-  "name": "performance-profiling-heshamfs-materials-simulation-",
-  "description": "Identify computational bottlenecks, analyze scaling behavior, estimate memory requirements, and receive optimization recommendations for any computational simulation. Use when simulations are slow, in",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.211793Z"
-}

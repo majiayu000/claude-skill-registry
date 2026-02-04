@@ -1,9 +1,0 @@
-{
-  "name": "validate-with-database",
-  "repo": "pgschema/pgschema",
-  "category": "data",
-  "description": "Connect to live PostgreSQL database to validate schema assumptions, compare pg_dump vs pgschema output, and query system catalogs interactively",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:16.678189Z",
-  "dir_name": "validate-with-database"
-}

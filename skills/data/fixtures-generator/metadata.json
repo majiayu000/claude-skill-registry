@@ -1,9 +1,0 @@
-{
-  "name": "fixtures-generator",
-  "description": "Generates valid and invalid JSON fixtures for CommandDTO and DecisionDTO based on current contract schemas.",
-  "repo": "Nepopams/vr_ai_platform",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Nepopams/vr_ai_platform"
-}

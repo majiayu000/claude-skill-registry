@@ -1,8 +1,0 @@
-{
-  "name": "calci-prediction-market",
-  "repo": "ratacat/claude-skills",
-  "category": "devops",
-  "description": "Context and working knowledge for Calci\u2019s prediction-market domain, which is powered by Kalshi. Use this skill whenever the user asks about Calci prediction markets, Kalshi markets, tickers, order boo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.923660Z"
-}

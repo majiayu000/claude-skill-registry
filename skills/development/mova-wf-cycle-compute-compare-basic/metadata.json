@@ -1,8 +1,0 @@
-{
-  "name": "mova-wf-cycle-compute-compare-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Deterministically compare two wf_cycle v1.1 runs (IDE vs CLI): compute metrics, compute score, pick winner, and write a compare folder with canonical artifacts.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:48.065952Z"
-}

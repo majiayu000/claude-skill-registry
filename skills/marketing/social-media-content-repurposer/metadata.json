@@ -1,8 +1,0 @@
-{
-  "name": "social-media-content-repurposer",
-  "repo": "OneWave-AI/claude-skills",
-  "category": "marketing",
-  "description": "Convert content between platforms (blog to Twitter thread, article to LinkedIn post, etc.). Optimize for each platform's format, tone, and best practices. Use when user wants to adapt content for diff",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.626054Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "specswarm-modify",
-  "description": "Impact-analysis-first modification workflow with backward compatibility assessment and breaking change detection. Auto-executes when user clearly wants to modify, change, update, adjust, enhance, exte",
-  "repo": "MartyBonacci/specswarm",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

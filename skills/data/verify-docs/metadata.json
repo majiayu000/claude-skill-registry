@@ -1,9 +1,0 @@
-{
-  "name": "verify-docs",
-  "description": "ドキュメント（docs/）の内容がコードの実装と一致しているかを検証します。「ドキュメントを検証」「ドキュメントとコードの整合性をチェック」「docsを確認」と言われたときに使用します。",
-  "repo": "masaodev/quick-dash-launcher",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

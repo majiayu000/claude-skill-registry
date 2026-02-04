@@ -1,7 +1,0 @@
-{
-  "name": "railway-service",
-  "description": "Check service status, rename services, change service icons, link services, or create services with Docker images. For creating services with local code, prefer railway-new skill. For GitHub repo sour",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.785608Z"
-}

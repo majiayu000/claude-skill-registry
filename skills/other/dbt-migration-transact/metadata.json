@@ -1,9 +1,0 @@
-{
-  "name": "dbt-migration-transact",
-  "repo": "sfc-gh-dflippo/snowflake-dbt-demo",
-  "path": ".claude/skills/dbt-migration-transact/SKILL.md",
-  "source": "github.com/sfc-gh-dflippo/snowflake-dbt-demo",
-  "downloaded_at": "2026-01-21T03:57:30.445319Z",
-  "dir_name": "dbt-migration-transact",
-  "category": "other"
-}

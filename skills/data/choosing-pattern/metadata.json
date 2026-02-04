@@ -1,9 +1,0 @@
-{
-  "name": "choosing-pattern",
-  "description": "Use when deciding which pgdbm pattern to use (standalone, dual-mode library, or shared pool) - provides decision tree based on deployment context without requiring doc exploration",
-  "repo": "juanre/pgdbm",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

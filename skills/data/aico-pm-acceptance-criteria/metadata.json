@@ -1,9 +1,0 @@
-{
-  "name": "aico-pm-acceptance-criteria",
-  "description": "Define clear, testable acceptance criteria using Given/When/Then (Gherkin) format that can be directly used for testing.\n\nUse this skill when:\n- User asks for \"acceptance criteria\", \"AC\", \"test criter",
-  "repo": "yellinzero/aico",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/yellinzero/aico"
-}

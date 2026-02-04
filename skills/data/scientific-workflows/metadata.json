@@ -1,9 +1,0 @@
-{
-  "name": "scientific-workflows",
-  "description": "Expert assistant for choosing and implementing scientific workflow tools - from simple joblib caching to complex orchestration with Prefect, Parsl, FireWorks, and quacc. Recommends the simplest soluti",
-  "repo": "jkitchin/skillz",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

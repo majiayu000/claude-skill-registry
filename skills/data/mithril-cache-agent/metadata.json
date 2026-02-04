@@ -1,9 +1,0 @@
-{
-  "name": "mithril-cache-agent",
-  "description": "Build mithril-cache for torch.compile caching. Use when implementing content-addressable storage, cache keys, eviction, or framework hooks.",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

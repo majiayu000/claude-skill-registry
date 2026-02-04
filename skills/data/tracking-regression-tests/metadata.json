@@ -1,9 +1,0 @@
-{
-  "name": "tracking-regression-tests",
-  "description": "Track and manage regression test suites across releases.Use when performing specialized testing.Trigger with phrases like \"track regressions\", \"manage regression suite\", or \"validate against baseline\"",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "github-impact",
-  "description": "Génère automatiquement deux rapports d'impact (métier et technique) pour une PR GitHub et les intègre dans la description.",
-  "repo": "atournayre/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

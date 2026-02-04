@@ -1,9 +1,0 @@
-{
-  "name": "mcp-workflow-composition",
-  "description": "Teaches effective composition of multiple @j0kz MCP tools into cohesive workflows using MCPPipeline and orchestrator-mcp, including dependency management, error handling strategies, and pre-built w...",
-  "repo": "j0KZ/mcp-agents",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

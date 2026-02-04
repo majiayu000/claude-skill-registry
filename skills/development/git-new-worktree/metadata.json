@@ -1,8 +1,0 @@
-{
-  "name": "git-new-worktree",
-  "repo": "regenrek/agent-skills",
-  "category": "development",
-  "description": "Create a new git worktree and branch using the local `git new` command. Use when asked to create a worktree from a name, set upstream via git new, cd into the new directory, and summarize what was cre",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:20.569910Z"
-}

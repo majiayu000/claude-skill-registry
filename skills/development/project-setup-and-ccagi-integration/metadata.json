@@ -1,8 +1,0 @@
-{
-  "name": "project-setup-and-ccagi-integration",
-  "repo": "customer-cloud-club/meeting-visualizer",
-  "category": "development",
-  "description": "Complete project initialization including Node.js/TypeScript setup, GitHub integration, and CCAGI framework integration. Use when creating new projects or integrating CCAGI components.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:51.674851Z"
-}

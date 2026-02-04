@@ -1,9 +1,0 @@
-{
-  "name": "drive-search",
-  "description": "Google Drive を検索する。「Drive を検索」「ドライブ検索」「ファイルを探して」「Drive で検索」「Google Drive 検索」「ファイル名で検索」「条件で検索」などで起動。`/shiiman-google:drive-search` を実行して検索結果を取得する。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "axiom-build-debugging",
-  "description": "Use when encountering dependency conflicts, CocoaPods/SPM resolution failures, \"Multiple commands produce\" errors, or framework version mismatches - systematic dependency and build configuration debug",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

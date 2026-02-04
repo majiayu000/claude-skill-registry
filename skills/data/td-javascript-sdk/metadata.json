@@ -1,9 +1,0 @@
-{
-  "name": "td-javascript-sdk",
-  "repo": "treasure-data/td-skills",
-  "category": "data",
-  "description": "Expert assistance for importing data to Treasure Data using the JavaScript SDK. Use this skill when users need help with browser-based event tracking, page analytics, client-side data collection, or i",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:24.015161Z",
-  "dir_name": "td-javascript-sdk"
-}

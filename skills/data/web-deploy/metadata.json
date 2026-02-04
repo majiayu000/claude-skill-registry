@@ -1,9 +1,0 @@
-{
-  "name": "web-deploy",
-  "description": "Website deployment to Caddy. Use when user mentions deploy website, create page, update site, publish, reload caddy.",
-  "repo": "wayne930242/weihung-pai",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

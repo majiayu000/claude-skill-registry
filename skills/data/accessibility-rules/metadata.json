@@ -1,9 +1,0 @@
-{
-  "name": "accessibility-rules",
-  "description": "Concise accessibility checklist and practices for components in the repository. Use when implementing UI to ensure keyboard, screen reader, and focus semantics.",
-  "repo": "pixu1980/karaoke-tracker",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "amcs-plan-generator",
-  "repo": "miethe/MeatyMusic",
-  "category": "documents",
-  "description": "Generate execution plan from Song Design Spec (SDS). Extracts section structure, calculates target metrics, and produces ordered work objectives for downstream workflow nodes. Use when processing SDS ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:09.538493Z"
-}

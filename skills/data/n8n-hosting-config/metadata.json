@@ -1,9 +1,0 @@
-{
-  "name": "n8n-hosting-config",
-  "description": "Self-host n8n - Docker, environment variables, databases, scaling, security, enterprise features",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

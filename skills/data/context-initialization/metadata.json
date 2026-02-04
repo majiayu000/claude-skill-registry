@@ -1,9 +1,0 @@
-{
-  "name": "context-initialization",
-  "description": "Always Auto-invoked skill that creates/updates workspace AGENTS.md to instruct the agent to always search for existing skills before attempting any scientific task.",
-  "repo": "lifangda/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "security-sentinel",
-  "description": "Use this agent when performing security audits, vulnerability assessments, or security reviews of code. Triggers on requests like \"security review\", \"check for vulnerabilities\", \"OWASP compliance chec",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

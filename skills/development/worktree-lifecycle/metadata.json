@@ -1,8 +1,0 @@
-{
-  "name": "worktree-lifecycle",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "development",
-  "description": "Manage git worktree lifecycle for parallel development. Create worktrees with port isolation, manage multiple branches simultaneously, clean up worktrees. CRITICAL: Use /create_worktree command, never",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:57.284170Z"
-}

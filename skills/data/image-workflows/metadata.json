@@ -1,9 +1,0 @@
-{
-  "name": "image-workflows",
-  "description": "Create and execute image workflows using floimg. Use when the user needs to generate AI images, transform existing images (resize, caption, filters), or create multi-step pipelines. Also handles chart",
-  "repo": "TeamFlojo/FloImg",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

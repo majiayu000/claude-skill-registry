@@ -1,9 +1,0 @@
-{
-  "name": "agent-setup",
-  "description": "Configure AI coding agents like Cursor, GitHub Copilot, or Claude Code with project-specific patterns, coding guidelines, and MCP servers for consistent AI-assisted development.",
-  "repo": "andrelandgraf/fullstackrecipes",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/andrelandgraf/fullstackrecipes"
-}

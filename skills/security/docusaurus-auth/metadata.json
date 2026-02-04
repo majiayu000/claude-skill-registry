@@ -1,8 +1,0 @@
-{
-  "name": "docusaurus-auth",
-  "repo": "MuhammedSuhaib/LevelUpSpeckit-Plus",
-  "category": "security",
-  "description": "Expert skill for implementing authentication in Docusaurus static sites. Handles FastAPI backend setup for authentication, JWT token management, and secure API communication. Includes setup for static",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:04.781940Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "deploying-production-migrations",
-  "description": "Deploy migrations to production safely using migrate deploy in CI/CD. Use when setting up production deployment pipelines.",
-  "repo": "djankies/claude-configs",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "typography-audit",
-  "description": "Check and fix typography hierarchy on a page. Fixes h2-to-h4 skips, ensures all sections have left-aligned title/description with max-w-3xl, removes centering classes, and adds missing headers with i1",
-  "repo": "Manuelvillarvieites/energy-company",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

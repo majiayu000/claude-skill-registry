@@ -1,8 +1,0 @@
-{
-  "name": "gh-issue-planner",
-  "repo": "u473t8/learning-app",
-  "category": "development",
-  "description": "Read the current GitHub issue description from the branch-based issue number, agree on a plan, and update the issue description when the plan diverges. Use for planning tasks that must sync an agreed ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:58.196479Z"
-}

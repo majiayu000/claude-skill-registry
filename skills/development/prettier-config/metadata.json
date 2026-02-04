@@ -1,8 +1,0 @@
-{
-  "name": "prettier-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Prettier configuration validation and templates for package.json \"prettier\" field in MetaSaver monorepos. Includes 4 required standards (prettier field in package.json with string reference only, no s",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.843362Z"
-}

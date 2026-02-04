@@ -1,9 +1,0 @@
-{
-  "name": "minitest-coder",
-  "description": "This skill guides writing comprehensive Minitest tests for Ruby and Rails applications. Use when creating test files, writing test cases, or testing new features. Covers both traditional and spec styl",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

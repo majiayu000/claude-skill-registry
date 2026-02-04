@@ -1,9 +1,0 @@
-{
-  "name": "cloudflare-worker",
-  "description": "Build edge-first TypeScript applications on Cloudflare Workers. Covers Workers API, Hono framework, KV/D1/R2 storage, Durable Objects, Queues, and testing patterns. Use when creating serverless worker",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

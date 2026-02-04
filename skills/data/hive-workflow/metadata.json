@@ -1,9 +1,0 @@
-{
-  "name": "hive-workflow",
-  "description": "Issue tracking and task management using the hive system. Use when creating, updating, or managing work items. Use when you need to track bugs, features, tasks, or epics. Do NOT use for simple one-off",
-  "repo": "joelhooks/swarm-tools",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

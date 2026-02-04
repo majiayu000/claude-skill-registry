@@ -1,8 +1,0 @@
-{
-  "name": "reddit-browser-automation",
-  "repo": "MassLab-SII/open-agent-skills",
-  "category": "productivity",
-  "description": "This skill provides tools and techniques for Postmill/Reddit-like forum automation. Includes account creation, posting, forum creation and wiki management. Suitable for tasks requiring complex operati",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.905044Z"
-}

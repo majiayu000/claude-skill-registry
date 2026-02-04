@@ -1,9 +1,0 @@
-{
-  "name": "creating-custom-utilities",
-  "description": "Create custom utilities with @utility directive supporting static utilities, functional utilities with values, theme-based utilities, and multi-value utilities. Use when extending Tailwind with custom",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

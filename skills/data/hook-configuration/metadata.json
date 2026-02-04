@@ -1,9 +1,0 @@
-{
-  "name": "hook-configuration",
-  "description": "Use this skill when creating or refining Claude Code hooks. Hooks are shell commands that execute at specific lifecycle events (tool use, prompt submit, notifications, session events). Helps design ev",
-  "repo": "andisab/swe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

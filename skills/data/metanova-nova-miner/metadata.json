@@ -1,9 +1,0 @@
-{
-  "name": "metanova-nova-miner",
-  "description": "This skill should be used when setting up, optimizing, or managing MetaNova NOVA miners on Bittensor Subnet 68 (SN68). Use it for miner configuration, molecular search strategy development, PSICHIC sc",
-  "repo": "synapz-org/metanova-nova-miner-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

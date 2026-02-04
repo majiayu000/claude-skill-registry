@@ -1,9 +1,0 @@
-{
-  "name": "oe-workflow-triage",
-  "description": "Workflow bug triage for OpenEvent. Use when you have a regression/bug report (wrong step, wrong detour, HIL stuck, site visit issues) and need a minimal reproduction trace plus a fix plan tied to work",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

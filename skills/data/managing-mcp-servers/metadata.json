@@ -1,9 +1,0 @@
-{
-  "name": "managing-mcp-servers",
-  "description": "Provides comprehensive guidance for managing MCP (Model Context Protocol) servers using the claude mcp CLI. Covers adding servers across scopes (project, local, user), transport types (stdio, sse, htt",
-  "repo": "fx/cc",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

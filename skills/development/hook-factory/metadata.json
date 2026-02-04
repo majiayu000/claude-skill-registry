@@ -1,9 +1,0 @@
-{
-  "name": "hook-factory",
-  "description": "Generate production-ready Claude Code hooks with interactive Q&A, automated installation, and enhanced validation. Supports 10 templates across 7 event types for comprehensive workflow automation.",
-  "category": "development",
-  "tags": [],
-  "source": "github.com/claude-code-skill-factory",
-  "source_path": "generated-skills/hook-factory/SKILL.md",
-  "imported_at": "2026-01-24T08:31:00.066523Z"
-}

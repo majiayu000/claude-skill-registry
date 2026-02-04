@@ -1,8 +1,0 @@
-{
-  "name": "gleam-erlang-interop",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when gleam-Erlang interoperability including calling Erlang code from Gleam, using Erlang libraries, external functions, working with Erlang types, NIFs, and leveraging the BEAM ecosystem from Gle",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:04.778174Z"
-}

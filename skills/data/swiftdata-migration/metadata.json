@@ -1,9 +1,0 @@
-{
-  "name": "swiftdata-migration",
-  "description": "Advanced CoreData to SwiftData migration patterns, schema versioning strategies, conflict resolution for iCloud sync, and production migration workflows. Use when user asks about migrating from CoreDa",
-  "repo": "bluewaves-creations/bluewaves-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bluewaves-creations/bluewaves-skills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "generating-api-docs",
-  "description": "Create comprehensive API documentation with examples, authentication guides, and SDKs.Use when creating comprehensive API documentation.Trigger with phrases like \"generate API docs\", \"create API docum",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

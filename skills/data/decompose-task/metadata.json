@@ -1,9 +1,0 @@
-{
-  "name": "decompose-task",
-  "description": "Decompose a phase plan into atomic beads and sub-beads. Use when breaking down a phase into tasks, when the user mentions \"decompose\" or \"break down\", when creating beads from a plan, or when structur",
-  "repo": "eaasxt/Farmhand",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

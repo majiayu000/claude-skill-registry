@@ -1,9 +1,0 @@
-{
-  "name": "chipsec",
-  "description": "Static analysis of UEFI/BIOS firmware dumps using Intel's chipsec framework. Decode firmware structure, detect known malware and rootkits (LoJax, ThinkPwn, HackingTeam, MosaicRegressor), generate EFI ",
-  "repo": "BrownFineSecurity/iothackbot",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "nvim-context",
-  "description": "Get the current Neovim context as JSON (cursor position, current file, visual selection and diagnostics) to help answer questions about code at the current cursor position, visual selections and diagn",
-  "repo": "majjoha/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

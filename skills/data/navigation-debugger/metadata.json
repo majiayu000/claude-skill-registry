@@ -1,9 +1,0 @@
-{
-  "name": "navigation-debugger",
-  "description": "Debug Leavn navigation issues - NotificationCenter routing, deep links, tab selection, AppCoordinator, modal presentations",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "handoff-log-condense",
-  "description": "Create a short summary of recent handoff log entries without modifying the append-only log.",
-  "repo": "cdrguru/portable-agent-kit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

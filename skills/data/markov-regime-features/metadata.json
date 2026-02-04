@@ -1,9 +1,0 @@
-{
-  "name": "markov-regime-features",
-  "description": "Debugging constant Markov regime features in RL observations - when HMM probabilities show uniform values instead of dynamic regime estimates",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

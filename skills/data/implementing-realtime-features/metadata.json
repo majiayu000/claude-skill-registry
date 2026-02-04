@@ -1,9 +1,0 @@
-{
-  "name": "implementing-realtime-features",
-  "repo": "hkcm91/StickerNestV3",
-  "category": "data",
-  "description": "Implementing Supabase realtime subscriptions and live updates for StickerNest. Use when the user asks to add realtime, live updates, presence, subscriptions, postgres_changes, broadcast channels, or s",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:02.665665Z",
-  "dir_name": "implementing-realtime-features"
-}

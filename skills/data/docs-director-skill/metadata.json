@@ -1,9 +1,0 @@
-{
-  "name": "docs-director-skill",
-  "description": "Handles multi-document operations with pattern matching and parallel execution, delegating to docs-manager-skill for each matched document",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

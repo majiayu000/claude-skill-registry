@@ -1,8 +1,0 @@
-{
-  "name": "dockerignore-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "devops",
-  "description": "Docker ignore configuration template and validation logic for optimizing Docker build contexts. Includes 4 required standards (build artifacts, development files, CI/CD and testing, logs and temporary",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.147853Z"
-}

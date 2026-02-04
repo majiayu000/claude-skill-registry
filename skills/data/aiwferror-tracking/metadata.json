@@ -1,9 +1,0 @@
-{
-  "name": "aiwferror-tracking",
-  "repo": "moonklabs/aiwf",
-  "category": "data",
-  "description": "Add Sentry v8 error tracking and performance monitoring to your project services. Use this skill when adding error handling, creating new controllers, instrumenting cron jobs, or tracking database per",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:34.443547Z",
-  "dir_name": "aiwferror-tracking"
-}

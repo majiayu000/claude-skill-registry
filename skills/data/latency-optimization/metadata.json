@@ -1,9 +1,0 @@
-{
-  "name": "latency-optimization",
-  "description": "Use when optimizing end-to-end latency, reducing response times, or improving performance for latency-sensitive applications. Covers latency budgets, geographic routing, protocol optimization, and lat",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

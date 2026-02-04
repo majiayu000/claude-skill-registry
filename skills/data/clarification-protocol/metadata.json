@@ -1,9 +1,0 @@
-{
-  "name": "clarification-protocol",
-  "description": "Generate targeted clarifying questions (2-3 max) that challenge vague requirements and extract missing context. Use after request-analyzer identifies clarification needs, before routing to specialist ",
-  "repo": "alirezarezvani/claude-cto-team",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ios-signing",
-  "description": "iOSアプリのコード署名・プロビジョニング支援。証明書管理、Provisioning Profile管理、Keychain設定、CI/CD環境での署名設定など、コード署名に関する包括的なサポートを提供する。「署名エラーを解決したい」「証明書を更新したい」「CIで署名を設定したい」と言った時に使用する。",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

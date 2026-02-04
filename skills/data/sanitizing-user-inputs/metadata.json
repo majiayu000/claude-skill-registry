@@ -1,9 +1,0 @@
-{
-  "name": "sanitizing-user-inputs",
-  "description": "Sanitizing and validating user input to prevent XSS, injection attacks, and security vulnerabilities in TypeScript applications",
-  "repo": "djankies/claude-configs",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

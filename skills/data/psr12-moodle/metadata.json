@@ -1,9 +1,0 @@
-{
-  "name": "psr12-moodle",
-  "description": "Automatically validate and fix Moodle PHP code for PSR-12 compliance with Moodle-specific exceptions (lowercase_with_underscores naming, frankenstyle prefixes). Activates when working with Moodle plug",
-  "repo": "astoeffer/plugin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

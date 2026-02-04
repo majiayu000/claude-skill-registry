@@ -1,9 +1,0 @@
-{
-  "name": "search-conversations",
-  "description": "Search past Claude Code conversations. Use when user says \"search conversations\", \"find that chat\", \"what did we discuss\", \"where did we talk about\", \"look up past session\", \"find conversation about X",
-  "repo": "gupsammy/Claude-setup",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gupsammy/Claude-setup"
-}

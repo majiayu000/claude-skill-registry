@@ -1,9 +1,0 @@
-{
-  "name": "managing-confluence",
-  "description": "Reads, creates, and updates Confluence pages via MCP. Use when working with wiki pages, documentation, knowledge bases, CQL searches, or page hierarchies in Confluence. For Jira issues, use managing-j",
-  "repo": "disusered/dotfiles-universal",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

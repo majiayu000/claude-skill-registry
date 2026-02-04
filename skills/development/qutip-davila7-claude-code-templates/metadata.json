@@ -1,7 +1,0 @@
-{
-  "name": "qutip-davila7-claude-code-templates",
-  "description": "Quantum mechanics simulations and analysis using QuTiP (Quantum Toolbox in Python). Use when working with quantum systems including: (1) quantum states (kets, bras, density matrices), (2) quantum oper",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.086774Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "flox-containers",
-  "description": "Containerizing Flox environments with Docker/Podman. Use for creating container images, OCI exports, multi-stage builds, and deployment workflows.",
-  "repo": "flox/flox-agentic",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

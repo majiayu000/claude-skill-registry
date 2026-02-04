@@ -1,8 +1,0 @@
-{
-  "name": "monitoring-skill",
-  "repo": "pluginagentmarketplace/custom-plugin-devops",
-  "category": "devops",
-  "description": "Monitoring and observability with Prometheus, Grafana, ELK Stack, and distributed tracing.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:12.313352Z"
-}

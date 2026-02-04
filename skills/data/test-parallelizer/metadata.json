@@ -1,9 +1,0 @@
-{
-  "name": "test-parallelizer",
-  "description": "Test Parallelizer - Auto-activating skill for Test Automation.Triggers on: test parallelizer, test parallelizerPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

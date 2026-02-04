@@ -1,9 +1,0 @@
-{
-  "name": "concise-rule-writing",
-  "description": "This skill should be used when the user asks to 'write a rule', 'create a rule', 'make rule shorter', 'keep rules minimal', 'reduce rule size', 'optimize rule', or needs guidance on writing precise, c",
-  "repo": "FrancisVarga/coconut-claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cynara-policy-validator",
-  "description": "Validates Cynara privilege access control policies. Checks policy syntax, logical consistency, and permission accuracy.",
-  "repo": "plurigrid/asi",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/plurigrid/asi"
-}

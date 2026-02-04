@@ -1,9 +1,0 @@
-{
-  "name": "gpui-performance",
-  "description": "Performance optimization techniques for GPUI including rendering optimization, layout performance, memory management, and profiling strategies. Use when user needs to optimize GPUI application perform",
-  "repo": "geoffjay/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

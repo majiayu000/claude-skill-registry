@@ -1,7 +1,0 @@
-{
-  "name": "move-prover",
-  "description": "Move Prover formal verification expert for Aptos smart contracts. Write specifications (MSL), preconditions (requires), postconditions (ensures), invariants, abort conditions (aborts_if), quantifiers,",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.361503Z"
-}

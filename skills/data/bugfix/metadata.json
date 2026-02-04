@@ -1,9 +1,0 @@
-{
-  "name": "bugfix",
-  "description": "Investigates and fixes bugs systematically with root cause analysis. Use when asked to debug, troubleshoot, fix a bug, investigate an issue, or find why something is broken. Creates reproduction tests",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

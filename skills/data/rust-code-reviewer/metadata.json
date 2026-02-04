@@ -1,9 +1,0 @@
-{
-  "name": "rust-code-reviewer",
-  "description": "Expert Rust code review agent that analyzes Rust code for correctness, safety, idiomatic patterns, performance, and best practices. Use when reviewing Rust code files (.rs), providing feedback on Rust",
-  "repo": "iammarkps/eqapo-gui",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

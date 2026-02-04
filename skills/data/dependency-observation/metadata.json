@@ -1,9 +1,0 @@
-{
-  "name": "dependency-observation",
-  "description": "依存関係の取り違えを検出する観測。lockfile固定、クリーンビルド、統合スモークで再現性を担保。Use when: 依存追加/更新、CI設定、ローカルでは動く問題、新環境セットアップ、バージョン差異の疑い。",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rust-tokio-essentials",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Core Tokio patterns including runtime setup, spawn_blocking for CPU work, and avoiding blocking operations. Use for any async Rust development.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:48.951498Z"
-}

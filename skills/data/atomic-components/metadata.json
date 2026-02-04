@@ -1,9 +1,0 @@
-{
-  "name": "atomic-components",
-  "description": "Create atomic components (atoms) - basic, reusable UI building blocks following React/TypeScript best practices with Tailwind v4 styling. Use when creating fundamental UI elements like buttons, inputs",
-  "repo": "felixAnhalt/spotify-playlist-extractor",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

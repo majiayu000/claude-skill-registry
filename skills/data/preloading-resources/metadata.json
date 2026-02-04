@@ -1,9 +1,0 @@
-{
-  "name": "preloading-resources",
-  "description": "Teaches resource preloading APIs in React 19 including prefetchDNS, preconnect, preload, and preinit. Use when optimizing initial load or navigation performance.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "save-thread",
-  "description": "Save complete conversation as checkpoint. Only when user explicitly requests (\"save session\", \"checkpoint this\"). Use thread_persist to store full message history with summary.",
-  "repo": "nowledge-co/community",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

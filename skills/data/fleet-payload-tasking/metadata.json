@@ -1,9 +1,0 @@
-{
-  "name": "fleet-payload-tasking",
-  "description": "Deploy payloads and shell commands fleet-wide using reliable tasking. Execute scripts, collect data, or run commands across all endpoints with automatic handling of offline sensors. Use for vulnerabil",
-  "repo": "refractionPOINT/lc-ai",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

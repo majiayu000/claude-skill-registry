@@ -1,8 +1,0 @@
-{
-  "name": "troubleshooting-config-items",
-  "repo": "flanksource/claude-code-plugin",
-  "category": "devops",
-  "description": "Troubleshoots infrastructure and application configuration items in Mission Control by diagnosing health issues, analyzing recent changes, and investigating resource relationships. Use when users ask ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:34.187305Z"
-}

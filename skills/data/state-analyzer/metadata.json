@@ -1,9 +1,0 @@
-{
-  "name": "state-analyzer",
-  "description": "Terraform state を分析・操作する。「state 確認」「state list」「state show」「リソース一覧」「state の移動」「state mv」「state rm」「terraform state」「state 操作」「リソースの状態」「state pull」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

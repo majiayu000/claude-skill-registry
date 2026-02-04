@@ -1,9 +1,0 @@
-{
-  "name": "sap-fiori-tools",
-  "description": "Develops SAP Fiori applications using SAP Fiori tools extensions for VS Code and SAP Business Application Studio.Use when: generating Fiori Elements or Freestyle SAPUI5 applications, configuring Page ",
-  "repo": "secondsky/sap-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

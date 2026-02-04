@@ -1,8 +1,0 @@
-{
-  "name": "iac-skill",
-  "repo": "pluginagentmarketplace/custom-plugin-devops",
-  "category": "development",
-  "description": "Infrastructure as Code with Terraform, Ansible, and CloudFormation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:11.933933Z"
-}

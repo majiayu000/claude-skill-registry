@@ -1,9 +1,0 @@
-{
-  "name": "dev-sre",
-  "description": "Gate 2 of the development cycle. VALIDATES that observability was correctly implementedby developers. Does NOT implement observability code - only validates it.",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

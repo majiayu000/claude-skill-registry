@@ -1,9 +1,0 @@
-{
-  "name": "git-leak-recovery",
-  "description": "This skill provides guidance for recovering secrets or sensitive data that have been removed from Git history through operations like reset or rebase, and then properly cleaning up the repository to e",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

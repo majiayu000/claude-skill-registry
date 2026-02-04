@@ -1,8 +1,0 @@
-{
-  "name": "normalize-note",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Harmonize frontmatter and wikilinks in a note. Detects prose patterns, suggests frontmatter additions, and suggests wikilinks for frontmatter values. Triggers on \"normalize note\", \"harmonize note\", \"s",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:00.961984Z"
-}

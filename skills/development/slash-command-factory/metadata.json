@@ -1,9 +1,0 @@
-{
-  "name": "slash-command-factory",
-  "description": "Generate custom Claude Code slash commands through intelligent 5-7 question flow. Creates powerful commands for business research, content analysis, healthcare compliance, API integration, documentati",
-  "category": "development",
-  "tags": [],
-  "source": "github.com/claude-code-skill-factory",
-  "source_path": "generated-skills/slash-command-factory/SKILL.md",
-  "imported_at": "2026-01-24T08:31:00.075975Z"
-}

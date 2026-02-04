@@ -1,8 +1,0 @@
-{
-  "name": "rails-grpc-implementation",
-  "repo": "nekorush14/dotfiles",
-  "category": "development",
-  "description": "Implement gRPC services in Rails for high-performance microservices. Use when building inter-service communication, streaming APIs, or efficient binary protocol endpoints.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.802876Z"
-}

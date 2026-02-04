@@ -1,9 +1,0 @@
-{
-  "name": "validation-boundary",
-  "description": "Validate at the boundary with Zod schemas and branded types. Business functions trust validated input.",
-  "repo": "jagreehal/jagreehal-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

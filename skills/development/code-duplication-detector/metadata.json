@@ -1,8 +1,0 @@
-{
-  "name": "code-duplication-detector",
-  "repo": "sovrium/sovrium",
-  "category": "development",
-  "description": "Detects duplicate code patterns, similar functions, repeated logic, and copy-paste code across the codebase. Identifies refactoring opportunities by finding code that violates DRY principle. Reports d",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:17.305718Z"
-}

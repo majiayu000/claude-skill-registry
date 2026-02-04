@@ -1,9 +1,0 @@
-{
-  "name": "klingai-batch-processing",
-  "description": "Process multiple video generation requests efficiently with Kling AI. Use when generatingmultiple videos or building content pipelines. Trigger with phrases like 'klingai batch','kling ai bulk', 'mult",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

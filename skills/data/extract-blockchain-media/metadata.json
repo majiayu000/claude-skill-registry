@@ -1,9 +1,0 @@
-{
-  "name": "extract-blockchain-media",
-  "description": "Extract media files (images, videos, documents) from BSV blockchain transactions using the txex CLI tool. Retrieves inscribed ordinals and embedded files.",
-  "repo": "b-open-io/1sat-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

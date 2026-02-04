@@ -1,9 +1,0 @@
-{
-  "name": "speckit-validator",
-  "description": "Validates specification completeness and quality by checking for mandatory sections, [NEEDS CLARIFICATION] markers, testable criteria, and clear scope boundaries. Ensures specifications are ready for ",
-  "repo": "davidmatousek/product-led-spec-kit",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

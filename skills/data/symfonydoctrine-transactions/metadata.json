@@ -1,9 +1,0 @@
-{
-  "name": "symfonydoctrine-transactions",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "data",
-  "description": "Handle database transactions with Doctrine UnitOfWork; implement optimistic locking, flush strategies, and transaction boundaries",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.043135Z",
-  "dir_name": "symfonydoctrine-transactions"
-}

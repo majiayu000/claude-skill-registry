@@ -1,8 +1,0 @@
-{
-  "name": "symfonydoctrine-fetch-modes",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Optimize Doctrine queries with fetch modes, lazy loading, extra lazy collections, and query hints for performance",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.000898Z"
-}

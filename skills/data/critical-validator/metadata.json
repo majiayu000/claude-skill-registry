@@ -1,9 +1,0 @@
-{
-  "name": "critical-validator",
-  "description": "This skill should be used when validating user prompts, plans, or requests before execution. It conducts independent validation, questions assumptions, references official sources and documentation, i",
-  "repo": "merllinsbeard/ai-claude-skills-collection",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

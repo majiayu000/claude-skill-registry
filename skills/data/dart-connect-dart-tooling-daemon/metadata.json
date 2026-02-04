@@ -1,9 +1,0 @@
-{
-  "name": "dart-connect-dart-tooling-daemon",
-  "description": "To connect to the Dart Tooling Daemon for editor/runtime data, connect using a user-provided DTD URI before using related Dart tools.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/X-School-Academy/ai-dev-swarm"
-}

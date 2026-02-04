@@ -1,9 +1,0 @@
-{
-  "name": "mem0-fastapi-integration",
-  "description": "Memory layer integration patterns for FastAPI with Mem0 including client setup, memory service patterns, user tracking, conversation persistence, and background task integration. Use when implementing",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

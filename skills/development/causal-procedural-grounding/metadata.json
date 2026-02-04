@@ -1,8 +1,0 @@
-{
-  "name": "causal-procedural-grounding",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Encode cause-effect logic into executable steps; use when asked to ensure robust troubleshooting and remediation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.786881Z"
-}

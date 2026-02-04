@@ -1,9 +1,0 @@
-{
-  "name": "sinatra-security",
-  "description": "Security best practices for Sinatra applications including input validation, CSRF protection, and authentication patterns. Use when hardening applications or conducting security reviews.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

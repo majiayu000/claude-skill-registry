@@ -1,9 +1,0 @@
-{
-  "name": "devcontainer-maintenance",
-  "description": "Maintain or change the devcontainer environment for this repo. Use when editing .devcontainer files, changing toolchains, or requesting environment rebuilds.",
-  "repo": "JoernStoehler/msc-viterbo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

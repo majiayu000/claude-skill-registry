@@ -1,9 +1,0 @@
-{
-  "name": "model-extraction-relu-logits",
-  "description": "Guidance for extracting weight matrices from black-box ReLU neural networks using only input-output queries. This skill applies when tasked with recovering internal parameters (weights, biases) of a n",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

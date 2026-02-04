@@ -1,9 +1,0 @@
-{
-  "name": "graphql-mutations",
-  "description": "GraphQL mutation design including payload patterns, field-specific errors, input objects, and HTTP semantics. Use when designing or implementing GraphQL mutations.",
-  "repo": "jovermier/cc-stack-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

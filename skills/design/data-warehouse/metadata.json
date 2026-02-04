@@ -1,8 +1,0 @@
-{
-  "name": "data-warehouse",
-  "repo": "pluginagentmarketplace/custom-plugin-sql",
-  "category": "design",
-  "description": "Data warehouse design mastery with star schema, dimensional modeling, fact/dimension tables, slowly changing dimensions, and enterprise best practices. Complete schema examples included.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:38.693325Z"
-}

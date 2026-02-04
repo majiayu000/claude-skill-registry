@@ -1,9 +1,0 @@
-{
-  "name": "claude-chrome",
-  "description": "Claude in Chrome - browser automation via the official Anthropic extension. Control your logged-in Chrome browser, automate workflows, fill forms, extract data, and run scheduled tasks.",
-  "repo": "Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

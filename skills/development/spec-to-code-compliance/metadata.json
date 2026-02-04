@@ -1,7 +1,0 @@
-{
-  "name": "spec-to-code-compliance",
-  "description": "Verifies code implements exactly what documentation specifies for blockchain audits. Use when comparing code against whitepapers, finding gaps between specs and implementation, or performing complianc",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.691847Z"
-}

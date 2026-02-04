@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-codebases",
-  "description": "Generates LLM-optimized code context with function call graphs, side effect detection, and incremental updates. Processes JavaScript/TypeScript codebases to create compact semantic representations inc",
-  "repo": "devame/llm-context-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

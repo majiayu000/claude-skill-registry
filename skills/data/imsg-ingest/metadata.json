@@ -1,9 +1,0 @@
-{
-  "name": "imsg-ingest",
-  "description": "Primary iMessage interface. Full-featured CLI for message export, conversation management, contact resolution, and thread state. Use when user mentions \"imessage\", \"imsg\", \"text message\", \"iphone mess",
-  "repo": "rohunvora/cool-claude-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

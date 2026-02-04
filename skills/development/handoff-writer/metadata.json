@@ -1,8 +1,0 @@
-{
-  "name": "handoff-writer",
-  "repo": "CheekyCodexConjurer/quant-lab",
-  "category": "development",
-  "description": "Write a compact HANDOFF.md snapshot to restore context after session resets.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:25.507956Z"
-}

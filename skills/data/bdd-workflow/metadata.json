@@ -1,9 +1,0 @@
-{
-  "name": "bdd-workflow",
-  "description": "Complete Behavior-Driven Development workflow coordinating SCENARIO → STEP DEFINITIONS → IMPLEMENT → REFACTOR cycle with Given/When/Then scenarios. Use when writing BDD tests or implementing features ",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

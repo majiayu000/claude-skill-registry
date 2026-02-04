@@ -1,9 +1,0 @@
-{
-  "name": "emacs-buffer",
-  "description": "Use when manipulating Emacs buffers - provides elisp patterns for listing, switching, creating, killing, and working with buffer contents",
-  "repo": "jingtaozf/emacs-claude-agent",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

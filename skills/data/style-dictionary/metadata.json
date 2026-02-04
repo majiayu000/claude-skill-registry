@@ -1,9 +1,0 @@
-{
-  "name": "style-dictionary",
-  "description": "Transforms design tokens into platform-specific formats (CSS, SCSS, iOS Swift, Android XML). Use when setting up multi-platform token pipelines, creating build processes, or managing cross-platform de",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

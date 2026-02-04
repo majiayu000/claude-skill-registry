@@ -1,8 +1,0 @@
-{
-  "name": "audio-transcription-cleanup",
-  "repo": "MacHu-GWU/sanhe-claude-code-plugins",
-  "category": "documents",
-  "description": "Transform messy voice transcription text into well-formatted, human-readable documents while preserving original meaning",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:54.953292Z"
-}

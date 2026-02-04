@@ -1,9 +1,0 @@
-{
-  "name": "ghostty-terminal-automation",
-  "description": "Automate Ghostty terminal sessions via MCP. Use when you need to send commands to terminals, read terminal output, capture screenshots, resize windows, open new tabs/windows, or interact with TUI apps",
-  "repo": "hyperb1iss/ghostty-automator-python",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

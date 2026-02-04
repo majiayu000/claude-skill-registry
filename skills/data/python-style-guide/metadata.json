@@ -1,9 +1,0 @@
-{
-  "name": "python-style-guide",
-  "description": "Comprehensive Python programming guidelines based on Google's Python Style Guide. Use when Claude needs to write Python code, review Python code for style issues, refactor Python code, or provide Pyth",
-  "repo": "CodingKaiser/claude-kaiser-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

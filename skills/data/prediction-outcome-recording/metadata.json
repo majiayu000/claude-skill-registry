@@ -1,9 +1,0 @@
-{
-  "name": "prediction-outcome-recording",
-  "description": "Record prediction outcomes when positions close. Trigger when: (1) predictions logged but outcomes missing, (2) calculating prediction accuracy, (3) tracking model performance.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

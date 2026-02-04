@@ -1,8 +1,0 @@
-{
-  "name": "native-tools",
-  "repo": "settlemint/agent-marketplace",
-  "category": "development",
-  "description": "Claude Code native tools reference. Prefer native tools over bash commands for file operations, search, and orchestration.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:40.684648Z"
-}

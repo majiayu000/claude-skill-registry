@@ -1,8 +1,0 @@
-{
-  "name": "managing-plugins",
-  "repo": "tenzir/claude-plugins",
-  "category": "development",
-  "description": "Create and maintain Claude Code plugins. Use when editing ANY file in the plugins/ directory (commands, skills, hooks, subagents, or config), bumping plugin versions, registering plugins in marketplac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:18.584602Z"
-}

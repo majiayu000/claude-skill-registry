@@ -1,8 +1,0 @@
-{
-  "name": "code-review-workflow",
-  "repo": "get2knowio/maverick",
-  "category": "development",
-  "description": "Use this skill when performing code review on branch changes. Runs parallel CodeRabbit and architecture reviews, consolidates findings, and executes improvements. Invoke when reviewing code changes be",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:53.292903Z"
-}

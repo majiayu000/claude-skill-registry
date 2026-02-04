@@ -1,8 +1,0 @@
-{
-  "name": "spring-boot-4x-api-documenter",
-  "repo": "andrlange/spring-documentation-mcp-server",
-  "category": "documents",
-  "description": "Auto-generate OpenAPI 3 documentation for Spring Boot 4.x REST APIs using springdoc-openapi v3.0. Use when API endpoints change, controllers are modified, or user mentions API docs, Swagger, or OpenAP",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:45.641941Z"
-}

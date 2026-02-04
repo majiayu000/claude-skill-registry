@@ -1,9 +1,0 @@
-{
-  "name": "winning-avg-corewars",
-  "description": "Guidance for developing CoreWars warriors that achieve target win rates against specific opponents. This skill should be used when tasks involve writing, optimizing, or debugging Redcode assembly warr",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

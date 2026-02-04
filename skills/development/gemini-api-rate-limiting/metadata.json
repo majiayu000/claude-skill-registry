@@ -1,8 +1,0 @@
-{
-  "name": "gemini-api-rate-limiting",
-  "repo": "BerryKuipers/claude-code-toolkit",
-  "category": "development",
-  "description": "Best practices for handling Gemini API rate limits, implementing sequential queues, and preventing 429 RESOURCE_EXHAUSTED errors in WescoBar",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:14.773101Z"
-}

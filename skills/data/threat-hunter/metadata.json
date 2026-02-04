@@ -1,9 +1,0 @@
-{
-  "name": "threat-hunter",
-  "description": "Activate when the user needs help conducting proactive threat hunting, investigating suspicious activity, or building hypothesis-driven hunts in LimaCharlie.",
-  "repo": "tekgrunt/boot-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

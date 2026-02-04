@@ -1,9 +1,0 @@
-{
-  "name": "youtube-summary",
-  "description": "Summarize YouTube videos. Check if transcript exists at `youtube/{Channel Name}/transcript-{Video Title}.md`. If exists, skip to summarization. If not, download first. Create summary at `youtube/{Chan",
-  "repo": "cyx-1/hello",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

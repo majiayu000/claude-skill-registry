@@ -1,9 +1,0 @@
-{
-  "name": "code-stats",
-  "description": "Analyze codebase with tokei (fast line counts by language) and difft (semantic AST-aware diffs). Get quick project overview without manual counting. Triggers on: how big is codebase, count lines of co",
-  "repo": "0xDarkMatter/claude-mods",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

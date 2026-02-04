@@ -1,9 +1,0 @@
-{
-  "name": "roastplus-ui",
-  "description": "ローストプラスアプリのUIデザインシステム。Tailwind CSS v4ベースの配色、コンポーネントパターン、レイアウト、アニメーションを提供。新規ページ作成、コンポーネント実装、デザイン一貫性チェックに使用。通常モードとクリスマスモードの両方に対応。",
-  "repo": "IKcoding-jp/Roast-Plus",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/IKcoding-jp/Roast-Plus"
-}

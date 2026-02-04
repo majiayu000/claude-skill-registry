@@ -1,7 +1,0 @@
-{
-  "name": "recover-context",
-  "description": "Extract full context of the last task from the most recent parent session",
-  "category": "development",
-  "source": "github.com/pchalasani/claude-code-tools",
-  "imported_at": "2026-01-24T14:54:18.746221Z"
-}

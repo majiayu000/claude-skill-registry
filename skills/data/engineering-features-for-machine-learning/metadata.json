@@ -1,9 +1,0 @@
-{
-  "name": "engineering-features-for-machine-learning",
-  "description": "Create, select, and transform features to improve machine learning model performance. Handles feature scaling, encoding, and importance analysis. Use when asked to \"engineer features\" or \"select featu",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

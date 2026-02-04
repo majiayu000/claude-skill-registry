@@ -1,9 +1,0 @@
-{
-  "name": "styled-components",
-  "description": "Implements CSS-in-JS styling with styled-components using tagged template literals, theming, and dynamic props. Use when wanting component-scoped CSS-in-JS, dynamic styling based on props, or theming ",
-  "repo": "mgd34msu/goodvibes-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

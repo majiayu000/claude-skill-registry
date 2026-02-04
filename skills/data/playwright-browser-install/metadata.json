@@ -1,9 +1,0 @@
-{
-  "name": "playwright-browser-install",
-  "description": "To install the Playwright browser defined in config, run this when the browser is missing or not installed.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

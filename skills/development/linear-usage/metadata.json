@@ -1,7 +1,0 @@
-{
-  "name": "linear-usage",
-  "description": "This skill should be used when user asks about \"Linear issues\", \"issue tracking best practices\", \"sprint planning\", \"Linear project management\", or \"creating Linear issues\".",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.234157Z"
-}

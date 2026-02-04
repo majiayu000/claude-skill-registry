@@ -1,9 +1,0 @@
-{
-  "name": "security-fastapi",
-  "description": "FastAPI security audit patterns. Use when reviewing FastAPI apps (fastapi imports, main.py/app.py, requirements/pyproject with fastapi, uvicorn). Covers auth dependencies, CORS configuration, TrustedH",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

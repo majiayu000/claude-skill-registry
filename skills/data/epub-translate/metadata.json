@@ -1,9 +1,0 @@
-{
-  "name": "epub-translate",
-  "description": "A skill for creating bilingual EPUB books by adding translated text alongside the original content while preserving the original formatting and structure.",
-  "repo": "lywa1998/epub-bilingual-translate-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

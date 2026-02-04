@@ -1,7 +1,0 @@
-{
-  "name": "feature-planning",
-  "description": "Break down feature requests into detailed, implementable plans with clear tasks. Use when user requests a new feature, enhancement, or complex change.",
-  "category": "development",
-  "source": "github.com/mhattingpete/claude-skills-marketplace",
-  "imported_at": "2026-01-24T14:54:24.164418Z"
-}

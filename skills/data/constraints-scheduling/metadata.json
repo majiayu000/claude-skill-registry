@@ -1,9 +1,0 @@
-{
-  "name": "constraints-scheduling",
-  "description": "Provides systematic approaches for solving constraint-based scheduling problems, such as finding meeting times that satisfy multiple participant availability windows, preferences, and existing calenda",
-  "repo": "letta-ai/skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

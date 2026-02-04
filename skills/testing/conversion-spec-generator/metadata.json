@@ -1,8 +1,0 @@
-{
-  "name": "conversion-spec-generator",
-  "repo": "fractary/claude-plugins",
-  "category": "testing",
-  "description": "Generates detailed actionable conversion specifications from audit results for architectural migration",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:55.793807Z"
-}

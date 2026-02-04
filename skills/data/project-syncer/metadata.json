@@ -1,9 +1,0 @@
-{
-  "name": "project-syncer",
-  "description": "Sync a single project bidirectionally with codex core repository.Delegates to fractary CLI for sync operations.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

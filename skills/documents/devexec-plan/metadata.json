@@ -1,8 +1,0 @@
-{
-  "name": "devexec-plan",
-  "repo": "kevinslin/llm",
-  "category": "documents",
-  "description": "This skill should be used for development tasks that require detailed technical planning with persistent documentation. Use when the task involves architectural decisions, multi-phase implementation, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:29.305810Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "nativephp-deployment",
-  "repo": "NativePHP/ClaudePlugins",
-  "category": "development",
-  "description": "This skill should be used when the user asks about \"deploy nativephp\", \"build ios app\", \"build android app\", \"app store submission\", \"play store submission\", \"native:package\", \"native:release\", \"sign ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:16.992452Z"
-}

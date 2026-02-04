@@ -1,8 +1,0 @@
-{
-  "name": "error-handling-gate",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "product",
-  "description": "Verify errors are handled gracefully with meaningful user feedback. Issues result in WARNINGS.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:05.506130Z"
-}

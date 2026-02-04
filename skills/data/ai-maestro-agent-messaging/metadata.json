@@ -1,9 +1,0 @@
-{
-  "name": "ai-maestro-agent-messaging",
-  "repo": "23blocks-OS/ai-maestro",
-  "category": "data",
-  "description": "Send and receive messages between AI agents using AI Maestro's messaging system. Use this skill when the user asks to \"send a message\", \"check inbox\", \"read messages\", \"notify [agent]\", \"tell [agent]\"",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:44.736296Z",
-  "dir_name": "ai-maestro-agent-messaging"
-}

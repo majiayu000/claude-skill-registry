@@ -1,9 +1,0 @@
-{
-  "name": "no-runtime-code",
-  "description": "Guardrails to keep the pipeline pure: specs + SEA + generators only.",
-  "repo": "GodSpeedAI/SEA",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

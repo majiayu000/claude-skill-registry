@@ -1,9 +1,0 @@
-{
-  "name": "hook-remover",
-  "description": "プロジェクトからフックを削除するスキル。「フック削除」「フックを消して」「hook を削除」「フックを外して」「フック解除」「hook 削除」「フックを取り除いて」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

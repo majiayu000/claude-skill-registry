@@ -1,9 +1,0 @@
-{
-  "name": "tts-livekit-plugin",
-  "description": "Build self-hosted TTS APIs using HuggingFace models (Parler-TTS, F5-TTS, XTTS-v2) and create LiveKit voice agent plugins with streaming support. Use when creating production-ready text-to-speech syste",
-  "repo": "Okeysir198/P20251122-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

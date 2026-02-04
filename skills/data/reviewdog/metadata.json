@@ -1,9 +1,0 @@
-{
-  "name": "reviewdog",
-  "description": "Automated code review and security linting integration for CI/CD pipelines using reviewdog. Aggregates findings from multiple security and quality tools (SAST, linters, formatters) into unified code r",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

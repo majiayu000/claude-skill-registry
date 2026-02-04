@@ -1,8 +1,0 @@
-{
-  "name": "rust-development-workflow",
-  "repo": "ShunsukeHayashi/miyabi-mcp-bundle",
-  "category": "development",
-  "description": "Execute comprehensive Rust development workflow including cargo build, test, clippy, and fmt. Use when compiling, testing, or checking Rust code quality in the Miyabi project.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:21.996824Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "system-create-skill",
-  "description": "Skill creation and validation framework ensuring compliance with PAI architectural standards.USE WHEN user says \"create skill\", \"create a skill\", \"new skill\", \"build skill\",\"make skill\", \"skill for X\"",
-  "repo": "multicam/qara",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

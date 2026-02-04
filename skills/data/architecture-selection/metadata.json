@@ -1,9 +1,0 @@
-{
-  "name": "architecture-selection",
-  "description": "System architecture patterns including monolith, microservices, event-driven, and serverless, with C4 modeling, scalability strategies, and technology selection criteria. Use when designing system arc",
-  "repo": "rsmdt/the-startup",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

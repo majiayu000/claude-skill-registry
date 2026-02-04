@@ -1,9 +1,0 @@
-{
-  "name": "codex-execpolicy",
-  "description": "Create or edit Codex execpolicy .rules files (allow/prompt/forbid commands, define prefix_rule patterns, add match/not_match tests) and validate them with codex execpolicy check. Use when a user menti",
-  "repo": "bedecarroll/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "oe-integration-mode-smoke",
-  "description": "Smoke-test “integration mode” safely (Supabase + optional live OpenAI integration tests). Use when debugging prod-only differences, validating Supabase connectivity, or running backend/tests_integrati",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

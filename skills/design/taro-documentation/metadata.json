@@ -1,8 +1,0 @@
-{
-  "name": "taro-documentation",
-  "repo": "whinc/my-claude-plugins",
-  "category": "design",
-  "description": "This skill should be used when the user mentions \"Taro\" in any technical context, asks about \"Taro API\", \"Taro components\", \"Taro configuration\", \"Taro development\", \"Taro project\", \"mini program with",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:18.655949Z"
-}

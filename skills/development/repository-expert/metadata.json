@@ -1,8 +1,0 @@
-{
-  "name": "repository-expert",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "development",
-  "description": "Repository \uc804\ubb38\uac00. JpaRepository(Command: save/delete), QueryDslRepository(Query: 4\uac1c \uba54\uc11c\ub4dc),AdminQueryDslRepository(Join \ud5c8\uc6a9, DTO Projection), LockRepository(Pessimistic Lock).Entity \uc9c1\uc811 \ubc18\ud658 \uae08\uc9c0, N+1\uc740 Applicat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.594744Z"
-}

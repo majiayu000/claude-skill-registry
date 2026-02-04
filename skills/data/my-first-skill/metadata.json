@@ -1,9 +1,0 @@
-{
-  "name": "my-first-skill",
-  "description": "Example skill demonstrating Anthropic SKILL.md format. Load when learning to create skills or testing the OpenSkills loader.",
-  "repo": "numman-ali/openskills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

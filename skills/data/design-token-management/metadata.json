@@ -1,9 +1,0 @@
-{
-  "name": "design-token-management",
-  "description": "Use when implementing design token systems, CSS variable architectures, or Style Dictionary pipelines. Covers token schemas, naming conventions, token transformations, and multi-platform token deliver",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

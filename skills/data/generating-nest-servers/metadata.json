@@ -1,9 +1,0 @@
-{
-  "name": "generating-nest-servers",
-  "description": "PRIMARY expert for ALL NestJS and @lenne.tech/nest-server tasks. ALWAYS use this skill when working in projects with @lenne.tech/nest-server in package.json dependencies (supports monorepos with proje",
-  "repo": "lenneTech/claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

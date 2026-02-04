@@ -1,8 +1,0 @@
-{
-  "name": "rust-graceful-shutdown",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Implement graceful shutdown with signal handling and broadcast channels. Use when building long-running services or daemons.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:48.931632Z"
-}

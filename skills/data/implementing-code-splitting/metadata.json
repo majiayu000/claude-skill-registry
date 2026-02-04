@@ -1,9 +1,0 @@
-{
-  "name": "implementing-code-splitting",
-  "description": "Teaches code splitting with lazy() and Suspense in React 19 for reducing initial bundle size. Use when implementing lazy loading, route-based splitting, or optimizing performance.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

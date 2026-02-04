@@ -1,9 +1,0 @@
-{
-  "name": "sap-sqlscript",
-  "description": "This skill should be used when the user asks to \"write a SQLScript procedure\", \"create HANA stored procedure\", \"implement AMDP method\", \"optimize SQLScript performance\", \"handle SQLScript exceptions\",",
-  "repo": "secondsky/sap-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

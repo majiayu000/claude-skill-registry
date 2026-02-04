@@ -1,9 +1,0 @@
-{
-  "name": "asyncio-concurrency-patterns",
-  "description": "Complete guide for asyncio concurrency patterns including event loops, coroutines, tasks, futures, async context managers, and performance optimization",
-  "repo": "manutej/luxor-claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

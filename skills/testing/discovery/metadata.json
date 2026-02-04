@@ -1,8 +1,0 @@
-{
-  "name": "discovery",
-  "repo": "vereis/nix-config",
-  "category": "testing",
-  "description": "MANDATORY for discovering CI commands, features, functions, patterns, or tests in a codebase. Uses progressive disclosure - load specific discovery type as needed.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:15.954939Z"
-}

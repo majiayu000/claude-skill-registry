@@ -1,8 +1,0 @@
-{
-  "name": "audit-remediation",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Apply approved remediation actions from audit resolution. Implements config file updates, template syncs, and code fixes using appropriate domain/config agents. Use when audit findings have been appro",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.083769Z"
-}

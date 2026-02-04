@@ -1,8 +1,0 @@
-{
-  "name": "spreadsheet-manager",
-  "repo": "smorand/claude-config",
-  "category": "development",
-  "description": "Expert in managing Google Sheets spreadsheets. Use when user mentions \"spreadsheet\", \"Google Sheets\", \"sheets\", or requests spreadsheet operations (create, format, style, import CSV, export data, add ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.513031Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "firebase-crashlytics",
-  "repo": "tianguzhe/zsh-config",
-  "category": "development",
-  "description": "Firebase Crashlytics Android \u5d29\u6e83\u4e0e ANR \u5206\u6790\u4e13\u5bb6\u3002\u7528\u4e8e\u5206\u6790 Android Java/Kotlin \u5d29\u6e83\u5806\u6808\u3001\u89e3\u8bfb Firebase \u5d29\u6e83\u62a5\u544a\u3001\u5b9a\u4f4d\u5d29\u6e83\u6839\u56e0\u3001\u63d0\u4f9b\u4fee\u590d\u5efa\u8bae\u3002\u5f53\u7528\u6237\u63d0\u4f9b Android \u5d29\u6e83\u65e5\u5fd7\u3001\u5806\u6808\u8ddf\u8e2a\u6216 ANR \u62a5\u544a\u65f6\u4f7f\u7528\u6b64\u6280\u80fd\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.385334Z"
-}

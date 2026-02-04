@@ -1,9 +1,0 @@
-{
-  "name": "using-generics",
-  "description": "Teaches generic constraints, avoiding any in generic defaults, and mapped types in TypeScript. Use when creating reusable functions, components, or types that work with multiple types while maintainin",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

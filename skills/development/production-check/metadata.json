@@ -1,8 +1,0 @@
-{
-  "name": "production-check",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Use when verifying code is production-ready. Runs build, lint, and test commands to check compilation, code quality, and test suite. Essential validation step for /build and /audit commands.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.326720Z"
-}

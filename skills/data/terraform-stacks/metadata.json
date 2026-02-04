@@ -1,9 +1,0 @@
-{
-  "name": "terraform-stacks",
-  "description": "Comprehensive guide for working with HashiCorp Terraform Stacks. Use when creating, modifying, or validating Terraform Stack configurations (.tfcomponent.hcl, .tfdeploy.hcl files), working with stack ",
-  "repo": "panchal-ravi/ai-iac-consumer-template",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

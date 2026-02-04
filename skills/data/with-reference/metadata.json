@@ -1,9 +1,0 @@
-{
-  "name": "with-reference",
-  "description": "Demonstrates loading an external note during execution.",
-  "repo": "hide212131/langchain4j-claude-skills-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

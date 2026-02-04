@@ -1,9 +1,0 @@
-{
-  "name": "code-formatter-vasic-digital-superagent",
-  "description": "Execute automatically formats and validates code files using Prettier and other formatting tools.\nUse when users mention \"format my code\", \"fix formatting\", \"apply code style\",\n\"check formatting\", \"ma",
-  "repo": "vasic-digital/SuperAgent",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vasic-digital/SuperAgent"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "swiftui-advanced",
-  "description": "Use when implementing gesture composition (simultaneous, sequenced, exclusive), adaptive layouts (ViewThatFits, AnyLayout, size classes), or choosing architecture patterns (MVVM vs TCA vs vanilla, Sta",
-  "repo": "johnrogers/claude-swift-engineering",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

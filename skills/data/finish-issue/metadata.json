@@ -1,9 +1,0 @@
-{
-  "name": "finish-issue",
-  "description": "Prepare a GitHub issue branch for PR with quality checks, cleanup, and review recommendations. Use when user says \"finish issue\", \"ready for PR\", \"prepare for review\", \"submit PR\", \"create PR\", \"final",
-  "repo": "liberioai/dossier-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

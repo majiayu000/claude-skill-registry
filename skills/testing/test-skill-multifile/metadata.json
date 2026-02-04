@@ -1,8 +1,0 @@
-{
-  "name": "test-skill-multifile",
-  "repo": "kcaldas/genie",
-  "category": "testing",
-  "description": "Test skill demonstrating progressive file loading with multiple resources",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:31.195089Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "laravel-package-scaffold",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "testing",
-  "description": "Scaffold Laravel packages with ServiceProvider, Facade, Config, and test setup",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:16.670612Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sandi-metz-rules",
-  "description": "This skill should be used when users request code review, refactoring, or code quality improvements for Ruby codebases. Apply Sandi Metz's four rules for writing maintainable object-oriented code - cl",
-  "repo": "nateberkopec/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

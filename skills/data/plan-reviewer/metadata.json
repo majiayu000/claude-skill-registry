@@ -1,9 +1,0 @@
-{
-  "name": "plan-reviewer",
-  "description": "Review a development plan before implementation to identify risks, missing considerations, and better alternatives. Use for plans involving auth changes, migrations, integrations, or other high-impact",
-  "repo": "ogprotege/Skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "devops-scripts-authoring",
-  "description": "Create or modify devops helper scripts in scripts/ or packages/*/scripts. Use for new wrappers, automation, or script style conventions.",
-  "repo": "JoernStoehler/msc-viterbo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "scanning-container-security",
-  "description": "Use when you need to work with security and compliance.This skill provides security scanning and vulnerability detection with comprehensive guidance and automation.Trigger with phrases like \"scan for ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

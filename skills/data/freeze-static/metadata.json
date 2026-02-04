@@ -1,9 +1,0 @@
-{
-  "name": "freeze-static",
-  "description": "Expert in Static Site Generation (SSG) using Gravito Freeze. Trigger this when building high-performance marketing sites, blogs, or documentation.",
-  "repo": "gravito-framework/gravito",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gravito-framework/gravito"
-}

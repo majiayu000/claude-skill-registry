@@ -1,7 +1,0 @@
-{
-  "name": "shelby",
-  "description": "Shelby Protocol expert for decentralized blob storage on Aptos blockchain. Covers erasure coding (Clay Codes), TypeScript SDK, smart contracts, CLI tools, storage providers, and dApp integration. High",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:01.990246Z"
-}

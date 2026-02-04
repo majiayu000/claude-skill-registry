@@ -1,9 +1,0 @@
-{
-  "name": "code-quality-reviewer",
-  "description": "Comprehensive code quality review focusing on DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), and Clean Code (Easy to Read) principles. Use when reviewing code changes, analyzing code qual",
-  "repo": "devstefancho/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

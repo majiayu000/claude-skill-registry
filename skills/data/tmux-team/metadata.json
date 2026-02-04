@@ -1,9 +1,0 @@
-{
-  "name": "tmux-team",
-  "description": "Coordinate with other AI agents running in tmux panes. Use this skill when you need to delegate tasks, request reviews, or collaborate with agents like Codex, Gemini, or other Claude instances.",
-  "repo": "wkh237/tmux-team",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

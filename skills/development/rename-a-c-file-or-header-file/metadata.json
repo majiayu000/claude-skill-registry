@@ -1,8 +1,0 @@
-{
-  "name": "rename-a-c-file-or-header-file",
-  "repo": "cdlewis/snowboardkids2-decomp",
-  "category": "development",
-  "description": "Renaming a C file or associated header (.h) file  requires additional steps in decompilation projects or the build will fail. Use this skill when you want to rename a C file and/or a header file.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:53.143873Z"
-}

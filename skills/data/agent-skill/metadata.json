@@ -1,9 +1,0 @@
-{
-  "name": "agent-skill",
-  "description": "Create and structure Claude Code agent skills. Use when the user wants to create a new skill, write an agent skill, make a claude skill, or asks about SKILL.md files.",
-  "repo": "markahesketh/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

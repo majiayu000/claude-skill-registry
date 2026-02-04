@@ -1,9 +1,0 @@
-{
-  "name": "tk-find",
-  "description": "Search across Tasuku tasks, notes, learnings, and decisions. Use when user says /tk:find or asks to search, find, or look for something in tasks.",
-  "repo": "iheanyi/tasuku",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

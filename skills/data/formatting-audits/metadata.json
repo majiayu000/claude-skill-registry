@@ -1,9 +1,0 @@
-{
-  "name": "formatting-audits",
-  "description": "Design document review format with 100-point scoring system for SOW/Spec. Triggers: SOW review, Spec review, document scoring, 設計書レビュー, 品質スコア.\n",
-  "repo": "thkt/claude-config",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/thkt/claude-config"
-}

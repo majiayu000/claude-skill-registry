@@ -1,9 +1,0 @@
-{
-  "name": "langchain",
-  "description": "LangChain skill for building LLM orchestration, agents, RAG pipelines, tools, memory, callbacks, and deployment.",
-  "repo": "Sameeh07/AGENT-SKILLS",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Sameeh07/AGENT-SKILLS"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pattern-enforcement",
-  "description": "Enforce architectural patterns with ESLint rules. Block infra imports, enforce object params, prevent server/client leaks.",
-  "repo": "jagreehal/jagreehal-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pwa-assets-generator",
-  "description": "Generate all required PWA assets from a single 1024x1024px image. This skill creates app icons, favicons, Apple touch icons, maskable icons, badge icons, and placeholder screenshots for PWAs. Use when",
-  "repo": "laststance/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "draft-commit-message",
-  "repo": "Masked-Kunsiquat/crm-orbit2",
-  "category": "development",
-  "description": "Draft a Conventional Commits message in markdown when the user asks for a commit message/commit msg (e.g., \"commit msg?\", \"commit message\", \"msg in md\"). Use for any request to write or format a git c",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:54.876720Z"
-}

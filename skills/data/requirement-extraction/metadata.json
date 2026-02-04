@@ -1,9 +1,0 @@
-{
-  "name": "requirement-extraction",
-  "description": "Extract structured requirements with REQ-* keys from raw intent. Transforms vague user intent into formal requirements with unique keys, acceptance criteria, and business context. Use when starting ne",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

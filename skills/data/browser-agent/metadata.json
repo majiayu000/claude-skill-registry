@@ -1,9 +1,0 @@
-{
-  "name": "browser-agent",
-  "description": "Autonomous browser agent for complex multi-step web tasks. WHEN: User needs complex web automation, multi-page workflows, form filling sequences, tasks requiring multiple browser actions. WHEN NOT: Si",
-  "repo": "cyrup-ai/kodegen-claude-plugin",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "parse-video",
-  "description": "根据 todolist.md 使用 MCP 解析视频元数据并下载。读取任务清单，调用 MCP 服务下载视频和封面，保存元数据 JSON，更新任务完成状态。",
-  "repo": "mojito-llm/freeship-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

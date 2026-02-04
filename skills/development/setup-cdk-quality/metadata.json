@@ -1,8 +1,0 @@
-{
-  "name": "setup-cdk-quality",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when setting up code quality enforcement - configures linting, formatting, pre-commit hooks, CI workflows, and review checklists with advisory/soft/hard enforcement levels",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.217794Z"
-}

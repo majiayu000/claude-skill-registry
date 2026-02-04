@@ -1,9 +1,0 @@
-{
-  "name": "llm-context",
-  "description": "Guidelines for working with LLM context stored in the .llm/ directory.",
-  "repo": "motlin/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

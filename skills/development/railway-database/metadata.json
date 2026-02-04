@@ -1,7 +1,0 @@
-{
-  "name": "railway-database",
-  "description": "Add official Railway database services (Postgres, Redis, MySQL, MongoDB). Use when user wants to add a database, says \"add postgres\", \"add redis\", \"add database\", \"connect to database\", or \"wire up th",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.728928Z"
-}

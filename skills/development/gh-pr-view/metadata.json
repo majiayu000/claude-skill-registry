@@ -1,8 +1,0 @@
-{
-  "name": "gh-pr-view",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "description": "View GitHub pull request details using gh CLI. Shows PR status, reviews, checks, comments, and metadata. Use when user wants to inspect PR information.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:33.652434Z"
-}

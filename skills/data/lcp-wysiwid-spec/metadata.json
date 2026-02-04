@@ -1,9 +1,0 @@
-{
-  "name": "lcp-wysiwid-spec",
-  "description": "Write WYSIWID-style design docs (Concepts + Synchronizations) for go-lcpd, keeping terminology consistent with code.",
-  "repo": "YusukeShimizu/lightning-compute-protocol",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

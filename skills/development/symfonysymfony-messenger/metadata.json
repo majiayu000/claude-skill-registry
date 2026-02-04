@@ -1,8 +1,0 @@
-{
-  "name": "symfonysymfony-messenger",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Async message handling with Symfony Messenger; configure transports (RabbitMQ, Redis, Doctrine); implement handlers, middleware, and retry strategies",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.493968Z"
-}

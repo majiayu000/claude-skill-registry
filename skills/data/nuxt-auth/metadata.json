@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-auth",
-  "description": "Authentication with Laravel Sanctum and permission-based authorization. Use when implementing login/logout, protecting pages with permissions, checking permissions in components, or understanding the ",
-  "repo": "leeovery/claude-nuxt",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

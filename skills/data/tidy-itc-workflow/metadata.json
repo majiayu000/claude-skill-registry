@@ -1,9 +1,0 @@
-{
-  "name": "tidy-itc-workflow",
-  "description": "Master tidy modelling patterns for ITC analyses following TMwR principles. Covers workflow structure, consistent interfaces, reproducibility best practices, and data validation. Use when setting up IT",
-  "repo": "choxos/ITC-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

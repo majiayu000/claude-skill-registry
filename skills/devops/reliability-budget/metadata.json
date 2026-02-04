@@ -1,8 +1,0 @@
-{
-  "name": "reliability-budget",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Define and enforce error budgets and SLO guardrails; use when asked to balance velocity with reliability targets.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:29.667769Z"
-}

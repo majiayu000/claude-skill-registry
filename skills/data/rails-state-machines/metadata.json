@@ -1,9 +1,0 @@
-{
-  "name": "rails-state-machines",
-  "repo": "nekorush14/dotfiles",
-  "category": "data",
-  "description": "Implement state machines for managing complex workflows and state transitions. Use when models have distinct states with defined transitions, business rules for state changes, or event-driven workflow",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:02.540161Z",
-  "dir_name": "rails-state-machines"
-}

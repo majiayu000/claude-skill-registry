@@ -1,8 +1,0 @@
-{
-  "name": "check-link-density",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Analyze link density patterns across vault. Triggers on \"link density\", \"link analysis\", \"linking patterns\", \"link stats\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:59.625174Z"
-}

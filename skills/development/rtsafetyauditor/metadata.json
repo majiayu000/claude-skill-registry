@@ -1,8 +1,0 @@
-{
-  "name": "rtsafetyauditor",
-  "repo": "chrislyons/orpheus-sdk",
-  "category": "development",
-  "description": "Analyze C++ code for real-time safety violations including heap allocations, locks, blocking calls, and unbounded operations in audio threads.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:28.622014Z"
-}

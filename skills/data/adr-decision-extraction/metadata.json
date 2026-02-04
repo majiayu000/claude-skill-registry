@@ -1,9 +1,0 @@
-{
-  "name": "adr-decision-extraction",
-  "description": "Extract architectural decisions from conversations. Identifies problem-solution pairs, trade-off discussions, and explicit choices. Use when analyzing session transcripts for ADR generation.",
-  "repo": "existential-birds/beagle",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

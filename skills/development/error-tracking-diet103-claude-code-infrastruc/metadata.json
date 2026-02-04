@@ -1,7 +1,0 @@
-{
-  "name": "error-tracking-diet103-claude-code-infrastruc",
-  "description": "Add Sentry v8 error tracking and performance monitoring to your project services. Use this skill when adding error handling, creating new controllers, instrumenting cron jobs, or tracking database per",
-  "category": "development",
-  "source": "github.com/diet103/claude-code-infrastructure-showcase",
-  "imported_at": "2026-01-24T14:53:54.792825Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "external-refs-skill",
-  "repo": "nitromike502/claude-code-config-manager",
-  "category": "testing",
-  "description": "Skill with external file references for testing detection",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:36.403746Z"
-}

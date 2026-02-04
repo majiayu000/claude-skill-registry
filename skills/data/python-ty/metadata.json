@@ -1,9 +1,0 @@
-{
-  "name": "python-ty",
-  "description": "Fast Python type checking with ty (by Astral). Use when checking Python types, running type checks in CI, or setting up type checking for Python projects. Triggers on \"type check\", \"ty check\", \"python",
-  "repo": "tizee/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "hitl-approval",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Use when presenting a plan/summary to user and requesting explicit approval before proceeding. Generic approval gate for /audit, /build, /architect, /debug commands. Checks for auto-approve conditions",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.316927Z"
-}

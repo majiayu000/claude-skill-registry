@@ -1,9 +1,0 @@
-{
-  "name": "auto-release-manager",
-  "description": "Automate version updates and releases for any project type (Node.js, Python, Rust, Unity, Unreal, etc.). Detect project type, update version files, generate CHANGELOG, and handle git operations with c",
-  "repo": "Dev-GOM/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

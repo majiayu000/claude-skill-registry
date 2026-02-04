@@ -1,9 +1,0 @@
-{
-  "name": "web-dev-tester",
-  "description": "Autonomously build and test web applications using Playwright MCP server. Enables iterative development with automatic verification - make changes, run the app, visually verify, check for errors, and ",
-  "repo": "burkeholland/social-assistant-demo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

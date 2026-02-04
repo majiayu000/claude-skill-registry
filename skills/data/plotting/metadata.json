@@ -1,9 +1,0 @@
-{
-  "name": "plotting",
-  "description": "Creates publication-quality scientific plots. Use when making plots, figures, or visualizations. Applies tueplots TMLR styling, LaTeX rendering, no titles.",
-  "repo": "yallup/claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

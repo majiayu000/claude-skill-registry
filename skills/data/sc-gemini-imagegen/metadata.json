@@ -1,9 +1,0 @@
-{
-  "name": "sc-gemini-imagegen",
-  "description": "Generate and edit images using the Gemini API (Nano Banana Pro). Use this skill when creating images from text prompts, editing existing images, applying style transfers, generating logos with text, c",
-  "repo": "kylesnowschwartz/SimpleClaude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

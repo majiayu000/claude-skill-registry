@@ -1,9 +1,0 @@
-{
-  "name": "playbook-automator",
-  "description": "Use this skill when the user needs help designing, implementing, testing, or troubleshooting automated response playbooks using LimaCharlie's Playbook extension.",
-  "repo": "tekgrunt/boot-test",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

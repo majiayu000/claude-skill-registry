@@ -1,9 +1,0 @@
-{
-  "name": "supabase-database-query",
-  "repo": "PIGU-PPPgu/edu-analysis",
-  "category": "data",
-  "description": "Execute SQL queries, migrations, and RLS policies on Supabase database using MCP tools",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:30.807665Z",
-  "dir_name": "supabase-database-query"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "explainability-planning",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "description": "Plan explainable AI (XAI) requirements including SHAP, LIME, attention visualization, and regulatory explainability needs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.657911Z"
-}

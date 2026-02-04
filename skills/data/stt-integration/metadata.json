@@ -1,9 +1,0 @@
-{
-  "name": "stt-integration",
-  "description": "ElevenLabs Speech-to-Text transcription workflows with Scribe v1 supporting 99 languages, speaker diarization, and Vercel AI SDK integration. Use when implementing audio transcription, building STT fe",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

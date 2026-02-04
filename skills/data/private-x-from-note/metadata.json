@@ -1,9 +1,0 @@
-{
-  "name": "private-x-from-note",
-  "description": "note記事からX投稿文を生成。バズ狙いではなく、信頼と再訪を生む入口文を作成する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

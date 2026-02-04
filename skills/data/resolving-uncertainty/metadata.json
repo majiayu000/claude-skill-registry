@@ -1,9 +1,0 @@
-{
-  "name": "resolving-uncertainty",
-  "description": "Turns ambiguity into an Uncertainty Register, prioritizes items, and produces observation tasks/experiments with evidence and decision rules. Use when the user mentions uncertainty/unknowns/assumption",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

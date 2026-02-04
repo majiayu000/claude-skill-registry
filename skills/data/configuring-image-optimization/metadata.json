@@ -1,9 +1,0 @@
-{
-  "name": "configuring-image-optimization",
-  "description": "Teach image optimization configuration changes in Next.js 16. Use when configuring images, troubleshooting image loading, or migrating image settings.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

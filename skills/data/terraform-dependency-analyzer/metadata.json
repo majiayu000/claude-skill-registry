@@ -1,9 +1,0 @@
-{
-  "name": "terraform-dependency-analyzer",
-  "description": "Analyzes and visualizes resource dependencies in Terraform configurations, identifies circular dependencies, and suggests optimal resource ordering. This skill should be used when users need to unders",
-  "repo": "armanzeroeight/fastagent-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

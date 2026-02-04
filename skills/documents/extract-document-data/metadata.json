@@ -1,8 +1,0 @@
-{
-  "name": "extract-document-data",
-  "repo": "carrickcheah/agentic-document-extraction",
-  "category": "documents",
-  "description": "Extract structured JSON data from business document images (invoices, purchase orders, receipts, delivery orders) using Vision API. Use when processing scanned or photographed business documents that ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:22.215927Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "stripe-payments",
-  "description": "Use when processing payments, handling payment methods, implementing PaymentIntents, or integrating Payment Element. Invoke for payment flow setup, 3D Secure authentication, refund processing, payment",
-  "repo": "zacharyr0th/next-starter",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

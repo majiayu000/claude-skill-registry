@@ -1,9 +1,0 @@
-{
-  "name": "axiom-core-location-diag",
-  "description": "Use for Core Location troubleshooting - no location updates, background location broken, authorization denied, geofence not triggering",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

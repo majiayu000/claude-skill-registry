@@ -1,9 +1,0 @@
-{
-  "name": "bff-setup",
-  "description": "Configure affolterNET.Web.Bff service registration and middleware pipeline. Use when setting up AddBffServices, ConfigureBffApp, or configuring the BFF middleware order.",
-  "repo": "Mcafee123/affolterNET.Web",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

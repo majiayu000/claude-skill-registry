@@ -1,9 +1,0 @@
-{
-  "name": "standards-extraction",
-  "description": "Extract coding standards and conventions from CONTRIBUTING.md, .editorconfig, linter configs. Use for onboarding and ensuring consistent contributions.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

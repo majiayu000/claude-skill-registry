@@ -1,8 +1,0 @@
-{
-  "name": "spec-archiving",
-  "repo": "mahidalhan/skilled-intelligence-marketplace",
-  "category": "devops",
-  "description": "Archives completed changes and merges specification deltas into living documentation. Use when changes are deployed, ready to archive, or specs need updating after implementation. Triggers include \"ar",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:06.916408Z"
-}

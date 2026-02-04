@@ -1,9 +1,0 @@
-{
-  "name": "tdd-playbook",
-  "description": "Guides strict TDD (red/green/refactor), prioritizing domain unit tests and small steps.",
-  "repo": "mikivujkovic/claude-code-ddd-tdd-bdd",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

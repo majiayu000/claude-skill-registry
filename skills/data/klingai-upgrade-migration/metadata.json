@@ -1,9 +1,0 @@
-{
-  "name": "klingai-upgrade-migration",
-  "description": "Migrate and upgrade Kling AI SDK versions safely. Use when updating dependencies or migratingconfigurations. Trigger with phrases like 'klingai upgrade', 'kling ai migration','update klingai', 'klinga",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

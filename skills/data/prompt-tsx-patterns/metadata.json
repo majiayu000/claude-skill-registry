@@ -1,9 +1,0 @@
-{
-  "name": "prompt-tsx-patterns",
-  "description": "Deep dive into prompt-tsx patterns used in vscode-copilot-chat, including component lifecycle, async rendering, priority system, and token budget management",
-  "repo": "OmerMachluf/vscode-copilot-chat",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

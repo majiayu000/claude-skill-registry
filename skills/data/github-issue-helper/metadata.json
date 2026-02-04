@@ -1,9 +1,0 @@
-{
-  "name": "github-issue-helper",
-  "description": "GitHub 이슈 작성 도우미. 사용자가 이슈 초안이나 아이디어를 제시하면 고품질 GitHub 이슈로 개선. Use when user asks to (1) write/create/draft a GitHub issue, (2) improve/refine an issue draft, (3) convert an idea into a proper issue for",
-  "repo": "moreal/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

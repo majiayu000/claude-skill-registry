@@ -1,8 +1,0 @@
-{
-  "name": "image-management",
-  "repo": "Hieubkav/wincellarCloneBackend",
-  "category": "development",
-  "description": "Centralized polymorphic image management with CheckboxList picker, WebP auto-conversion, order management (order=0 for cover), soft deletes. USE WHEN adding images/gallery to models, implementing imag",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:01.631378Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "analyze-project",
-  "repo": "brobertsaz/claude-os",
-  "category": "development",
-  "description": "Analyze a project's codebase and documentation to generate coding standards, architecture docs, and development practices. Perfect for new project onboarding. Usage: 'analyze-project: /path/to/project",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:42.278321Z"
-}

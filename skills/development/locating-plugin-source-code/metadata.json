@@ -1,8 +1,0 @@
-{
-  "name": "locating-plugin-source-code",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "development",
-  "description": "Use when you need to find the source code location of installed plugins, explore plugin structure, access reference materials in plugins, or debug plugin issues. Provides step-by-step guidance to trac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.561603Z"
-}

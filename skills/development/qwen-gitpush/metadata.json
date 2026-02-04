@@ -1,8 +1,0 @@
-{
-  "name": "qwen-gitpush",
-  "repo": "Foundup/Foundups-Agent",
-  "category": "development",
-  "description": "Analyze uncommitted git changes and decide if/when to commit based on WSP 15 MPS",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:31.806848Z"
-}

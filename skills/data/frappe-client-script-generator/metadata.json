@@ -1,9 +1,0 @@
-{
-  "name": "frappe-client-script-generator",
-  "description": "Generate JavaScript client-side form scripts for Frappe DocTypes. Use when creating form customizations, field validations, custom buttons, or client-side logic for Frappe/ERPNext forms.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

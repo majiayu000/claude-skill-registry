@@ -1,8 +1,0 @@
-{
-  "name": "ontology-phase-3-synthesize",
-  "repo": "a4b-corporation/xTalent",
-  "category": "documents",
-  "description": "Phase 3 of Ontology Builder Pipeline. Synthesizes analysis results into complete Domain Requirement Document (DRD). Use after Phase 2 analysis is complete to generate structured DRD.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:41.340710Z"
-}

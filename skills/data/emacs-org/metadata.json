@@ -1,9 +1,0 @@
-{
-  "name": "emacs-org",
-  "description": "Use when working with Emacs org-mode - provides elisp patterns for headings, properties, tables, links, and org-mode manipulation",
-  "repo": "jingtaozf/emacs-claude-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

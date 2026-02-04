@@ -1,8 +1,0 @@
-{
-  "name": "typescript-jsdoc",
-  "repo": "AdamManuel-dev/claude-code-ext",
-  "category": "development",
-  "description": "Write effective JSDoc comments for TypeScript code. Provides guidance on documentation format, strategic placement, best practices, and when to document versus when to keep code self-documenting. Help",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:45.345699Z"
-}

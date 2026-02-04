@@ -1,9 +1,0 @@
-{
-  "name": "pattern-recognition-specialist",
-  "description": "Use this agent when analyzing code for design patterns, anti-patterns, naming conventions, and code consistency. Triggers on requests like \"pattern analysis\", \"check for anti-patterns\", \"design patter",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

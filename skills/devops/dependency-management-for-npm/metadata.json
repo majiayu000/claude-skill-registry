@@ -1,8 +1,0 @@
-{
-  "name": "dependency-management-for-npm",
-  "repo": "customer-cloud-club/meeting-visualizer",
-  "category": "devops",
-  "description": "Manage Node.js dependencies including adding, updating, auditing, and resolving conflicts. Use when updating dependencies or resolving version conflicts.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:01.125493Z"
-}

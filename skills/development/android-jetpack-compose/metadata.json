@@ -1,8 +1,0 @@
-{
-  "name": "android-jetpack-compose",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when building Android UIs with Jetpack Compose, managing state with remember/mutableStateOf, or implementing declarative UI patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:00.714453Z"
-}

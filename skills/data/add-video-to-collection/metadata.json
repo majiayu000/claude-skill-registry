@@ -1,9 +1,0 @@
-{
-  "name": "add-video-to-collection",
-  "description": "Manually add individual YouTube URLs to a custom collection CSV. Use when adding one-off videos to folders like library-of-minds or random, not from a channel extraction.",
-  "repo": "dparedesi/YTScribe",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

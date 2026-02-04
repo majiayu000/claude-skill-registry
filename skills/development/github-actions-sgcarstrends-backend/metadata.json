@@ -1,7 +1,0 @@
-{
-  "name": "github-actions-sgcarstrends-backend",
-  "description": "Create and maintain GitHub Actions workflows for CI/CD, testing, deployment, and automation. Use when setting up pipelines, automating tasks, or configuring continuous integration.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.492127Z"
-}

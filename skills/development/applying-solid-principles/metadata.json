@@ -1,8 +1,0 @@
-{
-  "name": "applying-solid-principles",
-  "repo": "sumik5/dotfiles",
-  "category": "development",
-  "description": "Applies SOLID principles and clean code practices. Required for all code implementations. Covers single responsibility, open-closed, and dependency injection principles.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.160275Z"
-}

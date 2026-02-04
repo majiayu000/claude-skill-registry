@@ -1,9 +1,0 @@
-{
-  "name": "hybrid-orchestrator",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Coordinate multi-tool workflows with guardrails; use when asked to chain retrieval, analysis, and action steps.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:33.624938Z",
-  "dir_name": "hybrid-orchestrator"
-}

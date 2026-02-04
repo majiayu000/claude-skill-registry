@@ -1,8 +1,0 @@
-{
-  "name": "manage-agents",
-  "repo": "Git-Fg/thecattoolkit",
-  "category": "testing",
-  "description": "MUST INVOKE this skill when working with subagents, setting up agent configurations, understanding how agents work, or using delegation tools to launch specialized agents. Create, audit, and maintain ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:50.031035Z"
-}

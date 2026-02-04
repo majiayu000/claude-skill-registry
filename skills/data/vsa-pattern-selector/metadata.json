@@ -1,9 +1,0 @@
-{
-  "name": "vsa-pattern-selector",
-  "description": "Blazor VSA パターンカタログからの適切なパターン選択支援。新機能追加、 CRUD 操作、クエリ実装、状態遷移、バウンダリー設計などの文脈で、 catalog/index.json の ai_decision_matrix に基づいて最適なパターンを 提案する。Feature Slice、Pipeline Behavior、Domain Pattern、 Query Pattern などか",
-  "repo": "akiramei/blazor-enterprise-architecture-poc",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

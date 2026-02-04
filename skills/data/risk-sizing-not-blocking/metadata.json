@@ -1,9 +1,0 @@
-{
-  "name": "risk-sizing-not-blocking",
-  "description": "Risk managers should SIZE trades, not BLOCK them. Trigger when: (1) capital manager blocks trades, (2) risk manager rejects orders, (3) trades fail due to 'exceeds limit', (4) components don't work in",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cli-configuration",
-  "description": "Configuration management patterns including file formats, precedence, environment variables, and XDG directories. Use when implementing configuration systems for CLI applications.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

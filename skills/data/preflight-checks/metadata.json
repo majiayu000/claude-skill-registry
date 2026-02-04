@@ -1,9 +1,0 @@
-{
-  "name": "preflight-checks",
-  "description": "Comprehensive code quality verification system for running type checking, linting, and tests. Use when validating code quality, preparing commits, running CI checks locally, or when the user mentions ",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

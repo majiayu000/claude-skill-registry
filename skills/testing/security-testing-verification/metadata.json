@@ -1,8 +1,0 @@
-{
-  "name": "security-testing-verification",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "testing",
-  "description": "Test security features and verify implementation before deployment. Use this skill when you need to test CSRF protection, rate limiting, input validation, verify security headers, run security audits,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.594199Z"
-}

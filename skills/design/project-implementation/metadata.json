@@ -1,8 +1,0 @@
-{
-  "name": "project-implementation",
-  "repo": "smorand/claude-config",
-  "category": "design",
-  "description": "Personal project implementation and modification guide. Use when creating or modifying Python 3.13 personal projects with FastAPI/Typer, pyproject.toml, and uv package manager.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.485353Z"
-}

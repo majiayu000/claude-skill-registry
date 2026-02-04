@@ -1,8 +1,0 @@
-{
-  "name": "release-packaging",
-  "repo": "YosrBennagra/3SC",
-  "category": "development",
-  "description": "Package and release the .NET 8 WPF widget host app using MSIX or ClickOnce. Use when configuring installers, signing, update channels, and publishing release artifacts.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.734220Z"
-}

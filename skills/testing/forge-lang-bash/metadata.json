@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-bash",
-  "repo": "martimramos/claude-forge",
-  "category": "testing",
-  "description": "Bash/Shell scripting standards including shellcheck, shfmt, and bats testing. Use when working with shell scripts (.sh, .bash).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.052412Z"
-}

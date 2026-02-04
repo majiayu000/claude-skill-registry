@@ -1,9 +1,0 @@
-{
-  "name": "path-reference",
-  "description": "Create properly formatted references to paths (files or folders) in a git repository. Use when writing docs that need to link to any path in the repo.",
-  "repo": "MacHu-GWU/sanhe-claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

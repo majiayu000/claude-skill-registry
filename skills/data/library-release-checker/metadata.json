@@ -1,9 +1,0 @@
-{
-  "name": "library-release-checker",
-  "description": "GitHubや公式ドキュメントからライブラリのリリース情報を取得し、破壊的変更・非推奨化・ビルトイン化を特定する",
-  "repo": "snhrm/claude-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

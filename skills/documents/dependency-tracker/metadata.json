@@ -1,8 +1,0 @@
-{
-  "name": "dependency-tracker",
-  "repo": "sovrium/sovrium",
-  "category": "documents",
-  "description": "Tracks package.json dependencies and identifies undocumented, outdated, or misaligned tools. Compares installed packages against documented versions in docs/infrastructure/, detects unused dependencie",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:17.352382Z"
-}

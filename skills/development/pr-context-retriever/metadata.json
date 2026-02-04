@@ -1,8 +1,0 @@
-{
-  "name": "pr-context-retriever",
-  "repo": "code-yeongyu/my-claude-code-harness",
-  "category": "development",
-  "description": "Specialized GitHub PR intelligence agent for automatically gathering comprehensive context from Pull Requests. Activate when users need CI failure analysis, review comment investigation, or PR status ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.760208Z"
-}

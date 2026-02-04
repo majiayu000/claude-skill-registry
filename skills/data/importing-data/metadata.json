@@ -1,9 +1,0 @@
-{
-  "name": "importing-data",
-  "description": "Systematic CSV import process - discover structure, design schema, standardize formats, import to database, detect quality issues (component skill for DataPeeker analysis sessions)",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

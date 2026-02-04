@@ -1,9 +1,0 @@
-{
-  "name": "release-and-ops",
-  "description": "Plans and executes release and operational readiness tasks, including versioning, changelogs, deployment and rollback.",
-  "repo": "GodSpeedAI/VibesPro",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

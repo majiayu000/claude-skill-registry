@@ -1,9 +1,0 @@
-{
-  "name": "run-test-suite",
-  "description": "Automatically run the test suite when code changes are made to ensure all tests pass before proceeding. This skill runs pytest for backend projects and Playwright for frontend projects, and reports te",
-  "repo": "johannesfritz/autonomous-orchestration",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dbt",
-  "description": "dbt with TD Trino. Covers profiles.yml setup (method:none, user:TD_API_KEY), required override macros (no CREATE VIEW), TD_INTERVAL in models, and TD Workflow deployment.",
-  "repo": "treasure-data/td-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

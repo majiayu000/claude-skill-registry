@@ -1,8 +1,0 @@
-{
-  "name": "wrangler-r2-guide",
-  "repo": "CaptainCrouton89/new-mystica",
-  "category": "design",
-  "description": "Manage Cloudflare R2 object storage for file hosting using Wrangler CLI. Use when uploading files to R2, managing buckets, configuring public access, or when user mentions \"R2\", \"Wrangler\", \"upload to",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:22.169876Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-commit-master",
-  "description": "按照 Conventional Commits 规范执行高质量的 git 提交，处理暂存、消息生成及钩子修复。",
-  "repo": "lordhamster-dev/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

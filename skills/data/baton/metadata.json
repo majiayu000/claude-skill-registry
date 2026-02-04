@@ -1,9 +1,0 @@
-{
-  "name": "baton",
-  "description": "Context management system for solving compaction problems. Provides TLDR summaries, conversation tracking, and efficient post-compaction recovery. Triggers on \"/baton\".",
-  "repo": "mgerasolo/habitarcade-poc",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

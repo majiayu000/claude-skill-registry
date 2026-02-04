@@ -1,9 +1,0 @@
-{
-  "name": "secrets-tools",
-  "description": "Publish gate secrets scanning. Use for: safe_to_publish, scan for secrets, redact in-place. Determines publish gate status. Scan files for secrets (locations only - NEVER prints secret content). GitHu",
-  "repo": "EffortlessMetrics/demo-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

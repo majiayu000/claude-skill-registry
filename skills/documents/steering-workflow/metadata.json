@@ -1,8 +1,0 @@
-{
-  "name": "steering-workflow",
-  "repo": "anujkumar001111/xsky-agent",
-  "category": "documents",
-  "description": "This skill should be used when the user asks about \"steering documents\", \"project steering\", \"workflow setup\", \"CLAUDE.md configuration\", \"AGENTS.md\", \"AI agent project setup\", or needs to understand ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:56.489490Z"
-}

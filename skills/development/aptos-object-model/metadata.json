@@ -1,7 +1,0 @@
-{
-  "name": "aptos-object-model",
-  "description": "Expert on Aptos Object Model - ObjectCore, Object<T> wrapper, constructor references, ExtendRef/DeleteRef/TransferRef capabilities, object ownership, named vs generated objects, composability, and mig",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.420604Z"
-}

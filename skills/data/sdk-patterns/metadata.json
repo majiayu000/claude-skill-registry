@@ -1,9 +1,0 @@
-{
-  "name": "sdk-patterns",
-  "description": "Follow these patterns when extending the OptAIC Python SDK with new domain operations. Use for adding client methods for datasets, signals, portfolios, backtests, and other resources. Covers async/syn",
-  "repo": "colingwuyu/optaic-trading",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/colingwuyu/optaic-trading"
-}

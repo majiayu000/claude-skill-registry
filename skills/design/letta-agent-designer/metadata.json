@@ -1,8 +1,0 @@
-{
-  "name": "letta-agent-designer",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "description": "Guide for designing effective Letta agents. This skill should be used when users need help choosing agent architectures, designing memory blocks, selecting models, or planning tool configurations for ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:17.126388Z"
-}

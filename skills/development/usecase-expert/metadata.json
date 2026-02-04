@@ -1,8 +1,0 @@
-{
-  "name": "usecase-expert",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "development",
-  "description": "Port-In \uc778\ud130\ud398\uc774\uc2a4 \uc124\uacc4, UseCase/Service \uad6c\ud604, CQRS Command/Query \ubd84\ub9ac. CommandService\uc640 QueryService \ud15c\ud50c\ub9bf \uc81c\uacf5. @Transactional\uc740 Facade/Manager \ucc45\uc784.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.704439Z"
-}

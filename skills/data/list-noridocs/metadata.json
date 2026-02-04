@@ -1,9 +1,0 @@
-{
-  "name": "list-noridocs",
-  "description": "List all server-side noridocs, optionally filtered by repository and/or path prefix.",
-  "repo": "tilework-tech/nori-profiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

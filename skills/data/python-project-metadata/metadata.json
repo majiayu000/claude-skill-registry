@@ -1,9 +1,0 @@
-{
-  "name": "python-project-metadata",
-  "description": "Use when exploring Python project structure, finding virtualenv paths (python/pip/pytest), or locating package metadata (name, version, pyproject.toml).",
-  "repo": "MacHu-GWU/sanhe-claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

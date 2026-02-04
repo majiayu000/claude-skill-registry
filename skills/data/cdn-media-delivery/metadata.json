@@ -1,9 +1,0 @@
-{
-  "name": "cdn-media-delivery",
-  "description": "Use when configuring CDN for media delivery, implementing cache invalidation, or designing signed URL patterns. Covers CDN configuration, edge caching, origin shielding, and secure media access for he",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

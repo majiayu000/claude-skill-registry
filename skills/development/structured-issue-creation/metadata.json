@@ -1,8 +1,0 @@
-{
-  "name": "structured-issue-creation",
-  "repo": "sethdford/claude-plugins",
-  "category": "development",
-  "description": "Create well-structured Jira issues from code changes, conversations, or requirements. Use when creating issues, bugs, stories, tasks, or when the user wants to track work in Jira. Analyzes context to ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:52.989138Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "imagen-prompt",
-  "description": "画像生成AIに最適化されたプロンプトを作成。Nano Banana Pro (Gemini 3 Pro)、Imagen 3、DALL-E向けのプロンプトを生成する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

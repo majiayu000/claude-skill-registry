@@ -1,9 +1,0 @@
-{
-  "name": "initializer",
-  "description": "Initialize long-running agent projects with environment setup, feature list generation, and progress tracking. Use when starting a new implementation project or setting up an existing codebase for Cla",
-  "repo": "s-hiraoku/spec2impl",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

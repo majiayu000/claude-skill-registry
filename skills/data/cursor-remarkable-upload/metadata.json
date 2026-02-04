@@ -1,9 +1,0 @@
-{
-  "name": "cursor-remarkable-upload",
-  "description": "Upload markdown (including docmgr ticket docs) to a reMarkable device as PDF via a local uploader script, with a safe dry-run and optional mirroring of ticket structure. Use when the user asks to send",
-  "repo": "go-go-golems/docmgr",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "schemelike-metacircular-eval",
-  "description": "Guide for building metacircular evaluators in Scheme-like languages. This skill applies when implementing interpreters that can interpret themselves, handling tasks involving eval/apply loops, environ",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

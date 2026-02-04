@@ -1,9 +1,0 @@
-{
-  "name": "dev-swarm-npm-publish",
-  "description": "Publish JavaScript/TypeScript packages to the npm registry with consistent metadata, versioning, and release checks. Use when preparing or executing an npm release.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

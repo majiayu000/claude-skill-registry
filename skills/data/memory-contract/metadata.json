@@ -1,9 +1,0 @@
-{
-  "name": "memory-contract",
-  "description": "Unified Memory Contract for Flowbaby integration. Defines when and how to retrieve and store memory. Load at session start - memory is core to agent reasoning, not optional.",
-  "repo": "groupzer0/vs-code-agents",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

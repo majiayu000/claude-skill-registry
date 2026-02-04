@@ -1,8 +1,0 @@
-{
-  "name": "nano-banana-image-generation",
-  "repo": "The-Focus-AI/nano-banana-cli",
-  "category": "design",
-  "description": "Generate and edit images using Google Gemini image models. Use this skill when the user asks to create, generate, make, or edit images with AI. Supports text-to-image, image editing, style transfer, a",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:43.044220Z"
-}

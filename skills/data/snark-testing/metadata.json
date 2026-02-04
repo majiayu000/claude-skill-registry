@@ -1,9 +1,0 @@
-{
-  "name": "snark-testing",
-  "description": "Test SNARK submissions with sample data. Use when testing proof submission, validating the API, verifying SNARK operations work correctly, or debugging proof handling.",
-  "repo": "mjohngreene/ZKvsAI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

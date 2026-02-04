@@ -1,9 +1,0 @@
-{
-  "name": "aiworkflow-requirements",
-  "description": "AIWorkflowOrchestratorプロジェクトの仕様管理スキル。仕様書を検索・参照するためのインターフェース。references/配下に全仕様を格納し、キーワード検索で必要な情報に素早くアクセス。Anchors:• Specification-Driven Development / 適用: 仕様書正本 / 目的: 実装との一貫性• Progressive Disclosure / 適",
-  "repo": "daishiman/AIWorkflowOrchestrator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

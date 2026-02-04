@@ -1,9 +1,0 @@
-{
-  "name": "webf-native-ui-dev",
-  "description": "Develop custom native UI libraries based on Flutter widgets for WebF. Create reusable component libraries that wrap Flutter widgets as web-accessible custom elements. Use when building UI libraries, w",
-  "repo": "openwebf/webf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

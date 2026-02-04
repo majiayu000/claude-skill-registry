@@ -1,7 +1,0 @@
-{
-  "name": "subagent-driven-development-neolabhq-context-engineering-k",
-  "description": "Use when executing implementation plans with independent tasks in the current session or facing 3+ independent issues that can be investigated without shared state or dependencies - dispatches fresh s",
-  "category": "development",
-  "source": "github.com/NeoLabHQ/context-engineering-kit",
-  "imported_at": "2026-01-24T14:54:08.739755Z"
-}

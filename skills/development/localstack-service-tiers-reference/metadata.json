@@ -1,8 +1,0 @@
-{
-  "name": "localstack-service-tiers-reference",
-  "repo": "nandemo-ya/kecs",
-  "category": "development",
-  "description": "Reference for LocalStack AWS service availability by tier (Free/Base/Ultimate). Essential for KECS development to understand which AWS-compatible services can be used locally without cost.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.622232Z"
-}

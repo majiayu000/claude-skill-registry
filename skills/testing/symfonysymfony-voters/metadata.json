@@ -1,8 +1,0 @@
-{
-  "name": "symfonysymfony-voters",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "testing",
-  "description": "Implement granular authorization with Symfony Voters; decouple permission logic from controllers; test authorization separately from business logic",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.608630Z"
-}

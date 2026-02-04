@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-terraform",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "Terraform infrastructure-as-code safety practices. Enforces plan-before-apply workflow. Use when working with .tf files or infrastructure commands.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.633308Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "dapr-config-validator",
-  "repo": "Sahib-Sawhney-WH/dapr-claude-plugin",
-  "category": "design",
-  "description": "Automatically validate DAPR configuration files (dapr.yaml, component YAML files) when they are created or modified. Checks for schema compliance, missing required fields, invalid values, and common m",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:49.876974Z"
-}

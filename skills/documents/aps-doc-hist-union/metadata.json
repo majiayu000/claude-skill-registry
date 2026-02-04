@@ -1,8 +1,0 @@
-{
-  "name": "aps-doc-hist-union",
-  "repo": "treasure-data/td-skills",
-  "category": "documents",
-  "description": "Expert documentation generation for hist-union workflows. Documents historical and incremental table combination strategies, schema validation, time-based partitioning, and backfill processes. Use whe",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.742288Z"
-}

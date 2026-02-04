@@ -1,9 +1,0 @@
-{
-  "name": "firebase-development",
-  "description": "Comprehensive Firebase development guidance covering project setup, feature development, debugging, and validation. Auto-detects intent and routes to specialized sub-skills. Patterns extracted from pr",
-  "repo": "2389-research/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

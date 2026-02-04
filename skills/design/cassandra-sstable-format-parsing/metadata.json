@@ -1,8 +1,0 @@
-{
-  "name": "cassandra-sstable-format-parsing",
-  "repo": "pmcfadin/cqlite",
-  "category": "design",
-  "description": "Guide parsing of Cassandra 5.0+ SSTable components (Data.db, Index.db, Statistics.db, Summary.db, TOC) with compression support (LZ4, Snappy, Deflate). Use when working with SSTable files, binary form",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:40.495496Z"
-}

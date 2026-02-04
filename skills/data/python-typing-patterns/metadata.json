@@ -1,9 +1,0 @@
-{
-  "name": "python-typing-patterns",
-  "description": "Python type hints and type safety patterns. Triggers on: type hints, typing, TypeVar, Generic, Protocol, mypy, pyright, type annotation, overload, TypedDict.",
-  "repo": "0xDarkMatter/claude-mods",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

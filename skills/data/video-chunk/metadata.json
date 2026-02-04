@@ -1,9 +1,0 @@
-{
-  "name": "video-chunk",
-  "description": "Process D&D session videos through the complete chunking pipeline. Use when the user requests to process, chunk, transcribe, or analyze a D&D session video file.",
-  "repo": "Gambitnl/Video_chunking",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

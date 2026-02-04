@@ -1,9 +1,0 @@
-{
-  "name": "gdscript-validate",
-  "description": "Validate GDScript changes by refreshing Godot cache and checking diagnostics. Use after creating or editing GDScript files.",
-  "repo": "minami110/godot-signal-extensions",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

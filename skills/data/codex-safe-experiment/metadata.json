@@ -1,9 +1,0 @@
-{
-  "name": "codex-safe-experiment",
-  "description": "Use Codex CLI sandbox mode to try risky changes safely. Isolated experimentation with network disabled and directory restrictions.",
-  "repo": "DNYoussef/context-cascade",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

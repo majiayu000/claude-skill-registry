@@ -1,8 +1,0 @@
-{
-  "name": "payment-security-clerk-billing-stripe",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "devops",
-  "description": "Implement secure payments using Clerk Billing and Stripe without ever touching card data. Use this skill when you need to set up subscription payments, handle webhooks, implement payment gating, under",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.733546Z"
-}

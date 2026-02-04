@@ -1,9 +1,0 @@
-{
-  "name": "revalidation-strategy-planner",
-  "description": "Evaluates Next.js routes and outputs optimal revalidate settings, cache tags for ISR, SSR configurations, or streaming patterns. This skill should be used when optimizing Next.js caching strategies, c",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

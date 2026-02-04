@@ -1,9 +1,0 @@
-{
-  "name": "journal-api",
-  "description": "Interact with the Journal API to manage projects, documents, tasks, and workspaces. Use when the user mentions journal, projects, documents, tasks, workspaces, task identifiers like JO-123, or needs t",
-  "repo": "shajan-journal/samples",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

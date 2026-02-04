@@ -1,9 +1,0 @@
-{
-  "name": "ios-engineer",
-  "description": "iOSエンジニアとして回答。Swift/SwiftUIのベストプラクティス、メモリ管理、HIG準拠を考慮した実装を提案する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

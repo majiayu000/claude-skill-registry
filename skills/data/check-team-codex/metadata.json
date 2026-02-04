@@ -1,9 +1,0 @@
-{
-  "name": "check-team-codex",
-  "description": "Validate code against Team Codex standards. Use when (1) before creating commits, (2) during verification phase, (3) quality gate enforcement.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

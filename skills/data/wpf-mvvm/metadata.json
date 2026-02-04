@@ -1,9 +1,0 @@
-{
-  "name": "wpf-mvvm",
-  "description": "Build and maintain WPF MVVM patterns using CommunityToolkit.Mvvm for a .NET 8 widget-host app. Use when creating ViewModels, commands, observable state, validation, view bindings, and viewmodel-first ",
-  "repo": "YosrBennagra/3SC",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/YosrBennagra/3SC"
-}

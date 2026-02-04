@@ -1,8 +1,0 @@
-{
-  "name": "btc-trading-bot",
-  "repo": "khopilot/bit-trand",
-  "category": "testing",
-  "description": "Bitcoin trading simulation with technical analysis (EMA/RSI/Bollinger), Monte Carlo projections, and Telegram alerts. Cambodian market focus (USD/KHR 4050).TRIGGERS: BTC backtesting, indicator calcula",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:39.462087Z"
-}

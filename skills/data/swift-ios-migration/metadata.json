@@ -1,9 +1,0 @@
-{
-  "name": "swift-ios-migration",
-  "description": "Migration guide for Swift and iOS. Use when migrating ObservableObject to @Observable (iOS 17), enabling Swift 6/6.2 Strict Concurrency, fixing @MainActor/Sendable warnings, adopting Approachable Conc",
-  "repo": "xtone/ai_development_tools",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

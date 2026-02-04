@@ -1,9 +1,0 @@
-{
-  "name": "council-gate",
-  "description": "Quality gate using LLM Council multi-model consensus for CI/CD pipelines.Use for automated approval workflows and pipeline quality checks.Keywords: gate, CI, CD, pipeline, automated approval, quality ",
-  "repo": "amiable-dev/amiable-templates",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

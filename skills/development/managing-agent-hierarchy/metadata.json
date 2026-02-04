@@ -1,8 +1,0 @@
-{
-  "name": "managing-agent-hierarchy",
-  "repo": "sumik5/dotfiles",
-  "category": "development",
-  "description": "Manages Agent hierarchy (PO\u2192Manager\u2192Developer). Required for all code modifications except minor fixes. Optimizes performance through parallel execution.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.397999Z"
-}

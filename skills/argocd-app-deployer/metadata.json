@@ -1,7 +1,0 @@
-{
-  "name": "argocd-app-deployer",
-  "repo": "byteworthy/Upstream",
-  "path": ".agents/skills/argocd-app-deployer/SKILL.md",
-  "source": "github.com/byteworthy/Upstream",
-  "downloaded_at": "2026-01-29T07:14:09.583436Z"
-}

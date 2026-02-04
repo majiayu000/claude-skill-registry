@@ -1,9 +1,0 @@
-{
-  "name": "configuring-load-balancers",
-  "description": "Use when configuring load balancers including ALB, NLB, Nginx, and HAProxy. Trigger with phrases like \"configure load balancer\", \"create ALB\", \"setup nginx load balancing\", or \"haproxy configuration\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "file-organization",
-  "repo": "MassLab-SII/open-agent-skills",
-  "category": "documents",
-  "description": "File organization toolkit. Provides duplicate detection, file merging/splitting, pattern matching, text processing (like case conversion, word counting), and file classification by size or time.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.876859Z"
-}

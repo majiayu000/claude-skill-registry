@@ -1,8 +1,0 @@
-{
-  "name": "amcs-lyrics-generator",
-  "repo": "miethe/MeatyMusic",
-  "category": "devops",
-  "description": "Generate song lyrics with citations from pinned sources. Enforces rhyme scheme, meter, syllable counts, hook strategy, and profanity filter while retrieving from MCP sources with deterministic hash-ba",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:09.379387Z"
-}

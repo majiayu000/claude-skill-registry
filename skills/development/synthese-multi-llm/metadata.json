@@ -1,8 +1,0 @@
-{
-  "name": "synthese-multi-llm",
-  "repo": "Alexmacapple/Synthese-Council",
-  "category": "development",
-  "description": "Synth\u00e8se co-fabriqu\u00e9e par un conseil de 3 LLMs (Claude, Gemini, Codex). Ce skill devrait \u00eatre utilis\u00e9 quand l'utilisateur demande une synth\u00e8se robuste, tra\u00e7able et v\u00e9rifi\u00e9e. Il orchestre trois mod\u00e8les",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:05.046525Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "notebook-config-audit",
-  "description": "Audit Jupyter notebooks for hardcoded values that contradict configuration cells. Trigger when: (1) notebook behavior differs from documented settings, (2) updating notebook version, (3) finding incon",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

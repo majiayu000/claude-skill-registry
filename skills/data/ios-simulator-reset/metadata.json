@@ -1,9 +1,0 @@
-{
-  "name": "ios-simulator-reset",
-  "description": "Nuclear option - reset simulator and rebuild from scratch",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

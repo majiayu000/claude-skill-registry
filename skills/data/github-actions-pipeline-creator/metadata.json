@@ -1,9 +1,0 @@
-{
-  "name": "github-actions-pipeline-creator",
-  "description": "Creates comprehensive GitHub Actions CI/CD workflows for linting, testing, building, and deploying. Includes caching strategies, matrix builds, artifact handling, and failure diagnostics. Use for \"Git",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "node-generator",
-  "description": "Generate new workflow nodes with implementation, tests, and registry registration",
-  "repo": "dafthunk-com/dafthunk",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

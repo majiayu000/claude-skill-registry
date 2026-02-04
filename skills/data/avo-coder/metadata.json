@@ -1,9 +1,0 @@
-{
-  "name": "avo-coder",
-  "description": "Use when building Avo admin interfaces. Creates resources, actions, filters, and dashboards following Avo conventions. Fetches latest docs dynamically.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "processing-computer-vision-tasks",
-  "description": "Process images using object detection, classification, and segmentation. Use when requesting \"analyze image\", \"object detection\", \"image classification\", or \"computer vision\". Trigger with relevant ph",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

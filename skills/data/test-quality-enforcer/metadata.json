@@ -1,9 +1,0 @@
-{
-  "name": "test-quality-enforcer",
-  "description": "Enforces zero-tolerance test quality through two-phase testing strategy (Focus → Stable → Regression). Proactively activates when testing context detected. Blocks failures, enforces coverage threshold",
-  "repo": "matthew-bram/enterprise-confluent-test-probe",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

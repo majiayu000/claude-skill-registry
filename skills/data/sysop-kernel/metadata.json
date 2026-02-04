@@ -1,9 +1,0 @@
-{
-  "name": "sysop-kernel",
-  "description": "Run the SYSopGPTWSL operator kernel (repeatable sysop pipeline + diffable report + learning ledger). Use when asked to run sysop checks, collect Windows/WSL snapshots, benchmark, or produce the operat",
-  "repo": "ledzepp1109/SYSopGPTWSL",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

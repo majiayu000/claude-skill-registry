@@ -1,9 +1,0 @@
-{
-  "name": "bdd-scenario-builder",
-  "description": "Behavior-Driven Development (BDD) で振る舞いを定義・シナリオ化するためのガイド。Given-When-Then と Gherkin で受け入れ条件やエッジケースを整理し、失敗パターンや小さく始める導入ステップを含めて、業務言語で明確なシナリオを書くときに使う。",
-  "repo": "yurake/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

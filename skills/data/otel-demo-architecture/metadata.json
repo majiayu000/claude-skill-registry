@@ -1,9 +1,0 @@
-{
-  "name": "otel-demo-architecture",
-  "description": "OpenTelemetry Demo system architecture reference for debugging service dependencies, port conflicts, memory issues, telemetry gaps, and performance problems. Use when analyzing failures, understanding",
-  "repo": "blueswen/observability-with-llm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

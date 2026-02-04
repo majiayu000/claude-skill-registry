@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-create-company",
-  "description": "Create a new company in HubSpot CRM. Load when user says 'create company', 'add company', 'new company'. Requires name, optional domain, industry, city.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

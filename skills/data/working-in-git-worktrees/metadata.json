@@ -1,9 +1,0 @@
-{
-  "name": "working-in-git-worktrees",
-  "description": "Working in isolated worktree directories for parallel work - work normally, tests isolated, orchestrator handles cleanup",
-  "repo": "bryonjacob/aug",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

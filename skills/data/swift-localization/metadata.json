@@ -1,9 +1,0 @@
-{
-  "name": "swift-localization",
-  "description": "Best practices for internationalizing Swift/SwiftUI applications using LocalizedStringResource, String Catalogs (.xcstrings), and type-safe localization patterns. Use when implementing multi-language ",
-  "repo": "jamesmontemagno/app-trimly",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

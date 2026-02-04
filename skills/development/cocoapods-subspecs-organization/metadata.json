@@ -1,8 +1,0 @@
-{
-  "name": "cocoapods-subspecs-organization",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when organizing complex CocoaPods libraries into subspecs. Covers modular architecture, dependency management between subspecs, and default subspecs patterns for better code organization and optio",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.932917Z"
-}

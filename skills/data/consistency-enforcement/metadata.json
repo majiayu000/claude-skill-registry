@@ -1,9 +1,0 @@
-{
-  "name": "consistency-enforcement",
-  "description": "Documentation consistency enforcement - prevents drift between README.md and actual codebase state. Auto-activates when updating docs, committing changes, or working with skills/agents/commands.",
-  "repo": "akaszubski/autonomous-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

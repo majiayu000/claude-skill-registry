@@ -1,8 +1,0 @@
-{
-  "name": "setup-cdk-templates",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "devops",
-  "description": "Use when creating CLAUDE.md files or .claude/ directories - detects project type, generates appropriate templates, and scaffolds Claude configuration with commands and hooks",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.258583Z"
-}

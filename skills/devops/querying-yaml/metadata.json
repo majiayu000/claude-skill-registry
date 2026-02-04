@@ -1,8 +1,0 @@
-{
-  "name": "querying-yaml",
-  "repo": "iota9star/my-skills",
-  "category": "devops",
-  "description": "Extracts specific fields from YAML files efficiently using yq instead of reading entire files, saving 80-95% context. Use this skill when querying YAML files, filtering/transforming configuration data",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.124581Z"
-}

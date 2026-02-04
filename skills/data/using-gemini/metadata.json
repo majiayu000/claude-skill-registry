@@ -1,9 +1,0 @@
-{
-  "name": "using-gemini",
-  "description": "Use when needing to analyze images (screenshots, diagrams, photos), analyze videos (screencasts, recordings), summarize YouTube videos, fetch and analyze web content, or perform web searches with Goog",
-  "repo": "asermax/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

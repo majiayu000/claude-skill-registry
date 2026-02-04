@@ -1,9 +1,0 @@
-{
-  "name": "funsloth-upload",
-  "description": "Generate comprehensive model cards and upload fine-tuned models to Hugging Face Hub with professional documentation",
-  "repo": "chrisvoncsefalvay/funsloth",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

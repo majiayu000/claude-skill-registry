@@ -1,8 +1,0 @@
-{
-  "name": "processing-files",
-  "repo": "binome-dev/humcp",
-  "category": "documents",
-  "description": "Converts PDF files to markdown text. Use when the user wants to extract text from PDFs, convert PDFs to readable format, or process PDF documents.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.652796Z"
-}

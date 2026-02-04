@@ -1,8 +1,0 @@
-{
-  "name": "marimo-notebook",
-  "repo": "nibzard/skills-marketplace",
-  "category": "development",
-  "description": "Assistant for creating, editing, and debugging reactive Python notebooks with marimo. Use when you need to build marimo notebooks, debug reactive execution, add interactive UI elements, or convert tra",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:25.211217Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "literate-tests",
-  "repo": "ianphil/my-skills",
-  "category": "testing",
-  "description": "This skill should be used when the user asks to \"create literate tests\", \"generate markdown tests\", \"specification-as-tests\", \"TDD with markdown\", \"agent-driven testing\", or mentions test suites where",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:11.745770Z"
-}

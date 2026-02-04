@@ -1,8 +1,0 @@
-{
-  "name": "jira-issue-triage-and-routing",
-  "repo": "Lobbi-Docs/claude",
-  "category": "design",
-  "description": "This skill should be used when the user asks to \"triage issue\", \"classify ticket\", \"route jira\", \"analyze priority\", \"categorize issue\", \"determine complexity\", \"route to agents\", or needs guidance on",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:51.671464Z"
-}

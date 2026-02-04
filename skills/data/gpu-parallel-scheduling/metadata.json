@@ -1,9 +1,0 @@
-{
-  "name": "gpu-parallel-scheduling",
-  "description": "GPU-safe parallel processing patterns for KINTSUGI to prevent OOM crashes and ensure Jupyter-compatible progress output",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

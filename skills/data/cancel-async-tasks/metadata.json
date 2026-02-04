@@ -1,9 +1,0 @@
-{
-  "name": "cancel-async-tasks",
-  "description": "Guidance for implementing proper asyncio task cancellation with signal handling in Python. This skill applies when implementing concurrent task runners that need graceful shutdown, handling KeyboardIn",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

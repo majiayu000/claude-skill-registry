@@ -1,9 +1,0 @@
-{
-  "name": "kv-optimization-advisor",
-  "description": "Automatically optimizes Cloudflare KV storage patterns, suggesting parallel operations, caching strategies, and storage choice guidance",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

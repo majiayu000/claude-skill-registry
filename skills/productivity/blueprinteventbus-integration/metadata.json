@@ -1,8 +1,0 @@
-{
-  "name": "blueprinteventbus-integration",
-  "repo": "tw-lin/ng-lin",
-  "category": "productivity",
-  "description": "Implement event-driven communication using BlueprintEventBus for cross-module coordination. Use this skill when modules need to communicate without tight coupling, broadcasting domain events (task.cre",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:14.031978Z"
-}

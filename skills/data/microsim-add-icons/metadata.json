@@ -1,9 +1,0 @@
-{
-  "name": "microsim-add-icons",
-  "description": "Add clickable Creative Commons license and fullscreen icons to an existing MicroSim's control region. Use this skill when enhancing a MicroSim with navigation icons in the lower right corner. Adds app",
-  "repo": "dmccreary/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

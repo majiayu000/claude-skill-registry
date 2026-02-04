@@ -1,9 +1,0 @@
-{
-  "name": "training-archive-gating",
-  "description": "Mandatory training archive with model gating (APPROVED/REVIEW/DROP). Trigger when: (1) training run completes, (2) need to decide which models to deploy, (3) want historical training reference, (4) ne",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

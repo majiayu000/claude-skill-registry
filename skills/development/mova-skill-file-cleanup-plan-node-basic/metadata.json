@@ -1,8 +1,0 @@
-{
-  "name": "mova-skill-file-cleanup-plan-node-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Generate a basic cleanup plan (keep/delete/archive/ask) from a filesystem snapshot; no filesystem changes. Input: env.file_cleanup_plan_request_v1, output: ds.file_cleanup_plan_v1.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:48.692325Z"
-}

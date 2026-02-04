@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-testing",
-  "repo": "fjacquet/finwiz",
-  "category": "testing",
-  "description": "FinWiz testing standards using pytest-mock. Use when writing tests, mocking dependencies, or fixing test failures. Includes unittest.mock ban enforcement and CrewAI testing patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:39.988171Z"
-}

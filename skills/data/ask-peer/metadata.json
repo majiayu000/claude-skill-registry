@@ -1,9 +1,0 @@
-{
-  "name": "ask-peer",
-  "description": "Consult with a peer engineer for plan review, code review, implementation discussions, or problem-solving brainstorming. Use when you need a second opinion, want to validate your approach, or check fo",
-  "repo": "hiroro-work/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

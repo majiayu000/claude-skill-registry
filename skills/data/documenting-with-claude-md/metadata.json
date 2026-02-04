@@ -1,9 +1,0 @@
-{
-  "name": "documenting-with-claude-md",
-  "description": "Hierarchical machine-readable documentation - root CLAUDE.md with module index, per-module CLAUDE.md for significant modules",
-  "repo": "bryonjacob/aug",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

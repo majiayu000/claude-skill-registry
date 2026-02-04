@@ -1,9 +1,0 @@
-{
-  "name": "shell-error-handling",
-  "description": "Use when implementing error handling, cleanup routines, or debugging in shell scripts. Covers traps, exit codes, and robust error patterns.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

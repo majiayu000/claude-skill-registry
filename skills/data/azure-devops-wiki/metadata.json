@@ -1,9 +1,0 @@
-{
-  "name": "azure-devops-wiki",
-  "description": "Azure DevOps Wiki management skill. Use when working with Azure DevOps wikis for: (1) Creating and organizing wiki pages - provisioned or code-as-wiki, (2) Markdown formatting - TOC, Mermaid diagrams,",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "link-validation",
-  "description": "Universal link validation using lychee for Claude Code sessions. Runs at session end to detect broken links and path policy violations.",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

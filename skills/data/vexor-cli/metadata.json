@@ -1,9 +1,0 @@
-{
-  "name": "vexor-cli",
-  "description": "Semantic file discovery via `vexor`. Use whenever locating where something is implemented/loaded/defined in a medium or large repo, or when the file location is unclear. Prefer this over manual browsi",
-  "repo": "scarletkc/vexor",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

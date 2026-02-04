@@ -1,9 +1,0 @@
-{
-  "name": "resource-manager",
-  "description": "Docker のリソースを管理する。「ネットワーク確認」「docker network」「ネットワーク一覧」「ボリューム確認」「docker volume」「ボリューム一覧」「ディスク確認」「docker system df」「ディスク使用量」「容量確認」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "mastra-hono",
-  "description": "Develop AI agents, tools, and workflows with Mastra v1 Beta and Hono servers. This skill should be used when creating Mastra agents, defining tools with Zod schemas, building workflows with step data ",
-  "repo": "jwynia/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

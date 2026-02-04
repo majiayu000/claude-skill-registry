@@ -1,8 +1,0 @@
-{
-  "name": "multcode-dev-workflow-agent",
-  "repo": "chaorenex1/coding-agent-workflow",
-  "category": "design",
-  "description": "End-to-end software development workflow agent using memex-cli with multiple AI backends. Orchestrates 5 stages: (1) Requirements Analysis (Claude), (2) Functional Design (Claude), (3) UX Design (Gemi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:28.437051Z"
-}

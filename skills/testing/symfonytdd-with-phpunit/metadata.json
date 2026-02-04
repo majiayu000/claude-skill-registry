@@ -1,8 +1,0 @@
-{
-  "name": "symfonytdd-with-phpunit",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "testing",
-  "description": "Apply RED-GREEN-REFACTOR with PHPUnit for Symfony; use KernelTestCase, WebTestCase, and Foundry for comprehensive testing",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.708102Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "summarization",
-  "description": "Create effective summaries by matching summarization type to purpose, audience, and context. Use when asked to summarize, create TLDR, condense content, or create executive summaries. Keywords: summar",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "cicd-validation-merge-workflow",
-  "repo": "pmcfadin/cqlite",
-  "category": "devops",
-  "description": "Pre-push validation checklist (cargo fmt, clippy with zero warnings, feature flag testing, test suite), CI monitoring, merge process, and release quality gates. Use when preparing to push code, valida",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:40.260205Z"
-}

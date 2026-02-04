@@ -1,9 +1,0 @@
-{
-  "name": "pre-presentation-cleanup",
-  "repo": "cowwoc/styler",
-  "category": "data",
-  "description": "Complete mandatory cleanup before presenting changes for user approval in AWAITING_USER_APPROVAL state",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:48.497622Z",
-  "dir_name": "pre-presentation-cleanup"
-}

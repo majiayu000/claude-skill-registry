@@ -1,9 +1,0 @@
-{
-  "name": "check-service-status",
-  "description": "서비스 상태 확인. Use when (1) \"현황 알려줘\", (2) \"서비스 상태 확인\",(3) \"cm-* 상태 체크\". GitHub 레포 상태 및 최근 배포 정보 조회.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

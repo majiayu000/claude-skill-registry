@@ -1,9 +1,0 @@
-{
-  "name": "eld-record-compact",
-  "description": "PCE (Process-Context Engine) のコンテキスト圧縮スキル。長期タスクの履歴を要約・圧縮し、セッション継続を可能にする。トリガー条件:- セッションが長くなった時- コンテキストウィンドウが逼迫した時- 「ここまでをまとめて」- 「ノートを作成して」- 複数セッションにまたがる作業の時- 「次回のために記録して」",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

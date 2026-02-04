@@ -1,9 +1,0 @@
-{
-  "name": "js-checker",
-  "description": "JavaScript 代码检查和修复工具。当需要执行 JavaScript 代码时，使用此技能进行：1) 检查本地 Node.js 版本是否支持代码语法，2) 自动修复全角符号等常见问题，3) 验证代码可执行性，4) 返回检查结果供主 Agent 使用 execute_shell_command 执行",
-  "repo": "timoxue/LingNexus",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

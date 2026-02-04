@@ -1,9 +1,0 @@
-{
-  "name": "daily-report",
-  "description": "日報（daily report）を作成するスキル。GitHub上での活動内容をまとめて下書きを作成し、Issue投稿まで行う。以下の場合に使用:- 「日報を作成して」「日報書いて」と言われたとき- 「今日の活動をまとめて」と言われたとき- daily reportやdaily journalの作成を依頼されたとき",
-  "repo": "i9wa4/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

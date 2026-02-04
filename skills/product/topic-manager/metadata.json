@@ -1,8 +1,0 @@
-{
-  "name": "topic-manager",
-  "repo": "smorand/claude-config",
-  "category": "product",
-  "description": "Expert in managing professional topics stored as structured Google Drive folders and Google Docs. **Use this skill whenever the user mentions \"topic\", \"topics\", \"update topic\", \"create topic\", \"open t",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.709675Z"
-}

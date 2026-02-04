@@ -1,9 +1,0 @@
-{
-  "name": "dynamic-budget-orchestrator",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Dynamically scale model token budgets using resource telemetry, prompt size, and profile presets. Use when token limits must adapt to hardware constraints, per-request size, or safe/fast/quality modes",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:33.043613Z",
-  "dir_name": "dynamic-budget-orchestrator"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "viewing-files",
-  "repo": "iota9star/my-skills",
-  "category": "documents",
-  "description": "Enhanced cat clone with syntax highlighting, Git integration, and automatic paging for efficient file content viewing. Use this skill when viewing source files, documentation, or when syntax highlight",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.089753Z"
-}

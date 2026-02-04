@@ -1,9 +1,0 @@
-{
-  "name": "data-model",
-  "repo": "promobase/openpromo",
-  "category": "data",
-  "description": "Adding new data models - schema, shared zod, entity pattern, and oRPC routes. Use when user asks to create a new entity, model, or feature that needs database tables.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:24.155865Z",
-  "dir_name": "data-model"
-}

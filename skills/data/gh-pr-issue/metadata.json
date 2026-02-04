@@ -1,9 +1,0 @@
-{
-  "name": "gh-pr-issue",
-  "description": "Keep pull requests and issues healthy using gh CLI (list, view, comment, close).",
-  "repo": "MHolmes91/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dbt-test-creator",
-  "description": "Dbt Test Creator - Auto-activating skill for Data Pipelines.Triggers on: dbt test creator, dbt test creatorPart of the Data Pipelines skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

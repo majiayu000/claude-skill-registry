@@ -1,9 +1,0 @@
-{
-  "name": "ts-commands",
-  "description": "Determine package manager, workspace configuration, and available commands in TypeScript/JavaScript projects. Use when agent needs to understand how to run commands in a TS/JS project, including  (1) ",
-  "repo": "0xKahi/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

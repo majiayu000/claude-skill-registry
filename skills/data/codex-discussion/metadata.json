@@ -1,9 +1,0 @@
-{
-  "name": "codex-discussion",
-  "description": "Use OpenAI Codex CLI as a discussion partner to verify ideas, evaluate plans, and improve quality. Automatically triggered during implementation planning, troubleshooting, debugging, or when seeking a",
-  "repo": "ntodd/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

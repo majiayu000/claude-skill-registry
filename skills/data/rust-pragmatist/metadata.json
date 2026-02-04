@@ -1,9 +1,0 @@
-{
-  "name": "rust-pragmatist",
-  "description": "Automatically review Rust code after edits to .rs files, providing pragmatic suggestions for idiomatic patterns, performance, safety, and code organization. Activate when Rust source files are modifie",
-  "repo": "ccustine/airjedi-desktop",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

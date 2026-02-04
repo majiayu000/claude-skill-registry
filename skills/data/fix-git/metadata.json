@@ -1,9 +1,0 @@
-{
-  "name": "fix-git",
-  "description": "Guide for recovering lost Git commits, resolving detached HEAD states, and fixing common Git repository issues. This skill should be used when users need help recovering from Git mistakes such as lost",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

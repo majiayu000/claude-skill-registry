@@ -1,8 +1,0 @@
-{
-  "name": "transaction-expert",
-  "repo": "ryu-qqq/setof-commerce",
-  "category": "design",
-  "description": "Transaction \uacbd\uacc4 \uc804\ubb38\uac00. TransactionManager(\ub2e8\uc77c Port persist), ReadManager(\ub2e8\uc77c Query Port findBy/get),CommandFacade(2+ Manager persist* \uc870\ud569), QueryFacade(2+ ReadManager fetch* \uc870\ud569).@Transactional \uba54\uc11c\ub4dc \ub2e8\uc704 \ud544\uc218. @C",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:01.631708Z"
-}

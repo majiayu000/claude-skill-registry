@@ -1,9 +1,0 @@
-{
-  "name": "adaptive-rejection-sampler",
-  "description": "Guidance for implementing Adaptive Rejection Sampling (ARS) algorithms. This skill should be used when implementing rejection sampling methods, log-concave distribution samplers, or statistical sampli",
-  "repo": "letta-ai/skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

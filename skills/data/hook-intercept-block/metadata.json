@@ -1,9 +1,0 @@
-{
-  "name": "hook-intercept-block",
-  "description": "This skill should be used when implementing slash commands that execute without Claude API calls. Use when: adding a new /bumper-* command, understanding why commands return \"block\" responses, debuggi",
-  "repo": "kylesnowschwartz/claude-bumper-lanes",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

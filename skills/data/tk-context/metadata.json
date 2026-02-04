@@ -1,9 +1,0 @@
-{
-  "name": "tk-context",
-  "description": "Dump full Tasuku context for agent consumption. Use when user says /tk:context or asks for full context, project state, or needs to understand the entire task landscape.",
-  "repo": "iheanyi/tasuku",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

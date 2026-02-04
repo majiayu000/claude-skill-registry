@@ -1,9 +1,0 @@
-{
-  "name": "commands-frontmatter-adapter",
-  "description": "Parse Claude command frontmatter and expose body/meta for Codex CLI.",
-  "repo": "hairihou/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

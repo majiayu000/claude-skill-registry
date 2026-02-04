@@ -1,8 +1,0 @@
-{
-  "name": "cloudflare-workers-observability",
-  "repo": "FlorinPopaCodes/claude-marketplace",
-  "category": "development",
-  "description": "This skill should be used when the user asks about \"worker logs\", \"debug worker\", \"worker errors\", \"request analytics\", \"worker metrics\", \"performance monitoring\", \"error rate\", \"invocation logs\", \"tr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:34.351696Z"
-}

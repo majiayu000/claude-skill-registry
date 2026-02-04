@@ -1,7 +1,0 @@
-{
-  "name": "aptos-dapp-integration",
-  "description": "Expert on building decentralized applications on Aptos with frontend integration, wallet connectivity (Petra, Martian, Pontem), TypeScript SDK, transaction submission, and wallet adapter patterns. Tri",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.388368Z"
-}

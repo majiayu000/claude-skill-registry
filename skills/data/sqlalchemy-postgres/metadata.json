@@ -1,9 +1,0 @@
-{
-  "name": "sqlalchemy-postgres",
-  "repo": "cfircoo/claude-code-toolkit",
-  "category": "data",
-  "description": "Expert guidance for SQLAlchemy 2.0 + Pydantic + PostgreSQL. Use when setting up database layers, defining models, creating migrations, or any database-related work. Automatically activated for DB task",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:17.279935Z",
-  "dir_name": "sqlalchemy-postgres"
-}

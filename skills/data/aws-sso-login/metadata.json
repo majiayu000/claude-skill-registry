@@ -1,9 +1,0 @@
-{
-  "name": "aws-sso-login",
-  "description": "Authenticate to AWS using Single Sign-On (SSO). Use when AWS CLI operations require SSO authentication or when SSO session has expired.",
-  "repo": "Daisuke897/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

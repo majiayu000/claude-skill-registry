@@ -1,9 +1,0 @@
-{
-  "name": "register-watch",
-  "description": "Use when debugging register corruption issues - registers have unexpected values after context switches, userspace processes crash with corrupted state, stack pointer corruption, syscall return values",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pull-request-conventions",
-  "description": "Use when creating or merging pull requests - provides branch naming, PR title format, and description requirements for consistent PR workflows",
-  "repo": "zookanalytics/claude-devcontainer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

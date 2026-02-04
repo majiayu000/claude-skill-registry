@@ -1,9 +1,0 @@
-{
-  "name": "ovs-database-and-flow-analysis",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "data",
-  "description": "Analyze Open vSwitch data from sosreport",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:19.183214Z",
-  "dir_name": "ovs-database-and-flow-analysis"
-}

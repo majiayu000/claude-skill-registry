@@ -1,9 +1,0 @@
-{
-  "name": "vercel-analytics",
-  "description": "Implements privacy-friendly web analytics with Vercel Analytics for traffic insights and Web Vitals. Use when tracking page views and performance metrics in Next.js applications deployed on Vercel.",
-  "repo": "mgd34msu/goodvibes-plugin",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

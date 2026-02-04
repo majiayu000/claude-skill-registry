@@ -1,8 +1,0 @@
-{
-  "name": "managing-repository-labels",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "development",
-  "description": "Reviews existing repository issues, code structure, and domain to create or refresh a semantic label system with appropriate colors aligned to the repository's specific context and needs. Use for init",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.614280Z"
-}

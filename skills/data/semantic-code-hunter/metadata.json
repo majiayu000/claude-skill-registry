@@ -1,9 +1,0 @@
-{
-  "name": "semantic-code-hunter",
-  "description": "Use when you need to find code by concept (not just text). Uses Serena MCP for semantic code search across the codebase with minimal token usage. Ideal for understanding architecture, finding authenti",
-  "repo": "Barnhardt-Enterprises-Inc/quetrex-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

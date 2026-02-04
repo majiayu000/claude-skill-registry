@@ -1,9 +1,0 @@
-{
-  "name": "install-git-hooks",
-  "description": "Install pre-commit hooks to automatically lint markdown files before commits",
-  "repo": "tnez/docent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

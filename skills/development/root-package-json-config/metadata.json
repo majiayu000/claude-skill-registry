@@ -1,8 +1,0 @@
-{
-  "name": "root-package-json-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Root package.json configuration for MetaSaver monorepos. Use when creating or auditing root package.json files to ensure workspace configuration, required scripts (build, dev, lint, test, format, clea",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.930661Z"
-}

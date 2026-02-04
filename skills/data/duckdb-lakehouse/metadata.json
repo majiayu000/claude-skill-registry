@@ -1,9 +1,0 @@
-{
-  "name": "duckdb-lakehouse",
-  "description": "ALWAYS USE when building data lakehouse with DuckDB compute, configuring dbt-duckdb with Polaris plugin, or designing catalog-first architecture in floe-platform. Use IMMEDIATELY when reading/writing ",
-  "repo": "Obsidian-Owl/floe",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Obsidian-Owl/floe"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "storage-reclaim",
-  "description": "Rapidly find and reclaim disk storage by identifying build artifacts, git garbage, temp files, and other space hogs. Use when disk is full or running low on space.",
-  "repo": "plurigrid/asi",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/plurigrid/asi"
-}

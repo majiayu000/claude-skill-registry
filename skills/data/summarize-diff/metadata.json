@@ -1,9 +1,0 @@
-{
-  "name": "summarize-diff",
-  "description": "Summarize the staged git diff in 3–5 bullets. Use when the user asks for a summary of pending changes.",
-  "repo": "faizalindrak/CycleCountAppStark",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

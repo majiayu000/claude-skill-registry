@@ -1,8 +1,0 @@
-{
-  "name": "root-cause-analysis-methodology",
-  "repo": "evangelosmeklis/thufir",
-  "category": "product",
-  "description": "This skill should be used when the user asks to \"perform root cause analysis\", \"investigate production issue\", \"analyze incident\", \"find root cause\", \"debug production error\", \"trace the cause\", or me",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:29.737264Z"
-}

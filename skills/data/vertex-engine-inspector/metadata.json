@@ -1,9 +1,0 @@
-{
-  "name": "vertex-engine-inspector",
-  "description": "Inspect and validate Vertex AI Agent Engine deployments including Code Execution Sandbox, Memory Bank, A2A protocol compliance, and security posture. Generates production readiness scores. Use when as",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

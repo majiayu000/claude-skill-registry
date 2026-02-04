@@ -1,9 +1,0 @@
-{
-  "name": "terraform-aws",
-  "description": "This skill should be used when the user asks to \"create terraform configuration\", \"deploy static site\", \"set up cloudfront\", \"configure route53\", \"create lambda function\", \"ssl certificate\", or mentio",
-  "repo": "rcmx/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

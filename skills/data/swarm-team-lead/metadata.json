@@ -1,9 +1,0 @@
-{
-  "name": "swarm-team-lead",
-  "description": "Auto-loads when CLAUDE_CODE_IS_TEAM_LEAD environment variable is set. Provides guidance for spawned team-leads on monitoring teammates, handling consults, assigning tasks, and coordinating the team. U",
-  "repo": "Und3rf10w/claude-litter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

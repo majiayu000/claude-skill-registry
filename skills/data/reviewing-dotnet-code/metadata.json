@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-dotnet-code",
-  "description": "Reviews and generates .NET/C# code following Microsoft conventions and modern patterns.Use when reviewing C# files, writing .NET code, refactoring, or when user mentions\"C#\", \".NET\", \"dotnet\", \"csharp",
-  "repo": "BrendanShields/spec-flow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "vibecoder-guide-legacy",
-  "repo": "Chachamaru127/claude-code-harness",
-  "category": "development",
-  "description": "Guides VibeCoder (non-technical users) through natural language development (legacy). Use when user mentions \u3069\u3046\u3059\u308c\u3070\u3044\u3044, \u6b21\u306f\u4f55, \u4f7f\u3044\u65b9, \u56f0\u3063\u305f, help, what should I do. Do NOT load for: \u6280\u8853\u8005\u5411\u3051\u4f5c\u696d, \u76f4\u63a5\u7684\u306a\u5b9f\u88c5\u6307\u793a, \u30ec\u30d3\u30e5\u30fc.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:45.909623Z"
-}

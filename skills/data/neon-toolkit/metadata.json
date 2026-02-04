@@ -1,9 +1,0 @@
-{
-  "name": "neon-toolkit",
-  "description": "Creates and manages ephemeral Neon databases for testing, CI/CD pipelines, and isolated development environments. Use when building temporary databases for automated tests or rapid prototyping.",
-  "repo": "neondatabase/ai-rules",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

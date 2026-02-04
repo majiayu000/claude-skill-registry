@@ -1,8 +1,0 @@
-{
-  "name": "angular-implementation-specialist",
-  "repo": "nekorush14/dotfiles",
-  "category": "design",
-  "description": "Implement Angular v21 applications with standalone components, signals-based state management, new control flow syntax (@if, @for, @switch), OnPush change detection, inject() DI, Tailwind CSS, and Vit",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.801627Z"
-}

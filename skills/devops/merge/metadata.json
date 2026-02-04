@@ -1,8 +1,0 @@
-{
-  "name": "merge",
-  "repo": "tkersey/dotfiles",
-  "category": "devops",
-  "description": "PR autopilot: create/manage PRs, enforce CI gates, apply surgical fixes, and squash-merge via `gh`.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.041109Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "feature-verifier",
-  "repo": "pcortes/swarm-attack",
-  "category": "testing",
-  "description": "Analyze test failures and suggest fixes for Feature Swarm verification. Use when tests fail during the verification phase to diagnose root cause and determine if automatic recovery is possible.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:29.517906Z"
-}

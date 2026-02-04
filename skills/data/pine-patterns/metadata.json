@@ -1,9 +1,0 @@
-{
-  "name": "pine-patterns",
-  "description": "Pine Script v5/v6 indicator scaffold and patterns. Provides structure guidance and triggers doc-researcher for current syntax verification. Use when developing TradingView indicators.",
-  "repo": "lgbarn/trading-indicator-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

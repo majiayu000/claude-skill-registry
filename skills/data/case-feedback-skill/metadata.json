@@ -1,9 +1,0 @@
-{
-  "name": "case-feedback-skill",
-  "description": "Run the case feedback script to submit feedback for the current conversation. Only use when invoked by case-feedback-agent.",
-  "repo": "zai-org/zai-coding-plugins",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

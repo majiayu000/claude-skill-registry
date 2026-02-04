@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-test-triage",
-  "description": "Run dotnet test, capture failed test cases, and generate a rerun filter plus a markdown failure summary. Use when test runs fail and you need a focused rerun command or a compact failure report.",
-  "repo": "bravellian/platform",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

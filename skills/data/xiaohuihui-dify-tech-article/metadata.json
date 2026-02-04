@@ -1,9 +1,0 @@
-{
-  "name": "xiaohuihui-dify-tech-article",
-  "description": "专为Dify工作流案例分享设计的公众号文章生成器,遵循小灰灰公众号写作规范,自动生成包含前言、工作流制作、总结的完整Dify案例文章,配有详细的节点配置、插件安装步骤、代码示例,并支持自动生成图片上传到腾讯云COS图床",
-  "repo": "wwwzhouhui/skills_collection",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "llm-counsel-request-formulation",
-  "repo": "dkoosis/cc-plugins",
-  "category": "design",
-  "description": "This skill should be used when Claude needs to \"formulate a request for external feedback\", \"craft a question for ChatGPT or Gemini\", \"structure a code review request\", \"write an A/B decision query\", ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:15.267409Z"
-}

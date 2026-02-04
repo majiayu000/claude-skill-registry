@@ -1,9 +1,0 @@
-{
-  "name": "kirby-plugin-development",
-  "description": "Builds or extends Kirby plugins using hooks, extensions, blocks, KirbyTags, and shared templates/controllers. Use when creating reusable features or integrating Panel customizations.",
-  "repo": "bnomei/kirby-mcp",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bnomei/kirby-mcp"
-}

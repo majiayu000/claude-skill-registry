@@ -1,9 +1,0 @@
-{
-  "name": "cli-distribution",
-  "description": "Distribution and packaging patterns including shell completions, man pages, cross-compilation, and release automation. Use when preparing CLI tools for distribution.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

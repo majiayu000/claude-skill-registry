@@ -1,9 +1,0 @@
-{
-  "name": "terraphim-hooks",
-  "description": "Knowledge graph-based text replacement using Terraphim hooks.Intercepts commands and text to apply transformations defined in the knowledge graph.Works with Claude Code PreToolUse hooks and Git prepar",
-  "repo": "terraphim/opencode-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

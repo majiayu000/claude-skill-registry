@@ -1,9 +1,0 @@
-{
-  "name": "integration-test-setup",
-  "description": "Integration Test Setup - Auto-activating skill for Test Automation.Triggers on: integration test setup, integration test setupPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

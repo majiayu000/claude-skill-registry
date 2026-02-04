@@ -1,8 +1,0 @@
-{
-  "name": "delegating-to-jira-agent",
-  "repo": "ryancnelson/deli-gator",
-  "category": "testing",
-  "description": "Recognize Jira queries and delegate to specialized sub-agent to avoid context pollution",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:27.643462Z"
-}

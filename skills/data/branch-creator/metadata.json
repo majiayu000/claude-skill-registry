@@ -1,9 +1,0 @@
-{
-  "name": "branch-creator",
-  "description": "Issue 番号に基づいて feature ブランチを自動作成する。「ブランチ作成」「ブランチを作って」「新しいブランチ」「feature ブランチ」「Issue からブランチ」「作業ブランチを作成」「ブランチ切って」などで起動。feature/[issue番号] 形式でブランチを作成。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

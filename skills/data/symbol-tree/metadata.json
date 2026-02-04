@@ -1,9 +1,0 @@
-{
-  "name": "symbol-tree",
-  "description": "ALWAYS USE FIRST when exploring, searching, or researching this codebase. Use symbol_tree MCP tool before grep/glob/read. Provides instant architecture overview, function relationships, and call graph",
-  "repo": "jeremydiviney/vibe",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pdf-manipulation",
-  "description": "Enables Claude to read, manipulate, and fill out PDF forms",
-  "repo": "bowbozaa/create-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

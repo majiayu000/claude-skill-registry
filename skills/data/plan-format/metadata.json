@@ -1,9 +1,0 @@
-{
-  "name": "plan-format",
-  "description": "This skill should be used when creating plan files, writing Gherkin requirements, generating tasks with verification commands, or parsing plan file structure. Provides the plan file template and forma",
-  "repo": "tommymorgan/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

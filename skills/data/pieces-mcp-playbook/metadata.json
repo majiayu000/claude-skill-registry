@@ -1,9 +1,0 @@
-{
-  "name": "pieces-mcp-playbook",
-  "description": "Connect to the Pieces MCP server (SSE) and reliably query or write to Pieces Long‑Term Memory (LTM) using query/write tool patterns (e.g., ask_pieces_ltm + create_pieces_memory), with practical troubl",
-  "repo": "anthony-maio/pieces-agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

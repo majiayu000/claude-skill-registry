@@ -1,9 +1,0 @@
-{
-  "name": "agent-specialization",
-  "description": "Guide creation of focused single-purpose agents following the One Agent One Prompt One Purpose principle. Use when designing new agents, refactoring general agents into specialists, or optimizing agen",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

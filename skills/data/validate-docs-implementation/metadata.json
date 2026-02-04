@@ -1,9 +1,0 @@
-{
-  "name": "validate-docs-implementation",
-  "description": "Load when user says \"validate docs\", \"check documentation consistency\", \"docs vs implementation\", or \"find documentation mismatches\". Systematically compares implementation code against documentation ",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

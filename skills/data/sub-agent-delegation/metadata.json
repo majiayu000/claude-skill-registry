@@ -1,9 +1,0 @@
-{
-  "name": "sub-agent-delegation",
-  "description": "Delegate complex tasks to sub-agents for parallel autonomous work. Use when GPU kernel optimization, numerical correctness verification, performance profiling, or long-running validation would benefit",
-  "repo": "Infatoshi/CLAUDE.md",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

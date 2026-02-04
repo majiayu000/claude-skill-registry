@@ -1,7 +1,0 @@
-{
-  "name": "post-processing",
-  "description": "Extract, analyze, and visualize simulation output data. Use for field extraction, time series analysis, line profiles, statistical summaries, derived quantity computation, result comparison to referen",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.190829Z"
-}

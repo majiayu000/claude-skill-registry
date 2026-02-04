@@ -1,8 +1,0 @@
-{
-  "name": "understanding-jujutsu-bookmarks-and-remotes",
-  "repo": "edmundmiller/dotfiles",
-  "category": "development",
-  "description": "Understand how bookmarks work in jj, why they don't auto-move, and how to push changes to git remotes. Use when bookmarks don't move after jj new/commit, when push says \"Nothing changed\", or when work",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.018713Z"
-}

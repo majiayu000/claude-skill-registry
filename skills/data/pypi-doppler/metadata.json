@@ -1,9 +1,0 @@
-{
-  "name": "pypi-doppler",
-  "description": "LOCAL-ONLY PyPI publishing with Doppler credential management. Use when publishing to PyPI from LOCAL machine ONLY. NEVER use in CI/CD pipelines. Workspace-wide policy enforces local publishing via sc",
-  "repo": "terrylica/cc-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

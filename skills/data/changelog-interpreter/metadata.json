@@ -1,9 +1,0 @@
-{
-  "name": "changelog-interpreter",
-  "description": "Interpret Claude Code changelogs and generate user-friendly usage guides",
-  "repo": "s-hiraoku/claude-code-harnesses-factory",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

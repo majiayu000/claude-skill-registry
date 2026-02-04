@@ -1,8 +1,0 @@
-{
-  "name": "financial-document-parser",
-  "repo": "OneWave-AI/claude-skills",
-  "category": "documents",
-  "description": "Extract and analyze data from invoices, receipts, bank statements, and financial documents. Categorize expenses, track recurring charges, and generate expense reports. Use when user provides financial",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.459619Z"
-}

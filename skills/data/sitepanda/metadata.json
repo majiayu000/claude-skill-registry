@@ -1,9 +1,0 @@
-{
-  "name": "sitepanda",
-  "description": "Scrape websites with a headless browser and extract main readable content as Markdown. Use this skill when the user asks to retrieve, analyze, or summarize content from a URL or website.",
-  "repo": "hokupod/sitepanda",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

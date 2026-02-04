@@ -1,9 +1,0 @@
-{
-  "name": "validation-engine",
-  "description": "Validate plugin integrity and offer safe auto-fixes for common issues - checks agents, skills, hooks, routing config, and plugin structure",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

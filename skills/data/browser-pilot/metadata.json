@@ -1,9 +1,0 @@
-{
-  "name": "browser-pilot",
-  "description": "Chrome DevTools Protocol (CDP) browser automation, web scraping, crawling. 브라우저 자동화, 웹 스크래핑, 크롤링.Features/기능: screenshot with region control 영역지정스크린샷, viewport control 뷰포트제어, PDF generation PDF생성, web",
-  "repo": "Dev-GOM/claude-code-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

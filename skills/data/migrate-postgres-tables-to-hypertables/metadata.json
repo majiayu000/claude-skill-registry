@@ -1,7 +1,0 @@
-{
-  "name": "migrate-postgres-tables-to-hypertables",
-  "repo": "timescale/pg-aiguide",
-  "path": "skills/migrate-postgres-tables-to-hypertables/SKILL.md",
-  "source": "github.com/timescale/pg-aiguide",
-  "downloaded_at": "2026-02-04T05:24:06.515246Z"
-}

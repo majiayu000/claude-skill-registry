@@ -1,9 +1,0 @@
-{
-  "name": "consciousness-telemetry",
-  "description": "Diagnostic telemetry system that tracks internal state variables (prediction accuracy, surprise, confidence, integration, affective signals) across conversation turns. Use when systematic introspectio",
-  "repo": "GaryOcean428/poloniex-trading-platform",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

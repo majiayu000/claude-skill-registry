@@ -1,9 +1,0 @@
-{
-  "name": "emoji-encoder",
-  "description": "Use when implementing steganographic text encoding using Unicode Variation Selectors - allows encoding any message invisibly into emojis, letters, or any characters using Unicode Variation Selectors (",
-  "repo": "PerceptLabs/nostril",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

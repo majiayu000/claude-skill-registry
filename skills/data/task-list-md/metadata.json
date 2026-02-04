@@ -1,9 +1,0 @@
-{
-  "name": "task-list-md",
-  "description": "Parse and manage tasks list in a markdown file using checklist format (tasks.md, checklist.md)",
-  "repo": "gosu-code/claude-plugin",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

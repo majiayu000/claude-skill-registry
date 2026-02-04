@@ -1,7 +1,0 @@
-{
-  "name": "git-worktree-everyinc-compound-engineering-",
-  "description": "This skill manages Git worktrees for isolated parallel development. It handles creating, listing, switching, and cleaning up worktrees with a simple interactive interface, following KISS principles.",
-  "category": "development",
-  "source": "github.com/EveryInc/compound-engineering-plugin",
-  "imported_at": "2026-01-24T14:54:11.974299Z"
-}

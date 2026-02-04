@@ -1,8 +1,0 @@
-{
-  "name": "classify-files-according-to-specific-rules",
-  "repo": "run-llama/vibe-llama",
-  "category": "documents",
-  "description": "Invoke this skill BEFORE implementing any text/document classification task to learn the correct llama_cloud_services API usage. Required reading before writing classification code.\" Requires the llam",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.793688Z"
-}

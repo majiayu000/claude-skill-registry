@@ -1,8 +1,0 @@
-{
-  "name": "lifecyclecompile-jit-modelfile",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Build a JIT Modelfile that hardcodes current context into SYSTEM/TEMPLATE/PARAMETER and creates a temporary Ollama model. Use when you need a hyper-focused ephemeral model.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:25.182709Z"
-}

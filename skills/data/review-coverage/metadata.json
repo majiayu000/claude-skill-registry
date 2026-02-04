@@ -1,9 +1,0 @@
-{
-  "name": "review-coverage",
-  "description": "Verify test coverage for code changes. Analyzes diff against main and reports coverage gaps.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

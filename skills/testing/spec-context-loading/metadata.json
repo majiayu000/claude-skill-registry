@@ -1,8 +1,0 @@
-{
-  "name": "spec-context-loading",
-  "repo": "mahidalhan/skilled-intelligence-marketplace",
-  "category": "testing",
-  "description": "Loads project context, lists existing specs and changes, searches capabilities and requirements. Use when user asks about project state, existing specs, active changes, available capabilities, or need",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:06.861737Z"
-}

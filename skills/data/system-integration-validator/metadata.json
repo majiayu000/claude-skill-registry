@@ -1,9 +1,0 @@
-{
-  "name": "system-integration-validator",
-  "description": "Validates system integration before deployment. Use when checking ports, database connections, frontend-backend APIs, or debugging blocked/stuck workflows. Detects dead ends, bottlenecks, circular dep",
-  "repo": "BarisSozen/claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

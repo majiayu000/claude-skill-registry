@@ -1,9 +1,0 @@
-{
-  "name": "tk-list",
-  "description": "Show all Tasuku tasks. Use when user says /tk:list or asks to see tasks, show tasks, list tasks, or what needs to be done.",
-  "repo": "iheanyi/tasuku",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

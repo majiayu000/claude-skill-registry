@@ -1,7 +1,0 @@
-{
-  "name": "mcp-integration-fcakyon-claude-codex-settings",
-  "description": "This skill should be used when the user asks to \"add MCP server\", \"integrate MCP\", \"configure MCP in plugin\", \"use .mcp.json\", \"set up Model Context Protocol\", \"connect external service\", mentions \"${",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.222453Z"
-}

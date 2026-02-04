@@ -1,9 +1,0 @@
-{
-  "name": "unified-messages",
-  "description": "Cross-platform messaging aggregator. Use as DEFAULT when user does NOT specify a platform (telegram/imessage). Provides unified inbox, search, and triage across both platforms. Triggers: \"check messag",
-  "repo": "rohunvora/cool-claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

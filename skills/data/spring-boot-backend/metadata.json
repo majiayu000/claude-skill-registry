@@ -1,9 +1,0 @@
-{
-  "name": "spring-boot-backend",
-  "description": "Build and implement Spring Boot 3 backend with Java 17 - REST APIs, JPA entities, services, repositories, security (JWT), and database migrations for Photo Map MVP. This skill should be used when crea",
-  "repo": "kojder/photo-map-app",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/kojder/photo-map-app"
-}

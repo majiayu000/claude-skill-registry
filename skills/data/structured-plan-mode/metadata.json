@@ -1,9 +1,0 @@
-{
-  "name": "structured-plan-mode",
-  "description": "This skill should be used when planning and tracking complex feature implementations that require systematic task decomposition. Use this skill to break down large features into manageable, well-docum",
-  "repo": "NikiforovAll/claude-code-rules",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

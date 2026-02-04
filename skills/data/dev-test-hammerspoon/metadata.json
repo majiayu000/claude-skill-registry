@@ -1,9 +1,0 @@
-{
-  "name": "dev-test-hammerspoon",
-  "description": "This skill should be used when the user asks to \"debug macOS app\", \"test native app\", \"automate macOS workflow\", \"test native macOS application\", or needs desktop automation for testing macOS applicat",
-  "repo": "edwinhu/workflows",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/edwinhu/workflows"
-}

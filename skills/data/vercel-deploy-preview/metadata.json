@@ -1,9 +1,0 @@
-{
-  "name": "vercel-deploy-preview",
-  "description": "Execute Vercel primary workflow: Deploy Preview.Use when Deploying a preview for a pull request,Testing changes before production, or Sharing preview URLs with stakeholders.Trigger with phrases like \"",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "kernel-debug-loop",
-  "description": "This skill should be used when performing fast iterative kernel debugging, running time-bound kernel sessions to detect specific log signals or test kernel behavior. Use for rapid feedback cycles duri",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "nextjs-fsd-starter",
-  "description": "Create a new Next.js project with FSD (Feature-Sliced Design) architecture, TypeScript, Tailwind CSS, ESLint (flat config), Prettier, and Husky. Use when user asks to create/scaffold/initialize a Next",
-  "repo": "rladydqls99/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

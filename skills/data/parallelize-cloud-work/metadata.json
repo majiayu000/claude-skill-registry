@@ -1,9 +1,0 @@
-{
-  "name": "parallelize-cloud-work",
-  "description": "Delegate independent work to Claude Code Web cloud sessions for parallel execution. Generates comprehensive session prompts with context exploration guidance, verifies Beads state, provides tracking c",
-  "repo": "stars-end/affordabot",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

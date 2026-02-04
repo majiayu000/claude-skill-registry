@@ -1,9 +1,0 @@
-{
-  "name": "create-release-note",
-  "description": "Detailed implementation guide for generating bug fix release notes from Jira and GitHub PRs",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

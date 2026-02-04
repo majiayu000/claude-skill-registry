@@ -1,9 +1,0 @@
-{
-  "name": "checkpoint-mode-asklokesh-loki-mode",
-  "description": "Pause for review every N tasks - selective autonomy pattern",
-  "repo": "asklokesh/loki-mode",
-  "category": "development",
-  "tags": [],
-  "stars": 545,
-  "source": "github.com/asklokesh/loki-mode"
-}

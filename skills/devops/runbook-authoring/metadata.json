@@ -1,8 +1,0 @@
-{
-  "name": "runbook-authoring",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "description": "Author operational runbooks for incident response and troubleshooting",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:07.791422Z"
-}

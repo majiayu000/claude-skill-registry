@@ -1,9 +1,0 @@
-{
-  "name": "pj-init",
-  "description": "멀티레포 워크스페이스(~/pj/xxx/)의 CLAUDE.md를 초기화합니다. 여러 독립 저장소가 하나의 프로젝트로 관리되는 구조에서 사용하세요. (user)",
-  "repo": "ssiumha/dots",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "bootstrapping-github-projects",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "productivity",
-  "description": "Automates GitHub Projects V2 setup with standardized workflow boards. Creates custom fields (Status/Value/Effort), configures automations, generates semantic repository labels, and aligns project name",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.573207Z"
-}

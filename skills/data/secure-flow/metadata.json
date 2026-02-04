@@ -1,9 +1,0 @@
-{
-  "name": "secure-flow",
-  "description": "A comprehensive security skill that integrates with Secure Flow to help AI coding agents write secure code, perform security reviews, and implement security best practices. Use this skill when writing",
-  "repo": "plutosecurity/secure-flow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "qa-discussion",
-  "description": "Conducts structured Q&A discussions with users, handling multiple choice, single choice, and open-ended questions one at a time - tracks progress, validates answers, and provides summary reports for c",
-  "repo": "zenobi-us/dotfiles",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

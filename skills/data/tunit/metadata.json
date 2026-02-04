@@ -1,9 +1,0 @@
-{
-  "name": "tunit",
-  "description": "Run TUnit tests with Playwright. Use when user asks to run tests, execute tests, or check if tests pass.",
-  "repo": "AndreHogberg/summit-ui",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

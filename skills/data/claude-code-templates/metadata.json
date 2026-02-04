@@ -1,9 +1,0 @@
-{
-  "name": "claude-code-templates",
-  "description": "Boilerplate templates for Claude Code extensions. Triggers on: create agent, new skill, command template, hook script, extension scaffold.",
-  "repo": "0xDarkMatter/claude-mods",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "trip-reconstruction",
-  "description": "Fill gaps between checkpoints using hybrid GPS (70%) + address (30%) template matching with high confidence",
-  "repo": "ceo-whyd-it/car-log",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

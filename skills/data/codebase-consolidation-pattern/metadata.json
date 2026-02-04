@@ -1,9 +1,0 @@
-{
-  "name": "codebase-consolidation-pattern",
-  "description": "Reorganize scattered modules into subpackages while maintaining backwards compatibility via shims. Trigger when: (1) too many root-level files, (2) need to group related functionality, (3) cleaning up",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

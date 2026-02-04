@@ -1,9 +1,0 @@
-{
-  "name": "specimin-refactor",
-  "description": "Execute surgical code refactors using single, named refactoring patterns with test verification. Use only when user explicitly requests to refactor code or perform a specific refactoring pattern. Anal",
-  "repo": "timsvoice/specimin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

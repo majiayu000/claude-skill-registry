@@ -1,8 +1,0 @@
-{
-  "name": "todo-management",
-  "repo": "jeremydiviney/vibe",
-  "category": "productivity",
-  "description": "Use this skill when working on project tasks, planning work, or when the user asks about todos. Always use todo.md as the source of truth for project tasks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:21.764491Z"
-}

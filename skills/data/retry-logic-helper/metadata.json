@@ -1,9 +1,0 @@
-{
-  "name": "retry-logic-helper",
-  "description": "Retry Logic Helper - Auto-activating skill for API Integration.Triggers on: retry logic helper, retry logic helperPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "dapr-troubleshooter",
-  "repo": "Sahib-Sawhney-WH/dapr-claude-plugin",
-  "category": "devops",
-  "description": "Proactively detect and diagnose DAPR runtime issues based on error patterns, log analysis, and common misconfigurations. Provides immediate solutions for service invocation failures, state management ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:49.828238Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "show-concurrent",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find notes edited around the same time as a given note. Triggers on \"concurrent notes\", \"edited around same time\", \"what else was I working on\", \"contemporaneous\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:32.667591Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "memgraph-aco-queries",
-  "description": "Query and analyze ACO pheromone graphs in Memgraph. Use for prime candidate queries, pheromone analysis, path validation, and convergence monitoring.",
-  "repo": "tonyoconnell/crackrsa32",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

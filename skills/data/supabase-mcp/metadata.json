@@ -1,9 +1,0 @@
-{
-  "name": "supabase-mcp",
-  "description": "Configure and use Supabase MCP from Claude Code to inspect and manage a Supabase project. Use when the user asks to create tables, migrations, RLS policies, storage buckets, or to query Supabase from ",
-  "repo": "BinkyTwin/ReviewXiv",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

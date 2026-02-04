@@ -1,8 +1,0 @@
-{
-  "name": "julien-mcp-excel-win32com",
-  "repo": "theflysurfer/claude-skills-marketplace",
-  "category": "documents",
-  "description": "Install Excel MCP via win32com (Windows). Use when user needs native Excel automation on Windows.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:54.781934Z"
-}

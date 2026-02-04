@@ -1,9 +1,0 @@
-{
-  "name": "style-inspector",
-  "description": "Use when needing to extract CSS styles from a DOM element, inspect computed styles, check font-size/color/margin of elements, or analyze visual styling of a web page. Requires a CSS selector to target",
-  "repo": "andreamk/ipsum-claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

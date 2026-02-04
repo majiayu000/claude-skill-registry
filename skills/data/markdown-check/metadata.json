@@ -1,9 +1,0 @@
-{
-  "name": "markdown-check",
-  "description": "Markdownドキュメントの整合性と完全性をチェックする。リンク切れ確認、アンカー検証、外部URL検証、空セクション検出を行い、問題があれば修正案を提示する。以下の依頼時に使用:- 「Markdownチェック」「ドキュメント整合性」「リンク切れ確認」- 「ドキュメントレビュー」「ドキュメント検証」「ドキュメント品質」- 「READMEのリンクを確認」「mdファイルを検証」「.mdをチェック」- ",
-  "repo": "ebal5/dotfiles-chezmoi",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

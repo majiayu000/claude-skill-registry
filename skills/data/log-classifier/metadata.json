@@ -1,9 +1,0 @@
-{
-  "name": "log-classifier",
-  "description": "Classifies logs by type (session, test, build) using path patterns and frontmatter analysis",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

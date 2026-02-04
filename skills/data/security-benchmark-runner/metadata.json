@@ -1,9 +1,0 @@
-{
-  "name": "security-benchmark-runner",
-  "description": "Security Benchmark Runner - Auto-activating skill for Security Advanced.Triggers on: security benchmark runner, security benchmark runnerPart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

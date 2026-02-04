@@ -1,7 +1,0 @@
-{
-  "name": "setup-fcakyon-claude-codex-settings",
-  "description": "This skill should be used when user encounters \"Tavily MCP error\", \"Tavily API key invalid\", \"web search not working\", \"Tavily failed\", or needs help configuring Tavily integration.",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.198756Z"
-}

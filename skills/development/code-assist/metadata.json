@@ -1,7 +1,0 @@
-{
-  "name": "code-assist",
-  "description": "This sop guides the implementation of code tasks using test-driven development principles, following a structured Explore, Plan, Code, Commit workflow. It balances automation with user collaboration w",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.177239Z"
-}

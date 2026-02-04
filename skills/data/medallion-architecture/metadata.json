@@ -1,9 +1,0 @@
-{
-  "name": "medallion-architecture",
-  "description": "Bronze/Silver/Gold layer design patterns and templates for building scalable data lakehouse architectures. Includes incremental processing, data quality checks, and optimization strategies.",
-  "repo": "vivekgana/databricks-platform-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

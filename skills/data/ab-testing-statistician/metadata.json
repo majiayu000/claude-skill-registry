@@ -1,9 +1,0 @@
-{
-  "name": "ab-testing-statistician",
-  "description": "Expert in statistical analysis for blind A/B and ABX audio testing. Validates randomization, calculates statistical significance, and ensures proper experimental design. Use when implementing A/B test",
-  "repo": "iammarkps/eqapo-gui",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

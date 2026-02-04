@@ -1,9 +1,0 @@
-{
-  "name": "golang-performance",
-  "description": "Go performance optimization techniques including profiling with pprof, memory optimization, concurrency patterns, and escape analysis.",
-  "repo": "89jobrien/steve",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

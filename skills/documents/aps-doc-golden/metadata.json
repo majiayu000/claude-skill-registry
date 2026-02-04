@@ -1,8 +1,0 @@
-{
-  "name": "aps-doc-golden",
-  "repo": "treasure-data/td-skills",
-  "category": "documents",
-  "description": "Expert documentation generation for golden layers. Detects SCD types, documents business rules, metric definitions, aggregation logic, and data quality scoring. Use when documenting golden layer table",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.744899Z"
-}

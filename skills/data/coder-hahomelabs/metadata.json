@@ -1,9 +1,0 @@
-{
-  "name": "coder-hahomelabs",
-  "description": "Coder workspace environment for hahomelabs.com deployments. Includes networking, ports, convex config, nhost config",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

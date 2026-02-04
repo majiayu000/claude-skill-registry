@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-stack-secrets-manager",
-  "repo": "rknall/claude-skills",
-  "category": "development",
-  "description": "Manages Docker secrets for GitLab stack projects, ensuring secrets are never in .env or docker-compose.yml, properly stored in ./secrets directory, and securely integrated with Docker secrets. Use whe",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:18.175325Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sqlite-with-gcov",
-  "description": "Guidance for compiling SQLite (or similar C projects) with gcov code coverage instrumentation. This skill should be used when tasks involve building software with gcov flags, setting up code coverage ",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

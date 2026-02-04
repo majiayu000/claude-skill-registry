@@ -1,9 +1,0 @@
-{
-  "name": "disambiguate-requirements",
-  "description": "Break vague requirements into precise business rules (BR-*), constraints (C-*), and formulas (F-*) for code generation. Orchestrates extraction of BR-*, C-*, F-* from REQ-*. Use after requirement-extr",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

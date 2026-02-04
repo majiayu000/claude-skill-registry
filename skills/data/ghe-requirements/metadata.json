@@ -1,9 +1,0 @@
-{
-  "name": "ghe-requirements",
-  "description": "This skill should be used when creating, updating, linking, or versioning requirements for GitHub Elements threads. Use when user mentions requirements, specs, REQ files, or when starting feature deve",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

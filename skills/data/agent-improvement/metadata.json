@@ -1,9 +1,0 @@
-{
-  "name": "agent-improvement",
-  "repo": "k002bill2/LiveMetro",
-  "category": "data",
-  "description": "Self-improvement loop for multi-agent workflows. Diagnose failures, improve tool descriptions, and learn from success/failure patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:53.845471Z",
-  "dir_name": "agent-improvement"
-}

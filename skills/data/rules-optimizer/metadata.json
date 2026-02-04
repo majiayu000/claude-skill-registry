@@ -1,9 +1,0 @@
-{
-  "name": "rules-optimizer",
-  "description": "Optimize and create Claude Rules (.claude/rules/*.md) following best practices.",
-  "repo": "hairihou/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

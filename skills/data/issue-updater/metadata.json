@@ -1,9 +1,0 @@
-{
-  "name": "issue-updater",
-  "description": "実装状況に応じて Issue の状態を更新する。「Issue 更新」「Issue を更新」「Issue 状態変更」「Issue をクローズ」「Issue 完了」「チケットを閉じる」「Issue の進捗を更新」などで起動。コメント追加やラベル変更、クローズ処理を実行。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

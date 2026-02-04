@@ -1,9 +1,0 @@
-{
-  "name": "android-debug",
-  "description": "Debug Android Flutter apps including runtime errors, build issues, device connection problems, and performance issues. Use when troubleshooting Android-specific problems, crashes, or deployment issues",
-  "repo": "cmwen/private-chat-hub",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

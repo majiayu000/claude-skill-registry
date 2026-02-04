@@ -1,8 +1,0 @@
-{
-  "name": "kpi-delta",
-  "repo": "cliftonc/drizzle-cube-skills",
-  "category": "development",
-  "description": "Configure KPI delta displays in drizzle-cube dashboards for showing metrics with change indicators and trends. Use when displaying KPIs with trends, growth rates, or comparison to previous period.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:34.694382Z"
-}

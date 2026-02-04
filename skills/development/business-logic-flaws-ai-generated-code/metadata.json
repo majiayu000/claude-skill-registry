@@ -1,8 +1,0 @@
-{
-  "name": "business-logic-flaws-ai-generated-code",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "development",
-  "description": "Understand business logic vulnerabilities in AI code including race conditions, integer overflow, and calculation errors that pass functional tests but create security holes. Use this skill when you n",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.299905Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "model-steering",
-  "description": "Control model behavior through persistent edits and steering interventions. Use when modifying model outputs, applying steering vectors, or creating persistently modified model versions.",
-  "repo": "ndif-team/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ndif-team/skills"
-}

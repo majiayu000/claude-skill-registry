@@ -1,9 +1,0 @@
-{
-  "name": "faber-coordinator",
-  "description": "Coordinate FABER-DB operations within FABER workflow phases",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

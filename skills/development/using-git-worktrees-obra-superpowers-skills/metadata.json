@@ -1,7 +1,0 @@
-{
-  "name": "using-git-worktrees-obra-superpowers-skills",
-  "description": "Create isolated git worktrees with smart directory selection and safety verification",
-  "category": "development",
-  "source": "github.com/obra/superpowers-skills",
-  "imported_at": "2026-01-24T14:54:12.109604Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "nxs-sq-name-generator",
-  "repo": "sameera/nexus",
-  "category": "product",
-  "description": "Generate the next sequential file or folder name for directories with numbered prefixes (e.g., 01-setup.md, 02-init.md). Use when creating a new file or folder that should follow an existing numbering",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:16.936382Z"
-}

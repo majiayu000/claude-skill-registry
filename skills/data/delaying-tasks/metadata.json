@@ -1,9 +1,0 @@
-{
-  "name": "delaying-tasks",
-  "description": "Schedule a delayed or interval-based action with minimal heartbeats. Use to wait before running a check (e.g., GH Actions, PR status, CI pipeline) or to poll on a bounded interval. Trigger on: \"wait\",",
-  "repo": "randlee/synaptic-canvas",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

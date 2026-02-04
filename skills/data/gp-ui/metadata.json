@@ -1,9 +1,0 @@
-{
-  "name": "gp-ui",
-  "description": "Use when building React UIs for TheGP applications, migrating existing UIs to @gp/ui components, integrating Tailwind v4 with @gp/ui theme, or answering questions about available components, design to",
-  "repo": "thegpvc/gp-ui",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

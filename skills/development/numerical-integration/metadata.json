@@ -1,7 +1,0 @@
-{
-  "name": "numerical-integration",
-  "description": "Select and configure time integration methods for ODE/PDE simulations. Use when choosing explicit/implicit schemes, setting error tolerances, adapting time steps, diagnosing integration accuracy, plan",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.140277Z"
-}

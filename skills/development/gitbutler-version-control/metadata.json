@@ -1,8 +1,0 @@
-{
-  "name": "gitbutler-version-control",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Version control using GitButler's virtual branches for parallel multi-branch work, post-hoc organization, and multi-agent collaboration. Use when working with GitButler, virtual branches, `but` comman",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.982833Z"
-}

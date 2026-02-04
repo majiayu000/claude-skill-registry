@@ -1,9 +1,0 @@
-{
-  "name": "plugin-versioning",
-  "description": "Guide for versioning and releasing Claude Code plugins. Covers semantic versioning, CHANGELOG maintenance, and the automated release workflow.",
-  "repo": "WorldCentralKitchen/python-dev-framework",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "build-pov-ray",
-  "description": "Guidance for building POV-Ray (Persistence of Vision Raytracer) from source, particularly legacy versions like 2.2. This skill should be used when tasked with downloading, compiling, and installing PO",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

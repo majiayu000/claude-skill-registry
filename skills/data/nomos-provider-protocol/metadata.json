@@ -1,9 +1,0 @@
-{
-  "name": "nomos-provider-protocol",
-  "description": "Guide for working with Nomos provider protocol buffers including modifying .proto files, buf workflow, code generation, versioning, and protocol evolution. Use this when modifying the gRPC contract, a",
-  "repo": "autonomous-bits/nomos",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

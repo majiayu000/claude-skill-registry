@@ -1,8 +1,0 @@
-{
-  "name": "researchgrounding-auditor",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "design",
-  "description": "Audit outputs against provided sources, enforce grounding, and log an audit trail. Use when strict source fidelity is required.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:27.066831Z"
-}

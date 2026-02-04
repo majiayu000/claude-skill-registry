@@ -1,9 +1,0 @@
-{
-  "name": "ddd-planning",
-  "description": "Domain-Driven Design 기획 및 설계 전문 skill. 프로젝트 도메인 분석, Bounded Context 정의, Aggregate 설계, Context Mapping, Event Storming, Ubiquitous Language 정의 등 DDD 전체 프로세스를 지원합니다. 사용 시기: (1) DDD 기획/설계를 요청할 때 (2) 도메인 ",
-  "repo": "jskjw157/FanPulse",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jskjw157/FanPulse"
-}

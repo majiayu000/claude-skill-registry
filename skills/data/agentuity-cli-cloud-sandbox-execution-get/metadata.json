@@ -1,9 +1,0 @@
-{
-  "name": "agentuity-cli-cloud-sandbox-execution-get",
-  "description": "Get information about a specific execution. Requires authentication. Use for Agentuity cloud platform operations",
-  "repo": "agentuity/discord-help-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

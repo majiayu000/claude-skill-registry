@@ -1,9 +1,0 @@
-{
-  "name": "id-generator",
-  "description": "Generate intelligent session IDs based on detected content source type. Analyzes ContentSummary and creates meaningful IDs (podcast-xyz, transcript-abc, etc.).",
-  "repo": "memorysaver/looplia-core",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

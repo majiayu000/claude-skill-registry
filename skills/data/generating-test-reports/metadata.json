@@ -1,9 +1,0 @@
-{
-  "name": "generating-test-reports",
-  "description": "Generate comprehensive test reports with metrics, coverage, and visualizations.Use when performing specialized testing.Trigger with phrases like \"generate test report\", \"create test documentation\", or",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "install-windows-311",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "description": "Guidance for installing and running Windows 3.11 in QEMU with VNC access and web-based noVNC interface. This skill should be used when tasks involve setting up legacy Windows 3.11 environments, config",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:18.694769Z"
-}

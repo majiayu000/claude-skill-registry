@@ -1,9 +1,0 @@
-{
-  "name": "eld-record-knowledge-transfer",
-  "description": "PCE (Process-Context Engine) の知識移転スキル。セッション/メンバー間での知識の連続性を確保し、引き継ぎを円滑にする。トリガー条件:- 「引き継ぎ資料を作って」- 「次の人に渡す情報をまとめて」- 新メンバーのオンボーディング時- 長期プロジェクトの節目- 「プロジェクトの状況を共有して」",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

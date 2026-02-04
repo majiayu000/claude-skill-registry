@@ -1,9 +1,0 @@
-{
-  "name": "shell-script-installer",
-  "description": "Use this skill when the user wants to create, write, or install shell scripts. Prefers Fish shell, handles writing fish/bash/zsh/sh scripts and installing them to ~/bin/scripts with proper permissions",
-  "repo": "bradreaves/chezmoi",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

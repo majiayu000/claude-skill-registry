@@ -1,9 +1,0 @@
-{
-  "name": "spring-maven-modular",
-  "description": "Maven Modular Architecture with profiles for optional components.Enable/disable modules like Redis, Kafka, RabbitMQ dynamically.",
-  "repo": "mduongvandinh/skills-java-spring",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

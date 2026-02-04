@@ -1,9 +1,0 @@
-{
-  "name": "granola-core-workflow-a",
-  "description": "Meeting preparation and template setup workflow with Granola.\nUse when preparing for important meetings, setting up note templates,\nor configuring meeting-specific capture settings.\nTrigger with phras",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

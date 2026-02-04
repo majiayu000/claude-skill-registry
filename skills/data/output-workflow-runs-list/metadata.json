@@ -1,9 +1,0 @@
-{
-  "name": "output-workflow-runs-list",
-  "description": "List Output SDK workflow execution history. Use when finding failed runs, reviewing past executions, identifying workflow IDs for debugging, filtering runs by workflow type, or investigating recent wo",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

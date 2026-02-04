@@ -1,9 +1,0 @@
-{
-  "name": "git-spice",
-  "description": "Manage stacked Git branches and create multiple pull requests using git-spice (gs). Use when organizing feature branches into stacks, rebasing changes across branches, creating PR chains, navigating b",
-  "repo": "abatilo/vimrc",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

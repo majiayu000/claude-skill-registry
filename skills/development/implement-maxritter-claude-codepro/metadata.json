@@ -1,7 +1,0 @@
-{
-  "name": "implement-maxritter-claude-codepro",
-  "description": "Execute implementation plans in batches with Claude CodePro",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.617180Z"
-}

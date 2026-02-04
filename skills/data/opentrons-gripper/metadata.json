@@ -1,9 +1,0 @@
-{
-  "name": "opentrons-gripper",
-  "description": "Opentrons Flex Gripper - automated labware movement between deck locations, modules, waste chute, and off-deck storage with precise positioning and offset control for hands-free plate transfers",
-  "repo": "jkitchin/skillz",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

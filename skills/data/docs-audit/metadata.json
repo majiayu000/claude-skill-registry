@@ -1,9 +1,0 @@
-{
-  "name": "docs-audit",
-  "description": "> Triggers (ANY of these should invoke this skill):",
-  "repo": "sane-apps/SaneProcess",
-  "category": "security",
-  "tags": [],
-  "stars": 2,
-  "source": "github.com/sane-apps/SaneProcess"
-}

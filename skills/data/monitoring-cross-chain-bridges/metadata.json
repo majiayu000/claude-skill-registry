@@ -1,9 +1,0 @@
-{
-  "name": "monitoring-cross-chain-bridges",
-  "description": "Monitor cross-chain bridge security, liquidity, and transaction status across networks.Use when monitoring cross-chain asset transfers.Trigger with phrases like \"monitor bridges\", \"check cross-chain\",",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

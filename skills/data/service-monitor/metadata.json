@@ -1,9 +1,0 @@
-{
-  "name": "service-monitor",
-  "description": "Monitor service health at raspberrypi.local:8000. Check service status, add monitored services, view notifications, and manage health check configuration.",
-  "repo": "lakowske/service-monitor",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

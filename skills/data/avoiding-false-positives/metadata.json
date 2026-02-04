@@ -1,9 +1,0 @@
-{
-  "name": "avoiding-false-positives",
-  "description": "Prevents false positive findings by recognizing framework patterns, codebase conventions, and common non-issues. Use when uncertain whether something is a real issue.",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

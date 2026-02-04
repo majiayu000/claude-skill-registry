@@ -1,9 +1,0 @@
-{
-  "name": "charmcraft",
-  "description": "Expert assistant for developing Juju charms using charmcraft. Use when initializing charm projects, building charms, managing charm libraries, publishing to Charmhub, running tests, or working with ch",
-  "repo": "tonyandrewmeyer/charming-with-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

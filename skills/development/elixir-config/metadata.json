@@ -1,8 +1,0 @@
-{
-  "name": "elixir-config",
-  "repo": "vinnie357/claude-skills",
-  "category": "development",
-  "description": "Guide for Elixir application configuration focusing on runtime vs compile-time config, config.exs, runtime.exs, Application.compile_env, and Application.get_env best practices",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:28.821556Z"
-}

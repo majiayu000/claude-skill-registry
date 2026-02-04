@@ -1,9 +1,0 @@
-{
-  "name": "fractal-docs-generator",
-  "description": "目录级 CLAUDE.md 生成。触发：mkdir、create directory、目录结构变更。",
-  "repo": "Dimon94/cc-devflow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

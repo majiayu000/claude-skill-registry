@@ -1,9 +1,0 @@
-{
-  "name": "implementing-repository-pattern",
-  "description": "Implements the Repository pattern with Service Layer for data access abstraction in .NET. Use when separating data access logic from business logic or building testable data layers.",
-  "repo": "christian289/dotnet-with-claudecode",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/christian289/dotnet-with-claudecode"
-}

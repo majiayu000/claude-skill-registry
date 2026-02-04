@@ -1,9 +1,0 @@
-{
-  "name": "get-git-diff",
-  "description": "Examines git diffs between commits or branches with intelligent analysis. Provides unified diff format with comprehensive summaries including file statistics, rename detection, and merge commit handli",
-  "repo": "Olino3/forge",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

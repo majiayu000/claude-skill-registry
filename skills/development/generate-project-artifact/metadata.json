@@ -1,8 +1,0 @@
-{
-  "name": "generate-project-artifact",
-  "repo": "Rafael-Rueda/sardius",
-  "category": "development",
-  "description": "Creates an antifact following the project's patterns and methods. Use when you need to create a new artifact in a bounded context/module. Use to create new entities, services, repositories, or any oth",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:46.943051Z"
-}

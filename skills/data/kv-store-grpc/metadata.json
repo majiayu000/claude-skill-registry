@@ -1,9 +1,0 @@
-{
-  "name": "kv-store-grpc",
-  "description": "Guide for implementing gRPC-based key-value store services in Python. This skill should be used when building gRPC servers with protobuf definitions, implementing KV store operations (Get, Set, Delete",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

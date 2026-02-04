@@ -1,9 +1,0 @@
-{
-  "name": "copilot-flow",
-  "description": "AI collaboration workflow plugin - Implements automated collaborative development process between Claude and Copilot through structured 5-stage workflow",
-  "repo": "Aykahshi/copilot-mcp-tool",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

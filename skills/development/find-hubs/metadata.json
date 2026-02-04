@@ -1,8 +1,0 @@
-{
-  "name": "find-hubs",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find hub notes (highly connected notes with many links). Triggers on \"hubs\", \"hub notes\", \"most connected\", \"popular notes\", \"highly connected notes\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:47.555774Z"
-}

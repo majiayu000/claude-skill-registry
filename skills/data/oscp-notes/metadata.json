@@ -1,9 +1,0 @@
-{
-  "name": "oscp-notes",
-  "description": "The assistant provides detailed OSCP preparation notes covering service enumeration, exploitation techniques, and protocol-specific attacks. Activate when users ask about \"OSCP enumeration,\" \"service ",
-  "repo": "zebbern/SecOps-CLI-Guides",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zebbern/SecOps-CLI-Guides"
-}

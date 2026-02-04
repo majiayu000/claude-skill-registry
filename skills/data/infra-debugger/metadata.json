@@ -1,9 +1,0 @@
-{
-  "name": "infra-debugger",
-  "description": "Analyze infrastructure deployment errors - categorize error types (permission/config/resource/state), search issue log for historical solutions, ranksolutions by success rate and context match, propos",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

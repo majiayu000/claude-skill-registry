@@ -1,9 +1,0 @@
-{
-  "name": "validating-csrf-protection",
-  "description": "Validate CSRF protection implementations for security gaps. Use when reviewing form security or state-changing operations. Trigger with 'validate CSRF', 'check CSRF protection', or 'review token secur",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

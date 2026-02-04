@@ -1,9 +1,0 @@
-{
-  "name": "justfile-security-patterns",
-  "description": "Level 2 patterns - vulns, lic, sbom, doctor (security, compliance, environment health)",
-  "repo": "bryonjacob/aug",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

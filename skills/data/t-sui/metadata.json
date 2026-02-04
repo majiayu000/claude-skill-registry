@@ -1,9 +1,0 @@
-{
-  "name": "t-sui",
-  "description": "Server-rendered TypeScript UI framework. Use when building t-sui applications, creating UI components, handling forms with server actions, using data tables, setting up routes, or implementing WebSock",
-  "repo": "michalCapo/t-sui",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

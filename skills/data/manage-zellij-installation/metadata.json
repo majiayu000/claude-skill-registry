@@ -1,9 +1,0 @@
-{
-  "name": "manage-zellij-installation",
-  "description": "Installs and configures Zellij terminal multiplexer from GitHub releases. Use when setting up Zellij for terminal workspace management.",
-  "repo": "PerArneng/computer-conf-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

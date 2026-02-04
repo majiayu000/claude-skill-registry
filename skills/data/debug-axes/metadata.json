@@ -1,9 +1,0 @@
-{
-  "name": "debug-axes",
-  "description": "プロットのスケール（対数軸など）、目盛、表示範囲の不具合を診断し、意図した見た目に修正する",
-  "repo": "tatsuki-washimi/gwexpy",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tatsuki-washimi/gwexpy"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "permission-management",
-  "description": "Central authority for Claude Code permissions. Covers permission system (tiered model, read-only, bash, file modification), permission rules (allow, ask, deny), rule precedence, permission modes (defa",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/melodic-software/claude-code-plugins"
-}

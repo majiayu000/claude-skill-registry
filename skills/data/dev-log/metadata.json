@@ -1,9 +1,0 @@
-{
-  "name": "dev-log",
-  "description": "CareMatch 개발 로그 작성. 작업 내용을 날짜별로 기록하고 프로젝트 상태를 업데이트합니다. 사용법 - \"개발 로그 작성해줘\", \"오늘 작업 기록해줘\", \"프로젝트 상태 업데이트해줘\"",
-  "repo": "saintgo7/app-hospital-yoyang",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

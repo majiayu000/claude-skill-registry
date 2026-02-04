@@ -1,9 +1,0 @@
-{
-  "name": "eslint-configuration",
-  "description": "Use when eSLint configuration including config files, extends, plugins, and environment setup.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

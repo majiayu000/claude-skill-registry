@@ -1,9 +1,0 @@
-{
-  "name": "reading-notion",
-  "description": "Notion URLが会話に登場した時、またはNotionのコンテンツを検索・取得する必要がある時に使用してください。",
-  "repo": "syou6162/claude-code-commands",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

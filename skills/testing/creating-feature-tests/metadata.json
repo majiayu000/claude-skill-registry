@@ -1,8 +1,0 @@
-{
-  "name": "creating-feature-tests",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "testing",
-  "description": "Automates the creation of behavior-driven, fail-first feature tests for user-facing behaviors. Works across any language or framework. Use when features lack behavioral tests, implementing fail-first ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:20.856590Z"
-}

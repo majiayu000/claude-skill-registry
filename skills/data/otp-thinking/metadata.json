@@ -1,9 +1,0 @@
-{
-  "name": "otp-thinking",
-  "description": "Use when writing OTP code in Elixir. Contains insights about GenServer bottlenecks, supervision patterns, ETS caching, and choosing between OTP abstractions.",
-  "repo": "georgeguimaraes/claude-code-elixir",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

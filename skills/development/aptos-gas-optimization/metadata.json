@@ -1,7 +1,0 @@
-{
-  "name": "aptos-gas-optimization",
-  "description": "Expert on Aptos gas optimization, performance tuning, storage costs, execution efficiency, inline functions, aggregator usage, parallel execution, table vs vector tradeoffs, and gas profiling tools. T",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.488042Z"
-}

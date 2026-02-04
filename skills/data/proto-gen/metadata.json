@@ -1,9 +1,0 @@
-{
-  "name": "proto-gen",
-  "description": "Generate C++ and Python code from Protocol Buffer definitions. Use when user asks to generate proto files, compile protos, regenerate gRPC code, or mentions protobuf/gRPC generation.",
-  "repo": "AlexandrePrevot/OrderParserProcessor",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

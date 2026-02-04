@@ -1,9 +1,0 @@
-{
-  "name": "maceff-todo-restoration",
-  "description": "USE IMMEDIATELY when user reports TODO accessibility issues or session migration detected. Restores TODO context using policy-guided recovery.",
-  "repo": "cversek/MacEff",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

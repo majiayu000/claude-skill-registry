@@ -1,9 +1,0 @@
-{
-  "name": "upgrading-to-prisma-6",
-  "description": "Migrate from Prisma 5 to Prisma 6 handling breaking changes including Buffer to Uint8Array, implicit m-n PK changes, NotFoundError to P2025, and reserved keywords. Use when upgrading Prisma, encounter",
-  "repo": "djankies/claude-configs",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

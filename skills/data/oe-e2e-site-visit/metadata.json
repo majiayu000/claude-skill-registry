@@ -1,9 +1,0 @@
-{
-  "name": "oe-e2e-site-visit",
-  "description": "End-to-end verification for the site-visit (Step 7) flow. Use when you need to reproduce or validate that the system reaches the site-visit prompt/options and can proceed to confirmation, either via d",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

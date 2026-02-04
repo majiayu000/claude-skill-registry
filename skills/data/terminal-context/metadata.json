@@ -1,9 +1,0 @@
-{
-  "name": "terminal-context",
-  "description": "Complete Kitty terminal awareness + control for coding agents: list panes/tabs, read scrollback, map ports→processes, parse per-pane git/last-command metadata (from shell hooks), and send commands/foc",
-  "repo": "GlacierEQ/mastermind",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GlacierEQ/mastermind"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "llm-sdk-guide",
-  "description": "U-llm-sdk and claude-only-sdk patterns. Use when working on projects with LLM service, designing LLM integrations, or implementing AI-powered features.",
-  "repo": "chkim-su/forge-editor",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "control-mapper",
-  "description": "Map security controls between different compliance frameworks including NIST 800-53, ISO 27001, CIS Controls, PCI-DSS, HIPAA, SOC 2, and CMMC. Use this skill for gap analysis, multi-framework complian",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

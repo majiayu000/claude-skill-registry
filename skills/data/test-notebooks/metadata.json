@@ -1,9 +1,0 @@
-{
-  "name": "test-notebooks",
-  "description": "全てのプロジェクトノートブックを順次実行し、エラーがないか確認する",
-  "repo": "tatsuki-washimi/gwexpy",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tatsuki-washimi/gwexpy"
-}

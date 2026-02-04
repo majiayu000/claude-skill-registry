@@ -1,9 +1,0 @@
-{
-  "name": "article-queue",
-  "description": "Manage article task queue - add, filter, update status, and track multi-language outputs",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

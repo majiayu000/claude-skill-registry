@@ -1,8 +1,0 @@
-{
-  "name": "version-controlling-global-configuration",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "development",
-  "description": "Use when user asks about version controlling ~/.claude directory or syncing Claude Code settings across machines. Provides git setup instructions and .gitignore patterns to track only portable setting",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.777579Z"
-}

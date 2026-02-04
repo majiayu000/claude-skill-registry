@@ -1,9 +1,0 @@
-{
-  "name": "chrome-extension-icons",
-  "description": "Search and generate icons for Chrome browser extensions. Automatically downloads SVG icons from Iconify (275,000+ free icons), converts them to required PNG sizes (16x16, 32x32, 48x48, 128x128), and u",
-  "repo": "Boulea7/ChromeExtensionIconsSkill",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

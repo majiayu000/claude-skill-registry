@@ -1,8 +1,0 @@
-{
-  "name": "single-cell-cellphonedb-communication-mapping",
-  "repo": "Starlitnightly/omicverse",
-  "category": "design",
-  "description": "Run omicverse's CellPhoneDB v5 wrapper on annotated single-cell data to infer ligand-receptor networks and produce CellChat-style visualisations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.292751Z"
-}

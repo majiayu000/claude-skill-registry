@@ -1,9 +1,0 @@
-{
-  "name": "writings-expert",
-  "description": "Use this skill when discussing technical topics Ryan has written about - OpenPKG, TypeScript tooling, agent-native architecture, documentation coverage. Provides deep context from his actual writings.",
-  "repo": "ryanwaits/site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ryanwaits/site"
-}

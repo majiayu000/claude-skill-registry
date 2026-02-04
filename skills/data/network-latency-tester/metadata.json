@@ -1,9 +1,0 @@
-{
-  "name": "network-latency-tester",
-  "description": "Network Latency Tester - Auto-activating skill for Performance Testing.Triggers on: network latency tester, network latency testerPart of the Performance Testing skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

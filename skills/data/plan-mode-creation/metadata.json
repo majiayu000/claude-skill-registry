@@ -1,9 +1,0 @@
-{
-  "name": "plan-mode-creation",
-  "description": "Planモードの設計・作成・設定を自動化するスキル。AI開発ワークフローのPlanモードを効率的に構築し、チェックポイント管理・進捗監視・エラー回復機能を統合。SO8Tプロジェクト専用に最適化。",
-  "repo": "zapabob/SO8T",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zapabob/SO8T"
-}

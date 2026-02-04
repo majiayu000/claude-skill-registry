@@ -1,9 +1,0 @@
-{
-  "name": "copilot-tool-design",
-  "description": "Guide to designing and implementing tools for the vscode-copilot-chat extension, including patterns, testing, and best practices",
-  "repo": "OmerMachluf/vscode-copilot-chat",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

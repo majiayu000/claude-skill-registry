@@ -1,9 +1,0 @@
-{
-  "name": "create-application",
-  "description": "Orchestrates the creation of a full job application package. Triggers whenever the user shares a new job posting, provides a link/URL, pastes a job description or specification, or uses phrases like \"",
-  "repo": "IgorWarzocha/agentic-job-search-vault",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

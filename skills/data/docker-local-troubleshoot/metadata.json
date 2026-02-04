@@ -1,9 +1,0 @@
-{
-  "name": "docker-local-troubleshoot",
-  "description": "Diagnose and fix docker-local issues - container failures, connectivity problems, port conflicts, and configuration errors",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

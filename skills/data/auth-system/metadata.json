@@ -1,9 +1,0 @@
-{
-  "name": "auth-system",
-  "description": "Auth system (Clerk + Convex + anonymous JWT) guidelines and planned permissions/upgrade behavior.",
-  "repo": "raythurnvoid/experiment--t3-chat",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

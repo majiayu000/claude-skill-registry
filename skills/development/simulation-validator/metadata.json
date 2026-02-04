@@ -1,7 +1,0 @@
-{
-  "name": "simulation-validator",
-  "description": "Validate simulations before, during, and after execution. Use for pre-flight checks, runtime monitoring, post-run validation, diagnosing failed simulations, checking convergence, detecting NaN/Inf, or",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.196347Z"
-}

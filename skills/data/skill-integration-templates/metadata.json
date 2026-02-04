@@ -1,9 +1,0 @@
-{
-  "name": "skill-integration-templates",
-  "description": "Standardized templates and patterns for integrating skills into agent prompts. Reduces token overhead through reusable skill reference syntax, action verbs, and progressive disclosure usage guidelines",
-  "repo": "akaszubski/autonomous-dev",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

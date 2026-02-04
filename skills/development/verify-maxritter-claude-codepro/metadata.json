@@ -1,7 +1,0 @@
-{
-  "name": "verify-maxritter-claude-codepro",
-  "description": "Run tests and fix issues end-to-end with Claude CodePro",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.506922Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "discord-skill",
-  "description": "Discord REST API 서버/채널 관리 스킬. 채널 CRUD, 권한 관리, 메시지 전송, 웹훅 지원. \"Discord\", \"디스코드\", \"채널 관리\", \"discord bot\" 키워드로 활성화.",
-  "repo": "jiunbae/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

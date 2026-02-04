@@ -1,9 +1,0 @@
-{
-  "name": "generating-rbs",
-  "description": "Generates RBS type signatures from Ruby source files. Triggers when creating type definitions, adding types to Ruby code, or generating .rbs files for classes/modules without existing RBS signatures.",
-  "repo": "DmitryPogrebnoy/ruby-agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

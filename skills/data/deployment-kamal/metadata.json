@@ -1,9 +1,0 @@
-{
-  "name": "deployment-kamal",
-  "description": "This skill should be used when the user asks about deploying Rails applications, Kamal deployment, Docker containers, production configuration, environment variables, secrets management, CI/CD pipelin",
-  "repo": "sjnims/rails-expert",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

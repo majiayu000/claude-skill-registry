@@ -1,8 +1,0 @@
-{
-  "name": "tbc-kicker-gitlab-cicd-generator",
-  "repo": "rafaelcalleja/claude-market-place",
-  "category": "devops",
-  "description": "This skill should be used when the user asks to \"generate gitlab-ci.yml\", \"create GitLab CI pipeline\", \"configure GitLab CI/CD\", \"use To-Be-Continuous templates\", \"setup TBC templates\", \"create CI/CD ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:47.161994Z"
-}

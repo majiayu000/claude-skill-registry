@@ -1,8 +1,0 @@
-{
-  "name": "frontend-visual-regression-testing",
-  "repo": "samjhecht/wrangler",
-  "category": "design",
-  "description": "Use when implementing UI components, design systems, or responsive layouts - verifies visual correctness through screenshot comparison and DevTools verification; prevents shipping broken UI",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:50.187449Z"
-}

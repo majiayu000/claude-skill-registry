@@ -1,9 +1,0 @@
-{
-  "name": "create-sprint",
-  "description": "Sprint(Iteration) 목표 설정 및 시작. Use when (1) 새 Sprint 시작,(2) Sprint 계획 수립, (3) /SEMO:sprint create 커맨드.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

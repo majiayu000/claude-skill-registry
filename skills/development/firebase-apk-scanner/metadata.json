@@ -1,7 +1,0 @@
-{
-  "name": "firebase-apk-scanner",
-  "description": "Scans Android APKs for Firebase security misconfigurations including open databases, storage buckets, authentication issues, and exposed cloud functions. Use when analyzing APK files for Firebase vuln",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.600234Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "generate-changeset",
-  "description": "Generate a changeset file for the current changes following the changesets pattern used in the project.",
-  "repo": "seanogdev/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

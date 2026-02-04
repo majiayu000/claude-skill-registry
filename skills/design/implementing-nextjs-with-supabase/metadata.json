@@ -1,8 +1,0 @@
-{
-  "name": "implementing-nextjs-with-supabase",
-  "repo": "lifegenieai/claude-skills",
-  "category": "design",
-  "description": "Guides implementation of Next.js 15 App Router features with Supabase SSR. Helps choose between Server/Client Components, select correct Supabase client, and follow security patterns. Use when buildin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:59.356075Z"
-}

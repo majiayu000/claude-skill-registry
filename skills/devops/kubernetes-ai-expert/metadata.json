@@ -1,8 +1,0 @@
-{
-  "name": "kubernetes-ai-expert",
-  "repo": "frankxai/ai-architect",
-  "category": "devops",
-  "description": "Deploy and operate AI workloads on Kubernetes with GPU scheduling, model serving, and MLOps patterns",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:10.946456Z"
-}

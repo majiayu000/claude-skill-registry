@@ -1,8 +1,0 @@
-{
-  "name": "mova-runtime-binding-code-scaffolder-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Given a MOVA skill id, target runtime, and a list of envelopes to implement, generate code skeleton(s) and optional binding JSON files that connect these envelopes to real execution (HTTP, CLI, etc.).",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:05.656076Z"
-}

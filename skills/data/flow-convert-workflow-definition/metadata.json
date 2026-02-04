@@ -1,9 +1,0 @@
-{
-  "name": "flow-convert-workflow-definition",
-  "description": "Convert Flow SDK workflow class to Output SDK workflow() function. Use when migrating workflow.ts files from class-based to functional definitions.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

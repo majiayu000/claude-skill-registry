@@ -1,9 +1,0 @@
-{
-  "name": "database-fundamentals",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "data",
-  "description": "Auto-invoke when reviewing schema design, database queries, ORM usage, or migrations. Enforces normalization, indexing awareness, query optimization, and migration safety.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:16.996106Z",
-  "dir_name": "database-fundamentals"
-}

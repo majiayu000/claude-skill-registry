@@ -1,9 +1,0 @@
-{
-  "name": "zenn-markdown",
-  "description": "This skill should be used when the user asks about \"Zenn記法\", \"Zenn Markdown\", \"メッセージブロック\", \"アコーディオン\", \"埋め込み\", \"Zenn特有の記法\", or mentions writing Zenn articles with specific formatting needs. Provides co",
-  "repo": "kokuyouwind/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

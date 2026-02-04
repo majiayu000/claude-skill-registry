@@ -1,8 +1,0 @@
-{
-  "name": "deploymentmodel-provisioning",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Build and provision Ollama models from Modelfiles, verify health, and hot-swap personas. Use to translate Modelfile text into runnable models.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.622308Z"
-}

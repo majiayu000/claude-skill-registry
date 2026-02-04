@@ -1,9 +1,0 @@
-{
-  "name": "deploy-guide",
-  "description": "Guide user through actual deployment steps for their application. This skill should be used when a project is ready to deploy to production. Walks through pre-deployment checks, deployment execution, ",
-  "repo": "JHaugaard/refine-workflow-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

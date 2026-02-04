@@ -1,8 +1,0 @@
-{
-  "name": "hypershift-openstack-provider",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "devops",
-  "description": "Use this skill when you need to deploy HyperShift clusters on OpenStack infrastructure with proper flavor selection and network configuration",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.257010Z"
-}

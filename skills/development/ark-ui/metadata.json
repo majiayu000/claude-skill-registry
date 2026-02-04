@@ -1,7 +1,0 @@
-{
-  "name": "ark-ui",
-  "description": "Headless component library for React. Use when building UI components with @ark-ui/react, implementing accessible form inputs, overlays, navigation patterns, or needing guidance on Ark UI's data attri",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.336263Z"
-}

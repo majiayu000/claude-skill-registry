@@ -1,9 +1,0 @@
-{
-  "name": "task-specification-creator",
-  "description": "ユーザーから与えられたタスクを単一責務の原則に基づいて分解し、Phase 1からPhase 11までの実行可能なタスク仕様書ドキュメントを生成する。スキル選定は仕様書作成時に動的に行う。使用するスキルはタスクの性質に応じて現在利用可能なスキル（.claude/skills/）から選定する。Anchors:• Clean Code (Robert C. Martin) / 適用: 単一責務の原則 /",
-  "repo": "daishiman/AIWorkflowOrchestrator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

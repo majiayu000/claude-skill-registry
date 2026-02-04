@@ -1,9 +1,0 @@
-{
-  "name": "understanding-konflux-resources",
-  "description": "Use when user asks about Konflux resources, Custom Resources, Applications, Components, Snapshots, IntegrationTestScenarios, ReleasePlans, ReleasePlanAdmissions, or namespace placement. Provides quick",
-  "repo": "konflux-ci/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

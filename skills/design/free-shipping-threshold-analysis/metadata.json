@@ -1,8 +1,0 @@
-{
-  "name": "free-shipping-threshold-analysis",
-  "repo": "fulfilio/dtc-claude-skills",
-  "category": "design",
-  "description": "Analyzes Fulfil order data to determine profitable free shipping thresholds using order value distribution, hero product analysis, and shipping economics. Use when merchants ask about free shipping st",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:44.672645Z"
-}

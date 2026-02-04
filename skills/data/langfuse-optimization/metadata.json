@@ -1,9 +1,0 @@
-{
-  "name": "langfuse-optimization",
-  "description": "Analyzes writing-ecosystem traces to fix style.yaml, template.yaml, and tools.yaml based on quality issues found in production runs.",
-  "repo": "mberto10/web_research_agent",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "scan-existing-implementation",
-  "description": "プロジェクト内の既存ユーティリティ・実装をスキャンして発見するスキル。プランニング時に再利用可能なコードを見つけ、車輪の再発明を防ぐ。",
-  "repo": "ushironoko/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "brevo",
-  "description": "Full access to Brevo (email marketing, newsletters) using curl and the Brevo REST API directly - no MCP server or additional dependencies required.",
-  "repo": "getzenai/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

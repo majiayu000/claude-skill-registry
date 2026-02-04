@@ -1,9 +1,0 @@
-{
-  "name": "venn-diagram-generator",
-  "description": "This skill generates interactive Venn diagram visualizations using the venn.js JavaScript library. Use this skill when users request creating Venn diagrams, set visualizations, overlap diagrams, or co",
-  "repo": "dmccreary/claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

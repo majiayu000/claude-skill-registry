@@ -1,9 +1,0 @@
-{
-  "name": "commitmsg",
-  "description": "Generate a concise commit message by analyzing git diff changes",
-  "repo": "trufae/mai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

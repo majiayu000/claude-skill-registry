@@ -1,8 +1,0 @@
-{
-  "name": "go-security-patterns",
-  "repo": "dkoosis/cc-plugins",
-  "category": "development",
-  "description": "This skill should be used when the user asks about \"gosec\", \"G115\", \"G404\", \"integer overflow\", \"weak random\", \"crypto/rand\", \"security lint\", \"hardcoded credentials\", or needs guidance on fixing Go s",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:16.491834Z"
-}

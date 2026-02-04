@@ -1,8 +1,0 @@
-{
-  "name": "docusaurus-setup",
-  "repo": "bilalmk/ai-native-book",
-  "category": "devops",
-  "description": "This skill use to deploy the Docusaurus site on github pages, deploy site to GitHub Pages using a CI/CD pipeline with the GitHub CLI.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.860665Z"
-}

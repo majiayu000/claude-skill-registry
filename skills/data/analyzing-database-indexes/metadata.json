@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-database-indexes",
-  "description": "Use when you need to work with database indexing.This skill provides index design and optimization with comprehensive guidance and automation.Trigger with phrases like \"create indexes\", \"optimize inde",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

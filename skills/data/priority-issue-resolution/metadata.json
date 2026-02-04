@@ -1,9 +1,0 @@
-{
-  "name": "priority-issue-resolution",
-  "description": "Autonomous issue resolution workflow for processing priority-critical/priority-high issues in TradeStream. Covers claiming, investigation, worktree-based fixes, PR shepherding, and CI monitoring. Acti",
-  "repo": "tradestreamhq/tradestream",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

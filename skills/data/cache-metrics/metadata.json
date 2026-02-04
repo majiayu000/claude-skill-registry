@@ -1,9 +1,0 @@
-{
-  "name": "cache-metrics",
-  "description": "Analyzes the codex cache and generates comprehensive statistics about cache performance, storage usage, and health status.Delegates to fractary CLI for cache analysis operations.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

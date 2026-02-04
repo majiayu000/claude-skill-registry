@@ -1,9 +1,0 @@
-{
-  "name": "compare-cpython-versions",
-  "description": "Compare CPython source code between two Python versions to identify changes in headers and structs. Use this when adding support for a new Python version to understand what changed between versions.\n",
-  "repo": "DataDog/dd-trace-py",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/DataDog/dd-trace-py"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "create-blog-post-from-url",
-  "description": "从给定 URL 抽取信息并生成新的博客 Markdown 文章、资源目录和 frontmatter。",
-  "repo": "celery94/celery94.github.io",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

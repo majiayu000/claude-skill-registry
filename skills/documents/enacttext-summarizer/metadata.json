@@ -1,8 +1,0 @@
-{
-  "name": "enacttext-summarizer",
-  "repo": "EnactProtocol/enact",
-  "category": "documents",
-  "description": "Analyzes text and provides word count, character count, and sentence statistics",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:35.963555Z"
-}

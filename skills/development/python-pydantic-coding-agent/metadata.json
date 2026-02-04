@@ -1,8 +1,0 @@
-{
-  "name": "python-pydantic-coding-agent",
-  "repo": "TheApolloProject/ops_deck",
-  "category": "development",
-  "description": "A skill that configures the agent to design, refactor, validate, and debug Pydantic v2 and v1 models, validators, and settings. Use this skill for structured data modeling, API schema generation, vali",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:53.958213Z"
-}

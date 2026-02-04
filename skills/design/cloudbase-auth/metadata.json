@@ -1,8 +1,0 @@
-{
-  "name": "cloudbase-auth",
-  "repo": "TencentCloudBase/awesome-cloudbase-examples",
-  "category": "design",
-  "description": "A single skill that helps design and implement CloudBase Auth v2 using Web SDK, Node SDK, and HTTP APIs, including login methods, tokens, and best practices.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:25.449873Z"
-}

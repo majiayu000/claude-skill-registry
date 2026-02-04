@@ -1,8 +1,0 @@
-{
-  "name": "gitreleaseprep",
-  "repo": "chrislyons/carbon-acx",
-  "category": "development",
-  "description": "Prepare releases with semantic versioning, changelog generation, git tags, GitHub releases, and deployment bundle creation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:28.346913Z"
-}

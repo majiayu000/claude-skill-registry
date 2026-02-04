@@ -1,9 +1,0 @@
-{
-  "name": "precommit",
-  "description": "Running precommit checks and build validation. ALWAYS use after ANY code changes.",
-  "repo": "motlin/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

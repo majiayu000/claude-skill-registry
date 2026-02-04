@@ -1,9 +1,0 @@
-{
-  "name": "maintain-environment",
-  "description": "Maintain the repo devcontainer environment and related workflow files. Use when changing .devcontainer or environment setup scripts.",
-  "repo": "JoernStoehler/ai-forecasting-hackathon",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

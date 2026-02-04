@@ -1,9 +1,0 @@
-{
-  "name": "pre-dev-research",
-  "description": "Gate 0 research phase for pre-dev workflow. Dispatches 3 parallel research agentsto gather codebase patterns, external best practices, and framework documentationBEFORE creating PRD/TRD. Outputs resea",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

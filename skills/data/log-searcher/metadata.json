@@ -1,9 +1,0 @@
-{
-  "name": "log-searcher",
-  "description": "Searches logs by content keywords, patterns, and filters with context extraction",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

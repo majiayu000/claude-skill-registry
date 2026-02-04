@@ -1,9 +1,0 @@
-{
-  "name": "dart-resolve-workspace-symbol",
-  "description": "To search for symbols across Dart workspaces, resolve a symbol name to find definitions or catch spelling errors.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

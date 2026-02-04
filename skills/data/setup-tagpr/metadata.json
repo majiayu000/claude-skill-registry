@@ -1,9 +1,0 @@
-{
-  "name": "setup-tagpr",
-  "description": "Set up tagpr for automated release management in a repository. tagpr automatically creates and updates pull requests for unreleased items, tags them when merged, and creates GitHub Releases. Use this ",
-  "repo": "handlename/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

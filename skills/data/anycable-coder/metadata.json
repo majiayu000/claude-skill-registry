@@ -1,9 +1,0 @@
-{
-  "name": "anycable-coder",
-  "description": "Use when implementing real-time features requiring reliability, especially LLM streaming. Applies AnyCable patterns for message delivery guarantees, presence tracking, and Action Cable migration.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "go-nil-map",
-  "repo": "JamesPrial/claudefiles",
-  "category": "development",
-  "description": "Map nil safety - read OK, write panics",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:54.393204Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "trino",
-  "description": "TD Trino SQL with TD-specific functions (td_interval, td_time_range, td_time_string, td_sessionize). Use for time-based filtering, partition pruning, and TD query patterns.",
-  "repo": "treasure-data/td-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

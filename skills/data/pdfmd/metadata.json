@@ -1,9 +1,0 @@
-{
-  "name": "pdfmd",
-  "description": "将 PDF 文件转换为结构化的中文 Markdown 文本。只在用户明确要求“把 PDF 转成 Markdown/MD/文档”时使用本技能。",
-  "repo": "wordflowlab/agentsdk",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

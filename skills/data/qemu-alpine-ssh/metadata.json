@@ -1,9 +1,0 @@
-{
-  "name": "qemu-alpine-ssh",
-  "description": "Guidance for setting up QEMU virtual machines with Alpine Linux and SSH access. This skill should be used when tasks involve starting QEMU with Alpine Linux ISO, configuring port forwarding for SSH, s",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sandbox-configuration",
-  "description": "Central authority for Claude Code sandboxing and isolation. Covers sandboxed bash tool, /sandbox command, filesystem isolation (blocked access, custom paths), network isolation (domain restrictions, p",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

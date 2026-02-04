@@ -1,9 +1,0 @@
-{
-  "name": "rollback-workflow-builder",
-  "description": "Creates safe rollback procedures for deployments with automated workflows, rollback runbooks, version management, and incident response. Use for \"rollback automation\", \"deployment recovery\", \"incident",
-  "repo": "patricio0312rev/skillset",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

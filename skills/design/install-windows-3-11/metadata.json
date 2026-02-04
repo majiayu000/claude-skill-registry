@@ -1,8 +1,0 @@
-{
-  "name": "install-windows-3-11",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "description": "Guidance for setting up legacy Windows VMs (like Windows 3.11) in QEMU with web-based remote access via noVNC. This skill should be used when tasks involve running legacy operating systems in virtual ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:20.457659Z"
-}

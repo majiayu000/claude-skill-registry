@@ -1,9 +1,0 @@
-{
-  "name": "btdp-it-masterdata-retrieval",
-  "repo": "smorand/claude-config",
-  "category": "data",
-  "description": "Expert in retrieving IT masterdata and data lineage from L'Oréal's BTDP infrastructure. **Use this skill when user asks to search, find, or query for any BTDP/L'Oréal resource including: GCP projects,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:28.777564Z",
-  "dir_name": "btdp-it-masterdata-retrieval"
-}

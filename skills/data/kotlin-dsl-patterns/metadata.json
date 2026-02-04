@@ -1,9 +1,0 @@
-{
-  "name": "kotlin-dsl-patterns",
-  "description": "Use when domain-specific language design in Kotlin using type-safe builders, infix functions, operator overloading, lambdas with receivers, and patterns for creating expressive, readable DSLs for conf",
-  "repo": "TheBushidoCollective/han",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

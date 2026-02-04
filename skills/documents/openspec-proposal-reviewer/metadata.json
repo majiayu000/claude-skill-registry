@@ -1,8 +1,0 @@
-{
-  "name": "openspec-proposal-reviewer",
-  "repo": "cyber-echo/viewer",
-  "category": "documents",
-  "description": "Review OpenSpec proposal/spec documents for completeness, clarity, and implementability (typically used by /openspec-proposal after clarification).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:38.320860Z"
-}

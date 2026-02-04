@@ -1,8 +1,0 @@
-{
-  "name": "docker-health-build-validation",
-  "repo": "alannreyes/bip2",
-  "category": "design",
-  "description": "Valida la configuraci\u00f3n de Docker, construye im\u00e1genes y verifica que todos los servicios arranquen correctamente. Chequea health endpoints del backend, frontend y bases de datos.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:49.270238Z"
-}

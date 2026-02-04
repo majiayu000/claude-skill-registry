@@ -1,9 +1,0 @@
-{
-  "name": "action",
-  "description": "Execute a small batch of conditional actions only after verifying they are safe and unused.",
-  "repo": "jibaxZZZ/codex-root-configuration",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

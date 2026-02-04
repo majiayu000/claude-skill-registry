@@ -1,9 +1,0 @@
-{
-  "name": "changelog-root",
-  "description": "Update the repository root ChangeLog and keep the root release version metadata in sync. Use when updating the root version or syncing subsystem/package version lists in ChangeLog; touches ChangeLog a",
-  "repo": "ts-klassen/qrpc",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

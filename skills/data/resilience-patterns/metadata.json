@@ -1,9 +1,0 @@
-{
-  "name": "resilience-patterns",
-  "description": "Circuit breaker, retry, and DLQ patterns for .NET using Polly and Brighter. Use when implementing fault tolerance, handling transient failures, configuring retry strategies, or setting up dead letter ",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

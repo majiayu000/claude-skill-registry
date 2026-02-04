@@ -1,9 +1,0 @@
-{
-  "name": "test-data-builder",
-  "description": "Test Data Builder - Auto-activating skill for Test Automation.Triggers on: test data builder, test data builderPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

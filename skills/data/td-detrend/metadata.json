@@ -1,9 +1,0 @@
-{
-  "name": "td-detrend",
-  "description": "Signal detrending for baseline correction and trend removal",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

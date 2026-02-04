@@ -1,8 +1,0 @@
-{
-  "name": "removing-a-feature-of-a-microservice",
-  "repo": "microbus-io/fabric",
-  "category": "product",
-  "description": "Removes a configuration property, functional endpoint, event source, event sink, web handler endpoint, ticker or metric, from a microservice. Use when explicitly asked by the user to remove a feature ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:32.103920Z"
-}

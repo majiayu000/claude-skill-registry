@@ -1,9 +1,0 @@
-{
-  "name": "oscal-validator",
-  "description": "Validate OSCAL documents for structural integrity, schema compliance, and OSCAL-specific requirements. Use this skill to check if OSCAL documents are properly formatted and meet NIST OSCAL specificati",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

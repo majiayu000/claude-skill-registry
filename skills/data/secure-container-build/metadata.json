@@ -1,9 +1,0 @@
-{
-  "name": "secure-container-build",
-  "description": "Build secure container images with Wolfi runtime, non-root users, and multi-stage builds. Templates for Python/uv, Bun, Node.js/pnpm, Golang (static/CGO), and Rust (glibc/musl) with allocator optimiza",
-  "repo": "pigfoot/claude-code-hubs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

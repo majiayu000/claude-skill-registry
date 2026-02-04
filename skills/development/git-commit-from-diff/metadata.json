@@ -1,8 +1,0 @@
-{
-  "name": "git-commit-from-diff",
-  "repo": "BenderFendor/Thesis",
-  "category": "development",
-  "description": "Create git commits by inspecting the current diff and staged changes, then crafting a concise commit message from the diff. Use when the user asks to commit changes, asks for a commit message based on",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:10.257681Z"
-}

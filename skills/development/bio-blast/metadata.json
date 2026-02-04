@@ -1,8 +1,0 @@
-{
-  "name": "bio-blast",
-  "repo": "dakesan/cc-dnawork-plugin",
-  "category": "development",
-  "description": "NCBI BLAST sequence similarity search using BioPython. Use when a user wants to run BLAST programmatically with blastn/blastp and retrieve results in JSON format.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:48.024762Z"
-}

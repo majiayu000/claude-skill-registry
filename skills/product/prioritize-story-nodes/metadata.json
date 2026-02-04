@@ -1,8 +1,0 @@
-{
-  "name": "prioritize-story-nodes",
-  "repo": "Mharbulous/SyncoPaid",
-  "category": "product",
-  "description": "Use when user says \"prioritize stories\", \"what should I work on next\", \"find next story\", \"review approved stories\", \"plan next feature\" - generates deterministic priority list via script, then semant",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:33.831022Z"
-}

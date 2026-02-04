@@ -1,9 +1,0 @@
-{
-  "name": "circuit-debugger",
-  "description": "Systematic hardware debugging guide for Arduino/ESP32/RP2040 circuits. Use when user reports: circuit not working, components getting hot, no power, intermittent failures, unexpected behavior, sensor ",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

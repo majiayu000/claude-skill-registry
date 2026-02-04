@@ -1,9 +1,0 @@
-{
-  "name": "ios-ia-navigation",
-  "description": "iOSアプリの情報設計（IA）と画面遷移（ナビゲーション）を設計するスキル。Apple HIGとWWDCセッションに基づき、タブ/階層push/モーダルを情報階層とタスク構造から逆算して選定し、根拠と未確定事項を可視化しながら設計を完遂する。使用タイミング: (1) 新規アプリの情報設計時、(2) 画面遷移設計時、(3) 「IAを設計したい」「ナビゲーション構造を決めたい」、(4) iPad/iP",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

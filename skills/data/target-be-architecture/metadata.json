@@ -1,9 +1,0 @@
-{
-  "name": "target-be-architecture",
-  "description": "Target backend architecture for Lingx. DDD-lite patterns with services, result objects, use cases, and error handling. Use when implementing backend features, reviewing code, or making architectural d",
-  "repo": "VinniZP/lingx",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "detecting-performance-regressions",
-  "description": "Automatically detect performance regressions in CI/CD pipelines by comparing metrics against baselines. Use when validating builds or analyzing performance trends. Trigger with phrases like \"detect pe",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "nix-flake-init",
-  "description": "Initializes Nix flake.nix files for projects using flake-parts, automatically detecting programming languages (OpenSCAD, Python) and configuring appropriate development shells. Activates when user ask",
-  "repo": "binarin/nixos-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

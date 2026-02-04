@@ -1,9 +1,0 @@
-{
-  "name": "mimir",
-  "description": "Guide for implementing Grafana Mimir - a horizontally scalable, highly available, multi-tenant TSDB for long-term storage of Prometheus metrics. Use when configuring Mimir on Kubernetes, setting up Az",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

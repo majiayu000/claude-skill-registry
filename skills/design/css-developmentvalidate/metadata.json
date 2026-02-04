@@ -1,8 +1,0 @@
-{
-  "name": "css-developmentvalidate",
-  "repo": "2389-research/claude-plugins",
-  "category": "design",
-  "description": "Review existing CSS against established Tailwind + semantic component patterns, checking naming, dark mode, tests, and documentation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:46.296021Z"
-}

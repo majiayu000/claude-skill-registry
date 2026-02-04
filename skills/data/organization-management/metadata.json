@@ -1,9 +1,0 @@
-{
-  "name": "organization-management",
-  "description": "Implement Clerk multi-tenant organization features with RBAC, role-based access control, organization switching, member management, and tenant isolation. Use when building multi-tenant SaaS applicatio",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

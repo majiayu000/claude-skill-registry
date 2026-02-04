@@ -1,9 +1,0 @@
-{
-  "name": "config-migrator",
-  "description": "Migrates codex configuration files from v2.0 push-based sync to v3.0 pull-based retrieval format with automatic backups",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

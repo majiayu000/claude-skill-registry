@@ -1,9 +1,0 @@
-{
-  "name": "compare-cpython-versions",
-  "repo": "DataDog/dd-trace-py",
-  "path": ".claude/skills/compare-cpython-versions/SKILL.md",
-  "source": "github.com/DataDog/dd-trace-py",
-  "downloaded_at": "2026-01-21T01:43:18.367183Z",
-  "dir_name": "compare-cpython-versions",
-  "category": "other"
-}

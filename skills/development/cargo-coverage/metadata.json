@@ -1,8 +1,0 @@
-{
-  "name": "cargo-coverage",
-  "repo": "scalar0/skills",
-  "category": "development",
-  "description": "Generate per-file coverage reports using cargo llvm-cov with formatted output. Requires tests to run first with coverage enabled. Trigger when asked for code coverage metrics or reports.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:18.328686Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "github-actions-workflow-builder",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "devops",
-  "description": "Creates GitHub Actions workflows for CI/CD (test, build, deploy, release). Use when user asks to \"setup github actions\", \"create workflow\", \"ci/cd pipeline\", \"automate testing\", or \"deployment workflo",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:48.275287Z"
-}

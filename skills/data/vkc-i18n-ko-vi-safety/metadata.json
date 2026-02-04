@@ -1,9 +1,0 @@
-{
-  "name": "vkc-i18n-ko-vi-safety",
-  "description": "Prevent i18n regressions for ko/en/vi (missing keys, long Vietnamese text UI breakage). Use when changing messages/*.json or adding user-facing strings.",
-  "repo": "LEE-SANG-BOK/VKC-2-",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

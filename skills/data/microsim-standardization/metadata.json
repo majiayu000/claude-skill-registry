@@ -1,9 +1,0 @@
-{
-  "name": "microsim-standardization",
-  "description": "This skill standardizes MicroSim directories by validating structure, metadata, documentation, and required components against a comprehensive quality checklist. Use this when auditing or upgrading a ",
-  "repo": "dmccreary/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

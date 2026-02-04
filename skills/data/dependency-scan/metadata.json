@@ -1,9 +1,0 @@
-{
-  "name": "dependency-scan",
-  "description": "This skill focuses on identifying security vulnerabilities, outdated packages, and license compliance issues in project dependencies. It covers multiple package ecosystems (JavaScript/Node.js, Python,",
-  "repo": "cosmix/loom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/cosmix/loom"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "hugging-face-config",
-  "repo": "nadeemsangrasi/humanoid-and-robotic-book",
-  "category": "devops",
-  "description": "Generate Hugging Face Spaces configuration files including runtime setup, environment variables, and deployment instructions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:15.590441Z"
-}

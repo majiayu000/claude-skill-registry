@@ -1,8 +1,0 @@
-{
-  "name": "kit-cli-navigator",
-  "repo": "cased/claude-code-plugins",
-  "category": "development",
-  "description": "Run focused `kit` CLI commands (file-tree, symbols, search, semantic discovery, dependency analysis, and exports) to build high-signal repository context fast. Use when you need to understand an unfam",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:41.118391Z"
-}

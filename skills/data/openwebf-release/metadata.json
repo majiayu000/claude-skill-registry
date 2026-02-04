@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-release",
-  "description": "DEPRECATED umbrella Skill (backward compatibility). Use only when release work spans deployment + cache headers + versioning + rollback. Prefer focused `openwebf-release-cdn-deploy` and `openwebf-rele",
-  "repo": "archview-ai/webf-plugin",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

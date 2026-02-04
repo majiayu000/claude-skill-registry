@@ -1,9 +1,0 @@
-{
-  "name": "frago-view-content-generate-tips-pdf",
-  "description": "PDF file content generation guide. Use this skill when you need to understand how `frago view` previews PDF files. Covers rendering features and limitations.",
-  "repo": "tsaijamey/frago",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

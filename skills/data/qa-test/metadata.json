@@ -1,9 +1,0 @@
-{
-  "name": "qa-test",
-  "description": "QA 테스트 관리 스킬. Use when (1) 할당된 테스트 목록 확인,(2) 테스트 결과 업데이트, (3) 테스트 완료 보고.",
-  "repo": "semicolon-devteam/semo",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

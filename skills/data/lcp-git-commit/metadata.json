@@ -1,9 +1,0 @@
-{
-  "name": "lcp-git-commit",
-  "description": "When asked to commit, write clear git commit messages (50/72, present tense, subsystem prefixes like go-lcpd:).",
-  "repo": "YusukeShimizu/lightning-compute-protocol",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

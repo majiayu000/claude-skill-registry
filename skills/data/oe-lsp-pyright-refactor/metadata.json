@@ -1,9 +1,0 @@
-{
-  "name": "oe-lsp-pyright-refactor",
-  "description": "Refactor planning and execution discipline using LSP/Pyright. Use when making non-trivial refactors (splitting files, renaming symbols, moving modules) and you want compiler-accurate references/defini",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

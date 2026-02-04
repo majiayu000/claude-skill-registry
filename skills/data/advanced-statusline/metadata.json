@@ -1,9 +1,0 @@
-{
-  "name": "advanced-statusline",
-  "description": "Implement AI-powered statusline with session tracking, plan detection, workspace emojis, and intelligent caching for Claude Code",
-  "repo": "wildcard/shell-ergonomics-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

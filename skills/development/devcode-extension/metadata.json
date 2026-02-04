@@ -1,8 +1,0 @@
-{
-  "name": "devcode-extension",
-  "repo": "kevinslin/llm",
-  "category": "development",
-  "description": "Install VS Code/Cursor extensions from a local .vsix via CLI (code, code-insiders, cursor, cursor-nightly). Use whenever asked to install an extension programmatically.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:30.211245Z"
-}

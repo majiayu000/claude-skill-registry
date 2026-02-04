@@ -1,9 +1,0 @@
-{
-  "name": "hpc-dev-testing-workflow",
-  "description": "Efficient development testing workflow for HPC environments with VS Code tunneling. Trigger: testing code changes on HPC, development workflow with external data directories, VS Code Remote SSH develo",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

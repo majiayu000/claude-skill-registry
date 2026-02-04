@@ -1,9 +1,0 @@
-{
-  "name": "gh-pr-auto-detector",
-  "description": "Automatically detects GitHub PR mentions (URLs,",
-  "repo": "schovi/claude-schovi",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

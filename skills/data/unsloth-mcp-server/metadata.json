@@ -1,9 +1,0 @@
-{
-  "name": "unsloth-mcp-server",
-  "description": "Work with the Unsloth MCP Server codebase. Use when maintaining, extending, or debugging this specific MCP server implementation. Provides architecture knowledge, code patterns, and development workfl",
-  "repo": "ScientiaCapital/unsloth-mcp-server",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

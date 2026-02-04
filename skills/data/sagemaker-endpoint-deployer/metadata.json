@@ -1,9 +1,0 @@
-{
-  "name": "sagemaker-endpoint-deployer",
-  "description": "Sagemaker Endpoint Deployer - Auto-activating skill for ML Deployment.Triggers on: sagemaker endpoint deployer, sagemaker endpoint deployerPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

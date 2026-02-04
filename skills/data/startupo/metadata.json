@@ -1,9 +1,0 @@
-{
-  "name": "startupo",
-  "description": "Initialize session as ORCHESTRATOR agent with multi-agent coordination capability. Use for complex tasks requiring parallel agent spawning and result synthesis.",
-  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager"
-}

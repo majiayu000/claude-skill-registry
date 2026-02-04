@@ -1,9 +1,0 @@
-{
-  "name": "gcs-lifecycle-policy",
-  "description": "Gcs Lifecycle Policy - Auto-activating skill for GCP Skills.Triggers on: gcs lifecycle policy, gcs lifecycle policyPart of the GCP Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

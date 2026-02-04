@@ -1,9 +1,0 @@
-{
-  "name": "context7-skill-generator",
-  "description": "Automatically generates skills from Context7 MCP documentation responses",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "verification",
-  "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence",
-  "repo": "pproenca/dot-claude-old",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

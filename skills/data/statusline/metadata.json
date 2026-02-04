@@ -1,9 +1,0 @@
-{
-  "name": "statusline",
-  "description": "Configure Claude Code's terminal status line display",
-  "repo": "blueraai/bluera-base",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/blueraai/bluera-base"
-}

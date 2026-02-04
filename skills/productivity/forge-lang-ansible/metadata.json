@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-ansible",
-  "repo": "martimramos/claude-forge",
-  "category": "productivity",
-  "description": "Ansible automation safety practices. Enforces check-mode-first workflow. Use when working with playbooks, roles, or inventory files.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.012572Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "pr-guidelines",
-  "repo": "narrowstacks/dorkroom",
-  "category": "development",
-  "description": "Pull request best practices distilled from Graphite and GitHub guides. Use when creating pull requests in conjunction with the graphite-workflow skill to ensure they follow size guidelines, include pr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.803981Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "form-generator-rhf-zod",
-  "description": "This skill should be used when generating React forms with React Hook Form, Zod validation, and shadcn/ui components. Applies when creating entity forms, character editors, location forms, data entry ",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

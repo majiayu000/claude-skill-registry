@@ -1,9 +1,0 @@
-{
-  "name": "knack-filter-sort",
-  "description": "Dynamic filtering, sorting, and query optimization for HTI dashboards and compliance reports. Reduces API payload size and improves dashboard perfo...",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

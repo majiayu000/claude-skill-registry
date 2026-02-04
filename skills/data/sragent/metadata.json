@@ -1,9 +1,0 @@
-{
-  "name": "sragent",
-  "description": "Query the Sequence Read Archive (SRA), retrieve scientific publications, and analyze genomics metadata using the SRAgent toolkit. Supports accession conversion (GSE→SRX→SRR), BigQuery metadata queries",
-  "repo": "ArcInstitute/SRAgent",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

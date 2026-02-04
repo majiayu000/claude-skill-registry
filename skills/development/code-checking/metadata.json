@@ -1,8 +1,0 @@
-{
-  "name": "code-checking",
-  "repo": "edgeandnode/amp",
-  "category": "development",
-  "description": "Check and lint Rust/TypeScript code using justfile tasks (just check-crate, just clippy-crate). Use after code changes, when user mentions compilation, type checking, linting, clippy warnings, or need",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:52.514312Z"
-}

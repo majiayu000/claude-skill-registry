@@ -1,8 +1,0 @@
-{
-  "name": "rebuild-cache",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Rebuild the wikilink entities cache. Triggers on \"rebuild cache\", \"rebuild wikilink cache\", \"update cache\", \"refresh wikilinks\". Optionally uses Flywheel MCP for enhanced entity detection.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:34.055220Z"
-}

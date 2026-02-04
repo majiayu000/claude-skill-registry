@@ -1,9 +1,0 @@
-{
-  "name": "xcode-file-manager",
-  "description": "Add Swift files to the AIQ Xcode project. Use when creating new Swift files (views, view models, services, models, tests) that need to be added to the Xcode project and build targets.",
-  "repo": "gioe/aiq",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

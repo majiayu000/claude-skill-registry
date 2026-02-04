@@ -1,8 +1,0 @@
-{
-  "name": "dapr-middleware-validator",
-  "repo": "Sahib-Sawhney-WH/dapr-claude-plugin",
-  "category": "security",
-  "description": "Automatically validate DAPR HTTP middleware configuration files. Checks for correct middleware types, proper secret references, pipeline ordering, and security best practices. Use when configuring OAu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:49.783397Z"
-}

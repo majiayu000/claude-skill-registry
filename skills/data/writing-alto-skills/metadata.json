@@ -1,9 +1,0 @@
-{
-  "name": "writing-alto-skills",
-  "description": "Use when creating or editing ALTO skills (skills/*/SKILL.md) or agents (agents/*.md). Guide for skill structure, frontmatter format, and content organization.",
-  "repo": "gonzaloetjo/alto",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gonzaloetjo/alto"
-}

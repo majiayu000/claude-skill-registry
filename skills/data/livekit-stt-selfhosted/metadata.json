@@ -1,9 +1,0 @@
-{
-  "name": "livekit-stt-selfhosted",
-  "description": "Build self-hosted speech-to-text APIs using Hugging Face models (Whisper, Wav2Vec2) and create LiveKit voice agent plugins. Use when building STT infrastructure, creating custom LiveKit plugins, deplo",
-  "repo": "Okeysir198/P20251122-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

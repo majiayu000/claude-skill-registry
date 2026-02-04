@@ -1,9 +1,0 @@
-{
-  "name": "work-item-handler",
-  "description": "Fetch and manage work items from issue trackers. Use this skill when:- User references an issue number (#42, PROJ-123)- User asks about requirements or acceptance criteria- User needs to understand cu",
-  "repo": "flexion/claude-domestique",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

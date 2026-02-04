@@ -1,9 +1,0 @@
-{
-  "name": "mkdocs-github-pages-deployment",
-  "description": "Use when deploying MkDocs documentation to GitHub Pages with GitHub Actions - covers Python-Markdown gotchas (indentation, footnotes, grid tables), workflow configuration, and systematic markdown fixi",
-  "repo": "SecurityRonin/ronin-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

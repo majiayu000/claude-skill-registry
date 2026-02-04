@@ -1,9 +1,0 @@
-{
-  "name": "tag-manager",
-  "description": "Create and push semantic version tags with GPG signing support",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "get-last-frame",
-  "repo": "jacwu/demo-skill-sora2",
-  "category": "product",
-  "description": "Extract the last frame of an MP4 file into an image using OpenCV. Use when the user needs the final frame of a generated video saved as a still image.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:19.496426Z"
-}

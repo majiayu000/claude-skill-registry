@@ -1,9 +1,0 @@
-{
-  "name": "workflow-creation",
-  "description": "This skill should be used when the user asks to \"create a workflow\", \"make a slash command\", \"add a command\", \"automate a task with a command\", \"workflow vs plugin\", \"should this be a workflow or plug",
-  "repo": "FrancisVarga/coconut-claude-code-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

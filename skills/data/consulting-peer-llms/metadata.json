@@ -1,9 +1,0 @@
-{
-  "name": "consulting-peer-llms",
-  "description": "Use when user explicitly requests feedback from other LLM tools (Gemini, Codex) on current work - executes peer reviews in parallel and synthesizes responses into actionable insights",
-  "repo": "ether-moon/skill-set",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

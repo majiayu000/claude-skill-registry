@@ -1,9 +1,0 @@
-{
-  "name": "proof-composer",
-  "description": "Validates entire engineering proof chain. Verifies architecture, backend maps, backend code, standardization, frontend types, infrastructure topology all compose correctly. This is the final DEPLOYMEN",
-  "repo": "Microck/ordinary-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

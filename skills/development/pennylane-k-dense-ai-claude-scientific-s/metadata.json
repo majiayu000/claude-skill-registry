@@ -1,7 +1,0 @@
-{
-  "name": "pennylane-k-dense-ai-claude-scientific-s",
-  "description": "Hardware-agnostic quantum ML framework with automatic differentiation. Use when training quantum circuits via gradients, building hybrid quantum-classical models, or needing device portability across ",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.469346Z"
-}

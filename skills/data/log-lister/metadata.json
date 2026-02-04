@@ -1,9 +1,0 @@
-{
-  "name": "log-lister",
-  "description": "Lists and filters logs by type, status, date range, and work item with frontmatter parsing",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tasks-system",
-  "description": "Manage the llm-do task tracker stored under tasks/ (backlog, active, completed, recurring) including creating new tasks, updating current state, moving tasks between stages, and applying the standard ",
-  "repo": "zby/llm-do",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

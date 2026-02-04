@@ -1,8 +1,0 @@
-{
-  "name": "pr-and-check",
-  "repo": "klaushofrichter/een-api-toolkit",
-  "category": "product",
-  "description": "Use this skill when you are requested to create a PR for a feature branch to develop, or from develop to production.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:40.233825Z"
-}

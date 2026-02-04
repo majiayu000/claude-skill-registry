@@ -1,9 +1,0 @@
-{
-  "name": "pydantic-schemas",
-  "repo": "Obsidian-Owl/floe-runtime",
-  "category": "data",
-  "description": "ALWAYS USE when working with Pydantic models, BaseModel, Field, validators, or data contracts. MUST be loaded before creating any Pydantic schemas, configuration classes, or API contracts. Provides v2",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:24.742669Z",
-  "dir_name": "pydantic-schemas"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "init-rules",
-  "description": "Initialize Rails coding conventions for a project by detecting dependencies and copying matching rules with examples to .claude/rules/hustler-rails/. Use when setting up Rails conventions for a new pr",
-  "repo": "bcasci/hustler-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

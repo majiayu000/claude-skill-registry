@@ -1,9 +1,0 @@
-{
-  "name": "document-extraction",
-  "description": "Extract requirements from existing documents including PDFs, Word docs, meeting transcripts, specifications, and web content. Identifies requirement candidates, categorizes them, and outputs in pre-ca",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

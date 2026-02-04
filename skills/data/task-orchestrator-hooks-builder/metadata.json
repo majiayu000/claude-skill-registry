@@ -1,9 +1,0 @@
-{
-  "name": "task-orchestrator-hooks-builder",
-  "description": "Help users create hooks that integrate with Task Orchestrator's workflow cascade events. Works with any MCP client (Claude Code, Claude Desktop, Cursor, Windsurf, etc.). Use when user wants to create ",
-  "repo": "jpicklyk/task-orchestrator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cursor-advanced-composer",
-  "description": "Advanced Cursor Composer techniques for complex edits. Triggers on \"advanced composer\",\"composer patterns\", \"multi-file generation\", \"composer refactoring\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

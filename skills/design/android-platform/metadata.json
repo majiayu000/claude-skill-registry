@@ -1,8 +1,0 @@
-{
-  "name": "android-platform",
-  "repo": "pluginagentmarketplace/custom-plugin-android",
-  "category": "design",
-  "description": "Android core components lifecycle, Activities, Fragments, Services, Intent system. Use when working with Android components or handling lifecycle.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:31.744155Z"
-}

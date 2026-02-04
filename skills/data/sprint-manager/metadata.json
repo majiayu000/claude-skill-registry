@@ -1,9 +1,0 @@
-{
-  "name": "sprint-manager",
-  "description": "This skill orchestrates autonomous sprint execution by coordinating subagents to implement GitHub issues serially. It manages the full lifecycle: generating implementation plans via Gemini CLI, delega",
-  "repo": "bodangren/git-workflow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

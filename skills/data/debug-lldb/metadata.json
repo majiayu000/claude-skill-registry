@@ -1,9 +1,0 @@
-{
-  "name": "debug-lldb",
-  "description": "Capture and analyze thread backtraces with LLDB/GDB to debug hangs, deadlocks, UI freezes, IPC stalls, or high-CPU loops across any language or project. Use when an app becomes unresponsive, switching",
-  "repo": "regenrek/codex-1up",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

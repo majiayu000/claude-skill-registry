@@ -1,8 +1,0 @@
-{
-  "name": "behavior-tree-validator",
-  "repo": "jsalfity/bt-composition-prototype",
-  "category": "development",
-  "description": "Validate py_trees behavior trees across three tiers (critical, important, advisory). Use for debugging existing BTs, diagnosing validation failures, or standalone validation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:30.800032Z"
-}

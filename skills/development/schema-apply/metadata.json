@@ -1,8 +1,0 @@
-{
-  "name": "schema-apply",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Apply inferred conventions to incomplete notes. Triggers on \"apply schema\", \"add missing fields\", \"complete notes\", \"fix frontmatter\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:48.363367Z"
-}

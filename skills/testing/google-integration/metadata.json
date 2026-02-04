@@ -1,8 +1,0 @@
-{
-  "name": "google-integration",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "testing",
-  "description": "Complete Google Workspace integration (Gmail, Docs, Sheets, Calendar, Drive, Tasks, Slides). Load when user mentions 'google', 'gmail', 'email', 'google docs', 'google sheets', 'spreadsheet', 'google ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:43.056558Z"
-}

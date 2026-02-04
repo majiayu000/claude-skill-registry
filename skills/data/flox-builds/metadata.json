@@ -1,9 +1,0 @@
-{
-  "name": "flox-builds",
-  "description": "Building and packaging applications with Flox. Use for manifest builds, Nix expression builds, sandbox modes, multi-stage builds, and packaging assets.",
-  "repo": "flox/flox-agentic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "manage-queues",
-  "description": "Manage delayed request queues including workload, system, and utility queues to release blocked requests or abort unnecessary items",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "ai-dev-workflow",
-  "repo": "horuz-ai/claude-plugins",
-  "category": "development",
-  "description": "Multi-agent development workflow system for structured task execution. Use when working with tasks in .tasks/ directory, when user invokes /task, /explore, /research, /spec, /build, /review, or /refac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:08.350698Z"
-}

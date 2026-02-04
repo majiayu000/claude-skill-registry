@@ -1,9 +1,0 @@
-{
-  "name": "badger-2350-dev",
-  "description": "Development environment setup and workflow for Universe 2025 (Tufty) Badge with MonaOS. Use when setting up the badge, flashing firmware, debugging, or working with the development toolchain.",
-  "repo": "johnlindquist/badger-2350-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

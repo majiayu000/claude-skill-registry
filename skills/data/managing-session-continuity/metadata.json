@@ -1,9 +1,0 @@
-{
-  "name": "managing-session-continuity",
-  "description": "Managing session continuity across Claude conversations by saving structured context (tasks, files, errors, git state) to JSON and loading in new sessions. Use when user asks how session continuity wo",
-  "repo": "thoeltig/claude-code-toolkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

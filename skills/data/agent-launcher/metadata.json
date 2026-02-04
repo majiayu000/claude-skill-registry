@@ -1,9 +1,0 @@
-{
-  "name": "agent-launcher",
-  "description": "Launches specialized Claude agents for targeted tasks. Analyzes requirements, selects appropriate agent, and executes with optimized configuration.",
-  "repo": "ciscoittech/claude-agent-framework",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

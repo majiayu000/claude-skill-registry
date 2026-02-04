@@ -1,9 +1,0 @@
-{
-  "name": "prime-session",
-  "description": "Orient to current project by reading CLAUDE.md and architecture docs. Auto-invokes when Claude detects a new or unfamiliar repository. Can also be triggered by \"orient me\", \"what is this project\", or ",
-  "repo": "fusupo/muleteer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "test-design",
-  "repo": "rsmdt/the-startup",
-  "category": "testing",
-  "description": "Apply test pyramid principles, coverage targets, and framework-specific patterns. Use when designing test suites, reviewing test coverage, or implementing tests. Covers Jest, Pytest, and common testin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:42.141322Z"
-}

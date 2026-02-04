@@ -1,9 +1,0 @@
-{
-  "name": "headless",
-  "description": "How to run Claude Code in headless mode for automation, scripting, and CI/CD integration. Use when user asks about non-interactive mode, automation, scripting, or programmatic usage.",
-  "repo": "reggiechan74/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

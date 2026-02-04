@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-create-note",
-  "description": "Create a note engagement in HubSpot CRM. Load when user says 'create note', 'add note', 'new note', 'record note'. Requires body content.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

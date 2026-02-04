@@ -1,9 +1,0 @@
-{
-  "name": "example-helper",
-  "description": "Example skill demonstrating Claude Code capabilities. Activates when user mentions \"example\", \"demo\", or \"template\". Shows how to create effective Skills with proper structure. Use when user wants to ",
-  "repo": "squirrelsoft-dev/claude-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

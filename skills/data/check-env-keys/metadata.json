@@ -1,9 +1,0 @@
-{
-  "name": "check-env-keys",
-  "description": "Verify which environment variable keys are present in .env files or shell environment without exposing their values. Use when you need to check env configuration or compare keys between .env files.",
-  "repo": "iamladi/cautious-computing-machine--primitives-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

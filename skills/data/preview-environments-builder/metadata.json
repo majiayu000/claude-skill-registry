@@ -1,9 +1,0 @@
-{
-  "name": "preview-environments-builder",
-  "description": "Creates ephemeral preview deployments for each pull request with automatic deployment, unique URLs, and cleanup on PR close. Use for \"preview deployments\", \"PR environments\", \"ephemeral environments\",",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

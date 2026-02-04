@@ -1,7 +1,0 @@
-{
-  "name": "playwright-testing",
-  "description": "This skill should be used when user asks about \"Playwright\", \"responsiveness test\", \"test with playwright\", \"test login flow\", \"file upload test\", \"handle authentication in tests\", or \"fix flaky tests",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.203465Z"
-}

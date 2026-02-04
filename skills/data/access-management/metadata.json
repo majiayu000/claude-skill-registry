@@ -1,9 +1,0 @@
-{
-  "name": "access-management",
-  "description": "RBAC/ABAC implementation patterns, least privilege access, row-level security, column masking, and access review workflows.",
-  "repo": "vivekgana/databricks-platform-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

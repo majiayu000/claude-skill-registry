@@ -1,8 +1,0 @@
-{
-  "name": "cpython-build-and-test",
-  "repo": "gpshead/cpython-skills",
-  "category": "testing",
-  "description": "Use this skill when configuring, building, or rebuilding CPython from source, running tests, or debugging test failures. Covers ./configure with --with-pydebug, make commands, ccache for faster rebuil",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:55.609919Z"
-}

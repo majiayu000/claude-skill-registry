@@ -1,9 +1,0 @@
-{
-  "name": "state-management-patterns",
-  "description": "State persistence patterns for autonomous-dev including JSON persistence, atomic writes, file locking, crash recovery, and state versioning. Use when implementing stateful libraries or features requir",
-  "repo": "akaszubski/autonomous-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

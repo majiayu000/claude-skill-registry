@@ -1,9 +1,0 @@
-{
-  "name": "polar-integration-validator",
-  "description": "Autonomous validation of Polar.sh billing integration. Checks webhook endpoints, signature verification, subscription middleware, and environment configuration.",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

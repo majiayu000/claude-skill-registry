@@ -1,9 +1,0 @@
-{
-  "name": "env-to-fnox",
-  "description": "This skill should be used when users want to migrate from .env files to fnox with 1Password (or another secret provider). It covers installing fnox, creating 1Password items, configuring fnox.toml, an",
-  "repo": "nateberkopec/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "gh-pr-create",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "description": "Create a GitHub pull request using gh CLI. Supports standard PRs, draft PRs, auto-merge, and custom reviewers/labels. Use when the user wants to create a PR from their current branch.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:33.134816Z"
-}

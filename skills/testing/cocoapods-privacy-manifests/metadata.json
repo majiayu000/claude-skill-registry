@@ -1,8 +1,0 @@
-{
-  "name": "cocoapods-privacy-manifests",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when implementing iOS 17+ privacy manifests for CocoaPods libraries. Covers PrivacyInfo.xcprivacy file creation, required reasons API declarations, and proper resource bundle integration for App S",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.827323Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tailscale-sshsync-agent",
-  "description": "Manages distributed workloads and file sharing across Tailscale SSH-connected machines. Automates remote command execution, intelligent load balancing, file synchronization workflows, host health moni",
-  "repo": "Human-Frontier-Labs-Inc/human-frontier-labs-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

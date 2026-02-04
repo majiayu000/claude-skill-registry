@@ -1,9 +1,0 @@
-{
-  "name": "docker-backend",
-  "description": "Dockerizes backend projects with auto-detection, latest base images via web search, Dockerfile generation, and Makefile with port override support.",
-  "repo": "leonj1/external-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/leonj1/external-claude-skills"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "treatment-plans-davila7-claude-code-templates",
-  "description": "Generate concise (3-4 page), focused medical treatment plans in LaTeX/PDF format for all clinical specialties. Supports general medical treatment, rehabilitation therapy, mental health care, chronic d",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:22.794309Z"
-}

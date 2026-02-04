@@ -1,9 +1,0 @@
-{
-  "name": "add-neon-docs",
-  "description": "Use this skill when the user asks to add documentation, add docs, add references, or install documentation about Neon. Adds Neon best practices reference links to project AI documentation (CLAUDE.md, ",
-  "repo": "neondatabase/ai-rules",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

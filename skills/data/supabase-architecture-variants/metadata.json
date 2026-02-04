@@ -1,9 +1,0 @@
-{
-  "name": "supabase-architecture-variants",
-  "description": "Choose and implement Supabase validated architecture blueprints for different scales.Use when designing new Supabase integrations, choosing between monolith/service/microservicearchitectures, or plann",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "policy-gradient-methods",
-  "description": "Master REINFORCE, PPO, TRPO - direct policy optimization with trust regions",
-  "repo": "tachyon-beep/hamlet",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

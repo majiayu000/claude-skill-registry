@@ -1,8 +1,0 @@
-{
-  "name": "feature-context",
-  "repo": "schuettc/claude-code-plugins",
-  "category": "development",
-  "description": "Load feature requirements, design, and implementation plan when working on in-progress features. Use when user is implementing code, debugging, asking about requirements, or making changes related to ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:26.852865Z"
-}

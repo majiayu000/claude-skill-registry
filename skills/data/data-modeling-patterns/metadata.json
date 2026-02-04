@@ -1,9 +1,0 @@
-{
-  "name": "data-modeling-patterns",
-  "repo": "applied-artificial-intelligence/claude-code-toolkit",
-  "category": "data",
-  "description": "Database schema design and data modeling patterns including normalization principles (1NF-5NF), denormalization trade-offs, entity relationship design, indexing strategies, schema evolution, and domai",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:29.346787Z",
-  "dir_name": "data-modeling-patterns"
-}

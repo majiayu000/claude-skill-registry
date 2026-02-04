@@ -1,9 +1,0 @@
-{
-  "name": "effect-ts-7layer-architecture",
-  "repo": "bphkns/dotfiles",
-  "category": "data",
-  "description": "7-layer Effect-TS architecture for Holochain applications. Use when implementing domains, validating architecture, or creating stores with standardized patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:11.556084Z",
-  "dir_name": "effect-ts-7layer-architecture"
-}

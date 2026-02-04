@@ -1,9 +1,0 @@
-{
-  "name": "instant-0-100ms",
-  "description": "Use when building instantaneous UI feedback under 100ms - button presses, toggles, state changes that feel immediate and responsive",
-  "repo": "dylantarre/animation-principles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

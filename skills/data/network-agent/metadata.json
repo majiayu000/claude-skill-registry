@@ -1,9 +1,0 @@
-{
-  "name": "network-agent",
-  "description": "Comprehensive network topology discovery, automated documentation generation, and root cause analysis for network issues using RouterCLI Pro. Use this skill when asked to map networks, discover device",
-  "repo": "neuro-synapse/network-topology-agent",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

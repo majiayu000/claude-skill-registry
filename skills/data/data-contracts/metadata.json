@@ -1,9 +1,0 @@
-{
-  "name": "data-contracts",
-  "description": "Data contracts สำหรับกำหนด schema, quality expectations และ SLAs ระหว่าง data producers และ consumers",
-  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills"
-}

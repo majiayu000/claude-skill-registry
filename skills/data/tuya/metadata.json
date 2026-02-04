@@ -1,9 +1,0 @@
-{
-  "name": "tuya",
-  "description": "Control Tuya devices via local Home Assistant (tuya-local) or Tuya Cloud using the tuya-hub Go CLI.",
-  "repo": "mbelinky/clawdis-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

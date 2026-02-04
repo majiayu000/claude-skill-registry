@@ -1,9 +1,0 @@
-{
-  "name": "helm-values-manager",
-  "description": "Helm Values Manager - Auto-activating skill for DevOps Advanced.Triggers on: helm values manager, helm values managerPart of the DevOps Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

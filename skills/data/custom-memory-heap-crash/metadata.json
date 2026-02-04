@@ -1,9 +1,0 @@
-{
-  "name": "custom-memory-heap-crash",
-  "description": "Guide for debugging crashes related to custom memory heaps, particularly use-after-free issues caused by static destruction ordering, DEBUG vs RELEASE discrepancies, and custom allocator lifecycle pro",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

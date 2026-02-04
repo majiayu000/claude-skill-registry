@@ -1,9 +1,0 @@
-{
-  "name": "creating-adrs",
-  "description": "MADR形式での構造化ADR作成。トリガー: ADR, Architecture Decision, 決定記録, 技術選定, アーキテクチャ決定, design decision, 技術的決定, 設計判断, deprecation, 非推奨化, process change, プロセス変更",
-  "repo": "thkt/claude-config",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

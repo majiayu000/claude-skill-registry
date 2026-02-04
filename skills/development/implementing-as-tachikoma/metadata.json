@@ -1,8 +1,0 @@
-{
-  "name": "implementing-as-tachikoma",
-  "repo": "sumik5/dotfiles",
-  "category": "development",
-  "description": "Operates as Tachikoma Agent (Implementation Worker). Performs actual implementation work. Adapts to frontend, backend, testing, or other roles based on Kusanagi's assignment. Uses /serena command for ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.463650Z"
-}

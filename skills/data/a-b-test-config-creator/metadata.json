@@ -1,9 +1,0 @@
-{
-  "name": "a-b-test-config-creator",
-  "description": "A B Test Config Creator - Auto-activating skill for ML Deployment.Triggers on: a b test config creator, a b test config creatorPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

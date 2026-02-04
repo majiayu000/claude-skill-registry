@@ -1,9 +1,0 @@
-{
-  "name": "webapp-nikto",
-  "description": "Web server vulnerability scanner for identifying security issues, misconfigurations, and outdated software versions. Use when: (1) Conducting authorized web server security assessments, (2) Identifyin",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

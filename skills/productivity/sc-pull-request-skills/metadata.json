@@ -1,8 +1,0 @@
-{
-  "name": "sc-pull-request-skills",
-  "repo": "kylesnowschwartz/SimpleClaude",
-  "category": "productivity",
-  "description": "GitHub PR workflow automation including fetching unresolved comments, resolving review threads, and parallel comment resolution. Use this skill when working with PR reviews, addressing reviewer feedba",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:50.297654Z"
-}

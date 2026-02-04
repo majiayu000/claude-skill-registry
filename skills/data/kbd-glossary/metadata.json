@@ -1,9 +1,0 @@
-{
-  "name": "kbd-glossary",
-  "description": "Expert in searching Kabardian glossaries and dictionaries. Provides word definitions, translations, and examples from Rus-Ady and Ady-Ady dictionaries. Activates when user requests word lookup, mentio",
-  "repo": "panagoa/kbd_translate",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

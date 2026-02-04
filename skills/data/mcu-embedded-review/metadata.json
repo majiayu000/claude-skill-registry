@@ -1,9 +1,0 @@
-{
-  "name": "mcu-embedded-review",
-  "description": "Reviews embedded Rust firmware for RP2350 (Raspberry Pi Pico 2 W) and ESP32-S3 (Heltec) microcontrollers with focus on Embassy async runtime, memory constraints, LED control, CAN attachment protocols,",
-  "repo": "ecto/muni",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

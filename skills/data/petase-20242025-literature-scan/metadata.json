@@ -1,9 +1,0 @@
-{
-  "name": "petase-20242025-literature-scan",
-  "description": "Use PubMed & Scholar Gateway to extract PETase (and PET hydrolase) variants and effects from 2024–2025 papers into a standardized table with citations.",
-  "repo": "thc1006/petase-zero-shot",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

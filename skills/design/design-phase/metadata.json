@@ -1,8 +1,0 @@
-{
-  "name": "design-phase",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "design",
-  "description": "Design phase with validation gates. Annotates PRD, creates story outlines, builds execution plan (via execution-plan-creation skill), validates artifacts via reviewer. NO HITL in this phase - single H",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.081697Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "jira-orchestration-workflow",
-  "repo": "Lobbi-Docs/claude",
-  "category": "productivity",
-  "description": "This skill should be used when the user asks to \"orchestrate jira\", \"work on issue\", \"complete jira ticket\", \"development workflow\", \"jira automation\", \"issue lifecycle\", \"work on story\", \"fix bug tic",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:51.672789Z"
-}

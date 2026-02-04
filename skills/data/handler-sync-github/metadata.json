@@ -1,9 +1,0 @@
-{
-  "name": "handler-sync-github",
-  "description": "GitHub-specific sync mechanism - file copying, pattern matching, and safety checks",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "helm-chart-creation",
-  "description": "Complete patterns for creating and managing Helm charts: chart structure, templates, values, dependencies, and deployment workflows for packaging Kubernetes applications.",
-  "repo": "mub7865/Hackathone-2",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

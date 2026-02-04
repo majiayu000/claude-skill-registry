@@ -1,8 +1,0 @@
-{
-  "name": "validation-phase",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Quality validation after execution. Runs confidence-check skill (if complexity \u226515), spawns code-quality-validator for build verification, and reviewer agent for quality assessment. Scales checks base",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.480143Z"
-}

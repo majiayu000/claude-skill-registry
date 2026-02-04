@@ -1,9 +1,0 @@
-{
-  "name": "slack-web-api",
-  "description": "Comprehensive guidance for Slack Web API operations with the Go SDK. Use when sending messages, posting to channels, creating or managing channels, retrieving user information, uploading files, compos",
-  "repo": "linehaul-ai/linehaulai-claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

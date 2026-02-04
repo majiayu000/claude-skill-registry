@@ -1,8 +1,0 @@
-{
-  "name": "tekton",
-  "repo": "vdemeester/home",
-  "category": "devops",
-  "description": "Tekton Pipelines CI/CD best practices for Kubernetes-native workflows. USE WHEN working with Tekton tasks, pipelines, triggers, building container images, GitOps integration, or cloud-native CI/CD.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.440009Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "validation-report-generator",
-  "description": "Generate structured 8-section validation reports with verdict (GOOD/BAD/NEEDS MAJOR WORK), strengths, critical flaws, blindspots, and concrete path forward. Use after strategic-cto-mentor has complete",
-  "repo": "alirezarezvani/claude-cto-team",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

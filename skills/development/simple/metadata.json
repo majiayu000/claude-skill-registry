@@ -1,8 +1,0 @@
-{
-  "name": "simple",
-  "repo": "monicajeon28/GMcruise",
-  "category": "development",
-  "description": "Generates descriptive commit messages from git diffs. Use when writing commits or reviewing staged changes.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:20:47.165970Z"
-}

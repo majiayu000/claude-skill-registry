@@ -1,9 +1,0 @@
-{
-  "name": "enumerating-network-services",
-  "repo": "trilwu/secskills",
-  "category": "data",
-  "description": "Enumerate and exploit network services including SMB, FTP, SSH, RDP, HTTP, databases (MySQL, MSSQL, PostgreSQL, MongoDB), LDAP, NFS, DNS, and SNMP. Use when testing network service security or perform",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:10.846873Z",
-  "dir_name": "enumerating-network-services"
-}

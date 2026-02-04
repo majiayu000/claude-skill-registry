@@ -1,9 +1,0 @@
-{
-  "name": "openspec-check",
-  "description": "Use BEFORE any implementation to check if specs exist for the capability. Run this first when starting any feature work. Reports: spec exists, no spec, or active change in progress.",
-  "repo": "discountedcookie/10x-mapmaster",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

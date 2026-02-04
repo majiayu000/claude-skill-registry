@@ -1,9 +1,0 @@
-{
-  "name": "monitoring-flower",
-  "description": "Flower monitoring setup and configuration for Celery including real-time monitoring, authentication, custom dashboards, and Prometheus metrics integration. Use when setting up Celery monitoring, confi",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

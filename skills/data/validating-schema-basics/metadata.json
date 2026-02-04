@@ -1,9 +1,0 @@
-{
-  "name": "validating-schema-basics",
-  "description": "Validate code for Zod v4 compatibility by detecting deprecated APIs and ensuring adherence to v4 patterns",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

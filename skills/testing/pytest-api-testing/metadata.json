@@ -1,8 +1,0 @@
-{
-  "name": "pytest-api-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write pytest tests for FastAPI endpoints using TestClient including request/response testing, authentication, and error handling. Use when testing REST API endpoints.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.803740Z"
-}

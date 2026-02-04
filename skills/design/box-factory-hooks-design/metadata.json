@@ -1,8 +1,0 @@
-{
-  "name": "box-factory-hooks-design",
-  "repo": "racurry/neat-little-package",
-  "category": "design",
-  "description": "Interpretive guidance for designing Claude Code hooks. Helps you understand hook lifecycle, when to use hooks vs other patterns, and common pitfalls. ALWAYS use when creating or reviewing hooks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:46.292633Z"
-}

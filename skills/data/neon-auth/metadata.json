@@ -1,9 +1,0 @@
-{
-  "name": "neon-auth",
-  "description": "Sets up Neon Auth for your application. Configures authentication, creates auth routes, and generates UI components. Use when adding authentication to Next.js, React SPA, or Node.js projects.",
-  "repo": "neondatabase/ai-rules",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

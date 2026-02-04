@@ -1,7 +1,0 @@
-{
-  "name": "aptos-move-testing",
-  "description": "Expert on testing Move smart contracts on Aptos, including unit tests, integration tests, Move Prover formal verification, debugging strategies, and test coverage. Triggers on keywords move test, unit",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.724876Z"
-}

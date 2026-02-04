@@ -1,9 +1,0 @@
-{
-  "name": "ninja-patterns",
-  "description": "NinjaTrader 8 NinjaScript indicator scaffold and patterns. Provides C# structure guidance and triggers doc-researcher for API verification. Use when developing NinjaTrader indicators.",
-  "repo": "lgbarn/trading-indicator-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

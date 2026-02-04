@@ -1,8 +1,0 @@
-{
-  "name": "consultant",
-  "repo": "nicknisi/claude-plugins",
-  "category": "product",
-  "description": "Multi-model AI consultation and research. Supports CONSULTATION MODE (ask single expert), RESEARCH MODE (parallel multi-agent), or DELIBERATION MODE (agents debate and refine). USE WHEN user says 'ask",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:34.151676Z"
-}

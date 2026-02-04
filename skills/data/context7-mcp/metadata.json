@@ -1,9 +1,0 @@
-{
-  "name": "context7-mcp",
-  "description": "Always use Context7 MCP to fetch up-to-date library/API documentation before generating code that depends on external libraries or config. Use when the user asks for setup steps, configuration, or cod",
-  "repo": "BinkyTwin/ReviewXiv",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

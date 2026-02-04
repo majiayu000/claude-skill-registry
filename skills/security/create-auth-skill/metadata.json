@@ -1,8 +1,0 @@
-{
-  "name": "create-auth-skill",
-  "repo": "better-auth/skills",
-  "category": "security",
-  "description": "A skill to create auth service for new applications.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.335915Z"
-}

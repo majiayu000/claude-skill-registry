@@ -1,9 +1,0 @@
-{
-  "name": "wiki-generator-lsp",
-  "description": "Generate comprehensive WIKI.md documentation for any codebase using LSP for precise code analysis. Use when user asks to document a codebase, generate technical documentation, create architecture diag",
-  "repo": "s-celles/ai-config",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

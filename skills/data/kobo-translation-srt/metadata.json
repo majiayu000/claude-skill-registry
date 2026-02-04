@@ -1,9 +1,0 @@
-{
-  "name": "kobo-translation-srt",
-  "description": "Extension to kobo-translation skill specifically for translating video subtitles and transcripts in SRT format. Adds subtitle-specific guidelines for character limits, spoken language patterns, chunke",
-  "repo": "joshuaberetta/kobo-translation-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

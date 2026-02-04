@@ -1,9 +1,0 @@
-{
-  "name": "managing-claude-code-meta",
-  "description": "MUST be loaded when setting up, installing, migrating, reviewing, auditing, or checking CLAUDE.md files in projects. Covers installing the promode CLAUDE.md into new projects, migrating existing CLAUD",
-  "repo": "mikekelly/promode",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

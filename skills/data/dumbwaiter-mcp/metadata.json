@@ -1,9 +1,0 @@
-{
-  "name": "dumbwaiter-mcp",
-  "description": "Provider-agnostic wait-for-change skill that uses the Dumbwaiter MCP server to wait on PR events (GitHub first) via wait.start/status/cancel/await, with progress notifications and durable state.",
-  "repo": "lambdamechanic/sk",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/lambdamechanic/sk"
-}

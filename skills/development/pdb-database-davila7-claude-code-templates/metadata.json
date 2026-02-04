@@ -1,7 +1,0 @@
-{
-  "name": "pdb-database-davila7-claude-code-templates",
-  "description": "Access RCSB PDB for 3D protein/nucleic acid structures. Search by text/sequence/structure, download coordinates (PDB/mmCIF), retrieve metadata, for structural biology and drug discovery.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.585022Z"
-}

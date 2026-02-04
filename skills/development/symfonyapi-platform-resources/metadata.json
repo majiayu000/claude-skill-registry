@@ -1,8 +1,0 @@
-{
-  "name": "symfonyapi-platform-resources",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Configure API Platform resources with operations, pagination, and output DTOs for clean, versioned REST/GraphQL APIs",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.513685Z"
-}

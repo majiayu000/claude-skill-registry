@@ -1,7 +1,0 @@
-{
-  "name": "opengraph-images",
-  "description": "Create dynamic OpenGraph images for social media sharing using Next.js ImageResponse API. Use when adding OG images to new pages, updating existing OG images, or implementing page-specific social prev",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.467438Z"
-}

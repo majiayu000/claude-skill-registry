@@ -1,9 +1,0 @@
-{
-  "name": "nix-devenv",
-  "description": "Expert at creating Nix flakes with flake-parts for development environments. Invoked when users want to set up devShells, configure nix-direnv, create flake.nix files, or build reproducible developmen",
-  "repo": "LucioFranco/claude-nix-flakes-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

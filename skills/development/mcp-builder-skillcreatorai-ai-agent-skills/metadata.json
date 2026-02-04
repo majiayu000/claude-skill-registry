@@ -1,7 +1,0 @@
-{
-  "name": "mcp-builder-skillcreatorai-ai-agent-skills",
-  "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate externa",
-  "category": "development",
-  "source": "github.com/skillcreatorai/Ai-Agent-Skills",
-  "imported_at": "2026-01-24T14:54:05.934506Z"
-}

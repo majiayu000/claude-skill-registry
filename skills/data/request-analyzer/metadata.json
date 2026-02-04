@@ -1,9 +1,0 @@
-{
-  "name": "request-analyzer",
-  "description": "Proactively analyze user requests at the start of conversations to determine task type, assess prompt quality, and intelligently recommend which skills to activate. Should activate for ALL user reques",
-  "repo": "smallnest/goskills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

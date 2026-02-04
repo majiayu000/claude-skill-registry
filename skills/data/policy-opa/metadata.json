@@ -1,9 +1,0 @@
-{
-  "name": "policy-opa",
-  "description": "Policy-as-code enforcement and compliance validation using Open Policy Agent (OPA). Use when: (1) Enforcing security and compliance policies across infrastructure and applications, (2) Validating Kube",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

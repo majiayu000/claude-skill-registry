@@ -1,8 +1,0 @@
-{
-  "name": "testing-deployment-implementation",
-  "repo": "pluginagentmarketplace/custom-plugin-angular",
-  "category": "testing",
-  "description": "Write unit tests for components and services, implement E2E tests with Cypress, set up test mocks, optimize production builds, configure CI/CD pipelines, and deploy to production platforms.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:11.159502Z"
-}

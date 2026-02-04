@@ -1,9 +1,0 @@
-{
-  "name": "config-hive-manager",
-  "description": "Use this skill when the user needs help managing configuration storage in the Config Hive including secrets, D&R rules, YARA rules, lookups, and cloud sensors.",
-  "repo": "tekgrunt/boot-test",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

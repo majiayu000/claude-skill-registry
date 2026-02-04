@@ -1,8 +1,0 @@
-{
-  "name": "draft-pull-request-workflow",
-  "repo": "hudrazine/claude-code-toolkit",
-  "category": "development",
-  "description": "This skill should be used when the user requests to create a pull request from the current branch (e.g., \"create PR\", \"draft PR\", \"open PR\"). Provides workflow guidance for creating well-structured Dr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:11.671678Z"
-}

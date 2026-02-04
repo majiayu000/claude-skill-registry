@@ -1,9 +1,0 @@
-{
-  "name": "skillstash-review",
-  "description": "Review skillstash PRs and summarize validation issues",
-  "repo": "galligan/skillstash",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

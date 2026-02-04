@@ -1,7 +1,0 @@
-{
-  "name": "supabase-expert",
-  "description": "Comprehensive Supabase expert with access to 2,616 official documentation files covering PostgreSQL database, authentication, real-time subscriptions, storage, edge functions, vector embeddings, and a",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.310887Z"
-}

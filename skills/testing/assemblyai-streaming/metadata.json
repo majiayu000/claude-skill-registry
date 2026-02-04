@@ -1,8 +1,0 @@
-{
-  "name": "assemblyai-streaming",
-  "repo": "ratacat/claude-skills",
-  "category": "testing",
-  "description": "This skill should be used when working with AssemblyAI\u2019s Speech-to-Text and LLM Gateway APIs, especially for streaming/live transcription, meeting notetakers, and voice agents that need low-latency tr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.728034Z"
-}

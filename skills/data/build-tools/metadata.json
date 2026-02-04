@@ -1,9 +1,0 @@
-{
-  "name": "build-tools",
-  "description": "Build tool configuration for tsup, tsx, and bundlers. Use when setting up build pipelines.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

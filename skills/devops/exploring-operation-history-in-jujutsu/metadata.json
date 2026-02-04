@@ -1,8 +1,0 @@
-{
-  "name": "exploring-operation-history-in-jujutsu",
-  "repo": "edmundmiller/dotfiles",
-  "category": "devops",
-  "description": "Help users explore operation history and time travel in jj. Use when the user explicitly mentions 'operation log', 'op log', 'jj op', or 'operation history'. Covers jj op log, --at-op flag, op restore",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.179868Z"
-}

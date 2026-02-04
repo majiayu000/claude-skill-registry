@@ -1,9 +1,0 @@
-{
-  "name": "unity-test-runner",
-  "description": "Execute and analyze Unity Test Framework tests from the command line. This skill automates test execution for Unity projects by detecting the Unity Editor, configuring test parameters (EditMode/PlayMo",
-  "repo": "zsutxz/ClaudeLearning",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zsutxz/ClaudeLearning"
-}

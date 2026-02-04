@@ -1,9 +1,0 @@
-{
-  "name": "bug-fix-plan-critic",
-  "description": "You are an expert code reviewer. Your role is to independently review fix plans produced by another agent and identify issues, gaps, or risks.",
-  "repo": "pcortes/swarm-attack",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/pcortes/swarm-attack"
-}

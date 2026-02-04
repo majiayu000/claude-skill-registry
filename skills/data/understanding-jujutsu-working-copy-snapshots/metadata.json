@@ -1,9 +1,0 @@
-{
-  "name": "understanding-jujutsu-working-copy-snapshots",
-  "repo": "edmundmiller/dotfiles",
-  "category": "data",
-  "description": "Understand working copy auto-snapshots, evolog, and how jj tracks changes automatically. Use when understanding @, viewing working copy history, managing unfinished work, or understanding how jj preve",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.320864Z",
-  "dir_name": "understanding-jujutsu-working-copy-snapshots"
-}

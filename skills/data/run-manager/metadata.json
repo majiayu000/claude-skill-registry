@@ -1,9 +1,0 @@
-{
-  "name": "run-manager",
-  "description": "Manage FABER workflow run lifecycle - create, query, resume, rerun runs",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

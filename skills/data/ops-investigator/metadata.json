@@ -1,9 +1,0 @@
-{
-  "name": "ops-investigator",
-  "description": "Investigate incidents and analyze logs - query CloudWatch logs with filters,correlate events across services, identify error patterns, generate incidentreports with timelines, analyze log patterns, se",
-  "repo": "fractary/claude-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

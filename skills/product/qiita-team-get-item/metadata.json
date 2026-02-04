@@ -1,8 +1,0 @@
-{
-  "name": "qiita-team-get-item",
-  "repo": "minamijoyo/dotfiles",
-  "category": "product",
-  "description": "\u793e\u5185Qiita:Team\u306e\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u30b3\u30f3\u30c6\u30f3\u30c4\u3092\u53d6\u5f97\u3059\u308b\u3002\u30b3\u30fc\u30c9\u5185\u306e\u30b3\u30e1\u30f3\u30c8\u3084\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u306bQiita:Team\u306eURL\uff08https://[team_id].qiita.com/[user_id]/items/[item_id]\u5f62\u5f0f\uff09\u304c\u542b\u307e\u308c\u3066\u3044\u308b\u5834\u5408\u306b\u4f7f\u7528\u3059\u308b",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:10.590180Z"
-}

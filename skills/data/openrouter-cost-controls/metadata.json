@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-cost-controls",
-  "description": "Implement budget controls and cost limits for OpenRouter. Use when managing spending or preventing overruns. Trigger with phrases like 'openrouter budget', 'openrouter spending limit', 'cost control',",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "video-creator",
-  "description": "Orchestrates end-to-end video generation through sequential workflow steps (audio, direction, assets, design, coding). Activates when user requests video creation from a script, wants to resume video ",
-  "repo": "outscal/video-generator",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cva-patterns-cost",
-  "description": "Cost optimization strategies for production AI pipelines in Clojure+Vertex AI. Covers multi-model routing (70% Gemini/20% Haiku/10% Sonnet), token optimization (prompt engineering, output constraints)",
-  "repo": "joaopelegrino/hello-word-closure",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

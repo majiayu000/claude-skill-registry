@@ -1,7 +1,0 @@
-{
-  "name": "ask-questions-if-underspecified-skillcreatorai-ai-agent-skills",
-  "description": "Clarify requirements before implementing. Do not use automatically, only when invoked explicitly.",
-  "category": "development",
-  "source": "github.com/skillcreatorai/Ai-Agent-Skills",
-  "imported_at": "2026-01-24T14:54:05.389673Z"
-}

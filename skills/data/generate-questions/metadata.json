@@ -1,9 +1,0 @@
-{
-  "name": "generate-questions",
-  "description": "Generate high-quality bilingual programming quiz questions for Codle. Use this skill when creating new quiz questions that test deep understanding rather than rote memorization.",
-  "repo": "emon100/codle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

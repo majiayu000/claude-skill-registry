@@ -1,8 +1,0 @@
-{
-  "name": "serena-code-reading",
-  "repo": "metasaver/claude-marketplace",
-  "category": "development",
-  "description": "Token-efficient code reading protocol using Serena's progressive disclosure pattern (90-95% token savings). Provides mandatory workflow, tool reference, and common patterns for symbol-level code navig",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.558792Z"
-}

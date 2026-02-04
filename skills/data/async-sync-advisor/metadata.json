@@ -1,9 +1,0 @@
-{
-  "name": "async-sync-advisor",
-  "description": "Guides users on choosing between async and sync patterns for Lambda functions, including when to use tokio, rayon, and spawn_blocking. Activates when users write Lambda handlers with mixed workloads.",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

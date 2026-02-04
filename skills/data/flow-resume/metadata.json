@@ -1,9 +1,0 @@
-{
-  "name": "flow-resume",
-  "description": "Resume interrupted flow:work session from last checkpoint. Reads flow-progress.txt to restore context and continue work.",
-  "repo": "Gitmaxd/flowfactory",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

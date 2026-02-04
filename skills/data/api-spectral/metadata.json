@@ -1,9 +1,0 @@
-{
-  "name": "api-spectral",
-  "description": "API specification linting and security validation using Stoplight's Spectral with support for OpenAPI, AsyncAPI, and Arazzo specifications. Validates API definitions against security best practices, O",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

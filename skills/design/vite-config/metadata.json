@@ -1,8 +1,0 @@
-{
-  "name": "vite-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "design",
-  "description": "Vite configuration templates and validation logic for MFE Host, MFE Remote, and Standalone web apps. Includes 5 required standards (correct plugins for package type, required path alias @ to ./src, bu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:05.800119Z"
-}

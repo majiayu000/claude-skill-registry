@@ -1,9 +1,0 @@
-{
-  "name": "pylint-configuration",
-  "description": "Use when pylint configuration including pylintrc, message control, plugins, and scoring system.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

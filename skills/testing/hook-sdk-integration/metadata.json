@@ -1,8 +1,0 @@
-{
-  "name": "hook-sdk-integration",
-  "repo": "chkim-su/skillmaker",
-  "category": "testing",
-  "description": "LLM invocation patterns from hooks via SDK. Use when you need background agents, CLI calls, or cost optimization.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:10.849575Z"
-}

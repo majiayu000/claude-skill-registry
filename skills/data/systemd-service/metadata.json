@@ -1,9 +1,0 @@
-{
-  "name": "systemd-service",
-  "description": "Create and debug systemd service unit files. Use when the user says \"create a service\", \"systemd unit\", \"service won't start\", \"enable on boot\", \"systemctl\", or asks about running apps as services.",
-  "repo": "mhalder/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

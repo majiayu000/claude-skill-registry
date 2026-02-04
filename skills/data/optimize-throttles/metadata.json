@@ -1,9 +1,0 @@
-{
-  "name": "optimize-throttles",
-  "description": "Analyze throttle behavior, recommend optimal configurations, and autonomously create/modify throttles to balance resource allocation and meet performance SLAs",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

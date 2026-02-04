@@ -1,9 +1,0 @@
-{
-  "name": "hetzner-vnc-screenshot",
-  "description": "Take and view screenshots of Hetzner Cloud servers via WebSocket VNC console",
-  "repo": "agentydragon/ducktape",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

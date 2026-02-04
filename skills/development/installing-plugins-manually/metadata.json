@@ -1,8 +1,0 @@
-{
-  "name": "installing-plugins-manually",
-  "repo": "camoneart/claude-code",
-  "category": "development",
-  "description": "Manually install Claude Code plugin components when official plugin installation fails. Use when `/plugin install` succeeds but plugins don't load, when verifying plugin installation, or when user men",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:36.398328Z"
-}

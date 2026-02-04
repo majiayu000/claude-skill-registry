@@ -1,9 +1,0 @@
-{
-  "name": "memorystore-config",
-  "description": "Memorystore Config - Auto-activating skill for GCP Skills.Triggers on: memorystore config, memorystore configPart of the GCP Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

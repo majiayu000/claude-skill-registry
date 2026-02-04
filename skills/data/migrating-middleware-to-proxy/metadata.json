@@ -1,9 +1,0 @@
-{
-  "name": "migrating-middleware-to-proxy",
-  "description": "Teach middleware.ts to proxy.ts migration in Next.js 16. Use when migrating middleware, encountering middleware errors, or implementing request proxying.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

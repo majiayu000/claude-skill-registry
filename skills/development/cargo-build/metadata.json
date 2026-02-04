@@ -1,8 +1,0 @@
-{
-  "name": "cargo-build",
-  "repo": "scalar0/skills",
-  "category": "development",
-  "description": "Run cargo build with consistent flags and colorless output for CI/log parsing. Formats code first, then builds all workspace targets. Trigger when asked to build Rust projects or prepare binaries.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:18.038894Z"
-}

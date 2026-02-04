@@ -1,9 +1,0 @@
-{
-  "name": "jira-ticket-fetcher",
-  "description": "This skill should be used when users need to fetch Jira ticket content using either a specific ticket ID (like RD-3891) or search for tickets by title/description. It defaults to searching within the ",
-  "repo": "alexismanuel/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

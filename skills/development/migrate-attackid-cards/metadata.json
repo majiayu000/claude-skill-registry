@@ -1,8 +1,0 @@
-{
-  "name": "migrate-attackid-cards",
-  "repo": "bcollazo/deckgym-core",
-  "category": "development",
-  "description": "Migrates attack implementations from the old approach (using AttackId) to use new approach (Mechanic enum)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.817037Z"
-}

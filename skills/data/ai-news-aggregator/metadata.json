@@ -1,9 +1,0 @@
-{
-  "name": "ai-news-aggregator",
-  "description": "获取最新的AI行业新闻，进行智能总结和筛选，最多展示10条最重要的新闻资讯。当用户需要了解AI行业最新动态时使用此skill。",
-  "repo": "zsutxz/ClaudeLearning",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zsutxz/ClaudeLearning"
-}

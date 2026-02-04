@@ -1,9 +1,0 @@
-{
-  "name": "managing-local-vs-global-state",
-  "description": "Teaches when to use local state vs global state (Context) in React 19. Use when deciding state management strategy, avoiding prop drilling, or architecting component state.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

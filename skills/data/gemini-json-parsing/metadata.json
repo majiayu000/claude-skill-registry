@@ -1,9 +1,0 @@
-{
-  "name": "gemini-json-parsing",
-  "description": "Parse Gemini CLI headless output (JSON and stream-JSON formats). Covers response extraction, stats interpretation, error handling, and tool call analysis. Use when processing Gemini CLI programmatic o",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

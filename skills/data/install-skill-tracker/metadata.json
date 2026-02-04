@@ -1,9 +1,0 @@
-{
-  "name": "install-skill-tracker",
-  "description": "This skill installs a complete Claude Code skill tracking system using hooks to automatically log skill usage, execution duration, token usage, and user prompts for later analysis. Use this skill when",
-  "repo": "dmccreary/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

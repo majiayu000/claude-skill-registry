@@ -1,8 +1,0 @@
-{
-  "name": "dspy-framework",
-  "repo": "bobmatnyc/terminator",
-  "category": "development",
-  "description": "DSPy declarative framework for automatic prompt optimization treating prompts as code with systematic evaluation and compilers. Use when optimizing prompts systematically, building production LLM syst",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:35.993872Z"
-}

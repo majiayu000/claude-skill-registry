@@ -1,9 +1,0 @@
-{
-  "name": "install-sections",
-  "description": "Build pages by installing shadcnblocks sections and implementing i18n. Use for each page after branding is defined. Takes page route and list of sections to install. Installs sections in order, create",
-  "repo": "Manuelvillarvieites/energy-company",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

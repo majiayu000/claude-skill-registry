@@ -1,7 +1,0 @@
-{
-  "name": "skill-creator-skillcreatorai-ai-agent-skills",
-  "description": "Guide for creating effective skills. Use when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrati",
-  "category": "development",
-  "source": "github.com/skillcreatorai/Ai-Agent-Skills",
-  "imported_at": "2026-01-24T14:54:05.739834Z"
-}

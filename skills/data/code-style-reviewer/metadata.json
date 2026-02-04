@@ -1,9 +1,0 @@
-{
-  "name": "code-style-reviewer",
-  "description": "코드 스타일 원칙 기반 리뷰 - 단일책임원칙(SRP), DRY(Don't Repeat Yourself), 단순화 우선, YAGNI(You Aren't Gonna Need It), 타입 안전성을 검사합니다. 코드 구조와 명명규칙도 함께 평가합니다. 코드 리뷰가 필요할 때 자동으로 사용됩니다.",
-  "repo": "devstefancho/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

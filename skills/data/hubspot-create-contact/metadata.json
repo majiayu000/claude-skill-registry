@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-create-contact",
-  "description": "Create a new contact in HubSpot CRM. Load when user says 'create contact', 'add contact', 'new contact'. Requires email, optional firstname, lastname, phone, company.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

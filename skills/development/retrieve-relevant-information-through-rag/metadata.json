@@ -1,8 +1,0 @@
-{
-  "name": "retrieve-relevant-information-through-rag",
-  "repo": "run-llama/vibe-llama",
-  "category": "development",
-  "description": "Leverage Retrieval Augmented Generation to retrieve relevant information from a a LlamaCloud Index. Requires the llama_cloud_services package and LLAMA_CLOUD_API_KEY as an environment variable.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.793563Z"
-}

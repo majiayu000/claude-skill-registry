@@ -1,7 +1,0 @@
-{
-  "name": "markdown-to-epub-converter",
-  "description": "Convert markdown documents and chat summaries into formatted EPUB ebook files that can be read on any device or uploaded to Kindle.",
-  "category": "development",
-  "source": "github.com/smerchek/claude-epub-skill",
-  "imported_at": "2026-01-24T14:53:56.915254Z"
-}

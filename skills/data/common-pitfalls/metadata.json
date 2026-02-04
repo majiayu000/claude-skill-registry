@@ -1,9 +1,0 @@
-{
-  "name": "common-pitfalls",
-  "description": "Apply when debugging errors, reviewing code for issues, or encountering unexpected behavior. Contains known mistakes with ChurchTools API, Vue components, TypeScript, Safari cookies, and form handling",
-  "repo": "bwl21/bwl-flyer-generator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

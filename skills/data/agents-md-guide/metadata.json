@@ -1,9 +1,0 @@
-{
-  "name": "agents-md-guide",
-  "description": "Guide for using and supporting the AGENTS.md standard in VS Code. Use this when asked about AGENTS.md, custom instructions, or repo-level AI agent configuration.",
-  "repo": "raphaelmansuy/machine-learning-feature-selection",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

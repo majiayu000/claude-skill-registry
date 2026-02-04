@@ -1,8 +1,0 @@
-{
-  "name": "gemma-telemetry-retention-detector",
-  "repo": "Foundup/Foundups-Agent",
-  "category": "development",
-  "description": "Fast binary classification of YouTube telemetry records for retention strategy",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:31.735632Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-cascade-agents",
-  "description": "Create custom Cascade agent configurations for specialized tasks. Activate when users mention\"custom cascade agent\", \"specialized ai agent\", \"domain-specific cascade\", \"agent configuration\",or \"custom",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "managing-google-workspace",
-  "repo": "binome-dev/humcp",
-  "category": "documents",
-  "description": "Manages Google Workspace services including Gmail, Drive, Docs, Sheets, Slides, Calendar, Forms, Tasks, and Chat. Use when the user wants to interact with Google services, manage emails, documents, sp",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.481168Z"
-}

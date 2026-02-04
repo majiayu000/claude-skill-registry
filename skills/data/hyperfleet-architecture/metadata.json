@@ -1,9 +1,0 @@
-{
-  "name": "hyperfleet-architecture",
-  "description": "Answers questions about HyperFleet architecture, design patterns, versioning strategies, cluster lifecycle, event-driven architecture, adapter framework, and git workflow by fetching docs from the ope",
-  "repo": "openshift-hyperfleet/hyperfleet-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

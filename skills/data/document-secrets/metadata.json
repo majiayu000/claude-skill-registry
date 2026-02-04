@@ -1,9 +1,0 @@
-{
-  "name": "document-secrets",
-  "description": "シークレット追加時のドキュメント更新。「シークレットを追加」「環境変数を追加」「API キーを設定」などのリクエスト時に使用。",
-  "repo": "tqer39/blog",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tqer39/blog"
-}

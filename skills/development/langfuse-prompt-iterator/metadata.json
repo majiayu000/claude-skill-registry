@@ -1,8 +1,0 @@
-{
-  "name": "langfuse-prompt-iterator",
-  "repo": "cncorp/arsenal",
-  "category": "development",
-  "description": "Comprehensive prompt iteration workflow for debugging and improving Langfuse prompts. Analyzes codebase usage, sets up reproducible tests, runs iterative refinement cycles with user feedback. Use when",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.134774Z"
-}

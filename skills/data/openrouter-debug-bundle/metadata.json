@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-debug-bundle",
-  "description": "Set up comprehensive logging and debugging for OpenRouter. Use when investigating issues or monitoring requests. Trigger with phrases like 'openrouter debug', 'openrouter logging', 'openrouter trace',",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

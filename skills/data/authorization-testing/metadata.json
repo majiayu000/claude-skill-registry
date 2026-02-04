@@ -1,9 +1,0 @@
-{
-  "name": "authorization-testing",
-  "description": "Validate authorization failures including IDOR, privilege escalation, and missing access controls. Test by attempting unauthorized access with lower-privileged credentials. Use when testing CWE-639 (I",
-  "repo": "anshumanbh/securevibes",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

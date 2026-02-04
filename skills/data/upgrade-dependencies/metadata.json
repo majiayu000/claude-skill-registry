@@ -1,9 +1,0 @@
-{
-  "name": "upgrade-dependencies",
-  "description": "Periodically upgrade npm dependencies and GitHub Actions to keep project current and secure",
-  "repo": "tnez/docent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

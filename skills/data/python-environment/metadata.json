@@ -1,9 +1,0 @@
-{
-  "name": "python-environment",
-  "description": "Python environment setup with uv, shared utilities, and script structure guidelines.",
-  "repo": "sunxd3/claude-code-devcontainer",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

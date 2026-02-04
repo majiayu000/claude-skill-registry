@@ -1,9 +1,0 @@
-{
-  "name": "merge-diff-arc-agi-task",
-  "description": "Guidance for solving ARC-AGI style pattern recognition tasks that involve git operations (fetching bundles, merging branches) and implementing algorithmic transformations. This skill applies when task",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

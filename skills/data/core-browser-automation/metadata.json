@@ -1,9 +1,0 @@
-{
-  "name": "core-browser-automation",
-  "repo": "mbosseme/computer-use-1",
-  "category": "data",
-  "description": "General-purpose patterns for reliable browser automation (selectors, waiting, scrolling, overlays, HITL).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:02.500558Z",
-  "dir_name": "core-browser-automation"
-}

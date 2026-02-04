@@ -1,9 +1,0 @@
-{
-  "name": "response-state-visualizer",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Stream safe, staged previews of answers in CLI output. Use when you need to show how a response forms or changes state without exposing chain-of-thought.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.688487Z",
-  "dir_name": "response-state-visualizer"
-}

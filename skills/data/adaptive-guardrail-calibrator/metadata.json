@@ -1,9 +1,0 @@
-{
-  "name": "adaptive-guardrail-calibrator",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Calibrate guardrail thresholds from live hardware telemetry and emit environment presets. Use when thresholds are hand-tuned or drift with hardware changes.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.654321Z",
-  "dir_name": "adaptive-guardrail-calibrator"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "workers-runtime-validator",
-  "description": "Automatically validates Cloudflare Workers runtime compatibility during development, preventing Node.js API usage and ensuring proper Workers patterns",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

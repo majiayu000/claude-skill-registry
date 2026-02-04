@@ -1,8 +1,0 @@
-{
-  "name": "hugging-face-evaluation-manager",
-  "repo": "huggingface/skills",
-  "category": "development",
-  "description": "Add and manage evaluation results in Hugging Face model cards. Supports extracting eval tables from README content, importing scores from Artificial Analysis API, and running custom model evaluations ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.899664Z"
-}

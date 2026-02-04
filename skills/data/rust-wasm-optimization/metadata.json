@@ -1,9 +1,0 @@
-{
-  "name": "rust-wasm-optimization",
-  "description": "Optimize Rust code for WebAssembly compilation and runtime performance. Use when building WASM applications, optimizing binary size, or improving WASM runtime performance.",
-  "repo": "wchklaus97/remind-me-pwa",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rspec-request-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write RSpec request specs for testing API endpoints, HTTP responses, authentication, and request/response handling. Use when testing controllers, API endpoints, or HTTP interactions following TDD.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.689520Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-test-quality",
-  "description": "Review React 19 test quality including coverage, patterns, and React 19 API testing. Use when reviewing tests or test coverage.",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

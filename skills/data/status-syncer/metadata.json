@@ -1,9 +1,0 @@
-{
-  "name": "status-syncer",
-  "description": "Forces refresh of status cache and displays comprehensive repository status to trigger statusLine update",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

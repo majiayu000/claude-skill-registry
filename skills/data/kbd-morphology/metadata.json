@@ -1,9 +1,0 @@
-{
-  "name": "kbd-morphology",
-  "description": "Expert in Kabardian morphological analysis. Provides word structure breakdown, verb template analysis ([PRAGM]-[GEOM]-[ARGS]-[STEM]-[TAM]-[SUBORD]), prefix/suffix identification, derivational patterns",
-  "repo": "panagoa/kbd_translate",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

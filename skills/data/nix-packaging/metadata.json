@@ -1,9 +1,0 @@
-{
-  "name": "nix-packaging",
-  "description": "Package new software or update existing packages using Nix",
-  "repo": "breakds/claude.bds",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

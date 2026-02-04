@@ -1,8 +1,0 @@
-{
-  "name": "query-grafana-tempo",
-  "repo": "narqo/dotfiles",
-  "category": "devops",
-  "description": "Query and explore distributed traces in Grafana Tempo. Use when a user asks to pull tracing data for analysis.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:41.825780Z"
-}

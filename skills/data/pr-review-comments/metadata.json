@@ -1,9 +1,0 @@
-{
-  "name": "pr-review-comments",
-  "description": "Fetch and analyze GitHub PR review comments and code-level feedback using the prc CLI. Use this skill whenever the user mentions PR comments, PR feedback, reviewer feedback, review comments, addressin",
-  "repo": "praveenperera/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

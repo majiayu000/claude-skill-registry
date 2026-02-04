@@ -1,9 +1,0 @@
-{
-  "name": "fetching-github-prs-to-review",
-  "description": "Fetches and processes GitHub pull requests waiting for review. Returns fully formatted markdown with PRs grouped by category (Feature/Bug, Chores, Dependency Updates) and sorted by age. Includes metad",
-  "repo": "ooloth/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

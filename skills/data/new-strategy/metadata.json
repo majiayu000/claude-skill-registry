@@ -1,9 +1,0 @@
-{
-  "name": "new-strategy",
-  "description": "Use this skill ONLY when creating a new trading strategy (e.g., MeanReversion, Breakout, ScalpingStrategy). Do not use for agents or scanners. This skill is part of the Phase 1 migration.",
-  "repo": "kimrejstrom/alpacalyzer-algo-trader",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

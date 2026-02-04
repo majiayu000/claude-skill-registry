@@ -1,9 +1,0 @@
-{
-  "name": "python-uv-dev",
-  "description": "Python development using the `uv` package manager. Use this skill when working with Python projects that use `uv` for dependency management, when initializing new Python projects, or when the user men",
-  "repo": "ships/eden",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "chezmoi-workflows",
-  "description": "Dotfile backup, sync, and version control with chezmoi. Tracks shell configs (.zshrc, .bashrc, .zshenv), git (.gitconfig), editors (helix, vim, nvim), terminal tools (broot, starship, alacritty, kitty",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

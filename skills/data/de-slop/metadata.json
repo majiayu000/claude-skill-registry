@@ -1,9 +1,0 @@
-{
-  "name": "de-slop",
-  "description": "This skill should be used to remove AI-generated artifacts and unnecessary code before committing. It scans changed files for redundant comments, AI TODOs, excessive docstrings, and unnecessary markdo",
-  "repo": "iamladi/cautious-computing-machine--primitives-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "supabase-policy-guardrails",
-  "description": "Implement Supabase lint rules, policy enforcement, and automated guardrails.Use when setting up code quality rules for Supabase integrations, implementingpre-commit hooks, or configuring CI policy che",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

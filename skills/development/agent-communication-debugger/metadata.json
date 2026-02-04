@@ -1,8 +1,0 @@
-{
-  "name": "agent-communication-debugger",
-  "repo": "EGAdams/planner",
-  "category": "development",
-  "description": "Diagnoses and debugs A2A agent communication issues including agent status, message routing, transport connectivity, and log analysis. Use when agents aren't responding, messages aren't being delivere",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:22.892529Z"
-}

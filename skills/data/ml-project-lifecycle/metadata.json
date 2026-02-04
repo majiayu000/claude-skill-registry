@@ -1,9 +1,0 @@
-{
-  "name": "ml-project-lifecycle",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Plan ML projects using CRISP-DM, TDSP, and MLOps methodologies with proper phase gates and deliverables.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.940080Z",
-  "dir_name": "ml-project-lifecycle"
-}

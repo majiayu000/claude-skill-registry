@@ -1,8 +1,0 @@
-{
-  "name": "session-summary",
-  "repo": "austinjamesrose/claude-skills-personal",
-  "category": "development",
-  "description": "End-of-session summary that logs work completed to Obsidian. Run this at the end of any Claude Code session to capture what you accomplished. Creates or appends to the daily session log.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.273534Z"
-}

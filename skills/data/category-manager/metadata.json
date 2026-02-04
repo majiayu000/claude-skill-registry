@@ -1,9 +1,0 @@
-{
-  "name": "category-manager",
-  "description": "Branch skill for building and improving categories. Use when creating new categories, validating category structure, improving existing categories, or migrating categories to new standard. Triggers: '",
-  "repo": "henmessi/plugin-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

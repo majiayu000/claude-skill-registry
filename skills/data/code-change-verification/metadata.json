@@ -1,7 +1,0 @@
-{
-  "name": "code-change-verification",
-  "repo": "openai/openai-agents-python",
-  "path": ".agents/skills/code-change-verification/SKILL.md",
-  "source": "github.com/openai/openai-agents-python",
-  "downloaded_at": "2026-02-04T03:55:16.667458Z"
-}

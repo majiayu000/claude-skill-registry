@@ -1,7 +1,0 @@
-{
-  "name": "test-task-create-from-fork",
-  "repo": "faisalanjum/EventTrader",
-  "path": ".claude/skills/test-task-create-from-fork/SKILL.md",
-  "source": "github.com/faisalanjum/EventTrader",
-  "downloaded_at": "2026-01-29T08:53:51.802465Z"
-}

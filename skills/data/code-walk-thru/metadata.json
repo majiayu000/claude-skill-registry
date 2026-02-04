@@ -1,9 +1,0 @@
-{
-  "name": "code-walk-thru",
-  "description": "Use this when user wants you to walk through (code or text) files in a EDITOR to either explain how some code works, or to show the user what changes you made, etc. You would typically use this repeat",
-  "repo": "pchalasani/claude-code-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

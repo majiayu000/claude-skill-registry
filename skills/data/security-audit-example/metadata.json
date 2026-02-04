@@ -1,9 +1,0 @@
-{
-  "name": "security-audit-example",
-  "description": "Example security audit skill demonstrating how to audit code for security vulnerabilities. Use when the user asks to perform security reviews, check for vulnerabilities, or audit code security.",
-  "repo": "meirm/askGPT",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

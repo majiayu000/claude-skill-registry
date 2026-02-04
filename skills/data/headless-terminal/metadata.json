@@ -1,9 +1,0 @@
-{
-  "name": "headless-terminal",
-  "description": "This skill provides guidance for implementing headless terminal interfaces that programmatically control shell sessions. Use this skill when implementing terminal emulation, pseudo-terminal wrappers, ",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

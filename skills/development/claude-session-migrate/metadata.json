@@ -1,8 +1,0 @@
-{
-  "name": "claude-session-migrate",
-  "repo": "kevintraver/dotfiles",
-  "category": "development",
-  "description": "Migrate Claude Code session storage when directories are moved or renamed. Use when user mentions moving folders, renaming directories, relocating projects, or needs to update Claude session paths aft",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:38.836319Z"
-}

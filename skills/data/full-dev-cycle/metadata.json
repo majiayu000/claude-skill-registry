@@ -1,9 +1,0 @@
-{
-  "name": "full-dev-cycle",
-  "description": "Complete development workflow integrating Git operations, GitHub PR management, and Docker deployment. Use for end-to-end development tasks. Triggers include \"deploy changes\", \"create PR and deploy\", ",
-  "repo": "ShunsukeHayashi/Miyabi",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

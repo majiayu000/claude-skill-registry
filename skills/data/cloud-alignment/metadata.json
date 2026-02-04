@@ -1,9 +1,0 @@
-{
-  "name": "cloud-alignment",
-  "description": "Align with cloud architecture frameworks (Microsoft CAF, AWS Well-Architected). Check alignment with pillars, identify gaps.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

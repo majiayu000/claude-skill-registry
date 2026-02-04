@@ -1,9 +1,0 @@
-{
-  "name": "running-performance-tests",
-  "description": "Execute load testing, stress testing, and performance benchmarking.Use when performing specialized testing.Trigger with phrases like \"run load tests\", \"test performance\", or \"benchmark the system\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

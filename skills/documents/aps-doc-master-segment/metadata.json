@@ -1,8 +1,0 @@
-{
-  "name": "aps-doc-master-segment",
-  "repo": "treasure-data/td-skills",
-  "category": "documents",
-  "description": "Expert documentation generation for CDP Master Segment (Parent Segment) configurations. Analyzes master segment tables using TD MCP, extracts attribute and behavior schemas, documents star schema rela",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.799800Z"
-}

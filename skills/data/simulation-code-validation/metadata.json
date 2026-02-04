@@ -1,9 +1,0 @@
-{
-  "name": "simulation-code-validation",
-  "description": "Encodes validation patterns for robotics simulation code (ROS 2, Gazebo, Isaac Sim). Ensures code examples are testable, safe, and follow simulation-first pedagogy. Validates Python syntax, ROS 2 patt",
-  "repo": "DevHammad0/physical-ai-robotics-textbook",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

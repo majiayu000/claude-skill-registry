@@ -1,9 +1,0 @@
-{
-  "name": "synalinks",
-  "description": "Build neuro-symbolic LLM applications with Synalinks framework. Use when working with DataModel, Program, Generator, Module, training LLM pipelines, in-context learning, structured output, JSON operat",
-  "repo": "majiayu000/claude-skill-registry",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majiayu000/claude-skill-registry"
-}

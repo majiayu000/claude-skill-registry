@@ -1,8 +1,0 @@
-{
-  "name": "ca-lobby-bigquery-integration",
-  "repo": "Ingramml/CA_lobby_prod_test",
-  "category": "testing",
-  "description": "BigQuery integration patterns for CA Lobby lobby data with BLN API schema. Use when working with CA Lobby backend, database queries, or data service. Provides CA-specific BigQuery patterns and Flask i",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:12.856185Z"
-}

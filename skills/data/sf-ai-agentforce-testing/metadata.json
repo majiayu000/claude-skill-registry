@@ -1,9 +1,0 @@
-{
-  "name": "sf-ai-agentforce-testing",
-  "description": "Comprehensive Agentforce testing skill with test execution, coverage analysis, and agentic fix loops. Run agent tests via sf CLI, analyze topic/action coverage, generate test specs, and automatically ",
-  "repo": "Jaganpro/sf-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

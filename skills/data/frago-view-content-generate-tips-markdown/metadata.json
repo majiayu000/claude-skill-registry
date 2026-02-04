@@ -1,9 +1,0 @@
-{
-  "name": "frago-view-content-generate-tips-markdown",
-  "description": "Markdown document content generation guide. Use this skill when you need to create Markdown documents that can be previewed via `frago view`. Covers element support, Mermaid charts, and best practices",
-  "repo": "tsaijamey/frago",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

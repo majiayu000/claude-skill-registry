@@ -1,9 +1,0 @@
-{
-  "name": "build-pmars",
-  "description": "Guidance for building pMARS (portable Memory Array Redcode Simulator) from source. This skill should be used when tasked with compiling pMARS, building Core War simulators from source packages, or cre",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

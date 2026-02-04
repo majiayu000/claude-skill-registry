@@ -1,9 +1,0 @@
-{
-  "name": "c-incremental-build-converter",
-  "description": "Convert C/C++ project build.sh and test.sh scripts to support incremental builds. Use when fixing build scripts for re-execution after docker commit, converting to out-of-tree builds, or making script",
-  "repo": "sslab-gatech/oss-crs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

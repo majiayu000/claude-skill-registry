@@ -1,9 +1,0 @@
-{
-  "name": "validator-expert",
-  "description": "Validate production readiness of Vertex AI Agent Engine deployments across security, monitoring, performance, compliance, and best practices. Generates weighted scores (0-100%) with actionable recomme",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "setup-playwright",
-  "description": "Configure Playwright for E2E testing. Use when setting up end-to-end tests, when no E2E framework is detected, or when the user asks to configure browser testing.",
-  "repo": "gruckion/marathon-ralph",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

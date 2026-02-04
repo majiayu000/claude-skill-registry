@@ -1,9 +1,0 @@
-{
-  "name": "subagent-orchestrator",
-  "description": "Manages the lifecycle, configuration, and synchronization of specialized sub-agents (Planner, Implementer, Reviewer, etc.) across various platforms (Claude, Copilot, OpenCode). Use this skill when you",
-  "repo": "PlaneInABottle/configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

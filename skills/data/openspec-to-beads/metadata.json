@@ -1,9 +1,0 @@
-{
-  "name": "openspec-to-beads",
-  "description": "PROACTIVELY convert approved OpenSpec specs into Beads issues when user applies a change or explicitly approves implementation. Creates trackable work with dependencies, discovers gaps, and maintains ",
-  "repo": "lucastamoios/celeiro",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

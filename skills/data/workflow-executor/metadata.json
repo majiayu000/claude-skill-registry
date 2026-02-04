@@ -1,9 +1,0 @@
-{
-  "name": "workflow-executor",
-  "description": "This skill should be used when the user wants to execute a looplia workflow, run workflowsteps, or process a workflow.md file. Use when someone says \"run the looplia workflow\",\"execute this looplia pi",
-  "repo": "memorysaver/looplia-core",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

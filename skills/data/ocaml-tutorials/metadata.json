@@ -1,9 +1,0 @@
-{
-  "name": "ocaml-tutorials",
-  "description": "Creating OCaml library tutorials using .mld documentation format with MDX executable examples. Use when discussing tutorials, documentation, .mld files, MDX, or interactive documentation.",
-  "repo": "avsm/ocaml-claude-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cache-health",
-  "description": "Performs comprehensive diagnostics on the codex cache system, detects issues, and can fix them automatically with repair operations.Delegates to fractary CLI for health checks and diagnostics.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

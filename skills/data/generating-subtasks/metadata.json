@@ -1,9 +1,0 @@
-{
-  "name": "generating-subtasks",
-  "description": "Converts approved design documents into agent-executable XML subtasks. Use after a design doc is approved and ready for implementation.",
-  "repo": "SteveBronder/skillrena",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

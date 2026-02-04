@@ -1,9 +1,0 @@
-{
-  "name": "message-editor",
-  "description": "Slack メッセージを編集する。「メッセージ編集」「さっきのを修正」「メッセージ修正」「訂正して」「編集して」「メッセージを直す」「内容を変更」などで起動。Pythonスクリプト `slack_message.py edit` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

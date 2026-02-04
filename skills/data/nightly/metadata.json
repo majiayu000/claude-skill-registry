@@ -1,9 +1,0 @@
-{
-  "name": "nightly",
-  "description": "End-of-day cleanup and maintenance routine. Calculates Sleep Score (0-100) based on uncommitted work, branch cleanup, issue updates, CI status, and service shutdown. Automatically captures session sta",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

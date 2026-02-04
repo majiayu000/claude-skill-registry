@@ -1,9 +1,0 @@
-{
-  "name": "opal-frontend-review-guidelines",
-  "description": "Automated review rules for opal-frontend PRs. Use when asked to review code, run @codex review, or provide PR feedback; apply severity levels and the required comment format.",
-  "repo": "hmcts/opal-frontend",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

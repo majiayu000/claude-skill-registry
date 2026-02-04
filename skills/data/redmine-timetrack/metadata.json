@@ -1,9 +1,0 @@
-{
-  "name": "redmine-timetrack",
-  "description": "이 스킬은 사용자가 \"작업 시간 기록\", \"시간 등록\", \"타임 로그\", \"작업 시간 조회\", \"몇 시간 일했어\", \"time entry\", \"log hours\", \"time tracking\", \"work hours\" 등을 언급할 때 사용됩니다. Redmine 작업 시간 관리 기능을 제공합니다.",
-  "repo": "ncuritylabs/ncurion-plugins-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

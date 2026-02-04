@@ -1,9 +1,0 @@
-{
-  "name": "dialyzer-analysis",
-  "description": "Use when analyzing and fixing Dialyzer warnings and type discrepancies in Erlang/Elixir code.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

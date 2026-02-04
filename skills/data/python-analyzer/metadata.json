@@ -1,9 +1,0 @@
-{
-  "name": "python-analyzer",
-  "description": "Format and analyze Python code using ruff (formatting/linting) and ty (static type checking). Use when the user asks to format Python code, run linting, check types, fix code style issues, or analyze ",
-  "repo": "jurabek/rules-prompts",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "rollback-service",
-  "description": "서비스를 이전 버전으로 롤백. Use when (1) 롤백 요청, (2) 이전 버전 복원, (3) /SEMO:rollback 커맨드.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

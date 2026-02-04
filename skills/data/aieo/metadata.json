@@ -1,9 +1,0 @@
-{
-  "name": "aieo",
-  "description": "AI Engine Optimization（AIEO）に最適化されたコンテンツを生成・リファクタ。AI Overviews、ChatGPT、Geminiに引用・要約されやすい構造で執筆する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

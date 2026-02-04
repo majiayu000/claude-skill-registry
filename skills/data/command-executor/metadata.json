@@ -1,9 +1,0 @@
-{
-  "name": "command-executor",
-  "description": "Executes safe commands and captures real output to extend command-verify functionality. Only runs when explicitly requested. Use when asked to actually run commands, execute commands, test if commands",
-  "repo": "d-oit/command-verify",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

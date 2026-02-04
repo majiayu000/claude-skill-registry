@@ -1,8 +1,0 @@
-{
-  "name": "ailang-release-manager",
-  "repo": "sunholo-data/ailang",
-  "category": "devops",
-  "description": "Create new AILANG releases with version bumps, changelog updates, git tags, and CI/CD verification. Use when user says \"ready to release\", \"create release\", mentions version numbers, or wants to publi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:28.694050Z"
-}

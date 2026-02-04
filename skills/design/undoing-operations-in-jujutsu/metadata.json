@@ -1,8 +1,0 @@
-{
-  "name": "undoing-operations-in-jujutsu",
-  "repo": "edmundmiller/dotfiles",
-  "category": "design",
-  "description": "Help users undo mistakes and recover from errors in jj. Use when the user explicitly mentions 'jj undo', 'undo operation', or 'restore operation'. Covers quick undo, multiple undo scenarios, and redo ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.546709Z"
-}

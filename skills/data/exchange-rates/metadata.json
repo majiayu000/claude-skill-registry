@@ -1,9 +1,0 @@
-{
-  "name": "exchange-rates",
-  "description": "Use when implementing exchange rate functionality - provides complete patterns for fetching BTC/fiat exchange rates from Coinbase API, caching strategies, conversion utilities, and React hooks for dis",
-  "repo": "PerceptLabs/nostril",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

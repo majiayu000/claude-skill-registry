@@ -1,8 +1,0 @@
-{
-  "name": "mediatts-canary-runner",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "testing",
-  "description": "Run TTS canary tests, measure audio quality/latency, and rollback on threshold breaches. Use before rolling out new voices or pipelines.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:31.928911Z"
-}

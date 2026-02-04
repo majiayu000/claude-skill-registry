@@ -1,9 +1,0 @@
-{
-  "name": "code-quality-checker",
-  "description": "코드 품질 검사 자동화. 린트, 포맷, 타입 체크, 보안 스캔 통합.",
-  "repo": "garimto81/claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

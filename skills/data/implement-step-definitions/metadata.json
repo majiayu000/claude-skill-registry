@@ -1,9 +1,0 @@
-{
-  "name": "implement-step-definitions",
-  "description": "Implement step definitions for Gherkin scenarios, translating Given/When/Then into executable test code. Use after write-scenario when scenarios are defined but step definitions are missing.",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

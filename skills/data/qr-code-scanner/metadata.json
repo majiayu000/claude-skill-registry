@@ -1,9 +1,0 @@
-{
-  "name": "qr-code-scanner",
-  "description": "Use when implementing QR code scanning - provides complete patterns for camera-based scanning, classifying scanned content (Bitcoin addresses, Lightning invoices, npubs, Cashu tokens), handling camera",
-  "repo": "PerceptLabs/nostril",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

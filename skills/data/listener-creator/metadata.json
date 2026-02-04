@@ -1,9 +1,0 @@
-{
-  "name": "listener-creator",
-  "description": "Creates event-driven email listeners that monitor for specific conditions (like urgent emails from boss, newsletters to archive, package tracking) and execute custom actions. Use when user wants to be",
-  "repo": "anthropics/claude-agent-sdk-demos",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

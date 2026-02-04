@@ -1,8 +1,0 @@
-{
-  "name": "julien-mcp-excel",
-  "repo": "theflysurfer/claude-skills-marketplace",
-  "category": "documents",
-  "description": "Install Excel MCP server via uvx. Use when user needs Excel file manipulation capabilities.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:54.796825Z"
-}

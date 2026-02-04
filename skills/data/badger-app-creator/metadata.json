@@ -1,9 +1,0 @@
-{
-  "name": "badger-app-creator",
-  "description": "Create MicroPython applications for Universe 2025 (Tufty) Badge including display graphics, button handling, and MonaOS app structure. Use when building badge apps, creating interactive displays, or d",
-  "repo": "johnlindquist/badger-2350-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

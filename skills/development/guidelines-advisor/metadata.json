@@ -1,7 +1,0 @@
-{
-  "name": "guidelines-advisor",
-  "description": "Comprehensive smart contract development advisor based on Trail of Bits' best practices. Analyzes codebase to generate documentation/specifications, review architecture, check upgradeability patterns,",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:05.134592Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-log-email",
-  "description": "Log an email engagement in HubSpot CRM. Load when user says 'log email', 'record email', 'add email', 'email sent'. Requires subject and body.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

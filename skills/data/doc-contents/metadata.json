@@ -1,9 +1,0 @@
-{
-  "name": "doc-contents",
-  "description": "Generate project documentation including CONTENTS.md navigation files and AGENTS.md instructions. Use when creating documentation structure, project indexes, or AI agent configuration files.",
-  "repo": "dopsonbr/agent-kit",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

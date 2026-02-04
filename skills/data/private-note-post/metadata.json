@@ -1,9 +1,0 @@
-{
-  "name": "private-note-post",
-  "description": "下書きファイルをnote.comに下書き投稿。Frontmatterを検証し、mcp__note-post-mcp__save_draftを呼び出す。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

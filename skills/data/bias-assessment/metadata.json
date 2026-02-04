@@ -1,9 +1,0 @@
-{
-  "name": "bias-assessment",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Evaluate AI systems for fairness using demographic parity, equalized odds, and bias detection techniques with mitigation strategies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.647853Z",
-  "dir_name": "bias-assessment"
-}

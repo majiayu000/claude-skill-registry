@@ -1,9 +1,0 @@
-{
-  "name": "managing-lifecycle",
-  "description": "Create, update, close, and bulk process GitHub Issues with state management and metadata updates. Use for CRUD operations, changing issue states, or batch processing.",
-  "repo": "terrylica/claude-code-skills-github-issues",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

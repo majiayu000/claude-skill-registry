@@ -1,9 +1,0 @@
-{
-  "name": "workflows-expert",
-  "description": "Activate when requests involve workflow execution, CI/CD pipelines, git automation, or multi-step task orchestration. This skill provides workflows-mcp MCP server integration with tag-based workflow d",
-  "repo": "qtsone/marketplace",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

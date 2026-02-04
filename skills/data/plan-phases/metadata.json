@@ -1,9 +1,0 @@
-{
-  "name": "plan-phases",
-  "description": "Use when creating implementation plans, phase planning documents, breaking features into phases, or when /workflow-plan-phases command is invoked. Provides methodology for context-efficient phase sizi",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

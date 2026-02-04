@@ -1,9 +1,0 @@
-{
-  "name": "search-notes",
-  "description": "Always use this skill at the start of a task to check whether relevant information already exists. Use when users ask to recall, search memories, or subscribe to updates. Triggers on \"recall\", \"search",
-  "repo": "timbuchinger/loadout",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

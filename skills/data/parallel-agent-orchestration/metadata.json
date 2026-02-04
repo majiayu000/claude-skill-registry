@@ -1,9 +1,0 @@
-{
-  "name": "parallel-agent-orchestration",
-  "description": "병렬 에이전트 오케스트레이션. Fan-Out/Fan-In 패턴으로 다중 에이전트 실행.",
-  "repo": "garimto81/claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

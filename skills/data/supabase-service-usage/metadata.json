@@ -1,9 +1,0 @@
-{
-  "name": "supabase-service-usage",
-  "description": "アプリ全域の Supabase 利用ルール。サービス層の統一、Service Role の安全な使い分け、ログ付与、Server Actions 連携を規定。",
-  "repo": "shoma-endo/industry-specific-mc-training",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

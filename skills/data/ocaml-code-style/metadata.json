@@ -1,9 +1,0 @@
-{
-  "name": "ocaml-code-style",
-  "description": "Refactoring and tidying OCaml code to be more idiomatic. Use when the user asks to tidy, clean up, refactor, or improve OCaml code, or when reviewing Claude-generated OCaml code for consolidation.",
-  "repo": "avsm/ocaml-claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cui-javascript-linting",
-  "description": "ESLint, Prettier, and StyleLint configuration standards for JavaScript code quality and formatting, including flat config setup, rule management, and build integration",
-  "repo": "cuioss/plan-marshall",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/cuioss/plan-marshall"
-}

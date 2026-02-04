@@ -1,9 +1,0 @@
-{
-  "name": "attack-surface-analyzer",
-  "description": "Attack Surface Analyzer - Auto-activating skill for Security Advanced.Triggers on: attack surface analyzer, attack surface analyzerPart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

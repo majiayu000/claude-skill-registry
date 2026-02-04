@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-pr-template",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "testing",
-  "description": "Generate pull request descriptions following Grey Haven Studio standards with clear summary, motivation, implementation details, testing strategy, and comprehensive checklist. Use when creating or rev",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:13.820442Z"
-}

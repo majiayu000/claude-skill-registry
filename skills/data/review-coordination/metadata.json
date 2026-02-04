@@ -1,9 +1,0 @@
-{
-  "name": "review-coordination",
-  "description": "Use when coordinating code reviews, agent reviews, and approval workflows across Jira and Harness",
-  "repo": "Lobbi-Docs/claude-2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

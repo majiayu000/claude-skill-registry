@@ -1,9 +1,0 @@
-{
-  "name": "codex-plan-review",
-  "description": "Send implementation plan to Codex for critique and validation. Use PROACTIVELY after you produce a non-trivial plan (including after /plan mode) unless the user opts out, or when the user says review ",
-  "repo": "antorsae/dual-agent",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

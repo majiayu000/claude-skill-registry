@@ -1,9 +1,0 @@
-{
-  "name": "python-plan-optimization",
-  "description": "6-phase read-only analysis workflow for Python code in markdown documents.Detects design principle violations, code smells, and suggests modern Python improvements.Applies project-type-aware threshold",
-  "repo": "it-bens/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "chill-putio",
-  "description": "Automate chill.institute torrent/magnet ingestion into put.io. Use when asked to search, scan, or fetch torrent/magnet links from chill.institute and add them to put.io, or when troubleshooting the ch",
-  "repo": "mbelinky/clawdis-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

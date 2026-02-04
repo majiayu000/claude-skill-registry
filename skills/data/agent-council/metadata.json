@@ -1,9 +1,0 @@
-{
-  "name": "agent-council",
-  "description": "Collect and synthesize opinions from multiple AI agents. Use when users say \"summon the council\", \"ask other AIs\", or want multiple AI perspectives on a question.",
-  "repo": "team-attention/plugins-for-claude-natives",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

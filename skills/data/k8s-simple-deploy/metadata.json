@@ -1,9 +1,0 @@
-{
-  "name": "k8s-simple-deploy",
-  "description": "Assists with deploying simple apps to Kubernetes consisting of a deployment and a service.",
-  "repo": "eitansuez/kagent-skill",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

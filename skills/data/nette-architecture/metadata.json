@@ -1,9 +1,0 @@
-{
-  "name": "nette-architecture",
-  "description": "Provides Nette application architecture guidelines. Use when working with presenters, modules, directory structure, Core vs Model decisions, or Nette MVC patterns.",
-  "repo": "nette/claude-code",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

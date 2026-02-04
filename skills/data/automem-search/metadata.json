@@ -1,9 +1,0 @@
-{
-  "name": "automem-search",
-  "description": "Search, filter, and retrieve Claude/Codex history indexed by the automem CLI. Use when the user wants to index history, run lexical/semantic/hybrid search, fetch full transcripts, or produce LLM-frien",
-  "repo": "nicosuave/memex",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

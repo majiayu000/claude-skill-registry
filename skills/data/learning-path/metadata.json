@@ -1,9 +1,0 @@
-{
-  "name": "learning-path",
-  "description": "Assess Claude Code knowledge and route to appropriate learning level.Use when: user wants to learn Claude Code, asks for guidance, or says \"teach me\".Triggers: \"learn Claude Code\", \"teach me\", \"I'm ne",
-  "repo": "timequity/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

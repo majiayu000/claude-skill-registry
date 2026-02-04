@@ -1,9 +1,0 @@
-{
-  "name": "ts-morph-analyzer",
-  "description": "Use when debugging TypeScript/JavaScript bugs by tracing call chains, understanding unfamiliar codebases quickly, making architectural decisions, or reviewing code quality. Extract function signatures",
-  "repo": "ratacat/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

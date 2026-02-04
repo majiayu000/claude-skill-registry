@@ -1,8 +1,0 @@
-{
-  "name": "marimo-development",
-  "repo": "CodingKaiser/claude-kaiser-skills",
-  "category": "development",
-  "description": "Expert guidance for creating and working with marimo notebooks - reactive Python notebooks that can be executed as scripts and deployed as apps. Use when the user asks to create marimo notebooks, conv",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:41.578720Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "ragsharp-build-code-graph",
-  "repo": "managedcode/RagSharp",
-  "category": "development",
-  "description": "Build or update a code graph index for C#/.NET repositories using ragsharp-graph.Triggers: build index, update index, refresh index, code graph, dependency graph, static analysis, Roslyn, line numbers",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:13.489833Z"
-}

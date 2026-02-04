@@ -1,9 +1,0 @@
-{
-  "name": "gh-issue-triage",
-  "description": "Label taxonomy and triage workflow for GitHub issues. Defines type labels (bug/feature/enhancement/docs/chore), priority levels (critical/high/medium/low), status labels, and triage decision workflow.",
-  "repo": "poindexter12/waypoint",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/poindexter12/waypoint"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "code-review-orchestrator",
-  "repo": "jack-michaud/faire",
-  "category": "development",
-  "description": "Delegate specialized reviews to subagents and synthesize their findings. Use when reviewing code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:52.224285Z"
-}

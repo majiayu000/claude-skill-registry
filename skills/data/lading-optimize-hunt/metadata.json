@@ -1,9 +1,0 @@
-{
-  "name": "lading-optimize-hunt",
-  "description": "Systematic optimization hunter for lading. Finds memory optimizations AND bugs - both are valuable. Run /lading-optimize-validate when bugs are discovered.",
-  "repo": "DataDog/lading",
-  "category": "development",
-  "tags": [],
-  "stars": 93,
-  "source": "github.com/DataDog/lading"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "template-blueprints",
-  "description": "Access pattern library extracted from existing templates for reuse when creating new templates. Use when creating .md files for commands, agents, skills or when generating CLAUDE.md, README.md, or set",
-  "repo": "gizix/cc_projects",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

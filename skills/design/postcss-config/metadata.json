@@ -1,8 +1,0 @@
-{
-  "name": "postcss-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "design",
-  "description": "PostCSS configuration template and validation logic for Tailwind CSS processing with Autoprefixer. Includes 4 required standards (required base plugins, critical plugin order with tailwindcss first an",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:05.937914Z"
-}

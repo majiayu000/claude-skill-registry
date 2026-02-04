@@ -1,8 +1,0 @@
-{
-  "name": "check-schema",
-  "repo": "bencassie/flywheel",
-  "category": "devops",
-  "description": "Find fields that have multiple different types across notes (schema violations). Triggers on \"schema check\", \"frontmatter inconsistencies\", \"metadata violations\", \"type mismatches\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:38.854834Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "validating-openai-api-implementations",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "testing",
-  "description": "Use when reviewing OpenAI API usage, answering questions about OpenAI endpoints, or validating implementations against the official API specification. Provides expert knowledge on chat completions, em",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.510990Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-query-performance",
-  "description": "Use when you need to work with query optimization.This skill provides query performance analysis with comprehensive guidance and automation.Trigger with phrases like \"optimize queries\", \"analyze perfo",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

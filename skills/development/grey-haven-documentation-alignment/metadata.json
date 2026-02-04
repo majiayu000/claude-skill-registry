@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-documentation-alignment",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "development",
-  "description": "6-phase verification system ensuring code matches documentation with automated alignment scoring (signature, type, behavior, error, example checks). Reduces onboarding friction 40%. Use when verifying",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:12.684293Z"
-}

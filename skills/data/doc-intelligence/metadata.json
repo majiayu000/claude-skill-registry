@@ -1,9 +1,0 @@
-{
-  "name": "doc-intelligence",
-  "description": "This skill orchestrates comprehensive documentation intelligence operations. Use when asked to \"analyze documentation\", \"learn from docs\", \"create SOPs from documentation\", \"maximize documentation und",
-  "repo": "brendendurham/claude-code-config",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

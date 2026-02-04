@@ -1,9 +1,0 @@
-{
-  "name": "oaps-development",
-  "description": "This skill should be used when the user asks to \"modify OAPS internals\", \"add a new subsystem\", \"understand OAPS architecture\", \"add a CLI command\", \"write OAPS tests\", \"create builtin hooks\", \"add a ",
-  "repo": "tbhb/oaps.oaps",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "spec-discovery",
-  "description": "Parse specs to extract IDs, titles, and traceability metadata (repo, path, hash).",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

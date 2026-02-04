@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-testability",
-  "description": "Testable code design patterns for TypeScript/React applications. Use when reviewing code for testability, implementing dependency injection, or when user mentions テスト容易性, モック, mock-friendly, DI.\n",
-  "repo": "thkt/claude-config",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/thkt/claude-config"
-}

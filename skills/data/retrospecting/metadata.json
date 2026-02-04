@@ -1,9 +1,0 @@
-{
-  "name": "retrospecting",
-  "description": "Performs comprehensive analysis of Claude Code sessions, examining git history, conversation logs, code changes, and gathering user feedback to generate actionable retrospective reports with insights ",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "feature-recovery",
-  "repo": "pcortes/swarm-attack",
-  "category": "data",
-  "description": "Analyze implementation failures and generate recovery plans. Use when an issue fails and needs diagnosis for retry or escalation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:29.458051Z",
-  "dir_name": "feature-recovery"
-}

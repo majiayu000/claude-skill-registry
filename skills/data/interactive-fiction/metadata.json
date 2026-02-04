@@ -1,9 +1,0 @@
-{
-  "name": "interactive-fiction",
-  "description": "Diagnose branching narrative problems. Use when choices feel meaningless, when branching is unmanageable, when player agency conflicts with authored story, or when interactive elements break narrative",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

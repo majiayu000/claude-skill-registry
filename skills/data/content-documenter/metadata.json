@@ -1,9 +1,0 @@
-{
-  "name": "content-documenter",
-  "description": "Write comprehensive markdown documentation from analyzed media content with structured sections, quotes, timestamps, and citations. Use after media-reviewer analysis to create final documentation.",
-  "repo": "memorysaver/looplia-core",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "video-prompt-engineering",
-  "repo": "chufeng-huang-sipaway/sip-videogen",
-  "category": "development",
-  "description": "Craft effective prompts for VEO single-clip video generation - READ before any generate_video_clip call",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:42.155864Z"
-}

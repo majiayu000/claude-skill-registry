@@ -1,9 +1,0 @@
-{
-  "name": "creating-slash-commands",
-  "description": "Build custom slash commands in Claude Code with YAML frontmatter, permissions, and best practices. Use when creating automation workflows, project-specific commands, or standardizing repetitive tasks.",
-  "repo": "jack-michaud/faire",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

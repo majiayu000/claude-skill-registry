@@ -1,9 +1,0 @@
-{
-  "name": "writing-graphql-operations",
-  "description": "Creates GraphQL queries and mutations using gql.tada and urql. Implements repository pattern with type-safe operations and error handling. Triggers on: GraphQL query, GraphQL mutation, gql.tada, urql ",
-  "repo": "saleor/configurator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "vanilla-rails-style",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "development",
-  "description": "Use when refactoring Ruby/Rails code, organizing methods, deciding on guard clauses vs if/else, or following 37signals conventions - these patterns are counter to standard Ruby style guides",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.652800Z"
-}

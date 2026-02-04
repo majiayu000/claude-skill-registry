@@ -1,9 +1,0 @@
-{
-  "name": "writing-kit-assembler",
-  "description": "Looplia writer skill for assembling final writing kits.Combines content analysis and ideas into structured output with suggested outlines.Creates comprehensive WritingKit JSON with all components.",
-  "repo": "memorysaver/looplia-core",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

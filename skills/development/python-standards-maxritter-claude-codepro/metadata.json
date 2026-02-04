@@ -1,7 +1,0 @@
-{
-  "name": "python-standards-maxritter-claude-codepro",
-  "description": "Apply Python tooling standards including uv package management, pytest testing, ruff/basedpyright code quality, one-line docstrings, and self-documenting code practices. Use this skill when working wi",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.558556Z"
-}

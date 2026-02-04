@@ -1,9 +1,0 @@
-{
-  "name": "git-directory-management",
-  "description": "Manage git-tracked directories correctly - never create .gitkeep files in directories that will immediately contain tracked files",
-  "repo": "boneskull/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

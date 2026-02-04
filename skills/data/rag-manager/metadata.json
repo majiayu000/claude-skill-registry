@@ -1,9 +1,0 @@
-{
-  "name": "rag-manager",
-  "repo": "smorand/claude-config",
-  "category": "data",
-  "description": "Expert in managing RAG (Retrieval-Augmented Generation) indices for L'Oréal's BTDP infrastructure. **TRIGGER THIS SKILL when user asks:** \"list RAG\", \"create RAG\", \"delete RAG\", \"search RAG\", \"availab",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.437847Z",
-  "dir_name": "rag-manager"
-}

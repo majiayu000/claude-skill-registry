@@ -1,8 +1,0 @@
-{
-  "name": "firebase-developmentproject-setup",
-  "repo": "2389-research/claude-plugins",
-  "category": "development",
-  "description": "Initialize new Firebase project with proven architecture. Guides through firebase init, choosing hosting/auth/functions patterns, emulator configuration, and initial project structure setup.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:46.251442Z"
-}

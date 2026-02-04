@@ -1,9 +1,0 @@
-{
-  "name": "create-event-schema",
-  "description": "이벤트 스키마 TypeScript 타입 생성. Use when: 이벤트 봉투 및 Zod 스키마 자동 생성 필요 시",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

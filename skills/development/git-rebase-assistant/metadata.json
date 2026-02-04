@@ -1,8 +1,0 @@
-{
-  "name": "git-rebase-assistant",
-  "repo": "biwsantang/dotfiles",
-  "category": "development",
-  "description": "Performs interactive rebases with smart commit management and conflict resolution. Use when rebasing branches, cleaning up commit history, resolving conflicts, or when the user mentions \"rebase\", \"int",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:13.013287Z"
-}

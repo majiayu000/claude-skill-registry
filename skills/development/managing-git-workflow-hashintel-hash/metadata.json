@@ -1,7 +1,0 @@
-{
-  "name": "managing-git-workflow-hashintel-hash",
-  "description": "Git workflow for HASH including branch naming, PR creation, and PR reviews. Use when creating branches, making commits, opening pull requests, or reviewing PRs.",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.478774Z"
-}

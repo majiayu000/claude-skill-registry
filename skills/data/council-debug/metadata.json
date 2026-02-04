@@ -1,9 +1,0 @@
-{
-  "name": "council-debug",
-  "description": "Use for systematic debugging and root cause analysis with both Codex and Gemini. Triggers on \"council debug\", \"council root cause\", \"have council investigate this bug\", \"council find the issue\".",
-  "repo": "kanlanc/Claude-Code-Kanlanc-Marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

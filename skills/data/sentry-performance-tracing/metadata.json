@@ -1,9 +1,0 @@
-{
-  "name": "sentry-performance-tracing",
-  "description": "Set up performance monitoring and distributed tracing with Sentry.Use when implementing performance tracking, tracing requests,or monitoring application performance.Trigger with phrases like \"sentry p",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

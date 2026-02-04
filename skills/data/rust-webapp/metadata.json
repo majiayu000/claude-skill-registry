@@ -1,9 +1,0 @@
-{
-  "name": "rust-webapp",
-  "description": "Build full-stack web applications using Rust (Axum + SQLx) with HTMX + Alpine.js frontend and Neon (serverless PostgreSQL). Use when asked to create web apps, CRUD apps, dashboards, forms, or any stat",
-  "repo": "arsenyinfo/rust-webapp-skill",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

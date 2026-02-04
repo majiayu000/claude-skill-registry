@@ -1,8 +1,0 @@
-{
-  "name": "aiwfskill-developer",
-  "repo": "moonklabs/aiwf",
-  "category": "development",
-  "description": "Create and manage Claude Code skills following Anthropic best practices. Use when creating new skills, modifying skill-rules.json, understanding trigger patterns, working with hooks, debugging skill a",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:35.057202Z"
-}

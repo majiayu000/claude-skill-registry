@@ -1,9 +1,0 @@
-{
-  "name": "unifi",
-  "description": "UniFi Network Monitoring and Management Skill\n\nMonitor and query UniFi network devices (USG, Cloud Key, Access Points, Switches).\nProvides real-time network status, client information, device health, ",
-  "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/robdtaylor/personal-ai-infrastructure"
-}

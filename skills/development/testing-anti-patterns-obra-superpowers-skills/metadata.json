@@ -1,7 +1,0 @@
-{
-  "name": "testing-anti-patterns-obra-superpowers-skills",
-  "description": "Never test mock behavior. Never add test-only methods to production classes. Understand dependencies before mocking.",
-  "category": "development",
-  "source": "github.com/obra/superpowers-skills",
-  "imported_at": "2026-01-24T14:54:12.641277Z"
-}

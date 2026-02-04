@@ -1,7 +1,0 @@
-{
-  "name": "supabase-usage",
-  "description": "This skill should be used when user asks to \"query Supabase\", \"list Supabase tables\", \"get Supabase schema\", \"search Supabase records\", \"check Supabase database\", \"Supabase auth\", \"Supabase authentica",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.205552Z"
-}

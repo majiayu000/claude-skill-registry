@@ -1,9 +1,0 @@
-{
-  "name": "note-writer",
-  "description": "Write structured notes from source materials following academic standards.LOAD THIS SKILL WHEN: User says \"寫筆記\", \"write notes\", \"摘要\", \"summarize\", \"整理重點\" | has source content to summarize | creating r",
-  "repo": "u9401066/copilot-capability-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

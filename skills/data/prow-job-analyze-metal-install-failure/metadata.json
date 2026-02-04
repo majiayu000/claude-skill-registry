@@ -1,9 +1,0 @@
-{
-  "name": "prow-job-analyze-metal-install-failure",
-  "description": "Analyze OpenShift bare metal installation failures in Prow CI jobs using dev-scripts artifacts. Use for jobs with \"metal\" in name, for debugging Metal3/Ironic provisioning, installation, or dev-script",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

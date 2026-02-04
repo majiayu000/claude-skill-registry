@@ -1,8 +1,0 @@
-{
-  "name": "attacking-active-directory",
-  "repo": "trilwu/secskills",
-  "category": "testing",
-  "description": "Attack and enumerate Active Directory environments using Kerberos attacks (Kerberoasting, ASREPRoasting), credential dumping (DCSync, Mimikatz), lateral movement (PtH, PtT), and BloodHound analysis. U",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:10.345215Z"
-}

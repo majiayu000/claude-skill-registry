@@ -1,8 +1,0 @@
-{
-  "name": "commitlint-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "development",
-  "description": "Commitlint configuration and GitHub Copilot commit message instruction templates with validation logic for conventional commit enforcement. Includes 6 required standards (conventional format, relaxed ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.200502Z"
-}

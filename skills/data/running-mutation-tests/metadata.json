@@ -1,9 +1,0 @@
-{
-  "name": "running-mutation-tests",
-  "description": "Execute mutation testing to evaluate test suite effectiveness.Use when performing specialized testing.Trigger with phrases like \"run mutation tests\", \"test the tests\", or \"validate test effectiveness\"",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

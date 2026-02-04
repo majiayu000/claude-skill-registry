@@ -1,9 +1,0 @@
-{
-  "name": "sentry-migration-deep-dive",
-  "description": "Migrate to Sentry from other error tracking tools.Use when migrating from Rollbar, Bugsnag, Raygun,or other error tracking solutions.Trigger with phrases like \"migrate to sentry\", \"sentry migration\",\"",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

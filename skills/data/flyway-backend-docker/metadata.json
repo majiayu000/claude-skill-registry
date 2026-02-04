@@ -1,9 +1,0 @@
-{
-  "name": "flyway-backend-docker",
-  "description": "Setup backend project with Flyway SQL migrations, tini init system, and MySQL integration testing. Modifies existing Dockerfile from backend-docker skill.",
-  "repo": "leonj1/external-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/leonj1/external-claude-skills"
-}

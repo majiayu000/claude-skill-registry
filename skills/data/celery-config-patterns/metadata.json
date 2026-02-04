@@ -1,9 +1,0 @@
-{
-  "name": "celery-config-patterns",
-  "description": "Celery configuration templates for all frameworks (Django, Flask, FastAPI, standalone). Use when configuring Celery, setting up task queues, creating Celery apps, integrating with frameworks, or when ",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

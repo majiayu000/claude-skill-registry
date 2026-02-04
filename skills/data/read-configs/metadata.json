@@ -1,9 +1,0 @@
-{
-  "name": "read-configs",
-  "description": "Find and understand project configuration files. Discovers build configs, dependencies, env vars, CI/CD, and tool settings without reading full files.",
-  "repo": "Roger-Parkinson-EHP/agentic",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

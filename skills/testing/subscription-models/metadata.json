@@ -1,8 +1,0 @@
-{
-  "name": "subscription-models",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "description": "Use when designing SaaS pricing and subscription models. Covers per-seat, tiered, usage-based, and hybrid pricing patterns with Stripe integration, plan transitions, and revenue optimization.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:10.065409Z"
-}

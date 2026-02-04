@@ -1,8 +1,0 @@
-{
-  "name": "pr-review-evidence-formats",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Defines what counts as valid evidence in PR reviews including code snippets, execution traces, exploitation scenarios, and test results. Use when validating findings, writing review reports, or verify",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.023723Z"
-}

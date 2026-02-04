@@ -1,9 +1,0 @@
-{
-  "name": "bdg-browser-debug",
-  "description": "Browser debugging and telemetry via Chrome DevTools Protocol. Use when testing the Astro dev server, inspecting network requests, debugging console errors, capturing screenshots, or interacting with D",
-  "repo": "szymdzum/kumak-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

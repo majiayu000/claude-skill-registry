@@ -1,9 +1,0 @@
-{
-  "name": "tk-workflow",
-  "description": "Show the Tasuku task workflow guide. Use when user says /tk:workflow or asks how to use Tasuku, task workflow, or needs help with task management.",
-  "repo": "iheanyi/tasuku",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

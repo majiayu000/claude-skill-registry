@@ -1,9 +1,0 @@
-{
-  "name": "rest-endpoint-designer",
-  "description": "Rest Endpoint Designer - Auto-activating skill for API Development.Triggers on: rest endpoint designer, rest endpoint designerPart of the API Development skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

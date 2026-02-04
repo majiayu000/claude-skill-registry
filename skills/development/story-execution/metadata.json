@@ -1,8 +1,0 @@
-{
-  "name": "story-execution",
-  "repo": "Mharbulous/SyncoPaid",
-  "category": "development",
-  "description": "Use when user says \"implement plan\", \"implement story\", \"run plan for [ID]\", \"start implementation\", or asks to implement a planned story - loads TDD implementation plan from .claude/data/plans/, foll",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:32.446560Z"
-}

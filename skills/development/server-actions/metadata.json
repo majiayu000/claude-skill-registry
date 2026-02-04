@@ -1,7 +1,0 @@
-{
-  "name": "server-actions",
-  "description": "Create or update Next.js server actions for blog and analytics functionality. Use when adding form handlers, data mutations, or server-side logic in the web app.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.321347Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "loki-mode-asklokesh-loki-mode",
-  "description": "Multi-agent autonomous startup system. Triggers on \"Loki Mode\". Takes PRD to deployed product with zero human intervention. Requires --dangerously-skip-permissions flag.",
-  "repo": "asklokesh/loki-mode",
-  "category": "devops",
-  "tags": [],
-  "stars": 545,
-  "source": "github.com/asklokesh/loki-mode"
-}

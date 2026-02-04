@@ -1,8 +1,0 @@
-{
-  "name": "symfonydoctrine-relations",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Define Doctrine entity relationships (OneToMany, ManyToMany, ManyToOne); configure fetch modes, cascade operations, and orphan removal; prevent N+1 queries",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.085129Z"
-}

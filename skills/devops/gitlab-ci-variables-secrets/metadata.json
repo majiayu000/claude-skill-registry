@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-ci-variables-secrets",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "description": "Use when configuring GitLab CI/CD variables, managing secrets, or integrating with external secret providers. Covers secure credential handling.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:04.530368Z"
-}

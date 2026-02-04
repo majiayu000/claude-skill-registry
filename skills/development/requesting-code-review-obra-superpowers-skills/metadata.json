@@ -1,7 +1,0 @@
-{
-  "name": "requesting-code-review-obra-superpowers-skills",
-  "description": "Dispatch code-reviewer subagent to review implementation against plan or requirements before proceeding",
-  "category": "development",
-  "source": "github.com/obra/superpowers-skills",
-  "imported_at": "2026-01-24T14:54:12.336057Z"
-}

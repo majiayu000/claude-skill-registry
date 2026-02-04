@@ -1,9 +1,0 @@
-{
-  "name": "supabase-cost-tuning",
-  "description": "Optimize Supabase costs through tier selection, sampling, and usage monitoring.Use when analyzing Supabase billing, reducing API costs,or implementing usage monitoring and budget alerts.Trigger with p",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

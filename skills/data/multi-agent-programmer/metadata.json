@@ -1,9 +1,0 @@
-{
-  "name": "multi-agent-programmer",
-  "description": "Use this skill when implementing complex programming tasks that benefit from multi-agent collaboration. This skill coordinates a Master LLM (orchestrator) with specialized agents (Requirements Agent, ",
-  "repo": "zsutxz/ClaudeLearning",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zsutxz/ClaudeLearning"
-}

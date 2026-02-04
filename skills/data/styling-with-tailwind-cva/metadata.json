@@ -1,9 +1,0 @@
-{
-  "name": "styling-with-tailwind-cva",
-  "description": "Use when creating design systems or styling components with Tailwind CSS v4 and Class Variance Authority (CVA) - provides type-safe component variants with CSS variables for design tokens",
-  "repo": "bryonjacob/aug",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

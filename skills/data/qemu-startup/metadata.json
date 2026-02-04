@@ -1,9 +1,0 @@
-{
-  "name": "qemu-startup",
-  "description": "Guidance for starting and configuring QEMU virtual machines with proper serial console access. This skill should be used when tasks involve starting QEMU VMs, configuring serial console or telnet acce",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

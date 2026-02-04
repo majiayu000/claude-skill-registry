@@ -1,9 +1,0 @@
-{
-  "name": "checkpoint-from-receipt",
-  "description": "Create checkpoints from receipt photos using QR scanning, e-Kasa API, and GPS extraction (10-40s)",
-  "repo": "ceo-whyd-it/car-log",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

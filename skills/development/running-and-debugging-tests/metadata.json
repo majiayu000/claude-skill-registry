@@ -1,8 +1,0 @@
-{
-  "name": "running-and-debugging-tests",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "development",
-  "description": "Executes language-agnostic test suites to validate behavioral correctness, enforce regression safety, and automatically debug or repair test failures. Includes fallback loops, coverage validation, and",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.803263Z"
-}

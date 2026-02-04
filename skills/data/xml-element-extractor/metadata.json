@@ -1,9 +1,0 @@
-{
-  "name": "xml-element-extractor",
-  "description": "Extract specific XML elements from source files using Python and optionally format with xmllint. This skill should be used when users need to isolate a single XML element (like InstrumentVector with I",
-  "repo": "krfantasy/alsdiff",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

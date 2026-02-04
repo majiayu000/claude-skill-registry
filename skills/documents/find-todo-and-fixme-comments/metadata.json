@@ -1,8 +1,0 @@
-{
-  "name": "find-todo-and-fixme-comments",
-  "repo": "nextflow-io/training",
-  "category": "documents",
-  "description": "Search markdown files, Nextflow scripts, and config files for TODO/FIXME comments, categorize by priority, and provide actionable recommendations. Use when you need to identify pending work or track t",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:28.062003Z"
-}

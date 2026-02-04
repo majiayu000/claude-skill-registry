@@ -1,9 +1,0 @@
-{
-  "name": "when-to-query",
-  "description": "Decision guide for when to query Bluera Knowledge stores vs using Grep/Read on current project. Query BK for library/dependency questions and reference material. Use Grep/Read for current project code",
-  "repo": "blueraai/bluera-knowledge",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

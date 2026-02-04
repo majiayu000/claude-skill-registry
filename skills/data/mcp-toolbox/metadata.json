@@ -1,9 +1,0 @@
-{
-  "name": "mcp-toolbox",
-  "description": "Use when working with or extending the local Codex MCP toolset/server that exposes HTTP endpoints for shell, filesystem, git, and Excel operations, or when a task should be executed by calling those M",
-  "repo": "ironkid90/ai-agents-swiss-knife",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "nette-utils",
-  "description": "Provides Nette Utils helper classes. Use when working with arrays, strings, files, images, JSON, validators, DateTime, or other utility functions.",
-  "repo": "nette/claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

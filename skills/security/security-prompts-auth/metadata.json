@@ -1,8 +1,0 @@
-{
-  "name": "security-prompts-auth",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "security",
-  "description": "Authentication and authorization prompt templates for RBAC implementation, permissions systems, ownership verification, and authorization testing. Use when setting up roles, implementing access contro",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.593534Z"
-}

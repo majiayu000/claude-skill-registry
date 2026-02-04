@@ -1,9 +1,0 @@
-{
-  "name": "external-docs",
-  "description": "Verify external libraries, APIs, and frameworks against current documentation before writing code. Use when about to implement features using external dependencies, when writing import statements for ",
-  "repo": "eaasxt/Farmhand",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

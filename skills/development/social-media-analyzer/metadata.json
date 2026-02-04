@@ -1,9 +1,0 @@
-{
-  "name": "social-media-analyzer",
-  "description": "Analyzes social media campaign performance across platforms with engagement metrics, ROI calculations, and audience insights for data-driven marketing decisions",
-  "category": "development",
-  "tags": [],
-  "source": "github.com/claude-skills",
-  "source_path": "marketing-skill/social-media-analyzer/SKILL.md",
-  "imported_at": "2026-01-24T08:30:59.497068Z"
-}

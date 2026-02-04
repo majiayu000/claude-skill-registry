@@ -1,8 +1,0 @@
-{
-  "name": "chatmail-sync",
-  "repo": "ViZiD/chatmail-relay-nix",
-  "category": "product",
-  "description": "Synchronize NixOS chatmail modules with upstream relay project. Use when user wants to update modules from relay source, check for new features, or sync configurations. Explores the ENTIRE relay proje",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:23:50.672592Z"
-}

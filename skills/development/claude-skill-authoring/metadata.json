@@ -1,8 +1,0 @@
-{
-  "name": "claude-skill-authoring",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Creates and updates Agent Skills (SKILL.md directories) with proper YAML frontmatter, progressive disclosure patterns, and tool restrictions. Use when creating skills, authoring Agent Skills, building",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:36.879847Z"
-}

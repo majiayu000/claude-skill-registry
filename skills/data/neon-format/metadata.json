@@ -1,9 +1,0 @@
-{
-  "name": "neon-format",
-  "description": "Provides NEON format syntax and conventions. Use when working with .neon files, Nette configuration, or NEON data structures.",
-  "repo": "nette/claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

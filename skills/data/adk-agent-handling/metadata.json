@@ -1,9 +1,0 @@
-{
-  "name": "adk-agent-handling",
-  "repo": "nfbs2000/vibe-with-google-ai-divorce-agent-inflearn",
-  "category": "data",
-  "description": "Google ADK (Agent Development Kit) multi-agent system architecture for BigQuery data analytics. Covers BigQuery agent vs conversational agent patterns, ADK Single Parent Rule, domain routing with sub-",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:36.203369Z",
-  "dir_name": "adk-agent-handling"
-}

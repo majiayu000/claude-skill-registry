@@ -1,9 +1,0 @@
-{
-  "name": "skill-factory-euda1mon1a-autonomous-assignmen",
-  "description": "Create new skills with proper structure and YAML frontmatter. Use when building new slash command skills, ensuring consistent formatting, directory structure, and validation. Guides through the comple",
-  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager"
-}

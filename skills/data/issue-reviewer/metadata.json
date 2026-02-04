@@ -1,9 +1,0 @@
-{
-  "name": "issue-reviewer",
-  "description": "Automatically reviews code changes against issue/spec at evaluate phase start to ensure implementation completeness",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

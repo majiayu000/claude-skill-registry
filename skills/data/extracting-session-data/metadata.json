@@ -1,9 +1,0 @@
-{
-  "name": "extracting-session-data",
-  "description": "Locates, lists, filters, and extracts structured data from Claude Code native session logs. Supports both single and multiple session analysis.",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

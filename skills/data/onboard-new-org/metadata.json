@@ -1,9 +1,0 @@
-{
-  "name": "onboard-new-org",
-  "description": "Complete organization onboarding wizard for LimaCharlie. Discovers local cloud CLIs (GCP, AWS, Azure, DigitalOcean), surveys cloud projects, identifies VMs for EDR installation and security-relevant l",
-  "repo": "refractionPOINT/lc-ai",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "pytorch-lightning-davila7-claude-code-templates",
-  "description": "High-level PyTorch framework with Trainer class, automatic distributed training (DDP/FSDP/DeepSpeed), callbacks system, and minimal boilerplate. Scales from laptop to supercomputer with same code. Use",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:19.668452Z"
-}

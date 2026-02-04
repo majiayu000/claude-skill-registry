@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-system-throughput",
-  "description": "Analyze and optimize system throughput including request handling, data processing, and resource utilization. Use when identifying capacity limits or evaluating scaling strategies. Trigger with phrase",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

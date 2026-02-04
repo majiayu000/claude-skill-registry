@@ -1,9 +1,0 @@
-{
-  "name": "autogenerate-formulas",
-  "description": "Autogenerate formula implementations from formula specifications (F-*). Converts mathematical formulas, calculations, and algorithms into production code with tests. Use when F-* includes formula spec",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

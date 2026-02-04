@@ -1,9 +1,0 @@
-{
-  "name": "plan-decompose",
-  "description": "Extracts work units from plan artifacts and creates sequenced GitHub issues. Use when (1) decomposing plan.md into actionable issues, (2) creating issues with validation checklists, (3) linking issue ",
-  "repo": "bsamiee/Parametric_Portal",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

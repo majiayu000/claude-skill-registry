@@ -1,9 +1,0 @@
-{
-  "name": "groq-deploy-integration",
-  "description": "Deploy Groq integrations to Vercel, Fly.io, and Cloud Run platforms.\nUse when deploying Groq-powered applications to production,\nconfiguring platform-specific secrets, or setting up deployment pipelin",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

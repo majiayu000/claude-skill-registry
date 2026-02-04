@@ -1,9 +1,0 @@
-{
-  "name": "weaviate-rag",
-  "description": "Implement RAG systems using Weaviate vector database. Use when building semantic search, document retrieval, or knowledge base systems.",
-  "repo": "astoeffer/plugin-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/astoeffer/plugin-marketplace"
-}

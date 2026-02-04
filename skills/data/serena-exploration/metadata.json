@@ -1,9 +1,0 @@
-{
-  "name": "serena-exploration",
-  "description": "코드 탐색, 코드 분석, 탐색, 코드 구조, 심볼 분석 - Use when exploring or analyzing code. Systematic code exploration workflow using Serena MCP tools for symbol navigation and reference tracking.",
-  "repo": "aimskr/aims-claude-toolkit",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/aimskr/aims-claude-toolkit"
-}

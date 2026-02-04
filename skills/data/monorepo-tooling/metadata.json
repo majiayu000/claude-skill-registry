@@ -1,9 +1,0 @@
-{
-  "name": "monorepo-tooling",
-  "description": "Use when setting up monorepo tooling, optimizing builds, or migrating between tools with Turborepo, Nx, Bazel, Lerna for efficient task running, caching, and code generation.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

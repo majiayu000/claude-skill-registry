@@ -1,9 +1,0 @@
-{
-  "name": "docker-testing",
-  "description": "Guidance for running and debugging tests in Docker environments for FastAPI + Vue/Tailwind projects.",
-  "repo": "kilburn/AIseminar",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

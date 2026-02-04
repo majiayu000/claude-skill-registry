@@ -1,9 +1,0 @@
-{
-  "name": "jira-story-point-estimator",
-  "repo": "openshift-hyperfleet/hyperfleet-claude-plugins",
-  "category": "data",
-  "description": "Estimates story points for JIRA tickets by analyzing complexity, scope, and comparing to historical team data. Activates when users ask to estimate, point, or size a ticket, or ask \"how many points sh",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:04.227288Z",
-  "dir_name": "jira-story-point-estimator"
-}

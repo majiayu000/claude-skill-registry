@@ -1,9 +1,0 @@
-{
-  "name": "lang-rust",
-  "description": "Rust 1.92+ development specialist covering Axum, Tokio, SQLx, and memory-safe systems programming. Use when building high-performance, memory-safe applications or WebAssembly.",
-  "repo": "joncrangle/.dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "e2e-test-builder",
-  "description": "Builds end-to-end browser tests for critical user flows using Playwright or Cypress. Includes selector strategies, test data management, page objects, and visual regression testing. Use for \"E2E testi",
-  "repo": "patricio0312rev/skillset",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

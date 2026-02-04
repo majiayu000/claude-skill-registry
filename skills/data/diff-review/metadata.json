@@ -1,9 +1,0 @@
-{
-  "name": "diff-review",
-  "description": "Get Codex's code review of git changes after Claude makes edits. Trigger when user wants a second opinion on code changes (\"have Codex review my changes\", \"get code review from Codex\", \"review this di",
-  "repo": "robbyt/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

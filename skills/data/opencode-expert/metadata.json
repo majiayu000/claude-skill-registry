@@ -1,9 +1,0 @@
-{
-  "name": "opencode-expert",
-  "description": "This skill provides comprehensive guidance for using OpenCode, the open-source AI coding agent. Use this skill when working with OpenCode CLI commands, keyboard shortcuts, agents (build/plan), slash c",
-  "repo": "s-hiraoku/synapse-a2a",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/s-hiraoku/synapse-a2a"
-}

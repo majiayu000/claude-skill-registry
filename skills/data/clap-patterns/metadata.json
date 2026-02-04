@@ -1,9 +1,0 @@
-{
-  "name": "clap-patterns",
-  "description": "Common Clap patterns and idioms for argument parsing, validation, and CLI design. Use when implementing CLI arguments with Clap v4+.",
-  "repo": "geoffjay/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

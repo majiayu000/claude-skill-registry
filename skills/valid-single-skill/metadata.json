@@ -1,7 +1,0 @@
-{
-  "name": "valid-single-skill",
-  "repo": "netresearch/composer-agent-skill-plugin",
-  "path": "tests/Fixtures/valid-single-skill/SKILL.md",
-  "source": "github.com/netresearch/composer-agent-skill-plugin",
-  "downloaded_at": "2026-01-29T08:57:07.869185Z"
-}

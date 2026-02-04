@@ -1,9 +1,0 @@
-{
-  "name": "td-arima-forecast",
-  "description": "ARIMA-based time series forecasting for trend and seasonal predictions",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

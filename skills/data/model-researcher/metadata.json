@@ -1,9 +1,0 @@
-{
-  "name": "model-researcher",
-  "description": "Research and configure new/custom AI models not yet in models.dev. Use when user mentions a new model release, asks to add a model from a non-standard provider, or wants to configure a custom/self-hos",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

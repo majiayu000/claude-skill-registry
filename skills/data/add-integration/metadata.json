@@ -1,9 +1,0 @@
-{
-  "name": "add-integration",
-  "description": "Build a new API integration for Nexus. Load when user mentions \"add integration\", \"new integration\", \"integrate with\", \"connect to [service]\", or \"build [service] integration\". Interactive workflow th",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

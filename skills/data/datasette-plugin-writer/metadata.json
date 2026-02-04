@@ -1,9 +1,0 @@
-{
-  "name": "datasette-plugin-writer",
-  "description": "Guide for writing Datasette plugins. This skill should be used when users want to create or develop plugins for Datasette, including information about plugin hooks, the cookiecutter template, database",
-  "repo": "simonw/research",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "package-ida-plugin",
-  "description": "Package IDA Pro plugins for the IDA Plugin Manager and plugins.hex-rays.com repository",
-  "repo": "williballenthin/aiwilli",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

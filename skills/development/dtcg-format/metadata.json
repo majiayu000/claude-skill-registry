@@ -1,8 +1,0 @@
-{
-  "name": "dtcg-format",
-  "repo": "osama-eldrieny/design-token-generator",
-  "category": "development",
-  "description": "Exports design tokens in Design Tokens Community Group (DTCG) format with Figma extensions for variable metadata. Use when creating DTCG-compliant token files, integrating with tools that support the ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:27.240597Z"
-}

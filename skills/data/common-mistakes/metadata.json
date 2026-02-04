@@ -1,9 +1,0 @@
-{
-  "name": "common-mistakes",
-  "description": "Use before implementing pgdbm patterns to avoid common mistakes - provides rationalization table and red flags that prevent pool multiplication, schema errors, and template syntax violations",
-  "repo": "juanre/pgdbm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

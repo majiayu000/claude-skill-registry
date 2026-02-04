@@ -1,9 +1,0 @@
-{
-  "name": "fosmvvm-fluent-datamodel-generator",
-  "description": "Generate Fluent DataModels for FOSMVVM server-side persistence. Use when creating new database-backed entities, adding tables, or when the user mentions adding Models like Users, Ideas, Documents, etc",
-  "repo": "foscomputerservices/FOSUtilities",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/foscomputerservices/FOSUtilities"
-}

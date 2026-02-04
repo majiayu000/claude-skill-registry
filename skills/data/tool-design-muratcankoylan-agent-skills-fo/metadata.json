@@ -1,9 +1,0 @@
-{
-  "name": "tool-design-muratcankoylan-agent-skills-fo",
-  "description": "This skill should be used when the user asks to \"design agent tools\", \"create tool descriptions\", \"reduce tool complexity\", \"implement MCP tools\", or mentions tool consolidation, architectural reducti",
-  "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
-  "category": "design",
-  "tags": [],
-  "stars": 7753,
-  "source": "github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
-}

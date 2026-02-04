@@ -1,8 +1,0 @@
-{
-  "name": "cross-backend-orchestrator",
-  "repo": "chaorenex1/coding-workflow",
-  "category": "development",
-  "description": "Orchestrate AI tasks across multiple backends (Codex, Claude, Gemini) using memex-cli. Cross-platform Python implementation. Use when (1) Running tasks on specific AI backends, (2) Comparing outputs a",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:14.598258Z"
-}

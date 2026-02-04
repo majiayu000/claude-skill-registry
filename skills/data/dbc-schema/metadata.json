@@ -1,9 +1,0 @@
-{
-  "name": "dbc-schema",
-  "description": "Generate Effect Schema definitions for WoW DBC tables. Use when adding new game data tables or updating existing schemas.",
-  "repo": "legacy3/wowlab",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/legacy3/wowlab"
-}

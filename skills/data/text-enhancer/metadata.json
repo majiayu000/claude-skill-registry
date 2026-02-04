@@ -1,9 +1,0 @@
-{
-  "name": "text-enhancer",
-  "description": "Enhance professional and technical text with grammar correction, clarity improvements, and factual verification. Triggers on \"enhance\" or \"polish\" commands. Integrates with AWS Documentation and Obsid",
-  "repo": "glnds/claude-config",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

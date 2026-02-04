@@ -1,9 +1,0 @@
-{
-  "name": "engineering-claude-context",
-  "description": "Curates context, optimizes prompts with XML, and manages extended thinking for Anthropic Claude models. Use when building Claude-based agents, designing system prompts, or handling long-context tasks.",
-  "repo": "kylehughes/knapsack",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

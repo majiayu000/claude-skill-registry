@@ -1,9 +1,0 @@
-{
-  "name": "using-zellij-docs",
-  "description": "Use when answering questions about Zellij keyboard shortcuts, configuration options, or feature behavior - ensures version-specific accuracy by checking actual config and docs before providing shortcu",
-  "repo": "karlmdavis/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

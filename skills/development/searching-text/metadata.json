@@ -1,8 +1,0 @@
-{
-  "name": "searching-text",
-  "repo": "iota9star/my-skills",
-  "category": "development",
-  "description": "Performs fast text search with one-shot patterns that minimize iterations by getting files, lines, and context in a single call. Use this skill when searching for text patterns, finding specific code ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.165444Z"
-}

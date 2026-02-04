@@ -1,8 +1,0 @@
-{
-  "name": "nx-monorepo-typescript-backend-project-setup",
-  "repo": "NTCoding/claude-skillz",
-  "category": "development",
-  "description": "Sets up NX monorepo for TypeScript backend projects optimized for AI-assisted development. Delegates to NX commands where possible, patches configs as last resort. Triggers on: 'set up typescript back",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:45.612221Z"
-}

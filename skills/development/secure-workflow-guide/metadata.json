@@ -1,7 +1,0 @@
-{
-  "name": "secure-workflow-guide",
-  "description": "Guide you through Trail of Bits' 5-step secure development workflow. Runs Slither scans, checks special features (upgradeability/ERC conformance/token integration), generates visual security diagrams,",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:05.111523Z"
-}

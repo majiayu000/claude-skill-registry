@@ -1,9 +1,0 @@
-{
-  "name": "better-auth-jwt-jwks",
-  "repo": "MuhammedSuhaib/LevelUpSpeckit-Plus",
-  "category": "data",
-  "description": "Expert skill for implementing Better Auth with JWT tokens and JWKS (JSON Web Key Set) for secure authentication between Next.js frontend and FastAPI backend. Handles JWT token generation, verification",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:00.203226Z",
-  "dir_name": "better-auth-jwt-jwks"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "docs-management",
-  "description": "Single source of truth and librarian for ALL Claude official documentation. Manages local documentation storage, scraping, discovery, and resolution. Use when finding, locating, searching, or resolvin",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

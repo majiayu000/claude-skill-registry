@@ -1,9 +1,0 @@
-{
-  "name": "review-parallel",
-  "repo": "sekka/dotfiles",
-  "category": "data",
-  "description": "複数のAIレビュアーを並列実行し、結果を統合処理して単一のレポートを生成",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:12.311149Z",
-  "dir_name": "review-parallel"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "bun",
-  "repo": "bout3fiddy/agents",
-  "category": "testing",
-  "description": "Bun runtime and toolkit for JavaScript/TypeScript. Use for package management, running scripts, testing, and bundling. Replaces npm, yarn, pnpm, and node.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:38.781604Z"
-}

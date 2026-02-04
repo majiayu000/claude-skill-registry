@@ -1,9 +1,0 @@
-{
-  "name": "validate-pr-ready",
-  "description": "Execute Phase 5 comprehensive verification before PR. Use when (1) implementation is complete, (2) before creating Pull Request, (3) user requests quality check, (4) pre-commit validation needed, (5) ",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

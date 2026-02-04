@@ -1,8 +1,0 @@
-{
-  "name": "deploy-to-production",
-  "repo": "ErikM1974/pricing-indexfile-2025",
-  "category": "development",
-  "description": "Deploy current develop branch to production. Use when user says /deploy, \"deploy to production\", \"push to heroku\", \"release to production\", \"deploy changes\", \"ship it\", or \"release changes\". Commits c",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:28.501258Z"
-}

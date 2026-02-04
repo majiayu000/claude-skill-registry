@@ -1,9 +1,0 @@
-{
-  "name": "killbill-admin",
-  "description": "Expert KillBill administrator for managing billing, subscriptions, invoices, and overdue states. Provides ready-to-use commands via Traefik DNS for tenant management, catalog uploads, test clock manip",
-  "repo": "tariron/saasodoo",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP (cached JSON)"
-}

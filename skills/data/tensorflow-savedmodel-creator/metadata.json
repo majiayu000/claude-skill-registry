@@ -1,9 +1,0 @@
-{
-  "name": "tensorflow-savedmodel-creator",
-  "description": "Tensorflow Savedmodel Creator - Auto-activating skill for ML Deployment.Triggers on: tensorflow savedmodel creator, tensorflow savedmodel creatorPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

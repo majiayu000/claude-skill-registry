@@ -1,9 +1,0 @@
-{
-  "name": "tdd-guide",
-  "description": "Comprehensive Test Driven Development guide for engineering subagents with multi-framework support, coverage analysis, and intelligent test generation",
-  "category": "development",
-  "tags": [],
-  "source": "github.com/claude-skills",
-  "source_path": "engineering-team/tdd-guide/SKILL.md",
-  "imported_at": "2026-01-24T08:30:59.365769Z"
-}

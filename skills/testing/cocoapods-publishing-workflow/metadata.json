@@ -1,8 +1,0 @@
-{
-  "name": "cocoapods-publishing-workflow",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when publishing CocoaPods libraries to CocoaPods Trunk. Covers pod trunk registration, podspec validation, version management, and publishing best practices for successful library distribution.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.933041Z"
-}

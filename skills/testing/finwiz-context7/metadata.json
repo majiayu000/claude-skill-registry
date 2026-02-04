@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-context7",
-  "repo": "fjacquet/finwiz",
-  "category": "testing",
-  "description": "Automatically uses Context7 MCP tools to fetch up-to-date library documentation when working with external libraries. Use when implementing code with CrewAI, Pydantic, pytest, or any external library ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:39.229860Z"
-}

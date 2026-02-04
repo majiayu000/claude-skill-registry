@@ -1,9 +1,0 @@
-{
-  "name": "project-type-determination",
-  "description": "Determines project type from context to configure analysis thresholds.Checks prompt, scans documents, or asks user if type cannot be inferred.Outputs project_type for use by python-plan-optimization s",
-  "repo": "it-bens/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

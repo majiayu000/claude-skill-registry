@@ -1,9 +1,0 @@
-{
-  "name": "snowtower-maintainer",
-  "description": "Maintains SnowTower project documentation, README, and Claude configuration. Use when updating documentation, auditing .claude folder contents, syncing README with actual project state, or reviewing a",
-  "repo": "Database-Tycoon/SnowTower",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

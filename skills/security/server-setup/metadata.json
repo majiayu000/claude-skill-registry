@@ -1,8 +1,0 @@
-{
-  "name": "server-setup",
-  "repo": "cliftonc/drizzle-cube-skills",
-  "category": "security",
-  "description": "Set up drizzle-cube API server with Express, Fastify, Hono, or Next.js framework adapters. Use when configuring the semantic layer server, setting up API endpoints, extracting security context, or ini",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:35.361617Z"
-}

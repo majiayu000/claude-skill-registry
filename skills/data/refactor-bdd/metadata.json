@@ -1,9 +1,0 @@
-{
-  "name": "refactor-bdd",
-  "description": "Refactor BDD implementation (scenarios, step definitions, feature code) to improve quality and eliminate tech debt while keeping scenarios passing. Use after implement-feature when scenarios are green",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

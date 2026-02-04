@@ -1,9 +1,0 @@
-{
-  "name": "settings-management",
-  "description": "Central authority for Claude Code configuration and settings. Covers settings.json files (user, project, enterprise), available settings, permission settings, sandbox settings, settings precedence, pl",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

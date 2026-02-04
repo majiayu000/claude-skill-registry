@@ -1,9 +1,0 @@
-{
-  "name": "benchmark-kernel",
-  "description": "Guide for benchmarking FlashInfer kernels with CUPTI timing",
-  "repo": "flashinfer-ai/flashinfer",
-  "category": "development",
-  "tags": [],
-  "stars": 4744,
-  "source": "github.com/flashinfer-ai/flashinfer"
-}

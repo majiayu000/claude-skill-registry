@@ -1,9 +1,0 @@
-{
-  "name": "github-project-setup",
-  "description": "Github Project Setup - Auto-activating skill for Enterprise Workflows.Triggers on: github project setup, github project setupPart of the Enterprise Workflows skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

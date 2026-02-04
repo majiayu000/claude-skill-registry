@@ -1,9 +1,0 @@
-{
-  "name": "treesitter-patterns",
-  "description": "Universal patterns for tree-sitter code parsing. Covers AST visitors, query patterns, and language plugin development. Framework-agnostic.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

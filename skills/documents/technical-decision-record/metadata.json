@@ -1,8 +1,0 @@
-{
-  "name": "technical-decision-record",
-  "repo": "ChaiWithJai/claude-code-mastery",
-  "category": "documents",
-  "description": "Use when making technical decisions, choosing technologies, or documenting architectural choices. Creates ADRs (Architecture Decision Records).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:24.237944Z"
-}

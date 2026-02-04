@@ -1,9 +1,0 @@
-{
-  "name": "ameba-integration",
-  "description": "Use when integrating Ameba into development workflows including CI/CD pipelines, pre-commit hooks, GitHub Actions, and automated code review processes.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

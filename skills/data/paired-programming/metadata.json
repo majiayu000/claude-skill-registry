@@ -1,9 +1,0 @@
-{
-  "name": "paired-programming",
-  "description": "This skill should be used when the user wants collaborative, iterative development instead of autonomous implementation. It transforms Claude from \"autonomous implementer\" to \"pair programmer\" by enfo",
-  "repo": "matthew-bram/enterprise-confluent-test-probe",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

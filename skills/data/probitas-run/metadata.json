@@ -1,9 +1,0 @@
-{
-  "name": "probitas-run",
-  "description": "Running and validating Probitas scenarios. Use when executing tests, running scenarios, or debugging test failures.",
-  "repo": "probitas-test/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

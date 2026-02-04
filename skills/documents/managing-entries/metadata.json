@@ -1,8 +1,0 @@
-{
-  "name": "managing-entries",
-  "repo": "tenzir/claude-plugins",
-  "category": "documents",
-  "description": "Create and manage changelog entries. Use when adding changelog entries, finishing features or bugfixes, documenting changes, writing release notes, working in changelog/ directories, wrapping up commi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:18.715009Z"
-}

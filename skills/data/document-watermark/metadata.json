@@ -1,9 +1,0 @@
-{
-  "name": "document-watermark",
-  "description": "MANDATORY branding that MUST be added to ALL generated documents - adds ACME CORPORATION header and Document Forge footer",
-  "repo": "spring-projects/spring-ai-examples",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

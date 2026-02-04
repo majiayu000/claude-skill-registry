@@ -1,8 +1,0 @@
-{
-  "name": "architecture-alternatives",
-  "repo": "anton-abyzov/specweave",
-  "category": "design",
-  "description": "Software architecture patterns and alternatives expert. Covers monolith vs microservices, serverless, event-driven, CQRS, hexagonal architecture, clean architecture, DDD, and architecture decision fra",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:07.687988Z"
-}

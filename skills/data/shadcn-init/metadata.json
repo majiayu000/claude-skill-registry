@@ -1,9 +1,0 @@
-{
-  "name": "shadcn-init",
-  "description": "Setup shadcn/ui in React projects (Next.js, Vite, Astro). Use when initializing shadcn/ui, setting up Tailwind CSS v4, configuring path aliases, or when user mentions \"setup shadcn\", \"install shadcn\",",
-  "repo": "jubalm/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

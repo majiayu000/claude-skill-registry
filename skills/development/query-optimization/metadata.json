@@ -1,7 +1,0 @@
-{
-  "name": "query-optimization",
-  "description": "Optimize database queries, add indexes, prevent N+1 queries, and improve query performance. Use when queries are slow, investigating database bottlenecks, or optimizing data access patterns.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.182869Z"
-}

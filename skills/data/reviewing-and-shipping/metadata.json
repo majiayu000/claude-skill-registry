@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-and-shipping",
-  "description": "Validate quality with multi-agent review, auto-fix issues, generate organized commits, and create PRs with rich context. Use after completing features to ensure quality gates pass and ship confidently",
-  "repo": "jeanluciano/quaestor",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

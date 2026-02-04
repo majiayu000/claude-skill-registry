@@ -1,9 +1,0 @@
-{
-  "name": "cursor-common-errors",
-  "description": "Troubleshoot common Cursor IDE errors and issues. Triggers on \"cursor error\",\"cursor not working\", \"cursor issue\", \"cursor problem\", \"fix cursor\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sensor-integration",
-  "description": "Generate production-quality Python code for sensor integration, sensor fusion, and perceptionsystems that run in Pyodide (browser). Creates educational code for teaching IMU sensors,LiDAR simulation, ",
-  "repo": "khanaleema/PhysicalAI-Book",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

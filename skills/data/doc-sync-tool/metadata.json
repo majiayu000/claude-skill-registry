@@ -1,9 +1,0 @@
-{
-  "name": "doc-sync-tool",
-  "description": "自动同步项目中的 Agents.md、claude.md 和 gemini.md 文件，保持内容一致性。支持自动监听和手动触发。",
-  "repo": "littleben/awesomeAgentskills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

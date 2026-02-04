@@ -1,9 +1,0 @@
-{
-  "name": "using-reducers",
-  "description": "Teaches useReducer for complex state logic in React 19. Use when state updates depend on previous state, multiple related state values, or complex update logic.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

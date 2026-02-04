@@ -1,8 +1,0 @@
-{
-  "name": "workflow-generator",
-  "repo": "bradleygolden/claude-marketplace-elixir",
-  "category": "testing",
-  "description": "Generate project-specific workflow commands (research, plan, implement, qa) by asking questions about the project and creating customized commands",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:32.306170Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-reference-manager",
-  "description": "Safely introduce external Git repositories as reference materials. Responsible for managing the `_reference` directory, ensuring external code is read-only and does not pollute the project's version c",
-  "repo": "IndenScale/Typedown",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ca-django-tests",
-  "description": "ALWAYS use this skill proactively for Consumer Affairs Django repositories (located in ../ca/ directory) when ANY of these occur - (1) User mentions coverage, codecov, test coverage, partial coverage,",
-  "repo": "ramonsaraiva/yadm",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "verdict-flags",
-  "description": "a skill that contains all the best practices for using Verdict Flags in shopify codebases. It should be uses whenever the agent is creating, updating or removing flags",
-  "repo": "pcasaretto/nix-home",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

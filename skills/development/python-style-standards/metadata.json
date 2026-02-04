@@ -1,8 +1,0 @@
-{
-  "name": "python-style-standards",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Python coding standards including line length (80 chars), naming conventions (snake_case, PascalCase), type hints, docstrings, exception handling, and logging patterns. Use when writing new Python cod",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.045637Z"
-}

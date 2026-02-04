@@ -1,8 +1,0 @@
-{
-  "name": "ct-debug-skill",
-  "repo": "hanibalsk/claude-threads",
-  "category": "development",
-  "description": "Debug and troubleshoot claude-threads, orchestrator, and agent issues",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:00.314877Z"
-}

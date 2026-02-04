@@ -1,9 +1,0 @@
-{
-  "name": "injection-vulnerabilities-ai-generated-code",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "data",
-  "description": "Understand how AI generates SQL injection, command injection, and XSS vulnerabilities. Use this skill when you need to learn about injection attack patterns in AI code, see real-world examples of inje",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.382949Z",
-  "dir_name": "injection-vulnerabilities-ai-generated-code"
-}

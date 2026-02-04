@@ -1,8 +1,0 @@
-{
-  "name": "command-name",
-  "repo": "anthropics/claude-code",
-  "category": "design",
-  "description": "This skill should be used when the user asks to \"create a plugin\", \"scaffold a plugin\", \"understand plugin structure\", \"organize plugin components\", \"set up plugin.json\", \"use ${CLAUDE_PLUGIN_ROOT}\", ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:32.762672Z"
-}

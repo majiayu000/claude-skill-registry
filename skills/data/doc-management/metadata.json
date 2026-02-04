@@ -1,9 +1,0 @@
-{
-  "name": "doc-management",
-  "description": "Documentation lifecycle management skill. Activates when user mentions documentation, docs, sync, quality, validation, releases, or setup. Routes to appropriate agent (doc-expert for orchestration, do",
-  "repo": "arimxyer/doc-manager-mcp",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

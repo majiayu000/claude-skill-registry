@@ -1,9 +1,0 @@
-{
-  "name": "secret-code",
-  "description": "Reveal the secret code by reading the asset and running the script",
-  "repo": "meridianlabs-ai/inspect_swe",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

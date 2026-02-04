@@ -1,9 +1,0 @@
-{
-  "name": "template-engineering",
-  "description": "Guide creation of meta-prompt templates that encode engineering workflows into reusable, scalable units. Use when creating slash commands that generate plans, designing workflow templates, or encoding",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

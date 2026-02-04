@@ -1,9 +1,0 @@
-{
-  "name": "shelby-cli-helper",
-  "description": "Use when working with the Shelby Protocol CLI for uploading files, downloading blobs, managing accounts, or configuring contexts. Helps with initialization, funding accounts with ShelbyUSD/Aptos token",
-  "repo": "zacharyr0th/next-starter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "agile-workflow",
-  "description": "Orchestrate agile development workflows by invoking commands in sequence with checkpoint-based flow control. This skill should be used when the user asks to 'run the workflow', 'continue working', 'wh",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

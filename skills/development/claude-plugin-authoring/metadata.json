@@ -1,8 +1,0 @@
-{
-  "name": "claude-plugin-authoring",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Creates complete Claude Code plugins with proper structure, configuration, and best practices. Handles plugin.json metadata, slash commands, agent configurations, event hooks, and MCP server integrati",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:36.761290Z"
-}

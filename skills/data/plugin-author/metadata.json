@@ -1,9 +1,0 @@
-{
-  "name": "plugin-author",
-  "description": "Guide for creating, configuring, and distributing Claude Code plugins with hooks, skills, commands, and MCP servers. Use when user asks to create a plugin, set up hooks, add plugin functionality, crea",
-  "repo": "eli0shin/.dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

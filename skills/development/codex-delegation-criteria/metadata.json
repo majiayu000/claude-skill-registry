@@ -1,8 +1,0 @@
-{
-  "name": "codex-delegation-criteria",
-  "repo": "dkoosis/cc-plugins",
-  "category": "development",
-  "description": "This skill should be used when deciding whether to \"delegate to codex\", \"hand off to codex\", \"use codex for this\", or when Claude needs to determine if a task is appropriate for Codex vs handling dire",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:06.573870Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "supabase-reference-architecture",
-  "description": "Implement Supabase reference architecture with best-practice project layout.Use when designing new Supabase integrations, reviewing project structure,or establishing architecture standards for Supabas",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

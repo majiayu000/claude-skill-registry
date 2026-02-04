@@ -1,9 +1,0 @@
-{
-  "name": "google-master",
-  "description": "Shared resource library for Google integration skills. DO NOT load directly - provides common references (setup, API docs, error handling, authentication) and scripts used by gmail, google-docs, googl",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

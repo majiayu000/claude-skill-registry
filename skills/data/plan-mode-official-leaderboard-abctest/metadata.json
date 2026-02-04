@@ -1,9 +1,0 @@
-{
-  "name": "plan-mode-official-leaderboard-abctest",
-  "description": "公式リーダーボード準拠のA/B/Cテストを実行するPlanモードスキル。Phi-3.5-mini-instruct、Borea-phi3.5-instinct-jp、AEGIS-Phi3.5mini-jpv2.4を標準化ベンチマークで比較評価し、統計的有意性を検証。",
-  "repo": "zapabob/SO8T",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zapabob/SO8T"
-}

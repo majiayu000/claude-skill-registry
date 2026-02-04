@@ -1,9 +1,0 @@
-{
-  "name": "regex-pattern-builder",
-  "description": "Builds and explains regex patterns from natural language, tests patterns, and provides examples. Use when user asks to \"create regex\", \"regex pattern\", \"match pattern\", \"validate email/phone\", or \"reg",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

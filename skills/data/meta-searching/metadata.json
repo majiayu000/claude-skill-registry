@@ -1,9 +1,0 @@
-{
-  "name": "meta-searching",
-  "description": "Extracts web content and performs reliable searches when standard tools fail due to access restrictions, rate limiting, or validation errors. Use when encountering 403/429/422 errors, blocked document",
-  "repo": "shrwnsan/vibekit-claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "frontend-bugfix",
-  "description": "Use this skill when debugging frontend test failures (React/TypeScript, Vitest, etc.), fixing bugs in React/TypeScript code, or following TDD methodology for frontend bug fixes. This skill provides th",
-  "repo": "penkzhou/swiss-army-knife-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

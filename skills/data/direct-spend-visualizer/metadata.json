@@ -1,9 +1,0 @@
-{
-  "name": "direct-spend-visualizer",
-  "description": "Visualize FeedMob direct spend data as ASCII line charts. Use this skill when users request to view, display, chart, or visualize direct spend metrics for one or more click URL IDs. Trigger when users",
-  "repo": "feed-mob/claude-code-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

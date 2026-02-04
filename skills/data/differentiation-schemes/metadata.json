@@ -1,9 +1,0 @@
-{
-  "name": "differentiation-schemes",
-  "description": "Select and apply numerical differentiation schemes for PDE/ODE discretization. Use when choosing finite difference/volume/spectral schemes, building stencils, handling boundaries, or estimating trunca",
-  "repo": "HeshamFS/materials-simulation-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

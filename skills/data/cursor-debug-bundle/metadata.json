@@ -1,9 +1,0 @@
-{
-  "name": "cursor-debug-bundle",
-  "description": "Debug AI suggestions and code generation in Cursor. Triggers on \"debug cursor ai\",\"cursor suggestions wrong\", \"bad cursor completion\", \"cursor ai debug\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

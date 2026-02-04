@@ -1,9 +1,0 @@
-{
-  "name": "output-dev-http-client-create",
-  "description": "Create shared HTTP clients in src/clients/ for Output SDK workflows. Use when integrating external APIs, creating service wrappers, or standardizing HTTP operations.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

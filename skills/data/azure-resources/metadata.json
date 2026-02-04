@@ -1,9 +1,0 @@
-{
-  "name": "azure-resources",
-  "description": "Query Azure resources and configurations (read-only)",
-  "repo": "BreakerOfStems/claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/BreakerOfStems/claude-skills"
-}

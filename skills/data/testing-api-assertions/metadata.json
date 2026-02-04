@@ -1,9 +1,0 @@
-{
-  "name": "testing-api-assertions",
-  "description": "Verify API requests in tests. Use when testing that correct API calls are made for create, update, or delete operations. Use when testing mutations, form submissions, or actions with backend side effe",
-  "repo": "stacklok/toolhive-studio",
-  "category": "development",
-  "tags": [],
-  "stars": 81,
-  "source": "github.com/stacklok/toolhive-studio"
-}

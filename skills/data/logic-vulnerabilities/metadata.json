@@ -1,9 +1,0 @@
-{
-  "name": "logic-vulnerabilities",
-  "description": "File descriptor abuse, race conditions, and TOCTOU vulnerabilities",
-  "repo": "amattas/agentic-coding",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "google-calendar-sync",
-  "description": "Wizard to set up Google Calendar API integration with service account authentication. Use when setting up calendar sync, Google Calendar API, service accounts, or domain-wide delegation.",
-  "category": "development",
-  "source": "github.com/badass-courses/course-builder",
-  "imported_at": "2026-01-24T14:53:54.911596Z"
-}

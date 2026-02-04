@@ -1,8 +1,0 @@
-{
-  "name": "symfonybootstrap-check",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "design",
-  "description": "Verify Symfony project configuration including .env, services.yaml, doctrine settings, and framework requirements",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.607131Z"
-}

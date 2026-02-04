@@ -1,9 +1,0 @@
-{
-  "name": "configuring-java-stack",
-  "description": "Java stack configuration - Maven, JUnit 5, Spotless, SpotBugs, JaCoCo with 96% coverage threshold",
-  "repo": "bryonjacob/aug",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

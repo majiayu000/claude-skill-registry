@@ -1,8 +1,0 @@
-{
-  "name": "analyzing-code-structure",
-  "repo": "iota9star/my-skills",
-  "category": "development",
-  "description": "Performs structural code search and refactoring by matching code structure instead of exact text. Use when editing code structure with text matching ambiguity, handling \"old_string not unique\" problem",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.110209Z"
-}

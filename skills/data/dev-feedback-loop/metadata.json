@@ -1,9 +1,0 @@
-{
-  "name": "dev-feedback-loop",
-  "description": "Development cycle feedback system - calculates assertiveness scores, analyzes promptquality for all agents executed, aggregates cycle metrics, performs root cause analysison failures, and generates im",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

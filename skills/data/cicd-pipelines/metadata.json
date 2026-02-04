@@ -1,9 +1,0 @@
-{
-  "name": "cicd-pipelines",
-  "description": "Jenkins, GitHub Actions, GitLab CI, and automated data pipeline deployment",
-  "repo": "pluginagentmarketplace/custom-plugin-data-engineer",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

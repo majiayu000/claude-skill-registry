@@ -1,8 +1,0 @@
-{
-  "name": "openai-image-edit",
-  "repo": "LarsEckart/dotfiles",
-  "category": "product",
-  "description": "Edit images via OpenAI gpt-image-1 API. Creates edited or extended images from source images and a prompt. Supports masks for selective editing, multiple input images for compositing, and input fideli",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:59.341481Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "elixir-test-runner",
-  "description": "Run ExUnit tests with smart filtering, debugging options, and proper error reporting. Use when running tests, debugging failures, or validating specific test cases.",
-  "repo": "mkreyman/bmad-elixir",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

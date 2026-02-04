@@ -1,9 +1,0 @@
-{
-  "name": "subagent-system",
-  "description": "Create and manage specialized Claude Code subagents for task-specific workflows. Use when delegating work to specialized agents, configuring agent permissions, or understanding subagent architecture a",
-  "repo": "CaptainCrouton89/.claude",
-  "category": "development",
-  "tags": [],
-  "stars": 494,
-  "source": "github.com/CaptainCrouton89/.claude"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "data-seeding-fixtures-builder",
-  "description": "Generates deterministic seed data for development and testing with factory functions, realistic fixtures, and database reset scripts. Use for \"data seeding\", \"test fixtures\", \"database seeding\", or \"m",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

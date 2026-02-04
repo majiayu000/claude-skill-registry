@@ -1,9 +1,0 @@
-{
-  "name": "compare-repo",
-  "description": "Compare a GitHub repository with connectrpc-axum. This skill should be used when the user provides a GitHub repository URL and wants to compare it with the current project. Analyzes user features, tec",
-  "repo": "washanhanzi/connectrpc-axum",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

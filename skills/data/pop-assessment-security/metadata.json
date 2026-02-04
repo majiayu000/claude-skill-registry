@@ -1,9 +1,0 @@
-{
-  "name": "pop-assessment-security",
-  "description": "Validates PopKit security posture using concrete vulnerability patterns, automated secret scanning, and OWASP-aligned checklists",
-  "repo": "jrc1883/popkit-claude",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

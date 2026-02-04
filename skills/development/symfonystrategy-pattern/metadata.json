@@ -1,8 +1,0 @@
-{
-  "name": "symfonystrategy-pattern",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Implement the Strategy pattern with Symfony's tagged services for runtime algorithm selection and extensibility",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.334062Z"
-}

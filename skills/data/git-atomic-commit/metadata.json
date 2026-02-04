@@ -1,9 +1,0 @@
-{
-  "name": "git-atomic-commit",
-  "description": "Skill for analyzing git changes, grouping them into logical atomic commits, generating conventional commit messages, and guiding through the commit process. Use when committing changes with proper con",
-  "repo": "arisng/github-copilot-fc",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

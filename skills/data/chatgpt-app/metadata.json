@@ -1,9 +1,0 @@
-{
-  "name": "chatgpt-app",
-  "description": "Guidance for building the chatgpt-app (Vite + React + @openai/apps-sdk-ui) with the MCP-friendly single-file output.",
-  "repo": "flaming-codes/crane-app",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

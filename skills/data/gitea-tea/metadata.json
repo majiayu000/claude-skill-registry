@@ -1,9 +1,0 @@
-{
-  "name": "gitea-tea",
-  "description": "Manage Gitea via CLI. Use when user mentions \"tea\", \"gitea cli\", or needs terminal-based Gitea operations.",
-  "repo": "beshkenadze/claude-skills-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

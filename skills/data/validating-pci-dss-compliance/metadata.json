@@ -1,9 +1,0 @@
-{
-  "name": "validating-pci-dss-compliance",
-  "description": "Validate PCI-DSS compliance for payment card data security. Use when auditing payment systems. Trigger with 'validate PCI-DSS', 'check payment security', or 'audit card data'.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

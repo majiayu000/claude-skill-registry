@@ -1,9 +1,0 @@
-{
-  "name": "status-overview",
-  "description": "Role and project workload overview. Use when user wants to see their current workload, role balance, or status across roles/projects. Auto-triggers on phrases like \"how am I doing\", \"workload\", \"what'",
-  "repo": "Ninjasenap/AIDA",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

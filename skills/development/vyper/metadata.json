@@ -1,8 +1,0 @@
-{
-  "name": "vyper",
-  "repo": "cyberthirst/ivy",
-  "category": "development",
-  "description": "Vyper compiler internals - AST nodes, type system, compilation pipeline, IR generation for debugging codegen bugs",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:35.481287Z"
-}

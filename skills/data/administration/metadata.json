@@ -1,9 +1,0 @@
-{
-  "name": "administration",
-  "description": "How to monitor usage, track costs, configure analytics, and measure ROI for Claude Code. Use when user asks about monitoring, telemetry, metrics, costs, analytics, or OpenTelemetry.",
-  "repo": "reggiechan74/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

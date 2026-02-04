@@ -1,8 +1,0 @@
-{
-  "name": "architecture-agent",
-  "repo": "redmage123/artemis",
-  "category": "design",
-  "description": "Creates Architecture Decision Records (ADRs) for software development tasks. Use this skill when you need to document architectural decisions, evaluate technical options, or create structured design d",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:50.348560Z"
-}

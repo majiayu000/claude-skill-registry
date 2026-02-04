@@ -1,7 +1,0 @@
-{
-  "name": "csv-data-summarizer",
-  "description": "Analyzes CSV files, generates summary stats, and plots quick visualizations using Python and pandas.",
-  "category": "development",
-  "source": "github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
-  "imported_at": "2026-01-24T14:54:17.189426Z"
-}

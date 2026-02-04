@@ -1,9 +1,0 @@
-{
-  "name": "exec-plan",
-  "description": "Create or resume an execution plan - a design document that a coding agent can follow to deliver a working feature or system change",
-  "repo": "NeonTowel/oh-my-taskfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

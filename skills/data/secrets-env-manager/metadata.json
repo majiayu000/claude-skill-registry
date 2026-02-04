@@ -1,9 +1,0 @@
-{
-  "name": "secrets-env-manager",
-  "description": "Validates environment variables in CI, prevents secret leaks, enforces masking, and provides fail-fast validation with clear documentation. Use for \"secrets management\", \"env var validation\", \"credent",
-  "repo": "patricio0312rev/skillset",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

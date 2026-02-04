@@ -1,8 +1,0 @@
-{
-  "name": "agentic-workflow-design",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "description": "Design multi-agent AI systems including orchestration patterns, tool design, memory management, and error handling for autonomous agents.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.642926Z"
-}

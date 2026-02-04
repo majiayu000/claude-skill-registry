@@ -1,7 +1,0 @@
-{
-  "name": "create-hat-collection",
-  "description": "Generates new Ralph hat collection presets through guided conversation. Asks clarifying questions, validates against schema constraints, and outputs production-ready YAML files.",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.105637Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "creating-github-issues-from-web-research",
-  "description": "This skill enhances AI assistant's ability to conduct web research and translate findings into actionable github issues. it automates the process of extracting key information from web search results ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

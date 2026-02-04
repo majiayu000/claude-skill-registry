@@ -1,8 +1,0 @@
-{
-  "name": "telemetry-anomaly",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Detect anomalies from live telemetry streams and propose remediation; use when asked to analyze SSE/WebSocket metrics for abnormal behavior.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:23.198278Z"
-}

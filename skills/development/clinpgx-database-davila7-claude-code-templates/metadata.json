@@ -1,7 +1,0 @@
-{
-  "name": "clinpgx-database-davila7-claude-code-templates",
-  "description": "Access ClinPGx pharmacogenomics data (successor to PharmGKB). Query gene-drug interactions, CPIC guidelines, allele functions, for precision medicine and genotype-guided dosing decisions.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:22.979421Z"
-}

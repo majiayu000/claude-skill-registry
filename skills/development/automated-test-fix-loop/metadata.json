@@ -1,8 +1,0 @@
-{
-  "name": "automated-test-fix-loop",
-  "repo": "lawless-m/claude-skills",
-  "category": "development",
-  "description": "Pattern for automated testing with GitHub issue creation and Claude Code auto-fixing. Creates Test \u2192 Fail \u2192 Issue \u2192 Fix \u2192 Repeat cycle until tests pass.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:19.687580Z"
-}

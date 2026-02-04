@@ -1,9 +1,0 @@
-{
-  "name": "orchestration-qa",
-  "description": "Quality assurance for orchestration workflows - validates Skills and Subagents follow documented patterns, tracks deviations, suggests improvements",
-  "repo": "jpicklyk/task-orchestrator",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

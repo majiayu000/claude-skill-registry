@@ -1,9 +1,0 @@
-{
-  "name": "ci-gatekeeper-agent",
-  "description": "AI-powered CI Gatekeeper Agent that enforces observability standards in CI/CD pipelines. Use when: (1) Generating GitHub Actions/Jenkins pipelines for observability gates, (2) Configuring progressive ",
-  "repo": "Kart-rc/dataobservability-agents",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

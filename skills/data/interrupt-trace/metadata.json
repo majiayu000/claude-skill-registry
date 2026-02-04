@@ -1,9 +1,0 @@
-{
-  "name": "interrupt-trace",
-  "description": "Use when analyzing low-level interrupt behavior - debugging interrupt handler issues, investigating crashes or triple faults, verifying privilege level transitions, analyzing register corruption betwe",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

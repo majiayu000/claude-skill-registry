@@ -1,8 +1,0 @@
-{
-  "name": "rwsdk-cloudflare-queues",
-  "repo": "kcc989/logoer",
-  "category": "productivity",
-  "description": "Use when implementing background tasks, async processing, or offloading slow operations in rwsdk/Cloudflare Workers - covers queue setup, sending messages (direct/R2/KV patterns), consuming message ba",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:36.481521Z"
-}

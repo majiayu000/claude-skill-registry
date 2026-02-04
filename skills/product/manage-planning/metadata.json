@@ -1,8 +1,0 @@
-{
-  "name": "manage-planning",
-  "repo": "Git-Fg/thecattoolkit",
-  "category": "product",
-  "description": "MUST INVOKE this skill when creating executable plans in .prompts/planning/ with Brief \u2192 Roadmap \u2192 Phases structure. Expert patterns for hierarchical project plans.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:05.981179Z"
-}

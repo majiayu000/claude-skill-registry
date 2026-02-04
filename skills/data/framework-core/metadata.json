@@ -1,9 +1,0 @@
-{
-  "name": "framework-core",
-  "description": "Load when working with any katachi framework command. Provides workflow principles, status tracking conventions, and decision guidance. This skill establishes the collaborative context for all framewo",
-  "repo": "asermax/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

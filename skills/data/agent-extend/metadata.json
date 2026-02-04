@@ -1,9 +1,0 @@
-{
-  "name": "agent-extend",
-  "description": "Extend the Strategy Coach agent with new capabilities. Use when user says \"add coaching phase\", \"new research pillar\", \"extend agent\", \"add strategic output\", or asks to enhance the AI coaching method",
-  "repo": "deeksmith-cpu/Frontera-Platform",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

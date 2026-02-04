@@ -1,9 +1,0 @@
-{
-  "name": "dev-browser-nix",
-  "description": "Use dev-browser for browser automation on NixOS. Invoke when user asks to test UI, automate browser interactions, take screenshots, or verify web app behavior.",
-  "repo": "MichaelVessia/etude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

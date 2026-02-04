@@ -1,9 +1,0 @@
-{
-  "name": "cursor-prod-checklist",
-  "description": "Execute production readiness checklist for Cursor IDE setup. Triggers on \"cursor production\",\n\"cursor ready\", \"cursor checklist\", \"optimize cursor setup\". Use when working with cursor prod checklist f",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

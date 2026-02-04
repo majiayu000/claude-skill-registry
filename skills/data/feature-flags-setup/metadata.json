@@ -1,9 +1,0 @@
-{
-  "name": "feature-flags-setup",
-  "description": "Implement feature flags using the Vercel Flags SDK with server-side evaluation, environment-based toggles, and Vercel Toolbar integration.",
-  "repo": "andrelandgraf/fullstackrecipes",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/andrelandgraf/fullstackrecipes"
-}

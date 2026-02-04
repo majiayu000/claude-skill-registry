@@ -1,8 +1,0 @@
-{
-  "name": "api-agent-development",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "development",
-  "description": "Create API agents that wrap external HTTP services (n8n, LangGraph, CrewAI, OpenAI endpoints). Configure request/response transforms, webhook status tracking, A2A protocol compliance. CRITICAL: Reques",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:56.683916Z"
-}

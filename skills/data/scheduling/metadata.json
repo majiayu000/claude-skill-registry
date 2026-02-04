@@ -1,9 +1,0 @@
-{
-  "name": "scheduling",
-  "description": "Generate resident schedules respecting ACGME rules, institutional policies, and individual preferences. Orchestrates constraint propagation, optimization, and conflict resolution for medical residency",
-  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager"
-}

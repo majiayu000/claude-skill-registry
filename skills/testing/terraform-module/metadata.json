@@ -1,8 +1,0 @@
-{
-  "name": "terraform-module",
-  "repo": "n4vysh/dotfiles",
-  "category": "testing",
-  "description": "Inspect Terraform module specs from cache when seeing module sources.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:23.764397Z"
-}

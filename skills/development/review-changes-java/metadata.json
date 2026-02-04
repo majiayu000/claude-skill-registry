@@ -1,8 +1,0 @@
-{
-  "name": "review-changes-java",
-  "repo": "PedroSantiagoDev/buildup",
-  "category": "development",
-  "description": "Systematic code review workflow to evaluate changes against Java and Spring standards. Use when reviewing Pull Requests, commits, or diffs. Ensures robustness, maintainability, and adherence to best p",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:29.663972Z"
-}

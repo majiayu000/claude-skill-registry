@@ -1,9 +1,0 @@
-{
-  "name": "compose-manager",
-  "description": "Docker Compose を管理する。「compose 起動」「docker-compose up」「サービス起動」「compose 停止」「サービス止めて」「down」「compose ログ」「サービスのログ」「compose ps」「サービス状態」「compose build」「サービスビルド」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

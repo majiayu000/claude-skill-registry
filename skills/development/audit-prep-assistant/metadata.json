@@ -1,7 +1,0 @@
-{
-  "name": "audit-prep-assistant",
-  "description": "Prepare your codebase for security review using Trail of Bits' checklist. Helps set review goals, runs static analysis tools, increases test coverage, removes dead code, ensures accessibility, and gen",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:05.095103Z"
-}

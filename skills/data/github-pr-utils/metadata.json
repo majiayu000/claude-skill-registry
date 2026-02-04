@@ -1,9 +1,0 @@
-{
-  "name": "github-pr-utils",
-  "description": "Utility scripts for GitHub pull request management. Includes tools for fetching bot-generated review comments (linters, security scanners, dependabot), replying to review threads programmatically, lis",
-  "repo": "gosu-code/claude-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

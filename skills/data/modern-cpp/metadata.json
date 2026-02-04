@@ -1,9 +1,0 @@
-{
-  "name": "modern-cpp",
-  "description": "Production-grade skill for modern C++ development with C++11 through C++23 features. Covers move semantics, smart pointers, lambdas, concepts, ranges, coroutines, and modules.",
-  "repo": "pluginagentmarketplace/custom-plugin-cpp",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

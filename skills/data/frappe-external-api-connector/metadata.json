@@ -1,9 +1,0 @@
-{
-  "name": "frappe-external-api-connector",
-  "description": "Generate code to integrate Frappe with external REST APIs. Use when connecting to third-party services, payment gateways, or external data sources.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

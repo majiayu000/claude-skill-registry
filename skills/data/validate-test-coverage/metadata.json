@@ -1,9 +1,0 @@
-{
-  "name": "validate-test-coverage",
-  "description": "Homeostatic sensor validating test coverage percentage and detecting requirements without tests. Calculates coverage per requirement (REQ-*) and overall. Use as quality gate or continuous coverage mon",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

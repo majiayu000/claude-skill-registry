@@ -1,8 +1,0 @@
-{
-  "name": "solid-principles-code-review",
-  "repo": "jack-michaud/faire",
-  "category": "development",
-  "description": "Review Python code for adherence to SOLID principles (SRP, OCP, LSP, ISP, DIP). Use when reviewing Python code for maintainability, testability, and design quality.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:52.218407Z"
-}

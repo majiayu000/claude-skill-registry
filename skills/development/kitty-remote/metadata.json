@@ -1,8 +1,0 @@
-{
-  "name": "kitty-remote",
-  "repo": "Alb-O/impire",
-  "category": "development",
-  "description": "Control kitty terminal via remote protocol and kitty-test-harness; launch panels/windows, send keys, capture screen, manage sockets, and debug remote-control failures when testing TUIs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:49.348174Z"
-}

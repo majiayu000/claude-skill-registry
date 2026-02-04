@@ -1,7 +1,0 @@
-{
-  "name": "create-plans",
-  "description": "Create hierarchical project plans optimized for solo agentic development. Use when planning projects, phases, or tasks that Claude will execute. Produces Claude-executable plans with verification crit",
-  "category": "development",
-  "source": "github.com/glittercowboy/taches-cc-resources",
-  "imported_at": "2026-01-24T14:54:13.989679Z"
-}

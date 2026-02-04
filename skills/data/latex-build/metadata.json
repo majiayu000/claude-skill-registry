@@ -1,9 +1,0 @@
-{
-  "name": "latex-build",
-  "description": "Builds LaTeX documents using latexmk with live preview and dependency tracking. Use when setting up builds, live preview, or troubleshooting compilation.",
-  "repo": "terrylica/cc-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cva-setup-clojure",
-  "description": "Clojure project setup and configuration for agent development with Google ADK. Includes deps.edn configuration, directory structure, namespace organization, REPL-driven development workflow, and build",
-  "repo": "joaopelegrino/hello-word-closure",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "reverse-engineering-api",
-  "repo": "kalil0321/reverse-api-engineer",
-  "category": "product",
-  "description": "Reverse engineer web APIs by capturing browser traffic (HAR files) and generating production-ready Python API clients. Use when the user wants to create an API client for a website, automate web inter",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:28.049501Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "code-review-skillcreatorai-ai-agent-skills",
-  "description": "Automated code review for pull requests using specialized review patterns. Analyzes code for quality, security, performance, and best practices. Use when reviewing code changes, PRs, or doing code aud",
-  "category": "development",
-  "source": "github.com/skillcreatorai/Ai-Agent-Skills",
-  "imported_at": "2026-01-24T14:54:05.647617Z"
-}

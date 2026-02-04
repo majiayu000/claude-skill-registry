@@ -1,7 +1,0 @@
-{
-  "name": "zinc-database-davila7-claude-code-templates",
-  "description": "Access ZINC (230M+ purchasable compounds). Search by ZINC ID/SMILES, similarity searches, 3D-ready structures for docking, analog discovery, for virtual screening and drug discovery.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:22.150587Z"
-}

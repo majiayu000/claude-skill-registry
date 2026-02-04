@@ -1,9 +1,0 @@
-{
-  "name": "dbf-data-analysis",
-  "repo": "ninyawee/armed-claude",
-  "category": "data",
-  "description": "This skill should be used when the user asks to \"analyze DBF files\", \"read DBF data\", \"query DBF database\", \"convert DBF to Parquet\", \"analyze Thai accounting data\", \"explore legacy database\", \"run Du",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:22.769140Z",
-  "dir_name": "dbf-data-analysis"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openq-tools",
-  "description": "Open questions register. Use for: QID generation, OQ-SIG-001 format IDs, append questions, open_questions.md. Generate sequential QIDs, append questions with context. Use in clarifier when registering",
-  "repo": "EffortlessMetrics/demo-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

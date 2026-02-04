@@ -1,9 +1,0 @@
-{
-  "name": "commit-with-req-tag",
-  "description": "Create final git commit with requirement traceability tags (REQ-*). Use after refactor-phase to finalize TDD cycle with proper requirement linkage for bidirectional traceability.",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

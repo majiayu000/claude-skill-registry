@@ -1,8 +1,0 @@
-{
-  "name": "langchain-framework",
-  "repo": "bobmatnyc/terminator",
-  "category": "development",
-  "description": "LangChain LLM application framework with chains, agents, RAG, and memory for building AI-powered applications. Use when implementing RAG (Retrieval Augmented Generation), creating AI agents with tools",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:35.994042Z"
-}

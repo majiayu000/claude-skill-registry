@@ -1,8 +1,0 @@
-{
-  "name": "symfonyapi-platform-serialization",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Control API output with serialization groups, custom normalizers, and context-aware serialization in API Platform",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.515030Z"
-}

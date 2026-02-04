@@ -1,9 +1,0 @@
-{
-  "name": "nvidia-nim",
-  "description": "NVIDIA NIM (NVIDIA Inference Microservices) for deploying and managing AI models. Use for NIM microservices, model inference, API integration, and building AI applications with NVIDIA's inference infr",
-  "repo": "rish2jain/paperresearchagent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/rish2jain/paperresearchagent"
-}

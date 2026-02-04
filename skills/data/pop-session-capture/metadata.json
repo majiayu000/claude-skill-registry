@@ -1,9 +1,0 @@
-{
-  "name": "pop-session-capture",
-  "description": "Saves complete session state to STATUS.json for seamless continuation across conversations. Captures git context, in-progress tasks, service status, focus area, and next actions. Use at the end of wor",
-  "repo": "jrc1883/popkit-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jrc1883/popkit-claude"
-}

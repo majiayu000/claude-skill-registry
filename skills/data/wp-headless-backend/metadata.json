@@ -1,9 +1,0 @@
-{
-  "name": "wp-headless-backend",
-  "description": "Build and bootstrap WordPress headless (PHP-FPM) with an idempotent wp-cli entrypoint and WPGraphQL enabled, using MariaDB/MySQL from docker-compose. Use when asked to implement or fix docker/wp/Docke",
-  "repo": "cdryampi/wordpress_headless",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

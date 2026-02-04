@@ -1,9 +1,0 @@
-{
-  "name": "sap-btp-connectivity",
-  "description": "This skill provides comprehensive knowledge for SAP BTP Connectivity, including the Destination Service, Connectivity Service, Cloud Connector, Connectivity Proxy, and Transparent Proxy for Kubernetes",
-  "repo": "secondsky/sap-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

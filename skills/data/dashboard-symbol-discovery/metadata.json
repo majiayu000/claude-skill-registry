@@ -1,9 +1,0 @@
-{
-  "name": "dashboard-symbol-discovery",
-  "description": "Auto-discover dashboard symbols from loaded RL models. Trigger when: (1) dashboard shows old/wrong symbols, (2) symbols mismatch between live trader and dashboard, (3) adding new models to system, (4)",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

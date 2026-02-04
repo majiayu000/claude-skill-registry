@@ -1,8 +1,0 @@
-{
-  "name": "project-name-api",
-  "repo": "fdhidalgo/claude-config",
-  "category": "documents",
-  "description": "HTTP client for {{PROJECT_NAME}} REST API at {{API_BASE_URL}}. Use when making API requests, testing endpoints, handling authentication, or working with {{PROJECT_NAME}} API documentation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:32.764336Z"
-}

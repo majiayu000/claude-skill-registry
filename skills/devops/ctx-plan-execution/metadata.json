@@ -1,8 +1,0 @@
-{
-  "name": "ctx-plan-execution",
-  "repo": "NickCrew/claude-cortex",
-  "category": "devops",
-  "description": "Execution discipline skill adapted from obra/superpowers. Ensures plans translate into tracked tasks, orchestration, and verification runs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:36.021801Z"
-}

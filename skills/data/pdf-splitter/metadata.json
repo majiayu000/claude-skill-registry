@@ -1,9 +1,0 @@
-{
-  "name": "pdf-splitter",
-  "description": "Split PDF files into smaller files by pages, page ranges, or chunks. Use when working with .pdf files, when user asks to split/divide PDFs, extract pages, separate pages, or create individual PDF file",
-  "repo": "gizix/cc_projects",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "word-count-checker",
-  "description": "Automatically checks word counts of documents when the user mentions word count in relation to a file. Triggers on phrases like \"Check the word count of X\", \"Stop when the word count is N\", or similar",
-  "repo": "rawveg/skillsforge-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "shared-setup-patterns",
-  "description": "Shared configuration patterns for project setup commands. Provides security hooks, Claude framework structure templates, and framework detection patterns used across multiple setup commands.",
-  "repo": "applied-artificial-intelligence/claude-code-toolkit",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

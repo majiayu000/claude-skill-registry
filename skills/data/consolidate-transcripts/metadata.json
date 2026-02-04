@@ -1,9 +1,0 @@
-{
-  "name": "consolidate-transcripts",
-  "description": "Consolidate transcripts from a channel into a single file, sorted by date (newest first), up to 800K tokens. Use when preparing transcripts for LLM context or bulk analysis.",
-  "repo": "dparedesi/YTScribe",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

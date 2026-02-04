@@ -1,8 +1,0 @@
-{
-  "name": "testing-wpf",
-  "repo": "YosrBennagra/3SC",
-  "category": "development",
-  "description": "Create and maintain WPF UI tests and ViewModel tests for the .NET 8 widget host app. Use when setting up UI automation, testing MVVM logic, or building a test harness for widgets and the shell.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:40.135119Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "state-manager",
-  "description": "Manage issue lifecycle states (close, reopen, update state) via Fractary CLI",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "find-links",
-  "description": "This skill should be used when the user wants to fill in TODO links, placeholder links, or missing links in markdown files. Invoke when the user mentions \"fill links\", \"TODO links\", \"find links\", or a",
-  "repo": "kevinslin/llm",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

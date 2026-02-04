@@ -1,8 +1,0 @@
-{
-  "name": "julien-mcp-basic-memory",
-  "repo": "theflysurfer/claude-skills-marketplace",
-  "category": "product",
-  "description": "Install Basic Memory MCP for persistent memory between Claude sessions. Use when user needs memory/context persistence via uvx.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:54.428797Z"
-}

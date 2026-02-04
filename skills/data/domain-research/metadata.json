@@ -1,9 +1,0 @@
-{
-  "name": "domain-research",
-  "description": "MCP-powered domain research for requirements elicitation. Uses perplexity, context7, firecrawl, and other MCP servers to research domain knowledge, best practices, and industry requirements.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

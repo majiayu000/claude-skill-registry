@@ -1,9 +1,0 @@
-{
-  "name": "ghe-transition",
-  "description": "CHANGE phases in the GitHub Elements workflow. Closes current thread and opens next phase thread. This is a PHASE CHANGE operation, not just saving progress.USE THIS SKILL WHEN:- User says \"transition",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "luigi-task-generator",
-  "description": "Luigi Task Generator - Auto-activating skill for Data Pipelines.Triggers on: luigi task generator, luigi task generatorPart of the Data Pipelines skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

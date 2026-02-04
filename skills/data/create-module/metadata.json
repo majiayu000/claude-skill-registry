@@ -1,9 +1,0 @@
-{
-  "name": "create-module",
-  "description": "创建新的业务模块。当需要添加新模块如 ec、crm 时使用。",
-  "repo": "sail-sail/nest",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

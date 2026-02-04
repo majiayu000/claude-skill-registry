@@ -1,9 +1,0 @@
-{
-  "name": "typo3-security",
-  "description": "Security hardening checklist and best practices for TYPO3 v13/v14 installations, covering configuration, file permissions, and common vulnerabilities.",
-  "repo": "dirnbauer/claude-cursor-typo3-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/dirnbauer/claude-cursor-typo3-skills"
-}

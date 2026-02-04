@@ -1,9 +1,0 @@
-{
-  "name": "monorepo-package-workflow",
-  "description": "Guides creation of new MCP tool packages in @j0kz/mcp-agents monorepo following modular architecture with constants/, helpers/, utils/ extraction, tools.json registration, and version.json synchron...",
-  "repo": "j0KZ/mcp-agents",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

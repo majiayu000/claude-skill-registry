@@ -1,9 +1,0 @@
-{
-  "name": "homebrew-publish",
-  "description": "Publish CLIs/TUIs to Homebrew via a personal tap. Use when asked to create or manage a Homebrew tap repo, generate or update formulae, compute sha256, test installs, or ship new releases for Go, Rust,",
-  "repo": "regenrek/agent-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

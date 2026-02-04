@@ -1,9 +1,0 @@
-{
-  "name": "stress-test-config",
-  "description": "Stress Test Config - Auto-activating skill for Performance Testing.Triggers on: stress test config, stress test configPart of the Performance Testing skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

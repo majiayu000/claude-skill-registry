@@ -1,9 +1,0 @@
-{
-  "name": "swiftui-ssot",
-  "description": "Single Source of Truth (SSOT) guidelines for SwiftUI state management. Use when designing state architecture, choosing between @State/@Binding/@StateObject/@ObservedObject/@EnvironmentObject, fixing s",
-  "repo": "xtone/ai_development_tools",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

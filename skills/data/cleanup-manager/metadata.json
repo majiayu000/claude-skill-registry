@@ -1,9 +1,0 @@
-{
-  "name": "cleanup-manager",
-  "description": "List and delete stale branches with safety checks for merged and inactive branches",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

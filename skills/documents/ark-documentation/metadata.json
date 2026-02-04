@@ -1,8 +1,0 @@
-{
-  "name": "ark-documentation",
-  "repo": "mckinsey/agents-at-scale-ark",
-  "category": "documents",
-  "description": "Guidance for structuring Ark documentation using the Diataxis framework. Use this skill when creating new docs, deciding where content belongs, reviewing documentation PRs, or restructuring existing d",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:27.403495Z"
-}

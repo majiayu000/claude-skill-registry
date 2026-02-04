@@ -1,8 +1,0 @@
-{
-  "name": "writeup-generator",
-  "repo": "kiwamizamurai/cctf",
-  "category": "documents",
-  "description": "Generate comprehensive CTF writeups as blog articles. Use when solving a challenge, documenting solutions, or when /writeup command is invoked.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:40.171888Z"
-}

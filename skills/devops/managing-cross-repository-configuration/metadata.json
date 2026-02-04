@@ -1,8 +1,0 @@
-{
-  "name": "managing-cross-repository-configuration",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "devops",
-  "description": "Use when user asks where to put configuration, skills, or learnings, or discusses sharing config across projects. Provides decision criteria for the three-tier architecture (global ~/.claude, plugin, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.451743Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "symfonyconfig-env-parameters",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "testing",
-  "description": "Manage Symfony configuration with .env files, parameters, secrets, and environment-specific settings",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.641183Z"
-}

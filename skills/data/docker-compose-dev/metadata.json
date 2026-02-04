@@ -1,9 +1,0 @@
-{
-  "name": "docker-compose-dev",
-  "description": "Run mjr.wtf locally using Docker Compose (SQLite), including migrations, logs, and teardown.",
-  "repo": "matt-riley/mjrwtf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

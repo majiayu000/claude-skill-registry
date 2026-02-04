@@ -1,8 +1,0 @@
-{
-  "name": "sync-offline",
-  "repo": "YosrBennagra/3SC",
-  "category": "design",
-  "description": "Implement offline-first sync for the widget host app: caching, sync queues, conflict resolution, background refresh, and retry policies. Use when designing local persistence, background sync workers, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.792177Z"
-}

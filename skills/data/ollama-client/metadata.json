@@ -1,9 +1,0 @@
-{
-  "name": "ollama-client",
-  "description": "Phi-4 LLM interaction skill for generating text completions via Ollama API. Use for all LLM inference tasks including section detection, summarization, recommendation generation, and quality evaluatio",
-  "repo": "RooseveltAdvisors/ClinicalNoteAgent",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "mcp-usage-orchestrator",
-  "description": "Enforce calling mcp__sequential-thinking__sequentialthinking for every user request and verify configured MCP servers (via .mcp.json or MCP resource listing) to route tasks to the right MCP tools. Use",
-  "repo": "jskjw157/FanPulse",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jskjw157/FanPulse"
-}

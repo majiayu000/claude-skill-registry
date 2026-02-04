@@ -1,9 +1,0 @@
-{
-  "name": "python-runner",
-  "description": "Python 프로젝트 실행, 테스트, 문법 검사, 임포트 검증을 위한 스킬. `scripts/python-runner.sh`를 사용합니다.",
-  "repo": "TakSung/python-katas",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

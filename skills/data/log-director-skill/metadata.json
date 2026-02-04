@@ -1,9 +1,0 @@
-{
-  "name": "log-director-skill",
-  "description": "Orchestrates multi-log workflows with parallel execution for batch operations across many logs",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "connection-management",
-  "description": "Redis connection pooling, client configuration, and reconnection strategies. Use when setting up Redis clients, managing connection pools, handling reconnection logic, or configuring sentinel/cluster ",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

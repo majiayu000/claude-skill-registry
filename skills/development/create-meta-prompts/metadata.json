@@ -1,7 +1,0 @@
-{
-  "name": "create-meta-prompts",
-  "description": "Create optimized prompts for Claude-to-Claude pipelines with research, planning, and execution stages. Use when building prompts that produce outputs for other prompts to consume, or when running mult",
-  "category": "development",
-  "source": "github.com/glittercowboy/taches-cc-resources",
-  "imported_at": "2026-01-24T14:54:13.869340Z"
-}

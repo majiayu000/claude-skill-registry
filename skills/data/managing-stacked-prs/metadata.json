@@ -1,9 +1,0 @@
-{
-  "name": "managing-stacked-prs",
-  "description": "Manages stacked pull requests using git-spice. Creates smaller, reviewable PRs that build on each other, submits them for review, handles feedback, and maintains clean stack history. Use when working ",
-  "repo": "josephschmitt/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

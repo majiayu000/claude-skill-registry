@@ -1,8 +1,0 @@
-{
-  "name": "self-evolving-heuristics",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Analyze the codebase to find hard-coded thresholds, defaults, and timing constants, then convert them into self-evolving heuristics backed by a persistent registry that updates on each execution. Use ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:23.031914Z"
-}

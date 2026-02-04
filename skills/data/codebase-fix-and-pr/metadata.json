@@ -1,9 +1,0 @@
-{
-  "name": "codebase-fix-and-pr",
-  "description": "Apply code changes to a GitHub repository and automatically create a pull request. Takes user feedback or fix requirements, clones the repo, makes localized changes, commits to a new branch, and opens",
-  "repo": "thomasgauvin/claude-agent-sdk-in-cloudflare-containers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "gerar-quiz-rag",
-  "description": "Gerador e executor de quiz sobre conhecimento RAG. Comandos: '/gerar-quiz-rag gerar' para gerar perguntas do banco RAG e salvar em JSON, '/gerar-quiz-rag iniciar' para executar quiz de 10 perguntas, '",
-  "repo": "diegofornalha/plugin-rag-to-quiz",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

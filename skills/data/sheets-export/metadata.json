@@ -1,9 +1,0 @@
-{
-  "name": "sheets-export",
-  "description": "Google Sheets をエクスポートする。「Sheets を CSV で」「スプレッドシートをエクスポート」「Sheets をダウンロード」「Excel で保存」「CSV に変換」などで起動。`/shiiman-google:sheets-export` を実行してエクスポートする。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

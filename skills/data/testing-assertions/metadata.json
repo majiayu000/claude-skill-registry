@@ -1,9 +1,0 @@
-{
-  "name": "testing-assertions",
-  "description": "Tests Phylax Credible Layer assertions with CredibleTest, fuzzing, and backtesting. Use when writing or reviewing assertion tests.",
-  "repo": "phylaxsystems/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/phylaxsystems/agent-skills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "using-context-api",
-  "description": "Teaches Context API patterns in React 19 including use() hook for conditional context access. Use when implementing Context, avoiding prop drilling, or managing global state.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

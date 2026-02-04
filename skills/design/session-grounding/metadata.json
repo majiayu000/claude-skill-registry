@@ -1,8 +1,0 @@
-{
-  "name": "session-grounding",
-  "repo": "spm1001/claude-config-public",
-  "category": "design",
-  "description": "Mid-session checkpoint when things feel squiffy. Anchor to what matters, reset for the second half. Triggers on /ground, 'let's take stock', 'where are we', or when drift is sensed. Pairs with /open a",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:32.583788Z"
-}

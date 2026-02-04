@@ -1,9 +1,0 @@
-{
-  "name": "initializing-project",
-  "description": "Intelligent project analysis with auto-framework detection and adaptive setup. Use when user wants to initialize Quaestor, setup a new project, or analyze existing project structure.",
-  "repo": "jeanluciano/quaestor",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

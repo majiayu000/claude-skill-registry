@@ -1,9 +1,0 @@
-{
-  "name": "codecleanup",
-  "description": "This should only be done if the user asks to \"clean up code\". At the end of a major change on a git branch this document describes the code clean up tasks that should be performed.",
-  "repo": "treasonx/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

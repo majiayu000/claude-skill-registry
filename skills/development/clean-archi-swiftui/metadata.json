@@ -1,8 +1,0 @@
-{
-  "name": "clean-archi-swiftui",
-  "repo": "benaor/claude-config",
-  "category": "development",
-  "description": "Clean Architecture patterns for Swift/SwiftUI iOS projects. Use when working on Swift/SwiftUI projects that follow Clean Architecture with bounded contexts, ports/adapters pattern, and layered separat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:34.573763Z"
-}

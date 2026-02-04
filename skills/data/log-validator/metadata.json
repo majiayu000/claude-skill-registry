@@ -1,9 +1,0 @@
-{
-  "name": "log-validator",
-  "description": "Validates logs against type-specific schemas checking frontmatter, structure, and required fields",
-  "repo": "fractary/claude-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

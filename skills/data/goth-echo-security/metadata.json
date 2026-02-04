@@ -1,9 +1,0 @@
-{
-  "name": "goth-echo-security",
-  "description": "This skill should be used when the user asks to \"integrate goth with echo\", \"oauth echo framework\", \"echo authentication\", \"goth session management\", \"oauth security\", \"secure oauth\", \"gorilla session",
-  "repo": "linehaul-ai/linehaulai-claude-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

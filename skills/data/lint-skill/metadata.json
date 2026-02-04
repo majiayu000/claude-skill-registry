@@ -1,9 +1,0 @@
-{
-  "name": "lint-skill",
-  "description": "Validate skill documents against PMC skill design principles.Checks format ownership, composite skill structure, and internal consistency.CHECKS:1. FORMAT OWNERSHIP - kb skill owns all format template",
-  "repo": "jayprimer/pmc-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

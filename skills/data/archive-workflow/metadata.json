@@ -1,9 +1,0 @@
-{
-  "name": "archive-workflow",
-  "description": "Archives completed FABER workflow state and artifacts to cloud storage for historical tracking and analysis",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

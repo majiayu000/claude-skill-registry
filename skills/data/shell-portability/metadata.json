@@ -1,9 +1,0 @@
-{
-  "name": "shell-portability",
-  "description": "Use when writing shell scripts that need to run across different systems, shells, or environments. Covers POSIX compatibility and platform differences.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

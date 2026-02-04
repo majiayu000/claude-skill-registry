@@ -1,8 +1,0 @@
-{
-  "name": "security-code-review",
-  "repo": "kousen/claude-code-training",
-  "category": "development",
-  "description": "Identify security vulnerabilities and suggest secure coding practices",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.916369Z"
-}

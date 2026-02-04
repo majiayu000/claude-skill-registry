@@ -1,8 +1,0 @@
-{
-  "name": "component-aware-test-gap-analysis",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "testing",
-  "description": "Intelligently identify missing test coverage based on component type",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:19.385161Z"
-}

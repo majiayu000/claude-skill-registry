@@ -1,8 +1,0 @@
-{
-  "name": "n8n-development",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "productivity",
-  "description": "Create and manage N8N workflows in Orchestrator AI. Use Helper LLM pattern for all LLM calls, configure webhook status tracking, handle API responses. CRITICAL: All workflows using Helper LLM must inc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:57.093143Z"
-}

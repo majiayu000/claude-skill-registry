@@ -1,9 +1,0 @@
-{
-  "name": "deploying-k8s-services",
-  "description": "Deploys new containerized services to the Superbloom K3s cluster using Flux GitOps with bjw-s app-template, Authelia forward auth, Caddy reverse proxy, and DDNS",
-  "repo": "saavy1/sb",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

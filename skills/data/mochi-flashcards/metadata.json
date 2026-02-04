@@ -1,9 +1,0 @@
-{
-  "name": "mochi-flashcards",
-  "description": "Generate spaced repetition flashcards from learning materials (math, statistics, computational tools). Creates both Q/A and Cloze deletion cards using the Mochi API, with proper LaTeX formatting and s",
-  "repo": "fdhidalgo/claude-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

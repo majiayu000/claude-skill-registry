@@ -1,9 +1,0 @@
-{
-  "name": "pyiceberg-skill",
-  "description": "ALWAYS USE when working with Iceberg table storage, ACID transactions, or time-travel queries. Use IMMEDIATELY when creating/loading Iceberg tables, implementing schema evolution, querying historical ",
-  "repo": "Obsidian-Owl/floe",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Obsidian-Owl/floe"
-}

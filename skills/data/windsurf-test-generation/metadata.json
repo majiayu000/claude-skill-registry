@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-test-generation",
-  "description": "Generate comprehensive test suites using Cascade. Activate when users mention\"generate tests\", \"test coverage\", \"write unit tests\", \"create test suite\",or \"tdd assistance\". Handles AI-powered test gen",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

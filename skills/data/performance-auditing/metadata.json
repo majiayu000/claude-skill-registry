@@ -1,9 +1,0 @@
-{
-  "name": "performance-auditing",
-  "description": "Guide for analyzing and improving application performance including identifying bottlenecks, implementing caching, and optimizing queries. This skill should be used when reviewing performance issues o",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-host-hybrid-routing",
-  "description": "Implement hybrid routing between Flutter and WebF using WebFSubView and go_router (route mapping and layouts). Use when the user mentions WebFSubView, go_router, hybrid routing, or mapping Flutter rou",
-  "repo": "archview-ai/webf-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

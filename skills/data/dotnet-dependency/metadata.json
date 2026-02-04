@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-dependency",
-  "description": "This skill should be used when investigating .NET project dependencies, understanding why packages are included, listing references, or auditing for outdated/vulnerable packages.",
-  "repo": "NikiforovAll/claude-code-rules",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

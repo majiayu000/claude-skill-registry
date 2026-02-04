@@ -1,9 +1,0 @@
-{
-  "name": "stt-transcription",
-  "description": "Speech-to-text transcription using multiple engines (Whisper, Google Speech, Azure, AssemblyAI). Record audio, transcribe files, real-time transcription, speaker diarization, timestamps, and multi-lan",
-  "repo": "astoreyai/claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

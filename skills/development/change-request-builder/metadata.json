@@ -1,8 +1,0 @@
-{
-  "name": "change-request-builder",
-  "repo": "smorand/claude-config",
-  "category": "development",
-  "description": "Creates comprehensive ServiceNow change request documentation when users request CR creation, need to generate change requests, ask to prepare deployment documentation, or mention creating release doc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.229530Z"
-}

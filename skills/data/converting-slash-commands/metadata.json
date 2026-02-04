@@ -1,9 +1,0 @@
-{
-  "name": "converting-slash-commands",
-  "description": "Convert Claude Code slash commands to OpenCode commands format. Use when migrating from Claude Code to OpenCode or when you have existing slash command definitions to port.",
-  "repo": "edheltzel/atlas",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

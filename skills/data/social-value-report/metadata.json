@@ -1,9 +1,0 @@
-{
-  "name": "social-value-report",
-  "description": "Generate the social value report from CSV inputs by detecting CSVs, anonymising them, and producing a month-by-month markdown report.",
-  "repo": "sofer/social-value",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

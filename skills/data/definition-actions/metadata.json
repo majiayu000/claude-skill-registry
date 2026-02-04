@@ -1,9 +1,0 @@
-{
-  "name": "definition-actions",
-  "description": "Add custom actions and interactions to Plutonium resources",
-  "repo": "radioactive-labs/plutonium-core",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/radioactive-labs/plutonium-core"
-}

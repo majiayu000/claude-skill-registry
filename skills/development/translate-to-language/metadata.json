@@ -1,8 +1,0 @@
-{
-  "name": "translate-to-language",
-  "repo": "ericfitz/tmi-ux",
-  "category": "development",
-  "description": "Translate English text to a target language while preserving placeholders and formatting. Use when translating UI strings, i18n values, or localizing content.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.591119Z"
-}

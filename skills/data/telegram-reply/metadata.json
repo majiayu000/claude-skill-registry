@@ -1,9 +1,0 @@
-{
-  "name": "telegram-reply",
-  "description": "Crafts Telegram-friendly replies for telclaude sessions, respecting media, heartbeats, and brevity.",
-  "repo": "avivsinai/telclaude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

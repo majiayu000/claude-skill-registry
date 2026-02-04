@@ -1,9 +1,0 @@
-{
-  "name": "aip",
-  "description": "Google API Improvement Proposals (AIP) reference. Use BEFORE designing or reviewing APIs, protobuf definitions, or any work involving Google API design standards. Fetches relevant AIP rules from https",
-  "repo": "fredrikaverpil/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

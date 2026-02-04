@@ -1,9 +1,0 @@
-{
-  "name": "instrumentation-planning",
-  "description": "Plan instrumentation strategy before implementation, covering what to instrument, naming conventions, cardinality management, and instrumentation budget",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/melodic-software/claude-code-plugins"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "test-traditional-build",
-  "description": "Run a traditional AIB build test and report results. Builds a disk image using automotive-image-builder manifest and downloads the artifact.",
-  "repo": "centos-automotive-suite/automotive-dev-operator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

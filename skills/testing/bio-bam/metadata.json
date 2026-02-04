@@ -1,8 +1,0 @@
-{
-  "name": "bio-bam",
-  "repo": "dakesan/cc-dnawork-plugin",
-  "category": "testing",
-  "description": "This skill should be used when the user asks to analyze BAM/SAM/CRAM alignment files from WGS/WES sequencing. Triggers include requests to extract reads from specific regions, identify insertions and ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:48.065881Z"
-}

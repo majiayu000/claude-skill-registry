@@ -1,9 +1,0 @@
-{
-  "name": "agentctl-cli",
-  "description": "Build CLI tools using Go with Cobra and Viper. Use for implementing agentctl commands, interactive prompts, configuration management, and output formatting. Triggers on \"CLI\", \"agentctl\", \"command lin",
-  "repo": "raphaelmansuy/k8s-agent-stack",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

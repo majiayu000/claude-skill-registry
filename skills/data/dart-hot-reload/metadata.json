@@ -1,9 +1,0 @@
-{
-  "name": "dart-hot-reload",
-  "description": "To apply latest code changes to a running Flutter app, trigger hot reload after connecting to the Dart Tooling Daemon.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "local-ssl",
-  "description": "Enable HTTPS for local development with trusted SSL certificates. Use when developers need to test SSL/TLS features, work with third-party APIs requiring HTTPS, or simulate production environments. Su",
-  "repo": "caseymanos/dev-skills-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

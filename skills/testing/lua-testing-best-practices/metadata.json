@@ -1,8 +1,0 @@
-{
-  "name": "lua-testing-best-practices",
-  "repo": "skanehira/github-actions.nvim",
-  "category": "testing",
-  "description": "Comprehensive testing patterns for this Neovim plugin. Covers table-driven tests, async patterns, mocking, fixtures, and buffer testing. Apply when writing or reviewing tests.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.672880Z"
-}

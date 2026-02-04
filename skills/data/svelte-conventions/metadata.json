@@ -1,9 +1,0 @@
-{
-  "name": "svelte-conventions",
-  "description": "This skill describes common patterns and my prefered style to use when editing svelte code. This could be in .svelte files or .svelte.ts files.",
-  "repo": "arichardsmith/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "workflow-xml",
-  "repo": "anujkumar001111/xsky-agent",
-  "category": "productivity",
-  "description": "This skill should be used when the user asks about \"workflow XML\", \"planner\", \"agent dependencies\", \"workflow parsing\", \"task orchestration\", or needs to understand the workflow system in XSky.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:56.497747Z"
-}

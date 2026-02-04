@@ -1,7 +1,0 @@
-{
-  "name": "conventional-commits-sgcarstrends-backend",
-  "description": "Generate conventional commit messages following the project's commitlint rules with proper scopes. Use when committing changes to ensure semantic versioning works correctly.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.400911Z"
-}

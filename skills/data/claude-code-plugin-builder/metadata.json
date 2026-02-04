@@ -1,9 +1,0 @@
-{
-  "name": "claude-code-plugin-builder",
-  "description": "Creates Claude Code plugins with proper manifest structure, directory layout, and components (commands, agents, skills, hooks, MCP servers). Use when user requests creating plugins, adding slash comma",
-  "repo": "pleaseai/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

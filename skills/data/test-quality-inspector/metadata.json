@@ -1,9 +1,0 @@
-{
-  "name": "test-quality-inspector",
-  "description": "Systematically inspect unit and E2E tests to verify they test the right behavior, provide meaningful coverage, and catch real regressions",
-  "repo": "bobmatnyc/claude-mpm",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

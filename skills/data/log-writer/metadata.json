@@ -1,9 +1,0 @@
-{
-  "name": "log-writer",
-  "description": "Creates or updates logs using type-specific templates with automatic validation and formatting",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

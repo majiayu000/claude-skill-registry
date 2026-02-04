@@ -1,9 +1,0 @@
-{
-  "name": "managing-test-environments",
-  "description": "Provision and manage isolated test environments with configuration and data.Use when performing specialized testing.Trigger with phrases like \"manage test environment\", \"provision test env\", or \"setup",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

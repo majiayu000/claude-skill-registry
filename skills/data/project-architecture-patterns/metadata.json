@@ -1,9 +1,0 @@
-{
-  "name": "project-architecture-patterns",
-  "description": "Architecture patterns for rRNA-Phylo project including FastAPI backend design, service organization, async task processing with Celery, Pydantic schemas, testing with pytest, Biopython integration, an",
-  "repo": "roeimed0/rrna-phylo",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

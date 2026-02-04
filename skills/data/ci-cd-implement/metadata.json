@@ -1,9 +1,0 @@
-{
-  "name": "ci-cd-implement",
-  "description": "Analyze a project and implement CI/CD pipelines tailored to its tech stack and deployment target. This skill should be used when a project is ready for automated testing and/or deployment. Generates G",
-  "repo": "JHaugaard/refine-workflow-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

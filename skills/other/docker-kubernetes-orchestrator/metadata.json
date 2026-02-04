@@ -1,9 +1,0 @@
-{
-  "name": "docker-kubernetes-orchestrator",
-  "repo": "Krosebrook/source-of-truth-monorepo",
-  "path": ".claude-custom/skills/docker-kubernetes-orchestrator/SKILL.md",
-  "source": "github.com/Krosebrook/source-of-truth-monorepo",
-  "downloaded_at": "2026-01-22T03:35:36.942890Z",
-  "dir_name": "docker-kubernetes-orchestrator",
-  "category": "other"
-}

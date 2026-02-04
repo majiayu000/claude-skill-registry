@@ -1,8 +1,0 @@
-{
-  "name": "rails-service-objects",
-  "repo": "nekorush14/dotfiles",
-  "category": "design",
-  "description": "Design and implement Rails service objects for complex multi-step business logic. Use when business operations span multiple models, require transaction coordination, or need complex error handling wi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:02.541968Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "docker-local-status",
-  "description": "Check docker-local environment status - all services, containers, and project accessibility",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

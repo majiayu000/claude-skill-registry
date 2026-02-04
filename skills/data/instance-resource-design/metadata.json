@@ -1,9 +1,0 @@
-{
-  "name": "instance-resource-design",
-  "description": "Guide for designing Instance resources in OptAIC. Use when creating DatasetInstance, SignalInstance, ExperimentInstance, ModelInstance, PortfolioOptimizerInstance, or BacktestInstance. Covers definiti",
-  "repo": "colingwuyu/optaic-trading",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

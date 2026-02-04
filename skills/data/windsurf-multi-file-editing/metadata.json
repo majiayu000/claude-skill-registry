@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-multi-file-editing",
-  "description": "Execute multi-file edits with Cascade coordination. Activate when users mention\"multi-file edit\", \"edit multiple files\", \"cross-file changes\", \"refactor across files\",or \"batch modifications\". Handles",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "task-startup",
-  "description": "Comprehensive work session initialization orchestrator that validates environment, creates properly named branches, and prepares development environment for new tasks",
-  "repo": "arlenagreer/claude_configuration_docs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

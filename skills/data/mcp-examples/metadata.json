@@ -1,9 +1,0 @@
-{
-  "name": "mcp-examples",
-  "description": "This skill should be used when the user asks for \"MCP examples\", \"real-world patterns\", \"code search patterns\", \"browser proxy patterns\", \"process management patterns\", \"show me examples\", or wants to",
-  "repo": "standardbeagle/standardbeagle-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

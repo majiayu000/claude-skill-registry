@@ -1,9 +1,0 @@
-{
-  "name": "ci-fail-followup",
-  "description": "PR 作成後に .github/workflows/ci.yml が失敗したときの対応手順。ローカルで pytest 全ケースを実行し、エラー有無で分岐。エラーがあれば修正して commit-push スキルでコミット・プッシュ、無ければ GitHub Actions のログを確認して原因を特定する。",
-  "repo": "yurake/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "script-driven-skill",
-  "description": "Build multi-step skills using a state-machine pattern with disciplined orchestrator and smart phases",
-  "repo": "cbgbt/bottlerocket-forest",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

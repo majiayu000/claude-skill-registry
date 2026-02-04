@@ -1,9 +1,0 @@
-{
-  "name": "datasheet-interpreter",
-  "description": "Extracts key specifications from component datasheet PDFs for maker projects. Use when user shares a datasheet PDF URL, asks about component specs, needs pin assignments, I2C addresses, timing require",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

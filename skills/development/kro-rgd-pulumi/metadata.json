@@ -1,8 +1,0 @@
-{
-  "name": "kro-rgd-pulumi",
-  "repo": "tyrchen/claude-skills",
-  "category": "development",
-  "description": "Create production-ready KRO ResourceGraphDefinitions using Pulumi TypeScript. Use when users need to define custom Kubernetes APIs, compose resources with KRO, integrate AWS ACK resources, or build pl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:33.006920Z"
-}

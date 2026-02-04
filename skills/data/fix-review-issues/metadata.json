@@ -1,9 +1,0 @@
-{
-  "name": "fix-review-issues",
-  "description": "Orchestrate fixing issues found by /review. Handles issue discovery, user confirmation, plan creation, and execution via /implement.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

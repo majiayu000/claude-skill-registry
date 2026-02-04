@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-license-management",
-  "description": "Manage Windsurf licenses and seat allocation. Activate when users mention\"license management\", \"seat allocation\", \"billing optimization\", \"user licenses\",or \"subscription management\". Handles license ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

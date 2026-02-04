@@ -1,9 +1,0 @@
-{
-  "name": "hook-system",
-  "description": "Claude Code Hook system entry point. Guides you to the right skill based on your needs.",
-  "repo": "chkim-su/forge-editor",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

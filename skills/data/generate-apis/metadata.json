@@ -1,9 +1,0 @@
-{
-  "name": "generate-apis",
-  "description": "基于 yapi mcp 返回的数据生成对应的 API 文件",
-  "repo": "zwmmm/k12-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

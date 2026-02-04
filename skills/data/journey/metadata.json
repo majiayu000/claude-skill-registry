@@ -1,9 +1,0 @@
-{
-  "name": "journey",
-  "description": "Creates CDP journey definitions in YAML using `tdx journey` commands. Covers journey stages, steps (wait, activation, decision_point, ab_test, merge, jump, end), entry/exit criteria, goals, embedded s",
-  "repo": "treasure-data/td-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

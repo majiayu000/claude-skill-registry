@@ -1,9 +1,0 @@
-{
-  "name": "frappe-workflow-generator",
-  "description": "Generate Frappe Workflows for document state management and approvals. Use when creating approval workflows, state transitions, or multi-step document processes.",
-  "repo": "Venkateshvenki404224/frappe-apps-manager",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

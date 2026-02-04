@@ -1,8 +1,0 @@
-{
-  "name": "cloudflare-workers-builds",
-  "repo": "FlorinPopaCodes/claude-marketplace",
-  "category": "devops",
-  "description": "This skill should be used when the user asks about \"deploy status\", \"build failed\", \"build logs\", \"deployment history\", \"worker deployment\", \"check build\", \"deployment succeeded\", \"build error\", \"CI/C",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:34.465914Z"
-}

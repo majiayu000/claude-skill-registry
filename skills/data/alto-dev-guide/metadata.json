@@ -1,9 +1,0 @@
-{
-  "name": "alto-dev-guide",
-  "description": "Use when developing ALTO itself - editing devenv.nix, hooks/*.py, agents/*.md, or checking Claude Code hook/agent syntax. Reference guide with documentation URLs and patterns.",
-  "repo": "gonzaloetjo/alto",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gonzaloetjo/alto"
-}

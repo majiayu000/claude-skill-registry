@@ -1,9 +1,0 @@
-{
-  "name": "marp-image-generator",
-  "description": "Generate optimized images for Marp slides using Playwright MCP with theme-matching color palettes and guideline-compliant sizes",
-  "repo": "Ryunosuke-Tanaka-sti/claude_and_blog_seminar",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

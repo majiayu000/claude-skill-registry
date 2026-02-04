@@ -1,9 +1,0 @@
-{
-  "name": "multi-agent-coordinator",
-  "description": "Spawn 10-20 parallel agents for Leavn codebase audits, systematic fixes, comprehensive analysis across multiple domains simultaneously",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

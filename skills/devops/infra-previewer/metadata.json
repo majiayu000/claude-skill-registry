@@ -1,8 +1,0 @@
-{
-  "name": "infra-previewer",
-  "repo": "fractary/claude-plugins",
-  "category": "devops",
-  "description": "Preview infrastructure changes - run Terraform plan to show what resources will be created, modified, ordestroyed. Generate human-readable plan summaries showing resource changes before deployment.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:56.817019Z"
-}

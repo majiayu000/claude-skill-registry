@@ -1,9 +1,0 @@
-{
-  "name": "bun-test-mocking",
-  "description": "Use for mock functions in Bun tests, spyOn, mock.module, implementations, and test doubles.",
-  "repo": "secondsky/claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

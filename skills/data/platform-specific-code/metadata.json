@@ -1,9 +1,0 @@
-{
-  "name": "platform-specific-code",
-  "description": "Platform-specific patterns for iOS and Android. Use when writing platform-conditional code.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

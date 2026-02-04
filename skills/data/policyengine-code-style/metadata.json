@@ -1,9 +1,0 @@
-{
-  "name": "policyengine-code-style",
-  "description": "PolicyEngine code writing style guide - formula optimization, direct returns, eliminating unnecessary variables",
-  "repo": "PolicyEngine/policyengine-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

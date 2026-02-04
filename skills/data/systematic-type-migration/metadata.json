@@ -1,9 +1,0 @@
-{
-  "name": "systematic-type-migration",
-  "description": "Safe refactoring workflow for replacing old types with new type-safe implementations through integration-test-first, file-by-file migration with incremental verification",
-  "repo": "cipherstash/cipherpowers",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

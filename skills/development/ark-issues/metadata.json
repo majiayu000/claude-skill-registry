@@ -1,8 +1,0 @@
-{
-  "name": "ark-issues",
-  "repo": "dwmkerr/ark-claude-code-marketplace",
-  "category": "development",
-  "description": "Search, create, and manage GitHub issues for the Ark project. Use when you need to find existing issues, create new ones, or update issue status.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.773031Z"
-}

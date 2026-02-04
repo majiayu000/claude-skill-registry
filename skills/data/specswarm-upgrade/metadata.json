@@ -1,9 +1,0 @@
-{
-  "name": "specswarm-upgrade",
-  "description": "Systematic compatibility analysis, migration guidance, and breaking change detection for dependency/framework upgrades. Auto-executes when user clearly wants to upgrade, update, migrate, or modernize ",
-  "repo": "MartyBonacci/specswarm",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "update-langfuse-staging-server-prompt",
-  "repo": "cncorp/arsenal",
-  "category": "design",
-  "description": "Push prompt updates to Langfuse (staging or production). Defaults to STAGING (safe). Production requires explicit --production flag + confirmation. NEVER assigns labels (human-in-the-loop safety).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.710551Z"
-}

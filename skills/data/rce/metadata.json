@@ -1,9 +1,0 @@
-{
-  "name": "rce",
-  "description": "远程代码执行漏洞检测与利用。当目标存在命令执行、代码执行、反序列化、模板注入、文件上传时使用。",
-  "repo": "yhy0/CHYing-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

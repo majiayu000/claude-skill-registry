@@ -1,9 +1,0 @@
-{
-  "name": "jj-workspace-experiments",
-  "description": "Create isolated jj workspaces for testing changes, running experiments in parallel, and exploring alternative implementations. Use when testing breaking changes, comparing different approaches, or run",
-  "repo": "thoughtpolice/a",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

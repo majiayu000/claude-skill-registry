@@ -1,9 +1,0 @@
-{
-  "name": "e2e-bugfix",
-  "description": "This skill should be used when the user asks to \"debug E2E tests\", \"fix Playwright failures\", \"fix Cypress tests\", \"analyze timeout errors\", or mentions keywords like \"Playwright\", \"Cypress\", \"Timeout",
-  "repo": "penkzhou/swiss-army-knife-plugin",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

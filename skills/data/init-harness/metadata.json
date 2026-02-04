@@ -1,9 +1,0 @@
-{
-  "name": "init-harness",
-  "description": "Creates AI agent task management structure with feature backlog (ai/tasks/), TDD enforcement, and progress tracking. Use when setting up agent-foreman, initializing feature-driven development, creatin",
-  "repo": "mylukin/agent-foreman",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

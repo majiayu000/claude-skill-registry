@@ -1,9 +1,0 @@
-{
-  "name": "managing-prompts",
-  "description": "Creates, analyzes, updates, and optimizes prompts using Claude 4.5 best practices, guardrails, context management, and prompt engineering patterns. Use when user asks how to write effective prompts, e",
-  "repo": "thoeltig/claude-code-toolkit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

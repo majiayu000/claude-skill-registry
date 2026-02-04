@@ -1,9 +1,0 @@
-{
-  "name": "pop-power-mode",
-  "description": "Multi-agent orchestration system using Claude Code's native background agents (2.0.64+) for true parallel collaboration. Enables shared context, sync barriers between phases, and coordinator oversight",
-  "repo": "jrc1883/popkit-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jrc1883/popkit-claude"
-}

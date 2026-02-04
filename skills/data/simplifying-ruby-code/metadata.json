@@ -1,9 +1,0 @@
-{
-  "name": "simplifying-ruby-code",
-  "description": "Identify over-engineering in Ruby - prefer simple data structures (Hash, Struct, Data) and pure functions over unnecessary classes",
-  "repo": "bostonaholic/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

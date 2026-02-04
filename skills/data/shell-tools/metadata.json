@@ -1,9 +1,0 @@
-{
-  "name": "shell-tools",
-  "description": "Production-grade shell tools - jq, xargs, parallel, pipelines",
-  "repo": "pluginagentmarketplace/custom-plugin-bash-shell",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

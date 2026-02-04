@@ -1,9 +1,0 @@
-{
-  "name": "network-admin",
-  "description": "Manage servers on the local network (ubuntu-box and raspberrypi). Execute commands remotely via SSH, manage services, view logs, and coordinate with other skills.",
-  "repo": "lakowske/network-admin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

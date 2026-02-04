@@ -1,9 +1,0 @@
-{
-  "name": "math-function-plotter-plotly",
-  "description": "This skill generates interactive mathematical function plots using Plotly.js for iframe embedding in intelligent textbooks. Creates visualizations with hover tooltips, interactive sliders to move poin",
-  "repo": "dmccreary/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

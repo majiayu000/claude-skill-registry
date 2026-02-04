@@ -1,9 +1,0 @@
-{
-  "name": "backblaze-coder",
-  "description": "This skill guides Backblaze B2 Cloud Storage integration with OpenTofu/Terraform and B2 CLI. Use when managing B2 buckets, application keys, file uploads, lifecycle rules, or S3-compatible storage.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

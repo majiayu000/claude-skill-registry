@@ -1,8 +1,0 @@
-{
-  "name": "audit-resolution",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "devops",
-  "description": "Use when presenting audit discrepancies to user for decision (HITL). For each discrepancy show file path, diff (template vs actual), and ask user what to do - [1] apply template, [2] update template (",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.145345Z"
-}

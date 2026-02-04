@@ -1,9 +1,0 @@
-{
-  "name": "keycloak-admin",
-  "description": "Keycloak administration including realm management, client configuration, OAuth 2.0 setup, user management with custom attributes, role and group management, theme deployment, and token configuration.",
-  "repo": "Lobbi-Docs/claude",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

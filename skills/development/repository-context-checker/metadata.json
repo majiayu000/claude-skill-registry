@@ -1,8 +1,0 @@
-{
-  "name": "repository-context-checker",
-  "repo": "violetio/violet-ai-plugins",
-  "category": "development",
-  "description": "Verify developers are working in the right repository type (brain vs code)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:49.819550Z"
-}

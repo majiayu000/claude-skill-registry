@@ -1,9 +1,0 @@
-{
-  "name": "create-opencode-plugin",
-  "description": "Create OpenCode plugins using @opencode-ai/plugin SDK. Use when user wants to BUILD a plugin in .opencode/plugin/ or ~/.config/opencode/plugin/ - for custom tools, event hooks, LLM parameter control, ",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

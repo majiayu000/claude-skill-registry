@@ -1,9 +1,0 @@
-{
-  "name": "agent-friendly-commands",
-  "description": "Use these when you want low-noise lint/test output (good for LLM/CI logs) while staying aligned with repo policy.",
-  "repo": "localtaskrepo/lotar",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

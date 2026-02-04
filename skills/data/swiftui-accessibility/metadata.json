@@ -1,9 +1,0 @@
-{
-  "name": "swiftui-accessibility",
-  "description": "Accessibility implementation guide for SwiftUI apps. Use when implementing VoiceOver support, adding accessibilityLabel/Hint/Value, supporting Dynamic Type, ensuring color contrast, testing accessibil",
-  "repo": "xtone/ai_development_tools",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

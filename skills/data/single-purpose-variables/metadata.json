@@ -1,9 +1,0 @@
-{
-  "name": "single-purpose-variables",
-  "description": "Use each variable for exactly one purpose - no hybrid coupling or hidden meanings",
-  "repo": "barrydobson/dotfiles_extra",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

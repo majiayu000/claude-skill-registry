@@ -1,8 +1,0 @@
-{
-  "name": "gh-cli-pr-ci",
-  "repo": "bedecarroll/dotfiles",
-  "category": "development",
-  "description": "Use the GitHub gh CLI to inspect pull requests, status checks, and CI failures. Trigger when triaging PRs/CI, fetching workflow logs, or summarizing check results. Prefer explicit --json field lists; ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:58.532497Z"
-}

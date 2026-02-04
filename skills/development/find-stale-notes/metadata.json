@@ -1,8 +1,0 @@
-{
-  "name": "find-stale-notes",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find stale notes (important notes not modified recently). Triggers on \"stale notes\", \"old notes\", \"neglected notes\", \"outdated notes\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:59.744995Z"
-}

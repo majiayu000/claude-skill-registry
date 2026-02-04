@@ -1,9 +1,0 @@
-{
-  "name": "scrum-master-agent",
-  "description": "Comprehensive Scrum Master assistant for sprint planning, backlog grooming, retrospectives, capacity planning, and daily standups with intelligent context-aware reporting",
-  "category": "development",
-  "tags": [],
-  "source": "github.com/claude-code-skill-factory",
-  "source_path": "generated-skills/scrum-master-agent/SKILL.md",
-  "imported_at": "2026-01-24T08:31:00.073813Z"
-}

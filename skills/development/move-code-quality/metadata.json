@@ -1,7 +1,0 @@
-{
-  "name": "move-code-quality",
-  "description": "Analyzes Move language packages against the official Move Book Code Quality Checklist. Use this skill when reviewing Move code, checking Move 2024 Edition compliance, or analyzing Move packages for be",
-  "category": "development",
-  "source": "github.com/1NickPappas/move-code-quality-skill",
-  "imported_at": "2026-01-24T14:54:17.134687Z"
-}

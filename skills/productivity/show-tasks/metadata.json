@@ -1,8 +1,0 @@
-{
-  "name": "show-tasks",
-  "repo": "bencassie/flywheel",
-  "category": "productivity",
-  "description": "Get all tasks from the vault with filtering options. Triggers on \"all tasks\", \"task list\", \"show tasks\", \"find tasks\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:36.275433Z"
-}

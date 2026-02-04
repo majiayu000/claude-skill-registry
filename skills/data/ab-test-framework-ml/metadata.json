@@ -1,9 +1,0 @@
-{
-  "name": "ab-test-framework-ml",
-  "description": "Эксперт A/B тестирования. Используй для статистических тестов, экспериментов и ML-оптимизации.",
-  "repo": "dengineproblem/agents-monorepo",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/dengineproblem/agents-monorepo"
-}

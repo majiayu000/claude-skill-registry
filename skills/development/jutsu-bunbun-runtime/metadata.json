@@ -1,8 +1,0 @@
-{
-  "name": "jutsu-bunbun-runtime",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when working with Bun's runtime APIs including file I/O, HTTP servers, and native APIs. Covers modern JavaScript/TypeScript execution in Bun's fast runtime environment.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.284556Z"
-}

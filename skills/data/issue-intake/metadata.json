@@ -1,9 +1,0 @@
-{
-  "name": "issue-intake",
-  "description": "Issueの初期トリアージスキル。Issueを受け取り、標準化された分析結果（分類・深刻度・影響スコープ・不確実性・次アクション参照）を生成する。GitHub/Jira/Linear等のトラッカーからissue_payload形式で受け取る。トリガー条件:- 「Issue #N を分析して」「このIssueの深刻度は？」「このバグはCritical？」- 「Issue本文を初期トリアージして」「I",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

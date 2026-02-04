@@ -1,9 +1,0 @@
-{
-  "name": "moodle-ai-integration",
-  "description": "Moodle AI Subsystem integration for providers and actions. Use when integrating AI capabilities into Moodle, creating AI providers, or implementing AI actions.",
-  "repo": "astoeffer/plugin-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/astoeffer/plugin-marketplace"
-}

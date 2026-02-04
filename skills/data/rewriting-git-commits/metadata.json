@@ -1,9 +1,0 @@
-{
-  "name": "rewriting-git-commits",
-  "description": "Rewrites a git commit sequence for a changeset to create a clean branch with commits optimized for readability and review",
-  "repo": "dherman/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

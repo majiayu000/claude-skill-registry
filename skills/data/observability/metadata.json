@@ -1,9 +1,0 @@
-{
-  "name": "observability",
-  "description": "Real-time monitoring dashboard for PAI multi-agent activity. USE WHEN user says 'start observability', 'stop dashboard', 'restart observability', 'monitor agents', 'show agent activity', or needs to d",
-  "repo": "blackpwnguin/Personal-AI",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/blackpwnguin/Personal-AI"
-}

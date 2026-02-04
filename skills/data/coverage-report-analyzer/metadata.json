@@ -1,9 +1,0 @@
-{
-  "name": "coverage-report-analyzer",
-  "description": "Coverage Report Analyzer - Auto-activating skill for Test Automation.Triggers on: coverage report analyzer, coverage report analyzerPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

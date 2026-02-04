@@ -1,9 +1,0 @@
-{
-  "name": "repo-doc-auditor",
-  "description": "Perform a repo-wide, evidence-based audit of documentation against the current codebase and recent changes. Produces a proposed, fully rewritten documentation set in TempDoc-ForUserReview and asks for",
-  "repo": "ogprotege/Skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

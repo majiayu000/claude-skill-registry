@@ -1,8 +1,0 @@
-{
-  "name": "symfonyrunner-selection",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "devops",
-  "description": "Select and configure the appropriate command runner based on Docker Compose standard, Symfony Docker (FrankenPHP), or host environment",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.263001Z"
-}

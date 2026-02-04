@@ -1,9 +1,0 @@
-{
-  "name": "nginx-request-logging",
-  "description": "Guide for configuring Nginx web server with custom request logging, rate limiting, and error pages. This skill should be used when tasks involve Nginx installation, configuration, custom log formats, ",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

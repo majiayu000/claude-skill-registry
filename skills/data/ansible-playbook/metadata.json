@@ -1,9 +1,0 @@
-{
-  "name": "ansible-playbook",
-  "description": "Write and review Ansible playbooks following best practices. Use when the user says \"write ansible\", \"ansible playbook\", \"review playbook\", \"automate with ansible\", or asks to configure servers with A",
-  "repo": "mhalder/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

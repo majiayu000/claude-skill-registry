@@ -1,8 +1,0 @@
-{
-  "name": "software-engineer",
-  "repo": "sevos/claude-code-marketplace",
-  "category": "development",
-  "description": "Development workflows for Rails applications. Use when implementing features, fixing bugs, or making code changes. Currently provides the TDD Red-Green implementation workflow.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:17.073498Z"
-}

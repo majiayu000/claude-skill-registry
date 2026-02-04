@@ -1,9 +1,0 @@
-{
-  "name": "clippy-custom",
-  "description": "Use when developing custom Clippy lints, implementing lint passes, and contributing to Clippy for Rust code standards.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

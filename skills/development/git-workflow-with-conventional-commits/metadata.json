@@ -1,8 +1,0 @@
-{
-  "name": "git-workflow-with-conventional-commits",
-  "repo": "ShunsukeHayashi/Miyabi",
-  "category": "development",
-  "description": "Automated Git workflow including staging, committing with Conventional Commits format, PR creation, and merging. Use when committing changes, creating PRs, or managing Git branches.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:32.417233Z"
-}

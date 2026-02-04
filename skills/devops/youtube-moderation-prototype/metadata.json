@@ -1,8 +1,0 @@
-{
-  "name": "youtube-moderation-prototype",
-  "repo": "Foundup/Foundups-Agent",
-  "category": "devops",
-  "description": "Moderate YouTube live chat by detecting spam, toxic content, and enforcing rate limits. PROTOTYPE for testing pattern fidelity before deploying to native Qwen/Gemma.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:31.638192Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "security-auditor",
-  "description": "Continuous security vulnerability scanning for OWASP Top 10, common vulnerabilities, and insecure patterns. Use when reviewing code, before deployments, or on file changes. Scans for SQL injection, XS",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.924250Z"
-}

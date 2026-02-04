@@ -1,8 +1,0 @@
-{
-  "name": "nango-esm-migration",
-  "repo": "NangoHQ/ai-ide-prompts",
-  "category": "development",
-  "description": "Use when fixing CJS/ESM module issues in Nango integrations after zero-yaml migration - covers import path fixes, creating ESM wrappers for CJS vendor modules, and restoring commented-out code",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:16.210131Z"
-}

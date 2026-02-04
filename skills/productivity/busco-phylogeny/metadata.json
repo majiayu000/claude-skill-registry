@@ -1,8 +1,0 @@
-{
-  "name": "busco-phylogeny",
-  "repo": "brunoasm/my_claude_skills",
-  "category": "productivity",
-  "description": "Generate phylogenies from genome assemblies using BUSCO/compleasm-based single-copy orthologs with scheduler-aware workflow generation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:38.335721Z"
-}

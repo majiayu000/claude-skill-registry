@@ -1,8 +1,0 @@
-{
-  "name": "openspec-proposal-clarifier",
-  "repo": "cyber-echo/viewer",
-  "category": "testing",
-  "description": "Clarify ambiguous or incomplete requirements before drafting an OpenSpec change proposal (typically used by /openspec-proposal before writing proposal files).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:43.891261Z"
-}

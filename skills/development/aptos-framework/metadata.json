@@ -1,7 +1,0 @@
-{
-  "name": "aptos-framework",
-  "description": "Expert on Aptos Framework (0x1 standard library) - account, coin, fungible_asset, object, timestamp, table, event, vector, string, option, error, and other core modules. Triggers on keywords aptos fra",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.466170Z"
-}

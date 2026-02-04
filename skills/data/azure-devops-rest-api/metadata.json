@@ -1,9 +1,0 @@
-{
-  "name": "azure-devops-rest-api",
-  "description": "Guide for working with Azure DevOps REST APIs and OpenAPI specifications. Use this skill when implementing new Azure DevOps API integrations, exploring API capabilities, understanding request/response",
-  "repo": "Tiberriver256/mcp-server-azure-devops",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

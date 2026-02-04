@@ -1,8 +1,0 @@
-{
-  "name": "hypershift-azure-provider",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "devops",
-  "description": "Use this skill when you need to deploy HyperShift clusters on Microsoft Azure with proper identity configuration and resource management",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.241166Z"
-}

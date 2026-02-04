@@ -1,9 +1,0 @@
-{
-  "name": "customization",
-  "description": "Configure middleware extension hooks for affolterNET.Web.Bff. Use when adding custom middleware, extending the pipeline, or integrating third-party components.",
-  "repo": "Mcafee123/affolterNET.Web",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

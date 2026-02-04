@@ -1,8 +1,0 @@
-{
-  "name": "editorconfig-config",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "EditorConfig file validation and template for enforcing consistent coding styles across editors and IDEs in monorepos. Includes 4 required standards (root declaration, universal settings with UTF-8/LF",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.670383Z"
-}

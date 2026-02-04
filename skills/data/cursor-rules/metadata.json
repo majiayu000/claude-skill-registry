@@ -1,9 +1,0 @@
-{
-  "name": "cursor-rules",
-  "description": "This skill should be used when creating or editing Cursor rules files (.mdc format) in the .cursor/rules directory. Provides guidance on rule types, frontmatter configuration, effective rule writing p",
-  "repo": "amhuppert/my-ai-resources",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

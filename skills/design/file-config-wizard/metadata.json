@@ -1,8 +1,0 @@
-{
-  "name": "file-config-wizard",
-  "repo": "fractary/claude-plugins",
-  "category": "design",
-  "description": "Interactive configuration wizard for the fractary-file plugin, guiding users through storage handler setup with validation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:57.671350Z"
-}

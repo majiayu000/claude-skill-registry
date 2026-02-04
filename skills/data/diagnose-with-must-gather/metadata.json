@@ -1,9 +1,0 @@
-{
-  "name": "diagnose-with-must-gather",
-  "description": "Collect and analyze OADP diagnostic data using oadp-must-gather to troubleshoot backup, restore, and deployment issues.",
-  "repo": "mpryc/ai-agents-and-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

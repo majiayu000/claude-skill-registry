@@ -1,9 +1,0 @@
-{
-  "name": "macronix",
-  "description": "Macronix International MPN encoding patterns, density decoding, and handler guidance. Use when working with Macronix Flash memory components or MacronixHandler.",
-  "repo": "Cantara/lib-electronic-components",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Cantara/lib-electronic-components"
-}

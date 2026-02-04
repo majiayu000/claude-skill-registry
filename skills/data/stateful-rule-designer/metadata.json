@@ -1,9 +1,0 @@
-{
-  "name": "stateful-rule-designer",
-  "description": "Use this skill when users need to create complex stateful D&R rules that correlate multiple events over time, track parent-child relationships, or count event occurrences within timeframes.",
-  "repo": "tekgrunt/boot-test",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

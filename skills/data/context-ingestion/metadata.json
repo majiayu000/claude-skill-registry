@@ -1,9 +1,0 @@
-{
-  "name": "context-ingestion",
-  "description": "Scan project folder structure, validate organization, clone GitHub repository, and generate an inventory of available materials. First step of biomedical-science-writer workflow. Use when starting a n",
-  "repo": "sxg/biomedical-science-writer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pr-address-feedback",
-  "description": "Workflow for addressing review feedback on your pull requests. Use when YOUR PR has been reviewed and you need to respond to comments with fixup commits.",
-  "repo": "adrianschmidt/workspace-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

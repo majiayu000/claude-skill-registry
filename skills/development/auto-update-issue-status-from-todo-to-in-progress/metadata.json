@@ -1,8 +1,0 @@
-{
-  "name": "auto-update-issue-status-from-todo-to-in-progress",
-  "repo": "Tasup/Tasup",
-  "category": "development",
-  "description": "Automatically update GitHub Issue status to the next stage (Todo\u2192In Progress\u2192Done) in all linked projects.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:18.550180Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "z-index-scale",
-  "description": "Generates systematic z-index tokens for layering management. Use when organizing stacking contexts, modal/dropdown z-index, tooltip layers, or fixing z-index conflicts. Outputs CSS, Tailwind, or JSON.",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

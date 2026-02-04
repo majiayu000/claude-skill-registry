@@ -1,9 +1,0 @@
-{
-  "name": "spatial-statistics",
-  "description": "Compute spatial statistics for spatial transcriptomics data using Squidpy. Calculate Moran's I, Geary's C, spatial autocorrelation, co-occurrence analysis, and neighborhood enrichment.",
-  "repo": "GPTomics/bioSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GPTomics/bioSkills"
-}

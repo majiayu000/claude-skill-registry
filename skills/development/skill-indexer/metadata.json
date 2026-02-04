@@ -1,8 +1,0 @@
-{
-  "name": "skill-indexer",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Build a combined index of available skills and support auto-registration by scanning repo and Codex skill directories; use when asked to list or catalog skills quickly.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:25.256262Z"
-}

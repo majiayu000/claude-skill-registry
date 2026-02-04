@@ -1,9 +1,0 @@
-{
-  "name": "lightning-address",
-  "description": "Use when implementing Lightning address functionality - provides complete patterns for resolving Lightning addresses to invoices, generating invoices from addresses, displaying Lightning addresses in ",
-  "repo": "PerceptLabs/nostril",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

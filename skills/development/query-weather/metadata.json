@@ -1,8 +1,0 @@
-{
-  "name": "query-weather",
-  "repo": "unix2dos/skills",
-  "category": "development",
-  "description": "Retrieve current weather and forecast for a specific location. Use this skill when the user asks for weather information.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:05.721619Z"
-}

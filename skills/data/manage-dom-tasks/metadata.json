@@ -1,9 +1,0 @@
-{
-  "name": "manage-dom-tasks",
-  "description": "Create or update DOM event \"tasks\" used to communicate between components and services via `src/helpers/domTask.ts`. Use when adding a new task event, changing task params/returns, or updating handler",
-  "repo": "blikblum/reatom-ui5-starter",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

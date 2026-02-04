@@ -1,8 +1,0 @@
-{
-  "name": "slo-definition",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "description": "Define Service Level Objectives (SLOs), Indicators (SLIs), and error budgets",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:08.860236Z"
-}

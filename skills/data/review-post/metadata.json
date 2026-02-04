@@ -1,9 +1,0 @@
-{
-  "name": "review-post",
-  "description": "Reviews a blog post for writing quality, spelling errors, and clarity. Use when asked to review, check, or give feedback on a blog post. Defaults to the most recent post in Public/_posts if no specifi",
-  "repo": "jsorge/jsorge.net",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

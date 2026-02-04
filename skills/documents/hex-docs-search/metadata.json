@@ -1,8 +1,0 @@
-{
-  "name": "hex-docs-search",
-  "repo": "bradleygolden/claude-marketplace-elixir",
-  "category": "documents",
-  "description": "Research Hex packages (Sobelow, Phoenix, Ecto, Credo, Ash, etc). Use when investigating packages, understanding integration patterns, or finding module/function docs and usage examples. Automatically ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:32.266008Z"
-}

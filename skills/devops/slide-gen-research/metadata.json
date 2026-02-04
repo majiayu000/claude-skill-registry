@@ -1,8 +1,0 @@
-{
-  "name": "slide-gen-research",
-  "repo": "davistroy/slide-generator",
-  "category": "devops",
-  "description": "Autonomous web research for presentation topics using Claude Agent SDK. Conducts multi-step research, extracts insights, and manages citations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:53.466632Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pyx",
-  "description": "Safe Python code execution using pyx CLI. Use when: running Python, executing scripts, testing code. Triggers: pyx, run python, execute code, test script. Default mode: MANIFEST_IO (file-first with ma",
-  "repo": "Anudorannador/python-executor",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

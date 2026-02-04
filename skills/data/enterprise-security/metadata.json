@@ -1,9 +1,0 @@
-{
-  "name": "enterprise-security",
-  "description": "Central authority for Claude Code enterprise security. Covers enterprise managed policies (managed-settings.json), settings precedence hierarchy, policy file locations (macOS, Linux, Windows), unoverr",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

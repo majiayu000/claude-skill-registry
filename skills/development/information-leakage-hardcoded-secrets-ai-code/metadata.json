@@ -1,8 +1,0 @@
-{
-  "name": "information-leakage-hardcoded-secrets-ai-code",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "development",
-  "description": "Understand how AI-generated code exposes sensitive information through hardcoded credentials and verbose logging. Use this skill when you need to learn about hardcoded secrets in AI code, understand l",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.678839Z"
-}

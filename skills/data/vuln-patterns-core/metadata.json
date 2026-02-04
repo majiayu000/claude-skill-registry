@@ -1,9 +1,0 @@
-{
-  "name": "vuln-patterns-core",
-  "description": "Universal vulnerability detection patterns applicable across all programming languages. Includes hardcoded secrets, SQL/command injection, path traversal, and configuration file patterns.",
-  "repo": "Zate/cc-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

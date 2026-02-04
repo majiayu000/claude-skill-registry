@@ -1,9 +1,0 @@
-{
-  "name": "verbump",
-  "description": "Bump the Blackpepper version, review full git diffs (including unrelated changes), craft a Conventional Commit message, and push the current branch. Use when the user asks to",
-  "repo": "sudhanshug16/blackpepper",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

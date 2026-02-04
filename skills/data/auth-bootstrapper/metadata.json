@@ -1,9 +1,0 @@
-{
-  "name": "auth-bootstrapper",
-  "description": "Adds BetterAuth authentication to Apso backends. Handles entity setup, code generation, auto-fixes, and verification. Triggers when user needs to add authentication, setup auth, or integrate BetterAut",
-  "repo": "mavric/devenv",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

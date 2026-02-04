@@ -1,9 +1,0 @@
-{
-  "name": "container-orchestration",
-  "description": "Docker and Kubernetes patterns. Triggers on: Dockerfile, docker-compose, kubernetes, k8s, helm, pod, deployment, service, ingress, container, image.",
-  "repo": "0xDarkMatter/claude-mods",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

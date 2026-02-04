@@ -1,9 +1,0 @@
-{
-  "name": "context-continuity-code",
-  "description": "Claude Code-optimized context transfer for development workflows. Preserves code context, git state, running services, and development environment when moving work between sessions. Works seamlessly w",
-  "repo": "leegonzales/AISkills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rspec-service-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write RSpec tests for service objects testing business logic, transaction handling, and complex workflows. Use when testing service objects, form objects, or multi-step business processes following TD",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.688819Z"
-}

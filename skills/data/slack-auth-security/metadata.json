@@ -1,9 +1,0 @@
-{
-  "name": "slack-auth-security",
-  "description": "OAuth flows, token management, and security best practices for Slack apps. Use when implementing app distribution, multi-workspace installations, token storage and rotation, managing scopes and permis",
-  "repo": "linehaul-ai/linehaulai-claude-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

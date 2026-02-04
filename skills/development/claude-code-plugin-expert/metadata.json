@@ -1,8 +1,0 @@
-{
-  "name": "claude-code-plugin-expert",
-  "repo": "lenneTech/claude-code",
-  "category": "development",
-  "description": "Expert for Claude Code plugin and marketplace development. Use when creating, editing, or optimizing skills (SKILL.md), commands (*.md), agents, hooks (hooks.json), scripts, or plugin.json files. Ensu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:46.754011Z"
-}

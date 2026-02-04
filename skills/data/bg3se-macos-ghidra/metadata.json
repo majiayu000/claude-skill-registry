@@ -1,9 +1,0 @@
-{
-  "name": "bg3se-macos-ghidra",
-  "description": "Develop the BG3 Script Extender macOS port using Ghidra for reverse engineering. Use this skill when:(1) Working on bg3se-macos port development or debugging(2) Using Ghidra to discover offsets, funct",
-  "repo": "tdimino/bg3se-macos",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

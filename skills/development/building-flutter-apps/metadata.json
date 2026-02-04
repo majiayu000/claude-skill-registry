@@ -1,8 +1,0 @@
-{
-  "name": "building-flutter-apps",
-  "repo": "abhishekbrt/GlowState",
-  "category": "development",
-  "description": "Build production-ready Flutter apps for Android/iOS using feature-first architecture. Covers project setup, UI patterns, state management (Riverpod/BLoC), navigation (go_router), testing (TDD with moc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:08.735009Z"
-}

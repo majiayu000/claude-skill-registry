@@ -1,8 +1,0 @@
-{
-  "name": "gold-standards",
-  "repo": "Integrum-Global/kaizen-studio",
-  "category": "design",
-  "description": "Mandatory best practices and gold standards for Kailash SDK development including absolute imports, parameter passing, error handling, testing policies (NO MOCKING in Tiers 2-3), workflow design, cust",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:01.929559Z"
-}

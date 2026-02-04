@@ -1,9 +1,0 @@
-{
-  "name": "fvtt-performance-safe-updates",
-  "description": "This skill should be used when adding features that update actors or items, implementing hook handlers, modifying update logic, or replacing embedded documents. Covers ownership guards, no-op checks, ",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

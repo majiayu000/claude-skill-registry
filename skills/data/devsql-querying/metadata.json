@@ -1,9 +1,0 @@
-{
-  "name": "devsql-querying",
-  "description": "Query and analyze Claude Code history joined with Git data using SQL. Use when user asks about their Claude conversations, productivity patterns, commit history correlation, session analytics, or want",
-  "repo": "douglance/devsql",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

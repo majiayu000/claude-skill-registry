@@ -1,9 +1,0 @@
-{
-  "name": "tenant-db-ops",
-  "description": "マルチテナント（顧客別DB分離）のDB運用・マイグレーション・調査に使う。",
-  "repo": "rozwer/cross2B-Pro",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

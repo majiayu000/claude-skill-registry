@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-stack-validator",
-  "repo": "rknall/claude-skills",
-  "category": "devops",
-  "description": "Validates GitLab stack projects before deployment, ensuring proper architecture patterns, directory structure, secrets management, .env configuration, and Docker best practices. Use when users ask to ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:18.164181Z"
-}

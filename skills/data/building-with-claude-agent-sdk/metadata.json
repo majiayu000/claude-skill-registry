@@ -1,9 +1,0 @@
-{
-  "name": "building-with-claude-agent-sdk",
-  "description": "Use when building AI agents with Anthropic's Claude Agent SDK (formerly Claude Code SDK). Triggers include creating autonomous agents, building agentic applications, SDK-based automation, implementing",
-  "repo": "panaversity/agentfactory",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/panaversity/agentfactory"
-}

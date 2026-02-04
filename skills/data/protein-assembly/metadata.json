@@ -1,9 +1,0 @@
-{
-  "name": "protein-assembly",
-  "description": "Guidance for designing fusion protein gBlock sequences from multiple protein sources. This skill applies when tasks involve combining proteins from PDB databases, plasmid files, and fluorescent protei",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

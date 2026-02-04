@@ -1,9 +1,0 @@
-{
-  "name": "database-schema-guide",
-  "description": "VaultCPA database schema reference with 50+ Prisma models, relationships, and query patterns. Use when working with database models, designing features, or understanding data structure.",
-  "repo": "galactivale/financeocr",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "start-stop-app",
-  "description": "Start or stop the user-management FastAPI app. Use when you need to tun or kill the dev server.",
-  "repo": "merlinsaw/.agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

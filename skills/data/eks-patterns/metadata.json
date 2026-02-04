@@ -1,9 +1,0 @@
-{
-  "name": "eks-patterns",
-  "description": "EKS cluster patterns and best practices for Terraform. Provides cluster, node group, add-on, and IRSA scaffolds. Use when developing EKS infrastructure.",
-  "repo": "lgbarn/terraform-aws-eks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

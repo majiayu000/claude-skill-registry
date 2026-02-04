@@ -1,9 +1,0 @@
-{
-  "name": "matomo-api",
-  "description": "Matomo (Piwik) analytics platform API. Use for web analytics, tracking implementation, reporting API integration, plugin development, PHP/JavaScript tracking clients, and database schema understanding",
-  "repo": "enuno/claude-command-and-control",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/enuno/claude-command-and-control"
-}

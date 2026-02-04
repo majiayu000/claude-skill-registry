@@ -1,9 +1,0 @@
-{
-  "name": "cost-optimizer",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Analyze infrastructure spend and recommend cost reductions; use when asked to optimize cloud or tooling costs under budget constraints.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:22.301987Z",
-  "dir_name": "cost-optimizer"
-}

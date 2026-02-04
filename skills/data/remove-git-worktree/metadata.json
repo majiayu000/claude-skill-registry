@@ -1,9 +1,0 @@
-{
-  "name": "remove-git-worktree",
-  "description": "git worktreeを削除します。間違えて作成した場合や、作業完了後のクリーンアップに使用します。",
-  "repo": "AKABANAKK/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "oe-project-orientation",
-  "description": "Repo navigation and “where do I start?” guide for OpenEvent-AI. Use when an agent/dev is lost, needs an overview of the project or a subsystem, or needs pointers to the most important docs, entrypoint",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

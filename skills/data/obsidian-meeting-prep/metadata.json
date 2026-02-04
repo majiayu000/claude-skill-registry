@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-meeting-prep",
-  "description": "Prepares meeting materials by gathering context from Obsidian vault, enriching with research, and creating comprehensive meeting documentation. Generates both internal prep notes with background and e",
-  "repo": "astoreyai/claude-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

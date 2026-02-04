@@ -1,9 +1,0 @@
-{
-  "name": "deployment-checklist-generator",
-  "description": "Creates comprehensive deployment checklists with pre-deployment checks, smoke tests, verification steps, and sign-off workflows. Use for \"deployment checklist\", \"release verification\", \"deployment run",
-  "repo": "patricio0312rev/skillset",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

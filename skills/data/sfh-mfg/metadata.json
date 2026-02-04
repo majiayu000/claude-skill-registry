@@ -1,9 +1,0 @@
-{
-  "name": "sfh-mfg",
-  "description": "Prepare horn geometries for Digital Sheet Forming (DSF) manufacturing. Use whenanalyzing printability, optimizing wall thickness, generating toolpaths, orproducing G-code. Specializes in support-free ",
-  "repo": "toneron2/SFH-OS",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

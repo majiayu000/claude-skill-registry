@@ -1,9 +1,0 @@
-{
-  "name": "quetrex-architect",
-  "description": "Use when implementing new features in Quetrex. Ensures TDD, TypeScript strict mode, Next.js App Router patterns, ShadCN UI components, and security best practices are followed. Updated for November 20",
-  "repo": "Barnhardt-Enterprises-Inc/quetrex-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

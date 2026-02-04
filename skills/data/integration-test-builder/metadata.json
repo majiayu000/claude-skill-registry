@@ -1,9 +1,0 @@
-{
-  "name": "integration-test-builder",
-  "description": "Creates integration tests for API endpoints with database flows, including test harness setup, fixtures, setup/teardown, database seeding, and CI-friendly strategies. Use for \"integration testing\", \"A",
-  "repo": "patricio0312rev/skillset",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

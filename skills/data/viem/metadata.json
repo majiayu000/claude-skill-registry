@@ -1,9 +1,0 @@
-{
-  "name": "viem",
-  "repo": "settlemint/agent-marketplace",
-  "category": "data",
-  "description": "Viem blockchain client patterns for Ethereum interactions, transactions, signing, encoding, and smart contract calls. Triggers on viem, publicClient, walletClient, chain, abi.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:57.105823Z",
-  "dir_name": "viem"
-}

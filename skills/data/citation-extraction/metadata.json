@@ -1,9 +1,0 @@
-{
-  "name": "citation-extraction",
-  "description": "Extract and validate citations with Jaccard overlap calculation. Ensures all claims have verifiable source evidence with ≥0.7 alignment threshold.",
-  "repo": "RooseveltAdvisors/ClinicalNoteAgent",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

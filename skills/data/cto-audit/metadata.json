@@ -1,9 +1,0 @@
-{
-  "name": "cto-audit",
-  "description": "Perform deep, expert-level codebase and architecture audits to identify technical strengths, weaknesses, risks, and opportunities. Use when a user asks for an assessment of a codebase's structure, qua",
-  "repo": "jjeremycai/claude-toolkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

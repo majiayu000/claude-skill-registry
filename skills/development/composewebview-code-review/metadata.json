@@ -1,8 +1,0 @@
-{
-  "name": "composewebview-code-review",
-  "repo": "parkwoocheol/compose-webview",
-  "category": "development",
-  "description": "Performs code quality checks and reviews for ComposeWebView. Validates expect/actual implementations, KDoc coverage, Spotless formatting, and multiplatform patterns. Use when reviewing PRs, checking c",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:56.662086Z"
-}

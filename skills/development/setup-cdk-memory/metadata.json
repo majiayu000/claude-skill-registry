@@ -1,8 +1,0 @@
-{
-  "name": "setup-cdk-memory",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when setting up context management for Claude Code - configures conversation search, context summarization, session export, and project memory patterns for long-running development",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.217922Z"
-}

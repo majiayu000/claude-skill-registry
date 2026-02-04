@@ -1,8 +1,0 @@
-{
-  "name": "auditing-test-quality",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "testing",
-  "description": "Automates test quality assessment, identifies vanity tests, and guides systematic improvement of test suites. Use when reviewing test suites, identifying shallow tests, enforcing behavioral test stand",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.694356Z"
-}

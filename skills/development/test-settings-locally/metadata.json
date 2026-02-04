@@ -1,8 +1,0 @@
-{
-  "name": "test-settings-locally",
-  "repo": "cbgbt/bottlerocket-forest",
-  "category": "development",
-  "description": "Build and test settings SDK changes locally using core-kit and variant builds",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:28.598722Z"
-}

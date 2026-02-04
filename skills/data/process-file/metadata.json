@@ -1,9 +1,0 @@
-{
-  "name": "process-file",
-  "description": "Process arbitrary files (email, PDF, Office docs, images, audio/video) and integrate with AkashicRecords for intelligent archiving. Reads file content, analyzes intent, and suggests appropriate storag",
-  "repo": "eternnoir/claude-tool",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

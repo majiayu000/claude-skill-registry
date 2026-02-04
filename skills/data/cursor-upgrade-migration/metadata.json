@@ -1,9 +1,0 @@
-{
-  "name": "cursor-upgrade-migration",
-  "description": "Upgrade Cursor versions and migrate settings. Triggers on \"upgrade cursor\",\"update cursor\", \"cursor migration\", \"cursor new version\", \"cursor changelog\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

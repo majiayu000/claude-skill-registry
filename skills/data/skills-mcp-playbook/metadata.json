@@ -1,9 +1,0 @@
-{
-  "name": "skills-mcp-playbook",
-  "description": "Skill/MCPの使い分けと組み合わせ設計を支援するガイド。外部ツール接続はMCP、手順・品質基準はSkillという分離原則、衝突回避、実例（財務バリュエーション/ミーティング準備）を参照し、どちらを使うか判断・設計したいときに使う。",
-  "repo": "yurake/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

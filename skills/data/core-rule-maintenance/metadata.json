@@ -1,9 +1,0 @@
-{
-  "name": "core-rule-maintenance",
-  "description": "CLAUDE.md/AGENTS.md等のコアルールファイルの保守・更新を対話で行い、3環境同期と整合性を維持したまま反映する。CLAUDE.md更新、コアルール変更、ルール追加、パス辞書更新、ワークフロー索引更新を依頼されたときに使用する。",
-  "repo": "matsuni-kk/agent_template_public",
-  "category": "development",
-  "tags": [],
-  "stars": 9,
-  "source": "github.com/matsuni-kk/agent_template_public"
-}

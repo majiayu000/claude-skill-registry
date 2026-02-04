@@ -1,9 +1,0 @@
-{
-  "name": "spawn-coder",
-  "description": "코드 작성이 필요할 때 coder-agent 활용 가이드. 직접 코드 작성 대신 위임",
-  "repo": "Zeliper/z-coder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

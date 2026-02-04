@@ -1,9 +1,0 @@
-{
-  "name": "mcp-opportunity-pipeline",
-  "description": "Automatically invoke MCP opportunity discovery and publication pipeline when discussing marketplace opportunities, automation tools, or MCP server development",
-  "repo": "JesseHenson/claude_code_apex_marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "runtime-diagnostics",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Run local system diagnostics and model benchmarks across CPU, memory, GPU, NPU, Docker, and Kubernetes; use when asked to benchmark, health-check, or collect environment diagnostics, and store a summa",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.438111Z"
-}

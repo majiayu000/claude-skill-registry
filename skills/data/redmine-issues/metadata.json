@@ -1,9 +1,0 @@
-{
-  "name": "redmine-issues",
-  "description": "이 스킬은 사용자가 \"이슈 만들어\", \"버그 등록\", \"태스크 생성\", \"이슈 목록\", \"내 할일\", \"할당된 이슈\", \"이슈 수정\", \"이슈 상태 변경\", \"이슈 검색\", \"ticket\", \"issue\", \"bug report\" 등을 언급할 때 사용됩니다. Redmine 이슈 관리 기능을 제공합니다.",
-  "repo": "ncuritylabs/ncurion-plugins-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

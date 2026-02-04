@@ -1,9 +1,0 @@
-{
-  "name": "build-chatwindow",
-  "description": "Construit des chatwindows avec widgets interactifs ChatWidget. Guide la création de widgets selon le contrat ChatWidget, leur intégration dans ChatWindow, la configuration des workflows (OpenAI Agent ",
-  "repo": "SomtechSolutionMAxime/somtech-pack",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

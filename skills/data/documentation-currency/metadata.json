@@ -1,9 +1,0 @@
-{
-  "name": "documentation-currency",
-  "description": "Detects stale documentation - outdated status markers, old TODOs, version lag",
-  "repo": "akaszubski/autonomous-dev",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

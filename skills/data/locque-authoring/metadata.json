@@ -1,9 +1,0 @@
-{
-  "name": "locque-authoring",
-  "description": "Author or update Locque .lq code and tests with the canonical M-expr syntax, CBPV rules, data/match forms, modules/imports/opens, and project conventions.",
-  "repo": "jaggederest/locque",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

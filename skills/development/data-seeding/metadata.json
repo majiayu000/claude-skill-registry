@@ -1,7 +1,0 @@
-{
-  "name": "data-seeding",
-  "description": "Create or update database seed scripts for development and testing environments. Use when setting up test data or initializing development databases.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:10.849314Z"
-}

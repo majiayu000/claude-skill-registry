@@ -1,9 +1,0 @@
-{
-  "name": "dart-dart-fix",
-  "description": "To apply automated Dart fixes, run `dart fix --apply` on the given roots to resolve suggested changes.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

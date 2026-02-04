@@ -1,9 +1,0 @@
-{
-  "name": "nb-notebook-manager",
-  "description": "Searches, retrieves, and manages notes and bookmarks using the nb command-line tool. Primary use case is finding and retrieving existing content, with secondary support for creating new items and orga",
-  "repo": "benswift/.dotfiles",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "strategy-translator",
-  "description": "Use when converting strategy documentation to code - translates markdown strategy docs into Python functions (for backtesting frameworks like Backtrader) and TradingView Pine Script. Activates when us",
-  "repo": "xbklairith/kisune",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

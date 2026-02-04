@@ -1,8 +1,0 @@
-{
-  "name": "breaking-change-detection",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "description": "Detect and analyze breaking changes in API contracts",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:01.418919Z"
-}

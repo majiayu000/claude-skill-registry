@@ -1,9 +1,0 @@
-{
-  "name": "cors-configuration-validator",
-  "description": "Automatically validates Cloudflare Workers CORS configuration, ensuring proper headers, OPTIONS handling, and origin validation for cross-origin requests",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

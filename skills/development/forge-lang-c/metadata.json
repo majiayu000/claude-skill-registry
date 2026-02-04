@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-c",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "C development standards including make, gcc/clang, valgrind, and cppcheck. Use when working with C files, Makefiles, or CMakeLists.txt.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.091512Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "claude-plugin-distribution",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Packages and distributes Claude Code plugins with proper structure, documentation, and release management. Creates distribution-ready packages, generates documentation, and sets up automated validatio",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:36.786049Z"
-}

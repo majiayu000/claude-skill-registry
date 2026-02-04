@@ -1,9 +1,0 @@
-{
-  "name": "vulnerable-secret",
-  "description": "Guidance for extracting secrets from protected or obfuscated binaries through systematic static and dynamic analysis. This skill should be used when tasks involve reverse engineering executables, extr",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "reedom-ghcreate-draft-pr",
-  "repo": "reedom/claude-code-commands",
-  "category": "marketing",
-  "description": "Prepare complete PR content ready for creation via reedom-gh:pr-maker agent.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:50.521507Z"
-}

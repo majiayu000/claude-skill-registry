@@ -1,9 +1,0 @@
-{
-  "name": "link-langchain",
-  "description": "快速在新 Next.js 项目中集成 LangGraph 后端（localhost:2024），创建极简的 /chat 页面，支持真正的流式 AI 对话。适用于需要快速搭建聊天界面的场景：1) 集成 LangGraph Studio 本地部署的后端，2) 创建支持实时流式响应的聊天页面，3) 使用 LangGraph SDK 进行客户端直接连接，4) 实现优雅的 UI 交互（避免双气泡、流畅的加载",
-  "repo": "BI4O/langchain1.0-in-10-lines",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

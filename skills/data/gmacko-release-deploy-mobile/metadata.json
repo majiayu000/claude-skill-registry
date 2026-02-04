@@ -1,9 +1,0 @@
-{
-  "name": "gmacko-release-deploy-mobile",
-  "description": "Use when (1) building mobile app via EAS for distribution, (2) submitting to App Store or Google Play, (3) managing mobile release workflow. Handles Expo EAS build and submission process.",
-  "repo": "gmackie/vercel-expo-app-template",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "guix",
-  "description": "Expert knowledge for GNU Guix package and service development. Use when creating or modifying Guix packages, system services, home services, or working with a Guix repository checkout. Handles package",
-  "repo": "r0man/guix-home",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

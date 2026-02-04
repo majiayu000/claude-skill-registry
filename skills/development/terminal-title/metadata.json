@@ -1,7 +1,0 @@
-{
-  "name": "terminal-title",
-  "description": "Automatically updates terminal window title to reflect the current high-level task. Use at the start of every Claude Code session when the user provides their first prompt, and whenever the user switc",
-  "category": "development",
-  "source": "github.com/bluzername/claude-code-terminal-title",
-  "imported_at": "2026-01-24T14:53:54.073221Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "land-the-plane",
-  "description": "This skill should be used when the user says \"let's land the plane\", \"land the plane\", \"end the session cleanly\", \"wrap up the session\", or asks to prepare for a clean handoff between coding sessions.",
-  "repo": "michaelngo21/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

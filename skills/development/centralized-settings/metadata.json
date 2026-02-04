@@ -1,8 +1,0 @@
-{
-  "name": "centralized-settings",
-  "repo": "bout3fiddy/agents",
-  "category": "development",
-  "description": "Centralized settings pattern for all configuration and environment variables. Use when adding or accessing settings, secrets, or config in code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:38.692050Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "transformers-davila7-claude-code-templates",
-  "description": "This skill should be used when working with pre-trained transformer models for natural language processing, computer vision, audio, or multimodal tasks. Use for text generation, classification, questi",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.104001Z"
-}

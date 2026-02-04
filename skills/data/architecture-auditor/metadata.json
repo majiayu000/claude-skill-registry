@@ -1,9 +1,0 @@
-{
-  "name": "architecture-auditor",
-  "description": "Architecture audit and analysis specialist for Modular Monoliths. **ALWAYS use when reviewing codebase architecture, evaluating bounded contexts, assessing shared kernel size, detecting \"Core Obesity ",
-  "repo": "marcioaltoe/claude-craftkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

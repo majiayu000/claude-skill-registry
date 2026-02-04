@@ -1,8 +1,0 @@
-{
-  "name": "plugin-creation-guidelines",
-  "repo": "L-Sypniewski/claude-code-toolkit",
-  "category": "development",
-  "description": "Comprehensive plugin architecture patterns, best practices, templates, and validation guidelines distilled from research sources. Use when: creating new plugins, designing plugin architecture, validat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:44.167823Z"
-}

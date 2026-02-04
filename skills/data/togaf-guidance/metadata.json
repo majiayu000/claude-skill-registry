@@ -1,9 +1,0 @@
-{
-  "name": "togaf-guidance",
-  "description": "Guide users through TOGAF ADM phases with context-aware advice. Use when applying TOGAF methodology or understanding ADM phase activities.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

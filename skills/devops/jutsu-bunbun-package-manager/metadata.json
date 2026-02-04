@@ -1,8 +1,0 @@
-{
-  "name": "jutsu-bunbun-package-manager",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "description": "Use when managing dependencies with Bun's package manager. Covers installing packages, workspaces, lockfiles, and migrating from npm/yarn/pnpm to Bun.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.256338Z"
-}

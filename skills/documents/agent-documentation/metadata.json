@@ -1,8 +1,0 @@
-{
-  "name": "agent-documentation",
-  "repo": "L-Sypniewski/claude-code-toolkit",
-  "category": "documents",
-  "description": "Standards for creating AGENTS.md files that guide AI coding agents working with your codebase. Use when creating instructions for AI agents to follow project conventions, setup, and workflows.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:44.039451Z"
-}

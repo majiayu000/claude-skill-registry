@@ -1,9 +1,0 @@
-{
-  "name": "x-cmd-git",
-  "description": "This skill provides comprehensive Git and code hosting platform management tools through x-cmd CLI, including GitHub, GitLab, Codeberg, Forgejo integration, and Git hooks management. This skill should",
-  "repo": "x-cmd/skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

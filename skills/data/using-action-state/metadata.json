@@ -1,9 +1,0 @@
-{
-  "name": "using-action-state",
-  "description": "Teaches useActionState hook for managing form state with Server Actions in React 19. Use when implementing forms, handling form submissions, tracking pending states, or working with Server Functions.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

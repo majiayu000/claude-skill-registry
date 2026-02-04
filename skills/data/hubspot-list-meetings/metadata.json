@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-list-meetings",
-  "description": "List meeting engagements from HubSpot CRM. Load when user says 'list meetings', 'show meetings', 'meeting history', 'hubspot meetings'. Returns scheduled meeting records.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "claude-code-command-patterns",
-  "repo": "vinnie357/claudio",
-  "category": "development",
-  "description": "Activate when creating or modifying Claude Code slash commands with proper frontmatter, Task invocation patterns, and TodoWrite integration",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:39.020877Z"
-}

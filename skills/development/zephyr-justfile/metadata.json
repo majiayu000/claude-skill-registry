@@ -1,8 +1,0 @@
-{
-  "name": "zephyr-justfile",
-  "repo": "ale-alfaro/dotfiles",
-  "category": "development",
-  "description": "Use when working with Just for Zephyr development creating or extending project Justfiles, applying the user\u2019s preferred patterns, wiring west builds/flash/run, and understanding just settings, recipe",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:12.896963Z"
-}

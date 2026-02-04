@@ -1,9 +1,0 @@
-{
-  "name": "auth-route-protection-checker",
-  "description": "This skill should be used when the user requests to audit, check, or generate authentication and authorization protection for Next.js routes, server components, API routes, and server actions. It anal",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

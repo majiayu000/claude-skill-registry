@@ -1,9 +1,0 @@
-{
-  "name": "github-insights",
-  "description": "Provides team GitHub activity insights including merged PRs, contributorleaderboards, merge velocity, review participation, and PR size analysis.Use when users ask about team productivity, who merged ",
-  "repo": "kwiggen/claude-code-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "screenshot-feature-extractor",
-  "description": "Analyze product screenshots to extract feature lists and generate development task checklists. Use when: (1) Analyzing competitor product screenshots for feature extraction, (2) Generating PRD/task li",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.590453Z"
-}

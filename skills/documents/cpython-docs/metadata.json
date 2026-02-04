@@ -1,8 +1,0 @@
-{
-  "name": "cpython-docs",
-  "repo": "gpshead/cpython-skills",
-  "category": "documents",
-  "description": "Use this skill when working with CPython documentation in the Doc/ tree, including reStructuredText (.rst) files, adding versionadded/versionchanged markers, creating Misc/NEWS.d entries for bug fixes",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:55.605005Z"
-}

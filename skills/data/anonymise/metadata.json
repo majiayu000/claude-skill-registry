@@ -1,9 +1,0 @@
-{
-  "name": "anonymise",
-  "description": "Anonymise CSV files by removing personal identifying information and adding datetime stamps. Use when user wants to process a new CSV file or strip PII from data.",
-  "repo": "sofer/.agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

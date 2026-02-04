@@ -1,9 +1,0 @@
-{
-  "name": "implement-task-tfunk1030-vibe",
-  "description": "Implementation agent that executes a single task and creates handoff on completion",
-  "repo": "tfunk1030/vibe",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tfunk1030/vibe"
-}

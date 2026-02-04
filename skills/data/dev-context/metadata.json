@@ -1,9 +1,0 @@
-{
-  "name": "dev-context",
-  "description": "Context architecture skill for aligning work. Use when starting new features, making architectural decisions, or setting up implementation work. Generates interconnected ADR/Design/Spec/Plan scaffoldi",
-  "repo": "mpazaryna/claude-toolkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "legacy-codebase-analyzer",
-  "description": "Comprehensive legacy codebase analysis skill for technical debt assessment, security vulnerability scanning, performance bottleneck detection, and modernization roadmap generation. Includes 7 Python t",
-  "repo": "rickydwilson-dcs/claude-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

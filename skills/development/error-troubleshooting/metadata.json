@@ -1,8 +1,0 @@
-{
-  "name": "error-troubleshooting",
-  "repo": "Integrum-Global/kaizen-studio",
-  "category": "development",
-  "description": "Common error patterns and troubleshooting guides for Kailash SDK including Nexus blocking issues, connection parameter errors, runtime execution errors, cycle convergence problems, missing .build() ca",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:47.553526Z"
-}

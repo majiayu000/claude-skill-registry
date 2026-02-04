@@ -1,9 +1,0 @@
-{
-  "name": "logit-lens",
-  "description": "Decode intermediate layer predictions using the Logit Lens technique. Use when analyzing what a model predicts at each layer, understanding information flow, or visualizing layer-wise processing.",
-  "repo": "ndif-team/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ndif-team/skills"
-}

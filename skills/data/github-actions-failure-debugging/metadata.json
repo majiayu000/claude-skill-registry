@@ -1,9 +1,0 @@
-{
-  "name": "github-actions-failure-debugging",
-  "description": "Guide for debugging failing GitHub Actions workflows. Use this when asked to debug failing GitHub Actions workflows.",
-  "repo": "JohnnyVicious/copilot-cli-examples",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

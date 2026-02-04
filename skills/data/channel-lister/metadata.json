@@ -1,9 +1,0 @@
-{
-  "name": "channel-lister",
-  "description": "Slack チャンネル一覧を取得する。「Slackチャンネル一覧」「チャンネルリスト」「Slackのチャンネル」「チャンネル見せて」「全チャンネル」「チャンネル確認」「どんなチャンネルがある」などで起動。公式Slack MCPの `slack_list_channels` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

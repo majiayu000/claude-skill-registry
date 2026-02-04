@@ -1,9 +1,0 @@
-{
-  "name": "add-buyable-item",
-  "description": "Add a new one-time shop boost (buyable item) consistent with the app’s cat-petting theme and design-concept-reference.png. Produces the boosts.json entry, icon filename/path, accessible imageDescripti",
-  "repo": "salvarecuero/tap-cat",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "find-local-events",
-  "description": "Search for local events, activities, and happenings in a specified location and timeframe. Use when the user asks about events, concerts, festivals, meetups, or things to do in a specific area.",
-  "repo": "tnez/dot-agents",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

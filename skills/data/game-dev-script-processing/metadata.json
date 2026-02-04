@@ -1,9 +1,0 @@
-{
-  "name": "game-dev-script-processing",
-  "description": "游戏开发剧本处理技能 - 指导Claude Code使用游戏开发剧本处理器插件将剧本文件转换为游戏配置文件",
-  "repo": "stallboy/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

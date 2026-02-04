@@ -1,9 +1,0 @@
-{
-  "name": "rulebook-git-workflow",
-  "description": "Git workflow standards including branching strategy, commit conventions, and PR guidelines. Use when creating branches, writing commit messages, preparing pull requests, or following git best practice",
-  "repo": "hivellm/rulebook",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

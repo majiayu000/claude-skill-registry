@@ -1,9 +1,0 @@
-{
-  "name": "nestjs-conventions",
-  "description": "Park Golf Platform NestJS 코딩 컨벤션. 모듈 구조, 서비스/컨트롤러 작성 규칙, DTO/Entity 패턴, 의존성 주입 방법 안내. \"NestJS\", \"컨벤션\", \"코딩 스타일\", \"모듈\", \"서비스\" 관련 질문 시 사용합니다.",
-  "repo": "uniyous/parkgolf-platform",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

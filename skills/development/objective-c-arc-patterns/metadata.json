@@ -1,8 +1,0 @@
-{
-  "name": "objective-c-arc-patterns",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when automatic Reference Counting in Objective-C including strong/weak references, retain cycles, ownership qualifiers, bridging with Core Foundation, and patterns for memory-safe code without man",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:06.502218Z"
-}

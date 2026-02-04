@@ -1,9 +1,0 @@
-{
-  "name": "content-type-modeling",
-  "description": "Use when designing content type hierarchies, defining reusable content parts, or structuring field compositions for a headless CMS. Covers the Content Type -> Content Part -> Content Field hierarchy p",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

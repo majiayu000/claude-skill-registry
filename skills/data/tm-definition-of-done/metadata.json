@@ -1,9 +1,0 @@
-{
-  "name": "tm-definition-of-done",
-  "description": "Enforce Tavern Master definition of done (lint + tests + formatting + plan updates).",
-  "repo": "JonWhiteFang/tavernmaster",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

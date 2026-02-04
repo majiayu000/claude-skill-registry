@@ -1,9 +1,0 @@
-{
-  "name": "sqs-queue-setup",
-  "description": "Sqs Queue Setup - Auto-activating skill for AWS Skills.Triggers on: sqs queue setup, sqs queue setupPart of the AWS Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

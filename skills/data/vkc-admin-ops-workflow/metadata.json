@@ -1,9 +1,0 @@
-{
-  "name": "vkc-admin-ops-workflow",
-  "description": "Standardize admin operations workflow (Draft -> Review -> Scheduled publish -> Published) using DB states + admin API routes + scheduled visibility. Use when implementing admin-controlled publishing s",
-  "repo": "LEE-SANG-BOK/VKC-2-",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rust-metrics",
-  "repo": "gar-ai/mallorn",
-  "category": "product",
-  "description": "Expose Prometheus metrics with counters, gauges, and histograms. Use for production monitoring and alerting.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.533265Z"
-}

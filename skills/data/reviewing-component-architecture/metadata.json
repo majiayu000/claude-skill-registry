@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-component-architecture",
-  "description": "Review component architecture for React 19 best practices including size, composition, Server/Client boundaries, and anti-patterns. Use when reviewing component design.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

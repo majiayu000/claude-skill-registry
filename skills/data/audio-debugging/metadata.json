@@ -1,9 +1,0 @@
-{
-  "name": "audio-debugging",
-  "description": "Automatically helps debug Web Audio API issues, audio playback problems, pitch preservation, and caching issues in the VSSK-shadecn music practice app",
-  "repo": "skaihigh/claude-agent-command-templates",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "read-task",
-  "description": "Read and execute task delegated from Claude. Use when user says read task, get task, or pick up claude task.",
-  "repo": "antorsae/dual-agent",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

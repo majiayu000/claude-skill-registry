@@ -1,8 +1,0 @@
-{
-  "name": "auto-update-jira-status",
-  "repo": "Tasup/Tasup",
-  "category": "development",
-  "description": "Automatically update Jira Issue status to the next stage (TODO\u2192\u9032\u884c\u4e2d\u2192\u5b8c\u4e86). (jira)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:18.417685Z"
-}

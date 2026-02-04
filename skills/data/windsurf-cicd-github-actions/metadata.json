@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-cicd-github-actions",
-  "description": "Generate and maintain GitHub Actions with Cascade assistance. Activate when users mention\"github actions\", \"ci/cd pipeline\", \"workflow automation\", \"continuous integration\",or \"deployment pipeline\". H",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

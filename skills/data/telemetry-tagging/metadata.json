@@ -1,9 +1,0 @@
-{
-  "name": "telemetry-tagging",
-  "description": "Tag logs, metrics, and distributed traces with REQ-* keys for production traceability. Enables backward traceability from runtime issues to requirements to intent. Use when deploying code or setting u",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

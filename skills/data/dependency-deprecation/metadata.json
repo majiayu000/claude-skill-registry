@@ -1,9 +1,0 @@
-{
-  "name": "dependency-deprecation",
-  "description": "Pattern for deprecating external dependencies while maintaining backward compatibility. Trigger: removing Java/FIJI/MATLAB, deprecating optional deps",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

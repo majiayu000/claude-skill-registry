@@ -1,8 +1,0 @@
-{
-  "name": "extension-dev",
-  "repo": "NAMEWTA/ai-omni",
-  "category": "development",
-  "description": "VS Code Extension \u540e\u7aef\u5f00\u53d1\u6a21\u5757\u3002\u5f53\u9700\u8981\u6dfb\u52a0\u547d\u4ee4\u3001\u4fee\u6539\u63d2\u4ef6\u5165\u53e3\u3001\u7ba1\u7406 Webview Panel\u3001\u5904\u7406\u6d88\u606f\u3001\u4f7f\u7528 VS Code API \u65f6\u4f7f\u7528\u3002\u6db5\u76d6\u547d\u4ee4\u6ce8\u518c\u3001Webview \u7ba1\u7406\u3001\u6587\u4ef6\u64cd\u4f5c\u3001\u914d\u7f6e\u7ba1\u7406\u7b49\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:15.823898Z"
-}

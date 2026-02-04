@@ -1,9 +1,0 @@
-{
-  "name": "injection-testing",
-  "description": "Validate injection vulnerabilities including SQL, NoSQL, OS Command, LDAP, XPath, SSTI, and XSS. Test by sending crafted payloads to user-controlled input fields and observing application behavior. Us",
-  "repo": "anshumanbh/securevibes",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

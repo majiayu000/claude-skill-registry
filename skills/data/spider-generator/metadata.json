@@ -1,9 +1,0 @@
-{
-  "name": "spider-generator",
-  "description": "Generate Scrapy spiders with best practices when creating new spiders, crawlers, or implementing scraping patterns. Automatically scaffolds spiders based on target website type and requirements.",
-  "repo": "gizix/cc_projects",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

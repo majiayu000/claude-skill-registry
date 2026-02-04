@@ -1,9 +1,0 @@
-{
-  "name": "elixir-root-cause-only",
-  "description": "MANDATORY systematic debugging - trace to root cause before proposing fixes. NO random changes, NO symptom fixes, NO \"try this\". Use when debugging ANY error or issue.",
-  "repo": "mkreyman/bmad-elixir",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

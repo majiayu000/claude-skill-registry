@@ -1,9 +1,0 @@
-{
-  "name": "sandi-metz-reviewer",
-  "description": "Code review agent based on Sandi Metz's object-oriented design principles from \"Practical Object-Oriented Design in Ruby\" and \"99 Bottles of OOP\". Use when users request code reviews, ask about OO des",
-  "repo": "el-feo/ai-context",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

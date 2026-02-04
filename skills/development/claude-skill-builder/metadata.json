@@ -1,7 +1,0 @@
-{
-  "name": "claude-skill-builder",
-  "description": "Interactive skill creator for Claude Code and Agent Skills ecosystem. Build SKILL.md files with proper frontmatter, triggers, and structure. Triggers on creating skills, building skills, skill templat",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.820163Z"
-}

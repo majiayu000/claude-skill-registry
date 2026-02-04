@@ -1,9 +1,0 @@
-{
-  "name": "cloudflare-sveltekit-workers-d1",
-  "description": "Expert guidance for deploying TypeScript SvelteKit apps to Cloudflare Workers (edge) with D1. Use when configuring @sveltejs/adapter-cloudflare, Wrangler config, Workers Assets, D1 bindings/migrations",
-  "repo": "maximxlss/codextris",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "output-dev-types-file",
-  "description": "Create types.ts files with Zod schemas for Output SDK workflows. Use when defining input/output schemas, creating type definitions, or fixing schema-related errors.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

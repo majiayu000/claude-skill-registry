@@ -1,9 +1,0 @@
-{
-  "name": "codex-sandbox",
-  "description": "Run code in Codex fully isolated sandbox - network disabled, CWD only, Seatbelt/Docker isolation",
-  "repo": "DNYoussef/context-cascade",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

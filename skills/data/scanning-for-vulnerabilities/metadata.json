@@ -1,9 +1,0 @@
-{
-  "name": "scanning-for-vulnerabilities",
-  "description": "This skill enables comprehensive vulnerability scanning using the vulnerability-scanner plugin. it identifies security vulnerabilities in code, dependencies, and configurations, including cve detectio",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

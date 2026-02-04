@@ -1,8 +1,0 @@
-{
-  "name": "managing-packages",
-  "repo": "QingqiShi/shiqingqi.com",
-  "category": "devops",
-  "description": "Package management using pnpm and corepack with packageManager field in package.json. Use when installing dependencies, upgrading packages, troubleshooting package manager issues, working with pnpm co",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:40.382741Z"
-}

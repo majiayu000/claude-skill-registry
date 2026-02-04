@@ -1,9 +1,0 @@
-{
-  "name": "vanilla-rails-data-modeling",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "data",
-  "description": "Use when designing database schema, writing migrations, or making data storage decisions - enforces UUIDs, account_id multi-tenancy, state-as-records, no foreign keys, and proper index patterns",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.434254Z",
-  "dir_name": "vanilla-rails-data-modeling"
-}

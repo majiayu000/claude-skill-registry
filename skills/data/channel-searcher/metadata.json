@@ -1,9 +1,0 @@
-{
-  "name": "channel-searcher",
-  "description": "Slack チャンネルを名前で検索する。「チャンネル検索」「チャンネルを探して」「チャンネル名で検索」「〇〇というチャンネル」「チャンネルを見つけたい」「チャンネルある？」「似た名前のチャンネル」などで起動。Pythonスクリプト `slack_channel.py search` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

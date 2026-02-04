@@ -1,9 +1,0 @@
-{
-  "name": "kanban-qa",
-  "description": "Kanban QA role. USE WHEN user says /kanban-qa OR wants to review completed kanban tasks.",
-  "repo": "SimonBlancoE/kanban-mcp",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

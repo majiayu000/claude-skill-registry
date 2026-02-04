@@ -1,9 +1,0 @@
-{
-  "name": "hermetic-speckit",
-  "description": "Build software using isolated container-use environments with SpecKit workflow. Use when user needs to build a feature, application, or complex task that benefits from spec-driven development. Keyword",
-  "repo": "joshyorko/hermetic_coding_eniveronments_dags",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

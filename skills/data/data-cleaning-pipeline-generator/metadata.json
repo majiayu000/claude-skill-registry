@@ -1,9 +1,0 @@
-{
-  "name": "data-cleaning-pipeline-generator",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "data",
-  "description": "Generates data cleaning pipelines for pandas/polars with handling for missing values, duplicates, outliers, type conversions, and data validation. Use when user asks to \"clean data\", \"generate data pi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:48.207082Z",
-  "dir_name": "data-cleaning-pipeline-generator"
-}

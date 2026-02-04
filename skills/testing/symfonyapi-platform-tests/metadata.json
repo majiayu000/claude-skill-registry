@@ -1,8 +1,0 @@
-{
-  "name": "symfonyapi-platform-tests",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "testing",
-  "description": "Test API Platform resources with ApiTestCase, test collections, items, filters, and authentication",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.553925Z"
-}

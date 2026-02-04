@@ -1,8 +1,0 @@
-{
-  "name": "vision-discovery",
-  "repo": "sjnims/requirements-expert",
-  "category": "product",
-  "description": "This skill should be used when the user asks to \"discover vision\", \"create a vision\", \"define product vision\", \"document vision\", \"what should my vision be\", \"help me with vision\", \"start requirements",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:56.241082Z"
-}

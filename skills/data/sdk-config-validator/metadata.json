@@ -1,9 +1,0 @@
-{
-  "name": "sdk-config-validator",
-  "description": "Validates Claude Agent SDK configuration files, environment setup, dependencies, and project structure",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

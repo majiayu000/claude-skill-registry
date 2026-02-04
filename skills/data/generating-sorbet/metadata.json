@@ -1,9 +1,0 @@
-{
-  "name": "generating-sorbet",
-  "description": "Generates Sorbet type signatures in separate RBI files from Ruby source files. Triggers when creating type definitions, adding types to Ruby code, or generating .rbi files for classes/modules without ",
-  "repo": "DmitryPogrebnoy/ruby-agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/DmitryPogrebnoy/ruby-agent-skills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "coder-memory-store",
-  "description": "Store universal coding patterns into vector database. Auto-invokes after difficult tasks with broadly-applicable lessons. Trigger with \"--store\" or when user expresses frustration (strong learning sig",
-  "repo": "hongbietcode/synthetic-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/hongbietcode/synthetic-claude"
-}

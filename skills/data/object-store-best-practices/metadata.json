@@ -1,9 +1,0 @@
-{
-  "name": "object-store-best-practices",
-  "description": "Ensures proper cloud storage operations with retry logic, error handling, streaming, and efficient I/O patterns. Activates when users work with object_store for S3, Azure, or GCS operations.",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

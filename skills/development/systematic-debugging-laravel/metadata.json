@@ -1,8 +1,0 @@
-{
-  "name": "systematic-debugging-laravel",
-  "repo": "iSerter/laravel-claude-agents",
-  "category": "development",
-  "description": "Systematic debugging process for Laravel applications - ensures root cause investigation before attempting fixes. Use for any Laravel issue (test failures, bugs, unexpected behavior, performance probl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:07.939471Z"
-}

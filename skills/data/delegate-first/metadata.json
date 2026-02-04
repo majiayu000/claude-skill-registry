@@ -1,9 +1,0 @@
-{
-  "name": "delegate-first",
-  "description": "Behavioral principle for context preservation through strategic delegation. Use when starting multi-step operations, uncertain about scope, or when direct execution might exhaust context. Complements ",
-  "repo": "rayk/lucid-toolkit",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

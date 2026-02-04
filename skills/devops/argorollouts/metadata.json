@@ -1,8 +1,0 @@
-{
-  "name": "argorollouts",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "description": "Argo Rollouts progressive delivery controller for Kubernetes. USE WHEN user mentions rollouts, canary deployments, blue-green deployments, progressive delivery, traffic shifting, analysis templates, o",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:32.838931Z"
-}

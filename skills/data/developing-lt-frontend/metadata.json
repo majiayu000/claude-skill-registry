@@ -1,9 +1,0 @@
-{
-  "name": "developing-lt-frontend",
-  "description": "Develops lenne.tech frontend applications with Nuxt 4, Nuxt UI 4, strict TypeScript, and Valibot forms. Integrates backend APIs via generated types (types.gen.ts, sdk.gen.ts). Creates components with ",
-  "repo": "lenneTech/claude-code",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

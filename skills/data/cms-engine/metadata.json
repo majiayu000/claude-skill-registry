@@ -1,9 +1,0 @@
-{
-  "name": "cms-engine",
-  "description": "Expert in Content Management Systems (CMS). Trigger this when building Blogs, Portals, or Media-heavy applications.",
-  "repo": "gravito-framework/gravito",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gravito-framework/gravito"
-}

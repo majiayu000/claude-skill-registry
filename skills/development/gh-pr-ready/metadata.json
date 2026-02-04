@@ -1,8 +1,0 @@
-{
-  "name": "gh-pr-ready",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "description": "Mark a draft pull request as ready for review using gh CLI. Use when a draft PR is complete and ready for team review.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.501085Z"
-}

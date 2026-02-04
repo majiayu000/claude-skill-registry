@@ -1,9 +1,0 @@
-{
-  "name": "supabase-performance-tuning",
-  "description": "Optimize Supabase API performance with caching, batching, and connection pooling.Use when experiencing slow API responses, implementing caching strategies,or optimizing request throughput for Supabase",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

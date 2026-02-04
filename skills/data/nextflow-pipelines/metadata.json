@@ -1,9 +1,0 @@
-{
-  "name": "nextflow-pipelines",
-  "description": "Create scalable, containerized bioinformatics pipelines with Nextflow DSL2 supporting Docker, Singularity, and cloud execution. Use when building portable pipelines with container support, running wor",
-  "repo": "GPTomics/bioSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GPTomics/bioSkills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "adk-deployment-specialist",
-  "description": "Deploy and orchestrate Vertex AI ADK agents using A2A protocol. Manages AgentCard discovery, task submission, Code Execution Sandbox, and Memory Bank. Use when asked to \"deploy ADK agent\" or \"orchestr",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

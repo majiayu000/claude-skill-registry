@@ -1,9 +1,0 @@
-{
-  "name": "pr-author-agent",
-  "description": "AI-powered PR Author Agent that transforms Observability Diff Plans into Pull Requests. Use when: (1) Generating instrumentation code from Scout Agent output, (2) Creating OTel configuration, correlat",
-  "repo": "Kart-rc/dataobservability-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

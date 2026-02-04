@@ -1,9 +1,0 @@
-{
-  "name": "plan-mode-arc-gsm8k-improvement",
-  "description": "AEGISモデルのARC-Challenge評価改善とGSM8K健全性チェックのためのPlanモード。タイムアウト率・抽出失敗率分析、頑健な回答抽出、データ汚染検査、複数seed評価を実行。",
-  "repo": "zapabob/SO8T",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zapabob/SO8T"
-}

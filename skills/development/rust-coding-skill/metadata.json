@@ -1,8 +1,0 @@
-{
-  "name": "rust-coding-skill",
-  "repo": "UtakataKyosui/UtakataClaudeCodePluginMarketPlace",
-  "category": "development",
-  "description": "Guides Claude in writing idiomatic, efficient, well-structured Rust code using proper data modeling, traits, impl organization, macros, and build-speed best practices.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:20.294600Z"
-}

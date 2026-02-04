@@ -1,8 +1,0 @@
-{
-  "name": "troubleshooting-gpt-oss-and-vllm-errors",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "development",
-  "description": "Use when diagnosing openai_harmony.HarmonyError or gpt-oss tool calling issues with vLLM. Identifies error sources (vLLM server vs client), maps specific error messages to known GitHub issues, and pro",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.461158Z"
-}

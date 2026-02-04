@@ -1,8 +1,0 @@
-{
-  "name": "moai-security",
-  "repo": "modu-ai/claude-plugins",
-  "category": "security",
-  "description": "Auth0 security specialist covering attack protection, multi-factor authentication, token security, sender constraining, and compliance. Use when implementing Auth0 security features, configuring attac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:08.495548Z"
-}

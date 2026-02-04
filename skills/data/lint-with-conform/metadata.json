@@ -1,9 +1,0 @@
-{
-  "name": "lint-with-conform",
-  "description": "Run formatters on files based on the user's conform neovim configuration. Supports multiple languages including JavaScript, TypeScript, Python, Go, Nix, Lua, and more. Use this when the user asks to f",
-  "repo": "clempat/ai-tools-flake",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

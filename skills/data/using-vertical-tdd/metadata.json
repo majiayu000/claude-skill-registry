@@ -1,9 +1,0 @@
-{
-  "name": "using-vertical-tdd",
-  "description": "OpenSpec駆動の垂直TDDスケルトン戦略。提案作成・技術検証・設計・実装・アーカイブの全ライフサイクルをサポート。使用タイミング:(1) OpenSpecスラッシュコマンド実行時（`OpenSpec: Propose`, `OpenSpec: Apply`, `OpenSpec: Archive`）(2) 新機能開発の開始時（「新機能を追加」「〜を実装」リクエスト、OpenSpec提案がまだ",
-  "repo": "hyt-sasaki/ai-knowledge-promoter",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

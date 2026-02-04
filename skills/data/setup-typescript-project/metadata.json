@@ -1,9 +1,0 @@
-{
-  "name": "setup-typescript-project",
-  "description": "Comprehensive configuration templates and guidance for setting up TypeScript projects with modern tooling, testing frameworks, and code quality enforcement.",
-  "repo": "nickromney/n-dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/nickromney/n-dotfiles"
-}

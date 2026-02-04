@@ -1,9 +1,0 @@
-{
-  "name": "configuration-validator",
-  "description": "Validates environment variables, config files, and ensures all required settings are documented. Use when working with .env files, configs, or deployment settings.",
-  "repo": "CrazyDubya/claude-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

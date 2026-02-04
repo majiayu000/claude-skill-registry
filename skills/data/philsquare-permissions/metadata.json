@@ -1,9 +1,0 @@
-{
-  "name": "philsquare-permissions",
-  "description": "This skill should be used when the user asks to \"add permissions to a policy\", \"create a policy with roles\", \"set up role permissions\", \"configure rolePermissions\", \"use BasePolicy\", or when working w",
-  "repo": "philsquare/permissions",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

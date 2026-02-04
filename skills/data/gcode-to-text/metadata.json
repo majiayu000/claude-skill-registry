@@ -1,9 +1,0 @@
-{
-  "name": "gcode-to-text",
-  "description": "Extracts hidden or encoded text from GCODE files by analyzing toolpath geometry and coordinate data. This skill should be used when tasks involve decoding text from 3D printing files, recovering embos",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "data-modeling",
-  "description": "Schema design, entity relationships, normalization, and database patterns. Use when designing database schemas, modeling domain entities, deciding between normalized and denormalized structures, choos",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.523799Z"
-}

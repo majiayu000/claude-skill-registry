@@ -1,9 +1,0 @@
-{
-  "name": "use-codex",
-  "description": "Codex CLI を活用するスキル。Web検索やファイルレビューなどのタスクを Codex に委譲する。",
-  "repo": "masseater/claude-code-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

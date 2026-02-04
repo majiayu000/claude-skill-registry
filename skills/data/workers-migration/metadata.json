@@ -1,9 +1,0 @@
-{
-  "name": "workers-migration",
-  "description": "Migrate to Cloudflare Workers from AWS Lambda, Vercel, Express, and Node.js. Use when porting existing applications to the edge, adapting serverless functions, or resolving Node.js API compatibility i",
-  "repo": "secondsky/claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

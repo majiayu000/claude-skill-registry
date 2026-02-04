@@ -1,9 +1,0 @@
-{
-  "name": "bun-cli",
-  "description": "Build production-grade CLI tools with Bun. Reference implementation covering argument parsing patterns (--flag value, --flag=value, --flag), dual markdown/JSON output, error handling, subcommands, and",
-  "repo": "nathanvale/side-quest-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

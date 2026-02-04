@@ -1,8 +1,0 @@
-{
-  "name": "hugging-face-dataset-creator",
-  "repo": "huggingface/skills",
-  "category": "design",
-  "description": "Create and manage datasets on Hugging Face Hub. Supports initializing repos, defining configs/system prompts, and streaming row updates. Designed to work alongside HF MCP server for comprehensive data",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.880870Z"
-}

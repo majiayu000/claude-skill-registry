@@ -1,9 +1,0 @@
-{
-  "name": "mcp-response-optimization",
-  "description": "Prevent massive MCP responses from WordPress, Playwright, Notion, and other MCPs that can kill conversations on first call. Sophisticated token management for all MCP tool usage.",
-  "repo": "sellersessions/Sub-Agents",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

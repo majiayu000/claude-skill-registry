@@ -1,8 +1,0 @@
-{
-  "name": "format-processor",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Process and analyze {{FORMAT}} files. Use when {{TRIGGER_CONTEXTS}}. Supports {{CAPABILITIES}}.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.147653Z"
-}

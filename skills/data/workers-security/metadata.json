@@ -1,9 +1,0 @@
-{
-  "name": "workers-security",
-  "description": "Cloudflare Workers security with authentication, CORS, rate limiting, input validation. Use for securing APIs, JWT/API keys, or encountering auth failures, CORS errors, XSS/injection vulnerabilities.",
-  "repo": "secondsky/claude-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

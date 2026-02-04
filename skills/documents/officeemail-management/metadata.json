@@ -1,8 +1,0 @@
-{
-  "name": "officeemail-management",
-  "repo": "harperreed/office-admin-claude",
-  "category": "documents",
-  "description": "Handle email tasks (checking inbox, drafting replies, managing threads, adding events to calendar). Use when working with emails to prevent common mistakes like broken threading or missing recipients.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:52.339569Z"
-}

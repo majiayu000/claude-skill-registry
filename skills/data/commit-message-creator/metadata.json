@@ -1,9 +1,0 @@
-{
-  "name": "commit-message-creator",
-  "description": "Generate standards-compliant commit messages following Conventional Commits with emojis. Use this when creating commits, reviewing commit messages, or ensuring consistent commit history.",
-  "repo": "autonomous-bits/nomos-provider-terraform-remote-state",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

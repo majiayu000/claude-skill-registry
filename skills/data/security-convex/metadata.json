@@ -1,9 +1,0 @@
-{
-  "name": "security-convex",
-  "description": "Convex security audit patterns. Load when reviewing Convex apps (convex/ directory present). Covers query/mutation auth, row-level security, public vs authenticated functions, validators, and Convex-s",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

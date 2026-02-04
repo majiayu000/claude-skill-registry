@@ -1,9 +1,0 @@
-{
-  "name": "summarize-jiras",
-  "description": "Query and summarize JIRA bugs for a specific project with counts by component",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

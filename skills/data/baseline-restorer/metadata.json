@@ -1,9 +1,0 @@
-{
-  "name": "baseline-restorer",
-  "description": "Use when multiple fix attempts fail and you need to systematically restore to a working baseline and reimplement instead of fixing broken code.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

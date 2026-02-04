@@ -1,9 +1,0 @@
-{
-  "name": "data-migration-expert",
-  "description": "Use this agent when reviewing database migrations, schema changes, or data transformations. Specializes in validating ID mappings, checking for swapped values, and verifying rollback safety. Triggers ",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

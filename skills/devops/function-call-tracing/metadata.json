@@ -1,8 +1,0 @@
-{
-  "name": "function-call-tracing",
-  "repo": "gadievron/raptor",
-  "category": "devops",
-  "description": "Instrument C/C++ with -finstrument-functions for execution tracing and Perfetto visualization",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:43.261252Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "test-coverage-advisor",
-  "description": "Reviews test coverage and suggests missing test cases for error paths, edge cases, and business logic. Activates when users write tests or implement new features.",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

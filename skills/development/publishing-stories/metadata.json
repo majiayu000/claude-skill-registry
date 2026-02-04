@@ -1,8 +1,0 @@
-{
-  "name": "publishing-stories",
-  "repo": "kecbigmt/cc-plugins",
-  "category": "development",
-  "description": "Guides commit, push, and draft PR creation for stories. Use when ready to commit changes, pushing to remote, or creating a pull request for review.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:19.059946Z"
-}

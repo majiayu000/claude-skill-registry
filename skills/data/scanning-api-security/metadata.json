@@ -1,9 +1,0 @@
-{
-  "name": "scanning-api-security",
-  "description": "Detect API security vulnerabilities including injection, broken auth, and data exposure.Use when scanning APIs for security vulnerabilities.Trigger with phrases like \"scan API security\", \"check for vu",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

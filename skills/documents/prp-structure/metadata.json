@@ -1,8 +1,0 @@
-{
-  "name": "prp-structure",
-  "repo": "L-Sypniewski/claude-code-toolkit",
-  "category": "documents",
-  "description": "Provides the standard structure and format for Prompt-Response-Plan (PRP) documents. Use when creating, formatting, or validating PRP documents for systematic problem-solving workflows.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:44.023084Z"
-}

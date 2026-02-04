@@ -1,9 +1,0 @@
-{
-  "name": "ratatui",
-  "description": "Build terminal UIs in Rust with Ratatui. Use when creating TUI applications, immediate-mode rendering, high-performance terminal interfaces, or production Rust CLIs.",
-  "repo": "filipexyz/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

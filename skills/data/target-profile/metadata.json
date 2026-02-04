@@ -1,9 +1,0 @@
-{
-  "name": "target-profile",
-  "description": "Generate comprehensive target profiles including druggability assessment,disease associations, pathway context, and competitive landscape.Use this skill when analyzing drug targets for validation, dos",
-  "repo": "huifer/drug-discovery-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "reactome-database-davila7-claude-code-templates",
-  "description": "Query Reactome REST API for pathway analysis, enrichment, gene-pathway mapping, disease pathways, molecular interactions, expression analysis, for systems biology studies.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.128426Z"
-}

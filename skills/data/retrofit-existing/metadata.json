@@ -1,9 +1,0 @@
-{
-  "name": "retrofit-existing",
-  "description": "Load when retrofitting framework documentation to existing code. Supports creating specs and decisions from implementations, enabling gradual framework adoption for existing projects.",
-  "repo": "asermax/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

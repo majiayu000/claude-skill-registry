@@ -1,8 +1,0 @@
-{
-  "name": "fnox-security-best-practices",
-  "repo": "TheBushidoCollective/han",
-  "category": "security",
-  "description": "Use when implementing secure secrets management with Fnox. Covers encryption, key management, access control, and security hardening.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:03.957528Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "bom-generator",
-  "description": "Generates Bill of Materials (BOM) from project descriptions for Arduino/ESP32/RP2040 projects. Use when user needs component lists, parts shopping lists, cost estimates, or asks \"what parts do I need\"",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

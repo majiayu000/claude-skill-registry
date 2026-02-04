@@ -1,9 +1,0 @@
-{
-  "name": "build-manifest",
-  "description": "Templates and scripts for generating layered BUILD-GUIDE.json/md from Airtable plugin index - shows available commands organized by infrastructure layers",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

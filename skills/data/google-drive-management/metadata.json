@@ -1,9 +1,0 @@
-{
-  "name": "google-drive-management",
-  "description": "Manages Google Drive files and folders through the Drive API. Search for files, read content, create and update documents, organize folders, manage permissions, and sync files. Use when working with G",
-  "repo": "astoreyai/claude-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

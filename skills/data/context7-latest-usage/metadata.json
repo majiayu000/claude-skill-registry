@@ -1,9 +1,0 @@
-{
-  "name": "context7-latest-usage",
-  "description": "Fetch the latest, docs-grounded API details and best practices for a library/framework using Context7 MCP tools `resolve-library-id` and `get-library-docs`. Use when a user asks for “最新用法/最新寫法/最佳實務/la",
-  "repo": "shaowei-g/codex-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pr-ci-sonar-closure",
-  "description": "PR を人間に引き渡す直前に CI 完了監視→失敗解析→get-sonar-feedback→/pr-review レポート→最終報告までを一気通貫で実行するフロー。",
-  "repo": "chaspy/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

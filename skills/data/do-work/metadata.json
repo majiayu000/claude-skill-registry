@@ -1,9 +1,0 @@
-{
-  "name": "do-work",
-  "description": "Execute development work from a scratchpad, tracking progress with TodoWrite and making atomic commits. This skill MUST be invoked as the first action when user says \"start work on issue",
-  "repo": "fusupo/escapement",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

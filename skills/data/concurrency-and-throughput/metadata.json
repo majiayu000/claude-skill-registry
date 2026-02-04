@@ -1,9 +1,0 @@
-{
-  "name": "concurrency-and-throughput",
-  "description": "Comprehensive guide to concurrency models, throughput optimization, worker pools, task queues, and scaling strategies for high-performance applications",
-  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills"
-}

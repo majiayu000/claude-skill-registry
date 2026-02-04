@@ -1,9 +1,0 @@
-{
-  "name": "codegen-feature",
-  "description": "Implement new features using TDD starting from README + Issue (following codegen-test), aligning with existing implementation conventions, and leveraging Serena MCP semantic search/editing to deliver ",
-  "repo": "nihiyama/ffq",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

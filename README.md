@@ -18,6 +18,8 @@ The largest searchable index of Claude Code skills, aggregated from GitHub and c
 2. **[sk CLI](https://github.com/majiayu000/caude-skill-manager)** - Terminal package manager
 3. **API** - Direct JSON access
 
+**Repo layout note:** the browsable `skills/**` archive is designed to live in a separate **data repo** (Scheme 2). See `SCHEME2_SPLIT.md`.
+
 ## Highlights
 
 - **44,000+ Unique Skills** - Deduplicated, quality collection
@@ -131,7 +133,7 @@ claude-skill-registry/
 │   ├── discover_by_topic.py
 │   ├── security_scanner.py
 │   └── ...
-└── skills/                 # SKILL.md files (data)
+└── skills/                 # Skill archive (moved to registry-data repo)
 ```
 
 ---
@@ -217,9 +219,12 @@ We welcome feedback! Please open an issue for:
 ### Contribute Code
 
 ```bash
-# Clone the repo
-git clone https://github.com/majiayu000/claude-skill-registry.git
+# Clone the repo (recommended: partial + sparse checkout to avoid 200k+ files)
+git clone --filter=blob:none --sparse https://github.com/majiayu000/claude-skill-registry.git
 cd claude-skill-registry
+
+# Pull only what you need (add more paths later if needed, e.g. skills/development)
+git sparse-checkout set --cone docs scripts sources schema
 
 # Install dependencies
 pip install -r requirements.txt
@@ -231,6 +236,8 @@ python scripts/build_search_index.py --registry registry.json --output docs
 cd docs && python -m http.server 8000
 # Visit http://localhost:8000
 ```
+
+See `docs/FAST_CLONE.md` for more options (existing clones, getting full checkout, Windows notes).
 
 ---
 

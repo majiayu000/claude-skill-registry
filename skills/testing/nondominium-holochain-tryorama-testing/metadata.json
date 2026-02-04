@@ -1,8 +1,0 @@
-{
-  "name": "nondominium-holochain-tryorama-testing",
-  "repo": "Sensorica/nondominium",
-  "category": "testing",
-  "description": "Specialized skill for testing nondominium Holochain applications with Tryorama, providing comprehensive test patterns, agent simulation workflows, performance testing, and multi-agent scenario testing",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:09.400210Z"
-}

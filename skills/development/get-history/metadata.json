@@ -1,8 +1,0 @@
-{
-  "name": "get-history",
-  "repo": "cowwoc/styler",
-  "category": "development",
-  "description": "Access raw conversation history from Claude Code session storage for audit and analysis",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:48.030579Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "adding-api-sources",
-  "description": "Use when implementing a new data source adapter for metapyle, before writing any source code",
-  "repo": "stabilefrisur/metapyle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

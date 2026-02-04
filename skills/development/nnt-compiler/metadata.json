@@ -1,8 +1,0 @@
-{
-  "name": "nnt-compiler",
-  "repo": "theslyprofessor/claude-skills",
-  "category": "development",
-  "description": "Work with the NNT (Nakul Notation Tool) compiler - parse music notation shorthand, query musical structures, and export to MusicXML, ABC, and other formats for PhD research and educational content",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:58.929924Z"
-}

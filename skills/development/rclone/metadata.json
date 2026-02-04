@@ -1,7 +1,0 @@
-{
-  "name": "rclone",
-  "description": "Upload, sync, and manage files across cloud storage providers using rclone. Use when uploading files (images, videos, documents) to S3, Cloudflare R2, Backblaze B2, Google Drive, Dropbox, or any S3-co",
-  "category": "development",
-  "source": "github.com/EveryInc/compound-engineering-plugin",
-  "imported_at": "2026-01-24T14:54:11.909627Z"
-}

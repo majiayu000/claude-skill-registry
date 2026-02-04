@@ -1,9 +1,0 @@
-{
-  "name": "commitments",
-  "description": "Extract and track builder commitments from critique exegesis. Use /commitments to audit promises made in prose, verify implementation status, and identify unfulfilled obligations.",
-  "repo": "ardeshir/krzy",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "beta",
-  "description": "Build and upload iOS app to TestFlight",
-  "repo": "greenstevester/fastlane-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

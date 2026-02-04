@@ -1,9 +1,0 @@
-{
-  "name": "grey-haven-data-validation",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "data",
-  "description": "Comprehensive data validation using Pydantic v2 with data quality monitoring and schema alignment for PlanetScale PostgreSQL. Use when implementing API validation, database schema alignment, or data q",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:13.460728Z",
-  "dir_name": "grey-haven-data-validation"
-}

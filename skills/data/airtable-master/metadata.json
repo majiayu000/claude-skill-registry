@@ -1,9 +1,0 @@
-{
-  "name": "airtable-master",
-  "description": "Shared resource library for Airtable integration skills. DO NOT load directly - provides common references (setup, API docs, error handling, field types) and scripts used by airtable-connect, airtable",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

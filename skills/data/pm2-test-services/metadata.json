@@ -1,9 +1,0 @@
-{
-  "name": "pm2-test-services",
-  "description": "Activate when managing PM2 services for Playwright test reports, trace viewers, or other test artifacts. Includes starting/stopping services, generating dynamic workspace URLs (Coder/VS Code), and vie",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

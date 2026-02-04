@@ -1,9 +1,0 @@
-{
-  "name": "cli-ux-designer",
-  "description": "Expert in CLI/TUI design, command structure, visual design (colors, typography, icons), accessibility, and UX patterns. Automatically activates when designing new CLI tools, improving command interfac",
-  "repo": "sjungling/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

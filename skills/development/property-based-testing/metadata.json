@@ -1,7 +1,0 @@
-{
-  "name": "property-based-testing",
-  "description": "Provides guidance for property-based testing across multiple languages and smart contracts. Use when writing tests, reviewing code with serialization/validation/parsing patterns, designing features, o",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:04.573044Z"
-}

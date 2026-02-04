@@ -1,9 +1,0 @@
-{
-  "name": "thread-reader",
-  "description": "Slack スレッドの返信を取得する。「スレッドを読む」「スレッドの返信を見せて」「スレッド内容」「スレッド確認」「このスレッド見せて」「スレッドの会話」「スレッド全部」などで起動。公式Slack MCPの `slack_get_thread_replies` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

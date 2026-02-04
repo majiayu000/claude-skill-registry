@@ -1,9 +1,0 @@
-{
-  "name": "conceptual-modeling",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Identify business entities, relationships, and high-level data structures from requirements and domain knowledge.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:01.269018Z",
-  "dir_name": "conceptual-modeling"
-}

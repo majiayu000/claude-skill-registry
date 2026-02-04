@@ -1,9 +1,0 @@
-{
-  "name": "beamer-unesp",
-  "description": "Gerar apresentações Beamer LaTeX no padrão UNESP dark mode. Usar quando o usuário pedir para criar slides, apresentações, ou palestras em Beamer/LaTeX. O template usa tema Madrid com cores escuras (fu",
-  "repo": "neylemkeunesp/beamer-unesp-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

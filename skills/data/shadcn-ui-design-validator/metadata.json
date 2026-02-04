@@ -1,9 +1,0 @@
-{
-  "name": "shadcn-ui-design-validator",
-  "description": "Automatically validates frontend design patterns to prevent generic aesthetics (Inter fonts, purple gradients, minimal animations) and enforce distinctive, branded design during Tanstack Start (React)",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

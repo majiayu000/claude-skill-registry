@@ -1,9 +1,0 @@
-{
-  "name": "cursor-extension-integration",
-  "description": "Integrate VS Code extensions with Cursor. Triggers on \"cursor extensions\",\"cursor vscode extensions\", \"cursor plugins\", \"cursor marketplace\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "text-statistics",
-  "repo": "leegonzales/AISkills",
-  "category": "documents",
-  "description": "Analyze text for word count, reading time, complexity metrics, and readability scores. Use when user asks to analyze document length, calculate reading time, or assess text complexity.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:50.674865Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "vanilla-rails-hotwire",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "development",
-  "description": "Use when writing Hotwire (Turbo/Stimulus) code in Rails - enforces dom_id helpers, morph updates, focused Stimulus controllers, and JavaScript private methods",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.445969Z"
-}

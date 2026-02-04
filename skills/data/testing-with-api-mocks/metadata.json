@@ -1,9 +1,0 @@
-{
-  "name": "testing-with-api-mocks",
-  "description": "Start here for all API mocking in tests. Covers auto-generation, fixtures, and when to use other skills. Required reading before creating, refactoring, or modifying any test involving API calls.",
-  "repo": "stacklok/toolhive-studio",
-  "category": "development",
-  "tags": [],
-  "stars": 81,
-  "source": "github.com/stacklok/toolhive-studio"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "decomplect-py",
-  "description": "Architectural code analysis for Python design quality. Evaluates simplicity (Rich Hickey), functional core/imperative shell (Gary Bernhardt), and coupling (Constantine & Yourdon). Use for design revie",
-  "repo": "zby/llm-do",
-  "category": "development",
-  "tags": [],
-  "stars": 6,
-  "source": "github.com/zby/llm-do"
-}

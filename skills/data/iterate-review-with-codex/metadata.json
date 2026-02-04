@@ -1,9 +1,0 @@
-{
-  "name": "iterate-review-with-codex",
-  "description": "Activate when user mentions \"codex review\", \"code review\", \"fix pr code review\". This skill provides guidance on how to effectively collaborate with codex to do a interate code review.",
-  "repo": "qtnx/qtnx-claude-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pikacss-dev",
-  "description": "Develop, test, and document the PikaCSS monorepo (core engine, unplugin adapters, Vite/Nuxt plugins, docs site) using pnpm-based workflows.",
-  "repo": "pikacss/pikacss",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

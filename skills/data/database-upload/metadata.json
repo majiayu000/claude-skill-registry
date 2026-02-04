@@ -1,9 +1,0 @@
-{
-  "name": "database-upload",
-  "repo": "MontassarbellahAbdallah/Construction_cost_estimation_system",
-  "category": "data",
-  "description": "Upload estimation results to Supabase storage and register with Estimator API. Final phase of the estimation workflow.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:12.423805Z",
-  "dir_name": "database-upload"
-}

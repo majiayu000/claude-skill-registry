@@ -1,9 +1,0 @@
-{
-  "name": "stan-fundamentals",
-  "description": "Foundational knowledge for writing Stan 2.37 models including program structure, type system, distributions, and best practices. Use when creating or reviewing Stan models.",
-  "repo": "choxos/BayesianAgent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

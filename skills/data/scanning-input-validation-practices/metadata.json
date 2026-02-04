@@ -1,9 +1,0 @@
-{
-  "name": "scanning-input-validation-practices",
-  "description": "Scan for input validation vulnerabilities and injection risks. Use when reviewing user input handling. Trigger with 'scan input validation', 'check injection vulnerabilities', or 'validate sanitizatio",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

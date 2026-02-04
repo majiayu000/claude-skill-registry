@@ -1,8 +1,0 @@
-{
-  "name": "diagrammer-tailwind-style",
-  "repo": "Kazan/diagrammer",
-  "category": "design",
-  "description": "MANDATORY for any web UI or styling change. Must be followed whenever touching web/src UI, layout, or CSS. Absolutely no shadows, glows, or flares; keep everything flat and token-driven.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:36.095725Z"
-}

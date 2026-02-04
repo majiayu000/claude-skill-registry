@@ -1,8 +1,0 @@
-{
-  "name": "claude-agent-sdk-tool-integration",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when integrating tools, permissions, and MCP servers with Claude AI agents using the Agent SDK.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.475442Z"
-}

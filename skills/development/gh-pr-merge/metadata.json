@@ -1,8 +1,0 @@
-{
-  "name": "gh-pr-merge",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "description": "Merge GitHub pull requests using gh CLI. Supports merge, squash, and rebase strategies with auto-merge option. Use when PR is approved and ready to merge.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:27.340072Z"
-}

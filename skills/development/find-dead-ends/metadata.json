@@ -1,8 +1,0 @@
-{
-  "name": "find-dead-ends",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find dead-end notes (have backlinks but no outgoing links). Triggers on \"dead ends\", \"dead end notes\", \"endpoint notes\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:55.823291Z"
-}

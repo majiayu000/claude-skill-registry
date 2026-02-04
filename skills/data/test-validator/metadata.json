@@ -1,9 +1,0 @@
-{
-  "name": "test-validator",
-  "description": "Validates PHP test files for CakePHP projects, ensuring compliance with testing standards including proper documentation format, Configure::read usage, and avoiding prohibited patterns",
-  "repo": "masanao-ohba/claude-manifests",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

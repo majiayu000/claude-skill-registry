@@ -1,9 +1,0 @@
-{
-  "name": "commit-messenger",
-  "description": "コミットメッセージの命名規則を設定する。「コミットメッセージ設定」「コミット規則」「コミット形式を設定」「コミットメッセージルール」「commit message 設定」「コミットの書き方を設定」「コミットフォーマット」などで起動。プロジェクト固有のコミットメッセージルールを管理。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "typescript-strict-checks",
-  "description": "Use when fixing TypeScript errors, implementing new features, or reviewing code. Ensures adherence to strict mode with noUncheckedIndexedAccess and exactOptionalPropertyTypes. Automatically applied to",
-  "repo": "wendleyw/brianna-dawes-studio-app",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

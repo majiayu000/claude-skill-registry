@@ -1,9 +1,0 @@
-{
-  "name": "sqlite-db-truncate",
-  "description": "This skill should be used when recovering data from corrupted or truncated SQLite databases. Apply this skill when a .db file cannot be opened with standard SQLite tools, when binary truncation has oc",
-  "repo": "letta-ai/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/letta-ai/skills"
-}

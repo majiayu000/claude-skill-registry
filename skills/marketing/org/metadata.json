@@ -1,8 +1,0 @@
-{
-  "name": "org",
-  "repo": "vdemeester/home",
-  "category": "marketing",
-  "description": "Org-mode file manipulation using Emacs batch mode. USE WHEN you need to programmatically read, parse, or modify org-mode files (.org) for TODOs, notes, or other structured content.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.261716Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "type-checking-pattern",
-  "description": "Fix F821 undefined name errors for optional dependencies using TYPE_CHECKING",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

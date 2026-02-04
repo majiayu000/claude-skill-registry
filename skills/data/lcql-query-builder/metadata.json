@@ -1,9 +1,0 @@
-{
-  "name": "lcql-query-builder",
-  "description": "Activate when the user needs help writing, optimizing, or understanding LimaCharlie Query Language (LCQL) queries for searching telemetry.",
-  "repo": "tekgrunt/boot-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

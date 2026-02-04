@@ -1,9 +1,0 @@
-{
-  "name": "podman-debug",
-  "description": "Diagnose and troubleshoot Podman container issues. Use when the user says \"container crashing\", \"podman logs\", \"debug container\", \"container not starting\", \"exec into container\", or asks why a contain",
-  "repo": "mhalder/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

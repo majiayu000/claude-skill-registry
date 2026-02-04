@@ -1,7 +1,0 @@
-{
-  "name": "chart-implementation",
-  "description": "Create or update interactive charts for car registration and COE data visualization. Use when adding new chart types, fixing chart bugs, or implementing data visualizations.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.481843Z"
-}

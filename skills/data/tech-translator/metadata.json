@@ -1,9 +1,0 @@
-{
-  "name": "tech-translator",
-  "description": "This skill should be used when users need to translate technical documents, API documentation, academic papers, or any technical content while preserving technical accuracy and terminology. It special",
-  "repo": "stallboy/claude-code-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

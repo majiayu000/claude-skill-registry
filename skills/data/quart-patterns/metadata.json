@@ -1,9 +1,0 @@
-{
-  "name": "quart-patterns",
-  "description": "Comprehensive guide to common Quart async patterns including app factory, blueprints, async sessions, background tasks, error handling, and WebSocket patterns. Activates when implementing Quart featur",
-  "repo": "gizix/cc_projects",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

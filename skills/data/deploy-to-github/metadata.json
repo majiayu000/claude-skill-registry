@@ -1,9 +1,0 @@
-{
-  "name": "deploy-to-github",
-  "description": "Set up GitHub Actions to deploy this repository via AWS Deployer - creates workflow, updates CloudFormation template with required parameters, and generates parameter files.",
-  "repo": "savaki/savaki-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

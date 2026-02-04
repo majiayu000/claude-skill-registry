@@ -1,9 +1,0 @@
-{
-  "name": "story-planning",
-  "repo": "Mharbulous/SyncoPaid",
-  "category": "data",
-  "description": "Use when user says \"plan story\", \"plan next feature\", \"create implementation plan\", \"what's ready to plan\", or asks to plan an approved story - looks up approved story-nodes from story-tree database, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:31.887189Z",
-  "dir_name": "story-planning"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "codex-skills-directory-skill-codex",
-  "description": "Use when the user asks to run Codex CLI (codex exec, codex resume) or references OpenAI Codex for code analysis, refactoring, or automated editing",
-  "category": "development",
-  "source": "github.com/skills-directory/skill-codex",
-  "imported_at": "2026-01-24T14:54:17.147804Z"
-}

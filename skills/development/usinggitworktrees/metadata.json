@@ -1,8 +1,0 @@
-{
-  "name": "usinggitworktrees",
-  "repo": "vdemeester/home",
-  "category": "development",
-  "description": "Creates isolated git worktrees with smart directory selection and safety verification for parallel development. USE WHEN starting feature work that needs isolation from current workspace OR before exe",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.411009Z"
-}

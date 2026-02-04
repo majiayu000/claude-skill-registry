@@ -1,9 +1,0 @@
-{
-  "name": "baml-integration",
-  "description": "Generic BAML patterns for type-safe LLM prompting. Covers schema design, DTO generation, client wrappers, and cross-language codegen. Framework-agnostic.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

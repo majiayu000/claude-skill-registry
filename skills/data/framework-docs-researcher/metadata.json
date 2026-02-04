@@ -1,9 +1,0 @@
-{
-  "name": "framework-docs-researcher",
-  "description": "Use this agent when needing to gather comprehensive documentation and best practices for specific frameworks, libraries, or dependencies in a project. Specializes in fetching official documentation, e",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

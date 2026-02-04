@@ -1,7 +1,0 @@
-{
-  "name": "clinical-decision-support-davila7-claude-code-templates",
-  "description": "Generate professional clinical decision support (CDS) documents for pharmaceutical and clinical research settings, including patient cohort analyses (biomarker-stratified with outcomes) and treatment ",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:22.903199Z"
-}

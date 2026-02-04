@@ -1,9 +1,0 @@
-{
-  "name": "github-issue-fetcher",
-  "description": "This skill should be used when users need to fetch GitHub issues from the current repository, including getting the next issue to work on, retrieving specific issue fields (body, number, title, labels",
-  "repo": "rawveg/skillsforge-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

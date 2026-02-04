@@ -1,9 +1,0 @@
-{
-  "name": "git-workflow-standards",
-  "description": "Automatically applies when working with git. Ensures conventional commits, branch naming, PR templates, release workflow, and version control best practices.",
-  "repo": "ricardoroche/ricardos-claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

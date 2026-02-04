@@ -1,9 +1,0 @@
-{
-  "name": "product-story",
-  "description": "Generates user stories, spikes, and bugs from a PRD or questions. Plans the stories, refines them one by one with the user, and creates them directly in Linear. Use when you need to break down require",
-  "repo": "gabriel-tecnologia/gab-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gabriel-tecnologia/gab-claude"
-}

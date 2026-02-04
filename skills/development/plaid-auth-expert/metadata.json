@@ -1,7 +1,0 @@
-{
-  "name": "plaid-auth-expert",
-  "description": "Expert on Plaid Auth product for bank account authentication and verification. Covers account and routing number retrieval, account ownership verification, balance checks, and integration patterns. In",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.993196Z"
-}

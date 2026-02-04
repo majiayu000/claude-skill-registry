@@ -1,9 +1,0 @@
-{
-  "name": "agent-orchestrate",
-  "description": "Multi-agent task orchestration for Claude Code. When given multiple tasks to execute, use this skill to spawn parallel worker agents through Sibyl's MetaOrchestrator instead of Claude Code's built-in ",
-  "repo": "hyperb1iss/sibyl",
-  "category": "development",
-  "tags": [],
-  "stars": 9,
-  "source": "github.com/hyperb1iss/sibyl"
-}

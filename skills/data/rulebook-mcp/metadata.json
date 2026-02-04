@@ -1,9 +1,0 @@
-{
-  "name": "rulebook-mcp",
-  "description": "MCP server integration for programmatic task and skill management. Use when managing tasks via MCP protocol, enabling/disabling skills programmatically, or integrating Rulebook with AI assistants thro",
-  "repo": "hivellm/rulebook",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

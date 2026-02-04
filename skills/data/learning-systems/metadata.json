@@ -1,9 +1,0 @@
-{
-  "name": "learning-systems",
-  "description": "Implicit feedback scoring, confidence decay, and anti-pattern detection. Use when understanding how the swarm plugin learns from outcomes, implementing learning loops, or debugging why patterns are be",
-  "repo": "joelhooks/swarm-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

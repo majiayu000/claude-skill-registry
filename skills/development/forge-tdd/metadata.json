@@ -1,8 +1,0 @@
-{
-  "name": "forge-tdd",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "Enforces test-driven development workflow for Claude Code. Implements Red-Green-Refactor cycle with configurable gates. Use when writing code, implementing features, or fixing bugs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.732819Z"
-}

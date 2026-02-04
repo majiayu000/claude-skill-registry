@@ -1,9 +1,0 @@
-{
-  "name": "saas-project-orchestrator",
-  "description": "Complete SaaS project creation orchestrator. Triggers when user wants to start a new SaaS project, build a full-stack application, or initialize a project from scratch. Guides through all SDLC phases.",
-  "repo": "mavric/devenv",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "prompt-guidelines-commands",
-  "repo": "warpcode/dotfiles",
-  "category": "design",
-  "description": "Command creation guidelines for encapsulating workflows into simple command invocations. Provides command syntax, error handling patterns, security validation, and complex command handling. Includes e",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:21.946771Z"
-}

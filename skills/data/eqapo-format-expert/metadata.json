@@ -1,9 +1,0 @@
-{
-  "name": "eqapo-format-expert",
-  "description": "Expert in EqualizerAPO configuration file format, parsing, and generation. Use when implementing EAPO config import/export, adding support for new filter types, or debugging config file issues.",
-  "repo": "iammarkps/eqapo-gui",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

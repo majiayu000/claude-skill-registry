@@ -1,9 +1,0 @@
-{
-  "name": "sast-horusec",
-  "description": "Multi-language static application security testing using Horusec with support for 18+ programming languages and 20+ security analysis tools. Performs SAST scans, secret detection in git history, and p",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

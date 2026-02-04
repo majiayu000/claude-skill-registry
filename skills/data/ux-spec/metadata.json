@@ -1,9 +1,0 @@
-{
-  "name": "ux-spec",
-  "description": "Generates UI/UX specifications with wireframes and design system. Creates UX_SPEC.md and DESIGN_SYSTEM.md from PRD and Architecture specs. Use when designing app interface and creating design system.",
-  "repo": "rshankras/claude-code-apple-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/rshankras/claude-code-apple-skills"
-}

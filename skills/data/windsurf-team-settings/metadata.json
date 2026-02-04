@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-team-settings",
-  "description": "Manage team-wide Windsurf settings and AI policies. Activate when users mention\"team settings\", \"organization config\", \"team policies\", \"shared settings\",or \"team standardization\". Handles team config",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "elixir-verification-gate",
-  "description": "MANDATORY verification before claiming anything works. Run actual commands, read actual output, provide evidence. Use when claiming tests pass, build succeeds, or code works.",
-  "repo": "mkreyman/bmad-elixir",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

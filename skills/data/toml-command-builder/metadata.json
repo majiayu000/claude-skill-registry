@@ -1,9 +1,0 @@
-{
-  "name": "toml-command-builder",
-  "description": "Guide for building Gemini CLI TOML custom commands. Covers syntax, templates, argument handling, shell injection, and file injection. Use when creating Gemini TOML commands, adding {{args}} argument h",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

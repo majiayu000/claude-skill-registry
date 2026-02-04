@@ -1,9 +1,0 @@
-{
-  "name": "cc-hooks-creator",
-  "description": "This skill should be used when users want to create, configure, or debug Claude Code hooks. Hooks are shell commands that execute at various points in Claude Code's lifecycle (PreToolUse, PostToolUse,",
-  "repo": "hongbietcode/synthetic-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/hongbietcode/synthetic-claude"
-}

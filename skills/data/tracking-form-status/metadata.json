@@ -1,9 +1,0 @@
-{
-  "name": "tracking-form-status",
-  "description": "Teaches useFormStatus hook for tracking form submission state in React 19. Use when implementing submit buttons, form loading states, or pending indicators.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

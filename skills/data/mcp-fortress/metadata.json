@@ -1,9 +1,0 @@
-{
-  "name": "mcp-fortress",
-  "description": "Scan MCP servers for security vulnerabilities, prompt injection attacks, and tool poisoning. Use this when the user wants to check if an MCP server is safe, analyze security risks, detect malicious to",
-  "repo": "mcp-fortress/mcp-fortress",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

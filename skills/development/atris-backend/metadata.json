@@ -1,8 +1,0 @@
-{
-  "name": "atris-backend",
-  "repo": "atrislabs/atris",
-  "category": "development",
-  "description": "Backend architecture policy. Use when building APIs, services, data access, or any backend work. Prevents over-engineering.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:11.029975Z"
-}

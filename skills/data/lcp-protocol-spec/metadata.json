@@ -1,9 +1,0 @@
-{
-  "name": "lcp-protocol-spec",
-  "description": "Edit LCP protocol docs under docs/protocol/ in BOLT-style (TLVs, message formats, state flow).",
-  "repo": "YusukeShimizu/lightning-compute-protocol",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

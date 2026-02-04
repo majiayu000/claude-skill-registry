@@ -1,9 +1,0 @@
-{
-  "name": "meeting-actions",
-  "description": "会議メモからアクションアイテムを抽出するSkill。「アクションを抽出して」「TODOをまとめて」「会議のアクションは？」などのリクエストで自動発火する。",
-  "repo": "knishioka/machine-learning-workshop",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

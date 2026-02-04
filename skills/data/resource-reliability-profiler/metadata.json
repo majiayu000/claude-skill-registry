@@ -1,9 +1,0 @@
-{
-  "name": "resource-reliability-profiler",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Run commands under resource budgets and stop runs that exceed CPU, RAM, VRAM, disk write, or time thresholds. Use when reliability and resource constraints must be enforced.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.278349Z",
-  "dir_name": "resource-reliability-profiler"
-}

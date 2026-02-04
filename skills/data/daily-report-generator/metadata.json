@@ -1,9 +1,0 @@
-{
-  "name": "daily-report-generator",
-  "description": "GitコミットログとCalendar情報から日報・週報を自動生成するSkill。「日報を作って」「週報を書いて」「今週何やったか教えて」「スタンドアップノート」などのリクエストで自動発火する。",
-  "repo": "knishioka/machine-learning-workshop",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

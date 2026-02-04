@@ -1,9 +1,0 @@
-{
-  "name": "nano-banana-prompting",
-  "description": "This skill should be used when crafting prompts for Nano Banana Pro (Gemini image generation). Use when users want help writing image generation prompts, need guidance on prompt structure, or want to ",
-  "repo": "NikiforovAll/claude-code-rules",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "speckit-generator",
-  "description": "Project-focused specification and task management system with 6 individual commands. Each command MUST be invoked separately and requires user approval before proceeding. Commands: /speckit.init, /spe",
-  "repo": "ddunnock/claude-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

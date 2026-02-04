@@ -1,7 +1,0 @@
-{
-  "name": "cloudflare-worker-dev",
-  "repo": "erichowens/some_claude_skills",
-  "path": ".claude/skills/cloudflare-worker-dev/SKILL.md",
-  "source": "github.com/erichowens/some_claude_skills",
-  "downloaded_at": "2026-01-29T06:31:11.966226Z"
-}

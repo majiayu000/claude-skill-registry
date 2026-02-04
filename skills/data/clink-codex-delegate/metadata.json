@@ -1,9 +1,0 @@
-{
-  "name": "clink-codex-delegate",
-  "description": "Activate when user mentions \"clink codex\" to provide guidance on delegating implementation tasks to clink codex as a junior developer. Use when assigning coding tasks, discussing task delegation, or w",
-  "repo": "qtnx/qtnx-claude-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

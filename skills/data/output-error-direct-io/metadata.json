@@ -1,9 +1,0 @@
-{
-  "name": "output-error-direct-io",
-  "description": "Fix direct I/O in Output SDK workflow functions. Use when workflow hangs, returns undefined, shows \"workflow must be deterministic\" errors, or when HTTP/API calls are made directly in workflow code.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

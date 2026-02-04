@@ -1,9 +1,0 @@
-{
-  "name": "mongoose-mongodb",
-  "description": "Work with MongoDB in Node.js using Mongoose ODM for schema design, CRUD operations, relationships, and advanced queries",
-  "repo": "pluginagentmarketplace/custom-plugin-nodejs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

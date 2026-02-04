@@ -1,9 +1,0 @@
-{
-  "name": "regulatory-document-parser",
-  "description": "Parse regulatory document templates (PDF/DOCX) into structured markdown and extract section hierarchies using semtools. Use when tasks involve: analyzing regulatory templates, extracting document stru",
-  "repo": "jayashan10/dossierflow-ai-wireframe-blueprint",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

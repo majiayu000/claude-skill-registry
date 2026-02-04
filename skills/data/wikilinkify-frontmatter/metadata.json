@@ -1,9 +1,0 @@
-{
-  "name": "wikilinkify-frontmatter",
-  "repo": "bencassie/flywheel",
-  "category": "data",
-  "description": "Convert plain text frontmatter values to wikilinks when they match existing notes. Triggers on \"wikilinkify frontmatter\", \"link frontmatter\", \"convert to wikilinks\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:32.145438Z",
-  "dir_name": "wikilinkify-frontmatter"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "playwright-fixtures-and-hooks",
-  "description": "Use when managing test state and infrastructure with reusable Playwright fixtures and lifecycle hooks for efficient test setup and teardown.",
-  "repo": "TheBushidoCollective/han",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/TheBushidoCollective/han"
-}

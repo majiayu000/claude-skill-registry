@@ -1,8 +1,0 @@
-{
-  "name": "show-section",
-  "repo": "bencassie/flywheel",
-  "category": "testing",
-  "description": "Get the content under a specific heading in a note without reading the entire file. Triggers on \"extract section\", \"get section\", \"content under heading\", \"section content\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:32.538793Z"
-}

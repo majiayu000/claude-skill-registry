@@ -1,9 +1,0 @@
-{
-  "name": "waterfall-development",
-  "description": "Enforces strict waterfall development workflow with phase gates. Use when (1) features.yml exists in project root, (2) user asks to implement/develop/build a feature, (3) user explicitly requests wate",
-  "repo": "Chemiseblanc/ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

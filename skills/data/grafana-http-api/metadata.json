@@ -1,9 +1,0 @@
-{
-  "name": "grafana-http-api",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "data",
-  "description": "Comprehensive skill for interacting with Grafana's HTTP API to manage dashboards, data sources, folders, alerting, annotations, users, teams, and organizations. Use when Claude needs to (1) Create, re",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:32.962691Z",
-  "dir_name": "grafana-http-api"
-}

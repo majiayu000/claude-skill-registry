@@ -1,9 +1,0 @@
-{
-  "name": "sentry-advanced-troubleshooting",
-  "description": "Advanced Sentry troubleshooting techniques.Use when debugging complex SDK issues, missing events,source map problems, or performance anomalies.Trigger with phrases like \"sentry not working\", \"debug se",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

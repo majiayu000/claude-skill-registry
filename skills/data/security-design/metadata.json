@@ -1,9 +1,0 @@
-{
-  "name": "security-design",
-  "description": "Design security controls and threat mitigations. Use for features involving auth, data, or external exposure.",
-  "repo": "amattas/agentic-coding",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

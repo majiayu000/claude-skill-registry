@@ -1,9 +1,0 @@
-{
-  "name": "ops-responder",
-  "description": "Respond to incidents and apply remediations - restart services, scale resources,clear caches, update configurations, rollback deployments, apply fixes, verifyremediation success, document actions take",
-  "repo": "fractary/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

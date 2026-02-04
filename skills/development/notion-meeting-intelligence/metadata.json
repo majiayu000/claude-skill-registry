@@ -1,7 +1,0 @@
-{
-  "name": "notion-meeting-intelligence",
-  "description": "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:21.810095Z"
-}

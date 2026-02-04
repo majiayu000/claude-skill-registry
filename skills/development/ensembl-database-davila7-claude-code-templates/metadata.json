@@ -1,7 +1,0 @@
-{
-  "name": "ensembl-database-davila7-claude-code-templates",
-  "description": "Query Ensembl genome database REST API for 250+ species. Gene lookups, sequence retrieval, variant analysis, comparative genomics, orthologs, VEP predictions, for genomic research.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:22.785359Z"
-}

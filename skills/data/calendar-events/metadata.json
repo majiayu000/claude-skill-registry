@@ -1,9 +1,0 @@
-{
-  "name": "calendar-events",
-  "description": "Google Calendar の予定を取得する。「今日の予定」「今週の予定」「今月の予定」「カレンダー予定」「スケジュール確認」などで起動。期間を指定可能。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

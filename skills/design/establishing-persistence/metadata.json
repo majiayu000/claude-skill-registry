@@ -1,8 +1,0 @@
-{
-  "name": "establishing-persistence",
-  "repo": "trilwu/secskills",
-  "category": "design",
-  "description": "Establish persistence on Windows and Linux systems using registry keys, scheduled tasks, services, cron jobs, SSH keys, backdoor accounts, and rootkits. Use when performing post-exploitation or mainta",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:11.102112Z"
-}

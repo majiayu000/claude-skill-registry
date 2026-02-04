@@ -1,9 +1,0 @@
-{
-  "name": "slime-strategy",
-  "description": "Use when user wants to set up slime mold exploration strategy with parallel autonomy branches for genetic algorithm approach to problem-solving",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

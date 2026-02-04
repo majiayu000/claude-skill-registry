@@ -1,9 +1,0 @@
-{
-  "name": "scrnaseq-pipeline",
-  "description": "End-to-end single-cell RNA-seq workflow from 10X Genomics data to annotated cell types. Covers QC, normalization, clustering, marker detection, and cell type annotation.",
-  "repo": "GPTomics/bioSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GPTomics/bioSkills"
-}

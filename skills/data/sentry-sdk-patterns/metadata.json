@@ -1,9 +1,0 @@
-{
-  "name": "sentry-sdk-patterns",
-  "description": "Best practices for using Sentry SDK in TypeScript and Python.Use when implementing error handling patterns, structuring Sentry code,or optimizing SDK usage.Trigger with phrases like \"sentry best pract",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

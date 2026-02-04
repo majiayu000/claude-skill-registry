@@ -1,9 +1,0 @@
-{
-  "name": "exoplanet-workflows",
-  "description": "General workflows and best practices for exoplanet detection and characterization from light curve data. Use when planning an exoplanet analysis pipeline, understanding when to use different methods, ",
-  "repo": "benchflow-ai/skillsbench",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/benchflow-ai/skillsbench"
-}

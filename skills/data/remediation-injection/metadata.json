@@ -1,9 +1,0 @@
-{
-  "name": "remediation-injection",
-  "description": "Security fix patterns for injection vulnerabilities (SQL, Command, XSS). Provides language-specific code examples showing vulnerable and secure implementations.",
-  "repo": "Zate/cc-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

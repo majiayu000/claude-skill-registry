@@ -1,8 +1,0 @@
-{
-  "name": "go-file-splitting",
-  "repo": "dkoosis/cc-plugins",
-  "category": "design",
-  "description": "This skill should be used when the user asks about \"file size\", \"large file\", \"split file\", \"file too long\", \"LOC limit\", \"organize Go files\", or needs guidance on when and how to split large Go sourc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:19.437082Z"
-}

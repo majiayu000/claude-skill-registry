@@ -1,8 +1,0 @@
-{
-  "name": "get-session-id",
-  "repo": "cowwoc/styler",
-  "category": "development",
-  "description": "Session ID is automatically injected at SessionStart via echo-session-id.sh hook",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:48.187654Z"
-}

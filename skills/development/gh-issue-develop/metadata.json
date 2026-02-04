@@ -1,8 +1,0 @@
-{
-  "name": "gh-issue-develop",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "description": "Start working on a GitHub issue by creating a linked branch using gh CLI. Automatically creates and checks out a branch linked to the issue. Use when beginning work on an issue.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:25.427676Z"
-}

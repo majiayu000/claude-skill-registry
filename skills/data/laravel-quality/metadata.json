@@ -1,9 +1,0 @@
-{
-  "name": "laravel-quality",
-  "description": "Code quality tooling with PHPStan, Pint, and strict types. Use when working with code quality, static analysis, formatting, or when user mentions PHPStan, Pint, quality, static analysis, type safety, ",
-  "repo": "leeovery/claude-laravel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

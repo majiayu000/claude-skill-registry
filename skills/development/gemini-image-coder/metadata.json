@@ -1,8 +1,0 @@
-{
-  "name": "gemini-image-coder",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "description": "Gemini image coder - Generate and edit images using Google's Gemini API. Supports text-to-image, image editing, multi-turn refinement, and composition from multiple reference images. Use when user ask",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:28.881168Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "validating-pre-commit",
-  "description": "Runs quality gate checks before commit or push. Executes lint fixes, TypeScript compilation, tests, and CI validation. Reproduces CI failures locally. Triggers on: pre-commit, pre-push, quality check,",
-  "repo": "saleor/configurator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

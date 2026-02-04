@@ -1,9 +1,0 @@
-{
-  "name": "pr-submission",
-  "description": "Automatically submit pull requests with full autonomous workflow. Use when the user mentions creating a PR, submitting a PR, merging changes, opening a pull request, or wants to get their changes revi",
-  "repo": "kenotron-ms/amplifier-setup",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

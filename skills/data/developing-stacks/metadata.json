@@ -1,9 +1,0 @@
-{
-  "name": "developing-stacks",
-  "description": "Use when deploying components via Atmos stacks, configuring stack YAML, or understanding inheritance patterns. Covers catalog defaults, abstract components, stack imports, and how to wire components i",
-  "repo": "cloudposse/docs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

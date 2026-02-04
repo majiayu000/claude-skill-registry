@@ -1,9 +1,0 @@
-{
-  "name": "model-diagnostics",
-  "description": "MCMC diagnostics for Bayesian models including convergence assessment, effective sample size, divergences, and posterior predictive checks.",
-  "repo": "choxos/BayesianAgent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

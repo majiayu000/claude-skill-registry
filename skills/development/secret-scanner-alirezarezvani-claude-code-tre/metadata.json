@@ -1,7 +1,0 @@
-{
-  "name": "secret-scanner-alirezarezvani-claude-code-tre",
-  "description": "Detect exposed secrets, API keys, credentials, and tokens in code. Use before commits, on file saves, or when security is mentioned. Prevents accidental secret exposure. Triggers on file changes, git ",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.918976Z"
-}

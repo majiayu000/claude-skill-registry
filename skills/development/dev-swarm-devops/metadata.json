@@ -1,8 +1,0 @@
-{
-  "name": "dev-swarm-devops",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "description": "Setup development environment, MCP tools, GitHub repository, and Docker configurations. Use when user asks to setup devops, configure development environment, or start Stage 8 after tech specs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:13.601144Z"
-}

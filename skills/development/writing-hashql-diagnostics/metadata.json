@@ -1,7 +1,0 @@
-{
-  "name": "writing-hashql-diagnostics",
-  "description": "HashQL diagnostic writing patterns using hashql-diagnostics crate. Use when creating error messages, warnings, Labels, Messages, Severity levels, Patches, Suggestions, or improving diagnostic quality ",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.499127Z"
-}

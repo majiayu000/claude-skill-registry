@@ -1,9 +1,0 @@
-{
-  "name": "zensical-debug",
-  "description": "Debug and visually verify zensical sites with Chrome DevTools. Combines zensical development best practices with Chrome MCP port management. User-invocable with /zensical-debug.",
-  "repo": "zeulewan/zeul-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

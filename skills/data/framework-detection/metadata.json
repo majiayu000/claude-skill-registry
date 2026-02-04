@@ -1,9 +1,0 @@
-{
-  "name": "framework-detection",
-  "description": "Detects Solidity development framework (Foundry, Hardhat, or Hybrid) and adapts workflows accordingly. Use at the start of any Solidity development task to determine which tools and commands to use.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "claudemd-optimization",
-  "description": "Optimize CLAUDE.md following best practices from humanlayer.dev - apply after /init to transform verbose output into focused, high-leverage project context",
-  "repo": "tianzecn/myclaudecode",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

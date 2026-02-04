@@ -1,9 +1,0 @@
-{
-  "name": "pop-validation-engine",
-  "description": "Validate plugin integrity and offer safe auto-fixes for common issues - checks agents, skills, hooks, routing config, and plugin structure",
-  "repo": "jrc1883/popkit-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jrc1883/popkit-claude"
-}

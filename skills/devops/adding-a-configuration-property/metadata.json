@@ -1,8 +1,0 @@
-{
-  "name": "adding-a-configuration-property",
-  "repo": "microbus-io/fabric",
-  "category": "devops",
-  "description": "Creates or modify a configuration property of a microservice. Use when explicitly asked by the user to create or modify a configuration property of a microservice, or when it makes sense to externaliz",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.660740Z"
-}

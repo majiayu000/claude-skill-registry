@@ -1,9 +1,0 @@
-{
-  "name": "sealed-secrets",
-  "description": "Create sealed secrets for Kubernetes using kubeseal",
-  "repo": "aaronwald/dlawskillz",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

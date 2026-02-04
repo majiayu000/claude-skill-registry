@@ -1,9 +1,0 @@
-{
-  "name": "multi-service-debug",
-  "description": "多服务调试技能：针对 Vercel + GCP Cloud Run 混合架构的调试工作流。Use when: 跨服务问题排查、日志聚合分析、服务间通信调试、生产环境故障定位。Triggers: \"调试\", \"debug\", \"日志\", \"logs\", \"错误\", \"error\", \"服务\", \"service\", \"通信\", \"超时\", \"timeout\"",
-  "repo": "dseirz-rgb/worker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "path-tracing-reverse",
-  "description": "Guidance for reverse engineering graphics rendering programs (ray tracers, path tracers) from binary executables. This skill should be used when tasked with recreating a program that generates images ",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

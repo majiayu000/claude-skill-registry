@@ -1,9 +1,0 @@
-{
-  "name": "nativephp-plugin-structure",
-  "repo": "NativePHP/ClaudePlugins",
-  "category": "data",
-  "description": "This skill explains NativePHP plugin structure and configuration. Use when the user asks about \"plugin structure\", \"nativephp.json\", \"plugin manifest\", \"composer.json setup\", \"service provider\", \"faca",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:17.112462Z",
-  "dir_name": "nativephp-plugin-structure"
-}

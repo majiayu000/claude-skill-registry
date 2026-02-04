@@ -1,9 +1,0 @@
-{
-  "name": "postgresql-syntax-reference",
-  "repo": "pgschema/pgschema",
-  "category": "data",
-  "description": "Consult PostgreSQL's parser and grammar (gram.y) to understand SQL syntax, DDL statement structure, and parsing rules when implementing pgschema features",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:16.589550Z",
-  "dir_name": "postgresql-syntax-reference"
-}

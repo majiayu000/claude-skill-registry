@@ -1,9 +1,0 @@
-{
-  "name": "markdowntown-workbench",
-  "description": "Use this when working on the Workbench UI, Workbench state/store, export/compile pipeline, or adapter/target behavior (agents-md, claude-code, github-copilot, etc.).",
-  "repo": "joelklabo/markdowntown-cli",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

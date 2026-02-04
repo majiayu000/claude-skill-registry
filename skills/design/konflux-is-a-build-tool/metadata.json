@@ -1,8 +1,0 @@
-{
-  "name": "konflux-is-a-build-tool",
-  "repo": "konflux-ci/skills",
-  "category": "design",
-  "description": "Use this skill to query Konflux objects from the Kubernetes cluster. Konflux objects are application, component, pipelinerun, taskrun, snapshot and release. The skill can be used to query logs from fa",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:01.709302Z"
-}

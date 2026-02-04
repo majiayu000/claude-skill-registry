@@ -1,8 +1,0 @@
-{
-  "name": "mcp-configuration-management",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "product",
-  "description": "Comprehensive MCP server configuration templates, .mcp.json management, API key handling, and server installation helpers. Use when configuring MCP servers, managing .mcp.json files, setting up API ke",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:27.180100Z"
-}

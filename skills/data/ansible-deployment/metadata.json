@@ -1,9 +1,0 @@
-{
-  "name": "ansible-deployment",
-  "description": "Ansible을 활용한 서버 배포 자동화 패턴. diff 확인, SSH 인증, copy 모듈, playbook 구조가 필요할 때 사용하세요.",
-  "repo": "ssiumha/dots",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

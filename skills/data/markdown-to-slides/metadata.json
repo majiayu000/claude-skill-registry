@@ -1,9 +1,0 @@
-{
-  "name": "markdown-to-slides",
-  "description": "MarkdownファイルをPowerPointプレゼンテーション（PPTX）に変換するSkill。「Markdownをスライドに変換して」「プレゼン資料を作って」「PPTXを生成して」などのリクエストで自動発火する。python-pptxライブラリを使用。",
-  "repo": "knishioka/machine-learning-workshop",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

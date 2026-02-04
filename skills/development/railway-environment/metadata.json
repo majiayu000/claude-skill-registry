@@ -1,7 +1,0 @@
-{
-  "name": "railway-environment",
-  "description": "Query, stage, and apply configuration changes for Railway environments. Use for ANY variable or env var operations, service configuration (source, build settings, deploy settings), lifecycle (delete s",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.780037Z"
-}

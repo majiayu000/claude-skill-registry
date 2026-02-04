@@ -1,8 +1,0 @@
-{
-  "name": "curating-jujutsu-commits",
-  "repo": "edmundmiller/dotfiles",
-  "category": "development",
-  "description": "Help curate and organize commits in jujutsu repositories. Use when working with multiple commits, WIP changes, or preparing work for sharing. Suggests when to split, squash, or reorganize commits base",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:11.904252Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "native-code-patterns",
-  "repo": "NativePHP/ClaudePlugins",
-  "category": "development",
-  "description": "This skill provides Kotlin and Swift code patterns for NativePHP plugins. Use when the user asks about \"bridge function pattern\", \"kotlin bridge\", \"swift bridge\", \"BridgeFunction class\", \"BridgeRespon",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:17.113392Z"
-}

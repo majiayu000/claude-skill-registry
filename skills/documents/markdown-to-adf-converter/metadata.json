@@ -1,8 +1,0 @@
-{
-  "name": "markdown-to-adf-converter",
-  "repo": "sethdford/claude-plugins",
-  "category": "documents",
-  "description": "Convert Markdown content to Confluence's ADF (Atlassian Document Format) for creating and updating pages. Use when creating Confluence pages from README files, documentation, or any Markdown content. ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:52.997369Z"
-}

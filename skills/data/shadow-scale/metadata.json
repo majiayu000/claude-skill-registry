@@ -1,9 +1,0 @@
-{
-  "name": "shadow-scale",
-  "description": "Generates layered box-shadow elevation tokens for depth hierarchy. Use when creating elevation systems, card shadows, modal depth, or dark mode shadow variants. Outputs CSS, Tailwind, or JSON.",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

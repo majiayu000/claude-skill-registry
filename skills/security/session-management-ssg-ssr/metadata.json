@@ -1,8 +1,0 @@
-{
-  "name": "session-management-ssg-ssr",
-  "repo": "MuhammedSuhaib/LevelUpSpeckit-Plus",
-  "category": "security",
-  "description": "Expert skill for implementing session management in SSG (Static Site Generation) and SSR (Server-Side Rendering) contexts. Covers stateless authentication with JWT, database session management, client",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:54.028294Z"
-}

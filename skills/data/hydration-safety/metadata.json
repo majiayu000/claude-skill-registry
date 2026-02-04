@@ -1,9 +1,0 @@
-{
-  "name": "hydration-safety",
-  "description": "Next.js SSR hydration patterns and best practices. Use when fixing hydration mismatches, implementing client-only features, or working with localStorage/browser APIs.",
-  "repo": "omerakben/omer-akben",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

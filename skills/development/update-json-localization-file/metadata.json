@@ -1,8 +1,0 @@
-{
-  "name": "update-json-localization-file",
-  "repo": "ericfitz/tmi-ux",
-  "category": "development",
-  "description": "Update a JSON localization file with additions and deletions while preserving formatting. Use when modifying i18n translation files or syncing localization keys.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.545089Z"
-}

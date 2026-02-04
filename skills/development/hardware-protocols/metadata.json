@@ -1,8 +1,0 @@
-{
-  "name": "hardware-protocols",
-  "repo": "rghamilton3/dotfiles",
-  "category": "development",
-  "description": "Expert hardware communication protocols including MQTT, I2C, SPI, UART, BLE, and WiFi. Use when implementing device-to-device communication, designing MQTT messaging systems, configuring bus protocols",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:53.798899Z"
-}

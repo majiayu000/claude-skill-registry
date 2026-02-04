@@ -1,9 +1,0 @@
-{
-  "name": "validating-api-contracts",
-  "description": "Validate API contracts using consumer-driven contract testing (Pact, Spring Cloud Contract).Use when performing specialized testing.Trigger with phrases like \"validate API contract\", \"run contract tes",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

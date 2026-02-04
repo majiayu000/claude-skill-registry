@@ -1,9 +1,0 @@
-{
-  "name": "siliconflow-api-skills",
-  "description": "硅基流动（SiliconFlow）云服务平台文档。用于大语言模型 API 调用、图片生成、向量模型、在 Claude Code 中使用硅基流动、Chat Completions API、Stream 模式等。",
-  "repo": "wwwzhouhui/skills_collection",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

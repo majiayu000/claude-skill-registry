@@ -1,9 +1,0 @@
-{
-  "name": "make-mips-interpreter",
-  "description": "Guidance for building MIPS interpreters or emulators that execute MIPS binaries. This skill applies when implementing CPU emulation, ELF loaders, instruction decoders, or syscall handlers for MIPS arc",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "suggest-reviewers-helper",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "description": "Git blame analysis helper for the suggest-reviewers command",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.241299Z"
-}

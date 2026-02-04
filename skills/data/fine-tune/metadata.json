@@ -1,9 +1,0 @@
-{
-  "name": "fine-tune",
-  "description": "Use when you need to fine-tune(ファインチューニング) and optimize LangGraph applications based on evaluation criteria. This skill performs iterative prompt optimization for LangGraph nodes without changing the ",
-  "repo": "hiroshi75/ccplugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

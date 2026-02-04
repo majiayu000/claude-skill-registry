@@ -1,9 +1,0 @@
-{
-  "name": "project-data-separation",
-  "description": "Pattern for separating repository code from user data and notebooks. Trigger: organizing scientific pipelines, separating code from data",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

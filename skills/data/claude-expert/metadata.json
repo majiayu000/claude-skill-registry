@@ -1,9 +1,0 @@
-{
-  "name": "claude-expert",
-  "description": "Essential reference for ALL Claude Code artifact work (Skills, Commands, Subagents, Hooks, Plugins). Automatically activates when creating, updating, validating, or discussing any Claude Code artifact",
-  "repo": "eLafo/ouroboros",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

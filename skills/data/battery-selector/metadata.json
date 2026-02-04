@@ -1,9 +1,0 @@
-{
-  "name": "battery-selector",
-  "description": "Helps choose the right battery type and charging solution for Arduino/ESP32/RP2040 projects. Use when user asks about battery options, charging circuits, power source selection, or says \"what battery ",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

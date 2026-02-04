@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-app-debugging-devtools",
-  "description": "Debug WebF app runtime issues with Chrome DevTools (console/network/elements) and JS-side troubleshooting. Use when the user mentions DevTools console, network tab, stack traces, blank screen, layout ",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

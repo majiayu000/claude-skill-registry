@@ -1,8 +1,0 @@
-{
-  "name": "bloodbank-event-system",
-  "repo": "delorenj/skills",
-  "category": "devops",
-  "description": "Use this skill when facilitating communication between different systems in the 33GOD ecosystem. Every action in the pipeline is invoked by an event published by Bloodbank. Simiarly, every result is p",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:28.356218Z"
-}

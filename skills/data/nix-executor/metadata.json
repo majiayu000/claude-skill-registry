@@ -1,9 +1,0 @@
-{
-  "name": "nix-executor",
-  "description": "Use when you need to test Nix expressions, validate Nix configuration syntax before applying, debug Nix code or understand evaluation results, inspect derivation attributes, or evaluate flake outputs ",
-  "repo": "kitsunoff/Nix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

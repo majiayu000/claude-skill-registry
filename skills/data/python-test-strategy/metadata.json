@@ -1,9 +1,0 @@
-{
-  "name": "python-test-strategy",
-  "description": "Python unit testing patterns for pytest, including test file structure, fixtures, mocks, and coverage strategy. Use when asked to write tests (unit/integration) for any Python module, function, class,",
-  "repo": "MacHu-GWU/sanhe-claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

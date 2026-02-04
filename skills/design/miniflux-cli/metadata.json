@@ -1,8 +1,0 @@
-{
-  "name": "miniflux-cli",
-  "repo": "goofansu/miniflux-cli",
-  "category": "design",
-  "description": "Command-line interface for managing Miniflux feeds. Use for authentication, adding feeds, and searching entries.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:57.588614Z"
-}

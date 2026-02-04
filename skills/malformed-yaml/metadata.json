@@ -1,7 +1,0 @@
-{
-  "name": "malformed-yaml",
-  "repo": "netresearch/composer-agent-skill-plugin",
-  "path": "tests/Fixtures/malformed-yaml/SKILL.md",
-  "source": "github.com/netresearch/composer-agent-skill-plugin",
-  "downloaded_at": "2026-01-29T08:57:07.598119Z"
-}

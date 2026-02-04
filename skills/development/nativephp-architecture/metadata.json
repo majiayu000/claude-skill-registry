@@ -1,8 +1,0 @@
-{
-  "name": "nativephp-architecture",
-  "repo": "NativePHP/ClaudePlugins",
-  "category": "development",
-  "description": "This skill provides understanding of NativePHP Mobile internals. Use when the user asks about \"how NativePHP works\", \"god method\", \"nativephp_call\", \"bridge functions\", \"bridge registration\", \"EDGE sy",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:17.044988Z"
-}

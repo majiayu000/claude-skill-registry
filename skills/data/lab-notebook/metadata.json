@@ -1,9 +1,0 @@
-{
-  "name": "lab-notebook",
-  "description": "This skill should be used when creating a new experiment, starting lab notebook, recording experimental results, documenting observations, or exporting notebooks to PDF/typst. Triggered by requests li",
-  "repo": "dakesan/bioinformatics-research-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

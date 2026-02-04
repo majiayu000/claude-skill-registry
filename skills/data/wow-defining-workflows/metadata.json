@@ -1,9 +1,0 @@
-{
-  "name": "wow-defining-workflows",
-  "repo": "wahidyankf/open-sharia-enterprise",
-  "category": "data",
-  "description": "Workflow pattern standards for creating multi-agent orchestrations including YAML frontmatter (name, description, tags, status, agents, parameters), execution phases (sequential/parallel/conditional),",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:44.615198Z",
-  "dir_name": "wow-defining-workflows"
-}

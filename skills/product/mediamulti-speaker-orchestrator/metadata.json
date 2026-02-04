@@ -1,8 +1,0 @@
-{
-  "name": "mediamulti-speaker-orchestrator",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "product",
-  "description": "Orchestrate multi-voice TTS production: assign speakers, chunk dialogue, dispatch to voices, sync timing, and mix into a final track. Use after dialogue-dramatizer produces script turns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:32.088253Z"
-}

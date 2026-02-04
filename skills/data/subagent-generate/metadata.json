@@ -1,9 +1,0 @@
-{
-  "name": "subagent-generate",
-  "description": "Skills群に対応するサブエージェント（.claude/agents/*.md）を設計・生成する。「サブエージェント作成」「並列処理エージェント」「専門エージェント」を依頼されたときに使用する。",
-  "repo": "matsuni-kk/agent_template_public",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

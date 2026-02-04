@@ -1,9 +1,0 @@
-{
-  "name": "write-compressor",
-  "description": "Guidance for implementing encoders/compressors that must produce output compatible with an existing decoder/decompressor. This skill applies when tasked with writing compression algorithms, arithmetic",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

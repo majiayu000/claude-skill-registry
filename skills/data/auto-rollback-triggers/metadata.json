@@ -1,9 +1,0 @@
-{
-  "name": "auto-rollback-triggers",
-  "description": "Error rate monitoring, SLO detection, and notification webhooks for automated rollback triggers. Use when setting up automated deployment rollback, monitoring error rates, configuring SLO thresholds, ",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

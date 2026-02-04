@@ -1,9 +1,0 @@
-{
-  "name": "sentry-rate-limits",
-  "description": "Manage Sentry rate limits and quota optimization.Use when hitting rate limits, optimizing event volume,or managing Sentry costs.Trigger with phrases like \"sentry rate limit\", \"sentry quota\",\"reduce se",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

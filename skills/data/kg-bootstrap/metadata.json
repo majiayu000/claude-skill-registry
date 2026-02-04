@@ -1,9 +1,0 @@
-{
-  "name": "kg-bootstrap",
-  "description": "Creates and bootstraps Knowledge Graph projects from video transcripts. Extracts entities (people, organizations, concepts) and relationships into searchable graphs. Use when users want to build a kno",
-  "repo": "costiash/CognivAgent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

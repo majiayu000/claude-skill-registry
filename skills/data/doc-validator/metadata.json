@@ -1,9 +1,0 @@
-{
-  "name": "doc-validator",
-  "description": "Validate documentation files for completeness, accuracy, and consistency with the codebase. Use when user mentions \"check documentation\", \"validate docs\", \"is the README up to date?\", requests documen",
-  "repo": "poindexter12/waypoint",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/poindexter12/waypoint"
-}

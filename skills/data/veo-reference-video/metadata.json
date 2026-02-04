@@ -1,9 +1,0 @@
-{
-  "name": "veo-reference-video",
-  "description": "Generate video with consistent subject appearance using reference images via fal.ai Veo 3.1. Use when the user wants to create a video featuring specific people, objects, or characters that should loo",
-  "repo": "bluewaves-creations/bluewaves-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bluewaves-creations/bluewaves-skills"
-}

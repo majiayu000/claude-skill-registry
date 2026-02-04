@@ -1,9 +1,0 @@
-{
-  "name": "test-before-commit",
-  "description": "Enforces running unit tests and linting before committing code changes in the unsealed-networks repository",
-  "repo": "unsealed-networks/unsealed-networks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

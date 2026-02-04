@@ -1,9 +1,0 @@
-{
-  "name": "semantic-translation",
-  "description": "This skill should be used when the user uses ambiguous terminology like \"make it talk\", \"we need an api\", \"make it portable\", \"check for gaps\", asks meta-questions like \"am I making sense?\", \"does thi",
-  "repo": "jcmrs/jcmrs-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

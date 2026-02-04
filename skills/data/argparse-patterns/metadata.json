@@ -1,9 +1,0 @@
-{
-  "name": "argparse-patterns",
-  "description": "Standard library Python argparse examples with subparsers, choices, actions, and nested command patterns. Use when building Python CLIs without external dependencies, implementing argument parsing, cr",
-  "repo": "vanman2024/cli-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "launchpad",
-  "description": "Interact with Canonical's Launchpad platform (launchpad.net) using the lp-api CLI tool. Use when working with Ubuntu/Debian packages, bugs, builds, people, projects, or any Launchpad resources. Trigge",
-  "repo": "fourdollars/lp-api",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "ark-analysis",
-  "repo": "dwmkerr/ark-claude-code-marketplace",
-  "category": "development",
-  "description": "Analyze the Ark codebase by cloning the repository to a temporary location. Use this skill when the user asks questions about how Ark works, wants to understand Ark's implementation, or needs to exami",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.243233Z"
-}

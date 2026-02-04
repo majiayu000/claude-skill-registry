@@ -1,9 +1,0 @@
-{
-  "name": "ibkr-gateway-api",
-  "description": "Use when working in mm-ibkr-gateway to access market data, account summary, positions, PnL, or orders via the REST API (FastAPI). Covers starting the API server, required env and safety settings, auth",
-  "repo": "MrRolie/mm-ibkr-gateway",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

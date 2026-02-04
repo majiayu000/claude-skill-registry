@@ -1,9 +1,0 @@
-{
-  "name": "rust-async-concurrency",
-  "description": "Manage concurrent operations with channels, semaphores, locks, and streams. Use when coordinating parallel work or limiting resource usage.",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

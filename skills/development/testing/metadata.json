@@ -1,7 +1,0 @@
-{
-  "name": "testing",
-  "description": "Writing effective tests and running them successfully. Covers layer-specific mocking rules, test design principles, debugging failures, and flaky test management. Use when writing tests, reviewing tes",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.476088Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pdca-framework",
-  "description": "Human-supervised PDCA (Plan-Do-Check-Act) framework for AI-assisted code generation. Use when generating production code with AI agents to maintain quality, reduce technical debt, and keep humans enga",
-  "repo": "kenjudy/pdca-code-generation-process",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "wow-moment-detector",
-  "repo": "Positive-LLC/pg-agent-coach",
-  "category": "product",
-  "description": "Detects when a Claude Code session reaches a \"wow moment\" worth sharing with the team. A wow moment occurs during intensive back-and-forth discussions where both user and Claude deeply engage on a top",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:42.509075Z"
-}

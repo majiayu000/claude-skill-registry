@@ -1,9 +1,0 @@
-{
-  "name": "asciinema-streaming-backup",
-  "description": "Real-time asciinema recording backup to GitHub orphan branch with idle-based chunking and brotli archival. TRIGGERS - streaming backup, recording backup, asciinema backup, continuous recording, sessio",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "branch-puller",
-  "description": "Pull branches from remote repository with intelligent conflict resolution",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

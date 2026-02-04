@@ -1,9 +1,0 @@
-{
-  "name": "optimizing-query-selection",
-  "description": "Optimize queries by selecting only required fields and avoiding N+1 problems. Use when writing queries with relations or large result sets.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

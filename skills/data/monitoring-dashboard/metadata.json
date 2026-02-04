@@ -1,9 +1,0 @@
-{
-  "name": "monitoring-dashboard",
-  "description": "Training monitoring dashboard setup with TensorBoard and Weights & Biases (WandB) including real-time metrics tracking, experiment comparison, hyperparameter visualization, and integration patterns. U",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

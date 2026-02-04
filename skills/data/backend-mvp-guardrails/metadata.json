@@ -1,9 +1,0 @@
-{
-  "name": "backend-mvp-guardrails",
-  "description": "Use when designing or reviewing a backend MVP with tight budget, evolving schema, and reliance on third-party backends where idempotency, replay, and responsibility attribution are high-risk.",
-  "repo": "victorGPT/vibeusage",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

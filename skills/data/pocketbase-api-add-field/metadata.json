@@ -1,9 +1,0 @@
-{
-  "name": "pocketbase-api-add-field",
-  "description": "This skill should be used when the user asks to \"add fields to PocketBase collection\", \"modify PocketBase schema\", \"add new collection fields\", \"update PocketBase collection\", \"PocketBase JavaScript S",
-  "repo": "Whamp/whamp-claude-tools",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

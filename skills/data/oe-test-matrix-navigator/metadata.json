@@ -1,9 +1,0 @@
-{
-  "name": "oe-test-matrix-navigator",
-  "description": "Maps a code change or bug symptom to the smallest high-signal test subset. Use when deciding what tests to run (DET_/FLOW_/REG_), when a regression guard mentions a test ID, or when you need a minimal",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

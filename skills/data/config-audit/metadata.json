@@ -1,9 +1,0 @@
-{
-  "name": "config-audit",
-  "description": "This skill should be used when auditing or comparing Claude Code and Cursor IDE configurations to identify feature gaps, equivalencies, and migration opportunities. Useful when managing AI development",
-  "repo": "amhuppert/my-ai-resources",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

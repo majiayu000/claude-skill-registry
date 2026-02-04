@@ -1,8 +1,0 @@
-{
-  "name": "cargo-lint",
-  "repo": "scalar0/skills",
-  "category": "development",
-  "description": "Run cargo fmt and clippy with consistent flags in sequence. Formats code first, then runs clippy with auto-fixes. Trigger when asked to lint, check, or format Rust code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:15.180147Z"
-}

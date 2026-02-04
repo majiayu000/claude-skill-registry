@@ -1,8 +1,0 @@
-{
-  "name": "test-nextflow-example-script",
-  "repo": "nextflow-io/training",
-  "category": "documents",
-  "description": "Test a Nextflow script by running it, verifying outputs, testing resume functionality, and comparing results with documentation. Use when validating that example scripts work correctly and match their",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:28.016272Z"
-}

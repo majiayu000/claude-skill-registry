@@ -1,9 +1,0 @@
-{
-  "name": "prow-job-analyze-test-failure",
-  "description": "Analyze a failed test by inspecting the code in the current project and artifacts in Prow CI job. Provide a detailed analysis of the test failure in a pre-defined format.",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

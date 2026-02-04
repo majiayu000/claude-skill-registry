@@ -1,9 +1,0 @@
-{
-  "name": "tmux-debug",
-  "description": "Capture and analyze tmux pane content for debugging other sessions or background processes",
-  "repo": "richardgill/nix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

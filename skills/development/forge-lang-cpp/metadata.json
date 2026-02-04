@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-cpp",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "C++ development standards including make/cmake, g++/clang++, and static analysis. Use when working with C++ files (.cpp, .hpp, .cc, .hh).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.192455Z"
-}

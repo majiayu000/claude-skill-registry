@@ -1,9 +1,0 @@
-{
-  "name": "quality-gates-skill-golfergeek-orchestrator-ai",
-  "description": "CRITICAL: Code must pass all quality gates before committing: lint, format, test, build.",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GolferGeek/orchestrator-ai"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "token-budgeting",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Estimate and optimize AI/ML costs including token usage, context window management, batch processing, and caching strategies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.830260Z",
-  "dir_name": "token-budgeting"
-}

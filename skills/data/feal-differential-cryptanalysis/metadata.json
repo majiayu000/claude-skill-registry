@@ -1,9 +1,0 @@
-{
-  "name": "feal-differential-cryptanalysis",
-  "description": "Guidance for implementing differential cryptanalysis attacks on FEAL (Fast Data Encipherment Algorithm) and similar block ciphers. This skill should be used when tasks involve recovering round keys, i",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

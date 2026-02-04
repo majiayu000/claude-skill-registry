@@ -1,9 +1,0 @@
-{
-  "name": "snowtower-admin",
-  "description": "Advanced skill for SnowTower infrastructure administrators. Use for SnowDDL operations, user provisioning, role management, CI/CD deployments, troubleshooting, and Snowflake administration. Triggers o",
-  "repo": "Database-Tycoon/SnowTower",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

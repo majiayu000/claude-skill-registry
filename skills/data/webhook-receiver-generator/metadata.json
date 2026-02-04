@@ -1,9 +1,0 @@
-{
-  "name": "webhook-receiver-generator",
-  "description": "Webhook Receiver Generator - Auto-activating skill for API Integration.Triggers on: webhook receiver generator, webhook receiver generatorPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

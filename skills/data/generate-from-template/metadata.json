@@ -1,9 +1,0 @@
-{
-  "name": "generate-from-template",
-  "description": "Generates artifacts from templates by substituting {{VARIABLE}} placeholders with actual values.Uses template-engine.sh for deterministic variable substitution.",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

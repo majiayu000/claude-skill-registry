@@ -1,9 +1,0 @@
-{
-  "name": "npm-publisher",
-  "description": "This skill must be loaded via the skill tool when the user mentions anything related to publishing or release an npm package. It contains essential knowledge about the complete release workflow. Thing",
-  "repo": "klaudworks/universal-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

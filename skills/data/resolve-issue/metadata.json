@@ -1,9 +1,0 @@
-{
-  "name": "resolve-issue",
-  "description": "Provides a systematic workflow for resolving GitHub Issues. Use this skill when assigned a GitHub Issue or when delegated by the Issue Auto-resolver.",
-  "repo": "kokuyouwind/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

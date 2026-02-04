@@ -1,7 +1,0 @@
-{
-  "name": "linear-valian-linear-cli-skill",
-  "description": "Work with Linear issues via CLI - use this skill whenever the user asks about Linear issues, creating, updating, commenting on, or deleting issues, or checking issue status and details",
-  "category": "development",
-  "source": "github.com/Valian/linear-cli-skill",
-  "imported_at": "2026-01-24T14:53:56.979632Z"
-}

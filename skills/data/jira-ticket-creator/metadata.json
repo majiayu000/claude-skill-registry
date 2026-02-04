@@ -1,9 +1,0 @@
-{
-  "name": "jira-ticket-creator",
-  "description": "Creates well-structured JIRA tickets in the HYPERFLEET project with required fields including What/Why/Acceptance Criteria, story points, and activity type. Activates when users ask to create a ticket",
-  "repo": "openshift-hyperfleet/hyperfleet-claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

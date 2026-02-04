@@ -1,9 +1,0 @@
-{
-  "name": "contract-patterns",
-  "description": "Common Solidity design patterns and implementations for secure smart contract development. Use when implementing standard functionality like access control, upgradeability, or token standards.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

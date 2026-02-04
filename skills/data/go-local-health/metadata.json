@@ -1,9 +1,0 @@
-{
-  "name": "go-local-health",
-  "description": "Run local Go health checks (tests, coverage, lint) in Go repositories that contain go.mod/go.sum. Use when the user asks to run or interpret local Go test/coverage/lint workflows using tools like lazy",
-  "repo": "regenrek/agent-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "basic-caching-evaluation",
-  "description": "Evaluation of BaSiC illumination correction caching - NOT RECOMMENDED for sparse markers. Trigger: optimizing BaSiC, caching illumination correction",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "plugin-installer",
-  "description": "Help users find and install OpenCode plugins. Use when user asks \"is there a plugin for X?\", \"how do I install Y plugin?\", \"what plugins are available?\", or needs help configuring plugins in opencode.",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

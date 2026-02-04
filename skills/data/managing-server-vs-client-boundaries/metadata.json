@@ -1,9 +1,0 @@
-{
-  "name": "managing-server-vs-client-boundaries",
-  "description": "Teaches when to use Server Components vs Client Components in React 19, including the 'use client' directive and boundary patterns. Use when architecting components, choosing component types, or worki",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

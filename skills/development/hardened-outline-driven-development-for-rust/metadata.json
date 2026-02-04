@@ -1,8 +1,0 @@
-{
-  "name": "hardened-outline-driven-development-for-rust",
-  "repo": "OutlineDriven/odin-claude-plugin",
-  "category": "development",
-  "description": "HODD-RUST: Validation-first Rust development. Strictly validation-first before-and-after(-and-while) planning and execution. Merges Type-driven + Spec-first + Proof-driven + Design-by-contracts. Use f",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:09.037291Z"
-}

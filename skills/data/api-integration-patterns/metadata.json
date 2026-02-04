@@ -1,9 +1,0 @@
-{
-  "name": "api-integration-patterns",
-  "description": "API integration patterns for autonomous-dev including subprocess safety, GitHub CLI integration, retry logic, authentication, rate limiting, and timeout handling. Use when integrating external APIs or",
-  "repo": "akaszubski/autonomous-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

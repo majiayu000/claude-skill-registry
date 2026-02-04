@@ -1,9 +1,0 @@
-{
-  "name": "platform-detection",
-  "description": "Detect project type and recommend deployment platform. Use when deploying projects, choosing hosting platforms, analyzing project structure, or when user mentions deployment, platform selection, MCP s",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

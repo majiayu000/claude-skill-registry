@@ -1,8 +1,0 @@
-{
-  "name": "linux-production-shell-scripts",
-  "repo": "zebbern/claude-code-guide",
-  "category": "product",
-  "description": "This skill should be used when the user asks to \"create bash scripts\", \"automate Linux tasks\", \"monitor system resources\", \"backup files\", \"manage users\", or \"write production shell scripts\". It provi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:41.281068Z"
-}

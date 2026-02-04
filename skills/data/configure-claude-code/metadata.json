@@ -1,9 +1,0 @@
-{
-  "name": "configure-claude-code",
-  "description": "Applies personalized Claude Code settings. Use when setting up Claude Code preferences on a new machine.",
-  "repo": "PerArneng/computer-conf-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

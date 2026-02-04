@@ -1,8 +1,0 @@
-{
-  "name": "node-tuning-helper-scripts",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "development",
-  "description": "Generate tuned manifests and evaluate node tuning snapshots",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.918989Z"
-}

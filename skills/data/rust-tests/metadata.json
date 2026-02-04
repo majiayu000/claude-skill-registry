@@ -1,9 +1,0 @@
-{
-  "name": "rust-tests",
-  "description": "Run and debug Rust tests for glhf. Use when running tests, fixing test failures, or adding new test cases.",
-  "repo": "TrevorS/glhf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

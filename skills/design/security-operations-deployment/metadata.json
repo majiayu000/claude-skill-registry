@@ -1,8 +1,0 @@
-{
-  "name": "security-operations-deployment",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "design",
-  "description": "Operational security guidance for deployment, monitoring, and maintenance. Use this skill when you need to understand which middlewares to apply, configure environment variables, monitor security post",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.644499Z"
-}

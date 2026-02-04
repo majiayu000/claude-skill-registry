@@ -1,8 +1,0 @@
-{
-  "name": "ruby-refactoring-expert",
-  "repo": "ag0os/rails-dev-plugin",
-  "category": "development",
-  "description": "Automatically invoked when analyzing code quality, refactoring, or maintainability. Triggers on mentions of \"code smell\", \"refactor\", \"code quality\", \"technical debt\", \"complexity\", \"maintainability\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:33.666588Z"
-}

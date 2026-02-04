@@ -1,9 +1,0 @@
-{
-  "name": "blackbox",
-  "description": "Use when restoring previous file versions, querying file modification history, recovering from accidental edits, or understanding how blackbox flight recorder works for file snapshots and disaster rec",
-  "repo": "pproenca/dot-claude-old",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

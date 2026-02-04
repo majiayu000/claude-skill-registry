@@ -1,9 +1,0 @@
-{
-  "name": "impl-api",
-  "description": "Implementar routers e schemas da API em api/. Use quando criar endpoint, rota, schema de request/response, ou registrar router.",
-  "repo": "ciandt-fulvio/synth-lab",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

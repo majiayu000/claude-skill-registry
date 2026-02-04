@@ -1,9 +1,0 @@
-{
-  "name": "deploying-public-apps",
-  "description": "Deploys public-facing apps that handle their own authentication (like Jellyfin, game servers) without Authelia forward auth",
-  "repo": "saavy1/sb",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

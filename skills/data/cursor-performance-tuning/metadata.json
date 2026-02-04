@@ -1,9 +1,0 @@
-{
-  "name": "cursor-performance-tuning",
-  "description": "Optimize Cursor IDE performance. Triggers on \"cursor performance\",\"cursor slow\", \"cursor optimization\", \"cursor memory\", \"speed up cursor\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

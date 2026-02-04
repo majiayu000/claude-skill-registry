@@ -1,7 +1,0 @@
-{
-  "name": "context-engineering-neolabhq-context-engineering-k",
-  "description": "Understand the components, mechanics, and constraints of context in agent systems. Use when writing, editing, or optimizing commands, skills, or sub-agents prompts.",
-  "category": "development",
-  "source": "github.com/NeoLabHQ/context-engineering-kit",
-  "imported_at": "2026-01-24T14:54:08.693625Z"
-}

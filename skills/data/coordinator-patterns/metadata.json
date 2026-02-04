@@ -1,9 +1,0 @@
-{
-  "name": "coordinator-patterns",
-  "description": "master-coordinator 和 review-coordinator 共享的通用模式，包括 Phase 验证、错误处理、TodoWrite 管理和状态说明。所有 coordinator agents 应引用此 skill 以保持一致性。",
-  "repo": "penkzhou/swiss-army-knife-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

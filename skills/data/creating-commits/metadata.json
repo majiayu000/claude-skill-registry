@@ -1,9 +1,0 @@
-{
-  "name": "creating-commits",
-  "description": "Use before EVERY git commit - no exceptions. Enforces pre-commit quality checks, atomic commits, and conventional commit format to prevent hook failures and maintain clean history",
-  "repo": "zookanalytics/claude-devcontainer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

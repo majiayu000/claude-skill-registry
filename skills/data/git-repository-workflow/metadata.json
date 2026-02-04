@@ -1,9 +1,0 @@
-{
-  "name": "git-repository-workflow",
-  "description": "Provides Git repository workflow guidelines including branch management, testing practices (TDD), Docker environment handling, and PR workflow. Use this skill when implementing features, fixing bugs, ",
-  "repo": "kokuyouwind/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

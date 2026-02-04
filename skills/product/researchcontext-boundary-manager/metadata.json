@@ -1,8 +1,0 @@
-{
-  "name": "researchcontext-boundary-manager",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "product",
-  "description": "Lock tasks to user-provided sources (PDF/txt/URL) by creating a per-task context container, ingesting and chunking only those sources, ranking chunks for relevance, and enforcing negative constraints ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.711620Z"
-}

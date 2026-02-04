@@ -1,9 +1,0 @@
-{
-  "name": "fullstack-template-generator",
-  "description": "Generates a complete fullstack application template with Python FastAPI backend and React Vite frontend. Includes OpenAI ChatGPT integration, CORS configuration, comprehensive error handling, and a mo",
-  "repo": "pingcy/deepagents-demo",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

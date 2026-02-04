@@ -1,8 +1,0 @@
-{
-  "name": "cicd-skill",
-  "repo": "pluginagentmarketplace/custom-plugin-devops",
-  "category": "devops",
-  "description": "CI/CD pipelines with Git, GitHub Actions, GitLab CI, Jenkins, and deployment strategies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:11.553032Z"
-}

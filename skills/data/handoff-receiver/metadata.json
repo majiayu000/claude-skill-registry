@@ -1,9 +1,0 @@
-{
-  "name": "handoff-receiver",
-  "description": "Parse and execute incoming handoffs from Cursor following the normalized handoff schema with mixed-capability phases (analysis and write-capable)",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

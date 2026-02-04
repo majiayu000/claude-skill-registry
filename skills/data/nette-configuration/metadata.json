@@ -1,9 +1,0 @@
-{
-  "name": "nette-configuration",
-  "description": "Provides Nette DI and services configuration guidelines. Use when configuring services.neon, common.neon, autowiring, or service definitions.",
-  "repo": "nette/claude-code",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

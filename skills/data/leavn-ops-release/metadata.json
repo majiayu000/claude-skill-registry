@@ -1,9 +1,0 @@
-{
-  "name": "leavn-ops-release",
-  "description": "Use this skill when preparing releases, generating changelogs, or creating release announcements.",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

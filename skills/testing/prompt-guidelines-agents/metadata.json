@@ -1,8 +1,0 @@
-{
-  "name": "prompt-guidelines-agents",
-  "repo": "warpcode/dotfiles",
-  "category": "testing",
-  "description": "Agent creation guidelines and protocols for eliminating ambiguity while preserving flexibility. Provides agent architecture patterns, security guardrails, permission tiers, and orchestration patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:21.013525Z"
-}

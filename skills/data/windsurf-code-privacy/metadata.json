@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-code-privacy",
-  "description": "Configure code privacy and data retention policies. Activate when users mention\"code privacy\", \"data retention\", \"privacy settings\", \"data governance\",or \"gdpr compliance\". Handles privacy and data pr",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

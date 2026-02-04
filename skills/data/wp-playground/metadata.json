@@ -1,9 +1,0 @@
-{
-  "name": "wp-playground",
-  "description": "Use for WordPress Playground workflows: fast disposable WP instances in browser or locally via @wp-playground/cli, auto-mounting plugins/themes, switching WP/PHP versions, blueprints, and debugging wi",
-  "repo": "vapvarun/claude-backup",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vapvarun/claude-backup"
-}

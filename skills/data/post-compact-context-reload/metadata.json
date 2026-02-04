@@ -1,9 +1,0 @@
-{
-  "name": "post-compact-context-reload",
-  "description": "Full context reload. Use after /clear, after compaction, or at session start. Loads conversation history, indexes docs, maps code, scans configs, checks git. Gets you immediately helpful.",
-  "repo": "Roger-Parkinson-EHP/agentic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

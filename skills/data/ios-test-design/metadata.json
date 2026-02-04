@@ -1,9 +1,0 @@
-{
-  "name": "ios-test-design",
-  "description": "XCTest/XCUITestを用いたiOSアプリのテスト設計支援スキル。テスト戦略立案、モック/スタブ設計、テストデータ管理、カバレッジ分析を包括的にサポート。Use when: iOSテスト設計、XCTest実装、UITest作成、テストカバレッジ向上、テスト戦略立案、テストダブル設計。",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

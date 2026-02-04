@@ -1,9 +1,0 @@
-{
-  "name": "agent-tools",
-  "description": "Reference for configuring tool permissions when launching Claude Code agents. Use when setting up --allowedTools flags, restricting file access, or configuring agent permissions.",
-  "repo": "jpoutrin/product-forge",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

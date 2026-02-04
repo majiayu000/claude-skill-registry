@@ -1,9 +1,0 @@
-{
-  "name": "make-distilled",
-  "description": "Transform raw captured content into distilled knowledge by extracting summary, key points, principles, patterns, entities, and quotes, storing the result in the distilled/ directory.",
-  "repo": "dudarev/ai-assisted-software-development",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

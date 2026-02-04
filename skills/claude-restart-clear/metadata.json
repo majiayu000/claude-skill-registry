@@ -1,7 +1,0 @@
-{
-  "name": "claude-restart-clear",
-  "repo": "ManuelKugelmann/BitBot",
-  "path": "container/templates/bitbot-config/.claude/skills/claude-restart-clear/skill.md",
-  "source": "github.com/ManuelKugelmann/BitBot",
-  "downloaded_at": "2026-01-29T08:58:11.466108Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "setup-deployer",
-  "description": "Interactive guide for installing and configuring AWS Deployer infrastructure - builds Lambda functions, deploys CloudFormation stacks, and sets up multi-account targets and GitHub OIDC integration.",
-  "repo": "savaki/savaki-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "ollama-service-persistence",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Create, update, and validate a persistent Windows service for Ollama (auto-start on boot), including setting OLLAMA_MODELS and managing the service lifecycle. Use when Ollama must be always-on or mode",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.946508Z"
-}

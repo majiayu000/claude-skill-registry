@@ -1,9 +1,0 @@
-{
-  "name": "action-creator",
-  "description": "Creates user-specific one-click action templates that execute email operations when clicked in the chat interface. Use when user wants reusable actions for their specific workflows (send payment remin",
-  "repo": "anthropics/claude-agent-sdk-demos",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

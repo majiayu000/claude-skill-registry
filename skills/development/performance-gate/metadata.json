@@ -1,8 +1,0 @@
-{
-  "name": "performance-gate",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "development",
-  "description": "Verify performance implications were considered and no obvious anti-patterns exist. Issues result in WARNINGS.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:52.516526Z"
-}

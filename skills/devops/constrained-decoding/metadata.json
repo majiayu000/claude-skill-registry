@@ -1,8 +1,0 @@
-{
-  "name": "constrained-decoding",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Restrict outputs to validated options to reduce hallucinations; use when asked to enforce strict output schemas.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.816140Z"
-}

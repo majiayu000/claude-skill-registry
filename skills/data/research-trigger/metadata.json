@@ -1,9 +1,0 @@
-{
-  "name": "research-trigger",
-  "description": "Natural language wrapper for research command - automatically triggers /research when users ask questions requiring deep research, best practices lookup, or multi-source information gathering",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

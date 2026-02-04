@@ -1,7 +1,0 @@
-{
-  "name": "parameter-optimization",
-  "description": "Explore and optimize simulation parameters via design of experiments (DOE), sensitivity analysis, and optimizer selection. Use for calibration, uncertainty studies, parameter sweeps, LHS sampling, Sob",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.231705Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "create-slash-command",
-  "description": "Create custom slash commands for Claude Code. Use when the user wants to create, add, or build a new slash command, custom command, or save a prompt as a command.",
-  "repo": "kaishin/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

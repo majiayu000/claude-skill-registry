@@ -1,9 +1,0 @@
-{
-  "name": "analyze-pr-performance",
-  "description": "Analyze code review pipeline performance for a specific PR. Use when investigating slow PRs, identifying bottlenecks, or debugging performance issues in code reviews.",
-  "repo": "kodustech/kodus-ai",
-  "category": "development",
-  "tags": [],
-  "stars": 870,
-  "source": "github.com/kodustech/kodus-ai"
-}

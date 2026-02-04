@@ -1,9 +1,0 @@
-{
-  "name": "gemini-command-development",
-  "description": "Expert guide for creating custom Gemini CLI commands. Covers slash command definitions (.toml), argument parsing, and shell execution. Use when creating custom Gemini commands, defining TOML command f",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

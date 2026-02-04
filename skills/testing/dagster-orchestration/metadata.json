@@ -1,8 +1,0 @@
-{
-  "name": "dagster-orchestration",
-  "repo": "Obsidian-Owl/floe-runtime",
-  "category": "testing",
-  "description": "ALWAYS USE when working with Dagster assets, resources, IO managers, schedules, sensors, or dbt integration.CRITICAL for: @asset decorators, @dbt_assets, DbtCliResource, ConfigurableResource, IO manag",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:24.292265Z"
-}

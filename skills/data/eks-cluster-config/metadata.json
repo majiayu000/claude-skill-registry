@@ -1,9 +1,0 @@
-{
-  "name": "eks-cluster-config",
-  "description": "Eks Cluster Config - Auto-activating skill for AWS Skills.Triggers on: eks cluster config, eks cluster configPart of the AWS Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

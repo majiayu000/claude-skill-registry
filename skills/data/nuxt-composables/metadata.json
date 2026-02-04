@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-composables",
-  "description": "Creating custom Vue composables with proper patterns. Use when building reusable stateful logic, shared state management, or encapsulating feature-specific behavior.",
-  "repo": "leeovery/claude-nuxt",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

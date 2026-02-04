@@ -1,9 +1,0 @@
-{
-  "name": "add-private-function-with-signatures",
-  "description": "Add private functions from game DLLs (server.dll/engine.dll) to metamod plugins using signature scanning and symbol lookup. Use when adding new private function hooks that require IDA Pro analysis, si",
-  "repo": "hzqst/metamod-fallguys",
-  "category": "development",
-  "tags": [],
-  "stars": 16,
-  "source": "github.com/hzqst/metamod-fallguys"
-}

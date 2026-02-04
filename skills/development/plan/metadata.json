@@ -1,7 +1,0 @@
-{
-  "name": "plan",
-  "description": "Create a detailed implementation plan with exploration for Claude CodePro",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.510087Z"
-}

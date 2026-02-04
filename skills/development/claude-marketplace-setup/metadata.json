@@ -1,8 +1,0 @@
-{
-  "name": "claude-marketplace-setup",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Creates and manages plugin marketplaces for Claude Code, enabling plugin discovery, distribution, and team sharing. Generates marketplace.json files with proper schema, configures plugin sources (GitH",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:36.718387Z"
-}

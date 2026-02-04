@@ -1,9 +1,0 @@
-{
-  "name": "mycarrierpackets-api",
-  "description": "This skill should be used when the user asks to 'integrate with MyCarrierPackets', 'set up MCP API', 'onboard carriers', 'Intellivite invitation', 'monitor carriers', 'Assure Advantage', 'get carrier ",
-  "repo": "linehaul-ai/linehaulai-claude-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

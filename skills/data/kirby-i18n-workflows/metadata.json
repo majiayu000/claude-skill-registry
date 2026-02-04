@@ -1,9 +1,0 @@
-{
-  "name": "kirby-i18n-workflows",
-  "description": "Manages Kirby multi-language workflows, translations, and localized labels. Use when dealing with languages, translation keys, placeholders, or importing/exporting translations.",
-  "repo": "bnomei/kirby-mcp",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bnomei/kirby-mcp"
-}

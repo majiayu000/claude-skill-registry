@@ -1,9 +1,0 @@
-{
-  "name": "debugging-flux-deployments",
-  "description": "Diagnoses and resolves issues with Flux GitOps deployments, Kubernetes pods, services, and HelmReleases in the Superbloom cluster",
-  "repo": "saavy1/sb",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

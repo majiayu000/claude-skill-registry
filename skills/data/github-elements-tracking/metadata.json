@@ -1,9 +1,0 @@
-{
-  "name": "github-elements-tracking",
-  "description": "This skill should be used when the user asks to \"track work across sessions\", \"create an epic\", \"manage issue waves\", \"post a checkpoint\", \"claim an issue\", \"recover from compaction\", \"coordinate mult",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Emasoft/ghe-marketplace"
-}

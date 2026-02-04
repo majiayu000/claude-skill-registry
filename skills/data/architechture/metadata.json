@@ -1,9 +1,0 @@
-{
-  "name": "architechture",
-  "description": "本项目里面的各种架构设计, 设计中用到的各种概念例如 system, action, view-function, action-function, action-handler, base, component 等的解释",
-  "repo": "schneiderlin/synapse",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

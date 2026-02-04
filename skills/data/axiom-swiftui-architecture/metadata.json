@@ -1,9 +1,0 @@
-{
-  "name": "axiom-swiftui-architecture",
-  "description": "Use when separating logic from SwiftUI views, choosing architecture patterns, refactoring view files, or asking 'where should this code go', 'how do I organize my SwiftUI app', 'MVVM vs TCA vs vanilla",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

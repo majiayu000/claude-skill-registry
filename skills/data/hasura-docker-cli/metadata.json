@@ -1,9 +1,0 @@
-{
-  "name": "hasura-docker-cli",
-  "description": "Activate when using Hasura CLI commands in a self-hosted Docker environment, including migrations, metadata management, and console access via docker exec.",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

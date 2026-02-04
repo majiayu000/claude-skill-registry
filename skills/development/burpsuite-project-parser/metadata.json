@@ -1,7 +1,0 @@
-{
-  "name": "burpsuite-project-parser",
-  "description": "Searches and explores Burp Suite project files (.burp) from the command line. Use when searching response headers or bodies with regex patterns, extracting security audit findings, dumping proxy histo",
-  "category": "development",
-  "source": "github.com/trailofbits/skills",
-  "imported_at": "2026-01-24T14:54:05.141112Z"
-}

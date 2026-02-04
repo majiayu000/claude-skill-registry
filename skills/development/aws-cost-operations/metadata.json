@@ -1,7 +1,0 @@
-{
-  "name": "aws-cost-operations",
-  "description": "This skill provides AWS cost optimization, monitoring, and operational best practices with integrated MCP servers for billing analysis, cost estimation, observability, and security assessment.",
-  "category": "development",
-  "source": "github.com/zxkane/aws-skills",
-  "imported_at": "2026-01-24T14:54:09.540448Z"
-}

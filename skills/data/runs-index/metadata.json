@@ -1,9 +1,0 @@
-{
-  "name": "runs-index",
-  "description": "Update index.json status. Use for: upsert index.json, update status/last_flow/updated_at. Deterministic writes - stable diffs, no creation. Use only in run-prep and *-cleanup agents. Invoke via bash .",
-  "repo": "EffortlessMetrics/demo-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "zero-day-rules",
-  "description": "This skill should be used when the user asks about \"game rules\", \"scoring\", \"phases\", \"Attack token\", \"Exploit token\", \"Ghost token\", \"tile placement rules\", \"path matching\", \"movement rules\", \"winnin",
-  "repo": "jwmyers/vui-vux-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

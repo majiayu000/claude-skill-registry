@@ -1,9 +1,0 @@
-{
-  "name": "cqrs-ddd",
-  "description": "CQRS+DDD implementation patterns for .NET. Use when designing aggregates, implementing command/query handlers, setting up repositories, or understanding architectural principles. Triggers on \"CQRS\", \"",
-  "repo": "haru01/sample_university_management_system",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

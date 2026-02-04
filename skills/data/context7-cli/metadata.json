@@ -1,9 +1,0 @@
-{
-  "name": "context7-cli",
-  "description": "Use the local Context7 CLI in this repo to search libraries and fetch Context7 context for skills or documentation tasks. Trigger when you need to run `c7 search`/`c7 context`, resolve library IDs, or",
-  "repo": "strantalis/agent-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

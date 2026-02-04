@@ -1,9 +1,0 @@
-{
-  "name": "utilizing-cli-tools",
-  "description": "git、gh、npm、その他の開発ツールのCLIツールガイド。 開発ワークフローでのコマンドライン操作のベストプラクティス。 トリガー: CLI, command line, git, gh, npm, yarn, pnpm, terminal, コマンドライン, ターミナル, GitHub CLI, package manager, パッケージマネージャ, Conventional Commit",
-  "repo": "thkt/claude-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

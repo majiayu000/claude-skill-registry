@@ -1,9 +1,0 @@
-{
-  "name": "reviews-aggregator",
-  "description": "Aggregates user reviews from Amazon/Reddit and expert reviews from specialized sites with sentiment analysis. Use when user asks to 'get reviews', 'what do users say', 'aggregate reviews', 'user feedb",
-  "repo": "lola69160/claude-product-comparison",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

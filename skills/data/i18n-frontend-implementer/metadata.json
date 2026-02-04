@@ -1,9 +1,0 @@
-{
-  "name": "i18n-frontend-implementer",
-  "description": "Adds internationalization (i18n) infrastructure with translation plumbing, scalable key strategy, formatters for dates/numbers/currency, plural rules, and language switching. Use when implementing \"in",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

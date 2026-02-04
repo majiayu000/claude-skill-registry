@@ -1,8 +1,0 @@
-{
-  "name": "ontology-verifier-agent",
-  "repo": "a4b-corporation/xTalent",
-  "category": "development",
-  "description": "Independent verification agent for Ontology Builder Pipeline.Cross-validates outputs against inputs, checks traceability,validates constraints, and identifies issues. Use as a separateagent to verify ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:41.622709Z"
-}

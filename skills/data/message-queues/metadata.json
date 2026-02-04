@@ -1,9 +1,0 @@
-{
-  "name": "message-queues",
-  "description": "Async communication patterns using message brokers and task queues. Use when building event-driven systems, background job processing, or service decoupling. Covers Kafka (event streaming), RabbitMQ (",
-  "repo": "vuralserhat86/antigravity-agentic-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vuralserhat86/antigravity-agentic-skills"
-}

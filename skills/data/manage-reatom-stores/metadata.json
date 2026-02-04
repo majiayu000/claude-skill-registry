@@ -1,9 +1,0 @@
-{
-  "name": "manage-reatom-stores",
-  "description": "Create or update Reatom stores in this repo. Use when adding a new store under `src/stores`, changing store state shape, adding computed atoms, or creating/updating related store service functions.",
-  "repo": "blikblum/reatom-ui5-starter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "review-type-safety",
-  "description": "Audit TypeScript code for type safety issues—any/unknown abuse, invalid states, missing narrowing.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

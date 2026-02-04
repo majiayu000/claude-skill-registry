@@ -1,7 +1,0 @@
-{
-  "name": "gemini-imagegen",
-  "description": "This skill should be used when generating and editing images using the Gemini API (Nano Banana Pro). It applies when creating images from text prompts, editing existing images, applying style transfer",
-  "category": "development",
-  "source": "github.com/EveryInc/compound-engineering-plugin",
-  "imported_at": "2026-01-24T14:54:11.996309Z"
-}

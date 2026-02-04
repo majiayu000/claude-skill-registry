@@ -1,8 +1,0 @@
-{
-  "name": "fnox-providers",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "description": "Use when configuring Fnox providers for encryption and secret storage. Covers age encryption, cloud providers (AWS, Azure, GCP), and password managers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:04.060296Z"
-}

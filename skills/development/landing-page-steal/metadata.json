@@ -1,8 +1,0 @@
-{
-  "name": "landing-page-steal",
-  "repo": "WiseWolfPT/AlphaAnalyzer",
-  "category": "development",
-  "description": "Copies an existing landing page (from URL or image) into a specified page in the codebase using Playwright MCP. Iteratively refines the implementation until it matches the reference design and interac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:35.820174Z"
-}

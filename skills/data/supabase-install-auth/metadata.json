@@ -1,9 +1,0 @@
-{
-  "name": "supabase-install-auth",
-  "description": "Install and configure Supabase SDK/CLI authentication.Use when setting up a new Supabase integration, configuring API keys,or initializing Supabase in your project.Trigger with phrases like \"install s",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

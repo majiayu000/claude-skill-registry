@@ -1,8 +1,0 @@
-{
-  "name": "architecture-refactor",
-  "repo": "franchiseai/claude-code-plugins",
-  "category": "development",
-  "description": "Analyze and refactor backend code to follow entity/service separation patterns. Use when asked to \"refactor X to entity pattern\", \"analyze architecture for X\", \"extract business rules for X\", \"separat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:37.792084Z"
-}

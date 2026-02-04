@@ -1,9 +1,0 @@
-{
-  "name": "autogenerate-constraints",
-  "description": "Autogenerate constraint checking code from constraints (C-*) that specify system limits, timeouts, dependencies, or environmental requirements. Use when C-* includes technical constraints like timeout",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

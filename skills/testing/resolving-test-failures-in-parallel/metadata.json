@@ -1,8 +1,0 @@
-{
-  "name": "resolving-test-failures-in-parallel",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "testing",
-  "description": "Specialized test resolution that works in parallel to fix specific test failures, enabling faster resolution of test suite issues through isolated fixes without conflicts. Use when multiple test failu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.805040Z"
-}

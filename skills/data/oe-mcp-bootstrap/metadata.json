@@ -1,9 +1,0 @@
-{
-  "name": "oe-mcp-bootstrap",
-  "description": "Setup and verification for MCP tooling used in OpenEvent-AI (filesystem, Context7 docs, LSP/Pyright, Playwright). Use when onboarding a new developer/agent or when Codex/Claude cannot access LSP, brow",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

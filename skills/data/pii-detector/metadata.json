@@ -1,9 +1,0 @@
-{
-  "name": "pii-detector",
-  "description": "Detects Personally Identifiable Information (PII) in code, logs, databases, and files for GDPR/CCPA compliance. Use when user asks to \"detect PII\", \"find sensitive data\", \"scan for personal informatio",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "generating-compliance-reports",
-  "description": "Generate comprehensive compliance reports for security standards. Use when creating compliance documentation. Trigger with 'generate compliance report', 'compliance status', or 'audit compliance'.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

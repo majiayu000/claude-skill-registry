@@ -1,9 +1,0 @@
-{
-  "name": "rg-history",
-  "description": "Search your conversation history using ripgrep. Use when you need to find previous messages, file edits, tool calls, or decisions from earlier in the session.",
-  "repo": "backnotprop/rg_history",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

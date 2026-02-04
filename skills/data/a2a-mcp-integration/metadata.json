@@ -1,9 +1,0 @@
-{
-  "name": "a2a-mcp-integration",
-  "description": "Integration patterns for combining Agent-to-Agent (A2A) Protocol with Model Context Protocol (MCP) for hybrid agent communication. Use when building systems that need both agent-to-agent communication",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

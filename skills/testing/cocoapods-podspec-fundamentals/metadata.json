@@ -1,8 +1,0 @@
-{
-  "name": "cocoapods-podspec-fundamentals",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when creating or modifying CocoaPods podspec files. Covers required attributes, file patterns, dependencies, and platform specifications for iOS, macOS, tvOS, watchOS, and visionOS projects.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.865627Z"
-}

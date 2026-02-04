@@ -1,9 +1,0 @@
-{
-  "name": "i18n-setup-wizard",
-  "description": "Sets up complete internationalization infrastructure for React, Vue, Next.js, or vanilla JS with framework config, translation files, and language switching. Use when user asks to \"setup i18n\", \"add t",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

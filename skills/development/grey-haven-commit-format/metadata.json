@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-commit-format",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "development",
-  "description": "Format commit messages according to Grey Haven Studio's actual commitlint configuration (100 char header, lowercase subject, conventional commits). Use when creating git commits or reviewing commit me",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:13.922121Z"
-}

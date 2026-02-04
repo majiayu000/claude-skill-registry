@@ -1,8 +1,0 @@
-{
-  "name": "debian-bootstrap",
-  "repo": "cptfinch/dotfiles",
-  "category": "design",
-  "description": "Bootstrap a new Debian/Ubuntu system with your standard configuration. Portable dotfiles, SSH config, shell setup, and SOPS secrets - no Nix required. Use when setting up a new machine or migrating aw",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:07:44.654526Z"
-}

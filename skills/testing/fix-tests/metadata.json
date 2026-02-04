@@ -1,8 +1,0 @@
-{
-  "name": "fix-tests",
-  "repo": "axiomantic/spellbook",
-  "category": "testing",
-  "description": "Use when tests are failing, test quality issues were identified, or user wants to fix/improve specific tests. Accepts green-mirage-audit reports, general instructions, or can run tests and fix failure",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:06.689930Z"
-}

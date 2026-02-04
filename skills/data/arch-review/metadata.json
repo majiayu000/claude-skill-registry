@@ -1,9 +1,0 @@
-{
-  "name": "arch-review",
-  "description": "アーキテクチャレビュー。SOLID/YAGNI/DRY/KISS原則に基づき、オーバーエンジニアリングを避けた実践的な設計改善を提案する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "new-cask",
-  "repo": "malob/nix-config",
-  "path": "configs/claude/skills/new-cask/SKILL.md",
-  "source": "github.com/malob/nix-config",
-  "downloaded_at": "2026-01-29T05:20:44.917522Z"
-}

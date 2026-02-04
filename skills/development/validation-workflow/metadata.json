@@ -1,8 +1,0 @@
-{
-  "name": "validation-workflow",
-  "repo": "get2knowio/maverick",
-  "category": "development",
-  "description": "Use this skill to validate code changes pass all checks (format, lint, build, tests). Runs validation script and iteratively fixes failures. Invoke before finalizing PRs or after making code changes.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:53.314381Z"
-}

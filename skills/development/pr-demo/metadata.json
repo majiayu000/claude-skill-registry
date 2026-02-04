@@ -1,7 +1,0 @@
-{
-  "name": "pr-demo",
-  "description": "Use when creating animated demos (GIFs) for pull requests or documentation. Covers terminal recording with asciinema and conversion to GIF/SVG for GitHub embedding.",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.118684Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dev-swarm-screen-snapshot",
-  "description": "Capture and inspect specific screen regions (e.g., mobile simulators, app windows) using a background streaming process. Use for UI debugging and troubleshooting.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

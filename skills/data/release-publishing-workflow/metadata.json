@@ -1,9 +1,0 @@
-{
-  "name": "release-publishing-workflow",
-  "description": "Complete release workflow including version updates, CHANGELOG management, npm publishing, git tagging, and deployment verification. Use when releasing new versions or publishing packages.",
-  "repo": "j0KZ/mcp-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "xbuilder-knowledge",
-  "description": "Knowledge base for XBuilder platform, including spx game engine APIs, XGo language syntax, AI interaction features, and game development guidelines. Use this skill when working with XBuilder projects,",
-  "repo": "go-wyvern/x-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

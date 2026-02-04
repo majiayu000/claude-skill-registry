@@ -1,9 +1,0 @@
-{
-  "name": "recon-nmap",
-  "description": "Network reconnaissance and security auditing using Nmap for port scanning, service enumeration, and vulnerability detection. Use when: (1) Conducting authorized network reconnaissance and asset discov",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

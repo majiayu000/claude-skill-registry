@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-install-auth",
-  "description": "Set up OpenRouter API authentication and configure API keys. Use when starting a new OpenRouter integration or troubleshooting auth issues. Trigger with phrases like 'openrouter setup', 'openrouter ap",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

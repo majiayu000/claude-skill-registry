@@ -1,9 +1,0 @@
-{
-  "name": "ashby-api-guide",
-  "description": "This skill should be used when the user asks about \"Ashby API\", \"how to use Ashby tools\", \"Ashby authentication\", \"Ashby MCP tools\", \"what can I do with Ashby\", or needs help understanding available A",
-  "repo": "jjeremycai/claude-toolkit",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

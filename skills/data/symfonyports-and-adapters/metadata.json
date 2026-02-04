@@ -1,9 +1,0 @@
-{
-  "name": "symfonyports-and-adapters",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "data",
-  "description": "Implement Hexagonal Architecture (Ports and Adapters) in Symfony; separate domain logic from infrastructure with clear boundaries",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.219607Z",
-  "dir_name": "symfonyports-and-adapters"
-}

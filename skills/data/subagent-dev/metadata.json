@@ -1,9 +1,0 @@
-{
-  "name": "subagent-dev",
-  "description": "Use when executing implementation plans with independent tasks in the current session - dispatches fresh subagent for each task with code review between tasks, enabling fast iteration with quality gat",
-  "repo": "pproenca/dot-claude-old",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

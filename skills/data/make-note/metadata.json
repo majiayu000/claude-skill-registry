@@ -1,9 +1,0 @@
-{
-  "name": "make-note",
-  "description": "Create well-structured notes in Obsidian with intelligent tag suggestions. Use when the user asks to create a note, make a note, or save content to Obsidian. Scans existing vault for common tags and p",
-  "repo": "glnds/claude-config",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

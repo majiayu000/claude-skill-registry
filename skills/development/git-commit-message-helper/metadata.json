@@ -1,8 +1,0 @@
-{
-  "name": "git-commit-message-helper",
-  "repo": "Ingramml/racial-terror-map",
-  "category": "development",
-  "description": "Generate conventional commit messages following best practices. Use when user is committing code, needs commit message help, or says \"commit\" or \"create commit\". Provides consistent commit formatting ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:13.343035Z"
-}

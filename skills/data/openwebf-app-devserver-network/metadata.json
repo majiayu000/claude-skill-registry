@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-app-devserver-network",
-  "description": "Troubleshoot dev server reachability and HMR for WebF apps on real devices (Vite/Webpack): LAN IP vs localhost, 0.0.0.0/--host binding, firewall/ports, and websocket/HMR (ws://) issues. Use when the u",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

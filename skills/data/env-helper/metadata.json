@@ -1,9 +1,0 @@
-{
-  "name": "env-helper",
-  "description": "Read environment variables via get_env tool (mask secrets).",
-  "repo": "eanzhao/aevatar-agent-framework",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

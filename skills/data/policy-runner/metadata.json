@@ -1,9 +1,0 @@
-{
-  "name": "policy-runner",
-  "description": "Run policy-as-code checks (e.g., OPA/Conftest) based on the policy_plan. Use in Flow 2 and Flow 4.",
-  "repo": "EffortlessMetrics/demo-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

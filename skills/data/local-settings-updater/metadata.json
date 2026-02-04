@@ -1,9 +1,0 @@
-{
-  "name": "local-settings-updater",
-  "description": "プロジェクトの .claude/settings.local.json を更新する。「ローカル設定を更新して」「local settings を変更」「個人用設定を変えて」「自分だけの設定」「ローカル permissions を追加」「個人設定ファイルを編集」「settings.local を更新」などで起動。Git にコミットされない個人用の Claude Code 設定を管理。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

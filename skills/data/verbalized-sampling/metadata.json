@@ -1,9 +1,0 @@
-{
-  "name": "verbalized-sampling",
-  "description": "Prompt engineering technique to overcome mode collapse in LLM responses by generating multiple answers with probabilities. Use when you want to see alternative responses beyond the top-ranked answer, ",
-  "repo": "glnds/claude-config",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

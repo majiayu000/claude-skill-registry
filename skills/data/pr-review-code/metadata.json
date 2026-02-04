@@ -1,9 +1,0 @@
-{
-  "name": "pr-review-code",
-  "description": "**ALWAYS USE THIS SKILL** when asked to review a PR or given a PR URL. Provides systematic workflow for code review.",
-  "repo": "adrianschmidt/workspace-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

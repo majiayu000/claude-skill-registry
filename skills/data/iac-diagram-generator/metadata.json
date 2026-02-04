@@ -1,9 +1,0 @@
-{
-  "name": "iac-diagram-generator",
-  "description": "Analyzes Infrastructure as Code files (Terraform, CloudFormation, Kubernetes, Docker Compose) and generates visual architecture diagrams. Use when analyzing infrastructure code, designing cloud archit",
-  "repo": "johnpsasser/iac-diagram-generator",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

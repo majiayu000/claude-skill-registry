@@ -1,9 +1,0 @@
-{
-  "name": "copilot-feedback-resolver",
-  "description": "Process and resolve GitHub Copilot automated PR review comments. Use when the user says \"check copilot review\", \"handle copilot comments\", \"resolve copilot feedback\", \"address copilot suggestions\", or",
-  "repo": "fx/cc",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

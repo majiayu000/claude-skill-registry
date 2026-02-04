@@ -1,9 +1,0 @@
-{
-  "name": "phd-phase8-execution",
-  "description": "Execute PhD Pipeline Phase 8 using Claude Code Task tool with dynamic agents per chapter",
-  "repo": "ste-bah/claudeflow-testing",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

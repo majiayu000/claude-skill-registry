@@ -1,9 +1,0 @@
-{
-  "name": "oscal-catalog-provider",
-  "description": "Fetch official NIST 800-53 and FedRAMP OSCAL catalogs from authoritative sources",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

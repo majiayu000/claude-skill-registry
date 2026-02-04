@@ -1,8 +1,0 @@
-{
-  "name": "forge-security",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "Enforces security guardrails for Claude Code. Blocks access to secrets, credentials, and sensitive files. Requires confirmation for network requests and infrastructure changes. Use when accessing file",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.672360Z"
-}

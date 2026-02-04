@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-load-balancing",
-  "description": "Distribute requests across multiple OpenRouter configurations. Use when scaling or implementing geographic distribution. Trigger with phrases like 'openrouter load balance', 'distribute requests', 'op",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "lazyvim",
-  "repo": "trentshaines/dotfiles",
-  "category": "product",
-  "description": "Help with LazyVim configuration, plugins, keybindings, and Neovim setup. Use when the user asks about LazyVim, Neovim configuration, plugins, or text editor customization.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:09.788999Z"
-}

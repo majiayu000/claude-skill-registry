@@ -1,8 +1,0 @@
-{
-  "name": "building-advanced-github-issue-searches",
-  "repo": "kynoptic/markdownlint-trap",
-  "category": "development",
-  "description": "Builds and executes complex issue queries using GitHub's advanced search syntax with AND/OR boolean operators and nested queries up to 5 levels deep. Use when finding specific issue sets with complex ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.267877Z"
-}

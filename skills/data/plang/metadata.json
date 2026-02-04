@@ -1,9 +1,0 @@
-{
-  "name": "plang",
-  "description": "Expert guidance for Plang programming language (plang.is). Use when the user asks about Plang syntax, wants to generate Plang code, needs help debugging Plang goals, wants to understand Plang patterns",
-  "repo": "PLangHQ/plang",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

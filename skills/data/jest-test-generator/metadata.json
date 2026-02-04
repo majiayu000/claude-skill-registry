@@ -1,9 +1,0 @@
-{
-  "name": "jest-test-generator",
-  "description": "Jest Test Generator - Auto-activating skill for Test Automation.Triggers on: jest test generator, jest test generatorPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

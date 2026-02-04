@@ -1,9 +1,0 @@
-{
-  "name": "firestore-operations-manager",
-  "description": "Manage Firebase/Firestore operations including CRUD, queries, batch processing, and index/rule guidance.Use when you need to create/update/query Firestore documents, run batch writes, troubleshoot mis",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

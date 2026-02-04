@@ -1,9 +1,0 @@
-{
-  "name": "uv-ruff-python-tools",
-  "description": "Modern Python development with uv (10-100x faster package manager) and ruff (extremely fast linter/formatter). Use when managing Python projects, dependencies, virtual environments, installing package",
-  "repo": "tenequm/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

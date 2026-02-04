@@ -1,9 +1,0 @@
-{
-  "name": "building-skills-marketplace",
-  "description": "Use when creating new Claude Code skills, setting up marketplace repositories, or packaging skills for distribution - complete workflow from skill creation to marketplace publication",
-  "repo": "imehr/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

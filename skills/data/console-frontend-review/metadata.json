@@ -1,9 +1,0 @@
-{
-  "name": "console-frontend-review",
-  "description": "Reviews React/TypeScript code for the depot console web application with focus on real-time rover teleoperation, state management, WebSocket communication, and 3D visualization. Use when reviewing con",
-  "repo": "ecto/muni",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "customizing-errors",
-  "description": "Handle Zod validation errors with unified error API, custom messages, error formatting, and user-friendly display",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

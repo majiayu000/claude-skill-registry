@@ -1,8 +1,0 @@
-{
-  "name": "generating-agents-md",
-  "repo": "srtab/daiv",
-  "category": "testing",
-  "description": "Generates or updates an AGENTS.md file by scanning a repository for structure, commands, tests, and conventions. Use when a user asks to create or improve `AGENTS.md` for a repository.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:12.221327Z"
-}

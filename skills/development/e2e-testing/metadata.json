@@ -1,7 +1,0 @@
-{
-  "name": "e2e-testing",
-  "description": "Write and run end-to-end tests with Playwright for user flows, page interactions, and visual regression. Use when testing user journeys, ensuring UI functionality works correctly.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.377282Z"
-}

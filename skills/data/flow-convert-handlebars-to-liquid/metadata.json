@@ -1,9 +1,0 @@
-{
-  "name": "flow-convert-handlebars-to-liquid",
-  "description": "Convert Handlebars template syntax to Liquid.js in prompts. Use when migrating prompt templates from Flow SDK to Output SDK.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

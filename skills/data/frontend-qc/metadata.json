@@ -1,9 +1,0 @@
-{
-  "name": "frontend-qc",
-  "description": "Performs comprehensive frontend quality assurance reviews using browser automation. Systematically tests UI elements, discovers and reports bugs to GitHub Issues, and provides improvement recommendati",
-  "repo": "arlenagreer/claude_configuration_docs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

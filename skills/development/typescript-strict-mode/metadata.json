@@ -1,8 +1,0 @@
-{
-  "name": "typescript-strict-mode",
-  "repo": "jhl-labs/sepilot_desktop",
-  "category": "development",
-  "description": "TypeScript strict type checking guidelines for SEPilot Desktop. Use when creating types, writing functions, or refactoring code. Ensures all code has explicit types, avoids 'any', and passes type chec",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:11.755914Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "designing-avalonia-customcontrol-architecture",
-  "description": "Defines the basic solution structure for AvaloniaUI Desktop Applications using CustomControl. Use when creating new AvaloniaUI projects or designing stand-alone control styles with ControlTheme.",
-  "repo": "christian289/dotnet-with-claudecode",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/christian289/dotnet-with-claudecode"
-}

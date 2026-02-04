@@ -1,9 +1,0 @@
-{
-  "name": "multiplatform-development",
-  "description": "Cross-platform Apple development patterns for sharing code between iOS, macOS, iPadOS, watchOS, tvOS, and visionOS. Includes conditional compilation, platform-specific extensions, shared packages, and",
-  "repo": "bluewaves-creations/bluewaves-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bluewaves-creations/bluewaves-skills"
-}

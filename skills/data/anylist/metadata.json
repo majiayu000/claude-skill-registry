@@ -1,9 +1,0 @@
-{
-  "name": "anylist",
-  "description": "Manage grocery and shopping lists via AnyList. Use when user asks about shopping lists, groceries, or adding/checking off items to buy.",
-  "repo": "clawdbot/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/clawdbot/skills"
-}

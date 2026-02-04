@@ -1,9 +1,0 @@
-{
-  "name": "clay-performance-tuning",
-  "description": "Optimize Clay API performance with caching, batching, and connection pooling.\nUse when experiencing slow API responses, implementing caching strategies,\nor optimizing request throughput for Clay integ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

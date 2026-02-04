@@ -1,9 +1,0 @@
-{
-  "name": "github-repo-management",
-  "description": "Manage GitHub repositories for Claude Code plugins including issues, pull requests, releases, CI/CD workflows, and GitHub Actions. Use when working with GitHub repository management, creating releases",
-  "repo": "d-oit/gemini-search-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

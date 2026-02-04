@@ -1,9 +1,0 @@
-{
-  "name": "vercel-common-errors",
-  "description": "Diagnose and fix Vercel common errors and exceptions.Use when encountering Vercel errors, debugging failed requests,or troubleshooting integration issues.Trigger with phrases like \"vercel error\", \"fix",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

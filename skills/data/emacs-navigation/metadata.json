@@ -1,9 +1,0 @@
-{
-  "name": "emacs-navigation",
-  "description": "Use when navigating files and positions in Emacs - provides elisp patterns for finding files, searching, and position management",
-  "repo": "jingtaozf/emacs-claude-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "gabb-code-navigation",
-  "repo": "gabb-software/gabb-cli",
-  "category": "development",
-  "description": "Decision guide for code navigation. Teaches when to use gabb tools vs defaulttools (Grep/Read) for maximum efficiency. Applies to Python/TypeScript/Rust/Kotlin/C++.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:51.973171Z"
-}

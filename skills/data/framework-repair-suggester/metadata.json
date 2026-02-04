@@ -1,9 +1,0 @@
-{
-  "name": "framework-repair-suggester",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "data",
-  "description": "Detect framework and tooling issues then suggest creating REPAIR- tasks to address them systematically - ANALYSIS-ONLY skill that identifies problems and proposes structured fixes",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:01.865138Z",
-  "dir_name": "framework-repair-suggester"
-}

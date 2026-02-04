@@ -1,9 +1,0 @@
-{
-  "name": "gtnh-skill",
-  "description": "This skill provides accurate data about GT New Horizons based on official data dumps. Use when answering questions about GTNH (GregTech New Horizons).",
-  "repo": "clay07g/GTNH-Claude-Skill",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

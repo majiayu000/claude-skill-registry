@@ -1,9 +1,0 @@
-{
-  "name": "investigate-logs",
-  "description": "Automatically investigate logs when errors occur, debugging issues, or troubleshooting problems. Check frontend logs (LogViewer) and backend logs (daily log files) for error patterns. Use when user re",
-  "repo": "ktat/photoclove",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

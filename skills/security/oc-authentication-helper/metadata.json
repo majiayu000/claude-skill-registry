@@ -1,8 +1,0 @@
-{
-  "name": "oc-authentication-helper",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "security",
-  "description": "Helper skill to retrieve OAuth tokens from the correct OpenShift cluster context when multiple clusters are configured",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:17.927739Z"
-}

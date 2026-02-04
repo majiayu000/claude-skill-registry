@@ -1,9 +1,0 @@
-{
-  "name": "fosmvvm-viewmodel-test-generator",
-  "description": "Generate comprehensive ViewModel tests with multi-locale translation verification. Use when creating test coverage for ViewModels, especially those with localization.",
-  "repo": "foscomputerservices/FOSUtilities",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/foscomputerservices/FOSUtilities"
-}

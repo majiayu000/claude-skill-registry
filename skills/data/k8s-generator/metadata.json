@@ -1,9 +1,0 @@
-{
-  "name": "k8s-generator",
-  "description": "Generate production-ready Kubernetes manifests with Deployments, Services, ConfigMaps, and Ingress",
-  "repo": "Lordjiggy/claude-code-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

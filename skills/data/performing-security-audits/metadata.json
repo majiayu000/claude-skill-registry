@@ -1,9 +1,0 @@
-{
-  "name": "performing-security-audits",
-  "description": "Analyze code, infrastructure, and configurations by conducting comprehensive security audits. It leverages tools within the security-pro-pack plugin, including vulnerability scanning, compliance check",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

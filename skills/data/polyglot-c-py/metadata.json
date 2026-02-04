@@ -1,9 +1,0 @@
-{
-  "name": "polyglot-c-py",
-  "description": "Guidance for creating polyglot files that are valid in both Python and C. This skill applies when tasked with writing code that must be parseable and executable by both the Python interpreter and C co",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

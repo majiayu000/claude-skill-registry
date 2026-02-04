@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-validation",
-  "repo": "fjacquet/finwiz",
-  "category": "devops",
-  "description": "FinWiz data validation standards using Pydantic v2 strict mode. Use when creating schemas, validating data, or implementing quality standards for financial analysis outputs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:40.017210Z"
-}

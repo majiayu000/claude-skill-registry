@@ -1,9 +1,0 @@
-{
-  "name": "lumen-dashboards",
-  "description": "Master declarative, no-code data dashboards with Lumen YAML specifications. Use this skill when building standard data exploration dashboards, connecting multiple data sources (files, databases, APIs)",
-  "repo": "cdcore09/holoviz-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "jj-workspace",
-  "repo": "inspirepan/klaude-code",
-  "category": "productivity",
-  "description": "Create a jj workspace before starting work to enable parallel Claude sessions. Use this skill when starting a new task that should be isolated from other concurrent work. Triggers include \"jj workspac",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.635743Z"
-}

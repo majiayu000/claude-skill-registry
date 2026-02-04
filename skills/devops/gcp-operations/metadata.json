@@ -1,8 +1,0 @@
-{
-  "name": "gcp-operations",
-  "repo": "bout3fiddy/agents",
-  "category": "devops",
-  "description": "This skill should be used when the user asks to \"check logs\", \"view Cloud Run logs\", \"deploy a service\", \"check service status\", \"manage secrets\", \"add a secret\", \"list services\", \"check what's runnin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:38.841008Z"
-}

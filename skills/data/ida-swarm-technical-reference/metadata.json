@@ -1,9 +1,0 @@
-{
-  "name": "ida-swarm-technical-reference",
-  "description": "Technical reference for using IDA Swarm MCP tools. Covers system constraints, architecture, TRUE CONTEXT principle, result interpretation, and debugging. Use when analyzing binaries via IDA Swarm or t",
-  "repo": "shells-above/ida-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "terraform-plan",
-  "description": "Review Terraform plans and configurations for safety and best practices. Use when the user says \"review terraform\", \"terraform plan\", \"what will this destroy\", \"check my infrastructure code\", or asks ",
-  "repo": "mhalder/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "code-refactor-mhattingpete-claude-skills-mar",
-  "description": "Perform bulk code refactoring operations like renaming variables/functions across files, replacing patterns, and updating API calls. Use when users request renaming identifiers, replacing deprecated c",
-  "category": "development",
-  "source": "github.com/mhattingpete/claude-skills-marketplace",
-  "imported_at": "2026-01-24T14:54:24.100933Z"
-}

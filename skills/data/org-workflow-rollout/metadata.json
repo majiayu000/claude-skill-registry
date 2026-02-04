@@ -1,9 +1,0 @@
-{
-  "name": "org-workflow-rollout",
-  "description": "Roll out or update a GitHub Actions workflow file across multiple org repositories with signed commits and PRs",
-  "repo": "sgtoj/.dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

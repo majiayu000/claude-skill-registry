@@ -1,9 +1,0 @@
-{
-  "name": "robust-dependency-installation",
-  "description": "Use when implementing dependency installation systems - covers bundled portable executables in MSI installers, unified detection/execution code paths, and Windows installer best practices",
-  "repo": "SecurityRonin/ronin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "codetographer",
-  "description": "Generates interactive code flow diagrams (.cgraph files).Invoke when users ask: \"how does X work\", \"show me the flow of Y\",\"visualize the architecture\", \"diagram the data flow\",\"create a graph of the ",
-  "repo": "Kelvination/codetographer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

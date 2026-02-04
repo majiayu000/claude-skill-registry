@@ -1,9 +1,0 @@
-{
-  "name": "slack-notifier",
-  "description": "Slackチャンネルにフォーマット済みメッセージを送信するSkill。「Slackに通知して」「チームに連絡して」「#channelに投稿して」などのリクエストで自動発火する。MCP連携（フルAPI）とWebhookフォールバック（送信のみ）の両方に対応。",
-  "repo": "knishioka/machine-learning-workshop",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

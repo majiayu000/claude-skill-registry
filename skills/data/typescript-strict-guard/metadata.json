@@ -1,9 +1,0 @@
-{
-  "name": "typescript-strict-guard",
-  "description": "Use when writing or reviewing TypeScript code. Enforces strict mode standards, explicit typing, and best practices. Prevents 'any' types, @ts-ignore comments, and non-null assertions. This is a COMPRE",
-  "repo": "Barnhardt-Enterprises-Inc/quetrex-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

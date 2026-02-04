@@ -1,9 +1,0 @@
-{
-  "name": "password-strength-analyzer",
-  "description": "Password Strength Analyzer - Auto-activating skill for Security Fundamentals.Triggers on: password strength analyzer, password strength analyzerPart of the Security Fundamentals skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

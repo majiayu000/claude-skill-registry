@@ -1,9 +1,0 @@
-{
-  "name": "ops-monitor",
-  "description": "Monitor deployed infrastructure health and performance - check resource status,query CloudWatch metrics (CPU, memory, requests, errors), analyze performancetrends, track SLI/SLO metrics, detect anomal",
-  "repo": "fractary/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "audit-investigation",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "devops",
-  "description": "Use when investigating config file discrepancies during audit. Spawns config agents in waves to compare template standards against actual files. READ-ONLY analysis - agents report findings but make no",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:07.815070Z"
-}

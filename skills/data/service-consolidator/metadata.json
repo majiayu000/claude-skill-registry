@@ -1,9 +1,0 @@
-{
-  "name": "service-consolidator",
-  "description": "Find and consolidate duplicate service implementations in Leavn app - analyze variants, choose winner, update call sites, delete duplicates",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

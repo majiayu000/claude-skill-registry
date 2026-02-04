@@ -1,9 +1,0 @@
-{
-  "name": "commit-patterns",
-  "description": "Generates conventional commit messages. Use when creating git commits or reviewing staged changes. Ensures NO AI attribution in commits.",
-  "repo": "RPvars/postern-mvp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

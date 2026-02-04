@@ -1,9 +1,0 @@
-{
-  "name": "fastify-plugin",
-  "description": "Guide for creating Fastify plugins with TypeScript, ESM, and fastify-plugin wrapper. Use when adding new plugins to app/src/plugins/.",
-  "repo": "janisto/fastify-playground",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

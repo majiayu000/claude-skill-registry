@@ -1,9 +1,0 @@
-{
-  "name": "codebase-agent",
-  "description": "Expert coding agent for this codebase. Learns from every session to improvecode quality, catch edge cases, and apply proven patterns. Use for ANY codingtask: writing, debugging, refactoring, testing. ",
-  "repo": "harivansh-afk/claude-continual-learning",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

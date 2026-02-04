@@ -1,9 +1,0 @@
-{
-  "name": "search-analyze-report-template",
-  "description": "[REPLACE] Search for patterns, analyze findings, generate structured reports. Use when [REPLACE with specific triggers].",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

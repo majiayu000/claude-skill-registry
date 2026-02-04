@@ -1,9 +1,0 @@
-{
-  "name": "grey-haven-performance-optimization",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "data",
-  "description": "Comprehensive performance analysis and optimization for algorithms (O(n²)→O(n)), databases (N+1 queries, indexes), React (memoization, virtual lists), bundles (code splitting), API caching, and memory",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:12.764190Z",
-  "dir_name": "grey-haven-performance-optimization"
-}

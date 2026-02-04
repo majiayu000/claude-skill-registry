@@ -1,7 +1,0 @@
-{
-  "name": "git-workflow-rsmdt-the-startup",
-  "description": "Manage git operations for spec-driven development. Use when creating branches for specs/features, generating commits, or creating PRs. Provides consistent git workflow across specify, implement, and r",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.145122Z"
-}

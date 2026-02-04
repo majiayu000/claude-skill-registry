@@ -1,9 +1,0 @@
-{
-  "name": "sip-authentication-security",
-  "description": "Use when implementing SIP authentication, security mechanisms, and encryption. Use when securing SIP servers, clients, or proxies.",
-  "repo": "TheBushidoCollective/han",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

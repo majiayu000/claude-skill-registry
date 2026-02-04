@@ -1,9 +1,0 @@
-{
-  "name": "parallel-task-format",
-  "description": "Compact YAML format for defining parallel task specifications with scope, boundaries, and agent assignments. Use when creating task files for parallel development.",
-  "repo": "jpoutrin/product-forge",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

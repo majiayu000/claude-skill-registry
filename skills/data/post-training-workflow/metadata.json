@@ -1,9 +1,0 @@
-{
-  "name": "post-training-workflow",
-  "description": "Post-training model validation workflow: gating, backtesting, walk-forward validation, deployment decisions. Trigger after GPU training completes.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

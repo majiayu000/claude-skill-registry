@@ -1,9 +1,0 @@
-{
-  "name": "fullstack-app",
-  "description": "Guidance for building fullstack apps with Vite (React + TypeScript) frontend and FastAPI backend. Use when demos need a web UI beyond what Streamlit provides.",
-  "repo": "djliden/devrel-claude-code-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

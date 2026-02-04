@@ -1,9 +1,0 @@
-{
-  "name": "output-customization",
-  "description": "Central authority for Claude Code output styles. Covers built-in output styles (Default, Explanatory, Learning), custom output styles, output style frontmatter (name, description, keep-coding-instruct",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

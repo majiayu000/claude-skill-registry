@@ -1,9 +1,0 @@
-{
-  "name": "collect-commits-and-files",
-  "description": "Collect changed files from git diff and explicit paths, categorize by type, output manifest.",
-  "repo": "reedom/claude-code-commands",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

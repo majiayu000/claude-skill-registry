@@ -1,8 +1,0 @@
-{
-  "name": "create-server-simulation-service",
-  "repo": "biggs3d/Tools",
-  "category": "testing",
-  "description": "Create a C# server-side simulation service following the Plugin/IEventAdapter pattern with configuration, pulse updates, and entity management. Use when creating new simulations, scenario generators, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.772526Z"
-}

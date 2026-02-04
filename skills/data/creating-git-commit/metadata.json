@@ -1,9 +1,0 @@
-{
-  "name": "creating-git-commit",
-  "description": "Git リポジトリのスタイルに合わせてコミットを作成します。ユーザーがコミットを求めたときや、エージェントがコミットするときに必ず使用してください。",
-  "repo": "p-chan/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

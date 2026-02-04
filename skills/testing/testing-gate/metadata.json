@@ -1,8 +1,0 @@
-{
-  "name": "testing-gate",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "testing",
-  "description": "Gate 6 - Verify tests exist and cover critical paths. Issues result in WARNINGS (encourages tests, doesn't block).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:24.664590Z"
-}

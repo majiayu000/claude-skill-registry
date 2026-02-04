@@ -1,9 +1,0 @@
-{
-  "name": "decision-logger",
-  "description": "Logs architectural decisions to docs/DECISIONS.md in ADR format.Use when: making significant architectural or technology choices.Integrates with /craft and /why commands.",
-  "repo": "timequity/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "capital-proportional-limits",
-  "description": "Use percentage-based capital limits, not hard-coded dollar amounts. Trigger when: (1) trades blocked on small accounts, (2) min_cash_buffer is absolute dollars, (3) capital allocation doesn't scale wi",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

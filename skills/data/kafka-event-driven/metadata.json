@@ -1,9 +1,0 @@
-{
-  "name": "kafka-event-driven",
-  "description": "Event-driven architecture patterns with Apache Kafka. Covers event schemas, producer/consumer patterns, partitioning strategies, dead letter queues, and retry mechanisms. Works with Dapr Pub/Sub abstr",
-  "repo": "Hamza123545/Todo_giaic_five_phases",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

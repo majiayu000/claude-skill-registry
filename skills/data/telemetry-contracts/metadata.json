@@ -1,9 +1,0 @@
-{
-  "name": "telemetry-contracts",
-  "description": "Enforce telemetry contract stability (event naming, JSONL envelopes, /api/health + /api/status shape). Use when investigating telemetry drift, adding new telemetry fields, or updating z-server ingesti",
-  "repo": "metabench/copilot-dl-news",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

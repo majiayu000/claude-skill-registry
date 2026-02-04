@@ -1,8 +1,0 @@
-{
-  "name": "crewai-development",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "development",
-  "description": "Create CrewAI workflows as NestJS applications under apps/crewai/. FUTURE: Same pattern as LangGraph - NestJS app, same webhook pattern as n8n, receive same parameters, wrap as API agents. CRITICAL: S",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:56.683961Z"
-}

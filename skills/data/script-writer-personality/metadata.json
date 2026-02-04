@@ -1,9 +1,0 @@
-{
-  "name": "script-writer-personality",
-  "description": "Generates educational video scripts with personality-specific styles (GMTK, Fireship, Chilli) while enforcing strict anti-AI-slop writing rules",
-  "repo": "outscal/video-generator",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

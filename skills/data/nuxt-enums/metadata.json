@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-enums",
-  "description": "TypeScript enum pattern with Castable interface for model integration. Use when creating enums with behavior methods (colors, labels), defining fixed value sets, or integrating enums with the model ca",
-  "repo": "leeovery/claude-nuxt",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

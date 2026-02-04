@@ -1,9 +1,0 @@
-{
-  "name": "omakase-off",
-  "description": "ALWAYS invoke FIRST on ANY \"build/create/implement/add feature\" request. This skill WRAPS brainstorming - it decides the approach. Present choice BEFORE any brainstorming starts: (1) Brainstorm togeth",
-  "repo": "2389-research/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

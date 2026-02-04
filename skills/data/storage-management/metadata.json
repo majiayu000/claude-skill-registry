@@ -1,9 +1,0 @@
-{
-  "name": "storage-management",
-  "description": "Manage storage devices and resources in Proxmox. Monitor storage usage, allocate resources, and plan storage expansion for your virtualization infrastructure.",
-  "repo": "surrealwolf/proxmox-ve-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

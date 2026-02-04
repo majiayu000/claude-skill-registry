@@ -1,9 +1,0 @@
-{
-  "name": "domain-model-boundaries-mapper",
-  "description": "Identifies domain modules, ownership boundaries, dependencies, and interfaces using Domain-Driven Design principles. Provides domain maps, bounded contexts, refactor recommendations. Use for \"DDD\", \"d",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

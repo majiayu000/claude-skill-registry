@@ -1,9 +1,0 @@
-{
-  "name": "opentrons-heater-shaker",
-  "description": "Opentrons Heater-Shaker Module - temperature control (37-95°C) with orbital mixing (200-3000 rpm) for cell culture, enzymatic reactions, and sample preparation requiring simultaneous heating and agita",
-  "repo": "jkitchin/skillz",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

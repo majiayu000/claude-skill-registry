@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-flow-architecture",
-  "repo": "fjacquet/finwiz",
-  "category": "development",
-  "description": "Critical Flow architecture lessons for FinWiz including business logic flow, state management, and crew integration patterns. Use when designing or debugging CrewAI Flows.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:40.422439Z"
-}

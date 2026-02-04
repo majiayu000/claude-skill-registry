@@ -1,8 +1,0 @@
-{
-  "name": "git-commit-pr",
-  "repo": "fdelache/dotfiles",
-  "category": "development",
-  "description": "INVOKE BEFORE any git commit, PR creation, or Graphite CLI (gt) operation. Covers gt commands, commit best practices, error fixes, and gh view-md usage.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:32.755498Z"
-}

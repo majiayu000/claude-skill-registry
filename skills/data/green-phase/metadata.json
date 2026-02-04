@@ -1,9 +1,0 @@
-{
-  "name": "green-phase",
-  "description": "Implement minimal code to make failing tests pass (GREEN phase of TDD). Write just enough code to pass tests, no more. Use after red-phase when tests are failing.",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

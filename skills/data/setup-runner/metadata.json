@@ -1,9 +1,0 @@
-{
-  "name": "setup-runner",
-  "description": "GitHub 設定ファイルをセットアップする。「GitHub 設定をセットアップ」「.github を作って」「Issue テンプレート作成」「PR テンプレート作成」「GitHub 設定を初期化」「リポジトリ設定をセットアップ」「ラベル設定を作成」などで起動。.github ディレクトリに必要な設定ファイルを一括生成。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

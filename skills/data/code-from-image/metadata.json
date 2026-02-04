@@ -1,9 +1,0 @@
-{
-  "name": "code-from-image",
-  "description": "Guide for extracting code or pseudocode from images using OCR and implementing it correctly. This skill should be used when tasks involve reading code, pseudocode, or algorithms from images (PNG, JPG,",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

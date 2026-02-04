@@ -1,9 +1,0 @@
-{
-  "name": "managing-api-cache",
-  "description": "Implement intelligent API response caching with Redis, Memcached, and CDN integration.Use when optimizing API performance with caching.Trigger with phrases like \"add caching\", \"optimize API performanc",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

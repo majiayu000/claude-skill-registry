@@ -1,9 +1,0 @@
-{
-  "name": "auto-docs",
-  "description": "Generate comprehensive documentation from codebase analysis - creates README sections, API docs, migration guides, and examples from code",
-  "repo": "jrc1883/popkit-claude",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

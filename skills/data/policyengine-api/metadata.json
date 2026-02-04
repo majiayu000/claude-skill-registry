@@ -1,9 +1,0 @@
-{
-  "name": "policyengine-api",
-  "description": "PolicyEngine API - Flask REST service powering policyengine.org and programmatic access",
-  "repo": "PolicyEngine/policyengine-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

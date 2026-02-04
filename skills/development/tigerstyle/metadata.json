@@ -1,8 +1,0 @@
-{
-  "name": "tigerstyle",
-  "repo": "ejpir/serval",
-  "category": "development",
-  "description": "Review Zig code for TigerStyle compliance. Use when reviewing code, implementing features, or checking for safety/performance issues. Checks assertions, bounded loops, memory safety, error handling, a",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:21:11.334444Z"
-}

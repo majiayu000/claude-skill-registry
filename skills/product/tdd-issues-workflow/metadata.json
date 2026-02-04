@@ -1,8 +1,0 @@
-{
-  "name": "tdd-issues-workflow",
-  "repo": "katylava/name-carousel",
-  "category": "product",
-  "description": "Work through docs/ISSUES.md systematically using strict Test-Driven Development. Use this skill when the user asks to work on issues, fix issues, or implement features from the issues list.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:36.043896Z"
-}

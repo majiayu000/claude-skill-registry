@@ -1,7 +1,0 @@
-{
-  "name": "database-design",
-  "description": "Database schema design, optimization, and migration patterns for PostgreSQL, MySQL, and NoSQL databases. Use for designing schemas, writing migrations, or optimizing queries.",
-  "category": "development",
-  "source": "github.com/skillcreatorai/Ai-Agent-Skills",
-  "imported_at": "2026-01-24T14:54:05.435479Z"
-}

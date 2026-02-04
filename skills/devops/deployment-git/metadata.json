@@ -1,8 +1,0 @@
-{
-  "name": "deployment-git",
-  "repo": "Integrum-Global/kaizen-studio",
-  "category": "devops",
-  "description": "Deployment and Git workflow guides for Kailash applications including Docker deployment, Kubernetes orchestration, and Git workflows. Use when asking about 'deployment', 'Docker deployment', 'Kubernet",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:41.091599Z"
-}

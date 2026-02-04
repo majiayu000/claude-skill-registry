@@ -1,9 +1,0 @@
-{
-  "name": "log-analyze",
-  "description": "Parse and analyze system and application logs. Use when the user says \"find errors in logs\", \"analyze logs\", \"check journalctl\", \"what's in the logs\", \"debug from logs\", or asks to investigate log fil",
-  "repo": "mhalder/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

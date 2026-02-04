@@ -1,9 +1,0 @@
-{
-  "name": "shellcheck",
-  "description": "Lint and fix shell script issues using ShellCheck. Use when the user says \"check this script\", \"lint shell\", \"shellcheck\", \"fix script warnings\", \"validate bash\", or asks to review a shell script for ",
-  "repo": "mhalder/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dealer-proposal",
-  "description": "ディーラー向け車両提案書を自動生成するスキル。顧客の予算・家族構成・用途から最適な車両を選定し、提案書を作成する。「提案書」「車両提案」「レコメンド」「おすすめの車」「proposal」などのキーワードで発動。Use when user asks for vehicle recommendations, car proposals, or dealer proposals.",
-  "repo": "nomhiro/TaskExecutorAgent-UsingSkills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "test-reporting-triage-skill",
-  "description": "Automatically categorizes test failures, suggests responsible owners, and provides common fix checklists. Generates actionable test reports with failure analysis. Use for \"test reporting\", \"failure tr",
-  "repo": "patricio0312rev/skillset",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

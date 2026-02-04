@@ -1,9 +1,0 @@
-{
-  "name": "ui-interaction",
-  "description": "This skill should be used when the user asks to \"add client interactivity\", \"implement form validation\", \"add event handlers\", \"use client state\", \"add Zod validation\", \"implement React hooks\", \"add l",
-  "repo": "constellos/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

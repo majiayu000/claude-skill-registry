@@ -1,9 +1,0 @@
-{
-  "name": "ebook-analysis",
-  "description": "Parse ebooks, extract concepts and entities with citation traceability, classify by type/layer, and synthesize across book collections.",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

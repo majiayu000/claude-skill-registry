@@ -1,8 +1,0 @@
-{
-  "name": "box-factory-uv-scripts",
-  "repo": "racurry/neat-little-package",
-  "category": "testing",
-  "description": "UV-specific patterns for single-file Python scripts using inline metadata (PEP 723). Use when creating Python hooks, standalone utilities, or executable scripts in UV-managed projects.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:46.413120Z"
-}

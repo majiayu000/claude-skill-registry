@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-multi-provider",
-  "description": "Work with multiple providers through OpenRouter. Use when comparing providers or building provider-agnostic systems. Trigger with phrases like 'openrouter providers', 'openrouter multi-model', 'compar",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

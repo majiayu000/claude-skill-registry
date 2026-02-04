@@ -1,8 +1,0 @@
-{
-  "name": "nextflow-pipeline-overview",
-  "repo": "edmundmiller/dotfiles",
-  "category": "devops",
-  "description": "Efficiently understand unfamiliar Nextflow pipelines without reading all files. Use when encountering a new pipeline or needing to explain pipeline structure.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.320077Z"
-}

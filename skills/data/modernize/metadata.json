@@ -1,9 +1,0 @@
-{
-  "name": "modernize",
-  "description": "Brownfield Upgrade - Upgrade all dependencies and modernize the application while maintaining spec-driven control. Runs after Gear 6 for brownfield projects with modernize flag enabled. Updates deps, ",
-  "repo": "jschulte/stackshift",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

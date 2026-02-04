@@ -1,8 +1,0 @@
-{
-  "name": "schema-compute",
-  "repo": "bencassie/flywheel",
-  "category": "documents",
-  "description": "Auto-generate computed frontmatter fields like word_count, link_count, reading_time. Triggers on \"compute fields\", \"calculate metadata\", \"derived fields\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:39.650977Z"
-}

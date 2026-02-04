@@ -1,8 +1,0 @@
-{
-  "name": "turbo",
-  "repo": "settlemint/agent-marketplace",
-  "category": "development",
-  "description": "Turborepo monorepo build system with task pipelines, caching, and package management. Triggers on turbo, turbo.json, monorepo.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:53.587642Z"
-}

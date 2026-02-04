@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-python",
-  "repo": "martimramos/claude-forge",
-  "category": "testing",
-  "description": "Python development standards including pytest, ruff, black, and mypy. Use when working with Python files, tests, or dependencies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.313170Z"
-}

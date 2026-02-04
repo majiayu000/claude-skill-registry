@@ -1,9 +1,0 @@
-{
-  "name": "progress-files",
-  "description": "過去のセッションの進捗ファイルを参照して作業コンテキストを継続するためのガイド。(1) 新しいセッションを開始して以前の作業を継続したい時、(2) 過去に何をやったか思い出したい時、(3) 中断した作業の続きを始める時、(4) プロジェクトの進捗履歴を確認したい時",
-  "repo": "masseater/claude-code-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

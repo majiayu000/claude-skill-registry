@@ -1,9 +1,0 @@
-{
-  "name": "remediation-crypto",
-  "description": "Security fix patterns for cryptographic vulnerabilities (weak algorithms, insecure randomness, TLS issues). Provides language-specific secure implementations.",
-  "repo": "Zate/cc-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "mcp-uninstall",
-  "description": "Remove magnet-local and/or magnet-canary MCP server configurations from project and global locations. Use when user says \"uninstall mcp\", \"remove mcp\", \"delete mcp config\", or \"clean up mcp\".",
-  "repo": "toolkit-ai/magnet-mcp-server",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

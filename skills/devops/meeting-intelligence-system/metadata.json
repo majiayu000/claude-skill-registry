@@ -1,8 +1,0 @@
-{
-  "name": "meeting-intelligence-system",
-  "repo": "OneWave-AI/claude-skills",
-  "category": "devops",
-  "description": "Analyze meeting transcripts to extract decisions, action items, blockers, sentiment, and generate follow-up emails. Use when user provides meeting notes, transcripts, or recordings and needs structure",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.488182Z"
-}

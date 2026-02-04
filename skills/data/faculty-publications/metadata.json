@@ -1,9 +1,0 @@
-{
-  "name": "faculty-publications",
-  "description": "Ensure the library has collected all publications by faculty in a department - a collection completeness requirement",
-  "repo": "szweibel/library-agent",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "plan-incremental-commits",
-  "description": "Review a mixed working tree and produce (and optionally execute) a small, logically grouped sequence of incremental git commits.",
-  "repo": "dudarev/ai-assisted-software-development",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

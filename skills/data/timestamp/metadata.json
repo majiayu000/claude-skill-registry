@@ -1,9 +1,0 @@
-{
-  "name": "timestamp",
-  "description": "Generate deterministic timestamps in YYYYMMDDHHMMSS format using bash. Use when you need timestamps for filenames, logging, or any situation requiring consistent timestamp formatting without LLM gener",
-  "repo": "otrebu/agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

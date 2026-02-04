@@ -1,8 +1,0 @@
-{
-  "name": "codex-prompt-optimization",
-  "repo": "dkoosis/cc-plugins",
-  "category": "development",
-  "description": "This skill should be used when the user asks to \"create a codex prompt\", \"write a CTM\", \"format task for codex\", \"optimize prompt for codex\", \"submit to codex\", or needs to generate a Codex Task Manif",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:06.665656Z"
-}

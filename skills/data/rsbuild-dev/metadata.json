@@ -1,9 +1,0 @@
-{
-  "name": "rsbuild-dev",
-  "description": "Run development tasks including build, dev server, linting, formatting, and Rsbuild configuration. Use when building the project, starting dev server, fixing lint errors, formatting code, or configuri",
-  "repo": "doitsu2014/my-blogs-rsbuild",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

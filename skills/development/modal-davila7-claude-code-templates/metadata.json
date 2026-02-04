@@ -1,7 +1,0 @@
-{
-  "name": "modal-davila7-claude-code-templates",
-  "description": "Run Python code in the cloud with serverless containers, GPUs, and autoscaling. Use when deploying ML models, running batch processing jobs, scheduling compute-intensive tasks, or serving APIs that re",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.347112Z"
-}

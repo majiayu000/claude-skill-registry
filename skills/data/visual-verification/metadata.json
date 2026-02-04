@@ -1,9 +1,0 @@
-{
-  "name": "visual-verification",
-  "description": "Visually verify implemented features work correctly before marking complete. Use when testing UI changes, verifying web features, or checking user flows work in the browser.",
-  "repo": "gruckion/marathon-ralph",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

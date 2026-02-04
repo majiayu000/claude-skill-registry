@@ -1,9 +1,0 @@
-{
-  "name": "devops-platform-patterns",
-  "description": "Platform-specific IaC checklists for DigitalOcean, Hetzner, AWS, and Cloudflare.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
-}

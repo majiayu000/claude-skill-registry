@@ -1,9 +1,0 @@
-{
-  "name": "migrating-from-v3",
-  "description": "Migrate from Tailwind CSS v3 to v4 including configuration migration (JS to CSS), utility renames, opacity changes, and color system updates. Use when upgrading existing projects to v4.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

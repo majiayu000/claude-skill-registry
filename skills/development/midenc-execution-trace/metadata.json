@@ -1,8 +1,0 @@
-{
-  "name": "midenc-execution-trace",
-  "repo": "greenhat/dotfiles",
-  "category": "development",
-  "description": "Use when working on the Miden compiler (`midenc` / `cargo miden`), debugging failing tests or implementing compiler changes, and you need a Miden VM MASM execution trace to understand the stack state ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:57.774088Z"
-}

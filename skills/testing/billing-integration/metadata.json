@@ -1,8 +1,0 @@
-{
-  "name": "billing-integration",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "description": "Payment processing and subscription management integration patterns. Covers Stripe, payment lifecycle, webhooks, dunning, and billing system architecture.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:09.597712Z"
-}

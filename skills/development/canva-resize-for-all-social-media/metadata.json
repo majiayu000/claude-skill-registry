@@ -1,8 +1,0 @@
-{
-  "name": "canva-resize-for-all-social-media",
-  "repo": "canva-sdks/canva-claude-skills",
-  "category": "development",
-  "description": "Resize a Canva design into multiple social media formats (Facebook post, Facebook story, Instagram post, Instagram story, LinkedIn post) and export all versions as PNGs. Use this skill when users want",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:20.071388Z"
-}

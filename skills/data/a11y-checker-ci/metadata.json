@@ -1,9 +1,0 @@
-{
-  "name": "a11y-checker-ci",
-  "description": "Adds comprehensive accessibility testing to CI/CD pipelines using axe-core Playwright integration or pa11y-ci. Automatically generates markdown reports for pull requests showing WCAG violations with s",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

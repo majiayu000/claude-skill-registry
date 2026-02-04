@@ -1,9 +1,0 @@
-{
-  "name": "skill-first",
-  "description": "Check for relevant skills before starting any task. Triggers on task start, new requests, beginning work, or implementation.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
-}

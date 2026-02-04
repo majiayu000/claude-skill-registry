@@ -1,9 +1,0 @@
-{
-  "name": "spec-driven",
-  "description": "Guide spec-driven development workflow (Requirements → Design → Tasks → Implementation) with approval gates between phases. Use when user wants structured feature planning or says \"use spec-driven\" or",
-  "repo": "NikiforovAll/claude-code-rules",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

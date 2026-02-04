@@ -1,9 +1,0 @@
-{
-  "name": "foundry-solidity",
-  "description": "Build and test Solidity smart contracts with Foundry toolkit. Use when developing Ethereum contracts, writing Forge tests, deploying with scripts, or debugging with Cast/Anvil. Triggers on Foundry com",
-  "repo": "tenequm/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

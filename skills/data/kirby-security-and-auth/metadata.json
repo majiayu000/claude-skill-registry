@@ -1,9 +1,0 @@
-{
-  "name": "kirby-security-and-auth",
-  "description": "Secures Kirby sites with access restriction, user roles, permissions, and protected downloads. Use when implementing login/role-based access, permissions, or file protection.",
-  "repo": "bnomei/kirby-mcp",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/bnomei/kirby-mcp"
-}

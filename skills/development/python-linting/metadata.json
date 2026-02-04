@@ -1,8 +1,0 @@
-{
-  "name": "python-linting",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Python linting and type checking using ruff (formatting + linting) and pyright (type checking). Covers common errors, configuration, fixing violations, and when to use noqa. Use when fixing linting er",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.032772Z"
-}

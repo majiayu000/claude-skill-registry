@@ -1,9 +1,0 @@
-{
-  "name": "claude-workflow",
-  "description": "Load for any CWF planning task including: explaining the workflow, answering planning questions, creating plans, amending plans, and implementing features. Contains conventions, phase structure, task ",
-  "repo": "tordks/claude-workflow",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

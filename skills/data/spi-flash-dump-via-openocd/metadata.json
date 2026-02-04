@@ -1,9 +1,0 @@
-{
-  "name": "spi-flash-dump-via-openocd",
-  "description": "This skill should be used when the user asks to \"dump SPI flash\", \"read EEPROM through OpenOCD\", \"dump flash via MCU\", \"read SPI through debug interface\", \"extract firmware from SPI\", or mentions scen",
-  "repo": "lukejenkins/claude-openocd-spi-dump",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "stackit",
-  "description": "Manage stacked Git branches with Stackit. Use when creating/managing stacked branches, submitting PRs for branch stacks, navigating branch trees, rebasing stacks, syncing with main/trunk, troubleshoot",
-  "repo": "getstackit/stackit",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

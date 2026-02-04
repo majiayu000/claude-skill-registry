@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-vitest-config",
-  "description": "Review Vitest configuration for deprecated patterns and best practices. Use when reviewing test configuration or vitest setup.",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

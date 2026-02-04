@@ -1,9 +1,0 @@
-{
-  "name": "checkpoint-manager",
-  "description": "Skill for tracking and managing task progress. Checks pending tasks at conversation start, proposes task creation for new requests, suggests completion reports when work is done. Integrates with check",
-  "repo": "dobachi/AI_Instruction_Kits",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "shopping-admin-browser-automation",
-  "repo": "MassLab-SII/open-agent-skills",
-  "category": "productivity",
-  "description": "This skill provides tools and techniques for Magento Admin panel automation. Includes admin login, customer management, search term analysis, and other common admin scenarios. Suitable for tasks requi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:29.922570Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "prd-planner",
-  "description": "Creates PRDs using persistent file-based planning. Use when user explicitly says \"PRD\", \"product requirements document\", or \"产品需求文档\". Combines PRD methodology with planning-with-files to avoid context",
-  "repo": "Charon-Fan/agent-playbook",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Charon-Fan/agent-playbook"
-}

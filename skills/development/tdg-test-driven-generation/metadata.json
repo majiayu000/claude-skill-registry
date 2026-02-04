@@ -1,8 +1,0 @@
-{
-  "name": "tdg-test-driven-generation",
-  "repo": "chanwit/tdg",
-  "category": "development",
-  "description": "Test-Driven Generation uses TDD (Test-Driven Development) techniques to generate tests and code in Red-Green-Refactor loops. Key words to detect are tdg, TDG.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:11.562045Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cli-agent-runner",
-  "description": "Use this skill when you need to invoke another Claude Code session via the cli-agent-runner.sh script to perform specialized, potentially long-running tasks in a simplified way. This wrapper handles s",
-  "repo": "rawe/claude-dev-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

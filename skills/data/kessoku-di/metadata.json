@@ -1,9 +1,0 @@
-{
-  "name": "kessoku-di",
-  "description": "Kessoku compile-time DI with parallel initialization for Go. Use when writing or debugging kessoku providers/injectors, enabling async dependencies, migrating from google/wire, or fixing go:generate/c",
-  "repo": "mazrean/kessoku",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "kanban-agent",
-  "description": "Kanban Agent role. USE WHEN user says /kanban-agent OR wants to work on assigned kanban tasks as an agent.",
-  "repo": "SimonBlancoE/kanban-mcp",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

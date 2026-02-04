@@ -1,8 +1,0 @@
-{
-  "name": "composewebview-development",
-  "repo": "parkwoocheol/compose-webview",
-  "category": "development",
-  "description": "Builds, tests, and formats ComposeWebView multiplatform library. Handles Android, iOS, Desktop (JVM), and Web (JS) platforms. Use when building, testing, running Spotless formatting, or checking platf",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:56.705390Z"
-}

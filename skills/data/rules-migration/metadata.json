@@ -1,9 +1,0 @@
-{
-  "name": "rules-migration",
-  "description": "MIGRATE CLAUDE.md into modular `.claude/rules/` directory structure following Claude Code's rules system. Converts monolithic CLAUDE.md into organized, path-specific rule files with glob patterns. Use",
-  "repo": "lisaross/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

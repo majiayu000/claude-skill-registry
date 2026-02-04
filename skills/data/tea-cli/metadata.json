@@ -1,9 +1,0 @@
-{
-  "name": "tea-cli",
-  "description": "Use when interacting with Gitea via command line - managing issues, PRs, releases, repos, or any git forge operations with tea CLI",
-  "repo": "gaarutyunov/dev-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

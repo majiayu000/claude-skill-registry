@@ -1,9 +1,0 @@
-{
-  "name": "pub-sub-patterns",
-  "description": "Redis pub/sub messaging patterns and implementations. Use when implementing real-time messaging, event-driven architectures, notification systems, or message broadcasting with Redis pub/sub.",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

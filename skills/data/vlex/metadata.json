@@ -1,9 +1,0 @@
-{
-  "name": "vlex",
-  "description": "Interacts with vLex legal APIs for document search, anonymization, citation extraction, and classification. Use when needing international legal documents, PII removal, or legal text analysis. Require",
-  "repo": "tcapelle/claude-lex",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

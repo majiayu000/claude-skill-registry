@@ -1,9 +1,0 @@
-{
-  "name": "nomos-release-process",
-  "description": "Automates release workflows for the Nomos monorepo per RELEASE.md including version tagging, changelog promotion, GitHub releases, and module-specific versioning. Use this when preparing releases, cre",
-  "repo": "autonomous-bits/nomos",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

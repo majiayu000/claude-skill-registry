@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-refactoring-large",
-  "description": "Execute large-scale refactoring with Cascade coordination. Activate when users mention\"large refactoring\", \"codebase migration\", \"architecture refactor\", \"major refactoring\",or \"system-wide changes\". ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

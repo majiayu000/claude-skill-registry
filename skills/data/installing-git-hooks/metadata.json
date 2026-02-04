@@ -1,9 +1,0 @@
-{
-  "name": "installing-git-hooks",
-  "description": "Use when setting up git pre-commit and pre-push hooks - provides simple shell script approach and pre-commit framework method, both calling justfile commands for DRY principle",
-  "repo": "bryonjacob/aug",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

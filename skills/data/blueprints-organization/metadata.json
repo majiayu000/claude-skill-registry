@@ -1,9 +1,0 @@
-{
-  "name": "blueprints-organization",
-  "description": "Use when managing blueprints directory structure and avoiding duplication. Always search_blueprints before creating to prevent duplicate documentation. Handles naming conventions and cross-references.",
-  "repo": "TheBushidoCollective/han",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

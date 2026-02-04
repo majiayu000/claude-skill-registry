@@ -1,9 +1,0 @@
-{
-  "name": "opal-frontend-repo-guidelines",
-  "description": "Repository structure, build/test commands, coding style, and contribution rules for opal-frontend. Use when navigating the repo, running or debugging builds/lint/tests, following style conventions, or",
-  "repo": "hmcts/opal-frontend",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

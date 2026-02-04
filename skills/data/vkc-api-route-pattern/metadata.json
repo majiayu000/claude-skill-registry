@@ -1,9 +1,0 @@
-{
-  "name": "vkc-api-route-pattern",
-  "description": "Standardize Next.js App Router API route implementations under src/app/api/** (auth/session, input validation, Drizzle queries, rate limiting, response shape). Use when creating or refactoring API rou",
-  "repo": "LEE-SANG-BOK/VKC-2-",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

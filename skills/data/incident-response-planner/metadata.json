@@ -1,9 +1,0 @@
-{
-  "name": "incident-response-planner",
-  "description": "Incident Response Planner - Auto-activating skill for Security Advanced.Triggers on: incident response planner, incident response plannerPart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

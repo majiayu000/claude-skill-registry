@@ -1,9 +1,0 @@
-{
-  "name": "readme-validator",
-  "description": "Validates that skills in this repository are accurately documented in the README. Use when verifying skill documentation or during pre-commit validation.",
-  "repo": "wdavidturner/skills-manager",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

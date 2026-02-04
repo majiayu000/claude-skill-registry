@@ -1,9 +1,0 @@
-{
-  "name": "code-style-enforcer",
-  "description": "Analyzes code for style consistency and applies project-specific formatting conventions beyond what linters catch. Use when reviewing code, ensuring style consistency, or when user requests code style",
-  "repo": "CrazyDubya/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP (cached JSON)"
-}

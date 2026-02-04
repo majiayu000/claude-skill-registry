@@ -1,9 +1,0 @@
-{
-  "name": "article-recommender",
-  "description": "Generate three-version article recommendations (standard, concise, and personal commentary) in both Chinese and English for BestBlogs.dev weekly newsletter. Use when users request article recommendati",
-  "repo": "ginobefun/article-recommender-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

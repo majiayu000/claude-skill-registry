@@ -1,9 +1,0 @@
-{
-  "name": "security-vite",
-  "description": "Vite security audit patterns. Load when reviewing Vite apps (vite.config.ts present). Covers VITE_* exposure, build-time secrets, dev server security, and SPA-specific issues.",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "maceff-tree-awareness",
-  "description": "USE *IMMEDIATELY* AFTER COMPACTION RECOVERY BEFORE REPORTING TO USER! Refresh structural awareness of MacEff repository to prevent assumption errors about file locations, package organization, and mod",
-  "repo": "cversek/MacEff",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

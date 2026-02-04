@@ -1,9 +1,0 @@
-{
-  "name": "sym",
-  "description": "List Python symbols (classes/functions) quickly via AST to discover real identifiers before using `def`/`ctx`.",
-  "repo": "WilletJiang/codex-context-kit-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

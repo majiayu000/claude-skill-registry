@@ -1,7 +1,0 @@
-{
-  "name": "claude-get-session-info",
-  "repo": "ManuelKugelmann/BitBot",
-  "path": "container/templates/bitbot-config/.claude/skills/claude-get-session-info/SKILL.md",
-  "source": "github.com/ManuelKugelmann/BitBot",
-  "downloaded_at": "2026-02-04T03:24:00.650395Z"
-}

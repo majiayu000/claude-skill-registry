@@ -1,9 +1,0 @@
-{
-  "name": "guardrails-safety-filter-builder",
-  "description": "Implements content safety filters with PII redaction, policy constraints, prompt injection detection, and safe refusal templates. Use when adding \"content moderation\", \"safety filters\", \"PII protectio",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

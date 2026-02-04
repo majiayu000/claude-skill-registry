@@ -1,9 +1,0 @@
-{
-  "name": "pain-point-detection",
-  "description": "Identifying buying signals and pain points from public information including job postings, reviews, news, and social media. Triggers when analyzing prospect readiness or searching for opportunities.",
-  "repo": "jeffrschneider/OpenHarness",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeffrschneider/OpenHarness"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "backlog-api",
-  "description": "This skill should be used when the user asks to \"create issue\", \"search issues\", \"update ticket\", \"check notifications\", mentions \"Backlog\", \"バックログ\", \"課題\", \"チケット\", discusses project management with Nu",
-  "repo": "abekdwight/claude-code-plugin",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

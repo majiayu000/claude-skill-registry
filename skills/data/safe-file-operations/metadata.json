@@ -1,9 +1,0 @@
-{
-  "name": "safe-file-operations",
-  "description": "Guidelines for safely executing destructive file operations (mv, rm, cp). Use when performing file moves, deletions, or overwrites to prevent accidental data loss. Provides verification steps and best",
-  "repo": "adrianschmidt/workspace-config",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

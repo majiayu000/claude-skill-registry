@@ -1,9 +1,0 @@
-{
-  "name": "gke-cluster-config",
-  "description": "Gke Cluster Config - Auto-activating skill for GCP Skills.Triggers on: gke cluster config, gke cluster configPart of the GCP Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

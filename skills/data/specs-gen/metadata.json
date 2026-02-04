@@ -1,9 +1,0 @@
-{
-  "name": "specs-gen",
-  "description": "Generate specs for a new feature or a refacto. Creates new folder with specific scafolding.",
-  "repo": "majiayu000/claude-skill-registry",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majiayu000/claude-skill-registry"
-}

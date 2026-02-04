@@ -1,9 +1,0 @@
-{
-  "name": "detecting-agent-environment",
-  "description": "Utilities and patterns for detecting execution environment (CI/CD vs local, network access, available ports, timeouts). Use when you need to adapt scripts or workflows based on where the agent is runn",
-  "repo": "ynotradio/site",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

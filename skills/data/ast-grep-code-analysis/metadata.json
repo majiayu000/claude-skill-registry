@@ -1,9 +1,0 @@
-{
-  "name": "ast-grep-code-analysis",
-  "description": "Use when analyzing complex codebases for security vulnerabilities, performance issues, and structural patterns - provides systematic AST-based approach using ast-grep for comprehensive code understand",
-  "repo": "zenobi-us/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

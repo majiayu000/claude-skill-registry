@@ -1,8 +1,0 @@
-{
-  "name": "mcs-control",
-  "repo": "cv/mcs",
-  "category": "product",
-  "description": "Control vehicle with natural language. Use when user wants to warm up/cool down the car, lock/unlock doors, start/stop engine, check battery/fuel/location/status, or control charging. Translates phras",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:39.793361Z"
-}

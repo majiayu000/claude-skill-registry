@@ -1,9 +1,0 @@
-{
-  "name": "sitemap-structure",
-  "description": "Create website sitemap with page structure and section selection. Use at project start to define pages, routes, and shadcnblocks sections for each page. Outputs docs/sitemap.md. Triggers on \"sitemap\",",
-  "repo": "Manuelvillarvieites/energy-company",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

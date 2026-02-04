@@ -1,9 +1,0 @@
-{
-  "name": "api-schema-analyzer",
-  "description": "Analyze OpenAPI and Postman schemas for MCP tool generation. Use when analyzing API specifications, extracting endpoint information, generating tool signatures, or when user mentions OpenAPI, Swagger,",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "codex-load-balancer",
-  "repo": "kunhuang12345/vedio-project",
-  "category": "development",
-  "description": "Pick a CODEX_HOME source and/or an auth.json credential file per tmux-workflow worker so many Codex workers can balance across multiple logins. Use with tmux-workflow when you need multi-account scali",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:42.842807Z"
-}

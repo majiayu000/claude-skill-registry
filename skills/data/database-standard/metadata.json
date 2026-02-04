@@ -1,9 +1,0 @@
-{
-  "name": "database-standard",
-  "repo": "TrueNine/claude-code-projects",
-  "category": "data",
-  "description": "Database design standards defining primary keys, foreign keys, audit fields, soft delete, junction tables. PostgreSQL style preferred, SQL lowercase without comments.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:16.398166Z",
-  "dir_name": "database-standard"
-}

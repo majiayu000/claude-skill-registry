@@ -1,9 +1,0 @@
-{
-  "name": "validating-inputs",
-  "description": "Check all external inputs for validity - garbage in, nothing out, never garbage out",
-  "repo": "barrydobson/dotfiles_extra",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

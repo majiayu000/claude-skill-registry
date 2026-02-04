@@ -1,9 +1,0 @@
-{
-  "name": "orchestrator-developer",
-  "description": "Developer for Claude Orchestrator. Implements tasks according to Tech Lead instructions, applies design tokens, and reports completion. Use when asked to implement code or execute development tasks fo",
-  "repo": "parallax-ai-llc/claude-orchestrator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

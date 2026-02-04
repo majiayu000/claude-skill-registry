@@ -1,9 +1,0 @@
-{
-  "name": "system-diagnostics",
-  "description": "Comprehensive Windows 11 system diagnostics via PowerShell. Diagnoses crashes, freezes, reboots, BSOD, disk health, memory issues, hardware errors, and performance problems. Use when troubleshooting W",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

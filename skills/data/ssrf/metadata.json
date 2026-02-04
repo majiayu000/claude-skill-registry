@@ -1,9 +1,0 @@
-{
-  "name": "ssrf",
-  "description": "服务端请求伪造漏洞检测与利用。当目标存在 URL 参数、远程文件加载、Webhook、PDF 生成、URL 预览功能时使用。",
-  "repo": "yhy0/CHYing-agent",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

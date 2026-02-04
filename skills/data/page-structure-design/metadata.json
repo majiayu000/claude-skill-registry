@@ -1,9 +1,0 @@
-{
-  "name": "page-structure-design",
-  "description": "Use when designing page hierarchies, page templates, layout zones, or sitemap structures. Covers page sets, template inheritance, component zones, and page tree APIs for headless CMS architectures.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

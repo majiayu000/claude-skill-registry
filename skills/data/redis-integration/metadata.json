@@ -1,9 +1,0 @@
-{
-  "name": "redis-integration",
-  "description": "Redis and Upstash Vector integration patterns for rate-limiting, vector search, embeddings, and memory systems. Use when implementing caching, rate-limiting, or semantic search features.",
-  "repo": "omerakben/omer-akben",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

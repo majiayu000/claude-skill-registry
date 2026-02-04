@@ -1,9 +1,0 @@
-{
-  "name": "agent-exec",
-  "description": "Use the agent-exec CLI to run Codex/Claude/Cursor and manage skills for this repo.",
-  "repo": "GeLi2001/agent-exec",
-  "category": "development",
-  "tags": [],
-  "stars": 1,
-  "source": "github.com/GeLi2001/agent-exec"
-}

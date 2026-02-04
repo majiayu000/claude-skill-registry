@@ -1,8 +1,0 @@
-{
-  "name": "performance-budgeting",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "description": "Allocate latency budgets and performance targets across system components",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:08.582719Z"
-}

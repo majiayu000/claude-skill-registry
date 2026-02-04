@@ -1,7 +1,0 @@
-{
-  "name": "file-todos-everyinc-compound-engineering-",
-  "description": "This skill should be used when managing the file-based todo tracking system in the todos/ directory. It provides workflows for creating todos, managing status and dependencies, conducting triage, and ",
-  "category": "development",
-  "source": "github.com/EveryInc/compound-engineering-plugin",
-  "imported_at": "2026-01-24T14:54:11.904736Z"
-}

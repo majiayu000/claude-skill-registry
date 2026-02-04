@@ -1,9 +1,0 @@
-{
-  "name": "pm-status-trigger",
-  "description": "Natural language wrapper for PM status commands - automatically triggers /pm:status, /pm:next, /pm:blocked, /pm:in-progress when users ask about project status, next tasks, or blockers",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

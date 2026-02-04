@@ -1,9 +1,0 @@
-{
-  "name": "refactor-150",
-  "description": "Three-stage refactoring workflow: (1) iterative research of refactor/modularization options, (2) plan + risk/edge-case analysis + Scope150 validation, then implement with tests after user confirmation",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "backup-etcd",
-  "description": "Create and manage etcd backups for OpenShift control plane disaster recovery, including automated backup procedures and verification.",
-  "repo": "mpryc/ai-agents-and-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

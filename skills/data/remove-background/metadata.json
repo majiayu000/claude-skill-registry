@@ -1,9 +1,0 @@
-{
-  "name": "remove-background",
-  "repo": "chernobelenkiy/ai-tools",
-  "category": "data",
-  "description": "Remove backgrounds from images using rembg (local AI model). Use when user asks to remove background, make transparent, or cut out subjects from images.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:17.999054Z",
-  "dir_name": "remove-background"
-}

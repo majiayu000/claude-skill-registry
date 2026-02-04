@@ -1,9 +1,0 @@
-{
-  "name": "log-capturer",
-  "description": "Captures Claude Code conversation sessions in structured markdown format tied to work items with redaction",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

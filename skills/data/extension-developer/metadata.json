@@ -1,9 +1,0 @@
-{
-  "name": "extension-developer",
-  "description": "Use this skill when the user needs help building, testing, or deploying custom LimaCharlie extensions.",
-  "repo": "tekgrunt/boot-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

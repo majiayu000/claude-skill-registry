@@ -1,9 +1,0 @@
-{
-  "name": "yatl-tasks",
-  "description": "Track multi-session work with dependencies using yatl (Yet Another Task List). Use when work spans multiple sessions, has dependencies, or requires persistent context across compaction cycles. For sim",
-  "repo": "brianm/yatl",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

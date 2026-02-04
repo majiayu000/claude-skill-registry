@@ -1,8 +1,0 @@
-{
-  "name": "jupyter-notebook-assistant",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "documents",
-  "description": "Organizes, cleans, and optimizes Jupyter notebooks - removes empty cells, adds structure, extracts functions, generates documentation. Use when user asks to \"clean notebook\", \"organize jupyter\", \"refa",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:48.301371Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "playwright-blazor-e2e",
-  "repo": "keithdv/ClaudeSkills",
-  "category": "testing",
-  "description": "End-to-end testing for Blazor applications using Playwright for .NET. Use when writing E2E tests, creating test infrastructure, testing MudBlazor components, handling Blazor WebAssembly loading, debug",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:05.165201Z"
-}

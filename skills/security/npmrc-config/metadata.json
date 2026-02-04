@@ -1,8 +1,0 @@
-{
-  "name": "npmrc-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "security",
-  "description": "NPM registry configuration template (.npmrc.template) and validation logic for GitHub Packages authentication with pnpm hoisting settings. Includes 4 critical standards (GitHub Package Registry config",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.271132Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "writedocumentation",
-  "description": "Write or update duplojs-utils documentation pages (FR/EN) including API function pages, namespace index pages, and guides, following the repo",
-  "repo": "duplojs/utils",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

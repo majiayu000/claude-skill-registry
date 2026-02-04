@@ -1,9 +1,0 @@
-{
-  "name": "gmacko-release-deploy-web",
-  "description": "Use when (1) deploying web application to Vercel staging or production, (2) monitoring deployment progress, (3) running post-deployment verification. Manages Vercel deployment workflow with safety che",
-  "repo": "gmackie/vercel-expo-app-template",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

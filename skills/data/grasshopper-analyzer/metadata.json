@@ -1,9 +1,0 @@
-{
-  "name": "grasshopper-analyzer",
-  "description": "Analyze Grasshopper (.ghx/.xml) files to extract workflow, custom scripts, algorithmic patterns, and generate comprehensive reports for C# developers",
-  "repo": "sonomirco/agents-and-commands",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

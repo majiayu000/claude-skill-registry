@@ -1,9 +1,0 @@
-{
-  "name": "oe-architectural-guardrails",
-  "description": "Essential architectural rules, pipeline order, and bug prevention checklists. MUST be consulted before modifying routing, state, or detection logic.",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shami-ah/OpenEvent-AI"
-}

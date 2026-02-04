@@ -1,9 +1,0 @@
-{
-  "name": "pact-architecture-patterns",
-  "description": "Architectural design patterns, C4 diagram templates, component design guidelines,\nand anti-patterns for PACT Architect phase.\nUse when: designing system components, creating architecture diagrams,\ndef",
-  "repo": "ProfSynapse/PACT-prompt",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ProfSynapse/PACT-prompt"
-}

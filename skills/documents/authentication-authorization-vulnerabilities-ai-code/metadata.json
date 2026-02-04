@@ -1,8 +1,0 @@
-{
-  "name": "authentication-authorization-vulnerabilities-ai-code",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "documents",
-  "description": "Understand authentication and authorization defects in AI-generated code including insecure password storage, broken session management, and access control bypasses. Use this skill when you need to le",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.736614Z"
-}

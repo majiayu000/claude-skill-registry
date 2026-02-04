@@ -1,9 +1,0 @@
-{
-  "name": "bignum-calculator",
-  "description": "Arbitrary precision integer calculator for handling extremely large numbers. Use when users need to compute with numbers that exceed standard numeric limits, including operations like factorial of lar",
-  "repo": "zly7/pipelineLLM",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

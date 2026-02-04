@@ -1,9 +1,0 @@
-{
-  "name": "faber-config",
-  "description": "Load, validate, and resolve FABER configuration and workflows with inheritance support",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

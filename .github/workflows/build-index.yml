@@ -1,32 +1,25 @@
 name: Build Search Index
 
 on:
-  # Run after registry update
-  workflow_run:
-    workflows: ["Update Registry"]
-    types: [completed]
-
   # Manual trigger
   workflow_dispatch:
 
-  # Run on push to main (for index script changes)
+  # Run when registry or site sources change
   push:
     branches: [main]
     paths:
+      - 'registry.json'
       - 'scripts/build_search_index.py'
       - 'docs/**'
       - '.github/workflows/build-index.yml'
 
 permissions:
-  contents: write
   pages: write
   id-token: write
 
 jobs:
   build-index:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,19 +46,13 @@ jobs:
           echo "Index sizes:"
           du -sh docs/*.json docs/*.gz 2>/dev/null || true
 
-      - name: Commit index files
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-          git add docs/
-
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore: rebuild search index"
-            git push
-          fi
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'
 
   deploy-pages:
     needs: build-index
@@ -76,19 +63,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main  # Get latest changes including index
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'docs'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

@@ -1,8 +1,0 @@
-{
-  "name": "user-story-creation",
-  "repo": "sjnims/requirements-expert",
-  "category": "testing",
-  "description": "This skill should be used when the user asks to \"create user stories\", \"write user stories\", \"break down epic into stories\", \"define user stories\", \"what stories do I need\", \"apply INVEST criteria\", \"",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:56.167993Z"
-}

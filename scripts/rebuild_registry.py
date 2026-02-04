@@ -208,94 +208,104 @@ def build_category_indexes(skills: list, output_dir: Path):
         json.dump(index, f, indent=2)
 
 
-def main():
-    script_dir = Path(__file__).parent
-    registry_dir = script_dir.parent
-    skills_dir = registry_dir / "skills"
-    categories_dir = registry_dir / "categories"
-
-    print("=" * 60)
-    print("REBUILDING REGISTRY FROM DOWNLOADED SKILLS")
-    print("=" * 60)
-    print()
-
-    print("Scanning skills directory...")
-    skills = scan_skills(skills_dir)
-    print(f"Found {len(skills)} skills")
-    print()
-
-    # Remove duplicates by repo:path (more accurate than name-only)
-    # This prevents losing skills with same name but different sources
-    seen = set()
-    unique_skills = []
-    duplicates_removed = 0
-
-    for s in skills:
-        # Use repo:path as unique key (most accurate)
-        repo = s.get("repo", "")
-        path = s.get("path", "")
-
-        if repo and path:
-            key = f"{repo}:{path}"
-        elif repo:
-            key = repo
-        else:
-            # Fallback to category:name for local skills without repo
-            key = f"{s.get('category', 'other')}:{s['name']}"
-
-        if key not in seen:
-            seen.add(key)
-            unique_skills.append(s)
-        else:
-            duplicates_removed += 1
-
-    print(f"Duplicates removed: {duplicates_removed}")
-
-    print(f"Unique skills: {len(unique_skills)}")
-    print()
-
-    # Sort by stars then name
-    unique_skills.sort(key=lambda x: (-x.get("stars", 0), x["name"].lower()))
-
-    # Build registry
-    registry = {
-        "version": "2.0.0",
-        "updated_at": datetime.utcnow().isoformat() + "Z",
-        "total_count": len(unique_skills),
-        "skills": unique_skills,
-    }
-
-    registry_path = registry_dir / "registry.json"
-    if safe_write_registry(registry_path, registry):
-        print(f"Written registry.json with {len(unique_skills)} skills")
-    else:
-        print(f"Failed to write registry.json!")
-        return
-    print()
-
-    # Build category indexes
-    print("Building category indexes...")
-    build_category_indexes(unique_skills, categories_dir)
-    print()
-
-    # Stats
-    print("=" * 60)
-    print("CATEGORY DISTRIBUTION")
-    print("=" * 60)
-    cat_counts = defaultdict(int)
-    for s in unique_skills:
-        cat_counts[s.get("category", "other")] += 1
-
-    for cat, count in sorted(cat_counts.items(), key=lambda x: -x[1]):
-        pct = count / len(unique_skills) * 100 if unique_skills else 0
-        bar = "█" * int(pct / 2)
-        print(f"  {cat:15} {count:6} ({pct:5.1f}%) {bar}")
-
-    print()
-    print("=" * 60)
-    print("DONE!")
-    print("=" * 60)
-
-
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Rebuild registry.json from downloaded skills")
+    parser.add_argument("--skills-dir", default="skills", help="Skills directory to scan")
+    parser.add_argument("--registry", default="registry.json", help="Output registry.json path")
+    parser.add_argument("--categories-dir", default="categories", help="Output categories directory")
+    parser.add_argument("--skip-categories", action="store_true", help="Do not write category index files")
+
+    args = parser.parse_args()
+
+    def _main_from_args() -> None:
+        script_dir = Path(__file__).parent
+        registry_dir = script_dir.parent
+
+        skills_dir = (registry_dir / args.skills_dir).resolve()
+        registry_path = (registry_dir / args.registry).resolve()
+        categories_dir = (registry_dir / args.categories_dir).resolve()
+
+        print("=" * 60)
+        print("REBUILDING REGISTRY FROM DOWNLOADED SKILLS")
+        print("=" * 60)
+        print()
+
+        print(f"Scanning skills directory: {skills_dir}")
+        skills = scan_skills(skills_dir)
+        print(f"Found {len(skills)} skills")
+        print()
+
+        # Remove duplicates by repo:path (more accurate than name-only)
+        # This prevents losing skills with same name but different sources
+        seen = set()
+        unique_skills = []
+        duplicates_removed = 0
+
+        for s in skills:
+            # Use repo:path as unique key (most accurate)
+            repo = s.get("repo", "")
+            path = s.get("path", "")
+
+            if repo and path:
+                key = f"{repo}:{path}"
+            elif repo:
+                key = repo
+            else:
+                # Fallback to category:name for local skills without repo
+                key = f"{s.get('category', 'other')}:{s['name']}"
+
+            if key not in seen:
+                seen.add(key)
+                unique_skills.append(s)
+            else:
+                duplicates_removed += 1
+
+        print(f"Duplicates removed: {duplicates_removed}")
+        print(f"Unique skills: {len(unique_skills)}")
+        print()
+
+        # Sort by stars then name
+        unique_skills.sort(key=lambda x: (-x.get("stars", 0), x["name"].lower()))
+
+        # Build registry
+        registry = {
+            "version": "2.0.0",
+            "updated_at": datetime.utcnow().isoformat() + "Z",
+            "total_count": len(unique_skills),
+            "skills": unique_skills,
+        }
+
+        if safe_write_registry(registry_path, registry):
+            print(f"Written {registry_path} with {len(unique_skills)} skills")
+        else:
+            print("Failed to write registry!")
+            return
+        print()
+
+        if not args.skip_categories:
+            print(f"Building category indexes: {categories_dir}")
+            build_category_indexes(unique_skills, categories_dir)
+            print()
+
+            # Stats
+            print("=" * 60)
+            print("CATEGORY DISTRIBUTION")
+            print("=" * 60)
+            cat_counts = defaultdict(int)
+            for s in unique_skills:
+                cat_counts[s.get("category", "other")] += 1
+
+            for cat, count in sorted(cat_counts.items(), key=lambda x: -x[1]):
+                pct = count / len(unique_skills) * 100 if unique_skills else 0
+                bar = "█" * int(pct / 2)
+                print(f"  {cat:15} {count:6} ({pct:5.1f}%) {bar}")
+
+            print()
+
+        print("=" * 60)
+        print("DONE!")
+        print("=" * 60)
+
+    _main_from_args()

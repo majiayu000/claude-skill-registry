@@ -1,9 +1,0 @@
-{
-  "name": "pypi-server",
-  "description": "Guide for setting up local PyPI servers to host and serve Python packages. This skill should be used when tasks involve creating a local PyPI repository, serving Python packages over HTTP, building di",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

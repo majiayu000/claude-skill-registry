@@ -1,9 +1,0 @@
-{
-  "name": "do-platform-neon",
-  "repo": "yejune/git-sub",
-  "category": "data",
-  "description": "Neon serverless PostgreSQL 전문가 - auto-scaling, database branching, PITR, connection pooling 지원. serverless 앱에서 PostgreSQL 필요시 사용",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:23:56.902910Z",
-  "dir_name": "do-platform-neon"
-}

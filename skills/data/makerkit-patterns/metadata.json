@@ -1,9 +1,0 @@
-{
-  "name": "makerkit-patterns",
-  "description": "This skill should be used when the user asks about \"MakerKit patterns\", \"CLAUDE.md files\", \"what MCP tools are available\", \"how does MakerKit structure\", \"personal vs team accounts\", \"RLS patterns in ",
-  "repo": "membranaestudio/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

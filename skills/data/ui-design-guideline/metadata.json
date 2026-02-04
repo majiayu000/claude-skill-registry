@@ -1,9 +1,0 @@
-{
-  "name": "ui-design-guideline",
-  "description": "Create project-specific UI design guideline as a Claude Code Skill. Use when the user says \"UI design guideline\", \"design system\", \"style guide\", or wants to create design guidelines for their project",
-  "repo": "titabash/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

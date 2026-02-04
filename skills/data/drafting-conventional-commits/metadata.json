@@ -1,9 +1,0 @@
-{
-  "name": "drafting-conventional-commits",
-  "description": "Draft a Conventional Commits message from either a short summary of changes or by inspecting the local git diff. Use when the user wants a commit message formatted as type(scope): subject, with option",
-  "repo": "yoonsin91/ai-skills-pack",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

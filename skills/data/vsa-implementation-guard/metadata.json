@@ -1,9 +1,0 @@
-{
-  "name": "vsa-implementation-guard",
-  "description": "Blazor VSA アーキテクチャの実装ミス防止ガード。Handler、Validator、 BoundaryService、Entity などの C# コードを生成・修正する際に自動的に 適用される知識。SaveChangesAsync の禁止、BoundaryService での業務ロジック 禁止、Result<T> パターンの強制、Value Object 比較ルールなど、 カタログ駆動開",
-  "repo": "akiramei/blazor-enterprise-architecture-poc",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

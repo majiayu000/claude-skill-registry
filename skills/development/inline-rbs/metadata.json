@@ -1,8 +1,0 @@
-{
-  "name": "inline-rbs",
-  "repo": "stevegeek/claude-ruby-plugins",
-  "category": "development",
-  "description": "Write RBS type annotations directly in Ruby source files using comment syntax. Use when adding types to Ruby code with rbs-inline.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:22.077436Z"
-}

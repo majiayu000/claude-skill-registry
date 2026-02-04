@@ -1,9 +1,0 @@
-{
-  "name": "git-hooks-manager",
-  "description": "Setup and manage git hooks for pre-commit, pre-push automation (lint, test, format)",
-  "repo": "Lordjiggy/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

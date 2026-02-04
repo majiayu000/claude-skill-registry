@@ -1,8 +1,0 @@
-{
-  "name": "check-bidirectional",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find bidirectional links (notes that link to each other). Triggers on \"bidirectional\", \"bidirectional links\", \"mutual links\", \"two-way links\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:47.130864Z"
-}

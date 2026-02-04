@@ -1,9 +1,0 @@
-{
-  "name": "clickhouse-architect",
-  "description": "ClickHouse schema design authority (hub skill). Use when designing schemas, selecting compression codecs, tuning ORDER BY, optimizing queries, or reviewing table structure. **Delegates to**: clickhous",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

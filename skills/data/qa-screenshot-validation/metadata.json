@@ -1,9 +1,0 @@
-{
-  "name": "qa-screenshot-validation",
-  "description": "Evaluate captured screenshots for layout issues, masked elements, and rendering problems. Use after taking screenshots to validate visual correctness and automatically resize viewport if elements are ",
-  "repo": "jpoutrin/product-forge",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sfh-qa",
-  "description": "Verify manufactured horns against design predictions. Use when running post-printinspection, acoustic measurements, comparing measured vs simulated performance,or generating verification reports. Dete",
-  "repo": "toneron2/SFH-OS",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

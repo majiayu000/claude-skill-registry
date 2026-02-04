@@ -1,9 +1,0 @@
-{
-  "name": "frontend-playwright",
-  "description": "Visual QA gate for frontend code. ALWAYS use before delivering any UI changes - navigate, screenshot, verify console is error-free. Use for: responsive testing across viewports, form/interaction testi",
-  "repo": "petbrains/mvp-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

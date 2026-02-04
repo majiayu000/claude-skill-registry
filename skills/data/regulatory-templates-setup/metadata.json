@@ -1,9 +1,0 @@
-{
-  "name": "regulatory-templates-setup",
-  "description": "Initial setup sub-skill - handles template selection and context initializationfor the 3-gate regulatory workflow.",
-  "repo": "LerianStudio/ring",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

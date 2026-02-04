@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-link-suggester",
-  "description": "Discover and suggest connections between related notes in Obsidian vault. Use when identifying orphaned notes, finding related content, or building knowledge graph connections. Analyzes entity mention",
-  "repo": "jeongsk/langchain-academy",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

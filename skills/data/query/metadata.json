@@ -1,9 +1,0 @@
-{
-  "name": "query",
-  "description": "Use when querying Bknd data, building filters with WhereBuilder, sorting results, pagination, auto-joining relationships, and optimizing query performance. Covers Repository API, WhereQuery operators,",
-  "repo": "cameronapak/freedom-stack-v3",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/cameronapak/freedom-stack-v3"
-}

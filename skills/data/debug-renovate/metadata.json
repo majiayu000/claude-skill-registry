@@ -1,9 +1,0 @@
-{
-  "name": "debug-renovate",
-  "description": "Use renovate-dryrun to test Renovate configuration locally. Use this skill when debugging or validating renovate.json5 changes.",
-  "repo": "fohte/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

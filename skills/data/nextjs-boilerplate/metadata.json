@@ -1,9 +1,0 @@
-{
-  "name": "nextjs-boilerplate",
-  "description": "Bootstrap a new Next.js development environment with Tailwind CSS, shadcn/ui components, and assistant-ui for AI chat interfaces. Use when the user asks to \"create a new Next.js project\", \"bootstrap N",
-  "repo": "petekp/claude-code-setup",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

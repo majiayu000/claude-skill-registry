@@ -1,9 +1,0 @@
-{
-  "name": "generating-readmes",
-  "description": "Generate comprehensive README files for projects. Use when the user asks to create, generate, or write a README, readme file, or project documentation.",
-  "repo": "meirm/askGPT",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "tailscale-manager",
-  "repo": "cncorp/arsenal",
-  "category": "devops",
-  "description": "Manage Tailscale funnels across different ct project instances. Start/stop funnels and route traffic to different docker containers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.698245Z"
-}

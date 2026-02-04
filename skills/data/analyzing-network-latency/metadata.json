@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-network-latency",
-  "description": "Analyze network latency and optimize request patterns for faster communication. Use when diagnosing slow network performance or optimizing API calls. Trigger with phrases like \"analyze network latency",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

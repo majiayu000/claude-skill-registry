@@ -1,9 +1,0 @@
-{
-  "name": "dx-mysql-pipe",
-  "repo": "siteminder-au/claude-code-dx-plugin",
-  "category": "data",
-  "description": "when user asking mysql pipe to remote host, or pipe to a remote host, then use dx command to open a tunnel.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:25.410767Z",
-  "dir_name": "dx-mysql-pipe"
-}

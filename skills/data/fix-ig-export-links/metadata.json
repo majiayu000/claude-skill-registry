@@ -1,9 +1,0 @@
-{
-  "name": "fix-ig-export-links",
-  "description": "Fix broken Simplifier resolve links in downloaded MII Onkologie Implementation Guide exports. Use when downloading an IG from Simplifier and links are broken, preparing an IG export for offline use, o",
-  "repo": "medizininformatik-initiative/kerndatensatzmodul-onkologie",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

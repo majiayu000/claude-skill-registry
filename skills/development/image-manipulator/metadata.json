@@ -1,8 +1,0 @@
-{
-  "name": "image-manipulator",
-  "repo": "smorand/claude-config",
-  "category": "development",
-  "description": "Expert in image manipulation using ImageMagick. Handles rotation, resizing, cropping, format conversion, filters, watermarks, batch processing, and advanced transformations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.271283Z"
-}

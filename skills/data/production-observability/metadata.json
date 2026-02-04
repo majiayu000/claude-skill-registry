@@ -1,9 +1,0 @@
-{
-  "name": "production-observability",
-  "description": "Use when adding logging, error monitoring, metrics, Sentry, debugging production issues, or improving observability",
-  "repo": "carmentacollective/carmenta",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/carmentacollective/carmenta"
-}

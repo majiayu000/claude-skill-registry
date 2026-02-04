@@ -1,7 +1,0 @@
-{
-  "name": "aws-mcp-setup",
-  "description": "Configure AWS Documentation MCP server to query up-to-date AWS knowledge, APIs, and best practices",
-  "category": "development",
-  "source": "github.com/zxkane/aws-skills",
-  "imported_at": "2026-01-24T14:54:09.520614Z"
-}

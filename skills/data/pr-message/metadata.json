@@ -1,9 +1,0 @@
-{
-  "name": "pr-message",
-  "description": "현재 브랜치의 변경사항을 분석하여 PR 메시지를 생성한다",
-  "repo": "forkmeeet/.github",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

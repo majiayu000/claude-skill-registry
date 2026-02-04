@@ -1,9 +1,0 @@
-{
-  "name": "testing-suite",
-  "description": "Use this skill when the user asks to \"set up testing\", \"configure tests for Storybook\", \"add interaction tests\", \"add accessibility tests\", \"set up a11y testing\", \"configure Vitest\", \"configure Playwr",
-  "repo": "flight505/storybook-assistant",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/flight505/storybook-assistant"
-}

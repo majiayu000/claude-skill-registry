@@ -1,7 +1,0 @@
-{
-  "name": "aptos-token-standards",
-  "description": "Expert on Aptos token standards including fungible tokens (Coin, Fungible Asset), non-fungible tokens (Digital Asset standard, Token V1/V2), collections, metadata, minting, burning, and transfer patte",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.521392Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "test-bootc-build",
-  "description": "Run a bootc build test and report results. Builds a bootc container image, optionally creates a disk image, and downloads the artifact.",
-  "repo": "centos-automotive-suite/automotive-dev-operator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

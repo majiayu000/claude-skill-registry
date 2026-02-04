@@ -1,8 +1,0 @@
-{
-  "name": "github-actions-ssh-deploy",
-  "repo": "refly-ai/skill-to-workflow",
-  "category": "devops",
-  "description": "\u4ea4\u4e92\u5f0f\u914d\u7f6e GitHub Actions \u901a\u8fc7 SSH \u5bc6\u94a5\u8fde\u63a5 VPS \u7684\u5411\u5bfc\u3002\u5f53\u7528\u6237\u9700\u8981\u8bbe\u7f6e GitHub Actions \u90e8\u7f72\u5230 VPS\u3001\u914d\u7f6e CI/CD SSH \u8fde\u63a5\u3001\u751f\u6210\u90e8\u7f72 workflow \u65f6\u4f7f\u7528\u6b64 skill\u3002\u901a\u8fc7\u95ee\u7b54\u65b9\u5f0f\u6536\u96c6\u5fc5\u8981\u4fe1\u606f\u540e\u751f\u6210\u5b8c\u6574\u914d\u7f6e\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:34.524118Z"
-}

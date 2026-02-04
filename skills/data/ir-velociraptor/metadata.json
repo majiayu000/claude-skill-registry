@@ -1,9 +1,0 @@
-{
-  "name": "ir-velociraptor",
-  "description": "Endpoint visibility, digital forensics, and incident response using Velociraptor Query Language (VQL) for evidence collection and threat hunting at scale. Use when: (1) Conducting forensic investigati",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

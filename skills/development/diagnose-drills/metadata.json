@@ -1,8 +1,0 @@
-{
-  "name": "diagnose-drills",
-  "repo": "golergka/claude-code-plays-factorio",
-  "category": "development",
-  "description": "Diagnose drill problems - fuel shortages, blocked outputs, depleted resources. Use when drills aren't working or showing 0/X working status.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:01.762910Z"
-}

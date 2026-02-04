@@ -1,9 +1,0 @@
-{
-  "name": "huma-endpoint",
-  "description": "Guide for creating Huma API endpoints following this project's conventions including routing, input/output structs, error handling, and OpenAPI documentation.",
-  "repo": "janisto/huma-playground",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

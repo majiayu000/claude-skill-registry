@@ -1,9 +1,0 @@
-{
-  "name": "performance-budget-enforcer",
-  "description": "Monitors Lighthouse scores and JavaScript bundle sizes across deployments with automated alerts when performance thresholds are exceeded. This skill should be used when setting up performance monitori",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

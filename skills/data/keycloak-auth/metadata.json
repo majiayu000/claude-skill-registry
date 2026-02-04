@@ -1,9 +1,0 @@
-{
-  "name": "keycloak-auth",
-  "description": "Configure cookie-based OIDC authentication with Keycloak for affolterNET.Web.Bff. Use when setting up login/logout, token refresh, or Keycloak integration.",
-  "repo": "Mcafee123/affolterNET.Web",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

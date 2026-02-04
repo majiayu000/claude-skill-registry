@@ -1,8 +1,0 @@
-{
-  "name": "finding-files",
-  "repo": "iota9star/my-skills",
-  "category": "testing",
-  "description": "Performs fast file discovery with parallel search and smart defaults. Use this skill when searching for files by name, pattern, or type, especially when performance matters or when working with large ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.079641Z"
-}

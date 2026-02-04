@@ -1,7 +1,0 @@
-{
-  "name": "decibel",
-  "description": "Decibel on-chain perpetual futures trading platform on Aptos. Covers trading engine, orderbook, TypeScript SDK, REST APIs, WebSocket streams, market data, position management, TWAP orders, and vault o",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:01.783461Z"
-}

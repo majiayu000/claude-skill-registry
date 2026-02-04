@@ -1,8 +1,0 @@
-{
-  "name": "custom-command-creator",
-  "repo": "thurstonsand/ansiblonomicon",
-  "category": "product",
-  "description": "This skill must be used when users want to create custom slash commands. Activates with phrases like \"create a command\", \"make a slash command\", \"add custom command\", \"create command for\", or \"automat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:00.428789Z"
-}

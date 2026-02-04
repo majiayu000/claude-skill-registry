@@ -1,9 +1,0 @@
-{
-  "name": "system-monitoring",
-  "description": "System resource monitoring including CPU, memory, disk, and network statistics. Use when checking system health, diagnosing performance issues, or monitoring resources.",
-  "repo": "ShunsukeHayashi/miyabi-mcp-bundle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

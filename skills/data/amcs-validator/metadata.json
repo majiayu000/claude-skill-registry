@@ -1,9 +1,0 @@
-{
-  "name": "amcs-validator",
-  "repo": "miethe/MeatyMusic",
-  "category": "data",
-  "description": "Score composed artifacts against blueprint rubric. Evaluates hook density, singability, rhyme tightness, section completeness, and profanity compliance. Returns scores and issues list to determine if ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:09.576158Z",
-  "dir_name": "amcs-validator"
-}

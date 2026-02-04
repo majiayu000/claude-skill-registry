@@ -1,8 +1,0 @@
-{
-  "name": "bandit-security-scan",
-  "repo": "visgwu/python_web_app",
-  "category": "security",
-  "description": "Run Bandit security analysis to find common security issues and vulnerabilities in Python code. Use when the user mentions Bandit, security analysis, vulnerability scanning, security audit, software c",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:29.365612Z"
-}

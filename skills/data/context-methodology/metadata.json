@@ -1,9 +1,0 @@
-{
-  "name": "context-methodology",
-  "description": "Knowledge about the context branch methodology for separating AI configuration from project code using git worktrees. Use when users ask about worktree structure, branch organization, or the separatio",
-  "repo": "iknite/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

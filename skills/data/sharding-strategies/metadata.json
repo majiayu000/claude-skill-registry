@@ -1,9 +1,0 @@
-{
-  "name": "sharding-strategies",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Horizontal scaling patterns for multi-tenant databases. Covers shard key selection, consistent hashing, and shard management.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:10.233772Z",
-  "dir_name": "sharding-strategies"
-}

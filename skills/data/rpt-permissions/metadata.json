@@ -1,9 +1,0 @@
-{
-  "name": "rpt-permissions",
-  "description": "Configure RPT token exchange and permission-based authorization for affolterNET.Web.Bff. Use when setting up Keycloak permissions, resource policies, or fine-grained access control.",
-  "repo": "Mcafee123/affolterNET.Web",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

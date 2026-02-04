@@ -1,9 +1,0 @@
-{
-  "name": "time-stepping",
-  "description": "Plan and control time-step policies for simulations. Use when coupling CFL/physics limits with adaptive stepping, ramping initial transients, or scheduling outputs/checkpoints for long runs.",
-  "repo": "HeshamFS/materials-simulation-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

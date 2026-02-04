@@ -1,9 +1,0 @@
-{
-  "name": "codex-read",
-  "description": "Read and integrate response from Codex. Use when user says codex read, get codex response, or check codex results.",
-  "repo": "antorsae/dual-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

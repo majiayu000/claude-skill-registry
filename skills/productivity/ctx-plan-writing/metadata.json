@@ -1,8 +1,0 @@
-{
-  "name": "ctx-plan-writing",
-  "repo": "NickCrew/claude-cortex",
-  "category": "productivity",
-  "description": "Structured plan-writing skill adapted from obra/superpowers. Produces actionable plans that map directly to claude-ctx workflows and tasks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:36.114805Z"
-}

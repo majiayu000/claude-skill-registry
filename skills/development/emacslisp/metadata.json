@@ -1,8 +1,0 @@
-{
-  "name": "emacslisp",
-  "repo": "vdemeester/home",
-  "category": "development",
-  "description": "Emacs Lisp development with modern tooling and best practices. USE WHEN writing Emacs configuration, developing packages, testing, linting, publishing to MELPA/ELPA, or working with Emacs Lisp code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:16.104524Z"
-}

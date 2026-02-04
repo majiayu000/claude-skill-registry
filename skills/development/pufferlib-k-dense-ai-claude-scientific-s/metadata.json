@@ -1,7 +1,0 @@
-{
-  "name": "pufferlib-k-dense-ai-claude-scientific-s",
-  "description": "High-performance reinforcement learning framework optimized for speed and scale. Use when you need fast parallel training, vectorized environments, multi-agent systems, or integration with game enviro",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.531458Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "tidy-up-150",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "development",
-  "description": "Quick, safe cleanup after completing a milestone. Fix objective issues only (syntax errors, dead code, poor naming). Must be <5% of main task time, <30 seconds per fix, and reversible. Use after key p",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:41.327677Z"
-}

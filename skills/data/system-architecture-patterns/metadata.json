@@ -1,9 +1,0 @@
-{
-  "name": "system-architecture-patterns",
-  "repo": "dasien/RemoteCredentialRequestPOC",
-  "category": "data",
-  "description": "Apply proven architectural patterns (MVC, layered, microservices) to create maintainable systems with clear separation of concerns",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:51.038933Z",
-  "dir_name": "system-architecture-patterns"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "unity-script-validator",
-  "description": "Validates C# scripts for best practices, performance, and Unity patterns. Use when reviewing scripts or checking code quality.",
-  "repo": "Dev-GOM/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

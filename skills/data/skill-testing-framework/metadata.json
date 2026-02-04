@@ -1,9 +1,0 @@
-{
-  "name": "skill-testing-framework",
-  "description": "Provides test cases and validation tools for skills. Use when creating tests for a new skill, adding regression tests after skill updates, running test suites to verify skill functionality, or validat",
-  "repo": "Exploration-labs/Nates-Substack-Skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

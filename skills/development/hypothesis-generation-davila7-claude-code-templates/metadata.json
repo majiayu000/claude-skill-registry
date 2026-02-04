@@ -1,7 +1,0 @@
-{
-  "name": "hypothesis-generation-davila7-claude-code-templates",
-  "description": "Generate testable hypotheses. Formulate from observations, design experiments, explore competing explanations, develop predictions, propose mechanisms, for scientific inquiry across domains.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:23.306188Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-security-store-guidelines",
-  "description": "Ensure store compliance for WebF apps (remote updates, interpreters, rollout/rollback constraints). Use when the user mentions App Store/Play Store, store compliance, remote updates, or publishing Web",
-  "repo": "archview-ai/webf-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

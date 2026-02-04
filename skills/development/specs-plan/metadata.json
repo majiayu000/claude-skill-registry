@@ -1,8 +1,0 @@
-{
-  "name": "specs-plan",
-  "repo": "vaayne/cc-plugins",
-  "category": "development",
-  "description": "Spec-first planning workflow that produces an approved plan.md before implementation, with reviewer subagent feedback and progress tracking. Use when a user asks for a plan-before-code process, a revi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:05.100833Z"
-}

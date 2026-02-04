@@ -1,9 +1,0 @@
-{
-  "name": "vue3-frontend-dev",
-  "description": "Vue3 前端开发规范和最佳实践指南。适用于现代Vue3项目开发，涵盖代码组织、Composition API、状态管理、性能优化、测试等全方位内容。",
-  "repo": "ChuDiRen/AI-agent-testing-platform",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ChuDiRen/AI-agent-testing-platform"
-}

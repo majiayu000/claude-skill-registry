@@ -1,8 +1,0 @@
-{
-  "name": "docker-configuration-validator",
-  "repo": "rknall/claude-skills",
-  "category": "development",
-  "description": "Comprehensive Docker and Docker Compose validation following best practices and security standards. Use this skill when users ask to validate Dockerfiles, review Docker configurations, check Docker Co",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:18.122527Z"
-}

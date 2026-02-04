@@ -1,9 +1,0 @@
-{
-  "name": "mark-reader",
-  "description": "Slack チャンネルを既読にする。「既読にして」「既読化」「チャンネル既読」「未読を消す」「既読マーク」「全部読んだことにして」「既読にしたい」などで起動。Pythonスクリプト `slack_message.py mark-read` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "mtls-service-mesh",
-  "description": "Use when implementing service-to-service security, mTLS, or service mesh patterns. Covers mutual TLS, Istio, Linkerd, certificate management, and service mesh security configurations.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

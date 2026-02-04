@@ -1,8 +1,0 @@
-{
-  "name": "supabase-frontend-integration",
-  "repo": "amo-tech-ai/skybox-gamehub",
-  "category": "design",
-  "description": "Connect React frontend pages to Supabase database with TypeScript, React Query, and proper error handling. Use when integrating Supabase with website pages, setting up database queries, or replacing m",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:54.915056Z"
-}

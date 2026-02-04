@@ -1,9 +1,0 @@
-{
-  "name": "supabase-auth-ssr-setup",
-  "description": "This skill should be used when configuring Supabase Auth for server-side rendering with Next.js App Router, including secure cookie handling, middleware protection, route guards, authentication utilit",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

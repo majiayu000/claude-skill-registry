@@ -1,8 +1,0 @@
-{
-  "name": "bd",
-  "repo": "justEstif/dotfiles",
-  "category": "devops",
-  "description": "Track issues and dependencies with beads (bd). Use when work spans multiple sessions, has blockers/dependencies, or needs to survive conversation compaction. Triggers - \"create task\", \"what's ready\", ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:44.823922Z"
-}

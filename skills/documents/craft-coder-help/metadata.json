@@ -1,8 +1,0 @@
-{
-  "name": "craft-coder-help",
-  "repo": "timequity/plugins",
-  "category": "documents",
-  "description": "Help and documentation for Craft-Coder plugin.Use when: user asks about available skills, commands, or how to use this plugin.Triggers: \"help\", \"what can you do\", \"craft help\", \"\u043a\u0430\u043a \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c\u0441\u044f\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:01.220769Z"
-}

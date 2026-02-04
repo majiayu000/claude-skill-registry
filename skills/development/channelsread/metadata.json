@@ -1,8 +1,0 @@
-{
-  "name": "channelsread",
-  "repo": "tnez/dot-agents",
-  "category": "development",
-  "description": "Read messages from a channel. Use this to check for new messages, review issue history, or catch up on session logs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:15.309058Z"
-}

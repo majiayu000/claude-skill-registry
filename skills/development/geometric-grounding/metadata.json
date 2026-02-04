@@ -1,8 +1,0 @@
-{
-  "name": "geometric-grounding",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Anchor semantic meaning to embedding geometry; use when asked to validate vector spaces or similarity behavior.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.470762Z"
-}

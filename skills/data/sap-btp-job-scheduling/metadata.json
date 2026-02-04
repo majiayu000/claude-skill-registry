@@ -1,9 +1,0 @@
-{
-  "name": "sap-btp-job-scheduling",
-  "description": "This skill provides comprehensive guidance for SAP BTP Job Scheduling Service development, configuration, and operations.It should be used when creating, managing, or troubleshooting scheduled jobs on",
-  "repo": "secondsky/sap-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

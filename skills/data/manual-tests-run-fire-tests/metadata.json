@@ -1,9 +1,0 @@
-{
-  "name": "manual-tests-run-fire-tests",
-  "description": "Runs all 'should fire' tests serially with git reverts between each. Use after NOT-fire tests to verify rules fire correctly.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

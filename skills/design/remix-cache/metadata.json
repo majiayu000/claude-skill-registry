@@ -1,8 +1,0 @@
-{
-  "name": "remix-cache",
-  "repo": "ChaseWNorton/remix-cache",
-  "category": "design",
-  "description": "A type-safe, Redis-backed caching library for Remix applications with SSE-based real-time invalidation, stale-while-revalidate, pattern matching, and automatic React revalidation. Use when working wit",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:24.678003Z"
-}

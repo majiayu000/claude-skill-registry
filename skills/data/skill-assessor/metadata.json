@@ -1,9 +1,0 @@
-{
-  "name": "skill-assessor",
-  "description": "Orchestrate comprehensive assessment of newly created skills to determine if they should auto-trigger using context-gathering, code-analyzer, and optional research-expert agents with prioritized evalu",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

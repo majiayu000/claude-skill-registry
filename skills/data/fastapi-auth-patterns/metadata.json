@@ -1,9 +1,0 @@
-{
-  "name": "fastapi-auth-patterns",
-  "description": "Implement and validate FastAPI authentication strategies including JWT tokens, OAuth2 password flows, OAuth2 scopes for permissions, and Supabase integration. Use when implementing authentication, sec",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

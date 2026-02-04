@@ -1,9 +1,0 @@
-{
-  "name": "code-examples",
-  "description": "Find real-world code examples across millions of GitHub repositories. Use when the user wants to see how others implement something, find usage patterns, or discover code examples in the wild.",
-  "repo": "krmcbride/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

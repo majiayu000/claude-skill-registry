@@ -1,9 +1,0 @@
-{
-  "name": "testing-zod-schemas",
-  "description": "Test Zod schemas comprehensively with unit tests, integration tests, and type tests for validation logic",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "transfer-expert",
-  "description": "Handles fund transfers between accounts with intelligent fuzzy matching and interactive UI wizard. Use when user wants to transfer money, move funds between accounts, or reallocate assets. 关键词：转账、账户互转",
-  "repo": "kylesean/augo",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

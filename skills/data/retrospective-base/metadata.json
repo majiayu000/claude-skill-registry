@@ -1,9 +1,0 @@
-{
-  "name": "retrospective-base",
-  "description": "Framework for retrospectives at any time scale (daily, weekly, monthly, quarterly, yearly). Trigger with \"daily retro\", \"weekly retro\", \"monthly retro\", \"[month] retro\" (e.g., \"december retro\", \"janua",
-  "repo": "ZachBeta/claude-as-coach",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ZachBeta/claude-as-coach"
-}

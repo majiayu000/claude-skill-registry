@@ -1,9 +1,0 @@
-{
-  "name": "coder-workspace-management",
-  "description": "Coder CLI commands for workspace management, templates, and platform operations",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

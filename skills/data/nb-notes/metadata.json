@@ -1,9 +1,0 @@
-{
-  "name": "nb-notes",
-  "description": "Manage persistent notes and todos using the nb note-taking system. This skill should be used when capturing cross-session learnings, technical decisions, deferred tasks, or codebase patterns that shou",
-  "repo": "anexpn/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

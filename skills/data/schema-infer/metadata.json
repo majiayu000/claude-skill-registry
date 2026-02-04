@@ -1,9 +1,0 @@
-{
-  "name": "schema-infer",
-  "repo": "bencassie/flywheel",
-  "category": "data",
-  "description": "Auto-detect metadata conventions for a folder. Triggers on \"infer schema\", \"what conventions\", \"learn schema\", \"folder conventions\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:49.938691Z",
-  "dir_name": "schema-infer"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "subagent-driven-development-obra-superpowers-skills",
-  "description": "Execute implementation plan by dispatching fresh subagent for each task, with code review between tasks",
-  "category": "development",
-  "source": "github.com/obra/superpowers-skills",
-  "imported_at": "2026-01-24T14:54:12.341745Z"
-}

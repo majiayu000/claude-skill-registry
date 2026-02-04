@@ -1,9 +1,0 @@
-{
-  "name": "hashing-passwords",
-  "description": "CRITICAL security skill teaching proper credential and password handling. NEVER store passwords, use bcrypt/argon2, NEVER accept third-party credentials. Use when handling authentication, passwords, A",
-  "repo": "djankies/claude-configs",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

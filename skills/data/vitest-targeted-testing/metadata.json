@@ -1,9 +1,0 @@
-{
-  "name": "vitest-targeted-testing",
-  "description": "Use this when adding/fixing UI or smoke tests; prefer targeted Vitest runs first, then widen.",
-  "repo": "localtaskrepo/lotar",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

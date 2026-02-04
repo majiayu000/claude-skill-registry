@@ -1,9 +1,0 @@
-{
-  "name": "external-urls",
-  "description": "Hypera infrastructure URLs and endpoints reference. Use when user asks about URLs, domains, ingress endpoints, cluster API servers, application URLs, Helm repositories, Git repositories, or needs to c",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

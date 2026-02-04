@@ -1,9 +1,0 @@
-{
-  "name": "code-discovery-and-impact-analysis",
-  "description": "Discover project patterns and find all code usages before making changes. Use BEFORE renaming, refactoring, moving files, changing signatures, or adding features to ensure completeness and follow proj",
-  "repo": "tmgast/conf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

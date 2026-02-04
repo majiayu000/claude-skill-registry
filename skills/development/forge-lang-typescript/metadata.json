@@ -1,8 +1,0 @@
-{
-  "name": "forge-lang-typescript",
-  "repo": "martimramos/claude-forge",
-  "category": "development",
-  "description": "TypeScript development standards including type checking, jest/vitest, eslint, and prettier. Use when working with TypeScript files, tsconfig.json, or .ts/.tsx files.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:58.803992Z"
-}

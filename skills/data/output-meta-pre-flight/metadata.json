@@ -1,9 +1,0 @@
-{
-  "name": "output-meta-pre-flight",
-  "description": "Pre-flight validation checks for Output SDK workflow operations. Ensures conventions are followed, requirements are gathered, and quality gates are passed before workflow execution.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

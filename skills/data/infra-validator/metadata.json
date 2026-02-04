@@ -1,9 +1,0 @@
-{
-  "name": "infra-validator",
-  "description": "Validate infrastructure configuration - run Terraform validate, check syntax, verify resource configurations,validate security settings, and ensure compliance with best practices. Reports validation e",
-  "repo": "fractary/claude-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

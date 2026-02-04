@@ -1,9 +1,0 @@
-{
-  "name": "validate-codex-config",
-  "description": "Validate afi-config codex and governance configuration for structural consistency, broken references, and schema alignment, without changing protocol semantics. This skill performs read-only validatio",
-  "repo": "AFI-Protocol/afi-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

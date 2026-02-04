@@ -1,9 +1,0 @@
-{
-  "name": "post-impl-docs",
-  "description": "Update repository documentation after code implementation. Maintains README, CHANGELOG, docs/ folder, and inline docstrings based on changes made. Triggered by lane-executor after task completion.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

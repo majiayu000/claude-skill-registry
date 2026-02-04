@@ -1,8 +1,0 @@
-{
-  "name": "git-worktree-patterns",
-  "repo": "L-Sypniewski/claude-code-toolkit",
-  "category": "development",
-  "description": "Git worktree patterns for parallel development. Use when working on multiple branches simultaneously or when you need to maintain separate working directories for different branches.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:44.053998Z"
-}

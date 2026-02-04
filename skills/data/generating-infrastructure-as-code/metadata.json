@@ -1,9 +1,0 @@
-{
-  "name": "generating-infrastructure-as-code",
-  "description": "Use when generating infrastructure as code configurations. Trigger with phrases like \"create Terraform config\", \"generate CloudFormation template\", \"write Pulumi code\", or \"IaC for AWS/GCP/Azure\". Pro",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

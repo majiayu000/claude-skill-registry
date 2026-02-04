@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-data-privacy",
-  "description": "Implement data privacy controls for OpenRouter requests. Use when handling PII or meeting compliance requirements. Trigger with phrases like 'openrouter privacy', 'openrouter pii', 'openrouter gdpr', ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

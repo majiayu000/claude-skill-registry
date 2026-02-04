@@ -1,8 +1,0 @@
-{
-  "name": "managing-git-worktrees",
-  "repo": "sumik5/dotfiles",
-  "category": "development",
-  "description": "Manages Git Worktree parallel development. Required when starting new work. Creates worktrees with wt- prefix for parallel development. User confirmation required before creation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.466707Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "memcached-config-helper",
-  "description": "Memcached Config Helper - Auto-activating skill for Backend Development.Triggers on: memcached config helper, memcached config helperPart of the Backend Development skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

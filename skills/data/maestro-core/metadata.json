@@ -1,9 +1,0 @@
-{
-  "name": "maestro-core",
-  "description": "Use when any Maestro skill loads - provides skill hierarchy, HALT/DEGRADE policies, and trigger routing rules for orchestration decisions",
-  "repo": "ReinaMacCredy/maestro",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

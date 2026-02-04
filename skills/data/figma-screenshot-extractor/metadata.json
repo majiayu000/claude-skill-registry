@@ -1,9 +1,0 @@
-{
-  "name": "figma-screenshot-extractor",
-  "description": "Extract and save Figma screenshots from Codex session logs when user needs to recover images captured by the Figma MCP server",
-  "repo": "edneyreis999/zord-project",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

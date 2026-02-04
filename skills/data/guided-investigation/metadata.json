@@ -1,9 +1,0 @@
-{
-  "name": "guided-investigation",
-  "description": "Systematic process for investigating open-ended questions - decompose vague questions into specific sub-questions, map to data, investigate incrementally, synthesize findings",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

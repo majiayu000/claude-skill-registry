@@ -1,7 +1,0 @@
-{
-  "name": "using-superpowers-davila7-claude-code-templates",
-  "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.337969Z"
-}

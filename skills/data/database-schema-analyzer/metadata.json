@@ -1,9 +1,0 @@
-{
-  "name": "database-schema-analyzer",
-  "repo": "amo-tech-ai/event-studio",
-  "category": "data",
-  "description": "Analyze PostgreSQL/Supabase database schemas for design quality, security, performance, and best practices. Use when reviewing schemas, migrations, RLS policies, or when user mentions database design,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:54.607239Z",
-  "dir_name": "database-schema-analyzer"
-}

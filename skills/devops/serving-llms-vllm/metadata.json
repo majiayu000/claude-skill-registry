@@ -1,8 +1,0 @@
-{
-  "name": "serving-llms-vllm",
-  "repo": "zechenzhangAGI/AI-research-SKILLs",
-  "category": "devops",
-  "description": "Serves LLMs with high throughput using vLLM's PagedAttention and continuous batching. Use when deploying production LLM APIs, optimizing inference latency/throughput, or serving models with limited GP",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:19.319940Z"
-}

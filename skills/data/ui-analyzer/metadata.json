@@ -1,9 +1,0 @@
-{
-  "name": "ui-analyzer",
-  "description": "Analyze UI design screenshots and generate React components with TypeScript and Tailwind CSS. Use this skill when the user provides UI mockups, design screenshots, or Figma exports and requests implem",
-  "repo": "smallnest/goskills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "universal-workflow-init",
-  "repo": "laguna821/achmage_universal_workflow_initiator",
-  "category": "product",
-  "description": "Bootstraps new projects by running a 5-question intake and generating a minimal scaffold (WORKPLAN.md, BRIEF.md, OUTLINE.md, SOURCES.md, LOG.md) plus optional folders for writing/research/coding. Use ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:19.767224Z"
-}

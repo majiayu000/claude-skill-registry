@@ -1,9 +1,0 @@
-{
-  "name": "move-content",
-  "description": "Move or rename files in knowledge base with directory governance. Use when user wants to move, relocate, or rename content. Reads RULE.md of both source and target directories.",
-  "repo": "eternnoir/claude-tool",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

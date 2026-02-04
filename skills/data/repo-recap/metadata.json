@@ -1,9 +1,0 @@
-{
-  "name": "repo-recap",
-  "description": "Generate a 2025 year-in-review visualization for a repository. Use when user asks for \"repo recap\", \"年間レポート\", \"yearly summary\", \"2025 recap\", or wants to see repository statistics and contributions. (",
-  "repo": "him0/him0-claude-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

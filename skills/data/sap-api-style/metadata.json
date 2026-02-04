@@ -1,9 +1,0 @@
-{
-  "name": "sap-api-style",
-  "description": "This skill provides comprehensive guidance for documenting SAP APIs following official SAP API Style Guide standards.It should be used when creating or reviewing API documentation for REST, OData, Jav",
-  "repo": "secondsky/sap-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

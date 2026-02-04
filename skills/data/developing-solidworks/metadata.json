@@ -1,9 +1,0 @@
-{
-  "name": "developing-solidworks",
-  "description": "ANYTHING related to SolidWorks. Writes, modifies, and debugs C# code that interacts with SolidWorks. Use when working with .cs or .csproj files that (will) reference SolidWorks SDK, SolidWorks.Interop",
-  "repo": "pedropaulovc/harmonic-analyzer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

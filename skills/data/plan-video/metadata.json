@@ -1,9 +1,0 @@
-{
-  "name": "plan-video",
-  "description": "视频处理任务规划工具。从用户输入中提取视频 URLs，生成唯一 VideoId，创建结构化的 todolist.md 追踪待生成文件。支持小红书、抖音、TikTok、B站、YouTube、快手等 11+ 平台。",
-  "repo": "mojito-llm/freeship-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

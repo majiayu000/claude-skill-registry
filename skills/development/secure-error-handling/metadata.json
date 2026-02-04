@@ -1,8 +1,0 @@
-{
-  "name": "secure-error-handling",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "development",
-  "description": "Implement secure error handling to prevent information leakage and provide appropriate error responses. Use this skill when you need to handle errors in API routes, prevent stack trace exposure, imple",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.714801Z"
-}

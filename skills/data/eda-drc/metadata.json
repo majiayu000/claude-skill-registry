@@ -1,9 +1,0 @@
-{
-  "name": "eda-drc",
-  "description": "Design validation and review. Run DRC/ERC checks, verify against constraints, check component availability, and prepare comprehensive validation reports.",
-  "repo": "l3wi/claude-eda",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

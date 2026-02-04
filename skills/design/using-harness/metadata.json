@@ -1,8 +1,0 @@
-{
-  "name": "using-harness",
-  "repo": "astrosteveo/harness-mp",
-  "category": "design",
-  "description": "Use at the start of every conversation to establish skill discovery and usage patterns. Required before any other response including clarifying questions. Defines when and how to invoke skills with 1%",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:16.468664Z"
-}

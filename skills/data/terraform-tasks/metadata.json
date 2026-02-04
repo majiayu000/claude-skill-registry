@@ -1,9 +1,0 @@
-{
-  "name": "terraform-tasks",
-  "description": "Specialized Terraform task execution skill for autonomous infrastructure operations. Handles code generation, debugging, version management, security scanning, and architecture design across all provi",
-  "repo": "JosiahSiegel/claude-plugin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

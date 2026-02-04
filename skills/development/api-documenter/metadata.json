@@ -1,7 +1,0 @@
-{
-  "name": "api-documenter",
-  "description": "Auto-generate API documentation from code and comments. Use when API endpoints change, or user mentions API docs. Creates OpenAPI/Swagger specs from code. Triggers on API file changes, documentation r",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.901897Z"
-}

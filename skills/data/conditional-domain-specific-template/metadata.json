@@ -1,9 +1,0 @@
-{
-  "name": "conditional-domain-specific-template",
-  "description": "[REPLACE] Apply domain-specific logic based on detected context. Use when [REPLACE with specific triggers].",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

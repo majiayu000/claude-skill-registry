@@ -1,9 +1,0 @@
-{
-  "name": "regulatory-templates-gate3",
-  "description": "Gate 3 sub-skill - generates complete .tpl template file with all validatedmappings from Gates 1-2.",
-  "repo": "LerianStudio/ring",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

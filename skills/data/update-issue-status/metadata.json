@@ -1,9 +1,0 @@
-{
-  "name": "update-issue-status",
-  "description": "Update the status of a GitHub Issue to any available status in all linked projects using the `gh project item-edit` command. Allows interactive status selection via CLI.",
-  "repo": "Tasup/Tasup",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

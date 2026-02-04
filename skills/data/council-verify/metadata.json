@@ -1,9 +1,0 @@
-{
-  "name": "council-verify",
-  "description": "Verify code, documents, or implementation against requirements using LLM Council multi-model deliberation.Use when you need multi-model consensus on correctness, completeness, or quality.Keywords: ver",
-  "repo": "amiable-dev/amiable-templates",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

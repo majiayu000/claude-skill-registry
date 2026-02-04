@@ -1,8 +1,0 @@
-{
-  "name": "pyiceberg-storage",
-  "repo": "Obsidian-Owl/floe-runtime",
-  "category": "development",
-  "description": "Research-driven PyIceberg development. Injects research steps for Iceberg table operations, ACID transactions, catalog integration, and schema evolution. Use when working with Iceberg table storage, t",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:24.623074Z"
-}

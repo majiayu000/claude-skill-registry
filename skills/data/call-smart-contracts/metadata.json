@@ -1,9 +1,0 @@
-{
-  "name": "call-smart-contracts",
-  "description": "Deploy and interact with Algorand smart contracts using AlgoKit CLI and generated TypeScript clients. Use when deploying contracts to localnet/testnet/mainnet, calling contract methods, reading global",
-  "repo": "gabrielkuettel/vibegallery",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gabrielkuettel/vibegallery"
-}

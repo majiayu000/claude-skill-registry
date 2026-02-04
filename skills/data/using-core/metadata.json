@@ -1,9 +1,0 @@
-{
-  "name": "using-core",
-  "description": "Use when starting any conversation - establishes mandatory workflows for finding and using skills, including using Skill tool before announcing usage, following brainstorming before coding, and creati",
-  "repo": "pproenca/dot-claude-old",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

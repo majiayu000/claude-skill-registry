@@ -1,9 +1,0 @@
-{
-  "name": "verify-web-change",
-  "description": "Verify web application changes work by launching the app stack and testing in a real browser. This skill should be used when the user asks to \"verify the change\", \"test in browser\", \"check if it works",
-  "repo": "fx/cc",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

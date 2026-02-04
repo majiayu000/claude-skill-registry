@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-code-completion",
-  "description": "Configure and optimize Supercomplete code suggestions. Activate when users mention\"code completion\", \"autocomplete\", \"supercomplete\", \"inline suggestions\",or \"ai completions\". Handles completion confi",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

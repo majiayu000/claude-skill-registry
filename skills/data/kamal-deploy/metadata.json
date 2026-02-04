@@ -1,9 +1,0 @@
-{
-  "name": "kamal-deploy",
-  "description": "Deploy Docker applications using Kamal 2 with zero-downtime and automatic SSL. Use this skill when (1) setting up new Kamal deployments, (2) generating deploy.yml configuration, (3) deploying apps tha",
-  "repo": "jalen0x/substore-kamal",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "installing-npm-packages",
-  "description": "npm、yarn、pnpm、bun で適切なバージョンのパッケージをインストールします。npm、yarn、pnpm、bun を使ってパッケージをインストールするときに必ず使用してください。",
-  "repo": "p-chan/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

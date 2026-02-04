@@ -1,7 +1,0 @@
-{
-  "name": "component-tester",
-  "description": "Run Vitest tests for a specific component with coverage. Use when making changes to React components to ensure tests pass and coverage is maintained.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.586554Z"
-}

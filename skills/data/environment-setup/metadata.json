@@ -1,9 +1,0 @@
-{
-  "name": "environment-setup",
-  "description": "Environment verification, tool checking, version validation, and path configuration. Use when checking system requirements, verifying tool installations, validating versions, checking PATH configurati",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

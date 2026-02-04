@@ -1,0 +1,96 @@
+name: Sync Skills Archive (Data Repo) + Registry
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout core
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate data repo config
+        env:
+          REGISTRY_DATA_REPO: ${{ vars.REGISTRY_DATA_REPO }}
+          DATA_REPO_TOKEN: ${{ secrets.DATA_REPO_TOKEN }}
+        run: |
+          if [ -z "$REGISTRY_DATA_REPO" ]; then
+            echo "Missing repo variable: REGISTRY_DATA_REPO (e.g. yourname/claude-skill-registry-data)"
+            exit 1
+          fi
+          if [ -z "$DATA_REPO_TOKEN" ]; then
+            echo "Missing secret: DATA_REPO_TOKEN (PAT that can push to the data repo)"
+            exit 1
+          fi
+
+      - name: Checkout data repo to ./skills
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.REGISTRY_DATA_REPO }}
+          token: ${{ secrets.DATA_REPO_TOKEN }}
+          path: skills
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml aiohttp requests jsonschema
+
+      - name: Discover new skills from GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔍 Discovering new skills via GitHub API..."
+          python scripts/discover_by_topic.py --output skills/data --json sources/discovered.json 2>&1 | tee discover.log
+
+      - name: Download skills from registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "⬇️ Downloading skills from existing registry..."
+          python scripts/sync_and_download.py --download-only 2>&1 | tee download.log
+
+      - name: Rebuild registry.json from archive
+        run: |
+          python scripts/rebuild_registry.py --skills-dir skills --registry registry.json --skip-categories
+
+      - name: Commit & push data repo changes
+        run: |
+          cd skills
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "No data repo changes"
+          else
+            git commit -m "chore: update skills archive $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Commit & push core metadata changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add registry.json sources/ CHANGELOG.md scripts/ schema/ README.md SECURITY.md LICENSE .github/workflows/sync-data.yml
+
+          if git diff --staged --quiet; then
+            echo "No core changes"
+          else
+            COUNT=$(python3 -c "import json; print(json.load(open('registry.json')).get('total_count', 0))")
+            git commit -m "chore: sync registry ($COUNT skills) $(date -u +%Y-%m-%d)"
+            git push
+          fi

@@ -1,9 +1,0 @@
-{
-  "name": "browserbridge",
-  "description": "Real-time browser debugging and interaction via WebSocket bridge server on localhost:3141",
-  "repo": "lawless-m/Earwig",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/lawless-m/Earwig"
-}

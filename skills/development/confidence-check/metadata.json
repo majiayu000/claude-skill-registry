@@ -1,7 +1,0 @@
-{
-  "name": "confidence-check",
-  "description": "Pre-implementation confidence assessment (≥90% required). Use before starting any implementation to verify readiness with duplicate check, architecture compliance, official docs verification, OSS refe",
-  "category": "development",
-  "source": "github.com/SuperClaude-Org/SuperClaude/Framework",
-  "imported_at": "2026-01-24T14:54:03.978175Z"
-}

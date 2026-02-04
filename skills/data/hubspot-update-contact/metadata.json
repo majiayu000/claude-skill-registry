@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-update-contact",
-  "description": "Update an existing contact in HubSpot CRM. Load when user says 'update contact', 'edit contact', 'modify contact', 'change contact'. Requires contact ID.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-absorb",
-  "description": "Automatically fold uncommitted changes into appropriate commits on a feature branch. Use when applying review feedback, fixing bugs in feature branches, or maintaining atomic commit history without ma",
-  "repo": "dashed/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

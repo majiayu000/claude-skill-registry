@@ -1,8 +1,0 @@
-{
-  "name": "massgen-develops-massgen",
-  "repo": "massgen/MassGen",
-  "category": "design",
-  "description": "Guide for using MassGen to develop and improve itself. This skill should be used when agents need to run MassGen experiments programmatically (using automation mode) OR analyze terminal UI/UX quality ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:16.262002Z"
-}

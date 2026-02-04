@@ -1,9 +1,0 @@
-{
-  "name": "worktree-parallel",
-  "description": "Create and manage a git worktree for parallel feature development, then open the new worktree in the editor (code/Cursor) for a second Codex session. Use when the user asks to work on another feature ",
-  "repo": "noah-rivard/news-coverage-a24-lionsgate",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

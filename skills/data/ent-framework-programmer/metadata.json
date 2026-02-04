@@ -1,9 +1,0 @@
-{
-  "name": "ent-framework-programmer",
-  "description": "Use when creating ENT components/pages/stores or agent violates Vue 2 patterns - enforces ENT-specific rules and prevents common rationalizations about Vue 3, custom CSS, v-slot syntax, and fetch API",
-  "repo": "jasir/config-claude",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

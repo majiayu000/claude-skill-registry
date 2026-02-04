@@ -1,9 +1,0 @@
-{
-  "name": "dev-engineer",
-  "description": "Adds logic, state management, TypeScript types, and CRUD operations to UI. Works AFTER ui-first-builder creates the interface. Implements Zustand stores, form handling with React Hook Form + Zod, and ",
-  "repo": "wasintoh/toh-framework",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

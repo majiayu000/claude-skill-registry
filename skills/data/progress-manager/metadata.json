@@ -1,9 +1,0 @@
-{
-  "name": "progress-manager",
-  "description": "Manages course progress tracking in ~/.claude-course/progress.json.Use when: loading, saving, or displaying course progress.Internal skill - used by /ccc:course commands.",
-  "repo": "timequity/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "weibo",
-  "description": "获取微博热搜榜实时数据。当需要查看微博热点、热门话题、实时舆情时使用该技能。",
-  "repo": "ArcaneOrion/Alice-Single",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

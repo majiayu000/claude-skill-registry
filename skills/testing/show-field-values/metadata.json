@@ -1,8 +1,0 @@
-{
-  "name": "show-field-values",
-  "repo": "bencassie/flywheel",
-  "category": "testing",
-  "description": "Get all unique values for a specific frontmatter field. Triggers on \"field values\", \"unique values for\", \"what X values exist\", \"list all X\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:38.773336Z"
-}

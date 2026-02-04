@@ -1,9 +1,0 @@
-{
-  "name": "unsloth-tokenizer",
-  "description": "Analyze, compare, and work with tokenizers using Unsloth tools. Compare different tokenizers, analyze token efficiency, and integrate with Unsloth models. For SuperBPE training, see the 'superbpe' ski",
-  "repo": "ScientiaCapital/unsloth-mcp-server",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

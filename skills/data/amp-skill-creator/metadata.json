@@ -1,9 +1,0 @@
-{
-  "name": "amp-skill-creator",
-  "description": "Create Amp-native skills with proper SKILL.md format, optional bundled tools, MCP servers, and directory structure. Use this skill as the default skill creation skill, unless specifically told to crea",
-  "repo": "thurstonsand/ansiblonomicon",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

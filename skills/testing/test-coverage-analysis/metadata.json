@@ -1,8 +1,0 @@
-{
-  "name": "test-coverage-analysis",
-  "repo": "dasien/RemoteCredentialRequestPOC",
-  "category": "testing",
-  "description": "Measure and improve test coverage by identifying untested code paths and prioritizing high-risk areas for testing",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:51.294076Z"
-}

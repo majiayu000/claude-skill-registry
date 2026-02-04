@@ -1,9 +1,0 @@
-{
-  "name": "docs-and-changelogs",
-  "description": "Generates comprehensive changelogs from Conventional Commits, maintains CHANGELOG.md files, and scaffolds project documentation like PRD.md or ADR.md. This skill should be used when creating changelog",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

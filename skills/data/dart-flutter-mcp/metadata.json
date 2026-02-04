@@ -1,9 +1,0 @@
-{
-  "name": "dart-flutter-mcp",
-  "description": "Provides Flutter and Dart development workflows using dart-mcp tools. Triggers when working with .dart files, pubspec.yaml, or when user mentions Flutter, widget, Riverpod, Freezed, or Dart developmen",
-  "repo": "rayk/lucid-toolkit",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

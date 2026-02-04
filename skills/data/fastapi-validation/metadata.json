@@ -1,9 +1,0 @@
-{
-  "name": "fastapi-validation",
-  "description": "Use when FastAPI validation with Pydantic models. Use when building type-safe APIs with robust request/response validation.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

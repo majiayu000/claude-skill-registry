@@ -1,9 +1,0 @@
-{
-  "name": "sanitize-git-repo",
-  "description": "Guide for sanitizing git repositories by identifying and replacing sensitive information such as API keys, tokens, and credentials. This skill should be used when tasks involve removing secrets from c",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

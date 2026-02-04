@@ -1,8 +1,0 @@
-{
-  "name": "filament-rules",
-  "repo": "Hieubkav/wincellarCloneBackend",
-  "category": "development",
-  "description": "Filament 4.x coding standards for Laravel 12. Custom Schema namespace (NOT Form), Vietnamese UI, Observer patterns, Image management. USE WHEN creating resources, fixing namespace errors, implementing",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:05.654210Z"
-}

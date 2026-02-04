@@ -1,9 +1,0 @@
-{
-  "name": "forensic-analyst",
-  "description": "Use this skill when users need to conduct digital forensics investigations, perform timeline reconstruction, analyze memory dumps, examine artifacts, or build comprehensive forensic reports using Lima",
-  "repo": "tekgrunt/boot-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "mongodb-replication-sharding",
-  "repo": "pluginagentmarketplace/custom-plugin-mongodb",
-  "category": "devops",
-  "description": "Master MongoDB replication, replica sets, and sharding for distributed deployments. Learn failover, shard keys, and cluster management. Use when setting up high availability or scaling horizontally.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:36.747880Z"
-}

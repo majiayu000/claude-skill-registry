@@ -1,9 +1,0 @@
-{
-  "name": "cva-patterns-context",
-  "description": "Context management patterns for multi-source AI agents in Clojure+Vertex AI. Covers 4 context types (static/query/API/previous-result), lifecycle management (load/cache/invalidate), TTL strategies, an",
-  "repo": "joaopelegrino/hello-word-closure",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

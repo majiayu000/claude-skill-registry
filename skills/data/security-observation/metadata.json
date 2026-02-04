@@ -1,9 +1,0 @@
-{
-  "name": "security-observation",
-  "description": "セキュリティ観測。認可漏れ、インジェクション、機密漏えい、暗号誤用、依存脆弱性を検出。Use when: 認証/認可実装、外部入力処理、依存更新、コミット前チェック、セキュリティレビューして、脅威分析が必要な時。",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-claude-config",
-  "description": "Reviews Claude configuration files for security, structure, and prompt engineering quality. Use when reviewing changes to CLAUDE.md files (project-level or .claude/), skills (SKILL.md), agents, prompt",
-  "repo": "bitwarden/ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

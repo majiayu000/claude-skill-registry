@@ -1,8 +1,0 @@
-{
-  "name": "gated-exec-150",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "design",
-  "description": "Execute plans step-by-step with confirmation gates. Each step requires user approval before proceeding. Includes change management lifecycle (Pre-Change \u2192 During \u2192 Post-Change \u2192 Rollback). Use when im",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:54.048646Z"
-}

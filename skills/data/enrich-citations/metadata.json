@@ -1,9 +1,0 @@
-{
-  "name": "enrich-citations",
-  "description": "Find and add authoritative source links for all facts, citations, and references in markdown documents",
-  "repo": "MacHu-GWU/sanhe-claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

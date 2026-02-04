@@ -1,9 +1,0 @@
-{
-  "name": "klingai-audit-logging",
-  "description": "Implement comprehensive audit logging for Kling AI operations. Use when tracking API usage,compliance requirements, or security audits. Trigger with phrases like 'klingai audit','kling ai logging', 'k",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

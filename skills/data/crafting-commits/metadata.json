@@ -1,9 +1,0 @@
-{
-  "name": "crafting-commits",
-  "description": "Automatically invoked when user requests git commit message creation, commit drafting, or needs help with conventional commit formatting. Handles conventional commit standards.",
-  "repo": "shrwnsan/vibekit-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

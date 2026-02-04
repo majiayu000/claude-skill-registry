@@ -1,9 +1,0 @@
-{
-  "name": "inbox-processing",
-  "description": "Workflow for processing large Things3 inboxes (100+ items) using LLM-driven confidence matching and intelligent automation. Integrates with personal taxonomy and MCP tools for efficient cleanup with s",
-  "repo": "Avery2/things3-mcp-tools",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

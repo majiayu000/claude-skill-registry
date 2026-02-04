@@ -1,9 +1,0 @@
-{
-  "name": "start-dev-server",
-  "description": "Start the Wasp dev server and set up full debugging visibility. This includes running the server (with access to logs), and connecting browser console access so Claude can see client-side errors. Esse",
-  "repo": "wasp-lang/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

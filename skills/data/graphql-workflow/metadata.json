@@ -1,9 +1,0 @@
-{
-  "name": "graphql-workflow",
-  "description": "Activate when creating, modifying, troubleshooting, or managing GraphQL operations with codegen. This includes scaffolding .graphql files, running code generation, validating naming conventions, fixin",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

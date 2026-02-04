@@ -1,9 +1,0 @@
-{
-  "name": "dart-add-roots",
-  "description": "To register project roots for Dart tooling access, add one or more root paths before using other Dart tools on those projects.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

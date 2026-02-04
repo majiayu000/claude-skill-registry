@@ -1,9 +1,0 @@
-{
-  "name": "loki-troubleshoot",
-  "description": "Help craft efficient Grafana Loki / LogQL queries for debugging logs — with label‑based filtering, narrow time windows, and best‑practice guidance to avoid expensive or overly broad scans.",
-  "repo": "timbuchinger/loadout",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

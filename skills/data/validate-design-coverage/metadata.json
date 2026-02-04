@@ -1,9 +1,0 @@
-{
-  "name": "validate-design-coverage",
-  "description": "Homeostatic sensor validating all requirements have design coverage. Checks for requirements without components, APIs, or data models. Quality gate before Code stage. Use to ensure design completeness",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

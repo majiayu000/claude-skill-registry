@@ -1,9 +1,0 @@
-{
-  "name": "ensue-auto-memory",
-  "description": "Automatic persistent memory for Claude Code sessions. Activates on preference statements (\"I prefer\", \"I always\", \"I like\"), corrections (\"no, don't\", \"actually\"), identity statements (\"my name is\", \"",
-  "repo": "christinetyip/ensue-auto-memory",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

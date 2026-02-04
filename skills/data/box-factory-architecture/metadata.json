@@ -1,9 +1,0 @@
-{
-  "name": "box-factory-architecture",
-  "description": "Guidance for using Claude Code component architecture and choosing between agents, skills, commands, and hooks. Helps decide which component type fits a use case, understand delegation and isolation, ",
-  "repo": "racurry/neat-little-package",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

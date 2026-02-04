@@ -1,9 +1,0 @@
-{
-  "name": "rust-pyo3-bridge",
-  "repo": "gar-ai/mallorn",
-  "category": "data",
-  "description": "Bridge Rust and Python using PyO3 with proper GIL handling and async compatibility. Use when integrating Python ML models or libraries.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.026825Z",
-  "dir_name": "rust-pyo3-bridge"
-}

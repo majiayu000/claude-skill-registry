@@ -1,9 +1,0 @@
-{
-  "name": "phylogenetic-methods",
-  "description": "Comprehensive guide to phylogenetic tree building methods including distance-based (UPGMA, Neighbor-Joining), maximum likelihood (RAxML, IQ-TREE), and Bayesian inference (MrBayes). Covers multiple seq",
-  "repo": "roeimed0/rrna-phylo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

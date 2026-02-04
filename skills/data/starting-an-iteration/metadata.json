@@ -1,9 +1,0 @@
-{
-  "name": "starting-an-iteration",
-  "description": "Use when beginning a new conversation to work on an open-ended goal, loading context from previous iterations through iteration journals",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

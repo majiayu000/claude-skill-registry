@@ -1,8 +1,0 @@
-{
-  "name": "build-ci",
-  "repo": "YosrBennagra/3SC",
-  "category": "development",
-  "description": "Build scripts, CI pipelines, and versioning for the .NET 8 WPF widget host app. Use when setting up build workflows, CI checks, packaging gates, or semantic versioning rules.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.741946Z"
-}

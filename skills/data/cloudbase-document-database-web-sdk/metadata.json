@@ -1,9 +1,0 @@
-{
-  "name": "cloudbase-document-database-web-sdk",
-  "repo": "TencentCloudBase/CloudBase-MCP",
-  "category": "data",
-  "description": "Use CloudBase document database Web SDK to query, create, update, and delete data. Supports complex queries, pagination, aggregation, and geolocation queries.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:43.987500Z",
-  "dir_name": "cloudbase-document-database-web-sdk"
-}

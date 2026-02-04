@@ -1,9 +1,0 @@
-{
-  "name": "mindwork-transcribe",
-  "description": "Transcribe therapy session recordings to formatted text. Converts audio to clean, speaker-labeled transcripts (Me/Therapist format) with grammar correction and English translation. Use when processing",
-  "repo": "tolgaio/mindwork",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

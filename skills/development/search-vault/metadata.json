@@ -1,8 +1,0 @@
-{
-  "name": "search-vault",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Advanced vault search with filters (folder, tags, frontmatter). Triggers on \"search vault\", \"find notes\", \"query notes\", \"search for\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:04.770387Z"
-}

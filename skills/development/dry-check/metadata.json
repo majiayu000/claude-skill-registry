@@ -1,8 +1,0 @@
-{
-  "name": "dry-check",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Scans new/modified code against multi-mono shared libraries (@metasaver/core-utils, @metasaver/core-service-utils, @metasaver/core-components) to detect DRY violations. Use when auditing code for dupl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:07.411107Z"
-}

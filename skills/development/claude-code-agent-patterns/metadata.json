@@ -1,8 +1,0 @@
-{
-  "name": "claude-code-agent-patterns",
-  "repo": "vinnie357/claudio",
-  "category": "development",
-  "description": "Activate when creating or modifying Claude Code agents with proper architecture patterns, tool selection, and extended context integration",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:38.980109Z"
-}

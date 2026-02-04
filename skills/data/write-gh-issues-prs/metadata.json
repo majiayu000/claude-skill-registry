@@ -1,9 +1,0 @@
-{
-  "name": "write-gh-issues-prs",
-  "description": "Write GitHub issues and PRs for this repo with the established conventions. Use when drafting issue or PR content or guidance.",
-  "repo": "JoernStoehler/ai-forecasting-hackathon",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

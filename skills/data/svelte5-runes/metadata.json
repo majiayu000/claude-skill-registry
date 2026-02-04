@@ -1,9 +1,0 @@
-{
-  "name": "svelte5-runes",
-  "description": "Svelte 5 runes guidance. Use for reactive state, props, effects, or Svelte 4→5 migration. Covers $state, $derived, $effect, $props, $bindable. Prevents mixing syntaxes and reactivity mistakes.",
-  "repo": "Seeker1911/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

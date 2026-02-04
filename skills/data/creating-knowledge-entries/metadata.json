@@ -1,9 +1,0 @@
-{
-  "name": "creating-knowledge-entries",
-  "description": "Create structured GitHub Issue knowledge entries with one-shot input. Handles auto-formatting, AI labeling, title extraction, and publishing. Use when user wants to share tips, document solutions, cre",
-  "repo": "terrylica/claude-code-skills-github-issues",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

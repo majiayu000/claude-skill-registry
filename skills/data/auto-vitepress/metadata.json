@@ -1,9 +1,0 @@
-{
-  "name": "auto-vitepress",
-  "description": "自动为当前项目生成或更新 VitePress 文档网站。",
-  "repo": "rockyflux/xf-blog",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/rockyflux/xf-blog"
-}

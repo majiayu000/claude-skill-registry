@@ -1,9 +1,0 @@
-{
-  "name": "spawn-commit",
-  "description": "빌드 성공 후 commit-agent를 활용하여 커밋 생성",
-  "repo": "Zeliper/z-coder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

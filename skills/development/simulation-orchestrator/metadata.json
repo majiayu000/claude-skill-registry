@@ -1,7 +1,0 @@
-{
-  "name": "simulation-orchestrator",
-  "description": "Orchestrate multi-simulation campaigns including parameter sweeps, batch jobs, and result aggregation. Use for running parameter studies, managing simulation batches, tracking job status, combining re",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.267077Z"
-}

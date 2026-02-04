@@ -1,9 +1,0 @@
-{
-  "name": "install-mkdocs-template",
-  "description": "This skill creates a complete MkDocs Material project structure for intelligent textbooks. It sets up a Conda virtual environment named 'mkdocs', installs all dependencies, generates mkdocs.yml with a",
-  "repo": "dmccreary/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

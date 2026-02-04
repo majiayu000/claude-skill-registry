@@ -1,9 +1,0 @@
-{
-  "name": "flowsfarm",
-  "description": "Manage n8n workflows with FlowsFarm CLI. Use when user wants to sync, create, edit, or manage n8n workflows locally. Triggers for n8n automation tasks, workflow version control, or multi-instance work",
-  "repo": "filipexyz/plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "claude-tools",
-  "description": "This skill provides knowledge about Claude tools (Prompts, Skills, Subagents, Commands, and MCPs). Use this skill when knowledge about Claude tools is needed, when the user mentions Claude tools or wh",
-  "repo": "alexisbeaulieu97/home",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "scala-conventions-enforcer",
-  "description": "This skill should be used proactively before writing any Scala code for the first time in a session. It ensures all Scala code adheres to project-specific coding standards, formatting rules, naming co",
-  "repo": "matthew-bram/enterprise-confluent-test-probe",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

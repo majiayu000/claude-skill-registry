@@ -1,8 +1,0 @@
-{
-  "name": "performance-testing-standards",
-  "repo": "williamzujkowski/standards",
-  "category": "testing",
-  "description": "Performance testing standards for load, stress, spike, and soak testing. Covers k6 and JMeter implementation, SLI/SLO definitions, CI/CD integration, and bottleneck analysis. Use when validating syste",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:34.006684Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-options-flow",
-  "description": "Track crypto options flow to identify institutional positioning and market sentiment.Use when tracking institutional options flow.Trigger with phrases like \"track options flow\", \"analyze derivatives\",",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

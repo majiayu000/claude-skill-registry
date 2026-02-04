@@ -1,8 +1,0 @@
-{
-  "name": "jj-conflicts",
-  "repo": "edmundmiller/dotfiles",
-  "category": "development",
-  "description": "Help users identify, understand, and resolve conflicts in jj repositories. Use when user mentions 'conflict', 'resolve conflicts', 'merge conflict', 'conflicted commits', '2-sided conflict', or encoun",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.091857Z"
-}

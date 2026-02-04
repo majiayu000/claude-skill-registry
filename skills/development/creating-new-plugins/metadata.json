@@ -1,8 +1,0 @@
-{
-  "name": "creating-new-plugins",
-  "repo": "jack-michaud/faire",
-  "category": "development",
-  "description": "Follow a structured approach to create new Claude Code plugins and register them in your marketplace. Use when building plugins for commands, skills, hooks, or MCP servers.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:51.980584Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "pydicom-k-dense-ai-claude-scientific-s",
-  "description": "Python library for working with DICOM (Digital Imaging and Communications in Medicine) files. Use this skill when reading, writing, or modifying medical imaging data in DICOM format, extracting pixel ",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:17.525025Z"
-}

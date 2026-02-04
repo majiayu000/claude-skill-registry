@@ -1,8 +1,0 @@
-{
-  "name": "go-error-wrapping",
-  "repo": "JamesPrial/claudefiles",
-  "category": "development",
-  "description": "Wrap errors with context using fmt.Errorf %w pattern",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.885211Z"
-}

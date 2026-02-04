@@ -1,9 +1,0 @@
-{
-  "name": "council-review",
-  "description": "Multi-model code review with structured feedback using LLM Council peer evaluation.Use for PR reviews, code quality checks, or implementation review.Keywords: code review, PR, pull request, quality ch",
-  "repo": "amiable-dev/amiable-templates",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

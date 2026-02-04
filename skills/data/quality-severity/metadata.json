@@ -1,9 +1,0 @@
-{
-  "name": "quality-severity",
-  "description": "This skill should be used when classifying issues, findings, or code review problems with severity levels. Triggers on requests like \"classify severity\", \"what is P1/P2/P3\", \"determine issue priority\"",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

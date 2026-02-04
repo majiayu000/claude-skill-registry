@@ -1,9 +1,0 @@
-{
-  "name": "migrating-from-forwardref",
-  "description": "Teaches migration from forwardRef to ref-as-prop pattern in React 19. Use when seeing forwardRef usage, upgrading React components, or when refs are mentioned. forwardRef is deprecated in React 19.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

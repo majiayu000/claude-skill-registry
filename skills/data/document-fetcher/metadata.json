@@ -1,9 +1,0 @@
-{
-  "name": "document-fetcher",
-  "description": "Fetch documents from codex knowledge base with cache-first strategy.Delegates to fractary CLI for actual retrieval operations.",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

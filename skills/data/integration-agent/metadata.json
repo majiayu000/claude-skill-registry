@@ -1,9 +1,0 @@
-{
-  "name": "integration-agent",
-  "description": "Handles integrations with trigger behavior for dynamic agent delegation",
-  "repo": "Unicorn/Radium",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

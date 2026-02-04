@@ -1,8 +1,0 @@
-{
-  "name": "tenancy-models",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "description": "Use when choosing multi-tenant architecture patterns. Covers Pool (shared), Silo (isolated), and Bridge (hybrid) models with decision frameworks for isolation, cost, and scale trade-offs.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:09.906100Z"
-}

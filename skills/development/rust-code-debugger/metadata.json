@@ -1,8 +1,0 @@
-{
-  "name": "rust-code-debugger",
-  "repo": "UtakataKyosui/UtakataClaudeCodePluginMarketPlace",
-  "category": "development",
-  "description": "Diagnoses and fixes Rust compile errors, borrow-checker issues, runtime panics, and logic bugs with clear explanations and idiomatic solutions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:20.312961Z"
-}

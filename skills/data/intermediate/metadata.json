@@ -1,9 +1,0 @@
-{
-  "name": "intermediate",
-  "description": "Claude Code customization for comfortable users. Covers skills, commands, MCP, hooks.Use when: user knows basics and wants to customize Claude Code.",
-  "repo": "timequity/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "jellyfin-library-scan",
-  "repo": "theflysurfer/claude-skills-marketplace",
-  "category": "marketing",
-  "description": "Triggers and monitors Jellyfin library scans, shows scan progress, displays newly added content, and verifies library statistics. Use this after adding new media, when content doesn't appear in Jellyf",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:56.019145Z"
-}

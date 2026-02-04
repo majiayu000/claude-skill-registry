@@ -1,9 +1,0 @@
-{
-  "name": "vkc-drizzle-schema-migration",
-  "description": "Standardize Drizzle schema/migration/seed workflow for Viet K-Connect. Use when adding or changing DB tables, especially DB-driven visa rulesets and document templates (no hardcoding).",
-  "repo": "LEE-SANG-BOK/VKC-2-",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

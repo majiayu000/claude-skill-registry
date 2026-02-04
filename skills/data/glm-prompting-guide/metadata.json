@@ -1,9 +1,0 @@
-{
-  "name": "glm-prompting-guide",
-  "description": "GLM-4.7 모델을 효과적으로 활용하는 방법을 안내합니다.사용자가 \"GLM 사용법\", \"GLM 프롬프트\", \"GLM 최적화\" 등을 질문할 때 활성화됩니다.",
-  "repo": "m16khb/glm-ensemble",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

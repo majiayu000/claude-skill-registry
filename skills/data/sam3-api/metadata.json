@@ -1,9 +1,0 @@
-{
-  "name": "sam3-api",
-  "description": "Use when working with SAM3 (Segment Anything Model 3) - provides API patterns for text prompts, bounding boxes, point prompts, video tracking, batch inference, and model building",
-  "repo": "tordks/cc-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

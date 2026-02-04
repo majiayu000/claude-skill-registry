@@ -1,9 +1,0 @@
-{
-  "name": "blueprint-execution",
-  "description": "Execution phase for blueprint workflow - present options and delegate to appropriate commands",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/majesticlabs-dev/majestic-marketplace"
-}

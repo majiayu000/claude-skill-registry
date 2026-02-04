@@ -1,9 +1,0 @@
-{
-  "name": "consult-llm",
-  "description": "Use it when the user asks to \"ask gemini\", \"ask codex\", or \"ask in browser\"",
-  "repo": "raine/consult-llm-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

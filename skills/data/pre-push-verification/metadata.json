@@ -1,9 +1,0 @@
-{
-  "name": "pre-push-verification",
-  "description": "Execute lint, test, and build checks before pushing code",
-  "repo": "hideokamoto/hidetaka.dev.2023",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

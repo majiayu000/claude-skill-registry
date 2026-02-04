@@ -1,7 +1,0 @@
-{
-  "name": "azd-deployment",
-  "repo": "microsoft/agent-skills",
-  "path": ".github/skills/azd-deployment/SKILL.md",
-  "source": "github.com/microsoft/agent-skills",
-  "downloaded_at": "2026-02-04T01:23:42.124937Z"
-}

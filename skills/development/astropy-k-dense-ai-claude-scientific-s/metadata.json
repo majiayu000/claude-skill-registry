@@ -1,7 +1,0 @@
-{
-  "name": "astropy-k-dense-ai-claude-scientific-s",
-  "description": "Comprehensive Python library for astronomy and astrophysics. This skill should be used when working with astronomical data including celestial coordinates, physical units, FITS files, cosmological cal",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.383081Z"
-}

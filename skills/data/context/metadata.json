@@ -1,9 +1,0 @@
-{
-  "name": "context",
-  "description": "Personal knowledge base integration via Obsidian vault. Provides semantic search,\nnote retrieval, and context loading for Claude Code sessions.\n\nUSE WHEN user says 'load context', 'search my notes', '",
-  "repo": "robdtaylor/personal-ai-infrastructure",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/robdtaylor/personal-ai-infrastructure"
-}

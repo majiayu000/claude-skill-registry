@@ -1,9 +1,0 @@
-{
-  "name": "langfuse-feedback-analyst",
-  "description": "Analyzes user feedback from Langfuse annotation queues and generates surgical recommendations for template.yaml, style.yaml, and tools.yaml",
-  "repo": "mberto10/web_research_agent",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

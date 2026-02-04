@@ -1,9 +1,0 @@
-{
-  "name": "skill-feedback",
-  "description": "Generate improvement reports for skills or CLI packages you authored. Use when ending a session where you worked on your own skill, when the user mentions \"skill-feedback\", \"capture improvements\", \"se",
-  "repo": "dparedesi/agent-global-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

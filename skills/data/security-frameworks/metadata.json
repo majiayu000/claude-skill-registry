@@ -1,9 +1,0 @@
-{
-  "name": "security-frameworks",
-  "description": "Security framework alignment including ISO 27001, SOC 2, NIST CSF 2.0, and CIS Controls mapping",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "platform-integration-githubgitlab",
-  "repo": "evangelosmeklis/thufir",
-  "category": "development",
-  "description": "This skill should be used when the user asks to \"fetch GitHub issue\", \"get GitLab issue\", \"analyze GitHub PR\", \"search GitHub repo\", \"check GitLab commits\", \"use GitHub API\", \"use GitLab API\", or ment",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:29.815420Z"
-}

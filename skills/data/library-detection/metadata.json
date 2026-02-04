@@ -1,9 +1,0 @@
-{
-  "name": "library-detection",
-  "description": "Detect project stack from package manifests (package.json, pyproject.toml, go.mod, Cargo.toml, pubspec.yaml, CMakeLists.txt). Auto-identify frameworks, test tools, and build systems for onboarding.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "next-config-optimization",
-  "description": "Use when configuring Next.js builds, optimizing images/fonts/scripts, setting up metadata, or working with Turbopack. Invoke for next.config.js setup, Image component optimization, Font loading, Scrip",
-  "repo": "zacharyr0th/next-starter",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

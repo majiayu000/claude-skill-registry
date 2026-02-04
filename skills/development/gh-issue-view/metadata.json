@@ -1,8 +1,0 @@
-{
-  "name": "gh-issue-view",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "description": "View GitHub issue details using gh CLI. Shows issue status, comments, timeline, and metadata. Use when user wants to inspect issue information or check status.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:30.165933Z"
-}

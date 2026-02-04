@@ -1,9 +1,0 @@
-{
-  "name": "avoiding-angle-bracket-assertions",
-  "description": "Avoid angle-bracket type assertions (<Type>) and use 'as Type' syntax instead",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "umbraco-unit-testing",
-  "description": "Unit and component testing for Umbraco backoffice extensions using @open-wc/testing",
-  "repo": "umbraco/Umbraco-CMS-Backoffice-Skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/umbraco/Umbraco-CMS-Backoffice-Skills"
-}

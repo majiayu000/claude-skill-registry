@@ -1,9 +1,0 @@
-{
-  "name": "code-agent-builder",
-  "description": "Create well-structured subagents for Claude Code with specialized expertise, proper tool configurations, and effective system prompts. Use when building custom subagents for code review, debugging, te",
-  "repo": "fdhidalgo/claude-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

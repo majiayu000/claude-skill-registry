@@ -1,9 +1,0 @@
-{
-  "name": "terraform-provider-config",
-  "description": "Terraform Provider Config - Auto-activating skill for DevOps Advanced.Triggers on: terraform provider config, terraform provider configPart of the DevOps Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

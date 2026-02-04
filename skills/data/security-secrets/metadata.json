@@ -1,9 +1,0 @@
-{
-  "name": "security-secrets",
-  "description": "Secret detection patterns and scanning workflow. Auto-loaded by security-reviewer agent for all security audits. Contains regex patterns for 25+ secret types (AWS, Google, GitHub, Stripe, etc.) and CL",
-  "repo": "IgorWarzocha/Opencode-Workflows",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

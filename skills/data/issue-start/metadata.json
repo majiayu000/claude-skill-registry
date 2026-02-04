@@ -1,9 +1,0 @@
-{
-  "name": "issue-start",
-  "description": "GitHub Issueの作業を開始する。ブランチを作成してチェックアウト。「/issue-start 4」のように使用",
-  "repo": "aoki-taquan/ruster",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

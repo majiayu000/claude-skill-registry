@@ -1,9 +1,0 @@
-{
-  "name": "cursor-diary",
-  "description": "Keep a tiny-step implementation diary during coding sessions (what changed, why, commands run, failures, and what was learned), with docmgr integration (doc add/relate/changelog). Use when the user as",
-  "repo": "go-go-golems/docmgr",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

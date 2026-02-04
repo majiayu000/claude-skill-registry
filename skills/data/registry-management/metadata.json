@@ -1,9 +1,0 @@
-{
-  "name": "registry-management",
-  "description": "Guide for adding and managing entries in the personality-assistant-registry. Use when adding MCP servers, skills, bundles, templates, or heartbeat tasks to the registry.",
-  "repo": "GabrielGallagher/personality-assistant-registry",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

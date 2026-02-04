@@ -1,9 +1,0 @@
-{
-  "name": "devops-patterns",
-  "description": "DevOps patterns including CI/CD pipeline design, GitHub Actions, Infrastructure as Code, Docker, Kubernetes, deployment strategies, monitoring, and disaster recovery. Use when setting up CI/CD, deploy",
-  "repo": "webdevtodayjason/titanium-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

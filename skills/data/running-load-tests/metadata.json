@@ -1,9 +1,0 @@
-{
-  "name": "running-load-tests",
-  "description": "Create and execute load tests for performance validation using k6, JMeter, and Artillery. Use when validating application performance under load conditions or identifying bottlenecks. Trigger with phr",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

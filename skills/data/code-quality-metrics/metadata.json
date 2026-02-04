@@ -1,9 +1,0 @@
-{
-  "name": "code-quality-metrics",
-  "description": "This skill should be used when the user asks about \"code complexity\", \"cyclomatic complexity\", \"cognitive complexity\", \"code metrics\", \"maintainability index\", \"code coverage\", or when measuring code ",
-  "repo": "shabaraba/shabaraba-cc-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

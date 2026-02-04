@@ -1,8 +1,0 @@
-{
-  "name": "prompt-brevity-review",
-  "repo": "jack-michaud/faire",
-  "category": "devops",
-  "description": "Review AI prompts and instructions for conciseness and clarity. Use when reviewing skills, CLAUDE.md, slash commands, or any LLM prompt content.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:52.020894Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ghe-changelog",
-  "description": "This skill should be used when updating the project CHANGELOG, tracking requirement changes, recording design decisions, or documenting version history. Uses git-diff to detect and categorize changes ",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

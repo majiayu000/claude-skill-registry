@@ -1,9 +1,0 @@
-{
-  "name": "doc-draft",
-  "description": "outline.yamlなどの下書きを、テンプレートと過去の申請書を参考にして正式な文書（Markdown）に変換するスキル。「下書きを正式文書にして」「outline.yamlを正式文書にして」などの指示で発動。docxスキルを使用して過去の申請書（samples/配下）を読み込み、文体や表現を参考にする。",
-  "repo": "friend1ws/grant-writing-workflow",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

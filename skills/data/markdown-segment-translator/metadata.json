@@ -1,9 +1,0 @@
-{
-  "name": "markdown-segment-translator",
-  "description": "长文档Markdown分段翻译技能（Agent自己翻译）",
-  "repo": "wordflowlab/agentsdk",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

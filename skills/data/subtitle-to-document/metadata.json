@@ -1,9 +1,0 @@
-{
-  "name": "subtitle-to-document",
-  "description": "Convert subtitle files (WebVTT .vtt and SubRip .srt) into clean, readable text documents with multi-language support (English, Traditional Chinese, Simplified Chinese). Auto-detects format and languag",
-  "repo": "blue119/yp-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

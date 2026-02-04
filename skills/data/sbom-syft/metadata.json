@@ -1,9 +1,0 @@
-{
-  "name": "sbom-syft",
-  "description": "Software Bill of Materials (SBOM) generation using Syft for container images, filesystems, and archives. Detects packages across 28+ ecosystems with multi-format output support (CycloneDX, SPDX, syft-",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

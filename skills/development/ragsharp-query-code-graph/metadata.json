@@ -1,8 +1,0 @@
-{
-  "name": "ragsharp-query-code-graph",
-  "repo": "managedcode/RagSharp",
-  "category": "development",
-  "description": "Query the ragsharp code graph for declarations, references, callers, callees, dependencies, and line-number evidence.Triggers: find usages, where defined, callers, callees, dependency path, project de",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:13.235923Z"
-}

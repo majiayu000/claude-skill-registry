@@ -1,9 +1,0 @@
-{
-  "name": "torch-tensor-parallelism",
-  "description": "Guidance for implementing tensor parallelism in PyTorch, including ColumnParallelLinear and RowParallelLinear layers. This skill should be used when implementing distributed tensor parallel operations",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

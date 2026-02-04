@@ -1,9 +1,0 @@
-{
-  "name": "dev-devops",
-  "description": "Gate 1 of the development cycle. Creates/updates Docker configuration,docker-compose setup, and environment variables for local developmentand deployment readiness.",
-  "repo": "LerianStudio/ring",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "fvtt-error-handling",
-  "description": "This skill should be used when adding error handling to catch blocks, standardizing error handling across a codebase, or ensuring proper UX with user messages vs technical logs. Covers NotificationOpt",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

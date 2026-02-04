@@ -1,9 +1,0 @@
-{
-  "name": "wp-astro-supabase-devops",
-  "description": "Set up or fix Docker Compose, Nginx edge routing, healthchecks, and service wiring for WordPress headless (MariaDB), Astro, and Supabase self-hosted in C:\\digitalbitsolutions\\wordpress_headless. Use w",
-  "repo": "cdryampi/wordpress_headless",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

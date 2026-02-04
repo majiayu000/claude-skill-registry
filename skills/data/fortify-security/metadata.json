@@ -1,9 +1,0 @@
-{
-  "name": "fortify-security",
-  "description": "Expert in Gravito security and authentication. Trigger this when setting up Auth, configuring CSP, or implementing security middleware.",
-  "repo": "gravito-framework/gravito",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gravito-framework/gravito"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "close-the-loop",
-  "repo": "tkersey/dotfiles",
-  "category": "development",
-  "description": "Force at least one feedback signal after code changes (static checks, logs, tests, UI); prefer local over CI.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:28.809048Z"
-}

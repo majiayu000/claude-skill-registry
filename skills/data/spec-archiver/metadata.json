@@ -1,9 +1,0 @@
-{
-  "name": "spec-archiver",
-  "description": "Archives completed specifications to cloud storage with index management, GitHub commenting, and local cleanup",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

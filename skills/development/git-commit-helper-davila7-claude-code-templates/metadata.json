@@ -1,7 +1,0 @@
-{
-  "name": "git-commit-helper-davila7-claude-code-templates",
-  "description": "Generate descriptive commit messages by analyzing git diffs. Use when the user asks for help writing commit messages or reviewing staged changes.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.374091Z"
-}

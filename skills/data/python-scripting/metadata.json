@@ -1,9 +1,0 @@
-{
-  "name": "python-scripting",
-  "description": "Python scripting with uv and PEP 723 inline dependencies. Use when creating standalone Python scripts with automatic dependency management.",
-  "repo": "89jobrien/steve",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

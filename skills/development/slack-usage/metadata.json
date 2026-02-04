@@ -1,7 +1,0 @@
-{
-  "name": "slack-usage",
-  "description": "This skill should be used when user asks to \"search Slack for messages\", \"find Slack messages about X\", \"get channel history\", \"look up conversation in Slack\", or \"find what someone said in Slack\".",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.208707Z"
-}

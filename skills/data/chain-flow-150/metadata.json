@@ -1,9 +1,0 @@
-{
-  "name": "chain-flow-150",
-  "description": "Orchestrate skills into dynamic chains for complex tasks. Analyzes the task, discovers available skills, builds an optimal chain, explains why each skill is needed, and executes step-by-step with user",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

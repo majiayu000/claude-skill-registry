@@ -1,7 +1,0 @@
-{
-  "name": "error-recovery",
-  "description": "Consistent error patterns, validation approaches, and recovery strategies. Use when implementing input validation, designing error responses, handling failures gracefully, or establishing logging prac",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.351636Z"
-}

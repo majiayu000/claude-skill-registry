@@ -1,9 +1,0 @@
-{
-  "name": "stack-analyzer",
-  "description": "Analyze project stack and recommend skills. Auto-detects frameworks, activates generic ai-dev-kit skills, and optionally scaffolds project-specific skills in the target repo.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

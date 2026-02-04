@@ -1,9 +1,0 @@
-{
-  "name": "mcp-narsil",
-  "description": "Deep code intelligence via Narsil MCP providing 76 tools for security scanning (OWASP, CWE, taint analysis), call graph analysis (CFG, DFG, callers/callees), structural queries (symbols, definitions, ",
-  "repo": "MichelKerkmeester/opencode-dev-environment",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

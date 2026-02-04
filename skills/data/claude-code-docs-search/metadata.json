@@ -1,9 +1,0 @@
-{
-  "name": "claude-code-docs-search",
-  "description": "Search local Claude Code documentation to answer implementation questions. Use when asked about Claude Code features, subagents, workflows, skills, hooks, MCP servers, plugins, settings, CLI options, ",
-  "repo": "arndtvoges/claude-code-docs",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "extern-researcher",
-  "description": "Research external open-source repositories to learn patterns and implementations.This skill should be used when agents need to study external codebases, check forexisting research before cloning, mana",
-  "repo": "malhashemi/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

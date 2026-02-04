@@ -1,8 +1,0 @@
-{
-  "name": "lcmp-recommendation",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "development",
-  "description": "Suggest LCMP compaction when explicitly requested - provides guidance on promoting durable information to decisions.md, insights.md, and gotchas.md without auto-compaction",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:01.741047Z"
-}

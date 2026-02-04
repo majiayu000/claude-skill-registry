@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-bridge",
-  "description": "DEPRECATED umbrella Skill (backward compatibility). Use only for broad bridge-module orchestration across codegen + Dart + registration + JS usage. Prefer the focused bridge module codegen Skill.",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

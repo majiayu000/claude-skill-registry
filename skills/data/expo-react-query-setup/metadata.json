@@ -1,9 +1,0 @@
-{
-  "name": "expo-react-query-setup",
-  "description": "Install and wire @tanstack/react-query in Expo/React Native apps (providers, query client, fetch patterns, and screen usage). Use when adding React Query to a project or extending data fetching patter",
-  "repo": "amandeepmittal/custom-codex-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

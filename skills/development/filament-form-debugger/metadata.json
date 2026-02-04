@@ -1,8 +1,0 @@
-{
-  "name": "filament-form-debugger",
-  "repo": "Hieubkav/wincellarCloneBackend",
-  "category": "development",
-  "description": "Diagnose and fix common Filament 4.x form errors - namespace issues (Tabs/Grid/Get), type mismatch, trait errors. USE WHEN encountering 'Class not found', 'Argument must be of type', namespace errors,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:03.025494Z"
-}

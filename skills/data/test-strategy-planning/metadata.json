@@ -1,9 +1,0 @@
-{
-  "name": "test-strategy-planning",
-  "description": "Create comprehensive test strategy documents following IEEE 829 structure. Plan test approach, scope, resources, and success criteria for software projects.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

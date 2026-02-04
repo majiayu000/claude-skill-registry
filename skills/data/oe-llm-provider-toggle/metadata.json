@@ -1,9 +1,0 @@
-{
-  "name": "oe-llm-provider-toggle",
-  "description": "Switch OpenEvent-AI between OpenAI, Gemini, hybrid, or stub LLM modes via environment variables or the /api/config/llm-provider admin endpoints. Use when Codex/Claude needs to verify or change AGENT_M",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

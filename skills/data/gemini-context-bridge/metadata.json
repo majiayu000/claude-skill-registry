@@ -1,9 +1,0 @@
-{
-  "name": "gemini-context-bridge",
-  "description": "Facilitates context sharing and strategic delegation between Claude Code and Gemini CLI. Syncs CLAUDE.md to GEMINI.md and provides agent selection guidance. Use when onboarding Gemini to a project, sy",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

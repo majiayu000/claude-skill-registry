@@ -1,9 +1,0 @@
-{
-  "name": "mq",
-  "description": "This skill should be used when the user asks to \"get code blocks from README\", \"extract links from markdown\", \"find all headers in this doc\", \"pull the table from documentation\", \"what code examples a",
-  "repo": "kylesnowschwartz/dotfiles",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

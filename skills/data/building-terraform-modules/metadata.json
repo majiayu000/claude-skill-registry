@@ -1,9 +1,0 @@
-{
-  "name": "building-terraform-modules",
-  "description": "This skill empowers AI assistant to build reusable terraform modules based on user specifications. it leverages the terraform-module-builder plugin to generate production-ready, well-documented terraf",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "hf-model-inference",
-  "description": "Guidance for setting up HuggingFace model inference services with Flask APIs. This skill applies when downloading HuggingFace models, creating inference endpoints, or building ML model serving APIs. U",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "workspace-blazor-mvvm",
-  "description": "Guide for implementing LionFire workspace documents with Blazor MVVM patterns, including ObservableDataView component usage, workspace-scoped service injection, and reactive persistence. Use this skil",
-  "repo": "lionfire/Core",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

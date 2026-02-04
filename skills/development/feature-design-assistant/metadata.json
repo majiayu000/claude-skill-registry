@@ -1,7 +1,0 @@
-{
-  "name": "feature-design-assistant",
-  "description": "Turn ideas into fully formed designs and specs through natural collaborative dialogue. Use when planning new features, designing architecture, or making significant changes to the codebase.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.673046Z"
-}

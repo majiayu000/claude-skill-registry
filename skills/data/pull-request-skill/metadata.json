@@ -1,9 +1,0 @@
-{
-  "name": "pull-request-skill",
-  "description": "Pull Request review manager for CodeRabbit AI. **ALWAYS use when user needs to work with PR reviews, fix CodeRabbit issues, or check review status.** Downloads, organizes, and helps resolve review com",
-  "repo": "marcioaltoe/claude-craftkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

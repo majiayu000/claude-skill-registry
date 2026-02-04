@@ -1,8 +1,0 @@
-{
-  "name": "repo-facts",
-  "repo": "WilletJiang/codex-context-kit-skills",
-  "category": "development",
-  "description": "Summarize an arbitrary code repo (git or non-git) into a small, high-signal facts packet: languages, build/test tooling clues, notable paths, and size stats.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:34.172728Z"
-}

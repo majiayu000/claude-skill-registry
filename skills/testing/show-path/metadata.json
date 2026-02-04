@@ -1,8 +1,0 @@
-{
-  "name": "show-path",
-  "repo": "bencassie/flywheel",
-  "category": "testing",
-  "description": "Find the shortest path of links between two notes. Triggers on \"path between\", \"how do X and Y connect\", \"connection chain\", \"link path\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:08.687855Z"
-}

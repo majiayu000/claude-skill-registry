@@ -1,9 +1,0 @@
-{
-  "name": "swift-diagnostics",
-  "description": "Use when debugging NavigationStack issues (not responding, unexpected pops, crashes), build failures (SPM resolution, \"No such module\", hanging builds), or memory problems (retain cycles, leaks, deini",
-  "repo": "johnrogers/claude-swift-engineering",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

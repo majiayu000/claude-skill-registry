@@ -1,8 +1,0 @@
-{
-  "name": "new-rule-completeness-validator",
-  "repo": "calcitem/Sanmill",
-  "category": "development",
-  "description": "Validates that all necessary code changes are implemented when adding new game rules; use when adding new game rules or variants to ensure no files are missed.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.752035Z"
-}

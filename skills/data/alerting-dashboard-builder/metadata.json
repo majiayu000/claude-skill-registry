@@ -1,9 +1,0 @@
-{
-  "name": "alerting-dashboard-builder",
-  "description": "Creates SLO-based alerts and operational dashboards with key charts, alert thresholds, and runbook links. Use for \"alerting\", \"dashboards\", \"SLO\", or \"monitoring\".",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sentry-security-basics",
-  "description": "Configure Sentry security settings and data protection.Use when setting up data scrubbing, managing sensitive data,or configuring security policies.Trigger with phrases like \"sentry security\", \"sentry",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

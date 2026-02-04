@@ -1,7 +1,0 @@
-{
-  "name": "add-model",
-  "description": "Add a new language model to the Giselle codebase. Use when the user wants to add, register, or integrate a new LLM model (OpenAI, Anthropic, Google) into the system.",
-  "category": "development",
-  "source": "github.com/giselles-ai/giselle",
-  "imported_at": "2026-01-24T14:54:13.462982Z"
-}

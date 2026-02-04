@@ -1,9 +1,0 @@
-{
-  "name": "fastapi-observability",
-  "description": "This skill should be used when the user asks to \"add logging\", \"implement metrics\", \"add tracing\", \"configure Prometheus\", \"setup OpenTelemetry\", \"add health checks\", \"monitor API\", or mentions observ",
-  "repo": "Lobbi-Docs/claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

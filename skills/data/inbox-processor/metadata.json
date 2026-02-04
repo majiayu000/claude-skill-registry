@@ -1,9 +1,0 @@
-{
-  "name": "inbox-processor",
-  "description": "This skill should be used when processing files in the inbox/ directory, organizing unstructured input, classifying content, or extracting actionable information. Triggered by requests like \"process i",
-  "repo": "dakesan/bioinformatics-research-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

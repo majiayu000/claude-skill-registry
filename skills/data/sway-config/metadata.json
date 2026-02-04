@@ -1,9 +1,0 @@
-{
-  "name": "sway-config",
-  "description": "Configures Sway window manager. Use when user asks about sway keybindings, window rules, outputs, inputs, workspaces, or any sway/i3 configuration.",
-  "repo": "austinpray/dotfiles",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "digitalocean-coder",
-  "description": "This skill guides writing DigitalOcean infrastructure with OpenTofu/Terraform. Use when provisioning Droplets, VPCs, Managed Databases, Firewalls, or other DO resources.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

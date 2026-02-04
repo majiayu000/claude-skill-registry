@@ -1,9 +1,0 @@
-{
-  "name": "mcp-directory",
-  "description": "Complete directory of available MCP servers with usage guidelines, tool categories, and selection criteria. Helps Claude choose the right MCP for each task and avoid token waste.",
-  "repo": "mapachekurt/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

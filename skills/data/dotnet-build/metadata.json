@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-build",
-  "description": "Build .NET solution/projects using dotnet CLI. Use when task involves compiling, restoring dependencies, or building artifacts.",
-  "repo": "GiantCroissant-Lunar/lunar-snake-hub",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

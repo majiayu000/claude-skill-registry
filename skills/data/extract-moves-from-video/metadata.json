@@ -1,9 +1,0 @@
-{
-  "name": "extract-moves-from-video",
-  "description": "This skill provides guidance for extracting text commands, moves, or typed input from video recordings using OCR. It applies when extracting gameplay commands (e.g., Zork), terminal sessions, or any t",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

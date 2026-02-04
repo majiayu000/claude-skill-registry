@@ -1,9 +1,0 @@
-{
-  "name": "eld-record-collection",
-  "description": "PCE (Process-Context Engine) のContext Delta収集スキル。開発プロセス中に生まれた知見を体系的に収集・記録する。トリガー条件:- 意思決定を行った時（「なぜこの設計にしたか記録して」）- バグを解決した時（「このバグ修正の知見を残して」）- アーキテクチャ決定をした時（「ADRを作成して」）- パターン/アンチパターンを発見した時（「このパターンを記録して」",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

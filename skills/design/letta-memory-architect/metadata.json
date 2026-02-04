@@ -1,8 +1,0 @@
-{
-  "name": "letta-memory-architect",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "description": "Guide for designing effective memory architectures in Letta agents. Use when users need help structuring memory blocks, choosing between memory types, or optimizing memory management patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:17.124335Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "adk-infra-expert",
-  "description": "Use when provisioning Vertex AI ADK infrastructure with Terraform. Trigger with phrases like \"deploy ADK terraform\", \"agent engine infrastructure\", \"provision ADK agent\", \"vertex AI agent terraform\", ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

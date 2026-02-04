@@ -1,8 +1,0 @@
-{
-  "name": "tool-just-cli",
-  "repo": "joncrangle/.dotfiles",
-  "category": "productivity",
-  "description": "This skill should be used when the user asks to \"create a justfile\", \"write just recipes\", \"configure just settings\", \"add just modules\", \"use just attributes\", \"set up task automation\", mentions just",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:56.243690Z"
-}

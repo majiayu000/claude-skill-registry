@@ -1,9 +1,0 @@
-{
-  "name": "bench-commands",
-  "description": "Frappe Bench CLI command reference for site management, app management, development, and production operations. Use when running bench commands, managing sites, migrations, builds, or deployments.",
-  "repo": "UnityAppSuite/frappe-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

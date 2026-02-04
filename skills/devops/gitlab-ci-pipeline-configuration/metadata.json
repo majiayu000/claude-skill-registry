@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-ci-pipeline-configuration",
-  "repo": "TheBushidoCollective/han",
-  "category": "devops",
-  "description": "Use when configuring GitLab CI/CD pipelines, defining stages, or setting up workflow rules. Covers pipeline structure, stage ordering, and execution flow.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:04.402195Z"
-}

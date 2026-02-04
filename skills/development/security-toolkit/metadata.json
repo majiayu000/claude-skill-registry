@@ -1,8 +1,0 @@
-{
-  "name": "security-toolkit",
-  "repo": "bout3fiddy/agents",
-  "category": "development",
-  "description": "Security scanning toolkit for BFF boundaries and CI/CD. Use when setting up or running gitleaks, semgrep, bandit, trivy, checkov, or hadolint, and when enforcing `.cursor/rules/bff-security-boundaries",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:38.641395Z"
-}

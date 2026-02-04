@@ -1,9 +1,0 @@
-{
-  "name": "tanaoroshi",
-  "description": "セッションログから価値ある発見を抽出し、カテゴリ別に整理する。「棚卸し」「セッションログの整理」「発見をまとめて」などと言われたら実行。",
-  "repo": "chatii/claude-code-finding-tanaoroshi",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sam-cell-seg",
-  "description": "Guidance for SAM-based cell segmentation and mask conversion tasks involving MobileSAM, mask-to-polygon conversion, CSV processing, and command-line interface design. This skill applies when working w",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

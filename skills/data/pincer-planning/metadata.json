@@ -1,9 +1,0 @@
-{
-  "name": "pincer-planning",
-  "description": "Bidirectional planning for ambiguous or design-heavy tasks. Use when the user requests help breaking down a problem or formulating a plan, and also when an existing plan has too many gaps or needs ref",
-  "repo": "aufrank/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/aufrank/agent-skills"
-}

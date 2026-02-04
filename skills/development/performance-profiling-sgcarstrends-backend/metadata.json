@@ -1,7 +1,0 @@
-{
-  "name": "performance-profiling-sgcarstrends-backend",
-  "description": "Profile application performance, identify bottlenecks, and optimize slow operations. Use when investigating performance issues, optimizing response times, or improving resource usage.",
-  "category": "development",
-  "source": "github.com/sgcarstrends/backend",
-  "imported_at": "2026-01-24T14:54:11.365519Z"
-}

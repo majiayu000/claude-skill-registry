@@ -1,7 +1,0 @@
-{
-  "name": "analyze-test-failures",
-  "repo": "Jamie-BitFlight/claude_skills",
-  "path": "plugins/python3-development/skills/testing/analyze-test-failures/SKILL.md",
-  "source": "github.com/Jamie-BitFlight/claude_skills",
-  "downloaded_at": "2026-01-29T02:11:24.125731Z"
-}

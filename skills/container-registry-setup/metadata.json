@@ -1,7 +1,0 @@
-{
-  "name": "container-registry-setup",
-  "repo": "dengineproblem/agents-monorepo",
-  "path": ".claude/skills/container-registry-setup/SKILL.md",
-  "source": "github.com/dengineproblem/agents-monorepo",
-  "downloaded_at": "2026-01-29T07:43:46.451155Z"
-}

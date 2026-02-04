@@ -1,9 +1,0 @@
-{
-  "name": "business-rules-analysis",
-  "description": "Business rules elicitation and analysis techniques. Covers rule types (constraints, derivations, inferences), decision tables, rule templates, and policy documentation. Use when identifying business p",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

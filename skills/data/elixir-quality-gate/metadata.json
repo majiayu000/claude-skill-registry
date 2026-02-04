@@ -1,9 +1,0 @@
-{
-  "name": "elixir-quality-gate",
-  "description": "Run comprehensive Elixir quality checks (format, credo, dialyzer, tests) with proper error handling and reporting. Use when validating code quality, before commits, or preparing for deployment.",
-  "repo": "mkreyman/bmad-elixir",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

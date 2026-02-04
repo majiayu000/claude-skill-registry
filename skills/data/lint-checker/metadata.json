@@ -1,9 +1,0 @@
-{
-  "name": "lint-checker",
-  "description": "コード品質チェック専門スキル。TypeScript/JavaScript ファイルの ESLint、型チェック、コーディング規約を検証する。",
-  "repo": "M2AI-jp/thanks4claudecode-v2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

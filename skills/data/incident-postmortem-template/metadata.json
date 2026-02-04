@@ -1,9 +1,0 @@
-{
-  "name": "incident-postmortem-template",
-  "description": "Manage incident postmortem template operations. Auto-activating skill for Technical Documentation.\nTriggers on: incident postmortem template, incident postmortem template\nPart of the Technical Documen",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

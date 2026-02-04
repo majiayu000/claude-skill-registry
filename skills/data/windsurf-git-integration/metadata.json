@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-git-integration",
-  "description": "Configure Git integration with Cascade AI assistance. Activate when users mention\"git setup\", \"version control\", \"commit messages\", \"branch management\",or \"source control\". Handles Git configuration a",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

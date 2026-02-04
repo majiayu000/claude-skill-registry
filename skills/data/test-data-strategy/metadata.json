@@ -1,9 +1,0 @@
-{
-  "name": "test-data-strategy",
-  "description": "Plan comprehensive test data management including synthetic data generation, data anonymization, versioning, and environment-specific strategies.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

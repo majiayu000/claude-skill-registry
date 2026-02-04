@@ -1,8 +1,0 @@
-{
-  "name": "cloud-environment-setup",
-  "repo": "sunholo-data/ailang",
-  "category": "development",
-  "description": "Set up Claude Code cloud/mobile environments for AILANG development. Use when starting a new cloud session, when tools are missing (Go, make, gh), or when user says \"setup cloud\", \"setup environment\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:28.475974Z"
-}

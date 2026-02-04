@@ -1,8 +1,0 @@
-{
-  "name": "paper-implementation",
-  "repo": "Infatoshi/CLAUDE.md",
-  "category": "product",
-  "description": "Implement research papers from arxiv. Use when the user provides an arxiv link, asks to implement a paper, or wants to reproduce research results.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:27.563351Z"
-}

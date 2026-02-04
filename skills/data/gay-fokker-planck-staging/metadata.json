@@ -1,9 +1,0 @@
-{
-  "name": "gay-fokker-planck-staging",
-  "description": "Two Fokker-Plancks per staging gate, conditioned on (rama OR goblins)",
-  "repo": "plurigrid/asi",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/plurigrid/asi"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rspec-grpc-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write RSpec tests for gRPC services testing unary/streaming RPC, error handling, and interceptors. Use when testing gRPC services following TDD.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.145087Z"
-}

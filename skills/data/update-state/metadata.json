@@ -1,9 +1,0 @@
-{
-  "name": "update-state",
-  "description": "Programmatically update marathon-ralph state file using deterministic jq commands. Use this instead of manually editing the JSON file.",
-  "repo": "gruckion/marathon-ralph",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

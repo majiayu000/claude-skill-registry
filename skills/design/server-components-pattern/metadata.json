@@ -1,8 +1,0 @@
-{
-  "name": "server-components-pattern",
-  "repo": "RomualdP/hoki",
-  "category": "design",
-  "description": "Pattern Server-First avec Next.js 16 pour data fetching optimal. MANDATORY pour toutes les pages et widgets. \u00c0 utiliser lors de la cr\u00e9ation de composants, pages, ou quand l'utilisateur mentionne \"fetc",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:57.832811Z"
-}

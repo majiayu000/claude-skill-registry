@@ -1,8 +1,0 @@
-{
-  "name": "escalating-linux-privileges",
-  "repo": "trilwu/secskills",
-  "category": "design",
-  "description": "Escalate privileges on Linux systems using SUID/SGID binaries, capabilities, sudo misconfigurations, cron jobs, kernel exploits, and container escapes. Use when performing Linux post-exploitation or p",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:10.745684Z"
-}

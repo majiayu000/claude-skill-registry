@@ -1,9 +1,0 @@
-{
-  "name": "agent-handoff",
-  "description": "Generate comprehensive handoff documentation optimized for AI agent takeover by analyzing project structure, design docs, and codebase",
-  "repo": "yarlson/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tuist",
-  "description": "Best practices for Tuist projects. Use when working with Tuist manifests, generating projects, or building with xcodebuild in Tuist projects.",
-  "repo": "tuist/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

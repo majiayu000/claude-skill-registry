@@ -1,9 +1,0 @@
-{
-  "name": "ui-token-first",
-  "description": "Enforce UI token usage for Espresso Engineered frontend work. Use when editing Svelte/SvelteKit UI, styling typography, voice lines, headers, cards, surfaces, or layout so styles come from frontend/sr",
-  "repo": "nickabeelee/espresso-engineered",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

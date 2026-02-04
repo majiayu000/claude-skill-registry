@@ -1,9 +1,0 @@
-{
-  "name": "network-monitoring",
-  "description": "Monitor UniFi network infrastructure including sites, devices, and system health. Diagnose connectivity issues, track device performance, and generate network diagnostics.",
-  "repo": "surrealwolf/unifi-network-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "neo4j-cypher-guide",
-  "description": "Comprehensive guide for writing modern Neo4j Cypher read queries. Essential for text2cypher MCP tools and LLMs generating Cypher queries. Covers removed/deprecated syntax, modern replacements, CALL su",
-  "repo": "tomasonjo/blogs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

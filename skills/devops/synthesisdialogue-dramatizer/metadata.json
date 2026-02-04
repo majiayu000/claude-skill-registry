@@ -1,8 +1,0 @@
-{
-  "name": "synthesisdialogue-dramatizer",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Convert dense source-grounded content into a two-speaker dramatized script with persona roles, prosody cues, and interruptions. Use for audio-friendly overviews that stay faithful to cited material.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:25.300451Z"
-}

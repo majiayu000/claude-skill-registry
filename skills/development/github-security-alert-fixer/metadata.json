@@ -1,8 +1,0 @@
-{
-  "name": "github-security-alert-fixer",
-  "repo": "bigandslow/cproj",
-  "category": "development",
-  "description": "Systematically analyzes and fixes GitHub CodeQL security alerts with proper documentation and testing",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:11.551837Z"
-}

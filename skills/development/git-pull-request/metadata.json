@@ -1,8 +1,0 @@
-{
-  "name": "git-pull-request",
-  "repo": "btimothy-har/mycc-config",
-  "category": "development",
-  "description": "Use when creating pull requests. Covers PR structure, GitHub CLI usage, branch workflow, and pre-PR validation. Triggers on PR creation, branch merging, or when preparing changes for review.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:19.254840Z"
-}

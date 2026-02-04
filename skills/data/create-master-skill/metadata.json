@@ -1,9 +1,0 @@
-{
-  "name": "create-master-skill",
-  "description": "Create a master system skill (shared resource library) for any integration. Load when user mentions \"create master skill\", \"new master skill\", \"shared skill library\", \"integration master\", or wants to",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

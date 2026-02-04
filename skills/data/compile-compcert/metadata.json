@@ -1,9 +1,0 @@
-{
-  "name": "compile-compcert",
-  "description": "Guide for building CompCert, the formally verified C compiler, from source. This skill should be used when compiling, building, or installing CompCert, or when working with Coq-based software that has",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

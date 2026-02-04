@@ -1,9 +1,0 @@
-{
-  "name": "no-lazy-implementation",
-  "description": "Prevents \"lazy\" coding habits by enforcing full implementation and banning placeholders.",
-  "repo": "cityfish91159/maihouses",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/cityfish91159/maihouses"
-}

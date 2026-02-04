@@ -1,9 +1,0 @@
-{
-  "name": "ffi-pyo3-maturin",
-  "description": "Build or modify the Rust↔Python FFI using PyO3+maturin. Use for binding builds, smoke tests, and boundary validation workflow.",
-  "repo": "JoernStoehler/msc-viterbo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

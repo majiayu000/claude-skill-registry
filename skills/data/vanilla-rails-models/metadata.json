@@ -1,9 +1,0 @@
-{
-  "name": "vanilla-rails-models",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "data",
-  "description": "Use when writing Rails models - enforces state-as-records not booleans, concerns as adjectives namespaced under model, invocation ordering, and private indentation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.531527Z",
-  "dir_name": "vanilla-rails-models"
-}

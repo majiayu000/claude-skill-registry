@@ -1,9 +1,0 @@
-{
-  "name": "gh-pr-comments",
-  "description": "List and resolve GitHub PR review comments. Use when working with PR feedback, addressing review comments, or marking threads resolved.",
-  "repo": "alistairstead/dotfiles2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

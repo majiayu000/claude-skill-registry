@@ -1,9 +1,0 @@
-{
-  "name": "axum-0-8-expert",
-  "description": "Expert guidance for Axum 0.8.x web framework development in Rust. Use when working with Axum 0.8+, migrating from 0.7 to 0.8, or when users mention path parameter syntax issues, async_trait problems, ",
-  "repo": "akamaotto/poblysh-connectors",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

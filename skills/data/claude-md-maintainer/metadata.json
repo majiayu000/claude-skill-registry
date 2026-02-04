@@ -1,9 +1,0 @@
-{
-  "name": "claude-md-maintainer",
-  "description": "Validate/update/create CLAUDE.md memory files with progressive disclosure and context-optimized structure",
-  "repo": "blueraai/bluera-base",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/blueraai/bluera-base"
-}

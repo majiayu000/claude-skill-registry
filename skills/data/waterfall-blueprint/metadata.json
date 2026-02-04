@@ -1,9 +1,0 @@
-{
-  "name": "waterfall-blueprint",
-  "description": "Use to design provider sequences, throttling logic, and credit policies for enrichment waterfalls.",
-  "repo": "gtmagents/gtm-agents",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

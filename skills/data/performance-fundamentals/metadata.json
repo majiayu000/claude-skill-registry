@@ -1,9 +1,0 @@
-{
-  "name": "performance-fundamentals",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "data",
-  "description": "Auto-invoke when reviewing loops, data fetching, rendering, database queries, or resource-intensive operations. Identifies N+1 queries, unnecessary re-renders, memory leaks, and scalability issues.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:07.450488Z",
-  "dir_name": "performance-fundamentals"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "context7-query-docs",
-  "description": "To fetch up-to-date docs and code examples from Context7 for a known library, query by a resolved library ID after running resolve-library-id (max 3 calls).",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

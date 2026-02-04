@@ -1,8 +1,0 @@
-{
-  "name": "rust-gpu-scheduling",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Implement GPU scheduling with VRAM budgets, work queues, and model lifecycle management. Use when building ML pipeline orchestrators.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.111905Z"
-}

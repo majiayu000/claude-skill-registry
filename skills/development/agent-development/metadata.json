@@ -1,8 +1,0 @@
-{
-  "name": "agent-development",
-  "repo": "anthropics/claude-code",
-  "category": "development",
-  "path": "plugins/plugin-dev/skills/agent-development",
-  "github_path": "plugins/plugin-dev/skills/agent-development",
-  "github_branch": "main"
-}

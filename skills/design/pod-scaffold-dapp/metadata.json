@@ -1,8 +1,0 @@
-{
-  "name": "pod-scaffold-dapp",
-  "repo": "aaronbassett/midnight-summit-hackathon-2025",
-  "category": "design",
-  "description": "This skill should be used when developers need to scaffold complete decentralized applications on pod network, including smart contracts, Rust CLI tools, web frontends (React + Vite + viem), and testi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:42.184623Z"
-}

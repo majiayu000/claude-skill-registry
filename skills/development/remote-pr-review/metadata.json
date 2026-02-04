@@ -1,8 +1,0 @@
-{
-  "name": "remote-pr-review",
-  "repo": "prateek/dotfiles",
-  "category": "development",
-  "description": "Create a dedicated worktree for a GitHub PR (use `wf` for openai/openai workforests, `wt` for all other repos), check out the PR locally, run `codex review` plus a PAL `mcp__pal__precommit` review aga",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:24.703472Z"
-}

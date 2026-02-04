@@ -1,9 +1,0 @@
-{
-  "name": "markdown-toc",
-  "description": "Use when generating or updating Table of Contents in markdown files. Supports multiple files, glob patterns, configurable header levels, and various insertion modes. Triggered by \"generate toc\", \"upda",
-  "repo": "Emasoft/ghe-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Emasoft/ghe-marketplace"
-}

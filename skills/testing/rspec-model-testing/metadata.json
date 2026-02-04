@@ -1,8 +1,0 @@
-{
-  "name": "rspec-model-testing",
-  "repo": "nekorush14/dotfiles",
-  "category": "testing",
-  "description": "Write RSpec tests for ActiveRecord models including validations, associations, scopes, and model methods. Use when testing model behavior, data integrity rules, or creating model specs following TDD.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.346074Z"
-}

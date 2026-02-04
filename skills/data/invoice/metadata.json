@@ -1,9 +1,0 @@
-{
-  "name": "invoice",
-  "description": "Generate professional invoices for clients using standardized templates with automatic invoice numbering and client management. This skill should be used when creating invoices for American Laboratory",
-  "repo": "arlenagreer/claude_configuration_docs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

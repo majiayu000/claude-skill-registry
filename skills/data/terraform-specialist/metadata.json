@@ -1,9 +1,0 @@
-{
-  "name": "terraform-specialist",
-  "description": "[Extends devops-engineer] Terraform/OpenTofu specialist. Use for advanced Terraform modules, multi-cloud providers, state management, workspaces, CI/CD for IaC. Invoke alongside devops-engineer for co",
-  "repo": "olehsvyrydov/AI-development-team",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

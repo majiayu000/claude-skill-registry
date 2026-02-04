@@ -1,8 +1,0 @@
-{
-  "name": "understanding-mistakes",
-  "repo": "cncorp/arsenal",
-  "category": "development",
-  "description": "Use when user says something went wrong, AI did Y instead of X, or wants to understand why a deviation happened. Manually invoked post-mortem analysis.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.759779Z"
-}

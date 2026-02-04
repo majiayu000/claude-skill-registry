@@ -1,8 +1,0 @@
-{
-  "name": "rust-candle-whisper",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Implement native Rust ML inference with Candle framework. Use when building GPU-accelerated ML pipelines without Python dependencies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.026869Z"
-}

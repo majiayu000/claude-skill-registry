@@ -1,9 +1,0 @@
-{
-  "name": "safe-agent-minimal",
-  "description": "Agent with minimal Gemini safety settings using default threshold only",
-  "repo": "Unicorn/Radium",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

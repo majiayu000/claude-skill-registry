@@ -1,9 +1,0 @@
-{
-  "name": "query-patterns",
-  "description": "Implement TanStack Query (React Query) patterns for data fetching, caching, mutations, and optimistic updates. Use when setting up API integration or data fetching strategies.",
-  "repo": "gizix/cc_projects",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

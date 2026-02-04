@@ -1,9 +1,0 @@
-{
-  "name": "shell-best-practices",
-  "description": "Use when writing shell scripts following modern best practices. Covers portable scripting, Bash patterns, error handling, and secure coding.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

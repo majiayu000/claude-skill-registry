@@ -1,8 +1,0 @@
-{
-  "name": "wcag-compliance-reviewer",
-  "repo": "shawn-sandy/skills",
-  "category": "design",
-  "description": "Review HTML/CSS and React/TypeScript code for WCAG 2.1 Level AA accessibility compliance. Use when the user asks to review code for accessibility, check WCAG compliance, identify accessibility issues,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:18.268429Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cli-developer-jeffallan-claude-skills",
-  "description": "Use when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for CLI design, argument parsing, interactive prompts, progress indicators, shell completions.",
-  "repo": "Jeffallan/claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Jeffallan/claude-skills"
-}

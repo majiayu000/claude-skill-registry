@@ -1,9 +1,0 @@
-{
-  "name": "stripe-terminal-issuing",
-  "description": "Use when implementing in-person payments with Terminal or issuing cards with Stripe Issuing. Invoke for POS terminal setup, card reader integration, in-person payment processing, card issuance, author",
-  "repo": "zacharyr0th/next-starter",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

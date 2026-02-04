@@ -1,9 +1,0 @@
-{
-  "name": "orchestrator-tech-lead",
-  "description": "Tech Lead for Claude Orchestrator. Creates implementation instructions based on planning documents and design specifications. Use when asked to create developer instructions or technical implementatio",
-  "repo": "parallax-ai-llc/claude-orchestrator",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

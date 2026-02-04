@@ -1,9 +1,0 @@
-{
-  "name": "cloudflare-workers-bindings",
-  "repo": "FlorinPopaCodes/claude-marketplace",
-  "category": "data",
-  "description": "This skill should be used when the user asks about \"KV namespace\", \"R2 bucket\", \"D1 database\", \"Hyperdrive\", \"create binding\", \"list workers\", \"worker code\", \"storage binding\", \"database query\", \"obje",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:34.460742Z",
-  "dir_name": "cloudflare-workers-bindings"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "reviewing-authentication-and-authorization-security",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "security",
-  "description": "Use when reviewing authentication or authorization code. Provides comprehensive security guidance on JWT validation, token exchange, OAuth 2.0/2.1 compliance, PKCE, Resource Indicators, MCP authorizat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.424761Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "listing-worktrees",
-  "description": "Use when user wants to see all autonomy worktrees with their status",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

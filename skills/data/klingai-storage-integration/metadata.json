@@ -1,9 +1,0 @@
-{
-  "name": "klingai-storage-integration",
-  "description": "Integrate Kling AI video output with cloud storage providers. Use when storing generatedvideos in S3, GCS, or Azure Blob. Trigger with phrases like 'klingai storage', 'save klingai video','kling ai cl",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

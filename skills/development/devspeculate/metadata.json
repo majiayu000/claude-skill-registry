@@ -1,8 +1,0 @@
-{
-  "name": "devspeculate",
-  "repo": "kevinslin/llm",
-  "category": "development",
-  "description": "Always use this skill to provide context on the codebase. Automatically initializes and references the Speculate documentation framework (coding rules, shortcuts, templates, and project specs) to ensu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:29.408863Z"
-}

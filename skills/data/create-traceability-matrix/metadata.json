@@ -1,9 +1,0 @@
-{
-  "name": "create-traceability-matrix",
-  "description": "Create traceability matrix mapping intents (INT-*) to requirements (REQ-*) and requirements to all downstream artifacts (design, code, tests, commits, runtime). Use to visualize and verify complete tr",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

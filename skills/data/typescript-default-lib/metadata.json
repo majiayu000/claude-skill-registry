@@ -1,9 +1,0 @@
-{
-  "name": "typescript-default-lib",
-  "description": "Install a default set of commonly used libraries when initializing a new TypeScript Node.js project (or retrofitting an existing one). Use when a user asks to \"create a TypeScript project\" and wants t",
-  "repo": "shaowei-g/codex-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

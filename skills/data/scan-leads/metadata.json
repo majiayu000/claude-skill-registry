@@ -1,9 +1,0 @@
-{
-  "name": "scan-leads",
-  "description": "Find and validate companies for the SME banking pipeline. Supports two modes - validating specific companies mentioned by user, or broad searches for companies matching sector/trigger criteria (e.g.,",
-  "repo": "yingkiat/sales-crm",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

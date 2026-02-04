@@ -1,9 +1,0 @@
-{
-  "name": "calculator-helper",
-  "description": "Performs mathematical calculations and conversions. Use when user asks to \"calculate\", \"compute\", \"what is the result of\", \"convert units\", or needs math help.",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

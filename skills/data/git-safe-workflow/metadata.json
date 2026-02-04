@@ -1,9 +1,0 @@
-{
-  "name": "git-safe-workflow",
-  "description": "Safely inspect, stage, commit, and (only if asked) push changes made by an AI agent. Use for commit/push requests, end-of-task checkpoints, merge conflict resolution, worktree safety checks, or decidi",
-  "repo": "regenrek/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

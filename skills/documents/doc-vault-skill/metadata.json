@@ -1,8 +1,0 @@
-{
-  "name": "doc-vault-skill",
-  "repo": "orakitine/claude-code-lab",
-  "category": "documents",
-  "description": "Auto-activating documentation cache with fresh API docs. Fetches and automatically consults cached documentation when user works with libraries/frameworks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:26.959847Z"
-}

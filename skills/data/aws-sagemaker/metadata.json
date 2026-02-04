@@ -1,9 +1,0 @@
-{
-  "name": "aws-sagemaker",
-  "description": "Amazon SageMaker for building, training, and deploying machine learning models. Use for SageMaker AI endpoints, model training, inference, MLOps, and AWS machine learning services.",
-  "repo": "rish2jain/paperresearchagent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/rish2jain/paperresearchagent"
-}

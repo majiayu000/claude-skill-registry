@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-log-call",
-  "description": "Log a call engagement in HubSpot CRM. Load when user says 'log call', 'record call', 'add call', 'call made'. Requires title, optional body and duration.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

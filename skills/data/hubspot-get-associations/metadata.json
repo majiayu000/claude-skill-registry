@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-get-associations",
-  "description": "Get associated records in HubSpot CRM. Load when user says 'get associations', 'linked records', 'contacts on deal', 'company contacts', 'related records', 'who is on this deal'.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

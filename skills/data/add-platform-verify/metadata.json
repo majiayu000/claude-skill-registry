@@ -1,9 +1,0 @@
-{
-  "name": "add-platform-verify",
-  "description": "Sets up platform directories and verifies deepwork install works correctly. Use after implementation to confirm integration.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

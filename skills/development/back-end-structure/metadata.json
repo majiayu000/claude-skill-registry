@@ -1,8 +1,0 @@
-{
-  "name": "back-end-structure",
-  "repo": "GolferGeek/orchestrator-ai",
-  "category": "development",
-  "description": "Build NestJS backend following Orchestrator AI patterns. Module/Service/Controller structure, A2A protocol compliance, transport types, error handling. CRITICAL: Files follow kebab-case naming. Contro",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:56.706754Z"
-}

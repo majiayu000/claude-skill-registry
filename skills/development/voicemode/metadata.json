@@ -1,7 +1,0 @@
-{
-  "name": "voicemode",
-  "description": "Voice interaction for Claude Code. Use when users mention voice mode, speak, talk, converse, voice status, or voice troubleshooting.",
-  "category": "development",
-  "source": "github.com/mbailey/voicemode",
-  "imported_at": "2026-01-24T14:53:54.135288Z"
-}

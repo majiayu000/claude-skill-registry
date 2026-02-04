@@ -1,9 +1,0 @@
-{
-  "name": "api-design-fundamentals",
-  "description": "Use when designing APIs, choosing between REST/GraphQL/gRPC, or understanding API design best practices. Covers protocol selection, resource modeling, and API patterns.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

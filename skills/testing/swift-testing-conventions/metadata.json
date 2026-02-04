@@ -1,8 +1,0 @@
-{
-  "name": "swift-testing-conventions",
-  "repo": "benaor/claude-config",
-  "category": "testing",
-  "description": "Testing conventions for Swift/SwiftUI projects using Clean Architecture. Covers Swift Testing framework for unit/integration tests, XCUITest for UI and E2E tests, manual protocol-based mocking, async ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:34.568410Z"
-}

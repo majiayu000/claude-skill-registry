@@ -1,8 +1,0 @@
-{
-  "name": "restate",
-  "repo": "settlemint/agent-marketplace",
-  "category": "productivity",
-  "description": "Restate durable execution for fault-tolerant services and workflows. Triggers on restate, durable, ctx.run, ctx.sleep, awakeable.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:06.092244Z"
-}

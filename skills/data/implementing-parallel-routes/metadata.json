@@ -1,9 +1,0 @@
-{
-  "name": "implementing-parallel-routes",
-  "description": "Teach parallel routes and slot patterns in Next.js 16. Use when implementing parallel routes, working with @slot syntax, or encountering missing default.tsx errors.",
-  "repo": "djankies/claude-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

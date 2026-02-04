@@ -1,8 +1,0 @@
-{
-  "name": "setup-flywheel",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Configure Flywheel MCP server, validate connection, and onboard to your vault",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:40.296390Z"
-}

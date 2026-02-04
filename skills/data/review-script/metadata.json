@@ -1,9 +1,0 @@
-{
-  "name": "review-script",
-  "description": "Review a script for documentation quality, code standards, and reproducibility. Helps ensure code is ready for the methods section. Use when the user types /review_script, after writing a new script, ",
-  "repo": "braselog/researchAssistant",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

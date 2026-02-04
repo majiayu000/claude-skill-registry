@@ -1,9 +1,0 @@
-{
-  "name": "converting-claude-subagents",
-  "description": "Convert Claude Code Subagents to OpenCode Agents format. Use when migrating from Claude Code to OpenCode or when you have existing subagent definitions to port.",
-  "repo": "edheltzel/atlas",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

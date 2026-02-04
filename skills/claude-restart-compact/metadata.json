@@ -1,7 +1,0 @@
-{
-  "name": "claude-restart-compact",
-  "repo": "ManuelKugelmann/BitBot",
-  "path": "container/templates/bitbot-config/.claude/skills/claude-restart-compact/skill.md",
-  "source": "github.com/ManuelKugelmann/BitBot",
-  "downloaded_at": "2026-01-29T08:58:14.404375Z"
-}

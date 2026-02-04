@@ -1,9 +1,0 @@
-{
-  "name": "legacy-migration",
-  "description": "This skill should be used when migrating features from src.legacy/ to the new kernel implementation or removing legacy code after reaching feature parity. Use for systematic legacy code removal, updat",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

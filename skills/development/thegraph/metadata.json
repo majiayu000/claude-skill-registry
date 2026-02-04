@@ -1,8 +1,0 @@
-{
-  "name": "thegraph",
-  "repo": "settlemint/agent-marketplace",
-  "category": "development",
-  "description": "TheGraph subgraph development with AssemblyScript handlers, schema definitions, and Matchstick testing. Triggers on subgraph, thegraph, graphql, mapping.ts.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:54.992347Z"
-}

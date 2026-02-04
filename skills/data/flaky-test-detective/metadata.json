@@ -1,9 +1,0 @@
-{
-  "name": "flaky-test-detective",
-  "description": "Diagnoses and fixes flaky tests by identifying root causes (timing issues, shared state, randomness, network dependencies) and provides stabilization strategies. Use for \"flaky tests\", \"test stability",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

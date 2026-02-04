@@ -1,9 +1,0 @@
-{
-  "name": "erlang-message-sync",
-  "description": "Erlang-style message passing via /tmp file system. Use when simulating actor model with actual message synchronization between processes. Provides send/receive primitives with blocking and pattern mat",
-  "repo": "kokuyouwind/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

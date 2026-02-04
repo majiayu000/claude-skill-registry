@@ -1,7 +1,0 @@
-{
-  "name": "claude-settings-expert",
-  "description": "Expert on Claude Code settings.json configuration, permissions, sandbox, environment variables, and settings hierarchy. Triggers when user mentions settings.json, permissions, allow rules, deny rules,",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.878550Z"
-}

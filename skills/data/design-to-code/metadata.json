@@ -1,9 +1,0 @@
-{
-  "name": "design-to-code",
-  "description": "Use this skill when the user uploads a design screenshot, shares a Figma export, provides a mockup image, or asks to \"convert design to code\", \"build from mockup\", \"generate component from screenshot\"",
-  "repo": "flight505/storybook-assistant",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/flight505/storybook-assistant"
-}

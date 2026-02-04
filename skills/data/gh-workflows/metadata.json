@@ -1,9 +1,0 @@
-{
-  "name": "gh-workflows",
-  "description": "Manage GitHub Actions workflows with the gh CLI (list, run, cancel, monitor).",
-  "repo": "MHolmes91/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

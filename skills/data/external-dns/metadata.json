@@ -1,9 +1,0 @@
-{
-  "name": "external-dns",
-  "description": "Comprehensive guide for configuring, troubleshooting, and implementing External-DNS across Azure DNS, AWS Route53, Cloudflare, and Google Cloud DNS. Use when implementing automatic DNS management in K",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

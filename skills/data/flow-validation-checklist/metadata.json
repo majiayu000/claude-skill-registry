@@ -1,9 +1,0 @@
-{
-  "name": "flow-validation-checklist",
-  "description": "Complete migration validation checklist for Flow to Output SDK. Use after migration to verify completeness and correctness.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

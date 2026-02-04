@@ -1,9 +1,0 @@
-{
-  "name": "mdm-planning",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Plan master data management strategies including golden record identification, matching, and merging approaches.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:02.013802Z",
-  "dir_name": "mdm-planning"
-}

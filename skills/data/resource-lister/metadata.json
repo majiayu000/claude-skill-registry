@@ -1,9 +1,0 @@
-{
-  "name": "resource-lister",
-  "description": "プロジェクトの Claude Code リソース一覧を表示するスキル。「リソース一覧」「コマンド一覧」「スキル一覧」「エージェント一覧」「何があるか確認」「作成したもの一覧」「Claude リソース」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

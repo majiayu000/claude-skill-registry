@@ -1,9 +1,0 @@
-{
-  "name": "ancplua-docs",
-  "description": "Search and answer questions about the ANcpLua ecosystem documentation. Use when users ask about ANcpLua.NET.Sdk features, ANcpLua.Analyzers rules, ANcpLua.Roslyn.Utilities APIs, or any configuration/u",
-  "repo": "ANcpLua/ancplua-claude-plugins",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

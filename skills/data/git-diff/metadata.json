@@ -1,9 +1,0 @@
-{
-  "name": "git-diff",
-  "description": "Display git changes in GitHub-style unified diff format with colored terminal output. Shows both staged (--cached) and unstaged changes with two-column line numbers, red/green highlighting, and chunk ",
-  "repo": "laststance/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

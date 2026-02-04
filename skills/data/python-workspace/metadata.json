@@ -1,9 +1,0 @@
-{
-  "name": "python-workspace",
-  "description": "Configures Python development workspace for MQL5 integration. Use when setting up MetaTrader 5 Python API, configuring mt5 package, or establishing MQL5-Python workflows.",
-  "repo": "terrylica/cc-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

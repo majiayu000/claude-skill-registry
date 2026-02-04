@@ -1,9 +1,0 @@
-{
-  "name": "action-pattern-conventions",
-  "description": "This skill should be used when the user asks about \"Laravel action pattern\", \"action class naming\", \"how to structure actions\", \"React component patterns\", \"Node.js service structure\", \"framework-spec",
-  "repo": "MaxBoiko21/claude-plugins-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

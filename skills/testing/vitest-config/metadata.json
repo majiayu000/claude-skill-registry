@@ -1,8 +1,0 @@
-{
-  "name": "vitest-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "testing",
-  "description": "Vitest configuration template and validation logic for test configuration that merges with vite.config.ts. Includes 5 required standards (must merge with vite.config using mergeConfig, required test c",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:05.936318Z"
-}

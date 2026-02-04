@@ -1,9 +1,0 @@
-{
-  "name": "laravel-services",
-  "description": "Service layer for external API integration using manager pattern and Saloon. Use when working with external APIs, third-party services, or when user mentions services, external API, Saloon, API integr",
-  "repo": "leeovery/claude-laravel",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

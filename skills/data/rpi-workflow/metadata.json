@@ -1,9 +1,0 @@
-{
-  "name": "rpi-workflow",
-  "description": "Apply a Research → Plan → Implement → Validate workflow with Copilot CLI, including context budgeting and persistent artifacts via /share.",
-  "repo": "matt-riley/mjrwtf",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

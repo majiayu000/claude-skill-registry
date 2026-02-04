@@ -1,7 +1,0 @@
-{
-  "name": "pytdc-davila7-claude-code-templates",
-  "description": "Therapeutics Data Commons. AI-ready drug discovery datasets (ADME, toxicity, DTI), benchmarks, scaffold splits, molecular oracles, for therapeutic ML and pharmacological prediction.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:22.640562Z"
-}

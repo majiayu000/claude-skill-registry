@@ -1,9 +1,0 @@
-{
-  "name": "security-hardening-checklist",
-  "description": "This skill should be used when the user requests to audit, check, or improve application security by analyzing security headers, cookie configuration, RLS policies, input sanitization, rate limiting, ",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

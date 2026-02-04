@@ -1,9 +1,0 @@
-{
-  "name": "configuring-javascript-stack",
-  "description": "JavaScript/TypeScript stack configuration - pnpm, prettier, eslint, vitest with 96% coverage threshold",
-  "repo": "bryonjacob/aug",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

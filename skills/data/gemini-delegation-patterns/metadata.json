@@ -1,9 +1,0 @@
-{
-  "name": "gemini-delegation-patterns",
-  "description": "Strategic patterns for Claude-to-Gemini delegation. Covers decision criteria, execution patterns, result parsing, and error handling. Use when determining if a task should be delegated to Gemini CLI.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

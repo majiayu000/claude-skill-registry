@@ -1,9 +1,0 @@
-{
-  "name": "plugins-manager",
-  "description": "Branch skill for building and improving plugins. Use when creating new plugins, validating plugin structure, adapting marketplace plugins, or improving existing plugins. Triggers: 'create plugin', 'im",
-  "repo": "henmessi/plugin-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

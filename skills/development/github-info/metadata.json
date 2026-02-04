@@ -1,8 +1,0 @@
-{
-  "name": "github-info",
-  "repo": "aadilmallick/claude-skills",
-  "category": "development",
-  "description": "Retrieve GitHub user profile and repository information using the gh CLI tool. Use when the user asks about their GitHub profile, statistics, repositories, or wants to view their GitHub information. E",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:41.589877Z"
-}

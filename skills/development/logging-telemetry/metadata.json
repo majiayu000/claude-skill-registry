@@ -1,8 +1,0 @@
-{
-  "name": "logging-telemetry",
-  "repo": "YosrBennagra/3SC",
-  "category": "development",
-  "description": "Configure structured logging and telemetry for the .NET 8 WPF widget host app using Serilog, ETW, and Application Insights. Use when wiring logging sinks, correlation IDs, PII redaction, error reporti",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.607122Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "governance-patterns",
-  "description": "Follow these patterns when implementing governance operations (copy, branch, transfer, promote, merge) in OptAIC. Covers artifact handling, RBAC mutations, lineage tracking, and activity emission.",
-  "repo": "colingwuyu/optaic-trading",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/colingwuyu/optaic-trading"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "github-workflow-authoring",
-  "description": "This skill should be used when creating or improving GitHub Actions CI/CD workflows for Breenix kernel development. Use for authoring new test workflows, optimizing existing CI pipelines, adding new t",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

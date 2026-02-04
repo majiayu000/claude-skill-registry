@@ -1,9 +1,0 @@
-{
-  "name": "k8s-clusters",
-  "description": "Hypera Azure AKS infrastructure reference. Use when user mentions cluster names (cafehyna, loyalty, sonora, painelclientes), needs kubeconfig paths, asks about spot tolerations, cert-manager issuers, ",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "translate-cn-to-en",
-  "description": "Scan and replace Chinese content in project files with English, preserving code logic and original formatting.",
-  "repo": "TrueNine/claude-code-projects",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

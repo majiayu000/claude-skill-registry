@@ -1,9 +1,0 @@
-{
-  "name": "opinion-critic",
-  "description": "Provides critical feedback and alternative architectural perspectives on code changes. Use when you want to explore different ways to implement a feature or find potential flaws in the current plan.",
-  "repo": "dtsvetkov1/agent-rules",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

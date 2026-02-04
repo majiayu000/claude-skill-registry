@@ -1,9 +1,0 @@
-{
-  "name": "pr-lister",
-  "description": "オープン PR の一覧を優先順位付きで表示する。「PR 一覧」「PR リスト」「オープン PR」「PR を見せて」「プルリク一覧」「レビュー待ち PR」「PR 確認」などで起動。レビュー状態と優先度順にソートして表示。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

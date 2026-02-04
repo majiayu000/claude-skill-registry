@@ -1,9 +1,0 @@
-{
-  "name": "vercel-edge-functions",
-  "description": "Execute Vercel secondary workflow: Edge Functions.Use when API routes with minimal latency,or complementing primary workflow.Trigger with phrases like \"vercel edge function\",\"deploy edge function with",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

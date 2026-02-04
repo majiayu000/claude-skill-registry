@@ -1,9 +1,0 @@
-{
-  "name": "detect-foreign-keys",
-  "description": "Identify foreign key relationships between tables using heuristics, value overlap analysis, and referential integrity checks",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

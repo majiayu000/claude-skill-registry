@@ -1,9 +1,0 @@
-{
-  "name": "install-local-tool",
-  "description": "Build and install a dotnet tool locally to global tools, handling platform-specific packaging and process cleanup.",
-  "repo": "stoicstudio/ClaudeConductor",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/stoicstudio/ClaudeConductor"
-}

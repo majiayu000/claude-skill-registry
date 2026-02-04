@@ -1,9 +1,0 @@
-{
-  "name": "digitalocean-app-deployment",
-  "description": "DigitalOcean App Platform deployment using doctl CLI for containerized applications, web services, static sites, and databases. Includes app spec generation, deployment orchestration, environment mana",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vanman2024/dev-lifecycle-marketplace"
-}

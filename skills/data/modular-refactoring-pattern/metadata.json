@@ -1,9 +1,0 @@
-{
-  "name": "modular-refactoring-pattern",
-  "description": "Guides systematic file refactoring following @j0kz/mcp-agents modular architecture pattern to maintain files under 300 LOC through constants/, helpers/, utils/ extraction with proven results from 2...",
-  "repo": "j0KZ/mcp-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

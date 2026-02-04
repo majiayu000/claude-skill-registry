@@ -1,9 +1,0 @@
-{
-  "name": "overflow",
-  "description": "Write technical Q&A responses as markdown files to Claude Overflow. Use for programming questions, code explanations, debugging help, API usage. The response becomes a permanent archived answer viewab",
-  "repo": "poliha/claude-overflow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

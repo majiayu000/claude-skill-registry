@@ -1,7 +1,0 @@
-{
-  "name": "notes",
-  "description": "Use when adding metadata to commits without changing history, tracking review status, test results, code quality annotations, or supplementing commit messages post-hoc - provides git notes commands an",
-  "category": "development",
-  "source": "github.com/NeoLabHQ/context-engineering-kit",
-  "imported_at": "2026-01-24T14:54:08.762271Z"
-}

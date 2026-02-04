@@ -1,9 +1,0 @@
-{
-  "name": "analyze-size",
-  "description": "Analyze codebase size and language distribution using cloc. Use when user wants to understand codebase scale, primary languages, code composition, or assess project complexity. Provides total LOC, siz",
-  "repo": "otrebu/agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

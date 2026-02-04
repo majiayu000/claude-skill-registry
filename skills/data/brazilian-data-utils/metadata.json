@@ -1,9 +1,0 @@
-{
-  "name": "brazilian-data-utils",
-  "description": "Skill para gerar e validar dados brasileiros (CPF/CNPJ) no Easy Budget.",
-  "repo": "JoseApRJunior/easy-budget-laravel",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/JoseApRJunior/easy-budget-laravel"
-}

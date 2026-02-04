@@ -1,8 +1,0 @@
-{
-  "name": "devcode",
-  "repo": "kevinslin/llm",
-  "category": "development",
-  "description": "This skill should be used when performing any coding task including implementing features, fixing bugs, refactoring code, or making any modifications to source code. Provides best practices, security ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:29.378636Z"
-}

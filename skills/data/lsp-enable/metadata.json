@@ -1,9 +1,0 @@
-{
-  "name": "lsp-enable",
-  "description": "Use when navigating code, understanding unfamiliar functions, finding definitions or references, tracing call hierarchies, preparing for refactoring, or analyzing code impact. Enforces LSP-first seman",
-  "repo": "zircote/lsp-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

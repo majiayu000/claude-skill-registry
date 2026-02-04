@@ -1,7 +1,0 @@
-{
-  "name": "finding-duplicate-functions",
-  "description": "Use when auditing a codebase for semantic duplication - functions that do the same thing but have different names or implementations. Especially useful for LLM-generated codebases where new functions ",
-  "category": "development",
-  "source": "github.com/obra/superpowers-lab",
-  "imported_at": "2026-01-24T14:54:13.797330Z"
-}

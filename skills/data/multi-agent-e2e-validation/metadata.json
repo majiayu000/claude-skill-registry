@@ -1,9 +1,0 @@
-{
-  "name": "multi-agent-e2e-validation",
-  "description": "Multi-agent parallel E2E validation workflow for database refactors and system migrations. Use when validating QuestDB deployments, schema migrations, bulk data ingestion pipelines, or any database-ce",
-  "repo": "terrylica/cc-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

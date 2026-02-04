@@ -1,9 +1,0 @@
-{
-  "name": "people-registry",
-  "description": "Build and maintain the people registry from context over time, tracking names, roles, teams, and expertise as they appear in documents. Use when processing documents that mention people or when updati",
-  "repo": "russellgoldstein/project-analysis-organization",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

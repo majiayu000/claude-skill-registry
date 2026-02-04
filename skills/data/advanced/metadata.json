@@ -1,9 +1,0 @@
-{
-  "name": "advanced",
-  "description": "Claude Code mastery for power users. Build agents, MCP servers, publish plugins.Use when: user wants to create agents, build integrations, or publish plugins.",
-  "repo": "timequity/plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "generating-conventional-commits",
-  "description": "Generates conventional commit messages using AI. It analyzes code changes and suggests a commit message adhering to the conventional commits specification. Use this skill when you need help writing cl",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

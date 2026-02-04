@@ -1,9 +1,0 @@
-{
-  "name": "suggest-model",
-  "description": "次のタスクの内容（コーディング、リサーチ、リファクタリングなど）に応じて、最適なLLMモデルを提案する",
-  "repo": "tatsuki-washimi/gwexpy",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tatsuki-washimi/gwexpy"
-}

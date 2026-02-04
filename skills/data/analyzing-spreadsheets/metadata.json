@@ -1,9 +1,0 @@
-{
-  "name": "analyzing-spreadsheets",
-  "description": "Analyzes Excel spreadsheets, summarizes trends, and recommends charts when users mention spreadsheets, Excel workbooks, or .xlsx files.",
-  "repo": "htuzel/claude-code-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

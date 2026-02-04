@@ -1,9 +1,0 @@
-{
-  "name": "java-cdi-quarkus",
-  "description": "Quarkus-specific CDI patterns including @QuarkusTest, native image support, and reflection registration",
-  "repo": "cuioss/plan-marshall",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/cuioss/plan-marshall"
-}

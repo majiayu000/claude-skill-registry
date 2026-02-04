@@ -1,9 +1,0 @@
-{
-  "name": "migrating-v3-to-v4",
-  "description": "Complete migration guide from Zod v3 to v4 covering all breaking changes and upgrade patterns",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

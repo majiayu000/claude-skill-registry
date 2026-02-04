@@ -1,9 +1,0 @@
-{
-  "name": "gleam-actor-model",
-  "description": "Use when oTP actor patterns in Gleam including processes, message passing, GenServer implementations, supervisors, fault tolerance, state management, and building concurrent, fault-tolerant applicatio",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

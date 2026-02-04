@@ -1,8 +1,0 @@
-{
-  "name": "creating-and-editing-claude-plugins",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "design",
-  "description": "Use before creating or editing plugin.json manifests, organizing .claude-plugin directories, or when user asks about plugin structure, versioning, or distribution. Provides expert guidance on manifest",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.547977Z"
-}

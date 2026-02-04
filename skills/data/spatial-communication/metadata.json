@@ -1,9 +1,0 @@
-{
-  "name": "spatial-communication",
-  "description": "Analyze cell-cell communication in spatial transcriptomics data using ligand-receptor analysis with Squidpy. Infer intercellular signaling, identify communication pathways, and visualize interaction n",
-  "repo": "GPTomics/bioSkills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/GPTomics/bioSkills"
-}

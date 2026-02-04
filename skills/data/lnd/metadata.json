@@ -1,9 +1,0 @@
-{
-  "name": "lnd",
-  "description": "Run and interact with lnd Lightning Network daemon in Docker. Use for Lightning development, testing payment channels on regtest, managing lnd containers, and calling lnd RPC endpoints (getinfo, conne",
-  "repo": "Roasbeef/claude-files",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

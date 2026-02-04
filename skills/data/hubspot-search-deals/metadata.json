@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-search-deals",
-  "description": "Search deals in HubSpot CRM by name or amount. Load when user says 'search deals', 'find deal', 'lookup deal', 'deals over $X', 'search for [deal]'.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

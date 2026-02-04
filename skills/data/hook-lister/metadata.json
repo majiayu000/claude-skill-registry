@@ -1,9 +1,0 @@
-{
-  "name": "hook-lister",
-  "description": "プロジェクトに設定されたフックの一覧を表示するスキル。「フック一覧」「フックを見せて」「設定済みフック」「hooks 確認」「フックリスト」「hook 一覧」「フックを確認」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "gmacko-qa-verify",
-  "description": "Use when (1) verifying a feature is complete against acceptance criteria, (2) running QA checklist before release, (3) validating PR changes meet requirements. Performs systematic QA verification with",
-  "repo": "gmackie/vercel-expo-app-template",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

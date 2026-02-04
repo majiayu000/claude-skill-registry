@@ -1,8 +1,0 @@
-{
-  "name": "gitbutler-stack-workflows",
-  "repo": "outfitter-dev/agents",
-  "category": "productivity",
-  "description": "Create, navigate, and reorganize stacks in GitButler using virtual branches, anchor-based stacking, and post-hoc organization. Use for dependent branches, PR preparation, and reviewable feature breakd",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.925097Z"
-}

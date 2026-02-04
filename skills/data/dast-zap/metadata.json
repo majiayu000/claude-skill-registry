@@ -1,9 +1,0 @@
-{
-  "name": "dast-zap",
-  "description": "Dynamic application security testing (DAST) using OWASP ZAP (Zed Attack Proxy) with passive and active scanning, API testing, and OWASP Top 10 vulnerability detection. Use when: (1) Performing runtime",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

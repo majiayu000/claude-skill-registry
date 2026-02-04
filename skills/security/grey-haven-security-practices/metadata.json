@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-security-practices",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "security",
-  "description": "Grey Haven's security best practices - input validation, output sanitization, multi-tenant RLS, secret management with Doppler, rate limiting, OWASP Top 10 for TanStack/FastAPI stack. Use when impleme",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:14.168385Z"
-}

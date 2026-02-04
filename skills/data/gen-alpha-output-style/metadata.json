@@ -1,9 +1,0 @@
-{
-  "name": "gen-alpha-output-style",
-  "description": "This skill provides the Gen Alpha/brainrot output style transformation rules and vocabulary. It is automatically loaded by the SessionStart hook to transform all Claude responses into Gen Alpha intern",
-  "repo": "sjnims/gen-alpha-output-style",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

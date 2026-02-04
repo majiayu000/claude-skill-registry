@@ -1,9 +1,0 @@
-{
-  "name": "quasar-queue",
-  "description": "Expert in background jobs and message queues using Gravito Quasar. Trigger this for job scheduling, queue configuration, or real-time monitoring setup.",
-  "repo": "gravito-framework/gravito",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gravito-framework/gravito"
-}

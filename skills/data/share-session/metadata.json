@@ -1,9 +1,0 @@
-{
-  "name": "share-session",
-  "description": "Convert and share Claude Code conversation sessions as readable markdown files. Use when user wants to share a session transcript, export conversation history, or create a shareable markdown document ",
-  "repo": "code-yeongyu/cc-plus",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

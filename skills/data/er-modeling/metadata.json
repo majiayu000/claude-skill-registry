@@ -1,9 +1,0 @@
-{
-  "name": "er-modeling",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Create entity-relationship diagrams with proper normalization, keys, and cardinality for logical data models.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:02.223593Z",
-  "dir_name": "er-modeling"
-}

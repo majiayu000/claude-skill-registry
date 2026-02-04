@@ -1,9 +1,0 @@
-{
-  "name": "test-scaffolder",
-  "description": "Generate test boilerplate from code or specs. Use for creating new tests, setting up test files, pytest fixtures, vitest tests, page objects, and E2E test scaffolding.",
-  "repo": "krazyuniks/guitar-tone-shootout",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/krazyuniks/guitar-tone-shootout"
-}

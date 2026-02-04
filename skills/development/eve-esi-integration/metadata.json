@@ -1,8 +1,0 @@
-{
-  "name": "eve-esi-integration",
-  "repo": "AreteDriver/EVE_Rebellion",
-  "category": "development",
-  "description": "EVE Online ESI API integration skill for third-party development. Use when building EVE Online tools, apps, or games that need ESI endpoints, SSO authentication, image server assets, or SDE data. Trig",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:31.329317Z"
-}

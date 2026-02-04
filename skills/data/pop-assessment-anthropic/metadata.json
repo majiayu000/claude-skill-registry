@@ -1,9 +1,0 @@
-{
-  "name": "pop-assessment-anthropic",
-  "description": "Validates PopKit compliance with Claude Code patterns using concrete standards and automated checks",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

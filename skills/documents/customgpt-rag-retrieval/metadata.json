@@ -1,8 +1,0 @@
-{
-  "name": "customgpt-rag-retrieval",
-  "repo": "Poll-The-People/customgpt-claude-code",
-  "category": "documents",
-  "description": "Automatically retrieve relevant information from the organization's CustomGPT.ai knowledge base when answering questions about documented topics, policies, procedures, or technical specifications.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:42.333763Z"
-}

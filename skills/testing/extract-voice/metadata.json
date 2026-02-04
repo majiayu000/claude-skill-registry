@@ -1,8 +1,0 @@
-{
-  "name": "extract-voice",
-  "repo": "Alevsk/nix",
-  "category": "testing",
-  "description": "Use when the user wants to analyze writing samples to extract voice patterns, create voice-replicating prompts, or refine content generation prompts to match a specific writing style",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:50.012169Z"
-}

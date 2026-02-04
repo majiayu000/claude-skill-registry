@@ -1,9 +1,0 @@
-{
-  "name": "game-scoring",
-  "description": "Use when working with candidate scoring, confidence calculation, softmax aggregation, or guess decision logic. Load for understanding how candidates are ranked, when the system decides to guess, and h",
-  "repo": "discountedcookie/10x-mapmaster",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

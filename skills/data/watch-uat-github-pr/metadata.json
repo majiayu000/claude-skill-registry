@@ -1,9 +1,0 @@
-{
-  "name": "watch-uat-github-pr",
-  "description": "Watch a GitHub UAT PR for maintainer feedback or approval by polling comments until approved/passed.",
-  "repo": "oocx/tfplan2md-uat",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

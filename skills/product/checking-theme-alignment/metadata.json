@@ -1,8 +1,0 @@
-{
-  "name": "checking-theme-alignment",
-  "repo": "djacobsmeyer/hold-the-line",
-  "category": "product",
-  "description": "Validates that book chapters align with the core theme. Use when user says 'check theme alignment', 'does this fit the theme', 'verify alignment', or automatically after every 2 chapters are drafted.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:00.386343Z"
-}

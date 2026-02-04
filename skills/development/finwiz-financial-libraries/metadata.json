@@ -1,8 +1,0 @@
-{
-  "name": "finwiz-financial-libraries",
-  "repo": "fjacquet/finwiz",
-  "category": "development",
-  "description": "Guides when to use financial libraries (TA-Lib, Empyrical, Backtrader) vs custom code for calculations, scoring, and business logic in FinWiz. Use when implementing financial calculations, technical i",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:39.409301Z"
-}

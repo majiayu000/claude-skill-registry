@@ -1,8 +1,0 @@
-{
-  "name": "five-whys-root-cause-analysis",
-  "repo": "tommymorgan/claude-plugins",
-  "category": "development",
-  "description": "This skill should be used when the user reports \"error\", \"bug\", \"problem\", needs to \"fix\" something, mentions \"debug\", \"failing\", \"broken\", \"issue\", \"not working\", \"crash\", or any problem-solving scen",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:26.557562Z"
-}

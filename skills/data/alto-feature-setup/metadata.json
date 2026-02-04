@@ -1,9 +1,0 @@
-{
-  "name": "alto-feature-setup",
-  "description": "Use when starting a new feature - running /alto-feature-setup, updating objective.md, or running alto-new-run. Interactive workflow for feature initialization.",
-  "repo": "gonzaloetjo/alto",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gonzaloetjo/alto"
-}

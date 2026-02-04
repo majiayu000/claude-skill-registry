@@ -1,9 +1,0 @@
-{
-  "name": "vanilla-rails-controllers",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "data",
-  "description": "Use when writing Rails controllers, adding controller actions, or implementing state changes (close, archive, publish, assign) - enforces resource extraction instead of custom actions",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.438121Z",
-  "dir_name": "vanilla-rails-controllers"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "testing-next-stack",
-  "description": "Scaffolds comprehensive testing setup for Next.js applications including Vitest unit tests, React Testing Library component tests, and Playwright E2E flows with accessibility testing via axe-core. Thi",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

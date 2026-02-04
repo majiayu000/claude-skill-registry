@@ -1,8 +1,0 @@
-{
-  "name": "setup-claude-dev-kit",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when setting up a new dev machine for Claude Code, onboarding to a project, or optimizing development environment - interactive installer that detects existing setup, configures shell, editor, git",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.181090Z"
-}

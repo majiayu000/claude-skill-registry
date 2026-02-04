@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-team-setup",
-  "description": "Configure OpenRouter for team and organizational use. Use when setting up multi-user access or department billing. Trigger with phrases like 'openrouter team', 'openrouter organization', 'multi-user o",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

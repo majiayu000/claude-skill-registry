@@ -1,9 +1,0 @@
-{
-  "name": "managing-network-policies",
-  "description": "Use when managing Kubernetes network policies and firewall rules. Trigger with phrases like \"create network policy\", \"configure firewall rules\", \"restrict pod communication\", or \"setup ingress/egress ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

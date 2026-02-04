@@ -1,9 +1,0 @@
-{
-  "name": "codex-status",
-  "description": "Check the current status of Codex collaboration. Use when user says codex status, check codex, or collaboration status.",
-  "repo": "antorsae/dual-agent",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-mcp-integration",
-  "description": "Integrate MCP servers with Windsurf for extended capabilities. Activate when users mention\"mcp integration\", \"model context protocol\", \"external tools\", \"mcp server\",or \"cascade tools\". Handles MCP se",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

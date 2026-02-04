@@ -1,9 +1,0 @@
-{
-  "name": "hn-title",
-  "description": "This skill should be used when the user wants to create, analyze, or improve blog titles for Hacker News submissions. Invoke when the user mentions \"HN title\", \"Hacker News title\", wants to optimize t",
-  "repo": "kevinslin/llm",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

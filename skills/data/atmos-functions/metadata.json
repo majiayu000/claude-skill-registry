@@ -1,9 +1,0 @@
-{
-  "name": "atmos-functions",
-  "description": "Use when wiring cross-component dependencies in stack YAML. Covers !terraform.state syntax for passing outputs between components without remote-state lookups.",
-  "repo": "cloudposse/docs",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

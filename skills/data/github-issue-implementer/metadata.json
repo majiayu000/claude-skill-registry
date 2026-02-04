@@ -1,9 +1,0 @@
-{
-  "name": "github-issue-implementer",
-  "description": "You are an implementer of GitHub issues.  You are an Agent who has been assigned an issue to work on.",
-  "repo": "graphlessdb/graphlessdb",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

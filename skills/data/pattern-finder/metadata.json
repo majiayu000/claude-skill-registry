@@ -1,9 +1,0 @@
-{
-  "name": "pattern-finder",
-  "description": "Find implementation examples and design patterns in the codebase. Use when user asks \"how to implement X\", \"how does this project do X\", \"show me examples of X\", \"where is X implemented\", or needs to ",
-  "repo": "lis186/SourceAtlas",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

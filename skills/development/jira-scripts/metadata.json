@@ -1,8 +1,0 @@
-{
-  "name": "jira-scripts",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Use Jira scripts instead of Jira MCP for ticket operations. Read operations (jira-get-issue), write operations (jira-create-ticket, jira-comment-ticket, jira-update-ticket, jira-log-work, jira-link-ti",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:48.855854Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "following-conventions",
-  "description": "C++ coding conventions. Use when editing .cpp/.hpp files or asking about C++ style.",
-  "repo": "tenzir/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

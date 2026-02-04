@@ -1,9 +1,0 @@
-{
-  "name": "browser-devtools-mcp",
-  "description": "Integrating Chrome DevTools and browser automation via MCP for live UI inspection, screenshot-to-code workflows, and visual debugging. Bridges the gap between design and implementation.",
-  "repo": "HermeticOrmus/LibreUIUX-Claude-Code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

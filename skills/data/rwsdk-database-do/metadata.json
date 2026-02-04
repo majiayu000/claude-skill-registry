@@ -1,9 +1,0 @@
-{
-  "name": "rwsdk-database-do",
-  "repo": "kcc989/logoer",
-  "category": "data",
-  "description": "Use when working with rwsdk/db for SQLite Durable Objects - covers setup with migrations, type-safe queries with Kysely, CRUD operations, joins, seeding, and migration rollback handling in Cloudflare ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:36.090014Z",
-  "dir_name": "rwsdk-database-do"
-}

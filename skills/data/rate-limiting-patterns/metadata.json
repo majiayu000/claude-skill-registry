@@ -1,9 +1,0 @@
-{
-  "name": "rate-limiting-patterns",
-  "description": "Use when implementing rate limiting, throttling, or API quotas. Covers algorithms like token bucket and sliding window, plus distributed rate limiting patterns.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

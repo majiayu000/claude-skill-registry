@@ -1,9 +1,0 @@
-{
-  "name": "repo-discoverer",
-  "description": "Discover repositories in an organization for sync operations",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

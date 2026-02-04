@@ -1,9 +1,0 @@
-{
-  "name": "internationalization-helper",
-  "description": "Extracts hardcoded strings for i18n, manages translation files, and ensures locale coverage. Use when working with multi-language apps, translations, or user mentions i18n, localization, or languages.",
-  "repo": "CrazyDubya/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

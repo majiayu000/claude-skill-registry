@@ -1,9 +1,0 @@
-{
-  "name": "extract-web-content",
-  "description": "Extract clean web content as markdown using ezycopy CLI. Use when user asks to \"extract this webpage\", \"save this article\", \"copy clean content from URL\", \"get markdown from this link\", \"convert webpa",
-  "repo": "gupsammy/Claude-setup",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gupsammy/Claude-setup"
-}

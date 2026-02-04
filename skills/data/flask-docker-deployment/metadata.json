@@ -1,9 +1,0 @@
-{
-  "name": "flask-docker-deployment",
-  "description": "Set up Docker deployment for Flask applications with Gunicorn, automated versioning, and container registry publishing. Use when dockerizing a Flask app, containerizing for production, or setting up C",
-  "repo": "jmazzahacks/byteforge-claude-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

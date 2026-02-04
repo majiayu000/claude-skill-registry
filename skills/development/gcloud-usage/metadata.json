@@ -1,7 +1,0 @@
-{
-  "name": "gcloud-usage",
-  "description": "This skill should be used when user asks about \"GCloud logs\", \"Cloud Logging queries\", \"Google Cloud metrics\", \"GCP observability\", \"trace analysis\", or \"debugging production issues on GCP\".",
-  "category": "development",
-  "source": "github.com/fcakyon/claude-codex-settings",
-  "imported_at": "2026-01-24T14:54:17.211099Z"
-}

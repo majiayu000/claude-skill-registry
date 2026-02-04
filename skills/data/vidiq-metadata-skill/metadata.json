@@ -1,9 +1,0 @@
-{
-  "name": "vidiq-metadata-skill",
-  "description": "Collects vidIQ data via guided copy-paste workflow and generates metadata.md with optimized YouTube title, description, tags, and hashtags. Use after script generation or when preparing video for uplo",
-  "repo": "SGobet/AI-Powered-YouTube-Workflow-TO-SHARE-",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

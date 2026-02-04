@@ -1,9 +1,0 @@
-{
-  "name": "ci-debug",
-  "description": "Debug GitHub Actions workflow failures, CI build issues, test failures in CI, and deployment problems. Use when workflows fail, artifacts aren't uploaded, or CI-specific errors occur.",
-  "repo": "cmwen/prompt-loop-app",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

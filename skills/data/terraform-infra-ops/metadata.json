@@ -1,9 +1,0 @@
-{
-  "name": "terraform-infra-ops",
-  "description": "Operate and update the Terraform infrastructure in ops/infra, including init/apply flows, formatting, and linting. Use when modifying Cloudflare Pages/R2 resources, updating Terraform state config, or",
-  "repo": "salieri/resume",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

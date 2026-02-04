@@ -1,8 +1,0 @@
-{
-  "name": "go-error-checking",
-  "repo": "JamesPrial/claudefiles",
-  "category": "testing",
-  "description": "Type-safe error inspection using errors.Is and errors.As",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.884136Z"
-}

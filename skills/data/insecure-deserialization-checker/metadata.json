@@ -1,9 +1,0 @@
-{
-  "name": "insecure-deserialization-checker",
-  "description": "Insecure Deserialization Checker - Auto-activating skill for Security Fundamentals.Triggers on: insecure deserialization checker, insecure deserialization checkerPart of the Security Fundamentals skil",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

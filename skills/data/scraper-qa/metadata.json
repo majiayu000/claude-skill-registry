@@ -1,9 +1,0 @@
-{
-  "name": "scraper-qa",
-  "description": "Use this skill when implementing, modifying, or fixing ANY scraper, discovery, or extraction code in the packages/scrapers directory. Triggers for tasks involving SmartDiscoveryAgent, SmartDishFinderA",
-  "repo": "cgjen-box/planted-website",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

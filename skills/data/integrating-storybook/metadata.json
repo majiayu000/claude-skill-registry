@@ -1,9 +1,0 @@
-{
-  "name": "integrating-storybook",
-  "description": "spec.mdとのStorybook統合。Component APIからStoriesを自動生成。 トリガー: storybook, stories, component api, props, argTypes, variants, csf, csf3, autodocs, frontend component",
-  "repo": "thkt/claude-config",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

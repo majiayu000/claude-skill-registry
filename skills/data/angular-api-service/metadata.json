@@ -1,9 +1,0 @@
-{
-  "name": "angular-api-service",
-  "description": "Use when creating API services for backend communication with proper patterns for caching, error handling, and type safety.",
-  "repo": "duc01226/EasyPlatform",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/duc01226/EasyPlatform"
-}

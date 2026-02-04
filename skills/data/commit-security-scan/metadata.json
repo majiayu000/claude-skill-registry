@@ -1,9 +1,0 @@
-{
-  "name": "commit-security-scan",
-  "description": "Analyze code changes for security vulnerabilities using LLM reasoning and threat model patterns. Use for PR reviews, pre-commit checks, or branch comparisons.",
-  "repo": "Factory-AI/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

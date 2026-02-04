@@ -1,9 +1,0 @@
-{
-  "name": "dotnet8-standards",
-  "description": "C# 12 and .NET 8 coding standards including primary constructors, collection expressions, async patterns, null handling, and naming conventions. Use when writing or reviewing .NET 8 code.",
-  "repo": "Joshua-Palamuttam/claude-code-presentation",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

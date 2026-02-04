@@ -1,8 +1,0 @@
-{
-  "name": "pull-request-creator",
-  "repo": "biwsantang/dotfiles",
-  "category": "development",
-  "description": "Creates and updates well-formatted pull requests using GitHub CLI. Use when creating PRs, pull requests, submitting code for review, or when the user mentions \"pr\", \"pull request\", \"create pr\", or wan",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:12.455214Z"
-}

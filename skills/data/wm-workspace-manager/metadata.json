@@ -1,9 +1,0 @@
-{
-  "name": "wm-workspace-manager",
-  "description": "Workspace orchestration automation for the wm CLI multi-repo workflow. Use when user wants to start, resume, extend, or manage engineering workspaces with Git worktrees. Handles intent parsing (\"start",
-  "repo": "jonmagic/skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cowsay",
-  "description": "Generate ASCII art of a cow (or other animals) with a speech bubble containing a message. Use this skill when the user asks you to display a cowsay message, make an ASCII cow speak, or wants fun termi",
-  "repo": "zlliang/dotfiles",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

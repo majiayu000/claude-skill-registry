@@ -1,9 +1,0 @@
-{
-  "name": "cva-quickref-adk",
-  "description": "Quick reference cheatsheet for Google ADK in Clojure. Includes agent creation patterns, model configuration, tool building, execution patterns, and common workflows. Use when writing ADK code, looking",
-  "repo": "joaopelegrino/hello-word-closure",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

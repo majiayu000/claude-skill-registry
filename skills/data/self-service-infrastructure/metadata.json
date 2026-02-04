@@ -1,9 +1,0 @@
-{
-  "name": "self-service-infrastructure",
-  "description": "Use when designing infrastructure self-service portals, IaC templates, or automated provisioning systems. Covers Terraform modules, Pulumi, environment provisioning, and infrastructure guardrails.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

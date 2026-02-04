@@ -1,7 +1,0 @@
-{
-  "name": "mesh-generation",
-  "description": "Plan and evaluate mesh generation for numerical simulations. Use when choosing grid resolution, checking aspect ratios/skewness, estimating mesh quality constraints, or planning adaptive mesh refineme",
-  "category": "development",
-  "source": "github.com/HeshamFS/materials-simulation-skills",
-  "imported_at": "2026-01-24T14:54:09.139192Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "remote-camera-capture",
-  "description": "Capture photos remotely from mobile devices for hardware inspection, PCB debugging, chip identification, document capture, or visual analysis. Use when you need to see something in the physical world ",
-  "repo": "aimoda/claude-code-remote-camera-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "gh-code-review",
-  "description": "Conduct a thorough and in-depth code review. Use this skill when conducting a code review for a PR on GitHub.",
-  "repo": "bkircher/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

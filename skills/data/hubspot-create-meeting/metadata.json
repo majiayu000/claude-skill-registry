@@ -1,9 +1,0 @@
-{
-  "name": "hubspot-create-meeting",
-  "description": "Create a meeting engagement in HubSpot CRM. Load when user says 'create meeting', 'add meeting', 'schedule meeting', 'new meeting'. Requires title, start and end times.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

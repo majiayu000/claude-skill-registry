@@ -1,9 +1,0 @@
-{
-  "name": "fetch-architecture",
-  "description": "Client and server-side fetch utilities for Next.js applications with API route proxying to FastAPI backends.",
-  "repo": "adelabdelgawad/claude-fullstack-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/adelabdelgawad/claude-fullstack-skills"
-}

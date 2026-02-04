@@ -1,9 +1,0 @@
-{
-  "name": "nuxt-errors",
-  "description": "Error handling with error classes, handlers, and interceptors. Use when handling API errors, displaying validation errors, configuring error handlers, or implementing error interceptors.",
-  "repo": "leeovery/claude-nuxt",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

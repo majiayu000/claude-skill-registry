@@ -1,9 +1,0 @@
-{
-  "name": "build-cross-platform-packages",
-  "description": "Use when building professional installers for desktop applications - covers macOS DMG with app bundles, Windows MSI with WiX, Linux DEB packages, GitHub Actions automation, and SLSA attestations",
-  "repo": "SecurityRonin/ronin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

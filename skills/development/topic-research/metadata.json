@@ -1,8 +1,0 @@
-{
-  "name": "topic-research",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Research and synthesize information about {{TOPIC}}. Use when {{TRIGGER_CONTEXTS}}. Produces {{OUTPUT_FORMAT}} with citations.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.166965Z"
-}

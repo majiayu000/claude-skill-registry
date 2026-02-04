@@ -1,9 +1,0 @@
-{
-  "name": "midjourney-replicate-flux",
-  "description": "Generate highly detailed, Midjourney-style image prompts optimized for the FLUX 1.1 Pro model on Replicate. Transform basic user descriptions into rich, cinematic prompts with professional photography",
-  "repo": "rawveg/skillsforge-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

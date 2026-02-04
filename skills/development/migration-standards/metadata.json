@@ -1,7 +1,0 @@
-{
-  "name": "migration-standards",
-  "description": "Create and manage database migrations with reversible changes, proper naming conventions, and zero-downtime deployment strategies. Use this skill when creating database migration files, modifying sche",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.518091Z"
-}

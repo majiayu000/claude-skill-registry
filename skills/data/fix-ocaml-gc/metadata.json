@@ -1,9 +1,0 @@
-{
-  "name": "fix-ocaml-gc",
-  "description": "Guide for debugging and fixing bugs in the OCaml garbage collector, particularly memory management issues in the runtime's sweeping and allocation code. This skill applies when working on OCaml runtim",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

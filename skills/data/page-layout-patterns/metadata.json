@@ -1,9 +1,0 @@
-{
-  "name": "page-layout-patterns",
-  "description": "Standardize page structure - always use MainLayout wrapper, space-y-32 for sections, px-8 py-16 for page padding, responsive grid patterns",
-  "repo": "JewelsHovan/pain-plus-site",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

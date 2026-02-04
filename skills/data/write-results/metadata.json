@@ -1,9 +1,0 @@
-{
-  "name": "write-results",
-  "description": "Draft the results section from figures and their captions. Builds a coherent narrative from visual evidence. Use when the user types /write_results, when figures exist with captions, or after methods ",
-  "repo": "braselog/researchAssistant",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

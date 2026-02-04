@@ -1,9 +1,0 @@
-{
-  "name": "workflow-status",
-  "description": "Display project workflow progress by reading handoff documents in .docs/ directory. This skill should be used when users want to check their workflow status, see what phase they're in, or when other w",
-  "repo": "JHaugaard/refine-workflow-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

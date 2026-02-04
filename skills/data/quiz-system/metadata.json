@@ -1,9 +1,0 @@
-{
-  "name": "quiz-system",
-  "description": "Knowledge for implementing the LMS quiz system with Nuxt UI. Activate when working with quiz components, question types, scoring, or quiz-related composables.",
-  "repo": "fawzymohamed/devops",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/fawzymohamed/devops"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "github-cli-helper",
-  "repo": "mkaczkowski/ai-command-library",
-  "category": "development",
-  "description": "Execute GitHub CLI commands using the correct Homebrew path. Use when interacting with GitHub PRs, issues, repos, or any gh command.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:00.742128Z"
-}

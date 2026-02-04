@@ -1,9 +1,0 @@
-{
-  "name": "testing-mobile-apps",
-  "description": "Execute mobile app testing on iOS and Android devices/simulators.Use when performing specialized testing.Trigger with phrases like \"test mobile app\", \"run iOS tests\", or \"validate Android functionalit",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

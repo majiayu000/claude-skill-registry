@@ -1,9 +1,0 @@
-{
-  "name": "falai",
-  "repo": "vm0-ai/vm0-skills",
-  "category": "data",
-  "description": "fal.ai AI image generation. Use this skill when you need to use fal, fal.ai, or generate images from text prompts using AI text-to-image models.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:52.830880Z",
-  "dir_name": "falai"
-}

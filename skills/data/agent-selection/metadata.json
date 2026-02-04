@@ -1,9 +1,0 @@
-{
-  "name": "agent-selection",
-  "description": "Systematic framework for selecting the optimal specialized agent for any task. Use when delegating to subagents via the Task tool to ensure the most appropriate specialist is chosen based on framework",
-  "repo": "michael-h-patrianna/animations",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/michael-h-patrianna/animations"
-}

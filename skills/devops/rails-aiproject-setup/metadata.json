@@ -1,8 +1,0 @@
-{
-  "name": "rails-aiproject-setup",
-  "repo": "zerobearing2/rails-ai",
-  "category": "devops",
-  "description": "Setting up and configuring Rails 8+ projects - Gemfile dependencies, environment config, credentials, initializers, Docker, RuboCop, project validation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:15.298765Z"
-}

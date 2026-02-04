@@ -1,9 +1,0 @@
-{
-  "name": "website-debug",
-  "description": "Frontend website debugging toolkit using Chrome DevTools Protocol with Playwright/WebKit fallbacks. Use this skill when: (1) Debugging CSS, HTML, or JavaScript issues on a webpage, (2) Taking screensh",
-  "repo": "AnthemFlynn/ccmp",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

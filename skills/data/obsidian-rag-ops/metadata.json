@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-rag-ops",
-  "description": "Ejecuta flujos RAG en Obsidian para responder, resumir, reorganizar o crear notas nuevas con citas trazables.",
-  "repo": "AlejandroIglesiasCalvo/Coddex-Obsidian-Skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

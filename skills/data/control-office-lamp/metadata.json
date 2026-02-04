@@ -1,9 +1,0 @@
-{
-  "name": "control-office-lamp",
-  "description": "Control office lamp via Home Assistant. Use when the user asks to turn on, turn off, or toggle their office lamp, or check its status. Triggers on phrases like \"turn on my lamp\", \"office light on/off\"",
-  "repo": "joescharf/cc-joescharf-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

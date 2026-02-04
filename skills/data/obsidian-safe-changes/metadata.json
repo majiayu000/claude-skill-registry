@@ -1,9 +1,0 @@
-{
-  "name": "obsidian-safe-changes",
-  "description": "Cambios seguros en archivos del vault: mover, renombrar, editar o eliminar con trazabilidad y recuperacion.",
-  "repo": "AlejandroIglesiasCalvo/Coddex-Obsidian-Skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

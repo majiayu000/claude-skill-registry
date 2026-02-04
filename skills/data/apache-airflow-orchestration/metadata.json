@@ -1,9 +1,0 @@
-{
-  "name": "apache-airflow-orchestration",
-  "description": "Complete guide for Apache Airflow orchestration including DAGs, operators, sensors, XComs, task dependencies, dynamic workflows, and production deployment",
-  "repo": "manutej/luxor-claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

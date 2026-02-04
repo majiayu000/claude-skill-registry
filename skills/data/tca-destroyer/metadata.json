@@ -1,9 +1,0 @@
-{
-  "name": "tca-destroyer",
-  "description": "Remove TCA (Composable Architecture) code from Leavn - delete reducers, migrate to @Observable ViewModels, remove dependencies",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "supabase-webhooks-events",
-  "description": "Implement Supabase webhook signature validation and event handling.Use when setting up webhook endpoints, implementing signature verification,or handling Supabase event notifications securely.Trigger ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

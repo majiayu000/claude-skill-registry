@@ -1,9 +1,0 @@
-{
-  "name": "fly-deployment",
-  "description": "Use when deploying to Fly.io - covers single volume limitation, monorepo deployment, Dockerfile patterns for Next.js/Python, and common troubleshooting",
-  "repo": "SecurityRonin/ronin-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

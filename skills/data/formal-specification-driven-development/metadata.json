@@ -1,9 +1,0 @@
-{
-  "name": "formal-specification-driven-development",
-  "description": "Use this skill when the user wants to implement code with formal verification. This workflow discusses requirements, creates Idris2 specifications, reviews them, compiles for verification, then implem",
-  "repo": "twoLoop-40/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

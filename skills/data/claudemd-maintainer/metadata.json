@@ -1,9 +1,0 @@
-{
-  "name": "claudemd-maintainer",
-  "description": "Context-aware guidance for maintaining and improving CLAUDE.md files. Use when editing CLAUDE.md, discussing documentation structure for AI assistants, or optimizing project instructions.",
-  "repo": "anyproto/anytype-swift",
-  "category": "devops",
-  "tags": [],
-  "stars": 427,
-  "source": "github.com/anyproto/anytype-swift"
-}

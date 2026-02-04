@@ -1,8 +1,0 @@
-{
-  "name": "jujutsu-workflow",
-  "repo": "vdesjardins/nix-config",
-  "category": "development",
-  "description": "Comprehensive guide to jujutsu (jj) workflow, distinguishing it from git, with step-by-step instructions for initializing repositories, describing commits with conventional format, rebasing, managing ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:12.757166Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "refactoring-discovery",
-  "description": "Discover refactoring opportunities by analyzing code for excessive responsibilities, tight coupling, low cohesion, and SOLID principle violations. Generate detailed reports with redesign proposals tai",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

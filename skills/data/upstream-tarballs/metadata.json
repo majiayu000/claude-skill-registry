@@ -1,9 +1,0 @@
-{
-  "name": "upstream-tarballs",
-  "description": "Use when maintaining a fork of a Python package without GitHub access, importing upstream releases from PyPI tarballs, or merging upstream updates into a fork using vendor branch strategy",
-  "repo": "stabilefrisur/metapyle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

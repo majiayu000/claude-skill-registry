@@ -1,9 +1,0 @@
-{
-  "name": "supporting-custom-elements",
-  "description": "Teaches Web Components (Custom Elements) support in React 19, including property vs attribute handling and custom events. Use when integrating Web Components or working with custom HTML elements.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

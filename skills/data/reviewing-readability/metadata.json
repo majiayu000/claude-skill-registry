@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-readability",
-  "description": "\"The Art of Readable Code\"とミラーの法則（7±2）に基づくコード可読性レビュー。 トリガー: 可読性, 理解しやすい, わかりやすい, 明確, 命名, 変数名, 関数名, ネスト, 深いネスト, 関数設計, コメント, 複雑, 難しい, 難読, Miller's Law, ミラーの法則, 認知負荷, AI-generated, 過剰設計.",
-  "repo": "thkt/claude-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

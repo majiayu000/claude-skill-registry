@@ -1,9 +1,0 @@
-{
-  "name": "handoff-log-update",
-  "description": "Append a structured entry to the handoff log when an agent completes work, is blocked, or needs to pass ownership.",
-  "repo": "cdrguru/portable-agent-kit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

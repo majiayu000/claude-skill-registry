@@ -1,9 +1,0 @@
-{
-  "name": "imagekit-upload",
-  "description": "Upload images to ImageKit from file paths or clipboard, returning the CDN URL for easy sharing and embedding",
-  "repo": "kevinslin/llm",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

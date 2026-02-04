@@ -1,9 +1,0 @@
-{
-  "name": "sr-cardoso-whatsapp",
-  "description": "Integracao WhatsApp via Evolution API no Sr Cardoso. Use quando configurar EVOLUTION_*, conectar instancias, ajustar notificacoes, cron jobs, filas de retry e mensagens automaticas.",
-  "repo": "yurikrat/sr-cardoso-barbearia-app",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

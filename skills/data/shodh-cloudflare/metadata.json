@@ -1,9 +1,0 @@
-{
-  "name": "shodh-cloudflare",
-  "description": "Persistent memory system for AI agents running on Cloudflare's edge network. Use this skill to remember context across conversations, recall relevant information, and build long-term knowledge. Activa",
-  "repo": "doobidoo/shodh-cloudflare",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

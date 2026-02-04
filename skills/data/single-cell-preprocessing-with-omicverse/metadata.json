@@ -1,9 +1,0 @@
-{
-  "name": "single-cell-preprocessing-with-omicverse",
-  "repo": "Starlitnightly/omicverse",
-  "category": "data",
-  "description": "Walk through omicverse's single-cell preprocessing tutorials to QC PBMC3k data, normalise counts, detect HVGs, and run PCA/embedding pipelines on CPU, CPU–GPU mixed, or GPU stacks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.453985Z",
-  "dir_name": "single-cell-preprocessing-with-omicverse"
-}

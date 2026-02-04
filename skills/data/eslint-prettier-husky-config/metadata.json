@@ -1,9 +1,0 @@
-{
-  "name": "eslint-prettier-husky-config",
-  "description": "This skill should be used when setting up code quality tooling with ESLint v9 flat config, Prettier formatting, Husky git hooks, lint-staged pre-commit checks, and GitHub Actions CI lint workflow. App",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "swagger-doc-creator",
-  "description": "Swagger Doc Creator - Auto-activating skill for API Development.Triggers on: swagger doc creator, swagger doc creatorPart of the API Development skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

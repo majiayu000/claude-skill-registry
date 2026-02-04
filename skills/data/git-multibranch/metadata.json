@@ -1,9 +1,0 @@
-{
-  "name": "git-multibranch",
-  "description": "Guidance for setting up Git-based multi-branch deployment systems with SSH access, web servers, and automated deployment hooks. This skill should be used when configuring Git repositories that deploy ",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

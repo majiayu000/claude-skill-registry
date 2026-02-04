@@ -1,8 +1,0 @@
-{
-  "name": "parallel-rendering-architecture",
-  "repo": "hkcm91/StickerNestV3",
-  "category": "development",
-  "description": "Understanding StickerNest's parallel DOM/WebGL rendering architecture. Use when working with the dual renderer system, switching between 2D DOM and 3D WebGL modes, or understanding how desktop and VR/",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:03.128202Z"
-}

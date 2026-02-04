@@ -1,9 +1,0 @@
-{
-  "name": "cronologia",
-  "description": "Guardián de la cronología SyV - valida coherencia temporal, previene contradicciones, mantiene perspectiva 2178",
-  "repo": "kodexArg/syv",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

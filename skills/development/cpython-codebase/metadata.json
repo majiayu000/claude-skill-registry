@@ -1,8 +1,0 @@
-{
-  "name": "cpython-codebase",
-  "repo": "gpshead/cpython-skills",
-  "category": "development",
-  "description": "Use this skill when working in the CPython repository. It provides essential context about the CPython codebase structure, recommended tools, source code navigation, and best practices for maintaining",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:55.594573Z"
-}

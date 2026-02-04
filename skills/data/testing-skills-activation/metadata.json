@@ -1,9 +1,0 @@
-{
-  "name": "testing-skills-activation",
-  "description": "Use when creating or refining Claude Code skills to validate that skill descriptions trigger correctly - provides systematic testing methodology for skill activation patterns using test cases and auto",
-  "repo": "asermax/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

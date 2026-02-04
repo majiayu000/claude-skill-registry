@@ -1,9 +1,0 @@
-{
-  "name": "debugging-atmos",
-  "description": "Use when troubleshooting Atmos configuration, deployment errors, or unexpected behavior. Covers debug logging, describing stacks/components, interpreting errors, and common issues with stack resolutio",
-  "repo": "cloudposse/docs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

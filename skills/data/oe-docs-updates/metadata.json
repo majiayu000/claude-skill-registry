@@ -1,9 +1,0 @@
-{
-  "name": "oe-docs-updates",
-  "description": "Keeps OpenEvent-AI “living docs” in sync while coding. Use whenever you fix a bug, discover a new bug, add/modify behavior, or capture a future idea. Updates docs/guides/TEAM_GUIDE.md (bug list + regr",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

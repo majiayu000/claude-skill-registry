@@ -1,9 +1,0 @@
-{
-  "name": "swift-approachable-concurrency",
-  "description": "Expert guidance on Swift 6.2 Approachable Concurrency for iOS 26+. Use when working with async/await, Tasks, actors, MainActor, Sendable, isolation domains, migrating to Swift 6, fixing concurrency co",
-  "repo": "PavelGnatyuk/swift-approachable-concurrency",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

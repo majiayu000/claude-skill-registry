@@ -1,8 +1,0 @@
-{
-  "name": "generating-tmdb-code",
-  "repo": "QingqiShi/shiqingqi.com",
-  "category": "development",
-  "description": "TMDB API code generation workflow with selective Zod schemas using pnpm codegen:tmdb. Use when working with TMDB endpoints, regenerating types, adding TMDB API functionality, modifying endpoints-confi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:40.445420Z"
-}

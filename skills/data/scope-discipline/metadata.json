@@ -1,9 +1,0 @@
-{
-  "name": "scope-discipline",
-  "description": "Use when implementing features, editing source code, or responding to task handoffs. Enforces doing exactly what was requested - no scope creep, no \"while I'm here\" additions.",
-  "repo": "gonzaloetjo/alto",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gonzaloetjo/alto"
-}

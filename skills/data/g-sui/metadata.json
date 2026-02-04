@@ -1,9 +1,0 @@
-{
-  "name": "g-sui",
-  "description": "Server-rendered Go UI framework. Use when building g-sui applications, creating UI components, handling forms with server actions, using data tables, setting up routes, or implementing WebSocket patch",
-  "repo": "michalCapo/g-sui",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

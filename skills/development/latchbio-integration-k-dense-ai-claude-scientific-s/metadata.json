@@ -1,7 +1,0 @@
-{
-  "name": "latchbio-integration-k-dense-ai-claude-scientific-s",
-  "description": "Latch platform for bioinformatics workflows. Build pipelines with Latch SDK, @workflow/@task decorators, deploy serverless workflows, LatchFile/LatchDir, Nextflow/Snakemake integration.",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.601098Z"
-}

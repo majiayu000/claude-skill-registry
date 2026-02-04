@@ -1,8 +1,0 @@
-{
-  "name": "data-lineage",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "documents",
-  "description": "Document data flow, transformation lineage, and impact analysis for traceability and compliance.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:01.267511Z"
-}

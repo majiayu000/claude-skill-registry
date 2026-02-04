@@ -1,9 +1,0 @@
-{
-  "name": "strangler-fig-pattern",
-  "description": "Safely replace legacy system piece by piece by building new implementation around it, routing traffic gradually, like a strangler fig tree",
-  "repo": "spacholski1225/cc-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

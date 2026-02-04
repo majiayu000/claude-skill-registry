@@ -1,9 +1,0 @@
-{
-  "name": "date-check",
-  "description": "Verify current date from system. Use when outputting dates, scheduling, or time-sensitive operations. Prevents knowledge cutoff errors.",
-  "repo": "takumi12311123/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

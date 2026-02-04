@@ -1,9 +1,0 @@
-{
-  "name": "send-message",
-  "description": "Send messages via Sinch Conversation API over WhatsApp, SMS, RCS, Messenger, Viber, Instagram, Telegram, and other channels. Use when the user wants to send a message, text someone, send a WhatsApp me",
-  "repo": "sinch/sinch-plugins",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "quartz-note-creator",
-  "description": "Create new Quartz notes with proper YAML frontmatter based on natural language descriptions. Use when user wants to create notes, articles, journal entries, or template files in their digital garden.",
-  "repo": "sushantvema/sushantvema.github.io",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

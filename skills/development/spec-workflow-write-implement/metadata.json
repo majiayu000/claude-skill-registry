@@ -1,8 +1,0 @@
-{
-  "name": "spec-workflow-write-implement",
-  "repo": "isnbh0/shared",
-  "category": "development",
-  "description": "Two-phase workflow for technical specifications - WRITING phase creates and commits specs then stops; IMPLEMENTATION phase follows specs, updates status, and commits all changes. Different agents hand",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:14.188456Z"
-}

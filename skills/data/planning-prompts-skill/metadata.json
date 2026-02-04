@@ -1,9 +1,0 @@
-{
-  "name": "planning-prompts-skill",
-  "description": "Comprehensive skill for project planning and prompt engineering. Covers hierarchical plans (briefs, roadmaps, phases), Claude-to-Claude meta-prompts, and multi-stage workflows. Use when: planning, pro",
-  "repo": "ScientiaCapital/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ScientiaCapital/skills"
-}

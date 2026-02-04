@@ -1,9 +1,0 @@
-{
-  "name": "auth-configs",
-  "description": "Configure Supabase authentication providers (OAuth, JWT, email). Use when setting up authentication, configuring OAuth providers (Google/GitHub/Discord), implementing auth flows, configuring JWT setti",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

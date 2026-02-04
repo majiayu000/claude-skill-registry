@@ -1,9 +1,0 @@
-{
-  "name": "power-budget-calculator",
-  "description": "Calculates total power consumption and battery life for Arduino/ESP32/RP2040 projects. Use when user asks about battery life, power requirements, current draw, or needs to estimate runtime. Includes s",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

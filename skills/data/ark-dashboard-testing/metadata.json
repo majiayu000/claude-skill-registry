@@ -1,9 +1,0 @@
-{
-  "name": "ark-dashboard-testing",
-  "description": "Test Ark Dashboard with Playwright and create PRs with screenshots. Use when testing dashboard UI, taking screenshots for PRs, or reviewing dashboard changes.",
-  "repo": "dwmkerr/dotfiles",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

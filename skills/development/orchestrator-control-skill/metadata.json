@@ -1,8 +1,0 @@
-{
-  "name": "orchestrator-control-skill",
-  "repo": "hanibalsk/claude-marketplace",
-  "category": "development",
-  "description": "Master orchestrator control for PR lifecycle management with multi-agent coordination",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:00.238426Z"
-}

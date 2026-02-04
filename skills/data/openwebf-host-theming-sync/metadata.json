@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-host-theming-sync",
-  "description": "Sync theming between Flutter and WebF (automatic theme sync, prefers-color-scheme, dark mode patterns). Use when the user mentions theme sync, dark mode, prefers-color-scheme, CSS variables, or WebF t",
-  "repo": "archview-ai/webf-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "agent-execution-with-worktree",
-  "repo": "ShunsukeHayashi/Miyabi",
-  "category": "development",
-  "description": "Execute Miyabi Agents (Coordinator, CodeGen, Review, Deployment, PR, Issue) with Git Worktree isolation for parallel processing. Use when running agents, processing Issues, or managing concurrent task",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:32.080473Z"
-}

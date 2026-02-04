@@ -1,9 +1,0 @@
-{
-  "name": "arduino-code-generator",
-  "description": "Generate Arduino/embedded C++ code snippets and patterns on demand for UNO/ESP32/RP2040. Use when users request Arduino code for sensors, actuators, communication protocols, state machines, non-blocki",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

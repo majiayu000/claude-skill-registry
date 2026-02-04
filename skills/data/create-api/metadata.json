@@ -1,9 +1,0 @@
-{
-  "name": "create-api",
-  "description": "CareMatch용 Next.js API 라우트 생성. 인증, 입력 검증, 에러 처리가 포함된 API 엔드포인트를 생성합니다. 사용법 - \"API 만들어줘\", \"지원 API 생성\"",
-  "repo": "saintgo7/app-hospital-yoyang",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

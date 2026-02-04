@@ -1,8 +1,0 @@
-{
-  "name": "comprehensive-code-review",
-  "repo": "Cygnusfear/claude-stuff",
-  "category": "development",
-  "description": "This skill should be used when reviewing pull requests, performing comprehensive code review, analyzing code changes before merge, or when the user asks for thorough/ultra-critical code review. Perfor",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:46.681843Z"
-}

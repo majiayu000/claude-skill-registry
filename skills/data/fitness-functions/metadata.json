@@ -1,9 +1,0 @@
-{
-  "name": "fitness-functions",
-  "description": "Architecture test guidance for .NET using NetArchTest and ArchUnitNET. Use when enforcing architectural boundaries, testing module dependencies, validating layer constraints, or creating performance f",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/melodic-software/claude-code-plugins"
-}

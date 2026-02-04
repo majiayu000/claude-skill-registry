@@ -1,9 +1,0 @@
-{
-  "name": "webhook-signature-validator",
-  "description": "Webhook Signature Validator - Auto-activating skill for API Integration.Triggers on: webhook signature validator, webhook signature validatorPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

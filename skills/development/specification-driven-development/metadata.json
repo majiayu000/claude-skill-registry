@@ -1,8 +1,0 @@
-{
-  "name": "specification-driven-development",
-  "repo": "betamatt/claude-plugins",
-  "category": "development",
-  "description": "This skill should be used when the user asks about \"spec methodology\", \"specification workflow\", \"spec-driven development\", \"how to write specs\", \"spec best practices\", \"specification templates\", or n",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:41.104957Z"
-}

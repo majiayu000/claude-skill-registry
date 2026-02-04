@@ -1,9 +1,0 @@
-{
-  "name": "thiserror-expert",
-  "description": "Provides guidance on creating custom error types with thiserror, including proper derive macros, error messages, and source error chaining. Activates when users define error enums or work with thiserr",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

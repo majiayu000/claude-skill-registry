@@ -1,9 +1,0 @@
-{
-  "name": "workers-testing",
-  "description": "Comprehensive testing guide for Cloudflare Workers using Vitest and @cloudflare/vitest-pool-workers. Use for test setup, binding mocks (D1/KV/R2/DO), integration tests, or encountering test failures, ",
-  "repo": "secondsky/claude-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

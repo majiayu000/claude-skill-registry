@@ -1,9 +1,0 @@
-{
-  "name": "plugin-developer",
-  "description": "Create and maintain Claude Code plugins following established patterns",
-  "repo": "violetio/violet-ai-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

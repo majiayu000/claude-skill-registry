@@ -1,9 +1,0 @@
-{
-  "name": "frontend-debug",
-  "description": "Autonomously debug frontend issues through empirical browser observation using Chrome DevTools MCP. This skill should be used when debugging UI/UX issues, visual bugs, interaction failures, console er",
-  "repo": "arlenagreer/claude_configuration_docs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

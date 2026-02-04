@@ -1,8 +1,0 @@
-{
-  "name": "code-quality-management",
-  "repo": "d-oit/do-novelist-ai",
-  "category": "development",
-  "description": "Implements and enforces code quality gates for TypeScript/React projects. Use when setting up Biome/ESLint/TypeScript, configuring pre-commit hooks (Husky), fixing lint errors, or running quality chec",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:47.119444Z"
-}

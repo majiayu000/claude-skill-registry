@@ -1,9 +1,0 @@
-{
-  "name": "unread-checker",
-  "description": "Slack の未読メッセージを確認する。「Slack未読確認」「未読メッセージ」「未読ある？」「Slackの未読」「未読を見せて」「未読チェック」「未読メール確認」などで起動。Pythonスクリプト `slack_message.py unread` を使用。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

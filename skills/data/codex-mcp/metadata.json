@@ -1,9 +1,0 @@
-{
-  "name": "codex-mcp",
-  "description": "Use this `codex-mcp` skill to instruct another AI Agent to invoke a tool or execute a workflow on your behalf for the following scenario, 1.When you are requested to invoke a mcp tool that you don't h",
-  "repo": "gosu-code/claude-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

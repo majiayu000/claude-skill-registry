@@ -1,9 +1,0 @@
-{
-  "name": "category-management",
-  "description": "Manage blog categories including CRUD operations, slug generation, and category assignment. Use when working with categories, category forms, slugs, or organizing blog content by category.",
-  "repo": "doitsu2014/my-blogs-rsbuild",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

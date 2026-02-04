@@ -1,8 +1,0 @@
-{
-  "name": "bmad-autopilot-skill",
-  "repo": "hanibalsk/autopilot",
-  "category": "development",
-  "description": "Autonomous development orchestrator for processing epics. Use when the user wants to run the autopilot, process epics, or automate the development workflow with BMAD method.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:00.222786Z"
-}

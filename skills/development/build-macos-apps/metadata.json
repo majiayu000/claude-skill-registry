@@ -1,8 +1,0 @@
-{
-  "name": "build-macos-apps",
-  "repo": "glittercowboy/taches-cc-resources",
-  "category": "development",
-  "description": "Build professional native macOS apps in Swift with SwiftUI and AppKit. Full lifecycle - build, debug, test, optimize, ship. CLI-only, no Xcode.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:14.738195Z"
-}

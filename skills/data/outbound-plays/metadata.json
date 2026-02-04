@@ -1,9 +1,0 @@
-{
-  "name": "outbound-plays",
-  "description": "Use to craft channel-specific outreach sequences that tie directly to detected intent signals.",
-  "repo": "gtmagents/gtm-agents",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

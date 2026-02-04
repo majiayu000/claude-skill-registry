@@ -1,9 +1,0 @@
-{
-  "name": "superbpe",
-  "description": "Train and use SuperBPE tokenizers for 20-33% token reduction across any project. Covers training, optimization, validation, and integration with any LLM framework. Use when you need efficient tokeniza",
-  "repo": "ScientiaCapital/unsloth-mcp-server",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

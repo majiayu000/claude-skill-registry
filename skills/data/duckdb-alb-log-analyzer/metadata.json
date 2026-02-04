@@ -1,9 +1,0 @@
-{
-  "name": "duckdb-alb-log-analyzer",
-  "description": "Analyze AWS Application Load Balancer (ALB) logs stored in S3 using DuckDB. Use when users request ALB log analysis, error investigation, performance analysis, traffic analysis, or need to query ALB a",
-  "repo": "chokkoyamada/duckdb-alb-log-analyzer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

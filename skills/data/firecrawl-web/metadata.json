@@ -1,9 +1,0 @@
-{
-  "name": "firecrawl-web",
-  "description": "Fetch web content, take screenshots, extract structured data, search the web, and crawl documentation sites. Use when the user needs current web information, asks to scrape a URL, wants a screenshot, ",
-  "repo": "BexTuychiev/firecrawl-claude-code-skill",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-bisect-debugging",
-  "description": "Use when debugging regressions or identifying which commit introduced a bug - provides systematic workflow for git bisect with automated test scripts, manual verification, or hybrid approaches. Can be",
-  "repo": "sjungling/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

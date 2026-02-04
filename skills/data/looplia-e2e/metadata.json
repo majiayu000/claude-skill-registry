@@ -1,9 +1,0 @@
-{
-  "name": "looplia-e2e",
-  "description": "Comprehensive E2E testing for looplia CLI. Tests Docker deployments,published CLI versions, and local development. Verifies workflowexecution, skill architecture (v0.6.9+), and command initialization(",
-  "repo": "memorysaver/looplia-core",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

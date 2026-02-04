@@ -1,9 +1,0 @@
-{
-  "name": "configuring-auto-scaling-policies",
-  "description": "Use when you need to work with auto-scaling.This skill provides auto-scaling configuration with comprehensive guidance and automation.Trigger with phrases like \"configure auto-scaling\", \"set up elasti",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "guide-development",
-  "repo": "imsaif/aiex",
-  "category": "development",
-  "description": "Auto-scaffold Designer Guides learning paths by analyzing existing guides (Claude Code, Cursor) and generating new guides for other tools",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.717692Z"
-}

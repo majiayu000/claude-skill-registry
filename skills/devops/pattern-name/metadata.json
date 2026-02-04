@@ -1,8 +1,0 @@
-{
-  "name": "pattern-name",
-  "repo": "outfitter-dev/agents",
-  "category": "devops",
-  "description": "Analyze conversation to identify and capture reusable patterns as skills, commands, agents, or hooks. Use when spotting repeatable workflows, orchestration sequences, or decision heuristics worth codi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:37.367805Z"
-}

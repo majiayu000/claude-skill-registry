@@ -1,9 +1,0 @@
-{
-  "name": "research-reporter",
-  "description": "This skill should be used when users request research on topics with compiled results saved to a file. It handles web searches, fetching authoritative sources, synthesizing information, and generating",
-  "repo": "windowh1/wbl_residency",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

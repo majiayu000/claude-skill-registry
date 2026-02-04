@@ -1,9 +1,0 @@
-{
-  "name": "sast-bandit",
-  "description": "Python security vulnerability detection using Bandit SAST with CWE and OWASP mapping. Use when: (1) Scanning Python code for security vulnerabilities and anti-patterns, (2) Identifying hardcoded secre",
-  "repo": "AgentSecOps/SecOpsAgentKit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

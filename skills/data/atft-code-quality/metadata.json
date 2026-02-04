@@ -1,9 +1,0 @@
-{
-  "name": "atft-code-quality",
-  "description": "Enforce lint, formatting, typing, testing, and security hygiene across the ATFT-GAT-FAN codebase.",
-  "repo": "wer-inc/gogooku3",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

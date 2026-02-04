@@ -1,9 +1,0 @@
-{
-  "name": "performance-oracle",
-  "description": "Use this agent when analyzing code for performance issues, optimization opportunities, or scalability concerns. Triggers on requests like \"performance review\", \"check for bottlenecks\", \"scalability an",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

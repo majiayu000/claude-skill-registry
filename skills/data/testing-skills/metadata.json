@@ -1,9 +1,0 @@
-{
-  "name": "testing-skills",
-  "description": "Use when creating or editing skills, before deployment, to verify they work under pressure and resist rationalization - applies RED-GREEN-REFACTOR cycle to process documentation by running baseline wi",
-  "repo": "pproenca/dot-claude-old",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

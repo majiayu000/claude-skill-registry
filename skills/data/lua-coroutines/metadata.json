@@ -1,9 +1,0 @@
-{
-  "name": "lua-coroutines",
-  "description": "Use when lua coroutines for cooperative multitasking including coroutine creation, yielding and resuming, passing values, generators, iterators, asynchronous patterns, state machines, and producer-con",
-  "repo": "TheBushidoCollective/han",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

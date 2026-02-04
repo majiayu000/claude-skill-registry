@@ -1,9 +1,0 @@
-{
-  "name": "flow-analyze-prompts",
-  "description": "Catalog and analyze prompts in Flow SDK workflows before conversion. Use to identify prompt formats, variables, and conversion requirements.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

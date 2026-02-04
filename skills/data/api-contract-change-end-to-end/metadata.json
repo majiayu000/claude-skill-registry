@@ -1,9 +1,0 @@
-{
-  "name": "api-contract-change-end-to-end",
-  "description": "Use this when changing REST endpoints so Rust DTOs, UI DTOs, OpenAPI, and docs stay in sync.",
-  "repo": "localtaskrepo/lotar",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

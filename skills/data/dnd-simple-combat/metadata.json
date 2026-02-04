@@ -1,9 +1,0 @@
-{
-  "name": "dnd-simple-combat",
-  "repo": "JoeCotellese/dnd-dm-skill",
-  "category": "data",
-  "description": "Manage D&D 5e combat encounters with turn-based mechanics, attack rolls, and HP tracking. This skill should be used when the user requests to start a combat encounter, fight a monster, enter the train",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:25.465157Z",
-  "dir_name": "dnd-simple-combat"
-}

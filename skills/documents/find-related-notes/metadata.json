@@ -1,8 +1,0 @@
-{
-  "name": "find-related-notes",
-  "repo": "bencassie/flywheel",
-  "category": "documents",
-  "description": "Find notes related to current note (by tags, folder, keywords). Triggers on \"related notes\", \"similar notes\", \"find related\", \"what's related\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:48.783297Z"
-}

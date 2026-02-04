@@ -1,9 +1,0 @@
-{
-  "name": "skilzy-creator",
-  "description": "Comprehensive toolset for creating, converting, validating, and packaging Skilzy-compliant AI agent skills. This skill should be used when users want to initialize a new skill, convert a Claude skill ",
-  "repo": "skilzy-ai/official-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

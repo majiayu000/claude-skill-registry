@@ -1,9 +1,0 @@
-{
-  "name": "writing-vitest-tests",
-  "description": "Write Vitest tests with describe/test blocks, expect assertions, vi mocking, async testing, and parameterized tests. Use when creating or modifying test files.",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

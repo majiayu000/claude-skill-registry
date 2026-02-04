@@ -1,9 +1,0 @@
-{
-  "name": "managing-subagents",
-  "description": "Analyzes subagent usage patterns to determine when to delegate tasks, evaluates and improves existing subagent configurations, creates new custom subagents when needed, and identifies outdated subagen",
-  "repo": "thoeltig/claude-code-toolkit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

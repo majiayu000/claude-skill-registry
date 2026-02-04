@@ -1,9 +1,0 @@
-{
-  "name": "server-sent-events-setup",
-  "description": "Configure server sent events setup operations. Auto-activating skill for API Integration.\nTriggers on: server sent events setup, server sent events setup\nPart of the API Integration skill category. Us",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

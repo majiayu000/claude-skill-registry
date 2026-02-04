@@ -1,9 +1,0 @@
-{
-  "name": "toolchain-preferences",
-  "description": "Apply preferred toolchain and technology stack defaults: pnpm, Next.js, TypeScript, Convex, Vercel, Tailwind, shadcn/ui, Zustand, TanStack, Vitest. Use when setting up new projects, choosing dependenc",
-  "repo": "phrazzld/claude-config",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

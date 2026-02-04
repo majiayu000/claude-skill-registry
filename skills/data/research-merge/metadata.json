@@ -1,9 +1,0 @@
-{
-  "name": "research-merge",
-  "description": "Processes research branches from Claude Code Web sessions - merges content, moves docs to docs/research/, and creates GitHub issues. Use when /popkit:next detects research branches or when manually pr",
-  "repo": "jrc1883/popkit-claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

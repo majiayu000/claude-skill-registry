@@ -1,9 +1,0 @@
-{
-  "name": "man-config",
-  "description": "Reads man pages to find configuration options. Use when the user asks to configure an application, needs to find a config option, or asks \"how do I make X do Y\" for a CLI tool or system program.",
-  "repo": "austinpray/dotfiles",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

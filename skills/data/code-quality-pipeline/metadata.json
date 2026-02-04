@@ -1,9 +1,0 @@
-{
-  "name": "code-quality-pipeline",
-  "description": "Systematic code quality improvement workflow combining smart-reviewer and test-generator MCP tools with Pareto 80/20 auto-fixes, severity-based review, and comprehensive test generation. Use when p...",
-  "repo": "j0KZ/mcp-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

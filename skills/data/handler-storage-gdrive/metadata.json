@@ -1,9 +1,0 @@
-{
-  "name": "handler-storage-gdrive",
-  "description": "Google Drive storage handler for fractary-file plugin",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

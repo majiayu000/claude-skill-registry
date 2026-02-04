@@ -1,9 +1,0 @@
-{
-  "name": "sql-generation",
-  "repo": "smorand/claude-config",
-  "category": "data",
-  "description": "SQL Specialist for BigQuery SQL statement implementation including ad-hoc analysis, materialized views, and data preparation. Use when generating or modifying BigQuery SQL code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.488206Z",
-  "dir_name": "sql-generation"
-}

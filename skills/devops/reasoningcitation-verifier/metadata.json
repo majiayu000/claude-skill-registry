@@ -1,8 +1,0 @@
-{
-  "name": "reasoningcitation-verifier",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Verify each generated claim against provided sources, enforce inline citations, and prune unsupported text. Use when outputs must be strictly grounded.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:26.139654Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "skill-reviewer-and-enhancer",
-  "description": "This skill should be used when reviewing, auditing, or improving existing Claude Code skills to ensure they follow Anthropic best practices, have proper structure, use current domain-specific patterns",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "claude-reflect",
-  "repo": "BayramAnnakov/claude-reflect",
-  "category": "product",
-  "description": "Self-learning system that captures corrections during sessions and reminds users to run /reflect to update CLAUDE.md. Use when discussing learnings, corrections, or when the user mentions remembering ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T07:37:00.327125Z"
-}

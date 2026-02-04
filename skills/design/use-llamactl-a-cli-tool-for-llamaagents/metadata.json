@@ -1,8 +1,0 @@
-{
-  "name": "use-llamactl-a-cli-tool-for-llamaagents",
-  "repo": "run-llama/vibe-llama",
-  "category": "design",
-  "description": "Use llamactl to initialize, locally preview, deploy and manage LlamaIndex workflows as LlamaAgents. Required llama-index-workflows and llamactl to be installed in the environment.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.507868Z"
-}

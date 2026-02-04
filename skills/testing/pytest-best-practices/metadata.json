@@ -1,8 +1,0 @@
-{
-  "name": "pytest-best-practices",
-  "repo": "cfircoo/claude-code-toolkit",
-  "category": "testing",
-  "description": "Expert guidance for writing high-quality pytest tests. Use when writing tests, setting up fixtures, parametrizing, mocking, or reviewing test code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:21.218813Z"
-}

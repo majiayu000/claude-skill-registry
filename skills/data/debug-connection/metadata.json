@@ -1,9 +1,0 @@
-{
-  "name": "debug-connection",
-  "description": "Debug WebSocket connection issues between CLI and FigJam plugin. Use when diagrams aren't syncing or connection fails.",
-  "repo": "7nohe/figram",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

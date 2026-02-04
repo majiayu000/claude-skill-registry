@@ -1,9 +1,0 @@
-{
-  "name": "check-skill-conflicts",
-  "description": "This skill should be used when checking for naming conflicts between local skills (~/.claude/skills) and plugin-provided skills (~/.claude/plugins). Use to identify duplicate or similarly named skills",
-  "repo": "plinde/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

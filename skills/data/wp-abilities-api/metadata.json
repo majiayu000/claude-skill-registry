@@ -1,9 +1,0 @@
-{
-  "name": "wp-abilities-api",
-  "description": "Use when working with the WordPress Abilities API: wp_register_ability, wp_register_ability_category, /wp-json/wp-abilities/v1/*, @wordpress/abilities for defining abilities, categories, REST exposure",
-  "repo": "vapvarun/claude-backup",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vapvarun/claude-backup"
-}

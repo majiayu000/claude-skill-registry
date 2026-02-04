@@ -1,9 +1,0 @@
-{
-  "name": "eclair",
-  "description": "Run and interact with eclair Lightning Network daemon in Docker. Use for Lightning development, testing payment channels on regtest, managing eclair containers, and calling eclair API endpoints (getin",
-  "repo": "Roasbeef/claude-files",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

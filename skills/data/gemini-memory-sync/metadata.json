@@ -1,9 +1,0 @@
-{
-  "name": "gemini-memory-sync",
-  "description": "Synchronization patterns for CLAUDE.md and GEMINI.md memory files. Covers import syntax, drift detection, and one-way sync. Use when setting up GEMINI.md, detecting context drift between memory files,",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

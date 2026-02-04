@@ -1,8 +1,0 @@
-{
-  "name": "coldfusion-validator",
-  "repo": "ErnestPenaJr/Project-32",
-  "category": "development",
-  "description": "Comprehensive ColdFusion (CFML) syntax validation and best practices verification. Use when validating ColdFusion code, checking for security vulnerabilities (SQL injection, proper cfqueryparam usage)",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:28.501863Z"
-}

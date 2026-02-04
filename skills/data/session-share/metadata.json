@@ -1,9 +1,0 @@
-{
-  "name": "session-share",
-  "description": "Share Claude Code sessions between developers. Use when user mentions \"share session\", \"export session\", \"import session\", \"send session to\", \"continue from colleague\", or needs to (1) export current ",
-  "repo": "asheshgoplani/agent-deck",
-  "category": "development",
-  "tags": [],
-  "stars": 553,
-  "source": "github.com/asheshgoplani/agent-deck"
-}

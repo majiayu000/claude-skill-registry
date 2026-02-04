@@ -1,8 +1,0 @@
-{
-  "name": "rust-mocking",
-  "repo": "gar-ai/mallorn",
-  "category": "testing",
-  "description": "Create mocks using mockall and trait-based abstractions. Use when unit testing code with external dependencies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.652900Z"
-}

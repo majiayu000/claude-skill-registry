@@ -1,9 +1,0 @@
-{
-  "name": "chronicle-context-retriever",
-  "description": "Search and retrieve context from past development sessions using Chronicle data. Works with MCP (fast, structured) or CLI commands (portable). Use when user asks about previous work, wants to recall p",
-  "repo": "ChandlerHardy/chronicle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

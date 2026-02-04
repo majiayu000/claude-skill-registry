@@ -1,9 +1,0 @@
-{
-  "name": "chronicle-workflow",
-  "description": "Complete workflow for tracking development work with Chronicle - session recording, git tracking, AI summarization, and Obsidian documentation. Works with CLI commands (portable) or MCP tools (faster)",
-  "repo": "ChandlerHardy/chronicle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

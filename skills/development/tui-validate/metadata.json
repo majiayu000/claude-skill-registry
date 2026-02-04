@@ -1,7 +1,0 @@
-{
-  "name": "tui-validate",
-  "description": "Validates Terminal User Interface (TUI) output using freeze for screenshot capture and LLM-as-judge for semantic validation. Supports both visual (PNG/SVG) and text-based validation modes.",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.150145Z"
-}

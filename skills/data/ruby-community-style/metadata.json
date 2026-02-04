@@ -1,9 +1,0 @@
-{
-  "name": "ruby-community-style",
-  "description": "Use this skill when writing Ruby code following the RuboCop Community Ruby Style Guide. Provides comprehensive guidance on idiomatic Ruby patterns, method design, class structure, collections, strings",
-  "repo": "nhlongnguyen/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

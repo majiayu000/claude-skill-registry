@@ -1,8 +1,0 @@
-{
-  "name": "find-gaps",
-  "repo": "bencassie/flywheel",
-  "category": "documents",
-  "description": "Find knowledge gaps (topics mentioned but not documented). Triggers on \"knowledge gaps\", \"content gaps\", \"missing notes\", \"gaps\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:41.586989Z"
-}

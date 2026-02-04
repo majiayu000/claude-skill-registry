@@ -1,8 +1,0 @@
-{
-  "name": "devadd-license",
-  "repo": "kevinslin/llm",
-  "category": "development",
-  "description": "This skill should be used when the user wants to add a LICENSE file to their repository. Currently supports Apache License 2.0 with automatic copyright information detection from git configuration. Al",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:29.378753Z"
-}

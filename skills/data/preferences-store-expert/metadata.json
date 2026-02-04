@@ -1,9 +1,0 @@
-{
-  "name": "preferences-store-expert",
-  "description": "Work with Leavn PreferencesStore - SwiftData persistence, snapshot patterns, async observation, entity relationships, migration from UserDefaults",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

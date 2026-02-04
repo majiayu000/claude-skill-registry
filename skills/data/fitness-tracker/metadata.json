@@ -1,9 +1,0 @@
-{
-  "name": "fitness-tracker",
-  "description": "Log and analyze workouts. Use when the user wants to (1) record a workout at the gym via conversation, (2) parse workout markdown files to CSV, (3) query exercise history with DuckDB, or (4) track fit",
-  "repo": "mberg/claude-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

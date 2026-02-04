@@ -1,9 +1,0 @@
-{
-  "name": "moonbit-refactoring",
-  "description": "Refactor MoonBit codebases by minimizing public APIs, modularizing packages, converting free functions to methods/chaining, using ArrayView/StringView pattern matching, adding Dafny-style loop specs, ",
-  "repo": "bobzhang/moonbit-refactoring",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

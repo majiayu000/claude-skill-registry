@@ -1,9 +1,0 @@
-{
-  "name": "spec-reader",
-  "description": "プロジェクトの仕様書や要件定義書を検索して読み込みます。機能を実装する前や、システム挙動について質問された際に使用します。",
-  "repo": "fum1ple/agent-claude-invoice",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

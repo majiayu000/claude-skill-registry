@@ -1,9 +1,0 @@
-{
-  "name": "checking-chembl-for-structured-sar-data",
-  "repo": "kthorn/research-superpower",
-  "category": "data",
-  "description": "Check if medicinal chemistry papers are in ChEMBL database to access curated bioactivity data",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:59.137411Z",
-  "dir_name": "checking-chembl-for-structured-sar-data"
-}

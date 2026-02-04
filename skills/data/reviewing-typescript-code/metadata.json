@@ -1,9 +1,0 @@
-{
-  "name": "reviewing-typescript-code",
-  "description": "TypeScript code quality patterns for writing and reviewing code. Covers type safety, clean code, functional patterns, Zod usage, and error handling. Triggers on: add entity, create service, add reposi",
-  "repo": "saleor/configurator",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

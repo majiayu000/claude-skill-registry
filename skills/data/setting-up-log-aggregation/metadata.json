@@ -1,9 +1,0 @@
-{
-  "name": "setting-up-log-aggregation",
-  "description": "Use when setting up log aggregation solutions using ELK, Loki, or Splunk. Trigger with phrases like \"setup log aggregation\", \"deploy ELK stack\", \"configure Loki\", or \"install Splunk\". Generates produc",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "domain-layer-expert",
-  "description": "Guides users in creating rich domain models with behavior, value objects, and domain logic. Activates when users define domain entities, business rules, or validation logic.",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "aitmpl-downloader",
-  "description": "Download Claude Code templates from aitmpl.com (GitHub API). Use PROACTIVELY to search and install agents, commands, skills, mcps, settings, hooks, and plugins.",
-  "repo": "s-hiraoku/spec2impl",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

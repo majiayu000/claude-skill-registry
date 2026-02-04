@@ -1,9 +1,0 @@
-{
-  "name": "validating-type-assertions",
-  "description": "Teaches when type assertions are safe versus dangerous in TypeScript. Use when considering using 'as' keyword, type casting, or when working with external data that might use assertions instead of pro",
-  "repo": "djankies/claude-configs",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

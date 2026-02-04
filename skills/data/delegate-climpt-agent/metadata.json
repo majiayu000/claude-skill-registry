@@ -1,9 +1,0 @@
-{
-  "name": "delegate-climpt-agent",
-  "description": "Use when user mentions 'climpt' or 'climpt-agent', or gives project-specific instructions where general knowledge is insufficient. Climpt provides pre-configured prompts tailored to the project's work",
-  "repo": "tettuan/climpt",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

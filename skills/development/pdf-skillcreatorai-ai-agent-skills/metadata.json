@@ -1,7 +1,0 @@
-{
-  "name": "pdf-skillcreatorai-ai-agent-skills",
-  "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically p",
-  "category": "development",
-  "source": "github.com/skillcreatorai/Ai-Agent-Skills",
-  "imported_at": "2026-01-24T14:54:05.679113Z"
-}

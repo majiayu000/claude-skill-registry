@@ -1,9 +1,0 @@
-{
-  "name": "ds-delegate",
-  "description": "Subagent delegation for data analysis. Dispatches fresh Task agents with output-first verification.",
-  "repo": "edwinhu/workflows",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/edwinhu/workflows"
-}

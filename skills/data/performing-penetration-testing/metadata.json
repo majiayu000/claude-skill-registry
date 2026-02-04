@@ -1,9 +1,0 @@
-{
-  "name": "performing-penetration-testing",
-  "description": "Perform security penetration testing to identify vulnerabilities. Use when conducting security assessments. Trigger with 'run pentest', 'security testing', or 'find vulnerabilities'.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cobra-patterns",
-  "description": "Production-ready Cobra CLI patterns including command structure, flags (local and persistent), nested commands, PreRun/PostRun hooks, argument validation, and initialization patterns used by kubectl a",
-  "repo": "vanman2024/cli-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

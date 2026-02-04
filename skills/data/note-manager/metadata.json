@@ -1,9 +1,0 @@
-{
-  "name": "note-manager",
-  "repo": "smorand/claude-config",
-  "category": "data",
-  "description": "Gestionnaire de notes Google Keep pour rechercher, créer, modifier, archiver, épingler et dupliquer des notes. Permet de gérer des notes texte et des listes avec tri automatique des notes épinglées en",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:29.343891Z",
-  "dir_name": "note-manager"
-}

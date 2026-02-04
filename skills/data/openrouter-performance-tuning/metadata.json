@@ -1,9 +1,0 @@
-{
-  "name": "openrouter-performance-tuning",
-  "description": "Optimize OpenRouter performance and latency. Use when reducing response times or improving throughput. Trigger with phrases like 'openrouter performance', 'openrouter latency', 'speed up openrouter', ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "council-chat",
-  "description": "Use when user wants to ask the AI council a question, get multiple AI perspectives, or consult with both Codex and Gemini. Triggers on phrases like \"ask council\", \"council opinion\", \"what do the AIs t",
-  "repo": "kanlanc/Claude-Code-Kanlanc-Marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "sync-arch-docs",
-  "repo": "washanhanzi/connectrpc-axum",
-  "category": "documents",
-  "description": "Sync architecture documentation with main branch changes. This skill should be used when the user wants to update docs/guide/architecture.md to reflect changes made on the main branch. It tracks the d",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:54.286452Z"
-}

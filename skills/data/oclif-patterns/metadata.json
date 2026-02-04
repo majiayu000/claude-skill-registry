@@ -1,9 +1,0 @@
-{
-  "name": "oclif-patterns",
-  "description": "Enterprise CLI patterns using oclif framework with TypeScript. Use when building oclif CLIs, creating plugins, implementing commands with flags/args, adding auto-documentation, testing CLI commands, o",
-  "repo": "vanman2024/cli-builder",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

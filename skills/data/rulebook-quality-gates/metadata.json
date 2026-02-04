@@ -1,9 +1,0 @@
-{
-  "name": "rulebook-quality-gates",
-  "description": "Automated quality checks and enforcement for code commits. Use when validating code quality, running pre-commit checks, ensuring test coverage, or enforcing coding standards before commits and pushes.",
-  "repo": "hivellm/rulebook",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

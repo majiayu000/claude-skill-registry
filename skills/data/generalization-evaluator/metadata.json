@@ -1,9 +1,0 @@
-{
-  "name": "generalization-evaluator",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Cross-domain evaluation to estimate generality and detect blind spots. Use when asked to assess broad capability, compare models across domains, or identify missing skills.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:26.742165Z",
-  "dir_name": "generalization-evaluator"
-}

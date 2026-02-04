@@ -1,8 +1,0 @@
-{
-  "name": "testing-suite",
-  "repo": "leobrival/topographic-studio-plugins",
-  "category": "testing",
-  "description": "Setup and configure testing infrastructure with Vitest, Playwright, and testing patterns. Use when users need to add tests, configure test runners, implement TDD workflows, or create E2E test suites. ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:47.157450Z"
-}

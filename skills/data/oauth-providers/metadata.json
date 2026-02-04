@@ -1,9 +1,0 @@
-{
-  "name": "oauth-providers",
-  "description": "Configure OAuth authentication providers for Clerk (Google, GitHub, Discord, Apple, Microsoft, Facebook, LinkedIn, Twitter, and 11+ more). Use when setting up social login, configuring OAuth providers",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

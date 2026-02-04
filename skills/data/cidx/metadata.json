@@ -1,9 +1,0 @@
-{
-  "name": "cidx",
-  "description": "Code search and intelligence using CIDX. Use when searching codebases, finding implementations, tracing call graphs, analyzing dependencies, or searching git history. Preferred over grep/find for all ",
-  "repo": "jsbattig/code-indexer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "vercel-cli-management",
-  "repo": "CaptainCrouton89/.claude",
-  "category": "development",
-  "description": "Deploy, manage environment variables, view logs, and configure cron jobs with Vercel CLI. Use when deploying to Vercel, managing env vars (add/update/remove), viewing runtime/build logs, or configurin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:17.319372Z"
-}

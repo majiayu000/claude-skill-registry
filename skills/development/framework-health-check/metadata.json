@@ -1,8 +1,0 @@
-{
-  "name": "framework-health-check",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "development",
-  "description": "Execute comprehensive framework health checks to validate core cc-sessions functionality including write-gating, state persistence, skill precedence, LCMP freshness, and handoff log structure",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:01.880926Z"
-}

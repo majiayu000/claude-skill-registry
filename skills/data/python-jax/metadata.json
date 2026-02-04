@@ -1,9 +1,0 @@
-{
-  "name": "python-jax",
-  "description": "Expert guidance for JAX (Just After eXecution) - high-performance numerical computing with automatic differentiation, JIT compilation, vectorization, and GPU/TPU acceleration; includes transformations",
-  "repo": "jkitchin/skillz",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

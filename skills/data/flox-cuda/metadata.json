@@ -1,9 +1,0 @@
-{
-  "name": "flox-cuda",
-  "description": "CUDA and GPU development with Flox. Use for NVIDIA CUDA setup, GPU computing, deep learning frameworks, cuDNN, and cross-platform GPU/CPU development.",
-  "repo": "flox/flox-agentic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

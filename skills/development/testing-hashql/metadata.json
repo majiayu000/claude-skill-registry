@@ -1,7 +1,0 @@
-{
-  "name": "testing-hashql",
-  "description": "HashQL testing strategies including compiletest (UI tests), unit tests, and snapshot tests. Use when writing tests for HashQL code, using //~ annotations, running --bless, debugging test failures, or ",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.462931Z"
-}

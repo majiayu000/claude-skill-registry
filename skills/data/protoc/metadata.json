@@ -1,9 +1,0 @@
-{
-  "name": "protoc",
-  "description": "Re-generates the project's code from protobuf source. Use when .proto files are changed.",
-  "repo": "wham/kaja",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

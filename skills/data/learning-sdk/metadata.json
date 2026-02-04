@@ -1,9 +1,0 @@
-{
-  "name": "learning-sdk",
-  "description": "Integration patterns and best practices for adding persistent memory to LLM agents using the Letta Learning SDK",
-  "repo": "letta-ai/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/letta-ai/skills"
-}

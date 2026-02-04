@@ -1,9 +1,0 @@
-{
-  "name": "deploy-bot",
-  "description": "Safe deployment of Polymarket trading bot with regression tests and active trade protection",
-  "repo": "unarmedpuppy/polyjuiced",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

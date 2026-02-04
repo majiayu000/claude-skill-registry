@@ -1,9 +1,0 @@
-{
-  "name": "error-recovery-patterns",
-  "repo": "applied-artificial-intelligence/claude-code-toolkit",
-  "category": "data",
-  "description": "Error recovery and failure handling patterns for distributed systems including rollback strategies, circuit breakers, retry logic with exponential backoff, graceful degradation, and compensating trans",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:29.295700Z",
-  "dir_name": "error-recovery-patterns"
-}

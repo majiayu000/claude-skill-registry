@@ -1,9 +1,0 @@
-{
-  "name": "knowledge-patterns",
-  "description": "PR Review 修复模式库。在处理 PR Review 评论时自动查阅，寻找已知问题模式和解决方案。",
-  "repo": "penkzhou/swiss-army-knife-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

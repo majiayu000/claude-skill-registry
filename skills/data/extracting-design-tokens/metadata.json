@@ -1,9 +1,0 @@
-{
-  "name": "extracting-design-tokens",
-  "description": "Extracts and documents design tokens (colors, typography, spacing, shadows, etc.) from Figma designs. Updates the \"デザイントークン\" section in screen spec.md.",
-  "repo": "farmanlab/ai_agent_orchestra",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

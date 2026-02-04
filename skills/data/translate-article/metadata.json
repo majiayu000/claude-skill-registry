@@ -1,9 +1,0 @@
-{
-  "name": "translate-article",
-  "description": "Translate MDX articles between English and Japanese for global engineers. Use when the user says \"translate this article\", \"convert to Japanese/English\", or asks to localize content in `src/content/do",
-  "repo": "nozomi-koborinai/koborin-ai",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "chaos-engineering-fundamentals",
-  "description": "Use when implementing chaos engineering, designing fault injection experiments, or building resilience testing practices. Covers chaos principles and experiment design.",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

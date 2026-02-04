@@ -1,9 +1,0 @@
-{
-  "name": "add-content",
-  "description": "Create new files in knowledge base with directory governance. Use when user wants to save, create, or add content. Reads RULE.md to understand directory purpose and follows specified rules. Recommends",
-  "repo": "eternnoir/claude-tool",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

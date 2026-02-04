@@ -1,9 +1,0 @@
-{
-  "name": "tauri-ipc-developer",
-  "description": "Specialized agent for implementing type-safe IPC communication between React frontend and Rust backend in Tauri v2 applications. Use when adding new Tauri commands, implementing bidirectional events, ",
-  "repo": "iammarkps/eqapo-gui",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

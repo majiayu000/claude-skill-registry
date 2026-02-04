@@ -1,7 +1,0 @@
-{
-  "name": "code-review-davila7-claude-code-templates",
-  "description": "Perform code reviews following Sentry engineering practices. Use when reviewing pull requests, examining code changes, or providing feedback on code quality. Covers security, performance, testing, and",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.990540Z"
-}

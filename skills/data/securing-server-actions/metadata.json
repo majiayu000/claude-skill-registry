@@ -1,9 +1,0 @@
-{
-  "name": "securing-server-actions",
-  "description": "Teach server action authentication and security patterns in Next.js 16. Use when implementing server actions, form handlers, or mutations that need authentication.",
-  "repo": "djankies/claude-configs",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

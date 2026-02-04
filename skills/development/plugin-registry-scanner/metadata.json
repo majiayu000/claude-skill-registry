@@ -1,8 +1,0 @@
-{
-  "name": "plugin-registry-scanner",
-  "repo": "memorysaver/looplia-core",
-  "category": "development",
-  "description": "This skill should be used when the user wants to discover available looplia skills,scan installed plugins, or list what capabilities are available. Use when someone says\"what looplia skills are instal",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:41.249107Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "plan-mode-zapabob-so8t",
-  "description": "AEGISモデルのARC-Challenge改善、GSM8K健全性検証、GRPO報酬多目的化のための包括的Planモード。頑健な回答抽出、タイムアウト最適化、データ汚染チェック、複数seed評価、汎化性能向上を実装。",
-  "repo": "zapabob/SO8T",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/zapabob/SO8T"
-}

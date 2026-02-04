@@ -1,9 +1,0 @@
-{
-  "name": "orchestrating-multi-agent-systems",
-  "description": "Orchestrate multi-agent systems with handoffs, routing, and workflows across AI providers.Use when building complex AI systems requiring agent collaboration, task delegation, or workflow coordination.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

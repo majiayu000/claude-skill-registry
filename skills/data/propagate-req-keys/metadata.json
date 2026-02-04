@@ -1,9 +1,0 @@
-{
-  "name": "propagate-req-keys",
-  "description": "Homeostatic actuator that tags code, tests, and commits with REQ-* keys for traceability. Adds \"# Implements:\" tags to code and \"# Validates:\" tags to tests. Use when code or tests are missing require",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

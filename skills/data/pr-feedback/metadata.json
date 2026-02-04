@@ -1,9 +1,0 @@
-{
-  "name": "pr-feedback",
-  "description": "This skill should be used for integrating PR review comments back into devloop plan, parsing review feedback, addressing reviewer concerns",
-  "repo": "Zate/cc-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

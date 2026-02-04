@@ -1,8 +1,0 @@
-{
-  "name": "escalating-windows-privileges",
-  "repo": "trilwu/secskills",
-  "category": "development",
-  "description": "Escalate privileges on Windows systems using service misconfigurations, DLL hijacking, token manipulation, UAC bypasses, registry exploits, and credential dumping. Use when performing Windows post-exp",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:11.115367Z"
-}

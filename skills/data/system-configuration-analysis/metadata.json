@@ -1,9 +1,0 @@
-{
-  "name": "system-configuration-analysis",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "data",
-  "description": "Analyze system configuration data from sosreport archives, extracting OS details, installed packages, systemd service status, SELinux/AppArmor policies, and kernel parameters from the sosreport direct",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:19.385054Z",
-  "dir_name": "system-configuration-analysis"
-}

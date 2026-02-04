@@ -1,8 +1,0 @@
-{
-  "name": "ontology-generator",
-  "repo": "infranodus/skills",
-  "category": "development",
-  "description": "Generate comprehensive ontological knowledge graphs in [[wikilinks]] syntax for InfraNodus visualization. Use when the user requests to create an ontology, extract entities and relationships from text",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:00.999610Z"
-}

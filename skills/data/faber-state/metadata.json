@@ -1,9 +1,0 @@
-{
-  "name": "faber-state",
-  "description": "Manage FABER workflow state (CRUD operations)",
-  "repo": "fractary/claude-plugins",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

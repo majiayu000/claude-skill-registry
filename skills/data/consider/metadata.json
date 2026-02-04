@@ -1,9 +1,0 @@
-{
-  "name": "consider",
-  "description": "Selects and applies mental models for structured problem analysis. Triggers when user asks \"why\", \"what if\", \"how should we\", needs systematic problem-solving, or mentions analyzing a situation. MUST ",
-  "repo": "rayk/lucid-toolkit",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

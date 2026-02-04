@@ -1,8 +1,0 @@
-{
-  "name": "gitbutler-multi-agent",
-  "repo": "outfitter-dev/agents",
-  "category": "development",
-  "description": "Coordinate multiple AI agents working concurrently in the same workspace using GitButler's virtual branch model. Use for parallel development, sequential handoffs, and commit transfer patterns without",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:38.098976Z"
-}

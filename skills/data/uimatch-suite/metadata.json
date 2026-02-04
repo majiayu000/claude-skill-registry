@@ -1,9 +1,0 @@
-{
-  "name": "uimatch-suite",
-  "description": "Run a batch of visual comparisons defined in a uiMatch suite JSON file using @uimatch/cli, then read each report to summarize which components passed or failed their quality gates. Use this skill when",
-  "repo": "kosaki08/uimatch",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

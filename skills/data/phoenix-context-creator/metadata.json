@@ -1,9 +1,0 @@
-{
-  "name": "phoenix-context-creator",
-  "description": "Create complete Phoenix contexts following best practices including bounded contexts, proper API design, and comprehensive testing. Use when designing new features or refactoring code into contexts.",
-  "repo": "mkreyman/bmad-elixir",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

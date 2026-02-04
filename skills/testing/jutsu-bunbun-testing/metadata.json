@@ -1,8 +1,0 @@
-{
-  "name": "jutsu-bunbun-testing",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when writing tests with Bun's built-in test runner. Covers test organization, assertions, mocking, and snapshot testing using Bun's fast test infrastructure.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.306162Z"
-}

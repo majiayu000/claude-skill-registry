@@ -1,9 +1,0 @@
-{
-  "name": "pacer-classifier",
-  "description": "Classifies information into PACER categories (Procedural, Analogous, Conceptual, Evidence, Reference) and recommends appropriate digestion protocols. Use when learning new material, studying, reading ",
-  "repo": "az9713/pacer-learning-system",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

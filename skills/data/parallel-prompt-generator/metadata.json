@@ -1,9 +1,0 @@
-{
-  "name": "parallel-prompt-generator",
-  "description": "Generate agent-ready prompts from existing task specification files. Use when regenerating prompts after editing tasks, updating prompt templates, or preparing tasks for cpo execution.",
-  "repo": "jpoutrin/product-forge",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

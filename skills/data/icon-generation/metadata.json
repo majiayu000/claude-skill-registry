@@ -1,9 +1,0 @@
-{
-  "name": "icon-generation",
-  "description": "Generate app icons (SVG/PNG) and launcher icons for Android Flutter apps. Use when creating UI icons, launcher icons, or platform-ready icon assets. Handles sizing, formats, and flutter_launcher_icons",
-  "repo": "cmwen/prompt-loop-app",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "swarm-teammate",
-  "description": "Auto-loads when CLAUDE_CODE_TEAM_NAME environment variable is set. Provides guidance for Claude Code teammates working in swarms - identity awareness, communication patterns, task management, and coor",
-  "repo": "Und3rf10w/claude-litter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

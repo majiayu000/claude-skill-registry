@@ -1,9 +1,0 @@
-{
-  "name": "model-drift-detector",
-  "description": "Model Drift Detector - Auto-activating skill for ML Deployment.Triggers on: model drift detector, model drift detectorPart of the ML Deployment skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

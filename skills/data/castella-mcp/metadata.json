@@ -1,9 +1,0 @@
-{
-  "name": "castella-mcp",
-  "description": "Enable AI agents to introspect and control Castella UIs via MCP. Create MCP servers, expose UI resources, handle MCP tools, and use semantic IDs.",
-  "repo": "i2y/castella",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

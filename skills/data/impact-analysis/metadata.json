@@ -1,9 +1,0 @@
-{
-  "name": "impact-analysis",
-  "description": "コード変更の影響範囲分析スキル。変更が引き起こし得る影響を影響面（code/interface/data/external/config/runtime/security/observability）ごとに整理し、「どこをレビューし、何をテストし、何を観測すべきか」を根拠つきで提示する。トリガー条件:- 「影響範囲を分析して」「この変更の影響は？」「どこまで波及する？」- PRレビュー依頼時、リフ",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

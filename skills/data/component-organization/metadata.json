@@ -1,9 +1,0 @@
-{
-  "name": "component-organization",
-  "description": "Maintain consistent file structure - components/ui for base shadcn, components/shared for composed components, pages for routes, always use barrel exports",
-  "repo": "JewelsHovan/pain-plus-site",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

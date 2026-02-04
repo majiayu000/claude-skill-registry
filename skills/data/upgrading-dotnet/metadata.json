@@ -1,9 +1,0 @@
-{
-  "name": "upgrading-dotnet",
-  "description": "Upgrade .NET projects to newer versions. Use when upgrading TargetFramework in csproj/vbproj/fsproj files, migrating between .NET versions, configuring global.json, pinning SDK versions, updating CI/C",
-  "repo": "johnlokerse/azure-devops-bicep-local-deploy",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

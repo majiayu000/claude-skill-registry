@@ -1,9 +1,0 @@
-{
-  "name": "micro-100-200ms",
-  "description": "Use when building micro-interactions between 100-200ms - tooltips appearing, dropdown opens, small feedback animations that feel quick but perceptible",
-  "repo": "dylantarre/animation-principles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

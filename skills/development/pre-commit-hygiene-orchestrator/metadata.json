@@ -1,8 +1,0 @@
-{
-  "name": "pre-commit-hygiene-orchestrator",
-  "repo": "IgorGanapolsky/trading",
-  "category": "development",
-  "description": "Automated code quality, file organization, and repository hygiene enforcement for pre-commit hooks",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.238230Z"
-}

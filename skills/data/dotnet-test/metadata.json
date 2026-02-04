@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-test",
-  "description": "This skill should be used when running .NET tests selectively with a build-first, test-targeted workflow. Use it for running tests with xUnit focus.",
-  "repo": "NikiforovAll/claude-code-rules",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

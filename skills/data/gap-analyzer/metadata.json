@@ -1,9 +1,0 @@
-{
-  "name": "gap-analyzer",
-  "description": "Identifies missing components and architectural gaps in project structure based on detected patterns",
-  "repo": "fractary/claude-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

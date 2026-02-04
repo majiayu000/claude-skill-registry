@@ -1,9 +1,0 @@
-{
-  "name": "condition-wait",
-  "description": "Use when tests have race conditions, timing dependencies, or inconsistent pass/fail behavior - replaces arbitrary timeouts with condition polling to wait for actual state changes, eliminating flaky te",
-  "repo": "pproenca/dot-claude-old",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "add-new-file",
-  "description": "Guide for adding new files to this codebase while respecting architectural principles including Separation of Concerns, Common Closure Principle, small composable functions (max 20 lines), and externa",
-  "repo": "felixAnhalt/opencode-worktree-session",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

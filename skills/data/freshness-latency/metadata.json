@@ -1,9 +1,0 @@
-{
-  "name": "freshness-latency",
-  "description": "Monitoring and optimizing how quickly data flows through pipelines and ensuring it meets timeliness requirements.",
-  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills"
-}

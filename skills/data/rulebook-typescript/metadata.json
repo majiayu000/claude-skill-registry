@@ -1,9 +1,0 @@
-{
-  "name": "rulebook-typescript",
-  "description": "TypeScript development with strict mode, Vitest testing, ESLint linting, and CI/CD best practices. Use when working on TypeScript projects, writing tests, configuring linting, or setting up build pipe",
-  "repo": "hivellm/rulebook",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

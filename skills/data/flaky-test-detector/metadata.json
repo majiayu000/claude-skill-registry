@@ -1,9 +1,0 @@
-{
-  "name": "flaky-test-detector",
-  "description": "Flaky Test Detector - Auto-activating skill for Test Automation.Triggers on: flaky test detector, flaky test detectorPart of the Test Automation skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

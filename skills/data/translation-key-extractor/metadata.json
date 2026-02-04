@@ -1,9 +1,0 @@
-{
-  "name": "translation-key-extractor",
-  "description": "Extracts hardcoded strings from code and converts them to translation keys for i18n. Use when user asks to \"extract translations\", \"find hardcoded strings\", \"internationalize code\", \"setup i18n\", or \"",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

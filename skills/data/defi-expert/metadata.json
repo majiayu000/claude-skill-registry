@@ -1,9 +1,0 @@
-{
-  "name": "defi-expert",
-  "description": "DeFi protocol expert ensuring correct data formats, types, denominations, and API structures. MUST be consulted before writing ANY protocol integration code. Triggers on ANY mention of Aave, Compound,",
-  "repo": "BarisSozen/claude",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

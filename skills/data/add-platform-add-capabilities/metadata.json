@@ -1,9 +1,0 @@
-{
-  "name": "add-platform-add-capabilities",
-  "description": "Updates job schema and adapters with any new hook events the platform supports. Use after research to extend DeepWork's hook system.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

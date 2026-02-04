@@ -1,9 +1,0 @@
-{
-  "name": "vuln-patterns-languages",
-  "description": "Language-specific vulnerability detection patterns for JavaScript/TypeScript, Python, Go, Java, Ruby, and PHP. Provides regex patterns and grep commands for common security vulnerabilities.",
-  "repo": "Zate/cc-plugins",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "lp-duality",
-  "description": "Takes the dual of a linear program (LP). Use when the user provides an LP in LaTeX or markdown and wants its dual, or asks about LP duality transformations.",
-  "repo": "slahaie/lp-duality-skill",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

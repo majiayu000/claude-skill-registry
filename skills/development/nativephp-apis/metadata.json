@@ -1,8 +1,0 @@
-{
-  "name": "nativephp-apis",
-  "repo": "NativePHP/ClaudePlugins",
-  "category": "development",
-  "description": "This skill should be used when the user asks about \"nativephp api\", \"camera api\", \"device api\", \"biometrics\", \"geolocation\", \"scanner api\", \"microphone api\", \"nativephp_call\", \"god method\", \"bridge fu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:16.862709Z"
-}

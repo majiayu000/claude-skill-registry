@@ -1,9 +1,0 @@
-{
-  "name": "e2e-test-automation",
-  "description": "Execute end-to-end tests for Nikita using Telegram MCP, Gmail MCP, Supabase MCP, Chrome DevTools MCP, and gcloud CLI. Use when verifying implementations, testing user journeys, validating integrations",
-  "repo": "yangsi7/nikita",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/yangsi7/nikita"
-}

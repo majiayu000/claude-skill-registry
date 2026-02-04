@@ -1,7 +1,0 @@
-{
-  "name": "create-pr-davila7-claude-code-templates",
-  "description": "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's code review guidelines.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.997908Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "gh-issue-edit",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "data",
-  "description": "Edit GitHub issue metadata using gh CLI. Update title, body, labels, assignees, milestones, and projects. Use when issue details need to be changed.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:23.553286Z",
-  "dir_name": "gh-issue-edit"
-}

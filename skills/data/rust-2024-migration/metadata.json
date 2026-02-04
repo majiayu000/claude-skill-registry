@@ -1,9 +1,0 @@
-{
-  "name": "rust-2024-migration",
-  "description": "Guides users through migrating to Rust 2024 edition features including let chains, async closures, and improved match ergonomics. Activates when users work with Rust 2024 features or nested control fl",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

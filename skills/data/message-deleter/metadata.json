@@ -1,9 +1,0 @@
-{
-  "name": "message-deleter",
-  "description": "Slack メッセージを削除する。「メッセージ削除」「さっきのを消して」「メッセージを消す」「削除して」「メッセージ取り消し」「投稿を削除」「このメッセージ削除」などで起動。User Token があれば自分の投稿を削除可能、なければ Bot 投稿のみ削除可能。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

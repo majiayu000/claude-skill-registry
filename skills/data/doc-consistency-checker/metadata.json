@@ -1,9 +1,0 @@
-{
-  "name": "doc-consistency-checker",
-  "description": "Detects when high-level project documentation is stale based on code/config changes and generates update suggestions",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

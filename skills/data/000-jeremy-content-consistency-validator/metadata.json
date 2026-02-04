@@ -1,9 +1,0 @@
-{
-  "name": "000-jeremy-content-consistency-validator",
-  "description": "Validate messaging consistency across website, GitHub repos, and local documentation generating read-only discrepancy reports. Use when checking content alignment or finding mixed messaging. Trigger w",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

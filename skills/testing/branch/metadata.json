@@ -1,8 +1,0 @@
-{
-  "name": "branch",
-  "repo": "Clionegohan/YoRuH-Resonance-Archive-C4-Sync-",
-  "category": "testing",
-  "description": "\u30d6\u30e9\u30f3\u30c1\u4f5c\u6210Skill\u3002\u4ed5\u69d8\u7b56\u5b9a\u7528\uff08spec/*\uff09\u307e\u305f\u306f\u5b9f\u88c5\u7528\uff08impl/*\uff09\u306e\u30d6\u30e9\u30f3\u30c1\u3092\u4f5c\u6210\u3002/spec \u3084 spec-workflow \u304b\u3089\u547c\u3073\u51fa\u3055\u308c\u308b\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:37.648510Z"
-}

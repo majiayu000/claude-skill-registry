@@ -1,9 +1,0 @@
-{
-  "name": "uimatch-text-diff",
-  "description": "Compare two pieces of text using the uiMatch CLI text-diff command and classify how similar they are (exact match, whitespace/case-only, normalized match, or mismatch). Use this skill when the user ca",
-  "repo": "kosaki08/uimatch",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

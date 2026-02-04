@@ -1,9 +1,0 @@
-{
-  "name": "skills-index-updater",
-  "description": "Regenerate the Available Skill Index in AGENTS.md for IDEs without native skill support (Kiro, Gemini, etc.). ONLY use when the user EXPLICITLY asks to \"update skill index\", \"sync agents\", \"regenerate",
-  "repo": "dparedesi/agent-global-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

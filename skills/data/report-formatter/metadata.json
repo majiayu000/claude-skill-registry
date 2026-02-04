@@ -1,9 +1,0 @@
-{
-  "name": "report-formatter",
-  "description": "Format, beautify, and optimize report content.LOAD THIS SKILL WHEN: User says \"整理報告\", \"格式化\", \"美化報告\", \"polish report\" | after report generation | need professional formatting.CAPABILITIES: Markdown for",
-  "repo": "u9401066/copilot-capability-manager",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

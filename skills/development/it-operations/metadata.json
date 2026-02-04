@@ -1,7 +1,0 @@
-{
-  "name": "it-operations",
-  "description": "Manages IT infrastructure, monitoring, incident response, and service reliability. Provides frameworks for ITIL service management, observability strategies, automation, backup/recovery, capacity plan",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.226920Z"
-}

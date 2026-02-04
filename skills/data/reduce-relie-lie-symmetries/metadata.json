@@ -1,9 +1,0 @@
-{
-  "name": "reduce-relie-lie-symmetries",
-  "description": "Use when working with ReLie in REDUCE (including inside Docker) to compute Lie group symmetries of differential equations, handle conditional/contact/variational/approximate symmetries or equivalence ",
-  "repo": "hinsley/DiffSymAgent",
-  "category": "development",
-  "tags": [],
-  "stars": 1,
-  "source": "github.com/hinsley/DiffSymAgent"
-}

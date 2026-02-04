@@ -1,9 +1,0 @@
-{
-  "name": "openwebf-host-caching-httpcachemode",
-  "description": "Configure and debug WebF runtime caching in Flutter using HttpCacheMode (stale content, offline-first, cache busting, clearing caches with WebF.clearAllCaches). Use when the user mentions HttpCacheMod",
-  "repo": "archview-ai/webf-plugin",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

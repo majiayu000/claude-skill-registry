@@ -1,7 +1,0 @@
-{
-  "name": "documentation-extraction",
-  "description": "Interpret existing docs, READMEs, specs, and configuration files efficiently. Use when onboarding to a codebase, verifying implementation against specs, understanding API contracts, or parsing configu",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.360696Z"
-}

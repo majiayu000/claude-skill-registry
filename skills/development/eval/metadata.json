@@ -1,7 +1,0 @@
-{
-  "name": "eval",
-  "description": "EvalKit is a conversational evaluation framework for AI agents that guides you through creating robust evaluations using the Strands Evals SDK. Through natural conversation, you can plan evaluations, ",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.137009Z"
-}

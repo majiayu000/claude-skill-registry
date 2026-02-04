@@ -1,8 +1,0 @@
-{
-  "name": "go-nil-pointer",
-  "repo": "JamesPrial/claudefiles",
-  "category": "development",
-  "description": "Pointer receiver nil safety - methods can be called on nil",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:54.402732Z"
-}

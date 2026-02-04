@@ -1,8 +1,0 @@
-{
-  "name": "adr-authoring",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "description": "Architecture Decision Record creation and management",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:02.518338Z"
-}

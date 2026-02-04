@@ -1,9 +1,0 @@
-{
-  "name": "changelog-pkg",
-  "description": "Update pkgsrc ChangeLog entries under config/pkgsrc/files/*/*/ChangeLog and keep Makefile version metadata in sync. Use when updating qrpc-devel or qrpc-prod ChangeLogs, updating their versions, or re",
-  "repo": "ts-klassen/qrpc",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

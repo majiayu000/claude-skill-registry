@@ -1,8 +1,0 @@
-{
-  "name": "mova-repo-code-change-plan-basic",
-  "repo": "Leryk1981/mova_wf_cycle",
-  "category": "development",
-  "description": "Given a repo snapshot and a goal description, produce a structured, step-by-step plan of code changes: which files to touch, in what order, with risks and done-criteria. This skill does not modify fil",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:47.469372Z"
-}

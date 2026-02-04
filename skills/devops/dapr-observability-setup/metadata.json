@@ -1,8 +1,0 @@
-{
-  "name": "dapr-observability-setup",
-  "repo": "Sahib-Sawhney-WH/dapr-claude-plugin",
-  "category": "devops",
-  "description": "Configure OpenTelemetry tracing, metrics, and structured logging for DAPR applications. Integrates with Azure Monitor, Jaeger, Prometheus, and other observability backends.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:49.769118Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "auth-comprehensive",
-  "repo": "SHAJAR5110/Hackathon-II-phase2",
-  "category": "security",
-  "description": "Production-grade authentication & authorization covering JWT, cookies, sessions, hashing, MFA, OAuth2, RBAC, and permissions across all frameworks (Next.js, Express.js, FastAPI, Django, Spring, etc.).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:58.666238Z"
-}

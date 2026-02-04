@@ -1,8 +1,0 @@
-{
-  "name": "jira-ticket-hygiene-checker",
-  "repo": "openshift-hyperfleet/hyperfleet-claude-plugins",
-  "category": "development",
-  "description": "Validates JIRA tickets have required fields and sufficient information for development. Activates when users ask about ticket quality, readiness, or completeness, or when reviewing tickets before spri",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:04.226350Z"
-}

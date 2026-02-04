@@ -1,8 +1,0 @@
-{
-  "name": "testing-web-applications",
-  "repo": "trilwu/secskills",
-  "category": "security",
-  "description": "Test web applications for security vulnerabilities including SQLi, XSS, command injection, JWT attacks, SSRF, file uploads, XXE, and API flaws. Use when pentesting web apps, analyzing authentication, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:11.204525Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-pr-workflow",
-  "description": "Complete GitHub workflow from commit to PR including conventional commits, branch management, pre-push quality checks, PR creation with gh CLI, and wiki synchronization. Use when creating commits, ...",
-  "repo": "j0KZ/mcp-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ci-cd-agent",
-  "description": "Creates CI/CD pipeline configurations for automated testing and deployment",
-  "repo": "Unicorn/Radium",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-run-file",
-  "description": "Run script-like CSharp programs using dotnet run file.cs. Use this skill when users want to execute CSharp code directly, write one-liner scripts via stdin, or learn about run file directives.",
-  "repo": "NikiforovAll/claude-code-rules",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "researching-libraries",
-  "repo": "sumik5/dotfiles",
-  "category": "design",
-  "description": "Researches existing libraries before implementation. Required before writing any new functionality. Prevents reinventing the wheel by finding and evaluating existing packages.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.465996Z"
-}

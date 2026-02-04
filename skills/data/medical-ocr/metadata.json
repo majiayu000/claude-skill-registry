@@ -1,9 +1,0 @@
-{
-  "name": "medical-ocr",
-  "description": "Medical document OCR processing for extracting structured clinical data from medical images (prescriptions, lab results, clinical notes). Uses Google Cloud Vision for text extraction and medical NLP f",
-  "repo": "Fadil369/doctors-linc",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

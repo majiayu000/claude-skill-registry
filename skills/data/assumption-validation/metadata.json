@@ -1,9 +1,0 @@
-{
-  "name": "assumption-validation",
-  "description": "Test whether assumptions are true before making commitments. Use when assumptions have low certainty and high risk.",
-  "repo": "solvaholic/design-team",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

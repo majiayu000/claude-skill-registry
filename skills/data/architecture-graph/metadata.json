@@ -1,9 +1,0 @@
-{
-  "name": "architecture-graph",
-  "description": "This skill should be used when the user asks about \"entities\", \"relations\", \"architecture graph\", \"spec-driven development\", \"code annotations\", \"@graph anchors\", mentions \".graph/\" directory, asks to",
-  "repo": "vyshnavsdeepak/cartographer",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

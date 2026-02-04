@@ -1,8 +1,0 @@
-{
-  "name": "automationskill-smoke-bench",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Run lightweight import/exec smoke tests for skills and report pass/fail. Use in CI/CD or after creating new skills.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:31.269232Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "import-skill",
-  "description": "Import a skill from Notion (or other source) into local Nexus. Load when user mentions \"import skill\", \"download skill\", \"add skill to nexus\", \"pull skill from notion\", or selects a skill to import af",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

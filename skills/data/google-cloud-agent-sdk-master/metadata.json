@@ -1,9 +1,0 @@
-{
-  "name": "google-cloud-agent-sdk-master",
-  "description": "Automatic activation for all google cloud agent development kit (adk) Use when appropriate context detected. Trigger with relevant phrases based on skill purpose.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

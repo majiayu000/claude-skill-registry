@@ -1,9 +1,0 @@
-{
-  "name": "control-sessions",
-  "description": "Control active sessions by terminating problematic sessions, managing runaway queries, and handling blocking situations",
-  "repo": "teradata-labs/claude-cookbooks",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

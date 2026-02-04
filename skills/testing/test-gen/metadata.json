@@ -1,8 +1,0 @@
-{
-  "name": "test-gen",
-  "repo": "deeksmith-cpu/Frontera-Platform",
-  "category": "testing",
-  "description": "Generate tests following Frontera test patterns. Use when user says \"write tests\", \"add tests\", \"test this\", \"create unit tests\", \"generate tests\", or asks to test a component/function/API.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:03.605150Z"
-}

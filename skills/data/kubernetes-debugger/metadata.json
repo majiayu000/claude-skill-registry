@@ -1,9 +1,0 @@
-{
-  "name": "kubernetes-debugger",
-  "description": "Kubernetes debugging and troubleshooting best practices using MCP kubernetes tools.Use when: (1) Pods are failing, pending, or in CrashLoopBackOff/ImagePullBackOff states,(2) Services are unreachable ",
-  "repo": "rodrigodelmonte/k8s-debugging-plugin",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

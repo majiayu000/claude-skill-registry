@@ -1,8 +1,0 @@
-{
-  "name": "cocoapods-test-specs",
-  "repo": "TheBushidoCollective/han",
-  "category": "testing",
-  "description": "Use when adding automated tests to CocoaPods libraries using test specs. Covers test spec configuration, app host requirements, and testing patterns that integrate with pod lib lint validation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.931492Z"
-}

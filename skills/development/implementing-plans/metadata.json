@@ -1,8 +1,0 @@
-{
-  "name": "implementing-plans",
-  "repo": "richardgill/nix",
-  "category": "development",
-  "description": "Implement technical plans with verification - executes phases with success criteria checks, pausing for manual verification between phases",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:30.017580Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "man",
-  "description": "Use when unsure about command syntax, options, or behavior, or when the user asks to \"check the man page\", \"look up the manual\", or \"what does [command] do\". Consult system man pages for accurate, ver",
-  "repo": "pproenca/dot-claude-old",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "agent-definition-creation",
-  "description": "Use this skill when creating or refining Claude Code sub-agent definitions. Helps design specialized AI assistants with proper YAML frontmatter, system prompts, tool access, and example-driven descrip",
-  "repo": "andisab/swe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

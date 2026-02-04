@@ -1,8 +1,0 @@
-{
-  "name": "mozilla-query-writing",
-  "repo": "akkomar/mozdata-claude-plugin",
-  "category": "devops",
-  "description": "Write efficient BigQuery queries for Mozilla telemetry. Use when user asks about: Firefox DAU/MAU, telemetry queries, BigQuery Mozilla, baseline_clients, events_stream, search metrics, user counts, or",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:49.083872Z"
-}

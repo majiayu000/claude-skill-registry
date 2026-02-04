@@ -1,9 +1,0 @@
-{
-  "name": "limacharlie-expert",
-  "description": "Use this skill when the user mentions LimaCharlie or wants to work with endpoint detection, cloud security monitoring, detection rules, or security automation. This provides an overview of LimaCharlie",
-  "repo": "tekgrunt/boot-test",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

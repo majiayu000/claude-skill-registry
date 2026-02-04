@@ -1,9 +1,0 @@
-{
-  "name": "sentry-policy-guardrails",
-  "description": "Implement governance and policy guardrails for Sentry.Use when enforcing organizational standards, compliance rules,or standardizing Sentry usage across teams.Trigger with phrases like \"sentry governa",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

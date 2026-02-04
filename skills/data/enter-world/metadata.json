@@ -1,9 +1,0 @@
-{
-  "name": "enter-world",
-  "description": "Launch the Adventure Engine application for an adventure project. Use when the user wants to \"enter\" a world, \"start\" or \"launch\" an adventure session, or begin interactive gameplay. Fires off the app",
-  "repo": "rjroy/adventure-engine-corvran",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

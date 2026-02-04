@@ -1,9 +1,0 @@
-{
-  "name": "orchestrating-parallel-agents",
-  "description": "Spawns multiple AI coding agents to work on related GitHub issues concurrently using git worktrees. Use when breaking down a large feature into multiple issues, running parallel agents with --print fl",
-  "repo": "4eyedengineer/4eyed_development",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

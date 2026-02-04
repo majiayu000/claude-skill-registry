@@ -1,9 +1,0 @@
-{
-  "name": "managing-sops-secrets",
-  "description": "Manages SOPS-encrypted Kubernetes secrets for Flux GitOps deployments using age encryption",
-  "repo": "saavy1/sb",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

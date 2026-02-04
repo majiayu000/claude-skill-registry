@@ -1,9 +1,0 @@
-{
-  "name": "document-lifecycle",
-  "description": "Unified document lifecycle management. Defines terminal statuses, unified numbering via .next-id, close procedures, and orphan detection. Load at session start.",
-  "repo": "groupzer0/vs-code-agents",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

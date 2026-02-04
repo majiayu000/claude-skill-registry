@@ -1,9 +1,0 @@
-{
-  "name": "concierge",
-  "description": "Expert assistant for provisioning charm development and testing environments using concierge. Use when setting up development machines, bootstrapping Juju controllers, installing craft tools (charmcra",
-  "repo": "tonyandrewmeyer/charming-with-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sentry-release-management",
-  "description": "Manage Sentry releases and associate commits.Use when creating releases, tracking commits,or managing release artifacts.Trigger with phrases like \"sentry release\", \"sentry commits\",\"manage sentry vers",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

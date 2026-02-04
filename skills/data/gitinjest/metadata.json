@@ -1,9 +1,0 @@
-{
-  "name": "gitinjest",
-  "description": "Convert GitHub repositories into LLM-friendly text. Use when you need to analyze external codebases, research unfamiliar libraries, understand third-party project structure, or ingest code from GitHub",
-  "repo": "iamhenry/ai-project-starter-kit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

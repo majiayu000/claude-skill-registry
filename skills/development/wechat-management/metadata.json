@@ -1,8 +1,0 @@
-{
-  "name": "wechat-management",
-  "repo": "7Sageer/cc-assistant",
-  "category": "development",
-  "description": "Manage information from Wechat and Send Messages, Only could be activated with the MCP Server `WeChatMCP`. Check it before using any tools in this MCP server",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:40.744863Z"
-}

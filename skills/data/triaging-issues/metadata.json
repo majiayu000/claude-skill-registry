@@ -1,7 +1,0 @@
-{
-  "name": "triaging-issues",
-  "repo": "pytorch/pytorch",
-  "path": ".claude/skills/triaging-issues/SKILL.md",
-  "source": "github.com/pytorch/pytorch",
-  "downloaded_at": "2026-02-04T02:41:30.369950Z"
-}

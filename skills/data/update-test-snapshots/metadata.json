@@ -1,9 +1,0 @@
-{
-  "name": "update-test-snapshots",
-  "description": "Regenerate test snapshot files after intentional markdown output changes. Use after modifying templates or rendering logic.",
-  "repo": "oocx/tfplan2md-uat",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

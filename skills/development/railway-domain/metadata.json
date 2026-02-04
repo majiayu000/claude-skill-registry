@@ -1,7 +1,0 @@
-{
-  "name": "railway-domain",
-  "description": "Add, view, or remove domains for Railway services. Use when user wants to add a domain, generate a railway domain, check current domains, get the URL for a service, or remove a domain.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.800228Z"
-}

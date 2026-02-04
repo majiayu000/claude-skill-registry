@@ -1,8 +1,0 @@
-{
-  "name": "long-running-harness",
-  "repo": "dapi/claude-code-marketplace",
-  "category": "product",
-  "description": "**UNIVERSAL TRIGGER**: Use when user wants to START/CONTINUE/MANAGE a long-running development project across multiple sessions.Common patterns:- \"start/init/begin new project [description]\"- \"continu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:50.471294Z"
-}

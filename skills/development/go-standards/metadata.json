@@ -1,7 +1,0 @@
-{
-  "name": "go-standards",
-  "description": "Apply Go development standards including module management, go test testing, gofmt/go vet/golangci-lint code quality, idiomatic error handling, and self-documenting code practices. Use this skill when",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.618881Z"
-}

@@ -1,7 +1,0 @@
-{
-  "name": "code-auditor",
-  "description": "Performs comprehensive codebase analysis covering architecture, code quality, security, performance, testing, and maintainability. Use when user wants to audit code quality, identify technical debt, f",
-  "category": "development",
-  "source": "github.com/mhattingpete/claude-skills-marketplace",
-  "imported_at": "2026-01-24T14:54:24.330786Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "debugging-protocol",
-  "description": "Comprehensive protocol for validating root causes of software issues. Use when you need to systematically debug a complex bug, flaky test, or unknown system behavior by forming hypotheses and validati",
-  "repo": "irahardianto/qurio",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

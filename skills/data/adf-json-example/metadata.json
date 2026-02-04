@@ -1,9 +1,0 @@
-{
-  "name": "adf-json-example",
-  "description": "Fetch raw ADF JSON data from a Confluence page URL. Use this skill when you need to see real-world ADF examples, understand how Confluence represents specific elements, debug ADF parsing, or create te",
-  "repo": "MacHu-GWU/atlas_doc_parser-project",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "commands-manager",
-  "description": "Branch skill for building and improving commands. Use when creating new slash commands, adapting marketplace commands, validating command structure, working with $ARGUMENTS, or improving existing comm",
-  "repo": "henmessi/plugin-dev",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

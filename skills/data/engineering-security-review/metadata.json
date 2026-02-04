@@ -1,9 +1,0 @@
-{
-  "name": "engineering-security-review",
-  "description": "Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. It provides a comprehensive security checklist",
-  "repo": "gabriel-tecnologia/gab-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gabriel-tecnologia/gab-claude"
-}

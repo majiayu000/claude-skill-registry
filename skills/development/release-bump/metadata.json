@@ -1,7 +1,0 @@
-{
-  "name": "release-bump",
-  "description": "Use when bumping ralph-orchestrator version for a new release, after fixes are committed and ready to publish",
-  "category": "development",
-  "source": "github.com/mikeyobrien/ralph-orchestrator",
-  "imported_at": "2026-01-24T14:54:04.160924Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "hubble-cloud-api",
-  "description": "Integrate with Hubble Network Platform API for device management, packet retrieval with streaming, webhook configuration, metrics tracking, user management, and billing. Use when working with Hubble I",
-  "repo": "HubbleNetwork/agent-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "summarize-source",
-  "description": "Generate summaries for unchecked sources in workdesk/sources.md. Supports single URL or batch processing. Use after adding URLs with add-url skill.",
-  "repo": "beijaflor/gen-ai-journal",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

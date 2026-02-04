@@ -1,9 +1,0 @@
-{
-  "name": "infrastructure-management",
-  "description": "Manage network hosts and devices across all UniFi sites. Monitor host status, device configuration, and infrastructure health for comprehensive inventory management.",
-  "repo": "surrealwolf/unifi-manager-mcp",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

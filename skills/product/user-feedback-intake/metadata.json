@@ -1,8 +1,0 @@
-{
-  "name": "user-feedback-intake",
-  "repo": "johannesfritz/autonomous-orchestration",
-  "category": "product",
-  "description": "Process user feedback from Stellaris database into structured, actionable items. Use when reviewing bug reports and feature requests, or when user says \"check feedback\" or \"process user requests\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:27.454773Z"
-}

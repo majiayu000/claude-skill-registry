@@ -1,9 +1,0 @@
-{
-  "name": "frontmatter",
-  "description": "Generates YAML frontmatter metadata (date/time, git commit, branch, repository) for workflow documentation. Use when creating research docs, plans, or work summaries.",
-  "repo": "mchowning/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "software-design-principles",
-  "description": "Object-oriented design principles including object calisthenics, dependency inversion, fail-fast error handling, feature envy detection, and intention-revealing naming. Activates during code refactori",
-  "repo": "audunstrand/status-app",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/audunstrand/status-app"
-}

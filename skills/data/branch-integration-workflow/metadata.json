@@ -1,9 +1,0 @@
-{
-  "name": "branch-integration-workflow",
-  "description": "Safely review and merge remote branches into stable. Trigger when: (1) reviewing open PRs, (2) integrating feature branches, (3) checking for stale branches with potential conflicts.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

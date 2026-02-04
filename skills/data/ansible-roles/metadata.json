@@ -1,9 +1,0 @@
-{
-  "name": "ansible-roles",
-  "description": "Use when structuring and reusing code with Ansible roles for modular, maintainable automation and configuration management.",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

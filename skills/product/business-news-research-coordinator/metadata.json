@@ -1,8 +1,0 @@
-{
-  "name": "business-news-research-coordinator",
-  "repo": "rkreddyp/investrecipes",
-  "category": "product",
-  "description": "Lead coordinator that orchestrates 5 news scraper agents in parallel to gather headlines from 15 top business news websites",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:54.940838Z"
-}

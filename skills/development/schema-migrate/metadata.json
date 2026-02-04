@@ -1,8 +1,0 @@
-{
-  "name": "schema-migrate",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Rename frontmatter fields or transform values in bulk. Triggers on \"rename field\", \"migrate values\", \"transform field\", \"bulk update\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:48.089018Z"
-}

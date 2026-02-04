@@ -1,8 +1,0 @@
-{
-  "name": "meta-agent",
-  "repo": "privateGithubUser/orchestrator-agent-with-adws",
-  "category": "development",
-  "description": "Generates new Claude Code subagent configuration files from user descriptions. Use proactively when the user asks to create a new subagent or agent. Keywords include create subagent, new agent, build ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:43.133841Z"
-}

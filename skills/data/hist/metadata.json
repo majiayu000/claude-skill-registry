@@ -1,9 +1,0 @@
-{
-  "name": "hist",
-  "description": "Use when working with the scikit-hep hist library in Python to create, fill, slice, and plot histograms (1D/2D/multi-axis), including UHI indexing, categorical axes, and mplhep plotting conventions.",
-  "repo": "gordonwatts/skill-test",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

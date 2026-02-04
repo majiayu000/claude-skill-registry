@@ -1,9 +1,0 @@
-{
-  "name": "deploy-npm",
-  "description": "SEMO npm 패키지 배포. Use when (1) \"npm 배포\", \"패키지 배포해줘\",(2) CLI/MCP 변경 후 배포, (3) \"버전 올리고 배포\".",
-  "repo": "semicolon-devteam/semo",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

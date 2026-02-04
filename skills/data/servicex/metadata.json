@@ -1,9 +1,0 @@
-{
-  "name": "servicex",
-  "description": "Write ServiceX queries in func_adl against ATLAS xAOD data (PHYSLITE/PHYS) and provide guidance for dataset selection, filtering, and deliver usage. Use when asked to build, edit, or debug ServiceX/fu",
-  "repo": "gordonwatts/skill-test",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

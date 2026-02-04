@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-api-development",
-  "description": "Generate API clients and documentation with Cascade. Activate when users mention\"generate api client\", \"api documentation\", \"openapi generation\", \"sdk generation\",or \"api integration\". Handles API dev",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

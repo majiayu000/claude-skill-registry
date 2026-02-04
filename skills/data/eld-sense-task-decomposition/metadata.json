@@ -1,9 +1,0 @@
-{
-  "name": "eld-sense-task-decomposition",
-  "description": "PCE (Process-Context Engine) のタスク分解スキル。親→子→孫の入れ子構造でタスクを分解し、各プロセスへのコンテキスト継承を設計する。トリガー条件:- 大きなタスクを受け取った時- 「このタスクを分解して」- 「実装計画を立てて」- 「作業を整理して」- 複雑な機能の実装開始時",
-  "repo": "CAPHTECH/claude-marketplace",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

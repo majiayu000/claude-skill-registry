@@ -1,9 +1,0 @@
-{
-  "name": "sqlmodel-database-designer",
-  "repo": "khawajanaqeeb/Q4-hackathon2-todo",
-  "category": "data",
-  "description": "Define SQLModel models for User and Task (priority, tags as array, user_id FK) and Neon connection when database schema is required",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:39.370825Z",
-  "dir_name": "sqlmodel-database-designer"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "deployment-configs",
-  "description": "Production deployment configurations for Celery workers and beat schedulers across Docker, Kubernetes, and systemd environments. Use when deploying Celery to production, containerizing workers, orches",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

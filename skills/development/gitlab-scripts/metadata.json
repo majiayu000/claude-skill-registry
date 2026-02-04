@@ -1,8 +1,0 @@
-{
-  "name": "gitlab-scripts",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Use GitLab scripts instead of GitLab MCP for both read and write operations. Read operations (gitlab-mr-comments, gitlab-list-mrs) for fetching MR data. Write operations (gitlab-create-mr, gitlab-comm",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:48.854927Z"
-}

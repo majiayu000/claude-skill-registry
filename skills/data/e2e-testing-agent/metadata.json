@@ -1,9 +1,0 @@
-{
-  "name": "e2e-testing-agent",
-  "description": "Build autonomous end-to-end full-stack testing agents using Claude's Computer Use API, LangGraph orchestration, and hybrid Playwright automation. Use this skill when building testing infrastructure, t",
-  "repo": "RaphaEnterprises-AI/argus-backend",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

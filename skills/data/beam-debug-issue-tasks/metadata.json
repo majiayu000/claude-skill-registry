@@ -1,9 +1,0 @@
-{
-  "name": "beam-debug-issue-tasks",
-  "description": "Debug failed/issue tasks from Beam.ai using Langfuse traces. Load when user says \"debug issue tasks\", \"check failed tasks\", \"why did task fail\", \"task errors\", \"debug agent\", or needs to investigate t",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

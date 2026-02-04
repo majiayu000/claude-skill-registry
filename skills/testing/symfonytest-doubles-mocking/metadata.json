@@ -1,8 +1,0 @@
-{
-  "name": "symfonytest-doubles-mocking",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "testing",
-  "description": "Create test doubles with PHPUnit mocks and Prophecy for isolated unit testing in Symfony",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.777617Z"
-}

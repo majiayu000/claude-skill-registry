@@ -1,9 +1,0 @@
-{
-  "name": "dynamic-knowledge-manager",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "data",
-  "description": "Maintain a continually updated knowledge base without forgetting; use when asked to refresh indices or manage drift.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:23.747747Z",
-  "dir_name": "dynamic-knowledge-manager"
-}

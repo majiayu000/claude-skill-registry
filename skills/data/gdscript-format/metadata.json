@@ -1,9 +1,0 @@
-{
-  "name": "gdscript-format",
-  "description": "Format and lint GDScript files using gdscript-formatter. Use after editing GDScript files to ensure code style consistency.",
-  "repo": "minami110/claude-godot-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

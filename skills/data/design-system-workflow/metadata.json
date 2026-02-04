@@ -1,9 +1,0 @@
-{
-  "name": "design-system-workflow",
-  "description": "Swift Design Systemを使用したiOS UI実装スキル。デザイントークン（カラー、タイポグラフィ、スペーシング、角丸、モーション、エレベーション）、UIコンポーネント（Button、Card、Chip、FAB、Snackbar、Picker）、レイアウトパターン（AspectGrid、SectionCard）のベストプラクティスを提供。「デザイン」「UI」「テーマ」「カラー」「色」",
-  "repo": "no-problem-dev/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "claude-agent-sdk-agent-creation",
-  "repo": "TheBushidoCollective/han",
-  "category": "data",
-  "description": "Use when creating or configuring Claude AI agents using the Agent SDK. Covers agent initialization, configuration, and basic setup patterns.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.385406Z",
-  "dir_name": "claude-agent-sdk-agent-creation"
-}

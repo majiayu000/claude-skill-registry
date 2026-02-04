@@ -1,9 +1,0 @@
-{
-  "name": "nix-system-config",
-  "description": "Nix flake configuration for macOS (nix-darwin), NixOS, and Home Manager systems.Use when working with: (1) Building or applying system configurations, (2) Adding/modifying packages or programs, (3) Cr",
-  "repo": "johnallen3d/system-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

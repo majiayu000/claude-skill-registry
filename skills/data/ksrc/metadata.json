@@ -1,9 +1,0 @@
-{
-  "name": "ksrc",
-  "description": "CLI for searching/reading Kotlin dependency sources from a Gradle project. Use when you need to locate a class/function in a library and inspect dependency source files.",
-  "repo": "respawn-app/ksrc",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

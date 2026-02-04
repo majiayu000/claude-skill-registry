@@ -1,9 +1,0 @@
-{
-  "name": "east-node-std",
-  "description": "Node.js platform functions for the East language. Use when writing East programs that need Console I/O, FileSystem operations, HTTP Fetch requests, Cryptography, Time operations, Path manipulation, Ra",
-  "repo": "elaraai/east-node",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

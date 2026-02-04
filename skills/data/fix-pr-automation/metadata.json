@@ -1,9 +1,0 @@
-{
-  "name": "fix-pr-automation",
-  "description": "Work with the automated PR fixer and its CLI, including prompts and workflow configuration. Use when diagnosing failed CI auto-fixes, running the fix-pr CLI locally, or updating the fix-pr prompt or w",
-  "repo": "salieri/resume",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ppt-rajskill",
-  "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts",
-  "repo": "rajshah4/my-agent-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

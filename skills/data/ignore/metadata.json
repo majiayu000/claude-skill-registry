@@ -1,9 +1,0 @@
-{
-  "name": "ignore",
-  "description": "不要なファイル・ディレクトリを .gitignore に追加・管理する",
-  "repo": "tatsuki-washimi/gwexpy",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tatsuki-washimi/gwexpy"
-}

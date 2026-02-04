@@ -1,9 +1,0 @@
-{
-  "name": "astro-images",
-  "description": "Use astro:assets for all images. This enables automatic optimization (resizing, WebP/AVIF conversion, lazy loading).",
-  "repo": "joshribakoff/fightingwithai.com",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/joshribakoff/fightingwithai.com"
-}

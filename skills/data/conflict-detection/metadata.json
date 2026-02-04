@@ -1,9 +1,0 @@
-{
-  "name": "conflict-detection",
-  "repo": "Mharbulous/SyncoPaid",
-  "category": "data",
-  "description": "Use before creating new stories or when user asks \"check for conflicts\", \"find duplicates\", \"review story overlaps\", or \"detect story conflicts\" - scans story-tree database to identify duplicate stori",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:31.956447Z",
-  "dir_name": "conflict-detection"
-}

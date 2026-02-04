@@ -1,8 +1,0 @@
-{
-  "name": "grey-haven-code-quality-analysis",
-  "repo": "greyhaven-ai/claude-code-config",
-  "category": "development",
-  "description": "Multi-mode code quality analysis covering security reviews (OWASP Top 10), clarity refactoring (readability rules), and synthesis analysis (cross-file issues). Use when reviewing code for security vul",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:12.690465Z"
-}

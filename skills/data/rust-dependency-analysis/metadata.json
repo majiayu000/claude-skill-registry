@@ -1,9 +1,0 @@
-{
-  "name": "rust-dependency-analysis",
-  "description": "Use this skill when the user asks about Rust module dependencies, dependency graphs,architecture visualization, cycle detection, DAG analysis, or module structure. Activatewhen you see phrases like \"s",
-  "repo": "danballance/claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

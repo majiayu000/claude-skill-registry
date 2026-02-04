@@ -1,9 +1,0 @@
-{
-  "name": "task-debugger",
-  "description": "Debug and fix failures in Taskcluster tasks. Use this skill when the user asks to debug a task, fix a failing task, or investigate task errors/failures. This skill uses the Taskcluster CLI to fetch ta",
-  "repo": "ahal/dot-files",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

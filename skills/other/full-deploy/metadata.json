@@ -1,9 +1,0 @@
-{
-  "name": "full-deploy",
-  "repo": "Pentatonic-Ltd/claude-config",
-  "path": ".claude/skills/full-deploy/SKILL.md",
-  "source": "github.com/Pentatonic-Ltd/claude-config",
-  "downloaded_at": "2026-01-14T03:21:25.217891Z",
-  "dir_name": "full-deploy",
-  "category": "other"
-}

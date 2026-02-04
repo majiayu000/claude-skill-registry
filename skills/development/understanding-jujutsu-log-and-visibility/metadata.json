@@ -1,8 +1,0 @@
-{
-  "name": "understanding-jujutsu-log-and-visibility",
-  "repo": "edmundmiller/dotfiles",
-  "category": "development",
-  "description": "Understand what commits are visible in jj log, elided revisions, and how to display different views. Use when commits seem missing, understanding log output, comparing jj log to git log, or seeing \"el",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.103839Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "jira-auto-detector",
-  "description": "Automatically detects Jira issue mentions (EC-1234, IS-8046, URLs) and intelligently fetches context via jira-analyzer subagent when needed for the conversation",
-  "repo": "schovi/claude-schovi",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

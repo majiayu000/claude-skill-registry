@@ -1,9 +1,0 @@
-{
-  "name": "commit-lint",
-  "description": "Formats and lints code with ruff using a sub-agent. Use after tests pass to ensure code style compliance.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

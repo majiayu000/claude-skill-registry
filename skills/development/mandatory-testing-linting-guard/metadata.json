@@ -1,8 +1,0 @@
-{
-  "name": "mandatory-testing-linting-guard",
-  "repo": "spartDev/My-Prompt-Manager",
-  "category": "development",
-  "description": "Enforce mandatory npm test and npm run lint execution after every code change with no exceptions for code quality and test coverage compliance",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:22.070791Z"
-}

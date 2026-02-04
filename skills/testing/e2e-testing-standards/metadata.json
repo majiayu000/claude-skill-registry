@@ -1,8 +1,0 @@
-{
-  "name": "e2e-testing-standards",
-  "repo": "williamzujkowski/standards",
-  "category": "testing",
-  "description": "Implement robust E2E tests with Playwright or Cypress using Page Object Model, proper waits, and CI/CD integration. Covers selector strategies, flaky test prevention, and cross-browser testing pattern",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:33.904364Z"
-}

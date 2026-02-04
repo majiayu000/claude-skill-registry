@@ -1,9 +1,0 @@
-{
-  "name": "setup-oadp-aws",
-  "description": "Configure OADP for AWS with S3 storage, EBS snapshots, IAM policies, and support for standard clusters and ROSA (Red Hat OpenShift Service on AWS).",
-  "repo": "mpryc/ai-agents-and-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

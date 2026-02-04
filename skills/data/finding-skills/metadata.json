@@ -1,9 +1,0 @@
-{
-  "name": "finding-skills",
-  "description": "Searches and recommends Claude Code skills and plugins from local database and SkillsMP API. Activates when user asks to find skills, search plugins, get recommendations for PDF/Git/code-review/fronte",
-  "repo": "jeongsk/claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

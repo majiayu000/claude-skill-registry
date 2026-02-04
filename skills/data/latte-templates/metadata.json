@@ -1,9 +1,0 @@
-{
-  "name": "latte-templates",
-  "description": "Provides Latte templating syntax and conventions. Use when creating templates, working with Latte syntax, tags, filters, layouts, template classes, or Latte extensions.",
-  "repo": "nette/claude-code",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

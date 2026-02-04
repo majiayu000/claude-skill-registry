@@ -1,9 +1,0 @@
-{
-  "name": "ocaml-dune-migration",
-  "description": "Migrating OCaml projects from ocamlbuild/topkg to dune. Use when discussing _tags files, .mllib files, pkg/pkg.ml, topkg, or build system migration.",
-  "repo": "avsm/ocaml-claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

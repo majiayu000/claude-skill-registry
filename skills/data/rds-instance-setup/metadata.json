@@ -1,9 +1,0 @@
-{
-  "name": "rds-instance-setup",
-  "description": "Rds Instance Setup - Auto-activating skill for AWS Skills.Triggers on: rds instance setup, rds instance setupPart of the AWS Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

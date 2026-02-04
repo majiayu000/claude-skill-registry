@@ -1,9 +1,0 @@
-{
-  "name": "dev-swarm-refine-mcp-skill-descriptions",
-  "description": "Review and refine MCP skill descriptions to follow the agent skill specification, and record approved overrides in dev-swarm/mcp_descriptions.yaml. Use when the user asks to update one MCP skill descr",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

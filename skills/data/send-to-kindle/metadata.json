@@ -1,9 +1,0 @@
-{
-  "name": "send-to-kindle",
-  "description": "Sends EPUB and PDF files to Kindle device via email using Apple Mail.app on macOS. Use when the user wants to send documents to their Kindle, transfer reading materials, or email files to their Kindle",
-  "repo": "peerasak-u/peerasak-claude-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

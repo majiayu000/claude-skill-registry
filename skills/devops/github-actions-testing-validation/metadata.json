@@ -1,8 +1,0 @@
-{
-  "name": "github-actions-testing-validation",
-  "repo": "willsigmon/claude-skills",
-  "category": "devops",
-  "description": "Expert guidance for testing and validating GitHub Actions workflows before deployment - catches cache errors, path issues, monorepo dependencies, and service container problems that local testing miss",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:34.939850Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "pm-workflow-trigger",
-  "description": "Natural language wrapper for PM workflow commands - automatically triggers /pm:epic-start, /pm:issue-start, /pm:prd-parse when users express PM workflow intent",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

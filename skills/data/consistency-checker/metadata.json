@@ -1,9 +1,0 @@
-{
-  "name": "consistency-checker",
-  "description": "写作过程中自动检查角色行为、世界规则和时间线一致性，在问题成为严重错误前主动提醒",
-  "repo": "wordflowlab/agentsdk",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

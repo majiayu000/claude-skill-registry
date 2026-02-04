@@ -1,9 +1,0 @@
-{
-  "name": "compliance-report-generator",
-  "description": "Generate compliance reports from OSCAL assessment results, SSPs, and POA&Ms in various formats. Use this skill to create audit-ready documentation, executive summaries, and detailed compliance status ",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

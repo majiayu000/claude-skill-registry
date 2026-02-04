@@ -1,9 +1,0 @@
-{
-  "name": "codebase-health-reporter",
-  "description": "Generate comprehensive health report for Leavn codebase - metrics, technical debt, bugs found/fixed, recommendations for next session",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

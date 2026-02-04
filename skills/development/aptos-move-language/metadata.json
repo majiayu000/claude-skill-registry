@@ -1,7 +1,0 @@
-{
-  "name": "aptos-move-language",
-  "description": "Expert on Move programming language - abilities (copy/drop/store/key), generics, phantom types, references, global storage operations, signer pattern, visibility modifiers, friend functions, inline op",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.479150Z"
-}

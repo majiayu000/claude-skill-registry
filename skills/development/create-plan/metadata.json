@@ -1,7 +1,0 @@
-{
-  "name": "create-plan",
-  "description": "Create a concise plan. Use when a user explicitly asks for a plan related to a coding task.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.358910Z"
-}

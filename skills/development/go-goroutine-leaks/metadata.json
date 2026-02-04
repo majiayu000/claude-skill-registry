@@ -1,8 +1,0 @@
-{
-  "name": "go-goroutine-leaks",
-  "repo": "JamesPrial/claudefiles",
-  "category": "development",
-  "description": "Prevent goroutine leaks with proper shutdown mechanisms",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:53.785765Z"
-}

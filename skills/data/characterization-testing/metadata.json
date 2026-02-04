@@ -1,9 +1,0 @@
-{
-  "name": "characterization-testing",
-  "description": "Create tests that describe what legacy code actually does (not what it should do) as safety net before refactoring",
-  "repo": "spacholski1225/cc-config",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

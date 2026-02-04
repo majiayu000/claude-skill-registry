@@ -1,9 +1,0 @@
-{
-  "name": "using-cache-directive",
-  "description": "Teach Cache Components model with 'use cache' directive in Next.js 16. Use when implementing caching, optimizing performance, working with dynamic data, or migrating from Next.js 15 caching patterns.",
-  "repo": "djankies/claude-configs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "task-estimation",
-  "repo": "dinogit/claude-code-dashboard",
-  "category": "documents",
-  "description": "Provides task estimation before starting work. Use when planning new features, refactoring, bug fixes, or any non-trivial changes. Triggered by keywords like estimate, plan, complexity, tokens, approa",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:19.445494Z"
-}

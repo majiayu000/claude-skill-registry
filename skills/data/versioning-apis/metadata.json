@@ -1,9 +1,0 @@
-{
-  "name": "versioning-apis",
-  "description": "Implement API versioning with backward compatibility, deprecation notices, and migration paths.Use when managing API versions and backward compatibility.Trigger with phrases like \"version the API\", \"m",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

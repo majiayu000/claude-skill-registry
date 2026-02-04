@@ -1,9 +1,0 @@
-{
-  "name": "tdd-pytest",
-  "description": "Python/pytest TDD specialist for test-driven development workflows. Use when writing tests, auditing test quality, running pytest, or generating test reports. Integrates with uv and pyproject.toml con",
-  "repo": "89jobrien/steve",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

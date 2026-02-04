@@ -1,9 +1,0 @@
-{
-  "name": "frontend-view-pattern",
-  "description": "Garante padrões consistentes de views Blade no Easy Budget (Dashboard, Index, Create, Edit, Show).",
-  "repo": "JoseApRJunior/easy-budget-laravel",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/JoseApRJunior/easy-budget-laravel"
-}

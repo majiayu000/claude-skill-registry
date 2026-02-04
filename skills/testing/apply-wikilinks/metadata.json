@@ -1,8 +1,0 @@
-{
-  "name": "apply-wikilinks",
-  "repo": "bencassie/flywheel",
-  "category": "testing",
-  "description": "Apply wikilink suggestions to current or specified note. Triggers on \"apply wikilinks\", \"add wikilinks\", \"wikilink this note\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:45.206833Z"
-}

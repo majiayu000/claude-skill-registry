@@ -1,8 +1,0 @@
-{
-  "name": "dependency-supply-chain-security",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "security",
-  "description": "Manage dependencies and supply chain security to prevent vulnerable or malicious packages. Use this skill when you need to audit dependencies, update packages, check for vulnerabilities, understand su",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:05.301267Z"
-}

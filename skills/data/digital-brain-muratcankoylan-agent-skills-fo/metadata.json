@@ -1,9 +1,0 @@
-{
-  "name": "digital-brain-muratcankoylan-agent-skills-fo",
-  "description": "This skill should be used when the user asks to \"write a post\", \"check my voice\", \"look up contact\", \"prepare for meeting\", \"weekly review\", \"track goals\", or mentions personal brand, content creation",
-  "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
-  "category": "development",
-  "tags": [],
-  "stars": 7753,
-  "source": "github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
-}

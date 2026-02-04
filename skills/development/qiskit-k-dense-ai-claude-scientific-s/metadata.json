@@ -1,7 +1,0 @@
-{
-  "name": "qiskit-k-dense-ai-claude-scientific-s",
-  "description": "IBM quantum computing framework. Use when targeting IBM Quantum hardware, working with Qiskit Runtime for production workloads, or needing IBM optimization tools. Best for IBM hardware execution, quan",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:17.276906Z"
-}

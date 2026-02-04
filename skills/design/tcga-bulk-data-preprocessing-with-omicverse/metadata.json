@@ -1,8 +1,0 @@
-{
-  "name": "tcga-bulk-data-preprocessing-with-omicverse",
-  "repo": "Starlitnightly/omicverse",
-  "category": "design",
-  "description": "Guide Claude through ingesting TCGA sample sheets, expression archives, and clinical carts into omicverse, initialising survival metadata, and exporting annotated AnnData files.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.715579Z"
-}

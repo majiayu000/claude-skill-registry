@@ -1,9 +1,0 @@
-{
-  "name": "ecosystem-migration",
-  "description": "Migrate existing repositories to use Personal GitHub Ecosystem templates and patterns. USE THIS SKILL when user says \"migrate to ecosystem\", \"adopt templates\", \"convert workflow\", \"upgrade CI\", or wan",
-  "repo": "zircote/.github",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

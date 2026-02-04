@@ -1,9 +1,0 @@
-{
-  "name": "slim-meeting-summary",
-  "description": "Write comprehensive meeting summaries with action items from meeting notes, transcripts, or agendas. Automatically fulfills actionable tasks using available tools discovered from TECH.md (MCP servers,",
-  "repo": "NASA-AMMOS/slim",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

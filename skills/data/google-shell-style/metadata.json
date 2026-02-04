@@ -1,9 +1,0 @@
-{
-  "name": "google-shell-style",
-  "description": "Use when the user asks to \"refactor shell script\", \"fix bash style\", \"apply Google style guide to shell\", \"review shell script style\", \"format bash script\", or when writing, reviewing, or refactoring ",
-  "repo": "pproenca/dot-claude-old",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

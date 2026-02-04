@@ -1,9 +1,0 @@
-{
-  "name": "playwright-wrapper",
-  "description": "Playwright 브라우저 자동화 래퍼. MCP 대신 CLI 직접 호출. E2E 테스트, 스크린샷, 웹 자동화에 사용.",
-  "repo": "garimto81/claude",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

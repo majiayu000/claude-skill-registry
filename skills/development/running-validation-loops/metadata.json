@@ -1,8 +1,0 @@
-{
-  "name": "running-validation-loops",
-  "repo": "HR-AR/Project-Conductor",
-  "category": "development",
-  "description": "Execute self-correcting validation workflow. Use when validation fails, tests fail, or build breaks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:08.991747Z"
-}

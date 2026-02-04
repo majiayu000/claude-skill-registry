@@ -1,9 +1,0 @@
-{
-  "name": "executing-tasks-from-any-source",
-  "description": "Execute tasks from both GitHub issues and Basic Memory artifacts using unified workflow - supports intelligent source detection and dual-channel status management",
-  "repo": "zenobi-us/dotfiles",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "create-pr-github",
-  "description": "Create and (optionally) merge a GitHub pull request (prefer GitHub chat tools; gh/wrappers are fallback), following the repo policy to use rebase and merge for a linear history.",
-  "repo": "oocx/tfplan2md-uat",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

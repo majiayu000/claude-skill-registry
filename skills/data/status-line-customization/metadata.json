@@ -1,9 +1,0 @@
-{
-  "name": "status-line-customization",
-  "description": "Central authority for Claude Code status line configuration. Covers custom status line creation, /statusline command, status line settings (statusLine in settings.json), JSON input structure (model, w",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

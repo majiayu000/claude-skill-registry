@@ -1,9 +1,0 @@
-{
-  "name": "git-ship",
-  "description": "Complete git workflow automation - commit, push, create PR, wait for CI, fetch results, merge. Use when you need to ship changes with proper commits and PR descriptions.",
-  "repo": "RBozydar/rbw-claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "nondominium-holochain-dna-dev",
-  "repo": "Sensorica/nondominium",
-  "category": "development",
-  "description": "Specialized skill for nondominium Holochain DNA development, focusing on zome creation, entry patterns, integrity/coordinator architecture, ValueFlows compliance, and WASM optimization. Use when creat",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:09.357320Z"
-}

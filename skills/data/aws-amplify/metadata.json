@@ -1,9 +1,0 @@
-{
-  "name": "aws-amplify",
-  "description": "Deploys and hosts full-stack web applications on AWS Amplify with SSR support, CI/CD, and backend services. Use when deploying Next.js apps to AWS, setting up Amplify hosting, or configuring Amplify b",
-  "repo": "mgd34msu/goodvibes-plugin",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

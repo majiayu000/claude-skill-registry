@@ -1,9 +1,0 @@
-{
-  "name": "budget-lifecycle",
-  "description": "Garante a integridade das transições de status e hierarquia do Budget.",
-  "repo": "JoseApRJunior/easy-budget-laravel",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/JoseApRJunior/easy-budget-laravel"
-}

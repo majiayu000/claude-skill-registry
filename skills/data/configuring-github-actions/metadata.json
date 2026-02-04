@@ -1,9 +1,0 @@
-{
-  "name": "configuring-github-actions",
-  "description": "Use when setting up GitHub Actions CI/CD for pull request checks - provides workflow templates for Python, JavaScript, and polyglot projects that run quality gates on every PR",
-  "repo": "bryonjacob/aug",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "create-decision-log",
-  "description": "의사결정 로그 Discussion 생성. 회의/Slack/PR 등에서 결정된 사항을 command-center에 기록.Use when (1) 의사결정 기록 요청, (2) 회의 결정사항 문서화, (3) summarize-meeting 스킬에서 호출.",
-  "repo": "semicolon-devteam/semo",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

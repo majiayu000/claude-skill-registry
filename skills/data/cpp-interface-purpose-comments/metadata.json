@@ -1,9 +1,0 @@
-{
-  "name": "cpp-interface-purpose-comments",
-  "description": "Add a standard Purpose comment above each pure virtual method declaration in C++ interface header files (.h/.hpp). Use when asked to batch annotate interface classes or enforce a consistent comment bl",
-  "repo": "hzqst/MetaHookSv",
-  "category": "development",
-  "tags": [],
-  "stars": 214,
-  "source": "github.com/hzqst/MetaHookSv"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "snapshot-test-refactorer",
-  "description": "Refactors brittle snapshot tests into resilient, focused assertions. Provides strategies for reducing snapshot size, extracting meaningful assertions, and maintaining snapshots. Use for \"snapshot test",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

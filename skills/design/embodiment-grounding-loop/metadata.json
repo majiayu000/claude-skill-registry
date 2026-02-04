@@ -1,8 +1,0 @@
-{
-  "name": "embodiment-grounding-loop",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "design",
-  "description": "Execute a safe sensor/actuator loop to ground tasks in local system state. Use when tasks require environment feedback or bounded actions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.009212Z"
-}

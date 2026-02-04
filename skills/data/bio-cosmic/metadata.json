@@ -1,9 +1,0 @@
-{
-  "name": "bio-cosmic",
-  "repo": "dakesan/cc-dnawork-plugin",
-  "category": "data",
-  "description": "This skill should be used when the user needs to query COSMIC Cancer Gene Census to check if genes are known cancer genes. Triggers include requests to annotate genes with cancer information, check if",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:48.096129Z",
-  "dir_name": "bio-cosmic"
-}

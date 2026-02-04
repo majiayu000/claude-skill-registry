@@ -1,9 +1,0 @@
-{
-  "name": "n8n-builder",
-  "description": "Generates valid n8n workflow JSON with nodes, connections, settings, credentials. Use when creating workflow automations programmatically, scaffolding AI agent workflows with LangChain nodes, or conve",
-  "repo": "bsamiee/Parametric_Portal",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

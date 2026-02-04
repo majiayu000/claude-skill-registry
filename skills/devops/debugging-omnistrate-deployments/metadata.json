@@ -1,8 +1,0 @@
-{
-  "name": "debugging-omnistrate-deployments",
-  "repo": "omnistrate-community/kubecon-2025-agent-template",
-  "category": "devops",
-  "description": "Systematically debug failed Omnistrate instance deployments using a progressive workflow that identifies root causes efficiently while avoiding token limits. Applies to deployment failures, probe issu",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:39.679084Z"
-}

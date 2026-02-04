@@ -1,9 +1,0 @@
-{
-  "name": "workflow-schema-composer",
-  "description": "This skill should be used when the user wants to create a new looplia workflow, generatea workflow definition file, or compose workflow steps from skill recommendations. Use whensomeone says \"create a",
-  "repo": "memorysaver/looplia-core",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

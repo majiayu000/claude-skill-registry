@@ -1,9 +1,0 @@
-{
-  "name": "user-setup",
-  "description": "Slack のデフォルトユーザーを設定する。「自分を設定」「ユーザー設定」「デフォルトユーザー設定」「Slackユーザー登録」「自分のIDを設定」「自分のSlackを設定」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

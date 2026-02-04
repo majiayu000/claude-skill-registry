@@ -1,9 +1,0 @@
-{
-  "name": "gdb-attach",
-  "description": "Use when debugging the Breenix kernel at assembly or C-level using GDB - investigating CPU exceptions, page faults, triple faults, examining register state during interrupt handling, stepping through ",
-  "repo": "ryanbreen/breenix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

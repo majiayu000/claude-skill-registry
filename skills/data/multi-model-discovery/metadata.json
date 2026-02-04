@@ -1,9 +1,0 @@
-{
-  "name": "multi-model-discovery",
-  "description": "Use Gemini to find existing solutions before building from scratch. Leverages Google Search grounding to discover code examples, libraries, and best practices to avoid reinventing the wheel.",
-  "repo": "DNYoussef/context-cascade",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

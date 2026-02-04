@@ -1,9 +1,0 @@
-{
-  "name": "dialogue",
-  "description": "Diagnose flat dialogue, same-voice characters, and lack of subtext. Use when conversations feel wooden, characters sound alike, or dialogue only does one thing at a time.",
-  "repo": "jwynia/agent-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jwynia/agent-skills"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "canary-orchestration",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "devops",
-  "description": "Plan and run canary or blue-green rollouts with health gates and rollback criteria; use when asked to deploy safely with progressive traffic shifting.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:32.536925Z"
-}

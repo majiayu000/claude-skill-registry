@@ -1,9 +1,0 @@
-{
-  "name": "gen-beads",
-  "description": "Generate beads in bd using the repo's swarm-ready rules; explicit invocation only.",
-  "repo": "tkersey/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

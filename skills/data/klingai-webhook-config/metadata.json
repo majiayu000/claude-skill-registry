@@ -1,9 +1,0 @@
-{
-  "name": "klingai-webhook-config",
-  "description": "Configure webhooks for Kling AI job completion notifications. Use when building event-driven videopipelines or need real-time job status updates. Trigger with phrases like 'klingai webhook','kling ai ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

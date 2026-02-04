@@ -1,9 +1,0 @@
-{
-  "name": "update-resume",
-  "repo": "younwony/younwony.github.io",
-  "category": "data",
-  "description": "my_career_data.md 원본 데이터의 변경사항을 이력서/경력기술서 전체 파일에 동기화합니다. 이력서 업데이트, 경력기술서 수정, 템플릿 동기화가 필요할 때 사용합니다.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:40.725388Z",
-  "dir_name": "update-resume"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "sqlmesh",
-  "description": "SQLMesh patterns for data transformation with column-level lineage and virtual environments. Use when building data pipelines that need advanced features like automatic DAG inference and efficient inc",
-  "repo": "jpoutrin/product-forge",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

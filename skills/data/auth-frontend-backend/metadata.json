@@ -1,9 +1,0 @@
-{
-  "name": "auth-frontend-backend",
-  "description": "Expert skill for connecting frontend and backend with Better Auth, implementing user-isolated secure authentication using JWT tokens on every API call with rate limiting in Next.js 16 frontend and Fas",
-  "repo": "Ahmednoorani258/Hackathon2-phase2",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

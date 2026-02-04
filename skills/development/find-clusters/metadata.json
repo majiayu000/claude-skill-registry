@@ -1,8 +1,0 @@
-{
-  "name": "find-clusters",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find knowledge clusters (groups of highly connected notes). Triggers on \"clusters\", \"knowledge clusters\", \"note clusters\", \"find clusters\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:05.408242Z"
-}

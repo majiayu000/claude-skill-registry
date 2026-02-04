@@ -1,9 +1,0 @@
-{
-  "name": "sentry-and-otel-setup",
-  "description": "This skill should be used when adding error tracking and performance monitoring with Sentry and OpenTelemetry tracing to Next.js applications. Apply when setting up error monitoring, configuring traci",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "check-requirement-coverage",
-  "description": "Homeostatic sensor detecting requirements without implementation or test coverage. Scans for REQ-* keys in requirements docs and checks if they have corresponding code and tests. Use to find coverage ",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

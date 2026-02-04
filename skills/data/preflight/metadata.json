@@ -1,9 +1,0 @@
-{
-  "name": "preflight",
-  "description": "Pre-PR check for common issues - run before pushing to catch problems early",
-  "repo": "cerico/macfair",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

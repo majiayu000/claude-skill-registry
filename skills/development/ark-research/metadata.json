@@ -1,8 +1,0 @@
-{
-  "name": "ark-research",
-  "repo": "dwmkerr/ark-claude-code-marketplace",
-  "category": "development",
-  "description": "Research technical solutions by searching the web, examining GitHub repos, and gathering evidence. Use when exploring implementation options or evaluating technologies.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.547512Z"
-}

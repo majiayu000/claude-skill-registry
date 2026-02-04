@@ -1,8 +1,0 @@
-{
-  "name": "documents-pptx",
-  "repo": "malhashemi/dotfiles",
-  "category": "documents",
-  "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:27.704255Z"
-}

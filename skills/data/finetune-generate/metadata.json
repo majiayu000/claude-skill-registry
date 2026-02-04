@@ -1,9 +1,0 @@
-{
-  "name": "finetune-generate",
-  "description": "Use when generating synthetic training data for multi-turn conversation fine-tuning. Triggers - have design artifacts ready, need to generate conversations, ready to assess quality. Requires finetune-",
-  "repo": "marcgreen/therapy-coach-finetune",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

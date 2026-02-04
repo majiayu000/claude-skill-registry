@@ -1,9 +1,0 @@
-{
-  "name": "internal-docs-agent",
-  "description": "Internal documentation and knowledge base",
-  "repo": "violetio/violet-ai-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "stable-version",
-  "description": "各言語/フレームワークの安定版バージョン確認ガイド。LTSの考え方、EOLチェック、アップグレード判断をサポート。",
-  "repo": "sk8metalme/ai-agent-setup",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

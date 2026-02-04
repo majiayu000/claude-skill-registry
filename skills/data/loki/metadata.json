@@ -1,9 +1,0 @@
-{
-  "name": "loki",
-  "description": "Guide for implementing Grafana Loki - a horizontally scalable, highly available log aggregation system. Use when configuring Loki deployments, setting up storage backends (S3, Azure Blob, GCS), writin",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

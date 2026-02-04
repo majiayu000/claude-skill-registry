@@ -1,8 +1,0 @@
-{
-  "name": "engineering-fundamentals",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "development",
-  "description": "Auto-invoke for general code quality review. Enforces naming conventions, function size, DRY principles, SOLID principles, and code organization.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:26.056414Z"
-}

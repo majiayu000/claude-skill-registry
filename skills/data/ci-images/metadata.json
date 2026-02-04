@@ -1,9 +1,0 @@
-{
-  "name": "ci-images",
-  "description": "Work with this repo’s GitHub Actions CI and GHCR Docker image publishing workflow. Use when changing generation checks, tests, formatting, or when preparing a release and validating image tags.",
-  "repo": "matt-riley/mjrwtf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

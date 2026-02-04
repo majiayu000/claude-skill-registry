@@ -1,9 +1,0 @@
-{
-  "name": "resend-integration",
-  "description": "Set up Resend email integration with newsletters, contact forms, and booking systems. Use when implementing email functionality with Resend Audiences, segments, topics, webhooks, and multi-domain acco",
-  "repo": "b-open-io/prompts",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

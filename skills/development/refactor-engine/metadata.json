@@ -1,8 +1,0 @@
-{
-  "name": "refactor-engine",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Plan and execute multi-file refactors with safety checks; use when asked to reduce tech debt or reorganize code modules.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:25.796697Z"
-}

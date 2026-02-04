@@ -1,9 +1,0 @@
-{
-  "name": "npm-trustme",
-  "description": "Automate npm Trusted Publisher setup via the npm-trustme CLI. Use when configuring or verifying npm Trusted Publishers for GitHub Actions with npx npm-trustme, including browser automation and WebAuth",
-  "repo": "regenrek/npm-trustme",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ears-authoring",
-  "description": "EARS requirement pattern authoring. Use when writing requirements using EARS patterns (Ubiquitous, State-Driven, Event-Driven, Unwanted, Optional, Complex). Provides pattern templates, validation, and",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

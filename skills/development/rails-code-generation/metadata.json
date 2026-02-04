@@ -1,8 +1,0 @@
-{
-  "name": "rails-code-generation",
-  "repo": "FlorinPopaCodes/claude-marketplace",
-  "category": "development",
-  "description": "This skill should be used when the user asks to \"generate Rails code\", \"create a model\", \"create a controller\", \"add a migration\", \"write Rails tests\", \"set up background jobs\", \"configure Rails app\",",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:34.830299Z"
-}

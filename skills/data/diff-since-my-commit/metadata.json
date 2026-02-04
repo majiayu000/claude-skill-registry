@@ -1,9 +1,0 @@
-{
-  "name": "diff-since-my-commit",
-  "description": "Show changes to a git branch since your last commit, filtered to only files you touched. Use when user asks to see what others changed on their branch, review changes since they last committed, or com",
-  "repo": "OhadRubin/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/OhadRubin/skills"
-}

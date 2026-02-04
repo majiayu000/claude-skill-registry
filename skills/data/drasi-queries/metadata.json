@@ -1,9 +1,0 @@
-{
-  "name": "drasi-queries",
-  "description": "Guide for writing Drasi continuous queries using Cypher. Use this when asked to create, modify, or troubleshoot Drasi queries.",
-  "repo": "lukemurraynz/copilot-archetypes",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

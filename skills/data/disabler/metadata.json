@@ -1,9 +1,0 @@
-{
-  "name": "disabler",
-  "description": "指定したプラグインを無効化する。「プラグインを無効化」「〇〇をオフにして」「〇〇を無効にして」「プラグインを無効に」「〇〇を止めて」「プラグインをオフに」「〇〇を無効化して」などで起動。claude plugin disable コマンドを使用して無効化。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "debug-plan",
-  "repo": "metasaver/metasaver-marketplace",
-  "category": "development",
-  "description": "Create debug test plan from user input. Use when planning browser debug sessions with Chrome DevTools. Parses prompt for URL/target, identifies interactions to test (clicks, inputs, flows), confirms p",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:08.309511Z"
-}

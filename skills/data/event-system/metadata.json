@@ -1,9 +1,0 @@
-{
-  "name": "event-system",
-  "description": "Conventions for custom event naming, dispatching, and handling between components. Use when implementing component communication.",
-  "repo": "pixu1980/karaoke-tracker",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "find-orphans",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Find orphan notes (notes with no backlinks). Triggers on \"orphans\", \"orphan notes\", \"disconnected notes\", \"isolated notes\", \"notes with no links\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:49.380254Z"
-}

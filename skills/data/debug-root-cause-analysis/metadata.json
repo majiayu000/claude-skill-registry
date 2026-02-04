@@ -1,9 +1,0 @@
-{
-  "name": "debug-root-cause-analysis",
-  "description": "Use when fixing a bug or analyzing a stack trace. Enforces systematic debugging methodology to prevent shotgun debugging and verify fixes.",
-  "repo": "JackSmack1971/claude-code-learning-flywheel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "dependency-sync",
-  "description": "Detect new imports in modified files and auto-install missing dependencies. Works with npm, uv, pip, cargo, go mod, and other package managers. Triggers after code implementation to keep manifests in ",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

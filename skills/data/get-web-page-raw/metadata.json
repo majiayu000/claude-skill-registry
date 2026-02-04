@@ -1,9 +1,0 @@
-{
-  "name": "get-web-page-raw",
-  "description": "Capture a web page as raw material (extracted text/Markdown) with metadata, storing it in the raw/ directory for later distillation.",
-  "repo": "dudarev/ai-assisted-software-development",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

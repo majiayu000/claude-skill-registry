@@ -1,8 +1,0 @@
-{
-  "name": "reviewing-llama-stack-code",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "development",
-  "description": "Use when reviewing code or PRs in the llama-stack repository (llamastack/llama-stack on GitHub). Provides specialized knowledge about Llama Stack's architecture, testing patterns (recordings folders),",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.438334Z"
-}

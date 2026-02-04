@@ -1,9 +1,0 @@
-{
-  "name": "playwright-excel",
-  "description": "Integrate Excel (.xlsx) data into Playwright codegen scripts by replacing hardcoded values with config-driven lookups, loading data with polars, and validating every step with Playwright MCP (start MC",
-  "repo": "Rukkha1024/post_auto_work",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Rukkha1024/post_auto_work"
-}

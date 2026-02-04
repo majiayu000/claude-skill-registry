@@ -1,9 +1,0 @@
-{
-  "name": "just-fucking-cancel",
-  "description": "Analyze bank transaction CSVs to find recurring charges, categorize subscriptions, and cancel what you don't need. Use when user says \"cancel subscriptions\", \"audit subscriptions\", \"find recurring cha",
-  "repo": "rohunvora/just-fucking-cancel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "building-cicd-pipelines",
-  "description": "Use when you need to work with deployment and CI/CD.This skill provides deployment automation and pipeline orchestration with comprehensive guidance and automation.Trigger with phrases like \"deploy ap",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

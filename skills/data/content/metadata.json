@@ -1,9 +1,0 @@
-{
-  "name": "content",
-  "description": "Generate posts, essays and images following brand guidelines. Use for tweets, essays, Telegram posts, and image generation. Load identity from ~/CybosVault/private/context/identity.md.",
-  "repo": "Gerstep/cybos",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Gerstep/cybos"
-}

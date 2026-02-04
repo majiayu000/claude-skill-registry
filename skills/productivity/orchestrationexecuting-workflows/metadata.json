@@ -1,8 +1,0 @@
-{
-  "name": "orchestrationexecuting-workflows",
-  "repo": "mbruhler/claude-orchestration",
-  "category": "productivity",
-  "description": "Use when user provides workflow syntax with arrows (-> || ~>), says \"run workflow\", \"execute workflow\", \"run this\", mentions step1 -> step2 patterns. Executes orchestration workflows with real-time vi",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:29.944173Z"
-}

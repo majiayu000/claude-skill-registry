@@ -1,9 +1,0 @@
-{
-  "name": "cobol-modernization",
-  "description": "Guidance for converting COBOL programs to modern languages (Python, Java, etc.) while preserving exact behavior and data format compatibility. This skill should be used when modernizing legacy COBOL a",
-  "repo": "letta-ai/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

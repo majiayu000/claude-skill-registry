@@ -1,8 +1,0 @@
-{
-  "name": "seongjin-image-describer",
-  "repo": "tjdwls101010/Seongjin_Obsidian-ClaudeCode",
-  "category": "documents",
-  "description": "Convert Wiki-style image links to Markdown format with AI-generated descriptions. Use when preprocessing markdown files for PPT generation, converting ![[image.png]] to ![description](path) format, or",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:43.698167Z"
-}

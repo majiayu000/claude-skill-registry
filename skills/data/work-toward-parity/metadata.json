@@ -1,9 +1,0 @@
-{
-  "name": "work-toward-parity",
-  "description": "Use this skill to make a the behavior of our builtins match that of TCL.",
-  "repo": "feather-lang/feather",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

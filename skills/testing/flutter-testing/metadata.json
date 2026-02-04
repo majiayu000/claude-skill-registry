@@ -1,8 +1,0 @@
-{
-  "name": "flutter-testing",
-  "repo": "abhishekbrt/GlowState",
-  "category": "testing",
-  "description": "Flutter testing patterns with mocktail. Covers unit testing, widget testing, and BLoC/Cubit testing. Use when writing tests or setting up test infrastructure.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:54.912609Z"
-}

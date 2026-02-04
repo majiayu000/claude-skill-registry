@@ -1,8 +1,0 @@
-{
-  "name": "vanilla-rails-work-breakdown",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "testing",
-  "description": "Use when planning Rails features or breaking down work into PRs - enforces 2-5 file PRs, bug fix separation, and one-sentence scope test",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.886411Z"
-}

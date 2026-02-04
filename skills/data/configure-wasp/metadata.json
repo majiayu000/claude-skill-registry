@@ -1,9 +1,0 @@
-{
-  "name": "configure-wasp",
-  "repo": "wasp-lang/claude-plugins",
-  "category": "data",
-  "description": "configure Wasp framework features and set up their app's branding (meta tags, SEO), authentication (email, social auth providers), database, email providers, styling (tailwind, shadcn), etc. Use when ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:31.388878Z",
-  "dir_name": "configure-wasp"
-}

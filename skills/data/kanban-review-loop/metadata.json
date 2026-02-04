@@ -1,9 +1,0 @@
-{
-  "name": "kanban-review-loop",
-  "description": "Kanban continuous health monitoring daemon. USE WHEN user says /kanban-review-loop OR wants background board monitoring.",
-  "repo": "SimonBlancoE/kanban-mcp",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

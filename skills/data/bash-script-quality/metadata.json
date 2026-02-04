@@ -1,9 +1,0 @@
-{
-  "name": "bash-script-quality",
-  "description": "Use when creating or editing any bash script (.sh) - ensures shellcheck passes after every edit with zero warnings",
-  "repo": "bostonaholic/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

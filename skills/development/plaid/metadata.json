@@ -1,7 +1,0 @@
-{
-  "name": "plaid",
-  "description": "Plaid banking API expert for financial data integration. Covers Plaid Link, Auth (account/routing numbers), Transactions, Identity verification, Balance checking, and webhooks. Build fintech apps with",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:02.088518Z"
-}

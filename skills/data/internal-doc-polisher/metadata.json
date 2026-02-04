@@ -1,9 +1,0 @@
-{
-  "name": "internal-doc-polisher",
-  "description": "Transform raw or transcript-like text into a polished Markdown document for internal sharing. Use when the user provides a text file (any mix of zh_tw, zh_cn, or en) and wants sentence repair, structu",
-  "repo": "blue119/yp-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

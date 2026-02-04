@@ -1,8 +1,0 @@
-{
-  "name": "orchestration-workflow",
-  "repo": "randalmurphal/claude-config",
-  "category": "productivity",
-  "description": "Choose and execute orchestration commands (/solo for straightforward tasks, /spec for planning, /conduct for complex features with SPEC.md). Covers decision tree, sub-agents, validation standards, and",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.072047Z"
-}

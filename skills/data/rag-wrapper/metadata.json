@@ -1,9 +1,0 @@
-{
-  "name": "rag-wrapper",
-  "description": "Patterns for wrapping any agent with RAG context from ChromaDB. Use to add persistent memory to imported or external agents.",
-  "repo": "mindmorass/reflex",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

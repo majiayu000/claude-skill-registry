@@ -1,8 +1,0 @@
-{
-  "name": "creating-and-editing-claude-skills",
-  "repo": "bbrowning/bbrowning-claude-marketplace",
-  "category": "design",
-  "description": "Use before creating or editing any SKILL.md files, and immediately after making skill changes to verify quality. Invoked when user asks about skill structure, descriptions, or best practices. Provides",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:09.670283Z"
-}

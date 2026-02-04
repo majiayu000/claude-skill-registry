@@ -1,9 +1,0 @@
-{
-  "name": "ungit",
-  "description": "Fetch code from GitHub repositories as LLM-friendly context. Use when needing to reference, analyze, or understand code from a GitHub repo/directory/file.",
-  "repo": "tyom/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

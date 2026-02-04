@@ -1,9 +1,0 @@
-{
-  "name": "remediation-config",
-  "description": "Security fix patterns for configuration and deployment vulnerabilities (path traversal, debug mode, security headers). Provides language-specific secure implementations.",
-  "repo": "Zate/cc-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "setup-environment",
-  "description": "Set up the embedding model for semantic search. model2vec-rs downloads models automatically; use when build fails or model download issues occur.",
-  "repo": "TrevorS/glhf",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

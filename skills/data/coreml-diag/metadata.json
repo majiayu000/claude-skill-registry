@@ -1,9 +1,0 @@
-{
-  "name": "coreml-diag",
-  "description": "CoreML diagnostics - model load failures, slow inference, memory issues, compression accuracy loss, compute unit problems, conversion errors.",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "datadog-incidents",
-  "description": "Work with Datadog Incidents API - fetch incidents with enrichment, update incident fields, understand incident data structures. Use when working with incidents or the dd get-incident/update-incident c",
-  "repo": "johnnymo87/dd-cli",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "kubernetes-best-practices",
-  "description": "Provides production-ready Kubernetes manifest guidance including resource management, security, high availability, and configuration best practices. This skill should be used when working with Kuberne",
-  "repo": "armanzeroeight/fastagent-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

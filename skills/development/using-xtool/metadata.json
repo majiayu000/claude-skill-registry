@@ -1,8 +1,0 @@
-{
-  "name": "using-xtool",
-  "repo": "2389-research/claude-plugins",
-  "category": "development",
-  "description": "Use when building iOS apps with xtool (Xcode-free iOS development), creating xtool projects, adding app extensions (widgets, share extensions), or configuring xtool.yml. Triggers on mentions of xtool,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:46.416564Z"
-}

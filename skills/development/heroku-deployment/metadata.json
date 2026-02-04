@@ -1,8 +1,0 @@
-{
-  "name": "heroku-deployment",
-  "repo": "ericbrian/multi-user-test-fest-issue-tracker",
-  "category": "development",
-  "description": "Guidelines for deploying and managing the application on Heroku, including configuration and build troubleshooting.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:28.428168Z"
-}

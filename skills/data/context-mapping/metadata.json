@@ -1,9 +1,0 @@
-{
-  "name": "context-mapping",
-  "description": "Map relationships between bounded contexts using DDD context mapping patterns. Use when defining upstream/downstream relationships, integration strategies (ACL, OHS, PL), or generating Context Mapper ",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/melodic-software/claude-code-plugins"
-}

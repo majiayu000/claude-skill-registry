@@ -1,9 +1,0 @@
-{
-  "name": "go-sdk",
-  "description": "Use when writing Go code to interact with Gitea API - automation, bots, integrations, migrations, or programmatic git forge operations",
-  "repo": "gaarutyunov/dev-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

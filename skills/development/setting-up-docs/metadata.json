@@ -1,8 +1,0 @@
-{
-  "name": "setting-up-docs",
-  "repo": "thkt/claude-config",
-  "category": "development",
-  "description": "\u30b3\u30fc\u30c9\u30d9\u30fc\u30b9\u5206\u6790\u304b\u3089\u74b0\u5883\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7\u30ac\u30a4\u30c9\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u3092\u751f\u6210\u3002 \u30d1\u30c3\u30b1\u30fc\u30b8\u30de\u30cd\u30fc\u30b8\u30e3\u3001\u5fc5\u8981\u306a\u30c4\u30fc\u30eb\u3001\u74b0\u5883\u5909\u6570\u3001\u8d77\u52d5\u30b3\u30de\u30f3\u30c9\u3092\u691c\u51fa\u3002 \u30c8\u30ea\u30ac\u30fc: setup guide, environment setup, development environment, installation guide, getting started, prerequisites.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:23.648702Z"
-}

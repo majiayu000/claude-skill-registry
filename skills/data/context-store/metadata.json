@@ -1,9 +1,0 @@
-{
-  "name": "context-store",
-  "description": "Context Store - Document management system for storing, querying, and retrieving documents across Claude Code sessions. Use this to maintain knowledge bases, share documents between agents. Whenever y",
-  "repo": "rawe/claude-agent-orchestrator",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

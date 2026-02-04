@@ -1,9 +1,0 @@
-{
-  "name": "activation-patching",
-  "description": "Causal intervention via activation patching to identify important model components. Use when determining which layers, heads, or positions are causally responsible for model behavior.",
-  "repo": "ndif-team/skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ndif-team/skills"
-}

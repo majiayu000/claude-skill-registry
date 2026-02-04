@@ -1,9 +1,0 @@
-{
-  "name": "prompting-patterns",
-  "description": "Automatically applies when engineering prompts for LLMs. Ensures proper prompt structure, templates, few-shot examples, context management, and injection prevention.",
-  "repo": "ricardoroche/ricardos-claude-code",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

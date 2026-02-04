@@ -1,9 +1,0 @@
-{
-  "name": "filter-js-from-html",
-  "description": "Guidance for filtering JavaScript and XSS attack vectors from HTML while preserving original formatting. This skill should be used when tasks involve removing script content, sanitizing HTML, filterin",
-  "repo": "letta-ai/skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

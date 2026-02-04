@@ -1,9 +1,0 @@
-{
-  "name": "process-github-issues",
-  "description": "Automatically process open GitHub bug reports by spawning subagents that use the frontend-debug skill to fix each issue in isolated branches. This skill should be used when the user wants to systemati",
-  "repo": "arlenagreer/claude_configuration_docs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

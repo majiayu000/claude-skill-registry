@@ -1,9 +1,0 @@
-{
-  "name": "fix-rubocop",
-  "description": "Fixes RuboCop offenses systematically and safely. Use when the user wants to reduce RuboCop warnings, clean up .rubocop_todo.yml, fix linting errors, or improve code style compliance.",
-  "repo": "sakuro/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

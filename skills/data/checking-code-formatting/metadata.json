@@ -1,9 +1,0 @@
-{
-  "name": "checking-code-formatting",
-  "description": "Check code formatting, detect style issues, and identify inconsistencies. Use when the user asks to check formatting, code style, linting, format issues, or code formatting problems.",
-  "repo": "meirm/askGPT",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

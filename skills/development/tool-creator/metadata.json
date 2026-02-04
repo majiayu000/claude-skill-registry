@@ -1,8 +1,0 @@
-{
-  "name": "tool-creator",
-  "repo": "aws-samples/aws-ai-ml-workshop-kr",
-  "category": "development",
-  "description": "This skill should be used when users want to create a new tool for the Strands SDK agent system. It supports creating both agent-as-a-tool (complex agents wrapped as tools) and regular tools (simple f",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:25.829652Z"
-}

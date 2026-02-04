@@ -1,9 +1,0 @@
-{
-  "name": "chatbot-component",
-  "description": "ChatBotプロジェクトに新しいUIコンポーネントを追加するためのスキル。コンポーネント作成手順、CSS構成ルール、イベントハンドリングパターンを提供します。新しいUIコンポーネントを作成する時、モーダルを追加する時、CSSスタイルを追加する時、UIイベントを処理する時に使用してください。",
-  "repo": "SuperPyonchiX/ChatBot",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

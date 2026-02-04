@@ -1,9 +1,0 @@
-{
-  "name": "node-ts-cli",
-  "description": "Generate new Node.js CLI tool projects using TypeScript with ESM modules, tsc for building, tsx for development, Biome for linting/formatting, and Node's built-in test runner. Use this skill when the ",
-  "repo": "nnance/claude-agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

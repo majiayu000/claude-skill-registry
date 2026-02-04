@@ -1,9 +1,0 @@
-{
-  "name": "delta-live-tables",
-  "description": "Delta Live Tables (DLT) pipeline patterns and examples for building declarative, self-healing data pipelines with automatic quality enforcement and lineage tracking.",
-  "repo": "vivekgana/databricks-platform-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

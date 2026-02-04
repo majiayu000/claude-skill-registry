@@ -1,9 +1,0 @@
-{
-  "name": "qa-security-scan",
-  "description": "Security scanning templates and checklists for OWASP Top 10, authentication, authorization, data protection. Use when conducting security testing or vulnerability assessment.This skill provides compre",
-  "repo": "takemi-ohama/ai-agent-marketplace",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

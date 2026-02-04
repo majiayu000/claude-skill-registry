@@ -1,9 +1,0 @@
-{
-  "name": "storage-networking",
-  "description": "Master Kubernetes storage management and networking architecture. Learn persistent storage, network policies, service discovery, and ingress routing.",
-  "repo": "pluginagentmarketplace/custom-plugin-kubernetes",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

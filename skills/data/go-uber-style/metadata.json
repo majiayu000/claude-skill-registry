@@ -1,9 +1,0 @@
-{
-  "name": "go-uber-style",
-  "description": "Use this skill when writing Go code following the Uber Go Style Guide. Provides comprehensive guidance on idiomatic Go patterns, error handling, concurrency safety, performance optimization, and test-",
-  "repo": "nhlongnguyen/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

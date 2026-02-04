@@ -1,9 +1,0 @@
-{
-  "name": "color-scale",
-  "description": "Generates perceptually uniform OKLCH color palettes from brand colors. Use when creating color systems, theme palettes, or converting hex values to 11-step scales. Outputs CSS custom properties, Tailw",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

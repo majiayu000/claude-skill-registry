@@ -1,9 +1,0 @@
-{
-  "name": "generate-candidate-summary-skill",
-  "description": "Generate a markdown summary report from candidate_profile.csv with statistics and insights",
-  "repo": "johnsonice/Fund_Process_Automation",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/johnsonice/Fund_Process_Automation"
-}

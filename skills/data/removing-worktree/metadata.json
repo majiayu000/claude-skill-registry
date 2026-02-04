@@ -1,9 +1,0 @@
-{
-  "name": "removing-worktree",
-  "description": "Use when user wants to safely remove an autonomy worktree while preserving the branch",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

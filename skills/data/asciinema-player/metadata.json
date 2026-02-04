@@ -1,9 +1,0 @@
-{
-  "name": "asciinema-player",
-  "description": "Play .cast terminal recordings in iTerm2 with full CLI controls. TRIGGERS - asciinema, .cast file, terminal recording, play cast, recording playback, play recording. Uses AskUserQuestion for speed/opt",
-  "repo": "terrylica/cc-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

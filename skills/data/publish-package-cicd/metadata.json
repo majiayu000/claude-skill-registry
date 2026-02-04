@@ -1,9 +1,0 @@
-{
-  "name": "publish-package-cicd",
-  "description": "CI/CD publishing workflow for npm packages using Changesets + npm Trusted Publishers (OIDC). Use when setting up automated npm publishing for monorepos, configuring GitHub Actions for releases, troubl",
-  "repo": "joelhooks/swarm-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

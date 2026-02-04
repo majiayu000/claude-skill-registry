@@ -1,8 +1,0 @@
-{
-  "name": "married-put-strategy",
-  "repo": "keith-mvs/ordinis",
-  "category": "development",
-  "description": "Analyzes and implements married-put options strategies for portfolio protection. Calculates breakeven points, profit/loss scenarios, and compares strike prices (ITM, ATM, OTM) across multiple expirati",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:18.224314Z"
-}

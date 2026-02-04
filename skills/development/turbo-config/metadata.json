@@ -1,8 +1,0 @@
-{
-  "name": "turbo-config",
-  "repo": "metasaver/claude-marketplace",
-  "category": "development",
-  "description": "Turbo.json configuration template and validation logic for Turborepo pipelines. Use when creating or auditing turbo.json files to ensure correct pipeline task configuration, caching strategy, and the ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:06.135124Z"
-}

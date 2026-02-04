@@ -1,8 +1,0 @@
-{
-  "name": "stitch-session-manager",
-  "repo": "joaquimscosta/arkhe-claude-plugins",
-  "category": "design",
-  "description": "Manages multi-screen Google Stitch design sessions by tracking prompts, screens, and shared style language. Use when you need continuity across Stitch prompts, want to append or summarize sessions, or",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:15.111723Z"
-}

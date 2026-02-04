@@ -1,9 +1,0 @@
-{
-  "name": "hooks-builder",
-  "description": "Create event-driven hooks for Claude Code automation. Use when the user wants to create hooks, automate tool validation, add pre/post processing, enforce security policies, or configure settings.json ",
-  "repo": "mike-coulbourn/claude-vibes",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

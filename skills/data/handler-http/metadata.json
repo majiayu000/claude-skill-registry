@@ -1,9 +1,0 @@
-{
-  "name": "handler-http",
-  "description": "HTTP/HTTPS handler for external documentation fetching.Fetches content from web URLs with safety checks and metadata extraction.",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

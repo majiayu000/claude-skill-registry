@@ -1,9 +1,0 @@
-{
-  "name": "klingai-compliance-review",
-  "description": "Conduct compliance reviews for Kling AI integrations. Use when preparing for audits,ensuring regulatory compliance, or reviewing security posture. Trigger with phrases like'klingai compliance', 'kling",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

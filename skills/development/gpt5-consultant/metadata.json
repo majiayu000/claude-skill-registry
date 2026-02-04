@@ -1,8 +1,0 @@
-{
-  "name": "gpt5-consultant",
-  "repo": "nicknisi/dotfiles",
-  "category": "development",
-  "description": "Use this skill when stuck in circular debugging, when solutions aren't working despite multiple attempts, or when the user expresses frustration with lack of progress. Bring in GPT-5 as a third-party ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:40.721072Z"
-}

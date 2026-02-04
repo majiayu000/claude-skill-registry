@@ -1,7 +1,0 @@
-{
-  "name": "prompt-engineering-neolabhq-context-engineering-k",
-  "description": "Use this skill when you writing commands, hooks, skills for Agent, or prompts for sub agents or any other LLM interaction, including optimizing prompts, improving LLM outputs, or designing production ",
-  "category": "development",
-  "source": "github.com/NeoLabHQ/context-engineering-kit",
-  "imported_at": "2026-01-24T14:54:08.679275Z"
-}

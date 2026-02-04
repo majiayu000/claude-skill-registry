@@ -1,9 +1,0 @@
-{
-  "name": "codex-exec",
-  "description": "Execute development tasks using OpenAI Codex CLI for code generation, refactoring, feature implementation, and bug fixes. Use when the user asks to create code, add features, refactor, fix bugs, or ge",
-  "repo": "dceoy/gh-actions-for-devops",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

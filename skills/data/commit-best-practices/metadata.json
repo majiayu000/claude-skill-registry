@@ -1,9 +1,0 @@
-{
-  "name": "commit-best-practices",
-  "description": "Create git commits with AI-generated messages following best practices. Use when the user asks to commit changes, mentions \"commit\", wants to save work to git, or has made changes ready to be committe",
-  "repo": "olioapps/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

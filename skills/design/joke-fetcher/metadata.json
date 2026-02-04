@@ -1,8 +1,0 @@
-{
-  "name": "joke-fetcher",
-  "repo": "Maxiviper117/result-flow",
-  "category": "design",
-  "description": "Fetch random jokes from JokeAPI using a Bun CLI script. Use when users ask for a random joke, want jokes by category, or need a quick joke via the JokeAPI endpoint.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:22.187365Z"
-}

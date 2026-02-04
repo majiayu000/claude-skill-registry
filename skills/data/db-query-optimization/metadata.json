@@ -1,9 +1,0 @@
-{
-  "name": "db-query-optimization",
-  "description": "Comprehensive guide to optimizing database queries, understanding EXPLAIN plans, indexing strategies, and eliminating N+1 queries",
-  "repo": "AmnadTaowsoam/cerebratechai-claude-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/AmnadTaowsoam/cerebratechai-claude-skills"
-}

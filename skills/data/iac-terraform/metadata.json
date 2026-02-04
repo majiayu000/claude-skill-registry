@@ -1,9 +1,0 @@
-{
-  "name": "iac-terraform",
-  "description": "Infrastructure as Code with Terraform and Terragrunt. Use for creating, validating, troubleshooting, and managing Terraform configurations, modules, and state. Covers Terraform workflows, best practic",
-  "repo": "ahmedasmar/devops-claude-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

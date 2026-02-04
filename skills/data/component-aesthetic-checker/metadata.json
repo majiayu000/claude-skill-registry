@@ -1,9 +1,0 @@
-{
-  "name": "component-aesthetic-checker",
-  "description": "Validates shadcn/ui component customization depth, ensuring components aren't used with default props and checking for consistent design system implementation across Tanstack Start applications",
-  "repo": "hirefrank/hirefrank-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

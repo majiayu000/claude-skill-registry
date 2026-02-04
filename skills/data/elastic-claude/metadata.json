@@ -1,9 +1,0 @@
-{
-  "name": "elastic-claude",
-  "description": "Index and search project knowledge. Use when starting a new task to find related prior work, when ingesting documents or chats, or when searching project history for context.",
-  "repo": "Kirill-Babkin/elastic-claude",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

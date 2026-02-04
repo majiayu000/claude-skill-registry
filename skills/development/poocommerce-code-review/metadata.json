@@ -1,8 +1,0 @@
-{
-  "name": "poocommerce-code-review",
-  "repo": "notmattpress/poocommerce",
-  "category": "development",
-  "description": "Review PooCommerce code changes for coding standards compliance. Use when reviewing code locally, performing automated PR reviews, or checking code quality.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:03.687989Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "component-registry-query",
-  "repo": "stolostron/acm-config",
-  "category": "development",
-  "description": "Query ACM/MCE component registry information including squad ownership, GitHub repositories, Konflux components, JIRA components, bundles, and prodsec components. Use when user asks about component ow",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:34.988245Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ctx-brainstorming",
-  "repo": "NickCrew/claude-cortex",
-  "category": "data",
-  "description": "Rapid ideation skill adapted from obra/superpowers to kick off claude-ctx sessions. Use when defining scope, aligning on goals, or exploring solution space before coding.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:35.667445Z",
-  "dir_name": "ctx-brainstorming"
-}

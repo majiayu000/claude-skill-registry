@@ -1,8 +1,0 @@
-{
-  "name": "integrations",
-  "repo": "omerlefaruk/CasareRPA",
-  "category": "security",
-  "description": "External API integrations with OAuth2, async HTTP, and proper error handling",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:26.277157Z"
-}

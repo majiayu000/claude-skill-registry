@@ -1,8 +1,0 @@
-{
-  "name": "issue-analysis-with-label-inference",
-  "repo": "ShunsukeHayashi/Miyabi",
-  "category": "development",
-  "description": "Analyze GitHub Issues and automatically infer appropriate labels from Miyabi's 57-label system across 11 categories. Use when creating or triaging Issues, or when label inference is needed.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:32.465709Z"
-}

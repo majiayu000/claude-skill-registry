@@ -1,9 +1,0 @@
-{
-  "name": "game-state",
-  "description": "Game state management for turn-based board games. Use when designing state structure, implementing game logic, validating actions, managing phases/turns, or handling complex game rules. Covers reducer",
-  "repo": "fil512/upship",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

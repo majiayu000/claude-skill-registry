@@ -1,9 +1,0 @@
-{
-  "name": "corder-test-generation",
-  "description": "Generate unit tests, integration tests, and test fixtures for code. Supports Jest, Mocha, pytest. Use when writing tests or improving test coverage.This skill provides automated test generation:- Unit",
-  "repo": "takemi-ohama/ai-agent-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

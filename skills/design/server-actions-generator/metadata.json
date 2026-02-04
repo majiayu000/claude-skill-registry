@@ -1,8 +1,0 @@
-{
-  "name": "server-actions-generator",
-  "repo": "RomualdP/hoki",
-  "category": "design",
-  "description": "G\u00e9n\u00e8re des Next.js Server Actions comme couche d'orchestration mince entre frontend et backend NestJS. \u00c0 utiliser lors de la cr\u00e9ation d'actions, mutations, ou quand l'utilisateur mentionne \"server act",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:57.667237Z"
-}

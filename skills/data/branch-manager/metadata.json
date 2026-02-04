@@ -1,9 +1,0 @@
-{
-  "name": "branch-manager",
-  "description": "Create and manage Git branches with safety checks and validation",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

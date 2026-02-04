@@ -1,7 +1,0 @@
-{
-  "name": "pytorch-lightning-k-dense-ai-claude-scientific-s",
-  "description": "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure Trainers for multi-GPU/TPU, implement data pipelines, callbacks, logging (W&B, TensorBoard), distrib",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.093832Z"
-}

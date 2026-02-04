@@ -1,9 +1,0 @@
-{
-  "name": "dev-swarm-git-merge",
-  "description": "Perform git partial merges (checkout specific folders from another branch) and squash merges (clean single-commit integration) to selectively integrate changes across branches.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

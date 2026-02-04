@@ -1,8 +1,0 @@
-{
-  "name": "backend-requirements",
-  "repo": "MuhammedAlkhudiry/ai-concise-guidelines",
-  "category": "design",
-  "description": "Document frontend data needs for backend developers. Use when frontend needs to communicate API requirements to backend, or user says 'backend requirements', 'what data do I need', 'API requirements',",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:13.927921Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "docs-manager-skill",
-  "description": "Orchestrates complete single-document workflows with automatic validation and indexing in a write→validate→index pipeline",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

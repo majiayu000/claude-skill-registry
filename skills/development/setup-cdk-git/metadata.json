@@ -1,8 +1,0 @@
-{
-  "name": "setup-cdk-git",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when setting up git workflows for Claude Code - installs pre-commit hooks, commit templates with Claude attribution, PR templates, branch naming helpers, and Claude-specific gitignore entries",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.174097Z"
-}

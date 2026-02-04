@@ -1,9 +1,0 @@
-{
-  "name": "swift-binding-fixer",
-  "description": "Fix SwiftUI binding errors ($var issues) by adding @Bindable to @Observable ViewModels in Leavn app",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

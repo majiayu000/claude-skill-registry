@@ -1,9 +1,0 @@
-{
-  "name": "nim-memory-management",
-  "description": "Use when nim's memory management including garbage collection strategies, manual memory control, destructors, move semantics, ref/ptr types, memory safety, and optimization techniques for performance-",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

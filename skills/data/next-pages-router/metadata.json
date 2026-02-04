@@ -1,9 +1,0 @@
-{
-  "name": "next-pages-router",
-  "description": "Use when working with Next.js Pages Router (pages/ directory). Invoke for getStaticProps, getServerSideProps, getStaticPaths, API routes in pages/api, dynamic routing, or migrating from pages/ to app/",
-  "repo": "zacharyr0th/next-starter",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

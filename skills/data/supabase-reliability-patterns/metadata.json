@@ -1,9 +1,0 @@
-{
-  "name": "supabase-reliability-patterns",
-  "description": "Implement Supabase reliability patterns including circuit breakers, idempotency, and graceful degradation.Use when building fault-tolerant Supabase integrations, implementing retry strategies,or addin",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

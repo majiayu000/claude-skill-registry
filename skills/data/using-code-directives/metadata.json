@@ -1,9 +1,0 @@
-{
-  "name": "using-code-directives",
-  "description": "Use when reading or editing files that contain @implement, @docs, @refactor, @test, or @todo directive comments - handle directives systematically with appropriate post-action transformations",
-  "repo": "asermax/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "updater",
-  "description": "指定したプラグインを最新バージョンに更新する。「プラグインを更新」「〇〇をアップデート」「最新版にして」「プラグインをアップデート」「〇〇を更新して」「プラグインを最新に」「〇〇のバージョンを上げて」などで起動。claude plugin update コマンドを使用して更新。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

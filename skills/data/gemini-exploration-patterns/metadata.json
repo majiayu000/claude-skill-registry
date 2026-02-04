@@ -1,9 +1,0 @@
-{
-  "name": "gemini-exploration-patterns",
-  "description": "Strategic patterns for codebase exploration using Gemini's large context window. Covers token thresholds, model routing, and exploration strategies. Use when deciding between Claude and Gemini for exp",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

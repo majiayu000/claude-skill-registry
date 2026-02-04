@@ -1,9 +1,0 @@
-{
-  "name": "gemini-sandbox-configuration",
-  "description": "Central authority for Gemini CLI sandboxing and isolation. Covers Docker, Podman, macOS Seatbelt profiles, and security boundaries. Use when enabling sandboxing, choosing sandbox methods, configuring ",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

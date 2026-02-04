@@ -1,9 +1,0 @@
-{
-  "name": "implement-phases",
-  "description": "Use when implementing phases from a plan document, executing phased implementations, orchestrating sub-agents for phase work, or when /workflow-implement-phases command is invoked. Provides dependency",
-  "repo": "charlesjones-dev/claude-code-plugins-dev",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

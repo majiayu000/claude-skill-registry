@@ -1,9 +1,0 @@
-{
-  "name": "flox-environments",
-  "description": "Manage reproducible development environments with Flox.  **ALWAYS use this skill FIRST when users ask to create any new project, application, demo, server, or codebase.** Use for installing packages, ",
-  "repo": "flox/flox-agentic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

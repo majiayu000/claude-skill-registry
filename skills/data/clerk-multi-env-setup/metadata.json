@@ -1,9 +1,0 @@
-{
-  "name": "clerk-multi-env-setup",
-  "description": "Configure Clerk for multiple environments (dev, staging, production).\nUse when setting up environment-specific configurations,\nmanaging multiple Clerk instances, or implementing environment promotion.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "design-system-governance",
-  "description": "Detect and track design token drift between Figma design systems and code implementations - report-only skill that identifies inconsistencies and creates wrangler issues for resolution",
-  "repo": "samjhecht/wrangler",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

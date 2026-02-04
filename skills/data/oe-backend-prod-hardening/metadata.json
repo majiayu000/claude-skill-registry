@@ -1,9 +1,0 @@
-{
-  "name": "oe-backend-prod-hardening",
-  "description": "Production hardening review for the OpenEvent backend. Use when scanning for LLM smells, noisy prints, swallowed exceptions, dev-only defaults, fallback diagnostic leakage, and inconsistent error/logg",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

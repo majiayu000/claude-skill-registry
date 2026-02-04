@@ -1,9 +1,0 @@
-{
-  "name": "working-with-provenance",
-  "description": "Use when tracing Konflux builds from image references, finding build logs from artifacts, or verifying source commits for container images - extracts provenance attestations to navigate from images ba",
-  "repo": "konflux-ci/skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

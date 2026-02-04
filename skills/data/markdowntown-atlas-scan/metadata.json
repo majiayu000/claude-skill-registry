@@ -1,9 +1,0 @@
-{
-  "name": "markdowntown-atlas-scan",
-  "description": "Atlas Simulator scan flow and next-step guidance for markdowntown. Use when working on folder scanning, tool detection, cwd handling, results panels, or scan-to-workbench CTAs.",
-  "repo": "joelklabo/markdowntown",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/joelklabo/markdowntown"
-}

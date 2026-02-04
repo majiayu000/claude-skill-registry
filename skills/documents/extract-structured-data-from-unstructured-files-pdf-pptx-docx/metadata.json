@@ -1,8 +1,0 @@
-{
-  "name": "extract-structured-data-from-unstructured-files-pdf-pptx-docx",
-  "repo": "run-llama/vibe-llama",
-  "category": "documents",
-  "description": "Invoke this skill BEFORE implementing any structured data extraction from documents to learn the correct llama_cloud_services API usage. Required reading before writing extraction code. Requires llama",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:31.545342Z"
-}

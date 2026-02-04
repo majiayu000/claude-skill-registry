@@ -1,9 +1,0 @@
-{
-  "name": "coroutines-kotlin",
-  "description": "Master Kotlin coroutines with suspend functions, flows, channels, and structured concurrency for building async applications.",
-  "repo": "spjoshis/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

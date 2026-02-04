@@ -1,8 +1,0 @@
-{
-  "name": "handling-authentication",
-  "repo": "hkcm91/StickerNestV3",
-  "category": "security",
-  "description": "Handling authentication and authorization in StickerNest. Use when the user asks about login, signup, auth, session, protected routes, user context, JWT, tokens, logout, or permission checks. Covers S",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:02.641312Z"
-}

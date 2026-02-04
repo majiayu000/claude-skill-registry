@@ -1,9 +1,0 @@
-{
-  "name": "project-context-sync",
-  "description": "Maintains synchronized project context for long-running work across sessions.Use when: starting a session (read context), completing significant work (update context),making architectural decisions (d",
-  "repo": "jasonpaulso/jasonschulz-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

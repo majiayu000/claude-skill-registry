@@ -1,9 +1,0 @@
-{
-  "name": "active-job-coder",
-  "description": "Use when creating or refactoring Active Job background jobs. Applies Rails 8 conventions, Solid Queue patterns, error handling, retry strategies, and job design best practices.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "oauth-client-setup",
-  "description": "Oauth Client Setup - Auto-activating skill for API Integration.Triggers on: oauth client setup, oauth client setupPart of the API Integration skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

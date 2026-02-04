@@ -1,9 +1,0 @@
-{
-  "name": "cc-plugin-extensions",
-  "description": "This skill should be used when the user asks to \"install a plugin\", \"extend a plugin\", \"create a .local.md file\", \"add project context for a plugin\", \"customize plugin for this project\", or mentions p",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

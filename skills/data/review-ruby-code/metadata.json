@@ -1,9 +1,0 @@
-{
-  "name": "review-ruby-code",
-  "description": "Comprehensive Ruby and Rails code review using Sandi Metz rules and SOLID principles. Automatically runs rubycritic and simplecov, analyzes changed files in current branch vs base branch, identifies O",
-  "repo": "el-feo/ai-context",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

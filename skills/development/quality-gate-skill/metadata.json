@@ -1,8 +1,0 @@
-{
-  "name": "quality-gate-skill",
-  "repo": "orakitine/claude-code-lab",
-  "category": "development",
-  "description": "Comprehensive code quality verification workflow that checks linting, formatting, type safety, tests, and build before committing code. Uses parallel agent execution for maximum speed. Non-destructive",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:26.945000Z"
-}

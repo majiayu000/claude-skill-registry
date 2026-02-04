@@ -1,9 +1,0 @@
-{
-  "name": "puppeteer-efficient-ui-verification",
-  "description": "Fast, repeatable UI verification using Puppeteer without paying browser startup per test. Use scenario suites + deterministic fixtures before jumping to full Jest E2E.",
-  "repo": "metabench/copilot-dl-news",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

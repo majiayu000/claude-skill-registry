@@ -1,8 +1,0 @@
-{
-  "name": "prometheus-api",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "development",
-  "description": "Query and interact with Prometheus HTTP API for monitoring data. Use when Claude needs to query Prometheus metrics, execute PromQL queries, retrieve targets/alerts/rules status, access metadata about ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:33.547263Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "verification-harness",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "design",
-  "description": "Validate outputs using rule-based checks (required strings, regex, length, ranges). Use when you need deterministic verification or regression checks.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:28.092782Z"
-}

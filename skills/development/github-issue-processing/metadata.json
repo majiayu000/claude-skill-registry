@@ -1,8 +1,0 @@
-{
-  "name": "github-issue-processing",
-  "repo": "L-Sypniewski/claude-code-toolkit",
-  "category": "development",
-  "description": "Extract actionable information from GitHub issues including requirements, acceptance criteria, and technical constraints. Use when analyzing GitHub issues or preparing them for workflow execution.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:44.043875Z"
-}

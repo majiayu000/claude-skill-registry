@@ -1,8 +1,0 @@
-{
-  "name": "creating-prs",
-  "repo": "ssd-mkdocs-platform/ssd-mkdocs-sample",
-  "category": "development",
-  "description": "main\u30d6\u30e9\u30f3\u30c1\u304b\u3089\u306e\u5dee\u5206\u3092\u5206\u6790\u3057\u3066Pull Request\u3092\u4f5c\u6210\u3059\u308b\u3002Use when the user wants to create a PR (PR\u4f5c\u6210), merge changes (\u5909\u66f4\u306e\u30de\u30fc\u30b8), or submit code for review (\u30b3\u30fc\u30c9\u30ec\u30d3\u30e5\u30fc\u4f9d\u983c).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:37.180476Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "faber-debugger",
-  "description": "Universal debugger skill that diagnoses workflow issues and proposes solutions using a persistent knowledge base",
-  "repo": "fractary/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

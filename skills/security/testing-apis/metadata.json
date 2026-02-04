@@ -1,8 +1,0 @@
-{
-  "name": "testing-apis",
-  "repo": "trilwu/secskills",
-  "category": "security",
-  "description": "Test REST and GraphQL APIs for authentication bypasses, authorization flaws, IDOR, mass assignment, injection attacks, and rate limiting issues. Use when pentesting APIs or testing microservices secur",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:10.495712Z"
-}

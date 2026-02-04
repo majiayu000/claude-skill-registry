@@ -1,9 +1,0 @@
-{
-  "name": "pr-formatting",
-  "description": "Create and update pull request descriptions with comprehensive, well-structured content. Use when the user asks to create a PR, mentions \"pull request\" or \"PR\", wants to merge a branch, or needs to up",
-  "repo": "olioapps/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

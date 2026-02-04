@@ -1,9 +1,0 @@
-{
-  "name": "pii-redaction-logging-policy-builder",
-  "description": "Prevents logging sensitive user data with redaction rules, logging policies, and safe log formatting. Use for \"PII redaction\", \"log privacy\", \"GDPR logging\", or \"data privacy\".",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

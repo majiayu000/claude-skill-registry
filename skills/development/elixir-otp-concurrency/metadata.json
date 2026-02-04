@@ -1,8 +1,0 @@
-{
-  "name": "elixir-otp-concurrency",
-  "repo": "vinnie357/claude-skills",
-  "category": "development",
-  "description": "Guide for building concurrent, fault-tolerant systems using OTP (GenServer, Supervisor, Task, Agent) and Elixir concurrency primitives",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:28.806019Z"
-}

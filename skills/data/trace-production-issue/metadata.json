@@ -1,9 +1,0 @@
-{
-  "name": "trace-production-issue",
-  "description": "Trace production alerts and issues back through REQ-* to original intent, creating new intent for remediation. Closes feedback loop from Runtime → Intent. Use when production alerts fire or issues dis",
-  "repo": "foolishimp/ai_sdlc_method",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

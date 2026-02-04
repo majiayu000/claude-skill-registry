@@ -1,9 +1,0 @@
-{
-  "name": "bulk-summarize",
-  "description": "This skill should be used when the user asks to \"summarize videos\", \"summarize podcasts\", \"research a topic using media\", \"bulk summarize content\", \"scan YouTube channels\", \"scan podcast feeds\", \"crea",
-  "repo": "smerchek/bulk-summarize",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

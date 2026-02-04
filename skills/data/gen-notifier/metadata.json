@@ -1,9 +1,0 @@
-{
-  "name": "gen-notifier",
-  "description": "Generic desktop notification skill for agents. Send desktop notifications when tasks are complete (or when user input/errors block progress). By default, assume that all jobs will require a notificati",
-  "repo": "kevinslin/llm",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

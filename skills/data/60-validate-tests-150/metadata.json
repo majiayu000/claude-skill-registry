@@ -1,9 +1,0 @@
-{
-  "name": "60-validate-tests-150",
-  "description": "[60] VALIDATE. Ensure new (staged and unstaged) changes are covered by tests at >70% and the full test suite is green. Use when asked to validate coverage for recent changes, add tests for modified co",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/MykhailoDmytriakha/my-preacher-helper"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "quiz-writer",
-  "description": "技術研修理解度確認テストを執筆。:::quiz、:::question、:::select、:::correctディレクティブで問題構造を記述。理解度テスト、確認問題作成時に使用。",
-  "repo": "imagepit/text-lint-plugin",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

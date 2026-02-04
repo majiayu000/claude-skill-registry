@@ -1,9 +1,0 @@
-{
-  "name": "managing-database-tests",
-  "description": "Database testing including fixtures, transactions, and rollback management.Use when performing specialized testing.Trigger with phrases like \"test the database\", \"run database tests\", or \"validate dat",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

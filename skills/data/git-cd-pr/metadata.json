@@ -1,9 +1,0 @@
-{
-  "name": "git-cd-pr",
-  "description": "Crée une Pull Request en mode Continuous Delivery avec workflow complet : QA, labels version (major/minor/patch), feature flags, code review automatique.",
-  "repo": "atournayre/claude-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

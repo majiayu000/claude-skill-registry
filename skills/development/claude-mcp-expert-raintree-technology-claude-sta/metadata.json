@@ -1,7 +1,0 @@
-{
-  "name": "claude-mcp-expert-raintree-technology-claude-sta",
-  "description": "Expert on Model Context Protocol (MCP) integration, MCP servers, installation, configuration, and authentication. Triggers when user mentions MCP, MCP servers, installing MCP, connecting tools, MCP re",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:01.495713Z"
-}

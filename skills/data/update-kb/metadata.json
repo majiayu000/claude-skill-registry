@@ -1,9 +1,0 @@
-{
-  "name": "update-kb",
-  "description": "Synchronize knowledge base documentation with current codebase implementation.Performs full, incremental, or targeted audits of source code and updatescode maps, PRDs, patterns, SOPs, and user-facing ",
-  "repo": "jayprimer/pmc-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

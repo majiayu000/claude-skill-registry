@@ -1,8 +1,0 @@
-{
-  "name": "executing-work-in-parallel",
-  "repo": "CaptainCrouton89/.claude",
-  "category": "devops",
-  "description": "Coordinate concurrent task execution through agent delegation. Plan independent work, manage dependencies, and execute multiple agents simultaneously. Use when handling multiple unrelated tasks, resea",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:17.081595Z"
-}

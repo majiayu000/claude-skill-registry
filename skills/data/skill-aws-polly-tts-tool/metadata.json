@@ -1,9 +1,0 @@
-{
-  "name": "skill-aws-polly-tts-tool",
-  "description": "AWS Polly TTS CLI for text-to-speech synthesis",
-  "repo": "dnvriend/aws-polly-tts-tool",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

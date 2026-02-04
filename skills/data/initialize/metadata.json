@@ -1,9 +1,0 @@
-{
-  "name": "initialize",
-  "description": "Initialize ÆtherLight in a new repository. Sets up folder structure, Git workflow, configuration files, and development standards.",
-  "repo": "AEtherlight-ai/lumina",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

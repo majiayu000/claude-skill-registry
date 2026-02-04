@@ -1,9 +1,0 @@
-{
-  "name": "transcription-helper",
-  "description": "Guides users through video transcription workflow from input to output. Transcribes local video files and YouTube URLs using gpt-4o-transcribe. Use when users want to transcribe videos, audio files, Y",
-  "repo": "costiash/CognivAgent",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

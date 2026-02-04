@@ -1,8 +1,0 @@
-{
-  "name": "document-python-component",
-  "repo": "NightingaleV/agentic-dev-env",
-  "category": "documents",
-  "description": "Write or upgrade conventional Python docstrings for public modules, classes, functions, methods, and properties. Docstrings must be user-facing, mkdocstrings-friendly, include runnable examples, and m",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:22.557036Z"
-}

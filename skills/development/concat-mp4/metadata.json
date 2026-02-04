@@ -1,8 +1,0 @@
-{
-  "name": "concat-mp4",
-  "repo": "jacwu/demo-skill-sora2",
-  "category": "development",
-  "description": "Concatenate multiple MP4 files in order into a single MP4 using ffmpeg stream copy.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:19.404466Z"
-}

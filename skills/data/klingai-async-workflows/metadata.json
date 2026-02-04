@@ -1,9 +1,0 @@
-{
-  "name": "klingai-async-workflows",
-  "description": "Build asynchronous video generation workflows with Kling AI. Use when integrating videogeneration into larger systems or pipelines. Trigger with phrases like 'klingai async','kling ai workflow', 'klin",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

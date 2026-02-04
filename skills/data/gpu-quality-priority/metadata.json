@@ -1,9 +1,0 @@
-{
-  "name": "gpu-quality-priority",
-  "description": "KINTSUGI processing principles: Never sacrifice quality for speed, always use GPU when available. Trigger: performance optimization, CPU/GPU choice, fast mode, quality vs speed.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

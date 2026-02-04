@@ -1,8 +1,0 @@
-{
-  "name": "gen-sora-video",
-  "repo": "jacwu/demo-skill-sora2",
-  "category": "devops",
-  "description": "Generate a Sora video from a text prompt via an Azure OpenAI endpoint, then download the resulting .mp4 locally. Use when the user asks to generate a Sora video/video.mp4 from a prompt or wants the ge",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:19.544455Z"
-}

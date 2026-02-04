@@ -1,8 +1,0 @@
-{
-  "name": "codebase-inspection-protocol",
-  "repo": "Kaakati/rails-enterprise-dev",
-  "category": "development",
-  "description": "Mandatory inspection procedures for understanding Rails codebase structure before writing any code. Use this skill FIRST before any code generation task to discover existing patterns, conventions, dep",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:17.050230Z"
-}

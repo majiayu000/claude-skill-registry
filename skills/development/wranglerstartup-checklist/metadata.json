@@ -1,8 +1,0 @@
-{
-  "name": "wranglerstartup-checklist",
-  "repo": "samjhecht/wrangler",
-  "category": "development",
-  "description": "Validates project wrangler version on session start, detects breaking changes, and recommends updates",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:49.965200Z"
-}

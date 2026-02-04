@@ -1,9 +1,0 @@
-{
-  "name": "aico-frontend-design",
-  "description": "Transform PRD or story into complete page/component designs with ASCII layouts, component specs, interaction flows, and frontend implementation prompts.\n\nUse this skill when:\n- User asks to \"design th",
-  "repo": "yellinzero/aico",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/yellinzero/aico"
-}

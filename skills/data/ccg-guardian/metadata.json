@@ -1,9 +1,0 @@
-{
-  "name": "ccg-guardian",
-  "description": "Use this skill when working on code projects that need memory persistence, code validation, multi-agent coordination, or workflow tracking. Activates Claude Code Guardian MCP tools.",
-  "repo": "phuongrealmax/code-guardian",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

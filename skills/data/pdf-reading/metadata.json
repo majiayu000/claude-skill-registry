@@ -1,9 +1,0 @@
-{
-  "name": "pdf-reading",
-  "description": "Read local PDFs to extract and verify exact numbers (counts, percentages, tables, figure captions) for papers/questions in this repository. Use this when asked to “read a PDF”, “extract results from t",
-  "repo": "pondevelopment/llm-training",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

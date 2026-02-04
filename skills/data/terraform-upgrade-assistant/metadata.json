@@ -1,9 +1,0 @@
-{
-  "name": "terraform-upgrade-assistant",
-  "description": "Guides through Terraform version upgrades including identifying deprecated syntax, updating provider versions, and migrating breaking changes. This skill should be used when users need to upgrade Terr",
-  "repo": "armanzeroeight/fastagent-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

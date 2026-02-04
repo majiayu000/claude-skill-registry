@@ -1,9 +1,0 @@
-{
-  "name": "canva-validate",
-  "description": "Runs Canva monorepo validation commands - pnpm fin, taz check, pnpm test, a11y storybook tests, typechecking, linting, and dependency fixes. Use when asked to lint, typecheck, test, run storybook, fix",
-  "repo": "duong/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/duong/dotfiles"
-}

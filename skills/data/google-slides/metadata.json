@@ -1,9 +1,0 @@
-{
-  "name": "google-slides",
-  "description": "Create and manage Google Slides presentations. Load when user mentions 'google slides', 'slides', 'presentation', 'create presentation', 'add slide', or references creating/editing slide decks.",
-  "repo": "abdullahbeam/nexus-design-abdullah",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

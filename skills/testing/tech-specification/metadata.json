@@ -1,8 +1,0 @@
-{
-  "name": "tech-specification",
-  "repo": "d4rkNinja/code-guardian",
-  "category": "testing",
-  "description": "The master skill for generating technical specifications. Identifies project technology and delegates deep analysis to specialized sub-skills.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:16.289273Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "frontend-production-quality",
-  "description": "Use before implementing UI changes or frontend PRs. Enforces TodoWrite with 18+ items. Triggers: \"accessibility audit\", \"WCAG\", \"Lighthouse\", \"screen reader\", \"a11y\", \"NVDA\", \"VoiceOver\", \"keyboard na",
-  "repo": "pvillega/claude-templates",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

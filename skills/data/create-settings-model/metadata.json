@@ -1,9 +1,0 @@
-{
-  "name": "create-settings-model",
-  "repo": "cbgbt/bottlerocket-forest",
-  "category": "data",
-  "description": "Create a new Bottlerocket settings model with SettingsModel trait implementation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:30.386383Z",
-  "dir_name": "create-settings-model"
-}

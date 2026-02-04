@@ -1,9 +1,0 @@
-{
-  "name": "pi-deployment",
-  "description": "Handles deployment, testing, and debugging of Bob The Skull code on Raspberry Pi. Use when deploying to Pi, testing remote code, troubleshooting Pi issues, or setting up new Pi hardware.",
-  "repo": "want2bet/BobTheSkull5",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "git-ci-cd-manager",
-  "description": "Automate Git workflow with conventional commits, setup GitHub Actions CI/CD, configure Husky hooks, manage PR automation, and handle semantic releases",
-  "repo": "deve1993/Quickfy-website",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

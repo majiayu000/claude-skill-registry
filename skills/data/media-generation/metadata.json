@@ -1,9 +1,0 @@
-{
-  "name": "media-generation",
-  "description": "Generate images, videos, and audio using Google's Gemini APIs. Use for image generation/editing (Gemini 3 Pro Image), video generation (Veo 3), and speech (TBD). Trigger words - images: generate, crea",
-  "repo": "majiayu000/claude-skill-registry",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

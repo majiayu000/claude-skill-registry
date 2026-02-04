@@ -1,9 +1,0 @@
-{
-  "name": "vault-search",
-  "description": "Semantic search and Dataview-style queries across the Obsidian vault. Use when searching for notes by meaning, finding related content, querying frontmatter metadata, or answering questions about vaul",
-  "repo": "Roasbeef/obsidian-claude-code",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

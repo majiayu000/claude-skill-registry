@@ -1,9 +1,0 @@
-{
-  "name": "issue-worker",
-  "description": "Spawn a Claude worker to handle a GitHub issue. Fetches issue details, creates a feature branch, and works autonomously. Use when you want to delegate an issue to a worker.",
-  "repo": "schmug/karkinos",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

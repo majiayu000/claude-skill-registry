@@ -1,9 +1,0 @@
-{
-  "name": "plugin-authoring",
-  "description": "Use when creating, modifying, or debugging Claude Code plugins. Triggers on .claude-plugin/, plugin.json, marketplace.json, commands/, agents/, skills/, hooks/ directories. Provides schemas, templates",
-  "repo": "ivan-magda/claude-code-plugin-template",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

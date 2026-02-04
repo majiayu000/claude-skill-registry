@@ -1,9 +1,0 @@
-{
-  "name": "spec-metadata",
-  "description": "Generates metadata for research documents and specifications including date/time, git commit, branch, and repository info. Use when creating research documents, handoffs, or any documentation that nee",
-  "repo": "jeffh/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

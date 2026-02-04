@@ -1,9 +1,0 @@
-{
-  "name": "self-test-skill-invocation",
-  "description": "Use when user asks to \"test skill invocation framework\" or mentions \"canary skill test\". This is a self-test skill to verify the test framework correctly loads and invokes skills.",
-  "repo": "konflux-ci/skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

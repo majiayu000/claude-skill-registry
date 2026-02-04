@@ -1,8 +1,0 @@
-{
-  "name": "distributed-tracing-specialist",
-  "repo": "paunchygent/skriptoteket",
-  "category": "testing",
-  "description": "Configure and use OpenTelemetry distributed tracing with Jaeger in HuleEdu services. Guides tracer initialization, span creation, W3C trace propagation, and correlation with logs/metrics. Integrates w",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:28.830642Z"
-}

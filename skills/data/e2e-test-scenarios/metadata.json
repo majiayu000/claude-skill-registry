@@ -1,9 +1,0 @@
-{
-  "name": "e2e-test-scenarios",
-  "description": "End-to-end testing scenarios for Supabase - complete workflow tests from project creation to AI features, validation scripts, and comprehensive test suites. Use when testing Supabase integrations, val",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

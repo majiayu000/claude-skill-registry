@@ -1,7 +1,0 @@
-{
-  "name": "dispatching-parallel-agents-obra-superpowers-skills",
-  "description": "Use multiple Claude agents to investigate and fix independent problems concurrently",
-  "category": "development",
-  "source": "github.com/obra/superpowers-skills",
-  "imported_at": "2026-01-24T14:54:12.110614Z"
-}

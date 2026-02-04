@@ -1,9 +1,0 @@
-{
-  "name": "account-map-migration",
-  "description": "Use when fixing legacy account-map component references or creating new components. Covers migration from dynamic account-map lookups to static account_map variable. Use when you see account-map remot",
-  "repo": "cloudposse/docs",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

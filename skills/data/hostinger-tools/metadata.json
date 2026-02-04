@@ -1,9 +1,0 @@
-{
-  "name": "hostinger-tools",
-  "description": "Executes Hostinger API operations via Python wrapper. Use when managing VPS instances, Docker Compose projects, DNS records, domains, firewalls, SSH keys, snapshots, backups, billing, hosting, or WHOI",
-  "repo": "bsamiee/Parametric_Portal",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

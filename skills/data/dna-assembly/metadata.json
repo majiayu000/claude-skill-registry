@@ -1,9 +1,0 @@
-{
-  "name": "dna-assembly",
-  "description": "Guidance for DNA assembly tasks including Golden Gate assembly, Gibson assembly, and restriction enzyme-based cloning. This skill should be used when designing primers for Type IIS restriction enzymes",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

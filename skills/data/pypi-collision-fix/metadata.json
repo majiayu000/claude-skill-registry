@@ -1,9 +1,0 @@
-{
-  "name": "pypi-collision-fix",
-  "description": "Fix PyPI package name collisions when local package name exists on PyPI",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

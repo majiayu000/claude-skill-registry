@@ -1,9 +1,0 @@
-{
-  "name": "prompt-improvement",
-  "description": "Meta-skill for improving and optimizing prompts using Anthropic's prompt engineering best practices. Provides the 4-step improvement workflow (example identification, initial draft, chain of thought r",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/melodic-software/claude-code-plugins"
-}

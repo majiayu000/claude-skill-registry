@@ -1,9 +1,0 @@
-{
-  "name": "search-history",
-  "description": "Search Claude conversation history from JSONL files. Use when looking for previous discussions, past decisions, code solutions, or context from earlier conversations.",
-  "repo": "Roger-Parkinson-EHP/agentic",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "oe-trace-and-fallback-triage",
-  "description": "Debug and eliminate fallback/generic-stub replies quickly. Use when you see empty assistant replies, “Thanks for your message…” stubs, or “no specific information available” messages. Produces a minim",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

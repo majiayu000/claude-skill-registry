@@ -1,8 +1,0 @@
-{
-  "name": "argus-build-diagnostics",
-  "repo": "tuist/claude-marketplace",
-  "category": "development",
-  "description": "Diagnose xcodebuild builds using argus. Use this instead of parsing xcodebuild output to avoid filling the context window. Query build errors, warnings, slowest targets, bottlenecks, implicit/redundan",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:17.002399Z"
-}

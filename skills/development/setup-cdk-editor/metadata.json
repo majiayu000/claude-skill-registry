@@ -1,8 +1,0 @@
-{
-  "name": "setup-cdk-editor",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when setting up VS Code or Cursor for Claude Code - configures settings, installs recommended extensions, sets up keybindings, and creates workspace templates optimized for AI-assisted development",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.072454Z"
-}

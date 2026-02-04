@@ -1,9 +1,0 @@
-{
-  "name": "technical-indicator",
-  "description": "Use this skill ONLY when adding a new technical indicator (e.g., Bollinger Bands, Stochastic, ATR). Do not use for strategies or agents.",
-  "repo": "kimrejstrom/alpacalyzer-algo-trader",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

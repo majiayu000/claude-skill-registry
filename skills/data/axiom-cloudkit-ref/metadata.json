@@ -1,9 +1,0 @@
-{
-  "name": "axiom-cloudkit-ref",
-  "description": "Use when implementing 'CloudKit sync', 'CKSyncEngine', 'CKRecord', 'CKDatabase', 'SwiftData CloudKit', 'shared database', 'public database', 'CloudKit zones', 'conflict resolution' - comprehensive Clo",
-  "repo": "CharlesWiltgen/Axiom",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/CharlesWiltgen/Axiom"
-}

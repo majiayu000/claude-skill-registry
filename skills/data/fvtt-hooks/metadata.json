@@ -1,9 +1,0 @@
-{
-  "name": "fvtt-hooks",
-  "description": "This skill should be used when registering hooks, creating custom hooks for module APIs, debugging hook execution, handling async in hooks, or preventing memory leaks from unclean hook removal. Covers",
-  "repo": "ImproperSubset/hh-agentics",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

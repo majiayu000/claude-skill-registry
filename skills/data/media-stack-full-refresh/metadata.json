@@ -1,9 +1,0 @@
-{
-  "name": "media-stack-full-refresh",
-  "repo": "theflysurfer/claude-skills-marketplace",
-  "category": "data",
-  "description": "Complete workflow to refresh the entire media stack after changes - cleanup Real-Debrid, restart Zurg/Rclone mounts, clear caches, verify mount health, and trigger Jellyfin library scan. Use this afte",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:56.033285Z",
-  "dir_name": "media-stack-full-refresh"
-}

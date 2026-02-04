@@ -1,9 +1,0 @@
-{
-  "name": "scanning-accessibility",
-  "description": "Validate WCAG compliance and accessibility standards (ARIA, keyboard navigation).Use when auditing WCAG compliance or screen reader compatibility.Trigger with phrases like \"scan accessibility\", \"check",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

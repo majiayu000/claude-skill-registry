@@ -1,9 +1,0 @@
-{
-  "name": "test-gui",
-  "description": "GUIアプリケーションの動作試験・デバッグを自動で行う",
-  "repo": "tatsuki-washimi/gwexpy",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/tatsuki-washimi/gwexpy"
-}

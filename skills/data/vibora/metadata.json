@@ -1,9 +1,0 @@
-{
-  "name": "vibora",
-  "description": "Vibora is a terminal-first tool for orchestrating AI coding agents across isolated git worktrees. Use this skill when working in a Vibora task worktree or managing tasks.",
-  "repo": "knowsuchagency/vibora",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

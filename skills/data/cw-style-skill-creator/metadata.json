@@ -1,9 +1,0 @@
-{
-  "name": "cw-style-skill-creator",
-  "description": "Creative writing skill for creating style skills that teach Claude to write in specific styles. Use when you want to create style guides that the cw-prose-writing skill can follow. Creates either simp",
-  "repo": "haowjy/creative-writing-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "release-approval",
-  "description": "Approval workflow templates with GitHub Actions and Slack integration for multi-stakeholder release gating. Use when setting up approval workflows, configuring stakeholder gates, automating approval n",
-  "repo": "vanman2024/dev-lifecycle-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

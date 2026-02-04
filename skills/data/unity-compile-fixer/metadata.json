@@ -1,9 +1,0 @@
-{
-  "name": "unity-compile-fixer",
-  "description": "Detect and resolve Unity C# compilation errors using VSCode diagnostics. Use this skill when Unity projects have compilation errors that need diagnosis and automated fixes. Analyzes errors from VSCode",
-  "repo": "Dev-GOM/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

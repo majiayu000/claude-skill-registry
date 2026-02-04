@@ -1,9 +1,0 @@
-{
-  "name": "jutsu-bunbun-sqlite",
-  "repo": "TheBushidoCollective/han",
-  "category": "data",
-  "description": "Use when working with SQLite databases in Bun. Covers Bun's built-in SQLite driver, database operations, prepared statements, and transactions with high performance.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:01.284617Z",
-  "dir_name": "jutsu-bunbun-sqlite"
-}

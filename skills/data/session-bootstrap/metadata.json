@@ -1,9 +1,0 @@
-{
-  "name": "session-bootstrap",
-  "description": "Initialize a new local session log from the conversation.compact.md.template at the start of a work session.",
-  "repo": "cdrguru/portable-agent-kit",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

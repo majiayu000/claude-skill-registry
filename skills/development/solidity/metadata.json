@@ -1,8 +1,0 @@
-{
-  "name": "solidity",
-  "repo": "settlemint/agent-marketplace",
-  "category": "development",
-  "description": "Solidity smart contract development with Foundry. Covers writing, testing, security, deployment, and upgrades. Triggers on .sol files, contract, pragma solidity, forge.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:46.485273Z"
-}

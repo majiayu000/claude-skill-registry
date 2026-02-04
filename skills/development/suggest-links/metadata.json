@@ -1,8 +1,0 @@
-{
-  "name": "suggest-links",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Suggest wikilinks for current note using Flywheel MCP. Triggers on \"suggest links\", \"link suggestions\", \"what should I link\", \"wikilink suggestions\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:34.324684Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "doctype-patterns",
-  "description": "Frappe DocType creation patterns, field types, controller hooks, and data modeling best practices. Use when creating DocTypes, designing data models, adding fields, or setting up document relationship",
-  "repo": "UnityAppSuite/frappe-claude",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

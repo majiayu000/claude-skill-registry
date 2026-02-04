@@ -35,6 +35,19 @@ failure_report.json
 repo_cache.json
 security-report.json
 reputation-report.json
+registry.json.bak
+registry.json.tmp
+
+# Large generated working trees (Scheme 2 core/data split)
+/skills/
+/categories/
+
+# Generated GitHub Pages artifacts (built in CI; not committed)
+/docs/search-index.json
+/docs/search-index.json.gz
+/docs/categories/
+/docs/featured.json
+/docs/stats.json
 
 # Cache directories
 /cache/

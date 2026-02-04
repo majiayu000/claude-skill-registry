@@ -1,9 +1,0 @@
-{
-  "name": "running-smoke-tests",
-  "description": "Execute fast smoke tests validating critical functionality after deployment.Use when performing specialized testing.Trigger with phrases like \"run smoke tests\", \"quick validation\", or \"test critical p",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

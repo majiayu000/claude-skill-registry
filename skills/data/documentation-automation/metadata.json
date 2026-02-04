@@ -1,9 +1,0 @@
-{
-  "name": "documentation-automation",
-  "description": "Automatically maintains project documentation including CHANGELOG.md, README files, inline code documentation, and cross-references. Use proactively after implementing features, fixing bugs, making AP",
-  "repo": "ecto/muni",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

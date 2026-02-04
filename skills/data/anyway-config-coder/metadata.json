@@ -1,9 +1,0 @@
-{
-  "name": "anyway-config-coder",
-  "description": "Implement type-safe configuration with anyway_config gem. Use when creating configuration classes, replacing ENV access, or managing application settings. Triggers on configuration, environment variab",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

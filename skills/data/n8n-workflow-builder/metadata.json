@@ -1,9 +1,0 @@
-{
-  "name": "n8n-workflow-builder",
-  "description": "Design and build n8n workflows - triggers, nodes, flow logic, error handling, and best practices",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

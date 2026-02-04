@@ -1,9 +1,0 @@
-{
-  "name": "csp-config-generator",
-  "description": "This skill should be used when the user requests to generate, create, or configure Content Security Policy (CSP) headers for Next.js applications to prevent XSS attacks and control resource loading. I",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

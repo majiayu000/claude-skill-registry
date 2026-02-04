@@ -1,9 +1,0 @@
-{
-  "name": "spec-kit-feedback",
-  "description": "Capture workflow usage data for spec-kit optimization. Auto-activates when:(1) completing a spec-kit workflow (/speckit.review, final commit),(2) encountering friction or confusion during workflows,(3",
-  "repo": "pradeepmouli/spec-kit-extensions",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "docs-retrieval",
-  "description": "Retrieve documentation context from local ai-docs. Check here first when implementing features, debugging errors, or needing library information. Fall back to web search if topic not found locally.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "rust-release-profile",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "description": "Configure release builds for maximum performance with LTO, optimizations, and binary stripping. Use for production deployments.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:49.607739Z"
-}

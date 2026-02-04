@@ -1,7 +1,0 @@
-{
-  "name": "connect-apps",
-  "description": "Connect Claude to external apps like Gmail, Slack, GitHub. Use this skill when the user wants to send emails, create issues, post messages, or take actions in external services.",
-  "category": "development",
-  "source": "github.com/ComposioHQ/awesome-claude-skills",
-  "imported_at": "2026-01-24T14:54:19.032809Z"
-}

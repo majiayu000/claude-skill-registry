@@ -1,8 +1,0 @@
-{
-  "name": "zero-trust-security",
-  "repo": "williamzujkowski/standards",
-  "category": "devops",
-  "description": "Zero-trust architecture operates on the principle: \"Never trust, always verify.\" Unlike traditional perimeter-based security, zero-trust assumes breach and verifies every request regardless of origin.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:34.021913Z"
-}

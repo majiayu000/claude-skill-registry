@@ -1,8 +1,0 @@
-{
-  "name": "prompt-engineering-patterns",
-  "repo": "wshobson/agents",
-  "category": "development",
-  "path": "plugins/llm-application-dev/skills/prompt-engineering-patterns",
-  "github_path": "plugins/llm-application-dev/skills/prompt-engineering-patterns",
-  "github_branch": "main"
-}

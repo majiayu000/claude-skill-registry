@@ -1,9 +1,0 @@
-{
-  "name": "cache-strategies",
-  "description": "Caching patterns, TTL management, eviction policies for Redis implementations. Use when implementing cache-aside, write-through, write-back patterns, TTL management, or cache invalidation strategies.",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

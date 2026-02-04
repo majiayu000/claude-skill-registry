@@ -1,9 +1,0 @@
-{
-  "name": "mcp-memory-server-surgery",
-  "description": "Use when modifying MCP servers that touch repo memory (especially docs-memory). Includes protocol guardrails, validation ladder, and how to store new capabilities as Skills so future agents don’t re-l",
-  "repo": "metabench/copilot-dl-news",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

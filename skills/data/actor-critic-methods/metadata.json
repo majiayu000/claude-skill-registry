@@ -1,9 +1,0 @@
-{
-  "name": "actor-critic-methods",
-  "description": "Master A2C, A3C, SAC, TD3 - actor-critic methods for continuous control",
-  "repo": "tachyon-beep/hamlet",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

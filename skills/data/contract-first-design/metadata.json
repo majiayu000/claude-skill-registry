@@ -1,9 +1,0 @@
-{
-  "name": "contract-first-design",
-  "description": "Design and manage API contracts before implementation using OpenAPI and AsyncAPI specifications for contract-first development",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "cui-maven-rules",
-  "description": "Complete Maven standards covering build processes, POM maintenance, dependency management, and Maven integration for CUI projects",
-  "repo": "cuioss/cui-llm-rules",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

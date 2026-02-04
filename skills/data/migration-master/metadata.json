@@ -1,9 +1,0 @@
-{
-  "name": "migration-master",
-  "description": "Specialized in database migrations and data seeding. Trigger this when creating tables, modifying schemas, or preparing initial data.",
-  "repo": "gravito-framework/gravito",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/gravito-framework/gravito"
-}

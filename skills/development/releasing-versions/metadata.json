@@ -1,8 +1,0 @@
-{
-  "name": "releasing-versions",
-  "repo": "onukura/oss-sustain-guard",
-  "category": "development",
-  "description": "Interactive release workflow for OSS Sustain Guard with version updates, PyPI publishing, and GitHub release notes. Use when ready to release a new version to production.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:18.208908Z"
-}

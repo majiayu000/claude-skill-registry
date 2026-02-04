@@ -1,9 +1,0 @@
-{
-  "name": "impl-service",
-  "description": "Implementar serviços de lógica de negócio em services/. Use quando criar service, lógica de negócio, orquestração de repositórios, ou integração com LLM.",
-  "repo": "ciandt-fulvio/synth-lab",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

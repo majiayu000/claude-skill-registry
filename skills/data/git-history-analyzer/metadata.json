@@ -1,9 +1,0 @@
-{
-  "name": "git-history-analyzer",
-  "description": "Use this agent when understanding the historical context and evolution of code changes, tracing the origins of specific code patterns, identifying key contributors and their expertise areas, or analyz",
-  "repo": "jovermier/claude-code-plugins-ip-labs",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jovermier/claude-code-plugins-ip-labs"
-}

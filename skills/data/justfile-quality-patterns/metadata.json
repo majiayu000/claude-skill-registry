@@ -1,9 +1,0 @@
-{
-  "name": "justfile-quality-patterns",
-  "description": "Level 1 patterns - test-watch, integration-test, complexity, loc, duplicates, slowtests",
-  "repo": "bryonjacob/aug",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

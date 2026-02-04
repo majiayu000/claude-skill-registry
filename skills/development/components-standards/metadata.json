@@ -1,7 +1,0 @@
-{
-  "name": "components-standards",
-  "description": "Design reusable, composable UI components following single responsibility principle with clear interfaces, encapsulation, and minimal props. Use this skill when creating or modifying frontend componen",
-  "category": "development",
-  "source": "github.com/maxritter/claude-codepro",
-  "imported_at": "2026-01-24T14:54:06.504486Z"
-}

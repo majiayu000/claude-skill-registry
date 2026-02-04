@@ -1,9 +1,0 @@
-{
-  "name": "speck-help",
-  "description": "Answer questions about Speck specs, plans, tasks, requirements, progress, architecture, user stories, feature status, and constitution. Interprets spec.md, plan.md, tasks.md files. Use when users ask ",
-  "repo": "nprbst/speck",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

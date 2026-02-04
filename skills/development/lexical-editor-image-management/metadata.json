@@ -1,8 +1,0 @@
-{
-  "name": "lexical-editor-image-management",
-  "repo": "Hieubkav/wincellarCloneBackend",
-  "category": "development",
-  "description": "Implement Lexical Editor with automatic image management using Laravel Observers. Converts base64 images to file storage, deletes unused images, and handles cleanup. Use when building WYSIWYG editors ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:01.648762Z"
-}

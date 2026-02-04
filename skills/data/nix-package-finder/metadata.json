@@ -1,9 +1,0 @@
-{
-  "name": "nix-package-finder",
-  "description": "Use this skill when the user asks to find, search for, or identify Nix packages. Handles searches across nixpkgs channels, finds correct attribute paths, checks versions, and can locate specific versi",
-  "repo": "Shavakan/nix-flakes",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

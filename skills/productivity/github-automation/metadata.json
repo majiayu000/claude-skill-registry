@@ -1,8 +1,0 @@
-{
-  "name": "github-automation",
-  "repo": "vm0-ai/vm0-skills",
-  "category": "productivity",
-  "description": "Automate GitHub operations using gh CLI - manage repositories, issues, pull requests, releases, and workflows. Use when working with GitHub, managing repos, creating issues/PRs, or when users mention ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:52.949480Z"
-}

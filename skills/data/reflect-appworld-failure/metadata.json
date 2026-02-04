@@ -1,9 +1,0 @@
-{
-  "name": "reflect-appworld-failure",
-  "description": "Analyze AppWorld task failures to extract specific API patterns and generate actionable playbook bullets with concrete code examples",
-  "repo": "jmanhype/claude-code-plugin-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

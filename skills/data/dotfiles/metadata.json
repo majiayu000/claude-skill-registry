@@ -1,9 +1,0 @@
-{
-  "name": "dotfiles",
-  "description": "Use when managing dotfiles repository. Triggers: (1) checking dotfiles structure or package list, (2) adding or removing packages, (3) setting up dotfiles on new machine, (4) syncing changes from othe",
-  "repo": "ryugen04/dotfiles",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

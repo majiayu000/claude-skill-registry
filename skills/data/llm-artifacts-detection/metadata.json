@@ -1,9 +1,0 @@
-{
-  "name": "llm-artifacts-detection",
-  "description": "Detects common LLM coding agent artifacts in codebases. Identifies test quality issues, dead code, over-abstraction, and verbose LLM style patterns. Use when cleaning up AI-generated code or reviewing",
-  "repo": "existential-birds/beagle",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

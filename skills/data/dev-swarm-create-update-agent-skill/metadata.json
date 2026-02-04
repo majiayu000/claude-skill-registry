@@ -1,9 +1,0 @@
-{
-  "name": "dev-swarm-create-update-agent-skill",
-  "description": "Create or update agent skills following the agent skill specification. Use when user asks to create a new skill or update an existing skill.",
-  "repo": "X-School-Academy/ai-dev-swarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

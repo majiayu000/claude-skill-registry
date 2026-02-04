@@ -1,9 +1,0 @@
-{
-  "name": "write-skills",
-  "description": "Create or update SKILL.md files for this repo. Use when authoring skills in .codex/skills/.",
-  "repo": "JoernStoehler/ai-forecasting-hackathon",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

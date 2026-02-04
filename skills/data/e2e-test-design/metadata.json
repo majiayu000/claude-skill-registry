@@ -1,9 +1,0 @@
-{
-  "name": "e2e-test-design",
-  "description": "Design E2E tests following user-story-driven patterns with verification checkpoints. Use when creating end-to-end tests, validating complete user journeys, or designing Playwright/Cypress test pattern",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

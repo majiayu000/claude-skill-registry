@@ -1,8 +1,0 @@
-{
-  "name": "symfonytdd-with-pest",
-  "repo": "MakFly/superpowers-symfony",
-  "category": "development",
-  "description": "Apply RED-GREEN-REFACTOR with Pest PHP for Symfony; use Foundry factories, functional tests with WebTestCase, verify failures before implementation",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:31.635297Z"
-}

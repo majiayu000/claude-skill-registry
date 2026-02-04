@@ -1,9 +1,0 @@
-{
-  "name": "project-kickoff",
-  "description": "Interactive project creation from cm-template. Use when (1) user requests new service creation, (2) creating new cm-* project, (3) need guided wizard for project configuration, (4) generating ready-to",
-  "repo": "semicolon-devteam/semo",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

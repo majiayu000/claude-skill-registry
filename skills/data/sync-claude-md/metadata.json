@@ -1,9 +1,0 @@
-{
-  "name": "sync-claude-md",
-  "description": "Synchronize project CLAUDE.md with recent codebase changes by analyzing git history, reviewing against official Anthropic best practices using parallel agents, and proposing comprehensive updates. Use",
-  "repo": "bengous/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tmux-team-creator",
-  "description": "This skill should be used when users want to create a multi-agent tmux team for their project. It provides battle-tested templates for setting up autonomous AI agent teams that collaborate via tmux. U",
-  "repo": "hongbietcode/synthetic-claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/hongbietcode/synthetic-claude"
-}

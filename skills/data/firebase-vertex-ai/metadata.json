@@ -1,9 +1,0 @@
-{
-  "name": "firebase-vertex-ai",
-  "description": "Execute firebase platform expert with Vertex AI Gemini integration for Authentication, Firestore, Storage, Functions, Hosting, and AI-powered features. Use when asked to \"setup firebase\", \"deploy to f",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

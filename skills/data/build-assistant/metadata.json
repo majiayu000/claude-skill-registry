@@ -1,9 +1,0 @@
-{
-  "name": "build-assistant",
-  "description": "Build Claude Code framework components (agents, slash commands, skills, plugins) following standardized templates. Use when creating new agents, commands, skills, or plugins for the multiagent framewo",
-  "repo": "vanman2024/domain-plugin-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "plugin-checker",
-  "description": "Use this skill when asked to \"validate plugin\", \"check plugin structure\", \"verify plugin\", \"audit plugin\", \"is my plugin correct\", \"plugin issues\", or when troubleshooting plugin problems.",
-  "repo": "a-ariff/ariff-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

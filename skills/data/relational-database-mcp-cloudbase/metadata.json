@@ -1,9 +1,0 @@
-{
-  "name": "relational-database-mcp-cloudbase",
-  "repo": "TencentCloudBase/CloudBase-MCP",
-  "category": "data",
-  "description": "This is the required documentation for agents operating on the CloudBase Relational Database. It lists the only four supported tools for running SQL and managing security rules. Read the full content ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:43.914871Z",
-  "dir_name": "relational-database-mcp-cloudbase"
-}

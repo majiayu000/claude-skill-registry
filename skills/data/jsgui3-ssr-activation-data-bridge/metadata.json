@@ -1,9 +1,0 @@
-{
-  "name": "jsgui3-ssr-activation-data-bridge",
-  "description": "Understand and debug how jsgui3 SSR markup becomes activated client-side, including persisted fields (data-jsgui-fields) and ctrl_fields (data-jsgui-ctrl-fields), and where to patch/plugin.",
-  "repo": "metabench/copilot-dl-news",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

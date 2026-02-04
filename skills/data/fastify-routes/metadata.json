@@ -1,9 +1,0 @@
-{
-  "name": "fastify-routes",
-  "description": "Guide for creating Fastify route handlers with TypeBox schemas and OpenAPI documentation. Use when adding new routes to app/src/routes/.",
-  "repo": "janisto/fastify-playground",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

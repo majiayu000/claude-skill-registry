@@ -1,8 +1,0 @@
-{
-  "name": "generating-output-styles",
-  "repo": "Emz1998/avaris-ai",
-  "category": "development",
-  "description": "Creates custom output styles for Claude Code that modify system prompts and behavior. Use when the user asks to create output styles, customize Claude's response format, generate output-style files, o",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:05:26.745219Z"
-}

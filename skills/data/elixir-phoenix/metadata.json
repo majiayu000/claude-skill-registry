@@ -1,9 +1,0 @@
-{
-  "name": "elixir-phoenix",
-  "description": "Elixir and Phoenix development guidelines with critical language-specific gotchas. Use when writing Elixir code, Phoenix applications, or Mix tasks. Prevents common mistakes with list access, variable",
-  "repo": "forest/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "iot-telnet-shell-telnetshell",
-  "repo": "consigcody94/bounty-buddy",
-  "category": "security",
-  "description": "Use telnet to interact with IoT device shells for pentesting operations including device enumeration, vulnerability discovery, credential testing, and post-exploitation. Use when the user needs to int",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:11:05.995590Z"
-}

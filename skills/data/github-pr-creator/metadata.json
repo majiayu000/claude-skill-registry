@@ -1,9 +1,0 @@
-{
-  "name": "github-pr-creator",
-  "description": "Creates GitHub pull requests using gh CLI. Use when creating PRs or submitting code for review.",
-  "repo": "scizorman/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

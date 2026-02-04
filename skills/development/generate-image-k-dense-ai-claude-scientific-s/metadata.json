@@ -1,7 +1,0 @@
-{
-  "name": "generate-image-k-dense-ai-claude-scientific-s",
-  "description": "Generate or edit images using AI models (FLUX, Gemini). Use for general-purpose image generation including photos, illustrations, artwork, visual assets, concept art, and any image that is not a techn",
-  "category": "development",
-  "source": "github.com/K-Dense-AI/claude-scientific-skills",
-  "imported_at": "2026-01-24T14:54:18.131012Z"
-}

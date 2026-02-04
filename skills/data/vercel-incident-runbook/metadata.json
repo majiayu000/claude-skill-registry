@@ -1,9 +1,0 @@
-{
-  "name": "vercel-incident-runbook",
-  "description": "Execute Vercel incident response procedures with triage, mitigation, and postmortem.Use when responding to Vercel-related outages, investigating errors,or running post-incident reviews for Vercel inte",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

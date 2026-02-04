@@ -1,9 +1,0 @@
-{
-  "name": "tenant-provisioning",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Automated tenant onboarding infrastructure patterns. Covers provisioning workflows, resource creation, seed data, and tenant readiness verification.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:10.363277Z",
-  "dir_name": "tenant-provisioning"
-}

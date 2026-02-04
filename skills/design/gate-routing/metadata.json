@@ -1,8 +1,0 @@
-{
-  "name": "gate-routing",
-  "repo": "Mharbulous/SyncoPaid",
-  "category": "design",
-  "description": "Use when a heartbeat needs to check if a story can progress through a gate. Checks prerequisites, dependencies, 3rd-party deps, and child story completion. Called by heartbeat workflows to determine h",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:31.939074Z"
-}

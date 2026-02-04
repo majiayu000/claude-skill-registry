@@ -1,9 +1,0 @@
-{
-  "name": "api-key-manager",
-  "description": "Api Key Manager - Auto-activating skill for Security Fundamentals.Triggers on: api key manager, api key managerPart of the Security Fundamentals skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

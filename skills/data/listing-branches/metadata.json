@@ -1,9 +1,0 @@
-{
-  "name": "listing-branches",
-  "description": "Use when user wants to inventory autonomy branches with custom sorting, grouping, or filtering",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

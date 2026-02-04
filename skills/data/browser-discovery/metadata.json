@@ -1,9 +1,0 @@
-{
-  "name": "browser-discovery",
-  "description": "Browser automation for documentation discovery. Use when curl fails on JS-rendered sites, when detecting available browser tools, or when configuring browser-based documentation collection.",
-  "repo": "Consiliency/treesitter-chunker",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "elixir-testing",
-  "repo": "vinnie357/claude-skills",
-  "category": "testing",
-  "description": "Guide for writing comprehensive tests in Elixir using ExUnit, property-based testing, mocks, and test organization best practices",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:28.834854Z"
-}

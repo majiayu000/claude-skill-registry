@@ -1,8 +1,0 @@
-{
-  "name": "observability-ops",
-  "repo": "YosrBennagra/3SC",
-  "category": "testing",
-  "description": "Operational observability for the .NET 8 WPF widget host app. Use when adding health checks, diagnostics exports, support tooling, or runtime inspection endpoints.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:39.686219Z"
-}

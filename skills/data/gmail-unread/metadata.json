@@ -1,9 +1,0 @@
-{
-  "name": "gmail-unread",
-  "description": "Gmail の未読メッセージ一覧を取得する。「未読メール」「Gmail 未読」「未読一覧」「未読メールを見たい」「未読メッセージ」「メールの未読」「全アカウントの未読」などで起動。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

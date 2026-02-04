@@ -1,8 +1,0 @@
-{
-  "name": "gpt52-spec-writer",
-  "repo": "Alb-O/impire",
-  "category": "design",
-  "description": "Guide for writing effective prompt specifications (specs) for the GPT-5.2 Codex agent. Use when the user asks to \"write a prompt spec\", \"create a system prompt for GPT-5.2\", \"design a spec for an agen",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:49.335092Z"
-}

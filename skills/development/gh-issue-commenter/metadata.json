@@ -1,8 +1,0 @@
-{
-  "name": "gh-issue-commenter",
-  "repo": "u473t8/learning-app",
-  "category": "development",
-  "description": "Comment on GitHub issues using the gh CLI. Use when Codex needs to share an implementation plan, progress update, or blockers. Always read the issue body and comments for context, optionally read rela",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:24.476858Z"
-}

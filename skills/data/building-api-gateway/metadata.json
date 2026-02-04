@@ -1,9 +1,0 @@
-{
-  "name": "building-api-gateway",
-  "description": "Create API gateways with routing, load balancing, rate limiting, and authentication.Use when routing and managing multiple API services.Trigger with phrases like \"build API gateway\", \"create API route",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

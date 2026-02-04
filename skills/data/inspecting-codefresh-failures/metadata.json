@@ -1,9 +1,0 @@
-{
-  "name": "inspecting-codefresh-failures",
-  "description": "Instruction guide for analyzing Codefresh CI failures. When invoked, IMMEDIATELY follow the step-by-step instructions to extract build IDs, fetch logs, and create a formatted failure report. Use when ",
-  "repo": "ooloth/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

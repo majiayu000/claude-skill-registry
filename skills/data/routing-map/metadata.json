@@ -1,9 +1,0 @@
-{
-  "name": "routing-map",
-  "description": "SEMO 라우팅 구조 시각화. Use when (1) /SEMO:routing-map 커맨드,(2) \"라우팅 구조\", \"SEMO 구조\", \"설치된 패키지\" 키워드,(3) Agent/Skill 전체 목록 확인 요청.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

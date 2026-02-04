@@ -1,9 +1,0 @@
-{
-  "name": "migrating-apis",
-  "description": "Implement API migrations between versions, platforms, or frameworks with minimal downtime.Use when upgrading APIs between versions.Trigger with phrases like \"migrate the API\", \"upgrade API version\", o",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

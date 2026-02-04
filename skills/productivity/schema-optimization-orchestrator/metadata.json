@@ -1,8 +1,0 @@
-{
-  "name": "schema-optimization-orchestrator",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "productivity",
-  "description": "Multi-phase schema optimization workflow orchestrator. Creates session directories,spawns phase agents sequentially, validates outputs, aggregates results.Trigger: \"run schema optimization\", \"optimize",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:53.371522Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "polyphonic-synth",
-  "description": "Create MIDI-controllable polyphonic synthesizers for Bice-Box. Provides templates with voice management, envelope generation, MIDI control setup, and oscillator/filter patterns for multi-voice synths.",
-  "repo": "dskill/bice-box-effects",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

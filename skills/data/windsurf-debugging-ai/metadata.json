@@ -1,9 +1,0 @@
-{
-  "name": "windsurf-debugging-ai",
-  "description": "Use Cascade for intelligent debugging and error analysis. Activate when users mention\"debug with ai\", \"error analysis\", \"cascade debug\", \"find bug\",or \"troubleshoot code\". Handles AI-assisted debuggin",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

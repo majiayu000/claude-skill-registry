@@ -1,9 +1,0 @@
-{
-  "name": "summarizing-conversations-to-obsidian",
-  "description": "Use when user requests to save conversation summary to Obsidian, mentions \"总结\", \"保存笔记\", \"卡片笔记\", or Zettelkasten - creates atomic, well-structured notes following Zettelkasten principles without guessi",
-  "repo": "pppobear/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

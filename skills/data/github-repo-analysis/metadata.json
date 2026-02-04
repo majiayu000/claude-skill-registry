@@ -1,9 +1,0 @@
-{
-  "name": "github-repo-analysis",
-  "description": "Analyze GitHub repositories to extract insights about commit frequency, outstanding contributors, release timeline, and project health metrics. Use when users request repository analysis, commit histo",
-  "repo": "Innfi/solid-fortnight",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

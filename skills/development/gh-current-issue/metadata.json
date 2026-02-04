@@ -1,8 +1,0 @@
-{
-  "name": "gh-current-issue",
-  "repo": "u473t8/learning-app",
-  "category": "development",
-  "description": "Determine the GitHub issue number by parsing the current git branch name that starts with digits (e.g., 38-migrate...). Use when you need the issue number for comments, status updates, or automation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:00.102772Z"
-}

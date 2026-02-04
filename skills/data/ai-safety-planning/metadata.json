@@ -1,9 +1,0 @@
-{
-  "name": "ai-safety-planning",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "data",
-  "description": "Plan AI safety measures including alignment, guardrails, red teaming, and regulatory compliance (EU AI Act, NIST AI RMF).",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:57.643932Z",
-  "dir_name": "ai-safety-planning"
-}

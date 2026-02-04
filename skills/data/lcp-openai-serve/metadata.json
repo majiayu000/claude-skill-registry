@@ -1,9 +1,0 @@
-{
-  "name": "lcp-openai-serve",
-  "description": "Develop apps/openai-serve (Go). Keep OpenAI gateway behavior correct and avoid logging prompts/outputs.",
-  "repo": "YusukeShimizu/lightning-compute-protocol",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

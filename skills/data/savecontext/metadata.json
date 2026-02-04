@@ -1,9 +1,0 @@
-{
-  "name": "savecontext",
-  "description": "This skill should be used when the user asks to \"save context\", \"remember this decision\", \"track my progress\", \"checkpoint my work\", \"resume where I left off\", \"continue from last session\", \"persist s",
-  "repo": "greenfieldlabs-inc/savecontext",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

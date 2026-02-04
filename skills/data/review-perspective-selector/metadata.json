@@ -1,9 +1,0 @@
-{
-  "name": "review-perspective-selector",
-  "description": "Automatically selects appropriate review perspectives based on file type and characteristics. Use when initiating code review to determine which review-points files should be applied.",
-  "repo": "shiroinock/ts-template",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

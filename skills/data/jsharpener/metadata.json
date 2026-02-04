@@ -1,9 +1,0 @@
-{
-  "name": "jsharpener",
-  "description": "JavaScript/TypeScript static analysis tool for call graphs, unused code detection (tree shaking), dependency analysis, and circular dependency detection",
-  "repo": "lawless-m/Earwig",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/lawless-m/Earwig"
-}

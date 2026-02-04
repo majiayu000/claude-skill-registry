@@ -1,8 +1,0 @@
-{
-  "name": "developing-go",
-  "repo": "sumik5/dotfiles",
-  "category": "development",
-  "description": "Guides Go development with best practices from Google Style Guide and Effective Go. Use when go.mod is detected or Go code is being written. Covers naming, error handling, concurrency, testing, and pr",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.284053Z"
-}

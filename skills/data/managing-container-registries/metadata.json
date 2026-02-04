@@ -1,9 +1,0 @@
-{
-  "name": "managing-container-registries",
-  "description": "Use when you need to work with containerization.This skill provides container management and orchestration with comprehensive guidance and automation.Trigger with phrases like \"containerize app\", \"man",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

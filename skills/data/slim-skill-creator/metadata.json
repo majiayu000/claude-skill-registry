@@ -1,9 +1,0 @@
-{
-  "name": "slim-skill-creator",
-  "description": "Meta-skill for creating and integrating new best practices (skills, agents, MCP servers) into the SLIM marketplace with dependency tracking and automated registry updates. Use when users want to creat",
-  "repo": "NASA-AMMOS/slim",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

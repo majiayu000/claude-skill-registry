@@ -1,9 +1,0 @@
-{
-  "name": "nix-cleanup",
-  "description": "CI workflow checks and code cleanup tools",
-  "repo": "tobi/dotnix",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

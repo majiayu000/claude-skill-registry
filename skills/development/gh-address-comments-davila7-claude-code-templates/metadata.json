@@ -1,7 +1,0 @@
-{
-  "name": "gh-address-comments-davila7-claude-code-templates",
-  "description": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.626453Z"
-}

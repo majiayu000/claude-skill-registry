@@ -1,9 +1,0 @@
-{
-  "name": "myskillium",
-  "description": "Use when migrating skills between repositories or extracting skills from a project into a reusable form. Handles copying, cleanup of project-specific references, and genealogy documentation.",
-  "repo": "Mharbulous/myskillium",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

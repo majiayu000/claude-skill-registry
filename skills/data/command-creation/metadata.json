@@ -1,9 +1,0 @@
-{
-  "name": "command-creation",
-  "description": "Use this skill when creating or refining custom Claude Code slash commands. Slash commands are user-invoked reusable prompts that can accept arguments, reference files, and execute bash operations. He",
-  "repo": "andisab/swe-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

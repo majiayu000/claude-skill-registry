@@ -1,9 +1,0 @@
-{
-  "name": "extract-from-pdfs",
-  "repo": "brunoasm/my_claude_skills",
-  "category": "data",
-  "description": "This skill should be used when extracting structured data from scientific PDFs for systematic reviews, meta-analyses, or database creation. Use when working with collections of research papers that ne",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:38.335662Z",
-  "dir_name": "extract-from-pdfs"
-}

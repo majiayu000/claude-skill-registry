@@ -1,9 +1,0 @@
-{
-  "name": "deploy-vps",
-  "description": "Deploy a new image to a VPS Ubuntu host using GHCR and a deploy script.",
-  "repo": "jibaxZZZ/codex-root-configuration",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

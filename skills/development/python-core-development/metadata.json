@@ -1,8 +1,0 @@
-{
-  "name": "python-core-development",
-  "repo": "nekorush14/dotfiles",
-  "category": "development",
-  "description": "Implement Python code with dataclasses, type hints, protocols, error handling, and async programming. Use when designing classes, implementing type safety, handling exceptions, or writing async code.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:01.796947Z"
-}

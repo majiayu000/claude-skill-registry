@@ -1,9 +1,0 @@
-{
-  "name": "figjam-plugin",
-  "description": "FigJam plugin development workflow. Use when working on plugin code (code.ts, ui.ts), debugging WebSocket communication, or building the plugin.",
-  "repo": "7nohe/figram",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

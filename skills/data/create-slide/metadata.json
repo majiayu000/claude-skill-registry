@@ -1,9 +1,0 @@
-{
-  "name": "create-slide",
-  "description": "fluid-slide 项目专用的幻灯片制作规范。 定义了 Grid 布局、MD3 工具类、特殊组件等项目内约定。 配合 quarto-revealjs 技能使用。",
-  "repo": "fecet/quarto-scaffold",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

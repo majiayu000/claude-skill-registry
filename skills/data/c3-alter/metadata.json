@@ -1,9 +1,0 @@
-{
-  "name": "c3-alter",
-  "description": "Use when project has .c3/ and user intends to change code or architecture.Triggers: \"add\", \"change\", \"modify\", \"update\", \"fix\", \"refactor\", \"remove\", \"implement\", \"create new\", \"rename\", \"new feature\"",
-  "repo": "lagz0ne/c3-skill",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

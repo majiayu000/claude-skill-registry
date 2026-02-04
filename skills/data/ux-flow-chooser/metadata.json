@@ -1,9 +1,0 @@
-{
-  "name": "ux-flow-chooser",
-  "description": "判断と再設計のためのUIフロー選択ガイド。タイムラインUIとトポロジーUIのどちらを選ぶか、またはハイブリッドにするかを、ヒアリング質問→判定→パターン提示の手順で決める。情報の鮮度・塊化可能性・優先度分布・並行コンテキスト・デバイス制約・滞在時間を聞き取り、タイムライン⇔トポロジー変換のチェックリストと事例を提供する。",
-  "repo": "yurake/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

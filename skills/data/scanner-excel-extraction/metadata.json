@@ -1,9 +1,0 @@
-{
-  "name": "scanner-excel-extraction",
-  "description": "Extract, transform, and structure data from Excel files including multiple sheets, formulas, and formatting. Use when processing Excel data or converting to other formats.This skill provides Excel dat",
-  "repo": "takemi-ohama/ai-agent-marketplace",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

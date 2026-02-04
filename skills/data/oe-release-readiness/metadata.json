@@ -1,9 +1,0 @@
-{
-  "name": "oe-release-readiness",
-  "description": "Pre-merge/release readiness checklist for OpenEvent-AI. Use when preparing a PR for production: run the fastest validation lanes first (compile/import, smoke suite, deterministic site-visit trace), th",
-  "repo": "shami-ah/OpenEvent-AI",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

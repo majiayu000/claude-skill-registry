@@ -1,8 +1,0 @@
-{
-  "name": "jira-release-blocker-validator",
-  "repo": "openshift-eng/ai-helpers",
-  "category": "design",
-  "description": "Detailed implementation guide for validating proposed release blockers",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:18.854877Z"
-}

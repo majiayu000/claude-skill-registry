@@ -1,8 +1,0 @@
-{
-  "name": "epic-identification",
-  "repo": "sjnims/requirements-expert",
-  "category": "product",
-  "description": "This skill should be used when the user asks to \"identify epics\", \"break down vision into epics\", \"find major features\", \"discover capability areas\", \"decompose vision\", \"group requirements into theme",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:55.960411Z"
-}

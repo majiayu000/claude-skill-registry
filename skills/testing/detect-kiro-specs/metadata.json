@@ -1,8 +1,0 @@
-{
-  "name": "detect-kiro-specs",
-  "repo": "reedom/claude-code-commands",
-  "category": "testing",
-  "description": "Detect Kiro specs with modified files in current branch. Use before PRs, spec-specific tests, or CI filtering.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:50.853642Z"
-}

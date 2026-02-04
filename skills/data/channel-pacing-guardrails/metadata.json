@@ -1,9 +1,0 @@
-{
-  "name": "channel-pacing-guardrails",
-  "description": "Guardrail framework for monitoring spend, efficiency, and CAC thresholds by channel.",
-  "repo": "gtmagents/gtm-agents",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

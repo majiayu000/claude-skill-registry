@@ -1,9 +1,0 @@
-{
-  "name": "adding-mod-parsers",
-  "description": "Use when adding new mod parsers to convert game mod strings to typed Mod objects - guides the template-based parsing pattern (project)",
-  "repo": "aclinia/torchlight-of-building",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

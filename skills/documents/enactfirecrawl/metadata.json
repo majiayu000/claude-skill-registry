@@ -1,8 +1,0 @@
-{
-  "name": "enactfirecrawl",
-  "repo": "EnactProtocol/enact",
-  "category": "documents",
-  "description": "Scrape, crawl, search, and extract structured data from websites using Firecrawl API - converts web pages to LLM-ready markdown",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:35.978265Z"
-}

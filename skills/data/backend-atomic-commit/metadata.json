@@ -1,9 +1,0 @@
-{
-  "name": "backend-atomic-commit",
-  "description": "Pedantic backend pre-commit and atomic commit Skill for Django/Optimo-style repos. Enforces local AGENTS.md / CLAUDE.md, pre-commit hooks, .security/* helpers, and Monty’s backend engineering taste – ",
-  "repo": "DiversioTeam/agent-skills-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

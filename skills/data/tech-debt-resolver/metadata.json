@@ -1,9 +1,0 @@
-{
-  "name": "tech-debt-resolver",
-  "description": "Loop automatizado de melhoria contínua que usa o Chat RAG para identificar débitos técnicos, implementa correções, reingere a base de conhecimento e valida até eliminar 100% dos débitos.",
-  "repo": "diegofornalha/skills-futuro",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

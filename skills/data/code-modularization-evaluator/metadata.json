@@ -1,9 +1,0 @@
-{
-  "name": "code-modularization-evaluator",
-  "description": "Evaluate and improve code modularization using the Balanced Coupling Model. Analyzes coupling strength, connascence types, and distance to identify refactoring opportunities and architectural improvem",
-  "repo": "dotneet/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

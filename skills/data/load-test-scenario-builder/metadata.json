@@ -1,9 +1,0 @@
-{
-  "name": "load-test-scenario-builder",
-  "description": "Creates comprehensive load test plans with realistic scenarios, traffic models, k6 scripts, and success criteria. Use for \"load testing\", \"performance testing\", \"capacity validation\", or \"stress testi",
-  "repo": "patricio0312rev/skillset",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

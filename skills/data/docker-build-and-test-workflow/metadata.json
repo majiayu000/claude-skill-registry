@@ -1,9 +1,0 @@
-{
-  "name": "docker-build-and-test-workflow",
-  "description": "Use this skill when building, testing, or working with Docker images in the agentic-container repository. Covers when to rebuild vs reuse images, how to leverage layer caching, and efficient iteration",
-  "repo": "technicalpickles/agentic-container",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

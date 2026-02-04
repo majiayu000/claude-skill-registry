@@ -1,8 +1,0 @@
-{
-  "name": "test-plan-formatting",
-  "repo": "randalmurphal/claude-config",
-  "category": "development",
-  "description": "Format concise, actionable test plans for Jira tickets using existing fptest tools and minimal MongoDB operations",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:49.060168Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "consulting-gemini",
-  "description": "Google Gemini CLIを使用した計画レビュー、実装チェック、調査タスクのための相談。 トリガー: /think完了, /code完了, /research実行, 計画レビュー, 実装確認, 調査依頼, Geminiに相談.\n",
-  "repo": "thkt/claude-config",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/thkt/claude-config"
-}

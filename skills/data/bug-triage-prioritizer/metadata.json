@@ -1,9 +1,0 @@
-{
-  "name": "bug-triage-prioritizer",
-  "description": "Triage bug reports by severity, recommend fix order, generate client communication templates, determine whether to charge for fixes, and provide Claude Code prompts to resolve issues quickly.",
-  "repo": "zanecole10/software-tailor-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

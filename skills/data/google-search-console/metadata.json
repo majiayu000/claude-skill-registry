@@ -1,9 +1,0 @@
-{
-  "name": "google-search-console",
-  "description": "Google Search Console API 통합 스킬. 검색 성과 분석, URL 검사, 사이트맵 관리, 사이트 인증 지원. \"GSC\", \"서치콘솔\", \"검색 성과\", \"SEO 분석\" 키워드로 활성화.",
-  "repo": "jiunbae/agent-skills",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

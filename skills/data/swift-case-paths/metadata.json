@@ -1,9 +1,0 @@
-{
-  "name": "swift-case-paths",
-  "description": "A library for working with enum cases as first-class values, enabling key path-like access to enum cases",
-  "repo": "nonameplum/agent-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

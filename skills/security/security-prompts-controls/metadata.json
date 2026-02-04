@@ -1,8 +1,0 @@
-{
-  "name": "security-prompts-controls",
-  "repo": "harperaa/secure-claude-skills",
-  "category": "security",
-  "description": "Simple security prompt templates for quick implementations using existing Secure Vibe Coding OS utilities. Use for straightforward features like contact forms, authenticated updates, and public APIs. ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:02:06.591851Z"
-}

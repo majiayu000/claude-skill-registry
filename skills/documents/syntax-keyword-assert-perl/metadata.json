@@ -1,8 +1,0 @@
-{
-  "name": "syntax-keyword-assert-perl",
-  "repo": "kfly8/claude-cpan-plugins",
-  "category": "documents",
-  "description": "Use Syntax::Keyword::Assert for zero-cost assertions in Perl",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:38.910266Z"
-}

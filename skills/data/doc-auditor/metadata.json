@@ -1,9 +1,0 @@
-{
-  "name": "doc-auditor",
-  "description": "Audit documentation against fractary-docs standards and generate actionable remediation specification",
-  "repo": "fractary/claude-plugins",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

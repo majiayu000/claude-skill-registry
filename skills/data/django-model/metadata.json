@@ -1,9 +1,0 @@
-{
-  "name": "django-model",
-  "description": "Creating Django models following Counterpart's patterns. Use when building new models, working with audit fields, implementing relationships, or using PydanticJSONEncoder. Triggers: 'create model', 'n",
-  "repo": "jprokay-counterpart/jprokay-counterpart",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

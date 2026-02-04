@@ -1,9 +1,0 @@
-{
-  "name": "output-dev-workflow-function",
-  "description": "Create workflow.ts files for Output SDK workflows. Use when defining workflow functions, orchestrating steps, or fixing workflow structure issues.",
-  "repo": "growthxai/output-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

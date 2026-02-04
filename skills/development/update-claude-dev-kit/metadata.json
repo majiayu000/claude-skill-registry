@@ -1,8 +1,0 @@
-{
-  "name": "update-claude-dev-kit",
-  "repo": "auge2u/claude-dev-kit",
-  "category": "development",
-  "description": "Use when updating Claude Dev Kit components - checks registry for new versions, shows changelogs, updates components individually or all at once, supports rollback",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:06.247692Z"
-}

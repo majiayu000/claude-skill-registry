@@ -1,9 +1,0 @@
-{
-  "name": "safe-editing",
-  "description": "Ensure AI agents work in an isolated Git worktree to prevent changes to the main working directory. Use when AI is about to make its first code modification in a session, or when the user requests iso",
-  "repo": "nozomi-koborinai/koborin-ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "ask-ai-150",
-  "description": "Consult external AI models when internal sources are exhausted. Build quality prompts using Prompt150 formula (Context + Query + Method + Style). Use when Loop150 exhausts internal sources, need real-",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

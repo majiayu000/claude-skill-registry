@@ -1,8 +1,0 @@
-{
-  "name": "show-activity",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Get a summary of vault activity over a period. Triggers on \"activity summary\", \"vault activity\", \"what happened this week\", \"editing patterns\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:51.879566Z"
-}

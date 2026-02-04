@@ -1,9 +1,0 @@
-{
-  "name": "dotnet-format-analyzers",
-  "description": "Define canonical dotnet format and analyzer verification commands, and provide scripts that generate a format/analyzer report. Use when checking formatting or Roslyn analyzers without reformatting eve",
-  "repo": "bravellian/platform",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

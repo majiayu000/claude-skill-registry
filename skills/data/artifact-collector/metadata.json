@@ -1,9 +1,0 @@
-{
-  "name": "artifact-collector",
-  "description": "Use this skill when users need to collect, manage, or analyze forensic artifacts such as files, memory dumps, Windows Event Logs, Mac Unified Logs, or network packet captures (PCAP) from endpoints.",
-  "repo": "tekgrunt/boot-test",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

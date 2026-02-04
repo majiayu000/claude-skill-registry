@@ -1,8 +1,0 @@
-{
-  "name": "cloudflare-aware-scrape",
-  "repo": "BenderFendor/Thesis",
-  "category": "documents",
-  "description": "Detect and document Cloudflare or anti-bot challenge responses while scraping. Use when a site returns \"Just a moment...\", /cdn-cgi/ pages, or requires JS verification; provides detection heuristics, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:10.173897Z"
-}

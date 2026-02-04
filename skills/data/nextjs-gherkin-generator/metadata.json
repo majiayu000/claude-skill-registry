@@ -1,9 +1,0 @@
-{
-  "name": "nextjs-gherkin-generator",
-  "description": "Next.js/TypeScriptプロジェクト向けGherkinシナリオ自動生成スキル。以下の場合に使用:(1) ユーザーストーリーからBDDシナリオ作成時(2) PRD/仕様書からテストシナリオ生成時(3) APIエンドポイントの振る舞い定義時(4) ページ遷移・UIインタラクションのシナリオ化時",
-  "repo": "tailwind8/portfolio-reserve",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

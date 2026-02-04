@@ -1,9 +1,0 @@
-{
-  "name": "kind-setup",
-  "description": "Create a Kind cluster in Docker-in-Docker environment",
-  "repo": "dwmkerr/claude-code-agent",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

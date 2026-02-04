@@ -1,9 +1,0 @@
-{
-  "name": "typer-patterns",
-  "description": "Modern type-safe Typer CLI patterns with type hints, Enums, and sub-apps. Use when building CLI applications, creating Typer commands, implementing type-safe CLIs, or when user mentions Typer, CLI pat",
-  "repo": "vanman2024/cli-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

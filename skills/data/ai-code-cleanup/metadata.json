@@ -1,9 +1,0 @@
-{
-  "name": "ai-code-cleanup",
-  "description": "Remove AI-generated code slop from branches. Use after AI-assisted coding sessions to clean up defensive bloat, unnecessary comments, type casts, and style inconsistencies. Focuses on identifying and ",
-  "repo": "89jobrien/steve",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

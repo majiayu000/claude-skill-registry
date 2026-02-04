@@ -1,9 +1,0 @@
-{
-  "name": "wp-wpcli-and-ops",
-  "description": "Use when working with WP-CLI for WordPress operations: safe search-replace, db export/import, plugin/theme management, cron, cache flushing, multisite, and automation with wp-cli.yml.",
-  "repo": "vapvarun/claude-backup",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/vapvarun/claude-backup"
-}

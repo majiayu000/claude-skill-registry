@@ -1,9 +1,0 @@
-{
-  "name": "conf-skill-creator",
-  "description": "Creates skills for installing software and configuring computers. Use when asked to create a new skill for machine setup, software installation, update or removal, or system configuration.",
-  "repo": "PerArneng/computer-conf-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

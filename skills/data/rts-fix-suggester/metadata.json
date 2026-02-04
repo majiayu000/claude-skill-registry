@@ -1,9 +1,0 @@
-{
-  "name": "rts-fix-suggester",
-  "description": "Suggest fixes for OSS-Fuzz build.sh and test.sh scripts based on RTS log analysis. Use when user asks how to fix build failures, test failures, or wants to skip failing test classes. Generates specifi",
-  "repo": "sslab-gatech/oss-crs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "complete-test",
-  "repo": "alvis/.claude",
-  "category": "testing",
-  "description": "Achieves 100% test coverage with minimal redundancy through progressive test writing. Writes tests one-at-a-time with immediate coverage verification, removes redundant tests while maintaining coverag",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:30.661400Z"
-}

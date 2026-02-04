@@ -1,7 +1,0 @@
-{
-  "name": "toon-formatter",
-  "description": "Token-Oriented Object Notation (TOON) format expert for 30-60% token savings on structured data. Auto-applies to arrays with 5+ items, tables, logs, API responses, database results. Supports tabular, ",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.726001Z"
-}

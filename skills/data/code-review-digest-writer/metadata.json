@@ -1,9 +1,0 @@
-{
-  "name": "code-review-digest-writer",
-  "description": "Generates weekly code-review digest docs from PR review comments for any GitHub repository. If present, follows project-specific docs/review-digests/AGENTS.md guidelines. Use this to turn a date-bound",
-  "repo": "DiversioTeam/agent-skills-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tech-stack-decision-maker",
-  "description": "Get confident tech stack recommendations for any software project based on requirements, with justification for each choice, Claude Code prompts to build with that stack, deployment strategy, and cost",
-  "repo": "zanecole10/software-tailor-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

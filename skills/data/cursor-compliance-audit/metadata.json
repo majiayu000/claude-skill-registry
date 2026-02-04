@@ -1,9 +1,0 @@
-{
-  "name": "cursor-compliance-audit",
-  "description": "Compliance and security auditing for Cursor usage. Triggers on \"cursor compliance\",\"cursor audit\", \"cursor security review\", \"cursor soc2\", \"cursor gdpr\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

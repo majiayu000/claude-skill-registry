@@ -1,8 +1,0 @@
-{
-  "name": "detect-non-localizable",
-  "repo": "ericfitz/tmi-ux",
-  "category": "development",
-  "description": "Determine if a string value should be translated or left as-is. Use when filtering localization keys, validating translation files, or building translation task lists.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.591661Z"
-}

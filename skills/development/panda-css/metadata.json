@@ -1,7 +1,0 @@
-{
-  "name": "panda-css",
-  "description": "Panda CSS styling framework guidance. Use when working with @pandacss packages, styled components, design tokens, or responsive/conditional styles.",
-  "category": "development",
-  "source": "github.com/hashintel/hash",
-  "imported_at": "2026-01-24T14:54:14.439099Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "language-expert",
-  "description": "Use for language design questions including syntax decisions, semantics, grammar authoring, and comparing DomainLang with other DSLs. Activate when designing new language features, evaluating syntax a",
-  "repo": "larsbaunwall/DomainLang",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "find-latest-portfolio",
-  "repo": "rgbussell/pine_scripts",
-  "category": "testing",
-  "description": "Find the most recently downloaded Fidelity and Tastytrade portfolio CSV files from Downloads directory. Use when you need to locate the latest portfolio data files before analysis or processing.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:43.275995Z"
-}

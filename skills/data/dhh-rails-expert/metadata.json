@@ -1,9 +1,0 @@
-{
-  "name": "dhh-rails-expert",
-  "description": "Expert at writing and reviewing Rails code following DHH's style as practiced at 37signals. Use when writing new Rails code, reviewing Rails code, making architectural decisions in Rails apps.",
-  "repo": "nityeshaga/claude-code-essentials",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

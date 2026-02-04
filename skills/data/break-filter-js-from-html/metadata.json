@@ -1,9 +1,0 @@
-{
-  "name": "break-filter-js-from-html",
-  "description": "Guidance for bypassing HTML/JavaScript sanitization filters in security testing contexts. This skill should be used when tasked with finding XSS filter bypasses, testing HTML sanitizers, or exploiting",
-  "repo": "letta-ai/skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

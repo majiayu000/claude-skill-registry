@@ -1,8 +1,0 @@
-{
-  "name": "spatial-transcriptomics-tutorials-with-omicverse",
-  "repo": "Starlitnightly/omicverse",
-  "category": "design",
-  "description": "Guide users through omicverse's spatial transcriptomics tutorials covering preprocessing, deconvolution, and downstream modelling workflows across Visium, Visium HD, Stereo-seq, and Slide-seq datasets",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:15.675043Z"
-}

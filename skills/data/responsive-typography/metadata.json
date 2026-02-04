@@ -1,9 +1,0 @@
-{
-  "name": "responsive-typography",
-  "description": "Implements fluid typography using CSS clamp() that scales with viewport. Use when creating responsive font sizes, viewport-aware headings, or type that adapts smoothly without breakpoints.",
-  "repo": "dylantarre/design-system-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

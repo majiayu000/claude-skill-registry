@@ -1,9 +1,0 @@
-{
-  "name": "codex-sdk-research",
-  "description": "Investigate the @openai/codex-sdk API by first inspecting installed .d.ts typings in node_modules, then cloning and searching the github.com/openai/codex repo for source/docs. Use for questions about ",
-  "repo": "Tiberriver256/codex-alfred",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "GitHub Search API"
-}

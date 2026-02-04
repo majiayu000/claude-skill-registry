@@ -1,9 +1,0 @@
-{
-  "name": "api-contract-enforcement",
-  "description": "Validates REST API implementations against OpenAPI 3.x specifications. Use when (1) Implementing or reviewing API endpoints, (2) Before deploying API changes to production, (3) Ensuring contract compl",
-  "repo": "Ahmednoorani258/Hackathon2-phase2",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

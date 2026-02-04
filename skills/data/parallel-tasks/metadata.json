@@ -1,9 +1,0 @@
-{
-  "name": "parallel-tasks",
-  "description": "Creates multiple git worktrees and launches parallel Claude sessions for simultaneous task execution. Maximum 3 tasks.",
-  "repo": "himicoswilson/himi-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

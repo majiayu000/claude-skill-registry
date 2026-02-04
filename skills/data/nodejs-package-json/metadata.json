@@ -1,9 +1,0 @@
-{
-  "name": "nodejs-package-json",
-  "description": "Patch a Node.js project's package.json for standard build automation. Use when asked to add/standardize package.json scripts like prebuild/postbuild for TypeScript builds (rimraf dist + tsc-alias), ad",
-  "repo": "shaowei-g/codex-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

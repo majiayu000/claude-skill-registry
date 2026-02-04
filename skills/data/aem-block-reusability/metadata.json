@@ -1,9 +1,0 @@
-{
-  "name": "aem-block-reusability",
-  "description": "Check Block Collection and Block Party BEFORE implementing blocks - avoid reinventing the wheel. Use when asked to implement any block or component for AEM Edge Delivery Services, before starting impl",
-  "repo": "samircaus/elsie",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

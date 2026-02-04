@@ -1,8 +1,0 @@
-{
-  "name": "npm-monorepo-publish",
-  "repo": "shawn-sandy/skills",
-  "category": "development",
-  "description": "Orchestrate publishing monorepo packages to npm using Lerna with OTP handling, pre-publish validation (build + lint), dry-run preview, and post-publish verification. Use when user requests to publish,",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:18.201968Z"
-}

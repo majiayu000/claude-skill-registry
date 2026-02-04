@@ -1,9 +1,0 @@
-{
-  "name": "authentication-strategies",
-  "description": "Authentication patterns including JWT, sessions, and OAuth. Use when implementing user authentication.",
-  "repo": "IvanTorresEdge/molcajete.ai",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

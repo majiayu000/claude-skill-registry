@@ -1,9 +1,0 @@
-{
-  "name": "onepassword-cli-coder",
-  "description": "This skill guides integrating 1Password CLI (op) for secret management in development workflows. Use when loading secrets for infrastructure, deployments, or local development.",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

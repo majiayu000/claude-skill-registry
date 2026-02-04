@@ -1,9 +1,0 @@
-{
-  "name": "schemalinter",
-  "repo": "chrislyons/carbon-acx",
-  "category": "data",
-  "description": "Validate and lint structured data files (YAML, JSON, TOML) for consistency, required fields, syntax errors, and schema compliance.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:28.394552Z",
-  "dir_name": "schemalinter"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "testing-trigger",
-  "description": "Natural language wrapper for testing commands - automatically triggers /testing:run when users request test execution",
-  "repo": "grandinh/claude-chaos-express",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

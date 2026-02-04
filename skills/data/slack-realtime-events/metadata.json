@@ -1,9 +1,0 @@
-{
-  "name": "slack-realtime-events",
-  "description": "Real-time event handling with Socket Mode and Events API. Use when building interactive Slack bots, handling message events, app mentions, reactions, button clicks, modal submissions, slash commands, ",
-  "repo": "linehaul-ai/linehaulai-claude-marketplace",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

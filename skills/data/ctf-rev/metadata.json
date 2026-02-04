@@ -1,9 +1,0 @@
-{
-  "name": "ctf-rev",
-  "description": "Solve CTF reverse engineering challenges using systematic analysis to find flags, keys, or passwords. Use for crackmes, binary bombs, key validators, obfuscated code, algorithm recovery, or any challe",
-  "repo": "cyberkaida/reverse-engineering-assistant",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

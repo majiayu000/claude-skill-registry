@@ -1,9 +1,0 @@
-{
-  "name": "media-insertion",
-  "description": "Insert images and videos from Slack messages into changelog markdown. Use when you have media files downloaded from Slack that need to be included in documentation.",
-  "repo": "mattppal/shipping-szn",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

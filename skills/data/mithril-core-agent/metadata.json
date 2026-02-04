@@ -1,9 +1,0 @@
-{
-  "name": "mithril-core-agent",
-  "description": "Build mithril-core shared infrastructure. Use when implementing storage, compression, hashing, or common types for the Mithril ML toolkit.",
-  "repo": "gar-ai/mallorn",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

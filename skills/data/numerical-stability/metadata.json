@@ -1,9 +1,0 @@
-{
-  "name": "numerical-stability",
-  "description": "Analyze and enforce numerical stability for time-dependent PDE simulations. Use when selecting time steps, choosing explicit/implicit schemes, diagnosing numerical blow-up, or checking CFL/Fourier cri",
-  "repo": "HeshamFS/materials-simulation-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

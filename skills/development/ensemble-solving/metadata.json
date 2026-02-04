@@ -1,7 +1,0 @@
-{
-  "name": "ensemble-solving",
-  "description": "Generate multiple diverse solutions in parallel and select the best. Use for architecture decisions, code generation with multiple valid approaches, or creative tasks where exploring alternatives impr",
-  "category": "development",
-  "source": "github.com/mhattingpete/claude-skills-marketplace",
-  "imported_at": "2026-01-24T14:54:24.161983Z"
-}

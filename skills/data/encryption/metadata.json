@@ -1,9 +1,0 @@
-{
-  "name": "encryption",
-  "description": "> MANDATORY READING PROTOCOL: Before implementing ANY encryption, read references/advanced-patterns.md for key derivation and references/security-examples.md for implementation patterns.",
-  "repo": "martinholovsky/claude-skills-generator",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/martinholovsky/claude-skills-generator"
-}

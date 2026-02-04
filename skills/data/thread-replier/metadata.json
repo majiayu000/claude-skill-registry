@@ -1,9 +1,0 @@
-{
-  "name": "thread-replier",
-  "description": "Slack スレッドに返信する。「スレッドに返信」「スレッド返信して」「このスレッドに返信」「スレッドで返信」「スレッドに投稿」「スレッドに書き込み」「返信をスレッドで」などで起動。User Token があればユーザーとして返信、なければ Bot として返信。",
-  "repo": "shiiman/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/shiiman/claude-code-plugins"
-}

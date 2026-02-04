@@ -1,9 +1,0 @@
-{
-  "name": "apollo-server-patterns",
-  "description": "Use when building GraphQL APIs with Apollo Server requiring resolvers, data sources, schema design, and federation.",
-  "repo": "TheBushidoCollective/han",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

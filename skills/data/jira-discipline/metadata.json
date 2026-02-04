@@ -1,9 +1,0 @@
-{
-  "name": "jira-discipline",
-  "description": "Use this skill when discussing code changes, implementation work, feature status, or when starting/completing development tasks. Reminds about Jira issue tracking discipline - always having an issue i",
-  "repo": "jclfocused/claude-agents",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

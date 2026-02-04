@@ -1,9 +1,0 @@
-{
-  "name": "e2e-page-test",
-  "description": "Systematically test all pages for errors, functionality, and proper rendering using Playwright MCP",
-  "repo": "mwguerra/claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

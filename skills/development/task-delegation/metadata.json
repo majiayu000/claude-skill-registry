@@ -1,7 +1,0 @@
-{
-  "name": "task-delegation",
-  "description": "Generate structured agent prompts with FOCUS/EXCLUDE templates for task delegation. Use when breaking down complex tasks, launching parallel specialists, coordinating multiple agents, creating agent i",
-  "category": "development",
-  "source": "github.com/rsmdt/the-startup",
-  "imported_at": "2026-01-24T14:54:10.112768Z"
-}

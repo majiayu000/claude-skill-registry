@@ -1,8 +1,0 @@
-{
-  "name": "runbooks-incident-response",
-  "repo": "TheBushidoCollective/han",
-  "category": "documents",
-  "description": "Use when creating incident response procedures and on-call playbooks. Covers incident management, communication protocols, and post-mortem documentation.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:08.386413Z"
-}

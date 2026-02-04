@@ -1,8 +1,0 @@
-{
-  "name": "model-registry-maintainer",
-  "repo": "massgen/MassGen",
-  "category": "development",
-  "description": "Guide for maintaining the MassGen model and backend registry. This skill should be used when adding new models, updating model information (release dates, pricing, context windows), or ensuring the re",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:56:16.342437Z"
-}

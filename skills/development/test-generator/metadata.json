@@ -1,7 +1,0 @@
-{
-  "name": "test-generator",
-  "description": "Automatically suggest tests for new functions and components. Use when new code is written, functions added, or user mentions testing. Creates test scaffolding with Jest, Vitest, Pytest patterns. Trig",
-  "category": "development",
-  "source": "github.com/alirezarezvani/claude-code-tresor",
-  "imported_at": "2026-01-24T14:54:07.925199Z"
-}

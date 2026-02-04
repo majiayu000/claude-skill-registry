@@ -1,9 +1,0 @@
-{
-  "name": "creating-changelogs",
-  "description": "Gitコミット履歴を分析し、ユーザーフレンドリーかつ技術的に詳細なリリースノートとチェンジログを作成します。リリースノート、CHANGELOG、変更履歴が必要なときに使用してください。",
-  "repo": "sekka/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

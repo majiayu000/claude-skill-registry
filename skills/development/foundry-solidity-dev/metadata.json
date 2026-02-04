@@ -1,8 +1,0 @@
-{
-  "name": "foundry-solidity-dev",
-  "repo": "phpmac/foundry",
-  "category": "development",
-  "description": "\u63d0\u4f9bFoundry\u667a\u80fd\u5408\u7ea6\u5f00\u53d1\u7684\u4e13\u4e1a\u6307\u5bfc,\u5305\u62ec\u5408\u7ea6\u7f16\u5199\u3001\u6d4b\u8bd5\u3001\u90e8\u7f72\u548c\u5b89\u5168\u6700\u4f73\u5b9e\u8df5\u3002\u5f53\u9700\u8981\u5f00\u53d1\u3001\u6d4b\u8bd5\u6216\u90e8\u7f72Solidity\u667a\u80fd\u5408\u7ea6\u65f6\u4f7f\u7528\u6b64\u6280\u80fd\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:30.527769Z"
-}

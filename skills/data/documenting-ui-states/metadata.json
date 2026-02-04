@@ -1,9 +1,0 @@
-{
-  "name": "documenting-ui-states",
-  "description": "Documents all UI state variations (default, empty, error, loading, success) from Figma designs. Use when defining complete UI specifications before implementation.",
-  "repo": "farmanlab/ai_agent_orchestra",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

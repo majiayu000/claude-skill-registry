@@ -1,9 +1,0 @@
-{
-  "name": "mindmap-generator",
-  "description": "Mindmap Generator - Auto-activating skill for Visual Content.\nTriggers on: mindmap generator, mindmap generator\nPart of the Visual Content skill category.\n",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/jeremylongshore/claude-code-plugins-plus-skills"
-}

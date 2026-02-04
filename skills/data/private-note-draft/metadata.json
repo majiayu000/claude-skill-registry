@@ -1,9 +1,0 @@
-{
-  "name": "private-note-draft",
-  "description": "note.com記事の本文を生成。アウトラインから7000-12000字の完成度の高い記事本文を執筆する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

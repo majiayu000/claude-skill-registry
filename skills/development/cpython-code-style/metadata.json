@@ -1,8 +1,0 @@
-{
-  "name": "cpython-code-style",
-  "repo": "gpshead/cpython-skills",
-  "category": "development",
-  "description": "Use this skill when writing or modifying CPython code, preparing commits, or running style checks. Covers PEP 7 (C code) and PEP 8 (Python) compliance, pre-commit hooks, patchcheck validation, trailin",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:55.604836Z"
-}

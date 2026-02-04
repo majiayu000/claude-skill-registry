@@ -1,8 +1,0 @@
-{
-  "name": "sonarqube-scan",
-  "repo": "visgwu/python_web_app",
-  "category": "development",
-  "description": "Run SonarQube/SonarCloud static code analysis to check code quality, detect security vulnerabilities, code smells, and bugs. Use when the user mentions SonarQube, code quality analysis, security scann",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:29.289717Z"
-}

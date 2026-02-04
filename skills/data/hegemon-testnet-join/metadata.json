@@ -1,9 +1,0 @@
-{
-  "name": "hegemon-testnet-join",
-  "description": "Join the Hegemon testnet using the shared chainspec, verify genesis, sync to the tip, and enable mining safely.",
-  "repo": "Pauli-Group/Hegemon",
-  "category": "development",
-  "tags": [],
-  "stars": 7,
-  "source": "github.com/Pauli-Group/Hegemon"
-}

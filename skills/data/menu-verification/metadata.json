@@ -1,9 +1,0 @@
-{
-  "name": "menu-verification",
-  "description": "Use this skill to verify whether restaurants actually have Planted products on their current menu. Crawls restaurant websites, parses PDF menus, and updates venue verification status in Firestore.",
-  "repo": "cgjen-box/planted-website",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

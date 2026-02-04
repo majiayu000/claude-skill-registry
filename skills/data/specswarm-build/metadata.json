@@ -1,9 +1,0 @@
-{
-  "name": "specswarm-build",
-  "description": "Systematic spec-driven workflow (specification→clarification→planning→tasks→implementation→validation) for feature development. Auto-executes when user clearly wants to build, create, add, implement, ",
-  "repo": "MartyBonacci/specswarm",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

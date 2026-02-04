@@ -1,9 +1,0 @@
-{
-  "name": "genkit-infra-expert",
-  "description": "Use when deploying Genkit applications to production with Terraform. Trigger with phrases like \"deploy genkit terraform\", \"provision genkit infrastructure\", \"firebase functions terraform\", \"cloud run ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

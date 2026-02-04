@@ -1,8 +1,0 @@
-{
-  "name": "stata-mcp",
-  "repo": "tmonk/mcp-stata",
-  "category": "development",
-  "description": "Run or debug Stata workflows through the local io.github.tmonk/mcp-stata server. Use when users mention Stata commands, .do files, r()/e() results, dataset inspection, or Stata graph exports.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:58.429559Z"
-}

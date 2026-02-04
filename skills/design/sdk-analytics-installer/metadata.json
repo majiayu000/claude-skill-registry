@@ -1,8 +1,0 @@
-{
-  "name": "sdk-analytics-installer",
-  "repo": "dotCMS/core",
-  "category": "design",
-  "description": "Use this skill when the user asks to install, configure, or set up @dotcms/analytics, sdk-analytics, analytics SDK, add analytics tracking, or mentions installing analytics in Next.js or React project",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:55:43.028788Z"
-}

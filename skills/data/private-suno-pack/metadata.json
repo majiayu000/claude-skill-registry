@@ -1,9 +1,0 @@
-{
-  "name": "private-suno-pack",
-  "description": "分析ファイルからSunoパック（style, lyrics, image_prompt）を生成。Suno AI用のプロンプトセットを作成する。",
-  "repo": "takish/dotfiles",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/takish/dotfiles"
-}

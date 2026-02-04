@@ -1,9 +1,0 @@
-{
-  "name": "google-cloud-configs",
-  "description": "Google Cloud Platform configuration templates for BigQuery ML and Vertex AI training with authentication setup, GPU/TPU configs, and cost estimation tools. Use when setting up GCP ML training, configu",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

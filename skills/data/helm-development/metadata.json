@@ -1,9 +1,0 @@
-{
-  "name": "helm-development",
-  "description": "Helm chart development workflow including chart structure, values management, testing, linting, and publishing for EKS deployments with Keycloak integration",
-  "repo": "Lobbi-Docs/claude",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Lobbi-Docs/claude"
-}

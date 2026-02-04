@@ -1,9 +1,0 @@
-{
-  "name": "fastapi-generator",
-  "description": "Generates FastAPI endpoints with proper Pydantic models, dependency injection, async handlers, and OpenAPI documentation. Use when building Python REST APIs.",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

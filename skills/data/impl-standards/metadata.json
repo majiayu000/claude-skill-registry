@@ -1,9 +1,0 @@
-{
-  "name": "impl-standards",
-  "description": "Core engineering standards during implementation. Use when implementing features, writing production code, or when user mentions error handling, constants management, progress logging, or code quality",
-  "repo": "terrylica/cc-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

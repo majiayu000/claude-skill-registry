@@ -1,9 +1,0 @@
-{
-  "name": "llm-inference-batching-scheduler",
-  "description": "Guidance for optimizing LLM inference request batching and scheduling problems. This skill applies when designing batch schedulers that minimize cost while meeting latency and padding constraints, inv",
-  "repo": "letta-ai/skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

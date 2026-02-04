@@ -1,8 +1,0 @@
-{
-  "name": "check-link-strength",
-  "repo": "bencassie/flywheel",
-  "category": "development",
-  "description": "Calculate connection strength between two notes based on multiple factors. Triggers on \"connection strength\", \"how related\", \"relationship score\", \"strength between\".",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:45.759441Z"
-}

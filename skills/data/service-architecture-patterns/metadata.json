@@ -1,9 +1,0 @@
-{
-  "name": "service-architecture-patterns",
-  "description": "Modular design pattern for external service integrations (CAPTCHA, payment, SMS, file storage, analytics). Use when implementing third-party services, designing service abstractions, or reviewing serv",
-  "repo": "SlavaMelanko/smela-back",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "update-docs-and-commit",
-  "repo": "mhlauf1/body-biz",
-  "category": "development",
-  "description": "Updates documentation files (changelog, architecture, project_status) based on git changes, then stages and commits all changes. Use after completing features or fixes.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:23:59.344537Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "smart-writing-workflow",
-  "description": "This skill should be used when the user wants to start a complete article writing project and needs guidance through the full iterative workflow. Triggers: \"开始写作流程\", \"开始创作\", \"help me write article\", \"",
-  "repo": "bahayonghang/wechat-content-writer",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

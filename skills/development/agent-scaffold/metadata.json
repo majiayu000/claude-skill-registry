@@ -1,8 +1,0 @@
-{
-  "name": "agent-scaffold",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "description": "File templates for Claude Agent SDK project scaffolding. Used by /agent-sdk:agent-scaffold command.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:22.775709Z"
-}

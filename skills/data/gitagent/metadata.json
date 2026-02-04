@@ -1,9 +1,0 @@
-{
-  "name": "gitagent",
-  "description": "Use this skill in the scenario of writing git commit messages.",
-  "repo": "zht7063/dev-configs",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

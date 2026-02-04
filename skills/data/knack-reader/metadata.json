@@ -1,9 +1,0 @@
-{
-  "name": "knack-reader",
-  "description": "REST-based access to Knack Objects and Views for data extraction and transformation. Primary skill for reading HTI operational data from Knack data...",
-  "repo": "willsigmon/sigstack-site",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/willsigmon/sigstack-site"
-}

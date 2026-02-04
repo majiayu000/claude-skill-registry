@@ -1,9 +1,0 @@
-{
-  "name": "backtest-datetime-visualization",
-  "description": "Converting backtest visualizations from bar indices/timesteps to actual datetime axes for clearer time context",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

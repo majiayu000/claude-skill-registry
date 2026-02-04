@@ -1,9 +1,0 @@
-{
-  "name": "review-maintainability",
-  "description": "Audit code for DRY violations, dead code, complexity, and consistency issues.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

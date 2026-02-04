@@ -1,9 +1,0 @@
-{
-  "name": "gemini-extension-development",
-  "description": "Expert guide for building and managing Gemini CLI Extensions. Covers extension anatomy, GEMINI.md context, commands, MCP integration, and publishing. Use when creating Gemini extensions, linking local",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

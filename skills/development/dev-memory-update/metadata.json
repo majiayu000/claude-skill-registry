@@ -1,8 +1,0 @@
-{
-  "name": "dev-memory-update",
-  "repo": "BerryKuipers/claude-code-toolkit",
-  "category": "development",
-  "description": "Update development memory (events.jsonl) based on commit metadata and diff analysis. Automatically tracks features, fixes, refactorings, and decisions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:14.945491Z"
-}

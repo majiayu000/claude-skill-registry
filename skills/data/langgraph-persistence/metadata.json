@@ -1,9 +1,0 @@
-{
-  "name": "langgraph-persistence",
-  "description": "Persistence and human-in-the-loop patterns for LangGraph. Use when implementing checkpointing, saving/restoring graph state, adding human approval workflows, managing conversation memory across sessio",
-  "repo": "rozwer/cross2B-Pro",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

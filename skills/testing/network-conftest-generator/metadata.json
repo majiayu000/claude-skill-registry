@@ -1,8 +1,0 @@
-{
-  "name": "network-conftest-generator",
-  "repo": "cmw-coder/coder-templates",
-  "category": "testing",
-  "description": "\u751f\u6210\u5e76\u914d\u7f6e\u7528\u4e8e\u65b0\u534e\u4e09\u6280\u672f\u6709\u9650\u516c\u53f8H3C\u7f51\u7edc\u8bbe\u5907\u81ea\u52a8\u5316\u7684 pytest `conftest.py`\uff0c`conftest.py`\u6587\u4ef6\u4e3b\u8981\u8d1f\u8d23\u6d4b\u8bd5\u80cc\u666f\u642d\u5efa\u548c\u6d4b\u8bd5\u80cc\u666f\u6e05\u7406\u3002",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:35.775955Z"
-}

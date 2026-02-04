@@ -1,7 +1,0 @@
-{
-  "name": "test-webhook",
-  "repo": "martin-janci/claude-code-reviewer",
-  "path": ".claude/skills/test-webhook/skill.md",
-  "source": "github.com/martin-janci/claude-code-reviewer",
-  "downloaded_at": "2026-02-04T04:38:40.113643Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "kubernetes-rbac-analyzer",
-  "description": "Kubernetes Rbac Analyzer - Auto-activating skill for Security Advanced.Triggers on: kubernetes rbac analyzer, kubernetes rbac analyzerPart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

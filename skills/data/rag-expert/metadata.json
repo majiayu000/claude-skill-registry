@@ -1,9 +1,0 @@
-{
-  "name": "rag-expert",
-  "description": "Expert in Retrieval-Augmented Generation systems - knowledge bases, chunking strategies, embedding optimization, and production RAG architectures",
-  "repo": "frankxai/ai-architect",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/frankxai/ai-architect"
-}

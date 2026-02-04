@@ -1,8 +1,0 @@
-{
-  "name": "git-writer",
-  "repo": "cncorp/arsenal",
-  "category": "development",
-  "description": "Safe workflow for git write operations (git rm). Use for removing files from git.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.095701Z"
-}

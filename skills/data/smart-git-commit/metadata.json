@@ -1,9 +1,0 @@
-{
-  "name": "smart-git-commit",
-  "description": "Execute git commit operations when user requests to commit or push code changes. Use this skill to generate recommended commit messages, perform local commits, or push to remote repositories. Auto-act",
-  "repo": "muheun/claude-code-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

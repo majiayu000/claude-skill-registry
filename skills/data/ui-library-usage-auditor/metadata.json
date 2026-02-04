@@ -1,9 +1,0 @@
-{
-  "name": "ui-library-usage-auditor",
-  "description": "This skill should be used when reviewing shadcn/ui component usage to ensure accessibility, consistency, and proper patterns. Applies when auditing UI code, checking component patterns, reviewing layo",
-  "repo": "hopeoverture/worldbuilding-app-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

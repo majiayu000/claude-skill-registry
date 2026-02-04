@@ -1,9 +1,0 @@
-{
-  "name": "spec-coverage-map",
-  "description": "Generate a visual spec-to-code coverage map showing which code files are covered by which specifications. Creates ASCII diagrams, reverse indexes, and coverage statistics. Use after implementation or ",
-  "repo": "jschulte/stackshift",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

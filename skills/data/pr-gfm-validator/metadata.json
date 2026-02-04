@@ -1,9 +1,0 @@
-{
-  "name": "pr-gfm-validator",
-  "description": "Validate and auto-fix GitHub Flavored Markdown links in PR descriptions. Use when creating pull requests, mentioning PR links, gh pr create, GFM validation, or fixing broken PR links. Converts repo-re",
-  "repo": "terrylica/cc-skills",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

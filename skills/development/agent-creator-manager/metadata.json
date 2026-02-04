@@ -1,8 +1,0 @@
-{
-  "name": "agent-creator-manager",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Provision and register autonomous GPIA agent workspaces with unique IDs, helper functions, and execution reports; use when creating new agents or when other models need a plug to spawn agents.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:24.010504Z"
-}

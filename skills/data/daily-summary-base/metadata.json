@@ -1,9 +1,0 @@
-{
-  "name": "daily-summary-base",
-  "description": "Framework for creating session summary documents. Use when user says \"daily summary\", \"generate summary\", or similar. Provides structured markdown template with date verification, filename patterns, a",
-  "repo": "ZachBeta/claude-as-coach",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ZachBeta/claude-as-coach"
-}

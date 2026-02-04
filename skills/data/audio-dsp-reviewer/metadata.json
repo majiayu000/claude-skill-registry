@@ -1,9 +1,0 @@
-{
-  "name": "audio-dsp-reviewer",
-  "description": "Expert in digital signal processing for audio applications. Validates biquad filter implementations, frequency response calculations, and audio algorithms. Use when modifying audio-math.ts, implementi",
-  "repo": "iammarkps/eqapo-gui",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

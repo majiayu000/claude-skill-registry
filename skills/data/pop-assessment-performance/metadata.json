@@ -1,9 +1,0 @@
-{
-  "name": "pop-assessment-performance",
-  "description": "Evaluates PopKit efficiency using concrete metrics for context usage, token consumption, and lazy loading validation",
-  "repo": "jrc1883/popkit-claude",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

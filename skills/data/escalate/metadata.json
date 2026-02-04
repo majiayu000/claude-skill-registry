@@ -1,9 +1,0 @@
-{
-  "name": "escalate",
-  "description": "Structured escalation with evidence. Surfaces blocking issues for human decision, referencing the Manifest hierarchy.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

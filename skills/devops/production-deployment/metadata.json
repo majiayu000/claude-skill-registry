@@ -1,8 +1,0 @@
-{
-  "name": "production-deployment",
-  "repo": "Jony2176-cloud/n8n",
-  "category": "devops",
-  "description": "Expert guidance for deploying Agno AGI agents and AI applications to production using Docker, FastAPI, monitoring, CI/CD, and cloud platforms",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:06:28.955835Z"
-}

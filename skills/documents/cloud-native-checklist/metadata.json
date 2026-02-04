@@ -1,8 +1,0 @@
-{
-  "name": "cloud-native-checklist",
-  "repo": "cameronsjo/claude-marketplace",
-  "category": "documents",
-  "description": "Generate CNCF/12-Factor compliance checklists and ADRs for cloud-native applications. Use when reviewing application architecture, planning containerization, or documenting cloud-native decisions.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:40.852003Z"
-}

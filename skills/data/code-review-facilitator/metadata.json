@@ -1,9 +1,0 @@
-{
-  "name": "code-review-facilitator",
-  "description": "Automated code review for Arduino/ESP32/RP2040 projects focusing on best practices, memory safety, and common pitfalls. Use when user wants code feedback, says \"review my code\", needs help improving c",
-  "repo": "wedsamuel1230/arduino-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "vercel-reliability-patterns",
-  "description": "Implement Vercel reliability patterns including circuit breakers, idempotency, and graceful degradation.Use when building fault-tolerant Vercel integrations, implementing retry strategies,or adding re",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

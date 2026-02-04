@@ -1,8 +1,0 @@
-{
-  "name": "cicd-optimization",
-  "repo": "yaleh/meta-cc",
-  "category": "development",
-  "description": "Comprehensive CI/CD pipeline methodology with quality gates, release automation, smoke testing, observability, and performance tracking. Use when setting up CI/CD from scratch, build time over 5 minut",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:15.052001Z"
-}

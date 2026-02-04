@@ -1,9 +1,0 @@
-{
-  "name": "domain-assessment",
-  "description": "Domain reconnaissance coordinator that orchestrates subdomain discovery and port scanning to build comprehensive domain attack surface inventory",
-  "repo": "transilienceai/communitytools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

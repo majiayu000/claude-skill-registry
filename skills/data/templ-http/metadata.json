@@ -1,9 +1,0 @@
-{
-  "name": "templ-http",
-  "description": "Integrate templ components with Go HTTP server using net/http. Use when connecting templ to web server, creating HTTP handlers, mentions 'templ server', 'HTTP routes', or 'serve templ components'.",
-  "repo": "homveloper/doodle",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

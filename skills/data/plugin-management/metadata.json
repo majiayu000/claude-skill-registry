@@ -1,9 +1,0 @@
-{
-  "name": "plugin-management",
-  "description": "Use when the user wants to list, configure, update, or remove installed Claude Code plugins",
-  "repo": "Lobbi-Docs/claude-2",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

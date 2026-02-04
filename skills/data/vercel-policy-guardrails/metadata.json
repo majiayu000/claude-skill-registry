@@ -1,9 +1,0 @@
-{
-  "name": "vercel-policy-guardrails",
-  "description": "Implement Vercel lint rules, policy enforcement, and automated guardrails.Use when setting up code quality rules for Vercel integrations, implementingpre-commit hooks, or configuring CI policy checks ",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

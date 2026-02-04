@@ -1,8 +1,0 @@
-{
-  "name": "dedup-divergences",
-  "repo": "cyberthirst/ivy",
-  "category": "development",
-  "description": "Batch analysis of hundreds of fuzzer divergences using parallel subagents - categorize, deduplicate, identify unique bugs, create summary reports",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:35.702641Z"
-}

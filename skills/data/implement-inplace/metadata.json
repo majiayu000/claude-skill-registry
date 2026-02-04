@@ -1,9 +1,0 @@
-{
-  "name": "implement-inplace",
-  "description": "Single-agent implementation: executes plans in-place without subagents. Use /implement (default) for complex features; use this for simpler tasks or when subagent overhead is unwanted.",
-  "repo": "doodledood/claude-code-plugins",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/doodledood/claude-code-plugins"
-}

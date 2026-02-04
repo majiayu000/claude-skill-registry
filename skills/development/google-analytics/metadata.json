@@ -1,7 +1,0 @@
-{
-  "name": "google-analytics",
-  "description": "Analyze Google Analytics data, review website performance metrics, identify traffic patterns, and suggest data-driven improvements. Use when the user asks about analytics, website metrics, traffic ana",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:21.731010Z"
-}

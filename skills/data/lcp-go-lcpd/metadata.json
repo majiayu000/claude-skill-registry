@@ -1,9 +1,0 @@
-{
-  "name": "lcp-go-lcpd",
-  "description": "Develop the go-lcpd daemon/tools (Go). Follow repo principles (robustness, TDD, lint) and validate with make test/lint/gen.",
-  "repo": "YusukeShimizu/lightning-compute-protocol",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "chatbot-dev",
-  "description": "ChatBotプロジェクトの開発全般を支援するスキル。プロジェクト構造、コーディング規約、開発ワークフローに関する知識を提供します。ChatBotプロジェクトで作業する時、プロジェクト構造について質問された時、コーディング規約について質問された時、新しい機能を追加する時に使用してください。",
-  "repo": "SuperPyonchiX/ChatBot",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "guided-ooda-loop",
-  "description": "Universal pattern for structured LLM interaction managing finite context windows through phased progression (Observe-Orient-Decide-Act). Use when the user has a complex problem, wants to design/build/",
-  "repo": "m31uk3/ai-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

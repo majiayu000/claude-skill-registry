@@ -1,9 +1,0 @@
-{
-  "name": "training-code-verification",
-  "description": "Checklist for editing training code. Trigger when: (1) modifying training notebook, (2) changing GPUEnvConfig, (3) changing reward functions, (4) ANY training-related code changes.",
-  "repo": "smith6jt-cop/Skills_Registry",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

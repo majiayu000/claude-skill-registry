@@ -1,8 +1,0 @@
-{
-  "name": "roslyn-source-generators",
-  "repo": "keithdv/ClaudeSkills",
-  "category": "development",
-  "description": "Create and maintain Roslyn source generators for compile-time code generation. Use when building incremental generators, designing pipelines with ForAttributeWithMetadataName, creating marker attribut",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:05.912083Z"
-}

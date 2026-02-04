@@ -1,9 +1,0 @@
-{
-  "name": "code-format",
-  "description": "Format code using dotnet format, prettier, and other formatting tools. Use when task involves code style fixes, formatting consistency, or preparing code for commit.",
-  "repo": "GiantCroissant-Lunar/lunar-snake-hub",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "tib-report",
-  "description": "Create TIB (Tjänsteperson i Beredskap) incident reports. Auto-triggers on phrases like \"skapa TIB-rapport\", \"ny händelserapport\", \"TIB report\", \"dokumentera händelse\".",
-  "repo": "Ninjasenap/AIDA",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "lifecyclegarbage-collection",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Remove the ephemeral model, flush VRAM, drop temp memory shards, and verify cleanup. Use immediately after transient execution.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:29.991536Z"
-}

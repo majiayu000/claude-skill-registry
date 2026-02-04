@@ -1,9 +1,0 @@
-{
-  "name": "frmr-analysis",
-  "description": "Analyzes FedRAMP FRMR documents to extract control mappings, KSI entries, and version changes. Use when the user asks about FedRAMP requirements, control mappings, compliance data, or needs to underst",
-  "repo": "ethanolivertroy/fedramp-docs-mcp",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

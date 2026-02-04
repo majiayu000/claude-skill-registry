@@ -1,9 +1,0 @@
-{
-  "name": "codex-iterative-fix",
-  "description": "Use Codex CLI in full-auto mode to fix issues iteratively until tests pass. Autonomous debugging and test-fixing loop with sandbox safety.",
-  "repo": "DNYoussef/context-cascade",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

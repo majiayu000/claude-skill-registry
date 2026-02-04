@@ -1,9 +1,0 @@
-{
-  "name": "pubmed-fulltext-access",
-  "description": "透過 Europe PMC、CORE 等開放取用來源取得論文全文，包含 PDF 連結和全文內容。",
-  "repo": "u9401066/pubmed-search-mcp",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/u9401066/pubmed-search-mcp"
-}

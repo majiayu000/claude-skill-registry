@@ -1,9 +1,0 @@
-{
-  "name": "a11y-annotation-generator",
-  "description": "Adds accessibility annotations (ARIA labels, roles, alt text) to make web content accessible. Use when user asks to \"add accessibility\", \"make accessible\", \"add aria labels\", \"wcag compliance\", or \"sc",
-  "repo": "Dexploarer/claudius-skills",
-  "category": "marketing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

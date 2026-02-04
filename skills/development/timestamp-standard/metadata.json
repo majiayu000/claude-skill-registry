@@ -1,8 +1,0 @@
-{
-  "name": "timestamp-standard",
-  "repo": "TrueNine/claude-code-projects",
-  "category": "development",
-  "description": "Frontend-backend time data transmission standard, using millisecond timestamps for time points (timezone-independent); Duration/Period use ISO 8601 string format.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:16.444475Z"
-}

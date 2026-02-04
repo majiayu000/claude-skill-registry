@@ -1,8 +1,0 @@
-{
-  "name": "continuity-ledger",
-  "repo": "LerianStudio/ring",
-  "category": "design",
-  "description": "Create or update continuity ledger for state preservation across /clear operations.Ledgers maintain session state externally, surviving context resets with full fidelity.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:32.242648Z"
-}

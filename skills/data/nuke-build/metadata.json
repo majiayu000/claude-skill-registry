@@ -1,9 +1,0 @@
-{
-  "name": "nuke-build",
-  "description": "Build and orchestrate tasks using Nuke build system. Use when task involves running Nuke build targets, orchestrating complex build workflows, or managing build pipelines.",
-  "repo": "GiantCroissant-Lunar/lunar-snake-hub",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

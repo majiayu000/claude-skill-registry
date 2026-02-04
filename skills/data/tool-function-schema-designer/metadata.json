@@ -1,9 +1,0 @@
-{
-  "name": "tool-function-schema-designer",
-  "description": "Designs robust function/tool calling schemas for LLMs with JSON schemas, validation strategies, typed interfaces, and example calls. Use when implementing \"function calling\", \"tool use\", \"LLM tools\", ",
-  "repo": "patricio0312rev/skillset",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

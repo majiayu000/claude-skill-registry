@@ -1,9 +1,0 @@
-{
-  "name": "beat-scheduling",
-  "description": "Periodic task scheduling patterns with Celery Beat (crontab, interval, solar). Use when configuring periodic tasks, setting up task schedules, implementing recurring jobs, configuring django-celery-be",
-  "repo": "vanman2024/ai-dev-marketplace",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

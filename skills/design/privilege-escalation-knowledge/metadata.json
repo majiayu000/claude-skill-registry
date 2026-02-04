@@ -1,8 +1,0 @@
-{
-  "name": "privilege-escalation-knowledge",
-  "repo": "CharlesKozel/Pentest-Agent-Evalulator",
-  "category": "design",
-  "description": "Comprehensive knowledge about Linux privilege escalation. Provides methodologies for enumerating and exploiting privesc vectors including SUID binaries, sudo permissions, capabilities, kernel exploits",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:36.985260Z"
-}

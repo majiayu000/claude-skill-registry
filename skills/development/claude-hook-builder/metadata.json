@@ -1,7 +1,0 @@
-{
-  "name": "claude-hook-builder",
-  "description": "Interactive hook creator for Claude Code. Triggers when user mentions creating hooks, PreToolUse, PostToolUse, hook validation, hook configuration, settings.json hooks, or wants to automate tool execu",
-  "category": "development",
-  "source": "github.com/raintree-technology/claude-starter",
-  "imported_at": "2026-01-24T14:54:00.865687Z"
-}

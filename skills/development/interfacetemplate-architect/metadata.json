@@ -1,8 +1,0 @@
-{
-  "name": "interfacetemplate-architect",
-  "repo": "Cloudhabil/AGI-Server",
-  "category": "development",
-  "description": "Define and validate Ollama Modelfile TEMPLATE blocks (Jinja2 layout), including chat format detection and syntax validation. Use to translate TEMPLATE directives into safe prompt structures.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:23.619157Z"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "security-gate",
-  "description": "Classifies inbound Telegram messages for telclaude as ALLOW/WARN/BLOCK with brief rationale.",
-  "repo": "avivsinai/telclaude",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

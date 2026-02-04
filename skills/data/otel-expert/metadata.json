@@ -1,9 +1,0 @@
-{
-  "name": "otel-expert",
-  "description": "Use this when working with OpenTelemetry, telemetry, observability, traces, spans, metrics, logs, OTLP, semantic conventions, or instrumentation. Triggers on questions like \"what attributes should I u",
-  "repo": "ANcpLua/ancplua-claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

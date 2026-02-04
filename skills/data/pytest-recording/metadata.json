@@ -1,9 +1,0 @@
-{
-  "name": "pytest-recording",
-  "description": "Work with pytest-recording (VCR.py) for recording and replaying HTTP interactions in tests. Use when writing VCR tests, managing cassettes, configuring VCR options, filtering sensitive data, or debugg",
-  "repo": "bossjones/logging-lab",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

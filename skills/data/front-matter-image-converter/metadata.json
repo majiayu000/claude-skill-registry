@@ -1,9 +1,0 @@
-{
-  "name": "front-matter-image-converter",
-  "description": "Convert local images referenced in Hugo front matter to modern formats (WebP) and update front matter using ci/convert_page_images.py.",
-  "repo": "kquinsland/tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

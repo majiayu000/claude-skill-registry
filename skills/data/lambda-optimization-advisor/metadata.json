@@ -1,9 +1,0 @@
-{
-  "name": "lambda-optimization-advisor",
-  "description": "Reviews AWS Lambda functions for performance, memory configuration, and cost optimization. Activates when users write Lambda handlers or discuss Lambda performance.",
-  "repo": "EmilLindfors/claude-marketplace",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

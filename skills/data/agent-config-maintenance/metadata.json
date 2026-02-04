@@ -1,9 +1,0 @@
-{
-  "name": "agent-config-maintenance",
-  "description": "Refactor Codex configuration files and Agent Skills by splitting concerns, deduplicating instructions, and reorganizing guidance across AGENTS.md, project docs, and skills. Use when asked to clean up ",
-  "repo": "Warashi/nix-configurations",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

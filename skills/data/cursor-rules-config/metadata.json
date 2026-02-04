@@ -1,9 +1,0 @@
-{
-  "name": "cursor-rules-config",
-  "description": "Configure .cursorrules for project-specific AI behavior. Triggers on \"cursorrules\",\".cursorrules\", \"cursor rules\", \"cursor config\", \"cursor project settings\".",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

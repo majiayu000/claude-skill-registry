@@ -1,9 +1,0 @@
-{
-  "name": "dynaconf-config",
-  "description": "Automatically applies when adding configuration settings. Ensures proper dynaconf pattern with @env, @int, @bool type casting in settings.toml and environment-specific overrides.",
-  "repo": "ricardoroche/ricardos-claude-code",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/ricardoroche/ricardos-claude-code"
-}

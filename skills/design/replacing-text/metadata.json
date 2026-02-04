@@ -1,8 +1,0 @@
-{
-  "name": "replacing-text",
-  "repo": "iota9star/my-skills",
-  "category": "design",
-  "description": "Provides intuitive find & replace CLI with JavaScript regex and string-literal mode. Use this skill when performing text replacements, batch transformations, or need JavaScript-style regex syntax",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:18.204231Z"
-}

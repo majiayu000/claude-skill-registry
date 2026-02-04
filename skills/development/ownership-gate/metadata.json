@@ -1,8 +1,0 @@
-{
-  "name": "ownership-gate",
-  "repo": "DanielPodolsky/mentor-spec",
-  "category": "development",
-  "description": "Verify the junior can explain and defend every line of code they wrote. This gate BLOCKS completion if failed.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:01.917191Z"
-}

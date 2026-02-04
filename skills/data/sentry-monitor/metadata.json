@@ -1,9 +1,0 @@
-{
-  "name": "sentry-monitor",
-  "description": "Monitor production errors using Sentry MCP. Query errors, analyze patterns, create issues, and verify error tracking is working. Use after deployment, when debugging production issues, or when verifyi",
-  "repo": "AlexBaum-ai/NEURM",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

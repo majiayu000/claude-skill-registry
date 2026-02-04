@@ -1,8 +1,0 @@
-{
-  "name": "five-whys",
-  "repo": "iamhenry/ai-project-starter-kit",
-  "category": "development",
-  "description": "Root cause analysis for software bugs using the 5 Whys technique. Use when the user wants to find the underlying cause of a bug, error, or technical issue. Triggers include phrases like \"why is this h",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:28.139748Z"
-}

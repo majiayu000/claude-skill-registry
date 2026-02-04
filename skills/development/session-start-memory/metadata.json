@@ -1,8 +1,0 @@
-{
-  "name": "session-start-memory",
-  "repo": "MykhailoDmytriakha/my-preacher-helper",
-  "category": "development",
-  "description": "Session-start routine for this project. Use when beginning a new session or onboarding to this repo to load MEMORY.md and core project context (README), then summarize context and confirm readiness.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:30:27.140402Z"
-}

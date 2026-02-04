@@ -1,9 +1,0 @@
-{
-  "name": "check-ci",
-  "description": "This skill monitors PR CI checks by polling GitHub status until completion or timeout. Use when the user requests to check CI status, wait for CI to pass, monitor PR checks, or verify build status. Ap",
-  "repo": "majesticlabs-dev/majestic-marketplace",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

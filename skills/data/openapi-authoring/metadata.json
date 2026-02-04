@@ -1,9 +1,0 @@
-{
-  "name": "openapi-authoring",
-  "description": "Author and validate OpenAPI 3.1 specifications for REST API design, following API-first and contract-first development practices",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "agent-orchestration-planner",
-  "description": "Designs multi-step agent workflows with tool usage, retry logic, state management, and budget controls. Provides orchestration diagrams, tool execution order, fallback strategies, and cost limits. Use",
-  "repo": "patricio0312rev/skillset",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

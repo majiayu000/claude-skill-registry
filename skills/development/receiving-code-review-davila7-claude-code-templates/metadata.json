@@ -1,7 +1,0 @@
-{
-  "name": "receiving-code-review-davila7-claude-code-templates",
-  "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative",
-  "category": "development",
-  "source": "github.com/davila7/claude-code-templates",
-  "imported_at": "2026-01-24T14:54:20.599480Z"
-}

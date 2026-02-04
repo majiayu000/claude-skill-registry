@@ -1,9 +1,0 @@
-{
-  "name": "using-git",
-  "description": "Git command conventions. Use when running any git commands to avoid blocking on interactive pager.",
-  "repo": "claylo/test-crate",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

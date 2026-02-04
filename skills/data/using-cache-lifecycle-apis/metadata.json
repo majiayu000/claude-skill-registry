@@ -1,9 +1,0 @@
-{
-  "name": "using-cache-lifecycle-apis",
-  "description": "Teach cache lifecycle APIs in Next.js 16 - cacheLife(), cacheTag(), updateTag(), refresh(), revalidateTag(). Use when managing cache invalidation, setting cache policies, or implementing cache tags.",
-  "repo": "djankies/claude-configs",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

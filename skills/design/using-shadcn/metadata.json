@@ -1,8 +1,0 @@
-{
-  "name": "using-shadcn",
-  "repo": "sumik5/dotfiles",
-  "category": "design",
-  "description": "Manages shadcn/ui components in React/Next.js projects. Use for searching, adding, and managing UI components. Requires components.json in project root.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:00.906012Z"
-}

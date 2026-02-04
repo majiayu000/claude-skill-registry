@@ -1,9 +1,0 @@
-{
-  "name": "startupo-lite",
-  "description": "RAG-first ORCHESTRATOR startup. Minimal context (~500 tokens), queries RAG on-demand. Token-efficient alternative to startupO.",
-  "repo": "Euda1mon1a/Autonomous-Assignment-Program-Manager",
-  "category": "data",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Euda1mon1a/Autonomous-Assignment-Program-Manager"
-}

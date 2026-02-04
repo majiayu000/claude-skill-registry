@@ -1,9 +1,0 @@
-{
-  "name": "test-driven-workflow",
-  "description": "Use when implementing features or fixing bugs. Enforces Test-Driven Development (TDD) Red-Green-Refactor cycle. Supports Vitest, Jest, and similar frameworks.",
-  "repo": "JackSmack1971/claude-code-learning-flywheel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

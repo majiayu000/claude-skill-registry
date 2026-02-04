@@ -1,8 +1,0 @@
-{
-  "name": "ontology-phase-4-generate",
-  "repo": "a4b-corporation/xTalent",
-  "category": "development",
-  "description": "Phase 4 of Ontology Builder Pipeline. Generates final Ontology artifacts (entity definitions, workflow catalog, concept guides) from DRD. Use after Phase 3 DRD is complete.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:03:41.467443Z"
-}

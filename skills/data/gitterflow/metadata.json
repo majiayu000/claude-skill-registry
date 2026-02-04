@@ -1,9 +1,0 @@
-{
-  "name": "gitterflow",
-  "description": "Spawn and coordinate parallel Claude Code sub-agents using git worktrees. Use this skill when you need to parallelize work across multiple independent tasks, delegate subtasks to sub-agents, or orches",
-  "repo": "JonasTischer/GitterFlow",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

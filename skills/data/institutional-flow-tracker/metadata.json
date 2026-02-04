@@ -1,9 +1,0 @@
-{
-  "name": "institutional-flow-tracker",
-  "description": "Use this skill to track institutional investor ownership changes and portfolio flows using 13F filings data. Analyzes hedge funds, mutual funds, and other institutional holders to identify stocks with",
-  "repo": "nicepkg/ai-workflow",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/nicepkg/ai-workflow"
-}

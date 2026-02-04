@@ -1,8 +1,0 @@
-{
-  "name": "vanilla-rails-naming",
-  "repo": "ZempTime/zemptime-marketplace",
-  "category": "development",
-  "description": "Use when naming classes, methods, routes in vanilla Rails codebases - fixes concern verb/noun confusion, bang method misuse, custom action anti-patterns",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:44.523464Z"
-}

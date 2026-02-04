@@ -1,8 +1,0 @@
-{
-  "name": "ui-agent",
-  "repo": "Masked-Kunsiquat/crm-orbit2",
-  "category": "design",
-  "description": "UI implementation agent for CRM Orbit. Use for screen/layout/component work, view models, and i18n text wiring. Must not change backend core logic or domain rules.",
-  "source": "GitHub Search API",
-  "downloaded_at": "2026-01-08T03:31:37.159297Z"
-}

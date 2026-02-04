@@ -1,8 +1,0 @@
-{
-  "name": "langfuse-prompt-and-trace-debugger",
-  "repo": "cncorp/arsenal",
-  "category": "development",
-  "description": "MANDATORY skill when KeyError or schema errors occur. Fetch actual prompt schemas instead of guessing. Use for debugging traces and understanding AI model behavior.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:47.133366Z"
-}

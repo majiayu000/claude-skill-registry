@@ -1,9 +1,0 @@
-{
-  "name": "atris",
-  "description": "Atris workflow enforcement for repos using atris/ (MAP, TODO, journal, features, plan-do-review, anti-slop). Use when the user asks to follow the Atris system or mentions atris, MAP.md, TODO.md, journ",
-  "repo": "atrislabs/atris",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

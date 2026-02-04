@@ -1,9 +1,0 @@
-{
-  "name": "azure-ad-sso",
-  "description": "Azure AD OAuth2/OIDC SSO integration for Kubernetes applications. Use when implementing Single Sign-On, configuring Azure AD App Registrations, restricting access by groups, or integrating tools (Defe",
-  "repo": "julianobarbosa/claude-code-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

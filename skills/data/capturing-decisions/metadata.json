@@ -1,9 +1,0 @@
-{
-  "name": "capturing-decisions",
-  "description": "Create and maintain MADR-format Architectural Decision Records in Markdown under `docs/decisions`. Use when the user wants to document important decisions.",
-  "repo": "claylo/test-crate",
-  "category": "documents",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

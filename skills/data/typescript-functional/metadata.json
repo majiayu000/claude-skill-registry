@@ -1,9 +1,0 @@
-{
-  "name": "typescript-functional",
-  "description": "TypeScript functional programming. Use for pure functions, immutability, composition. Favors ternaries, switch, map/filter/reduce over imperative code. Concise, declarative patterns.",
-  "repo": "Seeker1911/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

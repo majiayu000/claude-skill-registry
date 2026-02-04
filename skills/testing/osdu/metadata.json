@@ -1,8 +1,0 @@
-{
-  "name": "osdu",
-  "repo": "danielscholl/agent-skills",
-  "category": "testing",
-  "description": "GitLab CI/CD test job reliability analysis for OSDU projects. Tracks test job (unit/integration/acceptance) pass/fail status across pipeline runs. Use for test job status, flaky test job detection, te",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:04:48.424038Z"
-}

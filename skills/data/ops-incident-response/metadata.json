@@ -1,9 +1,0 @@
-{
-  "name": "ops-incident-response",
-  "description": "Structured workflow for production incident management following SRE best practices.Covers incident declaration, triage, coordination, resolution, and post-mortem.",
-  "repo": "LerianStudio/ring",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

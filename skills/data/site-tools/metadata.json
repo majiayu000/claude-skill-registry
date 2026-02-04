@@ -1,9 +1,0 @@
-{
-  "name": "site-tools",
-  "description": "Use the public toolbox scripts published from docs/tools via tool-runner.js. Covers listing tools, executing them safely with droid exec context, and required environment variables.",
-  "repo": "factory-ben/feed",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

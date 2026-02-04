@@ -1,9 +1,0 @@
-{
-  "name": "new-node",
-  "description": "Create new workflow nodes for the Workscript engine or refactor existing nodes. Generate complete, production-ready node implementations following the single-edge return pattern. Use when creating new",
-  "repo": "Narcis13/workscript",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

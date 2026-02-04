@@ -1,9 +1,0 @@
-{
-  "name": "whisper-lolo-audio-ingest",
-  "description": "Build or modify the browser-side recording and upload pipeline for whisper-lolo. Use when implementing MediaRecorder + IndexedDB chunking, assembling audio blobs, or configuring Vercel Blob client upl",
-  "repo": "Lofp34/whisper-lolo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

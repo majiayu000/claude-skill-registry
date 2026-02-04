@@ -1,8 +1,0 @@
-{
-  "name": "android-kotlin-coroutines",
-  "repo": "TheBushidoCollective/han",
-  "category": "development",
-  "description": "Use when implementing async operations with Kotlin coroutines, Flow, StateFlow, or managing concurrency in Android apps.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:00.744769Z"
-}

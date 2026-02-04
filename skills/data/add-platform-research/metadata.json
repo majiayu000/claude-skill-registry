@@ -1,9 +1,0 @@
-{
-  "name": "add-platform-research",
-  "description": "Captures CLI configuration and hooks system documentation for the new platform. Use when starting platform integration.",
-  "repo": "Unsupervisedcom/deepwork",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/Unsupervisedcom/deepwork"
-}

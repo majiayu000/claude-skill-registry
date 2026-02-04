@@ -1,9 +1,0 @@
-{
-  "name": "migrating-to-vitest-4",
-  "description": "Migrate from Vitest 2.x/3.x to 4.x with pool options, coverage config, workspace to projects, and browser mode updates. Use when upgrading Vitest versions or encountering deprecated patterns.",
-  "repo": "djankies/claude-configs",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

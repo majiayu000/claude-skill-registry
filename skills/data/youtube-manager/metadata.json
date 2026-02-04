@@ -1,9 +1,0 @@
-{
-  "name": "youtube-manager",
-  "repo": "smorand/claude-config",
-  "category": "data",
-  "description": "Expert in managing YouTube content using YouTube Data API v3 and yt-dlp. **Use this skill whenever the user mentions 'YouTube', 'video download', 'playlist', 'YouTube videos', 'download from YouTube',",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:30.060245Z",
-  "dir_name": "youtube-manager"
-}

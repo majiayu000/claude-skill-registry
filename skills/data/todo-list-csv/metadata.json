@@ -1,9 +1,0 @@
-{
-  "name": "todo-list-csv",
-  "description": "当需要修改项目（增删改文件）并希望将 update_plan 与 CSV 有机同步时使用此技能：在项目根目录创建“{任务名} TO DO list.csv”，用 TODO/IN_PROGRESS/DONE 驱动 plan 的 pending/in_progress/completed，同步推进，全部完成后删除该文件。",
-  "repo": "lili-luo/aicoding-cookbook",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

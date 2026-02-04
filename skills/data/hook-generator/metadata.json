@@ -1,9 +1,0 @@
-{
-  "name": "hook-generator",
-  "description": "Creates and configures Claude Code hooks for event-driven automation. Activates when user wants to automate tasks, create event handlers, add formatting/logging/notifications, or ensure deterministic ",
-  "repo": "squirrelsoft-dev/claude-builder",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

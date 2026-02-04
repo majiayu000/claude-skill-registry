@@ -1,9 +1,0 @@
-{
-  "name": "noop-entity",
-  "repo": "HDeibler/noop",
-  "category": "data",
-  "description": "Generate new domain entities with full CRUD infrastructure in noop-based projects. Use when adding new resources, tables, or API endpoints to an existing project.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:57.730704Z",
-  "dir_name": "noop-entity"
-}

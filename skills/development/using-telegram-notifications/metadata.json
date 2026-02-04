@@ -1,8 +1,0 @@
-{
-  "name": "using-telegram-notifications",
-  "repo": "johnnymo87/dotfiles",
-  "category": "development",
-  "description": "This skill enables Telegram notifications for Claude Code sessions, alerting you when tasks complete. Use this when you want to walk away from your computer and be notified on your phone when Claude f",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:10:30.088748Z"
-}

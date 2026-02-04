@@ -1,9 +1,0 @@
-{
-  "name": "telegram-bot-management",
-  "description": "Telegram bot production management, monitoring, and troubleshooting. Use when user mentions telegram bot, claude-orchestrator, bot status, bot restart, or bot monitoring.",
-  "repo": "terrylica/cc-skills",
-  "category": "product",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "prosemirror-notes",
-  "description": "Guide for working with the ProseMirror-based notes editor. Use when editing notes feature code, fixing editor bugs, working with todos/checkboxes, wiki_links, decorations, or serialization.",
-  "repo": "firstloophq/nomendex",
-  "category": "other",
-  "tags": [],
-  "stars": 0,
-  "source": "github.com/firstloophq/nomendex"
-}

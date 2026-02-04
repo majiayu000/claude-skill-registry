@@ -1,9 +1,0 @@
-{
-  "name": "github-content",
-  "description": "Fetch GitHub issues, PRs, repo contents, and code using the gh CLI. Use when the user shares GitHub URLs (issues, PRs, repos, source files) or asks about GitHub content. The gh CLI provides complete c",
-  "repo": "krmcbride/claude-plugins",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

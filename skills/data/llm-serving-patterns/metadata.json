@@ -1,9 +1,0 @@
-{
-  "name": "llm-serving-patterns",
-  "description": "LLM inference infrastructure, serving frameworks (vLLM, TGI, TensorRT-LLM), quantization techniques, batching strategies, and streaming response patterns. Use when designing LLM serving infrastructure",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

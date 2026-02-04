@@ -1,9 +1,0 @@
-{
-  "name": "component-definition-builder",
-  "description": "Create and manage OSCAL component definitions for reusable security control implementations. Inspired by CivicActions components and community patterns. Use for building component libraries and shared",
-  "repo": "euCann/OSCAL-GRC-SKILLS",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

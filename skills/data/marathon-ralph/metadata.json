@@ -1,9 +1,0 @@
-{
-  "name": "marathon-ralph",
-  "description": "Autonomous long-running development from specifications. Use when user wants to build an application from a spec file, run continuous development, or automate feature implementation. Triggers on phras",
-  "repo": "gruckion/marathon-ralph",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

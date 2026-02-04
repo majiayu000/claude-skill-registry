@@ -1,9 +1,0 @@
-{
-  "name": "code-navigation",
-  "description": "Use when you need to understand the codebase structure, find definitions, or trace references without reading entire files.",
-  "repo": "JackSmack1971/claude-code-learning-flywheel",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

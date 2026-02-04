@@ -1,9 +1,0 @@
-{
-  "name": "check-memories",
-  "description": "This skill should be used when the user asks \"how did we solve this before\", \"what was the decision about X\", \"have we done this before\", \"what do you remember about\", \"check your memory\", or when sea",
-  "repo": "SyntesseraAI/local-recall",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

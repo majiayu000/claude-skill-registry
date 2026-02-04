@@ -1,9 +1,0 @@
-{
-  "name": "go-style-guide",
-  "description": "Review Go code for adherence to Go Style Guide. Use when the user requests a code review of completed work, pull requests, or feature branches in Go projects. Focuses on critical bugs, race conditions",
-  "repo": "robbyt/claude-skills",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

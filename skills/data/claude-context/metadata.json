@@ -1,9 +1,0 @@
-{
-  "name": "claude-context",
-  "description": "Carga el archivo CLAUDE_PROMPT.md como contexto para aplicar las instrucciones y mejores prácticas del proyecto. Úsalo cuando el usuario quiera aplicar las guías personalizadas, principios de trabajo,",
-  "repo": "vetacreativalaser/vetacreativalaser",
-  "category": "design",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

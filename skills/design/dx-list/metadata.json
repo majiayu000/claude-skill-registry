@@ -1,8 +1,0 @@
-{
-  "name": "dx-list",
-  "repo": "siteminder-au/claude-code-dx-plugin",
-  "category": "design",
-  "description": "Show list of available dx list commands and help users execute them with required parameters.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:08:25.292910Z"
-}

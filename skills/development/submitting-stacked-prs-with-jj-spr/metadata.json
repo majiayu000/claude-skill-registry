@@ -1,8 +1,0 @@
-{
-  "name": "submitting-stacked-prs-with-jj-spr",
-  "repo": "edmundmiller/dotfiles",
-  "category": "development",
-  "description": "Work with jj-spr for submitting and updating stacked GitHub Pull Requests. Use when the user explicitly mentions 'jj-spr', 'jj spr', 'stack pull request', 'stacked PR', or 'submit for review'. Integra",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:57:12.278945Z"
-}

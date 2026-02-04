@@ -1,8 +1,0 @@
-{
-  "name": "status-dashboard",
-  "repo": "schuettc/claude-code-plugins",
-  "category": "development",
-  "description": "Display project status and backlog overview. Use when user asks about current status, what's in progress, what to work on next, or wants a summary of the backlog. Read-only skill that formats backlog.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:58.033510Z"
-}

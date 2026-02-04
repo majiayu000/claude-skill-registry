@@ -1,8 +1,0 @@
-{
-  "name": "devto",
-  "repo": "vm0-ai/vm0-skills",
-  "category": "development",
-  "description": "Dev.to API via curl. Use this skill to publish and manage articles on Dev.to.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:58:52.900863Z"
-}

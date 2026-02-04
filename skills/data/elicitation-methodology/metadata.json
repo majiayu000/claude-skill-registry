@@ -1,9 +1,0 @@
-{
-  "name": "elicitation-methodology",
-  "description": "Hub skill for requirements elicitation. Provides technique selection, orchestration guidance, LLMREI patterns, and autonomy level configuration. Use when gathering requirements from stakeholders, cond",
-  "repo": "melodic-software/claude-code-plugins",
-  "category": "testing",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "diagnose-backup-issues",
-  "description": "Comprehensive diagnostic tool for troubleshooting OADP/Velero backup and restore problems with automated checks and recommendations.",
-  "repo": "mpryc/ai-agents-and-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

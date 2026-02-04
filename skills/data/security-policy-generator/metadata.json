@@ -1,9 +1,0 @@
-{
-  "name": "security-policy-generator",
-  "description": "Security Policy Generator - Auto-activating skill for Security Advanced.Triggers on: security policy generator, security policy generatorPart of the Security Advanced skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

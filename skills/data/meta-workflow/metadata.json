@@ -1,9 +1,0 @@
-{
-  "name": "meta-workflow",
-  "description": "Meta 환경 기본 워크플로우. semo-system/ 수정 → 버저닝 → 배포 → 로컬 동기화 체인 자동 실행.Use when (1) [Meta] 프리픽스 요청, (2) semo-system/ 수정 완료 후, (3) Meta 패키지 설치 환경.",
-  "repo": "semicolon-devteam/semo",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "clj-kondo",
-  "description": "A guide to using clj-kondo for Clojure code linting, including configuration, built-in linters, and writing custom hooks.",
-  "repo": "hugoduncan/library-skills",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

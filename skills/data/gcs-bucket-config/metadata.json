@@ -1,9 +1,0 @@
-{
-  "name": "gcs-bucket-config",
-  "description": "Gcs Bucket Config - Auto-activating skill for GCP Skills.Triggers on: gcs bucket config, gcs bucket configPart of the GCP Skills skill category.",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

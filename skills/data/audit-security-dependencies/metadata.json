@@ -1,9 +1,0 @@
-{
-  "name": "audit-security-dependencies",
-  "description": "Use when adding packages, bumping versions, or responding to security alerts. Enforces supply chain security and vulnerability remediation.",
-  "repo": "JackSmack1971/claude-code-learning-flywheel",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

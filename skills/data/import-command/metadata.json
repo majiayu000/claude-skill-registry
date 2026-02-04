@@ -1,9 +1,0 @@
-{
-  "name": "import-command",
-  "description": "Convert Cursor custom commands (.cursor/commands/*.md) to Claude Code skills (.claude/skills/*/SKILL.md). Use when the user says \"import command to skill\", \"convert command to skill\", or \"migrate curs",
-  "repo": "nozomi-koborinai/koborin-ai",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

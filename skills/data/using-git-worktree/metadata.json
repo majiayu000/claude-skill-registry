@@ -1,9 +1,0 @@
-{
-  "name": "using-git-worktree",
-  "description": "Create isolated git worktrees at bare repo root level",
-  "repo": "hmps/agent-tools",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "bunit",
-  "repo": "keithdv/ClaudeSkills",
-  "category": "testing",
-  "description": "Blazor component testing with bUnit. Use when writing unit tests for Blazor components, testing user interactions, mocking services/dependencies, testing MudBlazor components, testing components with ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:09:50.421561Z"
-}

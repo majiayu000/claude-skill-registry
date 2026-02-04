@@ -1,8 +1,0 @@
-{
-  "name": "helm-k8s-deployment",
-  "repo": "Obsidian-Owl/floe-runtime",
-  "category": "devops",
-  "description": "ALWAYS USE when working with Helm charts, Kubernetes deployments, kubectl commands, pod debugging, or container logs. Provides context-efficient strategies for chart development, K8s troubleshooting, ",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:07:24.637164Z"
-}

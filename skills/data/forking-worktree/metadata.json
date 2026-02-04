@@ -1,9 +1,0 @@
-{
-  "name": "forking-worktree",
-  "description": "Use when user wants to create new autonomy branch with dedicated worktree for parallel agent workflows",
-  "repo": "tilmon-engineering/claude-skills",
-  "category": "productivity",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

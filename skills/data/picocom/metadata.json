@@ -1,9 +1,0 @@
-{
-  "name": "picocom",
-  "description": "Use picocom to interact with IoT device UART consoles for pentesting operations including device enumeration, vulnerability discovery, bootloader manipulation, and gaining root shells. Use when the us",
-  "repo": "BrownFineSecurity/iothackbot",
-  "category": "security",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

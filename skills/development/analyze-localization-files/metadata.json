@@ -1,8 +1,0 @@
-{
-  "name": "analyze-localization-files",
-  "repo": "ericfitz/tmi-ux",
-  "category": "development",
-  "description": "Analyze differences between English master i18n file and target language files using the project's check-i18n tool. Builds task manifests with missing keys and English values for translation work.",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:00:49.568365Z"
-}

@@ -1,8 +1,0 @@
-{
-  "name": "platform-integration-workflow",
-  "repo": "spartDev/My-Prompt-Manager",
-  "category": "testing",
-  "description": "Guide for adding new AI platform support (e.g., Gemini, Mistral, Anthropic) to the Chrome extension with strategy pattern and testing requirements",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T08:59:21.985650Z"
-}

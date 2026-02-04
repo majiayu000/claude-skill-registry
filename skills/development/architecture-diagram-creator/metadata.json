@@ -1,7 +1,0 @@
-{
-  "name": "architecture-diagram-creator",
-  "description": "Create comprehensive HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment. Use when users request system architecture, project documenta",
-  "category": "development",
-  "source": "github.com/mhattingpete/claude-skills-marketplace",
-  "imported_at": "2026-01-24T14:54:24.190333Z"
-}

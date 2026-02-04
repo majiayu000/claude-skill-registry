@@ -1,9 +1,0 @@
-{
-  "name": "sync-openapi",
-  "description": "core-interface OpenAPI 스펙 조회 및 동기화. Use when:(1) API 구현 전 스펙 확인, (2) Controller 작성 시 DTO 확인,(3) Response 형식 확인, (4) v0.4.x CODE 단계.",
-  "repo": "semicolon-devteam/semo",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

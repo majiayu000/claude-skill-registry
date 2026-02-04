@@ -1,8 +1,0 @@
-{
-  "name": "rubycritic-code-quality-analysis",
-  "repo": "esparkman/claude-rubycritic-skill",
-  "category": "development",
-  "description": "Analyze Ruby and Rails code quality with RubyCritic. Identifies code smells, complexity issues, and refactoring opportunities. Provides detailed metrics, scores files A-F, compares branches, and prior",
-  "source": "SkillsMP + GitHub Raw",
-  "downloaded_at": "2026-01-06T09:01:50.712687Z"
-}

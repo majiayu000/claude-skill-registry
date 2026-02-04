@@ -1,9 +1,0 @@
-{
-  "name": "detecting-infrastructure-drift",
-  "description": "Use when detecting infrastructure drift from desired state. Trigger with phrases like \"check for drift\", \"infrastructure drift detection\", \"compare actual vs desired state\", or \"detect configuration c",
-  "repo": "jeremylongshore/claude-code-plugins-plus-skills",
-  "category": "devops",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

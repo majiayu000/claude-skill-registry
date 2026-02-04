@@ -1,9 +1,0 @@
-{
-  "name": "git-operator",
-  "description": "Rules and procedures for Git operations (add, branch, commit, push). Use when performing git add, git commit, git push, or creating branches.",
-  "repo": "scizorman/dotfiles",
-  "category": "development",
-  "tags": [],
-  "stars": 0,
-  "source": "SkillsMP + GitHub Raw"
-}

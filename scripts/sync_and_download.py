@@ -2,9 +2,10 @@
 """
 Complete sync and download pipeline.
 
-1. Sync skills index from SkillsMP.com (32,000+ skills)
-2. Download SKILL.md files with optimized patterns
-3. Generate reports
+1. (Default) Sync discovered index from GitHub
+2. (Optional) Sync SkillsMP source (legacy opt-in)
+3. Download SKILL.md files with optimized patterns
+4. Generate reports
 
 Usage:
     # Full pipeline
@@ -37,6 +38,7 @@ sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from crawler.skillsmp_sync import SkillsMPSync
+from discover_by_topic import GitHubTopicDiscovery
 from utils import normalize_name, ensure_unique_dir, build_skill_key, build_legal_metadata
 
 
@@ -69,21 +71,89 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def sync_skillsmp(output_path: str, max_skills: int = 50000) -> int:
+def _source_count(path: Path) -> int:
+    """Safely read source count from an existing source JSON file."""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return 0
+    skills = data.get("skills", [])
+    total_count = data.get("total_count")
+    if isinstance(total_count, int):
+        return total_count
+    if isinstance(skills, list):
+        return len(skills)
+    return 0
+
+
+def sync_skillsmp(output_path: str, max_skills: int = 50000, keep_on_empty: bool = True) -> int:
     """Sync skills from SkillsMP."""
     logger.info("=" * 60)
     logger.info("STEP 1: Syncing from SkillsMP.com")
     logger.info("=" * 60)
 
+    output_file = Path(output_path)
+    existing_count = _source_count(output_file) if output_file.exists() else 0
+
     syncer = SkillsMPSync()
     skills = syncer.sync(max_skills=max_skills)
+    synced_count = len(skills)
+
+    # Guardrail: avoid replacing a known non-empty source with empty output.
+    if keep_on_empty and synced_count == 0 and existing_count > 0:
+        logger.warning(
+            "SkillsMP sync returned 0; keeping existing source file "
+            f"({existing_count} skills) at {output_path}."
+        )
+        return existing_count
+
     syncer.save(output_path)
 
-    logger.info(f"Synced {len(skills)} skills to {output_path}")
+    logger.info(f"Synced {synced_count} skills to {output_path}")
+    return synced_count
+
+
+def sync_github_discovery(
+    output_dir: str,
+    output_json: str,
+    token: str = "",
+    max_repos: int = 0,
+    max_topic_pages: int = 10,
+    max_code_pages: int = 10,
+    skip_code_search: bool = False,
+    request_delay: float = 2.0,
+) -> int:
+    """Refresh discovered source via GitHub topics + code search."""
+    logger.info("=" * 60)
+    logger.info("STEP 1B: Syncing from GitHub discovery")
+    logger.info("=" * 60)
+
+    effective_skip_code_search = bool(skip_code_search)
+    if not token and not effective_skip_code_search:
+        logger.warning(
+            "No GITHUB_TOKEN provided for GitHub discovery; "
+            "forcing skip_code_search to avoid repeated 401 errors."
+        )
+        effective_skip_code_search = True
+
+    discoverer = GitHubTopicDiscovery(
+        token=token or None,
+        max_repos=max_repos,
+        max_topic_pages=max_topic_pages,
+        max_code_pages=max_code_pages,
+        skip_code_search=effective_skip_code_search,
+        request_delay=request_delay,
+    )
+    skills = discoverer.run(output_dir=output_dir, output_json=output_json)
+    logger.info(f"GitHub discovery synced {len(skills)} skills to {output_json}")
     return len(skills)
 
 
-def build_unified_registry(sources_dir: Path, output_path: Path) -> int:
+def build_unified_registry(
+    sources_dir: Path,
+    output_path: Path,
+    include_skillsmp: bool = False,
+) -> int:
     """Build unified registry from all sources."""
     logger.info("=" * 60)
     logger.info("STEP 2: Building unified registry")
@@ -93,6 +163,9 @@ def build_unified_registry(sources_dir: Path, output_path: Path) -> int:
     seen = set()
 
     for source_file in sources_dir.glob("*.json"):
+        if not include_skillsmp and source_file.name == "skillsmp.json":
+            logger.info("Skipping skillsmp.json (SkillsMP source disabled)")
+            continue
         logger.info(f"Loading {source_file.name}...")
         with open(source_file) as f:
             source = json.load(f)
@@ -416,6 +489,70 @@ def main():
     parser.add_argument("--download-only", action="store_true", help="Only download, use existing index")
     parser.add_argument("--max-skills", type=int, default=50000, help="Max skills to sync from SkillsMP")
     parser.add_argument(
+        "--enable-skillsmp",
+        action="store_true",
+        help="Enable SkillsMP sync (disabled by default)",
+    )
+    parser.add_argument(
+        "--include-skillsmp-source",
+        action="store_true",
+        help="Include skillsmp.json when rebuilding registry (disabled by default)",
+    )
+    parser.add_argument(
+        "--allow-empty-skillsmp-overwrite",
+        action="store_true",
+        help="Allow overwriting skillsmp.json with empty output when SkillsMP returns 0",
+    )
+    parser.add_argument(
+        "--github-discovery",
+        action="store_true",
+        help="Run GitHub discovery (discover_by_topic) before rebuilding registry",
+    )
+    parser.add_argument(
+        "--skip-github-fallback",
+        action="store_true",
+        help="Disable automatic GitHub discovery fallback when SkillsMP sync returns 0",
+    )
+    parser.add_argument(
+        "--github-output",
+        default="skills",
+        help="Output directory for GitHub discovery downloaded skills",
+    )
+    parser.add_argument(
+        "--github-json",
+        default="sources/discovered.json",
+        help="JSON output path for GitHub discovery source",
+    )
+    parser.add_argument(
+        "--github-max-repos",
+        type=int,
+        default=0,
+        help="Maximum repositories to scan in GitHub discovery (0 = no limit)",
+    )
+    parser.add_argument(
+        "--github-max-topic-pages",
+        type=int,
+        default=10,
+        help="Maximum pages per topic query in GitHub discovery",
+    )
+    parser.add_argument(
+        "--github-max-code-pages",
+        type=int,
+        default=10,
+        help="Maximum pages per code search query in GitHub discovery",
+    )
+    parser.add_argument(
+        "--github-skip-code-search",
+        action="store_true",
+        help="Skip global code search in GitHub discovery",
+    )
+    parser.add_argument(
+        "--github-request-delay",
+        type=float,
+        default=2.0,
+        help="Delay between GitHub discovery API requests",
+    )
+    parser.add_argument(
         "--max-pending",
         type=int,
         default=0,
@@ -435,13 +572,42 @@ def main():
 
     start_time = time.time()
 
-    # Step 1: Sync from SkillsMP
+    # Step 1: Sync from SkillsMP (legacy opt-in)
+    skillsmp_count = 0
+    if not args.download_only and args.enable_skillsmp:
+        skillsmp_count = sync_skillsmp(
+            str(skillsmp_path),
+            max_skills=args.max_skills,
+            keep_on_empty=not args.allow_empty_skillsmp_overwrite,
+        )
+    elif not args.download_only:
+        logger.info("STEP 1: SkillsMP sync is disabled (use --enable-skillsmp to opt in)")
+
+    # Step 1B: Optional GitHub discovery + auto fallback when SkillsMP returns empty
     if not args.download_only:
-        sync_skillsmp(str(skillsmp_path), max_skills=args.max_skills)
+        skillsmp_unavailable = (not args.enable_skillsmp) or (skillsmp_count == 0)
+        should_run_github_discovery = args.github_discovery or (
+            skillsmp_unavailable and not args.skip_github_fallback
+        )
+        if should_run_github_discovery:
+            sync_github_discovery(
+                output_dir=args.github_output,
+                output_json=args.github_json,
+                token=github_token,
+                max_repos=args.github_max_repos,
+                max_topic_pages=args.github_max_topic_pages,
+                max_code_pages=args.github_max_code_pages,
+                skip_code_search=args.github_skip_code_search,
+                request_delay=args.github_request_delay,
+            )
 
     # Step 2: Build unified registry
     if not args.download_only:
-        build_unified_registry(sources_dir, registry_path)
+        build_unified_registry(
+            sources_dir,
+            registry_path,
+            include_skillsmp=(args.include_skillsmp_source or args.enable_skillsmp),
+        )
 
     # Step 3: Download skills
     if not args.sync_only:

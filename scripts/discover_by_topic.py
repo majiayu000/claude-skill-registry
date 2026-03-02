@@ -66,6 +66,15 @@ class GitHubTopicDiscovery:
         self.discovered_repos = set()
         self.skills = []
 
+    @staticmethod
+    def _is_skill_md_path(path: str) -> bool:
+        """Only accept real SKILL.md files, not backups like SKILL.md.bak."""
+        norm = (path or "").strip().replace("\\", "/")
+        if not norm:
+            return False
+        lower = norm.lower()
+        return lower == "skill.md" or lower.endswith("/skill.md")
+
     def _request(self, url, params=None):
         """Make rate-limited request"""
         if self.request_delay > 0:
@@ -166,6 +175,8 @@ class GitHubTopicDiscovery:
                 for item in items:
                     repo = item['repository']['full_name']
                     path = item['path']
+                    if not self._is_skill_md_path(path):
+                        continue
 
                     if repo not in self.discovered_repos:
                         self.discovered_repos.add(repo)
@@ -206,6 +217,8 @@ class GitHubTopicDiscovery:
         result = self._request(url, params)
         if result and result.get('items'):
             for item in result['items']:
+                if not self._is_skill_md_path(item.get('path', '')):
+                    continue
                 skills.append({
                     'repo': repo,
                     'path': item['path'],

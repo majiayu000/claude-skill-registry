@@ -1,7 +1,7 @@
 {
   "category": "development",
-  "count": 12307,
-  "updated_at": "2026-03-06T01:53:43.227040Z",
+  "count": 12306,
+  "updated_at": "2026-03-07T01:44:25.032506Z",
   "skills": [
     {
       "name": "fix-facebook-react",
@@ -1874,23 +1874,6 @@
       "stars": 3514,
       "install": "EvolvingLMMs-Lab/lmms-eval/.claude/skills/pr-code-review",
       "source": "SkillsMP Synced Skills",
-      "author": "",
-      "source_url": "",
-      "license": "",
-      "distribution": "",
-      "permission_note": ""
-    },
-    {
-      "name": "review-parcadei-continuous-claude-v3",
-      "description": "Comprehensive code review workflow - parallel specialized reviews → synthesis",
-      "repo": "parcadei/Continuous-Claude-v3",
-      "path": ".claude/skills/review/SKILL.md",
-      "branch": "main",
-      "category": "development",
-      "tags": [],
-      "stars": 3392,
-      "install": "parcadei/Continuous-Claude-v3/.claude/skills/review/SKILL.md",
-      "source": "github.com/parcadei/Continuous-Claude-v3",
       "author": "",
       "source_url": "",
       "license": "",

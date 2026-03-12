@@ -42,6 +42,9 @@ REPOS_TO_CLONE = [
 
     # Skill factories
     "https://github.com/alirezarezvani/claude-code-skill-factory.git",
+
+    # Community submissions
+    "https://github.com/faceleg/claude-skill-git.git",
 ]
 
 

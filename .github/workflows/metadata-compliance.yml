@@ -1,0 +1,83 @@
+name: Metadata Compliance
+
+on:
+  pull_request:
+    paths:
+      - "skills/**"
+      - "scripts/**"
+      - "schema/**"
+      - "README.md"
+      - ".github/workflows/metadata-compliance.yml"
+  workflow_dispatch:
+    inputs:
+      scan_scope:
+        description: "Scan scope: changed (last commit) or full (all metadata)"
+        required: false
+        default: "changed"
+
+permissions:
+  contents: read
+
+jobs:
+  metadata-compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema
+
+      - name: Build changed files list
+        if: github.event_name == 'pull_request' || github.event.inputs.scan_scope != 'full'
+        run: |
+          mkdir -p .tmp
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch origin "${{ github.base_ref }}" --depth=1
+            git diff --name-only --diff-filter=ACMR "origin/${{ github.base_ref }}...HEAD" > .tmp/changed-files.txt
+          else
+            git diff --name-only --diff-filter=ACMR HEAD~1 HEAD > .tmp/changed-files.txt
+          fi
+          echo "Changed files:"
+          cat .tmp/changed-files.txt || true
+
+      - name: Validate changed metadata
+        if: github.event_name == 'pull_request' || github.event.inputs.scan_scope != 'full'
+        run: |
+          python scripts/check_metadata_compliance.py \
+            --skills-dir skills \
+            --metadata-schema schema/metadata.schema.json \
+            --file-list .tmp/changed-files.txt \
+            --output-json metadata-compliance-report.json \
+            --notices THIRD_PARTY_NOTICES.md
+
+      - name: Validate full metadata
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.scan_scope == 'full'
+        run: |
+          python scripts/check_metadata_compliance.py \
+            --skills-dir skills \
+            --metadata-schema schema/metadata.schema.json \
+            --output-json metadata-compliance-report.json \
+            --notices THIRD_PARTY_NOTICES.md
+
+      - name: Check README legal disclaimer
+        run: |
+          grep -q "Third-Party License & Attribution" README.md
+
+      - name: Upload compliance artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: metadata-compliance
+          path: |
+            metadata-compliance-report.json
+            THIRD_PARTY_NOTICES.md
